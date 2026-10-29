@@ -16,7 +16,7 @@ const data = loadYear(year);
 
 test(`${year}: engine matches locked results for ${SCENARIOS.length} households × 13 provinces`, () => {
   let checked = 0;
-  for (const s of SCENARIOS as Scenario[]) {
+  for (const s of SCENARIOS as unknown as Scenario[]) {
     const expected = fixture.scenarios.find((f: { id: number }) => f.id === s.id).results;
     for (const { p, r } of computeAll(data, toHousehold(s))) {
       assert.deepStrictEqual(snapshot(r), expected[p.code], `scenario ${s.id} (${JSON.stringify(s)}), ${p.code}`);
