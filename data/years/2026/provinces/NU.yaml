@@ -1,0 +1,19 @@
+code: NU
+name: Nunavut
+order: 6
+brackets:
+  - [55801, 0.04]
+  - [111602, 0.07]
+  - [181439, 0.09]
+  - [.inf, 0.115]
+basicPersonalAmount: 19659
+dividendTaxCredit: {eligible: 0.0551, nonEligible: 0.0261}
+spouseAmount: {max: 19659, threshold: 0}
+childAmount: {perChild: 1200, ages: under6}
+payroll: {employeeTax: 0.02}
+salesTax: {rate: 0.05, label: "5% GST"}
+propertyTax: {rate: 0.0100, city: "Iqaluit (est.)", estimated: true}
+childBenefit:
+  name: Nunavut Child Benefit
+  program: per-child-reduced
+  params: {perChild: 696, threshold: 22065, rateOneChild: 0.03, rateMoreChildren: 0.05}

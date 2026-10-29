@@ -1,0 +1,71 @@
+# Federal parameters for the 2026 tax year.
+# Benefit amounts (CCB, Groceries and Essentials Benefit) are for the July 2026 – June 2027 payment year,
+# which is based on 2025 income; the calculator applies them to current-year income.
+year: 2026
+
+# [upper limit of bracket, rate]; .inf = no upper limit
+brackets:
+  - [58523, 0.14]
+  - [117045, 0.205]
+  - [181440, 0.26]
+  - [258482, 0.29]
+  - [.inf, 0.33]
+
+# Basic personal amount: shrinks linearly from max to min between `from` and `to` (net income)
+basicPersonalAmount: {max: 16452, min: 14829, from: 181440, to: 258482}
+
+quebecAbatement: 0.165          # reduction of basic federal tax for Quebec residents
+employmentAmount: 1501          # Canada employment amount
+
+investment:
+  capitalGainsInclusion: 0.5
+  grossUp: {eligible: 1.38, nonEligible: 1.15}
+  # Federal dividend tax credit, as a share of the grossed-up dividend
+  dividendTaxCredit: {eligible: 0.150198, nonEligible: 0.090301}
+
+rrsp: {rate: 0.18, limit: 33810}
+
+payroll:
+  # CPP: base contributions earn a credit; enhanced (first and second additional) contributions are deducted
+  cpp: {exempt: 3500, ympe: 74600, yampe: 85000, base: 0.0495, enh1: 0.01, enh2: 0.04}
+  qpp: {exempt: 3500, ympe: 74600, yampe: 85000, base: 0.053, enh1: 0.01, enh2: 0.04}
+  ei: {maxInsurable: 68900, rate: 0.0163, quebecRate: 0.013}
+  qpip: {maxInsurable: 103000, rate: 0.0043}
+
+childBenefit:   # Canada Child Benefit, July 2026 – June 2027
+  perChildUnder6: 8157
+  perChild6to17: 6883
+  threshold1: 38237
+  threshold2: 82847
+  # Indexed by number of children (index 0 unused; 4 = four or more)
+  rate1: [0, 0.07, 0.135, 0.19, 0.23]
+  fixed2: [0, 3123, 6022, 8476, 10260]
+  rate2: [0, 0.032, 0.057, 0.08, 0.095]
+
+groceriesBenefit:   # Canada Groceries and Essentials Benefit (formerly the GST/HST credit)
+  adult: 445
+  spouseOrFirstChild: 445
+  child: 234
+  singleSupplement: {max: 234, rate: 0.02, from: 11564}
+  phaseOut: {rate: 0.05, from: 46432}
+
+workersBenefit:   # Canada Workers Benefit, basic amount (no disability supplement)
+  estimated: true   # 2025 figures indexed by 2% until CRA publishes 2026 values
+  standard: {max: [1665, 2869], rate: 0.27, floor: [3000, 3000], threshold: [27392, 31251], phaseOut: [0.15, 0.15]}
+  secondaryEarnerExemption: 16714
+  # Provinces with their own version under an agreement with Ottawa. [single, family] pairs.
+  regional:
+    AB: {max: [1785, 2671], rate: 0.21, floor: [2760, 2760], threshold: [26682, 33427], phaseOut: [0.15, 0.15]}
+    NU: {max: [1653, 2484], rate: 0.14, floor: [6000, 6000], threshold: [27369, 37666], phaseOut: [0.04, 0.08]}
+  # Quebec's version follows its work premium: [phase-in rate, excluded income, income at max, phase-out base]
+  quebec:
+    phaseOutRate: 0.20
+    single: [0.373, 2400, 12808, 14453]
+    couple: [0.373, 3600, 19828, 22223]
+    parent: [0.20, 2400, 12808, 14612]
+    coupleKids: [0.239, 3600, 19828, 22424]
+
+sources:
+  - {label: "CRA, Current year tax rates and income brackets", url: "https://www.canada.ca/en/revenue-agency/services/tax/individuals/tax-rates-brackets/current-year.html"}
+  - {label: "CRA, T4127 Payroll Deductions Formulas", url: "https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas.html"}
+  - {label: "CRA, T4114 Canada child benefit and related programs", url: "https://www.canada.ca/en/revenue-agency/services/forms-publications/publications/t4114.html"}

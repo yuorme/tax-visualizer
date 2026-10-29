@@ -1,0 +1,35 @@
+code: QC
+name: Quebec
+order: 8
+system: quebec     # Quebec runs its own income tax, QPP and QPIP
+brackets:
+  - [54345, 0.14]
+  - [108680, 0.19]
+  - [132245, 0.24]
+  - [.inf, 0.2575]
+basicPersonalAmount: 18952
+dividendTaxCredit: {eligible: 0.117, nonEligible: 0.0342}
+spouseAmount: transfer     # a spouse's unused basic credit is transferred instead
+quebec:
+  workerDeduction: {rate: 0.06, max: 1450}
+  livingAlone: {max: 2172, rate: 0.1875, threshold: 42955}
+salesTax: {rate: 0.14975, label: "5% GST + 9.975% QST"}
+propertyTax: {rate: 0.0090, city: Montreal}
+childBenefit:
+  name: Family allowance
+  program: quebec-family-allowance
+  params: {max: 3068, maxSingleParent: 1077, min: 1221, minSingleParent: 430, rate: 0.04, thresholdSingle: 44032, thresholdCouple: 60398, schoolSupplies: 127}
+credits:
+  - name: Solidarity tax credit
+    program: quebec-solidarity-tax-credit
+    params: {qstAdult: 363, qstSpouse: 363, qstAlone: 172, housingCouple: 906, housingSingle: 746, child: 158, rate: 0.06, threshold: 43195}
+  - name: Work premium
+    program: quebec-work-premium
+    params:
+      phaseOutRate: 0.10
+      single: [0.116, 2400, 12808]        # [rate, excluded income, reduction threshold]
+      couple: [0.116, 3600, 19828]
+      parent: [0.30, 2400, 12808]
+      coupleKids: [0.25, 3600, 19828]
+sources:
+  - {label: "Revenu Québec, 2026 tax rates", url: "https://www.revenuquebec.ca/en/citizens/income-tax-return/completing-your-income-tax-return/income-tax-rates/"}

@@ -1,0 +1,26 @@
+code: NS
+name: Nova Scotia
+order: 11
+brackets:
+  - [30995, 0.0879]
+  - [61991, 0.1495]
+  - [97417, 0.1667]
+  - [157124, 0.175]
+  - [.inf, 0.21]
+basicPersonalAmount: 11932
+dividendTaxCredit: {eligible: 0.0885, nonEligible: 0.015}
+spouseAmount: {max: 11932, threshold: 888}
+childAmount: {perChild: 1200, ages: under6}
+lowIncomeReduction:
+  program: family-low-income-reduction
+  params: {individual: 300, spouse: 300, child: 165, rate: 0.05, threshold: 15000}
+salesTax: {rate: 0.14, label: "14% HST"}
+propertyTax: {rate: 0.0061, city: Halifax}
+childBenefit:
+  name: Nova Scotia Child Benefit
+  program: nova-scotia-child-benefit
+  params: {perChild: 1525, fullBelow: 26000, partialBelow: 34000, partialOtherChildren: 762.5}
+credits:
+  - name: Nova Scotia affordable living tax credit
+    program: ns-affordable-living-tax-credit
+    params: {base: 255, child: 60, rate: 0.05, threshold: 30000}

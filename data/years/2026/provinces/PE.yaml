@@ -1,0 +1,27 @@
+code: PE
+name: Prince Edward Island
+order: 10
+brackets:
+  - [33928, 0.095]
+  - [65820, 0.1347]
+  - [106890, 0.166]
+  - [142520, 0.1762]
+  - [200000, 0.19]
+  - [.inf, 0.20]
+basicPersonalAmount: 15000
+dividendTaxCredit: {eligible: 0.105, nonEligible: 0.013}
+spouseAmount: {max: 12740, threshold: 1274}
+lowIncomeReduction:
+  program: family-low-income-reduction
+  params: {individual: 350, spouse: 350, child: 300, rate: 0.05, threshold: 23000}
+salesTax: {rate: 0.15, label: "15% HST"}
+propertyTax: {rate: 0.0167, city: Charlottetown}
+childBenefit:
+  name: PEI Child Benefit
+  program: income-band-per-child
+  params:
+    bands: [[45000, 410], [80000, 290]]    # [family net income below, amount per child]
+credits:
+  - name: PEI essentials benefit
+    program: pei-essentials-benefit
+    params: {single: 310, family: 365, rate: 0.01, threshold: 95000, minimum: 175}

@@ -1,0 +1,26 @@
+{
+  "name": "tax-visualizer",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Compare the full household tax burden across Canada's 13 provinces and territories.",
+  "type": "module",
+  "engines": { "node": ">=22.6" },
+  "scripts": {
+    "build": "node --import tsx scripts/build.ts",
+    "dev": "node --import tsx scripts/build.ts --watch",
+    "test": "node --import tsx --test tests/*.test.ts",
+    "typecheck": "tsc -p .",
+    "e2e": "node tests/e2e/smoke.mjs",
+    "check": "npm run typecheck && npm test && npm run build && npm run e2e",
+    "golden:capture": "node tests/golden/capture-legacy.mjs"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "esbuild": "0.28.2",
+    "playwright": "1.63.0",
+    "tsx": "4.23.12",
+    "typescript": "6.0.3",
+    "yaml": "2.9.0",
+    "zod": "3.25.76"
+  }
+}

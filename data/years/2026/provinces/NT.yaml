@@ -1,0 +1,25 @@
+code: NT
+name: Northwest Territories
+order: 3
+brackets:
+  - [53003, 0.059]
+  - [106009, 0.086]
+  - [172346, 0.122]
+  - [.inf, 0.1405]
+basicPersonalAmount: 18198
+dividendTaxCredit: {eligible: 0.115, nonEligible: 0.06}
+spouseAmount: {max: 18198, threshold: 0}
+payroll: {employeeTax: 0.02}
+salesTax: {rate: 0.05, label: "5% GST"}
+propertyTax: {rate: 0.0100, city: "Yellowknife (est.)", estimated: true}
+childBenefit:
+  name: NWT Child Benefit
+  program: nwt-child-benefit
+  params:
+    under6: [0, 814.92, 1467, 1996.92, 2445]      # by number of children (index 1–4)
+    under6More: 366.96                            # each child after the fourth
+    over6: [0, 651.96, 1173.96, 1596.96, 1956]
+    over6More: 292.92
+    fullUpTo: 30000
+    endsAt: 80000
+  estimated: true   # straight-line taper between the published start and end incomes

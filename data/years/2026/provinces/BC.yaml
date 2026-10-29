@@ -1,0 +1,26 @@
+code: BC
+name: British Columbia
+order: 0          # position in the west-to-east sort
+brackets:
+  - [50363, 0.056]
+  - [100728, 0.077]
+  - [115648, 0.105]
+  - [140430, 0.1229]
+  - [190405, 0.147]
+  - [265545, 0.168]
+  - [.inf, 0.205]
+basicPersonalAmount: 13216
+dividendTaxCredit: {eligible: 0.12, nonEligible: 0.0196}
+spouseAmount: {max: 11317, threshold: 1132}
+bcTaxReduction: {max: 690, rate: 0.0356, threshold: 25570}
+salesTax: {rate: 0.12, label: "5% GST + 7% PST"}
+propertyTax: {rate: 0.0030, city: Vancouver}
+creditsUseRent: true
+childBenefit:
+  name: B.C. family benefit
+  program: bc-family-benefit
+  params: {max: [1750, 1100, 900], min: [775, 750, 725], singleParent: 500, rate: 0.04, threshold: 30176, minThreshold: 96562}
+credits:
+  - name: B.C. renter's tax credit
+    program: bc-renters-tax-credit
+    params: {max: 400, rate: 0.02, threshold: 66189}

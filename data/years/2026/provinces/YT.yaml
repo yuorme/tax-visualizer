@@ -1,0 +1,19 @@
+code: YT
+name: Yukon
+order: 1
+brackets:
+  - [58523, 0.064]
+  - [117045, 0.09]
+  - [181440, 0.109]
+  - [500000, 0.128]
+  - [.inf, 0.15]
+basicPersonalAmount: federal      # Yukon's amount mirrors the federal one, including its phase-out
+dividendTaxCredit: {eligible: 0.1202, nonEligible: 0.0067}
+spouseAmount: federal
+employmentAmountCredit: true      # Yukon has its own Canada employment amount credit
+salesTax: {rate: 0.05, label: "5% GST"}
+propertyTax: {rate: 0.0100, city: "Whitehorse (est.)", estimated: true}
+childBenefit:
+  name: Yukon Child Benefit
+  program: per-child-reduced
+  params: {perChild: 966, threshold: 35000, rateOneChild: 0.025, rateMoreChildren: 0.05}

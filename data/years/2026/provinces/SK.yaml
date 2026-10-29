@@ -1,0 +1,18 @@
+code: SK
+name: Saskatchewan
+order: 4
+brackets:
+  - [54532, 0.105]
+  - [155805, 0.125]
+  - [.inf, 0.145]
+basicPersonalAmount: 20381
+dividendTaxCredit: {eligible: 0.11, nonEligible: 0.02519}
+spouseAmount: {max: 20381, threshold: 2038}
+childAmount: {perChild: 8358, ages: all}
+salesTax: {rate: 0.11, label: "5% GST + 6% PST"}
+propertyTax: {rate: 0.0134, city: Saskatoon}
+credits:
+  - name: Saskatchewan low-income tax credit
+    program: sk-low-income-tax-credit
+    params: {adult: 460, spouse: 460, child: 181, maxChildren: 2, rate: 0.0303, threshold: 39345}
+    estimated: true   # reduction rate worked out from the published start and end points

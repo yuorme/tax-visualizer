@@ -1,0 +1,30 @@
+code: NL
+name: Newfoundland and Labrador
+order: 12
+brackets:
+  - [44678, 0.087]
+  - [89354, 0.145]
+  - [159528, 0.158]
+  - [223340, 0.178]
+  - [285319, 0.198]
+  - [570638, 0.208]
+  - [1141275, 0.213]
+  - [.inf, 0.218]
+basicPersonalAmount: 13094     # April 2026 budget increase, effective January 1, 2026
+dividendTaxCredit: {eligible: 0.063, nonEligible: 0.032}
+spouseAmount: {max: 9142, threshold: 915}
+lowIncomeReduction:
+  program: nl-low-income-reduction
+  params: {individual: 842, family: 563, rate: 0.16, thresholdIndividual: 24191, thresholdFamily: 40905}
+  estimated: true   # family threshold is 2025's indexed by 2%
+salesTax: {rate: 0.15, label: "15% HST"}
+propertyTax: {rate: 0.0091, city: "St. John's"}
+childBenefit:
+  name: NL Child Benefit
+  program: nl-child-benefit
+  params: {perChild: [1888, 2002, 2150, 2310], fullUpTo: 20397, endsAt: 38193}   # 1st, 2nd, 3rd, each later child
+  estimated: true   # straight-line taper between the published start and end incomes
+credits:
+  - name: NL income supplement
+    program: nl-income-supplement
+    params: {base: 254, extraMax: 266, extraRate: 0.0532, extraFrom: 15000, couple: 69, child: 231, rate: 0.09, threshold: 40000}

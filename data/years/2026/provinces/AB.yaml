@@ -1,0 +1,28 @@
+code: AB
+name: Alberta
+order: 2
+brackets:
+  - [61200, 0.08]
+  - [154259, 0.10]
+  - [185111, 0.12]
+  - [246813, 0.13]
+  - [370220, 0.14]
+  - [.inf, 0.15]
+basicPersonalAmount: 22769
+dividendTaxCredit: {eligible: 0.0812, nonEligible: 0.0218}
+spouseAmount: {max: 22769, threshold: 0}
+salesTax: {rate: 0.05, label: "5% GST"}
+propertyTax: {rate: 0.0066, city: Calgary}
+childBenefit:
+  name: Alberta Child and Family Benefit
+  program: alberta-child-family-benefit
+  params:
+    base: [1529, 2293, 3057, 3821]          # by number of children, 1 to 4+
+    baseRate: [0.08, 0.12, 0.16, 0.20]
+    baseThreshold: 28116
+    working: [782, 1494, 1920, 2061]
+    workingRate: 0.15
+    workingFloor: 2760
+    workingThreshold: 47115
+    workingPhaseOut: 0.15
+  estimated: true   # base rates approximated

@@ -1,0 +1,38 @@
+code: ON
+name: Ontario
+order: 7
+brackets:
+  - [53891, 0.0505]
+  - [107785, 0.0915]
+  - [150000, 0.1116]
+  - [220000, 0.1216]
+  - [.inf, 0.1316]
+basicPersonalAmount: 12989
+dividendTaxCredit: {eligible: 0.10, nonEligible: 0.029863}
+spouseAmount: {max: 11029, threshold: 1103}
+# Surtax on Ontario tax after non-refundable credits, before the dividend tax credit (form ON428): [threshold, rate]
+surtax: [[5818, 0.20], [7446, 0.36]]
+ontarioTaxReduction: {base: 300, perChild: 554}
+lift: {max: 875, rate: 0.0505, threshold: 32500, familyThreshold: 65000, phaseOut: 0.05}
+payroll:
+  # Ontario Health Premium (not indexed): [taxable income above, base, rate, cap], highest band first
+  healthPremium:
+    - [200000, 750, 0.25, 900]
+    - [72000, 600, 0.25, 750]
+    - [48000, 450, 0.25, 600]
+    - [36000, 300, 0.06, 450]
+    - [20000, 0, 0.06, 300]
+salesTax: {rate: 0.13, label: "13% HST"}
+propertyTax: {rate: 0.0076, city: Toronto}
+creditsUseRent: true
+childBenefit:
+  name: Ontario Child Benefit
+  program: ontario-child-benefit
+  params: {perChild: 1760, threshold: 26865, rate: 0.08}
+credits:
+  - name: Ontario sales tax credit
+    program: ontario-sales-tax-credit
+    params: {perPerson: 378, rate: 0.04, thresholdSingle: 29047, thresholdFamily: 36309}
+  - name: Ontario energy and property tax credit
+    program: ontario-energy-property-tax-credit
+    params: {rentShare: 0.2, energyMax: 290, propertyBase: 73, propertyRate: 0.10, propertyMax: 944, rate: 0.02, thresholdSingle: 29047, thresholdFamily: 36309}
