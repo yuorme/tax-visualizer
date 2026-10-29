@@ -16,8 +16,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: npm
-      - run: npm ci || npm install
+      - run: npm install   # switch to `npm ci` once package-lock.json is committed
       - run: npx playwright install --with-deps chromium
       - run: npm run typecheck
       - run: npm test            # data validation, golden results, published reference values
