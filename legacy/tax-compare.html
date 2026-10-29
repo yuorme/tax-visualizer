@@ -1,0 +1,1705 @@
+<title>Provincial Tax Compare 2026</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: one working column — inputs on top, ranked stacked bars, then a home-vs-destination comparison. */
+:root {
+  --bg: #f6f7f5;
+  --surface: #ffffff;
+  --ink: #17201f;
+  --muted: #5d6865;
+  --rule: #d9dedb;
+  --track: #e9ece9;
+  --fed: #3e5a66;       /* federal share */
+  --prov: #c2432f;      /* provincial share, maple */
+  --prov-soft: #f6dcd6;
+  --wh: #b08a2e;        /* foreign tax withheld */
+  --sales: #6b5aa6;     /* sales tax */
+  --pay: #2a8a7e;       /* payroll: CPP/QPP, EI/QPIP, health premium */
+  --propc: #9a7434;     /* property tax */
+  --gain: #2f7d4f;
+  --loss: #b8323a;
+  --focus: #1f6f8b;
+  --font-display: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --font-num: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #121615; --surface: #1a1f1e; --ink: #e8ecea; --muted: #9aa5a1;
+    --rule: #2c3331; --track: #232a28; --fed: #7fa3b3; --prov: #ec6f58;
+    --prov-soft: #3a211c; --focus: #6cc0dd; --wh: #d6b25a; --sales: #a898e6; --pay: #5cc4b5; --propc: #d2aa68; --gain: #5fbf86; --loss: #f0727a; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #121615; --surface: #1a1f1e; --ink: #e8ecea; --muted: #9aa5a1;
+  --rule: #2c3331; --track: #232a28; --fed: #7fa3b3; --prov: #ec6f58;
+  --prov-soft: #3a211c; --focus: #6cc0dd; --wh: #d6b25a; --sales: #a898e6; --pay: #5cc4b5; --propc: #d2aa68; --gain: #5fbf86; --loss: #f0727a; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: var(--font-body); font-size: 15px; line-height: 1.5;
+}
+.wrap {
+  max-width: 920px; margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 28px 48px;
+  display: grid; gap: 22px;
+}
+header { display: grid; gap: 6px; }
+.eyebrow {
+  font-family: var(--font-num); font-size: 11.5px; letter-spacing: .08em;
+  text-transform: uppercase; color: var(--muted);
+}
+h1 {
+  font-family: var(--font-display); font-stretch: 78%; font-weight: 800;
+  font-size: clamp(30px, 6vw, 46px); line-height: 1.02; margin: 0;
+  letter-spacing: -.01em; text-wrap: balance;
+}
+.lede { margin: 0; color: var(--muted); max-width: 62ch; }
+
+/* Income control */
+.control {
+  background: var(--surface); border: 1px solid var(--rule); border-radius: 10px;
+  padding: 18px; display: grid; gap: 14px;
+}
+.control-row { display: flex; flex-wrap: wrap; align-items: end; gap: 14px 20px; }
+.field { display: grid; gap: 4px; }
+.lbl {
+  font-size: 11.5px; letter-spacing: .07em; text-transform: uppercase;
+  color: var(--muted); font-weight: 600;
+}
+.money { display: flex; align-items: baseline; gap: 4px; border-bottom: 2px solid var(--ink); }
+.money span { font-family: var(--font-num); font-size: 26px; color: var(--muted); }
+#income {
+  font-family: var(--font-num); font-size: 30px; font-weight: 600; width: 9ch;
+  border: 0; background: transparent; color: var(--ink); padding: 2px 0; outline: none;
+  font-variant-numeric: tabular-nums;
+}
+.money:focus-within { border-color: var(--focus); }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip {
+  font-family: var(--font-num); font-size: 13px; padding: 5px 10px; border-radius: 999px;
+  border: 1px solid var(--rule); background: transparent; color: var(--ink); cursor: pointer;
+}
+.chip:hover { border-color: var(--muted); }
+.chip[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+input[type=range] { width: 100%; accent-color: var(--prov); }
+.switch-wrap { display: flex; align-items: center; gap: 8px; margin-left: auto; }
+.switch { display: flex; align-items: center; gap: 10px; cursor: pointer; }
+.switch input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.knob { width: 40px; height: 22px; border-radius: 999px; background: var(--track); border: 1px solid var(--rule); position: relative; flex: none; transition: background .2s; }
+.knob::after { content: ""; position: absolute; top: 2px; left: 2px; width: 16px; height: 16px; border-radius: 50%; background: var(--muted); transition: transform .2s, background .2s; }
+.switch input:checked + .knob { background: var(--prov); border-color: var(--prov); }
+.switch input:checked + .knob::after { transform: translateX(18px); background: var(--surface); }
+.switch input:focus-visible + .knob { outline: 2px solid var(--focus); outline-offset: 2px; }
+.switch-text { display: grid; line-height: 1.2; }
+.switch-text b { font-size: 13.5px; font-weight: 650; }
+.switch-text small { font-size: 12px; color: var(--muted); }
+@media (max-width: 560px) { .switch-wrap { margin-left: 0; } }
+.invest { border-top: 1px solid var(--rule); padding-top: 12px; }
+.invest summary { cursor: pointer; display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; list-style: none; }
+.invest summary::-webkit-details-marker { display: none; }
+.invest summary::before { content: "+"; font-family: var(--font-num); color: var(--prov); width: 12px; }
+.invest[open] summary::before { content: "−"; }
+.invest summary b { font-size: 14px; }
+.invest summary .info { align-self: center; }
+.invest summary > span { font-size: 12.5px; color: var(--muted); }
+/* Each investment field is five rows (label, amount, slider, extra, hint) sharing the grid's rows,
+   so amounts, sliders and hints line up across columns. */
+.invest-grid .field { display: grid; grid-template-rows: subgrid; grid-row: span 5; row-gap: 4px; align-content: start; }
+.invest-grid .field > .lbl-row { align-self: end; }
+.invest-grid .field > .money { align-self: end; }
+.invest-grid .field > .scale { align-self: start; }
+.inv-range { margin: 0; height: 22px; align-self: center; }
+.cg-wrap { position: relative; align-self: center; }
+.cg-wrap::before { content: ""; position: absolute; left: 50%; top: 2px; bottom: 2px; width: 2px; margin-left: -1px; background: var(--muted); border-radius: 1px; pointer-events: none; }
+#cg-range { -webkit-appearance: none; appearance: none; position: relative; z-index: 1; width: 100%; height: 22px; margin: 0; background: transparent; cursor: pointer; --cg-color: var(--muted); --cg-track: var(--rule); }
+#cg-range::-webkit-slider-runnable-track { height: 6px; border-radius: 3px; background: var(--cg-track); }
+#cg-range::-moz-range-track { height: 6px; border-radius: 3px; background: var(--cg-track); }
+#cg-range::-webkit-slider-thumb { -webkit-appearance: none; width: 18px; height: 18px; margin-top: -6px; border-radius: 50%; background: var(--surface); border: 3px solid var(--cg-color); box-shadow: 0 1px 2px rgba(0,0,0,.2); }
+#cg-range::-moz-range-thumb { width: 12px; height: 12px; border-radius: 50%; background: var(--surface); border: 3px solid var(--cg-color); box-shadow: 0 1px 2px rgba(0,0,0,.2); }
+#cg-range:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+/* Slider axes: labels placed at the thumb-centre position for each value */
+.scale { position: relative; height: 22px; font-family: var(--font-num); font-size: 10.5px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.scale span { position: absolute; top: 0; padding-top: 6px; white-space: nowrap; transform: translateX(-50%); }
+.scale span::before { content: ""; position: absolute; top: 0; left: 50%; width: 1px; height: 4px; background: var(--rule); }
+.scale span.first { transform: none; }
+.scale span.first::before { left: 8px; }
+.scale span.last { transform: translateX(-100%); }
+.scale span.last::before { left: auto; right: 8px; }
+.scale span.minor::before { height: 3px; }
+.scale span.zero { color: var(--ink); }
+.scale span.zero::before { background: var(--muted); height: 5px; }
+.lbl-row { display: flex; align-items: center; gap: 6px; min-width: 0; }
+.info { flex: none; position: relative; width: 16px; height: 16px; padding: 0; border-radius: 50%; border: 1px solid var(--muted); background: transparent; color: var(--muted);
+  font: italic 600 10.5px/14px Georgia, "Times New Roman", serif; text-align: center; cursor: help; }
+.info::after { content: ""; position: absolute; inset: -8px; }
+.info:hover, .info[aria-describedby] { color: var(--surface); background: var(--ink); border-color: var(--ink); }
+.tip b { display: block; margin-bottom: 3px; }
+.tip .t-sub { display: block; opacity: .75; margin-top: 3px; }
+.tip .t-num { font-family: var(--font-num); font-variant-numeric: tabular-nums; }
+.stack i:hover, .stack i.hot { filter: brightness(1.15) saturate(1.1); }
+.tip { position: fixed; z-index: 50; max-width: min(300px, calc(100vw - 24px)); padding: 10px 12px; border-radius: 8px;
+  background: var(--ink); color: var(--bg); font-size: 13px; line-height: 1.45; box-shadow: 0 6px 20px rgba(0,0,0,.18); pointer-events: none; }
+#cg.pos { color: var(--gain); }
+#cg.neg { color: var(--loss); }
+.cred-body { display: grid; gap: 12px; margin: 14px 0 8px; }
+.cred-top { display: flex; flex-wrap: wrap; align-items: end; gap: 14px 28px; }
+.cred-top .switch { margin-left: 0; }
+#rent { width: 6ch; }
+.cred-list { width: 100%; max-width: 560px; font-size: 13px; }
+.cred-list td { border-bottom: 1px solid var(--rule); padding: 5px 6px; white-space: normal; }
+.cred-list td.r { white-space: nowrap; }
+.inc-slider { flex: 1 1 100%; min-width: 0; }
+.cred-list td.r { font-family: var(--font-num); font-variant-numeric: tabular-nums; text-align: right; }
+.cred-list tr.sum td { font-weight: 700; border-bottom: 0; border-top: 1px solid var(--ink); }
+.cred-list .muted td { color: var(--muted); }
+.prop-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 220px); gap: 14px 28px; margin: 14px 0 8px; align-items: start; }
+.prop-grid .field { display: grid; gap: 4px; }
+#pr-rate { width: 5ch; }
+.money.md #hv { width: 9ch; }
+.pr-note { font-size: 12px; color: var(--muted); display: flex; align-items: center; gap: 4px; }
+@media (max-width: 560px) { .prop-grid { grid-template-columns: 1fr; } }
+.invest-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 14px 20px; margin: 14px 0 12px; }
+.money.sm span { font-size: 18px; }
+.money.sm input { font-family: var(--font-num); font-size: 20px; font-weight: 600; width: 100%; min-width: 0; border: 0; background: transparent; color: var(--ink); padding: 2px 0; outline: none; font-variant-numeric: tabular-nums; }
+
+.margs { width: 100%; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.top-row { display: flex; flex-wrap: wrap; align-items: end; gap: 12px 20px; }
+.home-sel { display: grid; gap: 4px; order: 2; margin-left: auto; }
+.home-sel .prov-select { justify-self: end; }
+.prov-select { font: inherit; font-size: 15px; font-weight: 600; color: var(--ink); background: var(--surface); border: 1px solid var(--rule); border-radius: 8px; padding: 7px 10px; min-width: 0; max-width: 100%; cursor: pointer; }
+.prov-select:hover { border-color: var(--muted); }
+.cmp-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 10px 16px; }
+.cmp-sel { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.cmp-home { font-family: var(--font-display); font-stretch: 85%; font-weight: 700; font-size: 20px; box-shadow: inset 0 -3px 0 var(--prov); }
+.cmp-vs { color: var(--muted); font-size: 13px; }
+#dest { font-family: var(--font-display); font-stretch: 85%; font-weight: 700; font-size: 18px; }
+.headline { margin: 0; font-family: var(--font-display); font-stretch: 85%; font-weight: 700; font-size: clamp(20px, 3.4vw, 26px); line-height: 1.15; text-wrap: balance; }
+.headline .save { color: var(--gain); }
+.headline .cost { color: var(--loss); }
+#detail-body { display: grid; gap: 16px; min-width: 0; }
+.detail > * { min-width: 0; }
+.cmp-wrap { overflow-x: auto; min-width: 0; }
+table.cmp { min-width: 420px; font-size: 13px; }
+table.cmp th, table.cmp td:first-child { font-family: var(--font-body); }
+table.cmp td:first-child { white-space: normal; }
+table.cmp tr.sum td { font-weight: 700; border-top: 1px solid var(--ink); }
+table.cmp tr.grp th { padding-top: 12px; }
+table.cmp .better { color: var(--gain); font-weight: 600; }
+table.cmp .worse { color: var(--loss); font-weight: 600; }
+.views { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; border-top: 1px solid var(--rule); padding-top: 14px; }
+.views h4 { margin: 0; font-size: 13px; }
+.people { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.person { display: grid; gap: 1px; text-align: left; min-width: 112px; padding: 7px 12px; border: 1px solid var(--rule); border-radius: 8px; background: transparent; color: var(--ink); font: inherit; cursor: pointer; }
+.person b { font-size: 13.5px; font-weight: 650; }
+.person small { font-family: var(--font-num); font-size: 12px; color: var(--muted); }
+.person:hover { border-color: var(--muted); }
+.person[aria-pressed="true"] { border-color: var(--ink); box-shadow: inset 0 -3px 0 var(--prov); }
+.person.add { border-style: dashed; }
+.person-wrap { position: relative; display: inline-flex; }
+.spouse-row { display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
+.person-wrap .person { padding-right: 26px; }
+.person-x { position: absolute; top: 3px; right: 3px; width: 22px; height: 22px; padding: 0; border: 0; border-radius: 50%; background: transparent; color: var(--muted); font: 600 16px/22px var(--font-body); cursor: pointer; }
+.person-x:hover { background: var(--track); color: var(--ink); }
+.person.add b { color: var(--prov); }
+.check { display: flex; align-items: center; gap: 6px; font-size: 13px; cursor: pointer; }
+.check input { accent-color: var(--prov); width: 16px; height: 16px; }
+.ded-row { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.ded .money.md input { width: 6.5ch; }
+#max-rrsp { white-space: nowrap; font-family: var(--font-num); font-size: 12.5px; }
+#max-rrsp[aria-pressed="true"] { color: var(--muted); text-decoration: none; cursor: default; }
+.linkbtn { border: 0; background: none; color: var(--focus); font: inherit; font-size: 13px; cursor: pointer; text-decoration: underline; text-underline-offset: 2px; padding: 4px; }
+.hh { margin-top: 2px; }
+.hh td:first-child, .hh th:first-child { font-family: var(--font-body); }
+.hh tr.sum td { font-weight: 600; border-top: 1px solid var(--ink); border-bottom: 0; }
+.margs td:first-child { font-family: var(--font-body); }
+#slider { margin-bottom: 0; }
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+
+/* Chart */
+.chart-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 10px; }
+.chart-head h2 { font-family: var(--font-display); font-stretch: 85%; font-size: 20px; margin: 0; }
+.legend { display: flex; gap: 14px; font-size: 13px; color: var(--muted); align-items: center; flex-wrap: wrap; }
+.sw { display: inline-block; width: 11px; height: 11px; border-radius: 2px; margin-right: 6px; vertical-align: -1px; }
+.seg { display: flex; border: 1px solid var(--rule); border-radius: 7px; overflow: hidden; }
+.seg button {
+  border: 0; background: transparent; color: var(--muted); font: inherit; font-size: 12.5px;
+  padding: 5px 10px; cursor: pointer;
+}
+.seg button[aria-pressed="true"] { background: var(--track); color: var(--ink); font-weight: 600; }
+
+.chart { display: grid; gap: 0; position: relative; }
+/* Column chart: provinces along the x-axis, blended rate up the y-axis */
+.wrap > section { min-width: 0; }
+.cc-scroll { overflow-x: auto; margin-top: 14px; }
+.cc { --plot-h: 260px; display: grid; grid-template-columns: 34px minmax(0, 1fr); grid-template-rows: auto auto; column-gap: 6px; min-width: 520px; padding-top: 22px; }
+.cc-y { position: relative; font-family: var(--font-num); font-size: 11px; color: var(--muted); }
+.cc-y span { position: absolute; right: 0; transform: translateY(-50%); }
+.cc-y .key { font-size: 10px; transform: none; }
+.cc-plot { position: relative; }
+.cc-grid { position: absolute; left: 0; right: 0; top: 0; height: var(--plot-h); pointer-events: none; }
+.cc-grid i { position: absolute; left: 0; right: 0; height: 1px; background: var(--rule); }
+.cc-grid i.base { background: var(--muted); }
+.cc-cols { position: relative; display: grid; grid-template-columns: repeat(13, minmax(0, 1fr)); gap: 4px; }
+.col { display: grid; grid-template-rows: var(--plot-h) auto auto auto; justify-items: center; border-radius: 6px; padding-bottom: 6px; }
+.col.is-home { background: var(--prov-soft); }
+.col.is-dest { background: var(--track); box-shadow: inset 0 0 0 1px var(--rule); }
+.col-plot { position: relative; width: 100%; }
+.stack { position: absolute; bottom: 0; overflow: visible; transition: height .35s cubic-bezier(.2,.7,.2,1), bottom .35s cubic-bezier(.2,.7,.2,1); left: 50%; transform: translateX(-50%); width: min(70%, 38px); display: flex; flex-direction: column-reverse; transition: height .35s cubic-bezier(.2,.7,.2,1); }
+.stack i { display: block; width: 100%; transition: height .35s cubic-bezier(.2,.7,.2,1); }
+.stack .f { background: var(--fed); }
+.stack .p { background: var(--prov); }
+.stack .w { background: var(--wh); }
+.stack .s { background: var(--sales); }
+.stack .y { background: var(--pay); }
+.stack .h { background: var(--propc); }
+/* Child benefits: a band from the net level up to the top of the column. When benefits exceed tax,
+   it runs below the zero line. */
+.ben, .sw-ben { background: repeating-linear-gradient(135deg, color-mix(in srgb, var(--bg) 75%, transparent) 0 3px, transparent 3px 6px),
+  color-mix(in srgb, var(--gain) 30%, transparent); }
+.ben { position: absolute; left: 50%; transform: translateX(-50%); width: calc(min(70%, 38px) + 6px); border-top: 2px dashed var(--ink); border-bottom: 2px solid var(--ink);
+  z-index: 2; height: 0; display: block; box-sizing: border-box; transition: height .35s cubic-bezier(.2,.7,.2,1), bottom .35s cubic-bezier(.2,.7,.2,1); }
+.ben:hover, .ben.hot { filter: brightness(1.1); }
+.stack i.end { border-radius: 3px 3px 0 0; }
+.cv { z-index: 3; position: absolute; left: 50%; transform: translateX(-50%); font-family: var(--font-num); font-size: 11.5px; font-weight: 600; white-space: nowrap; font-variant-numeric: tabular-nums; transition: bottom .35s cubic-bezier(.2,.7,.2,1); }
+.code { margin-top: 6px; font-weight: 700; font-size: 13px; letter-spacing: .02em; }
+.code sup { font-size: 9px; }
+.cm { font-family: var(--font-num); font-size: 10.5px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.tag { font-size: 9px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; min-height: 12px; }
+.is-home .tag, .is-home .code { color: var(--prov); }
+.is-dest .tag { color: var(--ink); }
+@media (prefers-reduced-motion: reduce) { .stack, .stack i, .cv { transition: none; } }
+.spend { border-top: 1px solid var(--rule); padding-top: 14px; display: grid; gap: 12px; }
+.money.md span:first-child { font-size: 20px; }
+.money.md input { font-family: var(--font-num); font-size: 22px; font-weight: 600; width: 6.5ch; border: 0; background: transparent; color: var(--ink); padding: 2px 0; outline: none; font-variant-numeric: tabular-nums; }
+.hh-sl { display: grid; gap: 4px; width: 120px; }
+.hh-sl.kids { width: 190px; }
+.hh-sl input[type=range] { width: 100%; margin: 0; accent-color: var(--sales); }
+.sl-val { margin-left: auto; font-family: var(--font-num); font-size: 13px; font-weight: 700; }
+.sl-scale { display: flex; justify-content: space-between; font-family: var(--font-num); font-size: 10.5px; color: var(--muted); padding: 0 4px; }
+/* Children: one track, two handles. The big purple handle is the number of children; the small slate
+   handle below it is how many of them are under 6. Thumb centres line up because the slate input is
+   inset by half the difference in thumb widths. */
+.dual { position: relative; height: 31px; }
+.dual-track { position: absolute; left: 0; right: 0; top: 8px; height: 6px; border-radius: 3px; background: var(--rule); }
+.dual input[type=range] { -webkit-appearance: none; appearance: none; position: absolute; top: 0; left: 0; width: 100%; height: 22px; margin: 0; background: transparent; pointer-events: none; }
+.dual input::-webkit-slider-runnable-track { background: transparent; height: 22px; }
+.dual input::-moz-range-track { background: transparent; }
+.dual #kids::-webkit-slider-thumb { -webkit-appearance: none; pointer-events: auto; width: 18px; height: 18px; margin-top: 2px; border-radius: 50%; background: var(--sales); border: 0; cursor: pointer; }
+.dual #kids::-moz-range-thumb { pointer-events: auto; width: 18px; height: 18px; border-radius: 50%; background: var(--sales); border: 0; cursor: pointer; }
+.dual #u6 { top: 9px; left: 3px; width: calc(100% - 6px); z-index: 2; }
+.dual #u6::-webkit-slider-thumb { -webkit-appearance: none; pointer-events: auto; width: 12px; height: 12px; margin-top: 8px; border-radius: 50%; background: var(--fed); border: 2px solid var(--surface); box-shadow: 0 0 0 1px var(--fed); cursor: pointer; }
+.dual #u6::-moz-range-thumb { pointer-events: auto; width: 8px; height: 8px; border-radius: 50%; background: var(--fed); border: 2px solid var(--surface); box-shadow: 0 0 0 1px var(--fed); cursor: pointer; transform: translateY(8px); }
+.dual input:focus-visible::-webkit-slider-thumb { outline: 2px solid var(--focus); outline-offset: 2px; }
+.u6-val { font-family: var(--font-num); font-size: 11px; font-weight: 600; color: var(--fed); white-space: nowrap; }
+.check.sm { font-size: 11.5px; gap: 4px; color: var(--muted); margin-left: 4px; }
+.check.sm input { width: 13px; height: 13px; }
+.spend .control-row { align-items: start; flex-wrap: wrap; gap: 14px 28px; }
+.frug { display: grid; gap: 4px; width: 200px; margin-left: auto; }
+.frug-val { margin-left: auto; font-family: var(--font-num); font-size: 12px; font-weight: 600; color: var(--sales); white-space: nowrap; }
+#frug { width: 100%; margin: 0; accent-color: var(--sales); }
+.frug-scale { display: flex; justify-content: space-between; font-size: 10.5px; color: var(--muted); }
+#spend-range { width: 100%; accent-color: var(--sales); }
+@media (max-width: 560px) { .frug { margin-left: 0; width: 100%; } }
+.money .per { font-family: var(--font-body); font-size: 13px; color: var(--muted); margin-left: 6px; white-space: nowrap; }
+
+.wh-select { font: inherit; font-size: 13px; color: var(--ink); background: var(--surface); border: 1px solid var(--rule); border-radius: 6px; padding: 3px 6px; }
+.wh-row { min-height: 0; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; font-size: 12px; color: var(--muted); }
+
+/* Detail ledger */
+.detail { background: var(--surface); border: 1px solid var(--rule); border-radius: 10px; padding: 18px; display: grid; gap: 16px; }
+.detail h3 { margin: 0; font-family: var(--font-display); font-stretch: 85%; font-size: 22px; }
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 14px 18px; }
+.stat { display: grid; gap: 2px; border-top: 1px solid var(--rule); padding-top: 8px; }
+.stat span { font-size: 11.5px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.stat b { font-family: var(--font-num); font-size: 19px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.ledgers { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px; }
+.ledger { min-width: 0; overflow-x: auto; }
+.ledger h4 { margin: 0 0 6px; font-size: 13px; display: flex; align-items: center; }
+table { border-collapse: collapse; width: 100%; font-family: var(--font-num); font-size: 12.5px; font-variant-numeric: tabular-nums; }
+th { text-align: left; font-family: var(--font-body); font-size: 11px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); font-weight: 600; padding: 4px 6px; border-bottom: 1px solid var(--rule); }
+td { padding: 5px 6px; border-bottom: 1px solid var(--rule); white-space: nowrap; }
+td.r, th.r { text-align: right; }
+tr.idle td { color: var(--muted); opacity: .6; }
+tr.top td { font-weight: 600; }
+tr.top td:first-child { box-shadow: inset 3px 0 0 var(--prov); }
+tfoot td { border-bottom: 0; font-weight: 600; }
+tfoot tr.sub td { font-weight: 400; color: var(--muted); white-space: normal; }
+tfoot tr:last-child td { border-top: 1px solid var(--ink); }
+.note { font-size: 13px; color: var(--muted); margin: 0; }
+
+footer { display: grid; gap: 8px; font-size: 13px; color: var(--muted); border-top: 1px solid var(--rule); padding-top: 16px; }
+footer p { margin: 0; max-width: 75ch; }
+footer a { color: var(--focus); }
+
+@media (max-width: 560px) {
+  #income { font-size: 26px; width: 8.6ch; }
+  .control { padding: 16px 14px; }
+  /* People on the left, home province on the right, on one row */
+  .top-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: start; gap: 10px; }
+  .home-sel { margin-left: 0; }
+  .home-sel .lbl { text-align: right; }
+  .person { min-width: 92px; padding: 6px 10px; }
+  .person.add small { display: none; }
+  .person.add { align-content: center; }
+  /* Income and deductions side by side, the income slider right under them, then the switch */
+  .control-row { gap: 14px 16px; }
+  .ded { flex: 1 1 110px; min-width: 0; }
+  .ded-row { gap: 0 10px; }
+  #max-rrsp { padding-left: 0; font-size: 11.5px; }
+  .control > .control-row { align-items: start; }
+  .inc-slider { order: 1; }
+  .switch-wrap { order: 2; }
+  .lbl { letter-spacing: .05em; }
+  /* Comparison table fits the screen instead of scrolling */
+  table.cmp { min-width: 0; font-size: 12px; }
+  table.cmp td, table.cmp th { padding: 5px 4px; }
+  table.cmp th { font-size: 10px; letter-spacing: .03em; }
+  #dest { max-width: 100%; }
+  .invest-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+  .wh-row { font-size: 11px; }
+}
+/* Chart: all 13 columns fit on a phone; labels drop the % sign and shrink */
+@media (max-width: 520px) {
+  .cc { min-width: 0; grid-template-columns: 30px minmax(0, 1fr); column-gap: 4px; --plot-h: 240px; }
+  .cc-cols { gap: 2px; }
+  .cc-y { font-size: 10px; }
+  .stack { width: min(72%, 30px); }
+  .ben { width: calc(min(72%, 30px) + 4px); }
+  .cv { font-size: 9.5px; letter-spacing: -.02em; }
+  .cm { font-size: 9px; letter-spacing: -.02em; }
+  .code { font-size: 12px; }
+  .tag { font-size: 7px; letter-spacing: 0; }
+  .col { padding-bottom: 4px; }
+}
+@media (max-width: 400px) {
+  .cc { grid-template-columns: 26px minmax(0, 1fr); column-gap: 3px; }
+  .cc-cols { gap: 1px; }
+  .cv { font-size: 8.5px; letter-spacing: -.04em; }
+  .cm { font-size: 8px; letter-spacing: -.04em; }
+  .code { font-size: 11px; }
+  .cc-y { font-size: 9px; }
+  .cc-y .key { font-size: 7.5px; }
+}
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">2026 tax year · federal + provincial brackets</div>
+    <h1>Where does the same paycheque get taxed most?</h1>
+    <p class="lede">Pick your home province, enter your household's income and spending, and see the blended tax rate in every province and territory. The comparison below shows what moving to another province would change.</p>
+  </header>
+
+  <section class="control" aria-label="Income">
+    <div class="top-row">
+      <div class="field home-sel">
+        <label class="lbl" for="home">Home province</label>
+        <select id="home" class="prov-select"></select>
+      </div>
+      <div class="people" id="people" role="group" aria-label="Household members"></div>
+    </div>
+    <div class="control-row">
+      <div class="field">
+        <div class="lbl-row"><label class="lbl" for="income" id="income-label">Employment &amp; other income</label><button type="button" class="info" data-tip="Salary, wages, self-employment income, pensions, RRSP/RRIF withdrawals, interest, and any other income taxed at full rates. Enter it before deductions, and put RRSP contributions and other deductions in the Deductions box." aria-label="About employment and other income">i</button></div>
+        <div class="money"><span>$</span><input id="income" inputmode="numeric" autocomplete="off" value="75,000"></div>
+      </div>
+      <div class="field ded">
+        <div class="lbl-row"><label class="lbl" for="ded" id="ded-label">Deductions</label><button type="button" class="info" data-tip="Amounts subtracted from your income before tax is worked out: RRSP and FHSA contributions, union and professional dues, childcare expenses, deductible support payments, moving expenses and similar. Max RRSP fills in 18% of employment income, up to the 2026 limit of $33,810. Your actual room is 18% of last year's earned income, less any pension adjustment, plus unused room carried forward; it's on your notice of assessment." aria-label="About deductions">i</button></div>
+        <div class="ded-row">
+          <div class="money md"><span>$</span><input id="ded" inputmode="numeric" autocomplete="off" value="0"></div>
+          <button type="button" class="linkbtn" id="max-rrsp">Max RRSP</button>
+        </div>
+      </div>
+      <div class="switch-wrap">
+      <label class="switch" for="bpa-toggle">
+        <input type="checkbox" id="bpa-toggle" checked>
+        <span class="knob" aria-hidden="true"></span>
+        <span class="switch-text"><b>Basic personal amounts</b><small id="bpa-state">Credits applied</small></span>
+      </label>
+      <button type="button" class="info" data-tip="Every taxpayer gets a non-refundable credit on a basic amount of income: $16,452 federally in 2026, plus a provincial amount from $11,932 in Nova Scotia to $22,769 in Alberta. Switch off to see bracket rates alone." aria-label="About basic personal amounts">i</button>
+      </div>
+      <div class="inc-slider">
+        <input type="range" id="slider" min="0" max="250000" step="1000" value="75000" aria-label="Employment and other income slider">
+        <div class="scale" data-for="slider" data-ticks="0,50000,100000,150000,200000,250000" aria-hidden="true"></div>
+      </div>
+    </div>
+    <div class="spend" id="spend-panel">
+      <div class="control-row">
+        <div class="field">
+          <div class="lbl-row"><label class="lbl" for="spend">Taxable household spending</label><button type="button" class="info" data-tip="Your household's monthly spending on things sales tax applies to, before tax. A quick estimate: your average monthly credit card and debit spending, minus groceries, prescriptions and healthcare. Usually exempt across Canada: basic groceries, rent and mortgage payments, prescription drugs, most medical and dental care, insurance premiums and banking fees, childcare, tuition, and public transit. Usually taxed: restaurant meals and takeout, alcohol, clothing, electronics, furniture and household goods, gas, utilities, phone and internet, vehicles and repairs, travel, and most services. 2026 rates run from 5% GST in Alberta and the territories to 15% HST in New Brunswick, Newfoundland and Labrador and PEI. The starting amount is a rough estimate for a household with the adults and children set here; adjust it to match your own spending." aria-label="About household spending">i</button></div>
+          <div class="money md"><span>$</span><input id="spend" inputmode="numeric" autocomplete="off" value="2,000"><span class="per">a month</span></div>
+        </div>
+        <div class="hh-sl">
+          <div class="lbl-row"><label class="lbl" for="adults">Adults</label><button type="button" class="info" data-tip="Adults living in the household. Every adult adds to the spending estimate. A second adult with no income entered is treated as a spouse with no income, so the spouse amount applies; use Add partner above to enter a second income." aria-label="About adults in household">i</button><span class="sl-val" id="adults-val">1</span></div>
+          <input type="range" id="adults" min="1" max="4" step="1" value="1">
+          <div class="sl-scale" aria-hidden="true"><span>1</span><span>2</span><span>3</span><span>4</span></div>
+        </div>
+        <div class="hh-sl kids">
+          <div class="lbl-row"><label class="lbl" for="kids">Children</label><button type="button" class="info" data-tip="Children under 18. They raise the spending estimate and add child benefits: the Canada Child Benefit plus your province's benefit (every province and territory with one), using July 2026 to June 2027 amounts. Benefits are netted off the tax shown. Once you have at least one child, drag the small slate handle on the same track to say how many are under 6, since they get a higher CCB." aria-label="About children in household">i</button><span class="sl-val" id="kids-val">0</span><span class="u6-val" id="u6-val" hidden></span></div>
+          <div class="dual" id="kids-dual">
+            <div class="dual-track" id="kids-track" aria-hidden="true"></div>
+            <input type="range" id="kids" min="0" max="6" step="1" value="0" aria-label="Number of children">
+            <input type="range" id="u6" min="0" max="6" step="1" value="0" aria-label="How many of the children are under 6" title="Children under 6" hidden>
+          </div>
+          <div class="sl-scale" aria-hidden="true"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span></div>
+        </div>
+        <div class="frug">
+          <div class="lbl-row"><label class="lbl" for="frug">Frugality</label><button type="button" class="info" data-tip="Scales your monthly spending down or up: slide left to spend up to 50% less, right to spend up to 50% more. The spending amount and slider update to match, and typing an amount moves this slider to show how it compares with the estimate for your household size. Double-click to reset to typical." aria-label="About frugality">i</button><span class="frug-val" id="frug-val">Typical</span></div>
+          <input type="range" id="frug" min="-50" max="50" step="1" value="0" aria-label="Frugality: percent change to monthly spending" title="Double-click to reset to typical">
+          <div class="frug-scale" aria-hidden="true"><span>Frugal</span><span>Typical</span><span>Lavish</span></div>
+        </div>
+      </div>
+      <div>
+        <input type="range" id="spend-range" min="0" max="10000" step="100" value="2000" aria-label="Monthly household spending slider">
+        <div class="scale" data-for="spend-range" data-ticks="0,2000,4000,6000,8000,10000" aria-hidden="true"></div>
+      </div>
+    </div>
+    <details class="invest" id="prop-panel">
+      <summary><b>Property tax</b><button type="button" class="info" data-tip="Annual property tax = home value × municipal rate. Each province uses the typical 2026 residential rate in its largest city, from 0.30% in Vancouver to 1.67% in Charlottetown; territorial rates are rough estimates. Editing the rate changes your home province only. The same home value is used everywhere, though home prices differ a lot between cities. Renters pay property tax indirectly through rent; leave this at $0 if you rent." aria-label="About property tax">i</button><span>Optional · <span id="prop-sum">not included</span></span></summary>
+      <div class="prop-grid">
+        <div class="field">
+          <div class="lbl-row"><label class="lbl" for="hv">Home value</label></div>
+          <div class="money md"><span>$</span><input id="hv" inputmode="numeric" autocomplete="off" value="0"></div>
+          <input type="range" id="hv-range" class="inv-range" min="0" max="2500000" step="10000" value="0" aria-label="Home value slider">
+          <div class="scale" data-for="hv-range" data-ticks="0,500000,1000000,1500000,2000000,2500000" aria-hidden="true"></div>
+        </div>
+        <div class="field">
+          <div class="lbl-row"><label class="lbl" for="pr-rate">Municipal rate</label></div>
+          <div class="money md"><input id="pr-rate" inputmode="decimal" autocomplete="off" value="0.76"><span class="per">% a year</span></div>
+          <div class="pr-note"><span id="pr-note">Toronto</span> <button type="button" class="linkbtn" id="pr-reset" hidden>Reset</button></div>
+        </div>
+      </div>
+    </details>
+    <details class="invest" id="cred-panel">
+      <summary><b>Refundable credits</b><button type="button" class="info" data-tip="Credits paid to lower- and modest-income households, worked out from the income and household above: the Canada Groceries and Essentials Benefit (formerly the GST/HST credit), the Canada Workers Benefit, and your province's credits, such as the Ontario Trillium Benefit, Quebec's solidarity credit and work premium, and the low-income credits in Saskatchewan, New Brunswick, Nova Scotia, PEI and Newfoundland and Labrador. Amounts are for July 2026 to June 2027 (the 2026 tax year for the Workers Benefit). They're netted off the tax shown, together with child benefits." aria-label="About refundable credits">i</button><span id="cred-sum">none at this income</span></summary>
+      <div class="cred-body">
+        <div class="cred-top">
+          <label class="switch" for="cred-toggle">
+            <input type="checkbox" id="cred-toggle" checked>
+            <span class="knob" aria-hidden="true"></span>
+            <span class="switch-text"><b>Include in totals</b><small id="cred-state">Netted off tax</small></span>
+          </label>
+          <div class="field" id="rent-field" hidden>
+            <div class="lbl-row"><label class="lbl" for="rent">Rent</label><button type="button" class="info" data-tip="Monthly rent, used only for credits based on rent: Ontario's energy and property tax credit, B.C.'s renter's tax credit and Manitoba's renters credit. Leave it at $0 if you own; homeowners' credits use the property tax above." aria-label="About rent">i</button></div>
+            <div class="money md"><span>$</span><input id="rent" inputmode="numeric" autocomplete="off" value="0"><span class="per">a month</span></div>
+          </div>
+        </div>
+        <table class="cred-list" id="cred-list"></table>
+      </div>
+    </details>
+    <details class="invest" id="invest">
+      <summary><b id="invest-title">Investment income</b><button type="button" class="info" data-tip="Income from investments held in a non-registered (taxable) account. Income inside a TFSA isn't taxed at all, and RRSP/RRIF withdrawals belong under employment &amp; other income. CRA taxes investment income to whoever supplied the money, regardless of whose name is on the account." aria-label="About investment income">i</button><span>Non-registered accounts · <span id="invest-sum">none added</span></span></summary>
+      <div class="invest-grid">
+        <div class="field">
+          <div class="lbl-row"><label class="lbl" for="cg">Net capital gains / losses</label><button type="button" class="info" data-tip="Profit from selling investments for more than you paid (their adjusted cost base), minus losses on anything sold at a loss during the year. Only 50% of a net gain is taxable. A net loss doesn't reduce other income this year, but it can be carried back 3 years or forward indefinitely against future gains. Double-click the amount or slider to reset to 0." aria-label="About net capital gains and losses">i</button></div>
+          <div class="money sm"><span>$</span><input id="cg" class="inv" inputmode="text" autocomplete="off" value="0" title="Double-click to reset to 0"></div>
+          <div class="cg-wrap">
+            <input type="range" id="cg-range" class="inv-range" data-k="cg" min="-50000" max="50000" step="500" value="0" aria-label="Net capital gains or losses slider" title="Double-click to reset to 0">
+          </div>
+          <div class="scale" data-for="cg-range" data-ticks="-50000,~-25000,0,~25000,50000" data-signed aria-hidden="true"></div>
+        </div>
+        <div class="field">
+          <div class="lbl-row"><label class="lbl" for="ed">Eligible dividends</label><button type="button" class="info" data-tip="Dividends from Canadian public companies, and from private corporations paying out income taxed at the general corporate rate. Most dividends from Canadian stocks and Canadian equity ETFs are eligible. They're grossed up by 38% and earn the enhanced dividend tax credit, so they're taxed well below salary." aria-label="About eligible dividends">i</button></div>
+          <div class="money sm"><span>$</span><input id="ed" class="inv" inputmode="numeric" autocomplete="off" value="0"></div>
+          <input type="range" id="ed-range" class="inv-range" data-k="ed" min="0" max="50000" step="250" value="0" aria-label="Eligible dividends slider">
+          <div class="scale" data-for="ed-range" data-ticks="0,~12500,25000,~37500,50000" aria-hidden="true"></div>
+        </div>
+        <div class="field">
+          <div class="lbl-row"><label class="lbl" for="nd">Non-eligible dividends</label><button type="button" class="info" data-tip="Dividends paid from corporate income taxed at the small business rate, usually from a small private corporation you own. They're grossed up by 15% and earn a smaller dividend tax credit than eligible dividends." aria-label="About non-eligible dividends">i</button></div>
+          <div class="money sm"><span>$</span><input id="nd" class="inv" inputmode="numeric" autocomplete="off" value="0"></div>
+          <input type="range" id="nd-range" class="inv-range" data-k="nd" min="0" max="50000" step="250" value="0" aria-label="Non-eligible dividends slider">
+          <div class="scale" data-for="nd-range" data-ticks="0,~12500,25000,~37500,50000" aria-hidden="true"></div>
+        </div>
+        <div class="field">
+          <div class="lbl-row"><label class="lbl" for="fd">Foreign dividends</label><button type="button" class="info" data-tip="Dividends from non-Canadian companies, such as U.S. stocks. They get no gross-up or dividend tax credit, so they're taxed like salary. The other country usually withholds tax first (15% for the U.S. under the tax treaty), which you mostly recover as a foreign tax credit." aria-label="About foreign dividends">i</button></div>
+          <div class="money sm"><span>$</span><input id="fd" class="inv" inputmode="numeric" autocomplete="off" value="0"></div>
+          <input type="range" id="fd-range" class="inv-range" data-k="fd" min="0" max="50000" step="250" value="0" aria-label="Foreign dividends slider">
+          <div class="scale" data-for="fd-range" data-ticks="0,~12500,25000,~37500,50000" aria-hidden="true"></div>
+          <div class="wh-row"><label for="wh">Tax withheld abroad</label>
+            <select id="wh" class="wh-select">
+              <option value="0">0%</option><option value="0.1">10%</option><option value="0.15" selected>15% (U.S. treaty)</option><option value="0.25">25%</option><option value="0.3">30%</option>
+            </select></div>
+        </div>
+      </div>
+    </details>
+  </section>
+
+  <section aria-label="Blended rate by province">
+    <div class="chart-head">
+      <div class="lbl-row"><h2 id="chart-title">Blended rate at $100,000</h2><button type="button" class="info" data-tip="Each column stacks income tax, payroll contributions (CPP/QPP, EI/QPIP and health premiums), sales tax and property tax. Child benefits and refundable credits are netted off: the striped top of a column is the part they pay back, and the figure above it is the net rate, net tax divided by total income. The smaller figure below is the marginal rate: what the household keeps losing on the next dollar the selected person earns, including payroll contributions and benefit clawbacks. Switch to $ tax to compare dollar amounts instead. Hover over or tap any part of a column for details. Your home province and the destination you're comparing are highlighted." aria-label="About blended and marginal rates">i</button></div>
+      <div class="legend">
+        <span><i class="sw" style="background:var(--fed)"></i>Federal</span>
+        <span><i class="sw" style="background:var(--prov)"></i>Provincial / territorial</span>
+        <span id="legend-wh" hidden><i class="sw" style="background:var(--wh)"></i>Foreign withholding</span>
+        <span><i class="sw" style="background:var(--pay)"></i>CPP/QPP, EI &amp; health</span>
+        <span id="legend-sales" hidden><i class="sw" style="background:var(--sales)"></i>Sales tax</span>
+        <span id="legend-prop" hidden><i class="sw" style="background:var(--propc)"></i>Property tax</span>
+        <span id="legend-ben" hidden><i class="sw sw-ben"></i>Benefits &amp; credits</span>
+        <div class="seg" role="group" aria-label="Show as">
+          <button id="m-pct" aria-pressed="true">% of income</button>
+          <button id="m-usd" aria-pressed="false">$ tax</button>
+        </div>
+        <div class="seg" role="group" aria-label="Sort">
+          <button id="sort-rate" aria-pressed="true">Lowest first</button>
+          <button id="sort-geo" aria-pressed="false">West → east</button>
+        </div>
+      </div>
+    </div>
+    <div class="cc-scroll">
+      <div class="cc">
+        <div class="cc-y" id="cc-y" aria-hidden="true"></div>
+        <div class="cc-plot">
+          <div class="cc-grid" id="cc-grid" aria-hidden="true"></div>
+          <div class="cc-cols" id="cols" role="list"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="detail" id="detail" aria-label="Home and destination comparison">
+    <div class="cmp-head">
+      <div class="eyebrow" id="cmp-eyebrow">Compare</div>
+      <div class="cmp-sel">
+        <span class="cmp-home" id="cmp-home">Ontario</span>
+        <span class="cmp-vs">vs</span>
+        <label class="sr-only" for="dest">Destination province</label>
+        <select id="dest" class="prov-select"></select>
+      </div>
+    </div>
+    <div id="detail-body"></div>
+  </section>
+  <div id="tip" class="tip" role="tooltip" hidden></div>
+
+  <footer>
+    <p><b>What's included.</b> Each bracket rate is applied to the portion of taxable income in that bracket, federal plus provincial. With basic personal amounts on, each government's amount is credited at its lowest bracket rate (federal: 14% of $16,452), and a credit can reduce tax to zero but not below. The blended rate is total tax ÷ actual income received; the marginal rate is the tax on the next dollar, including credit phase-outs.</p>
+    <p><b>Deductions.</b> Deductions such as RRSP contributions are subtracted from total income to get taxable income. The Max RRSP link uses 18% of the employment income entered, up to the 2026 dollar limit of $33,810; your real limit is based on last year's earned income and any unused room, as shown on your notice of assessment.</p>
+    <p><b>Phase-outs.</b> The federal amount (and Yukon's, which mirrors it) drops from $16,452 to $14,829 between $181,440 and $258,482. Manitoba's $15,780 phases out to zero between $200,000 and $400,000. Phase-outs are based on net income.</p>
+    <p><b>Income tax details.</b> Each person gets the Canada employment amount ($1,501, also in Yukon) and credits for base CPP/QPP contributions and EI/QPIP premiums, federally and in every province except Quebec, which instead allows a deduction for workers (6% of employment income, up to $1,450). Enhanced CPP/QPP contributions are deducted from income. Ontario adds its surtax (20% of Ontario tax over $5,818 and 36% over $7,446), the Ontario tax reduction ($300 plus $555 per child; the child amount is 2025's $544 indexed by 2%) and the LIFT credit (up to $875). BC applies its tax reduction (up to $690, phased out between $25,570 and $44,952 of net income). Low-income tax reductions are applied in Newfoundland and Labrador, New Brunswick, PEI and Nova Scotia (New Brunswick's and Newfoundland and Labrador's family threshold are 2025 figures indexed by 2%). Saskatchewan's child amount ($8,358 per child) and the Nova Scotia and Nunavut credits for children under 6 ($1,200 per child) are claimed by the parent who claims the children. A single parent claims the eligible dependant amount; in Quebec a single adult gets the amount for a person living alone. Manitoba's brackets are frozen at $47,000 and $100,000; CRA's 2026 rate page shows indexed thresholds, but Manitoba's 2025 and 2026 budgets keep them unindexed.</p>
+    <p><b>Payroll.</b> CPP: 4.95% base plus 1% enhanced on earnings between $3,500 and $74,600, and 4% on earnings up to $85,000. Quebec's QPP is 5.30% base plus the same enhanced rates. EI: 1.63% of earnings up to $68,900, or 1.30% in Quebec, where QPIP adds 0.43% up to $103,000. Ontario adds its Health Premium (up to $900, based on taxable income), and the Northwest Territories and Nunavut withhold a 2% payroll tax. Employment and other income is treated as employment income.</p>
+    <p><b>Child benefits.</b> July 2026 to June 2027 amounts, applied to current-year income: the Canada Child Benefit ($8,157 per child under 6 or $6,883 aged 6–17, reduced above $38,237 of family net income), the Ontario Child Benefit (up to $1,760 per child), Quebec's family allowance ($3,068 to $1,221 per child, plus the $127 school supplies supplement, applied to children aged 6–17), the B.C. family benefit, the Alberta Child and Family Benefit, the Nova Scotia Child Benefit, the PEI Child Benefit, New Brunswick's Child Tax Benefit and Working Income Supplement, and the Yukon Child Benefit, all from CRA's T4114 booklet for July 2026 to June 2027 or the province's own rules. For the NWT, Newfoundland and Labrador and Nunavut benefits the amounts and the income where the reduction starts are official, but the reduction rate isn't published: the NWT and Newfoundland and Labrador benefits are tapered in a straight line to the published end points ($80,000 and $38,193), and Nunavut's uses the 3% / 5% rates in its 2026 Bill 4. These approximations only affect families below about $80,000. Saskatchewan has no child benefit; Manitoba's (for incomes under about $15,000), Newfoundland and Labrador's prenatal–early childhood nutrition supplement and Nunavut's territorial workers' supplement aren't modelled, and neither are childcare costs or credits.</p>
+    <p><b>Refundable credits.</b> Counted when "Include in totals" is on, for July 2026 to June 2027: the Canada Groceries and Essentials Benefit (the renamed GST/HST credit: $445 per adult, $234 per child and a single supplement of up to $234, less 5% of family net income over $46,432); the Canada Workers Benefit basic amount for 2026 ($1,665 single or $2,869 family, 27% of working income over $3,000, less 15% of net income over $27,392 or $31,251; Alberta, Nunavut and Quebec use their own versions, and these 2026 values are CRA's 2025 figures indexed by 2% until CRA publishes them); the Ontario sales tax credit and Ontario energy and property tax credit; Quebec's solidarity tax credit and work premium; B.C.'s renter's tax credit; Manitoba's renters and homeowners affordability credits; the Saskatchewan low-income tax credit; the New Brunswick HST credit; the Nova Scotia affordable living tax credit; the PEI essentials benefit; and the Newfoundland and Labrador income supplement. Estimates: Saskatchewan's reduction rate (3.03%) is worked out from CRA's published start and end points, Manitoba's renters credit is taken at its $625 maximum, and Quebec's solidarity credit gives the living-alone amount to any household with one adult. Not modelled: the Workers Benefit disability supplement, senior-specific credits, the Northern Ontario energy credit and Quebec's northern-village supplement.</p>
+    <p><b>Property tax.</b> Home value × the typical residential rate in each province's largest city for 2026: Vancouver 0.30%, Calgary 0.66%, Saskatoon 1.34%, Winnipeg 1.38%, Toronto 0.76%, Montreal 0.90% (school tax may be extra), Moncton 1.36%, Halifax 0.61%, Charlottetown 1.67% and St. John's 0.91%. Whitehorse, Yellowknife and Iqaluit use a rough 1.0% estimate. Land transfer tax is a one-time cost and isn't included.</p>
+    <p><b>What's not included.</b> Age, pension, disability, medical, donation and other personal credits; pension income splitting; fuel, excise and corporate taxes. Newfoundland and Labrador's amount reflects its April 2026 budget increase to $13,094, effective January 1, 2026.</p>
+    <p><b>Investment income.</b> For investments held outside a TFSA or RRSP. Enter capital gains net of the year's capital losses; half of a net gain is added to taxable income. A net capital loss adds nothing to taxable income and can't reduce tax on salary or dividends, but it does lower the actual income the blended rate is measured against. The loss can be carried back three years or forward indefinitely against future capital gains. Eligible dividends are grossed up by 38% and non-eligible dividends by 15%, then federal and provincial dividend tax credits are applied at each government's 2026 rate. The blended rate divides total tax by actual cash income (salary plus the full gain and dividends received). Foreign dividends get no gross-up or dividend tax credit, so they're taxed like salary. Tax withheld abroad is counted in the total and credited back as a foreign tax credit, federally first and then provincially, up to the Canadian tax on that income; any withholding above that limit stays as extra tax. Grossed-up dividends count as income for the personal amount phase-outs. Not modelled: deducting foreign withholding above 15%, the alternative minimum tax (which can apply with large gains or dividends),. Income inside a TFSA is not taxed; RRSP withdrawals are taxed as ordinary income.</p>
+    <p><b>Defaults.</b> Each person starts at $75,000 of employment income. Household spending starts at the one-person estimate and moves to the two-person estimate when you add a partner.</p>
+    <p><b>Spending by household size.</b> The starting spending amount is a rough estimate for the number of adults plus children, rounded to the nearest $100: $2,000 for one person, $2,800 for two, $3,500 for three, $4,000 for four, $4,500 for five and $4,900 for six. It starts from average Ontario household spending of $81,975 in 2023 (about 2.5 people), minus shelter ($29,312), groceries (about 70% of food spending), health care, and other mostly exempt costs such as insurance, childcare and tuition. That leaves about $38,000 a year, or $3,200 a month. This is scaled to each household size by the square root of the number of people, the same adjustment Statistics Canada uses to compare incomes across household sizes, because a second person adds less than a first. For context, Statistics Canada's 2024 Canadian Income Survey puts median after-tax income at $75,500 per family or single person, and its 2023 Survey of Household Spending puts average Ontario household spending at $81,975, of which $29,312 is shelter. The Fraser Institute estimates the average Canadian family paid $6,972 in sales taxes in 2025, a figure that also counts sales tax built into business costs.</p>
+    <p><b>Sales tax.</b> Annual sales tax is monthly taxable spending, adjusted by the frugality setting, × 12 × the province's combined rate. PST, QST and Manitoba's RST are charged on the price before GST, so the rates simply add. The rate applies to the whole amount entered; provinces with their own PST exempt some extra items, and Ontario still charges 8% RST on some insurance, neither of which is modelled. Sales tax is shown as a share of household income alongside income tax.</p>
+    <p><b>Household.</b> Canada has no joint filing, so each person is taxed on their own income and the household figures add the two together. If the second person is a spouse or common-law partner and basic personal amounts are on, the higher-income partner claims the spouse amount for the other: each government's spouse amount is reduced by the lower earner's net income (above a small threshold in some provinces) and credited at the lowest bracket rate. Quebec has no provincial spouse amount; instead the lower earner's unused basic credit is transferred to their partner. Marginal rates are household rates: the change in the household's total tax when the selected person earns one more dollar.</p>
+    <p><b>Quebec.</b> CRA's page refers Quebec to Revenu Québec, so its brackets come from Revenu Québec's 2026 rates. Quebec residents' federal tax is reduced by the 16.5% Quebec abatement, applied here.</p>
+    <p>Sources: <a href="https://www.canada.ca/en/revenue-agency/services/tax/individuals/tax-rates-brackets/current-year.html" target="_blank" rel="noopener">CRA, Current year tax rates and income brackets (2026)</a> · <a href="https://www.revenuquebec.ca/en/businesses/source-deductions-and-employer-contributions/employers-principal-changes-for-2026/" target="_blank" rel="noopener">Revenu Québec, Principal Changes for 2026</a>. Dividend tax credit rates: <a href="https://taxtips.ca/dtc/eligible-dividends/eligible-dividend-tax-credit-rates.htm" target="_blank" rel="noopener">eligible</a> and <a href="https://www.taxtips.ca/dtc/non-eligible-dividend-tax-credit.htm" target="_blank" rel="noopener">non-eligible</a> (TaxTips.ca). Basic personal amounts: <a href="https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jul/t4127-jul-payroll-deductions-formulas.html" target="_blank" rel="noopener">CRA, Payroll Deductions Formulas (July 2026)</a>, with federal, Yukon and Manitoba phase-out rules from <a href="https://www.taxtips.ca/taxrates/canada.htm" target="_blank" rel="noopener">TaxTips.ca</a>. Median income: <a href="https://www150.statcan.gc.ca/n1/daily-quotidien/260429/dq260429a-eng.htm" target="_blank" rel="noopener">Statistics Canada, Canadian Income Survey 2024</a>. Household spending: <a href="https://www150.statcan.gc.ca/n1/daily-quotidien/250521/dq250521a-eng.htm" target="_blank" rel="noopener">Statistics Canada, Survey of Household Spending 2023</a> and <a href="https://www.fraserinstitute.org/studies/taxes-versus-necessities-life-canadian-consumer-tax-index-2026-edition" target="_blank" rel="noopener">Fraser Institute, Canadian Consumer Tax Index 2026</a>. Sales tax rates: <a href="https://www.taxtips.ca/salestaxes/sales-tax-rates-2026.htm" target="_blank" rel="noopener">TaxTips.ca, 2026 sales tax rates</a>. RRSP limit: <a href="https://www.fidelity.ca/en/insights/articles/rrsp-contribution-limit/" target="_blank" rel="noopener">Fidelity, 2026 RRSP contribution limit</a>. Payroll: <a href="https://www.canajunfinances.com/2025/11/27/cpp-cpp2-and-ei-for-2026" target="_blank" rel="noopener">CPP and EI for 2026</a>, <a href="https://www.canada.ca/en/employment-social-development/news/2025/09/canada-employment-insurance-commission-sets-the-2026-employment-insurance-premium-rate.html" target="_blank" rel="noopener">ESDC, 2026 EI premium rate</a>, <a href="https://www.retraitequebec.gouv.qc.ca/en/landing/indexation/" target="_blank" rel="noopener">Retraite Québec, 2026 key data</a>, <a href="https://www.fin.gov.nt.ca/en/services/payroll-tax/payroll-tax-employees" target="_blank" rel="noopener">GNWT payroll tax</a>. Ontario surtax: <a href="https://www.rcgt.com/contentassets/5142f7cf936d42d7aa7666314c21ccd1/individual_taxation_ontario_2026.pdf" target="_blank" rel="noopener">RCGT, Individual taxation Ontario 2026</a>; Ontario tax reduction and LIFT: <a href="https://www.budget.ontario.ca/2025/fallstatement/provisions.html" target="_blank" rel="noopener">Ontario 2025 Fall Statement</a>. Child benefits: <a href="https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-child-benefit-overview/canada-child-benefit-we-calculate-your-ccb.html" target="_blank" rel="noopener">CRA, How we calculate your CCB</a>, <a href="https://www2.gov.bc.ca/gov/content/family-social-supports/affordability/family-benefit" target="_blank" rel="noopener">B.C. family benefit</a>, <a href="https://www.alberta.ca/alberta-child-and-family-benefit" target="_blank" rel="noopener">Alberta Child and Family Benefit</a>, <a href="https://cffp.recherche.usherbrooke.ca/outils-ressources/guide-mesures-fiscales/allocation-famille/" target="_blank" rel="noopener">CFFP, Allocation famille</a>, <a href="https://lifemoney.ca/blog/ontario-child-benefit-2026-maximum" target="_blank" rel="noopener">Ontario Child Benefit 2026</a>, <a href="https://assembly.nu.ca/sites/default/files/2026-05/Bill_4_AATA_Income_Tax_Act_EF.pdf" target="_blank" rel="noopener">Nunavut Bill 4</a>, <a href="https://www.canada.ca/en/revenue-agency/services/forms-publications/publications/t4114/canada-child-benefit.html" target="_blank" rel="noopener">CRA, T4114 Canada Child Benefit (July 2026–June 2027)</a>, <a href="https://www2.gnb.ca/content/gnb/en/departments/finance/taxes/child_tax_benefit.html" target="_blank" rel="noopener">New Brunswick Child Tax Benefit</a>, <a href="https://yukon.ca/yukon-income-tax" target="_blank" rel="noopener">Yukon Child Benefit</a>, <a href="https://www.gov.nl.ca/sswb/policymanual/files/NL-Child-Benefit.pdf" target="_blank" rel="noopener">NL Child Benefit</a>. Low-income reductions and Manitoba brackets: <a href="https://assembly.nl.ca/Legislation/sr/Regulations/rc260018.htm" target="_blank" rel="noopener">NL regulation 2026</a>, <a href="https://www2.gnb.ca/content/gnb/en/departments/finance/taxes/personal.html" target="_blank" rel="noopener">NB Finance</a>, <a href="https://support.hrblock.ca/en-ca/Content/Other/NovaScotiaLowIncomeTaxReduction.htm" target="_blank" rel="noopener">NS low-income tax reduction</a>, <a href="https://taxnews.ey.com/news/2026-0727-canada-manitoba-budget-2026" target="_blank" rel="noopener">EY, Manitoba Budget 2026</a>. Refundable credits: <a href="https://www.canada.ca/en/revenue-agency/services/forms-publications/publications/rc4210/gst-hst-credit.html" target="_blank" rel="noopener">CRA, RC4210 Canada Groceries and Essentials Benefit</a>, <a href="https://www.richify.ai/ca/tools/cgeb-calculator" target="_blank" rel="noopener">CGEB parameters</a>, <a href="https://www.neobanc.com/articles/canada-workers-benefit-2026" target="_blank" rel="noopener">CWB 2026</a>, <a href="https://www.taxtips.ca/filing/canada-workers-benefit/cwb-2025.htm" target="_blank" rel="noopener">TaxTips CWB 2025</a>, <a href="https://www.taxtips.ca/filing/canada-workers-benefit/cwb-2025-quebec.htm" target="_blank" rel="noopener">CWB Quebec 2025</a>, <a href="https://www.canada.ca/content/dam/cra-arc/serv-info/benefits/ptc26_clc_mns-eng.pdf" target="_blank" rel="noopener">CRA OEPTC calculation sheet</a>, <a href="https://www.canada.ca/en/revenue-agency/services/child-family-benefits/provincial-territorial-programs/province-ontario.html" target="_blank" rel="noopener">CRA Ontario programs</a>, <a href="https://cdn-contenu.quebec.ca/cdn-contenu/adm/min/finances/publications-adm/parametres/AUTFR_RegimeImpot2026.pdf" target="_blank" rel="noopener">Finances Québec, paramètres 2026</a>, <a href="https://cffp.recherche.usherbrooke.ca/wp-content/uploads/2025/12/24_credit_prime_travail_2025_VF.pdf" target="_blank" rel="noopener">CFFP, prime au travail</a>, <a href="https://www2.gov.bc.ca/gov/content/taxes/income-taxes/personal/credits/renters-tax-credit" target="_blank" rel="noopener">B.C. renter's tax credit</a>, <a href="https://www.gov.mb.ca/finance/taxation/pubs/bulletins/2026budget.pdf" target="_blank" rel="noopener">Manitoba Budget 2026 bulletin</a>, <a href="https://www.gov.nl.ca/fin/tax-programs-incentives/personal/income-supplement/" target="_blank" rel="noopener">NL income supplement</a>, <a href="https://www.canada.ca/en/revenue-agency/services/child-family-benefits/provincial-territorial-programs/province-prince-edward-island.html" target="_blank" rel="noopener">CRA PEI programs</a>. Property tax: <a href="https://www.nesto.ca/mortgage-basics/property-taxes-canada-highest-to-lowest/" target="_blank" rel="noopener">nesto, Canada Property Tax Guide 2026</a>. Spouse amounts: <a href="https://assets.kpmg.com/content/dam/kpmgsites/ca/pdf/services/tax/personal-tables/ca-federal-and-provincial-territorial-non-refundable-tax-credit-rates-and-amounts-2026.pdf.coredownload.inline.pdf" target="_blank" rel="noopener">KPMG, Personal Tax Credits 2026</a>. Not tax advice.</p>
+  </footer>
+</div>
+
+<script>
+// [upper limit of bracket, rate]; Infinity = unlimited
+const FED = [[58523,.14],[117045,.205],[181440,.26],[258482,.29],[Infinity,.33]];
+const QC_ABATEMENT = 0.165;
+// Basic personal amounts (2026). Phased amounts shrink linearly from max to min across [from, to].
+const FED_BPA = {max:16452, min:14829, from:181440, to:258482};
+// Investment income (non-registered). Dividend tax credits are % of the grossed-up dividend: [eligible, non-eligible].
+const CG_INCLUSION = 0.5, GROSS_UP = {ed: 1.38, nd: 1.15};
+const DTC = { FED:[.150198,.090301],
+  AB:[.0812,.0218], BC:[.12,.0196], MB:[.08,.007835], NB:[.14,.0275], NL:[.063,.032], NS:[.0885,.015],
+  NT:[.115,.06], NU:[.0551,.0261], ON:[.10,.029863], PE:[.105,.013], QC:[.117,.0342], SK:[.11,.02519], YT:[.1202,.0067] };
+const P = [
+  {c:"BC", n:"British Columbia", bpa:13216, b:[[50363,.056],[100728,.077],[115648,.105],[140430,.1229],[190405,.147],[265545,.168],[Infinity,.205]]},
+  {c:"YT", n:"Yukon", bpa:FED_BPA, b:[[58523,.064],[117045,.09],[181440,.109],[500000,.128],[Infinity,.15]]},
+  {c:"AB", n:"Alberta", bpa:22769, b:[[61200,.08],[154259,.10],[185111,.12],[246813,.13],[370220,.14],[Infinity,.15]]},
+  {c:"NT", n:"Northwest Territories", bpa:18198, b:[[53003,.059],[106009,.086],[172346,.122],[Infinity,.1405]]},
+  {c:"SK", n:"Saskatchewan", bpa:20381, b:[[54532,.105],[155805,.125],[Infinity,.145]]},
+  {c:"MB", n:"Manitoba", bpa:{max:15780, min:0, from:200000, to:400000}, b:[[47000,.108],[100000,.1275],[Infinity,.174]]},
+  {c:"NU", n:"Nunavut", bpa:19659, b:[[55801,.04],[111602,.07],[181439,.09],[Infinity,.115]]},
+  {c:"ON", n:"Ontario", bpa:12989, b:[[53891,.0505],[107785,.0915],[150000,.1116],[220000,.1216],[Infinity,.1316]]},
+  {c:"QC", n:"Quebec", bpa:18952, b:[[54345,.14],[108680,.19],[132245,.24],[Infinity,.2575]], qc:true},
+  {c:"NB", n:"New Brunswick", bpa:13664, b:[[52333,.094],[104666,.14],[193861,.16],[Infinity,.195]]},
+  {c:"PE", n:"Prince Edward Island", bpa:15000, b:[[33928,.095],[65820,.1347],[106890,.166],[142520,.1762],[200000,.19],[Infinity,.20]]},
+  {c:"NS", n:"Nova Scotia", bpa:11932, b:[[30995,.0879],[61991,.1495],[97417,.1667],[157124,.175],[Infinity,.21]]},
+  {c:"NL", n:"Newfoundland and Labrador", bpa:13094, b:[[44678,.087],[89354,.145],[159528,.158],[223340,.178],[285319,.198],[570638,.208],[1141275,.213],[Infinity,.218]]},
+];
+function bpaAt(spec, inc) {
+  if (typeof spec === "number") return spec;
+  const t = Math.min(1, Math.max(0, (inc - spec.from) / (spec.to - spec.from)));
+  return spec.max - (spec.max - spec.min) * t;
+}
+P.forEach((p,i) => p.geo = i);
+
+function walk(brackets, inc) {
+  let lo = 0, tax = 0, marg = brackets[0][1];
+  const lines = brackets.map(([hi, r]) => {
+    const part = Math.max(0, Math.min(inc, hi) - lo);
+    const t = part * r;
+    if (inc > lo) marg = r;
+    const line = {lo, hi, r, part, t};
+    tax += t; lo = hi; return line;
+  });
+  return {tax, marg, lines};
+}
+
+// Spouse or common-law partner amounts (2026): amount = max − (partner's net income above thr).
+// The same amounts apply to the eligible dependant amount claimed by a single parent.
+// "fed" = harmonized with the federal amount (Yukon). Quebec transfers the partner's unused basic credit instead.
+const SPOUSE = { BC:{max:11317,thr:1132}, AB:{max:22769,thr:0}, SK:{max:20381,thr:2038}, MB:{max:9134,thr:0},
+  ON:{max:11029,thr:1103}, NB:{max:10709,thr:1072}, NS:{max:11932,thr:888}, PE:{max:12740,thr:1274},
+  NL:{max:9142,thr:915}, NT:{max:18198,thr:0}, NU:{max:19659,thr:0}, YT:"fed", QC:"transfer" };
+const KEYS = ["ord","cg","ed","nd","fd"];
+// 2026 sales tax: [rate, description]. PST/QST/RST apply to the pre-GST price, so rates add.
+const SALES = { AB:[.05,"5% GST"], BC:[.12,"5% GST + 7% PST"], MB:[.12,"5% GST + 7% RST"], SK:[.11,"5% GST + 6% PST"],
+  ON:[.13,"13% HST"], QC:[.14975,"5% GST + 9.975% QST"], NB:[.15,"15% HST"], NS:[.14,"14% HST"], PE:[.15,"15% HST"],
+  NL:[.15,"15% HST"], YT:[.05,"5% GST"], NT:[.05,"5% GST"], NU:[.05,"5% GST"] };
+const NOSP = {f: 0, p: 0};
+
+// ---------- Payroll (2026) ----------
+// CPP: 4.95% base + 1% first additional on earnings between $3,500 and $74,600; 4% second additional up to $85,000.
+// QPP (Quebec): 5.30% base + 1% first additional, same ceilings. Base contributions earn a credit; enhanced ones are deducted.
+const CPP = {exempt: 3500, ympe: 74600, yampe: 85000, base: 0.0495, enh1: 0.01, enh2: 0.04};
+const QPP = {exempt: 3500, ympe: 74600, yampe: 85000, base: 0.053, enh1: 0.01, enh2: 0.04};
+const EI = {max: 68900, rate: 0.0163, qcRate: 0.013};
+const QPIP = {max: 103000, rate: 0.0043};
+const CEA = 1501;                                   // Canada employment amount (federal; Yukon has its own)
+const QC_WORKER = {rate: 0.06, max: 1450};          // Quebec deduction for workers
+const TERR_PAYROLL = {NT: 0.02, NU: 0.02};          // 2% payroll tax withheld from employees
+// Ontario Health Premium (not indexed): [from, base, rate, cap]
+const OHP = [[200000, 750, .25, 900], [72000, 600, .25, 750], [48000, 450, .25, 600], [36000, 300, .06, 450], [20000, 0, .06, 300]];
+function ontarioHealthPremium(ti) {
+  for (const [from, base, rate, cap] of OHP) if (ti > from) return Math.min(cap, base + (ti - from) * rate);
+  return 0;
+}
+function payrollOf(p, x) {
+  const e = Math.max(0, x.ord), plan = p.qc ? QPP : CPP;
+  const pens = e > plan.exempt ? Math.min(e, plan.ympe) - plan.exempt : 0;
+  const base = pens * plan.base;
+  const enh = pens * plan.enh1 + Math.max(0, Math.min(e, plan.yampe) - plan.ympe) * plan.enh2;
+  const ei = Math.min(e, EI.max) * (p.qc ? EI.qcRate : EI.rate);
+  const qpip = p.qc ? Math.min(e, QPIP.max) * QPIP.rate : 0;
+  const terr = e * (TERR_PAYROLL[p.c] || 0);
+  return {base, enh, ei, qpip, terr};
+}
+// Net income: total income less deductions (RRSP etc.) and enhanced CPP/QPP contributions.
+// A net capital loss adds nothing and can't offset other income. Enhanced CPP and QPP rates are identical.
+function netOf(x) {
+  return Math.max(0, x.ord + Math.max(0, x.cg) * CG_INCLUSION + x.ed * GROSS_UP.ed + x.nd * GROSS_UP.nd + x.fd
+    - (x.ded || 0) - payrollOf({qc: false, c: ""}, x).enh);
+}
+
+// ---------- Child benefits (July 2026 – June 2027 amounts) ----------
+const CCB = {u6: 8157, o6: 6883, t1: 38237, t2: 82847,
+  r1: [0, .07, .135, .19, .23], fixed: [0, 3123, 6022, 8476, 10260], r2: [0, .032, .057, .08, .095]};
+function ccbOf(famNet, kids, under6) {   // under6 = how many of the children are under 6
+  if (!kids) return 0;
+  const n = Math.min(kids, 4), full = under6 * CCB.u6 + (kids - under6) * CCB.o6;
+  const red = famNet <= CCB.t1 ? 0 : famNet <= CCB.t2 ? CCB.r1[n] * (famNet - CCB.t1) : CCB.fixed[n] + CCB.r2[n] * (famNet - CCB.t2);
+  return Math.max(0, full - red);
+}
+const PROV_BENEFIT_NAME = {ON: "Ontario Child Benefit", QC: "Family allowance", BC: "B.C. family benefit",
+  AB: "Alberta Child and Family Benefit", NS: "Nova Scotia Child Benefit", PE: "PEI Child Benefit",
+  NB: "NB Child Tax Benefit", NL: "NL Child Benefit", YT: "Yukon Child Benefit", NT: "NWT Child Benefit", NU: "Nunavut Child Benefit"};
+// NWT annual amounts by number of children (index 1–4), plus each additional child
+const NWT_U6 = [0, 814.92, 1467, 1996.92, 2445], NWT_U6_MORE = 366.96;
+const NWT_O6 = [0, 651.96, 1173.96, 1596.96, 1956], NWT_O6_MORE = 292.92;
+// Linear phase-out between the published start and end incomes (used where the in-between rate isn't published)
+const taper = (amt, famNet, from, to) => amt * Math.max(0, Math.min(1, (to - famNet) / (to - from)));
+function provBenefitOf(c, famNet, famEmp, kids, single, kidsU6 = 0) {
+  if (!kids) return 0;
+  const over = t => Math.max(0, famNet - t);
+  switch (c) {
+    case "ON": return Math.max(0, 1760 * kids - 0.08 * over(26865));
+    case "QC": {
+      const mx = 3068 * kids + (single ? 1077 : 0), mn = 1221 * kids + (single ? 430 : 0);
+      return Math.max(mn, mx - 0.04 * over(single ? 44032 : 60398)) + 127 * (kids - kidsU6);   // + school supplies supplement
+    }
+    case "BC": {
+      const per = (i, a, b, c2) => i === 0 ? a : i === 1 ? b : c2;
+      let mx = 0, mn = 0;
+      for (let i = 0; i < kids; i++) { mx += per(i, 1750, 1100, 900); mn += per(i, 775, 750, 725); }
+      if (single) mx += 500;
+      return famNet <= 96562 ? Math.max(mn, mx - 0.04 * over(30176)) : Math.max(0, mn - 0.04 * over(96562));
+    }
+    case "AB": {
+      const n = Math.min(kids, 4) - 1;
+      const base = Math.max(0, [1529, 2293, 3057, 3821][n] - [.08, .12, .16, .20][n] * over(28116));
+      const work = Math.max(0, Math.min([782, 1494, 1920, 2061][n], 0.15 * Math.max(0, famEmp - 2760)) - 0.15 * over(47115));
+      return base + work;
+    }
+    // NS: $1,525 per child under $26,000; $26,000–$34,000: $1,525 for the first child and $762.50 for each other
+    case "NS": return famNet < 26000 ? 1525 * kids : famNet < 34000 ? 1525 + 762.5 * (kids - 1) : 0;
+    // NB Child Tax Benefit ($250/child, less 2.5% (one child) or 5% of income over $20,000)
+    // plus the NB Working Income Supplement (4% of earnings over $3,750, max $250, less 5% of income over $20,921)
+    case "NB": {
+      const ctb = Math.max(0, 250 * kids - (kids === 1 ? 0.025 : 0.05) * over(20000));
+      const wis = Math.max(0, Math.min(250, 0.04 * Math.max(0, famEmp - 3750)) - 0.05 * over(20921));
+      return ctb + wis;
+    }
+    // Yukon: $966/child, less 2.5% (one child) or 5% (more) of income over $35,000
+    case "YT": return Math.max(0, 966 * kids - (kids === 1 ? 0.025 : 0.05) * over(35000));
+    // NWT: amounts by family size and age; reduced above $30,000 and gone at $80,000 (straight-line taper assumed)
+    case "NT": {
+      const n = Math.min(kids, 4), extra = Math.max(0, kids - 4);
+      const u6 = NWT_U6[n] + extra * NWT_U6_MORE, o6 = NWT_O6[n] + extra * NWT_O6_MORE;
+      const amt = o6 + (u6 - o6) * kidsU6 / kids;   // blend for families with children of both ages
+      return famNet <= 30000 ? amt : taper(amt, famNet, 30000, 80000);
+    }
+    // NL: $1,888 / $2,002 / $2,150 / $2,310 for the 1st, 2nd, 3rd and each later child; full under $20,397 and
+    // nothing above $38,193 (straight-line taper assumed in between)
+    case "NL": {
+      let amt = 0;
+      for (let i = 0; i < kids; i++) amt += [1888, 2002, 2150][i] ?? 2310;
+      return famNet <= 20397 ? amt : taper(amt, famNet, 20397, 38193);
+    }
+    // Nunavut (Bill 4, from July 2026): $696/child, less 3% (one child) or 5% (more) of income over $22,065
+    case "NU": return Math.max(0, 696 * kids - (kids === 1 ? 0.03 : 0.05) * over(22065));
+    case "PE": return famNet < 45000 ? 410 * kids : famNet < 80000 ? 290 * kids : 0;
+    default: return 0;   // SK has no child benefit; Manitoba's is for very low incomes and isn't modelled
+  }
+}
+
+// ---------- Property tax: typical residential rate in each province's largest city (2026) ----------
+const PROP = { BC:[.0030,"Vancouver"], AB:[.0066,"Calgary"], SK:[.0134,"Saskatoon"], MB:[.0138,"Winnipeg"],
+  ON:[.0076,"Toronto"], QC:[.0090,"Montreal"], NB:[.0136,"Moncton"], NS:[.0061,"Halifax"], PE:[.0167,"Charlottetown"],
+  NL:[.0091,"St. John's"], YT:[.0100,"Whitehorse (est.)"], NT:[.0100,"Yellowknife (est.)"], NU:[.0100,"Iqaluit (est.)"] };
+const propRate = c => c === home && propOverride != null ? propOverride : PROP[c][0];
+
+// Provincial low-income tax reductions (2026; NB figures are 2025's indexed by 2%):
+// (net income, family net income, has spouse or eligible dependant, children) → reduction
+const LOW_INCOME = {
+  NL: (ni, fn, fam) => fam ? Math.max(0, 842 + 563 - 0.16 * Math.max(0, fn - 40905)) : Math.max(0, 842 - 0.16 * Math.max(0, ni - 24191)),
+  NB: (ni, fn, fam) => Math.max(0, 818 * (fam ? 2 : 1) - 0.03 * Math.max(0, fn - 22358)),
+  PE: (ni, fn, fam, k) => Math.max(0, 350 + (fam ? 350 : 0) + 300 * k - 0.05 * Math.max(0, fn - 23000)),
+  NS: (ni, fn, fam, k) => Math.max(0, 300 + (fam ? 300 : 0) + 165 * k - 0.05 * Math.max(0, fn - 15000)),
+};
+
+// ---------- Income tax for one person ----------
+// sp = extra credits in tax dollars {f, p} (spouse / eligible dependant / Quebec living-alone amounts)
+// ctx = {kids: children this person claims for the Ontario tax reduction, famNet: family net income}
+function core(p, x, sp, ctx = {}) {
+  const pay = payrollOf(p, x);
+  const ti = netOf(x);                                           // taxable income (federal)
+  const workerDed = p.qc ? Math.min(QC_WORKER.max, Math.max(0, x.ord) * QC_WORKER.rate) : 0;
+  const tiP = Math.max(0, ti - workerDed);                       // Quebec allows an extra deduction for workers
+  const cash = x.ord + x.cg + x.ed + x.nd + x.fd;
+  const f = walk(FED, ti), pr = walk(p.b, tiP);
+  const k = p.qc ? 1 - QC_ABATEMENT : 1;
+  const fr = FED[0][1], prr = p.b[0][1];
+  const fAmt = useBpa ? bpaAt(FED_BPA, ti) : 0, pAmt = useBpa ? bpaAt(p.bpa, ti) : 0;
+  const fBpaFull = fAmt * fr, pBpaFull = pAmt * prr;
+  // Non-refundable credits, applied in order; together they can bring tax to zero, never below.
+  let fLeft = f.tax, pLeft = pr.tax;
+  const tf = a => { const v = Math.min(fLeft, Math.max(0, a)); fLeft -= v; return v; };
+  const tp = a => { const v = Math.min(pLeft, Math.max(0, a)); pLeft -= v; return v; };
+  const empAmt = Math.min(Math.max(0, x.ord), CEA);
+  const fEmpFull = (empAmt + pay.base + pay.ei + pay.qpip) * fr;
+  const pEmpFull = p.qc ? 0 : (pay.base + pay.ei + (p.c === "YT" ? empAmt : 0)) * prr;
+  const fCred = tf(fBpaFull), fSp = tf(sp.f), fEmp = tf(fEmpFull);
+  const pCred = tp(pBpaFull), pSp = tp(sp.p), pEmp = tp(pEmpFull);
+  // Provincial child amounts, claimed by the parent who claims the children:
+  // Saskatchewan $8,358 per child under 18; Nova Scotia and Nunavut $1,200 per child under 6.
+  const kidAmt = p.c === "SK" ? 8358 * (ctx.kids || 0) : (p.c === "NS" || p.c === "NU") ? 1200 * (ctx.u6 || 0) : 0;
+  const pKid = tp(kidAmt * prr);
+  const fDtcFull = x.ed * GROSS_UP.ed * DTC.FED[0] + x.nd * GROSS_UP.nd * DTC.FED[1];
+  const pDtcFull = x.ed * GROSS_UP.ed * DTC[p.c][0] + x.nd * GROSS_UP.nd * DTC[p.c][1];
+  const fDtc = tf(fDtcFull);
+  // Ontario surtax is charged on Ontario tax after non-refundable credits but BEFORE the dividend tax
+  // credit (form ON428), which is why it raises Ontario's top dividend rates.
+  let surtax = 0, onRed = 0, lift = 0, bcRed = 0;
+  if (p.c === "ON") {
+    surtax = 0.20 * Math.max(0, pLeft - 5818) + 0.36 * Math.max(0, pLeft - 7446);
+    pLeft += surtax;
+  }
+  const pDtc = tp(pDtcFull);
+  // Low-income tax reductions (claimed once per family, by the claimant). "fam" = spouse or eligible dependant.
+  let lowRed = 0;
+  if (ctx.claims && LOW_INCOME[p.c]) lowRed = tp(LOW_INCOME[p.c](ti, ctx.famNet ?? ti, !!ctx.fam, ctx.kidsAll || 0));
+  let provPre = pLeft;
+  // Ontario: then the Ontario tax reduction and the LIFT credit
+  if (p.c === "ON") {
+    onRed = Math.min(provPre, Math.max(0, 2 * (300 + 554 * (ctx.kids || 0)) - provPre));
+    provPre -= onRed;
+    const liftFull = Math.min(875, 0.0505 * Math.max(0, x.ord));
+    const liftCut = 0.05 * Math.max(0, ti - 32500, (ctx.famNet ?? ti) - 65000);
+    lift = Math.min(provPre, Math.max(0, liftFull - liftCut));
+    provPre -= lift;
+  }
+  if (p.c === "BC") {
+    bcRed = Math.min(provPre, Math.max(0, 690 - 0.0356 * Math.max(0, ti - 25570)));
+    provPre -= bcRed;
+  }
+  // Foreign tax credit: federal first, limited to federal tax on the foreign share of income, then provincial.
+  const wh = x.fd * whRate, share = ti > 0 ? x.fd / ti : 0;
+  // The federal credit is limited to basic federal tax × the foreign share of net income. The Quebec abatement
+  // is a separate 16.5% of basic federal tax and doesn't reduce that limit.
+  const fedBasic = fLeft;
+  const fFtc = Math.min(wh, fedBasic * share, fedBasic * k);
+  const pFtc = Math.min(wh - fFtc, provPre * share);
+  const fed = fedBasic * k - fFtc, prov = provPre - pFtc;
+  const ohp = p.c === "ON" ? ontarioHealthPremium(ti) : 0;
+  const payroll = pay.base + pay.enh + pay.ei + pay.qpip + pay.terr + ohp;
+  return { x, ti, tiP, workerDed, cash, f, pr, k, fAmt, pAmt, fBpaFull, pBpaFull, fCred, pCred, fSp, pSp,
+    fSpFull: sp.f, pSpFull: sp.p, fEmp, pEmp, fEmpFull, pEmpFull, empAmt,
+    fDtc, pDtc, fDtcFull, pDtcFull, pKid, kidAmt, lowRed, surtax, onRed, lift, bcRed, wh, fFtc, pFtc, fedBasic,
+    fed, prov, pay, ohp, payroll, total: fed + prov + wh + payroll };
+}
+function addUp(list) {
+  const s = {total: 0, fed: 0, prov: 0, wh: 0, cash: 0, payroll: 0};
+  list.forEach(r => { for (const key in s) s[key] += r[key]; });
+  return s;
+}
+// ---------- Refundable credits for lower-income households (July 2026 – June 2027 / 2026 tax year) ----------
+// Canada Workers Benefit by region: max single/family, phase-in rate over a working-income floor,
+// phase-out thresholds single/family and rates. 2026 = CRA's 2025 values indexed by 2% except where published.
+const CWB = {
+  std: {max: [1665, 2869], rate: 0.27, floor: [3000, 3000], thr: [27392, 31251], out: [0.15, 0.15]},
+  AB:  {max: [1785, 2671], rate: 0.21, floor: [2760, 2760], thr: [26682, 33427], out: [0.15, 0.15]},
+  NU:  {max: [1653, 2484], rate: 0.14, floor: [6000, 6000], thr: [27369, 37666], out: [0.04, 0.08]},
+};
+const CWB_SECONDARY = 16714;   // secondary earner exemption (couples)
+// Quebec's version follows the work premium: [phase-in rate, excluded income, income where the max is reached, phase-out base]
+const CWB_QC = {single: [0.373, 2400, 12808, 14453], couple: [0.373, 3600, 19828, 22223],
+  parent: [0.20, 2400, 12808, 14612], coupleKids: [0.239, 3600, 19828, 22424]};
+// Quebec work premium 2026: [rate, excluded income, reduction threshold]
+const QC_WP = {single: [0.116, 2400, 12808], couple: [0.116, 3600, 19828], parent: [0.30, 2400, 12808], coupleKids: [0.25, 3600, 19828]};
+const RENT_CREDIT_PROVS = ["ON", "BC", "MB"];   // provinces whose credits depend on rent paid
+
+// f = {famNet, famEmp, couple, single, kids, nets, ppl, propTax, rent (annual)}
+function creditsOf(p, f) {
+  const {famNet, famEmp, couple, kids, ppl, propTax, rent} = f;
+  const parent = !couple && kids > 0;          // single parent
+  const fam = couple || parent;
+  const over = (t, inc = famNet) => Math.max(0, inc - t);
+  const out = [];
+  // Canada Groceries and Essentials Benefit (formerly the GST/HST credit)
+  let g = 445 + (couple ? 445 : parent ? 445 : 0) + 234 * (parent ? kids - 1 : kids);
+  if (!couple) g += parent ? 234 : Math.min(234, 0.02 * over(11564));
+  out.push(["Canada Groceries and Essentials Benefit", Math.max(0, g - 0.05 * over(46432))]);
+  // Canada Workers Benefit (basic amount; no disability supplement)
+  const work = couple ? ppl[0].ord + ppl[1].ord : ppl[0].ord;
+  const adjNet = couple ? famNet - Math.min(CWB_SECONDARY, Math.min(ppl[0].ord, ppl[1].ord)) : famNet;
+  let cwb;
+  if (p.qc) {
+    const type = couple ? (kids ? "coupleKids" : "couple") : (kids ? "parent" : "single");
+    const [rate, excl, top, base] = CWB_QC[type];
+    cwb = rate * Math.max(0, Math.min(work, top) - excl) - 0.20 * over(base, adjNet);
+  } else {
+    const c = CWB[p.c] || CWB.std, i = fam ? 1 : 0;
+    cwb = Math.min(c.max[i], c.rate * Math.max(0, work - c.floor[i])) - c.out[i] * over(c.thr[i], adjNet);
+  }
+  out.push(["Canada Workers Benefit", Math.max(0, cwb)]);
+  const adultsN = couple ? 2 : 1;
+  switch (p.c) {
+    case "ON": {
+      const thr = fam ? 36309 : 29047;
+      out.push(["Ontario sales tax credit", Math.max(0, 378 * (adultsN + kids) - 0.04 * over(thr))]);
+      const occ = propTax > 0 ? propTax : rent * 0.2;
+      if (occ > 0) {
+        const energy = Math.min(occ, 290), prop = Math.min(occ, Math.min(0.10 * occ, 944) + 73);
+        out.push(["Ontario energy and property tax credit", Math.max(0, energy + prop - 0.02 * over(thr))]);
+      }
+      break;
+    }
+    case "QC": {
+      // Solidarity tax credit: QST component + housing component, less 6% of family income over $43,195
+      const qst = 363 + (couple ? 363 : 172), housing = (couple ? 906 : 746) + 158 * kids;
+      out.push(["Solidarity tax credit", Math.max(0, qst + housing - 0.06 * over(43195))]);
+      const type = couple ? (kids ? "coupleKids" : "couple") : (kids ? "parent" : "single");
+      const [rate, excl, thr] = QC_WP[type];
+      out.push(["Work premium", Math.max(0, rate * Math.max(0, Math.min(work, thr) - excl) - 0.10 * over(thr))]);
+      break;
+    }
+    case "BC":
+      if (rent > 0 && propTax === 0) out.push(["B.C. renter's tax credit", Math.max(0, 400 - 0.02 * over(66189))]);
+      break;
+    case "MB":
+      if (propTax > 0) out.push(["Homeowners affordability tax credit", Math.min(1600, propTax)]);
+      else if (rent > 0) out.push(["Renters affordability tax credit", 625]);
+      break;
+    case "SK": {
+      const n = Math.min(2, parent ? kids - 1 : kids);
+      out.push(["Saskatchewan low-income tax credit", Math.max(0, 460 + (fam ? 460 : 0) + 181 * n - 0.0303 * over(39345))]);
+      break;
+    }
+    case "NB":
+      out.push(["New Brunswick HST credit", Math.max(0, 300 + (fam ? 300 : 0) + 100 * (parent ? kids - 1 : kids) - 0.02 * over(35000))]);
+      break;
+    case "NS":
+      out.push(["Nova Scotia affordable living tax credit", Math.max(0, 255 + 60 * kids - 0.05 * over(30000))]);
+      break;
+    case "PE": {
+      const top = fam ? 365 : 310;
+      out.push(["PEI essentials benefit", Math.max(175, top - 0.01 * over(95000))]);
+      break;
+    }
+    case "NL": {
+      const base = 254 + Math.min(266, 0.0532 * over(15000)) + (couple ? 69 : 0) + 231 * kids;
+      out.push(["NL income supplement", Math.max(0, base - 0.09 * over(40000))]);
+      break;
+    }
+  }
+  return out.filter(([, a]) => a >= 0.5);
+}
+
+// Tax for everyone in the household in province p. With two spouses, the higher earner claims the spouse amount
+// and the children; a single parent claims the eligible dependant amount. Child benefits use family net income.
+function household(p, ppl) {
+  // A second adult with no income entered is treated as a spouse with no income
+  if (ppl.length === 1 && adults >= 2) ppl = [ppl[0], blank(0)];
+  const nets = ppl.map(netOf);
+  const couple = ppl.length === 2 && spouse;
+  const famNet = couple ? nets[0] + nets[1] : nets[0];
+  const famEmp = couple ? ppl[0].ord + ppl[1].ord : ppl[0].ord;
+  const c = ppl.length === 2 && nets[1] > nets[0] ? 1 : 0, o = 1 - c;
+  const single = ppl.length === 1 && adults === 1;
+  // kidsAll: children counted for low-income reductions, other than a child already claimed as an eligible dependant
+  const ctx = i => ({kids: i === c ? kids : 0, u6: i === c ? under6 : 0, kidsAll: i === c ? (single && kids > 0 ? kids - 1 : kids) : 0,
+    famNet: couple ? famNet : nets[i], claims: couple ? i === c : true, fam: couple || (single && kids > 0)});
+  let list = [], claim = null;
+  if (couple && useBpa) {
+    const rO = core(p, ppl[o], NOSP, ctx(o));
+    const fAmt = Math.max(0, bpaAt(FED_BPA, nets[c]) - nets[o]);
+    const rule = SPOUSE[p.c];
+    let pAmt, pCredit;
+    if (rule === "transfer") { pCredit = Math.max(0, rO.pBpaFull - rO.pCred); pAmt = pCredit / p.b[0][1]; }
+    else {
+      pAmt = rule === "fed" ? fAmt : Math.max(0, rule.max - Math.max(0, nets[o] - rule.thr));
+      pCredit = pAmt * p.b[0][1];
+    }
+    const rC = core(p, ppl[c], {f: fAmt * FED[0][1], p: pCredit}, ctx(c));
+    list[c] = rC; list[o] = rO;
+    claim = {c, o, fAmt, pAmt, pCredit, qc: rule === "transfer", kind: "spouse", saved: rC.fSp * rC.k + rC.pSp};
+  } else if (single && useBpa) {
+    // One adult: eligible dependant amount if there are children; Quebec's amount for a person living alone
+    let f = 0, pp = 0, fAmt = 0, pAmt = 0;
+    if (kids > 0 && !p.qc) {
+      fAmt = bpaAt(FED_BPA, nets[0]);
+      const rule = SPOUSE[p.c];
+      pAmt = rule === "fed" ? fAmt : rule.max;
+      f = fAmt * FED[0][1]; pp = pAmt * p.b[0][1];
+    }
+    if (p.qc) {
+      if (kids > 0) { fAmt = bpaAt(FED_BPA, nets[0]); f = fAmt * FED[0][1]; }
+      pAmt = Math.max(0, 2172 - 0.1875 * Math.max(0, nets[0] - 42955));   // amount for a person living alone
+      pp = pAmt * p.b[0][1];
+    }
+    const r0 = core(p, ppl[0], {f, p: pp}, ctx(0));
+    list = [r0];
+    if (f + pp > 0) claim = {c: 0, o: null, fAmt, pAmt, qc: p.qc, kind: kids > 0 ? "dependant" : "alone", saved: r0.fSp * r0.k + r0.pSp};
+  } else {
+    list = ppl.map((x, i) => core(p, x, NOSP, ctx(i)));
+  }
+  const h = {list, claim, ...addUp(list)};
+  h.ccb = ccbOf(famNet, kids, under6);
+  h.provBen = provBenefitOf(p.c, famNet, famEmp, kids, single, under6);
+  h.childBen = h.ccb + h.provBen;
+  // Refundable credits (counted only when the credits switch is on)
+  h.credits = useCredits ? creditsOf(p, {famNet, famEmp, couple, kids, ppl,
+    propTax: homeValue * propRate(p.c), rent: homeValue > 0 ? 0 : rent * 12}) : [];
+  h.refund = h.credits.reduce((a, [, v]) => a + v, 0);
+  h.benefits = h.childBen + h.refund;
+  h.famNet = famNet;
+  h.netTotal = h.total - h.benefits;   // income tax + payroll − child benefits − refundable credits
+  return h;
+}
+function bump(x, key, d) { return {...x, [key]: x[key] + d}; }
+const zeroInv = x => ({...x, cg: 0, ed: 0, nd: 0, fd: 0});
+function calc(p) {
+  const h = household(p, people);
+  // Marginal rates measured directly (next $100 of each type for the selected person), so phase-outs,
+  // payroll ceilings, benefit clawbacks and spouse-amount interactions all show up.
+  h.margBy = {};
+  for (const key of KEYS) h.margBy[key] = (household(p, people.map((x, i) => i === active ? bump(x, key, 100) : x)).netTotal - h.netTotal) / 100;
+  h.marg = h.margBy.ord;
+  h.invAmt = people.reduce((a, x) => a + x.cg + x.ed + x.nd + x.fd, 0);
+  h.hasInv = people.some(hasInv);
+  h.invTax = h.hasInv ? h.netTotal - household(p, people.map(zeroInv)).netTotal : 0;
+  h.me = h.list[active] || h.list[0];
+  h.incomeTax = h.fed + h.prov + h.wh;
+  // Sales and property tax sit on top; they don't change marginal rates.
+  h.salesRate = SALES[p.c][0];
+  h.sales = effSpend() * 12 * h.salesRate;
+  h.propRate = propRate(p.c);
+  h.property = homeValue * h.propRate;
+  h.gross = h.fed + h.prov + h.wh + h.payroll + h.sales + h.property;
+  h.total = h.gross - h.benefits;      // net of child benefits and refundable credits
+  const base = h.cash > 0 ? h.cash : 1, on = h.cash > 0;
+  h.base = base;
+  h.avg = on ? h.total / base : 0;
+  h.grossAvg = on ? h.gross / base : 0;
+  return h;
+}
+
+const $ = id => document.getElementById(id);
+const money = n => (Math.round(n) < 0 ? "−$" : "$") + Math.abs(Math.round(n)).toLocaleString("en-CA");
+const pct = (n, d=1) => (n * 100).toFixed(d) + "%";
+const rateFmt = r => (+(r*100).toFixed(2)) + "%";
+const NAMES = ["You", "Partner"];
+const hasInv = x => x.cg !== 0 || x.ed > 0 || x.nd > 0 || x.fd > 0;
+const cashOf = x => x.ord + x.cg + x.ed + x.nd + x.fd;
+const blank = ord => ({ord, cg: 0, ed: 0, nd: 0, fd: 0, ded: 0});
+// 2026 RRSP: 18% of earned income up to $33,810 (current employment income stands in for last year's)
+const RRSP_LIMIT = 33810;
+const rrspMax = x => Math.min(RRSP_LIMIT, Math.round(x.ord * 0.18));
+
+const DEFAULT_INCOME = 75000;
+let people = [blank(DEFAULT_INCOME)], active = 0, spouse = true;
+// Monthly taxable spending estimate by household size (see footer): about $2,012 × √people, to the nearest $100
+const spendEst = n => Math.round(2012 * Math.sqrt(Math.max(1, n)) / 100) * 100;
+let metric = "pct", frug = 0, adults = 1, kids = 0, under6 = 0;   // under6: children under 6, out of kids
+let homeValue = 0, propOverride = null, propOpen = false, rent = 0, useCredits = true, credOpen = false;
+let sort = "rate", home = "ON", dest = "AB", view = "home", useBpa = true, whRate = 0.15, spend = spendEst(1), invOpen = false;
+const byCode = c => P.find(p => p.c === c);
+const effSpend = () => Math.round(spend * (1 + frug / 100) / 10) * 10;   // nearest $10
+const me = () => people[active];
+function cleanPerson(o) {
+  const x = blank(0);
+  if (o) for (const k of KEYS) if (typeof o[k] === "number" && (k === "cg" || o[k] >= 0)) x[k] = o[k];
+  if (o && o.ded >= 0) x.ded = o.ded;
+  return x;
+}
+// Saved state from before the defaults changed (v < 3) is ignored so the new defaults show.
+try { const s = JSON.parse(localStorage.getItem("taxcmp") || "{}");
+  if (s.v === 3) {
+    if (Array.isArray(s.people) && s.people.length) people = s.people.slice(0, 2).map(cleanPerson);
+    if (s.active === 1 && people.length === 2) active = 1;
+    if (typeof s.spouse === "boolean") spouse = s.spouse;
+    if (s.sort) sort = s.sort;
+    if (byCode(s.home)) home = s.home;
+    if (byCode(s.dest)) dest = s.dest;
+    if (s.view === "dest") view = "dest";
+    if (typeof s.useBpa === "boolean") useBpa = s.useBpa;
+    if (s.whRate >= 0) whRate = s.whRate;
+    adults = s.adults >= 1 && s.adults <= 4 ? s.adults : people.length;
+    if (s.kids >= 0 && s.kids <= 6) kids = s.kids;
+    if (typeof s.under6 === "number") under6 = Math.max(0, Math.min(kids, s.under6));
+    else if (s.under6 === true) under6 = kids;   // older saves stored a yes/no
+    if (s.homeValue >= 0) homeValue = s.homeValue;
+    if (typeof s.propOverride === "number") propOverride = s.propOverride;
+    if (typeof s.propOpen === "boolean") propOpen = s.propOpen;
+    if (s.rent >= 0) rent = s.rent;
+    if (typeof s.useCredits === "boolean") useCredits = s.useCredits;
+    if (typeof s.credOpen === "boolean") credOpen = s.credOpen;
+    spend = s.adults && s.spend >= 0 ? s.spend : spendEst(adults + kids);   // older saves predate adults/children
+    if (typeof s.invOpen === "boolean") invOpen = s.invOpen;
+    if (s.metric === "usd") metric = "usd";
+    if (s.frug >= -100 && s.frug <= 100000) frug = s.frug;
+  } } catch (e) {}
+if (dest === home) dest = home === "AB" ? "BC" : "AB";
+function save() {
+  try { localStorage.setItem("taxcmp", JSON.stringify({v: 3, people, active, spouse, sort, home, dest, view, useBpa, whRate, adults, kids, under6, spend, frug, metric, invOpen,
+    homeValue, propOverride, propOpen, rent, useCredits, credOpen})); } catch (e) {}
+}
+
+
+// Province selectors
+const provOptions = (skip) => [...P].sort((a, b) => a.n.localeCompare(b.n)).filter(p => p.c !== skip)
+  .map(p => `<option value="${p.c}">${p.n}</option>`).join("");
+// Home selector: two-letter codes keep the control narrow on phones; full name on hover/for screen readers
+const provCodes = () => [...P].sort((a, b) => a.c.localeCompare(b.c))
+  .map(p => `<option value="${p.c}" title="${p.n}" aria-label="${p.n}">${p.c}</option>`).join("");
+function fillSelects() {
+  $("home").innerHTML = provCodes(); $("home").value = home;
+  $("home").title = P.find(p => p.c === home)?.n || "";
+  $("dest").innerHTML = provOptions(home); $("dest").value = dest;
+}
+// Build columns once
+const colsEl = $("cols");
+P.forEach(p => {
+  const c = document.createElement("div");
+  c.className = "col"; c.id = "col-" + p.c; c.setAttribute("role", "listitem");
+  c.innerHTML = `<div class="col-plot"><span class="cv"></span><div class="stack"><i class="f"></i><i class="p"></i><i class="y"></i><i class="w"></i><i class="s"></i><i class="h"></i></div><i class="ben"></i></div>
+    <div class="code" title="${p.n}">${p.c}${p.qc ? "<sup>†</sup>" : ""}</div><div class="cm"></div><div class="tag"></div>`;
+  colsEl.appendChild(c);
+});
+
+// Axis starts at 40% and only widens (in 5-point steps) when a column needs more room.
+const AXIS_BASE = 0.40;
+function axisMax(top) { return Math.max(AXIS_BASE, Math.ceil((top * 100 + 1) / 5) * 5 / 100); }
+
+function renderPeople() {
+  let html = people.map((x, i) => {
+    const btn = `<button class="person" data-i="${i}" aria-pressed="${i === active}"><b>${NAMES[i]}</b><small>${money(cashOf(x))}</small></button>`;
+    return i === 0 ? btn : `<span class="person-wrap">${btn}<button type="button" class="person-x" id="remove-partner" aria-label="Remove partner" title="Remove partner">×</button></span>`;
+  }).join("");
+  html += people.length === 1
+    ? `<button class="person add" id="add-partner"><b>+ Add partner</b><small>or other household member</small></button>`
+    : `<span class="spouse-row"><label class="check"><input type="checkbox" id="spouse-toggle" ${spouse ? "checked" : ""}> Spouse or common-law partner</label><button type="button" class="info" data-tip="Tick for a married or common-law partner. The higher earner can then claim the spouse amount for the lower earner, which shrinks as the lower earner's income rises. Untick for other household members, such as an adult child, to tax them as unrelated individuals." aria-label="About spouse or common-law partner">i</button></span>`;
+  $("people").innerHTML = html;
+}
+
+const kMoney = v => v >= 1000 ? `$${+(v / 1000).toFixed(v >= 100000 ? 0 : 1)}k` : `$${Math.round(v)}`;
+const SEG_NAMES = {f: "Federal income tax", p: "Provincial / territorial income tax", y: "CPP/QPP, EI & health premiums",
+  w: "Foreign tax withheld", s: "Sales tax", h: "Property tax", ben: "Benefits and credits"};
+const SEG_KEYS = ["f", "p", "y", "w", "s", "h"];
+const segAmt = (r, c) => ({f: r.fed, p: r.prov, y: r.payroll, w: r.wh, s: r.sales, h: r.property, ben: r.benefits})[c];
+function segTip(p, r, c) {
+  const amt = segAmt(r, c);
+  const share = r.base > 0 ? amt / r.base : 0;
+  const two = people.length === 2;
+  const each = fn => two ? r.list.map((y, i) => `${NAMES[i]} ${fn(y)}`).join(", ") : fn(r.list[0]);
+  let sub = "";
+  if (c === "f") {
+    sub = `Top federal bracket reached: ${each(y => rateFmt(y.f.marg))}`;
+    if (p.qc) sub += ". After the 16.5% Quebec abatement";
+  } else if (c === "p") {
+    sub = `Top ${p.n} bracket reached: ${each(y => rateFmt(y.pr.marg))}`;
+    const ex = r.list.reduce((a, y) => ({s: a.s + y.surtax, red: a.red + y.onRed + y.lift + y.bcRed}), {s: 0, red: 0});
+    if (ex.s > 0.5) sub += `. Includes ${money(ex.s)} Ontario surtax`;
+    if (ex.red > 0.5) sub += `. After ${money(ex.red)} of ${p.c === "BC" ? "BC tax reduction" : "Ontario tax reduction and LIFT credit"}`;
+  } else if (c === "y") {
+    const t = r.list.reduce((a, y) => ({cpp: a.cpp + y.pay.base + y.pay.enh, ei: a.ei + y.pay.ei, qpip: a.qpip + y.pay.qpip, terr: a.terr + y.pay.terr, ohp: a.ohp + y.ohp}), {cpp: 0, ei: 0, qpip: 0, terr: 0, ohp: 0});
+    sub = [`${p.qc ? "QPP" : "CPP"} ${money(t.cpp)}`, `EI ${money(t.ei)}`, t.qpip > 0.5 && `QPIP ${money(t.qpip)}`,
+      t.ohp > 0.5 && `Ontario Health Premium ${money(t.ohp)}`, t.terr > 0.5 && `${p.n} payroll tax ${money(t.terr)}`].filter(Boolean).join(" · ");
+  } else if (c === "w") {
+    const cr = r.list.reduce((a, y) => a + y.fFtc + y.pFtc, 0);
+    sub = `Withheld abroad on foreign dividends; ${money(cr)} of it is credited back against Canadian tax`;
+  } else if (c === "s") {
+    sub = `${SALES[p.c][1]} on ${money(effSpend())} a month of taxable spending`;
+  } else if (c === "h") {
+    sub = `${rateFmt(r.propRate)} on a ${money(homeValue)} home${p.c === home && propOverride != null ? " (your rate)" : ` (${PROP[p.c][1]} rate)`}`;
+  } else if (c === "ben") {
+    const parts = [];
+    if (r.ccb > 0.5) parts.push(`Canada Child Benefit ${money(r.ccb)}`);
+    if (r.provBen > 0.5) parts.push(`${PROV_BENEFIT_NAME[p.c]} ${money(r.provBen)}`);
+    r.credits.forEach(([n, v]) => parts.push(`${n} ${money(v)}`));
+    sub = `${parts.join(" · ")}. Netted off the tax above`;
+  }
+  return `<b>${p.n} · ${SEG_NAMES[c]}</b><span class="t-num">${c === "ben" ? "−" : ""}${money(amt)} a year · ${pct(share)} of income</span>
+    <span class="t-sub">${sub}.</span>
+    <span class="t-sub t-num">Net total: ${money(r.total)} · ${pct(r.avg)} of income</span>`;
+}
+
+const narrow = matchMedia("(max-width: 520px)");   // phone: compact chart labels
+function render() {
+  const res = P.map(p => ({p, r: calc(p)}));
+  const usd = metric === "usd";
+  const val = r => usd ? r.total : r.avg;            // net of benefits: what the label shows and sorting uses
+  const top = r => usd ? r.gross : r.grossAvg;       // gross: how tall the column is drawn
+  // Axis runs from lo to hi. lo drops below zero when any province's net tax is negative
+  // (child benefits larger than the taxes paid).
+  let lo = 0, hi, ticks = [];
+  const minNet = Math.min(0, ...res.map(x => val(x.r)));
+  if (usd) {
+    const top = Math.max(1, ...res.map(x => x.r.gross));
+    const step = [500, 1000, 2000, 2500, 5000, 10000, 20000, 25000, 50000, 100000, 200000, 250000, 500000]
+      .find(st => Math.ceil(top * 1.04 / st) + Math.ceil(-minNet * 1.04 / st) <= 6) || 1e6;
+    hi = Math.ceil(top * 1.04 / step) * step;
+    lo = -Math.ceil(-minNet * 1.04 / step) * step;
+    for (let t = lo; t <= hi + 1e-6; t += step) ticks.push(t);
+  } else {
+    hi = axisMax(Math.max(...res.map(x => x.r.grossAvg)));
+    lo = minNet < 0 ? -Math.ceil((-minNet + 0.01) * 10) / 10 : 0;
+    for (let i = Math.round(lo * 10); i <= Math.round(hi * 10); i++) ticks.push(i / 10);
+    if (hi - ticks[ticks.length - 1] > 0.051) ticks.push(hi);   // skip an end label that would crowd the last 10% mark
+  }
+  const span = hi - lo, pos = v => (v - lo) / span * 100;
+  const yLabel = t => {
+    if (Math.abs(t) < 1e-9) return usd ? "$0" : "0%";
+    const sign = t < 0 ? "−" : "";
+    return usd ? sign + kMoney(Math.abs(t)) : `${sign}${Math.round(Math.abs(t) * 100)}%`;
+  };
+  $("cc-y").innerHTML = ticks.map(t => `<span style="top:calc(var(--plot-h) * ${1 - (t - lo) / span})">${yLabel(t)}</span>`).join("")
+    + `<span class="key" style="top:calc(var(--plot-h) + 24px)">marg.</span>`;
+  $("cc-grid").innerHTML = ticks.map(t => `<i class="${Math.abs(t) < 1e-9 ? "base" : ""}" style="bottom:${pos(t)}%"></i>`).join("");
+
+  // Lowest first, or west to east (ties broken west to east)
+  const order = [...res].sort(sort === "rate" ? (a,b) => (val(a.r) - val(b.r)) || (a.p.geo - b.p.geo) : (a,b) => a.p.geo - b.p.geo);
+  order.forEach(({p, r}) => {
+    const el = $("col-" + p.c);
+    colsEl.appendChild(el);
+    const stack = el.querySelector(".stack");
+    stack.style.bottom = pos(0) + "%";
+    stack.style.height = Math.max(0, top(r)) / span * 100 + "%";
+    let last = "f";
+    SEG_KEYS.forEach(c => {
+      const seg = el.querySelector("." + c), v = segAmt(r, c);
+      seg.style.height = (r.gross > 0 ? v / r.gross * 100 : 0) + "%";
+      seg._tip = segTip(p, r, c);
+      if (v > 0.5) last = c;
+    });
+    SEG_KEYS.forEach(c => el.querySelector("." + c).classList.toggle("end", c === last));
+    // Child benefits: a band from the net level up to the top of the column (below zero if net is negative)
+    const ben = el.querySelector(".ben");
+    ben.style.bottom = pos(val(r)) + "%";
+    ben.style.height = (top(r) - val(r)) / span * 100 + "%";
+    ben.hidden = r.benefits < 0.5;
+    ben._tip = segTip(p, r, "ben");
+    const cv = el.querySelector(".cv");
+    cv.textContent = narrow.matches
+      ? (usd ? (r.total < 0 ? "−" : "") + Math.round(Math.abs(r.total) / 1000) + "k" : (r.avg * 100).toFixed(1))
+      : usd ? (r.total < 0 ? "−" + kMoney(-r.total) : kMoney(r.total)) : pct(r.avg);
+    // Net figure: above the column, or below the benefit band when benefits exceed tax
+    cv.style.bottom = val(r) < 0 ? `calc(${pos(val(r))}% - 18px)` : `calc(${pos(Math.max(0, top(r)))}% + 4px)`;
+    el.querySelector(".cm").textContent = narrow.matches ? (r.marg * 100).toFixed(1) : pct(r.marg);
+    el.classList.toggle("is-home", p.c === home);
+    el.classList.toggle("is-dest", p.c === dest);
+    el.querySelector(".tag").textContent = p.c === home ? "home" : p.c === dest ? "dest." : "";
+    el.setAttribute("aria-label", `${p.n}${p.c === home ? " (home)" : p.c === dest ? " (destination)" : ""}: net ${pct(r.avg)} of income, marginal ${pct(r.marg)}, total ${money(r.total)}${r.benefits > 0.5 ? ` after ${money(r.benefits)} of child benefits` : ""}`);
+  });
+  if (tipFor && tipFor._tip && tipFor.closest(".col")) showTip(tipFor);   // keep an open segment tip current
+
+  const two = people.length === 2, x = me();
+  const totalInc = people.reduce((a, y) => a + cashOf(y), 0);
+  const H = res.find(y => y.p.c === home);
+  const anyBen = res.some(y => y.r.benefits > 0.5);
+  $("chart-title").textContent = usd
+    ? `${two || adults > 1 || kids > 0 ? "Household tax" : "Tax"} on ${money(totalInc)}${anyBen ? ", after benefits" : ""}`
+    : `${two || adults > 1 || kids > 0 ? "Household tax" : "Tax"} rate on ${money(totalInc)}${anyBen ? ", after benefits" : ""}`;
+  $("income-label").innerHTML = two ? `${active ? "Partner's" : "Your"} employment &amp; other income` : `Employment &amp; other income`;
+  $("ded-label").textContent = two ? `${active ? "Partner's" : "Your"} deductions` : "Deductions";
+  const rm = rrspMax(x);
+  $("max-rrsp").textContent = `Max RRSP ${money(rm)}`;
+  $("max-rrsp").setAttribute("aria-pressed", rm > 0 && x.ded === rm);
+  $("invest-title").textContent = two ? `${active ? "Partner's" : "Your"} investment income` : "Investment income";
+  $("invest-sum").textContent = hasInv(x)
+    ? [x.cg > 0 && `${money(x.cg)} net gains`, x.cg < 0 && `${money(-x.cg)} net loss`, x.ed && `${money(x.ed)} eligible div.`,
+       x.nd && `${money(x.nd)} non-eligible div.`, x.fd && `${money(x.fd)} foreign div.`].filter(Boolean).join(" · ")
+    : "none added";
+  $("legend-wh").hidden = !(people.some(y => y.fd > 0) && whRate > 0);
+  $("legend-sales").hidden = !(effSpend() > 0);
+  $("legend-prop").hidden = !(homeValue > 0);
+  $("legend-ben").hidden = !anyBen;
+  // Refundable credits panel: home province's credits, and a rent box only where a credit uses rent
+  $("cred-toggle").checked = useCredits;
+  $("cred-state").textContent = useCredits ? "Netted off tax" : "Not counted";
+  const needRent = useCredits && homeValue === 0 && (RENT_CREDIT_PROVS.includes(home) || RENT_CREDIT_PROVS.includes(dest));
+  $("rent-field").hidden = !needRent;
+  if (document.activeElement !== $("rent")) $("rent").value = rent.toLocaleString("en-CA");
+  const hc = H.r.credits, dc = res.find(y => y.p.c === dest).r.credits;
+  $("cred-sum").textContent = !useCredits ? "not counted"
+    : H.r.refund > 0.5 ? `${money(H.r.refund)} a year in ${H.p.n}` : `none at this income in ${H.p.n}`;
+  $("cred-list").innerHTML = !useCredits ? "" : hc.length
+    ? hc.map(([n, v]) => `<tr><td>${n}</td><td class="r">${money(v)}</td></tr>`).join("")
+      + `<tr class="sum"><td>${H.p.n} total</td><td class="r">${money(H.r.refund)}</td></tr>`
+    : `<tr class="muted"><td>No refundable credits in ${H.p.n} at this income${RENT_CREDIT_PROVS.includes(home) && homeValue === 0 && rent === 0 ? " (enter rent for rent-based credits)" : ""}</td><td class="r">$0</td></tr>`;
+  $("adults").value = adults; $("adults-val").textContent = adults;
+  $("kids").value = kids; $("kids-val").textContent = kids;
+  $("u6").hidden = kids === 0;
+  $("u6").value = under6;
+  $("u6-val").hidden = kids === 0;
+  $("u6-val").textContent = `${under6} under 6`;
+  // Track fill: slate up to the under-6 count, purple from there to the number of children
+  const at = q => `calc(9px + (100% - 18px) * ${q / 6})`;
+  $("kids-track").style.background = kids === 0 ? "" :
+    `linear-gradient(to right, var(--fed) 0 ${at(under6)}, var(--sales) ${at(under6)} ${at(kids)}, var(--rule) ${at(kids)} 100%)`;
+  $("prop-sum").textContent = homeValue > 0 ? `${money(H.r.property)} a year on a ${money(homeValue)} home` : "not included";
+  if (document.activeElement !== $("pr-rate")) $("pr-rate").value = (+(propRate(home) * 100).toFixed(3)).toString();
+  $("pr-note").textContent = propOverride != null ? `Your rate (${PROP[home][1]} is ${rateFmt(PROP[home][0])})` : `${PROP[home][1]} 2026 rate`;
+  $("pr-reset").hidden = propOverride == null;
+  $("m-pct").setAttribute("aria-pressed", metric === "pct");
+  $("m-usd").setAttribute("aria-pressed", metric === "usd");
+  $("frug").value = frug;
+  const fr = Math.round(frug);
+  $("frug-val").textContent = fr === 0 ? "Typical" : `${fr > 0 ? "+" : "−"}${Math.abs(fr)}%`;
+  $("wh").value = String(whRate);
+  paintCg();
+  renderPeople();
+  $("sort-rate").setAttribute("aria-pressed", sort === "rate");
+  $("sort-geo").setAttribute("aria-pressed", sort === "geo");
+
+  renderDetail(res, order);
+  $("bpa-toggle").checked = useBpa;
+  $("bpa-state").textContent = useBpa ? "Credits applied" : "Brackets only";
+  save();
+}
+
+// One government's bracket ledger. w.rows: [label, amount] adjustments after bracket tax (negative = reduces tax).
+function ledger(title, sw, w, ti) {
+  const rows = w.lines.map(l => {
+    const isOn = l.part > 0, top = isOn && ti <= l.hi && ti > l.lo;
+    const range = l.hi === Infinity ? `${money(l.lo)}+` : `${money(l.lo)} – ${money(l.hi)}`;
+    return `<tr class="${isOn ? "" : "idle"} ${top ? "top" : ""}"><td>${range}</td><td class="r">${rateFmt(l.r)}</td><td class="r">${money(l.part)}</td><td class="r">${money(l.t)}</td></tr>`;
+  }).join("");
+  const foot = [`<tr class="sub"><td colspan="3">Bracket tax</td><td class="r">${money(w.gross)}</td></tr>`];
+  w.rows.filter(([, a]) => Math.abs(a) > 0.5).forEach(([label, a]) =>
+    foot.push(`<tr class="sub"><td colspan="3">${label}</td><td class="r">${a < 0 ? "−" : "+"}${money(Math.abs(a))}</td></tr>`));
+  foot.push(`<tr><td colspan="3">${title} tax</td><td class="r">${money(w.net)}</td></tr>`);
+  return `<div class="ledger"><h4><i class="sw" style="background:${sw}"></i>${title}</h4>
+    <table><thead><tr><th>Bracket</th><th class="r">Rate</th><th class="r">Income in it</th><th class="r">Tax</th></tr></thead>
+    <tbody>${rows}</tbody><tfoot>${foot.join("")}</tfoot></table></div>`;
+}
+
+function claimText(r, p) {
+  const cl = r.claim;
+  if (!cl || cl.saved <= 0.5) return null;
+  return `${money(cl.saved)} in ${p.n}`;
+}
+function renderDetail(res, order) {
+  const H = res.find(y => y.p.c === home), D = res.find(y => y.p.c === dest);
+  const two = people.length === 2, hh = two || adults > 1 || kids > 0;
+  const hr = H.r, dr = D.r, delta = dr.total - hr.total;
+  const lowest = [...order].sort((a, b) => a.r.total - b.r.total)[0];
+  const who = hh ? "your household" : "you";
+  $("cmp-eyebrow").textContent = `Compare · ${hh ? "household " : ""}${money(hr.cash)} total income`;
+  $("cmp-home").textContent = H.p.n;
+
+  const headline = Math.abs(delta) < 0.5
+    ? `${D.p.n} and ${H.p.n} come out the same.`
+    : delta < 0
+    ? `Moving to ${D.p.n} would save ${who} <span class="save">${money(-delta)}</span> a year.`
+    : `Moving to ${D.p.n} would cost ${who} <span class="cost">${money(delta)}</span> more a year.`;
+  const ppDelta = (dr.avg - hr.avg) * 100;
+  const sub = `Net tax is ${pct(dr.avg)} of income in ${D.p.n} vs ${pct(hr.avg)} in ${H.p.n} (${ppDelta >= 0 ? "+" : "−"}${Math.abs(ppDelta).toFixed(1)} points). ` +
+    (lowest.p.c === home ? `${H.p.n} is the lowest of all 13 at these inputs.` :
+     lowest.p.c === dest ? `${D.p.n} is the lowest of all 13 at these inputs.` :
+     `Lowest of all 13 at these inputs: ${lowest.p.n}, ${pct(lowest.r.avg)}.`);
+
+  // Difference cell: for tax, lower is better; for benefits and money left over, higher is better
+  const dcell = (a, b, kind) => {
+    const d = b - a;
+    if (kind === "pp") {
+      const v = d * 100;
+      return Math.abs(v) < 0.05 ? `<td class="r">–</td>` : `<td class="r ${v < 0 ? "better" : "worse"}">${v > 0 ? "+" : "−"}${Math.abs(v).toFixed(1)} pts</td>`;
+    }
+    if (Math.abs(d) < 0.5) return `<td class="r">–</td>`;
+    const good = kind === "income" ? d > 0 : d < 0;
+    return `<td class="r ${good ? "better" : "worse"}">${d > 0 ? "+" : "−"}${money(Math.abs(d))}</td>`;
+  };
+  const fmt = (v, kind) => kind === "pp" ? pct(v) : kind === "credit" ? (v > 0.5 ? "−" + money(v) : money(0)) : money(v);
+  const row = (label, a, b, kind = "tax", cls = "") =>
+    `<tr class="${cls}"><td>${label}</td><td class="r">${fmt(a, kind)}</td><td class="r">${fmt(b, kind)}</td>${kind === "credit" ? dcell(-a, -b, "tax") : dcell(a, b, kind)}</tr>`;
+  const any = f => f(hr) > 0.5 || f(dr) > 0.5;
+  let rows = row("Federal income tax", hr.fed, dr.fed)
+    + row("Provincial / territorial income tax", hr.prov, dr.prov)
+    + (any(r => r.wh) ? row("Foreign tax withheld", hr.wh, dr.wh) : "")
+    + row(`CPP/QPP, EI &amp; health premiums`, hr.payroll, dr.payroll)
+    + (effSpend() > 0 ? row(`Sales tax <small class="note">(${SALES[home][1]} vs ${SALES[dest][1]})</small>`, hr.sales, dr.sales) : "")
+    + (homeValue > 0 ? row(`Property tax <small class="note">(${rateFmt(hr.propRate)} vs ${rateFmt(dr.propRate)})</small>`, hr.property, dr.property) : "")
+    + (kids > 0 ? row(`Child benefits <small class="note">(CCB${any(r => r.provBen) ? " + provincial" : ""})</small>`, hr.childBen, dr.childBen, "credit") : "")
+    + (any(r => r.refund) ? row(`Refundable credits`, hr.refund, dr.refund, "credit") : "")
+    + row(hh ? "Household net tax" : "Net tax", hr.total, dr.total, "tax", "sum")
+    + row("Net rate", hr.avg, dr.avg, "pp")
+    + row(`Marginal rate${two ? ` · ${NAMES[active]}` : ""}`, hr.marg, dr.marg, "pp")
+    + row("Left after all of this", hr.base - hr.total, dr.base - dr.total, "income");
+  if (two) rows += `<tr class="grp"><th colspan="4">Income tax &amp; payroll by person</th></tr>`
+    + hr.list.map((y, i) => row(NAMES[i], y.total, dr.list[i].total)).join("");
+  if (hr.hasInv) rows += `<tr class="grp"><th colspan="4">Investment income</th></tr>` + row("Tax on investment income", hr.invTax, dr.invTax);
+
+  let spouseNote = "";
+  const kindName = r => r.claim && r.claim.kind === "dependant" ? "eligible dependant amount" : r.claim && r.claim.kind === "alone" ? "amount for a person living alone" : "spouse amount";
+  if (two || adults > 1 || adults === 1 && (kids > 0 || hr.claim || dr.claim)) {
+    if (!useBpa) spouseNote = "Turn on basic personal amounts to apply the spouse and dependant amounts.";
+    else if (two && !spouse) spouseNote = "Taxed as two separate individuals, with no spouse amount.";
+    else {
+      const a = claimText(hr, H.p), b = claimText(dr, D.p);
+      const nm = kindName(hr.claim ? hr : dr);
+      spouseNote = a || b
+        ? `The ${nm} saves ${who} ${[a, b].filter(Boolean).join(" and ")}${!a ? `, and nothing in ${H.p.n}` : !b ? `, and nothing in ${D.p.n}` : ""}.`
+        : two || adults > 1 ? "No spouse amount at these incomes: the lower earner's income is too high for it to apply." : "";
+    }
+  }
+
+  const V = view === "dest" ? D : H;
+  $("detail-body").innerHTML = `
+    <div style="display:grid;gap:6px">
+      <p class="headline">${headline}</p>
+      <p class="note">${sub}</p>
+    </div>
+    <div class="cmp-wrap"><table class="cmp">
+      <thead><tr><th></th><th class="r">${H.p.n}</th><th class="r">${D.p.n}</th><th class="r">Difference</th></tr></thead>
+      <tbody>${rows}</tbody>
+    </table></div>
+    ${spouseNote ? `<p class="note">${spouseNote}</p>` : ""}
+    <div class="views">
+      <h4>Income tax detail${two ? ` for ${active ? "Partner" : "you"}` : ""}</h4>
+      <div class="seg" role="group" aria-label="Province for income tax detail">
+        <button data-view="home" aria-pressed="${view !== "dest"}">${H.p.n}</button>
+        <button data-view="dest" aria-pressed="${view === "dest"}">${D.p.n}</button>
+      </div>
+    </div>
+    ${ledgerView(V)}`;
+}
+
+function ledgerView({p, r}) {
+  const two = people.length === 2, x = me(), m = r.me, who = two ? NAMES[active] : "";
+  const tiParts = [`${money(x.ord)} employment &amp; other`];
+  if (x.cg > 0) tiParts.push(`${money(x.cg * CG_INCLUSION)} taxable half of net gains`);
+  if (x.ed) tiParts.push(`${money(x.ed * GROSS_UP.ed)} grossed-up eligible dividends`);
+  if (x.nd) tiParts.push(`${money(x.nd * GROSS_UP.nd)} grossed-up non-eligible dividends`);
+  if (x.fd) tiParts.push(`${money(x.fd)} foreign dividends`);
+  const tiText = tiParts.join(" + ") + (x.ded ? ` − ${money(x.ded)} deductions` : "") + (m.pay.enh > 0.5 ? ` − ${money(m.pay.enh)} enhanced ${p.qc ? "QPP" : "CPP"}` : "");
+  const extra = [];
+  if (m.workerDed > 0.5) extra.push(`Quebec taxable income is ${money(m.tiP)} after the ${money(m.workerDed)} deduction for workers.`);
+  if (x.cg < 0) extra.push(`The ${money(-x.cg)} net capital loss doesn't reduce this year's tax; it can be carried back three years or forward against future capital gains.`);
+  if (m.wh > 0.5) {
+    const credited = m.fFtc + m.pFtc, lost = m.wh - credited;
+    extra.push(`Tax includes ${money(m.wh)} withheld abroad on foreign dividends; ${money(credited)} of it is credited against Canadian tax${lost > 0.5 ? `, and ${money(lost)} can't be credited at this income` : ""}.`);
+  }
+  const mrow = (label, key) => `<tr><td>${label}</td><td class="r">${pct(r.margBy[key], 2)}</td></tr>`;
+  const mine = r.claim && r.claim.c === active;
+  const spName = r.claim ? (r.claim.kind === "dependant" ? "eligible dependant amount" : r.claim.kind === "alone" ? "living-alone amount" : "spouse amount") : "";
+  const spLabelF = mine ? `Less ${spName} ${money(r.claim.fAmt)} × ${rateFmt(FED[0][1])}` : "";
+  const spLabelP = mine ? (r.claim.qc && r.claim.kind === "spouse" ? `Less partner's unused credit transferred` : `Less ${spName} ${money(r.claim.pAmt)} × ${rateFmt(p.b[0][1])}`) : "";
+  const suffix = two ? ` · ${who}` : "";
+  const fRows = [
+    useBpa && [`Less personal amount ${money(m.fAmt)} × ${rateFmt(FED[0][1])}${m.fCred < m.fBpaFull - 0.5 ? " (capped)" : ""}`, -m.fCred],
+    mine && [spLabelF, -m.fSp],
+    [`Less employment amount, ${p.qc ? "QPP" : "CPP"} &amp; EI${p.qc ? "/QPIP" : ""} credits`, -m.fEmp],
+    [`Less dividend tax credit`, -m.fDtc],
+    p.qc && [`Less 16.5% Quebec abatement`, -m.fedBasic * (1 - m.k)],
+    [`Less foreign tax credit`, -m.fFtc],
+  ].filter(Boolean);
+  const pRows = [
+    useBpa && [`Less personal amount ${money(m.pAmt)} × ${rateFmt(p.b[0][1])}${m.pCred < m.pBpaFull - 0.5 ? " (capped)" : ""}`, -m.pCred],
+    mine && [spLabelP, -m.pSp],
+    [p.c === "SK" ? "Less child amount ($8,358 per child)" : "Less credit for children under 6", -m.pKid],
+    !p.qc && [`Less CPP &amp; EI credits${p.c === "YT" ? " and employment amount" : ""}`, -m.pEmp],
+    [`Ontario surtax`, m.surtax],
+    [`Less dividend tax credit`, -m.pDtc],
+    [`Less low-income tax reduction`, -m.lowRed],
+    [`Less Ontario tax reduction`, -m.onRed],
+    [`Less LIFT credit`, -m.lift],
+    [`Less BC tax reduction`, -m.bcRed],
+    [`Less foreign tax credit`, -m.pFtc],
+  ].filter(Boolean);
+  const payRows = [
+    [`${p.qc ? "QPP" : "CPP"} base (${p.qc ? "5.30" : "4.95"}%)`, m.pay.base], [`${p.qc ? "QPP" : "CPP"} enhanced`, m.pay.enh],
+    [`EI (${p.qc ? "1.30" : "1.63"}%)`, m.pay.ei], [`QPIP (0.43%)`, m.pay.qpip], [`Ontario Health Premium`, m.ohp], [`${p.n} payroll tax (2%)`, m.pay.terr],
+  ].filter(([, a]) => a > 0.5);
+  return `
+    ${hasInv(x) || x.ded || m.pay.enh > 0.5 ? `<p class="note">${two ? `${who}: t` : "T"}axable income is ${money(m.ti)}: ${tiText}.${hasInv(x) ? ` "Tax on investment income" is the extra tax the ${two ? "household's " : ""}investment income adds on top of other income.` : ""} ${extra.join(" ")}</p>` : ""}
+    <div class="ledgers">
+      ${ledger("Federal" + suffix, "var(--fed)", {lines: m.f.lines, gross: m.f.tax, rows: fRows, net: m.fed}, m.ti)}
+      ${ledger(p.n + suffix, "var(--prov)", {lines: m.pr.lines, gross: m.pr.tax, rows: pRows, net: m.prov}, m.tiP)}
+      <div class="ledger">
+        <h4><i class="sw" style="background:var(--pay)"></i>Payroll${suffix}</h4>
+        <table class="margs"><thead><tr><th>Contribution</th><th class="r">Amount</th></tr></thead><tbody>
+          ${payRows.map(([l, a]) => `<tr><td>${l}</td><td class="r">${money(a)}</td></tr>`).join("") || `<tr><td>None at this income</td><td class="r">$0</td></tr>`}
+        </tbody><tfoot><tr><td>Total</td><td class="r">${money(m.payroll)}</td></tr></tfoot></table>
+        <h4 style="margin-top:16px">Marginal rate on ${two ? `${active ? "Partner's" : "your"} ` : "the "}next dollar of…</h4>
+        <table class="margs"><thead><tr><th>Income type</th><th class="r">${hh() ? "Household rate" : "Combined rate"}</th></tr></thead><tbody>
+          ${mrow("Employment &amp; other income", "ord")}
+          ${mrow("Net capital gains", "cg")}
+          ${mrow("Eligible dividends", "ed")}
+          ${mrow("Non-eligible dividends", "nd")}
+          ${mrow("Foreign dividends", "fd")}
+        </tbody></table>
+        <p class="note" style="margin-top:8px">Includes payroll contributions and any child benefit clawback. A negative dividend rate means the dividend tax credit is worth more than the tax on that dividend.</p>
+      </div>
+    </div>`;
+}
+const hh = () => people.length === 2 || adults > 1 || kids > 0;
+
+
+// Inputs
+const inp = $("income"), sl = $("slider");
+function setIncome(v, from) {
+  me().ord = Math.max(0, Math.min(Math.round(v) || 0, 99999999));
+  if (from !== "input") inp.value = me().ord.toLocaleString("en-CA");
+  if (from !== "slider") sl.value = Math.min(me().ord, +sl.max);
+  render();
+}
+inp.addEventListener("input", () => {
+  const raw = inp.value.replace(/[^\d]/g, "");
+  setIncome(+raw, "input");
+});
+inp.addEventListener("blur", () => { inp.value = me().ord.toLocaleString("en-CA"); });
+inp.addEventListener("keydown", e => { if (e.key === "Enter") inp.blur(); });
+sl.addEventListener("input", () => setIncome(+sl.value, "slider"));
+
+// Household members
+const dedIn = $("ded");
+dedIn.addEventListener("input", () => { me().ded = Math.min(+dedIn.value.replace(/[^\d]/g, "") || 0, 9999999); render(); });
+dedIn.addEventListener("blur", () => { dedIn.value = me().ded.toLocaleString("en-CA"); });
+dedIn.addEventListener("keydown", e => { if (e.key === "Enter") dedIn.blur(); });
+$("max-rrsp").addEventListener("click", () => { me().ded = rrspMax(me()); dedIn.value = me().ded.toLocaleString("en-CA"); render(); });
+function syncAll() { dedIn.value = me().ded.toLocaleString("en-CA"); inp.value = me().ord.toLocaleString("en-CA"); sl.value = Math.min(me().ord, +sl.max); syncInv(); }
+$("people").addEventListener("click", e => {
+  const t = e.target.closest("button"); if (!t) return;
+  if (t.id === "add-partner") { people.push(blank(DEFAULT_INCOME)); active = 1; if (adults < 2) setHousehold(2, kids); }
+  else if (t.id === "remove-partner") { people = [people[0]]; active = 0; if (adults === 2) setHousehold(1, kids); }
+  else if (t.dataset.i != null) active = +t.dataset.i;
+  else return;
+  syncAll(); render();
+  const btn = document.querySelector(`#people .person[data-i="${active}"]`); if (btn) btn.focus();
+});
+$("people").addEventListener("change", e => { if (e.target.id === "spouse-toggle") { spouse = e.target.checked; render(); } });
+
+// Fill the gains/losses track from the 0 mark to the thumb: green for a net gain, red for a net loss.
+function paintCg() {
+  const r = $("cg-range"), min = +r.min, max = +r.max, v = me().cg;
+  const p = (Math.max(min, Math.min(v, max)) - min) / (max - min), z = (0 - min) / (max - min);
+  const color = v > 0 ? "var(--gain)" : v < 0 ? "var(--loss)" : "var(--muted)";
+  const at = q => `calc(9px + (100% - 18px) * ${q})`;
+  const a = at(Math.min(p, z)), b = at(Math.max(p, z));
+  r.style.setProperty("--cg-color", color);
+  r.style.setProperty("--cg-track", `linear-gradient(to right, var(--rule) 0 ${a}, ${color} ${a} ${b}, var(--rule) ${b} 100%)`);
+  $("cg").classList.toggle("pos", v > 0);
+  $("cg").classList.toggle("neg", v < 0);
+}
+// Double-click (or double-tap) the amount or the slider to reset gains/losses to 0.
+function resetCg(e) {
+  if (e) e.preventDefault();
+  me().cg = 0; syncInv(); render();
+  $("cg").blur();
+}
+function onDoubleTap(el, fn) {
+  let last = 0;
+  el.addEventListener("dblclick", fn);
+  el.addEventListener("touchend", e => {
+    const now = Date.now();
+    if (now - last < 320) { fn(e); last = 0; } else last = now;
+  });
+}
+const INV_KEYS = ["cg","ed","nd","fd"];
+function syncInv() { for (const k of INV_KEYS) { $(k).value = me()[k].toLocaleString("en-CA"); syncRange(k); } }
+function syncRange(k) { const r = $(k + "-range"); r.value = Math.max(+r.min, Math.min(me()[k], +r.max)); }
+document.querySelectorAll("input.inv").forEach(el => {
+  el.addEventListener("input", () => {
+    const neg = el.id === "cg" && /^\s*[-−]/.test(el.value);
+    const v = Math.min(+el.value.replace(/[^\d]/g, "") || 0, 99999999);
+    me()[el.id] = neg ? -v : v;
+    syncRange(el.id);
+    render();
+  });
+  el.addEventListener("blur", () => { el.value = me()[el.id].toLocaleString("en-CA"); });
+  el.addEventListener("keydown", e => { if (e.key === "Enter") el.blur(); });
+});
+document.querySelectorAll("input.inv-range").forEach(el => {
+  el.addEventListener("input", () => {
+    me()[el.dataset.k] = +el.value;
+    $(el.dataset.k).value = me()[el.dataset.k].toLocaleString("en-CA");
+    render();
+  });
+});
+$("wh").addEventListener("change", e => { whRate = +e.target.value; render(); });
+const spIn = $("spend"), spRange = $("spend-range");
+// The amount box and slider show spending after the frugality adjustment; "spend" holds the unadjusted base,
+// so household-size estimates and frugality combine cleanly.
+const frugK = () => 1 + frug / 100;
+function syncSpend() { spIn.value = effSpend().toLocaleString("en-CA"); spRange.value = Math.min(effSpend(), +spRange.max); }
+// Typing or sliding the amount moves the frugality setting to match: the amount is read as a percentage
+// above or below the household-size estimate. Past ±50% the slider rests at its end, but the percentage
+// keeps counting.
+function fromShown(shown) {
+  const est = spendEst(adults + kids);
+  frug = est > 0 ? (shown / est - 1) * 100 : 0;
+  spend = est;
+}
+spIn.addEventListener("input", () => {
+  const shown = Math.min(+spIn.value.replace(/[^\d]/g, "") || 0, 9999999);
+  fromShown(shown); spRange.value = Math.min(shown, +spRange.max); render();
+});
+spIn.addEventListener("blur", syncSpend);
+spIn.addEventListener("keydown", e => { if (e.key === "Enter") spIn.blur(); });
+spRange.addEventListener("input", () => { fromShown(+spRange.value); spIn.value = (+spRange.value).toLocaleString("en-CA"); render(); });
+// Adults and children set the spending estimate; frugality (your own amount) carries over as a percentage.
+function setHousehold(a, k) {
+  adults = Math.max(people.length, Math.min(4, a)); kids = Math.max(0, Math.min(6, k));
+  under6 = Math.min(under6, kids);
+  spend = spendEst(adults + kids); syncSpend();
+}
+$("adults").addEventListener("input", e => { setHousehold(+e.target.value, kids); render(); });
+$("kids").addEventListener("input", e => { setHousehold(adults, +e.target.value); render(); });
+$("u6").addEventListener("input", e => {
+  under6 = Math.min(kids, +e.target.value);
+  e.target.value = under6;   // the under-6 handle can't pass the number of children
+  render();
+});
+// Property tax
+const hvIn = $("hv"), hvRange = $("hv-range");
+function syncHome() { hvIn.value = homeValue.toLocaleString("en-CA"); hvRange.value = Math.min(homeValue, +hvRange.max); }
+hvIn.addEventListener("input", () => { homeValue = Math.min(+hvIn.value.replace(/[^\d]/g, "") || 0, 99999999); hvRange.value = Math.min(homeValue, +hvRange.max); render(); });
+hvIn.addEventListener("blur", syncHome);
+hvIn.addEventListener("keydown", e => { if (e.key === "Enter") hvIn.blur(); });
+hvRange.addEventListener("input", () => { homeValue = +hvRange.value; hvIn.value = homeValue.toLocaleString("en-CA"); render(); });
+$("pr-rate").addEventListener("input", e => {
+  const v = parseFloat(e.target.value.replace(/[^\d.]/g, ""));
+  propOverride = isFinite(v) && v >= 0 && v <= 10 ? v / 100 : null; render();
+});
+$("pr-rate").addEventListener("blur", () => render());
+$("pr-reset").addEventListener("click", () => { propOverride = null; render(); });
+$("prop-panel").addEventListener("toggle", () => { propOpen = $("prop-panel").open; save(); });
+$("cred-panel").addEventListener("toggle", () => { credOpen = $("cred-panel").open; save(); });
+$("cred-toggle").addEventListener("change", e => { useCredits = e.target.checked; render(); });
+const rentIn = $("rent");
+rentIn.addEventListener("input", () => { rent = Math.min(+rentIn.value.replace(/[^\d]/g, "") || 0, 999999); render(); });
+rentIn.addEventListener("blur", () => { rentIn.value = rent.toLocaleString("en-CA"); });
+rentIn.addEventListener("keydown", e => { if (e.key === "Enter") rentIn.blur(); });
+$("sort-rate").addEventListener("click", () => { sort = "rate"; render(); });
+$("m-pct").addEventListener("click", () => { metric = "pct"; render(); });
+$("m-usd").addEventListener("click", () => { metric = "usd"; render(); });
+$("frug").addEventListener("input", e => { frug = +e.target.value; syncSpend(); render(); });
+onDoubleTap($("frug"), e => { if (e) e.preventDefault(); frug = 0; syncSpend(); render(); });
+$("sort-geo").addEventListener("click", () => { sort = "geo"; render(); });
+$("bpa-toggle").addEventListener("change", e => { useBpa = e.target.checked; render(); });
+
+// Slider axis labels
+function fmtTick(v, signed) {
+  if (v === 0) return "$0";
+  const a = Math.abs(v), k = a >= 1e6 ? +(a / 1e6).toFixed(1) + "M" : a >= 1000 ? +(a / 1000).toFixed(1) + "k" : a;
+  return (v < 0 ? "−" : signed ? "+" : "") + "$" + k;
+}
+document.querySelectorAll(".scale").forEach(sc => {
+  const r = $(sc.dataset.for), min = +r.min, max = +r.max, signed = sc.hasAttribute("data-signed");
+  // "~" marks a minor tick: a mark with no label
+  const ticks = sc.dataset.ticks.split(",");
+  sc.innerHTML = ticks.map((t, i) => {
+    const minor = t.startsWith("~"), v = +t.replace("~", "");
+    const q = (v - min) / (max - min);
+    if (minor) return `<span class="minor" style="left:calc(9px + (100% - 18px) * ${q})"></span>`;
+    const cls = i === 0 ? "first" : i === ticks.length - 1 ? "last" : "";
+    const left = i === 0 ? "0" : i === ticks.length - 1 ? "100%" : `calc(9px + (100% - 18px) * ${q})`;
+    return `<span class="${cls}${v === 0 && min < 0 ? " zero" : ""}" style="left:${left}">${fmtTick(v, signed)}</span>`;
+  }).join("");
+});
+
+// Tooltips: hover with a mouse, focus with the keyboard, or tap on touch.
+const tip = $("tip"); let tipFor = null;
+function showTip(btn) {
+  if (tipFor && tipFor !== btn) tipFor.removeAttribute("aria-describedby");
+  if (btn._tip) tip.innerHTML = btn._tip; else tip.textContent = btn.dataset.tip;
+  tip.hidden = false; tipFor = btn;
+  document.querySelectorAll(".stack i.hot, .ben.hot").forEach(x => x.classList.remove("hot"));
+  if (btn._tip) btn.classList.add("hot");
+  btn.setAttribute("aria-describedby", "tip");
+  const b = btn.getBoundingClientRect(), w = tip.offsetWidth, h = tip.offsetHeight;
+  const left = Math.max(12, Math.min(b.left + b.width / 2 - w / 2, innerWidth - w - 12));
+  // Chart segments: show above the segment so the province labels stay visible; info icons: below
+  let top = btn._tip ? b.top - h - 8 : b.bottom + 8;
+  if (btn._tip && top < 8) top = b.bottom + 8;
+  if (!btn._tip && top + h > innerHeight - 8) top = Math.max(8, b.top - h - 8);
+  tip.style.left = left + "px"; tip.style.top = top + "px";
+}
+function hideTip() { if (tipFor) { tipFor.removeAttribute("aria-describedby"); tipFor.classList.remove("hot"); } tip.hidden = true; tipFor = null; }
+const tipTarget = t => t.closest?.(".info") || t.closest?.(".stack i, .col .ben");
+document.addEventListener("pointerover", e => { const b = tipTarget(e.target); if (b && e.pointerType === "mouse") showTip(b); });
+document.addEventListener("pointerout", e => { const b = tipTarget(e.target); if (b && e.pointerType === "mouse" && !b.contains(e.relatedTarget)) hideTip(); });
+document.addEventListener("focusin", e => { const b = e.target.closest?.(".info"); if (b) showTip(b); });
+document.addEventListener("focusout", e => { if (e.target.closest?.(".info")) hideTip(); });
+document.addEventListener("click", e => {
+  const b = e.target.closest?.(".info");
+  const seg = e.target.closest?.(".stack i, .col .ben");
+  if (b) { e.preventDefault(); e.stopPropagation(); showTip(b); }   // preventDefault keeps the investment panel from toggling
+  else if (seg) showTip(seg);
+  else if (tipFor) hideTip();
+}, true);
+document.addEventListener("keydown", e => { if (e.key === "Escape" && tipFor) hideTip(); });
+addEventListener("scroll", e => { if (tipFor && !(e.target.closest && e.target.closest(".cc-scroll"))) hideTip(); }, {passive: true, capture: true});
+addEventListener("resize", () => { if (tipFor) hideTip(); });
+
+onDoubleTap($("cg"), resetCg);
+onDoubleTap($("cg-range"), resetCg);
+fillSelects();
+narrow.addEventListener?.("change", () => render());
+$("home").addEventListener("change", e => {
+  home = e.target.value; propOverride = null;
+  if (dest === home) dest = home === "AB" ? "BC" : "AB";
+  fillSelects(); render();
+});
+$("dest").addEventListener("change", e => { dest = e.target.value; render(); });
+$("detail-body").addEventListener("click", e => {
+  const b = e.target.closest("[data-view]"); if (!b) return;
+  view = b.dataset.view; render();
+});
+syncAll();
+syncSpend();
+syncHome();
+$("prop-panel").open = propOpen || homeValue > 0;
+$("cred-panel").open = credOpen;
+$("invest").open = invOpen;
+$("invest").addEventListener("toggle", () => { invOpen = $("invest").open; save(); });
+render();
+</script>
