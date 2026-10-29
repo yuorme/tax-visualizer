@@ -43,6 +43,9 @@ src/ui/                 page markup, styles and the page logic (app.js)
 scripts/build.ts        bundles everything into dist/index.html with esbuild
 tests/                  see "How the numbers are checked"
 legacy/                 the original single-file app, kept as the reference for the golden tests
+assets/flags/           public-domain flag sources; scripts/make-flags.mjs makes the waving icons
+docs/                   ROADMAP.md (what's next), SCOPE.md (what's modelled), verification/ (audits)
+CLAUDE.md, .claude/     project rules and agent definitions for Claude Code
 ```
 
 **Rules in code, numbers in data.** Formulas live in the engine; every amount, rate and threshold lives in the
@@ -84,11 +87,6 @@ adding year checks inside an existing one. Values that are estimates rather than
 4. Add reference tests for the new year from published figures (top marginal rates at minimum).
 5. Once the year is verified, capture its golden results so later changes can't move them silently.
 
-## Not done yet
+## What's next
 
-- A year selector. The engine and build already handle several years; the page shows the latest.
-- The methodology notes at the bottom of the page and some tooltips still state 2026 figures as text. They
-  should be generated from the data so they can't drift from it.
-- The page logic (`src/ui/app.js`) is plain JavaScript carried over from the original app; converting it to
-  TypeScript would extend type checks to the UI.
-- Shareable links: keeping the inputs in the URL so a published chart can link to its exact scenario.
+See `docs/ROADMAP.md`, and `docs/SCOPE.md` for what the model includes and leaves out.
