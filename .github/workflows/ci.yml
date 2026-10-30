@@ -24,8 +24,9 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run lint          # Biome lint and formatting, and the 120-character wrap in Markdown
-      # The headless Chromium shell is all the smoke test needs. Its download is cached per Playwright version; the
-      # system libraries it needs aren't cacheable, so they're installed every run.
+      # The headless Chromium shell is all the smoke test needs. It's cached per Playwright version, and on a cache hit
+      # the system libraries aren't reinstalled: ubuntu-latest already has them. If the runner image ever drops one,
+      # e2e fails with Playwright's "missing dependencies" message; then add `npx playwright install-deps chromium`.
       - id: playwright
         run: echo "version=$(node -p 'require("playwright/package.json").version')" >> "$GITHUB_OUTPUT"
       - id: browser-cache
