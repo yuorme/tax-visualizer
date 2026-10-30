@@ -27,9 +27,13 @@ TypeScript, and the build inlines everything into `dist/index.html`. See README.
   can't change the built page. Upgrades that touch output (esbuild, zod, yaml) should leave `dist/index.html`
   byte-identical, or explain why not.
 - **Biome formats and lints** `src/`, `tests/` and `scripts/` (2 spaces, 120 columns; it doesn't format HTML or
-  YAML, but does lint `index.html`). Run
-  `npm run format` before committing. The whole codebase was reformatted in one commit listed in
-  `.git-blame-ignore-revs`; run `git config blame.ignoreRevsFile .git-blame-ignore-revs` once so `git blame` skips it.
+  YAML, but does lint `index.html`). Run `npm run format` before committing. The whole codebase was reformatted in
+  one commit listed in `.git-blame-ignore-revs`; run `git config blame.ignoreRevsFile .git-blame-ignore-revs` once
+  so `git blame` skips it.
+- **New lint findings** (Biome minor releases add recommended rules, and warnings fail CI): fix the code if the rule
+  makes sense here. If a few lines need the flagged pattern on purpose, suppress it for those lines with a comment
+  saying why (`biome-ignore`, as in `tests/e2e/smoke.mjs`). Switch a rule off in `biome.json` only if it never
+  fits this codebase.
 - **zod 4 rejects `Infinity` in `z.number()`.** Bracket limits use `.inf` in YAML, so the schema allows
   `z.literal(Infinity)` explicitly.
 - Upgrade on a dedicated branch, not mid-feature. Move to the next Node major when it reaches Active LTS (each
