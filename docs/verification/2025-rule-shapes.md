@@ -9,13 +9,14 @@ July 2025 to June 2026 period, which the model applies to 2025 income.
 
 - **Data-only, everywhere but one place.** Every federal, provincial and territorial income tax rule and every
   benefit has the same shape in 2025 as in 2026, except the PEI sales tax credit.
-- **New program id needed: `pei-sales-tax-credit`.** July 2025 to June 2026 is the last full year of the old PEI
-  sales tax credit, which has a supplement that rises with income. Neither `pei-essentials-benefit` (2026) nor
-  `nl-income-supplement` can express it. This needs a schema change (below), so it isn't built yet.
-- **Scope decision needed: the one-time Groceries and Essentials top-up.** On June 5, 2026 the CRA paid an extra
-  50% of the 2025-26 GST/HST credit, inside the July 2025 to June 2026 benefit year. See "Open decisions".
-- **Label:** the engine names the federal credit "Canada Groceries and Essentials Benefit"; for 2025 it was still
-  the GST/HST credit. Fixing that also needs a schema field.
+- **New program id: `pei-sales-tax-credit`** (added with this note). July 2025 to June 2026 is the last full year
+  of the old PEI sales tax credit, which has a supplement that rises with income. Neither `pei-essentials-benefit`
+  (2026) nor `nl-income-supplement` can express it.
+- **New optional field: `groceriesBenefit.name`.** The engine names the federal credit "Canada Groceries and
+  Essentials Benefit" unless the year's data names it; for 2025 it was still the GST/HST credit.
+- **Left out pending a scope decision: the one-time Groceries and Essentials top-up.** On June 5, 2026 the CRA
+  paid an extra 50% of the 2025-26 GST/HST credit, inside the July 2025 to June 2026 benefit year. Nothing in the
+  schema or engine models it yet. See "Open decisions".
 
 ## The federal rate cut
 
@@ -72,8 +73,8 @@ spouse amounts 22,323 each, CPP, EI), so it is zero too, in both years.
 | Foreign tax credit | Same rule | Same | No data | https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/tax-return/completing-a-tax-return/whats-new.html |
 | CPP/QPP base and enhanced, EI, QPIP | Same structure (QPP base 5.4% in 2025) | Same | Data-only | https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas.html |
 | Canada Child Benefit (July 2025 to June 2026) | Two thresholds, rates by number of children | Same | Data-only | https://www.canada.ca/content/dam/cra-arc/formspubs/pub/t4114/t4114-25e.pdf |
-| GST/HST credit (July 2025 to June 2026) | Adult, spouse or first child, child, single supplement, 5% phase-out | Same formula, renamed Groceries and Essentials Benefit, amounts up 25% | Data-only formula; label needs a schema field | https://www.canada.ca/content/dam/cra-arc/formspubs/pub/rc4210/rc4210-25e.txt |
-| One-time GST/HST top-up (June 5, 2026) | 50% of the 2025-26 credit, inside the 2025 benefit year | None | Scope decision (see below) | https://www.canada.ca/en/revenue-agency/news/2026/04/canada-groceries-and-essentials-benefit-one-time-top-up-payment-to-make-groceries-and-other-essentials-more-affordable-is-coming-june-5.html |
+| GST/HST credit (July 2025 to June 2026) | Adult, spouse or first child, child, single supplement, 5% phase-out | Same formula, renamed Groceries and Essentials Benefit, amounts up 25% | Data-only; set the new optional `name` for the 2025 label | https://www.canada.ca/content/dam/cra-arc/formspubs/pub/rc4210/rc4210-25e.txt |
+| One-time GST/HST top-up (June 5, 2026) | 50% of the 2025-26 credit, inside the 2025 benefit year | None | Left out pending a scope decision (see below) | https://www.canada.ca/en/revenue-agency/news/2026/04/canada-groceries-and-essentials-benefit-one-time-top-up-payment-to-make-groceries-and-other-essentials-more-affordable-is-coming-june-5.html |
 | Canada Workers Benefit (standard, AB, NU, QC) | Same structure | Same (2026 values estimated) | Data-only | https://budget.canada.ca/2025/report-rapport/tm-mf-en.html |
 | Fuel charge, Canada Carbon Rebate | Ended April 2025 | None | Out of scope here (#29) | https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/tax-return/completing-a-tax-return/whats-new.html |
 
@@ -131,56 +132,30 @@ $41,000. That is about 0.18 points of a $30,000 income, over the 0.1-point rule.
 rising piece, but gives its extra amount only to couples, so a single parent would lose the $55 for an eligible
 dependant. The CRA's PEI page says the essentials benefit replaced this credit starting November 2026.
 
-## Schema changes needed (not made: `src/data/schema.ts` belongs to #1)
+## What was added for 2025
 
-1. **New credit program** in the `credit` union:
+1. **`pei-sales-tax-credit`** in the `credit` union (`src/data/schema.ts`), with its case in `creditsOf`
+   (`src/engine/credits.ts`) and unit tests in `tests/engine-credits.test.ts`. Parameters: `individual`,
+   `spouseOrDependant` (given to couples and single parents), `supplementRate`, `supplementFrom`, `supplementMax`,
+   `rate` and `threshold`. 2025 values for #3, from RC4210 for 2025-26: individual 110, spouseOrDependant 55,
+   supplementRate 0.005, supplementFrom 30000, supplementMax 55, rate 0.02, threshold 50000.
+2. **`groceriesBenefit.name`** (optional). For 2025, set it to the credit's 2025 name (the GST/HST credit). The
+   engine falls back to "Canada Groceries and Essentials Benefit", so 2026 is unchanged.
 
-   ```ts
-   program(
-     "pei-sales-tax-credit",
-     z.object({
-       individual: amount,
-       spouseOrDependant: amount,
-       supplementRate: rate,
-       supplementFrom: amount,
-       supplementMax: amount,
-       rate,
-       threshold: amount,
-     }),
-   ),
-   ```
-
-   Engine case to add in `creditsOf` (`fam` = couple or single parent), with a unit test:
-
-   ```ts
-   case "pei-sales-tax-credit": {
-     const q = cr.params;
-     const top = q.individual + (fam ? q.spouseOrDependant : 0) +
-       Math.min(q.supplementMax, q.supplementRate * over(q.supplementFrom));
-     out.push([name, Math.max(0, top - q.rate * over(q.threshold))]);
-     break;
-   }
-   ```
-
-   2025 values for #3: individual 110, spouseOrDependant 55, supplementRate 0.005, supplementFrom 30000,
-   supplementMax 55, rate 0.02, threshold 50000.
-
-2. **Optional `name` on `groceriesBenefit`** (`z.string().optional()`), so 2025 can show "GST/HST credit". The
-   engine would use `gb.name ?? "Canada Groceries and Essentials Benefit"`.
-
-3. **Only if the top-up is included:** an optional `oneTimeTopUp` share on `groceriesBenefit` (0.5 for 2025),
-   shown as its own credit line. The alternative, scaling every amount and rate by 1.5, gives the same total but
-   stores values that match no published figure.
+Not added: the one-time top-up (below). If it's included later, an optional share on `groceriesBenefit` (0.5 for
+2025), shown as its own credit line, would express it from the published figure. Scaling every amount and rate by
+1.5 gives the same total but stores values that match no published figure.
 
 ## Open decisions
 
-- **One-time Groceries and Essentials top-up.** Equal to 50% of the 2025-26 GST/HST credit, paid June 5, 2026 to
-  everyone entitled in January 2026. Under the model's benefit-year convention it belongs to 2025, and it is
-  material: a single person at $25,000 gets about $267, about 1 point of income. It is federal, so it doesn't
-  change the gaps between provinces. `docs/SCOPE.md` has no rule for one-time payments; that call goes to the
-  user.
-- **UI text is written for 2026.** The tooltips and notes in `src/ui/index.html` give 2026 amounts and the
-  "July 2026 to June 2027" period. That is a multi-year UI task, not a rule shape.
+- **One-time Groceries and Essentials top-up (left out for now).** Equal to 50% of the 2025-26 GST/HST credit,
+  paid June 5, 2026 to everyone entitled in January 2026. Under the model's benefit-year convention it belongs to
+  2025, and it is material: a single person at $25,000 gets about $267, about 1 point of income. It is federal,
+  so it doesn't change the gaps between provinces. `docs/SCOPE.md` has no rule for one-time payments; it stays out
+  until the user decides.
+- **UI text is written for 2026.** The page notes and tooltips (`src/ui/notes.ts`) call the federal credit the
+  "Canada Groceries and Essentials Benefit" and list the PEI essentials benefit. For 2025 they'll need to use
+  `groceriesBenefit.name` and mention the PEI sales tax credit. That's UI work, not a rule shape.
 
 ## Not checked separately
 
