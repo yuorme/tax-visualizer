@@ -14,7 +14,7 @@ quebec:
   workerDeduction: {rate: 0.06, max: 1450}
   livingAlone: {max: 2172, rate: 0.1875, threshold: 42955}
 salesTax: {rate: 0.14975, label: "5% GST + 9.975% QST"}
-propertyTax: {rate: 0.0090, city: Montreal}
+propertyTax: {rate: 0.0090, city: Montreal, note: school tax may be extra}
 childBenefit:
   name: Family allowance
   program: quebec-family-allowance
@@ -33,3 +33,4 @@ credits:
       coupleKids: [0.25, 3600, 19828]
 sources:
   - {label: "Revenu Québec, 2026 tax rates", url: "https://www.revenuquebec.ca/en/citizens/income-tax-return/completing-your-income-tax-return/income-tax-rates/"}
+  - {label: "CGTSIM, Understanding school tax (Montreal school tax is billed separately by the CGTSIM)", url: "https://www.cgtsim.qc.ca/en/understanding-school-tax/"}

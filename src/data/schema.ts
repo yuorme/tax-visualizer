@@ -33,10 +33,14 @@ export const federalSchema = z.object({
   basicPersonalAmount: phasedAmount,
   quebecAbatement: rate,
   employmentAmount: amount,
+  /** CRA's indexation factor for the year; the page notes cite it where an estimate indexes last year's figure. */
+  indexation: rate,
   investment: z.object({
     capitalGainsInclusion: rate,
     grossUp: z.object({ eligible: z.number().min(1), nonEligible: z.number().min(1) }),
     dividendTaxCredit: z.object({ eligible: rate, nonEligible: rate }),
+    /** Not used by the engine (withholding is an input); quoted in the page notes and the withholding presets. */
+    foreignWithholding: z.object({ usTreaty: rate, deductibleAbove: rate }),
   }),
   rrsp: z.object({ rate, limit: amount }),
   payroll: z.object({
@@ -236,10 +240,17 @@ export const provinceSchema = z
   .object({
     code: z.string().length(2),
     name: z.string(),
+    /** Shorter name for running text, e.g. "PEI". */
+    shortName: z.string().optional(),
+    territory: z.literal(true).optional(),
     order: z.number().int().min(0),
     system: z.literal("quebec").optional(),
     brackets,
     basicPersonalAmount: z.union([amount, phasedAmount, z.literal("federal")]),
+    /** A mid-year change to the basic personal amount, described in the page notes. */
+    basicPersonalAmountChange: z.object({ change: z.string(), effective: z.string() }).optional(),
+    /** First year the bracket limits stopped being indexed, when a province has frozen them. */
+    bracketsFrozenSince: z.number().int().optional(),
     dividendTaxCredit: z.object({ eligible: rate, nonEligible: rate }),
     spouseAmount: z.union([z.object({ max: amount, threshold: amount }), z.literal("federal"), z.literal("transfer")]),
     employmentAmountCredit: z.boolean().optional(),
@@ -262,7 +273,7 @@ export const provinceSchema = z
       })
       .optional(),
     salesTax: z.object({ rate, label: z.string() }),
-    propertyTax: z.object({ rate, city: z.string(), estimated: z.boolean().optional() }),
+    propertyTax: z.object({ rate, city: z.string(), estimated: z.boolean().optional(), note: z.string().optional() }),
     creditsUseRent: z.boolean().optional(),
     childBenefit: childBenefit.optional(),
     credits: z.array(credit).optional(),

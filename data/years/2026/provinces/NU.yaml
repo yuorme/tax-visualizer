@@ -1,5 +1,6 @@
 code: NU
 name: Nunavut
+territory: true
 order: 6
 brackets:
   - [55801, 0.04]
