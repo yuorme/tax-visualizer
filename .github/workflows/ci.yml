@@ -28,13 +28,15 @@ jobs:
       # the system libraries aren't reinstalled: ubuntu-latest already has them. If the runner image ever drops one,
       # e2e fails with Playwright's "missing dependencies" message; then add `npx playwright install-deps chromium`.
       - id: playwright
-        run: echo "version=$(node -p 'require("playwright/package.json").version')" >> "$GITHUB_OUTPUT"
+        run: |
+          echo "version=$(node -p 'require("playwright/package.json").version')" >> "$GITHUB_OUTPUT"
+          echo "image=${ImageOS:?runner sets ImageOS}" >> "$GITHUB_OUTPUT"
       - id: browser-cache
         uses: actions/cache@v6
         with:
           path: ~/.cache/ms-playwright
-          # ImageOS (e.g. ubuntu24) changes when ubuntu-latest moves to a new Ubuntu release, which needs a new build
-          key: playwright-shell-${{ env.ImageOS }}-${{ steps.playwright.outputs.version }}
+          # The runner's ImageOS (e.g. ubuntu24) changes when ubuntu-latest moves to a new Ubuntu release, which needs a new build
+          key: playwright-shell-${{ steps.playwright.outputs.image }}-${{ steps.playwright.outputs.version }}
       - if: steps.browser-cache.outputs.cache-hit != 'true'
         run: npx playwright install --with-deps --only-shell chromium
       - run: npm run typecheck
