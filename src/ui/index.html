@@ -26,7 +26,7 @@
         <label class="lbl" for="home">Home province</label>
         <select id="home" class="prov-select"></select>
       </div>
-      <div class="people" id="people" role="group" aria-label="Household members"></div>
+      <fieldset class="people" id="people" aria-label="Household members"></fieldset>
     </div>
     <div class="control-row">
       <div class="field">
@@ -165,14 +165,14 @@
         <span id="legend-sales" hidden><i class="sw" style="background:var(--sales)"></i>Sales tax</span>
         <span id="legend-prop" hidden><i class="sw" style="background:var(--propc)"></i>Property tax</span>
         <span id="legend-ben" hidden><i class="sw sw-ben"></i>Benefits &amp; credits</span>
-        <div class="seg" role="group" aria-label="Show as">
+        <fieldset class="seg" aria-label="Show as">
           <button type="button" id="m-pct" aria-pressed="true">% of income</button>
           <button type="button" id="m-usd" aria-pressed="false">$ tax</button>
-        </div>
-        <div class="seg" role="group" aria-label="Sort">
+        </fieldset>
+        <fieldset class="seg" aria-label="Sort">
           <button type="button" id="sort-rate" aria-pressed="true">Lowest first</button>
           <button type="button" id="sort-geo" aria-pressed="false">West → east</button>
-        </div>
+        </fieldset>
       </div>
     </div>
     <div class="cc-scroll">
@@ -180,7 +180,7 @@
         <div class="cc-y" id="cc-y" aria-hidden="true"></div>
         <div class="cc-plot">
           <div class="cc-grid" id="cc-grid" aria-hidden="true"></div>
-          <div class="cc-cols" id="cols" role="list"></div>
+          <ul class="cc-cols" id="cols"></ul>
         </div>
       </div>
     </div>

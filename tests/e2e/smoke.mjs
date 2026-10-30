@@ -46,8 +46,8 @@ const STEPS = [
         ["ed", "12,000"],
         ["fd", "8,000"],
       ]) {
-        await p.fill("#" + id, v);
-        await p.dispatchEvent("#" + id, "input");
+        await p.fill(`#${id}`, v);
+        await p.dispatchEvent(`#${id}`, "input");
       }
       await p.selectOption("#dest", "QC");
       await p.click("#m-pct");

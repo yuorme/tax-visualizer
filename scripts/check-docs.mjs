@@ -1,5 +1,5 @@
-// Fails if a tracked Markdown file has prose lines over 120 characters. Skips frontmatter, code blocks, tables
-// and lines containing a URL, which can't be wrapped.
+// Fails if a tracked Markdown file has prose lines over 120 characters. Skips frontmatter, fenced and indented
+// code blocks, tables and lines containing a URL, which can't be wrapped.
 //   node scripts/check-docs.mjs
 import { execFileSync } from "node:child_process";
 import fs from "node:fs";
@@ -9,20 +9,22 @@ const files = execFileSync("git", ["ls-files", "*.md"], { encoding: "utf8" }).sp
 const long = [];
 
 for (const file of files) {
-  const lines = fs.readFileSync(file, "utf8").split("\n");
-  let fence = false,
-    front = lines[0] === "---";
+  const lines = fs.readFileSync(file, "utf8").split(/\r?\n/);
+  let fence = null; // the opening marker (``` or ~~~, possibly longer) while inside a fenced block
+  let front = lines[0] === "---";
   lines.forEach((line, i) => {
     if (front) {
       if (i > 0 && line === "---") front = false;
       return;
     }
-    if (line.startsWith("```")) {
-      fence = !fence;
+    const marker = line.match(/^\s*(`{3,}|~{3,})/)?.[1];
+    if (marker && (!fence || (marker[0] === fence[0] && marker.length >= fence.length))) {
+      fence = fence ? null : marker;
       return;
     }
-    if (fence || line.startsWith("|") || /https?:\/\//.test(line)) return;
-    if (line.length > MAX) long.push(`${file}:${i + 1}: ${line.length} characters`);
+    if (fence || /^\s*\|/.test(line) || /^ {4}/.test(line) || /https?:\/\//.test(line)) return;
+    const length = [...line].length;
+    if (length > MAX) long.push(`${file}:${i + 1}: ${length} characters`);
   });
 }
 

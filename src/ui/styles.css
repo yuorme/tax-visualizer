@@ -279,11 +279,60 @@ input[type="range"] {
 .invest[open] summary::before {
   content: "−";
 }
+.tip b {
+  display: block;
+  margin-bottom: 3px;
+}
+.person b {
+  font-size: 13.5px;
+  font-weight: 650;
+}
+.stat b {
+  font-family: var(--font-num);
+  font-size: 19px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
 .invest summary b {
   font-size: 14px;
 }
+.info {
+  flex: none;
+  position: relative;
+  width: 16px;
+  height: 16px;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid var(--muted);
+  background: transparent;
+  color: var(--muted);
+  font:
+    italic 600 10.5px / 14px Georgia,
+    "Times New Roman",
+    serif;
+  text-align: center;
+  cursor: help;
+}
 .invest summary .info {
   align-self: center;
+}
+.scale span {
+  position: absolute;
+  top: 0;
+  padding-top: 6px;
+  white-space: nowrap;
+  transform: translateX(-50%);
+}
+.cc-y span {
+  position: absolute;
+  right: 0;
+  transform: translateY(-50%);
+}
+.stat span {
+  font-size: 11.5px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
 }
 .invest summary > span {
   font-size: 12.5px;
@@ -298,11 +347,26 @@ input[type="range"] {
   row-gap: 4px;
   align-content: start;
 }
+.lbl-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+}
 .invest-grid .field > .lbl-row {
   align-self: end;
 }
 .invest-grid .field > .money {
   align-self: end;
+}
+/* Slider axes: labels placed at the thumb-centre position for each value */
+.scale {
+  position: relative;
+  height: 22px;
+  font-family: var(--font-num);
+  font-size: 10.5px;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
 }
 .invest-grid .field > .scale {
   align-self: start;
@@ -373,22 +437,6 @@ input[type="range"] {
   outline: 2px solid var(--focus);
   outline-offset: 2px;
 }
-/* Slider axes: labels placed at the thumb-centre position for each value */
-.scale {
-  position: relative;
-  height: 22px;
-  font-family: var(--font-num);
-  font-size: 10.5px;
-  color: var(--muted);
-  font-variant-numeric: tabular-nums;
-}
-.scale span {
-  position: absolute;
-  top: 0;
-  padding-top: 6px;
-  white-space: nowrap;
-  transform: translateX(-50%);
-}
 .scale span::before {
   content: "";
   position: absolute;
@@ -421,29 +469,6 @@ input[type="range"] {
   background: var(--muted);
   height: 5px;
 }
-.lbl-row {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  min-width: 0;
-}
-.info {
-  flex: none;
-  position: relative;
-  width: 16px;
-  height: 16px;
-  padding: 0;
-  border-radius: 50%;
-  border: 1px solid var(--muted);
-  background: transparent;
-  color: var(--muted);
-  font:
-    italic 600 10.5px / 14px Georgia,
-    "Times New Roman",
-    serif;
-  text-align: center;
-  cursor: help;
-}
 .info::after {
   content: "";
   position: absolute;
@@ -454,10 +479,6 @@ input[type="range"] {
   color: var(--surface);
   background: var(--ink);
   border-color: var(--ink);
-}
-.tip b {
-  display: block;
-  margin-bottom: 3px;
 }
 .tip .t-sub {
   display: block;
@@ -513,10 +534,23 @@ input[type="range"] {
   max-width: 560px;
   font-size: 13px;
 }
+td {
+  padding: 5px 6px;
+  border-bottom: 1px solid var(--rule);
+  white-space: nowrap;
+}
+tfoot td {
+  border-bottom: 0;
+  font-weight: 600;
+}
 .cred-list td {
   border-bottom: 1px solid var(--rule);
   padding: 5px 6px;
   white-space: normal;
+}
+td.r,
+th.r {
+  text-align: right;
 }
 .cred-list td.r {
   white-space: nowrap;
@@ -530,13 +564,28 @@ input[type="range"] {
   font-variant-numeric: tabular-nums;
   text-align: right;
 }
-.cred-list tr.sum td {
-  font-weight: 700;
-  border-bottom: 0;
+tr.idle td {
+  color: var(--muted);
+  opacity: 0.6;
+}
+tr.top td {
+  font-weight: 600;
+}
+tfoot tr.sub td {
+  font-weight: 400;
+  color: var(--muted);
+  white-space: normal;
+}
+tfoot tr:last-child td {
   border-top: 1px solid var(--ink);
 }
 .cred-list .muted td {
   color: var(--muted);
+}
+.cred-list tr.sum td {
+  font-weight: 700;
+  border-bottom: 0;
+  border-top: 1px solid var(--ink);
 }
 .prop-grid {
   display: grid;
@@ -576,6 +625,11 @@ input[type="range"] {
 .money.sm span {
   font-size: 18px;
 }
+.check input {
+  accent-color: var(--prov);
+  width: 16px;
+  height: 16px;
+}
 .money.sm input {
   font-family: var(--font-num);
   font-size: 20px;
@@ -613,9 +667,6 @@ input[type="range"] {
   order: 2;
   margin-left: auto;
 }
-.home-sel .prov-select {
-  justify-self: end;
-}
 .prov-select {
   font: inherit;
   font-size: 15px;
@@ -628,6 +679,9 @@ input[type="range"] {
   min-width: 0;
   max-width: 100%;
   cursor: pointer;
+}
+.home-sel .prov-select {
+  justify-self: end;
 }
 .prov-select:hover {
   border-color: var(--muted);
@@ -693,12 +747,35 @@ table.cmp {
   min-width: 420px;
   font-size: 13px;
 }
+.hh td:first-child,
+.hh th:first-child {
+  font-family: var(--font-body);
+}
+.margs td:first-child {
+  font-family: var(--font-body);
+}
+th {
+  text-align: left;
+  font-family: var(--font-body);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  font-weight: 600;
+  padding: 4px 6px;
+  border-bottom: 1px solid var(--rule);
+}
 table.cmp th,
 table.cmp td:first-child {
   font-family: var(--font-body);
 }
 table.cmp td:first-child {
   white-space: normal;
+}
+.hh tr.sum td {
+  font-weight: 600;
+  border-top: 1px solid var(--ink);
+  border-bottom: 0;
 }
 table.cmp tr.sum td {
   font-weight: 700;
@@ -728,6 +805,10 @@ table.cmp .worse {
   font-size: 13px;
 }
 .people {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  min-inline-size: 0;
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
@@ -745,10 +826,6 @@ table.cmp .worse {
   color: var(--ink);
   font: inherit;
   cursor: pointer;
-}
-.person b {
-  font-size: 13.5px;
-  font-weight: 650;
 }
 .person small {
   font-family: var(--font-num);
@@ -806,16 +883,27 @@ table.cmp .worse {
   font-size: 13px;
   cursor: pointer;
 }
-.check input {
-  accent-color: var(--prov);
-  width: 16px;
-  height: 16px;
-}
 .ded-row {
   display: flex;
   align-items: baseline;
   gap: 10px;
   flex-wrap: wrap;
+}
+.money.md input {
+  font-family: var(--font-num);
+  font-size: 22px;
+  font-weight: 600;
+  width: 6.5ch;
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  padding: 2px 0;
+  outline: none;
+  font-variant-numeric: tabular-nums;
+}
+.check.sm input {
+  width: 13px;
+  height: 13px;
 }
 .ded .money.md input {
   width: 6.5ch;
@@ -843,18 +931,6 @@ table.cmp .worse {
 }
 .hh {
   margin-top: 2px;
-}
-.hh td:first-child,
-.hh th:first-child {
-  font-family: var(--font-body);
-}
-.hh tr.sum td {
-  font-weight: 600;
-  border-top: 1px solid var(--ink);
-  border-bottom: 0;
-}
-.margs td:first-child {
-  font-family: var(--font-body);
 }
 #slider {
   margin-bottom: 0;
@@ -895,6 +971,9 @@ table.cmp .worse {
   vertical-align: -1px;
 }
 .seg {
+  margin: 0;
+  padding: 0;
+  min-inline-size: 0;
   display: flex;
   border: 1px solid var(--rule);
   border-radius: 7px;
@@ -943,11 +1022,6 @@ table.cmp .worse {
   font-size: 11px;
   color: var(--muted);
 }
-.cc-y span {
-  position: absolute;
-  right: 0;
-  transform: translateY(-50%);
-}
 .cc-y .key {
   font-size: 10px;
   transform: none;
@@ -974,6 +1048,9 @@ table.cmp .worse {
   background: var(--muted);
 }
 .cc-cols {
+  list-style: none;
+  margin: 0;
+  padding: 0;
   position: relative;
   display: grid;
   grid-template-columns: repeat(13, minmax(0, 1fr));
@@ -1118,18 +1195,6 @@ table.cmp .worse {
 .money.md span:first-child {
   font-size: 20px;
 }
-.money.md input {
-  font-family: var(--font-num);
-  font-size: 22px;
-  font-weight: 600;
-  width: 6.5ch;
-  border: 0;
-  background: transparent;
-  color: var(--ink);
-  padding: 2px 0;
-  outline: none;
-  font-variant-numeric: tabular-nums;
-}
 .hh-sl {
   display: grid;
   gap: 4px;
@@ -1258,10 +1323,6 @@ table.cmp .worse {
   color: var(--muted);
   margin-left: 4px;
 }
-.check.sm input {
-  width: 13px;
-  height: 13px;
-}
 .spend .control-row {
   align-items: start;
   flex-wrap: wrap;
@@ -1355,18 +1416,6 @@ table.cmp .worse {
   border-top: 1px solid var(--rule);
   padding-top: 8px;
 }
-.stat span {
-  font-size: 11.5px;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-.stat b {
-  font-family: var(--font-num);
-  font-size: 19px;
-  font-weight: 600;
-  font-variant-numeric: tabular-nums;
-}
 .ledgers {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -1389,47 +1438,8 @@ table {
   font-size: 12.5px;
   font-variant-numeric: tabular-nums;
 }
-th {
-  text-align: left;
-  font-family: var(--font-body);
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--muted);
-  font-weight: 600;
-  padding: 4px 6px;
-  border-bottom: 1px solid var(--rule);
-}
-td {
-  padding: 5px 6px;
-  border-bottom: 1px solid var(--rule);
-  white-space: nowrap;
-}
-td.r,
-th.r {
-  text-align: right;
-}
-tr.idle td {
-  color: var(--muted);
-  opacity: 0.6;
-}
-tr.top td {
-  font-weight: 600;
-}
 tr.top td:first-child {
   box-shadow: inset 3px 0 0 var(--prov);
-}
-tfoot td {
-  border-bottom: 0;
-  font-weight: 600;
-}
-tfoot tr.sub td {
-  font-weight: 400;
-  color: var(--muted);
-  white-space: normal;
-}
-tfoot tr:last-child td {
-  border-top: 1px solid var(--ink);
 }
 .note {
   font-size: 13px;
@@ -1471,6 +1481,9 @@ footer a {
   .home-sel {
     margin-left: 0;
   }
+  .lbl {
+    letter-spacing: 0.05em;
+  }
   .home-sel .lbl {
     text-align: right;
   }
@@ -1507,9 +1520,6 @@ footer a {
   }
   .switch-wrap {
     order: 2;
-  }
-  .lbl {
-    letter-spacing: 0.05em;
   }
   /* Comparison table fits the screen instead of scrolling */
   table.cmp {

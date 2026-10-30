@@ -1,16 +1,17 @@
 // Everyone in the household in one province: income tax and payroll per person, the spouse / eligible dependant
 // amounts, child benefits, refundable credits, sales and property tax, and marginal rates.
-import { phased } from "./brackets.ts";
+
 import { ccbOf, provincialChildBenefit } from "./benefits.ts";
+import { phased } from "./brackets.ts";
 import { creditsOf } from "./credits.ts";
 import { netOf } from "./payroll.ts";
-import { personTax, type PersonResult } from "./personal.ts";
+import { type PersonResult, personTax } from "./personal.ts";
 import {
   blank,
-  INCOME_KEYS,
   type Credit,
   type Ctx,
   type Household,
+  INCOME_KEYS,
   type IncomeKey,
   type Person,
   type Province,

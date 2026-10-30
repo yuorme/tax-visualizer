@@ -2,9 +2,10 @@
 // inlined. It works from a file, on GitHub Pages, or as a published artifact.
 //   npm run build            one build
 //   npm run dev              rebuild on every change to src/ or data/
-import * as esbuild from "esbuild";
+
 import fs from "node:fs";
 import path from "node:path";
+import * as esbuild from "esbuild";
 import { DATA_DIR, listYears, loadYear } from "../src/data/load.ts";
 
 const root = path.resolve(import.meta.dirname, "..");

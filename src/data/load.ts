@@ -3,7 +3,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { parse } from "yaml";
-import { yearSchema, type YearData } from "./schema.ts";
+import { type YearData, yearSchema } from "./schema.ts";
 
 export const DATA_DIR = path.resolve(import.meta.dirname, "../../data/years");
 

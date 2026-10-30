@@ -26,7 +26,8 @@ open dist/index.html
 | `npm run build` | Validates the data and writes `dist/index.html`, a single self-contained page |
 | `npm run dev` | Rebuilds on every change to `src/` or `data/` |
 | `npm test` | Data validation, golden results and published reference values |
-| `npm run lint` | Biome lint rules, and no Markdown prose line over 120 characters |
+| `npm run lint` | Biome lint and formatting check, and no Markdown prose line over 120 characters |
+| `npm run format` | Applies Biome's formatting and safe lint fixes |
 | `npm run typecheck` | TypeScript checks for the engine, data schema, tests and scripts |
 | `npm run e2e` | Loads the built page in Chromium on desktop and phone widths |
 

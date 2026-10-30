@@ -1,52 +1,10 @@
 {
   "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
-  "vcs": {
-    "enabled": true,
-    "clientKind": "git",
-    "useIgnoreFile": true
-  },
-  "files": {
-    "includes": ["src/**", "tests/**", "scripts/**", "!src/ui/flags", "!tests/golden"]
-  },
-  "formatter": {
-    "enabled": true,
-    "indentStyle": "space",
-    "indentWidth": 2,
-    "lineWidth": 120
-  },
-  "assist": {
-    "enabled": false
-  },
-  "linter": {
-    "enabled": true,
-    "rules": {
-      "preset": "recommended",
-      "a11y": {
-        "useSemanticElements": "off"
-      },
-      "complexity": {
-        "useOptionalChain": "error"
-      },
-      "style": {
-        "noDescendingSpecificity": "off",
-        "noNonNullAssertion": "off",
-        "useTemplate": "off"
-      },
-      "suspicious": {
-        "useIterableCallbackReturn": "off"
-      }
-    }
-  },
-  "javascript": {
-    "formatter": {
-      "quoteStyle": "double",
-      "semicolons": "always",
-      "arrowParentheses": "asNeeded"
-    }
-  },
-  "html": {
-    "formatter": {
-      "enabled": false
-    }
-  }
+  "vcs": { "enabled": true, "clientKind": "git", "useIgnoreFile": true },
+  "files": { "includes": ["src/**", "tests/**", "scripts/**", "biome.json", "!src/ui/flags", "!tests/golden"] },
+  "formatter": { "enabled": true, "indentStyle": "space", "indentWidth": 2, "lineWidth": 120 },
+  "javascript": { "formatter": { "quoteStyle": "double", "semicolons": "always", "arrowParentheses": "asNeeded" } },
+  "html": { "formatter": { "enabled": false } },
+  "assist": { "enabled": true },
+  "linter": { "enabled": true, "rules": { "preset": "recommended" } }
 }

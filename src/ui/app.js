@@ -11,8 +11,8 @@ const P = Y.provinces.map(d => ({ c: d.code, n: d.name, qc: d.system === "quebec
 
 const $ = id => document.getElementById(id);
 const money = n => (Math.round(n) < 0 ? "−$" : "$") + Math.abs(Math.round(n)).toLocaleString("en-CA");
-const pct = (n, d = 1) => (n * 100).toFixed(d) + "%";
-const rateFmt = r => +(r * 100).toFixed(2) + "%";
+const pct = (n, d = 1) => `${(n * 100).toFixed(d)}%`;
+const rateFmt = r => `${+(r * 100).toFixed(2)}%`;
 const NAMES = ["You", "Partner"];
 // RRSP room: a share of earned income up to the year's dollar limit (current employment income stands in for last year's)
 const rrspMax = x => Math.min(F.rrsp.limit, Math.round(x.ord * F.rrsp.rate));
@@ -62,7 +62,7 @@ const inputs = () => ({
 });
 const calc = p => compute(Y, p.d, inputs());
 const propRate = c => propertyRate(byCode(c).d, inputs());
-const pct2 = r => (r * 100).toFixed(2) + "%"; // payroll rates shown to two decimals, e.g. 4.95%
+const pct2 = r => `${(r * 100).toFixed(2)}%`; // payroll rates shown to two decimals, e.g. 4.95%
 const me = () => people[active];
 function cleanPerson(o) {
   const x = blank(0);
@@ -154,12 +154,13 @@ function fillSelects() {
   $("dest").value = dest;
 }
 // Build columns once
+// Safari drops list semantics from a <ul> with list-style: none unless the role is explicit
 const colsEl = $("cols");
+colsEl.setAttribute("role", "list");
 P.forEach(p => {
-  const c = document.createElement("div");
+  const c = document.createElement("li");
   c.className = "col";
-  c.id = "col-" + p.c;
-  c.setAttribute("role", "listitem");
+  c.id = `col-${p.c}`;
   c.innerHTML = `<div class="col-plot"><span class="cv"></span><div class="stack"><i class="f"></i><i class="p"></i><i class="y"></i><i class="w"></i><i class="s"></i><i class="h"></i></div><i class="ben"></i></div>
     <div class="code" title="${p.n}">${p.c}${p.qc ? "<sup>†</sup>" : ""}</div><div class="cm"></div><div class="tag"></div>`;
   colsEl.appendChild(c);
@@ -249,7 +250,7 @@ function segTip(p, r, c) {
     const parts = [];
     if (r.ccb > 0.5) parts.push(`Canada Child Benefit ${money(r.ccb)}`);
     if (r.provBen > 0.5) parts.push(`${p.d.childBenefit?.name ?? "Provincial child benefit"} ${money(r.provBen)}`);
-    r.credits.forEach(([n, v]) => parts.push(`${n} ${money(v)}`));
+    for (const [n, v] of r.credits) parts.push(`${n} ${money(v)}`);
     sub = `${parts.join(" · ")}. Netted off the tax above`;
   }
   return `<b>${p.n} · ${SEG_NAMES[c]}</b><span class="t-num">${c === "ben" ? "−" : ""}${money(amt)} a year · ${pct(share)} of income</span>
@@ -303,34 +304,34 @@ function render() {
     sort === "rate" ? (a, b) => val(a.r) - val(b.r) || a.p.geo - b.p.geo : (a, b) => a.p.geo - b.p.geo,
   );
   order.forEach(({ p, r }) => {
-    const el = $("col-" + p.c);
+    const el = $(`col-${p.c}`);
     colsEl.appendChild(el);
     const stack = el.querySelector(".stack");
-    stack.style.bottom = pos(0) + "%";
-    stack.style.height = (Math.max(0, top(r)) / span) * 100 + "%";
+    stack.style.bottom = `${pos(0)}%`;
+    stack.style.height = `${(Math.max(0, top(r)) / span) * 100}%`;
     let last = "f";
     SEG_KEYS.forEach(c => {
-      const seg = el.querySelector("." + c),
+      const seg = el.querySelector(`.${c}`),
         v = segAmt(r, c);
-      seg.style.height = (r.gross > 0 ? (v / r.gross) * 100 : 0) + "%";
+      seg.style.height = `${r.gross > 0 ? (v / r.gross) * 100 : 0}%`;
       seg._tip = segTip(p, r, c);
       if (v > 0.5) last = c;
     });
-    SEG_KEYS.forEach(c => el.querySelector("." + c).classList.toggle("end", c === last));
+    for (const c of SEG_KEYS) el.querySelector(`.${c}`).classList.toggle("end", c === last);
     // Child benefits: a band from the net level up to the top of the column (below zero if net is negative)
     const ben = el.querySelector(".ben");
-    ben.style.bottom = pos(val(r)) + "%";
-    ben.style.height = ((top(r) - val(r)) / span) * 100 + "%";
+    ben.style.bottom = `${pos(val(r))}%`;
+    ben.style.height = `${((top(r) - val(r)) / span) * 100}%`;
     ben.hidden = r.benefits < 0.5;
     ben._tip = segTip(p, r, "ben");
     const cv = el.querySelector(".cv");
     cv.textContent = narrow.matches
       ? usd
-        ? (r.total < 0 ? "−" : "") + Math.round(Math.abs(r.total) / 1000) + "k"
+        ? `${(r.total < 0 ? "−" : "") + Math.round(Math.abs(r.total) / 1000)}k`
         : (r.avg * 100).toFixed(1)
       : usd
         ? r.total < 0
-          ? "−" + kMoney(-r.total)
+          ? `−${kMoney(-r.total)}`
           : kMoney(r.total)
         : pct(r.avg);
     // Net figure: above the column, or below the benefit band when benefits exceed tax
@@ -445,12 +446,9 @@ function ledger(title, sw, w, ti) {
     })
     .join("");
   const foot = [`<tr class="sub"><td colspan="3">Bracket tax</td><td class="r">${money(w.gross)}</td></tr>`];
-  w.rows
-    .filter(([, a]) => Math.abs(a) > 0.5)
-    .forEach(([label, a]) =>
-      foot.push(
-        `<tr class="sub"><td colspan="3">${label}</td><td class="r">${a < 0 ? "−" : "+"}${money(Math.abs(a))}</td></tr>`,
-      ),
+  for (const [label, a] of w.rows.filter(([, a]) => Math.abs(a) > 0.5))
+    foot.push(
+      `<tr class="sub"><td colspan="3">${label}</td><td class="r">${a < 0 ? "−" : "+"}${money(Math.abs(a))}</td></tr>`,
     );
   foot.push(`<tr><td colspan="3">${title} tax</td><td class="r">${money(w.net)}</td></tr>`);
   return `<div class="ledger"><h4><i class="sw" style="background:${sw}"></i>${title}</h4>
@@ -505,7 +503,7 @@ function renderDetail(res, order) {
     return `<td class="r ${good ? "better" : "worse"}">${d > 0 ? "+" : "−"}${money(Math.abs(d))}</td>`;
   };
   const fmt = (v, kind) =>
-    kind === "pp" ? pct(v) : kind === "credit" ? (v > 0.5 ? "−" + money(v) : money(0)) : money(v);
+    kind === "pp" ? pct(v) : kind === "credit" ? (v > 0.5 ? `−${money(v)}` : money(0)) : money(v);
   const row = (label, a, b, kind = "tax", cls = "") =>
     `<tr class="${cls}"><td>${label}</td><td class="r">${fmt(a, kind)}</td><td class="r">${fmt(b, kind)}</td>${kind === "credit" ? dcell(-a, -b, "tax") : dcell(a, b, kind)}</tr>`;
   const any = f => f(hr) > 0.5 || f(dr) > 0.5;
@@ -586,10 +584,10 @@ function renderDetail(res, order) {
     ${spouseNote ? `<p class="note">${spouseNote}</p>` : ""}
     <div class="views">
       <h4>Income tax detail${two ? ` for ${active ? "Partner" : "you"}` : ""}</h4>
-      <div class="seg" role="group" aria-label="Province for income tax detail">
-        <button data-view="home" aria-pressed="${view !== "dest"}">${H.p.n}</button>
-        <button data-view="dest" aria-pressed="${view === "dest"}">${D.p.n}</button>
-      </div>
+      <fieldset class="seg" aria-label="Province for income tax detail">
+        <button type="button" data-view="home" aria-pressed="${view !== "dest"}">${H.p.n}</button>
+        <button type="button" data-view="dest" aria-pressed="${view === "dest"}">${D.p.n}</button>
+      </fieldset>
     </div>
     ${ledgerView(V)}`;
 }
@@ -681,7 +679,7 @@ function ledgerView({ p, r }) {
   return `
     ${hasInv(x) || x.ded || m.pay.enh > 0.5 ? `<p class="note">${two ? `${who}: t` : "T"}axable income is ${money(m.ti)}: ${tiText}.${hasInv(x) ? ` "Tax on investment income" is the extra tax the ${two ? "household's " : ""}investment income adds on top of other income.` : ""} ${extra.join(" ")}</p>` : ""}
     <div class="ledgers">
-      ${ledger("Federal" + suffix, "var(--fed)", { lines: m.f.lines, gross: m.f.tax, rows: fRows, net: m.fed }, m.ti)}
+      ${ledger(`Federal${suffix}`, "var(--fed)", { lines: m.f.lines, gross: m.f.tax, rows: fRows, net: m.fed }, m.ti)}
       ${ledger(p.n + suffix, "var(--prov)", { lines: m.pr.lines, gross: m.pr.tax, rows: pRows, net: m.prov }, m.tiP)}
       <div class="ledger">
         <h4><i class="sw" style="background:var(--pay)"></i>Payroll${suffix}</h4>
@@ -818,7 +816,7 @@ function syncInv() {
   }
 }
 function syncRange(k) {
-  const r = $(k + "-range");
+  const r = $(`${k}-range`);
   r.value = Math.max(+r.min, Math.min(me()[k], +r.max));
 }
 document.querySelectorAll("input.inv").forEach(el => {
@@ -989,8 +987,8 @@ $("bpa-toggle").addEventListener("change", e => {
 function fmtTick(v, signed) {
   if (v === 0) return "$0";
   const a = Math.abs(v),
-    k = a >= 1e6 ? +(a / 1e6).toFixed(1) + "M" : a >= 1000 ? +(a / 1000).toFixed(1) + "k" : a;
-  return (v < 0 ? "−" : signed ? "+" : "") + "$" + k;
+    k = a >= 1e6 ? `${+(a / 1e6).toFixed(1)}M` : a >= 1000 ? `${+(a / 1000).toFixed(1)}k` : a;
+  return `${v < 0 ? "−" : signed ? "+" : ""}$${k}`;
 }
 document.querySelectorAll(".scale").forEach(sc => {
   const r = $(sc.dataset.for),
@@ -1021,7 +1019,7 @@ function showTip(btn) {
   else tip.textContent = btn.dataset.tip;
   tip.hidden = false;
   tipFor = btn;
-  document.querySelectorAll(".stack i.hot, .ben.hot").forEach(x => x.classList.remove("hot"));
+  for (const x of document.querySelectorAll(".stack i.hot, .ben.hot")) x.classList.remove("hot");
   if (btn._tip) btn.classList.add("hot");
   btn.setAttribute("aria-describedby", "tip");
   const b = btn.getBoundingClientRect(),
@@ -1032,8 +1030,8 @@ function showTip(btn) {
   let top = btn._tip ? b.top - h - 8 : b.bottom + 8;
   if (btn._tip && top < 8) top = b.bottom + 8;
   if (!btn._tip && top + h > innerHeight - 8) top = Math.max(8, b.top - h - 8);
-  tip.style.left = left + "px";
-  tip.style.top = top + "px";
+  tip.style.left = `${left}px`;
+  tip.style.top = `${top}px`;
 }
 function hideTip() {
   if (tipFor) {

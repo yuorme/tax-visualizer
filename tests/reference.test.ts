@@ -6,7 +6,11 @@ import { loadYear } from "../src/data/load.ts";
 import { blank, compute, type Household } from "../src/engine/index.ts";
 
 const y = loadYear(2026);
-const prov = (c: string) => y.provinces.find(p => p.code === c)!;
+const prov = (c: string) => {
+  const p = y.provinces.find(p => p.code === c);
+  if (!p) throw new Error(`no province ${c}`);
+  return p;
+};
 const single = (ord: number, extra: Partial<Household> = {}): Household => ({
   people: [blank(ord)],
   active: 0,

@@ -6,7 +6,8 @@ TypeScript, and the build inlines everything into `dist/index.html`. See README.
 
 ## Commands
 - `npm run check` — lint, typecheck, tests, build, browser smoke test. Must pass before any merge.
-- `npm run lint` — Biome lint rules, and no Markdown prose line over 120 characters.
+- `npm run lint` — Biome lint and formatting check, and no Markdown prose line over 120 characters.
+- `npm run format` — apply Biome's formatting and safe lint fixes.
 - `npm test` — data validation, golden results, published reference values (Node's built-in test runner).
 - `npm run build` / `npm run dev` — single-file build / rebuild on change.
 - `node scripts/make-flags.mjs` — regenerate the waving flag icons from `assets/flags/source/`.
@@ -25,9 +26,10 @@ TypeScript, and the build inlines everything into `dist/index.html`. See README.
 - **TypeScript (7) only typechecks.** `tsx` and esbuild strip types without checking them, so a compiler upgrade
   can't change the built page. Upgrades that touch output (esbuild, zod, yaml) should leave `dist/index.html`
   byte-identical, or explain why not.
-- **Biome lints but doesn't format.** The code is deliberately compact (several statements per line, long data
-  lines), and a formatter would rewrite all of it. Follow the surrounding style by hand. Rules that clash with it
-  are switched off in `biome.json`; turn a rule off there rather than adding ignore comments.
+- **Biome formats and lints** `src/`, `tests/` and `scripts/` (2 spaces, 120 columns; it doesn't format HTML or
+  YAML, but does lint `index.html`). Run
+  `npm run format` before committing. The whole codebase was reformatted in one commit listed in
+  `.git-blame-ignore-revs`; run `git config blame.ignoreRevsFile .git-blame-ignore-revs` once so `git blame` skips it.
 - **zod 4 rejects `Infinity` in `z.number()`.** Bracket limits use `.inf` in YAML, so the schema allows
   `z.literal(Infinity)` explicitly.
 - Upgrade on a dedicated branch, not mid-feature. Move to the next Node major when it reaches Active LTS (each

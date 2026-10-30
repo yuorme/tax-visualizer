@@ -31,7 +31,7 @@ for (const file of fs
   const png = await page.evaluate(
     async ({ svg, S }) => {
       const img = new Image();
-      img.src = "data:image/svg+xml;base64," + btoa(unescape(encodeURIComponent(svg)));
+      img.src = `data:image/svg+xml;base64,${btoa(unescape(encodeURIComponent(svg)))}`;
       await img.decode();
       const k = S.supersample,
         W = S.width * k,
