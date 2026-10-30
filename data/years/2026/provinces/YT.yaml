@@ -1,5 +1,6 @@
 code: YT
 name: Yukon
+territory: true
 order: 1
 brackets:
   - [58523, 0.064]

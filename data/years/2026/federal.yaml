@@ -16,12 +16,17 @@ basicPersonalAmount: {max: 16452, min: 14829, from: 181440, to: 258482}
 
 quebecAbatement: 0.165          # reduction of basic federal tax for Quebec residents
 employmentAmount: 1501          # Canada employment amount
+indexation: 0.02                # CRA's indexation factor for 2026; estimates below index 2025 figures by it
 
 investment:
   capitalGainsInclusion: 0.5
   grossUp: {eligible: 1.38, nonEligible: 1.15}
   # Federal dividend tax credit, as a share of the grossed-up dividend
   dividendTaxCredit: {eligible: 0.150198, nonEligible: 0.090301}
+  # Not used in the calculation (withholding is an input): the Canada–U.S. treaty rate on portfolio dividends
+  # (Article X(2)(b)), and the share of foreign property income above which foreign tax is deducted, not
+  # credited (Income Tax Act s. 20(11)). Quoted in the page notes.
+  foreignWithholding: {usTreaty: 0.15, deductibleAbove: 0.15}
 
 rrsp: {rate: 0.18, limit: 33810}
 
@@ -69,3 +74,6 @@ sources:
   - {label: "CRA, Current year tax rates and income brackets", url: "https://www.canada.ca/en/revenue-agency/services/tax/individuals/tax-rates-brackets/current-year.html"}
   - {label: "CRA, T4127 Payroll Deductions Formulas", url: "https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas.html"}
   - {label: "CRA, T4114 Canada child benefit and related programs", url: "https://www.canada.ca/en/revenue-agency/services/forms-publications/publications/t4114.html"}
+  - {label: "CRA, Adjustment of personal income tax and benefit amounts (indexation)", url: "https://www.canada.ca/en/revenue-agency/services/tax/individuals/frequently-asked-questions-individuals/adjustment-personal-income-tax-benefit-amounts.html"}
+  - {label: "Canada–United States Tax Convention, Article X", url: "https://www.canada.ca/en/department-finance/programs/tax-policy/tax-treaties/country/united-states-america-convention-consolidated-1980-1983-1984-1995-1997-2007.html"}
+  - {label: "Income Tax Act, s. 20(11)", url: "https://laws-lois.justice.gc.ca/eng/acts/I-3.3/section-20.html"}

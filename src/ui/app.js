@@ -2,6 +2,7 @@
 // All tax rules and amounts live in data/years/<year>/ and src/engine/; nothing here computes tax.
 import years from "virtual:years";
 import { blank, cashOf, compute, hasInv, INCOME_KEYS as KEYS, propertyRate } from "../engine/index.ts";
+import { footerNotes, share, tooltips } from "./notes.ts";
 
 const YEAR = Math.max(...Object.keys(years).map(Number));
 const Y = years[YEAR],
@@ -34,12 +35,13 @@ let homeValue = 0,
   rent = 0,
   useCredits = true,
   credOpen = false;
+const TREATY_WH = F.investment.foreignWithholding.usTreaty;
 let sort = "rate",
   home = "ON",
   dest = "AB",
   view = "home",
   useBpa = true,
-  whRate = 0.15,
+  whRate = TREATY_WH,
   spend = spendEst(1),
   invOpen = false;
 const byCode = c => P.find(p => p.c === c);
@@ -132,6 +134,17 @@ function save() {
     );
   } catch {}
 }
+
+// Text that quotes the year's figures: footer notes, info tooltips and the withholding presets (see notes.ts)
+$("tax-year").textContent = YEAR;
+$("notes").insertAdjacentHTML("afterbegin", footerNotes(Y, { defaultIncome: DEFAULT_INCOME, spendEst }));
+const TIPS = tooltips(Y);
+for (const b of document.querySelectorAll("[data-note]")) b.dataset.tip = TIPS[b.dataset.note];
+const WH_PRESETS = [0, 0.1, 0.25, 0.3]; // withholding choices offered besides the treaty rate
+$("wh").innerHTML = [...new Set([...WH_PRESETS, TREATY_WH])]
+  .sort((a, b) => a - b)
+  .map(r => `<option value="${r}">${rateFmt(r)}${r === TREATY_WH ? " (U.S. treaty)" : ""}</option>`)
+  .join("");
 
 // Province selectors
 const provOptions = skip =>
@@ -598,7 +611,10 @@ function ledgerView({ p, r }) {
     m = r.me,
     who = two ? NAMES[active] : "";
   const tiParts = [`${money(x.ord)} employment &amp; other`];
-  if (x.cg > 0) tiParts.push(`${money(x.cg * F.investment.capitalGainsInclusion)} taxable half of net gains`);
+  if (x.cg > 0)
+    tiParts.push(
+      `${money(x.cg * F.investment.capitalGainsInclusion)} taxable ${share(F.investment.capitalGainsInclusion)} of net gains`,
+    );
   if (x.ed) tiParts.push(`${money(x.ed * F.investment.grossUp.eligible)} grossed-up eligible dividends`);
   if (x.nd) tiParts.push(`${money(x.nd * F.investment.grossUp.nonEligible)} grossed-up non-eligible dividends`);
   if (x.fd) tiParts.push(`${money(x.fd)} foreign dividends`);

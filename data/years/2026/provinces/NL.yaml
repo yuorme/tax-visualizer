@@ -10,7 +10,8 @@ brackets:
   - [570638, 0.208]
   - [1141275, 0.213]
   - [.inf, 0.218]
-basicPersonalAmount: 13094     # April 2026 budget increase, effective January 1, 2026
+basicPersonalAmount: 13094
+basicPersonalAmountChange: {change: April 2026 budget increase, effective: "January 1, 2026"}
 dividendTaxCredit: {eligible: 0.063, nonEligible: 0.032}
 spouseAmount: {max: 9142, threshold: 915}
 lowIncomeReduction:

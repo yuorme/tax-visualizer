@@ -1,5 +1,6 @@
 code: NT
 name: Northwest Territories
+territory: true
 order: 3
 brackets:
   - [53003, 0.059]
