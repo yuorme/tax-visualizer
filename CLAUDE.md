@@ -19,14 +19,15 @@ TypeScript, and the build inlines everything into `dist/index.html`. See README.
   `npm ci`; use `npm install -E <pkg>@<version>` only to add or upgrade, and commit the lockfile with it.
   `@types/node` tracks the Node major.
 - **npm 11 runs install scripts only for packages listed in `allowScripts`** (esbuild, fsevents), keyed by
-  version. After upgrading one of them, run `npm install-scripts approve <pkg>` or the install warns.
+  version. After upgrading one of them, run `npm install-scripts approve <pkg>` (or the install warns), then
+  `npm install-scripts prune` to drop the old version's entry.
 - **TypeScript (7) only typechecks.** `tsx` and esbuild strip types without checking them, so a compiler upgrade
   can't change the built page. Upgrades that touch output (esbuild, zod, yaml) should leave `dist/index.html`
   byte-identical, or explain why not.
 - **zod 4 rejects `Infinity` in `z.number()`.** Bracket limits use `.inf` in YAML, so the schema allows
   `z.literal(Infinity)` explicitly.
-- Upgrade on a dedicated branch, not mid-feature. Move to the next Node LTS when it reaches Active LTS (October,
-  even-numbered majors).
+- Upgrade on a dedicated branch, not mid-feature. Move to the next Node major when it reaches Active LTS (each
+  October; from v27 every major becomes LTS).
 
 ## Rules that keep the numbers trustworthy
 - **Numbers live in data, formulas in code.** No amounts, rates or thresholds in `src/engine/` or `src/ui/`.
