@@ -20,6 +20,7 @@
     "golden:capture-legacy": "node tests/golden/capture-legacy.mjs"
   },
   "devDependencies": {
+    "@axe-core/playwright": "4.14.0",
     "@biomejs/biome": "2.6.3",
     "@types/node": "26.6.6",
     "esbuild": "0.28.2",
