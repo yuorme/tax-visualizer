@@ -22,6 +22,11 @@ Steps:
    - New data years have reference tests from outside sources.
 4. Spot-check any new or changed figures against their listed sources where you can.
 5. For UI changes, build and look at the page at 375 px, 430 px and desktop width (Playwright screenshots).
+   The page loads its fonts from Google Fonts, so text renders differently until they arrive. Before each
+   screenshot, after loading the page and again after each interaction, run
+   `await page.evaluate(() => document.fonts.ready)` (or the shared helper in `tests/e2e/` once #38 adds it).
+   Before reporting a pixel difference, rerun the capture once; a difference that doesn't repeat is font timing.
+   If the fonts can't be reached (offline), say so instead of reporting pixel differences.
 6. Check that the change does what the task asked and nothing more.
 
 Report findings grouped as blocking / should fix / minor, each with file, line and a suggested fix, and end with
