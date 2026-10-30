@@ -210,8 +210,8 @@ const credit = z.discriminatedUnion("program", [
     "pei-essentials-benefit",
     z.object({ single: amount, family: amount, rate, threshold: amount, minimum: amount }),
   ),
-  // PEI sales tax credit (replaced by the essentials benefit in November 2026): a base amount, plus one for a spouse or eligible dependant, plus a
-  // supplement that rises with family net income, all reduced above a threshold
+  // PEI sales tax credit (replaced by the essentials benefit in November 2026): a base amount, plus one for a
+  // spouse or eligible dependant, plus a supplement that rises with family net income, all reduced above a threshold
   program(
     "pei-sales-tax-credit",
     z.object({

@@ -128,9 +128,10 @@ spouse amounts 22,323 each, CPP, EI), so it is zero too, in both years.
 The 2025 credit is `110 + (spouse or eligible dependant ? 55 : 0) + min(55, 0.005 × (famNet − 30,000)⁺)`, less
 `0.02 × (famNet − 50,000)⁺`, floored at zero (RC4210 for 2025-26). The 2026 `pei-essentials-benefit` has no
 supplement that rises with income, so treating the maximum as flat overstates the credit by up to $55 below
-$41,000. That is about 0.18 points of a $30,000 income, over the 0.1-point rule. `nl-income-supplement` has the
-rising piece, but gives its extra amount only to couples, so a single parent would lose the $55 for an eligible
-dependant. The CRA's PEI page says the essentials benefit replaced this credit starting November 2026.
+$41,000. That is at least 0.18 points of income at incomes up to $30,000 (about 0.28 at $20,000), over the
+0.1-point rule. `nl-income-supplement` has the rising piece, but gives its extra amount only to couples, so a
+single parent would lose the $55 for an eligible dependant. The CRA's PEI page says the essentials benefit
+replaced this credit starting November 2026.
 
 ## What was added for 2025
 
