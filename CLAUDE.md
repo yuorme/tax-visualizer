@@ -8,7 +8,10 @@ TypeScript, and the build inlines everything into `dist/index.html`. See README.
 - `npm run check` — lint, typecheck, tests, build, browser smoke test. Must pass before any merge.
 - `npm run lint` — Biome lint and formatting check, and no Markdown prose line over 120 characters.
 - `npm run format` — apply Biome's formatting and safe lint fixes.
-- `npm test` — data validation, golden results, published reference values (Node's built-in test runner).
+- `npm test` — data validation, golden results, published reference values (Node's built-in test runner). Runs
+  every `tests/**/*.test.ts`; reference tests are one file per year in `tests/reference/<year>.test.ts`.
+- `npm run golden:capture -- <year>` — capture one year's `tests/golden/<year>.json` from the engine. Refuses to
+  overwrite without `--force`; never touches other years. `npm run golden:capture-legacy` is how 2026 was locked.
 - `npm run build` / `npm run dev` — single-file build / rebuild on change.
 - `node scripts/make-flags.mjs` — regenerate the waving flag icons from `assets/flags/source/`.
 
