@@ -74,14 +74,16 @@ emergency). For each finished branch: push it, open a pull request (`gh pr creat
 the reviewer, and post its verdict on the pull request. Use merge commits, not squash or rebase, so commit hashes
 survive (`.git-blame-ignore-revs` lists formatting commits by hash).
 
-Once the reviewer approves and the pull request is final, the orchestrator queues it with
-`gh pr merge N --auto --merge --delete-branch`; GitHub merges it when CI passes. The user merges instead, and the
-orchestrator labels the pull request `needs-human` and says so, when:
+Once the pull request is final (reviewer approved, no open should-fix findings, no more commits planned), the
+orchestrator queues it with `gh pr merge N --auto --merge`; GitHub merges it once CI passes (at once if it already
+has) and the repo deletes the branch. The user merges instead, and the orchestrator labels the pull request
+`needs-human` and says so, when:
 - its issue is labelled `needs-human`, or
 - the review ran on Opus (engine or rule changes, significant layout changes), or
 - it changes this merge process, the agent definitions or `.claude/settings.json`.
 
-After queueing, push nothing more: cancel first with `gh pr merge N --disable-auto`. Strict "up to date" means a
-queued pull request stalls when another merges first; run `gh pr update-branch N` and it merges after CI. A failed
-check leaves it open. Dependabot pull requests follow the same rule; treat each like an upgrade branch (see
-Toolchain).
+After queueing, push nothing except `gh pr update-branch N`: extra commits would merge unreviewed once CI passes, so
+to add some, cancel first with `gh pr merge N --disable-auto`. Strict "up to date" means a queued pull request stalls
+when another merges first; `gh pr update-branch N` brings it current and it merges after CI. A failed check leaves
+it open. Dependabot opens monthly update pull requests; each gets a reviewer pass and is then queued the same way,
+treated like an upgrade branch (see Toolchain).
