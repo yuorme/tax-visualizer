@@ -62,5 +62,12 @@ its own worktree, doesn't edit tracked files, runs the checks). For reviews of e
 significant layout changes, pass `model: opus` on the call. Give each agent one issue and an explicit list of files
 it owns; never run two agents on the same file at once. Every branch gets a reviewer pass before it merges; give
 the reviewer the branch name or commit hash from the agent's report.
-New worktrees start from `origin/main`, not local `main`, so push `main` before starting an agent. A new
-worktree has no `node_modules`, so agents run `npm ci` first.
+New worktrees start from `origin/main`, and a new worktree has no `node_modules`, so agents run `npm ci` first.
+
+## Merging
+`main` only changes through pull requests, and the `check` CI job must pass first (an admin can bypass in an
+emergency). For each finished branch: push it, open a pull request (`gh pr create`) whose body says `Closes #N`,
+run the reviewer, post its verdict on the pull request, and merge with `gh pr merge --merge --delete-branch` once
+CI is green and the reviewer approves. Use merge commits, not squash or rebase, so commit hashes survive
+(`.git-blame-ignore-revs` lists formatting commits by hash). Dependabot opens monthly update pull requests; treat
+each like an upgrade branch (see Toolchain).
