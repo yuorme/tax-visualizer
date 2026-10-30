@@ -10,10 +10,12 @@ plain YAML files in `data/`, versioned with the code.
 
 ## Quick start
 
-Requires Node 22.6 or later.
+Requires Node 22 (pinned in `.node-version`). With [fnm](https://github.com/Schniz/fnm) set up
+(`eval "$(fnm env --use-on-cd --shell zsh)"` in `~/.zshrc`), the right version is picked up when you enter the folder.
 
 ```sh
-npm install
+fnm install                       # once, installs the Node version in .node-version
+npm ci                            # installs exactly what package-lock.json lists
 npx playwright install chromium   # once, for the browser tests
 npm run check                     # typecheck, tests, build, browser smoke test
 open dist/index.html

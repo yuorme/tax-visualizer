@@ -5,8 +5,8 @@ Items list the files they mainly touch, so the orchestrator can tell which can r
 
 ## Now
 
-1. **GitHub and lockfile.** Push the repo, run `npm install`, commit `package-lock.json`, switch CI to `npm ci`,
-   turn on GitHub Pages.
+1. **GitHub Pages.** Turn on Pages (Settings → Pages → Source: GitHub Actions) and confirm the deploy job
+   publishes. Node is pinned in `.node-version`, `package-lock.json` is committed and CI uses `npm ci`.
 2. **Generate the page notes and tooltips from the data.** The methodology notes at the bottom and several
    tooltips state 2026 figures as text. Build them from the data so they can't drift, and so other years work.
    Files: `src/ui/index.html`, a new `src/ui/notes.ts`.
