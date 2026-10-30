@@ -96,4 +96,5 @@ includes and leaves out.
 
 ## License
 
-MIT, see `LICENSE`. Tax figures come from the government publications listed in each data file's `sources`.
+Code and data are MIT, see `LICENSE`. Tax figures come from the government publications listed in each data file's
+`sources`. The flag sources in `assets/flags/source/` are public domain.

@@ -13,3 +13,9 @@ max_line_length = 120
 [*.md]
 # Two trailing spaces are a line break in Markdown
 trim_trailing_whitespace = false
+
+[assets/flags/source/*.svg]
+# Kept byte-for-byte as downloaded (see .gitattributes)
+end_of_line = unset
+insert_final_newline = unset
+trim_trailing_whitespace = false
