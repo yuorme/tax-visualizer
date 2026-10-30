@@ -1,51 +1,100 @@
 // Page logic: reads the inputs, runs the engine for every province and draws the chart and comparison.
 // All tax rules and amounts live in data/years/<year>/ and src/engine/; nothing here computes tax.
 import years from "virtual:years";
-import { blank, cashOf, compute, hasInv, INCOME_KEYS as KEYS, propertyRate } from "../engine/index.ts";
+import {
+  type BracketLine,
+  blank,
+  cashOf,
+  compute,
+  type Household,
+  hasInv,
+  type IncomeKey,
+  INCOME_KEYS as KEYS,
+  type Person,
+  type PersonResult,
+  type Province,
+  propertyRate,
+  type Result,
+} from "../engine/index.ts";
 import { DEFAULT_INCOME, spendEst } from "./defaults.ts";
 import { footerNotes, share, tooltips } from "./notes.ts";
 
 const YEAR = Math.max(...Object.keys(years).map(Number));
 const Y = years[YEAR],
   F = Y.federal;
-// View model for each province: c = code, n = name, qc = Quebec system, geo = west-to-east position, b = brackets
-const P = Y.provinces.map(d => ({ c: d.code, n: d.name, qc: d.system === "quebec", geo: d.order, b: d.brackets, d }));
+/** View model for each province: c = code, n = name, qc = Quebec system, geo = west-to-east position, b = brackets */
+interface ProvView {
+  c: string;
+  n: string;
+  qc: boolean;
+  geo: number;
+  b: Province["brackets"];
+  d: Province;
+}
+/** A province and the engine's full result for it at the current inputs. */
+interface Row {
+  p: ProvView;
+  r: Result;
+}
+const P: ProvView[] = Y.provinces.map(d => ({
+  c: d.code,
+  n: d.name,
+  qc: d.system === "quebec",
+  geo: d.order,
+  b: d.brackets,
+  d,
+}));
 
-const $ = id => document.getElementById(id);
-const money = n => (Math.round(n) < 0 ? "−$" : "$") + Math.abs(Math.round(n)).toLocaleString("en-CA");
-const pct = (n, d = 1) => `${(n * 100).toFixed(d)}%`;
-const rateFmt = r => `${+(r * 100).toFixed(2)}%`;
+/** Fails loudly when the page markup lacks something the script expects. */
+function must<T>(v: T | null | undefined, what: string): T {
+  if (v == null) throw new Error(`Missing ${what}`);
+  return v;
+}
+const $ = <T extends HTMLElement = HTMLElement>(id: string) => must(document.getElementById(id), `#${id}`) as T;
+/** The first element under root that matches sel. */
+const qs = <T extends Element = HTMLElement>(root: ParentNode, sel: string) => must(root.querySelector<T>(sel), sel);
+/** The element at or above an event target that matches sel (none for the document, window or a text node). */
+const closest = <T extends Element = HTMLElement>(t: EventTarget | null, sel: string) =>
+  t instanceof Element ? t.closest<T>(sel) : null;
+const money = (n: number) => (Math.round(n) < 0 ? "−$" : "$") + Math.abs(Math.round(n)).toLocaleString("en-CA");
+const pct = (n: number, d = 1) => `${(n * 100).toFixed(d)}%`;
+const rateFmt = (r: number) => `${+(r * 100).toFixed(2)}%`;
 const NAMES = ["You", "Partner"];
 // RRSP room: a share of earned income up to the year's dollar limit (current employment income stands in for last year's)
-const rrspMax = x => Math.min(F.rrsp.limit, Math.round(x.ord * F.rrsp.rate));
+const rrspMax = (x: Person) => Math.min(F.rrsp.limit, Math.round(x.ord * F.rrsp.rate));
 
-let people = [blank(DEFAULT_INCOME)],
+type Metric = "pct" | "usd";
+type Sort = "rate" | "geo";
+type View = "home" | "dest";
+let people: Person[] = [blank(DEFAULT_INCOME)],
   active = 0,
   spouse = true;
-let metric = "pct",
+let metric: Metric = "pct",
   frug = 0,
   adults = 1,
   kids = 0,
   under6 = 0; // under6: children under 6, out of kids
 let homeValue = 0,
-  propOverride = null,
+  propOverride: number | null = null,
   propOpen = false,
   rent = 0,
   useCredits = true,
   credOpen = false;
 const TREATY_WH = F.investment.foreignWithholding.usTreaty;
-let sort = "rate",
+let sort: Sort = "rate",
   home = "ON",
   dest = "AB",
-  view = "home",
+  view: View = "home",
   useBpa = true,
   whRate = TREATY_WH,
   spend = spendEst(1),
   invOpen = false;
-const byCode = c => P.find(p => p.c === c);
+const byCode = (c: string) => P.find(p => p.c === c);
+/** The province with this code; home and dest always hold one. */
+const prov = (c: string) => must(byCode(c), `province ${c}`);
 const effSpend = () => Math.round((spend * (1 + frug / 100)) / 10) * 10; // nearest $10
 // Engine input built from the current state
-const inputs = () => ({
+const inputs = (): Household => ({
   people,
   active,
   spouse,
@@ -60,43 +109,57 @@ const inputs = () => ({
   monthlySpending: effSpend(),
   propertyRates: propOverride != null ? { [home]: propOverride } : undefined,
 });
-const calc = p => compute(Y, p.d, inputs());
-const propRate = c => propertyRate(byCode(c).d, inputs());
-const pct2 = r => `${(r * 100).toFixed(2)}%`; // payroll rates shown to two decimals, e.g. 4.95%
+const calc = (p: ProvView) => compute(Y, p.d, inputs());
+const rowFor = (res: Row[], c: string) =>
+  must(
+    res.find(y => y.p.c === c),
+    `result for ${c}`,
+  );
+const propRate = (c: string) => propertyRate(prov(c).d, inputs());
+const pct2 = (r: number) => `${(r * 100).toFixed(2)}%`; // payroll rates shown to two decimals, e.g. 4.95%
 const me = () => people[active];
-function cleanPerson(o) {
+const isNum = (v: unknown): v is number => typeof v === "number";
+/** A person read back from saved state, keeping only valid amounts. */
+function cleanPerson(o: unknown): Person {
   const x = blank(0);
-  if (o) for (const k of KEYS) if (typeof o[k] === "number" && (k === "cg" || o[k] >= 0)) x[k] = o[k];
-  if (o && o.ded >= 0) x.ded = o.ded;
+  if (o && typeof o === "object") {
+    const saved = o as Partial<Record<keyof Person, unknown>>;
+    for (const k of KEYS) {
+      const v = saved[k];
+      if (isNum(v) && (k === "cg" || v >= 0)) x[k] = v;
+    }
+    if (isNum(saved.ded) && saved.ded >= 0) x.ded = saved.ded;
+  }
   return x;
 }
 // Saved state from before the defaults changed (v < 3) is ignored so the new defaults show.
+// Values are checked for the types save() writes, so a damaged save can't put a string where a number belongs.
 try {
-  const s = JSON.parse(localStorage.getItem("taxcmp") || "{}");
+  const s: Record<string, unknown> = JSON.parse(localStorage.getItem("taxcmp") || "{}");
   if (s.v === 3) {
     if (Array.isArray(s.people) && s.people.length) people = s.people.slice(0, 2).map(cleanPerson);
     if (s.active === 1 && people.length === 2) active = 1;
     if (typeof s.spouse === "boolean") spouse = s.spouse;
-    if (s.sort) sort = s.sort;
-    if (byCode(s.home)) home = s.home;
-    if (byCode(s.dest)) dest = s.dest;
+    if (s.sort === "rate" || s.sort === "geo") sort = s.sort;
+    if (typeof s.home === "string" && byCode(s.home)) home = s.home;
+    if (typeof s.dest === "string" && byCode(s.dest)) dest = s.dest;
     if (s.view === "dest") view = "dest";
     if (typeof s.useBpa === "boolean") useBpa = s.useBpa;
-    if (s.whRate >= 0) whRate = s.whRate;
-    adults = s.adults >= 1 && s.adults <= 4 ? s.adults : people.length;
-    if (s.kids >= 0 && s.kids <= 6) kids = s.kids;
-    if (typeof s.under6 === "number") under6 = Math.max(0, Math.min(kids, s.under6));
+    if (isNum(s.whRate) && s.whRate >= 0) whRate = s.whRate;
+    adults = isNum(s.adults) && s.adults >= 1 && s.adults <= 4 ? s.adults : people.length;
+    if (isNum(s.kids) && s.kids >= 0 && s.kids <= 6) kids = s.kids;
+    if (isNum(s.under6)) under6 = Math.max(0, Math.min(kids, s.under6));
     else if (s.under6 === true) under6 = kids; // older saves stored a yes/no
-    if (s.homeValue >= 0) homeValue = s.homeValue;
-    if (typeof s.propOverride === "number") propOverride = s.propOverride;
+    if (isNum(s.homeValue) && s.homeValue >= 0) homeValue = s.homeValue;
+    if (isNum(s.propOverride)) propOverride = s.propOverride;
     if (typeof s.propOpen === "boolean") propOpen = s.propOpen;
-    if (s.rent >= 0) rent = s.rent;
+    if (isNum(s.rent) && s.rent >= 0) rent = s.rent;
     if (typeof s.useCredits === "boolean") useCredits = s.useCredits;
     if (typeof s.credOpen === "boolean") credOpen = s.credOpen;
-    spend = s.adults && s.spend >= 0 ? s.spend : spendEst(adults + kids); // older saves predate adults/children
+    spend = s.adults && isNum(s.spend) && s.spend >= 0 ? s.spend : spendEst(adults + kids); // older saves predate adults/children
     if (typeof s.invOpen === "boolean") invOpen = s.invOpen;
     if (s.metric === "usd") metric = "usd";
-    if (s.frug >= -100 && s.frug <= 100000) frug = s.frug;
+    if (isNum(s.frug) && s.frug >= -100 && s.frug <= 100000) frug = s.frug;
   }
 } catch {}
 if (dest === home) dest = home === "AB" ? "BC" : "AB";
@@ -134,10 +197,10 @@ function save() {
 }
 
 // Text that quotes the year's figures: footer notes, info tooltips and the withholding presets (see notes.ts)
-$("tax-year").textContent = YEAR;
+$("tax-year").textContent = String(YEAR);
 $("notes").insertAdjacentHTML("afterbegin", footerNotes(Y, { defaultIncome: DEFAULT_INCOME, spendEst }));
 const TIPS = tooltips(Y);
-for (const b of document.querySelectorAll("[data-note]")) b.dataset.tip = TIPS[b.dataset.note];
+for (const b of document.querySelectorAll<HTMLElement>("[data-note]")) b.dataset.tip = TIPS[b.dataset.note ?? ""];
 const WH_PRESETS = [0, 0.1, 0.25, 0.3]; // withholding choices offered besides the treaty rate
 $("wh").innerHTML = [...new Set([...WH_PRESETS, TREATY_WH])]
   .sort((a, b) => a - b)
@@ -145,7 +208,7 @@ $("wh").innerHTML = [...new Set([...WH_PRESETS, TREATY_WH])]
   .join("");
 
 // Province selectors
-const provOptions = skip =>
+const provOptions = (skip: string) =>
   [...P]
     .sort((a, b) => a.n.localeCompare(b.n))
     .filter(p => p.c !== skip)
@@ -157,12 +220,14 @@ const provCodes = () =>
     .sort((a, b) => a.c.localeCompare(b.c))
     .map(p => `<option value="${p.c}" title="${p.n}" aria-label="${p.n}">${p.c}</option>`)
     .join("");
+const homeSel = $<HTMLSelectElement>("home"),
+  destSel = $<HTMLSelectElement>("dest");
 function fillSelects() {
-  $("home").innerHTML = provCodes();
-  $("home").value = home;
-  $("home").title = P.find(p => p.c === home)?.n || "";
-  $("dest").innerHTML = provOptions(home);
-  $("dest").value = dest;
+  homeSel.innerHTML = provCodes();
+  homeSel.value = home;
+  homeSel.title = P.find(p => p.c === home)?.n || "";
+  destSel.innerHTML = provOptions(home);
+  destSel.value = dest;
 }
 // Build columns once
 // Safari drops list semantics from a <ul> with list-style: none unless the role is explicit
@@ -179,7 +244,7 @@ P.forEach(p => {
 
 // Axis starts at 40% and only widens (in 5-point steps) when a column needs more room.
 const AXIS_BASE = 0.4;
-function axisMax(top) {
+function axisMax(top: number) {
   return Math.max(AXIS_BASE, (Math.ceil((top * 100 + 1) / 5) * 5) / 100);
 }
 
@@ -199,8 +264,11 @@ function renderPeople() {
   $("people").innerHTML = html;
 }
 
-const kMoney = v => (v >= 1000 ? `$${+(v / 1000).toFixed(v >= 100000 ? 0 : 1)}k` : `$${Math.round(v)}`);
-const SEG_NAMES = {
+const kMoney = (v: number) => (v >= 1000 ? `$${+(v / 1000).toFixed(v >= 100000 ? 0 : 1)}k` : `$${Math.round(v)}`);
+/** Chart column segments (f = federal, p = provincial, y = payroll, w = withheld, s = sales, h = property) and the
+ *  benefits band. Each is also the segment element's class name. */
+type Seg = "f" | "p" | "y" | "w" | "s" | "h" | "ben";
+const SEG_NAMES: Record<Seg, string> = {
   f: "Federal income tax",
   p: "Provincial / territorial income tax",
   y: "CPP/QPP, EI & health premiums",
@@ -209,14 +277,17 @@ const SEG_NAMES = {
   h: "Property tax",
   ben: "Benefits and credits",
 };
-const SEG_KEYS = ["f", "p", "y", "w", "s", "h"];
-const segAmt = (r, c) =>
+const SEG_KEYS: Exclude<Seg, "ben">[] = ["f", "p", "y", "w", "s", "h"];
+const segAmt = (r: Result, c: Seg) =>
   ({ f: r.fed, p: r.prov, y: r.payroll, w: r.wh, s: r.sales, h: r.property, ben: r.benefits })[c];
-function segTip(p, r, c) {
+/** Tooltip HTML for each chart segment, set on every render. Info buttons use their data-tip text instead. */
+const segTips = new WeakMap<Element, string>();
+function segTip(p: ProvView, r: Result, c: Seg) {
   const amt = segAmt(r, c);
   const share = r.base > 0 ? amt / r.base : 0;
   const two = people.length === 2;
-  const each = fn => (two ? r.list.map((y, i) => `${NAMES[i]} ${fn(y)}`).join(", ") : fn(r.list[0]));
+  const each = (fn: (y: PersonResult) => string) =>
+    two ? r.list.map((y, i) => `${NAMES[i]} ${fn(y)}`).join(", ") : fn(r.list[0]);
   let sub = "";
   if (c === "f") {
     sub = `Top federal bracket reached: ${each(y => rateFmt(y.f.marg))}`;
@@ -258,7 +329,7 @@ function segTip(p, r, c) {
   } else if (c === "h") {
     sub = `${rateFmt(r.propRate)} on a ${money(homeValue)} home${p.c === home && propOverride != null ? " (your rate)" : ` (${p.d.propertyTax.city} rate)`}`;
   } else if (c === "ben") {
-    const parts = [];
+    const parts: string[] = [];
     if (r.ccb > 0.5) parts.push(`Canada Child Benefit ${money(r.ccb)}`);
     if (r.provBen > 0.5) parts.push(`${p.d.childBenefit?.name ?? "Provincial child benefit"} ${money(r.provBen)}`);
     for (const [n, v] of r.credits) parts.push(`${n} ${money(v)}`);
@@ -271,15 +342,15 @@ function segTip(p, r, c) {
 
 const narrow = matchMedia("(max-width: 520px)"); // phone: compact chart labels
 function render() {
-  const res = P.map(p => ({ p, r: calc(p) }));
+  const res: Row[] = P.map(p => ({ p, r: calc(p) }));
   const usd = metric === "usd";
-  const val = r => (usd ? r.total : r.avg); // net of benefits: what the label shows and sorting uses
-  const top = r => (usd ? r.gross : r.grossAvg); // gross: how tall the column is drawn
+  const val = (r: Result) => (usd ? r.total : r.avg); // net of benefits: what the label shows and sorting uses
+  const top = (r: Result) => (usd ? r.gross : r.grossAvg); // gross: how tall the column is drawn
   // Axis runs from lo to hi. lo drops below zero when any province's net tax is negative
   // (child benefits larger than the taxes paid).
   let lo = 0,
-    hi,
-    ticks = [];
+    hi: number,
+    ticks: number[] = [];
   const minNet = Math.min(0, ...res.map(x => val(x.r)));
   if (usd) {
     const top = Math.max(1, ...res.map(x => x.r.gross));
@@ -297,8 +368,8 @@ function render() {
     if (hi - ticks[ticks.length - 1] > 0.051) ticks.push(hi); // skip an end label that would crowd the last 10% mark
   }
   const span = hi - lo,
-    pos = v => ((v - lo) / span) * 100;
-  const yLabel = t => {
+    pos = (v: number) => ((v - lo) / span) * 100;
+  const yLabel = (t: number) => {
     if (Math.abs(t) < 1e-9) return usd ? "$0" : "0%";
     const sign = t < 0 ? "−" : "";
     return usd ? sign + kMoney(Math.abs(t)) : `${sign}${Math.round(Math.abs(t) * 100)}%`;
@@ -317,25 +388,25 @@ function render() {
   order.forEach(({ p, r }) => {
     const el = $(`col-${p.c}`);
     colsEl.appendChild(el);
-    const stack = el.querySelector(".stack");
+    const stack = qs(el, ".stack");
     stack.style.bottom = `${pos(0)}%`;
     stack.style.height = `${(Math.max(0, top(r)) / span) * 100}%`;
-    let last = "f";
+    let last: Seg = "f";
     SEG_KEYS.forEach(c => {
-      const seg = el.querySelector(`.${c}`),
+      const seg = qs(el, `.${c}`),
         v = segAmt(r, c);
       seg.style.height = `${r.gross > 0 ? (v / r.gross) * 100 : 0}%`;
-      seg._tip = segTip(p, r, c);
+      segTips.set(seg, segTip(p, r, c));
       if (v > 0.5) last = c;
     });
-    for (const c of SEG_KEYS) el.querySelector(`.${c}`).classList.toggle("end", c === last);
+    for (const c of SEG_KEYS) qs(el, `.${c}`).classList.toggle("end", c === last);
     // Child benefits: a band from the net level up to the top of the column (below zero if net is negative)
-    const ben = el.querySelector(".ben");
+    const ben = qs(el, ".ben");
     ben.style.bottom = `${pos(val(r))}%`;
     ben.style.height = `${((top(r) - val(r)) / span) * 100}%`;
     ben.hidden = r.benefits < 0.5;
-    ben._tip = segTip(p, r, "ben");
-    const cv = el.querySelector(".cv");
+    segTips.set(ben, segTip(p, r, "ben"));
+    const cv = qs(el, ".cv");
     cv.textContent = narrow.matches
       ? usd
         ? `${(r.total < 0 ? "−" : "") + Math.round(Math.abs(r.total) / 1000)}k`
@@ -347,21 +418,21 @@ function render() {
         : pct(r.avg);
     // Net figure: above the column, or below the benefit band when benefits exceed tax
     cv.style.bottom = val(r) < 0 ? `calc(${pos(val(r))}% - 18px)` : `calc(${pos(Math.max(0, top(r)))}% + 4px)`;
-    el.querySelector(".cm").textContent = narrow.matches ? (r.marg * 100).toFixed(1) : pct(r.marg);
+    qs(el, ".cm").textContent = narrow.matches ? (r.marg * 100).toFixed(1) : pct(r.marg);
     el.classList.toggle("is-home", p.c === home);
     el.classList.toggle("is-dest", p.c === dest);
-    el.querySelector(".tag").textContent = p.c === home ? "home" : p.c === dest ? "dest." : "";
+    qs(el, ".tag").textContent = p.c === home ? "home" : p.c === dest ? "dest." : "";
     el.setAttribute(
       "aria-label",
       `${p.n}${p.c === home ? " (home)" : p.c === dest ? " (destination)" : ""}: net ${pct(r.avg)} of income, marginal ${pct(r.marg)}, total ${money(r.total)}${r.benefits > 0.5 ? ` after ${money(r.benefits)} of child benefits` : ""}`,
     );
   });
-  if (tipFor?._tip && tipFor.closest(".col")) showTip(tipFor); // keep an open segment tip current
+  if (tipFor && segTips.get(tipFor) && tipFor.closest(".col")) showTip(tipFor); // keep an open segment tip current
 
   const two = people.length === 2,
     x = me();
   const totalInc = people.reduce((a, y) => a + cashOf(y), 0);
-  const H = res.find(y => y.p.c === home);
+  const H = rowFor(res, home);
   const anyBen = res.some(y => y.r.benefits > 0.5);
   $("chart-title").textContent = usd
     ? `${two || adults > 1 || kids > 0 ? "Household tax" : "Tax"} on ${money(totalInc)}${anyBen ? ", after benefits" : ""}`
@@ -372,7 +443,7 @@ function render() {
   $("ded-label").textContent = two ? `${active ? "Partner's" : "Your"} deductions` : "Deductions";
   const rm = rrspMax(x);
   $("max-rrsp").textContent = `Max RRSP ${money(rm)}`;
-  $("max-rrsp").setAttribute("aria-pressed", rm > 0 && x.ded === rm);
+  $("max-rrsp").setAttribute("aria-pressed", String(rm > 0 && x.ded === rm));
   $("invest-title").textContent = two ? `${active ? "Partner's" : "Your"} investment income` : "Investment income";
   $("invest-sum").textContent = hasInv(x)
     ? [
@@ -390,11 +461,11 @@ function render() {
   $("legend-prop").hidden = !(homeValue > 0);
   $("legend-ben").hidden = !anyBen;
   // Refundable credits panel: home province's credits, and a rent box only where a credit uses rent
-  $("cred-toggle").checked = useCredits;
+  $<HTMLInputElement>("cred-toggle").checked = useCredits;
   $("cred-state").textContent = useCredits ? "Netted off tax" : "Not counted";
-  const needRent = useCredits && homeValue === 0 && (byCode(home).d.creditsUseRent || byCode(dest).d.creditsUseRent);
+  const needRent = useCredits && homeValue === 0 && (prov(home).d.creditsUseRent || prov(dest).d.creditsUseRent);
   $("rent-field").hidden = !needRent;
-  if (document.activeElement !== $("rent")) $("rent").value = rent.toLocaleString("en-CA");
+  if (document.activeElement !== $("rent")) $<HTMLInputElement>("rent").value = rent.toLocaleString("en-CA");
   const hc = H.r.credits;
   $("cred-sum").textContent = !useCredits
     ? "not counted"
@@ -406,48 +477,60 @@ function render() {
     : hc.length
       ? hc.map(([n, v]) => `<tr><td>${n}</td><td class="r">${money(v)}</td></tr>`).join("") +
         `<tr class="sum"><td>${H.p.n} total</td><td class="r">${money(H.r.refund)}</td></tr>`
-      : `<tr class="muted"><td>No refundable credits in ${H.p.n} at this income${byCode(home).d.creditsUseRent && homeValue === 0 && rent === 0 ? " (enter rent for rent-based credits)" : ""}</td><td class="r">$0</td></tr>`;
-  $("adults").value = adults;
-  $("adults-val").textContent = adults;
-  $("kids").value = kids;
-  $("kids-val").textContent = kids;
+      : `<tr class="muted"><td>No refundable credits in ${H.p.n} at this income${prov(home).d.creditsUseRent && homeValue === 0 && rent === 0 ? " (enter rent for rent-based credits)" : ""}</td><td class="r">$0</td></tr>`;
+  $<HTMLInputElement>("adults").value = String(adults);
+  $("adults-val").textContent = String(adults);
+  $<HTMLInputElement>("kids").value = String(kids);
+  $("kids-val").textContent = String(kids);
   $("u6").hidden = kids === 0;
-  $("u6").value = under6;
+  $<HTMLInputElement>("u6").value = String(under6);
   $("u6-val").hidden = kids === 0;
   $("u6-val").textContent = `${under6} under 6`;
   // Track fill: slate up to the under-6 count, purple from there to the number of children
-  const at = q => `calc(9px + (100% - 18px) * ${q / 6})`;
+  const at = (q: number) => `calc(9px + (100% - 18px) * ${q / 6})`;
   $("kids-track").style.background =
     kids === 0
       ? ""
       : `linear-gradient(to right, var(--fed) 0 ${at(under6)}, var(--sales) ${at(under6)} ${at(kids)}, var(--rule) ${at(kids)} 100%)`;
   $("prop-sum").textContent =
     homeValue > 0 ? `${money(H.r.property)} a year on a ${money(homeValue)} home` : "not included";
-  if (document.activeElement !== $("pr-rate")) $("pr-rate").value = (+(propRate(home) * 100).toFixed(3)).toString();
+  if (document.activeElement !== $("pr-rate"))
+    $<HTMLInputElement>("pr-rate").value = (+(propRate(home) * 100).toFixed(3)).toString();
   $("pr-note").textContent =
     propOverride != null
-      ? `Your rate (${byCode(home).d.propertyTax.city} is ${rateFmt(byCode(home).d.propertyTax.rate)})`
-      : `${byCode(home).d.propertyTax.city} ${YEAR} rate`;
+      ? `Your rate (${prov(home).d.propertyTax.city} is ${rateFmt(prov(home).d.propertyTax.rate)})`
+      : `${prov(home).d.propertyTax.city} ${YEAR} rate`;
   $("pr-reset").hidden = propOverride == null;
-  $("m-pct").setAttribute("aria-pressed", metric === "pct");
-  $("m-usd").setAttribute("aria-pressed", metric === "usd");
-  $("frug").value = frug;
+  $("m-pct").setAttribute("aria-pressed", String(metric === "pct"));
+  $("m-usd").setAttribute("aria-pressed", String(metric === "usd"));
+  $<HTMLInputElement>("frug").value = String(frug);
   const fr = Math.round(frug);
   $("frug-val").textContent = fr === 0 ? "Typical" : `${fr > 0 ? "+" : "−"}${Math.abs(fr)}%`;
-  $("wh").value = String(whRate);
+  $<HTMLSelectElement>("wh").value = String(whRate);
   paintCg();
   renderPeople();
-  $("sort-rate").setAttribute("aria-pressed", sort === "rate");
-  $("sort-geo").setAttribute("aria-pressed", sort === "geo");
+  $("sort-rate").setAttribute("aria-pressed", String(sort === "rate"));
+  $("sort-geo").setAttribute("aria-pressed", String(sort === "geo"));
 
   renderDetail(res, order);
-  $("bpa-toggle").checked = useBpa;
+  $<HTMLInputElement>("bpa-toggle").checked = useBpa;
   $("bpa-state").textContent = useBpa ? "Credits applied" : "Brackets only";
   save();
 }
 
+/** An adjustment after bracket tax: [label, amount], negative when it reduces tax. */
+type Adj = [label: string, amount: number];
+/** The adjustments that apply (false marks one that doesn't). */
+const present = (rows: (Adj | false)[]) => rows.filter((a): a is Adj => a !== false);
+/** One government's bracket tax: the bracket lines, tax from the brackets, adjustments and the tax after them. */
+interface LedgerData {
+  lines: BracketLine[];
+  gross: number;
+  rows: Adj[];
+  net: number;
+}
 // One government's bracket ledger. w.rows: [label, amount] adjustments after bracket tax (negative = reduces tax).
-function ledger(title, sw, w, ti) {
+function ledger(title: string, sw: string, w: LedgerData, ti: number) {
   const rows = w.lines
     .map(l => {
       const isOn = l.part > 0,
@@ -467,14 +550,16 @@ function ledger(title, sw, w, ti) {
     <tbody>${rows}</tbody><tfoot>${foot.join("")}</tfoot></table></div>`;
 }
 
-function claimText(r, p) {
+function claimText(r: Result, p: ProvView) {
   const cl = r.claim;
   if (!cl || cl.saved <= 0.5) return null;
   return `${money(cl.saved)} in ${p.n}`;
 }
-function renderDetail(res, order) {
-  const H = res.find(y => y.p.c === home),
-    D = res.find(y => y.p.c === dest);
+/** How a comparison row is shown: tax, rate (pp), money left (income) or benefits and credits (credit). */
+type Kind = "tax" | "pp" | "income" | "credit";
+function renderDetail(res: Row[], order: Row[]) {
+  const H = rowFor(res, home),
+    D = rowFor(res, dest);
   const two = people.length === 2,
     hh = two || adults > 1 || kids > 0;
   const hr = H.r,
@@ -501,7 +586,7 @@ function renderDetail(res, order) {
         : `Lowest of all 13 at these inputs: ${lowest.p.n}, ${pct(lowest.r.avg)}.`);
 
   // Difference cell: for tax, lower is better; for benefits and money left over, higher is better
-  const dcell = (a, b, kind) => {
+  const dcell = (a: number, b: number, kind: Kind) => {
     const d = b - a;
     if (kind === "pp") {
       const v = d * 100;
@@ -513,11 +598,11 @@ function renderDetail(res, order) {
     const good = kind === "income" ? d > 0 : d < 0;
     return `<td class="r ${good ? "better" : "worse"}">${d > 0 ? "+" : "−"}${money(Math.abs(d))}</td>`;
   };
-  const fmt = (v, kind) =>
+  const fmt = (v: number, kind: Kind) =>
     kind === "pp" ? pct(v) : kind === "credit" ? (v > 0.5 ? `−${money(v)}` : money(0)) : money(v);
-  const row = (label, a, b, kind = "tax", cls = "") =>
+  const row = (label: string, a: number, b: number, kind: Kind = "tax", cls = "") =>
     `<tr class="${cls}"><td>${label}</td><td class="r">${fmt(a, kind)}</td><td class="r">${fmt(b, kind)}</td>${kind === "credit" ? dcell(-a, -b, "tax") : dcell(a, b, kind)}</tr>`;
-  const any = f => f(hr) > 0.5 || f(dr) > 0.5;
+  const any = (f: (r: Result) => number) => f(hr) > 0.5 || f(dr) > 0.5;
   let rows =
     row("Federal income tax", hr.fed, dr.fed) +
     row("Provincial / territorial income tax", hr.prov, dr.prov) +
@@ -525,7 +610,7 @@ function renderDetail(res, order) {
     row(`CPP/QPP, EI &amp; health premiums`, hr.payroll, dr.payroll) +
     (effSpend() > 0
       ? row(
-          `Sales tax <small class="note">(${byCode(home).d.salesTax.label} vs ${byCode(dest).d.salesTax.label})</small>`,
+          `Sales tax <small class="note">(${prov(home).d.salesTax.label} vs ${prov(dest).d.salesTax.label})</small>`,
           hr.sales,
           dr.sales,
         )
@@ -560,7 +645,7 @@ function renderDetail(res, order) {
       row("Tax on investment income", hr.invTax, dr.invTax);
 
   let spouseNote = "";
-  const kindName = r =>
+  const kindName = (r: Result) =>
     r.claim && r.claim.kind === "dependant"
       ? "eligible dependant amount"
       : r.claim && r.claim.kind === "alone"
@@ -603,7 +688,7 @@ function renderDetail(res, order) {
     ${ledgerView(V)}`;
 }
 
-function ledgerView({ p, r }) {
+function ledgerView({ p, r }: Row) {
   const two = people.length === 2,
     x = me(),
     m = r.me,
@@ -620,7 +705,7 @@ function ledgerView({ p, r }) {
     tiParts.join(" + ") +
     (x.ded ? ` − ${money(x.ded)} deductions` : "") +
     (m.pay.enh > 0.5 ? ` − ${money(m.pay.enh)} enhanced ${p.qc ? "QPP" : "CPP"}` : "");
-  const extra = [];
+  const extra: string[] = [];
   if (m.workerDed > 0.5)
     extra.push(`Quebec taxable income is ${money(m.tiP)} after the ${money(m.workerDed)} deduction for workers.`);
   if (x.cg < 0)
@@ -634,23 +719,25 @@ function ledgerView({ p, r }) {
       `Tax includes ${money(m.wh)} withheld abroad on foreign dividends; ${money(credited)} of it is credited against Canadian tax${lost > 0.5 ? `, and ${money(lost)} can't be credited at this income` : ""}.`,
     );
   }
-  const mrow = (label, key) => `<tr><td>${label}</td><td class="r">${pct(r.margBy[key], 2)}</td></tr>`;
-  const mine = r.claim && r.claim.c === active;
-  const spName = r.claim
-    ? r.claim.kind === "dependant"
+  const mrow = (label: string, key: IncomeKey) =>
+    `<tr><td>${label}</td><td class="r">${pct(r.margBy[key], 2)}</td></tr>`;
+  const cl = r.claim;
+  const mine = cl !== null && cl.c === active;
+  const spName = cl
+    ? cl.kind === "dependant"
       ? "eligible dependant amount"
-      : r.claim.kind === "alone"
+      : cl.kind === "alone"
         ? "living-alone amount"
         : "spouse amount"
     : "";
-  const spLabelF = mine ? `Less ${spName} ${money(r.claim.fAmt)} × ${rateFmt(F.brackets[0][1])}` : "";
+  const spLabelF = mine ? `Less ${spName} ${money(cl.fAmt)} × ${rateFmt(F.brackets[0][1])}` : "";
   const spLabelP = mine
-    ? r.claim.qc && r.claim.kind === "spouse"
+    ? cl.qc && cl.kind === "spouse"
       ? `Less partner's unused credit transferred`
-      : `Less ${spName} ${money(r.claim.pAmt)} × ${rateFmt(p.b[0][1])}`
+      : `Less ${spName} ${money(cl.pAmt)} × ${rateFmt(p.b[0][1])}`
     : "";
   const suffix = two ? ` · ${who}` : "";
-  const fRows = [
+  const fRows = present([
     useBpa && [
       `Less personal amount ${money(m.fAmt)} × ${rateFmt(F.brackets[0][1])}${m.fCred < m.fBpaFull - 0.5 ? " (capped)" : ""}`,
       -m.fCred,
@@ -660,8 +747,8 @@ function ledgerView({ p, r }) {
     [`Less dividend tax credit`, -m.fDtc],
     p.qc && [`Less ${rateFmt(F.quebecAbatement)} Quebec abatement`, -m.fedBasic * (1 - m.k)],
     [`Less foreign tax credit`, -m.fFtc],
-  ].filter(Boolean);
-  const pRows = [
+  ]);
+  const pRows = present([
     useBpa && [
       `Less personal amount ${money(m.pAmt)} × ${rateFmt(p.b[0][1])}${m.pCred < m.pBpaFull - 0.5 ? " (capped)" : ""}`,
       -m.pCred,
@@ -681,15 +768,17 @@ function ledgerView({ p, r }) {
     [`Less LIFT credit`, -m.lift],
     [`Less BC tax reduction`, -m.bcRed],
     [`Less foreign tax credit`, -m.pFtc],
-  ].filter(Boolean);
-  const payRows = [
-    [`${p.qc ? "QPP" : "CPP"} base (${pct2((p.qc ? F.payroll.qpp : F.payroll.cpp).base)})`, m.pay.base],
-    [`${p.qc ? "QPP" : "CPP"} enhanced`, m.pay.enh],
-    [`EI (${pct2(p.qc ? F.payroll.ei.quebecRate : F.payroll.ei.rate)})`, m.pay.ei],
-    [`QPIP (${pct2(F.payroll.qpip.rate)})`, m.pay.qpip],
-    [`Ontario Health Premium`, m.ohp],
-    [`${p.n} payroll tax (${rateFmt(p.d.payroll?.employeeTax ?? 0)})`, m.pay.terr],
-  ].filter(([, a]) => a > 0.5);
+  ]);
+  const payRows = (
+    [
+      [`${p.qc ? "QPP" : "CPP"} base (${pct2((p.qc ? F.payroll.qpp : F.payroll.cpp).base)})`, m.pay.base],
+      [`${p.qc ? "QPP" : "CPP"} enhanced`, m.pay.enh],
+      [`EI (${pct2(p.qc ? F.payroll.ei.quebecRate : F.payroll.ei.rate)})`, m.pay.ei],
+      [`QPIP (${pct2(F.payroll.qpip.rate)})`, m.pay.qpip],
+      [`Ontario Health Premium`, m.ohp],
+      [`${p.n} payroll tax (${rateFmt(p.d.payroll?.employeeTax ?? 0)})`, m.pay.terr],
+    ] satisfies Adj[]
+  ).filter(([, a]) => a > 0.5);
   return `
     ${hasInv(x) || x.ded || m.pay.enh > 0.5 ? `<p class="note">${two ? `${who}: t` : "T"}axable income is ${money(m.ti)}: ${tiText}.${hasInv(x) ? ` "Tax on investment income" is the extra tax the ${two ? "household's " : ""}investment income adds on top of other income.` : ""} ${extra.join(" ")}</p>` : ""}
     <div class="ledgers">
@@ -715,12 +804,12 @@ function ledgerView({ p, r }) {
 const hh = () => people.length === 2 || adults > 1 || kids > 0;
 
 // Inputs
-const inp = $("income"),
-  sl = $("slider");
-function setIncome(v, from) {
+const inp = $<HTMLInputElement>("income"),
+  sl = $<HTMLInputElement>("slider");
+function setIncome(v: number, from?: "input" | "slider") {
   me().ord = Math.max(0, Math.min(Math.round(v) || 0, 99999999));
   if (from !== "input") inp.value = me().ord.toLocaleString("en-CA");
-  if (from !== "slider") sl.value = Math.min(me().ord, +sl.max);
+  if (from !== "slider") sl.value = String(Math.min(me().ord, +sl.max));
   render();
 }
 inp.addEventListener("input", () => {
@@ -736,7 +825,7 @@ inp.addEventListener("keydown", e => {
 sl.addEventListener("input", () => setIncome(+sl.value, "slider"));
 
 // Household members
-const dedIn = $("ded");
+const dedIn = $<HTMLInputElement>("ded");
 dedIn.addEventListener("input", () => {
   me().ded = Math.min(+dedIn.value.replace(/[^\d]/g, "") || 0, 9999999);
   render();
@@ -755,11 +844,11 @@ $("max-rrsp").addEventListener("click", () => {
 function syncAll() {
   dedIn.value = me().ded.toLocaleString("en-CA");
   inp.value = me().ord.toLocaleString("en-CA");
-  sl.value = Math.min(me().ord, +sl.max);
+  sl.value = String(Math.min(me().ord, +sl.max));
   syncInv();
 }
 $("people").addEventListener("click", e => {
-  const t = e.target.closest("button");
+  const t = closest(e.target, "button");
   if (!t) return;
   if (t.id === "add-partner") {
     people.push(blank(DEFAULT_INCOME));
@@ -773,26 +862,27 @@ $("people").addEventListener("click", e => {
   else return;
   syncAll();
   render();
-  const btn = document.querySelector(`#people .person[data-i="${active}"]`);
+  const btn = document.querySelector<HTMLElement>(`#people .person[data-i="${active}"]`);
   if (btn) btn.focus();
 });
 $("people").addEventListener("change", e => {
-  if (e.target.id === "spouse-toggle") {
-    spouse = e.target.checked;
+  const t = e.target;
+  if (t instanceof HTMLInputElement && t.id === "spouse-toggle") {
+    spouse = t.checked;
     render();
   }
 });
 
 // Fill the gains/losses track from the 0 mark to the thumb: green for a net gain, red for a net loss.
 function paintCg() {
-  const r = $("cg-range"),
+  const r = $<HTMLInputElement>("cg-range"),
     min = +r.min,
     max = +r.max,
     v = me().cg;
   const p = (Math.max(min, Math.min(v, max)) - min) / (max - min),
     z = (0 - min) / (max - min);
   const color = v > 0 ? "var(--gain)" : v < 0 ? "var(--loss)" : "var(--muted)";
-  const at = q => `calc(9px + (100% - 18px) * ${q})`;
+  const at = (q: number) => `calc(9px + (100% - 18px) * ${q})`;
   const a = at(Math.min(p, z)),
     b = at(Math.max(p, z));
   r.style.setProperty("--cg-color", color);
@@ -804,14 +894,14 @@ function paintCg() {
   $("cg").classList.toggle("neg", v < 0);
 }
 // Double-click (or double-tap) the amount or the slider to reset gains/losses to 0.
-function resetCg(e) {
+function resetCg(e?: Event) {
   if (e) e.preventDefault();
   me().cg = 0;
   syncInv();
   render();
   $("cg").blur();
 }
-function onDoubleTap(el, fn) {
+function onDoubleTap(el: HTMLElement, fn: (e?: Event) => void) {
   let last = 0;
   el.addEventListener("dblclick", fn);
   el.addEventListener("touchend", e => {
@@ -822,55 +912,64 @@ function onDoubleTap(el, fn) {
     } else last = now;
   });
 }
-const INV_KEYS = ["cg", "ed", "nd", "fd"];
+/** Investment income: each kind has an amount box (id = key) and a slider (id = key-range, data-k = key). */
+type InvKey = Exclude<IncomeKey, "ord">;
+const INV_KEYS: InvKey[] = ["cg", "ed", "nd", "fd"];
+const isInvKey = (k: string | undefined): k is InvKey => INV_KEYS.some(x => x === k);
 function syncInv() {
   for (const k of INV_KEYS) {
-    $(k).value = me()[k].toLocaleString("en-CA");
+    $<HTMLInputElement>(k).value = me()[k].toLocaleString("en-CA");
     syncRange(k);
   }
 }
-function syncRange(k) {
-  const r = $(`${k}-range`);
-  r.value = Math.max(+r.min, Math.min(me()[k], +r.max));
+function syncRange(k: InvKey) {
+  const r = $<HTMLInputElement>(`${k}-range`);
+  r.value = String(Math.max(+r.min, Math.min(me()[k], +r.max)));
 }
-document.querySelectorAll("input.inv").forEach(el => {
+document.querySelectorAll<HTMLInputElement>("input.inv").forEach(el => {
+  const k = el.id;
+  if (!isInvKey(k)) return;
   el.addEventListener("input", () => {
-    const neg = el.id === "cg" && /^\s*[-−]/.test(el.value);
+    const neg = k === "cg" && /^\s*[-−]/.test(el.value);
     const v = Math.min(+el.value.replace(/[^\d]/g, "") || 0, 99999999);
-    me()[el.id] = neg ? -v : v;
-    syncRange(el.id);
+    me()[k] = neg ? -v : v;
+    syncRange(k);
     render();
   });
   el.addEventListener("blur", () => {
-    el.value = me()[el.id].toLocaleString("en-CA");
+    el.value = me()[k].toLocaleString("en-CA");
   });
   el.addEventListener("keydown", e => {
     if (e.key === "Enter") el.blur();
   });
 });
-document.querySelectorAll("input.inv-range").forEach(el => {
+// The home value slider shares the inv-range styling but has no data-k; its own handler is under Property tax.
+document.querySelectorAll<HTMLInputElement>("input.inv-range").forEach(el => {
+  const k = el.dataset.k;
+  if (!isInvKey(k)) return;
   el.addEventListener("input", () => {
-    me()[el.dataset.k] = +el.value;
-    $(el.dataset.k).value = me()[el.dataset.k].toLocaleString("en-CA");
+    me()[k] = +el.value;
+    $<HTMLInputElement>(k).value = me()[k].toLocaleString("en-CA");
     render();
   });
 });
-$("wh").addEventListener("change", e => {
-  whRate = +e.target.value;
+const whSel = $<HTMLSelectElement>("wh");
+whSel.addEventListener("change", () => {
+  whRate = +whSel.value;
   render();
 });
-const spIn = $("spend"),
-  spRange = $("spend-range");
+const spIn = $<HTMLInputElement>("spend"),
+  spRange = $<HTMLInputElement>("spend-range");
 // The amount box and slider show spending after the frugality adjustment; "spend" holds the unadjusted base,
 // so household-size estimates and frugality combine cleanly.
 function syncSpend() {
   spIn.value = effSpend().toLocaleString("en-CA");
-  spRange.value = Math.min(effSpend(), +spRange.max);
+  spRange.value = String(Math.min(effSpend(), +spRange.max));
 }
 // Typing or sliding the amount moves the frugality setting to match: the amount is read as a percentage
 // above or below the household-size estimate. Past ±50% the slider rests at its end, but the percentage
 // keeps counting.
-function fromShown(shown) {
+function fromShown(shown: number) {
   const est = spendEst(adults + kids);
   frug = est > 0 ? (shown / est - 1) * 100 : 0;
   spend = est;
@@ -878,7 +977,7 @@ function fromShown(shown) {
 spIn.addEventListener("input", () => {
   const shown = Math.min(+spIn.value.replace(/[^\d]/g, "") || 0, 9999999);
   fromShown(shown);
-  spRange.value = Math.min(shown, +spRange.max);
+  spRange.value = String(Math.min(shown, +spRange.max));
   render();
 });
 spIn.addEventListener("blur", syncSpend);
@@ -891,36 +990,39 @@ spRange.addEventListener("input", () => {
   render();
 });
 // Adults and children set the spending estimate; frugality (your own amount) carries over as a percentage.
-function setHousehold(a, k) {
+function setHousehold(a: number, k: number) {
   adults = Math.max(people.length, Math.min(4, a));
   kids = Math.max(0, Math.min(6, k));
   under6 = Math.min(under6, kids);
   spend = spendEst(adults + kids);
   syncSpend();
 }
-$("adults").addEventListener("input", e => {
-  setHousehold(+e.target.value, kids);
+const adultsIn = $<HTMLInputElement>("adults"),
+  kidsIn = $<HTMLInputElement>("kids"),
+  u6In = $<HTMLInputElement>("u6");
+adultsIn.addEventListener("input", () => {
+  setHousehold(+adultsIn.value, kids);
   render();
 });
-$("kids").addEventListener("input", e => {
-  setHousehold(adults, +e.target.value);
+kidsIn.addEventListener("input", () => {
+  setHousehold(adults, +kidsIn.value);
   render();
 });
-$("u6").addEventListener("input", e => {
-  under6 = Math.min(kids, +e.target.value);
-  e.target.value = under6; // the under-6 handle can't pass the number of children
+u6In.addEventListener("input", () => {
+  under6 = Math.min(kids, +u6In.value);
+  u6In.value = String(under6); // the under-6 handle can't pass the number of children
   render();
 });
 // Property tax
-const hvIn = $("hv"),
-  hvRange = $("hv-range");
+const hvIn = $<HTMLInputElement>("hv"),
+  hvRange = $<HTMLInputElement>("hv-range");
 function syncHome() {
   hvIn.value = homeValue.toLocaleString("en-CA");
-  hvRange.value = Math.min(homeValue, +hvRange.max);
+  hvRange.value = String(Math.min(homeValue, +hvRange.max));
 }
 hvIn.addEventListener("input", () => {
   homeValue = Math.min(+hvIn.value.replace(/[^\d]/g, "") || 0, 99999999);
-  hvRange.value = Math.min(homeValue, +hvRange.max);
+  hvRange.value = String(Math.min(homeValue, +hvRange.max));
   render();
 });
 hvIn.addEventListener("blur", syncHome);
@@ -932,29 +1034,34 @@ hvRange.addEventListener("input", () => {
   hvIn.value = homeValue.toLocaleString("en-CA");
   render();
 });
-$("pr-rate").addEventListener("input", e => {
-  const v = parseFloat(e.target.value.replace(/[^\d.]/g, ""));
+const prIn = $<HTMLInputElement>("pr-rate");
+prIn.addEventListener("input", () => {
+  const v = parseFloat(prIn.value.replace(/[^\d.]/g, ""));
   propOverride = Number.isFinite(v) && v >= 0 && v <= 10 ? v / 100 : null;
   render();
 });
-$("pr-rate").addEventListener("blur", () => render());
+prIn.addEventListener("blur", () => render());
 $("pr-reset").addEventListener("click", () => {
   propOverride = null;
   render();
 });
-$("prop-panel").addEventListener("toggle", () => {
-  propOpen = $("prop-panel").open;
+const propPanel = $<HTMLDetailsElement>("prop-panel"),
+  credPanel = $<HTMLDetailsElement>("cred-panel"),
+  investPanel = $<HTMLDetailsElement>("invest");
+propPanel.addEventListener("toggle", () => {
+  propOpen = propPanel.open;
   save();
 });
-$("cred-panel").addEventListener("toggle", () => {
-  credOpen = $("cred-panel").open;
+credPanel.addEventListener("toggle", () => {
+  credOpen = credPanel.open;
   save();
 });
-$("cred-toggle").addEventListener("change", e => {
-  useCredits = e.target.checked;
+const credToggle = $<HTMLInputElement>("cred-toggle");
+credToggle.addEventListener("change", () => {
+  useCredits = credToggle.checked;
   render();
 });
-const rentIn = $("rent");
+const rentIn = $<HTMLInputElement>("rent");
 rentIn.addEventListener("input", () => {
   rent = Math.min(+rentIn.value.replace(/[^\d]/g, "") || 0, 999999);
   render();
@@ -977,12 +1084,13 @@ $("m-usd").addEventListener("click", () => {
   metric = "usd";
   render();
 });
-$("frug").addEventListener("input", e => {
-  frug = +e.target.value;
+const frugIn = $<HTMLInputElement>("frug");
+frugIn.addEventListener("input", () => {
+  frug = +frugIn.value;
   syncSpend();
   render();
 });
-onDoubleTap($("frug"), e => {
+onDoubleTap(frugIn, e => {
   if (e) e.preventDefault();
   frug = 0;
   syncSpend();
@@ -992,25 +1100,26 @@ $("sort-geo").addEventListener("click", () => {
   sort = "geo";
   render();
 });
-$("bpa-toggle").addEventListener("change", e => {
-  useBpa = e.target.checked;
+const bpaToggle = $<HTMLInputElement>("bpa-toggle");
+bpaToggle.addEventListener("change", () => {
+  useBpa = bpaToggle.checked;
   render();
 });
 
 // Slider axis labels
-function fmtTick(v, signed) {
+function fmtTick(v: number, signed: boolean) {
   if (v === 0) return "$0";
   const a = Math.abs(v),
     k = a >= 1e6 ? `${+(a / 1e6).toFixed(1)}M` : a >= 1000 ? `${+(a / 1000).toFixed(1)}k` : a;
   return `${v < 0 ? "−" : signed ? "+" : ""}$${k}`;
 }
-document.querySelectorAll(".scale").forEach(sc => {
-  const r = $(sc.dataset.for),
+document.querySelectorAll<HTMLElement>(".scale").forEach(sc => {
+  const r = $<HTMLInputElement>(sc.dataset.for ?? ""),
     min = +r.min,
     max = +r.max,
     signed = sc.hasAttribute("data-signed");
   // "~" marks a minor tick: a mark with no label
-  const ticks = sc.dataset.ticks.split(",");
+  const ticks = (sc.dataset.ticks ?? "").split(",");
   sc.innerHTML = ticks
     .map((t, i) => {
       const minor = t.startsWith("~"),
@@ -1026,24 +1135,25 @@ document.querySelectorAll(".scale").forEach(sc => {
 
 // Tooltips: hover with a mouse, focus with the keyboard, or tap on touch.
 const tip = $("tip");
-let tipFor = null;
-function showTip(btn) {
+let tipFor: HTMLElement | null = null;
+function showTip(btn: HTMLElement) {
   if (tipFor && tipFor !== btn) tipFor.removeAttribute("aria-describedby");
-  if (btn._tip) tip.innerHTML = btn._tip;
-  else tip.textContent = btn.dataset.tip;
+  const seg = segTips.get(btn);
+  if (seg) tip.innerHTML = seg;
+  else tip.textContent = btn.dataset.tip ?? "";
   tip.hidden = false;
   tipFor = btn;
   for (const x of document.querySelectorAll(".stack i.hot, .ben.hot")) x.classList.remove("hot");
-  if (btn._tip) btn.classList.add("hot");
+  if (seg) btn.classList.add("hot");
   btn.setAttribute("aria-describedby", "tip");
   const b = btn.getBoundingClientRect(),
     w = tip.offsetWidth,
     h = tip.offsetHeight;
   const left = Math.max(12, Math.min(b.left + b.width / 2 - w / 2, innerWidth - w - 12));
   // Chart segments: show above the segment so the province labels stay visible; info icons: below
-  let top = btn._tip ? b.top - h - 8 : b.bottom + 8;
-  if (btn._tip && top < 8) top = b.bottom + 8;
-  if (!btn._tip && top + h > innerHeight - 8) top = Math.max(8, b.top - h - 8);
+  let top = seg ? b.top - h - 8 : b.bottom + 8;
+  if (seg && top < 8) top = b.bottom + 8;
+  if (!seg && top + h > innerHeight - 8) top = Math.max(8, b.top - h - 8);
   tip.style.left = `${left}px`;
   tip.style.top = `${top}px`;
 }
@@ -1055,27 +1165,28 @@ function hideTip() {
   tip.hidden = true;
   tipFor = null;
 }
-const tipTarget = t => t.closest?.(".info") || t.closest?.(".stack i, .col .ben");
+const tipTarget = (t: EventTarget | null) => closest(t, ".info") || closest(t, ".stack i, .col .ben");
 document.addEventListener("pointerover", e => {
   const b = tipTarget(e.target);
   if (b && e.pointerType === "mouse") showTip(b);
 });
 document.addEventListener("pointerout", e => {
   const b = tipTarget(e.target);
-  if (b && e.pointerType === "mouse" && !b.contains(e.relatedTarget)) hideTip();
+  if (b && e.pointerType === "mouse" && !b.contains(e.relatedTarget instanceof Node ? e.relatedTarget : null))
+    hideTip();
 });
 document.addEventListener("focusin", e => {
-  const b = e.target.closest?.(".info");
+  const b = closest(e.target, ".info");
   if (b) showTip(b);
 });
 document.addEventListener("focusout", e => {
-  if (e.target.closest?.(".info")) hideTip();
+  if (closest(e.target, ".info")) hideTip();
 });
 document.addEventListener(
   "click",
   e => {
-    const b = e.target.closest?.(".info");
-    const seg = e.target.closest?.(".stack i, .col .ben");
+    const b = closest(e.target, ".info");
+    const seg = closest(e.target, ".stack i, .col .ben");
     if (b) {
       e.preventDefault();
       e.stopPropagation();
@@ -1092,7 +1203,7 @@ document.addEventListener("keydown", e => {
 addEventListener(
   "scroll",
   e => {
-    if (tipFor && !e.target.closest?.(".cc-scroll")) hideTip();
+    if (tipFor && !closest(e.target, ".cc-scroll")) hideTip();
   },
   { passive: true, capture: true },
 );
@@ -1104,31 +1215,31 @@ onDoubleTap($("cg"), resetCg);
 onDoubleTap($("cg-range"), resetCg);
 fillSelects();
 narrow.addEventListener?.("change", () => render());
-$("home").addEventListener("change", e => {
-  home = e.target.value;
+homeSel.addEventListener("change", () => {
+  home = homeSel.value;
   propOverride = null;
   if (dest === home) dest = home === "AB" ? "BC" : "AB";
   fillSelects();
   render();
 });
-$("dest").addEventListener("change", e => {
-  dest = e.target.value;
+destSel.addEventListener("change", () => {
+  dest = destSel.value;
   render();
 });
 $("detail-body").addEventListener("click", e => {
-  const b = e.target.closest("[data-view]");
+  const b = closest(e.target, "[data-view]");
   if (!b) return;
-  view = b.dataset.view;
+  view = b.dataset.view === "dest" ? "dest" : "home";
   render();
 });
 syncAll();
 syncSpend();
 syncHome();
-$("prop-panel").open = propOpen || homeValue > 0;
-$("cred-panel").open = credOpen;
-$("invest").open = invOpen;
-$("invest").addEventListener("toggle", () => {
-  invOpen = $("invest").open;
+propPanel.open = propOpen || homeValue > 0;
+credPanel.open = credOpen;
+investPanel.open = invOpen;
+investPanel.addEventListener("toggle", () => {
+  invOpen = investPanel.open;
   save();
 });
 render();
