@@ -46,7 +46,9 @@ TypeScript, and the build inlines everything into `dist/index.html`. See README.
 - Keep the page a single self-contained file (it's also published as an artifact).
 
 ## Planning and scope
-- Current plan and feature ideas: `docs/ROADMAP.md` (changes often; treat it as a starting point, not a spec).
+- Current plan: GitHub issues. `ready-for-agent` issues are specified enough to hand to a coder; `needs-human`
+  ones need a decision first; `backlog` ones aren't scheduled. Blocking links between issues are real dependencies.
+  Tickets that edit the same files (most UI tickets touch `src/ui/`) still run one at a time.
 - What the model includes and leaves out, and why: `docs/SCOPE.md`. These are prototype-stage choices and open
   to revisiting.
 - Past verification work: `docs/verification/`.

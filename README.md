@@ -46,7 +46,7 @@ scripts/build.ts        bundles everything into dist/index.html with esbuild
 tests/                  see "How the numbers are checked"
 legacy/                 the original single-file app, kept as the reference for the golden tests
 assets/flags/           public-domain flag sources; scripts/make-flags.mjs makes the waving icons
-docs/                   ROADMAP.md (what's next), SCOPE.md (what's modelled), verification/ (audits)
+docs/                   SCOPE.md (what's modelled), verification/ (audits)
 CLAUDE.md, .claude/     project rules and agent definitions for Claude Code
 ```
 
@@ -91,4 +91,4 @@ adding year checks inside an existing one. Values that are estimates rather than
 
 ## What's next
 
-See `docs/ROADMAP.md`, and `docs/SCOPE.md` for what the model includes and leaves out.
+See the [GitHub issues](https://github.com/yuorme/tax-visualizer/issues), and `docs/SCOPE.md` for what the model includes and leaves out.
