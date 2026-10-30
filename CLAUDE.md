@@ -5,7 +5,8 @@ territories. No server, no database: tax parameters are YAML files in `data/year
 TypeScript, and the build inlines everything into `dist/index.html`. See README.md for the layout.
 
 ## Commands
-- `npm run check` — typecheck, tests, build, browser smoke test. Must pass before any merge.
+- `npm run check` — lint, typecheck, tests, build, browser smoke test. Must pass before any merge.
+- `npm run lint` — Biome lint rules, and no Markdown prose line over 120 characters.
 - `npm test` — data validation, golden results, published reference values (Node's built-in test runner).
 - `npm run build` / `npm run dev` — single-file build / rebuild on change.
 - `node scripts/make-flags.mjs` — regenerate the waving flag icons from `assets/flags/source/`.
@@ -24,6 +25,9 @@ TypeScript, and the build inlines everything into `dist/index.html`. See README.
 - **TypeScript (7) only typechecks.** `tsx` and esbuild strip types without checking them, so a compiler upgrade
   can't change the built page. Upgrades that touch output (esbuild, zod, yaml) should leave `dist/index.html`
   byte-identical, or explain why not.
+- **Biome lints but doesn't format.** The code is deliberately compact (several statements per line, long data
+  lines), and a formatter would rewrite all of it. Follow the surrounding style by hand. Rules that clash with it
+  are switched off in `biome.json`; turn a rule off there rather than adding ignore comments.
 - **zod 4 rejects `Infinity` in `z.number()`.** Bracket limits use `.inf` in YAML, so the schema allows
   `z.literal(Infinity)` explicitly.
 - Upgrade on a dedicated branch, not mid-feature. Move to the next Node major when it reaches Active LTS (each

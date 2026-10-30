@@ -17,7 +17,7 @@ Requires Node 26 (pinned in `.node-version`). With [fnm](https://github.com/Schn
 fnm install                       # once, installs the Node version in .node-version
 npm ci                            # installs exactly what package-lock.json lists
 npx playwright install chromium   # once, for the browser tests
-npm run check                     # typecheck, tests, build, browser smoke test
+npm run check                     # lint, typecheck, tests, build, browser smoke test
 open dist/index.html
 ```
 
@@ -26,6 +26,7 @@ open dist/index.html
 | `npm run build` | Validates the data and writes `dist/index.html`, a single self-contained page |
 | `npm run dev` | Rebuilds on every change to `src/` or `data/` |
 | `npm test` | Data validation, golden results and published reference values |
+| `npm run lint` | Biome lint rules, and no Markdown prose line over 120 characters |
 | `npm run typecheck` | TypeScript checks for the engine, data schema, tests and scripts |
 | `npm run e2e` | Loads the built page in Chromium on desktop and phone widths |
 

@@ -64,11 +64,11 @@ try { const s = JSON.parse(localStorage.getItem("taxcmp") || "{}");
     if (typeof s.invOpen === "boolean") invOpen = s.invOpen;
     if (s.metric === "usd") metric = "usd";
     if (s.frug >= -100 && s.frug <= 100000) frug = s.frug;
-  } } catch (e) {}
+  } } catch {}
 if (dest === home) dest = home === "AB" ? "BC" : "AB";
 function save() {
   try { localStorage.setItem("taxcmp", JSON.stringify({v: 3, people, active, spouse, sort, home, dest, view, useBpa, whRate, adults, kids, under6, spend, frug, metric, invOpen,
-    homeValue, propOverride, propOpen, rent, useCredits, credOpen})); } catch (e) {}
+    homeValue, propOverride, propOpen, rent, useCredits, credOpen})); } catch {}
 }
 
 
@@ -217,7 +217,7 @@ function render() {
     el.querySelector(".tag").textContent = p.c === home ? "home" : p.c === dest ? "dest." : "";
     el.setAttribute("aria-label", `${p.n}${p.c === home ? " (home)" : p.c === dest ? " (destination)" : ""}: net ${pct(r.avg)} of income, marginal ${pct(r.marg)}, total ${money(r.total)}${r.benefits > 0.5 ? ` after ${money(r.benefits)} of child benefits` : ""}`);
   });
-  if (tipFor && tipFor._tip && tipFor.closest(".col")) showTip(tipFor);   // keep an open segment tip current
+  if (tipFor?._tip && tipFor.closest(".col")) showTip(tipFor);   // keep an open segment tip current
 
   const two = people.length === 2, x = me();
   const totalInc = people.reduce((a, y) => a + cashOf(y), 0);
@@ -246,7 +246,7 @@ function render() {
   const needRent = useCredits && homeValue === 0 && (byCode(home).d.creditsUseRent || byCode(dest).d.creditsUseRent);
   $("rent-field").hidden = !needRent;
   if (document.activeElement !== $("rent")) $("rent").value = rent.toLocaleString("en-CA");
-  const hc = H.r.credits, dc = res.find(y => y.p.c === dest).r.credits;
+  const hc = H.r.credits;
   $("cred-sum").textContent = !useCredits ? "not counted"
     : H.r.refund > 0.5 ? `${money(H.r.refund)} a year in ${H.p.n}` : `none at this income in ${H.p.n}`;
   $("cred-list").innerHTML = !useCredits ? "" : hc.length
@@ -548,7 +548,6 @@ $("wh").addEventListener("change", e => { whRate = +e.target.value; render(); })
 const spIn = $("spend"), spRange = $("spend-range");
 // The amount box and slider show spending after the frugality adjustment; "spend" holds the unadjusted base,
 // so household-size estimates and frugality combine cleanly.
-const frugK = () => 1 + frug / 100;
 function syncSpend() { spIn.value = effSpend().toLocaleString("en-CA"); spRange.value = Math.min(effSpend(), +spRange.max); }
 // Typing or sliding the amount moves the frugality setting to match: the amount is read as a percentage
 // above or below the household-size estimate. Past ±50% the slider rests at its end, but the percentage
@@ -587,7 +586,7 @@ hvIn.addEventListener("keydown", e => { if (e.key === "Enter") hvIn.blur(); });
 hvRange.addEventListener("input", () => { homeValue = +hvRange.value; hvIn.value = homeValue.toLocaleString("en-CA"); render(); });
 $("pr-rate").addEventListener("input", e => {
   const v = parseFloat(e.target.value.replace(/[^\d.]/g, ""));
-  propOverride = isFinite(v) && v >= 0 && v <= 10 ? v / 100 : null; render();
+  propOverride = Number.isFinite(v) && v >= 0 && v <= 10 ? v / 100 : null; render();
 });
 $("pr-rate").addEventListener("blur", () => render());
 $("pr-reset").addEventListener("click", () => { propOverride = null; render(); });
@@ -657,7 +656,7 @@ document.addEventListener("click", e => {
   else if (tipFor) hideTip();
 }, true);
 document.addEventListener("keydown", e => { if (e.key === "Escape" && tipFor) hideTip(); });
-addEventListener("scroll", e => { if (tipFor && !(e.target.closest && e.target.closest(".cc-scroll"))) hideTip(); }, {passive: true, capture: true});
+addEventListener("scroll", e => { if (tipFor && !e.target.closest?.(".cc-scroll")) hideTip(); }, {passive: true, capture: true});
 addEventListener("resize", () => { if (tipFor) hideTip(); });
 
 onDoubleTap($("cg"), resetCg);

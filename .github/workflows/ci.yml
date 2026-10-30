@@ -19,6 +19,7 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npx playwright install --with-deps chromium
+      - run: npm run lint          # Biome lint rules and the 120-character wrap in Markdown
       - run: npm run typecheck
       - run: npm test            # data validation, golden results, published reference values
       - run: npm run build
