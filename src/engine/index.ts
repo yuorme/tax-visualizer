@@ -1,7 +1,7 @@
-export { walk, phased, type BracketLine } from "./brackets.ts";
-export { payrollOf, netOf, healthPremium } from "./payroll.ts";
-export { personTax, provincialBpa, type PersonResult } from "./personal.ts";
 export { ccbOf, provincialChildBenefit } from "./benefits.ts";
+export { type BracketLine, phased, walk } from "./brackets.ts";
 export { creditsOf } from "./credits.ts";
-export { household, compute, computeAll, propertyRate, hasInv, type Result, type Claim } from "./household.ts";
+export { type Claim, compute, computeAll, hasInv, household, propertyRate, type Result } from "./household.ts";
+export { healthPremium, netOf, payrollOf } from "./payroll.ts";
+export { type PersonResult, personTax, provincialBpa } from "./personal.ts";
 export * from "./types.ts";
