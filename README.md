@@ -91,4 +91,5 @@ adding year checks inside an existing one. Values that are estimates rather than
 
 ## What's next
 
-See the [GitHub issues](https://github.com/yuorme/tax-visualizer/issues), and `docs/SCOPE.md` for what the model includes and leaves out.
+See the [GitHub issues](https://github.com/yuorme/tax-visualizer/issues), and `docs/SCOPE.md` for what the model
+includes and leaves out.
