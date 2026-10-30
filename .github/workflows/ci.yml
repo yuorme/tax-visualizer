@@ -35,8 +35,6 @@ jobs:
           key: playwright-shell-${{ runner.os }}-${{ steps.playwright.outputs.version }}
       - if: steps.browser-cache.outputs.cache-hit != 'true'
         run: npx playwright install --with-deps --only-shell chromium
-      - if: steps.browser-cache.outputs.cache-hit == 'true'
-        run: npx playwright install-deps chromium
       - run: npm run typecheck
       - run: npm test            # data validation, golden results, published reference values
       - run: npm run build
