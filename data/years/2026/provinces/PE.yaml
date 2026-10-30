@@ -1,5 +1,6 @@
 code: PE
 name: Prince Edward Island
+shortName: PEI
 order: 10
 brackets:
   - [33928, 0.095]

@@ -1,7 +1,8 @@
 code: MB
 name: Manitoba
 order: 5
-brackets:            # frozen at 2025 levels by Manitoba's budgets
+bracketsFrozenSince: 2025   # Manitoba's 2025 and 2026 budgets keep the limits unindexed
+brackets:
   - [47000, 0.108]
   - [100000, 0.1275]
   - [.inf, 0.174]
@@ -17,3 +18,5 @@ credits:
     program: mb-affordability-credits
     params: {homeownerMax: 1600, renter: 625}
     estimated: true   # renters credit taken at its maximum
+sources:
+  - {label: "Manitoba Finance, Personal income taxes (bracket indexation paused from the 2025 tax year)", url: "https://www.gov.mb.ca/finance/personal/ptaxes.html"}

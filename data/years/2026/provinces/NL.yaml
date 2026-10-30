@@ -10,7 +10,8 @@ brackets:
   - [570638, 0.208]
   - [1141275, 0.213]
   - [.inf, 0.218]
-basicPersonalAmount: 13094     # April 2026 budget increase, effective January 1, 2026
+basicPersonalAmount: 13094
+basicPersonalAmountChange: {change: April 2026 budget increase, effective: "January 1, 2026"}
 dividendTaxCredit: {eligible: 0.063, nonEligible: 0.032}
 spouseAmount: {max: 9142, threshold: 915}
 lowIncomeReduction:
@@ -28,3 +29,6 @@ credits:
   - name: NL income supplement
     program: nl-income-supplement
     params: {base: 254, extraMax: 266, extraRate: 0.0532, extraFrom: 15000, couple: 69, child: 231, rate: 0.09, threshold: 40000}
+sources:
+  - {label: "SNL 2026 c. 14, An Act to Amend the Income Tax Act, 2000 (basic personal amount $13,094 from January 1, 2026)", url: "https://www.assembly.nl.ca/legislation/sr/annualstatutes/2026/2614.chp.htm"}
+  - {label: "Newfoundland and Labrador, Budget 2026 news release (April 29, 2026)", url: "https://www.gov.nl.ca/budget/2026/news-release/"}

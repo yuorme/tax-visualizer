@@ -26,5 +26,10 @@ for (const year of listYears()) {
         y.provinces.some(p => p.code === code),
         `workersBenefit.regional.${code} is not a province`,
       );
+    for (const p of y.provinces)
+      assert.ok(
+        p.bracketsFrozenSince == null || p.bracketsFrozenSince <= year,
+        `${p.code}: bracketsFrozenSince is after ${year}`,
+      );
   });
 }
