@@ -35,7 +35,8 @@ jobs:
         uses: actions/cache@v6
         with:
           path: ~/.cache/ms-playwright
-          # The runner's ImageOS (e.g. ubuntu24) changes when ubuntu-latest moves to a new Ubuntu release, which needs a new build
+          # The runner's ImageOS (e.g. ubuntu26) changes when ubuntu-latest moves to a new Ubuntu release, which
+          # needs a new browser build
           key: playwright-shell-${{ steps.playwright.outputs.image }}-${{ steps.playwright.outputs.version }}
       - if: steps.browser-cache.outputs.cache-hit != 'true'
         run: npx playwright install --with-deps --only-shell chromium
