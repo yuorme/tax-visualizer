@@ -33,7 +33,8 @@ jobs:
         uses: actions/cache@v6
         with:
           path: ~/.cache/ms-playwright
-          key: playwright-shell-${{ runner.os }}-${{ steps.playwright.outputs.version }}
+          # ImageOS (e.g. ubuntu24) changes when ubuntu-latest moves to a new Ubuntu release, which needs a new build
+          key: playwright-shell-${{ env.ImageOS }}-${{ steps.playwright.outputs.version }}
       - if: steps.browser-cache.outputs.cache-hit != 'true'
         run: npx playwright install --with-deps --only-shell chromium
       - run: npm run typecheck
