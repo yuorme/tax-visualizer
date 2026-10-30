@@ -24,15 +24,20 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run lint          # Biome lint and formatting, and the 120-character wrap in Markdown
-      # The headless Chromium shell is all the smoke test needs. Its download is cached per Playwright version; the
-      # system libraries it needs aren't cacheable, so they're installed every run.
+      # The headless Chromium shell is all the smoke test needs. It's cached per Playwright version, and on a cache hit
+      # the system libraries aren't reinstalled: ubuntu-latest already has them. If the runner image ever drops one,
+      # e2e fails with Playwright's "missing dependencies" message; then add `npx playwright install-deps chromium`.
       - id: playwright
-        run: echo "version=$(node -p 'require("playwright/package.json").version')" >> "$GITHUB_OUTPUT"
+        run: |
+          echo "version=$(node -p 'require("playwright/package.json").version')" >> "$GITHUB_OUTPUT"
+          echo "image=${ImageOS:?runner sets ImageOS}" >> "$GITHUB_OUTPUT"
       - id: browser-cache
         uses: actions/cache@v6
         with:
           path: ~/.cache/ms-playwright
-          key: playwright-shell-${{ runner.os }}-${{ steps.playwright.outputs.version }}
+          # The runner's ImageOS (e.g. ubuntu26) changes when ubuntu-latest moves to a new Ubuntu release, which
+          # needs a new browser build
+          key: playwright-shell-${{ steps.playwright.outputs.image }}-${{ steps.playwright.outputs.version }}
       - if: steps.browser-cache.outputs.cache-hit != 'true'
         run: npx playwright install --with-deps --only-shell chromium
       - run: npm run typecheck
