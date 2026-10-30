@@ -1,23 +1,33 @@
-# Monthly updates: minor and patch versions grouped into one pull request per ecosystem, each major version in its
-# own pull request (it may change output; see CLAUDE.md). Security fixes arrive as they're published.
+# Monthly updates: minor and patch versions grouped into one pull request per ecosystem (Biome in its own, since its
+# minor releases add lint rules that can fail CI), each major version in its own pull request (it may change output;
+# see CLAUDE.md). Version updates wait until a release is 14 days old; security fixes arrive as they're published.
 # Dependencies are pinned exactly, so each update is a deliberate version bump. Before merging an npm update:
 # - an upgrade of a package in package.json's allowScripts (esbuild, fsevents) needs
 #   `npm install-scripts approve <pkg>` and `npm install-scripts prune`, committed to the same branch;
-# - dist/index.html should stay byte-identical, or the pull request says why not (see CLAUDE.md).
+# - dist/index.html should stay byte-identical, or the pull request says why not (see CLAUDE.md);
+# - new Biome lint findings are handled as CLAUDE.md's Toolchain section says.
 version: 2
 updates:
   - package-ecosystem: npm
     directory: /
     schedule:
       interval: monthly
+    cooldown:
+      default-days: 14
     groups:
+      biome:
+        patterns: ["@biomejs/*"]
+        update-types: [minor, patch]
       npm:
         patterns: ["*"]
+        exclude-patterns: ["@biomejs/*"]
         update-types: [minor, patch]
   - package-ecosystem: github-actions
     directory: /
     schedule:
       interval: monthly
+    cooldown:
+      default-days: 14
     groups:
       actions:
         patterns: ["*"]
