@@ -93,3 +93,7 @@ adding year checks inside an existing one. Values that are estimates rather than
 
 See the [GitHub issues](https://github.com/yuorme/tax-visualizer/issues), and `docs/SCOPE.md` for what the model
 includes and leaves out.
+
+## License
+
+MIT, see `LICENSE`. Tax figures come from the government publications listed in each data file's `sources`.

@@ -1,0 +1,4 @@
+* text=auto eol=lf
+*.png binary
+# Flag sources are kept byte-for-byte as downloaded (some have mixed line endings)
+*.svg -text
