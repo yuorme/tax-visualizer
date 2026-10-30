@@ -1,13 +1,24 @@
-// Browser smoke test for dist/index.html (run `npm run build` first):
-//  1. the page loads with no script errors, on desktop and phone widths, with no sideways scrolling on phones;
-//  2. after the same sequence of inputs, the chart labels, comparison table and credits panel show exactly the
-//     same text as the legacy single-file app (legacy/tax-compare.html).
+// Browser smoke test for dist/index.html (run `npm run build` first). Every page is opened with the shared helper
+// in page.mjs (reduced motion, fonts loaded) and walked through the same sequence of inputs (STEPS). It checks:
+//  1. no script errors, in light mode at 1000, 430 and 375 px and in dark mode at 430 and 375 px;
+//  2. no sideways scrolling at phone widths, after every step, in light and dark mode;
+//  3. the chart, comparison table and credits panel show exactly the same text as the legacy single-file app
+//     (legacy/tax-compare.html) after each step, in light mode at each width;
+//  4. the UI rules in rules.mjs after every step: chart column labels are at most two characters, and no visible hint
+//     text outside the info tooltips;
+//  5. axe-core's colour-contrast rule at 375 px in light and dark mode, after every step;
+//  6. the built page is self-contained: it requests nothing but the external hosts listed in page.mjs.
+// Known failures (rules.KNOWN) are reported but don't fail the run; `npm run e2e -- --strict` fails on them too.
 import fs from "node:fs";
 import { chromium } from "playwright";
+import { ALLOWED_HOSTS, openPage, settle } from "./page.mjs";
+import { COLUMN_COUNT, contrastViolations, inspect, KNOWN, MAX_LABEL_LENGTH } from "./rules.mjs";
 
+const started = Date.now();
 const read = f => fs.readFileSync(new URL(f, import.meta.url), "utf8");
-const built = read("../../dist/index.html");
 const legacy = `<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head><body>${read("../../legacy/tax-compare.html")}</body></html>`;
+const STRICT = process.argv.includes("--strict");
+const PHONE = 500; // widths below this are phones, where the page must not scroll sideways
 
 const STEPS = [
   ["default", async () => {}],
@@ -88,47 +99,81 @@ const capture = p =>
     ),
   }));
 
-const browser = await chromium.launch();
-let failures = 0;
-const fail = msg => {
-  failures++;
-  console.error("FAIL", msg);
-};
+// Failures are grouped by message, so a problem seen in every run and step prints once, with where it was seen.
+const failures = new Map();
+const fail = (msg, where) => failures.set(msg, [...(failures.get(msg) ?? []), where]);
+const knownSeen = new Map(KNOWN.map(k => [k.id, 0]));
+let fontsMissing = false;
 
-async function run(html, width) {
-  const page = await browser.newPage({ viewport: { width, height: 1000 } });
-  const errors = [];
-  page.on("pageerror", e => errors.push(e.message));
-  await page.addInitScript(() => localStorage.clear());
-  await page.setContent(html);
+const browser = await chromium.launch();
+
+/** Opens a page, walks it through STEPS, and records what each check needs after every step. */
+async function run({ width, colorScheme = "light", html, contrast = false }) {
+  const { page, errors, blocked, fontsLoaded, close } = await openPage(browser, { width, colorScheme, html });
+  if (!fontsLoaded) fontsMissing = true;
   const states = [];
   for (const [name, step] of STEPS) {
     await step(page);
-    await page.waitForTimeout(50);
-    states.push([name, await capture(page)]);
+    await settle(page);
+    const axe = contrast ? await contrastViolations(page, colorScheme) : [];
+    states.push({ name, capture: await capture(page), inspect: await inspect(page), axe });
   }
-  const scrollWidth = await page.evaluate(() => document.documentElement.scrollWidth);
-  await page.close();
-  return { states, errors, scrollWidth };
+  await close();
+  return { states, errors, blocked };
+}
+
+/** Applies the checks that don't depend on the legacy page to one run of the built page. */
+function check(label, width, { states, errors, blocked }) {
+  if (errors.length) fail(`script errors: ${errors.join("; ")}`, label);
+  for (const url of blocked)
+    fail(`requested ${url}: the page must be self-contained (allowed hosts: ${ALLOWED_HOSTS.join(", ")})`, label);
+  for (const { name, inspect: s, axe } of states) {
+    const where = `${label}, "${name}"`;
+    if (width < PHONE && s.scrollWidth > width) fail(`page scrolls sideways (${s.scrollWidth}px wide)`, where);
+    if (s.labels.length !== COLUMN_COUNT) fail(`chart has ${s.labels.length} columns, expected ${COLUMN_COUNT}`, where);
+    for (const l of s.labels)
+      if (l === null || l.length === 0 || l.length > MAX_LABEL_LENGTH)
+        fail(`chart column label ${JSON.stringify(l)} isn't a code of 1-${MAX_LABEL_LENGTH} characters`, where);
+    for (const h of s.hints)
+      if (h.known && !STRICT) knownSeen.set(h.known, knownSeen.get(h.known) + 1);
+      else fail(`visible hint text outside an info tooltip, in ${h.where}: "${h.text}"`, where);
+    for (const v of axe)
+      if (v.known && !STRICT) knownSeen.set(v.known, knownSeen.get(v.known) + 1);
+      else fail(`colour contrast: ${v.message}`, `${where} ${v.target}`);
+  }
 }
 
 for (const width of [1000, 430, 375]) {
-  const [a, b] = [await run(built, width), await run(legacy, width)];
-  if (a.errors.length) fail(`${width}px: script errors ${a.errors.join("; ")}`);
-  if (width < 500 && a.scrollWidth > width) fail(`${width}px: page scrolls sideways (${a.scrollWidth}px wide)`);
-  a.states.forEach(([name, s], i) => {
-    const t = b.states[i][1];
+  const [a, b] = [await run({ width, contrast: width === 375 }), await run({ width, html: legacy })];
+  check(`${width}px light`, width, a);
+  a.states.forEach(({ name, capture: s }, i) => {
+    const t = b.states[i].capture;
     for (const key of Object.keys(s))
       if (JSON.stringify(s[key]) !== JSON.stringify(t[key]))
         fail(
-          `${width}px, "${name}": ${key} differs from legacy\n  new:    ${JSON.stringify(s[key]).slice(0, 300)}\n  legacy: ${JSON.stringify(t[key]).slice(0, 300)}`,
+          `"${name}": ${key} differs from legacy\n  new:    ${JSON.stringify(s[key]).slice(0, 300)}\n  legacy: ${JSON.stringify(t[key]).slice(0, 300)}`,
+          `${width}px`,
         );
   });
-  console.log(`${width}px: ${a.states.length} states checked`);
+  console.log(`${width}px light: ${a.states.length} states checked`);
+}
+for (const width of [430, 375]) {
+  check(`${width}px dark`, width, await run({ width, colorScheme: "dark", contrast: width === 375 }));
+  console.log(`${width}px dark: ${STEPS.length} states checked`);
 }
 await browser.close();
-if (failures) {
-  console.error(`${failures} failure(s)`);
+
+if (fontsMissing)
+  console.warn("warning: the web fonts didn't load (offline?), so widths were measured in fallback fonts");
+for (const k of STRICT ? [] : KNOWN) {
+  const n = knownSeen.get(k.id);
+  if (n) console.warn(`known failure, not counted (${k.id}, ${n} findings): ${k.what}`);
+  else console.warn(`note: known failure "${k.id}" no longer occurs; remove it from KNOWN in rules.mjs`);
+}
+for (const [msg, where] of failures) console.error(`FAIL ${msg}\n  seen in: ${[...new Set(where)].join("; ")}`);
+const seconds = ((Date.now() - started) / 1000).toFixed(1);
+if (failures.size) {
+  console.error(`${failures.size} failure(s) in ${seconds}s`);
   process.exit(1);
 }
-console.log("smoke test passed");
+console.log(`smoke test passed in ${seconds}s`);
