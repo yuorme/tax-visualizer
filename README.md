@@ -45,7 +45,7 @@ src/engine/             the tax engine: pure functions, no DOM
   household.ts          spouse and dependant amounts, benefits, credits, sales and property tax, marginal rates
   benefits.ts           Canada Child Benefit and provincial child benefits
   credits.ts            refundable credits
-src/ui/                 page markup, styles and the page logic (app.js)
+src/ui/                 page markup, styles and the page logic (app.ts)
 scripts/build.ts        bundles everything into dist/index.html with esbuild
 tests/                  see "How the numbers are checked"
 legacy/                 the original single-file app, kept as the reference for the golden tests
