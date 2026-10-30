@@ -13,6 +13,7 @@ Before you start:
 - Restate the task and the files you are allowed to change (normally `data/years/<year>/` and that year's tests).
   Don't touch `src/` or the schema. If a rule can't be expressed in the existing schema or program ids, stop and
   report what's missing instead of working around it.
+- Run `npm ci`: a new worktree has no `node_modules`.
 
 While working:
 - Take every value from an official publication (CRA, Revenu Québec, Retraite Québec, ESDC, provincial finance
@@ -28,6 +29,7 @@ While working:
 
 When done:
 - Run `npm run check` and make sure it passes.
-- Commit on your branch with a message ending `Closes #<issue>`.
-- Report: what you filled in, every value marked estimated and why, values you couldn't source, rule-shape
+- Commit on your branch with `Closes #<issue>` on its own line before any trailers (`Refs #<issue>` if the
+  issue is only partly done).
+- Report: branch name and commit hash, what you filled in, every value marked estimated and why, values you couldn't source, rule-shape
   changes you found, and anything you weren't sure about.

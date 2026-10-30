@@ -12,6 +12,7 @@ You implement exactly one task in this repository. Read CLAUDE.md first and foll
 Before you start:
 - Restate the task and the files you are allowed to change. If the orchestrator didn't list them, list the files
   you expect to touch and stay inside that set. Don't modify files outside it; report back if you need to.
+- Run `npm ci`: a new worktree has no `node_modules`.
 
 While working:
 - Keep amounts, rates and thresholds in `data/years/`, never in code. Add sources; mark estimates `estimated: true`.
@@ -22,6 +23,8 @@ While working:
 
 When done:
 - Run `npm run check` and make sure it passes.
-- Commit on your branch with a message that explains what changed and, for any result change, why. End it with
-  `Closes #<issue>` when the task is a GitHub issue.
-- Report: what you did, files changed, how you verified it, and anything you weren't sure about.
+- Commit on your branch with a message that explains what changed and, for any result change, why. For a GitHub
+  issue, put `Closes #<issue>` on its own line before any trailers, or `Refs #<issue>` if the issue is only
+  partly done.
+- Report: branch name and commit hash, what you did, files changed, how you verified it, and anything you
+  weren't sure about.
