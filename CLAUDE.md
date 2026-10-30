@@ -50,6 +50,8 @@ TypeScript, and the build inlines everything into `dist/index.html`. See README.
 - Past verification work: `docs/verification/`.
 
 ## Working with agents
-The main session orchestrates; `.claude/agents/` defines a `coder` (works in its own git worktree) and a
-`reviewer` (read-only, runs the checks). Give each coder one task and an explicit list of files it owns; never
-run two coders on the same file at once. Every branch gets a reviewer pass before it merges.
+The main session orchestrates; `.claude/agents/` defines a `coder` (Opus, code changes in its own git worktree),
+a `data-collector` (Sonnet, a year's figures from official sources, also in a worktree) and a `reviewer` (Sonnet,
+read-only, runs the checks). For reviews of engine or rule changes, pass `model: opus` on the call. Give each
+agent one issue and an explicit list of files it owns; never run two agents on the same file at once. Every branch
+gets a reviewer pass before it merges.
