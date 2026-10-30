@@ -8,7 +8,11 @@ import { yearSchema, type YearData } from "./schema.ts";
 export const DATA_DIR = path.resolve(import.meta.dirname, "../../data/years");
 
 export function listYears(): number[] {
-  return fs.readdirSync(DATA_DIR).filter(d => /^\d{4}$/.test(d)).map(Number).sort();
+  return fs
+    .readdirSync(DATA_DIR)
+    .filter(d => /^\d{4}$/.test(d))
+    .map(Number)
+    .sort();
 }
 
 export function loadYear(year: number): YearData {
@@ -18,7 +22,11 @@ export function loadYear(year: number): YearData {
   const raw = {
     year,
     federal: read(path.join(dir, "federal.yaml")),
-    provinces: fs.readdirSync(provDir).filter(f => f.endsWith(".yaml")).sort().map(f => read(path.join(provDir, f))),
+    provinces: fs
+      .readdirSync(provDir)
+      .filter(f => f.endsWith(".yaml"))
+      .sort()
+      .map(f => read(path.join(provDir, f))),
   };
   const res = yearSchema.safeParse(raw);
   if (!res.success) {

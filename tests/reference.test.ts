@@ -8,8 +8,19 @@ import { blank, compute, type Household } from "../src/engine/index.ts";
 const y = loadYear(2026);
 const prov = (c: string) => y.provinces.find(p => p.code === c)!;
 const single = (ord: number, extra: Partial<Household> = {}): Household => ({
-  people: [blank(ord)], active: 0, spouse: true, adults: 1, kids: 0, under6: 0, useBpa: true, whRate: 0.15,
-  useCredits: true, homeValue: 0, rent: 0, monthlySpending: 0, ...extra,
+  people: [blank(ord)],
+  active: 0,
+  spouse: true,
+  adults: 1,
+  kids: 0,
+  under6: 0,
+  useBpa: true,
+  whRate: 0.15,
+  useCredits: true,
+  homeValue: 0,
+  rent: 0,
+  monthlySpending: 0,
+  ...extra,
 });
 const pct = (v: number) => Math.round(v * 10000) / 100;
 
@@ -18,7 +29,19 @@ const pct = (v: number) => Math.round(v * 10000) / 100;
 // The NWT and Nunavut figures add their 2% payroll tax on employment income, which the calculator counts
 // and the published income tax tables don't (47.05% and 44.5% before it).
 const TOP_ORDINARY: Record<string, number> = {
-  BC: 53.5, YT: 48, AB: 48, NT: 49.05, SK: 47.5, MB: 50.4, NU: 46.5, ON: 53.53, QC: 53.31, NB: 52.5, PE: 53, NS: 54, NL: 54.8,
+  BC: 53.5,
+  YT: 48,
+  AB: 48,
+  NT: 49.05,
+  SK: 47.5,
+  MB: 50.4,
+  NU: 46.5,
+  ON: 53.53,
+  QC: 53.31,
+  NB: 52.5,
+  PE: 53,
+  NS: 54,
+  NL: 54.8,
 };
 
 test("2026 top marginal rates on ordinary income match published tables", () => {
@@ -36,8 +59,13 @@ test("Ontario single renter at $25,000: refundable credits match a hand calculat
   // CGEB 445 + min(234, 2% × (25,000 − 11,564)) = 679; CWB max 1,665 (phase-out starts above $27,392);
   // OSTC 378; OEPTC: rent 14,400 × 20% = 2,880 → energy 290 + property min(2,880, 288 + 73) = 651
   const r = compute(y, prov("ON"), single(25_000, { rent: 1200 }));
-  assert.deepEqual(r.credits.map(([n, v]) => [n, Math.round(v)]), [
-    ["Canada Groceries and Essentials Benefit", 679], ["Canada Workers Benefit", 1665],
-    ["Ontario sales tax credit", 378], ["Ontario energy and property tax credit", 651],
-  ]);
+  assert.deepEqual(
+    r.credits.map(([n, v]) => [n, Math.round(v)]),
+    [
+      ["Canada Groceries and Essentials Benefit", 679],
+      ["Canada Workers Benefit", 1665],
+      ["Ontario sales tax credit", 378],
+      ["Ontario energy and property tax credit", 651],
+    ],
+  );
 });

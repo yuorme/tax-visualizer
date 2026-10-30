@@ -10,10 +10,17 @@ const long = [];
 
 for (const file of files) {
   const lines = fs.readFileSync(file, "utf8").split("\n");
-  let fence = false, front = lines[0] === "---";
+  let fence = false,
+    front = lines[0] === "---";
   lines.forEach((line, i) => {
-    if (front) { if (i > 0 && line === "---") front = false; return; }
-    if (line.startsWith("```")) { fence = !fence; return; }
+    if (front) {
+      if (i > 0 && line === "---") front = false;
+      return;
+    }
+    if (line.startsWith("```")) {
+      fence = !fence;
+      return;
+    }
     if (fence || line.startsWith("|") || /https?:\/\//.test(line)) return;
     if (line.length > MAX) long.push(`${file}:${i + 1}: ${line.length} characters`);
   });

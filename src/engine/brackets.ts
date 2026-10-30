@@ -1,17 +1,31 @@
 import type { Brackets, PhasedAmount } from "../data/schema.ts";
 
-export interface BracketLine { lo: number; hi: number; r: number; part: number; t: number }
-export interface BracketResult { tax: number; marg: number; lines: BracketLine[] }
+export interface BracketLine {
+  lo: number;
+  hi: number;
+  r: number;
+  part: number;
+  t: number;
+}
+export interface BracketResult {
+  tax: number;
+  marg: number;
+  lines: BracketLine[];
+}
 
 /** Tax on `inc` under progressive brackets, with the per-bracket breakdown and the top rate reached. */
 export function walk(brackets: Brackets, inc: number): BracketResult {
-  let lo = 0, tax = 0, marg = brackets[0][1];
+  let lo = 0,
+    tax = 0,
+    marg = brackets[0][1];
   const lines = brackets.map(([hi, r]) => {
     const part = Math.max(0, Math.min(inc, hi) - lo);
     const t = part * r;
     if (inc > lo) marg = r;
     const line = { lo, hi, r, part, t };
-    tax += t; lo = hi; return line;
+    tax += t;
+    lo = hi;
+    return line;
   });
   return { tax, marg, lines };
 }
