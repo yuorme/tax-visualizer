@@ -22,5 +22,6 @@ While working:
 
 When done:
 - Run `npm run check` and make sure it passes.
-- Commit on your branch with a message that explains what changed and, for any result change, why.
+- Commit on your branch with a message that explains what changed and, for any result change, why. End it with
+  `Closes #<issue>` when the task is a GitHub issue.
 - Report: what you did, files changed, how you verified it, and anything you weren't sure about.

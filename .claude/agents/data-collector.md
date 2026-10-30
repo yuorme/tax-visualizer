@@ -28,6 +28,6 @@ While working:
 
 When done:
 - Run `npm run check` and make sure it passes.
-- Commit on your branch with a message referencing the issue.
+- Commit on your branch with a message ending `Closes #<issue>`.
 - Report: what you filled in, every value marked estimated and why, values you couldn't source, rule-shape
   changes you found, and anything you weren't sure about.
