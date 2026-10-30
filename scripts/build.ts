@@ -2,9 +2,10 @@
 // inlined. It works from a file, on GitHub Pages, or as a published artifact.
 //   npm run build            one build
 //   npm run dev              rebuild on every change to src/ or data/
-import * as esbuild from "esbuild";
+
 import fs from "node:fs";
 import path from "node:path";
+import * as esbuild from "esbuild";
 import { DATA_DIR, listYears, loadYear } from "../src/data/load.ts";
 
 const root = path.resolve(import.meta.dirname, "..");
@@ -28,8 +29,14 @@ const virtualYears: esbuild.Plugin = {
 
 async function bundle(): Promise<string> {
   const res = await esbuild.build({
-    entryPoints: [path.join(root, "src/ui/app.js")], bundle: true, format: "iife", target: "es2020",
-    minify: !watch, write: false, plugins: [virtualYears], logLevel: "warning",
+    entryPoints: [path.join(root, "src/ui/app.js")],
+    bundle: true,
+    format: "iife",
+    target: "es2020",
+    minify: !watch,
+    write: false,
+    plugins: [virtualYears],
+    logLevel: "warning",
   });
   return res.outputFiles[0].text;
 }
@@ -39,8 +46,11 @@ async function build() {
   const js = (await bundle()).replaceAll("</script", "<\\/script");
   const css = fs.readFileSync(path.join(root, "src/ui/styles.css"), "utf8");
   const year = String(Math.max(...listYears()));
-  const html = fs.readFileSync(path.join(root, "src/ui/index.html"), "utf8")
-    .replace("{{YEAR}}", year).replace("/*{{CSS}}*/", () => css).replace("/*{{JS}}*/", () => js);
+  const html = fs
+    .readFileSync(path.join(root, "src/ui/index.html"), "utf8")
+    .replace("{{YEAR}}", year)
+    .replace("/*{{CSS}}*/", () => css)
+    .replace("/*{{JS}}*/", () => js);
   fs.mkdirSync(path.dirname(out), { recursive: true });
   fs.writeFileSync(out, html);
   console.log(`dist/index.html  ${(html.length / 1024).toFixed(0)} KB  (${Date.now() - t0} ms)`);
@@ -49,7 +59,10 @@ async function build() {
 await build();
 if (watch) {
   let timer: NodeJS.Timeout | undefined;
-  const again = () => { clearTimeout(timer); timer = setTimeout(() => build().catch(e => console.error(e.message)), 100); };
+  const again = () => {
+    clearTimeout(timer);
+    timer = setTimeout(() => build().catch(e => console.error(e.message)), 100);
+  };
   for (const dir of [path.join(root, "src"), DATA_DIR]) fs.watch(dir, { recursive: true }, again);
   console.log("watching src/ and data/ …");
 }

@@ -6,7 +6,7 @@ import fs from "node:fs";
 import test from "node:test";
 import { loadYear } from "../src/data/load.ts";
 import { computeAll } from "../src/engine/index.ts";
-import { toHousehold, type Scenario } from "./golden/adapter.ts";
+import { type Scenario, toHousehold } from "./golden/adapter.ts";
 import { SCENARIOS } from "./golden/scenarios.mjs";
 import { snapshot } from "./golden/snapshot.mjs";
 
