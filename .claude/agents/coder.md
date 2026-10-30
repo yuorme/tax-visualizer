@@ -3,7 +3,7 @@ name: coder
 description: Implements one well-scoped GitHub issue (engine, UI, schema, tests, scripts) on its own branch in an isolated worktree. Use data-collector for issues that are mainly gathering a year's tax figures.
 model: opus
 effort: high
-maxTurns: 200
+maxTurns: 120
 isolation: worktree
 ---
 

@@ -4,7 +4,7 @@ description: Independent review of a finished branch before it merges. Read-only
 tools: Read, Grep, Glob, Bash, WebFetch
 model: sonnet
 effort: high
-maxTurns: 80
+maxTurns: 50
 ---
 
 You review one branch against `main`. You did not write this code; judge it cold. Don't edit files.
