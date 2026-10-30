@@ -10,13 +10,14 @@
   "scripts": {
     "build": "node --import tsx scripts/build.ts",
     "dev": "node --import tsx scripts/build.ts --watch",
-    "test": "node --import tsx --test tests/*.test.ts",
+    "test": "node --import tsx --test 'tests/**/*.test.ts'",
     "typecheck": "tsc -p .",
     "lint": "biome check --error-on-warnings && node scripts/check-docs.mjs",
     "format": "biome check --write",
     "e2e": "node tests/e2e/smoke.mjs",
     "check": "npm run lint && npm run typecheck && npm test && npm run build && npm run e2e",
-    "golden:capture": "node tests/golden/capture-legacy.mjs"
+    "golden:capture": "node --import tsx tests/golden/capture.ts",
+    "golden:capture-legacy": "node tests/golden/capture-legacy.mjs"
   },
   "devDependencies": {
     "@biomejs/biome": "2.6.3",

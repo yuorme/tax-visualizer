@@ -30,6 +30,8 @@ open dist/index.html
 | `npm run format` | Applies Biome's formatting and safe lint fixes |
 | `npm run typecheck` | TypeScript checks for the engine, data schema, tests and scripts |
 | `npm run e2e` | Loads the built page in Chromium on desktop and phone widths |
+| `npm run golden:capture -- <year>` | Captures `tests/golden/<year>.json` from the engine; `--force` overwrites |
+| `npm run golden:capture-legacy` | How 2026 was first locked: reruns the original app in `legacy/` |
 
 ## How it's organized
 
@@ -71,13 +73,18 @@ adding year checks inside an existing one. Values that are estimates rather than
 
 - **Data validation** (`tests/data.test.ts`, `src/data/schema.ts`): every file must match the schema, with
   increasing bracket limits, rates between 0 and 1, known program ids and all 13 jurisdictions.
-- **Golden results** (`tests/golden.test.ts`): 148 households × 13 provinces (singles, couples, single
-  parents, up to six children, investment income, deductions, renters and owners) must reproduce
-  `tests/golden/2026.json` to the hundredth of a cent. The fixture was captured from the original app
-  before the refactor. A change here means a result changed: if it's intended, explain it in the commit and
-  re-capture.
-- **Reference values** (`tests/reference.test.ts`): results compared with figures published outside this
-  project, such as each province's top marginal rate and Ontario's top dividend rates.
+- **Golden results** (`tests/golden.test.ts`): for every year in `data/years/`, 148 households × 13 provinces
+  (singles, couples, single parents, up to six children, investment income, deductions, renters and owners) must
+  reproduce `tests/golden/<year>.json` to the hundredth of a cent. A year without a fixture fails the test. A
+  change here means a result changed: if it's intended, explain it in the commit and re-capture.
+  - `npm run golden:capture -- <year>` captures one year's fixture from the engine. It writes only that year's
+    file and refuses to replace an existing one unless given `--force`; `--out <file>` writes elsewhere.
+  - `npm run golden:capture-legacy` (`tests/golden/capture-legacy.mjs`) is how `2026.json` was first locked:
+    it runs the original single-file app in `legacy/`, which only knows 2026. Capturing 2026 from the engine
+    writes the same bytes except the `source` field, which names the engine instead of the legacy app.
+- **Reference values** (`tests/reference/<year>.test.ts`, one file per year, which takes its year from the file
+  name): results compared with figures published outside this project, such as each province's top marginal
+  rate and Ontario's top dividend rates.
 - **Browser smoke test** (`tests/e2e/smoke.mjs`): the built page loads without errors at 1000, 430 and 375 px
   wide, doesn't scroll sideways on phones, and shows exactly the same figures as the legacy page after a series
   of inputs.
@@ -88,8 +95,10 @@ adding year checks inside an existing one. Values that are estimates rather than
 2. Update every amount from CRA's rate pages, the T4127 payroll formulas, the T4114 benefits booklet and each
    province's budget. Keep the `sources` lists current and mark estimates with `estimated: true`.
 3. If a program changed shape, add a new program id in the engine and the schema, and point the year's data at it.
-4. Add reference tests for the new year from published figures (top marginal rates at minimum).
-5. Once the year is verified, capture its golden results so later changes can't move them silently.
+4. Add `tests/reference/<new year>.test.ts` with figures published outside this project (top marginal rates at
+   minimum). Copying the previous year's file is a good start; replace every expected value.
+5. Once the year is verified, run `npm run golden:capture -- <new year>` so later changes can't move its results
+   silently. `npm test` fails until the fixture exists.
 
 ## What's next
 

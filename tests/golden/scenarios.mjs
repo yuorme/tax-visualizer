@@ -3,9 +3,21 @@
 const blank = (ord, extra = {}) => ({ ord, cg: 0, ed: 0, nd: 0, fd: 0, ded: 0, ...extra });
 
 export const DEFAULTS = {
-  people: [blank(75000)], active: 0, spouse: true, adults: 1, kids: 0, under6: 0,
-  useBpa: true, whRate: 0.15, useCredits: true, homeValue: 0, rent: 0, propOverride: null,
-  home: "ON", spend: 2000, frug: 0,
+  people: [blank(75000)],
+  active: 0,
+  spouse: true,
+  adults: 1,
+  kids: 0,
+  under6: 0,
+  useBpa: true,
+  whRate: 0.15,
+  useCredits: true,
+  homeValue: 0,
+  rent: 0,
+  propOverride: null,
+  home: "ON",
+  spend: 2000,
+  frug: 0,
 };
 
 const hand = [
@@ -42,7 +54,8 @@ const hand = [
 // Seeded PRNG (mulberry32) so the sample never changes between runs
 function rng(seed) {
   return () => {
-    seed |= 0; seed = (seed + 0x6D2B79F5) | 0;
+    seed |= 0;
+    seed = (seed + 0x6d2b79f5) | 0;
     let t = Math.imul(seed ^ (seed >>> 15), 1 | seed);
     t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
     return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
@@ -50,24 +63,41 @@ function rng(seed) {
 }
 const r = rng(20261029);
 const pick = a => a[Math.floor(r() * a.length)];
-const INCOMES = [0, 8000, 15000, 22000, 30000, 38000, 47000, 55000, 68000, 75000, 85000, 100000, 120000, 160000, 200000, 250000];
+const INCOMES = [
+  0, 8000, 15000, 22000, 30000, 38000, 47000, 55000, 68000, 75000, 85000, 100000, 120000, 160000, 200000, 250000,
+];
 const sample = [];
 for (let i = 0; i < 120; i++) {
   const two = r() < 0.45;
-  const inv = () => r() < 0.3 ? { cg: pick([-20000, 0, 5000, 25000, 50000]), ed: pick([0, 2000, 12000, 40000]),
-    nd: pick([0, 0, 8000, 30000]), fd: pick([0, 3000, 20000]) } : {};
-  const ded = () => r() < 0.25 ? { ded: pick([5000, 15000, 30000]) } : {};
+  const inv = () =>
+    r() < 0.3
+      ? {
+          cg: pick([-20000, 0, 5000, 25000, 50000]),
+          ed: pick([0, 2000, 12000, 40000]),
+          nd: pick([0, 0, 8000, 30000]),
+          fd: pick([0, 3000, 20000]),
+        }
+      : {};
+  const ded = () => (r() < 0.25 ? { ded: pick([5000, 15000, 30000]) } : {});
   const people = [blank(pick(INCOMES), { ...inv(), ...ded() })];
   if (two) people.push(blank(pick(INCOMES), { ...inv(), ...ded() }));
   const kids = pick([0, 0, 0, 1, 2, 3, 4, 6]);
   const own = r() < 0.3;
   sample.push({
-    people, active: two && r() < 0.3 ? 1 : 0, spouse: !two || r() < 0.85,
-    adults: two ? pick([2, 2, 3]) : pick([1, 1, 1, 2]), kids, under6: kids ? Math.floor(r() * (kids + 1)) : 0,
-    useBpa: r() < 0.93, whRate: pick([0, 0.15, 0.15, 0.25]), useCredits: r() < 0.85,
-    homeValue: own ? pick([300000, 750000, 1500000]) : 0, rent: own ? 0 : pick([0, 0, 800, 1500, 2500]),
+    people,
+    active: two && r() < 0.3 ? 1 : 0,
+    spouse: !two || r() < 0.85,
+    adults: two ? pick([2, 2, 3]) : pick([1, 1, 1, 2]),
+    kids,
+    under6: kids ? Math.floor(r() * (kids + 1)) : 0,
+    useBpa: r() < 0.93,
+    whRate: pick([0, 0.15, 0.15, 0.25]),
+    useCredits: r() < 0.85,
+    homeValue: own ? pick([300000, 750000, 1500000]) : 0,
+    rent: own ? 0 : pick([0, 0, 800, 1500, 2500]),
     propOverride: own && r() < 0.2 ? pick([0.005, 0.011]) : null,
-    home: pick(["ON", "BC", "AB", "QC", "MB", "NS", "NL", "NU"]), spend: pick([1200, 2000, 2800, 4000, 6000]),
+    home: pick(["ON", "BC", "AB", "QC", "MB", "NS", "NL", "NU"]),
+    spend: pick([1200, 2000, 2800, 4000, 6000]),
     frug: pick([0, 0, -25, 20]),
   });
 }

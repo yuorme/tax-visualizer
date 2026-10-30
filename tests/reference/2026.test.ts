@@ -1,11 +1,14 @@
 // Reference tests: results checked against figures published outside this project. Unlike the golden test, these
 // don't come from our own code, so they catch errors the golden fixtures would have locked in.
+// One file per year; the year comes from the file name (tests/reference/<year>.test.ts).
 import assert from "node:assert/strict";
+import path from "node:path";
 import test from "node:test";
-import { loadYear } from "../src/data/load.ts";
-import { blank, compute, type Household } from "../src/engine/index.ts";
+import { loadYear } from "../../src/data/load.ts";
+import { blank, compute, type Household } from "../../src/engine/index.ts";
 
-const y = loadYear(2026);
+const year = Number(path.basename(import.meta.filename, ".test.ts"));
+const y = loadYear(year);
 const prov = (c: string) => {
   const p = y.provinces.find(p => p.code === c);
   if (!p) throw new Error(`no province ${c}`);
@@ -48,12 +51,12 @@ const TOP_ORDINARY: Record<string, number> = {
   NL: 54.8,
 };
 
-test("2026 top marginal rates on ordinary income match published tables", () => {
+test(`${year} top marginal rates on ordinary income match published tables`, () => {
   for (const [c, expected] of Object.entries(TOP_ORDINARY))
     assert.equal(pct(compute(y, prov(c), single(2_000_000)).margBy.ord), expected, c);
 });
 
-test("2026 Ontario top marginal rates on dividends match published tables", () => {
+test(`${year} Ontario top marginal rates on dividends match published tables`, () => {
   const r = compute(y, prov("ON"), single(2_000_000));
   assert.equal(pct(r.margBy.ed), 39.34);
   assert.equal(pct(r.margBy.nd), 47.74);
