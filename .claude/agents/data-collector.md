@@ -31,5 +31,5 @@ When done:
 - Run `npm run check` and make sure it passes.
 - Commit on your branch with `Closes #<issue>` on its own line before any trailers (`Refs #<issue>` if the
   issue is only partly done).
-- Report: branch name and commit hash, what you filled in, every value marked estimated and why, values you couldn't source, rule-shape
-  changes you found, and anything you weren't sure about.
+- Report: branch name and commit hash, what you filled in, every value marked estimated and why, values you
+  couldn't source, rule-shape changes you found, and anything you weren't sure about.

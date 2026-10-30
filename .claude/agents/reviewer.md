@@ -4,7 +4,7 @@ description: Independent review of a finished branch before it merges. Doesn't e
 tools: Read, Grep, Glob, Bash, WebFetch
 model: sonnet
 effort: high
-maxTurns: 80
+maxTurns: 60
 isolation: worktree
 ---
 
