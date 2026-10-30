@@ -21,21 +21,37 @@ export const HINT_TEXT = ".note, .hint, .help";
 export const HINT_ALLOWED_IN = "header, footer, [role=tooltip]";
 
 // Failures already on the page when these checks were added, reported on every run but not failed, so
-// `npm run check` stays green. Each entry is a CSS selector: a finding inside a matching element counts as known.
-// Each entry names the GitHub issue that tracks it; when that issue is fixed, delete the entry. The test prints a
-// note when an entry no longer matches anything.
-export const KNOWN = {
-  contrast: {
+// `npm run check` stays green. Each entry names the GitHub issue that tracks it; when that issue is fixed, delete the
+// entry. The test prints a note when an entry no longer matches anything. Entries are exact, so that new problems in
+// the same part of the page still fail:
+//  - hint: the visible element itself must match `selector`;
+//  - contrast: the element must be inside `within`, in a colour scheme listed in `colours`, and its colours must be
+//    one of the foreground-on-background pairs listed for that scheme (as axe-core reports them).
+export const KNOWN = [
+  {
+    rule: "hint",
+    issue: "#57",
+    // The comparison's summary line, row annotations and explanatory notes are p.note / small.note.
+    selector: "#detail-body .note",
+    what: "explanatory .note text is visible in the home vs destination comparison",
+  },
+  {
+    rule: "contrast",
+    issue: "#56",
     // Income tax ledger rows for brackets the income doesn't reach are dimmed: 2.53:1 light, 3.23:1 dark.
-    "tr.idle": "#56: dimmed unused-bracket rows in the income tax detail fail colour contrast",
-    // The highlighted home column's code, marginal rate and tag on its tinted background: 3.89:1 and 4.43:1 (light).
-    ".col.is-home": "#56: home column text on its highlight fails colour contrast in light mode",
+    within: "tr.idle",
+    colours: { light: ["#9ea4a3 on #ffffff"], dark: ["#676f6d on #1a1f1e"] },
+    what: "dimmed unused-bracket rows in the income tax detail fail colour contrast",
   },
-  hint: {
-    // The comparison's summary line, row annotations and explanatory notes are all p.note / small.note.
-    "#detail-body": "#57: explanatory .note text is visible in the home vs destination comparison",
+  {
+    rule: "contrast",
+    issue: "#56",
+    // The highlighted home column's code and tag (3.89:1) and marginal rate (4.43:1) on its tinted background.
+    within: ".col.is-home",
+    colours: { light: ["#c2432f on #f6dcd6", "#5d6865 on #f6dcd6"] },
+    what: "home column text on its highlight fails colour contrast in light mode",
   },
-};
+].map(k => ({ ...k, id: `${k.issue} ${k.rule} ${k.selector ?? k.within}` }));
 
 /** Reads the page for the per-state rules: sideways scrolling, chart column labels and visible hint text. */
 export const inspect = page =>
@@ -58,27 +74,38 @@ export const inspect = page =>
         .map(el => ({
           where: where(el),
           text: el.textContent.trim().replace(/\s+/g, " ").slice(0, 120),
-          known: known.find(sel => el.closest(sel)) ?? null,
+          known: known.find(k => el.matches(k.selector))?.id ?? null,
         }));
       return { scrollWidth: document.documentElement.scrollWidth, labels, hints };
     },
-    { COLUMNS, COLUMN_LABEL, HINT_TEXT, HINT_ALLOWED_IN, known: Object.keys(KNOWN.hint) },
+    { COLUMNS, COLUMN_LABEL, HINT_TEXT, HINT_ALLOWED_IN, known: KNOWN.filter(k => k.rule === "hint") },
   );
 
 /** Runs axe-core's colour-contrast rule on the page as it is now and returns each failing element. */
-export async function contrastViolations(page) {
+export async function contrastViolations(page, colorScheme) {
   const { violations } = await new AxeBuilder({ page }).withRules(["color-contrast"]).analyze();
-  const nodes = violations.flatMap(v => v.nodes).map(n => ({ target: n.target, message: n.any[0]?.message ?? "" }));
+  const nodes = violations
+    .flatMap(v => v.nodes)
+    .map(n => ({
+      target: n.target,
+      message: n.any[0]?.message ?? "",
+      pair: `${n.any[0]?.data?.fgColor} on ${n.any[0]?.data?.bgColor}`,
+    }));
+  const known = KNOWN.filter(k => k.rule === "contrast" && k.colours[colorScheme]).map(k => ({
+    id: k.id,
+    within: k.within,
+    pairs: k.colours[colorScheme],
+  }));
   return page.evaluate(
     ({ nodes, known }) =>
-      nodes.map(({ target, message }) => {
+      nodes.map(({ target, message, pair }) => {
         const el = typeof target[0] === "string" ? document.querySelector(target[0]) : null;
         return {
           target: target.join(" "),
           message: message.replace(/\s*Expected contrast.*$/, ""),
-          known: (el && known.find(sel => el.closest(sel))) ?? null,
+          known: (el && known.find(k => el.closest(k.within) && k.pairs.includes(pair))?.id) ?? null,
         };
       }),
-    { nodes, known: Object.keys(KNOWN.contrast) },
+    { nodes, known },
   );
 }

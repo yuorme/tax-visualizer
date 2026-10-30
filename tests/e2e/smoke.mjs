@@ -6,7 +6,7 @@
 //     (legacy/tax-compare.html) after each step, in light mode at each width;
 //  4. the UI rules in rules.mjs after every step: chart column labels are at most two characters, and no visible hint
 //     text outside the info tooltips;
-//  5. axe-core's colour-contrast rule at 375 px in light and dark mode, before the first and after the last step;
+//  5. axe-core's colour-contrast rule at 375 px in light and dark mode, after every step;
 //  6. the built page is self-contained: it requests nothing but the external hosts listed in page.mjs.
 // Known failures (rules.KNOWN) are reported but don't fail the run; `npm run e2e -- --strict` fails on them too.
 import fs from "node:fs";
@@ -102,7 +102,7 @@ const capture = p =>
 // Failures are grouped by message, so a problem seen in every run and step prints once, with where it was seen.
 const failures = new Map();
 const fail = (msg, where) => failures.set(msg, [...(failures.get(msg) ?? []), where]);
-const knownSeen = new Map(Object.values(KNOWN).flatMap(o => Object.keys(o).map(sel => [sel, 0])));
+const knownSeen = new Map(KNOWN.map(k => [k.id, 0]));
 let fontsMissing = false;
 
 const browser = await chromium.launch();
@@ -112,10 +112,10 @@ async function run({ width, colorScheme = "light", html, contrast = false }) {
   const { page, errors, blocked, fontsLoaded, close } = await openPage(browser, { width, colorScheme, html });
   if (!fontsLoaded) fontsMissing = true;
   const states = [];
-  for (const [i, [name, step]] of STEPS.entries()) {
+  for (const [name, step] of STEPS) {
     await step(page);
     await settle(page);
-    const axe = contrast && (i === 0 || i === STEPS.length - 1) ? await contrastViolations(page) : [];
+    const axe = contrast ? await contrastViolations(page, colorScheme) : [];
     states.push({ name, capture: await capture(page), inspect: await inspect(page), axe });
   }
   await close();
@@ -165,12 +165,11 @@ await browser.close();
 
 if (fontsMissing)
   console.warn("warning: the web fonts didn't load (offline?), so widths were measured in fallback fonts");
-for (const [rule, entries] of STRICT ? [] : Object.entries(KNOWN))
-  for (const [sel, todo] of Object.entries(entries)) {
-    const n = knownSeen.get(sel);
-    if (n) console.warn(`known failure, not counted (${rule}, ${sel}, ${n} findings): ${todo}`);
-    else console.warn(`note: known failure ${rule} "${sel}" no longer occurs; remove it from KNOWN in rules.mjs`);
-  }
+for (const k of STRICT ? [] : KNOWN) {
+  const n = knownSeen.get(k.id);
+  if (n) console.warn(`known failure, not counted (${k.id}, ${n} findings): ${k.what}`);
+  else console.warn(`note: known failure "${k.id}" no longer occurs; remove it from KNOWN in rules.mjs`);
+}
 for (const [msg, where] of failures) console.error(`FAIL ${msg}\n  seen in: ${[...new Set(where)].join("; ")}`);
 const seconds = ((Date.now() - started) / 1000).toFixed(1);
 if (failures.size) {
