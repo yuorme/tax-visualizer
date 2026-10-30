@@ -52,8 +52,8 @@ TypeScript, and the build inlines everything into `dist/index.html`. See README.
 ## Working with agents
 The main session orchestrates; `.claude/agents/` defines a `coder` (Opus, code changes in its own git worktree),
 a `data-collector` (Sonnet, a year's figures from official sources, also in a worktree) and a `reviewer` (Sonnet,
-read-only, runs the checks). For reviews of engine or rule changes, pass `model: opus` on the call. Give each
-agent one issue and an explicit list of files it owns; never run two agents on the same file at once. Every branch
-gets a reviewer pass before it merges; give the reviewer the branch name or commit hash from the agent's report.
+read-only, runs the checks). For reviews of engine or rule changes and of significant layout changes, pass
+`model: opus` on the call. Give each agent one issue and an explicit list of files it owns; never run two agents
+on the same file at once. Every branch gets a reviewer pass before it merges; give the reviewer the branch name or commit hash from the agent's report.
 New worktrees start from `origin/main`, not local `main`, so push `main` before starting an agent. A new
 worktree has no `node_modules`, so agents run `npm ci` first.
