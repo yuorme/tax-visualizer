@@ -78,8 +78,11 @@ const capture = p =>
       c.querySelector(".cm").textContent,
     ]),
     title: document.getElementById("chart-title").textContent,
+    // innerText, not textContent: compare the text a reader sees (hidden elements and CSS line breaks matter).
+    // biome-ignore-start lint/performance/useDomNodeTextContent: rendered text is the point of this comparison
     detail: document.getElementById("detail-body").innerText,
     credits: document.getElementById("cred-list").innerText,
+    // biome-ignore-end lint/performance/useDomNodeTextContent: see above
     sums: ["prop-sum", "cred-sum", "invest-sum", "spend"].map(
       id => document.getElementById(id).textContent || document.getElementById(id).value,
     ),
