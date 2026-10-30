@@ -29,7 +29,7 @@ const virtualYears: esbuild.Plugin = {
 
 async function bundle(): Promise<string> {
   const res = await esbuild.build({
-    entryPoints: [path.join(root, "src/ui/app.js")],
+    entryPoints: [path.join(root, "src/ui/app.ts")],
     bundle: true,
     format: "iife",
     target: "es2020",
