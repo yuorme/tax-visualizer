@@ -59,6 +59,7 @@ export const federalSchema = z.object({
     rate2: z.array(rate).length(5),
   }),
   groceriesBenefit: z.object({
+    name: z.string().optional(), // the credit's name that year (the GST/HST credit before July 2026)
     adult: amount,
     spouseOrFirstChild: amount,
     child: amount,
@@ -208,6 +209,20 @@ const credit = z.discriminatedUnion("program", [
   program(
     "pei-essentials-benefit",
     z.object({ single: amount, family: amount, rate, threshold: amount, minimum: amount }),
+  ),
+  // PEI sales tax credit (replaced by the essentials benefit in November 2026): a base amount, plus one for a spouse or eligible dependant, plus a
+  // supplement that rises with family net income, all reduced above a threshold
+  program(
+    "pei-sales-tax-credit",
+    z.object({
+      individual: amount,
+      spouseOrDependant: amount,
+      supplementRate: rate,
+      supplementFrom: amount,
+      supplementMax: amount,
+      rate,
+      threshold: amount,
+    }),
   ),
   program(
     "nl-income-supplement",
