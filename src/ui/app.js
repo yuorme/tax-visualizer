@@ -2,6 +2,7 @@
 // All tax rules and amounts live in data/years/<year>/ and src/engine/; nothing here computes tax.
 import years from "virtual:years";
 import { blank, cashOf, compute, hasInv, INCOME_KEYS as KEYS, propertyRate } from "../engine/index.ts";
+import { DEFAULT_INCOME, spendEst } from "./defaults.ts";
 import { footerNotes, share, tooltips } from "./notes.ts";
 
 const YEAR = Math.max(...Object.keys(years).map(Number));
@@ -18,12 +19,9 @@ const NAMES = ["You", "Partner"];
 // RRSP room: a share of earned income up to the year's dollar limit (current employment income stands in for last year's)
 const rrspMax = x => Math.min(F.rrsp.limit, Math.round(x.ord * F.rrsp.rate));
 
-const DEFAULT_INCOME = 75000;
 let people = [blank(DEFAULT_INCOME)],
   active = 0,
   spouse = true;
-// Monthly taxable spending estimate by household size (see footer): about $2,012 × √people, to the nearest $100
-const spendEst = n => Math.round((2012 * Math.sqrt(Math.max(1, n))) / 100) * 100;
 let metric = "pct",
   frug = 0,
   adults = 1,

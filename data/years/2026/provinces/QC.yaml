@@ -33,3 +33,4 @@ credits:
       coupleKids: [0.25, 3600, 19828]
 sources:
   - {label: "Revenu Québec, 2026 tax rates", url: "https://www.revenuquebec.ca/en/citizens/income-tax-return/completing-your-income-tax-return/income-tax-rates/"}
+  - {label: "CGTSIM, Understanding school tax (Montreal school tax is billed separately by the CGTSIM)", url: "https://www.cgtsim.qc.ca/en/understanding-school-tax/"}

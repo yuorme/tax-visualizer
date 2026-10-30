@@ -5,9 +5,11 @@ import fs from "node:fs";
 import test from "node:test";
 import { listYears, loadYear } from "../src/data/load.ts";
 import type { YearData } from "../src/data/schema.ts";
+import { DEFAULT_INCOME, spendEst } from "../src/ui/defaults.ts";
 import { footerNotes, type PageDefaults, tooltips } from "../src/ui/notes.ts";
 
-const page: PageDefaults = { defaultIncome: 75000, spendEst: n => Math.round((2012 * Math.sqrt(n)) / 100) * 100 };
+// The page's own starting values, so the notes are checked against what the page uses.
+const page: PageDefaults = { defaultIncome: DEFAULT_INCOME, spendEst };
 const render = (y: YearData) => [footerNotes(y, page), ...Object.values(tooltips(y))].join("\n");
 const html = fs.readFileSync(new URL("../src/ui/index.html", import.meta.url), "utf8");
 const noteKeys = [...html.matchAll(/data-note="([^"]+)"/g)].map(m => m[1]);

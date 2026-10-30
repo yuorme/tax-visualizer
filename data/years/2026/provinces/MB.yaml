@@ -18,3 +18,5 @@ credits:
     program: mb-affordability-credits
     params: {homeownerMax: 1600, renter: 625}
     estimated: true   # renters credit taken at its maximum
+sources:
+  - {label: "Manitoba Finance, Personal income taxes (bracket indexation paused from the 2025 tax year)", url: "https://www.gov.mb.ca/finance/personal/ptaxes.html"}
