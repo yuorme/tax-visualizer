@@ -9,7 +9,7 @@ const ratePair = z.tuple([rate, rate]);
 const source = z.object({ label: z.string(), url: z.string().url() });
 
 /** [upper limit of the bracket, rate]. The last bracket's limit is Infinity (.inf in YAML). */
-const brackets = z.array(z.tuple([z.number().positive(), rate])).min(1)
+const brackets = z.array(z.tuple([z.union([z.number().positive(), z.literal(Infinity)]), rate])).min(1)
   .refine(b => b[b.length - 1][0] === Infinity, "last bracket must have no upper limit (.inf)")
   .refine(b => b.every((x, i) => i === 0 || x[0] > b[i - 1][0]), "bracket limits must increase");
 

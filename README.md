@@ -10,7 +10,7 @@ plain YAML files in `data/`, versioned with the code.
 
 ## Quick start
 
-Requires Node 22 (pinned in `.node-version`). With [fnm](https://github.com/Schniz/fnm) set up
+Requires Node 26 (pinned in `.node-version`). With [fnm](https://github.com/Schniz/fnm) set up
 (`eval "$(fnm env --use-on-cd --shell zsh)"` in `~/.zshrc`), the right version is picked up when you enter the folder.
 
 ```sh
