@@ -22,7 +22,7 @@ export function creditsOf(fed: Federal, p: Province, f: CreditInput): Credit[] {
   const fam = couple || parent;
   const over = (t: number, inc = famNet) => Math.max(0, inc - t);
   const out: Credit[] = [];
-  // Canada Groceries and Essentials Benefit (formerly the GST/HST credit)
+  // Canada Groceries and Essentials Benefit (the GST/HST credit until July 2026; the year's data can name it)
   const gb = fed.groceriesBenefit;
   let g =
     gb.adult +
@@ -32,7 +32,10 @@ export function creditsOf(fed: Federal, p: Province, f: CreditInput): Credit[] {
     g += parent
       ? gb.singleSupplement.max
       : Math.min(gb.singleSupplement.max, gb.singleSupplement.rate * over(gb.singleSupplement.from));
-  out.push(["Canada Groceries and Essentials Benefit", Math.max(0, g - gb.phaseOut.rate * over(gb.phaseOut.from))]);
+  out.push([
+    gb.name ?? "Canada Groceries and Essentials Benefit",
+    Math.max(0, g - gb.phaseOut.rate * over(gb.phaseOut.from)),
+  ]);
   // Canada Workers Benefit (basic amount; no disability supplement)
   const wb = fed.workersBenefit;
   const work = couple ? ppl[0].ord + ppl[1].ord : ppl[0].ord;
@@ -119,6 +122,16 @@ export function creditsOf(fed: Federal, p: Province, f: CreditInput): Credit[] {
         const q = cr.params,
           top = fam ? q.family : q.single;
         out.push([name, Math.max(q.minimum, top - q.rate * over(q.threshold))]);
+        break;
+      }
+      case "pei-sales-tax-credit": {
+        // The spouse amount also goes to a single parent (for an eligible dependant)
+        const q = cr.params;
+        const top =
+          q.individual +
+          (fam ? q.spouseOrDependant : 0) +
+          Math.min(q.supplementMax, q.supplementRate * over(q.supplementFrom));
+        out.push([name, Math.max(0, top - q.rate * over(q.threshold))]);
         break;
       }
       case "nl-income-supplement": {
