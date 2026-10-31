@@ -28,7 +28,8 @@ While working:
 - Capture golden results only for the year you're adding (`npm run golden:capture -- <year>`). Other years'
   golden files must not change.
 - After each jurisdiction or other logical chunk, commit it as `WIP #<issue>: <what>` and push the branch
-  (`git push -u origin <branch>`), so the work survives an interruption.
+  (`git push -u origin <branch>`), so the work survives an interruption. Once a PR exists, run the same open-PR check
+  as below before each push.
 - Throwaway scripts go in files under `$TMPDIR`, not heredocs.
 - After merging `origin/main` into your branch, run `npm ci` again.
 
