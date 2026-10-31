@@ -1,0 +1,43 @@
+code: QC
+name: Quebec
+order: 8
+system: quebec     # Quebec runs its own income tax, QPP and QPIP
+brackets:
+  - [53255, 0.14]
+  - [106495, 0.19]
+  - [129590, 0.24]
+  - [.inf, 0.2575]
+basicPersonalAmount: 18571
+dividendTaxCredit: {eligible: 0.117, nonEligible: 0.0342}
+spouseAmount: transfer     # a spouse's unused basic credit is transferred instead
+quebec:
+  workerDeduction: {rate: 0.06, max: 1420}
+  livingAlone: {max: 2128, rate: 0.1875, threshold: 42090}
+salesTax: {rate: 0.14975, label: "5% GST + 9.975% QST"}
+propertyTax: {rate: 0.0090, city: Montreal, note: school tax may be extra}   # carried over from the 2026 file; not rechecked for 2025
+childBenefit:
+  name: Family allowance
+  program: quebec-family-allowance
+  # July 2025 to June 2026 (Finances Québec, Parameters of the personal income tax system for 2025, Table 3)
+  params: {max: 3006, maxSingleParent: 1055, min: 1196, minSingleParent: 421, rate: 0.04, thresholdSingle: 43280, thresholdCouple: 59369, schoolSupplies: 124}
+credits:
+  - name: Solidarity tax credit
+    program: quebec-solidarity-tax-credit
+    # July 2025 to June 2026 (Finances Québec, Table 4)
+    params: {qstAdult: 356, qstSpouse: 356, qstAlone: 169, housingCouple: 888, housingSingle: 731, child: 155, rate: 0.06, threshold: 42325}
+  - name: Work premium
+    program: quebec-work-premium
+    # Tax year 2025 general work premium (Finances Québec, Table 3; rates and excluded income from the CFFP guide)
+    params:
+      phaseOutRate: 0.10
+      single: [0.116, 2400, 12620]        # [rate, excluded income, reduction threshold]
+      couple: [0.116, 3600, 19534]
+      parent: [0.30, 2400, 12620]
+      coupleKids: [0.25, 3600, 19534]
+sources:
+  - {label: "Finances Québec, Parameters of the personal income tax system for 2025 (brackets, basic amount, worker deduction, living alone, family allowance, work premium, solidarity tax credit)", url: "https://cdn-contenu.quebec.ca/cdn-contenu/adm/min/finances/publications-adm/parametres/AUTEN_IncomeTax2025.pdf"}
+  - {label: "Retraite Québec, 2025 benefit amounts and key data (family allowance)", url: "https://www.retraitequebec.gouv.qc.ca/en/benefits-amounts/2025-benefits-amounts-key-data"}
+  - {label: "CFFP, Université de Sherbrooke, Guide des mesures fiscales: work premium (2025 rates and excluded income)", url: "https://cffp.recherche.usherbrooke.ca/outils-ressources/guide-mesures-fiscales/credit-impot-remboursable-prime-travail/"}
+  - {label: "CFFP, Guide des mesures fiscales: solidarity tax credit (cross-check of Table 4)", url: "https://cffp.recherche.usherbrooke.ca/outils-ressources/guide-mesures-fiscales/credit-impot-solidarite/"}
+  - {label: "Revenu Québec, 2025 tax rates", url: "https://www.revenuquebec.ca/en/citizens/income-tax-return/completing-your-income-tax-return/income-tax-rates/"}
+  - {label: "CGTSIM, Understanding school tax (Montreal school tax is billed separately by the CGTSIM)", url: "https://www.cgtsim.qc.ca/en/understanding-school-tax/"}

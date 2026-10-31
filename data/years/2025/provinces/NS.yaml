@@ -1,0 +1,34 @@
+code: NS
+name: Nova Scotia
+order: 11
+brackets:
+  - [30507, 0.0879]
+  - [61015, 0.1495]
+  - [95883, 0.1667]
+  - [154650, 0.175]
+  - [.inf, 0.21]
+basicPersonalAmount: 11744      # a flat amount for everyone in 2025 (Form NS428)
+dividendTaxCredit: {eligible: 0.0885, nonEligible: 0.015}
+spouseAmount: {max: 11744, threshold: 874}     # Form NS428: base 12,618 less the greater of 874 and the spouse's income
+childAmount: {perChild: 1200, ages: under6}    # $100 a month
+lowIncomeReduction:
+  program: family-low-income-reduction
+  params: {individual: 300, spouse: 300, child: 165, rate: 0.05, threshold: 15000}
+# The HST fell from 15% to 14% on April 1, 2025: 15% for three months and 14% for nine is a 14.25% year.
+salesTax: {rate: 0.1425, label: "14% HST (15% before April 1)"}
+propertyTax: {rate: 0.0061, city: Halifax}   # carried over from the 2026 file; not rechecked for 2025
+childBenefit:
+  name: Nova Scotia Child Benefit
+  program: nova-scotia-child-benefit
+  params: {perChild: 1524.96, fullBelow: 26000, partialBelow: 34000, partialOtherChildren: 762.48}   # $127.08 and $63.54 a month
+credits:
+  - name: Nova Scotia affordable living tax credit
+    program: ns-affordable-living-tax-credit
+    params: {base: 255, child: 60, rate: 0.05, threshold: 30000}
+sources:
+  - {label: "CRA, Form NS428 for 2025 (basic and spouse amounts, young children, low-income reduction)", url: "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5003-c/5003-c-25e.pdf"}
+  - {label: "CRA, 2025 tax rates and income brackets", url: "https://www.canada.ca/en/revenue-agency/services/tax/individuals/tax-rates-brackets/last-year.html"}
+  - {label: "Nova Scotia, Personal income tax rates and indexation", url: "https://www.novascotia.ca/personal-income-tax-rates-and-indexation"}
+  - {label: "CRA, T4114 (Nova Scotia child benefit, July 2025 to June 2026)", url: "https://www.canada.ca/content/dam/cra-arc/formspubs/pub/t4114/t4114-25e.pdf"}
+  - {label: "CRA, RC4210 (Nova Scotia affordable living tax credit, 2025-2026)", url: "https://www.canada.ca/content/dam/cra-arc/formspubs/pub/rc4210/rc4210-25e.txt"}
+  - {label: "Nova Scotia Finance, HST transitional rules (rate 14% from April 1, 2025)", url: "https://novascotia.ca/finance/en/home/taxation/tax101/docs/hst-transitional-rules.pdf"}
