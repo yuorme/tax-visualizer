@@ -10,7 +10,7 @@ dividendTaxCredit: {eligible: 0.11, nonEligible: 0.02519}
 spouseAmount: {max: 19491, threshold: 1949}     # base amount 21,440 on Form SK428, maximum 19,491
 childAmount: {perChild: 7704, ages: all}
 salesTax: {rate: 0.11, label: "5% GST + 6% PST"}
-propertyTax: {rate: 0.0134, city: Saskatoon}   # carried over from the 2026 file; not rechecked for 2025
+propertyTax: {rate: 0.0134, city: Saskatoon}   # carried over from 2026 (estimated); not checked against 2025 municipal rates
 credits:
   - name: Saskatchewan low-income tax credit
     program: sk-low-income-tax-credit

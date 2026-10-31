@@ -13,7 +13,7 @@ basicPersonalAmount: 22323
 dividendTaxCredit: {eligible: 0.0812, nonEligible: 0.0218}
 spouseAmount: {max: 22323, threshold: 0}
 salesTax: {rate: 0.05, label: "5% GST"}
-propertyTax: {rate: 0.0066, city: Calgary}   # carried over from the 2026 file; not rechecked for 2025
+propertyTax: {rate: 0.0066, city: Calgary}   # carried over from 2026 (estimated); not checked against 2025 municipal rates
 childBenefit:
   name: Alberta Child and Family Benefit
   program: alberta-child-family-benefit

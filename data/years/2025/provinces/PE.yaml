@@ -15,7 +15,7 @@ lowIncomeReduction:
   program: family-low-income-reduction
   params: {individual: 350, spouse: 350, child: 300, rate: 0.05, threshold: 22650}
 salesTax: {rate: 0.15, label: "15% HST"}
-propertyTax: {rate: 0.0167, city: Charlottetown}   # carried over from the 2026 file; not rechecked for 2025
+propertyTax: {rate: 0.0167, city: Charlottetown}   # carried over from 2026 (estimated); not checked against 2025 municipal rates
 childBenefit:
   name: PEI Child Benefit
   program: income-band-per-child

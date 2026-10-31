@@ -24,7 +24,7 @@ payroll:
     - [36000, 300, 0.06, 450]
     - [20000, 0, 0.06, 300]
 salesTax: {rate: 0.13, label: "13% HST"}
-propertyTax: {rate: 0.0076, city: Toronto}   # carried over from the 2026 file; not rechecked for 2025
+propertyTax: {rate: 0.0076, city: Toronto}   # carried over from 2026 (estimated); not checked against 2025 municipal rates
 creditsUseRent: true
 childBenefit:
   name: Ontario Child Benefit

@@ -17,11 +17,7 @@ propertyTax: {rate: 0.0100, city: "Iqaluit (est.)", estimated: true}
 childBenefit:
   name: Nunavut Child Benefit
   program: per-child-reduced
-  # T4114 (2025 edition) prints "$29 per month" for the basic benefit, which would be $348 a year. The 2026 file uses
-  # $696 (twice that), so $696 is kept here; it is the one child benefit figure that couldn't be matched to a
-  # publication and needs a check against the CRA's Nunavut child benefit page.
-  params: {perChild: 696, threshold: 22065, rateOneChild: 0.03, rateMoreChildren: 0.05}
-  estimated: true   # per-child amount taken from the 2026 file, not matched to T4114 (see above)
+  params: {perChild: 348, threshold: 22065, rateOneChild: 0.03, rateMoreChildren: 0.05}     # $29 a month (T4114-25); $58 from July 2026
 sources:
   - {label: "CRA, Form NU428 for 2025 (basic and spouse amounts, children under 6)", url: "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5014-c/5014-c-25e.pdf"}
   - {label: "CRA, 2025 tax rates and income brackets", url: "https://www.canada.ca/en/revenue-agency/services/tax/individuals/tax-rates-brackets/last-year.html"}

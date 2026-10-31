@@ -14,7 +14,7 @@ dividendTaxCredit: {eligible: 0.12, nonEligible: 0.0196}
 spouseAmount: {max: 11073, threshold: 1108}     # base amount 12,181 on Form BC428, maximum 11,073
 bcTaxReduction: {max: 562, rate: 0.0356, threshold: 25020}
 salesTax: {rate: 0.12, label: "5% GST + 7% PST"}
-propertyTax: {rate: 0.0030, city: Vancouver}   # carried over from the 2026 file; not rechecked for 2025
+propertyTax: {rate: 0.0030, city: Vancouver}   # carried over from 2026 (estimated); not checked against 2025 municipal rates
 creditsUseRent: true
 childBenefit:
   name: B.C. family benefit

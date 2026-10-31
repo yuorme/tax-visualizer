@@ -14,7 +14,7 @@ quebec:
   workerDeduction: {rate: 0.06, max: 1420}
   livingAlone: {max: 2128, rate: 0.1875, threshold: 42090}
 salesTax: {rate: 0.14975, label: "5% GST + 9.975% QST"}
-propertyTax: {rate: 0.0090, city: Montreal, note: school tax may be extra}   # carried over from the 2026 file; not rechecked for 2025
+propertyTax: {rate: 0.0090, city: Montreal, note: school tax may be extra}   # carried over from 2026 (estimated); not checked against 2025 municipal rates
 childBenefit:
   name: Family allowance
   program: quebec-family-allowance

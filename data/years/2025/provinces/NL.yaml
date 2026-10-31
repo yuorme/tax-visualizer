@@ -19,12 +19,12 @@ lowIncomeReduction:
   # $23,928 (or over $40,460 when a spouse or dependant amount is claimed)
   params: {individual: 997, family: 557, rate: 0.16, thresholdIndividual: 23928, thresholdFamily: 40460}
 salesTax: {rate: 0.15, label: "15% HST"}
-propertyTax: {rate: 0.0091, city: "St. John's"}   # carried over from the 2026 file; not rechecked for 2025
+propertyTax: {rate: 0.0091, city: "St. John's"}   # carried over from 2026 (estimated); not checked against 2025 municipal rates
 childBenefit:
   name: NL Child Benefit
   program: nl-child-benefit
   params: {perChild: [1868, 1980, 2127, 2285], fullUpTo: 17397, endsAt: 38192}   # 1st, 2nd, 3rd, each later child
-  estimated: true   # straight-line taper; start (17,397) from CRA's T4114, end (38,192) from NL's FAQ, undated
+  estimated: true   # straight-line taper; start (17,397) from T4114-25; the end (38,192) is from an NL page of the 2026-27 era, no 2025 source gives it
 credits:
   - name: NL income supplement
     program: nl-income-supplement

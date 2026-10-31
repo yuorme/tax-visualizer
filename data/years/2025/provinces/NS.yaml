@@ -16,7 +16,7 @@ lowIncomeReduction:
   params: {individual: 300, spouse: 300, child: 165, rate: 0.05, threshold: 15000}
 # The HST fell from 15% to 14% on April 1, 2025: 15% for three months and 14% for nine is a 14.25% year.
 salesTax: {rate: 0.1425, label: "14% HST (15% before April 1)"}
-propertyTax: {rate: 0.0061, city: Halifax}   # carried over from the 2026 file; not rechecked for 2025
+propertyTax: {rate: 0.0061, city: Halifax}   # carried over from 2026 (estimated); not checked against 2025 municipal rates
 childBenefit:
   name: Nova Scotia Child Benefit
   program: nova-scotia-child-benefit
