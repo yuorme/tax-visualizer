@@ -1,0 +1,24 @@
+code: YT
+name: Yukon
+territory: true
+order: 1
+brackets:
+  - [57375, 0.064]
+  - [114750, 0.09]
+  - [177882, 0.109]
+  - [500000, 0.128]
+  - [.inf, 0.15]
+basicPersonalAmount: federal      # Yukon's amount mirrors the federal one, including its phase-out
+dividendTaxCredit: {eligible: 0.1202, nonEligible: 0.0067}
+spouseAmount: federal
+employmentAmountCredit: true      # Yukon has its own Canada employment amount credit
+salesTax: {rate: 0.05, label: "5% GST"}
+propertyTax: {rate: 0.0100, city: "Whitehorse (est.)", estimated: true}
+childBenefit:
+  name: Yukon Child Benefit
+  program: per-child-reduced
+  params: {perChild: 936.96, threshold: 35000, rateOneChild: 0.025, rateMoreChildren: 0.05}     # $78.08 a month
+sources:
+  - {label: "CRA, Form YT428 for 2025 (basic personal amount mirrors the federal one)", url: "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5011-c/5011-c-25e.pdf"}
+  - {label: "CRA, 2025 tax rates and income brackets", url: "https://www.canada.ca/en/revenue-agency/services/tax/individuals/tax-rates-brackets/last-year.html"}
+  - {label: "CRA, T4114 (Yukon child benefit, July 2025 to June 2026)", url: "https://www.canada.ca/content/dam/cra-arc/formspubs/pub/t4114/t4114-25e.pdf"}

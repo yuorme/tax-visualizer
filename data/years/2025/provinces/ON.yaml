@@ -1,0 +1,46 @@
+code: ON
+name: Ontario
+order: 7
+brackets:
+  - [52886, 0.0505]
+  - [105775, 0.0915]
+  - [150000, 0.1116]
+  - [220000, 0.1216]
+  - [.inf, 0.1316]
+basicPersonalAmount: 12747
+dividendTaxCredit: {eligible: 0.10, nonEligible: 0.029863}
+spouseAmount: {max: 10823, threshold: 1082}     # base amount 11,905 on Form ON428, maximum 10,823
+# Surtax on Ontario tax after non-refundable credits, before the dividend tax credit (form ON428): [threshold, rate]
+surtax: [[5710, 0.20], [7307, 0.36]]
+ontarioTaxReduction: {base: 294, perChild: 544}
+# LIFT credit is not indexed; the maximum, rate and thresholds are the same as in 2026
+lift: {max: 875, rate: 0.0505, threshold: 32500, familyThreshold: 65000, phaseOut: 0.05}
+payroll:
+  # Ontario Health Premium (not indexed): [taxable income above, base, rate, cap], highest band first
+  healthPremium:
+    - [200000, 750, 0.25, 900]
+    - [72000, 600, 0.25, 750]
+    - [48000, 450, 0.25, 600]
+    - [36000, 300, 0.06, 450]
+    - [20000, 0, 0.06, 300]
+salesTax: {rate: 0.13, label: "13% HST"}
+propertyTax: {rate: 0.0076, city: Toronto}   # carried over from 2026 (estimated); not checked against 2025 municipal rates
+creditsUseRent: true
+childBenefit:
+  name: Ontario Child Benefit
+  program: ontario-child-benefit
+  params: {perChild: 1726.92, threshold: 26364, rate: 0.08}     # $143.91 a month
+credits:
+  - name: Ontario sales tax credit
+    program: ontario-sales-tax-credit
+    params: {perPerson: 371, rate: 0.04, thresholdSingle: 28506, thresholdFamily: 35632}
+  - name: Ontario energy and property tax credit
+    program: ontario-energy-property-tax-credit
+    # CRA's 2025 calculation sheet: energy component up to 285; property tax component 71 + 10% of occupancy cost, up to 927
+    params: {rentShare: 0.2, energyMax: 285, propertyBase: 71, propertyRate: 0.10, propertyMax: 927, rate: 0.02, thresholdSingle: 28506, thresholdFamily: 35632}
+sources:
+  - {label: "CRA, Form ON428 for 2025 (brackets, basic and spouse amounts, surtax, tax reduction, health premium)", url: "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5006-c/5006-c-25e.pdf"}
+  - {label: "CRA, Ontario tax information for 2025", url: "https://www.canada.ca/en/revenue-agency/services/forms-publications/tax-packages-years/general-income-tax-benefit-package/ontario/5006-pc.html"}
+  - {label: "CRA, T4114 (Ontario child benefit, July 2025 to June 2026)", url: "https://www.canada.ca/content/dam/cra-arc/formspubs/pub/t4114/t4114-25e.pdf"}
+  - {label: "CRA, RC4210 (Ontario sales tax credit, 2025-2026)", url: "https://www.canada.ca/content/dam/cra-arc/formspubs/pub/rc4210/rc4210-25e.txt"}
+  - {label: "CRA, 2025 Ontario energy and property tax credit calculation sheet", url: "https://www.canada.ca/en/revenue-agency/services/child-family-benefits/provincial-territorial-programs/ontario-energy-property-tax-credit-oeptc-calculation-sheets/2025-ontario-energy-property-tax-credit-calculation-sheets/2025-ontario-energy-property-tax-credit-calculation-sheet-single-individuals-no-children.html"}
