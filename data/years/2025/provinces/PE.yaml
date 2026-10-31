@@ -1,0 +1,33 @@
+code: PE
+name: Prince Edward Island
+shortName: PEI
+order: 10
+brackets:
+  - [33328, 0.095]
+  - [64656, 0.1347]
+  - [105000, 0.166]
+  - [140000, 0.1762]
+  - [.inf, 0.19]
+basicPersonalAmount: 14650      # Form PE428 for 2025; it rises to $15,000 from January 1, 2026
+dividendTaxCredit: {eligible: 0.105, nonEligible: 0.013}
+spouseAmount: {max: 12443, threshold: 1244}     # base amount 13,687 on Form PE428, maximum 12,443
+lowIncomeReduction:
+  program: family-low-income-reduction
+  params: {individual: 350, spouse: 350, child: 300, rate: 0.05, threshold: 22650}
+salesTax: {rate: 0.15, label: "15% HST"}
+propertyTax: {rate: 0.0167, city: Charlottetown}   # carried over from 2026 (estimated); not checked against 2025 municipal rates
+childBenefit:
+  name: PEI Child Benefit
+  program: income-band-per-child
+  params:
+    bands: [[45000, 360], [80000, 240]]    # [family net income below, amount per child]: $30 and $20 a month
+credits:
+  # July 2025 to June 2026 is the last year of the old sales tax credit (see docs/verification/2025-rule-shapes.md)
+  - name: PEI sales tax credit
+    program: pei-sales-tax-credit
+    params: {individual: 110, spouseOrDependant: 55, supplementRate: 0.005, supplementFrom: 30000, supplementMax: 55, rate: 0.02, threshold: 50000}
+sources:
+  - {label: "CRA, Form PE428 for 2025 (basic and spouse amounts, low-income reduction)", url: "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5002-c/5002-c-25e.pdf"}
+  - {label: "CRA, 2025 tax rates and income brackets", url: "https://www.canada.ca/en/revenue-agency/services/tax/individuals/tax-rates-brackets/last-year.html"}
+  - {label: "CRA, T4114 (PEI child benefit, July 2025 to June 2026)", url: "https://www.canada.ca/content/dam/cra-arc/formspubs/pub/t4114/t4114-25e.pdf"}
+  - {label: "CRA, RC4210 (PEI sales tax credit, 2025-2026)", url: "https://www.canada.ca/content/dam/cra-arc/formspubs/pub/rc4210/rc4210-25e.txt"}

@@ -1,0 +1,23 @@
+code: SK
+name: Saskatchewan
+order: 4
+brackets:
+  - [53463, 0.105]
+  - [152750, 0.125]
+  - [.inf, 0.145]
+basicPersonalAmount: 19491      # raised by $500 for 2025 (Form SK428)
+dividendTaxCredit: {eligible: 0.11, nonEligible: 0.02519}
+spouseAmount: {max: 19491, threshold: 1949}     # base amount 21,440 on Form SK428, maximum 19,491
+childAmount: {perChild: 7704, ages: all}
+salesTax: {rate: 0.11, label: "5% GST + 6% PST"}
+propertyTax: {rate: 0.0134, city: Saskatoon}   # carried over from 2026 (estimated); not checked against 2025 municipal rates
+credits:
+  - name: Saskatchewan low-income tax credit
+    program: sk-low-income-tax-credit
+    # RC4210: $429, $429 and $169 a child (two at most), reduced from $38,588; partial credit until $80,058
+    params: {adult: 429, spouse: 429, child: 169, maxChildren: 2, rate: 0.02884, threshold: 38588}
+    estimated: true   # reduction rate worked out from the published start and end points: 1,196 / (80,058 - 38,588)
+sources:
+  - {label: "CRA, Form SK428 for 2025 (basic, spouse and child amounts)", url: "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5008-c/5008-c-25e.pdf"}
+  - {label: "CRA, 2025 tax rates and income brackets", url: "https://www.canada.ca/en/revenue-agency/services/tax/individuals/tax-rates-brackets/last-year.html"}
+  - {label: "CRA, RC4210 (Saskatchewan low-income tax credit, 2025-2026)", url: "https://www.canada.ca/content/dam/cra-arc/formspubs/pub/rc4210/rc4210-25e.txt"}

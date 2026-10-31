@@ -1,0 +1,36 @@
+code: NB
+name: New Brunswick
+order: 9
+brackets:
+  - [51306, 0.094]
+  - [102614, 0.14]
+  - [190060, 0.16]
+  - [.inf, 0.195]
+basicPersonalAmount: 13396
+dividendTaxCredit: {eligible: 0.14, nonEligible: 0.0275}
+spouseAmount: {max: 10499, threshold: 1051}     # base amount 11,550 on Form NB428, maximum 10,499
+lowIncomeReduction:
+  program: nb-low-income-reduction
+  # Form NB428: $802 reduced by 3% of income over $21,920 (the form's limits of $48,653 single and $75,387 family
+  # fit: 21,920 + 802 / 0.03 and 21,920 + 1,604 / 0.03)
+  params: {amount: 802, rate: 0.03, threshold: 21920}
+salesTax: {rate: 0.15, label: "15% HST"}
+propertyTax: {rate: 0.0136, city: Moncton}   # carried over from 2026 (estimated); not checked against 2025 municipal rates
+childBenefit:
+  name: NB Child Tax Benefit
+  program: nb-child-tax-benefit
+  params:
+    perChild: 250                  # $20.83 a month
+    threshold: 20000
+    rateOneChild: 0.025
+    rateMoreChildren: 0.05
+    workingIncomeSupplement: {rate: 0.04, floor: 3750, max: 250, threshold: 20921, phaseOut: 0.05}
+credits:
+  - name: New Brunswick HST credit
+    program: nb-hst-credit
+    params: {adult: 300, spouse: 300, child: 100, rate: 0.02, threshold: 35000}
+sources:
+  - {label: "CRA, Form NB428 for 2025 (basic and spouse amounts, low-income reduction)", url: "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5004-c/5004-c-25e.pdf"}
+  - {label: "CRA, 2025 tax rates and income brackets", url: "https://www.canada.ca/en/revenue-agency/services/tax/individuals/tax-rates-brackets/last-year.html"}
+  - {label: "CRA, T4114 (NB child tax benefit and working income supplement, July 2025 to June 2026)", url: "https://www.canada.ca/content/dam/cra-arc/formspubs/pub/t4114/t4114-25e.pdf"}
+  - {label: "CRA, RC4210 (NB HST credit, 2025-2026)", url: "https://www.canada.ca/content/dam/cra-arc/formspubs/pub/rc4210/rc4210-25e.txt"}

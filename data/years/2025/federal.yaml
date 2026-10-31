@@ -1,0 +1,99 @@
+# Federal parameters for the 2025 tax year.
+# Benefit amounts (CCB, GST/HST credit) are for the July 2025 – June 2026 payment year, which is based on 2024
+# income; the calculator applies them to current-year income.
+# Left out on purpose: the fuel charge and Canada Carbon Rebate (ended April 2025), the one-time GST/HST top-up paid
+# June 5, 2026, and the top-up tax credit on line 34990 (zero for every household the model can represent).
+year: 2025
+
+# [upper limit of bracket, rate]; .inf = no upper limit
+# The lowest rate fell from 15% to 14% on July 1, 2025 (Bill C-4), so 2025 uses the blended 14.5%. The engine also
+# takes the federal credit rate (basic, spouse, employment, CPP/EI amounts) from this first bracket, and the
+# "appropriate percentage" for credits is the lowest rate in s. 117(2), which is 14.5% for 2025.
+brackets:
+  - [57375, 0.145]
+  - [114750, 0.205]
+  - [177882, 0.26]
+  - [253414, 0.29]
+  - [.inf, 0.33]
+
+# Basic personal amount: shrinks linearly from max to min between `from` and `to` (net income)
+basicPersonalAmount: {max: 16129, min: 14538, from: 177882, to: 253414}
+
+quebecAbatement: 0.165          # reduction of basic federal tax for Quebec residents
+employmentAmount: 1471          # Canada employment amount
+indexation: 0.027               # CRA's indexation factor for 2025
+
+investment:
+  capitalGainsInclusion: 0.5    # the proposed increase to two thirds was cancelled in March 2025
+  grossUp: {eligible: 1.38, nonEligible: 1.15}
+  # Federal dividend tax credit, as a share of the grossed-up dividend
+  dividendTaxCredit: {eligible: 0.150198, nonEligible: 0.090301}
+  # Not used in the calculation (withholding is an input): the Canada–U.S. treaty rate on portfolio dividends
+  # (Article X(2)(b)), and the share of foreign property income above which foreign tax is deducted, not
+  # credited (Income Tax Act s. 20(11)). Quoted in the page notes.
+  foreignWithholding: {usTreaty: 0.15, deductibleAbove: 0.15}
+
+rrsp: {rate: 0.18, limit: 32490}
+
+payroll:
+  # CPP: base contributions earn a credit; enhanced (first and second additional) contributions are deducted
+  cpp: {exempt: 3500, ympe: 71300, yampe: 81200, base: 0.0495, enh1: 0.01, enh2: 0.04}
+  qpp: {exempt: 3500, ympe: 71300, yampe: 81200, base: 0.054, enh1: 0.01, enh2: 0.04}
+  ei: {maxInsurable: 65700, rate: 0.0164, quebecRate: 0.0131}
+  qpip: {maxInsurable: 98000, rate: 0.00494}
+
+childBenefit:   # Canada Child Benefit, July 2025 – June 2026 (T4114, 2025 edition)
+  perChildUnder6: 7997
+  perChild6to17: 6748
+  threshold1: 37487
+  threshold2: 81222
+  # Indexed by number of children (index 0 unused; 4 = four or more)
+  rate1: [0, 0.07, 0.135, 0.19, 0.23]
+  fixed2: [0, 3061, 5904, 8310, 10059]
+  rate2: [0, 0.032, 0.057, 0.08, 0.095]
+
+groceriesBenefit:   # GST/HST credit, July 2025 – June 2026 (it became the Canada Groceries and Essentials Benefit in July 2026)
+  name: GST/HST credit
+  adult: 349
+  spouseOrFirstChild: 349
+  child: 184
+  singleSupplement: {max: 184, rate: 0.02, from: 11337}
+  phaseOut: {rate: 0.05, from: 45521}
+
+workersBenefit:   # Canada Workers Benefit for 2025, basic amount (no disability supplement); Schedule 6
+  standard: {max: [1633, 2813], rate: 0.27, floor: [3000, 3000], threshold: [26855, 30639], phaseOut: [0.15, 0.15]}
+  secondaryEarnerExemption: 16386
+  # Provinces with their own version under an agreement with Ottawa. [single, family] pairs.
+  regional:
+    AB: {max: [1750, 2619], rate: 0.21, floor: [2760, 2760], threshold: [26159, 32772], phaseOut: [0.15, 0.15]}
+    NU: {max: [1621, 2435], rate: 0.14, floor: [6000, 6000], threshold: [26832, 36927], phaseOut: [0.04, 0.08]}
+  # Quebec's version follows its work premium: [phase-in rate, excluded income, income at max, phase-out base]
+  # Income at max = excluded income + maximum / rate (12,620 and 19,534 match the work premium thresholds).
+  # The couple's phase-out base (21,787.19) is not printed on Schedule 6: it is the published limit of 51,504.09
+  # for a couple with no dependant, less the maximum of 5,943.38 divided by the 20% reduction rate.
+  quebec:
+    phaseOutRate: 0.20
+    single: [0.373, 2400, 12620, 14170.05]
+    couple: [0.373, 3600, 19534, 21787.19]
+    parent: [0.20, 2400, 12620, 14341.56]
+    coupleKids: [0.239, 3600, 19534, 22007.75]
+
+sources:
+  - {label: "CRA, 2025 tax rates and income brackets (14.5% lowest rate)", url: "https://www.canada.ca/en/revenue-agency/services/tax/individuals/tax-rates-brackets/last-year.html"}
+  - {label: "CRA, Adjustment of personal income tax and benefit amounts (2025 indexation 2.7%, basic personal amount, employment amount)", url: "https://www.canada.ca/en/revenue-agency/services/tax/individuals/frequently-asked-questions-individuals/adjustment-personal-income-tax-benefit-amounts.html"}
+  - {label: "Parliament of Canada, Bill C-4 (14% lowest rate from July 1, 2025; 'appropriate percentage' unchanged)", url: "https://www.parl.ca/documentviewer/en/45-1/bill/C-4/third-reading?col=2"}
+  - {label: "CRA, CPP contribution rates, maximums and exemptions (2025)", url: "https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/payroll/payroll-deductions-contributions/canada-pension-plan-cpp/cpp-contribution-rates-maximums-exemptions.html"}
+  - {label: "CRA, MP, DB, DPSP and RRSP limits, YMPE and YAMPE (2025)", url: "https://www.canada.ca/en/revenue-agency/services/tax/registered-plans-administrators/pspa/mp-rrsp-dpsp-tfsa-limits-ympe.html"}
+  - {label: "CRA, EI premium rates and maximums (2025)", url: "https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/payroll/payroll-deductions-contributions/employment-insurance-ei/ei-premium-rates-maximums.html"}
+  - {label: "CRA, T4127 Payroll Deductions Formulas, 120th edition (January 2025)", url: "https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/payroll-deductions-t4127-payroll-deductions-formulas/t4127-jan-120th-edition-effective-january-1-2025/t4127-jan-payroll-deductions-formulas-computer-programs.html"}
+  - {label: "Retraite Québec, 2025 benefit amounts and key data (QPP rates and ceilings)", url: "https://www.retraitequebec.gouv.qc.ca/en/benefits-amounts/2025-benefits-amounts-key-data"}
+  - {label: "Revenu Québec, Maximum insurable earnings and the QPIP premium rate (2025: 98,000 and 0.494%)", url: "https://www.revenuquebec.ca/en/businesses/source-deductions-and-employer-contributions/calculating-source-deductions-and-employer-contributions/quebec-parental-insurance-plan-premiums/maximum-insurable-earnings-and-premium-rate/"}
+  - {label: "CRA, T4114 Canada child benefit and related programs, July 2025 to June 2026", url: "https://www.canada.ca/content/dam/cra-arc/formspubs/pub/t4114/t4114-25e.pdf"}
+  - {label: "CRA, GST/HST credit calculation sheet for the July 2025 to June 2026 payments", url: "https://www.canada.ca/content/dam/cra-arc/serv-info/benefits/gstcclc24-eng.pdf"}
+  - {label: "CRA, RC4210 GST/HST credit guide for the 2025-2026 payment period", url: "https://www.canada.ca/content/dam/cra-arc/formspubs/pub/rc4210/rc4210-25e.txt"}
+  - {label: "CRA, 2025 Schedule 6 Canada Workers Benefit (all except QC, AB and NU)", url: "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5000-s6/5000-s6-25e.pdf"}
+  - {label: "CRA, 2025 Schedule 6 Canada Workers Benefit (AB)", url: "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5009-s6/5009-s6-25e.pdf"}
+  - {label: "CRA, 2025 Schedule 6 Canada Workers Benefit (NU)", url: "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5014-s6/5014-s6-25e.pdf"}
+  - {label: "CRA, 2025 Schedule 6 Canada Workers Benefit (QC)", url: "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5005-s6/5005-s6-25e.pdf"}
+  - {label: "Canada–United States Tax Convention, Article X", url: "https://www.canada.ca/en/department-finance/programs/tax-policy/tax-treaties/country/united-states-america-convention-consolidated-1980-1983-1984-1995-1997-2007.html"}
+  - {label: "Income Tax Act, s. 20(11)", url: "https://laws-lois.justice.gc.ca/eng/acts/I-3.3/section-20.html"}
