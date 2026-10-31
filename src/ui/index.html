@@ -84,41 +84,18 @@
         <div class="scale" data-for="spend-range" data-ticks="0,2000,4000,6000,8000,10000" aria-hidden="true"></div>
       </div>
     </div>
-    <details class="invest" id="prop-panel">
-      <summary><b>Property tax</b><button type="button" class="info" data-note="property" aria-label="About property tax">i</button><span>Optional · <span id="prop-sum">not included</span></span></summary>
-      <div class="prop-grid">
-        <div class="field">
-          <div class="lbl-row"><label class="lbl" for="hv">Home value</label></div>
-          <div class="money md"><span>$</span><input id="hv" inputmode="numeric" autocomplete="off" value="0"></div>
-          <input type="range" id="hv-range" class="inv-range" min="0" max="2500000" step="10000" value="0" aria-label="Home value slider">
-          <div class="scale" data-for="hv-range" data-ticks="0,500000,1000000,1500000,2000000,2500000" aria-hidden="true"></div>
-        </div>
-        <div class="field">
-          <div class="lbl-row"><label class="lbl" for="pr-rate">Municipal rate</label></div>
-          <div class="money md"><input id="pr-rate" inputmode="decimal" autocomplete="off" value="0.76"><span class="per">% a year</span></div>
-          <div class="pr-note"><span id="pr-note">Toronto</span> <button type="button" class="linkbtn" id="pr-reset" hidden>Reset</button></div>
-        </div>
-      </div>
-    </details>
-    <details class="invest" id="cred-panel">
-      <summary><b>Refundable credits</b><button type="button" class="info" data-note="credits" aria-label="About refundable credits">i</button><span id="cred-sum">none at this income</span></summary>
-      <div class="cred-body">
-        <div class="cred-top">
-          <label class="switch" for="cred-toggle">
-            <input type="checkbox" id="cred-toggle" checked>
-            <span class="knob" aria-hidden="true"></span>
-            <span class="switch-text"><b>Include in totals</b><small id="cred-state">Netted off tax</small></span>
-          </label>
-          <div class="field" id="rent-field" hidden>
-            <div class="lbl-row"><label class="lbl" for="rent">Rent</label><button type="button" class="info" data-tip="Monthly rent, used only for credits based on rent: Ontario's energy and property tax credit, B.C.'s renter's tax credit and Manitoba's renters credit. Leave it at $0 if you own; homeowners' credits use the property tax above." aria-label="About rent">i</button></div>
-            <div class="money md"><span>$</span><input id="rent" inputmode="numeric" autocomplete="off" value="0"><span class="per">a month</span></div>
-          </div>
-        </div>
-        <table class="cred-list" id="cred-list"></table>
-      </div>
-    </details>
-    <details class="invest" id="invest">
-      <summary><b id="invest-title">Investment income</b><button type="button" class="info" data-tip="Income from investments held in a non-registered (taxable) account. Income inside a TFSA isn't taxed at all, and RRSP/RRIF withdrawals belong under employment &amp; other income. CRA taxes investment income to whoever supplied the money, regardless of whose name is on the account." aria-label="About investment income">i</button><span>Non-registered accounts · <span id="invest-sum">none added</span></span></summary>
+    <!-- More inputs: one tab bar, one panel open at a time, all closed by default; tapping the open tab closes it.
+         Each tab shows a short summary of its panel. The Driving (#6) and 65+ (#17) tabs are added with their
+         inputs, after Credits and in that order. -->
+    <fieldset class="tabbar" id="tabbar" aria-label="More inputs">
+      <button type="button" id="tab-income" data-tab="income" aria-expanded="false" aria-controls="panel-income"><b class="tab-name">Income</b><small id="tab-income-sum">none</small></button>
+      <button type="button" id="tab-home" data-tab="home" aria-expanded="false" aria-controls="panel-home"><b class="tab-name">Home</b><small id="tab-home-sum">not set</small></button>
+      <button type="button" id="tab-credits" data-tab="credits" aria-expanded="false" aria-controls="panel-credits"><b class="tab-name">Credits</b><small id="tab-credits-sum">$0</small></button>
+    </fieldset>
+    <section class="tab-panel" id="panel-income" aria-labelledby="tab-income" hidden>
+      <!-- Other income types go here, above investments, per person: self-employment (#14), and interest, rental
+           and other income plus pension and RRIF as separate fields (#13). -->
+      <div class="panel-head"><b class="panel-title" id="invest-title">Investment income</b><button type="button" class="info" data-tip="Income from investments held in a non-registered (taxable) account. Income inside a TFSA isn't taxed at all, and RRSP/RRIF withdrawals belong under employment &amp; other income. CRA taxes investment income to whoever supplied the money, regardless of whose name is on the account." aria-label="About investment income">i</button><span class="panel-sum">Non-registered accounts · <span id="invest-sum">none added</span></span></div>
       <div class="invest-grid">
         <div class="field">
           <div class="lbl-row"><label class="lbl" for="cg">Net capital gains / losses</label><button type="button" class="info" data-note="capitalGains" aria-label="About net capital gains and losses">i</button></div>
@@ -149,7 +126,49 @@
             <select id="wh" class="wh-select"></select></div>
         </div>
       </div>
-    </details>
+    </section>
+    <section class="tab-panel" id="panel-home" aria-labelledby="tab-home" hidden>
+      <div class="sub-row">
+        <fieldset class="seg tenure" aria-label="Own or rent">
+          <button type="button" data-tenure="own" aria-pressed="true">Own</button>
+          <button type="button" data-tenure="rent" aria-pressed="false">Rent</button>
+        </fieldset>
+        <button type="button" class="info" data-tip="Own: enter your home's value, and property tax is charged at each province's typical rate. Rent: enter your monthly rent, which counts only for credits based on rent. Only the one you pick is used." aria-label="About owning or renting">i</button>
+      </div>
+      <div id="own-body">
+        <div class="panel-head"><b class="panel-title">Property tax</b><button type="button" class="info" data-note="property" aria-label="About property tax">i</button><span class="panel-sum" id="prop-sum">not included</span></div>
+        <div class="prop-grid">
+          <div class="field">
+            <div class="lbl-row"><label class="lbl" for="hv">Home value</label></div>
+            <div class="money md"><span>$</span><input id="hv" inputmode="numeric" autocomplete="off" value="0"></div>
+            <input type="range" id="hv-range" class="inv-range" min="0" max="2500000" step="10000" value="0" aria-label="Home value slider">
+            <div class="scale" data-for="hv-range" data-ticks="0,500000,1000000,1500000,2000000,2500000" aria-hidden="true"></div>
+          </div>
+          <div class="field">
+            <div class="lbl-row"><label class="lbl" for="pr-rate">Municipal rate</label></div>
+            <div class="money md"><input id="pr-rate" inputmode="decimal" autocomplete="off" value="0.76"><span class="per">% a year</span></div>
+            <div class="pr-note"><span id="pr-note">Toronto</span> <button type="button" class="linkbtn" id="pr-reset" hidden>Reset</button></div>
+          </div>
+        </div>
+      </div>
+      <div class="rent-body" id="rent-body" hidden>
+        <div class="field">
+          <div class="lbl-row"><label class="lbl" for="rent">Rent</label><button type="button" class="info" data-tip="Monthly rent, used only for credits based on rent: Ontario's energy and property tax credit, B.C.'s renter's tax credit and Manitoba's renters credit. Homeowners' credits use property tax instead." aria-label="About rent">i</button></div>
+          <div class="money md"><span>$</span><input id="rent" inputmode="numeric" autocomplete="off" value="0"><span class="per">a month</span></div>
+        </div>
+      </div>
+    </section>
+    <section class="tab-panel" id="panel-credits" aria-labelledby="tab-credits" hidden>
+      <div class="panel-head"><b class="panel-title">Refundable credits</b><button type="button" class="info" data-note="credits" aria-label="About refundable credits">i</button><span class="panel-sum" id="cred-sum">none at this income</span></div>
+      <div class="cred-body">
+        <label class="switch" for="cred-toggle">
+          <input type="checkbox" id="cred-toggle" checked>
+          <span class="knob" aria-hidden="true"></span>
+          <span class="switch-text"><b>Include in totals</b><small id="cred-state">Netted off tax</small></span>
+        </label>
+        <table class="cred-list" id="cred-list"></table>
+      </div>
+    </section>
   </section>
 
   <section aria-label="Blended rate by province">

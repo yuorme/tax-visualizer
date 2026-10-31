@@ -20,6 +20,19 @@ const legacy = `<!doctype html><html><head><meta charset="utf-8"><meta name="vie
 const STRICT = process.argv.includes("--strict");
 const PHONE = 500; // widths below this are phones, where the page must not scroll sideways
 
+// The same steps run on the built page and the legacy one, which differ in how optional inputs are revealed: the
+// built page has a tab bar (#tabbar) that opens one panel at a time; the legacy page has a <details> per section.
+const tabbed = async p => (await p.$("#tabbar")) !== null;
+/** Opens a tab on the built page, unless it's open already (clicking the open tab would close it). */
+async function openTab(p, tab) {
+  const button = `#tabbar [data-tab="${tab}"]`;
+  if ((await p.getAttribute(button, "aria-expanded")) !== "true") await p.click(button);
+}
+const openDetails = (p, id) =>
+  p.$eval(`#${id}`, el => {
+    el.open = true;
+  });
+
 const STEPS = [
   ["default", async () => {}],
   [
@@ -31,11 +44,14 @@ const STEPS = [
         el.value = 1;
         el.dispatchEvent(new Event("input", { bubbles: true }));
       });
-      await p.$eval("#cred-panel", el => {
-        el.open = true;
-      });
+      // Rent is under Home (Rent) on the built page, and in the credits panel on the legacy page
+      if (await tabbed(p)) {
+        await openTab(p, "home");
+        await p.click('[data-tenure="rent"]');
+      } else await openDetails(p, "cred-panel");
       await p.fill("#rent", "1,200");
       await p.dispatchEvent("#rent", "input");
+      if (await tabbed(p)) await openTab(p, "credits");
     },
   ],
   [
@@ -49,9 +65,8 @@ const STEPS = [
   [
     "investments, Quebec destination",
     async p => {
-      await p.$eval("#invest", el => {
-        el.open = true;
-      });
+      if (await tabbed(p)) await openTab(p, "income");
+      else await openDetails(p, "invest");
       for (const [id, v] of [
         ["cg", "20,000"],
         ["ed", "12,000"],
@@ -67,9 +82,11 @@ const STEPS = [
   [
     "home value, frugality, sort",
     async p => {
-      await p.$eval("#prop-panel", el => {
-        el.open = true;
-      });
+      // The built page is still set to Rent from step 2; the legacy page ignores rent once there's a home value
+      if (await tabbed(p)) {
+        await openTab(p, "home");
+        await p.click('[data-tenure="own"]');
+      } else await openDetails(p, "prop-panel");
       await p.fill("#hv", "750,000");
       await p.dispatchEvent("#hv", "input");
       await p.$eval("#frug", el => {
@@ -92,8 +109,10 @@ const capture = p =>
     // innerText, not textContent: compare the text a reader sees (hidden elements and CSS line breaks matter).
     // biome-ignore-start lint/performance/useDomNodeTextContent: rendered text is the point of this comparison
     detail: document.getElementById("detail-body").innerText,
-    credits: document.getElementById("cred-list").innerText,
     // biome-ignore-end lint/performance/useDomNodeTextContent: see above
+    // The credits table cell by cell: innerText would depend on whether its panel is open, and the built page opens
+    // one panel at a time where the legacy page keeps several open.
+    credits: [...document.getElementById("cred-list").rows].map(r => [...r.cells].map(c => c.textContent)),
     sums: ["prop-sum", "cred-sum", "invest-sum", "spend"].map(
       id => document.getElementById(id).textContent || document.getElementById(id).value,
     ),
