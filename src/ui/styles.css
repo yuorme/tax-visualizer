@@ -1622,9 +1622,14 @@ footer a {
 .tabbar button[aria-expanded="true"] {
   box-shadow: inset 0 -3px 0 var(--prov);
 }
-.tabbar button[aria-expanded="true"],
-.tabbar button:hover {
+.tabbar button[aria-expanded="true"] {
   background: var(--bg);
+}
+/* Touch screens keep :hover on the last tab tapped, which would leave a closed tab looking open */
+@media (hover: hover) {
+  .tabbar button:hover {
+    background: var(--bg);
+  }
 }
 .tab-panel {
   border: 1px solid var(--rule);

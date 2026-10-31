@@ -88,11 +88,11 @@
          Each tab shows a short summary of its panel. The Driving (#6) and 65+ (#17) tabs are added with their
          inputs, after Credits and in that order. -->
     <fieldset class="tabbar" id="tabbar" aria-label="More inputs">
-      <button type="button" id="tab-income" data-tab="income" aria-expanded="false" aria-controls="panel-income"><b class="tab-name">Income</b><small id="tab-income-sum">none</small></button>
-      <button type="button" id="tab-home" data-tab="home" aria-expanded="false" aria-controls="panel-home"><b class="tab-name">Home</b><small id="tab-home-sum">not set</small></button>
-      <button type="button" id="tab-credits" data-tab="credits" aria-expanded="false" aria-controls="panel-credits"><b class="tab-name">Credits</b><small id="tab-credits-sum">$0</small></button>
+      <button type="button" id="tab-income" data-tab="income" aria-expanded="false" aria-controls="panel-income"><b class="tab-name" id="tab-income-name">Income</b><small id="tab-income-sum">none</small></button>
+      <button type="button" id="tab-home" data-tab="home" aria-expanded="false" aria-controls="panel-home"><b class="tab-name" id="tab-home-name">Home</b><small id="tab-home-sum">not set</small></button>
+      <button type="button" id="tab-credits" data-tab="credits" aria-expanded="false" aria-controls="panel-credits"><b class="tab-name" id="tab-credits-name">Credits</b><small id="tab-credits-sum">$0</small></button>
     </fieldset>
-    <section class="tab-panel" id="panel-income" aria-labelledby="tab-income" hidden>
+    <section class="tab-panel" id="panel-income" aria-labelledby="tab-income-name" hidden>
       <!-- Other income types go here, above investments, per person: self-employment (#14), and interest, rental
            and other income plus pension and RRIF as separate fields (#13). -->
       <div class="panel-head"><b class="panel-title" id="invest-title">Investment income</b><button type="button" class="info" data-tip="Income from investments held in a non-registered (taxable) account. Income inside a TFSA isn't taxed at all, and RRSP/RRIF withdrawals belong under employment &amp; other income. CRA taxes investment income to whoever supplied the money, regardless of whose name is on the account." aria-label="About investment income">i</button><span class="panel-sum">Non-registered accounts · <span id="invest-sum">none added</span></span></div>
@@ -127,7 +127,7 @@
         </div>
       </div>
     </section>
-    <section class="tab-panel" id="panel-home" aria-labelledby="tab-home" hidden>
+    <section class="tab-panel" id="panel-home" aria-labelledby="tab-home-name" hidden>
       <div class="sub-row">
         <fieldset class="seg tenure" aria-label="Own or rent">
           <button type="button" data-tenure="own" aria-pressed="true">Own</button>
@@ -158,7 +158,7 @@
         </div>
       </div>
     </section>
-    <section class="tab-panel" id="panel-credits" aria-labelledby="tab-credits" hidden>
+    <section class="tab-panel" id="panel-credits" aria-labelledby="tab-credits-name" hidden>
       <div class="panel-head"><b class="panel-title">Refundable credits</b><button type="button" class="info" data-note="credits" aria-label="About refundable credits">i</button><span class="panel-sum" id="cred-sum">none at this income</span></div>
       <div class="cred-body">
         <label class="switch" for="cred-toggle">

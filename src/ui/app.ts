@@ -265,7 +265,7 @@ function showTab() {
     $(`panel-${t}`).hidden = tab !== t;
   }
 }
-/** Sets a tab's short summary, marked "set" when what's in its panel changes the totals. */
+/** Sets a tab's short summary, marked "set" (highlighted) when the summary is an amount. */
 function tabSum(t: Tab, text: string, set: boolean) {
   $(`tab-${t}-sum`).textContent = text;
   $(`tab-${t}`).classList.toggle("set", set);
@@ -532,9 +532,11 @@ function render() {
     b.setAttribute("aria-pressed", String(b.dataset.tenure === tenure));
   $("own-body").hidden = tenure !== "own";
   $("rent-body").hidden = tenure !== "rent";
-  // Tab summaries: what each closed panel holds, highlighted when it changes the totals
-  const invNet = x.cg + x.ed + x.nd + x.fd;
-  tabSum("income", hasInv(x) ? (invNet < 0 ? `−${kMoney(-invNet)}` : kMoney(invNet)) : "none", hasInv(x));
+  // Tab summaries: what each panel holds, highlighted whenever the summary is an amount rather than none, not set,
+  // $0 or off. Income covers everyone's investments, though its panel shows the selected person's.
+  const anyInv = people.some(hasInv);
+  const invNet = people.reduce((a, y) => a + y.cg + y.ed + y.nd + y.fd, 0);
+  tabSum("income", anyInv ? (invNet < 0 ? `−${kMoney(-invNet)}` : kMoney(invNet)) : "none", anyInv);
   tabSum(
     "home",
     ownedValue() > 0 ? `${kMoney(ownedValue())} home` : rentPaid() > 0 ? `${kMoney(rentPaid())}/mo rent` : "not set",

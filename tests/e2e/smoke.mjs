@@ -7,7 +7,8 @@
 //  4. the UI rules in rules.mjs after every step: chart column labels are at most two characters, and no visible hint
 //     text outside the info tooltips;
 //  5. axe-core's colour-contrast rule at 375 px in light and dark mode, after every step;
-//  6. the built page is self-contained: it requests nothing but the external hosts listed in page.mjs.
+//  6. the built page is self-contained: it requests nothing but the external hosts listed in page.mjs;
+//  7. the tab bar under the inputs: every tab closed on first load, and a tab opens alone and closes when tapped again.
 // Known failures (rules.KNOWN) are reported but don't fail the run; `npm run e2e -- --strict` fails on them too.
 import fs from "node:fs";
 import { chromium } from "playwright";
@@ -32,9 +33,36 @@ const openDetails = (p, id) =>
   p.$eval(`#${id}`, el => {
     el.open = true;
   });
+/** The tab bar as the page shows it: the tabs marked open, and the panels not hidden. */
+const tabState = p =>
+  p.evaluate(() => ({
+    expanded: [...document.querySelectorAll("#tabbar [aria-expanded]")]
+      .filter(b => b.getAttribute("aria-expanded") !== "false")
+      .map(b => b.dataset.tab),
+    shown: [...document.querySelectorAll(".tab-panel")].filter(el => !el.hidden).map(el => el.id),
+  }));
+/** A problem message unless exactly `tab` is open (or none, for null), with only its panel showing. */
+async function expectTab(p, tab, when) {
+  const { expanded, shown } = await tabState(p);
+  const want = tab ? { expanded: [tab], shown: [`panel-${tab}`] } : { expanded: [], shown: [] };
+  return JSON.stringify({ expanded, shown }) === JSON.stringify(want)
+    ? []
+    : [`${when}: expected ${tab ? `only the ${tab} tab` : "no tab"} open, got ${JSON.stringify({ expanded, shown })}`];
+}
 
+// Each step may return a list of problems found on the built page, which fail the run.
 const STEPS = [
-  ["default", async () => {}],
+  ["default", async p => ((await tabbed(p)) ? expectTab(p, null, "on first load") : [])],
+  [
+    "a tab opens, and closes when tapped again",
+    async p => {
+      if (!(await tabbed(p))) return [];
+      await p.click('#tabbar [data-tab="income"]');
+      const opened = await expectTab(p, "income", "after tapping Income");
+      await p.click('#tabbar [data-tab="income"]');
+      return [...opened, ...(await expectTab(p, null, "after tapping the open Income tab"))];
+    },
+  ],
   [
     "income 28k, 1 child, rent",
     async p => {
@@ -132,10 +160,10 @@ async function run({ width, colorScheme = "light", html, contrast = false }) {
   if (!fontsLoaded) fontsMissing = true;
   const states = [];
   for (const [name, step] of STEPS) {
-    await step(page);
+    const problems = (await step(page)) ?? [];
     await settle(page);
     const axe = contrast ? await contrastViolations(page, colorScheme) : [];
-    states.push({ name, capture: await capture(page), inspect: await inspect(page), axe });
+    states.push({ name, problems, capture: await capture(page), inspect: await inspect(page), axe });
   }
   await close();
   return { states, errors, blocked };
@@ -146,8 +174,9 @@ function check(label, width, { states, errors, blocked }) {
   if (errors.length) fail(`script errors: ${errors.join("; ")}`, label);
   for (const url of blocked)
     fail(`requested ${url}: the page must be self-contained (allowed hosts: ${ALLOWED_HOSTS.join(", ")})`, label);
-  for (const { name, inspect: s, axe } of states) {
+  for (const { name, problems, inspect: s, axe } of states) {
     const where = `${label}, "${name}"`;
+    for (const msg of problems) fail(msg, where);
     if (width < PHONE && s.scrollWidth > width) fail(`page scrolls sideways (${s.scrollWidth}px wide)`, where);
     if (s.labels.length !== COLUMN_COUNT) fail(`chart has ${s.labels.length} columns, expected ${COLUMN_COUNT}`, where);
     for (const l of s.labels)
