@@ -1,0 +1,24 @@
+code: NU
+name: Nunavut
+territory: true
+order: 6
+brackets:
+  - [54707, 0.04]
+  - [109413, 0.07]
+  - [177881, 0.09]
+  - [.inf, 0.115]
+basicPersonalAmount: 19274
+dividendTaxCredit: {eligible: 0.0551, nonEligible: 0.0261}
+spouseAmount: {max: 19274, threshold: 0}
+childAmount: {perChild: 1200, ages: under6}
+payroll: {employeeTax: 0.02}
+salesTax: {rate: 0.05, label: "5% GST"}
+propertyTax: {rate: 0.0100, city: "Iqaluit (est.)", estimated: true}
+childBenefit:
+  name: Nunavut Child Benefit
+  program: per-child-reduced
+  params: {perChild: 348, threshold: 22065, rateOneChild: 0.03, rateMoreChildren: 0.05}     # $29 a month (T4114-25); $58 from July 2026
+sources:
+  - {label: "CRA, Form NU428 for 2025 (basic and spouse amounts, children under 6)", url: "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5014-c/5014-c-25e.pdf"}
+  - {label: "CRA, 2025 tax rates and income brackets", url: "https://www.canada.ca/en/revenue-agency/services/tax/individuals/tax-rates-brackets/last-year.html"}
+  - {label: "CRA, T4114 (Nunavut child benefit, July 2025 to June 2026)", url: "https://www.canada.ca/content/dam/cra-arc/formspubs/pub/t4114/t4114-25e.pdf"}

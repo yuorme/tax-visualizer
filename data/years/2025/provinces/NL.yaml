@@ -1,0 +1,38 @@
+code: NL
+name: Newfoundland and Labrador
+order: 12
+brackets:
+  - [44192, 0.087]
+  - [88382, 0.145]
+  - [157792, 0.158]
+  - [220910, 0.178]
+  - [282214, 0.198]
+  - [564429, 0.208]
+  - [1128858, 0.213]
+  - [.inf, 0.218]
+basicPersonalAmount: 11067
+dividendTaxCredit: {eligible: 0.063, nonEligible: 0.032}
+spouseAmount: {max: 9043, threshold: 905}     # base amount 9,948 on Form NL428, maximum 9,043
+lowIncomeReduction:
+  program: nl-low-income-reduction
+  # Form NL428: basic $997, spouse or eligible dependant $557 each, reduced by 16% of family income over
+  # $23,928 (or over $40,460 when a spouse or dependant amount is claimed)
+  params: {individual: 997, family: 557, rate: 0.16, thresholdIndividual: 23928, thresholdFamily: 40460}
+salesTax: {rate: 0.15, label: "15% HST"}
+propertyTax: {rate: 0.0091, city: "St. John's"}   # carried over from 2026 (estimated); not checked against 2025 municipal rates
+childBenefit:
+  name: NL Child Benefit
+  program: nl-child-benefit
+  params: {perChild: [1868, 1980, 2127, 2285], fullUpTo: 17397, endsAt: 38192}   # 1st, 2nd, 3rd, each later child
+  estimated: true   # straight-line taper; start (17,397) from T4114-25; the end (38,192) is from an NL page of the 2026-27 era, no 2025 source gives it
+credits:
+  - name: NL income supplement
+    program: nl-income-supplement
+    params: {base: 254, extraMax: 266, extraRate: 0.0532, extraFrom: 15000, couple: 69, child: 231, rate: 0.09, threshold: 40000}
+sources:
+  - {label: "CRA, Form NL428 for 2025 (basic and spouse amounts, low-income reduction)", url: "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5001-c/5001-c-25e.pdf"}
+  - {label: "CRA, 2025 tax rates and income brackets", url: "https://www.canada.ca/en/revenue-agency/services/tax/individuals/tax-rates-brackets/last-year.html"}
+  - {label: "CRA, T4114 (NL child benefit, July 2025 to June 2026)", url: "https://www.canada.ca/content/dam/cra-arc/formspubs/pub/t4114/t4114-25e.pdf"}
+  - {label: "NL Social Supports and Well-Being, Canada Child Benefit and NL Child Benefit FAQ", url: "https://www.gov.nl.ca/sswb/income-support/faq/childbenefitfaq/"}
+  - {label: "NL Finance, NL income supplement", url: "https://www.gov.nl.ca/fin/tax-programs-incentives/personal/income-supplement/"}
+  - {label: "CRA, RC4210 (NL income supplement, 2025-2026)", url: "https://www.canada.ca/content/dam/cra-arc/formspubs/pub/rc4210/rc4210-25e.txt"}
