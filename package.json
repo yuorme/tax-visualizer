@@ -15,6 +15,7 @@
     "lint": "biome check --error-on-warnings && node scripts/check-docs.mjs",
     "format": "biome check --write",
     "e2e": "node tests/e2e/smoke.mjs",
+    "compare": "node tests/e2e/compare.mjs",
     "check": "npm run lint && npm run typecheck && npm test && npm run build && npm run e2e",
     "golden:capture": "node --import tsx tests/golden/capture.ts",
     "golden:capture-legacy": "node tests/golden/capture-legacy.mjs"

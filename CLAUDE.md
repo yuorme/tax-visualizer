@@ -13,13 +13,15 @@ TypeScript, and the build inlines everything into `dist/index.html`. See README.
 - `npm run golden:capture -- <year>` — capture one year's `tests/golden/<year>.json` from the engine. Refuses to
   overwrite without `--force`; never touches other years. `npm run golden:capture-legacy` is how 2026 was locked.
 - `npm run build` / `npm run dev` — single-file build / rebuild on change.
+- `npm run compare -- <git-ref>` — build the page at a ref and at the working tree, walk both through the smoke
+  steps at 375, 430 and desktop width in light and dark, and diff visible text and control state.
 - `node scripts/make-flags.mjs` — regenerate the waving flag icons from `assets/flags/source/`.
 
 ## Toolchain
 - **Node 26** (Active LTS from Oct 2026, supported to Apr 2029), pinned by major in `.node-version`; CI reads the
   same file. `.npmrc` sets `engine-strict`, so the wrong Node fails `npm ci` instead of warning. Locally, fnm
-  switches versions on `cd`. In agent shells, prefix commands with
-  `eval "$(fnm env --shell bash)" && fnm use >/dev/null &&` — the system `node` on this machine is v16.
+  switches versions on `cd`. In agent shells, run commands as `fnm exec --using=26 <cmd>` (sandboxes refuse
+  `eval "$(fnm env)"`) — the system `node` on this machine is v16.
 - **Dependencies are pinned exactly** in `package.json` and `package-lock.json` is committed. Install with
   `npm ci`; use `npm install -E <pkg>@<version>` only to add or upgrade, and commit the lockfile with it.
   `@types/node` tracks the Node major.
