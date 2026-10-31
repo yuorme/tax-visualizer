@@ -255,30 +255,6 @@ input[type="range"] {
     margin-left: 0;
   }
 }
-.invest {
-  border-top: 1px solid var(--rule);
-  padding-top: 12px;
-}
-.invest summary {
-  cursor: pointer;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 4px 10px;
-  list-style: none;
-}
-.invest summary::-webkit-details-marker {
-  display: none;
-}
-.invest summary::before {
-  content: "+";
-  font-family: var(--font-num);
-  color: var(--prov);
-  width: 12px;
-}
-.invest[open] summary::before {
-  content: "−";
-}
 .tip b {
   display: block;
   margin-bottom: 3px;
@@ -292,9 +268,6 @@ input[type="range"] {
   font-size: 19px;
   font-weight: 600;
   font-variant-numeric: tabular-nums;
-}
-.invest summary b {
-  font-size: 14px;
 }
 .info {
   flex: none;
@@ -313,9 +286,6 @@ input[type="range"] {
   text-align: center;
   cursor: help;
 }
-.invest summary .info {
-  align-self: center;
-}
 .scale span {
   position: absolute;
   top: 0;
@@ -332,10 +302,6 @@ input[type="range"] {
   font-size: 11.5px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--muted);
-}
-.invest summary > span {
-  font-size: 12.5px;
   color: var(--muted);
 }
 /* Each investment field is five rows (label, amount, slider, extra, hint) sharing the grid's rows,
@@ -517,14 +483,8 @@ input[type="range"] {
   gap: 12px;
   margin: 14px 0 8px;
 }
-.cred-top {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: end;
-  gap: 14px 28px;
-}
-.cred-top .switch {
-  margin-left: 0;
+.cred-body .switch {
+  justify-self: start;
 }
 #rent {
   width: 6ch;
@@ -1608,5 +1568,106 @@ footer a {
   }
   .cc-y .key {
     font-size: 7.5px;
+  }
+}
+
+/* More inputs: a bar of tabs, each with a short summary, opening one panel at a time below it.
+   Tabs share the bar's width equally, however many there are. */
+.tabbar {
+  margin: 0;
+  padding: 0;
+  min-inline-size: 0;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(0, 1fr);
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.tabbar button {
+  display: grid;
+  gap: 1px;
+  justify-items: center;
+  min-width: 0;
+  padding: 7px 3px 8px;
+  border: 0;
+  border-left: 1px solid var(--rule);
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  cursor: pointer;
+}
+.tabbar button:first-child {
+  border-left: 0;
+}
+.tabbar button:focus-visible {
+  outline-offset: -2px; /* inside the bar, which clips anything outside it */
+}
+.tab-name {
+  font-size: 13px;
+  font-weight: 650;
+}
+.tabbar small {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-family: var(--font-num);
+  font-size: 10.5px;
+  color: var(--muted);
+}
+.tabbar .set small {
+  color: var(--prov);
+}
+.tabbar button[aria-expanded="true"] {
+  box-shadow: inset 0 -3px 0 var(--prov);
+}
+.tabbar button[aria-expanded="true"] {
+  background: var(--bg);
+}
+/* Touch screens keep :hover on the last tab tapped, which would leave a closed tab looking open */
+@media (hover: hover) {
+  .tabbar button:hover {
+    background: var(--bg);
+  }
+}
+.tab-panel {
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  padding: 2px 14px 8px;
+}
+.panel-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 10px;
+  margin-top: 12px;
+}
+.panel-title {
+  font-size: 14px;
+}
+.panel-head .info {
+  align-self: center;
+}
+.panel-sum {
+  font-size: 12.5px;
+  color: var(--muted);
+}
+.sub-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+  margin-top: 12px;
+}
+.seg.tenure button {
+  min-width: 64px;
+}
+.rent-body {
+  margin: 14px 0 8px;
+}
+@media (max-width: 560px) {
+  .tab-panel {
+    padding: 2px 12px 8px;
   }
 }
