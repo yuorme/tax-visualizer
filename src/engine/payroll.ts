@@ -30,18 +30,41 @@ export function healthPremium(p: Province, ti: number): number {
   return 0;
 }
 
-/** Net income: total income less deductions and enhanced CPP/QPP contributions (the enhanced rates are the same in
- *  both plans). A net capital loss adds nothing and can't offset other income. */
-export function netOf(fed: Federal, x: Person): number {
+/** The pieces of net income: each kind of income as it's counted (the taxable share of net capital gains,
+ *  dividends grossed up), and the deductions taken off. */
+export interface NetIncomeParts {
+  ord: number;
+  cg: number; // taxable capital gains; a net loss counts as 0
+  ed: number; // grossed-up eligible dividends
+  nd: number; // grossed-up non-eligible dividends
+  fd: number;
+  ded: number;
+  enh: number; // enhanced CPP/QPP contributions
+}
+
+/** Net income before it's floored at zero, piece by piece (the enhanced rates are the same in both plans). A net
+ *  capital loss adds nothing and can't offset other income. */
+export function netIncomeParts(fed: Federal, x: Person): NetIncomeParts {
   const inv = fed.investment;
-  return Math.max(
-    0,
-    x.ord +
-      Math.max(0, x.cg) * inv.capitalGainsInclusion +
-      x.ed * inv.grossUp.eligible +
-      x.nd * inv.grossUp.nonEligible +
-      x.fd -
-      (x.ded || 0) -
-      payrollOf(fed, null, x).enh,
-  );
+  return {
+    ord: x.ord,
+    cg: Math.max(0, x.cg) * inv.capitalGainsInclusion,
+    ed: x.ed * inv.grossUp.eligible,
+    nd: x.nd * inv.grossUp.nonEligible,
+    fd: x.fd,
+    ded: x.ded || 0,
+    enh: payrollOf(fed, null, x).enh,
+  };
+}
+
+/** Net income: total income less deductions and enhanced CPP/QPP contributions. */
+export function netOf(fed: Federal, x: Person): number {
+  const n = netIncomeParts(fed, x);
+  return Math.max(0, n.ord + n.cg + n.ed + n.nd + n.fd - n.ded - n.enh);
+}
+
+/** RRSP deduction room: a share of earned income up to the year's dollar limit, to the nearest dollar. Current
+ *  employment income stands in for last year's earned income. */
+export function rrspRoom(fed: Federal, x: Person): number {
+  return Math.min(fed.rrsp.limit, Math.round(x.ord * fed.rrsp.rate));
 }

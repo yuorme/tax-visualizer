@@ -39,6 +39,23 @@ function addUp(list: PersonResult[]) {
   return s;
 }
 
+/** Household sums the page shows: the Ontario surtax, the provincial tax reductions (Ontario tax reduction, LIFT
+ *  credit, BC tax reduction), the foreign tax credit, and payroll by kind (cpp is base plus enhanced CPP or QPP). */
+function householdBreakdown(list: PersonResult[]) {
+  const b = { surtax: 0, provReductions: 0, ftc: 0, payroll: { cpp: 0, ei: 0, qpip: 0, terr: 0, ohp: 0 } };
+  for (const r of list) {
+    b.surtax += r.surtax;
+    b.provReductions = b.provReductions + r.onRed + r.lift + r.bcRed;
+    b.ftc += r.breakdown.ftc;
+    b.payroll.cpp = b.payroll.cpp + r.pay.base + r.pay.enh;
+    b.payroll.ei += r.pay.ei;
+    b.payroll.qpip += r.pay.qpip;
+    b.payroll.terr += r.pay.terr;
+    b.payroll.ohp += r.ohp;
+  }
+  return b;
+}
+
 /** Income tax, payroll, child benefits and refundable credits for the household in province p.
  *  With two spouses, the higher earner claims the spouse amount and the children; a single parent claims the
  *  eligible dependant amount. Child benefits use family net income. */
@@ -143,8 +160,9 @@ export function household(y: YearData, p: Province, hh: Household, peopleIn: Per
     refund,
     benefits,
     famNet,
-    netTotal: totals.total - benefits,
-  }; // income tax + payroll − child benefits − refundable credits
+    netTotal: totals.total - benefits, // income tax + payroll − child benefits − refundable credits
+    breakdown: householdBreakdown(list), // nested so the golden snapshot keeps its format (see personTax)
+  };
 }
 
 export const propertyRate = (p: Province, hh: Household) => hh.propertyRates?.[p.code] ?? p.propertyTax.rate;
@@ -199,6 +217,7 @@ export function compute(y: YearData, p: Province, hh: Household) {
     base,
     avg: on ? total / base : 0,
     grossAvg: on ? gross / base : 0,
+    breakdown: { ...h.breakdown, left: h.cash - total }, // left: income after every tax, benefits and credits added
   };
 }
 
