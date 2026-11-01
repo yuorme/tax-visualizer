@@ -15,6 +15,7 @@ TypeScript, and the build inlines everything into `dist/index.html`. See README.
 - `npm run build` / `npm run dev` — single-file build / rebuild on change.
 - `npm run compare -- <git-ref>` — build the page at a ref and at the working tree, walk both through the smoke
   steps at 375, 430 and desktop width in light and dark, and diff visible text and control state.
+- `npm run preview [-- <PR#|branch>]` — build a PR, ref or this checkout; open it at 375, 430, desktop, dark and light.
 - `node scripts/make-flags.mjs` — regenerate the waving flag icons from `assets/flags/source/`.
 
 ## Toolchain
