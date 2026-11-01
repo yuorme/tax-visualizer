@@ -16,7 +16,7 @@ lowIncomeReduction:
   params: {individual: 300, spouse: 300, child: 165, rate: 0.05, threshold: 15000}
 # The HST fell from 15% to 14% on April 1, 2025: 15% for three months and 14% for nine is a 14.25% year.
 salesTax: {rate: 0.1425, label: "14% HST (15% before April 1)"}
-propertyTax: {rate: 0.0061, city: Halifax}   # carried over from 2026 (estimated); not checked against 2025 municipal rates
+propertyTax: {rate: 0.0061, city: Halifax, estimated: true}   # carried over from 2026 (estimated); not checked against 2025 municipal rates
 childBenefit:
   name: Nova Scotia Child Benefit
   program: nova-scotia-child-benefit
@@ -32,3 +32,4 @@ sources:
   - {label: "CRA, T4114 (Nova Scotia child benefit, July 2025 to June 2026)", url: "https://www.canada.ca/content/dam/cra-arc/formspubs/pub/t4114/t4114-25e.pdf"}
   - {label: "CRA, RC4210 (Nova Scotia affordable living tax credit, 2025-2026)", url: "https://www.canada.ca/content/dam/cra-arc/formspubs/pub/rc4210/rc4210-25e.txt"}
   - {label: "Nova Scotia Finance, HST transitional rules (rate 14% from April 1, 2025)", url: "https://novascotia.ca/finance/en/home/taxation/tax101/docs/hst-transitional-rules.pdf"}
+  - {label: "nesto, Canada Property Tax Guide 2026 (residential property tax rate, carried over to 2025)", url: "https://www.nesto.ca/mortgage-basics/property-taxes-canada-highest-to-lowest/"}

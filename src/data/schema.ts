@@ -60,6 +60,8 @@ export const federalSchema = z.object({
   }),
   groceriesBenefit: z.object({
     name: z.string().optional(), // the credit's name that year (the GST/HST credit before July 2026)
+    /** The name it replaced, for a year when it was renamed; the page notes mention it. */
+    formerName: z.string().optional(),
     adult: amount,
     spouseOrFirstChild: amount,
     child: amount,
@@ -139,7 +141,10 @@ const childBenefit = z.discriminatedUnion("program", [
   program(
     "per-child-reduced",
     z.object({ perChild: amount, threshold: amount, rateOneChild: rate, rateMoreChildren: rate }),
-  ),
+  ).extend({
+    /** Where the reduction rates come from when CRA's T4114 doesn't give them, as the page notes cite it. */
+    rateSource: z.string().optional(),
+  }),
   program(
     "nwt-child-benefit",
     z.object({
@@ -288,7 +293,14 @@ export const provinceSchema = z
       })
       .optional(),
     salesTax: z.object({ rate, label: z.string() }),
-    propertyTax: z.object({ rate, city: z.string(), estimated: z.boolean().optional(), note: z.string().optional() }),
+    propertyTax: z.object({
+      rate,
+      city: z.string(),
+      estimated: z.boolean().optional(),
+      note: z.string().optional(),
+      /** No published rate for the city at all: a rough placeholder, listed apart in the page notes. */
+      rough: z.literal(true).optional(),
+    }),
     creditsUseRent: z.boolean().optional(),
     childBenefit: childBenefit.optional(),
     credits: z.array(credit).optional(),
