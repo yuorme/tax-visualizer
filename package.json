@@ -18,7 +18,8 @@
     "compare": "node tests/e2e/compare.mjs",
     "check": "npm run lint && npm run typecheck && npm test && npm run build && npm run e2e",
     "golden:capture": "node --import tsx tests/golden/capture.ts",
-    "golden:capture-legacy": "node tests/golden/capture-legacy.mjs"
+    "golden:capture-legacy": "node tests/golden/capture-legacy.mjs",
+    "year-diff": "node --import tsx scripts/year-diff.ts"
   },
   "devDependencies": {
     "@axe-core/playwright": "4.14.0",

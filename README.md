@@ -33,6 +33,7 @@ open dist/index.html
 | `npm run compare -- <git-ref>` | Diffs the page's visible text and control state at a ref against the working tree |
 | `npm run golden:capture -- <year>` | Captures `tests/golden/<year>.json` from the engine; `--force` overwrites |
 | `npm run golden:capture-legacy` | How 2026 was first locked: reruns the original app in `legacy/` |
+| `npm run year-diff -- <year> [<base-year>]` | Markdown report of a year's data against the previous year: changes, large changes, amounts left unchanged (likely carried over), added and removed fields. A `# not indexed` comment marks an amount that is meant to stay the same |
 
 ## How it's organized
 
