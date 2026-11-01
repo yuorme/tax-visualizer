@@ -369,7 +369,14 @@ export async function extract(bytes: Uint8Array, contentType: string, pageSpec?:
 
 /** The default name for a URL: its last path segment without the extension, lowercased. */
 export function nameFromUrl(url: string): string {
-  const last = new URL(url).pathname.split("/").filter(Boolean).pop() ?? "";
+  const segment = new URL(url).pathname.split("/").filter(Boolean).pop() ?? "";
+  const last = (() => {
+    try {
+      return decodeURIComponent(segment); // "Last%20Year" → "Last Year", so the space becomes "-", not "-20"
+    } catch {
+      return segment;
+    }
+  })();
   return last
     .replace(/\.[a-z0-9]+$/i, "")
     .toLowerCase()
@@ -467,10 +474,12 @@ async function main() {
   const usage =
     "usage: npm run fetch-source -- <year> <url> [<name>] [--force] [--pages <list>] [--title <text>]\n" +
     "  e.g. npm run fetch-source -- 2025 https://www.canada.ca/.../t4114-25e.pdf t4114-25";
-  const fail = (msg: string): never => {
-    console.error(`${msg}\n${usage}`);
+  /** Stops with a message; `fail` adds the usage, for mistakes in the arguments. */
+  const stop = (msg: string): never => {
+    console.error(msg);
     process.exit(1);
   };
+  const fail = (msg: string): never => stop(`${msg}\n${usage}`);
   const { positionals, values } = (() => {
     try {
       return parseArgs({
@@ -494,32 +503,32 @@ async function main() {
   const index = fs.existsSync(indexFile) ? fs.readFileSync(indexFile, "utf8") : undefined;
   const rel = path.relative(ROOT, file);
   if (!values.force && (fs.existsSync(file) || indexHas(index, name))) {
-    fail(`${rel} already exists: pass --force to fetch it again and replace it`);
+    stop(`${rel} already exists: pass --force to fetch it again and replace it`);
   }
 
   const res = await fetch(url, {
     headers: { "user-agent": "tax-visualizer fetch-source (https://github.com/yuorme/tax-visualizer)" },
   });
-  if (!res.ok) return fail(`${url}: HTTP ${res.status} ${res.statusText}`);
+  if (!res.ok) return stop(`${url}: HTTP ${res.status} ${res.statusText}`);
   // canada.ca answers a missing page with a redirect to /errors/404.html and status 200.
   if (res.redirected && /\/(errors?|404)\b|\b404\.html?$/i.test(new URL(res.url).pathname)) {
-    fail(`${url}: redirected to the error page ${res.url}`);
+    stop(`${url}: redirected to the error page ${res.url}`);
   }
   const contentType = res.headers.get("content-type") ?? "";
   const bytes = new Uint8Array(await res.arrayBuffer());
   const sha256 = createHash("sha256").update(bytes).digest("hex");
   if (/\.pdf$/i.test(new URL(url).pathname) && kindOf(contentType, bytes) !== "pdf") {
-    fail(`${url}: expected a PDF but got ${contentType || "something else"} (an error page?)`);
+    stop(`${url}: expected a PDF but got ${contentType || "something else"} (an error page?)`);
   }
 
   const result = await (async () => {
     try {
       return await extract(bytes, contentType, values.pages);
     } catch (e) {
-      return fail((e as Error).message);
+      return stop((e as Error).message);
     }
   })();
-  if (!result.text.trim()) fail(`${url}: no text found (a scanned PDF?)`);
+  if (!result.text.trim()) stop(`${url}: no text found (a scanned PDF?)`);
   const entry: Entry = {
     name,
     title: values.title ?? (result.title || name),
@@ -533,7 +542,7 @@ async function main() {
     const hint = result.pages
       ? `pass --pages with the pages the data uses (the file has ${result.pages.total})`
       : "fetch a narrower page";
-    fail(`the extract is ${kb.toFixed(0)} KB, over the ${MAX_KB} KB limit: ${hint}`);
+    stop(`the extract is ${kb.toFixed(0)} KB, over the ${MAX_KB} KB limit: ${hint}`);
   }
 
   fs.mkdirSync(dir, { recursive: true });
