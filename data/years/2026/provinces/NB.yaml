@@ -15,6 +15,13 @@ lowIncomeReduction:
   estimated: true   # 2025 figures indexed by 2%
 salesTax: {rate: 0.15, label: "15% HST"}
 propertyTax: {rate: 0.0136, city: Moncton}
+# NRCan also lists a Provincial Clean Fuels Adjuster here (8.0¢ a litre on gasoline): an allowance that
+# the Energy and Utilities Board builds into the regulated pump price to pass on suppliers' cost of the federal
+# Clean Fuel Regulations. It isn't a tax paid to government, so it isn't counted.
+fuelTax: {gasoline: 0.1087}   # $ per litre
+# Starting distance: the average per light vehicle in the 2009 Canadian Vehicle Survey (the last one), 7,765.2 million
+# vehicle-km ÷ 481,760 vehicles up to 4.5 tonnes (Tables 4-1 and 3-1), to the nearest 100 km.
+driving: {distance: 16100, estimated: true}
 childBenefit:
   name: NB Child Tax Benefit
   program: nb-child-tax-benefit
@@ -30,3 +37,5 @@ credits:
     params: {adult: 300, spouse: 300, child: 100, rate: 0.02, threshold: 35000}
 sources:
   - {label: "nesto, Canada Property Tax Guide 2026 (residential property tax rate)", url: "https://www.nesto.ca/mortgage-basics/property-taxes-canada-highest-to-lowest/"}
+  - {label: "Natural Resources Canada, Fuel Consumption Levies in Canada (provincial gasoline tax, rates as of September 2, 2026)", url: "https://natural-resources.canada.ca/domestic-international-markets/fuel-consumption-levies-canada"}
+  - {label: "Statistics Canada, Canadian Vehicle Survey: Annual 2009, Tables 3-1 and 4-1 (distance per light vehicle)", url: "https://www150.statcan.gc.ca/n1/pub/53-223-x/53-223-x2009000-eng.pdf"}

@@ -13,6 +13,10 @@ spouseAmount: {max: 18198, threshold: 0}
 payroll: {employeeTax: 0.02}
 salesTax: {rate: 0.05, label: "5% GST"}
 propertyTax: {rate: 0.0100, city: "Yellowknife (est.)", estimated: true, rough: true}   # no published rate used: a rough placeholder
+fuelTax: {gasoline: 0.107}   # $ per litre
+# Starting distance: the average per light vehicle in the 2009 Canadian Vehicle Survey (the last one), 236.6 million
+# vehicle-km ÷ 21,424 vehicles up to 4.5 tonnes (Tables 4-1 and 3-1), to the nearest 100 km.
+driving: {distance: 11000, estimated: true}
 childBenefit:
   name: NWT Child Benefit
   program: nwt-child-benefit
@@ -24,3 +28,6 @@ childBenefit:
     fullUpTo: 30000
     endsAt: 80000
   estimated: true   # straight-line taper between the published start and end incomes
+sources:
+  - {label: "Natural Resources Canada, Fuel Consumption Levies in Canada (provincial gasoline tax, rates as of September 2, 2026)", url: "https://natural-resources.canada.ca/domestic-international-markets/fuel-consumption-levies-canada"}
+  - {label: "Statistics Canada, Canadian Vehicle Survey: Annual 2009, Tables 3-1 and 4-1 (distance per light vehicle)", url: "https://www150.statcan.gc.ca/n1/pub/53-223-x/53-223-x2009000-eng.pdf"}

@@ -17,6 +17,17 @@ lowIncomeReduction:
   params: {individual: 350, spouse: 350, child: 300, rate: 0.05, threshold: 23000}
 salesTax: {rate: 0.15, label: "15% HST"}
 propertyTax: {rate: 0.0167, city: Charlottetown}
+# NRCan also lists a Provincial Clean Fuels Adjuster here (4.0¢ a litre on gasoline): an allowance that
+# IRAC builds into the regulated pump price to pass on suppliers' cost of the federal
+# Clean Fuel Regulations. It isn't a tax paid to government, so it isn't counted.
+# Fuel tax on gasoline, $ per litre: 8.47¢, suspended (0¢) from September 26, 2026 to January 31, 2027.
+fuelTax:
+  gasoline:
+    - {from: "2026-01-01", rate: 0.0847}
+    - {from: "2026-09-26", rate: 0, note: "suspended to January 31, 2027"}
+# Starting distance: the average per light vehicle in the 2009 Canadian Vehicle Survey (the last one), 1,229.9 million
+# vehicle-km ÷ 81,499 vehicles up to 4.5 tonnes (Tables 4-1 and 3-1), to the nearest 100 km.
+driving: {distance: 15100, estimated: true}
 childBenefit:
   name: PEI Child Benefit
   program: income-band-per-child
@@ -28,3 +39,6 @@ credits:
     params: {single: 310, family: 365, rate: 0.01, threshold: 95000, minimum: 175}
 sources:
   - {label: "WOWA, Charlottetown property tax (2026 residential rate: 0.67% municipal + 1% provincial)", url: "https://wowa.ca/taxes/charlottetown-property-tax"}
+  - {label: "Island Regulatory and Appeals Commission, Temporary Suspension of Provincial Tax on Gasoline and Diesel (September 25, 2026)", url: "https://irac.pe.ca/wp-content/uploads/Notice-Removal-of-Provincial-Tax-September-25-2026.pdf"}
+  - {label: "Natural Resources Canada, Fuel Consumption Levies in Canada (provincial gasoline tax, rates as of September 2, 2026)", url: "https://natural-resources.canada.ca/domestic-international-markets/fuel-consumption-levies-canada"}
+  - {label: "Statistics Canada, Canadian Vehicle Survey: Annual 2009, Tables 3-1 and 4-1 (distance per light vehicle)", url: "https://www150.statcan.gc.ca/n1/pub/53-223-x/53-223-x2009000-eng.pdf"}

@@ -72,6 +72,24 @@ workersBenefit:   # Canada Workers Benefit, basic amount (no disability suppleme
     parent: [0.20, 2400, 12808, 14612]
     coupleKids: [0.239, 3600, 19828, 22424]
 
+# Federal excise tax on gasoline, $ per litre: 10¢, suspended (0¢) from April 20, 2026. The suspension was to end
+# September 7; on September 2 it was extended to January 31, 2027 (half rate February 1 to March 31, 2027), so 0¢
+# runs to the end of 2026.
+fuelTax:
+  gasoline:
+    - {from: "2026-01-01", rate: 0.10}
+    - {from: "2026-04-20", rate: 0, note: "suspended to January 31, 2027"}
+
+# Starting values for the driving inputs. Each province sets its own distance (see provinces/<XX>.yaml).
+driving:
+  # Not a published figure: NRCan's 2023 on-road averages for gasoline vehicles (cars 7.7 and light trucks 10.0 L/100 km),
+  # weighted by each type's distance driven (stock × average distance: 9.871 million cars × 13,261 km and 11.506 million
+  # light trucks × 15,180 km), give 9.02 L/100 km, rounded to 9.0.
+  efficiency: 9.0
+  efficiencySource: "Natural Resources Canada's 2023 on-road average for gasoline cars and light trucks, weighted by how far each type is driven"
+  distanceSource: "2009 Canadian Vehicle Survey"
+  estimated: true
+
 sources:
   - {label: "CRA, Current year tax rates and income brackets", url: "https://www.canada.ca/en/revenue-agency/services/tax/individuals/tax-rates-brackets/current-year.html"}
   - {label: "CRA, T4127 Payroll Deductions Formulas", url: "https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas.html"}
@@ -80,3 +98,7 @@ sources:
   - {label: "CRA, Adjustment of personal income tax and benefit amounts (indexation)", url: "https://www.canada.ca/en/revenue-agency/services/tax/individuals/frequently-asked-questions-individuals/adjustment-personal-income-tax-benefit-amounts.html"}
   - {label: "Canada–United States Tax Convention, Article X", url: "https://www.canada.ca/en/department-finance/programs/tax-policy/tax-treaties/country/united-states-america-convention-consolidated-1980-1983-1984-1995-1997-2007.html"}
   - {label: "Income Tax Act, s. 20(11)", url: "https://laws-lois.justice.gc.ca/eng/acts/I-3.3/section-20.html"}
+  - {label: "Department of Finance Canada, Temporarily suspending the federal fuel excise tax (April 2026)", url: "https://www.canada.ca/en/department-finance/news/2026/04/temporarily-suspending-the-federal-fuel-excise-tax.html"}
+  - {label: "Department of Finance Canada, The Government of Canada extends the federal fuel excise tax relief (September 2, 2026)", url: "https://www.canada.ca/en/department-finance/news/2026/09/the-government-of-canada-extends-the-federal-fuel-excise-tax-relief-on-gasoline-diesel-and-aviation-fuels-for-canadians.html"}
+  - {label: "Natural Resources Canada, Fuel Consumption Levies in Canada", url: "https://natural-resources.canada.ca/domestic-international-markets/fuel-consumption-levies-canada"}
+  - {label: "Natural Resources Canada, Energy Use Data Handbook: Passenger Transportation Explanatory Variables (on-road fuel consumption, stock and distance, 2023)", url: "https://oee.nrcan.gc.ca/corporate/statistics/neud/dpa/showTable.cfm?type=HB&sector=tran&juris=00&rn=7&page=0"}

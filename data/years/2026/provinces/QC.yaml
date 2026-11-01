@@ -15,6 +15,14 @@ quebec:
   livingAlone: {max: 2172, rate: 0.1875, threshold: 42955}
 salesTax: {rate: 0.14975, label: "5% GST + 9.975% QST"}
 propertyTax: {rate: 0.0090, city: Montreal, note: school tax may be extra}
+# Fuel tax on gasoline, $ per litre: Quebec's 19.2¢, plus the 3¢ ARTM tax in the Montreal region. Quebec's
+# cap-and-trade cost in the pump price isn't a tax and isn't counted.
+fuelTax:
+  gasoline: 0.192
+  regional: {name: ARTM, gasoline: 0.03}   # Autorité régionale de transport métropolitain, budget 2026
+# Starting distance: the average per light vehicle in the 2009 Canadian Vehicle Survey (the last one), 68,133.1 million
+# vehicle-km ÷ 4,593,169 vehicles up to 4.5 tonnes (Tables 4-1 and 3-1), to the nearest 100 km.
+driving: {distance: 14800, estimated: true}
 childBenefit:
   name: Family allowance
   program: quebec-family-allowance
@@ -35,3 +43,6 @@ sources:
   - {label: "Revenu Québec, 2026 tax rates", url: "https://www.revenuquebec.ca/en/citizens/income-tax-return/completing-your-income-tax-return/income-tax-rates/"}
   - {label: "CGTSIM, Understanding school tax (Montreal school tax is billed separately by the CGTSIM)", url: "https://www.cgtsim.qc.ca/en/understanding-school-tax/"}
   - {label: "nesto, Canada Property Tax Guide 2026 (residential property tax rate)", url: "https://www.nesto.ca/mortgage-basics/property-taxes-canada-highest-to-lowest/"}
+  - {label: "ARTM, Budget 2026 (ARTM gasoline tax: $0.03 a litre in its territory)", url: "https://www.artm.quebec/wp-content/uploads/2025/12/RP_Budget_2026.pdf"}
+  - {label: "Natural Resources Canada, Fuel Consumption Levies in Canada (provincial gasoline tax, rates as of September 2, 2026)", url: "https://natural-resources.canada.ca/domestic-international-markets/fuel-consumption-levies-canada"}
+  - {label: "Statistics Canada, Canadian Vehicle Survey: Annual 2009, Tables 3-1 and 4-1 (distance per light vehicle)", url: "https://www150.statcan.gc.ca/n1/pub/53-223-x/53-223-x2009000-eng.pdf"}

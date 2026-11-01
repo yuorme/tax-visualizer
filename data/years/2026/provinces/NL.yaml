@@ -20,6 +20,18 @@ lowIncomeReduction:
   estimated: true   # family threshold is 2025's indexed by 2%
 salesTax: {rate: 0.15, label: "15% HST"}
 propertyTax: {rate: 0.0091, city: "St. John's"}
+# NRCan also lists a Provincial Clean Fuels Adjuster here (3.74¢ a litre on gasoline): an allowance that
+# the Public Utilities Board builds into the regulated pump price to pass on suppliers' cost of the federal
+# Clean Fuel Regulations. It isn't a tax paid to government, so it isn't counted.
+# Fuel tax on gasoline, $ per litre. 7.5¢ (the 14.5¢ rate less the 7¢ cut, made permanent in March 2026), then 0¢
+# from December 1, 2026 to March 31, 2027, announced October 26, 2026 with legislation to follow.
+fuelTax:
+  gasoline:
+    - {from: "2026-01-01", rate: 0.075}
+    - {from: "2026-12-01", rate: 0, note: "announced October 26, 2026, legislation pending"}
+# Starting distance: the average per light vehicle in the 2009 Canadian Vehicle Survey (the last one), 4,367.6 million
+# vehicle-km ÷ 290,098 vehicles up to 4.5 tonnes (Tables 4-1 and 3-1), to the nearest 100 km.
+driving: {distance: 15100, estimated: true}
 childBenefit:
   name: NL Child Benefit
   program: nl-child-benefit
@@ -33,3 +45,7 @@ sources:
   - {label: "SNL 2026 c. 14, An Act to Amend the Income Tax Act, 2000 (basic personal amount $13,094 from January 1, 2026)", url: "https://www.assembly.nl.ca/legislation/sr/annualstatutes/2026/2614.chp.htm"}
   - {label: "Newfoundland and Labrador, Budget 2026 news release (April 29, 2026)", url: "https://www.gov.nl.ca/budget/2026/news-release/"}
   - {label: "nesto, Canada Property Tax Guide 2026 (residential property tax rate)", url: "https://www.nesto.ca/mortgage-basics/property-taxes-canada-highest-to-lowest/"}
+  - {label: "Government of Newfoundland and Labrador, Permanent Reduction of Gas Tax (March 10, 2026)", url: "https://www.gov.nl.ca/releases/2026/fin/0310n04/"}
+  - {label: "Government of Newfoundland and Labrador, Gas Tax on Gasoline and Diesel to Zero Beginning December 1 (October 26, 2026)", url: "https://www.gov.nl.ca/releases/2026/fin/1026n03/"}
+  - {label: "Natural Resources Canada, Fuel Consumption Levies in Canada (provincial gasoline tax, rates as of September 2, 2026)", url: "https://natural-resources.canada.ca/domestic-international-markets/fuel-consumption-levies-canada"}
+  - {label: "Statistics Canada, Canadian Vehicle Survey: Annual 2009, Tables 3-1 and 4-1 (distance per light vehicle)", url: "https://www150.statcan.gc.ca/n1/pub/53-223-x/53-223-x2009000-eng.pdf"}

@@ -22,6 +22,27 @@ const phasedAmount = z.object({ max: amount, min: amount, from: amount, to: amou
 const program = <Id extends string, P extends z.ZodTypeAny>(id: Id, params: P) =>
   z.object({ program: z.literal(id), params, name: z.string().optional(), estimated: z.boolean().optional() });
 
+// ---------- Fuel tax on gasoline ----------
+/** Tax on one litre of gasoline, in dollars. */
+const perLitre = z.number().min(0).max(1);
+/** A calendar date written YYYY-MM-DD (quoted in YAML, so it stays a string). */
+const isoDate = z
+  .string()
+  .regex(/^\d{4}-\d{2}-\d{2}$/, "write dates as YYYY-MM-DD")
+  .refine(d => !Number.isNaN(Date.parse(d)) && new Date(d).toISOString().startsWith(d), "not a real date");
+/** One rate for the whole year, or the rates in force from each date when the rate changed during the year: each
+ *  applies from its date until the next one (or the end of the year), and the first starts on January 1. A `note`
+ *  says anything the page notes should add, such as a change that was announced but not yet law. */
+const fuelRate = z.union([
+  perLitre,
+  z
+    .array(z.object({ from: isoDate, rate: perLitre, note: z.string().optional() }))
+    .min(2)
+    .refine(ps => ps.every((x, i) => i === 0 || x.from > ps[i - 1].from), "rate change dates must increase"),
+]);
+/** The dates in a rate, for checking that they fall in the data's year. */
+const fuelDates = (r: z.infer<typeof fuelRate> | undefined) => (typeof r === "object" ? r.map(x => x.from) : []);
+
 // ---------- Federal ----------
 const cppLike = z.object({ exempt: amount, ympe: amount, yampe: amount, base: rate, enh1: rate, enh2: rate });
 const cwbRegion = z.object({ max: pair, rate, floor: pair, threshold: pair, phaseOut: ratePair });
@@ -81,6 +102,21 @@ export const federalSchema = z.object({
       coupleKids: qcCwbRow,
     }),
   }),
+  /** Federal excise tax on gasoline. Absent for a year whose fuel taxes aren't in the data yet: the page then has no
+   *  driving inputs and the engine adds no fuel tax. */
+  fuelTax: z.object({ gasoline: fuelRate }).optional(),
+  /** Starting values for the driving inputs that are the same everywhere (each province sets its own distance). */
+  driving: z
+    .object({
+      /** Average fuel efficiency, litres per 100 km. */
+      efficiency: z.number().positive(),
+      /** Where the efficiency comes from, for the page notes. */
+      efficiencySource: z.string(),
+      /** The survey the provincial distances come from, for the page notes and the distance field. */
+      distanceSource: z.string(),
+      estimated: z.boolean().optional(),
+    })
+    .optional(),
   sources: z.array(source),
 });
 
@@ -302,6 +338,18 @@ export const provinceSchema = z
       rough: z.literal(true).optional(),
     }),
     creditsUseRent: z.boolean().optional(),
+    /** Provincial or territorial fuel tax on gasoline, at the rate charged in the reference city (propertyTax.city),
+     *  plus that city's regional transit fuel tax where it has one (TransLink in Vancouver, ARTM in Montreal). */
+    fuelTax: z
+      .object({
+        gasoline: fuelRate,
+        /** Where the provincial rate depends on the region, which one `gasoline` is for, e.g. "Vancouver area". */
+        area: z.string().optional(),
+        regional: z.object({ name: z.string(), gasoline: fuelRate }).optional(),
+      })
+      .optional(),
+    /** Starting yearly distance for the driving inputs: the average per light vehicle, in kilometres. */
+    driving: z.object({ distance: amount, estimated: z.boolean().optional() }).optional(),
     childBenefit: childBenefit.optional(),
     credits: z.array(credit).optional(),
     sources: z.array(source).optional(),
@@ -316,7 +364,27 @@ export const yearSchema = z
     provinces: z.array(provinceSchema).length(13),
   })
   .refine(y => y.federal.year === y.year, "federal.yaml year must match its folder")
-  .refine(y => new Set(y.provinces.map(p => p.order)).size === 13, "province order values must be unique");
+  .refine(y => new Set(y.provinces.map(p => p.order)).size === 13, "province order values must be unique")
+  // Fuel data is all or nothing: federal and every province, rates and driving defaults together.
+  .refine(
+    y =>
+      [y.federal.fuelTax, y.federal.driving, ...y.provinces.flatMap(p => [p.fuelTax, p.driving])].every(
+        (x, _, all) => (x === undefined) === (all[0] === undefined),
+      ),
+    "fuel data must be given for federal and every province (fuelTax and driving), or for none",
+  )
+  .refine(y => {
+    const rates = [
+      y.federal.fuelTax?.gasoline,
+      ...y.provinces.flatMap(p => [p.fuelTax?.gasoline, p.fuelTax?.regional?.gasoline]),
+    ];
+    return rates.every(r => {
+      const d = fuelDates(r);
+      return d.length === 0 || (d[0] === `${y.year}-01-01` && d.every(x => x.startsWith(`${y.year}-`)));
+    });
+  }, "a fuel rate that changes during the year starts on January 1 and changes only within that year");
+
+export type FuelRate = z.infer<typeof fuelRate>;
 
 export type Federal = z.infer<typeof federalSchema>;
 export type Province = z.infer<typeof provinceSchema>;

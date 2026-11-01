@@ -14,6 +14,10 @@ childAmount: {perChild: 1200, ages: under6}
 payroll: {employeeTax: 0.02}
 salesTax: {rate: 0.05, label: "5% GST"}
 propertyTax: {rate: 0.0100, city: "Iqaluit (est.)", estimated: true, rough: true}   # no published rate used: a rough placeholder
+fuelTax: {gasoline: 0.064}   # $ per litre
+# Starting distance: the average per light vehicle in the 2009 Canadian Vehicle Survey (the last one), 26.3 million
+# vehicle-km ÷ 3,858 vehicles up to 4.5 tonnes (Tables 4-1 and 3-1), to the nearest 100 km.
+driving: {distance: 6800, estimated: true}
 childBenefit:
   name: Nunavut Child Benefit
   program: per-child-reduced
@@ -21,3 +25,5 @@ childBenefit:
   rateSource: its 2026 Bill 4   # T4114 gives the amounts and threshold, not the reduction rates
 sources:
   - {label: "Legislative Assembly of Nunavut, Bill 4 (2026), Income Tax Act amendments (child benefit reduction rates)", url: "https://assembly.nu.ca/sites/default/files/2026-05/Bill_4_AATA_Income_Tax_Act_EF.pdf"}
+  - {label: "Natural Resources Canada, Fuel Consumption Levies in Canada (provincial gasoline tax, rates as of September 2, 2026)", url: "https://natural-resources.canada.ca/domestic-international-markets/fuel-consumption-levies-canada"}
+  - {label: "Statistics Canada, Canadian Vehicle Survey: Annual 2009, Tables 3-1 and 4-1 (distance per light vehicle)", url: "https://www150.statcan.gc.ca/n1/pub/53-223-x/53-223-x2009000-eng.pdf"}
