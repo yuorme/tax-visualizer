@@ -83,8 +83,9 @@ test("2025: estimated provincial property tax rates are listed and called estima
   const text = render(loadYear(2025));
   for (const s of [
     "largest city for 2025: Vancouver 0.30%, Calgary 0.66%",
-    "Halifax 0.61% and St. John's 0.91%. Provincial rates are estimates, not yet checked against 2025 municipal rates. Whitehorse, Yellowknife and Iqaluit use a rough 1.0% estimate.",
-    "from 0.30% in Vancouver to 1.67% in Charlottetown; provincial rates are estimates, not yet checked against 2025 municipal rates, and territorial rates are rough estimates.",
+    // Charlottetown's 2025 rate is published; the other nine are 2026 rates carried over.
+    "Halifax 0.61% and St. John's 0.91%. The Vancouver, Calgary, Saskatoon, Winnipeg, Toronto, Montreal, Moncton, Halifax and St. John's rates are estimates, not yet checked against 2025 municipal rates. Whitehorse, Yellowknife and Iqaluit use a rough 1.0% estimate.",
+    "from 0.30% in Vancouver to 1.67% in Charlottetown; the Vancouver, Calgary, Saskatoon, Winnipeg, Toronto, Montreal, Moncton, Halifax and St. John's rates are estimates, not yet checked against 2025 municipal rates, and territorial rates are rough estimates.",
   ])
     assert.ok(text.includes(s), `missing: ${s}`);
 });
@@ -103,6 +104,14 @@ test("a single estimated property tax rate is named, and stays in the list", () 
   assert.ok(text.includes("Winnipeg 1.38%, Toronto 0.76%, Montreal"));
   assert.ok(text.includes("St. John's 0.91%. The Toronto rate is an estimate, not yet checked against 2026 municipal"));
   assert.ok(text.includes("1.67% in Charlottetown; the Toronto rate is an estimate, not yet checked against 2026"));
+});
+
+test("when every provincial property tax rate is estimated, the notes say so once", () => {
+  const y = structuredClone(loadYear(2026));
+  for (const p of y.provinces) p.propertyTax.estimated = true;
+  const text = render(y);
+  assert.ok(text.includes("St. John's 0.91%. Provincial rates are estimates, not yet checked against 2026 municipal"));
+  assert.ok(text.includes("1.67% in Charlottetown; provincial rates are estimates, not yet checked against 2026"));
 });
 
 for (const year of listYears())
