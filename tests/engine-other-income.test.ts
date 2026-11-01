@@ -55,7 +55,11 @@ test("other income pays no CPP/QPP, EI, QPIP or territorial payroll tax, in ever
   for (const yd of YEARS)
     for (const p of yd.provinces) {
       const alone = household(yd, p, hh([person({ oth: 80_000 })])).list[0];
-      assert.deepEqual(alone.pay, { base: 0, enh: 0, ei: 0, qpip: 0, terr: 0 }, `${yd.year} ${p.code}: other income alone`);
+      assert.deepEqual(
+        alone.pay,
+        { base: 0, enh: 0, ei: 0, qpip: 0, terr: 0 },
+        `${yd.year} ${p.code}: other income alone`,
+      );
       // Mixed with employment income, payroll is exactly what the employment income alone pays
       const mixed = household(yd, p, hh([person({ ord: 40_000, oth: 60_000 })])).list[0];
       assert.deepEqual(mixed.pay, payrollOf(yd.federal, p, blank(40_000)), `${yd.year} ${p.code}: mixed`);

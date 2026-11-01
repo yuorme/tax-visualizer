@@ -596,6 +596,10 @@ tfoot tr:last-child td {
   gap: 14px 20px;
   margin: 14px 0 12px;
 }
+/* A grid with a single field (other income) keeps it one investment column wide instead of stretching it across */
+.invest-grid.one {
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+}
 .money.sm span {
   font-size: 18px;
 }
@@ -1514,7 +1518,8 @@ footer a {
   #dest {
     max-width: 100%;
   }
-  .invest-grid {
+  .invest-grid,
+  .invest-grid.one {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 14px;
   }

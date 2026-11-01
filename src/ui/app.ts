@@ -486,13 +486,13 @@ function render() {
   $("chart-title").textContent = usd
     ? `${two || adults > 1 || kids > 0 ? "Household tax" : "Tax"} on ${money(totalInc)}${anyBen ? ", after benefits" : ""}`
     : `${two || adults > 1 || kids > 0 ? "Household tax" : "Tax"} rate on ${money(totalInc)}${anyBen ? ", after benefits" : ""}`;
-  $("income-label").innerHTML = two
-    ? `${active ? "Partner's" : "Your"} employment &amp; other income`
-    : `Employment &amp; other income`;
+  $("income-label").textContent = two ? `${active ? "Partner's" : "Your"} employment income` : "Employment income";
   $("ded-label").textContent = two ? `${active ? "Partner's" : "Your"} deductions` : "Deductions";
   const rm = H.r.me.breakdown.rrspRoom;
   $("max-rrsp").textContent = `Max RRSP ${money(rm)}`;
   $("max-rrsp").setAttribute("aria-pressed", String(rm > 0 && x.ded === rm));
+  $("other-title").textContent = two ? `${active ? "Partner's" : "Your"} other income` : "Other income";
+  $("other-sum").textContent = x.oth > 0 ? `${money(x.oth)} a year` : "none added";
   $("invest-title").textContent = two ? `${active ? "Partner's" : "Your"} investment income` : "Investment income";
   $("invest-sum").textContent = hasInv(x)
     ? [
@@ -553,10 +553,11 @@ function render() {
   $("own-body").hidden = tenure !== "own";
   $("rent-body").hidden = tenure !== "rent";
   // Tab summaries: what each panel holds, highlighted whenever the summary is an amount rather than none, not set,
-  // $0 or off. Income covers everyone's investments, though its panel shows the selected person's.
-  const anyInv = H.r.hasInv;
-  const invNet = H.r.invAmt;
-  tabSum("income", anyInv ? (invNet < 0 ? `−${kMoney(-invNet)}` : kMoney(invNet)) : "none", anyInv);
+  // $0 or off. Income covers everyone's other and investment income, though its panel shows the selected person's.
+  const otherAmt = people.reduce((a, y) => a + y.oth, 0);
+  const anyInc = H.r.hasInv || otherAmt > 0;
+  const incNet = otherAmt + H.r.invAmt;
+  tabSum("income", anyInc ? (incNet < 0 ? `−${kMoney(-incNet)}` : kMoney(incNet)) : "none", anyInc);
   tabSum(
     "home",
     ownedValue() > 0 ? `${kMoney(ownedValue())} home` : rentPaid() > 0 ? `${kMoney(rentPaid())}/mo rent` : "not set",
@@ -786,7 +787,9 @@ function ledgerView({ p, r }: Row) {
     m = r.me,
     n = m.breakdown.netIncome,
     who = two ? NAMES[active] : "";
-  const tiParts = [`${money(n.ord)} employment &amp; other`];
+  const tiParts: string[] = [];
+  if (x.ord || !(x.oth || hasInv(x))) tiParts.push(`${money(n.ord)} employment income`);
+  if (x.oth) tiParts.push(`${money(n.oth)} other income`);
   if (x.cg > 0) tiParts.push(`${money(n.cg)} taxable ${share(F.investment.capitalGainsInclusion)} of net gains`);
   if (x.ed) tiParts.push(`${money(n.ed)} grossed-up eligible dividends`);
   if (x.nd) tiParts.push(`${money(n.nd)} grossed-up non-eligible dividends`);
@@ -809,8 +812,7 @@ function ledgerView({ p, r }: Row) {
       `Tax includes ${money(m.wh)} withheld abroad on foreign dividends; ${money(credited)} of it is credited against Canadian tax${lost > 0.5 ? `, and ${money(lost)} can't be credited at this income` : ""}.`,
     );
   }
-  const mrow = (label: string, key: IncomeKey) =>
-    `<tr><td>${label}</td><td class="r">${pct(r.margBy[key], 2)}</td></tr>`;
+  const mrow = (label: string, rate: number) => `<tr><td>${label}</td><td class="r">${pct(rate, 2)}</td></tr>`;
   const cl = r.claim;
   const mine = cl !== null && cl.c === active;
   const spName = cl
@@ -870,7 +872,7 @@ function ledgerView({ p, r }: Row) {
     ] satisfies Adj[]
   ).filter(([, a]) => a > 0.5);
   return `
-    ${hasInv(x) || n.ded || n.enh > 0.5 ? `<p class="note">${two ? `${who}: t` : "T"}axable income is ${money(m.ti)}: ${tiText}.${hasInv(x) ? ` "Tax on investment income" is the extra tax the ${two ? "household's " : ""}investment income adds on top of other income.` : ""} ${extra.join(" ")}</p>` : ""}
+    ${hasInv(x) || x.oth || n.ded || n.enh > 0.5 ? `<p class="note">${two ? `${who}: t` : "T"}axable income is ${money(m.ti)}: ${tiText}.${hasInv(x) ? ` "Tax on investment income" is the extra tax the ${two ? "household's " : ""}investment income adds on top of other income.` : ""} ${extra.join(" ")}</p>` : ""}
     <div class="ledgers">
       ${ledger(`Federal${suffix}`, "var(--fed)", { lines: m.f.lines, gross: m.f.tax, rows: fRows, net: m.fed }, m.ti)}
       ${ledger(p.n + suffix, "var(--prov)", { lines: m.pr.lines, gross: m.pr.tax, rows: pRows, net: m.prov }, m.tiP)}
@@ -881,11 +883,12 @@ function ledgerView({ p, r }: Row) {
         </tbody><tfoot><tr><td>Total</td><td class="r">${money(m.payroll)}</td></tr></tfoot></table>
         <h4 style="margin-top:16px">Marginal rate on ${two ? `${active ? "Partner's" : "your"} ` : "the "}next dollar of…</h4>
         <table class="margs"><thead><tr><th>Income type</th><th class="r">${hh() ? "Household rate" : "Combined rate"}</th></tr></thead><tbody>
-          ${mrow("Employment &amp; other income", "ord")}
-          ${mrow("Net capital gains", "cg")}
-          ${mrow("Eligible dividends", "ed")}
-          ${mrow("Non-eligible dividends", "nd")}
-          ${mrow("Foreign dividends", "fd")}
+          ${mrow("Employment income", r.margBy.ord)}
+          ${mrow("Interest, rental &amp; other income", r.breakdown.margOther)}
+          ${mrow("Net capital gains", r.margBy.cg)}
+          ${mrow("Eligible dividends", r.margBy.ed)}
+          ${mrow("Non-eligible dividends", r.margBy.nd)}
+          ${mrow("Foreign dividends", r.margBy.fd)}
         </tbody></table>
         <p class="note" style="margin-top:8px">Includes payroll contributions and any child benefit clawback. A negative dividend rate means the dividend tax credit is worth more than the tax on that dividend.</p>
       </div>
@@ -1002,9 +1005,10 @@ function onDoubleTap(el: HTMLElement, fn: (e?: Event) => void) {
     } else last = now;
   });
 }
-/** Investment income: each kind has an amount box (id = key) and a slider (id = key-range, data-k = key). */
+/** The Income tab's amounts, other income and investment income: each kind has an amount box (id = key, class inv)
+ *  and a slider (id = key-range, data-k = key). */
 type InvKey = Exclude<IncomeKey, "ord">;
-const INV_KEYS: InvKey[] = ["cg", "ed", "nd", "fd"];
+const INV_KEYS: InvKey[] = ["oth", "cg", "ed", "nd", "fd"];
 const isInvKey = (k: string | undefined): k is InvKey => INV_KEYS.some(x => x === k);
 function syncInv() {
   for (const k of INV_KEYS) {

@@ -8,6 +8,17 @@ line-by-line tax return. Simpler and slightly less precise is acceptable where i
 
 ## Included
 
+**Income, per adult**
+- Employment income: pays CPP/QPP, EI, QPIP and the territorial payroll tax; gets the Canada employment amount
+  (and Yukon's), the CPP/EI credits, Quebec's deduction for workers and Ontario's LIFT credit; and is the working
+  income for the Canada Workers Benefit (phase-in and secondary earner exemption), Quebec's work premium and the
+  working-income parts of the Alberta Child and Family Benefit and New Brunswick's child benefit. Self-employment
+  income is entered here until it has its own field.
+- Interest, rental and other income: taxed at the same rates and counted in net income and family net income for
+  every benefit, credit, clawback and the Ontario Health Premium, but none of the employment-only treatment above,
+  and no RRSP room. Pensions and RRSP/RRIF withdrawals go here until pension income has its own field; the
+  pension income credit isn't applied.
+
 **Income tax (federal and every province and territory)**
 - Brackets, basic personal amounts (including the federal, Yukon and Manitoba phase-outs), spouse or common-law
   partner amount, eligible dependant amount for single parents, Canada employment amount, credits for base
@@ -22,7 +33,7 @@ line-by-line tax return. Simpler and slightly less precise is acceptable where i
 
 **Payroll (employee share)**
 - CPP/QPP base and enhanced contributions, EI or EI plus QPIP, Ontario Health Premium, the 2% payroll tax in the
-  Northwest Territories and Nunavut. Employment and other income is all treated as employment income.
+  Northwest Territories and Nunavut. All but the health premium are on employment income only.
 
 **Benefits and refundable credits (netted off the tax shown)**
 - Canada Child Benefit and every provincial or territorial child benefit that applies at the modelled incomes.
@@ -61,9 +72,6 @@ The model counts **taxes the household actually pays**. Costs passed on through 
 ## Decided, not built yet
 
 Recorded here as the spec for the GitHub issues that implement them; the issues hold the order.
-
-**Other income.** A separate income type for interest, rental and pension income: taxed as ordinary income,
-no CPP/QPP or EI, no Canada employment amount. Today all "employment and other income" pays payroll.
 
 **Self-employment.** A separate amount per adult, next to employment income (the CPP maximum is shared). Both
 CPP/QPP shares including CPP2, a deduction for the employer half, no EI (opting in is not modelled), no Canada

@@ -30,7 +30,7 @@
     </div>
     <div class="control-row">
       <div class="field">
-        <div class="lbl-row"><label class="lbl" for="income" id="income-label">Employment &amp; other income</label><button type="button" class="info" data-tip="Salary, wages, self-employment income, pensions, RRSP/RRIF withdrawals, interest, and any other income taxed at full rates. Enter it before deductions, and put RRSP contributions and other deductions in the Deductions box." aria-label="About employment and other income">i</button></div>
+        <div class="lbl-row"><label class="lbl" for="income" id="income-label">Employment income</label><button type="button" class="info" data-tip="Salary, wages, tips, bonuses and other pay from a job (and self-employment income, which is treated the same way here). It pays CPP/QPP and EI (and QPIP in Quebec) and gets the Canada employment amount. Enter it before deductions, and put RRSP contributions and other deductions in the Deductions box. Interest, rental income, pensions and RRSP/RRIF withdrawals go under Other income, in the Income tab." aria-label="About employment income">i</button></div>
         <div class="money"><span>$</span><input id="income" inputmode="numeric" autocomplete="off" value="75,000"></div>
       </div>
       <div class="field ded">
@@ -49,7 +49,7 @@
       <button type="button" class="info" data-note="bpa" aria-label="About basic personal amounts">i</button>
       </div>
       <div class="inc-slider">
-        <input type="range" id="slider" min="0" max="250000" step="1000" value="75000" aria-label="Employment and other income slider">
+        <input type="range" id="slider" min="0" max="250000" step="1000" value="75000" aria-label="Employment income slider">
         <div class="scale" data-for="slider" data-ticks="0,50000,100000,150000,200000,250000" aria-hidden="true"></div>
       </div>
     </div>
@@ -94,9 +94,18 @@
       <button type="button" id="tab-driving" data-tab="driving" aria-expanded="false" aria-controls="panel-driving"><b class="tab-name" id="tab-driving-name">Driving</b><small id="tab-driving-sum">none</small></button>
     </fieldset>
     <section class="tab-panel" id="panel-income" aria-labelledby="tab-income-name" hidden>
-      <!-- Other income types go here, above investments, per person: self-employment (#14), and interest, rental
-           and other income plus pension and RRIF as separate fields (#13). -->
-      <div class="panel-head"><b class="panel-title" id="invest-title">Investment income</b><button type="button" class="info" data-tip="Income from investments held in a non-registered (taxable) account. Income inside a TFSA isn't taxed at all, and RRSP/RRIF withdrawals belong under employment &amp; other income. CRA taxes investment income to whoever supplied the money, regardless of whose name is on the account." aria-label="About investment income">i</button><span class="panel-sum">Non-registered accounts · <span id="invest-sum">none added</span></span></div>
+      <!-- More income types go here, above investments, per person: self-employment (#14), and pension and RRIF
+           income as a field of its own, for the pension income credit (#17). -->
+      <div class="panel-head"><b class="panel-title" id="other-title">Other income</b><button type="button" class="info" data-note="otherIncome" aria-label="About other income">i</button><span class="panel-sum" id="other-sum">none added</span></div>
+      <div class="invest-grid one">
+        <div class="field">
+          <div class="lbl-row"><label class="lbl" for="oth">Interest, rental &amp; other</label></div>
+          <div class="money sm"><span>$</span><input id="oth" class="inv" inputmode="numeric" autocomplete="off" value="0"></div>
+          <input type="range" id="oth-range" class="inv-range" data-k="oth" min="0" max="100000" step="500" value="0" aria-label="Interest, rental and other income slider">
+          <div class="scale" data-for="oth-range" data-ticks="0,~25000,50000,~75000,100000" aria-hidden="true"></div>
+        </div>
+      </div>
+      <div class="panel-head"><b class="panel-title" id="invest-title">Investment income</b><button type="button" class="info" data-tip="Capital gains and dividends from investments held in a non-registered (taxable) account; interest goes under Other income above. Income inside a TFSA isn't taxed at all, and RRSP/RRIF withdrawals also go under Other income. CRA taxes investment income to whoever supplied the money, regardless of whose name is on the account." aria-label="About investment income">i</button><span class="panel-sum">Non-registered accounts · <span id="invest-sum">none added</span></span></div>
       <div class="invest-grid">
         <div class="field">
           <div class="lbl-row"><label class="lbl" for="cg">Net capital gains / losses</label><button type="button" class="info" data-note="capitalGains" aria-label="About net capital gains and losses">i</button></div>

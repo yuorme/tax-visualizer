@@ -3,7 +3,8 @@
 //  1. no script errors, in light mode at 1000, 430 and 375 px and in dark mode at 430 and 375 px;
 //  2. no sideways scrolling at phone widths, after every step, in light and dark mode;
 //  3. the chart, comparison table and credits panel show exactly the same text as the legacy single-file app
-//     (legacy/tax-compare.html) after each step, in light mode at each width;
+//     (legacy/tax-compare.html) after each step, in light mode at each width, apart from the intended wording changes
+//     listed in LEGACY_WORDING;
 //  4. the UI rules in rules.mjs after every step: chart column labels are at most two characters, and no visible hint
 //     text outside the info tooltips;
 //  5. axe-core's colour-contrast rule at 375 px in light and dark mode, after every step;
@@ -11,7 +12,10 @@
 //  7. the tab bar under the inputs: every tab closed on first load, and a tab opens alone and closes when tapped again;
 //  8. fuel tax (FUEL_STEPS, built page only, at every width and scheme): the Driving tab follows Credits, distance
 //     starts at the home province's survey average and efficiency at the national one, both are editable and take 0,
-//     a comma in the efficiency is a decimal point, and fuel tax is its own line in the comparison.
+//     a comma in the efficiency is a decimal point, and fuel tax is its own line in the comparison;
+//  9. other income (OTHER_STEPS, built page only, at every width and scheme): the employment income box is labelled as
+//     such, each adult has an other income box above the investment boxes, other income pays no CPP/QPP or EI and gets
+//     no employment amount, isn't working income for the Canada Workers Benefit, and claws back child benefits.
 // The legacy page has no fuel tax, so the light-mode runs compared with it (3) set the built page's distance to 0
 // first. The dark-mode runs keep the starting driving, so STEPS also run with fuel tax in the totals.
 // Known failures (rules.KNOWN) are reported but don't fail the run; `npm run e2e -- --strict` fails on them too.
@@ -221,6 +225,147 @@ const FUEL_STEPS = [
   ],
 ];
 
+// Other income checks (#13), from the page's starting values (Ontario home, Alberta destination, $75,000 of
+// employment income): the employment income box says what it holds, other income has a box of its own for each adult
+// above the investment boxes, it pays no CPP/QPP or EI and gets no employment amount, it isn't working income for the
+// Canada Workers Benefit, and it counts in net income for benefit clawbacks.
+const text = async (p, sel) => (await p.textContent(sel)).trim();
+const expectText = async (p, sel, want, when) => {
+  const got = await text(p, sel);
+  return got === want ? [] : [`${when}: ${sel} shows ${JSON.stringify(got)}, expected ${JSON.stringify(want)}`];
+};
+/** The income tax detail's ledgers by heading (Federal, the province, Payroll): each table's row labels and values. */
+const ledgers = p =>
+  p.$$eval("#detail-body .ledger", els =>
+    Object.fromEntries(
+      els.map(el => [
+        el.querySelector("h4").textContent.trim(),
+        [...el.querySelectorAll("table")].map(t => [...t.rows].map(r => [...r.cells].map(c => c.textContent.trim()))),
+      ]),
+    ),
+  );
+/** The selected province's refundable credits, by name. */
+const creditNames = p => p.$$eval("#cred-list tr", rows => rows.map(r => r.cells[0].textContent.trim()));
+/** The comparison's child benefits for the home province, in dollars. */
+const childBenefits = p =>
+  p.$$eval("#detail-body table.cmp tbody tr", rows => {
+    const r = rows.find(tr => tr.cells[0]?.textContent.startsWith("Child benefits"));
+    return r ? Number(r.cells[1].textContent.replace(/[^\d.]/g, "")) : null;
+  });
+const percent = s => Number(s.replace("%", ""));
+const OTHER_STEPS = [
+  [
+    "other income: a box of its own for each adult, above investments",
+    async p => {
+      const problems = await expectText(p, "#income-label", "Employment income", "starting page");
+      await openTab(p, "income");
+      const top = sel => p.$eval(sel, el => el.getBoundingClientRect().top);
+      if (!((await top("#oth")) < (await top("#cg"))))
+        problems.push("the other income box should come before the investment income boxes");
+      await type(p, "#oth", "30,000");
+      problems.push(...(await expectValue(p, "#oth", "30,000", "other income typed")));
+      problems.push(...(await expectValue(p, "#oth-range", "30000", "other income slider")));
+      problems.push(...(await expectText(p, "#other-sum", "$30,000 a year", "other income summary")));
+      problems.push(...(await expectText(p, "#tab-income-sum", "$30k", "Income tab summary")));
+      problems.push(...(await expectText(p, '#people .person[data-i="0"] small', "$105,000", "your total income")));
+      if (!(await text(p, "#chart-title")).startsWith("Tax rate on $105,000"))
+        problems.push(`the chart title should count other income: ${await text(p, "#chart-title")}`);
+      // At $75,000 the next dollar of employment income pays CPP; the next dollar of other income doesn't
+      const rate = Object.fromEntries((await ledgers(p)).Payroll[1].map(([l, v]) => [l, v]));
+      const [other, work] = [rate["Interest, rental & other income"], rate["Employment income"]];
+      if (!other || !work || !(percent(other) < percent(work)))
+        problems.push(`the next dollar of other income should cost less than employment income: ${other} vs ${work}`);
+      // The partner's other income is their own
+      await p.click("#add-partner");
+      problems.push(...(await expectValue(p, "#oth", "0", "partner added")));
+      problems.push(...(await expectText(p, "#other-title", "Partner's other income", "partner added")));
+      problems.push(...(await expectText(p, "#income-label", "Partner's employment income", "partner added")));
+      await type(p, "#oth", "12,000");
+      await p.click('#people .person[data-i="0"]');
+      problems.push(...(await expectValue(p, "#oth", "30,000", "back to your income")));
+      problems.push(...(await expectText(p, "#tab-income-sum", "$42k", "Income tab summary for two")));
+      await p.click("#remove-partner");
+      return problems;
+    },
+  ],
+  [
+    "other income: no CPP/QPP, EI or employment amount",
+    async p => {
+      await type(p, "#income", "0");
+      const problems = [];
+      const home = await ledgers(p);
+      const payroll = home.Payroll[0].map(r => r[0]);
+      if (payroll.some(l => /^(CPP|QPP|EI|QPIP)\b/.test(l)))
+        problems.push(`payroll on other income alone: ${payroll.join(" | ")}`);
+      if (!payroll.some(l => l.startsWith("Ontario Health Premium")))
+        problems.push(`other income should count toward the Ontario Health Premium: ${payroll.join(" | ")}`);
+      const federal = home.Federal[0].map(r => r[0]);
+      if (federal.some(l => l.includes("employment amount")))
+        problems.push(`employment amount on other income alone: ${federal.find(l => l.includes("employment amount"))}`);
+      const notes = await p.$$eval("#detail-body p.note", els => els.map(el => el.textContent));
+      if (!notes.some(n => n.includes("Taxable income is $30,000: $30,000 other income.")))
+        problems.push(`the taxable income note should list the other income: ${notes.join(" | ")}`);
+      await p.click('[data-view="dest"]');
+      const dest = (await ledgers(p)).Payroll[0].map(r => r[0]);
+      if (!dest.includes("None at this income")) problems.push(`Alberta payroll on other income: ${dest.join(" | ")}`);
+      await p.click('[data-view="home"]');
+      return problems;
+    },
+  ],
+  [
+    "other income: not working income for the Canada Workers Benefit",
+    async p => {
+      await type(p, "#oth", "15,000");
+      await openTab(p, "credits");
+      const problems = [];
+      if ((await creditNames(p)).includes("Canada Workers Benefit"))
+        problems.push("the Canada Workers Benefit is paid on $15,000 of other income");
+      await type(p, "#income", "15,000");
+      await openTab(p, "income");
+      await type(p, "#oth", "0");
+      await openTab(p, "credits");
+      if (!(await creditNames(p)).includes("Canada Workers Benefit"))
+        problems.push("no Canada Workers Benefit on $15,000 of employment income (the check above proves nothing)");
+      return problems;
+    },
+  ],
+  [
+    "other income: counted for benefit clawbacks",
+    async p => {
+      await p.$eval("#kids", el => {
+        el.value = 2;
+        el.dispatchEvent(new Event("input", { bubbles: true }));
+      });
+      const before = await childBenefits(p);
+      await openTab(p, "income");
+      await type(p, "#oth", "40,000");
+      const after = await childBenefits(p);
+      return before && after !== null && after < before
+        ? []
+        : [`child benefits should fall when other income is added: $${before} then $${after}`];
+    },
+  ],
+];
+
+// Intended wording changes since the legacy page: [issue, pattern in the built page's comparison text, legacy text].
+// The built page's text is rewritten with these before it's compared with the legacy page, so everything else still
+// has to match exactly. Each entry must match in every legacy comparison run (the runs stop matching if the wording
+// changes again, and then the entry has to go).
+const LEGACY_WORDING = [
+  // #13: income from a job is now "employment income", and other income has a field and a marginal rate of its own
+  ["#13", /(\$[\d,]+) employment income\b/g, "$1 employment & other"],
+  ["#13", /^Employment income\t/gm, "Employment & other income\t"],
+  ["#13", /^Interest, rental & other income\t[^\n]*\n/gm, ""],
+];
+const wordingSeen = LEGACY_WORDING.map(() => new Set());
+/** The built page's comparison text in the legacy page's wording; notes which entries matched in which run. */
+function asLegacy(detail, run) {
+  return LEGACY_WORDING.reduce((text, [, pattern, legacy], i) => {
+    if (text.match(pattern)) wordingSeen[i].add(run);
+    return text.replace(pattern, legacy);
+  }, detail);
+}
+
 const capture = p =>
   p.evaluate(() => ({
     cols: [...document.querySelectorAll(".col")].map(c => [
@@ -291,7 +436,8 @@ function check(label, width, { states, errors, blocked }) {
 for (const width of [1000, 430, 375]) {
   const [a, b] = [await run({ width, contrast: width === 375, before: noDriving }), await run({ width, html: legacy })];
   check(`${width}px light`, width, a);
-  a.states.forEach(({ name, capture: s }, i) => {
+  a.states.forEach(({ name, capture: built }, i) => {
+    const s = { ...built, detail: asLegacy(built.detail, width) };
     const t = b.states[i].capture;
     for (const key of Object.keys(s))
       if (JSON.stringify(s[key]) !== JSON.stringify(t[key]))
@@ -302,6 +448,10 @@ for (const width of [1000, 430, 375]) {
   });
   console.log(`${width}px light: ${a.states.length} states checked`);
 }
+LEGACY_WORDING.forEach(([issue, pattern], i) => {
+  if (wordingSeen[i].size !== 3)
+    fail(`legacy wording entry ${issue} ${pattern} no longer matches: remove it from LEGACY_WORDING`, "legacy runs");
+});
 for (const width of [430, 375]) {
   check(`${width}px dark`, width, await run({ width, colorScheme: "dark", contrast: width === 375 }));
   console.log(`${width}px dark: ${STEPS.length} states checked`);
@@ -316,6 +466,9 @@ for (const [width, colorScheme] of [
   const fuel = await run({ width, colorScheme, contrast: width === 375, steps: FUEL_STEPS });
   check(`${width}px ${colorScheme}, fuel tax`, width, fuel);
   console.log(`${width}px ${colorScheme}: ${FUEL_STEPS.length} fuel tax states checked`);
+  const other = await run({ width, colorScheme, contrast: width === 375, steps: OTHER_STEPS });
+  check(`${width}px ${colorScheme}, other income`, width, other);
+  console.log(`${width}px ${colorScheme}: ${OTHER_STEPS.length} other income states checked`);
 }
 await browser.close();
 
