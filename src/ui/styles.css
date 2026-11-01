@@ -4,11 +4,13 @@
   --surface: #ffffff;
   --ink: #17201f;
   --muted: #5d6865;
+  --faint: #6d7774; /* lighter than muted, for de-emphasised rows; still 4.5:1 on --surface */
   --rule: #d9dedb;
   --track: #e9ece9;
   --fed: #3e5a66; /* federal share */
   --prov: #c2432f; /* provincial share, maple */
-  --prov-soft: #f6dcd6;
+  --prov-soft: #f9e6e0; /* home column highlight: muted text on it stays above 4.5:1 */
+  --prov-text: #ad3924; /* provincial colour as text on --prov-soft (--prov itself is 3.9:1 there) */
   --wh: #b08a2e; /* foreign tax withheld */
   --sales: #6b5aa6; /* sales tax */
   --pay: #2a8a7e; /* payroll: CPP/QPP, EI/QPIP, health premium */
@@ -26,11 +28,13 @@
     --surface: #1a1f1e;
     --ink: #e8ecea;
     --muted: #9aa5a1;
+    --faint: #7f8986;
     --rule: #2c3331;
     --track: #232a28;
     --fed: #7fa3b3;
     --prov: #ec6f58;
     --prov-soft: #3a211c;
+    --prov-text: #ec6f58;
     --focus: #6cc0dd;
     --wh: #d6b25a;
     --sales: #a898e6;
@@ -46,11 +50,13 @@
   --surface: #1a1f1e;
   --ink: #e8ecea;
   --muted: #9aa5a1;
+  --faint: #7f8986;
   --rule: #2c3331;
   --track: #232a28;
   --fed: #7fa3b3;
   --prov: #ec6f58;
   --prov-soft: #3a211c;
+  --prov-text: #ec6f58;
   --focus: #6cc0dd;
   --wh: #d6b25a;
   --sales: #a898e6;
@@ -525,8 +531,7 @@ th.r {
   text-align: right;
 }
 tr.idle td {
-  color: var(--muted);
-  opacity: 0.6;
+  color: var(--faint);
 }
 tr.top td {
   font-weight: 600;
@@ -1134,7 +1139,7 @@ table.cmp .worse {
 }
 .is-home .tag,
 .is-home .code {
-  color: var(--prov);
+  color: var(--prov-text);
 }
 .is-dest .tag {
   color: var(--ink);
