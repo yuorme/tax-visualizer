@@ -36,3 +36,5 @@ credits:
   - name: Ontario energy and property tax credit
     program: ontario-energy-property-tax-credit
     params: {rentShare: 0.2, energyMax: 290, propertyBase: 73, propertyRate: 0.10, propertyMax: 944, rate: 0.02, thresholdSingle: 29047, thresholdFamily: 36309}
+sources:
+  - {label: "nesto, Canada Property Tax Guide 2026 (residential property tax rate)", url: "https://www.nesto.ca/mortgage-basics/property-taxes-canada-highest-to-lowest/"}

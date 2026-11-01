@@ -14,7 +14,7 @@ quebec:
   workerDeduction: {rate: 0.06, max: 1420}
   livingAlone: {max: 2128, rate: 0.1875, threshold: 42090}
 salesTax: {rate: 0.14975, label: "5% GST + 9.975% QST"}
-propertyTax: {rate: 0.0090, city: Montreal, note: school tax may be extra}   # carried over from 2026 (estimated); not checked against 2025 municipal rates
+propertyTax: {rate: 0.0090, city: Montreal, note: school tax may be extra, estimated: true}   # carried over from 2026 (estimated); not checked against 2025 municipal rates
 childBenefit:
   name: Family allowance
   program: quebec-family-allowance
@@ -41,3 +41,4 @@ sources:
   - {label: "CFFP, Guide des mesures fiscales: solidarity tax credit (cross-check of Table 4)", url: "https://cffp.recherche.usherbrooke.ca/outils-ressources/guide-mesures-fiscales/credit-impot-solidarite/"}
   - {label: "Revenu Québec, 2025 tax rates", url: "https://www.revenuquebec.ca/en/citizens/income-tax-return/completing-your-income-tax-return/income-tax-rates/"}
   - {label: "CGTSIM, Understanding school tax (Montreal school tax is billed separately by the CGTSIM)", url: "https://www.cgtsim.qc.ca/en/understanding-school-tax/"}
+  - {label: "nesto, Canada Property Tax Guide 2026 (residential property tax rate, carried over to 2025)", url: "https://www.nesto.ca/mortgage-basics/property-taxes-canada-highest-to-lowest/"}

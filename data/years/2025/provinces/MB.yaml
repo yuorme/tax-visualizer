@@ -10,7 +10,7 @@ basicPersonalAmount: {max: 15780, min: 0, from: 200000, to: 400000}
 dividendTaxCredit: {eligible: 0.08, nonEligible: 0.007835}
 spouseAmount: {max: 9134, threshold: 0}
 salesTax: {rate: 0.12, label: "5% GST + 7% RST"}
-propertyTax: {rate: 0.0138, city: Winnipeg}   # carried over from 2026 (estimated); not checked against 2025 municipal rates
+propertyTax: {rate: 0.0138, city: Winnipeg, estimated: true}   # carried over from 2026 (estimated); not checked against 2025 municipal rates
 creditsUseRent: true
 credits:
   - name: Homeowners affordability tax credit
@@ -22,3 +22,4 @@ sources:
   - {label: "Manitoba Finance, Personal income taxes (2025 brackets; indexation paused from the 2025 tax year)", url: "https://www.gov.mb.ca/finance/personal/ptaxes.html"}
   - {label: "Manitoba Finance, Personal tax credits (2025 basic and spouse amounts, affordability credits)", url: "https://www.gov.mb.ca/finance/personal/pcredits.html"}
   - {label: "CRA, Form MB428 for 2025", url: "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5007-c/5007-c-25e.pdf"}
+  - {label: "nesto, Canada Property Tax Guide 2026 (residential property tax rate, carried over to 2025)", url: "https://www.nesto.ca/mortgage-basics/property-taxes-canada-highest-to-lowest/"}

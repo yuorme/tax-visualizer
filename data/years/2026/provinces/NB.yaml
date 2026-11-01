@@ -28,3 +28,5 @@ credits:
   - name: New Brunswick HST credit
     program: nb-hst-credit
     params: {adult: 300, spouse: 300, child: 100, rate: 0.02, threshold: 35000}
+sources:
+  - {label: "nesto, Canada Property Tax Guide 2026 (residential property tax rate)", url: "https://www.nesto.ca/mortgage-basics/property-taxes-canada-highest-to-lowest/"}
