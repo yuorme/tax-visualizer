@@ -31,6 +31,7 @@ open dist/index.html
 | `npm run typecheck` | TypeScript checks for the engine, data schema, tests and scripts |
 | `npm run e2e` | Loads the built page in Chromium on desktop and phone widths |
 | `npm run compare -- <git-ref>` | Diffs the page's visible text and control state at a ref against the working tree |
+| `npm run preview [-- <PR#\|branch>]` | Opens a pull request, ref or this checkout in phone and desktop windows, dark and light |
 | `npm run golden:capture -- <year>` | Captures `tests/golden/<year>.json` from the engine; `--force` overwrites |
 | `npm run golden:capture-legacy` | How 2026 was first locked: reruns the original app in `legacy/` |
 | `npm run year-diff -- <year> [<base-year>]` | Markdown report of a year's data against the previous year: changes, large changes, amounts left unchanged (likely carried over), added and removed fields. A `# not indexed` comment marks an amount that is meant to stay the same |
