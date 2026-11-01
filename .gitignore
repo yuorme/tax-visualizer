@@ -6,4 +6,5 @@ coverage/
 test-results/
 playwright-report/
 .claude/worktrees/
+.preview/
 .claude/settings.local.json
