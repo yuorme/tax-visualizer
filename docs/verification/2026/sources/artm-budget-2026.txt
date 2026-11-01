@@ -1,0 +1,898 @@
+Title: ARTM, Budget 2026 (Optimiser le potentiel)
+URL: https://www.artm.quebec/wp-content/uploads/2025/12/RP_Budget_2026.pdf
+Fetched: 2026-11-01
+SHA-256 of the original: d09be0eacb7f4f559fe7ec0a8b9e6179479b64d5f01134f6ba83d3ca5d03a985
+Publication date modified: 2025-11-28
+PDF pages: all 10
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 1 of 10 ---
+
+Optimiser le potentiel
+du transport collectif
+Budget 2026
+artm.quebec
+Planifier, organiser, financer,
+développer et promouvoir
+
+--- PDF page 2 of 10 ---
+
+Table des matières
+Le budget 2026 de l’ARTM a été adopté par son conseil d’administration le 30 octobre 2025,
+sous la résolution 25-CA(ARTM)-111.
+Dans une perspective
+de développement durable
+et de cohésion régionale,
+l’ARTM planifie, organise,
+finance, développe et fait
+la promotion du transport
+collectif dans la région
+métropolitaine de Montréal
+afin d’offrir une expérience
+de mobilité simple, intégrée,
+fluide et efficace.
+Mot des dirigeants 2
+Cadre budgétaire 2026 5
+Élaboration du budget 2026 5
+Programme des immobilisations 2026-2035 de l’ARTM 5
+Ententes de services 6
+La Politique de financement de l’ARTM 7
+Faits saillants 8
+Prévisions budgétaires – Revenus et dépenses 9
+Frais d’administration, d’exploitation et de financement 10
+Revenus 2026 de l’ARTM 11
+Revenus tarifaires 11
+Contributions municipales 11
+Subventions gouvernementales 12
+Soutien du gouvernement du Québec 12
+Subventions liées aux mesures d’atténuation du REM 13
+Contributions des automobilistes 13
+Autres revenus 13
+Dépenses 2026 de l’ARTM 14
+Ententes de services 14
+Frais d’administration, d’exploitation et de développement et autres frais 15
+1› Budget 2026› Budget 2026
+
+--- PDF page 3 of 10 ---
+
+Mot des dirigeants
+entre autres, à mutualiser certains services et
+équipements et à décloisonner les territoires afin
+d’assurer une desserte plus efficace, à meilleur coût.
+Des projets qui vont générer
+de la valeur
+Parmi les mesures d’optimisation que nous
+analysons figure l’implantation de corridors
+métropolitains reliant deux territoires afin de
+permettre des déplacements en bus plus fluides
+et des fréquences plus élevées. Si les études sont
+concluantes, un premier corridor sera mis en service
+en 2026.
+L’ouverture récente de l’antenne Deux-Montagnes
+(14 stations) puis celle de l’Anse-à-l’Orme en 2026
+du Réseau express métropolitain (REM) représentent
+un élément majeur qui contribuera à augmenter
+l’achalandage dans ces axes de l’ouest de l’île de
+Montréal. L’ajout total de 50 km au réseau du REM
+viendra renforcer l’offre de transport et accroître
+la satisfaction de la clientèle. L’ARTM doit s’assurer
+que ces nouveaux services répondent aux exigences
+en matière d’expérience client et aux besoins
+opérationnels des OPTC; elle doit aussi veiller à leur
+intégration avec les autres modes de transport qui
+desservent ce territoire.
+L’ARTM entreprend une autre étape du projet
+Concerto en déployant progressivement l’option
+d’utiliser des titres de transport virtuels sur un
+téléphone intelligent. Tout en facilitant la vie des
+usagers, ce développement permettra de réduire
+les coûts liés à la production et à la gestion des
+cartes physiques, un exemple clair d’innovation
+au service de la simplicité et de l’amélioration
+de l’expérience client.
+Des efforts soutenus
+Le budget 2026 est équilibré et respecte les
+paramètres de l’entente triennale convenue avec
+le MTMD. Il s’élève à 3,3 G$, en augmentation de
+1,7 % par rapport à 2025, ce qui témoigne des
+efforts de réduction des dépenses consentis par
+l’ARTM et les OPTC.
+Nous ne nierons pas que ce cadre financier est
+étroit et ne nous donne pas la marge de manœuvre
+nécessaire pour répondre à l’ensemble des besoins
+des OPTC qui doivent faire face, entre autres, aux
+augmentations des coûts d’exploitation, d’entretien
+et de maintien des actifs. Cette situation n’est pas
+unique au transport collectif; elle se fait sentir dans
+plusieurs secteurs de l’économie québécoise. Elle
+renforce notre détermination à mettre en œuvre nos
+chantiers qui permettront d’optimiser le potentiel
+du transport collectif. Pour opérer ces changements,
+nous avons besoin de l’appui de nos partenaires,
+car c’est ensemble que nous allons transformer
+durablement l’offre de transport et améliorer
+l’expérience client dans la région métropolitaine
+de Montréal.
+Bonne lecture!
+Ginette Sylvain
+Présidente du conseil d’administration
+Benoit Gendron
+Directeur général
+L’année 2025 a été ponctuée de deux jalons
+marquants pour l’ARTM et la région métropolitaine
+de Montréal. Le premier est l’adoption unanime, par
+la Communauté métropolitaine de Montréal (CMM),
+d’une nouvelle Politique de financement. Attendue
+par les élus municipaux, cette politique permet
+d’encadrer l’utilisation des sources de financement
+consenties à l’ARTM pour le financement du
+transport collectif dans la région et d’établir le
+partage de la contribution entre les 83 municipalités
+du territoire desservi. Cette réalisation témoigne
+de la volonté de travailler ensemble à améliorer
+la mobilité de la population.
+Le second jalon est l’approbation du Plan
+stratégique de développement 2025-2034 (PSD).
+La région dispose maintenant d’objectifs clairs et
+mesurables qui orientent à la fois les investissements
+et l’évolution des services du plus grand réseau
+de transport collectif au Québec. Son objectif
+est ambitieux : faire passer à 37 % la part des
+déplacements quotidiens en modes actifs et
+collectifs d’ici 2034 afin d’atteindre 50 % en 2050.
+L’année 2025 a été marquée par des événements
+majeurs ayant influencé l’achalandage régional
+lié. Parmi les faits saillants : les semaines de grève
+à la STM, la fermeture estivale de l’antenne Sud
+du REM et, à l’inverse, l’ouverture de l’antenne
+Deux-Montagnes. Parallèlement, les records
+d’utilisation des pistes cyclables et du service BIXI
+illustrent un engouement croissant pour le transport
+actif, une excellente nouvelle pour l’atteinte de nos
+objectifs en mobilité durable.
+Un cadre financier pluriannuel
+accueilli positivement
+Le cadre financier 2025-2028 convenu avec le
+ministère des Transports et de la Mobilité durable
+(MTMD) constitue un outil de gestion qui était
+revendiqué depuis plusieurs années. Pouvoir compter
+sur un financement stable et prévisible nous permet
+de mieux planifier les investissements nécessaires
+et de soutenir la réalisation de projets structurants
+au bénéfice de la population de la région
+métropolitaine. Par cette entente pluriannuelle, le
+MTMD s’est engagé à verser la somme de 776,2 M$
+pour la période 2025-2028, conditionnelle au respect
+d’une convention d’aide financière (CAF).
+Pour atteindre l’équilibre budgétaire, différentes
+décisions ont été prises par le conseil
+d’administration. D’abord, nous avons choisi de
+limiter l’indexation tarifaire à 3 % pour la période
+2025-2028. Ce choix illustre notre volonté de
+conjuguer rigueur budgétaire et équité sociale.
+Nous avons convenu d’augmenter les contributions
+municipales d’un minimum de 6 % annuellement en
+2025 et d’un minimum de 5 % annuellement de 2026
+à 2028. Elles ont été fixées à 5 % pour 2026.
+Les élus de la CMM ont adopté une augmentation
+de la taxe sur l’immatriculation des véhicules de
+promenade (TIV) qui est entrée en vigueur en
+janvier 2025. Elle générera à elle seule plus de
+200 M$ en 2026. Cet apport substantiel et récurrent
+représente une source de financement essentielle,
+mais demeure insuffisant pour combler l’écart qui
+se creuse entre les ressources disponibles et les
+besoins croissants.
+Enfin, l’entente prévoit également des efforts
+d’optimisation de la part de l’ARTM et des
+organismes publics de transport en commun (OPTC).
+Plus précisément, l’objectif consiste à dégager une
+somme de 331,6 M$ sur la période 2025-2028 et
+à réaliser des économies récurrentes de l’ordre de
+155,8 M$ annuellement en 2028, tout en limitant
+les impacts sur les services offerts. Cet objectif ne
+peut être atteint sans une révision en profondeur
+des façons de faire. C’est pourquoi l’ARTM a mis
+en place des chantiers d’optimisation qui visent,
+32 › Budget 2026 › Budget 2026
+
+--- PDF page 4 of 10 ---
+
+Mirabel
+Montréal
+Laval
+Oka
+Terrebonne
+Longueuil
+Varennes
+Mascouche
+Verchères
+Les Cèdres
+L'Assomption
+Saint-Jérôme
+Boucherville
+Beauharnois
+Repentigny
+Blainville
+Mercier
+Carignan
+Brossard
+La PrairieSaint-Lazare Vaudreuil-Dorion
+Saint-Eustache
+Hudson
+Dorval
+Saint-Philippe
+Sainte-Julie
+Saint-Isidore
+Saint-Sulpice
+Saint-Constant
+Sainte-Anne-des-Plaines
+Beloeil
+Saint-Jean-Baptiste
+Richelieu
+Châteauguay
+Chambly
+Boisbriand
+Saint-Amable
+Notre-Dame-
+de-l'Île-Perrot
+Candiac
+Saint-Mathieu
+Calixa-Lavallée
+Beaconsfield
+Senneville Pointe-Claire
+Mont-
+Saint-Hilaire
+Léry
+Saint-Joseph-
+du-Lac
+Saint-Mathias-
+sur-Richelieu
+Saint-Basile-
+le-Grand
+Saint-Bruno-
+de-Montarville
+Saint-Mathieu-
+de-Beloeil
+Kirkland
+Rosemère
+Delson
+Montréal-Est
+Carignan
+Kahnawake
+Sainte-
+Catherine
+Pincourt
+Pointe-
+Calumet
+Lorraine
+Saint-
+Lambert
+Baie-D'Urfé
+Dollard-
+Des Ormeaux
+L'Île-
+Cadieux
+Vaudreuil
+Dorion
+Mont-Royal
+Sainte-
+Thérèse
+Kanesatake
+Sainte-Marthe-
+sur-le-Lac
+Pointe-des-
+Cascades
+Sainte-Anne-
+de-Bellevue
+Côte-Saint-Luc
+Deux-
+Montagnes Otterburn
+Park
+Westmount
+Bois-des-
+Filion
+McMasterville
+Charlemagne
+Hampstead
+Vaudreuil-
+sur-le-Lac
+Montréal-Ouest
+Terrasse-Vaudreuil
+L'Île-Perrot
+L'Île-Dorval
+Contrecœur
+0 5 10 km Limites municipalesTerritoire de l’ARTM
+Territoire
+Le territoire de l’ARTM est constitué de ceux de
+la Communauté métropolitaine de Montréal,
+de la communauté Mohawk de Kahnawake et de
+la Ville de Saint-Jérôme.
+Cadre budgétaire 2026
+En vertu de sa loi constitutive, l’ARTM adopte
+des prévisions budgétaires pour chaque exercice
+financier, pour lesquelles les dépenses ne peuvent
+être supérieures aux revenus.
+Élaboration du budget 2026
+Le transport collectif de la région métropolitaine de
+Montréal demeure confronté à un déficit structurel
+important, dont les effets se font sentir depuis la
+pandémie. Toutefois, des avancées significatives ont
+été réalisées au cours de l’année 2025 pour assurer
+une meilleure prévisibilité et une stabilité financière
+accrue. En effet, l’ARTM a conclu avec le ministère
+des Transports et de la Mobilité durable (MTMD) une
+entente pluriannuelle de financement de 776,2 M$
+pour la période 2025-2028. Cette entente constitue
+une réalisation majeure, puisqu’elle permet de
+sécuriser le financement, d’améliorer la planification
+des investissements et de soutenir la réalisation de
+projets structurants au bénéfice de la population.
+L’année 2025 aura également été marquée par
+deux autres jalons déterminants : l’adoption de la
+Politique de financement et l’approbation du Plan
+stratégique de développement 2025-2034 (PSD).
+La nouvelle politique, adoptée à l’unanimité par les
+municipalités et la Communauté métropolitaine de
+Montréal (CMM) le 25 avril 2025, entrera en vigueur
+dès 2026. Elle simplifie et encadre l’utilisation
+des sources de financement consenties à l’ARTM
+tout en établissant un partage équitable de la
+contribution municipale entre les 83 municipalités
+desservies. De son côté, le PSD trace la voie pour
+la prochaine décennie en définissant les priorités
+et les orientations qui permettront d’atteindre les
+ambitieux objectifs de mobilité fixés pour la région.
+Ces réalisations ont permis d’aborder le budget
+2026 avec davantage de prévisibilité et de stabilité.
+L’élaboration du budget bénéficie ainsi d’un cadre
+financier plus solide, qui facilite la concertation
+entre les partenaires et renforce la confiance quant
+à la capacité collective de maintenir et d’améliorer
+les services offerts à la population. L’année 2026
+sera consacrée à la mise en œuvre de la nouvelle
+politique et à l’optimisation de la performance du
+réseau. Ensemble, ces efforts visent à répondre
+aux besoins croissants de mobilité, à améliorer
+la qualité de vie des citoyens et à renforcer la
+contribution du transport collectif à la transition
+écologique et au développement économique de
+la région métropolitaine.
+Programme des immobilisations
+2026-2035 de l’ARTM
+L’ARTM doit produire annuellement un Programme
+des immobilisations (PDI) pour les dix prochaines
+années. Le PDI 2026-2035 présente les dépenses
+en immobilisations relatives aux actifs dont
+l’ARTM est propriétaire. Il exclut les dépenses en
+immobilisations des OPTC, qui sont présentées
+dans leurs propres PDI.
+Le PDI 2026-2035, adopté par le conseil
+d’administration le 30 octobre 2025 et transmis à
+la Communauté métropolitaine de Montréal (CMM)
+pour adoption, prévoit 457,3 M$ d’investissements
+pour la période décennale, incluant 74,1 M$
+prévus pour le Projet numérique de mobilité et
+57,6 M$ destinés au maintien des actifs existants.
+Des investissements reliés au projet du REM sont
+également prévus pour la période décennale, soit
+96,0 M$ pour sa mise en œuvre et 25,5 M$ pour
+l’accès aux stations du REM.
+Pour la seule année 2026, les investissements
+totalisent 153,5 M$. En tenant compte des
+investissements réalisés avant 2026 ainsi que de
+ceux projetés après 2035, le montant total des
+investissements liés au PDI atteint 1 062,6 M$.
+54 › Budget 2026 › Budget 2026
+
+--- PDF page 5 of 10 ---
+
+Ententes de services
+Le budget 2026 de l’ARTM présente les dépenses
+attribuables à la rémunération des OPTC prévue
+dans le cadre des ententes relatives aux services
+de transport collectif (les Ententes de services). Il
+expose l’évolution prévisible des coûts de livraison
+des services ainsi que les services de dette et les
+dépenses au comptant (nets de subvention) liés aux
+projets d’investissement à la charge de l’ARTM.
+Par l’entremise de ces Ententes de services, l’ARTM
+établit l’offre de services en transport collectif et
+les normes de services pour desservir son territoire.
+Elle rémunère les quatre OPTC pour assurer la
+livraison de ces services, ainsi que la réalisation et le
+maintien de leurs infrastructures. Il s’agit d’ententes
+pluriannuelles couvrant les années 2026, 2027 et
+2028. Elles définissent également des objectifs de
+performance et de qualité de service. L’ARTM gère
+quatre Ententes de services avec les quatre OPTC
+de la région métropolitaine de Montréal :
+› le Réseau de transport métropolitain (RTM), sous
+la marque exo, exploite les services d’autobus et
+de transport adapté des couronnes nord et sud
+ainsi que les trains de banlieue;
+› la Société de transport de Montréal (STM) exploite
+les services d’autobus, de transport adapté sur l’île
+de Montréal et le métro;
+› le Réseau de transport de Longueuil (RTL) exploite
+les services d’autobus et de transport adapté sur le
+territoire de l’agglomération de Longueuil;
+› la Société de transport de Laval (STL) exploite
+les services d’autobus et de transport adapté
+sur le territoire de la ville de Laval.
+Par ailleurs, en lien avec l’aide financière octroyée
+à l’ARTM par le ministère des Transports et de la
+Mobilité durable (MTMD), l’ARTM et les OPTC se
+sont engagés à réaliser des économies annuelles
+récurrentes de 155,8 millions de dollars à l’année
+2028. Ces cibles d’optimisation ont été intégrées
+dans l’établissement de la rémunération pour les
+années 2026 à 2028.
+Pour l’année 2026, selon les Ententes de services,
+l’offre de services sera globalement comparable
+à celle de 2025 avec certains ajustements afin de
+maintenir une adéquation entre l’offre et les besoins
+de déplacement des citoyens de la Communauté
+métropolitaine de Montréal. Ainsi, l’ARTM et ses
+partenaires s’assureront de proposer l’offre de
+transport décrite ci-dessous :
+Métro 85 461 673 véhicules-km commerciaux
+Train de banlieue 6 051 592 véhicules-km commerciaux
+Autobus 124 873 840 véhicules-km
+commerciaux
+Transport adapté 6 056 199 déplacements
+Enfin, découlant de l’entente du gouvernement
+du Québec avec CDPQ Infra et le REM, l’entente
+d’intégration du REM constitue la cinquième entente
+de services liant l’ARTM aux transporteurs de la
+région métropolitaine. Cette entente définit les
+mécanismes de rémunération des services du REM
+par l’ARTM, notamment sur la base d’un coût par
+passager-kilomètre, indexé annuellement. Pour
+l’année 2026, le nombre estimé de passagers-
+kilomètres est de 372,0 millions.
+Cette rémunération comprend une prévision de
+la mise en service du segment Anse-à-l’Orme au
+printemps 2026 comme annoncé par CDPQ Infra.
+Elle sera ajustée pour tenir compte des passagers-
+kilomètres réellement effectués sur ce réseau de
+transport collectif.
+La Politique de financement
+de l’ARTM
+Conformément à la Loi, la Politique de financement
+de l’ARTM établit le cadre financier des services de
+transport collectif sur le territoire. Elle constitue la
+pierre d’assise sur laquelle l’ARTM s’appuie pour
+encadrer l’utilisation des sources de financement qui
+lui sont consenties pour financer le transport collectif
+de la région et établir le partage de la contribution
+des 83 municipalités du territoire.
+La première Politique de financement est élaborée
+par le comité de transition en 2017, à la suite
+d’un vaste processus de consultation. Elle a été
+adoptée par le conseil d’administration de l’ARTM
+le 20 septembre 2017, puis approuvée par la
+CMM le 28 septembre de la même année. Cette
+Politique s’est accompagnée de mesures transitoires
+soutenues par une aide gouvernementale
+jusqu’en 2020.
+Entre 2020 et 2025, la région a fait face à
+d’importantes pressions financières, attribuables à
+la baisse de l’achalandage et à l’impact de la forte
+inflation sur le coût de la livraison des services.
+Durant cette période, l’aide d’urgence octroyée
+par le gouvernement du Québec, conjuguée à des
+dérogations annuelles à la Politique, a permis de
+maintenir l’équilibre budgétaire et de limiter la
+croissance des contributions municipales. En avril
+2025, à la suite d’une collaboration étroite avec
+les municipalités et les élus de la CMM, la nouvelle
+Politique est adoptée, avec une entrée en vigueur
+prévue le 1er janvier 2026. Elle a obtenu l’appui
+unanime des cinq grands secteurs : Montréal, Laval,
+Longueuil, la couronne sud et la couronne nord.
+Fondée sur les principes d’équité, de cohérence, de
+simplicité et de prévisibilité, la Politique 2026 prévoit
+que 50 % des revenus provenant des automobilistes
+financeront les services métropolitains. L’autre
+moitié, quant à elle, sera répartie entre les secteurs
+pour soutenir leurs priorités locales.
+76 › Budget 2026 › Budget 2026
+
+--- PDF page 6 of 10 ---
+
+Faits saillants
+Le budget 2026 de l’ARTM :
+› est équilibré;
+› reflète une augmentation de 2,2 % des revenus totaux;
+› prévoit une croissance des revenus tarifaires de 60,5 M$;
+› prévoit une indexation des contributions municipales de
+5 % par rapport à 2025 pour un montant total de 1 096,7 M$;
+› incorpore un soutien gouvernemental estimé à 169,3 M$;
+› incorpore une affectation de 3,0 M$ à des mesures de lissage
+de la refonte tarifaire;
+› comprend les dépenses totales avant conciliation à des fins fiscales
+de l’ARTM de 3 271 M$, représentant une augmentation de 1,7% par
+rapport au budget 2025;
+› établit la rémunération versée aux OPTC et à Projet REM s.e.c.
+à 2 927,5 M$;
+› reflète une allocation de ressources financières aux frais
+d’administration, d’exploitation et de développement du
+transport en commun de l’ARTM nécessaires à la réalisation
+de sa mission.
+[en milliers de dollars] Réel
+2024
+Projections
+2025
+Budget
+2025
+Budget
+2026
+Écart budgets
+2025–2026
+REVENUS
+Revenus tarifaires 882 133 894 245 870 722 931 174 60 451
+Contributions municipales 987 781 1 044 483 1 044 483 1 096 707 52 224
+Subventions de fonctionnement 303 101 367 598 437 828 486 190 48 362
+Subventions aux projets d’immobilisations 68 680 82 453 140 912 109 366 (31 546)
+Soutien à l’ARTM 238 100 179 248 200 000 169 250 (30 750)
+Subventions mesures d’atténuation REM 28 566 25 642 31 488 5 720 (25 768)
+Contributions des automobilistes 283 740 482 497 483 928 484 669 741
+Autres revenus 70 881 56 368 58 966 58 249 (717)
+TOTAL REVENUS 2 862 982 3 132 533 3 268 326 3 341 323 72 997
+DÉPENSES
+Contrats de services 2 628 727 2 730 475 2 851 490 2 936 313 84 824
+Équipements métropolitains 28 469 34 002 32 744 29 304 (3 440)
+Billetteries métropolitaines 4 253 4 216 4 520 4 421 (99)
+Mesures d’atténuation 63 669 66 510 73 309 52 479 (20 831)
+Total ententes de services 2 725 118 2 835 203 2 962 064 3 022 518 60 454
+Frais d'administration 41 963 33 882 34 537 35 547 1 011
+Frais d’exploitation et de développement
+du transport en commun 87 418 126 633 155 782 163 389 7 606
+Autres frais 56 173 60 728 64 356 49 468 (14 887)
+TOTAL DÉPENSES 2 910 672 3 056 446 3 216 739 3 270 922 54 183
+Excédent (déficit) avant conciliation à des fins fiscales (47 690) 76 087 51 588 70 402 18 814
+CONCILIATION FISCALE
+Fonctionnement
+Revenu investissement (62 281) (69 495) (89 659) (91 079) (1 419)
+Immobilisations 39 070 44 408 44 408 32 413 (11 995)
+Prêts et placements – – – – –
+Financement (3 547) (8 347) (14 142) (7 351) 6 791
+Affectations 75 016 868 7 806 (4 384) (12 191)
+Excédent (déficit) de fonctionnement à des fins fiscales 568 43 520 – – –
+INVESTISSEMENT
+Revenu investissement 62 281 69 495 89 659 91 079 1 419
+Immobilisations (83 003) (123 750) (148 120) (120 762) 27 358
+Prêts et placements – (350) (290) (532) (242)
+Financement 14 608 50 233 51 091 22 876 (28 215)
+Affectations 4 214 3 470 7 660 7 340 (320)
+Excédent (déficit) d’investissement à des fins fiscales (1 900) (902) – – –
+Les totaux peuvent varier en raison des arrondis.
+Prévisions budgétaires –
+Revenus et dépenses
+98 › Budget 2026 › Budget 2026
+
+--- PDF page 7 of 10 ---
+
+[en milliers de dollars] Réel
+2024
+Projections
+2025
+Budget
+2025
+Budget
+2026
+Écart budgets
+2025–2026
+FRAIS D'ADMINISTRATION
+Salaires et charges sociales 19 059 16 490 18 167 18 935 768
+Honoraires professionnels 1 882 3 004 2 683 3 334 651
+Services informatiques 10 762 11 195 10 174 10 075 (99)
+Loyer administration 3 799 1 424 1 617 1 366 (251)
+Autres dépenses 6 461 1 769 1 896 1 838 (58)
+41 963 33 882 34 537 35 547 1 011
+FRAIS D'EXPLOITATION ET DE DÉVELOPPEMENT
+DU TRANSPORT EN COMMUN
+Salaires et charges sociales 7 874 6 705 6 364 12 605 6 241
+Frais de vente et perception 51 632 67 617 59 063 77 467 18 405
+Frais de développement et études 11 217 18 439 45 986 31 414 (14 573)
+Communication et marketing 2 541 4 074 4 210 5 901 1 691
+Frais de gestion de la SAAQ 4 162 8 163 8 397 8 264 (133)
+Services informatiques 6 555 15 374 24 773 20 911 (3 862)
+Enquêtes et sondages 527 1 372 1 672 1 422 (250)
+Autres dépenses 2 910 4 888 5 316 5 404 88
+87 418 126 633 155 782 163 389 7 606
+AUTRES FRAIS
+Amortissement 38 360 44 408 44 408 32 413 (11 995)
+Variation de valeur de la filiale 9 263 (350) (290) (532) (242)
+Intérêts et frais bancaires 8 550 8 283 11 798 9 192 (2 606)
+Frais de financement – 8 387 8 440 8 396 (44)
+56 173 60 728 64 356 49 468 (14 887)
+TOTAL 185 554 221 243 254 675 248 404 (6 270)
+Les totaux peuvent varier en raison des arrondis.
+Frais d’administration,
+d’exploitation et de financement
+Revenus 2026 de l’ARTM
+Les revenus 2026 de l’ARTM comprennent l’ensemble
+des revenus tarifaires des services de transport
+collectif, les subventions gouvernementales à
+l’exploitation, les subventions gouvernementales aux
+projets d’immobilisations qui correspondent à ses
+dépenses d’investissement, les subventions spéciales
+et autres soutiens, les contributions municipales,
+les contributions des automobilistes au transport
+collectif et certains autres revenus. Les revenus
+totaux de l’ARTM aux fins du financement des
+services de transport collectif affichent une hausse
+de 2,2 % par rapport au budget 2025.
+Revenus tarifaires
+Les revenus liés à la vente des titres de transport
+contribuent à hauteur de 27,9 % au financement
+du budget de dépenses totales de l’ARTM. Ces
+revenus sont estimés à 931,2 M$ en 2026, en hausse
+de 7 % par rapport à ceux du budget 2025 en raison
+d’une reprise progressive de l’achalandage du
+transport collectif et d’une indexation moyenne des
+tarifs de 3,0 %.
+Contributions municipales
+Les contributions municipales s’élèvent à 1 096,7 M$
+en 2026, en hausse de 52,2 M$ par rapport au
+budget 2025. Cette hausse est expliquée par
+l’indexation de 5,0 % des contributions municipales
+par rapport à celles de 2025.
+Le tableau suivant illustre l’évolution des
+contributions municipales prévues en 2026, dans
+les cinq grands secteurs, par rapport à celles de
+l’exercice financier 2025. La part relative de chaque
+secteur de la région est également présentée :
+Budget 2025 Budget 2026 Part relative des secteurs
+au budget 2026
+Agglomération de Montréal 723,8 M$ 760,0 M$ 69,3 %
+Agglomération de Longueuil 108,8 M$ 114,2 M$ 10,4 %
+Laval 112,2 M$ 117,8 M$ 10,7 %
+Couronne sud 38,1 M$ 40,0 M$ 3,7 %
+Couronne nord 61,6 M$ 64,7 M$ 5,9 %
+Total 1 044,5 M$ 1 096,7 M$ 100 %
+1110 › Budget 2026 › Budget 2026
+
+--- PDF page 8 of 10 ---
+
+Subventions gouvernementales
+Subventions de fonctionnement
+Le budget 2026 prévoit un montant de 486,2 M$ au
+chapitre des subventions de fonctionnement. Ces
+sommes proviennent de différents programmes
+courants d’aide financière et de programmes de
+financement des mesures d’atténuation. Ce poste
+de revenus est en hausse de 48,4 M$ par rapport
+au budget 2025.
+À cet effet, le gouvernement du Québec soutient
+les dépenses de fonctionnement du transport
+collectif par le biais de deux programmes courants,
+soit le Programme d’aide au développement du
+transport collectif (PADTC) et le Programme de
+subvention au transport adapté (PSTA).
+En 2026, les revenus provenant de ces deux
+programmes s’élèvent respectivement à 146,8 M$
+et à 103,9 M$.
+Une contribution gouvernementale est aussi
+prévue pour le financement du Réseau express
+métropolitain (REM). Celle-ci finance 85 % des
+services de transport du REM, après avoir pris
+en considération une contribution de base des
+municipalités et celle des usagers. La contribution
+du gouvernement à l’ARTM pour l’exploitation du
+REM comprend aussi la compensation pour
+les revenus de stationnement non perçus et la
+compensation pour les taxes nettes liées aux
+services de transport du REM. En 2026, cette
+contribution s’élève à 183,3 M$.
+Subventions aux immobilisations
+L’ARTM prévoit recevoir des subventions aux
+immobilisations pour les investissements réalisés en
+regard de ses propres actifs. Les projets de l’ARTM
+sont admissibles aux programmes courants de
+subventions aux immobilisations suivants :
+› Le Programme d’aide gouvernementale au
+transport collectif des personnes (PAGTCP)
+du MTMD;
+› Le Programme d’aide gouvernementale
+d’infrastructures en transport collectif (PAGITC)
+du gouvernement fédéral et du MTMD.
+Par ailleurs, une convention d’aide financière de
+145,6 M$ lie l’ARTM et le MTMD pour le financement
+de diverses dépenses d’immobilisations reliées
+à la mise en service progressive du REM. Cette
+convention prévoit un financement au comptant.
+Les subventions aux immobilisations prévues pour
+l’année 2026 s’élèvent à 109,4 M$.
+Pour leur part, les quatre OPTC reçoivent
+directement les subventions d’immobilisations du
+gouvernement du Québec pour les projets portant
+sur des actifs dont ils sont propriétaires. L’ARTM
+assure, dans le cadre de la rémunération prévue
+dans les Ententes de services, le financement de
+la partie non subventionnée de ces projets.
+Soutien du gouvernement
+du Québec
+L’ARTM prévoit recevoir du gouvernement du
+Québec un soutien financier de 169,3 M$ pour
+le déficit conjoncturel et l’aide transitoire pour le
+soutien à l’optimisation des ressources.
+Subventions liées aux mesures
+d’atténuation du REM
+L’ARTM a conclu en mars 2019 une entente avec
+le MTMD et avec Projet REM s.e.c. qui définit les
+rôles et les responsabilités des parties quant à
+l’élaboration, la gestion, la mise en œuvre et le
+financement des mesures d’atténuation qui doivent
+être déployées dans le cadre du chantier du REM.
+Le gouvernement du Québec, par le décret numéro
+172-2019 du 27 février 2019, a autorisé le MTMD
+à verser à l’ARTM une subvention d’un montant
+maximal de 156,0 M$ pour la mise en place de
+mesures d’atténuation liées aux travaux du projet
+du REM.
+Projet REM s.e.c. a également versé une contribution
+de 24,5 M$ à l’ARTM pour la mise en œuvre des
+mesures d’atténuation.
+Depuis l’annonce des travaux du REM, en avril
+2018, l’ARTM a été au cœur de la coordination des
+efforts des organismes qui planifient et déploient
+les mesures d’atténuation en transport collectif pour
+le chantier du REM. En 2026, elle bénéficiera d’une
+aide financière de 5,7 M$ pour ces mesures.
+Contributions des automobilistes
+Droit / Taxe d’immatriculation
+Pour assurer une partie du financement de
+ses activités, l’ARTM reçoit une contribution des
+automobilistes au transport collectif provenant
+du droit d’immatriculation et de la taxe sur
+l’essence. Conformément au règlement de la
+CMM, pour chaque véhicule de promenade de
+moins de 3000 kg immatriculé sur son territoire,
+l’ARTM reçoit un droit d’immatriculation de 30 $.
+Ces revenus sont estimés à 63 M$ en 2026.
+Depuis le 1er janvier 2024, une taxe sur
+l’immatriculation des véhicules de promenade
+s’applique aussi à l’ensemble du territoire de
+l’ARTM. De plus, la Communauté métropolitaine de
+Montréal a adopté le 30 mai 2024 une majoration
+de 150 % du tarif de la taxe sur l’immatriculation des
+véhicules de promenade, applicable dès le 1er janvier
+2025. Les revenus de la taxe d’immatriculation
+sont estimés à 333,6 M$ en 2026, considérant une
+indexation du tarif selon l’IPC de Montréal.
+Taxe sur l’essence
+Pour chaque litre d’essence vendu sur son territoire,
+l’ARTM reçoit 0,03 $ par le biais d’une taxe dédiée
+qui n’a pas été indexée depuis 1992. Ces revenus sont
+estimés à 88,1 M$ en 2026.
+Autres revenus
+Les autres revenus de l’ARTM sont évalués à 58,2 M$
+en 2026. Ils sont composés des revenus autonomes
+et des revenus des services hors territoire.
+Revenus autonomes
+Les revenus autonomes d’un montant estimé
+de 53,2 M$ de l’ARTM proviennent, entre autres,
+d’activités connexes aux services courants de
+transport collectif. Parmi ces activités générant des
+revenus, on compte notamment :
+› les services nolisés;
+› la publicité dans le métro, les trains, les autobus et
+les abribus;
+› la location d’espaces commerciaux associés aux
+services et aux équipements de transport collectif;
+› les activités de formation et de consultation.
+Revenus des services hors territoire
+Afin d’assurer la continuité des services de transport
+collectif dans certains territoires situés à l’extérieur
+de celui qui est sous la responsabilité de l’ARTM, des
+ententes ont été conclues avec des municipalités
+desservies par exo. Les revenus de ces ententes
+s’élèvent à 5,0 M$ en 2026.
+1312 › Budget 2026 › Budget 2026
+
+--- PDF page 9 of 10 ---
+
+En 2026, les dépenses totales avant conciliation
+à des fins fiscales de l’ARTM sont estimées à
+3 270,9 M$. Elles sont principalement attribuables
+aux contrats de services avec les OPTC et
+Projet REM s.e.c., aux mesures d’atténuation
+du REM, aux dépenses liées à la délégation de
+gestion des équipements métropolitains et des
+billetteries métropolitaines ainsi qu’aux frais
+d’administration, d’exploitation et de financement
+de l’ARTM.
+L’ARTM consacre 89,5 % de ses dépenses à la
+rémunération des OPTC et de Projet REM s.e.c.
+afin de soutenir la livraison des services de
+transport collectif dans la région métropolitaine
+de Montréal.
+Ententes de services
+Contrats de services avec les OPTC
+et Projet REM s.e.c.
+Les contrats de services rémunèrent principalement
+les OPTC et le Projet REM s.e.c. pour un montant
+maximal de 2 927,5 M$ en 2026, soit une
+augmentation de 109,5 M$ ou de 3,9 % par rapport
+au budget 2025. Cette croissance s’explique par une
+croissance des dépenses du REM due à l’ouverture
+de nouvelles antennes.
+Équipements et billetteries métropolitains
+L’ARTM est propriétaire d’équipements à caractère
+métropolitain, soit des billetteries, des terminus,
+des stationnements incitatifs et des voies réservées.
+Sur le plan opérationnel, l’ARTM privilégie une
+délégation de la gestion de ses actifs aux OPTC, qui
+possèdent une expertise en exploitation, en entretien
+et en maintien desdits actifs.
+Les ententes de gestion déléguée couvrent les
+rôles et responsabilités des parties, la prestation
+des services attendus (gestion des équipements,
+gestion des contrats d’exploitation et d’entretien,
+maintenance des actifs), les exigences ainsi que la
+reddition de comptes et la rémunération.
+La rémunération de ces ententes de gestion
+déléguée pour 2026 est prévue à 33,7 M$, dont
+29,3 M$ pour les équipements métropolitains et
+4,4 M$ pour les billetteries métropolitaines.
+Mesures d’atténuation
+Parmi les ententes de services à la charge de l’ARTM
+figurent les mesures d’atténuation de la congestion
+dans le cadre des grands chantiers routiers. Entre
+autres, on y retrouve les mesures d’atténuation
+pour le chantier du REM, celles du pont-tunnel
+Louis-Hippolyte-La Fontaine et celles financées par
+Mobilité Montréal. En 2026, des dépenses de 52,5 M$
+sont prévues à ce titre.
+Les mesures d’atténuation du REM consistent dans
+le maintien de certaines mesures et la mise en place
+d’une réserve opérationnelle afin d’accompagner
+temporairement la mise en service du REM des
+antennes Deux-Montagnes et l’Anse-à-l’Orme. Une
+dépense de 16,4 M$ est prévue en 2026.
+Les mesures d’atténuation liées au chantier du pont-
+tunnel Louis-Hippolyte-La Fontaine consistent en
+des services de covoiturage, de bus et de navettes
+fluviales permettant à la clientèle d’éviter la
+congestion engendrée par la fermeture partielle du
+pont-tunnel. À ce titre, un montant de 29,2 M$ est
+prévu en 2026.
+Les mesures financées par Mobilité Montréal ont
+pour objectif d’atténuer la congestion routière
+causée par les chantiers routiers et les grands projets
+de transport collectif de la région métropolitaine. En
+2026, ces dépenses se chiffrent à 6,9 M$.
+Dépenses 2026 de l’ARTM
+Frais d’administration,
+d’exploitation et de
+développement et autres frais
+En 2026, l’ARTM prévoit réaliser des dépenses
+d’administration, d’exploitation et de développement
+du transport collectif et autres frais de 248,4 M$, en
+baisse de 6,3 M$ par rapport à celles budgétées en
+2025.
+Les frais d’administration sont estimés à 35,5 M$
+en 2026, une hausse de 1,0 M$ par rapport au
+budget 2025.
+Les frais d’exploitation sont estimés à 163,4 M$,
+une hausse de 7,6 M$ par rapport au budget 2025.
+L’augmentation est principalement expliquée par :
+› une augmentation des frais de vente et perception
+› une baisse des frais de développement et d’études
+liée à une diminution de coût dans le projet
+structurant de l’Est (PSE);
+› une diminution des services informatiques.
+La diminution des autres frais de 14,9 M$ s’explique
+surtout par une révision des hypothèses de mise en
+service des immobilisations.
+1514 › Budget 2026 › Budget 2026
+
+--- PDF page 10 of 10 ---
+
+artm.quebec
+1001, boulevard Robert-Bourassa, bureau 400
+Montréal (Québec) H3B 4L4

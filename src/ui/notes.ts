@@ -2,7 +2,8 @@
 // Every amount, rate and threshold here is read from the year's data, so the text can't drift from the numbers
 // the engine uses. This module only formats values; it never works out anyone's tax. No DOM access, so the
 // tests can render it in Node.
-import type { ChildBenefitProgram, CreditProgram, PhasedAmount, Province, YearData } from "../data/schema.ts";
+import type { ChildBenefitProgram, CreditProgram, FuelRate, PhasedAmount, Province, YearData } from "../data/schema.ts";
+import { ratePeriods, yearAverage } from "../engine/index.ts";
 
 /** Values the page itself sets, rather than the year's data. */
 export interface PageDefaults {
@@ -18,6 +19,24 @@ export const money = (n: number) => `$${Math.round(n).toLocaleString("en-CA")}`;
 export const rate = (r: number) => `${+(r * 100).toFixed(2)}%`;
 /** A rate with a fixed number of decimals: 5.30%, 1.0%. */
 const fixed = (r: number, d: number) => `${(r * 100).toFixed(d)}%`;
+/** A per-litre tax in cents: 10¢, 8.47¢, 19.2¢. */
+export const cents = (r: number) => `${+(r * 100).toFixed(2)}¢`;
+const MONTHS = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
+/** A YYYY-MM-DD date as "April 20". */
+const day = (iso: string) => `${MONTHS[Number(iso.slice(5, 7)) - 1]} ${Number(iso.slice(8, 10))}`;
 /** "a and b", "a, b and c" */
 const list = (xs: string[]) => (xs.length < 2 ? xs.join("") : `${xs.slice(0, -1).join(", ")} and ${xs.at(-1)}`);
 /** Joins clauses that are sentences in their own right: "a, and b". */
@@ -105,6 +124,46 @@ const isPhased = (a: Province["basicPersonalAmount"]): a is PhasedAmount => type
 /** Benefit amounts run July to June, starting in the tax year. */
 const benefitYear = (y: YearData) => `July ${y.year} to June ${y.year + 1}`;
 
+/** The year's fuel data, or null for a year without it. */
+function fuelData(y: YearData) {
+  const fed = y.federal.fuelTax,
+    driving = y.federal.driving;
+  if (!fed || !driving) return null;
+  const ps = y.provinces.map(p => ({
+    p,
+    fuel: need(p.fuelTax, `${p.code} fuel tax`),
+    driving: need(p.driving, `${p.code} driving`),
+  }));
+  return { fed, driving, ps };
+}
+/** A fuel rate as written in the notes: "13¢", or "13¢, 0¢ from October 1 (fuel tax relief program)"; without the
+ *  data's notes on each change when `notes` is false. */
+const rateText = (r: FuelRate, year: number, notes = true) =>
+  ratePeriods(r, year)
+    .map((x, i) =>
+      i === 0 ? cents(x.rate) : `${cents(x.rate)} from ${day(x.from)}${notes && x.note ? ` (${x.note})` : ""}`,
+    )
+    .join(", ");
+/** Year-average per-litre tax in province p: federal, provincial and regional together. */
+const perLitre = (y: YearData, p: Province) => {
+  const f = need(y.federal.fuelTax, "federal fuel tax"),
+    t = need(p.fuelTax, `${p.code} fuel tax`);
+  return (
+    yearAverage(f.gasoline, y.year) +
+    yearAverage(t.gasoline, y.year) +
+    (t.regional ? yearAverage(t.regional.gasoline, y.year) : 0)
+  );
+};
+/** The regional transit taxes in running text: "TransLink in Vancouver (18.5¢) and ARTM in Montreal (3¢)". */
+const regionalTaxes = (y: YearData, ps: Province[]) =>
+  list(
+    ps.flatMap(p =>
+      p.fuelTax?.regional
+        ? [`${p.fuelTax.regional.name} in ${p.propertyTax.city} (${rateText(p.fuelTax.regional.gasoline, y.year)})`]
+        : [],
+    ),
+  );
+
 // ---------- Tooltips ----------
 /** Tooltip text by key; the page's info buttons name their key in data-note. */
 export function tooltips(y: YearData): Record<string, string> {
@@ -127,10 +186,24 @@ export function tooltips(y: YearData): Record<string, string> {
   ].filter(Boolean);
   const gb = F.groceriesBenefit,
     gbName = need(gb.name, "groceries benefit name");
+  const fd = fuelData(y);
+  const noFuel = `Fuel taxes aren't in the ${y.year} data yet, so driving adds nothing to the totals.`;
+  const fuelTips = fd
+    ? (() => {
+        const t = ext(y.provinces, p => perLitre(y, p));
+        const changed = [fd.fed.gasoline, ...fd.ps.map(x => x.fuel.gasoline)].some(r => typeof r === "object");
+        return {
+          fuel: `Litres = distance × fuel efficiency ÷ 100. Each litre carries the federal excise tax (${rateText(fd.fed.gasoline, y.year, false)}), your province's fuel tax and, in ${list(fd.ps.filter(x => x.fuel.regional).map(x => x.p.propertyTax.city))}, a regional transit tax; each province uses its largest city. Together they run from ${cents(t.lo)} a litre in ${places(y, t.atLo)} to ${cents(t.hi)} in ${places(y, t.atHi)}${changed ? `, averaged over ${y.year} where a rate changed during the year` : ""}. GST/HST (and QST in Quebec) on gasoline isn't added here: gasoline is part of your taxable spending, so its sales tax is already counted there.`,
+          distance: `Total kilometres driven in a year by all the household's vehicles. It starts at the average per vehicle in your home province from the ${fd.driving.distanceSource}, the most recent survey, and isn't scaled to the size of your household. Enter 0 for no car.`,
+          efficiency: `Your vehicles' average fuel consumption in litres per 100 km, weighted by how much each one is driven. It starts at ${fd.driving.efficiency.toFixed(1)}, ${fd.driving.efficiencySource}. Enter 0 for an electric car.`,
+        };
+      })()
+    : { fuel: noFuel, distance: noFuel, efficiency: noFuel };
   return {
+    ...fuelTips,
     deductions: `Amounts subtracted from your income before tax is worked out: RRSP and FHSA contributions, union and professional dues, childcare expenses, deductible support payments, moving expenses and similar. Max RRSP fills in ${rate(F.rrsp.rate)} of employment income, up to the ${y.year} limit of ${money(F.rrsp.limit)}. Your actual room is ${rate(F.rrsp.rate)} of last year's earned income, less any pension adjustment, plus unused room carried forward; it's on your notice of assessment.`,
     bpa: `Every taxpayer gets a non-refundable credit on a basic amount of income: ${money(F.basicPersonalAmount.max)} federally in ${y.year}, plus a provincial amount from ${money(bpa.lo)} in ${places(y, bpa.atLo)} to ${money(bpa.hi)} in ${places(y, bpa.atHi)}. Switch off to see bracket rates alone.`,
-    spending: `Your household's monthly spending on things sales tax applies to, before tax. A quick estimate: your average monthly credit card and debit spending, minus groceries, prescriptions and healthcare. Usually exempt across Canada: basic groceries, rent and mortgage payments, prescription drugs, most medical and dental care, insurance premiums and banking fees, childcare, tuition, and public transit. Usually taxed: restaurant meals and takeout, alcohol, clothing, electronics, furniture and household goods, gas, utilities, phone and internet, vehicles and repairs, travel, and most services. ${y.year} rates run from ${sales.atLo[0].salesTax.label} in ${places(y, sales.atLo)} to ${sales.atHi[0].salesTax.label} in ${places(y, sales.atHi)}. The starting amount is a rough estimate for a household with the adults and children set here; adjust it to match your own spending.`,
+    spending: `Your household's monthly spending on things sales tax applies to, before tax. A quick estimate: your average monthly credit card and debit spending, minus groceries, prescriptions and healthcare. Usually exempt across Canada: basic groceries, rent and mortgage payments, prescription drugs, most medical and dental care, insurance premiums and banking fees, childcare, tuition, and public transit. Usually taxed: restaurant meals and takeout, alcohol, clothing, electronics, furniture and household goods, gas, utilities, phone and internet, vehicles and repairs, travel, and most services. ${y.year} rates run from ${sales.atLo[0].salesTax.label} in ${places(y, sales.atLo)} to ${sales.atHi[0].salesTax.label} in ${places(y, sales.atHi)}. The starting amount is a rough estimate for a household with the adults and children set here; adjust it to match your own spending.${fd ? " Include gasoline: its GST/HST (and QST in Quebec) is counted here, and the per-litre fuel taxes come from the Driving tab." : ""}`,
     children: `Children under 18. They raise the spending estimate and add child benefits: the Canada Child Benefit plus your province's benefit (every province and territory with one), using ${benefitYear(y)} amounts. Benefits are netted off the tax shown. Once you have at least one child, drag the small slate handle on the same track to say how many are under 6, since they get a higher CCB.`,
     property: `Annual property tax = home value × municipal rate. Each province uses the typical ${y.year} residential rate in its largest city, from ${fixed(prop.lo, 2)} in ${city(prop.atLo)} to ${fixed(prop.hi, 2)} in ${city(prop.atHi)}${propCaveats.length ? `; ${clauses(propCaveats)}` : ""}. Editing the rate changes your home province only. The same home value is used everywhere, though home prices differ a lot between cities. Renters pay property tax indirectly through rent, which isn't counted here.`,
     credits: `Credits paid to lower- and modest-income households, worked out from the income and household above: the ${gbName}${gb.formerName ? ` (formerly the ${gb.formerName})` : ""}, the Canada Workers Benefit, and your province's credits, such as the Ontario Trillium Benefit, Quebec's solidarity credit and work premium, and the low-income credits in Saskatchewan, New Brunswick, Nova Scotia, PEI and Newfoundland and Labrador. Amounts are for ${benefitYear(y)} (the ${y.year} tax year for the Workers Benefit). They're netted off the tax shown, together with child benefits.`,
@@ -305,6 +378,40 @@ export function footerNotes(y: YearData, page: PageDefaults): string {
   );
   const property = `Home value × the typical residential rate in each province's largest city for ${year}: ${list(listedRates)}.${estimatedNote ? ` ${estimatedNote[0].toUpperCase()}${estimatedNote.slice(1)}.` : ""}${roughRates.length ? ` ${list(roughRates)}.` : ""} Land transfer tax is a one-time cost and isn't included.`;
 
+  // Fuel tax
+  const fd = fuelData(y);
+  const fuel = fd
+    ? (() => {
+        const changes = (r: FuelRate) => typeof r === "object";
+        const rates = fd.ps.map(
+          ({ p, fuel: t }) => `${short(p)} ${rateText(t.gasoline, year)}${t.area ? ` (${t.area})` : ""}`,
+        );
+        const averaged = [
+          ...(changes(fd.fed.gasoline) ? [`federal ${cents(yearAverage(fd.fed.gasoline, year))}`] : []),
+          ...fd.ps
+            .filter(x => changes(x.fuel.gasoline))
+            .map(x => `${short(x.p)} ${cents(yearAverage(x.fuel.gasoline, year))}`),
+        ];
+        const dist = [...fd.ps].sort((a, b) => a.driving.distance - b.driving.distance);
+        const km = (n: number) => `${n.toLocaleString("en-CA")} km`;
+        return [
+          "Litres bought = yearly distance × fuel efficiency ÷ 100, the same in every province.",
+          `Each litre carries the federal excise tax and the provincial or territorial fuel tax, plus the regional transit tax of each province's largest city where it has one: ${regionalTaxes(y, P)}. The household is taken to live in that city.`,
+          `${year} rates per litre: federal ${rateText(fd.fed.gasoline, year)}; ${rates.join("; ")}.`,
+          averaged.length
+            ? `Where a rate changed during the year, each rate counts for the share of the year it applied, as if driving were spread evenly through the year, for a ${year} average of ${list(averaged)}.`
+            : "",
+          "GST, HST and QST on gasoline are part of taxable spending and counted under sales tax, so they aren't added here.",
+          `${quebec.name}'s cap-and-trade cost in the pump price isn't a tax and isn't counted.`,
+          `The starting distance is the average per light vehicle in the home province in the ${fd.driving.distanceSource}, the last one, from ${km(dist[0].driving.distance)} in ${article(short(dist[0].p))} to ${km(dist[dist.length - 1].driving.distance)} in ${article(short(dist[dist.length - 1].p))}; it isn't scaled to household size.`,
+          `The starting fuel efficiency, ${fd.driving.efficiency.toFixed(1)} L/100 km, is ${fd.driving.efficiencySource}.`,
+          "Both can be changed; 0 means no car, or an electric one.",
+        ]
+          .filter(Boolean)
+          .join(" ");
+      })()
+    : "";
+
   // What's not included
   const bpaChanges = P.filter(p => p.basicPersonalAmountChange).map(p => {
     const c = need(p.basicPersonalAmountChange, "amount change");
@@ -335,9 +442,10 @@ export function footerNotes(y: YearData, page: PageDefaults): string {
     para("Child benefits", children),
     para("Refundable credits", credits),
     para("Property tax", property),
+    ...(fuel ? [para("Fuel tax", fuel)] : []),
     para(
       "What's not included",
-      `Age, pension, disability, medical, donation and other personal credits; pension income splitting; fuel, excise and corporate taxes.${bpaChanges.join("")}`,
+      `Age, pension, disability, medical, donation and other personal credits; pension income splitting; ${fd ? "taxes on diesel and heating fuel, other excise taxes" : "fuel, excise"} and corporate taxes.${bpaChanges.join("")}`,
     ),
     para("Investment income", investment),
     para(

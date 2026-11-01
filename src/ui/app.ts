@@ -17,7 +17,7 @@ import {
   type Result,
 } from "../engine/index.ts";
 import { DEFAULT_INCOME, spendEst } from "./defaults.ts";
-import { footerNotes, share, tooltips } from "./notes.ts";
+import { cents, footerNotes, share, tooltips } from "./notes.ts";
 
 const YEAR = Math.max(...Object.keys(years).map(Number));
 const Y = years[YEAR],
@@ -65,7 +65,7 @@ type Metric = "pct" | "usd";
 type Sort = "rate" | "geo";
 type View = "home" | "dest";
 /** The tabs under the basic inputs; each opens one panel (#tabbar, #panel-<tab>). */
-const TABS = ["income", "home", "credits"] as const;
+const TABS = ["income", "home", "credits", "driving"] as const;
 type Tab = (typeof TABS)[number];
 const isTab = (t: unknown): t is Tab => TABS.some(x => x === t);
 /** Own: the home value is used (property tax). Rent: the rent is used (rent-based credits). */
@@ -85,6 +85,11 @@ let homeValue = 0,
   tenure: Tenure = "own",
   useCredits = true,
   tab: Tab | null = null; // the open tab, if any
+// Driving: a typed distance or efficiency, or null to use the starting value (the home province's average distance,
+// the national average efficiency). FUEL: the year's data has fuel taxes; without them the Driving tab is hidden.
+let kmOverride: number | null = null,
+  effOverride: number | null = null;
+const FUEL = F.fuelTax != null && F.driving != null;
 const TREATY_WH = F.investment.foreignWithholding.usTreaty;
 let sort: Sort = "rate",
   home = "ON",
@@ -98,6 +103,13 @@ const rentPaid = () => (tenure === "rent" ? rent : 0);
 const byCode = (c: string) => P.find(p => p.c === c);
 /** The province with this code; home and dest always hold one. */
 const prov = (c: string) => must(byCode(c), `province ${c}`);
+const defaultKm = (c: string) => prov(c).d.driving?.distance ?? 0;
+const kmNow = () => kmOverride ?? defaultKm(home);
+const defaultEff = () => F.driving?.efficiency ?? 0;
+const effNow = () => effOverride ?? defaultEff();
+/** Efficiency as typed or shown: at least one decimal (9.0), more only when entered (7.25). */
+const effText = (v: number) => (Number.isInteger(v * 10) ? v.toFixed(1) : String(v));
+const kmText = (v: number) => `${v.toLocaleString("en-CA")} km`;
 const effSpend = () => Math.round((spend * (1 + frug / 100)) / 10) * 10; // nearest $10
 // Engine input built from the current state
 const inputs = (): Household => ({
@@ -114,6 +126,7 @@ const inputs = (): Household => ({
   rent: rentPaid(),
   monthlySpending: effSpend(),
   propertyRates: propOverride != null ? { [home]: propOverride } : undefined,
+  driving: FUEL ? { km: kmNow(), lPer100km: effNow() } : undefined,
 });
 const calc = (p: ProvView) => compute(Y, p.d, inputs());
 const rowFor = (res: Row[], c: string) =>
@@ -159,6 +172,8 @@ try {
     if (isNum(s.homeValue) && s.homeValue >= 0) homeValue = s.homeValue;
     if (isNum(s.propOverride)) propOverride = s.propOverride;
     if (isNum(s.rent) && s.rent >= 0) rent = s.rent;
+    if (isNum(s.km) && s.km >= 0) kmOverride = s.km;
+    if (isNum(s.eff) && s.eff >= 0) effOverride = s.eff;
     // Saves from before the Own/Rent switch: rent only counted with no home value, so that meant renting
     if (s.tenure === "own" || s.tenure === "rent") tenure = s.tenure;
     else if (rent > 0 && homeValue === 0) tenure = "rent";
@@ -172,6 +187,10 @@ try {
   }
 } catch {}
 if (dest === home) dest = home === "AB" ? "BC" : "AB";
+if (!FUEL) {
+  $("tab-driving").hidden = true;
+  if (tab === "driving") tab = null;
+}
 function save() {
   try {
     localStorage.setItem(
@@ -199,6 +218,8 @@ function save() {
         tenure,
         useCredits,
         tab,
+        km: kmOverride,
+        eff: effOverride,
       }),
     );
   } catch {}
@@ -245,7 +266,7 @@ P.forEach(p => {
   const c = document.createElement("li");
   c.className = "col";
   c.id = `col-${p.c}`;
-  c.innerHTML = `<div class="col-plot"><span class="cv"></span><div class="stack"><i class="f"></i><i class="p"></i><i class="y"></i><i class="w"></i><i class="s"></i><i class="h"></i></div><i class="ben"></i></div>
+  c.innerHTML = `<div class="col-plot"><span class="cv"></span><div class="stack"><i class="f"></i><i class="p"></i><i class="y"></i><i class="w"></i><i class="s"></i><i class="h"></i><i class="g"></i></div><i class="ben"></i></div>
     <div class="code" title="${p.n}">${p.c}${p.qc ? "<sup>†</sup>" : ""}</div><div class="cm"></div><div class="tag"></div>`;
   colsEl.appendChild(c);
 });
@@ -293,9 +314,9 @@ function renderPeople() {
 }
 
 const kMoney = (v: number) => (v >= 1000 ? `$${+(v / 1000).toFixed(v >= 100000 ? 0 : 1)}k` : `$${Math.round(v)}`);
-/** Chart column segments (f = federal, p = provincial, y = payroll, w = withheld, s = sales, h = property) and the
- *  benefits band. Each is also the segment element's class name. */
-type Seg = "f" | "p" | "y" | "w" | "s" | "h" | "ben";
+/** Chart column segments (f = federal, p = provincial, y = payroll, w = withheld, s = sales, h = property, g = fuel)
+ *  and the benefits band. Each is also the segment element's class name. */
+type Seg = "f" | "p" | "y" | "w" | "s" | "h" | "g" | "ben";
 const SEG_NAMES: Record<Seg, string> = {
   f: "Federal income tax",
   p: "Provincial / territorial income tax",
@@ -303,11 +324,22 @@ const SEG_NAMES: Record<Seg, string> = {
   w: "Foreign tax withheld",
   s: "Sales tax",
   h: "Property tax",
+  g: "Fuel tax",
   ben: "Benefits and credits",
 };
-const SEG_KEYS: Exclude<Seg, "ben">[] = ["f", "p", "y", "w", "s", "h"];
+const SEG_KEYS: Exclude<Seg, "ben">[] = ["f", "p", "y", "w", "s", "h", "g"];
 const segAmt = (r: Result, c: Seg) =>
-  ({ f: r.fed, p: r.prov, y: r.payroll, w: r.wh, s: r.sales, h: r.property, ben: r.benefits })[c];
+  ({ f: r.fed, p: r.prov, y: r.payroll, w: r.wh, s: r.sales, h: r.property, g: fuelAmt(r), ben: r.benefits })[c];
+/** Fuel tax a year (0 for a year without fuel data). */
+const fuelAmt = (r: Result) => r.fuel?.total ?? 0;
+/** "1,458 litres at 11.99¢ a litre: federal 2.99¢, Ontario 9¢" (year averages), for the chart tip and panel. */
+function fuelParts(p: ProvView, r: Result) {
+  const f = r.fuel;
+  if (!f) return "";
+  const parts = [`federal ${cents(f.perLitre.federal)}`, `${p.n} ${cents(f.perLitre.provincial)}`];
+  if (f.regionalName) parts.push(`${f.regionalName} ${cents(f.perLitre.regional)}`);
+  return `${Math.round(f.litres).toLocaleString("en-CA")} litres at ${cents(f.perLitre.total)} a litre: ${parts.join(", ")}`;
+}
 /** Tooltip HTML for each chart segment, set on every render. Info buttons use their data-tip text instead. */
 const segTips = new WeakMap<Element, string>();
 function segTip(p: ProvView, r: Result, c: Seg) {
@@ -343,6 +375,8 @@ function segTip(p: ProvView, r: Result, c: Seg) {
     sub = `${p.d.salesTax.label} on ${money(effSpend())} a month of taxable spending`;
   } else if (c === "h") {
     sub = `${rateFmt(r.propRate)} on a ${money(ownedValue())} home${p.c === home && propOverride != null ? " (your rate)" : ` (${p.d.propertyTax.city} rate)`}`;
+  } else if (c === "g") {
+    sub = `${fuelParts(p, r)}, averaged over ${YEAR}`;
   } else if (c === "ben") {
     const parts: string[] = [];
     if (r.ccb > 0.5) parts.push(`Canada Child Benefit ${money(r.ccb)}`);
@@ -474,6 +508,7 @@ function render() {
   $("legend-wh").hidden = !(people.some(y => y.fd > 0) && whRate > 0);
   $("legend-sales").hidden = !(effSpend() > 0);
   $("legend-prop").hidden = !(ownedValue() > 0);
+  $("legend-fuel").hidden = !res.some(y => fuelAmt(y.r) > 0.5);
   $("legend-ben").hidden = !anyBen;
   // Refundable credits panel: the home province's credits
   $<HTMLInputElement>("cred-toggle").checked = useCredits;
@@ -528,6 +563,7 @@ function render() {
     ownedValue() > 0 || rentPaid() > 0,
   );
   tabSum("credits", !useCredits ? "off" : kMoney(H.r.refund), useCredits && H.r.refund > 0.5);
+  if (FUEL) renderDriving(H);
   $("m-pct").setAttribute("aria-pressed", String(metric === "pct"));
   $("m-usd").setAttribute("aria-pressed", String(metric === "usd"));
   $<HTMLInputElement>("frug").value = String(frug);
@@ -543,6 +579,28 @@ function render() {
   $<HTMLInputElement>("bpa-toggle").checked = useBpa;
   $("bpa-state").textContent = useBpa ? "Credits applied" : "Brackets only";
   save();
+}
+
+/** The Driving panel and tab: the distance and efficiency boxes (unless being typed in), where each starting value
+ *  comes from, and the fuel tax in the home province. */
+function renderDriving(H: Row) {
+  const km = kmNow(),
+    eff = effNow(),
+    f = H.r.fuel;
+  if (document.activeElement !== kmIn) kmIn.value = km.toLocaleString("en-CA");
+  kmRange.value = String(Math.min(km, +kmRange.max));
+  if (document.activeElement !== effIn) effIn.value = effText(eff);
+  $("km-note").textContent =
+    kmOverride != null
+      ? `Your distance (${H.p.n} average is ${kmText(defaultKm(home))})`
+      : `${H.p.n} average, ${F.driving?.distanceSource ?? ""}`;
+  $("km-reset").hidden = kmOverride == null;
+  $("eff-note").textContent =
+    effOverride != null ? `Your vehicles (Canadian average is ${effText(defaultEff())})` : "Canadian on-road average";
+  $("eff-reset").hidden = effOverride == null;
+  $("fuel-sum").textContent =
+    f && f.total > 0.5 ? `${money(f.total)} a year in ${H.p.n}` : km > 0 ? "no fuel bought" : "no driving";
+  tabSum("driving", km > 0 ? `${+(km / 1000).toFixed(1)}k km` : "none", f != null && f.total > 0.5);
 }
 
 /** An adjustment after bracket tax: [label, amount], negative when it reduces tax. */
@@ -647,6 +705,13 @@ function renderDetail(res: Row[], order: Row[]) {
           `Property tax <small class="note">(${rateFmt(hr.propRate)} vs ${rateFmt(dr.propRate)})</small>`,
           hr.property,
           dr.property,
+        )
+      : "") +
+    (any(fuelAmt)
+      ? row(
+          `Fuel tax <small class="note">(${cents(hr.fuel?.perLitre.total ?? 0)} vs ${cents(dr.fuel?.perLitre.total ?? 0)} a litre)</small>`,
+          fuelAmt(hr),
+          fuelAmt(dr),
         )
       : "") +
     (kids > 0
@@ -1075,6 +1140,39 @@ for (const b of document.querySelectorAll<HTMLElement>("[data-tenure]"))
     tenure = b.dataset.tenure === "rent" ? "rent" : "own";
     render();
   });
+// Driving: typing or sliding sets your own distance or efficiency; Reset goes back to the starting value. 0 is allowed.
+const kmIn = $<HTMLInputElement>("km"),
+  kmRange = $<HTMLInputElement>("km-range"),
+  effIn = $<HTMLInputElement>("eff");
+kmIn.addEventListener("input", () => {
+  kmOverride = Math.min(+kmIn.value.replace(/[^\d]/g, "") || 0, 999999);
+  render();
+});
+kmIn.addEventListener("blur", () => render());
+kmIn.addEventListener("keydown", e => {
+  if (e.key === "Enter") kmIn.blur();
+});
+kmRange.addEventListener("input", () => {
+  kmOverride = +kmRange.value;
+  render();
+});
+$("km-reset").addEventListener("click", () => {
+  kmOverride = null;
+  render();
+});
+effIn.addEventListener("input", () => {
+  const v = parseFloat(effIn.value.replace(/[^\d.]/g, ""));
+  effOverride = Number.isFinite(v) ? Math.min(v, 99) : 0;
+  render();
+});
+effIn.addEventListener("blur", () => render());
+effIn.addEventListener("keydown", e => {
+  if (e.key === "Enter") effIn.blur();
+});
+$("eff-reset").addEventListener("click", () => {
+  effOverride = null;
+  render();
+});
 const credToggle = $<HTMLInputElement>("cred-toggle");
 credToggle.addEventListener("change", () => {
   useCredits = credToggle.checked;
@@ -1126,17 +1224,20 @@ bpaToggle.addEventListener("change", () => {
 });
 
 // Slider axis labels
-function fmtTick(v: number, signed: boolean) {
-  if (v === 0) return "$0";
+// Amounts in dollars, unless the scale is marked data-plain (a distance)
+function fmtTick(v: number, signed: boolean, plain: boolean) {
+  const cur = plain ? "" : "$";
+  if (v === 0) return `${cur}0`;
   const a = Math.abs(v),
     k = a >= 1e6 ? `${+(a / 1e6).toFixed(1)}M` : a >= 1000 ? `${+(a / 1000).toFixed(1)}k` : a;
-  return `${v < 0 ? "−" : signed ? "+" : ""}$${k}`;
+  return `${v < 0 ? "−" : signed ? "+" : ""}${cur}${k}`;
 }
 document.querySelectorAll<HTMLElement>(".scale").forEach(sc => {
   const r = $<HTMLInputElement>(sc.dataset.for ?? ""),
     min = +r.min,
     max = +r.max,
-    signed = sc.hasAttribute("data-signed");
+    signed = sc.hasAttribute("data-signed"),
+    plain = sc.hasAttribute("data-plain");
   // "~" marks a minor tick: a mark with no label
   const ticks = (sc.dataset.ticks ?? "").split(",");
   sc.innerHTML = ticks
@@ -1147,7 +1248,7 @@ document.querySelectorAll<HTMLElement>(".scale").forEach(sc => {
       if (minor) return `<span class="minor" style="left:calc(9px + (100% - 18px) * ${q})"></span>`;
       const cls = i === 0 ? "first" : i === ticks.length - 1 ? "last" : "";
       const left = i === 0 ? "0" : i === ticks.length - 1 ? "100%" : `calc(9px + (100% - 18px) * ${q})`;
-      return `<span class="${cls}${v === 0 && min < 0 ? " zero" : ""}" style="left:${left}">${fmtTick(v, signed)}</span>`;
+      return `<span class="${cls}${v === 0 && min < 0 ? " zero" : ""}" style="left:${left}">${fmtTick(v, signed, plain)}</span>`;
     })
     .join("");
 });
