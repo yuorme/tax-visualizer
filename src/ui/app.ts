@@ -66,6 +66,12 @@ const rrspMax = (x: Person) => Math.min(F.rrsp.limit, Math.round(x.ord * F.rrsp.
 type Metric = "pct" | "usd";
 type Sort = "rate" | "geo";
 type View = "home" | "dest";
+/** The tabs under the basic inputs; each opens one panel (#tabbar, #panel-<tab>). */
+const TABS = ["income", "home", "credits"] as const;
+type Tab = (typeof TABS)[number];
+const isTab = (t: unknown): t is Tab => TABS.some(x => x === t);
+/** Own: the home value is used (property tax). Rent: the rent is used (rent-based credits). */
+type Tenure = "own" | "rent";
 let people: Person[] = [blank(DEFAULT_INCOME)],
   active = 0,
   spouse = true;
@@ -74,12 +80,13 @@ let metric: Metric = "pct",
   adults = 1,
   kids = 0,
   under6 = 0; // under6: children under 6, out of kids
+// homeValue and rent keep what was typed in each; tenure picks which one the engine sees (ownedValue, rentPaid).
 let homeValue = 0,
   propOverride: number | null = null,
-  propOpen = false,
   rent = 0,
+  tenure: Tenure = "own",
   useCredits = true,
-  credOpen = false;
+  tab: Tab | null = null; // the open tab, if any
 const TREATY_WH = F.investment.foreignWithholding.usTreaty;
 let sort: Sort = "rate",
   home = "ON",
@@ -87,8 +94,9 @@ let sort: Sort = "rate",
   view: View = "home",
   useBpa = true,
   whRate = TREATY_WH,
-  spend = spendEst(1),
-  invOpen = false;
+  spend = spendEst(1);
+const ownedValue = () => (tenure === "own" ? homeValue : 0);
+const rentPaid = () => (tenure === "rent" ? rent : 0);
 const byCode = (c: string) => P.find(p => p.c === c);
 /** The province with this code; home and dest always hold one. */
 const prov = (c: string) => must(byCode(c), `province ${c}`);
@@ -104,8 +112,8 @@ const inputs = (): Household => ({
   useBpa,
   whRate,
   useCredits,
-  homeValue,
-  rent,
+  homeValue: ownedValue(),
+  rent: rentPaid(),
   monthlySpending: effSpend(),
   propertyRates: propOverride != null ? { [home]: propOverride } : undefined,
 });
@@ -152,12 +160,15 @@ try {
     else if (s.under6 === true) under6 = kids; // older saves stored a yes/no
     if (isNum(s.homeValue) && s.homeValue >= 0) homeValue = s.homeValue;
     if (isNum(s.propOverride)) propOverride = s.propOverride;
-    if (typeof s.propOpen === "boolean") propOpen = s.propOpen;
     if (isNum(s.rent) && s.rent >= 0) rent = s.rent;
+    // Saves from before the Own/Rent switch: rent only counted with no home value, so that meant renting
+    if (s.tenure === "own" || s.tenure === "rent") tenure = s.tenure;
+    else if (rent > 0 && homeValue === 0) tenure = "rent";
     if (typeof s.useCredits === "boolean") useCredits = s.useCredits;
-    if (typeof s.credOpen === "boolean") credOpen = s.credOpen;
     spend = s.adults && isNum(s.spend) && s.spend >= 0 ? s.spend : spendEst(adults + kids); // older saves predate adults/children
-    if (typeof s.invOpen === "boolean") invOpen = s.invOpen;
+    // Saves from before the tabs kept each section's open state; reopen the first one that was open
+    if (s.tab === null || isTab(s.tab)) tab = s.tab;
+    else tab = s.invOpen === true ? "income" : s.propOpen === true ? "home" : s.credOpen === true ? "credits" : null;
     if (s.metric === "usd") metric = "usd";
     if (isNum(s.frug) && s.frug >= -100 && s.frug <= 100000) frug = s.frug;
   }
@@ -184,13 +195,12 @@ function save() {
         spend,
         frug,
         metric,
-        invOpen,
         homeValue,
         propOverride,
-        propOpen,
         rent,
+        tenure,
         useCredits,
-        credOpen,
+        tab,
       }),
     );
   } catch {}
@@ -247,6 +257,26 @@ const AXIS_BASE = 0.4;
 function axisMax(top: number) {
   return Math.max(AXIS_BASE, (Math.ceil((top * 100 + 1) / 5) * 5) / 100);
 }
+
+// Tabs under the basic inputs: one panel open at a time, and tapping the open tab closes it.
+function showTab() {
+  for (const t of TABS) {
+    $(`tab-${t}`).setAttribute("aria-expanded", String(tab === t));
+    $(`panel-${t}`).hidden = tab !== t;
+  }
+}
+/** Sets a tab's short summary, marked "set" (highlighted) when the summary is an amount. */
+function tabSum(t: Tab, text: string, set: boolean) {
+  $(`tab-${t}-sum`).textContent = text;
+  $(`tab-${t}`).classList.toggle("set", set);
+}
+$("tabbar").addEventListener("click", e => {
+  const t = closest(e.target, "[data-tab]")?.dataset.tab;
+  if (!isTab(t)) return;
+  tab = tab === t ? null : t;
+  showTab();
+  save();
+});
 
 function renderPeople() {
   let html = people
@@ -327,7 +357,7 @@ function segTip(p: ProvView, r: Result, c: Seg) {
   } else if (c === "s") {
     sub = `${p.d.salesTax.label} on ${money(effSpend())} a month of taxable spending`;
   } else if (c === "h") {
-    sub = `${rateFmt(r.propRate)} on a ${money(homeValue)} home${p.c === home && propOverride != null ? " (your rate)" : ` (${p.d.propertyTax.city} rate)`}`;
+    sub = `${rateFmt(r.propRate)} on a ${money(ownedValue())} home${p.c === home && propOverride != null ? " (your rate)" : ` (${p.d.propertyTax.city} rate)`}`;
   } else if (c === "ben") {
     const parts: string[] = [];
     if (r.ccb > 0.5) parts.push(`Canada Child Benefit ${money(r.ccb)}`);
@@ -458,14 +488,11 @@ function render() {
     : "none added";
   $("legend-wh").hidden = !(people.some(y => y.fd > 0) && whRate > 0);
   $("legend-sales").hidden = !(effSpend() > 0);
-  $("legend-prop").hidden = !(homeValue > 0);
+  $("legend-prop").hidden = !(ownedValue() > 0);
   $("legend-ben").hidden = !anyBen;
-  // Refundable credits panel: home province's credits, and a rent box only where a credit uses rent
+  // Refundable credits panel: the home province's credits
   $<HTMLInputElement>("cred-toggle").checked = useCredits;
   $("cred-state").textContent = useCredits ? "Netted off tax" : "Not counted";
-  const needRent = useCredits && homeValue === 0 && (prov(home).d.creditsUseRent || prov(dest).d.creditsUseRent);
-  $("rent-field").hidden = !needRent;
-  if (document.activeElement !== $("rent")) $<HTMLInputElement>("rent").value = rent.toLocaleString("en-CA");
   const hc = H.r.credits;
   $("cred-sum").textContent = !useCredits
     ? "not counted"
@@ -477,7 +504,7 @@ function render() {
     : hc.length
       ? hc.map(([n, v]) => `<tr><td>${n}</td><td class="r">${money(v)}</td></tr>`).join("") +
         `<tr class="sum"><td>${H.p.n} total</td><td class="r">${money(H.r.refund)}</td></tr>`
-      : `<tr class="muted"><td>No refundable credits in ${H.p.n} at this income${prov(home).d.creditsUseRent && homeValue === 0 && rent === 0 ? " (enter rent for rent-based credits)" : ""}</td><td class="r">$0</td></tr>`;
+      : `<tr class="muted"><td>No refundable credits in ${H.p.n} at this income${prov(home).d.creditsUseRent && ownedValue() === 0 && rentPaid() === 0 ? " (enter rent for rent-based credits)" : ""}</td><td class="r">$0</td></tr>`;
   $<HTMLInputElement>("adults").value = String(adults);
   $("adults-val").textContent = String(adults);
   $<HTMLInputElement>("kids").value = String(kids);
@@ -493,7 +520,7 @@ function render() {
       ? ""
       : `linear-gradient(to right, var(--fed) 0 ${at(under6)}, var(--sales) ${at(under6)} ${at(kids)}, var(--rule) ${at(kids)} 100%)`;
   $("prop-sum").textContent =
-    homeValue > 0 ? `${money(H.r.property)} a year on a ${money(homeValue)} home` : "not included";
+    ownedValue() > 0 ? `${money(H.r.property)} a year on a ${money(ownedValue())} home` : "not included";
   if (document.activeElement !== $("pr-rate"))
     $<HTMLInputElement>("pr-rate").value = (+(propRate(home) * 100).toFixed(3)).toString();
   $("pr-note").textContent =
@@ -501,6 +528,21 @@ function render() {
       ? `Your rate (${prov(home).d.propertyTax.city} is ${rateFmt(prov(home).d.propertyTax.rate)})`
       : `${prov(home).d.propertyTax.city} ${YEAR} rate`;
   $("pr-reset").hidden = propOverride == null;
+  for (const b of document.querySelectorAll<HTMLElement>("[data-tenure]"))
+    b.setAttribute("aria-pressed", String(b.dataset.tenure === tenure));
+  $("own-body").hidden = tenure !== "own";
+  $("rent-body").hidden = tenure !== "rent";
+  // Tab summaries: what each panel holds, highlighted whenever the summary is an amount rather than none, not set,
+  // $0 or off. Income covers everyone's investments, though its panel shows the selected person's.
+  const anyInv = people.some(hasInv);
+  const invNet = people.reduce((a, y) => a + y.cg + y.ed + y.nd + y.fd, 0);
+  tabSum("income", anyInv ? (invNet < 0 ? `−${kMoney(-invNet)}` : kMoney(invNet)) : "none", anyInv);
+  tabSum(
+    "home",
+    ownedValue() > 0 ? `${kMoney(ownedValue())} home` : rentPaid() > 0 ? `${kMoney(rentPaid())}/mo rent` : "not set",
+    ownedValue() > 0 || rentPaid() > 0,
+  );
+  tabSum("credits", !useCredits ? "off" : kMoney(H.r.refund), useCredits && H.r.refund > 0.5);
   $("m-pct").setAttribute("aria-pressed", String(metric === "pct"));
   $("m-usd").setAttribute("aria-pressed", String(metric === "usd"));
   $<HTMLInputElement>("frug").value = String(frug);
@@ -615,7 +657,7 @@ function renderDetail(res: Row[], order: Row[]) {
           dr.sales,
         )
       : "") +
-    (homeValue > 0
+    (ownedValue() > 0
       ? row(
           `Property tax <small class="note">(${rateFmt(hr.propRate)} vs ${rateFmt(dr.propRate)})</small>`,
           hr.property,
@@ -1045,17 +1087,11 @@ $("pr-reset").addEventListener("click", () => {
   propOverride = null;
   render();
 });
-const propPanel = $<HTMLDetailsElement>("prop-panel"),
-  credPanel = $<HTMLDetailsElement>("cred-panel"),
-  investPanel = $<HTMLDetailsElement>("invest");
-propPanel.addEventListener("toggle", () => {
-  propOpen = propPanel.open;
-  save();
-});
-credPanel.addEventListener("toggle", () => {
-  credOpen = credPanel.open;
-  save();
-});
+for (const b of document.querySelectorAll<HTMLElement>("[data-tenure]"))
+  b.addEventListener("click", () => {
+    tenure = b.dataset.tenure === "rent" ? "rent" : "own";
+    render();
+  });
 const credToggle = $<HTMLInputElement>("cred-toggle");
 credToggle.addEventListener("change", () => {
   useCredits = credToggle.checked;
@@ -1191,7 +1227,7 @@ document.addEventListener(
       e.preventDefault();
       e.stopPropagation();
       showTip(b);
-    } // preventDefault keeps the investment panel from toggling
+    } // preventDefault: an info button only shows its tip, even inside another control
     else if (seg) showTip(seg);
     else if (tipFor) hideTip();
   },
@@ -1235,11 +1271,6 @@ $("detail-body").addEventListener("click", e => {
 syncAll();
 syncSpend();
 syncHome();
-propPanel.open = propOpen || homeValue > 0;
-credPanel.open = credOpen;
-investPanel.open = invOpen;
-investPanel.addEventListener("toggle", () => {
-  invOpen = investPanel.open;
-  save();
-});
+rentIn.value = rent.toLocaleString("en-CA");
+showTab();
 render();
