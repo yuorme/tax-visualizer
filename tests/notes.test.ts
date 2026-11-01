@@ -47,6 +47,79 @@ test("2026: notes quote the year's figures", () => {
     assert.ok(text.includes(s), `missing: ${s}`);
 });
 
+// Program names, former names, benefit periods and rate sources come from each year's data: 2026 renamed the GST/HST
+// credit and replaced PEI's sales tax credit, so neither year's names may show up in the other's notes.
+const PROGRAMS: Record<number, { has: string[]; not: string[] }> = {
+  2025: {
+    has: [
+      "for July 2025 to June 2026: the GST/HST credit ($349 per adult",
+      "household above: the GST/HST credit, the Canada Workers Benefit",
+      "the Nova Scotia affordable living tax credit; the PEI sales tax credit; and",
+      "Nunavut's uses the 3% / 5% rates in its 2026 Bill 4 (no 2025 source gives them).",
+      "using July 2025 to June 2026 amounts",
+    ],
+    not: ["Groceries", "essentials benefit", "formerly", "renamed", "July 2026 to", "2025 Bill 4"],
+  },
+  2026: {
+    has: [
+      "household above: the Canada Groceries and Essentials Benefit (formerly the GST/HST credit), the Canada Workers",
+      "for July 2026 to June 2027: the Canada Groceries and Essentials Benefit (the renamed GST/HST credit: $445 per adult",
+      "the Nova Scotia affordable living tax credit; the PEI essentials benefit; and",
+      "Nunavut's uses the 3% / 5% rates in its 2026 Bill 4.",
+    ],
+    not: ["PEI sales tax credit", "July 2025", "no 2025 source"],
+  },
+};
+for (const [year, { has, not }] of Object.entries(PROGRAMS))
+  test(`${year}: notes name that year's programs and benefit period`, () => {
+    const text = render(loadYear(Number(year)));
+    for (const s of has) assert.ok(text.includes(s), `missing: ${s}`);
+    for (const s of not) assert.ok(!text.includes(s), `should not include: ${s}`);
+  });
+
+// Property tax: an estimated rate (2025's are 2026 rates carried over) stays in the list of city rates and is
+// called an estimate; only rough placeholders (the territories) are listed apart.
+test("2025: estimated provincial property tax rates are listed and called estimates", () => {
+  const text = render(loadYear(2025));
+  for (const s of [
+    "largest city for 2025: Vancouver 0.30%, Calgary 0.66%",
+    // Charlottetown's 2025 rate is published; the other nine are 2026 rates carried over.
+    "Halifax 0.61% and St. John's 0.91%. The Vancouver, Calgary, Saskatoon, Winnipeg, Toronto, Montreal, Moncton, Halifax and St. John's rates are estimates, not yet checked against 2025 municipal rates. Whitehorse, Yellowknife and Iqaluit use a rough 1.0% estimate.",
+    "from 0.30% in Vancouver to 1.67% in Charlottetown; the Vancouver, Calgary, Saskatoon, Winnipeg, Toronto, Montreal, Moncton, Halifax and St. John's rates are estimates, not yet checked against 2025 municipal rates, and territorial rates are rough estimates.",
+  ])
+    assert.ok(text.includes(s), `missing: ${s}`);
+});
+
+test("2026: published property tax rates carry no estimate caveat", () => {
+  const text = render(loadYear(2026));
+  assert.ok(text.includes("from 0.30% in Vancouver to 1.67% in Charlottetown; territorial rates are rough estimates."));
+  assert.ok(text.includes("Halifax 0.61% and St. John's 0.91%. Whitehorse, Yellowknife and Iqaluit use a rough"));
+  assert.ok(!text.includes("not yet checked"));
+});
+
+test("a single estimated property tax rate is named, and stays in the list", () => {
+  const y = structuredClone(loadYear(2026));
+  byCode(y, "ON").propertyTax.estimated = true;
+  const text = render(y);
+  assert.ok(text.includes("Winnipeg 1.38%, Toronto 0.76%, Montreal"));
+  assert.ok(text.includes("St. John's 0.91%. The Toronto rate is an estimate, not yet checked against 2026 municipal"));
+  assert.ok(text.includes("1.67% in Charlottetown; the Toronto rate is an estimate, not yet checked against 2026"));
+});
+
+test("when every provincial property tax rate is estimated, the notes say so once", () => {
+  const y = structuredClone(loadYear(2026));
+  for (const p of y.provinces) p.propertyTax.estimated = true;
+  const text = render(y);
+  assert.ok(text.includes("St. John's 0.91%. Provincial rates are estimates, not yet checked against 2026 municipal"));
+  assert.ok(text.includes("1.67% in Charlottetown; provincial rates are estimates, not yet checked against 2026"));
+});
+
+for (const year of listYears())
+  test(`${year}: rough property tax placeholders are also marked estimated`, () => {
+    for (const p of loadYear(year).provinces)
+      if (p.propertyTax.rough) assert.equal(p.propertyTax.estimated, true, `${p.code} rough but not estimated`);
+  });
+
 // Each case changes one data value and names text that must appear (and text that must go) as a result.
 const CASES: [string, (y: YearData) => void, string, string][] = [
   [

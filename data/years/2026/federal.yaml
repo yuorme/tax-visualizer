@@ -48,6 +48,8 @@ childBenefit:   # Canada Child Benefit, July 2026 – June 2027
   rate2: [0, 0.032, 0.057, 0.08, 0.095]
 
 groceriesBenefit:   # Canada Groceries and Essentials Benefit (formerly the GST/HST credit)
+  name: Canada Groceries and Essentials Benefit   # RC4210, July 2026 – June 2027
+  formerName: GST/HST credit                      # RC4210: "The CGEB replaces the ... GST/HST credit"
   adult: 445
   spouseOrFirstChild: 445
   child: 234
@@ -74,6 +76,7 @@ sources:
   - {label: "CRA, Current year tax rates and income brackets", url: "https://www.canada.ca/en/revenue-agency/services/tax/individuals/tax-rates-brackets/current-year.html"}
   - {label: "CRA, T4127 Payroll Deductions Formulas", url: "https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas.html"}
   - {label: "CRA, T4114 Canada child benefit and related programs", url: "https://www.canada.ca/en/revenue-agency/services/forms-publications/publications/t4114.html"}
+  - {label: "CRA, RC4210 Canada Groceries and Essentials Benefit (formerly the GST/HST credit)", url: "https://www.canada.ca/en/revenue-agency/services/forms-publications/publications/rc4210/gst-hst-credit.html"}
   - {label: "CRA, Adjustment of personal income tax and benefit amounts (indexation)", url: "https://www.canada.ca/en/revenue-agency/services/tax/individuals/frequently-asked-questions-individuals/adjustment-personal-income-tax-benefit-amounts.html"}
   - {label: "Canada–United States Tax Convention, Article X", url: "https://www.canada.ca/en/department-finance/programs/tax-policy/tax-treaties/country/united-states-america-convention-consolidated-1980-1983-1984-1995-1997-2007.html"}
   - {label: "Income Tax Act, s. 20(11)", url: "https://laws-lois.justice.gc.ca/eng/acts/I-3.3/section-20.html"}
