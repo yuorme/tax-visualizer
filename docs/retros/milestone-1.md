@@ -24,7 +24,8 @@ Six of seven reviewed issues needed a second round. Five of those six findings w
 
 ## Defects found after merge
 
-None known when written (pull request #68 still open). One near-miss: the #37 review fixes were pushed after the user merged pull request #60, recreating
+None known when written (pull request #68 still open). One near-miss: the #37 review fixes were pushed after the
+user merged pull request #60, recreating
 the deleted branch (follow-up pull request #62).
 
 ## Time lost
