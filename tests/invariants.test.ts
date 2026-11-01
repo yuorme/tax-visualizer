@@ -160,20 +160,35 @@ function sweepBases(seed: number): Household[] {
 
 const BASES = sweepBases(1);
 
-/** What one sweep of every province found for a year; each list holds a description of each violation. */
+/** One step of a sweep: the household before and after the active person's raise, and both results. */
+interface Step {
+  y: YearData;
+  p: Province;
+  from: Household;
+  to: Household;
+  a: H;
+  b: H;
+}
+const describe = (s: Step) => `${where(s.y, s.p, s.from)} → active person's income ${s.to.people[s.to.active].ord}`;
+
+/** What one sweep of every province found for a year. */
 interface Findings {
   taxFell: string[]; // income tax fell as income rose
   grossFell: string[]; // income tax plus payroll fell
-  rising: Map<string, string>; // benefit program → an example step where it rose with income
-  cliffs: Map<string, string>; // cliff program → an example step where it cut disposable income
-  stacked: Map<string, string>; // province → an example step where clawbacks together cut disposable income
+  rising: Map<string, Map<string, string>>; // province → benefit program seen rising with income → an example
+  cliffs: Map<string, Set<string>>; // province → cliff programs seen cutting disposable income
+  stacked: Step[]; // disposable income fell with no cliff: clawbacks stacked past 100%
 }
 
 /** Walk the active person's employment income from 0 to SWEEP_MAX in SWEEP_STEP steps, for every base household
  *  in every province, and note each step where a result moves the wrong way. One walk serves several tests. */
 function sweepYear(y: YearData): Findings {
-  const out: Findings = { taxFell: [], grossFell: [], rising: new Map(), cliffs: new Map(), stacked: new Map() };
-  for (const p of y.provinces)
+  const out: Findings = { taxFell: [], grossFell: [], rising: new Map(), cliffs: new Map(), stacked: [] };
+  for (const p of y.provinces) {
+    const rising = new Map<string, string>(),
+      cliffs = new Set<string>();
+    out.rising.set(p.code, rising);
+    out.cliffs.set(p.code, cliffs);
     for (const base of BASES) {
       let from: Household | null = null,
         a: H | null = null;
@@ -184,27 +199,28 @@ function sweepYear(y: YearData): Findings {
         };
         const b = household(y, p, to);
         if (from && a) {
-          const step = `${where(y, p, from)} → active person's income ${ord}`;
-          if (incomeTax(b) < incomeTax(a) - EPS) out.taxFell.push(step);
-          if (b.total < a.total - EPS) out.grossFell.push(step);
+          const s: Step = { y, p, from, to, a, b };
+          if (incomeTax(b) < incomeTax(a) - EPS) out.taxFell.push(describe(s));
+          if (b.total < a.total - EPS) out.grossFell.push(describe(s));
           const la = benefitLines(p, a),
             lb = benefitLines(p, b);
           let cliff = "";
           for (const key of keysOf(la, lb)) {
             const d = lineOf(la, key) - lineOf(lb, key);
-            if (d < -EPS && !out.rising.has(key)) out.rising.set(key, step);
+            if (d < -EPS && !rising.has(key)) rising.set(key, describe(s));
             if (d > EPS && CLIFFS.has(key)) cliff = key; // a step benefit only falls at a step
           }
           // Disposable income (cash less net tax) fell: the extra income cost more than it paid
           if (b.cash - b.netTotal < a.cash - a.netTotal - EPS) {
-            const [seen, key] = cliff ? [out.cliffs, cliff] : [out.stacked, p.code];
-            if (!seen.has(key)) seen.set(key, step);
+            if (cliff) cliffs.add(cliff);
+            else out.stacked.push(s);
           }
         }
         from = to;
         a = b;
       }
     }
+  }
   return out;
 }
 
@@ -230,14 +246,57 @@ const PHASE_IN = new Set([
 /** Benefits that end in a step rather than a taper, so one more dollar of income can cost a family hundreds. */
 const CLIFFS = new Set(["nova-scotia-child-benefit", "income-band-per-child"]);
 
-/** Provinces where clawbacks that each taper smoothly stack past 100% for some families, so a raise lowers
- *  disposable income even without a cliff. Both are real features of the rules, not engine errors:
- *  - NL: for a family with several children in the high $40,000s, the Canada Child Benefit, Canada Workers
- *    Benefit, federal sales tax credit, NL income supplement and NL low-income reduction clawbacks plus tax and
- *    payroll come to about 102%.
- *  - ON: the Ontario Health Premium's steepest band (25% of income) on top of the Canada Child Benefit, Ontario
- *    Child Benefit, Canada Workers Benefit and sales tax credit clawbacks, about 110%. */
-const STACKED = new Set(["NL", "ON"]);
+/** A known place where a raise lowers disposable income without a cliff, pinned to a province, a household shape
+ *  and a range of net income (and to a year, for an exception tied to one year's data). */
+interface Stacked {
+  code: string;
+  year?: number;
+  why: string;
+  applies: (s: Step) => boolean;
+}
+const singleParent = (hh: Household, minKids: number) =>
+  hh.people.length === 1 && hh.adults === 1 && hh.kids >= minKids;
+/** The step's family net income lies within [lo, hi]. */
+const netWithin = (s: Step, lo: number, hi: number) => s.a.famNet >= lo && s.b.famNet <= hi;
+/** The step's net income overlaps one of the Ontario Health Premium's steepest bands, as the year's data sets them. */
+function inSteepestOhpBand(s: Step): boolean {
+  const bands = s.p.payroll?.healthPremium ?? [];
+  const top = Math.max(0, ...bands.map(([, , rate]) => rate));
+  return bands.some(
+    ([from, base, rate, cap]) => rate === top && s.a.famNet < from + (cap - base) / rate && s.b.famNet > from,
+  );
+}
+
+/** Where smooth clawbacks stack past 100%, so a raise lowers disposable income. Every entry must still be seen. */
+const STACKED: Stacked[] = [
+  {
+    code: "ON",
+    why:
+      "a single parent with 3+ children in an Ontario Health Premium band charged at 25%, on top of the Canada " +
+      "Child Benefit, Ontario Child Benefit, Canada Workers Benefit and sales tax credit clawbacks: up to about 110%",
+    applies: s => singleParent(s.to, 3) && inSteepestOhpBand(s),
+  },
+  {
+    code: "NL",
+    why:
+      "a single parent with 4+ children at $45,000 to $50,000 of net income: the Canada Child Benefit, Canada " +
+      "Workers Benefit, sales tax credit, NL income supplement and NL low-income reduction clawbacks plus tax and " +
+      "payroll come to about 102%",
+    applies: s => singleParent(s.to, 4) && netWithin(s, 45_000, 50_000),
+  },
+  {
+    code: "NL",
+    year: 2025,
+    why:
+      "#77: a single parent with 5 children at $37,000 to $38,500 of net income, about 109%. The NL Child Benefit " +
+      "falls by about 50 cents a dollar here under the estimated straight-line taper in data/years/2025 (without " +
+      "it the rate is about 59%). Not excused as a rule: when #77 corrects the taper this entry stops matching, " +
+      "and the test says to remove it",
+    applies: s => singleParent(s.to, 5) && netWithin(s, 37_000, 38_500),
+  },
+];
+const stackedFor = (s: Step) =>
+  STACKED.find(k => k.code === s.p.code && (k.year === undefined || k.year === s.y.year) && k.applies(s));
 
 for (const y of YEARS) {
   test(`${y.year}: more employment income never lowers income tax, nor income tax plus payroll`, () => {
@@ -248,24 +307,29 @@ for (const y of YEARS) {
 
   test(`${y.year}: net tax after benefits falls with more income only where a benefit phases in`, () => {
     const f = findingsFor(y);
-    for (const [key, step] of f.rising) assert.ok(PHASE_IN.has(key), `${key} rose with income: ${step}`);
-    // The list stays exact: every phase-in program in this year's data is seen phasing in.
-    const present = new Set(y.provinces.flatMap(p => [...programsIn(p)]));
-    assert.deepEqual([...f.rising.keys()].sort(), [...PHASE_IN].filter(k => present.has(k)).sort());
+    for (const p of y.provinces) {
+      const rising = f.rising.get(p.code) ?? new Map<string, string>();
+      for (const [key, step] of rising) assert.ok(PHASE_IN.has(key), `${key} rose with income: ${step}`);
+      // The list stays exact per province: each phase-in program the province has is seen phasing in there.
+      const expected = [...PHASE_IN].filter(k => programsIn(p).has(k)).sort();
+      assert.deepEqual([...rising.keys()].sort(), expected, `${y.year} ${p.code}: programs seen phasing in`);
+    }
   });
 
   test(`${y.year}: a raise lowers disposable income only at a benefit cliff or where clawbacks stack`, () => {
     const f = findingsFor(y);
-    for (const [code, step] of f.stacked)
-      assert.ok(STACKED.has(code), `${code}: a raise cost more than it paid: ${step}`);
-    const present = new Set(y.provinces.flatMap(p => [...programsIn(p)]));
-    assert.deepEqual([...f.cliffs.keys()].sort(), [...CLIFFS].filter(k => present.has(k)).sort());
+    for (const s of f.stacked) assert.ok(stackedFor(s), `${s.p.code}: a raise cost more than it paid: ${describe(s)}`);
+    for (const p of y.provinces) {
+      const expected = [...CLIFFS].filter(k => programsIn(p).has(k)).sort();
+      assert.deepEqual([...(f.cliffs.get(p.code) ?? [])].sort(), expected, `${y.year} ${p.code}: cliffs seen`);
+    }
   });
 }
 
-test("the known stacked-clawback provinces still stack in at least one year", () => {
-  const seen = new Set(YEARS.flatMap(y => [...findingsFor(y).stacked.keys()]));
-  assert.deepEqual([...seen].sort(), [...STACKED].sort());
+test("every known stacked-clawback exception is still seen", () => {
+  const seen = new Set(YEARS.flatMap(y => findingsFor(y).stacked.map(stackedFor)));
+  for (const k of STACKED)
+    assert.ok(seen.has(k), `${k.code}${k.year ? ` ${k.year}` : ""} no longer stacks (${k.why}): remove the entry`);
 });
 
 // ---- Rates, signs and caps ------------------------------------------------------------------------------------
@@ -378,10 +442,15 @@ test("swapping two unrelated adults leaves income tax and payroll unchanged (ben
       b = household(y, p, swapped);
     for (const k of ["fed", "prov", "wh", "payroll"] as const)
       assert.ok(close(a[k], b[k]), `${k}: ${a[k]} vs ${b[k]} swapped: ${where(y, p, hh)}`);
+    // Known exception, #74: benefits and refundable credits use only the first person's income, so the gap is
+    // exactly the first person's benefits less the second's, each worked out with the other adult at $0.
+    // When #74 is fixed these fail: add "ccb", "provBen" and "refund" to the keys above and delete this part.
+    const firstOnly = (x: Person) => household(y, p, { ...hh, people: [x, blank(0)] }).benefits;
+    const gap = firstOnly(hh.people[0]) - firstOnly(hh.people[1]);
+    assert.ok(close(a.benefits, firstOnly(hh.people[0])), `#74: benefits not the first person's: ${where(y, p, hh)}`);
+    assert.ok(close(a.benefits - b.benefits, gap), `#74: swap gap ${a.benefits - b.benefits} ≠ ${gap}`);
     if (!close(a.benefits, b.benefits)) benefitsDiffer++;
   });
-  // Known exception, #74: benefits and refundable credits use only the first person's income. When this fails,
-  // #74 is fixed: add "ccb", "provBen" and "refund" to the keys above and delete this check.
   assert.ok(benefitsDiffer > 0, "unrelated adults' benefits are now symmetric: #74 looks fixed");
 });
 
