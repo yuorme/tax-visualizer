@@ -1,0 +1,187 @@
+Title: Last year tax rates and income brackets (2025)
+URL: https://www.canada.ca/en/revenue-agency/services/tax/individuals/tax-rates-brackets/last-year.html
+Fetched: 2026-11-01
+SHA-256 of the original: 928a37800144628aaef60526a8ef705f77fde1a60168e31fc3a74957c9da36e0
+Publication date modified: 2026-06-25
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+Personal income tax
+
+# Last year tax rates and income brackets (2025)
+
+- For income earned in: 2025
+- Applied to: 2025 tax return (to be filed in 2026)
+
+Provincial or territorial income tax rates apply in addition to federal income tax rates. The tax rates are split up into income brackets. Each rate applies only to the corresponding income bracket, not to all income.
+
+## Federal rate for 2025
+
+The rate is determined by the Government of Canada.
+
+Federal rate: 2025
+Each portion of your taxable income
+from | up to | is taxed at
+$0 | $57,375 | 14.5% Footnote 1
+$57,375.01 | $114,750 | 20.5%
+$114,750.01 | $177,882 | 26%
+$177,882.01 | $253,414 | 29%
+$253,414.01 | unlimited | 33%
+
+Footnote 1
+
+The federal tax rate decreased from 15% to 14% on July 1, 2025, making the tax rate 14.5% for 2025.
+
+Return to footnote1 referrer
+
+## Provincial or territorial rates for 2025
+
+The rate is determined by your province or territory of residence on December 31, 2025.
+
+Alberta
+
+Alberta rate: 2025
+Each portion of your taxable income
+from | up to | is taxed at
+$0 | $60,000 | 8% Footnote 2
+$60,000.01 | $151,234 | 10%
+$151,234.01 | $181,481 | 12%
+$181,481.01 | $241,974 | 13%
+$241,974.01 | $362,961 | 14%
+$362,961.01 | unlimited | 15%
+
+Footnote 2
+
+A new Alberta tax bracket of 8% was added on July 1, 2025
+
+Return to footnote2 referrer
+
+British Columbia
+
+British Columbia rate: 2025
+Each portion of your taxable income
+from | up to | is taxed at
+$0 | $49,279 | 5.06%
+$49,279.01 | $98,560 | 7.7%
+$98,560.01 | $113,158 | 10.5%
+$113,158.01 | $137,407 | 12.29%
+$137,407.01 | $186,306 | 14.7%
+$186,306.01 | $259,829 | 16.8%
+$259,829.01 | unlimited | 20.5%
+
+Manitoba
+
+Manitoba rate: 2025
+Each portion of your taxable income
+from | up to | is taxed at
+$0 | $47,564 | 10.8%
+$47,564.01 | $101,200 | 12.75%
+$101,200.01 | unlimited | 17.4%
+
+New Brunswick
+
+New Brunswick rate: 2025
+Each portion of your taxable income
+from | up to | is taxed at
+$0 | $51,306 | 9.4%
+$51,306.01 | $102,614 | 14%
+$102,614.01 | $190,060 | 16%
+$190,060.01 | unlimited | 19.5%
+
+Newfoundland and Labrador
+
+Newfoundland and Labrador rate: 2025
+Each portion of your taxable income
+from | up to | is taxed at
+$0 | $44,192 | 8.7%
+$44,192.01 | $88,382 | 14.5%
+$88,382.01 | $157,792 | 15.8%
+$157,792.01 | $220,910 | 17.8%
+$220,910.01 | $282,214 | 19.8%
+$282,214.01 | $564,429 | 20.8%
+$564,429.01 | $1,128,858 | 21.3%
+$1,128,858.01 | unlimited | 21.8%
+
+Northwest Territories
+
+Northwest Territories rate: 2025
+Each portion of your taxable income
+from | up to | is taxed at
+$0 | $51,964 | 5.9%
+$51,964.01 | $103,930 | 8.6%
+$103,930.01 | $168,967 | 12.2%
+$168,967.01 | unlimited | 14.05%
+
+Nova Scotia
+
+Nova Scotia rate: 2025
+Each portion of your taxable income
+from | up to | is taxed at
+$0 | $30,507 | 8.79%
+$30,507.01 | $61,015 | 14.95%
+$61,015.01 | $95,883 | 16.67%
+$95,883.01 | $154,650 | 17.5%
+$154,650.01 | unlimited | 21%
+
+Nunavut
+
+Nunavut rate: 2025
+Each portion of your taxable income
+from | up to | is taxed at
+$0 | $54,707 | 4%
+$54,707.01 | $109,413 | 7%
+$109,413.01 | $177,881 | 9%
+$177,881.01 | unlimited | 11.5%
+
+Ontario
+
+Ontario rate: 2025
+Each portion of your taxable income
+from | up to | is taxed at
+$0 | $52,886 | 5.05%
+$52,886.01 | $105,775 | 9.15%
+$105,775.01 | $150,000 | 11.16%
+$150,000.01 | $220,000 | 12.16%
+$220,000.01 | unlimited | 13.16%
+
+Prince Edward Island
+
+Prince Edward Island rate: 2025
+Each portion of your taxable income
+from | up to | is taxed at
+$0 | $33,328 | 9.5%
+$33,328.01 | $64,656 | 13.47%
+$64,656.01 | $105,000 | 16.6%
+$105,000.01 | $140,000 | 17.62%
+$140,000.01 | unlimited | 19%
+
+Quebec
+
+Refer to Revenu Québec's income tax rates.
+
+Saskatchewan
+
+Saskatchewan rate: 2025
+Each portion of your taxable income
+from | up to | is taxed at
+$0 | $53,463 | 10.5%
+$53,463.01 | $152,750 | 12.5%
+$152,750.01 | unlimited | 14.5%
+
+Yukon
+
+Yukon rate: 2025
+Each portion of your taxable income
+from | up to | is taxed at
+$0 | $57,375 | 6.4%
+$57,375.01 | $114,750 | 9%
+$114,750.01 | $177,882 | 10.9%
+$177,882.01 | $500,000 | 12.8%
+$500,000.01 | unlimited | 15%
+
+### How tax rates and brackets work
+
+Learn how you are taxed at different rates based on your income level.
+
+- Interactive chart
+- Video

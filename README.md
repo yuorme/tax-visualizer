@@ -35,6 +35,7 @@ open dist/index.html
 | `npm run golden:capture -- <year>` | Captures `tests/golden/<year>.json` from the engine; `--force` overwrites |
 | `npm run golden:capture-legacy` | How 2026 was first locked: reruns the original app in `legacy/` |
 | `npm run year-diff -- <year> [<base-year>]` | Markdown report of a year's data against the previous year: changes, large changes, amounts left unchanged (likely carried over), added and removed fields. A `# not indexed` comment marks an amount that is meant to stay the same |
+| `npm run fetch-source -- <year> <url> [<name>]` | Caches a text extract of an official PDF, web page or text file in `docs/verification/<year>/sources/<name>.txt` and adds its row (title, URL, date, SHA-256 of the original) to `INDEX.md` there. The original isn't kept; extracts over 250 KB are refused, so pass `--pages 3-7,12` for a large PDF. `--force` replaces an extract, `--title` sets its title |
 
 ## How it's organized
 
