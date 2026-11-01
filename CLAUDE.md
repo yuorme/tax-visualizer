@@ -69,15 +69,31 @@ The main session orchestrates; `.claude/agents/` defines a `coder` (Opus, code c
 a `data-collector` (Sonnet, a year's figures from official sources, also in a worktree) and a `reviewer` (Sonnet,
 its own worktree, doesn't edit tracked files, runs the checks). For reviews of engine or rule changes and of
 significant layout changes, pass `model: opus` on the call. Give each agent one issue and an explicit list of files
-it owns; never run two agents on the same file at once. Every branch gets a reviewer pass before it merges; give
-the reviewer the branch name or commit hash from the agent's report.
+it owns; never run two agents on the same file at once. Exception: in `src/data/schema.ts`, adding new fields or
+program entries doesn't need exclusive ownership (editing existing ones does). Every branch gets a reviewer pass
+before it merges; give the reviewer the pull request number from the agent's report.
 New worktrees start from `origin/main`, and a new worktree has no `node_modules`, so agents run `npm ci` first.
+When one issue needs another's unmerged work, branch from that branch (stacked) and say so in "Blocked by".
+
+A data year can be split across parallel data-collectors by region (federal; BC, AB, SK, MB; ON, QC; Atlantic;
+territories), each owning its own `data/years/<year>/` files on its own branch. One of them, usually federal, is
+told to merge the others' branches when they finish, then writes the reference tests and captures the golden
+results. Collectors cache what they read with `npm run fetch-source` in `docs/verification/<year>/sources/`, so
+reviewers check figures against the same text.
+
+## Milestone retros
+When a milestone's last pull request merges, the orchestrator writes `docs/retros/<milestone>.md`: per issue, the
+agent tokens, review rounds to approval and what the extra rounds fixed; defects found after merge; and time lost to
+blocking or interruptions. It proposes at most three process changes, each tied to a number in the retro, in one
+pull request for the user. Each change should also remove or merge a rule where it can: keep this file under about
+110 lines and each agent definition under about 45. Drop a rule that a later retro shows had no effect.
 
 ## Merging
 `main` only changes through pull requests, and the `check` CI job must pass first (an admin can bypass in an
-emergency). For each finished branch: push it, open a pull request (`gh pr create`) whose body says `Closes #N`, run
-the reviewer, and post its verdict on the pull request. Use merge commits, not squash or rebase, so commit hashes
-survive (`.git-blame-ignore-revs` lists formatting commits by hash).
+emergency). The agent that finishes a branch pushes it and opens the pull request (`gh pr create`, body says
+`Closes #N`); the orchestrator then runs the reviewer, which posts its verdict on the pull request, and sends any
+findings to fix back to the same agent. Use merge commits, not squash or rebase, so commit hashes survive
+(`.git-blame-ignore-revs` lists formatting commits by hash).
 
 Once the pull request is final (reviewer approved, no open should-fix findings, no more commits planned), the
 orchestrator queues it with `gh pr merge N --auto --merge`; GitHub merges it once CI passes (at once if it already
