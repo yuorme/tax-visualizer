@@ -13,7 +13,7 @@ basicPersonalAmount: 22323
 dividendTaxCredit: {eligible: 0.0812, nonEligible: 0.0218}
 spouseAmount: {max: 22323, threshold: 0}
 salesTax: {rate: 0.05, label: "5% GST"}
-propertyTax: {rate: 0.0066, city: Calgary}   # carried over from 2026 (estimated); not checked against 2025 municipal rates
+propertyTax: {rate: 0.0066, city: Calgary, estimated: true}   # carried over from 2026 (estimated); not checked against 2025 municipal rates
 childBenefit:
   name: Alberta Child and Family Benefit
   program: alberta-child-family-benefit
@@ -32,3 +32,4 @@ sources:
   - {label: "CRA, Form AB428 for 2025 (basic and spouse amounts $22,323)", url: "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5009-c/5009-c-25e.pdf"}
   - {label: "CRA, T4114 (Alberta child and family benefit, July 2025 to June 2026)", url: "https://www.canada.ca/content/dam/cra-arc/formspubs/pub/t4114/t4114-25e.pdf"}
   - {label: "CRA, T4127 120th edition, Table 8.2 (2025 basic amounts)", url: "https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/payroll-deductions-t4127-payroll-deductions-formulas/t4127-jan-120th-edition-effective-january-1-2025/t4127-jan-payroll-deductions-formulas-computer-programs.html"}
+  - {label: "nesto, Canada Property Tax Guide 2026 (residential property tax rate, carried over to 2025)", url: "https://www.nesto.ca/mortgage-basics/property-taxes-canada-highest-to-lowest/"}

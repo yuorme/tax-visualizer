@@ -26,3 +26,5 @@ credits:
   - name: PEI essentials benefit
     program: pei-essentials-benefit
     params: {single: 310, family: 365, rate: 0.01, threshold: 95000, minimum: 175}
+sources:
+  - {label: "WOWA, Charlottetown property tax (2026 residential rate: 0.67% municipal + 1% provincial)", url: "https://wowa.ca/taxes/charlottetown-property-tax"}

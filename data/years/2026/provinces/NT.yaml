@@ -12,7 +12,7 @@ dividendTaxCredit: {eligible: 0.115, nonEligible: 0.06}
 spouseAmount: {max: 18198, threshold: 0}
 payroll: {employeeTax: 0.02}
 salesTax: {rate: 0.05, label: "5% GST"}
-propertyTax: {rate: 0.0100, city: "Yellowknife (est.)", estimated: true}
+propertyTax: {rate: 0.0100, city: "Yellowknife (est.)", estimated: true, rough: true}   # no published rate used: a rough placeholder
 childBenefit:
   name: NWT Child Benefit
   program: nwt-child-benefit

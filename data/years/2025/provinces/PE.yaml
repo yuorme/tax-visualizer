@@ -15,7 +15,7 @@ lowIncomeReduction:
   program: family-low-income-reduction
   params: {individual: 350, spouse: 350, child: 300, rate: 0.05, threshold: 22650}
 salesTax: {rate: 0.15, label: "15% HST"}
-propertyTax: {rate: 0.0167, city: Charlottetown}   # carried over from 2026 (estimated); not checked against 2025 municipal rates
+propertyTax: {rate: 0.0167, city: Charlottetown, estimated: true}   # carried over from 2026 (estimated); not checked against 2025 municipal rates
 childBenefit:
   name: PEI Child Benefit
   program: income-band-per-child
@@ -31,3 +31,4 @@ sources:
   - {label: "CRA, 2025 tax rates and income brackets", url: "https://www.canada.ca/en/revenue-agency/services/tax/individuals/tax-rates-brackets/last-year.html"}
   - {label: "CRA, T4114 (PEI child benefit, July 2025 to June 2026)", url: "https://www.canada.ca/content/dam/cra-arc/formspubs/pub/t4114/t4114-25e.pdf"}
   - {label: "CRA, RC4210 (PEI sales tax credit, 2025-2026)", url: "https://www.canada.ca/content/dam/cra-arc/formspubs/pub/rc4210/rc4210-25e.txt"}
+  - {label: "WOWA, Charlottetown property tax (2026 residential rate: 0.67% municipal + 1% provincial, carried over to 2025)", url: "https://wowa.ca/taxes/charlottetown-property-tax"}

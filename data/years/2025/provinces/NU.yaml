@@ -13,12 +13,14 @@ spouseAmount: {max: 19274, threshold: 0}
 childAmount: {perChild: 1200, ages: under6}
 payroll: {employeeTax: 0.02}
 salesTax: {rate: 0.05, label: "5% GST"}
-propertyTax: {rate: 0.0100, city: "Iqaluit (est.)", estimated: true}
+propertyTax: {rate: 0.0100, city: "Iqaluit (est.)", estimated: true, rough: true}   # no published rate used: a rough placeholder
 childBenefit:
   name: Nunavut Child Benefit
   program: per-child-reduced
   params: {perChild: 348, threshold: 22065, rateOneChild: 0.03, rateMoreChildren: 0.05}     # $29 a month (T4114-25); $58 from July 2026
+  rateSource: its 2026 Bill 4 (no 2025 source gives them)   # rates carried back from 2026
 sources:
   - {label: "CRA, Form NU428 for 2025 (basic and spouse amounts, children under 6)", url: "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5014-c/5014-c-25e.pdf"}
   - {label: "CRA, 2025 tax rates and income brackets", url: "https://www.canada.ca/en/revenue-agency/services/tax/individuals/tax-rates-brackets/last-year.html"}
   - {label: "CRA, T4114 (Nunavut child benefit, July 2025 to June 2026)", url: "https://www.canada.ca/content/dam/cra-arc/formspubs/pub/t4114/t4114-25e.pdf"}
+  - {label: "Legislative Assembly of Nunavut, Bill 4 (2026), Income Tax Act amendments (child benefit reduction rates)", url: "https://assembly.nu.ca/sites/default/files/2026-05/Bill_4_AATA_Income_Tax_Act_EF.pdf"}
