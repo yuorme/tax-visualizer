@@ -71,11 +71,29 @@ function lookup(y: YearData) {
       prov(code).credits?.find(c => c.program === id) as Extract<CreditProgram, { program: Id }> | undefined,
       `${code} ${id} credit`,
     );
+  /** The name of whichever of these programs the province runs that year (one replaced another). */
+  const creditName = (code: string, ids: CreditProgram["program"][]) =>
+    need(prov(code).credits?.find(c => ids.includes(c.program))?.name, `${code} ${ids.join(" or ")} credit name`);
   const quebec = need(
     y.provinces.find(p => p.system === "quebec"),
     "Quebec-system province",
   );
-  return { prov, childBenefit, credit, quebec };
+  return { prov, childBenefit, credit, creditName, quebec };
+}
+
+/** Property tax rates split three ways: published for the year, estimated, and rough placeholders. */
+function propertyRates(ps: Province[]) {
+  const listed = ps.filter(p => !p.propertyTax.rough);
+  return { listed, estimated: listed.filter(p => p.propertyTax.estimated), rough: ps.filter(p => p.propertyTax.rough) };
+}
+/** Says which listed property tax rates are estimates, or "" when none is: "provincial rates are estimates, …". */
+function estimatedRates(y: YearData, listed: Province[], estimated: Province[], city: (p: Province) => string) {
+  if (!estimated.length) return "";
+  const which =
+    estimated.length === listed.length
+      ? "provincial rates are estimates"
+      : `the ${list(estimated.map(city))} ${estimated.length > 1 ? "rates are estimates" : "rate is an estimate"}`;
+  return `${which}, not yet checked against ${y.year} municipal rates`;
 }
 
 /** The provincial basic personal amount before any phase-out. */
@@ -100,16 +118,22 @@ export function tooltips(y: YearData): Record<string, string> {
   };
   const bpa = ext(y.provinces, p => provincialBpa(y, p));
   const sales = ext(y.provinces, p => p.salesTax.rate);
-  const published = y.provinces.filter(p => !p.propertyTax.estimated);
-  const prop = ext(published, p => p.propertyTax.rate);
+  const { listed, estimated, rough } = propertyRates(y.provinces);
+  const prop = ext(listed, p => p.propertyTax.rate);
   const city = (ps: Province[]) => list(ps.map(p => p.propertyTax.city));
+  const propCaveats = [
+    estimatedRates(y, listed, estimated, p => p.propertyTax.city),
+    rough.length ? "territorial rates are rough estimates" : "",
+  ].filter(Boolean);
+  const gb = F.groceriesBenefit,
+    gbName = need(gb.name, "groceries benefit name");
   return {
     deductions: `Amounts subtracted from your income before tax is worked out: RRSP and FHSA contributions, union and professional dues, childcare expenses, deductible support payments, moving expenses and similar. Max RRSP fills in ${rate(F.rrsp.rate)} of employment income, up to the ${y.year} limit of ${money(F.rrsp.limit)}. Your actual room is ${rate(F.rrsp.rate)} of last year's earned income, less any pension adjustment, plus unused room carried forward; it's on your notice of assessment.`,
     bpa: `Every taxpayer gets a non-refundable credit on a basic amount of income: ${money(F.basicPersonalAmount.max)} federally in ${y.year}, plus a provincial amount from ${money(bpa.lo)} in ${places(y, bpa.atLo)} to ${money(bpa.hi)} in ${places(y, bpa.atHi)}. Switch off to see bracket rates alone.`,
     spending: `Your household's monthly spending on things sales tax applies to, before tax. A quick estimate: your average monthly credit card and debit spending, minus groceries, prescriptions and healthcare. Usually exempt across Canada: basic groceries, rent and mortgage payments, prescription drugs, most medical and dental care, insurance premiums and banking fees, childcare, tuition, and public transit. Usually taxed: restaurant meals and takeout, alcohol, clothing, electronics, furniture and household goods, gas, utilities, phone and internet, vehicles and repairs, travel, and most services. ${y.year} rates run from ${sales.atLo[0].salesTax.label} in ${places(y, sales.atLo)} to ${sales.atHi[0].salesTax.label} in ${places(y, sales.atHi)}. The starting amount is a rough estimate for a household with the adults and children set here; adjust it to match your own spending.`,
     children: `Children under 18. They raise the spending estimate and add child benefits: the Canada Child Benefit plus your province's benefit (every province and territory with one), using ${benefitYear(y)} amounts. Benefits are netted off the tax shown. Once you have at least one child, drag the small slate handle on the same track to say how many are under 6, since they get a higher CCB.`,
-    property: `Annual property tax = home value × municipal rate. Each province uses the typical ${y.year} residential rate in its largest city, from ${fixed(prop.lo, 2)} in ${city(prop.atLo)} to ${fixed(prop.hi, 2)} in ${city(prop.atHi)}${published.length < y.provinces.length ? "; territorial rates are rough estimates" : ""}. Editing the rate changes your home province only. The same home value is used everywhere, though home prices differ a lot between cities. Renters pay property tax indirectly through rent, which isn't counted here.`,
-    credits: `Credits paid to lower- and modest-income households, worked out from the income and household above: the Canada Groceries and Essentials Benefit (formerly the GST/HST credit), the Canada Workers Benefit, and your province's credits, such as the Ontario Trillium Benefit, Quebec's solidarity credit and work premium, and the low-income credits in Saskatchewan, New Brunswick, Nova Scotia, PEI and Newfoundland and Labrador. Amounts are for ${benefitYear(y)} (the ${y.year} tax year for the Workers Benefit). They're netted off the tax shown, together with child benefits.`,
+    property: `Annual property tax = home value × municipal rate. Each province uses the typical ${y.year} residential rate in its largest city, from ${fixed(prop.lo, 2)} in ${city(prop.atLo)} to ${fixed(prop.hi, 2)} in ${city(prop.atHi)}${propCaveats.length ? `; ${clauses(propCaveats)}` : ""}. Editing the rate changes your home province only. The same home value is used everywhere, though home prices differ a lot between cities. Renters pay property tax indirectly through rent, which isn't counted here.`,
+    credits: `Credits paid to lower- and modest-income households, worked out from the income and household above: the ${gbName}${gb.formerName ? ` (formerly the ${gb.formerName})` : ""}, the Canada Workers Benefit, and your province's credits, such as the Ontario Trillium Benefit, Quebec's solidarity credit and work premium, and the low-income credits in Saskatchewan, New Brunswick, Nova Scotia, PEI and Newfoundland and Labrador. Amounts are for ${benefitYear(y)} (the ${y.year} tax year for the Workers Benefit). They're netted off the tax shown, together with child benefits.`,
     capitalGains: `Profit from selling investments for more than you paid (their adjusted cost base), minus losses on anything sold at a loss during the year. Only ${rate(inv.capitalGainsInclusion)} of a net gain is taxable. A net loss doesn't reduce other income this year, but it can be carried back 3 years or forward indefinitely against future gains. Double-click the amount or slider to reset to 0.`,
     eligibleDividends: `Dividends from Canadian public companies, and from private corporations paying out income taxed at the general corporate rate. Most dividends from Canadian stocks and Canadian equity ETFs are eligible. They're grossed up by ${rate(inv.grossUp.eligible - 1)} and earn the enhanced dividend tax credit, so they're taxed well below salary.`,
     nonEligibleDividends: `Dividends paid from corporate income taxed at the small business rate, usually from a small private corporation you own. They're grossed up by ${rate(inv.grossUp.nonEligible - 1)} and earn a smaller dividend tax credit than eligible dividends.`,
@@ -121,7 +145,7 @@ export function tooltips(y: YearData): Record<string, string> {
 /** The methodology notes, as HTML paragraphs. */
 export function footerNotes(y: YearData, page: PageDefaults): string {
   const F = y.federal,
-    { prov, childBenefit, credit, quebec } = lookup(y),
+    { prov, childBenefit, credit, creditName, quebec } = lookup(y),
     year = y.year;
   const P = y.provinces; // west to east
   const para = (title: string, body: string) => `<p><b>${title}.</b> ${body}</p>`;
@@ -225,10 +249,11 @@ export function footerNotes(y: YearData, page: PageDefaults): string {
   const qfa = childBenefit(quebec.code, "quebec-family-allowance").params;
   const nwt = childBenefit("NT", "nwt-child-benefit").params;
   const nlb = childBenefit("NL", "nl-child-benefit").params;
-  const nub = childBenefit("NU", "per-child-reduced").params;
+  const nu = childBenefit("NU", "per-child-reduced"),
+    nub = nu.params;
   const children = [
     `${benefitYear(y)} amounts, applied to current-year income: the Canada Child Benefit (${money(ccb.perChildUnder6)} per child under 6 or ${money(ccb.perChild6to17)} aged 6–17, reduced above ${money(ccb.threshold1)} of family net income), the Ontario Child Benefit (up to ${money(ocb.perChild)} per child), Quebec's family allowance (${money(qfa.max)} to ${money(qfa.min)} per child, plus the ${money(qfa.schoolSupplies)} school supplies supplement, applied to children aged 6–17), the B.C. family benefit, the Alberta Child and Family Benefit, the Nova Scotia Child Benefit, the PEI Child Benefit, New Brunswick's Child Tax Benefit and Working Income Supplement, and the Yukon Child Benefit, all from CRA's T4114 booklet for ${benefitYear(y)} or the province's own rules.`,
-    `For the NWT, Newfoundland and Labrador and Nunavut benefits the amounts and the income where the reduction starts are official, but the reduction rate isn't published: the NWT and Newfoundland and Labrador benefits are tapered in a straight line to the published end points (${money(nwt.endsAt)} and ${money(nlb.endsAt)}), and Nunavut's uses the ${rate(nub.rateOneChild)} / ${rate(nub.rateMoreChildren)} rates in its ${year} Bill 4.`,
+    `For the NWT, Newfoundland and Labrador and Nunavut benefits the amounts and the income where the reduction starts are official, but the reduction rate isn't published: the NWT and Newfoundland and Labrador benefits are tapered in a straight line to the published end points (${money(nwt.endsAt)} and ${money(nlb.endsAt)}), and Nunavut's uses the ${rate(nub.rateOneChild)} / ${rate(nub.rateMoreChildren)} rates in ${need(nu.rateSource, "Nunavut child benefit rate source")}.`,
     `These approximations only affect families below about ${money(Math.max(nwt.endsAt, nlb.endsAt))}.`,
     // Manitoba's benefit isn't modelled, so it has no figures in the data; the income limit is approximate.
     "Saskatchewan has no child benefit; Manitoba's (for incomes under about $15,000), Newfoundland and Labrador's prenatal–early childhood nutrition supplement and Nunavut's territorial workers' supplement aren't modelled, and neither are childcare costs or credits.",
@@ -236,11 +261,26 @@ export function footerNotes(y: YearData, page: PageDefaults): string {
 
   // Refundable credits
   const gb = F.groceriesBenefit,
+    gbName = need(gb.name, "groceries benefit name"),
     cwb = F.workersBenefit,
     std = cwb.standard;
   const ownCwb = [...Object.keys(cwb.regional).map(prov), quebec].sort(byName).map(short);
   const sk = credit("SK", "sk-low-income-tax-credit"),
     mb = credit("MB", "mb-affordability-credits");
+  // The list below names these programs in prose; a year whose data drops one fails here instead of misreporting it.
+  const named: [string, CreditProgram["program"]][] = [
+    ["ON", "ontario-sales-tax-credit"],
+    ["ON", "ontario-energy-property-tax-credit"],
+    [quebec.code, "quebec-solidarity-tax-credit"],
+    [quebec.code, "quebec-work-premium"],
+    ["BC", "bc-renters-tax-credit"],
+    ["NB", "nb-hst-credit"],
+    ["NS", "ns-affordable-living-tax-credit"],
+    ["NL", "nl-income-supplement"],
+  ];
+  for (const [code, id] of named) credit(code, id);
+  // PEI's sales tax credit gave way to the essentials benefit in 2026.
+  const pei = creditName("PE", ["pei-essentials-benefit", "pei-sales-tax-credit"]);
   const estimates = [
     sk.estimated &&
       `Saskatchewan's reduction rate (${rate(sk.params.rate)}) is worked out from CRA's published start and end points`,
@@ -248,21 +288,22 @@ export function footerNotes(y: YearData, page: PageDefaults): string {
     "Quebec's solidarity credit gives the living-alone amount to any household with one adult",
   ].filter(x => typeof x === "string");
   const credits = [
-    `Counted when "Include in totals" is on, for ${benefitYear(y)}: the Canada Groceries and Essentials Benefit (the renamed GST/HST credit: ${money(gb.adult)} per adult, ${money(gb.child)} per child and a single supplement of up to ${money(gb.singleSupplement.max)}, less ${rate(gb.phaseOut.rate)} of family net income over ${money(gb.phaseOut.from)}); the Canada Workers Benefit basic amount for ${year} (${money(std.max[0])} single or ${money(std.max[1])} family, ${rate(std.rate)} of working income over ${either(std.floor, money)}, less ${either(std.phaseOut, rate)} of net income over ${either(std.threshold, money)}; ${list(ownCwb)} use their own versions${cwb.estimated ? `, and these ${year} values are CRA's ${lastYearIndexed} until CRA publishes them` : ""}); the Ontario sales tax credit and Ontario energy and property tax credit; Quebec's solidarity tax credit and work premium; B.C.'s renter's tax credit; Manitoba's renters and homeowners affordability credits; the Saskatchewan low-income tax credit; the New Brunswick HST credit; the Nova Scotia affordable living tax credit; the PEI essentials benefit; and the Newfoundland and Labrador income supplement.`,
+    `Counted when "Include in totals" is on, for ${benefitYear(y)}: the ${gbName} (${gb.formerName ? `the renamed ${gb.formerName}: ` : ""}${money(gb.adult)} per adult, ${money(gb.child)} per child and a single supplement of up to ${money(gb.singleSupplement.max)}, less ${rate(gb.phaseOut.rate)} of family net income over ${money(gb.phaseOut.from)}); the Canada Workers Benefit basic amount for ${year} (${money(std.max[0])} single or ${money(std.max[1])} family, ${rate(std.rate)} of working income over ${either(std.floor, money)}, less ${either(std.phaseOut, rate)} of net income over ${either(std.threshold, money)}; ${list(ownCwb)} use their own versions${cwb.estimated ? `, and these ${year} values are CRA's ${lastYearIndexed} until CRA publishes them` : ""}); the Ontario sales tax credit and Ontario energy and property tax credit; Quebec's solidarity tax credit and work premium; B.C.'s renter's tax credit; Manitoba's renters and homeowners affordability credits; the Saskatchewan low-income tax credit; the New Brunswick HST credit; the Nova Scotia affordable living tax credit; the ${pei}; and the Newfoundland and Labrador income supplement.`,
     `Estimates: ${clauses(estimates)}.`,
     "Not modelled: the Workers Benefit disability supplement, senior-specific credits, the Northern Ontario energy credit and Quebec's northern-village supplement.",
   ].join(" ");
 
   // Property tax
   const cityName = (p: Province) => p.propertyTax.city.replace(/ \(est\.\)$/, "");
-  const published = P.filter(p => !p.propertyTax.estimated).map(
+  const rates = propertyRates(P);
+  const listedRates = rates.listed.map(
     p => `${cityName(p)} ${fixed(p.propertyTax.rate, 2)}${p.propertyTax.note ? ` (${p.propertyTax.note})` : ""}`,
   );
-  const estimated = groupBy(
-    P.filter(p => p.propertyTax.estimated),
-    p => p.propertyTax.rate,
-  ).map(([r, ps]) => `${list(ps.map(cityName))} use${ps.length > 1 ? "" : "s"} a rough ${fixed(r, 1)} estimate`);
-  const property = `Home value × the typical residential rate in each province's largest city for ${year}: ${list(published)}.${estimated.length ? ` ${list(estimated)}.` : ""} Land transfer tax is a one-time cost and isn't included.`;
+  const estimatedNote = estimatedRates(y, rates.listed, rates.estimated, cityName);
+  const roughRates = groupBy(rates.rough, p => p.propertyTax.rate).map(
+    ([r, ps]) => `${list(ps.map(cityName))} use${ps.length > 1 ? "" : "s"} a rough ${fixed(r, 1)} estimate`,
+  );
+  const property = `Home value × the typical residential rate in each province's largest city for ${year}: ${list(listedRates)}.${estimatedNote ? ` ${estimatedNote[0].toUpperCase()}${estimatedNote.slice(1)}.` : ""}${roughRates.length ? ` ${list(roughRates)}.` : ""} Land transfer tax is a one-time cost and isn't included.`;
 
   // What's not included
   const bpaChanges = P.filter(p => p.basicPersonalAmountChange).map(p => {

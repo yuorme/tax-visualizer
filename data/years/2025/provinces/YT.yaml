@@ -13,7 +13,7 @@ dividendTaxCredit: {eligible: 0.1202, nonEligible: 0.0067}
 spouseAmount: federal
 employmentAmountCredit: true      # Yukon has its own Canada employment amount credit
 salesTax: {rate: 0.05, label: "5% GST"}
-propertyTax: {rate: 0.0100, city: "Whitehorse (est.)", estimated: true}
+propertyTax: {rate: 0.0100, city: "Whitehorse (est.)", estimated: true, rough: true}   # no published rate used: a rough placeholder
 childBenefit:
   name: Yukon Child Benefit
   program: per-child-reduced

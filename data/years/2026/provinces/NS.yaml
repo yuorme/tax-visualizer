@@ -24,3 +24,5 @@ credits:
   - name: Nova Scotia affordable living tax credit
     program: ns-affordable-living-tax-credit
     params: {base: 255, child: 60, rate: 0.05, threshold: 30000}
+sources:
+  - {label: "nesto, Canada Property Tax Guide 2026 (residential property tax rate)", url: "https://www.nesto.ca/mortgage-basics/property-taxes-canada-highest-to-lowest/"}
