@@ -1161,7 +1161,8 @@ $("km-reset").addEventListener("click", () => {
   render();
 });
 effIn.addEventListener("input", () => {
-  const v = parseFloat(effIn.value.replace(/[^\d.]/g, ""));
+  // A comma is a decimal point here (9,5 is 9.5, as many keyboards and locales write it), never a thousands mark
+  const v = parseFloat(effIn.value.replace(/,/g, ".").replace(/[^\d.]/g, ""));
   effOverride = Number.isFinite(v) ? Math.min(v, 99) : 0;
   render();
 });

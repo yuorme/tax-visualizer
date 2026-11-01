@@ -158,8 +158,9 @@ test("Ontario, 10,000 km at 10 L/100 km: fuel tax matches a hand calculation", (
 
 // Canadian Vehicle Survey: Annual 2009 (Statistics Canada 53-223-X), vehicles up to 4.5 tonnes: vehicle-kilometres in
 // millions (Table 4-1) and vehicles in scope (Table 3-1). The average per vehicle, to the nearest 100 km, is each
-// province's starting distance. Statistics Canada doesn't print the quotient; NRCan's 2009 summary report gives it
-// for Canada (15,366 km) and British Columbia (12,892 km), and both are checked here.
+// province's starting distance. Both tables are in docs/verification/2026/sources/statcan-cvs-2009.txt. Statistics
+// Canada doesn't print the quotient. NRCan's 2009 summary report did, but its web pages and PDF now return an error, so
+// it isn't used.
 const CVS_2009: Record<string, [number, number]> = {
   NL: [4_367.6, 290_098],
   PE: [1_229.9, 81_499],
@@ -178,8 +179,6 @@ const CVS_2009: Record<string, [number, number]> = {
 const perVehicle = ([km, n]: [number, number]) => (km * 1e6) / n;
 
 test(`${year} starting distances are the 2009 Canadian Vehicle Survey averages per light vehicle`, () => {
-  assert.equal(Math.round(perVehicle([303_576.1, 19_755_945])), 15_366); // Canada
-  assert.equal(Math.round(perVehicle(CVS_2009.BC)), 12_892);
   for (const [code, fig] of Object.entries(CVS_2009)) {
     const d = need(prov(code).driving);
     assert.equal(d.distance, Math.round(perVehicle(fig) / 100) * 100, code);

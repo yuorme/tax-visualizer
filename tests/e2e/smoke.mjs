@@ -11,8 +11,9 @@
 //  7. the tab bar under the inputs: every tab closed on first load, and a tab opens alone and closes when tapped again;
 //  8. fuel tax (FUEL_STEPS, built page only, at every width and scheme): the Driving tab follows Credits, distance
 //     starts at the home province's survey average and efficiency at the national one, both are editable and take 0,
-//     and fuel tax is its own line in the comparison.
-// The legacy page has no fuel tax, so for the comparison with it (3) the built page's distance is set to 0 first.
+//     a comma in the efficiency is a decimal point, and fuel tax is its own line in the comparison.
+// The legacy page has no fuel tax, so the light-mode runs compared with it (3) set the built page's distance to 0
+// first. The dark-mode runs keep the starting driving, so STEPS also run with fuel tax in the totals.
 // Known failures (rules.KNOWN) are reported but don't fail the run; `npm run e2e -- --strict` fails on them too.
 import fs from "node:fs";
 import { chromium } from "playwright";
@@ -213,6 +214,8 @@ const FUEL_STEPS = [
       await type(p, "#eff", "0");
       problems.push(...(await expectValue(p, "#eff", "0.0", "efficiency 0")));
       problems.push(...(await expectNoFuelRow(p, "efficiency 0")));
+      await type(p, "#eff", "9,5");
+      problems.push(...(await expectValue(p, "#eff", "9.5", "efficiency typed with a decimal comma")));
       return problems;
     },
   ],
@@ -247,7 +250,7 @@ let fontsMissing = false;
 const browser = await chromium.launch();
 
 /** Opens a page, walks it through STEPS, and records what each check needs after every step. */
-async function run({ width, colorScheme = "light", html, contrast = false, steps = STEPS, before = noDriving }) {
+async function run({ width, colorScheme = "light", html, contrast = false, steps = STEPS, before = async () => {} }) {
   const { page, errors, blocked, fontsLoaded, close } = await openPage(browser, { width, colorScheme, html });
   if (!fontsLoaded) fontsMissing = true;
   await before(page);
@@ -286,7 +289,7 @@ function check(label, width, { states, errors, blocked }) {
 }
 
 for (const width of [1000, 430, 375]) {
-  const [a, b] = [await run({ width, contrast: width === 375 }), await run({ width, html: legacy })];
+  const [a, b] = [await run({ width, contrast: width === 375, before: noDriving }), await run({ width, html: legacy })];
   check(`${width}px light`, width, a);
   a.states.forEach(({ name, capture: s }, i) => {
     const t = b.states[i].capture;
@@ -310,7 +313,7 @@ for (const [width, colorScheme] of [
   [430, "dark"],
   [375, "dark"],
 ]) {
-  const fuel = await run({ width, colorScheme, contrast: width === 375, steps: FUEL_STEPS, before: async () => {} });
+  const fuel = await run({ width, colorScheme, contrast: width === 375, steps: FUEL_STEPS });
   check(`${width}px ${colorScheme}, fuel tax`, width, fuel);
   console.log(`${width}px ${colorScheme}: ${FUEL_STEPS.length} fuel tax states checked`);
 }

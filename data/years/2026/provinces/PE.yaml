@@ -17,6 +17,9 @@ lowIncomeReduction:
   params: {individual: 350, spouse: 350, child: 300, rate: 0.05, threshold: 23000}
 salesTax: {rate: 0.15, label: "15% HST"}
 propertyTax: {rate: 0.0167, city: Charlottetown}
+# NRCan also lists a Provincial Clean Fuels Adjuster here (4.0¢ a litre on gasoline): an allowance that
+# IRAC builds into the regulated pump price to pass on suppliers' cost of the federal
+# Clean Fuel Regulations. It isn't a tax paid to government, so it isn't counted.
 # Fuel tax on gasoline, $ per litre: 8.47¢, suspended (0¢) from September 26, 2026 to January 31, 2027.
 fuelTax:
   gasoline:

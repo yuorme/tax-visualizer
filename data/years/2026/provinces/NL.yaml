@@ -20,6 +20,9 @@ lowIncomeReduction:
   estimated: true   # family threshold is 2025's indexed by 2%
 salesTax: {rate: 0.15, label: "15% HST"}
 propertyTax: {rate: 0.0091, city: "St. John's"}
+# NRCan also lists a Provincial Clean Fuels Adjuster here (3.74¢ a litre on gasoline): an allowance that
+# the Public Utilities Board builds into the regulated pump price to pass on suppliers' cost of the federal
+# Clean Fuel Regulations. It isn't a tax paid to government, so it isn't counted.
 # Fuel tax on gasoline, $ per litre. 7.5¢ (the 14.5¢ rate less the 7¢ cut, made permanent in March 2026), then 0¢
 # from December 1, 2026 to March 31, 2027, announced October 26, 2026 with legislation to follow.
 fuelTax:
