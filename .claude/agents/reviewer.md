@@ -11,10 +11,10 @@ isolation: worktree
 You review one branch against `main`. You did not write this code; judge it cold. Don't edit files.
 
 Steps:
-1. You start in your own worktree. Run `git checkout --detach <branch or commit>` for what you were given; a
-   plain `git checkout <branch>` fails because the author's worktree holds the branch. Then read CLAUDE.md (the
-   branch's copy), the task description you were given, and, after `git fetch`, `git diff origin/main...HEAD`
-   (never local `main`, which may be stale).
+1. You start in your own worktree. After `git fetch`, run `git checkout --detach <commit>` for the pull request's
+   head (`gh pr view N --json headRefOid,baseRefName`); a plain `git checkout <branch>` fails because the author's
+   worktree holds the branch. Read CLAUDE.md (the branch's copy), the task, and `git diff origin/<base>...HEAD`
+   (never a local branch, which may be stale). Flag a data pull request whose sources aren't cached.
 2. Run `npm ci`, then `npm run check`. A failure is a blocking finding.
 3. Check the rules in CLAUDE.md:
    - No amounts, rates or thresholds added to `src/engine/` or `src/ui/`.

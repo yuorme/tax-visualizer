@@ -41,6 +41,6 @@ When done:
   issue is only partly done), push it, and open the pull request unless told not to (you're one region of a
   split year, say). Put the year-diff output in its body. Once a pull request exists, push only after checking
   it's still open: `[ "$(gh pr view <branch> --json state --jq .state)" = OPEN ]`.
-- Report in about 250 words (up to about 600 for a full data year). Lead with the result, branch and commit hash,
-  then values marked estimated, values you couldn't source, rule-shape changes and open questions. Put each
-  estimate's derivation in the data comments and commit message.
+- Report in about 250 words (up to about 600 for a full data year). Lead with the result, pull request number,
+  branch and commit hash, then values marked estimated, values you couldn't source, rule-shape changes and open
+  questions. Put each estimate's derivation in the data comments and commit message.

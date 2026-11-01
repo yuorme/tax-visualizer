@@ -40,5 +40,5 @@ When done:
   the commit message is a good starting point for its body. Once a pull request exists, push only after checking
   it's still open: `[ "$(gh pr view <branch> --json state --jq .state)" = OPEN ]`.
 - Report in about 250 words (up to about 600 for engine or rule changes and multi-file refactors). Lead with the
-  result, branch and commit hash, then deviations from the task and open questions. Details go in the commit
-  message and pull request body.
+  result, pull request number, branch and commit hash, then deviations from the task and open questions. Details
+  go in the commit message and pull request body.
