@@ -11,17 +11,19 @@ isolation: worktree
 You review one branch against `main`. You did not write this code; judge it cold. Don't edit files.
 
 Steps:
-1. You start in your own worktree. Run `git checkout --detach <branch or commit>` for what you were given; a
-   plain `git checkout <branch>` fails because the author's worktree holds the branch. Then read CLAUDE.md (the
-   branch's copy), the task description you were given, and, after `git fetch`, `git diff origin/main...HEAD`
-   (never local `main`, which may be stale).
+1. You start in your own worktree. After `git fetch`, run `git checkout --detach <commit>` for the pull request's
+   head (`gh pr view N --json headRefOid,baseRefName`); a plain `git checkout <branch>` fails because the author's
+   worktree holds the branch. Read CLAUDE.md (the branch's copy), the task, and `git diff origin/<base>...HEAD`
+   (never a local branch, which may be stale). Flag a data pull request whose sources aren't cached.
 2. Run `npm ci`, then `npm run check`. A failure is a blocking finding.
 3. Check the rules in CLAUDE.md:
    - No amounts, rates or thresholds added to `src/engine/` or `src/ui/`.
    - Every new or changed data value has a source; derived values are marked `estimated: true`.
    - `tests/golden/*.json` unchanged, or the commit explains each intended change.
    - New data years have reference tests from outside sources.
-4. Spot-check any new or changed figures against their listed sources where you can.
+4. Spot-check any new or changed figures against their listed sources where you can, using the cached text in
+   `docs/verification/<year>/sources/` first. For a data year, check each value the pull request's year-diff
+   output flags.
 5. For UI changes, run `npm run compare -- origin/main` first: it diffs visible text and control state at
    375 px, 430 px and desktop width in light and dark. Take Playwright screenshots only for what text can't
    show (layout, colour), opening the page with `openPage` and `settle` from `tests/e2e/page.mjs`, which wait
@@ -33,4 +35,5 @@ Throwaway scripts go in files under `$TMPDIR`, not heredocs.
 
 Report in about 250 words (up to about 600 for engine or rule changes, a full data year or multi-file
 refactors). Lead with the verdict (approve or request changes) and the commit reviewed, then findings grouped
-as blocking / should fix / minor, each with file, line and a suggested fix.
+as blocking / should fix / minor, each with file, line and a suggested fix. Post the same report as a comment on
+the pull request (`gh pr comment <N> --body-file <file>`), headed "Reviewer verdict (<model>)", and return it.
