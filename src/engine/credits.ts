@@ -36,7 +36,9 @@ export function creditsOf(fed: Federal, p: Province, f: CreditInput): Credit[] {
     gb.name ?? "Canada Groceries and Essentials Benefit",
     Math.max(0, g - gb.phaseOut.rate * over(gb.phaseOut.from)),
   ]);
-  // Canada Workers Benefit (basic amount; no disability supplement)
+  // Canada Workers Benefit (basic amount; no disability supplement). Working income is employment income only, for
+  // the phase-in, the secondary earner exemption and Quebec's work premium below; other income isn't working income,
+  // though it counts in family net income, which the phase-outs use.
   const wb = fed.workersBenefit;
   const work = couple ? ppl[0].ord + ppl[1].ord : ppl[0].ord;
   const adjNet = couple ? famNet - Math.min(wb.secondaryEarnerExemption, Math.min(ppl[0].ord, ppl[1].ord)) : famNet;

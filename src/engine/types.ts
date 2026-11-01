@@ -1,12 +1,20 @@
 import type { FuelRate, Province, YearData } from "../data/schema.ts";
 
-export type IncomeKey = "ord" | "cg" | "ed" | "nd" | "fd";
-export const INCOME_KEYS: IncomeKey[] = ["ord", "cg", "ed", "nd", "fd"];
+export type IncomeKey = "ord" | "oth" | "cg" | "ed" | "nd" | "fd";
+export const INCOME_KEYS: IncomeKey[] = ["ord", "oth", "cg", "ed", "nd", "fd"];
+/** The income types compute() reports in margBy: every type but other income, whose marginal rate is in its
+ *  breakdown, because the golden snapshot (tests/golden/snapshot.mjs) locks every number in margBy. */
+export type MarginalKey = Exclude<IncomeKey, "oth">;
+export const MARGINAL_KEYS: MarginalKey[] = ["ord", "cg", "ed", "nd", "fd"];
 
-/** One person's income for the year. ord = employment and other fully taxed income; cg = net capital gains (can be
- *  negative); ed / nd = eligible / non-eligible dividends; fd = foreign dividends; ded = deductions (RRSP etc.). */
+/** One person's income for the year. ord = employment income, which pays CPP/QPP, EI and QPIP, gets the Canada
+ *  employment amount and counts as working income for the benefits that phase in with work; oth = interest, rental
+ *  and other income taxed in full, which does none of that but counts in net income like everything else; cg = net
+ *  capital gains (can be negative); ed / nd = eligible / non-eligible dividends; fd = foreign dividends;
+ *  ded = deductions (RRSP etc.). */
 export interface Person {
   ord: number;
+  oth: number;
   cg: number;
   ed: number;
   nd: number;
@@ -53,5 +61,5 @@ export interface Extra {
 } // extra credits in tax dollars (spouse / dependant / living alone)
 
 export type { FuelRate, Province, YearData };
-export const blank = (ord: number): Person => ({ ord, cg: 0, ed: 0, nd: 0, fd: 0, ded: 0 });
-export const cashOf = (x: Person) => x.ord + x.cg + x.ed + x.nd + x.fd;
+export const blank = (ord: number): Person => ({ ord, oth: 0, cg: 0, ed: 0, nd: 0, fd: 0, ded: 0 });
+export const cashOf = (x: Person) => x.ord + x.oth + x.cg + x.ed + x.nd + x.fd;

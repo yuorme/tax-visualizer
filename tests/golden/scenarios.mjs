@@ -1,6 +1,6 @@
 // Household scenarios used for golden (snapshot) tests. Deterministic: a fixed list of hand-picked
 // edge cases plus a seeded random sample across every input. Each scenario is run for all 13 provinces.
-const blank = (ord, extra = {}) => ({ ord, cg: 0, ed: 0, nd: 0, fd: 0, ded: 0, ...extra });
+const blank = (ord, extra = {}) => ({ ord, oth: 0, cg: 0, ed: 0, nd: 0, fd: 0, ded: 0, ...extra });
 
 export const DEFAULTS = {
   people: [blank(75000)],
@@ -110,9 +110,27 @@ for (let i = 0; i < 120; i++) {
 // every other input of the sample unchanged: the default, no car, a long commute in a thirsty vehicle, a short one
 // in an efficient vehicle, and an electric car (0 L/100 km).
 const DRIVING = [{}, { km: 0 }, { km: 35000, efficiency: 12.5 }, { km: 8000, efficiency: 5.5 }, { efficiency: 0 }];
-export const SCENARIOS = [...hand, ...sample].map((s, i) => ({
+
+// Other income (interest, rental and other income, #13): no CPP/QPP, EI or QPIP, no employment amount, not working
+// income for the Canada Workers Benefit or Quebec's work premium, but counted in net income. Hand-picked, and
+// appended after the sample so every earlier scenario keeps its id and its locked results.
+const other = [
+  { people: [blank(0, { oth: 40000 })] }, // other income alone
+  { people: [blank(0, { oth: 14000 })], rent: 900 }, // low income, none of it working income: no Workers Benefit
+  { people: [blank(50000, { oth: 30000 })] }, // mixed with employment income
+  { people: [blank(0, { oth: 120000, ded: 10000 })], homeValue: 750000 }, // high, with deductions
+  // Two adults: other income for both, and the lower earner's other income shrinks the spouse amount
+  { people: [blank(65000, { oth: 15000 }), blank(0, { oth: 12000 })], adults: 2, spend: 3500 },
+  { people: [blank(40000, { oth: 5000 }), blank(20000, { oth: 30000 })], adults: 2, kids: 2, under6: 1, rent: 1500 },
+  // Crossing clawbacks: other income moves family net income past the CCB and Workers Benefit phase-out thresholds
+  { people: [blank(22000, { oth: 25000 })], kids: 2, under6: 1, rent: 1100 },
+  { people: [blank(0, { oth: 60000 })], kids: 3, under6: 2 },
+  { people: [blank(30000, { oth: 20000 }), blank(15000)], adults: 2, kids: 1, rent: 1300, active: 1 },
+  { people: [blank(18000, { oth: 8000, cg: 6000, ed: 4000 })], rent: 1000 }, // with investment income too
+];
+export const SCENARIOS = [...hand, ...sample, ...other].map((s, i) => ({
   id: i,
   ...DEFAULTS,
-  ...(i >= hand.length ? DRIVING[i % DRIVING.length] : {}),
+  ...(i >= hand.length && i < hand.length + sample.length ? DRIVING[i % DRIVING.length] : {}),
   ...s,
 }));

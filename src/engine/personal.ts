@@ -42,12 +42,14 @@ export type PersonResult = ReturnType<typeof personTax>;
 export function personTax(fed: Federal, p: Province, x: Person, sp: Extra, ctx: Ctx, s: Settings) {
   const qc = p.system === "quebec";
   const pay = payrollOf(fed, p, x);
-  const ti = netOf(fed, x); // taxable income (federal)
+  const ti = netOf(fed, x); // taxable income (federal), other income included
+  // Employment income only (x.ord), here and below: Quebec's deduction for workers, the Canada employment amount
+  // (and Yukon's), and Ontario's LIFT credit are all worked out from employment income, never other income.
   const workerDed = p.quebec
     ? Math.min(p.quebec.workerDeduction.max, Math.max(0, x.ord) * p.quebec.workerDeduction.rate)
     : 0;
   const tiP = Math.max(0, ti - workerDed); // Quebec allows an extra deduction for workers
-  const cash = x.ord + x.cg + x.ed + x.nd + x.fd;
+  const cash = x.ord + x.oth + x.cg + x.ed + x.nd + x.fd;
   const f = walk(fed.brackets, ti),
     pr = walk(p.brackets, tiP);
   const k = qc ? 1 - fed.quebecAbatement : 1;
@@ -116,7 +118,7 @@ export function personTax(fed: Federal, p: Province, x: Person, sp: Extra, ctx: 
   }
   if (p.lift) {
     const q = p.lift;
-    const liftFull = Math.min(q.max, q.rate * Math.max(0, x.ord));
+    const liftFull = Math.min(q.max, q.rate * Math.max(0, x.ord)); // earned on employment income, reduced on net
     const liftCut = q.phaseOut * Math.max(0, ti - q.threshold, (ctx.famNet ?? ti) - q.familyThreshold);
     lift = Math.min(provPre, Math.max(0, liftFull - liftCut));
     provPre -= lift;

@@ -59,15 +59,17 @@ test("net income parts: the taxable share of gains, foreign dividends at face va
 
 test("net income parts add up to taxable income in every province, enhanced CPP/QPP included", () => {
   const people = [
-    person({ ord: 120_000, cg: 15_000, ed: 4_000, nd: 2_000, fd: 6_000, ded: 9_000 }),
+    person({ ord: 120_000, oth: 7_000, cg: 15_000, ed: 4_000, nd: 2_000, fd: 6_000, ded: 9_000 }),
     person({ ord: 30_000, cg: -8_000, nd: 12_000 }),
     person({ ord: 2_000, ded: 10_000 }), // deductions larger than income: net income is floored at 0
+    person({ oth: 25_000, ded: 3_000 }),
   ];
   for (const p of y.provinces)
     for (const x of people) {
       const m = compute(y, p, household([x])).me;
       const n = m.breakdown.netIncome;
-      assert.equal(Math.max(0, n.ord + n.cg + n.ed + n.nd + n.fd - n.ded - n.enh), m.ti, `${p.code} ${x.ord}`);
+      const sum = n.ord + n.oth + n.cg + n.ed + n.nd + n.fd - n.ded - n.enh;
+      assert.equal(Math.max(0, sum), m.ti, `${p.code} ${x.ord}`);
       assert.equal(n.enh, payrollOf(F, null, x).enh, `${p.code} ${x.ord}`);
     }
   // The enhanced contribution is part of the breakdown, not left out of it
