@@ -80,7 +80,8 @@ adding year checks inside an existing one. Values that are estimates rather than
 - **Golden results** (`tests/golden.test.ts`): for every year in `data/years/`, 148 households × 13 provinces
   (singles, couples, single parents, up to six children, investment income, deductions, renters and owners) must
   reproduce `tests/golden/<year>.json` to the hundredth of a cent. A year without a fixture fails the test. A
-  change here means a result changed: if it's intended, explain it in the commit and re-capture.
+  change here means a result changed: diagnose it using the golden-baseline policy in [CLAUDE.md](CLAUDE.md).
+  Existing cases stay locked; new engine behavior needs additive golden cases with independently checked expectations.
   - `npm run golden:capture -- <year>` captures one year's fixture from the engine. It writes only that year's
     file and refuses to replace an existing one unless given `--force`; `--out <file>` writes elsewhere.
   - `npm run golden:capture-legacy` (`tests/golden/capture-legacy.mjs`) is how `2026.json` was first locked:
