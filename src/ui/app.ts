@@ -19,8 +19,15 @@ import {
 import { DEFAULT_INCOME, spendEst } from "./defaults.ts";
 import { cents, footerNotes, share, tooltips } from "./notes.ts";
 
-const YEAR = Math.max(...Object.keys(years).map(Number));
-const Y = years[YEAR],
+const availableYears = Object.keys(years)
+  .map(Number)
+  .sort((a, b) => b - a);
+let YEAR = availableYears[0];
+try {
+  const saved = JSON.parse(localStorage.getItem("taxcmp") || "{}");
+  if (saved.v === 3 && availableYears.includes(saved.year)) YEAR = saved.year;
+} catch {}
+let Y = years[YEAR],
   F = Y.federal;
 /** View model for each province: c = code, n = name, qc = Quebec system, geo = west-to-east position, b = brackets */
 interface ProvView {
@@ -36,14 +43,16 @@ interface Row {
   p: ProvView;
   r: Result;
 }
-const P: ProvView[] = Y.provinces.map(d => ({
-  c: d.code,
-  n: d.name,
-  qc: d.system === "quebec",
-  geo: d.order,
-  b: d.brackets,
-  d,
-}));
+const provinceViews = (): ProvView[] =>
+  Y.provinces.map(d => ({
+    c: d.code,
+    n: d.name,
+    qc: d.system === "quebec",
+    geo: d.order,
+    b: d.brackets,
+    d,
+  }));
+let P = provinceViews();
 
 /** Fails loudly when the page markup lacks something the script expects. */
 function must<T>(v: T | null | undefined, what: string): T {
@@ -89,8 +98,8 @@ let homeValue = 0,
 // the national average efficiency). FUEL: the year's data has fuel taxes; without them the Driving tab is hidden.
 let kmOverride: number | null = null,
   effOverride: number | null = null;
-const FUEL = F.fuelTax != null && F.driving != null;
-const TREATY_WH = F.investment.foreignWithholding.usTreaty;
+let FUEL = F.fuelTax != null && F.driving != null;
+let TREATY_WH = F.investment.foreignWithholding.usTreaty;
 let sort: Sort = "rate",
   home = "ON",
   dest = "AB",
@@ -147,7 +156,10 @@ function cleanPerson(o: unknown): Person {
       const v = saved[k];
       if (isNum(v) && (k === "cg" || v >= 0)) x[k] = v;
     }
-    if (isNum(saved.ded) && saved.ded >= 0) x.ded = saved.ded;
+    for (const k of ["ded", "rrsp", "fhsa"] as const) {
+      const v = saved[k];
+      if (isNum(v) && Number.isFinite(v) && v >= 0) x[k] = v;
+    }
   }
   return x;
 }
@@ -197,6 +209,7 @@ function save() {
       "taxcmp",
       JSON.stringify({
         v: 3,
+        year: YEAR,
         people,
         active,
         spouse,
@@ -226,15 +239,50 @@ function save() {
 }
 
 // Text that quotes the year's figures: footer notes, info tooltips and the withholding presets (see notes.ts)
-$("tax-year").textContent = String(YEAR);
-$("notes").insertAdjacentHTML("afterbegin", footerNotes(Y, { defaultIncome: DEFAULT_INCOME, spendEst }));
-const TIPS = tooltips(Y);
-for (const b of document.querySelectorAll<HTMLElement>("[data-note]")) b.dataset.tip = TIPS[b.dataset.note ?? ""];
 const WH_PRESETS = [0, 0.1, 0.25, 0.3]; // withholding choices offered besides the treaty rate
-$("wh").innerHTML = [...new Set([...WH_PRESETS, TREATY_WH])]
-  .sort((a, b) => a - b)
-  .map(r => `<option value="${r}">${rateFmt(r)}${r === TREATY_WH ? " (U.S. treaty)" : ""}</option>`)
-  .join("");
+const yearSelect = $<HTMLSelectElement>("tax-year");
+yearSelect.innerHTML = availableYears.map(year => `<option value="${year}">${year}</option>`).join("");
+function renderYearNotes() {
+  yearSelect.value = String(YEAR);
+  document.title = `Provincial Tax Compare ${YEAR}`;
+  $("year-notes").innerHTML = footerNotes(Y, { defaultIncome: DEFAULT_INCOME, spendEst });
+  const tips = tooltips(Y);
+  for (const b of document.querySelectorAll<HTMLElement>("[data-note]")) b.dataset.tip = tips[b.dataset.note ?? ""];
+  const sources = $("year-sources");
+  sources.replaceChildren(document.createTextNode(`Sources for ${YEAR}: `));
+  const unique = new Map([F, ...Y.provinces].flatMap(d => d.sources ?? []).map(s => [s.url, s]));
+  for (const [i, source] of [...unique.values()].entries()) {
+    if (i) sources.append(document.createTextNode(" · "));
+    const link = document.createElement("a");
+    link.href = source.url;
+    link.textContent = source.label;
+    link.target = "_blank";
+    link.rel = "noopener";
+    sources.append(link);
+  }
+  sources.append(document.createTextNode(". Not tax advice."));
+  $("wh").innerHTML = [...new Set([...WH_PRESETS, TREATY_WH, whRate])]
+    .sort((a, b) => a - b)
+    .map(r => `<option value="${r}">${rateFmt(r)}${r === TREATY_WH ? " (U.S. treaty)" : ""}</option>`)
+    .join("");
+}
+renderYearNotes();
+yearSelect.addEventListener("change", () => {
+  const selected = Number(yearSelect.value);
+  if (!availableYears.includes(selected)) return;
+  YEAR = selected;
+  Y = years[YEAR];
+  F = Y.federal;
+  P = provinceViews();
+  FUEL = F.fuelTax != null && F.driving != null;
+  TREATY_WH = F.investment.foreignWithholding.usTreaty;
+  $("tab-driving").hidden = !FUEL;
+  if (!FUEL && tab === "driving") tab = null;
+  $("tip").hidden = true;
+  renderYearNotes();
+  showTab();
+  render();
+});
 
 // Province selectors
 const provOptions = (skip: string) =>
@@ -491,8 +539,9 @@ function render() {
     : `Employment &amp; other income`;
   $("ded-label").textContent = two ? `${active ? "Partner's" : "Your"} deductions` : "Deductions";
   const rm = H.r.me.breakdown.rrspRoom;
-  $("max-rrsp").textContent = `Max RRSP ${money(rm)}`;
-  $("max-rrsp").setAttribute("aria-pressed", String(rm > 0 && x.ded === rm));
+  $("ded-total").textContent = money(H.r.me.breakdown.netIncome.ded);
+  $("max-rrsp").textContent = `Use estimate ${money(rm)}`;
+  $("max-rrsp").setAttribute("aria-pressed", String(rm > 0 && x.rrsp === rm));
   $("invest-title").textContent = two ? `${active ? "Partner's" : "Your"} investment income` : "Investment income";
   $("invest-sum").textContent = hasInv(x)
     ? [
@@ -914,25 +963,29 @@ inp.addEventListener("keydown", e => {
 });
 sl.addEventListener("input", () => setIncome(+sl.value, "slider"));
 
-// Household members
-const dedIn = $<HTMLInputElement>("ded");
-dedIn.addEventListener("input", () => {
-  me().ded = Math.min(+dedIn.value.replace(/[^\d]/g, "") || 0, 9999999);
-  render();
-});
-dedIn.addEventListener("blur", () => {
-  dedIn.value = me().ded.toLocaleString("en-CA");
-});
-dedIn.addEventListener("keydown", e => {
-  if (e.key === "Enter") dedIn.blur();
-});
+// Annual deductions claimed for the selected adult. The engine supplies their combined total.
+const deductionInputs = ["ded", "rrsp", "fhsa"] as const;
+for (const key of deductionInputs) {
+  const input = $<HTMLInputElement>(key);
+  input.addEventListener("input", () => {
+    me()[key] = Math.min(+input.value.replace(/[^\d]/g, "") || 0, 9999999);
+    render();
+  });
+  input.addEventListener("blur", () => {
+    input.value = (me()[key] || 0).toLocaleString("en-CA");
+  });
+  input.addEventListener("keydown", e => {
+    if (e.key === "Enter") input.blur();
+  });
+}
 $("max-rrsp").addEventListener("click", () => {
-  me().ded = calc(prov(home)).me.breakdown.rrspRoom;
-  dedIn.value = me().ded.toLocaleString("en-CA");
+  const estimate = calc(prov(home)).me.breakdown.rrspRoom;
+  me().rrsp = estimate;
+  $<HTMLInputElement>("rrsp").value = estimate.toLocaleString("en-CA");
   render();
 });
 function syncAll() {
-  dedIn.value = me().ded.toLocaleString("en-CA");
+  for (const key of deductionInputs) $<HTMLInputElement>(key).value = (me()[key] || 0).toLocaleString("en-CA");
   inp.value = me().ord.toLocaleString("en-CA");
   sl.value = String(Math.min(me().ord, +sl.max));
   syncInv();
