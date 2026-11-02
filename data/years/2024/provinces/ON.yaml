@@ -1,0 +1,83 @@
+# Benefit-year figures use July 2024 to June 2025, applied to current-year income.
+
+code: ON
+name: Ontario
+order: 7
+brackets:
+  - [ 51446, 0.0505 ]
+  - [ 102894, 0.0915 ]
+  - [ 150000, 0.1116 ]
+  - [ 220000, 0.1216 ]
+  - [ .inf, 0.1316 ]
+basicPersonalAmount: 12399
+dividendTaxCredit: { eligible: 0.1, nonEligible: 0.029863 }
+spouseAmount: { max: 10528, threshold: 1053 }
+surtax:
+  - [ 5554, 0.2 ]
+  - [ 7108, 0.36 ]
+ontarioTaxReduction: { base: 286, perChild: 529 }
+lift: { max: 875, rate: 0.0505, threshold: 32500, familyThreshold: 65000, phaseOut: 0.05 }
+payroll:
+  healthPremium:
+    - [ 200000, 750, 0.25, 900 ]
+    - [ 72000, 600, 0.25, 750 ]
+    - [ 48000, 450, 0.25, 600 ]
+    - [ 36000, 300, 0.06, 450 ]
+    - [ 20000, 0, 0.06, 300 ]
+salesTax: { rate: 0.13, label: 13% HST }
+propertyTax: { rate: 0.00715289, city: Toronto }
+creditsUseRent: true
+childBenefit:
+  name: Ontario Child Benefit
+  program: ontario-child-benefit
+  params: { perChild: 1680, threshold: 25646, rate: 0.08 }
+credits:
+  - name: Ontario sales tax credit
+    program: ontario-sales-tax-credit
+    params: { perPerson: 360, rate: 0.04, thresholdSingle: 27729, thresholdFamily: 34661 }
+  - name: Ontario energy and property tax credit
+    program: ontario-energy-property-tax-credit
+    params:
+      {
+        rentShare: 0.2,
+        energyMax: 277,
+        propertyBase: 69,
+        propertyRate: 0.1,
+        propertyMax: 971,
+        rate: 0.02,
+        thresholdSingle: 27729,
+        thresholdFamily: 34661
+      }
+sources:
+  - {
+      label: "CRA, ON428 for 2024 (brackets, personal amounts and reductions)",
+      url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5006-c/5006-c-24e.pdf
+    }
+  - {
+      label: "CRA, ON428 worksheet for 2024 (dividend credits)",
+      url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5006-d/5006-d-24e.pdf
+    }
+  - {
+      label: "CRA, T4114: provincial child benefits July 2024 to June 2025",
+      url: https://www.canada.ca/content/dam/cra-arc/formspubs/pub/t4114/t4114-24e.pdf
+    }
+  - {
+      label: "CRA, RC4210: provincial credits July 2024 to June 2025",
+      url: https://www.canada.ca/content/dam/cra-arc/formspubs/pub/rc4210/rc4210-24e.pdf
+    }
+  - {
+      label: "CRA, historical GST/HST/PST rates",
+      url: https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/charge-collect-which-rate.html
+    }
+  - {
+      label: "CRA, 2024 LIFT Schedule ON428-A",
+      url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5006-a/5006-a-24e.pdf
+    }
+  - {
+      label: "CRA, 2024 OEPTC calculation sheet",
+      url: https://www.canada.ca/content/dam/cra-arc/serv-info/benefits/ptc24_clc_mns-eng.pdf
+    }
+  - {
+      label: "City of Toronto, 2024 property tax rates",
+      url: https://www.toronto.ca/services-payments/property-taxes-utilities/property-tax/property-tax-rates-and-fees/2024-property-tax-rates-and-fees/
+    }

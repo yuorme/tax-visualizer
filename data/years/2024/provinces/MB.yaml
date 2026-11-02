@@ -1,0 +1,44 @@
+# Benefit-year figures use July 2024 to June 2025, applied to current-year income.
+# Property estimate uses Winnipeg School Division: (13.352 municipal + 13.930 school) mills × 45% portion / 1000.
+# School-tax share estimated as 13.930 / 27.282 for the same district; gross property tax precedes both credits.
+
+code: MB
+name: Manitoba
+order: 5
+brackets:
+  - [ 47000, 0.108 ]
+  - [ 100000, 0.1275 ]
+  - [ .inf, 0.174 ]
+basicPersonalAmount: 15780
+dividendTaxCredit: { eligible: 0.08, nonEligible: 0.007835 }
+spouseAmount: { max: 9134, threshold: 0 }
+salesTax: { rate: 0.12, label: 5% GST + 7% RST }
+propertyTax: { rate: 0.0122769, city: Winnipeg, estimated: true }
+creditsUseRent: true
+credits:
+  - name: School tax rebate and education property tax credit
+    nameRenter: Renters tax credit
+    program: mb-school-tax-credits
+    params: { schoolTaxShare: 0.5105930650245583, schoolRebateRate: 0.5, educationCreditMax: 350, renterMax: 525 }
+    estimated: true
+sources:
+  - {
+      label: "CRA, MB428 for 2024 (brackets, personal amounts and reductions)",
+      url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5007-c/5007-c-24e.pdf
+    }
+  - {
+      label: "CRA, MB428 worksheet for 2024 (dividend credits)",
+      url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5007-d/5007-d-24e.pdf
+    }
+  - {
+      label: "CRA, historical GST/HST/PST rates",
+      url: https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/charge-collect-which-rate.html
+    }
+  - {
+      label: "City of Winnipeg, 2024 combined mill rates",
+      url: https://assessment.winnipeg.ca/Asmttax/pdfs/rates/2024CombinedMillRates.pdf
+    }
+  - {
+      label: "CRA, MB479 for 2024 (school-tax and renters credits)",
+      url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5007-tc/5007-tc-24e.pdf
+    }

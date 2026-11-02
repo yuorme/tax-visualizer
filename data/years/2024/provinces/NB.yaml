@@ -1,0 +1,53 @@
+# Benefit-year figures use July 2024 to June 2025, applied to current-year income.
+# Property tax remains an explicitly estimated carry-back of the existing 2025 model pending historical city source.
+
+code: NB
+name: New Brunswick
+order: 9
+brackets:
+  - [ 49958, 0.094 ]
+  - [ 99916, 0.14 ]
+  - [ 185064, 0.16 ]
+  - [ .inf, 0.195 ]
+basicPersonalAmount: 13044
+dividendTaxCredit: { eligible: 0.14, nonEligible: 0.0275 }
+spouseAmount: { max: 10223, threshold: 1023 }
+lowIncomeReduction:
+  program: nb-low-income-reduction
+  params: { amount: 781, rate: 0.03, threshold: 21343 }
+salesTax: { rate: 0.15, label: 15% HST }
+propertyTax: { rate: 0.0136, city: Moncton, estimated: true }
+childBenefit:
+  name: NB Child Tax Benefit
+  program: nb-child-tax-benefit
+  params:
+    perChild: 250
+    threshold: 20000
+    rateOneChild: 0.025
+    rateMoreChildren: 0.05
+    workingIncomeSupplement: { rate: 0.04, floor: 3750, max: 250, threshold: 20921, phaseOut: 0.05 }
+credits:
+  - name: New Brunswick HST credit
+    program: nb-hst-credit
+    params: { adult: 300, spouse: 300, child: 100, rate: 0.02, threshold: 35000 }
+sources:
+  - {
+      label: "CRA, NB428 for 2024 (brackets, personal amounts and reductions)",
+      url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5004-c/5004-c-24e.pdf
+    }
+  - {
+      label: "CRA, NB428 worksheet for 2024 (dividend credits)",
+      url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5004-d/5004-d-24e.pdf
+    }
+  - {
+      label: "CRA, T4114: provincial child benefits July 2024 to June 2025",
+      url: https://www.canada.ca/content/dam/cra-arc/formspubs/pub/t4114/t4114-24e.pdf
+    }
+  - {
+      label: "CRA, RC4210: provincial credits July 2024 to June 2025",
+      url: https://www.canada.ca/content/dam/cra-arc/formspubs/pub/rc4210/rc4210-24e.pdf
+    }
+  - {
+      label: "CRA, historical GST/HST/PST rates",
+      url: https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/charge-collect-which-rate.html
+    }

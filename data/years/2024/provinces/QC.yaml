@@ -1,0 +1,65 @@
+# Benefit-year figures use July 2024 to June 2025, applied to current-year income.
+# Property tax remains an explicitly estimated carry-back of the existing 2025 model pending historical city source.
+
+code: QC
+name: Quebec
+order: 8
+system: quebec
+brackets:
+  - [ 51780, 0.14 ]
+  - [ 103545, 0.19 ]
+  - [ 126000, 0.24 ]
+  - [ .inf, 0.2575 ]
+basicPersonalAmount: 18056
+dividendTaxCredit: { eligible: 0.117, nonEligible: 0.0342 }
+spouseAmount: transfer
+quebec:
+  workerDeduction: { rate: 0.06, max: 1380 }
+  livingAlone: { max: 2069, rate: 0.1875, threshold: 40925 }
+salesTax: { rate: 0.14975, label: 5% GST + 9.975% QST }
+propertyTax: { rate: 0.009, city: Montreal, note: school tax may be extra, estimated: true }
+childBenefit:
+  name: Family allowance
+  program: quebec-family-allowance
+  params:
+    {
+      max: 2923,
+      maxSingleParent: 1026,
+      min: 1163,
+      minSingleParent: 409,
+      rate: 0.04,
+      thresholdSingle: 42136,
+      thresholdCouple: 57822,
+      schoolSupplies: 121
+    }
+credits:
+  - name: Solidarity tax credit
+    program: quebec-solidarity-tax-credit
+    params:
+      {
+        qstAdult: 346,
+        qstSpouse: 346,
+        qstAlone: 164,
+        housingCouple: 863,
+        housingSingle: 711,
+        child: 151,
+        rate: 0.06,
+        threshold: 41150
+      }
+  - name: Work premium
+    program: quebec-work-premium
+    params:
+      phaseOutRate: 0.1
+      single: [ 0.116, 2400, 12334 ]
+      couple: [ 0.116, 3600, 19092 ]
+      parent: [ 0.3, 2400, 12334 ]
+      coupleKids: [ 0.25, 3600, 19092 ]
+sources:
+  - {
+      label: "Finances Québec, Parameters of the personal income tax system for 2024",
+      url: https://cdn-contenu.quebec.ca/cdn-contenu/adm/min/finances/publications-adm/parametres/AUTEN_IncomeTax2024.pdf
+    }
+  - {
+      label: "CRA, historical GST/HST/PST rates",
+      url: https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/charge-collect-which-rate.html
+    }
