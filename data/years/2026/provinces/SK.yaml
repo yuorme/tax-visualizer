@@ -11,8 +11,16 @@ spouseAmount: {max: 20381, threshold: 2038}
 childAmount: {perChild: 8358, ages: all}
 salesTax: {rate: 0.11, label: "5% GST + 6% PST"}
 propertyTax: {rate: 0.0134, city: Saskatoon}
+fuelTax: {gasoline: 0.15}   # $ per litre
+# Starting distance: the average per light vehicle in the 2009 Canadian Vehicle Survey (the last one), 11,007.3 million
+# vehicle-km ÷ 717,639 vehicles up to 4.5 tonnes (Tables 4-1 and 3-1), to the nearest 100 km.
+driving: {distance: 15300, estimated: true}
 credits:
   - name: Saskatchewan low-income tax credit
     program: sk-low-income-tax-credit
     params: {adult: 460, spouse: 460, child: 181, maxChildren: 2, rate: 0.0303, threshold: 39345}
     estimated: true   # reduction rate worked out from the published start and end points
+sources:
+  - {label: "nesto, Canada Property Tax Guide 2026 (residential property tax rate)", url: "https://www.nesto.ca/mortgage-basics/property-taxes-canada-highest-to-lowest/"}
+  - {label: "Natural Resources Canada, Fuel Consumption Levies in Canada (provincial gasoline tax, rates as of September 2, 2026)", url: "https://natural-resources.canada.ca/domestic-international-markets/fuel-consumption-levies-canada"}
+  - {label: "Statistics Canada, Canadian Vehicle Survey: Annual 2009, Tables 3-1 and 4-1 (distance per light vehicle)", url: "https://www150.statcan.gc.ca/n1/pub/53-223-x/53-223-x2009000-eng.pdf"}

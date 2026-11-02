@@ -13,8 +13,15 @@ dividendTaxCredit: {eligible: 0.1202, nonEligible: 0.0067}
 spouseAmount: federal
 employmentAmountCredit: true      # Yukon has its own Canada employment amount credit
 salesTax: {rate: 0.05, label: "5% GST"}
-propertyTax: {rate: 0.0100, city: "Whitehorse (est.)", estimated: true}
+propertyTax: {rate: 0.0100, city: "Whitehorse (est.)", estimated: true, rough: true}   # no published rate used: a rough placeholder
+fuelTax: {gasoline: 0.062}   # $ per litre
+# Starting distance: the average per light vehicle in the 2009 Canadian Vehicle Survey (the last one), 353.8 million
+# vehicle-km ÷ 26,713 vehicles up to 4.5 tonnes (Tables 4-1 and 3-1), to the nearest 100 km.
+driving: {distance: 13200, estimated: true}
 childBenefit:
   name: Yukon Child Benefit
   program: per-child-reduced
   params: {perChild: 966, threshold: 35000, rateOneChild: 0.025, rateMoreChildren: 0.05}
+sources:
+  - {label: "Natural Resources Canada, Fuel Consumption Levies in Canada (provincial gasoline tax, rates as of September 2, 2026)", url: "https://natural-resources.canada.ca/domestic-international-markets/fuel-consumption-levies-canada"}
+  - {label: "Statistics Canada, Canadian Vehicle Survey: Annual 2009, Tables 3-1 and 4-1 (distance per light vehicle)", url: "https://www150.statcan.gc.ca/n1/pub/53-223-x/53-223-x2009000-eng.pdf"}

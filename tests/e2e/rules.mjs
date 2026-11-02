@@ -35,22 +35,6 @@ export const KNOWN = [
     selector: "#detail-body .note",
     what: "explanatory .note text is visible in the home vs destination comparison",
   },
-  {
-    rule: "contrast",
-    issue: "#56",
-    // Income tax ledger rows for brackets the income doesn't reach are dimmed: 2.53:1 light, 3.23:1 dark.
-    within: "tr.idle",
-    colours: { light: ["#9ea4a3 on #ffffff"], dark: ["#676f6d on #1a1f1e"] },
-    what: "dimmed unused-bracket rows in the income tax detail fail colour contrast",
-  },
-  {
-    rule: "contrast",
-    issue: "#56",
-    // The highlighted home column's code and tag (3.89:1) and marginal rate (4.43:1) on its tinted background.
-    within: ".col.is-home",
-    colours: { light: ["#c2432f on #f6dcd6", "#5d6865 on #f6dcd6"] },
-    what: "home column text on its highlight fails colour contrast in light mode",
-  },
 ].map(k => ({ ...k, id: `${k.issue} ${k.rule} ${k.selector ?? k.within}` }));
 
 /** Reads the page for the per-state rules: sideways scrolling, chart column labels and visible hint text. */

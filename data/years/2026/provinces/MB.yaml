@@ -11,6 +11,10 @@ dividendTaxCredit: {eligible: 0.08, nonEligible: 0.007835}
 spouseAmount: {max: 9134, threshold: 0}
 salesTax: {rate: 0.12, label: "5% GST + 7% RST"}
 propertyTax: {rate: 0.0138, city: Winnipeg}
+fuelTax: {gasoline: 0.125}   # $ per litre
+# Starting distance: the average per light vehicle in the 2009 Canadian Vehicle Survey (the last one), 10,027.3 million
+# vehicle-km ÷ 670,133 vehicles up to 4.5 tonnes (Tables 4-1 and 3-1), to the nearest 100 km.
+driving: {distance: 15000, estimated: true}
 creditsUseRent: true
 credits:
   - name: Homeowners affordability tax credit
@@ -20,3 +24,6 @@ credits:
     estimated: true   # renters credit taken at its maximum
 sources:
   - {label: "Manitoba Finance, Personal income taxes (bracket indexation paused from the 2025 tax year)", url: "https://www.gov.mb.ca/finance/personal/ptaxes.html"}
+  - {label: "nesto, Canada Property Tax Guide 2026 (residential property tax rate)", url: "https://www.nesto.ca/mortgage-basics/property-taxes-canada-highest-to-lowest/"}
+  - {label: "Natural Resources Canada, Fuel Consumption Levies in Canada (provincial gasoline tax, rates as of September 2, 2026)", url: "https://natural-resources.canada.ca/domestic-international-markets/fuel-consumption-levies-canada"}
+  - {label: "Statistics Canada, Canadian Vehicle Survey: Annual 2009, Tables 3-1 and 4-1 (distance per light vehicle)", url: "https://www150.statcan.gc.ca/n1/pub/53-223-x/53-223-x2009000-eng.pdf"}

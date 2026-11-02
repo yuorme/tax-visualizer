@@ -17,7 +17,7 @@ import {
   type Result,
 } from "../engine/index.ts";
 import { DEFAULT_INCOME, spendEst } from "./defaults.ts";
-import { footerNotes, share, tooltips } from "./notes.ts";
+import { cents, footerNotes, share, tooltips } from "./notes.ts";
 
 const YEAR = Math.max(...Object.keys(years).map(Number));
 const Y = years[YEAR],
@@ -60,14 +60,12 @@ const money = (n: number) => (Math.round(n) < 0 ? "−$" : "$") + Math.abs(Math.
 const pct = (n: number, d = 1) => `${(n * 100).toFixed(d)}%`;
 const rateFmt = (r: number) => `${+(r * 100).toFixed(2)}%`;
 const NAMES = ["You", "Partner"];
-// RRSP room: a share of earned income up to the year's dollar limit (current employment income stands in for last year's)
-const rrspMax = (x: Person) => Math.min(F.rrsp.limit, Math.round(x.ord * F.rrsp.rate));
 
 type Metric = "pct" | "usd";
 type Sort = "rate" | "geo";
 type View = "home" | "dest";
 /** The tabs under the basic inputs; each opens one panel (#tabbar, #panel-<tab>). */
-const TABS = ["income", "home", "credits"] as const;
+const TABS = ["income", "home", "credits", "driving"] as const;
 type Tab = (typeof TABS)[number];
 const isTab = (t: unknown): t is Tab => TABS.some(x => x === t);
 /** Own: the home value is used (property tax). Rent: the rent is used (rent-based credits). */
@@ -87,6 +85,11 @@ let homeValue = 0,
   tenure: Tenure = "own",
   useCredits = true,
   tab: Tab | null = null; // the open tab, if any
+// Driving: a typed distance or efficiency, or null to use the starting value (the home province's average distance,
+// the national average efficiency). FUEL: the year's data has fuel taxes; without them the Driving tab is hidden.
+let kmOverride: number | null = null,
+  effOverride: number | null = null;
+const FUEL = F.fuelTax != null && F.driving != null;
 const TREATY_WH = F.investment.foreignWithholding.usTreaty;
 let sort: Sort = "rate",
   home = "ON",
@@ -100,6 +103,13 @@ const rentPaid = () => (tenure === "rent" ? rent : 0);
 const byCode = (c: string) => P.find(p => p.c === c);
 /** The province with this code; home and dest always hold one. */
 const prov = (c: string) => must(byCode(c), `province ${c}`);
+const defaultKm = (c: string) => prov(c).d.driving?.distance ?? 0;
+const kmNow = () => kmOverride ?? defaultKm(home);
+const defaultEff = () => F.driving?.efficiency ?? 0;
+const effNow = () => effOverride ?? defaultEff();
+/** Efficiency as typed or shown: at least one decimal (9.0), more only when entered (7.25). */
+const effText = (v: number) => (Number.isInteger(v * 10) ? v.toFixed(1) : String(v));
+const kmText = (v: number) => `${v.toLocaleString("en-CA")} km`;
 const effSpend = () => Math.round((spend * (1 + frug / 100)) / 10) * 10; // nearest $10
 // Engine input built from the current state
 const inputs = (): Household => ({
@@ -116,6 +126,7 @@ const inputs = (): Household => ({
   rent: rentPaid(),
   monthlySpending: effSpend(),
   propertyRates: propOverride != null ? { [home]: propOverride } : undefined,
+  driving: FUEL ? { km: kmNow(), lPer100km: effNow() } : undefined,
 });
 const calc = (p: ProvView) => compute(Y, p.d, inputs());
 const rowFor = (res: Row[], c: string) =>
@@ -161,6 +172,8 @@ try {
     if (isNum(s.homeValue) && s.homeValue >= 0) homeValue = s.homeValue;
     if (isNum(s.propOverride)) propOverride = s.propOverride;
     if (isNum(s.rent) && s.rent >= 0) rent = s.rent;
+    if (isNum(s.km) && s.km >= 0) kmOverride = s.km;
+    if (isNum(s.eff) && s.eff >= 0) effOverride = s.eff;
     // Saves from before the Own/Rent switch: rent only counted with no home value, so that meant renting
     if (s.tenure === "own" || s.tenure === "rent") tenure = s.tenure;
     else if (rent > 0 && homeValue === 0) tenure = "rent";
@@ -174,6 +187,10 @@ try {
   }
 } catch {}
 if (dest === home) dest = home === "AB" ? "BC" : "AB";
+if (!FUEL) {
+  $("tab-driving").hidden = true;
+  if (tab === "driving") tab = null;
+}
 function save() {
   try {
     localStorage.setItem(
@@ -201,6 +218,8 @@ function save() {
         tenure,
         useCredits,
         tab,
+        km: kmOverride,
+        eff: effOverride,
       }),
     );
   } catch {}
@@ -247,7 +266,7 @@ P.forEach(p => {
   const c = document.createElement("li");
   c.className = "col";
   c.id = `col-${p.c}`;
-  c.innerHTML = `<div class="col-plot"><span class="cv"></span><div class="stack"><i class="f"></i><i class="p"></i><i class="y"></i><i class="w"></i><i class="s"></i><i class="h"></i></div><i class="ben"></i></div>
+  c.innerHTML = `<div class="col-plot"><span class="cv"></span><div class="stack"><i class="f"></i><i class="p"></i><i class="y"></i><i class="w"></i><i class="s"></i><i class="h"></i><i class="g"></i></div><i class="ben"></i></div>
     <div class="code" title="${p.n}">${p.c}${p.qc ? "<sup>†</sup>" : ""}</div><div class="cm"></div><div class="tag"></div>`;
   colsEl.appendChild(c);
 });
@@ -295,9 +314,9 @@ function renderPeople() {
 }
 
 const kMoney = (v: number) => (v >= 1000 ? `$${+(v / 1000).toFixed(v >= 100000 ? 0 : 1)}k` : `$${Math.round(v)}`);
-/** Chart column segments (f = federal, p = provincial, y = payroll, w = withheld, s = sales, h = property) and the
- *  benefits band. Each is also the segment element's class name. */
-type Seg = "f" | "p" | "y" | "w" | "s" | "h" | "ben";
+/** Chart column segments (f = federal, p = provincial, y = payroll, w = withheld, s = sales, h = property, g = fuel)
+ *  and the benefits band. Each is also the segment element's class name. */
+type Seg = "f" | "p" | "y" | "w" | "s" | "h" | "g" | "ben";
 const SEG_NAMES: Record<Seg, string> = {
   f: "Federal income tax",
   p: "Provincial / territorial income tax",
@@ -305,11 +324,22 @@ const SEG_NAMES: Record<Seg, string> = {
   w: "Foreign tax withheld",
   s: "Sales tax",
   h: "Property tax",
+  g: "Fuel tax",
   ben: "Benefits and credits",
 };
-const SEG_KEYS: Exclude<Seg, "ben">[] = ["f", "p", "y", "w", "s", "h"];
+const SEG_KEYS: Exclude<Seg, "ben">[] = ["f", "p", "y", "w", "s", "h", "g"];
 const segAmt = (r: Result, c: Seg) =>
-  ({ f: r.fed, p: r.prov, y: r.payroll, w: r.wh, s: r.sales, h: r.property, ben: r.benefits })[c];
+  ({ f: r.fed, p: r.prov, y: r.payroll, w: r.wh, s: r.sales, h: r.property, g: fuelAmt(r), ben: r.benefits })[c];
+/** Fuel tax a year (0 for a year without fuel data). */
+const fuelAmt = (r: Result) => r.fuel?.total ?? 0;
+/** "1,458 litres at 11.99¢ a litre: federal 2.99¢, Ontario 9¢" (year averages), for the chart tip and panel. */
+function fuelParts(p: ProvView, r: Result) {
+  const f = r.fuel;
+  if (!f) return "";
+  const parts = [`federal ${cents(f.perLitre.federal)}`, `${p.n} ${cents(f.perLitre.provincial)}`];
+  if (f.regionalName) parts.push(`${f.regionalName} ${cents(f.perLitre.regional)}`);
+  return `${Math.round(f.litres).toLocaleString("en-CA")} litres at ${cents(f.perLitre.total)} a litre: ${parts.join(", ")}`;
+}
 /** Tooltip HTML for each chart segment, set on every render. Info buttons use their data-tip text instead. */
 const segTips = new WeakMap<Element, string>();
 function segTip(p: ProvView, r: Result, c: Seg) {
@@ -324,24 +354,12 @@ function segTip(p: ProvView, r: Result, c: Seg) {
     if (p.qc) sub += `. After the ${rateFmt(F.quebecAbatement)} Quebec abatement`;
   } else if (c === "p") {
     sub = `Top ${p.n} bracket reached: ${each(y => rateFmt(y.pr.marg))}`;
-    const ex = r.list.reduce((a, y) => ({ s: a.s + y.surtax, red: a.red + y.onRed + y.lift + y.bcRed }), {
-      s: 0,
-      red: 0,
-    });
-    if (ex.s > 0.5) sub += `. Includes ${money(ex.s)} Ontario surtax`;
-    if (ex.red > 0.5)
-      sub += `. After ${money(ex.red)} of ${p.c === "BC" ? "BC tax reduction" : "Ontario tax reduction and LIFT credit"}`;
+    const { surtax, provReductions } = r.breakdown;
+    if (surtax > 0.5) sub += `. Includes ${money(surtax)} Ontario surtax`;
+    if (provReductions > 0.5)
+      sub += `. After ${money(provReductions)} of ${p.c === "BC" ? "BC tax reduction" : "Ontario tax reduction and LIFT credit"}`;
   } else if (c === "y") {
-    const t = r.list.reduce(
-      (a, y) => ({
-        cpp: a.cpp + y.pay.base + y.pay.enh,
-        ei: a.ei + y.pay.ei,
-        qpip: a.qpip + y.pay.qpip,
-        terr: a.terr + y.pay.terr,
-        ohp: a.ohp + y.ohp,
-      }),
-      { cpp: 0, ei: 0, qpip: 0, terr: 0, ohp: 0 },
-    );
+    const t = r.breakdown.payroll;
     sub = [
       `${p.qc ? "QPP" : "CPP"} ${money(t.cpp)}`,
       `EI ${money(t.ei)}`,
@@ -352,12 +370,13 @@ function segTip(p: ProvView, r: Result, c: Seg) {
       .filter(Boolean)
       .join(" · ");
   } else if (c === "w") {
-    const cr = r.list.reduce((a, y) => a + y.fFtc + y.pFtc, 0);
-    sub = `Withheld abroad on foreign dividends; ${money(cr)} of it is credited back against Canadian tax`;
+    sub = `Withheld abroad on foreign dividends; ${money(r.breakdown.ftc)} of it is credited back against Canadian tax`;
   } else if (c === "s") {
     sub = `${p.d.salesTax.label} on ${money(effSpend())} a month of taxable spending`;
   } else if (c === "h") {
     sub = `${rateFmt(r.propRate)} on a ${money(ownedValue())} home${p.c === home && propOverride != null ? " (your rate)" : ` (${p.d.propertyTax.city} rate)`}`;
+  } else if (c === "g") {
+    sub = `${fuelParts(p, r)}, averaged over ${YEAR}`;
   } else if (c === "ben") {
     const parts: string[] = [];
     if (r.ccb > 0.5) parts.push(`Canada Child Benefit ${money(r.ccb)}`);
@@ -461,8 +480,8 @@ function render() {
 
   const two = people.length === 2,
     x = me();
-  const totalInc = people.reduce((a, y) => a + cashOf(y), 0);
   const H = rowFor(res, home);
+  const totalInc = H.r.cash;
   const anyBen = res.some(y => y.r.benefits > 0.5);
   $("chart-title").textContent = usd
     ? `${two || adults > 1 || kids > 0 ? "Household tax" : "Tax"} on ${money(totalInc)}${anyBen ? ", after benefits" : ""}`
@@ -471,7 +490,7 @@ function render() {
     ? `${active ? "Partner's" : "Your"} employment &amp; other income`
     : `Employment &amp; other income`;
   $("ded-label").textContent = two ? `${active ? "Partner's" : "Your"} deductions` : "Deductions";
-  const rm = rrspMax(x);
+  const rm = H.r.me.breakdown.rrspRoom;
   $("max-rrsp").textContent = `Max RRSP ${money(rm)}`;
   $("max-rrsp").setAttribute("aria-pressed", String(rm > 0 && x.ded === rm));
   $("invest-title").textContent = two ? `${active ? "Partner's" : "Your"} investment income` : "Investment income";
@@ -489,6 +508,7 @@ function render() {
   $("legend-wh").hidden = !(people.some(y => y.fd > 0) && whRate > 0);
   $("legend-sales").hidden = !(effSpend() > 0);
   $("legend-prop").hidden = !(ownedValue() > 0);
+  $("legend-fuel").hidden = !res.some(y => fuelAmt(y.r) > 0.5);
   $("legend-ben").hidden = !anyBen;
   // Refundable credits panel: the home province's credits
   $<HTMLInputElement>("cred-toggle").checked = useCredits;
@@ -534,8 +554,8 @@ function render() {
   $("rent-body").hidden = tenure !== "rent";
   // Tab summaries: what each panel holds, highlighted whenever the summary is an amount rather than none, not set,
   // $0 or off. Income covers everyone's investments, though its panel shows the selected person's.
-  const anyInv = people.some(hasInv);
-  const invNet = people.reduce((a, y) => a + y.cg + y.ed + y.nd + y.fd, 0);
+  const anyInv = H.r.hasInv;
+  const invNet = H.r.invAmt;
   tabSum("income", anyInv ? (invNet < 0 ? `−${kMoney(-invNet)}` : kMoney(invNet)) : "none", anyInv);
   tabSum(
     "home",
@@ -543,6 +563,7 @@ function render() {
     ownedValue() > 0 || rentPaid() > 0,
   );
   tabSum("credits", !useCredits ? "off" : kMoney(H.r.refund), useCredits && H.r.refund > 0.5);
+  if (FUEL) renderDriving(H);
   $("m-pct").setAttribute("aria-pressed", String(metric === "pct"));
   $("m-usd").setAttribute("aria-pressed", String(metric === "usd"));
   $<HTMLInputElement>("frug").value = String(frug);
@@ -558,6 +579,28 @@ function render() {
   $<HTMLInputElement>("bpa-toggle").checked = useBpa;
   $("bpa-state").textContent = useBpa ? "Credits applied" : "Brackets only";
   save();
+}
+
+/** The Driving panel and tab: the distance and efficiency boxes (unless being typed in), where each starting value
+ *  comes from, and the fuel tax in the home province. */
+function renderDriving(H: Row) {
+  const km = kmNow(),
+    eff = effNow(),
+    f = H.r.fuel;
+  if (document.activeElement !== kmIn) kmIn.value = km.toLocaleString("en-CA");
+  kmRange.value = String(Math.min(km, +kmRange.max));
+  if (document.activeElement !== effIn) effIn.value = effText(eff);
+  $("km-note").textContent =
+    kmOverride != null
+      ? `Your distance (${H.p.n} average is ${kmText(defaultKm(home))})`
+      : `${H.p.n} average, ${F.driving?.distanceSource ?? ""}`;
+  $("km-reset").hidden = kmOverride == null;
+  $("eff-note").textContent =
+    effOverride != null ? `Your vehicles (Canadian average is ${effText(defaultEff())})` : "Canadian on-road average";
+  $("eff-reset").hidden = effOverride == null;
+  $("fuel-sum").textContent =
+    f && f.total > 0.5 ? `${money(f.total)} a year in ${H.p.n}` : km > 0 ? "no fuel bought" : "no driving";
+  tabSum("driving", km > 0 ? `${+(km / 1000).toFixed(1)}k km` : "none", f != null && f.total > 0.5);
 }
 
 /** An adjustment after bracket tax: [label, amount], negative when it reduces tax. */
@@ -664,6 +707,13 @@ function renderDetail(res: Row[], order: Row[]) {
           dr.property,
         )
       : "") +
+    (any(fuelAmt)
+      ? row(
+          `Fuel tax <small class="note">(${cents(hr.fuel?.perLitre.total ?? 0)} vs ${cents(dr.fuel?.perLitre.total ?? 0)} a litre)</small>`,
+          fuelAmt(hr),
+          fuelAmt(dr),
+        )
+      : "") +
     (kids > 0
       ? row(
           `Child benefits <small class="note">(CCB${any(r => r.provBen) ? " + provincial" : ""})</small>`,
@@ -676,7 +726,7 @@ function renderDetail(res: Row[], order: Row[]) {
     row(hh ? "Household net tax" : "Net tax", hr.total, dr.total, "tax", "sum") +
     row("Net rate", hr.avg, dr.avg, "pp") +
     row(`Marginal rate${two ? ` · ${NAMES[active]}` : ""}`, hr.marg, dr.marg, "pp") +
-    row("Left after all of this", hr.base - hr.total, dr.base - dr.total, "income");
+    row("Left after all of this", hr.breakdown.left, dr.breakdown.left, "income");
   if (two)
     rows +=
       `<tr class="grp"><th colspan="4">Income tax &amp; payroll by person</th></tr>` +
@@ -734,19 +784,17 @@ function ledgerView({ p, r }: Row) {
   const two = people.length === 2,
     x = me(),
     m = r.me,
+    n = m.breakdown.netIncome,
     who = two ? NAMES[active] : "";
-  const tiParts = [`${money(x.ord)} employment &amp; other`];
-  if (x.cg > 0)
-    tiParts.push(
-      `${money(x.cg * F.investment.capitalGainsInclusion)} taxable ${share(F.investment.capitalGainsInclusion)} of net gains`,
-    );
-  if (x.ed) tiParts.push(`${money(x.ed * F.investment.grossUp.eligible)} grossed-up eligible dividends`);
-  if (x.nd) tiParts.push(`${money(x.nd * F.investment.grossUp.nonEligible)} grossed-up non-eligible dividends`);
-  if (x.fd) tiParts.push(`${money(x.fd)} foreign dividends`);
+  const tiParts = [`${money(n.ord)} employment &amp; other`];
+  if (x.cg > 0) tiParts.push(`${money(n.cg)} taxable ${share(F.investment.capitalGainsInclusion)} of net gains`);
+  if (x.ed) tiParts.push(`${money(n.ed)} grossed-up eligible dividends`);
+  if (x.nd) tiParts.push(`${money(n.nd)} grossed-up non-eligible dividends`);
+  if (x.fd) tiParts.push(`${money(n.fd)} foreign dividends`);
   const tiText =
     tiParts.join(" + ") +
-    (x.ded ? ` − ${money(x.ded)} deductions` : "") +
-    (m.pay.enh > 0.5 ? ` − ${money(m.pay.enh)} enhanced ${p.qc ? "QPP" : "CPP"}` : "");
+    (n.ded ? ` − ${money(n.ded)} deductions` : "") +
+    (n.enh > 0.5 ? ` − ${money(n.enh)} enhanced ${p.qc ? "QPP" : "CPP"}` : "");
   const extra: string[] = [];
   if (m.workerDed > 0.5)
     extra.push(`Quebec taxable income is ${money(m.tiP)} after the ${money(m.workerDed)} deduction for workers.`);
@@ -755,8 +803,8 @@ function ledgerView({ p, r }: Row) {
       `The ${money(-x.cg)} net capital loss doesn't reduce this year's tax; it can be carried back three years or forward against future capital gains.`,
     );
   if (m.wh > 0.5) {
-    const credited = m.fFtc + m.pFtc,
-      lost = m.wh - credited;
+    const credited = m.breakdown.ftc,
+      lost = m.breakdown.whUncredited;
     extra.push(
       `Tax includes ${money(m.wh)} withheld abroad on foreign dividends; ${money(credited)} of it is credited against Canadian tax${lost > 0.5 ? `, and ${money(lost)} can't be credited at this income` : ""}.`,
     );
@@ -787,7 +835,7 @@ function ledgerView({ p, r }: Row) {
     mine && [spLabelF, -m.fSp],
     [`Less employment amount, ${p.qc ? "QPP" : "CPP"} &amp; EI${p.qc ? "/QPIP" : ""} credits`, -m.fEmp],
     [`Less dividend tax credit`, -m.fDtc],
-    p.qc && [`Less ${rateFmt(F.quebecAbatement)} Quebec abatement`, -m.fedBasic * (1 - m.k)],
+    p.qc && [`Less ${rateFmt(F.quebecAbatement)} Quebec abatement`, -m.breakdown.quebecAbatement],
     [`Less foreign tax credit`, -m.fFtc],
   ]);
   const pRows = present([
@@ -822,7 +870,7 @@ function ledgerView({ p, r }: Row) {
     ] satisfies Adj[]
   ).filter(([, a]) => a > 0.5);
   return `
-    ${hasInv(x) || x.ded || m.pay.enh > 0.5 ? `<p class="note">${two ? `${who}: t` : "T"}axable income is ${money(m.ti)}: ${tiText}.${hasInv(x) ? ` "Tax on investment income" is the extra tax the ${two ? "household's " : ""}investment income adds on top of other income.` : ""} ${extra.join(" ")}</p>` : ""}
+    ${hasInv(x) || n.ded || n.enh > 0.5 ? `<p class="note">${two ? `${who}: t` : "T"}axable income is ${money(m.ti)}: ${tiText}.${hasInv(x) ? ` "Tax on investment income" is the extra tax the ${two ? "household's " : ""}investment income adds on top of other income.` : ""} ${extra.join(" ")}</p>` : ""}
     <div class="ledgers">
       ${ledger(`Federal${suffix}`, "var(--fed)", { lines: m.f.lines, gross: m.f.tax, rows: fRows, net: m.fed }, m.ti)}
       ${ledger(p.n + suffix, "var(--prov)", { lines: m.pr.lines, gross: m.pr.tax, rows: pRows, net: m.prov }, m.tiP)}
@@ -879,7 +927,7 @@ dedIn.addEventListener("keydown", e => {
   if (e.key === "Enter") dedIn.blur();
 });
 $("max-rrsp").addEventListener("click", () => {
-  me().ded = rrspMax(me());
+  me().ded = calc(prov(home)).me.breakdown.rrspRoom;
   dedIn.value = me().ded.toLocaleString("en-CA");
   render();
 });
@@ -1092,6 +1140,40 @@ for (const b of document.querySelectorAll<HTMLElement>("[data-tenure]"))
     tenure = b.dataset.tenure === "rent" ? "rent" : "own";
     render();
   });
+// Driving: typing or sliding sets your own distance or efficiency; Reset goes back to the starting value. 0 is allowed.
+const kmIn = $<HTMLInputElement>("km"),
+  kmRange = $<HTMLInputElement>("km-range"),
+  effIn = $<HTMLInputElement>("eff");
+kmIn.addEventListener("input", () => {
+  kmOverride = Math.min(+kmIn.value.replace(/[^\d]/g, "") || 0, 999999);
+  render();
+});
+kmIn.addEventListener("blur", () => render());
+kmIn.addEventListener("keydown", e => {
+  if (e.key === "Enter") kmIn.blur();
+});
+kmRange.addEventListener("input", () => {
+  kmOverride = +kmRange.value;
+  render();
+});
+$("km-reset").addEventListener("click", () => {
+  kmOverride = null;
+  render();
+});
+effIn.addEventListener("input", () => {
+  // A comma is a decimal point here (9,5 is 9.5, as many keyboards and locales write it), never a thousands mark
+  const v = parseFloat(effIn.value.replace(/,/g, ".").replace(/[^\d.]/g, ""));
+  effOverride = Number.isFinite(v) ? Math.min(v, 99) : 0;
+  render();
+});
+effIn.addEventListener("blur", () => render());
+effIn.addEventListener("keydown", e => {
+  if (e.key === "Enter") effIn.blur();
+});
+$("eff-reset").addEventListener("click", () => {
+  effOverride = null;
+  render();
+});
 const credToggle = $<HTMLInputElement>("cred-toggle");
 credToggle.addEventListener("change", () => {
   useCredits = credToggle.checked;
@@ -1143,17 +1225,20 @@ bpaToggle.addEventListener("change", () => {
 });
 
 // Slider axis labels
-function fmtTick(v: number, signed: boolean) {
-  if (v === 0) return "$0";
+// Amounts in dollars, unless the scale is marked data-plain (a distance)
+function fmtTick(v: number, signed: boolean, plain: boolean) {
+  const cur = plain ? "" : "$";
+  if (v === 0) return `${cur}0`;
   const a = Math.abs(v),
     k = a >= 1e6 ? `${+(a / 1e6).toFixed(1)}M` : a >= 1000 ? `${+(a / 1000).toFixed(1)}k` : a;
-  return `${v < 0 ? "−" : signed ? "+" : ""}$${k}`;
+  return `${v < 0 ? "−" : signed ? "+" : ""}${cur}${k}`;
 }
 document.querySelectorAll<HTMLElement>(".scale").forEach(sc => {
   const r = $<HTMLInputElement>(sc.dataset.for ?? ""),
     min = +r.min,
     max = +r.max,
-    signed = sc.hasAttribute("data-signed");
+    signed = sc.hasAttribute("data-signed"),
+    plain = sc.hasAttribute("data-plain");
   // "~" marks a minor tick: a mark with no label
   const ticks = (sc.dataset.ticks ?? "").split(",");
   sc.innerHTML = ticks
@@ -1164,7 +1249,7 @@ document.querySelectorAll<HTMLElement>(".scale").forEach(sc => {
       if (minor) return `<span class="minor" style="left:calc(9px + (100% - 18px) * ${q})"></span>`;
       const cls = i === 0 ? "first" : i === ticks.length - 1 ? "last" : "";
       const left = i === 0 ? "0" : i === ticks.length - 1 ? "100%" : `calc(9px + (100% - 18px) * ${q})`;
-      return `<span class="${cls}${v === 0 && min < 0 ? " zero" : ""}" style="left:${left}">${fmtTick(v, signed)}</span>`;
+      return `<span class="${cls}${v === 0 && min < 0 ? " zero" : ""}" style="left:${left}">${fmtTick(v, signed, plain)}</span>`;
     })
     .join("");
 });

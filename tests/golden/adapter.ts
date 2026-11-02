@@ -18,6 +18,8 @@ export interface Scenario {
   home: string;
   spend: number;
   frug: number;
+  km: number; // driving: distance a year
+  efficiency: number; // and litres per 100 km
 }
 
 export const toHousehold = (s: Scenario): Household => ({
@@ -34,4 +36,5 @@ export const toHousehold = (s: Scenario): Household => ({
   rent: s.rent,
   monthlySpending: Math.round((s.spend * (1 + s.frug / 100)) / 10) * 10,
   propertyRates: s.propOverride != null ? { [s.home]: s.propOverride } : undefined,
+  driving: { km: s.km, lPer100km: s.efficiency },
 });

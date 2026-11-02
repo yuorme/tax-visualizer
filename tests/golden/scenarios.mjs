@@ -18,6 +18,10 @@ export const DEFAULTS = {
   home: "ON",
   spend: 2000,
   frug: 0,
+  // Driving: the page's starting values for an Ontario home (the 2009 survey distance and the national efficiency).
+  // Years without fuel data ignore them.
+  km: 16200,
+  efficiency: 9,
 };
 
 const hand = [
@@ -102,4 +106,13 @@ for (let i = 0; i < 120; i++) {
   });
 }
 
-export const SCENARIOS = [...hand, ...sample].map((s, i) => ({ id: i, ...DEFAULTS, ...s }));
+// Driving for the random sample, taken in turn by position rather than drawn from the generator, so adding it left
+// every other input of the sample unchanged: the default, no car, a long commute in a thirsty vehicle, a short one
+// in an efficient vehicle, and an electric car (0 L/100 km).
+const DRIVING = [{}, { km: 0 }, { km: 35000, efficiency: 12.5 }, { km: 8000, efficiency: 5.5 }, { efficiency: 0 }];
+export const SCENARIOS = [...hand, ...sample].map((s, i) => ({
+  id: i,
+  ...DEFAULTS,
+  ...(i >= hand.length ? DRIVING[i % DRIVING.length] : {}),
+  ...s,
+}));

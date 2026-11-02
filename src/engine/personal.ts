@@ -1,7 +1,7 @@
 // Income tax and payroll for one person in one province.
 import type { Federal, LowIncomeProgram, Province } from "../data/schema.ts";
 import { phased, walk } from "./brackets.ts";
-import { healthPremium, netOf, payrollOf } from "./payroll.ts";
+import { healthPremium, netIncomeParts, netOf, payrollOf, rrspRoom } from "./payroll.ts";
 import type { Ctx, Extra, Person } from "./types.ts";
 
 export interface Settings {
@@ -137,6 +137,7 @@ export function personTax(fed: Federal, p: Province, x: Person, sp: Extra, ctx: 
     prov = provPre - pFtc;
   const ohp = healthPremium(p, ti);
   const payroll = pay.base + pay.enh + pay.ei + pay.qpip + pay.terr + ohp;
+  const ftc = fFtc + pFtc;
   return {
     x,
     ti,
@@ -182,5 +183,14 @@ export function personTax(fed: Federal, p: Province, x: Person, sp: Extra, ctx: 
     ohp,
     payroll,
     total: fedTax + prov + wh + payroll,
+    // Figures the page shows that aren't steps of the calculation above. They sit in a nested object because the
+    // golden snapshot (tests/golden/snapshot.mjs) locks every top-level number of this result.
+    breakdown: {
+      netIncome: netIncomeParts(fed, x), // what net income is made of
+      rrspRoom: rrspRoom(fed, x),
+      quebecAbatement: fedBasic * (1 - k), // the share of basic federal tax that Quebec residents don't pay federally
+      ftc, // foreign tax credit, federal and provincial
+      whUncredited: wh - ftc, // foreign tax withheld that no credit gives back
+    },
   };
 }

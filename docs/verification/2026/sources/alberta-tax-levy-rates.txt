@@ -1,0 +1,150 @@
+Title: Tax, levy, and prescribed interest rates
+URL: https://www.alberta.ca/about-tax-levy-rates-prescribed-interest-rates
+Fetched: 2026-11-01
+SHA-256 of the original: 06013b25c96e10e9d6d99b071496f816be62b6c987b3531e4bc6bc3fc842377e
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+Skip to On this page Skip to Explore pages in
+
+## Explore pages in:
+
+Tax and levy payments and administration
+
+- About TRA
+- Alberta Indian Tax Exemption
+- Corporate income tax
+- Emergency 911 levy
+- Freehold mineral tax
+- Fuel tax
+- Goods and Services Tax in Alberta
+- Health cost recovery
+- Insurance premiums tax
+- Making payments to TRA
+- Owing money - Collections at TRA
+- Tax, levy, and prescribed interest rates
+- Third-party organizations
+- Tobacco tax
+- Tourism levy
+- TRA Client Self-Service (TRACS)
+- TRACS online mail transition
+- TRA online services
+- Unclaimed property
+
+## Corporate income tax rates
+
+The following table provides Alberta corporate income tax rates and effective dates. View historical corporate income tax rates.
+
+Effective dates | General corporate tax rate | Small business rate | Small business deduction (SBD) | Manu-facturing and pro-cessing (M&P)* | Annual business limit/ small business threshold | Threshold as multiple of $200k base amount
+Current (effective July 1, 2020) | 8% | 2% | 6% | n/a | $500,000 | 250%
+
+## Emergency 911 levy rates
+
+The following table provides current Alberta Emergency 911 levy rates and effective dates. Rates listed are per each wireless device with an Alberta area code. View historical emergency 911 levy rates.
+
+Effective dates | Emergency 911 levy
+Current (effective September 1, 2021) | 95 cents
+
+## Fuel tax rates
+
+The following table provides current Alberta fuel tax rates and effective dates. Rates listed are per litre. Fuel tax applies on the volume of fuel, including additives. View historical fuel tax rates.
+
+Effective dates | Aviation gas and jet fuel | Gasoline (all grades)* | Diesel (all grades)* | Ethanol and bio-diesel | Liquid petro-leum gas (LPG)* | Loco-motive* | Bunker fuel, kerosene, methanol, conden-sate*
+Current (effective October 1, 2026) | $0.015 | $0.000 | $0.000 | $0.000 | $0.094 | $0.065 | $0.000
+
+*Fuel tax rate table notes:
+
+### Oil price tax rate adjustments
+
+Fuel tax rates for gasoline, diesel, ethanol, biodiesel, bunker fuel, kerosene, methanol and condensate used to generate power by means of an internal combustion or turbine engine are adjusted quarterly based on the average price of West Texas Intermediate for the most recent 20 trading days before the 16th day of the calendar month that immediately precedes the particular calendar quarter. The fuel tax rates will not increase by more than 9 cents per litre per quarter.
+
+Where the ‘oil price’ for a calendar quarter is:
+
+- $90 USD or higher, the adjustment for that calendar quarter is CDN$0.13 per litre, resulting in a tax rate of nil
+- $85 USD to $89.99 USD, the adjustment for that calendar quarter is CDN$0.085 per litre, resulting in a tax rate of CDN$0.045 per litre
+- $80 USD to $84.99 USD, the adjustment for that calendar quarter is CDN$0.04 per litre, resulting in a tax rate of CDN$0.09 per litre
+
+Marked gasoline and marked diesel (all grades)
+
+- Tax on marked gasoline and marked diesel sold in Alberta is $0.00 per litre (effective October 1, 2026).
+
+Liquid petroleum gas (LPG)
+
+- Every distributor of LPG currently pays this tax on LPG delivered into a dispensing system capable of being used to dispense LPG for motive use.
+
+Locomotive
+
+- Locomotive fuel tax is based on consumption in Alberta and payable by the railway.
+
+Bunker fuel, kerosene, methanol, condensate
+
+- If used by a consumer to generate motive power with an internal combustion or turbine engine.
+- There is no tax if the product is used for heating or other non-motive purposes.
+
+Natural gas is not taxed under the Fuel Tax Act.
+
+## Tobacco tax rates
+
+The following table provides current Alberta tax rates and effective dates for tobacco. View historical tobacco tax rates.
+
+*Tobacco sticks began to be listed effective March 20, 2002; they were incorporated into legislation with the Tobacco Tax Regulation effective October 5, 2004. Tobacco sticks may be sold in packages of 20 or 25 sticks or cartons containing 200 sticks.
+**Smokeless tobacco was introduced as a separate category as of March 1, 2022. Prior to this date, smokeless tobacco was taxed as loose tobacco.
+Effective dates | Cigarettes or tobacco sticks* | Smokeless tobacco** | Loose tobacco
+| Per cigarette or tobacco stick | Package of 25 | Carton (8 pkgs) | Per gram | Per gram | Per 200 grams
+Current (effective March 1, 2024) | 30 cents | $7.50 | $60.00 | 35 cents | 41.25 cents | $82.50
+
+### Cigar tax rates
+
+For the current definition of 'taxable price' see Information Circular TTA-2 – Information for Tobacco Collectors, Wholesalers, Importers and Retailers. View historical tobacco tax rates.
+
+Effective dates | Rate (percentage of the "taxable price" of the cigar) | Minimum tax per cigar | Maximum tax per cigar
+Current (effective October 25, 2019) | 142% | 27.5 cents | $8.61
+
+## Tourism levy rates
+
+The following table provides the current Alberta tourism levy rate and effective dates. The Hotel Room Tax was replaced by the Tourism Levy, effective April 1, 2005. View historical tourism levy rates.
+
+Effective dates | Tourism levy/hotel room tax
+April 1, 2026 | 6% tourism levy
+
+## TRA prescribed interest rates
+
+The following table provides the current years prescribed debit (DR) and credit (CR) interest rates. View historical prescribed interest rates.
+
+Year | First quarter | Second quarter | Third quarter | Fourth quarter
+2026 | DR – 7.0% CR – 1.5% | DR – 7.0% CR – 1.5% | DR – 7.0% CR – 1.5% | DR – 7.0% CR – 1.5%
+
+## Health cost recovery
+
+The following table provides the current years prescribed debit (DR) interest rate for health cost recovery. View historical Health cost recovery interest rates.
+
+Year | First quarter | Second quarter | Third quarter | Fourth quarter
+2026 | DR – 6.5% | DR – 6.5% | DR – 6.5% | DR – 6.5%
+
+## International Fuel Tax Agreement
+
+The following table provides the current years prescribed debit (DR) interest rate for International Fuel Tax Agreement. View historical IFTA interest rates.
+
+Year | First quarter | Second quarter | Third quarter | Fourth quarter
+2026 | DR – 5% | DR – 5% | DR – 5% | DR – 5%
+
+Notes
+
+- Debit interest rates apply to programs under the Alberta Corporate Tax Act, Fuel Tax Act, Tobacco Tax Act, Tourism Levy Act, and Emergency 911 Levy Program, as well as the Health Cost Recovery program (see note above).
+- Credit interest rates apply to programs under the Alberta Corporate Tax Act.
+
+## Sign up for updates
+
+Subscribe to TRA's publications and announcements
+
+## Contact
+
+Connect with Tax and Revenue Administration:
+
+Hours: 8:15 am to 4:30 pm (open Monday to Friday, closed statutory holidays)
+Phone: 780-427-3044
+Toll free: 310-0000 before the phone number (in Alberta)
+Email: [email protected]
+
+Previous Owing money - Collections at TRA
+Next Third-party organizations

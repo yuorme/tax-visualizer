@@ -8,7 +8,12 @@
 //     text outside the info tooltips;
 //  5. axe-core's colour-contrast rule at 375 px in light and dark mode, after every step;
 //  6. the built page is self-contained: it requests nothing but the external hosts listed in page.mjs;
-//  7. the tab bar under the inputs: every tab closed on first load, and a tab opens alone and closes when tapped again.
+//  7. the tab bar under the inputs: every tab closed on first load, and a tab opens alone and closes when tapped again;
+//  8. fuel tax (FUEL_STEPS, built page only, at every width and scheme): the Driving tab follows Credits, distance
+//     starts at the home province's survey average and efficiency at the national one, both are editable and take 0,
+//     a comma in the efficiency is a decimal point, and fuel tax is its own line in the comparison.
+// The legacy page has no fuel tax, so the light-mode runs compared with it (3) set the built page's distance to 0
+// first. The dark-mode runs keep the starting driving, so STEPS also run with fuel tax in the totals.
 // Known failures (rules.KNOWN) are reported but don't fail the run; `npm run e2e -- --strict` fails on them too.
 import fs from "node:fs";
 import { chromium } from "playwright";
@@ -126,6 +131,96 @@ const STEPS = [
   ],
 ];
 
+/** Sets the built page's distance driven to 0, so it has no fuel tax, like the legacy page; leaves every tab closed. */
+async function noDriving(p) {
+  if (!(await tabbed(p))) return;
+  await p.click('#tabbar [data-tab="driving"]');
+  await p.fill("#km", "0");
+  await p.dispatchEvent("#km", "input");
+  await p.click('#tabbar [data-tab="driving"]');
+}
+
+// Fuel tax checks, from the page's starting values (Ontario home, Alberta destination). Expected distances are the
+// provinces' 2009 Canadian Vehicle Survey averages in data/years/2026/provinces/<XX>.yaml.
+const value = (p, sel) => p.$eval(sel, el => el.value);
+const shown = (p, sel) => p.$eval(sel, el => !el.hidden && el.checkVisibility());
+/** The comparison's fuel tax row as [label, home, destination, difference], or null when there isn't one. */
+const fuelRow = p =>
+  p.$$eval("#detail-body table.cmp tbody tr", rows => {
+    const r = rows.find(tr => tr.cells[0]?.textContent.startsWith("Fuel tax"));
+    return r ? [...r.cells].map(c => c.textContent.trim()) : null;
+  });
+/** Sets a text box as typing would, and leaves it. */
+async function type(p, sel, text) {
+  await p.fill(sel, text);
+  await p.dispatchEvent(sel, "input");
+  await p.$eval(sel, el => el.blur());
+}
+const expectValue = async (p, sel, want, when) => {
+  const got = await value(p, sel);
+  return got === want ? [] : [`${when}: ${sel} shows ${JSON.stringify(got)}, expected ${JSON.stringify(want)}`];
+};
+const expectNoFuelRow = async (p, when) => {
+  const row = await fuelRow(p);
+  return row ? [`${when}: the comparison still has a fuel tax row: ${row.join(" | ")}`] : [];
+};
+const FUEL_STEPS = [
+  [
+    "fuel: starting values and the comparison line",
+    async p => {
+      const problems = [];
+      const tabs = await p.$$eval("#tabbar [data-tab]", bs => bs.map(b => b.dataset.tab));
+      if (tabs.indexOf("driving") !== tabs.indexOf("credits") + 1)
+        problems.push(`the Driving tab should come right after Credits, got ${tabs.join(", ")}`);
+      await openTab(p, "driving");
+      problems.push(...(await expectTab(p, "driving", "after tapping Driving")));
+      problems.push(...(await expectValue(p, "#km", "16,200", "Ontario home")));
+      problems.push(...(await expectValue(p, "#eff", "9.0", "starting efficiency")));
+      const row = await fuelRow(p);
+      if (!row) problems.push("no fuel tax row in the comparison at the starting values");
+      else if (!/¢ vs [\d.]+¢ a litre/.test(row[0]) || row.slice(1, 3).some(v => !/^\$[1-9]/.test(v)))
+        problems.push(
+          `fuel tax row should show both per-litre rates and an amount for each province: ${row.join(" | ")}`,
+        );
+      if (!(await shown(p, "#legend-fuel"))) problems.push("the chart legend has no fuel tax entry");
+      const segs = await p.$$eval(".stack .g", els => els.filter(e => e.getBoundingClientRect().height > 0).length);
+      if (segs !== 13) problems.push(`${segs} of 13 chart columns show a fuel tax segment`);
+      return problems;
+    },
+  ],
+  [
+    "fuel: distance follows the home province until typed",
+    async p => {
+      await p.selectOption("#home", "BC");
+      const problems = await expectValue(p, "#km", "12,900", "British Columbia home");
+      await type(p, "#km", "20,000");
+      await p.selectOption("#home", "QC");
+      problems.push(...(await expectValue(p, "#km", "20,000", "typed distance after moving home to Quebec")));
+      if (!(await shown(p, "#km-reset"))) problems.push("no Reset link for a typed distance");
+      await p.click("#km-reset");
+      problems.push(...(await expectValue(p, "#km", "14,800", "Reset with a Quebec home")));
+      return problems;
+    },
+  ],
+  [
+    "fuel: 0 km and 0 L/100 km are allowed",
+    async p => {
+      await type(p, "#km", "0");
+      const problems = await expectValue(p, "#km", "0", "distance 0");
+      problems.push(...(await expectNoFuelRow(p, "distance 0")));
+      if ((await p.textContent("#tab-driving-sum")) !== "none")
+        problems.push("Driving tab summary should say none at 0 km");
+      await p.click("#km-reset");
+      await type(p, "#eff", "0");
+      problems.push(...(await expectValue(p, "#eff", "0.0", "efficiency 0")));
+      problems.push(...(await expectNoFuelRow(p, "efficiency 0")));
+      await type(p, "#eff", "9,5");
+      problems.push(...(await expectValue(p, "#eff", "9.5", "efficiency typed with a decimal comma")));
+      return problems;
+    },
+  ],
+];
+
 const capture = p =>
   p.evaluate(() => ({
     cols: [...document.querySelectorAll(".col")].map(c => [
@@ -155,11 +250,13 @@ let fontsMissing = false;
 const browser = await chromium.launch();
 
 /** Opens a page, walks it through STEPS, and records what each check needs after every step. */
-async function run({ width, colorScheme = "light", html, contrast = false }) {
+async function run({ width, colorScheme = "light", html, contrast = false, steps = STEPS, before = async () => {} }) {
   const { page, errors, blocked, fontsLoaded, close } = await openPage(browser, { width, colorScheme, html });
   if (!fontsLoaded) fontsMissing = true;
+  await before(page);
+  await settle(page);
   const states = [];
-  for (const [name, step] of STEPS) {
+  for (const [name, step] of steps) {
     const problems = (await step(page)) ?? [];
     await settle(page);
     const axe = contrast ? await contrastViolations(page, colorScheme) : [];
@@ -192,7 +289,7 @@ function check(label, width, { states, errors, blocked }) {
 }
 
 for (const width of [1000, 430, 375]) {
-  const [a, b] = [await run({ width, contrast: width === 375 }), await run({ width, html: legacy })];
+  const [a, b] = [await run({ width, contrast: width === 375, before: noDriving }), await run({ width, html: legacy })];
   check(`${width}px light`, width, a);
   a.states.forEach(({ name, capture: s }, i) => {
     const t = b.states[i].capture;
@@ -208,6 +305,17 @@ for (const width of [1000, 430, 375]) {
 for (const width of [430, 375]) {
   check(`${width}px dark`, width, await run({ width, colorScheme: "dark", contrast: width === 375 }));
   console.log(`${width}px dark: ${STEPS.length} states checked`);
+}
+for (const [width, colorScheme] of [
+  [1000, "light"],
+  [430, "light"],
+  [375, "light"],
+  [430, "dark"],
+  [375, "dark"],
+]) {
+  const fuel = await run({ width, colorScheme, contrast: width === 375, steps: FUEL_STEPS });
+  check(`${width}px ${colorScheme}, fuel tax`, width, fuel);
+  console.log(`${width}px ${colorScheme}: ${FUEL_STEPS.length} fuel tax states checked`);
 }
 await browser.close();
 

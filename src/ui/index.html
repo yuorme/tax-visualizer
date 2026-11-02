@@ -85,12 +85,13 @@
       </div>
     </div>
     <!-- More inputs: one tab bar, one panel open at a time, all closed by default; tapping the open tab closes it.
-         Each tab shows a short summary of its panel. The Driving (#6) and 65+ (#17) tabs are added with their
-         inputs, after Credits and in that order. -->
+         Each tab shows a short summary of its panel. The 65+ tab (#17) is added with its inputs, after Driving.
+         Driving is hidden for a year whose data has no fuel taxes. -->
     <fieldset class="tabbar" id="tabbar" aria-label="More inputs">
       <button type="button" id="tab-income" data-tab="income" aria-expanded="false" aria-controls="panel-income"><b class="tab-name" id="tab-income-name">Income</b><small id="tab-income-sum">none</small></button>
       <button type="button" id="tab-home" data-tab="home" aria-expanded="false" aria-controls="panel-home"><b class="tab-name" id="tab-home-name">Home</b><small id="tab-home-sum">not set</small></button>
       <button type="button" id="tab-credits" data-tab="credits" aria-expanded="false" aria-controls="panel-credits"><b class="tab-name" id="tab-credits-name">Credits</b><small id="tab-credits-sum">$0</small></button>
+      <button type="button" id="tab-driving" data-tab="driving" aria-expanded="false" aria-controls="panel-driving"><b class="tab-name" id="tab-driving-name">Driving</b><small id="tab-driving-sum">none</small></button>
     </fieldset>
     <section class="tab-panel" id="panel-income" aria-labelledby="tab-income-name" hidden>
       <!-- Other income types go here, above investments, per person: self-employment (#14), and interest, rental
@@ -169,11 +170,28 @@
         <table class="cred-list" id="cred-list"></table>
       </div>
     </section>
+    <section class="tab-panel" id="panel-driving" aria-labelledby="tab-driving-name" hidden>
+      <div class="panel-head"><b class="panel-title">Fuel tax</b><button type="button" class="info" data-note="fuel" aria-label="About fuel tax">i</button><span class="panel-sum" id="fuel-sum">none</span></div>
+      <div class="prop-grid">
+        <div class="field">
+          <div class="lbl-row"><label class="lbl" for="km">Distance driven</label><button type="button" class="info" data-note="distance" aria-label="About distance driven">i</button></div>
+          <div class="money md"><input id="km" inputmode="numeric" autocomplete="off" value="0"><span class="per">km a year</span></div>
+          <input type="range" id="km-range" class="inv-range" min="0" max="50000" step="500" value="0" aria-label="Distance driven slider">
+          <div class="scale" data-for="km-range" data-ticks="0,10000,20000,30000,40000,50000" data-plain aria-hidden="true"></div>
+          <div class="pr-note"><span id="km-note"></span> <button type="button" class="linkbtn" id="km-reset" hidden>Reset</button></div>
+        </div>
+        <div class="field">
+          <div class="lbl-row"><label class="lbl" for="eff">Fuel efficiency</label><button type="button" class="info" data-note="efficiency" aria-label="About fuel efficiency">i</button></div>
+          <div class="money md"><input id="eff" inputmode="decimal" autocomplete="off" value="0"><span class="per">L/100 km</span></div>
+          <div class="pr-note"><span id="eff-note"></span> <button type="button" class="linkbtn" id="eff-reset" hidden>Reset</button></div>
+        </div>
+      </div>
+    </section>
   </section>
 
   <section aria-label="Blended rate by province">
     <div class="chart-head">
-      <div class="lbl-row"><h2 id="chart-title">Blended rate at $100,000</h2><button type="button" class="info" data-tip="Each column stacks income tax, payroll contributions (CPP/QPP, EI/QPIP and health premiums), sales tax and property tax. Child benefits and refundable credits are netted off: the striped top of a column is the part they pay back, and the figure above it is the net rate, net tax divided by total income. The smaller figure below is the marginal rate: what the household keeps losing on the next dollar the selected person earns, including payroll contributions and benefit clawbacks. Switch to $ tax to compare dollar amounts instead. Hover over or tap any part of a column for details. Your home province and the destination you're comparing are highlighted." aria-label="About blended and marginal rates">i</button></div>
+      <div class="lbl-row"><h2 id="chart-title">Blended rate at $100,000</h2><button type="button" class="info" data-tip="Each column stacks income tax, payroll contributions (CPP/QPP, EI/QPIP and health premiums), sales tax, property tax and fuel tax. Child benefits and refundable credits are netted off: the striped top of a column is the part they pay back, and the figure above it is the net rate, net tax divided by total income. The smaller figure below is the marginal rate: what the household keeps losing on the next dollar the selected person earns, including payroll contributions and benefit clawbacks. Switch to $ tax to compare dollar amounts instead. Hover over or tap any part of a column for details. Your home province and the destination you're comparing are highlighted." aria-label="About blended and marginal rates">i</button></div>
       <div class="legend">
         <span><i class="sw" style="background:var(--fed)"></i>Federal</span>
         <span><i class="sw" style="background:var(--prov)"></i>Provincial / territorial</span>
@@ -181,6 +199,7 @@
         <span><i class="sw" style="background:var(--pay)"></i>CPP/QPP, EI &amp; health</span>
         <span id="legend-sales" hidden><i class="sw" style="background:var(--sales)"></i>Sales tax</span>
         <span id="legend-prop" hidden><i class="sw" style="background:var(--propc)"></i>Property tax</span>
+        <span id="legend-fuel" hidden><i class="sw" style="background:var(--fuel)"></i>Fuel tax</span>
         <span id="legend-ben" hidden><i class="sw sw-ben"></i>Benefits &amp; credits</span>
         <fieldset class="seg" aria-label="Show as">
           <button type="button" id="m-pct" aria-pressed="true">% of income</button>

@@ -15,6 +15,15 @@ spouseAmount: {max: 11317, threshold: 1132}
 bcTaxReduction: {max: 690, rate: 0.0356, threshold: 25570}
 salesTax: {rate: 0.12, label: "5% GST + 7% PST"}
 propertyTax: {rate: 0.0030, city: Vancouver}
+# Fuel tax on gasoline, $ per litre, in the Vancouver area: 27¢ motor fuel tax, of which 1.75¢ general revenue and
+# 6.75¢ BCTFA (the provincial 8.5¢) and 18.5¢ TransLink. B.C.'s carbon tax ended April 1, 2025.
+fuelTax:
+  gasoline: 0.085
+  area: Vancouver area
+  regional: {name: TransLink, gasoline: 0.185}
+# Starting distance: the average per light vehicle in the 2009 Canadian Vehicle Survey (the last one), 33,310.1 million
+# vehicle-km ÷ 2,583,861 vehicles up to 4.5 tonnes (Tables 4-1 and 3-1), to the nearest 100 km.
+driving: {distance: 12900, estimated: true}
 creditsUseRent: true
 childBenefit:
   name: B.C. family benefit
@@ -24,3 +33,8 @@ credits:
   - name: B.C. renter's tax credit
     program: bc-renters-tax-credit
     params: {max: 400, rate: 0.02, threshold: 66189}
+sources:
+  - {label: "nesto, Canada Property Tax Guide 2026 (residential property tax rate)", url: "https://www.nesto.ca/mortgage-basics/property-taxes-canada-highest-to-lowest/"}
+  - {label: "B.C. Ministry of Finance, Motor fuel tax and carbon tax rates on fuels and substances", url: "https://www2.gov.bc.ca/gov/content/taxes/sales-taxes/motor-fuel-carbon-tax/publications/motor-fuel-tax-and-carbon-tax-rates"}
+  - {label: "Natural Resources Canada, Fuel Consumption Levies in Canada (provincial gasoline tax, rates as of September 2, 2026)", url: "https://natural-resources.canada.ca/domestic-international-markets/fuel-consumption-levies-canada"}
+  - {label: "Statistics Canada, Canadian Vehicle Survey: Annual 2009, Tables 3-1 and 4-1 (distance per light vehicle)", url: "https://www150.statcan.gc.ca/n1/pub/53-223-x/53-223-x2009000-eng.pdf"}

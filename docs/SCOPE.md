@@ -36,6 +36,19 @@ line-by-line tax return. Simpler and slightly less precise is acceptable where i
 - Sales tax (GST/HST/PST/QST/RST) on monthly taxable spending, estimated from household size and adjustable.
 - Property tax for owners: home value × the typical rate in each province's largest city.
 
+**Fuel tax on gasoline**
+- Federal excise, provincial or territorial fuel tax and the regional transit tax of each province's reference
+  city (the same largest city used for property tax: TransLink in Vancouver, ARTM in Montreal). Regional taxes
+  always apply: the household is assumed to live in the reference city.
+- Litres = total distance a year across the household's vehicles × average fuel efficiency (L/100 km, weighted
+  by how much each vehicle is driven) ÷ 100. 0 is allowed for either (no car, or electric).
+- GST/HST/PST/QST on fuel is **not** added: fuel is already part of taxable spending, so sales tax on it is
+  counted there. The fuel and spending tooltips both say so.
+- A rate that changed during the year counts for the share of days it applied (driving spread evenly).
+- Defaults: distance per province from the last Canadian Vehicle Survey (2009, per vehicle, not scaled by
+  household size); one national efficiency default. Users can override both.
+- A year without fuel data (2025 for now) has no driving inputs and no fuel tax.
+
 ## How scope is decided
 
 The model is for comparing provinces, not for filing a return. A feature earns its inputs if, for the households
@@ -72,17 +85,9 @@ Canada Workers Benefit and Quebec's work premium.
   deferring OAS or CPP, partial OAS from residency rules (full OAS is assumed).
 - Each piece is still sized with the 0.1-point rule before it's built.
 
-**Fuel tax on gasoline.** Federal excise, provincial fuel tax and the regional transit tax of each province's
-reference city (the same largest city used for property tax: TransLink for BC, ARTM for Quebec, and so on).
-- GST/HST/PST on fuel is **not** added: fuel is already part of taxable spending, so sales tax on it is counted
-  there. The fuel and spending tooltips both say so.
-- Inputs: household total distance a year across all vehicles, and average fuel efficiency weighted by how much
-  each vehicle is driven. 0 is allowed (no car, or electric).
-- Defaults: distance per province from the last Canadian Vehicle Survey (per vehicle, 2009 or earlier, so
-  `estimated: true`), not scaled by household size; one national efficiency default. Users can override both.
-- A metric/imperial toggle shows km and L/100 km, or miles and **US** mpg (what Canadian-market cars display
-  when set to miles; the tooltip notes NRCan ratings use imperial mpg, about 20% higher). The engine stays metric.
-- Regional taxes always apply for now (the household is assumed to live in the reference city).
+**Metric/imperial toggle for the driving inputs.** Shows km and L/100 km, or miles and **US** mpg (what
+Canadian-market cars display when set to miles; the tooltip notes NRCan ratings use imperial mpg, about 20%
+higher). The engine stays metric.
 
 **Your own property tax.** An optional annual property tax amount for the home province replaces home value ×
 rate there. Every other province keeps the reference-city rate.
@@ -133,6 +138,10 @@ Marked `estimated: true` in the data files where they appear:
 - Property tax rates for Whitehorse, Yellowknife and Iqaluit (rough 1%).
 - Quebec living-alone amount applied to any household with one adult.
 - Starting monthly spending by household size (derived from Statistics Canada spending data; see the page notes).
+- Starting distance driven per province: the average per light vehicle in the 2009 Canadian Vehicle Survey, the
+  last one (vehicle-kilometres ÷ vehicles, to the nearest 100 km).
+- Starting fuel efficiency of 9.0 L/100 km: NRCan's 2023 on-road averages for gasoline cars and light trucks,
+  weighted by distance driven.
 
 ## Open questions
 

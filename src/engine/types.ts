@@ -1,4 +1,4 @@
-import type { Province, YearData } from "../data/schema.ts";
+import type { FuelRate, Province, YearData } from "../data/schema.ts";
 
 export type IncomeKey = "ord" | "cg" | "ed" | "nd" | "fd";
 export const INCOME_KEYS: IncomeKey[] = ["ord", "cg", "ed", "nd", "fd"];
@@ -28,6 +28,13 @@ export interface Household {
   rent: number; // monthly
   monthlySpending: number; // taxable spending, after any frugality adjustment
   propertyRates?: Partial<Record<string, number>>; // user overrides of the municipal rate, by province code
+  driving?: Driving; // none: no fuel tax
+}
+
+/** The household's driving: total distance a year across its vehicles and their average fuel efficiency. */
+export interface Driving {
+  km: number;
+  lPer100km: number; // litres per 100 km, weighted by how much each vehicle is driven
 }
 
 export type Credit = [name: string, amount: number];
@@ -45,6 +52,6 @@ export interface Extra {
   p: number;
 } // extra credits in tax dollars (spouse / dependant / living alone)
 
-export type { Province, YearData };
+export type { FuelRate, Province, YearData };
 export const blank = (ord: number): Person => ({ ord, cg: 0, ed: 0, nd: 0, fd: 0, ded: 0 });
 export const cashOf = (x: Person) => x.ord + x.cg + x.ed + x.nd + x.fd;

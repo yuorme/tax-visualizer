@@ -4,15 +4,18 @@
   --surface: #ffffff;
   --ink: #17201f;
   --muted: #5d6865;
+  --faint: #6d7774; /* lighter than muted, for de-emphasised rows; still 4.5:1 on --surface */
   --rule: #d9dedb;
   --track: #e9ece9;
   --fed: #3e5a66; /* federal share */
   --prov: #c2432f; /* provincial share, maple */
-  --prov-soft: #f6dcd6;
+  --prov-soft: #f9e6e0; /* home column highlight: muted text on it stays above 4.5:1 */
+  --prov-text: #ad3924; /* provincial colour as text on --prov-soft (--prov itself is 3.9:1 there) */
   --wh: #b08a2e; /* foreign tax withheld */
   --sales: #6b5aa6; /* sales tax */
   --pay: #2a8a7e; /* payroll: CPP/QPP, EI/QPIP, health premium */
   --propc: #9a7434; /* property tax */
+  --fuel: #a3477c; /* fuel tax */
   --gain: #2f7d4f;
   --loss: #b8323a;
   --focus: #1f6f8b;
@@ -26,16 +29,19 @@
     --surface: #1a1f1e;
     --ink: #e8ecea;
     --muted: #9aa5a1;
+    --faint: #7f8986;
     --rule: #2c3331;
     --track: #232a28;
     --fed: #7fa3b3;
     --prov: #ec6f58;
     --prov-soft: #3a211c;
+    --prov-text: #ec6f58;
     --focus: #6cc0dd;
     --wh: #d6b25a;
     --sales: #a898e6;
     --pay: #5cc4b5;
     --propc: #d2aa68;
+    --fuel: #e38bbb;
     --gain: #5fbf86;
     --loss: #f0727a;
     color-scheme: dark;
@@ -46,16 +52,19 @@
   --surface: #1a1f1e;
   --ink: #e8ecea;
   --muted: #9aa5a1;
+  --faint: #7f8986;
   --rule: #2c3331;
   --track: #232a28;
   --fed: #7fa3b3;
   --prov: #ec6f58;
   --prov-soft: #3a211c;
+  --prov-text: #ec6f58;
   --focus: #6cc0dd;
   --wh: #d6b25a;
   --sales: #a898e6;
   --pay: #5cc4b5;
   --propc: #d2aa68;
+  --fuel: #e38bbb;
   --gain: #5fbf86;
   --loss: #f0727a;
   color-scheme: dark;
@@ -525,8 +534,7 @@ th.r {
   text-align: right;
 }
 tr.idle td {
-  color: var(--muted);
-  opacity: 0.6;
+  color: var(--faint);
 }
 tr.top td {
   font-weight: 600;
@@ -563,6 +571,12 @@ tfoot tr:last-child td {
 }
 .money.md #hv {
   width: 9ch;
+}
+#km {
+  width: 7ch;
+}
+#eff {
+  width: 5ch;
 }
 .pr-note {
   font-size: 12px;
@@ -1068,6 +1082,9 @@ table.cmp .worse {
 .stack .h {
   background: var(--propc);
 }
+.stack .g {
+  background: var(--fuel);
+}
 /* Child benefits: a band from the net level up to the top of the column. When benefits exceed tax,
    it runs below the zero line. */
 .ben,
@@ -1134,7 +1151,7 @@ table.cmp .worse {
 }
 .is-home .tag,
 .is-home .code {
-  color: var(--prov);
+  color: var(--prov-text);
 }
 .is-dest .tag {
   color: var(--ink);
