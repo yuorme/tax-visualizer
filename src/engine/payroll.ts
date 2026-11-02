@@ -49,7 +49,7 @@ export function deductionsOf(x: Person): number {
 
 /** Net income before it's floored at zero, piece by piece (the enhanced rates are the same in both plans). A net
  *  capital loss adds nothing and can't offset other income. */
-export function netIncomeParts(fed: Federal, x: Person): NetIncomeParts {
+export function netIncomeParts(fed: Federal, x: Person, childcareDeduction = 0): NetIncomeParts {
   const inv = fed.investment;
   return {
     ord: x.ord,
@@ -57,14 +57,14 @@ export function netIncomeParts(fed: Federal, x: Person): NetIncomeParts {
     ed: x.ed * inv.grossUp.eligible,
     nd: x.nd * inv.grossUp.nonEligible,
     fd: x.fd,
-    ded: deductionsOf(x),
+    ded: deductionsOf(x) + childcareDeduction,
     enh: payrollOf(fed, null, x).enh,
   };
 }
 
 /** Net income: total income less deductions and enhanced CPP/QPP contributions. */
-export function netOf(fed: Federal, x: Person): number {
-  const n = netIncomeParts(fed, x);
+export function netOf(fed: Federal, x: Person, childcareDeduction = 0): number {
+  const n = netIncomeParts(fed, x, childcareDeduction);
   return Math.max(0, n.ord + n.cg + n.ed + n.nd + n.fd - n.ded - n.enh);
 }
 
