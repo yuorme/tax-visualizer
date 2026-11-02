@@ -163,6 +163,20 @@ const childBenefit = z.discriminatedUnion("program", [
     }),
   ),
   program(
+    "alberta-child-family-benefit-by-child",
+    z.object({
+      base: z.array(amount).length(4),
+      baseRate: z.array(rate).length(4),
+      baseThreshold: amount,
+      working: z.array(amount).length(4),
+      workingRate: rate,
+      workingFloor: amount,
+      workingThreshold: amount,
+      workingPhaseOut: z.array(rate).length(4),
+      minAnnual: amount,
+    }),
+  ),
+  program(
     "nova-scotia-child-benefit",
     z.object({ perChild: amount, fullBelow: amount, partialBelow: amount, partialOtherChildren: amount }),
   ),

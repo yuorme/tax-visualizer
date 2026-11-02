@@ -12,6 +12,7 @@ keeps the pages the data uses). Nothing under `docs/` is imported by `src/`, so 
 
 | Name | Title | URL | Fetched | SHA-256 of the original |
 |---|---|---|---|---|
+| [rule-ab-2019-enactment](rule-ab-2019-enactment.txt) | 2019 Bill 20 Alberta child and family benefit enactment | https://docs.assembly.ab.ca/LADDAR_files/docs/bills/bill/legislature_30/session_1/20190521_bill-020.pdf | 2026-11-02 | `a937ec935b08642d3f06e437af4001116570a2d628e03b895c4a605eb0dcf2ce` |
 | [rule-mb-budget-2024](rule-mb-budget-2024.txt) | BULLETIN NO | https://www.gov.mb.ca/finance/taxation/pubs/bulletins/2024budget.pdf | 2026-11-02 | `d4d572216b9263d7013c3387dbf294435b59735c35fdae8099367f1095b8dbc6` |
 | [rule-mb479-2024](rule-mb479-2024.txt) | Manitoba Credits | https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5007-tc/5007-tc-24e.pdf | 2026-11-02 | `ac35cb16dd8ac2bf57ae712037a79bc12a6e4812a1ec68d7b9e2c493e4f26083` |
 | [rule-nl-child-regulations-2024](rule-nl-child-regulations-2024.txt) | NLG20240216 FEB 16 2024 VOL 99_NO7 | https://www.gov.nl.ca/dgsnl/files/NLG20240216.pdf | 2026-11-02 | `1c3bf1321d14ce70a8b4b762ff6115bf11db0683ad1fc16945c31c2b66d67762` |
