@@ -67,10 +67,11 @@ The model counts **taxes the household actually pays**. Costs passed on through 
 Recorded here as the spec for the GitHub issues that implement them; the issues hold the order.
 
 **Childcare and expanded deductions (milestone 5, #94–98).** Itemized RRSP/FHSA/other claims are implemented;
-federal childcare calculations are now implemented in the backend for both existing years (#95). They accept
+federal childcare calculations and Ontario/Quebec/Newfoundland and Labrador childcare credits are implemented in
+the backend for both existing years (#95–96). They accept
 explicit earned income and child details, calculate ordinary claims or accept verified manual claims, and expose
-calculation status and separate federal/Quebec income bases. The UI and provincial childcare credits remain
-planned. Detailed contracts and existing benefit-model limitations are in
+calculation status and separate federal/Quebec income bases. The UI remains planned.
+Detailed contracts and existing benefit-model limitations are in
 [childcare verification](verification/childcare/README.md). The approved full scope is:
 - Replace frugality with a monthly household childcare amount, preserving the remaining spending controls and
   their household-size behavior. Migrate saved spending without changing its effective dollar amount; add no reset UI.
@@ -146,8 +147,8 @@ For now:
 - Disability, medical, tuition and donation credits; the alternative minimum tax. Medical and disability
   credits matter for seniors but depend on what each household spends; size them with the 0.1-point rule if
   they come up again.
-- Childcare inputs and provincial childcare credits are not connected to the UI yet. The federal calculation
-  backend is implemented; the existing UI still accepts verified manual claims under other deductions.
+- Childcare inputs and credits are not connected to the UI yet. The federal and ON/QC/NL calculation backends
+  are implemented; the existing UI still accepts verified manual claims under other deductions.
 - One-time government payments, such as the June 2026 GST/HST credit top-up (50% of the 2025-26 credit). The
   model counts only recurring programs.
 - Smaller programs: Manitoba's child benefit for very low incomes, Newfoundland and Labrador's prenatal–early
@@ -160,6 +161,7 @@ For now:
 
 Marked `estimated: true` in the data files where they appear:
 - Canada Workers Benefit 2026 amounts (2025 figures indexed by 2% until CRA publishes them).
+- Ontario CARE 2026: continuing statutory formula, pending the 2026 return form (the budget confirms the program).
 - Saskatchewan low-income tax credit reduction rate (worked out from the published start and end points).
 - Manitoba renters credit taken at its $625 maximum.
 - NWT and Newfoundland and Labrador child benefits: straight-line taper between published start and end incomes.
