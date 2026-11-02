@@ -1,6 +1,7 @@
 # Golden coverage audit
 
-Issue #111, audited against `4212d8a` (main after PR #104). This is a coverage audit of the implemented model,
+Issue #111, initially audited against `4212d8a` (main after PR #104), then extended against `5ad729c` after
+childcare PRs #105/#107 merged. This is a coverage audit of the implemented model,
 not a certification of all Canadian tax rules. It preserves every existing golden fixture, scenario and assertion.
 The 2025/2026 baseline still runs 148 households across all 13 jurisdictions for each year.
 
@@ -166,6 +167,94 @@ the implementation. Supporting correctness tests remain in `engine-history`, `de
   $14,745 + Ontario child benefit $3,453.84; net tax is negative $18,198.84 and money left positive $18,198.84.
   Bracket-line expectations use published bracket widths, e.g. federal $60,000 splits into $57,375 and $2,625.
 
+## Childcare extension against `5ad729c`
+
+While this audit was open, the federal deduction and three provincial childcare credits merged into main.
+`tests/golden/features/childcare.json` therefore adds 178 cases, 89 per year, without changing any of the
+original 98 feature cases. The same runner checks their fixed expected values through `compute`.
+The full feature suite now has 276 cases plus one integrity test. The legacy scenarios supply no childcare input.
+
+| Merged feature/program | New golden cases, each run for 2025 and 2026 |
+|---|---|
+| `federal-childcare`: expenses, pooled annual limits, two-thirds earnings | `published-pooled-example`, `zero-cost-child-pool`, `earnings-cap` |
+| Federal age through 16, under-7 cap, DTC and infirmity | `federal-age*`, `federal-infirm17`, `federal-dtc20` |
+| Age-derived benefit counts override legacy counts | Federal age cases start with stale `kids=6`, `under6=6` |
+| Lower pre-childcare net claimant, RRSP/FHSA and tie election | `lower-net`, `rrsp-fhsa-reselect`, `equal-net-first` |
+| Explicit/implicit zero-income spouse | `explicit-spouse`, `implicit-spouse` |
+| Missing versus explicit zero earnings | `zero-earnings`, `missing-earnings`, `null-earnings` |
+| Manual exception replaces ordinary claims; no excess-expense claim | `manual-replaces-automatic`, `manual-exceeds-expense` |
+| Unrelated supporting adults and zero expenses | `unrelated-adults`, `zero-cost-no-earnings-needed` |
+| Deduction flow into federal tax base/CCB, separate QC base and zero floor | `deductions-income-benefits`, `independent-income-floors` |
+| Declared/allocation mismatch suppresses all relief | `allocation-mismatch-ON/QC/NL` |
+| `ontario-care`: started income steps and terminal boundary | Fourteen `on-rate-*` cases, including exact thresholds and one cent above |
+| CARE raw addback before each zero floor, allowed-claim expense cap | `on-addback-before-floor`, `on-earnings-cap-toggle-*` |
+| CARE unresolved supporting persons | `on-manual-unrelated` |
+| `quebec-childcare`: each inclusive rate threshold | Fourteen `qc-rate-*` cases |
+| QC base includes worker deduction, excludes federal childcare claim | `qc-independent-*`, `qc-couple-family-base` |
+| QC eligibility independent of federal zero/missing earnings | `qc-independent-zero`, `qc-independent-missing` |
+| QC missing/zero/partial/invalid eligible portion | `qc-expense-*`; all preserve the federal $8,000 claim |
+| QC pooled caps include zero-expense children | `qc-pool-zero-cost-child` |
+| QC severe-impairment flag distinct from federal DTC | `qc-dtc22`, `qc-infirm22`, `qc-severe22` |
+| QC young/older caps and 2026 age-cutoff change | `qc-young6`, `qc-other7`, `qc-age14/15/16/17` |
+| QC unresolved adults and federal/provincial spouse-claimant divergence | `qc-manual-unrelated`, `qc-distinct-spouse-claimants` |
+| ON/QC refundable switches | `on-earnings-cap-toggle-*`, `qc-disabled-credit` |
+| `nl-childcare`: claim per adult, nonrefundable cap, no transfer | `nl-two-earners`, `nl-no-transfer`, `nl-manual-allocation` |
+| NL credit survives both switches and precedes dividend credit | `nl-tax-floor-toggle-*`, `nl-credit-before-dividends` |
+| Childcare expense is a separate outflow, not tax/sales/payroll | `expense-is-not-tax-or-sales`, `deductions-income-benefits` |
+| Marginal/investment counterfactuals preserve earnings and reselect claimant | `counterfactual-fixed-earnings`, `counterfactual-reselect-claimant` |
+
+### Childcare expected-value evidence
+
+Sources and limitations are recorded in [the childcare verification](childcare/README.md), including cached
+T778, the federal folio, ON479-A, Quebec Schedule C/parameter tables and NL428. The new fixture expectations
+use those published rules and the following independent arithmetic; they were not captured from engine output.
+
+- The folio's three-child example gives `min(19,000 expenses, 24,000 pooled cap, 30,000 × 2/3) = 19,000`.
+  Two 2025/2026 salaries $30,000/$60,000 have $265/$565 enhanced CPP, so family net after the claim is $70,170.
+  One young child with $10,000 expenses plus a zero-expense older child gives a $13,000 pool and a $10,000 claim.
+  At eligible earnings $9,000, the same ordinary deduction cannot exceed $6,000.
+- Federal caps are $8,000 under age 7, $5,000 through age 16 or for an older infirm dependant, and $11,000
+  with DTC eligibility. Benefit counts independently use under 18 and under 6. A 20-year-old DTC dependant
+  can receive the deduction without becoming a benefit child.
+- $70,000 salary less $20,000 RRSP/FHSA and $665 enhanced CPP gives $49,335 pre-childcare net, below the
+  other adult's `$60,000 − $565 = $59,435`. The claimant therefore changes to the first adult.
+  Verified manual claims $6,000/$4,000 remain those claims even for a 17-year-old with no ordinary annual cap.
+- A $60,000 FD income with $9,000 other/RRSP/FHSA deductions and $8,000 childcare gives $43,000 federal net.
+  CCB is $7,611.09 in 2025 and $7,823.59 in 2026. Cash stays $60,000, payroll zero and BC sales tax on $2,000
+  monthly spending stays $2,880. The separate $9,000 childcare expense is neither payroll nor sales-taxable spending.
+- Ontario's $20,000 CARE income gives 75%; one cent above starts the first step and gives 73%. The schedule
+  changes from $2,500 steps to $5,000 steps above $40,000, then $3,600 steps above $60,000. At $150,000 the
+  rate is 1%, and above it zero. Multiplying a fixed $1,000 claim yields the fixture's fixed $750/$730/etc.
+  Raw pre-childcare incomes −$500/$20,000 and verified claims $8,000/$2,000 still give CARE income $20,000,
+  so the $10,000 claim generates $7,500. Adding claims back after flooring would incorrectly use $28,000.
+  A $6,000 federal claim at $30,000 CARE income gives `6,000 × .67 = 4,020`.
+- Quebec young/older/severe caps are $12,275/$6,180/$16,800 for 2025 and $12,525/$6,305/$17,145 for 2026.
+  A young child with $20,000 qualifying expenses plus a zero-expense older child has a $18,455/$18,830 pool;
+  at 70% the credit is $12,918.50/$13,181. A 22-year-old with federal DTC alone has no QC cap; infirmity gives
+  the older cap, and separate severe impairment gives the higher cap. The latter does not establish federal DTC.
+- Quebec's $60,000 salary gives federal pre-childcare net $59,435, but provincial taxable/family income is
+  `$59,435 − $1,420 = $58,015` in 2025 and `$59,435 − $1,450 = $57,985` in 2026. Federal childcare claims do
+  not reduce this provincial base. Attested qualifying costs $10,000 still give $7,000 at zero or missing federal
+  eligible earnings. An explicit $3,000 qualifying portion gives $2,100. Missing is incomplete; explicit zero
+  is a completed zero credit. Each published rate threshold and one cent above is stored separately.
+- Newfoundland and Labrador uses 8.7% per adult: claims $6,000/$4,000 calculate $522/$348. If the second adult
+  has no taxable income, only $522 applies and the unused $348 does not transfer. Reallocating a verified $10,000
+  claim to the taxable adult gives $870. With basic credits disabled, $10,000 FD minus an $8,000 claim leaves
+  $2,000 taxable and $174 provincial tax, so only $174 of the calculated $696 credit applies. Refundable-credit
+  settings do not change this. $10,000 eligible dividends gross up to $13,800; after the $8,000 deduction,
+  `$5,800 × .087 = $504.60` is consumed by childcare before the dividend credit, which then applies zero.
+- Engine `childcare.expenses` records the outflow separately. `total` remains tax net of benefits and
+  `breakdown.left` remains cash minus that tax; subtracting childcare spending belongs to the spending/UI layer.
+  A zero-income household with a verified zero claim and $12,000 expenses therefore has zero tax and zero
+  `breakdown.left`, with `childcare.expenses=12,000`. This does not claim that the expense disappears from a budget.
+- Counterfactual specimens use Alberta, personal/refundable credits disabled, and a 20-year-old DTC dependant
+  (childcare eligibility without child benefits). FD $30,000/$40,000 with a $6,000 earnings-limited claim leaves
+  $64,000 combined taxable income. Both adults stay in the first brackets, so investment tax is
+  `64,000 × (.145 + .08) = 14,400` in 2025 or `64,000 × (.14 + .08) = 14,080` in 2026. The next $100 FD
+  leaves explicit earnings fixed. With the second adult instead at $30,050, the first adult's $100 bump changes
+  the lower-income claimant and raises the claim from $6,000 to $10,000. Combined taxable income falls $3,900:
+  the finite-difference marginal rate is −8.775 in 2025 or −8.58 in 2026. This locks the documented discontinuity.
+
 ## Limits and pending branches
 
 This maps each implemented feature and program to asserted golden results; it does not claim exhaustive
@@ -174,14 +263,16 @@ Old AB/NL approximations, estimated property rates and policy assumptions remain
 new tests do not endorse those assumptions as accurate tax advice. Known issues #102 (CWB secondary-earner
 exemption) and #103 (QC benefit income base) are unchanged and are not used as newly certified expectations.
 
-At the audit base, childcare PRs #105/#107/#109, other-income PR #90 and 2023 rule PR #108 are unmerged.
-They are outside this engine inventory. Their new inputs/programs need additive goldens before merging under
-the clarified policy; they cannot rely on this audit or unchanged legacy fixtures. PR #110's 2024 year capture
+The original audit excluded then-unmerged childcare PRs #105/#107. The extension above now covers their merged
+engine behavior. Childcare UI PR #109, other-income PR #90 and 2023 rule PR #108 remain outside the two audited
+bases. New engine inputs/programs need additive goldens before merging under the clarified policy; those branches
+cannot rely on this audit or unchanged legacy fixtures. PR #110's 2024 year capture
 complements, but does not replace, the historical feature specimens here.
 
 ## Verification
 
-The 98 added cases pass, plus the fixture-integrity test. The original 2025/2026 golden files, scenarios,
+The original 98 cases and 178 childcare additions pass, plus the fixture-integrity test. The 2025/2026 golden files,
+scenarios,
 adapter and snapshot are unchanged. Fifteen intentional mutations were tested in disposable copies of the source:
 
 | Mutation | Legacy goldens | New feature goldens |
@@ -204,3 +295,8 @@ adapter and snapshot are unchanged. Fifteen intentional mutations were tested in
 
 Thirteen mutants surviving the old suite demonstrate actual assertion gaps; the two fuel mutants confirm
 existing coverage of fuel totals and day weighting. The combined repository check is recorded in the PR.
+
+The childcare extension adds five disposable-source mutation checks. Each passes the legacy year goldens and
+fails the new feature suite: omit zero-expense children from pooled caps; choose the higher-income claimant;
+count only completed Ontario income steps; omit the Quebec worker deduction from childcare family income;
+and remove the NL remaining-tax limit. No tracked engine file was changed for these checks.

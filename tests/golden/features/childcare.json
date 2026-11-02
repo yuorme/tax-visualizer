@@ -1,0 +1,5620 @@
+{
+  "description": "Independent childcare feature goldens; see golden-coverage.md childcare extension.",
+  "defaults": {
+    "active": 0,
+    "spouse": true,
+    "adults": 1,
+    "kids": 0,
+    "under6": 0,
+    "useBpa": true,
+    "whRate": 0,
+    "useCredits": false,
+    "homeValue": 0,
+    "rent": 0,
+    "monthlySpending": 0
+  },
+  "rules": {},
+  "cases": [
+    {
+      "id": "childcare-2025-published-pooled-example",
+      "year": 2025,
+      "province": "BC",
+      "household": {
+        "people": [
+          {
+            "ord": 30000
+          },
+          {
+            "ord": 60000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "earnedIncome": [30000, 60000],
+          "children": [
+            {
+              "age": 2,
+              "expenses": 19000
+            },
+            {
+              "age": 4,
+              "expenses": 0
+            },
+            {
+              "age": 6,
+              "expenses": 0
+            }
+          ]
+        },
+        "adults": 2
+      },
+      "expected": {
+        "childcare.status": "complete",
+        "childcare.claims": [19000, 0],
+        "childcare.annualLimit": 24000,
+        "childcare.earnedIncomeLimit": 20000,
+        "childcare.expenses": 19000,
+        "childcare.childCounts": {
+          "kids": 3,
+          "under6": 2
+        },
+        "famNet": 70170
+      }
+    },
+    {
+      "id": "childcare-2025-zero-cost-child-pool",
+      "year": 2025,
+      "province": "BC",
+      "household": {
+        "people": [
+          {
+            "ord": 60000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "earnedIncome": [60000],
+          "children": [
+            {
+              "age": 3,
+              "expenses": 10000
+            },
+            {
+              "age": 10,
+              "expenses": 0
+            }
+          ]
+        }
+      },
+      "expected": {
+        "childcare.claims": [10000],
+        "childcare.childLimits": [8000, 5000],
+        "childcare.annualLimit": 13000,
+        "childcare.eligibleExpenses": 10000,
+        "famNet": 49435
+      }
+    },
+    {
+      "id": "childcare-2025-federal-age6",
+      "year": 2025,
+      "province": "BC",
+      "household": {
+        "people": [
+          {
+            "ord": 60000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 6,
+              "expenses": 20000
+            }
+          ],
+          "earnedIncome": [60000]
+        },
+        "kids": 6,
+        "under6": 6
+      },
+      "expected": {
+        "childcare.claims": [8000],
+        "childcare.annualLimit": 8000,
+        "childcare.childCounts": {
+          "kids": 1,
+          "under6": 0
+        }
+      }
+    },
+    {
+      "id": "childcare-2025-federal-age7",
+      "year": 2025,
+      "province": "BC",
+      "household": {
+        "people": [
+          {
+            "ord": 60000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 7,
+              "expenses": 20000
+            }
+          ],
+          "earnedIncome": [60000]
+        },
+        "kids": 6,
+        "under6": 6
+      },
+      "expected": {
+        "childcare.claims": [5000],
+        "childcare.annualLimit": 5000,
+        "childcare.childCounts": {
+          "kids": 1,
+          "under6": 0
+        }
+      }
+    },
+    {
+      "id": "childcare-2025-federal-age16",
+      "year": 2025,
+      "province": "BC",
+      "household": {
+        "people": [
+          {
+            "ord": 60000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 16,
+              "expenses": 20000
+            }
+          ],
+          "earnedIncome": [60000]
+        },
+        "kids": 6,
+        "under6": 6
+      },
+      "expected": {
+        "childcare.claims": [5000],
+        "childcare.annualLimit": 5000,
+        "childcare.childCounts": {
+          "kids": 1,
+          "under6": 0
+        }
+      }
+    },
+    {
+      "id": "childcare-2025-federal-age17",
+      "year": 2025,
+      "province": "BC",
+      "household": {
+        "people": [
+          {
+            "ord": 60000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 17,
+              "expenses": 20000
+            }
+          ],
+          "earnedIncome": [60000]
+        },
+        "kids": 6,
+        "under6": 6
+      },
+      "expected": {
+        "childcare.claims": [0],
+        "childcare.annualLimit": 0,
+        "childcare.childCounts": {
+          "kids": 1,
+          "under6": 0
+        }
+      }
+    },
+    {
+      "id": "childcare-2025-federal-infirm17",
+      "year": 2025,
+      "province": "BC",
+      "household": {
+        "people": [
+          {
+            "ord": 60000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 17,
+              "expenses": 20000,
+              "infirm": true
+            }
+          ],
+          "earnedIncome": [60000]
+        },
+        "kids": 6,
+        "under6": 6
+      },
+      "expected": {
+        "childcare.claims": [5000],
+        "childcare.annualLimit": 5000,
+        "childcare.childCounts": {
+          "kids": 1,
+          "under6": 0
+        }
+      }
+    },
+    {
+      "id": "childcare-2025-federal-dtc20",
+      "year": 2025,
+      "province": "BC",
+      "household": {
+        "people": [
+          {
+            "ord": 60000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 20,
+              "expenses": 20000,
+              "disabilityTaxCredit": true
+            }
+          ],
+          "earnedIncome": [60000]
+        },
+        "kids": 6,
+        "under6": 6
+      },
+      "expected": {
+        "childcare.claims": [11000],
+        "childcare.annualLimit": 11000,
+        "childcare.childCounts": {
+          "kids": 0,
+          "under6": 0
+        }
+      }
+    },
+    {
+      "id": "childcare-2025-federal-age5",
+      "year": 2025,
+      "province": "BC",
+      "household": {
+        "people": [
+          {
+            "ord": 60000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 5,
+              "expenses": 20000
+            }
+          ],
+          "earnedIncome": [60000]
+        },
+        "kids": 6,
+        "under6": 6
+      },
+      "expected": {
+        "childcare.claims": [8000],
+        "childcare.annualLimit": 8000,
+        "childcare.childCounts": {
+          "kids": 1,
+          "under6": 1
+        }
+      }
+    },
+    {
+      "id": "childcare-2025-lower-net",
+      "year": 2025,
+      "province": "BC",
+      "household": {
+        "people": [
+          {
+            "ord": 70000
+          },
+          {
+            "ord": 60000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 10000
+            }
+          ],
+          "earnedIncome": [70000, 60000]
+        },
+        "adults": 2
+      },
+      "expected": {
+        "childcare.claimant": 1,
+        "childcare.claims": [0, 8000]
+      }
+    },
+    {
+      "id": "childcare-2025-rrsp-fhsa-reselect",
+      "year": 2025,
+      "province": "BC",
+      "household": {
+        "people": [
+          {
+            "ord": 70000,
+            "rrsp": 10000,
+            "fhsa": 10000
+          },
+          {
+            "ord": 60000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 10000
+            }
+          ],
+          "earnedIncome": [70000, 60000]
+        },
+        "adults": 2
+      },
+      "expected": {
+        "childcare.claimant": 0,
+        "childcare.claims": [8000, 0]
+      }
+    },
+    {
+      "id": "childcare-2025-equal-net-first",
+      "year": 2025,
+      "province": "BC",
+      "household": {
+        "people": [
+          {
+            "ord": 60000
+          },
+          {
+            "ord": 60000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 10000
+            }
+          ],
+          "earnedIncome": [70000, 60000]
+        },
+        "adults": 2
+      },
+      "expected": {
+        "childcare.claimant": 0,
+        "childcare.claims": [8000, 0]
+      }
+    },
+    {
+      "id": "childcare-2025-earnings-cap",
+      "year": 2025,
+      "province": "BC",
+      "household": {
+        "people": [
+          {
+            "ord": 60000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 10000
+            }
+          ],
+          "earnedIncome": [9000]
+        }
+      },
+      "expected": {
+        "childcare.status": "complete",
+        "childcare.claims": [6000]
+      }
+    },
+    {
+      "id": "childcare-2025-zero-earnings",
+      "year": 2025,
+      "province": "BC",
+      "household": {
+        "people": [
+          {
+            "ord": 60000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 10000
+            }
+          ],
+          "earnedIncome": [0]
+        }
+      },
+      "expected": {
+        "childcare.status": "complete",
+        "childcare.claims": [0]
+      }
+    },
+    {
+      "id": "childcare-2025-missing-earnings",
+      "year": 2025,
+      "province": "BC",
+      "household": {
+        "people": [
+          {
+            "ord": 60000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 10000
+            }
+          ]
+        }
+      },
+      "expected": {
+        "childcare.status": "incomplete",
+        "childcare.claims": [0]
+      }
+    },
+    {
+      "id": "childcare-2025-null-earnings",
+      "year": 2025,
+      "province": "BC",
+      "household": {
+        "people": [
+          {
+            "ord": 60000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 10000
+            }
+          ],
+          "earnedIncome": [null]
+        }
+      },
+      "expected": {
+        "childcare.status": "incomplete",
+        "childcare.claims": [0]
+      }
+    },
+    {
+      "id": "childcare-2025-explicit-spouse",
+      "year": 2025,
+      "province": "BC",
+      "household": {
+        "people": [
+          {
+            "ord": 60000
+          },
+          {}
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 10000
+            }
+          ],
+          "earnedIncome": [60000, 0]
+        },
+        "adults": 2
+      },
+      "expected": {
+        "childcare.status": "complete",
+        "childcare.claimant": 1,
+        "childcare.claims": [0, 0]
+      }
+    },
+    {
+      "id": "childcare-2025-implicit-spouse",
+      "year": 2025,
+      "province": "BC",
+      "household": {
+        "people": [
+          {
+            "ord": 60000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 10000
+            }
+          ],
+          "earnedIncome": [60000, 0]
+        },
+        "adults": 2
+      },
+      "expected": {
+        "childcare.status": "complete",
+        "childcare.claimant": 1,
+        "childcare.claims": [0, 0]
+      }
+    },
+    {
+      "id": "childcare-2025-unrelated-adults",
+      "year": 2025,
+      "province": "BC",
+      "household": {
+        "people": [
+          {
+            "ord": 60000
+          },
+          {
+            "ord": 30000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 10000
+            }
+          ],
+          "earnedIncome": [60000, 30000]
+        },
+        "adults": 2,
+        "spouse": false
+      },
+      "expected": {
+        "childcare.status": "manual-required",
+        "childcare.claims": [0, 0]
+      }
+    },
+    {
+      "id": "childcare-2025-manual-replaces-automatic",
+      "year": 2025,
+      "province": "BC",
+      "household": {
+        "people": [
+          {
+            "ord": 60000
+          },
+          {}
+        ],
+        "childcare": {
+          "mode": "manual",
+          "children": [
+            {
+              "age": 17,
+              "expenses": 10000
+            }
+          ],
+          "manualClaims": [6000, 4000]
+        },
+        "adults": 2,
+        "spouse": false
+      },
+      "expected": {
+        "childcare.status": "complete",
+        "childcare.claims": [6000, 4000],
+        "childcare.annualLimit": 0,
+        "childcare.eligibleExpenses": 10000,
+        "childcare.claimant": null,
+        "breakdown.incomeBases.federal": [53435, 0]
+      }
+    },
+    {
+      "id": "childcare-2025-manual-exceeds-expense",
+      "year": 2025,
+      "province": "BC",
+      "household": {
+        "people": [
+          {
+            "ord": 60000
+          }
+        ],
+        "childcare": {
+          "mode": "manual",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 1000
+            }
+          ],
+          "manualClaims": [1001]
+        }
+      },
+      "expected": {
+        "childcare.status": "invalid",
+        "childcare.claims": [0]
+      }
+    },
+    {
+      "id": "childcare-2025-zero-cost-no-earnings-needed",
+      "year": 2025,
+      "province": "BC",
+      "household": {
+        "people": [
+          {
+            "ord": 60000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 0
+            }
+          ]
+        }
+      },
+      "expected": {
+        "childcare.status": "complete",
+        "childcare.claims": [0],
+        "childcare.expenses": 0
+      }
+    },
+    {
+      "id": "childcare-2025-deductions-income-benefits",
+      "year": 2025,
+      "province": "BC",
+      "household": {
+        "people": [
+          {
+            "fd": 60000,
+            "ded": 2000,
+            "rrsp": 3000,
+            "fhsa": 4000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 9000
+            }
+          ],
+          "earnedIncome": [60000]
+        },
+        "monthlySpending": 2000
+      },
+      "expected": {
+        "childcare.claims": [8000],
+        "childcare.expenses": 9000,
+        "me.breakdown.netIncome.ded": 17000,
+        "famNet": 43000,
+        "ccb": 7611.09,
+        "cash": 60000,
+        "payroll": 0,
+        "sales": 2880
+      }
+    },
+    {
+      "id": "childcare-2025-independent-income-floors",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 2000,
+            "rrsp": 3000
+          }
+        ],
+        "childcare": {
+          "mode": "manual",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 2000,
+              "qcEligibleExpenses": 2000
+            }
+          ],
+          "manualClaims": [2000]
+        }
+      },
+      "expected": {
+        "breakdown.incomeBases.beforeChildcare": [-1000],
+        "breakdown.incomeBases.federal": [0],
+        "breakdown.incomeBases.provincial": [0],
+        "me.ti": 0,
+        "me.tiP": 0
+      }
+    },
+    {
+      "id": "childcare-2025-expense-is-not-tax-or-sales",
+      "year": 2025,
+      "province": "BC",
+      "household": {
+        "people": [{}],
+        "childcare": {
+          "mode": "manual",
+          "children": [
+            {
+              "age": 20,
+              "expenses": 12000
+            }
+          ],
+          "manualClaims": [0]
+        }
+      },
+      "expected": {
+        "childcare.expenses": 12000,
+        "childcare.claims": [0],
+        "cash": 0,
+        "payroll": 0,
+        "sales": 0,
+        "gross": 0,
+        "total": 0,
+        "breakdown.left": 0
+      }
+    },
+    {
+      "id": "childcare-2025-counterfactual-fixed-earnings",
+      "year": 2025,
+      "province": "AB",
+      "household": {
+        "people": [
+          {
+            "fd": 30000
+          },
+          {
+            "fd": 40000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 20,
+              "expenses": 10000,
+              "disabilityTaxCredit": true
+            }
+          ],
+          "earnedIncome": [9000, 40000]
+        },
+        "adults": 2,
+        "useBpa": false
+      },
+      "expected": {
+        "childcare.claims": [6000, 0],
+        "childcare.earnedIncomeLimit": 6000,
+        "invAmt": 70000,
+        "invTax": 14400,
+        "margBy.fd": 0.225
+      }
+    },
+    {
+      "id": "childcare-2025-counterfactual-reselect-claimant",
+      "year": 2025,
+      "province": "AB",
+      "household": {
+        "people": [
+          {
+            "fd": 30000
+          },
+          {
+            "fd": 30050
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 20,
+              "expenses": 10000,
+              "disabilityTaxCredit": true
+            }
+          ],
+          "earnedIncome": [9000, 30050]
+        },
+        "adults": 2,
+        "useBpa": false
+      },
+      "expected": {
+        "childcare.claimant": 0,
+        "childcare.claims": [6000, 0],
+        "margBy.fd": -8.775
+      }
+    },
+    {
+      "id": "childcare-2025-allocation-mismatch-ON",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "ord": 60000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 10000,
+              "qcEligibleExpenses": 10000
+            }
+          ],
+          "earnedIncome": [60000],
+          "declaredAnnualExpenses": 12000
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "childcare.status": "incomplete",
+        "childcare.claims": [0],
+        "childcare.childCounts": {
+          "kids": 1,
+          "under6": 1
+        },
+        "breakdown.childcareCredit.applied": 0
+      }
+    },
+    {
+      "id": "childcare-2025-allocation-mismatch-QC",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 60000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 10000,
+              "qcEligibleExpenses": 10000
+            }
+          ],
+          "earnedIncome": [60000],
+          "declaredAnnualExpenses": 12000
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "childcare.status": "incomplete",
+        "childcare.claims": [0],
+        "childcare.childCounts": {
+          "kids": 1,
+          "under6": 1
+        },
+        "breakdown.childcareCredit.applied": 0
+      }
+    },
+    {
+      "id": "childcare-2025-allocation-mismatch-NL",
+      "year": 2025,
+      "province": "NL",
+      "household": {
+        "people": [
+          {
+            "ord": 60000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 10000,
+              "qcEligibleExpenses": 10000
+            }
+          ],
+          "earnedIncome": [60000],
+          "declaredAnnualExpenses": 12000
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "childcare.status": "incomplete",
+        "childcare.claims": [0],
+        "childcare.childCounts": {
+          "kids": 1,
+          "under6": 1
+        },
+        "breakdown.childcareCredit.applied": 0
+      }
+    },
+    {
+      "id": "childcare-2025-on-rate-20000",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "fd": 20000
+          }
+        ],
+        "childcare": {
+          "mode": "manual",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 1000
+            }
+          ],
+          "manualClaims": [1000]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "breakdown.childcareCredit.status": "complete",
+        "breakdown.childcareCredit.income": 20000,
+        "breakdown.childcareCredit.allowedExpenses": 1000,
+        "breakdown.childcareCredit.rate": 0.75,
+        "breakdown.childcareCredit.calculated": 750.0,
+        "breakdown.childcareCredit.applied": 750.0
+      }
+    },
+    {
+      "id": "childcare-2025-on-rate-20000.01",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "fd": 20000.01
+          }
+        ],
+        "childcare": {
+          "mode": "manual",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 1000
+            }
+          ],
+          "manualClaims": [1000]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "breakdown.childcareCredit.status": "complete",
+        "breakdown.childcareCredit.income": 20000.01,
+        "breakdown.childcareCredit.allowedExpenses": 1000,
+        "breakdown.childcareCredit.rate": 0.73,
+        "breakdown.childcareCredit.calculated": 730.0,
+        "breakdown.childcareCredit.applied": 730.0
+      }
+    },
+    {
+      "id": "childcare-2025-on-rate-22500",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "fd": 22500
+          }
+        ],
+        "childcare": {
+          "mode": "manual",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 1000
+            }
+          ],
+          "manualClaims": [1000]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "breakdown.childcareCredit.status": "complete",
+        "breakdown.childcareCredit.income": 22500,
+        "breakdown.childcareCredit.allowedExpenses": 1000,
+        "breakdown.childcareCredit.rate": 0.73,
+        "breakdown.childcareCredit.calculated": 730.0,
+        "breakdown.childcareCredit.applied": 730.0
+      }
+    },
+    {
+      "id": "childcare-2025-on-rate-22500.01",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "fd": 22500.01
+          }
+        ],
+        "childcare": {
+          "mode": "manual",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 1000
+            }
+          ],
+          "manualClaims": [1000]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "breakdown.childcareCredit.status": "complete",
+        "breakdown.childcareCredit.income": 22500.01,
+        "breakdown.childcareCredit.allowedExpenses": 1000,
+        "breakdown.childcareCredit.rate": 0.71,
+        "breakdown.childcareCredit.calculated": 710.0,
+        "breakdown.childcareCredit.applied": 710.0
+      }
+    },
+    {
+      "id": "childcare-2025-on-rate-40000",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "fd": 40000
+          }
+        ],
+        "childcare": {
+          "mode": "manual",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 1000
+            }
+          ],
+          "manualClaims": [1000]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "breakdown.childcareCredit.status": "complete",
+        "breakdown.childcareCredit.income": 40000,
+        "breakdown.childcareCredit.allowedExpenses": 1000,
+        "breakdown.childcareCredit.rate": 0.59,
+        "breakdown.childcareCredit.calculated": 590.0,
+        "breakdown.childcareCredit.applied": 590.0
+      }
+    },
+    {
+      "id": "childcare-2025-on-rate-40000.01",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "fd": 40000.01
+          }
+        ],
+        "childcare": {
+          "mode": "manual",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 1000
+            }
+          ],
+          "manualClaims": [1000]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "breakdown.childcareCredit.status": "complete",
+        "breakdown.childcareCredit.income": 40000.01,
+        "breakdown.childcareCredit.allowedExpenses": 1000,
+        "breakdown.childcareCredit.rate": 0.57,
+        "breakdown.childcareCredit.calculated": 570.0,
+        "breakdown.childcareCredit.applied": 570.0
+      }
+    },
+    {
+      "id": "childcare-2025-on-rate-60000",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "fd": 60000
+          }
+        ],
+        "childcare": {
+          "mode": "manual",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 1000
+            }
+          ],
+          "manualClaims": [1000]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "breakdown.childcareCredit.status": "complete",
+        "breakdown.childcareCredit.income": 60000,
+        "breakdown.childcareCredit.allowedExpenses": 1000,
+        "breakdown.childcareCredit.rate": 0.51,
+        "breakdown.childcareCredit.calculated": 510.0,
+        "breakdown.childcareCredit.applied": 510.0
+      }
+    },
+    {
+      "id": "childcare-2025-on-rate-60000.01",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "fd": 60000.01
+          }
+        ],
+        "childcare": {
+          "mode": "manual",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 1000
+            }
+          ],
+          "manualClaims": [1000]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "breakdown.childcareCredit.status": "complete",
+        "breakdown.childcareCredit.income": 60000.01,
+        "breakdown.childcareCredit.allowedExpenses": 1000,
+        "breakdown.childcareCredit.rate": 0.49,
+        "breakdown.childcareCredit.calculated": 490.0,
+        "breakdown.childcareCredit.applied": 490.0
+      }
+    },
+    {
+      "id": "childcare-2025-on-rate-63600",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "fd": 63600
+          }
+        ],
+        "childcare": {
+          "mode": "manual",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 1000
+            }
+          ],
+          "manualClaims": [1000]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "breakdown.childcareCredit.status": "complete",
+        "breakdown.childcareCredit.income": 63600,
+        "breakdown.childcareCredit.allowedExpenses": 1000,
+        "breakdown.childcareCredit.rate": 0.49,
+        "breakdown.childcareCredit.calculated": 490.0,
+        "breakdown.childcareCredit.applied": 490.0
+      }
+    },
+    {
+      "id": "childcare-2025-on-rate-63600.01",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "fd": 63600.01
+          }
+        ],
+        "childcare": {
+          "mode": "manual",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 1000
+            }
+          ],
+          "manualClaims": [1000]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "breakdown.childcareCredit.status": "complete",
+        "breakdown.childcareCredit.income": 63600.01,
+        "breakdown.childcareCredit.allowedExpenses": 1000,
+        "breakdown.childcareCredit.rate": 0.47,
+        "breakdown.childcareCredit.calculated": 470.0,
+        "breakdown.childcareCredit.applied": 470.0
+      }
+    },
+    {
+      "id": "childcare-2025-on-rate-146400",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "fd": 146400
+          }
+        ],
+        "childcare": {
+          "mode": "manual",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 1000
+            }
+          ],
+          "manualClaims": [1000]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "breakdown.childcareCredit.status": "complete",
+        "breakdown.childcareCredit.income": 146400,
+        "breakdown.childcareCredit.allowedExpenses": 1000,
+        "breakdown.childcareCredit.rate": 0.03,
+        "breakdown.childcareCredit.calculated": 30.0,
+        "breakdown.childcareCredit.applied": 30.0
+      }
+    },
+    {
+      "id": "childcare-2025-on-rate-146400.01",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "fd": 146400.01
+          }
+        ],
+        "childcare": {
+          "mode": "manual",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 1000
+            }
+          ],
+          "manualClaims": [1000]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "breakdown.childcareCredit.status": "complete",
+        "breakdown.childcareCredit.income": 146400.01,
+        "breakdown.childcareCredit.allowedExpenses": 1000,
+        "breakdown.childcareCredit.rate": 0.01,
+        "breakdown.childcareCredit.calculated": 10.0,
+        "breakdown.childcareCredit.applied": 10.0
+      }
+    },
+    {
+      "id": "childcare-2025-on-rate-150000",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "fd": 150000
+          }
+        ],
+        "childcare": {
+          "mode": "manual",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 1000
+            }
+          ],
+          "manualClaims": [1000]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "breakdown.childcareCredit.status": "complete",
+        "breakdown.childcareCredit.income": 150000,
+        "breakdown.childcareCredit.allowedExpenses": 1000,
+        "breakdown.childcareCredit.rate": 0.01,
+        "breakdown.childcareCredit.calculated": 10.0,
+        "breakdown.childcareCredit.applied": 10.0
+      }
+    },
+    {
+      "id": "childcare-2025-on-rate-150000.01",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "fd": 150000.01
+          }
+        ],
+        "childcare": {
+          "mode": "manual",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 1000
+            }
+          ],
+          "manualClaims": [1000]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "breakdown.childcareCredit.status": "complete",
+        "breakdown.childcareCredit.income": 150000.01,
+        "breakdown.childcareCredit.allowedExpenses": 1000,
+        "breakdown.childcareCredit.rate": 0,
+        "breakdown.childcareCredit.calculated": 0,
+        "breakdown.childcareCredit.applied": 0
+      }
+    },
+    {
+      "id": "childcare-2025-on-addback-before-floor",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "fd": 1000,
+            "ded": 1500
+          },
+          {
+            "fd": 20000
+          }
+        ],
+        "childcare": {
+          "mode": "manual",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 10000
+            }
+          ],
+          "manualClaims": [8000, 2000]
+        },
+        "adults": 2,
+        "useCredits": true
+      },
+      "expected": {
+        "breakdown.incomeBases.beforeChildcare": [-500, 20000],
+        "breakdown.incomeBases.federal": [0, 18000],
+        "breakdown.childcareCredit.income": 20000,
+        "breakdown.childcareCredit.allowedExpenses": 10000,
+        "breakdown.childcareCredit.rate": 0.75,
+        "breakdown.childcareCredit.applied": 7500
+      }
+    },
+    {
+      "id": "childcare-2025-on-earnings-cap-toggle-False",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "fd": 30000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 10000
+            }
+          ],
+          "earnedIncome": [9000]
+        },
+        "useCredits": false
+      },
+      "expected": {
+        "childcare.claims": [6000],
+        "breakdown.childcareCredit.income": 30000,
+        "breakdown.childcareCredit.allowedExpenses": 6000,
+        "breakdown.childcareCredit.rate": 0.67,
+        "breakdown.childcareCredit.calculated": 4020,
+        "breakdown.childcareCredit.applied": 0
+      }
+    },
+    {
+      "id": "childcare-2025-on-earnings-cap-toggle-True",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "fd": 30000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 10000
+            }
+          ],
+          "earnedIncome": [9000]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "childcare.claims": [6000],
+        "breakdown.childcareCredit.income": 30000,
+        "breakdown.childcareCredit.allowedExpenses": 6000,
+        "breakdown.childcareCredit.rate": 0.67,
+        "breakdown.childcareCredit.calculated": 4020,
+        "breakdown.childcareCredit.applied": 4020
+      }
+    },
+    {
+      "id": "childcare-2025-on-manual-unrelated",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "fd": 60000
+          },
+          {}
+        ],
+        "childcare": {
+          "mode": "manual",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 8000,
+              "qcEligibleExpenses": 8000
+            }
+          ],
+          "manualClaims": [8000, 0]
+        },
+        "adults": 2,
+        "spouse": false,
+        "useCredits": true
+      },
+      "expected": {
+        "childcare.status": "complete",
+        "breakdown.childcareCredit.status": "unsupported",
+        "breakdown.childcareCredit.applied": 0
+      }
+    },
+    {
+      "id": "childcare-2025-qc-rate-24795",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "fd": 24795
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 1000,
+              "qcEligibleExpenses": 1000
+            }
+          ],
+          "earnedIncome": [60000]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "breakdown.childcareCredit.income": 24795,
+        "breakdown.childcareCredit.rate": 0.78,
+        "breakdown.childcareCredit.calculated": 780.0,
+        "breakdown.childcareCredit.applied": 780.0
+      }
+    },
+    {
+      "id": "childcare-2025-qc-rate-24795.01",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "fd": 24795.01
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 1000,
+              "qcEligibleExpenses": 1000
+            }
+          ],
+          "earnedIncome": [60000]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "breakdown.childcareCredit.income": 24795.01,
+        "breakdown.childcareCredit.rate": 0.75,
+        "breakdown.childcareCredit.calculated": 750.0,
+        "breakdown.childcareCredit.applied": 750.0
+      }
+    },
+    {
+      "id": "childcare-2025-qc-rate-43725",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "fd": 43725
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 1000,
+              "qcEligibleExpenses": 1000
+            }
+          ],
+          "earnedIncome": [60000]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "breakdown.childcareCredit.income": 43725,
+        "breakdown.childcareCredit.rate": 0.75,
+        "breakdown.childcareCredit.calculated": 750.0,
+        "breakdown.childcareCredit.applied": 750.0
+      }
+    },
+    {
+      "id": "childcare-2025-qc-rate-43725.01",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "fd": 43725.01
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 1000,
+              "qcEligibleExpenses": 1000
+            }
+          ],
+          "earnedIncome": [60000]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "breakdown.childcareCredit.income": 43725.01,
+        "breakdown.childcareCredit.rate": 0.74,
+        "breakdown.childcareCredit.calculated": 740.0,
+        "breakdown.childcareCredit.applied": 740.0
+      }
+    },
+    {
+      "id": "childcare-2025-qc-rate-45340",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "fd": 45340
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 1000,
+              "qcEligibleExpenses": 1000
+            }
+          ],
+          "earnedIncome": [60000]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "breakdown.childcareCredit.income": 45340,
+        "breakdown.childcareCredit.rate": 0.74,
+        "breakdown.childcareCredit.calculated": 740.0,
+        "breakdown.childcareCredit.applied": 740.0
+      }
+    },
+    {
+      "id": "childcare-2025-qc-rate-45340.01",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "fd": 45340.01
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 1000,
+              "qcEligibleExpenses": 1000
+            }
+          ],
+          "earnedIncome": [60000]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "breakdown.childcareCredit.income": 45340.01,
+        "breakdown.childcareCredit.rate": 0.73,
+        "breakdown.childcareCredit.calculated": 730.0,
+        "breakdown.childcareCredit.applied": 730.0
+      }
+    },
+    {
+      "id": "childcare-2025-qc-rate-46970",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "fd": 46970
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 1000,
+              "qcEligibleExpenses": 1000
+            }
+          ],
+          "earnedIncome": [60000]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "breakdown.childcareCredit.income": 46970,
+        "breakdown.childcareCredit.rate": 0.73,
+        "breakdown.childcareCredit.calculated": 730.0,
+        "breakdown.childcareCredit.applied": 730.0
+      }
+    },
+    {
+      "id": "childcare-2025-qc-rate-46970.01",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "fd": 46970.01
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 1000,
+              "qcEligibleExpenses": 1000
+            }
+          ],
+          "earnedIncome": [60000]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "breakdown.childcareCredit.income": 46970.01,
+        "breakdown.childcareCredit.rate": 0.72,
+        "breakdown.childcareCredit.calculated": 720.0,
+        "breakdown.childcareCredit.applied": 720.0
+      }
+    },
+    {
+      "id": "childcare-2025-qc-rate-48570",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "fd": 48570
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 1000,
+              "qcEligibleExpenses": 1000
+            }
+          ],
+          "earnedIncome": [60000]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "breakdown.childcareCredit.income": 48570,
+        "breakdown.childcareCredit.rate": 0.72,
+        "breakdown.childcareCredit.calculated": 720.0,
+        "breakdown.childcareCredit.applied": 720.0
+      }
+    },
+    {
+      "id": "childcare-2025-qc-rate-48570.01",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "fd": 48570.01
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 1000,
+              "qcEligibleExpenses": 1000
+            }
+          ],
+          "earnedIncome": [60000]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "breakdown.childcareCredit.income": 48570.01,
+        "breakdown.childcareCredit.rate": 0.71,
+        "breakdown.childcareCredit.calculated": 710.0,
+        "breakdown.childcareCredit.applied": 710.0
+      }
+    },
+    {
+      "id": "childcare-2025-qc-rate-50195",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "fd": 50195
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 1000,
+              "qcEligibleExpenses": 1000
+            }
+          ],
+          "earnedIncome": [60000]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "breakdown.childcareCredit.income": 50195,
+        "breakdown.childcareCredit.rate": 0.71,
+        "breakdown.childcareCredit.calculated": 710.0,
+        "breakdown.childcareCredit.applied": 710.0
+      }
+    },
+    {
+      "id": "childcare-2025-qc-rate-50195.01",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "fd": 50195.01
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 1000,
+              "qcEligibleExpenses": 1000
+            }
+          ],
+          "earnedIncome": [60000]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "breakdown.childcareCredit.income": 50195.01,
+        "breakdown.childcareCredit.rate": 0.7,
+        "breakdown.childcareCredit.calculated": 700.0,
+        "breakdown.childcareCredit.applied": 700.0
+      }
+    },
+    {
+      "id": "childcare-2025-qc-rate-119835",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "fd": 119835
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 1000,
+              "qcEligibleExpenses": 1000
+            }
+          ],
+          "earnedIncome": [60000]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "breakdown.childcareCredit.income": 119835,
+        "breakdown.childcareCredit.rate": 0.7,
+        "breakdown.childcareCredit.calculated": 700.0,
+        "breakdown.childcareCredit.applied": 700.0
+      }
+    },
+    {
+      "id": "childcare-2025-qc-rate-119835.01",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "fd": 119835.01
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 1000,
+              "qcEligibleExpenses": 1000
+            }
+          ],
+          "earnedIncome": [60000]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "breakdown.childcareCredit.income": 119835.01,
+        "breakdown.childcareCredit.rate": 0.67,
+        "breakdown.childcareCredit.calculated": 670.0,
+        "breakdown.childcareCredit.applied": 670.0
+      }
+    },
+    {
+      "id": "childcare-2025-qc-independent-zero",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 60000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 10000,
+              "qcEligibleExpenses": 10000
+            }
+          ],
+          "earnedIncome": [0]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "childcare.status": "complete",
+        "childcare.claims": [0],
+        "me.ti": 59435,
+        "me.tiP": 58015,
+        "breakdown.childcareCredit.status": "complete",
+        "breakdown.childcareCredit.income": 58015,
+        "breakdown.childcareCredit.allowedExpenses": 10000,
+        "breakdown.childcareCredit.rate": 0.7,
+        "breakdown.childcareCredit.applied": 7000
+      }
+    },
+    {
+      "id": "childcare-2025-qc-independent-missing",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 60000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 10000,
+              "qcEligibleExpenses": 10000
+            }
+          ]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "childcare.status": "incomplete",
+        "childcare.claims": [0],
+        "me.ti": 59435,
+        "me.tiP": 58015,
+        "breakdown.childcareCredit.status": "complete",
+        "breakdown.childcareCredit.income": 58015,
+        "breakdown.childcareCredit.allowedExpenses": 10000,
+        "breakdown.childcareCredit.rate": 0.7,
+        "breakdown.childcareCredit.applied": 7000
+      }
+    },
+    {
+      "id": "childcare-2025-qc-independent-positive",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 60000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 10000,
+              "qcEligibleExpenses": 10000
+            }
+          ],
+          "earnedIncome": [60000]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "childcare.status": "complete",
+        "childcare.claims": [8000],
+        "me.ti": 51435,
+        "me.tiP": 58015,
+        "breakdown.childcareCredit.status": "complete",
+        "breakdown.childcareCredit.income": 58015,
+        "breakdown.childcareCredit.allowedExpenses": 10000,
+        "breakdown.childcareCredit.rate": 0.7,
+        "breakdown.childcareCredit.applied": 7000
+      }
+    },
+    {
+      "id": "childcare-2025-qc-couple-family-base",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 60000
+          },
+          {
+            "ord": 30000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 10000,
+              "qcEligibleExpenses": 10000
+            }
+          ],
+          "earnedIncome": [60000, 30000]
+        },
+        "adults": 2,
+        "useCredits": true
+      },
+      "expected": {
+        "childcare.claims": [0, 8000],
+        "breakdown.childcareCredit.income": 86330,
+        "breakdown.childcareCredit.applied": 7000
+      }
+    },
+    {
+      "id": "childcare-2025-qc-expense-missing",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 60000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 10000
+            }
+          ],
+          "earnedIncome": [60000]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "childcare.claims": [8000],
+        "breakdown.childcareCredit.status": "incomplete",
+        "breakdown.childcareCredit.allowedExpenses": 0,
+        "breakdown.childcareCredit.applied": 0
+      }
+    },
+    {
+      "id": "childcare-2025-qc-expense-zero",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 60000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 10000,
+              "qcEligibleExpenses": 0
+            }
+          ],
+          "earnedIncome": [60000]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "childcare.claims": [8000],
+        "breakdown.childcareCredit.status": "complete",
+        "breakdown.childcareCredit.allowedExpenses": 0,
+        "breakdown.childcareCredit.applied": 0
+      }
+    },
+    {
+      "id": "childcare-2025-qc-expense-portion",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 60000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 10000,
+              "qcEligibleExpenses": 3000
+            }
+          ],
+          "earnedIncome": [60000]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "childcare.claims": [8000],
+        "breakdown.childcareCredit.status": "complete",
+        "breakdown.childcareCredit.allowedExpenses": 3000,
+        "breakdown.childcareCredit.applied": 2100
+      }
+    },
+    {
+      "id": "childcare-2025-qc-expense-invalid",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 60000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 10000,
+              "qcEligibleExpenses": 10001
+            }
+          ],
+          "earnedIncome": [60000]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "childcare.claims": [8000],
+        "breakdown.childcareCredit.status": "invalid",
+        "breakdown.childcareCredit.allowedExpenses": 0,
+        "breakdown.childcareCredit.applied": 0
+      }
+    },
+    {
+      "id": "childcare-2025-qc-pool-zero-cost-child",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 60000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "earnedIncome": [60000],
+          "children": [
+            {
+              "age": 3,
+              "expenses": 20000,
+              "qcEligibleExpenses": 20000
+            },
+            {
+              "age": 10,
+              "expenses": 0
+            }
+          ]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "childcare.claims": [13000],
+        "breakdown.childcareCredit.annualLimit": 18455,
+        "breakdown.childcareCredit.allowedExpenses": 18455,
+        "breakdown.childcareCredit.calculated": 12918.5,
+        "breakdown.childcareCredit.applied": 12918.5
+      }
+    },
+    {
+      "id": "childcare-2025-qc-young6",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 60000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 6,
+              "expenses": 20000,
+              "qcEligibleExpenses": 20000
+            }
+          ],
+          "earnedIncome": [60000]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "childcare.claims": [8000],
+        "breakdown.childcareCredit.annualLimit": 12275,
+        "breakdown.childcareCredit.allowedExpenses": 12275,
+        "breakdown.childcareCredit.calculated": 8592.5,
+        "breakdown.childcareCredit.applied": 8592.5
+      }
+    },
+    {
+      "id": "childcare-2025-qc-other7",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 60000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 7,
+              "expenses": 20000,
+              "qcEligibleExpenses": 20000
+            }
+          ],
+          "earnedIncome": [60000]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "childcare.claims": [5000],
+        "breakdown.childcareCredit.annualLimit": 6180,
+        "breakdown.childcareCredit.allowedExpenses": 6180,
+        "breakdown.childcareCredit.calculated": 4326.0,
+        "breakdown.childcareCredit.applied": 4326.0
+      }
+    },
+    {
+      "id": "childcare-2025-qc-dtc22",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 60000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 22,
+              "expenses": 20000,
+              "qcEligibleExpenses": 20000,
+              "disabilityTaxCredit": true
+            }
+          ],
+          "earnedIncome": [60000]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "childcare.claims": [11000],
+        "breakdown.childcareCredit.annualLimit": 0,
+        "breakdown.childcareCredit.allowedExpenses": 0,
+        "breakdown.childcareCredit.calculated": 0.0,
+        "breakdown.childcareCredit.applied": 0.0
+      }
+    },
+    {
+      "id": "childcare-2025-qc-infirm22",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 60000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 22,
+              "expenses": 20000,
+              "qcEligibleExpenses": 20000,
+              "infirm": true
+            }
+          ],
+          "earnedIncome": [60000]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "childcare.claims": [5000],
+        "breakdown.childcareCredit.annualLimit": 6180,
+        "breakdown.childcareCredit.allowedExpenses": 6180,
+        "breakdown.childcareCredit.calculated": 4326.0,
+        "breakdown.childcareCredit.applied": 4326.0
+      }
+    },
+    {
+      "id": "childcare-2025-qc-severe22",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 60000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 22,
+              "expenses": 20000,
+              "qcEligibleExpenses": 20000,
+              "qcSevereImpairment": true
+            }
+          ],
+          "earnedIncome": [60000]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "childcare.claims": [0],
+        "breakdown.childcareCredit.annualLimit": 16800,
+        "breakdown.childcareCredit.allowedExpenses": 16800,
+        "breakdown.childcareCredit.calculated": 11760.0,
+        "breakdown.childcareCredit.applied": 11760.0
+      }
+    },
+    {
+      "id": "childcare-2025-qc-age14",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 60000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 14,
+              "expenses": 20000,
+              "qcEligibleExpenses": 20000
+            }
+          ],
+          "earnedIncome": [60000]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "childcare.claims": [5000],
+        "breakdown.childcareCredit.annualLimit": 6180,
+        "breakdown.childcareCredit.allowedExpenses": 6180,
+        "breakdown.childcareCredit.calculated": 4326.0,
+        "breakdown.childcareCredit.applied": 4326.0
+      }
+    },
+    {
+      "id": "childcare-2025-qc-age15",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 60000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 15,
+              "expenses": 20000,
+              "qcEligibleExpenses": 20000
+            }
+          ],
+          "earnedIncome": [60000]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "childcare.claims": [5000],
+        "breakdown.childcareCredit.annualLimit": 6180,
+        "breakdown.childcareCredit.allowedExpenses": 6180,
+        "breakdown.childcareCredit.calculated": 4326.0,
+        "breakdown.childcareCredit.applied": 4326.0
+      }
+    },
+    {
+      "id": "childcare-2025-qc-age16",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 60000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 16,
+              "expenses": 20000,
+              "qcEligibleExpenses": 20000
+            }
+          ],
+          "earnedIncome": [60000]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "childcare.claims": [5000],
+        "breakdown.childcareCredit.annualLimit": 6180,
+        "breakdown.childcareCredit.allowedExpenses": 6180,
+        "breakdown.childcareCredit.calculated": 4326.0,
+        "breakdown.childcareCredit.applied": 4326.0
+      }
+    },
+    {
+      "id": "childcare-2025-qc-age17",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 60000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 17,
+              "expenses": 20000,
+              "qcEligibleExpenses": 20000
+            }
+          ],
+          "earnedIncome": [60000]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "childcare.claims": [0],
+        "breakdown.childcareCredit.annualLimit": 0,
+        "breakdown.childcareCredit.allowedExpenses": 0,
+        "breakdown.childcareCredit.calculated": 0.0,
+        "breakdown.childcareCredit.applied": 0.0
+      }
+    },
+    {
+      "id": "childcare-2025-qc-disabled-credit",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 60000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 10000,
+              "qcEligibleExpenses": 10000
+            }
+          ],
+          "earnedIncome": [60000]
+        },
+        "useCredits": false
+      },
+      "expected": {
+        "breakdown.childcareCredit.calculated": 7000,
+        "breakdown.childcareCredit.applied": 0
+      }
+    },
+    {
+      "id": "childcare-2025-qc-manual-unrelated",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "fd": 60000
+          },
+          {}
+        ],
+        "childcare": {
+          "mode": "manual",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 8000,
+              "qcEligibleExpenses": 8000
+            }
+          ],
+          "manualClaims": [8000, 0]
+        },
+        "adults": 2,
+        "spouse": false,
+        "useCredits": true
+      },
+      "expected": {
+        "childcare.status": "complete",
+        "breakdown.childcareCredit.status": "unsupported",
+        "breakdown.childcareCredit.applied": 0
+      }
+    },
+    {
+      "id": "childcare-2025-qc-distinct-spouse-claimants",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "fd": 18000
+          },
+          {
+            "fd": 16000
+          }
+        ],
+        "childcare": {
+          "mode": "manual",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 10000,
+              "qcEligibleExpenses": 10000
+            }
+          ],
+          "manualClaims": [10000, 0]
+        },
+        "adults": 2,
+        "useCredits": true
+      },
+      "expected": {
+        "claim.c": 1,
+        "claim.provincialClaimant": 0,
+        "breakdown.incomeBases.federal": [8000, 16000],
+        "breakdown.incomeBases.provincial": [18000, 16000],
+        "breakdown.childcareCredit.income": 34000,
+        "breakdown.childcareCredit.applied": 7500
+      }
+    },
+    {
+      "id": "childcare-2025-nl-two-earners",
+      "year": 2025,
+      "province": "NL",
+      "household": {
+        "people": [
+          {
+            "fd": 80000
+          },
+          {
+            "fd": 50000
+          }
+        ],
+        "childcare": {
+          "mode": "manual",
+          "children": [
+            {
+              "age": 20,
+              "expenses": 10000,
+              "infirm": true
+            }
+          ],
+          "manualClaims": [6000, 4000]
+        },
+        "adults": 2,
+        "useBpa": false,
+        "useCredits": false
+      },
+      "expected": {
+        "childcare.claims": [6000, 4000],
+        "breakdown.childcareCredit.refundable": false,
+        "breakdown.childcareCredit.allowedExpenses": 10000,
+        "breakdown.childcareCredit.rate": 0.087,
+        "breakdown.childcareCredit.calculated": 870,
+        "breakdown.childcareCredit.applied": 870,
+        "breakdown.childcareCredit.perPerson": [522, 348]
+      }
+    },
+    {
+      "id": "childcare-2025-nl-no-transfer",
+      "year": 2025,
+      "province": "NL",
+      "household": {
+        "people": [
+          {
+            "fd": 80000
+          },
+          {}
+        ],
+        "childcare": {
+          "mode": "manual",
+          "children": [
+            {
+              "age": 20,
+              "expenses": 10000,
+              "infirm": true
+            }
+          ],
+          "manualClaims": [6000, 4000]
+        },
+        "adults": 2,
+        "useBpa": false,
+        "useCredits": false
+      },
+      "expected": {
+        "childcare.claims": [6000, 4000],
+        "breakdown.childcareCredit.refundable": false,
+        "breakdown.childcareCredit.allowedExpenses": 10000,
+        "breakdown.childcareCredit.rate": 0.087,
+        "breakdown.childcareCredit.calculated": 870,
+        "breakdown.childcareCredit.applied": 522,
+        "breakdown.childcareCredit.perPerson": [522, 0]
+      }
+    },
+    {
+      "id": "childcare-2025-nl-manual-allocation",
+      "year": 2025,
+      "province": "NL",
+      "household": {
+        "people": [
+          {
+            "fd": 80000
+          },
+          {}
+        ],
+        "childcare": {
+          "mode": "manual",
+          "children": [
+            {
+              "age": 20,
+              "expenses": 10000,
+              "infirm": true
+            }
+          ],
+          "manualClaims": [10000, 0]
+        },
+        "adults": 2,
+        "useBpa": false,
+        "useCredits": false
+      },
+      "expected": {
+        "childcare.claims": [10000, 0],
+        "breakdown.childcareCredit.refundable": false,
+        "breakdown.childcareCredit.allowedExpenses": 10000,
+        "breakdown.childcareCredit.rate": 0.087,
+        "breakdown.childcareCredit.calculated": 870,
+        "breakdown.childcareCredit.applied": 870,
+        "breakdown.childcareCredit.perPerson": [870, 0]
+      }
+    },
+    {
+      "id": "childcare-2025-nl-tax-floor-toggle-False",
+      "year": 2025,
+      "province": "NL",
+      "household": {
+        "people": [
+          {
+            "fd": 10000
+          }
+        ],
+        "childcare": {
+          "mode": "manual",
+          "children": [
+            {
+              "age": 20,
+              "expenses": 8000,
+              "infirm": true
+            }
+          ],
+          "manualClaims": [8000]
+        },
+        "useBpa": false,
+        "useCredits": false
+      },
+      "expected": {
+        "me.ti": 2000,
+        "me.tiP": 2000,
+        "prov": 0,
+        "breakdown.childcareCredit.refundable": false,
+        "breakdown.childcareCredit.calculated": 696,
+        "breakdown.childcareCredit.applied": 174,
+        "breakdown.childcareCredit.perPerson": [174]
+      }
+    },
+    {
+      "id": "childcare-2025-nl-tax-floor-toggle-True",
+      "year": 2025,
+      "province": "NL",
+      "household": {
+        "people": [
+          {
+            "fd": 10000
+          }
+        ],
+        "childcare": {
+          "mode": "manual",
+          "children": [
+            {
+              "age": 20,
+              "expenses": 8000,
+              "infirm": true
+            }
+          ],
+          "manualClaims": [8000]
+        },
+        "useBpa": false,
+        "useCredits": true
+      },
+      "expected": {
+        "me.ti": 2000,
+        "me.tiP": 2000,
+        "prov": 0,
+        "breakdown.childcareCredit.refundable": false,
+        "breakdown.childcareCredit.calculated": 696,
+        "breakdown.childcareCredit.applied": 174,
+        "breakdown.childcareCredit.perPerson": [174]
+      }
+    },
+    {
+      "id": "childcare-2025-nl-credit-before-dividends",
+      "year": 2025,
+      "province": "NL",
+      "household": {
+        "people": [
+          {
+            "ed": 10000
+          }
+        ],
+        "childcare": {
+          "mode": "manual",
+          "children": [
+            {
+              "age": 20,
+              "expenses": 8000,
+              "infirm": true
+            }
+          ],
+          "manualClaims": [8000]
+        },
+        "useBpa": false
+      },
+      "expected": {
+        "me.ti": 5800,
+        "me.pDtc": 0,
+        "prov": 0,
+        "breakdown.childcareCredit.calculated": 696,
+        "breakdown.childcareCredit.applied": 504.6
+      }
+    },
+    {
+      "id": "childcare-2026-published-pooled-example",
+      "year": 2026,
+      "province": "BC",
+      "household": {
+        "people": [
+          {
+            "ord": 30000
+          },
+          {
+            "ord": 60000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "earnedIncome": [30000, 60000],
+          "children": [
+            {
+              "age": 2,
+              "expenses": 19000
+            },
+            {
+              "age": 4,
+              "expenses": 0
+            },
+            {
+              "age": 6,
+              "expenses": 0
+            }
+          ]
+        },
+        "adults": 2
+      },
+      "expected": {
+        "childcare.status": "complete",
+        "childcare.claims": [19000, 0],
+        "childcare.annualLimit": 24000,
+        "childcare.earnedIncomeLimit": 20000,
+        "childcare.expenses": 19000,
+        "childcare.childCounts": {
+          "kids": 3,
+          "under6": 2
+        },
+        "famNet": 70170
+      }
+    },
+    {
+      "id": "childcare-2026-zero-cost-child-pool",
+      "year": 2026,
+      "province": "BC",
+      "household": {
+        "people": [
+          {
+            "ord": 60000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "earnedIncome": [60000],
+          "children": [
+            {
+              "age": 3,
+              "expenses": 10000
+            },
+            {
+              "age": 10,
+              "expenses": 0
+            }
+          ]
+        }
+      },
+      "expected": {
+        "childcare.claims": [10000],
+        "childcare.childLimits": [8000, 5000],
+        "childcare.annualLimit": 13000,
+        "childcare.eligibleExpenses": 10000,
+        "famNet": 49435
+      }
+    },
+    {
+      "id": "childcare-2026-federal-age6",
+      "year": 2026,
+      "province": "BC",
+      "household": {
+        "people": [
+          {
+            "ord": 60000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 6,
+              "expenses": 20000
+            }
+          ],
+          "earnedIncome": [60000]
+        },
+        "kids": 6,
+        "under6": 6
+      },
+      "expected": {
+        "childcare.claims": [8000],
+        "childcare.annualLimit": 8000,
+        "childcare.childCounts": {
+          "kids": 1,
+          "under6": 0
+        }
+      }
+    },
+    {
+      "id": "childcare-2026-federal-age7",
+      "year": 2026,
+      "province": "BC",
+      "household": {
+        "people": [
+          {
+            "ord": 60000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 7,
+              "expenses": 20000
+            }
+          ],
+          "earnedIncome": [60000]
+        },
+        "kids": 6,
+        "under6": 6
+      },
+      "expected": {
+        "childcare.claims": [5000],
+        "childcare.annualLimit": 5000,
+        "childcare.childCounts": {
+          "kids": 1,
+          "under6": 0
+        }
+      }
+    },
+    {
+      "id": "childcare-2026-federal-age16",
+      "year": 2026,
+      "province": "BC",
+      "household": {
+        "people": [
+          {
+            "ord": 60000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 16,
+              "expenses": 20000
+            }
+          ],
+          "earnedIncome": [60000]
+        },
+        "kids": 6,
+        "under6": 6
+      },
+      "expected": {
+        "childcare.claims": [5000],
+        "childcare.annualLimit": 5000,
+        "childcare.childCounts": {
+          "kids": 1,
+          "under6": 0
+        }
+      }
+    },
+    {
+      "id": "childcare-2026-federal-age17",
+      "year": 2026,
+      "province": "BC",
+      "household": {
+        "people": [
+          {
+            "ord": 60000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 17,
+              "expenses": 20000
+            }
+          ],
+          "earnedIncome": [60000]
+        },
+        "kids": 6,
+        "under6": 6
+      },
+      "expected": {
+        "childcare.claims": [0],
+        "childcare.annualLimit": 0,
+        "childcare.childCounts": {
+          "kids": 1,
+          "under6": 0
+        }
+      }
+    },
+    {
+      "id": "childcare-2026-federal-infirm17",
+      "year": 2026,
+      "province": "BC",
+      "household": {
+        "people": [
+          {
+            "ord": 60000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 17,
+              "expenses": 20000,
+              "infirm": true
+            }
+          ],
+          "earnedIncome": [60000]
+        },
+        "kids": 6,
+        "under6": 6
+      },
+      "expected": {
+        "childcare.claims": [5000],
+        "childcare.annualLimit": 5000,
+        "childcare.childCounts": {
+          "kids": 1,
+          "under6": 0
+        }
+      }
+    },
+    {
+      "id": "childcare-2026-federal-dtc20",
+      "year": 2026,
+      "province": "BC",
+      "household": {
+        "people": [
+          {
+            "ord": 60000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 20,
+              "expenses": 20000,
+              "disabilityTaxCredit": true
+            }
+          ],
+          "earnedIncome": [60000]
+        },
+        "kids": 6,
+        "under6": 6
+      },
+      "expected": {
+        "childcare.claims": [11000],
+        "childcare.annualLimit": 11000,
+        "childcare.childCounts": {
+          "kids": 0,
+          "under6": 0
+        }
+      }
+    },
+    {
+      "id": "childcare-2026-federal-age5",
+      "year": 2026,
+      "province": "BC",
+      "household": {
+        "people": [
+          {
+            "ord": 60000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 5,
+              "expenses": 20000
+            }
+          ],
+          "earnedIncome": [60000]
+        },
+        "kids": 6,
+        "under6": 6
+      },
+      "expected": {
+        "childcare.claims": [8000],
+        "childcare.annualLimit": 8000,
+        "childcare.childCounts": {
+          "kids": 1,
+          "under6": 1
+        }
+      }
+    },
+    {
+      "id": "childcare-2026-lower-net",
+      "year": 2026,
+      "province": "BC",
+      "household": {
+        "people": [
+          {
+            "ord": 70000
+          },
+          {
+            "ord": 60000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 10000
+            }
+          ],
+          "earnedIncome": [70000, 60000]
+        },
+        "adults": 2
+      },
+      "expected": {
+        "childcare.claimant": 1,
+        "childcare.claims": [0, 8000]
+      }
+    },
+    {
+      "id": "childcare-2026-rrsp-fhsa-reselect",
+      "year": 2026,
+      "province": "BC",
+      "household": {
+        "people": [
+          {
+            "ord": 70000,
+            "rrsp": 10000,
+            "fhsa": 10000
+          },
+          {
+            "ord": 60000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 10000
+            }
+          ],
+          "earnedIncome": [70000, 60000]
+        },
+        "adults": 2
+      },
+      "expected": {
+        "childcare.claimant": 0,
+        "childcare.claims": [8000, 0]
+      }
+    },
+    {
+      "id": "childcare-2026-equal-net-first",
+      "year": 2026,
+      "province": "BC",
+      "household": {
+        "people": [
+          {
+            "ord": 60000
+          },
+          {
+            "ord": 60000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 10000
+            }
+          ],
+          "earnedIncome": [70000, 60000]
+        },
+        "adults": 2
+      },
+      "expected": {
+        "childcare.claimant": 0,
+        "childcare.claims": [8000, 0]
+      }
+    },
+    {
+      "id": "childcare-2026-earnings-cap",
+      "year": 2026,
+      "province": "BC",
+      "household": {
+        "people": [
+          {
+            "ord": 60000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 10000
+            }
+          ],
+          "earnedIncome": [9000]
+        }
+      },
+      "expected": {
+        "childcare.status": "complete",
+        "childcare.claims": [6000]
+      }
+    },
+    {
+      "id": "childcare-2026-zero-earnings",
+      "year": 2026,
+      "province": "BC",
+      "household": {
+        "people": [
+          {
+            "ord": 60000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 10000
+            }
+          ],
+          "earnedIncome": [0]
+        }
+      },
+      "expected": {
+        "childcare.status": "complete",
+        "childcare.claims": [0]
+      }
+    },
+    {
+      "id": "childcare-2026-missing-earnings",
+      "year": 2026,
+      "province": "BC",
+      "household": {
+        "people": [
+          {
+            "ord": 60000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 10000
+            }
+          ]
+        }
+      },
+      "expected": {
+        "childcare.status": "incomplete",
+        "childcare.claims": [0]
+      }
+    },
+    {
+      "id": "childcare-2026-null-earnings",
+      "year": 2026,
+      "province": "BC",
+      "household": {
+        "people": [
+          {
+            "ord": 60000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 10000
+            }
+          ],
+          "earnedIncome": [null]
+        }
+      },
+      "expected": {
+        "childcare.status": "incomplete",
+        "childcare.claims": [0]
+      }
+    },
+    {
+      "id": "childcare-2026-explicit-spouse",
+      "year": 2026,
+      "province": "BC",
+      "household": {
+        "people": [
+          {
+            "ord": 60000
+          },
+          {}
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 10000
+            }
+          ],
+          "earnedIncome": [60000, 0]
+        },
+        "adults": 2
+      },
+      "expected": {
+        "childcare.status": "complete",
+        "childcare.claimant": 1,
+        "childcare.claims": [0, 0]
+      }
+    },
+    {
+      "id": "childcare-2026-implicit-spouse",
+      "year": 2026,
+      "province": "BC",
+      "household": {
+        "people": [
+          {
+            "ord": 60000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 10000
+            }
+          ],
+          "earnedIncome": [60000, 0]
+        },
+        "adults": 2
+      },
+      "expected": {
+        "childcare.status": "complete",
+        "childcare.claimant": 1,
+        "childcare.claims": [0, 0]
+      }
+    },
+    {
+      "id": "childcare-2026-unrelated-adults",
+      "year": 2026,
+      "province": "BC",
+      "household": {
+        "people": [
+          {
+            "ord": 60000
+          },
+          {
+            "ord": 30000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 10000
+            }
+          ],
+          "earnedIncome": [60000, 30000]
+        },
+        "adults": 2,
+        "spouse": false
+      },
+      "expected": {
+        "childcare.status": "manual-required",
+        "childcare.claims": [0, 0]
+      }
+    },
+    {
+      "id": "childcare-2026-manual-replaces-automatic",
+      "year": 2026,
+      "province": "BC",
+      "household": {
+        "people": [
+          {
+            "ord": 60000
+          },
+          {}
+        ],
+        "childcare": {
+          "mode": "manual",
+          "children": [
+            {
+              "age": 17,
+              "expenses": 10000
+            }
+          ],
+          "manualClaims": [6000, 4000]
+        },
+        "adults": 2,
+        "spouse": false
+      },
+      "expected": {
+        "childcare.status": "complete",
+        "childcare.claims": [6000, 4000],
+        "childcare.annualLimit": 0,
+        "childcare.eligibleExpenses": 10000,
+        "childcare.claimant": null,
+        "breakdown.incomeBases.federal": [53435, 0]
+      }
+    },
+    {
+      "id": "childcare-2026-manual-exceeds-expense",
+      "year": 2026,
+      "province": "BC",
+      "household": {
+        "people": [
+          {
+            "ord": 60000
+          }
+        ],
+        "childcare": {
+          "mode": "manual",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 1000
+            }
+          ],
+          "manualClaims": [1001]
+        }
+      },
+      "expected": {
+        "childcare.status": "invalid",
+        "childcare.claims": [0]
+      }
+    },
+    {
+      "id": "childcare-2026-zero-cost-no-earnings-needed",
+      "year": 2026,
+      "province": "BC",
+      "household": {
+        "people": [
+          {
+            "ord": 60000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 0
+            }
+          ]
+        }
+      },
+      "expected": {
+        "childcare.status": "complete",
+        "childcare.claims": [0],
+        "childcare.expenses": 0
+      }
+    },
+    {
+      "id": "childcare-2026-deductions-income-benefits",
+      "year": 2026,
+      "province": "BC",
+      "household": {
+        "people": [
+          {
+            "fd": 60000,
+            "ded": 2000,
+            "rrsp": 3000,
+            "fhsa": 4000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 9000
+            }
+          ],
+          "earnedIncome": [60000]
+        },
+        "monthlySpending": 2000
+      },
+      "expected": {
+        "childcare.claims": [8000],
+        "childcare.expenses": 9000,
+        "me.breakdown.netIncome.ded": 17000,
+        "famNet": 43000,
+        "ccb": 7823.59,
+        "cash": 60000,
+        "payroll": 0,
+        "sales": 2880
+      }
+    },
+    {
+      "id": "childcare-2026-independent-income-floors",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 2000,
+            "rrsp": 3000
+          }
+        ],
+        "childcare": {
+          "mode": "manual",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 2000,
+              "qcEligibleExpenses": 2000
+            }
+          ],
+          "manualClaims": [2000]
+        }
+      },
+      "expected": {
+        "breakdown.incomeBases.beforeChildcare": [-1000],
+        "breakdown.incomeBases.federal": [0],
+        "breakdown.incomeBases.provincial": [0],
+        "me.ti": 0,
+        "me.tiP": 0
+      }
+    },
+    {
+      "id": "childcare-2026-expense-is-not-tax-or-sales",
+      "year": 2026,
+      "province": "BC",
+      "household": {
+        "people": [{}],
+        "childcare": {
+          "mode": "manual",
+          "children": [
+            {
+              "age": 20,
+              "expenses": 12000
+            }
+          ],
+          "manualClaims": [0]
+        }
+      },
+      "expected": {
+        "childcare.expenses": 12000,
+        "childcare.claims": [0],
+        "cash": 0,
+        "payroll": 0,
+        "sales": 0,
+        "gross": 0,
+        "total": 0,
+        "breakdown.left": 0
+      }
+    },
+    {
+      "id": "childcare-2026-counterfactual-fixed-earnings",
+      "year": 2026,
+      "province": "AB",
+      "household": {
+        "people": [
+          {
+            "fd": 30000
+          },
+          {
+            "fd": 40000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 20,
+              "expenses": 10000,
+              "disabilityTaxCredit": true
+            }
+          ],
+          "earnedIncome": [9000, 40000]
+        },
+        "adults": 2,
+        "useBpa": false
+      },
+      "expected": {
+        "childcare.claims": [6000, 0],
+        "childcare.earnedIncomeLimit": 6000,
+        "invAmt": 70000,
+        "invTax": 14080,
+        "margBy.fd": 0.22
+      }
+    },
+    {
+      "id": "childcare-2026-counterfactual-reselect-claimant",
+      "year": 2026,
+      "province": "AB",
+      "household": {
+        "people": [
+          {
+            "fd": 30000
+          },
+          {
+            "fd": 30050
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 20,
+              "expenses": 10000,
+              "disabilityTaxCredit": true
+            }
+          ],
+          "earnedIncome": [9000, 30050]
+        },
+        "adults": 2,
+        "useBpa": false
+      },
+      "expected": {
+        "childcare.claimant": 0,
+        "childcare.claims": [6000, 0],
+        "margBy.fd": -8.58
+      }
+    },
+    {
+      "id": "childcare-2026-allocation-mismatch-ON",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "ord": 60000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 10000,
+              "qcEligibleExpenses": 10000
+            }
+          ],
+          "earnedIncome": [60000],
+          "declaredAnnualExpenses": 12000
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "childcare.status": "incomplete",
+        "childcare.claims": [0],
+        "childcare.childCounts": {
+          "kids": 1,
+          "under6": 1
+        },
+        "breakdown.childcareCredit.applied": 0
+      }
+    },
+    {
+      "id": "childcare-2026-allocation-mismatch-QC",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 60000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 10000,
+              "qcEligibleExpenses": 10000
+            }
+          ],
+          "earnedIncome": [60000],
+          "declaredAnnualExpenses": 12000
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "childcare.status": "incomplete",
+        "childcare.claims": [0],
+        "childcare.childCounts": {
+          "kids": 1,
+          "under6": 1
+        },
+        "breakdown.childcareCredit.applied": 0
+      }
+    },
+    {
+      "id": "childcare-2026-allocation-mismatch-NL",
+      "year": 2026,
+      "province": "NL",
+      "household": {
+        "people": [
+          {
+            "ord": 60000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 10000,
+              "qcEligibleExpenses": 10000
+            }
+          ],
+          "earnedIncome": [60000],
+          "declaredAnnualExpenses": 12000
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "childcare.status": "incomplete",
+        "childcare.claims": [0],
+        "childcare.childCounts": {
+          "kids": 1,
+          "under6": 1
+        },
+        "breakdown.childcareCredit.applied": 0
+      }
+    },
+    {
+      "id": "childcare-2026-on-rate-20000",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "fd": 20000
+          }
+        ],
+        "childcare": {
+          "mode": "manual",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 1000
+            }
+          ],
+          "manualClaims": [1000]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "breakdown.childcareCredit.status": "complete",
+        "breakdown.childcareCredit.income": 20000,
+        "breakdown.childcareCredit.allowedExpenses": 1000,
+        "breakdown.childcareCredit.rate": 0.75,
+        "breakdown.childcareCredit.calculated": 750.0,
+        "breakdown.childcareCredit.applied": 750.0
+      }
+    },
+    {
+      "id": "childcare-2026-on-rate-20000.01",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "fd": 20000.01
+          }
+        ],
+        "childcare": {
+          "mode": "manual",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 1000
+            }
+          ],
+          "manualClaims": [1000]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "breakdown.childcareCredit.status": "complete",
+        "breakdown.childcareCredit.income": 20000.01,
+        "breakdown.childcareCredit.allowedExpenses": 1000,
+        "breakdown.childcareCredit.rate": 0.73,
+        "breakdown.childcareCredit.calculated": 730.0,
+        "breakdown.childcareCredit.applied": 730.0
+      }
+    },
+    {
+      "id": "childcare-2026-on-rate-22500",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "fd": 22500
+          }
+        ],
+        "childcare": {
+          "mode": "manual",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 1000
+            }
+          ],
+          "manualClaims": [1000]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "breakdown.childcareCredit.status": "complete",
+        "breakdown.childcareCredit.income": 22500,
+        "breakdown.childcareCredit.allowedExpenses": 1000,
+        "breakdown.childcareCredit.rate": 0.73,
+        "breakdown.childcareCredit.calculated": 730.0,
+        "breakdown.childcareCredit.applied": 730.0
+      }
+    },
+    {
+      "id": "childcare-2026-on-rate-22500.01",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "fd": 22500.01
+          }
+        ],
+        "childcare": {
+          "mode": "manual",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 1000
+            }
+          ],
+          "manualClaims": [1000]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "breakdown.childcareCredit.status": "complete",
+        "breakdown.childcareCredit.income": 22500.01,
+        "breakdown.childcareCredit.allowedExpenses": 1000,
+        "breakdown.childcareCredit.rate": 0.71,
+        "breakdown.childcareCredit.calculated": 710.0,
+        "breakdown.childcareCredit.applied": 710.0
+      }
+    },
+    {
+      "id": "childcare-2026-on-rate-40000",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "fd": 40000
+          }
+        ],
+        "childcare": {
+          "mode": "manual",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 1000
+            }
+          ],
+          "manualClaims": [1000]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "breakdown.childcareCredit.status": "complete",
+        "breakdown.childcareCredit.income": 40000,
+        "breakdown.childcareCredit.allowedExpenses": 1000,
+        "breakdown.childcareCredit.rate": 0.59,
+        "breakdown.childcareCredit.calculated": 590.0,
+        "breakdown.childcareCredit.applied": 590.0
+      }
+    },
+    {
+      "id": "childcare-2026-on-rate-40000.01",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "fd": 40000.01
+          }
+        ],
+        "childcare": {
+          "mode": "manual",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 1000
+            }
+          ],
+          "manualClaims": [1000]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "breakdown.childcareCredit.status": "complete",
+        "breakdown.childcareCredit.income": 40000.01,
+        "breakdown.childcareCredit.allowedExpenses": 1000,
+        "breakdown.childcareCredit.rate": 0.57,
+        "breakdown.childcareCredit.calculated": 570.0,
+        "breakdown.childcareCredit.applied": 570.0
+      }
+    },
+    {
+      "id": "childcare-2026-on-rate-60000",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "fd": 60000
+          }
+        ],
+        "childcare": {
+          "mode": "manual",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 1000
+            }
+          ],
+          "manualClaims": [1000]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "breakdown.childcareCredit.status": "complete",
+        "breakdown.childcareCredit.income": 60000,
+        "breakdown.childcareCredit.allowedExpenses": 1000,
+        "breakdown.childcareCredit.rate": 0.51,
+        "breakdown.childcareCredit.calculated": 510.0,
+        "breakdown.childcareCredit.applied": 510.0
+      }
+    },
+    {
+      "id": "childcare-2026-on-rate-60000.01",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "fd": 60000.01
+          }
+        ],
+        "childcare": {
+          "mode": "manual",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 1000
+            }
+          ],
+          "manualClaims": [1000]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "breakdown.childcareCredit.status": "complete",
+        "breakdown.childcareCredit.income": 60000.01,
+        "breakdown.childcareCredit.allowedExpenses": 1000,
+        "breakdown.childcareCredit.rate": 0.49,
+        "breakdown.childcareCredit.calculated": 490.0,
+        "breakdown.childcareCredit.applied": 490.0
+      }
+    },
+    {
+      "id": "childcare-2026-on-rate-63600",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "fd": 63600
+          }
+        ],
+        "childcare": {
+          "mode": "manual",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 1000
+            }
+          ],
+          "manualClaims": [1000]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "breakdown.childcareCredit.status": "complete",
+        "breakdown.childcareCredit.income": 63600,
+        "breakdown.childcareCredit.allowedExpenses": 1000,
+        "breakdown.childcareCredit.rate": 0.49,
+        "breakdown.childcareCredit.calculated": 490.0,
+        "breakdown.childcareCredit.applied": 490.0
+      }
+    },
+    {
+      "id": "childcare-2026-on-rate-63600.01",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "fd": 63600.01
+          }
+        ],
+        "childcare": {
+          "mode": "manual",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 1000
+            }
+          ],
+          "manualClaims": [1000]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "breakdown.childcareCredit.status": "complete",
+        "breakdown.childcareCredit.income": 63600.01,
+        "breakdown.childcareCredit.allowedExpenses": 1000,
+        "breakdown.childcareCredit.rate": 0.47,
+        "breakdown.childcareCredit.calculated": 470.0,
+        "breakdown.childcareCredit.applied": 470.0
+      }
+    },
+    {
+      "id": "childcare-2026-on-rate-146400",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "fd": 146400
+          }
+        ],
+        "childcare": {
+          "mode": "manual",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 1000
+            }
+          ],
+          "manualClaims": [1000]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "breakdown.childcareCredit.status": "complete",
+        "breakdown.childcareCredit.income": 146400,
+        "breakdown.childcareCredit.allowedExpenses": 1000,
+        "breakdown.childcareCredit.rate": 0.03,
+        "breakdown.childcareCredit.calculated": 30.0,
+        "breakdown.childcareCredit.applied": 30.0
+      }
+    },
+    {
+      "id": "childcare-2026-on-rate-146400.01",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "fd": 146400.01
+          }
+        ],
+        "childcare": {
+          "mode": "manual",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 1000
+            }
+          ],
+          "manualClaims": [1000]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "breakdown.childcareCredit.status": "complete",
+        "breakdown.childcareCredit.income": 146400.01,
+        "breakdown.childcareCredit.allowedExpenses": 1000,
+        "breakdown.childcareCredit.rate": 0.01,
+        "breakdown.childcareCredit.calculated": 10.0,
+        "breakdown.childcareCredit.applied": 10.0
+      }
+    },
+    {
+      "id": "childcare-2026-on-rate-150000",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "fd": 150000
+          }
+        ],
+        "childcare": {
+          "mode": "manual",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 1000
+            }
+          ],
+          "manualClaims": [1000]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "breakdown.childcareCredit.status": "complete",
+        "breakdown.childcareCredit.income": 150000,
+        "breakdown.childcareCredit.allowedExpenses": 1000,
+        "breakdown.childcareCredit.rate": 0.01,
+        "breakdown.childcareCredit.calculated": 10.0,
+        "breakdown.childcareCredit.applied": 10.0
+      }
+    },
+    {
+      "id": "childcare-2026-on-rate-150000.01",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "fd": 150000.01
+          }
+        ],
+        "childcare": {
+          "mode": "manual",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 1000
+            }
+          ],
+          "manualClaims": [1000]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "breakdown.childcareCredit.status": "complete",
+        "breakdown.childcareCredit.income": 150000.01,
+        "breakdown.childcareCredit.allowedExpenses": 1000,
+        "breakdown.childcareCredit.rate": 0,
+        "breakdown.childcareCredit.calculated": 0,
+        "breakdown.childcareCredit.applied": 0
+      }
+    },
+    {
+      "id": "childcare-2026-on-addback-before-floor",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "fd": 1000,
+            "ded": 1500
+          },
+          {
+            "fd": 20000
+          }
+        ],
+        "childcare": {
+          "mode": "manual",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 10000
+            }
+          ],
+          "manualClaims": [8000, 2000]
+        },
+        "adults": 2,
+        "useCredits": true
+      },
+      "expected": {
+        "breakdown.incomeBases.beforeChildcare": [-500, 20000],
+        "breakdown.incomeBases.federal": [0, 18000],
+        "breakdown.childcareCredit.income": 20000,
+        "breakdown.childcareCredit.allowedExpenses": 10000,
+        "breakdown.childcareCredit.rate": 0.75,
+        "breakdown.childcareCredit.applied": 7500
+      }
+    },
+    {
+      "id": "childcare-2026-on-earnings-cap-toggle-False",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "fd": 30000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 10000
+            }
+          ],
+          "earnedIncome": [9000]
+        },
+        "useCredits": false
+      },
+      "expected": {
+        "childcare.claims": [6000],
+        "breakdown.childcareCredit.income": 30000,
+        "breakdown.childcareCredit.allowedExpenses": 6000,
+        "breakdown.childcareCredit.rate": 0.67,
+        "breakdown.childcareCredit.calculated": 4020,
+        "breakdown.childcareCredit.applied": 0
+      }
+    },
+    {
+      "id": "childcare-2026-on-earnings-cap-toggle-True",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "fd": 30000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 10000
+            }
+          ],
+          "earnedIncome": [9000]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "childcare.claims": [6000],
+        "breakdown.childcareCredit.income": 30000,
+        "breakdown.childcareCredit.allowedExpenses": 6000,
+        "breakdown.childcareCredit.rate": 0.67,
+        "breakdown.childcareCredit.calculated": 4020,
+        "breakdown.childcareCredit.applied": 4020
+      }
+    },
+    {
+      "id": "childcare-2026-on-manual-unrelated",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "fd": 60000
+          },
+          {}
+        ],
+        "childcare": {
+          "mode": "manual",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 8000,
+              "qcEligibleExpenses": 8000
+            }
+          ],
+          "manualClaims": [8000, 0]
+        },
+        "adults": 2,
+        "spouse": false,
+        "useCredits": true
+      },
+      "expected": {
+        "childcare.status": "complete",
+        "breakdown.childcareCredit.status": "unsupported",
+        "breakdown.childcareCredit.applied": 0
+      }
+    },
+    {
+      "id": "childcare-2026-qc-rate-25305",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "fd": 25305
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 1000,
+              "qcEligibleExpenses": 1000
+            }
+          ],
+          "earnedIncome": [60000]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "breakdown.childcareCredit.income": 25305,
+        "breakdown.childcareCredit.rate": 0.78,
+        "breakdown.childcareCredit.calculated": 780.0,
+        "breakdown.childcareCredit.applied": 780.0
+      }
+    },
+    {
+      "id": "childcare-2026-qc-rate-25305.01",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "fd": 25305.01
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 1000,
+              "qcEligibleExpenses": 1000
+            }
+          ],
+          "earnedIncome": [60000]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "breakdown.childcareCredit.income": 25305.01,
+        "breakdown.childcareCredit.rate": 0.75,
+        "breakdown.childcareCredit.calculated": 750.0,
+        "breakdown.childcareCredit.applied": 750.0
+      }
+    },
+    {
+      "id": "childcare-2026-qc-rate-44620",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "fd": 44620
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 1000,
+              "qcEligibleExpenses": 1000
+            }
+          ],
+          "earnedIncome": [60000]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "breakdown.childcareCredit.income": 44620,
+        "breakdown.childcareCredit.rate": 0.75,
+        "breakdown.childcareCredit.calculated": 750.0,
+        "breakdown.childcareCredit.applied": 750.0
+      }
+    },
+    {
+      "id": "childcare-2026-qc-rate-44620.01",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "fd": 44620.01
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 1000,
+              "qcEligibleExpenses": 1000
+            }
+          ],
+          "earnedIncome": [60000]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "breakdown.childcareCredit.income": 44620.01,
+        "breakdown.childcareCredit.rate": 0.74,
+        "breakdown.childcareCredit.calculated": 740.0,
+        "breakdown.childcareCredit.applied": 740.0
+      }
+    },
+    {
+      "id": "childcare-2026-qc-rate-46270",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "fd": 46270
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 1000,
+              "qcEligibleExpenses": 1000
+            }
+          ],
+          "earnedIncome": [60000]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "breakdown.childcareCredit.income": 46270,
+        "breakdown.childcareCredit.rate": 0.74,
+        "breakdown.childcareCredit.calculated": 740.0,
+        "breakdown.childcareCredit.applied": 740.0
+      }
+    },
+    {
+      "id": "childcare-2026-qc-rate-46270.01",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "fd": 46270.01
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 1000,
+              "qcEligibleExpenses": 1000
+            }
+          ],
+          "earnedIncome": [60000]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "breakdown.childcareCredit.income": 46270.01,
+        "breakdown.childcareCredit.rate": 0.73,
+        "breakdown.childcareCredit.calculated": 730.0,
+        "breakdown.childcareCredit.applied": 730.0
+      }
+    },
+    {
+      "id": "childcare-2026-qc-rate-47935",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "fd": 47935
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 1000,
+              "qcEligibleExpenses": 1000
+            }
+          ],
+          "earnedIncome": [60000]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "breakdown.childcareCredit.income": 47935,
+        "breakdown.childcareCredit.rate": 0.73,
+        "breakdown.childcareCredit.calculated": 730.0,
+        "breakdown.childcareCredit.applied": 730.0
+      }
+    },
+    {
+      "id": "childcare-2026-qc-rate-47935.01",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "fd": 47935.01
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 1000,
+              "qcEligibleExpenses": 1000
+            }
+          ],
+          "earnedIncome": [60000]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "breakdown.childcareCredit.income": 47935.01,
+        "breakdown.childcareCredit.rate": 0.72,
+        "breakdown.childcareCredit.calculated": 720.0,
+        "breakdown.childcareCredit.applied": 720.0
+      }
+    },
+    {
+      "id": "childcare-2026-qc-rate-49565",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "fd": 49565
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 1000,
+              "qcEligibleExpenses": 1000
+            }
+          ],
+          "earnedIncome": [60000]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "breakdown.childcareCredit.income": 49565,
+        "breakdown.childcareCredit.rate": 0.72,
+        "breakdown.childcareCredit.calculated": 720.0,
+        "breakdown.childcareCredit.applied": 720.0
+      }
+    },
+    {
+      "id": "childcare-2026-qc-rate-49565.01",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "fd": 49565.01
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 1000,
+              "qcEligibleExpenses": 1000
+            }
+          ],
+          "earnedIncome": [60000]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "breakdown.childcareCredit.income": 49565.01,
+        "breakdown.childcareCredit.rate": 0.71,
+        "breakdown.childcareCredit.calculated": 710.0,
+        "breakdown.childcareCredit.applied": 710.0
+      }
+    },
+    {
+      "id": "childcare-2026-qc-rate-51225",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "fd": 51225
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 1000,
+              "qcEligibleExpenses": 1000
+            }
+          ],
+          "earnedIncome": [60000]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "breakdown.childcareCredit.income": 51225,
+        "breakdown.childcareCredit.rate": 0.71,
+        "breakdown.childcareCredit.calculated": 710.0,
+        "breakdown.childcareCredit.applied": 710.0
+      }
+    },
+    {
+      "id": "childcare-2026-qc-rate-51225.01",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "fd": 51225.01
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 1000,
+              "qcEligibleExpenses": 1000
+            }
+          ],
+          "earnedIncome": [60000]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "breakdown.childcareCredit.income": 51225.01,
+        "breakdown.childcareCredit.rate": 0.7,
+        "breakdown.childcareCredit.calculated": 700.0,
+        "breakdown.childcareCredit.applied": 700.0
+      }
+    },
+    {
+      "id": "childcare-2026-qc-rate-122290",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "fd": 122290
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 1000,
+              "qcEligibleExpenses": 1000
+            }
+          ],
+          "earnedIncome": [60000]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "breakdown.childcareCredit.income": 122290,
+        "breakdown.childcareCredit.rate": 0.7,
+        "breakdown.childcareCredit.calculated": 700.0,
+        "breakdown.childcareCredit.applied": 700.0
+      }
+    },
+    {
+      "id": "childcare-2026-qc-rate-122290.01",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "fd": 122290.01
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 1000,
+              "qcEligibleExpenses": 1000
+            }
+          ],
+          "earnedIncome": [60000]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "breakdown.childcareCredit.income": 122290.01,
+        "breakdown.childcareCredit.rate": 0.67,
+        "breakdown.childcareCredit.calculated": 670.0,
+        "breakdown.childcareCredit.applied": 670.0
+      }
+    },
+    {
+      "id": "childcare-2026-qc-independent-zero",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 60000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 10000,
+              "qcEligibleExpenses": 10000
+            }
+          ],
+          "earnedIncome": [0]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "childcare.status": "complete",
+        "childcare.claims": [0],
+        "me.ti": 59435,
+        "me.tiP": 57985,
+        "breakdown.childcareCredit.status": "complete",
+        "breakdown.childcareCredit.income": 57985,
+        "breakdown.childcareCredit.allowedExpenses": 10000,
+        "breakdown.childcareCredit.rate": 0.7,
+        "breakdown.childcareCredit.applied": 7000
+      }
+    },
+    {
+      "id": "childcare-2026-qc-independent-missing",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 60000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 10000,
+              "qcEligibleExpenses": 10000
+            }
+          ]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "childcare.status": "incomplete",
+        "childcare.claims": [0],
+        "me.ti": 59435,
+        "me.tiP": 57985,
+        "breakdown.childcareCredit.status": "complete",
+        "breakdown.childcareCredit.income": 57985,
+        "breakdown.childcareCredit.allowedExpenses": 10000,
+        "breakdown.childcareCredit.rate": 0.7,
+        "breakdown.childcareCredit.applied": 7000
+      }
+    },
+    {
+      "id": "childcare-2026-qc-independent-positive",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 60000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 10000,
+              "qcEligibleExpenses": 10000
+            }
+          ],
+          "earnedIncome": [60000]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "childcare.status": "complete",
+        "childcare.claims": [8000],
+        "me.ti": 51435,
+        "me.tiP": 57985,
+        "breakdown.childcareCredit.status": "complete",
+        "breakdown.childcareCredit.income": 57985,
+        "breakdown.childcareCredit.allowedExpenses": 10000,
+        "breakdown.childcareCredit.rate": 0.7,
+        "breakdown.childcareCredit.applied": 7000
+      }
+    },
+    {
+      "id": "childcare-2026-qc-couple-family-base",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 60000
+          },
+          {
+            "ord": 30000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 10000,
+              "qcEligibleExpenses": 10000
+            }
+          ],
+          "earnedIncome": [60000, 30000]
+        },
+        "adults": 2,
+        "useCredits": true
+      },
+      "expected": {
+        "childcare.claims": [0, 8000],
+        "breakdown.childcareCredit.income": 86270,
+        "breakdown.childcareCredit.applied": 7000
+      }
+    },
+    {
+      "id": "childcare-2026-qc-expense-missing",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 60000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 10000
+            }
+          ],
+          "earnedIncome": [60000]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "childcare.claims": [8000],
+        "breakdown.childcareCredit.status": "incomplete",
+        "breakdown.childcareCredit.allowedExpenses": 0,
+        "breakdown.childcareCredit.applied": 0
+      }
+    },
+    {
+      "id": "childcare-2026-qc-expense-zero",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 60000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 10000,
+              "qcEligibleExpenses": 0
+            }
+          ],
+          "earnedIncome": [60000]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "childcare.claims": [8000],
+        "breakdown.childcareCredit.status": "complete",
+        "breakdown.childcareCredit.allowedExpenses": 0,
+        "breakdown.childcareCredit.applied": 0
+      }
+    },
+    {
+      "id": "childcare-2026-qc-expense-portion",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 60000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 10000,
+              "qcEligibleExpenses": 3000
+            }
+          ],
+          "earnedIncome": [60000]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "childcare.claims": [8000],
+        "breakdown.childcareCredit.status": "complete",
+        "breakdown.childcareCredit.allowedExpenses": 3000,
+        "breakdown.childcareCredit.applied": 2100
+      }
+    },
+    {
+      "id": "childcare-2026-qc-expense-invalid",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 60000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 10000,
+              "qcEligibleExpenses": 10001
+            }
+          ],
+          "earnedIncome": [60000]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "childcare.claims": [8000],
+        "breakdown.childcareCredit.status": "invalid",
+        "breakdown.childcareCredit.allowedExpenses": 0,
+        "breakdown.childcareCredit.applied": 0
+      }
+    },
+    {
+      "id": "childcare-2026-qc-pool-zero-cost-child",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 60000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "earnedIncome": [60000],
+          "children": [
+            {
+              "age": 3,
+              "expenses": 20000,
+              "qcEligibleExpenses": 20000
+            },
+            {
+              "age": 10,
+              "expenses": 0
+            }
+          ]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "childcare.claims": [13000],
+        "breakdown.childcareCredit.annualLimit": 18830,
+        "breakdown.childcareCredit.allowedExpenses": 18830,
+        "breakdown.childcareCredit.calculated": 13181.0,
+        "breakdown.childcareCredit.applied": 13181.0
+      }
+    },
+    {
+      "id": "childcare-2026-qc-young6",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 60000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 6,
+              "expenses": 20000,
+              "qcEligibleExpenses": 20000
+            }
+          ],
+          "earnedIncome": [60000]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "childcare.claims": [8000],
+        "breakdown.childcareCredit.annualLimit": 12525,
+        "breakdown.childcareCredit.allowedExpenses": 12525,
+        "breakdown.childcareCredit.calculated": 8767.5,
+        "breakdown.childcareCredit.applied": 8767.5
+      }
+    },
+    {
+      "id": "childcare-2026-qc-other7",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 60000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 7,
+              "expenses": 20000,
+              "qcEligibleExpenses": 20000
+            }
+          ],
+          "earnedIncome": [60000]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "childcare.claims": [5000],
+        "breakdown.childcareCredit.annualLimit": 6305,
+        "breakdown.childcareCredit.allowedExpenses": 6305,
+        "breakdown.childcareCredit.calculated": 4413.5,
+        "breakdown.childcareCredit.applied": 4413.5
+      }
+    },
+    {
+      "id": "childcare-2026-qc-dtc22",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 60000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 22,
+              "expenses": 20000,
+              "qcEligibleExpenses": 20000,
+              "disabilityTaxCredit": true
+            }
+          ],
+          "earnedIncome": [60000]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "childcare.claims": [11000],
+        "breakdown.childcareCredit.annualLimit": 0,
+        "breakdown.childcareCredit.allowedExpenses": 0,
+        "breakdown.childcareCredit.calculated": 0.0,
+        "breakdown.childcareCredit.applied": 0.0
+      }
+    },
+    {
+      "id": "childcare-2026-qc-infirm22",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 60000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 22,
+              "expenses": 20000,
+              "qcEligibleExpenses": 20000,
+              "infirm": true
+            }
+          ],
+          "earnedIncome": [60000]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "childcare.claims": [5000],
+        "breakdown.childcareCredit.annualLimit": 6305,
+        "breakdown.childcareCredit.allowedExpenses": 6305,
+        "breakdown.childcareCredit.calculated": 4413.5,
+        "breakdown.childcareCredit.applied": 4413.5
+      }
+    },
+    {
+      "id": "childcare-2026-qc-severe22",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 60000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 22,
+              "expenses": 20000,
+              "qcEligibleExpenses": 20000,
+              "qcSevereImpairment": true
+            }
+          ],
+          "earnedIncome": [60000]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "childcare.claims": [0],
+        "breakdown.childcareCredit.annualLimit": 17145,
+        "breakdown.childcareCredit.allowedExpenses": 17145,
+        "breakdown.childcareCredit.calculated": 12001.5,
+        "breakdown.childcareCredit.applied": 12001.5
+      }
+    },
+    {
+      "id": "childcare-2026-qc-age14",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 60000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 14,
+              "expenses": 20000,
+              "qcEligibleExpenses": 20000
+            }
+          ],
+          "earnedIncome": [60000]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "childcare.claims": [5000],
+        "breakdown.childcareCredit.annualLimit": 6305,
+        "breakdown.childcareCredit.allowedExpenses": 6305,
+        "breakdown.childcareCredit.calculated": 4413.5,
+        "breakdown.childcareCredit.applied": 4413.5
+      }
+    },
+    {
+      "id": "childcare-2026-qc-age15",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 60000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 15,
+              "expenses": 20000,
+              "qcEligibleExpenses": 20000
+            }
+          ],
+          "earnedIncome": [60000]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "childcare.claims": [5000],
+        "breakdown.childcareCredit.annualLimit": 0,
+        "breakdown.childcareCredit.allowedExpenses": 0,
+        "breakdown.childcareCredit.calculated": 0.0,
+        "breakdown.childcareCredit.applied": 0.0
+      }
+    },
+    {
+      "id": "childcare-2026-qc-age16",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 60000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 16,
+              "expenses": 20000,
+              "qcEligibleExpenses": 20000
+            }
+          ],
+          "earnedIncome": [60000]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "childcare.claims": [5000],
+        "breakdown.childcareCredit.annualLimit": 0,
+        "breakdown.childcareCredit.allowedExpenses": 0,
+        "breakdown.childcareCredit.calculated": 0.0,
+        "breakdown.childcareCredit.applied": 0.0
+      }
+    },
+    {
+      "id": "childcare-2026-qc-age17",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 60000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 17,
+              "expenses": 20000,
+              "qcEligibleExpenses": 20000
+            }
+          ],
+          "earnedIncome": [60000]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "childcare.claims": [0],
+        "breakdown.childcareCredit.annualLimit": 0,
+        "breakdown.childcareCredit.allowedExpenses": 0,
+        "breakdown.childcareCredit.calculated": 0.0,
+        "breakdown.childcareCredit.applied": 0.0
+      }
+    },
+    {
+      "id": "childcare-2026-qc-disabled-credit",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 60000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 10000,
+              "qcEligibleExpenses": 10000
+            }
+          ],
+          "earnedIncome": [60000]
+        },
+        "useCredits": false
+      },
+      "expected": {
+        "breakdown.childcareCredit.calculated": 7000,
+        "breakdown.childcareCredit.applied": 0
+      }
+    },
+    {
+      "id": "childcare-2026-qc-manual-unrelated",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "fd": 60000
+          },
+          {}
+        ],
+        "childcare": {
+          "mode": "manual",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 8000,
+              "qcEligibleExpenses": 8000
+            }
+          ],
+          "manualClaims": [8000, 0]
+        },
+        "adults": 2,
+        "spouse": false,
+        "useCredits": true
+      },
+      "expected": {
+        "childcare.status": "complete",
+        "breakdown.childcareCredit.status": "unsupported",
+        "breakdown.childcareCredit.applied": 0
+      }
+    },
+    {
+      "id": "childcare-2026-qc-distinct-spouse-claimants",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "fd": 18000
+          },
+          {
+            "fd": 16000
+          }
+        ],
+        "childcare": {
+          "mode": "manual",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 10000,
+              "qcEligibleExpenses": 10000
+            }
+          ],
+          "manualClaims": [10000, 0]
+        },
+        "adults": 2,
+        "useCredits": true
+      },
+      "expected": {
+        "claim.c": 1,
+        "claim.provincialClaimant": 0,
+        "breakdown.incomeBases.federal": [8000, 16000],
+        "breakdown.incomeBases.provincial": [18000, 16000],
+        "breakdown.childcareCredit.income": 34000,
+        "breakdown.childcareCredit.applied": 7500
+      }
+    },
+    {
+      "id": "childcare-2026-nl-two-earners",
+      "year": 2026,
+      "province": "NL",
+      "household": {
+        "people": [
+          {
+            "fd": 80000
+          },
+          {
+            "fd": 50000
+          }
+        ],
+        "childcare": {
+          "mode": "manual",
+          "children": [
+            {
+              "age": 20,
+              "expenses": 10000,
+              "infirm": true
+            }
+          ],
+          "manualClaims": [6000, 4000]
+        },
+        "adults": 2,
+        "useBpa": false,
+        "useCredits": false
+      },
+      "expected": {
+        "childcare.claims": [6000, 4000],
+        "breakdown.childcareCredit.refundable": false,
+        "breakdown.childcareCredit.allowedExpenses": 10000,
+        "breakdown.childcareCredit.rate": 0.087,
+        "breakdown.childcareCredit.calculated": 870,
+        "breakdown.childcareCredit.applied": 870,
+        "breakdown.childcareCredit.perPerson": [522, 348]
+      }
+    },
+    {
+      "id": "childcare-2026-nl-no-transfer",
+      "year": 2026,
+      "province": "NL",
+      "household": {
+        "people": [
+          {
+            "fd": 80000
+          },
+          {}
+        ],
+        "childcare": {
+          "mode": "manual",
+          "children": [
+            {
+              "age": 20,
+              "expenses": 10000,
+              "infirm": true
+            }
+          ],
+          "manualClaims": [6000, 4000]
+        },
+        "adults": 2,
+        "useBpa": false,
+        "useCredits": false
+      },
+      "expected": {
+        "childcare.claims": [6000, 4000],
+        "breakdown.childcareCredit.refundable": false,
+        "breakdown.childcareCredit.allowedExpenses": 10000,
+        "breakdown.childcareCredit.rate": 0.087,
+        "breakdown.childcareCredit.calculated": 870,
+        "breakdown.childcareCredit.applied": 522,
+        "breakdown.childcareCredit.perPerson": [522, 0]
+      }
+    },
+    {
+      "id": "childcare-2026-nl-manual-allocation",
+      "year": 2026,
+      "province": "NL",
+      "household": {
+        "people": [
+          {
+            "fd": 80000
+          },
+          {}
+        ],
+        "childcare": {
+          "mode": "manual",
+          "children": [
+            {
+              "age": 20,
+              "expenses": 10000,
+              "infirm": true
+            }
+          ],
+          "manualClaims": [10000, 0]
+        },
+        "adults": 2,
+        "useBpa": false,
+        "useCredits": false
+      },
+      "expected": {
+        "childcare.claims": [10000, 0],
+        "breakdown.childcareCredit.refundable": false,
+        "breakdown.childcareCredit.allowedExpenses": 10000,
+        "breakdown.childcareCredit.rate": 0.087,
+        "breakdown.childcareCredit.calculated": 870,
+        "breakdown.childcareCredit.applied": 870,
+        "breakdown.childcareCredit.perPerson": [870, 0]
+      }
+    },
+    {
+      "id": "childcare-2026-nl-tax-floor-toggle-False",
+      "year": 2026,
+      "province": "NL",
+      "household": {
+        "people": [
+          {
+            "fd": 10000
+          }
+        ],
+        "childcare": {
+          "mode": "manual",
+          "children": [
+            {
+              "age": 20,
+              "expenses": 8000,
+              "infirm": true
+            }
+          ],
+          "manualClaims": [8000]
+        },
+        "useBpa": false,
+        "useCredits": false
+      },
+      "expected": {
+        "me.ti": 2000,
+        "me.tiP": 2000,
+        "prov": 0,
+        "breakdown.childcareCredit.refundable": false,
+        "breakdown.childcareCredit.calculated": 696,
+        "breakdown.childcareCredit.applied": 174,
+        "breakdown.childcareCredit.perPerson": [174]
+      }
+    },
+    {
+      "id": "childcare-2026-nl-tax-floor-toggle-True",
+      "year": 2026,
+      "province": "NL",
+      "household": {
+        "people": [
+          {
+            "fd": 10000
+          }
+        ],
+        "childcare": {
+          "mode": "manual",
+          "children": [
+            {
+              "age": 20,
+              "expenses": 8000,
+              "infirm": true
+            }
+          ],
+          "manualClaims": [8000]
+        },
+        "useBpa": false,
+        "useCredits": true
+      },
+      "expected": {
+        "me.ti": 2000,
+        "me.tiP": 2000,
+        "prov": 0,
+        "breakdown.childcareCredit.refundable": false,
+        "breakdown.childcareCredit.calculated": 696,
+        "breakdown.childcareCredit.applied": 174,
+        "breakdown.childcareCredit.perPerson": [174]
+      }
+    },
+    {
+      "id": "childcare-2026-nl-credit-before-dividends",
+      "year": 2026,
+      "province": "NL",
+      "household": {
+        "people": [
+          {
+            "ed": 10000
+          }
+        ],
+        "childcare": {
+          "mode": "manual",
+          "children": [
+            {
+              "age": 20,
+              "expenses": 8000,
+              "infirm": true
+            }
+          ],
+          "manualClaims": [8000]
+        },
+        "useBpa": false
+      },
+      "expected": {
+        "me.ti": 5800,
+        "me.pDtc": 0,
+        "prov": 0,
+        "breakdown.childcareCredit.calculated": 696,
+        "breakdown.childcareCredit.applied": 504.6
+      }
+    }
+  ],
+  "ratePeriodCases": []
+}
