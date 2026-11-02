@@ -1,0 +1,358 @@
+Title: Canada Child Benefit and Related Benefits v3.0
+URL: https://www.canada.ca/en/revenue-agency/services/about-canada-revenue-agency-cra/protecting-your-privacy/privacy-impact-assessment/canada-child-benefit-related-benefits-v3.html
+Fetched: 2026-11-02
+SHA-256 of the original: 8e5dcd02e8580355941415e74affe9105e36f082820e70d9b5c22ceeba40a3df
+Publication date modified: 2025-07-31
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+# Canada Child Benefit and Related Benefits v3.0
+
+## Assessment, Benefit and Service Branch
+Individual Returns Directorate
+
+## On this page
+
+- Overview & Privacy Impact Assessment Initiation (PIA)
+- Summary of the project, initiative or change
+- Risk identification and categorization
+
+## Overview & Privacy Impact Assessment (PIA) Initiation
+
+### Government institution
+
+Canada Revenue Agency
+
+#### Government official responsible for the PIA
+
+Christopher Bowen
+Director General
+Benefit Programs Directorate
+
+#### Head of the government institution or Delegate for section 10 of the Privacy Act
+
+Lia Jackson
+Director
+Access to Information and Privacy Directorate
+
+#### Name of program or activity of the government institution
+
+Benefits
+
+We deliver a range of ongoing benefits, credits, and one-time payment programs that support the economic and social well-being of Canadians. Through processing activities, we make sure that Canadians receive their rightful benefits in a timely manner. We offer benefit recipients timely and accessible information on their entitlements and obligations both through our call centres and securely online, which helps Canadians become more aware of the benefits they are entitled to and how to receive them.
+
+#### Standard or institution specific class of record:
+
+Benefit Programs - Canada child benefit and related benefits
+CRA ABSB 646
+
+#### Standard or institution specific personal information bank:
+
+Canada child benefit and related benefits
+CRA PPU 063
+TBS Registration: 003210
+
+#### Legal authority for program or activity
+
+Pursuant to section 4 of the Privacy Act, no personal information shall be collected by a government institution unless it relates directly to an operating program or activity of the institution.
+
+Additionally, subsection 220(1) of the Income Tax Act provides the Minister of National Revenue with an implicit authority to collect information for the purpose of the administration and enforcement of the Income Tax Act. Once collected, any information, including personal information, is protected as taxpayer information as defined in the Income Tax Act.
+
+The Canada child benefit is administered under section 122.6 of the Income Tax Act. The Canada child benefit young child supplement is administered under subsection 122.61(1.2) of the Income Tax Act.
+
+Personal information is collected in direct relation to these programs. The SIN is also collected for identification purposes in accordance with section 237 of the Income Tax Act.
+
+The legislative authorities for the provincial and territorial child benefit programs are administered by the Canada Revenue Agency under each respective provincial tax legislation. Section 61 of the Canada Revenue Agency Act allows the CRA to implement agreements with other federal, provincial and territorial governments for the purpose of carrying out an activity or program administered by the Canada Revenue Agency.
+
+Paragraph 241(4)(j) of the Income Tax Act authorizes an official to use taxpayer information (including personal information) relating to a taxpayer to provide information to the taxpayer. Subparagraph 241(4)(d)(vii.1) of the Income Tax Act authorizes an official to provide taxpayer information to Employment and Social Development Canada (ESDC) solely for the purpose of the administration or enforcement of the Canada Education Savings Act or a designated provincial program. The personal information released to Employment and Social Development Canada (ESDC) is used to administer the Canada Education Savings Programs (CESP).
+
+Direct deposit and contact information were collected from Employment and Social Development Canada under subsection 241(5) of the Income Tax Act upon consent from the taxpayer to administer section 122.61 of the Income Tax Act.
+
+#### New 2025
+
+The new Prince Edward Island child benefit (PEICB) is administered by the CRA under subdivision n.1 of the Prince Edward Island Income Tax Act.
+
+Personal information will be shared with the Department of Finance under subparagraph 241(4)(d)(iv) of the federal Income Tax Act for fiscal policy evaluation.
+
+The disclosure of taxpayer information to a provincial finance department for the purpose of fiscal evaluation is governed by subparagraph 241(4)(d)(iv) of the Income Tax Act.
+
+Personal information was shared with the Ontario Ministry of Finance under subparagraph 241(4)(d)(iii) for the administration of the Ontario taxpayer rebate.
+
+CRA will be using Robotic Processing Automation (RPA) in the administration of the Canada child benefit program.
+
+## Summary of the project, initiative or change
+
+### Overview of the Program or Activity
+
+Canada child benefit
+
+The Canada child tax benefit was a non-taxable amount paid monthly to help eligible families with the cost of raising children under 18 years of age. The Canada child tax benefit included the National child benefit supplement and the Child disability benefit. The National child benefit supplement was the Government of Canada's contribution to the National child benefit initiative, which is a partnership among the federal, provincial, and territorial governments, as well as First Nations, that aims to help prevent and reduce child poverty. The Child disability benefit is a tax-free monthly benefit for families who care for children under age 18 with a severe and prolonged impairment in physical or mental functions. Families who are eligible for the Canada child tax benefit for a child will receive the Child disability benefit if the child is also eligible for the disability amount, also known as the Disability tax credit.
+
+Individuals apply for child benefits by using the "Apply for child benefits" option on My Account or by sending a completed Form RC66, Canada child benefits application. Also, a mother of a newborn who lives in a participating province or territory can apply using the Automated Benefits Application (ABA) service. All the information needed to use the Automated Benefits Application service is included in the birth registration package provided by the participating province or territory.
+
+#### July 2016
+
+As part of the federal government’s plan to give more Canadian families money to raise their children, the Canada child tax benefit (CCTB), Universal child care benefit (UCCB) and National child benefit supplement (NCBS) programs were replaced with an enhanced Canada child benefit (CCB) program as of July 2016 (2015 benefit year). However, for the July 2016 to June 2018 period, the CRA continued to support the National child benefit supplement (NCBS) initiative by calculating a National child benefit supplement (NCBS) equivalent amount within the Canada child benefit.
+
+Eligibility requirements for the new Canada child benefit reused the existing Canada child tax benefit definitions with enhanced eligibility rules.
+
+No new collection of information occurred under the Canada child benefit. Individuals who had already applied for the Universal child care benefit (UCCB) or the Canada child tax benefit (CCTB) were not required to apply for the new Canada child benefit (CCB). Benefits and credits that relied on Canada child tax benefit information to determine eligibility and entitlement will now use Canada child benefit information. The CRA will continue to use the Canada child benefit application to determine eligibility for federal, provincial, and territorial programs related to the Canada child benefits.
+
+The CRA uses the Canada child benefit application to determine eligibility for the following federal, provincial, and territorial programs related to the Canada child benefits:
+
+##### Federal programs
+
+- Universal child care benefit (for benefit years prior to 2015)
+
+##### Provincial and territorial programs
+
+- Alberta family employment tax credit
+- Alberta child and family benefit
+- British Columbia family benefit
+- British Columbia family bonus including the earned income supplement
+- British Columbia early childhood tax benefit
+- New Brunswick child tax benefit including the working income supplement and the school supplement
+- Newfoundland and Labrador child benefit including pre-natal infant nutrition supplement
+- Northwest Territories child benefit, including the Territorial workers’ supplement
+- Nova Scotia child benefit
+- Nunavut child benefit including the Territorial workers’ supplement
+- Ontario child benefit
+- Saskatchewan child benefit
+- Yukon child benefit
+- Prince Edward Island child benefit
+
+If eligible, the payment amount will be automatically calculated using the information from the applicant and their spouse or common-law partner’s income tax and benefit returns.
+
+#### Registered Educational Savings Plan data feed – Spousal Link
+
+Employment and Social Development Canada (ESDC) has implemented a legislative change to the Canada Education Savings Act (CESA) effective January 1, 2018. The change, identified as the Spousal Link, will allow the cohabiting spouse or common-law partner of the Primary Caregiver (PCG) to designate a trust into which the Canada Learning Bond (CLB) and an additional amount of the Canada Educational Savings Grant (additional CESG) is deposited. Previously, only the primary caregiver could designate a trust.
+
+Currently, when a Registered Education Savings Plan is opened for a dependant, ESDC sends the CRA information identifying the subscriber and the beneficiary. The CRA will match the information received from ESDC to the CRA identification and Canada child benefit (CCB) databases. If the subscriber is the Primary Caregiver for CCB purposes, the CRA will confirm CCB entitlement and income thresholds. The personal information released to ESDC is used to administer the Canada Education Savings Programs and released under subparagraph 241(4)(d)(vii.1) of the ITA.
+
+To continue to assist ESDC with the administration of their programs under the new Canada Education Savings Act (CESA) legislation, the CRA will expand the matching done on requests received for the Canada Education Savings Program (CESP) to include the cohabiting spouse or common-law partner of the subscriber.
+
+The Memorandum of Understanding for the Registered Education Savings Plans/Canada Education Savings Program has been amended to include the new Spousal Link legislation and enhanced data matching parameters.
+
+#### Direct deposit and address linking
+
+The CRA has been working with Employment and Social Development Canada (ESDC) to improve services to Canadians through the sharing of personal information. This exchange of information has been suspended indefinitely. Individuals used to have the option to update their direct deposit and contact information with one federal department and, upon consent from the taxpayer, the direct deposit and mailing address information would get passed on to the alternative federal department.
+
+The direct deposit information and mailing address would get passed on to ESDC to be used in the administration of the Canada Pension Plan (CPP), Employment Insurance (EI), and Old Age Security (OAS) programs.
+
+The direct deposit information and mailing address received from ESDC to CRA was used to administer programs under the Income Tax Act including the Canada child benefit. Consent to share this information could be given verbally, electronically through My Account, or in writing.
+
+#### Connecting Families initiative
+
+Launched in November 2018, the Connecting Families initiative helped bridge the digital divide for Canadian families who struggle to afford access to home Internet. The Connecting Families initiative relies on Internet service providers that participate voluntarily without government subsidy. The Connecting Families initiative brings together the public, private, and non-profit sectors and has helped tens of thousands of low-income Canadian families access the Internet. Since the launch in 2018, over 82,000 low-income households have benefited from the initiative.
+
+In April 2022, phase two of the initiative introduced significantly faster speeds and increased the data usage amount. The new phase also broadened eligibility from families receiving the maximum CCB to include low-income seniors receiving the maximum Guaranteed Income Supplement (GIS). This initiative will be available until March 2027.
+
+#### Canada Border Services Agency – Residency
+
+CRA has entered into an agreement with the Canada Border Services Agency (CBSA) to receive exit information on individuals who have left Canada for more then 183 consecutive days. CBSA . The CRA will match this data to the identification database. When a match is found, the CRA will review the benefits account to determine if the individual still meets the criteria for the CCB under section 122.6 of the Income Tax Act (ITA).
+
+Section 122.6 of the ITA indicates that an individual must be a resident of Canada for tax purposes to be eligible for the Canada child benefit. While residency is a case-by-case determination, an extended absence from the country is a strong indicator of non-residency and a further review of the benefit account is required. This new sharing of information commenced in March 2020; however, due to COVID, the information feed from the CBSA was halted and started back up again in August 2022.
+
+#### Alberta child and family benefit
+
+As part of the 2019 budget, the Province of Alberta introduced the Alberta child and family benefit (ACFB). This program, which began in July 2020, replaced the Alberta family employment tax credit (AFETC) and the Alberta child benefit (ACB) with a single program that continues to provide benefits to lower-income families in Alberta who are eligible for the Canada child benefit. The CRA administers this program on behalf of the Alberta Government. The ACFB is issued quarterly with monthly supplementary runs.
+
+#### Pandemic relief
+
+In May 2021, the CRA began administering the Canada child benefit young child supplement (CCBYCS) payments as a COVID-19 pandemic relief measure. This initiative was intended as a short-term supplement to the Canada child benefit. This initiative provided up to four payments in 2021 to families with CCB-eligible children under the age of six.
+
+Contingency extension in 2020 due to pandemic
+
+The 2019 income tax and benefit return deadline were postponed from April 30, 2020, to June 1, 2020, in response to the COVID-19 pandemic. Consequently, the CRA provided contingency-estimated Canada child benefit-related payments from July 2020 to September 2020 to families who were eligible for the CCB and/or a related benefit payment in June 2020 and who had not yet filed their personal income tax and benefit tax return. Once the 2019 return(s) was filed and the updated income information became available, adjustments to the payments previously issued occurred where applicable. Families who did not file their tax return(s) have to repay the estimated amounts that were issued.
+
+#### Benefits System Renewal Project (BSRP)
+
+Implemented in February 2021, a new system was designed to increase the CRA’s capacity in areas of program growth and service delivery. The goal of the new system was to renew the systems used to process benefits and credit payments to the Canadian public. This newly designed system provides a solid foundation that improved flexibility, sustainability, and stability.
+
+#### Canada dental benefit
+
+In December 2022, the Interim Canada dental benefit was introduced using information from the Canada child benefit account. The Canada dental benefit intended to help lower dental costs for eligible families. Parents and guardians may be eligible if they pay for dental care for a child under 12 years old who does not have access to a private dental insurance plan. A separate privacy impact assessment was conducted on the Canada dental benefit program. Period two of the Canada dental benefit ended June 30, 2025.
+
+#### One-time top-up to the Canada housing benefit
+
+In December 2022, the CRA processed applications and payments for the one-time top-up to the Canada housing benefit program to assist low-income families with the cost of rent. This was a tax-free payment to directly support low-income renters who are experiencing housing affordability challenges in 2022. The payment was calculated based on the 2021 adjusted family net income and a higher income threshold was used for applicants who were either single and residing with a CCB dependant, single and had a disabled adult dependent, or married or common-law. Applicants were encouraged to apply for the CCB to provide their statement of world income if they were a newcomer to Canada in 2022 and did not meet the 2021 filing requirement. A separate privacy impact assessment was conducted on the one-time top-up to the Canada housing benefit initiative. The one-time top-up to the Canada housing benefit ended March 31, 2023.
+
+#### Canada student financial assistance – repayment assistance plan
+
+In November 2021, the CRA and ESDC entered into an agreement for the CRA to assist them in validating and determining eligibility of student loan borrowers applying for the repayment assistance plan. This program is intended to assist student loan borrowers who are experiencing hardship with repaying their student loans. Approved applicants can have their monthly student loan and interest payments reduced for a specified period. Upon consent of the applicant and/or their spouse, the CRA assists the ESDC in the administration by providing them with personal information.
+
+The exchange of information is done through secure electronic transfer methods pursuant to a service contract with ESDC. The third-party service provider will identify the applicant and spouse and, upon a match to CRA records, the CRA will provide a response back with the requested personal information.
+
+#### BC child opportunity benefit
+
+The BC child opportunity benefit (BCCOB) replaced the BC early childhood tax benefit (BCECTB) in October 2020 and was renamed the BC family benefit (BFCB) in January 2023. In September 2022, the BC government announced enhanced payments of the BCFB, which applied for the January, February and March 2023 issuances. Individuals may receive the enhanced benefit payments even if they do not normally receive the BC family benefit because their family net income exceeds the income threshold. This is a monthly payment integrated with the Canada child benefit for residents of BC.
+
+#### CRA and Yukon Ministry of Health and Social Services – Automated Benefits Application
+
+Effective October 2023, the Yukon Territories will use the Automated Benefits Application (ABA) process to transmit information from the birth registration form, from the territory to the CRA, to process a Canada child benefit application for a newborn child. The mother must consent on the birth registration form to allow the territory to electronically send birth information to the CRA. If the mother does not wish to consent to the birth information being transmitted to the CRA, she can submit a Canada child benefit application (RC66) or apply online using My Account.
+
+#### Pre-natal infant nutrition supplement (previously the Mother baby nutrition supplement)
+
+Effective April 2022, the Mother baby nutrition supplement was renamed the Pre-natal infant nutrition supplement. This monthly benefit is a supplement to the Newfoundland and Labrador child benefit and is intended for eligible low-income expectant mothers with children under the age of one living in NL. This is a monthly payment integrated with the Canada child benefit.
+
+#### Proof of birth policy change for the CCB
+
+As of November 20, 2023, proof of birth will be required with all CCB applications where the CRA has never previously paid benefits for a child. Previously, proof of birth was not required with a CCB application if the child was born in Canada and was under one year of age. This change only affects applications received through the CRA’s My Account or by mail. Applications received through the automatic benefit application (ABA) satisfy the proof of birth requirement, as the child’s birth registration number is securely transmitted from the provincial or territorial government to the CRA.
+
+This change responds to the 2021 OAG recommendation to improve the administration of the CCB program. This strategy ensures the same level of integrity for My Account and paper applications as is currently provided with the Automatic Benefits Application.
+
+#### Canadian Dental Care Plan (CDCP)
+
+The Canadian Dental Care Plan is a Health Canada initiative administered by Employment and Social Development Canada. This plan will provide dental coverage for uninsured Canadians with an adjusted family net income (AFNI) of less than $90,000, with no-copays for those with an AFNI that is under $70,000. As of July 2024, CRA will assist ESDC in the administration of the plan for applicants with children under 18 through the use of a secure data exchange that will confirm that the applicant is the primary caregiver of the child(ren) for Canada child benefit purposes.
+
+#### What’s New
+
+##### Prince Edward Island child benefit
+
+As part of its 2024 Budget, the government of Prince Edward Island (PEI) introduced the Prince Edward Island child benefit (PEICB). The CRA is administering this new program on behalf of PEI using tax and family information already available to the CRA through the Canada child benefit program. Payments will be integrated with the monthly Canada child benefit (CCB) payments effective January 2025.
+
+Use of the Canada.ca online child and family benefits calculator to estimate the Prince Edward Island child benefit is not connected to the CRA taxpayer account and does not result in the collection of personal information.
+
+Information on entitled individuals will be shared with the PEI Department of Finance for fiscal policy and program evaluation.
+
+##### Robotic process automation
+
+The CRA may use automation to assist in the administration of the Canada child benefit program.
+
+##### Ontario taxpayer rebate
+
+The Ontario taxpayer rebate is administered by the province of Ontario to provide a $200 rebate for Ontario families in the face of high interest rates and the federal carbon tax.
+
+This $200 taxpayer rebate is being sent to all eligible adults in Ontario who filed their 2023 Income Tax and Benefit Return by December 31, 2024. Eligible families will receive an additional $200 for each child under 18 if they have already applied for the Canada child benefit (CCB).
+
+Effective November 2024, the CRA supports the government of Ontario’s administration of the Taxpayer Rebate by sharing personal information such as biographical child details and contact information on eligible families living in Ontario.
+
+#### Scope of the Privacy Impact Assessment
+
+The scope of this privacy impact assessment is the administration and enforcement of the Canada child benefit and the related federal, provincial, and territorial benefits and credits.
+
+Certain compliance activities such as audits and criminal investigations are separate programs and, therefore, are not included. In addition, the application process to determine if a person with a disability is eligible for the Disability Tax Credit is not included in this PIA. Administration of the Income Verification Program is also not in the scope of this PIA.
+
+Programs and initiatives that focus on child benefits and credits are constantly changing. Therefore, when a new initiative or a change to an existing benefit is identified, this PIA will be reviewed and updated accordingly.
+
+## Risk identification and categorization
+
+### A) Type of program or activity
+
+Compliance / Regulatory investigations and enforcement
+
+#### Level of risk to privacy: 3
+
+Details:
+
+The personal information is used for the identification, determination, validation and payment of benefits and credits. Information is also used to determine whether an individual knowingly participated in or made a false statement or omission. The consequences can include reviews that may result in the termination and/or recoup of benefits, and possibly levying civil penalties under subsection 163(2) of the Income Tax Act.
+
+Also, in limited cases, information obtained during a validation or compliance review could be used to refer the matter to the Criminal Investigations Program of the CRA for further investigation, which could result in the laying of criminal charges under section 238 or 239 of the Income Tax Act against a particular individual.
+
+### B) Type of personal information involved and context
+
+Social insurance number, medical, financial or other sensitive personal information and/or the context surrounding the personal information is sensitive. Personal information of minors or incompetent individuals or involving a representative acting on behalf of the individual.
+
+#### Level of risk to privacy: 3
+
+Details:
+
+Personal information collected includes details such as name, contact information, financial information, social insurance number (SIN) and signature, marital status, as well as residency and citizenship status.
+
+### C) Program or activity partners and private sector involvement
+
+Private sector organizations or international organizations or foreign governments
+
+#### Level of risk to privacy: 4
+
+Details:
+
+The program includes the administration of benefit and tax credit programs on behalf of federal, provincial, and territorial partners. Information is disclosed by the CRA to our partners for the purpose of accurate calculation of programs and/or program evaluation, and to Public Services and Procurement Canada for the issuance of payments.
+
+Effective March 2020, the CRA receives information from the Canada Border Services Agency for the purposes of determining an individual’s residency status in Canada, which is required for determination of eligibility for the Canada child benefit and integrated payments.
+
+The CRA provides information to Employment and Social Development Canada in support of the Employment insurance family supplement, the Canada Education Savings Program and Learning Bond.
+
+Financial information and mailing address were disclosed to Employment and Social Development Canada for the administration of the CPP, EI, and OAS programs.
+
+The CRA sent and received benefit information, including eligibility, entitlement, payment, and identification data, to other provincial/territorial and First Nation departments for the administration of social and income assistance benefits administered by other government departments. Going forward, the CRA will continue to work with our provincial/territorial partners to assist with their administration of social and income assistance to families with children under the principles of the original National child benefit (NCB) initiative. Benefit information including eligibility, entitlement, payment, and identification data is passed to the provinces for this purpose.
+
+While Quebec does not participate in the NCB initiative, the province does acknowledge the NCB and participates in an exchange with the CRA for the purposes of providing income assistance to families with children. Benefit information including eligibility, entitlement, payment, and identification data is passed to Quebec for this purpose.
+
+The information is also used internally within the CRA for the collection of outstanding balances, audit activities, appeals, statistical gathering, and contact centre enquiry responses.
+
+Paper copies containing personal information are stored by a third party in the private sector.
+
+### D) Duration of the program or activity
+
+Long-term program
+
+#### Level of risk to privacy: 3
+
+Details:
+
+Although some of the individual provincial/territorial benefits/credits may be short term, most are not, and the Canada child benefit itself is a long-term program with no established end date.
+
+### E) Program population
+
+The program affects certain individuals for external administrative purposes.
+
+#### Level of risk to privacy: 3
+
+Details:
+
+The program affects individuals who apply for the Canada child tax benefit, their spouse or common-law partner and their children under 18 years of age.
+
+### F) Technology & privacy
+
+- Does the new or modified program or activity involve the implementation of a new electronic system, software or application program including collaborative software (or groupware) that is implemented to support the program or activity in terms of the creation, collection or handling of personal information?
+Risk to privacy: Yes
+- Does the new or modified program or activity require any modifications to IT legacy systems and/or services?
+Risk to privacy: Yes
+- Does the new or modified program or activity involve the implementation of one or more of the following technologies?
+
+Enhanced identification methods - this includes biometric technology (i.e. facial recognition, gait analysis, iris scan, fingerprint analysis, voice print, radio frequency identification (RFID), etc.) as well as easy pass technology, new identification cards including magnetic stripe cards, "smart cards" (i.e. identification cards that are embedded with either an antenna or a contact pad that is connected to a microprocessor and a memory chip or only a memory chip with non-programmable logic).
+
+#### Risk to privacy: No
+
+Use of Surveillance - this includes surveillance technologies such as audio/video recording devices, thermal imaging, recognition devices, RFID, surreptitious surveillance/interception, computer aided monitoring including audit trails, satellite surveillance etc.
+
+#### Risk to privacy: No
+
+Use of automated personal information analysis, personal information matching and knowledge discovery techniques - for the purposes of the Directive on PIA, government institutions are to identify those activities that involve the use of automated technology to analyze, create, compare, identify or extract personal information elements. Such activities would include personal information matching, record linkage, personal information mining, personal information comparison, knowledge discovery, information filtering or analysis. Such activities involve some form of artificial intelligence and/or machine learning to uncover knowledge (intelligence), trends/patterns or to predict behavior.
+
+#### Risk to privacy: Yes
+
+### G) Personal information transmission
+
+The personal information is transmitted using wireless technologies.
+
+#### Level of risk to privacy: 4
+
+Details:
+
+Personal information can be used in a system that has access to other systems and can be transferred to a secure portable device encrypted using CRA-approved encryption.
+
+##### Online services:
+
+The CRA uses specially configured computer web servers for any online services (e.g., My Account) and corporate firewalls to protect our web servers from unauthorized access. Personal information is not stored on these servers; the CRA securely stores personal information on separate computer systems that are not directly accessible from the Internet.
+
+When transmitting personal information, access to our web servers is limited to web browsers that meet our Government of Canada security standards of encryption. We ensure that personal and financial information is encrypted—or scrambled—when it is transmitted between an individual’s computer and our web servers. This ensures that computer hackers and other Internet users cannot view or alter the data being transmitted.
+
+##### Portable devices:
+
+Some employees’ workstations include CRA-issued laptops in docking stations. Laptops comply with the security requirements of the Computing Environment Policy with encryption and access control. Any telework is carried out through Secure Remote Access (SRA).
+
+Any USB keys used must be issued by the CRA and formatted with encryption technology specific to the user.
+
+##### Data transfers and exchanges:
+
+All electronic transactions are securely transferred using encryption software with public key infrastructure.
+
+Direct deposit and identification changes (such as an address change) received in writing are digitized and stored for later access by CRA employees on a need-to-know basis.
+
+### H) Potential risk that in the event of a privacy breach, there will be an impact on the individual or employee
+
+Details:
+
+If the personal information was compromised, it has the potential to cause financial and/or physical harm and embarrassment to the individual.

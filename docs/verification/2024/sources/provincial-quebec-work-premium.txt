@@ -1,0 +1,116 @@
+Title: Schedule P – Tax Credits Respecting the Work Premium
+URL: https://www.revenuquebec.ca/documents/en/formulaires/tp/2024-12/TP-1.D.P-V%282024-12%29.pdf
+Fetched: 2026-11-02
+SHA-256 of the original: 8c984c032d9d08c97a892b68c6a889c91346c3b6044b821e260121e5e3e38eee
+Publication date modified: 2024-12-13
+PDF pages: all 2
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 1 of 2 ---
+
+Before completing this schedule, read the eligibility requirements for the work premium, the adapted work premium and the supplement
+to the work premium in the instructions for line 456 in the guide.
+If you would like to receive the tax shield, check box 5. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5
+See the eligibility requirements at line 460 in the guide.
+A Work income You Your spouse
+on December 31, 2024
+Amount from line 101 of your return, plus the amount from line 105 if it is positive,
+minus the amount from
+box 211 of your RL-1 slip, if applicable 10 30
+Amount from line 107 of the return + 12 + 32
+Net amount of research grants (see line 154, point 3(j), in the guide) + 13 + 33
+Total of lines 22 through 26.1 of Schedule L. Do not include losses. + 14 + 34
+Wage Earner Protection Program (WEPP) payments (line 154, point 12) + 15 + 35
+Add lines 10 through 15 and, if applicable, lines 30 through 35. = 18 = 38
+Amount entitling you to a deduction on line 293 of your return
+for any of the above sources of income – 22 – 42
+Subtract line 22 from line 18 and,
+if applicable, subtract line 42 from line 38. Work income = 29 = 49
+B Information about a designated dependent child
+If applicable, enter the last name and first name of the designated dependent child (see the definition at line 456 in the guide).
+Last name First name
+50
+Child’s social insurance number
+51
+C Family income
+Amount from line 275 of your return 52
+Amount from line 275 of your spouse’s return (spouse on December 31, 2024) + 53
+Add lines 52 and 53.
+Family income = 54
+D Supplement to the work premium
+(for former recipients of last-resort financial assistance or financial assistance under the Aim for Employment Program)
+56 200 00
+Total number of months in
+box V of your RL-5 slip 57
+Number of months in 2024 for which you meet the requirements for claiming
+the supplement to the work premium (see the guide) 58
+Number from line 57 or line 58, whichever is less × 59
+Multiply line 56 by line 59.
+Carry the result to line 88 on page 2. = 60
+Continued on the next page.
+Y 4 P 1 Z Z 8 9 5 2 8 0 4 9
+T P -1. D. P-V (2024-12) 1 of 2T
+Enclose this schedule with your return.
+If you want to keep a copy for your records, see the guide.
+PPrescribed form
+S C H E D U L E
+PTax Credits Respecting the Work Premium
+
+--- PDF page 2 of 2 ---
+
+E Work premium and adapted work premium
+Complete column 1.
+Also complete column 2 if you or, if applicable, your spouse on December 31, 2024:
+•• received, in 2024 or in any of the preceding five years, an allowance under the Social Solidarity Program or the Basic Income Program because
+of a severely limited capacity for employment; or
+•• was entitled, in 2024, to the amount for a severe and prolonged impairment in mental or physical functions (see line 376 in the guide).
+1 Individual with a spouse on December 31, 2024 1
+Work premium
+2
+Adapted work premium
+Add lines 29 and 49. 64 64
+66 19,092 00 66 26,310 00
+Amount from line 64 or line 66, whichever is less 68 68
+– 70 3,600 00 – 70 1,200 00
+Subtract line 70 from line 68. If the result is negative, enter 0. = 72 = 72
+If you designated a child on line 50, enter 25%. Otherwise, enter 11.6%. × 74 %
+If you designated a child on line 50, enter 20%. Otherwise, enter 13.6%. × 75 %
+Multiply line 72 by line 74 or line 75 (as applicable). = 76 = 76
+Amount from line 54 78 78
+– 80 19,092 00 – 80 26,310 00
+Subtract line 80 from line 78. If the result is negative, enter 0. = 82 = 82
+× 10% × 10%
+Multiply line 82 by 10%. = 83 = 83
+Subtract line 83 from line 76. If the result is negative, enter 0. = 84 = 84
+Amount from line 84 in column 1 or column 2, whichever is greater 85
+Amount on line 89 of your spouse’s Schedule P (spouse on December 31, 2024) – 86
+Subtract line 86 from line 85. Carry the result to line 89 below. = 87
+2 Individual without a spouse on December 31, 2024 1
+Work premium
+2
+Adapted work premium
+Amount from line 29 64 64
+66 12,334 00 66 17,378 00
+Amount from line 64 or line 66, whichever is less 68 68
+– 70 2,400 00 – 70 1,200 00
+Subtract line 70 from line 68. If the result is negative, enter 0. = 72 = 72
+If you designated a child on line 50, enter 30%. Otherwise, enter 11.6%. × 74 %
+If you designated a child on line 50, enter 25%. Otherwise, enter 13.6%. × 75 %
+Multiply line 72 by line 74 or line 75 (as applicable). = 76 = 76
+Amount from line 54 78 78
+– 80 12,334 00 – 80 17,378 00
+Subtract line 80 from line 78. If the result is negative, enter 0. = 82 = 82
+× 10% × 10%
+Multiply line 82 by 10%. = 83 = 83
+Subtract line 83 from line 76. If the result is negative, enter 0. = 84 = 84
+Amount from line 84 in column 1 or column 2, whichever is greater. Carry the result to line 89 below. 87
+F Tax credits respecting the work premium
+Amount from line 60 88
+Amount from line 87 + 89
+Add lines 88 and 89.
+Carry the result to line 456 of your return. Tax credits respecting the work premium = 90
+Y 4 P 2 Z Z 8 9 5 2 8 0 5 0T
+T P -1. D. P-V (2024-12) 2 of 2
+PEnclose this schedule with your return.
+If you want to keep a copy for your records, see the guide.

@@ -1,43 +1,34 @@
 # Benefit-year figures use July 2024 to June 2025, applied to current-year income.
-# Nunavut child reduction rates 3%/5% retained from model estimate based on 2026 Bill 4; not 2024 verified.
-# Property tax remains an explicitly estimated carry-back of the existing 2025 model pending historical city source.
+# Child reduction rates3%/5% are assumed unchanged from the Nunavut-commissioned2013 report;2024 max/threshold fromCRA.
+# Property rate uses2024 residential classes7/8 at20.33mills; assumes input home value approximates taxable assessment.
 
 code: NU
 name: Nunavut
 territory: true
 order: 6
 brackets:
-  - [ 53268, 0.04 ]
-  - [ 106537, 0.07 ]
-  - [ 173205, 0.09 ]
-  - [ .inf, 0.115 ]
+  - [53268, 0.04]
+  - [106537, 0.07]
+  - [173205, 0.09]
+  - [.inf, 0.115]
 basicPersonalAmount: 18767
-dividendTaxCredit: { eligible: 0.0551, nonEligible: 0.0261 }
-spouseAmount: { max: 18767, threshold: 0 }
-childAmount: { perChild: 1200, ages: under6 }
-payroll: { employeeTax: 0.02 }
-salesTax: { rate: 0.05, label: 5% GST }
-propertyTax: { rate: 0.01, city: Iqaluit (est.), estimated: true, rough: true }
+dividendTaxCredit: {eligible: 0.0551, nonEligible: 0.0261}
+spouseAmount: {max: 18767, threshold: 0}
+childAmount: {perChild: 1200, ages: under6}
+payroll: {employeeTax: 0.02}
+salesTax: {rate: 0.05, label: 5% GST}
+propertyTax: {rate: 0.02033, city: Iqaluit, estimated: true}
 childBenefit:
   name: Nunavut Child Benefit
   program: per-child-reduced
-  params: { perChild: 348, threshold: 22065, rateOneChild: 0.03, rateMoreChildren: 0.05 }
-  rateSource: its 2026 Bill 4 (no 2025 source gives them)
+  params: {perChild: 348, threshold: 22065, rateOneChild: 0.03, rateMoreChildren: 0.05}
+  rateSource: Nunavut Anti-Poverty Secretariat commissioned report (2013), page49; rates assumed unchanged
   estimated: true
 sources:
-  - {
-      label: "CRA, NU428 for 2024 (brackets, personal amounts and reductions)",
-      url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5014-c/5014-c-24e.pdf
-    }
-  - {
-      label: "CRA, NU428 worksheet for 2024 (dividend credits)",
-      url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5014-d/5014-d-24e.pdf
-    }
-  - {
-      label: "CRA, T4114: provincial child benefits July 2024 to June 2025",
-      url: https://www.canada.ca/content/dam/cra-arc/formspubs/pub/t4114/t4114-24e.pdf
-    }
-  - {
-      label: "CRA, historical GST/HST/PST rates",
-      url: https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/charge-collect-which-rate.html
-    }
+  - {label: "CRA, NU428 for 2024 (brackets, personal amounts and reductions)", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5014-c/5014-c-24e.pdf}
+  - {label: "CRA, NU428 worksheet for 2024 (dividend credits)", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5014-d/5014-d-24e.pdf}
+  - {label: "CRA, T4114: provincial child benefits July 2024 to June 2025", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pub/t4114/t4114-24e.pdf}
+  - {label: "CRA, GST/HST historical rates and provincial sales-tax rates", url: https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/charge-collect-which-rate/calculator.html}
+  - {label: "Nunavut Anti-Poverty Secretariat, commissioned Poverty and Prosperity report2013 p49 (child taper)", url: https://assembly.nu.ca/library/GNedocs/2013/001057-e.pdf}
+  - {label: "Government of Nunavut, response on2022–23 public accounts (payroll tax2%)", url: https://www.assembly.nu.ca/sites/default/files/2025-05/TD-388-6%282%29-EN-GN%20Response%20to%202022-23%20Public%20Accounts%20Report.pdf}
+  - {label: "City of Iqaluit, adopted2024 mill rate bylaw979, ScheduleC residentialclasses7/8", url: https://iqaluit.ca/sites/default/files/by-law_no._979_-_2024_mill_rate_eng.pdf}

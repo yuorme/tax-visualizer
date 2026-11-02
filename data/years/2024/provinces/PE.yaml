@@ -1,69 +1,43 @@
 # Benefit-year figures use July 2024 to June 2025, applied to current-year income.
 # PEI child benefit began January 2025: six months × $30/$20 = $180/$120 in July2024–June2025 period.
-# Property tax remains an explicitly estimated carry-back of the existing 2025 model pending historical city source.
 
 code: PE
 name: Prince Edward Island
 shortName: PEI
 order: 10
 brackets:
-  - [ 32656, 0.0965 ]
-  - [ 64313, 0.1363 ]
-  - [ 105000, 0.1665 ]
-  - [ 140000, 0.18 ]
-  - [ .inf, 0.1875 ]
+  - [32656, 0.0965]
+  - [64313, 0.1363]
+  - [105000, 0.1665]
+  - [140000, 0.18]
+  - [.inf, 0.1875]
 basicPersonalAmount: 13500
-dividendTaxCredit: { eligible: 0.105, nonEligible: 0.013 }
-spouseAmount: { max: 11466, threshold: 1147 }
+dividendTaxCredit: {eligible: 0.105, nonEligible: 0.013}
+spouseAmount: {max: 11466, threshold: 1147}
 lowIncomeReduction:
   program: family-low-income-reduction
-  params: { individual: 350, spouse: 350, child: 300, rate: 0.05, threshold: 21500 }
-salesTax: { rate: 0.15, label: 15% HST }
-propertyTax: { rate: 0.0167, city: Charlottetown, estimated: true }
+  params: {individual: 350, spouse: 350, child: 300, rate: 0.05, threshold: 21500}
+salesTax: {rate: 0.15, label: 15% HST}
+propertyTax: {rate: 0.0167, city: Charlottetown}
 childBenefit:
   name: PEI Child Benefit
   program: income-band-per-child
   params:
     bands:
-      - [ 45000, 180 ]
-      - [ 80000, 120 ]
+      - [45000, 180]
+      - [80000, 120]
   estimated: true
 credits:
   - name: PEI sales tax credit
     program: pei-sales-tax-credit
-    params:
-      {
-        individual: 110,
-        spouseOrDependant: 55,
-        supplementRate: 0.005,
-        supplementFrom: 30000,
-        supplementMax: 55,
-        rate: 0.02,
-        threshold: 50000
-      }
+    params: {individual: 110, spouseOrDependant: 55, supplementRate: 0.005, supplementFrom: 30000, supplementMax: 55, rate: 0.02, threshold: 50000}
 sources:
-  - {
-      label: "CRA, PE428 for 2024 (brackets, personal amounts and reductions)",
-      url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5002-c/5002-c-24e.pdf
-    }
-  - {
-      label: "CRA, PE428 worksheet for 2024 (dividend credits)",
-      url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5002-d/5002-d-24e.pdf
-    }
-  - {
-      label: "CRA, T4114: provincial child benefits July 2024 to June 2025",
-      url: https://www.canada.ca/content/dam/cra-arc/formspubs/pub/t4114/t4114-24e.pdf
-    }
-  - {
-      label: "CRA, RC4210: provincial credits July 2024 to June 2025",
-      url: https://www.canada.ca/content/dam/cra-arc/formspubs/pub/rc4210/rc4210-24e.pdf
-    }
-  - {
-      label: "CRA, historical GST/HST/PST rates",
-      url: https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/charge-collect-which-rate.html
-    }
-  - {
-      label: "PEI, child benefit starts January 2025",
-      url: https://www.princeedwardisland.ca/en/news/pei-child-benefit-to-support-island-families-starting-january-2025
-    }
-childAmount: { perChild: 1200, ages: under6 }
+  - {label: "CRA, PE428 for 2024 (brackets, personal amounts and reductions)", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5002-c/5002-c-24e.pdf}
+  - {label: "CRA, PE428 worksheet for 2024 (dividend credits)", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5002-d/5002-d-24e.pdf}
+  - {label: "CRA, T4114: provincial child benefits July 2024 to June 2025", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pub/t4114/t4114-24e.pdf}
+  - {label: "CRA, RC4210: provincial credits July 2024 to June 2025", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pub/rc4210/rc4210-24e.pdf}
+  - {label: "CRA, GST/HST historical rates and provincial sales-tax rates", url: https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/charge-collect-which-rate/calculator.html}
+  - {label: "CRA, PEI child benefit payments begin January2025", url: https://www.canada.ca/en/revenue-agency/services/about-canada-revenue-agency-cra/protecting-your-privacy/privacy-impact-assessment/canada-child-benefit-related-benefits-v3.html}
+  - {label: "CRA, T4114-25 (PEI monthly amounts and income bands; program starts January2025)", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pub/t4114/t4114-25e.pdf}
+  - {label: "Town of Stratford, 2024 PEI municipal comparisons: Charlottetown0.67 municipal +1.50 provincial -0.50 owner credit", url: https://stratford.civicweb.net/document/145695/Property%20Tax%20rate%20info%20PEI%20Muncipalities.pdf?handle=B3C35C69B38A44879CD6127A49CE7B5C}
+childAmount: {perChild: 1200, ages: under6}
