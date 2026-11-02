@@ -34,11 +34,25 @@
         <div class="money"><span>$</span><input id="income" inputmode="numeric" autocomplete="off" value="75,000"></div>
       </div>
       <div class="field ded">
-        <div class="lbl-row"><label class="lbl" for="ded" id="ded-label">Deductions</label><button type="button" class="info" data-note="deductions" aria-label="About deductions">i</button></div>
-        <div class="ded-row">
-          <div class="money md"><span>$</span><input id="ded" inputmode="numeric" autocomplete="off" value="0"></div>
-          <button type="button" class="linkbtn" id="max-rrsp">Max RRSP</button>
-        </div>
+        <div class="lbl-row"><span class="lbl" id="ded-label">Deductions</span><button type="button" class="info" data-note="deductions" aria-label="About deductions">i</button></div>
+        <details id="deductions" class="deductions">
+          <summary aria-labelledby="ded-label ded-total ded-edit"><span id="ded-total">$0</span><span id="ded-edit">Edit</span></summary>
+          <div class="ded-fields">
+            <div class="field">
+              <div class="lbl-row"><label class="lbl" for="rrsp">RRSP claimed</label><button type="button" class="info" data-note="rrsp" aria-label="About RRSP deductions">i</button></div>
+              <div class="money md"><span>$</span><input id="rrsp" inputmode="numeric" autocomplete="off" value="0"><span class="per">a year</span></div>
+              <button type="button" class="linkbtn" id="max-rrsp">Use estimate</button>
+            </div>
+            <div class="field">
+              <div class="lbl-row"><label class="lbl" for="fhsa">FHSA claimed</label><button type="button" class="info" data-note="fhsa" aria-label="About FHSA deductions">i</button></div>
+              <div class="money md"><span>$</span><input id="fhsa" inputmode="numeric" autocomplete="off" value="0"><span class="per">a year</span></div>
+            </div>
+            <div class="field">
+              <div class="lbl-row"><label class="lbl" for="ded">Other deductions</label><button type="button" class="info" data-note="otherDeductions" aria-label="About other deductions">i</button></div>
+              <div class="money md"><span>$</span><input id="ded" inputmode="numeric" autocomplete="off" value="0"><span class="per">a year</span></div>
+            </div>
+          </div>
+        </details>
       </div>
       <div class="switch-wrap">
       <label class="switch" for="bpa-toggle">
