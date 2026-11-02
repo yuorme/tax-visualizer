@@ -53,7 +53,7 @@ TypeScript, and the build inlines everything into `dist/index.html`. See README.
   publication gets `estimated: true` and a comment saying how it was derived.
 - **Existing golden tests are locked.** Preserve their inputs, expected values, assertions and tolerances.
   Never re-capture, delete, skip or weaken them to make a failure pass. Changing an existing case is allowed only
-  when an independently verified data/rule correction or required behavior change makes it unavoidable. Document
+  when an independently verified data/rule correction or task-required behavior change makes it unavoidable. Document
   the evidence, affected cases and before/after values in the commit and PR; change only those cases, preserving
   unrelated baselines. Diagnose unexpected failures before changing any expectation; intention alone is insufficient.
 - **New engine behavior needs new golden cases in the same PR**, alongside targeted correctness tests. Add separate

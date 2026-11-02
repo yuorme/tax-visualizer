@@ -87,6 +87,9 @@ adding year checks inside an existing one. Values that are estimates rather than
   - `npm run golden:capture-legacy` (`tests/golden/capture-legacy.mjs`) is how `2026.json` was first locked:
     it runs the original single-file app in `legacy/`, which only knows 2026. Capturing 2026 from the engine
     writes the same bytes except the `source` field, which names the engine instead of the legacy app.
+- **Feature goldens** (`tests/golden-features.test.ts`): additive cases in `tests/golden/features/` lock new inputs,
+  rule paths and nested outputs without replacing yearly baselines. Expected values use independent calculations;
+  there is no capture mode. See the [coverage audit](docs/verification/golden-coverage.md) for cases and derivations.
 - **Reference values** (`tests/reference/<year>.test.ts`, one file per year, which takes its year from the file
   name): results compared with figures published outside this project, such as each province's top marginal
   rate and Ontario's top dividend rates.
