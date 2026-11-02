@@ -10,7 +10,7 @@ brackets:
   - [142058, 0.125]
   - [.inf, 0.145]
 basicPersonalAmount: 17661
-dividendTaxCredit: {eligible: 0.11, nonEligible: 0.02519}
+dividendTaxCredit: {eligible: 0.11, nonEligible: 0.02105}
 spouseAmount: {max: 17661, threshold: 1767}
 childAmount: {perChild: 6700, ages: all}
 salesTax: {rate: 0.11, label: 5% GST + 6% PST}
