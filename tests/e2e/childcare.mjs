@@ -138,6 +138,51 @@ export const CHILDCARE_STEPS = [
     },
   ],
   [
+    "invalid numeric drafts survive blur, year changes and reload without manufacturing relief or ages",
+    async p => {
+      for (const [id, raw, valid, federalComplete, qcComplete] of [
+        ["care-age-0", "abc", 4, false, false],
+        ["care-age-0", "-4", 4, false, false],
+        ["care-age-0", "1.5", 4, false, false],
+        ["care-earnings-1", "-30000", 30000, false, true],
+        ["care-earnings-1", "Infinity", 30000, false, true],
+        ["care-earnings-1", "abc", 30000, false, true],
+        ["childcare-monthly", "1.2.3", 1000, false, false],
+        ["care-expenses-0", "abc", 10000, false, false],
+        ["care-expenses-0", "", 10000, false, false],
+        ["care-qc-0", '1" onfocus="alert(1)', 10000, true, false],
+      ]) {
+        if (id === "care-qc-0") await open(p, ".care-child:nth-of-type(1) .care-quebec");
+        await fill(p, id, raw);
+        const invalid = async () => {
+          assert.equal(await p.inputValue(`#${id}`), raw);
+          assert.equal(await p.getAttribute(`#${id}`, "aria-invalid"), "true");
+          assert.equal(await p.locator(`#${id}`).evaluate(el => el.validity.customError), true);
+          assert.equal(await p.getAttribute(`#${id}`, "onfocus"), null);
+          assert.equal(await p.inputValue("#kids"), "2");
+          assert.equal(await p.inputValue("#u6"), "1");
+          assert.equal(await cell(p, "Federal calculation"), federalComplete ? "Calculated" : "Details needed");
+          assert.equal(await cell(p, "Partner's federal childcare deduction"), federalComplete ? "$12,000" : "$0");
+          if (qcComplete) assert.equal(await cell(p, "Provincial childcare credit", 2), "$8,400");
+          else assert.match(await cell(p, "Provincial childcare credit", 2), /^\$0/);
+        };
+        await invalid();
+        await p.selectOption("#tax-year", "2025");
+        await p.selectOption("#tax-year", "2026");
+        await invalid();
+        const before = (await saved(p)).childcare;
+        await p.reload();
+        await open(p, "#childcare-details");
+        assert.deepEqual((await saved(p)).childcare, before);
+        await invalid();
+        if (id === "care-qc-0") await open(p, ".care-child:nth-of-type(1) .care-quebec");
+        await fill(p, id, valid);
+        assert.equal(await cell(p, "Partner's federal childcare deduction"), "$12,000");
+        assert.equal(await cell(p, "Provincial childcare credit", 2), "$8,400");
+      }
+    },
+  ],
+  [
     "manual verified claims replace automatic claims and remain separate from other deductions",
     async p => {
       await p.selectOption("#care-mode", "manual");
@@ -151,6 +196,24 @@ export const CHILDCARE_STEPS = [
       assert.equal(await p.textContent("#ded-total"), "$1,200");
       await fill(p, "care-claim-0", 13000);
       assert.equal(await cell(p, "Federal calculation"), "Check inputs");
+      await fill(p, "care-claim-0", 3000);
+    },
+  ],
+  [
+    "negative manual claims remain invalid through mode switches and reload",
+    async p => {
+      await fill(p, "care-claim-0", -3000);
+      assert.equal(await cell(p, "Federal calculation"), "Details needed");
+      assert.equal(await cell(p, "Your federal childcare deduction"), "$0");
+      assert.equal(await cell(p, "Provincial childcare credit", 2), "$8,400");
+      await p.selectOption("#care-mode", "automatic");
+      await p.selectOption("#care-mode", "manual");
+      await p.reload();
+      await open(p, "#childcare-details");
+      assert.equal(await p.inputValue("#care-claim-0"), "-3000");
+      assert.equal(await p.getAttribute("#care-claim-0", "aria-invalid"), "true");
+      assert.equal(await p.locator("#care-claim-0").evaluate(el => el.validity.customError), true);
+      assert.equal(await cell(p, "Your federal childcare deduction"), "$0");
       await fill(p, "care-claim-0", 3000);
     },
   ],

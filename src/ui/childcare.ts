@@ -1,19 +1,21 @@
 import type { ChildcareChild, ChildcareInput, ChildcareResult, Result } from "../engine/index.ts";
 
+// Keep pending text separate from accepted numbers: malformed text must survive blur and storage unchanged.
+type NumericDraft = number | string | null;
 interface ChildDraft {
-  age: number | null;
-  expenses: number;
+  age: NumericDraft;
+  expenses: NumericDraft;
   disabilityTaxCredit: boolean;
   infirm: boolean;
-  qcEligibleExpenses: number | null;
+  qcEligibleExpenses: NumericDraft;
   qcSevereImpairment: boolean;
 }
 interface CareState {
-  monthly: number;
+  monthly: NumericDraft;
   mode: "automatic" | "manual";
   children: ChildDraft[];
-  earnings: (number | null)[];
-  claims: (number | null)[];
+  earnings: NumericDraft[];
+  claims: NumericDraft[];
 }
 const child = (): ChildDraft => ({
   age: null,
@@ -24,14 +26,23 @@ const child = (): ChildDraft => ({
   qcSevereImpairment: false,
 });
 const amount = (v: unknown): v is number => typeof v === "number" && Number.isFinite(v) && v >= 0;
-const text = (v: number | null) => (v === null ? "" : v.toLocaleString("en-CA", { maximumFractionDigits: 2 }));
-const parse = (v: string): number | null =>
-  v.trim() === "" ? null : Math.min(Number(v.replace(/[^\d.]/g, "")) || 0, 99999999);
+const text = (v: NumericDraft) =>
+  v === null ? "" : typeof v === "string" ? v : v.toLocaleString("en-CA", { maximumFractionDigits: 2 });
+const parse = (v: string): NumericDraft => {
+  const trimmed = v.trim();
+  if (!trimmed) return null;
+  const n = Number(trimmed.replace(/,/g, ""));
+  return /^(?:(?:\d+|\d{1,3}(?:,\d{3})+)(?:\.\d{1,2})?|\.\d{1,2})$/.test(trimmed) && amount(n) ? n : v;
+};
+const restoreNumber = (v: unknown): NumericDraft =>
+  typeof v === "string" ? parse(v) : amount(v) ? v : typeof v === "number" ? String(v) : null;
+const wholeAge = (v: NumericDraft): v is number => amount(v) && Number.isInteger(v);
+const monthlyAmount = (v: NumericDraft): v is number => amount(v) && Number.isFinite(v * 12);
 const attrText = (v: string) => v.replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;");
 const info = (label: string, tip: string) =>
   `<button type="button" class="info" aria-label="About ${label}" data-tip="${attrText(tip)}">i</button>`;
-const field = (id: string, label: string, tip: string, value: number | null, currency = true) =>
-  `<div class="field"><div class="lbl-row"><label class="lbl" for="${id}">${label}</label>${info(label, tip)}</div><div class="money sm">${currency ? "<span>$</span>" : ""}<input id="${id}" inputmode="decimal" autocomplete="off" value="${text(value)}">${currency ? '<span class="per">a year</span>' : ""}</div></div>`;
+const field = (id: string, label: string, tip: string, value: NumericDraft, currency = true) =>
+  `<div class="field"><div class="lbl-row"><label class="lbl" for="${id}">${label}</label>${info(label, tip)}</div><div class="money sm">${currency ? "<span>$</span>" : ""}<input id="${id}" inputmode="decimal" autocomplete="off" value="${attrText(text(value))}">${currency ? '<span class="per">a year</span>' : ""}</div></div>`;
 const check = (id: string, label: string, tip: string, on: boolean) =>
   `<div class="care-check"><label class="check" for="${id}"><input id="${id}" type="checkbox" ${on ? "checked" : ""}>${label}</label>${info(label, tip)}</div>`;
 
@@ -79,8 +90,8 @@ export class ChildcareEditor {
 
   constructor(private readonly changed: (removedLastChild?: boolean) => void) {
     this.monthly.addEventListener("input", () => {
-      this.state.monthly = parse(this.monthly.value) ?? 0;
-      if (this.state.monthly > 0 && !this.state.children.length) {
+      this.state.monthly = parse(this.monthly.value);
+      if (monthlyAmount(this.state.monthly) && this.state.monthly > 0 && !this.state.children.length) {
         this.state.children = Array.from({ length: Math.max(1, this.initialKids) }, child);
         this.panel.open = true;
       }
@@ -100,7 +111,7 @@ export class ChildcareEditor {
             c.age = parse(el.value);
             break;
           case "expenses":
-            c.expenses = parse(el.value) ?? 0;
+            c.expenses = parse(el.value);
             break;
           case "qc":
             c.qcEligibleExpenses = parse(el.value);
@@ -146,24 +157,24 @@ export class ChildcareEditor {
   restore(value: unknown) {
     if (!value || typeof value !== "object") return;
     const s = value as Partial<CareState>;
-    if (amount(s.monthly)) this.state.monthly = s.monthly;
+    if ("monthly" in s) this.state.monthly = restoreNumber(s.monthly);
     this.state.mode = s.mode === "manual" ? "manual" : "automatic";
     for (const key of ["earnings", "claims"] as const)
-      if (Array.isArray(s[key])) this.state[key] = [0, 1].map(i => (amount(s[key]?.[i]) ? s[key][i] : null));
+      if (Array.isArray(s[key])) this.state[key] = [0, 1].map(i => restoreNumber(s[key]?.[i]));
     if (Array.isArray(s.children))
       this.state.children = s.children.slice(0, 6).map(c => ({
-        age: amount(c?.age) && Number.isInteger(c.age) ? c.age : null,
-        expenses: amount(c?.expenses) ? c.expenses : 0,
+        age: restoreNumber(c?.age),
+        expenses: restoreNumber(c?.expenses),
         disabilityTaxCredit: c?.disabilityTaxCredit === true,
         infirm: c?.infirm === true,
-        qcEligibleExpenses: amount(c?.qcEligibleExpenses) ? c.qcEligibleExpenses : null,
+        qcEligibleExpenses: restoreNumber(c?.qcEligibleExpenses),
         qcSevereImpairment: c?.qcSevereImpairment === true,
       }));
     this.monthly.value = text(this.state.monthly);
   }
 
   get enabled() {
-    return this.state.monthly > 0 || this.state.children.length > 0;
+    return this.state.monthly !== 0 || this.state.children.length > 0;
   }
   get detailedAges() {
     return this.state.children.length > 0;
@@ -177,19 +188,21 @@ export class ChildcareEditor {
 
   input(): ChildcareInput | undefined {
     if (!this.enabled) return undefined;
-    const children: ChildcareChild[] | undefined = this.state.children.every(c => c.age !== null)
-      ? this.state.children.map(c => ({
-          ...c,
-          age: c.age as number,
-          qcEligibleExpenses: c.qcEligibleExpenses ?? undefined,
-        }))
-      : undefined;
+    const children: ChildcareChild[] | undefined =
+      monthlyAmount(this.state.monthly) && this.state.children.every(c => wholeAge(c.age) && amount(c.expenses))
+        ? this.state.children.map(c => ({
+            ...c,
+            age: c.age as number,
+            expenses: c.expenses as number,
+            qcEligibleExpenses: amount(c.qcEligibleExpenses) ? c.qcEligibleExpenses : undefined,
+          }))
+        : undefined;
     return {
       mode: this.state.mode,
       children,
-      declaredAnnualExpenses: this.state.monthly * 12,
-      earnedIncome: this.state.earnings.slice(0, this.adults),
-      manualClaims: this.state.claims.slice(0, this.adults).every(v => v !== null)
+      declaredAnnualExpenses: monthlyAmount(this.state.monthly) ? this.state.monthly * 12 : undefined,
+      earnedIncome: this.state.earnings.slice(0, this.adults).map(v => (amount(v) ? v : null)),
+      manualClaims: this.state.claims.slice(0, this.adults).every(amount)
         ? (this.state.claims.slice(0, this.adults) as number[])
         : undefined,
     };
@@ -228,29 +241,50 @@ export class ChildcareEditor {
     }
     const federal = result.childcare;
     const errors = federal.reasons.map(r => childcareReasons[r]).filter(Boolean);
-    const annual = this.state.children.reduce((sum, c) => sum + c.expenses, 0);
-    const matches = Math.abs(annual - this.state.monthly * 12) <= 0.06 + 1e-9;
-    this.monthly.setCustomValidity(
-      this.enabled && !matches ? "Annual child expenses must match twelve times the monthly amount." : "",
+    const validate = (id: string, message: string) => {
+      const el = document.getElementById(id) as HTMLInputElement | null;
+      if (!el) return;
+      el.setCustomValidity(message);
+      el.setAttribute("aria-invalid", String(message !== ""));
+    };
+    const requiredAmount = (v: NumericDraft) =>
+      amount(v)
+        ? ""
+        : v === null
+          ? "Enter an amount, including zero."
+          : "Enter a nonnegative number with up to two decimal places.";
+    const annual = this.state.children.reduce((sum, c) => sum + (amount(c.expenses) ? c.expenses : 0), 0);
+    const matches =
+      monthlyAmount(this.state.monthly) &&
+      this.state.children.every(c => amount(c.expenses)) &&
+      Math.abs(annual - this.state.monthly * 12) <= 0.06 + 1e-9;
+    validate(
+      "childcare-monthly",
+      !monthlyAmount(this.state.monthly)
+        ? requiredAmount(this.state.monthly) || "Enter a smaller monthly amount."
+        : this.enabled && !matches
+          ? "Annual child expenses must match twelve times the monthly amount."
+          : "",
     );
-    this.monthly.setAttribute("aria-invalid", String(this.enabled && !matches));
     const tooltip = document.getElementById("childcare-info") as HTMLElement;
     tooltip.dataset.tip = `Average monthly eligible childcare costs across the whole year, after fee subsidies and reimbursements. Do not subtract advance tax-credit payments. These costs are separate from taxable household spending. ${errors.join(" ")}`;
     for (let i = 0; i < this.adults; i++) {
       const id = this.state.mode === "manual" ? `care-claim-${i}` : `care-earnings-${i}`;
-      const el = document.getElementById(id) as HTMLInputElement | null;
-      const missing = this.state[this.state.mode === "manual" ? "claims" : "earnings"][i] === null;
-      if (el) {
-        el.setAttribute("aria-invalid", String(missing));
-        el.setCustomValidity(missing ? "Enter an amount, including zero." : "");
-      }
+      validate(id, requiredAmount(this.state[this.state.mode === "manual" ? "claims" : "earnings"][i]));
     }
     for (let i = 0; i < this.state.children.length; i++) {
       const c = this.state.children[i];
-      const age = document.getElementById(`care-age-${i}`) as HTMLInputElement;
-      age.setAttribute("aria-invalid", String(c.age === null || !Number.isInteger(c.age)));
-      const qc = document.getElementById(`care-qc-${i}`) as HTMLInputElement;
-      qc.setAttribute("aria-invalid", String(c.qcEligibleExpenses !== null && c.qcEligibleExpenses > c.expenses));
+      validate(`care-age-${i}`, wholeAge(c.age) ? "" : "Enter a whole, nonnegative year-end age, including zero.");
+      validate(`care-expenses-${i}`, requiredAmount(c.expenses));
+      validate(
+        `care-qc-${i}`,
+        c.qcEligibleExpenses === null
+          ? ""
+          : requiredAmount(c.qcEligibleExpenses) ||
+              (amount(c.qcEligibleExpenses) && amount(c.expenses) && c.qcEligibleExpenses > c.expenses
+                ? "The Quebec-eligible portion cannot exceed this child's annual expenses."
+                : ""),
+      );
     }
   }
 }
