@@ -294,6 +294,22 @@ const STACKED: Stacked[] = [
       "and the test says to remove it",
     applies: s => singleParent(s.to, 5) && netWithin(s, 37_000, 38_500),
   },
+  {
+    code: "NL",
+    year: 2024,
+    // CRA GST calculation sheet (2023 base year), T4114-24, 5000-S6-24, RC4210-24 and NL428-24;
+    // all cached under docs/verification/2024/sources. Keep the existing other-year exceptions unchanged.
+    why:
+      "a single parent with 4+ children at the onset of the 2024 GST/HST clawback ($44,324 net income), below " +
+      "the generic NL exception's $45,000 bound. Published CCB (23%), CWB (15%), GST (5%), NL supplement (9%) " +
+      "and NL low-income reduction (16%) clawbacks plus tax/payroll yield 102.56843% once fully overlapping. " +
+      "A $500 sweep step can straddle that onset; the provincial child benefit is already zero here",
+    applies: s =>
+      singleParent(s.to, 4) &&
+      s.a.famNet < 45_000 &&
+      s.b.famNet > 44_324 &&
+      netWithin(s, 44_324 - SWEEP_STEP, 45_000 + SWEEP_STEP),
+  },
 ];
 const stackedFor = (s: Step) =>
   STACKED.find(k => k.code === s.p.code && (k.year === undefined || k.year === s.y.year) && k.applies(s));
