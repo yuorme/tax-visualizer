@@ -20,6 +20,18 @@ export function ccbOf(fed: Federal, famNet: number, kids: number, under6: number
 const taper = (amt: number, famNet: number, from: number, to: number) =>
   amt * Math.max(0, Math.min(1, (to - famNet) / (to - from)));
 
+/** Annual entitlement under one Newfoundland and Labrador reduction schedule. */
+function nlChildBenefit(
+  q: Extract<ChildBenefitProgram, { program: "nl-child-benefit-reduction" }>["params"],
+  famNet: number,
+  kids: number,
+) {
+  let amt = 0;
+  for (let i = 0; i < kids; i++) amt += q.perChild[Math.min(i, 3)];
+  const reductionRate = q.rate[Math.min(kids, 3) - 1] + Math.max(0, kids - 3) * q.additionalRate;
+  return Math.max(0, amt - reductionRate * Math.max(0, famNet - q.threshold));
+}
+
 /** Provincial or territorial child benefit. single = one adult in the household. */
 export function provincialChildBenefit(
   b: ChildBenefitProgram | undefined,
@@ -116,11 +128,10 @@ export function provincialChildBenefit(
       return 0;
     }
     case "nl-child-benefit-reduction": {
-      const q = b.params;
-      let amt = 0;
-      for (let i = 0; i < kids; i++) amt += q.perChild[Math.min(i, 3)];
-      const reductionRate = q.rate[Math.min(kids, 3) - 1] + Math.max(0, kids - 3) * q.additionalRate;
-      return Math.max(0, amt - reductionRate * over(q.threshold));
+      return nlChildBenefit(b.params, famNet, kids);
+    }
+    case "nl-child-benefit-periods": {
+      return b.params.periods.reduce((sum, q) => sum + q.weight * nlChildBenefit(q, famNet, kids), 0);
     }
   }
 }

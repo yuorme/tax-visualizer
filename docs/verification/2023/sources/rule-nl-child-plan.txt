@@ -1,0 +1,22 @@
+Title: NL poverty reduction plan historical child benefit amounts
+URL: https://www.gov.nl.ca/cssd/files/Poverty-Reduction-Plan-Background-Information.pdf
+Fetched: 2026-11-02
+SHA-256 of the original: a539e9e6f98bfb419ef6b4135a0bee01110045e787f7f8478e4dc7aae5c02747
+Publication date modified: 2025-01-02
+PDF pages: 8 of 17
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 8 of 17 ---
+
+NL Child Benefit
+CHANGE:
+• Non-taxable benefit paid monthly to help with the cost of raising children (<18 years)
+• Annual Rates - One Child - $447, Two Children - $921, Three Children - $1430, and $547 for every
+additional child
+• Increase the NLCB by 300% with the initial increase by March 2024 and retroactive to January 2024
+• New annual rates by January 2024 - One Child - $1788, Two Children - $3684, Three Children - $5720,
+and $2188 for every additional child
+8
+IMPACT:
+• Families of 14,000 children will receive increased benefits
