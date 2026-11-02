@@ -44,7 +44,7 @@ export const CHILDCARE_STEPS = [
     async p => {
       await fill(p, "childcare-monthly", 1000);
       assert.equal(await p.locator("#childcare-details").isVisible(), true);
-      assert.equal(await p.inputValue("care-age-0".replace(/^/, "#")), "");
+      assert.equal(await p.inputValue("#care-age-0"), "");
       assert.equal(await p.inputValue("#care-expenses-0"), "0");
       assert.equal(await p.inputValue("#care-earnings-0"), "");
       assert.equal(await p.inputValue("#care-earnings-1"), "");
@@ -76,6 +76,20 @@ export const CHILDCARE_STEPS = [
       await fill(p, "care-earnings-1", 0);
       assert.equal(await cell(p, "Federal calculation"), "Calculated");
       assert.equal(await cell(p, "Partner's federal childcare deduction"), "$0");
+      assert.match(
+        await p
+          .locator("tr.care-breakdown")
+          .filter({ hasText: "Federal calculation" })
+          .locator(".info")
+          .getAttribute("data-tip"),
+        /Your partner is the selected claimant as the lower-net-income adult/,
+      );
+      await p.selectOption("#care-mode", "manual");
+      await fill(p, "care-claim-0", 0);
+      assert.equal(await cell(p, "Federal calculation"), "Details needed");
+      await fill(p, "care-claim-1", 0);
+      assert.equal(await cell(p, "Federal calculation"), "Calculated");
+      await p.selectOption("#care-mode", "automatic");
     },
   ],
   [
@@ -113,13 +127,13 @@ export const CHILDCARE_STEPS = [
       for (const c of await p.locator(".care-quebec").all()) await c.locator("summary").click();
       await fill(p, "care-qc-0", 0);
       await fill(p, "care-qc-1", 0);
-      assert.equal(await cell(p, "Provincial childcare credit", 2), "$0 · Calculated");
+      assert.equal(await cell(p, "Provincial childcare credit", 2), "$0");
       await fill(p, "care-qc-0", 10000);
       await fill(p, "care-qc-1", 2000);
-      assert.equal(await cell(p, "Provincial childcare credit", 2), "$8,400 · Calculated");
+      assert.equal(await cell(p, "Provincial childcare credit", 2), "$8,400");
       await fill(p, "care-earnings-1", 0);
       assert.equal(await cell(p, "Partner's federal childcare deduction"), "$0");
-      assert.equal(await cell(p, "Provincial childcare credit", 2), "$8,400 · Calculated");
+      assert.equal(await cell(p, "Provincial childcare credit", 2), "$8,400");
       await fill(p, "care-earnings-1", 30000);
     },
   ],
@@ -127,6 +141,7 @@ export const CHILDCARE_STEPS = [
     "manual verified claims replace automatic claims and remain separate from other deductions",
     async p => {
       await p.selectOption("#care-mode", "manual");
+      await fill(p, "care-claim-1", "");
       await fill(p, "care-claim-0", 3000);
       assert.equal(await cell(p, "Federal calculation"), "Details needed");
       await fill(p, "care-claim-1", 2000);
@@ -148,8 +163,38 @@ export const CHILDCARE_STEPS = [
       await fill(p, "care-qc-1", 0);
       assert.equal(await p.inputValue("#childcare-monthly"), "833.33");
       assert.equal(await p.getAttribute("#childcare-monthly", "aria-invalid"), "false");
-      assert.equal(await cell(p, "Annual childcare expenses"), "$10,000");
+      assert.equal(await cell(p, "Allocated annual childcare expenses"), "$10,000");
       assert.equal(await cell(p, "Federal calculation"), "Calculated");
+    },
+  ],
+  [
+    "Quebec age policy follows the selected year and provincial disability eligibility is separate",
+    async p => {
+      await fill(p, "care-age-0", 15);
+      assert.equal(await cell(p, "Provincial childcare credit", 2), "$0");
+      await p.check("#care-dtc-0");
+      assert.equal(await cell(p, "Provincial childcare credit", 2), "$0");
+      await open(p, ".care-child:nth-of-type(1) .care-quebec");
+      await p.check("#care-severe-0");
+      assert.equal(await cell(p, "Provincial childcare credit", 2), "$7,000");
+      await p.uncheck("#care-severe-0");
+      await p.uncheck("#care-dtc-0");
+      await p.selectOption("#tax-year", "2025");
+      assert.equal(await cell(p, "Provincial childcare credit", 2), "$7,000");
+      await p.selectOption("#tax-year", "2026");
+      assert.equal(await cell(p, "Provincial childcare credit", 2), "$0");
+      await fill(p, "care-age-0", 4);
+    },
+  ],
+  [
+    "refund switch controls applied childcare credits without changing federal deductions",
+    async p => {
+      await p.click("#tab-credits");
+      await p.click("label[for=cred-toggle]");
+      assert.equal(await cell(p, "Provincial childcare credit", 2), "$0");
+      assert.equal(await cell(p, "Your federal childcare deduction"), "$3,000");
+      await p.click("label[for=cred-toggle]");
+      assert.equal(await cell(p, "Provincial childcare credit", 2), "$7,000");
     },
   ],
   [
@@ -167,9 +212,34 @@ export const CHILDCARE_STEPS = [
       await p.click('#people [data-i="1"]');
       assert.equal(await p.inputValue("#care-claim-0"), "3,000");
       assert.equal(await p.inputValue("#care-claim-1"), "2,000");
+      for (const count of [3, 2]) {
+        await p.locator("#adults").evaluate((el, value) => {
+          el.value = String(value);
+          el.dispatchEvent(new Event("input", { bubbles: true }));
+        }, count);
+        assert.deepEqual((await saved(p)).childcare, before);
+        assert.equal(await p.inputValue("#kids"), "2");
+        assert.equal((await saved(p)).spendingAdjustment, -20);
+      }
       assert.match(await p.getAttribute("#childcare-info", "data-tip"), /advance tax-credit/);
       assert.equal(await p.locator("#pr-reset").count(), 1);
       assert.equal(await p.locator("#spend-reset").count(), 0);
+    },
+  ],
+  [
+    "removing the last detailed child clears counts and restores the existing aggregate controls",
+    async p => {
+      await fill(p, "childcare-monthly", 0);
+      await fill(p, "care-expenses-0", 0);
+      await p.locator('[data-care="remove"]').first().click();
+      assert.equal(await p.inputValue("#kids"), "1");
+      await p.locator('[data-care="remove"]').first().click();
+      assert.equal(await p.inputValue("#kids"), "0");
+      assert.equal(await p.inputValue("#u6"), "0");
+      assert.equal(await p.locator("#kids").isDisabled(), false);
+      assert.equal(await p.locator("#childcare-details").isVisible(), false);
+      assert.equal((await saved(p)).spendingAdjustment, -20);
+      assert.equal(await p.locator("tr.care-breakdown").count(), 0);
     },
   ],
 ].map(([name, step]) => [
@@ -177,10 +247,10 @@ export const CHILDCARE_STEPS = [
   async p => {
     await step(p);
     const overflow = await p.evaluate(() => {
-      const card = document.querySelector("#spend-panel").getBoundingClientRect();
+      const card = document.querySelector("#spend-panel").closest(".control").getBoundingClientRect();
       return [
         ...document.querySelectorAll(
-          "#spend-panel input, #spend-panel button, #spend-panel select, #spend-panel fieldset",
+          "#childcare-monthly, #childcare-info, #childcare-details input, #childcare-details button, #childcare-details select, #childcare-details fieldset",
         ),
       ]
         .filter(el => el.checkVisibility())

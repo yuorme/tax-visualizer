@@ -123,7 +123,10 @@ const effNow = () => effOverride ?? defaultEff();
 const effText = (v: number) => (Number.isInteger(v * 10) ? v.toFixed(1) : String(v));
 const kmText = (v: number) => `${v.toLocaleString("en-CA")} km`;
 const effSpend = () => Math.round((spend * (1 + spendingAdjustment / 100)) / 10) * 10; // nearest $10
-const care = new ChildcareEditor(() => render());
+const care = new ChildcareEditor(removedLastChild => {
+  if (removedLastChild) setHousehold(adults, 0);
+  render();
+});
 // Engine input built from the current state
 const inputs = (withCare = true): Household => ({
   people,

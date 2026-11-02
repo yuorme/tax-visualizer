@@ -258,7 +258,11 @@ const YEAR_STEPS = [
         const saved = await p.evaluate(() => JSON.parse(localStorage.getItem("taxcmp")));
         const data = loadYear(year);
         const problems = [];
-        const input = toHousehold({ ...saved, efficiency: saved.eff ?? data.federal.driving?.efficiency ?? 0 });
+        const input = toHousehold({
+          ...saved,
+          frug: saved.spendingAdjustment ?? saved.frug ?? 0,
+          efficiency: saved.eff ?? data.federal.driving?.efficiency ?? 0,
+        });
         if (saved.year !== year || saved.people[0].ord !== 48000 || saved.km !== 20000)
           problems.push("year switch did not preserve income/driving or save year");
         for (const province of data.provinces) {

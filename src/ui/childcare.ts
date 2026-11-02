@@ -77,7 +77,7 @@ export class ChildcareEditor {
   private readonly panel = document.getElementById("childcare-details") as HTMLDetailsElement;
   private readonly fields = document.getElementById("childcare-fields") as HTMLElement;
 
-  constructor(private readonly changed: () => void) {
+  constructor(private readonly changed: (removedLastChild?: boolean) => void) {
     this.monthly.addEventListener("input", () => {
       this.state.monthly = parse(this.monthly.value) ?? 0;
       if (this.state.monthly > 0 && !this.state.children.length) {
@@ -133,7 +133,7 @@ export class ChildcareEditor {
       if (button.dataset.care === "add") this.state.children.push(child());
       else if (button.dataset.care === "remove") this.state.children.splice(Number(button.dataset.index), 1);
       this.fieldsKey = "";
-      this.changed();
+      this.changed(button.dataset.care === "remove" && this.state.children.length === 0);
     });
     this.fields.addEventListener("focusout", e => {
       if (e.target instanceof HTMLInputElement && e.target.type !== "checkbox") {
@@ -214,14 +214,14 @@ export class ChildcareEditor {
               : field(
                   `care-earnings-${i}`,
                   `${i ? "Partner's" : "Your"} eligible earnings`,
-                  "Annual earned income eligible for the childcare deduction. Enter zero explicitly if none. This is not necessarily the employment and other income total: pensions and investment income generally do not qualify. A spouse without income entered above still needs an explicit value here.",
+                  "Annual earned income eligible for the childcare deduction. Enter zero explicitly if none. This is not necessarily the employment and other income total: pensions and investment income generally do not qualify. The lower-net-income spouse usually claims, even when their eligible earnings are zero. A spouse without income entered above still needs an explicit value here.",
                   this.state.earnings[i],
                 ),
         ).join("")}</div>` +
         this.state.children
           .map(
             (c, i) =>
-              `<fieldset class="care-child"><legend>Child ${i + 1}</legend><div class="care-grid">${field(`care-age-${i}`, `Age at end of ${this.year}`, "Enter the child's age on December 31 of the selected tax year. Include every eligible child, even if no childcare expenses were paid for that child. These ages also determine child-benefit counts.", c.age, false)}${field(`care-expenses-${i}`, "Annual childcare", "Eligible annual childcare expenses after fee subsidies and reimbursements. Across all children, the annual amounts must equal twelve times the monthly household amount. Do not subtract advance tax-credit payments.", c.expenses)}</div><div class="care-checks">${check(`care-dtc-${i}`, "Federal disability tax credit eligible", "Eligibility for the federal disability tax credit can increase the federal annual childcare limit. This is distinct from Quebec's severe and prolonged impairment eligibility.", c.disabilityTaxCredit)}${check(`care-infirm-${i}`, "Dependent child with an infirmity", "Select when this dependent child's infirmity permits childcare eligibility beyond the ordinary age limit. This does not by itself establish eligibility for the higher disability tax credit limit.", c.infirm)}</div><details class="care-quebec"><summary>Quebec eligibility</summary><div class="care-grid">${field(`care-qc-${i}`, "Quebec-eligible portion", "The part of this child's annual expenses eligible for Quebec's credit. Leave blank to exclude an unverified credit; enter zero when no expenses qualify. Subsidized base fees are excluded, but eligible extras may qualify. Enter qualifying expenses only and check the eligible-activity rules; advance credit payments are not fee subsidies.", c.qcEligibleExpenses)}</div>${check(`care-severe-${i}`, "Quebec severe and prolonged impairment", "Select only if the child meets Quebec's severe and prolonged impairment criteria for the higher childcare limit. Federal disability tax credit eligibility is not used as a substitute.", c.qcSevereImpairment)}</details><button type="button" class="linkbtn" data-care="remove" data-index="${i}" aria-label="Remove child ${i + 1}">Remove child</button></fieldset>`,
+              `<fieldset class="care-child"><legend>Child ${i + 1}</legend><div class="care-grid">${field(`care-age-${i}`, `Age at end of ${this.year}`, "Enter the child's age on December 31 of the selected tax year. Include every eligible child, even if no childcare expenses were paid for that child. These ages also determine child-benefit counts.", c.age, false)}${field(`care-expenses-${i}`, "Annual childcare", "Eligible annual childcare expenses after fee subsidies and reimbursements. Across all children, the annual amounts must equal twelve times the monthly household amount. Do not subtract advance tax-credit payments.", c.expenses)}</div><div class="care-checks">${check(`care-dtc-${i}`, "Federal disability tax credit eligible", "Eligibility for the federal disability tax credit can increase the federal annual childcare limit. This is distinct from Quebec's severe and prolonged impairment eligibility. This checkbox only informs childcare limits; the general disability tax credit itself is not modelled.", c.disabilityTaxCredit)}${check(`care-infirm-${i}`, "Dependent child with an infirmity", "Select when this dependent child's infirmity permits childcare eligibility beyond the ordinary age limit. This does not by itself establish eligibility for the higher disability tax credit limit.", c.infirm)}</div><details class="care-quebec"><summary>Quebec eligibility</summary><div class="care-grid">${field(`care-qc-${i}`, "Quebec-eligible portion", "The part of this child's annual expenses eligible for Quebec's credit. Leave blank to exclude an unverified credit; enter zero when no expenses qualify. Subsidized base fees are excluded, but eligible extras may qualify. Enter qualifying expenses only and check the eligible-activity rules; advance credit payments are not fee subsidies.", c.qcEligibleExpenses)}</div>${check(`care-severe-${i}`, "Quebec severe and prolonged impairment", "Select only if the child meets Quebec's severe and prolonged impairment criteria for the higher childcare limit. Federal disability tax credit eligibility is not used as a substitute.", c.qcSevereImpairment)}</details><button type="button" class="linkbtn" data-care="remove" data-index="${i}" aria-label="Remove child ${i + 1}">Remove child</button></fieldset>`,
           )
           .join("") +
         `<button type="button" class="linkbtn" data-care="add" ${this.state.children.length >= 6 ? "disabled" : ""}>Add child</button>`;
@@ -257,9 +257,12 @@ export class ChildcareEditor {
 
 export function federalCareExplanation(c: ChildcareResult): string {
   if (c.status !== "complete") return c.reasons.map(r => childcareReasons[r] ?? r.replace(/-/g, " ")).join(" ");
-  return c.mode === "manual"
-    ? "Verified manual deductions replace the automatic claims."
-    : "The deduction is limited by eligible expenses, pooled annual child limits and eligible earnings. For equal net incomes, the first adult is elected as claimant. Eligible earnings stay fixed when the existing mixed-income marginal rate is calculated.";
+  if (c.mode === "manual") return "Verified manual deductions replace the automatic claims.";
+  const claimant =
+    c.claimant === null
+      ? "No claimant is selected when there are no expenses."
+      : `${c.claimant === 0 ? "You are" : "Your partner is"} the selected claimant${c.reasons.includes("lower-income-adult") ? " as the lower-net-income adult" : c.reasons.includes("equal-income-election-first-adult") ? " by election for equal net incomes" : " as the lone parent"}, even if the allowed deduction is zero.`;
+  return `${claimant} The deduction is limited by eligible expenses, pooled annual child limits and eligible earnings. Eligible earnings stay fixed when the existing mixed-income marginal rate is calculated.`;
 }
 
 /** Rows inside the existing comparison table; expenses and claims are explanatory, not additional taxes. */
@@ -271,10 +274,10 @@ export function childcareComparison(a: Result, b: Result): string {
     `<span title="${attrText(federalCareExplanation(r.childcare))}">${careStatusText(r.childcare.status)}</span>`;
   let rows = `<tr class="grp"><th colspan="4">Childcare tax treatment</th></tr>`;
   rows += row(
-    "Annual childcare expenses",
+    "Allocated annual childcare expenses",
     money(a.childcare.expenses),
     money(b.childcare.expenses),
-    "Childcare spending itself is not added to the tax total. Allowed deductions and credits are already reflected in the tax and benefit rows above.",
+    "The annual allocation from validated child details. Complete the child ages and reconcile this allocation to the monthly household amount. Childcare spending itself is not added to the tax total; allowed deductions and credits are already reflected above.",
   );
   rows += row(
     "Federal calculation",
@@ -290,6 +293,14 @@ export function childcareComparison(a: Result, b: Result): string {
       "The allowed deduction reduces this adult's federal net income. Quebec provincial income excludes the federal childcare deduction. Do not also include it in Other deductions.",
     );
   const credit = (r: Result) => r.breakdown.childcareCredit;
+  const ac = credit(a),
+    bc = credit(b);
+  const creditValue = (c: typeof ac) =>
+    c
+      ? c.status === "complete"
+        ? money(c.applied)
+        : `${money(c.applied)}<br>${careStatusText(c.status)}`
+      : "Not applicable";
   if (credit(a) || credit(b)) {
     const explanation = [credit(a), credit(b)]
       .filter(c => c !== undefined)
@@ -298,12 +309,7 @@ export function childcareComparison(a: Result, b: Result): string {
           `${c.name}: ${careStatusText(c.status)}. ${c.reasons.map(reason => childcareReasons[reason] ?? reason.replace(/-/g, " ")).join(" ")}`,
       )
       .join(" ");
-    rows += row(
-      "Provincial childcare credit",
-      credit(a) ? `${money(credit(a).applied)} · ${careStatusText(credit(a).status)}` : "Not applicable",
-      credit(b) ? `${money(credit(b).applied)} · ${careStatusText(credit(b).status)}` : "Not applicable",
-      explanation,
-    );
+    rows += row("Provincial childcare credit", creditValue(ac), creditValue(bc), explanation);
     rows += row(
       "Eligible provincial expenses",
       money(credit(a)?.allowedExpenses ?? 0),

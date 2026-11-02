@@ -53,26 +53,14 @@ line-by-line tax return. Simpler and slightly less precise is acceptable where i
   household size); one national efficiency default. Users can override both.
 - A year without fuel data (2025 for now) has no driving inputs and no fuel tax.
 
-## How scope is decided
-
-The model is for comparing provinces, not for filing a return. A feature earns its inputs if, for the households
-it applies to, it moves **either** the household's own effective rate **or** the gap between provinces by
-**0.1 percentage points or more**. Size each candidate against that before building it. Below that, leave it out.
-
-The model counts **taxes the household actually pays**. Costs passed on through lower wages or higher rent
-(employer payroll taxes, landlords' property tax) and taxes only deferred to a later year are out.
-
-## Decided, not built yet
-
-Recorded here as the spec for the GitHub issues that implement them; the issues hold the order.
-
 **Childcare and expanded deductions (milestone 5, #94–98).** Itemized RRSP/FHSA/other claims are implemented;
-federal childcare calculations and Ontario/Quebec/Newfoundland and Labrador childcare credits are implemented in
-the backend for both existing years (#95–96). They accept
-explicit earned income and child details, calculate ordinary claims or accept verified manual claims, and expose
-calculation status and separate federal/Quebec income bases. The UI remains planned.
+federal childcare calculations and Ontario/Quebec/Newfoundland and Labrador childcare credits are implemented for
+2025 and 2026 (#95–97). The childcare inputs accept explicit earned income and child details, calculate ordinary
+claims or accept verified manual claims, and show results in the existing detailed comparison and tooltips.
+Missing information is distinguished from a zero claim. Annual child allocations are reconciled to the monthly
+household average, allowing rounding to cents; actual annual expenses remain the calculation source.
 Detailed contracts and existing benefit-model limitations are in
-[childcare verification](verification/childcare/README.md). The approved full scope is:
+[childcare verification](verification/childcare/README.md). The implemented scope is:
 - Replace frugality with a monthly household childcare amount, preserving the remaining spending controls and
   their household-size behavior. Migrate saved spending without changing its effective dollar amount; add no reset UI.
 - Hold childcare expense constant across provinces, averaged over twelve months after fee subsidies/reimbursements.
@@ -91,6 +79,19 @@ Detailed contracts and existing benefit-model limitations are in
   tooltips only, with no additional summary widgets. Keep formulas in the engine and parameters in sourced year data.
 - Medical, donation, tuition and broader disability credits remain deferred. This is a tax-and-benefit comparison,
   not a childcare-price or disposable-income/cost-of-living model.
+
+## How scope is decided
+
+The model is for comparing provinces, not for filing a return. A feature earns its inputs if, for the households
+it applies to, it moves **either** the household's own effective rate **or** the gap between provinces by
+**0.1 percentage points or more**. Size each candidate against that before building it. Below that, leave it out.
+
+The model counts **taxes the household actually pays**. Costs passed on through lower wages or higher rent
+(employer payroll taxes, landlords' property tax) and taxes only deferred to a later year are out.
+
+## Decided, not built yet
+
+Recorded here as the spec for the GitHub issues that implement them; the issues hold the order.
 
 **Other income.** A separate income type for interest, rental and pension income: taxed as ordinary income,
 no CPP/QPP or EI, no Canada employment amount. Today all "employment and other income" pays payroll.
