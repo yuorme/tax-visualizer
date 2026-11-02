@@ -1,4 +1,5 @@
 # Benefit-year figures use July 2024 to June 2025, applied to current-year income.
+# Child benefit annualizes rounded CRA monthly amounts: $127.08 × 12 and $63.54 × 12.
 
 code: NS
 name: Nova Scotia
@@ -27,6 +28,7 @@ childBenefit:
   name: Nova Scotia Child Benefit
   program: nova-scotia-child-benefit
   params: {perChild: 1524.96, fullBelow: 26000, partialBelow: 34000, partialOtherChildren: 762.48}
+  estimated: true
 credits:
   - name: Nova Scotia affordable living tax credit
     program: ns-affordable-living-tax-credit
@@ -37,4 +39,4 @@ sources:
   - {label: "CRA, T4114: provincial child benefits July 2024 to June 2025", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pub/t4114/t4114-24e.pdf}
   - {label: "CRA, RC4210: provincial credits July 2024 to June 2025", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pub/rc4210/rc4210-24e.pdf}
   - {label: "CRA, GST/HST historical rates and provincial sales-tax rates", url: https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/charge-collect-which-rate/calculator.html}
-  - {label: "Halifax, approved2024/25 budget tax-rate summary: urban0.770 + mandatory0.340 per100", url: https://www.halifax.ca/sites/default/files/documents/city-hall/budget-finances/budgetbook_2024-25_final.pdf}
+  - {label: "Halifax, approved 2024/25 budget tax-rate summary: urban 0.770 + mandatory 0.340 per 100", url: https://www.halifax.ca/sites/default/files/documents/city-hall/budget-finances/budgetbook_2024-25_final.pdf}

@@ -32,6 +32,6 @@ sources:
   - {label: "CRA, NT428 worksheet for 2024 (dividend credits)", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5012-d/5012-d-24e.pdf}
   - {label: "CRA, T4114: provincial child benefits July 2024 to June 2025", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pub/t4114/t4114-24e.pdf}
   - {label: "CRA, GST/HST historical rates and provincial sales-tax rates", url: https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/charge-collect-which-rate/calculator.html}
-  - {label: "NWT Finance, employee payroll tax2%", url: https://www.fin.gov.nt.ca/en/services/licences-taxes-et-droits/payroll-tax-employees}
-  - {label: "Yellowknife, bylaw5088 residential municipal levy6.60mills", url: https://www.yellowknife.ca/sites/default/files/bylaws/343df5fc-64d6-43e6-852d-3d5cbcbd8e1b.pdf}
-  - {label: "Yellowknife, bylaw5089 residential school levy2.96mills", url: https://www.yellowknife.ca/sites/default/files/bylaws/aefb6738-e1b4-4b8d-b4c2-82f78692406f.pdf}
+  - {label: "NWT Finance, employee payroll tax 2%", url: https://www.fin.gov.nt.ca/en/services/licences-taxes-et-droits/payroll-tax-employees}
+  - {label: "Yellowknife, bylaw 5088 residential municipal levy 6.60 mills", url: https://www.yellowknife.ca/sites/default/files/bylaws/343df5fc-64d6-43e6-852d-3d5cbcbd8e1b.pdf}
+  - {label: "Yellowknife, bylaw 5089 residential school levy 2.96 mills", url: https://www.yellowknife.ca/sites/default/files/bylaws/aefb6738-e1b4-4b8d-b4c2-82f78692406f.pdf}

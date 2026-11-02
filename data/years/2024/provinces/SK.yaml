@@ -1,6 +1,6 @@
 # Benefit-year figures use July 2024 to June 2025, applied to current-year income.
 # SK low-income reduction rate estimated as 1110 / (77947 - 37584), published maximum and endpoints.
-# Property rate derived: ((city9.0532 + library0.9289) mills × residential factor0.8871 + school4.54) × 80% /1000.
+# Property rate derived: ((city 9.0532 + library 0.9289) mills × residential factor 0.8871 + school 4.54) × 80% /1000.
 
 code: SK
 name: Saskatchewan

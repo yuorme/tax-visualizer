@@ -1,5 +1,5 @@
 # Benefit-year figures use July 2024 to June 2025, applied to current-year income.
-# OEPTC property component is min(occupancy cost, min(10% of cost,902)+69); total maximum1248.
+# OEPTC property component is min(occupancy cost, min(10% of cost, 902)+ 69); total maximum 1248.
 
 code: ON
 name: Ontario
