@@ -58,6 +58,7 @@ workersBenefit: # 2024 Schedule 6; [single, family] pairs; disability supplement
   # couple with children 3,600 + 3,702.59 / 0.239 = 19,092.00836820084.
   # Keeping the exact quotients preserves the published maxima rather than rounding a derived threshold.
   estimated: true
+  estimationNote: "Quebec's income-at-maximum thresholds are derived from the published Schedule 6 maxima divided by their phase-in rates, plus excluded earnings; all benefit amounts and reduction thresholds are published 2024 values"
   standard: {max: [1590, 2739], rate: 0.27, floor: [3000, 3000], threshold: [26149, 29833], phaseOut: [0.15, 0.15]}
   secondaryEarnerExemption: 15955
   regional:
