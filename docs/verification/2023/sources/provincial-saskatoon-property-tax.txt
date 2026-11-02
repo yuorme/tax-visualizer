@@ -1,0 +1,33 @@
+Title: Historical Tax Rate 2018-2026
+URL: https://www.saskatoon.ca/sites/default/files/media/documents/Historical%20tax%20Rate%202018-2026.pdf
+Fetched: 2026-11-02
+SHA-256 of the original: a8061028f8e3e8c164d8f42c1de4327eb3db5de43866d688edb201aab32b814f
+Publication date modified: 2026-05-04
+PDF pages: all 1
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 1 of 1 ---
+
+Mill Rate 2018 2019 2020 2021* 2022 2023 2024 2025 2026
+City 6.5426 6.8161 7.0802 7.8703 8.1836 8.5034 9.0532 8.5858 9.1147
+Library 0.6535 0.6951 0.7298 0.8113 0.8430 0.8907 0.9289 0.8627 0.8904
+Combined 7.1961 7.5112 7.8100 8.6816 9.0266 9.3941 9.9821 9.4485 10.0051
+City/Library Mill Rate Factors 2018 2019 2020 2021* 2022 2023 2024 2025 2026
+Agricultural Class 1.2007 1.1957 1.2007 1.3405 1.2877 1.2934 1.2904 1.2687 1.2813
+Commercial 1.2007 1.1957 1.2007 1.3405 1.3444 1.3502 1.3645 1.4404 1.4355
+Private owned Hangar 0.7449 0.7468 0.7457 0.8338 0.8332 0.8369 0.8350 0.8209 0.8291
+Residential Class 0.9311 0.9335 0.9322 0.8860 0.8853 0.8892 0.8871 0.8724 0.8809
+Condominium Subclass 0.9311 0.9335 0.9322 0.8860 0.8853 0.8892 0.8871 0.8724 0.8809
+Multi-Unit Residential 0.9311 0.9335 0.9332 0.8860 0.8853 0.8892 0.8871 0.8822 0.8809
+Business Improvement Districts 2018 2019 2020 2021* 2022 2023 2024 2025 2026
+Broadway 2.0350 2.0616 1.9769 1.7617 1.7637 1.8247 1.8787 1.8855 1.9021
+Downtown Saskatoon 0.5074 0.5284 0.5605 0.6278 0.7000 0.6266 0.6723 0.8970 0.9095
+Riversdale 1.0277 1.0945 1.1637 0.9934 1.0134 1.1501 1.1606 1.1034 1.098
+Sutherland 0.9172 0.9638 1.0136 0.9950 0.9939 1.0589 1.0389 1.0004 1.0887
+33rd Street 1.1869 1.3084 1.3298 1.2472 1.2456 1.4262 1.4035 1.3991 1.4557
+Taxable Assessment = Assessed Value x Percentage of Value Taxable
+City/Library Tax: Taxable Assessment divided by 1000 x City/Library Combined Mill Rate x Mill Rate Factor
+City of Saskatoon
+Historical Tax Rate
+2018-2026

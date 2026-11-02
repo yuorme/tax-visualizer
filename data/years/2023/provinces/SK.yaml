@@ -1,0 +1,29 @@
+# Benefit-year figures use July 2023 to June 2024, applied to current-year income.
+# Low-income credit taper estimated as 1060 / (74446 - 35902), using the published maximum and endpoints.
+# Property rate: ((city 8.5034 + library 0.8907) mills × factor 0.8892 + school 4.54) × 80% / 1000.
+
+code: SK
+name: Saskatchewan
+order: 4
+brackets:
+  - [49720, 0.105]
+  - [142058, 0.125]
+  - [.inf, 0.145]
+basicPersonalAmount: 17661
+dividendTaxCredit: {eligible: 0.11, nonEligible: 0.02519}
+spouseAmount: {max: 17661, threshold: 1767}
+childAmount: {perChild: 6700, ages: all}
+salesTax: {rate: 0.11, label: 5% GST + 6% PST}
+propertyTax: {rate: 0.010314586976000002, city: Saskatoon, estimated: true}
+credits:
+  - name: Saskatchewan low-income tax credit
+    program: sk-low-income-tax-credit
+    params: {adult: 380, spouse: 380, child: 150, maxChildren: 2, rate: 0.027501037775010378, threshold: 35902}
+    estimated: true
+sources:
+  - {label: "CRA, SK428 for 2023 (brackets, personal amounts and reductions)", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5008-c/5008-c-23e.pdf}
+  - {label: "CRA, SK428 worksheet for 2023 (dividend credits)", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5008-d/5008-d-23e.pdf}
+  - {label: "CRA, RC4210: provincial credits July 2023 to June 2024", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pub/rc4210/rc4210-23e.pdf}
+  - {label: "CRA, GST/HST historical rates and provincial sales-tax rates", url: https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/charge-collect-which-rate/calculator.html}
+  - {label: "City of Saskatoon, 2023 city/library mill rates and residential factor", url: https://www.saskatoon.ca/sites/default/files/media/documents/Historical%20tax%20Rate%202018-2026.pdf}
+  - {label: "City of Saskatoon, 2023 property tax notice guide (80% portion, 4.54 school mills)", url: https://www.saskatoon.ca/sites/default/files/documents/assessment-tax-tool/2023-Guide%20to%20tax-web.pdf}

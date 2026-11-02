@@ -1,0 +1,54 @@
+# Benefit-year figures use July 2023 to June 2024, applied to current-year income.
+# Child maximum annualizes the rounded CRA monthly amount: $133.91 × 12 = $1606.92.
+# OEPTC maximum is $265 energy + $66 base + $863 property component.
+# Toronto total: (0.506079 municipal + 0.007195 city building + 0.153000 education) / 100.
+
+code: ON
+name: Ontario
+order: 7
+brackets:
+  - [49231, 0.0505]
+  - [98463, 0.0915]
+  - [150000, 0.1116]
+  - [220000, 0.1216]
+  - [.inf, 0.1316]
+basicPersonalAmount: 11865
+dividendTaxCredit: {eligible: 0.1, nonEligible: 0.029863}
+spouseAmount: {max: 10075, threshold: 1007}
+surtax:
+  - [5315, 0.2]
+  - [6802, 0.36]
+ontarioTaxReduction: {base: 274, perChild: 506}
+lift: {max: 875, rate: 0.0505, threshold: 32500, familyThreshold: 65000, phaseOut: 0.05}
+payroll:
+  healthPremium:
+    - [200000, 750, 0.25, 900]
+    - [72000, 600, 0.25, 750]
+    - [48000, 450, 0.25, 600]
+    - [36000, 300, 0.06, 450]
+    - [20000, 0, 0.06, 300]
+salesTax: {rate: 0.13, label: 13% HST}
+propertyTax: {rate: 0.00666274, city: Toronto}
+creditsUseRent: true
+childBenefit:
+  name: Ontario Child Benefit
+  program: ontario-child-benefit
+  params: {perChild: 1606.92, threshold: 24542, rate: 0.08}
+  estimated: true
+credits:
+  - name: Ontario sales tax credit
+    program: ontario-sales-tax-credit
+    params: {perPerson: 345, rate: 0.04, thresholdSingle: 26535, thresholdFamily: 33169}
+  - name: Ontario energy and property tax credit
+    program: ontario-energy-property-tax-credit
+    params: {rentShare: 0.2, energyMax: 265, propertyBase: 66, propertyRate: 0.1, propertyMax: 863, rate: 0.02, thresholdSingle: 26535, thresholdFamily: 33169}
+sources:
+  - {label: "CRA, ON428 for 2023 (brackets, personal amounts and reductions)", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5006-c/5006-c-23e.pdf}
+  - {label: "CRA, ON428 worksheet for 2023 (dividend credits)", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5006-d/5006-d-23e.pdf}
+  - {label: "CRA, T4114: provincial child benefits July 2023 to June 2024", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pub/t4114/t4114-23e.pdf}
+  - {label: "CRA, RC4210: provincial credits July 2023 to June 2024", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pub/rc4210/rc4210-23e.pdf}
+  - {label: "CRA, GST/HST historical rates and provincial sales-tax rates", url: https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/charge-collect-which-rate/calculator.html}
+  - {label: "CRA, 2023 LIFT Schedule ON428-A", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5006-a/5006-a-23e.pdf}
+  - {label: "CRA, 2023 OEPTC calculation sheet", url: https://www.canada.ca/content/dam/cra-arc/serv-info/benefits/ptc23_clc_mns-eng.pdf}
+  - {label: "Toronto, 2023 municipal rates including city building levy", url: https://www.toronto.ca/legdocs/mmis/2023/cc/bgrd/backgroundfile-234149.pdf}
+  - {label: "Toronto, 2023 education property tax levy", url: https://www.toronto.ca/legdocs/mmis/2023/ex/bgrd/backgroundfile-235942.pdf}
