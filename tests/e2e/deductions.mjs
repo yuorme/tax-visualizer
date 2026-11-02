@@ -93,4 +93,21 @@ export const DEDUCTION_STEPS = [
       assert.equal(await p.locator("#rrsp").isVisible(), false);
     },
   ],
-];
+].map(([name, step]) => [
+  name,
+  async p => {
+    await step(p);
+    const overflow = await p.evaluate(() => {
+      const panel = document.querySelector(".ded");
+      const bounds = panel.getBoundingClientRect();
+      return [...panel.querySelectorAll("input, button, label, summary, .ded-fields")]
+        .filter(el => el.checkVisibility())
+        .filter(el => {
+          const box = el.getBoundingClientRect();
+          return box.left < bounds.left - 1 || box.right > bounds.right + 1;
+        })
+        .map(el => el.id || el.className);
+    });
+    assert.deepEqual(overflow, [], "deduction controls stay within their field at every viewport width");
+  },
+]);
