@@ -1,0 +1,50 @@
+Title: Finance
+URL: https://www.fin.gov.nt.ca/en/services/licences-taxes-et-droits/payroll-tax-employees
+Fetched: 2026-11-02
+SHA-256 of the original: f9cba1a580d9e0d3c3b3b16377fe27755da0739abeaca87adb7bf548efa318ee
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+# Licences, Taxes and Fees
+
+# Payroll Tax for Employees
+
+### What is NWT payroll tax?
+
+NWT payroll tax is a 2 per cent tax on income that you earn as an employee working in the NWT.
+
+Although it is the employee who pays the tax, employers are required to withhold the tax from their employees’ pay, and remit the tax directly to the GNWT. The NWT payroll tax is usually shown on the employee’s pay stub as a deduction from gross pay.
+
+The payroll tax is applied to the employment income including:
+
+- salaries and wages, bonuses, gratuities;
+- commissions and honoraria;
+- vacation travel assistance;
+- employee stock options;
+- value of allowances and benefits taxable under the federal Income Tax Act;
+- contributions by employers to registered retirement savings plans (RRSP); and
+- retiring allowances or severance pay.
+
+The following are specifically exempt from payroll tax:
+
+- pension, annuity or superannuation benefit that you receive after your retirement;
+- an amount that you may deduct from your employment income as clergy residence deduction for income tax purposes; and
+- an amount from your employment income that you give back a religious order to which you, who has taken a vow of perpetual poverty, belongs.
+
+### Do workers who work in the NWT but live in another province or territory have to pay the payroll tax?
+
+Yes. All employees who work in the NWT, regardless of where they live, are subject to the NWT payroll tax on their employment income earned in the NWT.
+
+If you “normally” work in the NWT (more than 50% of your time in a year for the same employer), you are subject to payroll tax on all your employment earnings for the year.
+
+### How do I pay my payroll tax?
+
+Your employer is required by law to withhold payroll tax from your gross pay, and remits the tax to the GNWT on your behalf. The amount of payroll tax that you pay should be shown on your pay stub as a deduction.
+
+### How can I get a refund if I overpaid my payroll tax?
+
+Your employer is required by law to file an annual return by February 28 following the calendar year for which the annual return applies. The annual return will indicate whether you, as an employee, have overpaid or underpaid payroll tax for the year. If you underpaid the tax, your employer is required to collect extra tax from you and remit the amount to the GNWT. If you have overpaid, your employer must refund the overpayment to you.
+
+### Why doesn’t the payroll tax amount show up on my T4 slip?
+
+The payroll tax amount does not show up on your T4 slip because it is not part of the territorial personal income tax system. Paying NWT personal income tax is based on whether you maintained a residence in the NWT on December 31 of the tax year. NWT payroll tax is based on how much income you earned working in the NWT. The NWT Payroll Tax Act does not require employers to show the amount of payroll tax collected from their employees for the year on T4 slips, because this information is not needed to determine the amount of income tax that you must pay and the payroll tax cannot be deducted from personal income tax.
