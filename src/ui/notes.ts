@@ -201,7 +201,12 @@ export function tooltips(y: YearData): Record<string, string> {
     : { fuel: noFuel, distance: noFuel, efficiency: noFuel };
   return {
     ...fuelTips,
-    deductions: `Amounts subtracted from your income before tax is worked out: RRSP and FHSA contributions, union and professional dues, childcare expenses, deductible support payments, moving expenses and similar. Max RRSP fills in ${rate(F.rrsp.rate)} of employment income, up to the ${y.year} limit of ${money(F.rrsp.limit)}. Your actual room is ${rate(F.rrsp.rate)} of last year's earned income, less any pension adjustment, plus unused room carried forward; it's on your notice of assessment.`,
+    deductions:
+      "Annual amounts claimed against income for the selected person. Open Edit to enter RRSP, FHSA and other deductions separately. Enter each amount once; these are deductions claimed this year, not necessarily contributions made this year. Eligibility and available room are your responsibility.",
+    rrsp: `Your annual RRSP deduction claimed, including eligible unused contributions from earlier years. Use estimate fills in ${rate(F.rrsp.rate)} of the employment and other income entered, up to the ${y.year} limit of ${money(F.rrsp.limit)}. This is only an estimate: pension and other unearned income may be in that field. Your actual room uses last year's earned income, pension adjustments and unused room; check your notice of assessment.`,
+    fhsa: "Your annual FHSA deduction claimed, including eligible contributions deferred from earlier years. The claim can exceed one year's contribution allowance. Transfers from an RRSP to an FHSA are not deductible. Check your FHSA records and Schedule 15 for the amount you can claim; the calculator does not calculate contribution room or enforce your lifetime limit.",
+    otherDeductions:
+      "Annual deductions other than the RRSP and FHSA claims entered separately: union and professional dues, eligible childcare expenses, deductible support payments, moving expenses and similar. Existing saved deductions are kept here. Exclude anything already entered as RRSP or FHSA to avoid counting it twice.",
     bpa: `Every taxpayer gets a non-refundable credit on a basic amount of income: ${money(F.basicPersonalAmount.max)} federally in ${y.year}, plus a provincial amount from ${money(bpa.lo)} in ${places(y, bpa.atLo)} to ${money(bpa.hi)} in ${places(y, bpa.atHi)}. Switch off to see bracket rates alone.`,
     spending: `Your household's monthly spending on things sales tax applies to, before tax. A quick estimate: your average monthly credit card and debit spending, minus groceries, prescriptions and healthcare. Usually exempt across Canada: basic groceries, rent and mortgage payments, prescription drugs, most medical and dental care, insurance premiums and banking fees, childcare, tuition, and public transit. Usually taxed: restaurant meals and takeout, alcohol, clothing, electronics, furniture and household goods, gas, utilities, phone and internet, vehicles and repairs, travel, and most services. ${y.year} rates run from ${sales.atLo[0].salesTax.label} in ${places(y, sales.atLo)} to ${sales.atHi[0].salesTax.label} in ${places(y, sales.atHi)}. The starting amount is a rough estimate for a household with the adults and children set here; adjust it to match your own spending.${fd ? " Include gasoline: its GST/HST (and QST in Quebec) is counted here, and the per-litre fuel taxes come from the Driving tab." : ""}`,
     children: `Children under 18. They raise the spending estimate and add child benefits: the Canada Child Benefit plus your province's benefit (every province and territory with one), using ${benefitYear(y)} amounts. Benefits are netted off the tax shown. Once you have at least one child, drag the small slate handle on the same track to say how many are under 6, since they get a higher CCB.`,
@@ -288,6 +293,15 @@ export function footerNotes(y: YearData, page: PageDefaults): string {
     `Low-income tax reductions are applied in ${list(lowIncome)}${indexed.length ? ` (${list(indexed)} ${indexed.length > 1 ? "are" : "is"} ${lastYearIndexed})` : ""}.`,
     kidPhrases.length ? `${list(kidPhrases)} are claimed by the parent who claims the children.` : "",
     "A single parent claims the eligible dependant amount; in Quebec a single adult gets the amount for a person living alone.",
+    ...P.flatMap(p =>
+      typeof p.spouseAmount === "object" &&
+      "program" in p.spouseAmount &&
+      p.spouseAmount.program === "nova-scotia-spouse-amount"
+        ? [
+            `${p.name}'s spouse or eligible dependant amount includes a supplement of up to ${money(p.spouseAmount.params.supplement.max)}, reduced by ${rate(p.spouseAmount.params.supplement.rate)} of the claimant's taxable income above ${money(p.spouseAmount.params.supplement.threshold)} and separately by the dependant's net income.`,
+          ]
+        : [],
+    ),
     ...frozen,
   ]
     .filter(Boolean)
@@ -321,13 +335,21 @@ export function footerNotes(y: YearData, page: PageDefaults): string {
   const ocb = childBenefit("ON", "ontario-child-benefit").params;
   const qfa = childBenefit(quebec.code, "quebec-family-allowance").params;
   const nwt = childBenefit("NT", "nwt-child-benefit").params;
-  const nlb = childBenefit("NL", "nl-child-benefit").params;
+  const nlProgram = need(prov("NL").childBenefit, "NL child benefit");
+  if (nlProgram.program !== "nl-child-benefit" && nlProgram.program !== "nl-child-benefit-reduction")
+    throw new Error("page notes: unsupported NL child benefit");
   const nu = childBenefit("NU", "per-child-reduced"),
     nub = nu.params;
   const children = [
     `${benefitYear(y)} amounts, applied to current-year income: the Canada Child Benefit (${money(ccb.perChildUnder6)} per child under 6 or ${money(ccb.perChild6to17)} aged 6–17, reduced above ${money(ccb.threshold1)} of family net income), the Ontario Child Benefit (up to ${money(ocb.perChild)} per child), Quebec's family allowance (${money(qfa.max)} to ${money(qfa.min)} per child, plus the ${money(qfa.schoolSupplies)} school supplies supplement, applied to children aged 6–17), the B.C. family benefit, the Alberta Child and Family Benefit, the Nova Scotia Child Benefit, the PEI Child Benefit, New Brunswick's Child Tax Benefit and Working Income Supplement, and the Yukon Child Benefit, all from CRA's T4114 booklet for ${benefitYear(y)} or the province's own rules.`,
-    `For the NWT, Newfoundland and Labrador and Nunavut benefits the amounts and the income where the reduction starts are official, but the reduction rate isn't published: the NWT and Newfoundland and Labrador benefits are tapered in a straight line to the published end points (${money(nwt.endsAt)} and ${money(nlb.endsAt)}), and Nunavut's uses the ${rate(nub.rateOneChild)} / ${rate(nub.rateMoreChildren)} rates in ${need(nu.rateSource, "Nunavut child benefit rate source")}.`,
-    `These approximations only affect families below about ${money(Math.max(nwt.endsAt, nlb.endsAt))}.`,
+    ...(nlProgram.program === "nl-child-benefit"
+      ? [
+          `For the NWT, Newfoundland and Labrador and Nunavut benefits the amounts and the income where the reduction starts are official, but the reduction rate isn't published: the NWT and Newfoundland and Labrador benefits are tapered in a straight line to the published end points (${money(nwt.endsAt)} and ${money(nlProgram.params.endsAt)}), and Nunavut's uses the ${rate(nub.rateOneChild)} / ${rate(nub.rateMoreChildren)} rates in ${need(nu.rateSource, "Nunavut child benefit rate source")}.`,
+          `These approximations only affect families below about ${money(Math.max(nwt.endsAt, nlProgram.params.endsAt))}.`,
+        ]
+      : [
+          `The NWT benefit uses an estimated straight-line taper to ${money(nwt.endsAt)}. Newfoundland and Labrador's published reduction rates are ${list(nlProgram.params.rate.map(rate))} for one, two or three children, plus ${rate(nlProgram.params.additionalRate)} for each additional child, on family income above ${money(nlProgram.params.threshold)}. Nunavut's uses the ${rate(nub.rateOneChild)} / ${rate(nub.rateMoreChildren)} rates in ${need(nu.rateSource, "Nunavut child benefit rate source")}.`,
+        ]),
     // Manitoba's benefit isn't modelled, so it has no figures in the data; the income limit is approximate.
     "Saskatchewan has no child benefit; Manitoba's (for incomes under about $15,000), Newfoundland and Labrador's prenatal–early childhood nutrition supplement and Nunavut's territorial workers' supplement aren't modelled, and neither are childcare costs or credits.",
   ].join(" ");
@@ -338,8 +360,17 @@ export function footerNotes(y: YearData, page: PageDefaults): string {
     cwb = F.workersBenefit,
     std = cwb.standard;
   const ownCwb = [...Object.keys(cwb.regional).map(prov), quebec].sort(byName).map(short);
-  const sk = credit("SK", "sk-low-income-tax-credit"),
-    mb = credit("MB", "mb-affordability-credits");
+  const sk = credit("SK", "sk-low-income-tax-credit");
+  const mb = need(
+    prov("MB").credits?.find(c => c.program === "mb-affordability-credits" || c.program === "mb-school-tax-credits"),
+    "Manitoba property credits",
+  );
+  const mbDescription =
+    mb.program === "mb-school-tax-credits"
+      ? `Manitoba's school tax rebate (${rate(mb.params.schoolRebateRate)} of estimated school taxes), education property tax credit (up to ${money(mb.params.educationCreditMax)} of remaining school taxes) and renters tax credit (up to ${money(mb.params.renterMax)}, capped by rent paid)`
+      : "Manitoba's renters and homeowners affordability credits";
+  const cwbEstimate =
+    cwb.estimationNote ?? `these ${year} values are CRA's ${lastYearIndexed} until CRA publishes them`;
   // The list below names these programs in prose; a year whose data drops one fails here instead of misreporting it.
   const named: [string, CreditProgram["program"]][] = [
     ["ON", "ontario-sales-tax-credit"],
@@ -357,11 +388,14 @@ export function footerNotes(y: YearData, page: PageDefaults): string {
   const estimates = [
     sk.estimated &&
       `Saskatchewan's reduction rate (${rate(sk.params.rate)}) is worked out from CRA's published start and end points`,
-    mb.estimated && `Manitoba's renters credit is taken at its ${money(mb.params.renter)} maximum`,
+    mb.estimated &&
+      (mb.program === "mb-school-tax-credits"
+        ? `Manitoba's school taxes are estimated as ${rate(mb.params.schoolTaxShare)} of the property tax bill using the reference city's school-tax share`
+        : `Manitoba's renters credit is taken at its ${money(mb.params.renter)} maximum`),
     "Quebec's solidarity credit gives the living-alone amount to any household with one adult",
   ].filter(x => typeof x === "string");
   const credits = [
-    `Counted when "Include in totals" is on, for ${benefitYear(y)}: the ${gbName} (${gb.formerName ? `the renamed ${gb.formerName}: ` : ""}${money(gb.adult)} per adult, ${money(gb.child)} per child and a single supplement of up to ${money(gb.singleSupplement.max)}, less ${rate(gb.phaseOut.rate)} of family net income over ${money(gb.phaseOut.from)}); the Canada Workers Benefit basic amount for ${year} (${money(std.max[0])} single or ${money(std.max[1])} family, ${rate(std.rate)} of working income over ${either(std.floor, money)}, less ${either(std.phaseOut, rate)} of net income over ${either(std.threshold, money)}; ${list(ownCwb)} use their own versions${cwb.estimated ? `, and these ${year} values are CRA's ${lastYearIndexed} until CRA publishes them` : ""}); the Ontario sales tax credit and Ontario energy and property tax credit; Quebec's solidarity tax credit and work premium; B.C.'s renter's tax credit; Manitoba's renters and homeowners affordability credits; the Saskatchewan low-income tax credit; the New Brunswick HST credit; the Nova Scotia affordable living tax credit; the ${pei}; and the Newfoundland and Labrador income supplement.`,
+    `Counted when "Include in totals" is on, for ${benefitYear(y)}: the ${gbName} (${gb.formerName ? `the renamed ${gb.formerName}: ` : ""}${money(gb.adult)} per adult, ${money(gb.child)} per child and a single supplement of up to ${money(gb.singleSupplement.max)}, less ${rate(gb.phaseOut.rate)} of family net income over ${money(gb.phaseOut.from)}); the Canada Workers Benefit basic amount for ${year} (${money(std.max[0])} single or ${money(std.max[1])} family, ${rate(std.rate)} of working income over ${either(std.floor, money)}, less ${either(std.phaseOut, rate)} of net income over ${either(std.threshold, money)}; ${list(ownCwb)} use their own versions${cwb.estimated ? `, and ${cwbEstimate}` : ""}); the Ontario sales tax credit and Ontario energy and property tax credit; Quebec's solidarity tax credit and work premium; B.C.'s renter's tax credit; ${mbDescription}; the Saskatchewan low-income tax credit; the New Brunswick HST credit; the Nova Scotia affordable living tax credit; the ${pei}; and the Newfoundland and Labrador income supplement.`,
     `Estimates: ${clauses(estimates)}.`,
     "Not modelled: the Workers Benefit disability supplement, senior-specific credits, the Northern Ontario energy credit and Quebec's northern-village supplement.",
   ].join(" ");
@@ -434,7 +468,7 @@ export function footerNotes(y: YearData, page: PageDefaults): string {
     ),
     para(
       "Deductions",
-      `Deductions such as RRSP contributions are subtracted from total income to get taxable income. The Max RRSP link uses ${rate(F.rrsp.rate)} of the employment income entered, up to the ${year} dollar limit of ${money(F.rrsp.limit)}; your real limit is based on last year's earned income and any unused room, as shown on your notice of assessment.`,
+      `Annual RRSP, FHSA and other deductions claimed are added once and subtracted from total income to get taxable income. Enter eligible claims, including deferred contributions, rather than contributions made this year; account room and eligibility are not calculated. The Use estimate RRSP link uses ${rate(F.rrsp.rate)} of the employment income entered, up to the ${year} dollar limit of ${money(F.rrsp.limit)}; your real limit is based on last year's earned income and any unused room, as shown on your notice of assessment.`,
     ),
     para("Phase-outs", phaseOuts),
     para("Income tax details", incomeTax),
