@@ -4,6 +4,7 @@ import type { Credit, Person } from "./types.ts";
 
 export interface CreditInput {
   famNet: number;
+  provincialFamNet?: number; // Quebec income base, before the federal childcare deduction
   famEmp: number;
   couple: boolean;
   kids: number;
@@ -76,13 +77,19 @@ export function creditsOf(fed: Federal, p: Province, f: CreditInput): Credit[] {
         const q = cr.params;
         const qst = q.qstAdult + (couple ? q.qstSpouse : q.qstAlone),
           housing = (couple ? q.housingCouple : q.housingSingle) + q.child * kids;
-        out.push([name, Math.max(0, qst + housing - q.rate * over(q.threshold))]);
+        out.push([name, Math.max(0, qst + housing - q.rate * over(q.threshold, f.provincialFamNet ?? famNet))]);
         break;
       }
       case "quebec-work-premium": {
         const q = cr.params;
         const [rate, excl, thr] = q[qcType(couple, kids)];
-        out.push([name, Math.max(0, rate * Math.max(0, Math.min(work, thr) - excl) - q.phaseOutRate * over(thr))]);
+        out.push([
+          name,
+          Math.max(
+            0,
+            rate * Math.max(0, Math.min(work, thr) - excl) - q.phaseOutRate * over(thr, f.provincialFamNet ?? famNet),
+          ),
+        ]);
         break;
       }
       case "bc-renters-tax-credit": {

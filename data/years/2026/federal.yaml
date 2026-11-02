@@ -30,6 +30,22 @@ investment:
 
 rrsp: {rate: 0.18, limit: 33810}
 
+# CRA T778 and folio S1-F3-C1 (2015 onward). Pool limits across ALL eligible children.
+# T778 birth-year bands include children turning 16; DTC/infirm dependants can qualify when older.
+# Benefit age bands preserve the existing full-year approximation, using detailed year-end ages when supplied.
+childcare:
+  program: federal-childcare
+  params:
+    youngUnder: 7
+    eligibleThrough: 16
+    annualYoung: 8000
+    annualOther: 5000
+    annualDisability: 11000
+    earnedNumerator: 2
+    earnedDenominator: 3
+    benefitChildUnder: 18
+    benefitYoungUnder: 6
+
 payroll:
   # CPP: base contributions earn a credit; enhanced (first and second additional) contributions are deducted
   cpp: {exempt: 3500, ympe: 74600, yampe: 85000, base: 0.0495, enh1: 0.01, enh2: 0.04}
@@ -91,6 +107,8 @@ driving:
   estimated: true
 
 sources:
+  - {label: "CRA, T778 Child Care Expenses Deduction (2025 birth-year bands, pooled limits and explicit earnings)", url: "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/t778/t778-25e.pdf"}
+  - {label: "CRA, Income Tax Folio S1-F3-C1 (rules from 2015 onward)", url: "https://www.canada.ca/en/revenue-agency/services/tax/technical-information/income-tax/income-tax-folios-index/series-1-individuals/folio-3-family-unit-issues/income-tax-folio-s1-f3-c1-child-care-expense-deduction.html"}
   - {label: "CRA, Current year tax rates and income brackets", url: "https://www.canada.ca/en/revenue-agency/services/tax/individuals/tax-rates-brackets/current-year.html"}
   - {label: "CRA, T4127 Payroll Deductions Formulas", url: "https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas.html"}
   - {label: "CRA, T4114 Canada child benefit and related programs", url: "https://www.canada.ca/en/revenue-agency/services/forms-publications/publications/t4114.html"}

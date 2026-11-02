@@ -41,7 +41,14 @@ credits:
   - name: NL income supplement
     program: nl-income-supplement
     params: {base: 254, extraMax: 266, extraRate: 0.0532, extraFrom: 15000, couple: 69, child: 231, rate: 0.09, threshold: 40000}
+childcareCredit:
+  name: Newfoundland and Labrador child care amount
+  program: nl-childcare
+  # NL428 line 58320 equals federal line 21400, converted at the first provincial bracket rate.
+  params: {}
 sources:
+  - {label: "CRA Newfoundland and Labrador guide, line 58320 equals federal line 21400", url: "https://www.canada.ca/en/revenue-agency/services/forms-publications/tax-packages-years/general-income-tax-benefit-package/newfoundland-labrador/5001-pc.html"}
+  - {label: "Government of Newfoundland and Labrador, child care amount and 2026 personal tax rates", url: "https://www.gov.nl.ca/fin/tax-programs-incentives/personal/personalincometax/"}
   - {label: "SNL 2026 c. 14, An Act to Amend the Income Tax Act, 2000 (basic personal amount $13,094 from January 1, 2026)", url: "https://www.assembly.nl.ca/legislation/sr/annualstatutes/2026/2614.chp.htm"}
   - {label: "Newfoundland and Labrador, Budget 2026 news release (April 29, 2026)", url: "https://www.gov.nl.ca/budget/2026/news-release/"}
   - {label: "nesto, Canada Property Tax Guide 2026 (residential property tax rate)", url: "https://www.nesto.ca/mortgage-basics/property-taxes-canada-highest-to-lowest/"}
