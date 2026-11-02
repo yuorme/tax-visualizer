@@ -9,6 +9,8 @@ export interface ChildcareChild {
   expenses: number; // eligible annual expenses; include all children, even those with no expenses
   disabilityTaxCredit?: boolean; // eligibility for the higher annual limit
   infirm?: boolean; // dependent child with infirmity, including beyond the ordinary age limit
+  qcEligibleExpenses?: number; // Quebec-qualifying portion; omission differs from zero when expenses are positive
+  qcSevereImpairment?: boolean; // provincial severe/prolonged impairment eligibility, not federal DTC eligibility
 }
 
 export interface ChildcareInput {
@@ -16,6 +18,7 @@ export interface ChildcareInput {
   children?: ChildcareChild[];
   earnedIncome?: (number | null)[]; // explicit eligible earnings per effective adult; missing differs from zero
   manualClaims?: number[]; // verified annual claims, replacing rather than supplementing automatic claims
+  declaredAnnualExpenses?: number; // optional household total, used only to validate the child expense allocation
 }
 
 export interface ChildcareResult {
@@ -89,6 +92,11 @@ export function childcareOf(fed: Federal, hh: Household, people: Person[]): Chil
     out.annualLimit += limit;
   }
   if (!amount(out.expenses) || !amount(out.annualLimit)) return fail("invalid", "amount-overflow");
+  if (input.declaredAnnualExpenses !== undefined) {
+    if (!amount(input.declaredAnnualExpenses)) return fail("invalid", "invalid-declared-expenses");
+    if (Math.abs(input.declaredAnnualExpenses - out.expenses) > 0.06 + 1e-9)
+      return fail("incomplete", "expenses-not-allocated");
+  }
   if (input.mode === "manual") {
     if (!Array.isArray(input.manualClaims) || input.manualClaims.length !== people.length)
       return fail("incomplete", "manual-claims-required");

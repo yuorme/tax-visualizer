@@ -1,14 +1,18 @@
-# Childcare deduction implementation
+# Childcare deductions and provincial credits
 
-Issue #95 adds backend federal deduction calculations for 2025 and 2026. The UI integration and new provincial
-childcare credits remain #97 and #96. Existing benefit-year parameters continue to use current-year income.
+Issues #95 and #96 add backend federal deductions and Ontario, Quebec and Newfoundland and Labrador childcare
+credits for 2025 and 2026. UI integration remains #97. Existing benefit-year parameters continue to use
+current-year income.
 
 ## Inputs and results
 
 `Household.childcare` holds a mode, a complete child list with annual eligible expenses, and explicit eligible
 earned income for every effective adult. The second adult includes a spouse represented by the household count
-with no separate income entry. Amounts are annual dollars; the future monthly input must reconcile to this one
-source rather than supply a second inconsistent total. Eligible expenses exclude reimbursements/fee subsidies.
+with no separate income entry. Amounts are annual dollars. Optional `declaredAnnualExpenses` validates the monthly
+household amount multiplied by twelve against the sum of child expenses; it never enters the tax formula. A
+difference of up to six cents (plus floating-point tolerance) accommodates rounding a monthly average to cents.
+A larger mismatch gives `incomplete` / `expenses-not-allocated`, suppresses all childcare relief, and preserves
+valid age-derived benefit counts. Eligible expenses exclude reimbursements/fee subsidies, not advance credit payments.
 
 The result distinguishes absent input, completed calculation, incomplete inputs, invalid amounts and situations
 requiring manual claims, plus years with no supported rules. Missing earnings do not mean zero. Incomplete/invalid
@@ -51,8 +55,44 @@ worker deduction applied for taxable income. Federal and Quebec spouse claimants
 `claim.provincialClaimant` identifies that distinction when present.
 
 The engine exposes raw pre-childcare income, federal net income and provincial taxable/net income in
-`breakdown.incomeBases`. The new Quebec childcare credit in #96 must use the provincial family amount, including
-the worker deduction. It must not add the federal claim back to an already-floored federal zero.
+`breakdown.incomeBases`. The Quebec childcare credit uses the provincial family amount, including the worker
+deduction. Ontario CARE uses the raw pre-childcare amounts, floored per person only after the deduction addback.
+
+## Provincial credits and result contract
+
+- Ontario CARE multiplies the allowed federal claim by the ON479-A stepped rate (75% through $20,000, declining
+  to 1% through $150,000, then zero). Each started income step reduces the rate. Family income adds back childcare
+  to each person's **raw** federal net income before applying the zero floor. Social-benefits repayments have no
+  separate input in this model; this calculation assumes none. A repayment entered under other deductions must
+  not be mistaken for a supported ON479-A repayment adjustment. The 2026 formula continues the statute and is
+  confirmed as an ongoing program in the 2026 budget; without a 2026 return form, the continuation is flagged estimated.
+- Quebec uses supplied `qcEligibleExpenses` per child, bounded by that child's expenses, and pools annual limits
+  for **all** eligible children, including children without expenses. A positive-expense child needs an explicit
+  qualifying portion; omission on a zero-expense child means zero. Missing/invalid Quebec eligibility affects only
+  this credit. Subsidized basic fees can qualify federally while the supplied Quebec portion is zero; eligible
+  additional fees can be supplied separately as a portion. User attestation includes residence, eligible activity,
+  dependency/income and provider requirements, not merely the expense amount.
+- Quebec's higher annual limit uses separate `qcSevereImpairment` eligibility. Federal DTC eligibility does not
+  silently establish this provincial condition. An older infirm dependant can use the ordinary older-child limit.
+  Ordinary year-end ages through 16 qualify in 2025 and through 14 in 2026 (under the cutoff at some time in the year).
+  The young-child cap uses year-end ages under 7. Provincial line 275 family income includes the worker deduction
+  and excludes the federal childcare deduction. There is no two-thirds earnings cap: attested qualifying activity
+  can include job seeking, study or parental benefits, even when federal earned income is zero or not supplied.
+- Ontario/Quebec family income is automated only for a lone adult or two spouses. Unresolved supporting-person
+  configurations return `unsupported`; verified federal manual claims alone do not establish the provincial base.
+- Newfoundland and Labrador applies each person's federal line 21400 claim as line 58320 at the lowest provincial
+  bracket rate. It joins ordinary nonrefundable credits before dividends and low-income reductions. It cannot
+  exceed tax remaining and is not transferred between adults. The basic-personal-amount switch does not disable it.
+- Ontario and Quebec are refundable and follow `useCredits`. NL is nonrefundable and remains in income tax when
+  refundable credits are disabled. No credit changes cash earnings, payroll contributions or sales-taxable spending.
+
+`breakdown.childcareCredit` is present for the three supported provinces and contains `program`, `name`, `status`,
+`refundable`, `expenses`, `eligibleExpenses`, `annualLimit`, `allowedExpenses`, `income`, `rate`, `calculated`,
+`applied` and `reasons`. `calculated` is before the refundable toggle or NL tax floor; `applied` is the amount
+actually credited. NL additionally exposes `perPerson` applied amounts and each person's
+`breakdown.childcareCredit.{calculated,applied}`. A non-complete status must be explained, not displayed as a
+verified zero. Federal `childcare` status remains separate: missing federal earnings does not invalidate a supplied
+Quebec qualifying expense. No allocation failure can generate either federal or provincial childcare relief.
 
 Existing Quebec family allowance, solidarity and work-premium programs retain their pre-existing approximation
 that omits the worker deduction from the family-income base; this is tracked separately in #103. Their base is
@@ -68,6 +108,18 @@ Enhanced QPP and existing child-credit claimant rules remain #84 and #92. No unr
 - [Quebec Schedule C](../2025/sources/quebec-childcare-schedule.txt): Quebec family income uses provincial line 275.
 - [Retraite Québec](../2026/sources/quebec-family-income.txt): Family Allowance uses provincial line 275.
 - Both year's existing CCB sources support under-6 and under-18 benefit groups.
+- [CRA ON479-A 2025](../2025/sources/ontario-care.txt): raw-income addback, supporting persons and complete rate table.
+- [Ontario statute](../2026/sources/ontario-care-legislation.txt) and
+  [2026 budget](../2026/sources/ontario-care-budget.txt):
+  continuing CARE formula and program.
+- [Finances Quebec parameters](../2026/sources/quebec-childcare-parameters.txt), tables 3 and 5: both years' published
+  caps and income/rate tables; [Revenu Quebec age change](../2026/sources/quebec-childcare-age.txt): the 2026 cutoff.
+- [NL428 2025](../2025/sources/nl-childcare-credit.txt) and
+  [NL government 2026 table](../2026/sources/nl-childcare-credit.txt):
+  provincial child care amount and first-bracket conversion rate.
+- [CRA NL guide](../2025/sources/nl-childcare-guide.txt): line 58320 equals the amount claimed on federal line 21400.
 
 Tests cover both years, every province's integration, pooled limits, age/DTC/infirmity boundaries, missing/zero and
 invalid inputs, RRSP/FHSA claimant changes, manual replacement, income floors, counterfactuals and immutable inputs.
+Provincial tests independently lock published caps/rate boundaries, age changes, distinct impairment eligibility,
+zero earnings, Quebec expense portions, allocation tolerance, toggles and the NL per-adult nonrefundable ordering.

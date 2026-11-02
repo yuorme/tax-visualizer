@@ -40,7 +40,15 @@ credits:
   - name: Ontario energy and property tax credit
     program: ontario-energy-property-tax-credit
     params: {rentShare: 0.2, energyMax: 290, propertyBase: 73, propertyRate: 0.10, propertyMax: 944, rate: 0.02, thresholdSingle: 29047, thresholdFamily: 36309}
+childcareCredit:
+  name: Ontario CARE tax credit
+  program: ontario-care
+  # 2026 continuation of Taxation Act s.103.0.2; 2026 budget confirms CARE, return form not yet available.
+  estimated: true
+  params: {fullThrough: 20000, maxRate: 0.75, decrement: 0.02, steps: [[40000, 2500], [60000, 5000], [150000, 3600]]}
 sources:
+  - {label: "Ontario 2026 budget, continuing CARE support", url: "https://budget.ontario.ca/2026/chapter-1b-costs.html"}
+  - {label: "Ontario Taxation Act amendment s.103.0.2, continuing CARE formula", url: "https://www.ola.org/en/legislative-business/bills/parliament-42/session-1/bill-100"}
   - {label: "nesto, Canada Property Tax Guide 2026 (residential property tax rate)", url: "https://www.nesto.ca/mortgage-basics/property-taxes-canada-highest-to-lowest/"}
   - {label: "Natural Resources Canada, Fuel Consumption Levies in Canada (provincial gasoline tax, rates as of September 2, 2026)", url: "https://natural-resources.canada.ca/domestic-international-markets/fuel-consumption-levies-canada"}
   - {label: "Statistics Canada, Canadian Vehicle Survey: Annual 2009, Tables 3-1 and 4-1 (distance per light vehicle)", url: "https://www150.statcan.gc.ca/n1/pub/53-223-x/53-223-x2009000-eng.pdf"}
