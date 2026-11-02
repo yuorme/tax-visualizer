@@ -4,7 +4,15 @@ import assert from "node:assert/strict";
 import path from "node:path";
 import test from "node:test";
 import { loadYear } from "../../src/data/load.ts";
-import { blank, ccbOf, compute, creditsOf, type Household, payrollOf } from "../../src/engine/index.ts";
+import {
+  blank,
+  ccbOf,
+  compute,
+  creditsOf,
+  type Household,
+  payrollOf,
+  provincialChildBenefit,
+} from "../../src/engine/index.ts";
 
 const year = Number(path.basename(import.meta.filename, ".test.ts"));
 const y = loadYear(year);
@@ -132,4 +140,20 @@ test("2024 CWB reduction thresholds, regional rates and secondary-earner exempti
   near(benefits("QC", 14_829.82, 14_829.82)["Canada Workers Benefit"], 3505.38, "QC: maximum less 20% of $1,000");
   // Line 14 exempts up to $15,955 of the secondary earner's income: AFNI 46,788 - 15,955 = 30,833.
   near(benefits("ON", 46_788, 30_788, true, 0, 16_000)["Canada Workers Benefit"], 2589, "secondary-earner exemption");
+});
+
+test("2024 Alberta child benefit follows the statutory child-specific reduction schedules", () => {
+  // A30 s.30.2 and its 2019 enactment, cached as provincial-ab-act and provincial-ab-2019-enactment;
+  // 2024 benefit-year maxima/thresholds from T4114. The 15% working phase-in is not its phase-out.
+  const ab = (net: number, work: number, kids: number) =>
+    provincialChildBenefit(prov("AB").childBenefit, net, work, kids, false);
+  const base = [1388.5, 2083.3, 2778.1, 3472.9]; // $1,000 above $27,024 with no working component
+  const working = [718, 1372.1, 1763.6, 1892.5]; // $1,000 above $45,285; base fully phased out
+  for (let kids = 1; kids <= 4; kids++) {
+    near(ab(28_024, 0, kids), base[kids - 1], `base component, ${kids} children`);
+    near(ab(46_285, 50_000, kids), working[kids - 1], `working component, ${kids} children`);
+  }
+  near(ab(46_285, 50_000, 6), 1892.5, "four-or-more cap");
+  near(ab(67_300, 70_000, 1), 10, "statutory minimum for a positive annual entitlement below $10");
+  near(ab(67_500, 70_000, 1), 0, "no minimum once fully phased out");
 });
