@@ -204,6 +204,17 @@ const childBenefit = z.discriminatedUnion("program", [
     rateSource: z.string().optional(),
   }),
   program(
+    "nwt-child-benefit-age-groups",
+    z.object({
+      under6: z.array(amount).length(5),
+      under6More: amount,
+      over6: z.array(amount).length(5),
+      over6More: amount,
+      fullUpTo: amount,
+      endsAt: amount,
+    }),
+  ),
+  program(
     "nwt-child-benefit",
     z.object({
       under6: z.array(amount).length(5),
