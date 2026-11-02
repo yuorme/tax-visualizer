@@ -1505,6 +1505,9 @@ footer a {
     flex: 1 1 110px;
     min-width: 0;
   }
+  .ded:has(.deductions[open]) {
+    flex-basis: 100%;
+  }
   #max-rrsp {
     padding-left: 0;
     font-size: 11.5px;
