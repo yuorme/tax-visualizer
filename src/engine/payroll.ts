@@ -42,6 +42,11 @@ export interface NetIncomeParts {
   enh: number; // enhanced CPP/QPP contributions
 }
 
+/** Annual deductions claimed. Legacy generic deductions exclude separately itemized claims. */
+export function deductionsOf(x: Person): number {
+  return (x.ded || 0) + (x.rrsp || 0) + (x.fhsa || 0);
+}
+
 /** Net income before it's floored at zero, piece by piece (the enhanced rates are the same in both plans). A net
  *  capital loss adds nothing and can't offset other income. */
 export function netIncomeParts(fed: Federal, x: Person): NetIncomeParts {
@@ -52,7 +57,7 @@ export function netIncomeParts(fed: Federal, x: Person): NetIncomeParts {
     ed: x.ed * inv.grossUp.eligible,
     nd: x.nd * inv.grossUp.nonEligible,
     fd: x.fd,
-    ded: x.ded || 0,
+    ded: deductionsOf(x),
     enh: payrollOf(fed, null, x).enh,
   };
 }

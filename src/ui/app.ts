@@ -147,7 +147,10 @@ function cleanPerson(o: unknown): Person {
       const v = saved[k];
       if (isNum(v) && (k === "cg" || v >= 0)) x[k] = v;
     }
-    if (isNum(saved.ded) && saved.ded >= 0) x.ded = saved.ded;
+    for (const k of ["ded", "rrsp", "fhsa"] as const) {
+      const v = saved[k];
+      if (isNum(v) && Number.isFinite(v) && v >= 0) x[k] = v;
+    }
   }
   return x;
 }
@@ -491,8 +494,9 @@ function render() {
     : `Employment &amp; other income`;
   $("ded-label").textContent = two ? `${active ? "Partner's" : "Your"} deductions` : "Deductions";
   const rm = H.r.me.breakdown.rrspRoom;
-  $("max-rrsp").textContent = `Max RRSP ${money(rm)}`;
-  $("max-rrsp").setAttribute("aria-pressed", String(rm > 0 && x.ded === rm));
+  $("ded-total").textContent = money(H.r.me.breakdown.netIncome.ded);
+  $("max-rrsp").textContent = `Use estimate ${money(rm)}`;
+  $("max-rrsp").setAttribute("aria-pressed", String(rm > 0 && x.rrsp === rm));
   $("invest-title").textContent = two ? `${active ? "Partner's" : "Your"} investment income` : "Investment income";
   $("invest-sum").textContent = hasInv(x)
     ? [
@@ -914,25 +918,29 @@ inp.addEventListener("keydown", e => {
 });
 sl.addEventListener("input", () => setIncome(+sl.value, "slider"));
 
-// Household members
-const dedIn = $<HTMLInputElement>("ded");
-dedIn.addEventListener("input", () => {
-  me().ded = Math.min(+dedIn.value.replace(/[^\d]/g, "") || 0, 9999999);
-  render();
-});
-dedIn.addEventListener("blur", () => {
-  dedIn.value = me().ded.toLocaleString("en-CA");
-});
-dedIn.addEventListener("keydown", e => {
-  if (e.key === "Enter") dedIn.blur();
-});
+// Annual deductions claimed for the selected adult. The engine supplies their combined total.
+const deductionInputs = ["ded", "rrsp", "fhsa"] as const;
+for (const key of deductionInputs) {
+  const input = $<HTMLInputElement>(key);
+  input.addEventListener("input", () => {
+    me()[key] = Math.min(+input.value.replace(/[^\d]/g, "") || 0, 9999999);
+    render();
+  });
+  input.addEventListener("blur", () => {
+    input.value = (me()[key] || 0).toLocaleString("en-CA");
+  });
+  input.addEventListener("keydown", e => {
+    if (e.key === "Enter") input.blur();
+  });
+}
 $("max-rrsp").addEventListener("click", () => {
-  me().ded = calc(prov(home)).me.breakdown.rrspRoom;
-  dedIn.value = me().ded.toLocaleString("en-CA");
+  const estimate = calc(prov(home)).me.breakdown.rrspRoom;
+  me().rrsp = estimate;
+  $<HTMLInputElement>("rrsp").value = estimate.toLocaleString("en-CA");
   render();
 });
 function syncAll() {
-  dedIn.value = me().ded.toLocaleString("en-CA");
+  for (const key of deductionInputs) $<HTMLInputElement>(key).value = (me()[key] || 0).toLocaleString("en-CA");
   inp.value = me().ord.toLocaleString("en-CA");
   sl.value = String(Math.min(me().ord, +sl.max));
   syncInv();

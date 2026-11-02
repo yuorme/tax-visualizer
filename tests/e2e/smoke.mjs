@@ -17,6 +17,7 @@
 // Known failures (rules.KNOWN) are reported but don't fail the run; `npm run e2e -- --strict` fails on them too.
 import fs from "node:fs";
 import { chromium } from "playwright";
+import { DEDUCTION_STEPS } from "./deductions.mjs";
 import { ALLOWED_HOSTS, openPage, settle } from "./page.mjs";
 import { COLUMN_COUNT, contrastViolations, inspect, KNOWN, MAX_LABEL_LENGTH } from "./rules.mjs";
 
@@ -316,6 +317,13 @@ for (const [width, colorScheme] of [
   const fuel = await run({ width, colorScheme, contrast: width === 375, steps: FUEL_STEPS });
   check(`${width}px ${colorScheme}, fuel tax`, width, fuel);
   console.log(`${width}px ${colorScheme}: ${FUEL_STEPS.length} fuel tax states checked`);
+}
+for (const width of [1000, 430, 375]) {
+  for (const colorScheme of ["light", "dark"]) {
+    const deductions = await run({ width, colorScheme, contrast: width === 375, steps: DEDUCTION_STEPS });
+    check(`${width}px ${colorScheme}, deductions`, width, deductions);
+    console.log(`${width}px ${colorScheme}: ${DEDUCTION_STEPS.length} deduction states checked`);
+  }
 }
 await browser.close();
 
