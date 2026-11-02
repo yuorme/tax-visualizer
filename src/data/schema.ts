@@ -105,6 +105,8 @@ export const federalSchema = z.object({
   }),
   workersBenefit: z.object({
     estimated: z.boolean().optional(),
+    /** Explains a derivation other than indexing last year's amounts, when the page notes describe estimates. */
+    estimationNote: z.string().optional(),
     standard: cwbRegion,
     secondaryEarnerExemption: amount,
     regional: z.record(z.string().length(2), cwbRegion),
@@ -175,6 +177,20 @@ const childBenefit = z.discriminatedUnion("program", [
     }),
   ),
   program(
+    "alberta-child-family-benefit-by-child",
+    z.object({
+      base: z.array(amount).length(4),
+      baseRate: z.array(rate).length(4),
+      baseThreshold: amount,
+      working: z.array(amount).length(4),
+      workingRate: rate,
+      workingFloor: amount,
+      workingThreshold: amount,
+      workingPhaseOut: z.array(rate).length(4),
+      minAnnual: amount,
+    }),
+  ),
+  program(
     "nova-scotia-child-benefit",
     z.object({ perChild: amount, fullBelow: amount, partialBelow: amount, partialOtherChildren: amount }),
   ),
@@ -207,6 +223,15 @@ const childBenefit = z.discriminatedUnion("program", [
     }),
   ),
   program("nl-child-benefit", z.object({ perChild: z.array(amount).length(4), fullUpTo: amount, endsAt: amount })),
+  program(
+    "nl-child-benefit-reduction",
+    z.object({
+      perChild: z.array(amount).length(4),
+      threshold: amount,
+      rate: z.array(rate).length(3),
+      additionalRate: rate,
+    }),
+  ),
   program("income-band-per-child", z.object({ bands: z.array(z.tuple([amount, amount])).min(1) })),
 ]);
 
@@ -255,6 +280,12 @@ const credit = z.discriminatedUnion("program", [
   program("mb-affordability-credits", z.object({ homeownerMax: amount, renter: amount })).extend({
     nameRenter: z.string(),
   }),
+  // Before the affordability credit: rebate a share of gross school taxes, then credit the remaining school
+  // taxes up to a cap. schoolTaxShare estimates the school portion of the reference city's total property tax.
+  program(
+    "mb-school-tax-credits",
+    z.object({ schoolTaxShare: rate, schoolRebateRate: rate, educationCreditMax: amount, renterMax: amount }),
+  ).extend({ nameRenter: z.string() }),
   program(
     "sk-low-income-tax-credit",
     z.object({ adult: amount, spouse: amount, child: amount, maxChildren: z.number().int(), rate, threshold: amount }),
@@ -349,7 +380,15 @@ export const provinceSchema = z
     /** First year the bracket limits stopped being indexed, when a province has frozen them. */
     bracketsFrozenSince: z.number().int().optional(),
     dividendTaxCredit: z.object({ eligible: rate, nonEligible: rate }),
-    spouseAmount: z.union([z.object({ max: amount, threshold: amount }), z.literal("federal"), z.literal("transfer")]),
+    spouseAmount: z.union([
+      z.object({ max: amount, threshold: amount }),
+      program(
+        "nova-scotia-spouse-amount",
+        z.object({ max: amount, threshold: amount, supplement: z.object({ max: amount, rate, threshold: amount }) }),
+      ),
+      z.literal("federal"),
+      z.literal("transfer"),
+    ]),
     employmentAmountCredit: z.boolean().optional(),
     childAmount: z.object({ perChild: amount, ages: z.enum(["all", "under6"]) }).optional(),
     childcareCredit: childcareCredit.optional(),
