@@ -84,6 +84,9 @@ export function personTax(fed: Federal, p: Province, x: Person, sp: Extra, ctx: 
   const ca = p.childAmount;
   const kidAmt = ca ? ca.perChild * ((ca.ages === "all" ? ctx.kids : ctx.u6) || 0) : 0;
   const pKid = tp(kidAmt * prr);
+  // NL428 line 58320 joins the ordinary non-refundable credit base, before dividends and low-income reduction.
+  const childcareCreditFull = p.childcareCredit?.program === "nl-childcare" ? (ctx.childcareDeduction ?? 0) * prr : 0;
+  const childcareCredit = tp(childcareCreditFull);
   const inv = fed.investment;
   const fDtcFull =
     x.ed * inv.grossUp.eligible * inv.dividendTaxCredit.eligible +
@@ -188,6 +191,7 @@ export function personTax(fed: Federal, p: Province, x: Person, sp: Extra, ctx: 
     // Figures the page shows that aren't steps of the calculation above. They sit in a nested object because the
     // golden snapshot (tests/golden/snapshot.mjs) locks every top-level number of this result.
     breakdown: {
+      childcareCredit: { calculated: childcareCreditFull, applied: childcareCredit },
       netIncome: netIncomeParts(fed, x, ctx.childcareDeduction), // what net income is made of
       rrspRoom: rrspRoom(fed, x),
       quebecAbatement: fedBasic * (1 - k), // the share of basic federal tax that Quebec residents don't pay federally

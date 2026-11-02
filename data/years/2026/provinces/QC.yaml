@@ -39,7 +39,21 @@ credits:
       couple: [0.116, 3600, 19828]
       parent: [0.30, 2400, 12808]
       coupleKids: [0.25, 3600, 19828]
+childcareCredit:
+  name: Quebec childcare expenses tax credit
+  program: quebec-childcare
+  # Year-end ages reflect under 16 during 2025 / under 14 during 2026; older infirm dependants remain eligible.
+  params:
+    youngUnder: 7
+    eligibleThrough: 14
+    annualYoung: 12525
+    annualOther: 6305
+    annualSevere: 17145
+    rates: [[25305, 0.78], [44620, 0.75], [46270, 0.74], [47935, 0.73], [49565, 0.72], [51225, 0.71], [122290, 0.7], [.inf, 0.67]]
 sources:
+  - {label: "Revenu Quebec, new childcare age limit in 2026", url: "https://www.revenuquebec.ca/en/press-room/tax-news/details/2025-09-23/new-age-limit-for-the-refundable-tax-credit-for-childcare-expenses/"}
+  - {label: "Revenu Quebec, Schedule C pooled expenses and family income", url: "https://www.revenuquebec.ca/documents/en/formulaires/tp/2025-12/TP-1.D.C-V%282025-12%29.pdf"}
+  - {label: "Finances Quebec, 2025 and 2026 childcare expense limits and income rates, Tables 3 and 5", url: "https://cdn-contenu.quebec.ca/cdn-contenu/adm/min/finances/publications-adm/parametres/AUTEN_IncomeTax2026.pdf"}
   - {label: "Revenu Québec, 2026 tax rates", url: "https://www.revenuquebec.ca/en/citizens/income-tax-return/completing-your-income-tax-return/income-tax-rates/"}
   - {label: "CGTSIM, Understanding school tax (Montreal school tax is billed separately by the CGTSIM)", url: "https://www.cgtsim.qc.ca/en/understanding-school-tax/"}
   - {label: "nesto, Canada Property Tax Guide 2026 (residential property tax rate)", url: "https://www.nesto.ca/mortgage-basics/property-taxes-canada-highest-to-lowest/"}

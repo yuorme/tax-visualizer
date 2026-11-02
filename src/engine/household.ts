@@ -4,6 +4,7 @@
 import { ccbOf, provincialChildBenefit } from "./benefits.ts";
 import { phased } from "./brackets.ts";
 import { childcareOf } from "./childcare.ts";
+import { childcareCreditOf } from "./childcare-credits.ts";
 import { creditsOf } from "./credits.ts";
 import { fuelTaxOf } from "./fuel.ts";
 import { netIncomeParts, netOf } from "./payroll.ts";
@@ -169,6 +170,23 @@ export function household(y: YearData, p: Province, hh: Household, peopleIn: Per
   const ccb = ccbOf(fed, famNet, kids, under6);
   const provBen = provincialChildBenefit(p.childBenefit, provincialFamNet, famEmp, kids, single, under6);
   const childBen = ccb + provBen;
+  const incomeBases = {
+    beforeChildcare: ppl.map(x => {
+      const n = netIncomeParts(fed, x);
+      return n.ord + n.cg + n.ed + n.nd + n.fd - n.ded - n.enh;
+    }),
+    federal: nets,
+    provincial: list.map(r => r.tiP),
+    provincialFamily: couple ? list[0].tiP + list[1].tiP : list[0].tiP,
+  };
+  const childcareCredit = childcareCreditOf(
+    p,
+    hh,
+    childcare,
+    incomeBases.beforeChildcare,
+    incomeBases.provincialFamily,
+    list.map(r => r.breakdown.childcareCredit.applied),
+  );
   // Refundable credits (counted only when the credits switch is on)
   const credits: Credit[] = hh.useCredits
     ? creditsOf(fed, p, {
@@ -182,6 +200,8 @@ export function household(y: YearData, p: Province, hh: Household, peopleIn: Per
         rent: hh.homeValue > 0 ? 0 : hh.rent * 12,
       })
     : [];
+  if (childcareCredit?.refundable && childcareCredit.applied > 0)
+    credits.push([childcareCredit.name, childcareCredit.applied]);
   const refund = credits.reduce((a, [, v]) => a + v, 0);
   const benefits = childBen + refund;
   return {
@@ -199,15 +219,8 @@ export function household(y: YearData, p: Province, hh: Household, peopleIn: Per
     netTotal: totals.total - benefits, // income tax + payroll − child benefits − refundable credits
     breakdown: {
       ...householdBreakdown(list),
-      incomeBases: {
-        beforeChildcare: ppl.map(x => {
-          const n = netIncomeParts(fed, x);
-          return n.ord + n.cg + n.ed + n.nd + n.fd - n.ded - n.enh;
-        }),
-        federal: nets,
-        provincial: list.map(r => r.tiP),
-        provincialFamily: couple ? list[0].tiP + list[1].tiP : list[0].tiP,
-      },
+      incomeBases,
+      childcareCredit,
     }, // nested so the golden snapshot keeps its format (see personTax)
   };
 }

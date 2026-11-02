@@ -167,8 +167,14 @@ for (const year of [2025, 2026]) {
       assert.equal(r.me.ti, no.me.ti - 8000);
       assert.ok(r.ccb > no.ccb);
       if (p.code !== "QC") {
-        const legacy = compute(y, p, { ...h, childcare: undefined, people: [{ ...h.people[0], ded: 10_000 }] });
-        assert.deepEqual(snapshot(r), snapshot(legacy));
+        // Isolate federal/provincial deduction plumbing from dedicated provincial childcare credits.
+        const withoutCredit = { ...p, childcareCredit: undefined };
+        const legacy = compute(y, withoutCredit, {
+          ...h,
+          childcare: undefined,
+          people: [{ ...h.people[0], ded: 10_000 }],
+        });
+        assert.deepEqual(snapshot(compute(y, withoutCredit, h)), snapshot(legacy));
       }
     }
     assert.deepEqual(h, original);

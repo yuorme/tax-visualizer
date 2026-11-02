@@ -337,6 +337,33 @@ const lowIncomeReduction = z.discriminatedUnion("program", [
   ),
 ]);
 
+const childcareCredit = z.discriminatedUnion("program", [
+  program(
+    "ontario-care",
+    z.object({
+      fullThrough: amount,
+      maxRate: rate,
+      decrement: rate,
+      steps: z
+        .array(z.tuple([amount, z.number().positive()]))
+        .min(1)
+        .refine(xs => xs.every((x, i) => i === 0 || x[0] > xs[i - 1][0]), "CARE band limits must increase"),
+    }),
+  ),
+  program(
+    "quebec-childcare",
+    z.object({
+      youngUnder: z.number().int().positive(),
+      eligibleThrough: z.number().int().nonnegative(),
+      annualYoung: amount,
+      annualOther: amount,
+      annualSevere: amount,
+      rates: brackets,
+    }),
+  ),
+  program("nl-childcare", z.object({})),
+]);
+
 export const provinceSchema = z
   .object({
     code: z.string().length(2),
@@ -364,6 +391,7 @@ export const provinceSchema = z
     ]),
     employmentAmountCredit: z.boolean().optional(),
     childAmount: z.object({ perChild: amount, ages: z.enum(["all", "under6"]) }).optional(),
+    childcareCredit: childcareCredit.optional(),
     surtax: z.array(z.tuple([amount, rate])).optional(),
     ontarioTaxReduction: z.object({ base: amount, perChild: amount }).optional(),
     lift: z.object({ max: amount, rate, threshold: amount, familyThreshold: amount, phaseOut: rate }).optional(),

@@ -1,0 +1,18 @@
+Title: New Age Limit for the Refundable Tax Credit for Childcare Expenses
+URL: https://www.revenuquebec.ca/en/press-room/tax-news/details/2025-09-23/new-age-limit-for-the-refundable-tax-credit-for-childcare-expenses/
+Published: 2025-09-23
+Verified: 2026-11-02
+Capture method: Browser indexed-text reading. Direct fetch-source and browser-user-agent HTTP requests returned 403.
+This is a verification note, not a hashed original-document extract.
+================================================================================
+
+Exact excerpt:
+"Beginning in the 2026 taxation year, the maximum age for an eligible child will be lowered from 16 to 14."
+
+Paraphrase of the remaining eligibility conditions:
+The new rule requires the child to be younger than 14 at some point during the year. It covers the taxpayer's or
+spouse's child, or a dependant meeting the income limit, subject to the other eligibility conditions. The change
+leaves the exemption from the age limit for dependent children with mental or physical infirmities intact.
+
+The March 25, 2025 Quebec budget announced the change. The backend represents ordinary year-end ages through 14
+in 2026, compared with through 16 in 2025, and retains infirm-dependant eligibility without an ordinary age cap.

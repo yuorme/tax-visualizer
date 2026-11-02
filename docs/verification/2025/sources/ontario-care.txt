@@ -1,0 +1,127 @@
+Title: Ontario Childcare Access and Relief from Expenses (CARE) Tax Credit
+URL: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5006-tca/5006-tca-25e.pdf
+Fetched: 2026-11-02
+SHA-256 of the original: c3a5a874f866f4d0879b45920db259fb0bb1f6ab53b9c23c8217d6977f86e49c
+Publication date modified: 2025-10-29
+PDF pages: all 2
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 1 of 2 ---
+
+Schedule ON479–A
+2025
+Protected B when completed
+Ontario Childcare Access and Relief
+from Expenses (CARE) Tax Credit
+Complete Form T778, Child Care Expenses Deduction for 2025, and enter the amount claimed on line 21400 of your return
+before completing this form.
+To find out if you are eligible for this tax credit, go to canada.ca/on-tax-info.
+Complete and attach a copy of this schedule to your paper return.
+An eligible child can be any of the following:
+• your or your spouse's or common-law partner's child
+• a child whose net income was $16,129 or less and who was dependent upon you or your spouse or common-law partner
+The child must have been under 16 years of age at some time in the year; however, the age limit does not apply if the child
+had a physical or mental impairment and was dependent upon you or your spouse or common-law partner at any time
+during the year.
+For each eligible child, there may be one or more supporting persons.
+A supporting person is a person (other than you) who meets all of the following conditions:
+• They were a resident of Ontario at the end of 2025
+• They lived with you at any time in 2025 and at any time in the first 60 days of 2026, and were any of the following:
+– the eligible child's parent
+– your spouse or common-law partner, if you are the parent of the eligible child
+– an individual claiming an amount for the eligible child on line 30425, 30400, 30450, or 30500 of their return
+No supporting person for any eligible children
+If none of the eligible children has a supporting person, calculate your adjusted income and enter it on line 4 of column 1.
+One supporting person for all eligible children
+If there is only one supporting person and all of the eligible children have the same supporting person:
+• Calculate your adjusted income and enter it on line 4 of column 1
+• Calculate the adjusted income of the supporting person and enter it on line 4 of column 2
+Two or more supporting persons for all eligible children
+If there are two or more supporting persons and all of the eligible children have the same supporting persons:
+• Calculate your adjusted income and enter it on line 4 of column 1
+• Calculate the adjusted income of each supporting person on a separate sheet and enter the total of their adjusted incomes
+on line 4 of column 2 (leave lines 1 to 3 of column 2 blank)
+Different supporting persons for each eligible child
+If there is one or more supporting persons and the eligible children do not have the same supporting person(s):
+• Calculate your adjusted income and enter it on line 4 of column 1
+• Calculate the adjusted income of each supporting person. For each eligible child, calculate the total of the adjusted
+incomes of all supporting persons for that child on a separate sheet. Enter the highest sum on line 4 of column 2
+(leave lines 1 to 3 of column 2 blank)
+5006-TCA E (25) (Ce formulaire est disponible en français.) Page 1 of 2
+
+--- PDF page 2 of 2 ---
+
+Protected B when completed
+Family adjusted income calculation for the tax credit
+Column 1
+You
+Column 2
+Supporting person(s)
+1
+Net income from line 23600 of the return (or the amount you would have
+entered if the instructions on line 23600 said "if negative, show in brackets")
+63045 2Child care expenses deduction from line 21400 of the return + +
+3Social benefits repayment from line 23500 of the return + +
+63047 4Adjusted incomeAdd lines 1 to 3 (if negative, enter "0"). = =
+5Family adjusted incomeAdd the amounts from line 4 of columns 1 and 2.
+6Enter your child care expenses deduction from line 21400 of your return.
+7
+If your family adjusted income on line 5 is "0", enter 75%.
+If not, enter the tax credit rate that applies to your family adjusted income from the table below. × %
+8
+Line 6 multiplied by the percentage from line 7
+Enter this amount on line 63050 of your Form ON479. =
+Family adjusted income Tax credit
+rate
+more than but not
+more than
+$0 $20,000 75%
+$20,000 $22,500 73%
+$22,500 $25,000 71%
+$25,000 $27,500 69%
+$27,500 $30,000 67%
+$30,000 $32,500 65%
+$32,500 $35,000 63%
+$35,000 $37,500 61%
+$37,500 $40,000 59%
+$40,000 $45,000 57%
+$45,000 $50,000 55%
+$50,000 $55,000 53%
+$55,000 $60,000 51%
+Family adjusted income Tax credit
+rate
+more than but not
+more than
+$60,000 $63,600 49%
+$63,600 $67,200 47%
+$67,200 $70,800 45%
+$70,800 $74,400 43%
+$74,400 $78,000 41%
+$78,000 $81,600 39%
+$81,600 $85,200 37%
+$85,200 $88,800 35%
+$88,800 $92,400 33%
+$92,400 $96,000 31%
+$96,000 $99,600 29%
+$99,600 $103,200 27%
+$103,200 $106,800 25%
+Family adjusted income Tax credit
+rate
+more than but not
+more than
+$106,800 $110,400 23%
+$110,400 $114,000 21%
+$114,000 $117,600 19%
+$117,600 $121,200 17%
+$121,200 $124,800 15%
+$124,800 $128,400 13%
+$128,400 $132,000 11%
+$132,000 $135,600 9%
+$135,600 $139,200 7%
+$139,200 $142,800 5%
+$142,800 $146,400 3%
+$146,400 $150,000 1%
+$150,000 0%
+See the privacy notice on your return.
+5006-TCA E (25) Page 2 of 2
