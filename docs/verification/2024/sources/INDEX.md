@@ -14,6 +14,7 @@ keeps the pages the data uses). Nothing under `docs/` is imported by `src/`, so 
 |---|---|---|---|---|
 | [rule-mb-budget-2024](rule-mb-budget-2024.txt) | BULLETIN NO | https://www.gov.mb.ca/finance/taxation/pubs/bulletins/2024budget.pdf | 2026-11-02 | `d4d572216b9263d7013c3387dbf294435b59735c35fdae8099367f1095b8dbc6` |
 | [rule-mb479-2024](rule-mb479-2024.txt) | Manitoba Credits | https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5007-tc/5007-tc-24e.pdf | 2026-11-02 | `ac35cb16dd8ac2bf57ae712037a79bc12a6e4812a1ec68d7b9e2c493e4f26083` |
+| [rule-nl-child-regulations-2024](rule-nl-child-regulations-2024.txt) | NLG20240216 FEB 16 2024 VOL 99_NO7 | https://www.gov.nl.ca/dgsnl/files/NLG20240216.pdf | 2026-11-02 | `1c3bf1321d14ce70a8b4b762ff6115bf11db0683ad1fc16945c31c2b66d67762` |
 | [rule-ns-worksheet-2024](rule-ns-worksheet-2024.txt) | Worksheet NS428 | https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5003-d/5003-d-24e.pdf | 2026-11-02 | `51597675fa8dfe16be250de5c673b9bb9d7c37e4f8ac515c73ec8544b2b80d0a` |
 | [rule-ns428-2024](rule-ns428-2024.txt) | Nova Scotia Tax | https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5003-c/5003-c-24e.pdf | 2026-11-02 | `19e9d9f54fa32217505e455e2ccd1be88663d5c03936bb5e0e226be3a9a91870` |
 | [rule-quebec-2024](rule-quebec-2024.txt) | Parameters of the Personal Income Tax System - 2024 | https://cdn-contenu.quebec.ca/cdn-contenu/adm/min/finances/publications-adm/parametres/AUTEN_IncomeTax2024.pdf | 2026-11-02 | `83fcc19fe69fcf3c1f329fcc840cb4a9772ea3785717ee05b2897e1b7979fa89` |

@@ -91,6 +91,8 @@ export const federalSchema = z.object({
   }),
   workersBenefit: z.object({
     estimated: z.boolean().optional(),
+    /** Explains a derivation other than indexing last year's amounts, when the page notes describe estimates. */
+    estimationNote: z.string().optional(),
     standard: cwbRegion,
     secondaryEarnerExemption: amount,
     regional: z.record(z.string().length(2), cwbRegion),
@@ -193,6 +195,15 @@ const childBenefit = z.discriminatedUnion("program", [
     }),
   ),
   program("nl-child-benefit", z.object({ perChild: z.array(amount).length(4), fullUpTo: amount, endsAt: amount })),
+  program(
+    "nl-child-benefit-reduction",
+    z.object({
+      perChild: z.array(amount).length(4),
+      threshold: amount,
+      rate: z.array(rate).length(3),
+      additionalRate: rate,
+    }),
+  ),
   program("income-band-per-child", z.object({ bands: z.array(z.tuple([amount, amount])).min(1) })),
 ]);
 

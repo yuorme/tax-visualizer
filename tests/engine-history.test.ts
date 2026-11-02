@@ -1,8 +1,15 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import { loadYear } from "../src/data/load.ts";
-import { type Province, provinceSchema } from "../src/data/schema.ts";
-import { blank, creditsOf, type Household, household, provincialBpa } from "../src/engine/index.ts";
+import { type ChildBenefitProgram, type Province, provinceSchema } from "../src/data/schema.ts";
+import {
+  blank,
+  creditsOf,
+  type Household,
+  household,
+  provincialBpa,
+  provincialChildBenefit,
+} from "../src/engine/index.ts";
 
 const y = loadYear(2025);
 const province = (code: string) => {
@@ -112,4 +119,33 @@ test("historical Manitoba: renters get at most actual rent, and owners cannot al
   const hh = { ...family(50000), homeValue: 4000 / mb.propertyTax.rate };
   assert.equal(new Map(household(y, mb, hh).credits).get("School relief"), 1350);
   assert.deepEqual(household(y, mb, { ...hh, useCredits: false }).credits, []);
+});
+
+// Newfoundland and Labrador Regulation 9/24, sections 1 and 3: published January 2024 amounts, before July
+// indexation. The child-count-specific reduction rates remain the same after dollar amounts are indexed.
+const nl: ChildBenefitProgram = {
+  program: "nl-child-benefit-reduction",
+  params: {
+    perChild: [1788, 1896, 2036, 2188],
+    threshold: 17397,
+    rate: [0.161, 0.3318, 0.5151],
+    additionalRate: 0.1971,
+  },
+};
+const nlBenefit = (income: number, kids: number) => provincialChildBenefit(nl, income, 0, kids, false);
+
+test("historical NL child benefit: child-count reduction rates and extra-child increments follow the regulation", () => {
+  for (const [kids, maximum, reduction] of [
+    [1, 1788, 161],
+    [2, 3684, 331.8],
+    [3, 5720, 515.1],
+    [4, 7908, 712.2],
+    [6, 12284, 1106.4],
+  ]) {
+    assert.equal(nlBenefit(0, kids), maximum);
+    assert.equal(nlBenefit(17397, kids), maximum);
+    assert.ok(Math.abs(nlBenefit(18397, kids) - (maximum - reduction)) < 1e-9);
+    assert.equal(nlBenefit(100000, kids), 0);
+  }
+  assert.equal(nlBenefit(0, 0), 0);
 });

@@ -57,6 +57,20 @@ exists in the later years but is absent from the current model; adding that prog
 
 ## Remaining modeled rules
 
+### Newfoundland and Labrador child benefit
+
+The collector located [Regulation 9/24](https://www.gov.nl.ca/dgsnl/files/NLG20240216.pdf), Gazette pages 158–159
+(PDF pages 12–13). It specifies reductions above $17,397 of family adjusted income: 16.10% for one child,
+33.18% for two, 51.51% for three, plus 19.71 percentage points for each additional child. The per-child maximum
+amounts are indexed separately. A common end-income taper does not reproduce these child-count-specific rates.
+
+`nl-child-benefit-reduction` uses the statutory rate schedule. Tests use the regulation's January 2024 amounts
+and cover one, two, three, four and six children, the income threshold and the zero floor. The year collector
+supplies the July 2024 indexed amounts. The source is cached as `rule-nl-child-regulations-2024.txt`.
+Existing years keep their former approximation pending a separately reviewed data correction.
+
+### Compatibility table
+
 This branch caches CRA T4127 (January 2024), relevant sections of T4114 (July 2024 to June 2025), RC4210
 (2024–2025), and Quebec's 2024 tax parameters under `2024/sources/rule-*`. The accompanying data collection
 caches the provincial 428 forms and regional CWB calculation sheets. Those sources supply the amounts;
@@ -79,7 +93,7 @@ this table records the compatibility conclusions.
 | NB | Same low-income reduction, child benefit/working supplement and HST credit | Data only |
 | NS | Same child benefit and affordable-living credit | Data only except spouse program above |
 | PE | Five brackets replace the earlier surtax; sales-credit supplement unchanged | Existing bracket and `pei-sales-tax-credit` shapes |
-| NL | Same low-income reduction, child benefit and income-supplement shapes | Data only |
+| NL | Existing low-income reduction and income supplement; statutory child-count reduction rates located | New child-benefit program above |
 | NT | Same territorial payroll tax and child-benefit model | Data only |
 | NU | Same territorial payroll tax, young-child amount and child benefit | Data only |
 | YT | BPA and spouse amount follow federal amounts, with employment credit and child benefit | Data only |
@@ -98,7 +112,10 @@ Source entry points:
 - BC's family-benefit bonus is paid monthly throughout this benefit year. Its enhanced max/min amounts fit
   the current formula; the collector must identify the temporary enhancement in source comments.
 - Carbon charges and rebates, including the territorial offsets described in RC4210, belong to #29.
+- `workersBenefit.estimationNote` lets a collector describe derived Quebec income-at-maximum parameters
+  without incorrectly calling them an estimate indexed from last year's unpublished CWB amounts.
 - Notes currently assume Manitoba's 2025 affordability program. They must accept the historical program
-  before the UI can render 2024. The year data and UI integration are separate from this engine prerequisite.
+  and the new NL child-benefit program before the UI can render 2024. The year data and UI integration are
+  separate from this engine prerequisite.
 - No 2025 or 2026 parameters or golden files change here. This audit preserves the existing scope and
   approximations; it is not a certification that every existing formula matches every tax-return situation.
