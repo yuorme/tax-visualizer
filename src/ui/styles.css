@@ -865,11 +865,34 @@ table.cmp .worse {
   font-size: 13px;
   cursor: pointer;
 }
-.ded-row {
+.deductions summary {
   display: flex;
   align-items: baseline;
-  gap: 10px;
+  gap: 12px;
+  cursor: pointer;
+}
+.control > .control-row:has(.deductions[open]) {
+  align-items: start;
+}
+#ded-total {
+  font: 600 22px var(--font-num);
+  font-variant-numeric: tabular-nums;
+}
+#ded-edit {
+  color: var(--focus);
+  font-size: 13px;
+  text-decoration: underline;
+}
+.ded-fields {
+  display: grid;
+  gap: 14px;
+  margin-top: 16px;
+}
+.ded-fields .field > .money {
   flex-wrap: wrap;
+}
+.ded-fields .per {
+  font-size: 11px;
 }
 .money.md input {
   font-family: var(--font-num);
@@ -1489,9 +1512,6 @@ footer a {
   .ded {
     flex: 1 1 110px;
     min-width: 0;
-  }
-  .ded-row {
-    gap: 0 10px;
   }
   #max-rrsp {
     padding-left: 0;

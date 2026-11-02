@@ -4,14 +4,17 @@ export type IncomeKey = "ord" | "cg" | "ed" | "nd" | "fd";
 export const INCOME_KEYS: IncomeKey[] = ["ord", "cg", "ed", "nd", "fd"];
 
 /** One person's income for the year. ord = employment and other fully taxed income; cg = net capital gains (can be
- *  negative); ed / nd = eligible / non-eligible dividends; fd = foreign dividends; ded = deductions (RRSP etc.). */
+ *  negative); ed / nd = eligible / non-eligible dividends; fd = foreign dividends; ded = other deductions,
+ *  excluding the separately entered RRSP/FHSA claims. */
 export interface Person {
   ord: number;
   cg: number;
   ed: number;
   nd: number;
   fd: number;
-  ded: number;
+  ded: number; // other annual deductions; legacy generic claims stay here
+  rrsp?: number; // annual deduction claimed, not contributions or room
+  fhsa?: number; // annual deduction claimed, including eligible deferred claims
 }
 
 export interface Household {

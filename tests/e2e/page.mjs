@@ -44,7 +44,7 @@ export async function openPage(browser, { width, height = 1000, colorScheme = "l
   });
   const page = await context.newPage();
   page.on("pageerror", e => errors.push(e.message));
-  // Each new context starts with empty storage; preserve it across reloads within this test.
+  // A new browser context has empty storage; leave subsequent reloads intact to test persistence.
   await page.goto(PAGE_URL);
   await settle(page);
   const fontsLoaded = await page.evaluate(() => [...document.fonts].some(f => f.status === "loaded"));

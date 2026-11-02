@@ -20,6 +20,7 @@ import { chromium } from "playwright";
 import { listYears, loadYear } from "../../src/data/load.ts";
 import { compute } from "../../src/engine/index.ts";
 import { toHousehold } from "../golden/adapter.ts";
+import { DEDUCTION_STEPS } from "./deductions.mjs";
 import { ALLOWED_HOSTS, openPage, settle } from "./page.mjs";
 import { COLUMN_COUNT, contrastViolations, inspect, KNOWN, MAX_LABEL_LENGTH } from "./rules.mjs";
 
@@ -262,8 +263,10 @@ const YEAR_STEPS = [
         const notes = await p.textContent("#year-notes");
         if (!notes.includes(`up to the ${year} dollar limit`))
           problems.push("notes still show another year's RRSP limit");
-        const tip = await p.getAttribute('[data-note="deductions"]', "data-tip");
-        if (!tip.includes(`the ${year} limit`)) problems.push("deductions tooltip did not follow selected year");
+        const tip = await p.getAttribute('[data-note="rrsp"]', "data-tip");
+        if (!tip.includes(`the ${year} limit`)) problems.push("RRSP tooltip did not follow selected year");
+        const sharedSources = await p.locator("#default-sources a").count();
+        if (sharedSources !== 3) problems.push("shared spending assumption sources disappeared");
         if ((await p.title()) !== `Provincial Tax Compare ${year}`) problems.push("page title did not follow year");
         const fuel = data.federal.fuelTax != null && data.federal.driving != null;
         if ((await shown(p, "#tab-driving")) !== fuel) problems.push("Driving tab does not match year's fuel coverage");
@@ -394,6 +397,13 @@ for (const [width, colorScheme] of [
   const history = await run({ width, colorScheme, contrast: width === 375, steps: YEAR_STEPS });
   check(`${width}px ${colorScheme}, year selector`, width, history);
   console.log(`${width}px ${colorScheme}: ${YEAR_STEPS.length} year selector states checked`);
+}
+for (const width of [1000, 430, 375]) {
+  for (const colorScheme of ["light", "dark"]) {
+    const deductions = await run({ width, colorScheme, contrast: width === 375, steps: DEDUCTION_STEPS });
+    check(`${width}px ${colorScheme}, deductions`, width, deductions);
+    console.log(`${width}px ${colorScheme}: ${DEDUCTION_STEPS.length} deduction states checked`);
+  }
 }
 await browser.close();
 
