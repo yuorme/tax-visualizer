@@ -1,0 +1,124 @@
+Title: GUIDE – INCOME TAX RETURN – 2023
+URL: https://www.revenuquebec.ca/documents/en/formulaires/tp/2023-12/TP-1.G-V%282023-12%29.pdf
+Fetched: 2026-11-02
+SHA-256 of the original: 1e3d7068c8fcaa6e10a6aa4642c3ab46a46e5a47d4e4b00ec07d12687c05751d
+Publication date modified: 2023-12-13
+PDF pages: 30 of 86
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 30 of 86 ---
+
+30
+2023 – GUIDE-V
+Virtual currency (lines 12 and 22 of Schedule L)
+There may be tax consequences if, as part of your business activities, you:
+•• exchange or sell virtual currency on a regular basis by speculating
+on its value; or
+•• accept it as payment for the sale of goods or services.
+Likewise, there may also be tax consequences if you operate a
+cryptocurrency mining business and receive a reward for your services.
+For more information, see guide IN-155-V,
+Business and Professional
+Income
+Property flipping (home or rental property)
+[lines 12 and 22 of Schedule L]
+If, in 2023, you disposed of (sold, transferred, exchanged, gave, etc.)
+a residential property (including rental property or a right to purchase)
+that you owned for less than 365 consecutive days and no life event justified
+the disposition, we consider that you flipped the property. The profit
+on the sale is therefore fully taxable as business income.
+For more information, go to revenuquebec.ca
+Farming (lines 13 and 23 of Schedule L)
+On line 13 of Schedule L, enter the gross income resulting from the
+operation of a farming business. If you were a member of a partnership,
+enter the partnership’s gross income.
+On line 23 of Schedule L, enter the net income (or net loss) resulting from
+the operation of a farming business. If you were a member of a partnership,
+enter your share of the net income (or of the net loss). If you were a specified
+member of a partnership, see “Income from a partnership of which you
+were a specified member” opposite.
+If you sustained a farm loss, contact us to find out how to calculate it.
+End-of-career allowance received by a physician
+(line 28 of Schedule L)
+If you are a physician and you received an allowance as part of a program
+providing end-of-career allowances (provided you did not practise medicine
+as a self-employed person in 2023), enter the allowance on line 28
+of Schedule L. If you received the allowance as a salaried physician,
+enter it on line 154 instead.
+Member of a partnership
+If you were a member of a partnership, enter the partnership’s gross income
+and your share of the net income (or of the net loss). If you were a specified
+member of a partnership, see “Income from a partnership of which
+you were a specified member” opposite.
+If you did not receive an RL-15 slip, enclose a copy of the partnership’s
+financial statements or form TP-80-V,
+Business or Professional Income
+and Expenses
+Income from a partnership of which you were
+a retiring partner (line 28 of Schedule L)
+Enter the share of a partnership’s income or losses that the partnership
+allocated to you:
+•• as a retiring partner, for the period in which you were not a member of the
+partnership; or
+•• as the surviving spouse of a deceased member of the partnership
+(provided you were not a member or employee of the partnership and
+did not carry out any activities on behalf of the partnership).
+This amount may be shown in box 1-10 of your RL-15 slip.
+Income from a partnership of which you were
+a specified member (line 29 of Schedule L)
+Enter your share of the income or losses of a partnership of which you were
+a
+specified member. This amount is shown in box 1 of your RL-15 slip
+if the code “0” or “1” appears in box 40 of the slip.
+Specified member
+As a rule, a limited partner or a partner who is not actively engaged in the
+operation of the business carried on by the partnership or in the operation
+of a similar business (silent partner).
+If, on line 29 of Schedule L, you enter a loss from a partnership of which
+you were a specified member, see the instructions for line 260 and complete
+Schedule N.
+If you did not receive an RL-15 slip, enclose a copy of the partnership’s
+financial statements. Enter your share of the partnership’s income,
+excluding any amounts you can report elsewhere in your income tax return.
+Commissions you received from a business
+in the years following the end of its operations
+(line 30 of Schedule L)
+Enter commissions you received from a business in the years following
+the end of its operations on line 30 of Schedule L, instead of on line 26.
+You are not required to pay the Québec Pension Plan (QPP) contribution
+or the Québec parental insurance plan (QPIP) premium on this amount.
+Note that any commissions owed to you while you operated your business
+that were not paid in the year you ceased operations must be entered
+on line 26 of Schedule L.
+Insurable earnings (QPIP) and pensionable earnings (QPP)
+of a person responsible for a family-type resource
+or an intermediate resource (line 40 of Schedule L)
+If you received an RL-29 slip, enter on line 40 of Schedule L the amount
+of your insurable earnings and pensionable earnings (calculated
+in form LM-53-V,
+Insurable Earnings Under the QPIP and Pensionable
+Earnings Under the QPP of a Person Responsible for a Family-Type
+Resource or an Intermediate Resource, which you must enclose with
+your return). This amount will be used to determine your Québec Pension
+Plan (QPP) contribution and Québec parental insurance plan (QPIP)
+premium on income from self-employment. For more information, see
+the instructions for lines 439 and 445.
+Foreign business income
+You must report your foreign business income (in Canadian dollars).
+See “Foreign currency” on page 18.
+Financial assistance received as a result of a disaster
+If you received financial assistance as a result of a disaster, see guide
+IN-125-V,
+The Tax Effects of Financial Assistance Received as a Result
+of a Disaster
+Government payments (RL-27 slip)
+If you received an RL-27 slip, the amounts shown on the slip must
+be included in the calculation of your business income.
+Income averaging for forest producers
+If, under the
+Sustainable Forest Development Act, you are a certified forest
+producer (or a member of a partnership that is a certified forest producer)
+regarding a private forest, you may be able to request that a portion
+of the income generated by the non-retail sale of timber produced
+in the private forest be averaged. See point 21 in the instructions for line 297.
