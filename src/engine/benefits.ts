@@ -110,5 +110,12 @@ export function provincialChildBenefit(
       for (const [below, per] of b.params.bands) if (famNet < below) return per * kids;
       return 0;
     }
+    case "nl-child-benefit-reduction": {
+      const q = b.params;
+      let amt = 0;
+      for (let i = 0; i < kids; i++) amt += q.perChild[Math.min(i, 3)];
+      const reductionRate = q.rate[Math.min(kids, 3) - 1] + Math.max(0, kids - 3) * q.additionalRate;
+      return Math.max(0, amt - reductionRate * over(q.threshold));
+    }
   }
 }
