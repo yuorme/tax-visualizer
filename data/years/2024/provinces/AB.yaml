@@ -1,0 +1,37 @@
+# Benefit-year figures use July 2024 to June 2025, applied to current-year income.
+# ACFB base reduction rates retain the model approximation [8,12,16,20]%; CRA publishes maxima and start.
+
+code: AB
+name: Alberta
+order: 2
+brackets:
+  - [148269, 0.1]
+  - [177922, 0.12]
+  - [237230, 0.13]
+  - [355845, 0.14]
+  - [.inf, 0.15]
+basicPersonalAmount: 21885
+dividendTaxCredit: {eligible: 0.0812, nonEligible: 0.0218}
+spouseAmount: {max: 21885, threshold: 0}
+salesTax: {rate: 0.05, label: 5% GST}
+propertyTax: {rate: 0.0064861, city: Calgary}
+childBenefit:
+  name: Alberta Child and Family Benefit
+  program: alberta-child-family-benefit
+  params:
+    base: [1469, 2204, 2939, 3674]
+    baseRate: [0.08, 0.12, 0.16, 0.2]
+    baseThreshold: 27024
+    working: [752, 1437, 1847, 1982]
+    workingRate: 0.15
+    workingFloor: 2760
+    workingThreshold: 45285
+    workingPhaseOut: 0.15
+  estimated: true
+sources:
+  - {label: "CRA, AB428 for 2024 (brackets, personal amounts and reductions)", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5009-c/5009-c-24e.pdf}
+  - {label: "CRA, AB428 worksheet for 2024 (dividend credits)", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5009-d/5009-d-24e.pdf}
+  - {label: "CRA, T4114: provincial child benefits July 2024 to June 2025", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pub/t4114/t4114-24e.pdf}
+  - {label: "CRA, GST/HST historical rates and provincial sales-tax rates", url: https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/charge-collect-which-rate/calculator.html}
+  - {label: "City of Calgary, 2024 residential municipal plus education rate", url: https://www.calgary.ca/property-owners/taxes/bill-rate-calculation.html}
+  - {label: "Alberta, child and family benefit working component phase-in", url: https://www.alberta.ca/alberta-child-and-family-benefit}
