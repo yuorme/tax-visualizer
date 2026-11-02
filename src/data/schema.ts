@@ -241,6 +241,12 @@ const credit = z.discriminatedUnion("program", [
   program("mb-affordability-credits", z.object({ homeownerMax: amount, renter: amount })).extend({
     nameRenter: z.string(),
   }),
+  // Before the affordability credit: rebate a share of gross school taxes, then credit the remaining school
+  // taxes up to a cap. schoolTaxShare estimates the school portion of the reference city's total property tax.
+  program(
+    "mb-school-tax-credits",
+    z.object({ schoolTaxShare: rate, schoolRebateRate: rate, educationCreditMax: amount, renterMax: amount }),
+  ).extend({ nameRenter: z.string() }),
   program(
     "sk-low-income-tax-credit",
     z.object({ adult: amount, spouse: amount, child: amount, maxChildren: z.number().int(), rate, threshold: amount }),
@@ -308,7 +314,15 @@ export const provinceSchema = z
     /** First year the bracket limits stopped being indexed, when a province has frozen them. */
     bracketsFrozenSince: z.number().int().optional(),
     dividendTaxCredit: z.object({ eligible: rate, nonEligible: rate }),
-    spouseAmount: z.union([z.object({ max: amount, threshold: amount }), z.literal("federal"), z.literal("transfer")]),
+    spouseAmount: z.union([
+      z.object({ max: amount, threshold: amount }),
+      program(
+        "nova-scotia-spouse-amount",
+        z.object({ max: amount, threshold: amount, supplement: z.object({ max: amount, rate, threshold: amount }) }),
+      ),
+      z.literal("federal"),
+      z.literal("transfer"),
+    ]),
     employmentAmountCredit: z.boolean().optional(),
     childAmount: z.object({ perChild: amount, ages: z.enum(["all", "under6"]) }).optional(),
     surtax: z.array(z.tuple([amount, rate])).optional(),

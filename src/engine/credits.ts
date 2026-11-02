@@ -96,6 +96,15 @@ export function creditsOf(fed: Federal, p: Province, f: CreditInput): Credit[] {
         else if (rent > 0) out.push([cr.nameRenter, q.renter]);
         break;
       }
+      case "mb-school-tax-credits": {
+        const q = cr.params;
+        if (propTax > 0) {
+          const schoolTax = propTax * q.schoolTaxShare;
+          const rebate = schoolTax * q.schoolRebateRate;
+          out.push([name, rebate + Math.min(q.educationCreditMax, schoolTax - rebate)]);
+        } else if (rent > 0) out.push([cr.nameRenter, Math.min(rent, q.renterMax)]);
+        break;
+      }
       case "sk-low-income-tax-credit": {
         const q = cr.params,
           n = Math.min(q.maxChildren, parent ? kids - 1 : kids);
