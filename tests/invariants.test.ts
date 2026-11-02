@@ -352,11 +352,11 @@ test("every known stacked-clawback exception is still seen", () => {
 // ---- Rates, signs and caps ------------------------------------------------------------------------------------
 
 /** Highest combined federal and provincial rate on the next dollar of ordinary income: the top bracket rates, the
- *  Quebec abatement, and the Ontario surtax charged on top of provincial tax. */
+ *  Quebec abatement, and any surtax charged on top of provincial tax. */
 function topCombinedRate(y: YearData, p: Province): number {
   const k = p.system === "quebec" ? 1 - y.federal.quebecAbatement : 1;
   const top = (b: [number, number][]) => Math.max(...b.map(([, r]) => r));
-  const surtax = (p.surtax ?? []).reduce((a, [, r]) => a + r, 0);
+  const surtax = (p.surtax ?? []).reduce((a, [, r]) => a + r, 0) + (p.postDividendSurtax?.params.rate ?? 0);
   return top(y.federal.brackets) * k + top(p.brackets) * (1 + surtax);
 }
 /** Income received, counting a capital loss as nothing: it can't offset other income. */

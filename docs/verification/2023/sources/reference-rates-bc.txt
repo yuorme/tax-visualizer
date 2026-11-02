@@ -1,0 +1,79 @@
+Title: BC 2024 and 2023 Tax Rates & Tax Brackets
+URL: https://www.taxtips.ca/priortaxrates/tax-rates-2023-2024/bc.htm
+Fetched: 2026-11-02
+SHA-256 of the original: fb80059b09ba737970e93a2d84d688e9a0ee3fd7908eef93eecab006d79738f5
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+#### Home -> British Columbia
+
+#### Tax Rates -> 2023-2024 Tax Rates -> BC Personal Income Tax Rates
+
+# BC 2024 and 2023 Tax Rates & Tax Brackets
+
+##### BC Income Tax Act s. 4.1, 4.3, 4.52, 4.69
+
+The BC tax brackets and personal tax credit amounts are increased for 2024 by an indexation factor of 1.05 (5% increase).
+
+The Federal tax brackets and personal tax credit amounts are increased for 2024 by an indexation factor of 1.047 (4.7% increase).
+
+The 2024 Federal Budget proposed an increase in the capital gains inclusion rate to 66 2/3% for the portion of gains realized after June 24, 2024 in excess of $250,000, for an individual. We've added an extra column below, to show the marginal tax rate for those gains. The inclusion rate is still 50% for the portion of gains up to $250,000 after June 24, 2024.
+
+See Indexation of the Personal Income Tax System for how the indexation factors are calculated.
+
+The indexation factors, tax brackets and tax rates for 2024 have been confirmed to Canada Revenue Agency information.
+
+Tax Tip: read the article Understanding the Tables of Personal Income Tax Rates, especially if you are trying to compare the rates below to the marginal tax rates in the Basic Tax Calculator or the Detailed Tax Calculators.
+
+TaxTips.ca - BC Tax Rates
+2024 Taxable Income | 2024 Tax Rates | 2023 Taxable Income | 2023 Tax Rates
+first $47,937 | 5.06% | first $45,654 | 5.06%
+over $47,937 up to $95,875 | 7.70% | over $45,654 up to $91,310 | 7.70%
+over $95,875 up to $110,076 | 10.50% | over $91,310 up to $104,835 | 10.50%
+over $110,076 up to $133,664 | 12.29% | over $104,835 up to $127,299 | 12.29%
+over $133,664 up to $181,232 | 14.70% | over $127,299 up to $172,602 | 14.70%
+over $181,232 up to $252,752 | 16.80% | over $172,602 up to $240,716 | 16.80%
+over $252,752 | 20.50% | over $240,716 | 20.50%
+
+TaxTips.ca - Combined Federal & BC Tax Brackets and Tax Rates
+2024 Taxable Income (1) | BC 2024 Marginal Tax Rates | 2023 Taxable Income (1) | BC 2023 Marginal Tax Rates
+Other Income | Capital Gains | Canadian Dividends | Other Income | Capital Gains | Canadian Dividends
+All Pre- Jun 25 | >$250K Post- Jun 24 | Eligible | Non-Eligible | Eligible | Non-Eligible
+first $47,937 | 20.06% | 10.03% | 13.37% | -9.60% | 10.43% | first $45,654 | 20.06% | 10.03% | -9.60% | 10.43%
+over $47,937 up to $55,867 | 22.70% | 11.35% | 15.13% | -5.96% | 13.47% | over $45,654 up to $53,359 | 22.70% | 11.35% | -5.96% | 13.47%
+over $55,867 up to $95,875 | 28.20% | 14.10% | 18.80% | 1.63% | 19.80% | over $53,359 up to $91,310 | 28.20% | 14.10% | 1.63% | 19.80%
+over $95,875 up to $110,076 | 31.00% | 15.50% | 20.67% | 5.49% | 23.02% | over $91,310 up to $104,835 | 31.00% | 15.50% | 5.49% | 23.02%
+over $110,076 up to $111,733 | 32.79% | 16.40% | 21.86% | 7.96% | 25.07% | over $104,835 up to $106,717 | 32.79% | 16.40% | 7.96% | 25.07%
+over $111,733 up to $133,664 | 38.29% | 19.15% | 25.53% | 15.55% | 31.40% | over $106,717 up to $127,299 | 38.29% | 19.15% | 15.55% | 31.40%
+over $133,664 up to $173,205 | 40.70% | 20.35% | 27.13% | 18.88% | 34.17% | over $127,299 up to $165,430 | 40.70% | 20.35% | 18.88% | 34.17%
+over $173,205 up to $181,232 | 44.02% | 22.01% | 29.35% | 23.46% | 37.99% | over $165,430 up to $172,602 | 44.02% | 22.01% | 23.46% | 37.99%
+over $181,232 up to $246,752 | 46.12% | 23.06% | 30.75% | 26.36% | 40.41% | over $172,602 up to $235,675 | 46.12% | 23.06% | 26.36% | 40.41%
+over $246,752 up to $252,752 | 49.80% | 24.90% | 33.20% | 31.44% | 44.64% | over $235,675 up to $240,716 | 49.80% | 24.90% | 31.44% | 44.64%
+over $252,752 | 53.50% | 26.75% | 35.67% | 36.54% | 48.89% | over $240,716 | 53.50% | 26.75% | 36.54% | 48.89%
+Marginal tax rate for dividends is a % of actual dividends received (not grossed-up taxable amount). Marginal tax rate for capital gains is a % of total capital gains (not taxable capital gains). Gross-up rate for eligible dividends is 38%, and for non-eligible dividends is 15%. For more information see BC dividend tax credits. Copyright © 2002 Boat Harbour Investments Ltd.
+
+TaxTips.ca British Columbia Basic Personal Amount
+2024 Personal Amount | 2024 Tax Rate | 2023 Personal Amount | 2023 Tax Rate
+$12,580 | 5.06% | $11,981 | 5.06%
+
+Federal Basic Personal Amount
+2024 Personal Amount (1) Minimum / Maximum | 2024 Tax Rate | 2023 Personal Amount (1) Minimum / Maximum | 2023 Tax Rate
+$14,156 | $15,705 | 15% | $13,520 | $15,000 | 15%
+
+(1) See the federal tax rates page for information on the enhanced federal personal amount, which increases the marginal tax rates for taxable incomes in the second highest federal tax bracket. The marginal tax rates in blue above have been adjusted to reflect these changes.
+
+BC tax rates can also be seen on the BC Ministry of Finance website.
+
+Revised: September 18, 2026
+
+© 2002- Boat Harbour Investments Ltd. All rights reserved.
+
+See Reproduction of information from TaxTips.ca
+
+Privacy Policy | Contact
+
+Facebook | Twitter | LinkedIn
+
+The authors of TaxTips.ca strive, but cannot guarantee, to provide information which is current and accurate. Individual circumstances have a significant effect on how tax and financial information can be used. Due to this, and to the nature of the information, it should not be relied upon for decision making without professional advice.
+
+TaxTips.ca provides links to other web sites. We cannot guarantee the accuracy of the information provided on linked sites.
