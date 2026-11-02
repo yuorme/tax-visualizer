@@ -1,6 +1,6 @@
 # Benefit-year figures use July 2024 to June 2025, applied to current-year income.
-# Property estimate uses the citywide average residential municipal rate in budget2024 Table55 (0.7043 per100).
-# Quebec family allowance uses calendar2024 parameters; solidarity credit uses July2024–June2025.
+# Property estimate uses the citywide average residential municipal rate in budget 2024 Table 55 (0.7043 per 100).
+# Quebec family allowance uses calendar 2024 parameters; solidarity credit uses July 2024–June 2025.
 # Living-alone amount retains the model assumption that every one-adult household qualifies.
 
 code: QC
@@ -43,5 +43,5 @@ sources:
   - {label: "Revenu Québec, 2024 Schedule B (living-alone reduction)", url: https://www.revenuquebec.ca/documents/en/formulaires/tp/2024-12/TP-1.D.B-V%282024-12%29.pdf}
   - {label: "Revenu Québec, 2024 Schedule P (work premium)", url: https://www.revenuquebec.ca/documents/en/formulaires/tp/2024-12/TP-1.D.P-V%282024-12%29.pdf}
   - {label: "Finances Québec, historical dividend credit rates", url: https://www.budget.finances.gouv.qc.ca/budget/outils/depenses-fiscales/fiches/fiche-130501.asp}
-  - {label: "Montreal, Budget2024 Table55 municipal residential average", url: https://portail-m4s.s3.montreal.ca/pdf/budget_2024_pdi_2024-2033_web.pdf}
-  - {label: "Revenu Québec, 2024 income tax guide page30 (worker deduction6%)", url: https://www.revenuquebec.ca/documents/en/formulaires/tp/2024-12/TP-1.G-V%282024-12%29.pdf}
+  - {label: "Montreal, Budget 2024 Table 55 municipal residential average", url: https://portail-m4s.s3.montreal.ca/pdf/budget_2024_pdi_2024-2033_web.pdf}
+  - {label: "Revenu Québec, 2024 income tax guide page 30 (worker deduction 6%)", url: https://www.revenuquebec.ca/documents/en/formulaires/tp/2024-12/TP-1.G-V%282024-12%29.pdf}
