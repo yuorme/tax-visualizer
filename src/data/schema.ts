@@ -123,6 +123,12 @@ export const federalSchema = z.object({
 });
 
 // ---------- Provinces and territories ----------
+const nlChildReduction = z.object({
+  perChild: z.array(amount).length(4),
+  threshold: amount,
+  rate: z.array(rate).length(3),
+  additionalRate: rate,
+});
 const childBenefit = z.discriminatedUnion("program", [
   program("ontario-child-benefit", z.object({ perChild: amount, threshold: amount, rate })),
   program(
@@ -210,14 +216,15 @@ const childBenefit = z.discriminatedUnion("program", [
   ),
   program("nl-child-benefit", z.object({ perChild: z.array(amount).length(4), fullUpTo: amount, endsAt: amount })),
   program(
-    "nl-child-benefit-reduction",
+    "nl-child-benefit-periods",
     z.object({
-      perChild: z.array(amount).length(4),
-      threshold: amount,
-      rate: z.array(rate).length(3),
-      additionalRate: rate,
+      periods: z
+        .array(nlChildReduction.extend({ weight: z.number().positive().max(1) }))
+        .min(1)
+        .refine(ps => Math.abs(ps.reduce((sum, p) => sum + p.weight, 0) - 1) < 1e-9, "period weights must sum to 1"),
     }),
   ),
+  program("nl-child-benefit-reduction", nlChildReduction),
   program("income-band-per-child", z.object({ bands: z.array(z.tuple([amount, amount])).min(1) })),
 ]);
 
@@ -351,6 +358,7 @@ export const provinceSchema = z
     employmentAmountCredit: z.boolean().optional(),
     childAmount: z.object({ perChild: amount, ages: z.enum(["all", "under6"]) }).optional(),
     surtax: z.array(z.tuple([amount, rate])).optional(),
+    postDividendSurtax: program("pei-surtax", z.object({ threshold: amount, rate })).optional(),
     ontarioTaxReduction: z.object({ base: amount, perChild: amount }).optional(),
     lift: z.object({ max: amount, rate, threshold: amount, familyThreshold: amount, phaseOut: rate }).optional(),
     bcTaxReduction: z.object({ max: amount, rate, threshold: amount }).optional(),
