@@ -21,6 +21,20 @@ import {
 
 const NOSP = { f: 0, p: 0 };
 
+/** Provincial spouse/dependant base. Nova Scotia's historical supplement has two independent reductions:
+ *  claimant taxable income first, then the dependant's full net income (without the base credit's disregard). */
+function spouseAmount(rule: Exclude<Province["spouseAmount"], string>, claimant: number, dependant: number): number {
+  if ("program" in rule) {
+    const q = rule.params;
+    const supplement = Math.max(
+      0,
+      q.supplement.max - q.supplement.rate * Math.max(0, claimant - q.supplement.threshold),
+    );
+    return Math.max(0, q.max - Math.max(0, dependant - q.threshold)) + Math.max(0, supplement - dependant);
+  }
+  return Math.max(0, rule.max - Math.max(0, dependant - rule.threshold));
+}
+
 export interface Claim {
   c: number;
   o: number | null;
@@ -96,7 +110,7 @@ export function household(y: YearData, p: Province, hh: Household, peopleIn: Per
       pCredit = Math.max(0, rO.pBpaFull - rO.pCred);
       pAmt = pCredit / prr;
     } else {
-      pAmt = rule === "federal" ? fAmt : Math.max(0, rule.max - Math.max(0, nets[o] - rule.threshold));
+      pAmt = rule === "federal" ? fAmt : spouseAmount(rule, nets[c], nets[o]);
       pCredit = pAmt * prr;
     }
     const rC = personTax(fed, p, ppl[c], { f: fAmt * fr, p: pCredit }, ctx(c), s);
@@ -112,7 +126,7 @@ export function household(y: YearData, p: Province, hh: Household, peopleIn: Per
     if (kids > 0 && !qc) {
       fAmt = phased(fed.basicPersonalAmount, nets[0]);
       const rule = p.spouseAmount;
-      pAmt = rule === "federal" ? fAmt : typeof rule === "object" ? rule.max : 0;
+      pAmt = rule === "federal" ? fAmt : typeof rule === "object" ? spouseAmount(rule, nets[0], 0) : 0;
       f = fAmt * fr;
       pp = pAmt * prr;
     }

@@ -58,16 +58,21 @@ export function provincialChildBenefit(
         ? Math.max(mn, mx - q.rate * over(q.threshold))
         : Math.max(0, mn - q.rate * over(q.minThreshold));
     }
-    case "alberta-child-family-benefit": {
+    case "alberta-child-family-benefit":
+    case "alberta-child-family-benefit-by-child": {
       const q = b.params,
         n = Math.min(kids, 4) - 1;
       const base = Math.max(0, q.base[n] - q.baseRate[n] * over(q.baseThreshold));
+      const phaseOut = typeof q.workingPhaseOut === "number" ? q.workingPhaseOut : q.workingPhaseOut[n];
       const work = Math.max(
         0,
         Math.min(q.working[n], q.workingRate * Math.max(0, famEmp - q.workingFloor)) -
-          q.workingPhaseOut * over(q.workingThreshold),
+          phaseOut * over(q.workingThreshold),
       );
-      return base + work;
+      const total = base + work;
+      return b.program === "alberta-child-family-benefit-by-child" && total > 0
+        ? Math.max(b.params.minAnnual, total)
+        : total;
     }
     case "nova-scotia-child-benefit": {
       const q = b.params;
@@ -109,6 +114,13 @@ export function provincialChildBenefit(
     case "income-band-per-child": {
       for (const [below, per] of b.params.bands) if (famNet < below) return per * kids;
       return 0;
+    }
+    case "nl-child-benefit-reduction": {
+      const q = b.params;
+      let amt = 0;
+      for (let i = 0; i < kids; i++) amt += q.perChild[Math.min(i, 3)];
+      const reductionRate = q.rate[Math.min(kids, 3) - 1] + Math.max(0, kids - 3) * q.additionalRate;
+      return Math.max(0, amt - reductionRate * over(q.threshold));
     }
   }
 }
