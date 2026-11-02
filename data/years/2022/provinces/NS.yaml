@@ -1,0 +1,46 @@
+# Benefit-year figures use July 2022 to June 2023, applied to current-year income.
+# Halifax urban rate: (0.794 municipal + 0.360 mandatory/area levies) / 100 = 0.01154.
+# Partial child benefit is the statutory 50% of $1275 = $637.50.
+
+code: NS
+name: Nova Scotia
+order: 11
+brackets:
+  - [29590, 0.0879]
+  - [59180, 0.1495]
+  - [93000, 0.1667]
+  - [150000, 0.175]
+  - [.inf, 0.21]
+basicPersonalAmount: {max: 11481, min: 8481, from: 25000, to: 75000}
+dividendTaxCredit: {eligible: 0.0885, nonEligible: 0.0299}
+spouseAmount:
+  program: nova-scotia-spouse-amount
+  params:
+    max: 8481
+    threshold: 848
+    supplement: {max: 3000, rate: 0.06, threshold: 25000}
+childAmount: {perChild: 1200, ages: under6}
+lowIncomeReduction:
+  program: family-low-income-reduction
+  params: {individual: 300, spouse: 300, child: 165, rate: 0.05, threshold: 15000}
+salesTax: {rate: 0.15, label: 15% HST}
+propertyTax: {rate: 0.01154, city: Halifax}
+childBenefit:
+  name: Nova Scotia Child Benefit
+  program: nova-scotia-child-benefit
+  params: {perChild: 1275, fullBelow: 26000, partialBelow: 34000, partialOtherChildren: 637.5}
+credits:
+  - name: Nova Scotia affordable living tax credit
+    program: ns-affordable-living-tax-credit
+    params: {base: 255, child: 60, rate: 0.05, threshold: 30000}
+sources:
+  - {label: "CRA, NS428 for 2022", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5003-c/5003-c-22e.pdf}
+  - {label: "CRA, NS428 worksheet for 2022", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5003-d/5003-d-22e.pdf}
+  - {label: "CRA, T4114-22: July 2022–June 2023 child benefits (official guide archived by CCH; original CRA link retired)", url: https://www.cchwebsites.com/content/pdf/tax_forms/ca/en/t4114_en.pdf}
+  - {label: "CRA, RC4210-22: July 2022–June 2023 credits (official guide archived by DT Tax; original CRA link retired)", url: https://support.drtax.ca/dtmax/eng/kb/dtmax/eng/rc4210-22e.pdf}
+  - {label: "CRA, GST/HST historical rates and provincial sales-tax rates", url: https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/charge-collect-which-rate/calculator.html}
+  - {label: "Nova Scotia, Regulation 110/2022: exact annual child benefit amounts effective July 2022", url: https://novascotia.ca/just/regulations/rg2/2022/RG2-2022-06-17.pdf}
+  - label: Halifax, 2022/23 final approved budget (urban municipal rate)
+    url: https://cdn.halifax.ca/sites/default/files/documents/city-hall/budget-finances/BudgetBook_2022_23_FINAL.pdf
+  - label: Halifax, April 12 2022 tax resolution Schedule 1 (mandatory and area levies)
+    url: https://cdn.halifax.ca/sites/default/files/documents/city-hall/regional-council/220412bc6.pdf

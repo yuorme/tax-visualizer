@@ -1,6 +1,6 @@
 # Benefit-year figures use July 2022 to June 2023, applied to current-year income.
 # ACFB statutory reduction rates and $10 annual minimum are from section 30.2 and its 2019 enactment.
-# Calgary municipal0.0046950 + education0.0024548 = total0.0071498.
+# Calgary municipal 0.0046950 + education 0.0024548 = total 0.0071498.
 
 code: AB
 name: Alberta
@@ -37,7 +37,7 @@ sources:
   - {label: "Alberta, child and family benefit working component phase-in", url: https://www.alberta.ca/alberta-child-and-family-benefit}
   - {label: "Alberta Personal Income Tax Act, section 30.2 (statutory benefit reduction rates)", url: https://kings-printer.alberta.ca/documents/Acts/A30.pdf}
   - {label: "Alberta, Bill 20 of 2019 section 9(23), original section 30.2 rates", url: https://docs.assembly.ab.ca/LADDAR_files/docs/bills/bill/legislature_30/session_1/20190521_bill-020.pdf}
-  - label: Calgary, 2022 Property Tax Bylaw10M2022 section4 (manual indexed extract; direct download403)
+  - label: Calgary, 2022 Property Tax Bylaw 10M2022 section 4 (manual indexed extract; direct download 403)
     url: https://pub-calgary.escribemeetings.com/filestream.ashx?DocumentId=202464
   - label: Calgary, confirmation that 2022 property tax bylaws were approved
     url: https://www.calgary.ca/council/ward-2/articles/2022-property-tax-bylaws.html

@@ -4,6 +4,11 @@ CRA T4114-22 and RC4210-22 are official CRA-authored guides retrieved from archi
 after the original CRA PDF URLs returned 404. Their cover dates identify the July 2022–June 2023 benefit year.
 The source entries preserve the actual retrieval URLs and original-file hashes.
 
+Calgary and Vancouver property-tax tables and the Yukon Hansard extract were read through the web browsing
+tool after direct downloads returned HTTP 403. Their caches explicitly identify manual transcriptions and
+unavailable binary hashes. Scanned Iqaluit and Charlottetown tables were visually transcribed from downloaded
+official PDFs; those caches retain the hashes of the original files.
+
 Text extracts of official publications used for the 2022 data, made with
 `npm run fetch-source -- <year> <url> [<name>]`. A data collector and the reviewer read the same text, and a
 reviewer can check figures without opening PDFs. Each `.txt` file starts with the URL, the date fetched and the
@@ -43,6 +48,7 @@ keeps the pages the data uses). Nothing under `docs/` is imported by `src/`, so 
 | [provincial-ab-2019-enactment](provincial-ab-2019-enactment.txt) | 2019 Bill 20 | https://docs.assembly.ab.ca/LADDAR_files/docs/bills/bill/legislature_30/session_1/20190521_bill-020.pdf | 2026-11-02 | `a937ec935b08642d3f06e437af4001116570a2d628e03b895c4a605eb0dcf2ce` |
 | [provincial-ab-act](provincial-ab-act.txt) | © Published by Alberta King’s Printer | https://kings-printer.alberta.ca/documents/Acts/A30.pdf | 2026-11-02 | `2a293bbb636247e4f52de4376357cbebb334a7da5c163c4032efa50554d9eb62` |
 | [provincial-ab-child](provincial-ab-child.txt) | Alberta Child and Family Benefit | https://www.alberta.ca/alberta-child-and-family-benefit | 2026-11-02 | `e58ab9596da4975d49dee568d13da244f42aafa420f6c4921465baf2d7f43d98` |
+| [provincial-bc-bill35-assent](provincial-bc-bill35-assent.txt) | BC 2022 bills: Bill 35 passed without amendments and assented November 3 | https://www.bclaws.gov.bc.ca/civix/document/id/lc/billsprevious/3rd42nd_progress-of-bills_government | 2026-11-02 | `b9ac3ed63b6566204be14e80508b8bdd7d73a735829bf784bbb720b1cb3dfa78` |
 | [provincial-bc-child-enhancement](provincial-bc-child-enhancement.txt) | Bill 35 – 2022: Income Tax Amendment Act, 2022 | https://www.bclaws.gov.bc.ca/civix/document/id/bills/billsprevious/3rd42nd%3Agov35-1 | 2026-11-02 | `1e42f447789990138dcc9332b7840a77ce45ddb99d2520f23827e13f4e11fe29` |
 | [provincial-calgary-adoption](provincial-calgary-adoption.txt) | 2022 Property Tax Bylaws | https://www.calgary.ca/council/ward-2/articles/2022-property-tax-bylaws.html | 2026-11-02 | `9de1904f95b6dc8c8a62c4bad534fbdf91bbe2b8540aeebf4e13933f5b4b3304` |
 | [provincial-calgary-property-tax](provincial-calgary-property-tax.txt) | Calgary 2022 Property Tax Bylaw 10M2022, section 4 | https://pub-calgary.escribemeetings.com/filestream.ashx?DocumentId=202464 | 2026-11-02 | `unavailable (direct PDF download returned HTTP 403)` |
@@ -87,3 +93,4 @@ keeps the pages the data uses). Nothing under `docs/` is imported by `src/`, so 
 | [provincial-yellowknife-municipal](provincial-yellowknife-municipal.txt) | CITYOFYELLOWKNIFE | https://www.yellowknife.ca/sites/default/files/bylaws/0a206f22-74e3-4002-9f4e-254dcedf727b.pdf | 2026-11-02 | `1dcff9b8b84a96b3554d087ad6df0f89a4d3cd364c0a571b84d2c3bdbb64e76f` |
 | [provincial-yellowknife-school](provincial-yellowknife-school.txt) | CITY OF YELLOWKNIFE | https://www.yellowknife.ca/sites/default/files/bylaws/b1ffdb0a-7454-4b69-a20d-48b9e3382303.pdf | 2026-11-02 | `d0aa92c8afa5b616f08e84912f140b4cd75d73e1fa5a6e67825d07cd2ee6a7d0` |
 | [provincial-yt-child-2024](provincial-yt-child-2024.txt) | TAB# 01 | https://open.yukon.ca/information/de20b25e-b7d5-45ed-aacd-5ce4e968bec4/resource/57bd0240-b717-3e8b-9c1e-f9a386d62022/download/fin_spring_2024.pdf | 2026-11-02 | `e069c810c797c3f2a7220b8a68f0c826911edbe23a47f7706000dd8fa85084a8` |
+| [provincial-yukon-child-hansard](provincial-yukon-child-hansard.txt) | Yukon Hansard April 16 2026, historical child benefit maximum | https://yukonassembly.ca/sites/default/files/hansard/36-1-24.pdf | 2026-11-02 | `unavailable (direct PDF download returned HTTP 403)` |

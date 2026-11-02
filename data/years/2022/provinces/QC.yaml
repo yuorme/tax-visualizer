@@ -1,7 +1,7 @@
 # Benefit-year figures use July 2022 to June 2023, applied to current-year income.
 # Family allowance uses calendar 2022; solidarity credit uses July 2022–June 2023.
 # Living-alone amount retains the model assumption that every one-adult household qualifies.
-# Property estimate uses Montreal citywide residential average0.7953 per100 from2022 budget Table124.
+# Property estimate uses Montreal citywide residential average 0.7953 per 100 from 2022 budget Table 124.
 
 code: QC
 name: Quebec
@@ -46,5 +46,5 @@ sources:
   - {label: "Finances Québec, historical family allowance amounts and 4% reduction", url: https://www.budget.finances.gouv.qc.ca/budget/outils/depenses-fiscales/fiches/fiche-110601.asp}
   - {label: "Finances Québec, historical solidarity credit including July 2023 housing enhancement", url: https://www.budget.finances.gouv.qc.ca/Budget/outils/depenses-fiscales/fiches/fiche-110201.asp}
   - {label: "Finances Québec, worker deduction rate and historical maxima", url: https://www.budget.finances.gouv.qc.ca/Budget/outils/depenses-fiscales/fiches/fiche-110906.asp}
-  - label: Montreal, 2022 budget Table124 citywide residential municipal rate
+  - label: Montreal, 2022 budget Table 124 citywide residential municipal rate
     url: https://portail-m4s.s3.montreal.ca/pdf/budget2022_pdi2022-2031_final_br.pdf

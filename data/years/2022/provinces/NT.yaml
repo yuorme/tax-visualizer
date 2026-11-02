@@ -1,5 +1,5 @@
 # Benefit-year figures use July 2022 to June 2023, applied to current-year income.
-# Yellowknife total residential rate: (6.03 municipal +2.96 school) mills /1000.
+# Yellowknife total residential rate: (6.03 municipal + 2.96 school) mills / 1000.
 
 code: NT
 name: Northwest Territories
@@ -33,7 +33,7 @@ sources:
   - {label: "CRA, GST/HST historical rates and provincial sales-tax rates", url: https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/charge-collect-which-rate/calculator.html}
   - {label: "NWT Finance, employee payroll tax 2%", url: https://www.fin.gov.nt.ca/en/services/licences-taxes-et-droits/payroll-tax-employees}
   - {label: "NWT Finance, annual child-benefit table and exact linear taper introduced July 2017", url: https://www.fin.gov.nt.ca/sites/fin/files/benefits_and_support-nwt_child_benefit-180320.pdf}
-  - label: Yellowknife, adopted2022 municipal levy bylaw5060
+  - label: Yellowknife, adopted 2022 municipal levy bylaw 5060
     url: https://www.yellowknife.ca/sites/default/files/bylaws/0a206f22-74e3-4002-9f4e-254dcedf727b.pdf
-  - label: Yellowknife, adopted2022 school levy bylaw5061
+  - label: Yellowknife, adopted 2022 school levy bylaw 5061
     url: https://www.yellowknife.ca/sites/default/files/bylaws/b1ffdb0a-7454-4b69-a20d-48b9e3382303.pdf

@@ -1,5 +1,5 @@
 # Benefit-year figures use July 2022 to June 2023, applied to current-year income.
-# Moncton historical2022 property tax rate is1.5472 per100.
+# Moncton historical 2022 property tax rate is 1.5472 per 100.
 
 code: NB
 name: New Brunswick
@@ -38,5 +38,5 @@ sources:
   - {label: "CRA, RC4210-22: July 2022–June 2023 credits (official guide archived by DT Tax; original CRA link retired)", url: https://support.drtax.ca/dtmax/eng/kb/dtmax/eng/rc4210-22e.pdf}
   - {label: "CRA, GST/HST historical rates and provincial sales-tax rates", url: https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/charge-collect-which-rate/calculator.html}
   - {label: "New Brunswick Finance, child benefit and working supplement annual amounts and reduction rates", url: https://www2.gnb.ca/content/gnb/en/departments/finance/taxes/child_tax_benefit.html}
-  - label: Moncton, historical2022 municipal property-tax rate
+  - label: Moncton, historical 2022 municipal property-tax rate
     url: https://www.moncton.ca/en/budget
