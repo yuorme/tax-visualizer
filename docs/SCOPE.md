@@ -14,7 +14,11 @@ line-by-line tax return. Simpler and slightly less precise is acceptable where i
   CPP/QPP and EI/QPIP.
 - Dividend gross-up and dividend tax credits; 50% inclusion of net capital gains; foreign tax credit for tax
   withheld on foreign dividends.
-- Deductions (RRSP and similar), entered as one amount.
+- Annual deductions claimed per adult, itemized as RRSP, FHSA and other deductions. Existing saved generic
+  deductions remain other deductions. All three components reduce net income once; absent new claims count as zero.
+  Account room and contribution history are not calculated. The RRSP shortcut estimates room using the existing
+  income field; it is not a verified maximum. FHSA claims may include deferred eligible contributions.
+  [CRA FHSA deductions](https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/first-home-savings-account/tax-deductions-fhsa-contributions.html).
 - Province-specific: Ontario surtax, Ontario tax reduction and LIFT credit, BC tax reduction, low-income
   reductions in Newfoundland and Labrador, New Brunswick, PEI and Nova Scotia, Saskatchewan's child amount,
   Nova Scotia's and Nunavut's credits for children under 6, Quebec abatement, Quebec deduction for workers and
@@ -61,6 +65,27 @@ The model counts **taxes the household actually pays**. Costs passed on through 
 ## Decided, not built yet
 
 Recorded here as the spec for the GitHub issues that implement them; the issues hold the order.
+
+**Childcare and expanded deductions (milestone 5, #94–98).** Itemized RRSP/FHSA/other claims are implemented;
+the following childcare work is approved but not implemented yet:
+- Replace frugality with a monthly household childcare amount, preserving the remaining spending controls and
+  their household-size behavior. Migrate saved spending without changing its effective dollar amount; add no reset UI.
+- Hold childcare expense constant across provinces, averaged over twelve months after fee subsidies/reimbursements.
+  Advance tax-credit payments are not fee subsidies. Expense itself is neither tax nor sales-taxable spending.
+- Require explicit eligible earned income per adult (including zero) for automatic deductions; never infer it
+  from the mixed ordinary-income field. Distinguish missing information from a calculated zero claim.
+- Use child-level year-end ages, relevant disability eligibility and expenses; detailed ages also determine benefit
+  child counts. Preserve aggregate child-count controls where no detailed ages exist.
+- Apply federal childcare deduction rules, claimant selection and limits in 2025 and 2026, plus Ontario, Quebec
+  and Newfoundland and Labrador childcare relief, with each program's own income base and refundability.
+- Require a supplied Quebec-eligible expense portion to include that credit; distinguish missing from confirmed
+  zero, and allow qualifying extras alongside federally eligible subsidized fees.
+- Automate ordinary single-parent/couple cases. Deliberate manual mode accepts verified annual claims per adult
+  for exceptional cases, replacing automatic deductions; users remain responsible for eligibility.
+- Put expense, allowed claim, claimant and provincial-credit explanations in the existing detailed comparison and
+  tooltips only, with no additional summary widgets. Keep formulas in the engine and parameters in sourced year data.
+- Medical, donation, tuition and broader disability credits remain deferred. This is a tax-and-benefit comparison,
+  not a childcare-price or disposable-income/cost-of-living model.
 
 **Other income.** A separate income type for interest, rental and pension income: taxed as ordinary income,
 no CPP/QPP or EI, no Canada employment amount. Today all "employment and other income" pays payroll.
@@ -117,7 +142,8 @@ For now:
 - Disability, medical, tuition and donation credits; the alternative minimum tax. Medical and disability
   credits matter for seniors but depend on what each household spends; size them with the 0.1-point rule if
   they come up again.
-- Childcare costs and the childcare expense deduction (except as a manual deduction).
+- Automatic childcare deductions and credits are approved above but not implemented yet; manual eligible claims
+  can still be included under other deductions.
 - One-time government payments, such as the June 2026 GST/HST credit top-up (50% of the 2025-26 credit). The
   model counts only recurring programs.
 - Smaller programs: Manitoba's child benefit for very low incomes, Newfoundland and Labrador's prenatal–early
