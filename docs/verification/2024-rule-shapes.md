@@ -57,6 +57,25 @@ exists in the later years but is absent from the current model; adding that prog
 
 ## Remaining modeled rules
 
+### Alberta child and family benefit
+
+Alberta's Personal Income Tax Act section 30.2, introduced by
+[2019 Bill 20](https://docs.assembly.ab.ca/LADDAR_files/docs/bills/bill/legislature_30/session_1/20190521_bill-020.pdf),
+PDF pages 70, 72, 74 and 76, distinguishes the working component's 15% **phase-in** from its phase-out.
+The working reduction rates are 3.40%, 6.49%, 8.34% and 8.95% for one, two, three and four or more children.
+The base component uses 8.05%, 12.07%, 16.09% and 20.11%. Indexation changes the amounts and income thresholds,
+not these reduction rates. The collector supplies the indexed 2024 parameters.
+
+`alberta-child-family-benefit-by-child` accepts the existing base and working parameters, a four-entry
+`workingPhaseOut` array, and `minAnnual`. Section 30.2(4) sets a $10 minimum for a positive **combined** annual
+entitlement below $10; zero entitlement remains zero. This produces a small discontinuity at exhaustion.
+Tests distinguish every child-count rate, cap the count at four, check working-income phase-in, and distinguish
+one combined minimum from separate component floors or an unconditional payment.
+
+The enactment is cached as `rule-ab-2019-enactment.txt`. This is a correction to an existing approximation,
+not a statutory change in 2024: the historical data uses the new program, while the 2025 and 2026 files keep
+their previous results pending a separately reviewed correction.
+
 ### Newfoundland and Labrador child benefit
 
 The collector located [Regulation 9/24](https://www.gov.nl.ca/dgsnl/files/NLG20240216.pdf), Gazette pages 158–159
@@ -85,7 +104,7 @@ this table records the compatibility conclusions.
 | GST/HST credit | Same adult/child amounts, single supplement and family reduction | Existing `groceriesBenefit`, named GST/HST credit |
 | CWB, including AB, NU, QC | Phase-in, maximum, family-type reduction and secondary-earner exemption | Data only |
 | BC | Same brackets, tax reduction, renter credit, family-benefit max/min tiers and single-parent supplement | Data only |
-| AB | Five brackets, without the 2025 8% bracket; child-benefit base and working components | Data only |
+| AB | Five brackets, without the 2025 8% bracket; statutory child-count working reduction | New child-benefit program above |
 | SK | Same brackets, child amount and low-income tax credit | Data only |
 | MB | Flat BPA in 2024, without the 2025 high-income phase-out | Fixed BPA; new property-credit program above |
 | ON | Same surtax, tax reduction, LIFT, health premium, child benefit and Trillium credit shapes | Data only |

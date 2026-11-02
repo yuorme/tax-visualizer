@@ -149,3 +149,47 @@ test("historical NL child benefit: child-count reduction rates and extra-child i
   }
   assert.equal(nlBenefit(0, 0), 0);
 });
+
+// Alberta Personal Income Tax Act s30.2, as introduced by 2019 Bill 20 s9(23), PDF pages 70–76.
+// Original statutory amounts isolate the formula from later indexed yearly parameters.
+const ab: ChildBenefitProgram = {
+  program: "alberta-child-family-benefit-by-child",
+  params: {
+    base: [1330, 1995, 2660, 3325],
+    baseRate: [0.0805, 0.1207, 0.1609, 0.2011],
+    baseThreshold: 24467,
+    working: [681, 1301, 1672, 1795],
+    workingRate: 0.15,
+    workingFloor: 2760,
+    workingThreshold: 41000,
+    workingPhaseOut: [0.034, 0.0649, 0.0834, 0.0895],
+    minAnnual: 10,
+  },
+};
+const abBenefit = (net: number, earned: number, kids: number) => provincialChildBenefit(ab, net, earned, kids, false);
+
+test("Alberta statutory child benefit: both reduction schedules depend on capped child count", () => {
+  for (const [kids, base, baseReduction, working, workReduction] of [
+    [1, 1330, 80.5, 681, 34],
+    [2, 1995, 120.7, 1301, 64.9],
+    [3, 2660, 160.9, 1672, 83.4],
+    [4, 3325, 201.1, 1795, 89.5],
+    [6, 3325, 201.1, 1795, 89.5],
+  ]) {
+    assert.equal(abBenefit(24467, 0, kids), base);
+    assert.ok(Math.abs(abBenefit(25467, 0, kids) - (base - baseReduction)) < 1e-9);
+    assert.ok(Math.abs(abBenefit(42000, 50000, kids) - (working - workReduction)) < 1e-9);
+  }
+  assert.equal(abBenefit(0, 0, 0), 0);
+});
+
+test("Alberta statutory child benefit: working phase-in and annual minimum apply to the combined entitlement", () => {
+  assert.equal(abBenefit(0, 2760, 1), 1330);
+  assert.equal(abBenefit(0, 3760, 1), 1480);
+  assert.equal(abBenefit(0, 100000, 1), 2011);
+  assert.equal(abBenefit(42000, 3000, 1), 10); // positive $2 working amount, exhausted base
+  assert.equal(abBenefit(42000, 2760, 1), 0); // no unconditional minimum
+  assert.equal(abBenefit(61000, 100000, 1), 10); // $1 left in the working component
+  assert.equal(abBenefit(62000, 100000, 1), 0); // minimum ends with entitlement
+  assert.ok(Math.abs(abBenefit(40970, 2800, 4) - 12.2467) < 1e-9); // $6 work + $6.2467 base: one minimum
+});
