@@ -3,9 +3,10 @@
 
 import { ccbOf, provincialChildBenefit } from "./benefits.ts";
 import { phased } from "./brackets.ts";
+import { childcareOf } from "./childcare.ts";
 import { creditsOf } from "./credits.ts";
 import { fuelTaxOf } from "./fuel.ts";
-import { netOf } from "./payroll.ts";
+import { netIncomeParts, netOf } from "./payroll.ts";
 import { type PersonResult, personTax } from "./personal.ts";
 import {
   blank,
@@ -23,6 +24,7 @@ const NOSP = { f: 0, p: 0 };
 
 export interface Claim {
   c: number;
+  provincialClaimant?: number; // supplied only when Quebec transfer and federal claimant differ
   o: number | null;
   fAmt: number;
   pAmt: number;
@@ -63,23 +65,28 @@ function householdBreakdown(list: PersonResult[]) {
 export function household(y: YearData, p: Province, hh: Household, peopleIn: Person[] = hh.people) {
   const fed = y.federal,
     qc = p.system === "quebec";
-  const { adults, spouse, kids, under6, useBpa } = hh;
+  const { adults, spouse, useBpa } = hh;
   const s = { useBpa, whRate: hh.whRate };
   // A second adult with no income entered is treated as a spouse with no income
   const ppl = peopleIn.length === 1 && adults >= 2 ? [peopleIn[0], blank(0)] : peopleIn;
-  const nets = ppl.map(x => netOf(fed, x));
+  const childcare = childcareOf(fed, hh, ppl);
+  const { kids, under6 } = childcare.childCounts ?? hh;
+  const nets = ppl.map((x, i) => netOf(fed, x, childcare.claims[i]));
+  const provincialNets = qc ? ppl.map(x => netOf(fed, x)) : nets;
   const couple = ppl.length === 2 && spouse;
   const famNet = couple ? nets[0] + nets[1] : nets[0];
+  const provincialFamNet = couple ? provincialNets[0] + provincialNets[1] : provincialNets[0];
   const famEmp = couple ? ppl[0].ord + ppl[1].ord : ppl[0].ord;
   const c = ppl.length === 2 && nets[1] > nets[0] ? 1 : 0,
     o = 1 - c;
   const single = ppl.length === 1 && adults === 1;
   // kidsAll: children counted for low-income reductions, other than a child already claimed as an eligible dependant
   const ctx = (i: number): Ctx => ({
+    childcareDeduction: childcare.claims[i],
     kids: i === c ? kids : 0,
     u6: i === c ? under6 : 0,
     kidsAll: i === c ? (single && kids > 0 ? kids - 1 : kids) : 0,
-    famNet: couple ? famNet : nets[i],
+    famNet: couple ? provincialFamNet : provincialNets[i],
     claims: couple ? i === c : true,
     fam: couple || (single && kids > 0),
   });
@@ -88,7 +95,9 @@ export function household(y: YearData, p: Province, hh: Household, peopleIn: Per
   let list: PersonResult[] = [],
     claim: Claim | null = null;
   if (couple && useBpa) {
-    const rO = personTax(fed, p, ppl[o], NOSP, ctx(o), s);
+    // Quebec transfers use provincial income, which does not fall with the federal childcare deduction.
+    const cp = qc && provincialNets[1] > provincialNets[0] ? 1 : qc ? 0 : c;
+    const rO = personTax(fed, p, ppl[1 - cp], NOSP, ctx(1 - cp), s);
     const fAmt = Math.max(0, phased(fed.basicPersonalAmount, nets[c]) - nets[o]);
     const rule = p.spouseAmount;
     let pAmt: number, pCredit: number;
@@ -99,10 +108,20 @@ export function household(y: YearData, p: Province, hh: Household, peopleIn: Per
       pAmt = rule === "federal" ? fAmt : Math.max(0, rule.max - Math.max(0, nets[o] - rule.threshold));
       pCredit = pAmt * prr;
     }
-    const rC = personTax(fed, p, ppl[c], { f: fAmt * fr, p: pCredit }, ctx(c), s);
-    list[c] = rC;
-    list[o] = rO;
-    claim = { c, o, fAmt, pAmt, pCredit, qc: rule === "transfer", kind: "spouse", saved: rC.fSp * rC.k + rC.pSp };
+    list = ppl.map((x, i) =>
+      personTax(fed, p, x, { f: i === c ? fAmt * fr : 0, p: i === cp ? pCredit : 0 }, ctx(i), s),
+    );
+    claim = {
+      c,
+      o,
+      fAmt,
+      pAmt,
+      pCredit,
+      qc: rule === "transfer",
+      kind: "spouse",
+      saved: list[c].fSp * list[c].k + list[cp].pSp,
+      ...(cp !== c ? { provincialClaimant: cp } : {}),
+    };
   } else if (single && useBpa) {
     // One adult: eligible dependant amount if there are children; Quebec's amount for a person living alone
     let f = 0,
@@ -122,7 +141,7 @@ export function household(y: YearData, p: Province, hh: Household, peopleIn: Per
         f = fAmt * fr;
       }
       const la = p.quebec.livingAlone;
-      pAmt = Math.max(0, la.max - la.rate * Math.max(0, nets[0] - la.threshold)); // amount for a person living alone
+      pAmt = Math.max(0, la.max - la.rate * Math.max(0, provincialNets[0] - la.threshold)); // amount for a person living alone
       pp = pAmt * prr;
     }
     const r0 = personTax(fed, p, ppl[0], { f, p: pp }, ctx(0), s);
@@ -134,12 +153,13 @@ export function household(y: YearData, p: Province, hh: Household, peopleIn: Per
   }
   const totals = addUp(list);
   const ccb = ccbOf(fed, famNet, kids, under6);
-  const provBen = provincialChildBenefit(p.childBenefit, famNet, famEmp, kids, single, under6);
+  const provBen = provincialChildBenefit(p.childBenefit, provincialFamNet, famEmp, kids, single, under6);
   const childBen = ccb + provBen;
   // Refundable credits (counted only when the credits switch is on)
   const credits: Credit[] = hh.useCredits
     ? creditsOf(fed, p, {
         famNet,
+        provincialFamNet,
         famEmp,
         couple,
         kids,
@@ -153,6 +173,7 @@ export function household(y: YearData, p: Province, hh: Household, peopleIn: Per
   return {
     list,
     claim,
+    childcare,
     ...totals,
     ccb,
     provBen,
@@ -162,7 +183,18 @@ export function household(y: YearData, p: Province, hh: Household, peopleIn: Per
     benefits,
     famNet,
     netTotal: totals.total - benefits, // income tax + payroll − child benefits − refundable credits
-    breakdown: householdBreakdown(list), // nested so the golden snapshot keeps its format (see personTax)
+    breakdown: {
+      ...householdBreakdown(list),
+      incomeBases: {
+        beforeChildcare: ppl.map(x => {
+          const n = netIncomeParts(fed, x);
+          return n.ord + n.cg + n.ed + n.nd + n.fd - n.ded - n.enh;
+        }),
+        federal: nets,
+        provincial: list.map(r => r.tiP),
+        provincialFamily: couple ? list[0].tiP + list[1].tiP : list[0].tiP,
+      },
+    }, // nested so the golden snapshot keeps its format (see personTax)
   };
 }
 
@@ -175,6 +207,8 @@ export const hasInv = (x: Person) => x.cg !== 0 || x.ed > 0 || x.nd > 0 || x.fd 
 /** Full result for one province: household tax plus marginal rates, investment tax, sales, property and fuel tax. */
 export function compute(y: YearData, p: Province, hh: Household) {
   const h = household(y, p, hh);
+  // Explicit eligible childcare earnings stay fixed: ord also includes pensions/other non-earned income.
+  // Claimant selection is recomputed for each counterfactual; investment bumps never create earned income.
   // Marginal rates measured directly (next $100 of each type for the selected person), so phase-outs,
   // payroll ceilings, benefit clawbacks and spouse-amount interactions all show up.
   const margBy = {} as Record<IncomeKey, number>;

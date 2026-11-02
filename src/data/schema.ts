@@ -64,6 +64,20 @@ export const federalSchema = z.object({
     foreignWithholding: z.object({ usTreaty: rate, deductibleAbove: rate }),
   }),
   rrsp: z.object({ rate, limit: amount }),
+  childcare: program(
+    "federal-childcare",
+    z.object({
+      youngUnder: z.number().int().positive(),
+      eligibleThrough: z.number().int().nonnegative(),
+      annualYoung: amount,
+      annualOther: amount,
+      annualDisability: amount,
+      earnedNumerator: z.number().int().positive(),
+      earnedDenominator: z.number().int().positive(),
+      benefitChildUnder: z.number().int().positive(),
+      benefitYoungUnder: z.number().int().positive(),
+    }),
+  ).optional(),
   payroll: z.object({
     cpp: cppLike,
     qpp: cppLike,

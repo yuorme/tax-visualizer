@@ -1,4 +1,5 @@
 import type { FuelRate, Province, YearData } from "../data/schema.ts";
+import type { ChildcareInput } from "./childcare.ts";
 
 export type IncomeKey = "ord" | "cg" | "ed" | "nd" | "fd";
 export const INCOME_KEYS: IncomeKey[] = ["ord", "cg", "ed", "nd", "fd"];
@@ -31,6 +32,7 @@ export interface Household {
   rent: number; // monthly
   monthlySpending: number; // taxable spending, after any frugality adjustment
   propertyRates?: Partial<Record<string, number>>; // user overrides of the municipal rate, by province code
+  childcare?: ChildcareInput;
   driving?: Driving; // none: no fuel tax
 }
 
@@ -43,6 +45,7 @@ export interface Driving {
 export type Credit = [name: string, amount: number];
 
 export interface Ctx {
+  childcareDeduction?: number; // calculated federal claim; not a user-entered generic deduction
   kids?: number;
   u6?: number;
   kidsAll?: number;

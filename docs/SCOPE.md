@@ -67,7 +67,11 @@ The model counts **taxes the household actually pays**. Costs passed on through 
 Recorded here as the spec for the GitHub issues that implement them; the issues hold the order.
 
 **Childcare and expanded deductions (milestone 5, #94–98).** Itemized RRSP/FHSA/other claims are implemented;
-the following childcare work is approved but not implemented yet:
+federal childcare calculations are now implemented in the backend for both existing years (#95). They accept
+explicit earned income and child details, calculate ordinary claims or accept verified manual claims, and expose
+calculation status and separate federal/Quebec income bases. The UI and provincial childcare credits remain
+planned. Detailed contracts and existing benefit-model limitations are in
+[childcare verification](verification/childcare/README.md). The approved full scope is:
 - Replace frugality with a monthly household childcare amount, preserving the remaining spending controls and
   their household-size behavior. Migrate saved spending without changing its effective dollar amount; add no reset UI.
 - Hold childcare expense constant across provinces, averaged over twelve months after fee subsidies/reimbursements.
@@ -142,8 +146,8 @@ For now:
 - Disability, medical, tuition and donation credits; the alternative minimum tax. Medical and disability
   credits matter for seniors but depend on what each household spends; size them with the 0.1-point rule if
   they come up again.
-- Automatic childcare deductions and credits are approved above but not implemented yet; manual eligible claims
-  can still be included under other deductions.
+- Childcare inputs and provincial childcare credits are not connected to the UI yet. The federal calculation
+  backend is implemented; the existing UI still accepts verified manual claims under other deductions.
 - One-time government payments, such as the June 2026 GST/HST credit top-up (50% of the 2025-26 credit). The
   model counts only recurring programs.
 - Smaller programs: Manitoba's child benefit for very low incomes, Newfoundland and Labrador's prenatal–early
