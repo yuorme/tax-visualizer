@@ -20,6 +20,7 @@ import { chromium } from "playwright";
 import { listYears, loadYear } from "../../src/data/load.ts";
 import { compute } from "../../src/engine/index.ts";
 import { toHousehold } from "../golden/adapter.ts";
+import { CHILDCARE_STEPS } from "./childcare.mjs";
 import { DEDUCTION_STEPS } from "./deductions.mjs";
 import { ALLOWED_HOSTS, openPage, settle } from "./page.mjs";
 import { COLUMN_COUNT, contrastViolations, inspect, KNOWN, MAX_LABEL_LENGTH } from "./rules.mjs";
@@ -117,7 +118,7 @@ const STEPS = [
     },
   ],
   [
-    "home value, frugality, sort",
+    "home value, taxable spending, sort",
     async p => {
       // The built page is still set to Rent from step 2; the legacy page ignores rent once there's a home value
       if (await tabbed(p)) {
@@ -126,10 +127,16 @@ const STEPS = [
       } else await openDetails(p, "prop-panel");
       await p.fill("#hv", "750,000");
       await p.dispatchEvent("#hv", "input");
-      await p.$eval("#frug", el => {
-        el.value = -20;
-        el.dispatchEvent(new Event("input", { bubbles: true }));
-      });
+      if (await p.$("#frug")) {
+        await p.$eval("#frug", el => {
+          el.value = -20;
+          el.dispatchEvent(new Event("input", { bubbles: true }));
+        });
+      } else {
+        const current = Number((await p.inputValue("#spend")).replace(/[^\d]/g, ""));
+        await p.fill("#spend", String(current * 0.8));
+        await p.locator("#spend").blur();
+      }
       await p.click("#sort-geo");
     },
   ],
@@ -403,6 +410,9 @@ for (const width of [1000, 430, 375]) {
     const deductions = await run({ width, colorScheme, contrast: width === 375, steps: DEDUCTION_STEPS });
     check(`${width}px ${colorScheme}, deductions`, width, deductions);
     console.log(`${width}px ${colorScheme}: ${DEDUCTION_STEPS.length} deduction states checked`);
+    const childcare = await run({ width, colorScheme, contrast: width === 375, steps: CHILDCARE_STEPS });
+    check(`${width}px ${colorScheme}, childcare`, width, childcare);
+    console.log(`${width}px ${colorScheme}: ${CHILDCARE_STEPS.length} childcare states checked`);
   }
 }
 await browser.close();

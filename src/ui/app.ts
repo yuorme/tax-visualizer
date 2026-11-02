@@ -5,7 +5,9 @@ import {
   type BracketLine,
   blank,
   cashOf,
+  childcareOf,
   compute,
+  deductionsOf,
   type Household,
   hasInv,
   type IncomeKey,
@@ -16,6 +18,7 @@ import {
   propertyRate,
   type Result,
 } from "../engine/index.ts";
+import { ChildcareEditor, childcareComparison } from "./childcare.ts";
 import { DEFAULT_INCOME, spendEst } from "./defaults.ts";
 import { cents, footerNotes, share, tooltips } from "./notes.ts";
 
@@ -83,7 +86,7 @@ let people: Person[] = [blank(DEFAULT_INCOME)],
   active = 0,
   spouse = true;
 let metric: Metric = "pct",
-  frug = 0,
+  spendingAdjustment = 0,
   adults = 1,
   kids = 0,
   under6 = 0; // under6: children under 6, out of kids
@@ -119,9 +122,10 @@ const effNow = () => effOverride ?? defaultEff();
 /** Efficiency as typed or shown: at least one decimal (9.0), more only when entered (7.25). */
 const effText = (v: number) => (Number.isInteger(v * 10) ? v.toFixed(1) : String(v));
 const kmText = (v: number) => `${v.toLocaleString("en-CA")} km`;
-const effSpend = () => Math.round((spend * (1 + frug / 100)) / 10) * 10; // nearest $10
+const effSpend = () => Math.round((spend * (1 + spendingAdjustment / 100)) / 10) * 10; // nearest $10
+const care = new ChildcareEditor(() => render());
 // Engine input built from the current state
-const inputs = (): Household => ({
+const inputs = (withCare = true): Household => ({
   people,
   active,
   spouse,
@@ -136,6 +140,7 @@ const inputs = (): Household => ({
   monthlySpending: effSpend(),
   propertyRates: propOverride != null ? { [home]: propOverride } : undefined,
   driving: FUEL ? { km: kmNow(), lPer100km: effNow() } : undefined,
+  childcare: withCare ? care.input() : undefined,
 });
 const calc = (p: ProvView) => compute(Y, p.d, inputs());
 const rowFor = (res: Row[], c: string) =>
@@ -195,7 +200,9 @@ try {
     if (s.tab === null || isTab(s.tab)) tab = s.tab;
     else tab = s.invOpen === true ? "income" : s.propOpen === true ? "home" : s.credOpen === true ? "credits" : null;
     if (s.metric === "usd") metric = "usd";
-    if (isNum(s.frug) && s.frug >= -100 && s.frug <= 100000) frug = s.frug;
+    const adjustment = s.spendingAdjustment ?? s.frug;
+    if (isNum(adjustment) && adjustment >= -100 && adjustment <= 100000) spendingAdjustment = adjustment;
+    care.restore(s.childcare);
   }
 } catch {}
 if (dest === home) dest = home === "AB" ? "BC" : "AB";
@@ -223,7 +230,8 @@ function save() {
         kids,
         under6,
         spend,
-        frug,
+        spendingAdjustment,
+        childcare: care.state,
         metric,
         homeValue,
         propOverride,
@@ -439,6 +447,24 @@ function segTip(p: ProvView, r: Result, c: Seg) {
 
 const narrow = matchMedia("(max-width: 520px)"); // phone: compact chart labels
 function render() {
+  // Ask the engine for effective adults, including a spouse with no separate income entry, and for age counts.
+  const base = compute(Y, prov(home).d, inputs(false));
+  care.configure(base.list.length, kids, YEAR);
+  if (care.enabled) {
+    const counts = childcareOf(
+      F,
+      inputs(),
+      base.list.map(p => p.x),
+    ).childCounts;
+    if (counts) {
+      if (kids !== counts.kids) {
+        kids = counts.kids;
+        spend = spendEst(adults + kids);
+        syncSpend();
+      }
+      under6 = counts.under6;
+    }
+  }
   const res: Row[] = P.map(p => ({ p, r: calc(p) }));
   const usd = metric === "usd";
   const val = (r: Result) => (usd ? r.total : r.avg); // net of benefits: what the label shows and sorting uses
@@ -539,7 +565,7 @@ function render() {
     : `Employment &amp; other income`;
   $("ded-label").textContent = two ? `${active ? "Partner's" : "Your"} deductions` : "Deductions";
   const rm = H.r.me.breakdown.rrspRoom;
-  $("ded-total").textContent = money(H.r.me.breakdown.netIncome.ded);
+  $("ded-total").textContent = money(deductionsOf(x));
   $("max-rrsp").textContent = `Use estimate ${money(rm)}`;
   $("max-rrsp").setAttribute("aria-pressed", String(rm > 0 && x.rrsp === rm));
   $("invest-title").textContent = two ? `${active ? "Partner's" : "Your"} investment income` : "Investment income";
@@ -582,6 +608,9 @@ function render() {
   $<HTMLInputElement>("u6").value = String(under6);
   $("u6-val").hidden = kids === 0;
   $("u6-val").textContent = `${under6} under 6`;
+  $<HTMLInputElement>("kids").disabled = care.detailedAges;
+  $<HTMLInputElement>("u6").disabled = care.detailedAges;
+  $("kids").title = $("u6").title = care.detailedAges ? "Child counts come from the ages in Childcare details." : "";
   // Track fill: slate up to the under-6 count, purple from there to the number of children
   const at = (q: number) => `calc(9px + (100% - 18px) * ${q / 6})`;
   $("kids-track").style.background =
@@ -615,9 +644,7 @@ function render() {
   if (FUEL) renderDriving(H);
   $("m-pct").setAttribute("aria-pressed", String(metric === "pct"));
   $("m-usd").setAttribute("aria-pressed", String(metric === "usd"));
-  $<HTMLInputElement>("frug").value = String(frug);
-  const fr = Math.round(frug);
-  $("frug-val").textContent = fr === 0 ? "Typical" : `${fr > 0 ? "+" : "−"}${Math.abs(fr)}%`;
+  care.render(H.r);
   $<HTMLSelectElement>("wh").value = String(whRate);
   paintCg();
   renderPeople();
@@ -784,6 +811,7 @@ function renderDetail(res: Row[], order: Row[]) {
     rows +=
       `<tr class="grp"><th colspan="4">Investment income</th></tr>` +
       row("Tax on investment income", hr.invTax, dr.invTax);
+  if (care.enabled) rows += childcareComparison(hr, dr);
 
   let spouseNote = "";
   const kindName = (r: Result) =>
@@ -847,6 +875,10 @@ function ledgerView({ p, r }: Row) {
   const extra: string[] = [];
   if (m.workerDed > 0.5)
     extra.push(`Quebec taxable income is ${money(m.tiP)} after the ${money(m.workerDed)} deduction for workers.`);
+  if (p.qc && r.childcare.claims[active] > 0)
+    extra.push(
+      `The federal childcare deduction of ${money(r.childcare.claims[active])} does not reduce Quebec taxable income.`,
+    );
   if (x.cg < 0)
     extra.push(
       `The ${money(-x.cg)} net capital loss doesn't reduce this year's tax; it can be carried back three years or forward against future capital gains.`,
@@ -870,7 +902,8 @@ function ledgerView({ p, r }: Row) {
         : "spouse amount"
     : "";
   const spLabelF = mine ? `Less ${spName} ${money(cl.fAmt)} × ${rateFmt(F.brackets[0][1])}` : "";
-  const spLabelP = mine
+  const provincialMine = cl !== null && (cl.provincialClaimant ?? cl.c) === active;
+  const spLabelP = provincialMine
     ? cl.qc && cl.kind === "spouse"
       ? `Less partner's unused credit transferred`
       : `Less ${spName} ${money(cl.pAmt)} × ${rateFmt(p.b[0][1])}`
@@ -892,7 +925,7 @@ function ledgerView({ p, r }: Row) {
       `Less personal amount ${money(m.pAmt)} × ${rateFmt(p.b[0][1])}${m.pCred < m.pBpaFull - 0.5 ? " (capped)" : ""}`,
       -m.pCred,
     ],
-    mine && [spLabelP, -m.pSp],
+    provincialMine && [spLabelP, -m.pSp],
     [
       p.d.childAmount?.ages === "all"
         ? `Less child amount (${money(p.d.childAmount.perChild)} per child)`
@@ -900,6 +933,7 @@ function ledgerView({ p, r }: Row) {
       -m.pKid,
     ],
     !p.qc && [`Less CPP &amp; EI credits${p.c === "YT" ? " and employment amount" : ""}`, -m.pEmp],
+    [`Less childcare credit`, -m.breakdown.childcareCredit.applied],
     [`Ontario surtax`, m.surtax],
     [`Less dividend tax credit`, -m.pDtc],
     [`Less low-income tax reduction`, -m.lowRed],
@@ -1103,18 +1137,15 @@ whSel.addEventListener("change", () => {
 });
 const spIn = $<HTMLInputElement>("spend"),
   spRange = $<HTMLInputElement>("spend-range");
-// The amount box and slider show spending after the frugality adjustment; "spend" holds the unadjusted base,
-// so household-size estimates and frugality combine cleanly.
+// Keep the existing proportional household-size adjustment; the separate frugality control has been removed.
 function syncSpend() {
   spIn.value = effSpend().toLocaleString("en-CA");
   spRange.value = String(Math.min(effSpend(), +spRange.max));
 }
-// Typing or sliding the amount moves the frugality setting to match: the amount is read as a percentage
-// above or below the household-size estimate. Past ±50% the slider rests at its end, but the percentage
-// keeps counting.
+// A typed amount retains its proportion of the household-size estimate when household size changes.
 function fromShown(shown: number) {
   const est = spendEst(adults + kids);
-  frug = est > 0 ? (shown / est - 1) * 100 : 0;
+  spendingAdjustment = est > 0 ? (shown / est - 1) * 100 : 0;
   spend = est;
 }
 spIn.addEventListener("input", () => {
@@ -1132,7 +1163,7 @@ spRange.addEventListener("input", () => {
   spIn.value = (+spRange.value).toLocaleString("en-CA");
   render();
 });
-// Adults and children set the spending estimate; frugality (your own amount) carries over as a percentage.
+// Adults and children set the spending estimate; the user's spending adjustment carries over proportionally.
 function setHousehold(a: number, k: number) {
   adults = Math.max(people.length, Math.min(4, a));
   kids = Math.max(0, Math.min(6, k));
@@ -1253,18 +1284,6 @@ $("m-pct").addEventListener("click", () => {
 });
 $("m-usd").addEventListener("click", () => {
   metric = "usd";
-  render();
-});
-const frugIn = $<HTMLInputElement>("frug");
-frugIn.addEventListener("input", () => {
-  frug = +frugIn.value;
-  syncSpend();
-  render();
-});
-onDoubleTap(frugIn, e => {
-  if (e) e.preventDefault();
-  frug = 0;
-  syncSpend();
   render();
 });
 $("sort-geo").addEventListener("click", () => {
