@@ -1,0 +1,35 @@
+# Benefit-year figures use July 2019 to June 2020, applied to current-year income.
+# Child maximum annualizes CRA monthly $27.50 × 12 = $330.
+# Reduction rates 3%/5% assumed unchanged from Nunavut-commissioned 2013 report.
+# Property estimate applies bylaw868 residential class7/8 rate18.79mills/1000 to home value as assessed value.
+
+code: NU
+name: Nunavut
+territory: true
+order: 6
+brackets:
+  - [45414, 0.04]
+  - [90829, 0.07]
+  - [147667, 0.09]
+  - [.inf, 0.115]
+basicPersonalAmount: 16000
+dividendTaxCredit: {eligible: 0.0551, nonEligible: 0.0261}
+spouseAmount: {max: 16000, threshold: 0}
+childAmount: {perChild: 1200, ages: under6}
+payroll: {employeeTax: 0.02}
+salesTax: {rate: 0.05, label: 5% GST}
+propertyTax: {rate: 0.01879, city: Iqaluit, estimated: true}
+childBenefit:
+  name: Nunavut Child Benefit
+  program: per-child-reduced
+  params: {perChild: 330, threshold: 20921, rateOneChild: 0.03, rateMoreChildren: 0.05}
+  rateSource: Nunavut Anti-Poverty Secretariat commissioned report (2013), page 49; rates assumed unchanged
+  estimated: true
+sources:
+  - {label: "CRA, NU428 for 2019", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5014-c/5014-c-19e.pdf}
+  - {label: "CRA, NU428 worksheet for 2019", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5014-d/5014-d-19e.pdf}
+  - {label: "CRA, T4114-19: July 2019–June 2020 child benefits (official archive)", url: https://publications.gc.ca/collections/collection_2019/arc-cra/Rv1-36-2019-eng.pdf?download=1}
+  - {label: "CRA, GST/HST historical rates and provincial sales-tax rates", url: https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/charge-collect-which-rate/calculator.html}
+  - {label: "Nunavut Anti-Poverty Secretariat, commissioned Poverty and Prosperity report 2013 p49 (child taper)", url: https://assembly.nu.ca/library/GNedocs/2013/001057-e.pdf}
+  - {label: "Government of Nunavut, response on 2022–23 public accounts (payroll tax 2%)", url: https://www.assembly.nu.ca/sites/default/files/2025-05/TD-388-6%282%29-EN-GN%20Response%20to%202022-23%20Public%20Accounts%20Report.pdf}
+  - {label: "Iqaluit, adopted2019 French mill-rate bylaw868", url: https://iqaluit.ca/sites/default/files/2019_mill_rate_by-law_no._868_fr.pdf}

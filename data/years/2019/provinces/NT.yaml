@@ -1,0 +1,38 @@
+# Benefit-year figures use July 2019 to June 2020, applied to current-year income.
+# Exact annual child age-group tables and statutory taper are unchanged.
+# Property rate: signed2019bylaws5.30 municipal +2.96school mills /1000=0.00826.
+
+code: NT
+name: Northwest Territories
+territory: true
+order: 3
+brackets:
+  - [43137, 0.059]
+  - [86277, 0.086]
+  - [140267, 0.122]
+  - [.inf, 0.1405]
+basicPersonalAmount: 14811
+dividendTaxCredit: {eligible: 0.115, nonEligible: 0.06}
+spouseAmount: {max: 14811, threshold: 0}
+payroll: {employeeTax: 0.02}
+salesTax: {rate: 0.05, label: 5% GST}
+propertyTax: {rate: 0.00826, city: Yellowknife}
+childBenefit:
+  name: NWT Child Benefit
+  program: nwt-child-benefit-age-groups
+  params:
+    under6: [0, 815, 1467, 1997, 2445]
+    under6More: 367
+    over6: [0, 652, 1174, 1597, 1956]
+    over6More: 293
+    fullUpTo: 30000
+    endsAt: 80000
+sources:
+  - {label: "CRA, NT428 for 2019", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5012-c/5012-c-19e.pdf}
+  - {label: "CRA, NT428 worksheet for 2019", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5012-d/5012-d-19e.pdf}
+  - {label: "CRA, T4114-19: July 2019–June 2020 child benefits (official archive)", url: https://publications.gc.ca/collections/collection_2019/arc-cra/Rv1-36-2019-eng.pdf?download=1}
+  - {label: "CRA, GST/HST historical rates and provincial sales-tax rates", url: https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/charge-collect-which-rate/calculator.html}
+  - {label: "NWT Finance, employee payroll tax 2%", url: https://www.fin.gov.nt.ca/en/services/licences-taxes-et-droits/payroll-tax-employees}
+  - {label: "NWT Finance, annual child-benefit table and exact linear taper introduced July 2017", url: https://www.fin.gov.nt.ca/sites/fin/files/benefits_and_support-nwt_child_benefit-180320.pdf}
+  - {label: "Yellowknife, signed2019 municipal bylaw4998", url: https://www.yellowknife.ca/sites/default/files/bylaws/7e14d026-dc57-475b-81ac-1e2446e4cdf4.pdf}
+  - {label: "Yellowknife, signed2019 school bylaw4999", url: https://www.yellowknife.ca/sites/default/files/bylaws/6cf66d93-50df-45ad-8a30-fe4c5b7f584f.pdf}

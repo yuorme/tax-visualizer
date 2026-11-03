@@ -1,0 +1,52 @@
+# Benefit-year figures use July 2019 to June 2020, applied to current-year income.
+# Child maximum annualizes rounded CRA monthly $119.50 × 12 = $1434.
+# OEPTC propertyMax is published $828 total cap minus $59 base = $769.
+# Toronto 2020 annual report explicitly gives 2019 total 0.6147700% = 0.0061477.
+
+code: ON
+name: Ontario
+order: 7
+brackets:
+  - [43906, 0.0505]
+  - [87813, 0.0915]
+  - [150000, 0.1116]
+  - [220000, 0.1216]
+  - [.inf, 0.1316]
+basicPersonalAmount: 10582
+dividendTaxCredit: {eligible: 0.1, nonEligible: 0.032863}
+spouseAmount: {max: 8985, threshold: 898}
+surtax:
+  - [4740, 0.2]
+  - [6067, 0.36]
+ontarioTaxReduction: {base: 244, perChild: 452}
+lift: {max: 850, rate: 0.0505, threshold: 30000, familyThreshold: 60000, phaseOut: 0.1}
+payroll:
+  healthPremium:
+    - [200000, 750, 0.25, 900]
+    - [72000, 600, 0.25, 750]
+    - [48000, 450, 0.25, 600]
+    - [36000, 300, 0.06, 450]
+    - [20000, 0, 0.06, 300]
+salesTax: {rate: 0.13, label: 13% HST}
+propertyTax: {rate: 0.0061477, city: Toronto}
+creditsUseRent: true
+childBenefit:
+  name: Ontario Child Benefit
+  program: ontario-child-benefit
+  params: {perChild: 1434, threshold: 21887, rate: 0.08}
+  estimated: true
+credits:
+  - name: Ontario sales tax credit
+    program: ontario-sales-tax-credit
+    params: {perPerson: 308, rate: 0.04, thresholdSingle: 23665, thresholdFamily: 29581}
+  - name: Ontario energy and property tax credit
+    program: ontario-energy-property-tax-credit
+    params: {rentShare: 0.2, energyMax: 237, propertyBase: 59, propertyRate: 0.1, propertyMax: 769, rate: 0.02, thresholdSingle: 23665, thresholdFamily: 29581}
+sources:
+  - {label: "CRA, ON428 for 2019", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5006-c/5006-c-19e.pdf}
+  - {label: "CRA, ON428 worksheet for 2019", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5006-d/5006-d-19e.pdf}
+  - {label: "CRA, T4114-19: July 2019–June 2020 child benefits (official archive)", url: https://publications.gc.ca/collections/collection_2019/arc-cra/Rv1-36-2019-eng.pdf?download=1}
+  - {label: "CRA, GST/HST historical rates and provincial sales-tax rates", url: https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/charge-collect-which-rate/calculator.html}
+  - {label: "CRA, 2019 LIFT Schedule ON428-A", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5006-a/5006-a-19e.pdf}
+  - {label: "Ontario, 2019 tax transparency report: sales and energy/property credits", url: https://budget.ontario.ca/2019/fallstatement/provisions.html}
+  - {label: "Toronto, 2020 annual financial report: residential tax rates", url: https://www.toronto.ca/wp-content/uploads/2021/09/95b7-YE-2020-City-of-Toronto-Annual-Financial-Report.pdf}
