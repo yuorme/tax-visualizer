@@ -1,0 +1,130 @@
+Title: Quarterly Canada Pension Plan and Old Age Security benefit amounts and related figures – October to December 2022
+URL: https://www.canada.ca/en/employment-social-development/programs/pensions/pension/statistics/2022-quarterly-october-december.html
+Fetched: 2026-11-02
+SHA-256 of the original: e25c5e8a1e8e689654260c3d8d2e1445ba9b98703203367b4d15393d925cc1ed
+Publication date modified: 2022-09-29
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+# Quarterly Canada Pension Plan and Old Age Security benefit amounts and related figures – October to December 2022
+
+Quarterly Canada Pension Plan and Old Age Security benefit amounts and related figures – October to December 2022 [PDF - 397 KB]
+
+## On this page
+
+- Canada Pension Plan and Quebec Pension Plan
+- Disability and survivor amounts
+- Calculation of CPP maximum monthly amounts for new benefits
+- Old Age Security
+- Other CPP and QPP figures
+- Contact us
+
+Canada Pension Plan (CPP) and Quebec Pension Plan (QPP): Type of benefit
+| New benefits Maximum amount 2022
+CPP Footnote 1 | QPP Footnote 1
+Retirement (at age 65) | $1,253.59 | $1,253.59
+Post–Retirement Benefit (CPP) (at age 65) Footnote 2 | $36.26 | not applicable
+Retirement Pension Supplement (QPP) | not applicable | $28.08
+Disability | $1,464.83 | $1,464.83
+Survivor: younger than 65 | $674.79 | (Details QPP)
+Survivor: 65 and older | $752.15 | $746.65
+Children of disabled contributor | $264.53 | $83.99
+Children of deceased contributor | $264.53 | $264.53
+Death (maximum one-time payment) | $2,500.00 | $2,500.00
+Combined benefits
+Survivor and retirement (retirement at 65) | $1,257.13 | $1,258.49
+Survivor and disability | $1,467.04 | not applicable
+
+Disability and survivor amounts 2022
+| Flat amount | Earnings-related portion | Total
+CPP disability benefit | $524.64 | $940.19 | $1,464.83
+CPP post-retirement disability benefit Footnote 3 | $524.64 | $0.00 | $524.64
+CPP survivor benefit: younger than 65 | $204.69 | $470.10 | $674.79
+QPP disability benefit | $524.61 | $939.22 | $1,463.83
+QPP additional amount for disability Footnote 3 | $524.61 | $0.00 | $524.61
+
+Details of QPP benefits
+QPP survivor benefit: younger than 45
+| Flat amount | Earnings-related portion | Total
+Not disabled, no child | $134.37 | $468.49 | $602.86
+Not disabled, with child | $487.12 | $468.49 | $955.61
+Disabled | $524.61 | $468.49 | $993.10
+QPP survivors: age 45 to 64 | $524.61 | $468.49 | $993.10
+
+Old Age Security (OAS): Type of benefit
+| October to December 2022
+Maximum amount Footnote 4 | Income level cut-off Footnote 5 | Income level cut-off for top-ups Footnote 5
+Old Age Security pension (at age 65 to 74) Footnote 6, Footnote 7 | $685.50 | not applicable | not applicable
+Old Age Security pension (age 75 and over) Footnote 6, Footnote 7 | $754.05 | not applicable | not applicable
+Guaranteed Income Supplement (GIS)
+Single | $1,023.88 | $20,784 | $9,632
+Spouse or common-law partner of someone who:
+does not receive an OAS pension | $1,023.88 | $49,824 | $19,264
+receives an OAS pension | $616.31 | $27,456 | $8,320
+is an Allowance recipient | $616.31 | $38,448 | $8,320
+Allowance | $1,301.81 | $38,448 | $8,320
+Allowance for the Survivor | $1,551.85 | $27,984 | $9,632
+
+Other CPP and QPP figures
+| CPP | QPP
+Year's maximum pensionable earnings (YMPE) (2022) | $64,900.00 | $64,900.00
+Year's basic exemption (2022) | $3,500.00 | $3,500.00
+Contributions (2020 to 2021) | $55,331 million | $17,161 million
+Number of contributors (2020) | 14.4 million | (estimated) 4.2 million
+Indexation rate (January 2022) | 2.7% | 2.7%
+| Base | Enhancement | Total | Base | Enhancement | Total
+Contribution rate for employee and employer | 4.95% | 0.75% | 5.70% | 5.40% | 0.75% | 6.15%
+Employee and employer maximum contribution | $3,039.30 | $460.50 | $3,499.80 | $3,315.60 | $460.50 | $3,776.10
+Contribution rate for self-employed | 9.90% | 1.50% | 11.40% | 10.80% | 1.50% | 12.30%
+Self-employed maximum contribution | $6,078.60 | $921.00 | $6,999.60 | $6,631.20 | $921.00 | $7,552.20
+
+Find more information about monthly statistics on OAS and CPP beneficiaries and benefits
+
+## Contact us
+
+Telephone: 1-800-277-9914
+TTY: 1-800-255-4786
+
+## Footnotes
+
+Footnote 1
+
+Maximum benefit amounts reflect the CPP/QPP enhancement. CPP and QPP maximum amounts in this table are for benefits beginning in January 2022. Maximum CPP and QPP benefit amounts increase every month as a result of the enhancement.
+
+Return to first footnote 1 referrer
+
+Footnote 2
+
+Each year a valid contribution is made to the CPP while a retirement pension is being received, the person becomes eligible for a post-retirement benefit (PRB) in January of the following year and thus can receive more than one PRB.
+
+Return to footnote 2 referrer
+
+Footnote 3
+
+This amount is added to the retirement benefit.
+
+Return to first footnote 3 referrer
+
+Footnote 4
+
+The maximum amount includes the top-ups for the GIS and the Allowances. The top-ups are provided to GIS and Allowance recipients with the lowest incomes.
+
+Return to footnote 4 referrer
+
+Footnote 5
+
+The income level cut-offs do not include the OAS pension, the first $5,000 of employment or self employment income and 50% of employment or self employment income between $5,000 and $15,000.
+
+Return to first footnote 5 referrer
+
+Footnote 6
+
+The OAS pension repayment range in 2022 is for net world income from $81,761 to $134,626, for individuals aged 65-74. For those aged 75 and over, the upper threshold is $137,331. Net world income includes the OAS pension.
+
+Return to footnote 6 referrer
+
+Footnote 7
+
+Individuals can defer receiving the OAS pension beyond age 65 in exchange for a higher pension. The monthly OAS pension is increased by 0.6% for every month it is delayed up to a maximum of 36% at age 70.
+
+Return to footnote 7 referrer
