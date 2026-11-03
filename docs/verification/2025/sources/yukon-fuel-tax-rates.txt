@@ -1,0 +1,44 @@
+Title: Yukon, Find current fuel tax rates (archived July 11, 2025)
+URL: http://web.archive.org/web/20250711190021/https://yukon.ca/en/fuel-tax-rates
+Fetched: 2026-11-01
+SHA-256 of the original: e8bfcd3bb413811eb2a93d6e4c2b4ac29ed1b9dbe852f0785c649db6455a907a
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+# Find current fuel tax rates in the Yukon
+
+## Current fuel tax rates in the Yukon
+
+- Gasoline: 6.2 cents per litre.
+- Diesel: 7.2 cents per litre.
+- Aviation: 1.1 cents per litre.
+- Heating: no tax.
+- Heating or cooling other than for space heating: 0.2 cents per litre.
+- Propane: no tax.
+
+Last updated on April 5, 2018.
+
+### Access historical information on Yukon tax rates
+
+- Read Yukon historical tax rates including fuel tax rates.
+
+## How fuel tax rates are governed and enforced in the Yukon
+
+All fuel purchases in the Yukon are governed by the Fuel Oil Tax Act and Regulations.
+
+Read the Fuel Oil Tax Act and Regulations.
+
+Contact
+
+If you have questions, email [email protected] or phone 867-667-5345 or toll free in the Yukon 1-800-661-0408 and ask for Tax Administration.
+
+## Related tasks
+
+- Apply for a fuel tax exemption permit
+- Apply for a fuel tax refund
+- Find out about vendor and distributor fuel tax permits
+- Find out about fuel permits for inter-provincial and through carriers (truckers)
+- Find a weigh station
+- Find tax bulletins
+
+Date modified: 2024-12-02

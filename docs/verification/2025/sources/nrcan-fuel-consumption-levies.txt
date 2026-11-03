@@ -1,0 +1,93 @@
+Title: Fuel Consumption Levies in Canada
+URL: https://natural-resources.canada.ca/domestic-international-markets/fuel-consumption-levies-canada
+Fetched: 2026-11-01
+SHA-256 of the original: ce130e22f1f21abb166a5847a9b8936a47123395f994209b3dbfcea1dacfa46e
+Publication date modified: 2026-10-06
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+# Fuel Consumption Levies in Canada
+
+A portion of the final price you pay at the pump for gasoline and other fuels goes to various levels of government in the form of direct or indirect government levies. Depending on where you live, you may pay a federal, provincial and a municipal tax on these products, as well as a federal fuel charge.
+
+## How are fuels taxed?
+
+There are different types of taxes on transportation and heating fuel:
+
+### Fixed taxes
+
+The federal government charges an excise tax at a flat rate of 10 cents per litre on gasoline (in effect at that rate since 1995) and 4 cents per litre on diesel (in effect at that rate since 1987). Furnace oil is exempt from this tax and there is no federal excise tax on natural gas or propane.
+Provincial governments also collect gasoline and diesel taxes and these vary considerably by province. Lastly, three municipalities in Canada (Vancouver, Victoria and Montreal) also apply taxes on gasoline.
+
+### Sales taxes
+
+This tax is based on a percentage of the retail price, a method known as ad valorem. The federal GST/HST is charged on crude oil, refining and marketing costs and margins, the federal excise tax, applicable federal and provincial carbon levies, and provincial road taxes. Provincial sales taxes do not apply to fuels such as gasoline or diesel, except where they have the harmonized sales tax (HST) and in Quebec (QST).
+
+Federal and Provincial Consumption Taxes on Petroleum Products (Cents Per Litre)
+| Gasoline | Diesel | Propane (motor vehicle) | Furnace Oil/ Natural Gas (for heating)
+Federal Taxes Footnote 1
+Excise Tax (Cents/Litre) | 10.0 | 4.0 | - | -
+Goods and Services Tax | 5% | 5% | 5% | 5%
+Provincial Sales Tax (PST or HST) (1)
+Ontario (HST) | 13% | 13% | 13% | 13%
+Quebec Sales Tax (QST) | 9.975% | 9.975% | 9.975% | 9.975%
+Nova Scotia, Newfoundland and Labrador, New Brunswick and Prince Edward Island | 15% | 15% | 15% | 5%
+Provincial Fuel Taxes (Cents/Litre) Footnote 2 Footnote 3 Footnote 4
+Newfoundland and Labrador | 7.50 | 9.50 | 7.0
+Prince Edward Island | 8.47 | 14.15
+Nova Scotia | 15.50 | 15.40 | 7.0
+New Brunswick | 10.87 | 15.45 | 6.7
+Quebec | 19.2 | 20.2
+Ontario | 9.0 | 9.0 | 4.3
+Manitoba | 12.5 | 12.5 | 3.0
+Saskatchewan | 15.0 | 15.0 | 9.0
+Alberta | 0 | 0 | 13
+British Columbia – Vancouver Area | 27.00 | 27.50 | 2.7
+British Columbia – Victoria Area | 20.00 | 20.50 | 2.7
+British Columbia – Rest of province | 14.50 | 15.00 | 2.7
+Yukon | 6.2 | 7.2
+Northwest Territories | 10.7 | 9.1
+Nunavut | 6.4 | 9.1
+Provincial Clean Fuels Adjuster (Cents/Litre)
+Nova Scotia | 3.74 | 4.17
+Prince Edward Island | 4.0 | 3.3
+Newfoundland and Labrador | 3.74 | 4.17
+New Brunswick | 8.0 | 8.0
+
+#### Provincial Carbon Levies (Cents/Litre)
+
+Only Quebec collects carbon taxes on fuels. Please consult the Quebec Ministry of Environment website for seeing how it calculates its carbon taxes on gasoline, diesel, propane and furnace oil / natural gas for heating.
+
+#### Notes:
+
+Rates in the above table were last updated on September 2, 2026.
+
+## Footnotes
+
+Footnote 1
+
+Temporary Suspension of Federal Fuel Excise Tax Rates on Gasoline, Diesel, and Aviation Fuels
+
+The federal excise tax currently applies at a rate of 10 cents per litre on gasoline and unleaded aviation gasoline, and 4 cents per litre on diesel fuel and aviation fuel, other than aviation gasoline. Heating oil is exempt from this tax and there is no federal excise tax on natural gas or propane.
+
+As of April 20, 2026, federal excise tax rates on gasoline, unleaded aviation gasoline, diesel fuel, and aviation fuel would be reduced to 0 cents per litre. This temporary suspension will remain in effect until and including January 31, 2027, and applying 50% of the regular excise tax rate from February 1 through March 31, 2027.
+
+Return to footnote 1 referrer
+
+Footnote 2
+
+The HST, where applied, includes GST and PST.
+
+Return to footnote 2 referrer
+
+Footnote 3
+
+Effective October 1 through December 31, 2026, Alberta has paused its 13-cent-per-litre provincial fuel tax on gasoline and diesel. This relief measure was triggered because West Texas Intermediate (WTI) crude oil prices has averaged over $90 USD per barrel.
+
+Return to footnote 3 referrer
+
+Footnote 4
+
+Effective September 26, 2026, through January 31, 2027, the Government of Prince Edward Island (PEI) suspended the provincial tax on all grades of gasoline and diesel fuels.
+
+Return to footnote 4 referrer
