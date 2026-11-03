@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 
 const fill = async (p, id, value) => {
+  if (id === "oth" && !(await p.locator("#oth").isVisible())) await p.click("#tab-income");
   if (id.startsWith("care-")) await open(p, "#childcare-details");
   if (/^care-(earnings|claim)-/.test(id)) await open(p, "#care-adjustments");
   if (id.startsWith("care-earnings-")) {

@@ -79,7 +79,7 @@ The existing cached primary sources support the interactions above:
   `2026/sources/quebec-family-income.txt`: Quebec expense eligibility, income bands and family income.
 - The federal and Alberta/Ontario YAML `sources` lists identify official rate, BPA, deduction and premium
   references; historical 2022 source extracts are cached in `2022/sources/`.
-- `2023/sources/rule-ab-act.txt` and the Alberta 2023 YAML record the child-count-specific working reduction
+- `2023/sources/provincial-ab-act.txt` and the Alberta 2023 YAML record the child-count-specific working reduction
   and positive-benefit minimum used in the invariant's two fixed examples.
 
 The tests deliberately do not claim full-return correctness. Quebec's Health Services Fund contribution is
