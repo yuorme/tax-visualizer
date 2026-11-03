@@ -1,0 +1,37 @@
+# Benefit-year figures use July 2023 to June 2024, applied to current-year income.
+# PEI child benefit is absent: it did not begin until January 2025.
+# PE428 applies the 10% surtax above 12500 after the dividend credit and before low-income reductions.
+# Charlottetown total rate: (0.67 municipal + 1.50 provincial - 0.50 resident credit) / 100.
+
+code: PE
+name: Prince Edward Island
+shortName: PEI
+order: 10
+brackets:
+  - [31984, 0.098]
+  - [63969, 0.138]
+  - [.inf, 0.167]
+basicPersonalAmount: 12750
+dividendTaxCredit: {eligible: 0.105, nonEligible: 0.013}
+spouseAmount: {max: 10829, threshold: 1083}
+lowIncomeReduction:
+  program: family-low-income-reduction
+  params: {individual: 350, spouse: 350, child: 300, rate: 0.05, threshold: 20750}
+salesTax: {rate: 0.15, label: 15% HST}
+propertyTax: {rate: 0.0167, city: Charlottetown}
+credits:
+  - name: PEI sales tax credit
+    program: pei-sales-tax-credit
+    params: {individual: 110, spouseOrDependant: 55, supplementRate: 0.005, supplementFrom: 30000, supplementMax: 55, rate: 0.02, threshold: 50000}
+sources:
+  - {label: "CRA, PE428 for 2023 (brackets, personal amounts and reductions)", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5002-c/5002-c-23e.pdf}
+  - {label: "CRA, PE428 worksheet for 2023 (dividend credits)", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5002-d/5002-d-23e.pdf}
+  - {label: "CRA, T4114: provincial child benefits July 2023 to June 2024", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pub/t4114/t4114-23e.pdf}
+  - {label: "CRA, RC4210: provincial credits July 2023 to June 2024", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pub/rc4210/rc4210-23e.pdf}
+  - {label: "CRA, GST/HST historical rates and provincial sales-tax rates", url: https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/charge-collect-which-rate/calculator.html}
+  - {label: "Stratford, February 2024 report with explicit 2023 municipal tax comparison", url: https://stratford.civicweb.net/document/135095/}
+  - {label: "PEI Real Property Tax Act sections 4 and 5: rates last amended before 2023", url: https://www.princeedwardisland.ca/sites/default/files/legislation/r-05-real_property_tax_act.pdf}
+childAmount: {perChild: 1200, ages: under6}
+postDividendSurtax:
+  program: pei-surtax
+  params: {threshold: 12500, rate: 0.1}

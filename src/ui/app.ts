@@ -411,7 +411,7 @@ function segTip(p: ProvView, r: Result, c: Seg) {
   } else if (c === "p") {
     sub = `Top ${p.n} bracket reached: ${each(y => rateFmt(y.pr.marg))}`;
     const { surtax, provReductions } = r.breakdown;
-    if (surtax > 0.5) sub += `. Includes ${money(surtax)} Ontario surtax`;
+    if (surtax > 0.5) sub += `. Includes ${money(surtax)} ${p.n} surtax`;
     if (provReductions > 0.5)
       sub += `. After ${money(provReductions)} of ${p.c === "BC" ? "BC tax reduction" : "Ontario tax reduction and LIFT credit"}`;
   } else if (c === "y") {
@@ -918,8 +918,9 @@ function ledgerView({ p, r }: Row) {
       -m.pKid,
     ],
     !p.qc && [`Less CPP &amp; EI credits${p.c === "YT" ? " and employment amount" : ""}`, -m.pEmp],
-    [`Ontario surtax`, m.surtax],
+    !p.d.postDividendSurtax && [`${p.n} surtax`, m.surtax],
     [`Less dividend tax credit`, -m.pDtc],
+    !!p.d.postDividendSurtax && [`${p.n} surtax`, m.surtax],
     [`Less low-income tax reduction`, -m.lowRed],
     [`Less Ontario tax reduction`, -m.onRed],
     [`Less LIFT credit`, -m.lift],
