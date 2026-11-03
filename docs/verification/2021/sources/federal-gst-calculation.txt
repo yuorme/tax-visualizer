@@ -1,0 +1,38 @@
+Title: Goods and services tax/harmonized sales tax (GST/HST) credit- calculation sheet for the July 2021 to
+URL: https://www.canada.ca/content/dam/cra-arc/serv-info/benefits/gstcclc20-eng.pdf
+Fetched: 2026-11-02
+SHA-256 of the original: a796a49376cc553e09df3f14cdef23717ab9496279c6ae4d55a85914a5bd41c8
+Publication date modified: 2021-04-22
+PDF pages: all 1
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 1 of 1 ---
+
+Goods and services tax/harmonized sales tax (GST/HST) credit- calculation sheet for the July 2021 to
+June 2022 payments (2020 base year)
+Base credit: ($299) 1 $299
+Credit for spouse or common-law partner: ($299) 2 $
+Credit for eligible dependant: ($299) 3 $
+Credit for eligible children:
+($157 for each child not included on line 3) $157 × ____ = 4 $
+Calculation of additional credit Footnote1
+(complete only if line 2 is zero)
+Family net income: 5 $
+Base amount: 6 - $9,686
+Line 5 minus line 6. If the result is negative, enter "0". 7 $
+Additional credit: Enter $157 or 2% of line 7, whichever is less. 8 $
+Subtotal: (add lines 1, 2, 3, 4 and 8) 9 $
+Credit reduction
+Adjusted family net income:
+(Family net income minus Universal child care benefit (UCCB) and Registered Disability
+Savings Plan (RDSP) income plus UCCB and RDSP repayment) 10 $
+Base amount: 11 - $38,892
+Line 10 minus line 11. If the result is negative, enter "0". 12 $
+Enter 5% of line 12: 13 $
+Annual credit: (line 9 minus line 13) 14 $
+All amounts are approximate. Your Notice of Determination will show your actual entitlement for the
+year.
+Footnote
+1 Single parents will receive the full value of the supplement as part of their base GST/HST credit. For
+these clients enter $157 on line 8.

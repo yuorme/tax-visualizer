@@ -1,0 +1,11 @@
+Title: Vancouver, 2021 property tax rates (manual official PDF web extract)
+URL: https://vancouver.ca/files/cov/2021-property-tax-rates.pdf
+Fetched: 2026-11-02
+SHA-256 of the original: unavailable (direct download returned HTTP 403; official PDF read by web tool)
+Manual transcription from the official one-page PDF, not a fetch-source text extract.
+================================================================================
+
+Residential Class 1 levy per $1000 taxable value:
+General purpose 1.60152; provincial school 0.96661; TransLink 0.25898;
+BC Assessment 0.04116; Metro Vancouver 0.05403; Municipal Finance Authority 0.00020.
+Published total: 2.92250 per $1000 taxable value.

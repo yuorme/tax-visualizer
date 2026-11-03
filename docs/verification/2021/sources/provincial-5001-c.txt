@@ -1,0 +1,282 @@
+Title: Newfoundland and Labrador Tax
+URL: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5001-c/5001-c-21e.pdf
+Fetched: 2026-11-02
+SHA-256 of the original: de4fbe52dc0e5960b1e0b46fec7f858f9e5c442fb8517f80aeff3d1fe101e985
+Publication date modified: 2021-11-10
+PDF pages: all 4
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 1 of 4 ---
+
+Form NL428
+2021
+Protected B when completed
+Newfoundland and Labrador Tax
+Part A – Newfoundland and Labrador tax on taxable income
+1Enter your taxable income from line 26000 of your return.
+Use the amount from line 1 to complete the appropriate column below.
+Line 1 is
+$38,081 or less
+Amount from line 1
+–Line 2 minus line 3
+(cannot be negative) =
+×Line 4 multiplied by the
+percentage from line 5 =
++
+Newfoundland and Labrador
+tax on taxable income
+Line 6 plus line 7
+=
+Line 1 is more than
+$38,081 but not
+more than $76,161
+–
+=
+×
+=
++
+=
+Line 1 is more than
+$76,161 but not
+more than $135,973
+–
+=
+×
+=
++
+=
+Line 1 is more than
+$135,973 but not
+more than $190,363
+–
+=
+×
+=
++
+=
+Line 1 is more
+than $190,363
+–
+=
+×
+=
++
+=
+2
+3
+4
+5
+6
+7
+8
+Enter the amount from line 8 on line 56 and continue at line 9.
+Part B – Newfoundland and Labrador non-refundable tax credits 56000Internal use
+58040 9Basic personal amount Claim $9,536
+58080 10Age amount (if you were born in 1956 or earlier) (use Worksheet NL428) (maximum $6,087) +
+Spouse or common-law partner amount:
+11Base amount
+12
+Your spouse's or common-law partner's net income
+from line 23600 of their return –
+58120 13Line 11 minus line 12 (if negative, enter "0") (maximum $7,792) =
+Ż +
+Amount for an eligible dependant:
+14Base amount
+15Your eligible dependant's net income from line 23600 of their return –
+58160 16Line 14 minus line 15 (if negative, enter "0") (maximum $7,792) =
+Ż +
+58200 17Amount for infirm dependants age 18 or older (use Worksheet NL428) +
+18Add lines 9, 10, 13, 16, and 17. =
+CPP or QPP contributions:
+58240 19Amount from line 30800 of your return •
+58280 20Amount from line 31000 of your return + •
+Employment insurance premiums:
+58300 21Amount from line 31200 of your return + •
+58305 22Amount from line 31217 of your return + •
+58315 23Volunteer firefighters' amount +
+58316 24Search and rescue volunteers' amount +
+58320 25Child care amount +
+58330 26Adoption expenses +
+27Add lines 19 to 26. =
+Ż +
+28Line 18 plus line 27 =
+5001-C E (21) (Ce formulaire est disponible en français.) Page 1 of 4
+0.00
+8.7%
+0.00
+38,081.00
+14.5%
+3,313.05
+76,161.00
+15.8%
+8,834.65
+135,973.00
+17.3%
+18,284.94
+190,363.00
+18.3%
+27,694.41
+8,572.00
+8,572.00
+
+--- PDF page 2 of 4 ---
+
+Protected B when completed
+Part B – Newfoundland and Labrador non-refundable tax credits (continued)
+29Amount from line 28 of the previous page
+58360 30Pension income amount (maximum $1,000) +
+58400 31Caregiver amount (use Worksheet NL428) +
+32Add lines 29 to 31. =
+58440 33
+Disability amount for self
+(claim $6,435 or, if you were under 18 years of age, use Worksheet NL428) +
+58480 34Disability amount transferred from a dependant (use Worksheet NL428) +
+35Add lines 32 to 34. =
+58520 36Interest paid on your student loans (amount from line 31900 of your return) +
+58560 37Your tuition and education amounts (attach Schedule NL(S11)) +
+58600 38Tuition and education amounts transferred from a child or grandchild +
+58640 39Amounts transferred from your spouse or common-law partner (attach Schedule NL(S2)) +
+40Add lines 35 to 39. =
+Medical expenses:
+58689 41Amount from line 33099 of your return
+42Amount from line 23600 of your return
+43Applicable rate ×
+44Line 42 multiplied by the percentage from line 43 =
+45Enter whichever is less: $2,077 or the amount on line 44. –
+46Line 41 minus line 45 (if negative, enter "0") =
+58729 47
+Allowable amount of medical expenses for other dependants
+(use Worksheet NL428) +
+58769 48Line 46 plus line 47 =
+Ż +
+58800 49Line 40 plus line 48 =
+50Newfoundland and Labrador non-refundable tax credit rate ×
+58840 51Line 49 multiplied by the percentage from line 50 =
+Donations and gifts:
+52
+Amount from line 13
+of your federal Schedule 9 × 8.7% =
+53
+Amount from line 14
+of your federal Schedule 9 × 18.3% = +
+58969 54Line 52 plus line 53 =
+Ż +
+61500 55Newfoundland and Labrador non-refundable tax credits
+Line 51 plus line 54
+Enter this amount on line 59. =
+5001-C E (21) Page 2 of 4
+3%
+8.7%
+
+--- PDF page 3 of 4 ---
+
+Protected B when completed
+Part C – Newfoundland and Labrador tax
+56Newfoundland and Labrador tax on taxable income from line 8
+61510 57Newfoundland and Labrador tax on split income (complete Form T1206) + •
+58Line 56 plus line 57 =
+59Newfoundland and Labrador non-refundable tax credits from line 55
+61520 60Newfoundland and Labrador dividend tax credit (use Worksheet NL428) + •
+61540 61
+Newfoundland and Labrador minimum tax carryover:
+Amount from line 40427 of your return × 58% = + •
+62Add lines 59 to 61. =
+Ż –
+63Line 58 minus line 62 (if negative, enter "0") =
+64
+Newfoundland and Labrador additional tax for minimum tax purposes:
+Amount from line 118 of Form T691 × 58% = +
+65Line 63 plus line 64 =
+66Provincial foreign tax credit (complete Form T2036) –
+67Line 65 minus line 66 (if negative, enter "0") =
+61750 68Newfoundland and Labrador political contributions made in 2021
+69
+Newfoundland and Labrador political contribution tax credit
+(use Worksheet NL428) (maximum $500) –
+70Line 67 minus line 69 (if negative, enter "0") =
+71Direct equity tax credit (complete Form T1272) –
+72Line 70 minus line 71 (if negative, enter "0") =
+73Resort property investment tax credit (complete Form T1297) –
+74Line 72 minus line 73 (if negative, enter "0") =
+61820 75Venture capital tax credit from Certificate(s) NL VCTC •
+76
+Unused Newfoundland and Labrador venture capital tax credit from
+your most recent notice of assessment or reassessment +
+77Line 75 plus line 76 =
+Ż –
+78Line 74 minus line 77 (if negative, enter "0") =
+Newfoundland and Labrador low-income tax reduction
+If you had a spouse or common-law partner on December 31, 2021, you and your spouse or
+common-law partner need to decide who will claim this tax reduction for your family. Any unused
+amount from line 101 can be claimed by the other spouse or common-law partner on line 79 of
+their Form NL428.
+61860 79
+Unused low-income tax reduction from your spouse or common-law partner:
+Amount from line 101 of your spouse's or common-law partner's Form NL428, if any – •
+80Line 78 minus line 79 (if negative, enter "0") =
+If you are claiming an amount on line 79, enter the amount from line 80 on line 87, enter "0" on
+line 97, and continue on line 98. If not, continue on the next page.
+5001-C E (21) Page 3 of 4
+
+--- PDF page 4 of 4 ---
+
+Protected B when completed
+Part C – Newfoundland and Labrador tax (continued)
+Adjusted family income calculation for the
+Newfoundland and Labrador low-income tax reduction
+Column 1
+You
+Net income from line 23600 of the return
+Total of the universal child care benefit (UCCB) repayment
+(line 21300 of the return) and the registered disability savings plan
+(RDSP) income repayment (included on line 23200 of the return) +
+Line 81 plus line 82 =
+Total of the UCCB income (line 11700 of the return) and the RDSP
+income (line 12500 of the return) –
+Line 83 minus line 84 (if negative, enter "0") =
+Column 2
+Your spouse or
+common-law partner
++
+=
+–
+=
+81
+82
+83
+84
+85
+86Adjusted family income
+Add the amounts from line 85 of columns 1 and 2.
+Enter this amount on line 92.
+87Amount from line 80 of the previous page
+61870 88Basic reduction Claim $862
+61880 89Reduction for spouse or common-law partner Claim $481 +
+61890 90Reduction for an eligible dependant claimed on line 58160 Claim $481 +
+91Add lines 88 to 90. (maximum $1,343) =
+92
+Adjusted family income:
+Amount from line 86
+93
+If you claimed an amount on line 89 or line 90,
+enter $34,866; if not, enter $20,619. –
+94Line 92 minus line 93 (if negative, enter "0") =
+95Applicable rate ×
+96Line 94 multiplied by the percentage from line 95 =
+Ż –
+97
+Newfoundland and Labrador
+low-income tax reduction
+Line 91 minus line 96
+(if negative, enter "0") =Ż –
+98Newfoundland and Labrador tax
+Line 87 minus line 97 (if negative, enter "0")
+Enter this amount on line 42800 of your return. =
+Unused low-income tax reduction that your spouse or common-law partner can claim
+99Amount from line 97 above
+100Amount from line 78 of the previous page –
+101Unused amountLine 99 minus line 100 (if negative, enter "0") =
+See the privacy notice on your return.
+5001-C E (21) Page 4 of 4
+16%
