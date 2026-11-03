@@ -48,6 +48,7 @@ export const CHILDCARE_STEPS = [
           }),
         ),
       );
+      await p.evaluate(() => history.replaceState(null, "", location.pathname + location.search));
       await p.reload();
       assert.equal(await p.locator("#frug").count(), 0);
       assert.equal(await p.inputValue("#spend"), "3,200");
@@ -440,9 +441,11 @@ export const CHILDCARE_STEPS = [
       await p.reload();
       assert.deepEqual(await totals(), hiddenTotals);
       await p.evaluate(s => localStorage.setItem("taxcmp", JSON.stringify({ ...s, childcare: undefined })), hidden);
+      await p.evaluate(() => history.replaceState(null, "", location.pathname + location.search));
       await p.reload();
       assert.deepEqual(await totals(), hiddenTotals);
       await p.evaluate(s => localStorage.setItem("taxcmp", JSON.stringify(s)), hidden);
+      await p.evaluate(() => history.replaceState(null, "", location.pathname + location.search));
       await p.reload();
       await setCount(p, 1);
       await open(p, "#childcare-details");
@@ -486,6 +489,7 @@ export const CHILDCARE_STEPS = [
           }),
         ),
       );
+      await p.evaluate(() => history.replaceState(null, "", location.pathname + location.search));
       await p.reload();
       const noChildRelief = async () => {
         const benefits = p.locator("table.cmp tr").filter({ hasText: "Child benefits" }).first();

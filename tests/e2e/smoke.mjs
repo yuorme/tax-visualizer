@@ -7,6 +7,7 @@
 // Every built-page state still checks script errors, unexpected requests, chart labels, visible hints and phone
 // overflow. The legacy comparison disables driving because the legacy page predates fuel tax.
 // Known failures (rules.KNOWN) are reported but don't fail the run; `npm run e2e -- --strict` fails on them too.
+import assert from "node:assert/strict";
 import fs from "node:fs";
 import { chromium } from "playwright";
 import { listYears, loadYear } from "../../src/data/load.ts";
@@ -584,6 +585,7 @@ const YEAR_STEPS = [
         saved.year = "invalid";
         localStorage.setItem("taxcmp", JSON.stringify(saved));
       });
+      await p.evaluate(() => history.replaceState(null, "", location.pathname + location.search));
       await p.reload();
       if ((await p.inputValue("#tax-year")) !== String(Math.max(...listYears())))
         problems.push("invalid year did not fall back");
@@ -635,6 +637,186 @@ const capture = p =>
       id => document.getElementById(id).textContent || document.getElementById(id).value,
     ),
   }));
+
+const SHARE_STEPS = [
+  [
+    "the default address is compact and explicit; edits keep it current",
+    async p => {
+      assert.match(p.url(), /#s=1&year=\d{4}$/);
+      await type(p, "#income", "83,456");
+      const params = new URL(p.url()).hash;
+      assert.match(params, /people=/);
+      assert.equal(new URLSearchParams(params.slice(1)).has("spend"), false);
+      await p.evaluate(() => {
+        Object.defineProperty(navigator, "clipboard", {
+          configurable: true,
+          value: {
+            writeText: async value => {
+              window.copiedScenario = value;
+            },
+          },
+        });
+      });
+      await p.click("#copy-link");
+      assert.equal(await p.evaluate(() => window.copiedScenario), p.url());
+      assert.equal(await p.textContent("#share-status"), "Link copied");
+      await type(p, "#income", "84,000");
+      assert.equal(await p.textContent("#share-status"), "");
+    },
+  ],
+  [
+    "every saved input and result survives sharing into a fresh context with conflicting storage",
+    async p => {
+      await p.evaluate(() => {
+        const state = JSON.parse(localStorage.getItem("taxcmp"));
+        Object.assign(state, {
+          year: 2025,
+          home: "QC",
+          dest: "BC",
+          adults: 3,
+          kids: 2,
+          under6: 1,
+          people: [
+            { ord: 84000, oth: 1234, cg: -500, ed: 2000, nd: 300, fd: 400, ded: 100, rrsp: 1200, fhsa: 800 },
+            { ord: 35000, oth: 500, cg: 1000, ed: 200, nd: 100, fd: 300, ded: 50 },
+          ],
+          active: 1,
+          spouse: false,
+          sort: "geo",
+          view: "dest",
+          metric: "usd",
+          useBpa: false,
+          useCredits: true,
+          whRate: 0.3,
+          spend: 4000,
+          spendingAdjustment: -20,
+          homeValue: 650000,
+          propOverride: 0.007,
+          propertyTaxBill: 4200.25,
+          rent: 1500,
+          tenure: "own",
+          tab: "home",
+          km: 16093.44,
+          eff: 7.840486111111111,
+          drivingUnits: "us",
+          historyOpen: false,
+          historyMode: "nominal",
+          childcare: {
+            monthly: 1000,
+            mode: "manual",
+            activeChildren: 2,
+            earnings: [40000, 0],
+            earningsOverridden: [true, true],
+            claims: [4000, 0],
+            touched: ["care-age-0", "care-age-1"],
+            children: [
+              {
+                age: 4,
+                expenses: 8000,
+                qcEligibleExpenses: 7000,
+                disabilityTaxCredit: false,
+                infirm: false,
+                qcSevereImpairment: false,
+              },
+              {
+                age: 10,
+                expenses: 4000,
+                qcEligibleExpenses: 3000,
+                disabilityTaxCredit: true,
+                infirm: true,
+                qcSevereImpairment: true,
+              },
+            ],
+          },
+        });
+        localStorage.setItem("taxcmp", JSON.stringify(state));
+        history.replaceState(null, "", location.pathname);
+      });
+      await p.reload();
+      await settle(p);
+      const expected = await p.evaluate(() => JSON.parse(localStorage.getItem("taxcmp")));
+      const expectedResults = await capture(p);
+      const link = p.url();
+      const recipient = await openPage(browser, { width: 1000 });
+      counts.pages++;
+      try {
+        await recipient.page.evaluate(url => {
+          localStorage.setItem("taxcmp", JSON.stringify({ v: 3, year: 2026, home: "AB", people: [{ ord: 999 }] }));
+          history.replaceState(null, "", url);
+        }, link);
+        await recipient.page.reload();
+        await settle(recipient.page);
+        assert.deepEqual(await recipient.page.evaluate(() => JSON.parse(localStorage.getItem("taxcmp"))), expected);
+        assert.deepEqual(await capture(recipient.page), expectedResults);
+        assert.deepEqual(recipient.errors, []);
+        assert.deepEqual(recipient.blocked, []);
+      } finally {
+        await recipient.close();
+      }
+    },
+  ],
+  [
+    "history mode, disabled credits, zero overrides and drafts also reproduce",
+    async p => {
+      await openTab(p, "credits");
+      await p.click("label[for=cred-toggle]");
+      assert.equal(await p.isChecked("#cred-toggle"), false);
+      await openTab(p, "home");
+      await type(p, "#property-tax-bill", "0");
+      await p.click('[data-tenure="rent"]');
+      await p.$eval("#childcare-details", el => {
+        el.open = true;
+      });
+      await p.fill("#care-age-0", "not an age");
+      await p.locator("#care-age-0").blur();
+      await p.click("#view-history");
+      await p.click("#history-real");
+      const expected = await p.evaluate(() => JSON.parse(localStorage.getItem("taxcmp")));
+      const rows = await p.textContent("#history-rows");
+      await p.evaluate(() => localStorage.clear());
+      await p.reload();
+      assert.deepEqual(await p.evaluate(() => JSON.parse(localStorage.getItem("taxcmp"))), expected);
+      assert.equal(await p.textContent("#history-rows"), rows);
+      assert.equal(await p.getAttribute("#history-real", "aria-pressed"), "true");
+    },
+  ],
+  [
+    "clipboard failure exposes a selectable link without changing the scenario",
+    async p => {
+      await p.evaluate(() => Object.defineProperty(navigator, "clipboard", { configurable: true, value: undefined }));
+      const before = p.url();
+      await p.click("#copy-link");
+      assert.equal(await p.inputValue("#share-url"), before);
+      assert.equal(await p.$eval("#share-url", el => el.selectionEnd - el.selectionStart), before.length);
+      assert.equal(await p.locator("#share-url").isVisible(), true);
+    },
+  ],
+  [
+    "old, malformed and explicit default links ignore saved values",
+    async p => {
+      for (const hash of [
+        "#s=0&year=2019",
+        "#s=1&year=9999&people=broken&kids=1.5&home=%22ZZ%22",
+        `#s=1&year=${Math.max(...listYears())}`,
+      ]) {
+        await p.evaluate(hash => history.replaceState(null, "", hash), hash);
+        await p.reload();
+        assert.equal(await p.inputValue("#income"), "75,000");
+        assert.equal(await p.inputValue("#home"), "ON");
+        assert.equal(await p.inputValue("#kids"), "0");
+        assert.equal(await p.inputValue("#tax-year"), String(Math.max(...listYears())));
+      }
+      // Pasting another scenario into the address bar can navigate within the same document.
+      await Promise.all([
+        p.waitForEvent("load"),
+        p.evaluate(() => {
+          location.hash = "s=1&people=%5B%7B%22ord%22%3A12345%7D%5D";
+        }),
+      ]);
+      assert.equal(await p.inputValue("#income"), "12,345");
+    },
+  ],
+];
 
 // Failures are grouped by message, so a problem seen in every run and step prints once, with where it was seen.
 const failures = new Map();
@@ -716,6 +898,7 @@ for (const [label, steps] of [
   ["history", HISTORY_STEPS],
   ["carbon pricing", CARBON_STEPS],
   ["childcare", CHILDCARE_STEPS],
+  ["shareable links", SHARE_STEPS],
 ]) {
   check(`1000px light, ${label}`, 1000, await run({ width: 1000, steps }));
   console.log(`1000px light: ${steps.length} ${label} states checked`);

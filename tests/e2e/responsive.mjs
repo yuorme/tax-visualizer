@@ -18,6 +18,16 @@ const openDetails = async (p, selector) => {
 
 export const RESPONSIVE_STEPS = [
   [
+    "layout: scenario link can be copied with the clipboard unavailable",
+    async p => {
+      await p.evaluate(() => Object.defineProperty(navigator, "clipboard", { configurable: true, value: undefined }));
+      await p.click("#copy-link");
+      assert.equal(await p.inputValue("#share-url"), p.url());
+      assert.equal(await p.locator("#share-url").isVisible(), true);
+      assert.equal(await p.$eval("#share-url", el => el.getBoundingClientRect().right <= innerWidth), true);
+    },
+  ],
+  [
     "layout: latest year with fuel tax",
     async p => {
       await p.selectOption("#tax-year", String(Math.max(...listYears())));
