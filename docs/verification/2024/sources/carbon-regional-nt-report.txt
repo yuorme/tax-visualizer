@@ -1,0 +1,910 @@
+Title: NWT CARBON TAX REPORT
+URL: https://www.fin.gov.nt.ca/sites/fin/files/final_2023-2024_nwt_carbon_tax_report.pdf
+Fetched: 2026-11-02
+SHA-256 of the original: d1f1b6930c7448e914e06cfd3f4cf092144f3af5fef094b3aa724e61af6a8aa2
+Publication date modified: 2024-11-12
+PDF pages: all 25
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 1 of 25 ---
+
+NWT CARBON TAX REPORT
+RAPPORT ANNUEL SUR LA TAXE SUR LE CARBONE
+2023-2024
+Le présent document contient la traduction française du message de la ministre.
+
+--- PDF page 2 of 25 ---
+
+Kīspin ki nitawihtīn ē nīhīyawihk ōma ācimōwin, tipwāsinān.
+nēhiyawēwin
+Ɂerıhtł’ís Dëne Sųłıné yatı t’a huts’elkër xa beyáyatı theɂą ɂat’e, nuwe ts’ën yółtı.
+Dëne Sųłıné
+Edı gondı dehgáh got’ı˛e zhatıé k’é˛é datł’éh enahddhę nıde naxets’é edahłí.
+Dene Zhatıé
+K’áhshó got’ı˛ne xǝdǝ k’e hederı ɂedı˛htl’é yerınıwe˛ nı dé dúle.
+Dene Kǝdé
+Jii gwandak izhii ginjìk vat’atr’ijąhch’uu zhit yinohthan jì’, diits’àt ginohkhìi.
+Dinjii zhu’ Ginjik
+Uvanittuaq ilitchurisukupku Inuvialuktun, ququaqluta.
+Inuvialuktun
+ᑖᒃᑯᐊ ᑎᑎᕐᒃᑲᐃᑦ ᐱᔪᒪᒍᕕᒋᑦ ᐃᓄᒃᑎᑐᓕᕐᒃᓯᒪᓗᑎᒃ, ᐅᕙᑦᑎᓐᓄᑦ ᐅᖄᓚᔪᓐᓇᖅᑐᑎᑦ.
+Inuktitut
+Hapkua titiqqat pijumagupkit Inuinnaqtun, uvaptinnut hivajarlutit.
+Inuinnaqtun
+Tłı˛cho˛ yatı k’è˛è˛. Dı wegodı newǫ dè, gots’o gonede.
+Tłı˛cho˛
+Indigenous Languages
+request_indigenous_languages@gov.nt.ca
+
+--- PDF page 3 of 25 ---
+
+Northwest Territories Carbon Tax Report | 2023-2024Contents
+Message from the Minister of Finance ................................................................................................................................................................................................1
+Message de la ministre des Finances ...................................................................................................................................................................................................2
+1. Introduction ......................................................................................................................................................................................................................................3
+Description of Carbon Tax and Rebates ...........................................................................................................................................................................................3
+Northwest Territories Carbon Tax Offset System .........................................................................................................................................................................4
+Northwest Territories Carbon Tax Offset System Changes ..........................................................................................................................................................5
+Carbon Tax Administration ...............................................................................................................................................................................................................6
+COLO Administration ........................................................................................................................................................................................................................6
+2. Fiscal Year Results .............................................................................................................................................................................................................................7
+3. Measuring Movement towards a Less Carbon Intensive Economy ...............................................................................................................................................14
+Measuring Changes in Carbon Intensity in Households ................................................................................................................................................................16
+Northwest Territories Household Carbon Emission History ......................................................................................................................................................16
+Measuring Carbon Intensity in Industry .........................................................................................................................................................................................17
+Northwest Territories Industrial Carbon Emission History ........................................................................................................................................................17
+Appendix .............................................................................................................................................................................................................................................20
+
+--- PDF page 4 of 25 ---
+
+Northwest Territories Carbon Tax Report | 2023-20241
+Message from the Minister of Finance
+I am pleased to present the annual carbon tax report documenting the Northwest Territories carbon pricing results for the fiscal year ended March 31st, 2024.
+Major changes were required in 2023 in the territory’s carbon tax system to meet the revised federal carbon pricing benchmarks from April 1, 2023 to April 1, 2030.
+The main changes were to match federal carbon tax rate increases and ensure that we were not returning the carbon tax revenues into the economy in a way
+that negates the carbon price signal. This regrettably included eliminating the at-source carbon tax rebates on heating fuel, but we were faced with a singular
+choice: either we keep control of the carbon tax legislation by complying with federal benchmarks or Canada would apply its system.
+Retaining the flexibility to design a ‘made in the north’ solution that reflects Northern priorities and circumstances offers the advantage that collectively we can
+continue to adapt our rebate programs in response to feedback from the public and from discussions within the Legislative Assembly, even though within the
+confines of the federal carbon pricing criteria.
+For 2023-24 we used this flexibility to add a regional component to the Cost of Living Offset so that residents who live in areas with higher carbon-taxed fuel use
+would receive a higher Cost of Living Offset payment. We also listened to concerns about the new carbon tax burden for community governments and added
+an annual revenue-sharing grant to community governments that we hope will aid their efforts to adapt to climate change, reduce reliance on fossil fuel and
+support overall reduction of greenhouse gas emissions.
+We are providing large emitters with an offset that does not run counter to the federal criteria but offers a customized, more flexible treatment of carbon tax for
+northern mining operations at different times in their lifecycle. This will allow this key industry to remain viable and competitive; both by maintaining certainty
+for existing operations and by ensuring prospective new entrants have some mitigation against otherwise overall higher costs of exploration and development.
+Helping to mitigate the carbon tax burden for businesses and other organizations is more complicated because they incur different levels of carbon tax and
+options to reduce their fossil fuel use vary. We are tying support for business by returning carbon tax revenues to residents through the Cost of Living Offset that
+includes an amount for the expected consumer price increases resulting from businesses raising their prices because of the carbon tax. We are also continuing
+existing GNWT grant programs to help businesses and other non-government organizations reduce carbon-based fuel consumption.
+I firmly believe that territory’s carbon tax system is the best approach to adhere to the federally-imposed carbon pricing requirements in a way that best meets
+the needs of the Northwest Territories.
+Caroline Wawzonek
+Minister of Finance
+
+--- PDF page 5 of 25 ---
+
+Northwest Territories Carbon Tax Report | 2023-20242
+Message de la ministre des Finances
+J’ai le plaisir de présenter le rapport annuel sur la taxe sur le carbone, qui documente les résultats de la tarification du carbone aux Territoires du Nord-Ouest (TNO)
+pour l’exercice qui s’est terminé le 31 mars 2024.
+D’importantes modifications ont dû être apportées au régime de tarification du carbone des TNO en 2023 afin de respecter le régime fédéral révisé de
+tarification du carbone, du 1er avril 2023 au 1er avril 2030. Comme principaux changements, nous avons haussé la taxe sur le carbone aux TNO pour égaler la
+hausse fédérale, et nous nous sommes assurés que les recettes de la taxe sur le carbone ne soient pas réinjectées dans l’économie de manière à annuler le
+signal de prix du carbone. Malheureusement, on compte parmi ces changements la suppression du remboursement de la taxe sur le carbone à la source pour le
+mazout de chauffage. Nous avions un choix à faire : soit les TNO gardaient le contrôle de la législation sur la taxe sur le carbone en respectant le régime fédéral
+soit le gouvernement fédéral appliquait son système aux TNO.
+En gardant une marge de manœuvre et en mettant au point une solution « propre au Nord » qui tient compte des priorités et de la réalité ténoise, nous
+pourrons, ensemble, continuer d’adapter nos programmes de remboursement en fonction des commentaires de la population et des discussions au sein de
+l’Assemblée législative, même si cela doit se faire dans les limites des critères fédéraux de tarification du carbone.
+En 2023-2024, grâce à la marge de manœuvre dont nous disposons, nous avons ajouté une composante à la compensation du coût de la vie (CCV) pour que les
+résidents des régions où la consommation de mazout de chauffage est plus élevée reçoivent des versements de CCV plus importants. Nous avons également
+répondu aux préoccupations des administrations communautaires quant au fardeau de la nouvelle taxe sur le carbone, en leur octroyant une subvention
+annuelle de partage des revenus qui, nous l’espérons, les aidera dans leurs efforts d’adaptation au changement climatique, réduira leur dépendance aux
+combustibles fossiles et favorisera la réduction globale des émissions de gaz à effet de serre.
+Nous offrirons aux grands émetteurs une compensation qui, sans aller à l’encontre du régime fédéral, offre un régime personnalisé et plus flexible de tarification
+du carbone pour soutenir les activités minières du Nord à différents moments de leur cycle de vie. Cette initiative permettra à ce secteur d’activité de demeurer
+viable et concurrentiel, à la fois en permettant à ces entreprises de continuer d’exister, et aux nouveaux exploitants potentiels de profiter de mesures
+d’atténuation, étant donné que les coûts généraux d’exploration et de développement sont plutôt élevés.
+Il est plus compliqué d’atténuer le fardeau de la taxe sur le carbone pour les entreprises et les autres organismes, car ceux-ci payent différents montants de taxe,
+et les possibilités pour eux de réduire leur utilisation de combustibles fossiles varient. Nous soutenons les entreprises en redistribuant les recettes de la taxe carbone
+aux résidents au moyen de la compensation du coût de la vie qui comprend un montant destiné à couvrir l’augmentation prévue des prix à la consommation
+découlant de l’augmentation des prix par les entreprises en raison de la taxe carbone. Nous comptons également poursuivre les programmes existants de
+subventions visant à aider les entreprises et les autres organismes non gouvernementaux à réduire leur consommation de carburant à base de carbone.
+Je crois fermement que le régime de taxation du carbone des TNO est la meilleure approche pour respecter les exigences de tarification du carbone imposées
+par le gouvernement fédéral et ainsi répondre au mieux aux besoins des Ténois.
+Caroline Wawzonek
+Ministre des Finances
+
+--- PDF page 6 of 25 ---
+
+Northwest Territories Carbon Tax Report | 2023-20243
+1. Introduction
+April 1st, 2023 marked the first changes to the Northwest Territories carbon tax structure since its implementation on September 1st, 2019.
+The territorial carbon tax was introduced to meet the Government of the Northwest Territories’ (GNWT) commitment on carbon pricing under
+the Pan-Canadian Framework on Clean Growth and Climate Change and fulfil the Department of Finance’s assignment of Action Item 1.1 B
+(Implement NWT carbon pricing) under the 2019-2023 Climate Change Strategic Framework Action Plan.
+The original Northwest Territories carbon pricing plan was designed through discussions with the 18th Legislative Assembly, stakeholders, and the federal
+government. These discussions resulted in a carbon pricing design that met federal benchmark price and coverage requirements while recognising the barriers
+to reducing carbon fuel use in the territory. However, in August 2021, the federal government announced revised carbon pricing benchmarks for the period
+from April 1st, 2023 to April 1st, 2030, that included:
+• Increasing the carbon price annually by $15 a tonne of carbon dioxide equivalent emissions starting April 1st, 2023 (from the $50 a tonne base rate
+in 2022), rising to $170 a tonne on April 1st, 2030;
+• Implementing guidelines to ensure that recycling carbon tax revenues back to residents and into the economy does not negate the price signal.
+Provinces and territories may continue to have their own systems, but these systems must maintain effective price signals. Rebate systems that
+negate the price signal will no longer meet the federal benchmark, except for rebates for community electrical generation that is not attached to
+the North American grid and aviation fuel used in the territories; and
+• Imposing the federal carbon pricing system on jurisdictions that do not submit acceptable plans.
+In 2023, the Northwest Territories Legislative Assembly passed amendments to the carbon tax legislation to ensure that the Northwest Territories carbon tax
+system would continue to meet federal carbon pricing benchmarks after April 1st, 2023.
+The GNWT’s carbon pricing approach attempts to reduce greenhouse gas emissions by encouraging carbon conservation and substitution while minimising the
+effect on the cost of living and avoiding the creation of additional barriers to economic development. The GNWT has made investments in alternative energy
+options for territorial residents and businesses a priority and expects to continue making alternative energy investments while working closely with the federal
+government, other Northwest Territories governments, residents, and businesses to provide communities with reliable, affordable alternatives to carbon-
+intensive fuels.
+Description of Carbon Tax and Rebates
+Northwest Territories carbon tax rates have increased annually from $20/tonne of greenhouse gas emissions starting September 1st, 2019 to $65/tonne on
+April 1st, 2023 as required by the federal minimum national stringency standards (Table 1). Carbon tax is added to the retail fuel price at the point of purchase.
+Carbon tax does not apply to the following:
+• Indians and Indian Bands as defined in the Indian Act (Canada) when making purchases or taking delivery of fuels on NWT reserves,
+• Fuel purchased by visiting military forces under the Visiting Forces Act (Canada),
+• Fuel use for aviation, and
+• Fuel in sealed, pre-packaged containers of ten litres or less.
+
+--- PDF page 7 of 25 ---
+
+Northwest Territories Carbon Tax Report | 2023-20244
+Table 1: Carbon tax rates and effective dates
+Effective Date
+Fuel Type
+Sept 1st, 2019
+($20/tonne)
+July 1st, 2020
+($30/tonne)
+July 1st, 2021
+($40/tonne)
+July 1st, 2022
+($50/tonne)
+April 1st, 2023
+($65/tonne)
+Gasoline (¢/litre) 4.7 7.0 9.4 11.7 14.31
+Diesel (¢/litre) 5.5 8.2 10.9 13.7 17.38
+Propane (¢/litre) 3.1 4.6 6.2 7.7 10.06
+Naphtha (¢/litre) 5.1 7.7 10.2 12.8 14.65
+Butane (¢/m3) 3.5 5.3 7.1 8.9 11.57
+Marketable natural gas (¢/m3) 3.8 5.8 7.7 9.6 12.39
+Aviation gasoline (¢/litre) Exempt Exempt Exempt Exempt Exempt
+Aviation jet fuel (¢/litre) Exempt Exempt Exempt Exempt Exempt
+Offsetting expenditures have been put in place to help reduce the carbon tax burden on taxpayers. Except for the Cost of Living Offset for individuals established
+under the Income Tax Act, other carbon tax offset expenditures are set out in the Petroleum Products and Carbon Tax Regulations.
+Northwest Territories Carbon Tax Offset System from September 1st, 2019 to March 31st, 2023
+The GNWT provided the following carbon tax offsets between September 1st, 2019 to March 31st, 2023, as approved through the annual budget process:
+• Heating Fuel Rebate – a 100 per cent point-of-sale rebate of carbon tax on heating fuel for residents, governments, and business entities other than
+prescribed large emitters.
+• Electrical Power Producers Rebate – a 100 per cent point-of-sale rebate of carbon tax on fuel used by public utilities in electricity production for
+distribution to their customers.
+• Cost of Living Offset (COLO) – a tax-free, non-income tested benefit for NWT residents that increases annually in step with carbon tax rate increases.
+The COLO is administered by the Canada Revenue Agency on behalf of the GNWT and paid quarterly to households and individuals on a benefit
+year that runs from July to June.
+The Cost of Living Offset (COLO) is an estimate of the average household carbon tax burden paid directly on fuel or indirectly when businesses pass the tax to
+consumers through increased prices. Although the COLO is not directly tied to the amount of carbon tax collected it is an expenditure related to the carbon tax.
+Annual COLO benefits were paid to individuals and families as follows:
+• 2019-20 – $104 for an adult and $120 a child;
+• 2020-21 – $156 for an adult and $180 a child;
+• 2021-22 – $208 for an adult and $240 a child;
+• 2022-23 – $260 for an adult and $300 a child.
+
+--- PDF page 8 of 25 ---
+
+Northwest Territories Carbon Tax Report | 2023-20245
+Large Emitters Offset – large emitters are prescribed in the Petroleum Products and Carbon Tax Regulations, as determined by the Minister of Finance. During
+the period from September 1st, 2019 to March 31st, 2023, three designated large emitters (Ekati diamond mine, Diavik diamond mine, and Gahcho Kué diamond
+mine) received large emitter carbon tax offsets comprised of two elements:
+• Large emitter rebates: Monthly rebates of 72 per cent of the total carbon tax paid by the large emitter during the month, and
+• Large Emitter Greenhouse Gas Emissions Reduction Grants: 12 per cent of annual total carbon tax paid by each large emitter was set aside by the
+GNWT in a special individual account, from which a prescribed large emitter could apply for grants to fund its greenhouse gas emission reducing
+investment projects. Grant guidelines require approved projects to reduce greenhouse gas emissions by at least 5 per cent relative to a baseline.
+Northwest Territories Carbon Tax Offset System Changes Starting April 1st, 2023
+Effective April 1st, 2023, Northwest Territories carbon tax mitigation measures required changes to meet tightened federal carbon pricing benchmarks for
+the April 2023 to March 2030 period. Only two measures were unchanged after April 1st, 2023: the 100 per cent rebate for carbon tax paid on fuel used for
+electrical generation for community distribution and the carbon tax exemption for aviation fuel. The following describes mitigation measures that were revised
+or eliminated.
+• The point-of-sale carbon tax rebate on heating fuels was removed. As a direct consequence of the addition of the carbon tax on heating fuel,
+regional COLO amounts were added to the existing base COLO. Regional COLO amounts address the higher carbon tax burden faced by residents
+living in areas with higher home heating fuel use.
+• Communities are grouped into three geographic zones based on average annual carbon tax paid for household heating fuel. Table 2 shows the total
+COLO amounts for each zone.
+Table 2: Cost of Living Offset by zone for $65 a tonne of carbon dioxide equivalent (CO2e)
+Zone A – Low Fuel Use Zone B – Moderate Fuel Use Zone C – High Fuel Use
+COLO Benefit
+Adult: $441
+Under 18 years: $493
+COLO Benefit
+Adult: $483
+Under 18 years: $535
+COLO Benefit
+Adult: $558
+Under 18 years: $610
+Communities
+Colville Lake
+Dettah
+Enterprise
+Fort Good Hope
+Fort Resolution
+Fort Smith
+Hay River
+Kakisa
+Kátł’odeeche
+Ndilǫ
+Wrigley
+Yellowknife
+Aklavik
+Behchokǫ̀
+Délı̨nęFort Liard
+Fort McPherson
+Fort Providence
+Fort Simpson
+Gamètì
+Inuvik
+Jean Marie River
+Łutselk’e
+Nahanni Butte
+Sambaa K’e
+Tsiigehtchic
+Tuktoyaktuk
+Wekweètı̀
+Whatı̀
+Norman Wells
+Paulatuk
+Sachs Harbour
+Tulita
+Ulukhaktok
+
+--- PDF page 9 of 25 ---
+
+Northwest Territories Carbon Tax Report | 2023-20246
+• The Large Emitter Offset was replaced with a large emitter facility specific program that set a baseline fuel consumption level at each facility as
+a proxy for emissions and provides a 72 per cent rebate of carbon tax paid on diesel fuel to the baseline. Facility baselines were set as the
+average fuel consumption for the previous three years. The Large Emitter Greenhouse Gas Emissions Reduction Grant Program that was part of
+the original large emitter offset was discontinued; however, unused funds in each large emitter’s account remain available to the emitter until
+March 31st, 2028 under the existing policy guidelines.
+• A new program of community government sharing grants established under the Petroleum Products and Carbon Tax Act allocates 10 per cent of
+net GNWT carbon tax revenues to be shared among community governments. The allocation formula includes a base amount of 0.5 per cent of
+the net carbon tax revenue and the remaining funds allocated per capita. Annual community grants are paid after the public accounts for the fiscal
+year are audited.
+Carbon Tax Administration
+Carbon tax is levied on the final consumer and is administered through the fuel tax system by the Department of Finance’s Taxation, Corporate Credit and
+Collections Division.
+Administration costs used to determine community government sharing grants are the salary, benefits and northern allowance of a Tax Officer (Pay Range 11,
+Step 8) with a total annual cost of $112,700.
+Businesses that sell fuel in the territory can apply to become GNWT fuel tax collectors. Fuel tax collectors also collect carbon tax from purchasers at the time
+of sale or importation and remit both taxes to the GNWT with their monthly fuel and carbon tax return. No fines or charges have been levied against fuel tax
+collectors under the Petroleum Products and Carbon Tax Act or Regulations since the carbon tax was introduced.
+COLO Administration
+The Canada Revenue Agency issues quarterly COLO payments on behalf of the GNWT in July, October, January, and April to territorial residents who filed an
+income tax return for the previous year. COLO payments for families are combined.
+COLO payments vary in each quarter but in general for the 2023-24 benefit year COLO payments were made to 22,530 households, comprising 13,529 single
+recipients with no children, 5,461 couples with no children, 2,097 single parent families and 1,443 two parent families.
+
+--- PDF page 10 of 25 ---
+
+Northwest Territories Carbon Tax Report | 2023-20247
+2. Fiscal Year Results
+The following tables provide 2023-24 carbon tax results for the fiscal year April 1st, 2023 to March 31st, 2024 along with historical carbon tax
+data for comparison.
+Table 3 shows fuel volumes since the carbon tax was introduced on September 1st, 2019. Given the small size of the Northwest Territories economy and only
+four full years of data, conclusions about fuel consumption trends cannot be made using year-over-year comparisons of volume changes since the carbon tax
+was introduced. The size of the mines can distort overall year-over-year changes; as an example, total diesel heating fuel consumption declined 1.6 per cent
+from 2021-22 to 2023-24; however, after removing the 23.3 per cent decline in mine diesel heating fuel consumption, the increase for the rest of the economy
+was 10.7 per cent.
+Table 3: Carbon tax volumes: 2019-20 to 2023-241
+Total volumes (thousands) 2019-20 2020-21 2021-22 2022-23 2023-24
+Gasoline (litres) 29,917 44,982 45,586 45,667 43,406
+Aviation gasoline (litres)2 723 1,427 1,571 1,558 1,345
+Aviation gasoline turbo jet (litres)2 18,586 34,987 43,159 50,786 55,577
+Motive and non-motive diesel (litres) 133,292 191,150 233,764 240,488 265,547
+Natural gas (m3) 283 596 409 463 280
+Natural gas heating (m3) 442 592 1,010 2,769 6,394
+Railway diesel (litres) 63 114 118.734 98.127 70
+Diesel for heating (litres) 57,624 79,831 71,414 71,899 70,299
+Propane (litres) 906 2,226 1,942 1,562 1,339
+Propane for heating (litres) 20,811 26,207 23,249 21,537 27,038
+Naphtha (litres) - 11 8 10 8
+Mine volumes (thousands) (included in total volumes above) 2019-20 2020-21 2021-22 2022-23 2023-24
+Diesel (litres) 99,089 216,485 167,141 167,466 164,064
+Diesel for heating (litres) 18,832 26,919 25,749 23,331 19,762
+Note:
+1 Although a fiscal year is April 1st to March 31st, 2019-20 volumes capture consumption only for September 1st, 2019 (the carbon tax effective date) to March 31st, 2020.
+2 Aviation fuel is included for information but is exempt from the territorial carbon tax.
+
+--- PDF page 11 of 25 ---
+
+Northwest Territories Carbon Tax Report | 2023-20248
+Table 4 shows gross carbon tax revenues and offsets since the carbon tax was introduced on September 1st, 2019. Carbon tax revenue for 2023-24 was
+$68.7 million, $6.0 million above the 2023-24 Main Estimates projection. Carbon tax revenues may increase despite volume declines because carbon tax rates
+increase annually.
+The $14 million in net carbon tax revenue is considered general revenue to be allocated among GNWT priorities. Since one of the GNWT’s priorities is to reduce
+greenhouse gas emissions, residual carbon tax revenue can notionally be attributed to program and capital expenditures used to reduce territorial emissions.
+Table 4: Carbon tax revenue: 2019-20 to 2023-241, 2
+Gross carbon tax revenues (thousands of dollars) 2019-20 2020-21 2021-22 2022-23 2023-24
+Gasoline 1,406 2,890 4,012 5,086 6,211
+Motive and non-motive diesel 7,331 14,495 23,902 31,827 46,598
+Natural gas 11 32 30 42 35
+Natural gas for heating 17 31 73 254 792
+Rail 4 9 12 13 12
+Diesel for heating 3,169 6,007 7,302 9,468 12,218
+Propane 28 94 113 115 135
+Propane for heating 645 1,107 1,348 1,617 2,720
+Naphtha - 0.9 0.8 1.2 1.2
+A. Total gross carbon tax revenues 12,611 24,666 36,793 48,423 68,722
+Carbon tax offsets (thousands of dollars) 2019-20 2020-21 2021-22 2022-23 2023-24
+Carbon tax rebate for heating fuel (non-large emitters) 2,364 5,929 7,940 10,750 -
+Large emitter rebate 4,670 8,577 14,248 17,914 25,370
+Carbon tax rebate for fuel used in electrical generation for community distribution 583 1,379 1,808 3,461 9,757
+B. Total carbon tax offsets 7,616 15,885 23,996 31,427 35,127
+C. Net carbon tax revenue reported in Public Accounts (Lines A – B) 4,994 8,782 12,797 16,298 33,595
+
+--- PDF page 12 of 25 ---
+
+Northwest Territories Carbon Tax Report | 2023-20249
+Other carbon tax revenue recycling 2019-20 2020-21 2021-22 2022-23 2023-24
+D. Cost of living offset (COLO) 4,116 6,511 8,668 10,889 17,989
+E. Carbon tax recycling before community government grants (Lines B + D) 11,733 22,396 32,664 43,014 53,116
+F. Net carbon tax revenue before sharing with community governments (Lines A – E) 878 2,270 4,129 5,409 15,606
+G. Administration costs - - - - 113
+H. Net carbon tax after administration costs 878 2,270 4,129 5,409 15,493
+I. Community government sharing grants (10% x Line H) - - - - 1,549
+Net carbon tax revenue after community government grants (Lines H – I) 878 2,270 4,129 5,409 13,944
+Notes:
+1. Gross tax revenues are reduced for Public Account reporting by the carbon tax rebates as these are considered tax concessions rather than expenditures under public finance accounting
+standards. However, for budgeting purposes, all carbon tax mitigation measures are considered expenditures and are approved by the Legislative Assembly.
+2. Although a fiscal year is April 1st to March 31st, 2019-20 volumes only capture consumption from September 1st, 2019 (the carbon tax effective date) to March 31st, 2020.
+Table 5 compares carbon tax revenues from different sources with revenue returned through carbon tax expenditures to mitigate the carbon tax burden
+(carbon tax offsets). Large emitter grant accounts are included in the table as expenditures although none of the large emitters have drawn down account
+funds for greenhouse gas emission-reducing investments. The GNWT had a notional $14.0 million above carbon tax recycling revenue to invest in 2023-24
+greenhouse gas emission-reducing projects.
+
+--- PDF page 13 of 25 ---
+
+Northwest Territories Carbon Tax Report | 2023-202410
+Table 5: 2019-20 to 2023-24 Carbon tax revenues and expenditures (millions of dollars)1
+NWT carbon tax revenues 2019-20 2020-21 2021-22 2022-23 2023-24
+Residents, small business and governments
+Diesel non-motive and diesel, propane and natural gas for heating 2.8 5.8 8.0 10.1 22.6
+Community government heating 0.14 0.14 0.3 0.7 0.3
+Motive diesel 1.7 3.8 4.6 7.5 7.5
+Gasoline 1.4 2.9 4.0 5.1 6.2
+Large emitters
+Facility fuel use 6.5 11.9 19.7 24.9 31.9
+Other items
+Railway diesel and non-heating propane and natural gas 0.04 0.1 0.2 0.2 0.2
+Total revenues 12.6 24.7 36.8 48.4 68.7
+Rebate and benefit expenditures 2019-20 2020-21 2021-22 2022-23 2023-24
+Residents, small business and governments
+Carbon tax rebate on heating fuels 2.4 5.9 7.9 10.8 -
+Annual rebate to electricity producers 0.6 1.4 1.8 3.5 9.8
+COLO benefit 4.1 6.5 8.7 10.9 18.0
+Large emitters
+Large emitter rebates 4.7 8.6 14.2 17.9 25.3
+Large emitter grant accounts 0.7 1.7 2.1 3.4 -
+Community government sharing grants - - - - 1.5
+Other items
+NWT carbon tax and benefit administration 0.3 0.3 0.4 0.4 0.1
+Total expenditures 12.8 24.4 35.2 46.8 53.2
+Remaining Carbon Tax Revenue (0.2) 0.3 1.6 1.6 14.0
+Note:
+1. Table 5 will not match Public Accounts reporting because administration expenses, large emitter grant accounts and carbon tax rebates shown in budget documents as expenses are not
+reported as expenses in Public Accounts. Administration expenses from 2019-20 to 2022-23 include Canada Revenue Agency COLO administration charges. Starting 2023-24 the Canada
+Revenue Agency does not charge to administer the COLO.
+
+--- PDF page 14 of 25 ---
+
+Northwest Territories Carbon Tax Report | 2023-202411
+Individual large emitter accounts hold 12 per cent of all carbon tax paid by large emitters before 2023-24. Large emitters can apply to use these funds for
+greenhouse gas emission reducing investments in accordance with the Large Emitter Grant Policy1. Table 6 shows accumulated fiscal year-end grant balances.
+None of the large emitters had accessed their grant accounts as of March 31st, 2024. However, in July 2024, the Ekati diamond mine operator was granted
+$484,234 after meeting the Policy’s eligibility criteria with an Information Technology and Communications Methanol and Solar Project.
+Table 6: Large emitter grant account balances1
+As of Mar 31st, 2020 As of Mar 31st, 2021 As of Mar 31st, 2022 As of Mar 31st, 2023
+Gahcho Kué Diamond Mine $201,168 $595,511 $1,144,626 $2,088,576
+Diavik Diamond Mine $336,862 $1,006,075 $1,879,931 $3,296,767
+Ekati Diamond Mine $129,728 $446,644 $1,146,260 $2,182,597
+Total $667,758 $2,048,230 $4,170,817 $7,567,940
+Note:
+1. Until April 1st 2023, Imperial Oil Resources NWT Limited was also a prescribed large emitter but did not qualify for grant balances.
+Revisions to the Northwest Territories carbon tax system starting April 1st, 2023 included sharing 10 per cent of net carbon tax revenue with community
+governments using a base plus per capita formula to distribute the funds. The 2023-24 community government sharing grant allocation among the 33 Northwest
+Territories communities is shown in Table 7.
+Table 7: 2023-24 Community government sharing grants (thousands)
+Community Community Government Allocation Grant
+1 Aklavik Council of the Hamlet of Aklavik 1.8% $28
+2 Behchokǫ̀ Community Government of Behchokö 4.3% $67
+3 Colville Lake Behdzi Ahda” First Nation 0.8% $12
+4 Délı̨nę Délîne Got’înê Government 1.7% $26
+5 Dettah Yellowknives Dene First Nation 0.9% $14
+6 Enterprise Council of the Hamlet of Enterprise 0.7% $11
+7 Fort Liard Council of the Hamlet of Fort Liard 1.5% $23
+8 Fort McPherson Council of the Hamlet of Fort McPherson 1.9% $29
+9 Fort Providence Council of the Hamlet of Fort Providence 1.8% $28
+10 Fort Resolution Council of the Hamlet of Fort Resolution 1.5% $23
+11 Fort Simpson Council of the Village of Fort Simpson 2.8% $43
+12 Fort Smith Council of the Town of Fort Smith 5.3% $82
+13 Gamètì Community Government of Gamètì 1.0% $15
+1 https://www.fin.gov.nt.ca/sites/fin/files/resources/large_emitters_ghg_reducing_investment_grant_policy_jan_26_2020.pdf
+
+--- PDF page 15 of 25 ---
+
+Northwest Territories Carbon Tax Report | 2023-202412
+Community Community Government Allocation Grant
+14 Hay River Council of the Town of Hay River 7.5% $116
+15 Inuvik Council of the Town of Inuvik 6.4% $99
+16 Jean Marie River Tthets’éhk’édélî First Nation 0.7% $11
+17 Kakisa Ka’a’gee Tu First Nation 0.6% $9
+18 K’asho Got’ine K’ásho Got’iné Charter Community Council 1.7% $26
+19 Kátł’odeeche Kát ’odeeche First Nation 1.1% $17
+20 Łutselk’e Łutselk’e Dene Band 1.2% $19
+21 Nahanni Butte Nahanni Butte Dene Band 0.7% $11
+22 Norman Wells Council of the Town of Norman Wells 1.8% $28
+23 Paulatuk Council of the Hamlet of Paulatuk 1.1% $17
+24 Sachs Harbour Council of the Hamlet of Sachs Harbour 0.7% $11
+25 Sambaa K’e Sambaa K’e Dene Band 0.7% $11
+26 Tsiigehtchic Tsiigehtchic Charter Community Council 0.9% $14
+27 Tuktoyaktuk Council of the Hamlet of Tuktoyaktuk 2.5% $39
+28 Tulita Council of the Hamlet of Tulita 1.5% $23
+29 Ulukhaktok Council of the Hamlet of Ulukhaktok 1.4% $22
+30 Wekweètì Community Government of Wekweètì 0.8% $12
+31 Whatì Community Government of Whatì 1.5% $23
+32 Wrigley Pehdzeh Ki First Nation 0.7% $11
+33 Yellowknife Council of the City of Yellowknife 40.6% $629
+Total1 100.1% $1,551
+1 Total community government grant does not match Table 4 Line I due to rounding.
+
+--- PDF page 16 of 25 ---
+
+Northwest Territories Carbon Tax Report | 2023-202413
+The GNWT does not have a policy that ensures that carbon tax revenue is revenue neutral and used only to mitigate the effect of the carbon tax on economy
+and for programs that reduce greenhouse gas emissions. After the Table 4 carbon tax offsets are deducted from carbon tax revenues, the remaining
+$14.0 million net carbon tax revenues are included in regular revenues and allocated based on GNWT spending priorities. However, the $14.0 million net
+carbon tax revenue can be notionally attributed to the GNWT’s $12.3 million 2023-24 greenhouse gas emission reducing projects, including:
+• $2.74 million contribution to the Arctic Energy Alliance consisting of:
+• core funding to support operations,
+• rebate and incentive programming for residents and business to incorporate renewable energy systems,
+• funding to subsidize the cost of home energy audits, and
+• advisory services on the implementation of biomass projects;
+• $2.152 million for the Energy Action Plan (Department of Infrastructure) consisting of:
+• programming to support community energy planning,
+• programming to support low-income residents to address energy poverty,
+• rebate programming for the purchase of electric vehicles and bicycles, and
+• other programming that supports the GNWT Energy Strategy;
+• $0.47 million for additional energy programming including:
+• contributions to NT Energy to explore energy efficiency projects,
+• preliminary planning for the Fort Providence Transmission Line, and
+• financial support for Aurora Research Institute, the Gwich’in Development Corporation Clean Energy Plan, and Sambaa K’e solar.
+• $3.7 million for the Capital Asset Retrofit Fund to perform GNWT facility energy efficiency upgrades;
+• $1.3 million as the GNWT contribution to the Investing in Canada Infrastructure Program for repairs to the Taltson and Snare hydro facilities
+and planning for Fort Providence and Kakisa hydro facilities;
+• $48,000 contribution to the Climate Change Preparedness in the North program (Department of Environment and Climate Change); and
+• $1.873 million for operational costs associated with advancing overall energy initiatives, including the GNWT Energy Strategy.
+The GNWT also received $13.4 million in federal funding in 2023-24 under the Low Carbon Economy Leadership Fund, Climate Change Preparedness in the
+North program and the Cumulative Impact Monitoring Program for projects that contribute to reducing greenhouse gas emissions in the territory. Expenditures
+for other climate change adaptation programs and investments in energy-related systems are reported in the Climate Change Action Plan and Energy Action
+Plan annual reports.
+
+--- PDF page 17 of 25 ---
+
+Northwest Territories Carbon Tax Report | 2023-202414
+3. Measuring Movement Towards a Less Carbon
+Intensive Economy
+Measuring the ability of the Northwest Territories carbon tax to reduce carbon emissions is complicated by the many variables affecting carbon fuel consumption
+and the amount of time series data required to distinguish the effect of the carbon tax introduction with other factors. Other factors, such as changing retail fuel
+prices, weather and economic activity, can influence fuel consumption and make it difficult to isolate carbon tax effects without many years of data.
+This report uses data from Statistics Canada for studying changes in greenhouse gas emissions because the data includes greenhouse gas emissions from all
+sources. Several other reputable data sources are available to measure specific greenhouse gas emissions and can be used to compare trend lines.
+Table 8 estimates annual fiscal year (April to March) Northwest Territories carbon tax emissions since the introduction of the carbon tax on September 1st, 2019.
+Table 8: Estimated Northwest Territories greenhouse gas emissions from carbon tax data
+Type of Fuel
+2023-24
+Fuel volume CO2e
+September
+1st, 2019 to
+March 31st,
+2020 emissions
+(kilotonnes)
+April 1st, 2020
+to March 31st,
+2021
+emissions
+(kilotonnes)
+April 1st, 2021
+to March 31st,
+2022
+emissions
+(kilotonnes)
+April 1st, 2022
+to March 31st,
+2023
+emissions
+(kilotonnes)
+April 1st, 2023
+to March 31st,
+2024
+emissions
+(kilotonnes)
+Gasoline (litres) 43,406,244 2.511680 kg/l 75 113 114 115 109
+Aviation gas (litres) 1,345,451 2.488540 kg/l 2 4 4 4 3
+Aviation gas turbo jet (litres) 55,577,394 2.488540 kg/l 46 87 107 126 138
+Motive and non-motive diesel (litres) 268,107,340 2.708936 kg/l 361 522 633 651 726
+Natural gas (m3) 279,722 1.912355 kg/m3 1.0 1.0 0.8 0.9 1
+Natural gas heating (m3) 6,393,776 1.912355 kg/m3 1.0 1.0 1.9 5.3 12
+Railway diesel (litres) 70,069 2.708936 kg/l 0 0 0.3 0.3 0
+Diesel for heating (litres) 70,298,734 2.708936 kg/l 156 216 193 195 190
+Propane (litres) 1,338,923 1.547859 kg/l 1 3 3 2 2
+Propane for heating (litres) 27,037,602 1.547859 kg/l 32 41 36 33 42
+Naphtha (litres) 8,079 2.254503 kg/l 0 0 0 0 0
+676 988 1,095 1,133 1,224
+Source: NWT Finance
+
+--- PDF page 18 of 25 ---
+
+Northwest Territories Carbon Tax Report | 2023-202415
+No conclusions can be derived from Table 8 about the effectiveness of the carbon tax in lowering greenhouse gas emissions because correlation is not the
+same as causation. An increasing carbon tax rate is expected to provide an incentive to reduce carbon-based fuel consumption; however, in the short term
+the effects will be difficult to discern from other factors. For example, during 2019-2020 and 2020-21 the economic disruption caused by the COVID-19
+pandemic and the temporary closing of one diamond mine caused fuel consumption to decrease, and making the 2021-22 and 2022-23 consumption
+increases appear more significant than they otherwise would be.
+Figures 1 and 2 show the trends in Northwest Territories fuel consumption from fuel tax data and emission levels since 2010 on a calendar year basis. Figure 1
+suggests that propane used for heating may be replacing diesel heating fuel use. Wood pellets may also be replacing other carbon-taxed fuels for heating but
+since wood pellets are not taxed, this data is not collected through the carbon tax system, even though its use contributes to greenhouse gas emissions.
+Figure 2: Northwest Territories emissions by fuel source,
+2010 to 2023 calendar year
+Source: NWT Finance Source: NWT Finance
+Figure 1: Northwest Territories fuel consumption,
+2010 to 2023 calendar year
+0
+20
+40
+60
+80
+100
+120
+140
+160
+180
+200
+2010
+2011
+2012
+2013
+2014
+2015
+2016
+2017
+2018
+2019
+2020
+2021
+2022
+2023
+Millions of Litres
+Gasoline
+Aviation Gas (Turbo jet/other)
+Diesel Motive
+Diesel Non-Motive
+Heating Fuel – Diesel
+Heating Fuel – Propane
+Natural Gas
+Gasoline
+Aviation Gas (Turbo jet/other)
+Diesel Motive
+Diesel Non-Motive
+Heating Fuel – Diesel
+Heating Fuel – Propane
+Natural Gas
+Figure 1: Northwest Territories fuel consumption 2010 to 2023 calendar year
+0
+20
+40
+60
+80
+100
+120
+140
+160
+180
+200
+2010
+2011
+2012
+2013
+2014
+2015
+2016
+2017
+2018
+2019
+2020
+2021
+2022
+2023
+Millions of Litres
+Gasoline
+Aviation Gas (Turbo jet/other)
+Diesel Motive
+Diesel Non-Motive
+Heating Fuel – Diesel
+Heating Fuel – Propane
+Natural Gas
+Gasoline
+Aviation Gas (Turbo jet/other)
+Diesel Motive
+Diesel Non-Motive
+Heating Fuel – Diesel
+Heating Fuel – Propane
+Natural Gas
+Figure 1: Northwest Territories fuel consumption 2010 to 2023 calendar year
+0
+100
+200
+300
+400
+500
+600
+2010
+2011
+2012
+2013
+2014
+2015
+2016
+2017
+2018
+2019
+2020
+2021
+2022
+2023
+kilotonnes of CO2 Equivalent Emissions
+Figure 2: NWT emissions by fuel source. 2010 to 2023 calendar year
+G
+A
+D
+D
+H
+H
+N
+Gasoline
+Aviation Gas (Turbo jet/other)
+Diesel Motive
+Diesel Non-Motive
+Heating Fuel – Diesel
+Heating Fuel – Propane
+Natural Gas
+0
+100
+200
+300
+400
+500
+600
+2010
+2011
+2012
+2013
+2014
+2015
+2016
+2017
+2018
+2019
+2020
+2021
+2022
+2023
+kilotonnes of CO2 Equivalent Emissions
+Figure 2: NWT emissions by fuel source. 2010 to 2023 calendar year
+G
+A
+D
+D
+H
+H
+N
+Gasoline
+Aviation Gas (Turbo jet/other)
+Diesel Motive
+Diesel Non-Motive
+Heating Fuel – Diesel
+Heating Fuel – Propane
+Natural Gas
+
+--- PDF page 19 of 25 ---
+
+Northwest Territories Carbon Tax Report | 2023-202416
+Measuring Changes in Carbon Intensity in Households
+Household carbon intensity is measured in terms of household greenhouse gas emissions per person. Reductions in household carbon intensity following the
+implementation of the carbon tax will be compared in a ratio to a baseline of the average carbon intensity between 2009 and 2019. A ratio less than one will
+indicate improvement because the annual carbon intensity is below the medium-term average; a ratio greater than one will indicate deterioration as the annual
+carbon intensity would be above the medium-term average. Since Statistics Canada data for household carbon emissions is published with a two-year delay,
+it will be a few years before an analysis of the carbon tax’s effect on Northwest Territories carbon taxed fuel consumption is feasible. Analysing the immediate
+effects of the carbon tax on greenhouse gas emissions will also be complicated by the change in household behaviour when public health restrictions were in
+place during the 2020-2021 COVID-19 pandemic.
+Northwest Territories Household Carbon Emission History
+Table 9 shows the annual emissions attributed to households, the annual July 1st Northwest Territories population, and the derived household emissions per
+capita. Population has increased slightly while carbon emissions continue to trend lower and as a result, per capita carbon emissions declined from 2009 to 2021.
+While COVID-19 pandemic lockdowns could be a partial cause of the 2020 and 2021 reductions, it is still a continuation of a lower per capita emission trend.
+Over the 2009 to 2021 period, the average Northwest Territories household greenhouse gas emissions of 3,671 kilograms per person was 69 kilograms per
+person lower than Canadian average household greenhouse gas emissions. Average Northwest Territories household greenhouse gas emissions were lower
+than the Canadian average despite a colder climate and more heating days because shelters are smaller (less square footage to heat) and better insulated. In
+addition, the average Northwest Territories resident drives less than the Canadian average.
+Table 9: Carbon Intensity, Northwest Territories households
+Year
+Household CO2e emissions
+(kilotonnes)
+Population
+(number of people)
+Carbon intensity
+(tonnes per person)
+Carbon Intensity Ratio (ratio between carbon
+intensity and the 2009-2021 average)
+2009 193 43,171 4.5 1.2
+2010 164 43,292 3.8 1.0
+2011 185 43,493 4.3 1.2
+2012 157 43,624 3.6 1.0
+2013 152 43,774 3.5 0.9
+2014 177 43,851 4.0 1.1
+2015 179 44,247 4.0 1.1
+2016 156 44,624 3.5 0.9
+2017 133 44,656 3.0 0.8
+2018 140 44,536 3.1 0.8
+2019 146 44,442 3.3 0.9
+2020 128 44,504 2.9 0.8
+2021 124 44,579 2.8 0.8
+Average 156 44,061 3.6
+Sources:
+Statistics Canada
+Tables 38-10-0097-01
+and 17-10-0005-01
+
+--- PDF page 20 of 25 ---
+
+Northwest Territories Carbon Tax Report | 2023-202417
+Measuring Carbon Intensity in Industry
+This report defines industry as all economic agents except households. The carbon intensity of industry is measured as emissions per dollar of output. Emissions
+are measured in kilotonnes, and industrial output is measured in chained (2012) million dollars to remove the effect of inflation.
+Carbon pricing success is evaluated though reductions in the carbon intensity of industry measured as the ratio of carbon intensity each year to the carbon
+intensity of the 2009 to 2019 average. A ratio less than one indicates improvement because the annual carbon intensity is below the medium-term average;
+a ratio greater than one indicates deterioration because the annual carbon intensity is above the medium-term average.
+Northwest Territories Industrial Carbon Emission History
+Table 10 shows the carbon intensity of Northwest Territories industry averaged 0.414 kilotonnes per million dollars GDP over the 2009 to 2021 period.
+Table 10: Carbon Intensity, Northwest Territories Industry
+Year
+All Industry Emissions
+(kilotonnes)
+GDP, basic prices
+(millions chained (2012) dollars)
+Carbon intensity
+(kilotonnes per million
+chained (2012) dollars)
+Carbon intensity ratio
+(Ratio between carbon intensity
+and the 2009-2019 average)
+2009 1701 4330 0.393 0.9
+2010 1768 4449 0.397 0.9
+2011 1866 4039 0.462 1.1
+2012 1896 4017 0.472 1.1
+2013 1868 4128 0.453 1.1
+2014 1897 4324 0.439 1.0
+2015 1904 4368 0.436 1.0
+2016 1638 4319 0.379 0.9
+2017 1859 4477 0.415 1.0
+2018 1830 4541 0.403 1.0
+2019 1772 4347 0.408 1.0
+2020 1416 3968 0.357 0.8
+2021 1550 4135 0.375 0.9
+Average 1,767 4,265 0.414
+Source: Statistics Canada Tables 38-10-0097-01 and 36-10-0402-01
+
+--- PDF page 21 of 25 ---
+
+Northwest Territories Carbon Tax Report | 2023-202418
+Figure 3 shows that 2021 Northwest Territories industrial carbon intensity is below the ten-year average.
+Figure 3: Carbon Intensity, Northwest Territories Industry
+0.250
+0.300
+0.350
+0.400
+0.450
+.0500
+2009 2010 2011 2012 2013 2014 2015 2016 2017 2018 2019 2020 2021
+Kilotonnes per Million
+chaned (2017) dollars
+Intensity Rate 2009 to 2019 Average
+Source: Statistics Canada Tables 38-10-0097-01 and 36-10-0402-01
+
+--- PDF page 22 of 25 ---
+
+Northwest Territories Carbon Tax Report | 2023-202419
+Table 11: Carbon Intensities, Northwest Territories Selected Industries
+Carbon emissions per million dollars value added (kilotonnes)
+2009 2010 2011 2012 2013 2014 2015 2016 2017 2018 2019 2020 2021
+13-Year
+Average
+Total, All Industries 0.393 0.397 0.462 0.472 0.453 0.439 0.436 0.379 0.415 0.403 0.408 0.357 0.375 0.414
+Non-metallic mineral mining
+and quarrying 0.807 0.808 1.044 1.313 1.291 1.057 1.073 0.778 0.518 0.594 0.723 0.713 0.735 0.881
+Electric power generation,
+transmission and
+distribution
+1.153 1.032 1.117 1.148 1.127 1.451 2.114 1.158 0.955 1.027 0.955 0.995 0.959 1.168
+Air Transportation 3.023 2.887 2.490 2.514 2.566 2.289 2.225 2.164 1.995 1.717 1.815 2.937 3.067 2.438
+Water Transportation 2.578 2.744 3.591 4.006 3.911 3.936 4.712 5.691 2.243 2.056 1.239 0.331 0.284 2.871
+Other provincial and
+territorial government
+services
+0.282 0.292 0.492 0.331 0.522 0.493 0.431 0.335 0.572 0.431 0.348 0.366 0.363 0.404
+Source: Statistics Canada Tables 38-10-0097-01 and 36-10-0402-01
+Table 11 shows annual Northwest Territories carbon intensity by specific industries. Direct industry comparisons are difficult because the values of goods
+and services being produced or transported differ significantly. For example, the water transportation industry ships many staple goods that, while of critical
+importance for remote communities, are of low dollar value, while air transport moves higher value goods, which can generate a much higher value added per
+kilotonne of emissions.
+
+--- PDF page 23 of 25 ---
+
+Northwest Territories Carbon Tax Report | 2023-202420
+Appendix
+The following table provides estimated Northwest Territories greenhouse gas emissions based on calendar year fuel tax data. Fuel volumes by calendar year are
+not available in this format before 2010.
+Table A1: Northwest Territories Fuel Volumes by Type
+Calendar Year 2010 to 2023 (thousands of litres)
+Year Gasoline Aviation1 Motive Diesel Railway Diesel Non-Motive Diesel Diesel Heating Propane Heating2
+2010 49,178 51,591 87,749 115 110,122 94,966 ..
+2011 47,894 55,329 103,790 108 123,245 96,803 ..
+2012 49,019 59,128 107,143 600 135,476 97,090 ..
+2013 49,744 51,705 114,469 278 145,606 103,791 22,765
+2014 47,251 50,180 126,130 189 148,568 84,895 20,506
+2015 47,714 53,166 137,178 301 160,201 78,948 19,603
+2016 52,888 51,245 144,628 154 121,925 77,591 18,045
+2017 53,766 59,951 181,001 144 114,478 75,933 14,980
+2018 49,734 59,812 165,864 115 122,598 88,191 15,670
+2019 54,006 59,335 146,408 73 111,650 86,945 21,030
+2020 46,365 41,000 104,138 120 102,261 89,144 28,769
+2021 47,997 43,364 119,800 108 107,460 83,813 28,204
+2022 47,785 55,508 124,947 105 112,539 89,494 28,099
+2023 43,491 56,844 123,345 86 136,209 74,402 26,825
+Notes:
+1 Total of aviation gasoline and aviation turbo jet gasoline.
+2 “..” indicates that data is not available.
+Source: NWT Finance
+
+--- PDF page 24 of 25 ---
+
+Northwest Territories Carbon Tax Report | 2023-202421
+The following table estimates Northwest Territories greenhouse gas emissions by fuel type using the calendar year fuel tax data reported in Table A1.
+Table A2: Estimated Northwest Territories Greenhouse Gas Emissions by Fuel Type
+Calendar Year 2010 to 2023
+Greenhouse Gas Emissions (kilotonnes)
+Year Gasoline Aviation1 Motive Diesel Railway Diesel Non-Motive Diesel Diesel Heating Propane Heating2 Total
+2010 124 128 238 0.3 298 257 .. 1,045
+2011 120 138 281 0.3 334 262 .. 1,136
+2012 123 147 290 1.6 367 263 .. 1,192
+2013 125 129 310 0.8 394 281 35 1,275
+2014 119 125 342 0.5 402 230 32 1,250
+2015 120 132 372 0.8 434 214 30 1,303
+2016 133 128 392 0.4 330 210 28 1,221
+2017 135 149 490 0.4 310 206 23 1,314
+2018 125 149 449 0.3 332 239 24 1,319
+2019 136 148 397 0.2 302 236 33 1,251
+2020 116 102 282 0.3 277 241 45 1,064
+2021 121 108 325 0.3 291 227 44 1,115
+2022 115 127 330 0.3 297 190 34 1,093
+2023
+Notes:
+1 Total of aviation gasoline and aviation turbo jet gasoline.
+2 “..” indicates that data is not available.
+Source: NWT Finance
+
+--- PDF page 25 of 25 ---
+
+

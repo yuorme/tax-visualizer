@@ -1,0 +1,45 @@
+Title: Finance
+URL: https://www.gov.nl.ca/fin/tax-programs-incentives/personal/carbontax/
+Fetched: 2026-11-02
+SHA-256 of the original: 10c0bb308afd955cca5d2e65be586d3204da52359a14d1aaaadb487242ac7cd2
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+# Provincial Carbon Tax – Repealed Effective July 1, 2023
+
+Provincial Carbon Tax Rates (Prior to Repeal):
+
+Carbon Product | Unit | Carbon Tax Rates Effective From July 1, 2021 to April 30, 2022 | Carbon Tax Rates Effective From May 1, 2022 to June 30, 2023
+Gasoline | $/litre | 0.0884 | 0.1105
+Light Fuel Oil (Diesel) | $/litre | 0.1073 | 0.1341
+Propane | $/litre | 0.0619 | 0.0774
+Butane | $/litre | 0.0712 | 0.0890
+Ethane | $/litre | 0.0408 | 0.0509
+Gas Liquids | $/litre | 0.0666 | 0.0832
+Heavy Fuel Oil | $/litre | 0.1275 | 0.1593
+Kerosene | $/litre | 0.1033 | 0.1291
+Methanol | $/litre | 0.0439 | 0.0549
+Naphtha | $/litre | 0.0902 | 0.1127
+Petroleum Coke | $/litre | 0.1535 | 0.1919
+Pentanes Plus | $/litre | 0.0712 | 0.0890
+Coke oven gas | $/cubic metre | 0.0280 | 0.0350
+Marketable natural gas | $/cubic metre | 0.0783 | 0.0979
+Non-marketable natural gas | $/cubic metre | 0.1034 | 0.1293
+Still gas | $/cubic metre | 0.1080 | 0.1350
+Coke | $/tonne | 127.19 | 158.99
+High heat value coal | $/tonne | 90.07 | 112.58
+Low heat value coal | $/tonne | 70.90 | 88.62
+Combustible waste | $/tonne | 79.89 | 99.87
+
+- Carbon Retailer Refund Application (July 1, 2023)
+- Carbon Products Inventory Return (May 1, 2022)
+- Carbon Products Tax Rates and Inventory Return Bulletin No. RAA-CARBON-004 (May 1, 2022)
+- Carbon Products Inventory Return (July 1, 2021)
+- Carbon Product Tax Rates and Inventory Return Bulletin No. RAA-CARBON-003 (May 31, 2021)
+- Gasoline and Carbon Products Inventory Return (November 7, 2020)
+- Gasoline and Carbon Product Tax Rates and Inventory Return Bulletin No. RAA-CARBON-002 (November 7, 2020)
+- Gasoline and Carbon Products Inventory Return Bulletin No. RAA-CARBON-001 (December 2018)
+
+See Forms and Applications for a more extensive list.
+
+For more information about corporate income taxes in Newfoundland and Labrador, please contact the Tax Administration Division.

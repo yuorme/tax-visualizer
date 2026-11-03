@@ -1,0 +1,835 @@
+{
+  "description": "Independent 2019 historical calculations; docs/verification/2019-golden-cases.md.",
+  "defaults": {
+    "active": 0,
+    "spouse": true,
+    "adults": 1,
+    "kids": 0,
+    "under6": 0,
+    "useBpa": false,
+    "whRate": 0,
+    "useCredits": false,
+    "homeValue": 0,
+    "rent": 0,
+    "monthlySpending": 0
+  },
+  "rules": {},
+  "cases": [
+    {
+      "id": "history2019-bc-young",
+      "year": 2019,
+      "province": "BC",
+      "household": {
+        "people": [
+          {
+            "ord": 0,
+            "fd": 0.0
+          }
+        ],
+        "kids": 1,
+        "under6": 1,
+        "useCredits": true,
+        "adults": 1
+      },
+      "expected": {
+        "provBen": 660
+      }
+    },
+    {
+      "id": "history2019-bc-older",
+      "year": 2019,
+      "province": "BC",
+      "household": {
+        "people": [
+          {
+            "ord": 0,
+            "fd": 0.0
+          }
+        ],
+        "kids": 1,
+        "under6": 0,
+        "useCredits": true,
+        "adults": 1
+      },
+      "expected": {
+        "provBen": 0
+      }
+    },
+    {
+      "id": "history2019-bc-mixed",
+      "year": 2019,
+      "province": "BC",
+      "household": {
+        "people": [
+          {
+            "ord": 0,
+            "fd": 100000.0
+          }
+        ],
+        "kids": 3,
+        "under6": 2,
+        "useCredits": true,
+        "adults": 1
+      },
+      "expected": {
+        "provBen": 1320
+      }
+    },
+    {
+      "id": "history2019-bc-taper",
+      "year": 2019,
+      "province": "BC",
+      "household": {
+        "people": [
+          {
+            "ord": 0,
+            "fd": 125000.0
+          }
+        ],
+        "kids": 3,
+        "under6": 2,
+        "useCredits": true,
+        "adults": 1
+      },
+      "expected": {
+        "provBen": 660
+      }
+    },
+    {
+      "id": "history2019-bc-end",
+      "year": 2019,
+      "province": "BC",
+      "household": {
+        "people": [
+          {
+            "ord": 0,
+            "fd": 150000.0
+          }
+        ],
+        "kids": 3,
+        "under6": 2,
+        "useCredits": true,
+        "adults": 1
+      },
+      "expected": {
+        "provBen": 0
+      }
+    },
+    {
+      "id": "history2019-ab-base",
+      "year": 2019,
+      "province": "AB",
+      "household": {
+        "people": [
+          {
+            "ord": 0,
+            "fd": 26769.0
+          }
+        ],
+        "kids": 4,
+        "under6": 0,
+        "useCredits": true,
+        "adults": 1
+      },
+      "expected": {
+        "provBen": 2886
+      }
+    },
+    {
+      "id": "history2019-ab-both",
+      "year": 2019,
+      "province": "AB",
+      "household": {
+        "people": [
+          {
+            "ord": 25000,
+            "fd": 1801.25
+          }
+        ],
+        "kids": 4,
+        "under6": 0,
+        "useCredits": true,
+        "adults": 1
+      },
+      "expected": {
+        "provBen": 4999
+      }
+    },
+    {
+      "id": "history2019-ab-phase-in",
+      "year": 2019,
+      "province": "AB",
+      "household": {
+        "people": [
+          {
+            "ord": 3760,
+            "fd": 16240.39
+          }
+        ],
+        "kids": 2,
+        "under6": 0,
+        "useCredits": true,
+        "adults": 1
+      },
+      "expected": {
+        "provBen": 1842
+      }
+    },
+    {
+      "id": "history2019-ab-two-minima",
+      "year": 2019,
+      "province": "AB",
+      "household": {
+        "people": [
+          {
+            "ord": 2770,
+            "fd": 40430.0
+          }
+        ],
+        "kids": 1,
+        "under6": 0,
+        "useCredits": true,
+        "adults": 1
+      },
+      "expected": {
+        "provBen": 20
+      }
+    },
+    {
+      "id": "history2019-ab-base-end",
+      "year": 2019,
+      "province": "AB",
+      "household": {
+        "people": [
+          {
+            "ord": 0,
+            "fd": 43269.0
+          }
+        ],
+        "kids": 1,
+        "under6": 0,
+        "useCredits": true,
+        "adults": 1
+      },
+      "expected": {
+        "provBen": 0
+      }
+    },
+    {
+      "id": "history2019-ab-work-minimum",
+      "year": 2019,
+      "province": "AB",
+      "household": {
+        "people": [
+          {
+            "ord": 20000,
+            "fd": 43326.75
+          }
+        ],
+        "kids": 1,
+        "under6": 0,
+        "useCredits": true,
+        "adults": 1
+      },
+      "expected": {
+        "provBen": 10
+      }
+    },
+    {
+      "id": "history2019-ab-work-end",
+      "year": 2019,
+      "province": "AB",
+      "household": {
+        "people": [
+          {
+            "ord": 20000,
+            "fd": 43351.75
+          }
+        ],
+        "kids": 1,
+        "under6": 0,
+        "useCredits": true,
+        "adults": 1
+      },
+      "expected": {
+        "provBen": 0
+      }
+    },
+    {
+      "id": "history2019-ns-first",
+      "year": 2019,
+      "province": "NS",
+      "household": {
+        "people": [
+          {
+            "ord": 0,
+            "fd": 18000.0
+          }
+        ],
+        "kids": 1,
+        "under6": 0,
+        "useCredits": true,
+        "adults": 1
+      },
+      "expected": {
+        "provBen": 624.96
+      }
+    },
+    {
+      "id": "history2019-ns-second",
+      "year": 2019,
+      "province": "NS",
+      "household": {
+        "people": [
+          {
+            "ord": 0,
+            "fd": 18000.0
+          }
+        ],
+        "kids": 2,
+        "under6": 0,
+        "useCredits": true,
+        "adults": 1
+      },
+      "expected": {
+        "provBen": 1449.96
+      }
+    },
+    {
+      "id": "history2019-ns-later",
+      "year": 2019,
+      "province": "NS",
+      "household": {
+        "people": [
+          {
+            "ord": 0,
+            "fd": 18000.0
+          }
+        ],
+        "kids": 4,
+        "under6": 0,
+        "useCredits": true,
+        "adults": 1
+      },
+      "expected": {
+        "provBen": 3249.96
+      }
+    },
+    {
+      "id": "history2019-ns-threshold",
+      "year": 2019,
+      "province": "NS",
+      "household": {
+        "people": [
+          {
+            "ord": 0,
+            "fd": 18001.0
+          }
+        ],
+        "kids": 2,
+        "under6": 0,
+        "useCredits": true,
+        "adults": 1
+      },
+      "expected": {
+        "provBen": 1449.7788
+      }
+    },
+    {
+      "id": "history2019-ns-taper",
+      "year": 2019,
+      "province": "NS",
+      "household": {
+        "people": [
+          {
+            "ord": 0,
+            "fd": 20000.0
+          }
+        ],
+        "kids": 3,
+        "under6": 0,
+        "useCredits": true,
+        "adults": 1
+      },
+      "expected": {
+        "provBen": 1762.56
+      }
+    },
+    {
+      "id": "history2019-ns-residual",
+      "year": 2019,
+      "province": "NS",
+      "household": {
+        "people": [
+          {
+            "ord": 0,
+            "fd": 26000.0
+          }
+        ],
+        "kids": 2,
+        "under6": 0,
+        "useCredits": true,
+        "adults": 1
+      },
+      "expected": {
+        "provBen": 0.36
+      }
+    },
+    {
+      "id": "history2019-ns-end",
+      "year": 2019,
+      "province": "NS",
+      "household": {
+        "people": [
+          {
+            "ord": 0,
+            "fd": 26004.0
+          }
+        ],
+        "kids": 2,
+        "under6": 0,
+        "useCredits": true,
+        "adults": 1
+      },
+      "expected": {
+        "provBen": 0
+      }
+    },
+    {
+      "id": "history2019-qc-parent",
+      "year": 2019,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 0,
+            "fd": 0.0
+          }
+        ],
+        "kids": 3,
+        "under6": 3,
+        "useCredits": true,
+        "adults": 1
+      },
+      "expected": {
+        "provBen": 6809
+      }
+    },
+    {
+      "id": "history2019-qc-couple",
+      "year": 2019,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 0,
+            "fd": 0.0
+          }
+        ],
+        "kids": 3,
+        "under6": 3,
+        "useCredits": true,
+        "adults": 2
+      },
+      "expected": {
+        "provBen": 5942
+      }
+    },
+    {
+      "id": "history2019-qc-later",
+      "year": 2019,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 0,
+            "fd": 0.0
+          }
+        ],
+        "kids": 5,
+        "under6": 5,
+        "useCredits": true,
+        "adults": 2
+      },
+      "expected": {
+        "provBen": 9646
+      }
+    },
+    {
+      "id": "history2019-qc-reduction",
+      "year": 2019,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 0,
+            "fd": 36680.0
+          }
+        ],
+        "kids": 3,
+        "under6": 3,
+        "useCredits": true,
+        "adults": 1
+      },
+      "expected": {
+        "provBen": 6769
+      }
+    },
+    {
+      "id": "history2019-qc-floor",
+      "year": 2019,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 0,
+            "fd": 200000.0
+          }
+        ],
+        "kids": 3,
+        "under6": 3,
+        "useCredits": true,
+        "adults": 1
+      },
+      "expected": {
+        "provBen": 2322
+      }
+    },
+    {
+      "id": "history2019-qc-school",
+      "year": 2019,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 0,
+            "fd": 0.0
+          }
+        ],
+        "kids": 3,
+        "under6": 1,
+        "useCredits": true,
+        "adults": 1
+      },
+      "expected": {
+        "provBen": 7013
+      }
+    },
+    {
+      "id": "history2019-msp-exempt",
+      "year": 2019,
+      "province": "BC",
+      "household": {
+        "people": [
+          {
+            "fd": 26000
+          }
+        ],
+        "adults": 1,
+        "kids": 0
+      },
+      "expected": {
+        "payroll": 0,
+        "breakdown.householdPremium.total": 0
+      }
+    },
+    {
+      "id": "history2019-msp-first-band",
+      "year": 2019,
+      "province": "BC",
+      "household": {
+        "people": [
+          {
+            "fd": 26001
+          }
+        ],
+        "adults": 1,
+        "kids": 0
+      },
+      "expected": {
+        "payroll": 138,
+        "breakdown.householdPremium.total": 138
+      }
+    },
+    {
+      "id": "history2019-msp-cap",
+      "year": 2019,
+      "province": "BC",
+      "household": {
+        "people": [
+          {
+            "fd": 42001
+          }
+        ],
+        "adults": 1,
+        "kids": 0
+      },
+      "expected": {
+        "payroll": 450,
+        "breakdown.householdPremium.total": 450
+      }
+    },
+    {
+      "id": "history2019-msp-couple-exempt",
+      "year": 2019,
+      "province": "BC",
+      "household": {
+        "people": [
+          {
+            "fd": 29000
+          }
+        ],
+        "adults": 2,
+        "kids": 0
+      },
+      "expected": {
+        "payroll": 0,
+        "breakdown.householdPremium.total": 0
+      }
+    },
+    {
+      "id": "history2019-msp-couple-first",
+      "year": 2019,
+      "province": "BC",
+      "household": {
+        "people": [
+          {
+            "fd": 29001
+          }
+        ],
+        "adults": 2,
+        "kids": 0
+      },
+      "expected": {
+        "payroll": 276,
+        "breakdown.householdPremium.total": 276
+      }
+    },
+    {
+      "id": "history2019-msp-couple-cap",
+      "year": 2019,
+      "province": "BC",
+      "household": {
+        "people": [
+          {
+            "fd": 50000
+          }
+        ],
+        "adults": 2,
+        "kids": 0
+      },
+      "expected": {
+        "payroll": 900,
+        "breakdown.householdPremium.total": 900
+      }
+    },
+    {
+      "id": "history2019-msp-parent-child",
+      "year": 2019,
+      "province": "BC",
+      "household": {
+        "people": [
+          {
+            "fd": 29000
+          }
+        ],
+        "adults": 1,
+        "kids": 1
+      },
+      "expected": {
+        "payroll": 0,
+        "breakdown.householdPremium.total": 0
+      }
+    },
+    {
+      "id": "history2019-nl-levy-50000",
+      "year": 2019,
+      "province": "NL",
+      "household": {
+        "people": [
+          {
+            "fd": 50000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.provincialLevy": 0
+      }
+    },
+    {
+      "id": "history2019-nl-levy-50500",
+      "year": 2019,
+      "province": "NL",
+      "household": {
+        "people": [
+          {
+            "fd": 50500
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.provincialLevy": 50
+      }
+    },
+    {
+      "id": "history2019-nl-levy-51000",
+      "year": 2019,
+      "province": "NL",
+      "household": {
+        "people": [
+          {
+            "fd": 51000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.provincialLevy": 100
+      }
+    },
+    {
+      "id": "history2019-nl-levy-55000",
+      "year": 2019,
+      "province": "NL",
+      "household": {
+        "people": [
+          {
+            "fd": 55000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.provincialLevy": 100
+      }
+    },
+    {
+      "id": "history2019-nl-levy-55500",
+      "year": 2019,
+      "province": "NL",
+      "household": {
+        "people": [
+          {
+            "fd": 55500
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.provincialLevy": 150
+      }
+    },
+    {
+      "id": "history2019-nl-levy-600500",
+      "year": 2019,
+      "province": "NL",
+      "household": {
+        "people": [
+          {
+            "fd": 600500
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.provincialLevy": 1750
+      }
+    },
+    {
+      "id": "history2019-nl-levy-601000",
+      "year": 2019,
+      "province": "NL",
+      "household": {
+        "people": [
+          {
+            "fd": 601000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.provincialLevy": 1800
+      }
+    },
+    {
+      "id": "history2019-flat-bpa-12068",
+      "year": 2019,
+      "province": "AB",
+      "household": {
+        "people": [
+          {
+            "fd": 12068
+          }
+        ],
+        "useBpa": true
+      },
+      "expected": {
+        "fed": 0
+      }
+    },
+    {
+      "id": "history2019-flat-bpa-12069",
+      "year": 2019,
+      "province": "AB",
+      "household": {
+        "people": [
+          {
+            "fd": 12069
+          }
+        ],
+        "useBpa": true
+      },
+      "expected": {
+        "fed": 0
+      }
+    },
+    {
+      "id": "history2019-flat-bpa-12070",
+      "year": 2019,
+      "province": "AB",
+      "household": {
+        "people": [
+          {
+            "fd": 12070
+          }
+        ],
+        "useBpa": true
+      },
+      "expected": {
+        "fed": 0.15
+      }
+    },
+    {
+      "id": "history2019-payroll-AB",
+      "year": 2019,
+      "province": "AB",
+      "household": {
+        "people": [
+          {
+            "ord": 100000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 2668.05,
+        "list.0.pay.enh": 80.85,
+        "list.0.pay.ei": 860.22,
+        "list.0.pay.qpip": 0
+      }
+    },
+    {
+      "id": "history2019-payroll-QC",
+      "year": 2019,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 100000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 2910.6,
+        "list.0.pay.enh": 80.85,
+        "list.0.pay.ei": 663.75,
+        "list.0.pay.qpip": 402.39
+      }
+    }
+  ],
+  "ratePeriodCases": []
+}

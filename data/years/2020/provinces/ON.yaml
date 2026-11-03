@@ -1,0 +1,92 @@
+# Benefit-year figures use July 2020 to June 2021, applied to current-year income.
+# Child maximum annualizes rounded CRA monthly $121.75 × 12 = $1461.
+# OEPTC property component is the published $844 property maximum minus $60 base = $784.
+# Toronto total published rate is (0.446704 city + 0.153000 education) / 100.
+
+code: ON
+name: Ontario
+order: 7
+brackets:
+  - [44740, 0.0505]
+  - [89482, 0.0915]
+  - [150000, 0.1116]
+  - [220000, 0.1216]
+  - [.inf, 0.1316]
+basicPersonalAmount: 10783
+dividendTaxCredit: {eligible: 0.1, nonEligible: 0.029863}
+spouseAmount: {max: 9156, threshold: 915}
+surtax:
+  - [4830, 0.2]
+  - [6182, 0.36]
+ontarioTaxReduction: {base: 249, perChild: 460}
+lift: {max: 850, rate: 0.0505, threshold: 30000, familyThreshold: 60000, phaseOut: 0.1}
+payroll:
+  healthPremium:
+    - [200000, 750, 0.25, 900]
+    - [72000, 600, 0.25, 750]
+    - [48000, 450, 0.25, 600]
+    - [36000, 300, 0.06, 450]
+    - [20000, 0, 0.06, 300]
+salesTax: {rate: 0.13, label: 13% HST}
+propertyTax: {rate: 0.00599704, city: Toronto}
+creditsUseRent: true
+childBenefit:
+  name: Ontario Child Benefit
+  program: ontario-child-benefit
+  params: {perChild: 1461, threshold: 22303, rate: 0.08}
+  estimated: true
+credits:
+  - name: Ontario sales tax credit
+    program: ontario-sales-tax-credit
+    params: {perPerson: 313, rate: 0.04, thresholdSingle: 24115, thresholdFamily: 30143}
+  - name: Ontario energy and property tax credit
+    program: ontario-energy-property-tax-credit
+    params: {rentShare: 0.2, energyMax: 241, propertyBase: 60, propertyRate: 0.1, propertyMax: 784, rate: 0.02, thresholdSingle: 24115, thresholdFamily: 30143}
+sources:
+  - {label: "CRA, ON428 for 2020", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5006-c/5006-c-20e.pdf}
+  - {label: "CRA, ON428 worksheet for 2020", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5006-d/5006-d-20e.pdf}
+  - {label: "CRA, T4114-20: July 2020–June 2021 child benefits (official archive)", url: https://publications.gc.ca/collections/collection_2020/arc-cra/Rv1-36-2020-eng.pdf?download=1}
+  - {label: "CRA, GST/HST historical rates and provincial sales-tax rates", url: https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/charge-collect-which-rate/calculator.html}
+  - {label: "CRA, 2020 LIFT Schedule ON428-A", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5006-a/5006-a-20e.pdf}
+  - {label: "Ontario, 2020 tax transparency report: sales and energy/property credits", url: https://budget.ontario.ca/2020/provisions.html}
+  - {label: "Toronto, 2020 annual financial report: residential tax rates", url: https://www.toronto.ca/wp-content/uploads/2021/09/95b7-YE-2020-City-of-Toronto-Annual-Financial-Report.pdf}
+  - label: "Carbon history: Statistics Canada, Canadian Vehicle Survey: Annual 2009 (53-223-X)"
+    url: https://www150.statcan.gc.ca/n1/pub/53-223-x/53-223-x2009000-eng.pdf
+  - label: "Carbon history: Statistics Canada 25-10-0060-01 household energy consumption, selected CSV rows"
+    url: https://www150.statcan.gc.ca/n1/tbl/csv/25100060-eng.zip
+  - label: "Carbon history: Natural Gas: A Primer"
+    url: https://natural-resources.canada.ca/energy-sources/fossil-fuels/natural-gas-primer
+  - label: "Carbon history: Fuel charge rates"
+    url: https://www.canada.ca/en/revenue-agency/services/forms-publications/publications/fcrates/fuel-charge-rates.html
+  - label: "Carbon history: Government Announces Climate Action Incentive Payment Amounts for 2020"
+    url: https://www.canada.ca/en/department-finance/news/2019/12/government-announces-climate-action-incentive-payment-amounts-for-2020.html
+
+# Historical driving defaults use a common survey baseline; see cited sources.
+driving:
+  distance: 16200
+  estimated: true
+
+# Calendar-year carbon charges and cash rebates; heating is an explicit modeled estimate.
+carbon:
+  name: Federal carbon pricing
+  gasoline:
+    - from: 2020-01-01
+      rate: 0.0442
+    - from: 2020-04-01
+      rate: 0.0663
+  heating:
+    amount: 86.3
+    estimated: true
+    method: 2021 Statistics Canada household natural gas and heating oil use averaged across all households; 58.2901 GJ gas and 1.0275 GJ oil, held constant across years; calendar-day rates and applicable heating exemptions. See carbon heating verification.
+  rebates:
+    - program: carbon-rebate-payments
+      name: Climate Action Incentive / Canada Carbon Rebate
+      params:
+        payments:
+          - date: 2020-04-01
+            adult: 224
+            spouse: 112
+            child: 56
+            firstChild: 112
+            threshold: [0, 0]
+            rate: 0

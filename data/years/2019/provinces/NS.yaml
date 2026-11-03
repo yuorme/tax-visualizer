@@ -1,0 +1,60 @@
+# Benefit-year figures use July 2019 to June 2020, applied to current-year income.
+# NS 2012 regulation sets exact first-child 624.96, subsequent 825/900;2014 regulation sets graduated taper.
+# Halifax total: (0.670 urban +0.047 regional transit +0.098 local transit +0.013 fire +0.305 education
+# +0.017 valuation +0.016 corrections +0.006 housing +0.024 supplementary education)/100=0.01196.
+
+code: NS
+name: Nova Scotia
+order: 11
+brackets:
+  - [29590, 0.0879]
+  - [59180, 0.1495]
+  - [93000, 0.1667]
+  - [150000, 0.175]
+  - [.inf, 0.21]
+basicPersonalAmount: {max: 11481, min: 8481, from: 25000, to: 75000}
+dividendTaxCredit: {eligible: 0.0885, nonEligible: 0.0299}
+spouseAmount:
+  program: nova-scotia-spouse-amount
+  params:
+    max: 8481
+    threshold: 848
+    supplement: {max: 3000, rate: 0.06, threshold: 25000}
+childAmount: {perChild: 1200, ages: under6}
+lowIncomeReduction:
+  program: family-low-income-reduction
+  params: {individual: 300, spouse: 300, child: 165, rate: 0.05, threshold: 15000}
+salesTax: {rate: 0.15, label: 15% HST}
+propertyTax: {rate: 0.01196, city: Halifax}
+childBenefit:
+  name: Nova Scotia Child Benefit
+  program: nova-scotia-child-benefit-reduction
+  params:
+    perChild: [624.96, 825, 900]
+    fullBelow: 18001
+    threshold: 18000
+    rate: [0.0781, 0.1812]
+    additionalRate: 0.1125
+credits:
+  - name: Nova Scotia affordable living tax credit
+    program: ns-affordable-living-tax-credit
+    params: {base: 255, child: 60, rate: 0.05, threshold: 30000}
+sources:
+  - {label: "CRA, NS 428 for 2019", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5003-c/5003-c-19e.pdf}
+  - {label: "CRA, NS 428 worksheet for 2019", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5003-d/5003-d-19e.pdf}
+  - {label: "CRA, T 4114-19: July 2019–June 2020 child benefits (official archive)", url: https://publications.gc.ca/collections/collection_2019/arc-cra/Rv1-36-2019-eng.pdf?download=1}
+  - {label: "CRA, GST/HST historical rates and provincial sales-tax rates", url: https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/charge-collect-which-rate/calculator.html}
+  - {label: "Nova Scotia, Affordable Living Tax Credit Regulations (unchanged since 2014)", url: https://novascotia.ca/JUST/REGULATIONS/regs/incaffordable.htm}
+  - {label: "Halifax, 2019 tax resolution: mandatory and area levies", url: https://cdn.halifax.ca/sites/default/files/documents/city-hall/regional-council/190416rc-mins.pdf}
+  - {label: "Nova Scotia regulation 148/2012: exact child maxima", url: https://novascotia.ca/just/regulations/rg2/2012/au1012.pdf}
+  - {label: "Nova Scotia regulation 100/2014: taper rates", url: https://novascotia.ca/just/regulations/rg2/2014/jl1114.pdf}
+  - {label: "Nova Scotia regulation 280/2009: income threshold 18000/18001", url: https://novascotia.ca/just/regulations/rg2/2009/oc0909.pdf}
+  - {label: "Nova Scotia original child benefit regulation: reduction formula", url: https://novascotia.ca/just/regulations/rg2/1999/RG2-1999-07-16.pdf}
+  - {label: "Halifax, 2019 adopted tax-rate schedule", url: https://cdn.halifax.ca/sites/default/files/documents/city-hall/regional-council/190416bc3.pdf}
+  - label: "Carbon history: Statistics Canada, Canadian Vehicle Survey: Annual 2009 (53-223-X)"
+    url: https://www150.statcan.gc.ca/n1/pub/53-223-x/53-223-x2009000-eng.pdf
+
+# Historical driving defaults use a common survey baseline; see cited sources.
+driving:
+  distance: 17400
+  estimated: true

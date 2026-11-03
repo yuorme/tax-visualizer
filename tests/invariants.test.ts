@@ -108,6 +108,7 @@ function benefitLines(p: Province, h: H): Map<string, number> {
 function creditProgram(p: Province, name: string): string {
   for (const cr of p.credits ?? [])
     if (name === (cr.name ?? cr.program) || ("nameRenter" in cr && name === cr.nameRenter)) return cr.program;
+  for (const cr of p.carbon?.rebates ?? []) if (name === (cr.name ?? p.carbon?.name ?? cr.program)) return cr.program;
   if (name === "Canada Workers Benefit") return "canada-workers-benefit";
   return "groceries-benefit"; // the federal sales tax credit, whose name changes with the year's data
 }
@@ -119,6 +120,7 @@ function programsIn(p: Province): Set<string> {
   const ids = ["canada-child-benefit", "groceries-benefit", "canada-workers-benefit"];
   if (p.childBenefit) ids.push(p.childBenefit.program);
   for (const cr of p.credits ?? []) ids.push(cr.program);
+  for (const cr of p.carbon?.rebates ?? []) ids.push(cr.program);
   return new Set(ids);
 }
 
@@ -239,6 +241,7 @@ const PHASE_IN = new Set([
   "quebec-work-premium",
   "alberta-child-family-benefit", // the working component
   "alberta-child-family-benefit-by-child", // same statutory working phase-in
+  "alberta-child-benefit-and-employment", // the separate historical employment credit phases in
   "nb-child-tax-benefit", // the working income supplement
   "nl-income-supplement", // the extra amount above a floor
   "pei-sales-tax-credit", // the supplement above a floor
@@ -268,8 +271,59 @@ function inSteepestOhpBand(s: Step): boolean {
   );
 }
 
-/** Where smooth clawbacks stack past 100%, so a raise lowers disposable income. Every entry must still be seen. */
+/** Independently check the declared MSP schedule before reconciling its household premium. */
+function checkedMsp(p: Province, hh: Household, r: H): number {
+  const q = p.householdPremium?.params;
+  if (!q) return 0;
+  const nets = r.breakdown.incomeBases.federal;
+  const couple = hh.spouse && nets.length === 2;
+  const kids = r.childcare.childCounts?.kids ?? hh.kids;
+  const adjusted = couple
+    ? [
+        Math.max(
+          0,
+          nets[0] +
+            nets[1] -
+            q.spouseDeduction -
+            kids * q.childDeduction +
+            r.childcare.claims.reduce((a, b) => a + b, 0) * q.childcareAddbackRate,
+        ),
+      ]
+    : nets.map((net, i) =>
+        Math.max(0, net - (i === 0 ? kids * q.childDeduction : 0) + r.childcare.claims[i] * q.childcareAddbackRate),
+      );
+  const expected = adjusted.map(net => {
+    const band = q.bands.find(([limit]) => net <= limit);
+    assert.ok(band, "MSP needs an unlimited final band");
+    const adults = couple ? 2 : 1;
+    return { adjusted: net, perAdult: band[1], adults, total: band[1] * adults };
+  });
+  assert.deepStrictEqual(r.breakdown.householdPremium?.families, expected);
+  const total = expected.reduce((sum, f) => sum + f.total, 0);
+  assert.equal(r.breakdown.householdPremium?.total, total);
+  return total;
+}
+
+/** Known sourced clawback overlaps or premium steps. Every entry must still be seen. */
 const STACKED: Stacked[] = [
+  {
+    code: "BC",
+    year: 2019,
+    why:
+      "the statutory MSP upper-inclusive income bands can raise the household premium in a step; " +
+      "admit only an upward band crossing whose verified premium fully explains the disposable-income decline",
+    applies: s => {
+      if (s.p.householdPremium?.program !== "bc-msp-premiums") return false;
+      const a = checkedMsp(s.p, s.from, s.a),
+        b = checkedMsp(s.p, s.to, s.b);
+      const before = s.a.breakdown.householdPremium?.families ?? [];
+      const after = s.b.breakdown.householdPremium?.families ?? [];
+      const crossed = before.some((f, i) =>
+        s.p.householdPremium?.params.bands.some(([limit]) => f.adjusted <= limit && after[i]?.adjusted > limit),
+      );
+      return crossed && b > a && s.b.cash - s.b.netTotal + b >= s.a.cash - s.a.netTotal + a - EPS;
+    },
+  },
   {
     code: "NL",
     year: 2021,
@@ -513,8 +567,13 @@ test("swapping two unrelated adults leaves income tax and payroll unchanged (ben
     const swapped = { ...hh, people: [hh.people[1], hh.people[0]], active: 1 - hh.active };
     const a = household(y, p, hh),
       b = household(y, p, swapped);
-    for (const k of ["fed", "prov", "wh", "payroll"] as const)
+    for (const k of ["fed", "prov", "wh"] as const)
       assert.ok(close(a[k], b[k]), `${k}: ${a[k]} vs ${b[k]} swapped: ${where(y, p, hh)}`);
+    // MSP child deductions follow the first family, as benefits do. Verify each premium independently, then
+    // retain symmetry for all person payroll; only the exact verified household-premium difference is removed.
+    const premiumA = checkedMsp(p, hh, a),
+      premiumB = checkedMsp(p, swapped, b);
+    assert.ok(close(a.payroll - premiumA, b.payroll - premiumB), `person payroll changed: ${where(y, p, hh)}`);
     // Known exception, #74: benefits and refundable credits use only the first person's income, so the gap is
     // exactly the first person's benefits less the second's, each worked out with the other adult at $0.
     // When #74 is fixed these fail: add "ccb", "provBen" and "refund" to the keys above and delete this part.

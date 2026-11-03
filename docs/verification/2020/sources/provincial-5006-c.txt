@@ -1,0 +1,282 @@
+Title: Ontario Tax
+URL: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5006-c/5006-c-20e.pdf
+Fetched: 2026-11-02
+SHA-256 of the original: 3ffa93c78a5fd52246805a4a9d81cecd2cb0db4195d2a5297e4c4437915da890
+Publication date modified: 2020-11-02
+PDF pages: all 4
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 1 of 4 ---
+
+Form ON428
+2020
+Protected B when completed
+Ontario Tax
+Part A – Ontario tax on taxable income
+1Enter your taxable income from line 26000 of your return.
+Use the amount from line 1 to decide which column to complete.
+Line 1 is
+$44,740 or less
+Amount from line 1
+–Line 2 minus line 3
+(cannot be negative) =
+×Line 4 multiplied by the
+percentage from line 5 =
++
+Ontario tax on
+taxable income
+Line 6 plus line 7
+=
+Line 1 is more than
+$44,740 but not
+more than $89,482
+–
+=
+×
+=
++
+=
+Line 1 is more than
+$89,482 but not
+more than $150,000
+–
+=
+×
+=
++
+=
+Line 1 is more than
+$150,000 but not
+more than $220,000
+–
+=
+×
+=
++
+=
+Line 1 is more
+than $220,000
+–
+=
+×
+=
++
+=
+2
+3
+4
+5
+6
+7
+8
+Enter the amount from line 8 on line 48 and continue at line 9.
+Part B – Ontario non-refundable tax credits 56050Internal use
+58040 9Basic personal amount Claim $10,783
+58080 10Age amount (if born in 1955 or earlier) (use Worksheet ON428) (maximum $5,265) +
+Spouse or common-law partner amount:
+11Base amount
+12
+Your spouse's or common-law partner's net income
+from line 23600 of their return –
+58120 13Line 11 minus 12 (if negative, enter "0") (maximum $9,156) =
+Ż +
+Amount for an eligible dependant:
+14Base amount
+15Your eligible dependant's net income from line 23600 of their return –
+58160 16Line 14 minus line 15 (if negative, enter "0") (maximum $9,156) =
+Ż +
+58185 17Ontario caregiver amount (use Worksheet ON428) +
+18Add lines 9, 10, 13, 16, and 17. =
+CPP or QPP contributions:
+58240 19Amount from line 30800 of your return + •
+58280 20Amount from line 31000 of your return + •
+Employment insurance premiums:
+58300 21Amount from line 31200 of your return + •
+58305 22Amount from line 31217 of your return + •
+58330 23Adoption expenses (maximum $13,156 per child) +
+24Add lines 19 to 23. =
+Ż +
+25Line 18 plus line 24 =
+Continue on the next page.
+5006-C E (20) (Ce formulaire est disponible en français.) Page 1 of 4
+0.00
+5.05%
+0.00
+44,740.00
+9.15%
+2,259.00
+89,482.00
+11.16%
+6,353.00
+150,000.00
+12.16%
+13,107.00
+220,000.00
+13.16%
+21,619.00
+10,071.00
+10,071.00
+
+--- PDF page 2 of 4 ---
+
+Protected B when completed
+Part B – Ontario non-refundable tax credits (continued)
+26Amount from line 25 of the previous page
+58360 27Pension income amount (maximum $1,491) +
+28Line 26 plus line 27 =
+58440 29
+Disability amount for self
+(claim $8,712 or, if you were under 18 years of age, use Worksheet ON428) +
+58480 30Disability amount transferred from a dependant (use Worksheet ON428) +
+31Add lines 28 to 30. =
+58520 32Interest paid on your student loans (amount from line 31900 of your return) +
+58560 33Your unused tuition and education amounts (attach Schedule ON(S11)) +
+58640 34Amounts transferred from your spouse or common-law partner (attach Schedule ON(S2)) +
+35Add lines 31 to 34. =
+Medical expenses:
+58689 36Read line 58689 of your Ontario Information Guide.
+37
+Enter whichever is less:
+$2,440 or 3% of the amount on line 23600 of your return –
+38Line 36 minus line 37 (if negative, enter "0") =
+58729 39
+Allowable amount of medical expenses for other dependants
+(use Worksheet ON428) +
+58769 40Line 38 plus line 39 =
+Ż +
+58800 41Line 35 plus line 40 =
+42Ontario non-refundable tax credit rate ×
+58840 43Line 41 multiplied by the percentage from line 42 =
+Donations and gifts:
+44
+Amount from line 17
+of your federal Schedule 9 × 5.05% =
+45
+Amount from line 18
+of your federal Schedule 9 × 11.16% = +
+58969 46Line 44 plus line 45 =
+Ż +
+61500 47Ontario non-refundable tax credits
+Line 43 plus line 46
+Enter this amount on line 51. =
+Part C – Ontario tax
+48Ontario tax on taxable income from line 8
+61510 49Ontario tax on split income (complete Form T1206) + •
+50Line 48 plus line 49 =
+51Ontario non-refundable tax credits from line 47 –
+52Line 50 minus line 51 (if negative, enter "0") =
+Ontario minimum tax carryover:
+53Amount from line 52 above
+61520 54Ontario dividend tax credit (use Worksheet ON428) – •
+55Line 53 minus line 54 (if negative, enter "0") =
+56Amount from line 40427 of your return × 33.67% =
+61540 57Enter whichever is less: amount from line 55 or line 56 – •
+58Line 52 minus line 57 (if negative, enter "0") =
+Continue on the next page.
+5006-C E (20) Page 2 of 4
+5.05%
+
+--- PDF page 3 of 4 ---
+
+Protected B when completed
+Part C – Ontario tax (continued)
+59Amount from line 58 of the previous page
+Ontario surtax:
+60Amount from line 59 above
+61Ontario tax on split income from line 49 –
+62Line 60 minus line 61 (if negative, enter "0") =
+Complete lines 63 to 65 if the amount on line 62 is more than $4,830.
+If the amount is less than $4,830, enter "0" on line 65 and continue on line 66.
+63(Line 62 – $4,830) × 20% (if negative, enter "0") =
+64(Line 62 – $6,182) × 36% (if negative, enter "0") = +
+65Line 63 plus line 64 =
+Ż +
+66Line 59 plus line 65 =
+67Ontario dividend tax credit from line 54 –
+68Line 66 minus line 67 (if negative, enter "0") =
+69
+Ontario additional tax for minimum tax purposes:
+If you entered an amount on line 98 of Form T691, use Worksheet ON428 to calculate your
+additional tax for minimum tax purposes. +
+70Line 68 plus line 69 =
+Ontario tax reduction
+Enter "0" on line 77 if any of the following applies to you:
+• You were not a resident of Canada at the beginning of the year
+• You were not a resident of Ontario on December 31, 2020
+• There is an amount on line 69
+• The amount on line 70 is "0"
+• Your return is filed for you by a trustee in bankruptcy
+• You are not claiming an Ontario tax reduction
+If none of the above applies to you, complete lines 71 to 77 to calculate your Ontario tax reduction.
+71Basic reduction
+If you had a spouse or common-law partner on December 31, 2020,
+only the individual with the higher net income can claim the amounts
+on lines 72 and 73.
+72
+Reduction for dependent children born in 2002 or later:
+60969Number of dependent children × $460 = +
+73
+Reduction for dependants with a mental or physical impairment:
+60970Number of dependants × $460 = +
+74Add lines 71 to 73. =
+75Amount from line 74 above × 2 =
+76Amount from line 70 above –
+77Ontario tax reductionLine 75 minus line 76 (if negative, enter "0") =
+Ż –
+78Line 70 minus line 77 (if negative, enter "0") =
+79Provincial foreign tax credit (complete Form T2036) –
+80Line 78 minus line 79 (if negative, enter "0") =
+Continue on the next page.
+5006-C E (20) Page 3 of 4
+249.00
+
+--- PDF page 4 of 4 ---
+
+Protected B when completed
+Part C – Ontario tax (continued)
+81Amount from line 80 of the previous page
+62140 82Low-income individuals and families tax (LIFT) credit (complete Schedule ON428–A) – •
+83Line 81 minus line 82 (if negative, enter "0") =
+84
+Community food program donation tax credit for farmers:
+62150
+Enter the amount of qualifying donations that have
+also been claimed as a charitable donation. × 25% = –
+85Line 83 minus line 84 (if negative, enter "0") =
+86Ontario health premium (complete the chart below) +
+87Ontario tax
+Line 85 plus line 86
+Enter this amount on line 42800 of your return. =
+Ontario health premium
+Go to the line on the chart below that corresponds to your taxable income from line 1 to determine your Ontario health premium.
+Enter the result on line 86 above.
+Taxable income Ontario health premium
+$20,000 or less
+ŻŻŻ $0
+more than $20,000 but
+not more than $25,000 – $20,000 = × 6% =
+more than $25,000 but
+not more than $36,000
+ŻŻŻ $300
+more than $36,000 but
+not more than $38,500 – $36,000 = × 6% = + $300 =
+more than $38,500 but
+not more than $48,000
+ŻŻŻ $450
+more than $48,000 but
+not more than $48,600 – $48,000 = × 25% = + $450 =
+more than $48,600 but
+not more than $72,000
+ŻŻŻ $600
+more than $72,000 but
+not more than $72,600 – $72,000 = × 25% = + $600 =
+more than $72,600 but
+not more than $200,000
+ŻŻŻ $750
+more than $200,000 but
+not more than $200,600 – $200,000 = × 25% = + $750 =
+more than $200,600
+ŻŻŻ $900
+See the privacy notice on your return.
+5006-C E (20) Page 4 of 4

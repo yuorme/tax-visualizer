@@ -1,0 +1,162 @@
+Title: Worksheet NU428
+URL: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5014-d/5014-d-19e.pdf
+Fetched: 2026-11-02
+SHA-256 of the original: 0d747b88996026c1e664549e8cc5e30023c13532afad317cbfc5aa72e0a97dc5
+Publication date modified: 2019-11-21
+PDF pages: all 3
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 1 of 3 ---
+
+2019
+Protected B when completed
+Worksheet NU428
+Use this worksheet to calculate the amounts to enter on your Form NU428, Nunavut Tax.
+Keep this worksheet for your records. Do not attach it to your return.
+Line 58080 – Age amount (if born in 1954 or earlier)
+If the amount from line 23600 of your return is:
+• $37,790 or less, enter $10,214 on line 58080 of your Form NU428
+• more than $37,790 but not more than $105,884, complete the calculation below
+• more than $105,884, enter "0" on line 58080 of your Form NU428
+1Maximum amount
+2Amount from line 23600 of your return
+3Income threshold –
+4Line 2 minus line 3 (if negative, enter "0") =
+5Applicable rate ×
+6Multiply line 4 by line 5. =
+Ż –
+7Line 1 minus line 6 (if negative, enter "0") =
+Enter this amount on line 58080 of your Form NU428.
+Line 58200 – Amount for infirm dependants age 18 or older
+Complete one column for each dependant. If you have more than three dependants, use a separate sheet of paper.
+Dependant 1
+1Base amount
+2Dependant's net income from line 23600 of their return –
+3
+Line 1 minus line 2 (if negative, enter "0")
+(maximum $4,909 per dependant) =
+4
+Amount claimed for this dependant on line 58160
+of your Form NU428, if any –
+5
+Allowable amount for this dependant:
+line 3 minus line 4 (if negative, enter "0") =
+Dependant 2
+1
+2–
+3=
+4–
+5=
+Dependant 3
+1
+2–
+3=
+4–
+5=
+6Add the amounts from line 5 for columns 1, 2, and 3 (and others, if there are any).
+Enter the total on line 58200 of your Form NU428.
+5014-D (Ce formulaire est disponible en français.)
+10,214.00
+37,790.00
+15%
+11,875.00 11,875.00 11,875.00
+
+--- PDF page 2 of 3 ---
+
+Protected B when completed
+Worksheet NU428 (continued)
+Line 58400 – Caregiver amount
+Complete one column for each dependant. If you have more than three dependants, use a separate sheet of paper.
+Dependant 1
+1Base amount
+2Dependant's net income from line 23600 of their return –
+3
+Line 1 minus line 2 (if negative, enter "0")
+(maximum $4,910 per dependant) =
+4
+Amount claimed for this dependant on line 58160
+of your Form NU428, if any –
+5
+Allowable amount for this dependant:
+line 3 minus line 4 (if negative, enter "0") =
+Dependant 2
+1
+2–
+3=
+4–
+5=
+Dependant 3
+1
+2–
+3=
+4–
+5=
+6Add the amounts from line 5 for columns 1, 2, and 3 (and others, if there are any).
+Enter the total on line 58400 of your Form NU428.
+Line 58440 – Disability amount (for self)
+Complete the following calculation if you were under 18 years of age on December 31, 2019.
+1Base amount
+2Maximum amount
+3
+Total child care and attendant care expenses for you
+claimed by you or another person
+4Threshold for child and attendant care expenses –
+5Line 3 minus line 4 (if negative, enter "0") =
+Ż –
+6Line 2 minus line 5 (if negative, enter "0") =
+Ż +
+7Add lines 1 and 6. (maximum $18,527) =
+Enter this amount on line 58440 of your Form NU428.
+5014-D
+21,676.00 21,676.00 21,676.00
+13,618.00
+4,909.00
+2,875.00
+
+--- PDF page 3 of 3 ---
+
+Protected B when completed
+Worksheet NU428 (continued)
+Line 58480 – Disability amount transferred from a dependant
+Complete this calculation for each dependant. If you have more than one dependant, use a separate sheet of paper.
+Note: If you and your dependant were not residents of the same province or territory at the end of the year, special rules
+may apply. Contact the Canada Revenue Agency to find out how much you can claim.
+1Base amount
+If the dependant was under 18 years of age on December 31, 2019, complete lines 2 to 12.
+If the dependant was 18 years of age or older, enter "0" on line 6 and continue on line 7.
+2Maximum amount
+3
+Total child care and attendant care expenses for this
+dependant claimed by you or another person
+4Threshold for child and attendant care expenses –
+5Line 3 minus line 4 (if negative, enter "0") =
+Ż –
+6Line 2 minus line 5 (if negative, enter "0") =
+Ż +
+7Add lines 1 and 6. (maximum $18,527) =
+8Total of amounts your dependant can claim on lines 9 to 17 of their Form NU428 +
+9Add lines 7 and 8. =
+10Dependant's taxable income from line 26000 of their return –
+11Line 9 minus line 10 (if negative, enter "0") =
+12
+Allowable amount for this dependant:
+Enter the amount from line 7 or line 11, whichever is less
+Enter on line 58480 of your Form NU428 the total of allowable amounts claimed for all dependants.
+Line 61520 – Nunavut dividend tax credit
+Calculate the amount to enter on line 61520 of your Form NU428 by completing one of the following calculations:
+• If you entered an amount on line 12000 of your return but no amount on line 12010:
+Amount from line 12000 of your return × 5.51% =
+Enter this amount on line 61520 of your Form NU428.
+• If you entered an amount on lines 12000 and 12010 of your return:
+1Amount from line 12000 of your return
+32Amount from line 12010 of your return – × 2.61% =
+54Line 1 minus line 2 = × 5.51% = +
+6Add lines 3 and 5. =
+Enter this amount on line 61520 of your Form NU428.
+5014-D
+Enter this amount on line 61520 of your Form NU428.
+5014-D
+13,618.00
+4,909.00
+2,875.00

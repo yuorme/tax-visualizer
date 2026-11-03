@@ -1,0 +1,78 @@
+Title: Natural Resources Canada, Energy Use Data Handbook: Passenger Transportation Explanatory Variables
+URL: https://oee.nrcan.gc.ca/corporate/statistics/neud/dpa/showTable.cfm?type=HB&sector=tran&juris=00&rn=7&page=0
+Fetched: 2026-11-01
+SHA-256 of the original: dff6b54e5cc7bf7c27a7208d3a670dd7a77e632f509c74e670e4d2a1610ee866
+Publication date modified: 2026-03-10
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+- Return to list of tables
+- Previous table
+- Next table
+
+- 2000-2013
+- 2014-2023
+
+Passenger Transportation Explanatory Variables
+| 2000 | | 2014 | 2015 | 2016 | 2017 | 2018 | 2019 | 2020 | 2021 | 2022 | 2023
+Light−Duty Vehicles
+Sales (thousands)
+Cars 1,a,d | 848 | | 757 | 721 | 659 | 664 | 622 | 552 | 379 | 412 | 338 | 252
+Light Trucks 1,a,d | 473 | | 722 | 794 | 859 | 927 | 925 | 937 | 794 | 894 | 841 | 1,021
+Motorcycles | n.a. | | n.a. | n.a. | n.a. | n.a. | n.a. | n.a. | n.a. | n.a. | n.a. | n.a.
+Stock (thousands)
+Cars a,f | 10,684 | | 12,239 | 12,464 | 12,524 | 12,526 | 12,499 | 12,230 | 11,669 | 11,133 | 10,260 | 9,871
+Light Trucks a,f | 4,514 | | 8,034 | 8,554 | 9,167 | 9,715 | 10,286 | 10,587 | 10,849 | 10,778 | 11,144 | 11,506
+Motorcycles a,c | 311 | | 688 | 709 | 716 | 730 | 739 | 748 | 751 | 819 | 810 | 814
+Average Distance Travelled per Year (km)
+Cars a | 18,426 | | 15,332 | 15,202 | 15,098 | 14,777 | 14,505 | 14,717 | 12,258 | 12,800 | 13,032 | 13,261
+Light Trucks a | 18,633 | | 15,893 | 15,820 | 15,983 | 15,809 | 15,721 | 15,968 | 13,385 | 14,064 | 14,680 | 15,180
+Motorcycles a | 4,815 | | 4,276 | 4,247 | 4,273 | 4,240 | 4,202 | 4,274 | 3,583 | 3,855 | 3,980 | 4,142
+On−Road Average Fuel Consumption (L/100 km)
+Cars a,g
+Motor Gasoline 2 | 9.1 | | 8.3 | 8.1 | 8.0 | 8.0 | 7.9 | 7.9 | 7.8 | 7.8 | 7.7 | 7.7
+Diesel Fuel Oil 3 | 6.7 | | 6.8 | 6.8 | 6.9 | 6.9 | 6.9 | 6.9 | 6.8 | 6.9 | 7.0 | 7.0
+Light Trucks a,g
+Motor Gasoline 2 | 12.3 | | 11.3 | 10.9 | 10.8 | 10.7 | 10.6 | 10.5 | 10.4 | 10.3 | 10.1 | 10.0
+Diesel Fuel Oil 3 | 12.1 | | 8.8 | 8.8 | 8.8 | 8.8 | 8.7 | 8.7 | 8.7 | 8.7 | 8.7 | 8.7
+Motorcycles a,e
+Motor Gasoline 2 | 4.7 | | 5.4 | 5.4 | 5.4 | 5.3 | 5.3 | 5.3 | 5.3 | 5.3 | 5.4 | 5.4
+Lab−Tested New Vehicle Fuel Consumption 3 (L/100 km) g
+CAFC Standard Cars 4 | 8.6 | | n.a. | n.a. | n.a. | n.a. | n.a. | n.a. | n.a. | n.a. | n.a. | n.a.
+CAFC Average Car Fleet 4 | 7.8 | | n.a. | n.a. | n.a. | n.a. | n.a. | n.a. | n.a. | n.a. | n.a. | n.a.
+CAFC Standard Light Trucks 4 | 11.4 | | n.a. | n.a. | n.a. | n.a. | n.a. | n.a. | n.a. | n.a. | n.a. | n.a.
+CAFC Average Light Truck Fleet 4 | 11.1 | | n.a. | n.a. | n.a. | n.a. | n.a. | n.a. | n.a. | n.a. | n.a. | n.a.
+Buses
+Stock (thousands) a, c
+School Buses | 47.0 | | 53.2 | 50.5 | 50.8 | 55.0 | 53.5 | 53.2 | 40.1 | 40.3 | 38.9 | 39.2
+Urban Transit | 23.4 | | 28.2 | 31.0 | 29.1 | 29.5 | 31.9 | 32.1 | 22.7 | 20.6 | 23.8 | 22.0
+Inter−City Buses | 6.9 | | 9.2 | 9.1 | 10.8 | 6.4 | 6.5 | 6.5 | 3.9 | 3.3 | 4.2 | 4.0
+Average Distance Travelled per Year (km) a,b
+School Buses | 26,058 | | 24,603 | 24,941 | 26,359 | 27,492 | 25,619 | 25,429 | 20,489 | 21,020 | 23,380 | 21,872
+Urban Transit | 55,666 | | 67,376 | 60,584 | 51,520 | 61,444 | 54,316 | 55,082 | 41,549 | 41,415 | 42,859 | 44,266
+Inter−City Buses | 76,564 | | 42,632 | 40,493 | 31,708 | 50,857 | 48,729 | 46,730 | 32,793 | 32,655 | 35,896 | 32,742
+
+Footnotes:
+1) These series are representatives of vehicles produced in the model year, not for vehicles sold in that calendar year.
+2) Includes Ethanol.
+3) Includes Biodiesel.
+4) Growth rate shown in the final column entitled "Total Growth 2000–2023" is for 2000 to 2010.
+
+n.a. − Denotes data that is not applicable.
+n.a. − Denotes data that is not available.
+
+Sources:
+a) Natural Resources Canada, Transportation End−Use Model, Ottawa, 2025.
+b) Statistics Canada, Passenger Bus and Urban Transit Statistics, 2000−2000, Ottawa, 2002 (Cat. No. 53−215−X); and Statistics Canada, The Canadian Passenger Bus and Urban Transit Industries, 2001−2010, Ottawa, 2013 (Cat. No. 50−002−X); and Tables 23−10−0084−01 and 23−10−0086−01, 2025.
+c) Statistics Canada, Road Motor Vehicle Registrations, Ottawa, 1999 (Cat. No. 53−219−X); and Statistics Canada, Motor Vehicle Registration, 2000−2023, Table 23−10−0067−01, Ottawa, 2025.
+d) IHS Markit, New Vehicle Registrations, 2000−2023, Toronto, 2025.
+e) United States Department of Transportation, National Transportation Statistics, Table VM−1, 2025.
+f) DesRosiers Automotive Consultants, Canadian Vehicles in Operation Census, 2000−2023, Richmond Hill (Toronto), 2025.
+g) Transport Canada, Vehicle Fuel Economy Information System, 1979−2009, Ottawa, 2010.
+
+- Return to list of tables
+- Previous table
+- Next table
+
+- 2000-2013
+- 2014-2023

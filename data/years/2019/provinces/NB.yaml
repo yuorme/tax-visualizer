@@ -1,0 +1,81 @@
+# Benefit-year figures use July 2019 to June 2020, applied to current-year income.
+# Moncton historical table explicitly gives 2019 rate 1.6497 per 100. HST benefit unchanged.
+
+code: NB
+name: New Brunswick
+order: 9
+brackets:
+  - [42592, 0.0968]
+  - [85184, 0.1482]
+  - [138491, 0.1652]
+  - [157778, 0.1784]
+  - [.inf, 0.203]
+basicPersonalAmount: 10264
+dividendTaxCredit: {eligible: 0.14, nonEligible: 0.0275}
+spouseAmount: {max: 8716, threshold: 872}
+lowIncomeReduction:
+  program: nb-low-income-reduction
+  params: {amount: 665, rate: 0.03, threshold: 17130}
+salesTax: {rate: 0.15, label: 15% HST}
+propertyTax: {rate: 0.016497, city: Moncton}
+childBenefit:
+  name: NB Child Tax Benefit
+  program: nb-child-tax-benefit
+  params:
+    perChild: 250
+    threshold: 20000
+    rateOneChild: 0.025
+    rateMoreChildren: 0.05
+    workingIncomeSupplement: {rate: 0.04, floor: 3750, max: 250, threshold: 20921, phaseOut: 0.05}
+credits:
+  - name: New Brunswick HST credit
+    program: nb-hst-credit
+    params: {adult: 300, spouse: 300, child: 100, rate: 0.02, threshold: 35000}
+sources:
+  - {label: "CRA, NB 428 for 2019", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5004-c/5004-c-19e.pdf}
+  - {label: "CRA, NB 428 worksheet for 2019", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5004-d/5004-d-19e.pdf}
+  - {label: "CRA, T 4114-19: July 2019–June 2020 child benefits (official archive)", url: https://publications.gc.ca/collections/collection_2019/arc-cra/Rv1-36-2019-eng.pdf?download=1}
+  - {label: "CRA, GST/HST historical rates and provincial sales-tax rates", url: https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/charge-collect-which-rate/calculator.html}
+  - {label: "New Brunswick Finance, child benefit and working supplement annual amounts and reduction rates", url: https://www2.gnb.ca/content/gnb/en/departments/finance/taxes/child_tax_benefit.html}
+  - {label: "CRA, New Brunswick HST calculation sheet (unchanged 2016 parameters)", url: https://www.canada.ca/content/dam/cra-arc/migration/cra-arc/bnfts/rltd_prgrms/nbhstccs-eng.pdf}
+  - {label: "Moncton, historical 2022 municipal property-tax rate", url: https://www.moncton.ca/en/budget}
+  - label: "Carbon history: Statistics Canada, Canadian Vehicle Survey: Annual 2009 (53-223-X)"
+    url: https://www150.statcan.gc.ca/n1/pub/53-223-x/53-223-x2009000-eng.pdf
+  - label: "Carbon history: Statistics Canada 25-10-0060-01 household energy consumption, selected CSV rows"
+    url: https://www150.statcan.gc.ca/n1/tbl/csv/25100060-eng.zip
+  - label: "Carbon history: Natural Gas: A Primer"
+    url: https://natural-resources.canada.ca/energy-sources/fossil-fuels/natural-gas-primer
+  - label: "Carbon history: Fuel charge rates"
+    url: https://www.canada.ca/en/revenue-agency/services/forms-publications/publications/fcrates/fuel-charge-rates.html
+  - label: "Carbon history: GREENHOUSE"
+    url: https://www.canada.ca/content/dam/eccc/documents/pdf/climate-change/pricing-pollution/greenhouse-gas-pollution-pricing-act-annual-report-2019.pdf
+
+# Historical driving defaults use a common survey baseline; see cited sources.
+driving:
+  distance: 16100
+  estimated: true
+
+# Calendar-year carbon charges and cash rebates; heating is an explicit modeled estimate.
+carbon:
+  name: Federal carbon pricing
+  gasoline:
+    - from: 2019-01-01
+      rate: 0
+    - from: 2019-04-01
+      rate: 0.0442
+  heating:
+    amount: 8.08
+    estimated: true
+    method: 2021 Statistics Canada household natural gas and heating oil use averaged across all households; 3.1727 GJ gas and 5.0966 GJ oil, held constant across years; calendar-day rates and applicable heating exemptions. See carbon heating verification.
+  rebates:
+    - program: carbon-rebate-payments
+      name: Climate Action Incentive / Canada Carbon Rebate
+      params:
+        payments:
+          - date: 2019-04-01
+            adult: 128
+            spouse: 64
+            child: 32
+            firstChild: 64
+            threshold: [0, 0]
+            rate: 0

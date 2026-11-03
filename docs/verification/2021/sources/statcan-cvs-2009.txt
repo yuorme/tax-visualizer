@@ -1,0 +1,1786 @@
+Title: Statistics Canada, Canadian Vehicle Survey: Annual 2009 (53-223-X)
+URL: https://www150.statcan.gc.ca/n1/pub/53-223-x/53-223-x2009000-eng.pdf
+Fetched: 2026-11-01
+SHA-256 of the original: e9d00453b048eaf18433641fb96920eaf952bb4186566f1d110bab67926df56c
+Publication date modified: 2010-07-06
+PDF pages: all 43
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 1 of 43 ---
+
+Catalogue no. 53-223-X
+Canadian Vehicle
+Survey: Annual
+2009
+
+--- PDF page 2 of 43 ---
+
+How to obtain more information
+For information about this product or the wide range of services and data available from Statistics Canada, visit our website at
+www.statcan.gc.ca, e-mail us at infostats@statcan.gc.ca, or telephone us, Monday to Friday from 8:30 a.m. to 4:30 p.m., at the
+following numbers:
+Statistics Canada’s National Contact Centre
+Toll-free telephone (Canada and the United States):
+Inquiries line 1-800-263-1136
+National telecommunications device for the hearing impaired 1-800-363-7629
+Fax line 1-877-287-4369
+Local or international calls:
+Inquiries line 1-613-951-8116
+Fax line 1-613-951-0581
+Depository Services Program
+Inquiries line 1-800-635-7943
+Fax line 1-800-565-7757
+To access this product
+This product, Catalogue no. 53-223-X, is available free in electronic format. To obtain a single issue, visit our website at
+www.statcan.gc.ca and browse by “Key resource” > “Publications.”
+Standards of service to the public
+Statistics Canada is committed to serving its clients in a prompt, reliable and courteous manner. To this end, Statistics Canada
+has developed standards of service that its employees observe. To obtain a copy of these service standards, please contact
+Statistics Canada toll-free at 1-800-263-1136. The service standards are also published on www.statcan.gc.ca under “About us”
+> “Providing services to Canadians.”
+
+--- PDF page 3 of 43 ---
+
+Statistics Canada
+Transport Division
+Canadian Vehicle Survey: Annual
+2009
+Published by authority of the Minister responsible for Statistics Canada
+© Minister of Industry, 2010 and the © Minister of Transport, 2010.
+All rights reserved. The content of this electronic publication may be reproduced, in
+whole or in part, and by any means, without further permission from Statistics Canada,
+subject to the following conditions: that it be done solely for the purposes of private
+study, research, criticism, review or newspaper summary, and/or for non-commercial
+purposes; and that Statistics Canada be fully acknowledged as follows: Source
+(or “Adapted from”, if appropriate): Statistics Canada, year of publication, name of
+product, catalogue number, volume and issue numbers, reference period and page(s).
+Otherwise, no part of this publication may be reproduced, stored in a retrieval system
+or transmitted in any form, by any means—electronic, mechanical or photocopy—or
+for any purposes without prior written permission of Licensing Services, Client
+Services Division, Statistics Canada, Ottawa, Ontario, Canada K1A 0T6.
+July 2010
+Catalogue no. 53-223-X
+ISSN 1499-318X
+Frequency: Annual
+Ottawa
+Cette publication est également disponible en français.
+Note of appreciation
+Canada owes the success of its statistical system to a long-standing partnership between
+Statistics Canada, the citizens of Canada, its businesses, governments and other
+institutions. Accurate and timely statistical information could not be produced without
+their continued cooperation and goodwill.
+
+--- PDF page 4 of 43 ---
+
+User information
+Symbols
+The following standard symbols are used in Statistics Canada publications:
+. not available for any reference period
+.. not available for a specific reference period
+... not applicable
+0 true zero or a value rounded to zero
+0s value rounded to 0 (zero) where there is a meaningful distinction between true zero and the value that was
+rounded
+p preliminary
+r revised
+x suppressed to meet the confidentiality requirements of the Statistics Act
+E use with caution
+F too unreliable to be published
+Acknowledgements
+This publication was prepared in the Transportation Division under the direction of Gord Baldwin, Director, and Ed
+Hamilton, Chief, Trucking Section.
+The principal author of this publication was Réjean Doiron.
+Significant contributions to the collection and preparation of the data were made by the following people and
+organizations:
+Transportation Division, Canadian Vehicle Survey Unit
+Réjean Doiron, Mike Fahey, Sean Fagan, Twyla Weimer
+Transportation Division, Systems & Data Integration section
+Kevin Ringuette, Real Dery, Patrick Goubran
+Business Surveys Methods Division
+Sophie Arsenault, Krista Cook, Yulia Tsutsa
+Operations and Integration Division
+Operations Research and Development Division
+Canadian Council of Motor Transport Administrators and Provincial and Territorial Registrars of Motor
+Vehicles
+A special note of appreciation goes to Transport Canada and Natural Resources Canada whose vision and funding made this
+survey possible.
+2 Statistics Canada – Catalogue no. 53-223-X
+
+--- PDF page 5 of 43 ---
+
+Table of contents
+Highlights 5
+Introduction 6
+Survey overview 7
+Related products 8
+Statistical tables
+1 Number of vehicles on the registration lists by type of vehicle and jurisdiction 12
+2 Number of vehicles on the registration lists by jurisdiction and vehicle model year 13
+2-1 Vehicles up to 4.5 tonnes 13
+2-2 Trucks 4.5 tonnes to 14.9 tonnes 14
+2-3 Trucks 15 tonnes or more 15
+3 Estimates of number of vehicles in scope for Canada 16
+3-1 by type of vehicle and jurisdiction 16
+3-2 by type of vehicle and vehicle model year 16
+3-3 by type of vehicle and vehicle body type 16
+3-4 by type of vehicle and type of fuel 17
+4 Estimates of vehicle-kilometres for Canada 17
+4-1 by type of vehicle and jurisdiction 17
+4-2 by type of vehicle and vehicle model year 17
+4-3 by type of vehicle and vehicle body type 18
+4-4 by type of vehicle and type of fuel 18
+5 Estimates of passenger-kilometres for provinces only 18
+5-1 by type of vehicle and jurisdiction 18
+5-2 by type of vehicle and vehicle model year 19
+5-3 by type of vehicle and vehicle body type 19
+5-4 by type of vehicle and type of fuel 19
+5-5 by passenger age group for vehicles up to 4.5 tonnes 20
+Statistics Canada – Catalogue no. 53-223-X 3
+
+--- PDF page 6 of 43 ---
+
+Canadian Vehicle Survey: Annual – 2009
+Table of contents – continued
+6 Estimates of vehicle-kilometres and passenger-kilometres for provinces only 20
+6-1 by type of vehicle and driver age group 20
+6-2 by type of vehicle and sex of driver 20
+6-3 by driver age group and sex of driver 21
+6-4 by type of vehicle and dayof week 22
+6-5 by type of vehicle and type of day 22
+6-6 by type of vehicle and time of day 22
+6-7 by type of vehicle, type of day and time of day 23
+6-8 by type of vehicle and road type 24
+6-9 by origin and destination of trips for vehicles up to 4.5 tonnes 24
+6-10 by part of the driver’s job for vehicles up to 4.5 tonnes 24
+6-11 by vehicle group and trip purpose for trucks weighing 4.5 tonnes or more 25
+6-12 by carrying dangerous goods for trucks weighing 4.5 tonnes or more 26
+7 Estimates by type of vehicle, type of fuel and vehicle body type for provinces only 26
+7-1 Vehicle-kilometres 26
+7-2 Fuel consumed 26
+8 Activity type for trucks weighing 4.5 tonnes or more for provinces only 27
+8-1 Number of vehicles in scope by type of vehicle 27
+8-2 Vehicle-kilometres and passenger-kilometres for trucks 4.5 tonnes to 14.9 tonnes 27
+8-3 Vehicle-kilometres and passenger-kilometres for trucks 15 tonnes or more 27
+9 Trip type for trucks weighing 4.5 tonnes or more for provinces only 27
+9-1 Vehicle-kilometres and passenger-kilometres for trucks 4.5 tonnes to 14.9 tonnes 27
+9-2 Vehicle-kilometres and passenger-kilometres for trucks 15 tonnes or more 28
+Data quality, concepts and methodology
+Concepts and definitions 29
+Methodology 31
+Data quality 35
+Appendix
+I Glossary 41
+4 Statistics Canada – Catalogue no. 53-223-X
+
+--- PDF page 7 of 43 ---
+
+Highlights
+• Canadians drove more in 2009 compared to the previous year. For the year, Canadian vehicles were driven
+333.3 billion kilometres, an increase of 2.4% from 2008.
+• The number of vehicles on the road increased by 1.7% compared to 2008.
+• Canadians drove their vehicles, on average, 16,249 kilometres during the year. This was 0.6% more than the
+previous year.
+Statistics Canada – Catalogue no. 53-223-X 5
+
+--- PDF page 8 of 43 ---
+
+Introduction
+Road vehicles dominate passenger travel and freight traffic. However, prior to the Canadian Vehicle Survey (CVS),
+no measures of total vehicle-kilometres or passenger-kilometres were available. The CVS was developed at the
+request of Transport Canada to fill this data gap. The survey provides quarterly and annual estimates of the amount
+of road travel, broken down by types of vehicles and characteristics, such as age and sex of driver, time of day and
+season. The results are the prime source of road vehicle use information for researchers and interested members
+of the public.
+Prior to 2004, the survey was sponsored by Transport Canada. Since then, the survey has been co-sponsored by
+Transport Canada and Natural Resources Canada. They plan to combine the survey data with other data to improve
+road safety, monitor fuel consumption and deal with the impact of vehicle usage on the environment.
+This document describes concepts, employed methods and discusses data quality. The reference period for all the
+information presented in this document is the year 2009.
+6 Statistics Canada – Catalogue no. 53-223-X
+
+--- PDF page 9 of 43 ---
+
+Survey overview
+The CVS is a voluntary vehicle-based survey that provides quarterly and annual estimates of road vehicle activity
+(vehicle-kilometres and passenger-kilometres) of vehicles registered in Canada. A quarterly sample of vehicles is
+drawn from vehicle registration lists provided by the provincial and territorial governments.
+The provincial component of the survey consists of two steps. The first step is a computer assisted telephone
+interview (CATI) with the registered owners of the sampled vehicles. This interview is used to collect some general
+information on the usage of the vehicle as well as to ask the respondent to complete a trip log specific to his/her
+vehicle type. The trip log is then mailed out as a second step. If respondents cannot be contacted by phone, the trip
+log is mailed out with a short questionnaire to collect some of the information normally collected during the CATI.
+The territorial component of the survey consists of two short questionnaires. One is mailed to the respondents at the
+beginning of the quarter and the other is mailed at the end of the quarter. The first questionnaire asks respondents to
+record the odometer reading at the beginning of the first day of the quarter. All those returning the first questionnaire
+are mailed a second questionnaire asking them to record the odometer reading at the beginning of the first day of
+the next quarter. These two odometer readings allow the calculation of the distance the vehicle was driven during
+the quarter.
+Survey collection began on February 1, 1999. Only eight provincial / territorial vehicle registration lists were received
+in time to be included in the sample at that time, but over the remainder of 1999, the other lists were received. Starting
+October 1, 1999, vehicles from all provinces and territories were included in the survey.
+Users who require additional information from Statistics Canada can obtain it from the Transportation Division upon
+request by phoning 1 866 500-8400 or e-mailing transportationstatistics@statcan.ca
+Statistics Canada – Catalogue no. 53-223-X 7
+
+--- PDF page 10 of 43 ---
+
+Related products
+Selected publications from Statistics Canada
+53F0004X Canadian Vehicle Survey: Quarterly
+53F0007X Driving Characteristics of the Young and Aging Population
+Selected CANSIM tables from Statistics Canada
+405-0055 Canadian vehicle survey, number of vehicles in frame, by type of vehicle, province and territory
+405-0056 Canadian vehicle survey, number of vehicles in scope, by type of vehicle, province and territory
+405-0057 Canadian vehicle survey, passenger-kilometres, by type of vehicle and province
+405-0058 Canadian vehicle survey, vehicle-kilometres, by type of vehicle, province and territory
+405-0059 Canadian vehicle survey, number of vehicles in scope, by type of vehicle and type of fuel
+405-0060 Canadian vehicle survey, passenger-kilometres, by type of vehicle and age of vehicle model
+405-0061 Canadian vehicle survey, vehicle-kilometres, by type of vehicle and age of vehicle model
+405-0062 Canadian vehicle survey, passenger-kilometres, by type of vehicle and type of vehicle body
+405-0063 Canadian vehicle survey, vehicle-kilometres, by type of vehicle and type of vehicle body
+405-0064 Canadian vehicle survey, number of vehicles in scope, by type of vehicle and type of vehicle
+body
+405-0065 Canadian vehicle survey, passenger-kilometres, by type of vehicle and type of fuel
+405-0066 Canadian vehicle survey, vehicle-kilometres, by type of vehicle and type of fuel
+405-0067 Canadian vehicle survey, passenger-kilometres, by type of vehicle and days of the week
+405-0068 Canadian vehicle survey, vehicle-kilometres, by type of vehicle and days of the week
+405-0069 Canadian vehicle survey, passenger-kilometres, by type of vehicle and driver age group
+405-0070 Canadian vehicle survey, vehicle-kilometres, by type of vehicle and driver age group
+405-0072 Canadian vehicle survey, passenger-kilometres, by type of vehicle and sex of driver
+405-0073 Canadian vehicle survey, vehicle-kilometres, by type of vehicle and sex of driver
+405-0074 Canadian vehicle survey, passenger-kilometres, by type of vehicle and time of day
+8 Statistics Canada – Catalogue no. 53-223-X
+
+--- PDF page 11 of 43 ---
+
+Canadian Vehicle Survey: Annual – 2009
+405-0075 Canadian vehicle survey, vehicle-kilometres, by type of vehicle and time of day
+405-0076 Canadian vehicle survey, passenger-kilometres, by type of vehicle and carrying dangerous
+goods
+405-0077 Canadian vehicle survey, vehicle-kilometres, by type of vehicle and carrying dangerous goods
+405-0078 Canadian vehicle survey, passenger-kilometres, by type of vehicle and type of day
+405-0079 Canadian vehicle survey, vehicle-kilometres, by type of vehicle and type of day
+405-0080 Canadian vehicle survey, passenger-kilometres, by type of vehicle and type of road
+405-0081 Canadian vehicle survey, vehicle-kilometres, by type of vehicle and type of road
+405-0082 Canadian vehicle survey, passenger-kilometres, by type of vehicle and passenger age group
+405-0083 Canadian vehicle survey, passenger-kilometres, by type of vehicle, type of day and time of day
+405-0084 Canadian vehicle survey, vehicle-kilometres, by type of vehicle, type of day and time of day
+405-0085 Canadian vehicle survey, passenger-kilometres, by type of vehicle, driver age group and sex of
+driver
+405-0086 Canadian vehicle survey, vehicle-kilometres, by type of vehicle, driver age group and sex of
+driver
+405-0088 Canadian vehicle survey, number of vehicles up to 4.5 tonnes, by year of vehicle model, province
+and territory
+405-0089 Canadian vehicle survey, number of trucks 4.5 tonnes to 14.9 tonnes, by year of vehicle model,
+province and territory
+405-0090 Canadian vehicle survey, number of trucks 15 tonnes and over, by year of vehicle model,
+province and territory
+405-0097 Canadian vehicle survey, vehicle-kilometres for trucks over 4.5 tonnes, by vehicle group, type of
+vehicle and purpose of trip (specific to vehicle type)
+405-0098 Canadian vehicle survey, passenger-kilometres for trucks over 4.5 tonnes, by vehicle group, type
+of vehicle and purpose of trip (specific to vehicle type)
+405-0100 Canadian vehicle survey, number of vehicles in scope, by type of vehicle and age of vehicle
+model
+405-0111 Canadian vehicle survey, vehicle-kilometres and passenger-kilometres for vehicles up
+to 4.5 tonnes, by part of driver’s job
+405-0112 Canadian vehicle survey, vehicle-kilometres for vehicles up to 4.5 tonnes, by origin and
+destination of trip
+405-0113 Canadian vehicle survey, passenger-kilometres for vehicles up to 4.5 tonnes, by origin and
+destination of trip
+405-0114 Canadian vehicle survey, vehicle-kilometres, by type of vehicle, type of fuel and type of vehicle
+body
+Statistics Canada – Catalogue no. 53-223-X 9
+
+--- PDF page 12 of 43 ---
+
+Canadian Vehicle Survey: Annual – 2009
+405-0115 Canadian vehicle survey, fuel consumed, by type of vehicle, type of fuel and type of vehicle body
+405-0116 Canadian vehicle survey, number of vehicles in scope, by type of vehicle and type of activity
+405-0117 Canadian vehicle survey, vehicle-kilometres and passenger-kilometres for trucks 4.5 tonnes
+to 14.9 tonnes, by type of activity
+405-0118 Canadian vehicle survey, vehicle-kilometres and passenger-kilometres for trucks 15 tonnes and
+over, by type of activity
+405-0119 Canadian vehicle survey, vehicle-kilometres and passenger-kilometres for trucks 4.5 tonnes
+to 14.9 tonnes, by type of trip
+405-0120 Canadian vehicle survey, vehicle-kilometres and passenger-kilometres for trucks 15 tonnes and
+over, by type of trip
+Selected surveys from Statistics Canada
+2749 Canadian Vehicle Survey
+10 Statistics Canada – Catalogue no. 53-223-X
+
+--- PDF page 13 of 43 ---
+
+Statistical tables
+
+--- PDF page 14 of 43 ---
+
+Canadian Vehicle Survey: Annual – 2009
+Table 1
+Number of vehicles on the registration lists by type of vehicle and jurisdiction
+Total,
+all vehicles
+Vehicles up
+to 4.5 tonnes
+Trucks 4.5 tonnes
+to 14.9 tonnes
+Trucks 15 tonnes
+and over
+Total - Canada 20,706,616 19,876,948 503,480 326,188
+Newfoundland and Labrador 305,575 297,251 4,549 3,776
+Prince Edward Island 85,934 81,696 1,435 2,802
+Nova Scotia 558,484 541,750 8,953 7,782
+New Brunswick 501,801 489,501 7,656 4,644
+Quebec 4,708,307 4,613,926 58,509 35,872
+Ontario 7,460,063 7,243,903 103,362 112,797
+Manitoba 700,027 670,489 12,209 17,329
+Saskatchewan 790,727 719,578 39,966 31,183
+Alberta 2,827,480 2,605,010 132,751 89,719
+British Columbia 2,709,361 2,561,332 130,612 17,417
+Yukon 30,907 27,245 2,195 1,467
+Northwest Territories 23,689 21,523 993 1,173
+Nunavut 4,264 3,745 291 228
+12 Statistics Canada – Catalogue no. 53-223-X
+
+--- PDF page 15 of 43 ---
+
+Canadian Vehicle Survey: Annual – 2009
+Table 2-1
+Number of vehicles on the registration lists by jurisdiction and vehicle model year — Vehicles up to 4.5 tonnes
+Newfoundland
+and
+Labrador
+Prince
+Edward
+Island
+Nova
+Scotia
+New
+Brunswick
+Quebec Ontario Manitoba
+Total, all vehicle model years 297,249 81,696 541,748 489,499 4,613,923 7,243,898 670,487
+Earlier than 1991 8,561 4,206 22,520 19,653 143,655 298,875 42,964
+1991 1,742 830 4,106 4,429 42,813 63,166 10,259
+1992 2,250 1,321 6,006 6,583 65,624 91,098 13,536
+1993 3,101 1,606 7,131 7,655 73,441 106,294 13,831
+1994 4,649 2,238 9,972 10,514 93,138 140,340 16,598
+1995 6,123 2,735 12,540 13,291 117,517 185,826 20,008
+1996 6,538 2,966 13,860 14,023 119,863 192,953 20,280
+1997 10,591 4,406 21,107 20,706 175,419 298,587 30,309
+1998 13,831 5,131 26,482 25,546 210,720 360,140 34,188
+1999 15,145 5,146 27,376 25,909 220,486 380,022 31,973
+2000 19,007 6,430 35,166 33,131 283,378 490,799 38,705
+2001 17,534 5,247 31,690 28,758 276,660 459,701 38,446
+2002 20,882 6,427 40,355 35,200 334,855 537,673 46,925
+2003 22,979 6,395 42,184 36,809 360,823 573,209 50,912
+2004 20,260 5,294 37,527 32,631 313,133 483,768 45,823
+2005 23,842 5,507 41,684 36,845 354,910 536,410 49,292
+2006 21,856 4,307 38,971 33,861 333,307 532,602 45,121
+2007 28,059 4,558 46,577 40,501 413,357 578,866 48,343
+2008 29,603 3,816 46,294 38,337 399,692 553,284 45,339
+2009 19,054 2,773 27,510 22,490 249,365 338,258 25,638
+2010 1,618 347 2,681 2,616 31,661 41,062 1,993
+2011 0 0 0 0 0 0 0
+Year of vehicle model, unknown 18 0 0 3 97 956 0
+Saskat-
+chewan
+Alberta British
+Columbia
+Yukon Northwest
+Territories
+Nunavut Total
+Total, all vehicle model years 719,577 2,605,007 2,561,329 27,244 21,522 3,744 19,876,930
+Earlier than 1991 84,181 201,620 254,722 4,508 1,799 255 1,087,518
+1991 14,709 44,773 65,014 766 384 67 253,058
+1992 17,708 50,589 74,117 840 368 75 330,119
+1993 17,578 51,762 74,603 838 418 113 358,375
+1994 21,239 60,728 78,158 911 492 107 439,088
+1995 24,040 69,957 86,698 1,004 544 126 540,414
+1996 21,952 65,923 75,426 852 477 114 535,234
+1997 31,328 97,268 105,073 1,191 714 182 796,886
+1998 33,215 114,867 110,194 1,172 797 191 936,481
+1999 28,740 103,534 103,559 1,068 806 199 943,968
+2000 35,207 123,820 124,846 1,139 1,018 233 1,192,884
+2001 36,661 133,486 128,299 1,241 1,114 267 1,159,108
+2002 43,681 164,607 158,427 1,460 1,247 314 1,392,058
+2003 48,338 180,409 166,128 1,711 1,640 271 1,491,813
+2004 46,039 169,869 150,798 1,335 1,289 221 1,307,992
+2005 46,743 189,534 172,005 1,577 1,508 234 1,460,098
+2006 44,552 202,380 168,232 1,454 1,643 217 1,428,509
+2007 50,577 233,910 193,282 1,810 1,891 237 1,641,973
+2008 50,496 220,934 171,059 1,538 2,256 219 1,562,872
+2009 20,985 114,649 90,615 759 1,056 90 913,248
+2010 1,599 10,380 10,065 63 55 3 104,149
+2011 0 0 0 0 0 0 0
+Year of vehicle model, unknown 0 0 0 0 0 1 1,077
+Statistics Canada – Catalogue no. 53-223-X 13
+
+--- PDF page 16 of 43 ---
+
+Canadian Vehicle Survey: Annual – 2009
+Table 2-2
+Number of vehicles on the registration lists by jurisdiction and vehicle model year — Trucks 4.5 tonnes to 14.9 tonnes
+Newfoundland
+and
+Labrador
+Prince
+Edward
+Island
+Nova
+Scotia
+New
+Brunswick
+Quebec Ontario Manitoba
+Total, all vehicle model years 4,547 1,434 8,952 7,655 58,508 103,361 12,209
+Earlier than 1991 976 659 1,933 919 12,649 7,372 2,758
+1991 94 40 168 115 1,202 1,122 257
+1992 90 38 156 136 1,160 1,183 231
+1993 95 40 181 139 1,351 1,549 292
+1994 121 49 185 173 1,867 1,907 344
+1995 173 57 334 217 2,440 2,744 465
+1996 111 34 220 164 1,626 2,288 313
+1997 147 47 296 236 1,741 3,348 440
+1998 136 40 307 252 2,237 3,645 381
+1999 221 78 485 415 3,302 6,108 558
+2000 206 48 449 323 2,897 5,635 438
+2001 194 43 370 337 2,259 5,829 518
+2002 225 44 381 373 2,090 5,860 453
+2003 201 41 485 604 2,743 7,288 566
+2004 189 32 480 604 2,691 7,201 575
+2005 271 23 510 549 3,430 8,332 781
+2006 334 36 622 609 3,398 9,303 818
+2007 243 31 553 535 3,640 8,798 718
+2008 390 26 584 715 3,093 9,890 975
+2009 109 18 233 217 2,318 3,657 308
+2010 13 1 15 15 347 268 12
+2011 0 0 0 0 0 0 0
+Year of vehicle model, unknown 0 0 0 1 20 24 0
+Saskat-
+chewan
+Alberta British
+Columbia
+Yukon Northwest
+Territories
+Nunavut Total
+Total, all vehicle model years 39,965 132,750 130,611 2,194 992 290 503,473
+Earlier than 1991 21,519 26,190 15,409 547 165 71 91,165
+1991 425 1,371 2,184 35 16 3 7,030
+1992 402 1,252 2,374 46 12 4 7,090
+1993 469 1,348 2,777 38 11 10 8,305
+1994 506 1,730 3,204 43 12 8 10,154
+1995 675 2,289 3,731 36 29 27 13,222
+1996 451 1,647 2,916 41 13 7 9,836
+1997 655 2,638 3,777 72 24 10 13,435
+1998 661 2,703 3,366 43 22 11 13,808
+1999 761 3,712 4,526 73 36 17 20,297
+2000 671 3,265 4,376 51 35 13 18,414
+2001 944 5,154 5,301 61 31 9 21,056
+2002 824 4,390 5,592 69 25 7 20,337
+2003 974 5,411 9,055 113 35 7 27,531
+2004 834 4,978 9,672 130 43 11 27,445
+2005 1,683 9,738 10,846 131 70 5 36,377
+2006 2,083 13,928 12,966 178 93 22 44,395
+2007 1,872 15,382 12,071 212 96 12 44,168
+2008 3,011 20,683 13,339 225 163 24 53,122
+2009 495 4,668 2,999 38 52 3 15,120
+2010 40 266 121 3 2 1 1,108
+2011 0 0 0 0 0 0 0
+Year of vehicle model, unknown 0 0 0 0 0 0 47
+14 Statistics Canada – Catalogue no. 53-223-X
+
+--- PDF page 17 of 43 ---
+
+Canadian Vehicle Survey: Annual – 2009
+Table 2-3
+Number of vehicles on the registration lists by jurisdiction and vehicle model year — Trucks 15 tonnes or more
+Newfoundland
+and
+Labrador
+Prince
+Edward
+Island
+Nova
+Scotia
+New
+Brunswick
+Quebec Ontario Manitoba
+Total, all vehicle model years 3,775 2,801 7,781 4,643 35,871 112,796 17,328
+Earlier than 1991 581 1,442 983 1,257 1,336 8,716 2,037
+1991 63 109 84 105 141 1,011 153
+1992 54 53 78 76 226 1,026 172
+1993 60 80 122 140 297 1,305 300
+1994 101 91 192 195 573 1,956 423
+1995 159 167 282 241 996 3,478 569
+1996 143 110 233 173 751 2,588 490
+1997 103 63 226 141 853 2,976 509
+1998 184 103 366 241 1,592 5,273 792
+1999 198 105 445 258 1,870 6,789 892
+2000 240 90 505 232 2,675 8,337 1,061
+2001 152 55 273 134 1,729 5,521 727
+2002 109 21 246 103 1,081 4,412 464
+2003 152 36 340 143 2,247 6,368 825
+2004 155 33 463 165 2,174 6,780 925
+2005 239 37 618 216 4,234 10,879 1,279
+2006 260 47 564 244 4,012 10,428 1,306
+2007 391 60 791 232 4,841 13,465 2,116
+2008 176 50 473 165 1,688 5,245 1,055
+2009 209 34 402 143 2,213 5,477 1,024
+2010 38 7 88 30 335 744 201
+2011 0 0 0 0 0 0 0
+Year of vehicle model, unknown 1 0 0 0 1 14 0
+Saskat-
+chewan
+Alberta British
+Columbia
+Yukon Northwest
+Territories
+Nunavut Total
+Total, all vehicle model years 31,182 89,718 17,416 1,466 1,172 227 326,182
+Earlier than 1991 10,079 18,825 3,159 246 169 35 48,865
+1991 543 1,193 364 17 17 8 3,805
+1992 515 965 465 30 14 5 3,686
+1993 823 1,417 435 24 23 4 5,036
+1994 1,131 2,152 557 32 29 7 7,444
+1995 1,630 2,728 655 41 40 9 10,999
+1996 1,161 2,300 591 45 41 7 8,637
+1997 1,227 2,692 676 36 41 5 9,553
+1998 1,713 3,888 682 50 50 8 14,947
+1999 1,535 3,430 635 41 46 18 16,268
+2000 1,544 3,747 556 63 60 10 19,126
+2001 1,105 3,405 612 61 48 8 13,835
+2002 631 2,702 593 40 38 4 10,449
+2003 872 3,034 643 58 46 13 14,781
+2004 958 3,824 871 56 59 11 16,479
+2005 1,196 5,919 1,209 87 69 10 25,998
+2006 1,070 7,572 1,475 139 100 13 27,234
+2007 1,592 11,209 1,696 219 159 24 36,800
+2008 911 4,168 883 83 39 11 14,951
+2009 882 4,079 601 77 70 9 15,227
+2010 57 462 50 13 6 0 2,036
+2011 0 0 0 0 0 0 0
+Year of vehicle model, unknown 0 0 0 0 0 0 17
+Statistics Canada – Catalogue no. 53-223-X 15
+
+--- PDF page 18 of 43 ---
+
+Canadian Vehicle Survey: Annual – 2009
+Table 3-1
+Estimates of number of vehicles in scope for Canada by type of vehicle and jurisdiction
+Total,
+all vehicles
+Vehicles up
+to 4.5 tonnes
+Trucks 4.5 tonnes
+to 14.9 tonnes
+Trucks 15 tonnes
+and over
+Total - Canada 20,511,161 A 19,755,945 A 437,997 A 317,219 A
+Newfoundland and Labrador 296,974 A 290,098 A 3,457 B 3,419 B
+Prince Edward Island 85,493 A 81,499 A 1,310 B 2,684 A
+Nova Scotia 553,594 A 537,694 A 7,943 A 7,957 A
+New Brunswick 491,680 A 481,760 A 5,275 B 4,645 A
+Quebec 4,679,516 A 4,593,169 A 48,509 A 37,838 A
+Ontario 7,362,689 A 7,166,834 A 90,352 A 105,503 A
+Manitoba 698,617 A 670,133 A 11,231 A 17,253 A
+Saskatchewan 787,348 A 717,639 A 38,854 A 30,855 A
+Alberta 2,800,022 A 2,581,262 A 131,408 A 87,352 A
+British Columbia 2,696,877 A 2,583,861 A 96,300 A 16,716 A
+Yukon 30,256 A 26,713 A 2,076 A 1,468 A
+Northwest Territories 23,725 A 21,424 A 992 A 1,309 A
+Nunavut 4,370 A 3,858 A 291 A 221 A
+Table 3-2
+Estimates of number of vehicles in scope for Canada by type of vehicle and vehicle model year
+Total,
+all vehicles
+Vehicles up
+to 4.5 tonnes
+Trucks 4.5 tonnes
+to 14.9 tonnes
+Trucks 15 tonnes
+and over
+Total, all ages of vehicle model 20,511,161 A 19,755,945 A 437,997 A 317,219 A
+Later than 2006 3,844,622 A 3,688,609 A 90,551 B 65,462 A
+2004 to 2006 4,548,349 A 4,380,595 A 95,897 B 71,857 A
+2000 to 2003 5,668,083 A 5,530,252 A 84,445 B 53,386 B
+1996 to 1999 3,392,357 A 3,297,185 A 48,175 B 46,997 B
+Earlier than 1996 3,057,749 A 2,859,303 A 118,929 A 79,517 A
+Table 3-3
+Estimates of number of vehicles in scope for Canada by type of vehicle and vehicle body type
+Total,
+all vehicles
+Vehicles up
+to 4.5 tonnes
+Trucks 4.5 tonnes
+to 14.9 tonnes
+Trucks 15 tonnes
+and over
+Total, all vehicles body types 20,511,161 A 19,755,945 A 437,997 A 317,219 A
+Car 10,953,099 A 10,952,468 A ... ...
+Station wagon 687,096 B 686,687 B ... ...
+Van 2,554,659 A 2,536,198 A 18,461 C ...
+Sport utility vehicle 2,531,973 A 2,531,946 A ... ...
+Pickup 3,073,988 A 2,993,480 A 80,438 B F
+Straight truck 465,080 A 42,423 E 312,050 A 110,607 A
+Tractor trailer 223,931 A ... 20,939 C 202,890 A
+Bus F ... F ...
+Other vehicle type 21,224 E F 5,561 E 3,022 E
+16 Statistics Canada – Catalogue no. 53-223-X
+
+--- PDF page 19 of 43 ---
+
+Canadian Vehicle Survey: Annual – 2009
+Table 3-4
+Estimates of number of vehicles in scope for Canada by type of vehicle and type of fuel
+Total,
+all vehicles
+Vehicles up
+to 4.5 tonnes
+Trucks 4.5 tonnes
+to 14.9 tonnes
+Trucks 15 tonnes
+and over
+Total, all fuel types 20,511,161 A 19,755,945 A 437,997 A 317,219 A
+Gasoline 19,269,153 A 19,145,666 A 115,572 B 7,915 E
+Diesel 1,189,293 A 563,608 B 316,380 A 309,305 A
+Other fuel type 52,716 E 46,670 E 6,046 E F
+Table 4-1
+Estimates of vehicle-kilometres for Canada by type of vehicle and jurisdiction
+Total,
+all vehicles
+Vehicles up
+to 4.5 tonnes
+Trucks 4.5 tonnes
+to 14.9 tonnes
+Trucks 15 tonnes
+and over
+millions
+Total - Canada 333,287.0 A 303,576.1 A 8,294.6 A 21,416.3 A
+Newfoundland and Labrador 4,633.7 B 4,367.6 B 41.1 C 225.1 C
+Prince Edward Island 1,279.7 B 1,229.9 B 11.0 E 38.8 D
+Nova Scotia 10,051.5 A 9,370.2 A 180.9 C 500.4 C
+New Brunswick 7,963.0 B 7,765.2 B 60.3 D 137.5 E
+Quebec 72,727.5 A 68,133.1 A 1,031.0 C 3,563.3 B
+Ontario 125,802.4 A 116,076.7 A 1,719.3 B 8,006.4 B
+Manitoba 11,716.3 A 10,027.3 A 160.1 D 1,528.9 C
+Saskatchewan 12,760.7 B 11,007.3 B 529.2 C 1,224.3 C
+Alberta 49,710.2 A 41,672.1 A 2,617.1 B 5,421.0 B
+British Columbia 35,786.8 A 33,310.1 A 1,891.4 B 585.3 B
+Yukon 510.1 A 353.8 B 34.2 B 122.0 B
+Northwest Territories 314.4 A 236.6 A 16.0 D 61.8 C
+Nunavut 30.7 C 26.3 C F F
+Table 4-2
+Estimates of vehicle-kilometres for Canada by type of vehicle and vehicle model year
+Total,
+all vehicle
+Vehicles up
+to 4.5 tonnes
+Trucks 4.5 tonnes
+to 14.9 tonnes
+Trucks 15 tonnes
+and over
+millions
+Total, all ages of vehicle model 333,287.0 A 303,576.1 A 8,294.6 A 21,416.3 A
+Later than 2006 80,411.4 A 70,014.8 A 3,116.6 B 7,280.1 B
+2004 to 2006 84,438.7 A 74,442.8 A 2,322.4 B 7,673.5 B
+2000 to 2003 91,673.3 A 86,361.9 A 1,667.3 B 3,644.1 B
+1996 to 1999 48,494.5 A 45,964.7 A 677.7 D 1,852.1 D
+Earlier than 1996 28,269.0 B 26,791.8 B 510.6 E 966.6 E
+Statistics Canada – Catalogue no. 53-223-X 17
+
+--- PDF page 20 of 43 ---
+
+Canadian Vehicle Survey: Annual – 2009
+Table 4-3
+Estimates of vehicle-kilometres for Canada by type of vehicle and vehicle body type
+Total,
+all vehicles
+Vehicles up
+to 4.5 tonnes
+Trucks 4.5 tonnes
+to 14.9 tonnes
+Trucks 15 tonnes
+and over
+millions
+Total, all vehicles body types 333,287.0 A 303,576.1 A 8,294.6 A 21,416.3 A
+Car 159,039.5 A 159,026.5 A ... ...
+Station wagon 10,936.8 B 10,933.5 B ... ...
+Van 42,536.0 A 42,035.3 A 500.7 C ...
+Sport utility vehicle 43,757.9 A 43,757.5 A ... ...
+Pickup 48,505.3 A 47,056.3 A 1,447.1 C F
+Straight truck 9,216.2 B 440.5 E 5,780.7 B 2,995.0 C
+Tractor trailer 18,889.5 A ... 520.9 D 18,367.5 A
+Bus F ... F ...
+Other vehicle type F F F F
+Table 4-4
+Estimates of vehicle-kilometres for Canada by type of vehicle and type of fuel
+Total,
+all vehicles
+Vehicles up
+to 4.5 tonnes
+Trucks 4.5 tonnes
+to 14.9 tonnes
+Trucks 15 tonnes
+and over
+millions
+Total, all fuel types 333,287.0 A 303,576.1 A 8,294.6 A 21,416.3 A
+Gasoline 293,879.9 A 292,783.0 A 1,080.7 C F
+Diesel 38,882.7 A 10,336.6 B 7,146.0 A 21,400.1 A
+Other fuel type 524.4 E 456.5 E F F
+Table 5-1
+Estimates of passenger-kilometres for provinces only by type of vehicle and jurisdiction
+Total,
+all vehicles
+Vehicles up
+to 4.5 tonnes
+Trucks 4.5 tonnes
+to 14.9 tonnes
+Trucks 15 tonnes
+and over
+millions
+Total 526,572.7 A 493,050.7 A 10,505.4 B 23,016.6 A
+Newfoundland and Labrador 7,660.7 B 7,370.9 B 53.0 C 236.8 C
+Prince Edward Island 1,996.3 C 1,941.5 C 15.2 E 39.6 D
+Nova Scotia 15,843.9 B 15,066.9 B 231.3 C 545.6 C
+New Brunswick 13,474.4 C 13,242.6 C 82.7 D 149.1 E
+Quebec 116,052.2 A 111,014.8 A 1,254.7 B 3,782.7 B
+Ontario 196,656.7 A 186,001.3 A 2,226.6 B 8,428.8 B
+Manitoba 18,551.2 B 16,592.4 B 201.4 D 1,757.4 C
+Saskatchewan 20,105.4 B 18,118.1 B 730.9 D 1,256.4 C
+Alberta 79,439.6 B 69,956.6 B 3,314.4 C 6,168.6 B
+British Columbia 56,792.2 B 53,745.5 B 2,395.3 C 651.4 B
+18 Statistics Canada – Catalogue no. 53-223-X
+
+--- PDF page 21 of 43 ---
+
+Canadian Vehicle Survey: Annual – 2009
+Table 5-2
+Estimates of passenger-kilometres for provinces only by type of vehicle and vehicle model year
+Total,
+all vehicles
+Vehicles up
+to 4.5 tonnes
+Trucks 4.5 tonnes
+to 14.9 tonnes
+Trucks 15 tonnes
+and over
+millions
+Total, all ages of vehicle model 526,572.7 A 493,050.7 A 10,505.4 B 23,016.6 A
+Later than 2006 125,642.2 A 113,883.9 A 3,919.8 B 7,838.6 A
+2004 to 2006 135,585.7 A 124,452.1 A 2,902.8 B 8,230.9 A
+2000 to 2003 147,385.3 A 141,291.9 A 2,167.3 B 3,926.1 B
+1996 to 1999 74,456.8 A 71,625.7 A 884.5 D 1,946.6 C
+Earlier than 1996 43,502.6 B 41,797.1 B 631.0 E 1,074.6 E
+Table 5-3
+Estimates of passenger-kilometres for provinces only by type of vehicle and vehicle body type
+Total,
+all vehicles
+Vehicles up
+to 4.5 tonnes
+Trucks 4.5 tonnes
+to 14.9 tonnes
+Trucks 15 tonnes
+and over
+millions
+Total, all vehicles body types 526,572.7 A 493,050.7 A 10,505.4 B 23,016.6 A
+Car 247,080.2 A 247,062.5 A ... ...
+Station wagon 19,034.9 B 19,031.1 B ... ...
+Van 82,469.3 A 81,823.8 A 645.4 D ...
+Sport utility vehicle 73,491.4 A 73,491.4 A ... ...
+Pickup 72,598.3 A 70,515.3 A 2,082.4 C F
+Straight truck 10,998.8 B F 7,086.7 E 3,258.7 C
+Tractor trailer 20,339.0 A ... 638.6 E 19,700.3 A
+Bus F ... F ...
+Other vehicle type F F F F
+Table 5-4
+Estimates of passenger-kilometres for provinces only by type of vehicle and type of fuel
+Total,
+all vehicles
+Vehicles up
+to 4.5 tonnes
+Trucks 4.5 tonnes
+to 14.9 tonnes
+Trucks 15 tonnes
+and over
+millions
+Total, all fuel types 526,572.7 A 493,050.7 A 10,505.4 B 23,016.6 A
+Gasoline 477,330.3 A 476,009.7 A 1,304.5 D F
+Diesel 48,232.4 A 16,103.4 B 9,128.5 A 23,000.5 A
+Other fuel type 1,010.0 E 937.6 E F F
+Statistics Canada – Catalogue no. 53-223-X 19
+
+--- PDF page 22 of 43 ---
+
+Canadian Vehicle Survey: Annual – 2009
+Table 5-5
+Estimates of passenger-kilometres for provinces only by passenger age group for vehicles up to 4.5 tonnes
+Vehicles up
+to 4.5 tonnes
+millions
+Total, all ages 493,050.7 A
+Under 5 years 9,631.3 C
+5 to 14 years 31,224.8 B
+15 to 19 years 18,060.3 B
+20 to 24 years 16,395.4 B
+25 to 34 years 46,138.7 B
+35 to 54 years 175,929.7 A
+55 to 64 years 118,692.9 A
+65 to 74 years 58,424.2 A
+75 to 84 years 15,864.3 B
+85 years and over 2,689.1 E
+Table 6-1
+Estimates of vehicle-kilometres and passenger-kilometres for provinces only by type of vehicle and driver age group
+Total,
+all vehicles
+Vehicles up
+to 4.5 tonnes
+Trucks 4.5 tonnes
+to 14.9 tonnes
+Trucks 15 tonnes
+and over
+millions of vehicle-kilometres
+Total, all age groups 332,431.9 A 302,959.4 A 8,241.5 A 21,230.9 A
+Under 20 years 3,366.3 C 3,364.9 C F F
+20 to 24 years 8,627.6 B 7,579.7 C 623.6 E 424.2 D
+25 to 34 years 35,678.6 A 31,275.1 B 1,402.2 B 3,001.3 B
+35 to 44 years 50,751.7 A 42,727.6 B 2,342.6 B 5,681.5 B
+45 to 54 years 99,470.7 A 89,443.4 A 2,367.1 B 7,660.2 B
+55 to 64 years 85,051.2 A 79,664.5 A 1,210.8 B 4,175.9 B
+65 years and over 49,485.8 A 48,904.2 A 293.8 D 287.9 D
+millions of passenger-kilometres
+Total, all age groups 526,572.7 A 493,050.7 A 10,505.4 B 23,016.6 A
+Under 20 years 5,346.2 C 5,344.1 C F F
+20 to 24 years 12,489.7 C 11,170.8 C 879.7 E 439.3 D
+25 to 34 years 56,983.5 B 51,752.8 B 1,771.4 B 3,459.3 B
+35 to 44 years 81,947.1 A 72,972.9 B 2,859.5 B 6,114.6 B
+45 to 54 years 152,837.8 A 141,880.9 A 2,934.4 B 8,022.4 B
+55 to 64 years 132,868.5 A 126,612.9 A 1,562.5 C 4,693.1 B
+65 years and over 84,100.0 A 83,316.4 A 495.8 D 287.9 D
+Table 6-2
+Estimates of vehicle-kilometres and passenger-kilometres for provinces only by type of vehicle and sex of driver
+Total,
+all vehicles
+Vehicles up
+to 4.5 tonnes
+Trucks 4.5 tonnes
+to 14.9 tonnes
+Trucks 15 tonnes
+and over
+millions of vehicle-kilometres
+Both sexes 332,431.9 A 302,959.4 A 8,241.5 A 21,230.9 A
+Males 236,908.3 A 208,082.6 A 8,152.9 A 20,672.7 A
+Females 95,523.6 A 94,876.8 A 88.6 E 558.2 D
+millions of passenger-kilometres
+Both sexes 526,572.7 A 493,050.7 A 10,505.4 B 23,016.6 A
+Males 384,395.3 A 351,788.9 A 10,356.2 A 22,250.2 A
+Females 142,177.4 A 141,261.8 A 149.2 E 766.4 D
+20 Statistics Canada – Catalogue no. 53-223-X
+
+--- PDF page 23 of 43 ---
+
+Canadian Vehicle Survey: Annual – 2009
+Table 6-3
+Estimates of vehicle-kilometres and passenger-kilometres for provinces only by driver age group and sex of driver
+Total,
+all vehicles
+Vehicles up
+to 4.5 tonnes
+Trucks 4.5 tonnes
+to 14.9 tonnes
+Trucks 15 tonnes
+and over
+millions of vehicle-kilometres
+Total, all age groups
+Both sexes 332,431.9 A 302,959.4 A 8,241.5 A 21,230.9 A
+Males 236,908.3 A 208,082.6 A 8,152.9 A 20,672.7 A
+Females 95,523.6 A 94,876.8 A 88.6 E 558.2 D
+Under 25 years
+Both sexes 11,993.9 B 10,944.6 B 625.1 E 424.2 D
+Males 6,822.0 C 5,906.6 C 592.0 E 323.4 D
+Females 5,171.9 C 5,038.0 C 33.1 E 100.8 E
+25 to 54 years
+Both sexes 185,901.0 A 163,446.1 A 6,111.9 A 16,343.0 A
+Males 125,994.0 A 104,038.1 A 6,070.4 A 15,885.6 A
+Females 59,907.0 A 59,408.0 A F 457.4 E
+55 years and over
+Both sexes 134,537.0 A 128,568.7 A 1,504.5 B 4,463.7 B
+Males 104,092.3 A 98,138.0 A 1,490.6 B 4,463.7 B
+Females 30,444.7 B 30,430.8 B 14.0 E F
+millions of passenger-kilometres
+Total, all age groups
+Both sexes 526,572.7 A 493,050.7 A 10,505.4 B 23,016.6 A
+Males 384,395.3 A 351,788.9 A 10,356.2 A 22,250.2 A
+Females 142,177.4 A 141,261.8 A 149.2 E 766.4 D
+Under 25 years
+Both sexes 17,835.9 B 16,514.9 B 881.8 E 439.3 D
+Males 10,403.0 C 9,230.5 C 834.0 E 338.4 D
+Females 7,432.9 C 7,284.4 C 47.7 E 100.8 E
+25 to 54 years
+Both sexes 291,768.3 A 266,606.6 A 7,565.3 A 17,596.4 A
+Males 199,500.5 A 175,080.7 A 7,489.0 A 16,930.8 A
+Females 92,267.8 A 91,525.9 A F 665.6 D
+55 years and over
+Both sexes 216,968.5 A 209,929.2 A 2,058.3 B 4,981.0 B
+Males 174,491.8 A 167,477.6 A 2,033.2 B 4,981.0 B
+Females 42,476.7 B 42,451.6 B 25.1 E F
+Statistics Canada – Catalogue no. 53-223-X 21
+
+--- PDF page 24 of 43 ---
+
+Canadian Vehicle Survey: Annual – 2009
+Table 6-4
+Estimates of vehicle-kilometres and passenger-kilometres for provinces only by type of vehicle and dayof week
+Total,
+all vehicles
+Vehicles up
+to 4.5 tonnes
+Trucks 4.5 tonnes
+to 14.9 tonnes
+Trucks 15 tonnes
+and over
+millions of vehicle-kilometres
+Total, all days of the week 332,431.9 A 302,959.4 A 8,241.5 A 21,230.9 A
+Sunday 38,159.8 A 36,196.9 A 506.1 D 1,456.8 B
+Monday 45,999.2 A 40,848.6 A 1,511.9 B 3,638.7 A
+Tuesday 47,569.9 A 42,174.7 A 1,427.0 B 3,968.2 A
+Wednesday 51,932.5 A 46,365.9 A 1,416.9 B 4,149.7 A
+Thursday 56,100.9 A 50,978.0 A 1,493.7 B 3,629.2 A
+Friday 52,020.7 A 47,524.5 A 1,436.5 B 3,059.7 A
+Saturday 40,648.9 A 38,870.9 A 449.4 D 1,328.6 B
+millions of passenger-kilometres
+Total, all days of the week 526,572.7 A 493,050.7 A 10,505.4 B 23,016.6 A
+Sunday 70,419.0 A 68,121.9 A 643.9 D 1,653.1 B
+Monday 69,686.7 A 63,961.6 A 1,889.0 B 3,836.1 A
+Tuesday 66,920.0 A 60,885.8 A 1,764.8 B 4,269.5 A
+Wednesday 76,274.0 A 69,908.3 A 1,822.1 B 4,543.6 A
+Thursday 86,505.3 A 80,712.9 A 1,909.1 B 3,883.3 A
+Friday 82,879.5 A 77,681.7 A 1,834.5 B 3,363.3 B
+Saturday 73,888.2 A 71,778.4 A 642.1 D 1,467.7 C
+Table 6-5
+Estimates of vehicle-kilometres and passenger-kilometres for provinces only by type of vehicle and type of day
+Total,
+all vehicles
+Vehicles up
+to 4.5 tonnes
+Trucks 4.5 tonnes
+to 14.9 tonnes
+Trucks 15 tonnes
+and over
+millions of vehicle-kilometres
+Total, all days 332,431.9 A 302,959.4 A 8,241.5 A 21,230.9 A
+Weekends and holidays 89,266.2 A 84,519.7 A 1,188.2 C 3,558.2 B
+Weekdays 243,165.7 A 218,439.7 A 7,053.3 A 17,672.7 A
+millions of passenger-kilometres
+Total, all days 526,572.7 A 493,050.7 A 10,505.4 B 23,016.6 A
+Weekends and holidays 163,205.5 A 157,691.9 A 1,582.5 C 3,931.1 B
+Weekdays 363,367.2 A 335,358.8 A 8,922.9 A 19,085.5 A
+Table 6-6
+Estimates of vehicle-kilometres and passenger-kilometres for provinces only by type of vehicle and time of day
+Total,
+all vehicles
+Vehicles up
+to 4.5 tonnes
+Trucks 4.5 tonnes
+to 14.9 tonnes
+Trucks 15 tonnes
+and over
+millions of vehicle-kilometres
+Total, all hours 332,431.9 A 302,959.4 A 8,241.5 A 21,230.9 A
+00:00 to 05:59 10,519.8 A 8,294.9 A 349.6 B 1,875.3 B
+06:00 to 11:59 112,817.2 A 101,145.3 A 3,699.5 A 7,972.4 A
+12:00 to 17:59 149,271.3 A 137,985.5 A 3,368.7 A 7,917.2 A
+18:00 to 23:59 59,823.5 A 55,533.7 A 823.8 B 3,466.0 A
+millions of passenger-kilometres
+Total, all hours 526,572.7 A 493,050.7 A 10,505.4 A 23,016.6 A
+00:00 to 05:59 14,696.1 A 12,162.6 B 413.7 C 2,119.8 B
+06:00 to 11:59 165,407.9 A 152,172.3 A 4,655.8 A 8,579.9 A
+12:00 to 17:59 240,436.9 A 227,544.6 A 4,384.3 A 8,508.0 A
+18:00 to 23:59 106,031.8 A 101,171.2 A 1,051.7 B 3,808.9 A
+22 Statistics Canada – Catalogue no. 53-223-X
+
+--- PDF page 25 of 43 ---
+
+Canadian Vehicle Survey: Annual – 2009
+Table 6-7
+Estimates of vehicle-kilometres and passenger-kilometres for provinces only by type of vehicle, type of day and
+time of day
+Total,
+all vehicles
+Vehicles up
+to 4.5 tonnes
+Trucks 4.5 tonnes
+to 14.9 tonnes
+Trucks 15 tonnes
+and over
+millions of vehicle-kilometres
+Total, all days
+Total, all hours 332,431.9 A 302,959.4 A 8,241.5 A 21,230.9 A
+00:00 to 05:59 10,519.8 A 8,294.9 A 349.6 B 1,875.3 B
+06:00 to 11:59 112,817.2 A 101,145.3 A 3,699.5 A 7,972.4 A
+12:00 to 17:59 149,271.3 A 137,985.5 A 3,368.7 A 7,917.2 A
+18:00 to 23:59 59,823.5 A 55,533.7 A 823.8 B 3,466.0 A
+Weekends and holidays
+Total, all hours 89,266.2 A 84,519.7 A 1,188.2 B 3,558.2 B
+00:00 to 05:59 2,937.0 B 2,605.5 B 49.2 E 282.4 C
+06:00 to 11:59 28,024.0 A 26,264.2 A 483.5 E 1,276.4 B
+12:00 to 17:59 41,684.5 A 39,821.9 A 493.3 B 1,369.2 B
+18:00 to 23:59 16,620.6 A 15,828.2 A 162.2 C 630.2 B
+Weekdays
+Total, all hours 243,165.7 A 218,439.7 A 7,053.3 A 17,672.7 A
+00:00 to 05:59 7,582.8 A 5,689.4 B 300.4 C 1,592.9 B
+06:00 to 11:59 84,793.2 A 74,881.2 A 3,216.0 A 6,696.0 A
+12:00 to 17:59 107,586.9 A 98,163.5 A 2,875.4 A 6,548.0 A
+18:00 to 23:59 43,202.9 A 39,705.5 A 661.5 B 2,835.8 A
+millions of passenger-kilometres
+Total, all days
+Total, all hours 526,572.7 A 493,050.7 A 10,505.4 A 23,016.6 A
+00:00 to 05:59 14,696.1 A 12,162.6 B 413.7 C 2,119.8 B
+06:00 to 11:59 165,407.9 A 152,172.3 A 4,655.8 A 8,579.9 A
+12:00 to 17:59 240,436.9 A 227,544.6 A 4,384.3 A 8,508.0 A
+18:00 to 23:59 106,031.8 A 101,171.2 A 1,051.7 B 3,808.9 A
+Weekends and holidays
+Total, all hours 163,205.5 A 157,691.9 A 1,582.5 B 3,931.1 B
+00:00 to 05:59 4,587.7 B 4,185.0 B 57.7 E 344.9 C
+06:00 to 11:59 47,111.7 A 45,065.9 A 639.8 B 1,406.0 B
+12:00 to 17:59 78,756.7 A 76,600.0 A 672.8 B 1,484.0 B
+18:00 to 23:59 32,749.5 A 31,841.0 A 212.2 D 696.3 B
+Weekdays
+Total, all hours 363,367.2 A 335,358.8 A 8,922.9 A 19,085.5 A
+00:00 to 05:59 10,108.5 B 7,977.6 B 356.0 C 1,774.9 B
+06:00 to 11:59 118,296.3 A 107,106.4 A 4,015.9 A 7,173.9 A
+12:00 to 17:59 161,680.2 A 150,944.6 A 3,711.5 A 7,024.1 A
+18:00 to 23:59 73,282.3 A 69,330.2 A 839.5 B 3,112.6 A
+Statistics Canada – Catalogue no. 53-223-X 23
+
+--- PDF page 26 of 43 ---
+
+Canadian Vehicle Survey: Annual – 2009
+Table 6-8
+Estimates of vehicle-kilometres and passenger-kilometres for provinces only by type of vehicle and road type
+Total,
+all vehicles
+Vehicles up
+to 4.5 tonnes
+Trucks 4.5 tonnes
+to 14.9 tonnes
+Trucks 15 tonnes
+and over
+millions of vehicle-kilometres
+Total, all roads 332,431.9 A 302,959.4 A 8,241.5 A 21,230.9 A
+Roads with posted maximum speed
+of 80 kilometres per hour or more 176,180.4 A 156,529.9 A 4,274.5 A 15,376.0 A
+All other roads 156,251.5 A 146,429.5 A 3,967.0 B 5,854.9 B
+millions of passenger-kilometres
+Total, all roads 526,572.7 A 493,050.7 A 10,505.4 B 23,016.6 A
+Roads with posted maximum speed
+of 80 kilometres per hour or more 285,530.1 A 263,324.4 A 5,595.5 A 16,610.1 A
+All other roads 241,042.7 A 229,726.2 A 4,909.9 B 6,406.5 B
+Table 6-9
+Estimates of vehicle-kilometres and passenger-kilometres for provinces only by origin and destination of trips for
+vehicles up to 4.5 tonnes
+Destination
+Driver’s
+home
+Driver’s
+regular
+workplace
+Shopping
+centre, bank, other
+place of personal
+business
+Leisure,
+entertainment,
+recreational facility,
+restaurant
+Other
+millions of vehicle-kilometres
+Origin
+Driver’s home 52,821.5 A 26,196.3 A 10,710.7 B 12,757.3 B 36,551.2 A
+Driver’s regular workplace 22,425.1 A 7,008.2 B 2,174.0 C 1,132.0 D 5,567.9 B
+Shopping centre, bank, other place of
+personal business 12,018.2 B 912.0 E 4,142.2 C 1,123.7 E 4,341.5 C
+Leisure, entertainment, recreational facility,
+restaurant 11,685.2 B 740.8 E 1,227.9 E 2,678.6 C 4,266.4 B
+Other 38,582.7 A 4,247.3 B 5,673.7 B 4,763.8 B 29,160.2 A
+millions of passenger-kilometres
+Origin
+Driver’s home 89,119.6 A 30,746.7 B 17,159.0 B 25,109.9 B 61,171.0 A
+Driver’s regular workplace 26,063.2 B 10,343.2 B 2,366.7 E 1,535.8 E 6,923.6 C
+Shopping centre, bank, other place of
+personal business 19,176.8 B F 7,221.8 D 2,159.9 E 7,669.5 C
+Leisure, entertainment, recreational facility,
+restaurant 22,410.4 B 1,032.8 E 2,184.3 E 5,714.8 C 9,074.3 B
+Other 62,986.9 A 5,356.4 C 10,336.5 C 9,992.6 B 56,005.0 A
+Table 6-10
+Estimates of vehicle-kilometres and passenger-kilometres for provinces only by part of the driver’s job for vehicles up
+to 4.5 tonnes
+Vehicle-kilometres Passenger-kilometres
+millions
+Total 302,959.4 A 493,050.7 A
+Yes 50,385.1 A 66,966.0 A
+No 252,574.3 A 426,084.7 A
+24 Statistics Canada – Catalogue no. 53-223-X
+
+--- PDF page 27 of 43 ---
+
+Canadian Vehicle Survey: Annual – 2009
+Table 6-11
+Estimates of vehicle-kilometres and passenger-kilometres for provinces only by vehicle group and trip purpose for
+trucks weighing 4.5 tonnes or more
+Trucks 4.5 tonnes
+to 14.9 tonnes
+Trucks 15 tonnes
+and over
+millions of vehicle-kilometres
+Total, all groups
+Driving to or from service call 1,506.0 B 454.3 D
+Carrying goods or equipment 4,204.8 A 16,471.1 A
+Empty 349.7 D 3,224.8 B
+Other work purpose 646.0 C 283.2 E
+Non-work purpose 1,535.1 B 797.5 C
+Total 8,241.5 A 21,230.9 A
+Straight trucks
+Driving to or from service call 1,368.5 B 143.8 E
+Carrying goods or equipment 3,974.8 A 2,051.5 B
+Empty 325.9 D F
+Other work purpose 627.2 C F
+Non-work purpose 1,425.0 B 329.5 E
+Total 7,721.4 B 2,991.4 C
+Other trucks over 4.5 tonnes
+Driving to or from service call 137.5 E 310.5 E
+Carrying goods or equipment 230.0 E 14,419.6 A
+Empty F 2,875.9 B
+Other work purpose F 165.5 E
+Non-work purpose 110.1 E 468.0 E
+Total 520.1 D 18,239.5 A
+millions of passenger-kilometres
+Total, all groups
+Driving to or from service call 1,778.7 B 561.0 D
+Carrying goods or equipment 5,009.4 A 17,908.8 A
+Empty 476.5 E 3,295.5 B
+Other work purpose 950.4 B 393.6 D
+Non-work purpose 2,290.4 B 857.8 C
+Total 10,505.4 B 23,016.6 A
+Straight trucks
+Driving to or from service call 1,619.5 C 204.2 E
+Carrying goods or equipment 4,743.1 B 2,223.9 B
+Empty 442.5 E F
+Other work purpose 917.1 B F
+Non-work purpose 2,144.5 B 373.5 E
+Total 9,866.8 B 3,277.0 C
+Other trucks over 4.5 tonnes
+Driving to or from service call 159.2 E 356.7 E
+Carrying goods or equipment 266.3 E 15,684.9 A
+Empty F 2,943.8 C
+Other work purpose F 269.9 E
+Non-work purpose 145.8 E 484.2 E
+Total 638.6 E 19,739.6 A
+Statistics Canada – Catalogue no. 53-223-X 25
+
+--- PDF page 28 of 43 ---
+
+Canadian Vehicle Survey: Annual – 2009
+Table 6-12
+Estimates of vehicle-kilometres and passenger-kilometres for provinces only by carrying dangerous goods for
+trucks weighing 4.5 tonnes or more
+Total,
+all vehicles
+Trucks 4.5 tonnes
+to 14.9 tonnes
+Trucks 15 tonnes
+and over
+millions of vehicle-kilometres
+Total with or without dangerous goods 29,472.5 A 8,241.5 A 21,230.9 A
+With dangerous goods 2,333.3 B 308.0 C 2,025.3 B
+Without dangerous goods 27,139.2 A 7,933.6 A 19,205.6 A
+millions of passenger-kilometres
+Total with or without dangerous goods 33,522.0 A 10,505.4 B 23,016.6 A
+With dangerous goods 2,542.6 B 316.4 C 2,226.3 B
+Without dangerous goods 30,979.4 A 10,189.0 A 20,790.3 A
+Table 7-1
+Estimates by type of vehicle, type of fuel and vehicle body type for provinces only — Vehicle-kilometres
+Total,
+all vehicles
+Vehicles up
+to 4.5 tonnes
+Trucks 4.5 tonnes
+to 14.9 tonnes
+Trucks 15 tonnes
+and over
+Gasoline Diesel Gasoline Diesel Gasoline Diesel Gasoline Diesel
+millions of vehicle-kilometres
+Vehicle body type
+Car 156,054.6 A 2,686.4 E 156,054.6 A 2,673.5 E ... ... ... ...
+Station wagon 10,659.1 C F 10,655.9 C F ... ... ... ...
+Van 41,123.7 B 1,201.5 E 41,044.9 B 785.0 E F 416.6 E ... ...
+SUV 43,070.8 B F 43,070.8 B F ... ... ... ...
+Pickup 40,868.5 A 7,165.8 B 40,687.7 A 5,971.6 B F 1,193.6 D ... ...
+Straight truck 1,160.9 E 7,989.4 B F F 760.3 E 4,980.0 B F 2,967.8 C
+Tractor trailer ... 18,679.3 A ... ... ... 483.1 E ... 18,196.2 A
+Bus F F F F F F ... ...
+Other F F F F F F ... F
+Total 293,298.8 A 38,603.4 A 292,221.5 A 10,281.7 B 1,067.1 D 7,106.8 B F 21,215.0 A
+Table 7-2
+Estimates by type of vehicle, type of fuel and vehicle body type for provinces only — Fuel consumed
+Total Vehicles up
+to 4.5 tonnes
+Trucks 4.5 tonnes
+to 14.9 tonnes
+Trucks 15 tonnes
+and over
+Gasoline Diesel Gasoline Diesel Gasoline Diesel Gasoline Diesel
+millions of litres
+Vehicle body type
+Car 14,324.7 E 200.4 E 14,324.7 E F ... ... ... ...
+Station wagon 1,105.7 E F 1,103.8 E F ... ... ... ...
+Van 4,923.4 E 158.5 E 4,899.7 E 87.9 E 23.8 E 70.7 E ... ...
+SUV 5,163.8 B F 5,163.8 B F ... ... ... ...
+Pickup 5,653.2 E 1,002.1 B 5,603.7 E 717.0 E F 284.8 C ... ...
+Straight truck 247.7 E 2,233.8 B F F 182.1 E 1,218.2 E F 1,011.3 C
+Tractor trailer ... 6,195.3 A ... ... ... 149.8 E ... 6,045.5 A
+Bus F F F F F F ... ...
+Other F F F F F F ... F
+Total 31,460.5 E 9,898.0 A 31,188.1 E 1,091.1 E 267.5 E 1,730.5 A F 7,076.4 A
+26 Statistics Canada – Catalogue no. 53-223-X
+
+--- PDF page 29 of 43 ---
+
+Canadian Vehicle Survey: Annual – 2009
+Table 8-1
+Activity type for trucks weighing 4.5 tonnes or more for provinces only — Number of vehicles in scope by type of
+vehicle
+Trucks 4.5 tonnes
+to 14.9 tonnes
+Trucks 15 tonnes
+and over
+Total, all activity types 434,639 A 314,222 A
+For-hire trucking 51,793 B 142,494 A
+Owner-operator trucking 63,344 B 64,231 B
+Private trucking 240,045 A 78,967 B
+Other activity type 79,457 B 28,530 B
+Table 8-2
+Activity type for trucks weighing 4.5 tonnes or more for provinces only — Vehicle-kilometres and passenger-kilometres
+for trucks 4.5 tonnes to 14.9 tonnes
+Vehicle-kilometres Passenger-kilometres
+millions
+Total, all activity types 8,241.5 A 10,505.4 B
+For-hire trucking 1,088.7 C 1,297.0 E
+Owner-operator trucking 1,842.8 E 2,345.5 E
+Private trucking 3,933.5 B 4,983.9 C
+Other activity type 1,376.5 C 1,879.1 D
+Table 8-3
+Activity type for trucks weighing 4.5 tonnes or more for provinces only — Vehicle-kilometres and passenger-kilometres
+for trucks 15 tonnes or more
+Vehicle-kilometres Passenger-kilometres
+millions
+Total, all activity types 21,230.9 A 23,016.6 A
+For-hire trucking 12,598.4 A 13,658.1 A
+Owner-operator trucking 4,488.2 B 4,770.7 B
+Private trucking 2,718.8 C 2,979.3 C
+Other activity type 1,425.5 D 1,608.4 C
+Table 9-1
+Trip type for trucks weighing 4.5 tonnes or more for provinces only — Vehicle-kilometres and passenger-kilometres for
+trucks 4.5 tonnes to 14.9 tonnes
+Vehicle-kilometres Passenger-kilometres
+millions
+Total, all trip types 8,241.5 A 10,505.4 B
+Trips within provinces 7,330.6 A 9,210.8 A
+Trips between provinces 400.6 B 599.5 E
+Trips across Canada and United States border 232.0 E 317.1 E
+Trips outside Canada 278.4 C 378.0 C
+Statistics Canada – Catalogue no. 53-223-X 27
+
+--- PDF page 30 of 43 ---
+
+Canadian Vehicle Survey: Annual – 2009
+Table 9-2
+Trip type for trucks weighing 4.5 tonnes or more for provinces only — Vehicle-kilometres and passenger-kilometres for
+trucks 15 tonnes or more
+Vehicle-kilometres Passenger-kilometres
+millions
+Total, all trip types 21,230.9 A 23,016.6 A
+Trips within provinces 12,539.1 A 13,436.7 A
+Trips between provinces 4,243.9 A 4,968.1 A
+Trips across Canada and United States border 2,936.6 B 3,022.8 B
+Trips outside Canada 1,511.3 B 1,589.0 B
+28 Statistics Canada – Catalogue no. 53-223-X
+
+--- PDF page 31 of 43 ---
+
+Concepts and definitions
+The population of interest
+The in-scope vehicles for the CVS include all motor vehicles, except buses (buses were included in the survey
+prior to 2004), motorcycles, off road vehicles (for example, snowmobiles, dune buggies, amphibious vehicles) and
+special equipment (for example, cranes, street cleaners, snowplows and backhoes), registered in Canada anytime
+during the survey reference period, that have not been scrapped or salvaged.
+The population of interest consists of vehicle-days, composed from the in-scope vehicles and the days within the
+survey reference period.
+Definitions of variables in tables
+Vehicle-kilometres is the distance traveled by vehicles on roads.
+Passenger-kilometres is the sum of the distances traveled by individual passengers (the driver being considered
+as one of the passengers). For example, for a vehicle with three passengers (the driver being one of them) that is
+driven on a distance of 10 kilometres, the number of passenger-kilometres will be 30. Light vehicles (see the Vehicle
+type definition below) report the number of passengers for each trip (see the Trip definition below). The number of
+passengers in heavy vehicles with gross vehicle weight of 4.5 tonnes or more (see the Vehicle type definition below)
+is calculated as the average of the number of passengers at the beginning of each trip and the number of passengers
+at the end of each trip (see the Trip definition below).
+Fuel consumed is the amount of fuel used to operate vehicles. This variable is derived for each vehicle using the
+reported fuel purchases and distance driven.
+The number of vehicles on the registration lists is the average number of the registered vehicles in the registration
+lists at the beginning and at the end of the reference period.
+The number of vehicles in scope is an estimate of the average number of vehicles registered during the quarter
+based on the lists from jurisdictions and the survey responses. This number slightly differs from the previous one
+because we incorporate into it all our findings from the survey. Note that this number includes vehicles used and
+not used on the roads during the reference period.
+Definitions of vehicle characteristics
+Vehicle type is the weight classification created for the CVS, based on the information available on the vehicle
+registration lists. The vehicles are divided into three weight types: light vehicles with gross vehicle weights
+below 4.5 tonnes, heavy vehicles with gross vehicle weights of 4.5 tonnes or more and less than 15 tonnes, and
+heavy vehicles with gross vehicle weights of 15 tonnes or more.
+The respondent determines vehicle body type. The respondent is asked to choose among: car, station wagon,
+van, sport utility vehicle, pick-up, straight truck, truck-tractor, and other. Missing or unusual responses are verified
+against registration lists, if possible.
+Fuel type is based on the information provided by the respondent or from the registration lists. All vehicles are
+divided into three classes: vehicles powered by gasoline, vehicles powered by diesel fuel and vehicles powered by
+other energy sources.
+Vehicle model year is derived based on the information available on the registration lists.
+Statistics Canada – Catalogue no. 53-223-X 29
+
+--- PDF page 32 of 43 ---
+
+Canadian Vehicle Survey: Annual – 2009
+Definitions of vehicle usage characteristics
+The CVS definition of a trip determines the trip characteristics. The definition of what delimits a trip depends on the
+vehicle type:
+A new trip is reported for light vehicles if any of the following events happen:
+• the driver gets in the car
+• a passenger gets in or out of the car
+A new trip is reported for heavy vehicles weighing 4.5 tonnes or more if any of the following events happen:
+• a stop of more than 30 minutes
+• a change of driver
+• a change of purpose or use
+• a change in the truck configuration
+• a change in the status of the load from loaded to unloaded or the reverse
+For each trip, the respondent provides the following information:
+• Beginning and end times and dates of the trip that are used to determine the time of day and day of week the
+trip takes place.
+• Driver age group and driver sex.
+• Trip origin and destination for light vehicles.
+• Trip purpose for heavy vehicles, as determined by the respondent. If there were several purposes for the trip,
+the respondent is asked to indicate the main purpose of the trip. Multiple trip purposes are not allowed.
+• If dangerous goods (as defined by the Transportation of Dangerous Goods Act) are carried by heavy vehicles.
+• Number of kilometres traveled on roads with posted speed limit of 80 km/h or more.
+• Age group (Under 5 years, 5 to 14, 15 to 19, 20 to 34, 35 to 54, 55 to 64, 65 to 74, 75 to 84, 85 years and over)
+of passengers and the number of passengers within each group, to calculate passenger-kms. Passenger age
+information is collected only for light vehicles (see "Data quality, concepts and methodology — Data quality"). We
+collect the total number of passengers only for heavy vehicles.
+• Truck configuration for heavy vehicles.
+• Total cost, unit cost and quantity of fuel purchased.
+30 Statistics Canada – Catalogue no. 53-223-X
+
+--- PDF page 33 of 43 ---
+
+Methodology
+The CVS has been designed as a quarterly survey. The survey design also allows the calculation of annual estimates
+based on the data collected during the four quarters.
+Survey design
+Survey population
+The survey population of vehicles was derived from the 13 jurisdiction vehicle registration lists (ten Provincial and
+three Territorial Governments) created three months before the reference period. The sample of vehicles for each
+quarter of 2007 was drawn from lists of motor vehicles with valid registrations in any province or territory available
+three months before the beginning of each quarter. Buses, motorcycles, off-road vehicles (e.g., snowmobiles, dune
+buggies, amphibious vehicles) and special equipment (e.g., cranes, street cleaners, snowplows and backhoes) were
+excluded from the survey. This population differs from the population of interest of vehicles; e.g., vehicles that were
+registered less than three months before the quarter began (or during the quarter) were not included in that quarter’s
+sample.
+The thirteen incoming lists underwent a thorough preparation procedure:
+• First, out-of-scope vehicles are removed (buses, trailers, motorcycles, construction equipment, parade vehicles,
+motor homes, etc.) from each list.
+• Second, vehicles with expired registrations are removed from each list.
+• Then, records with duplicate Vehicle Identification Numbers (VIN) within each list are removed leaving only the
+record that had been updated most recently.
+• Last, records in each file with irregular data are verified.
+The most recent set of prepared lists was used to select the sample for each quarter of 2007. These sets of vehicle
+lists and the days within the respective quarter constitute the survey population.
+Sample design
+The CVS uses a two-stage sample design. At the first-stage, a sample of vehicles is selected, while at the
+secondstage, a sample of consecutive days within the quarter is selected.
+To select the first-stage sample, all vehicles from the survey population were first stratified (grouped) into 78 strata.
+The vehicles were stratified into three vehicle types (see appendix I) and 13 jurisdictions (ten provinces and three
+territories). Then, in order to improve the precision of the estimates, the vehicles were further divided into two
+vehicle-age strata of newer and older vehicles.
+Next, the vehicles were sorted within each stratum, using the first three characters of the postal code of the owner’s
+address. Then, a systematic sample of vehicles (first stage sample) was selected from the survey population.
+Systematic sampling was used to spread the sample over all regions and to avoid heavy burden on owners of
+multiple vehicles. To minimize respondent burden, no vehicle is selected more than once during any consecutive
+four quarters for provinces and two consecutive quarters for territories.
+Statistics Canada – Catalogue no. 53-223-X 31
+
+--- PDF page 34 of 43 ---
+
+Canadian Vehicle Survey: Annual – 2009
+In the second stage, a first reporting day within the quarter was randomly assigned to each vehicle selected in the
+first stage. Within each stratum, the first reporting day was evenly spread over the quarter to ensure a uniform
+number of responses over time and for each day of the week. This step was not applied to the vehicles registered
+in the three territories since only odometer readings are collected (see "Survey overview").
+Estimation
+Since the sample was selected in two stages, the sampling weight (see appendix I) was also calculated in two steps.
+The first-stage sampling weight was calculated for each vehicle in the first-stage sample. Then the second-stage
+sampling weight was calculated for each vehicle-day selected from all days within the reference period. Finally,
+these two weights were multiplied together to obtain the final weight for a vehicle-day. The weighted values are
+obtained by multiplying the final weights and the collected values. They were aggregated to produce the estimates.
+Sample size
+A total sample of 26,997 vehicles was drawn for the ten provinces. Another 16,488 vehicles were included in the
+sample for the three territories.
+Data collection and processing
+Data Collection
+The data collection for the vehicles sampled in the ten provinces is different from the one for the vehicles sampled
+in the territories.
+Provincial collection
+The registered owners of the sampled vehicles were telephoned and interviewed (Computer Assisted Telephone
+Interview, or CATI). During the CATI, the following information is collected about each sampled vehicle: vehicle
+type, fuel type used, distance driven the previous week, some information about anticipated vehicle usage during
+the following six weeks, current odometer reading, some vehicle maintenance questions and some questions on
+the household characteristics. Then the respondent was asked to complete a trip log. If the respondent agreed,
+personal information, such as name and address, were obtained in order to mail out the trip log for the vehicle.
+The log type depended on the type of vehicle. There were two types of logs: a light vehicle log and a heavy vehicle
+log.
+Respondents receiving a light vehicle log were requested to record information for 20 consecutive trips made in the
+selected vehicle, beginning on the assigned first reporting day. Respondents receiving a heavy vehicle log were
+requested to record information for all the trips made in the selected vehicle over the assigned seven-day period.
+The collected data included information about each trip:
+• Start and stop dates and times
+• Start and stop odometer readings
+• origin and destination (light vehicle log) or trip purpose (heavy vehicle log)
+• number and age group of passengers (light vehicle log) or number of passengers at the start and end of the trip
+(heavy vehicle log)
+• sex and age group of the driver
+• fuel purchases
+32 Statistics Canada – Catalogue no. 53-223-X
+
+--- PDF page 35 of 43 ---
+
+Canadian Vehicle Survey: Annual – 2009
+• distance traveled on roads with posted speed limit of 80km/h or more
+• truck configuration (heavy vehicle log only)
+• dangerous goods (heavy vehicle log only)
+Starting in 2004, the respondents were also asked to continue to record their fuel purchases until they reported two
+fill-ups or five fuel purchases or until the 28-day reporting period is over.
+If the respondent could not be contacted by phone, a trip log with a short additional questionnaire (to collect some
+of the information normally collected during the CATI) was mailed out.
+To increase the number of responses, respondents were contacted a second time, either by phone or by mail. On
+the first or second day of the log, an attempt was made to phone each vehicle owner, who agreed during the CATI to
+fill out the log, to answer any questions the respondent might have. Later, an attempt was made to contact by phone
+or mail everyone who did not return logs. (Some companies with large vehicle fleets have special arrangements to
+lower their response burden. There is no follow-up done with these companies.)
+Territorial collection
+The registered owners of the selected vehicles were mailed questionnaires and asked to provide two odometer
+readings, one at the beginning of the quarter and another at the beginning of the next quarter. Information was also
+collected on the vehicle status (owned, sold, scrapped), body style (car, SUV, pick-up, etc.) and type of fuel used.
+Edit and Imputation
+Once all necessary information for the survey was collected, a series of verifications took place to ensure that the
+records were consistent and that collection and capture of the data did not introduce errors. Reported data were
+examined for completeness and consistency using automated edits coupled with manual review. Outliers, i.e.,
+respondents reporting extremely large values, were processed manually.
+Missing values and data found in error were imputed by another automated system. The system imputed the data
+using different imputation rules depending on the vehicle, available information and the type of data to be imputed.
+For example, the data can be imputed based on other responses for the same vehicle or by using data from a similar
+vehicle. The imputed data were then again examined for completeness and consistency.
+A complete description of the procedures applied to the survey data is available upon request from the Transportation
+Division of Statistics Canada.
+Estimation
+Since the survey population differs from the population of interest, several corrections were done to assure that the
+estimates correspond (as closely as possible) to the population of interest. The sampling weights derived from the
+sample design were adjusted and improved using updated registration lists. This was possible because, during the
+passage of time since the sample was selected, new sets of prepared vehicle lists were obtained for the beginning
+and for the end of the reference quarter. To improve the estimates for the vehicles registered in the ten provinces, all
+the days were further stratified into working days and holidays (or non-working days, including weekends). Second
+stage sampling weights were adjusted so that every day of vehicle activity within the same stratum contributed with
+equal weight to the total estimate. The final set of weights reflected as closely as possible the characteristics of the
+vehicle population during the reference period.
+Statistics Canada – Catalogue no. 53-223-X 33
+
+--- PDF page 36 of 43 ---
+
+Canadian Vehicle Survey: Annual – 2009
+The following estimates of totals are available:
+• vehicle counts by jurisdiction and vehicle type;
+• vehicle-kilometres by jurisdiction and vehicle type;
+• passenger-kilometres by province and vehicle type;
+• fuel consumed, by vehicle type and fuel type;
+• cross tabulations of vehicle-kilometers and passenger-kilometers by a number of variables (described in "Data
+quality, concepts and methodology — Data quality"), such as body type, driver characteristics, time of day, day
+of week, etc.
+34 Statistics Canada – Catalogue no. 53-223-X
+
+--- PDF page 37 of 43 ---
+
+Data quality
+This section describes factors that affect the data quality and why they should be considered when using the CVS
+estimates.
+Sources of errors
+While considerable effort is put forth to ensure that a high standard is maintained throughout all survey operations,
+the resulting estimates are inevitably subject to a certain degree of error. The total survey error is defined as the
+difference between the survey estimate and the true value for the population, at which the survey estimate aims.
+The total survey error consists of two types of errors: sampling and non-sampling errors.
+Sampling error
+When a sample is selected from a population, estimates based on the sample data may not be exactly the same as
+what would be obtained from a census of that population. The two results will likely differ since only data for sampled
+units are used. In the case of a census, there is no sampling error.
+The difference between the estimates from a sample survey and a census conducted under the same conditions
+is referred to as the sampling error of a survey estimate. Factors such as the sample size, the sample design, the
+variability of the population characteristic under study and the estimation method affect the sampling error. If the
+population is very heterogeneous like the population of registered motor vehicles, a large sample size is needed to
+obtain reliable estimates.
+The sampling error is measured by a statistical quantity called the standard error. This quantity reflects the expected
+variability of the survey estimate of a particular population characteristic if repeated sampling is carried out. The
+true value of the standard error is, of course, not known but can be estimated from the sample. The estimated
+standard error is used, in this publication, in terms of a relative measure called the coefficient of variation (or CV).
+This measure is simply the estimated standard error expressed as a percentage of the value of the survey estimate.
+Therefore, a smaller CV indicates better reliability of the estimate.
+Non-sampling errors
+The sampling error is only one component of the total survey error. All other errors arising from all phases of a
+survey are called non-sampling errors. As the sample size becomes closer to the population size, the sampling
+error component of the total survey error is expected to decrease. However, this is not necessarily true for the
+nonsampling error component. For example, this type of error can arise when a respondent provides incorrect
+information or does not answer certain questions, when a unit in the population of interest is omitted or covered
+more than once, when a unit that is out-of-scope for the survey is included by mistake or when errors occur in data
+processing, such as coding and capture errors.
+Some non-sampling errors will cancel over a large number of observations, but systematically occurring errors (i.e.
+those that do not tend to cancel) will contribute to a bias in the estimates. For example, in the case of the CVS, if
+individuals that use their vehicles more than an average person consistently tend not to respond to the survey, then
+the resulting estimate of the total vehicle-kilometres will be below the true population total. Any such biases are not
+reflected in the estimates of standard error.
+Statistics Canada – Catalogue no. 53-223-X 35
+
+--- PDF page 38 of 43 ---
+
+Canadian Vehicle Survey: Annual – 2009
+The non-sampling error as a whole is only one part of the total survey error but its contribution may be important.
+To minimize the effect of this type of error, a quality assurance program is carried out for each survey. For instance,
+follow-ups of nonrespondents can be conducted to obtain information from the total nonrespondents or to complete
+partially unanswered questionnaires for questions that are deemed essential. Various quality assurance procedures
+can be exercised at the data capture step. The data editing procedures can identify some inconsistencies in the
+data structure and the imputation procedures can then correct the identified inconsistencies.
+In general, non-sampling errors are difficult to quantify. Special studies must be conducted to estimate them.
+However, certain measures such as response and imputation rates are easily obtained and can be used as
+indicators of the non-sampling errors. Different types of non-sampling errors are discussed below.
+Coverage errors
+Coverage errors arise when the survey population does not adequately cover the population of interest. As a result,
+certain units belonging to the population of interest are either excluded (undercoverage), or counted more than once
+(overcoverage). In addition, out of scope units may be present in the survey population (overcoverage).
+The following sources of coverage errors for the CVS were observed:
+• Errors in the classification variables of the survey may result in either under- or overcoverage of the registered
+vehicles.
+• The sample is drawn from the list created three months prior to the beginning of the reference period. Thus the
+vehicles registered after the list was created and before the end of the reference period cannot be drawn into the
+sample.
+• A vehicle list from any jurisdiction that was not created on time or did not arrive at all results in even larger
+undercoverage since an older list has to be used for sampling.
+• A vehicle list created early causes overcoverage.
+• A vehicle that has been scrapped or salvaged and remained on the list causes overcoverage.
+• The survey population (see "Data quality, concepts and methodology — Methodology") can contain vehicles with
+the same Vehicle Identification Number (VIN), for example, when a vehicle is on the registration file of more than
+one jurisdiction. Since every vehicle has a unique VIN, this is likely to cause some overcoverage and consequently
+overestimation.
+• A vehicle that was registered and subsequently unregistered between two consecutive registration lists causes
+undercoverage.
+Thus the CVS is subject to some degree of under and over coverage. The estimation procedure is designed to
+compensate for the part of the under- and over coverage that has been determined.
+Since we assume that the respondent is right (unless we have hard evidence to the contrary), the corrections at the
+estimation stage are mostly based on the respondent statements.
+Response errors
+Response errors occur when a respondent provides incorrect information due to a misinterpretation of the survey
+questions or due to a lack of correct information, or when a respondent is reluctant to disclose the correct information.
+Large response errors are likely to be caught during editing. However, others may simply go through undetected.
+Few response errors were discovered during editing of the data.
+36 Statistics Canada – Catalogue no. 53-223-X
+
+--- PDF page 39 of 43 ---
+
+Canadian Vehicle Survey: Annual – 2009
+Nonresponse errors
+Nonresponse errors can occur when a respondent does not respond at all (total nonresponse) or responds only
+to some questions (partial nonresponse). These errors can have a serious effect if the nonrespondents are
+systematically different in survey characteristics from the respondents and/or the nonresponse rate is high. See
+the response rate tables in "Data quality, concepts and methodology — Data quality".
+Processing errors
+Apart from coverage, response and nonresponse errors described above, errors that occur during the processing
+of the data constitute another component of the non-sampling error. Processing errors can arise in data capture,
+coding, transcription, editing, imputation, outlier detection and treatment, and other types of data handling.
+A coding error occurs when a field is coded erroneously because of a misinterpretation of the coding procedures or
+a bad judgment. A data capture error occurs when the data are misinterpreted or keyed incorrectly. For example,
+an odometer reading of 53467 could be keyed as 54367.
+Once data are coded and captured, they are subject to editing and imputation of missing or erroneous values. The
+quality of the data used in the estimation depends on the amount of imputation and the difference between the
+imputed and the true, but unknown, values. The imputation system could result in bias of the estimates. This can
+happen due to wrong assumptions or due to inability to impute. For example, in the CVS, it is impossible to detect,
+for vehicles that travel only a small distance during the reported period, fuel purchases that are missing or entered
+in error.
+Measuring quality
+This section presents some indicators of the data quality of the CVS estimates.
+Response rates
+The response rate is a function of the number of vehicles that responded to the survey. This rate is defined as the
+number of vehicles for which respondents gave complete or partial (vehicle-kilometers only) answers to the survey
+divided by the total number of in-sample vehicles.
+Table A
+Vehicle response rates by province and vehicle type
+Newfoundland
+and
+Labrador
+Prince
+Edward
+Island
+Nova
+Scotia
+New
+Brusnwick
+Quebec Ontario Manitoba Saskat-
+chewan
+Alberta British
+Columbia
+percent
+Light vehicles 52 59 51 51 56 54 62 48 43 45
+Heavy vehicles 4.5 to 14.9 tonnes 53 62 58 48 55 58 61 56 51 49
+Heavy vehicles 15 tonnes or more 61 57 66 62 63 61 52 58 44 56
+Statistics Canada – Catalogue no. 53-223-X 37
+
+--- PDF page 40 of 43 ---
+
+Canadian Vehicle Survey: Annual – 2009
+Table B
+Vehicle response rates by territory
+Yukon Northwest
+Territories
+Nunavut
+percent
+All vehicles 15 14 7
+The low level of response may lead to biased results if the characteristics of interest of the nonrespondents are
+different than those of the respondents.
+Relative imputation rates
+The relative imputation rate is defined as the proportion of the corresponding published estimate that is accounted for
+by imputed data. For example, if the total published estimate is 25 million, composed of 20 million from nonimputed
+data and 5 million from imputed data, then the relative imputation rate is .2 (5 million divided by 25 million) or 20%.
+The lower the relative imputation rates are, the more reliable the published estimates are.
+The relative imputation rates were calculated for each of the estimates and used to establish a quality indicator for
+each estimate. The relative imputation rates for estimates could be obtained from the Transportation Division of
+Statistics Canada upon request.
+Coefficient of variation
+As a measure of the sampling error of the estimates, the estimated coefficients of variation (CV) were calculated.
+CV’s for estimates may be obtained from the Transportation Division of Statistics Canada upon request. Note that
+the calculated CV estimates take into account the variability due to sampling and the variability due to non-response
+and imputation.
+Quality indicator
+To assist the user in evaluating the potential effect of nonresponse, imputation and sampling error, an all-embracing
+quality indicator accompanies every estimate. The quality indicator is a function of the CV, which takes into account
+the variability due to sampling and the variability due to non-response and imputation.
+Letter and significance Coefficient of variation
+A excellent Less than 5%
+B very good 5% to 9.9%
+C good 10% to 14.9%
+D acceptable 15% to 19.9%
+E use with caution 20% to 34.9%
+F too unreliable to be published 35% or more
+The quality of counts (direct from registration lists) not accompanied by a quality symbol is good or better.
+Notes for historical comparison
+Recent updates to the vehicle registration files have now been incorporated into the Canadian Vehicle Survey counts
+and estimates for British Columbia. The revisions affect the 2003 to 2005 survey years. On average, estimated
+vehicle kilometres in British Columbia have been revised upward by 0.6% for 2003, 2.3% for 2004, and 6.7% for 2005.
+38 Statistics Canada – Catalogue no. 53-223-X
+
+--- PDF page 41 of 43 ---
+
+Canadian Vehicle Survey: Annual – 2009
+Note that these revisions, in turn, affect the national estimates for the same periods, although the magnitude is much
+smaller – 0.1% in 2003, 0.4% in 2004, and 0.7% in 2005.
+Revisions were also made in order to treat holidays consistently across the reference periods. This affected most
+variables for the four quarters of 2004. Impacts of the revisions vary depending on the variable, but are generally
+greatest for tables dealing with the day of week or time of day.
+Beginning with Quarter 1, 2004, the following changes were made and may affect comparability with previous
+quarters:
+• Buses are excluded from the survey
+• Rather than estimates of the quantity of fuel purchased, the survey now produces estimates of the quantity of fuel
+consumed.
+• The light vehicle log is based on 20 trips rather than reporting all trips for 7 days. Depending on vehicle usage,
+some respondents will report more than 7 days worth of trips while others will report less than 7 days.
+• The definition of a trip for light vehicles has changed so that a new trip is now reported every time a driver gets in
+the vehicle or a passenger gets in or out of the vehicle. This change will mean that what was previously reported
+as one trip could now be reported as two, three or even more trips if there is a change in driver and/or multiple
+passengers are picked up or dropped off at different locations. This new definition will produce more accurate
+estimates of passenger-kilometres for light vehicles.
+Beginning with Quarter 2, 2003, vehicles that were insured but not registered were removed from the registration
+lists for Manitoba. As a result, some estimates for Manitoba may be lower than the estimates from previous quarters.
+Beginning with Quarter 4, 2001, vehicles that were registered but did not have license plates were removed from the
+registration lists for Quebec. As a result, some estimates for Quebec may be lower than the estimates from previous
+quarters.
+Beginning with Quarter 1, 2001, the following changes were made and may affect comparability with previous
+quarters:
+• Prior to this quarter, duplicate records found within the same list and duplicate records found in more than one list
+were removed. Starting in this quarter, duplicate records were removed from within each list only. This change
+may cause some overcoverage and, consequently, overestimation.
+• Type of fuel used and body type are collected for the territories. Consequently, the four tables (3-3, 3-4, 4-3 and
+4-4) now include the territories.
+• The heavy vehicle logs were changed in 2001 in order to collect passenger information for heavy vehicles. This
+change means that passenger-kilometres are now estimated for all vehicles, except urban transit buses, for all
+the provinces (but not for territories).
+• The heavy vehicle logs were also changed in 2001 in order to collect distance traveled on roads with posted
+speeds of 80 kilometres per hour or more. This change means that this information is now estimated for all
+vehicle types in all provinces (but not for the territories).
+The following change was made in the third quarter of 2000 and may affect comparability with previous quarterly
+results:
+• Owners of buses and heavy vehicles registered in the territories are now sent two short questionnaires to record
+odometer readings at the start and end of the quarter. This process was always used for light vehicles in the
+territories and replaces the previous method of sending only one questionnaire at the end of the quarter and
+requesting that bus and heavy vehicle owners rely on maintenance records to provide odometer readings for the
+start of the quarter.
+Statistics Canada – Catalogue no. 53-223-X 39
+
+--- PDF page 42 of 43 ---
+
+Canadian Vehicle Survey: Annual – 2009
+The following changes were made in the first quarter of 2000 to improve the quality of the survey by diminishing
+non-sampling errors.
+The changes that affect comparability with 1999 results:
+• The trip purpose choices (for all vehicle types) were changed. The purpose is now based on the destination of
+the trip. Thus the results from 2000 and 1999 are not comparable for this item.
+• Passenger-kilometers were not collected for heavy vehicles in 2000.
+The changes that may affect comparability with the 1999 results:
+• A new log was developed for survey year 2000 for all heavy vehicles. In 1999 heavy vehicles with gross vehicle
+weights of 4.5 tonnes or more and less than 15 tonnes had a different log than heavy vehicles with gross vehicle
+weights of 15 tonnes or more.
+• The fuel purchased question was attached to each trip for the 2000 survey year for heavy vehicles. Previously it
+was recorded separately from the trips.
+40 Statistics Canada – Catalogue no. 53-223-X
+
+--- PDF page 43 of 43 ---
+
+Appendix I
+Glossary
+Population of interest: the collection of all units (for example, vehicle-days) for which the information is required.
+Survey population: the collection of all units (for example, vehicle-days) for which the information can be realistically
+provided to the survey. The survey population may differ from the population of interest due to the operational
+difficulty of identifying all the units that belong to the population of interest. A list of all units in the survey population
+with their classification information (for example, geographical, vehicle characteristics, date) is used for sample
+design, selection and estimation.
+Stratification: a non-overlapping partition of the survey population into relatively homogeneous groups with respect
+to certain characteristics such as geographical classification, size, etc. These groups are called strata and are used
+for sample allocation and selection.
+Sampling weight: a raising factor is attached to each sampled unit (vehicle-day) to obtain estimates for the
+population from a sample. The basic concept of the sampling weight can be explained by using the representation
+rate. For example, if 2 units are selected out of 10 population units at random, then each selected unit
+represents 5 units in the population including itself, and is given the sampling weight of 5. A survey with a complex
+sample design like CVS requires a more complicated way of calculating the sampling weight. However, the
+sampling weight is still equal to the number of units in the registration lists the sampled unit represents.
+Editing: the application of checks that identify missing, invalid or inconsistent entries or that point to data records
+that are potentially in error. Some of these checks involve logical relationships that follow directly from the concepts
+and definitions. Others are more empirical in nature or are obtained as a result of the application of statistical tests
+or procedures.
+Imputation: the process used to resolve problems of missing, invalid or inconsistent responses identified during
+editing. This is done by changing some of the responses or missing values on the record being edited to ensure that
+a plausible, internally coherent record is created. Some problems are eliminated earlier through contact with the
+respondent or through manual study of the questionnaire. It is generally impossible to resolve all problems at these
+early stages due to concerns of response burden, cost and timeliness. Imputation is then used to handle remaining
+edit failures, since it is desirable to produce a complete and consistent file containing imputed data. Although,
+imputation can improve the quality of the final data by correcting for missing, invalid or inconsistent responses,
+some methods of imputation do not preserve the relationships between variables or can actually distort underlying
+distributions.
+Statistics Canada – Catalogue no. 53-223-X 41

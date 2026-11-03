@@ -1,6 +1,7 @@
 // Page logic: reads the inputs, runs the engine for every province and draws the chart and comparison.
 // All tax rules and amounts live in data/years/<year>/ and src/engine/; nothing here computes tax.
 import years from "virtual:years";
+import type { HistoryMode } from "../engine/history.ts";
 import {
   type BracketLine,
   blank,
@@ -20,6 +21,7 @@ import {
 } from "../engine/index.ts";
 import { ChildcareEditor, childcareComparison } from "./childcare.ts";
 import { DEFAULT_INCOME, spendEst } from "./defaults.ts";
+import { renderHistory } from "./history.ts";
 import { cents, footerNotes, share, tooltips } from "./notes.ts";
 
 const availableYears = Object.keys(years)
@@ -90,6 +92,8 @@ let metric: Metric = "pct",
   adults = 1,
   kids = 0,
   under6 = 0; // under6: children under 6, out of kids
+let historyOpen = false;
+let historyMode: HistoryMode = "real";
 // homeValue and rent keep what was typed in each; tenure picks which one the engine sees (ownedValue, rentPaid).
 let homeValue = 0,
   propOverride: number | null = null,
@@ -98,10 +102,10 @@ let homeValue = 0,
   useCredits = true,
   tab: Tab | null = null; // the open tab, if any
 // Driving: a typed distance or efficiency, or null to use the starting value (the home province's average distance,
-// the national average efficiency). FUEL: the year's data has fuel taxes; without them the Driving tab is hidden.
+// the national average efficiency). The Driving tab is available with fuel or carbon pricing data.
 let kmOverride: number | null = null,
   effOverride: number | null = null;
-let FUEL = F.fuelTax != null && F.driving != null;
+let DRIVING = F.driving != null;
 let TREATY_WH = F.investment.foreignWithholding.usTreaty;
 let sort: Sort = "rate",
   home = "ON",
@@ -143,7 +147,7 @@ const inputs = (withCare = true): Household => ({
   rent: rentPaid(),
   monthlySpending: effSpend(),
   propertyRates: propOverride != null ? { [home]: propOverride } : undefined,
-  driving: FUEL ? { km: kmNow(), lPer100km: effNow() } : undefined,
+  driving: DRIVING ? { km: kmNow(), lPer100km: effNow() } : undefined,
   childcare: withCare ? care.claimInput() : undefined,
 });
 const calc = (p: ProvView) => compute(Y, p.d, inputs());
@@ -177,6 +181,8 @@ function cleanPerson(o: unknown): Person {
 try {
   const s: Record<string, unknown> = JSON.parse(localStorage.getItem("taxcmp") || "{}");
   if (s.v === 3) {
+    if (typeof s.historyOpen === "boolean") historyOpen = s.historyOpen;
+    if (s.historyMode === "nominal") historyMode = "nominal";
     if (Array.isArray(s.people) && s.people.length) people = s.people.slice(0, 2).map(cleanPerson);
     if (s.active === 1 && people.length === 2) active = 1;
     if (typeof s.spouse === "boolean") spouse = s.spouse;
@@ -210,7 +216,7 @@ try {
   }
 } catch {}
 if (dest === home) dest = home === "AB" ? "BC" : "AB";
-if (!FUEL) {
+if (!DRIVING) {
   $("tab-driving").hidden = true;
   if (tab === "driving") tab = null;
 }
@@ -221,6 +227,8 @@ function save() {
       JSON.stringify({
         v: 3,
         year: YEAR,
+        historyOpen,
+        historyMode,
         people,
         active,
         spouse,
@@ -288,10 +296,10 @@ yearSelect.addEventListener("change", () => {
   Y = years[YEAR];
   F = Y.federal;
   P = provinceViews();
-  FUEL = F.fuelTax != null && F.driving != null;
+  DRIVING = F.driving != null;
   TREATY_WH = F.investment.foreignWithholding.usTreaty;
-  $("tab-driving").hidden = !FUEL;
-  if (!FUEL && tab === "driving") tab = null;
+  $("tab-driving").hidden = !DRIVING;
+  if (!DRIVING && tab === "driving") tab = null;
   $("tip").hidden = true;
   renderYearNotes();
   showTab();
@@ -328,7 +336,7 @@ P.forEach(p => {
   const c = document.createElement("li");
   c.className = "col";
   c.id = `col-${p.c}`;
-  c.innerHTML = `<div class="col-plot"><span class="cv"></span><div class="stack"><i class="f"></i><i class="p"></i><i class="y"></i><i class="w"></i><i class="s"></i><i class="h"></i><i class="g"></i></div><i class="ben"></i></div>
+  c.innerHTML = `<div class="col-plot"><span class="cv"></span><div class="stack"><i class="f"></i><i class="p"></i><i class="y"></i><i class="w"></i><i class="s"></i><i class="h"></i><i class="g"></i><i class="c"></i></div><i class="ben"></i></div>
     <div class="code" title="${p.n}">${p.c}${p.qc ? "<sup>†</sup>" : ""}</div><div class="cm"></div><div class="tag"></div>`;
   colsEl.appendChild(c);
 });
@@ -376,9 +384,9 @@ function renderPeople() {
 }
 
 const kMoney = (v: number) => (v >= 1000 ? `$${+(v / 1000).toFixed(v >= 100000 ? 0 : 1)}k` : `$${Math.round(v)}`);
-/** Chart column segments (f = federal, p = provincial, y = payroll, w = withheld, s = sales, h = property, g = fuel)
+/** Chart segments: federal, provincial, payroll, withheld, sales, property, fuel and carbon costs,
  *  and the benefits band. Each is also the segment element's class name. */
-type Seg = "f" | "p" | "y" | "w" | "s" | "h" | "g" | "ben";
+type Seg = "f" | "p" | "y" | "w" | "s" | "h" | "g" | "c" | "ben";
 const SEG_NAMES: Record<Seg, string> = {
   f: "Federal income tax",
   p: "Provincial / territorial income tax",
@@ -387,13 +395,25 @@ const SEG_NAMES: Record<Seg, string> = {
   s: "Sales tax",
   h: "Property tax",
   g: "Fuel tax",
+  c: "Carbon pricing",
   ben: "Benefits and credits",
 };
-const SEG_KEYS: Exclude<Seg, "ben">[] = ["f", "p", "y", "w", "s", "h", "g"];
+const SEG_KEYS: Exclude<Seg, "ben">[] = ["f", "p", "y", "w", "s", "h", "g", "c"];
 const segAmt = (r: Result, c: Seg) =>
-  ({ f: r.fed, p: r.prov, y: r.payroll, w: r.wh, s: r.sales, h: r.property, g: fuelAmt(r), ben: r.benefits })[c];
+  ({
+    f: r.fed,
+    p: r.prov,
+    y: r.payroll,
+    w: r.wh,
+    s: r.sales,
+    h: r.property,
+    g: fuelAmt(r),
+    c: carbonAmt(r),
+    ben: r.benefits,
+  })[c];
 /** Fuel tax a year (0 for a year without fuel data). */
 const fuelAmt = (r: Result) => r.fuel?.total ?? 0;
+const carbonAmt = (r: Result) => r.carbon?.total ?? 0;
 /** "1,458 litres at 11.99¢ a litre: federal 2.99¢, Ontario 9¢" (year averages), for the chart tip and panel. */
 function fuelParts(p: ProvView, r: Result) {
   const f = r.fuel;
@@ -418,6 +438,8 @@ function segTip(p: ProvView, r: Result, c: Seg) {
     sub = `Top ${p.n} bracket reached: ${each(y => rateFmt(y.pr.marg))}`;
     const { surtax, provReductions } = r.breakdown;
     if (surtax > 0.5) sub += `. Includes ${money(surtax)} ${p.n} surtax`;
+    if (p.d.additionalTax)
+      sub += `. Includes temporary deficit reduction levy: ${each(y => money(y.breakdown.provincialLevy))}`;
     if (provReductions > 0.5)
       sub += `. After ${money(provReductions)} of ${p.c === "BC" ? "BC tax reduction" : "Ontario tax reduction and LIFT credit"}`;
   } else if (c === "y") {
@@ -428,6 +450,7 @@ function segTip(p: ProvView, r: Result, c: Seg) {
       t.qpip > 0.5 && `QPIP ${money(t.qpip)}`,
       t.ohp > 0.5 && `Ontario Health Premium ${money(t.ohp)}`,
       t.terr > 0.5 && `${p.n} payroll tax ${money(t.terr)}`,
+      r.breakdown.householdPremium && `B.C. MSP premiums ${money(r.breakdown.householdPremium.total)}`,
     ]
       .filter(Boolean)
       .join(" · ");
@@ -439,6 +462,8 @@ function segTip(p: ProvView, r: Result, c: Seg) {
     sub = `${rateFmt(r.propRate)} on a ${money(ownedValue())} home${p.c === home && propOverride != null ? " (your rate)" : ` (${p.d.propertyTax.city} rate)`}`;
   } else if (c === "g") {
     sub = `${fuelParts(p, r)}, averaged over ${YEAR}`;
+  } else if (c === "c") {
+    sub = `Gasoline ${money(r.carbon?.gasoline ?? 0)} at ${cents(r.carbon?.perLitre ?? 0)} a litre, averaged over ${YEAR}; estimated household heating ${money(r.carbon?.heating ?? 0)}. Cash rebates are included in benefits and credits`;
   } else if (c === "ben") {
     const parts: string[] = [];
     if (r.ccb > 0.5) parts.push(`Canada Child Benefit ${money(r.ccb)}`);
@@ -453,6 +478,15 @@ function segTip(p: ProvView, r: Result, c: Seg) {
 
 const narrow = matchMedia("(max-width: 520px)"); // phone: compact chart labels
 function render() {
+  $("history-view").hidden = !historyOpen;
+  $("province-view").hidden = historyOpen;
+  $("detail").hidden = historyOpen;
+  $("notes").hidden = historyOpen;
+  yearSelect.disabled = historyOpen;
+  $("view-provinces").setAttribute("aria-pressed", String(!historyOpen));
+  $("view-history").setAttribute("aria-pressed", String(historyOpen));
+  $("history-real").setAttribute("aria-pressed", String(historyMode === "real"));
+  $("history-nominal").setAttribute("aria-pressed", String(historyMode === "nominal"));
   // Ask the engine for effective adults, including a spouse with no separate income entry, and for age counts.
   benefitCounts = undefined;
   const base = compute(Y, prov(home).d, inputs(false));
@@ -474,6 +508,7 @@ function render() {
       under6 = counts.under6;
     }
   }
+  if (historyOpen) renderHistory(inputs(), home, historyMode);
   const res: Row[] = P.map(p => ({ p, r: calc(p) }));
   const usd = metric === "usd";
   const val = (r: Result) => (usd ? r.total : r.avg); // net of benefits: what the label shows and sorting uses
@@ -593,6 +628,7 @@ function render() {
   $("legend-sales").hidden = !(effSpend() > 0);
   $("legend-prop").hidden = !(ownedValue() > 0);
   $("legend-fuel").hidden = !res.some(y => fuelAmt(y.r) > 0.5);
+  $("legend-carbon").hidden = !res.some(y => carbonAmt(y.r) > 0.5);
   $("legend-ben").hidden = !anyBen;
   // Refundable credits panel: the home province's credits
   $<HTMLInputElement>("cred-toggle").checked = useCredits;
@@ -658,7 +694,7 @@ function render() {
     ownedValue() > 0 || rentPaid() > 0,
   );
   tabSum("credits", !useCredits ? "off" : kMoney(H.r.refund), useCredits && H.r.refund > 0.5);
-  if (FUEL) renderDriving(H);
+  if (DRIVING) renderDriving(H);
   $("m-pct").setAttribute("aria-pressed", String(metric === "pct"));
   $("m-usd").setAttribute("aria-pressed", String(metric === "usd"));
   care.render(H.r);
@@ -679,7 +715,7 @@ function render() {
 function renderDriving(H: Row) {
   const km = kmNow(),
     eff = effNow(),
-    f = H.r.fuel;
+    drivingTax = fuelAmt(H.r) + (H.r.carbon?.gasoline ?? 0);
   if (document.activeElement !== kmIn) kmIn.value = km.toLocaleString("en-CA");
   kmRange.value = String(Math.min(km, +kmRange.max));
   if (document.activeElement !== effIn) effIn.value = effText(eff);
@@ -692,8 +728,15 @@ function renderDriving(H: Row) {
     effOverride != null ? `Your vehicles (Canadian average is ${effText(defaultEff())})` : "Canadian on-road average";
   $("eff-reset").hidden = effOverride == null;
   $("fuel-sum").textContent =
-    f && f.total > 0.5 ? `${money(f.total)} a year in ${H.p.n}` : km > 0 ? "no fuel bought" : "no driving";
-  tabSum("driving", km > 0 ? `${+(km / 1000).toFixed(1)}k km` : "none", f != null && f.total > 0.5);
+    drivingTax > 0.5
+      ? `${money(drivingTax)} a year in ${H.p.n}`
+      : km > 0
+        ? Y.provinces.some(p => p.carbon)
+          ? "no gasoline tax counted"
+          : "no fuel bought"
+        : "no driving";
+  $("driving-tax-title").textContent = Y.provinces.some(p => p.carbon) ? "Gasoline taxes" : "Fuel tax";
+  tabSum("driving", km > 0 ? `${+(km / 1000).toFixed(1)}k km` : "none", drivingTax > 0.5);
 }
 
 /** An adjustment after bracket tax: [label, amount], negative when it reduces tax. */
@@ -786,6 +829,13 @@ function renderDetail(res: Row[], order: Row[]) {
     row("Provincial / territorial income tax", hr.prov, dr.prov) +
     (any(r => r.wh) ? row("Foreign tax withheld", hr.wh, dr.wh) : "") +
     row(`CPP/QPP, EI &amp; health premiums`, hr.payroll, dr.payroll) +
+    (hr.breakdown.householdPremium || dr.breakdown.householdPremium
+      ? row(
+          "Included B.C. MSP premiums",
+          hr.breakdown.householdPremium?.total ?? 0,
+          dr.breakdown.householdPremium?.total ?? 0,
+        )
+      : "") +
     (effSpend() > 0
       ? row(
           `Sales tax <small class="note">(${prov(home).d.salesTax.label} vs ${prov(dest).d.salesTax.label})</small>`,
@@ -806,6 +856,10 @@ function renderDetail(res: Row[], order: Row[]) {
           fuelAmt(hr),
           fuelAmt(dr),
         )
+      : "") +
+    (any(carbonAmt)
+      ? row("Carbon charge on gasoline", hr.carbon?.gasoline ?? 0, dr.carbon?.gasoline ?? 0) +
+        row("Carbon charge on heating (estimate)", hr.carbon?.heating ?? 0, dr.carbon?.heating ?? 0)
       : "") +
     (kids > 0
       ? row(
@@ -959,6 +1013,7 @@ function ledgerView({ p, r }: Row) {
     [`Less LIFT credit`, -m.lift],
     [`Less BC tax reduction`, -m.bcRed],
     [`Less foreign tax credit`, -m.pFtc],
+    [`Temporary deficit reduction levy`, m.breakdown.provincialLevy],
   ]);
   const payRows = (
     [
@@ -1447,6 +1502,22 @@ $("detail-body").addEventListener("click", e => {
 syncAll();
 syncSpend();
 syncHome();
+$("view-provinces").addEventListener("click", () => {
+  historyOpen = false;
+  render();
+});
+$("view-history").addEventListener("click", () => {
+  historyOpen = true;
+  render();
+});
+$("history-real").addEventListener("click", () => {
+  historyMode = "real";
+  render();
+});
+$("history-nominal").addEventListener("click", () => {
+  historyMode = "nominal";
+  render();
+});
 rentIn.value = rent.toLocaleString("en-CA");
 showTab();
 render();

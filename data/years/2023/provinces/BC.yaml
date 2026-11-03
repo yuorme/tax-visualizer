@@ -41,3 +41,66 @@ sources:
   - {label: "B.C., renter credit historical 2023 threshold", url: https://www2.gov.bc.ca/gov/content/taxes/income-taxes/personal/credits/renters-tax-credit}
   - {label: "B.C., family benefit historical amounts and reduction rates", url: https://www2.gov.bc.ca/gov/content/family-social-supports/affordability/family-benefit}
   - {label: "Vancouver, 2023 residential total rate, council report Appendix A", url: https://council.vancouver.ca/20230510/documents/cfsc1-updatedmay5.pdf}
+  - label: "Carbon history: Statistics Canada, Canadian Vehicle Survey: Annual 2009 (53-223-X)"
+    url: https://www150.statcan.gc.ca/n1/pub/53-223-x/53-223-x2009000-eng.pdf
+  - label: "Carbon history: Statistics Canada 25-10-0060-01 household energy consumption, selected CSV rows"
+    url: https://www150.statcan.gc.ca/n1/tbl/csv/25100060-eng.zip
+  - label: "Carbon history: Natural Gas: A Primer"
+    url: https://natural-resources.canada.ca/energy-sources/fossil-fuels/natural-gas-primer
+  - label: "Carbon history: Climate action tax credit"
+    url: https://www2.gov.bc.ca/gov/content/taxes/income-taxes/personal/credits/climate-action
+  - label: "Carbon history: Climate Action Tax Credit Regulation"
+    url: https://www.bclaws.gov.bc.ca/civix/document/id/complete/statreg/135_2008
+  - label: "Carbon history: Past carbon tax rates"
+    url: https://www2.gov.bc.ca/gov/content/taxes/sales-taxes/motor-fuel-carbon-tax/publications/carbon-tax-rates-by-fuel-type/past-carbon-tax-rates
+
+# Historical driving defaults use a common survey baseline; see cited sources.
+driving:
+  distance: 12900
+  estimated: true
+
+# Calendar-year carbon charges and cash rebates; heating is an explicit modeled estimate.
+carbon:
+  name: BC carbon tax
+  gasoline:
+    - from: 2023-01-01
+      rate: 0.1105
+    - from: 2023-04-01
+      rate: 0.1431
+  heating:
+    amount: 149.98
+    estimated: true
+    method: 2021 Statistics Canada household natural gas and heating oil use averaged across all households; 48.5060 GJ gas and 0.2385 GJ oil, held constant across years; calendar-day rates and applicable heating exemptions. See carbon heating verification.
+  rebates:
+    - program: carbon-rebate-payments
+      name: BC climate action tax credit
+      params:
+        payments:
+          - date: 2023-01-01
+            adult: 212.375
+            spouse: 212.375
+            child: 55.125
+            firstChild: 212.375
+            threshold: [36901, 43051]
+            rate: 0.005
+          - date: 2023-04-01
+            adult: 212.375
+            spouse: 212.375
+            child: 55.125
+            firstChild: 212.375
+            threshold: [36901, 43051]
+            rate: 0.005
+          - date: 2023-07-01
+            adult: 111.75
+            spouse: 55.875
+            child: 27.875
+            firstChild: 55.875
+            threshold: [39115, 50170]
+            rate: 0.005
+          - date: 2023-10-01
+            adult: 111.75
+            spouse: 55.875
+            child: 27.875
+            firstChild: 55.875
+            threshold: [39115, 50170]
+            rate: 0.005

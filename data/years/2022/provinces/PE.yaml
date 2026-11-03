@@ -31,7 +31,68 @@ sources:
   - {label: "PEI Real Property Tax Act sections 4 and 5: rates last amended before 2023", url: https://www.princeedwardisland.ca/sites/default/files/legislation/r-05-real_property_tax_act.pdf}
   - label: Stratford, March 2022 Finance agenda p34 municipal rate comparison
     url: https://stratford.civicweb.net/document/116965
+  - label: "Carbon history: Statistics Canada, Canadian Vehicle Survey: Annual 2009 (53-223-X)"
+    url: https://www150.statcan.gc.ca/n1/pub/53-223-x/53-223-x2009000-eng.pdf
+  - label: "Carbon history: Statistics Canada 25-10-0060-01 household energy consumption, selected CSV rows"
+    url: https://www150.statcan.gc.ca/n1/tbl/csv/25100060-eng.zip
+  - label: "Carbon history: Natural Gas: A Primer"
+    url: https://natural-resources.canada.ca/energy-sources/fossil-fuels/natural-gas-primer
+  - label: "Carbon history: Fuel charge rates"
+    url: https://www.canada.ca/en/revenue-agency/services/forms-publications/publications/fcrates/fuel-charge-rates.html
+  - label: "Carbon history: Department of Finance"
+    url: https://www.princeedwardisland.ca/sites/default/files/publications/cln109-gtn298-noticecarbonlevyratesrevised01april2019.pdf
+  - label: "Carbon history: 2022_CL_Rates_Table_with_differential.xlsx"
+    url: https://www.princeedwardisland.ca/sites/default/files/publications/schedule_of_levy_rates_on_fossil_fuels.pdf
+  - label: "Carbon history: PEI IRAC, July 2023 federal fuel charge transition"
+    url: https://irac.pe.ca/wp-content/uploads/Information-Bulletin-Implementation-of-Clean-Fuel-Standards-July2023.pdf
+  - label: "Carbon history: An Act to Amend the Income Tax Act (No. 3)"
+    url: https://docs.assembly.pe.ca/download/dms?fileName=bill-64.pdf&objectId=1d0b3ad4-988c-4eab-a8a2-7afea3a08bc5
+  - label: "Carbon history: Income Tax Act"
+    url: https://www.princeedwardisland.ca/sites/default/files/legislation/i-01-income_tax_act.pdf
+  - label: "Carbon history: PEI July4,2022 carbon and inflation payment examples — manual facts"
+    url: https://www.princeedwardisland.ca/en/news/islanders-to-receive-inflationary-support-payment-this-week
 childAmount: {perChild: 1200, ages: under6}
 postDividendSurtax:
   program: pei-surtax
   params: {threshold: 12500, rate: 0.1}
+
+# Historical driving defaults use a common survey baseline; see cited sources.
+driving:
+  distance: 15100
+  estimated: true
+
+# Calendar-year carbon charges and cash rebates; heating is an explicit modeled estimate.
+carbon:
+  name: Federal carbon pricing
+  gasoline:
+    - from: 2022-01-01
+      rate: 0.0663
+    - from: 2022-05-09
+      rate: 0.1105
+  heating:
+    amount: 0
+    estimated: true
+    method: 2021 Statistics Canada household natural gas and heating oil use averaged across all households; 0.0000 GJ gas and 35.2661 GJ oil, held constant across years; calendar-day rates and applicable heating exemptions. See carbon heating verification.
+  rebates:
+    - name: PEI carbon rebate
+      program: pei-carbon-rebate-increment
+      params:
+        payments:
+          - date: 2022-07-05
+            weight: 0.25
+            regular:
+              individual: 110
+              spouseOrDependant: 55
+              supplementRate: 0.005
+              supplementFrom: 30000
+              supplementMax: 55
+              threshold: 50000
+              rate: 0.02
+            enhanced:
+              individual: 670
+              spouseOrDependant: 55
+              supplementRate: 0.005
+              supplementFrom: 30000
+              supplementMax: 55
+              threshold: 50000
+              rate: 0.04

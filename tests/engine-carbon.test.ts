@@ -7,6 +7,12 @@ import { blank, carbonCostsOf, carbonRebatesOf, compute, type Household } from "
 
 const fixture = JSON.parse(fs.readFileSync(new URL("./golden/features/carbon.json", import.meta.url), "utf8"));
 const data = loadYear(2025);
+// Keep this prerequisite's original no-carbon baseline independent of the subsequently activated year data.
+delete data.federal.driving;
+for (const p of data.provinces) {
+  delete p.carbon;
+  delete p.driving;
+}
 const base = data.provinces.find(p => p.code === "AB");
 assert.ok(base);
 const province = provinceSchema.parse({

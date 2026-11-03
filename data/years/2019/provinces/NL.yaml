@@ -1,0 +1,95 @@
+# Benefit-year figures use July 2019 to June 2020, applied to current-year income.
+# Child annual amounts are rounded published monthly amounts [33.75,35.83,38.50,41.33] × 12.
+# Temporary deficit levy uses all 18 published taxable-income bands from NL 428 page 5; expired after 2019.
+
+code: NL
+name: Newfoundland and Labrador
+order: 12
+brackets:
+  - [37591, 0.087]
+  - [75181, 0.145]
+  - [134224, 0.158]
+  - [187913, 0.173]
+  - [.inf, 0.183]
+basicPersonalAmount: 9414
+dividendTaxCredit: {eligible: 0.054, nonEligible: 0.035}
+spouseAmount: {max: 7692, threshold: 770}
+lowIncomeReduction:
+  program: nl-low-income-reduction
+  params: {individual: 850, family: 474, rate: 0.16, thresholdIndividual: 20354, thresholdFamily: 34417}
+salesTax: {rate: 0.15, label: 15% HST}
+propertyTax: {rate: 0.0077, city: St. John's}
+childBenefit:
+  name: NL Child Benefit
+  program: nl-child-benefit-reduction
+  params:
+    perChild: [405, 429.96, 462, 495.96]
+    threshold: 17397
+    rate: [0.0507, 0.1045, 0.1622]
+    additionalRate: 0.0619
+  estimated: true
+credits:
+  - name: NL income supplement
+    program: nl-income-supplement
+    params: {base: 220, extraMax: 230, extraRate: 0.046, extraFrom: 15000, couple: 60, child: 200, rate: 0.09, threshold: 40000}
+sources:
+  - {label: "CRA, NL 428 for 2019", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5001-c/5001-c-19e.pdf}
+  - {label: "CRA, NL 428 worksheet for 2019", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5001-d/5001-d-19e.pdf}
+  - {label: "CRA, T 4114-19: July 2019–June 2020 child benefits (official archive)", url: https://publications.gc.ca/collections/collection_2019/arc-cra/Rv1-36-2019-eng.pdf?download=1}
+  - {label: "CRA, GST/HST historical rates and provincial sales-tax rates", url: https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/charge-collect-which-rate/calculator.html}
+  - {label: "NL regulation 60/11, child benefit reduction rates before January 2024", url: https://www.assembly.nl.ca/Legislation/sr/Annualregs/2011/nr110060.htm}
+  - {label: "NL, 2016 income supplement calculation, unchanged until July 2022", url: https://www.budget.gov.nl.ca/budget2016/incomesupplement/Budget%202016%20NL%20Income%20Supplement%20Specifics.pdf}
+  - {label: "St. John's, historic residential mill rates", url: https://www.stjohns.ca/resident-services/property-taxes-assessments/tax-rates/}
+  - label: "Carbon history: Statistics Canada, Canadian Vehicle Survey: Annual 2009 (53-223-X)"
+    url: https://www150.statcan.gc.ca/n1/pub/53-223-x/53-223-x2009000-eng.pdf
+  - label: "Carbon history: Statistics Canada 25-10-0060-01 household energy consumption, selected CSV rows"
+    url: https://www150.statcan.gc.ca/n1/tbl/csv/25100060-eng.zip
+  - label: "Carbon history: Natural Gas: A Primer"
+    url: https://natural-resources.canada.ca/energy-sources/fossil-fuels/natural-gas-primer
+  - label: "Carbon history: Fuel charge rates"
+    url: https://www.canada.ca/en/revenue-agency/services/forms-publications/publications/fcrates/fuel-charge-rates.html
+  - label: "Carbon history: News Releases"
+    url: https://www.gov.nl.ca/releases/2018/mae/1023n01/
+  - label: "Carbon history: DEPARTMENT OF FINANCE"
+    url: https://www.gov.nl.ca/fin/files/Gasoline-and-Carbon-Products-Information-Bulletin-RAA-CARBON-002-November-7-2020.pdf
+  - label: "Carbon history: Finance"
+    url: https://www.gov.nl.ca/fin/tax-programs-incentives/personal/carbontax/
+  - label: "Carbon history: Newfoundland and Labrador"
+    url: https://www.assembly.nl.ca/business/electronicdocuments/PUBAnnualReport2023-24.pdf
+additionalTax:
+  program: nl-deficit-reduction-levy
+  params:
+    bands:
+      - [50000, 0, 0.1, 100]
+      - [55000, 100, 0.1, 200]
+      - [60000, 200, 0.1, 300]
+      - [65000, 300, 0.1, 400]
+      - [70000, 400, 0.1, 500]
+      - [75000, 500, 0.1, 600]
+      - [80000, 600, 0.1, 700]
+      - [100000, 700, 0.1, 800]
+      - [125000, 800, 0.1, 900]
+      - [175000, 900, 0.1, 1000]
+      - [250000, 1000, 0.1, 1100]
+      - [300000, 1100, 0.1, 1200]
+      - [350000, 1200, 0.1, 1300]
+      - [400000, 1300, 0.1, 1400]
+      - [450000, 1400, 0.1, 1500]
+      - [500000, 1500, 0.1, 1600]
+      - [550000, 1600, 0.1, 1700]
+      - [600000, 1700, 0.1, 1800]
+
+# Historical driving defaults use a common survey baseline; see cited sources.
+driving:
+  distance: 15100
+  estimated: true
+
+# Calendar-year carbon charges and cash rebates; heating is an explicit modeled estimate.
+carbon:
+  name: Federal carbon pricing
+  gasoline: 0.0442
+  heating:
+    amount: 0
+    estimated: true
+    method: 2021 Statistics Canada household natural gas and heating oil use averaged across all households; 0.0000 GJ gas and 14.2665 GJ oil, held constant across years; calendar-day rates and applicable heating exemptions. See carbon heating verification.
+  rebates: []

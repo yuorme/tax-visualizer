@@ -56,3 +56,10 @@ sources:
   - {label: "Revenu Québec, 2025 tax rates", url: "https://www.revenuquebec.ca/en/citizens/income-tax-return/completing-your-income-tax-return/income-tax-rates/"}
   - {label: "CGTSIM, Understanding school tax (Montreal school tax is billed separately by the CGTSIM)", url: "https://www.cgtsim.qc.ca/en/understanding-school-tax/"}
   - {label: "nesto, Canada Property Tax Guide 2026 (residential property tax rate, carried over to 2025)", url: "https://www.nesto.ca/mortgage-basics/property-taxes-canada-highest-to-lowest/"}
+  - label: "Carbon history: Statistics Canada, Canadian Vehicle Survey: Annual 2009 (53-223-X)"
+    url: https://www150.statcan.gc.ca/n1/pub/53-223-x/53-223-x2009000-eng.pdf
+
+# Historical driving defaults use a common survey baseline; see cited sources.
+driving:
+  distance: 14800
+  estimated: true

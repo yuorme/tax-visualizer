@@ -14,13 +14,28 @@ const render = (y: YearData) => [footerNotes(y, page), ...Object.values(tooltips
 const html = fs.readFileSync(new URL("../src/ui/index.html", import.meta.url), "utf8");
 const noteKeys = [...html.matchAll(/data-note="([^"]+)"/g)].map(m => m[1]);
 
-test("flat federal basic personal amounts render without a fictitious federal phase-out", () => {
-  const y = structuredClone(loadYear(2025));
-  y.federal.basicPersonalAmount = 12069;
-  const text = render(y);
-  assert.match(text, /\$12,069 federally/);
+test("2019 notes describe the historical benefits, levy, MSP premiums and flat personal amount", () => {
+  const text = render(loadYear(2019));
   assert.match(text, /is \$12,069 at every income/);
-  assert.doesNotMatch(text, /federal amount[^.]*drops from/);
+  assert.match(text, /Alberta pays separate child and employment benefits/);
+  assert.match(text, /Each positive component has its own \$10 annual minimum/);
+  assert.match(text, /ordered maximum amounts \$2,472, \$1,735, \$1,735 and \$1,852/);
+  assert.match(text, /early childhood tax benefit pays \$660 annually only for children under six/);
+  assert.match(text, /Nova Scotia pays annual amounts of \$625, \$825 and \$900/);
+  assert.match(text, /temporary deficit reduction levy is added after provincial credits/);
+  assert.match(text, /MSP premiums are assessed per adult on family net income/);
+  assert.match(text, /adding back 50% of claimed childcare deductions/);
+  assert.doesNotMatch(text, /NaN|undefined/);
+});
+
+test("2020 notes distinguish BC's young-child and all-child periods", () => {
+  const text = render(loadYear(2020));
+  assert.match(text, /early childhood benefit covers 3 months for children under six/);
+  assert.match(text, /reduced by 1.32% per child on family income above \$100,000/);
+  assert.match(text, /child opportunity benefit covers 9 months for all children under 18/);
+  assert.match(text, /Household ages are held fixed across both periods/);
+  assert.match(text, /20% of rent paid for renters, capped at \$700/);
+  assert.doesNotMatch(text, /school tax rebate \(0%/);
 });
 
 test("2021 notes explain ordered NS child amounts and MB's rental share before its cap", () => {
@@ -44,6 +59,15 @@ test("2022 notes explain BC's separate periods and omit the later renter credit"
   assert.match(text, /Each period applies its own income reduction, minimum and zero floor/);
   assert.doesNotMatch(text, /B.C.'s renter's tax credit/);
   assert.match(text, /the published straight-line taper to \$80,000/);
+});
+
+test("flat federal basic personal amounts render without a fictitious federal phase-out", () => {
+  const y = structuredClone(loadYear(2025));
+  y.federal.basicPersonalAmount = 12069;
+  const text = render(y);
+  assert.match(text, /\$12,069 federally/);
+  assert.match(text, /is \$12,069 at every income/);
+  assert.doesNotMatch(text, /federal amount[^.]*drops from/);
 });
 
 test("2023 notes describe PEI surtax and separate NL periods without later programs", () => {

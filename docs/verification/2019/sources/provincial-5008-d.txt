@@ -1,0 +1,207 @@
+Title: Worksheet SK428
+URL: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5008-d/5008-d-19e.pdf
+Fetched: 2026-11-02
+SHA-256 of the original: 731ccb9c39655446495b4819228271d4447a0c5acdc1597d9fd3765b7fe1e633
+Publication date modified: 2019-11-21
+PDF pages: all 3
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 1 of 3 ---
+
+2019
+Protected B when completed
+Worksheet SK428
+Use this worksheet to calculate the amounts to enter on your Form SK428, Saskatchewan Tax and Credits.
+Keep this worksheet for your records. Do not attach it to your return.
+Line 58080 – Age amount (if born in 1954 or earlier)
+If the amount from line 23600 of your return is:
+• $36,430 or less, enter $4,894 on line 58080 of your Form SK428
+• more than $36,430 but not more than $69,057, complete the calculation below
+• more than $69,057, enter "0" on line 58080 of your Form SK428
+1Maximum amount
+2Amount from line 23600 of your return
+3Income threshold –
+4Line 2 minus line 3 (if negative, enter "0") =
+5Applicable rate ×
+6Multiply line 4 by line 5. =
+Ż –
+7Line 1 minus line 6 (if negative, enter "0") =
+Enter this amount on line 58080 of your Form SK428.
+Line 58200 – Amount for infirm dependants age 18 or older
+Complete one column for each dependant. If you have more than three dependants, use a separate sheet of paper.
+Dependant 1
+1Base amount
+2Dependant's net income from line 23600 of their return –
+3
+Line 1 minus line 2 (if negative, enter "0")
+(maximum $9,464 per dependant) =
+4
+Amount claimed for this dependant on line 58160
+of your Form SK428, if any –
+5
+Allowable amount for this dependant:
+line 3 minus line 4 (if negative, enter "0") =
+Dependant 2
+1
+2–
+3=
+4–
+5=
+Dependant 3
+1
+2–
+3=
+4–
+5=
+6Add the amounts from line 5 for columns 1, 2, and 3 (and others, if any).
+Enter the total on line 58200 of your Form SK428.
+Line 58400 – Caregiver amount
+Complete one column for each dependant. If you have more than three dependants, use a separate sheet of paper.
+Dependant 1
+1Base amount
+2Dependant's net income from line 23600 of their return –
+3
+Line 1 minus line 2 (if negative, enter "0")
+(maximum $9,464 per dependant) =
+4
+Amount claimed for this dependant on line 58160
+of your Form SK428, if any –
+5
+Allowable amount for this dependant:
+line 3 minus line 4 (if negative, enter "0") =
+Dependant 2
+1
+2–
+3=
+4–
+5=
+Dependant 3
+1
+2–
+3=
+4–
+5=
+6Add the amounts from line 5 for columns 1, 2, and 3 (and others, if any).
+Enter the total on line 58400 of your Form SK428.
+5008-D (Ce formulaire est disponible en français.)
+4,894.00
+36,430.00
+15%
+16,179.00 16,179.00 16,179.00
+25,628.00 25,628.00 25,628.00
+
+--- PDF page 2 of 3 ---
+
+Protected B when completed
+Worksheet SK428 (continued)
+Line 58440 – Disability amount (for self)
+Complete the following calculation if you were under 18 years of age on December 31, 2019:
+1Base amount
+2Maximum amount
+3
+Total child care and attendant care expenses for you
+claimed by you or another person
+4Threshold for child and attendant care expenses –
+5Line 3 minus line 4 (if negative, enter "0") =
+Ż –
+6Line 2 minus line 5 (if negative, enter "0") =
+Ż +
+7Add lines 1 and 6. (maximum $18,928) =
+Enter this amount on line 58440 of your Form SK428.
+Line 58480 – Disability amount transferred from a dependant
+Complete this calculation for each dependant. If you have more than one dependant, use a separate sheet of paper.
+Note: If you and your dependant were not residents of the same province or territory at the end of the year, special rules
+may apply. Contact the Canada Revenue Agency to find out how much you can claim.
+1Base amount
+If the dependant was under 18 years of age on December 31, 2019, complete lines 2 to 12.
+If the dependant was 18 years of age or older, enter "0" on line 6 and continue on line 7.
+2Maximum amount
+3
+Total child care and attendant care expenses for this
+dependant claimed by you or another person
+4Threshold for child and attendant care expenses –
+5Line 3 minus line 4 (if negative, enter "0") =
+Ż –
+6Line 2 minus line 5 (if negative, enter "0") =
+Ż +
+7Add lines 1 and 6. (maximum $18,928) =
+8Total of amounts your dependant can claim on lines 9 to 19 of their Form SK428 +
+9Add lines 7 and 8. =
+10Dependant's taxable income from line 26000 of their return –
+11Line 9 minus line 10 (if negative, enter "0") =
+12
+Allowable amount for this dependant:
+Enter the amount from line 7 or line 11, whichever is less
+Enter on line 58480 of your Form SK428 the total of allowable amounts claimed for all dependants.
+5008-D
+9,464.00
+9,464.00
+2,772.00
+9,464.00
+9,464.00
+2,772.00
+
+--- PDF page 3 of 3 ---
+
+Protected B when completed
+Worksheet SK428 (continued)
+Line 61520 – Saskatchewan dividend tax credit
+Calculate the amount to enter on line 61520 of your Form SK428 by completing one of the following calculations:
+• If you entered an amount on line 12000 of your return but no amount on line 12010:
+Amount from line 12000 of your return × 11% =
+Enter this amount on line 61520 of your Form SK428.
+• If you entered an amount on lines 12000 and 12010 of your return:
+1Amount from line 12000 of your return
+32Amount from line 12010 of your return – × 3.362% =
+54Line 1 minus line 2 = × 11% = +
+6Add lines 3 and 5. =
+Enter this amount on line 61520 of your Form SK428.
+Line 63 – Political contribution tax credit
+If your total political contributions from line 62 of Form SK428 are more than $1,275, enter $650 on line 63 of your Form SK428.
+If not, use the amount from line 62 to decide which column to complete.
+Line 62 is
+$400 or less
+Enter your total contributions from line 62 of
+your Form SK428.
+–
+Line 1 minus line 2 (cannot be negative) =
+×
+Multiply line 3 by line 4. =
++
+Add lines 5 and 6. =
+Line 62 is
+more than $400 but
+not more than $750
+–
+=
+×
+=
++
+=
+Line 62 is
+more than $750
+–
+=
+×
+=
++
+=
+1
+2
+3
+4
+5
+6
+7
+Enter this amount on line 63 of your Form SK428.
+5008-D
+0.00
+75%
+0.00
+400.00
+50%
+300.00
+750.00
+33.33%
+475.00

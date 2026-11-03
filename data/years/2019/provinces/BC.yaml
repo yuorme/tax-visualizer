@@ -1,0 +1,121 @@
+# Benefit-year figures use July 2019 to June 2020, applied to current-year income.
+# The early-childhood benefit pays only children under six; opportunity benefit began October 2020.
+# Vancouver official Appendix A total residential 2.56116 mills /1000; additional high-value school surtax excluded.
+# MSP assumes full-year enrolled residents eligible for regular premium assistance, using current-year family net income.
+# Annual per-adult premiums are statutory monthly [0,11.50,17.50,23,28,32.50,37.50] ×12.
+# Spouse and child deductions are 3000 each; half the child-care deduction is added back to family net income.
+# MSP age 65/disability/student exemptions follow the model scope: under 65 adults, children under 18, no disability inputs.
+
+code: BC
+name: British Columbia
+order: 0
+brackets:
+  - [40707, 0.0506]
+  - [81416, 0.077]
+  - [93476, 0.105]
+  - [113506, 0.1229]
+  - [153900, 0.147]
+  - [.inf, 0.168]
+basicPersonalAmount: 10682
+dividendTaxCredit: {eligible: 0.12, nonEligible: 0.0196}
+spouseAmount: {max: 9147, threshold: 915}
+bcTaxReduction: {max: 464, rate: 0.0356, threshold: 20668}
+salesTax: {rate: 0.12, label: 5% GST + 7% PST}
+propertyTax: {rate: 0.00256116, city: Vancouver}
+childBenefit:
+  name: B.C. early childhood tax benefit
+  program: bc-early-childhood-benefit
+  params: {perChild: 660, threshold: 100000, rate: 0.0132}
+sources:
+  - {label: "CRA, BC 428 for 2019", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5010-c/5010-c-19e.pdf}
+  - {label: "CRA, BC 428 worksheet for 2019", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5010-d/5010-d-19e.pdf}
+  - {label: "CRA, T 4114-19: July 2019–June 2020 child benefits (official archive)", url: https://publications.gc.ca/collections/collection_2019/arc-cra/Rv1-36-2019-eng.pdf?download=1}
+  - {label: "CRA, GST/HST historical rates and provincial sales-tax rates", url: https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/charge-collect-which-rate/calculator.html}
+  - {label: "Vancouver, 2019 residential property-tax rates (manual official PDF web extract)", url: https://council.vancouver.ca/20190514/documents/a3.pdf}
+  - {label: "B.C. Income Tax Act sections 13.07/13.071: early childhood formula and October 2020 transition", url: https://www.bclaws.gov.bc.ca/civix/document/id/complete/statreg/96215_01}
+  - {label: "B.C., early childhood benefit ended September 2020", url: https://www2.gov.bc.ca/gov/content/family-social-supports/affordability/early-childhood}
+  - {label: "B.C. archived Medical and Health Care Services Regulation, sections 7.6–11", url: https://www.bclaws.gov.bc.ca/civix/document/id/loo103/loo103/426_97}
+  - {label: "B.C. MSP group guide, explicit 2018–2019 premium table", url: https://www2.gov.bc.ca/assets/gov/health/practitioner-pro/medical-services-plan/group-procedure-guide.pdf}
+  - {label: "B.C. MSP group administrator FAQ, spouse and child deductions", url: https://www2.gov.bc.ca/assets/gov/health/health-drug-coverage/medical-services-plan/group-plan-administrators-faqs.pdf}
+  - label: "Carbon history: Statistics Canada, Canadian Vehicle Survey: Annual 2009 (53-223-X)"
+    url: https://www150.statcan.gc.ca/n1/pub/53-223-x/53-223-x2009000-eng.pdf
+  - label: "Carbon history: Statistics Canada 25-10-0060-01 household energy consumption, selected CSV rows"
+    url: https://www150.statcan.gc.ca/n1/tbl/csv/25100060-eng.zip
+  - label: "Carbon history: Natural Gas: A Primer"
+    url: https://natural-resources.canada.ca/energy-sources/fossil-fuels/natural-gas-primer
+  - label: "Carbon history: Climate action tax credit"
+    url: https://www2.gov.bc.ca/gov/content/taxes/income-taxes/personal/credits/climate-action
+  - label: "Carbon history: Climate Action Tax Credit Regulation"
+    url: https://www.bclaws.gov.bc.ca/civix/document/id/complete/statreg/135_2008
+  - label: "Carbon history: Past carbon tax rates"
+    url: https://www2.gov.bc.ca/gov/content/taxes/sales-taxes/motor-fuel-carbon-tax/publications/carbon-tax-rates-by-fuel-type/past-carbon-tax-rates
+  - label: "Carbon history: BC 2018 carbon-tax rates in the 2017 Budget Measures Implementation Act"
+    url: https://www.bclaws.gov.bc.ca/civix/document/id/lc/billsprevious/2nd41st%3Agov02-3
+  - label: "Carbon history: Budget and Fiscal Plan - Budget 2017 September Update"
+    url: https://bcbudget.gov.bc.ca/2017_sept_update/bfp/2017_sept_update_budget_and_fiscal_plan.pdf
+householdPremium:
+  program: bc-msp-premiums
+  estimated: true
+  params:
+    spouseDeduction: 3000
+    childDeduction: 3000
+    childcareAddbackRate: 0.5
+    bands:
+      - [26000, 0]
+      - [28000, 138]
+      - [30000, 210]
+      - [34000, 276]
+      - [38000, 336]
+      - [42000, 390]
+      - [.inf, 450]
+
+# Historical driving defaults use a common survey baseline; see cited sources.
+driving:
+  distance: 12900
+  estimated: true
+
+# Calendar-year carbon charges and cash rebates; heating is an explicit modeled estimate.
+carbon:
+  name: BC carbon tax
+  gasoline:
+    - from: 2019-01-01
+      rate: 0.0778
+    - from: 2019-04-01
+      rate: 0.0889
+  heating:
+    amount: 94.02
+    estimated: true
+    method: 2021 Statistics Canada household natural gas and heating oil use averaged across all households; 48.5060 GJ gas and 0.2385 GJ oil, held constant across years; calendar-day rates and applicable heating exemptions. See carbon heating verification.
+  rebates:
+    - program: carbon-rebate-payments
+      name: BC climate action tax credit
+      params:
+        payments:
+          - date: 2019-01-01
+            adult: 33.75
+            spouse: 33.75
+            child: 10
+            firstChild: 33.75
+            threshold: [33993, 39658]
+            rate: 0.005
+          - date: 2019-04-01
+            adult: 33.75
+            spouse: 33.75
+            child: 10
+            firstChild: 33.75
+            threshold: [33993, 39658]
+            rate: 0.005
+          - date: 2019-07-01
+            adult: 38.625
+            spouse: 38.625
+            child: 11.375
+            firstChild: 38.625
+            threshold: [34876, 40689]
+            rate: 0.005
+          - date: 2019-10-01
+            adult: 38.625
+            spouse: 38.625
+            child: 11.375
+            firstChild: 38.625
+            threshold: [34876, 40689]
+            rate: 0.005

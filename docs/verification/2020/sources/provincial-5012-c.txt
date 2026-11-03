@@ -1,0 +1,183 @@
+Title: Northwest Territories Tax
+URL: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5012-c/5012-c-20e.pdf
+Fetched: 2026-11-02
+SHA-256 of the original: ce865fe8dc0cc9ea996d2adfaf222a6ae93736a376fccc670d86d1f70b7e7c5b
+Publication date modified: 2020-10-29
+PDF pages: all 3
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 1 of 3 ---
+
+Form NT428
+2020
+Protected B when completed
+Northwest Territories Tax
+Part A – Northwest Territories tax on taxable income
+1Enter your taxable income from line 26000 of your return.
+Use the amount from line 1 to decide which column to complete.
+Line 1 is
+$43,957 or less
+Amount from line 1
+–
+Line 2 minus line 3 (cannot be negative) =
+×Line 4 multiplied by the percentage
+from line 5 =
++
+Northwest Territories tax
+on taxable income
+Line 6 plus line 7
+=
+Line 1 is more than
+$43,957 but not
+more than $87,916
+–
+=
+×
+=
++
+=
+Line 1 is more than
+$87,916 but not
+more than $142,932
+–
+=
+×
+=
++
+=
+Line 1 is more
+than $142,932
+–
+=
+×
+=
++
+=
+2
+3
+4
+5
+6
+7
+8
+Enter the amount from line 8 on line 49 and continue at line 9.
+Part B – Northwest Territories non-refundable tax credits 56100Internal use
+58040 9Basic personal amount Claim $15,093
+58080 10Age amount (if born in 1955 or earlier) (use Worksheet NT428) (maximum $7,382) +
+Spouse or common-law partner amount:
+11Base amount
+12
+Your spouse's or common-law partner's net income
+from line 23600 of their return –
+58120 13Line 11 minus line 12 (if negative, enter "0") =
+Ż +
+Amount for an eligible dependant:
+14Base amount
+15Your eligible dependant's net income from line 23600 of their return –
+58160 16Line 14 minus line 15 (if negative, enter "0") =
+Ż +
+58200 17Amount for infirm dependants age 18 or older (use Worksheet NT428) +
+18Add lines 9, 10, 13, 16, and 17. =
+CPP or QPP contributions:
+58240 19Amount from line 30800 of your return + •
+58280 20Amount from line 31000 of your return + •
+Employment insurance premiums:
+58300 21Amount from line 31200 of your return + •
+58305 22Amount from line 31217 of your return + •
+23Add lines 19 to 22. =
+Ż +
+24Line 18 plus line 23 =
+Continue on the next page.
+5012-C E (20) (Ce formulaire est disponible en français.) Page 1 of 3
+0.00
+5.9%
+0.00
+43,957.00
+8.6%
+2,593.00
+87,916.00
+12.2%
+6,374.00
+142,932.00
+14.05%
+13,086.00
+15,093.00
+15,093.00
+
+--- PDF page 2 of 3 ---
+
+Protected B when completed
+Part B – Northwest Territories non-refundable tax credits (continued)
+25Amount from line 24 of the previous page
+58360 26Pension income amount (maximum $1,000) +
+58400 27Caregiver amount (use Worksheet NT428) +
+28Add lines 25 to 27. =
+58440 29
+Disability amount for self
+(claim $12,239, or if you were under 18 years of age, use Worksheet NT428) +
+58480 30Disability amount transferred from a dependant (use Worksheet NT428) +
+31Add lines 28 to 30. =
+58520 32Interest paid on your student loans (amount from line 31900 of your return) +
+58560 33Your tuition and education amounts (attach Schedule NT(S11)) +
+58600 34Tuition and education amounts transferred from a child +
+58640 35Amounts transferred from your spouse or common-law partner (attach Schedule NT(S2)) +
+36Add lines 31 to 35. =
+Medical expenses:
+58689 37Amount from line 33099 of your return
+38
+Enter whichever is less:
+$2,397 or 3% of the amount on line 23600 of your return –
+39Line 37 minus line 38 (if negative, enter "0") =
+58729 40
+Allowable amount of medical expenses for other dependants
+(use Worksheet NT428) +
+58769 41Line 39 plus line 40 =
+Ż +
+58800 42Line 36 plus line 41 =
+43Northwest Territories non-refundable tax credit rate ×
+58840 44Line 42 multiplied by the percentage from line 43 =
+Donations and gifts:
+45
+Amount from line 17 of your federal
+Schedule 9 × 5.9% =
+46
+Amount from line 18 of your federal
+Schedule 9 × 14.05% = +
+58969 47Line 45 plus line 46 =
+Ż +
+61500 48Northwest Territories non-refundable tax credits
+Line 44 plus line 47
+Enter this amount on line 52. =
+Continue on the next page.
+5012-C E (20) Page 2 of 3
+5.9%
+
+--- PDF page 3 of 3 ---
+
+Protected B when completed
+Part C – Northwest Territories tax
+49Northwest Territories tax on taxable income from line 8
+61510 50Northwest Territories tax on split income (complete Form T1206) + •
+51Line 49 plus line 50 =
+52Northwest Territories non-refundable tax credits from line 48
+61520 53Northwest Territories dividend tax credit (use Worksheet NT428) + •
+61540 54
+Northwest Territories minimum tax carryover:
+Amount from line 40427 of your return × 45% = + •
+55Add lines 52 to 54. =
+Ż –
+56Line 51 minus line 55 (if negative, enter "0") =
+57
+Northwest Territories additional tax for minimum tax purposes:
+Amount from line 120 of Form T691 × 45% = +
+58Line 56 plus line 57 =
+59Territorial foreign tax credit (complete Form T2036) –
+60Line 58 minus line 59 (if negative, enter "0") =
+62550 61Northwest Territories political contributions made in 2020
+62Northwest Territories political contribution tax credit (use Worksheet NT428) (maximum $500) –
+63Northwest Territories tax
+Line 60 minus line 62 (if negative, enter "0")
+Enter this amount on line 42800 of your return. =
+See the privacy notice on your return.
+5012-C E (20) Page 3 of 3

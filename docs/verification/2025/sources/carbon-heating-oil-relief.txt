@@ -1,0 +1,73 @@
+Title: Lowering energy bills for Canadians across the country
+URL: https://www.canada.ca/en/department-finance/news/2023/10/lowering-energy-bills-for-canadians-across-the-country.html
+Fetched: 2026-11-02
+SHA-256 of the original: 705d9056b3dcc02f83260d1f1715e82c4948134d3bd255165be3bf408e0b8e36
+Publication date modified: 2023-11-03
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+# Lowering energy bills for Canadians across the country
+
+From: Department of Finance Canada
+
+## Backgrounder
+
+In order to provide more time and financial support for the roughly 1.1 million homes in Canada using home heating oil, to switch to heat pumps, the government announced that it proposes to temporarily pause the application of the fuel charge on deliveries of heating oil, in all jurisdictions where it currently applies, for a three-year period.
+
+On October 26, 2023, the Prime Minister announced a series of new measures to lower energy bills for Canadians, and to provide more time and new support to help Canadians to transition to cleaner, more affordable home heating options. These measures include:
+
+- Temporarily pausing the fuel charge on deliveries of heating oil in all provinces and territories where it currently applies, effective November 9, 2023;
+- Doubling the rural top-up for pollution pricing rebates (Climate Action Incentive payments) from 10 per cent to 20 per cent, with increased payments to rural residents starting in April 2024;
+- Making the average heat pump free for low- to median-income Canadians in provinces and territories that have agreed to support the delivery of enhanced federal heat pump grants; and,
+- Incentivizing the switch to heat pumps with $250 upfront payments for low- to median-income Canadians.
+
+Pausing the Fuel Charge on Deliveries of Heating Oil
+
+In order to provide more time and financial support for the roughly 1.1 million homes in Canada using home heating oil, to switch to heat pumps, the government announced that it proposes to temporarily pause the application of the fuel charge on deliveries of heating oil, in all jurisdictions where it currently applies, for a three-year period.
+
+Heating oil costs and usage vary according to household size, the severity of cold weather, and whether a home is exclusively heated by oil or through a dual system. On average in Canada, a home that heats with oil will use 1,350 litres over a heating season. In Atlantic Canada, the average consumption can be up to 1,500 litres. Oil-heated homes in Canada can expect to spend $2,100 to $3,000 per year on heating fuel, not including the cost of the fuel charge on light fuel oil used for heating.
+
+The federal government’s fuel charge pause will save the average Atlantic Canadian household, using 1,500 litres of home heating oil, about $261 this year.
+
+Under the Greenhouse Gas Pollution Pricing Act (GGPPA), a registered distributor generally pays the fuel charge upon delivery to another person that is not a registered distributor. For 2023-24, the fuel charge applies to light fuel oil at a rate of $0.1738 per litre.
+
+To implement the pause, the government intends that the fuel charge would not be payable by registered distributors on light fuel oil that is delivered exclusively for use in providing heat to a home, building or similar structure. This relief is currently proposed to apply in all provinces where the fuel charge applies until the end of 2026-27. The exemption will apply upfront without the need for an exemption certificate.
+
+Specifically, it is proposed that no fuel charge be payable in respect of light fuel oil that is delivered by a registered distributor in respect of light fuel oil to a person if:
+
+- the light fuel oil is for use exclusively in eligible heating activities;
+- the person receiving delivery is not a registered distributor in respect of light fuel oil; and,
+- the fuel is delivered on or after November 9, 2023, and before April 1, 2027.
+
+Eligible heating activities are proposed to mean the use of light fuel oil exclusively for providing heat to a home, building or similar structure, but not for generating heat in an industrial process, such as processes that involve removing moisture from goods.
+
+It is also proposed that registration rules for registered distributors be expanded to include a person that carries on the business of selling, delivering, or distributing light fuel oil and, in the ordinary course of that business, delivers in a listed province light fuel oil that is for use in eligible heating activities.
+
+Other rules, in line with existing provisions in the GGPPA, are also proposed to ensure that the temporary removal of the fuel charge applies in the manner intended. These proposed rules would include diversion charges for exempt light fuel oil that is subsequently used in a manner otherwise than in eligible heating activities or delivered to another person. These proposed rules would also include provisions to ensure that light fuel oil, which is held by a person on an adjustment day that is on or before April 1, 2027, is not subject to an inventory charge if the fuel is held by the person for use exclusively in eligible heating activities. Complete draft regulatory proposals will be posted on the Department of Finance website in the coming days.
+
+Doubling the Rural Top-Up for Pollution Pricing Rebates
+
+To provide increased support for Canadians in rural and small communities, the government also announced it intends to double the rural top-up rate (also known as the rural supplement) for pollution pricing rebates (Climate Action Incentive payments) from 10 per cent to 20 per cent, in recognition of rural Canadians’ increased energy needs and limited access to clean transportation. Rural residents will receive their first increased payment starting in April 2024 and the increase will apply in all years going forward.
+
+All direct proceeds from the federal fuel charge are returned to the jurisdiction in which they were collected. For those provinces that do not meet the federal stringency requirements in 2023-24 — Ontario, Nova Scotia, New Brunswick, Manitoba, Prince Edward Island, Saskatchewan, Alberta, and Newfoundland and Labrador—the majority of proceeds from the federal fuel charge are returned to residents of those provinces through pollution pricing rebates.
+
+To be eligible for the rural top-up, an individual must reside outside a Census Metropolitan Area (CMA) based on the most recent Census published by Statistics Canada before the taxation year.
+
+To ensure that all those who are residing in a community that has previously been eligible for the rural top-up remain eligible going forward, the government also intends to continue using the CMA determinations based on the 2016 Census for the 2024-25 and 2025-26 fiscal years.
+
+Making Heat Pumps Free by Strengthening the Oil to Heat Pump Affordability Program
+
+Nearly 30 per cent of households in Atlantic Canada currently use home heating oil, compared to just 8 per cent in the rest of Canada. This means Atlantic Canada accounts for almost 25 per cent of all Canadian homes heated with oil, despite the region being home to only 6 per cent of the total Canadian population.
+
+That is why the government announced that new supports to cover the cost of the average heat pump installation will begin rolling out in Atlantic Canadian provinces that have agreed to joint federal-provincial delivery of Oil to Heat Pump Affordability programs, with potential to expand to other provinces and territories that agree to support the delivery of the enhanced federal program. This support will help households with low- to median-incomes move away from heating oil and switch to an electric heat pump to heat, and also cool, their homes by:
+
+- Making the average heat pump free for at or below median-income households by increasing Oil to Heat Pump Affordability grants up to $15,000, from the current maximum of $10,000. The additional $5,000 for homeowners who install a heat pump will match provincial and territorial contributions via co-delivery programs.
+- Upfront payments of $250 for at or below median-income households that use heating oil and sign up to switch to a heat pump through a joint federal-provincial government program.
+
+By covering the average cost for households to switch from heating oil to heat pumps, it is now free for those who need it most to benefit from more affordable, cleaner heating options that will save Canadians money on their energy bills for years to come. The federal government will continue working with all provinces and territories to explore further options to lower the cost of energy bills for all Canadians, while also lowering emissions and fighting climate change.
+
+## Associated link
+
+- November 3, 2023: Draft Regulations Amending the Fuel Charge Regulations
+
+Search for related information by keyword: Public finance | Department of Finance Canada | Canada | Money and finances | general public | backgrounders

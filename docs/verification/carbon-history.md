@@ -8,6 +8,11 @@ payments. Household composition and income are held fixed, following the model's
 Provincial income tests use modeled current income; individual filing dates and arrears are not reconstructed.
 The reference-city location determines rural eligibility, as for property and regional fuel tax.
 
+In historical data records, the first day of a payment month identifies the payment period; it does not assert
+the exact bank deposit date. Pre-quarterly CAI payments use April as the normal tax-return filing season.
+Statutory annual BC amounts are divided by four before income testing, retaining fractional cents until final
+display rather than summing rounded illustrations. Enhanced payments are tested separately.
+
 Heating is a sourced, explicitly estimated household amount. It does not change with driving or household size.
 Indirect carbon costs embedded in goods or electricity are excluded. Quebec cap-and-trade remains excluded.
 
@@ -33,4 +38,7 @@ Official sources are cached in `2025/sources/carbon-federal-rates.txt` and `carb
   $100 - 1% × $5,000 = $50. A couple and a single parent with one child each receive $150 without reduction;
   a single parent with two children receives $175. This isolates the family threshold and first-child substitution.
 
-Existing-year data is not yet activated by this prerequisite. No existing golden expectations are changed.
+The original engine prerequisite leaves existing-year data and goldens unchanged. The subsequent activation
+adds sourced 2019–2025 data and separate [published references](carbon-reference.md). Its affected historical
+snapshots are reconciled against independently calculated carbon-only deltas; unrelated fields, Quebec and
+all 2026 snapshots are preserved. See the activation audit for exact affected cases and before/after values.

@@ -46,3 +46,10 @@ sources:
   - {label: "Nova Scotia, Affordable Living Tax Credit Regulations (unchanged since 2014)", url: https://novascotia.ca/JUST/REGULATIONS/regs/incaffordable.htm}
   - {label: "Halifax, approved 2021/22 municipal budget", url: https://www.halifax.ca/sites/default/files/documents/city-hall/budget-finances/OperatingBudgetBook2122.pdf}
   - {label: "Halifax, 2021 tax resolution: mandatory and area levies", url: https://cdn.halifax.ca/sites/default/files/documents/city-hall/regional-council/210504rc1113.pdf}
+  - label: "Carbon history: Statistics Canada, Canadian Vehicle Survey: Annual 2009 (53-223-X)"
+    url: https://www150.statcan.gc.ca/n1/pub/53-223-x/53-223-x2009000-eng.pdf
+
+# Historical driving defaults use a common survey baseline; see cited sources.
+driving:
+  distance: 17400
+  estimated: true
