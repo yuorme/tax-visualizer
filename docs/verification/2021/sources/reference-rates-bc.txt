@@ -1,0 +1,54 @@
+Title: BC 2022 and 2021 Personal Marginal Income Tax Rates
+URL: https://www.taxtips.ca/priortaxrates/tax-rates-2021-2022/bc.htm
+Fetched: 2026-11-02
+SHA-256 of the original: 24517e01f9df98e645190f6af81c5ed0652a29304b9db477ab6047788bbc7a1e
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+Ads keep this website free for you. TaxTips.ca does not research or endorse any product or service appearing in ads on this site. Before making a major financial decision you should consult a qualified professional. | BC 2021 & 2022 Income Tax Rates | TaxTips.ca Canadian Tax and Financial Information
+TaxTips.ca Home What's New | | Links & Resources Site Map
+
+Need an accounting, tax or financial advisor? Look in our Directory. Use above search box to easily find your topic! Stay Connected with TaxTips.ca!
+
+Home -> British Columbia Tax Rates -> 2021 and 2022 Tax Rates -> BC Personal Income Tax Rates BC 2022 and 2021 Personal Marginal Income Tax Rates BC Income Tax Act s. 4.1, 4.3, 4.52, 4.69 The Federal tax brackets and personal tax credit amounts are increased for 2022 by an indexation factor of 1.024 (a 2.4% increase). The BC tax brackets and personal tax credit amounts are increased for 2022 by an indexation factor of 1.021 (a 2.1% increase). The indexation factors, tax brackets and tax rates have been confirmed to Canada Revenue Agency information. Tax Tip: read the article Understanding the Tables of Personal Income Tax Rates, especially if you are trying to compare the rates below to the marginal tax rates in the Basic Tax Calculator.
+
+TaxTips.ca - British Columbia Personal Income Tax Brackets and Tax Rates
+2022 Taxable Income | 2022 Tax Rates | 2021 Taxable Income | 2021 Tax Rates
+first $43,070 | 5.06% | first $42,184 | 5.06%
+over $43,070 up to $86,141 | 7.70% | over $42,184 up to $84,369 | 7.70%
+over $86,141 up to $98,901 | 10.50% | over $84,369 up to $96,866 | 10.50%
+over $98,901 up to $120,094 | 12.29% | over $96,866 up to $117,623 | 12.29%
+over $120,094 up to $162,832 | 14.70% | over $117,623 up to $159,483 | 14.70%
+over $162,832 up to $227,091 | 16.80% | over $159,483 up to $222,420 | 16.80%
+over $227,091 | 20.50% | over $222,420 | 20.50%
+
+TaxTips.ca - Combined Federal & British Columbia Tax Brackets and Tax Rates
+2022 Taxable Income | BC 2022 Marginal Tax Rates | 2021 Taxable Income | BC 2021 Marginal Tax Rates
+Other Income | Capital Gains | Canadian Dividends | Other Income | Capital Gains | Canadian Dividends
+Eligible | Non-Eligible | Eligible | Non-Eligible
+first $43,070 | 20.06% | 10.03% | -9.60% | 10.43% | first $42,184 | 20.06% | 10.03% | -9.60% | 10.43%
+over $43,070 up to $50,197 | 22.70% | 11.35% | -5.96% | 13.47% | over $42,184 up to $49,020 | 22.70% | 11.35% | -5.96% | 13.47%
+over $50,197 up to $86,141 | 28.20% | 14.10% | 1.63% | 19.80% | over $49,020 up to $84,369 | 28.20% | 14.10% | 1.63% | 19.80%
+over $86,141 up to $98,901 | 31.00% | 15.50% | 5.49% | 23.02% | over $84,369 up to $96,866 | 31.00% | 15.50% | 5.49% | 23.02%
+over $98,901 up to $100,392 | 32.79% | 16.40% | 7.96% | 25.07% | over $96,866 up to $98,040 | 32.79% | 16.40% | 7.96% | 25.07%
+over $100,392 up to $120,094 | 38.29% | 19.15% | 15.55% | 31.40% | over $98,040 up to $117,623 | 38.29% | 19.15% | 15.55% | 31.40%
+over $120,094 up to $155,625 | 40.70% | 20.35% | 18.88% | 34.17% | over $117,623 up to $151,978 | 40.70% | 20.35% | 18.88% | 34.17%
+over $155,625 up to $162,832 | 44.08% | 22.04% | 23.54% | 38.06% | over $151,978 up to $159,483 | 44.02% | 22.01% | 23.46% | 37.99%
+over $162,832 up to $221,708 | 46.18% | 23.09% | 26.44% | 40.48% | over $159,483 up to $216,511 | 46.12% | 23.06% | 26.36% | 40.41%
+over $221,708 up to $227,091 | 49.80% | 24.90% | 31.44% | 44.64% | over $216,511 up to $222,420 | 49.80% | 24.90% | 31.44% | 44.64%
+over $227,091 | 53.50% | 26.75% | 36.54% | 48.89% | over $222,420 | 53.50% | 26.75% | 36.54% | 48.89%
+Marginal tax rate for dividends is a % of actual dividends received (not grossed-up taxable amount). Marginal tax rate for capital gains is a % of total capital gains (not taxable capital gains). Gross-up rate for eligible dividends is 38%, and for non-eligible dividends is 15%. For more information see BC dividend tax credits. Copyright © 2002 Boat Harbour Investments Ltd.
+British Columbia Basic Personal Amount
+2022 Personal Amount | 2022 Tax Rate | 2021 Personal Amount | 2021 Tax Rate
+$11,302 | 5.06% | $11,070 | 5.06%
+Federal Basic Personal Amount
+2022 Personal Amount (1) | 2022 Tax Rate | 2021 Personal Amount (1) | 2021 Tax Rate
+$14,398 | 15% | $13,808 | 15%
+
+(1) See the federal tax rates page for information on the enhanced federal personal amount, which increases the marginal tax rates for taxable incomes in the second highest federal tax bracket. The marginal tax rates in blue above have been adjusted to reflect these changes.
+
+BC tax rates can also be seen on the BC Ministry of Finance website.
+
+Revised: September 20, 2024
+
+Copyright © 2002 Boat Harbour Investments Ltd. All Rights Reserved. See Reproduction of information from TaxTips.ca Facebook | Twitter | LinkedIn The information on this site is not intended to be a substitute for professional advice. Each person's situation differs, and a professional advisor can assist you in using the information on this web site to your best advantage Please see our legal disclaimer regarding the use of information on our site, and our Privacy Policy regarding information that may be collected from visitors to our site.

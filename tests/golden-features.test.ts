@@ -36,6 +36,9 @@ const history2022Fixture: typeof fixture = JSON.parse(
 const otherIncomeFixture: typeof fixture = JSON.parse(
   fs.readFileSync(new URL("./golden/features/other-income.json", import.meta.url), "utf8"),
 );
+const history2021Fixture: typeof fixture = JSON.parse(
+  fs.readFileSync(new URL("./golden/features/history2021.json", import.meta.url), "utf8"),
+);
 const fixtures = [
   fixture,
   childcareFixture,
@@ -43,6 +46,7 @@ const fixtures = [
   history2023Fixture,
   history2022Fixture,
   otherIncomeFixture,
+  history2021Fixture,
 ];
 
 function rounded(value: unknown): unknown {

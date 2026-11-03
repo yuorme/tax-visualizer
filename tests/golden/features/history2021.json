@@ -1,0 +1,209 @@
+{
+  "description": "Independent 2021 historical calculations; docs/verification/2021-golden-cases.md.",
+  "defaults": {
+    "active": 0,
+    "spouse": true,
+    "adults": 1,
+    "kids": 0,
+    "under6": 0,
+    "useBpa": false,
+    "whRate": 0,
+    "useCredits": false,
+    "homeValue": 0,
+    "rent": 0,
+    "monthlySpending": 0
+  },
+  "rules": {},
+  "cases": [
+    {
+      "id": "history2021-ns-none",
+      "year": 2021,
+      "province": "NS",
+      "household": {
+        "people": [
+          {
+            "fd": 0
+          }
+        ],
+        "kids": 0,
+        "useCredits": true
+      },
+      "expected": {
+        "provBen": 0
+      }
+    },
+    {
+      "id": "history2021-ns-full",
+      "year": 2021,
+      "province": "NS",
+      "household": {
+        "people": [
+          {
+            "fd": 25999
+          }
+        ],
+        "kids": 3,
+        "useCredits": true
+      },
+      "expected": {
+        "provBen": 2650
+      }
+    },
+    {
+      "id": "history2021-ns-partial-boundary",
+      "year": 2021,
+      "province": "NS",
+      "household": {
+        "people": [
+          {
+            "fd": 26000
+          }
+        ],
+        "kids": 3,
+        "useCredits": true
+      },
+      "expected": {
+        "provBen": 1787.5
+      }
+    },
+    {
+      "id": "history2021-ns-first-kept",
+      "year": 2021,
+      "province": "NS",
+      "household": {
+        "people": [
+          {
+            "fd": 30000
+          }
+        ],
+        "kids": 1,
+        "useCredits": true
+      },
+      "expected": {
+        "provBen": 925
+      }
+    },
+    {
+      "id": "history2021-ns-five-partial",
+      "year": 2021,
+      "province": "NS",
+      "household": {
+        "people": [
+          {
+            "fd": 33999
+          }
+        ],
+        "kids": 5,
+        "useCredits": true
+      },
+      "expected": {
+        "provBen": 2687.5
+      }
+    },
+    {
+      "id": "history2021-ns-ends",
+      "year": 2021,
+      "province": "NS",
+      "household": {
+        "people": [
+          {
+            "fd": 34000
+          }
+        ],
+        "kids": 5,
+        "useCredits": true
+      },
+      "expected": {
+        "provBen": 0
+      }
+    },
+    {
+      "id": "history2021-mb-rent-below",
+      "year": 2021,
+      "province": "MB",
+      "household": {
+        "people": [
+          {
+            "fd": 60000
+          }
+        ],
+        "rent": 100,
+        "useCredits": true
+      },
+      "expected": {
+        "credits": [["Renters tax credit", 180]]
+      }
+    },
+    {
+      "id": "history2021-mb-rent-at-cap",
+      "year": 2021,
+      "province": "MB",
+      "household": {
+        "people": [
+          {
+            "fd": 60000
+          }
+        ],
+        "rent": 291.6666666666667,
+        "useCredits": true
+      },
+      "expected": {
+        "credits": [["Renters tax credit", 525]]
+      }
+    },
+    {
+      "id": "history2021-mb-rent-above",
+      "year": 2021,
+      "province": "MB",
+      "household": {
+        "people": [
+          {
+            "fd": 60000
+          }
+        ],
+        "rent": 300,
+        "useCredits": true
+      },
+      "expected": {
+        "credits": [["Renters tax credit", 525]]
+      }
+    },
+    {
+      "id": "history2021-payroll-AB",
+      "year": 2021,
+      "province": "AB",
+      "household": {
+        "people": [
+          {
+            "ord": 100000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 2875.95,
+        "list.0.pay.enh": 290.5,
+        "list.0.pay.ei": 889.54,
+        "list.0.pay.qpip": 0
+      }
+    },
+    {
+      "id": "history2021-payroll-QC",
+      "year": 2021,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 100000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 3137.4,
+        "list.0.pay.enh": 290.5,
+        "list.0.pay.ei": 664.34,
+        "list.0.pay.qpip": 412.49
+      }
+    }
+  ],
+  "ratePeriodCases": []
+}

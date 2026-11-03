@@ -251,7 +251,7 @@ const PHASE_IN = new Set([
 ]);
 
 /** Benefits that end in a step rather than a taper, so one more dollar of income can cost a family hundreds. */
-const CLIFFS = new Set(["nova-scotia-child-benefit", "income-band-per-child"]);
+const CLIFFS = new Set(["nova-scotia-child-benefit", "nova-scotia-child-benefit-by-child", "income-band-per-child"]);
 
 /** A known place where a raise lowers disposable income without a cliff, pinned to a province, a household shape
  *  and a range of net income (and to a year, for an exception tied to one year's data). */
@@ -276,6 +276,26 @@ function inSteepestOhpBand(s: Step): boolean {
 
 /** Where smooth clawbacks stack past 100%, so a raise lowers disposable income. Every entry must still be seen. */
 const STACKED: Stacked[] = [
+  {
+    code: "NL",
+    year: 2021,
+    // Cached 2021 GST calculation, T4114, Schedule 6, NL428 and the 2016 supplement calculation.
+    why:
+      "a single parent with 4+ children between the NL supplement's $40,000 reduction onset and standard " +
+      "family CWB exhaustion: CCB 23%, CWB 15%, GST 5%, NL supplement 9% and tax reduction 16%, plus tax " +
+      "and payroll, yield a 102.49489% marginal burden. Provincial child benefit is already zero. Admit " +
+      "only that source-derived overlap and steps straddling its boundaries",
+    applies: s => {
+      const cwb = s.y.federal.workersBenefit.standard;
+      const end = cwb.threshold[1] + cwb.max[1] / cwb.phaseOut[1];
+      return (
+        singleParent(s.to, 4) &&
+        s.a.famNet < end &&
+        s.b.famNet > 40_000 &&
+        netWithin(s, 40_000 - SWEEP_STEP, end + SWEEP_STEP)
+      );
+    },
+  },
   {
     code: "NL",
     year: 2022,

@@ -1,0 +1,47 @@
+Title: Poverty and Prosperity
+URL: https://assembly.nu.ca/library/GNedocs/2013/001057-e.pdf
+Fetched: 2026-11-02
+SHA-256 of the original: d2655e525dcfa313f17dbd3a5f9f0fd5d06d16efe19e8923aa427f8794c7b308
+Publication date modified: 2013-12-09
+PDF pages: 54 of 58
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 54 of 58 ---
+
+Caledon Institute of Social Policy 49
+Appendix G
+Child Benefits
+Child benefits are one of the most important social programs, helping reduce poverty and
+supplement incomes. Both Ottawa and Nunavut deliver child benefits.
+The Canada Child Tax Benefit (CCTB) is the largest of three federal programs. As of July
+2013, it pays to families with children under age 18 a tax-free annual amount of a maximum $3,654
+for the first child, $3,397 for the second child and $3,302 for the third and each additional child.
+Benefits begin to decline once net family income exceeds $43,561, disappearing at $115,211 for
+families with one or two children and $153,536 for families with three or more children. The Canada
+Child Tax Benefit also provides a Child Disability Benefit. The Canada Child Tax Benefit is indexed
+to the cost of living.
+All families with children under age 6, regardless of family income, receive the Universal Child
+Care Benefit (UCCB), which pays $100 per month or $1,200 annually. Benefits are subject to
+federal and provincial/territorial income taxes, except for single parents who pay no income tax on
+their payment.
+Unlike the federal personal income tax system and major federal income programs, the
+Universal Child Care Benefit is not indexed, which means that its value declines each year by the rate
+of inflation. The $1,200 payment in 2006 is now worth in 2013 only $1,059 in constant 2006 dollars
+– a loss of $141 or 11.7 percent.
+Families with taxable income receive federal and provincial/territorial income tax savings
+through the non-refundable Child Tax Credit (CTC). In 2013, the Child Tax Credit is worth a
+maximum $426 for families with one child; note that this amount combines federal and Nunavut
+income tax savings. Maximum benefits go to families with net income of $29,000 and above; partial
+benefits go to those between $24,000 and $29,000; and families with incomes of $23,000 or less get
+nothing because they have no taxes to reduce. The Child Tax Credit is indexed.
+Nunavut provides the Nunavut Child Benefit (NUCB), a tax-free payment for eligible families
+with children under age 18. Under the NUCB, families may be entitled to a basic benefit of a maxi-
+mum $27.50 per month or $330 a year for each child. Benefits are reduced at the rate of 3 percent
+of net family income above $20,921 for a one-child family and 5 percent for families with two or more
+children. Eligibility ends once net family income reaches $31,921 for those with one or two children.
+The Nunavut Child Benefit is not indexed to the cost of living.
+Figure 20 translates these descriptions and numbers into a more understandable picture. We
+look at a Nunavut single parent with one child under age 6.
+The largest child benefit program is the Canada Child Tax Benefit, shown in blue. It pays its
+maximum $3,654 up to net family income of $25,356, then declines quite steeply to $43,561, above

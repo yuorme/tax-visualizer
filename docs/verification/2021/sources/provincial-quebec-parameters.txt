@@ -1,0 +1,421 @@
+Title: Paramètres du régime d'imposition des particuliers pour l'année d'imposition 2021
+URL: https://www.finances.gouv.qc.ca/documents/Autres/fr/AUTFR_RegimeImpot2021.pdf
+Fetched: 2026-11-02
+SHA-256 of the original: 27b40da261af152727082eae2e0b3d988748a877e2a8f28459bec218707605c0
+Publication date modified: 2020-11-11
+PDF pages: all 18
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 1 of 18 ---
+
+PARAMÈTRES
+DU RÉGIME D’IMPOSITION
+DES PARTICULIERS
+POUR L’ANNÉE
+D’IMPOSITION 2021
+Novembre 2020
+
+--- PDF page 2 of 18 ---
+
+PARAMÈTRES DU RÉGIME D’IMPOSITION DES PARTICULIERS
+POUR L’ANNÉE D’IMPOSITION 2021
+Dépôt légal – Novembre 2020
+Bibliothèque et Archives nationales du Québec
+ISSN 2368-8815 (PDF)
+© Gouvernement du Québec, 2020
+
+--- PDF page 3 of 18 ---
+
+I
+Table des matières
+1. Indexation du régime d’imposition des particuliers ............................................... 1
+2. Impact de l’indexation pour le gouvernement ......................................................... 3
+3. Valorisation de la prime au travail et de l’Allocation famille .................................. 5
+4. Comparaison des taux d’indexation des régimes d’imposition québécois,
+fédéral et provinciaux ................................................................................................ 7
+5. Tableaux des paramètres .......................................................................................... 9
+
+--- PDF page 4 of 18 ---
+
+
+
+--- PDF page 5 of 18 ---
+
+1
+1. INDEXATION DU RÉGIME D’IMPOSITION DES
+PARTICULIERS
+La législation fiscale prévoit une indexation automatique des principaux paramètres du régime
+d’imposition des particuliers. L’indexation s’applique aux seuils des tranches de revenu imposable
+de la table d’imposition et au montant personnel de base. Elle s’applique également à la plupart des
+paramètres utilisés pour déterminer les crédits d’impôt.
+L’indexation du régime d’imposition des particuliers permet d’actualiser la fiscalité pour qu’elle reflète
+l’augmentation annuelle du prix des biens et services. Concrètement, l’indexation du régime fiscal
+augmente le niveau de plusieurs déductions et crédits d’impôt d’un taux déterminé en fonction de
+l’augmentation des prix à la consommation observée au Québec.
+❑ Taux d’indexation pour l’année d’imposition 2021
+Le taux d’indexation pour 2021 correspond à la variation, en pourcentage, de l’indice des prix à la
+consommation du Québec (IPC Québec), sans l’alcool, le tabac et le cannabis récréatif, entre la
+période de douze mois se terminant le 30 septembre 2020 et celle prenant fin le 30 septembre 2019.
+Selon cette formule, le régime d’imposition des particuliers sera indexé au taux de 1,26 % pour
+l’année d’imposition 2021.
+Formule d’indexation
+La formule d’indexation prévue dans la Loi sur les impôts est appliquée en multipliant le paramètre à
+indexer par la variation de A par rapport à B. Le résultat obtenu est arrondi selon la règle applicable.
+« A » représente la moyenne de l’IPC Québec, sans l’alcool, le tabac et le cannabis récréatif, des
+douze mois se terminant le 30 septembre de l’année qui précède celle pour laquelle un montant doit
+être indexé.
+« B » représente la moyenne de l’IPC Québec, sans l’alcool, le tabac et le cannabis récréatif, des
+douze mois prenant fin le 30 septembre de l’année antérieure à l’année qui précède celle pour laquelle
+le montant doit être indexé.
+
+--- PDF page 6 of 18 ---
+
+
+
+--- PDF page 7 of 18 ---
+
+3
+2. IMPACT DE L’INDEXATION POUR LE GOUVERNEMENT
+En 2021, le gouvernement du Québec indexera le régime d’imposition des particuliers pour un coût
+de 424 millions de dollars. Sur la période s’étalant de 2013 à 2021, l’impact cumulé équivaudra à
+près de 3,3 milliards de dollars.
+TABLEAU 1
+Impact de l’indexation du régime d’imposition des particuliers – Années 2013 à 2021
+2013 2014 2015 2016 2017 2018 2019 2020 2021
+Taux d’indexation
+(en %) 2,48 0,97 1,06 1,09 0,74 0,82 1,71 1,72 1,26
+Impact
+(en M$) 574 253 268 295 199 229 488 527 424
+Impact cumulé
+(en M$) 574 827 1 095 1 390 1 589 1 818 2 306 2 833 3 256
+Note : Les chiffres ayant été arrondis, leur somme peut ne pas correspondre au total indiqué.
+
+--- PDF page 8 of 18 ---
+
+
+
+--- PDF page 9 of 18 ---
+
+5
+3. VALORISATION DE LA PRIME AU TRAVAIL ET DE
+L’ALLOCATION FAMILLE
+L’indexation des prestations de base des programmes d’aide financière de dernier recours requiert
+de valoriser différemment les seuils de réduction de la prime au travail et de l’Allocation famille, afin
+de maintenir l’harmonisation entre le régime fiscal et les programmes de sécurité du revenu.
+❑ Prime au travail
+La prime au travail générale s’intègre au régime d’aide financière de dernier recours. Elle devient
+maximale au seuil de revenu à partir duquel un ménage apte au travail n’est plus admissible à l’aide
+de dernier recours. Au-delà de ce revenu, la prime au travail générale est réduite.
+Par ailleurs, les premiers dollars de revenu de travail, jusqu’à concurrence de 2 400 $ pour un
+ménage composé d’un seul adulte et de 3 600 $ pour un ménage composé de deux adultes, sont
+exclus du calcul de la prime au travail générale.
+Tout comme la prime au travail générale, la prime au travail adaptée aux personnes présentant des
+contraintes sévères à l’emploi s’intègre au régime d’aide financière de dernier recours. Toutefois,
+les paramètres fixés pour calculer la prime au travail adaptée diffèrent de ceux servant à déterminer
+la prime au travail générale.
+❑ Allocation famille
+Afin que l’Allocation famille soit intégrée à la prime au travail, le seuil de revenu à partir duquel la
+prime au travail devient nulle correspond au seuil à partir duquel l’Allocation famille devient réductible
+en fonction du revenu.
+Les montants maximal et minimal de l’Allocation famille accordés pour chaque enfant sont indexés
+selon le taux d’indexation prévu au régime d’imposition.
+
+--- PDF page 10 of 18 ---
+
+
+
+--- PDF page 11 of 18 ---
+
+7
+4. COMPARAISON DES TAUX D’INDEXATION DES RÉGIMES
+D’IMPOSITION QUÉBÉCOIS, FÉDÉRAL ET PROVINCIAUX
+En 2021, le taux d’indexation du régime d’imposition québécois (1,26 %) sera plus élevé que les
+taux d’indexation appliqués par le gouvernement fédéral et par les gouvernements des autres
+provinces canadiennes qui indexent leur régime d’imposition.
+TABLEAU 2
+Taux d’indexation des régimes d’imposition des particuliers fédéral et provinciaux
+(en pourcentage)
+2013 2014 2015 2016 2017 2018 2019 2020 2021(1)
+Fédéral(2) 2,0 0,9 1,7 1,3 1,4 1,5 2,2 1,9 1,0
+Provinces
+– Terre-Neuve-et-Labrador(3) 2,6 1,5 2,2 0,4 2,0 3,0 1,8 0,9 0,4
+– Île-du-Prince-Édouard ― ― ― ― ― ― ― ― ―
+– Nouvelle-Écosse ― ― ― ― ― ― ― ― ―
+– Nouveau-Brunswick(2) 2,0 0,9 1,7 1,3 1,4 1,5 2,2 1,9 1,0
+– Québec(4) 2,48 0,97 1,06 1,09 0,74 0,82 1,71 1,72 1,26
+– Ontario(3) 1,8 1,0 2,0 1,5 1,6 1,8 2,2 1,9 0,9
+– Manitoba(5) ― ― ― ― 1,5 1,2 2,6 2,2 1,0
+– Saskatchewan(2),(6) 2,0 0,9 1,7 1,3 1,4 ― ― ― 1,0
+– Alberta(3),(7) 1,8 1,1 2,4 1,3 1,3 1,2 2,4 ― ―
+– Colombie-Britannique(3) 1,5 0,1 0,7 0,9 1,8 2,0 2,6 2,5 1,1
+Note : Un tiret (―) signifie que le régime fiscal n’a pas été indexé.
+(1) Les taux d’indexation du fédéral et des provinces autres que le Québec sont projetés par le ministère des Finances du Québec sur la
+base de la méthode habituellement utilisée dans la province ou au fédéral.
+(2) Le taux d’indexation est calculé selon l’indice des prix à la consommation du Canada. Il est arrondi à la décimale près.
+(3) Le taux d’indexation est calculé selon l’indice des prix à la consommation de la province.
+(4) Depuis l’année d’imposition 2005, le taux d’indexation du Québec est basé sur l’indice des prix à la consommation du Québec, excluant
+alcool et tabac. Depuis l’année d’imposition 2020, il exclut également le cannabis récréatif.
+(5) Depuis l’année d’imposition 2017, le taux d’indexation du Manitoba est basé sur l’indice des prix à la consommation du Manitoba. Le
+taux d’indexation est arrondi à la décimale près.
+(6) Dans le budget de 2017-2018, la Saskatchewan a annoncé la suspension de l’indexation de l’impôt sur le revenu des particuliers
+pour 2018 et les années suivantes. Dans le budget 2020-2021, la Saskatchewan a annoncé que les paramètres de l’impôt sur le revenu
+des particuliers seraient de nouveaux indexés à compter de 2021.
+(7) Dans le budget de 2019-2020, l’Alberta a annoncé la suspension de l’indexation de l’impôt sur le revenu des particuliers pour 2020 et
+les années suivantes.
+
+--- PDF page 12 of 18 ---
+
+
+
+--- PDF page 13 of 18 ---
+
+9
+5. TABLEAUX DES PARAMÈTRES
+TABLEAU 3
+Paramètres du régime d’imposition des particuliers visés par l’indexation
+(en dollars)
+2020 2021
+Table d’imposition
+– Seuil maximal de la première tranche de revenu imposable 44 545 45 105
+– Seuil maximal de la deuxième tranche de revenu imposable 89 080 90 200
+– Seuil maximal de la troisième tranche de revenu imposable 108 390 109 755
+– Montant personnel de base 15 532 15 728
+Montant des besoins essentiels reconnus
+– Montant pour personne vivant seule
+▪ Montant de base 1 780 1 802
+▪ Supplément pour famille monoparentale 2 197 2 225
+– Montant en raison de l’âge 3 267 3 308
+– Montant pour revenus de retraite 2 902 2 939
+– Montant du transfert de la contribution parentale reconnue
+▪ Montant maximal de besoins reconnus 10 662 10 796
+▪ Réduction lorsqu’une seule session d’études est complétée 2 983 3 021
+– Montant pour un enfant mineur en formation professionnelle ou aux
+études postsecondaires (par session, maximum de deux sessions) 2 983 3 021
+– Montant pour autres personnes à charge 4 348 4 403
+– Montant pour déficience grave et prolongée des fonctions mentales ou
+physiques 3 449 3 492
+Certaines déductions et exemptions
+– Montant maximal de la déduction pour les travailleurs 1 190 1 205
+– Montant de la contribution personnelle aux fins du calcul de la déduction
+pour les dépenses d’outillage des gens de métier 1 200 1 215
+– Montant maximal de l’exemption relative aux montants versés aux volontaires
+des services d’urgence 1 190 1 205
+– Montant maximal mensuel pour l’exemption de certaines allocations pour la
+pension et le logement versées à de jeunes sportifs 370 375
+Seuils de réduction
+– Seuil de réduction du crédit d’impôt pour personne vivant seule, en raison de
+l’âge et pour revenus de retraite 35 205 35 650
+– Seuil de réduction du crédit d’impôt pour la prolongation de carrière 35 205 35 650
+– Seuil de réduction du crédit d’impôt remboursable pour maintien à domicile
+des aînés 59 385 60 135
+– Seuil de réduction du crédit d’impôt remboursable pour les frais de relève
+donnant un répit aux aidants naturels(1) 59 385 n.s.p.
+n.s.p. : Ne s’applique pas.
+(1) À partir de 2020, les personnes admissibles au crédit d’impôt remboursable pour les personnes aidantes peuvent demander leurs frais
+de répit dans le cadre de ce crédit d'impôt, sans réduction de l'aide fiscale accordée. À partir de 2021, le crédit d’impôt remboursable
+pour les personnes qui accordent un répit aux aidants naturels sera aboli.
+
+--- PDF page 14 of 18 ---
+
+10
+TABLEAU 3 (suite)
+Paramètres du régime d’imposition des particuliers visés par l’indexation
+(en dollars)
+2020 2021
+Revenu maximal pour bénéficier de certains allègements fiscaux
+– Revenu familial maximal pour bénéficier du crédit d’impôt pour les activités
+des jeunes 140 910 142 685
+– Revenu net maximal pour bénéficier du crédit d’impôt pour les activités
+des aînés 42 940 43 480
+– Revenu familial maximal pour bénéficier de la subvention pour aînés relative à une
+hausse de taxes municipales 52 600 53 300
+Crédit d’impôt remboursable pour frais de garde d’enfants(2)
+– Plafond des frais pour les enfants de moins de 7 ans 9 825 9 950
+– Plafond des frais pour les enfants handicapés 13 445 13 615
+– Plafond des frais pour les enfants de moins de 16 ans ou qui ont une infirmité 5 170 5 235
+– Enfant admissible – Revenu maximal 10 662 10 796
+Certains crédits d’impôt remboursables
+– Crédit d’impôt pour frais médicaux
+▪ Montant maximal 1 226 1 241
+▪ Montant minimal de revenu de travail 3 135 3 175
+▪ Seuil de réduction 23 700 24 000
+– Crédit d’impôt pour les personnes aidantes
+▪ Montant de base universel (avec cohabitation) 1 250 1 266
+▪ Montant réductible en fonction du revenu de la personne aidée 1 250 1 266
+▪ Seuil de réduction 22 180 22 460
+– Incitatif québécois à l’épargne-études
+▪ Premier seuil de revenu aux fins du calcul de la majoration 44 545 45 105
+▪ Deuxième seuil de revenu aux fins du calcul de la majoration 89 080 90 200
+– Crédit d’impôt pour les titulaires d’un permis de chauffeur de taxi 594 301
+– Crédit d’impôt pour les titulaires d’un permis de propriétaire de taxi 594 n.s.p.
+– Montant pour le soutien des aînés
+▪ Montant maximal par aîné 206 209
+▪ Seuil de réduction pour une personne seule 23 280 23 575
+▪ Seuil de réduction pour un couple 37 865 38 340
+Cotisation de 1 % des particuliers au Fonds des services de santé
+– Seuil maximal de la première tranche de revenu 15 170 15 360
+– Seuil maximal de la deuxième tranche de revenu 52 745 53 410
+n.s.p. : Ne s’applique pas.
+(2) L’indexation des seuils de revenu familial pour le crédit d’impôt remboursable pour frais de garde d’enfants est présentée à la page 13.
+
+--- PDF page 15 of 18 ---
+
+11
+TABLEAU 3 (suite)
+Paramètres du régime d’imposition des particuliers visés par l’indexation
+(en dollars)
+2020 2021
+Crédit d’impôt remboursable accordant une allocation aux familles
+– Allocation famille
+▪ Montants maximaux
+○ Par enfant 2 515 2 547
+○ Famille monoparentale 882 893
+▪ Seuil de réduction(3)
+○ Famille monoparentale 36 256 36 728
+○ Couple 49 842 50 521
+▪ Montants minimaux
+○ Par enfant 1 000 1 013
+○ Famille monoparentale 352 356
+– Supplément pour l’achat de fournitures scolaires 104 105
+– Montant mensuel du supplément pour enfant handicapé 198 200
+– Montant mensuel du supplément pour enfant handicapé nécessitant
+des soins exceptionnels – palier 1 995 1 008
+– Montant mensuel du supplément pour enfant handicapé nécessitant
+des soins exceptionnels – palier 2 663 671
+Prime au travail générale(3)
+– Montants maximaux
+▪ Personne seule 914,11 961,18
+▪ Couple sans enfants 1 426,90 1 501,47
+▪ Famille monoparentale 2 539,20 2 574,60
+▪ Couple avec enfants 3 303,00 3 351,50
+– Seuil de réduction
+▪ Un adulte 10 864 10 982
+▪ Couple 16 812 17 006
+Prime au travail adaptée aux personnes présentant
+des contraintes sévères à l’emploi(3)
+– Montants maximaux
+▪ Personne seule 1 816,58 1 873,34
+▪ Couple sans enfants 2 784,51 2 909,02
+▪ Famille monoparentale 3 548,00 3 548,00
+▪ Couple avec enfants 4 350,80 4 407,60
+– Seuil de réduction
+▪ Un adulte 15 392 15 392
+▪ Couple 22 954 23 238
+(3) L’augmentation de la valeur des paramètres est basée sur une formule de revalorisation qui tient compte, entre autres, de l’indexation
+des prestations d’aide financière de dernier recours.
+
+--- PDF page 16 of 18 ---
+
+12
+TABLEAU 4
+Paramètres du régime d’imposition des particuliers visés par l’indexation
+(en dollars)
+De juillet 2020
+à juin 2021
+De juillet 2021
+à juin 2022
+Crédit d’impôt pour la solidarité
+– Montants pour la TVQ
+▪ Montant de base 297 301
+▪ Montant pour conjoint 297 301
+▪ Montant additionnel pour personne vivant seule 141 143
+– Montants pour le logement
+▪ Montant pour un couple 699 708
+▪ Montant pour une personne vivant seule ou une famille
+monoparentale 577 584
+▪ Montant pour chaque enfant à charge 123 125
+– Montants pour les particuliers habitant un village nordique
+▪ Montant par adulte 1 749 1 771
+▪ Montant pour chaque enfant à charge 378 383
+– Seuil de réduction du crédit d’impôt pour la solidarité 35 400 35 845
+– Seuil de revenu familial maximum pour lequel seulement
+50 % du montant du crédit d’impôt pour la solidarité peut
+être affecté au paiement d’une dette envers l’État 21 470 21 740
+Période d’indexation des paramètres
+du crédit d’impôt pour la solidarité
+Les paramètres du crédit d’impôt pour la solidarité sont indexés au 1er juillet de chaque année au lieu du
+1er janvier. Ils demeurent inchangés à partir du mois de juillet d’une année jusqu’au mois de juin de l’année
+suivante.
+
+--- PDF page 17 of 18 ---
+
+13
+TABLEAU 5
+Paramètres du crédit d’impôt remboursable pour frais de garde d’enfants en 2020
+Revenu familial
+(en $)
+Taux du
+crédit
+d’impôt
+(en %)
+Revenu familial
+(en $)
+Taux du
+crédit
+d’impôt
+(en %)
+Revenu familial
+(en $)
+Taux du
+crédit
+d’impôt
+(en %)Supérieur à
+Sans
+excéder Supérieur à
+Sans
+excéder Supérieur à
+Sans
+excéder
+― 36 570 75 50 125 51 470 64 150 705 152 060 44
+36 570 37 920 74 51 470 52 825 63 152 060 153 430 42
+37 920 39 285 73 52 825 54 170 62 153 430 154 790 40
+39 285 40 625 72 54 170 55 535 61 154 790 156 140 38
+40 625 41 985 71 55 535 100 225 60 156 140 157 520 36
+41 985 43 335 70 100 225 143 885 57 157 520 158 875 34
+43 335 44 705 69 143 885 145 250 54 158 875 160 255 32
+44 705 46 055 68 145 250 146 615 52 160 255 161 615 30
+46 055 47 405 67 146 615 147 970 50 161 615 162 975 28
+47 405 48 750 66 147 970 149 340 48 162 975 ou plus 26
+48 750 50 125 65 149 340 150 705 46
+TABLEAU 6
+Paramètres du crédit d’impôt remboursable pour frais de garde d’enfants en 2021
+Revenu familial
+(en $)
+Taux du
+crédit
+d’impôt
+(en %)
+Revenu familial
+(en $)
+Taux du
+crédit
+d’impôt
+(en %)
+Revenu familial
+(en $)
+Taux du
+crédit
+d’impôt
+(en %)Supérieur à
+Sans
+excéder Supérieur à
+Sans
+excéder Supérieur à
+Sans
+excéder
+― 37 030 75 50 755 52 120 64 152 605 153 975 44
+37 030 38 400 74 52 120 53 490 63 153 975 155 365 42
+38 400 39 780 73 53 490 54 855 62 155 365 156 740 40
+39 780 41 135 72 54 855 56 235 61 156 740 158 105 38
+41 135 42 515 71 56 235 101 490 60 158 105 159 505 36
+42 515 43 880 70 101 490 145 700 57 159 505 160 875 34
+43 880 45 270 69 145 700 147 080 54 160 875 162 275 32
+45 270 46 635 68 147 080 148 460 52 162 275 163 650 30
+46 635 48 000 67 148 460 149 835 50 163 650 165 030 28
+48 000 49 365 66 149 835 151 220 48 165 030 ou plus 26
+49 365 50 755 65 151 220 152 605 46
+
+--- PDF page 18 of 18 ---
+
+
