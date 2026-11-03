@@ -411,6 +411,50 @@
         "famNet": 101170,
         "breakdown.incomeBases.beforeChildcare": [59635, 49535]
       }
+    },
+    {
+      "id": "other-income-2023-ab-working-minimum-2-children",
+      "year": 2023,
+      "province": "AB",
+      "household": {
+        "people": [
+          {
+            "ord": 4132,
+            "oth": 40017,
+            "cg": 2411,
+            "fd": 574
+          }
+        ],
+        "kids": 2,
+        "under6": 2,
+        "useBpa": false
+      },
+      "expected": {
+        "famNet": 45922.18,
+        "provBen": 46.0045
+      }
+    },
+    {
+      "id": "other-income-2023-ab-working-minimum-3-children",
+      "year": 2023,
+      "province": "AB",
+      "household": {
+        "people": [
+          {
+            "ord": 4132,
+            "oth": 40017,
+            "cg": 2411,
+            "fd": 574
+          }
+        ],
+        "kids": 3,
+        "under6": 2,
+        "useBpa": false
+      },
+      "expected": {
+        "famNet": 45922.18,
+        "provBen": 10
+      }
     }
   ],
   "ratePeriodCases": []

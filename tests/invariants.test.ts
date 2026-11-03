@@ -90,7 +90,11 @@ function randomHousehold(r: Rng, ro: Rng, shape: Shape = {}): Household {
 function forAll(seed: number, n: number, shape: Shape, check: (y: YearData, p: Province, hh: Household) => void) {
   const r = rng(seed),
     ro = otherRng(seed);
-  const households = Array.from({ length: n }, () => randomHousehold(r, ro, shape));
+  // Retain every original household as well as its other-income extension.
+  const households = Array.from({ length: n }, () => randomHousehold(r, ro, shape)).flatMap(hh => [
+    { ...hh, people: hh.people.map(x => ({ ...x, oth: 0 })) },
+    hh,
+  ]);
   for (const y of YEARS) for (const p of y.provinces) for (const hh of households) check(y, p, hh);
 }
 
@@ -607,7 +611,7 @@ test("with no income there is no income tax and no payroll", () => {
 const CHILD_EXCEPTIONS = new Set(["QC: canada-workers-benefit"]);
 
 // Alberta A30 s.30.2: with low earnings but high investment income, an extra child's higher working
-// reduction can exceed the unchanged phase-in amount. Only admit the exact uncapped, positive case.
+// reduction can exceed the unchanged phase-in amount. Admit only the exact statutory reduction and minimum.
 function albertaWorkingReduction(y: YearData, p: Province, hh: Household, a: H, b: H): boolean {
   const program = p.childBenefit;
   if (
@@ -626,9 +630,13 @@ function albertaWorkingReduction(y: YearData, p: Province, hh: Household, a: H, 
   const earned = hh.people[0].ord + (hh.spouse ? (hh.people[1]?.ord ?? 0) : 0);
   const phaseIn = q.workingRate * Math.max(0, earned - q.workingFloor);
   if (phaseIn <= 0 || phaseIn >= Math.min(q.working[i], q.working[i + 1])) return false;
-  if (a.provBen <= q.minAnnual || b.provBen <= q.minAnnual) return false;
-  const expectedFall = (q.workingPhaseOut[i + 1] - q.workingPhaseOut[i]) * netOver;
-  return expectedFall > 0 && Math.abs(a.provBen - b.provBen - expectedFall) < EPS;
+  const expected = (index: number) => {
+    const work = Math.max(0, phaseIn - q.workingPhaseOut[index] * netOver);
+    return work > 0 ? Math.max(q.minAnnual, work) : 0;
+  };
+  const before = expected(i),
+    after = expected(i + 1);
+  return before > after && Math.abs(a.provBen - before) < EPS && Math.abs(b.provBen - after) < EPS;
 }
 
 test("another child never raises income tax and benefit declines follow documented rules", () => {
