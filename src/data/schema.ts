@@ -64,6 +64,20 @@ export const federalSchema = z.object({
     foreignWithholding: z.object({ usTreaty: rate, deductibleAbove: rate }),
   }),
   rrsp: z.object({ rate, limit: amount }),
+  childcare: program(
+    "federal-childcare",
+    z.object({
+      youngUnder: z.number().int().positive(),
+      eligibleThrough: z.number().int().nonnegative(),
+      annualYoung: amount,
+      annualOther: amount,
+      annualDisability: amount,
+      earnedNumerator: z.number().int().positive(),
+      earnedDenominator: z.number().int().positive(),
+      benefitChildUnder: z.number().int().positive(),
+      benefitYoungUnder: z.number().int().positive(),
+    }),
+  ).optional(),
   payroll: z.object({
     cpp: cppLike,
     qpp: cppLike,
@@ -341,6 +355,33 @@ const lowIncomeReduction = z.discriminatedUnion("program", [
   ),
 ]);
 
+const childcareCredit = z.discriminatedUnion("program", [
+  program(
+    "ontario-care",
+    z.object({
+      fullThrough: amount,
+      maxRate: rate,
+      decrement: rate,
+      steps: z
+        .array(z.tuple([amount, z.number().positive()]))
+        .min(1)
+        .refine(xs => xs.every((x, i) => i === 0 || x[0] > xs[i - 1][0]), "CARE band limits must increase"),
+    }),
+  ),
+  program(
+    "quebec-childcare",
+    z.object({
+      youngUnder: z.number().int().positive(),
+      eligibleThrough: z.number().int().nonnegative(),
+      annualYoung: amount,
+      annualOther: amount,
+      annualSevere: amount,
+      rates: brackets,
+    }),
+  ),
+  program("nl-childcare", z.object({})),
+]);
+
 export const provinceSchema = z
   .object({
     code: z.string().length(2),
@@ -368,6 +409,7 @@ export const provinceSchema = z
     ]),
     employmentAmountCredit: z.boolean().optional(),
     childAmount: z.object({ perChild: amount, ages: z.enum(["all", "under6"]) }).optional(),
+    childcareCredit: childcareCredit.optional(),
     surtax: z.array(z.tuple([amount, rate])).optional(),
     postDividendSurtax: program("pei-surtax", z.object({ threshold: amount, rate })).optional(),
     ontarioTaxReduction: z.object({ base: amount, perChild: amount }).optional(),

@@ -1,0 +1,54 @@
+Title: Finance
+URL: https://www.gov.nl.ca/fin/tax-programs-incentives/personal/personalincometax/
+Fetched: 2026-11-02
+SHA-256 of the original: f7e2ecce8644bf78e65366ce0ee9ed2bd332d13374c74f8d644d4a57d0916987
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+# Personal Income Tax
+
+Newfoundland and Labrador levies personal income tax directly on taxable income. Taxable income is calculated using the same definition of federal taxable income. However, a separate set of tax brackets and tax rates are used to calculate provincial tax.
+
+The following table details the personal income tax rates for the 2025 and 2026 taxation years.
+
+2025 Tax Rates | 2025 Taxable Income | 2026 Tax Rates | 2026 Taxable Income
+8.7% | 1st Tax Bracket first $44,192 | 8.7% | 1st Tax Bracket first $44,678
+14.5% | 2nd Tax Bracket over $44,192 up to $88,382 | 14.5% | 2nd Tax Bracket over $44,678 up to $89,354
+15.8% | 3rd Tax Bracket over $88,382 up to $157,792 | 15.8% | 3rd Tax Bracket over $89,354up to $159,528
+17.8% | 4th Tax Bracket over $157,792 up to $220,910 | 17.8% | 4th Tax Bracket over $159,528up to $223,340
+19.8% | 5th Tax Bracket over $220,910 up to $282,214 | 19.8% | 5th Tax Bracket over $223,340up to $285,319
+20.8% | 6th Tax Bracket over $282,214 up to $564,429 | 20.8% | 6th Tax Bracket over $285,319up to $570,638
+21.3% | 7th Tax Bracket over $564,429 up to $1,128,858 | 21.3% | 7th Tax Bracket over $570,638up to $1,141,275
+21.8% | 8th Tax Bracket over $1,128,858 | 21.8% | 8th Tax Bracket over $1,141,275
+
+Tax brackets, non-refundable tax credits (except education, pension income, volunteer firefighters’ and search and rescue amounts and most expenditure-based credits) and the Low Income Tax Reduction is indexed annually utilizing the Consumer Price Index for Newfoundland and Labrador.
+
+The provincial non-refundable tax credits for the 2025 and 2026 taxation years are as follows:
+
+Provincial Non-Refundable Credits* | 2025 Amount | 2026 Amount
+Basic Personal Amount | $11,067 | $13,094
+Age Amount | $7.064 | $7,142
+Spouse or Common-Law Partner Amount | $9,043 | $9,142
+Amount for an Eligible Dependant | $9,043 | $9,142
+Amount for Infirm Dependants Age 18 or Older | $3,515 | $3,553
+CPP/QPP Contributions | Actual Expense | Actual Expense
+EI Premiums | Actual Expense | Actual Expense
+Volunteer Firefighters’ Amount or Search and Rescue Amount | $3,000 | $6,000
+Child Care Amount | Actual Expense | Actual Expense
+Adoption Expenses | $14,935 | $15,099
+Pension Income Amount | $1,000 | $1,000
+Caregiver Amount | $3,515 | $3,553
+Disability Amount (for self) | $7,467 | $7,549
+Disability Supplement Amount | $3,514 | $3,553
+Interest Paid on Student Loan | Actual Expense | Actual Expense
+Tuition Amount | Actual Expense | Actual Expense
+Education Amount – full time (per month) – part time (per month) | $200 $60 | $200 $60
+Medical Expense Amount Threshold | $2,410 | $2,437
+
+* These values represent the maximum amount subject to other parameters.
+
+| 2025 | 2026
+Charitable Donations Credit – First $200 – Over $200 | 8.7% 21.8% | 8.7% 21.8%
+Dividend Tax Credit – Dividends from small business – Dividends from large corporations | 3.2% 6.3% | 3.2% 6.3%
+
+The Federal Government administers personal income tax on behalf of the Province. The Canada Revenue Agency can answer your personal income tax questions related to federal and provincial income taxation. You can contact them at 1-800-959-8281.
