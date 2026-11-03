@@ -133,8 +133,12 @@ test("fuel tax follows the driving entered, not the size of the household", () =
 
 test("a year without fuel data has no fuel tax, whatever the driving", () => {
   const y25 = loadYear(2025);
-  // Preserve this original no-carbon specimen while the real 2025 data gains a separate carbon program.
-  for (const p of y25.provinces) delete p.carbon;
+  // Keep the original missing-fuel rule specimen explicit as real 2025 data activates fuel and carbon.
+  delete y25.federal.fuelTax;
+  for (const p of y25.provinces) {
+    delete p.carbon;
+    delete p.fuelTax;
+  }
   assert.equal(y25.federal.fuelTax, undefined);
   const p = prov("ON", y25);
   const a = compute(y25, p, hh());
@@ -215,8 +219,12 @@ test("2026 notes describe the fuel taxes, their mid-year changes and the startin
 
 test("2025 notes have no fuel paragraph and still list fuel taxes as not included", () => {
   const y25 = loadYear(2025);
-  // This tests the original absence-of-fuel notes; activated carbon notes have separate coverage.
-  for (const p of y25.provinces) delete p.carbon;
+  // Preserve the original absence-of-fuel notes specimen; real 2025 fuel has separate coverage.
+  delete y25.federal.fuelTax;
+  for (const p of y25.provinces) {
+    delete p.carbon;
+    delete p.fuelTax;
+  }
   const notes = footerNotes(y25, page);
   assert.ok(!notes.includes("<b>Fuel tax.</b>"));
   assert.ok(notes.includes("fuel, excise and corporate taxes"));
