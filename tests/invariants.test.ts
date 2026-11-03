@@ -238,6 +238,7 @@ const PHASE_IN = new Set([
   "canada-workers-benefit",
   "quebec-work-premium",
   "alberta-child-family-benefit", // the working component
+  "alberta-child-family-benefit-by-child", // same statutory working phase-in
   "nb-child-tax-benefit", // the working income supplement
   "nl-income-supplement", // the extra amount above a floor
   "pei-sales-tax-credit", // the supplement above a floor
@@ -293,6 +294,22 @@ const STACKED: Stacked[] = [
       "it the rate is about 59%). Not excused as a rule: when #77 corrects the taper this entry stops matching, " +
       "and the test says to remove it",
     applies: s => singleParent(s.to, 5) && netWithin(s, 37_000, 38_500),
+  },
+  {
+    code: "NL",
+    year: 2024,
+    // CRA GST calculation sheet (2023 base year), T4114-24, 5000-S6-24, RC4210-24 and NL428-24;
+    // all cached under docs/verification/2024/sources. Keep the existing other-year exceptions unchanged.
+    why:
+      "a single parent with 4+ children at the onset of the 2024 GST/HST clawback ($44,324 net income), below " +
+      "the generic NL exception's $45,000 bound. Published CCB (23%), CWB (15%), GST (5%), NL supplement (9%) " +
+      "and NL low-income reduction (16%) clawbacks plus tax/payroll yield 102.56843% once fully overlapping. " +
+      "A $500 sweep step can straddle that onset; the provincial child benefit is already zero here",
+    applies: s =>
+      singleParent(s.to, 4) &&
+      s.a.famNet < 45_000 &&
+      s.b.famNet > 44_324 &&
+      netWithin(s, 44_324 - SWEEP_STEP, 45_000 + SWEEP_STEP),
   },
 ];
 const stackedFor = (s: Step) =>
@@ -468,7 +485,28 @@ test("with no income there is no income tax and no payroll", () => {
  *  higher) and it phases out over a shorter range, so the CWB alone can fall. Total benefits still never fall. */
 const CHILD_EXCEPTIONS = new Set(["QC: canada-workers-benefit"]);
 
-test("another child never raises income tax and never lowers a benefit", () => {
+// Alberta A30 s.30.2: with low earnings but high investment income, an extra child's higher working
+// reduction can exceed the unchanged phase-in amount. Only admit the exact uncapped, positive case.
+function albertaWorkingReduction(y: YearData, p: Province, hh: Household, a: H, b: H): boolean {
+  const program = p.childBenefit;
+  if (y.year !== 2024 || p.code !== "AB" || program?.program !== "alberta-child-family-benefit-by-child") return false;
+  if (hh.kids < 1 || hh.kids >= 4 || Math.abs(a.famNet - b.famNet) > EPS) return false;
+  const q = program.params;
+  const i = hh.kids - 1;
+  const netOver = a.famNet - q.workingThreshold;
+  if (netOver <= 0) return false;
+  const baseOver = Math.max(0, a.famNet - q.baseThreshold);
+  if (q.base[i] > q.baseRate[i] * baseOver || q.base[i + 1] > q.baseRate[i + 1] * baseOver) return false;
+  const earned = hh.people[0].ord + (hh.spouse ? (hh.people[1]?.ord ?? 0) : 0);
+  const phaseIn = q.workingRate * Math.max(0, earned - q.workingFloor);
+  if (phaseIn <= 0 || phaseIn >= Math.min(q.working[i], q.working[i + 1])) return false;
+  if (a.provBen <= q.minAnnual || b.provBen <= q.minAnnual) return false;
+  const expectedFall = (q.workingPhaseOut[i + 1] - q.workingPhaseOut[i]) * netOver;
+  return expectedFall > 0 && Math.abs(a.provBen - b.provBen - expectedFall) < EPS;
+}
+
+test("another child never raises income tax and benefit declines follow documented rules", () => {
+  let sawAlbertaReduction = false;
   const excepted = new Set<string>();
   forAll(8, 300, {}, (y, p, hh) => {
     const a = household(y, p, hh),
@@ -482,10 +520,16 @@ test("another child never raises income tax and never lowers a benefit", () => {
       assert.ok(b.benefits >= a.benefits - EPS, `total benefits fell: ${step}`);
       for (const key of keysOf(la, lb)) {
         if (lineOf(lb, key) >= lineOf(la, key) - EPS) continue;
+        if (key === "alberta-child-family-benefit-by-child" && albertaWorkingReduction(y, p, hh, a, b)) {
+          sawAlbertaReduction = true;
+          continue;
+        }
         assert.ok(CHILD_EXCEPTIONS.has(`${p.code}: ${key}`), `${key} fell: ${step}`);
         excepted.add(`${p.code}: ${key}`);
       }
     }
   });
   assert.deepEqual([...excepted].sort(), [...CHILD_EXCEPTIONS].sort(), "CHILD_EXCEPTIONS lists exactly what falls");
+  if (YEARS.some(y => y.year === 2024))
+    assert.ok(sawAlbertaReduction, "2024 Alberta working-reduction exception is still seen");
 });

@@ -1,0 +1,250 @@
+Title: Worksheet NS428
+URL: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5003-d/5003-d-24e.pdf
+Fetched: 2026-11-02
+SHA-256 of the original: 51597675fa8dfe16be250de5c673b9bb9d7c37e4f8ac515c73ec8544b2b80d0a
+Publication date modified: 2024-10-22
+PDF pages: all 4
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 1 of 4 ---
+
+2024
+Worksheet NS428
+Use this worksheet to calculate the amounts to enter on your Form NS428, Nova Scotia Tax.
+Keep this worksheet for your records. Do not attach it to your return.
+Line 58040 – Basic personal amount
+If the amount from line 26000 of your return is:
+• $25,000 or less, enter $11,481 on line 58040 of your Form NS428
+• $75,000 or more, enter $8,481 on line 58040 of your Form NS428
+Otherwise, complete the calculation below.
+1Base amount
+2Supplement amount
+3Amount from line 26000 of your return
+4Income threshold –
+5Line 3 minus line 4 (if negative, enter "0") =
+6Applicable rate ×
+7Line 5 multiplied by the percentage from line 6 =
+Ż –
+8Line 2 minus line 7 (if negative, enter "0") =
+Ż +
+9Line 1 plus line 8 (maximum $11,481) =
+Enter the amount from line 9 on line 58040 of your Form NS428.
+Line 58080 – Age amount (if you were born in 1959 or earlier)
+1Maximum amount
+2Amount from line 23600 of your return
+3Income threshold –
+4Line 2 minus line 3 (if negative, enter "0") =
+5Applicable rate ×
+6Line 4 multiplied by the percentage from line 5 =
+Ż –
+7Line 1 minus line 6 (if negative, enter "0") =
+8Supplement amount
+9Amount from line 26000 of your return
+10Income threshold –
+11Line 9 minus line 10 (if negative, enter "0") =
+12Applicable rate ×
+13Line 11 multiplied by the percentage from line 12 =
+Ż –
+14Line 8 minus line 13 (if negative, enter "0") =
+Ż +
+15Line 7 plus line 14 (maximum $5,606) =
+Enter the amount from line 15 on line 58080 of your Form NS428.
+5003-D E (24) (Ce formulaire est disponible en français.) Page 1 of 4
+8,481.00
+3,000.00
+25,000.00
+6%
+4,141.00
+30,828.00
+15%
+1,465.00
+25,000.00
+2.93%
+
+--- PDF page 2 of 4 ---
+
+Line 58120 – Spouse or common-law partner amount
+1Base amount
+2
+Enter whichever is more: $848 or your spouse's or common-law partner's
+net income from line 23600 of their return. –
+3Line 1 minus line 2 (if negative, enter "0") (maximum $8,481) =
+Ż
+4Supplement amount
+5Amount from line 26000 of your return
+6Income threshold –
+7Line 5 minus line 6 (if negative, enter "0") =
+8Applicable rate ×
+9Line 7 multiplied by the percentage from line 8 =
+Ż –
+10Line 4 minus line 9 (if negative, enter "0") =
+11Spouse's or common-law partner's net income from line 23600 of their return –
+12Line 10 minus line 11 (if negative, enter "0") =
+Ż +
+13Line 3 plus line 12 (maximum $11,481) =
+Enter the amount from line 13 on line 58120 of your Form NS428.
+Line 58160 – Amount for an eligible dependant
+1Base amount
+2
+Enter whichever is more: $848 or your dependant's net income
+from line 23600 of their return. –
+3Line 1 minus line 2 (if negative, enter "0") (maximum $8,481) =
+Ż
+4Supplement amount
+5Amount from line 26000 of your return
+6Income threshold –
+7Line 5 minus line 6 (if negative, enter "0") =
+8Applicable rate ×
+9Line 7 multiplied by the percentage from line 8 =
+Ż –
+10Line 4 minus line 9 (if negative, enter "0") =
+11Dependant's net income from line 23600 of their return –
+12Line 10 minus line 11 (if negative, enter "0") =
+Ż +
+13Line 3 plus line 12 (maximum $11,481) =
+Enter the amount from line 13 on line 58160 of your Form NS428.
+5003-D E (24) Page 2 of 4
+9,329.00
+3,000.00
+25,000.00
+6%
+9,329.00
+3,000.00
+25,000.00
+6%
+
+--- PDF page 3 of 4 ---
+
+Line 58200 – Amount for infirm dependants age 18 or older
+Complete one column for each dependant. If you have more than three dependants, use a separate sheet of paper.
+Dependant 1
+Base amount
+Dependant's net income from line 23600 of their return –
+Line 1 minus line 2 (if negative, enter "0")
+(maximum $2,798 per dependant) =
+Amount claimed for this dependant on line 58160
+of your Form NS428, if any –
+Allowable amount for this dependant:
+line 3 minus line 4 (if negative, enter "0") =
+Dependant 2
+–
+=
+–
+=
+Dependant 3
+–
+=
+–
+=
+1
+2
+3
+4
+5
+6Add the amounts from line 5 of columns 1, 2, and 3 (and others, if any).
+Enter the total from line 6 on line 58200 of your Form NS428.
+Line 58400 – Caregiver amount
+Complete one column for each dependant. If you have more than three dependants, use a separate sheet of paper.
+Dependant 1
+Base amount
+Dependant's net income from line 23600 of their return –
+Line 1 minus line 2 (if negative, enter "0")
+(maximum $4,898 per dependant) =
+Amount claimed for this dependant on line 58160
+of your Form NS428, if any –
+Allowable amount for this dependant:
+line 3 minus line 4 (if negative, enter "0") =
+Dependant 2
+–
+=
+–
+=
+Dependant 3
+–
+=
+–
+=
+1
+2
+3
+4
+5
+6Add the amounts from line 5 of columns 1, 2, and 3 (and others, if any).
+Enter the total from line 6 on line 58400 of your Form NS428.
+Line 58440 – Disability amount for self
+Complete the following calculation if you were under 18 years of age on December 31, 2024:
+1Base amount
+2Maximum amount
+3
+Total child care and attendant care expenses for you,
+claimed by you or another person
+4Threshold for child and attendant care expenses –
+5Line 3 minus line 4 (if negative, enter "0") =
+Ż –
+6Line 2 minus line 5 (if negative, enter "0") =
+Ż +
+7Line 1 plus line 6 (maximum $10,790) =
+Enter the amount from line 7 on line 58440 of your Form NS428.
+5003-D E (24) Page 3 of 4
+8,481.00 8,481.00 8,481.00
+18,575.00 18,575.00 18,575.00
+7,341.00
+3,449.00
+2,346.00
+
+--- PDF page 4 of 4 ---
+
+Line 58480 – Disability amount transferred from a dependant
+Complete this calculation for each dependant. If you have more than one dependant, use a separate sheet of paper.
+Note: If you and your dependant were not residents of the same province or territory at the end of the year, special rules may
+apply. For more information, call the Canada Revenue Agency at 1-800-959-8281.
+1Base amount
+If the dependant was under 18 years of age on December 31, 2024, complete lines 2 to 12.
+If the dependant was 18 years of age or older, enter "0" on line 6 and continue on line 7.
+2Maximum amount
+3
+Total child care and attendant care expenses for this
+dependant claimed by you or another person
+4Threshold for child and attendant care expenses –
+5Line 3 minus line 4 (if negative, enter "0") =
+Ż –
+6Line 2 minus line 5 (if negative, enter "0") =
+Ż +
+7Line 1 plus line 6 (maximum $10,790) =
+8Enter the amount from line 24 of the dependant's Form NS428. +
+9Line 7 plus line 8 =
+10Dependant's taxable income from line 26000 of their return –
+11Line 9 minus line 10 (if negative, enter "0") =
+12Allowable amount for this dependant
+Enter whichever is less:
+amount from line 7 or line 11.
+Enter the total of allowable amounts claimed for all dependants on line 58480 of your Form NS428.
+Line 58729 – Allowable amount of medical expenses for other dependants
+Complete one column for each dependant. If you have more than three dependants, use a separate sheet of paper.
+Dependant 1
+Medical expenses for other dependant
+Enter the amount from line 38 of the dependant's
+Form NS428. –
+Line 1 minus line 2 (if negative, enter "0") =
+Dependant 2
+–
+=
+Dependant 3
+–
+=
+1
+2
+3
+4Add the amounts from line 3 of columns 1, 2, and 3 (and others, if any).
+Enter the total from line 4 on line 58729 of your Form NS428.
+Line 61520 – Nova Scotia dividend tax credit
+AAmount from line 12000 of your return
+1BAmount from line 12010 of your return – × 2.99% =
+2CAmount A minus amount B = × 8.85% = +
+3Line 1 plus line 2 =
+Enter the amount from line 3 on line 61520 of your Form NS428.
+5003-D E (24) Page 4 of 4
+7,341.00
+3,449.00
+2,346.00

@@ -1,0 +1,41 @@
+Title: property-iqaluit
+URL: https://iqaluit.ca/sites/default/files/by-law_no._979_-_2024_mill_rate_eng.pdf
+Fetched: 2026-11-02
+SHA-256 of the original: 33db094048bc320a12b3bba8d6e1af79b5e2efde990d51e5813c88aa0524aaf4
+Publication date modified: 2024-03-06
+PDF pages: all 6
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 1 of 6 ---
+
+
+
+--- PDF page 2 of 6 ---
+
+
+
+--- PDF page 3 of 6 ---
+
+
+
+--- PDF page 4 of 6 ---
+
+
+
+--- PDF page 5 of 6 ---
+
+
+
+--- PDF page 6 of 6 ---
+
+Manual transcription supplement (the original PDF is scanned; automated text extraction is empty).
+Visually checked against the downloaded original rendered with macOS PDFKit on 2026-11-02.
+PDF page 2 records third and final reading on February 27, 2024.
+PDF page 5, Schedule C, Mill Rates Proposed:
+Residential: Classification 7/8 — 20.33 Mills
+Residential: Classification 9/10/11 — 28.46 Mills
+The classification 7/8 figure is transcribed exactly. Its use as a typical household rate and application
+to the calculator's home value require an explicit estimated assessment/classification proxy in data.
+
+

@@ -1,0 +1,79 @@
+Title: Manitoba 2025 and 2024 Tax Rates & Tax Brackets
+URL: https://www.taxtips.ca/priortaxrates/tax-rates-2024-2025/mb.htm
+Fetched: 2026-11-02
+SHA-256 of the original: 6e11097df60cc2794c2a78596ef62d7dcfb4245e088841e486734528e0f0cc68
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+#### Home -> Manitoba ->
+
+#### Tax Rates -> Manitoba Personal Income Tax Rates for 2024 & 2025
+
+# Manitoba 2025 and 2024 Tax Rates & Tax Brackets
+
+##### Manitoba Income Tax Act s. 4, 4.1, 4.6, 4.7
+
+The Manitoba brackets for 2024 were announced in the Manitoba 2023 Budget, and were to be indexed starting in 2025. However, the Manitoba 2025 Budget announced that the 2025 Basic Personal Amount and tax bracket thresholds would remain at 2024 levels. Indexation is now frozen.
+
+The Manitoba tax brackets and the basic personal tax credit amount were to be increased for 2025 by an indexation factor of 1.012 (1.2% increase). Manitoba does not increase other personal tax credit amounts for indexation.
+
+The Federal tax brackets and personal tax credit amounts are increased for 2025 by an indexation factor of 1.027 (2.7% increase).
+
+See Indexation of the Personal Income Tax System for how the indexation factors are calculated.
+
+The Federal and Manitoba indexation factors, tax brackets and tax rates for 2025 have been confirmed to Canada Revenue Agency information.
+
+Tax Tip: read the article Understanding the Tables of Personal Income Tax Rates, especially if you are trying to compare the rates below to the marginal tax rates in the Basic Tax Calculator or the Detailed Tax Calculators.
+
+TaxTips.ca - Manitoba Tax Rates
+2025 Taxable Income | 2025 Tax Rates | 2024 Taxable Income | 2024 Tax Rates
+first $47,000 | 10.80% | first $47,000 | 10.80%
+over $47,000 up to $100,000 | 12.75% | over $47,000 up to $100,000 | 12.75%
+over $100,000 | 17.40% | over $100,000 | 17.40%
+
+The phase-out of the BPA over a net income range of $200,000 to $400,000 for 2025, as was planned in the 2024 Budget, is still in effect.
+
+TaxTips.ca - Combined Federal & Manitoba Tax Brackets and Tax Rates
+2025 Taxable Income (1) | MB 2025 Marginal Tax Rates | 2024 Taxable Income (1) | MB 2024 Marginal Tax Rates
+Other Income | Capital Gains | Canadian Dividends | Other Income | Capital Gains | Canadian Dividends
+Eligible | Non-Eligible | Eligible | Non-Eligible
+first $47,000 | 25.30% | 12.65% | 3.15% | 17.81% | first $47,000 | 25.80% | 12.90% | 3.84% | 18.38%
+over $47,000 up to $57,375 | 27.25% | 13.63% | 5.84% | 20.05% | over $47,000 up to $55,867 | 27.75% | 13.88% | 6.53% | 20.63%
+over $57,375 up to $100,000 | 33.25% | 16.63% | 14.12% | 26.95% | over $55,867 up to $100,000 | 33.25% | 16.63% | 14.12% | 26.95%
+over $100,000 up to $114,750 | 37.90% | 18.95% | 20.53% | 32.30% | over $100,000 up to $111,733 | 37.90% | 18.95% | 20.53% | 32.30%
+over $114,750 up to $177,882 | 43.40% | 21.70% | 28.12% | 38.62% | over $111,733 up to $173,205 | 43.40% | 21.70% | 28.12% | 38.62%
+over $177,882 up to $200,000 | 46.71% | 23.36% | 32.70% | 42.43% | over $173,205 up to $246,752 | 46.72% | 23.36% | 32.71% | 42.44%
+over $200,000 up to $253,414 | 47.56% | 23.78% | 33.87% | 43.41% | over $246,752 | 50.40% | 25.20% | 37.78% | 46.67%
+over $253,414 up to $400,000 | 51.25% | 25.63% | 38.96% | 47.65%
+over $400,000 | 50.40% | 25.20% | 37.78% | 46.67%
+Marginal tax rate for dividends is a % of actual dividends received (not grossed-up taxable amount). Marginal tax rate for capital gains is a % of total capital gains (not taxable capital gains). Gross-up rate for eligible dividends is 38%, and for non-eligible dividends is 15%. For more information see Manitoba dividend tax credits. Copyright © 2002 Boat Harbour Investments Ltd.
+
+(1) See the federal tax rates page for information on the enhanced federal personal amount, which increases the marginal tax rates for taxable incomes in the second highest federal tax bracket. The marginal tax rates in blue above have been adjusted to reflect these changes.
+
+The Manitoba basic personal amount (BPA) for 2025 and later years is reduced for taxpayers with net income (line 23600) in excess of $200,000, and reaches zero when net income is $400,000 and above. The marginal tax rates in teal reflect both the Federal and Manitoba BPA changes. The marginal tax rates in purple reflect only Manitoba BPA changes. The table of marginal tax rates assume that line 23600 net income is equal to taxable income for this purpose.
+
+TaxTips.ca Manitoba Basic Personal Amount
+2025 Personal Amount | 2025 Tax Rate | 2024 Personal Amount | 2024 Tax Rate
+$15,780 | 10.80% | $15,780 | 10.80%
+
+Federal Basic Personal Amount
+2025 Personal Amount (1) Minimum / Maximum | 2025 Tax Rate | 2024 Personal Amount (1) Minimum / Maximum | 2024 Tax Rate
+$14,538 | $16,129 | 14.5% | $14,156 | $15,705 | 15%
+
+Copyright © 2002 Boat Harbour Investments Ltd.
+
+Revised: June 27, 2026
+
+Revised: August 27, 2026
+
+© 2002- Boat Harbour Investments Ltd. All rights reserved.
+
+See Reproduction of information from TaxTips.ca
+
+Privacy Policy | Contact
+
+Facebook | Twitter | LinkedIn
+
+The authors of TaxTips.ca strive, but cannot guarantee, to provide information which is current and accurate. Individual circumstances have a significant effect on how tax and financial information can be used. Due to this, and to the nature of the information, it should not be relied upon for decision making without professional advice.
+
+TaxTips.ca provides links to other web sites. We cannot guarantee the accuracy of the information provided on linked sites.

@@ -1,0 +1,190 @@
+Title: Nunavut Tax
+URL: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5014-c/5014-c-24e.pdf
+Fetched: 2026-11-02
+SHA-256 of the original: 07e2121a9c80986f67d7fc8d38059001546f48bee25719b7e7ca6853016a0f79
+Publication date modified: 2024-11-16
+PDF pages: all 3
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 1 of 3 ---
+
+Form NU428
+2024
+Protected B when completed
+Nunavut Tax
+For more information about this form, go to canada.ca/nu-tax-info.
+Part A – Nunavut tax on taxable income
+1Enter your taxable income from line 26000 of your return.
+Use the amount from line 1 to complete the appropriate column below.
+Line 1 is
+$53,268 or less
+Amount from line 1
+–
+Line 2 minus line 3 (cannot be negative) =
+×Line 4 multiplied by
+the percentage from line 5 =
++
+Nunavut tax on taxable income
+Line 6 plus line 7
+=
+Line 1 is more than
+$53,268 but not
+more than $106,537
+–
+=
+×
+=
++
+=
+Line 1 is more than
+$106,537 but not
+more than $173,205
+–
+=
+×
+=
++
+=
+Line 1 is more
+than $173,205
+–
+=
+×
+=
++
+=
+2
+3
+4
+5
+6
+7
+8
+Enter the amount from line 8 on line 53 and continue at line 9.
+Part B – Nunavut non-refundable tax credits 56140Internal use
+58040 9Basic personal amount Claim $18,767
+58080 10Age amount (if you were born in 1959 or earlier) (use Worksheet NU428) (maximum $11,980) +
+Spouse or common-law partner amount:
+11Base amount
+12
+Your spouse's or common-law partner's net income
+from line 23600 of their return –
+58120 13Line 11 minus line 12 (if negative, enter "0") =
+Ż +
+Amount for an eligible dependant:
+14Base amount
+15Your eligible dependant's net income from line 23600 of their return –
+58160 16Line 14 minus line 15 (if negative, enter "0") =
+Ż +
+58200 17Amount for infirm dependants age 18 or older (use Worksheet NU428) +
+58230 18
+Amount for young children less than 6 years of age
+(complete the chart on the last page) 63710Number of children × $1,200 = +
+19Add lines 9, 10, 13, and 16 to 18. =
+CPP or QPP contributions:
+58240 20Amount from line 30800 of your return •
+58280 21Amount from line 31000 of your return + •
+Employment insurance premiums:
+58300 22Amount from line 31200 of your return + •
+58305 23Amount from line 31217 of your return + •
+24Add lines 20 to 23. =
+Ż +
+25Line 19 plus line 24 =
+5014-C E (24) (Ce formulaire est disponible en français.) Page 1 of 3
+0.00
+4%
+0.00
+53,268.00
+7%
+2,130.72
+106,537.00
+9%
+5,859.55
+173,205.00
+11.5%
+11,859.67
+18,767.00
+18,767.00
+
+--- PDF page 2 of 3 ---
+
+Protected B when completed
+Part B – Nunavut non-refundable tax credits (continued)
+26Amount from line 25 of the previous page
+58360 27Pension income amount (amount from line 31400 of your return) (maximum $2,000) +
+58400 28Caregiver amount (use Worksheet NU428) +
+29Add lines 26 to 28. =
+58440 30
+Disability amount for self
+(claim $15,973 or, if you were under 18 years of age, use Worksheet NU428) +
+58480 31Disability amount transferred from a dependant (use Worksheet NU428) +
+32Add lines 29 to 31. =
+58520 33Interest paid on your student loans (amount from line 31900 of your return) +
+58560 34Your tuition, education, and textbook amounts (attach Schedule NU(S11)) +
+58600 35Tuition, education, and textbook amounts transferred from a child or grandchild +
+58640 36Amounts transferred from your spouse or common-law partner (attach Schedule NU(S2)) +
+37Add lines 32 to 36. =
+Medical expenses:
+58689 38Amount from line 33099 of your return
+39Amount from line 23600 of your return
+40Applicable rate ×
+41Line 39 multiplied by the percentage from line 40 =
+42Enter whichever is less: $2,759 or the amount on line 41. –
+43Line 38 minus line 42 (if negative, enter "0") =
+58729 44
+Allowable amount of medical expenses for other dependants
+from line 33199 of your return +
+58769 45Line 43 plus line 44 =
+Ż +
+58800 46Line 37 plus line 45 =
+47Nunavut non-refundable tax credit rate ×
+58840 48Line 46 multiplied by the percentage from line 47 =
+Donations and gifts:
+49
+Amount from line 13
+of your federal Schedule 9 × 4% =
+50
+Amount from line 14
+of your federal Schedule 9 × 11.5% = +
+58969 51Line 49 plus line 50 =
+Ż +
+61500 52Nunavut non-refundable tax credits
+Line 48 plus line 51
+Enter this amount on line 56. =
+5014-C E (24) Page 2 of 3
+3%
+4%
+
+--- PDF page 3 of 3 ---
+
+Protected B when completed
+Part C – Nunavut tax
+53Nunavut tax on taxable income from line 8
+61510 54Nunavut tax on split income (complete Form T1206) + •
+55Line 53 plus line 54 =
+56Nunavut non-refundable tax credits from line 52
+61520 57Nunavut dividend tax credit (use Worksheet NU428) + •
+61540 58
+Nunavut minimum tax carryover:
+Amount from line 40427 of your return × 45% = + •
+59Add lines 56 to 58. =
+Ż –
+60Line 55 minus line 59 (if negative, enter "0") =
+61
+Nunavut additional tax for minimum tax purposes:
+Amount from line 14 of Part 7 of Form T691 × 45% = +
+62Line 60 plus line 61 =
+63Territorial foreign tax credit (complete Form T2036) –
+64Line 62 minus line 63 (if negative, enter "0") =
+62290 65Volunteer firefighters' tax credit Claim $703 –
+66Nunavut tax
+Line 64 minus line 65 (if negative, enter "0")
+Enter this amount on line 42800 of your return. =
+Details of amount for young children (if you need more space, attach an additional page)
+Child's name Relationship to you Date of birth
+(Year Month Day)
+Social insurance number
+(if available)
+See the privacy notice on your return.
+5014-C E (24) Page 3 of 3
