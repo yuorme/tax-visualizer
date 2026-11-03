@@ -1,0 +1,74 @@
+Title: Climate Action Incentive Payment Amounts for 2021
+URL: https://www.canada.ca/en/department-finance/news/2020/12/climate-action-incentive-payment-amounts-for-2021.html
+Fetched: 2026-11-02
+SHA-256 of the original: 6a431b53ff43b10d4a9190da0cc5d0bc6d37b94ec3a2099eca574c69cdd9f407
+Publication date modified: 2020-12-16
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+# Climate Action Incentive Payment Amounts for 2021
+
+From: Department of Finance Canada
+
+## Backgrounder
+
+The Government of Canada does not keep any direct proceeds from pollution pricing. All direct proceeds are returned to the province or territory of origin in the following way:
+
+Under the federal carbon pollution pricing system, the government applies a price on pollution in jurisdictions that do not have their own system.
+
+The Government of Canada does not keep any direct proceeds from pollution pricing. All direct proceeds are returned to the province or territory of origin in the following way:
+
+- For those jurisdictions that have voluntarily adopted the federal system, direct proceeds are returned to the governments of those jurisdictions.
+- For those provinces that do not meet the federal stringency requirements—Ontario, Manitoba, Saskatchewan and Alberta— approximately 90 per cent of direct proceeds are returned to residents of those provinces through Climate Action Incentive payments. The other 10 per cent is used to support small businesses, schools, universities, municipalities, and Indigenous groups.
+
+The federal government has specified Climate Action Incentive payment amounts for 2021 for the four provinces mentioned above. People can claim these payments through their 2020 personal income tax returns.
+
+Climate Action Incentive Payment Amounts, as Specified by the Minister of Finance for 2021
+(Delivered Through 2020 Personal Income Tax Returns)
+Amount | Ontario | Manitoba | Saskatchewan | Alberta
+Single adult, or first adult in a couple 1 | $ 300 | $360 | $ 500 | $ 490
+Second adult in a couple, or first child of a single parent 2 | $ 150 | $180 | $ 250 | $ 245
+Each child under 18 (starting with the second child for single parents) 3 | $ 75 | $ 90 | $ 125 | $ 123
+Example: Baseline amount for a family of four | $ 600 | $ 720 | $ 1,000 | $ 981
+1 Referred to as a qualified individual in the legislation. 2 Referred to as a qualified relation in the legislation. 3 Referred to as a qualified dependant in the legislation.
+
+In recognition of the fact that people who live in small and rural communities have reduced access to cleaner transportation options, a 10 per cent additional supplementary amount will be provided for eligible individuals and families who live outside a census metropolitan area, as defined by Statistics Canada.
+
+Climate Action Incentive payment amounts have been adjusted in each jurisdiction to account for any over- or under-distributions of proceeds generated in 2019-20, based on currently available data in each jurisdiction. This is in line with the government’s commitment that any actual variance between the proceeds originating in a given jurisdiction and the amount of proceeds returned to that jurisdiction would be addressed through changes in future payment amounts to that jurisdiction.
+
+The Government of Canada also intends to shift Climate Action Incentive payments to quarterly amounts paid through the Canada Revenue Agency’s benefit system, as early as 2022. Details will follow at a later date.
+
+## Continuing to Make Sure Most Households Get More Money Back Than They Pay
+
+In the provinces where Canadians receive Climate Action Incentive payments, most households will receive more than they pay as a result of the federal carbon pollution pricing system. For 2021, the table below presents updated estimates of the average cost impact of the federal system per household in each of these provinces, as well as the average Climate Action Incentive payment per household in those provinces.
+
+Average Climate Action Incentive Payments, per Household, for 2021
+| Ontario | Manitoba | Saskatchewan | Alberta
+Average cost impact per household 1 of the federal system | $ 439 | $ 462 | $ 720 | $ 598
+Average Climate Action Incentive payment per household 2 | $ 592 | $ 705 | $ 969 | $ 953
+Source: Department of Finance Canada calculations using inputs from Environment and Climate Change Canada and Statistics Canada. 1 The estimated average impact per household reflects the impact on household spending costs, accounting for direct impacts (reflecting consumption of fuels to which the federal carbon pollution pricing system applies) and indirect impacts (reflecting consumption of goods and services with federal carbon pollution pricing embedded in them). These impacts are inclusive of carbon pollution pricing embedded in imports that households purchase from other provinces/territories on which a federal carbon pollution price is applied. They do not include the costs associated with other carbon pricing systems; accordingly, they do not include the costs associated with the provincial systems for large industrial facilities such as those in Saskatchewan and Alberta. Estimates assume full-year application of the federal system for 2021-22. Estimates also assume full pass-through from businesses to consumers. 2 The 2021 Climate Action Incentive payment amounts include an adjustment for over- or under-distributions made with respect to proceeds generated in the 2019-20 year where the price on pollution applied, as described above. As a result, the average payment amount per household also reflects this adjustment.
+
+Continuing to Ensure Pollution Isn’t Free
+
+Canada has proven that putting a price on carbon pollution and returning the proceeds back to households can meet our economic needs and our environmental goals at the same time. On December 11, 2020, the government unveiled its strengthened climate plan, A Healthy Environment and A Healthy Economy, which outlined its plan to put a price on pollution through 2030. The government will continue returning the proceeds to households such that the majority receive more money back than they pay in provinces where the federal system applies.
+
+The estimated payment amounts for 2030 in the table below are illustrative only. They assume that the federal government will continue to return the large majority of the federal fuel charge proceeds through payments, as is currently the case, and that there are no changes to the types of fuels or activities to which the federal fuel charge applies. The illustrative amounts shown would differ if the structure of the current Climate Action Incentive payment program were changed (e.g., ratio of different amounts, rate or geographic scope of rural supplement), or if there were changes to the fuels to which the federal fuel charge applies. The amounts would also differ to the extent that the actual levels of economic activity and greenhouse gas emissions in the two years shown are different from currently projected levels. Footnote 1
+
+Illustrative Estimates of Payment Amounts in 2030, Assuming a $170/Tonne Federal Fuel Charge
+Amount | Ontario | Manitoba | Saskatchewan | Alberta
+First adult | $ 1,009 | $1,317 | $ 1,914 | $ 1,621
+Second adult | $ 505 | $ 658 | $ 957 | $ 811
+Child | $ 252 | $ 329 | $ 479 | $ 405
+Example: Baseline amount for a family of four | $ 2,018 | $ 2,633 | $ 3,829 | $ 3,242
+
+Providing a pollution pricing plan for the future gives businesses the certainty they need for forward planning as they innovate and invest in clean solutions.
+
+## Footnote
+
+Footnote 1
+
+These illustrative examples are based on carbon pricing proceeds estimates provided by Environment and Climate Change Canada (ECCC), as of November 17, 2020. The ECCC estimates are based on the ‘December 2019 Reference Case’ scenario for greenhouse gas emissions, which assumes no further government actions to address greenhouse gas emissions beyond those already in place as of September 2019.
+
+Return to footnote 1 referrer
+
+Search for related information by keyword: Economics and Industry | Department of Finance Canada | Canada | Money and finances | general public | backgrounders

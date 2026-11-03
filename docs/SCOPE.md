@@ -53,6 +53,13 @@ line-by-line tax return. Simpler and slightly less precise is acceptable where i
   household size); one national efficiency default. Users can override both.
 - A year without fuel data (2025 for now) has no driving inputs and no fuel tax.
 
+**Historical comparison.** A separate view compares the home province across installed tax years. Real mode
+holds income, deductions, childcare amounts, spending, rent and home value at the same purchasing power using
+Statistics Canada's annual Canada all-items CPI; household composition, ages, rates and driving stay fixed.
+Inputs and results use the latest completed annual CPI year's dollars, labelled in the view. Years without
+published annual CPI appear only in nominal mode, which holds the entered dollar amounts fixed. This is a
+comparison of modeled tax rules, not a reconstruction of the household's past circumstances or housing prices.
+
 ## How scope is decided
 
 The model is for comparing provinces, not for filing a return. A feature earns its inputs if, for the households
@@ -122,12 +129,15 @@ higher). The engine stays metric.
 **Your own property tax.** An optional annual property tax amount for the home province replaces home value ×
 rate there. Every other province keeps the reference-city rate.
 
-**Carbon pricing in historical years.** It is material (a rebate of roughly $1,500 against a few hundred dollars
-of direct cost for an Alberta family of four in 2023–24, in backstop provinces only), so it's included in years
-where it applied: the federal fuel charge on gasoline from the driving inputs, a per-province typical household
-heating carbon cost held in data (`estimated: true`, no input), and the Climate Action Incentive / Canada Carbon
-Rebate. BC's carbon tax and climate action credit get the same treatment. Quebec's cap-and-trade has no tax line
-and stays out. None of this applies to 2026.
+**Carbon pricing in historical years.** CRA rates confirm a $1,544 rebate for an Alberta family of four in the
+April 2023–January 2024 payment cycle: four payments of $193 + $96.50 + 2 × $48.25.
+Calendar-year receipts are $1,427.75 in 2023 and $1,736 in 2024, including January at the prior cycle's rate
+([CRA amounts](https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-carbon-rebate/how-much.html)).
+Direct costs depend on driving and the heating estimate; they are not a fixed published household bill.
+It's included in years where it applied: the federal fuel charge on gasoline from the driving inputs, a typical
+household heating carbon cost held in data (`estimated: true`, no input), and the Climate Action Incentive /
+Canada Carbon Rebate. BC's carbon tax and climate action credit get the same treatment.
+Quebec's cap-and-trade has no tax line and stays out. None of this applies to 2026.
 
 **Historical coverage** starts at 2019. 2016–2018 are possible later but not planned.
 

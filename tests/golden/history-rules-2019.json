@@ -1,0 +1,994 @@
+{
+  "benefits": [
+    {
+      "id": "ab-zero-kids",
+      "code": "AB",
+      "net": 0,
+      "work": 0,
+      "kids": 0,
+      "single": false,
+      "young": 0,
+      "expected": 0
+    },
+    {
+      "id": "ab-one-max",
+      "code": "AB",
+      "net": 26769,
+      "work": 0,
+      "kids": 1,
+      "single": false,
+      "young": 0,
+      "expected": 1155
+    },
+    {
+      "id": "ab-two-max",
+      "code": "AB",
+      "net": 26769,
+      "work": 0,
+      "kids": 2,
+      "single": false,
+      "young": 0,
+      "expected": 1732
+    },
+    {
+      "id": "ab-three-max",
+      "code": "AB",
+      "net": 26769,
+      "work": 0,
+      "kids": 3,
+      "single": false,
+      "young": 0,
+      "expected": 2309
+    },
+    {
+      "id": "ab-four-max",
+      "code": "AB",
+      "net": 26769,
+      "work": 0,
+      "kids": 4,
+      "single": false,
+      "young": 0,
+      "expected": 2886
+    },
+    {
+      "id": "ab-one-reduction",
+      "code": "AB",
+      "net": 27769,
+      "work": 0,
+      "kids": 1,
+      "single": false,
+      "young": 0,
+      "expected": 1085
+    },
+    {
+      "id": "ab-two-reduction",
+      "code": "AB",
+      "net": 27769,
+      "work": 0,
+      "kids": 2,
+      "single": false,
+      "young": 0,
+      "expected": 1627
+    },
+    {
+      "id": "ab-three-reduction",
+      "code": "AB",
+      "net": 27769,
+      "work": 0,
+      "kids": 3,
+      "single": false,
+      "young": 0,
+      "expected": 2169
+    },
+    {
+      "id": "ab-four-reduction",
+      "code": "AB",
+      "net": 27769,
+      "work": 0,
+      "kids": 4,
+      "single": false,
+      "young": 0,
+      "expected": 2711
+    },
+    {
+      "id": "ab-work-floor",
+      "code": "AB",
+      "net": 43302,
+      "work": 2760,
+      "kids": 1,
+      "single": false,
+      "young": 0,
+      "expected": 0
+    },
+    {
+      "id": "ab-work-positive-below-ten",
+      "code": "AB",
+      "net": 43302,
+      "work": 2770,
+      "kids": 1,
+      "single": false,
+      "young": 0,
+      "expected": 10
+    },
+    {
+      "id": "ab-two-components",
+      "code": "AB",
+      "net": 20000,
+      "work": 3760,
+      "kids": 2,
+      "single": false,
+      "young": 0,
+      "expected": 1842
+    },
+    {
+      "id": "ab-work-onset",
+      "code": "AB",
+      "net": 43302,
+      "work": 100000,
+      "kids": 1,
+      "single": false,
+      "young": 0,
+      "expected": 801
+    },
+    {
+      "id": "ab-work-reduction-one",
+      "code": "AB",
+      "net": 44302,
+      "work": 100000,
+      "kids": 1,
+      "single": false,
+      "young": 0,
+      "expected": 761
+    },
+    {
+      "id": "ab-work-reduction-two",
+      "code": "AB",
+      "net": 44302,
+      "work": 100000,
+      "kids": 2,
+      "single": false,
+      "young": 0,
+      "expected": 1490
+    },
+    {
+      "id": "ab-work-reduction-three",
+      "code": "AB",
+      "net": 44302,
+      "work": 100000,
+      "kids": 3,
+      "single": false,
+      "young": 0,
+      "expected": 1927
+    },
+    {
+      "id": "ab-work-reduction-four",
+      "code": "AB",
+      "net": 44302,
+      "work": 100000,
+      "kids": 4,
+      "single": false,
+      "young": 0,
+      "expected": 2073
+    },
+    {
+      "id": "ab-child-cap",
+      "code": "AB",
+      "net": 44302,
+      "work": 100000,
+      "kids": 6,
+      "single": false,
+      "young": 0,
+      "expected": 2073
+    },
+    {
+      "id": "ab-exhausted",
+      "code": "AB",
+      "net": 100000,
+      "work": 100000,
+      "kids": 4,
+      "single": false,
+      "young": 0,
+      "expected": 0
+    },
+    {
+      "id": "ns-zero-kids",
+      "code": "NS",
+      "net": 0,
+      "work": 0,
+      "kids": 0,
+      "single": false,
+      "young": 0,
+      "expected": 0
+    },
+    {
+      "id": "ns-one-max",
+      "code": "NS",
+      "net": 18000,
+      "work": 0,
+      "kids": 1,
+      "single": false,
+      "young": 0,
+      "expected": 624.96
+    },
+    {
+      "id": "ns-before-onset",
+      "code": "NS",
+      "net": 18000.99,
+      "work": 0,
+      "kids": 1,
+      "single": false,
+      "young": 0,
+      "expected": 624.96
+    },
+    {
+      "id": "ns-onset",
+      "code": "NS",
+      "net": 18001,
+      "work": 0,
+      "kids": 1,
+      "single": false,
+      "young": 0,
+      "expected": 624.8819
+    },
+    {
+      "id": "ns-two-max",
+      "code": "NS",
+      "net": 0,
+      "work": 0,
+      "kids": 2,
+      "single": false,
+      "young": 0,
+      "expected": 1449.96
+    },
+    {
+      "id": "ns-three-max",
+      "code": "NS",
+      "net": 0,
+      "work": 0,
+      "kids": 3,
+      "single": false,
+      "young": 0,
+      "expected": 2349.96
+    },
+    {
+      "id": "ns-four-max",
+      "code": "NS",
+      "net": 0,
+      "work": 0,
+      "kids": 4,
+      "single": false,
+      "young": 0,
+      "expected": 3249.96
+    },
+    {
+      "id": "ns-one-taper",
+      "code": "NS",
+      "net": 19000,
+      "work": 0,
+      "kids": 1,
+      "single": false,
+      "young": 0,
+      "expected": 546.86
+    },
+    {
+      "id": "ns-two-taper",
+      "code": "NS",
+      "net": 19000,
+      "work": 0,
+      "kids": 2,
+      "single": false,
+      "young": 0,
+      "expected": 1268.76
+    },
+    {
+      "id": "ns-three-taper",
+      "code": "NS",
+      "net": 19000,
+      "work": 0,
+      "kids": 3,
+      "single": false,
+      "young": 0,
+      "expected": 2056.26
+    },
+    {
+      "id": "ns-four-taper",
+      "code": "NS",
+      "net": 19000,
+      "work": 0,
+      "kids": 4,
+      "single": false,
+      "young": 0,
+      "expected": 2843.76
+    },
+    {
+      "id": "ns-rounded-rate-residual-one",
+      "code": "NS",
+      "net": 26000,
+      "work": 0,
+      "kids": 1,
+      "single": false,
+      "young": 0,
+      "expected": 0.16
+    },
+    {
+      "id": "ns-rounded-rate-residual-four",
+      "code": "NS",
+      "net": 26000,
+      "work": 0,
+      "kids": 4,
+      "single": false,
+      "young": 0,
+      "expected": 0.36
+    },
+    {
+      "id": "ns-exhaustion",
+      "code": "NS",
+      "net": 26004,
+      "work": 0,
+      "kids": 4,
+      "single": false,
+      "young": 0,
+      "expected": 0
+    },
+    {
+      "id": "qc-zero-kids",
+      "code": "QC",
+      "net": 0,
+      "work": 0,
+      "kids": 0,
+      "single": true,
+      "young": 0,
+      "expected": 0
+    },
+    {
+      "id": "qc-first",
+      "code": "QC",
+      "net": 0,
+      "work": 0,
+      "kids": 1,
+      "single": false,
+      "young": 1,
+      "expected": 2472
+    },
+    {
+      "id": "qc-second",
+      "code": "QC",
+      "net": 0,
+      "work": 0,
+      "kids": 2,
+      "single": false,
+      "young": 2,
+      "expected": 4207
+    },
+    {
+      "id": "qc-third",
+      "code": "QC",
+      "net": 0,
+      "work": 0,
+      "kids": 3,
+      "single": false,
+      "young": 3,
+      "expected": 5942
+    },
+    {
+      "id": "qc-fourth",
+      "code": "QC",
+      "net": 49044,
+      "work": 0,
+      "kids": 4,
+      "single": false,
+      "young": 4,
+      "expected": 7794
+    },
+    {
+      "id": "qc-fifth",
+      "code": "QC",
+      "net": 0,
+      "work": 0,
+      "kids": 5,
+      "single": false,
+      "young": 5,
+      "expected": 9646
+    },
+    {
+      "id": "qc-fourth-taper",
+      "code": "QC",
+      "net": 50044,
+      "work": 0,
+      "kids": 4,
+      "single": false,
+      "young": 4,
+      "expected": 7754
+    },
+    {
+      "id": "qc-fourth-floor-boundary",
+      "code": "QC",
+      "net": 178469,
+      "work": 0,
+      "kids": 4,
+      "single": false,
+      "young": 4,
+      "expected": 2617
+    },
+    {
+      "id": "qc-fifth-floor",
+      "code": "QC",
+      "net": 1000000,
+      "work": 0,
+      "kids": 5,
+      "single": false,
+      "young": 5,
+      "expected": 3258
+    },
+    {
+      "id": "qc-parent-onset-school",
+      "code": "QC",
+      "net": 35680,
+      "work": 0,
+      "kids": 2,
+      "single": true,
+      "young": 1,
+      "expected": 5176
+    },
+    {
+      "id": "qc-parent-taper-school",
+      "code": "QC",
+      "net": 36680,
+      "work": 0,
+      "kids": 2,
+      "single": true,
+      "young": 1,
+      "expected": 5136
+    },
+    {
+      "id": "qc-parent-floor-school",
+      "code": "QC",
+      "net": 1000000,
+      "work": 0,
+      "kids": 2,
+      "single": true,
+      "young": 1,
+      "expected": 1783
+    },
+    {
+      "id": "ab-base-small",
+      "code": "AB",
+      "net": 43200,
+      "work": 0,
+      "kids": 1,
+      "single": false,
+      "young": 0,
+      "expected": 10
+    },
+    {
+      "id": "ab-both-small-separate",
+      "code": "AB",
+      "net": 43200,
+      "work": 2770,
+      "kids": 1,
+      "single": false,
+      "young": 0,
+      "expected": 20
+    },
+    {
+      "id": "ab-base-zero",
+      "code": "AB",
+      "net": 43269,
+      "work": 0,
+      "kids": 1,
+      "single": false,
+      "young": 0,
+      "expected": 0
+    },
+    {
+      "id": "ab-work-last-positive",
+      "code": "AB",
+      "net": 63302,
+      "work": 100000,
+      "kids": 1,
+      "single": false,
+      "young": 0,
+      "expected": 10
+    },
+    {
+      "id": "ab-work-exact-zero",
+      "code": "AB",
+      "net": 63327,
+      "work": 100000,
+      "kids": 1,
+      "single": false,
+      "young": 0,
+      "expected": 0
+    },
+    {
+      "id": "ab-base-above-minimum",
+      "code": "AB",
+      "net": 43100,
+      "work": 0,
+      "kids": 1,
+      "single": false,
+      "young": 0,
+      "expected": 11.83
+    },
+    {
+      "id": "ab-work-above-minimum",
+      "code": "AB",
+      "net": 43302,
+      "work": 2860,
+      "kids": 1,
+      "single": false,
+      "young": 0,
+      "expected": 11
+    }
+  ],
+  "levy": [
+    {
+      "income": 50000,
+      "expected": 0
+    },
+    {
+      "income": 50500,
+      "expected": 50
+    },
+    {
+      "income": 51000,
+      "expected": 100
+    },
+    {
+      "income": 52000,
+      "expected": 100
+    },
+    {
+      "income": 55000,
+      "expected": 100
+    },
+    {
+      "income": 55500,
+      "expected": 150
+    },
+    {
+      "income": 56000,
+      "expected": 200
+    },
+    {
+      "income": 57000,
+      "expected": 200
+    },
+    {
+      "income": 60000,
+      "expected": 200
+    },
+    {
+      "income": 60500,
+      "expected": 250
+    },
+    {
+      "income": 61000,
+      "expected": 300
+    },
+    {
+      "income": 62000,
+      "expected": 300
+    },
+    {
+      "income": 65000,
+      "expected": 300
+    },
+    {
+      "income": 65500,
+      "expected": 350
+    },
+    {
+      "income": 66000,
+      "expected": 400
+    },
+    {
+      "income": 67000,
+      "expected": 400
+    },
+    {
+      "income": 70000,
+      "expected": 400
+    },
+    {
+      "income": 70500,
+      "expected": 450
+    },
+    {
+      "income": 71000,
+      "expected": 500
+    },
+    {
+      "income": 72000,
+      "expected": 500
+    },
+    {
+      "income": 75000,
+      "expected": 500
+    },
+    {
+      "income": 75500,
+      "expected": 550
+    },
+    {
+      "income": 76000,
+      "expected": 600
+    },
+    {
+      "income": 77000,
+      "expected": 600
+    },
+    {
+      "income": 80000,
+      "expected": 600
+    },
+    {
+      "income": 80500,
+      "expected": 650
+    },
+    {
+      "income": 81000,
+      "expected": 700
+    },
+    {
+      "income": 82000,
+      "expected": 700
+    },
+    {
+      "income": 100000,
+      "expected": 700
+    },
+    {
+      "income": 100500,
+      "expected": 750
+    },
+    {
+      "income": 101000,
+      "expected": 800
+    },
+    {
+      "income": 102000,
+      "expected": 800
+    },
+    {
+      "income": 125000,
+      "expected": 800
+    },
+    {
+      "income": 125500,
+      "expected": 850
+    },
+    {
+      "income": 126000,
+      "expected": 900
+    },
+    {
+      "income": 127000,
+      "expected": 900
+    },
+    {
+      "income": 175000,
+      "expected": 900
+    },
+    {
+      "income": 175500,
+      "expected": 950
+    },
+    {
+      "income": 176000,
+      "expected": 1000
+    },
+    {
+      "income": 177000,
+      "expected": 1000
+    },
+    {
+      "income": 250000,
+      "expected": 1000
+    },
+    {
+      "income": 250500,
+      "expected": 1050
+    },
+    {
+      "income": 251000,
+      "expected": 1100
+    },
+    {
+      "income": 252000,
+      "expected": 1100
+    },
+    {
+      "income": 300000,
+      "expected": 1100
+    },
+    {
+      "income": 300500,
+      "expected": 1150
+    },
+    {
+      "income": 301000,
+      "expected": 1200
+    },
+    {
+      "income": 302000,
+      "expected": 1200
+    },
+    {
+      "income": 350000,
+      "expected": 1200
+    },
+    {
+      "income": 350500,
+      "expected": 1250
+    },
+    {
+      "income": 351000,
+      "expected": 1300
+    },
+    {
+      "income": 352000,
+      "expected": 1300
+    },
+    {
+      "income": 400000,
+      "expected": 1300
+    },
+    {
+      "income": 400500,
+      "expected": 1350
+    },
+    {
+      "income": 401000,
+      "expected": 1400
+    },
+    {
+      "income": 402000,
+      "expected": 1400
+    },
+    {
+      "income": 450000,
+      "expected": 1400
+    },
+    {
+      "income": 450500,
+      "expected": 1450
+    },
+    {
+      "income": 451000,
+      "expected": 1500
+    },
+    {
+      "income": 452000,
+      "expected": 1500
+    },
+    {
+      "income": 500000,
+      "expected": 1500
+    },
+    {
+      "income": 500500,
+      "expected": 1550
+    },
+    {
+      "income": 501000,
+      "expected": 1600
+    },
+    {
+      "income": 502000,
+      "expected": 1600
+    },
+    {
+      "income": 550000,
+      "expected": 1600
+    },
+    {
+      "income": 550500,
+      "expected": 1650
+    },
+    {
+      "income": 551000,
+      "expected": 1700
+    },
+    {
+      "income": 552000,
+      "expected": 1700
+    },
+    {
+      "income": 600000,
+      "expected": 1700
+    },
+    {
+      "income": 600500,
+      "expected": 1750
+    },
+    {
+      "income": 601000,
+      "expected": 1800
+    },
+    {
+      "income": 602000,
+      "expected": 1800
+    }
+  ],
+  "msp": [
+    {
+      "id": "zero",
+      "net": 26000,
+      "couple": false,
+      "kids": 0,
+      "claim": 0,
+      "expected": 0
+    },
+    {
+      "id": "first-band",
+      "net": 26001,
+      "couple": false,
+      "kids": 0,
+      "claim": 0,
+      "expected": 138
+    },
+    {
+      "id": "first-top",
+      "net": 28000,
+      "couple": false,
+      "kids": 0,
+      "claim": 0,
+      "expected": 138
+    },
+    {
+      "id": "second",
+      "net": 28001,
+      "couple": false,
+      "kids": 0,
+      "claim": 0,
+      "expected": 210
+    },
+    {
+      "id": "second-top",
+      "net": 30000,
+      "couple": false,
+      "kids": 0,
+      "claim": 0,
+      "expected": 210
+    },
+    {
+      "id": "third",
+      "net": 30001,
+      "couple": false,
+      "kids": 0,
+      "claim": 0,
+      "expected": 276
+    },
+    {
+      "id": "third-top",
+      "net": 34000,
+      "couple": false,
+      "kids": 0,
+      "claim": 0,
+      "expected": 276
+    },
+    {
+      "id": "fourth",
+      "net": 34001,
+      "couple": false,
+      "kids": 0,
+      "claim": 0,
+      "expected": 336
+    },
+    {
+      "id": "fourth-top",
+      "net": 38000,
+      "couple": false,
+      "kids": 0,
+      "claim": 0,
+      "expected": 336
+    },
+    {
+      "id": "fifth",
+      "net": 38001,
+      "couple": false,
+      "kids": 0,
+      "claim": 0,
+      "expected": 390
+    },
+    {
+      "id": "fifth-top",
+      "net": 42000,
+      "couple": false,
+      "kids": 0,
+      "claim": 0,
+      "expected": 390
+    },
+    {
+      "id": "full",
+      "net": 42001,
+      "couple": false,
+      "kids": 0,
+      "claim": 0,
+      "expected": 450
+    },
+    {
+      "id": "couple-zero",
+      "net": 29000,
+      "couple": true,
+      "kids": 0,
+      "claim": 0,
+      "expected": 0
+    },
+    {
+      "id": "couple-first-band",
+      "net": 29001,
+      "couple": true,
+      "kids": 0,
+      "claim": 0,
+      "expected": 276
+    },
+    {
+      "id": "parent-child",
+      "net": 29000,
+      "couple": false,
+      "kids": 1,
+      "claim": 0,
+      "expected": 0
+    },
+    {
+      "id": "parent-child-next",
+      "net": 29001,
+      "couple": false,
+      "kids": 1,
+      "claim": 0,
+      "expected": 138
+    },
+    {
+      "id": "couple-two-children",
+      "net": 35000,
+      "couple": true,
+      "kids": 2,
+      "claim": 0,
+      "expected": 0
+    },
+    {
+      "id": "couple-two-children-next",
+      "net": 35001,
+      "couple": true,
+      "kids": 2,
+      "claim": 0,
+      "expected": 276
+    },
+    {
+      "id": "childcare-addback",
+      "net": 29000,
+      "couple": false,
+      "kids": 1,
+      "claim": 2000,
+      "expected": 138
+    }
+  ],
+  "flatBpa": [
+    {
+      "income": 12068,
+      "expected": 0
+    },
+    {
+      "income": 12069,
+      "expected": 0
+    },
+    {
+      "income": 12070,
+      "expected": 0.15
+    },
+    {
+      "income": 20000,
+      "expected": 1189.65
+    },
+    {
+      "income": 147667,
+      "expected": 20339.7
+    },
+    {
+      "income": 210371,
+      "expected": 29745.3
+    }
+  ]
+}

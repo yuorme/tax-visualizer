@@ -1,0 +1,185 @@
+Title: Statistics Canada 25-10-0060-01 household energy consumption, selected CSV rows
+URL: https://www150.statcan.gc.ca/n1/tbl/csv/25100060-eng.zip
+Fetched: 2026-11-03
+SHA-256 of the original: 597c76082f39b261dcd5d327178ccaa014c39f4c07611e7b04058d5c6c0c65cb
+Extract: 25100060.csv within the original ZIP; 2019/2021 observations, gigajoules and household counts.
+This custom CSV extract is necessary because fetch-source does not extract ZIP archives.
+Values and suppression flags are copied verbatim. F means too unreliable to publish; E means use with caution.
+================================================================================
+REF_DATE,GEO,Energy type,Energy consumption,UOM,VALUE,STATUS,VECTOR
+2019,Canada,"Total, all energy types",Gigajoules,Gigajoules,1353727238,,v100313989
+2019,Canada,"Total, all energy types",Number of households,Number,14954936,,v100313992
+2019,Canada,Electricity,Gigajoules,Gigajoules,593817177,,v100313993
+2019,Canada,Electricity,Number of households,Number,14954936,,v100313996
+2019,Canada,Natural gas,Gigajoules,Gigajoules,723344231,,v100313997
+2019,Canada,Natural gas,Number of households,Number,7894803,,v100314000
+2019,Canada,Heating oil,Gigajoules,Gigajoules,36565831,,v100314001
+2019,Canada,Heating oil,Number of households,Number,735600,,v100314004
+2019,Newfoundland and Labrador,"Total, all energy types",Gigajoules,Gigajoules,15615351,,v100314005
+2019,Newfoundland and Labrador,"Total, all energy types",Number of households,Number,218065,,v100314008
+2019,Newfoundland and Labrador,Electricity,Gigajoules,Gigajoules,13181468,,v100314009
+2019,Newfoundland and Labrador,Electricity,Number of households,Number,218065,,v100314012
+2019,Newfoundland and Labrador,Natural gas,Gigajoules,Gigajoules,,F,v100314013
+2019,Newfoundland and Labrador,Natural gas,Number of households,Number,,F,v100314016
+2019,Newfoundland and Labrador,Heating oil,Gigajoules,Gigajoules,2433884,E,v100314017
+2019,Newfoundland and Labrador,Heating oil,Number of households,Number,48194,,v100314020
+2019,Prince Edward Island,"Total, all energy types",Gigajoules,Gigajoules,4763309,,v100314021
+2019,Prince Edward Island,"Total, all energy types",Number of households,Number,63486,,v100314024
+2019,Prince Edward Island,Electricity,Gigajoules,Gigajoules,2107616,,v100314025
+2019,Prince Edward Island,Electricity,Number of households,Number,63486,,v100314028
+2019,Prince Edward Island,Natural gas,Gigajoules,Gigajoules,,F,v100314029
+2019,Prince Edward Island,Natural gas,Number of households,Number,,F,v100314032
+2019,Prince Edward Island,Heating oil,Gigajoules,Gigajoules,2655694,,v100314033
+2019,Prince Edward Island,Heating oil,Number of households,Number,42425,,v100314036
+2019,Nova Scotia,"Total, all energy types",Gigajoules,Gigajoules,27590458,,v100314037
+2019,Nova Scotia,"Total, all energy types",Number of households,Number,415552,,v100314040
+2019,Nova Scotia,Electricity,Gigajoules,Gigajoules,15766878,,v100314041
+2019,Nova Scotia,Electricity,Number of households,Number,415552,,v100314044
+2019,Nova Scotia,Natural gas,Gigajoules,Gigajoules,,F,v100314045
+2019,Nova Scotia,Natural gas,Number of households,Number,,F,v100314048
+2019,Nova Scotia,Heating oil,Gigajoules,Gigajoules,10389296,,v100314049
+2019,Nova Scotia,Heating oil,Number of households,Number,205004,,v100314052
+2019,New Brunswick,"Total, all energy types",Gigajoules,Gigajoules,20696383,,v100314053
+2019,New Brunswick,"Total, all energy types",Number of households,Number,326168,,v100314056
+2019,New Brunswick,Electricity,Gigajoules,Gigajoules,18278005,,v100314057
+2019,New Brunswick,Electricity,Number of households,Number,326168,,v100314060
+2019,New Brunswick,Natural gas,Gigajoules,Gigajoules,,F,v100314061
+2019,New Brunswick,Natural gas,Number of households,Number,,F,v100314064
+2019,New Brunswick,Heating oil,Gigajoules,Gigajoules,1663103,E,v100314065
+2019,New Brunswick,Heating oil,Number of households,Number,36067,E,v100314068
+2019,Quebec,"Total, all energy types",Gigajoules,Gigajoules,260079112,,v100314069
+2019,Quebec,"Total, all energy types",Number of households,Number,3699343,,v100314072
+2019,Quebec,Electricity,Gigajoules,Gigajoules,235118282,,v100314073
+2019,Quebec,Electricity,Number of households,Number,3699343,,v100314076
+2019,Quebec,Natural gas,Gigajoules,Gigajoules,14543167,E,v100314077
+2019,Quebec,Natural gas,Number of households,Number,225635,,v100314080
+2019,Quebec,Heating oil,Gigajoules,Gigajoules,10417664,E,v100314081
+2019,Quebec,Heating oil,Number of households,Number,237673,,v100314084
+2019,Ontario,"Total, all energy types",Gigajoules,Gigajoules,535432373,,v100314085
+2019,Ontario,"Total, all energy types",Number of households,Number,5645826,,v100314088
+2019,Ontario,Electricity,Gigajoules,Gigajoules,167887796,,v100314089
+2019,Ontario,Electricity,Number of households,Number,5645826,,v100314092
+2019,Ontario,Natural gas,Gigajoules,Gigajoules,360348365,,v100314093
+2019,Ontario,Natural gas,Number of households,Number,4158586,,v100314096
+2019,Ontario,Heating oil,Gigajoules,Gigajoules,7196212,,v100314097
+2019,Ontario,Heating oil,Number of households,Number,133957,,v100314100
+2019,Manitoba,"Total, all energy types",Gigajoules,Gigajoules,58428757,,v100314101
+2019,Manitoba,"Total, all energy types",Number of households,Number,504987,,v100314104
+2019,Manitoba,Electricity,Gigajoules,Gigajoules,24073415,,v100314105
+2019,Manitoba,Electricity,Number of households,Number,504987,,v100314108
+2019,Manitoba,Natural gas,Gigajoules,Gigajoules,34355342,,v100314109
+2019,Manitoba,Natural gas,Number of households,Number,324161,,v100314112
+2019,Manitoba,Heating oil,Gigajoules,Gigajoules,,F,v100314113
+2019,Manitoba,Heating oil,Number of households,Number,,F,v100314116
+2019,Saskatchewan,"Total, all energy types",Gigajoules,Gigajoules,53647817,,v100314117
+2019,Saskatchewan,"Total, all energy types",Number of households,Number,445231,,v100314120
+2019,Saskatchewan,Electricity,Gigajoules,Gigajoules,13321111,,v100314121
+2019,Saskatchewan,Electricity,Number of households,Number,445231,,v100314124
+2019,Saskatchewan,Natural gas,Gigajoules,Gigajoules,40326705,,v100314125
+2019,Saskatchewan,Natural gas,Number of households,Number,409024,,v100314128
+2019,Saskatchewan,Heating oil,Gigajoules,Gigajoules,,F,v100314129
+2019,Saskatchewan,Heating oil,Number of households,Number,,F,v100314132
+2019,Alberta,"Total, all energy types",Gigajoules,Gigajoules,204360471,,v100314133
+2019,Alberta,"Total, all energy types",Number of households,Number,1639879,,v100314136
+2019,Alberta,Electricity,Gigajoules,Gigajoules,39868420,,v100314137
+2019,Alberta,Electricity,Number of households,Number,1639879,,v100314140
+2019,Alberta,Natural gas,Gigajoules,Gigajoules,164492051,,v100314141
+2019,Alberta,Natural gas,Number of households,Number,1497947,,v100314144
+2019,Alberta,Heating oil,Gigajoules,Gigajoules,,F,v100314145
+2019,Alberta,Heating oil,Number of households,Number,,F,v100314148
+2019,British Columbia,"Total, all energy types",Gigajoules,Gigajoules,173113207,,v100314149
+2019,British Columbia,"Total, all energy types",Number of households,Number,1996399,,v100314152
+2019,British Columbia,Electricity,Gigajoules,Gigajoules,64214186,,v100314153
+2019,British Columbia,Electricity,Number of households,Number,1996399,,v100314156
+2019,British Columbia,Natural gas,Gigajoules,Gigajoules,107089041,,v100314157
+2019,British Columbia,Natural gas,Number of households,Number,1250351,,v100314160
+2019,British Columbia,Heating oil,Gigajoules,Gigajoules,,F,v100314161
+2019,British Columbia,Heating oil,Number of households,Number,,F,v100314164
+2021,Canada,"Total, all energy types",Gigajoules,Gigajoules,1275937165,,v100313989
+2021,Canada,"Total, all energy types",Number of households,Number,14936620,,v100313992
+2021,Canada,Electricity,Gigajoules,Gigajoules,583999217,,v100313993
+2021,Canada,Electricity,Number of households,Number,14936620,,v100313996
+2021,Canada,Natural gas,Gigajoules,Gigajoules,656986991,,v100313997
+2021,Canada,Natural gas,Number of households,Number,7742110,,v100314000
+2021,Canada,Heating oil,Gigajoules,Gigajoules,34950957,,v100314001
+2021,Canada,Heating oil,Number of households,Number,581423,,v100314004
+2021,Newfoundland and Labrador,"Total, all energy types",Gigajoules,Gigajoules,15380131,,v100314005
+2021,Newfoundland and Labrador,"Total, all energy types",Number of households,Number,223250,,v100314008
+2021,Newfoundland and Labrador,Electricity,Gigajoules,Gigajoules,12195130,,v100314009
+2021,Newfoundland and Labrador,Electricity,Number of households,Number,223250,,v100314012
+2021,Newfoundland and Labrador,Natural gas,Gigajoules,Gigajoules,,F,v100314013
+2021,Newfoundland and Labrador,Natural gas,Number of households,Number,,F,v100314016
+2021,Newfoundland and Labrador,Heating oil,Gigajoules,Gigajoules,3185001,,v100314017
+2021,Newfoundland and Labrador,Heating oil,Number of households,Number,49193,,v100314020
+2021,Prince Edward Island,"Total, all energy types",Gigajoules,Gigajoules,4522478,,v100314021
+2021,Prince Edward Island,"Total, all energy types",Number of households,Number,64565,,v100314024
+2021,Prince Edward Island,Electricity,Gigajoules,Gigajoules,2245524,,v100314025
+2021,Prince Edward Island,Electricity,Number of households,Number,64565,,v100314028
+2021,Prince Edward Island,Natural gas,Gigajoules,Gigajoules,,F,v100314029
+2021,Prince Edward Island,Natural gas,Number of households,Number,,F,v100314032
+2021,Prince Edward Island,Heating oil,Gigajoules,Gigajoules,2276954,,v100314033
+2021,Prince Edward Island,Heating oil,Number of households,Number,39296,,v100314036
+2021,Nova Scotia,"Total, all energy types",Gigajoules,Gigajoules,29254078,,v100314037
+2021,Nova Scotia,"Total, all energy types",Number of households,Number,428225,,v100314040
+2021,Nova Scotia,Electricity,Gigajoules,Gigajoules,16384387,,v100314041
+2021,Nova Scotia,Electricity,Number of households,Number,428225,,v100314044
+2021,Nova Scotia,Natural gas,Gigajoules,Gigajoules,,F,v100314045
+2021,Nova Scotia,Natural gas,Number of households,Number,,F,v100314048
+2021,Nova Scotia,Heating oil,Gigajoules,Gigajoules,11193508,,v100314049
+2021,Nova Scotia,Heating oil,Number of households,Number,182415,,v100314052
+2021,New Brunswick,"Total, all energy types",Gigajoules,Gigajoules,22435871,,v100314053
+2021,New Brunswick,"Total, all energy types",Number of households,Number,337650,,v100314056
+2021,New Brunswick,Electricity,Gigajoules,Gigajoules,19643745,,v100314057
+2021,New Brunswick,Electricity,Number of households,Number,337650,,v100314060
+2021,New Brunswick,Natural gas,Gigajoules,Gigajoules,,F,v100314061
+2021,New Brunswick,Natural gas,Number of households,Number,19332,E,v100314064
+2021,New Brunswick,Heating oil,Gigajoules,Gigajoules,1720865,E,v100314065
+2021,New Brunswick,Heating oil,Number of households,Number,27998,,v100314068
+2021,Quebec,"Total, all energy types",Gigajoules,Gigajoules,256019326,,v100314069
+2021,Quebec,"Total, all energy types",Number of households,Number,3749040,,v100314072
+2021,Quebec,Electricity,Gigajoules,Gigajoules,231059543,,v100314073
+2021,Quebec,Electricity,Number of households,Number,3749040,,v100314076
+2021,Quebec,Natural gas,Gigajoules,Gigajoules,14514515,,v100314077
+2021,Quebec,Natural gas,Number of households,Number,243348,,v100314080
+2021,Quebec,Heating oil,Gigajoules,Gigajoules,10445268,,v100314081
+2021,Quebec,Heating oil,Number of households,Number,170041,,v100314084
+2021,Ontario,"Total, all energy types",Gigajoules,Gigajoules,490403922,,v100314085
+2021,Ontario,"Total, all energy types",Number of households,Number,5491210,,v100314088
+2021,Ontario,Electricity,Gigajoules,Gigajoules,164678278,,v100314089
+2021,Ontario,Electricity,Number of households,Number,5491210,,v100314092
+2021,Ontario,Natural gas,Gigajoules,Gigajoules,320083262,,v100314093
+2021,Ontario,Natural gas,Number of households,Number,3985936,,v100314096
+2021,Ontario,Heating oil,Gigajoules,Gigajoules,5642382,,v100314097
+2021,Ontario,Heating oil,Number of households,Number,93721,,v100314100
+2021,Manitoba,"Total, all energy types",Gigajoules,Gigajoules,47587604,,v100314101
+2021,Manitoba,"Total, all energy types",Number of households,Number,518050,,v100314104
+2021,Manitoba,Electricity,Gigajoules,Gigajoules,22053320,,v100314105
+2021,Manitoba,Electricity,Number of households,Number,518050,,v100314108
+2021,Manitoba,Natural gas,Gigajoules,Gigajoules,25534284,,v100314109
+2021,Manitoba,Natural gas,Number of households,Number,354914,,v100314112
+2021,Manitoba,Heating oil,Gigajoules,Gigajoules,,F,v100314113
+2021,Manitoba,Heating oil,Number of households,Number,,F,v100314116
+2021,Saskatchewan,"Total, all energy types",Gigajoules,Gigajoules,45555872,,v100314117
+2021,Saskatchewan,"Total, all energy types",Number of households,Number,449575,,v100314120
+2021,Saskatchewan,Electricity,Gigajoules,Gigajoules,11347031,,v100314121
+2021,Saskatchewan,Electricity,Number of households,Number,449575,,v100314124
+2021,Saskatchewan,Natural gas,Gigajoules,Gigajoules,34208841,,v100314125
+2021,Saskatchewan,Natural gas,Number of households,Number,403914,,v100314128
+2021,Saskatchewan,Heating oil,Gigajoules,Gigajoules,,F,v100314129
+2021,Saskatchewan,Heating oil,Number of households,Number,,F,v100314132
+2021,Alberta,"Total, all energy types",Gigajoules,Gigajoules,198941329,,v100314133
+2021,Alberta,"Total, all energy types",Number of households,Number,1633225,,v100314136
+2021,Alberta,Electricity,Gigajoules,Gigajoules,38083700,,v100314137
+2021,Alberta,Electricity,Number of households,Number,1633225,,v100314140
+2021,Alberta,Natural gas,Gigajoules,Gigajoules,160857628,,v100314141
+2021,Alberta,Natural gas,Number of households,Number,1471165,,v100314144
+2021,Alberta,Heating oil,Gigajoules,Gigajoules,,F,v100314145
+2021,Alberta,Heating oil,Number of households,Number,,F,v100314148
+2021,British Columbia,"Total, all energy types",Gigajoules,Gigajoules,165836554,,v100314149
+2021,British Columbia,"Total, all energy types",Number of households,Number,2041830,,v100314152
+2021,British Columbia,Electricity,Gigajoules,Gigajoules,66308559,,v100314153
+2021,British Columbia,Electricity,Number of households,Number,2041830,,v100314156
+2021,British Columbia,Natural gas,Gigajoules,Gigajoules,99041017,,v100314157
+2021,British Columbia,Natural gas,Number of households,Number,1235024,,v100314160
+2021,British Columbia,Heating oil,Gigajoules,Gigajoules,,F,v100314161
+2021,British Columbia,Heating oil,Number of households,Number,,F,v100314164

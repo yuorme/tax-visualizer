@@ -1,0 +1,12 @@
+Title: Vancouver 2019 property tax rates, council report Appendix A (manual web extract)
+URL: https://council.vancouver.ca/20190514/documents/a3.pdf
+Fetched: 2026-11-02
+SHA-256 of the original: unavailable (direct download returned HTTP 403; official PDF read by web tool)
+Manual transcription of relevant numeric rows of Appendix A, PDF page 8, not a fetch-source extraction.
+================================================================================
+
+2019 residential class 1 rates per $1000 taxable value:
+General purpose 1.33572; school 0.91773; TransLink 0.22617;
+BC Assessment 0.03970; Metro Vancouver 0.04164; Municipal Finance Authority 0.00020.
+Published total: 2.56116 mills.
+The report presents rates adjusted for the adopted March 2019 land-assessment averaging bylaw.

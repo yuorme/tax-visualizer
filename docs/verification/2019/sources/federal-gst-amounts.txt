@@ -1,0 +1,1210 @@
+Title: Report on Federal Tax Expenditures - Concepts, Estimates and Evaluations 2020: part 5
+URL: https://www.canada.ca/en/department-finance/services/publications/federal-tax-expenditures/2020/part-5.html
+Fetched: 2026-11-02
+SHA-256 of the original: eb394cc3c9c24ff666730767d811d8ac72403f465bf7db913d11f0e67ff6a793
+Publication date modified: 2022-03-02
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+# Report on Federal Tax Expenditures - Concepts, Estimates and Evaluations 2020: part 5
+
+- Previous
+- Table of contents
+- Next
+
+Earned depletion
+| Value
+Description | The earned depletion deduction supplemented the deduction for actual costs incurred with an extra deduction of up to 33 1/3% of certain exploration and development expenses. This measure was phased out as part of the 1987 Tax Reform and, accordingly, new expenditures cannot be added to the earned depletion base after 1989. As in the case of Canadian Exploration Expenses and Canadian Development Expenses, earned depletion could be pooled and any remaining balance could be carried forward indefinitely for use in later years. As a result, deductions can still be made on the basis of existing unused depletion pools. The deduction for earned depletion is generally limited to 25% of the corporation’s annual resource profits, although mining exploration depletion can be deducted against non-resource income.
+Tax | Personal (including trusts) and corporate income tax
+Beneficiaries | Businesses in the mining and oil and gas industry
+Type of measure | Other
+Legal reference | Income Tax Regulations, section 1201
+Implementation and recent history | Introduced in Budget 1971. Phased out as part of the 1987 Tax Reform.
+Objective – category | To encourage or attract investment
+Objective | This measure was designed to encourage corporations to undertake exploration and development of natural resources (Proposals for Tax Reform, 1969; Summary of 1971 Tax Reform Legislation; Budget, May 6, 1974; Budget, November 18, 1974).
+Category | Non-structural tax measure
+Reason why this measure is not part of benchmark tax system | This measure permitted the deduction of an amount that exceeded the expense actually incurred to earn income.
+Subject | Business - natural resources
+CCOFOG 2014 code | 70441 - Economic affairs - Mining, manufacturing, and construction - Mining of mineral resources other than mineral fuels 70431 - Economic affairs - Fuel and energy - Coal and other solid mineral fuels 70432 - Economic affairs - Fuel and energy - Petroleum and natural gas
+Other relevant government programs | Programs within the mandate of Natural Resources Canada also support the natural resource sector. Additional information on the relevant Government programs is provided in the table at the end of Part 3.
+Source of data | Personal income tax: Data on earned depletion balances of unincorporated businesses is not available, but such balances are not expected to be significant. Corporate income tax: T2 Corporation Income Tax Return
+Estimation method | Personal income tax: No estimate is available. Corporate income tax: The cost of this measure is equal to the amount of earned depletion claimed, multiplied by the general corporate income tax rate.
+Projection method | Personal income tax: No projection is available. Corporate income tax: Projections are based on current market conditions.
+Number of beneficiaries | A small number of corporations (fewer than 20) claimed this deduction in 2017. No data is available for unincorporated businesses.
+
+Cost Information:
+Millions of dollars | 2014 | 2015 | 2016 | 2017 | 2018 (P) | 2019 (P) | 2020 (P) | 2021 (P)
+Personal income tax | n.a. | n.a. | n.a. | n.a. | n.a. | n.a. | n.a. | n.a.
+Corporate income tax | 1 | S | S | S | S | S | S | S
+Total | n.a. | n.a. | n.a. | n.a. | n.a. | n.a. | n.a. | n.a.
+
+Education Tax Credit
+| Value
+Description | A student could claim a non-refundable tax credit at the lowest personal income tax rate on an amount of $400 per month of study for full-time students and $120 per month of study for part-time students. The credit had to be claimed on the tax return of the student. If the student did not need to use all of the credit, the unused amount could be transferred to a supporting individual or carried forward to a subsequent taxation year. Budget 2016 announced the elimination of this measure as of 2017. Amounts carried forward from prior years may still be claimed.
+Tax | Personal income tax
+Beneficiaries | Students and individuals supporting them
+Type of measure | Credit, non-refundable
+Legal reference | Income Tax Act, subsection 118.6(2)
+Implementation and recent history | Introduced as a deduction in Budget 1972. Effective for the 1972 and subsequent taxation years. Replaced by a non-refundable tax credit and made transferable to spouses, parents or grandparents as part of the 1987 Tax Reform. Budget 1997 introduced a provision allowing unused education amounts to be carried forward for use in a subsequent year. The October 2000 Economic Statement and Budget Update announced the doubling of the amounts used to calculate the Education Tax Credit to $400 per month of full-time study and $120 per month of part-time study. Budget 2011 reduced the 13-week minimum duration requirement applying to studies undertaken by Canadians at foreign universities to three consecutive weeks. Budget 2016 announced the elimination of this measure as of 2017.
+Objective – category | To recognize education costs
+Objective | This measure provided students with assistance by recognizing non-tuition costs associated with full- and part-time education (Budget 1972).
+Category | Structural tax measure
+Reason why this measure is not part of benchmark tax system | Tax credits are treated as deviations from the benchmark tax system. This measure extended the unit of taxation. The tax benefit from this measure could be obtained in a taxation year other than the year during which it accrued.
+Subject | Education
+CCOFOG 2014 code | 70939 - Education - College education 70949 - Education - University education
+Other relevant government programs | Programs within the mandates of Employment and Social Development Canada, the Social Sciences and Humanities Research Council, the Natural Sciences and Engineering Research Council, the Canadian Institutes of Health Research and Indigenous Services Canada also support objectives related to education and training. Additional information on the relevant Government programs is provided in the table at the end of Part 3.
+Source of data | T1 Income Tax and Benefit Return
+Estimation method | T1 micro-simulation model
+Projection method | T1 micro-simulation model
+Number of beneficiaries | About 2.3 million individuals claimed this credit in 2016.
+
+Cost Information:
+Millions of dollars | 2014 | 2015 | 2016 | 2017 | 2018 (P) | 2019 (P) | 2020 (P) | 2021 (P)
+Personal income tax | 725 | 760 | 730 | 400 | 325 | 245 | 185 | 135
+
+Eligible Dependant Credit
+| Value
+Description | A taxpayer that does not have a spouse or common-law partner (or that is not living with, supporting, or being supported by their spouse or common‑law partner) may claim a non-refundable credit in respect of a co-habiting and dependent parent or grandparent, or of a co-habiting child, grandchild, brother or sister who is either under the age of 18 or is wholly dependent due to physical or mental infirmity. The value of the credit is calculated by applying the lowest personal income tax rate to the eligible dependant amount ($12,069 for 2019, indexed to inflation). The credit amount is reduced dollar-for-dollar by the net income of the dependant. The credit may only be claimed once by the same household, and only one individual may claim the credit in respect of the same dependant in a given year. The Government has tabled a Notice of Ways and Means Motion to introduce an income-tested supplement to the Eligible Dependant Credit as of 2020, which will be gradually increased in steps exceeding inflation each year until 2023, at which time the maximum credit amount will be $15,000.
+Tax | Personal income tax
+Beneficiaries | Individuals with eligible dependants
+Type of measure | Credit, non-refundable
+Legal reference | Income Tax Act, paragraph 118(1)(b)
+Implementation and recent history | Introduced as part of the 1987 Tax Reform, to replace the previous exemption. Effective for the 1988 and subsequent taxation years. Until 2007, the Eligible Dependant Credit amount was less than the Basic Personal Amount, and was reduced dollar-for-dollar by the net income of the dependant in excess of the income threshold applicable for the taxation year. Budget 2007 introduced two changes to this credit: (i) the credit amount was set equal to the Basic Personal Amount; and (ii) the income threshold was eliminated, resulting in the credit amount being reduced dollar-for-dollar by the net income of the dependant. These changes became effective in 2007. In December, 2019, the Government announced its intention to increase the Eligible Dependant Credit to $15,000 by 2023. The increase will be gradually implemented from 2020 to 2023 through annual increases in excess of inflation. The new, increased portion of the credit will be subject to an income test beginning at a level of individual net income equal to the fourth federal tax bracket threshold ($150,473 in 2020), and be fully phased out by the fifth federal bracket threshold ($214,368 in 2020).
+Objective – category | To recognize non-discretionary expenses (ability to pay)
+Objective | This measure recognizes that a taxpayer without a spouse or common-law partner who is supporting a dependent young child, parent or grandparent or other dependent relative due to mental or physical infirmity has a reduced ability to pay tax relative to a taxpayer with the same income and no such dependant (Report of the Royal Commission on Taxation, vol. 3, 1966).
+Category | Structural tax measure
+Reason why this measure is not part of benchmark tax system | Tax credits are treated as deviations from the benchmark tax system.
+Subject | Families and households Health
+CCOFOG 2014 code | 71049 - Social protection - Family and children 71012 - Social protection - Sickness and disability - Disability
+Other relevant government programs | Programs within the mandates of Employment and Social Development Canada and Indigenous Services Canada also support Canadian families and households. Programs within the mandates of Health Canada, the Canadian Food Inspection Agency, the Canadian Institutes of Health Research, the Public Health Agency of Canada and Veterans Affairs Canada also support health-related objectives. Additional information on the relevant Government programs is provided in the table at the end of Part 3.
+Source of data | T1 Income Tax and Benefit Return
+Estimation method | T1 micro-simulation model
+Projection method | T1 micro-simulation model
+Number of beneficiaries | About 975,000 individuals claimed this credit in 2017.
+
+Cost Information:
+Millions of dollars | 2014 | 2015 | 2016 | 2017 | 2018 (P) | 2019 (P) | 2020 (P) | 2021 (P)
+Personal income tax | 795 | 870 | 905 | 940 | 965 | 995 | 1,075 | 1,125
+
+Employee benefit plans
+| Value
+Description | Employers may make contributions to an employee benefit plan on behalf of their employees. The employee is not required to include in income the contributions to the plan or the investment income earned within the plan until amounts are received. Employers may not deduct these contributions to the plan until the contributions are distributed to the employees. As such, relative to the situation where the employee would have paid income tax on the amount of deferred salary, the government incurs a tax expenditure on the amount, in the form of a deferral of tax, to the extent that the employee’s personal income tax rate exceeds the corporate income tax rate. Investment income earned in an employee benefit plan is taxed in the hands of the plan or, if it is paid out, in the hands of the employer or employee. The preferential tax treatment under an employee benefit plan is available only in certain circumstances, for instance, where the main purpose of the plan is not the deferral of tax or where an employee is not yet able to exercise their right to any income under the plan. In addition, certain leaves of absence or sabbatical plans under which employees may be entitled to defer salaries, as well as salary deferral plans established for professional athletes playing for a team that participates in a league with regularly scheduled games, may be treated as employee benefit plans. Provided certain conditions are met by the plans or arrangements, these amounts are not subject to tax until received by the employee.
+Tax | Personal income tax
+Beneficiaries | Employees with an employee benefit plan
+Type of measure | Timing preference
+Legal reference | Income Tax Act, paragraph 6(1)(g), section 32.1 and subsection 248(1), definition of “employee benefit plan” Income Tax Act, subsection 248(1), definition of “salary deferral arrangement” Income Tax Regulations, section 6801
+Implementation and recent history | Introduced in Budget 1979. Effective for the 1980 and subsequent taxation years. Rules were introduced in 1986 (Budget 1986; Department of Finance Canada news release 86-131, July 28, 1986) to prevent the deferral of tax on salary income other than in certain specific circumstances such as leaves of absence and sabbatical plans.
+Objective – category | To achieve a social objective To encourage employment
+Objective | This measure improves access to employee benefit plans and accommodates extended leaves of a sabbatical nature within the employment relationship (Budget 1979; Budget 1986).
+Category | Non-structural tax measure
+Reason why this measure is not part of benchmark tax system | This measure permits the deferral of the recognition of income or gains for income tax purposes.
+Subject | Employment
+CCOFOG 2014 code | 70412 - Economic affairs - General economic, commercial, and labor affairs - General labor affairs
+Other relevant government programs | Programs within the mandate of Employment and Social Development Canada also support employment. Additional information on the relevant Government programs is provided in the table at the end of Part 3.
+Source of data | No data is available.
+Estimation method | No estimate is available.
+Projection method | No projection is available.
+Number of beneficiaries | No data is available.
+
+Employee stock option deduction
+| Value
+Description | When individuals acquire company shares under an employee stock option plan, they are deemed to have received a taxable benefit from employment equal to the difference between the fair market value of the shares at the time they are acquired and the amount paid to acquire them. Provided certain conditions are met, individuals may deduct one-half of the employment benefit earned on employee stock options from income for tax purposes, thereby benefiting from the same effective tax rate that investors receive on capital gains.
+Tax | Personal income tax
+Beneficiaries | Employees
+Type of measure | Deduction
+Legal reference | Income Tax Act, subsections 7(1) and (1.1) and paragraphs 110(1)(d) and (d.1)
+Implementation and recent history | Introduced in Budget 1977 for employee stock options granted by Canadian-controlled private corporations (CCPCs). Effective April 1, 1977. Extended in Budget 1984 to employee stock options granted by corporations other than CCPCs, effective February 15, 1984. Budget 2010 eliminated the ability for both the employee and the employer to claim a deduction in relation to the same employment benefit under certain arrangements where employees surrendered their stock options to the employer in exchange for cash payments or other benefits.
+Objective – category | To achieve an economic objective - other To support competitiveness
+Objective | This measure assists businesses in their efforts to attract and retain highly skilled employees and encourages employee participation in the ownership of the employer’s business to promote increased productivity (Budget 1977; Budget 1984).
+Category | Non-structural tax measure
+Reason why this measure is not part of benchmark tax system | This measure exempts from tax income or gains that are included in a comprehensive income tax base.
+Subject | Employment
+CCOFOG 2014 code | 70412 - Economic affairs - General economic, commercial, and labor affairs - General labor affairs
+Other relevant government programs | Programs within the mandate of Employment and Social Development Canada also support employment. Additional information on the relevant Government programs is provided in the table at the end of Part 3.
+Source of data | T1 Income Tax and Benefit Return
+Estimation method | T1 micro-simulation model
+Projection method | T1 micro-simulation model
+Number of beneficiaries | About 37,000 individuals claimed this deduction in 2017.
+
+Cost Information:
+Millions of dollars | 2014 | 2015 | 2016 | 2017 | 2018 (P) | 2019 (P) | 2020 (P) | 2021 (P)
+Personal income tax | 745 | 685 | 550 | 655 | 755 | 780 | 810 | 840
+
+Exemption for insurers of farming and fishing property
+| Value
+Description | Insurers of farming and fishing property could benefit from a tax exemption provided they did not engage in any business other than insurance. The proportion of an insurer’s taxable income for a taxation year that was exempt was determined based on the proportion that the insurer’s gross premium income (net of reinsurance ceded) earned for the year from the insurance of property used in farming or fishing or residences of farmers or fishers was of the insurer’s total gross premium income (net of reinsurance ceded) for the year: If the proportion was 90% or more, all of the insurer’s taxable income was exempt from tax; If the proportion was less than 90% but not less than 25%, only that proportion of the insurer’s taxable income was exempt from tax; If the proportion was less than 25% but not less than 20%, one half of that proportion of the insurer’s taxable income was exempt from tax; If the proportion was less than 20%, no exemption was available.
+Tax | Corporate income tax
+Beneficiaries | Insurers of farming and fishing property
+Type of measure | Exemption
+Legal reference | Income Tax Act, paragraph 149(1)(t) and subsections 149(4.1) to (4.3) Income Tax Regulations, subsection 4802(2)
+Implementation and recent history | Introduced in 1954, the original provision exempted all of an insurer’s taxable income from tax if the proportion of its gross premium income (net of reinsurance ceded) from the insurance of property used in farming or fishing or residences of farmers or fishers was more than 50%. This measure was amended in 1989, with the effect that if the proportion was between 25% and 90%, only that proportion of the insurer’s taxable income became exempt from tax. Amendments in 1996 introduced the remaining elements that, together, constitute the rules currently in effect. Budget 2017 announced the elimination of this measure, effective for taxation years that begin after 2018.
+Objective – category | To achieve an economic objective - other
+Objective | This exemption encourages insurers to provide insurance service in all rural districts (1945 Royal Commission on Co-operatives).
+Category | Non-structural tax measure
+Reason why this measure is not part of benchmark tax system | This measure exempts from tax income or gains that are included in a comprehensive income tax base. This measure exempts from tax certain taxpayers.
+Subject | Business - farming and fishing
+CCOFOG 2014 code | 70421 - Economic affairs - Agriculture, forestry, fishing, and hunting - Agriculture 70423 - Economic affairs - Agriculture, forestry, fishing, and hunting - Fishing and hunting
+Other relevant government programs | Programs within the mandates of Agriculture and Agri-Food Canada and Fisheries and Oceans Canada also support the farming and fishing sectors. Additional information on the relevant Government programs is provided in the table at the end of Part 3.
+Source of data | T2 Corporation Income Tax Return
+Estimation method | The tax expenditure is estimated by multiplying the eligible amount of exempt income with the tax rate for each claimant.
+Projection method | The cost of this tax expenditure is fairly stable; as such no growth is assumed over the projection period.
+Number of beneficiaries | This measure provided tax relief to about 30 corporations in 2017.
+
+Cost Information:
+Millions of dollars | 2014 | 2015 | 2016 | 2017 | 2018 (P) | 2019 (P) | 2020 (P) | 2021 (P)
+Corporate income tax | 10 | 10 | 10 | 10 | 10 | – | – | –
+
+Exemption for international shipping and aviation by non-residents
+| Value
+Description | Income earned in Canada by a non-resident person from international shipping or the operation of an aircraft in international traffic is exempt from Canadian income tax if the country where the non-resident person resides grants substantially similar relief to a Canadian resident. This exemption is consistent with international practice and with the Model Tax Convention developed by the Organisation for Economic Co-operation and Development, and is supported by similar provisions in Canada’s bilateral tax treaties.
+Tax | Personal (including trusts) and corporate income tax
+Beneficiaries | Non-resident businesses
+Type of measure | Exemption
+Legal reference | Income Tax Act, paragraph 81(1)(c)
+Implementation and recent history | Introduced in 1926 for income of a non-resident person from the operation of a ship in international traffic. Extended in 1945 to income of a non-resident person from the operation of an aircraft in international traffic.
+Objective – category | To prevent double taxation
+Objective | This measure is provided to prevent international double taxation.
+Category | Structural tax measure
+Reason why this measure is not part of benchmark tax system | This measure exempts from tax income or gains that are included in a comprehensive income tax base.
+Subject | International
+CCOFOG 2014 code | 70499 - Economic affairs - Economic affairs not elsewhere classified
+Other relevant government programs | n/a
+Source of data | No data is available.
+Estimation method | No estimate is available.
+Projection method | No projection is available.
+Number of beneficiaries | No data is available.
+
+Exemption from branch tax for transportation, communications, and iron ore mining corporations
+| Value
+Description | A statutory 25% tax, known as the “branch tax”, is imposed on a non-resident corporation’s after-tax income from carrying on business in Canada, to the extent this income is not reinvested in Canada. The statutory tax rate is generally reduced by Canada’s bilateral tax treaties to 5%, 10% or 15% depending on the treaty. These treaties also generally restrict the scope of the branch tax to non-resident corporations which are carrying on business in Canada through a permanent establishment. A non-resident corporation the principal business of which is the transportation of persons or goods, communications, or mining iron ore in Canada, as well as registered charities and other corporations that are exempt from income tax, are exempt from the branch tax.
+Tax | Corporate income tax
+Beneficiaries | Non-resident corporations
+Type of measure | Exemption
+Legal reference | Income Tax Act, Part XIV, subsection 219(2)
+Implementation and recent history | Introduced in Budget 1960, concurrently with the introduction of the branch tax. Effective for the 1961 and subsequent taxation years. Iron ore mining corporations were added to the list of exemptions in 1962. The exemption for insurance companies (in effect since 1961) was repealed in 1969. The exemption for corporations incorporated before July 1, 1867 (in effect since 1961) was repealed in 1972. The exemption for banks (in effect since 1961) was repealed in 2001.
+Objective – category | To provide relief for special circumstances
+Objective | This measure recognizes that certain foreign companies sometimes have no real alternative to the branch office form of organization when operating in other jurisdictions (Budget 1960; Budget 1962).
+Category | Structural tax measure
+Reason why this measure is not part of benchmark tax system | This measure exempts from tax certain taxpayers.
+Subject | Business - other
+CCOFOG 2014 code | 70499 - Economic affairs - Economic affairs not elsewhere classified
+Other relevant government programs | Programs within the mandates of Global Affairs Canada, Public Services and Procurement Canada, and the regional development agencies (among other federal organizations) also offer support to Canadian businesses in various manners. Additional information on the relevant Government programs is provided in the table at the end of Part 3.
+Source of data | T2 Corporation Income Tax Return
+Estimation method | The cost of this tax expenditure is calculated by multiplying the income of the branch exempt from branch tax by the applicable statutory or treaty tax rate.
+Projection method | This tax expenditure is projected to grow in line with nominal gross domestic product. The base year for the projections is the average of the previous five years.
+Number of beneficiaries | This measure provides tax relief to a small number of non-residents (fewer than 20) each year. No data is available for other non-residents who are exempt under this provision but do not file a Canadian income tax return.
+
+Cost Information:
+Millions of dollars | 2014 | 2015 | 2016 | 2017 | 2018 (P) | 2019 (P) | 2020 (P) | 2021 (P)
+Corporate income tax | 4 | S | S | 30 | 15 | 15 | 20 | 20
+
+Exemption from GST and rebate for legal aid services
+| Value
+Description | GST is relieved in respect of legal aid services in two ways: legal aid services delivered directly by a province or a provincial agency are exempt; and legal aid services provided by private practitioners to a legal aid plan administrator are taxable. However, the person responsible for the legal aid plan is entitled to a rebate of 100% of any tax paid on the supply. This eases the compliance burden for private practitioners.
+Tax | Goods and Services Tax
+Beneficiaries | Governments, individuals using provincial legal aid plans
+Type of measure | Exemption; rebate
+Legal reference | Part V of Schedule V to the Excise Tax Act (exemption) Excise Tax Act, section 258 (rebate)
+Implementation and recent history | These measures have been in effect since the inception of the GST in 1991.
+Objective – category | To achieve a social objective
+Objective | These measures ensure that the introduction of the GST resulted in no increase in the tax borne by consumers of these services (Report on the Technical Paper on the Goods and Services Tax, November 1989).
+Category | Non-structural tax measure
+Reason why this measure is not part of benchmark tax system | GST exemptions and rebates are deviations from a broadly defined value-added tax base.
+Subject | Social
+CCOFOG 2014 code | 70169 - General public services - General public services not elsewhere classified
+Other relevant government programs | Programs within the mandates of Canadian Heritage, Immigration, Refugees and Citizenship Canada, Transport Canada and Public Safety Canada (among other departments) also support various other social objectives. Additional information on the relevant Government programs is provided in the table at the end of Part 3.
+Source of data | Statistics Canada, legal aid plan expenditures and Supply and Use Tables
+Estimation method | The value of the exemption is calculated by multiplying the estimated value of services provided by public legal aid agencies by the GST rate. This corresponds to the forgone GST on all exempt legal aid services—including on the imputed value of unpriced or subsidized services paid indirectly with government funding. From this is subtracted an estimate of the input tax credits that would be allowed if these services were taxable. The value of the rebate is calculated by multiplying an estimate of fees paid by legal aid plans to private sector lawyers by the GST rate.
+Projection method | The cost of this measure is projected to grow in line with household final consumption expenditure of services other than services related to dwelling and property.
+Number of beneficiaries | No data is available.
+
+Cost Information:
+Millions of dollars | 2014 | 2015 | 2016 | 2017 | 2018 (P) | 2019 (P) | 2020 (P) | 2021 (P)
+Goods and Services Tax | 35 | 35 | 35 | 35 | 40 | 40 | 40 | 45
+
+Exemption from GST for certain residential rent
+| Value
+Description | Rentals of a residential complex (such as a house) or a residential unit (such as an apartment) for a period of at least one month are exempt from GST.
+Tax | Goods and Services Tax
+Beneficiaries | Tenants of long-term residential housing
+Type of measure | Exemption
+Legal reference | Section 6 of Part I of Schedule V to the Excise Tax Act
+Implementation and recent history | This measure has been in effect since the inception of the GST in 1991.
+Objective – category | To achieve a social objective
+Objective | This measure is intended to preserve the affordability of housing (Goods and Services Tax: Technical Paper, August 1989).
+Category | Non-structural tax measure
+Reason why this measure is not part of benchmark tax system | GST exemptions are deviations from a broadly defined value-added tax base.
+Subject | Housing
+CCOFOG 2014 code | 70619 - Housing and community amenities - Housing development
+Other relevant government programs | Programs within the mandate of the Canada Mortgage and Housing Corporation, Indigenous Services Canada and Crown-Indigenous Relations and Northern Affairs Canada are intended to promote the construction, repair and renewal of affordable and safe housing. Additional information on the relevant Government programs is provided in the table at the end of Part 3.
+Source of data | Statistics Canada, Supply and Use Tables and National Income and Expenditure Accounts
+Estimation method | Goods and Services Tax model
+Projection method | Goods and Services Tax model
+Number of beneficiaries | No data is available.
+
+Cost Information:
+Millions of dollars | 2014 | 2015 | 2016 | 2017 | 2018 (P) | 2019 (P) | 2020 (P) | 2021 (P)
+Goods and Services Tax | 1,800 | 1,800 | 1,895 | 1,970 | 2,070 | 2,200 | 2,310 | 2,420
+Note: The cost information includes the tax expenditure associated with the exemption from GST for short-term accommodation, as the data cannot be separated from residential rent. The cost information is predominantly related to residential rent.
+
+Exemption from GST for certain supplies made by charities and non-profit organizations
+| Value
+Description | Most supplies made by charities are exempt from GST. Many supplies made by non-profit organizations are also exempt, including: supplies made for no consideration; supplies of food and lodging made for the relief of poverty or distress; subsidized home-care services; meals on wheels; recreational programs established for children, individuals with a disability and disadvantaged individuals; memberships in organizations providing no significant benefit to individual members; and trade union and mandatory professional dues.
+Tax | Goods and Services Tax
+Beneficiaries | Consumers of supplies made by charities and non-profit organizations
+Type of measure | Exemption
+Legal reference | Part V.1 of Schedule V to the Excise Tax Act Part VI of Schedule V to the Excise Tax Act
+Implementation and recent history | This measure has been in effect since the inception of the GST in 1991. This measure is periodically amended in accordance with its objectives and to preserve the integrity of the tax system. Most recently, Budget 2016 clarified that GST/HST generally applies to supplies of purely cosmetic procedures (e.g., liposuction, botulinum toxin injections) provided by all suppliers, including registered charities.
+Objective – category | To achieve a social objective To reduce administration or compliance costs
+Objective | This measure recognizes the important role of charities and non-profit organizations in Canadian society (Goods and Services Tax, December 1989).
+Category | Non-structural tax measure
+Reason why this measure is not part of benchmark tax system | GST exemptions are deviations from a broadly defined value-added tax base.
+Subject | Donations, gifts, charities and non-profit organizations
+CCOFOG 2014 code | 705 - Environmental protection; 706 - Housing and community amenities; 707 - Health; 708 - Recreation, culture, and religion; 709 - Education; 710 - Social protection; Other various codes
+Other relevant government programs | Many federal government entities provide direct funding to registered charities, non-profit organizations and international development associations through various programs.
+Source of data | Statistics Canada, Supply and Use Tables and National Income and Expenditure Accounts
+Estimation method | Goods and Services Tax model
+Projection method | Goods and Services Tax model
+Number of beneficiaries | No data is available.
+
+Cost Information:
+Millions of dollars | 2014 | 2015 | 2016 | 2017 | 2018 (P) | 2019 (P) | 2020 (P) | 2021 (P)
+Goods and Services Tax | 1,010 | 1,100 | 1,225 | 1,310 | 1,345 | 1,375 | 1,400 | 1,430
+
+Exemption from GST for child care
+| Value
+Description | Child care services provided for periods of less than 24 hours to children 14 years of age or under are generally exempt from GST.
+Tax | Goods and Services Tax
+Beneficiaries | Families with minor children
+Type of measure | Exemption
+Legal reference | Section 1 of Part IV of Schedule V to the Excise Tax Act
+Implementation and recent history | This measure has been in effect since the inception of the GST in 1991.
+Objective – category | To achieve a social objective
+Objective | This measure helps preserve the affordability of child care services.
+Category | Non-structural tax measure
+Reason why this measure is not part of benchmark tax system | GST exemptions are deviations from a broadly defined value-added tax base.
+Subject | Families and households
+CCOFOG 2014 code | 71049 - Social protection - Family and children
+Other relevant government programs | Programs within the mandates of Employment and Social Development Canada and Indigenous Services Canada also support Canadian families and households. Additional information on the relevant Government programs is provided in the table at the end of Part 3.
+Source of data | Statistics Canada, Supply and Use Tables and National Income and Expenditure Accounts
+Estimation method | Goods and Services Tax model
+Projection method | Goods and Services Tax model
+Number of beneficiaries | No data is available.
+
+Cost Information:
+Millions of dollars | 2014 | 2015 | 2016 | 2017 | 2018 (P) | 2019 (P) | 2020 (P) | 2021 (P)
+Goods and Services Tax | 150 | 160 | 170 | 180 | 185 | 195 | 200 | 210
+
+Exemption from GST for domestic financial services
+| Value
+Description | Under the GST, there is no tax charged on the supply of financial services. However, financial service providers such as financial institutions are not allowed to claim input tax credits in respect of GST costs incurred on inputs used in providing those services. As a result, consumers of financial services (e.g., depositors and borrowers) are not directly subject to tax, and financial institutions that make exempt supplies of financial services are effectively treated as final consumers.
+Tax | Goods and Services Tax
+Beneficiaries | Consumers of financial services
+Type of measure | Exemption
+Legal reference | Part VII of Schedule V to the Excise Tax Act Excise Tax Act, section 123(1), definition of “financial service”
+Implementation and recent history | This measure has been in effect since the inception of the GST in 1991. Amended in December 2009 to confirm that certain investment management, facilitatory and credit management services are not eligible for the exemption (Department of Finance Canada news release 2009-115, December 14, 2009).
+Objective – category | Other
+Objective | This measure is in recognition of the fact that, since the price of a financial service is often implicit and difficult to determine (e.g., the price of deposit-taking services that is reflected in the interest paid to depositors, the price of lending services that is included in the interest paid by borrowers), taxing financial services in a consistent and equitable manner is challenging (Goods and Services Tax: Technical Paper, August 1989).
+Category | Structural tax measure
+Reason why this measure is not part of benchmark tax system | GST exemptions are deviations from a broadly defined value-added tax base.
+Subject | Business - other
+CCOFOG 2014 code | 70499 - Economic affairs - Economic affairs not elsewhere classified
+Other relevant government programs | Programs within the mandates of Global Affairs Canada, Public Services and Procurement Canada, and the regional development agencies (among other federal organizations) also offer support to Canadian businesses in various manners. Additional information on the relevant Government programs is provided in the table at the end of Part 3.
+Source of data | No data is available.
+Estimation method | No estimate is available.
+Projection method | No projection is available.
+Number of beneficiaries | No data is available.
+
+Exemption from GST for ferry, road and bridge tolls
+| Value
+Description | Ferry services and road and bridge tolls are generally exempt from GST. The exemption does not include international ferry services, which are zero-rated, consistent with other international transportation services.
+Tax | Goods and Services Tax
+Beneficiaries | Households
+Type of measure | Exemption
+Legal reference | Part VIII of Schedule V and section 14 of Part VII of Schedule VI to the Excise Tax Act
+Implementation and recent history | This measure has been in effect since the inception of the GST in 1991.
+Objective – category | To achieve a social objective
+Objective | This measure ensures that the use of Canada’s highway systems and related infrastructure will not be subject to tax (Goods and Services Tax: Technical Paper, August 1989).
+Category | Non-structural tax measure
+Reason why this measure is not part of benchmark tax system | GST exemptions are deviations from a broadly defined value-added tax base.
+Subject | Social
+CCOFOG 2014 code | 70451 - Economic affairs - Transport - Road transport
+Other relevant government programs | Programs within the mandates of Canadian Heritage, Immigration, Refugees and Citizenship Canada, Transport Canada and Public Safety Canada (among other departments) also support various other social objectives. Additional information on the relevant Government programs is provided in the table at the end of Part 3.
+Source of data | Statistics Canada, Supply and Use Tables and National Income and Expenditure Accounts
+Estimation method | Goods and Services Tax model
+Projection method | Goods and Services Tax model
+Number of beneficiaries | No data is available.
+
+Cost Information:
+Millions of dollars | 2014 | 2015 | 2016 | 2017 | 2018 (P) | 2019 (P) | 2020 (P) | 2021 (P)
+Goods and Services Tax | 10 | 10 | 10 | 10 | 15 | 15 | 15 | 15
+
+Exemption from GST for health care services
+| Value
+Description | Basic health care services are exempt under the GST, including: services provided by physicians, dentists and certain other health care practitioners whose profession is regulated by the governments of at least five provinces; services covered by a provincial health insurance plan; and institutional health care services provided in a health care facility, including accommodation, meals provided with accommodation, rentals of medical equipment to patients or residents of the facility, and a number of other supplies.
+Tax | Goods and Services Tax
+Beneficiaries | Individuals with medical conditions
+Type of measure | Exemption
+Legal reference | Part II of Schedule V to the Excise Tax Act
+Implementation and recent history | This measure has been in effect since the inception of the GST in 1991. The list of exempt services is periodically amended. Most recently, Budget 2014 announced the addition of acupuncturists and naturopathic doctors to the list of health care practitioners whose professional services are exempt from the GST. Budget 2013 clarified that the GST applies to reports, examinations and other services that are not performed for the purpose of the protection, maintenance or restoration of the health of a person or for palliative care.
+Objective – category | To achieve a social objective
+Objective | This measure recognizes that most health services are provided by the public sector in a non-commercial context.
+Category | Non-structural tax measure
+Reason why this measure is not part of benchmark tax system | GST exemptions are deviations from a broadly defined value-added tax base.
+Subject | Health
+CCOFOG 2014 code | 7072 - Health - Outpatient services 7073 - Health - Hospital services
+Other relevant government programs | Programs within the mandates of Health Canada, the Canadian Food Inspection Agency, the Canadian Institutes of Health Research, the Public Health Agency of Canada and Veterans Affairs Canada also support health-related objectives. Additional information on the relevant Government programs is provided in the table at the end of Part 3.
+Source of data | Statistics Canada, Supply and Use Tables and National Income and Expenditure Accounts
+Estimation method | Goods and Services Tax model. The value of this tax expenditure corresponds to the forgone GST on health services—excluding on the imputed value of unpriced or subsidized services paid for indirectly with government funding—less the input tax credits that would be allowed if these services were taxable.
+Projection method | Goods and Services Tax model
+Number of beneficiaries | No data is available.
+
+Cost Information:
+Millions of dollars | 2014 | 2015 | 2016 | 2017 | 2018 (P) | 2019 (P) | 2020 (P) | 2021 (P)
+Goods and Services Tax | 735 | 775 | 820 | 845 | 880 | 920 | 960 | 990
+Note: The cost information includes the tax expenditure associated with the exemption from GST for personal care services, as the data cannot be separated from health care services. The cost information is predominantly related to health care expenditures.
+
+Exemption from GST for hospital parking
+| Value
+Description | The supply of parking at a public hospital is generally exempt from GST when made by a charity, a non-profit organization, a hospital or another public sector body to persons such as patients, visitors and volunteers.
+Tax | Goods and Services Tax
+Beneficiaries | Consumers of hospital parking intended for patients, visitors and volunteers
+Type of measure | Exemption
+Legal reference | Section 7 of Part V.1 of Schedule V to the Excise Tax Act Section 25.1 of Part VI of Schedule V to the Excise Tax Act
+Implementation and recent history | The exemption of hospital parking supplies made by charities has been in effect since March 22, 2013. The exemption of hospital parking supplies made by other public sector bodies was introduced on January 24, 2014, effective after that date (Department of Finance Canada news release).
+Objective – category | To achieve a social objective
+Objective | This measure helps reduce the cost of hospital parking for patients and visitors (Department of Finance Canada news release 2014-009, January 24, 2014).
+Category | Non-structural tax measure
+Reason why this measure is not part of benchmark tax system | GST exemptions are deviations from a broadly defined value-added tax base.
+Subject | Health
+CCOFOG 2014 code | 70739 - Health - Hospital services - Hospital services not elsewhere classified
+Other relevant government programs | Programs within the mandates of Health Canada, the Canadian Food Inspection Agency, the Canadian Institutes of Health Research, the Public Health Agency of Canada and Veterans Affairs Canada also support health-related objectives. Additional information on the relevant Government programs is provided in the table at the end of Part 3.
+Source of data | Statistics Canada, Supply and Use Tables and National Income and Expenditure Accounts
+Estimation method | Goods and Services Tax model
+Projection method | Goods and Services Tax model
+Number of beneficiaries | No data is available.
+
+Cost Information:
+Millions of dollars | 2014 | 2015 | 2016 | 2017 | 2018 (P) | 2019 (P) | 2020 (P) | 2021 (P)
+Goods and Services Tax | 10 | 15 | 15 | 15 | 15 | 15 | 15 | 20
+
+Exemption from GST for municipal transit
+| Value
+Description | Municipal transit services are exempt from GST. Specifically, no tax applies on fares charged by transit systems operated by a local authority or government, or by a government-funded non-profit organization. A municipal transit service is defined as a public passenger transportation service provided by a transit authority whose services are all or substantially all within a particular municipality and its surrounding areas.
+Tax | Goods and Services Tax
+Beneficiaries | Users of municipal transit
+Type of measure | Exemption
+Legal reference | Section 24 of Part VI of Schedule V to the Excise Tax Act
+Implementation and recent history | This measure has been in effect since the inception of the GST in 1991.
+Objective – category | To achieve a social objective
+Objective | This exemption is consistent with the treatment of standard municipal services (Goods and Services Tax: Technical Paper, August 1989).
+Category | Non-structural tax measure
+Reason why this measure is not part of benchmark tax system | GST exemptions are deviations from a broadly defined value-added tax base.
+Subject | Social
+CCOFOG 2014 code | 70456 - Economic affairs - Transport - Public Transit
+Other relevant government programs | Programs within the mandates of Canadian Heritage, Immigration, Refugees and Citizenship Canada, Transport Canada and Public Safety Canada (among other departments) also support various other social objectives. Additional information on the relevant Government programs is provided in the table at the end of Part 3.
+Source of data | Statistics Canada, Supply and Use Tables and National Income and Expenditure Accounts
+Estimation method | Goods and Services Tax model
+Projection method | Goods and Services Tax model
+Number of beneficiaries | No data is available.
+
+Cost Information:
+Millions of dollars | 2014 | 2015 | 2016 | 2017 | 2018 (P) | 2019 (P) | 2020 (P) | 2021 (P)
+Goods and Services Tax | 190 | 195 | 200 | 210 | 220 | 225 | 235 | 245
+
+Exemption from GST for personal care services
+| Value
+Description | Certain personal care services are exempt under the GST. The exemption covers the following services when provided at the establishment of the supplier: supplies of care, supervision and a place of residence to children, underprivileged individuals or individuals with a disability (e.g., group homes); and supplies of care and supervision to an individual with limited physical or mental capacity for self-supervision and self-care due to an infirmity or disability (e.g., respite care).
+Tax | Goods and Services Tax
+Beneficiaries | Children, individuals with disabilities, disadvantaged individuals and caregivers
+Type of measure | Exemption
+Legal reference | Sections 2 and 3 of Part IV of Schedule V to the Excise Tax Act
+Implementation and recent history | The exemption in respect of care and a place of residence has been in effect since the inception of the GST in 1991. The exemption in respect of respite care was announced in Budget 1998, applicable after February 24, 1998.
+Objective – category | To achieve a social objective
+Objective | This measure helps preserve the affordability of personal care services.
+Category | Non-structural tax measure
+Reason why this measure is not part of benchmark tax system | GST exemptions are deviations from a broadly defined value-added tax base.
+Subject | Families and households Health Social
+CCOFOG 2014 code | 71049 - Social protection - Family and children 71012 - Social protection - Sickness and disability - Disability 71099 - Social protection - Social protection not elsewhere classified
+Other relevant government programs | Programs within the mandates of Employment and Social Development Canada and Indigenous Services Canada also support Canadian families and households. Programs within the mandates of Health Canada, the Canadian Food Inspection Agency, the Canadian Institutes of Health Research, the Public Health Agency of Canada and Veterans Affairs Canada also support health-related objectives. Programs within the mandates of Canadian Heritage, Immigration, Refugees and Citizenship Canada, Transport Canada and Public Safety Canada (among other departments) also support various other social objectives. Additional information on the relevant Government programs is provided in the table at the end of Part 3.
+Source of data | Statistics Canada, Supply and Use Tables and National Income and Expenditure Accounts
+Estimation method | Goods and Services Tax model
+Projection method | Goods and Services Tax model
+Number of beneficiaries | No data is available.
+
+Cost Information:
+Millions of dollars | 2014 | 2015 | 2016 | 2017 | 2018 (P) | 2019 (P) | 2020 (P) | 2021 (P)
+Goods and Services Tax | n.a. | n.a. | n.a. | n.a. | n.a. | n.a. | n.a. | n.a.
+Note: Data for personal care services cannot be separated from data for certain exempt health care services (e.g., nursing homes); therefore, the tax expenditure associated with the exemption from GST for personal care services is combined with the tax expenditure associated with the exemption from GST for health care services (see measure “Exemption from GST for health care services”).
+
+Exemption from GST for sales of used residential housing and other personal-use real property
+| Value
+Description | Generally, the GST applies to newly constructed residential housing and residential trailer parks when they are first sold or leased for residential purposes. Subsequent sales of used residential housing or used residential trailer parks are tax-exempt. In addition, most sales of other personal-use real property, such as vacant land, are tax-exempt when sold by individuals. This exemption is consistent with the tax treatment of personal-use property and services not supplied in the course of commercial activities. The sale of farmland to a family member who is acquiring the property for personal use is also tax-exempt.
+Tax | Goods and Services Tax
+Beneficiaries | Households
+Type of measure | Exemption
+Legal reference | Sections 2-5.3 and 9-12 of Part I of Schedule V to the Excise Tax Act
+Implementation and recent history | This measure has been in effect since the inception of the GST in 1991.
+Objective – category | To reduce administration or compliance costs To achieve an economic objective - other
+Objective | This measure is intended to preserve the affordability of housing while ensuring that the tax regime is not overly complex (Goods and Services Tax: Technical Paper, August 1989).
+Category | Structural tax measure
+Reason why this measure is not part of benchmark tax system | GST exemptions are deviations from a broadly defined value-added tax base.
+Subject | Housing
+CCOFOG 2014 code | 70619 - Housing and community amenities - Housing development
+Other relevant government programs | Programs within the mandate of the Canada Mortgage and Housing Corporation, Indigenous Services Canada and Crown-Indigenous Relations and Northern Affairs Canada are intended to promote the construction, repair and renewal of affordable and safe housing. Additional information on the relevant Government programs is provided in the table at the end of Part 3.
+Source of data | No data is available.
+Estimation method | No estimate is available.
+Projection method | No projection is available.
+Number of beneficiaries | No data is available.
+
+Exemption from GST for short-term accommodation
+| Value
+Description | Short-term accommodation is exempt from GST where the charge for the accommodation is not more than $20 per day.
+Tax | Goods and Services Tax
+Beneficiaries | Individuals occupying low-cost short-term accommodation
+Type of measure | Exemption
+Legal reference | Paragraph 6(b) of Part I of Schedule V to the Excise Tax Act
+Implementation and recent history | This measure has been in effect since the inception of the GST in 1991.
+Objective – category | To achieve a social objective
+Objective | This measure is intended to preserve the affordability of low-cost temporary accommodation offered by the private sector (Goods and Services Tax, December 1989).
+Category | Non-structural tax measure
+Reason why this measure is not part of benchmark tax system | GST exemptions are deviations from a broadly defined value-added tax base.
+Subject | Housing
+CCOFOG 2014 code | 70619 - Housing and community amenities - Housing development
+Other relevant government programs | Programs within the mandate of the Canada Mortgage and Housing Corporation, Indigenous Services Canada and Crown-Indigenous Relations and Northern Affairs Canada are intended to promote the construction, repair and renewal of affordable and safe housing. Additional information on the relevant Government programs is provided in the table at the end of Part 3.
+Source of data | Statistics Canada, Supply and Use Tables and National Income and Expenditure Accounts
+Estimation method | Goods and Services Tax model
+Projection method | Goods and Services Tax model
+Number of beneficiaries | No data is available.
+
+Cost Information:
+Millions of dollars | 2014 | 2015 | 2016 | 2017 | 2018 (P) | 2019 (P) | 2020 (P) | 2021 (P)
+Goods and Services Tax | n.a. | n.a. | n.a. | n.a. | n.a. | n.a. | n.a. | n.a.
+Note: Data for short-term accommodation cannot be separated from data for certain exempt residential rent; therefore, the tax expenditure associated with the exemption from GST for short-term accommodation is combined with the tax expenditure associated with the exemption from GST for certain residential rent (see measure “Exemption from GST for certain residential rent”).
+
+Exemption from GST for tuition and educational services
+| Value
+Description | Most educational services are exempt from GST, including: courses provided primarily for elementary or secondary school students; courses leading to credits towards a diploma or degree awarded by a recognized school authority, university or college; and certain other types of training for a trade or vocation. Certain ancillary supplies are also exempt, such as most meal plans at a university or college and supplies by school authorities of a service of transporting students to or from school.
+Tax | Goods and Services Tax
+Beneficiaries | Students
+Type of measure | Exemption
+Legal reference | Part III of Schedule V to the Excise Tax Act
+Implementation and recent history | This measure has been in effect since the inception of the GST in 1991.
+Objective – category | To achieve a social objective
+Objective | This measure recognizes that most education services are provided by the public sector in a non-commercial context.
+Category | Non-structural tax measure
+Reason why this measure is not part of benchmark tax system | GST exemptions are deviations from a broadly defined value-added tax base.
+Subject | Education
+CCOFOG 2014 code | 70929 - Education - Primary and Secondary education 70939 - Education - College education 70949 - Education - University education 70969 - Education - Subsidiary services to education
+Other relevant government programs | Programs within the mandates of Employment and Social Development Canada, the Social Sciences and Humanities Research Council, the Natural Sciences and Engineering Research Council, the Canadian Institutes of Health Research and Indigenous Services Canada also support objectives related to education and training. Additional information on the relevant Government programs is provided in the table at the end of Part 3.
+Source of data | Statistics Canada, Supply and Use Tables and National Income and Expenditure Accounts
+Estimation method | Goods and Services Tax model. The value of this tax expenditure corresponds to the forgone GST on all education services less the input tax credits that would be allowed if these services were taxable.
+Projection method | Goods and Services Tax model
+Number of beneficiaries | No data is available.
+
+Cost Information:
+Millions of dollars | 2014 | 2015 | 2016 | 2017 | 2018 (P) | 2019 (P) | 2020 (P) | 2021 (P)
+Goods and Services Tax | 705 | 740 | 790 | 820 | 855 | 890 | 925 | 960
+
+Exemption from GST for water, sewage and basic garbage collection services
+| Value
+Description | Water and sewage services are exempt from GST when the supplies are made by a municipality or organization designated to be a municipality for the purpose of making these supplies. Basic garbage collection services are exempt from GST when the supplies are made by or on behalf of a government or municipality to a recipient who has no option but to receive the service.
+Tax | Goods and Services Tax
+Beneficiaries | Households
+Type of measure | Exemption
+Legal reference | Sections 21 and 22 of Part VI of Schedule V to the Excise Tax Act
+Implementation and recent history | This measure has been in effect since the inception of the GST in 1991.
+Objective – category | To achieve a social objective
+Objective | Water, sewage and garbage collection are integral to the role of local governments (Goods and Services Tax: Technical Paper, August 1989).
+Category | Non-structural tax measure
+Reason why this measure is not part of benchmark tax system | GST exemptions are deviations from a broadly defined value-added tax base.
+Subject | Social
+CCOFOG 2014 code | 70639 - Housing and community amenities - Water supply 70519 - Environmental protection - Waste management
+Other relevant government programs | Programs within the mandates of Canadian Heritage, Immigration, Refugees and Citizenship Canada, Transport Canada and Public Safety Canada (among other departments) also support various other social objectives. Additional information on the relevant Government programs is provided in the table at the end of Part 3.
+Source of data | Statistics Canada, Supply and Use Tables and National Income and Expenditure Accounts
+Estimation method | Goods and Services Tax model
+Projection method | Goods and Services Tax model
+Number of beneficiaries | No data is available.
+
+Cost Information:
+Millions of dollars | 2014 | 2015 | 2016 | 2017 | 2018 (P) | 2019 (P) | 2020 (P) | 2021 (P)
+Goods and Services Tax | 245 | 265 | 280 | 300 | 310 | 325 | 335 | 345
+
+Exemption of scholarship, fellowship and bursary income
+| Value
+Description | A student can claim a full exemption for scholarship, fellowship and bursary income received in connection with the student’s enrolment in an elementary or secondary school educational program or a program in respect of which the student is defined as a “qualifying student”. A $500 tax exemption is available for scholarship, fellowship and bursary income that does not qualify for the full exemption.
+Tax | Personal income tax
+Beneficiaries | Students
+Type of measure | Exemption
+Legal reference | Income Tax Act, paragraph 56(1)(n) and subsection 56(3)
+Implementation and recent history | Introduced in Budget 1971. Effective for the 1972 and subsequent taxation years. Budget 2000 increased the tax exemption for scholarship, fellowship and bursary income to $3,000 from $500. Budget 2006 removed the $3,000 limit to establish a full exemption for post-secondary scholarship, fellowship and bursary income. Budget 2007 extended the tax exemption to scholarship, fellowship and bursary income received by elementary and secondary school students.
+Objective – category | To encourage investment in education
+Objective | This measure encourages Canadians to experience exceptional education opportunities by providing additional tax assistance to students (Summary of 1971 Tax Reform Legislation, 1971).
+Category | Non-structural tax measure
+Reason why this measure is not part of benchmark tax system | This measure exempts from tax income or gains that are included in a comprehensive income tax base.
+Subject | Education
+CCOFOG 2014 code | 70959 - Education - Education not definable by level
+Other relevant government programs | Programs within the mandates of Employment and Social Development Canada, the Social Sciences and Humanities Research Council, the Natural Sciences and Engineering Research Council, the Canadian Institutes of Health Research and Indigenous Services Canada also support objectives related to education and training. Additional information on the relevant Government programs is provided in the table at the end of Part 3.
+Source of data | T4A Statement of Pension, Retirement, Annuity, and Other Income
+Estimation method | The value of this measure is calculated by multiplying the total non-taxable scholarship amount by an assumed marginal tax rate.
+Projection method | The value of this measure is projected based on historical growth.
+Number of beneficiaries | About 1,200,000 individuals received a non-taxable scholarship amount in 2017.
+
+Cost Information:
+Millions of dollars | 2014 | 2015 | 2016 | 2017 | 2018 (P) | 2019 (P) | 2020 (P) | 2021 (P)
+Personal income tax | 250 | 250 | 265 | 365 | 465 | 465 | 470 | 480
+
+Exemptions from non-resident withholding tax
+| Value
+Description | Non-resident withholding tax is imposed on the gross amount of certain payments made by Canadians to non-residents. These amounts include interest, dividends, rents, royalties, management fees, pension benefits, annuities, estate or trust income, and payments for film or video acting services. Non-resident withholding tax is imposed at the statutory rate of 25%; however, this rate can be reduced by the effect of the provisions of a bilateral tax treaty. The Income Tax Act exempts certain payments from non-resident withholding tax on a unilateral basis. Exemptions may also be available under certain bilateral tax treaties.
+Tax | Personal (including trusts) and corporate income tax
+Beneficiaries | Non-residents
+Type of measure | Exemption; preferential tax rate
+Legal reference | Income Tax Act, Part XIII, section 212
+Implementation and recent history | Non-resident withholding tax was introduced in 1933, applicable to certain dividend, interest and royalty payments to non-residents at a rate of 5%. The withholding tax was modified on several occasions over the years. In particular, the rate was increased to 15% in 1942 and to 25% in 1972. The base was also extended to other types of payments, including pension benefits, annuities and management fees. Exemptions or reduced withholding tax rates have been introduced at various times, both in the Income Tax Act and in most bilateral tax treaties. A statutory exemption for interest payments made to arm’s length non-resident lenders came into effect in 2008, and the Canada-U.S. tax treaty was amended to bilaterally exempt most cross-border interest payments, effective 2008.
+Objective – category | To encourage or attract investment To support competitiveness
+Objective | Exemptions from non-resident withholding tax are intended to enhance the competitiveness of Canadian businesses by lowering the cost of accessing capital and other business inputs from abroad.
+Category | Non-structural tax measure
+Reason why this measure is not part of benchmark tax system | This measure exempts from non-resident withholding tax certain payments that are included in the benchmark base for this tax.
+Subject | International
+CCOFOG 2014 code | 70499 - Economic affairs - Economic affairs not elsewhere classified
+Other relevant government programs | n/a
+Source of data | NR4 Statement of Amounts Paid or Credited to Non-Residents of Canada
+Estimation method | The cost of this tax expenditure is estimated by multiplying observed payments by the benchmark tax rate (25% or the general tax rate for the relevant type of income set out in the applicable tax treaty) and deducting from this amount any withholding tax collected on the payments.
+Projection method | The cost of this measure is projected to grow in line with nominal gross domestic product.
+Number of beneficiaries | No data is available.
+
+Cost Information:
+Millions of dollars | 2014 | 2015 | 2016 | 2017 | 2018 (P) | 2019 (P) | 2020 (P) | 2021 (P)
+By type of payments
+Dividends | 2,765 | 3,455 | 3,540 | 4,210 | 4,015 | 4,140 | 4,300 | 4,460
+Interest | 1,620 | 1,120 | 1,390 | 1,275 | 1,380 | 1,425 | 1,480 | 1,535
+Rents and royalties | 420 | 645 | 695 | 655 | 700 | 720 | 750 | 780
+Management fees | 345 | 430 | 520 | 635 | 600 | 615 | 640 | 665
+Total – personal and corporate income tax | 5,145 | 5,645 | 6,140 | 6,780 | 6,695 | 6,900 | 7,165 | 7,440
+
+Expensing of advertising costs
+| Value
+Description | Advertising expenses are deductible in computing business income in the year they are incurred, even though some of these expenses provide a benefit in the future. Under the benchmark tax system, the expenses would be amortized over the benefit period. Certain restrictions regarding advertising expenses in foreign media apply (see the measure “Non-deductibility of advertising expenses in foreign media”).
+Tax | Personal (including trusts) and corporate income tax
+Beneficiaries | Businesses
+Type of measure | Timing preference
+Legal reference | Income Tax Act, paragraph 18(1)(a)
+Implementation and recent history | This measure has been in effect since 1917.
+Objective – category | To reduce administration or compliance costs
+Objective | This measure reduces administration costs for the Canada Revenue Agency and compliance costs for taxpayers.
+Category | Structural tax measure
+Reason why this measure is not part of benchmark tax system | This measure may permit the depreciation of a capital asset faster than its useful life.
+Subject | Business - other
+CCOFOG 2014 code | 70499 - Economic affairs - Economic affairs not elsewhere classified
+Other relevant government programs | Programs within the mandates of Global Affairs Canada, Public Services and Procurement Canada, and the regional development agencies (among other federal organizations) also offer support to Canadian businesses in various manners. Additional information on the relevant Government programs is provided in the table at the end of Part 3.
+Source of data | No data is available.
+Estimation method | No estimate is available – see the Annex to Part 1 for an explanation as to why estimates are not available for this measure.
+Projection method | No projection is available.
+Number of beneficiaries | No data is available.
+
+Expensing of current expenditures on scientific research and experimental development
+| Value
+Description | Eligible current expenditures on scientific research and experimental development (SR&ED) performed in Canada may be fully deducted in the year they are incurred. These expenditures give rise to new knowledge, technology and other intangible assets that are expected to generate benefits over multiple years. Under the benchmark tax system, such expenditures would be capitalized and depreciated over the time period the assets created are expected to generate revenues. A similar measure was formerly available in respect of capital expenditures on SR&ED (see measure “Expensing of purchases of capital equipment used for scientific research and experimental development”). A tax credit is also available in respect of these expenses (see measure “Scientific Research and Experimental Development Investment Tax Credit”).
+Tax | Personal (including trusts) and corporate income tax
+Beneficiaries | Businesses conducting eligible scientific research and experimental development
+Type of measure | Timing preference
+Legal reference | Income Tax Act, section 37
+Implementation and recent history | Introduced in 1944.
+Objective – category | To encourage or attract investment
+Objective | This measure is intended to encourage the performance of scientific research and experimental development in Canada by the private sector and to assist small businesses to perform scientific research and experimental development (Budget 1996).
+Category | Non-structural tax measure
+Reason why this measure is not part of benchmark tax system | This measure may permit the depreciation of a capital asset faster than its useful life.
+Subject | Business - research and development
+CCOFOG 2014 code | 7048 - Economic affairs - R&D Economic affairs
+Other relevant government programs | Programs within the mandates of Innovation, Science and Economic Development Canada, the National Research Council Canada and the federal granting councils also support research and development. Additional information on the relevant Government programs is provided in the table at the end of Part 3.
+Source of data | The calculation of the cost of this tax expenditure would require information on the intangible assets created through expenditures on SR&ED. Such information is not available. Information on current SR&ED expenditures by unincorporated businesses is also not available.
+Estimation method | No estimate is available – see the Annex to Part 1 for an explanation as to why estimates are not available for this measure.
+Projection method | No projection is available.
+Number of beneficiaries | About 16,500 corporations incurred eligible expenditures in 2017. No data is available for unincorporated businesses.
+
+Expensing of employee training costs
+| Value
+Description | Expenditures that are incurred for employee training for the benefit of the employer are fully deductible by businesses. Expenditures on training improve the quality of human capital and provide benefits to the business in both the current year and future years similar to an acquisition of physical capital. Under the benchmark tax system, a portion of these costs would be capitalized and depreciated over the period of time over which they are expected to generate revenues for the business.
+Tax | Personal (including trusts) and corporate income tax
+Beneficiaries | Businesses
+Type of measure | Timing preference
+Legal reference | Income Tax Act, paragraph 18(1)(a)
+Implementation and recent history | This measure has been in effect since 1917.
+Objective – category | To encourage employment
+Objective | This measure encourages employers to invest in employee training by increasing the after-tax returns on such investment.
+Category | Non-structural tax measure
+Reason why this measure is not part of benchmark tax system | This measure may permit the depreciation of a capital asset faster than its useful life.
+Subject | Business - other
+CCOFOG 2014 code | 70499 - Economic affairs - Economic affairs not elsewhere classified
+Other relevant government programs | Programs within the mandates of Global Affairs Canada, Public Services and Procurement Canada, and the regional development agencies (among other federal organizations) also offer support to Canadian businesses in various manners. Additional information on the relevant Government programs is provided in the table at the end of Part 3.
+Source of data | No data is available.
+Estimation method | No estimate is available – see the Annex to Part 1 for an explanation as to why estimates are not available for this measure.
+Projection method | No projection is available.
+Number of beneficiaries | No data is available.
+
+Expensing of incorporation expenses
+| Value
+Description | The first $3,000 of incorporation expenses is fully deductible in the first year after incorporation. Under the benchmark tax system, these costs would be capitalized and depreciated over the period of time during which the expenditures contribute to the earning of income.
+Tax | Corporate income tax
+Beneficiaries | Businesses
+Type of measure | Timing preference
+Legal reference | Income Tax Act, paragraph 20(1)(b)
+Implementation and recent history | These expenses were previously deducted under the Eligible Capital Property regime. Budget 2016 announced that the Eligible Capital Property regime would be replaced with a new class of depreciable property to which the capital cost allowance rules would apply. However, Budget 2016 also announced that effective January 1, 2017, the first $3,000 of incorporation expenses would be fully deductible rather than being added to the new capital cost allowance class.
+Objective – category | To reduce administration or compliance costs
+Objective | This measure reduces administration costs for the Canada Revenue Agency and compliance costs for taxpayers.
+Category | Structural tax measure
+Reason why this measure is not part of benchmark tax system | This measure may permit the depreciation of a capital asset faster than its useful life.
+Subject | Business - other
+CCOFOG 2014 code | 70499 - Economic affairs - Economic affairs not elsewhere classified
+Other relevant government programs | Programs within the mandates of Global Affairs Canada, Public Services and Procurement Canada, and the regional development agencies (among other federal organizations) also offer support to Canadian businesses in various manners. Additional information on the relevant Government programs is provided in the table at the end of Part 3.
+Source of data | No data is available.
+Estimation method | No estimate is available – see the Annex to Part 1 for an explanation as to why estimates are not available for this measure.
+Projection method | No projection is available.
+Number of beneficiaries | No data is available.
+
+Family Caregiver Tax Credit
+| Value
+Description | The Family Caregiver Tax Credit was replaced with the Canada Caregiver Credit in 2017. The Family Caregiver Tax Credit provided tax relief to caregivers of dependants with a mental or physical infirmity, including spouses or common-law partners and minor children. In its last year, 2016, the value of the credit was calculated by applying the lowest personal income tax rate to the credit amount of $2,121. The credit amount was indexed to inflation and could be claimed under one of the following dependency-related credits: Spouse or Common-Law Partner Credit, Eligible Dependant Credit, Caregiver Credit and Child Tax Credit (these last two credits were repealed as of the 2017 and 2015 taxation years respectively). With the exception of a dependant who was a minor child of the claimant, the amount was reduced dollar‑for‑dollar by the dependant’s net income above a certain threshold.
+Tax | Personal income tax
+Beneficiaries | Caregivers
+Type of measure | Credit, non-refundable
+Legal reference | Income Tax Act, subsection 118(1)
+Implementation and recent history | Introduced in Budget 2011. Effective for the 2012 and subsequent taxation years. Budget 2017 announced the repeal of the credit for the 2017 and subsequent taxation years.
+Objective – category | To recognize non-discretionary expenses (ability to pay)
+Objective | This measure recognizes the sacrifices that many Canadians make to care for their children, spouses, parents and other family members with infirmities (Budget 2011).
+Category | Structural tax measure
+Reason why this measure is not part of benchmark tax system | Tax credits are treated as deviations from the benchmark tax system.
+Subject | Families and households Health
+CCOFOG 2014 code | 71049 - Social protection - Family and children 71011 - Social protection - Sickness and disability - Sickness 71012 - Social protection - Sickness and disability - Disability
+Other relevant government programs | Programs within the mandates of Employment and Social Development Canada and Indigenous Services Canada also support Canadian families and households. Programs within the mandates of Health Canada, the Canadian Food Inspection Agency, the Canadian Institutes of Health Research, the Public Health Agency of Canada and Veterans Affairs Canada also support health-related objectives. Additional information on the relevant Government programs is provided in the table at the end of Part 3.
+Source of data | T1 Income Tax and Benefit Return
+Estimation method | T1 micro-simulation model
+Projection method | n/a
+Number of beneficiaries | About 394,000 individuals claimed this credit in 2016.
+
+Cost Information:
+Millions of dollars | 2014 | 2015 | 2016 | 2017 | 2018 (P) | 2019 (P) | 2020 (P) | 2021 (P)
+Personal income tax | 70 | 75 | 75 | – | – | – | – | –
+
+Family Tax Cut
+| Value
+Description | The Family Tax Cut was a non-refundable credit that allowed, in effect, a higher-income spouse or common-law partner to transfer up to $50,000 of taxable income to a spouse or common-law partner in a lower tax bracket. The credit provided up to $2,000 in tax relief to couples with children under the age of 18. The value of the credit was calculated on the basis of the difference in the higher-income spouse or common-law partner’s federal tax payable before and after the notional transfer of income. Either spouse or common-law partner could claim the credit. This credit was repealed as of the 2016 taxation year.
+Tax | Personal income tax
+Beneficiaries | Couples with children
+Type of measure | Credit, non-refundable
+Legal reference | Income Tax Act, section 119.1
+Implementation and recent history | Introduced in 2014 (Prime Minister of Canada news release, October 30, 2014). Effective for the 2014 and subsequent taxation years. Budget 2016 eliminated income splitting for couples with children under the age of 18 for the 2016 and subsequent taxation years.
+Objective – category | To provide income support or tax relief To extend or modify the unit of taxation
+Objective | This measure eliminated or significantly reduced the difference in federal tax payable by a one-earner couple relative to a two-earner couple with a similar family income (Prime Minister of Canada news release, October 30, 2014).
+Category | Non-structural tax measure
+Reason why this measure is not part of benchmark tax system | This measure extended the unit of taxation.
+Subject | Families and households
+CCOFOG 2014 code | 71049 - Social protection - Family and children
+Other relevant government programs | Programs within the mandates of Employment and Social Development Canada and Indigenous Services Canada also support Canadian families and households. Additional information on the relevant Government programs is provided in the table at the end of Part 3.
+Source of data | T1 Income Tax and Benefit Return
+Estimation method | T1 micro-simulation model
+Projection method | n/a
+Number of beneficiaries | About 1.7 million couples claimed this credit in 2015.
+
+Cost Information:
+Millions of dollars | 2014 | 2015 | 2016 | 2017 | 2018 (P) | 2019 (P) | 2020 (P) | 2021 (P)
+Personal income tax | 1,650 | 1,625 | – | – | – | – | – | –
+
+Film or Video Production Services Tax Credit
+| Value
+Description | Corporations can claim a 16% refundable tax credit in respect of salaries and wages paid to Canadian residents for film or video production services provided in Canada in respect of accredited productions that do not have sufficient Canadian content to qualify for the Canadian Film or Video Production Tax Credit. The Canadian Audio-Visual Certification Office of the Department of Canadian Heritage is responsible for certifying productions that are eligible for the credit.
+Tax | Corporate income tax
+Beneficiaries | Corporations in the film and video production industry
+Type of measure | Credit, refundable
+Legal reference | Income Tax Act, section 125.5
+Implementation and recent history | Introduced at a rate of 11% in 1997, to coincide with the elimination of film production services tax shelters (Department of Finance Canada news release, July 30, 1997). The credit rate was increased to 16% in Budget 2003, for expenditures incurred after February 18, 2003.
+Objective – category | To support business activity To support competitiveness
+Objective | The Film or Video Production Services Tax Credit makes Canada a more attractive place for film production by complementing the existing Canadian Film or Video Production Tax Credit and by allowing a greater range of productions (usually foreign-owned) to qualify for assistance (Department of Finance Canada news release, July 30, 1997).
+Category | Refundable tax credit
+Reason why this measure is not part of benchmark tax system | This measure is classified as a transfer payment for government accounting purposes, and therefore is not considered to be a tax expenditure.
+Subject | Arts and culture
+CCOFOG 2014 code | 70829 - Recreation, culture, and religion - Cultural services
+Other relevant government programs | Programs within the mandate of Canadian Heritage also support arts and culture. Additional information on the relevant Government programs is provided in the table at the end of Part 3.
+Source of data | T2 Corporation Income Tax Return
+Estimation method | The estimates are based on actual amounts earned and claimed by businesses.
+Projection method | The cost of this measure is projected to grow in line with nominal gross domestic product.
+Number of beneficiaries | About 500 corporations received this benefit in 2017.
+
+Cost Information:
+Millions of dollars | 2014 | 2015 | 2016 | 2017 | 2018 (P) | 2019 (P) | 2020 (P) | 2021 (P)
+Corporate income tax | 135 | 150 | 215 | 260 | 305 | 315 | 325 | 335
+
+First-Time Donor's Super Credit
+| Value
+Description | The First-Time Donor’s Super Credit provided a temporary, non-refundable tax credit of 25% in addition to the Charitable Donation Tax Credit. The First-Time Donor’s Super Credit applied on up to $1,000 in cash donations, provided that neither the taxpayer nor their spouse had claimed the Charitable Donation Tax Credit after 2007. Contributions eligible for the credit must have been made in respect of any one taxation year from 2013 to 2017.
+Tax | Personal income tax
+Beneficiaries | Individual first-time donors
+Type of measure | Credit, non-refundable
+Legal reference | Income Tax Act, subsections 118.1(3.1) and (3.2)
+Implementation and recent history | Introduced in Budget 2013. Effective for gifts made on or after March 21, 2013, that are claimed in any one taxation year from 2013 to 2017. As announced in Budget 2017, the credit expired in 2017 as planned.
+Objective – category | To achieve a social objective
+Objective | This measure encourages charitable giving by new donors (Budget 2013).
+Category | Non-structural tax measure
+Reason why this measure is not part of benchmark tax system | Tax credits are treated as deviations from the benchmark tax system. The tax benefit from this measure can be obtained in a taxation year other than the year during which it accrues. The tax benefit from this measure is transferable between spouses or common-law partners.
+Subject | Donations, gifts, charities and non-profit organizations
+CCOFOG 2014 code | 705 - Environmental protection; 706 - Housing and community amenities; 707 - Health; 708 - Recreation, culture, and religion; 709 - Education; 710 - Social protection; Other various codes
+Other relevant government programs | Many federal government entities provide direct funding to registered charities, non-profit organizations and international development associations through various programs.
+Source of data | T1 Income Tax and Benefit Return
+Estimation method | T1 micro-simulation model
+Projection method | n/a
+Number of beneficiaries | About 19,000 individuals claimed this credit in 2017.
+
+Cost Information:
+Millions of dollars | 2014 | 2015 | 2016 | 2017 | 2018 (P) | 2019 (P) | 2020 (P) | 2021 (P)
+Personal income tax | 4 | 4 | 4 | 4 | – | – | – | –
+
+First-Time Home Buyers' Tax Credit
+| Value
+Description | First-time home buyers who acquire a qualifying home after January 27, 2009 can obtain up to $750 in tax relief by claiming the First-Time Home Buyers’ Tax Credit. The value of this non-refundable credit is calculated by multiplying the credit amount of $5,000 by the lowest personal income tax rate (15% in 2019). Any unused portion of the credit may be claimed by an individual’s spouse or common-law partner. An individual is considered to be a first-time home buyer if neither the individual nor the individual’s spouse or common-law partner owned and lived in another home in the calendar year of the home purchase or in any of the four preceding calendar years. A qualifying home is one that is generally considered to be a housing unit that an individual or an individual’s spouse or common-law partner intends to occupy as a principal residence no later than one year after its acquisition. The First-Time Home Buyers’ Tax Credit is also available for certain acquisitions of a home by or for the benefit of an individual who is eligible for the Disability Tax Credit, even if the first-time home buyer condition is not met.
+Tax | Personal income tax
+Beneficiaries | Individual first-time home buyers
+Type of measure | Credit, non-refundable
+Legal reference | Income Tax Act, section 118.05
+Implementation and recent history | Introduced in Budget 2009. Effective for the 2009 and subsequent taxation years.
+Objective – category | To achieve a social objective
+Objective | This measure assists first-time home buyers with the cost associated with the purchase of a home (Budget 2009).
+Category | Non-structural tax measure
+Reason why this measure is not part of benchmark tax system | Tax credits are treated as deviations from the benchmark tax system. The tax benefit from this measure is transferable between spouses or common-law partners.
+Subject | Housing
+CCOFOG 2014 code | 70619 - Housing and community amenities - Housing development
+Other relevant government programs | Programs within the mandate of the Canada Mortgage and Housing Corporation, Indigenous Services Canada and Crown-Indigenous Relations and Northern Affairs Canada are intended to promote the construction, repair and renewal of affordable and safe housing. Additional information on the relevant Government programs is provided in the table at the end of Part 3.
+Source of data | T1 Income Tax and Benefit Return
+Estimation method | T1 micro-simulation model
+Projection method | T1 micro-simulation model
+Number of beneficiaries | About 189,000 individuals claimed this credit in 2017.
+
+Cost Information:
+Millions of dollars | 2014 | 2015 | 2016 | 2017 | 2018 (P) | 2019 (P) | 2020 (P) | 2021 (P)
+Personal income tax | 115 | 115 | 115 | 110 | 105 | 105 | 105 | 110
+
+Flow-through share deductions
+| Value
+Description | Flow-through shares are an authorized tax shelter arrangement that allows a corporation to transfer certain unused tax deductions to equity investors. An investor buying a flow-through share, in addition to receiving an equity interest in the issuing corporation, is entitled to claim deductions on account of Canadian Exploration Expenses (100% immediate deduction, including for Canadian Renewable and Conservation Expenses) and Canadian Development Expenses (deductible at 30% per year) transferred to the investor by the corporation. Investors are willing to pay more for such shares than for regular equity because of the flow-through tax deductions. Flow-through shares are typically issued by corporations which are not yet profitable and therefore not able to immediately use the deductions themselves. It facilitates the raising of capital by allowing such firms to sell their equity at a premium. A flow-through share is deemed to have a zero cost base for income tax purposes, based on the fact that the shareholder will have claimed a flow-through deduction as high as the full cost of the share. As a result of the zero cost base, the gain realized on the sale of the share will be equal to the share’s full value at the time of sale rather than the change in its value since the time of acquisition.
+Tax | Personal (including trusts) and corporate income tax
+Beneficiaries | Investors in flow-through shares and businesses in the oil and gas, mining and renewable energy sectors
+Type of measure | Other
+Legal reference | Income Tax Act, subsections 66(12.6) and 66(12.62)
+Implementation and recent history | Flow-through share deductions have existed in various forms since the 1950s. The current flow-through share regime was introduced in Budget 1986 and implemented on March 1, 1986.
+Objective – category | To encourage or attract investment
+Objective | This measure assists corporations in the oil and gas, mining and renewable energy sectors to raise capital for eligible exploration, development and project start-up expenses by issuing their shares (Improving the Income Taxation of the Resource Sector in Canada, 2003).
+Category | Non-structural tax measure
+Reason why this measure is not part of benchmark tax system | This measure extends the unit of taxation.
+Subject | Business - natural resources
+CCOFOG 2014 code | 70432 - Economic affairs - Fuel and energy - Petroleum and natural gas 70441 - Economic affairs - Mining, manufacturing, and construction - Mining of mineral resources other than mineral fuels 70435 - Economic affairs - Fuel and energy - Electricity 70439 - Economic affairs - Fuel and energy - Fuel and energy not elsewhere classified
+Other relevant government programs | Programs within the mandate of Natural Resources Canada also support the natural resource sector. Additional information on the relevant Government programs is provided in the table at the end of Part 3.
+Source of data | T1 Income Tax and Benefit Return T2 Corporation Income Tax Return
+Estimation method | See the Annex to Part 1 of this report for an explanation of the method used to estimate the value of this measure. The breakdown of the estimates between individuals and trusts is not available.
+Projection method | Projections are based on current market conditions.
+Number of beneficiaries | This measure provided tax relief to about 50,500 individuals and 400 corporations in 2017.
+
+Cost Information:
+Millions of dollars | 2014 | 2015 | 2016 | 2017 | 2018 (P) | 2019 (P) | 2020 (P) | 2021 (P)
+Personal income tax | 100 | 55 | 85 | 115 | 105 | 115 | 105 | 120
+Corporate income tax | 30 | 30 | 45 | 50 | 55 | 55 | 55 | 60
+Total | 135 | 85 | 130 | 170 | 160 | 165 | 165 | 180
+
+Foreign Convention and Tour Incentive Program
+| Value
+Description | The Foreign Convention and Tour Incentive Program provides rebates of the GST paid in respect of: certain property and services used in the course of a foreign convention (generally defined as a convention where at least 75% of participants are non-residents and the sponsor is a non-resident) held in Canada; and the use of a convention site and related convention supplies acquired by non-resident exhibitors in respect of a foreign or Canadian convention held in Canada. A rebate for the accommodation portion of a tour package supplied to a non-resident was also provided, but was repealed in Budget 2017.
+Tax | Goods and Services Tax
+Beneficiaries | Non-residents that are individuals, suppliers of tour packages, exhibitors in respect of conventions held in Canada, and sponsors and participants of foreign conventions held in Canada
+Type of measure | Rebate
+Legal reference | Excise Tax Act, sections 252.1, 252.3 and 252.4
+Implementation and recent history | The Foreign Convention and Tour Incentive Program was introduced in Budget 2007 and became effective on April 1, 2007. This program replaced the former Visitors’ Rebate Program, which had been in effect since the inception of the GST in 1991. Under the former program, non-residents visiting Canada were entitled to a rebate for the GST paid on most goods purchased for export and on short-term accommodation (whether or not provided as part of a tour package). Rebates were also provided for eligible conference-related expenses for conferences attended by non-residents. Budget 2017 announced the repeal of the rebate in respect of the accommodation portion of a tour package supplied to a non-resident. The repeal generally applies in respect of supplies of tour packages or accommodations made after March 22, 2017. As a transitional measure, the rebate was available in respect of supplies made after March 22, 2017 but before January 1, 2018 if all of the consideration for the supply was paid before January 1, 2018.
+Objective – category | To support business activity To support competitiveness
+Objective | This measure promotes Canada as a destination of choice for group travel (Budget 2007).
+Category | Non-structural tax measure
+Reason why this measure is not part of benchmark tax system | GST rebates effectively reduce the value added subject to tax, and are therefore deviations from a broadly defined value-added tax base.
+Subject | Business – other
+CCOFOG 2014 code | 70473 - Economic affairs - Other industries - Tourism
+Other relevant government programs | Programs within the mandates of Global Affairs Canada, Public Services and Procurement Canada, and the regional development agencies (among other federal organizations) also offer support to Canadian businesses in various manners. Additional information on the relevant Government programs is provided in the table at the end of Part 3.
+Source of data | GST106 - Information on Claims Paid or Credited for Foreign Conventions and Tour Packages GST115 - GST/HST Rebate Application for Tour Packages GST386 - Rebate Application for Conventions
+Estimation method | The cost of this measure corresponds to the amounts of rebates approved, as reported in administrative data.
+Projection method | The cost of this measure is projected to grow in line with non-merchandise travel exports.
+Number of beneficiaries | No data is available.
+
+Cost Information:
+Millions of dollars | 2014 | 2015 | 2016 | 2017 | 2018 (P) | 2019 (P) | 2020 (P) | 2021 (P)
+Goods and Services Tax | 15 | 20 | 25 | 25 | 10 | 15 | 15 | 15
+
+Foreign tax credit for individuals
+| Value
+Description | Individuals who are residents of Canada and who paid income tax to a foreign government may be eligible to claim a foreign tax credit, which provides a tax credit against Canadian income tax payable for income taxes paid to a foreign government up to a limit of the Canadian tax on that income. In addition, the foreign tax credit claimed in respect of tax paid on income from a foreign property cannot exceed 15% of the net income from that property. This credit is also available to trusts in respect of the foreign income of a trust that is retained and taxed within the trust.
+Tax | Personal income tax (including trusts)
+Beneficiaries | Individuals and trusts with foreign income
+Type of measure | Credit, non-refundable
+Legal reference | Income Tax Act, section 126
+Implementation and recent history | This measure has been in place since 1927.
+Objective – category | To prevent double taxation
+Objective | This measure ensures that foreign income is not subject to double taxation (June 1987 Tax Reform White Paper).
+Category | Structural tax measure
+Reason why this measure is not part of benchmark tax system | This measure is considered part of the benchmark tax system, and therefore is not a tax expenditure.
+Subject | International
+CCOFOG 2014 code | n/a
+Other relevant government programs | n/a
+Source of data | T1 Income Tax and Benefit Return T3 Trust Income Tax and Information Return
+Estimation method | T1 and T3 micro-simulation models
+Projection method | T1 micro-simulation model in the case of individuals. Projections for trusts are based on projected growth for individuals.
+Number of beneficiaries | About 1.6 million individuals and 11,000 trusts claimed this credit in 2017.
+
+Cost Information:
+Millions of dollars | 2014 | 2015 | 2016 | 2017 | 2018 (P) | 2019 (P) | 2020 (P) | 2021 (P)
+Personal income tax
+Individuals | 1,205 | 1,445 | 1,590 | 1,650 | 1,670 | 1,695 | 1,715 | 1,735
+Trusts | 45 | 50 | 50 | 35 | 35 | 35 | 35 | 35
+Total – personal income tax | 1,255 | 1,495 | 1,645 | 1,685 | 1,705 | 1,725 | 1,745 | 1,770
+
+Goods and Services Tax/Harmonized Sales Tax Credit
+| Value
+Description | A refundable income tax credit (now known as the GST/HST Credit) was established at the time of the introduction of the GST to ensure that low-income families would be better off under the new sales tax regime than under the former federal sales tax. The amount of the credit depends on family size and income. Specifically, for the period from July 2019 to June 2020, based on net family income reported for the 2017 taxation year: an adult receives a basic adult credit of $290 per year; families with children aged 18 and under receive a basic child credit of $153 per year for each child; single parents can claim, in lieu of the basic child credit, the full basic adult credit of $290 per year for one dependent child; single parents are eligible for an additional credit of $153 per year in addition to their basic credit, child credits and full basic adult credit for the first dependent child; and single adults without children are eligible for an additional credit of up to $153 per year (depending on income) in addition to their basic credit. The value of the credit is reduced for individuals and families with annual incomes over $37,789. Both the credit amounts and the income threshold are adjusted annually for inflation.
+Tax | Income tax, in respect of Goods and Services Tax
+Beneficiaries | Households
+Type of measure | Credit, refundable
+Legal reference | Income Tax Act, section 122.5
+Implementation and recent history | This measure has been in effect since the inception of the GST in 1991.
+Objective – category | To promote the fairness of the tax system To provide income support or tax relief
+Objective | This measure alleviates the regressive features of consumption taxation.
+Category | Structural tax measure
+Reason why this measure is not part of benchmark tax system | Tax credits are treated as deviations from the benchmark tax system.
+Subject | Families and households
+CCOFOG 2014 code | 71099 - Social protection - Social protection not elsewhere classified
+Other relevant government programs | Programs within the mandates of Employment and Social Development Canada and Indigenous Services Canada also support Canadian families and households. Additional information on the relevant Government programs is provided in the table at the end of Part 3.
+Source of data | Public Accounts of Canada
+Estimation method | The cost of this measure is calculated from source data.
+Projection method | T1 micro-simulation model
+Number of beneficiaries | About 10.5 million individuals receive this benefit each year.
+
+Cost Information:
+Millions of dollars | 2014 | 2015 | 2016 | 2017 | 2018 (P) | 2019 (P) | 2020 (P) | 2021 (P)
+Goods and Services Tax | 4,175 | 4,315 | 4,440 | 4,550 | 4,650 | 4,765 | 4,905 | 5,050
+
+Holdback on progress payments to contractors
+| Value
+Description | Contractors in the construction industry are typically given progress payments as construction proceeds. However, a portion of these progress payments can be held back by the client until the entire project is completed. Under this measure, amounts held back are considered not to be receivable when earned (as would be the case under the benchmark tax structure), but only when the project to which they apply is certified as complete, and these amounts are not deductible by the client and not brought into the income of the contractor until that time. In contrast, progress payments not held back are deductible by the client as incurred, and brought into the income of the contractor as earned.
+Tax | Personal (including trusts) and corporate income tax
+Beneficiaries | Construction contractors
+Type of measure | Other
+Legal reference | Income Tax Act, paragraph 12(1)(b)
+Implementation and recent history | This tax expenditure is the result of an interpretation of the Income Tax Act that has been effective since the early 1970s.
+Objective – category | To provide relief for special circumstances
+Objective | This measure is intended to alleviate potential cash-flow difficulties for construction contractors.
+Category | Structural tax measure
+Reason why this measure is not part of benchmark tax system | This measure permits the deferral of the recognition of income or gains for income tax purposes.
+Subject | Business – other
+CCOFOG 2014 code | 70499 - Economic affairs - Economic affairs not elsewhere classified
+Other relevant government programs | Programs within the mandates of Global Affairs Canada, Public Services and Procurement Canada, and the regional development agencies (among other federal organizations) also offer support to Canadian businesses in various manners. Additional information on the relevant Government programs is provided in the table at the end of Part 3.
+Source of data | Personal income tax: Data on holdbacks payable and receivable by unincorporated businesses is not available. Corporate income tax: T2 Corporation Income Tax Return
+Estimation method | Personal income tax: No estimate is available. Corporate income tax: T2 micro-simulation model This tax expenditure may be positive or negative, depending on the tax rates applicable to contractors and clients and on whether holdbacks receivable exceed or are smaller than holdbacks payable. Total holdbacks receivable may not equal total holdbacks payable when related amounts receivable and payable are not assigned to the same calendar year (because the taxation years of contractors and clients end in different calendar years) or because no data is available in respect of amounts receivable and payable by unincorporated businesses.
+Projection method | Personal income tax: No projection is available. Corporate income tax: The cost of this measure is projected to grow in line with nominal gross domestic product.
+Number of beneficiaries | About 6,450 corporations claimed this deduction in 2017. No data is available for unincorporated businesses.
+
+Cost Information:
+Millions of dollars | 2014 | 2015 | 2016 | 2017 | 2018 (P) | 2019 (P) | 2020 (P) | 2021 (P)
+Personal income tax | n.a. | n.a. | n.a. | n.a. | n.a. | n.a. | n.a. | n.a.
+Corporate income tax | 80 | 50 | 10 | 25 | 50 | 50 | 55 | 55
+Total | n.a. | n.a. | n.a. | n.a. | n.a. | n.a. | n.a. | n.a.
+
+Home Accessibility Tax Credit
+| Value
+Description | The Home Accessibility Tax Credit provides a non-refundable tax credit of 15% on up to $10,000 of eligible home renovation or alteration expenses per calendar year in respect of a qualifying individual, to a maximum of $10,000 per eligible dwelling. Qualifying individuals are persons with disabilities who are eligible for the Disability Tax Credit and seniors (65 years of age or older). Qualifying individuals, as well as eligible family members who are supporting the qualifying individual, may claim eligible expenses in respect of an eligible dwelling. The eligible dwelling must be the principal residence of the qualifying individual at any time during the taxation year. The dwelling must also be owned by the qualifying individual, their spouse or common-law partner, or an eligible family member in respect of the qualifying individual with whom the qualifying individual ordinarily inhabits that dwelling. Eligible expenses are home renovation or alteration expenses to the eligible dwelling incurred in order to allow the qualifying individual to gain access to the dwelling, allow the qualifying individual to be more mobile or functional within the dwelling, or reduce the risk of harm to the qualifying individual within the dwelling or in gaining access to the dwelling. Improvements must also be of an enduring nature and be integral to the eligible dwelling. Examples of eligible expenditures include costs associated with the purchase and installation of wheelchair ramps, walk-in bathtubs, wheel-in showers and grab bars.
+Tax | Personal income tax
+Beneficiaries | Seniors and persons with disabilities
+Type of measure | Credit, non-refundable
+Legal reference | Income Tax Act, section 118.041
+Implementation and recent history | Introduced in Budget 2015. Effective for eligible expenditures for work performed and paid for or goods acquired on or after January 1, 2016.
+Objective – category | To achieve a social objective To recognize non-discretionary expenses (ability to pay)
+Objective | This measure recognizes the particular impact that the costs of improving the safety, accessibility and functionality of a dwelling can have for seniors and persons with disabilities, and the additional benefits of independent living (Budget 2015).
+Category | Non-structural tax measure
+Reason why this measure is not part of benchmark tax system | Tax credits are treated as deviations from the benchmark tax system. This measure extends the unit of taxation.
+Subject | Health Housing
+CCOFOG 2014 code | 70769 - Health - Health not elsewhere classified 71069 - Social protection - Housing
+Other relevant government programs | Programs within the mandates of Health Canada, the Canadian Food Inspection Agency, the Canadian Institutes of Health Research, the Public Health Agency of Canada and Veterans Affairs Canada also support health-related objectives. Programs within the mandate of the Canada Mortgage and Housing Corporation, Indigenous Services Canada and Crown-Indigenous Relations and Northern Affairs Canada are intended to promote the construction, repair and renewal of affordable and safe housing. Additional information on the relevant Government programs is provided in the table at the end of Part 3.
+Source of data | T1 Income Tax and Benefit Return
+Estimation method | n/a
+Projection method | Projections reflect the estimates presented in Budget 2015. The cost of this measure is projected to grow with the eligible population and inflation, as forecasted in the T1 micro-simulation model.
+Number of beneficiaries | About 28,000 individuals claimed this credit in 2017.
+
+Cost Information:
+Millions of dollars | 2014 | 2015 | 2016 | 2017 | 2018 (P) | 2019 (P) | 2020 (P) | 2021 (P)
+Personal income tax | – | – | 15 | 15 | 15 | 20 | 20 | 20
+
+Inclusion of the Universal Child Care Benefit in the income of an eligible dependant
+| Value
+Description | The Universal Child Care Benefit (UCCB) provided families with $160 per month for each child under the age of 6 and $60 per month for children aged 6 through 17. In two-parent families, the UCCB was included in the income of the lower-income spouse or common-law partner. A single parent had the option of including the aggregate UCCB amount received in his or her income or in the income of the dependant for whom the Eligible Dependant Credit was claimed. In most cases, the dependant was not subject to tax. If a single parent was unable to claim the Eligible Dependant Credit, he or she had the option of including the aggregate UCCB amount in the income of one of the children for whom the UCCB was paid. The UCCB was replaced by the Canada Child Benefit in July 2016.
+Tax | Personal income tax
+Beneficiaries | Single-parents with minor children
+Type of measure | Other
+Legal reference | Income Tax Act, subsection 56(6.1)
+Implementation and recent history | The UCCB was introduced in Budget 2006 as a monthly $100 benefit for each child under the age of 6. For a single-parent family, the UCCB was generally included in the single parent’s income and taxed at his or her marginal tax rate for the 2006 to 2009 taxation years. Inclusion of the UCCB in the eligible dependant’s income was introduced in Budget 2010, effective for the 2010 and subsequent taxation years. Effective January 1, 2015, the UCCB was increased to $160 per month for children under the age of 6, and the new benefit of $60 per month for children aged 6 through 17 was introduced (Prime Minister of Canada news release, October 30, 2014). The Canada Child Benefit was introduced in Budget 2016 and replaced the Canada Child Tax Benefit, including the National Child Benefit supplement, and the Universal Child Care Benefit. Payments of the Canada Child Benefit began in July 2016.
+Objective – category | To provide income support or tax relief To ensure a neutral tax treatment across similar situations
+Objective | This measure was intended to give single parents comparable tax treatment on the same UCCB amounts as single-earner two-parent families with the same income (Budget 2010).
+Category | Non-structural tax measure
+Reason why this measure is not part of benchmark tax system | This measure extended the unit of taxation.
+Subject | Families and households
+CCOFOG 2014 code | 71049 - Social protection - Family and children
+Other relevant government programs | Programs within the mandates of Employment and Social Development Canada and Indigenous Services Canada also support Canadian families and households. Additional information on the relevant Government programs is provided in the table at the end of Part 3.
+Source of data | T1 Income Tax and Benefit Return
+Estimation method | T1 micro-simulation model
+Projection method | n/a
+Number of beneficiaries | About 302,000 individuals designated this amount to a dependant in 2016.
+
+Cost Information:
+Millions of dollars | 2014 | 2015 | 2016 | 2017 | 2018 (P) | 2019 (P) | 2020 (P) | 2021 (P)
+Personal income tax | 2 | 10 | 5 | – | – | – | – | –
+
+Income tax exemption for certain public bodies
+| Value
+Description | The Income Tax Act contains special rules that exempt from federal income tax the income of municipalities, public bodies performing a function of government in Canada, entities that are substantially owned by a provincial Crown (or owned by municipalities or public bodies performing a function of government in Canada) and the wholly-owned subsidiaries of such entities, where such entities are eligible for the exemption under the Act. In the absence of these special rules, these entities could be subject to federal income tax, because constitutional immunity from federal income taxation does not extend to these entities (except where they act as agent of a province).
+Tax | Corporate income tax
+Beneficiaries | Certain provincial, municipal and Indigenous public bodies and their entities
+Type of measure | Exemption
+Legal reference | Income Tax Act, paragraphs 149(1)(c) and (d) to (d.6)
+Implementation and recent history | This measure has been in effect since the inception of the federal income tax in 1917.
+Objective – category | To implement intergovernmental tax arrangements
+Objective | This measure extends exemption from federal taxation to certain public bodies.
+Category | Structural tax measure
+Reason why this measure is not part of benchmark tax system | This measure exempts from tax certain taxpayers.
+Subject | Intergovernmental tax arrangements
+CCOFOG 2014 code | n/a
+Other relevant government programs | n/a
+Source of data | No data is available.
+Estimation method | No estimate is available.
+Projection method | No projection is available.
+Number of beneficiaries | No data is available.
+
+Infirm Dependant Credit
+| Value
+Description | The Infirm Dependant Credit was replaced with the Canada Caregiver Credit in 2017. The Infirm Dependant Credit provided tax relief to individuals providing support to an infirm adult relative. The credit could be claimed by taxpayers supporting a child or grandchild, a spouse or common-law partner’s child or grandchild, parent, grandparent, brother, sister, aunt, uncle, niece or nephew who was 18 years of age or over and dependent due to a mental or physical infirmity. The amount the supporting relative could claim depended on the net income of the dependant. The value of the credit was calculated by applying the lowest personal income tax rate to an amount of $6,788 (in 2016). The value of the Infirm Dependant Credit was reduced dollar-for-dollar when the dependant's net income exceeded $6,807 (in 2016). Both the credit amount and income threshold were indexed to inflation.
+Tax | Personal income tax
+Beneficiaries | Caregivers
+Type of measure | Credit, non-refundable
+Legal reference | Income Tax Act, paragraph 118(1)(d)
+Implementation and recent history | Introduced as part of the 1987 Tax Reform, effective for the 1988 and subsequent taxation years, to replace the previous deduction from income. Budget 2011 increased the amount of the Infirm Dependant Credit by $2,000 (indexed to inflation), through the introduction of the Family Caregiver Tax Credit. Indexation was introduced for this credit for the 1996 and subsequent taxation years. Budget 2017 announced the repeal of the credit for the 2017 and subsequent taxation years.
+Objective – category | To recognize non-discretionary expenses (ability to pay)
+Objective | This measure recognizes that a taxpayer supporting an adult dependant who is physically or mentally infirm has a reduced ability to pay tax relative to a taxpayer with the same income and no such dependant (Report of the Royal Commission on Taxation, vol. 3, 1966).
+Category | Structural tax measure
+Reason why this measure is not part of benchmark tax system | Tax credits are treated as deviations from the benchmark tax system.
+Subject | Families and households Health
+CCOFOG 2014 code | 71049 - Social protection - Family and children 71012 - Social protection - Sickness and disability - Disability
+Other relevant government programs | Programs within the mandates of Employment and Social Development Canada and Indigenous Services Canada also support Canadian families and households. Programs within the mandates of Health Canada, the Canadian Food Inspection Agency, the Canadian Institutes of Health Research, the Public Health Agency of Canada and Veterans Affairs Canada also support health-related objectives. Additional information on the relevant Government programs is provided in the table at the end of Part 3.
+Source of data | T1 Income Tax and Benefit Return
+Estimation method | T1 micro-simulation model
+Projection method | n/a
+Number of beneficiaries | About 21,000 individuals claimed this credit in 2016.
+
+Cost Information:
+Millions of dollars | 2014 | 2015 | 2016 | 2017 | 2018 (P) | 2019 (P) | 2020 (P) | 2021 (P)
+Personal income tax | 5 | 5 | 5 | – | – | – | – | –
+
+Investment corporation deduction
+| Value
+Description | An investment corporation is a Canadian public corporation whose activities are limited to owning portfolio investments, whose revenues must be substantially from Canadian sources, and that is required to distribute substantially all of its income (other than net taxable capital gains) in the form of dividends to shareholders in the taxation year in which the income is earned. An investment corporation is permitted to deduct from its tax otherwise payable an amount equal to 20% of its taxable income minus taxed capital gains. This special deduction achieves a degree of integration between the personal and corporate income tax systems.
+Tax | Corporate income tax
+Beneficiaries | Investment corporations
+Type of measure | Preferential tax rate
+Legal reference | Income Tax Act, subsection 130(1)
+Implementation and recent history | Introduced in 1946. The deduction rate was initially set at 15% and has changed several times since then. Most recently, the deduction rate was set at 20% (up from 16⅔%) for years commencing after June 30, 1988.
+Objective – category | To prevent double taxation To encourage or attract investment
+Objective | This measure encourages investment in Canada rather than abroad by achieving a degree of integration between the personal and corporate tax systems so that investment in Canadian properties is taxed at a lower rate than investment abroad (Budget 1960).
+Category | Structural tax measure
+Reason why this measure is not part of benchmark tax system | This measure is considered part of the benchmark tax system, and therefore is not a tax expenditure.
+Subject | Savings and investment
+CCOFOG 2014 code | n/a
+Other relevant government programs | n/a
+Source of data | T2 Corporation Income Tax Return
+Estimation method | The cost of this measure corresponds to the amount reported on line 620 of form 200 of the T2 Corporation Income Tax Return.
+Projection method | The cost of this measure would be expected to be fairly stable; as such no growth is assumed over the projection period.
+Number of beneficiaries | No corporations claimed this deduction in 2017.
+
+Cost Information:
+Millions of dollars | 2014 | 2015 | 2016 | 2017 | 2018 (P) | 2019 (P) | 2020 (P) | 2021 (P)
+Corporate income tax | S | S | S | S | S | S | S | S
+
+Investment Tax Credit for Child Care Spaces
+| Value
+Description | Certain expenditures incurred by eligible businesses in order to create new child care spaces in a new or existing licensed child care facility were eligible for a non-refundable investment tax credit of 25%, to a maximum credit of $10,000 per child care space created. Eligible expenditures included the cost or incremental cost of the building in which the child care facility is located, as well as the cost of furniture, appliances, computer equipment, audio-visual equipment, playground structures and playground equipment. Initial start-up costs such as landscaping costs for the children’s playground, architect’s fees, building permit costs and costs to acquire children's educational materials were also eligible. Unused credits could be carried back 3 years or forward 20 years to reduce taxes payable in those years. Budget 2017 announced the phase-out of this measure. Unused deductions may continue to be carried forward for up to 20 years.
+Tax | Personal (including trusts) and corporate income tax
+Beneficiaries | Businesses that create child care spaces
+Type of measure | Credit, non-refundable
+Legal reference | Income Tax Act, section 127
+Implementation and recent history | Introduced in Budget 2007, effective for eligible expenditures incurred on or after March 19, 2007. Budget 2017 announced the elimination of the measure for eligible expenditures made on or after March 22, 2017. The credit remains available in respect of eligible expenditures incurred before 2020 pursuant to a written agreement entered into before March 22, 2017.
+Objective – category | To achieve a social objective
+Objective | This measure encourages businesses to create licensed child care spaces for the children of their employees and, potentially, for children in the surrounding community (Budget 2007).
+Category | Non-structural tax measure
+Reason why this measure is not part of benchmark tax system | Tax credits are treated as deviations from the benchmark tax system. The tax benefit from this measure could be obtained in a taxation year other than the year during which it accrued.
+Subject | Families and households Business – other
+CCOFOG 2014 code | 71049 - Social protection - Family and children
+Other relevant government programs | Programs within the mandates of Employment and Social Development Canada and Indigenous Services Canada also support Canadian families and households. Programs within the mandates of Global Affairs Canada, Public Services and Procurement Canada, and the regional development agencies (among other federal organizations) also offer support to Canadian businesses in various manners. Additional information on the relevant Government programs is provided in the table at the end of Part 3.
+Source of data | Personal income tax: T1 Income Tax and Benefit Return Corporate income tax: T2 Corporation Income Tax Return
+Estimation method | The estimates are based on actual amounts earned and claimed by businesses. The estimates do not cover investment tax credits claimed by trusts.
+Projection method | Personal income tax: The cost of this measure is projected based on historical growth. Corporate income tax: The cost of this measure is projected to grow in line with nominal gross domestic product.
+Number of beneficiaries | A small number of individuals (fewer than 100) and corporations (fewer than 20) claim this credit each year. The number of trusts having claimed this credit in 2017 is not disclosed due to confidentiality restrictions.
+
+Cost Information:
+Millions of dollars | 2014 | 2015 | 2016 | 2017 | 2018 (P) | 2019 (P) | 2020 (P) | 2021 (P)
+Personal income tax | S | S | S | S | S | S | S | S
+Corporate income tax | S | S | S | S | S | S | S | S
+Total | S | S | S | S | S | S | S | S
+
+Labour-Sponsored Venture Capital Corporations Credit
+| Value
+Description | Labour-Sponsored Venture Capital Corporations (LSVCCs) are investment funds, sponsored by unions or other labour organizations, that make venture capital investments in small and medium-sized businesses. A tax credit is provided to individuals for the acquisition of shares of LSVCCs, up to an annual eligible share purchase limit of $5,000.
+Tax | Personal income tax
+Beneficiaries | Individual investors
+Type of measure | Credit, non-refundable
+Legal reference | Income Tax Act, section 127.4 Income Tax Regulations, section 6701
+Implementation and recent history | Implemented in Budget 1985. Effective for shares purchased by individuals after May 23, 1985. The rate of the tax credit was set at 20%, up to an annual eligible share purchase limit of $3,500 (maximum annual credit of $750). Budget 1992 increased the annual eligible share purchase limit to $5,000 (for a maximum federal credit of $1,000). Budget 1996 reduced the tax credit rate to 15% from 20%, and the annual eligible share purchase limit to $3,500 from $5,000 (for a maximum federal credit of $525). For the 1998 and subsequent taxation years, the annual eligible share purchase limit was increased to $5,000 from $3,500 (for a maximum federal credit of $750) (Department of Finance Canada news release 1998-086, August 31, 1998). Budget 2013 announced the reduction of the tax credit rate from 15% to 10% for the 2015 taxation year and to 5% for the 2016 taxation year, and the elimination of the tax credit for the 2017 and subsequent taxation years. Budget 2016 restored the tax credit to 15% for provincially registered LSVCCs for the 2016 and subsequent taxation years.
+Objective – category | To achieve an economic objective - other
+Objective | This measure was introduced to foster entrepreneurship by encouraging investment by individuals in labour-sponsored venture capital organizations, set up to maintain or create jobs and stimulate the economy (Budget 1985).
+Category | Non-structural tax measure
+Reason why this measure is not part of benchmark tax system | Tax credits are treated as deviations from the benchmark tax system.
+Subject | Savings and investment
+CCOFOG 2014 code | 70499 - Economic affairs - Economic affairs not elsewhere classified
+Other relevant government programs | n/a
+Source of data | T1 Income Tax and Benefit Return
+Estimation method | T1 micro-simulation model
+Projection method | Projections for this measure are based on expected LSVCC share purchases. The projections reflect policy changes and observed historical growth.
+Number of beneficiaries | About 332,000 individuals claimed this credit in 2017.
+
+Cost Information:
+Millions of dollars | 2014 | 2015 | 2016 | 2017 | 2018 (P) | 2019 (P) | 2020 (P) | 2021 (P)
+Personal income tax | 125 | 90 | 145 | 150 | 155 | 160 | 165 | 170
+
+Lifetime Capital Gains Exemption
+| Value
+Description | The Lifetime Capital Gains Exemption (LCGE) provides a tax exemption in computing taxable income in respect of capital gains realized by individuals on the disposition of qualified farm or fishing property and qualified small business shares. As only half of capital gains are included in income for income tax purposes, a $1 capital gains exemption under the LCGE translates into an effective reduction in taxable income of 50 cents. An individual may shelter capital gains realized on the disposition of qualified small business shares up to a lifetime limit of $866,912 in 2019, which is indexed to inflation. In the case of capital gains realized on the disposition of qualified farm or fishing property made after April 20, 2015, the lifetime capital gains limit is the greater of $1 million and the indexed lifetime limit for qualified small business shares. Before 2016, a spousal or common-law partner trust could claim the LCGE in the year the spouse or common-law partner beneficiary died, to the extent of the remaining exemption of the deceased beneficiary. For deaths occurring after 2015, capital gains realized by a spousal or joint spousal trust are deemed to have been made payable to the beneficiary.
+Tax | Personal income tax
+Beneficiaries | Individual owners of incorporated small businesses or incorporated or unincorporated farming and fishing businesses
+Type of measure | Exemption
+Legal reference | Income Tax Act, section 110.6
+Implementation and recent history | Introduced in Budget 1985. The $500,000 LCGE on qualified farm property was effective starting in 1985. The $500,000 LCGE on other capital gains, including small business corporation shares, was phased in between 1985 and 1990. The 1987 Tax Reform capped the LCGE for capital gains other than gains on qualified farm property and small business corporation shares at $100,000 in 1988. Budget 1992 excluded real property (except real property used in an active business) from the $100,000 LCGE on other capital gains. Budget 1994 eliminated the $100,000 LCGE on other capital gains. Budget 2006 extended the $500,000 LCGE to include qualified fishing property, effective May 2, 2006. Budget 2007 increased the LCGE limit to $750,000, effective March 19, 2007. Budget 2013 increased the LCGE limit to $800,000 for 2014, and indexed the LCGE limit to inflation effective for 2015 and subsequent years. Budget 2014 eliminated the LCGE for spousal and common-law partner trusts, effective for the 2016 taxation year. Budget 2015 increased the LCGE limit for qualified farm or fishing property to $1 million, effective April 21, 2015. For taxation years after 2015, the LCGE for qualified farm or fishing property will be maintained at $1 million until the indexed LCGE applicable to capital gains realized on the disposition of qualified small business shares exceeds $1 million. At that time, the same LCGE limit, indexed to inflation, will apply to the three types of property.
+Objective – category | To encourage or attract investment To encourage savings To achieve an economic objective - other
+Objective | This measure was introduced to bolster risk taking and investment in small businesses, to provide an incentive to invest in the development of productive farm and fishing businesses, and to help small business owners and farm and fishing business owners better ensure their financial security for retirement (Budget 1985; The Lifetime Capital Gains Exemption: An Evaluation, Department of Finance Canada, 1995; Budget 2006; Budget 2007).
+Category | Non-structural tax measure
+Reason why this measure is not part of benchmark tax system | This measure exempts from tax income or gains that are included in a comprehensive income tax base.
+Subject | Business - farming and fishing Business - small businesses
+CCOFOG 2014 code | 70421 - Economic affairs - Agriculture, forestry, fishing, and hunting - Agriculture 70423 - Economic affairs - Agriculture, forestry, fishing, and hunting - Fishing and hunting 70499 - Economic affairs - Economic affairs not elsewhere classified
+Other relevant government programs | Programs within the mandates of Agriculture and Agri-Food Canada and Fisheries and Oceans Canada also support the farming and fishing sectors. Programs within the mandate of Innovation, Science and Economic Development Canada also support small businesses. Additional information on the relevant Government programs is provided in the table at the end of Part 3.
+Source of data | T1 Income Tax and Benefit Return T3 Trust Income Tax and Information Return
+Estimation method | T1 and T3 micro-simulation models
+Projection method | T1 micro-simulation model
+Number of beneficiaries | About 66,500 individuals claimed this deduction in 2017.
+
+Cost Information:
+Millions of dollars | 2014 | 2015 | 2016 | 2017 | 2018 (P) | 2019 (P) | 2020 (P) | 2021 (P)
+Individuals, by type of property
+Small business shares | 700 | 760 | 805 | 990 | 1,070 | 1,110 | 1,155 | 1,195
+Farm and fishing property | 565 | 615 | 695 | 765 | 755 | 795 | 835 | 885
+Trusts | 1 | 1 | – | – | – | – | – | –
+Total – personal income tax | 1,260 | 1,380 | 1,500 | 1,755 | 1,825 | 1,905 | 1,985 | 2,080
+
+Logging Tax Credit
+| Value
+Description | The Logging Tax Credit reduces federal income taxes payable by businesses by the lesser of two-thirds of any tax on income from logging operations paid to a province and 6⅔% of net income from logging operations in that province. Two provinces currently impose logging taxes that are prescribed by regulation for the purpose of this credit—British Columbia and Quebec.
+Tax | Personal (including trusts) and corporate income tax
+Beneficiaries | Businesses in the forest industry
+Type of measure | Credit, non-refundable
+Legal reference | Income Tax Act, section 127
+Implementation and recent history | Introduced in Budget 1962. Effective for taxation years commencing after 1961. The Budget 1962 announcement followed discussions with provinces concerning the impact of provincial logging taxes on forest sector businesses. Budget 1962 expressed the hope that provinces imposing a logging tax would provide a provincial income tax credit equal to one-third of the logging tax. Both British Columbia and Quebec currently provide a partial credit against provincial income tax in respect of their logging tax.
+Objective – category | To implement intergovernmental tax arrangements
+Objective | This measure, along with parallel credits provided by provinces that impose logging taxes, is intended to provide relief to the forest industry for provincial logging taxes (Budget 1962).
+Category | Non-structural tax measure
+Reason why this measure is not part of benchmark tax system | Tax credits are treated as deviations from the benchmark tax system.
+Subject | Intergovernmental tax arrangements
+CCOFOG 2014 code | 70422 - Economic affairs - Agriculture, forestry, fishing, and hunting - Forestry
+Other relevant government programs | n/a
+Source of data | Personal income tax: T1 Income Tax and Benefit Return and T3 Trust Income Tax and Information Return Corporate income tax: T2 Corporation Income Tax Return
+Estimation method | Personal income tax: T1 and T3 micro-simulation models Corporate income tax: T2 data on actual credits used in a year
+Projection method | Personal income tax: T1 micro-simulation model in the case of individuals. Projections for trusts are based on projected growth for individuals. Corporate income tax: The cost of this measure is projected to grow in line with nominal gross domestic product.
+Number of beneficiaries | About 400 individuals and 700 corporations claimed this credit in 2017. The number of trusts having claimed this credit in 2017 is not disclosed due to confidentiality restrictions.
+
+Cost Information:
+Millions of dollars | 2014 | 2015 | 2016 | 2017 | 2018 (P) | 2019 (P) | 2020 (P) | 2021 (P)
+Personal income tax
+Individuals | 1 | 1 | 1 | 1 | 2 | 2 | 2 | 2
+Trusts | S | X | X | X | X | X | X | X
+Total – personal income tax | 1 | 1 | 1 | 1 | 2 | 2 | 2 | 2
+Corporate income tax | 20 | 20 | 25 | 60 | 90 | 60 | 60 | 60
+Total | 20 | 20 | 25 | 60 | 95 | 60 | 60 | 60
+
+Medical Expense Tax Credit
+| Value
+Description | The Medical Expense Tax Credit provides tax relief for qualifying above-average medical or disability-related expenses incurred by individuals on behalf of themselves, a spouse or a common-law partner, or a dependent relative. The value of the credit is calculated by applying the lowest personal income tax rate to the amount of qualifying medical expenses in excess of the lesser of 3% of net income and $2,352 (in 2019, indexed to inflation). The credit can be claimed in respect of expenses paid in any period of 12 consecutive months that ends in the taxation year in which the claim is made. Medical expense claims made on behalf of a spouse or common-law partner or minor children may be pooled with the medical expenses of the taxpayer, subject to the minimum expense threshold. There is no upper limit on the amount that can be claimed, except for certain specific expenses. For medical expenses paid on behalf of dependent relatives other than minor children, caregivers are able to claim qualifying medical expenses that exceed the lesser of 3% of the dependant’s net income and $2,352 (in 2019, indexed to inflation). For purposes of the credit, a dependant is defined as a child, grandchild, parent, grandparent, brother, sister, uncle, aunt, niece or nephew who is dependent on the taxpayer for support.
+Tax | Personal income tax
+Beneficiaries | Individuals, caregivers
+Type of measure | Credit, non-refundable
+Legal reference | Income Tax Act, section 118.2 Income Tax Regulations, section 5700
+Implementation and recent history | Introduced as the Medical Expense Deduction in Budget 1942, and replaced by a non-refundable credit as part of the 1987 Tax Reform, applicable to the 1988 and subsequent taxation years. The maximum eligible amount that can be claimed on behalf of dependent relatives other than minor children was eliminated in Budget 2011 for the 2011 and subsequent taxation years in order to allow caregivers to receive full tax recognition for eligible medical expenses. Budget 2017 clarified the application of the Medical Expense Tax Credit so that individuals who require medical intervention in order to conceive a child are eligible to claim the same expenses that would generally be eligible for individuals on account of medical infertility, effective for the 2017 and subsequent taxation years. The list of expenses eligible for this credit is regularly reviewed and expanded in light of new technologies and other disability-specific or medically-related developments.
+Objective – category | To recognize non-discretionary expenses (ability to pay)
+Objective | This measure recognizes the effect of above-average medical and disability-related expenses on the ability of an individual to pay income tax (Budget 1942; Budget 1997; Budget 2005).
+Category | Structural tax measure
+Reason why this measure is not part of benchmark tax system | Tax credits are treated as deviations from the benchmark tax system. The tax benefit from this measure is transferable between spouses or common-law partners.
+Subject | Health
+CCOFOG 2014 code | 7071 - Health - Medical products, appliances, and equipment 7072 - Health - Outpatient services 7073 - Health - Hospital services
+Other relevant government programs | Programs within the mandates of Health Canada, the Canadian Food Inspection Agency, the Canadian Institutes of Health Research, the Public Health Agency of Canada and Veterans Affairs Canada also support health-related objectives. Additional information on the relevant Government programs is provided in the table at the end of Part 3.
+Source of data | T1 Income Tax and Benefit Return
+Estimation method | T1 micro-simulation model
+Projection method | T1 micro-simulation model
+Number of beneficiaries | About 5.1 million individuals claimed this credit in 2017.
+
+Cost Information:
+Millions of dollars | 2014 | 2015 | 2016 | 2017 | 2018 (P) | 2019 (P) | 2020 (P) | 2021 (P)
+Personal income tax | 1,300 | 1,370 | 1,435 | 1,550 | 1,670 | 1,790 | 1,900 | 2,000
+
+Mineral Exploration Tax Credit for flow-through share investors
+| Value
+Description | Flow-through shares facilitate the financing of exploration by allowing companies to transfer unused tax deductions to investors. In addition to claiming regular flow-through deductions, individuals (other than trusts) who invest in flow-through shares of a corporation can claim a 15% non-refundable tax credit in respect of specified mineral exploration expenses incurred by the corporation and transferred to the individual under a flow-through share agreement. Expenses eligible for the credit are specified surface grassroots exploration expenses (i.e., seeking new resources away from an existing mine site) in respect of a mineral resource (other than a coal or oil sands deposit) in Canada. A “look-back” rule allows corporations to raise funds by issuing flow-through shares in one calendar year and spending the funds in the following calendar year, while allowing the investor to claim the flow-through deduction and the Mineral Exploration Tax Credit in the year the share investment is made. See the description of the measure “Flow-through share deductions” for additional information about flow-through shares.
+Tax | Personal income tax
+Beneficiaries | Individual investors (other than trusts) in flow-through shares
+Type of measure | Credit, non-refundable
+Legal reference | Income Tax Act, subsection 127(9), paragraph (a.2) of definition of “investment tax credit” and definition of “flow-through mining expenditure”
+Implementation and recent history | Introduced as part of the October 2000 Economic Statement and Budget Update. Effective in respect of expenditures incurred after October 17, 2000 and before 2004. This measure has been extended on a number of occasions. Most recently, as part of the 2018 Fall Economic Statement, the Government announced its intention to extend the credit for an additional 5 years, until March 31, 2024.
+Objective – category | To encourage or attract investment
+Objective | This measure helps junior exploration companies raise capital by providing an incentive to investors in flow-through shares issued to finance mineral exploration (Budget 2015).
+Category | Non-structural tax measure
+Reason why this measure is not part of benchmark tax system | Tax credits are treated as deviations from the benchmark tax system.
+Subject | Business - natural resources
+CCOFOG 2014 code | 70441 - Economic affairs - Mining, manufacturing, and construction - Mining of mineral resources other than mineral fuels
+Other relevant government programs | Programs within the mandate of Natural Resources Canada also support the natural resource sector. Additional information on the relevant Government programs is provided in the table at the end of Part 3.
+Source of data | T1 Income Tax and Benefit Return
+Estimation method | The cost of this measure in a year is calculated by multiplying the estimated Canadian Exploration Expenses eligible for the credit by the credit rate (i.e., 15%). The cost in the initial year is partially offset in the following year as the investor’s cumulative Canadian Exploration Expenses account is then reduced by the credit claimed the year before.
+Projection method | Projections are based on current market conditions.
+Number of beneficiaries | Over 300 companies issued flow-through shares and more than 11,500 individuals claimed the credit in 2017.
+
+Cost Information:
+Millions of dollars | 2014 | 2015 | 2016 | 2017 | 2018 (P) | 2019 (P) | 2020 (P) | 2021 (P)
+Personal income tax | 30 | 25 | 55 | 70 | 70 | 70 | 70 | 70
+
+Moving expense deduction
+| Value
+Description | If a move is an “eligible relocation”, the related “eligible moving expenses” are deductible in computing employment or self-employment income earned at the new location. Eligible moving expenses include travel costs, the costs of transporting or storing household effects, meals and temporary accommodation and the cost of selling a former residence. Eligible moving expenses may also be deducted from a student’s taxable income from scholarships, bursaries and research grants if the expenses are incurred to begin full-time attendance at a post-secondary educational institution. Among other things, to be an “eligible relocation” requires that a taxpayer move at least 40 kilometres closer to the new place of employment or study. Most moving expense reimbursements provided by employers are not included in income; however, to the extent that certain employer-provided reimbursements are included in income, the moving expense deduction is allowed to the same extent as permitted for self-paid expenses.
+Tax | Personal income tax
+Beneficiaries | Employees and self-employed individuals, students
+Type of measure | Deduction
+Legal reference | Income Tax Act, section 62 and the definition “eligible relocation” in subsection 248(1)
+Implementation and recent history | Introduced in Budget 1971. Effective for the 1972 and subsequent taxation years.
+Objective – category | To recognize expenses incurred to earn employment income To recognize education costs
+Objective | This measure recognizes the expenses involved in moving to a new job or educational institution, and thus facilitates labour mobility by allowing taxpayers greater flexibility in pursuing new employment and business opportunities anywhere in Canada (Budget 1971; Budget 1998).
+Category | Structural tax measure
+Reason why this measure is not part of benchmark tax system | This measure provides tax recognition for an expense that is incurred to earn employment income. This measure provides tax recognition for an expense that is incurred for education purposes. Expenses incurred to earn business income are generally deductible under the benchmark tax system; however, moving expenses may also have an element of personal consumption, hence the classification of this measure as a tax expenditure.
+Subject | Employment
+CCOFOG 2014 code | 70412 - Economic affairs - General economic, commercial, and labor affairs - General labor affairs
+Other relevant government programs | Programs within the mandate of Employment and Social Development Canada also support employment. Additional information on the relevant Government programs is provided in the table at the end of Part 3.
+Source of data | T1 Income Tax and Benefit Return
+Estimation method | T1 micro-simulation model
+Projection method | T1 micro-simulation model
+Number of beneficiaries | About 97,000 individuals claimed this deduction in 2017.
+
+Cost Information:
+Millions of dollars | 2014 | 2015 | 2016 | 2017 | 2018 (P) | 2019 (P) | 2020 (P) | 2021 (P)
+Personal income tax | 100 | 100 | 100 | 110 | 115 | 120 | 125 | 130
+
+- Previous
+- Table of contents
+- Next

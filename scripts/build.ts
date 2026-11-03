@@ -6,7 +6,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import * as esbuild from "esbuild";
-import { DATA_DIR, listYears, loadYear } from "../src/data/load.ts";
+import { DATA_DIR, listYears, loadCpi, loadYear } from "../src/data/load.ts";
 
 const root = path.resolve(import.meta.dirname, "..");
 const out = path.join(root, "dist/index.html");
@@ -24,6 +24,11 @@ const virtualYears: esbuild.Plugin = {
   setup(b) {
     b.onResolve({ filter: /^virtual:years$/ }, () => ({ path: "years", namespace: "virtual" }));
     b.onLoad({ filter: /.*/, namespace: "virtual" }, () => ({ contents: yearsModule(), loader: "js" }));
+    b.onResolve({ filter: /^virtual:cpi$/ }, () => ({ path: "cpi", namespace: "cpi" }));
+    b.onLoad({ filter: /.*/, namespace: "cpi" }, () => ({
+      contents: `export default ${JSON.stringify(loadCpi())};`,
+      loader: "js",
+    }));
   },
 };
 
@@ -63,6 +68,6 @@ if (watch) {
     clearTimeout(timer);
     timer = setTimeout(() => build().catch(e => console.error(e.message)), 100);
   };
-  for (const dir of [path.join(root, "src"), DATA_DIR]) fs.watch(dir, { recursive: true }, again);
+  for (const dir of [path.join(root, "src"), path.dirname(DATA_DIR)]) fs.watch(dir, { recursive: true }, again);
   console.log("watching src/ and data/ …");
 }

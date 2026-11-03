@@ -1,0 +1,115 @@
+Title: Consumer Price Index: Annual review, 2025
+URL: https://www150.statcan.gc.ca/n1/daily-quotidien/260119/dq260119b-eng.htm
+Fetched: 2026-11-02
+SHA-256 of the original: e3cddec0e04257bf9a9d6a2716cda75e4e9ab586af8207bb0c48754071e5c314
+Publication date modified: 2026-01-19
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+The Daily
+
+## Search The Daily
+
+In the news Indicators Releases by subject
+Special interest Release schedule Information
+
+# Consumer Price Index: Annual review, 2025
+
+Text - Selected Tables Related information Previous release PDF (207 KB)
+
+Released: 2026-01-19
+
+Annual Average CPI
+
+164.2
+
+2025
+
+2.1% [image: increase]
+
+(annual change)
+
+Source(s): Table 18-10-0005-01.
+
+The Consumer Price Index (CPI) rose 2.1% on an annual average basis in 2025, following an increase of 2.4% in 2024. Although this was the smallest annual average increase since 2020, prices remained elevated in 2025, rising 19.9% over the past five years. Excluding energy, the annual average CPI rose 2.6% in 2025, matching the increase in 2024.
+
+## Chart 1 [image: Chart 1: Annual average change in the Consumer Price Index (CPI) and the CPI excluding energy, 2011 to 2025]
+Annual average change in the Consumer Price Index (CPI) and the CPI excluding energy, 2011 to 2025
+
+[image: Chart 1: Annual average change in the Consumer Price Index (CPI) and the CPI excluding energy, 2011 to 2025]
+
+## Prices continue to grow at a faster pace for services than for goods in 2025
+
+Goods and services continued to exhibit distinct trends, although they diverged less in 2025 than in 2024. Prices for services remained elevated, rising 3.1% in 2025, compared with a 4.1% increase in 2024. A slowdown in the growth of mortgage interest cost put downward pressure on price growth for services in 2025.
+
+On an annual average basis, prices for goods rose at a faster pace in 2025 (+0.8%) compared with 2024 (+0.3%). Prices for durable goods increased 1.9% in 2025, after falling 0.9% in 2024, led by higher prices for passenger vehicles (+3.1%). Increased prices for goods were moderated by prices for non-durable goods, which grew at a slower pace in 2025 (+0.4%) compared with 2024 (+1.3%). This slowdown was driven by lower prices for energy (-5.7%), but it was partially offset by higher prices for food (+3.2%).
+
+## Chart 2 [image: Chart 2: Price growth for services continues to outpace price growth for goods]
+Price growth for services continues to outpace price growth for goods
+
+[image: Chart 2: Price growth for services continues to outpace price growth for goods]
+
+## Lower energy prices moderate growth in the all-items Consumer Price Index
+
+On an annual average basis, prices for energy declined 5.7% in 2025, following a 0.6% decrease in 2024. The largest contributor to the 2025 decline was an 8.6% decrease in prices for gasoline, mainly driven by the removal of the consumer carbon price in April. The removal of the consumer carbon price also impacted prices for natural gas, which fell 8.4% in 2025, compared with a 7.4% decrease in 2024.
+
+## Chart 3 [image: Chart 3: Four major components grew at a slower pace in 2025 compared with 2024]
+Four major components grew at a slower pace in 2025 compared with 2024
+
+[image: Chart 3: Four major components grew at a slower pace in 2025 compared with 2024]
+
+## Grocery prices accelerate in 2025
+
+Prices for groceries increased at a faster pace in 2025 (+3.5%) than in 2024 (+2.2%) on an annual average basis. Canadians paid 20.3% more for coffee and 7.1% more for confectionery in 2025. Prices for coffee and cocoa beans have been impacted by adverse weather conditions in growing regions. Also, prices rose amid American tariffs on producing countries, which have contributed to higher prices for refined coffee and confectionery.
+
+On an annual average basis, prices for meat rose 5.8% in 2025, following a 3.0% increase in 2024. In 2025, notable upward pressure stemmed from prices for fresh or frozen beef (+13.5%), which were impacted by historically low cattle inventories in North America.
+
+In 2025, prices for fresh fruit (+2.5%) rose on an annual average basis, after falling 1.7% in 2024. Contributing the most to the increase were prices for oranges, which rose 10.4% in 2025, following a 7.9% decline in 2024. This increase was partly due to the ongoing citrus greening disease, which impacted supply in the United States. The increase may also have been impacted by Canadian retaliatory tariffs on oranges from the United States.
+
+Prices for food purchased from restaurants increased 2.6% on an annual average basis in 2025, down from 3.6% in 2024.
+
+## Chart 4 [image: Chart 4: Prices for meat increase the most among major food categories]
+Prices for meat increase the most among major food categories
+
+[image: Chart 4: Prices for meat increase the most among major food categories]
+
+## Shelter prices increase at a slower pace
+
+On an average annual basis, shelter prices rose to a lesser extent in 2025 (+3.0%) compared with 2024 (+5.7%). Price growth in mortgage interest cost slowed to 5.3% in 2025, down from a 20.1% increase in 2024.
+
+Rent prices also rose at a slower pace in 2025 (+5.0%) compared with 2024 (+8.2%), with price growth decelerating in all provinces. Prices in Alberta led the slowdown. Rent prices in this province rose 3.8% in 2025 following a 12.5% increase in 2024, when strong demand from high net interprovincial migration to Alberta pushed prices higher. Despite a smaller increase in 2025, national rent prices have risen 28.5% since 2020.
+
+## Regional highlights
+
+On an annual average basis, price growth slowed in seven provinces in 2025 compared with 2024. Manitoba (+2.7%), Saskatchewan (+2.1%) and Quebec (+2.4%) were the only provinces where price growth was faster in 2025 compared with 2024.
+
+The faster price growth in Manitoba was driven by higher prices for gasoline, which increased 1.4% in 2025 after declining 13.6% in 2024, following the partial re-introduction of the provincial gas tax after its temporary suspension in 2024.
+
+## Chart 5 [image: Chart 5: Prices increase at a slower pace on an annual average basis in seven provinces]
+Prices increase at a slower pace on an annual average basis in seven provinces
+
+[image: Chart 5: Prices increase at a slower pace on an annual average basis in seven provinces]
+
+### Note to readers
+
+This release examines the percentage change between the annual average Consumer Price Index (CPI) in 2024 and 2025.
+
+Annual average indexes are obtained by calculating the average of the 12 monthly index values over the calendar year. The annual average percent change should not be confused with the 12-month percent change that is published every month with the release of the CPI. Unlike the annual average change, the 12-month change compares the monthly index level with the level from the same month one year earlier.
+
+### Explore the Consumer Price Index tools
+
+Check out the Personal Inflation Calculator. This interactive calculator allows you to enter dollar amounts in the common expense categories to produce a personalized inflation rate, which you can compare with the official measure of inflation for the average Canadian household—the CPI.
+
+Visit the Consumer Price Index portal to find all CPI data, publications, interactive tools and announcements highlighting new products and upcoming changes to the CPI in one convenient location.
+
+Browse the Consumer Price Index Data Visualization Tool to access current (Latest Snapshot of the CPI) and historical (Price trends: 1914 to today) CPI data in a customizable visual format.
+
+## Products
+
+The Consumer Price Index Data Visualization Tool is available on the Statistics Canada website.
+
+More information about the concepts and use of the Consumer Price Index is available in The Canadian Consumer Price Index Reference Paper (Catalogue number62-553-X).
+
+## Contact information
+
+For more information, or to enquire about the concepts, methods or data quality of this release, contact us (toll-free 1-800-263-1136; 514-283-8300; infostats@statcan.gc.ca) or Media Relations (statcan.mediahotline-ligneinfomedias.statcan@statcan.gc.ca).

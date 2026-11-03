@@ -1,0 +1,57 @@
+Title: Pollution pricing in Canada
+URL: https://www.canada.ca/en/environment-climate-change/news/2023/06/pollution-pricing-in-canada.html
+Fetched: 2026-11-02
+SHA-256 of the original: 608cedd2de32ae4eca77f169228dcf6fdd323ebbd6a0ab4b4a04e74f9a45e0a0
+Publication date modified: 2023-06-28
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+# Pollution pricing in Canada
+
+From: Environment and Climate Change Canada
+
+## Backgrounder
+
+Pollution pricing in Canada
+
+Putting a price on carbon pollution is widely recognized as the most cost-effective way to reduce greenhouse.
+
+Carbon pollution pricing works by putting a cost on the thing we don’t want—greenhouse gas emissions—and encouraging the things we do want—clean air, reliable, affordable clean energy, and middle-class jobs. Estimates show that pollution pricing will contribute to over a third of the total reductions in emissions that will occur between now and 2030.
+
+The foundational principle of the federal approach to pollution pricing is to ensure that it is no longer free to pollute anywhere in Canada, while supporting household affordability by using proceeds to support individuals and families through lump-sum payments.
+
+All direct proceeds collected in a jurisdiction remain in that same jurisdiction. For those provinces where the federal fuel charge applies—Alberta, Manitoba, New Brunswick, Newfoundland and Labrador, Nova Scotia, Ontario, Prince Edward Island, and Saskatchewan—90 percent of direct proceeds from the federal fuel charge are delivered to individuals and families through pollution price rebates (known formally as Climate Action Incentive payments), which are made to eligible individuals every three months. The remaining ten percent of proceeds are provided to emissions-intensive, trade-exposed, small- and medium-sized enterprises, and Indigenous groups.
+
+Low- and middle-income households benefit the most from pollution price rebate payments, as they tend to spend less on energy-intensive goods that are subject to the price on pollution, while still receiving the full Climate Action Incentive payment. Overall, eight out of ten households in provinces where the federal fuel charge applies get more money back through quarterly pollution price rebate payments than they pay through pollution pricing.
+
+Quarterly Climate Action Incentive payment amounts as specified by the Minister of Finance, 2023–24
+- | AB | MB | ON | SK | NL | NS | PEI 1 | NB
+First adult | $193 | $132 | $122 | $170 | $164 | $124 | $120 | $92
+Second adult | $96.50 | $66 | $61 | $85 | $82 | $62 | $60 | $46
+Each child | $48.25 | $33 | $30.50 | $42.50 | $41 | $31 | $30 | $23
+Family of four | $386 | $264 | $244 | $340 | $328 | $248 | $240 | $184
+Payment dates | April 2023 July 2023 October 2023 January 2024 | April 2023 July 2023 October 2023 January 2024 | April 2023 July 2023 October 2023 January 2024 | April 2023 July 2023 October 2023 January 2024 | July 2023 October 2023 January 2024 | July 2023 October 2023 January 2024 | July 2023 October 2023 January 2024 | See note 2
+Notes | 1 The amount for Prince Edward Island includes the ten percent rural supplement, as all residents are eligible. Rural residents in other provinces will also receive the ten percent rural supplement, which is not reflected in this table. 2 Households in New Brunswick will receive their first Climate Action Incentive payment as a double payment in October 2023, with a regular quarterly payment in January 2024 ($368 and $184 respectively, for a family of four).
+
+## Support for homes making the transition away from oil heat
+
+To help Canadians with the cost of heating their homes, the Government of Canada has committed $250 million to the Low Carbon Economy Fund to help Canadians get off expensive home heating oil.
+
+The Oil to Heat Pump Affordability Program is a new incentive launched in 2023 to help Canadian homeowners transition away from oil heating to more energy-efficient methods. On average, homeowners who switch from oil to cold-climate air source heat pumps to heat their homes would save between $1,500 and $4,700 per year on home energy bills.
+
+The Oil to Heat Pump Affordability Program is designed to benefit low- and middle-income Canadian households currently relying on oil heat, many of whom are in Atlantic Canada. Eligible homeowners will be able to combine up to $5,000 from the Oil to Heat Pump Affordability Program with funding from existing federal, provincial, territorial, and utility programs, including up to $5,000 from the Canada Greener Homes Grant.
+
+## Support for farmers and fishers
+
+Farmers and fishers are exempt from paying the federal fuel charge on gasoline and light fuel oil (diesel) used for eligible farming activities. For example, gasoline and diesel without the federal fuel charge applied can be used in a tractor or other on-farm vehicles, as well as in fishing vessels for eligible fishing activities.
+
+Fuel charge proceeds from natural gas and propane use by farmers are returned directly to farmers via a refundable tax credit.
+
+## Related links
+
+- How Carbon Pricing Works
+- Climate Action Incentive Payment Amounts for 2023–24
+- Canada Greener Homes Grant
+- Return of Fuel Charge Proceeds to Farmers Tax Credit
+
+Search for related information by keyword: Nature and Environment | Climate change | Environment and Climate Change Canada | Canada | Environment and natural resources | general public | backgrounders

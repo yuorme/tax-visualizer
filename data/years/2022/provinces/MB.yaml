@@ -29,3 +29,52 @@ sources:
   - {label: "Manitoba, Budget 2022 school tax rebate 37.5% and education property credit $437.50", url: https://www.gov.mb.ca/budget2022/tax-and-fee-measures.html}
   - label: City of Winnipeg, 2022 combined mill rates and 45% residential assessment portion
     url: https://assessment.winnipeg.ca/Asmttax/pdfs/rates/2022CombinedMillRates.pdf
+  - label: "Carbon history: Statistics Canada, Canadian Vehicle Survey: Annual 2009 (53-223-X)"
+    url: https://www150.statcan.gc.ca/n1/pub/53-223-x/53-223-x2009000-eng.pdf
+  - label: "Carbon history: Statistics Canada 25-10-0060-01 household energy consumption, selected CSV rows"
+    url: https://www150.statcan.gc.ca/n1/tbl/csv/25100060-eng.zip
+  - label: "Carbon history: Natural Gas: A Primer"
+    url: https://natural-resources.canada.ca/energy-sources/fossil-fuels/natural-gas-primer
+  - label: "Carbon history: Fuel charge rates"
+    url: https://www.canada.ca/en/revenue-agency/services/forms-publications/publications/fcrates/fuel-charge-rates.html
+  - label: "Carbon history: Closed - Canada Carbon Rebate (CCR) for individuals"
+    url: https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-carbon-rebate/how-much.html
+  - label: "Carbon history: Climate Action Incentive payment amounts for 2022-23"
+    url: https://www.canada.ca/en/department-finance/news/2022/03/climate-action-incentive-payment-amounts-for-2022-23.html
+
+# Historical driving defaults use a common survey baseline; see cited sources.
+driving:
+  distance: 15000
+  estimated: true
+
+# Calendar-year carbon charges and cash rebates; heating is an explicit modeled estimate.
+carbon:
+  name: Federal carbon pricing
+  gasoline:
+    - from: 2022-01-01
+      rate: 0.0884
+    - from: 2022-04-01
+      rate: 0.1105
+  heating:
+    amount: 123.18
+    estimated: true
+    method: 2021 Statistics Canada household natural gas and heating oil use averaged across all households; 49.2892 GJ gas and 0.0000 GJ oil, held constant across years; calendar-day rates and applicable heating exemptions. See carbon heating verification.
+  rebates:
+    - program: carbon-rebate-payments
+      name: Climate Action Incentive / Canada Carbon Rebate
+      params:
+        payments:
+          - date: 2022-07-01
+            adult: 208
+            spouse: 104
+            child: 52
+            firstChild: 104
+            threshold: [0, 0]
+            rate: 0
+          - date: 2022-10-01
+            adult: 104
+            spouse: 52
+            child: 26
+            firstChild: 52
+            threshold: [0, 0]
+            rate: 0

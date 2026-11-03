@@ -1,0 +1,17 @@
+# Canada, All-items, annual average, not seasonally adjusted; 2002=100.
+# Statistics Canada table 18-10-0005-01, vector v41693271, released 2026-01-19.
+# No provisional current-year value: real comparisons use completed annual observations only.
+series: Canada all-items CPI, annual average (2002=100)
+values:
+  2019: 136.0
+  2020: 137.0
+  2021: 141.6
+  2022: 151.2
+  2023: 157.1
+  2024: 160.9
+  2025: 164.2
+sources:
+  - label: "Statistics Canada, Table 18-10-0005-01, Canada all-items annual CPI"
+    url: "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810000501"
+  - label: "Statistics Canada, published annual observations 2019–2025"
+    url: "https://www150.statcan.gc.ca/t1/tbl1/en/dtl!downloadDbLoadingData-nonTraduit.action?pid=1810000501&latestN=0&startDate=20190101&endDate=20250101&csvLocale=en&selectedMembers=%5B%5B2%5D%2C%5B2%5D%5D&checkedLevels="

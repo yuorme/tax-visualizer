@@ -1,0 +1,42 @@
+Title: Goods and services tax/harmonized sales tax (GST/HST) credit calculation sheet
+URL: https://www.canada.ca/content/dam/cra-arc/serv-info/benefits/gstc_covid-19_calc-e.pdf
+Fetched: 2026-11-02
+SHA-256 of the original: 68fc2c20db953203566e2510749c1f8867e81084df15fb66f1c9eb4f32b37784
+Publication date modified: 2020-07-22
+PDF pages: all 1
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 1 of 1 ---
+
+Goods and services tax/harmonized sales tax (GST/HST) credit calculation sheet
+for the July 2019 to June 2020 payments (2018 base year)
+Base Credit: ($580) 1 $580
+Credit for spouse or common-law partner: ($580) 2 $ ___________
+Credit for eligible dependant: ($580) 3 $ ___________
+Credit for eligible children: $306 × ____ = 4 $ ___________
+($306 for each child not included at line 3 above)
+Calculation of Additional Credit 1
+(Complete only if line 2 above indicates zero)
+Family net income: 5 $ ___________
+Minus base amount: 6- $9,412
+Family net income minus base amount: 7 $ ___________
+(Line 5 minus Line 6) If result is negative, enter "0"
+Additional Credit: 8 $ ___________
+(The less of $306 or 2% of Line 7)
+Subtotal: (Add lines 1, 2, 3, 4 and 8) 9 $ ___________
+Credit Reduction
+Adjusted family net income: 10 $ ___________
+(Family net income minus Universal Child Care Benefit
+(UCCB) and Registered Disability Savings Plan (RDSP)
+Income plus UCCB and RDSP repayment)
+Minus base amount: 11- $37,789
+Adjusted family net income minus base amount: 12 $ ___________
+(Line 10 minus Line 11). If the result is negative, enter "0"
+Enter 5% of Line 12: 13 $ ___________
+ANNUAL CREDIT: (Line 9 minus Line 13) 14 $ ___________
+All amounts are approximate. Your Notice of Determination will show your actual entitlement for the
+year.
+Footnotes
+1) Single parents will receive the full value of the supplement as part of their base GST/HST credit.
+For these clients, enter $306 at Line 8.

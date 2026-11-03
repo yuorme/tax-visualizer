@@ -1,0 +1,160 @@
+Title: Quarterly report of Canada Pension Plan and Old Age Security monthly amounts and related figures - October to December 2019
+URL: https://www.canada.ca/en/employment-social-development/programs/pensions/pension/statistics/2019-quarterly-october-december.html
+Fetched: 2026-11-02
+SHA-256 of the original: d16b9e220a73a25ccba48617ed6c7509c7eefc965c7a61bd92cb1846c213222e
+Publication date modified: 2019-09-30
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+# Quarterly report of Canada Pension Plan and Old Age Security monthly amounts and related figures - October to December 2019
+
+Quarterly report of Canada Pension Plan and Old Age Security monthly amounts and related figures - October to December 2019 [PDF - 291 KB]
+
+## On this page
+
+- Canada Pension Plan and Quebec Pension Plan
+- Disability and survivor amounts
+- Calculation of CPP maximum monthly amounts for new benefits
+- Old Age Security
+- OAS forecasted expenditures, 2019 to 2020 (in millions)
+- Other CPP/QPP figures
+- CPP/QPP forecasted expenditures, 2019 to 2020 (millions)
+- Contact us
+
+Canada Pension Plan (CPP) and Quebec Pension Plan (QPP) - Type of benefit
+| New benefits Maximum amount 2019 | Number of benefits July 2019 | Amounts paid July 2019
+CPP Footnote 1 | QPP Footnote 1 | CPP | QPP | CPP (in millions) | QPP (in millions)
+Retirement (at age 65) | $1,154.58 | $1,154.58 | 5,322,242 | 1,920,871 | $3,147.3 | $1,008.8
+Post–Retirement Benefit (CPP) (at age 65) Footnote 2 | $28.86 | not applicable | 3,834,623 | not applicable | $53.0 | not applicable
+Retirement Pension Supplement (QPP) | not applicable | $21.83 | not applicable | 698,665 | not applicable | $21.0
+Disability | $1,362.30 | $1,362.27 | 337,737 | 60,580 | $316.7 | $60.1
+Survivor – younger than 65 | $626.63 | (Details QPP) | 216,742 | 61,177 | $93.4 | $43.8
+Survivor – 65 and older | $692.75 | $692.75 | 921,956 | 312,981 | $293.3 | $100.9
+Total - Survivor benefits Footnote 3 | not applicable | not applicable | 1,138,698 | 374,158 | $386.7 | $144.7
+Children of disabled contributor | $250.27 | $79.46 | 87,312 | 6,726 | $21.9 | $0.7
+Children of deceased contributor | $250.27 | $250.27 | 65,936 | 12,211 | $16.5 | $3.1
+Death (maximum one-time payment) | $2,500.00 | $2,500.00 | 12,869 | 4,217 | $31.7 | $10.3
+Total - CPP/QPP benefits Footnote 3 | not applicable | not applicable | 6,964,794 | 2,378,763 | $3,973.8 | $1,248.7
+Combined benefits
+Survivor/retirement (retirement at 65) | $1,154.58 | $1,154.58 | 874,962 | 281,614 | $739.7 | $214.1
+Survivor/disability | $1,362.30 | not applicable | 13,926 | 1,868 | $14.9 | $2.2
+Total - Combined benefits Footnote 3 | not applicable | not applicable | 888,888 | 283,482 | $754.7 | $216.3
+
+Disability and survivor amounts
+| Flat amount | Earnings-related portion | Total
+CPP disability benefit | $496.36 | $865.94 | $1,362.30
+CPP post-retirement disability benefit Footnote 4 | $496.36 | $0.00 | $496.36
+CPP survivor benefit – younger than 65 | $193.66 | $432.97 | $626.63
+QPP disability benefit | $496.33 | $865.94 | $1,362.27
+QPP additional amount for disability Footnote 4 | $496.33 | $0.00 | $496.33
+
+Details of QPP benefits
+QPP survivor benefit – younger than 45
+| Flat amount | Earnings-related portion | Total
+Not disabled, no child | $127.12 | $432.97 | $560.09
+Not disabled, with child | $460.85 | $432.97 | $893.82
+Disabled | $496.33 | $432.97 | $929.30
+QPP survivors - age 45 to 64 | $496.33 | $432.97 | $929.30
+
+## Calculation of CPP maximum monthly amounts for new benefits
+
+Retirement:
+25% of 1/12 of the average year's maximum pensionable earnings (YMPE) for the last five years
+
+Disability:
+(retirement x 0.75) + flat amount ($496.36)
+
+Survivor:
+
+- younger than 65: (retirement x 0.375) + flat amount ($193.66)
+- 65 and older: retirement x 0.60
+
+Post Retirement:
+1/40 of the retirement benefit
+
+Old Age Security (OAS) - Type of benefit
+| October to December 2019 | July 2019
+Maximum amount Footnote 5 | Income level cut-off Footnote 6 | Income level cut-off for top-ups Footnote 6 | Number of benefits | Amount paid (in millions)
+Old Age Security pension (at age 65) Footnote 7, Footnote 8 | $613.53 | not applicable | not applicable | 6,367,900 | $3,646.9
+Guaranteed Income Supplement (GIS)
+Single | $916.38 | $18,600 | $8,816 | 1,189,110 | $697.4
+Spouse/common-law partner of someone who:
+does not receive an OAS pension | $916.38 | $44,592 | $17,632 | 98,599 | $52.6
+receives an OAS pension | $551.63 | $24,576 | $7,936 | 663,856 | $232.8
+is an Allowance recipient | $551.63 | $44,592 | $7,936 | 49,210 | $23.5
+Total - GIS Footnote 3 | not applicable | not applicable | not applicable | 2,000,775 | $1,006.3
+Allowance | $1,165.16 | $34,416 | $7,936 | 49,205 | $24.4
+Allowance for the Survivor | $1,388.92 | $25,056 | $8,816 | 20,536 | $15.1
+Total - Allowance and Allowance for the Survivor Footnote 3 | not applicable | not applicable | not applicable | 69,741 | $39.5
+
+Other CPP/QPP figures
+| CPP | QPP
+Year's maximum pensionable earnings (YMPE) (2019) | $57,400.00 | $57,400.00
+Year's basic exemption (2019) | $3,500.00 | $3,500.00
+Contributions (2017–2018) | $48,452 million | $14,700 million
+Number of contributors (2017) | 14.3 million | (estimated) 4.1 million
+Indexation rate (January 2019) | 2.3% | 2.3%
+| Base | Enhancement | Total | Base | Enhancement | Total
+Contribution rate for employee/employer | 4.95% | 0.15% | 5.1% | 5.4% | 0.15% | 5.55%
+Employee/employer maximum contribution | $2,668.05 | $80.85 | $2,748.90 | $2,910.60 | $80.85 | $2,991.45
+Contribution rate for self-employed | 9.9% | 0.3% | 10.2% | 10.8% | 0.3% | 11.1%
+Self-employed maximum contribution | $5,336.10 | $161.70 | $5,497.80 | $5,821.20 | $161.70 | $5,982.90
+
+OAS and CPP/QPP forecasted expenditures, 2019–2020 (in billions)
+OAS | CPP | QPP
+$56.2 | $50.1 | $15.6
+
+## Contact us
+
+Telephone: 1-800-277-9914
+TTY: 1-800-255-4786
+
+## Footnotes
+
+Footnote 1
+
+These amounts do not include amounts from the CPP/QPP enhancement. While entitlement to enhanced benefits begins in 2019, such benefits will not be paid until 2020 following the receipt of 2019 contribution information.
+
+Return to first footnote 1 referrer
+
+Footnote 2
+
+Each year a valid contribution is made to the CPP while a retirement pension is being received, the person becomes eligible for a post-retirement benefit (PRB) in January of the following year and thus can receive more than one PRB.
+
+Return to footnote 2 referrer
+
+Footnote 3
+
+Total may not add up due to rounding.
+
+Return to first footnote 3 referrer
+
+Footnote 4
+
+This amount is added to the retirement benefit.
+
+Return to first footnote 4 referrer
+
+Footnote 5
+
+The maximum amount includes the top-ups for the GIS and the Allowances.
+
+Return to footnote 5 referrer
+
+Footnote 6
+
+The income level cut-offs do not include the OAS pension and the first $3,500 of employment income.
+
+Return to first footnote 6 referrer
+
+Footnote 7
+
+The OAS pension repayment range in 2019 is from $77,580 to $126,058.
+
+Return to footnote 7 referrer
+
+Footnote 8
+
+Individuals can defer receiving the OAS pension beyond age 65 in exchange for a higher pension. The monthly OAS pension is increased by 0.6% for every month it is delayed up to a maximum of 36% at age 70.
+
+Return to footnote 8 referrer
