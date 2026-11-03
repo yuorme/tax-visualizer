@@ -187,7 +187,11 @@ export function tooltips(y: YearData): Record<string, string> {
   const gb = F.groceriesBenefit,
     gbName = need(gb.name, "groceries benefit name");
   const fd = fuelData(y);
-  const noFuel = `Fuel taxes aren't in the ${y.year} data yet, so driving adds nothing to the totals.`;
+  const hasCarbon = y.provinces.some(p => p.carbon);
+  const carbonTip = `Carbon charges on gasoline use the same litres and the rates that applied during ${y.year}. Estimated household heating is separate and stays fixed when driving changes. Calendar-year cash rebates are included in benefits and credits. Quebec cap-and-trade and indirect costs are excluded.`;
+  const noFuel = hasCarbon
+    ? `Ordinary fuel taxes aren't in the ${y.year} data yet. Driving includes the carbon charge on gasoline where it applied. GST/HST and QST on gasoline are counted in taxable spending.`
+    : `Fuel taxes aren't in the ${y.year} data yet, so driving adds nothing to the totals.`;
   const fuelTips = fd
     ? (() => {
         const t = ext(y.provinces, p => perLitre(y, p));
@@ -199,6 +203,11 @@ export function tooltips(y: YearData): Record<string, string> {
         };
       })()
     : { fuel: noFuel, distance: noFuel, efficiency: noFuel };
+  if (hasCarbon) fuelTips.fuel += ` ${carbonTip}`;
+  if (!fd && F.driving) {
+    fuelTips.distance = `Total kilometres driven in a year by all the household's vehicles. It starts at the average per vehicle in your home province from the ${F.driving.distanceSource}, and isn't scaled to household size. Enter 0 for no car. Historical distances are estimates using this common survey baseline.`;
+    fuelTips.efficiency = `Your vehicles' average fuel consumption in litres per 100 km, weighted by how much each one is driven. It starts at ${F.driving.efficiency.toFixed(1)}, ${F.driving.efficiencySource}. Enter 0 for an electric car.`;
+  }
   return {
     ...fuelTips,
     deductions:
@@ -464,6 +473,20 @@ export function footerNotes(y: YearData, page: PageDefaults): string {
       })()
     : "";
 
+  const carbonProvinces = P.filter(p => p.carbon);
+  const carbon = carbonProvinces.length
+    ? [
+        `Carbon charges on gasoline use the driving inputs and rates within ${year}, weighted by days as if driving were even through the year.`,
+        ...carbonProvinces.map(p => {
+          const c = need(p.carbon, `${p.code} carbon pricing`);
+          return `${short(p)}: gasoline ${rateText(c.gasoline, year)}; estimated household heating ${money(c.heating.amount)} (${c.heating.method}).`;
+        }),
+        "Heating estimates stay fixed when household size, home value or driving changes. Sales tax on gasoline and heating is counted in taxable spending, so it is not added again here.",
+        `Rebates count cash payments in calendar ${year}, including any final payments after a charge ended. Family composition is held fixed and income-tested credits use the modeled current family income; payment arrears and individual filing dates are not reconstructed.`,
+        "Reference cities determine rural eligibility. Quebec cap-and-trade and carbon costs embedded in goods or electricity are excluded.",
+      ].join(" ")
+    : "";
+
   // What's not included
   const bpaChanges = P.filter(p => p.basicPersonalAmountChange).map(p => {
     const c = need(p.basicPersonalAmountChange, "amount change");
@@ -495,9 +518,10 @@ export function footerNotes(y: YearData, page: PageDefaults): string {
     para("Refundable credits", credits),
     para("Property tax", property),
     ...(fuel ? [para("Fuel tax", fuel)] : []),
+    ...(carbon ? [para("Carbon pricing", carbon)] : []),
     para(
       "What's not included",
-      `Age, pension, disability, medical, donation and other personal credits; pension income splitting; ${fd ? "taxes on diesel and heating fuel, other excise taxes" : "fuel, excise"} and corporate taxes.${bpaChanges.join("")}`,
+      `Age, pension, disability, medical, donation and other personal credits; pension income splitting; ${carbon ? "ordinary diesel and heating-fuel excise taxes" : fd ? "taxes on diesel and heating fuel, other excise taxes" : "fuel, excise"} and corporate taxes.${bpaChanges.join("")}`,
     ),
     para("Investment income", investment),
     para(

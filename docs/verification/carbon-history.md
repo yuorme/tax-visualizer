@@ -8,6 +8,11 @@ payments. Household composition and income are held fixed, following the model's
 Provincial income tests use modeled current income; individual filing dates and arrears are not reconstructed.
 The reference-city location determines rural eligibility, as for property and regional fuel tax.
 
+In historical data records, the first day of a payment month identifies the payment period; it does not assert
+the exact bank deposit date. Pre-quarterly CAI payments use April as the normal tax-return filing season.
+Statutory annual BC amounts are divided by four before income testing, retaining fractional cents until final
+display rather than summing rounded illustrations. Enhanced payments are tested separately.
+
 Heating is a sourced, explicitly estimated household amount. It does not change with driving or household size.
 Indirect carbon costs embedded in goods or electricity are excluded. Quebec cap-and-trade remains excluded.
 

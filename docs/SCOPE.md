@@ -122,12 +122,15 @@ higher). The engine stays metric.
 **Your own property tax.** An optional annual property tax amount for the home province replaces home value ×
 rate there. Every other province keeps the reference-city rate.
 
-**Carbon pricing in historical years.** It is material (a rebate of roughly $1,500 against a few hundred dollars
-of direct cost for an Alberta family of four in 2023–24, in backstop provinces only), so it's included in years
-where it applied: the federal fuel charge on gasoline from the driving inputs, a per-province typical household
-heating carbon cost held in data (`estimated: true`, no input), and the Climate Action Incentive / Canada Carbon
-Rebate. BC's carbon tax and climate action credit get the same treatment. Quebec's cap-and-trade has no tax line
-and stays out. None of this applies to 2026.
+**Carbon pricing in historical years.** CRA rates confirm a $1,544 rebate for an Alberta family of four in the
+April 2023–January 2024 payment cycle: four payments of $193 + $96.50 + 2 × $48.25.
+Calendar-year receipts are $1,427.75 in 2023 and $1,736 in 2024, including January at the prior cycle's rate
+([CRA amounts](https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-carbon-rebate/how-much.html)).
+Direct costs depend on driving and the heating estimate; they are not a fixed published household bill.
+It's included in years where it applied: the federal fuel charge on gasoline from the driving inputs, a typical
+household heating carbon cost held in data (`estimated: true`, no input), and the Climate Action Incentive /
+Canada Carbon Rebate. BC's carbon tax and climate action credit get the same treatment.
+Quebec's cap-and-trade has no tax line and stays out. None of this applies to 2026.
 
 **Historical coverage** starts at 2019. 2016–2018 are possible later but not planned.
 

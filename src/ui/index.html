@@ -185,7 +185,7 @@
       </div>
     </section>
     <section class="tab-panel" id="panel-driving" aria-labelledby="tab-driving-name" hidden>
-      <div class="panel-head"><b class="panel-title">Fuel tax</b><button type="button" class="info" data-note="fuel" aria-label="About fuel tax">i</button><span class="panel-sum" id="fuel-sum">none</span></div>
+      <div class="panel-head"><b class="panel-title" id="driving-tax-title">Fuel tax</b><button type="button" class="info" data-note="fuel" aria-label="About gasoline taxes">i</button><span class="panel-sum" id="fuel-sum">none</span></div>
       <div class="prop-grid">
         <div class="field">
           <div class="lbl-row"><label class="lbl" for="km">Distance driven</label><button type="button" class="info" data-note="distance" aria-label="About distance driven">i</button></div>
@@ -214,6 +214,7 @@
         <span id="legend-sales" hidden><i class="sw" style="background:var(--sales)"></i>Sales tax</span>
         <span id="legend-prop" hidden><i class="sw" style="background:var(--propc)"></i>Property tax</span>
         <span id="legend-fuel" hidden><i class="sw" style="background:var(--fuel)"></i>Fuel tax</span>
+        <span id="legend-carbon" hidden><i class="sw" style="background:var(--carbon)"></i>Carbon pricing</span>
         <span id="legend-ben" hidden><i class="sw sw-ben"></i>Benefits &amp; credits</span>
         <fieldset class="seg" aria-label="Show as">
           <button type="button" id="m-pct" aria-pressed="true">% of income</button>

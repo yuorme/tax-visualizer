@@ -95,10 +95,10 @@ let homeValue = 0,
   useCredits = true,
   tab: Tab | null = null; // the open tab, if any
 // Driving: a typed distance or efficiency, or null to use the starting value (the home province's average distance,
-// the national average efficiency). FUEL: the year's data has fuel taxes; without them the Driving tab is hidden.
+// the national average efficiency). The Driving tab is available with fuel or carbon pricing data.
 let kmOverride: number | null = null,
   effOverride: number | null = null;
-let FUEL = F.fuelTax != null && F.driving != null;
+let DRIVING = F.driving != null;
 let TREATY_WH = F.investment.foreignWithholding.usTreaty;
 let sort: Sort = "rate",
   home = "ON",
@@ -135,7 +135,7 @@ const inputs = (): Household => ({
   rent: rentPaid(),
   monthlySpending: effSpend(),
   propertyRates: propOverride != null ? { [home]: propOverride } : undefined,
-  driving: FUEL ? { km: kmNow(), lPer100km: effNow() } : undefined,
+  driving: DRIVING ? { km: kmNow(), lPer100km: effNow() } : undefined,
 });
 const calc = (p: ProvView) => compute(Y, p.d, inputs());
 const rowFor = (res: Row[], c: string) =>
@@ -199,7 +199,7 @@ try {
   }
 } catch {}
 if (dest === home) dest = home === "AB" ? "BC" : "AB";
-if (!FUEL) {
+if (!DRIVING) {
   $("tab-driving").hidden = true;
   if (tab === "driving") tab = null;
 }
@@ -274,10 +274,10 @@ yearSelect.addEventListener("change", () => {
   Y = years[YEAR];
   F = Y.federal;
   P = provinceViews();
-  FUEL = F.fuelTax != null && F.driving != null;
+  DRIVING = F.driving != null;
   TREATY_WH = F.investment.foreignWithholding.usTreaty;
-  $("tab-driving").hidden = !FUEL;
-  if (!FUEL && tab === "driving") tab = null;
+  $("tab-driving").hidden = !DRIVING;
+  if (!DRIVING && tab === "driving") tab = null;
   $("tip").hidden = true;
   renderYearNotes();
   showTab();
@@ -362,9 +362,9 @@ function renderPeople() {
 }
 
 const kMoney = (v: number) => (v >= 1000 ? `$${+(v / 1000).toFixed(v >= 100000 ? 0 : 1)}k` : `$${Math.round(v)}`);
-/** Chart column segments (f = federal, p = provincial, y = payroll, w = withheld, s = sales, h = property, g = fuel)
+/** Chart segments: federal, provincial, payroll, withheld, sales, property, fuel and carbon costs,
  *  and the benefits band. Each is also the segment element's class name. */
-type Seg = "f" | "p" | "y" | "w" | "s" | "h" | "g" | "ben";
+type Seg = "f" | "p" | "y" | "w" | "s" | "h" | "g" | "c" | "ben";
 const SEG_NAMES: Record<Seg, string> = {
   f: "Federal income tax",
   p: "Provincial / territorial income tax",
@@ -373,13 +373,25 @@ const SEG_NAMES: Record<Seg, string> = {
   s: "Sales tax",
   h: "Property tax",
   g: "Fuel tax",
+  c: "Carbon pricing",
   ben: "Benefits and credits",
 };
-const SEG_KEYS: Exclude<Seg, "ben">[] = ["f", "p", "y", "w", "s", "h", "g"];
+const SEG_KEYS: Exclude<Seg, "ben">[] = ["f", "p", "y", "w", "s", "h", "g", "c"];
 const segAmt = (r: Result, c: Seg) =>
-  ({ f: r.fed, p: r.prov, y: r.payroll, w: r.wh, s: r.sales, h: r.property, g: fuelAmt(r), ben: r.benefits })[c];
+  ({
+    f: r.fed,
+    p: r.prov,
+    y: r.payroll,
+    w: r.wh,
+    s: r.sales,
+    h: r.property,
+    g: fuelAmt(r),
+    c: carbonAmt(r),
+    ben: r.benefits,
+  })[c];
 /** Fuel tax a year (0 for a year without fuel data). */
 const fuelAmt = (r: Result) => r.fuel?.total ?? 0;
+const carbonAmt = (r: Result) => r.carbon?.total ?? 0;
 /** "1,458 litres at 11.99¢ a litre: federal 2.99¢, Ontario 9¢" (year averages), for the chart tip and panel. */
 function fuelParts(p: ProvView, r: Result) {
   const f = r.fuel;
@@ -425,6 +437,8 @@ function segTip(p: ProvView, r: Result, c: Seg) {
     sub = `${rateFmt(r.propRate)} on a ${money(ownedValue())} home${p.c === home && propOverride != null ? " (your rate)" : ` (${p.d.propertyTax.city} rate)`}`;
   } else if (c === "g") {
     sub = `${fuelParts(p, r)}, averaged over ${YEAR}`;
+  } else if (c === "c") {
+    sub = `Gasoline ${money(r.carbon?.gasoline ?? 0)} at ${cents(r.carbon?.perLitre ?? 0)} a litre, averaged over ${YEAR}; estimated household heating ${money(r.carbon?.heating ?? 0)}. Cash rebates are included in benefits and credits`;
   } else if (c === "ben") {
     const parts: string[] = [];
     if (r.ccb > 0.5) parts.push(`Canada Child Benefit ${money(r.ccb)}`);
@@ -558,6 +572,7 @@ function render() {
   $("legend-sales").hidden = !(effSpend() > 0);
   $("legend-prop").hidden = !(ownedValue() > 0);
   $("legend-fuel").hidden = !res.some(y => fuelAmt(y.r) > 0.5);
+  $("legend-carbon").hidden = !res.some(y => carbonAmt(y.r) > 0.5);
   $("legend-ben").hidden = !anyBen;
   // Refundable credits panel: the home province's credits
   $<HTMLInputElement>("cred-toggle").checked = useCredits;
@@ -612,7 +627,7 @@ function render() {
     ownedValue() > 0 || rentPaid() > 0,
   );
   tabSum("credits", !useCredits ? "off" : kMoney(H.r.refund), useCredits && H.r.refund > 0.5);
-  if (FUEL) renderDriving(H);
+  if (DRIVING) renderDriving(H);
   $("m-pct").setAttribute("aria-pressed", String(metric === "pct"));
   $("m-usd").setAttribute("aria-pressed", String(metric === "usd"));
   $<HTMLInputElement>("frug").value = String(frug);
@@ -635,7 +650,7 @@ function render() {
 function renderDriving(H: Row) {
   const km = kmNow(),
     eff = effNow(),
-    f = H.r.fuel;
+    drivingTax = fuelAmt(H.r) + (H.r.carbon?.gasoline ?? 0);
   if (document.activeElement !== kmIn) kmIn.value = km.toLocaleString("en-CA");
   kmRange.value = String(Math.min(km, +kmRange.max));
   if (document.activeElement !== effIn) effIn.value = effText(eff);
@@ -648,8 +663,15 @@ function renderDriving(H: Row) {
     effOverride != null ? `Your vehicles (Canadian average is ${effText(defaultEff())})` : "Canadian on-road average";
   $("eff-reset").hidden = effOverride == null;
   $("fuel-sum").textContent =
-    f && f.total > 0.5 ? `${money(f.total)} a year in ${H.p.n}` : km > 0 ? "no fuel bought" : "no driving";
-  tabSum("driving", km > 0 ? `${+(km / 1000).toFixed(1)}k km` : "none", f != null && f.total > 0.5);
+    drivingTax > 0.5
+      ? `${money(drivingTax)} a year in ${H.p.n}`
+      : km > 0
+        ? Y.provinces.some(p => p.carbon)
+          ? "no gasoline tax counted"
+          : "no fuel bought"
+        : "no driving";
+  $("driving-tax-title").textContent = Y.provinces.some(p => p.carbon) ? "Gasoline taxes" : "Fuel tax";
+  tabSum("driving", km > 0 ? `${+(km / 1000).toFixed(1)}k km` : "none", drivingTax > 0.5);
 }
 
 /** An adjustment after bracket tax: [label, amount], negative when it reduces tax. */
@@ -762,6 +784,10 @@ function renderDetail(res: Row[], order: Row[]) {
           fuelAmt(hr),
           fuelAmt(dr),
         )
+      : "") +
+    (any(carbonAmt)
+      ? row("Carbon charge on gasoline", hr.carbon?.gasoline ?? 0, dr.carbon?.gasoline ?? 0) +
+        row("Carbon charge on heating (estimate)", hr.carbon?.heating ?? 0, dr.carbon?.heating ?? 0)
       : "") +
     (kids > 0
       ? row(
