@@ -1,5 +1,6 @@
 // Refundable credits for lower- and modest-income households.
 import type { Federal, Province } from "../data/schema.ts";
+import { carbonRebatesOf } from "./carbon.ts";
 import type { Credit, Person } from "./types.ts";
 
 export interface CreditInput {
@@ -159,5 +160,6 @@ export function creditsOf(fed: Federal, p: Province, f: CreditInput): Credit[] {
       }
     }
   }
+  out.push(...carbonRebatesOf(p, famNet, couple, kids));
   return out.filter(([, a]) => a >= 0.5);
 }
