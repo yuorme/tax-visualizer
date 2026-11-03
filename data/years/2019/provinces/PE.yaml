@@ -1,0 +1,76 @@
+# Benefit-year figures use July 2019 to June 2020, applied to current-year income.
+# Regular sales credit only; extraordinary payments and carbon measures excluded.
+# Charlottetown 2019 report and unchanged 2020 budget establish 0.67 city +1.50 province −0.50 resident credit per 100.
+
+code: PE
+name: Prince Edward Island
+shortName: PEI
+order: 10
+brackets:
+  - [31984, 0.098]
+  - [63969, 0.138]
+  - [.inf, 0.167]
+basicPersonalAmount: 9160
+dividendTaxCredit: {eligible: 0.105, nonEligible: 0.0274}
+spouseAmount: {max: 7780, threshold: 778}
+lowIncomeReduction:
+  program: family-low-income-reduction
+  params: {individual: 350, spouse: 350, child: 300, rate: 0.05, threshold: 17000}
+salesTax: {rate: 0.15, label: 15% HST}
+propertyTax: {rate: 0.0167, city: Charlottetown}
+credits:
+  - name: PEI sales tax credit
+    program: pei-sales-tax-credit
+    params: {individual: 110, spouseOrDependant: 55, supplementRate: 0.005, supplementFrom: 30000, supplementMax: 55, rate: 0.02, threshold: 50000}
+sources:
+  - {label: "CRA, PE 428 for 2019", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5002-c/5002-c-19e.pdf}
+  - {label: "CRA, PE 428 worksheet for 2019", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5002-d/5002-d-19e.pdf}
+  - {label: "CRA, GST/HST historical rates and provincial sales-tax rates", url: https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/charge-collect-which-rate/calculator.html}
+  - {label: "CRA, RC 4210-2016: regular PE sales-tax credit formula, unchanged through 2021", url: https://publications.gc.ca/collections/collection_2017/arc-cra/Rv47-3-2016-eng.pdf?download=1}
+  - {label: "PEI, Budget 2016: regular sales-tax credit increase", url: https://www.princeedwardisland.ca/sites/default/files/publications/budget2016add.pdf}
+  - {label: "PEI Real Property Tax Act sections 4 and 5: rates last amended before 2023", url: https://www.princeedwardisland.ca/sites/default/files/legislation/r-05-real_property_tax_act.pdf}
+  - {label: "Charlottetown, 2020/21 budget: resident municipal rate", url: https://cdnsm5-hosted.civiclive.com/UserFiles/Servers/Server_10500298/File/Mayor%20and%20Council/Finance/Annual%20Budget/2020-2021%20Budget%20Address%20and%20Budget%20Documents.pdf}
+  - {label: "Charlottetown, 2019 report: unchanged city tax rates", url: https://cdnsm5-hosted.civiclive.com/UserFiles/Servers/Server_10500298/File/Mayor%20and%20Council/City%20Council/Charlottetown%20Mayors%20Report%202019%28WEB%29.pdf}
+  - label: "Carbon history: Statistics Canada, Canadian Vehicle Survey: Annual 2009 (53-223-X)"
+    url: https://www150.statcan.gc.ca/n1/pub/53-223-x/53-223-x2009000-eng.pdf
+  - label: "Carbon history: Statistics Canada 25-10-0060-01 household energy consumption, selected CSV rows"
+    url: https://www150.statcan.gc.ca/n1/tbl/csv/25100060-eng.zip
+  - label: "Carbon history: Natural Gas: A Primer"
+    url: https://natural-resources.canada.ca/energy-sources/fossil-fuels/natural-gas-primer
+  - label: "Carbon history: Fuel charge rates"
+    url: https://www.canada.ca/en/revenue-agency/services/forms-publications/publications/fcrates/fuel-charge-rates.html
+  - label: "Carbon history: Department of Finance"
+    url: https://www.princeedwardisland.ca/sites/default/files/publications/cln109-gtn298-noticecarbonlevyratesrevised01april2019.pdf
+  - label: "Carbon history: 2022_CL_Rates_Table_with_differential.xlsx"
+    url: https://www.princeedwardisland.ca/sites/default/files/publications/schedule_of_levy_rates_on_fossil_fuels.pdf
+  - label: "Carbon history: PEI IRAC, July 2023 federal fuel charge transition"
+    url: https://irac.pe.ca/wp-content/uploads/Information-Bulletin-Implementation-of-Clean-Fuel-Standards-July2023.pdf
+  - label: "Carbon history: An Act to Amend the Income Tax Act (No. 3)"
+    url: https://docs.assembly.pe.ca/download/dms?fileName=bill-64.pdf&objectId=1d0b3ad4-988c-4eab-a8a2-7afea3a08bc5
+  - label: "Carbon history: Income Tax Act"
+    url: https://www.princeedwardisland.ca/sites/default/files/legislation/i-01-income_tax_act.pdf
+  - label: "Carbon history: PEI July4,2022 carbon and inflation payment examples — manual facts"
+    url: https://www.princeedwardisland.ca/en/news/islanders-to-receive-inflationary-support-payment-this-week
+childAmount: {perChild: 1200, ages: under6}
+postDividendSurtax:
+  program: pei-surtax
+  params: {threshold: 12500, rate: 0.1}
+
+# Historical driving defaults use a common survey baseline; see cited sources.
+driving:
+  distance: 15100
+  estimated: true
+
+# Calendar-year carbon charges and cash rebates; heating is an explicit modeled estimate.
+carbon:
+  name: Federal carbon pricing
+  gasoline:
+    - from: 2019-01-01
+      rate: 0
+    - from: 2019-04-01
+      rate: 0.0442
+  heating:
+    amount: 0
+    estimated: true
+    method: 2021 Statistics Canada household natural gas and heating oil use averaged across all households; 0.0000 GJ gas and 35.2661 GJ oil, held constant across years; calendar-day rates and applicable heating exemptions. See carbon heating verification.
+  rebates: []

@@ -17,9 +17,13 @@ for (const [year, expected] of Object.entries(fixture.years)) {
   test(`${year}: original other-income golden results for 10 households × 13 provinces`, () => {
     assert.equal(fixture.scenarios.length, 10);
     assert.equal(Object.keys(expected).length, 10);
+    const data = loadYear(Number(year));
+    // These pre-carbon specimens retain their original rule inputs, like history.test.ts's frozen specimens.
+    // Activated carbon interactions have separate independent assertions in features/other-income.json.
+    for (const province of data.provinces) delete province.carbon;
     let checked = 0;
     for (const s of fixture.scenarios) {
-      for (const { p, r } of computeAll(loadYear(Number(year)), toHousehold(s))) {
+      for (const { p, r } of computeAll(data, toHousehold(s))) {
         assert.deepStrictEqual(snapshot(r), expected[s.id][p.code], `scenario ${s.id}, ${p.code}`);
         checked++;
       }

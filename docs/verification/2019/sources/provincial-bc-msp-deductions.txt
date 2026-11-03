@@ -1,0 +1,239 @@
+Title: Group Plan Administrators Frequently Asked Questions
+URL: https://www2.gov.bc.ca/assets/gov/health/health-drug-coverage/medical-services-plan/group-plan-administrators-faqs.pdf
+Fetched: 2026-11-02
+SHA-256 of the original: 8e84a6baf55410bd667f16c62e7cb18e90f49e7aae8093c101aa016f66fc766e
+Publication date modified: 2016-12-08
+PDF pages: all 7
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 1 of 7 ---
+
+Group Plan Administrators Frequently Asked Questions
+Changes to Medical Services Plan Premiums & Premium Assistance in 2017
+In January 2017, MSP premium rates and the Regular Premium Assistance program are changing.
+Following are some frequently asked questions from group administrators.
+Dec. 8, 2016 Update:
+How can I request our Group’s monthly invoice electronically?
+BillerDirect publishes the MSP Group invoice in a PDF file which you can download. To subscribe
+to BillerDirect, please see the instructions below. Please note that once you have the PDF file, it
+can also be converted to an Excel spreadsheet using Adobe Acrobat Pro X.
+The first step is obtaining a BCeID if you don’t already have one. The link for business registration
+is here: www.bceid.ca/register/business/getting_started/getting_started.aspx.
+Once you have a BCeID, click the link for Revenue Services of British Columbia, highlighted below,
+to request BillerDirect.
+If you require assistance with this process, please call Revenue Services of B.C. at 877-405-4909.
+
+--- PDF page 2 of 7 ---
+
+How is Adjusted Net Income calculated?
+Adjusted net income is a person’s net income (or a couple’s combined net income) as determined by
+the Canada Revenue Agency minus any of the following deductions allowed by MSP:
+ $3,000 for a spouse;
+ $3,000 if a beneficiary is 65 years of age or older in application year;
+ $3,000 for a beneficiary’s spouse if 65 years of age or older in application year;
+ $3,000 for each child minus one half of the child care expenses claimed by a beneficiary and/or
+spouse on line 217 of their income tax returns;
+ $3,000 for each family member who claims disability, attendant or nursing home expenses;
+ The amount received by a beneficiary and/or spouse for Universal Child Care on line 117 of
+their income tax returns; and/or
+ The amount reported for the Registered Disability Savings Plan by a beneficiary and/or spouse
+on line 125 of their income tax returns.
+Does everyone need to apply for MSP premium assistance to get the new subsidy rates?
+If you have already completed an application and are currently receiving Regular Premium Assistance,
+you do not need to apply again for January 2017
+Applications for Regular Premium Assistance include a declaration of consent for Health Insurance BC
+to verify annual income with the Canada Revenue Agency. If you submitted a signed and completed
+application form and are currently receiving Regular Premium Assistance, you do not need to re-apply.
+Health Insurance BC will assess your eligibility and adjust your premium rate accordingly as of
+Jan. 1, 2017.
+
+--- PDF page 3 of 7 ---
+
+If you do not currently receive Regular Premium Assistance and are now eligible based on residency
+and adjusted net income, the Premium Assistance Application can be found here:
+www2.gov.bc.ca/assets/gov/health/forms/119fil.pdf.
+Please note that the Group must authorize the application before submission to Health Insurance BC or
+it will be returned.
+What tax year will be applied for people who currently receive MSP premium assistance or are newly
+eligible?
+ As of Nov. 24, 2016: HIBC will convert all recipients and applicants for premium assistance to
+new premium rates and process new premium assistance applications for Jan. 1, 2017 based on
+the 2015 tax year
+ Starting on Jan. 2, 2017: HIBC will process new applications based on 2015 and/or 2016 tax
+years as current year premium assistance until March 31, 2017
+ Starting on April 1, 2017: HIBC will process new applications based on the 2016 tax year as
+current year premium assistance.
+Do seniors pay a reduced premium rate for MSP coverage?
+Eligibility for MSP Regular Premium Assistance is based on residency and adjusted net income. If you
+already receive premium assistance and your adjusted net income is below the uppermost limit
+($42,000 as of Jan. 1, 2017), the appropriate level of Regular Premium Assistance will be applied. For
+more information about Regular Premium Assistance and adjusted net income, visit
+gov.bc.ca/premium assistance.
+Although age does not directly contribute to reduced premium rates for adults, individuals 65 years of
+age and older this year may claim a $3,000 income deduction for themselves and an additional $3,000
+deduction for a spouse who is 65 years of age or older this year on their Regular Premium Assistance
+application form to reduce adjusted net income.
+Nov. 18, 2016 Update:
+Is there a report for Group Administrators that lists all employees and their dependents?
+Your monthly invoice will continue to show the size of each family on your MSP Group account in the
+“SIZE” column. For January 2017 invoices only, a special “9” code will be used in the “CODE” column to
+indicate accounts that have changed premiums due to the new rates and policies.
+Please refer to the sample January 2017 invoice shown here to learn more:
+www2.gov.bc.ca/gov/content/health/health-drug-coverage/msp/group-plan-administrators/msp-
+premium-changes.
+In addition, Employer Record Cards are provided to MSP Groups, which show any new individuals
+on a group plan and any changes to coverage that occurred (cards are distributed on a monthly
+basis, as appropriate). To learn more, go to: www2.gov.bc.ca/gov/content/health/health-drug-
+coverage/msp/group-plan-administrators/administer/adding-members.
+If a spouse who is under the age of 19 has a child, will the family still pay for one adult on the
+account? If there is a marriage of two 18-year-olds, what will the premium be?
+All minors (individuals under the age of 19) will no longer be charged MSP premiums, effective
+Jan. 1, 2017. This includes married minors, and minors with children. For example, a family of two
+18-year-olds that are married and have a child would not be charged any MSP premiums.
+
+--- PDF page 4 of 7 ---
+
+Nov. 4, 2016 Update:
+Will my invoice show which accounts are changing prior to Jan. 1, 2017?
+Yes. On the January 2017 Group invoice only (which you will receive in early December), an
+adjustment code of “9” will be inserted into the “CODE” field on the invoice to indicate each
+account where the premiums have changed from 2016 to 2017.
+Why do we have to wait until December to find out which accounts are changing?
+Following production of the December 2016 group invoices, system changes will be implemented on
+Nov. 23, 2016. Once this is complete and tested, group billing of the January 2017 invoices will run at
+the beginning of December instead of the usual third week (for this month only). That means groups
+will receive January 2017 invoices approximately three weeks earlier, providing you more time to
+make any required system changes.
+Groups receiving electronic invoices can expect the January 2017 invoices on Dec. 6, 2016. Those
+receiving paper invoices should follow within a few days.
+With no premiums for children and no increase in rates for 2017, why will some accounts have
+an increase for 2017?
+The full premium rate for a single adult beneficiary has not changed. One person, who is not eligible
+for Premium Assistance, still pays $75.
+However, there is a change to the way premiums are calculated. Now, all adults who are not eligible
+for Premium Assistance will pay the same rate. Two adults on one account will simply pay the single
+person rate – doubled. There is no longer a discount for couples.
+This change will remove the inconsistency to make the system more equal for all beneficiaries not
+on Premium Assistance.
+When will the updated Regular Premium Assistance Application forms for 2017 be available?
+The current version of the HLTH 119 Premium Assistance Application form can be found here:
+www2.gov.bc.ca/assets/gov/health/forms/119fil.pdf
+This form will be updated in early December 2016 to show the new 2017 rates.
+The current form can be used now, and existing stock can be continued to be used even once the new
+form is launched. Regardless of the version of the form, the new premium rates will be applied by HIBC
+as of Jan. 1, 2017 (if the form is completed, signed, and submitted correctly).
+Please note that the form must be authorized by the group before submitting to Health Insurance BC
+or it will be returned.
+My group doesn’t currently allow MSP Premium Assistance for our employees. How can we
+provide this service?
+If your group wishes to allow MSP Regular Premium Assistance for its employees, you can make
+the request by sending a letter to Health Insurance BC with all Group contact information to:
+Health Insurance BC
+PO BOX 9140 STN PROV GOVT
+VICTORIA BC V8W 9E5
+
+--- PDF page 5 of 7 ---
+
+You will receive confirmation and required materials from Health Insurance BC. Once the change has
+been made, your group can submit authorized Premium Assistance Applications for the staff that
+qualify. Rates are posted on the B.C. Government website at:
+www2.gov.bc.ca/gov/content/health/health-drug- coverage/msp/group-plan-administrators/msp-
+premium-changes. Premium Assistance Application forms can be accessed online here:
+www2.gov.bc.ca/assets/gov/health/forms/119fil.pdf
+Do the changes to the Regular Premium Assistance program have any impacts on the
+Temporary Premium Assistance program?
+No, Temporary Premium Assistance is not affected by the changes effective Jan. 1, 2017.
+Sept. 15, 2016 Update:
+On Sept. 15, 2016, the government of British Columbia announced updates to the previously
+published 2017 MSP premium and Regular Premium Assistance rates. The planned 4% increase has
+been cancelled. As a result, the full premium rate for one adult will not increase and will remain at
+the 2016 rate of $75.
+In addition, rates for those receiving Regular Premium Assistance will be reduced by at least 4%
+beyond what was announced with Budget 2016.
+July 14, 2016 Update:
+What is the impact of these changes for children in my group?
+As of Jan. 1, 2017, there will be no MSP premiums charged for children under the age of 19. The
+total number of beneficiaries on an account – including children – will still be included on the
+group invoice.
+What is the impact for children 19-24 years old in my group, who are attending university and on
+their parent/guardian’s account?
+Dependent post-secondary students can continue to be covered as a child on the parent/guardian
+account and will not be charged premiums. A dependent post-secondary student is a B.C. resident
+who is older than 18 and younger than 25 years of age, in fulltime attendance at a recognized post-
+secondary institution, and supported by a parent or person who stands in place of the person’s
+parent.
+A dependent post-secondary student may include a student enrolled in full-time studies at an
+accredited trade school, technical school or high school. Full time study is defined as a minimum of
+three courses and 15 hours per week.
+Will international students under 19 years of age be charged MSP premiums?
+No, international students under the age of 19 are considered children and will not be charged
+MSP premiums as of Jan. 1, 2017. Group administrators may need to adjust the collection of
+fees from international students under 19 years of age to remove any MSP premium
+component.
+How are the premium rates calculated?
+MSP premium rates will be determined by the number of adults on an MSP account. This can be one or
+two people: the MSP account holder and a spouse, if applicable. If the spouse is under the age of 19, they
+will not be charged premiums. As of Jan. 1, 2017, there will be no MSP premiums for children under the
+age of 19.
+
+--- PDF page 6 of 7 ---
+
+What are the premium rates for two adults (i.e., spouses) on one account? Is there a discount?
+There is no discount. As of Jan. 1, 2017, the MSP premium rate for two adults will be twice the amount
+of the single adult rate. The full premium rate for a single adult will be $75, and the premium rate for
+two adults will be $150. If the spouse is under the age of 19, they will not be charged premiums. If a
+family qualifies for premium assistance, the rate will again be the twice the amount of the single
+person rate, as per the rate table posted here: www2.gov.bc.ca/gov/content/health/health-drug-
+coverage/msp/group- plan- administrators/msp-premium-changes
+I previously saw different rates for 2017. Did they change?
+Yes, different rates were published for 2017 earlier this year with the Budget announcement. On Sept.
+15, 2016, the government of British Columbia updated the 2017 rates. With the new rates, there is no
+premium increase for one adult from the 2016 rate.
+How will my MSP invoices change? How can I budget for 2017?
+MSP group invoices will continue to show the number of individuals and the total amount due for each
+account. Employer record cards can also be used for premium budgeting.
+Will subsidy codes on my invoice change?
+Yes, the specific subsidy codes are changing as of Jan. 1, 2017. The specific rate codes are as
+follows:
+Band Adjusted Net
+Income
+Premium Rate Code
+1 $0 - $24,000 H
+2 $24,001 - $26,000 I
+3 $26,001 - $28,000 J
+4 $28,001 - $30,000 K
+5 $30,001 - $34,000 L
+6 $34,001 - $38,000 M
+7 $38,001 - $42,000 N
+8 Over $42,000 C
+I receive paper invoices. Will I be required to make any system changes?
+Most groups will not require system changes. Only group administrators who receive their invoice
+information electronically may need to make system changes. The new rates and family structure will be
+reflected in the January 2017 invoice that you will receive in December 2016. These changes will be
+automatically adjusted.
+I receive my invoices electronically. Will I be required to make any system changes?
+Group administrators who receive their invoice information electronically may need to make system
+changes to accommodate the new rate codes. These groups will be contacted at the end of July 2016
+directly by Revenue Services of British Columbia to provide more information and offer testing, if
+required. The new rate codes will be reflected in the January 2017 invoice that you will receive in
+December 2016.
+
+--- PDF page 7 of 7 ---
+
+What if I indicated “no” to administering Premium Assistance on the Third Party
+Registration application form?
+If your group plan does not administer Regular Premium Assistance, your employees can still receive
+benefits from other income-based health programs such as Healthy Kids, Supplementary Benefits and
+Ambulance Services. Members must complete, sign and submit a Premium Assistance application.
+Health Insurance BC will apply the Regular Premium Assistance subsidy in order for them to receive
+those benefits. Their monthly premium will remain at the full rate.
+How can I find out more?
+Group plan administrators can find more information on the MSP premium rate and Regular
+Premium Assistance changes on the MSP website at: www2.gov.bc.ca/gov/content/health/health-
+drug-coverage/msp/group-plan-administrators/msp-premium-changes.
+Additional information will be shared as it becomes available, and this FAQ section will be
+updated.
+Questions?
+Please direct any MSP premium rate and premium assistance project questions to:
+dist.EnrolmentPremiumsAndPremiumAssistance@maximusbc.ca.

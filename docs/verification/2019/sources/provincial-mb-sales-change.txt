@@ -1,0 +1,166 @@
+Title: NOTICE
+URL: https://www.gov.mb.ca/finance/taxation/pubs/bulletins/noticerst1901.pdf
+Fetched: 2026-11-02
+SHA-256 of the original: 5f2e20a74bf9a0331c9328f324436335afe6ca43ab86bbace3fd1eeddaf63ac7
+Publication date modified: 2021-03-17
+PDF pages: all 4
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 1 of 4 ---
+
+Note: Revisions to contents of previous Notice (March 2019) have been identified by shading ( )
+NOTICE RST 19-01
+The Retail Sales Tax Act
+Issued March 2019
+Revised June 2019
+RATE REDUCTION TRANSITION RULES
+The 2019 Budget announced that, effective July 1, 2019, the retail sales tax rate will decrease from
+8% to 7%. The following transitional rules will apply to vendors making taxable sales and purchasers
+required to remit sales tax directly to the Taxation Division on taxable purchases from non-registered
+vendors:
+Taxable Goods
+The 7% sales tax rate applies to goods purchased after June 30, 2019, including goods for which the
+purchaser has made only a deposit on the purchase.
+The 8% sales tax rate applies to taxable goods purchased before July 1, 2019, including:
+• Goods purchased on credit or by deferred payment arrangements where payment is made after
+June 30, 2019.
+• Goods that are fully paid for prior to July 1, 2019, but delivery is taken on or after that date.
+(For mobile, modular and ready to move homes, the same rules apply substituting 4% for 7%, and
+4.5% for 8%).
+Taxable Services (Other Than Telecommunication Services)
+• Services completed prior to July 1, 2019 are taxable at 8%, regardless of the billing and payment
+date.
+• Contracts for services entered into prior to March 7, 2019 are taxable at 8% for services provided
+up to June 30, 2019. This includes accommodation services booked with a deposit.
+• Contracts entered into after March 7, 2019 for services that commence after June 30, 2019 are
+taxable at 7%.
+Prepaid Service Contracts
+• Prepaid service arrangements bought and paid for prior to March 7, 2019 are taxable at 8%,
+regardless of when the service is performed.
+• After March 7, 2019:
+- Prepaid service arrangements where a vendor agrees to provide a service for a coverage
+period, i.e. periodic maintenance agreements – when the service period includes any day prior
+to July 1, 2019, tax applies at 8%; when the service period is completely after June 30, 2019,
+tax applies at 7%.
+
+--- PDF page 2 of 4 ---
+
+- Prepaid service arrangements - such as spa packages - bought and paid for prior to July 1,
+2019 where the prepaid package can be redeemed over a period of time that includes any time
+prior to July 1, 2019 are taxable at 8%. Prepaid packages that can only be redeemed after
+June 30, 2019 are taxable at 7%.
+Contracts for Specified Services to Tangible Personal Property
+(i.e. Not Based On a Service Coverage Period)
+• Contracts for installation, maintenance or other services to tangible personal property (including
+mechanical and electrical systems and production equipment) executed prior to March 7, 2019 are
+taxable at the 8% rate for services provided up to June 30, 2019.
+• Contracts executed after March 7, 2019 for services to be provided over a time period that
+straddles July 1, 2019 must be segregated into the time before and after the transition date, with
+tax applied at 8% for the pre-July 1, 2019 period and 7% for post-June 30, 2019.
+• Contracts to supply and install tangible personal property involve a sale of both goods and
+services. As above, contracts executed prior to March 7, 2019 are taxable at the 8% rate for
+installations up to June 30, 2019. Contracts executed after March 7, 2019 must be segregated
+based on goods installed before and after the transition date, i.e. progress billings for work before
+July 1, 2019 are taxable at 8%, after June 30, 2019 at 7%. For these contracts, the tax rate applies
+based on the installation date, even though title to the goods may pass at the completion of the
+installation project.
+• The tax rate on holdback amounts is as follows:
+- For contracts executed after March 7, 2019, the tax rate should be applied based on the
+rate in effect at the time of the corresponding progress billings. The total holdback amount
+should be segregated on the invoice into the total amounts before and after the transition
+date for this purpose, with the appropriate rate applied to each total.
+- The tax rate on holdbacks for contracts executed prior to March 7, 2019 is 8% if completed
+by June 30, 2019. If not completed by this date, tax will apply on holdbacks as described
+above for contracts executed after March 7, 2019.
+• For contracts executed prior to March 7, 2019, for installations that extend beyond June 30, 2019,
+the transition rules above apply to the post-June 30, 2019 services on the same basis as the July
+1, 2019 rules for other contracts.
+• Change orders made after March 7, 2019, tax will apply at 8% to these change orders for all work
+performed before June 30, 2019, with the same transition rule above for work that straddles July 1,
+2019.
+Services Provided By Billable Hour
+Where services (such as legal and accounting) are provided by billable hour, day or other periodic
+measure and billed after the services are delivered, tax applies at 8% on all pre-July 1, 2019 time and
+at 7% for time after June 30, 2019. Billings for periods that straddle July 1, 2019 must be segregated
+with the appropriate rate applied to each portion.
+Utilities
+Telecommunication Services -Telephone, Cable TV, Internet Services:
+• The tax rate applies on the standard monthly package charge based on the billing date. Bills for
+service dated prior to July 1, 2019 are taxable at 8%, including billing periods that straddle that
+date. Bills for the standard monthly service package after June 30, 2019 are taxable at 7%.
+
+--- PDF page 3 of 4 ---
+
+• Tax applies on charges for optional or extra-billed services based on the date the service was
+provided, i.e. charges for long distance calls purchased prior to July 1, 2019 are taxable at 8%,
+those purchased after June 30, 2019 are taxable at 7%.
+Electricity and Natural Gas:
+• There is no change for home heating, as the rate of 1.4% remains in place.
+• For all other uses (where tax has applied at 8%) - billings dated after June 30, 2019 are taxable at
+7%. Billings dated before July 1, 2019 are taxable at 8%. (For eligible mining, manufacturing and
+oil companies read 1.4% for 7% and 1.6% for 8%).
+Leased Goods
+Lease periods that end prior to July 1, 2019 are subject to the 8% rate; those that straddle that date or
+commence completely after June 30, 2019 are taxable at 7%. The applicable rate applies to the full
+lease period, including those that straddle or occur fully after June 30, 2019.
+Insurance
+Definite Term Insurance Contracts (Excluding Group Contracts)
+The tax rate applies based on the effective date of the contract – contracts effective before July 1,
+2019 are taxable at 8%, those effective after June 30, 2019 are taxable at 7%.
+This includes multi-year contracts paid by instalments where the tax is collected annually. Contracts
+with an effective date prior to July 1, 2019 are taxable at the 7% rate on annual instalments collected
+after that date.
+Indefinite Term and Group Contracts
+Premiums payable prior to July 1, 2019 are taxable at 8%, regardless of the coverage period.
+Premiums that become payable after June 30, 2019 are subject to the 7% rate.
+Real Property Contracts
+Contracts Executed Prior to March 7, 2019
+The tax rate for goods and services purchased for incorporation into real property for all contracts
+executed prior to March 7, 2019, is as follows:
+- The 8% rate applies for all contract work relating to the original contract completed by June 30,
+2019. The 7% rate will apply after that date.
+- Goods and services incorporated into real property include direct materials used to construct
+real property and related mechanical and electrical systems, as well as the services to install
+the M&E systems.
+- Machinery, equipment, tools and other goods and services purchased by contractors for their
+own use to perform a real property or M&E installation (i.e. not incorporated into a building
+project) are taxable at the 8% rate if purchased prior to July 1, 2019. The 7 % rate will apply
+after that date. This includes equipment rentals, whether re-billed directly to the customer or
+not.
+- Note: Goods and services acquired to fulfil change orders made after March 7, 2019 are
+taxable based on the general transition rules for goods and services described above.
+
+--- PDF page 4 of 4 ---
+
+Contractors will be required to pay the 8% rate at source for goods and services acquired prior to July
+1, 2019 based on the above rules.
+Contracts Executed After March 7, 2019
+For contracts executed after March 7, 2019, the tax rate applies on taxable goods and services
+acquired for incorporation into real property at the rate in effect at the time of purchase, as described
+in the taxable goods and services sections above - the tax rate for contract inputs is not determined
+by the contract date. The contractor is the consumer of goods and services acquired to fulfil a real
+property contract, therefore the tax rate applies based on the timing of those purchases, not on the
+sale of the real property.
+Contractors that acquire goods on a tax-out basis and self-assess as they are used in jobs must pay
+tax at 8% when the goods are taken from inventory prior to July 1, 2019 for use in a real property
+contract. Goods taken from inventory after July 1, 2019 are taxable at 7%.
+Refunds and Credits
+Refunds of the sales tax on returned goods or cancelled sales must be provided at the same rate at
+which the tax was collected on the original sale.
+Further information may be obtained from:
+Winnipeg Office Westman Regional Office
+Manitoba Finance Manitoba Finance
+Taxation Division Taxation Division
+101 - 401 York Avenue 314, 340 - 9th Street
+Winnipeg, Manitoba R3C 0P8 Brandon, Manitoba R7A 6C2
+Telephone (204) 945-5603 Fax (204) 726-6763
+Manitoba Toll Free 1-800-782-0318
+Fax (204) 948-2087
+E-mail: MBTax@gov.mb.ca
+ONLINE SERVICES
+Our Web site at manitoba.ca/finance/taxation provides tax forms and publications about taxes
+administered by Taxation Division, and a link to Manitoba’s laws and regulations. Forms and
+publications can also be obtained by contacting the Taxation Division.
+Our online service at manitoba.ca/TAXcess provides a simple, secure way to apply for, and to file, pay
+and view your Taxation Division tax accounts.

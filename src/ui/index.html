@@ -197,7 +197,7 @@
       </div>
     </section>
     <section class="tab-panel" id="panel-driving" aria-labelledby="tab-driving-name" hidden>
-      <div class="panel-head"><b class="panel-title">Fuel tax</b><button type="button" class="info" data-note="fuel" aria-label="About fuel tax">i</button><span class="panel-sum" id="fuel-sum">none</span></div>
+      <div class="panel-head"><b class="panel-title" id="driving-tax-title">Fuel tax</b><button type="button" class="info" data-note="fuel" aria-label="About gasoline taxes">i</button><span class="panel-sum" id="fuel-sum">none</span></div>
       <div class="prop-grid">
         <div class="field">
           <div class="lbl-row"><label class="lbl" for="km">Distance driven</label><button type="button" class="info" data-note="distance" aria-label="About distance driven">i</button></div>
@@ -215,9 +215,30 @@
     </section>
   </section>
 
-  <section aria-label="Blended rate by province">
+  <fieldset class="seg comparison-view" aria-label="Comparison view">
+    <button type="button" id="view-provinces" aria-pressed="true">Across provinces</button>
+    <button type="button" id="view-history" aria-pressed="false">Over time</button>
+  </fieldset>
+
+  <section id="history-view" aria-label="Tax over time" hidden>
+    <div class="history-head">
+      <div class="lbl-row"><h2 id="history-title">Tax over time</h2><button type="button" class="info" id="history-info" aria-label="About the historical comparison">i</button></div>
+      <fieldset class="seg" aria-label="Historical income basis">
+        <button type="button" id="history-real" aria-pressed="true">Same real income</button>
+        <button type="button" id="history-nominal" aria-pressed="false">Same dollars</button>
+      </fieldset>
+    </div>
+    <table class="history-table">
+      <caption id="history-basis"></caption>
+      <thead><tr><th scope="col">Year</th><th scope="col">Income</th><th scope="col">Net tax</th><th scope="col">Rate</th></tr></thead>
+      <tbody id="history-rows"></tbody>
+    </table>
+    <p class="history-source">Source: <a id="history-source" href="https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810000501" target="_blank" rel="noopener">Statistics Canada annual CPI</a></p>
+  </section>
+
+  <section id="province-view" aria-label="Blended rate by province">
     <div class="chart-head">
-      <div class="lbl-row"><h2 id="chart-title">Blended rate at $100,000</h2><button type="button" class="info" data-tip="Each column stacks income tax, payroll contributions (CPP/QPP, EI/QPIP and health premiums), sales tax, property tax and fuel tax. Child benefits and refundable credits are netted off: the striped top of a column is the part they pay back, and the figure above it is the net rate, net tax divided by total income. The smaller figure below is the marginal rate: what the household keeps losing on the next dollar the selected person earns, including payroll contributions and benefit clawbacks. Switch to $ tax to compare dollar amounts instead. Hover over or tap any part of a column for details. Your home province and the destination you're comparing are highlighted." aria-label="About blended and marginal rates">i</button></div>
+      <div class="lbl-row"><h2 id="chart-title">Blended rate at $100,000</h2><button type="button" class="info" data-tip="Each column stacks income tax, payroll contributions (CPP/QPP, EI/QPIP and health premiums), sales tax, property tax, fuel tax and carbon charges. Child benefits and refundable credits are netted off: the striped top of a column is the part they pay back, and the figure above it is the net rate, net tax divided by total income. The smaller figure below is the marginal rate: what the household keeps losing on the next dollar the selected person earns, including payroll contributions and benefit clawbacks. Switch to $ tax to compare dollar amounts instead. Hover over or tap any part of a column for details. Your home province and the destination you're comparing are highlighted." aria-label="About blended and marginal rates">i</button></div>
       <div class="legend">
         <span><i class="sw" style="background:var(--fed)"></i>Federal</span>
         <span><i class="sw" style="background:var(--prov)"></i>Provincial / territorial</span>
@@ -226,6 +247,7 @@
         <span id="legend-sales" hidden><i class="sw" style="background:var(--sales)"></i>Sales tax</span>
         <span id="legend-prop" hidden><i class="sw" style="background:var(--propc)"></i>Property tax</span>
         <span id="legend-fuel" hidden><i class="sw" style="background:var(--fuel)"></i>Fuel tax</span>
+        <span id="legend-carbon" hidden><i class="sw" style="background:var(--carbon)"></i>Carbon pricing</span>
         <span id="legend-ben" hidden><i class="sw sw-ben"></i>Benefits &amp; credits</span>
         <fieldset class="seg" aria-label="Show as">
           <button type="button" id="m-pct" aria-pressed="true">% of income</button>

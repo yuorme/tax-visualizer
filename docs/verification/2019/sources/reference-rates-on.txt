@@ -1,0 +1,60 @@
+Title: Ontario 2020 and 2019 Personal Marginal Income Tax Rates
+URL: https://www.taxtips.ca/priortaxrates/tax-rates-2019-2020/on.htm
+Fetched: 2026-11-02
+SHA-256 of the original: 0ad33f25e576f4b63952bd309c4dd6cee1627f86a7988925f3643710f57fdcdf
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+Ads keep this website free for you. TaxTips.ca does not research or endorse any product or service appearing in ads on this site. Before making a major financial decision you should consult a qualified professional. | Ontario 2019 & 2020 Income Tax Rates | TaxTips.ca Canadian Tax and Financial Information
+TaxTips.ca Home What's New | | Links & Resources Site Map
+
+Need an accounting, tax or financial advisor? Look in our Directory. Use above search box to easily find your topic! Stay Connected with TaxTips.ca!
+
+Ontario Tax Rates -> 2019 and 2020 Tax Rates -> Ontario Personal Income Tax Rates Ontario 2020 and 2019 Personal Marginal Income Tax Rates Please read the article Understanding the Tables of Personal Income Tax Rates. The Federal and Ontario tax brackets and personal amounts are increased for 2020 by an indexation factor of 1.019, except for the Ontario $150,000 and $220,000 bracket amounts, which are not indexed for inflation. The indexation factors, tax brackets and tax rates have been confirmed to Canada Revenue Agency information.
+
+Ontario Personal Income Tax Brackets and Tax Rates
+2020 Taxable Income | 2020 Tax Rates | 2019 Taxable Income | 2019 Tax Rates
+first $44,740 | 5.05% | first $43,906 | 5.05%
+over $44,740 up to $89,482 | 9.15% | over $43,906 up to $87,813 | 9.15%
+over $89,482 up to $150,000 | 11.16% | over $87,813 up to $150,000 | 11.16%
+over $150,000 up to $220,000 | 12.16% | over $150,000 up to $220,000 | 12.16%
+over $220,000 | 13.16% | over $220,000 | 13.16%
+
+Combined Federal & Ontario Tax Brackets and Tax Rates Including Surtaxes
+2020 Taxable Income | 2020 Marginal Tax Rates | 2019 Taxable Income | 2019 Marginal Tax Rates
+Other Income | Capital Gains | Canadian Dividends | Other Income | Capital Gains | Canadian Dividends
+Eligible | Non-Eligible | Eligible | Non-Eligible
+first $44,740 | 20.05% | 10.03% | -6.86% | 9.24% | first $43,906 | 20.05% | 10.03% | -6.86% | 8.89%
+over $44,740 up to $48,535 | 24.15% | 12.08% | -1.20% | 13.95% | over $43,906 up to $47,630 | 24.15% | 12.08% | -1.20% | 13.61%
+over $48,535 up to $78,783 | 29.65% | 14.83% | 6.39% | 20.28% | over $47,630 up to $77,313 | 29.65% | 14.83% | 6.39% | 19.93%
+over $78,783 up to $89,482 | 31.48% | 15.74% | 8.92% | 22.38% | over $77,313 up to $87,813 | 31.48% | 15.74% | 8.92% | 22.04%
+over $89,482 up to $92,825 | 33.89% | 16.95% | 12.24% | 25.16% | over $87,813 up to $91,101 | 33.89% | 16.95% | 12.24% | 24.81%
+over $92,825 up to $97,069 | 37.91% | 18.95% | 17.79% | 29.78% | over $91,101 up to $95,259 | 37.91% | 18.95% | 17.79% | 29.43%
+over $97,069 up to $150,000 | 43.41% | 21.70% | 25.38% | 36.10% | over $95,259 up to $147,667 | 43.41% | 21.70% | 25.38% | 35.76%
+over $150,000 up to $150,473 | 44.97% | 22.48% | 27.53% | 37.90% | over $147,667 up to $150,000 | 46.41% | 23.20% | 29.52% | 39.21%
+over $150,473 up to $214,368 | 48.19% | 24.09% | 31.97% | 41.60% | over $150,000 up to $210,371 | 47.97% | 23.98% | 31.67% | 41.00%
+over $214,368 up to $220,000 | 51.97% | 25.98% | 37.19% | 45.95% | over $210,371 up to $220,000 | 51.97% | 25.98% | 37.19% | 45.60%
+over $220,000 | 53.53% | 26.76% | 39.34% | 47.74% | over $220,000 | 53.53% | 26.76% | 39.34% | 47.40%
+Marginal tax rate for dividends is a % of actual dividends received (not grossed-up taxable amount). Marginal tax rate for capital gains is a % of total capital gains (not taxable capital gains). Gross-up rate for eligible dividends is 38%, and for non-eligible dividends is 15%. The surtax is calculated before deducting dividend tax credits. For more information see Ontario dividend tax credits. Marginal tax rates do not include the Ontario Health Premium, which increases the above rates by up to 25%.
+
+Ontario Surtaxes
+2020 | 2019
+Surtax rate (included in above rates) | 20% | 36% | Surtax rate (included in above rates) | 20% | 36%
+Surtax is on ON tax greater than | $4,830 | $6,182 | Surtax is on ON tax greater than | $4,740 | $6,067
+Person with only basic personal amount - surtax starts at taxable income of | $78,783 | $92,825 | Person with only basic personal amount - surtax starts at taxable income of | $77,313 | $91,101
+The 36% surtax is in addition to the 20% surtax, for a total surtax of 56%. The surtax increases the 13.16% tax rate to 20.53% (13.16% x 1.56). Surtaxes are calculated before deducting dividend tax credits.
+
+Ontario Basic Personal Amount
+2020 Personal Amount | 2020 Tax Rate | 2019 Personal Amount | 2019 Tax Rate
+$10,783 | 5.05% | $10,582 | 5.05%
+Federal Basic Personal Amount
+2020 Personal Amount (1) | 2020 Tax Rate | 2019 Personal Amount | 2019 Tax Rate
+$13,229 | 15% | $12,069 | 15%
+
+(1) The 2020 federal personal amount is increased from $12,298 to $13,229 for taxpayers with net income of $150,473 or less. For incomes above this threshold, the additional amount of $931 is reduced until it becomes zero at net income of $214,368. The marginal tax rates above have been adjusted to reflect this change.
+
+Copyright © 2002 Boat Harbour Investments Ltd.
+
+Revised: June 27, 2026
+
+Copyright © 2002 Boat Harbour Investments Ltd. All Rights Reserved. See Reproduction of information from TaxTips.ca Facebook | Twitter | LinkedIn The information on this site is not intended to be a substitute for professional advice. Each person's situation differs, and a professional advisor can assist you in using the information on this web site to your best advantage Please see our legal disclaimer regarding the use of information on our site, and our Privacy Policy regarding information that may be collected from visitors to our site.

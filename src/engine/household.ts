@@ -3,10 +3,12 @@
 
 import { ccbOf, provincialChildBenefit } from "./benefits.ts";
 import { phased } from "./brackets.ts";
+import { carbonCostsOf } from "./carbon.ts";
 import { childcareOf } from "./childcare.ts";
 import { childcareCreditOf } from "./childcare-credits.ts";
 import { creditsOf } from "./credits.ts";
 import { fuelTaxOf } from "./fuel.ts";
+import { householdPremiumOf } from "./health-premiums.ts";
 import { netIncomeParts, netOf } from "./payroll.ts";
 import { type PersonResult, personTax } from "./personal.ts";
 import {
@@ -169,6 +171,9 @@ export function household(y: YearData, p: Province, hh: Household, peopleIn: Per
     list = ppl.map((x, i) => personTax(fed, p, x, NOSP, ctx(i), s));
   }
   const totals = addUp(list);
+  const householdPremium = householdPremiumOf(p, nets, couple, kids, childcare.claims);
+  totals.payroll += householdPremium?.total ?? 0;
+  totals.total += householdPremium?.total ?? 0;
   const ccb = ccbOf(fed, famNet, kids, under6);
   const provBen = provincialChildBenefit(p.childBenefit, provincialFamNet, famEmp, kids, single, under6);
   const childBen = ccb + provBen;
@@ -223,6 +228,7 @@ export function household(y: YearData, p: Province, hh: Household, peopleIn: Per
       ...householdBreakdown(list),
       incomeBases,
       childcareCredit,
+      householdPremium,
     }, // nested so the golden snapshot keeps its format (see personTax)
   };
 }
@@ -263,7 +269,8 @@ export function compute(y: YearData, p: Province, hh: Household) {
   // fuel is null for a year without fuel data (an object, so the golden snapshot, which locks top-level numbers,
   // keeps its format; the fuel tax is locked through gross and total).
   const fuel = fuelTaxOf(y, p, hh.driving);
-  const gross = h.fed + h.prov + h.wh + h.payroll + sales + property + (fuel?.total ?? 0);
+  const carbon = carbonCostsOf(y.year, p, hh.driving);
+  const gross = h.fed + h.prov + h.wh + h.payroll + sales + property + (fuel?.total ?? 0) + (carbon?.total ?? 0);
   const total = gross - h.benefits; // net of child benefits and refundable credits
   const on = h.cash > 0,
     base = on ? h.cash : 1;
@@ -281,6 +288,7 @@ export function compute(y: YearData, p: Province, hh: Household) {
     propRate,
     property,
     fuel,
+    carbon,
     gross,
     total,
     base,

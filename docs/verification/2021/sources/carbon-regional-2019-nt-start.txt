@@ -1,0 +1,31 @@
+Title: Finance
+URL: https://www.fin.gov.nt.ca/en/services/licences-taxes-and-fees/residents-businesses-and-governments
+Fetched: 2026-11-02
+SHA-256 of the original: 22544ed8c9d139843ec9ea9b82754c096f470bbd8d2ae485d2bfdc377287aec2
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+# Licences, Taxes and Fees
+
+# Residents, Businesses and Governments
+
+## How do I pay carbon taxes on fuel in the NWT?
+
+Where applicable, the carbon tax will be added at the point of purchase.
+
+## Are there any carbon tax rebates for residents, small businesses and governments?
+
+- All consumers (except large emitters) receive a full rebate on the carbon tax paid for heating fuel at the point of purchase.
+- Utility companies will receive a full rebate on the carbon tax paid for fuel used for electrical generation.
+
+Effective April 1, 2023, consumers will no longer receive a full rebate on the carbon tax paid for heating fuel at the point of purchase.
+
+## Are there any other offsets to the NWT Carbon Tax?
+
+The NWT Cost of Living Offset is a new, tax-free benefit administered by the Canadian Revenue Agency on behalf of the GNWT. It will be paid to all individuals and families living in the NWT to help offset the cost of the carbon tax.
+
+For 2019-20, the annual benefit amounts are $104 for residents 18 years or older and $120 per child under the age of 18 and will be made in 2 equal payments in October 2019 and April 2020. After that, the Cost of Living Offset will be paid quarterly.
+
+Effective April 1, 2023, annual COLO amounts will increase to$473 for each adult and $525 for each person under 18 years of age.
+
+If you do not receive your Cost of Living Offset payment within two weeks of the date it was issued, please contact the Canada Revenue Agency at 1-866-426-1527

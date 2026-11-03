@@ -32,12 +32,14 @@
         "payroll": 0,
         "fed": 3461.295,
         "prov": 1414.16,
-        "total": 4875.455,
+        "total": 4974.905,
         "me.breakdown.rrspRoom": 0,
         "me.breakdown.netIncome.oth": 40000,
         "breakdown.margOther": 0.225,
         "invAmt": 0,
-        "invTax": 0
+        "invTax": 0,
+        "carbon.heating": 99.45,
+        "carbon.total": 99.45
       }
     },
     {
@@ -82,12 +84,14 @@
         "payroll": 0,
         "fed": 3840.3,
         "prov": 2018.6,
-        "total": 5858.9,
+        "total": 6105.04,
         "me.breakdown.rrspRoom": 0,
         "me.breakdown.netIncome.oth": 40000,
         "breakdown.margOther": 0.25,
         "invAmt": 0,
-        "invTax": 0
+        "invTax": 0,
+        "carbon.heating": 246.14,
+        "carbon.total": 246.14
       }
     },
     {
@@ -113,9 +117,11 @@
         "fed": 4060.0,
         "prov": 1414,
         "payroll": 300,
-        "total": 5774.0,
+        "total": 5832.86,
         "breakdown.margOther": 0.1955,
-        "breakdown.incomeBases.beforeChildcare": [28000]
+        "breakdown.incomeBases.beforeChildcare": [28000],
+        "carbon.heating": 58.86,
+        "carbon.total": 58.86
       }
     },
     {
@@ -454,6 +460,48 @@
       "expected": {
         "famNet": 45922.18,
         "provBen": 10
+      }
+    },
+    {
+      "id": "other-income-2025-bc-carbon-income-test-40000",
+      "year": 2025,
+      "province": "BC",
+      "household": {
+        "people": [
+          {
+            "oth": 40000
+          }
+        ],
+        "useCredits": true
+      },
+      "expected": {
+        "famNet": 40000,
+        "payroll": 0,
+        "credits": [["GST/HST credit", 533], ["BC climate action tax credit", 252]],
+        "refund": 785,
+        "carbon.gasoline": 0,
+        "carbon.heating": 48
+      }
+    },
+    {
+      "id": "other-income-2025-bc-carbon-income-test-60000",
+      "year": 2025,
+      "province": "BC",
+      "household": {
+        "people": [
+          {
+            "oth": 60000
+          }
+        ],
+        "useCredits": true
+      },
+      "expected": {
+        "famNet": 60000,
+        "payroll": 0,
+        "credits": [["BC climate action tax credit", 62.71]],
+        "refund": 62.71,
+        "carbon.gasoline": 0,
+        "carbon.heating": 48
       }
     }
   ],

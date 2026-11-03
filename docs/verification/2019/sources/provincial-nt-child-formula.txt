@@ -1,0 +1,59 @@
+Title: Page 1
+URL: https://www.fin.gov.nt.ca/sites/fin/files/benefits_and_support-nwt_child_benefit-180320.pdf
+Fetched: 2026-11-02
+SHA-256 of the original: cf7a4e469c59d6941dbb8ba73c133ccbf7be6af050f563e5fcc6d1f73733dba1
+Publication date modified: 2019-11-04
+PDF pages: all 2
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 1 of 2 ---
+
+Page 1
+Northwest Territories Child Benefit
+What is the Northwest Territories Child Benefit?
+The Northwest Territories Child Benefit program (NWTCB) provides benefits to families
+based on the number of children and their ages, and family net income declared in the
+previous year’s income tax return.
+Starting July 1, 2017, the NWTCB was enhanced to provide more non-taxable benefits to
+low income families with children under the age of eighteen.
+Who is eligible to receive the NWTCB?
+Families with annual net income under $30,000 will receive the full child benefit. The
+benefit will start to be phased out when family income exceeds $30,000, and will be
+eliminated when family income reaches $80,000. The structure of the NWTCB is shown in
+the figure below:
+
+--- PDF page 2 of 2 ---
+
+Page 2
+How is the NWTCB calculated?
+The annual NWTCB is calculated as follows:
+If A is less than or equal to B:
+NWTCB = C + D
+If A is greater than B:
+NWTCB = (C + D)
+Where:
+1. A is family net income
+2. B is the minimum income threshold of $30,000
+3. E is the maximum income threshold of $80,000
+4. C and D are benefit levels shown in the following table:
+Number of Children Under the age of 6
+(C)
+Aged 6 to 17
+(D)
+1 child $815 $652
+2 children $1,467 $1,174
+3 children $1,997 $1,597
+4 children $2,445 $1,956
+5 children or more
+$2,445 plus an additional
+$367 for each of the 5th
+and subsequent children
+$1,956 plus an additional
+$293 for each of the 5th
+and subsequent children
+How do I apply to receive the NWTCB?
+The NWTCB continues to be administered by the Canada Revenue Agency, and is included
+with monthly Canada Child Benefit payments.
+– (A – B)(C + D)
+(E – B)

@@ -1,5 +1,6 @@
 # Federal parameters for 2021. Recurring benefits use July 2021–June 2022 amounts, applied to current-year
-# income. Extraordinary pandemic-support payments (including the young-child supplement) and carbon pricing are outside this collection's scope.
+# income. Extraordinary pandemic-support payments (including the young-child supplement) are excluded.
+# Calendar-year carbon records are in each province.
 year: 2021
 
 # CRA T4127 January 2021, table 9.1 and federal BPA formula.
@@ -82,3 +83,12 @@ sources:
   - {"label": "T4127(E), Payroll Deductions Formulas", "url": "https://www.canada.ca/content/dam/cra-arc/formspubs/pub/t4127-jan/t4127-01-21e.pdf"}
   - {"label": "Convention between Canada and the United States of America with Respect to Taxes on Income and on Capital", "url": "https://www.canada.ca/en/department-finance/programs/tax-policy/tax-treaties/country/united-states-america-convention-consolidated-1980-1983-1984-1995-1997-2007.html"}
   - {"label": "Canada Child Benefit, July 2021\u2013June 2022", "url": "https://publications.gc.ca/collections/collection_2021/arc-cra/Rv1-36-2021-eng.pdf?download=1"}
+  - label: "Carbon history: Natural Resources Canada, Energy Use Data Handbook: Passenger Transportation Explanatory Variables"
+    url: https://oee.nrcan.gc.ca/corporate/statistics/neud/dpa/showTable.cfm?type=HB&sector=tran&juris=00&rn=7&page=0
+
+# Historical driving defaults use a common survey baseline; see cited sources.
+driving:
+  efficiency: 9
+  efficiencySource: Natural Resources Canada's 2023 on-road average for gasoline cars and light trucks, weighted by how far each type is driven
+  distanceSource: 2009 Canadian Vehicle Survey
+  estimated: true

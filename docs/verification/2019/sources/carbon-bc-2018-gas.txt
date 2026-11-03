@@ -1,0 +1,73 @@
+Title: Budget and Fiscal Plan - Budget 2017 September Update
+URL: https://bcbudget.gov.bc.ca/2017_sept_update/bfp/2017_sept_update_budget_and_fiscal_plan.pdf
+Fetched: 2026-11-02
+SHA-256 of the original: 90b5f98ac8219a180aea1eb550a9330c7cf4961855df7663ee87fb18381fe928
+Publication date modified: 2017-09-08
+PDF pages: 116 of 136
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 116 of 136 ---
+
+Budget 2017 Update – 2017/18 to 2019/20Appendix 113
+Table A5 Material Assumptions – Revenue (continued )
+Revenue Source and Assumptions
+($ millions unless otherwise specified) 2017/18 Sensitivities
+Provincial sales tax $7,042 $7,270 $7,492
+Provincial sales tax base growth (fiscal year) …………… 5.3% 4.4% 4.2% +/- 1 percentage point change in the
+Calendar Year nominal expenditure 2017 consumer expenditure growth
+Durable goods ………………………………………….. 6.3% 2.5% 1.9% equals up to +/- $30 million
+Consumer goods and services..................................... 5.8% 4.9% 4.6%
+Business investment ……………………………………… 5.4% 5.6% 4.9%
+Other ……………………………………………………… 6.2% 3.4% 3.9%
+Components of Provincial sales tax revenue +/- 1 percentage point change in the
+Consolidated Revenue Fund........................................ $7,033 $7,261 $7,483 2017 business investment growth
+BC Transportation Financing Authority ........................ $9 $9 $9 equals up to +/- $15 million
+Fuel and carbon taxes $2,203 $2,444 $2,686
+Calendar Year
+Real GDP .................................................................... 2.9% 2.1% 2.0%
+Gasoline volumes ........................................................ 0.0% 0.0% 0.0%
+Diesel volumes ............................................................ 2.0% 2.0% 2.0%
+Natural gas volumes .................................................... 2.9% 2.1% 2.0%
+Carbon tax rates (April 1)
+Carbon dioxide equivalent emissions ($/tonne)............ $30 $35 $40
+Natural gas (cents/gigajoule) …………………………… 148.98¢ 173.81¢ 198.64¢
+Gasoline (cents/litre) ………………………………………6 6.67¢ 7.78¢ 8.89¢
+Light fuel oil (cents/litre) …………………………………6 7.67¢ 8.95¢ 10.23¢
+Components of revenue
+Consolidated Revenue Fund ................................... $505 $509 $513
+BC Transit ................................................................ $12 $12 $12
+BC Transportation Financing Authority .................... $458 $461 $464
+$975 $982 $989
+Carbon tax revenue ………………………………. $1,228 $1,462 $1,697
+Property taxes $2,384 $2,503 $2,621
+Calendar Year
+Consumer Price Index ................................................. 2.1% 2.1% 2.0% +/- 1 percentage point change in
+Housing starts (units).................................................... 38,300 30,328 27,021 2017 new construction & inflation
+Home owner grants (fiscal year) .................................... $808 $821 $833 growth equals up to +/- $20 million in
+Components of revenue residential property taxation revenue
+Residential (net of home owner grants) ....................... $856 $889 $923
+Non-residential ............................................................ $1,222 $1,288 $1,358 +/- 1% change in 2017 total
+Rural area .................................................................... $96 $99 $103 business property assessment
+Police ........................................................................... $33 $32 $32 value equals up to +/- $20 million
+BC Assessment Authority ............................................ $90 $92 $96 in non-residential property
+BC Transit .................................................................... $87 $103 $109 taxation revenue
+Other taxes $3,195 $3,078 $3,002
+Calendar Year
+Population .................................................................... 1.2% 1.2% 1.2%
+Consumer Price Index ................................................. 2.1% 2.1% 2.0%
+Housing starts .............................................................. -8.5% -20.8% -10.9%
+Real GDP .................................................................... 2.9% 2.1% 2.0%
+Nominal GDP ............................................................... 5.1% 4.1% 4.0%
+Components of revenue +/- 5% change to 2017 housing
+Property transfer .......................................................... $1,875 $1,731 $1,640 starts equals +/- $40 to 60 million
+15% additional tax (included in above) ...................... $200 $200 $200 in property transfer revenue,
+Tobacco ....................................................................... $745 $762 $762 depending on property values
+Insurance premium ...................................................... $575 $585 $600
+Budget
+Estimate
+2017/18
+Plan
+2018/19
+Plan
+2019/20

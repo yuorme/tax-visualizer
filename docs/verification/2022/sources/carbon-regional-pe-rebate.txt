@@ -1,0 +1,14 @@
+Title: PEI July4,2022 carbon and inflation payment examples — manual facts
+URL: https://www.princeedwardisland.ca/en/news/islanders-to-receive-inflationary-support-payment-this-week
+Fetched: 2026-11-02
+Direct fetch-source returned an anti-bot challenge, not the publication.
+No hash of the publication is available. Facts manually read from the official page through web reader2026-11-02.
+================================================================================
+
+Payment beginsJuly5,2022. Published examples distinguish ordinary quarterly sales credit, carbon increment,
+and extraordinary inflation support:
+single income45000:41.25 ordinary +140carbon +150inflation=331.25;
+single income55000:16.25 ordinary +115carbon +150inflation=281.25;
+singleparent income45000:55ordinary +140carbon +300inflation=495;
+couple income63000:0ordinary +65carbon +300inflation=365.
+Only the carbon increment belongs in this carbon-pricing model; ordinary sales credit is already modeled.

@@ -118,7 +118,8 @@ function estimatedRates(y: YearData, listed: Province[], estimated: Province[], 
 /** The provincial basic personal amount before any phase-out. */
 const provincialBpa = (y: YearData, p: Province) => {
   const a = p.basicPersonalAmount;
-  return a === "federal" ? y.federal.basicPersonalAmount.max : typeof a === "number" ? a : a.max;
+  const value = a === "federal" ? y.federal.basicPersonalAmount : a;
+  return typeof value === "number" ? value : value.max;
 };
 const isPhased = (a: Province["basicPersonalAmount"]): a is PhasedAmount => typeof a === "object";
 /** Benefit amounts run July to June, starting in the tax year. */
@@ -187,7 +188,11 @@ export function tooltips(y: YearData): Record<string, string> {
   const gb = F.groceriesBenefit,
     gbName = need(gb.name, "groceries benefit name");
   const fd = fuelData(y);
-  const noFuel = `Fuel taxes aren't in the ${y.year} data yet, so driving adds nothing to the totals.`;
+  const hasCarbon = y.provinces.some(p => p.carbon);
+  const carbonTip = `Carbon charges on gasoline use the same litres and the rates that applied during ${y.year}. Estimated household heating is separate and stays fixed when driving changes. Calendar-year cash rebates are included in benefits and credits. Quebec cap-and-trade and indirect costs are excluded.`;
+  const noFuel = hasCarbon
+    ? `Ordinary fuel taxes aren't in the ${y.year} data yet. Driving includes the carbon charge on gasoline where it applied. GST/HST and QST on gasoline are counted in taxable spending.`
+    : `Fuel taxes aren't in the ${y.year} data yet, so driving adds nothing to the totals.`;
   const fuelTips = fd
     ? (() => {
         const t = ext(y.provinces, p => perLitre(y, p));
@@ -199,6 +204,11 @@ export function tooltips(y: YearData): Record<string, string> {
         };
       })()
     : { fuel: noFuel, distance: noFuel, efficiency: noFuel };
+  if (hasCarbon) fuelTips.fuel += ` ${carbonTip}`;
+  if (!fd && F.driving) {
+    fuelTips.distance = `Total kilometres driven in a year by all the household's vehicles. It starts at the average per vehicle in your home province from the ${F.driving.distanceSource}, and isn't scaled to household size. Enter 0 for no car. Historical distances are estimates using this common survey baseline.`;
+    fuelTips.efficiency = `Your vehicles' average fuel consumption in litres per 100 km, weighted by how much each one is driven. It starts at ${F.driving.efficiency.toFixed(1)}, ${F.driving.efficiencySource}. Enter 0 for an electric car.`;
+  }
   return {
     ...fuelTips,
     deductions:
@@ -207,7 +217,7 @@ export function tooltips(y: YearData): Record<string, string> {
     fhsa: "Your annual FHSA deduction claimed, including eligible contributions deferred from earlier years. The claim can exceed one year's contribution allowance. Transfers from an RRSP to an FHSA are not deductible. Check your FHSA records and Schedule 15 for the amount you can claim; the calculator does not calculate contribution room or enforce your lifetime limit.",
     otherDeductions:
       "Annual deductions other than the RRSP and FHSA claims entered separately: union and professional dues, deductible support payments, moving expenses and similar. Existing saved deductions are kept here. Exclude anything already entered as RRSP, FHSA or childcare to avoid counting it twice.",
-    bpa: `Every taxpayer gets a non-refundable credit on a basic amount of income: ${money(F.basicPersonalAmount.max)} federally in ${y.year}, plus a provincial amount from ${money(bpa.lo)} in ${places(y, bpa.atLo)} to ${money(bpa.hi)} in ${places(y, bpa.atHi)}. Switch off to see bracket rates alone.`,
+    bpa: `Every taxpayer gets a non-refundable credit on a basic amount of income: ${money(typeof F.basicPersonalAmount === "number" ? F.basicPersonalAmount : F.basicPersonalAmount.max)} federally in ${y.year}, plus a provincial amount from ${money(bpa.lo)} in ${places(y, bpa.atLo)} to ${money(bpa.hi)} in ${places(y, bpa.atHi)}. Switch off to see bracket rates alone.`,
     spending: `Your household's monthly spending on things sales tax applies to, before tax. A quick estimate: your average monthly credit card and debit spending, minus groceries, prescriptions and healthcare. Usually exempt across Canada: basic groceries, rent and mortgage payments, prescription drugs, most medical and dental care, insurance premiums and banking fees, childcare, tuition, and public transit. Usually taxed: restaurant meals and takeout, alcohol, clothing, electronics, furniture and household goods, gas, utilities, phone and internet, vehicles and repairs, travel, and most services. ${y.year} rates run from ${sales.atLo[0].salesTax.label} in ${places(y, sales.atLo)} to ${sales.atHi[0].salesTax.label} in ${places(y, sales.atHi)}. The starting amount is a rough estimate for a household with the adults and children set here; adjust it to match your own spending.${fd ? " Include gasoline: its GST/HST (and QST in Quebec) is counted here, and the per-litre fuel taxes come from the Driving tab." : ""}`,
     children: `Children under 18. They raise the spending estimate and add child benefits: the Canada Child Benefit plus your province's benefit (every province and territory with one), using ${benefitYear(y)} amounts. Benefits are netted off the tax shown. Once you have at least one child, drag the small slate handle on the same track to say how many are under 6, since they get a higher CCB.`,
     property: `Annual property tax = home value × municipal rate. Each province uses the typical ${y.year} residential rate in its largest city, from ${fixed(prop.lo, 2)} in ${city(prop.atLo)} to ${fixed(prop.hi, 2)} in ${city(prop.atHi)}${propCaveats.length ? `; ${clauses(propCaveats)}` : ""}. Editing the rate changes your home province only. The same home value is used everywhere, though home prices differ a lot between cities. Renters pay property tax indirectly through rent, which isn't counted here.`,
@@ -241,7 +251,7 @@ export function footerNotes(y: YearData, page: PageDefaults): string {
   });
   const fb = F.basicPersonalAmount;
   const phaseOuts = [
-    `The federal amount${mirrors.length ? ` (and ${list(mirrors)}, which ${mirrors.length > 1 ? "mirror" : "mirrors"} it)` : ""} drops from ${money(fb.max)} to ${money(fb.min)} ${phase(fb)}.`,
+    `The federal amount${mirrors.length ? ` (and ${list(mirrors)}, which ${mirrors.length > 1 ? "mirror" : "mirrors"} it)` : ""} ${typeof fb === "number" ? `is ${money(fb)} at every income` : `drops from ${money(fb.max)} to ${money(fb.min)} ${phase(fb)}`}.`,
     ...phased,
     "Phase-outs are based on net income.",
   ].join(" ");
@@ -327,6 +337,13 @@ export function footerNotes(y: YearData, page: PageDefaults): string {
     p =>
       `${p.name} adds its Health Premium (up to ${money(Math.max(...need(p.payroll?.healthPremium, "health premium").map(b => b[3])))}, based on taxable income)`,
   );
+  const familyPremiums = P.flatMap(p =>
+    p.householdPremium
+      ? [
+          `${p.name}'s MSP premiums are assessed per adult on family net income after a ${money(p.householdPremium.params.spouseDeduction)} spouse deduction and ${money(p.householdPremium.params.childDeduction)} per child, adding back ${rate(p.householdPremium.params.childcareAddbackRate)} of claimed childcare deductions. Annual per-adult bands are ${p.householdPremium.params.bands.map(([limit, amount]) => `${money(amount)} ${Number.isFinite(limit) ? `up to ${money(limit)}` : "above the last threshold"}`).join("; ")}. This estimates full-year enrollment and premium-assistance eligibility for adults under 65, using current modeled income; disability and student exemptions are not modeled. The household premium is included in payroll totals`,
+        ]
+      : [],
+  );
   const terrTax = groupBy(P.filter(p => p.payroll?.employeeTax).sort(byName), p => p.payroll?.employeeTax ?? 0).map(
     ([r, ps]) => `${list(ps.map(p => article(short(p))))} withhold${ps.length > 1 ? "" : "s"} a ${rate(r)} payroll tax`,
   );
@@ -334,14 +351,30 @@ export function footerNotes(y: YearData, page: PageDefaults): string {
     `CPP: ${fixed(cpp.base, 2)} base plus ${rate(cpp.enh1)} enhanced on earnings between ${money(cpp.exempt)} and ${money(cpp.ympe)}${cpp.enh2 ? `, and ${rate(cpp.enh2)} on earnings up to ${money(cpp.yampe)}` : "; no second additional contribution applies"}.`,
     `Quebec's QPP is ${fixed(qpp.base, 2)} base plus ${sameEnhanced ? "the same enhanced rates" : `${rate(qpp.enh1)} enhanced on earnings between ${money(qpp.exempt)} and ${money(qpp.ympe)}, and ${rate(qpp.enh2)} on earnings up to ${money(qpp.yampe)}`}.`,
     `EI: ${fixed(ei.rate, 2)} of earnings up to ${money(ei.maxInsurable)}, or ${fixed(ei.quebecRate, 2)} in Quebec, where QPIP adds ${fixed(qpip.rate, 2)} up to ${money(qpip.maxInsurable)}.`,
-    `${clauses([...premium, ...terrTax])}.`,
+    `${clauses([...premium, ...terrTax, ...familyPremiums])}.`,
     "Only employment income pays CPP/QPP, EI, QPIP and payroll tax; interest, rental and other income pays none of them.",
   ].join(" ");
+
+  const extraLevies = P.flatMap(p =>
+    p.additionalTax
+      ? [
+          `${p.name}'s temporary deficit reduction levy is added after provincial credits. It starts above ${money(p.additionalTax.params.bands[0][0])} of taxable income; each statutory band charges ${rate(p.additionalTax.params.bands[0][2])} of its excess with its own cap, up to ${money(Math.max(...p.additionalTax.params.bands.map(b => b[3])))} overall. Deductions and dividend gross-ups affect taxable income; credits do not offset this levy.`,
+        ]
+      : [],
+  );
 
   // Child benefits
   const ccb = F.childBenefit;
   const ocb = childBenefit("ON", "ontario-child-benefit").params;
-  const qfa = childBenefit(quebec.code, "quebec-family-allowance").params;
+  const qfaProgram = need(quebec.childBenefit, "Quebec family allowance");
+  if (qfaProgram.program !== "quebec-family-allowance" && qfaProgram.program !== "quebec-family-allowance-by-child")
+    throw new Error("page notes: unsupported Quebec family allowance");
+  const qfa = qfaProgram.params;
+  const qfaAmounts =
+    typeof qfa.max === "number" && typeof qfa.min === "number"
+      ? `${money(qfa.max)} to ${money(qfa.min)} per child`
+      : `ordered maximum amounts ${list((qfa.max as number[]).map(money))} and minimum amounts ${list((qfa.min as number[]).map(money))}; the last amount repeats for additional children`;
+  const abBenefit = prov("AB").childBenefit;
   const nsBenefit = prov("NS").childBenefit;
   const nwtBenefit = need(prov("NT").childBenefit, "NWT child benefit");
   if (nwtBenefit.program !== "nwt-child-benefit" && nwtBenefit.program !== "nwt-child-benefit-age-groups")
@@ -357,10 +390,30 @@ export function footerNotes(y: YearData, page: PageDefaults): string {
   const nu = childBenefit("NU", "per-child-reduced"),
     nub = nu.params;
   const children = [
-    `${benefitYear(y)} amounts, applied to current-year income: the Canada Child Benefit (${money(ccb.perChildUnder6)} per child under 6 or ${money(ccb.perChild6to17)} aged 6–17, reduced above ${money(ccb.threshold1)} of family net income), the Ontario Child Benefit (up to ${money(ocb.perChild)} per child), Quebec's family allowance (${money(qfa.max)} to ${money(qfa.min)} per child, plus the ${money(qfa.schoolSupplies)} school supplies supplement, applied to children aged 6–17), the B.C. family benefit, the Alberta Child and Family Benefit, the Nova Scotia Child Benefit, ${prov("PE").childBenefit ? "the PEI Child Benefit, " : ""}New Brunswick's Child Tax Benefit and Working Income Supplement, and the Yukon Child Benefit, all from CRA's T4114 booklet for ${benefitYear(y)} or the province's own rules.`,
+    `${benefitYear(y)} amounts, applied to current-year income: the Canada Child Benefit (${money(ccb.perChildUnder6)} per child under 6 or ${money(ccb.perChild6to17)} aged 6–17, reduced above ${money(ccb.threshold1)} of family net income), the Ontario Child Benefit (up to ${money(ocb.perChild)} per child), Quebec's family allowance (${qfaAmounts}, plus the ${money(qfa.schoolSupplies)} school supplies supplement, applied to children aged 6–17), ${bc.childBenefit?.program === "bc-early-childhood-benefit" ? "the B.C. early childhood tax benefit" : "the B.C. family benefit"}, ${abBenefit?.program === "alberta-child-benefit-and-employment" ? "the Alberta Child Benefit and Family Employment Tax Credit" : "the Alberta Child and Family Benefit"}, the Nova Scotia Child Benefit, ${prov("PE").childBenefit ? "the PEI Child Benefit, " : ""}New Brunswick's Child Tax Benefit and Working Income Supplement, and the Yukon Child Benefit, all from CRA's T4114 booklet for ${benefitYear(y)} or the province's own rules.`,
+    ...(bc.childBenefit?.program === "bc-early-childhood-benefit"
+      ? [
+          `B.C.'s early childhood tax benefit pays ${money(bc.childBenefit.params.perChild)} annually only for children under six, reduced by ${rate(bc.childBenefit.params.rate)} per eligible child on family income above ${money(bc.childBenefit.params.threshold)}.`,
+        ]
+      : []),
+    ...(abBenefit?.program === "alberta-child-benefit-and-employment"
+      ? [
+          `Alberta pays separate child and employment benefits. The child component has cumulative maximum amounts of ${list(abBenefit.params.base.map(money))} for one through four children, reduced at ${list(abBenefit.params.baseRate.map(rate))} above ${money(abBenefit.params.baseThreshold)}. The employment component phases in at ${rate(abBenefit.params.workingRate)} above ${money(abBenefit.params.workingFloor)} of working income, capped at cumulative amounts of ${list(abBenefit.params.working.map(money))}, and falls by ${rate(abBenefit.params.workingPhaseOut)} of family income above ${money(abBenefit.params.workingThreshold)}. Each positive component has its own ${money(abBenefit.params.minAnnual)} annual minimum; zero remains zero.`,
+        ]
+      : []),
+    ...(nsBenefit?.program === "nova-scotia-child-benefit-reduction"
+      ? [
+          `Nova Scotia pays annual amounts of ${list(nsBenefit.params.perChild.map(money))} for the first, second and each additional child, in full below ${money(nsBenefit.params.fullBelow)}. Above that boundary, the reduction applies to income over ${money(nsBenefit.params.threshold)} at ${list(nsBenefit.params.rate.map(rate))} for one or two children, plus ${rate(nsBenefit.params.additionalRate)} for each additional child, until the benefit reaches zero.`,
+        ]
+      : []),
     ...(bc.childBenefit?.program === "bc-family-benefit-periods"
       ? [
           `B.C.'s child opportunity benefit was renamed the family benefit during this benefit year. Each period is calculated separately before weighting: ${bc.childBenefit.params.periods.map(period => `${period.weight * 12} months at annual maximum amounts of ${list(period.max.map(money))} for the first, second and each additional child, with minimum amounts of ${list(period.min.map(money))}`).join("; ")}. Each period applies its own income reduction, minimum and zero floor.`,
+        ]
+      : []),
+    ...(bc.childBenefit?.program === "bc-child-benefit-transition"
+      ? [
+          `B.C.'s benefit changed during this benefit year. The early childhood benefit covers ${bc.childBenefit.params.early.weight * 12} months for children under six: ${money(bc.childBenefit.params.early.perChild)} annually per eligible child, reduced by ${rate(bc.childBenefit.params.early.rate)} per child on family income above ${money(bc.childBenefit.params.early.threshold)}. The child opportunity benefit covers ${bc.childBenefit.params.opportunity.weight * 12} months for all children under 18, with annual maximum amounts of ${list(bc.childBenefit.params.opportunity.max.map(money))} for the first, second and each additional child. Each program applies its own reductions and zero floor before its share of the year is applied. Household ages are held fixed across both periods.`,
         ]
       : []),
     ...(nsBenefit?.program === "nova-scotia-child-benefit-by-child"
@@ -404,9 +457,11 @@ export function footerNotes(y: YearData, page: PageDefaults): string {
     "Manitoba property credits",
   );
   const mbDescription =
-    mb.program === "mb-school-tax-credits" || mb.program === "mb-school-tax-credits-rent-share"
-      ? `Manitoba's school tax rebate (${rate(mb.params.schoolRebateRate)} of estimated school taxes), education property tax credit (up to ${money(mb.params.educationCreditMax)} of remaining school taxes) and renters tax credit (up to ${money(mb.params.renterMax)}, ${mb.program === "mb-school-tax-credits-rent-share" ? `${rate(mb.params.renterShare)} of rent paid before applying the cap` : "capped by rent paid"})`
-      : "Manitoba's renters and homeowners affordability credits";
+    mb.program === "mb-school-tax-credits-rent-share" && mb.params.schoolRebateRate === 0
+      ? `Manitoba's education property tax credit (up to ${money(mb.params.educationCreditMax)} of school taxes for owners, or ${rate(mb.params.renterShare)} of rent paid for renters, capped at ${money(mb.params.renterMax)})`
+      : mb.program === "mb-school-tax-credits" || mb.program === "mb-school-tax-credits-rent-share"
+        ? `Manitoba's school tax rebate (${rate(mb.params.schoolRebateRate)} of estimated school taxes), education property tax credit (up to ${money(mb.params.educationCreditMax)} of remaining school taxes) and renters tax credit (up to ${money(mb.params.renterMax)}, ${mb.program === "mb-school-tax-credits-rent-share" ? `${rate(mb.params.renterShare)} of rent paid before applying the cap` : "capped by rent paid"})`
+        : "Manitoba's renters and homeowners affordability credits";
   const cwbEstimate =
     cwb.estimationNote ?? `these ${year} values are CRA's ${lastYearIndexed} until CRA publishes them`;
   // The list below names these programs in prose; a year whose data drops one fails here instead of misreporting it.
@@ -484,6 +539,23 @@ export function footerNotes(y: YearData, page: PageDefaults): string {
       })()
     : "";
 
+  const carbonProvinces = P.filter(p => p.carbon);
+  const carbon = carbonProvinces.length
+    ? [
+        `Carbon charges on gasoline use the driving inputs and rates within ${year}, weighted by days as if driving were even through the year.`,
+        ...carbonProvinces.map(p => {
+          const c = need(p.carbon, `${p.code} carbon pricing`);
+          const timing = c.rebates.some(r => r.estimated)
+            ? " Cash follows the published quarterly schedule; discretionary consolidation of small payments is not reconstructed."
+            : "";
+          return `${short(p)}: gasoline ${rateText(c.gasoline, year)}; estimated household heating ${money(c.heating.amount)} (${c.heating.method}).${timing}`;
+        }),
+        "Heating estimates stay fixed when household size, home value or driving changes. Sales tax on gasoline and heating is counted in taxable spending, so it is not added again here.",
+        `Rebates count cash payments in calendar ${year}, including any final payments after a charge ended. Family composition is held fixed and income-tested credits use the modeled current family income; payment arrears and individual filing dates are not reconstructed.`,
+        "Reference-city rebate amounts include any province-wide rural supplement. Quebec cap-and-trade and carbon costs embedded in goods or electricity are excluded.",
+      ].join(" ")
+    : "";
+
   // What's not included
   const bpaChanges = P.filter(p => p.basicPersonalAmountChange).map(p => {
     const c = need(p.basicPersonalAmountChange, "amount change");
@@ -502,8 +574,9 @@ export function footerNotes(y: YearData, page: PageDefaults): string {
   return [
     para(
       "What's included",
-      `Each bracket rate is applied to the portion of taxable income in that bracket, federal plus provincial. With basic personal amounts on, each government's amount is credited at its lowest bracket rate (federal: ${rate(F.brackets[0][1])} of ${money(fb.max)}), and a credit can reduce tax to zero but not below. The blended rate is total tax ÷ actual income received; the marginal rate is the tax on the next dollar, including credit phase-outs.`,
+      `Each bracket rate is applied to the portion of taxable income in that bracket, federal plus provincial. With basic personal amounts on, each government's amount is credited at its lowest bracket rate (federal: ${rate(F.brackets[0][1])} of ${money(typeof fb === "number" ? fb : fb.max)}), and a credit can reduce tax to zero but not below. The blended rate is total tax ÷ actual income received; the marginal rate is the tax on the next dollar, including credit phase-outs.`,
     ),
+    ...(extraLevies.length ? [para("Additional provincial tax", extraLevies.join(" "))] : []),
     para(
       "Deductions",
       `Annual RRSP, FHSA and other deductions claimed are added once and subtracted from total income to get taxable income. Enter eligible claims, including deferred contributions, rather than contributions made this year; account room and eligibility are not calculated. The Use estimate RRSP link uses ${rate(F.rrsp.rate)} of the employment income entered, up to the ${year} dollar limit of ${money(F.rrsp.limit)}; your real limit is based on last year's earned income and any unused room, as shown on your notice of assessment.`,
@@ -515,9 +588,10 @@ export function footerNotes(y: YearData, page: PageDefaults): string {
     para("Refundable credits", credits),
     para("Property tax", property),
     ...(fuel ? [para("Fuel tax", fuel)] : []),
+    ...(carbon ? [para("Carbon pricing", carbon)] : []),
     para(
       "What's not included",
-      `Age, pension, disability, medical, donation and other personal credits; pension income splitting; ${fd ? "taxes on diesel and heating fuel, other excise taxes" : "fuel, excise"} and corporate taxes.${bpaChanges.join("")}`,
+      `Age, pension, disability, medical, donation and other personal credits; pension income splitting; ${carbon ? (fd ? "ordinary diesel and heating-fuel taxes, other excise taxes" : "ordinary gasoline, diesel and heating-fuel taxes, other excise taxes") : fd ? "taxes on diesel and heating fuel, other excise taxes" : "fuel, excise"} and corporate taxes.${bpaChanges.join("")}`,
     ),
     para("Investment income", investment),
     para(

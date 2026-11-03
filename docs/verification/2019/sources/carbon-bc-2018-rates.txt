@@ -1,0 +1,725 @@
+Title: Bill 5 – 2017: Constitution Amendment Act, 2017
+URL: https://www.bclaws.gov.bc.ca/civix/document/id/lc/billsprevious/2nd41st%3Agov02-3
+Fetched: 2026-11-02
+SHA-256 of the original: c52c9b19daf0a2006459b1a9a2ce19c0dbc963636958d5774e8b22eddb047694
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+##### 2017 Legislative Session: 2nd Session, 41st Parliament
+THIRD READING
+
+The following electronic version is for informational purposes only.
+The printed version remains the official version.
+
+Certified correct as amended in Committee of the Whole on the 26th day of October, 2017
+Craig James, Clerk of the House
+
+HONOURABLE CAROLE JAMES
+MINISTER OF FINANCE
+AND DEPUTY PREMIER
+
+## BILL 2 – 2017
+
+### BUDGET MEASURES IMPLEMENTATION ACT, 2017
+
+HER MAJESTY, by and with the advice and consent of the Legislative Assembly of the Province of British Columbia, enacts as follows:
+
+Part 1 – Non-Tax Budget Measures
+
+North Island-Coast Development Initiative Trust Act
+
+1 Section 17 of the North Island-Coast Development Initiative Trust Act, S.B.C. 2005, c. 36, is amended
+
+(a) by renumbering the section as section 17 (1),
+
+(b) in subsection (1) by striking out "$50 million" and substituting "$60 million", and
+
+(c) by adding the following subsection:
+
+(2) Section 7 (2) (b), (c) and (d) applies to the directors of the North Island-Coast Development Initiative Trust.
+
+Transportation Investment Act
+
+2 Section 24.1 of the Transportation Investment Act, S.B.C. 2002, c. 65, is amended in the definition of "director" by striking out "by the Lieutenant Governor in Council".
+
+3 Section 24.2 (3) is repealed and the following substituted:
+
+(3) The share in the corporation must be registered in the name of and held by the BC Transportation Financing Authority.
+
+4 Section 24.3 is amended
+
+(a) in subsection (2) by striking out "the Lieutenant Governor in Council" and substituting "the board of directors of the BC Transportation Financing Authority", and
+
+(b) by repealing subsection (4).
+
+5 Section 24.33 is repealed.
+
+6 Section 24.34 (3) is amended by striking out "but subject to section 24.33".
+
+Transitional Provisions
+
+#### Transition – presentation and reporting
+obligations for 2017-2018 fiscal year
+
+7 (1) In this section, "new main estimates" means the main estimates for the 2017-2018 fiscal year presented under section 6 (2) of the Budget Transparency and Accountability Act.
+
+(2) The new main estimates, and the documents presented or made public in relation to the new main estimates under
+
+(a) section 7 [economic and fiscal forecasts],
+
+(b) section 8 [major capital project information],
+
+(c) section 12 [government strategic plan], or
+
+(d) section 13 [service plans]
+
+of the Budget Transparency and Accountability Act, are the ones that apply for the purposes of Part 2 [Fiscal Reports] and Part 4 [Service Plan Reports] of that Act in relation to the 2017-2018 fiscal year.
+
+(3) The new main estimates are the ones that apply for the purposes of the Balanced Budget and Ministerial Accountability Act in relation to the 2017-2018 fiscal year.
+
+(4) The new main estimates are the ones that apply for the purposes of the Carbon Tax Act in relation to the 2017-2018 fiscal year.
+
+(5) The carbon tax plan presented to the Legislative Assembly with the new main estimates is deemed to be a carbon tax plan referred to in section 3 of the Carbon Tax Act.
+
+(6) The documents presented under section 4 of the Carbon Tax Act with the new main estimates are the ones that apply for the purposes of the Carbon Tax Act in relation to the 2017-2018 fiscal year.
+
+#### Transportation Investment Act transition
+
+8 (1) The share in the Transportation Investment Corporation is transferred from the Minister of Transportation and Infrastructure to, and is vested in, the BC Transportation Financing Authority without an appropriation other than this section.
+
+(2) Despite any provision to the contrary in a security agreement or other agreement or record, the transfer of the share referred to in subsection (1) does not constitute a breach or contravention of, or a default under, the security agreement or other agreement or record and, without limiting this, does not entitle any party to any security agreement or other agreement or record to claim any damages or compensation or to terminate the security agreement or other agreement or record.
+
+Part 2 – Tax-Related Budget Measures
+
+Carbon Tax Act
+
+9 Section 1 (1) of the Carbon Tax Act, S.B.C. 2008, c. 40, is amended by repealing the definition of "scheduled rate change" and substituting the following:
+
+"scheduled rate change" means a modification in a rate of tax set out in the Table in Schedule 1 that comes into effect
+
+(a) as of July 1 of a year before 2018, or
+
+(b) as of April 1 of a year after 2017; .
+
+10 Part 2 is repealed.
+
+11 The Table in Schedule 1 is amended by repealing the heading to Column 8 and substituting the following:
+
+Rate of tax for the period starting July 1, 2012 and ending March 31, 2018 .
+
+12 Schedule 1 is amended by adding the following as a continuation of the existing Table:
+
+Column 1 | Column 2 | Column 9 | Column 10 | Column 11 | Column 12
+Item | Type of Fuel | Rate of tax for the year starting April 1, 2018 | Rate of tax for the year starting April 1, 2019 | Rate of tax for the year starting April 1, 2020 | Rate of tax for the year starting April 1, 2021 and each subsequent year starting April 1
+1 | Aviation Fuel | 8.61 ¢/L | 9.84 ¢/L | 11.07 ¢/L | 12.30 ¢/L
+2 | Gasoline | 7.78 ¢/L | 8.89 ¢/L | 10.01 ¢/L | 11.12 ¢/L
+3 | Heavy Fuel Oil | 11.03 ¢/L | 12.60 ¢/L | 14.18 ¢/L | 15.75 ¢/L
+4 | Jet Fuel | 9.14 ¢/L | 10.44 ¢/L | 11.75 ¢/L | 13.05 ¢/L
+5 | Kerosene | 9.14 ¢/L | 10.44 ¢/L | 11.75 ¢/L | 13.05 ¢/L
+6 | Light Fuel Oil | 8.95 ¢/L | 10.23 ¢/L | 11.51 ¢/L | 12.78 ¢/L
+7 | Methanol | 3.82 ¢/L | 4.36 ¢/L | 4.91 ¢/L | 5.45 ¢/L
+8 | Naphtha | 8.93 ¢/L | 10.20 ¢/L | 11.48 ¢/L | 12.75 ¢/L
+9 | Butane | 6.16 ¢/L | 7.04 ¢/L | 7.92 ¢/L | 8.80 ¢/L
+10 | Coke Oven Gas | 5.64 ¢/m 3 | 6.44 ¢/m 3 | 7.25 ¢/m 3 | 8.05 ¢/m 3
+11 | Ethane | 3.43 ¢/L | 3.92 ¢/L | 4.41 ¢/L | 4.90 ¢/L
+12 | Propane | 5.39 ¢/L | 6.16 ¢/L | 6.93 ¢/L | 7.70 ¢/L
+13 | Natural Gas | 6.65 ¢/m 3 | 7.60 ¢/m 3 | 8.55 ¢/m 3 | 9.50 ¢/m 3
+14 | Refinery Gas | 6.16 ¢/m 3 | 7.04 ¢/m 3 | 7.92 ¢/m 3 | 8.80 ¢/m 3
+15 | High Heat Value Coal | 72.70 $/tonne | 83.08 $/tonne | 93.47 $/tonne | 103.85 $/tonne
+16 | Low Heat Value Coal | 62.20 $/tonne | 71.08 $/tonne | 79.97 $/tonne | 88.85 $/tonne
+17 | Coke | 87.05 $/tonne | 99.48 $/tonne | 111.92 $/tonne | 124.35 $/tonne
+18 | Petroleum Coke | 12.85 ¢/L | 14.68 ¢/L | 16.52 ¢/L | 18.35 ¢/L
+19 | Gas Liquids | 5.78 ¢/L | 6.60 ¢/L | 7.43 ¢/L | 8.25 ¢/L
+20 | Pentanes Plus | 6.16 ¢/L | 7.04 ¢/L | 7.92 ¢/L | 8.80 ¢/L
+
+13 The Table in Schedule 2 is amended by repealing the heading to Column 7 and substituting the following:
+
+Rate of tax for the period starting on July 1, 2012 and ending on March 31, 2018 .
+
+14 Schedule 2 is amended by adding the following as a continuation of the existing Table:
+
+Column 1 | Column 2 | Column 8 | Column 9 | Column 10 | Column 11
+Item | Type of Combustible | Rate of tax for the year starting on April 1, 2018 | Rate of tax for the year starting on April 1, 2019 | Rate of tax for the year starting on April 1, 2020 | Rate of tax for the year starting on April 1, 2021 and each subsequent year starting on April 1
+1 | Peat | 35.77 $/tonne | 40.88 $/tonne | 45.99 $/tonne | 51.10 $/tonne
+2 | Tires – Shredded | 83.69 $/tonne | 95.64 $/tonne | 107.60 $/tonne | 119.55 $/tonne
+3 | Tires – Whole | 72.80 $/tonne | 83.20 $/tonne | 93.60 $/tonne | 104.00 $/tonne
+
+Home Owner Grant Act
+
+15 Section 13.1 of the Home Owner Grant Act, R.S.B.C. 1996, c. 194, is amended
+
+(a) in subsection (1) in paragraph (b) of the definition of "shared information" by adding "section 64 of the Income Tax Act," before "section 32 of the Property Transfer Tax Act",
+
+(b) in subsection (2) (b) by striking out "or" at the end of subparagraph (iii) and by adding the following subparagraph:
+
+(iv) the Income Tax Act, or ,
+
+(c) in subsection (3) by striking out "Subject to subsection (5)" and substituting "Subject to subsections (3.1) and (5)", and
+
+(d) by adding the following subsection:
+
+(3.1) Subsection (3) does not permit a ministry person to use or disclose shared information collected as a result of a disclosure under the Income Tax Act if that use or disclosure is
+
+(a) for the purposes of administering or enforcing the Land Tax Deferment Act, or
+
+(b) in court proceedings related to that Act.
+
+Income Tax Act
+
+16 Section 4.1 of the Income Tax Act, R.S.B.C. 1996, c. 215, is amended
+
+(a) in subsection (1) (e) by striking out "if the taxable income exceeds $85 000," and substituting "if the taxable income exceeds $85 000 and does not exceed $150 000,",
+
+(b) in subsection (1) (e) (ii) by striking out "that exceeds $85 000." and substituting "that exceeds $85 000 and does not exceed $150 000;",
+
+(c) in subsection (1) by adding the following paragraph:
+
+(g) if the taxable income exceeds $150 000,
+
+(i) the highest amount that might be determined for an individual under paragraph (e) of this subsection,
+
+plus
+
+(ii) 16.8% of the taxable income that exceeds $150 000. , and
+
+(d) in subsection (2) by striking out "subsection (1) (b) (i), (c) (i), (d) (i) and (e) (i), the highest amount that might be determined for an individual under subsection (1) (a), (b), (c) or (d)," and substituting "subsection (1) (b) (i), (c) (i), (d) (i), (e) (i) and (g) (i), the highest amount that might be determined for an individual under subsection (1) (a), (b), (c), (d) or (e),".
+
+17 Section 4.34 is repealed and the following substituted:
+
+#### Child fitness credit
+
+4.34 (1) In this section, "eligible fitness expense" and "qualifying child" have the same meaning as in section 122.8 (1) of the federal Act, as that section, and any regulations referred to in that section, read on December 31, 2016.
+
+(2) For the purpose of computing the tax payable under this Act for a taxation year by an individual who was resident in British Columbia on the last day of the taxation year, there may be deducted the amount determined by the formula
+
+A x B
+
+where
+
+A | is the appropriate percentage for the year, and
+B | is the total of all amounts each of which is, in respect of a qualifying child of the individual for the year, the lesser of $500 and the amount determined by the formula C - D where
+| C | is the total of all amounts each of which is an amount paid in the year by the individual, or by the individual's spouse or common-law partner, that is an eligible fitness expense in respect of the qualifying child of the individual, and
+| D | is the total of all amounts that any person is or was entitled to receive, each of which relates to an amount included in computing the value determined for C in respect of the qualifying child that is the amount of a reimbursement, allowance or any other form of assistance, other than an amount that is included in computing the income for any taxation year of that person and that is not deductible in computing the taxable income of that person.
+
+(3) For the purpose of computing the tax payable under this Act for a taxation year by an individual who was resident in British Columbia on the last day of the taxation year, there may be deducted in respect of a qualifying child of the individual the amount equal to $500 multiplied by the appropriate percentage for the year, if
+
+(a) the amount referred to in the description of "B" in subsection (2) is $100 or more, and
+
+(b) an amount is deductible in respect of the qualifying child under section 118.3 of the federal Act in computing any person's tax payable under Part I of that Act for the year.
+
+(4) If more than one individual is entitled to a deduction under this section for a taxation year in respect of a qualifying child,
+
+(a) the total of all amounts deducted by the individuals under this section in respect of the qualifying child must not exceed the maximum amount that would be deductible for the year by any one of the individuals in respect of that qualifying child if that individual were the only individual entitled to deduct an amount under this section, and
+
+(b) if the individuals cannot agree as to what portion of the total amount each individual can deduct under this section, the minister may fix the portions.
+
+18 Sections 4.34 and 4.341 are repealed.
+
+19 Section 4.35 is repealed and the following substituted:
+
+#### Child arts credit
+
+4.35 (1) In this section:
+
+"eligible expense" has the same meaning as in section 118.031 (1) of the federal Act, as that section, and any regulations referred to in that section, read on December 31, 2016;
+
+"qualifying child" has the same meaning as in section 122.8 (1) of the federal Act, as that section read on December 31, 2016.
+
+(2) For the purpose of computing the tax payable under this Act for a taxation year by an individual who was resident in British Columbia on the last day of the taxation year, there may be deducted the amount determined by the formula
+
+A x B
+
+where
+
+A | is the appropriate percentage for the year, and
+B | is the total of all amounts each of which is, in respect of a qualifying child of the individual for the year, the lesser of $500 and the amount determined by the formula C - D where
+| C | is the total of all amounts each of which is an amount paid in the year by the individual, or by the individual's spouse or common-law partner, that is an eligible expense in respect of the qualifying child of the individual, and
+| D | is the total of all amounts that any person is or was entitled to receive, each of which relates to an amount included in computing the value determined for C in respect of the qualifying child that is the amount of a reimbursement, allowance or any other form of assistance, other than an amount that is included in computing the income for any taxation year of that person and that is not deductible in computing the taxable income of that person.
+
+(3) For the purpose of computing the tax payable under this Act for a taxation year by an individual who was resident in British Columbia on the last day of the taxation year, there may be deducted in respect of a qualifying child of the individual the amount equal to $500 multiplied by the appropriate percentage for the year, if
+
+(a) the amount referred to in the description of "B" in the formula in subsection (2) is $100 or more, and
+
+(b) an amount is deductible in respect of the qualifying child under section 118.3 of the federal Act in computing any person's tax payable under Part I of that Act for the year.
+
+(4) If more than one individual is entitled to a deduction under this section for a taxation year in respect of a qualifying child,
+
+(a) the total of all amounts deducted by the individuals under this section in respect of the qualifying child must not exceed the maximum amount that would be deductible for the year by any one of the individuals in respect of that qualifying child if that individual were the only individual entitled to deduct an amount under this section, and
+
+(b) if the individuals cannot agree as to what portion of the total amount each individual can deduct under this section, the minister may fix the portions.
+
+20 Section 4.35 is repealed.
+
+21 The following section is added:
+
+#### BC back-to-school tax credit
+
+4.351 (1) In this section, "qualifying child", in respect of an individual for a taxation year, means a child of the individual who is, immediately before the beginning of the calendar year in which the taxation year ends, at least 4 years of age but less than 17 years of age.
+
+(2) For the purpose of computing the tax payable under this Act for a taxation year by an individual who was resident in British Columbia on the last day of the taxation year, there may be deducted the amount determined by the formula
+
+A x B x C
+
+where
+
+A | is the appropriate percentage for the year,
+B | is the number of qualifying children of the individual in respect of whom a deduction is made under this section for the year, and
+C | is $250.
+
+(3) If more than one individual is entitled to a deduction under this section for a taxation year that ends in a calendar year in respect of a qualifying child, only one of those individuals may deduct an amount under this section for any taxation year that ends in the calendar year in respect of the qualifying child.
+
+(4) If the individuals referred to in subsection (3) cannot agree which of those individuals may deduct an amount under this section in respect of the qualifying child, the minister may designate an individual who may deduct an amount under this section in respect of that qualifying child.
+
+22 Section 4.351 is repealed.
+
+23 The following section is added:
+
+#### Tax credit for volunteer firefighters and
+search and rescue volunteers
+
+4.37 (1) For the purpose of computing the tax payable under this Act for a taxation year by an individual who was resident in British Columbia on the last day of the taxation year and who is entitled to a deduction under section 118.06 (2) or 118.07 (2) of the federal Act for the year, there may be deducted an amount determined by multiplying $3 000 by the appropriate percentage for the year.
+
+(2) If an amount is not included in computing the individual's income for a taxation year because of section 81 (4) of the federal Act, no deduction may be made under this section in computing the tax payable by the individual for the taxation year.
+
+24 Section 4.51 is amended
+
+(a) in subsection (2) (b) by adding "4.351 [BC back-to-school tax credit]," after "4.35 [child arts credit],", and
+
+(b) in subsection (4) in the description of "T" by adding "4.351 [BC back-to-school tax credit]," after "4.35 [child arts credit],".
+
+25 Section 4.51 is amended
+
+(a) in subsection (2) (b) by striking out "4.351 [BC back-to-school tax credit], 4.36 [BC education coaching tax credit]" and substituting "4.36 [BC education coaching tax credit], 4.37 [tax credit for volunteer firefighters and search and rescue volunteers]", and
+
+(b) in subsection (4) in the description of "T" by striking out "4.351 [BC back-to-school tax credit], 4.36 [BC education coaching tax credit]" and substituting "4.36 [BC education coaching tax credit], 4.37 [tax credit for volunteer firefighters and search and rescue volunteers]".
+
+26 The following sections are amended by striking out "4.34 [child fitness credit], 4.341 [child fitness equipment credit], 4.35 [child arts credit],":
+
+(a) section 4.51 (2) (b);
+
+(b) section 4.51 (4) in the description of "T";
+
+(c) section 4.65 in paragraphs (a) and (b) (ii) of the description of "C";
+
+(d) section 4.66 (a) in the description of "B";
+
+(e) section 4.74 (a);
+
+(f) section 4.76 (1) (b) (i).
+
+27 Section 4.52 is amended by adding the following subsection:
+
+(4.22) For the purpose of computing the tax payable by an individual for the 2018 taxation year, each amount expressed in dollars in a relevant provision is to be adjusted in accordance with subsection (2), except the amount of $150 000 referred to in section 4.1 (1) (e) and (g).
+
+28 Section 4.62 is amended
+
+(a) in subsection (1) (b) by adding the following subparagraph:
+
+(iii.31) section 4.351 [BC back-to-school tax credit]; , and
+
+(b) in subsection (2) in the description of "C" by adding the following paragraph:
+
+(c.31) section 4.351 [BC back-to-school tax credit]; .
+
+29 Section 4.62 is amended
+
+(a) by repealing subsection (1) (b) (iii.31),
+
+(b) in subsection (1) (b) by adding the following subparagraph:
+
+(iii.5) section 4.37 [tax credit for volunteer firefighters and search and rescue volunteers]; , and
+
+(c) in subsection (2) in the description of "C" by repealing paragraph (c.31) and by adding the following paragraph:
+
+(c.5) section 4.37 [tax credit for volunteer firefighters and search and rescue volunteers]; .
+
+30 Section 4.62 is amended
+
+(a) in subsection (1) (b) by repealing subparagraphs (iii.2), (iii.21) and (iii.3), and
+
+(b) in subsection (2) in the description of "C" by repealing paragraphs (c.2), (c.21) and (c.3).
+
+31 Section 4.65 is amended in paragraphs (a) and (b) (ii) of the description of "C" by adding "4.351 [BC back-to-school tax credit]," after "4.35 [child arts credit],".
+
+32 Section 4.65 is amended in paragraphs (a) and (b) (ii) of the description of "C" by striking out "4.351 [BC back-to-school tax credit]," and by adding "4.37 [tax credit for volunteer firefighters and search and rescue volunteers]," after "4.36 [BC education coaching tax credit],".
+
+33 Section 4.66 (a) is amended in the description of "B" by adding "4.351 [BC back-to-school tax credit]," after "4.35 [child arts credit],".
+
+34 Section 4.66 (a) is amended in the description of "B" by striking out "4.351 [BC back-to-school tax credit]," and by adding "4.37 [tax credit for volunteer firefighters and search and rescue volunteers]," after "4.36 [BC education coaching tax credit],".
+
+35 Section 4.69 (a) is amended by striking out "17%" and substituting "15%".
+
+36 Section 4.69 (b) is amended by striking out "36 6/19%" and substituting "43 11/19%".
+
+37 Section 4.721 is amended
+
+(a) in subsection (1) in paragraph (d) of the definition of "BC flow-through mining expenditure" by striking out "before 2017" and substituting "before 2018", and
+
+(b) in subsection (1.1) by striking out "before 2017" in both places and substituting "before 2018".
+
+38 Sections 4.74 (a) and 4.76 (1) (b) (i) are amended by adding "4.37 [tax credit for volunteer firefighters and search and rescue volunteers]," after "4.36 [BC education coaching tax credit],".
+
+39 Sections 4.74 (b) and 4.76 (1) (b) (ii) are amended by adding "4.351 [BC back-to-school tax credit]," after "4.31 [age credit],".
+
+40 Sections 4.74 (b) and 4.76 (1) (b) (ii) are amended by striking out "4.351 [BC back-to-school tax credit],".
+
+41 Section 4.78 (2) is amended by adding the following paragraph:
+
+(c.31) section 4.351 [BC back-to-school tax credit]; .
+
+42 Section 4.78 (2) is amended by adding the following paragraph:
+
+(c.5) section 4.37 [tax credit for volunteer firefighters and search and rescue volunteers]; .
+
+43 Section 4.78 (2) (c.2), (c.21) and (c.3) is repealed.
+
+44 Section 4.78 (2) (c.31) is repealed.
+
+45 Section 4.79 (1) is amended by adding the following paragraph:
+
+(b.1) section 4.351 [BC back-to-school tax credit]; .
+
+46 Section 4.79 (1) is amended
+
+(a) by repealing paragraph (b.1), and
+
+(b) by adding the following paragraph:
+
+(d.5) section 4.37 [tax credit for volunteer firefighters and search and rescue volunteers]; .
+
+47 Section 4.79 (1) (d.2), (d.21) and (d.3) is repealed.
+
+48 Sections 14 (2) and (3.1) (a), 16 (1) (b) and (2) (b) and 25 (2) are amended by striking out "11%" and substituting "12%".
+
+49 Section 16 (1) (a) and (b), (2) (a) and (b) and (4) is amended by striking out "2.5%" and substituting "2%".
+
+50 Section 16 (2) (a) is amended
+
+(a) by repealing the description of "D" and substituting the following:
+
+D | means the amount, if any, by which
+| (i) the amount that would be determined, in respect of the corporation for the taxation year, under the description of "D" in section 137 (3) of the federal Act if the preferred-rate amount under section 137 (4.3) of the federal Act were calculated on the basis that, for all taxation years, section 137 of the federal Act applied as if paragraph (f) of the description of "C" in section 137 (3) of the federal Act were read as "the proportion of 100% that the number of days in the year that are after 2016 is of the number of days in the year" exceeds
+| (ii) the amount determined under the description of "C" in this paragraph, and
+
+, and
+
+(b) by repealing subparagraphs (iii) to (vi) of the description of "E" and substituting the following:
+
+(iii) for any taxation year, or part of a taxation year, that is after December 31, 2016, the applicable amount for that taxation year or part is determined by dividing the number of days in the taxation year that are after December 31, 2016 by the total number of days in that taxation year, and .
+
+51 Section 25.1 (1) is amended
+
+(a) in paragraph (f.2) (i) of the definition of "excluded expense" by striking out "before January 1, 2017" and substituting "before January 1, 2018", and
+
+(b) in paragraph (f.2) (ii) of the definition of "excluded expense" by striking out "after December 31, 2016" and substituting "after December 31, 2017" and by striking out "before January 1, 2018" and substituting "before January 1, 2019".
+
+52 Section 25.1 is amended
+
+(a) in subsection (1) in paragraph (a) of the definition of "excluded expense" by adding "other than an expense incurred after February 28, 2015 for environmental studies or community consultations undertaken to obtain a right, licence or privilege for the purpose of determining the existence, location, extent or quality of a mineral resource in British Columbia," after "the federal Act,",
+
+(b) in subsection (1) in paragraph (c) of the definition of "qualified mining exploration expense" by striking out everything after "including" and substituting the following:
+
+(i) such an expense incurred after February 28, 2015 for environmental studies or community consultations, including environmental studies or community consultations undertaken to obtain a right, licence or privilege for the purpose of determining the existence, location, extent or quality of a mineral resource in British Columbia, and
+
+(ii) any expense incurred in the course of
+
+(A) prospecting,
+
+(B) carrying out geological, geophysical or geochemical surveys,
+
+(C) drilling by rotary, diamond, percussion or other methods, or
+
+(D) trenching, digging test pits and preliminary sampling, and , and
+
+(c) in subsection (4.5) (b) by striking out "reference" and substituting "references".
+
+53 Section 64 (5) (c) is amended by adding the following subparagraph:
+
+(iii.3) to an official solely for the purposes of the administration or enforcement of the Home Owner Grant Act, including for greater certainty a purpose set out in section 13.1 (3) (b) (ii) or (iii) or (c) of that Act, except in respect of court proceedings related to the Land Tax Deferment Act, .
+
+54 The following section is added:
+
+#### British Columbia Assessment Authority must provide information
+
+77.2 The British Columbia Assessment Authority must provide, without charge, assistance and access to its records to the minister and the Commissioner of Income Tax.
+
+55 Section 97 is amended in paragraph (b) of the definition of "BC qualified expenditure" by striking out "September 1, 2017" and substituting "September 1, 2022".
+
+56 Section 111 (1) is amended in the definition of "CBF contribution" by striking out "April 1, 2017" and substituting "April 1, 2018".
+
+57 Section 117 is amended by striking out "January 1, 2018" and substituting "January 1, 2019".
+
+58 Section 121 is amended by striking out "December 31, 2017" and substituting "December 31, 2018".
+
+59 Section 133 is amended
+
+(a) by repealing subsection (1) (d) and (e) and substituting the following:
+
+(d) either of the following applies:
+
+(i) the corporation's eligible salary and wages, as determined under section 134 (2) for the taxation year, is equal to or greater than $2 million;
+
+(ii) the corporation's eligible salary and wages, as determined under section 134 (2) for the taxation year, is greater than $100 000 and less than $2 million and either of the following applies:
+
+(A) the corporation's principal business in the taxation year is the development of interactive digital media products;
+
+(B) all or substantially all of the corporation's business in the taxation year consists of one or both of the following:
+
+(I) the development of interactive digital media products;
+
+(II) the provision of eligible activities to one or more recipient corporations that meet the criteria set out in subsection (1.1) of this section. ,
+
+(b) by adding the following subsection:
+
+(1.1) The criteria for the purposes of subsection (1) (d) (ii) (B) (II) are as follows:
+
+(a) the recipient corporation has a permanent establishment in British Columbia;
+
+(b) in a taxation year of the recipient corporation that includes any part of the taxation year of the corporation that is providing the eligible activities,
+
+(i) the principal business of the recipient corporation is the development of interactive digital media products, or
+
+(ii) the eligible salary and wages of the recipient corporation, as determined under section 134 (2), is equal to or greater than $2 million. ,
+
+(c) by repealing subsection (2) and substituting the following:
+
+(2) If a corporation has a taxation year of less than 365 days,
+
+(a) the reference in subsection (1) (d) (i) and (ii) to $2 million is to be read in respect of the corporation as a reference to the amount equal to that proportion of $2 million that the number of days in the taxation year bears to 365, and
+
+(b) the reference in subsection (1) (d) (ii) to $100 000 is to be read in respect of the corporation as a reference to the amount equal to that proportion of $100 000 that the number of days in the taxation year bears to 365.
+
+(2.1) If a recipient corporation has a taxation year of less than 365 days, the reference in subsection (1.1) (b) (ii) to $2 million is to be read in respect of the recipient corporation as a reference to the amount equal to that proportion of $2 million that the number of days in the taxation year bears to 365. ,
+
+(d) by repealing subsection (3) (g), and
+
+(e) in subsection (3) (h) by striking out "paragraphs (a) to (g)" and substituting "paragraphs (a) to (f)".
+
+International Business Activity Act
+
+60 Section 8 of the International Business Activity Act, S.B.C. 2004, c. 49, is amended by adding the following subsection:
+
+(3) This Act does not apply to a corporation or an individual for taxation years beginning after September 11, 2017.
+
+61 Part 2 is amended by adding the following Division:
+
+Division 0.1 – Applications and Registration after September 11, 2017
+
+#### No registrations after September 11, 2017
+
+8.1 (1) Despite Divisions 1 [Corporations] and 2 [Individuals], after September 11, 2017,
+
+(a) an application for registration of a corporation may not be made under section 9 [application for registration],
+
+(b) a corporation may not be registered under section 10 (1) [registration] unless the corporation submits, on or before September 11, 2017, the application for registration and any information, records or fees required under section 9,
+
+(c) if 2 or more corporations to which section 10 (2) applies have amalgamated, the new corporation may not be registered under that section unless
+
+(i) the date of amalgamation is on or before September 11, 2017, and
+
+(ii) the new corporation submits, within 90 days after the date of amalgamation, the notice and any information or records required under section 10 (2) (a),
+
+(d) if 2 or more corporations to which section 10 (3) applies have amalgamated, the new corporation may not be registered under that section unless the date of amalgamation is on or before September 11, 2017,
+
+(e) an application for registration of an individual may not be made under
+
+(i) section 13 [application for registration of IFA specialists],
+
+(ii) section 13.1 [application for registration of administrative support specialists],
+
+(iii) section 13.2 [application for registration of executive specialists], or
+
+(iv) section 13.3 [application for registration of specialists in designated international business], and
+
+(f) an individual may not be registered under section 14 [registration of IB specialist] unless the corporation applying for registration submits, on or before September 11, 2017, the application for registration and any information or records required under section 13.4 [general rules for applications for specialist].
+
+(2) Despite Divisions 1 and 2, a notice of refusal of registration is not required in relation to a registration that may not be made as a result of this section.
+
+#### Conditions of registration after September 11, 2017
+
+8.2 (1) Despite section 11 (1) [conditions of registration], after September 11, 2017, a registered corporation is not required to
+
+(a) continue to meet the requirements of section 9 (1) [application for registration],
+
+(b) continue to carry on an international business, or
+
+(c) remain a member of the Society.
+
+(2) Despite section 12 [suspension or cancellation of registration and refusal to register], the commissioner may not suspend or cancel the registration of a corporation only because the corporation, after September 11, 2017, fails to meet any of the requirements referred to in subsection (1) of this section.
+
+62 Section 17.1 (2) (b) is amended in the description of "days registered"
+
+(a) in subparagraph (i) by striking out "subject to subparagraph (ii)," and substituting "subject to subparagraphs (ii) and (iii),", and
+
+(b) by adding the following subparagraph:
+
+(iii) if the taxation year includes September 11, 2017, the number of days in the taxation year before September 12, 2017 that the corporation was a registered corporation; .
+
+63 Sections 19, 19.001, 19.01 (2) and 19.02 are amended in the description of "IB income" by striking out "that part of the taxation year that the corporation was a registered corporation;" and substituting "that part of the taxation year that is before September 12, 2017 and during which the corporation was a registered corporation;".
+
+64 Section 19.03 is amended
+
+(a) in subsections (2) and (3) by striking out "for the taxation year that" and substituting "for that part of the taxation year that is before September 12, 2017 that", and
+
+(b) in subsections (2) (b) and (3) (b) by striking out "for all or part of the year during which the individual was registered," and substituting "for all or part of the taxation year that is before September 12, 2017 and during which the individual was registered,".
+
+65 Section 21 is amended
+
+(a) in subsections (2), (3), (4) and (5) by striking out "for the part of the taxation year the individual was an IB specialist," and substituting "for the part of the taxation year that is before September 12, 2017 and during which the individual was an IB specialist,", and
+
+(b) by adding the following subsection:
+
+(9) Despite subsections (7) and (8), if the taxation year referred to in either of those subsections includes September 11, 2017, an individual must have received, before September 12, 2017, remuneration that is,
+
+(a) in the case of an individual to whom subsection (7) applies, $274 or more for each day in the taxation year before September 12, 2017 during which the individual was registered, and
+
+(b) in the case of an individual to whom subsection (8) applies, $685 or more for each day in the taxation year before September 12, 2017 during which the individual was registered.
+
+66 Section 23 (1) is amended in the description of "IB income"
+
+(a) by striking out "for that part of the taxation year that the corporation was a registered corporation" and substituting "for that part of the taxation year that is before September 12, 2017 and during which the corporation was a registered corporation", and
+
+(b) by striking out "the federal Act;" and substituting "the federal Act for that part of the taxation year that is before September 12, 2017;".
+
+67 Sections 24 (1) and 28 (4) (a) (i) are amended by striking out "or within a later period approved by the commissioner".
+
+Motor Fuel Tax Act
+
+68 Section 1 of the Motor Fuel Tax Act, R.S.B.C. 1996, c. 317, is amended in the definition of "locomotive fuel" by adding "and natural gas" after "propane".
+
+Property Transfer Tax Act
+
+69 Section 4 (1) of the Property Transfer Tax Act, R.S.B.C. 1996, c. 378, is amended in the definition of "qualifying value" by striking out "$475 000" and substituting "$500 000".
+
+Provincial Sales Tax Act
+
+70 Section 34 of the Provincial Sales Tax Act, S.B.C. 2012, c. 35, is amended by adding the following subsection:
+
+(10) The rate of tax payable under sections 37, 49 (6) (a), 52, 81, 82, 84 and 86 on electricity is 3.5% of the purchase price of the electricity.
+
+71 Section 34 (10) is repealed.
+
+72 Section 36 is amended by adding the following subsection:
+
+(10) The rate of tax payable under section 49 (6) (c) on electricity is 3.5% of the fair market value of the electricity on the entry date of the electricity.
+
+73 Section 36 (10) is repealed.
+
+74 The following section is added:
+
+#### Exemption in relation to electricity
+
+140.1 Electricity is exempt from tax imposed under Part 3.
+
+75 Section 141 (3) is amended by striking out ", other than electricity used in an electrolytic process,".
+
+Tobacco Tax Act
+
+76 Section 2 (2) and (3) of the Tobacco Tax Act, R.S.B.C. 1996, c. 452, is amended by striking out "23.9¢" and substituting "24.7¢".
+
+Transitional Provisions
+
+#### Provincial Sales Tax Act transition –
+applicable rate for electricity
+
+77 (1) In this section:
+
+"Act" means the Provincial Sales Tax Act;
+
+"transition date" means the date section 34 (10) of the Act comes into force.
+
+(2) For the purposes of section 37 of the Act, the applicable rate under section 34 (10) of the Act does not apply in respect of any consideration for the purchase of electricity that, before the transition date, becomes due or is paid without having become due.
+
+(3) If all or any portion of the consideration for the purchase of electricity is not ascertainable before the transition date, for the purposes of section 37 of the Act, the applicable rate under section 34 (10) of the Act applies in respect of that or any portion of that consideration that becomes ascertainable on or after the transition date.
+
+(4) For the purposes of sections 49 and 52 of the Act, the applicable rate under sections 34 (10) and 36 (10) of the Act does not apply in relation to electricity if, before the transition date,
+
+(a) the electricity is brought or sent into British Columbia, or
+
+(b) delivery of the electricity is received in British Columbia.
+
+(5) If it is not ascertainable when electricity is brought or sent into British Columbia or when delivery of electricity is received in British Columbia, for the purposes of sections 49 and 52 of the Act, the applicable rate under sections 34 (10) and 36 (10) of the Act applies in relation to electricity for which it is ascertainable that, on or after the transition date,
+
+(a) the electricity is brought or sent into British Columbia, or
+
+(b) delivery of the electricity is received in British Columbia.
+
+(6) For the purposes of sections 81 and 84 of the Act, the applicable rate under section 34 (10) of the Act applies in relation to electricity if the person referred to in section 81 or 84 of the Act first becomes a user of the electricity on or after the transition date.
+
+(7) For the purposes of sections 82 and 86 of the Act, the applicable rate under section 34 (10) of the Act applies in relation to electricity if, on or after the transition date, a person subsequently uses that electricity, or allows that electricity to be used, for a purpose for which the person must then pay tax under section 82 (1) or 86 (1) of the Act.
+
+#### Provincial Sales Tax Act transition –
+exemption for electricity
+
+78 (1) In this section, "Act" means the Provincial Sales Tax Act.
+
+(2) For the purposes of exempting electricity from tax imposed under section 37 of the Act, section 140.1 of the Act does not apply in respect of any consideration for the purchase of electricity that, before April 1, 2019, becomes due or is paid without having become due.
+
+(3) If all or any portion of the consideration for the purchase of electricity is not ascertainable before April 1, 2019, for the purposes of exempting electricity from tax imposed under section 37 of the Act, section 140.1 of the Act applies in respect of that or any portion of that consideration that becomes ascertainable on or after April 1, 2019.
+
+(4) For the purposes of exempting electricity from tax imposed under section 49 or 52 of the Act, section 140.1 of the Act does not apply in relation to electricity if, before April 1, 2019,
+
+(a) the electricity is brought or sent into British Columbia, or
+
+(b) delivery of the electricity is received in British Columbia.
+
+(5) If it is not ascertainable when electricity is brought or sent into British Columbia or when delivery of electricity is received in British Columbia, for the purposes of exempting electricity from tax imposed under section 49 or 52 of the Act, section 140.1 of the Act applies in relation to electricity for which it is ascertainable that, on or after April 1, 2019,
+
+(a) the electricity is brought or sent into British Columbia, or
+
+(b) delivery of the electricity is received in British Columbia.
+
+#### Commencement
+
+79 The provisions of this Act referred to in column 1 of the following table come into force as set out in column 2 of the table:
+
+Item | Column 1 Provisions of Act | Column 2 Commencement
+1 | Anything not elsewhere covered by this table | The date of Royal Assent
+2 | Sections 2 to 6 | By regulation of the Lieutenant Governor in Council
+3 | Section 7 | September 11, 2017
+4 | Section 8 | By regulation of the Lieutenant Governor in Council
+5 | Section 16 | January 1, 2018
+6 | Section 17 | January 1, 2017
+7 | Section 18 | January 1, 2018
+8 | Section 19 | January 1, 2016
+9 | Section 20 | January 1, 2018
+10 | Section 21 | January 1, 2016
+11 | Sections 22 and 23 | January 1, 2017
+12 | Section 24 | January 1, 2016
+13 | Section 25 | January 1, 2017
+14 | Sections 26 and 27 | January 1, 2018
+15 | Section 28 | January 1, 2016
+16 | Section 29 | January 1, 2017
+17 | Section 30 | January 1, 2018
+18 | Section 31 | January 1, 2016
+19 | Section 32 | January 1, 2017
+20 | Section 33 | January 1, 2016
+21 | Sections 34 and 35 | January 1, 2017
+22 | Section 36 | January 1, 2019
+23 | Sections 37 and 38 | January 1, 2017
+24 | Section 39 | January 1, 2016
+25 | Section 40 | January 1, 2017
+26 | Section 41 | January 1, 2016
+27 | Section 42 | January 1, 2017
+28 | Section 43 | January 1, 2018
+29 | Section 44 | January 1, 2017
+30 | Section 45 | January 1, 2016
+31 | Section 46 | January 1, 2017
+32 | Sections 47 and 48 | January 1, 2018
+33 | Section 49 | April 1, 2017
+34 | Sections 50 and 51 | January 1, 2017
+35 | Section 52 | March 1, 2015
+36 | Section 55 | August 31, 2017
+37 | Section 56 | March 31, 2017
+38 | Section 59 | February 22, 2017
+39 | Sections 60 to 67 | September 12, 2017
+40 | Section 68 | By regulation of the Lieutenant Governor in Council
+41 | Section 69 | February 22, 2017
+42 | Section 70 | By regulation of the Lieutenant Governor in Council
+43 | Section 71 | April 1, 2019
+44 | Section 72 | By regulation of the Lieutenant Governor in Council
+45 | Sections 73 to 75 | April 1, 2019
+46 | Sections 76 and 77 | By regulation of the Lieutenant Governor in Council
+47 | Section 78 | April 1, 2019
+
+Copyright (c) Queen’s Printer, Victoria, British Columbia, Canada

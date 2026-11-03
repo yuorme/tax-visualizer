@@ -145,8 +145,11 @@ export function personTax(fed: Federal, p: Province, x: Person, sp: Extra, ctx: 
   const fFtc = Math.min(wh, fedBasic * share, fedBasic * k);
   const provincialShare = provincialNet > 0 ? x.fd / provincialNet : 0;
   const pFtc = Math.min(wh - fFtc, provPre * provincialShare);
+  // NL428 adds the temporary deficit levy after all credits, including the provincial foreign tax credit.
+  const levyBand = p.additionalTax?.params.bands.findLast(([from]) => tiP > from);
+  const provincialLevy = levyBand ? Math.min(levyBand[3], levyBand[1] + levyBand[2] * (tiP - levyBand[0])) : 0;
   const fedTax = fedBasic * k - fFtc,
-    prov = provPre - pFtc;
+    prov = provPre - pFtc + provincialLevy;
   const ohp = healthPremium(p, ti);
   const payroll = pay.base + pay.enh + pay.ei + pay.qpip + pay.terr + ohp;
   const ftc = fFtc + pFtc;
@@ -198,6 +201,7 @@ export function personTax(fed: Federal, p: Province, x: Person, sp: Extra, ctx: 
     // Figures the page shows that aren't steps of the calculation above. They sit in a nested object because the
     // golden snapshot (tests/golden/snapshot.mjs) locks every top-level number of this result.
     breakdown: {
+      provincialLevy,
       childcareCredit: { calculated: childcareCreditFull, applied: childcareCredit },
       netIncome: netIncomeParts(fed, x, ctx.childcareDeduction), // what net income is made of
       rrspRoom: rrspRoom(fed, x),

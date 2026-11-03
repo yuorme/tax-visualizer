@@ -1,0 +1,12 @@
+Title: Revenu Québec — historical QPIP contribution table (2019 row)
+URL: https://www.revenuquebec.ca/fr/entreprises/retenues-a-la-source-et-cotisations-de-lemployeur/calcul-des-retenues-et-des-cotisations/cotisations-au-rqap/maximum-de-revenus-assurables-et-taux-de-cotisation/
+Fetched: 2026-11-02
+SHA-256 of the original: unavailable (direct fetch-source request returned HTTP 403)
+Manual extract from the official page retrieved through the web reader on 2026-11-02.
+The table remains readable through the web reader; no original bytes were available to hash.
+================================================================================
+
+Maximum de revenus assurables et taux de cotisation au Régime québécois d'assurance parentale
+
+Année | Maximum de revenus assurables (en $) | Taux de cotisation de l'employé(e) (en %) | Taux de cotisation de l'employeur (en %) | Cotisation maximale de l'employé(e) (en $) | Cotisation maximale de l'employeur (en $)
+2019 | 76 500 | 0,526 | 0,736 | 402,39 | 563,04

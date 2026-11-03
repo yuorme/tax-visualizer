@@ -1,0 +1,9 @@
+{
+  "description": "Independent synthetic CPI conversion arithmetic documented in docs/verification/other-income.md; never captured from the engine.",
+  "cases": [
+    { "id": "other-income", "realOldTax": 12600, "nominalTax": 17600 },
+    { "id": "itemized", "realOldTax": 10600, "nominalTax": 13600 },
+    { "id": "childcare", "earned": 20000, "realOldTax": 11400, "nominalTax": 16000 },
+    { "id": "zero-earnings", "earned": 0, "realOldTax": 12600, "nominalTax": 17600 }
+  ]
+}
