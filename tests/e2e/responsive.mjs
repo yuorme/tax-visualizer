@@ -50,6 +50,10 @@ export const RESPONSIVE_STEPS = [
     async p => {
       await p.click('[data-tenure="own"]');
       await fill(p, "#hv", "750,000");
+      await fill(p, "#property-tax-bill", "12,345.67");
+      assert.equal(await p.locator("#property-tax-bill").inputValue(), "12,345.67");
+      assert.equal(await p.locator("#pr-rate").isDisabled(), true);
+      assert.equal(await p.locator("#property-tax-bill").evaluate(el => el.scrollWidth > el.clientWidth + 1), false);
       assert.equal(await p.locator("#hv").isVisible(), true);
     },
   ],

@@ -160,7 +160,7 @@
           <button type="button" data-tenure="own" aria-pressed="true">Own</button>
           <button type="button" data-tenure="rent" aria-pressed="false">Rent</button>
         </fieldset>
-        <button type="button" class="info" data-tip="Own: enter your home's value, and property tax is charged at each province's typical rate. Rent: enter your monthly rent, which counts only for credits based on rent. Only the one you pick is used." aria-label="About owning or renting">i</button>
+        <button type="button" class="info" data-tip="Own: enter your home's value, and property tax is charged at each province's typical rate. An optional annual bill replaces the estimate in your home province. Rent: enter your monthly rent, which counts only for credits based on rent. Only the one you pick is used." aria-label="About owning or renting">i</button>
       </div>
       <div id="own-body">
         <div class="panel-head"><b class="panel-title">Property tax</b><button type="button" class="info" data-note="property" aria-label="About property tax">i</button><span class="panel-sum" id="prop-sum">not included</span></div>
@@ -175,6 +175,11 @@
             <div class="lbl-row"><label class="lbl" for="pr-rate">Municipal rate</label></div>
             <div class="money md"><input id="pr-rate" inputmode="decimal" autocomplete="off" value="0.76"><span class="per">% a year</span></div>
             <div class="pr-note"><span id="pr-note">Toronto</span> <button type="button" class="linkbtn" id="pr-reset" hidden>Reset</button></div>
+          </div>
+          <div class="field">
+            <div class="lbl-row"><label class="lbl" for="property-tax-bill">Your annual property tax</label><button type="button" class="info" data-tip="Optional: your annual property-tax bill replaces home value × municipal rate in your home province, including property-tax-based credits. Leave blank to use the estimate; 0 means no property tax. Every other province still uses your home value and its largest city's rate. The bill is retained when switching years or renting, but cleared when you change your home province. Enter the bill before any credits calculated here to avoid counting them twice." aria-label="About your annual property tax">i</button></div>
+            <div class="money md"><span>$</span><input id="property-tax-bill" inputmode="decimal" autocomplete="off" placeholder="Optional"><span class="per">a year</span></div>
+            <button type="button" class="linkbtn" id="property-tax-bill-reset" hidden>Use estimate</button>
           </div>
         </div>
       </div>

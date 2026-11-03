@@ -24,6 +24,14 @@ export function scaleHousehold(input: Household, factor: number): Household {
       return scaled;
     }),
     homeValue: input.homeValue * factor,
+    propertyTaxBills:
+      input.propertyTaxBills &&
+      Object.fromEntries(
+        Object.entries(input.propertyTaxBills).map(([code, bill]) => [
+          code,
+          bill === undefined ? undefined : bill * factor,
+        ]),
+      ),
     rent: input.rent * factor,
     monthlySpending: input.monthlySpending * factor,
     childcare: input.childcare && {

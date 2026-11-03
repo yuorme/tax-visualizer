@@ -583,6 +583,9 @@ tfoot tr:last-child td {
 .money.md #hv {
   width: 9ch;
 }
+.money.md #property-tax-bill {
+  width: 12ch;
+}
 #km {
   width: 11ch;
 }

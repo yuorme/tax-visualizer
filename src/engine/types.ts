@@ -39,6 +39,7 @@ export interface Household {
   rent: number; // monthly
   monthlySpending: number; // taxable spending, after any frugality adjustment
   propertyRates?: Partial<Record<string, number>>; // user overrides of the municipal rate, by province code
+  propertyTaxBills?: Partial<Record<string, number>>; // annual owner bills; zero is explicit, omission uses value × rate
   childcare?: ChildcareInput;
   driving?: Driving; // none: no fuel tax
 }
