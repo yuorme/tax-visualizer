@@ -40,4 +40,67 @@ sources:
   - {label: "CRA, PEI child benefit payments begin January 2025", url: https://www.canada.ca/en/revenue-agency/services/about-canada-revenue-agency-cra/protecting-your-privacy/privacy-impact-assessment/canada-child-benefit-related-benefits-v3.html}
   - {label: "CRA, T4114-25 (PEI monthly amounts and income bands; program starts January 2025)", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pub/t4114/t4114-25e.pdf}
   - {label: "Town of Stratford, 2024 PEI municipal comparisons: Charlottetown 0.67 municipal +1.50 provincial -0.50 owner credit", url: https://stratford.civicweb.net/document/145695/Property%20Tax%20rate%20info%20PEI%20Muncipalities.pdf?handle=B3C35C69B38A44879CD6127A49CE7B5C}
+  - label: "Carbon history: Statistics Canada, Canadian Vehicle Survey: Annual 2009 (53-223-X)"
+    url: https://www150.statcan.gc.ca/n1/pub/53-223-x/53-223-x2009000-eng.pdf
+  - label: "Carbon history: Statistics Canada 25-10-0060-01 household energy consumption, selected CSV rows"
+    url: https://www150.statcan.gc.ca/n1/tbl/csv/25100060-eng.zip
+  - label: "Carbon history: Natural Gas: A Primer"
+    url: https://natural-resources.canada.ca/energy-sources/fossil-fuels/natural-gas-primer
+  - label: "Carbon history: Fuel charge rates"
+    url: https://www.canada.ca/en/revenue-agency/services/forms-publications/publications/fcrates/fuel-charge-rates.html
+  - label: "Carbon history: Closed - Canada Carbon Rebate (CCR) for individuals"
+    url: https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-carbon-rebate/how-much.html
+  - label: "Carbon history: Lowering energy bills for Canadians across the country"
+    url: https://www.canada.ca/en/department-finance/news/2023/10/lowering-energy-bills-for-canadians-across-the-country.html
 childAmount: {perChild: 1200, ages: under6}
+
+# Historical driving defaults use a common survey baseline; see cited sources.
+driving:
+  distance: 15100
+  estimated: true
+
+# Calendar-year carbon charges and cash rebates; heating is an explicit modeled estimate.
+carbon:
+  name: Federal carbon pricing
+  gasoline:
+    - from: 2024-01-01
+      rate: 0.1431
+    - from: 2024-04-01
+      rate: 0.1761
+  heating:
+    amount: 0
+    estimated: true
+    method: 2021 Statistics Canada household natural gas and heating oil use averaged across all households; 0.0000 GJ gas and 35.2661 GJ oil, held constant across years; calendar-day rates and applicable heating exemptions. See carbon heating verification.
+  rebates:
+    - program: carbon-rebate-payments
+      name: Climate Action Incentive / Canada Carbon Rebate
+      params:
+        payments:
+          - date: 2024-01-01
+            adult: 120
+            spouse: 60
+            child: 30
+            firstChild: 60
+            threshold: [0, 0]
+            rate: 0
+          - date: 2024-04-01
+            adult: 110
+            spouse: 55
+            child: 27.5
+            firstChild: 55
+            threshold: [0, 0]
+            rate: 0
+          - date: 2024-07-01
+            adult: 110
+            spouse: 55
+            child: 27.5
+            firstChild: 55
+            threshold: [0, 0]
+            rate: 0
+          - date: 2024-10-01
+            adult: 110
+            spouse: 55
+            child: 27.5
+            firstChild: 55
+            threshold: [0, 0]
+            rate: 0

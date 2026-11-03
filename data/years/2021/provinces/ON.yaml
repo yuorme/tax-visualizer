@@ -50,3 +50,43 @@ sources:
   - {label: "CRA, 2021 LIFT Schedule ON428-A", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5006-a/5006-a-21e.pdf}
   - {label: "Ontario, 2021 tax transparency report: sales and energy/property credits", url: https://budget.ontario.ca/2021/fallstatement/provisions.html}
   - {label: "Toronto, 2021 annual financial report: residential tax rates", url: https://www.toronto.ca/wp-content/uploads/2022/08/8f03-City-of-Toronto-YE-2021-AFR-08-15-2022.pdf}
+  - label: "Carbon history: Statistics Canada, Canadian Vehicle Survey: Annual 2009 (53-223-X)"
+    url: https://www150.statcan.gc.ca/n1/pub/53-223-x/53-223-x2009000-eng.pdf
+  - label: "Carbon history: Statistics Canada 25-10-0060-01 household energy consumption, selected CSV rows"
+    url: https://www150.statcan.gc.ca/n1/tbl/csv/25100060-eng.zip
+  - label: "Carbon history: Natural Gas: A Primer"
+    url: https://natural-resources.canada.ca/energy-sources/fossil-fuels/natural-gas-primer
+  - label: "Carbon history: Fuel charge rates"
+    url: https://www.canada.ca/en/revenue-agency/services/forms-publications/publications/fcrates/fuel-charge-rates.html
+  - label: "Carbon history: Climate Action Incentive Payment Amounts for 2021"
+    url: https://www.canada.ca/en/department-finance/news/2020/12/climate-action-incentive-payment-amounts-for-2021.html
+
+# Historical driving defaults use a common survey baseline; see cited sources.
+driving:
+  distance: 16200
+  estimated: true
+
+# Calendar-year carbon charges and cash rebates; heating is an explicit modeled estimate.
+carbon:
+  name: Federal carbon pricing
+  gasoline:
+    - from: 2021-01-01
+      rate: 0.0663
+    - from: 2021-04-01
+      rate: 0.0884
+  heating:
+    amount: 117.79
+    estimated: true
+    method: 2021 Statistics Canada household natural gas and heating oil use averaged across all households; 58.2901 GJ gas and 1.0275 GJ oil, held constant across years; calendar-day rates and applicable heating exemptions. See carbon heating verification.
+  rebates:
+    - program: carbon-rebate-payments
+      name: Climate Action Incentive / Canada Carbon Rebate
+      params:
+        payments:
+          - date: 2021-04-01
+            adult: 300
+            spouse: 150
+            child: 75
+            firstChild: 150
+            threshold: [0, 0]
+            rate: 0

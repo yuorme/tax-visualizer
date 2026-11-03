@@ -1,0 +1,128 @@
+Title: 2016 Bill
+URL: https://docs.assembly.ab.ca/LADDAR_files/docs/bills/bill/legislature_29/session_2/20160308_bill-020.pdf
+Fetched: 2026-11-02
+SHA-256 of the original: 61efdfa2adb5f8acfcec0d36f96268ea53d12fb7e037fe6fd8672540b124ee8f
+Publication date modified: 2016-05-24
+PDF pages: 96-100 of 108
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 96 of 108 ---
+
+91
+(b) “qualified dependant” of an individual, in relation to a
+month specified for a taxation year, means a person who
+at the beginning of the specified month
+(i) is the individual’s child or is dependent for support
+on the individual or on the individual’s cohabiting
+spouse or common-law partner,
+(ii) resides with the individual,
+(iii) is under the age of 18 years,
+(iv) is not an eligible individual in relation to the
+specified month, and
+(v) is not a qualified relation of any individual in relation
+to the specified month.
+(2) Section 122.5 of the federal Act, except for subsections (3),
+(3.1) and (3.2) and the definitions of “eligible individual” and
+“qualified dependant” in subsection (1), applies for the purposes
+of this section in relation to a month specified for a taxation year.
+(3) If, in relation to a month specified for a taxation year, an
+eligible individual files a return of income for the taxation year,
+the eligible individual is deemed to have paid during the
+specified month, on account of the eligible individual’s tax
+payable under this Act for the taxation year, an amount equal to
+25% of the amount, if any, determined by the following formula:
+A - B
+where
+A is the total of the following:
+(a) $200;
+(b) $100, if the individual has in relation to the specified
+month
+(i) a qualified relation, or
+(ii) if the individual has no qualified relation in
+relation to the specified month and is entitled to
+deduct an amount for the taxation year under
+subsection 118(1) of the federal Act because of
+
+--- PDF page 97 of 108 ---
+
+Explanatory Notes91
+
+--- PDF page 98 of 108 ---
+
+92
+paragraph (b) of the description of “B” in that
+subsection in respect of a qualified dependant of
+the individual in relation to the specified month;
+(c) $30 for each qualified dependant, not to exceed 4, of
+the individual in relation to the specified month,
+other than a qualified dependant in respect of whom
+an amount is included under clause (b) in computing
+the total for the specified month;
+B is
+(a) if the individual has no qualified relation or qualified
+dependant in relation to the specified month, the
+lesser of the amount determined under A and 2.67%
+of the amount by which the individual’s adjusted
+income for the taxation year in relation to the
+specified month exceeds $47 500, or
+(b) if the amount determined for the individual under A
+includes an amount pursuant to clause (b) or (c), the
+lesser of the amount determined under A and 4.0% of
+the amount by which the sum of the adjusted
+incomes of the individual and the qualified relation
+or qualified dependants for the taxation year in
+relation to the specified month exceeds $95 000.
+(4) Effective January 1, 2018, for a month specified for a
+taxation year, the amounts in the description of A in the formula
+in subsection (3) are to be read as follows:
+(a) in clause (a), “$200” is to be read as “$300”;
+(b) in clause (b), “$100” is to be read as “$150”;
+(c) in clause (c), “$30” is to be read as “$45”.
+(5) The amount deemed to have been paid by an eligible
+individual for a taxation year is nil where the total amount that
+would otherwise be deemed by subsection (3) to have been paid
+on account of the eligible individual’s tax payable under this Act
+for the months specified for the taxation year is less than $100.
+(6) Despite subsection 122.5(5) of the federal Act as it applies
+for the purposes of this Act, the individual who is the eligible
+individual in relation to a specified month under subsection
+
+--- PDF page 99 of 108 ---
+
+Explanatory Notes92
+
+--- PDF page 100 of 108 ---
+
+93
+122.5(5) of the federal Act as it applies for the purposes of that
+Act is the individual who is the eligible individual, in relation to
+that specified month, for the purposes of this section.
+(7) Despite subsection 122.5(6) of the federal Act as it applies
+for the purposes of this Act, a person who is the qualified
+dependant of an individual, in relation to a specified month,
+under subsection 122.5(6) of the federal Act as it applies for the
+purposes of that Act is the qualified dependant of that individual,
+in relation to that specified month, for the purposes of this
+section.
+(8) In applying subsection 122.5(6.1) of the federal Act for the
+purposes of this section, the reference in paragraph (c) to “19” is
+to be read as “18”.
+(9) In applying subsection 122.5(6.1) of the federal Act for the
+purposes of this section, that section must be read as including
+the following paragraph:
+(d) an individual becomes or ceases to be resident in Alberta.
+(10) The Lieutenant Governor in Council may make regulations
+(a) specifying, with or without modifications, additional
+provisions of the federal Act that apply in respect of a
+deemed payment under subsection (3);
+(b) establishing rules to determine if an individual was
+resident in Alberta for the purposes of subsection
+(1)(a)(ii).
+Climate Change and
+Emissions Management Act
+Amends SA 2003 cC-16.7
+4(1) The Climate Change and Emissions Management Act is
+amended by this section.
+(2) Section 10 is amended
+(a) by adding the following before subsection (1):

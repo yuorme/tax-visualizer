@@ -44,3 +44,10 @@ sources:
     url: https://cdn.halifax.ca/sites/default/files/documents/city-hall/budget-finances/BudgetBook_2022_23_FINAL.pdf
   - label: Halifax, April 12 2022 tax resolution Schedule 1 (mandatory and area levies)
     url: https://cdn.halifax.ca/sites/default/files/documents/city-hall/regional-council/220412bc6.pdf
+  - label: "Carbon history: Statistics Canada, Canadian Vehicle Survey: Annual 2009 (53-223-X)"
+    url: https://www150.statcan.gc.ca/n1/pub/53-223-x/53-223-x2009000-eng.pdf
+
+# Historical driving defaults use a common survey baseline; see cited sources.
+driving:
+  distance: 17400
+  estimated: true

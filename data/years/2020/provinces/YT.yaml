@@ -31,3 +31,59 @@ sources:
   - {label: "Yukon Finance, spring 2024 briefing with 2023 child benefit parameters", url: https://open.yukon.ca/information/de20b25e-b7d5-45ed-aacd-5ce4e968bec4/resource/57bd0240-b717-3e8b-9c1e-f9a386d62022/download/fin_spring_2024.pdf}
   - {label: "Yukon Hansard April 16 2026 p667, historical child benefit maximum (manual web extract)", url: https://yukonassembly.ca/sites/default/files/hansard/36-1-24.pdf}
   - {label: "Whitehorse, operating-budget package with 2020 tax-rate comparison", url: https://whitehorse.ca/wp-content/uploads/2024/01/2024-2026-Operating-Budget-Public-Input-Package-FINAL.pdf}
+  - label: "Carbon history: Statistics Canada, Canadian Vehicle Survey: Annual 2009 (53-223-X)"
+    url: https://www150.statcan.gc.ca/n1/pub/53-223-x/53-223-x2009000-eng.pdf
+  - label: "Carbon history: Fuel charge rates"
+    url: https://www.canada.ca/en/revenue-agency/services/forms-publications/publications/fcrates/fuel-charge-rates.html
+  - label: "Carbon history: Yukon historical carbon rebates"
+    url: https://yukon.ca/en/doing-business/taxation/learn-about-federal-price-pollution-and-yukons-carbon-rebate
+  - label: "Carbon history: Yukoners to receive first carbon rebate in October"
+    url: https://open.yukon.ca/information/b1cbb21a-1e7d-4bd5-b4ee-01b04901749c/resource/8189483c-ed69-49b2-8842-34def020c30a/download/19-237.html
+  - label: "Carbon history: Yukon Bill33 Carbon Price Rebate Implementation Act — payment rules"
+    url: https://yukonassembly.ca/sites/default/files/inline-files/34-2-Bill033-Carbon-Price-Rebate-Implementation-Act.pdf
+  - label: "Carbon history: Yukon Financial Advisory Panel final report,2017 — heating-use proxy"
+    url: https://yukon.ca/sites/yukon.ca/files/fin/fin-yukon-financial-advisory-panel-final-report-2017.pdf
+
+# Historical driving defaults use a common survey baseline; see cited sources.
+driving:
+  distance: 13200
+  estimated: true
+
+# Calendar-year carbon charges and cash rebates; heating is an explicit modeled estimate.
+carbon:
+  name: Carbon pricing
+  heating:
+    amount: 129.21
+    estimated: true
+    method: "Estimated 1750 L/year oil-heated-home proxy: midpoint of the Yukon 2017 advisory report range (1500–2000 L); held fixed across years, not a territorial household mean. Calendar-day charge rates and heating-oil exemptions apply."
+  rebates:
+    - name: Yukon carbon rebate
+      program: carbon-rebate-payments
+      params:
+        payments:
+          - date: 2020-04-30
+            adult: 43
+            spouse: 43
+            child: 43
+            firstChild: 43
+            threshold: [0, 0]
+            rate: 0
+          - date: 2020-07-01
+            adult: 48
+            spouse: 48
+            child: 48
+            firstChild: 48
+            threshold: [0, 0]
+            rate: 0
+          - date: 2020-10-01
+            adult: 48
+            spouse: 48
+            child: 48
+            firstChild: 48
+            threshold: [0, 0]
+            rate: 0
+  gasoline:
+    - from: 2020-01-01
+      rate: 0.0442
+    - from: 2020-04-01
+      rate: 0.0663

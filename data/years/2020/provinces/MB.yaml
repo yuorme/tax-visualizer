@@ -29,3 +29,43 @@ sources:
   - {label: "CRA, MB479 for 2020: education property-tax credit and eligible occupancy cost", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5007-tc/5007-tc-20e.pdf}
   - {label: "Manitoba, historical property credits: school-tax rebate introduced in 2021", url: https://www.gov.mb.ca/edupropertytax/index.html}
   - {label: "Winnipeg, 2020 combined mill rates and residential assessment portion", url: https://assessment.winnipeg.ca/Asmttax/pdfs/rates/2020CombinedMillRates.pdf}
+  - label: "Carbon history: Statistics Canada, Canadian Vehicle Survey: Annual 2009 (53-223-X)"
+    url: https://www150.statcan.gc.ca/n1/pub/53-223-x/53-223-x2009000-eng.pdf
+  - label: "Carbon history: Statistics Canada 25-10-0060-01 household energy consumption, selected CSV rows"
+    url: https://www150.statcan.gc.ca/n1/tbl/csv/25100060-eng.zip
+  - label: "Carbon history: Natural Gas: A Primer"
+    url: https://natural-resources.canada.ca/energy-sources/fossil-fuels/natural-gas-primer
+  - label: "Carbon history: Fuel charge rates"
+    url: https://www.canada.ca/en/revenue-agency/services/forms-publications/publications/fcrates/fuel-charge-rates.html
+  - label: "Carbon history: Government Announces Climate Action Incentive Payment Amounts for 2020"
+    url: https://www.canada.ca/en/department-finance/news/2019/12/government-announces-climate-action-incentive-payment-amounts-for-2020.html
+
+# Historical driving defaults use a common survey baseline; see cited sources.
+driving:
+  distance: 15000
+  estimated: true
+
+# Calendar-year carbon charges and cash rebates; heating is an explicit modeled estimate.
+carbon:
+  name: Federal carbon pricing
+  gasoline:
+    - from: 2020-01-01
+      rate: 0.0442
+    - from: 2020-04-01
+      rate: 0.0663
+  heating:
+    amount: 71.24
+    estimated: true
+    method: 2021 Statistics Canada household natural gas and heating oil use averaged across all households; 49.2892 GJ gas and 0.0000 GJ oil, held constant across years; calendar-day rates and applicable heating exemptions. See carbon heating verification.
+  rebates:
+    - program: carbon-rebate-payments
+      name: Climate Action Incentive / Canada Carbon Rebate
+      params:
+        payments:
+          - date: 2020-04-01
+            adult: 243
+            spouse: 121
+            child: 61
+            firstChild: 121
+            threshold: [0, 0]
+            rate: 0

@@ -1,0 +1,79 @@
+Title: Canada Carbon Rebate amounts for 2024-25
+URL: https://www.canada.ca/en/department-finance/news/2024/02/canada-carbon-rebate-amounts-for-2024-25.html
+Fetched: 2026-11-02
+SHA-256 of the original: bfb32cfe17f8bf5d4cf45ef4645cf37a77f328c9de8605926dddfb46536f6dcb
+Publication date modified: 2024-07-15
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+# Canada Carbon Rebate amounts for 2024-25
+
+From: Department of Finance Canada
+
+## Backgrounder
+
+In provinces that request it or do not have their own carbon pricing system that meets the federal benchmark, a federal fuel charge is put in place. Currently, the fuel charge applies in the provinces of Alberta, Saskatchewan, Manitoba, Ontario, New Brunswick, Nova Scotia, Prince Edward Island, and Newfoundland and Labrador. All direct proceeds are returned within the province where they were collected, primarily through the quarterly Canada Carbon Rebate, directly to Canadians.
+
+In provinces that request it or do not have their own carbon pricing system that meets the federal benchmark, a federal fuel charge is put in place. Currently, the fuel charge applies in the provinces of Alberta, Saskatchewan, Manitoba, Ontario, New Brunswick, Nova Scotia, Prince Edward Island, and Newfoundland and Labrador. All direct proceeds are returned within the province where they were collected, primarily through the quarterly Canada Carbon Rebate, directly to Canadians.
+
+## The Canada Carbon Rebate
+
+In provinces where the federal fuel charge applies, a family of four will receive up to $1,800 under the base Canada Carbon Rebate in 2024-25. In April 2024, residents of these provinces will receive their first of four quarterly Canada Carbon Rebate payments, with additional payments in July 2024, October 2024, and January 2025.
+
+To ensure carbon pricing continues to make life more affordable for all Canadians, the government is proposing, through legislative amendments in Bill C-59, to double the top-up for rural residents from 10 per cent to 20 per cent. Starting in 2024-25, rural Canadians would receive a 20 per cent top-up to the base Canada Carbon Rebate, in recognition of their higher energy needs and more limited access to cleaner transportation options.
+
+In order to receive their Canada Carbon Rebate, Canadians need to file their annual tax return. To receive the rural top-up, rural residents must check the corresponding box on their tax return. For Canadians who are registered for direct deposit with the Canada Revenue Agency, the Canada Carbon Rebate will be deposited directly into their bank account every three months; otherwise, the Canada Carbon Rebate will be delivered via cheque. For those who have a spouse or common-law partner, the person who files their tax return first will receive the Canada Carbon Rebate amount for all members of the household, including children.
+
+The federal government is encouraging financial institutions to consistently label the Canada Carbon Rebate direct deposits that Canadians receive in their bank accounts every three months.
+
+Table 1
+Quarterly Canada Carbon Rebate Amounts for 2024-25, as specified by the Minister of Finance
+| AB | MB | ON | SK | NB | NS | PEI* | NL
+First Adult | $225 | $150 | $140 | $188 | $95 | $103 | $110 | $149
+Rural | $270 | $180 | $168 | $225.60 | $114 | $123.60 | $110 | $178.80
+Second Adult | $112.50 | $75 | $70 | $94 | $47.50 | $51.50 | $55 | $74.50
+Rural | $135 | $90 | $84 | $112.80 | $57 | $61.80 | $55 | $89.40
+Each Child | $56.25 | $37.50 | $35 | $47 | $23.75 | $25.75 | $27.50 | $37.25
+Rural | $67.50 | $45 | $42 | $56.40 | $28.50 | $30.90 | $27.50 | $44.70
+Family of 4 | $450 | $300 | $280 | $376 | $190 | $206 | $220 | $298
+Rural | $540 | $360 | $336 | $451.20 | $228 | $247.20 | $220 | $357.60
+* As all residents of Prince Edward Island are eligible for the 20 per cent rural top-up, it is reflected in the base amount for PEI.
+
+Table 2
+Annual Canada Carbon Rebate Amounts for 2024-25
+| AB | MB | ON | SK | NB | NS | PEI* | NL
+First Adult | $900 | $600 | $560 | $752 | $380 | $412 | $440 | $596
+Rural | $1,080 | $720 | $672 | $902.40 | $456 | $494.40 | $440 | $715.20
+Second Adult | $450 | $300 | $280 | $376 | $190 | $206 | $220 | $298
+Rural | $540 | $360 | $336 | $451.20 | $228 | $247.20 | $220 | $357.60
+Each Child | $225 | $150 | $140 | $188 | $95 | $103 | $110 | $149
+Rural | $270 | $180 | $168 | $225.60 | $114 | $123.60 | $110 | $178.80
+Family of 4 | $1,800 | $1,200 | $1,120 | $1,504 | $760 | $824 | $880 | $1,192
+Rural | $2,160 | $1,440 | $1,344 | $1,804.80 | $912 | $988.80 | $880 | $1,430.40
+* As all residents of Prince Edward Island are eligible for the 20 per cent rural top-up, it is reflected in the base amount for PEI.
+
+## Ensuring Carbon Pollution Pricing Makes Life More Affordable
+
+In provinces where the federal fuel charge applies, most households get more back through the Canada Carbon Rebate than they pay as a result of the federal carbon pollution pricing system, with lower-income households benefiting the most.
+
+For 2024-25, the table below compares estimates of the average cost of the federal system per household in each of these provinces with Canada Carbon Rebate amounts per household. As all proceeds are returned in the province they were collected in, the average net benefit varies between provinces and is higher in provinces with more consumption of fossil fuels.
+
+Table 3
+Average Canada Carbon Rebate Net Benefit for 2024-25, annually per household
+| AB | MB | ON | SK | NB | NS | PEI | NL
+Average cost impact per household 1 of the federal system | $1,056 | $828 | $869 | $1,156 | $536 | $609 | $628 | $859
+Average Canada Carbon Rebate per household 2 | $1,779 | $1,193 | $1,124 | $1,505 | $719 | $766 | $801 | $1,162
+Average Net Benefit | $723 | $365 | $255 | $349 | $183 | $157 | $173 | $303
+Source: Department of Finance Canada calculations using inputs from Environment and Climate Change Canada, Canada Revenue Agency, and Statistics Canada. 1 The estimated average impact per household reflects the impact on household spending costs, accounting for direct impacts (reflecting consumption of fuels to which the federal carbon pollution pricing system applies) and indirect impacts (reflecting consumption of goods and services with federal carbon pollution pricing embedded in them). These impacts are inclusive of carbon pollution pricing embedded in imports that households purchase from other province and territories on which a federal carbon pollution price is applied. They do not include the costs associated with other carbon pricing systems; accordingly, they do not include the costs associated with the provincial systems for large industrial facilities. Estimates also assume full pass-through from businesses to consumers. 2 The 2024-25 Canada Carbon Rebate amounts include prior-year adjustments made with respect to proceeds generated in previous years in Alberta, Saskatchewan, Manitoba, and Ontario. As a result, the average payment amount per household in these provinces also reflects this adjustment. The Canada Carbon Rebate amounts also reflect the doubling of the rural top-up to 20 per cent.
+
+The table below estimates the average net benefit from the Canada Carbon Rebate for the lowest income quintile (instead of average net benefit across the general population as shown in Table 3), in each province per household.
+
+Table 4
+Average Canada Carbon Rebate Net Benefit for the Lowest Income Quintile 3 for 2024-25, annually per household
+| AB | MB | ON | SK | NB | NS | PEI | NL
+Average cost impact per household of the federal system 1 | $419 | $411 | $388 | $507 | $212 | $259 | $236 | $377
+Average Canada Carbon Rebate per household 2 | $1,154 | $764 | $723 | $979 | $472 | $527 | $497 | $807
+Average Net Benefit – Lowest Quintile | $735 | $353 | $335 | $472 | $260 | $268 | $261 | $430
+Source: Department of Finance calculations using Statistics Canada's Social Policy Simulation Database/Model (SPSD/M) as well as updated parameters for this announcement with inputs from Environment and Climate Change Canada, Canada Revenue Agency and Statistics Canada. 1 The estimated average impact per household reflects the impact on household spending costs, accounting for direct impacts (reflecting consumption of fuels to which the federal carbon pollution pricing system applies) and indirect impacts (reflecting consumption of goods and services with federal carbon pollution pricing embedded in them). These impacts are inclusive of carbon pollution pricing embedded in imports that households purchase from other provinces and territories on which a federal carbon pollution price is applied. They do not include the costs associated with other carbon pricing systems; accordingly, they do not include the costs associated with the provincial systems for large industrial facilities. Estimates also assume full pass-through from businesses to consumers. 2 The 2024-25 Canada Carbon Rebate amounts include prior-year adjustments made with respect to proceeds generated in previous years in Alberta, Saskatchewan, Manitoba, and Ontario. As a result, the average payment amount per household in these provinces also reflects this adjustment. The Canada Carbon Rebate amounts also reflect the doubling of the rural top-up to 20 per cent. 3 Income quintiles are not adjusted for household size. Households in the lowest quintile are considerably smaller on average, resulting in the average Canada Carbon Rebate per household being lower than that of the general population, as shown in Table 3.
+
+Search for related information by keyword: Economics and Industry | Department of Finance Canada | Canada | Money and finances | general public | backgrounders

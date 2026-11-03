@@ -20,6 +20,7 @@ import { chromium } from "playwright";
 import { listYears, loadYear } from "../../src/data/load.ts";
 import { compute } from "../../src/engine/index.ts";
 import { toHousehold } from "../golden/adapter.ts";
+import { CARBON_STEPS } from "./carbon.mjs";
 import { DEDUCTION_STEPS } from "./deductions.mjs";
 import { HISTORY_STEPS } from "./history.mjs";
 import { ALLOWED_HOSTS, openPage, settle } from "./page.mjs";
@@ -269,9 +270,11 @@ const YEAR_STEPS = [
         const sharedSources = await p.locator("#default-sources a").count();
         if (sharedSources !== 3) problems.push("shared spending assumption sources disappeared");
         if ((await p.title()) !== `Provincial Tax Compare ${year}`) problems.push("page title did not follow year");
-        const fuel = data.federal.fuelTax != null && data.federal.driving != null;
-        if ((await shown(p, "#tab-driving")) !== fuel) problems.push("Driving tab does not match year's fuel coverage");
-        if (!fuel && (await shown(p, "#panel-driving"))) problems.push("Driving panel stayed open without fuel data");
+        const driving = data.federal.driving != null;
+        if ((await shown(p, "#tab-driving")) !== driving)
+          problems.push("Driving tab does not match year's fuel/carbon coverage");
+        if (!driving && (await shown(p, "#panel-driving")))
+          problems.push("Driving panel stayed open without fuel/carbon data");
         if (!(await p.textContent("#year-sources")).startsWith(`Sources for ${year}:`))
           problems.push("sources did not follow year");
         return problems;
@@ -407,6 +410,9 @@ for (const width of [1000, 430, 375]) {
     const history = await run({ width, colorScheme, contrast: width === 375, steps: HISTORY_STEPS });
     check(`${width}px ${colorScheme}, history`, width, history);
     console.log(`${width}px ${colorScheme}: ${HISTORY_STEPS.length} history states checked`);
+    const carbon = await run({ width, colorScheme, contrast: width === 375, steps: CARBON_STEPS });
+    check(`${width}px ${colorScheme}, carbon pricing`, width, carbon);
+    console.log(`${width}px ${colorScheme}: ${CARBON_STEPS.length} carbon states checked`);
   }
 }
 await browser.close();

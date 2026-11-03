@@ -1,0 +1,25 @@
+{
+  "gasoline2025": {
+    "litres": 1000,
+    "perLitre": 0.0434219178,
+    "gasoline": 43.4219178082,
+    "heating": 100,
+    "total": 143.4219178082
+  },
+  "rebates2025": {
+    "single": 453,
+    "couple": 679.5,
+    "coupleTwoChildren": 906,
+    "parentTwoChildren": 792.75
+  },
+  "independentIncomeTests": {
+    "income10000": 220,
+    "income15000": 170,
+    "income20000": 120,
+    "income22000": 80,
+    "income26000": 0,
+    "income30000": 0
+  },
+  "familyThresholds": { "single": 50, "couple": 150, "parentOneChild": 150, "parentTwoChildren": 175 },
+  "netTaxDelta": -762.5780821918
+}

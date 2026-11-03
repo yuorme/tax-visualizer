@@ -98,6 +98,8 @@ test("Ontario single renter at $25,000: refundable credits match CRA's published
     ["Canada Workers Benefit", 1633],
     ["Ontario sales tax credit", 371],
     ["Ontario energy and property tax credit", 644],
+    // January $140 plus the final April $151: the 2025 calendar-year carbon rebate for one adult.
+    ["Climate Action Incentive / Canada Carbon Rebate", 291],
   ]);
 });
 

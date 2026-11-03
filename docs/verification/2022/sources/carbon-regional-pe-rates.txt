@@ -1,0 +1,41 @@
+Title: 2022_CL_Rates_Table_with_differential.xlsx
+URL: https://www.princeedwardisland.ca/sites/default/files/publications/schedule_of_levy_rates_on_fossil_fuels.pdf
+Fetched: 2026-11-02
+SHA-256 of the original: 7de77d60c4ae4e4fdebeb3140428d494682271aa9ab6345bbbffebd6f09c64ba
+Publication date modified: 2022-05-06
+PDF pages: all 1
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 1 of 1 ---
+
+Fuel Type Unit April 1, 2020 May 9, 2022 Levy Rate
+Differential
+AVIATION GASOLINE $/litre 0.0747 0.1244 0.0497
+AVIATION TURBO FUEL/JET FUEL $/litre 0.0775 0.1291 0.0516
+BUTANE $/litre 0.0534 0.0890 0.0356
+DIESEL $/litre 0.0805 0.1341 0.0536
+ETHANE $/litre 0.0306 0.0509 0.0203
+FURNACE OIL $/litre 0.0000 0.0000 0.0000
+GAS LIQUIDS $/litre 0.0499 0.0832 0.0333
+GASOLINE $/litre 0.0663 0.1105 0.0442
+HEAVY FUEL OIL $/litre 0.0956 0.1593 0.0637
+KEROSENE $/litre 0.0775 0.1291 0.0516
+LIGHT FUEL OIL $/litre 0.0805 0.1341 0.0536
+MARKED DIESEL $/litre 0.0200 0.0736 0.0536
+MARKED GASOLINE $/litre 0.0200 0.0642 0.0442
+METHANOL $/litre 0.0329 0.0549 0.0220
+NAPHTHA $/litre 0.0676 0.1127 0.0451
+PETROLEUM COKE $/litre 0.1151 0.1919 0.0768
+PENTANES PLUS $/litre 0.0534 0.0890 0.0356
+PROPANE $/litre 0.0000 0.0000 0.0000
+COKE OVEN GAS $/cubic metre 0.0210 0.0350 0.0140
+MARKETABLE NATURAL GAS $/cubic metre 0.0587 0.0979 0.0392
+NON‐MARKETABLE NATURAL GAS $/cubic metre 0.0776 0.1293 0.0517
+STILL GAS $/cubic metre 0.0810 0.1350 0.0540
+COAL COKE $/tonne 95.39 158.99 63.6000
+HIGH HEAT VALUE COAL $/tonne 67.55 112.58 45.0300
+LOW HEAT VALUE COAL $/tonne 53.17 88.62 35.4500
+COMBUSTIBLE WASTE $/tonne 59.92 99.87 39.9500
+Table 1 ‐ Rates of Carbon Levy on Fossil Fuels for 2020 to 2022
+and the Carbon Levy Rate Differential

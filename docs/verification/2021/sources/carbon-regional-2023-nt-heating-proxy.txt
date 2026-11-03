@@ -1,0 +1,102 @@
+Title: 
+URL: https://www.iti.gov.nt.ca/fr/file/1216
+Fetched: 2026-11-02
+SHA-256 of the original: 51e6eaa5c7fd2d6cb86ae659f3b3351ac4799ffd917363c3d7f8312e43d9d723
+Publication date modified: 2012-02-28
+PDF pages: 45,77 of 84
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 45 of 84 ---
+
+◌ܼ旀 و
+January 2012 45
+12.0 Deline
+12.1. Key Assumptions
+12.1.1. Residential & Non-Residential Heating Oil Use per Building
+GNWT has provided the total diesel used by Deline for heating purposes. To categorize this use into
+residential and non-residential components, the analysis assumes that consumption of heating oil
+occurs pro-rata with the consumption of electricity. Based on the results of the 2008 Encor study, it is
+assumed that there are 1.13 residential accounts per building and 1.00 commercial accounts per
+building. On this basis, the analysis assumes that the average residential building consumes 2,406
+litres of heating oil per year, while the average commercial building consumes 8,257 litres per year.
+By 2019, it is assumed that there will be 220 residential accounts and 56 commercial accounts in
+Deline, decreasing marginally to 219 and 56 by 2038. Under the Status Quo, it is assumed that 33.1
+million litres of fuel oil will be consumed by 2038, while under the natural gas scenario, the equivalent
+number of litres drops to 30.8 million litres.
+12.1.2. Conversions – Pace & Saturation
+Based on the 2008 Encor Study, it is assumed that 100% of both residential and commercial
+customers will convert to natural gas heating over a 3 year period. It is further assumed that 5% of
+the power generation requirements will continue to be met with diesel generation, in order to provide
+redundancy in the event of a supply disruption.
+12.1.3. Capital Cost for Laterals & Distribution System
+The analysis assumes that the community gate station (the second PRS) will be located 110
+kilometres from the Mackenzie Valley Pipeline. Based on current consumption requirements, and
+community growth forecasts, a lateral diameter of 3” will be required based on a lateral operating
+pressure of 250 psi. Unanticipated growth requirements, including a moderately sized industrial base
+load, can be satisfied through a combination of excess design capacity and increased operating
+pressure. The cost of distribution mains is estimated by utilizing the cost for distribution mains in
+Tulita (per the 2008 Encor Study), pro-rated for the number of accounts in Deline. Specific capital
+costs are outlined in Table 1-2, and in Appendix B.
+12.1.4. Cost to Convert Power Generation to Natural Gas
+Based on a generation conversion cost of $3,400 per kilowatt and an installed capacity of 1,140
+kilowatts, the capital cost for conversion to natural gas fired generators is estimated at $3.9 million.
+12.1.5. O&M and Administrative Costs
+Existing O&M and Administrative Costs have been estimated based on the analysis undertaken in the
+2010 CGSI Study, in which the two smaller communities of Fort Good Hope and Tulita experienced
+average costs of $2,300 per account, while the larger community of Fort Simpson experienced an
+
+--- PDF page 77 of 84 ---
+
+ٗ偐
+January 2012 77
+APPENDIX J
+INPUT ASSUMPTIONS – DELINE
+Status quo
+Residential Electric Accounts Per Building SQ.ResAcctsPerBldg 1.13
+Non-Residential Accounts Per Building SQ.ComAcctsPerBldg 1
+Residential Oil Use Per Building Litres/Yr SQ.ResOilUsePerBldg 2,406
+Non-Residential Oil Use Per Building Litres/Yr SQ.ComOilUsePerBldg 8,257
+Residential Pct On Oil (Others on Propane) % SQ.ResOnOilPct 100%
+Non-Residential Pct On Oil " % SQ.ComOnOilPct 100%
+Average Res and Non-Res Load Factor % SQ.OilAvgLoadFactor 32.0%
+Gas Peak Hour, Pct of Peak Day % SQ.OilPkHrPctOfPkDay 4.6%
+Electric Generator Capacity Kw SQ.GeneratorCapacity 1,140
+Electric Station Service kwh SQ.StationKwh 59,833
+Losses, % of Electric Sales % SQ.KwhLossesPct 10.1%
+Power Co. Load Factor, % of Generation % SQ.PowerLoadFactorPct 60.2%
+Generation Efficiency On Oil % SQ.GenPctEfficiency 38.6%
+NTPC Opening Diesel Plant In Service 2019 $000's SQ.NTPCDieselPIS $3,218.1
+NTPC Accum. Diesel Deprec. 2018 $000's SQ.NTPCDieselAccumDepr $2,065.2
+NTPC Opening Distribution Plant In Service 2019 $000's SQ.NTPCDistrPIS $547.6
+NTPC Accum. Distribution Deprec. 2018 $000's SQ.NTPCDistrAccumDepr $326.8
+NTPC Opening General Plant In Service 2019 $000's SQ.NTPCGeneralPIS $133.0
+NTPC Accum. General Deprec. 2018 $000's SQ.NTPCGenAccumDepr $182.0
+NTPC AvgAnnualDieselPlantAdds $2012 $000's SQ.NTPCDieselPlantAdds $115.5
+NTPC AvgAnnualDistributionPlantAdds $2012 $000's SQ.NTPCDistrPlantAdds $22.0
+NTPC AvgAnnualGeneralPlantAdds $2012 $000's SQ.NTPCGeneralPlantAdds $10.2
+Annual O&M And Admin $2012 $ SQ.OandMandAdmin $571,380.0
+Working Capital before Fuel Inventory $2012 $ SQ.WCapitalBeforeFuel $127,508.7
+Average Fuel Oil Inventory, Pct of Capacity % SQ.AvgFuelOilInventoryPct 75%
+Heating Oil Cost - Incremental From
+Edmonton $2012 $/litre SQ.GeneralOilDelCost $0.65
+Propane Cost - Incremental From
+Edmonton $2012 $/litre SQ.GenPropaneDelCost $0.00
+Generation Diesel Fuel Cost " $2012 $/litre SQ.NTPCOilDelCost $0.50
+Natural Gas Heating
+No. Res. Conversions at Saturation % Gas.ResOnGasPct 100%
+No. Com. Conversions at Saturation % Gas.ComOnGasPct 100%
+No. Years to Saturated Res. Market Years Gas.ResSaturationYrs 3
+No. Years to Saturated Com. Market Years Gas.ComSaturationYrs 3
+Generation Efficiency on Natural Gas % Gas.GenPctEfficiency 38%
+Natural Gas Custody Transfer Station $2012 $ Gas.GasCTS $1,301,870
+Natural Gas Community Gate Station $2012 $ Gas.GasCityGateCost $729,399
+Natural Gas Lateral Cost $2012 $ Gas.LateralCost $43,230,000
+Natural Gas Major Mains Cost $2012 $ Gas.MainsCost $1,105,004
+Natural Gas Cost Per Service $2012 $/Bldg Gas.ServCostPerBldg $1,400
+Generation Conversion Cost $2012 $ Gas.DieselToGasCost $3,876,000
+Generator Building Cost $2012 $ Gas.GenBuildingCost $0
+Annual O&M And Admin before new capital $2012 $ Gas.OandMandAdmin $445,055
+Working Capital before Fuel Inventory $2012 $ Gas.WCapitalBeforeFuel $127,509
+Average Fuel Oil Inventory, Pct of Capacity % Gas.AvgFuelOilInventoryPct 38%
+Pct Generation Remaining on Oil % Gas.GenOnOilPct 5%

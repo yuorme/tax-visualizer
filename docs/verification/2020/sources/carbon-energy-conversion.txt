@@ -1,0 +1,120 @@
+Title: Natural Gas: A Primer
+URL: https://natural-resources.canada.ca/energy-sources/fossil-fuels/natural-gas-primer
+Fetched: 2026-11-02
+SHA-256 of the original: 86a1f3809e3f9a8e9d53e6bdf4c8269bd77c8d32868015aaaebe0724e54cdacf
+Publication date modified: 2025-01-07
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+# Natural Gas: A Primer
+
+- What is natural gas?
+- How is natural gas formed?
+- Where is natural gas found?
+- How is the natural gas resource base defined and measured?
+- How is natural gas found?
+- How is natural gas produced?
+- What is natural gas processing?
+- What is conventional and unconventional natural gas production?
+- What are natural gas hydrates?
+- How is natural gas transported?
+- How is natural gas stored?
+- Who consumes natural gas?
+- Why use natural gas?
+- How is natural gas measured?
+- What are the approximate natural gas conversion factors?
+- How much natural gas is required to heat a new average-sized single detached home?
+
+## What is natural gas?
+
+Natural gas is a naturally occurring hydrocarbon. Hydrocarbons are a class of organic compounds consisting of carbon and hydrogen and include crude oil, natural gas and coal.
+
+Raw natural gas (before processing) is composed primarily of methane, and may also contain varying amounts of ethane, propane, butane, and pentane (commonly referred to as natural gas liquids [NGLs]). Raw natural gas may also contain non-energy components such as nitrogen, carbon dioxide, hydrogen sulphide and water. Most NGLs, and all the non-energy components, are removed in processing plants before the natural gas is marketable and placed into pipelines.
+
+Natural gas from coal (NGC), also known as coalbed methane (CBM), is an almost pure form of natural gas (methane) found within underground coal deposits. The methane is contained within, and produced from, coal seams. This contrasts with conventional natural gas, which is produced from sandstones and carbonates. Unlike raw natural gas in conventional underground reservoirs, CBM is generally “lean, sweet natural gas,” meaning it contains very little NGLs or non-energy components.
+
+## How is natural gas formed?
+
+Natural gas is a fossil fuel formed over millions of years from decaying plant and animal matter buried in sedimentary rock layers. Heat and pressure transform plants and animals into solid, liquid or gaseous hydrocarbons.
+
+## Where is natural gas found?
+
+Natural gas is contained in the pores and fractures of sedimentary rock deep beneath the surface of the earth and ocean floors. The portion of a sedimentary rock layer (or a formation) that contains natural gas is often referred to as a reservoir, field or pool.
+
+Natural gas can be found throughout the world either by itself or in association with crude oil. Natural gas can be trapped in different types of sedimentary rock, including sandstone, carbonate, coal seams and shale beds.
+
+## How is the natural gas resource base defined and measured?
+
+Natural gas reserves are estimated quantities of gas in known drilled reservoirs, which are near existing pipelines and markets. These gas volumes are known with considerable certainty to be recoverable today and in future years under existing technological and economic conditions.
+
+Resources are estimated volumes of natural gas – discovered or undiscovered – that exist in subsurface accumulations. Discovered resources are estimated quantities of gas in known drilled reservoirs, which are too remote to be connected to existing pipelines and markets. If pipelines were built, gas volumes would be recoverable under existing technological and economic conditions. Undiscovered resources are an estimate, inferred from geological data, of gas volumes thought to be recoverable under current or anticipated economic and technological conditions, but not yet discovered by drilling. These resources may be near or remote from pipelines.
+
+## How is natural gas found?
+
+Before natural gas is ever drilled for and produced, geologists and geophysicists identify drilling targets where natural gas might be present. Geologists map the subsurface by first mapping the surface exposure of formations and projecting their continuation below surface, and by using the known location of formations in drilled wells to map at depth between wells. Seismic surveys are also used to image the subsurface and help determine appropriate places to drill.
+
+Once a drilling target is chosen, a well is drilled to the depth where natural gas is thought to exist using a drilling rig. Vertical (or straight line) drilling is the process of drilling a well to reach a target that is directly underneath the point of entry. Directional (or slant) drilling is the process of drilling a curved well, in order to reach a point that is not directly beneath the drill site. Horizontal drilling is a form of directional drilling where the well begins vertically and is then curved at a certain depth so that the well bore travels horizontally within a target formation.
+
+## How is natural gas produced?
+
+If natural gas is found, casing (steel pipe) is placed in the well and cement is pumped around the outside of the casing to seal the different formations off from one another. The casing is then perforated at the producing zone. Steel production tubing is also placed inside the casing, and connected to valves and pipelines at the surface. Natural gas can then be produced through the tubing up the well. Because natural gas is present at high pressure in reservoirs, and because it expands as pressure is released, natural gas will typically flow through the perforations in the casing, into the tubing, and rise up to the surface unaided by compressors or pumps. Once at the surface, the natural gas must be processed to remove water and impurities.
+
+## What is natural gas processing?
+
+Raw natural gas from wells consists mostly of methane but may also contain NGLs and impurities. NGLs are separated from the natural gas either at processing facilities near the natural gas field or at straddle plants located on pipeline systems. These by-products, once removed, are used in a number of ways. For example, propane can be used for cooking on gas grills.
+
+## What is conventional and unconventional natural gas production?
+
+Conventional natural gas production occurs from relatively highly porous and permeable sandstone or carbonate geologic formations. Unconventional natural gas is gas from coal seams (NGC or CBM), low permeability rocks (tight gas), or shale (shale gas).
+
+## What are natural gas hydrates?
+
+At suitably high concentrations, low temperatures and higher pressures, methane combines with water into a material that resembles ice, but which contains natural gas molecules entrapped within a solid molecular network of ice-like crystals.
+
+## How is natural gas transported?
+
+Natural gas is mainly transported within extensive networks of high pressure steel pipelines. When natural gas is first extracted from the ground, it is transported by gathering pipelines from natural gas wells to processing plants. After processing, the natural gas is transported via large-diameter, high-pressure steel transmission pipelines, which carry natural gas to large industrial customers and local distribution companies (LDCs). LDCs reduce the pressure of the gas, add odorant to aid in leak detection, and then deliver the natural gas via smaller, low pressure pipelines to homes and businesses.
+
+Natural gas can also be shipped overseas as a liquid. When natural gas is chilled to -160° C (-256° F) at atmospheric pressure, it becomes a liquid. Liquefied natural gas, or LNG, is simply natural gas in its liquid state. As a liquid, natural gas is reduced to one six-hundredth of its original volume, which makes it feasible to transport large volumes of gas over long distances in specially-designed ocean tankers. Upon delivery at an LNG receiving (or import) terminal, the LNG is re-heated and converted back to a gas, which is then sent through pipelines for delivery to end-users.
+
+## How is natural gas stored?
+
+Natural gas is most commonly stored underground and under pressure in three types of facilities: depleted oil and/or natural gas reservoirs, aquifers and salt caverns. A depleted reservoir is a formation that has already produced its natural gas or oil. An aquifer is a porous and permeable formation which contains water under pressure. Salt cavern storage pools are developed in thick salt formations by mining a cavern out of the salt.
+
+Natural gas can also be stored above ground (and sometimes underground) in insulated cylindrical storage tanks as LNG. The LNG tanks are typically double-walled. The inner tank is usually composed of nickel steel, while the outer tank is composed of stee l or concrete.
+
+## Who consumes natural gas?
+
+Natural gas is used extensively in residential, commercial, industrial and power generation applications. Natural gas is primarily used by residential and commercial users as a source of space heating, water heating, clothes drying, and in cooking applications. The industrial sector uses natural gas as a source of process heat, as a fuel for the generation of steam and as a feedstock in the production of petrochemicals and fertilizers. The electric power generation sector uses natural gas to produce electricity.
+
+Natural gas is also used as an alternative fuel in the transportation sector. Natural gas, which has been used to fuel vehicles since the 1930's, is increasingly popular as a vehicle fuel. Most natural gas vehicles (NGVs) operate using compressed natural gas (CNG) or LNG. CNG is more popular in light-duty passenger vehicles, while LNG is favored in heavy-duty applications such as transit buses or locomotives.
+
+Natural gas is also used by the natural gas industry itself. For example, producers use natural gas as a fuel in processing facilities, while pipeline companies use natural gas to fuel the compressors which push the natural gas along the pipeline.
+
+## Why use natural gas?
+
+Because of its many properties – relatively clean-burning, abundant, safe, reliable and efficient – natural gas has become a popular fuel of choice in residential, commercial, and industrial applications, as well as for electric power generation.
+
+## How is natural gas measured?
+
+Natural gas can be measured by energy content or volume in metric or imperial units.
+
+Natural gas energy content is typically measured in Gigajoules (GJ), a metric energy measure. The imperial measure is one Million British Thermal Units (MMBtu). A GJ has a heat value of approximately 0.948 MMBtus. One GJ of natural gas has the same amount of energy as 27 litres of fuel oil, 39 litres of propane, 26 litres of gasoline or 277 kilowatt hours of electricity.
+
+In Canada, natural gas resources, production, and demand volumes are commonly measured in Trillion Cubic Feet (Tcf), an imperial measure, where 1 Tcf equals 1,000,000,000,000 cubic feet (cf). However, the standard unit of natural gas volume measurement and consumer billing in Canada is cubic metres, a volumetric measure. One cubic meter is about equal to 0.038 GJs and approximately represents the space taken up by a standard kitchen range.
+
+## What are the approximate natural gas conversion factors?
+
+Approximate Natural Gas Conversions
+| ‹- Multiply by -›
+m 3 | cf | MMBtu | GJ
+Cubic Metres (m 3) | | 35.301 | 0.0353 | 0.0373
+Cubic Feet (cf) | 0.0283 | | 0.001 | 0.001055
+Million British thermal units (MMBtu) | 28.3278 | 1000 | | 1.0551
+Gigajoules (GJ) | 26.853 | 947.817 | 0.9478
+
+For example, to convert from 1 MMBtu to Gigajoules, multiply by 1.055.
+
+## How much natural gas is required to heat a new average-sized single detached home?
+
+A rough approximation is that 100 GJs of energy – or 2,700 cubic meters or 94,800 cubic feet of natural gas – is required to heat a new average-sized single detached home in Canada for one year.

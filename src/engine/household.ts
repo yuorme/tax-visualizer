@@ -3,6 +3,7 @@
 
 import { ccbOf, provincialChildBenefit } from "./benefits.ts";
 import { phased } from "./brackets.ts";
+import { carbonCostsOf } from "./carbon.ts";
 import { childcareOf } from "./childcare.ts";
 import { childcareCreditOf } from "./childcare-credits.ts";
 import { creditsOf } from "./credits.ts";
@@ -265,7 +266,8 @@ export function compute(y: YearData, p: Province, hh: Household) {
   // fuel is null for a year without fuel data (an object, so the golden snapshot, which locks top-level numbers,
   // keeps its format; the fuel tax is locked through gross and total).
   const fuel = fuelTaxOf(y, p, hh.driving);
-  const gross = h.fed + h.prov + h.wh + h.payroll + sales + property + (fuel?.total ?? 0);
+  const carbon = carbonCostsOf(y.year, p, hh.driving);
+  const gross = h.fed + h.prov + h.wh + h.payroll + sales + property + (fuel?.total ?? 0) + (carbon?.total ?? 0);
   const total = gross - h.benefits; // net of child benefits and refundable credits
   const on = h.cash > 0,
     base = on ? h.cash : 1;
@@ -283,6 +285,7 @@ export function compute(y: YearData, p: Province, hh: Household) {
     propRate,
     property,
     fuel,
+    carbon,
     gross,
     total,
     base,

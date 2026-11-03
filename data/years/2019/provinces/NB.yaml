@@ -39,3 +39,43 @@ sources:
   - {label: "New Brunswick Finance, child benefit and working supplement annual amounts and reduction rates", url: https://www2.gnb.ca/content/gnb/en/departments/finance/taxes/child_tax_benefit.html}
   - {label: "CRA, New Brunswick HST calculation sheet (unchanged 2016 parameters)", url: https://www.canada.ca/content/dam/cra-arc/migration/cra-arc/bnfts/rltd_prgrms/nbhstccs-eng.pdf}
   - {label: "Moncton, historical 2022 municipal property-tax rate", url: https://www.moncton.ca/en/budget}
+  - label: "Carbon history: Statistics Canada, Canadian Vehicle Survey: Annual 2009 (53-223-X)"
+    url: https://www150.statcan.gc.ca/n1/pub/53-223-x/53-223-x2009000-eng.pdf
+  - label: "Carbon history: Statistics Canada 25-10-0060-01 household energy consumption, selected CSV rows"
+    url: https://www150.statcan.gc.ca/n1/tbl/csv/25100060-eng.zip
+  - label: "Carbon history: Natural Gas: A Primer"
+    url: https://natural-resources.canada.ca/energy-sources/fossil-fuels/natural-gas-primer
+  - label: "Carbon history: Fuel charge rates"
+    url: https://www.canada.ca/en/revenue-agency/services/forms-publications/publications/fcrates/fuel-charge-rates.html
+  - label: "Carbon history: GREENHOUSE"
+    url: https://www.canada.ca/content/dam/eccc/documents/pdf/climate-change/pricing-pollution/greenhouse-gas-pollution-pricing-act-annual-report-2019.pdf
+
+# Historical driving defaults use a common survey baseline; see cited sources.
+driving:
+  distance: 16100
+  estimated: true
+
+# Calendar-year carbon charges and cash rebates; heating is an explicit modeled estimate.
+carbon:
+  name: Federal carbon pricing
+  gasoline:
+    - from: 2019-01-01
+      rate: 0
+    - from: 2019-04-01
+      rate: 0.0442
+  heating:
+    amount: 8.08
+    estimated: true
+    method: 2021 Statistics Canada household natural gas and heating oil use averaged across all households; 3.1727 GJ gas and 5.0966 GJ oil, held constant across years; calendar-day rates and applicable heating exemptions. See carbon heating verification.
+  rebates:
+    - program: carbon-rebate-payments
+      name: Climate Action Incentive / Canada Carbon Rebate
+      params:
+        payments:
+          - date: 2019-04-01
+            adult: 128
+            spouse: 64
+            child: 32
+            firstChild: 64
+            threshold: [0, 0]
+            rate: 0

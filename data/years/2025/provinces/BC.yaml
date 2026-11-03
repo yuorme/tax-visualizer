@@ -31,3 +31,54 @@ sources:
   - {label: "B.C., Renter's tax credit (2025: $400, reduced above $64,764)", url: "https://www2.gov.bc.ca/gov/content/taxes/income-taxes/personal/credits/renters-tax-credit"}
   - {label: "CRA, T4114 (B.C. family benefit, July 2025 to June 2026)", url: "https://www.canada.ca/content/dam/cra-arc/formspubs/pub/t4114/t4114-25e.pdf"}
   - {label: "nesto, Canada Property Tax Guide 2026 (residential property tax rate, carried over to 2025)", url: "https://www.nesto.ca/mortgage-basics/property-taxes-canada-highest-to-lowest/"}
+  - label: "Carbon history: Statistics Canada, Canadian Vehicle Survey: Annual 2009 (53-223-X)"
+    url: https://www150.statcan.gc.ca/n1/pub/53-223-x/53-223-x2009000-eng.pdf
+  - label: "Carbon history: Statistics Canada 25-10-0060-01 household energy consumption, selected CSV rows"
+    url: https://www150.statcan.gc.ca/n1/tbl/csv/25100060-eng.zip
+  - label: "Carbon history: Natural Gas: A Primer"
+    url: https://natural-resources.canada.ca/energy-sources/fossil-fuels/natural-gas-primer
+  - label: "Carbon history: Climate action tax credit"
+    url: https://www2.gov.bc.ca/gov/content/taxes/income-taxes/personal/credits/climate-action
+  - label: "Carbon history: Climate Action Tax Credit Regulation"
+    url: https://www.bclaws.gov.bc.ca/civix/document/id/complete/statreg/135_2008
+  - label: "Carbon history: Past carbon tax rates"
+    url: https://www2.gov.bc.ca/gov/content/taxes/sales-taxes/motor-fuel-carbon-tax/publications/carbon-tax-rates-by-fuel-type/past-carbon-tax-rates
+  - label: "Carbon history: Carbon tax rates by fuel type"
+    url: https://www2.gov.bc.ca/gov/content/taxes/sales-taxes/motor-fuel-carbon-tax/publications/carbon-tax-rates-by-fuel-type
+
+# Historical driving defaults use a common survey baseline; see cited sources.
+driving:
+  distance: 12900
+  estimated: true
+
+# Calendar-year carbon charges and cash rebates; heating is an explicit modeled estimate.
+carbon:
+  name: BC carbon tax
+  gasoline:
+    - from: 2025-01-01
+      rate: 0.1761
+    - from: 2025-04-01
+      rate: 0
+  heating:
+    amount: 48
+    estimated: true
+    method: 2021 Statistics Canada household natural gas and heating oil use averaged across all households; 48.5060 GJ gas and 0.2385 GJ oil, held constant across years; calendar-day rates and applicable heating exemptions. See carbon heating verification.
+  rebates:
+    - program: carbon-rebate-payments
+      name: BC climate action tax credit
+      params:
+        payments:
+          - date: 2025-01-01
+            adult: 126
+            spouse: 63
+            child: 31.5
+            firstChild: 63
+            threshold: [41071, 57288]
+            rate: 0.005
+          - date: 2025-04-01
+            adult: 126
+            spouse: 63
+            child: 31.5
+            firstChild: 63
+            threshold: [41071, 57288]
+            rate: 0.005

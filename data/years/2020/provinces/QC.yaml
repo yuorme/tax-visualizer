@@ -49,3 +49,10 @@ sources:
   - {label: "Finances Québec, historical solidarity credit including July 2023 housing enhancement", url: https://www.budget.finances.gouv.qc.ca/Budget/outils/depenses-fiscales/fiches/fiche-110201.asp}
   - {label: "Finances Québec, worker deduction rate and historical maxima", url: https://www.budget.finances.gouv.qc.ca/Budget/outils/depenses-fiscales/fiches/fiche-110906.asp}
   - {label: "Montreal, 2020 official rate table: Ville-Marie representative borough (manual PDF web extract)", url: https://ville.montreal.qc.ca/pls/portal/docs/PAGE/SERVICE_FIN_FR/MEDIA/DOCUMENTS/2020_TAUX_FR.PDF}
+  - label: "Carbon history: Statistics Canada, Canadian Vehicle Survey: Annual 2009 (53-223-X)"
+    url: https://www150.statcan.gc.ca/n1/pub/53-223-x/53-223-x2009000-eng.pdf
+
+# Historical driving defaults use a common survey baseline; see cited sources.
+driving:
+  distance: 14800
+  estimated: true

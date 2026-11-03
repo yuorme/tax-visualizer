@@ -420,7 +420,7 @@
         "useCredits": true
       },
       "expected": {
-        "credits": [["School relief", 500]],
+        "credits": [["School relief", 500], ["Climate Action Incentive / Canada Carbon Rebate", 300]],
         "property": 1000
       },
       "rule": "mb-2024"
@@ -443,7 +443,7 @@
         "useCredits": true
       },
       "expected": {
-        "credits": [["School relief", 700]],
+        "credits": [["School relief", 700], ["Climate Action Incentive / Canada Carbon Rebate", 300]],
         "property": 1400
       },
       "rule": "mb-2024"
@@ -466,7 +466,7 @@
         "useCredits": true
       },
       "expected": {
-        "credits": [["School relief", 1350]],
+        "credits": [["School relief", 1350], ["Climate Action Incentive / Canada Carbon Rebate", 300]],
         "property": 4000
       },
       "rule": "mb-2024"
@@ -489,7 +489,7 @@
         "useCredits": true
       },
       "expected": {
-        "credits": [["Renters tax credit", 120]],
+        "credits": [["Renters tax credit", 120], ["Climate Action Incentive / Canada Carbon Rebate", 300]],
         "property": 0
       },
       "rule": "mb-2024"
@@ -512,7 +512,7 @@
         "useCredits": true
       },
       "expected": {
-        "credits": [["Renters tax credit", 525]],
+        "credits": [["Renters tax credit", 525], ["Climate Action Incentive / Canada Carbon Rebate", 300]],
         "property": 0
       },
       "rule": "mb-2024"
@@ -535,7 +535,7 @@
         "useCredits": true
       },
       "expected": {
-        "credits": [],
+        "credits": [["Climate Action Incentive / Canada Carbon Rebate", 300]],
         "property": 0
       },
       "rule": "mb-2024"
@@ -1299,7 +1299,7 @@
         "fed": 4060,
         "prov": 1414,
         "payroll": 300,
-        "total": 5774,
+        "total": 5832.86,
         "me.breakdown.netIncome": {
           "ord": 0,
           "cg": 0,
@@ -1310,7 +1310,7 @@
           "enh": 0
         },
         "me.breakdown.rrspRoom": 0,
-        "breakdown.left": 44226
+        "breakdown.left": 44167.14
       }
     },
     {
@@ -1333,8 +1333,8 @@
         "fed": 0,
         "prov": 0,
         "payroll": 0,
-        "total": 0,
-        "breakdown.left": 2000
+        "total": 58.86,
+        "breakdown.left": 1941.14
       }
     },
     {
@@ -1472,7 +1472,7 @@
         "fed": 8410,
         "prov": 2929,
         "payroll": 420,
-        "total": 11759,
+        "total": 11817.86,
         "margBy.fd": 0.2555,
         "me.ti": 20000,
         "list.0.ti": 38000,
@@ -1721,7 +1721,7 @@
       },
       "expected": {
         "fuel": null,
-        "total": 0
+        "total": 128.3351
       }
     },
     {
@@ -1919,8 +1919,8 @@
       "expected": {
         "ccb": 14745,
         "provBen": 3453.84,
-        "total": -18198.84,
-        "breakdown.left": 18198.84,
+        "total": -18139.98,
+        "breakdown.left": 18139.98,
         "hasInv": false
       }
     },
