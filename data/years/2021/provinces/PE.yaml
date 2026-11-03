@@ -1,0 +1,37 @@
+# Benefit-year figures use July 2021 to June 2022, applied to current-year income.
+# Regular sales-tax credit only; extraordinary one-off payments and carbon measures are outside this model.
+# Charlottetown resident rate: (0.67 municipal + 1.50 provincial − 0.50 resident credit) / 100.
+# PEI child benefit is absent; it began January 2025. The 10% surtax applies after the dividend credit.
+
+code: PE
+name: Prince Edward Island
+shortName: PEI
+order: 10
+brackets:
+  - [31984, 0.098]
+  - [63969, 0.138]
+  - [.inf, 0.167]
+basicPersonalAmount: 10500
+dividendTaxCredit: {eligible: 0.105, nonEligible: 0.0196}
+spouseAmount: {max: 8918, threshold: 891}
+lowIncomeReduction:
+  program: family-low-income-reduction
+  params: {individual: 350, spouse: 350, child: 300, rate: 0.05, threshold: 19000}
+salesTax: {rate: 0.15, label: 15% HST}
+propertyTax: {rate: 0.0167, city: Charlottetown}
+credits:
+  - name: PEI sales tax credit
+    program: pei-sales-tax-credit
+    params: {individual: 110, spouseOrDependant: 55, supplementRate: 0.005, supplementFrom: 30000, supplementMax: 55, rate: 0.02, threshold: 50000}
+sources:
+  - {label: "CRA, PE428 for 2021", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5002-c/5002-c-21e.pdf}
+  - {label: "CRA, PE428 worksheet for 2021", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5002-d/5002-d-21e.pdf}
+  - {label: "CRA, GST/HST historical rates and provincial sales-tax rates", url: https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/charge-collect-which-rate/calculator.html}
+  - {label: "CRA, RC4210-2016: regular PE sales-tax credit formula, unchanged through 2021", url: https://publications.gc.ca/collections/collection_2017/arc-cra/Rv47-3-2016-eng.pdf?download=1}
+  - {label: "PEI, Budget 2016: regular sales-tax credit increase", url: https://www.princeedwardisland.ca/sites/default/files/publications/budget2016add.pdf}
+  - {label: "PEI Real Property Tax Act sections 4 and 5: rates last amended before 2023", url: https://www.princeedwardisland.ca/sites/default/files/legislation/r-05-real_property_tax_act.pdf}
+  - {label: "Charlottetown, 2021/22 budget: resident municipal rate", url: https://cdnsm5-hosted.civiclive.com/UserFiles/Servers/Server_10500298/File/Mayor%20and%20Council/Finance/Annual%20Budget/2021-2022%20Budget%20Address%20and%20Budget%20Documents.pdf}
+childAmount: {perChild: 1200, ages: under6}
+postDividendSurtax:
+  program: pei-surtax
+  params: {threshold: 12500, rate: 0.1}

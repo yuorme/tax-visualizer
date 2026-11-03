@@ -1,0 +1,87 @@
+Title: Dépenses fiscales 2025
+URL: https://www.budget.finances.gouv.qc.ca/budget/outils/depenses-fiscales/fiches/fiche-130501.asp
+Fetched: 2026-11-02
+SHA-256 of the original: d9f94fbc24e08ca96d886f8c44f972eee88b58baf95d833aba5d0f45340b3842
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+## Gestion des témoins de navigation
+
+Le site du ministère des Finances collecte des données de manière conforme aux différentes lois. La cueillette de renseignements ne vise aucunement à identifier un visiteur, mais à établir les statistiques de fréquentation. Pour savoir quels renseignements sont recueillis par les témoins de connexion (cookies), consultez notre politique de confidentialité.
+
+[image: Logo du gouvernement du Québec.]
+
+Ministère des Finances
+
+Ministère des Finances
+
+Migration progressive de nos contenus vers Québec.ca
+ANNÉES PRÉCÉDENTES
+
+# Dépenses fiscales2025
+
+- Accueil des dépenses fiscales /
+- Mesures fiscales et coûts /
+- Liste complète des mesures /
+- Évitement de la double imposition /
+- Majoration et crédit d’impôt pour dividendes
+
+# Majoration et crédit d’impôt pour dividendes
+
+Objectif : Établir une certaine neutralité dans le traitement fiscal d’un revenu de dividendes par rapport à un revenu d’affaires ou d’emploi.
+
+Instauration et modifications 1954, 1972 et 2006
+
+Impôt ou taxe Impôt sur le revenu des particuliers
+
+Type de mesure Crédit d’impôt
+
+Bénéficiaires 719 000 particuliers en 2023
+
+Harmonisation avec le fédéral En partie
+
+Référence juridique Loi sur les impôts, articles 497 et 767
+
+## Coûts de la mesure
+
+(en millions de dollars)
+
+[image: Les couts présentés dans ce graphique, sont également présentés dans le prochain tableau.]
+
+## Tableau sommaire des coûts de la mesure
+
+(en millions de dollars)
+
+| Estimations | Projections
+| 2020 | 2021 | 2022 | 2023 | 2024 | 2025 | 2026
+Régime des particuliers | 439,5 | 394,9 | 397,2 | 447,2 | 483,1 | 518,4 | 555,9
+
+Note :
+
+Sauf indication contraire, le coût des dépenses fiscales tient compte des mesures fiscales annoncées en date du 31 décembre 2025 qui ont un coût pour les années de 2020 à 2026. De plus, il est important de préciser que, pour les années antérieures à 2024, les dépenses fiscales représentent une estimation, ce qui implique, de façon générale, que leur coût est calculé à partir de statistiques fiscales réelles provenant de Revenu Québec lorsqu’elles sont disponibles ou, autrement, à partir d’autres sources et au moyen de certaines hypothèses. Pour les années de 2024 à 2026, les dépenses fiscales représentent une projection. De façon générale, la dernière valeur estimée de la dépense fiscale est projetée, à l’aide de différents indicateurs économiques, afin que les coûts pour les années de 2024 à 2026 soient obtenus.
+
+## Description
+
+Alors qu’un particulier inclut généralement dans le calcul de son revenu les montants réellement reçus, les dividendes de sociétés canadiennes imposables font l’objet d’une majoration dans le calcul du revenu. Le particulier peut toutefois déduire de son impôt autrement à payer un montant au titre du crédit d’impôt pour dividendes.
+
+Ces calculs visent à établir une certaine neutralité dans le traitement fiscal d’un revenu de dividendes par rapport à un revenu d’entreprise ou d’emploi, en tenant compte du fait que le dividende constitue une distribution du profit d’une société, lequel profit a déjà fait l’objet d’une imposition au niveau de cette société.
+
+Le régime fiscal distingue deux catégories de dividendes assujetties chacune à un traitement fiscal différent. Le premier type de dividende est le dividende déterminé, lequel est versé à même le revenu de la société payeuse imposé au taux général de l’impôt sur le revenu des sociétés. Un compte historique est utilisé afin de calculer le dividende pouvant être désigné à titre de dividende déterminé. Le deuxième type de dividende est le dividende autre qu’un dividende déterminé (« dividende ordinaire »), lequel est versé à même le revenu de la société payeuse imposé au taux réduit des sociétés, ou encore à même le revenu de placement de la société payeuse imposé au taux supérieur de l’impôt des sociétés.
+
+La désignation d’un dividende à titre de dividende déterminé pour l’application du régime fiscal fédéral vaut pour l’application du régime fiscal québécois. Aussi, le régime fiscal québécois utilise intégralement les comptes de revenus fédéraux afin d’établir si un dividende doit être considéré un dividende déterminé ou un dividende ordinaire, et ce, indépendamment des écarts existants entre les régimes fiscaux canadien et québécois.
+
+Le régime fiscal québécois prévoit un taux de majoration de 38 % à l’égard des dividendes déterminés. Quant au taux du crédit d’impôt correspondant, il était égal à 11,78 % du montant majoré du dividende reçu ou réputé reçu en 2019 et à 11,7 % après 2019.
+
+Les dividendes ordinaires reçus ou réputés reçus à compter de 2019 font l’objet d’une majoration de 15 %.
+
+Quant au taux du crédit d’impôt à l’égard des dividendes ordinaires, il était de 5,55 % du montant majoré du dividende reçu ou réputé reçu en 2019, à 4,77 % en 2020, à 4,01 % en 2021 et à 3,42 % après 2021.
+
+[image: Retour au haut de la page]
+
+- Accès à l’information
+- Accessibilité
+- Déclaration de services aux citoyens
+- Politique de confidentialité
+
+[image: Logo du Ministère des Finances du gouvernement du Québec]
+© Gouvernement du Québec, 2026
