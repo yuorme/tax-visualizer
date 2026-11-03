@@ -1336,37 +1336,124 @@ table.cmp .worse {
   flex-wrap: wrap;
   gap: 14px 28px;
 }
-.frug {
-  display: grid;
-  gap: 4px;
-  width: 200px;
-  margin-left: auto;
+.care-monthly {
+  width: 220px;
+  margin-top: 18px;
 }
-.frug-val {
-  margin-left: auto;
-  font-family: var(--font-num);
-  font-size: 12px;
+#childcare-costs[hidden] {
+  display: none;
+}
+.care-details {
+  margin-top: 18px;
+  border-top: 1px solid var(--rule);
+  padding-top: 14px;
+}
+.care-details summary {
+  cursor: pointer;
   font-weight: 600;
-  color: var(--sales);
-  white-space: nowrap;
 }
-#frug {
+.care-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+  gap: 18px 24px;
+  margin: 16px 0;
+}
+.care-grid .field,
+.care-grid .field > .money,
+.care-grid select {
+  min-width: 0;
   width: 100%;
-  margin: 0;
-  accent-color: var(--sales);
 }
-.frug-scale {
-  display: flex;
-  justify-content: space-between;
-  font-size: 10.5px;
+.care-grid .field > .money input {
+  min-width: 0;
+  width: 100%;
+}
+.care-grid .field > .lbl-row {
+  align-items: center;
+}
+.care-grid .lbl {
+  white-space: normal;
+}
+.care-child {
+  min-width: 0;
+  border-bottom: 1px solid var(--rule);
+  padding: 14px 0;
+}
+.care-child-row {
+  display: grid;
+  grid-template-columns: 54px 58px minmax(0, 1fr) 24px;
+  align-items: end;
+  gap: 8px;
+}
+.care-child-row.care-age-only {
+  grid-template-columns: 54px 58px 1fr;
+}
+.care-child-row .field,
+.care-child-row .field > .money,
+.care-child-row .field > .money input {
+  min-width: 0;
+  width: 100%;
+}
+.care-child-row .field > .money {
+  font-size: 20px;
+}
+.care-child-row .per {
+  display: none;
+}
+.care-name {
+  font-size: 13px;
+  padding-bottom: 8px;
+}
+.care-remove {
+  font-size: 22px;
+  padding-bottom: 7px;
+}
+.care-age-only .care-remove {
+  justify-self: end;
+}
+.care-exceptions,
+.care-quebec {
+  margin-top: 12px;
+}
+.care-exceptions > summary,
+.care-quebec > summary {
+  font-size: 12px;
   color: var(--muted);
+  font-weight: 400;
+}
+.care-adjustments {
+  margin-top: 18px;
+}
+.care-details > div > .linkbtn {
+  margin-top: 12px;
+}
+.care-checks {
+  display: grid;
+  gap: 10px;
+  margin-top: 14px;
+}
+.care-check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.care-check .check {
+  min-width: 0;
+}
+.care-grid .care-check + .field {
+  margin-top: 12px;
+}
+.care-details input[aria-invalid="true"],
+#childcare-monthly[aria-invalid="true"] {
+  outline: 2px solid var(--loss);
+  outline-offset: 2px;
 }
 #spend-range {
   width: 100%;
   accent-color: var(--sales);
 }
 @media (max-width: 560px) {
-  .frug {
+  .care-monthly {
     margin-left: 0;
     width: 100%;
   }
