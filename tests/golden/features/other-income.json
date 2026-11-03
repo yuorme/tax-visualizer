@@ -1,0 +1,417 @@
+{
+  "description": "Independent other-income expectations; arithmetic and primary-source provenance in docs/verification/other-income.md.",
+  "defaults": {
+    "active": 0,
+    "spouse": true,
+    "adults": 1,
+    "kids": 0,
+    "under6": 0,
+    "useBpa": true,
+    "whRate": 0,
+    "useCredits": false,
+    "homeValue": 0,
+    "rent": 0,
+    "monthlySpending": 0
+  },
+  "rules": {},
+  "cases": [
+    {
+      "id": "other-income-2025-ab-unearned",
+      "year": 2025,
+      "province": "AB",
+      "household": {
+        "people": [
+          {
+            "oth": 40000
+          }
+        ]
+      },
+      "expected": {
+        "cash": 40000,
+        "famNet": 40000,
+        "payroll": 0,
+        "fed": 3461.295,
+        "prov": 1414.16,
+        "total": 4875.455,
+        "me.breakdown.rrspRoom": 0,
+        "me.breakdown.netIncome.oth": 40000,
+        "breakdown.margOther": 0.225,
+        "invAmt": 0,
+        "invTax": 0
+      }
+    },
+    {
+      "id": "other-income-2026-ab-unearned",
+      "year": 2026,
+      "province": "AB",
+      "household": {
+        "people": [
+          {
+            "oth": 40000
+          }
+        ]
+      },
+      "expected": {
+        "cash": 40000,
+        "famNet": 40000,
+        "payroll": 0,
+        "fed": 3296.72,
+        "prov": 1378.48,
+        "total": 4675.2,
+        "me.breakdown.rrspRoom": 0,
+        "me.breakdown.netIncome.oth": 40000,
+        "breakdown.margOther": 0.22,
+        "invAmt": 0,
+        "invTax": 0
+      }
+    },
+    {
+      "id": "other-income-2022-ab-unearned",
+      "year": 2022,
+      "province": "AB",
+      "household": {
+        "people": [
+          {
+            "oth": 40000
+          }
+        ]
+      },
+      "expected": {
+        "cash": 40000,
+        "famNet": 40000,
+        "payroll": 0,
+        "fed": 3840.3,
+        "prov": 2018.6,
+        "total": 5858.9,
+        "me.breakdown.rrspRoom": 0,
+        "me.breakdown.netIncome.oth": 40000,
+        "breakdown.margOther": 0.25,
+        "invAmt": 0,
+        "invTax": 0
+      }
+    },
+    {
+      "id": "other-income-2025-itemized",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "oth": 50000,
+            "rrsp": 8000,
+            "fhsa": 13000,
+            "ded": 1000
+          }
+        ],
+        "useBpa": false
+      },
+      "expected": {
+        "cash": 50000,
+        "famNet": 28000,
+        "me.breakdown.netIncome.ded": 22000,
+        "me.breakdown.rrspRoom": 0,
+        "fed": 4060.0,
+        "prov": 1414,
+        "payroll": 300,
+        "total": 5774.0,
+        "breakdown.margOther": 0.1955,
+        "breakdown.incomeBases.beforeChildcare": [28000]
+      }
+    },
+    {
+      "id": "other-income-2025-care-addback",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "ord": 20000,
+            "oth": 30000,
+            "rrsp": 1000,
+            "fhsa": 1000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "earnedIncome": [20000],
+          "children": [
+            {
+              "age": 4,
+              "expenses": 8000,
+              "qcEligibleExpenses": 8000
+            }
+          ]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "childcare.claims": [8000],
+        "famNet": 39835,
+        "breakdown.incomeBases.beforeChildcare": [47835],
+        "breakdown.childcareCredit.income": 47835,
+        "breakdown.childcareCredit.rate": 0.55,
+        "breakdown.childcareCredit.allowedExpenses": 8000,
+        "breakdown.childcareCredit.applied": 4400
+      }
+    },
+    {
+      "id": "other-income-2025-qc-income-base",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 20000,
+            "oth": 30000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "earnedIncome": [20000],
+          "children": [
+            {
+              "age": 4,
+              "expenses": 8000,
+              "qcEligibleExpenses": 8000
+            }
+          ]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "childcare.claims": [8000],
+        "famNet": 41835,
+        "me.tiP": 48635,
+        "breakdown.incomeBases.beforeChildcare": [49835],
+        "breakdown.childcareCredit.income": 48635,
+        "breakdown.childcareCredit.rate": 0.71,
+        "breakdown.childcareCredit.applied": 5680.0
+      }
+    },
+    {
+      "id": "other-income-2025-no-eligible-earnings",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "oth": 50000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "earnedIncome": [0],
+          "children": [
+            {
+              "age": 4,
+              "expenses": 8000,
+              "qcEligibleExpenses": 8000
+            }
+          ]
+        }
+      },
+      "expected": {
+        "childcare.claims": [0],
+        "childcare.earnedIncomeLimit": 0,
+        "famNet": 50000,
+        "breakdown.childcareCredit.allowedExpenses": 0
+      }
+    },
+    {
+      "id": "other-income-2025-claimant-order",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "ord": 40000,
+            "oth": 20000
+          },
+          {
+            "ord": 50000
+          }
+        ],
+        "adults": 2,
+        "childcare": {
+          "mode": "automatic",
+          "earnedIncome": [40000, 50000],
+          "children": [
+            {
+              "age": 4,
+              "expenses": 8000,
+              "qcEligibleExpenses": 8000
+            }
+          ]
+        }
+      },
+      "expected": {
+        "childcare.claimant": 1,
+        "childcare.claims": [0, 8000],
+        "famNet": 101170,
+        "breakdown.incomeBases.beforeChildcare": [59635, 49535]
+      }
+    },
+    {
+      "id": "other-income-2026-itemized",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "oth": 50000,
+            "rrsp": 8000,
+            "fhsa": 13000,
+            "ded": 1000
+          }
+        ],
+        "useBpa": false
+      },
+      "expected": {
+        "cash": 50000,
+        "famNet": 28000,
+        "me.breakdown.netIncome.ded": 22000,
+        "me.breakdown.rrspRoom": 0,
+        "fed": 3920.0,
+        "prov": 1414,
+        "payroll": 300,
+        "total": 5634.0,
+        "breakdown.margOther": 0.1905,
+        "breakdown.incomeBases.beforeChildcare": [28000]
+      }
+    },
+    {
+      "id": "other-income-2026-care-addback",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "ord": 20000,
+            "oth": 30000,
+            "rrsp": 1000,
+            "fhsa": 1000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "earnedIncome": [20000],
+          "children": [
+            {
+              "age": 4,
+              "expenses": 8000,
+              "qcEligibleExpenses": 8000
+            }
+          ]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "childcare.claims": [8000],
+        "famNet": 39835,
+        "breakdown.incomeBases.beforeChildcare": [47835],
+        "breakdown.childcareCredit.income": 47835,
+        "breakdown.childcareCredit.rate": 0.55,
+        "breakdown.childcareCredit.allowedExpenses": 8000,
+        "breakdown.childcareCredit.applied": 4400
+      }
+    },
+    {
+      "id": "other-income-2026-qc-income-base",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 20000,
+            "oth": 30000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "earnedIncome": [20000],
+          "children": [
+            {
+              "age": 4,
+              "expenses": 8000,
+              "qcEligibleExpenses": 8000
+            }
+          ]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "childcare.claims": [8000],
+        "famNet": 41835,
+        "me.tiP": 48635,
+        "breakdown.incomeBases.beforeChildcare": [49835],
+        "breakdown.childcareCredit.income": 48635,
+        "breakdown.childcareCredit.rate": 0.72,
+        "breakdown.childcareCredit.applied": 5760.0
+      }
+    },
+    {
+      "id": "other-income-2026-no-eligible-earnings",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "oth": 50000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "earnedIncome": [0],
+          "children": [
+            {
+              "age": 4,
+              "expenses": 8000,
+              "qcEligibleExpenses": 8000
+            }
+          ]
+        }
+      },
+      "expected": {
+        "childcare.claims": [0],
+        "childcare.earnedIncomeLimit": 0,
+        "famNet": 50000,
+        "breakdown.childcareCredit.allowedExpenses": 0
+      }
+    },
+    {
+      "id": "other-income-2026-claimant-order",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "ord": 40000,
+            "oth": 20000
+          },
+          {
+            "ord": 50000
+          }
+        ],
+        "adults": 2,
+        "childcare": {
+          "mode": "automatic",
+          "earnedIncome": [40000, 50000],
+          "children": [
+            {
+              "age": 4,
+              "expenses": 8000,
+              "qcEligibleExpenses": 8000
+            }
+          ]
+        }
+      },
+      "expected": {
+        "childcare.claimant": 1,
+        "childcare.claims": [0, 8000],
+        "famNet": 101170,
+        "breakdown.incomeBases.beforeChildcare": [59635, 49535]
+      }
+    }
+  ],
+  "ratePeriodCases": []
+}

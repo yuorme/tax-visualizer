@@ -36,7 +36,7 @@ export function healthPremium(p: Province, ti: number): number {
  *  dividends grossed up), and the deductions taken off. */
 export interface NetIncomeParts {
   ord: number; // employment income
-  oth: number; // interest, rental and other income, counted in full
+  oth?: number; // interest, rental and other income, counted in full
   cg: number; // taxable capital gains; a net loss counts as 0
   ed: number; // grossed-up eligible dividends
   nd: number; // grossed-up non-eligible dividends
@@ -45,26 +45,31 @@ export interface NetIncomeParts {
   enh: number; // enhanced CPP/QPP contributions
 }
 
+/** Annual deductions claimed. Legacy generic deductions exclude separately itemized claims. */
+export function deductionsOf(x: Person): number {
+  return (x.ded || 0) + (x.rrsp || 0) + (x.fhsa || 0);
+}
+
 /** Net income before it's floored at zero, piece by piece (the enhanced rates are the same in both plans). A net
  *  capital loss adds nothing and can't offset other income. */
-export function netIncomeParts(fed: Federal, x: Person): NetIncomeParts {
+export function netIncomeParts(fed: Federal, x: Person, childcareDeduction = 0): NetIncomeParts {
   const inv = fed.investment;
   return {
     ord: x.ord,
-    oth: x.oth,
+    ...(x.oth ? { oth: x.oth } : {}),
     cg: Math.max(0, x.cg) * inv.capitalGainsInclusion,
     ed: x.ed * inv.grossUp.eligible,
     nd: x.nd * inv.grossUp.nonEligible,
     fd: x.fd,
-    ded: x.ded || 0,
+    ded: deductionsOf(x) + childcareDeduction,
     enh: payrollOf(fed, null, x).enh,
   };
 }
 
 /** Net income: total income less deductions and enhanced CPP/QPP contributions. */
-export function netOf(fed: Federal, x: Person): number {
-  const n = netIncomeParts(fed, x);
-  return Math.max(0, n.ord + n.oth + n.cg + n.ed + n.nd + n.fd - n.ded - n.enh);
+export function netOf(fed: Federal, x: Person, childcareDeduction = 0): number {
+  const n = netIncomeParts(fed, x, childcareDeduction);
+  return Math.max(0, n.ord + (n.oth ?? 0) + n.cg + n.ed + n.nd + n.fd - n.ded - n.enh);
 }
 
 /** RRSP deduction room: a share of earned income up to the year's dollar limit, to the nearest dollar. Current

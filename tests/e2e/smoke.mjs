@@ -21,6 +21,10 @@
 // Known failures (rules.KNOWN) are reported but don't fail the run; `npm run e2e -- --strict` fails on them too.
 import fs from "node:fs";
 import { chromium } from "playwright";
+import { listYears, loadYear } from "../../src/data/load.ts";
+import { compute } from "../../src/engine/index.ts";
+import { toHousehold } from "../golden/adapter.ts";
+import { DEDUCTION_STEPS } from "./deductions.mjs";
 import { ALLOWED_HOSTS, openPage, settle } from "./page.mjs";
 import { COLUMN_COUNT, contrastViolations, inspect, KNOWN, MAX_LABEL_LENGTH } from "./rules.mjs";
 
@@ -347,13 +351,92 @@ const OTHER_STEPS = [
   ],
 ];
 
+const YEAR_STEPS = [
+  [
+    "year: latest by default, every data year available",
+    async p => {
+      const expected = listYears()
+        .sort((a, b) => b - a)
+        .map(String);
+      const options = await p.locator("#tax-year option").evaluateAll(nodes => nodes.map(n => n.value));
+      const problems =
+        JSON.stringify(options) === JSON.stringify(expected) ? [] : ["year options differ from data years"];
+      if ((await p.inputValue("#tax-year")) !== expected[0]) problems.push("default year is not the latest");
+      await type(p, "#income", "48,000");
+      await openTab(p, "driving");
+      await type(p, "#km", "20,000");
+      return problems;
+    },
+  ],
+  ...listYears()
+    .sort((a, b) => b - a)
+    .map(year => [
+      `year: ${year} recalculates every province and notes`,
+      async p => {
+        await p.selectOption("#tax-year", String(year));
+        const saved = await p.evaluate(() => JSON.parse(localStorage.getItem("taxcmp")));
+        const data = loadYear(year);
+        const problems = [];
+        const input = toHousehold({ ...saved, efficiency: saved.eff ?? data.federal.driving?.efficiency ?? 0 });
+        if (saved.year !== year || saved.people[0].ord !== 48000 || saved.km !== 20000)
+          problems.push("year switch did not preserve income/driving or save year");
+        for (const province of data.provinces) {
+          const result = compute(data, province, input);
+          const actual = await p.textContent(`#col-${province.code} .cv`);
+          const expected = `${(result.avg * 100).toFixed(1)}${p.viewportSize().width <= 520 ? "" : "%"}`;
+          if (actual !== expected) problems.push(`${province.code} ${year}: expected ${expected}, got ${actual}`);
+        }
+        const notes = await p.textContent("#year-notes");
+        if (!notes.includes(`up to the ${year} dollar limit`))
+          problems.push("notes still show another year's RRSP limit");
+        const tip = await p.getAttribute('[data-note="rrsp"]', "data-tip");
+        if (!tip.includes(`the ${year} limit`)) problems.push("RRSP tooltip did not follow selected year");
+        const sharedSources = await p.locator("#default-sources a").count();
+        if (sharedSources !== 3) problems.push("shared spending assumption sources disappeared");
+        if ((await p.title()) !== `Provincial Tax Compare ${year}`) problems.push("page title did not follow year");
+        const fuel = data.federal.fuelTax != null && data.federal.driving != null;
+        if ((await shown(p, "#tab-driving")) !== fuel) problems.push("Driving tab does not match year's fuel coverage");
+        if (!fuel && (await shown(p, "#panel-driving"))) problems.push("Driving panel stayed open without fuel data");
+        if (!(await p.textContent("#year-sources")).startsWith(`Sources for ${year}:`))
+          problems.push("sources did not follow year");
+        return problems;
+      },
+    ]),
+  [
+    "year: selection survives reload and invalid saved year falls back",
+    async p => {
+      const selected = await p.inputValue("#tax-year");
+      const before = await capture(p);
+      await p.reload();
+      await settle(p);
+      const problems = [];
+      if ((await p.inputValue("#tax-year")) !== selected || JSON.stringify(await capture(p)) !== JSON.stringify(before))
+        problems.push("saved year/scenario did not survive reload");
+      await p.evaluate(() => {
+        const saved = JSON.parse(localStorage.getItem("taxcmp"));
+        saved.year = "invalid";
+        localStorage.setItem("taxcmp", JSON.stringify(saved));
+      });
+      await p.reload();
+      if ((await p.inputValue("#tax-year")) !== String(Math.max(...listYears())))
+        problems.push("invalid year did not fall back");
+      return problems;
+    },
+  ],
+];
+
 // Intended wording changes since the legacy page: [issue, pattern in the built page's comparison text, legacy text].
 // The built page's text is rewritten with these before it's compared with the legacy page, so everything else still
 // has to match exactly. Each entry must match in every legacy comparison run (the runs stop matching if the wording
 // changes again, and then the entry has to go).
 const LEGACY_WORDING = [
+  [
+    "#13",
+    /investment income adds on top of the rest of its income\./g,
+    "investment income adds on top of other income.",
+  ],
   // #13: income from a job is now "employment income", and other income has a field and a marginal rate of its own
-  ["#13", /(\$[\d,]+) employment income\b/g, "$1 employment & other"],
+  ["#13", /([Tt]axable income is \$[\d,]+: )(\$[\d,]+) employment income\b/g, "$1$2 employment & other"],
   ["#13", /^Employment income\t/gm, "Employment & other income\t"],
   ["#13", /^Interest, rental & other income\t[^\n]*\n/gm, ""],
 ];
@@ -469,6 +552,16 @@ for (const [width, colorScheme] of [
   const other = await run({ width, colorScheme, contrast: width === 375, steps: OTHER_STEPS });
   check(`${width}px ${colorScheme}, other income`, width, other);
   console.log(`${width}px ${colorScheme}: ${OTHER_STEPS.length} other income states checked`);
+  const history = await run({ width, colorScheme, contrast: width === 375, steps: YEAR_STEPS });
+  check(`${width}px ${colorScheme}, year selector`, width, history);
+  console.log(`${width}px ${colorScheme}: ${YEAR_STEPS.length} year selector states checked`);
+}
+for (const width of [1000, 430, 375]) {
+  for (const colorScheme of ["light", "dark"]) {
+    const deductions = await run({ width, colorScheme, contrast: width === 375, steps: DEDUCTION_STEPS });
+    check(`${width}px ${colorScheme}, deductions`, width, deductions);
+    console.log(`${width}px ${colorScheme}: ${DEDUCTION_STEPS.length} deduction states checked`);
+  }
 }
 await browser.close();
 

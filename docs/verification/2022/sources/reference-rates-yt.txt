@@ -1,0 +1,67 @@
+Title: Yukon 2023 and 2022 Tax Rates & Tax Brackets
+URL: https://www.taxtips.ca/priortaxrates/tax-rates-2022-2023/yt.htm
+Fetched: 2026-11-02
+SHA-256 of the original: 2d9d2c2fd7f0fe674a37d73ff23f2790d1a938dee2585ca087e764157a5fff0c
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+#### Home -> Territories -> Yukon
+
+#### Tax Rates -> 2022-2023 Tax Rates -> Yukon
+
+# Yukon 2023 and 2022 Tax Rates & Tax Brackets
+
+The Federal and Yukon tax brackets and personal tax credit amounts are increased for 2023 by an indexation factor of 1.063 (6.3% increase), except for the Yukon amount of $500,000, which is equal to the corporate small business limit.
+
+Yukon uses the Federal tax brackets for their first 3 tax brackets.
+
+See Indexation of the Personal Income Tax System for how the indexation factors are calculated.
+
+The indexation factors, tax brackets and tax rates for 2023 have been confirmed to Canada Revenue Agency information.
+
+Tax Tip: read the article Understanding the Tables of Personal Income Tax Rates, especially if you are trying to compare the rates below to the marginal tax rates in the Basic Tax Calculator or the Detailed Tax Calculators.
+
+TaxTips.ca - Yukon Tax Rates
+2023 Taxable Income | 2023 Tax Rates | 2022 Taxable Income | 2022 Tax Rates
+first $53,359 | 6.40% | first $50,197 | 6.40%
+over $53,359 up to $106,717 | 9.00% | over $50,197 up to $100,392 | 9.00%
+over $106,717 up to $165,430 | 10.90% | over $100,392 up to $155,625 | 10.90%
+over $165,430 up to $235,675 | 12.93% | over $155,625 up to $221,708 | 12.96%
+over $235,675 up to $500,000 | 12.80% | over $221,708 up to $500,000 | 12.80%
+over $500,000 | 15.00% | over $500,000 | 15.00%
+
+TaxTips.ca - Combined Federal & Yukon Tax Brackets and Tax Rates
+2023 Taxable Income (1) | YT 2023 Marginal Tax Rates | 2022 Taxable Income (1) | YT 2022 Marginal Tax Rates
+Other Income | Capital Gains | Canadian Dividends | Other Income | Capital Gains | Canadian Dividends
+Eligible | Non-Eligible | Eligible | Non-Eligible
+first $53,359 | 21.40% | 10.70% | -7.78% | 13.45% | first $50,197 | 21.40% | 10.70% | -7.78% | 13.45%
+over $53,359 up to $106,717 | 29.50% | 14.75% | 3.40% | 22.77% | over $50,197 up to $100,392 | 29.50% | 14.75% | 3.40% | 22.77%
+over $106,717 up to $165,430 | 36.90% | 18.45% | 13.61% | 31.28% | over $100,392 up to $155,625 | 36.90% | 18.45% | 13.61% | 31.28%
+over $165,430 up to $235,675 | 42.25% | 21.13% | 20.99% | 37.43% | over $155,625 up to $221,708 | 42.34% | 21.17% | 21.11% | 37.53%
+over $235,675 up to $500,000 | 45.80% | 22.90% | 25.89% | 41.51% | over $221,708 up to $500,000 | 45.80% | 22.90% | 25.89% | 41.51%
+over $500,000 | 48.00% | 24.00% | 28.93% | 44.04% | over $500,000 | 48.00% | 24.00% | 28.93% | 44.04%
+Marginal tax rate for dividends is a % of actual dividends received (not grossed-up taxable amount). Marginal tax rate for capital gains is a % of total capital gains (not taxable capital gains). Gross-up rate for eligible dividends is 38%, and for non-eligible dividends is 15%. For more information see Yukon Dividend Tax Credits. Copyright © 2002 Boat Harbour Investments Ltd.
+TaxTips.ca Yukon Basic Personal Amount
+2023 Personal Amount (1) | 2023 Tax Rate | 2022 Personal Amount (1) | 2022 Tax Rate
+$15,000 | 6.40% | $14,398 | 6.40%
+Federal Basic Personal Amount
+2023 Personal Amount (1) | 2023 Tax Rate | 2022 Personal Amount (1) | 2022 Tax Rate
+$15,000 | 15% | $14,398 | 15%
+
+(1) See the federal tax rates page for information on the enhanced federal and Yukon basic personal amounts (BPAs), which increases the marginal tax rates for taxable incomes in the second highest federal tax bracket. The marginal tax rates in blue above have been adjusted to reflect these changes.
+
+The Yukon BPA mirrors the changes in the federal BPA.
+
+Revised: September 20, 2026
+
+© 2002- Boat Harbour Investments Ltd. All rights reserved.
+
+See Reproduction of information from TaxTips.ca
+
+Privacy Policy | Contact
+
+Facebook | Twitter | LinkedIn
+
+The authors of TaxTips.ca strive, but cannot guarantee, to provide information which is current and accurate. Individual circumstances have a significant effect on how tax and financial information can be used. Due to this, and to the nature of the information, it should not be relied upon for decision making without professional advice.
+
+TaxTips.ca provides links to other web sites. We cannot guarantee the accuracy of the information provided on linked sites.

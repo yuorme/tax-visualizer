@@ -17,7 +17,8 @@ line-by-line tax return. Simpler and slightly less precise is acceptable where i
 - Interest, rental and other income: taxed at the same rates and counted in net income and family net income for
   every benefit, credit, clawback and the Ontario Health Premium, but none of the employment-only treatment above,
   and no RRSP room. Pensions and RRSP/RRIF withdrawals go here until pension income has its own field; the
-  pension income credit isn't applied.
+  pension income credit isn't applied. Quebec's Health Services Fund contribution on non-employment income
+  is not modelled yet (#91).
 
 **Income tax (federal and every province and territory)**
 - Brackets, basic personal amounts (including the federal, Yukon and Manitoba phase-outs), spouse or common-law
@@ -25,7 +26,11 @@ line-by-line tax return. Simpler and slightly less precise is acceptable where i
   CPP/QPP and EI/QPIP.
 - Dividend gross-up and dividend tax credits; 50% inclusion of net capital gains; foreign tax credit for tax
   withheld on foreign dividends.
-- Deductions (RRSP and similar), entered as one amount.
+- Annual deductions claimed per adult, itemized as RRSP, FHSA and other deductions. Existing saved generic
+  deductions remain other deductions. All three components reduce net income once; absent new claims count as zero.
+  Account room and contribution history are not calculated. The RRSP shortcut estimates room using employment
+  income; it is not a verified maximum. FHSA claims may include deferred eligible contributions.
+  [CRA FHSA deductions](https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/first-home-savings-account/tax-deductions-fhsa-contributions.html).
 - Province-specific: Ontario surtax, Ontario tax reduction and LIFT credit, BC tax reduction, low-income
   reductions in Newfoundland and Labrador, New Brunswick, PEI and Nova Scotia, Saskatchewan's child amount,
   Nova Scotia's and Nunavut's credits for children under 6, Quebec abatement, Quebec deduction for workers and
@@ -72,6 +77,32 @@ The model counts **taxes the household actually pays**. Costs passed on through 
 ## Decided, not built yet
 
 Recorded here as the spec for the GitHub issues that implement them; the issues hold the order.
+
+**Childcare and expanded deductions (milestone 5, #94–98).** Itemized RRSP/FHSA/other claims are implemented;
+federal childcare calculations and Ontario/Quebec/Newfoundland and Labrador childcare credits are implemented in
+the backend for both existing years (#95–96). They accept
+explicit earned income and child details, calculate ordinary claims or accept verified manual claims, and expose
+calculation status and separate federal/Quebec income bases. The UI remains planned.
+Detailed contracts and existing benefit-model limitations are in
+[childcare verification](verification/childcare/README.md). The approved full scope is:
+- Replace frugality with a monthly household childcare amount, preserving the remaining spending controls and
+  their household-size behavior. Migrate saved spending without changing its effective dollar amount; add no reset UI.
+- Hold childcare expense constant across provinces, averaged over twelve months after fee subsidies/reimbursements.
+  Advance tax-credit payments are not fee subsidies. Expense itself is neither tax nor sales-taxable spending.
+- Require explicit eligible earned income per adult (including zero) for automatic deductions; never infer it
+  from the mixed ordinary-income field. Distinguish missing information from a calculated zero claim.
+- Use child-level year-end ages, relevant disability eligibility and expenses; detailed ages also determine benefit
+  child counts. Preserve aggregate child-count controls where no detailed ages exist.
+- Apply federal childcare deduction rules, claimant selection and limits in 2025 and 2026, plus Ontario, Quebec
+  and Newfoundland and Labrador childcare relief, with each program's own income base and refundability.
+- Require a supplied Quebec-eligible expense portion to include that credit; distinguish missing from confirmed
+  zero, and allow qualifying extras alongside federally eligible subsidized fees.
+- Automate ordinary single-parent/couple cases. Deliberate manual mode accepts verified annual claims per adult
+  for exceptional cases, replacing automatic deductions; users remain responsible for eligibility.
+- Put expense, allowed claim, claimant and provincial-credit explanations in the existing detailed comparison and
+  tooltips only, with no additional summary widgets. Keep formulas in the engine and parameters in sourced year data.
+- Medical, donation, tuition and broader disability credits remain deferred. This is a tax-and-benefit comparison,
+  not a childcare-price or disposable-income/cost-of-living model.
 
 **Self-employment.** A separate amount per adult, next to employment income (the CPP maximum is shared). Both
 CPP/QPP shares including CPP2, a deduction for the employer half, no EI (opting in is not modelled), no Canada
@@ -125,7 +156,8 @@ For now:
 - Disability, medical, tuition and donation credits; the alternative minimum tax. Medical and disability
   credits matter for seniors but depend on what each household spends; size them with the 0.1-point rule if
   they come up again.
-- Childcare costs and the childcare expense deduction (except as a manual deduction).
+- Childcare inputs and credits are not connected to the UI yet. The federal and ON/QC/NL calculation backends
+  are implemented; the existing UI still accepts verified manual claims under other deductions.
 - One-time government payments, such as the June 2026 GST/HST credit top-up (50% of the 2025-26 credit). The
   model counts only recurring programs.
 - Smaller programs: Manitoba's child benefit for very low incomes, Newfoundland and Labrador's prenatal–early
@@ -138,6 +170,7 @@ For now:
 
 Marked `estimated: true` in the data files where they appear:
 - Canada Workers Benefit 2026 amounts (2025 figures indexed by 2% until CRA publishes them).
+- Ontario CARE 2026: continuing statutory formula, pending the 2026 return form (the budget confirms the program).
 - Saskatchewan low-income tax credit reduction rate (worked out from the published start and end points).
 - Manitoba renters credit taken at its $625 maximum.
 - NWT and Newfoundland and Labrador child benefits: straight-line taper between published start and end incomes.

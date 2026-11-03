@@ -1,0 +1,42 @@
+# Benefit-year figures use July 2022 to June 2023, applied to current-year income.
+# Moncton historical 2022 property tax rate is 1.5472 per 100.
+
+code: NB
+name: New Brunswick
+order: 9
+brackets:
+  - [44887, 0.094]
+  - [89775, 0.1482]
+  - [145955, 0.1652]
+  - [166280, 0.1784]
+  - [.inf, 0.203]
+basicPersonalAmount: 11720
+dividendTaxCredit: {eligible: 0.14, nonEligible: 0.0275}
+spouseAmount: {max: 9186, threshold: 919}
+lowIncomeReduction:
+  program: nb-low-income-reduction
+  params: {amount: 701, rate: 0.03, threshold: 19177}
+salesTax: {rate: 0.15, label: 15% HST}
+propertyTax: {rate: 0.015472, city: Moncton}
+childBenefit:
+  name: NB Child Tax Benefit
+  program: nb-child-tax-benefit
+  params:
+    perChild: 250
+    threshold: 20000
+    rateOneChild: 0.025
+    rateMoreChildren: 0.05
+    workingIncomeSupplement: {rate: 0.04, floor: 3750, max: 250, threshold: 20921, phaseOut: 0.05}
+credits:
+  - name: New Brunswick HST credit
+    program: nb-hst-credit
+    params: {adult: 300, spouse: 300, child: 100, rate: 0.02, threshold: 35000}
+sources:
+  - {label: "CRA, NB428 for 2022", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5004-c/5004-c-22e.pdf}
+  - {label: "CRA, NB428 worksheet for 2022", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5004-d/5004-d-22e.pdf}
+  - {label: "CRA, T4114-22: July 2022–June 2023 child benefits (official publications archive)", url: https://publications.gc.ca/collections/collection_2022/arc-cra/Rv1-36-2022-eng.pdf?download=1}
+  - {label: "CRA, RC4210-22: July 2022–June 2023 credits (official guide archived by DT Tax; original CRA link retired)", url: https://support.drtax.ca/dtmax/eng/kb/dtmax/eng/rc4210-22e.pdf}
+  - {label: "CRA, GST/HST historical rates and provincial sales-tax rates", url: https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/charge-collect-which-rate/calculator.html}
+  - {label: "New Brunswick Finance, child benefit and working supplement annual amounts and reduction rates", url: https://www2.gnb.ca/content/gnb/en/departments/finance/taxes/child_tax_benefit.html}
+  - label: Moncton, historical 2022 municipal property-tax rate
+    url: https://www.moncton.ca/en/budget

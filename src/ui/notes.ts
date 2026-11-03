@@ -201,13 +201,18 @@ export function tooltips(y: YearData): Record<string, string> {
     : { fuel: noFuel, distance: noFuel, efficiency: noFuel };
   return {
     ...fuelTips,
-    deductions: `Amounts subtracted from your income before tax is worked out: RRSP and FHSA contributions, union and professional dues, childcare expenses, deductible support payments, moving expenses and similar. Max RRSP fills in ${rate(F.rrsp.rate)} of employment income, up to the ${y.year} limit of ${money(F.rrsp.limit)}. Your actual room is ${rate(F.rrsp.rate)} of last year's earned income, less any pension adjustment, plus unused room carried forward; it's on your notice of assessment.`,
+    deductions:
+      "Annual amounts claimed against income for the selected person. Open Edit to enter RRSP, FHSA and other deductions separately. Enter each amount once; these are deductions claimed this year, not necessarily contributions made this year. Eligibility and available room are your responsibility.",
+    rrsp: `Your annual RRSP deduction claimed, including eligible unused contributions from earlier years. Use estimate fills in ${rate(F.rrsp.rate)} of the employment income entered, up to the ${y.year} limit of ${money(F.rrsp.limit)}. This is only an estimate: net rental income that could create room is not separated from other income. Your actual room uses last year's earned income, pension adjustments and unused room; check your notice of assessment.`,
+    fhsa: "Your annual FHSA deduction claimed, including eligible contributions deferred from earlier years. The claim can exceed one year's contribution allowance. Transfers from an RRSP to an FHSA are not deductible. Check your FHSA records and Schedule 15 for the amount you can claim; the calculator does not calculate contribution room or enforce your lifetime limit.",
+    otherDeductions:
+      "Annual deductions other than the RRSP and FHSA claims entered separately: union and professional dues, eligible childcare expenses, deductible support payments, moving expenses and similar. Existing saved deductions are kept here. Exclude anything already entered as RRSP or FHSA to avoid counting it twice.",
     bpa: `Every taxpayer gets a non-refundable credit on a basic amount of income: ${money(F.basicPersonalAmount.max)} federally in ${y.year}, plus a provincial amount from ${money(bpa.lo)} in ${places(y, bpa.atLo)} to ${money(bpa.hi)} in ${places(y, bpa.atHi)}. Switch off to see bracket rates alone.`,
     spending: `Your household's monthly spending on things sales tax applies to, before tax. A quick estimate: your average monthly credit card and debit spending, minus groceries, prescriptions and healthcare. Usually exempt across Canada: basic groceries, rent and mortgage payments, prescription drugs, most medical and dental care, insurance premiums and banking fees, childcare, tuition, and public transit. Usually taxed: restaurant meals and takeout, alcohol, clothing, electronics, furniture and household goods, gas, utilities, phone and internet, vehicles and repairs, travel, and most services. ${y.year} rates run from ${sales.atLo[0].salesTax.label} in ${places(y, sales.atLo)} to ${sales.atHi[0].salesTax.label} in ${places(y, sales.atHi)}. The starting amount is a rough estimate for a household with the adults and children set here; adjust it to match your own spending.${fd ? " Include gasoline: its GST/HST (and QST in Quebec) is counted here, and the per-litre fuel taxes come from the Driving tab." : ""}`,
     children: `Children under 18. They raise the spending estimate and add child benefits: the Canada Child Benefit plus your province's benefit (every province and territory with one), using ${benefitYear(y)} amounts. Benefits are netted off the tax shown. Once you have at least one child, drag the small slate handle on the same track to say how many are under 6, since they get a higher CCB.`,
     property: `Annual property tax = home value × municipal rate. Each province uses the typical ${y.year} residential rate in its largest city, from ${fixed(prop.lo, 2)} in ${city(prop.atLo)} to ${fixed(prop.hi, 2)} in ${city(prop.atHi)}${propCaveats.length ? `; ${clauses(propCaveats)}` : ""}. Editing the rate changes your home province only. The same home value is used everywhere, though home prices differ a lot between cities. Renters pay property tax indirectly through rent, which isn't counted here.`,
     credits: `Credits paid to lower- and modest-income households, worked out from the income and household above: the ${gbName}${gb.formerName ? ` (formerly the ${gb.formerName})` : ""}, the Canada Workers Benefit, and your province's credits, such as the Ontario Trillium Benefit, Quebec's solidarity credit and work premium, and the low-income credits in Saskatchewan, New Brunswick, Nova Scotia, PEI and Newfoundland and Labrador. Amounts are for ${benefitYear(y)} (the ${y.year} tax year for the Workers Benefit). They're netted off the tax shown, together with child benefits.`,
-    otherIncome: `Interest, rental income after expenses, pensions, RRSP and RRIF withdrawals, and any other income that's taxed in full but doesn't come from a job. It's taxed at the same rates as employment income but pays no CPP/QPP, EI or QPIP, gets no Canada employment amount (${money(F.employmentAmount)}), and isn't working income for the Canada Workers Benefit, Quebec's work premium or the working-income parts of the Alberta and New Brunswick child benefits. It does count in net income, so it reduces income-tested benefits and credits like any other income. The pension income credit and pension splitting aren't applied. Interest earned in a TFSA isn't taxed: leave it out.`,
+    otherIncome: `Interest, rental income after expenses, pensions, RRSP and RRIF withdrawals, and any other income that's taxed in full but doesn't come from a job. It's taxed at the same rates as employment income but pays no CPP/QPP, EI or QPIP, gets no Canada employment amount (${money(F.employmentAmount)}), and isn't working income for the Canada Workers Benefit, Quebec's work premium or the working-income parts of the Alberta and New Brunswick child benefits. It does count in net income, so it reduces income-tested benefits and credits like any other income. Quebec's Health Services Fund contribution on non-employment income is not modelled. The pension income credit and pension splitting aren't applied. Interest earned in a TFSA isn't taxed: leave it out.`,
     capitalGains: `Profit from selling investments for more than you paid (their adjusted cost base), minus losses on anything sold at a loss during the year. Only ${rate(inv.capitalGainsInclusion)} of a net gain is taxable. A net loss doesn't reduce other income this year, but it can be carried back 3 years or forward indefinitely against future gains. Double-click the amount or slider to reset to 0.`,
     eligibleDividends: `Dividends from Canadian public companies, and from private corporations paying out income taxed at the general corporate rate. Most dividends from Canadian stocks and Canadian equity ETFs are eligible. They're grossed up by ${rate(inv.grossUp.eligible - 1)} and earn the enhanced dividend tax credit, so they're taxed well below salary.`,
     nonEligibleDividends: `Dividends paid from corporate income taxed at the small business rate, usually from a small private corporation you own. They're grossed up by ${rate(inv.grossUp.nonEligible - 1)} and earn a smaller dividend tax credit than eligible dividends.`,
@@ -284,11 +289,27 @@ export function footerNotes(y: YearData, page: PageDefaults): string {
     `Each person with employment income gets the Canada employment amount (${money(F.employmentAmount)}${empAlso.length ? `, also in ${list(empAlso)}` : ""}) and credits for base CPP/QPP contributions and EI/QPIP premiums, federally and in every province except ${quebec.name}, which instead allows a deduction for workers (${rate(wd.rate)} of employment income, up to ${money(wd.max)}).`,
     "Enhanced CPP/QPP contributions are deducted from income.",
     `Ontario adds its surtax (${list(surtax)}), the Ontario tax reduction (${money(onRed.base)} plus ${money(onRed.perChild)} per child) and the LIFT credit (up to ${money(lift.max)}).`,
+    ...P.flatMap(p =>
+      p.postDividendSurtax
+        ? [
+            `${p.name} adds a surtax of ${rate(p.postDividendSurtax.params.rate)} of provincial tax above ${money(p.postDividendSurtax.params.threshold)}, after dividend tax credits and before the low-income tax reduction.`,
+          ]
+        : [],
+    ),
     // The reduction is gone once net income passes the threshold by max ÷ rate.
     `BC applies its tax reduction (up to ${money(bcRed.max)}, phased out between ${money(bcRed.threshold)} and ${money(bcRed.threshold + bcRed.max / bcRed.rate)} of net income).`,
     `Low-income tax reductions are applied in ${list(lowIncome)}${indexed.length ? ` (${list(indexed)} ${indexed.length > 1 ? "are" : "is"} ${lastYearIndexed})` : ""}.`,
     kidPhrases.length ? `${list(kidPhrases)} are claimed by the parent who claims the children.` : "",
     "A single parent claims the eligible dependant amount; in Quebec a single adult gets the amount for a person living alone.",
+    ...P.flatMap(p =>
+      typeof p.spouseAmount === "object" &&
+      "program" in p.spouseAmount &&
+      p.spouseAmount.program === "nova-scotia-spouse-amount"
+        ? [
+            `${p.name}'s spouse or eligible dependant amount includes a supplement of up to ${money(p.spouseAmount.params.supplement.max)}, reduced by ${rate(p.spouseAmount.params.supplement.rate)} of the claimant's taxable income above ${money(p.spouseAmount.params.supplement.threshold)} and separately by the dependant's net income.`,
+          ]
+        : [],
+    ),
     ...frozen,
   ]
     .filter(Boolean)
@@ -310,7 +331,7 @@ export function footerNotes(y: YearData, page: PageDefaults): string {
     ([r, ps]) => `${list(ps.map(p => article(short(p))))} withhold${ps.length > 1 ? "" : "s"} a ${rate(r)} payroll tax`,
   );
   const payroll = [
-    `CPP: ${fixed(cpp.base, 2)} base plus ${rate(cpp.enh1)} enhanced on earnings between ${money(cpp.exempt)} and ${money(cpp.ympe)}, and ${rate(cpp.enh2)} on earnings up to ${money(cpp.yampe)}.`,
+    `CPP: ${fixed(cpp.base, 2)} base plus ${rate(cpp.enh1)} enhanced on earnings between ${money(cpp.exempt)} and ${money(cpp.ympe)}${cpp.enh2 ? `, and ${rate(cpp.enh2)} on earnings up to ${money(cpp.yampe)}` : "; no second additional contribution applies"}.`,
     `Quebec's QPP is ${fixed(qpp.base, 2)} base plus ${sameEnhanced ? "the same enhanced rates" : `${rate(qpp.enh1)} enhanced on earnings between ${money(qpp.exempt)} and ${money(qpp.ympe)}, and ${rate(qpp.enh2)} on earnings up to ${money(qpp.yampe)}`}.`,
     `EI: ${fixed(ei.rate, 2)} of earnings up to ${money(ei.maxInsurable)}, or ${fixed(ei.quebecRate, 2)} in Quebec, where QPIP adds ${fixed(qpip.rate, 2)} up to ${money(qpip.maxInsurable)}.`,
     `${clauses([...premium, ...terrTax])}.`,
@@ -321,14 +342,38 @@ export function footerNotes(y: YearData, page: PageDefaults): string {
   const ccb = F.childBenefit;
   const ocb = childBenefit("ON", "ontario-child-benefit").params;
   const qfa = childBenefit(quebec.code, "quebec-family-allowance").params;
-  const nwt = childBenefit("NT", "nwt-child-benefit").params;
-  const nlb = childBenefit("NL", "nl-child-benefit").params;
+  const nwtBenefit = need(prov("NT").childBenefit, "NWT child benefit");
+  if (nwtBenefit.program !== "nwt-child-benefit" && nwtBenefit.program !== "nwt-child-benefit-age-groups")
+    throw new Error("page notes: unsupported NWT child benefit");
+  const nwt = nwtBenefit.params;
+  const nlProgram = need(prov("NL").childBenefit, "NL child benefit");
+  if (
+    nlProgram.program !== "nl-child-benefit" &&
+    nlProgram.program !== "nl-child-benefit-reduction" &&
+    nlProgram.program !== "nl-child-benefit-periods"
+  )
+    throw new Error("page notes: unsupported NL child benefit");
   const nu = childBenefit("NU", "per-child-reduced"),
     nub = nu.params;
   const children = [
-    `${benefitYear(y)} amounts, applied to current-year income: the Canada Child Benefit (${money(ccb.perChildUnder6)} per child under 6 or ${money(ccb.perChild6to17)} aged 6–17, reduced above ${money(ccb.threshold1)} of family net income), the Ontario Child Benefit (up to ${money(ocb.perChild)} per child), Quebec's family allowance (${money(qfa.max)} to ${money(qfa.min)} per child, plus the ${money(qfa.schoolSupplies)} school supplies supplement, applied to children aged 6–17), the B.C. family benefit, the Alberta Child and Family Benefit, the Nova Scotia Child Benefit, the PEI Child Benefit, New Brunswick's Child Tax Benefit and Working Income Supplement, and the Yukon Child Benefit, all from CRA's T4114 booklet for ${benefitYear(y)} or the province's own rules.`,
-    `For the NWT, Newfoundland and Labrador and Nunavut benefits the amounts and the income where the reduction starts are official, but the reduction rate isn't published: the NWT and Newfoundland and Labrador benefits are tapered in a straight line to the published end points (${money(nwt.endsAt)} and ${money(nlb.endsAt)}), and Nunavut's uses the ${rate(nub.rateOneChild)} / ${rate(nub.rateMoreChildren)} rates in ${need(nu.rateSource, "Nunavut child benefit rate source")}.`,
-    `These approximations only affect families below about ${money(Math.max(nwt.endsAt, nlb.endsAt))}.`,
+    `${benefitYear(y)} amounts, applied to current-year income: the Canada Child Benefit (${money(ccb.perChildUnder6)} per child under 6 or ${money(ccb.perChild6to17)} aged 6–17, reduced above ${money(ccb.threshold1)} of family net income), the Ontario Child Benefit (up to ${money(ocb.perChild)} per child), Quebec's family allowance (${money(qfa.max)} to ${money(qfa.min)} per child, plus the ${money(qfa.schoolSupplies)} school supplies supplement, applied to children aged 6–17), the B.C. family benefit, the Alberta Child and Family Benefit, the Nova Scotia Child Benefit, ${prov("PE").childBenefit ? "the PEI Child Benefit, " : ""}New Brunswick's Child Tax Benefit and Working Income Supplement, and the Yukon Child Benefit, all from CRA's T4114 booklet for ${benefitYear(y)} or the province's own rules.`,
+    ...(bc.childBenefit?.program === "bc-family-benefit-periods"
+      ? [
+          `B.C.'s child opportunity benefit was renamed the family benefit during this benefit year. Each period is calculated separately before weighting: ${bc.childBenefit.params.periods.map(period => `${period.weight * 12} months at annual maximum amounts of ${list(period.max.map(money))} for the first, second and each additional child, with minimum amounts of ${list(period.min.map(money))}`).join("; ")}. Each period applies its own income reduction, minimum and zero floor.`,
+        ]
+      : []),
+    ...(nlProgram.program === "nl-child-benefit"
+      ? [
+          `For the NWT, Newfoundland and Labrador and Nunavut benefits the amounts and the income where the reduction starts are official, but the reduction rate isn't published: the NWT and Newfoundland and Labrador benefits are tapered in a straight line to the published end points (${money(nwt.endsAt)} and ${money(nlProgram.params.endsAt)}), and Nunavut's uses the ${rate(nub.rateOneChild)} / ${rate(nub.rateMoreChildren)} rates in ${need(nu.rateSource, "Nunavut child benefit rate source")}.`,
+          `These approximations only affect families below about ${money(Math.max(nwt.endsAt, nlProgram.params.endsAt))}.`,
+        ]
+      : nlProgram.program === "nl-child-benefit-periods"
+        ? [
+            `The NWT benefit uses ${nwtBenefit.estimated ? "an estimated" : "the published"} straight-line taper to ${money(nwt.endsAt)}. Newfoundland and Labrador changed its child benefit during this benefit year: calculate each period separately, then weight its entitlement by its share of the year. ${nlProgram.params.periods.map((period, i) => `Period ${i + 1} (${rate(period.weight)} of the year): annual amounts ${list(period.perChild.map(money))} for the first, second, third and each additional child; reduction rates ${list(period.rate.map(rate))} for one, two or three children, plus ${rate(period.additionalRate)} for each additional child, above ${money(period.threshold)} of family income.`).join(" ")} Nunavut uses the ${rate(nub.rateOneChild)} / ${rate(nub.rateMoreChildren)} rates in ${need(nu.rateSource, "Nunavut child benefit rate source")}.`,
+          ]
+        : [
+            `The NWT benefit uses ${nwtBenefit.estimated ? "an estimated" : "the published"} straight-line taper to ${money(nwt.endsAt)}. Newfoundland and Labrador's published reduction rates are ${list(nlProgram.params.rate.map(rate))} for one, two or three children, plus ${rate(nlProgram.params.additionalRate)} for each additional child, on family income above ${money(nlProgram.params.threshold)}. Nunavut's uses the ${rate(nub.rateOneChild)} / ${rate(nub.rateMoreChildren)} rates in ${need(nu.rateSource, "Nunavut child benefit rate source")}.`,
+          ]),
     // Manitoba's benefit isn't modelled, so it has no figures in the data; the income limit is approximate.
     "Saskatchewan has no child benefit; Manitoba's (for incomes under about $15,000), Newfoundland and Labrador's prenatal–early childhood nutrition supplement and Nunavut's territorial workers' supplement aren't modelled, and neither are childcare costs or credits.",
   ].join(" ");
@@ -339,30 +384,42 @@ export function footerNotes(y: YearData, page: PageDefaults): string {
     cwb = F.workersBenefit,
     std = cwb.standard;
   const ownCwb = [...Object.keys(cwb.regional).map(prov), quebec].sort(byName).map(short);
-  const sk = credit("SK", "sk-low-income-tax-credit"),
-    mb = credit("MB", "mb-affordability-credits");
+  const sk = credit("SK", "sk-low-income-tax-credit");
+  const mb = need(
+    prov("MB").credits?.find(c => c.program === "mb-affordability-credits" || c.program === "mb-school-tax-credits"),
+    "Manitoba property credits",
+  );
+  const mbDescription =
+    mb.program === "mb-school-tax-credits"
+      ? `Manitoba's school tax rebate (${rate(mb.params.schoolRebateRate)} of estimated school taxes), education property tax credit (up to ${money(mb.params.educationCreditMax)} of remaining school taxes) and renters tax credit (up to ${money(mb.params.renterMax)}, capped by rent paid)`
+      : "Manitoba's renters and homeowners affordability credits";
+  const cwbEstimate =
+    cwb.estimationNote ?? `these ${year} values are CRA's ${lastYearIndexed} until CRA publishes them`;
   // The list below names these programs in prose; a year whose data drops one fails here instead of misreporting it.
   const named: [string, CreditProgram["program"]][] = [
     ["ON", "ontario-sales-tax-credit"],
     ["ON", "ontario-energy-property-tax-credit"],
     [quebec.code, "quebec-solidarity-tax-credit"],
     [quebec.code, "quebec-work-premium"],
-    ["BC", "bc-renters-tax-credit"],
     ["NB", "nb-hst-credit"],
     ["NS", "ns-affordable-living-tax-credit"],
     ["NL", "nl-income-supplement"],
   ];
   for (const [code, id] of named) credit(code, id);
+  const bcRenter = bc.credits?.some(c => c.program === "bc-renters-tax-credit");
   // PEI's sales tax credit gave way to the essentials benefit in 2026.
   const pei = creditName("PE", ["pei-essentials-benefit", "pei-sales-tax-credit"]);
   const estimates = [
     sk.estimated &&
       `Saskatchewan's reduction rate (${rate(sk.params.rate)}) is worked out from CRA's published start and end points`,
-    mb.estimated && `Manitoba's renters credit is taken at its ${money(mb.params.renter)} maximum`,
+    mb.estimated &&
+      (mb.program === "mb-school-tax-credits"
+        ? `Manitoba's school taxes are estimated as ${rate(mb.params.schoolTaxShare)} of the property tax bill using the reference city's school-tax share`
+        : `Manitoba's renters credit is taken at its ${money(mb.params.renter)} maximum`),
     "Quebec's solidarity credit gives the living-alone amount to any household with one adult",
   ].filter(x => typeof x === "string");
   const credits = [
-    `Counted when "Include in totals" is on, for ${benefitYear(y)}: the ${gbName} (${gb.formerName ? `the renamed ${gb.formerName}: ` : ""}${money(gb.adult)} per adult, ${money(gb.child)} per child and a single supplement of up to ${money(gb.singleSupplement.max)}, less ${rate(gb.phaseOut.rate)} of family net income over ${money(gb.phaseOut.from)}); the Canada Workers Benefit basic amount for ${year} (${money(std.max[0])} single or ${money(std.max[1])} family, ${rate(std.rate)} of working income over ${either(std.floor, money)}, less ${either(std.phaseOut, rate)} of net income over ${either(std.threshold, money)}; ${list(ownCwb)} use their own versions${cwb.estimated ? `, and these ${year} values are CRA's ${lastYearIndexed} until CRA publishes them` : ""}); the Ontario sales tax credit and Ontario energy and property tax credit; Quebec's solidarity tax credit and work premium; B.C.'s renter's tax credit; Manitoba's renters and homeowners affordability credits; the Saskatchewan low-income tax credit; the New Brunswick HST credit; the Nova Scotia affordable living tax credit; the ${pei}; and the Newfoundland and Labrador income supplement.`,
+    `Counted when "Include in totals" is on, for ${benefitYear(y)}: the ${gbName} (${gb.formerName ? `the renamed ${gb.formerName}: ` : ""}${money(gb.adult)} per adult, ${money(gb.child)} per child and a single supplement of up to ${money(gb.singleSupplement.max)}, less ${rate(gb.phaseOut.rate)} of family net income over ${money(gb.phaseOut.from)}); the Canada Workers Benefit basic amount for ${year} (${money(std.max[0])} single or ${money(std.max[1])} family, ${rate(std.rate)} of working income over ${either(std.floor, money)}, less ${either(std.phaseOut, rate)} of net income over ${either(std.threshold, money)}; ${list(ownCwb)} use their own versions${cwb.estimated ? `, and ${cwbEstimate}` : ""}); the Ontario sales tax credit and Ontario energy and property tax credit; Quebec's solidarity tax credit and work premium; ${bcRenter ? "B.C.'s renter's tax credit; " : ""}${mbDescription}; the Saskatchewan low-income tax credit; the New Brunswick HST credit; the Nova Scotia affordable living tax credit; the ${pei}; and the Newfoundland and Labrador income supplement.`,
     `Estimates: ${clauses(estimates)}.`,
     "Not modelled: the Workers Benefit disability supplement, senior-specific credits, the Northern Ontario energy credit and Quebec's northern-village supplement.",
   ].join(" ");
@@ -435,7 +492,7 @@ export function footerNotes(y: YearData, page: PageDefaults): string {
     ),
     para(
       "Deductions",
-      `Deductions such as RRSP contributions are subtracted from total income to get taxable income. The Max RRSP link uses ${rate(F.rrsp.rate)} of the employment income entered, up to the ${year} dollar limit of ${money(F.rrsp.limit)}; your real limit is based on last year's earned income and any unused room, as shown on your notice of assessment.`,
+      `Annual RRSP, FHSA and other deductions claimed are added once and subtracted from total income to get taxable income. Enter eligible claims, including deferred contributions, rather than contributions made this year; account room and eligibility are not calculated. The Use estimate RRSP link uses ${rate(F.rrsp.rate)} of the employment income entered, up to the ${year} dollar limit of ${money(F.rrsp.limit)}; your real limit is based on last year's earned income and any unused room, as shown on your notice of assessment.`,
     ),
     para("Phase-outs", phaseOuts),
     para("Income tax details", incomeTax),

@@ -1,0 +1,38 @@
+Title: provincial-iqaluit-property-tax
+URL: https://iqaluit.ca/sites/default/files/by-law_932_2022_mill_rate_eng.pdf
+Fetched: 2026-11-02
+SHA-256 of the original: 0deebdc5e3397f3aafa8772b783fcb4ec1fe8ef6709600fa86f95d3772889b37
+Publication date modified: 2022-04-19
+PDF pages: all 6
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 1 of 6 ---
+
+
+
+--- PDF page 2 of 6 ---
+
+
+
+--- PDF page 3 of 6 ---
+
+
+
+--- PDF page 4 of 6 ---
+
+
+
+--- PDF page 5 of 6 ---
+
+
+
+--- PDF page 6 of 6 ---
+
+Manual transcription added after visually inspecting the scanned original:
+Page1 section2.1: Residential classification7/8 is20.13mills; classification9/10/11 is28.18mills.
+Page1 section1.1 defines a mill as one taxation unit per thousand dollars of assessed value.
+Page3 confirms third and final reading on April12,2022, signed by the mayor and chief administrative officer.
+The original-file SHA above is the downloaded PDF hash; only the transcription is manual.
+
+

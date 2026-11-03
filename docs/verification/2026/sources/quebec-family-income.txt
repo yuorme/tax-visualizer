@@ -1,0 +1,36 @@
+Title: Québec income tax return
+URL: https://www.retraitequebec.gouv.qc.ca/en/citizens/children/family-allowance/quebec-income-tax-return
+Fetched: 2026-11-02
+SHA-256 of the original: 4f66338347df09c1a21cf963380ea6821122ee0bdbd2e196e1964c16c2457b92
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+# Québec income tax return
+
+In order for us to determine the amount of your Family Allowance, you and your spouse must file a Québec income tax return each year, even if one or both of you have no income to report.
+
+We take into account the family income for the preceding year. Each year in July, we recalculate the amount to which you are entitled, based on the income reported. To avoid payment delays, you must file your Québec income tax return each year no later than 30 April.
+
+Revenu Québec informs us of your conjugal status on 31 December of the previous year and provides information about your family income.
+
+If you file your income tax return late, we can pay you the amounts owing for a maximum retroactive period of 3 years.
+
+## Family Allowance annual notices
+
+You will receive your Family Allowance annual notice each year by the end of June. The notice will give you the amounts that you will receive from July through June the following year. Be sure to verify that the information on your family situation is correct because amounts vary depending on the number of children in your care and whether the children are in shared custody.
+
+## Income tax slips
+
+The Family Allowance payments and the supplement for handicapped children are not taxable. Consequently, we do not send out tax slips for those benefits.
+
+## What does "family income" mean?
+
+Family income is the amount indicated on line 275 of your Québec income tax return. If you have a spouse, his or her income is added to yours.
+
+## If you were living outside Québec
+
+For new residents who have not filed a Québec income tax return, a notice of assessment from the Canada Revenue Agency or a statement of income is required.
+
+## If you have not filed your Québec income tax return
+
+You can obtain the required form from the nearest office of Revenu Québec or order it.

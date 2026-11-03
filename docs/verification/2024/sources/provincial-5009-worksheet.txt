@@ -1,0 +1,222 @@
+Title: Worksheet AB428
+URL: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5009-d/5009-d-24e.pdf
+Fetched: 2026-11-02
+SHA-256 of the original: 42398f5e38e9faf726f0fecfcfde7421e7110b8c05c1dd16db7534cb48b9b530
+Publication date modified: 2024-11-07
+PDF pages: all 3
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 1 of 3 ---
+
+2024
+Worksheet AB428
+Use this worksheet to calculate the amounts to enter on your Form AB428, Alberta Tax and Credits.
+Keep this worksheet for your records. Do not attach it to your return.
+Line 58080 – Age amount (if you were born in 1959 or earlier)
+If the amount from line 23600 of your return is:
+• $45,400 or less, enter $6,099 on line 58080 of your Form AB428
+• $86,060 or more, enter "0" on line 58080 of your Form AB428
+Otherwise, complete the calculation below.
+1Maximum amount
+2Amount from line 23600 of your return
+3Income threshold –
+4Line 2 minus line 3 (if negative, enter "0") =
+5Applicable rate ×
+6Line 4 multiplied by the percentage from line 5 =
+Ż –
+7Line 1 minus line 6 (if negative, enter "0") =
+Enter the amount from line 7 on line 58080 of your Form AB428.
+Line 58200 – Amount for infirm dependants age 18 or older
+Complete one column for each dependant. If you have more than three dependants, use a separate sheet of paper.
+Dependant 1
+Base amount
+Dependant's net income from line 23600 of their return –
+Line 1 minus line 2 (if negative, enter "0")
+(maximum $12,669 per dependant) =
+Amount claimed for this dependant on line 58160
+of your Form AB428, if any –
+Allowable amount for this dependant:
+line 3 minus line 4 (if negative, enter "0") =
+Dependant 2
+–
+=
+–
+=
+Dependant 3
+–
+=
+–
+=
+1
+2
+3
+4
+5
+6Add the amounts from line 5 of columns 1, 2, and 3 (and others, if any).
+Enter the total from line 6 on line 58200 of your Form AB428.
+Line 58400 – Caregiver amount
+Complete one column for each dependant. If you have more than three dependants, use a separate sheet of paper.
+Dependant 1
+Base amount
+Dependant's net income from line 23600 of their return –
+Line 1 minus line 2 (if negative, enter "0")
+(maximum $12,669 per dependant) =
+Amount claimed for this dependant on line 58160
+of your Form AB428, if any –
+Allowable amount for this dependant:
+line 3 minus line 4 (if negative, enter "0") =
+Dependant 2
+–
+=
+–
+=
+Dependant 3
+–
+=
+–
+=
+1
+2
+3
+4
+5
+6Add the amounts from line 5 of columns 1, 2, and 3 (and others, if any).
+Enter the total from line 6 on line 58400 of your Form AB428.
+5009-D E (24) (Ce formulaire est disponible en français.) Page 1 of 3
+6,099.00
+45,400.00
+15%
+21,038.00 21,038.00 21,038.00
+32,811.00 32,811.00 32,811.00
+
+--- PDF page 2 of 3 ---
+
+Line 58440 – Disability amount for self
+Complete this calculation if you were under 18 years of age on December 31, 2024.
+1Base amount
+2Maximum amount
+3
+Total child care and attendant care expenses for you
+claimed by you or another person
+4Threshold for child and attendant care expenses –
+5Line 3 minus line 4 (if negative, enter "0") =
+Ż –
+6Line 2 minus line 5 (if negative, enter "0") =
+Ż +
+7Line 1 plus line 6 (maximum $29,551) =
+Enter the amount from line 7 on line 58440 of your Form AB428.
+Line 58480 – Disability amount transferred from a dependant
+Complete this calculation for each dependant. If you have more than one dependant, use a separate sheet of paper.
+Note: If you and your dependant were not residents of the same province or territory at the end of the year, special rules
+may apply. For more information, call the Canada Revenue Agency at 1-800-959-8281.
+1Base amount
+If the dependant was under 18 years of age on December 31, 2024, complete lines 2 to 12.
+If the dependant was 18 years of age or older, enter "0" on line 6 and continue on line 7.
+2Maximum amount
+3
+Total child care and attendant care expenses for this
+dependant claimed by you or another person
+4Threshold for child and attendant care expenses –
+5Line 3 minus line 4 (if negative, enter "0") =
+Ż –
+6Line 2 minus line 5 (if negative, enter "0") =
+Ż +
+7Line 1 plus line 6 (maximum $29,551) =
+8Enter the amount from line 29 of the dependant's Form AB428. +
+9Line 7 plus line 8 =
+10Dependant's taxable income from line 26000 of their return –
+11Line 9 minus line 10 (if negative, enter "0") =
+12Allowable amount for this dependant
+Enter whichever is less:
+amount from line 7 or line 11.
+Enter the total of allowable amounts claimed for all dependants on line 58480 of your Form AB428.
+5009-D E (24) Page 2 of 3
+16,882.00
+12,669.00
+3,455.00
+16,882.00
+12,669.00
+3,455.00
+
+--- PDF page 3 of 3 ---
+
+Line 58729 – Allowable amount of medical expenses for other dependants
+Complete one column for each dependant. If you have more than three dependants, use a separate sheet of paper.
+Dependant 1
+Medical expenses for other dependant
+Enter the amount from line 41 of the dependant's
+Form AB428. –
+Line 1 minus line 2 (if negative, enter "0") =
+Dependant 2
+–
+=
+Dependant 3
+–
+=
+1
+2
+3
+4Add the amounts from line 3 of columns 1, 2, and 3 (and others, if any).
+Enter the total from line 4 on line 58729 of your Form AB428.
+Line 61520 – Alberta dividend tax credit
+AAmount from line 12000 of your return
+1BAmount from line 12010 of your return – × 2.18% =
+2CAmount A minus amount B = × 8.12% = +
+3Line 1 plus line 2 =
+Enter the amount from line 3 on line 61520 of your Form AB428.
+Line 65 – Alberta political contributions tax credit
+You can claim this credit if, in 2024, you contributed to one of the following individuals or entities:
+• a candidate under an election to the provincial legislature or a senatorial election
+• an Alberta political party
+• a leadership contestant
+• a constituency association
+Note: The individual or entity must be registered and meet the criteria established under the Election Finances and
+Contributions Disclosure Act.
+If your total political contributions are more than $2,300, enter $1,000 on line 65 of your Form AB428.
+If not, use the amount from line 60030 of your Form AB428 to complete the appropriate column below.
+Line 60030 is
+$200 or less
+Enter your total political contributions
+from line 60030 of your Form AB428.
+–
+Line 1 minus line 2 (cannot be negative) =
+×
+Line 3 multiplied by the percentage from line 4 =
++
+Line 5 plus line 6 =
+Line 60030 is more
+than $200 but not
+more than $1,100
+–
+=
+×
+=
++
+=
+Line 60030 is
+more than $1,100
+–
+=
+×
+=
++
+=
+1
+2
+3
+4
+5
+6
+7
+Enter the amount from line 7 on line 65 of your Form AB428.
+5009-D E (24) Page 3 of 3
+0.00
+75%
+0.00
+200.00
+50%
+150.00
+1,100.00
+33.33%
+600.00

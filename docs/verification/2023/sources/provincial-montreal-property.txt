@@ -1,0 +1,153 @@
+Title: Budget 2023 et PDI 2023-2032 de la Ville de Montréal_électronique
+URL: https://portail-m4s.s3.montreal.ca/pdf/budget-2023-pdi-2023-2032_web.pdf
+Fetched: 2026-11-02
+SHA-256 of the original: 747ab9d2b9292bdec73496e910ec416dffba31b3939e5da79bc4e99d12dcf015
+Publication date modified: 2022-11-24
+PDF pages: 267-268 of 442
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 267 of 442 ---
+
+Budget de fonctionnement 2023 détaillé
+199
+Taux moyens cumulés
+Tableau 126 – Taux de taxation de 2023 – Immeubles de la catégorie résiduelle
+($ par tranche de 100 $ d’évaluation foncière)
+1. L’arrondissement de Lachine impose un tarif de 51,01 $ par logement, ce qui correspond à un équivalent foncier de 0,0150 pour cette catégorie
+d’immeubles.
+2. L’arrondissement de L'Île-Bizard–Sainte-Geneviève comporte un taux relatif aux investissements de 0,0843 pour le secteur de L'Île-Bizard et
+de 0,0841 pour le secteur Sainte-Geneviève. L’arrondissement de Pierrefonds-Roxboro comporte quant à lui un taux relatif aux investissements
+de 0,0463 pour le secteur Pierrefonds et de 0,0462 pour le secteur Roxboro.
+3. Les chiffres étant arrondis, leur somme ne correspond pas nécessairement au total indiqué.
+Ahuntsic-Cartierville 0,5305 0,0263 0,0917 0,0029 0,0020 0,0435 0,0349 0,0784 0,7319
+Anjou 0,5305 0,0071 0,0917 0,0029 0,0020 0,1250 0,0703 0,1953 0,8295
+Côte-des-Neiges–
+Notre-Dame-de-Grâce 0,5305 0,0263 0,0917 0,0029 0,0020 0,0413 0,0250 0,0663 0,7198
+Lachine 0,5305 0,0015 0,0917 0,0029 0,0020 0,0632 0,0389 0,1021 0,7307
+LaSalle 0,5305 0,0040 0,0917 0,0029 0,0020 0,0538 0,0373 0,0911 0,7222
+L'Île-Bizard–
+Sainte-Geneviève 0,5305 s. o. 0,0917 0,0029 0,0020 0,0819 0,0843 0,1662 0,7933
+Mercier–
+Hochelaga-Maisonneuve 0,5305 0,0263 0,0917 0,0029 0,0020 0,0663 0,0410 0,1073 0,7608
+Montréal-Nord 0,5305 0,0150 0,0917 0,0029 0,0020 0,1348 0,0574 0,1922 0,8343
+Outremont 0,5305 0,0070 0,0917 0,0029 0,0020 0,0452 0,0343 0,0795 0,7136
+Pierrefonds–Roxboro 0,5305 s. o. 0,0917 0,0029 0,0020 0,0746 0,0463 0,1209 0,7480
+Plateau-Mont-Royal 0,5305 0,0263 0,0917 0,0029 0,0020 0,0514 0,0282 0,0796 0,7331
+Rivière-des-Prairies–
+Pointe-aux-Trembles 0,5305 0,0263 0,0917 0,0029 0,0020 0,0788 0,0689 0,1477 0,8012
+Rosemont–La Petite-Patrie 0,5305 0,0263 0,0917 0,0029 0,0020 0,0484 0,0314 0,0798 0,7333
+Saint-Laurent 0,5305 0,0036 0,0917 0,0029 0,0020 0,0674 0,0427 0,1101 0,7408
+Saint-Léonard 0,5305 0,0078 0,0917 0,0029 0,0020 0,0841 0,0508 0,1349 0,7698
+Sud-Ouest 0,5305 0,0263 0,0917 0,0029 0,0020 0,0550 0,0300 0,0850 0,7385
+Verdun 0,5305 0,0049 0,0917 0,0029 0,0020 0,0580 0,0368 0,0948 0,7268
+Ville-Marie 0,5305 0,0263 0,0917 0,0029 0,0020 0,0392 0,0070 0,0462 0,6997
+Villeray–Saint-Michel–
+Parc-Extension 0,5305 0,0263 0,0917 0,0029 0,0020 0,0538 0,0348 0,0886 0,7421
+VILLE DE MONTRÉAL 0,5305 0,0186 0,0917 0,0029 0,0020 0,0957 0,7414
+Arrondissements
+TAUX
+MOYEN
+CUMULÉ
+TOTAL3
+Taxe
+relative
+aux
+services1
+Taxe
+relative
+aux inves-
+tissements2
+Taux
+moyen
+cumulé de
+l'arrondis-
+sement
+Arrondissements
+Taxe
+foncière
+générale
+Dettes
+anciennes
+villes
+Taxe
+relative à
+l'eau
+Taxe
+relative à
+la voirie
+Taxe
+relative à
+l'ARTM
+
+--- PDF page 268 of 442 ---
+
+Budget de fonctionnement 2023 détaillé
+200
+Tableau 127 – Taux de taxation de 2023 – Immeubles de la catégorie six logements ou plus
+($ par tranche de 100 $ d’évaluation foncière)
+1. L’arrondissement de Lachine impose un tarif de 51,01 $ par logement, ce qui correspond à un équivalent foncier de 0,0396 pour cette catégorie
+d’immeubles.
+2. L’arrondissement de L'Île-Bizard–Sainte-Geneviève comporte un taux relatif aux investissements de 0,0843 pour le secteur de L'Île-Bizard et
+de 0,0841 pour le secteur Sainte-Geneviève. L’arrondissement de Pierrefonds-Roxboro comporte quant à lui un taux relatif aux investissements
+de 0,0463 pour le secteur Pierrefonds et de 0,0462 pour le secteur Roxboro.
+3. Les chiffres étant arrondis, leur somme ne correspond pas nécessairement au total indiqué.
+Ahuntsic-Cartierville 0,5305 0,0263 0,0917 0,0029 0,0020 0,0435 0,0349 0,0784 0,7319
+Anjou 0,5305 0,0071 0,0917 0,0029 0,0020 0,1250 0,0703 0,1953 0,8295
+Côte-des-Neiges–
+Notre-Dame-de-Grâce 0,5305 0,0263 0,0917 0,0029 0,0020 0,0413 0,0250 0,0663 0,7198
+Lachine 0,5305 0,0015 0,0917 0,0029 0,0020 0,0878 0,0389 0,1267 0,7553
+LaSalle 0,5305 0,0040 0,0917 0,0029 0,0020 0,0538 0,0373 0,0911 0,7222
+L'Île-Bizard–
+Sainte-Geneviève 0,5305 s. o. 0,0917 0,0029 0,0020 0,0819 0,0843 0,1662 0,7933
+Mercier–
+Hochelaga-Maisonneuve 0,5305 0,0263 0,0917 0,0029 0,0020 0,0663 0,0410 0,1073 0,7608
+Montréal-Nord 0,5305 0,0150 0,0917 0,0029 0,0020 0,1348 0,0574 0,1922 0,8343
+Outremont 0,5305 0,0070 0,0917 0,0029 0,0020 0,0452 0,0343 0,0795 0,7136
+Pierrefonds–Roxboro 0,5305 s. o. 0,0917 0,0029 0,0020 0,0746 0,0463 0,1209 0,7480
+Plateau-Mont-Royal 0,5305 0,0263 0,0917 0,0029 0,0020 0,0514 0,0282 0,0796 0,7331
+Rivière-des-Prairies–
+Pointe-aux-Trembles 0,5305 0,0263 0,0917 0,0029 0,0020 0,0788 0,0689 0,1477 0,8012
+Rosemont–La Petite-Patrie 0,5305 0,0263 0,0917 0,0029 0,0020 0,0484 0,0314 0,0798 0,7333
+Saint-Laurent 0,5305 0,0036 0,0917 0,0029 0,0020 0,0674 0,0427 0,1101 0,7408
+Saint-Léonard 0,5305 0,0078 0,0917 0,0029 0,0020 0,0841 0,0508 0,1349 0,7698
+Sud-Ouest 0,5305 0,0263 0,0917 0,0029 0,0020 0,0550 0,0300 0,0850 0,7385
+Verdun 0,5305 0,0049 0,0917 0,0029 0,0020 0,0580 0,0368 0,0948 0,7268
+Ville-Marie 0,5305 0,0263 0,0917 0,0029 0,0020 0,0392 0,0070 0,0462 0,6997
+Villeray–Saint-Michel–
+Parc-Extension 0,5305 0,0263 0,0917 0,0029 0,0020 0,0538 0,0348 0,0886 0,7421
+VILLE DE MONTRÉAL 0,5305 0,0216 0,0917 0,0029 0,0020 0,0877 0,7364
+Arrondissements
+TAUX
+MOYEN
+CUMULÉ
+TOTAL3
+Taxe
+relative
+aux
+services1
+Taxe
+relative
+aux inves-
+tissements2
+Taux
+moyen
+cumulé de
+l'arrondis-
+sement
+Arrondissements
+Taxe
+foncière
+générale
+Dettes
+anciennes
+villes
+Taxe
+relative à
+l'eau
+Taxe
+relative à
+la voirie
+Taxe
+relative à
+l'ARTM

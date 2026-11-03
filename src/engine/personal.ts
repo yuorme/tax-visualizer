@@ -42,21 +42,20 @@ export type PersonResult = ReturnType<typeof personTax>;
 export function personTax(fed: Federal, p: Province, x: Person, sp: Extra, ctx: Ctx, s: Settings) {
   const qc = p.system === "quebec";
   const pay = payrollOf(fed, p, x);
-  const ti = netOf(fed, x); // taxable income (federal), other income included
-  // Employment income only (x.ord), here and below: Quebec's deduction for workers, the Canada employment amount
-  // (and Yukon's), and Ontario's LIFT credit are all worked out from employment income, never other income.
+  const ti = netOf(fed, x, ctx.childcareDeduction); // taxable income (federal)
   const workerDed = p.quebec
     ? Math.min(p.quebec.workerDeduction.max, Math.max(0, x.ord) * p.quebec.workerDeduction.rate)
     : 0;
-  const tiP = Math.max(0, ti - workerDed); // Quebec allows an extra deduction for workers
-  const cash = x.ord + x.oth + x.cg + x.ed + x.nd + x.fd;
+  const provincialNet = qc ? netOf(fed, x) : ti; // Quebec does not deduct federal childcare expenses
+  const tiP = Math.max(0, provincialNet - workerDed); // Quebec allows an extra deduction for workers
+  const cash = x.ord + (x.oth ?? 0) + x.cg + x.ed + x.nd + x.fd;
   const f = walk(fed.brackets, ti),
     pr = walk(p.brackets, tiP);
   const k = qc ? 1 - fed.quebecAbatement : 1;
   const fr = fed.brackets[0][1],
     prr = p.brackets[0][1];
   const fAmt = s.useBpa ? phased(fed.basicPersonalAmount, ti) : 0,
-    pAmt = s.useBpa ? provincialBpa(fed, p, ti) : 0;
+    pAmt = s.useBpa ? provincialBpa(fed, p, provincialNet) : 0;
   const fBpaFull = fAmt * fr,
     pBpaFull = pAmt * prr;
   // Non-refundable credits, applied in order; together they can bring tax to zero, never below.
@@ -85,6 +84,9 @@ export function personTax(fed: Federal, p: Province, x: Person, sp: Extra, ctx: 
   const ca = p.childAmount;
   const kidAmt = ca ? ca.perChild * ((ca.ages === "all" ? ctx.kids : ctx.u6) || 0) : 0;
   const pKid = tp(kidAmt * prr);
+  // NL428 line 58320 joins the ordinary non-refundable credit base, before dividends and low-income reduction.
+  const childcareCreditFull = p.childcareCredit?.program === "nl-childcare" ? (ctx.childcareDeduction ?? 0) * prr : 0;
+  const childcareCredit = tp(childcareCreditFull);
   const inv = fed.investment;
   const fDtcFull =
     x.ed * inv.grossUp.eligible * inv.dividendTaxCredit.eligible +
@@ -105,6 +107,13 @@ export function personTax(fed: Federal, p: Province, x: Person, sp: Extra, ctx: 
     pLeft += surtax;
   }
   const pDtc = tp(pDtcFull);
+  // Historical PE428 adds surtax after the dividend credit, before the low-income reduction.
+  if (p.postDividendSurtax) {
+    const q = p.postDividendSurtax.params;
+    const extra = q.rate * Math.max(0, pLeft - q.threshold);
+    surtax += extra;
+    pLeft += extra;
+  }
   // Low-income tax reductions (claimed once per family, by the claimant). "fam" = spouse or eligible dependant.
   let lowRed = 0;
   if (ctx.claims && p.lowIncomeReduction)
@@ -134,7 +143,8 @@ export function personTax(fed: Federal, p: Province, x: Person, sp: Extra, ctx: 
     share = ti > 0 ? x.fd / ti : 0;
   const fedBasic = fLeft;
   const fFtc = Math.min(wh, fedBasic * share, fedBasic * k);
-  const pFtc = Math.min(wh - fFtc, provPre * share);
+  const provincialShare = provincialNet > 0 ? x.fd / provincialNet : 0;
+  const pFtc = Math.min(wh - fFtc, provPre * provincialShare);
   const fedTax = fedBasic * k - fFtc,
     prov = provPre - pFtc;
   const ohp = healthPremium(p, ti);
@@ -188,7 +198,8 @@ export function personTax(fed: Federal, p: Province, x: Person, sp: Extra, ctx: 
     // Figures the page shows that aren't steps of the calculation above. They sit in a nested object because the
     // golden snapshot (tests/golden/snapshot.mjs) locks every top-level number of this result.
     breakdown: {
-      netIncome: netIncomeParts(fed, x), // what net income is made of
+      childcareCredit: { calculated: childcareCreditFull, applied: childcareCredit },
+      netIncome: netIncomeParts(fed, x, ctx.childcareDeduction), // what net income is made of
       rrspRoom: rrspRoom(fed, x),
       quebecAbatement: fedBasic * (1 - k), // the share of basic federal tax that Quebec residents don't pay federally
       ftc, // foreign tax credit, federal and provincial

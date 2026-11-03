@@ -1,0 +1,90 @@
+Title: Alberta Child and Family Benefit
+URL: https://www.alberta.ca/alberta-child-and-family-benefit
+Fetched: 2026-11-02
+SHA-256 of the original: e58ab9596da4975d49dee568d13da244f42aafa420f6c4921465baf2d7f43d98
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+Skip to On this page
+
+## Overview
+
+The Alberta Child and Family Benefit (ACFB) provides direct financial assistance to lower and middle-income families with children under 18.
+
+## Eligibility
+
+To be eligible for the ACFB, you must:
+
+- be a parent of one or more children under 18
+- be a resident of Alberta
+- file a tax return
+- meet the income criteria
+
+ACFB payments are not taxable. If you receive Assured Income for the Severely Handicapped (AISH), Income Support or the Alberta child care subsidy, you are still eligible to receive the ACFB. Receiving the ACFB will not affect the benefits you receive under these programs.
+
+Free tax clinics are available to prepare tax returns for eligible lower-income Albertans.
+
+## How to apply
+
+You are automatically considered for the ACFB when you file your annual tax return and qualify for the federal government's Canada Child Benefit. No further action is required.
+
+If you need to, you can apply for the Canada Child Benefit online:
+
+Apply for Canada Child Benefit
+
+## Payments
+
+The ACFB program is administered by the Canada Revenue Agency (CRA) on Alberta's behalf. ACFB payments will be mailed or direct deposited by the CRA in 4 instalments. Payments are made in:
+
+- August
+- November
+- February
+- May
+
+If you are eligible for amounts below $10 in any given quarter, then your payments could be consolidated and paid less frequently.
+
+## What you get
+
+The amount your family receives under the ACFB will depend on your family’s income level and how many children under 18 you have.
+
+The ACFB includes a base component and a working component. The ACFB’s base component is available to lower-income families with children, whether or not they earn any employment income.
+
+Families are also eligible for the working component if their family employment income exceeds $2,760, with the amount received growing at a rate of 15% for every additional dollar of income earned over this threshold, until the maximum benefit is reached. As families work more they receive more benefits, encouraging them to join or remain in the workforce.
+
+Use the child and family benefits calculator to find out how much you may be entitled to. Please note, you will need your income tax return to enter specific amounts.
+
+### Maximum benefit amounts
+
+The table below displays the maximum benefit amounts for a family receiving the ACFB. In the 2026–27 benefit year, benefit amounts for the base component and working component are reduced once family net income exceeds $28,116 or $47,115.
+
+Table 1. ACFB maximum benefit amounts
+
+Number of children | July 2025 – June 2026 | July 2026 – June 2027
+Base component (max.) | Working component (max.) | Base component (max.) | Working component (max.)
+1 child | $1,499 | $767 | $1,529 | $782
+2 children | $2,248 | $1,465 | $2,293 | $1,494
+3 children | $2,997 | $1,883 | $3,057 | $1,920
+4 or more children | $3,746 | $2,021 | $3,821 | $2,061
+
+## Changes in household status
+
+If your household’s status changes, your eligibility for the benefit may change. For example:
+
+- if you have another child, your household may qualify for a greater benefit than you received
+- if your family leaves Alberta, you may have to return some of the money received for the months you were not living in the province
+- if your family moves to Alberta, you will become eligible in the month after you become a resident
+
+The Canada Revenue Agency (CRA) reassesses eligibility on a regular basis, as updated household information is received.
+
+- If your household qualifies for a greater benefit than what was originally paid out, the CRA will issue an additional payment for the difference.
+- If your household qualifies for a smaller benefit, or no benefit, you will receive a letter from the CRA indicating that any amount received over your entitlement will have to be returned. For information on how to return amounts owing, contact the CRA at 1-800-959-2809.
+
+## Contact
+
+Connect with the Canada Revenue Agency about programs administered on behalf of the Alberta government:
+
+Canada Revenue Agency
+Toll free: 1-800-959-2809
+Website: CRA-administered Alberta programs
+
+For information about other social supports in Alberta, call Alberta Supports at 1-877-644-9992.

@@ -1,0 +1,82 @@
+Title: Ontario 2025 and 2024 Tax Rates & Tax Brackets
+URL: https://www.taxtips.ca/priortaxrates/tax-rates-2024-2025/on.htm
+Fetched: 2026-11-02
+SHA-256 of the original: bd397a5849409ba381962499b5a7e78f41527b23f49776fff9b6e31d6cc0b2c5
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+#### Home -> Ontario
+
+#### Tax Rates -> Ontario Personal Income Tax Rates for 2024 & 2025
+
+# Ontario 2025 and 2024 Tax Rates & Tax Brackets
+
+The Ontario tax brackets and personal tax credit amounts are increased for 2025 by an indexation factor of 1.028 (2.8% increase), except for the $150,000 and $220,000 bracket amounts, which are not indexed for inflation.
+
+The Federal tax brackets and personal tax credit amounts are increased for 2025 by an indexation factor of 1.027 (2.7% increase).
+
+See Indexation of the Personal Income Tax System for how the indexation factors are calculated.
+
+The Federal and Ontario indexation factors, tax brackets and tax rates for 2025 have been confirmed to Canada Revenue Agency information.
+
+Tax Tip: read the article Understanding the Tables of Personal Income Tax Rates, especially if you are trying to compare the rates below to the marginal tax rates in the Basic Tax Calculator or the Detailed Tax Calculators.
+
+TaxTips.ca - Ontario Tax Rates
+2025 Taxable Income | 2025 Tax Rates | 2024 Taxable Income | 2024 Tax Rates
+first $52,886 | 5.05% | first $51,446 | 5.05%
+over $52,886 up to $105,775 | 9.15% | over $51,446 up to $102,894 | 9.15%
+over $105,775 up to $150,000 | 11.16% | over $102,894 up to $150,000 | 11.16%
+over $150,000 up to $220,000 | 12.16% | over $150,000 up to $220,000 | 12.16%
+over $220,000 | 13.16% | over $220,000 | 13.16%
+
+TaxTips.ca - Combined Federal & Ontario Tax Brackets and Tax Rates Including Surtaxes
+2025 Taxable Income (1) | ON 2025 Marginal Tax Rates | 2024 Taxable Income (1) | ON 2024 Marginal Tax Rates
+Other Income | Capital Gains | Canadian Dividends | Other Income | Capital Gains | Canadian Dividends
+Eligible | Non-Eligible | Eligible | Non-Eligible
+first $52,886 | 19.55% | 9.78% | -7.55% | 8.66% | first $51,446 | 20.05% | 10.03% | -6.86% | 9.24%
+over $52,886 up to $57,375 | 23.65% | 11.83% | -1.89% | 13.38% | over $51,446 up to $55,867 | 24.15% | 12.08% | -1.20% | 13.95%
+over $57,375 up to $93,132 | 29.65% | 14.83% | 6.39% | 20.28% | over $55,867 up to $90,599 | 29.65% | 14.83% | 6.39% | 20.28%
+over $93,132 up to $105,775 | 31.48% | 15.74% | 8.92% | 22.38% | over $90,599 up to $102,894 | 31.48% | 15.74% | 8.92% | 22.38%
+over $105,775 up to $109,727 | 33.89% | 16.95% | 12.24% | 25.16% | over $102,894 up to $106,732 | 33.89% | 16.95% | 12.24% | 25.16%
+over $109,727 up to $114,750 | 37.91% | 18.95% | 17.79% | 29.78% | over $106,732 up to $111,733 | 37.91% | 18.95% | 17.79% | 29.78%
+over $114,750 up to $150,000 | 43.41% | 21.70% | 25.38% | 36.10% | over $111,733 up to $150,000 | 43.41% | 21.70% | 25.38% | 36.10%
+over $150,000 up to $177,882 | 44.97% | 22.48% | 27.53% | 37.90% | over $150,000 up to $173,205 | 44.97% | 22.48% | 27.53% | 37.90%
+over $177,882 up to $220,000 | 48.28% | 24.14% | 32.10% | 41.71% | over $173,205 up to $220,000 | 48.29% | 24.14% | 32.11% | 41.72%
+over $220,000 up to $253,414 | 49.84% | 24.92% | 34.25% | 43.50% | over $220,000 up to $246,752 | 49.85% | 24.92% | 34.26% | 43.51%
+over $253,414 | 53.53% | 26.76% | 39.34% | 47.74% | over $246,752 | 53.53% | 26.76% | 39.34% | 47.74%
+Marginal tax rate for dividends is a % of actual dividends received (not grossed-up taxable amount). Marginal tax rate for capital gains is a % of total capital gains (not taxable capital gains). Gross-up rate for eligible dividends is 38%, and for non-eligible dividends is 15%. The surtax is calculated before deducting dividend tax credits. For more information see Ontario dividend tax credits. Marginal tax rates do not include the Ontario Health Premium, which increases the above marginal tax rates by up to 25%. Copyright © 2002 Boat Harbour Investments Ltd.
+
+TaxTips.ca Ontario Surtaxes
+2025 | 2024
+Surtax rate (included in above rates) | 20% | 36% | Surtax rate (included in above rates) | 20% | 36%
+Surtax is on ON tax greater than | $5,710 | $7,307 | Surtax is on ON tax greater than | $5,554 | $7,108
+Person with only basic personal amount - surtax starts at taxable income of | $93,132 | $109,727 | Person with only basic personal amount - surtax starts at taxable income of | $90,599 | $106,732
+The 36% surtax is in addition to the 20% surtax, for a total surtax of 56%. The surtax increases the 13.16% tax rate to 20.53% (13.16% x 1.56). Surtaxes are calculated before deducting dividend tax credits.
+
+TaxTips.ca Ontario Basic Personal Amount
+2025 Personal Amount | 2025 Tax Rate | 2024 Personal Amount | 2024 Tax Rate
+$12,747 | 5.05% | $12,399 | 5.05%
+
+Federal Basic Personal Amount
+2025 Personal Amount (1) Minimum / Maximum | 2025 Tax Rate | 2024 Personal Amount (1) Minimum / Maximum | 2024 Tax Rate
+$14,538 | $16,129 | 14.5% | $14,156 | $15,705 | 15%
+
+(1) See the federal tax rates page for information on the enhanced federal personal amount, which increases the marginal tax rates for taxable incomes in the second highest federal tax bracket. The marginal tax rates in blue above have been adjusted to reflect these changes.
+
+Copyright © 2002 Boat Harbour Investments Ltd.
+
+Revised: June 27, 2026
+
+Revised: August 27, 2026
+
+© 2002- Boat Harbour Investments Ltd. All rights reserved.
+
+See Reproduction of information from TaxTips.ca
+
+Privacy Policy | Contact
+
+Facebook | Twitter | LinkedIn
+
+The authors of TaxTips.ca strive, but cannot guarantee, to provide information which is current and accurate. Individual circumstances have a significant effect on how tax and financial information can be used. Due to this, and to the nature of the information, it should not be relied upon for decision making without professional advice.
+
+TaxTips.ca provides links to other web sites. We cannot guarantee the accuracy of the information provided on linked sites.

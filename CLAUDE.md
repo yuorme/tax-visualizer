@@ -51,8 +51,15 @@ TypeScript, and the build inlines everything into `dist/index.html`. See README.
   inside an existing formula.
 - **Every data value is sourced.** Keep `sources` lists current. Anything not taken directly from an official
   publication gets `estimated: true` and a comment saying how it was derived.
-- **Golden results are locked.** `tests/golden/<year>.json` must not change unless the change is intended. If it
-  is (a data correction or rule fix), say exactly what changed and why in the commit, then re-capture.
+- **Existing golden tests are locked.** Preserve their inputs, expected values, assertions and tolerances.
+  Never re-capture, delete, skip or weaken them to make a failure pass. Changing an existing case is allowed only
+  when an independently verified data/rule correction or task-required behavior change makes it unavoidable. Document
+  the evidence, affected cases and before/after values in the commit and PR; change only those cases, preserving
+  unrelated baselines. Diagnose unexpected failures before changing any expectation; intention alone is insufficient.
+- **New engine behavior needs new golden cases in the same PR**, alongside targeted correctness tests. Add separate
+  fixtures for new features/rule paths without rewriting existing baselines. Verify new expected values against
+  published examples or documented independent calculations; engine-generated snapshots alone prove no correctness.
+  Review must map every changed rule path to a golden case that exercises it, including material boundaries.
 - **New years need reference tests** from figures published outside this project (top marginal rates at minimum).
 - **The engine never touches the DOM**, and the UI never computes tax.
 
@@ -73,6 +80,11 @@ significant layout changes, pass `model: opus` on the call. Give each agent one 
 it owns; never run two agents on the same file at once. Exception: in `src/data/schema.ts`, adding new fields or
 program entries doesn't need exclusive ownership (editing existing ones does). Every branch gets a reviewer pass
 before it merges; give the reviewer the pull request number from the agent's report.
+The orchestrator owns worktree cleanup: lock each agent's worktree while it is active (`git worktree lock <path>`).
+After its final report and process exit, unlock it and run `npm run worktree:cleanup -- --apply <path>` from outside
+it, including reviewer checkouts and PRs awaiting `needs-human` merge. Keep unfinished work; recreate a checkout
+for follow-ups. At session start, inspect leftover worktrees and clean only confirmed finished ones. See
+[Worktree lifecycle](README.md#worktree-lifecycle) for safeguards, paused work and preview cleanup.
 When one issue needs another's unmerged work, branch from that branch (stacked), open the pull request against it
 (GitHub retargets it to `main` when the parent merges), and say so in "Blocked by".
 

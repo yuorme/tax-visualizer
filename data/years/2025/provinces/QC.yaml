@@ -34,7 +34,21 @@ credits:
       couple: [0.116, 3600, 19534]
       parent: [0.30, 2400, 12620]
       coupleKids: [0.25, 3600, 19534]
+childcareCredit:
+  name: Quebec childcare expenses tax credit
+  program: quebec-childcare
+  # Year-end ages reflect under 16 during 2025 / under 14 during 2026; older infirm dependants remain eligible.
+  params:
+    youngUnder: 7
+    eligibleThrough: 16
+    annualYoung: 12275
+    annualOther: 6180
+    annualSevere: 16800
+    rates: [[24795, 0.78], [43725, 0.75], [45340, 0.74], [46970, 0.73], [48570, 0.72], [50195, 0.71], [119835, 0.7], [.inf, 0.67]]
 sources:
+  - {label: "Revenu Quebec, new childcare age limit in 2026", url: "https://www.revenuquebec.ca/en/press-room/tax-news/details/2025-09-23/new-age-limit-for-the-refundable-tax-credit-for-childcare-expenses/"}
+  - {label: "Revenu Quebec, Schedule C pooled expenses and family income", url: "https://www.revenuquebec.ca/documents/en/formulaires/tp/2025-12/TP-1.D.C-V%282025-12%29.pdf"}
+  - {label: "Finances Quebec, 2025 and 2026 childcare expense limits and income rates, Tables 3 and 5", url: "https://cdn-contenu.quebec.ca/cdn-contenu/adm/min/finances/publications-adm/parametres/AUTEN_IncomeTax2026.pdf"}
   - {label: "Finances Québec, Parameters of the personal income tax system for 2025 (brackets, basic amount, worker deduction, living alone, family allowance, work premium, solidarity tax credit)", url: "https://cdn-contenu.quebec.ca/cdn-contenu/adm/min/finances/publications-adm/parametres/AUTEN_IncomeTax2025.pdf"}
   - {label: "Retraite Québec, 2025 benefit amounts and key data (family allowance)", url: "https://www.retraitequebec.gouv.qc.ca/en/benefits-amounts/2025-benefits-amounts-key-data"}
   - {label: "CFFP, Université de Sherbrooke, Guide des mesures fiscales: work premium (2025 rates and excluded income)", url: "https://cffp.recherche.usherbrooke.ca/outils-ressources/guide-mesures-fiscales/credit-impot-remboursable-prime-travail/"}

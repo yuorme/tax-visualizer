@@ -38,7 +38,13 @@ credits:
     program: ontario-energy-property-tax-credit
     # CRA's 2025 calculation sheet: energy component up to 285; property tax component 71 + 10% of occupancy cost, up to 927
     params: {rentShare: 0.2, energyMax: 285, propertyBase: 71, propertyRate: 0.10, propertyMax: 927, rate: 0.02, thresholdSingle: 28506, thresholdFamily: 35632}
+childcareCredit:
+  name: Ontario CARE tax credit
+  program: ontario-care
+  # ON479-A: each income step or part thereof reduces the credit rate.
+  params: {fullThrough: 20000, maxRate: 0.75, decrement: 0.02, steps: [[40000, 2500], [60000, 5000], [150000, 3600]]}
 sources:
+  - {label: "CRA ON479-A, Ontario CARE rate and income calculation", url: "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5006-tca/5006-tca-25e.pdf"}
   - {label: "CRA, Form ON428 for 2025 (brackets, basic and spouse amounts, surtax, tax reduction, health premium)", url: "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5006-c/5006-c-25e.pdf"}
   - {label: "CRA, Ontario tax information for 2025", url: "https://www.canada.ca/en/revenue-agency/services/forms-publications/tax-packages-years/general-income-tax-benefit-package/ontario/5006-pc.html"}
   - {label: "CRA, T4114 (Ontario child benefit, July 2025 to June 2026)", url: "https://www.canada.ca/content/dam/cra-arc/formspubs/pub/t4114/t4114-25e.pdf"}
