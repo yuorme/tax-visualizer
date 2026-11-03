@@ -22,9 +22,14 @@ It is sourced for full early-benefit years, including July 2019–June 2020, wit
 Section 13.092(1)(a) starts the replacement program after September 2020. The contemporary
 [CRA T4114 2020](https://publications.gc.ca/collections/collection_2020/arc-cra/Rv1-36-2020-eng.pdf?download=1),
 PDF page 9, confirms the July–September early-benefit period and the October start of the under-18
-opportunity benefit. It publishes the original annual maxima `[1600,1000,800]`, minima `[700,680,660]`,
-4% reduction and $25,000/$80,000 thresholds. The third array amount repeats for further children.
-The current Act's later opportunity-benefit amounts are not used for 2020.
+opportunity benefit. It publishes the original annual maxima `[1600,1000,800]` and $25,000 threshold.
+The [original Bill 5 of 2019](2020/sources/rule-bc-2019-enactment.txt), section 10 adding section 13.092(2),
+establishes both 4% reductions and the $80,000 second threshold. Its minimum totals are $700 for one
+child, $1,380 for two and $660 per further child: incremental minima `[700,680,660]`.
+The [legislative record](2020/sources/rule-bc-2019-assent.txt) confirms third reading on April 9 and royal assent
+on April 11, 2019 (S.B.C. chapter 7). Both extracts are cached under `2020/sources/`.
+The third array amount repeats for further children. The current Act's later opportunity-benefit amounts
+are not used for 2020.
 
 For July 2020–June 2021, `bc-child-benefit-transition` uses:
 
