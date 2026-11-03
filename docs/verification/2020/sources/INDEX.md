@@ -6,6 +6,39 @@ Only recurring modeled programs are included; extraordinary cost-of-living and C
 Carbon measures remain outside this milestone (issue #29).
 Vancouver and Yukon Hansard caches explicitly identify manual web extracts.
 
+## Provincial year-diff audit: 2020 against 2021
+
+All 13 files validate against the 2021 Manitoba/Nova Scotia rules and 2020 B.C. transition rules.
+The provincial comparison reports 134 changed values, nine large changes, 113 unchanged amounts and two
+structural changes. Full checks pass lint and typechecking; this collection branch lacks federal files and
+locked golden results for 2020–23, so integrated tests/build await the federal integrator.
+
+Unchanged values were checked against the cached annual forms and benefit publications:
+
+- Alberta brackets, personal amounts and ACFB amounts were frozen; Manitoba spouse amount stays $9134.
+- New Brunswick child, working-income and HST credits retain the published fixed amounts and thresholds.
+- Newfoundland child threshold and income supplement remain the statutory fixed amounts.
+- Nova Scotia brackets, personal/spouse/child amounts, low-income reduction, child benefit and affordable
+  living credit are unchanged in these two years, as confirmed by the annual forms and 2020 child regulation.
+- Northwest Territories child age-group tables and taper, Nunavut child amount/benefit, and Yukon child
+  benefit remain fixed. Yukon upper bracket stays $500000.
+- Ontario upper brackets, LIFT and health-premium bands are not indexed; the annual forms confirm them.
+- PEI brackets, reduction amounts, child amount, sales credit and surtax threshold remain fixed.
+- Quebec work-premium employment exclusions stay $2400/$3600; other parameters were updated annually.
+
+The nine large changes are published dividend-credit changes in AB/PE/QC/SK/YT and Manitoba introducing
+its 25% school rebate in 2021 while reducing the education/renter caps from $700 to $525 and rent share
+from 20% to 15%. The B.C. replacement reflects its October 2020 transition from an under-six benefit to
+child opportunity benefit; 2021 uses the latter all year. Saskatchewan adds an estimated flag in 2021
+because that later year was derived by indexation; the 2020 frozen values are published directly.
+
+Estimates are explicit in YAML: annualized rounded monthly child payments (ON/NL/NU); assumed unchanged
+Nunavut taper from the commissioned report; rounded Calgary mill rates; Winnipeg assessment and school
+share; Saskatoon assessment portions/factors; Montreal Ville-Marie borough proxy excluding school tax;
+and Iqaluit assessed-value-to-home-value assumption. Municipal calculations are given in file comments.
+Montreal and Vancouver caches honestly mark manual web extracts because direct PDF retrieval was denied.
+Iqaluit uses a visually checked manual transcription of its scanned bylaw with the original PDF hash.
+
 Text extracts of official publications used for the 2020 data, made with
 `npm run fetch-source -- <year> <url> [<name>]`. A data collector and the reviewer read the same text, and a
 reviewer can check figures without opening PDFs. Each `.txt` file starts with the URL, the date fetched and the
