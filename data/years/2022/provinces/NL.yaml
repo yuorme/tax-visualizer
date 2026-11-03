@@ -1,0 +1,47 @@
+# Benefit-year figures use July 2022 to June 2023, applied to current-year income.
+# Child annual amounts are rounded published monthly amounts [35.16,37.33,40.08,43] × 12.
+# St. John's historical 2022 residential rate is 8.3 mills.
+
+code: NL
+name: Newfoundland and Labrador
+order: 12
+brackets:
+  - [39147, 0.087]
+  - [78294, 0.145]
+  - [139780, 0.158]
+  - [195693, 0.178]
+  - [250000, 0.198]
+  - [500000, 0.208]
+  - [1000000, 0.213]
+  - [.inf, 0.218]
+basicPersonalAmount: 9803
+dividendTaxCredit: {eligible: 0.063, nonEligible: 0.032}
+spouseAmount: {max: 8011, threshold: 802}
+lowIncomeReduction:
+  program: nl-low-income-reduction
+  params: {individual: 886, family: 494, rate: 0.16, thresholdIndividual: 21196, thresholdFamily: 35842}
+salesTax: {rate: 0.15, label: 15% HST}
+propertyTax: {rate: 0.0083, city: St. John's}
+childBenefit:
+  name: NL Child Benefit
+  program: nl-child-benefit-reduction
+  params:
+    perChild: [421.92, 447.96, 480.96, 516]
+    threshold: 17397
+    rate: [0.0507, 0.1045, 0.1622]
+    additionalRate: 0.0619
+  estimated: true
+credits:
+  - name: NL income supplement
+    program: nl-income-supplement
+    params: {base: 242, extraMax: 253, extraRate: 0.0506, extraFrom: 15000, couple: 66, child: 220, rate: 0.09, threshold: 40000}
+sources:
+  - {label: "CRA, NL428 for 2022", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5001-c/5001-c-22e.pdf}
+  - {label: "CRA, NL428 worksheet for 2022", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5001-d/5001-d-22e.pdf}
+  - {label: "CRA, T4114-22: July 2022–June 2023 child benefits (official publications archive)", url: https://publications.gc.ca/collections/collection_2022/arc-cra/Rv1-36-2022-eng.pdf?download=1}
+  - {label: "CRA, RC4210-22: July 2022–June 2023 credits (official guide archived by DT Tax; original CRA link retired)", url: https://support.drtax.ca/dtmax/eng/kb/dtmax/eng/rc4210-22e.pdf}
+  - {label: "CRA, GST/HST historical rates and provincial sales-tax rates", url: https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/charge-collect-which-rate/calculator.html}
+  - {label: "NL regulation 60/11, child benefit reduction rates before January 2024", url: https://www.assembly.nl.ca/Legislation/sr/Annualregs/2011/nr110060.htm}
+  - {label: "NL, Regulation 26/22: income supplement amounts effective July 2022", url: https://www.assembly.nl.ca/legislation/sr/annualregs/2022/nr220026.htm}
+  - label: St. John's, historic residential mill rates
+    url: https://www.stjohns.ca/resident-services/property-taxes-assessments/tax-rates/

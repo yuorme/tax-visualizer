@@ -1,0 +1,68 @@
+Title: 2022 Ontario energy and property tax credit (OEPTC) -
+URL: https://www.canada.ca/content/dam/cra-arc/serv-info/benefits/ptc22_clc_mns-eng.pdf
+Fetched: 2026-11-02
+SHA-256 of the original: 4d177db22d1c55ced475771e9f66263e28c95a0ab6f5af50cf6b2b21d3790dd9
+Publication date modified: 2021-12-22
+PDF pages: all 2
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 1 of 2 ---
+
+2022 Ontario energy and property tax credit (OEPTC) -
+Calculation sheet for married or common-law
+individuals who have or do not have children
+Use this calculation if you had a spouse or a common-law partner and both of you were under
+the age of 64 on December 31, 2021. This calculation sheet applies whether you have children
+or not.
+Note
+If one of you was 64 years of age or older on December 31, 2021, then you should use the
+calculation sheet called Calculation sheet for married or common-law seniors who have or do not
+have children.
+Occupancy cost
+Rent paid in Ontario for 2021 × 20% = 1 $
+Property tax paid in Ontario for 2021 2 $
+If you lived in a student residence, enter $25.00 3 $
+Add lines 1, 2 and 3 4 $
+Energy component
+Amount paid for a public or non-
+profit long-term care home in
+Ontario for 2021 × 20% = 5 $
+Amount paid for home energy costs on a reserve in Ontario
+for 2021 6 $
+Amount from line 4 above 7 $
+Add lines 5, 6 and 7 8 $
+Enter amount from line 3 above 9 $
+Line 8 minus line 9 10 $
+Enter the amount from line 10 or $249.00, whichever is
+less 11 $
+Property tax component
+Enter amount from line 4 above × 10% = 12 $
+Enter the amount from line 12 or $810.00, whichever is less 13 $
+
+--- PDF page 2 of 2 ---
+
+Add amount 14 $ + 62.00
+Add lines 13 and 14 15 $
+Enter amount from line 4 above or line 15, whichever is
+less 16 $
+Energy and property tax credit
+Add lines 11 and 16 17 $
+Enter your adjusted family net
+income for 2021 18 $
+Subtract amount 19 $ − 31,144.00
+Line 18 minus line 19 (if negative,
+enter "0") 20 $
+Multiply line 20 by 2% 21 $
+Annual Ontario energy and property tax credit
+Line 17 minus line 21 (if negative, enter "0") 22 $
+Monthly OEPTC (line 22 divided by 12) 23 $
+If your annual OEPTC amount plus, if applicable, your annual Ontario sales tax credit and
+Northern Ontario energy credit is:
+ $2.00 or less, no payment will be issued.
+ from $2.01 to $10.00, you will receive one payment of $10.00.
+ $360.00 or less, you will receive it in one payment instead of monthly.
+The first monthly 2022 Ontario trillium benefit payment, which includes any OEPTC entitlement,
+will be issued on July 8, 2022.
+However, if you made a choice on your 2021 return to wait to receive your 2022 OTB
+entitlement, it will be issued on June 9, 2023.

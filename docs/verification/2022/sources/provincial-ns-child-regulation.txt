@@ -1,0 +1,648 @@
+Title: NS Royal Gazette Part II - Volume 46, No. 12, June 17, 2022
+URL: https://novascotia.ca/just/regulations/rg2/2022/RG2-2022-06-17.pdf
+Fetched: 2026-11-02
+SHA-256 of the original: d307b1db0941e3dd0d2c7e47bd7998e1171223fdb6b3ac484c5aac79ba717891
+Publication date modified: 2022-06-10
+PDF pages: all 13
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 1 of 13 ---
+
+Volume 46, No. 12
+June 17, 2022
+Part II Halifax, Nova Scotia
+Regulations under the Regulations Act Printed by the Queen’s Printer
+Contents
+Act Reg. No. Page
+Income Tax Act
+Nova Scotia Child Benefit Regulations–amendment . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 110/2022 242
+Non-essential Pesticides Control Act
+List of Allowable Pesticides Regulations–amendment. . . . . . . . . . . . . . . . . . . . . . . . . . . . 112/2022 245
+Petroleum Products Pricing Act
+Prescribed Petroleum Products Prices . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 106/2022 234
+Prescribed Petroleum Products Prices . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 108/2022 238
+Prescribed Petroleum Products Prices . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 109/2022 240
+Summary Proceedings Act
+Summary Offence Tickets Regulations–amendment . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 107/2022 236
+Workers’ Compensation Act
+Firefighters’ Compensation Regulations–amendment . . . . . . . . . . . . . . . . . . . . . . . . . . . . 111/2022 244
+In force date of regulations: As of March 4, 2005*, the date a regulation comes into force is
+determined by subsection 3(6) of the Regulations Act. The date a regulation is made, the date a
+regulation is approved, the date a regulation is filed and any date specified in a regulation are important
+to determine when the regulation is in force.
+*Date that subsections 3(6) and (7) and Sections 11 and 13 of the Regulations Act and amendments to the Regulations Act made
+by Chapter 46 of the Acts of 2004 were proclaimed in force.© NS Office of the Registrar of Regulations. Web version.
+233
+
+--- PDF page 2 of 13 ---
+
+N.S. Reg. 106/2022 Royal Gazette Part II - Regulations Vol. 46, No. 12
+N.S. Reg. 106/2022
+Made: May 26, 2022
+Filed: May 27, 2022
+Prescribed Petroleum Products Prices
+Order dated May 26, 2022
+made by the Nova Scotia Utility and Review Board
+pursuant to Section 14 of the Petroleum Products Pricing Act
+and Sections 16 to 19 of the Petroleum Products Pricing Regulations
+Decision and Order M10603
+Nova Scotia Utility and Review Board
+In the matter of the Petroleum Products Pricing Act
+- and -
+In the matter of prescribing prices for petroleum products
+under Section 14 of the Petroleum Products Pricing Act and
+Sections 16 to 19 of the Petroleum Products Pricing Regulations
+Before: Steven Murphy, MBA, P.Eng., Member
+Decision and Order
+Under S. 16 of the Petroleum Products Pricing Regulations, the Board must prescribe a benchmark price for
+specified petroleum products every Friday.
+The benchmark price prescribed by the Board is the average of the average of the daily high and low reported
+product prices (in Canadian cents) since the last benchmark price adjustment for the petroleum product.
+The Board must also prescribe retail mark-ups and calculate wholesale margins considering any factors the
+Board finds relevant, including transportation adjustments. The Board last set wholesale margins in its decision,
+2021 NSUARB 146; retail mark-ups in its decision, 2021 NSUARB 50; and transportation adjustments in its
+decision, 2016 NSUARB 168.
+Following the Board’s recent retail mark-up decision (2021 NSUARB 50), it approved a monthly retail mark-up
+adjustment mechanism to address reduced sales volumes from the ongoing COVID-19 pandemic. The
+adjustment mechanism was implemented by the Board for gasoline and diesel oil adjustments in an order dated
+June 2, 2021, but discontinued for diesel oil in an order dated November 26, 2021.
+At each price setting, the Board may apply a forward-averaging correction, based on historical prices, to
+achieve revenue neutrality.
+At appropriate times of the year, the Board may also require an additional margin for winter blending of
+ultra-low-sulfur diesel oil.
+Based on the foregoing and other requirements in the Petroleum Products Pricing Act and regulations, the
+Board finds it appropriate to prescribe the benchmark prices and adjustments in Table “A,” the COVID-19
+related retail mark-up adjustment for gasoline in Table “B,” and the prices for petroleum products in Schedule
+“A” effective on and after 12:01 A.M. May 27, 2022:© NS Office of the Registrar of Regulations. Web version.
+234
+
+--- PDF page 3 of 13 ---
+
+N.S. Reg. 106/2022 Royal Gazette Part II - Regulations Vol. 46, No. 12
+Table “A”
+(cents per litre)
+Petroleum Product Benchmark Price Forward
+Averaging (+/-)
+Winter Blending
+Gasoline (Grade 1) 131.59
++1.90Gasoline (Grade 2) 134.59
+Gasoline (Grade 3) 137.59
+Ultra-Low-Sulfur Diesel Oil 134.18 -0.80 Nil
+Table “B”
+(cents per litre)
+COVID-19 Retail Mark-up Adjustment (Gasoline only)
+Minimum Self-Service and Full-Service +0.30
+Maximum Self-Service +0.40
+Dated at Halifax, Nova Scotia, this 26th day of May, 2022.
+sgd. Lisa Wallace
+Clerk of the Board
+Schedule “A”
+Prices Prescribed for Petroleum Products
+under the Petroleum Products Pricing Act and the Petroleum Products Pricing Regulations
+effective on and after 12:01 a.m. on May 27, 2022
+Nova Scotia Petroleum Price Schedule
+Petroleum Prices in Cents/Litre Self-Service Full-Service
+Pump Prices Pump Prices
+(Pump Prices includes 15% HST)
+Base Fed. Wholesale
+Prov.
+Wholesale Excise Selling
+Tax
+Price Tax Price
+Min Max Min Max
+Zone 1
+Regular Unleaded 144.92 10.0 15.5 170.42 202.5 205.0 202.5 999.9
+Mid-Grade Unleaded 147.92 10.0 15.5 173.42 206.0 208.4 206.0 999.9
+Premium Unleaded 150.92 10.0 15.5 176.42 209.4 211.9 209.4 999.9
+Ultra-Low-Sulfur Diesel 146.13 4.0 15.4 165.53 196.6 198.9 196.6 999.9
+Zone 2
+Regular Unleaded 145.42 10.0 15.5 170.92 203.1 205.5 203.1 999.9
+Mid-Grade Unleaded 148.42 10.0 15.5 173.92 206.6 209.0 206.6 999.9
+Premium Unleaded 151.42 10.0 15.5 176.92 210.0 212.4 210.0 999.9
+Ultra-Low-Sulfur Diesel 146.63 4.0 15.4 166.03 197.1 199.4 197.1 999.9
+Zone 3
+Regular Unleaded 145.82 10.0 15.5 171.32 203.6 206.0 203.6 999.9
+Mid-Grade Unleaded 148.82 10.0 15.5 174.32 207.0 209.4 207.0 999.9
+Premium Unleaded 151.82 10.0 15.5 177.32 210.5 212.9 210.5 999.9
+Ultra-Low-Sulfur Diesel 147.03 4.0 15.4 166.43 197.6 199.9 197.6 999.9© NS Office of the Registrar of Regulations. Web version.
+235
+
+--- PDF page 4 of 13 ---
+
+N.S. Reg. 106/2022 - 107/2022 Royal Gazette Part II - Regulations Vol. 46, No. 12
+Zone 4
+Regular Unleaded 145.92 10.0 15.5 171.42 203.7 206.1 203.7 999.9
+Mid-Grade Unleaded 148.92 10.0 15.5 174.42 207.1 209.6 207.1 999.9
+Premium Unleaded 151.92 10.0 15.5 177.42 210.6 213.0 210.6 999.9
+Ultra-Low-Sulfur Diesel 147.13 4.0 15.4 166.53 197.7 200.0 197.7 999.9
+Zone 5
+Regular Unleaded 145.92 10.0 15.5 171.42 203.7 206.1 203.7 999.9
+Mid-Grade Unleaded 148.92 10.0 15.5 174.42 207.1 209.6 207.1 999.9
+Premium Unleaded 151.92 10.0 15.5 177.42 210.6 213.0 210.6 999.9
+Ultra-Low-Sulfur Diesel 147.13 4.0 15.4 166.53 197.7 200.0 197.7 999.9
+Zone 6
+Regular Unleaded 146.62 10.0 15.5 172.12 204.5 206.9 204.5 999.9
+Mid-Grade Unleaded 149.62 10.0 15.5 175.12 207.9 210.4 207.9 999.9
+Premium Unleaded 152.62 10.0 15.5 178.12 211.4 213.8 211.4 999.9
+Ultra-Low-Sulfur Diesel 147.83 4.0 15.4 167.23 198.5 200.8 198.5 999.9
+N.S. Reg. 107/2022
+Made: March 28, 2022
+Filed: May 30, 2022
+Summary Offence Tickets Regulations–amendment
+Order dated March 28, 2022
+Amendment to regulations made by the Attorney General and Minister of Justice
+pursuant to Section 8 of the Summary Proceedings Act
+Order
+Made under Section 8 of Chapter 450
+of the Revised Statutes of Nova Scotia, 1989,
+the Summary Proceedings Act
+I, Brad Johns, Attorney General and Minister of Justice for the Province of Nova Scotia, pursuant to Section 8
+of Chapter 450 of the Revised Statutes of Nova Scotia, 1989, the Summary Proceedings Act, effective on and
+after the date of this order, hereby
+(a) amend Schedule 12A to the Summary Offence Tickets Regulations, N.S. Reg. 281/2011, made by order of
+the Attorney General and Minister of Justice dated October 4, 2011, to designate certain offences under
+the Wildlife Habitat and Watercourses Protection Regulations as summary offence ticket offences, in the
+manner set forth in the attached Schedule “A”; and
+(b) order and direct that the penalty to be entered on a summons in respect of an offence set out in
+amendments to the schedules to the Summary Offence Tickets Regulations, N.S. Reg. 281/2011, as set
+forth in the attached Schedule “A”, is the out-of-court settlement amount listed in the out-of-court
+settlement column set out opposite the description for the offence, and includes the charge provided for in,
+and in accordance with, Sections 8 and 9 of the Act.© NS Office of the Registrar of Regulations. Web version.
+236
+
+--- PDF page 5 of 13 ---
+
+N.S. Reg. 107/2022 Royal Gazette Part II - Regulations Vol. 46, No. 12
+Dated and made March 28, 2022, at Halifax, Halifax Regional Municipality, Province of Nova Scotia.
+sgd. Brad Johns
+Honourable Brad Johns
+Attorney General and Minister of Justice
+Schedule “A”
+Amendment to the Summary Offence Tickets Regulations
+made by the Attorney General and Minister of Justice pursuant to Section 8
+of Chapter 450 of the Revised Statutes of Nova Scotia, 1989,
+the Summary Proceedings Act
+Schedule 12-A to the Summary Offence Tickets Regulations, N.S. Reg. 281/2011, made by order of the
+Attorney General and Minister of Justice dated October 4, 2011, is amended by adding the following heading
+and items immediately after item 15 under the heading “Forest Fire Protection Regulations”:
+Wildlife Habitat and Watercourses Protection Regulations
+1 Forestry operator failing to ensure 10 living trees per ha of forest land
+cut left standing on harvest site of 3 or more ha
+4(1) $812.50
+2 Forestry operator failing to ensure trees left standing are same
+proportion by species as forest stand being cut
+4(2)(a) $812.50
+3 Forestry operator failing to ensure trees left standing are as large as
+trees in forest standing being cut in accordance with regulations
+4(2)(b) $812.50
+4 Forestry operator failing to ensure 10 living trees per ha left standing
+are in clump of 30 or more trees
+4(2)(c)(i) $812.50
+5 Forestry operator failing to ensure clump of 30 or more trees for each
+8-ha area of forest land cut
+4(2)(c)(ii) $812.50
+6 Forestry operator failing to ensure clumps situated no more than 200 m
+apart and between 20–200 m from edge of forest stand being cut
+4(2)(c)(iii) $812.50
+7 Forestry operator failing to ensure clumps situated between 20–200 m
+from edge of forest stand being cut
+4(2)(c)(iv) $812.50
+8 Forestry operator harvesting trees within clump 4(2)(c)(v) $812.50
+9 Forestry operator removing trees required to be left standing by
+regulations before next harvest
+4(3) $812.50
+10 Forestry operator failing to ensure woody debris on harvested site
+similar to natural pattern
+4(4) $812.50
+11 Forestry operator failing to establish special management zone in
+accordance with regulations
+6(1) $1157.50
+12 Forestry operator failing to increase width of special management zone
+by 1 m for each additional 2% of slope in accordance with regulations
+6(2) $1157.50
+13 Forestry operator permitting use of, using or operating vehicle for
+forestry operation within 7 m of watercourse in special management
+6(3)(a) $1157.50
+zone
+14 Forestry operator reducing basal area of living trees to less than 20 m²
+per ha in special management zone
+6(3)(b) $1157.50© NS Office of the Registrar of Regulations. Web version.
+237
+
+--- PDF page 6 of 13 ---
+
+N.S. Reg. 107/2022 - 108/2022 Royal Gazette Part II - Regulations Vol. 46, No. 12
+15
+16
+17
+Forestry operator creating opening in dominant tree canopy larger than
+15 m in special management zone
+Forestry operator permitting use of, using or operating vehicle for
+forestry operation within 5 m of watercourse as set out in regulations
+Forestry operator failing to retain understory vegetation and non-
+commercial trees within 20 m of watercourse
+6(3)(c)
+7
+8
+$1157.50
+$1157.50
+$1157.50
+18 Forestry operator conducting activity within 20 m of watercourse that
+would result in sediment being deposited in watercourse
+9 $1157.50
+N.S. Reg. 108/2022
+Made: June 2, 2022
+Filed: June 3, 2022
+Prescribed Petroleum Products Prices
+Order dated June 2, 2022
+made by the Nova Scotia Utility and Review Board
+pursuant to Section 14 of the Petroleum Products Pricing Act
+and Sections 16 to 19 of the Petroleum Products Pricing Regulations
+Decision and Order M10610
+Nova Scotia Utility and Review Board
+In the matter of the Petroleum Products Pricing Act
+- and -
+In the matter of prescribing prices for petroleum products
+under Section 14 of the Petroleum Products Pricing Act and
+Sections 16 to 19 of the Petroleum Products Pricing Regulations
+Before: Richard J. Melanson, LL.B., Member
+Decision and Order
+Under S. 16 of the Petroleum Products Pricing Regulations, the Board must prescribe a benchmark price for
+specified petroleum products every Friday.
+The benchmark price prescribed by the Board is the average of the average of the daily high and low reported
+product prices (in Canadian cents) since the last benchmark price adjustment for the petroleum product.
+The Board must also prescribe retail mark-ups and calculate wholesale margins considering any factors the
+Board finds relevant, including transportation adjustments. The Board last set wholesale margins in its decision,
+2021 NSUARB 146; retail mark-ups in its decision, 2021 NSUARB 50; and transportation adjustments in its
+decision, 2016 NSUARB 168.
+Following the Board’s recent retail mark-up decision (2021 NSUARB 50), it approved a monthly retail mark-up
+adjustment mechanism to address reduced sales volumes from the ongoing COVID-19 pandemic. The
+adjustment mechanism was implemented by the Board for gasoline and diesel oil adjustments in an order dated
+June 2, 2021, but discontinued for diesel oil in an order dated November 26, 2021.
+At each price setting, the Board may apply a forward-averaging correction, based on historical prices, to
+achieve revenue neutrality.© NS Office of the Registrar of Regulations. Web version.
+238
+
+--- PDF page 7 of 13 ---
+
+N.S. Reg. 108/2022 Royal Gazette Part II - Regulations Vol. 46, No. 12
+At appropriate times of the year, the Board may also require an additional margin for winter blending of
+ultra-low-sulfur diesel oil.
+Based on the foregoing and other requirements in the Petroleum Products Pricing Act and regulations, the
+Board finds it appropriate to prescribe the benchmark prices and adjustments in Table “A,” the COVID-19
+related retail mark-up adjustment for gasoline in Table “B,” and the prices for petroleum products in Schedule
+“A” effective on and after 12:01 A.M. June 3, 2022:
+Table “A”
+(cents per litre)
+Petroleum Product Benchmark Price Forward
+Averaging (+/-)
+Winter Blending
+Gasoline (Grade 1) 135.75
++2.50Gasoline (Grade 2) 138.75
+Gasoline (Grade 3) 141.75
+Ultra-Low-Sulfur Diesel Oil 135.55 Nil Nil
+Table “B”
+(cents per litre)
+COVID-19 Retail Mark-up Adjustment (Gasoline only)
+Minimum Self-Service and Full-Service +0.30
+Maximum Self-Service +0.50
+Dated at Halifax, Nova Scotia, this 2nd day of June, 2022.
+sgd. Crystal Henwood
+Clerk of the Board
+Schedule “A”
+Prices Prescribed for Petroleum Products
+under the Petroleum Products Pricing Act and the Petroleum Products Pricing Regulations
+effective on and after 12:01 a.m. on June 3, 2022
+Nova Scotia Petroleum Price Schedule
+Petroleum Prices in Cents/Litre Self-Service Full-Service
+Pump Prices Pump Prices
+(Pump Prices includes 15% HST)
+Base
+Wholesale
+Price
+Fed.
+Excise
+Tax
+Prov.
+Tax
+Wholesale
+Selling
+Price
+Min Max Min Max
+Zone 1
+Regular Unleaded 149.68
+Mid-Grade Unleaded 152.68
+Premium Unleaded 155.68
+Ultra-Low-Sulfur Diesel 148.30
+10.0
+10.0
+10.0
+4.0
+15.5
+15.5
+15.5
+15.4
+175.18
+178.18
+181.18
+167.70
+208.0 210.5
+211.5 214.0
+214.9 217.4
+199.1 201.4
+208.0 999.9
+211.5 999.9
+214.9 999.9
+199.1 999.9
+Zone 2
+Regular Unleaded 150.18
+Mid-Grade Unleaded 153.18
+Premium Unleaded 156.18
+Ultra-Low-Sulfur Diesel 148.80
+10.0
+10.0
+10.0
+4.0
+15.5
+15.5
+15.5
+15.4
+175.68
+178.68
+181.68
+168.20
+208.6 211.1
+212.0 214.6
+215.5 218.0
+199.6 201.9
+208.6 999.9
+212.0 999.9
+215.5 999.9
+199.6 999.9© NS Office of the Registrar of Regulations. Web version.
+239
+
+--- PDF page 8 of 13 ---
+
+N.S. Reg. 108/2022 - 109/2022 Royal Gazette Part II - Regulations Vol. 46, No. 12
+Zone 3
+Regular Unleaded 150.58 10.0 15.5 176.08 209.0 211.6 209.0 999.9
+Mid-Grade Unleaded 153.58 10.0 15.5 179.08 212.5 215.0 212.5 999.9
+Premium Unleaded 156.58 10.0 15.5 182.08 215.9 218.5 215.9 999.9
+Ultra-Low-Sulfur Diesel 149.20 4.0 15.4 168.60 200.1 202.4 200.1 999.9
+Zone 4
+Regular Unleaded 150.68 10.0 15.5 176.18 209.2 211.7 209.2 999.9
+Mid-Grade Unleaded 153.68 10.0 15.5 179.18 212.6 215.1 212.6 999.9
+Premium Unleaded 156.68 10.0 15.5 182.18 216.1 218.6 216.1 999.9
+Ultra-Low-Sulfur Diesel 149.30 4.0 15.4 168.70 200.2 202.5 200.2 999.9
+Zone 5
+Regular Unleaded 150.68 10.0 15.5 176.18 209.2 211.7 209.2 999.9
+Mid-Grade Unleaded 153.68 10.0 15.5 179.18 212.6 215.1 212.6 999.9
+Premium Unleaded 156.68 10.0 15.5 182.18 216.1 218.6 216.1 999.9
+Ultra-Low-Sulfur Diesel 149.30 4.0 15.4 168.70 200.2 202.5 200.2 999.9
+Zone 6
+Regular Unleaded 151.38 10.0 15.5 176.88 210.0 212.5 210.0 999.9
+Mid-Grade Unleaded 154.38 10.0 15.5 179.88 213.4 215.9 213.4 999.9
+Premium Unleaded 157.38 10.0 15.5 182.88 216.9 219.4 216.9 999.9
+Ultra-Low-Sulfur Diesel 150.00 4.0 15.4 169.40 201.0 203.3 201.0 999.9
+N.S. Reg. 109/2022
+Made: June 3, 2022
+Filed: June 6, 2022
+Prescribed Petroleum Products Prices
+Order dated June 3, 2022
+made by the Nova Scotia Utility and Review Board
+pursuant to Section 14 of the Petroleum Products Pricing Act
+and Sections 16 to 19 of the Petroleum Products Pricing Regulations
+Decision and Order M10614
+Nova Scotia Utility and Review Board
+In the matter of the Petroleum Products Pricing Act
+- and -
+In the matter of prescribing prices for petroleum products
+under Section 14 of the Petroleum Products Pricing Act and
+Sections 16 to 19 of the Petroleum Products Pricing Regulations
+Before: Richard J. Melanson, LL.B., Member
+Decision and Order
+Under S. 16 of the Petroleum Products Pricing Regulations, the Board must prescribe a benchmark price for
+specified petroleum products every Friday. However, the Board may prescribe a benchmark price any time, and
+due to significant changes in the price of petroleum products, the Board has determined that it is appropriate to
+adjust its most recently prescribed weekly prices.
+The benchmark price prescribed by the Board is the average of the average of the daily high and low reported© NS Office of the Registrar of Regulations. Web version.
+240
+
+--- PDF page 9 of 13 ---
+
+N.S. Reg. 109/2022 Royal Gazette Part II - Regulations Vol. 46, No. 12
+product prices (in Canadian cents) since the last benchmark price adjustment for the petroleum product.
+The Board must also prescribe retail mark-ups and calculate wholesale margins considering any factors the
+Board finds relevant, including transportation adjustments. The Board last set wholesale margins in its decision,
+2021 NSUARB 146; retail mark-ups in its decision, 2021 NSUARB 50; and transportation adjustments in its
+decision, 2016 NSUARB 168.
+Following the Board’s recent retail mark-up decision (2021 NSUARB 50), it approved a monthly retail mark-up
+adjustment mechanism to address reduced sales volumes from the ongoing COVID-19 pandemic. The
+adjustment mechanism was implemented by the Board for gasoline and diesel oil adjustments in an order dated
+June 2, 2021, but discontinued for diesel oil in an order dated November 26, 2021.
+At each price setting, the Board may apply a forward-averaging correction, based on historical prices, to
+achieve revenue neutrality.
+At appropriate times of the year, the Board may also require an additional margin for winter blending of
+ultra-low-sulfur diesel oil.
+Based on the foregoing and other requirements in the Petroleum Products Pricing Act and regulations, the
+Board finds it appropriate to prescribe the benchmark prices and adjustments in Table “A,” and the prices for
+petroleum products in Schedule “A” effective on and after 12:01 A.M. June 4, 2022:
+Table “A”
+(cents per litre)
+Petroleum Product Benchmark Price Forward
+Averaging (+/-)
+Winter Blending
+Ultra-Low-Sulfur Diesel Oil 142.13 +0.39 Nil
+Dated at Halifax, Nova Scotia, this 3rd day of June, 2022.
+sgd. Crystal Henwood
+Clerk of the Board
+Schedule “A”
+Prices Prescribed for Petroleum Products
+under the Petroleum Products Pricing Act and the Petroleum Products Pricing Regulations
+effective on and after 12:01 a.m. on June 4, 2022
+Nova Scotia Petroleum Price Schedule
+Petroleum Prices in Cents/Litre Self-Service Full-Service
+Pump Prices Pump Prices
+(Pump Prices includes 15% HST)
+Base
+Wholesale
+Price
+Fed.
+Excise
+Tax
+Prov.
+Tax
+Wholesale
+Selling
+Price
+Min Max Min Max
+Zone 1
+Regular Unleaded 149.68
+Mid-Grade Unleaded 152.68
+Premium Unleaded 155.68
+Ultra-Low-Sulfur Diesel 155.27
+10.0
+10.0
+10.0
+4.0
+15.5
+15.5
+15.5
+15.4
+175.18
+178.18
+181.18
+174.67
+208.0 210.5
+211.5 214.0
+214.9 217.4
+207.1 209.4
+208.0 999.9
+211.5 999.9
+214.9 999.9
+207.1 999.9© NS Office of the Registrar of Regulations. Web version.
+241
+
+--- PDF page 10 of 13 ---
+
+N.S. Reg. 109/2022 - 110/2022 Royal Gazette Part II - Regulations Vol. 46, No. 12
+Zone 2
+Regular Unleaded 150.18 10.0 15.5 175.68 208.6 211.1 208.6 999.9
+Mid-Grade Unleaded 153.18 10.0 15.5 178.68 212.0 214.6 212.0 999.9
+Premium Unleaded 156.18 10.0 15.5 181.68 215.5 218.0 215.5 999.9
+Ultra-Low-Sulfur Diesel 155.77 4.0 15.4 175.17 207.7 210.0 207.7 999.9
+Zone 3
+Regular Unleaded 150.58 10.0 15.5 176.08 209.0 211.6 209.0 999.9
+Mid-Grade Unleaded 153.58 10.0 15.5 179.08 212.5 215.0 212.5 999.9
+Premium Unleaded 156.58 10.0 15.5 182.08 215.9 218.5 215.9 999.9
+Ultra-Low-Sulfur Diesel 156.17 4.0 15.4 175.57 208.1 210.4 208.1 999.9
+Zone 4
+Regular Unleaded 150.68 10.0 15.5 176.18 209.2 211.7 209.2 999.9
+Mid-Grade Unleaded 153.68 10.0 15.5 179.18 212.6 215.1 212.6 999.9
+Premium Unleaded 156.68 10.0 15.5 182.18 216.1 218.6 216.1 999.9
+Ultra-Low-Sulfur Diesel 156.27 4.0 15.4 175.67 208.2 210.5 208.2 999.9
+Zone 5
+Regular Unleaded 150.68 10.0 15.5 176.18 209.2 211.7 209.2 999.9
+Mid-Grade Unleaded 153.68 10.0 15.5 179.18 212.6 215.1 212.6 999.9
+Premium Unleaded 156.68 10.0 15.5 182.18 216.1 218.6 216.1 999.9
+Ultra-Low-Sulfur Diesel 156.27 4.0 15.4 175.67 208.2 210.5 208.2 999.9
+Zone 6
+Regular Unleaded 151.38 10.0 15.5 176.88 210.0 212.5 210.0 999.9
+Mid-Grade Unleaded 154.38 10.0 15.5 179.88 213.4 215.9 213.4 999.9
+Premium Unleaded 157.38 10.0 15.5 182.88 216.9 219.4 216.9 999.9
+Ultra-Low-Sulfur Diesel 156.97 4.0 15.4 176.37 209.0 211.3 209.0 999.9
+N.S. Reg. 110/2022
+Made: June 7, 2022
+Filed: June 7, 2022
+Nova Scotia Child Benefit Regulations–amendment
+Order in Council 2022-150 dated June 7, 2022
+Amendment to regulations made by the Governor in Council
+pursuant to Section 80 of the Income Tax Act
+The Governor in Council on the report and recommendation of the Minister of Finance and Treasury Board and
+the Minister of Community Services dated April 12, 2022, and pursuant to Section 80 of Chapter 217 of the
+Revised Statutes of Nova Scotia, 1989, the Income Tax Act, is pleased to amend the Nova Scotia Child Benefit
+Regulations, N.S. Reg. 62/1998, made by the Governor in Council by Order in Council 1998-430 dated August
+28, 1998, to increase the Nova Scotia Child Benefit rates, in the manner set forth in Schedule “A” attached to
+and forming part of the report and recommendation, effective on and after July 1, 2022.© NS Office of the Registrar of Regulations. Web version.
+242
+
+--- PDF page 11 of 13 ---
+
+N.S. Reg. 110/2022 Royal Gazette Part II - Regulations Vol. 46, No. 12
+Schedule “A”
+Amendment to the Nova Scotia Child Benefit Regulations
+made by the Governor in Council under Section 80
+of Chapter 217 of the Revised Statutes of Nova Scotia, 1989,
+the Income Tax Act
+1 Section 3 of the Nova Scotia Child Benefit Regulations, N.S. Reg. 62/1998, made by the Governor in
+Council by Order in Council 1998-430 dated August 28, 1998, is repealed and the following Section
+substituted:
+3 Where a person and, where the Minister so demands, the person’s cohabiting spouse or common-law
+partner at the end of the taxation year, have filed a return of income for the year, an overpayment on
+account of the person’s liability under Part II of the Act for the year shall be deemed to have arisen
+during a month in relation to which the year is the base taxation year, equal to the amount
+determined by the following formula:
+NSCB = [1/12 (A × B)] - C
+where
+A is $1275 for each qualified dependant in respect of whom the person was an eligible individual at
+the beginning of the month,
+B is the number of qualified dependants in respect of whom the person was an eligible individual at
+the beginning of the month, and
+C is the benefit reduction applicable to the eligible individual which is calculated in accordance with
+Section 4.
+2 Section 4 of the regulations is repealed and the following Section substituted:
+4 (1) Where the adjusted income of the eligible individual for the base taxation year in relation to
+the month is less than $26 000, C equals zero.
+(2) Where the adjusted income of the eligible individual for the base taxation year in relation to
+the month is equal to or greater than $26 000 and less than $34 000,
+(a) if there is only 1 qualified dependant in respect of whom the person was an eligible
+individual at the beginning of the month,
+C = 0.
+(b) if there is more than 1 qualified dependant in respect of whom the person was an
+eligible individual at the beginning of the month,
+C = 1/12 × 50% (A × B - A), where A and B are as defined in Section 3.© NS Office of the Registrar of Regulations. Web version.
+243
+
+--- PDF page 12 of 13 ---
+
+N.S. Reg. 111/2022 Royal Gazette Part II - Regulations Vol. 46, No. 12
+N.S. Reg. 111/2022
+Made: June 7, 2022
+Filed: June 7, 2022
+Firefighters’ Compensation Regulations–amendment
+Order in Council 2022-155 dated June 7, 2022
+Amendment to regulations made by the Governor in Council
+pursuant to subsection 35A(7) of the Workers’ Compensation Act
+The Governor in Council on the report and recommendation of the Minister of Labour, Skills and Immigration
+dated May 10, 2022, and pursuant to Section 35A of Chapter 10 of the Acts of 1994-95, the Workers’
+Compensation Act, is pleased to amend the Firefighters’ Compensation Regulations, N.S. Reg. 140/2003, made
+by the Governor in Council by Order in Council 2003-341 dated August 1, 2003, to change the latency period
+for pancreatic cancer and thyroid cancer from 15 years to 10 years, in the manner set forth in Schedule “A”
+attached to and forming part of the report and recommendation, effective on and after July 1, 2022.
+Schedule “A”
+Amendment to the Firefighters’ Compensation Regulations
+made by the Governor in Council under subsection 35A(7)
+of Chapter 10 of the Acts of 1994-95,
+the Workers’ Compensation Act
+The table in Section 2 of the Firefighters’ Compensation Regulations, N.S. Reg. 140/2003, made by the
+Governor in Council by Order in Council 2003-341 dated August 1, 2003, is amended by
+(a) striking out “15 years” in the row that begins with “Primary site pancreatic cancer” and substituting
+“10 years”; and
+(b) striking out “15 years” in the row that begins with “Primary site thyroid cancer” and substituting “10
+years”.© NS Office of the Registrar of Regulations. Web version.
+244
+
+--- PDF page 13 of 13 ---
+
+1
+N.S. Reg. 112/2022 Royal Gazette Part II - Regulations Vol. 46, No. 12
+N.S. Reg. 112/2022
+Made: June 7, 2022
+Filed: June 7, 2022
+List of Allowable Pesticides Regulations–amendment
+Order dated June 7, 2022
+Amendment to regulations made by the Minister of Environment and Climate Change
+pursuant to Section 6 of the Non-essential Pesticides Control Act
+In the matter of Sections 6 of Chapter 6 of the Acts of 2020 [2010],
+the Non-essential Pesticides Control Act
+- and -
+In the matter of the List of Allowable Pesticides Regulations
+Order
+I, Tim Halman, Minister of Environment and Climate Change for the Province of Nova Scotia, pursuant to
+Section 6 of Chapter 6 of the Acts of 2010, the Non-essential Pesticides Control Act, hereby amend the List of
+Allowable Pesticides Regulations, N.S. Reg. 181/2010, made by the Minister of Environment by order dated
+November 30, 2010, in the manner set forth in Schedule “A” effective on and after the date of this Order.
+Dated and made in Halifax, Nova Scotia[,] June 7, 2022[.]
+sgd. T. Halman
+Honourable Tim Halman
+Minister of Environment and Climate Change
+Schedule “A”
+Amendment to the [List of] Allowable Pesticides Regulations
+made under Section 6 of Chapter 6 of the Acts of 2010,
+the Non-essential Pesticides Control Act
+The List of Allowable Pesticides Regulations, N.S. Reg. 181/2010, made by the Minister of Environment
+by order dated November 30, 2010, is amended by adding the following item where it belongs in
+alphabetical order to the list of allowable pesticides in Section 2:
+Beauveria bassiana strain ANT-03© NS Office of the Registrar of Regulations. Web version.
+245
