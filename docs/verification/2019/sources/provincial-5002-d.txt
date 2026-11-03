@@ -1,0 +1,225 @@
+Title: Worksheet PE428
+URL: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5002-d/5002-d-19e.pdf
+Fetched: 2026-11-02
+SHA-256 of the original: fbb8407514d32d4caecd1601a507fa7a23837a5aa5991f116788239ee5d6d514
+Publication date modified: 2019-11-21
+PDF pages: all 3
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 1 of 3 ---
+
+2019
+Protected B when completed
+Worksheet PE428
+Use this worksheet to calculate the amounts to enter on your Form PE428, Prince Edward Island Tax and Credits.
+Keep this worksheet for your records. Do not attach it to your return.
+Line 58080 – Age amount (if born in 1954 or earlier)
+If the amount from line 23600 of your return is:
+• $28,019 or less, enter $3,764 on line 58080 of your Form PE428
+• more than $28,019 but not more than $53,112, complete the calculation below
+• more than $53,112, enter "0" on line 58080 of your Form PE428
+1Maximum amount
+2Amount from line 23600 of your return
+3Income threshold –
+4Line 2 minus line 3 (if negative, enter "0") =
+5Applicable rate ×
+6Multiply line 4 by line 5. =
+Ż –
+7Line 1 minus line 6 (if negative, enter "0") =
+Enter this amount on line 58080 of your Form PE428.
+Line 58200 – Amount for infirm dependants age 18 or older
+Complete one column for each dependant. If you have more than three dependants, use a separate sheet of paper.
+Dependant 1
+1Base amount
+2Dependant's net income from line 23600 of their return –
+3
+Line 1 minus line 2 (if negative, enter "0")
+(maximum $2,446 per dependant) =
+4
+Amount claimed for this dependant on line 58160
+of your Form PE428, if any –
+5
+Allowable amount for this dependant:
+line 3 minus line 4 (if negative, enter "0") =
+Dependant 2
+1
+2–
+3=
+4–
+5=
+Dependant 3
+1
+2–
+3=
+4–
+5=
+6Add the amounts from line 5 for columns 1, 2, and 3 (and others, if any).
+Enter the total on line 58200 of your Form PE428.
+Line 58400 – Caregiver amount
+Complete one column for each dependant. If you have more than three dependants, use a separate sheet of paper.
+Dependant 1
+1Base amount
+2Dependant's net income from line 23600 of their return –
+3
+Line 1 minus line 2 (if negative, enter "0")
+(maximum $2,446 per dependant) =
+4
+Amount claimed for this dependant on line 58160
+of your Form PE428, if any –
+5
+Allowable amount for this dependant:
+line 3 minus line 4 (if negative, enter "0") =
+Dependant 2
+1
+2–
+3=
+4–
+5=
+Dependant 3
+1
+2–
+3=
+4–
+5=
+6Add the amounts from line 5 for columns 1, 2, and 3 (and others, if any).
+Enter the total on line 58400 of your Form PE428.
+5002-D (Ce formulaire est disponible en français.)
+3,764.00
+28,019.00
+15%
+7,412.00 7,412.00 7,412.00
+14,399.00 14,399.00 14,399.00
+
+--- PDF page 2 of 3 ---
+
+Protected B when completed
+Worksheet PE428 (continued)
+Line 58440 – Disability amount (for self)
+Complete the following calculation if you were under 18 years of age on December 31, 2019 :
+1Base amount
+2Maximum amount
+3
+Total child care and attendant care expenses for you
+claimed by you or another person
+4Threshold for child and attendant care expenses –
+5Line 3 minus line 4 (if negative, enter "0") =
+Ż –
+6Line 2 minus line 5 (if negative, enter "0") =
+Ż +
+7Add lines 1 and 6. (maximum $10,909) =
+Enter this amount on line 58440 of your Form PE428.
+Line 58480 – Disability amount transferred from a dependant
+Complete this calculation for each dependant. If you have more than one dependant, use a separate sheet of paper.
+Note: If you and your dependant were not residents of the same province or territory at the end of the year, special rules
+may apply. Contact the Canada Revenue Agency to find out how much you can claim.
+1Base amount
+If the dependant was under 18 years of age on December 31, 2019, complete lines 2 to 12.
+If the dependant was 18 years of age or older, enter "0" on line 6 and continue on line 7.
+2Maximum amount
+3
+Total child care and attendant care expenses for this
+dependant claimed by you or another person
+4Threshold for child and attendant care expenses –
+5Line 3 minus line 4 (if negative, enter "0") =
+Ż –
+6Line 2 minus line 5 (if negative, enter "0") =
+Ż +
+7Add lines 1 and 6. (maximum $10,909) =
+8Total of amounts your dependant can claim on lines 9 to 17 of their Form PE428 +
+9Add lines 7 and 8. =
+10Dependant's taxable income from line 26000 of their return –
+11Line 9 minus line 10 (if negative, enter "0") =
+12
+Allowable amount for this dependant:
+Enter the amount from line 7 or line 11, whichever is less
+Enter on line 58480 of your Form PE428 the total of allowable amounts claimed for all dependants.
+5002-D
+6,890.00
+4,019.00
+2,354.00
+6,890.00
+4,019.00
+2,354.00
+
+--- PDF page 3 of 3 ---
+
+Protected B when completed
+Worksheet PE428 (continued)
+Line 58729 – Allowable amount of medical expenses for other dependants
+Complete one column for each dependant. If you have more than three dependants, use a separate sheet of paper.
+Dependant 1
+1Medical expenses for other dependant
+2
+Enter whichever is less: $1,678 or 3% of the dependant's
+net income from line 23600 of their return –
+3Line 1 minus line 2 (if negative, enter "0") =
+Dependant 2
+1
+2–
+3=
+Dependant 3
+1
+2–
+3=
+4Add the amounts from line 3 for columns 1, 2, and 3 (and others, if any).
+Enter the total on line 58729 of your Form PE428.
+Line 61520 – Prince Edward Island dividend tax credit
+Calculate the amount to enter on line 61520 of your Form PE428 by completing one of the following calculations:
+• If you entered an amount on line 12000 of your return but no amount on line 12010:
+Amount from line 12000 of your return × 10.5% =
+Enter this amount on line 61520 of your Form PE428.
+• If you entered an amount on lines 12000 and 12010 of your return:
+1Amount from line 12000 of your return
+32Amount from line 12010 of your return – × 2.74% =
+54Line 1 minus line 2 = × 10.5% = +
+6Add lines 3 and 5. =
+Enter this amount on line 61520 of your Form PE428.
+Line 88 – Prince Edward Island political contribution tax credit
+If your total political contributions from line 87 of your Form PE428 are more than $1,150, enter $500 on line 88 of your
+Form PE428. If not, use the amount from line 87 to decide which column to complete.
+Line 87 is
+$100 or less
+Enter your total contributions from line 87 of
+your Form PE428.
+–
+Line 1 minus line 2 (cannot be negative) =
+×
+Multiply line 3 by line 4. =
++
+Add lines 5 and 6. =
+Enter this amount on line 88 of your Form PE428.
+Line 87 is more
+than $100 but
+not more than $550
+–
+=
+×
+=
++
+=
+Line 87 is
+more than $550
+–
+=
+×
+=
++
+=
+1
+2
+3
+4
+5
+6
+7
+5002-D
+0.00
+75%
+0.00
+100.00
+50%
+75.00
+550.00
+33.33%
+300.00

@@ -1,0 +1,239 @@
+Title: Saskatchewan Tax and Credits
+URL: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5008-c/5008-c-19e.pdf
+Fetched: 2026-11-02
+SHA-256 of the original: b66d55453f0b03fb85823c3e0c7d5b1b0794905b6cb2baecb6e3fbc2625eb336
+Publication date modified: 2019-11-13
+PDF pages: all 4
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 1 of 4 ---
+
+Form SK428
+2019
+Protected B when completed
+Saskatchewan Tax and Credits
+This is Step 6 in completing your return. Complete this form and attach a copy to your return.
+Claim only the credits that apply to you.
+Part A – Saskatchewan non-refundable tax credits 56070For internal use only
+58040 1Basic personal amount Claim $16,065
+58080 2
+Age amount (if born in 1954 or earlier)
+(use Worksheet SK428) (maximum $4,894) +
+Spouse or common-law partner amount
+3Base amount
+4
+Your spouse's or common-law partner's
+net income from line 23600 of their return –
+58120 5Line 3 minus line 4 (if negative, enter "0") = (maximum $16,065) +Ź
+Amount for an eligible dependant
+6Base amount
+7
+Your eligible dependant's net income
+from line 23600 of their return –
+58160 8Line 6 minus line 7 (if negative, enter "0") = +Ź(maximum $16,065)
+9Add lines 1, 2, 5, and 8 =
+58200 10
+Amount for infirm dependants age 18 or older
+(use Worksheet SK428) +
+58210 11
+Amount for dependent children born in 2001 or later
+(Complete the chart on the last page.) 58209Number of children × $6,094 = +
+58220 12Senior supplementary amount (if born in 1954 or earlier) Claim $1,292 +
+CPP or QPP contributions:
+58240 13Amount from line 30800 of your return + •
+58280 14Amount from line 31000 of your return + •
+Employment insurance premiums:
+58300 15Amount from line 31200 of your return + •
+58305 16Amount from line 31217 of your return + •
+58357 17First-time home buyers' amount (maximum $10,000) +
+58360 18Pension income amount (maximum $1,000) +
+58400
+19Caregiver amount
+(use Worksheet SK428) +
+58440 20
+Disability amount (for self)
+(Claim $9,464, or if you were under 18 years of age, use Worksheet SK428.) +
+58480
+21Disability amount transferred from a dependant
+(use Worksheet SK428) +
+58520
+22Interest paid on your student loans
+(amount from line 31900 of your return) +
+58560
+23Your unused tuition and education amounts
+(attach Schedule SK(S11)) +
+58640
+24Amounts transferred from your spouse or common-law partner
+(attach Schedule SK(S2)) +
+25Add lines 9 to 24. =
+Continue on the next page.
+5008-C (Ce formulaire est disponible en français.)
+17,672.00
+17,672.00
+
+--- PDF page 2 of 4 ---
+
+Protected B when completed
+Part A – Saskatchewan non-refundable tax credits (continued)
+26Amount from line 25 of the previous page
+Medical expenses:
+58689 27Amount from line 33099 of your return
+28
+Enter whichever is less:
+$2,268 or 3% of the amount from line 23600 of your return –
+29Line 27 minus line 28 (if negative, enter "0") =
+58729 30
+Allowable amount of medical expenses for other dependants
+from line 33199 of your return +
+58769 31Add lines 29 and 30. =
+Ż +
+58800 32Add lines 26 and 31. =
+33Saskatchewan non-refundable tax credit rate ×
+58840 34Multiply line 32 by line 33. =
+Donations and gifts:
+35
+Amount from line 16
+of your federal Schedule 9 × 10.5% =
+36
+Amount from line 17
+of your federal Schedule 9 × 14.5% = +
+58969 37Add lines 35 and 36. =
+Ż +
+61500 38Saskatchewan non-refundable tax credits
+Add lines 34 and 37.
+Enter this amount on line 53. =
+Part B – Saskatchewan tax on taxable income
+39Enter your taxable income from line 26000 of your return.
+Use the amount from line 39 to decide which column to complete.
+Line 39 is
+$45,225 or less
+Amount from line 39
+–
+Line 40 minus line 41 (cannot be negative) =
+×
+Multiply line 42 by line 43. =
++
+Saskatchewan tax on taxable income
+Add lines 44 and 45.
+=
+Line 39 is
+more than $45,225
+but not more than
+$129,214
+–
+=
+×
+=
++
+=
+Line 39 is
+more than $129,214
+–
+=
+×
+=
++
+=
+40
+41
+42
+43
+44
+45
+46
+Part C – Saskatchewan tax
+47Enter your Saskatchewan tax on taxable income from line 46.
+61499 48Enter the Saskatchewan farm and small business capital gains tax credit from Form T1237. – •
+49Line 47 minus line 48 =
+61510 50Enter your Saskatchewan tax on split income from Form T1206. + •
+51Add lines 49 and 50. =
+Continue on the next page.
+5008-C
+10.5%
+0.00
+10.5%
+0.00
+45,225.00
+12.5%
+4,749.00
+129,214.00
+14.5%
+15,247.00
+
+--- PDF page 3 of 4 ---
+
+Protected B when completed
+Part C – Saskatchewan tax (continued)
+52Amount from line 51 of the previous page
+53Enter your Saskatchewan non-refundable tax credits from line 38.
+61520 54
+Saskatchewan dividend tax credit
+Credit calculated for line 61520 on Worksheet SK428 + •
+61540 55
+Saskatchewan minimum tax carryover
+Amount from line 40427 of your return × 50% = + •
+56Add lines 53 to 55. =
+Ż –
+57Line 52 minus line 56 (if negative, enter "0") =
+58
+Saskatchewan additional tax for minimum tax purposes
+Form T691: line 111 minus line 114 × 50% = +
+59Add lines 57 and 58. =
+60Enter the provincial foreign tax credit from Form T2036. –
+61Line 59 minus line 60 (if negative, enter "0") =
+Political contribution tax credit
+63554 62Saskatchewan political contributions made in 2019
+63Credit calculated for line 63 on Worksheet SK428 (maximum $650) –
+64Line 61 minus line 63 (if negative, enter "0") =
+Labour-sponsored venture capital tax credit
+65
+For investments in venture capital corporations registered in Saskatchewan:
+Enter your tax credit from Slip T2C (Sask.). (maximum $875)
+66
+For investments in venture capital corporations registered federally:
+Enter your tax credit from Slip T2C (Sask.). (maximum $875) +
+63557 67Add lines 65 and 66. (maximum $875) = •
+Ż –
+68Line 64 minus line 67 (if negative, enter "0") =
+63600 69
+Saskatchewan mineral exploration tax credit
+Saskatchewan mineral exploration tax credit from Slip SK-METC •
+70
+Unused Saskatchewan mineral exploration tax credit from
+your most recent notice of assessment or reassessment +
+71Add lines 69 and 70. =
+Ż –
+72Line 68 minus line 71 (if negative, enter "0") =
+63640 73
+Saskatchewan graduate tuition tax credit
+Enter the amount from line 10 of Form RC360, Saskatchewan Graduate Retention Program. – •
+74Saskatchewan tax
+Line 72 minus line 73 (if negative, enter "0")
+Enter the result on line 42800 of your return. =
+Continue on the next page.
+5008-C
+
+--- PDF page 4 of 4 ---
+
+Protected B when completed
+Part C – Saskatchewan tax (continued)
+Request for carryback of unused mineral exploration tax credit
+75Amount from line 71 of the previous page
+76Amount from line 68 of the previous page –
+77Line 75 minus line 76 (if negative, enter "0") =
+Enter on line 78 any part of the amount from line 77 that you want to carry back to 2018 to reduce
+your Saskatchewan tax.
+Enter on line 79 any amount that you want to carry back to 2017 and enter on line 80 any amount
+that you want to carry back to 2016.
+63601 78Enter the amount you want to carry back to 2018. •
+63602 79Enter the amount you want to carry back to 2017. •
+63603 80Enter the amount you want to carry back to 2016. •
+Details of dependent children born in 2001 or later
+Child's name Relationship to you Date of birth
+Year Month Day
+Social insurance number
+(if available)
+If you need more space, attach an additional page.
+See the privacy notice on your return.
+5008-C

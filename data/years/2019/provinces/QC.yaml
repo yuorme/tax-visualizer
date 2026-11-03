@@ -1,0 +1,61 @@
+# Benefit-year figures use July 2019 to June 2020, applied to current-year income.
+# 2020 official parameter tables explicitly publish 2019 comparatives; no reverse-indexation.
+# Family allowance uses calendar 2019 and ordinal child maxima/minima; solidarity uses July 2019–June 2020.
+# Living-alone amount retains the model assumption that every one-adult household qualifies.
+# Property estimate uses Ville-Marie: (0.6519 base + 0.1083 water + 0.0036 roads + 0.0025 ARTM
+# + 0.0062 borough capital + 0.0433 borough services) / 100 = 0.008158.
+# This municipal rate excludes the separately collected school levy.
+# The citywide-average budget was unavailable; this is an explicit representative-borough proxy.
+
+code: QC
+name: Quebec
+order: 8
+system: quebec
+brackets:
+  - [43790, 0.15]
+  - [87575, 0.2]
+  - [106555, 0.24]
+  - [.inf, 0.2575]
+basicPersonalAmount: 15269
+dividendTaxCredit: {eligible: 0.117, nonEligible: 0.0555}
+spouseAmount: transfer
+quebec:
+  workerDeduction: {rate: 0.06, max: 1170}
+  livingAlone: {max: 1750, rate: 0.1875, threshold: 34610}
+salesTax: {rate: 0.14975, label: 5% GST + 9.975% QST}
+propertyTax: {rate: 0.008158, city: Montreal, note: Ville-Marie proxy; school tax is billed separately, estimated: true}
+childBenefit:
+  name: Family allowance
+  program: quebec-family-allowance-by-child
+  params:
+    max: [2472, 1735, 1735, 1852]
+    min: [694, 641]
+    maxSingleParent: 867
+    minSingleParent: 346
+    thresholdSingle: 35680
+    thresholdCouple: 49044
+    schoolSupplies: 102
+    rate: 0.04
+credits:
+  - name: Solidarity tax credit
+    program: quebec-solidarity-tax-credit
+    params: {qstAdult: 292, qstSpouse: 292, qstAlone: 139, housingCouple: 687, housingSingle: 567, child: 121, rate: 0.06, threshold: 34800}
+  - name: Work premium
+    program: quebec-work-premium
+    params:
+      phaseOutRate: 0.1
+      single: [0.105, 2400, 10720]
+      couple: [0.105, 3600, 16584]
+      parent: [0.3, 2400, 10720]
+      coupleKids: [0.25, 3600, 16584]
+sources:
+  - {label: "CRA, GST/HST historical rates and provincial sales-tax rates", url: https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/charge-collect-which-rate/calculator.html}
+  - {label: "Québec, 2020 parameters", url: https://www.finances.gouv.qc.ca/documents/Autres/fr/AUTFR_RegimeImpot2020.pdf}
+  - {label: "Québec, 2019 return", url: https://www.revenuquebec.ca/documents/en/formulaires/tp/2019-12/TP-1.D-V%282019-12%29.pdf}
+  - {label: "Québec, 2019 living alone", url: https://www.revenuquebec.ca/documents/en/formulaires/tp/2019-12/TP-1.D.B-V%282019-12%29.pdf}
+  - {label: "Québec, 2019 work premium", url: https://www.revenuquebec.ca/documents/en/formulaires/tp/2019-12/TP-1.D.P-V%282019-12%29.pdf}
+  - {label: "Finances Québec, historical dividend credit rates", url: https://www.budget.finances.gouv.qc.ca/budget/outils/depenses-fiscales/fiches/fiche-130501.asp}
+  - {label: "Finances Québec, historical family allowance amounts and 4% reduction", url: https://www.budget.finances.gouv.qc.ca/budget/outils/depenses-fiscales/fiches/fiche-110601.asp}
+  - {label: "Finances Québec, historical solidarity credit including July 2023 housing enhancement", url: https://www.budget.finances.gouv.qc.ca/Budget/outils/depenses-fiscales/fiches/fiche-110201.asp}
+  - {label: "Finances Québec, worker deduction rate and historical maxima", url: https://www.budget.finances.gouv.qc.ca/Budget/outils/depenses-fiscales/fiches/fiche-110906.asp}
+  - {label: "Montreal, 2019 official rate table: Ville-Marie representative borough (manual PDF web extract)", url: https://ville.montreal.qc.ca/pls/portal/docs/PAGE/SERVICE_FIN_FR/MEDIA/DOCUMENTS/1_2019_TAUX_FR.PDF}

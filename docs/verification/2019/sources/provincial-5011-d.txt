@@ -1,0 +1,74 @@
+Title: Worksheet YT428
+URL: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5011-d/5011-d-19e.pdf
+Fetched: 2026-11-02
+SHA-256 of the original: a2d5ce37637bed90baba3e46f3b8b685f14fb9f868b80cc315456f703e07194c
+Publication date modified: 2019-11-21
+PDF pages: all 1
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 1 of 1 ---
+
+2019
+Protected B when completed
+Worksheet YT428
+Use this worksheet to calculate the amounts to enter on Form YT428, Yukon Tax.
+Keep this worksheet for your records. Do not attach it to your return.
+Line 61520 – Yukon dividend tax credit
+Calculate the amount to enter on line 61520 of your Form YT428 by completing one of the following calculations:
+• If you entered an amount on line 12000 of your return but no amount on line 12010:
+Amount from line 12000 of your return × 12.02% =
+Enter this amount on line 61520 of your Form YT428.
+• If you entered an amount on lines 12000 and 12010 of your return:
+1Amount from line 12000 of your return
+2Amount from line 12010 of your return – 3× 2.30% =
+4Line 1 minus line 2 = 5× 12.02% = +
+6Add lines 3 and 5. =
+Enter this amount on line 61520 of your Form YT428.
+Line 57 – Yukon political contribution tax credit
+If your total political contributions from line 56 of your Form YT428 are more than $1,275, enter $650 on line 57 of
+your Form YT428. If not, use the amount from line 56 to decide which column to complete.
+Line 56 is
+$400 or less
+Enter your total contributions from line 56 of your Form YT428.
+–
+Line 1 minus line 2 (cannot be negative) =
+×
+Multiply line 3 by line 4. =
++
+Add lines 5 and 6. =
+Line 56 is more
+than $400 but not
+more than $750
+–
+=
+×
+=
++
+=
+Line 56 is
+more than $750
+–
+=
+×
+=
++
+=
+1
+2
+3
+4
+5
+6
+7
+Enter this amount on line 57 of your Form YT428.
+5011-D (Ce formulaire est disponible en français.)
+0.00
+75%
+0.00
+400.00
+50%
+300.00
+750.00
+33.33%
+475.00
