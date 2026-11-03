@@ -84,6 +84,25 @@ class FilterTests(unittest.TestCase):
         event["tool_response"]["extraMetadata"] = {"duration": 123}
         self.filtered(event, "claude")
 
+    def test_error_subclasses_keep_entire_diagnostic_context(self):
+        for name in ("TimeoutError", "TimeError", "AssertionError", "TestError"):
+            diagnostic = f"{name}: browser did not become ready\n    at openPage (page.mjs:50)\n✔ context, not a pass"
+            message = self.filtered(self.event(PASSES + "\n" + diagnostic, 1))
+            self.assertIn(diagnostic, message)
+
+    def test_summary_prefix_words_remain_unknown_text(self):
+        for text in ("Timeout waiting for browser", "Testimony from the runner", "Time to prepare: 10s",
+                     "Testsuite custom diagnostic", "DurationExceeded: runner timed out",
+                     "Time limit exceeded", "Tests aborted by watchdog", "Tests could not run"):
+            self.assertIn(text, self.filtered(self.event(PASSES + "\n" + text, 1)))
+
+    def test_failure_and_cancellation_counts_are_preserved(self):
+        for prefix in ("ℹ", "#"):
+            for outcome in ("fail", "cancelled"):
+                line = f"{prefix} {outcome} 2"
+                self.assertIn(line, self.filtered(self.event(PASSES + "\n" + line, 1)))
+                self.assertEqual(FILTER.compact(f"{prefix} {outcome} 0")[0], "")
+
     def test_tap_metadata_and_failures(self):
         success = "# Subtest: good\nok 1 - good\n  ---\n  duration_ms: 0.5\n  type: 'test'\n  ...\n"
         failure = "not ok 2 - bad\n  ---\n  expected: 2\n  actual: 1\n  stack: |-\n    test.ts:1\n  ..."

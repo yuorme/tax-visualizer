@@ -13,7 +13,7 @@ import tempfile
 ANSI = re.compile(r"\x1b\[[0-?]*[ -/]*[@-~]")
 ROOT = Path(__file__).resolve().parent.parent
 DIAGNOSTIC = re.compile(
-    r"\b(?:warn(?:ing)?s?|\w*Warning|error|fail(?:ed|ures?)?|exception|fatal|panic)\b"
+    r"\b(?:warn(?:ing)?s?|\w*Warning|\w*Error|fail(?:ed|ures?)?|exception|fatal|panic)\b"
     r"|^\s*(?:not ok\b|[✖×]|FAIL\b|E\s{2,}|_{3,})", re.I
 )
 PASS = re.compile(
@@ -24,9 +24,7 @@ PASS = re.compile(
 NOISE = re.compile(
     r"^\s*(?:TAP version \d+|\d+\.\.\d+|# Subtest:.*|"
     r"[ℹ#]\s*(?:tests|suites|pass|fail|cancelled|skipped|todo|duration_ms)\s+[\d.]+|"
-    r"[ℹ#]\s*duration_ms\s+[\d.]+|"
-    r"(?:Test Files|Test Suites|Tests|Snapshots|Time|Duration|Start at)\s*:?.*|"
-    r"Ran all test suites.*|=+\s*\d+ passed.*=+)\s*$"
+    r"[ℹ#]\s*duration_ms\s+[\d.]+)\s*$"
 )
 
 
@@ -150,7 +148,8 @@ def compact(output):
         passing = PASS.fullmatch(line)
         test_title = re.fullmatch(r"\s*# Subtest:.*", line)
         command_banner = line.startswith("> ")
-        if (
+        bad_outcome = re.fullmatch(r"\s*[ℹ#]\s*(?:fail|cancelled)\s+[1-9]\d*\s*", line)
+        if bad_outcome or (
             DIAGNOSTIC.search(line) and not passing and not test_title and not command_banner
             and not (summary and re.search(r"\bfail\s+0\b", line))
         ):
