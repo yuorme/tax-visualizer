@@ -210,3 +210,4 @@ keeps the pages the data uses). Nothing under `docs/` is imported by `src/`, so 
 | [carbon-regional-nl-rates](carbon-regional-nl-rates.txt) | DEPARTMENT OF FINANCE | https://www.gov.nl.ca/fin/files/Gasoline-and-Carbon-Products-Information-Bulletin-RAA-CARBON-002-November-7-2020.pdf | 2026-11-02 | 97ffd545ecda1f8426d0208819f78cb6c87a1e022422eb5933cc0859d8341e7e |
 | [carbon-regional-nt-lump-sum](carbon-regional-nt-lump-sum.txt) | Government of Northwest Territories | https://www.gov.nt.ca/en/newsroom/first-2020-cost-living-offset-payments-be-made-april-30th-2020 | 2026-11-02 | 383181adbb271eeb814a0ad3e1df70f1a9f2934d5154cd935471c49e7164631f |
 | [rule-carbon-nt-consolidation](rule-carbon-nt-consolidation.txt) | Government of Northwest Territories | https://www.gov.nt.ca/en/newsroom/first-2020-cost-living-offset-payments-be-made-april-30th-2020 | 2026-11-02 | `383181adbb271eeb814a0ad3e1df70f1a9f2934d5154cd935471c49e7164631f` |
+
