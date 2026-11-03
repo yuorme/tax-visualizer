@@ -1,0 +1,19 @@
+Title: Vancouver 2023 property tax rates, Appendix A
+URL: https://council.vancouver.ca/20230510/documents/cfsc1-updatedmay5.pdf
+Fetched: 2026-11-02
+SHA-256 of the original: unavailable (direct download returned HTTP 403)
+Manual evidence extract from the official report retrieved with the web browsing tool.
+The prescribed fetch-source command returned HTTP 403; no original-file hash is available.
+This is not an automatic fetch-source extract.
+================================================================================
+
+PDF page 8, residential class 1, 2023 dollars per $1,000 taxable value:
+City: 1.63321
+School: 0.84419
+Transit: 0.21911
+Assessment: 0.03365
+Region: 0.05034
+Finance authority: 0.00020
+Total: 2.78070
+
+Decimal rate: 0.00278070.

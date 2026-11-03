@@ -1,0 +1,39 @@
+# Benefit-year figures use July 2023 to June 2024, applied to current-year income.
+# ACFB reduction rates and $10 minimum annual entitlement come from statutory section 30.2.
+
+code: AB
+name: Alberta
+order: 2
+brackets:
+  - [142292, 0.1]
+  - [170751, 0.12]
+  - [227668, 0.13]
+  - [341502, 0.14]
+  - [.inf, 0.15]
+basicPersonalAmount: 21003
+dividendTaxCredit: {eligible: 0.0812, nonEligible: 0.0218}
+spouseAmount: {max: 21003, threshold: 0}
+salesTax: {rate: 0.05, label: 5% GST}
+propertyTax: {rate: 0.0065718, city: Calgary}
+childBenefit:
+  name: Alberta Child and Family Benefit
+  program: alberta-child-family-benefit-by-child
+  params:
+    base: [1410, 2115, 2820, 3525]
+    baseRate: [0.0805, 0.1207, 0.1609, 0.2011]
+    baseThreshold: 25935
+    working: [722, 1379, 1772, 1902]
+    workingRate: 0.15
+    workingFloor: 2760
+    workingThreshold: 43460
+    workingPhaseOut: [0.034, 0.0649, 0.0834, 0.0895]
+    minAnnual: 10
+sources:
+  - {label: "CRA, AB428 for 2023 (brackets, personal amounts and reductions)", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5009-c/5009-c-23e.pdf}
+  - {label: "CRA, AB428 worksheet for 2023 (dividend credits)", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5009-d/5009-d-23e.pdf}
+  - {label: "CRA, T4114: provincial child benefits July 2023 to June 2024", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pub/t4114/t4114-23e.pdf}
+  - {label: "CRA, GST/HST historical rates and provincial sales-tax rates", url: https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/charge-collect-which-rate/calculator.html}
+  - {label: "City of Calgary, 2023 residential municipal plus education rate", url: https://www.calgary.ca/property-owners/taxes/bill-rate-calculation.html}
+  - {label: "Alberta, child and family benefit working component phase-in", url: https://www.alberta.ca/alberta-child-and-family-benefit}
+  - {label: "Alberta Personal Income Tax Act, section 30.2 (statutory benefit reduction rates)", url: https://kings-printer.alberta.ca/documents/Acts/A30.pdf}
+  - {label: "Alberta, Bill 20 of 2019 section 9(23), original section 30.2 rates", url: https://docs.assembly.ab.ca/LADDAR_files/docs/bills/bill/legislature_30/session_1/20190521_bill-020.pdf}

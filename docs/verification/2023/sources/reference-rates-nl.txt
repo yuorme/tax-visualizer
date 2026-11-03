@@ -1,0 +1,79 @@
+Title: Newfoundland & Labrador 2024 & 2023 Tax Rates & Tax Brackets
+URL: https://www.taxtips.ca/priortaxrates/tax-rates-2023-2024/nl.htm
+Fetched: 2026-11-02
+SHA-256 of the original: 201e312ff3b00012d5ddfab393b2b83655d79681e9131475adc96ab1df283cab
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+#### Home -> Atlantic Provinces -> Newfoundland & Labrador ->
+
+#### Tax Rates -> 2023-2024 Tax Rates -> Newfoundland & Labrador
+
+# Newfoundland & Labrador 2024 & 2023 Tax Rates & Tax Brackets
+
+##### Newfoundland and Labrador Income Tax Act, 2000 s. 6.1, 7, 9
+
+The NL tax brackets and personal tax credit amounts are increased for 2024 by an indexation factor of 1.042 (4.2% increase).
+
+The Federal tax brackets and personal tax credit amounts are increased for 2024 by an indexation factor of 1.047 (4.7% increase).
+
+The 2024 Federal Budget proposed an increase in the capital gains inclusion rate to 66 2/3% for the portion of gains realized after June 24, 2024 in excess of $250,000, for an individual. We've added an extra column below, to show the marginal tax rate for those gains. The inclusion rate is still 50% for the portion of gains up to $250,000 after June 24, 2024.
+
+See Indexation of the Personal Income Tax System for how the indexation factors are calculated.
+
+The indexation factors, tax brackets and tax rates for 2024 have been confirmed to Canada Revenue Agency information.
+
+Tax Tip: read the article Understanding the Tables of Personal Income Tax Rates, especially if you are trying to compare the rates below to the marginal tax rates in the Basic Tax Calculator or the Detailed Tax Calculators.
+
+TaxTips.ca - Newfoundland & Labrador Tax Rates
+2024 Taxable Income | 2024 Tax Rates | 2023 Taxable Income | 2023 Tax Rates
+first $43,198 | 8.7% | first $41,457 | 8.7%
+over $43,198 up to $86,395 | 14.5% | over $41,457 up to $82,913 | 14.5%
+over $86,395 up to $154,244 | 15.8% | over $82,913 up to $148,027 | 15.8%
+over $154,244 up to $215,943 | 17.8% | over $148,027 up to $207,239 | 17.8%
+over $215,943 up to $275,870 | 19.8% | over $207,239 up to $264,750 | 19.8%
+over $275,870 up to $551,739 | 20.8% | over $264,750 up to $529,500 | 20.8%
+over $551,739 up to $1,103,478 | 21.3% | over $529,500 up to $1,059,000 | 21.3%
+over $1,103,478 | 21.8% | over $1,059,000 | 21.8%
+
+TaxTips.ca - Combined Federal & Newfoundland & Labrador Tax Brackets and Tax Rates
+2024 Taxable Income (1) | NL 2024 Marginal Tax Rates | 2023 Taxable Income (1) | NL 2023 Marginal Tax Rates
+Other Income | Capital Gains | Canadian Dividends | Other Income | Capital Gains | Canadian Dividends
+All Pre- Jun 25 | >$250K Post- Jun 24 | Eligible | Non-Eligible | Eligible | Non-Eligible
+first $43,198 | 23.70% | 11.85% | 15.80% | 3.28% | 13.19% | first $41,457 | 23.70% | 11.85% | 3.28% | 13.19%
+over $43,198 up to $55,867 | 29.50% | 14.75% | 19.67% | 11.29% | 19.86% | over $41,457 up to $53,359 | 29.50% | 14.75% | 11.29% | 19.86%
+over $55,867 up to $86,395 | 35.00% | 17.50% | 23.33% | 18.88% | 26.19% | over $53,359 up to $82,913 | 35.00% | 17.50% | 18.88% | 26.19%
+over $86,395 up to $111,733 | 36.30% | 18.15% | 24.20% | 20.67% | 27.68% | over $82,913 up to $106,717 | 36.30% | 18.15% | 20.67% | 27.68%
+over $111,733 up to $154,244 | 41.80% | 20.90% | 27.87% | 28.26% | 34.01% | over $106,717 up to $148,027 | 41.80% | 20.90% | 28.26% | 34.01%
+over $154,244 up to $173,205 | 43.80% | 21.90% | 29.20% | 31.02% | 36.31% | over $148,027 up to $165,430 | 43.80% | 21.90% | 31.02% | 36.31%
+over $173,205 up to $215,943 | 47.12% | 23.56% | 31.41% | 35.60% | 40.13% | over $165,430 up to $207,239 | 47.12% | 23.56% | 35.60% | 40.13%
+over $215,943 up to $246,752 | 49.12% | 24.56% | 32.75% | 38.36% | 42.43% | over $207,239 up to $235,675 | 49.12% | 24.56% | 38.36% | 42.43%
+over $246,752 up to $275,870 | 52.80% | 26.40% | 35.20% | 43.44% | 46.66% | over $235,675 up to $264,750 | 52.80% | 26.40% | 43.44% | 46.66%
+over $275,870 up to $551,739 | 53.80% | 26.90% | 35.87% | 44.82% | 47.81% | over $264,750 up to $529,500 | 53.80% | 26.90% | 44.82% | 47.81%
+over $551,739 up to $1,103,478 | 54.30% | 27.15% | 36.20% | 45.51% | 48.38% | over $529,500 up to $1,059,000 | 54.30% | 27.15% | 45.51% | 48.38%
+over $1,103,478 | 54.80% | 27.40% | 36.53% | 46.20% | 48.96% | over $1,059,000 | 54.80% | 27.40% | 46.20% | 48.96%
+Marginal tax rate for dividends is a % of actual dividends received (not grossed-up taxable amount). Marginal tax rate for capital gains is a % of total capital gains (not taxable capital gains). Gross-up rate for eligible dividends is 38%, and for non-eligible dividends is 15%. For more information see NL dividend tax credits. Copyright © 2002 Boat Harbour Investments Ltd.
+
+TaxTips.ca Newfoundland & Labrador Basic Personal Amount
+2024 Personal Amount | 2024 Tax Rate | 2023 Personal Amount | 2023 Tax Rate
+$10,818 | 8.7% | $10,382 | 8.7%
+
+Federal Basic Personal Amount
+2024 Personal Amount (1) Minimum / Maximum | 2024 Tax Rate | 2023 Personal Amount (1) Minimum / Maximum | 2023 Tax Rate
+$14,156 | $15,705 | 15% | $13,520 | $15,000 | 15%
+
+(1) See the federal tax rates page for information on the enhanced federal personal amount, which increases the marginal tax rates for taxable incomes in the second highest federal tax bracket. The marginal tax rates in blue above have been adjusted to reflect these changes.
+
+Revised: September 18, 2026
+
+© 2002- Boat Harbour Investments Ltd. All rights reserved.
+
+See Reproduction of information from TaxTips.ca
+
+Privacy Policy | Contact
+
+Facebook | Twitter | LinkedIn
+
+The authors of TaxTips.ca strive, but cannot guarantee, to provide information which is current and accurate. Individual circumstances have a significant effect on how tax and financial information can be used. Due to this, and to the nature of the information, it should not be relied upon for decision making without professional advice.
+
+TaxTips.ca provides links to other web sites. We cannot guarantee the accuracy of the information provided on linked sites.

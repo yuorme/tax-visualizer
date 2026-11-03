@@ -1,0 +1,69 @@
+Title: Saskatchewan 2024 and 2023 Tax Rates & Tax Brackets
+URL: https://www.taxtips.ca/priortaxrates/tax-rates-2023-2024/sk.htm
+Fetched: 2026-11-02
+SHA-256 of the original: ce7205294e894b69a92152ef412b9496028d0168502fab0965cc21487fac801a
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+#### Home -> Saskatchewan
+
+#### Tax Rates -> 2023-2024 Tax Rates -> Saskatchewan Personal Income Tax Rates
+
+# Saskatchewan 2024 and 2023 Tax Rates & Tax Brackets
+
+The Federal and Saskatchewan tax brackets and personal tax credit amounts are increased for 2024 by an indexation factor of 1.047 (4.7% increase).
+
+Saskatchewan uses the federal indexation factor.
+
+The 2024 Federal Budget proposed an increase in the capital gains inclusion rate to 66 2/3% for the portion of gains realized after June 24, 2024 in excess of $250,000, for an individual. We've added an extra column below, to show the marginal tax rate for those gains. The inclusion rate is still 50% for the portion of gains up to $250,000 after June 24, 2024.
+
+See Indexation of the Personal Income Tax System for how the indexation factors are calculated.
+
+Saskatchewan's Bill 157, The Income Tax Amendment Act, 2024, which was tabled on March 27, 2024, revises the rates of the non-eligible dividend tax credit for 2024 and later years, as per the 2024 Budget.
+
+The indexation factors, tax brackets and tax rates for 2024 have been confirmed to Canada Revenue Agency information.
+
+Tax Tip: read the article Understanding the Tables of Personal Income Tax Rates, especially if you are trying to compare the rates below to the marginal tax rates in the Basic Tax Calculator or the Detailed Tax Calculators.
+
+TaxTips.ca - Saskatchewan Tax Rates
+2024 Taxable Income | 2024 Tax Rates | 2023 Taxable Income | 2023 Tax Rates
+first $52,057 | 10.50% | first $49,720 | 10.50%
+over $52,057 up to $148,734 | 12.50% | over $49,720 up to $142,058 | 12.50%
+over $148,734 | 14.50% | over $142,058 | 14.50%
+
+TaxTips.ca - Combined Federal & Saskatchewan Tax Brackets and Tax Rates
+2024 Taxable Income (1) | SK 2024 Marginal Tax Rates | 2023 Taxable Income (1) | SK 2023 Marginal Tax Rates
+Other Income | Capital Gains | Canadian Dividends | Other Income | Capital Gains | Canadian Dividends
+All Pre- Jun 25 | >$250K Post- Jun 24 | Eligible | Non-Eligible | Eligible | Non-Eligible
+first $52,057 | 25.50% | 12.75% | 17.00% | -0.72% | 16.04% | first $49,720 | 25.50% | 12.75% | -0.72% | 16.52%
+over $52,057 up to $55,867 | 27.50% | 13.75% | 18.33% | 2.04% | 18.34% | over $49,720 up to $53,359 | 27.50% | 13.75% | 2.04% | 18.82%
+over $55,867 up to $111,733 | 33.00% | 16.50% | 22.00% | 9.63% | 24.67% | over $53,359 up to $106,717 | 33.00% | 16.50% | 9.63% | 25.14%
+over $111,733 up to $148,734 | 38.50% | 19.25% | 25.67% | 17.22% | 30.99% | over $106,717 up to $142,058 | 38.50% | 19.25% | 17.22% | 31.47%
+over $148,734 up to $173,205 | 40.50% | 20.25% | 27.00% | 19.98% | 33.29% | over $142,058 up to $165,430 | 40.50% | 20.25% | 19.98% | 33.77%
+over $173,205 up to $246,752 | 43.82% | 21.91% | 29.21% | 24.56% | 37.11% | over $165,430 up to $235,675 | 43.82% | 21.91% | 24.56% | 37.59%
+over $246,752 | 47.50% | 23.75% | 31.67% | 29.64% | 41.34% | over $235,675 | 47.50% | 23.75% | 29.64% | 41.82%
+Marginal tax rate for dividends is a % of actual dividends received (not grossed-up taxable amount). Marginal tax rate for capital gains is a % of total capital gains (not taxable capital gains). Gross-up rate for eligible dividends is 38%, and for non-eligible dividends is 15%. For more information see Saskatchewan dividend tax credits. Copyright © 2002 Boat Harbour Investments Ltd.
+
+TaxTips.ca Saskatchewan Basic Personal Amount
+2024 Personal Amount | 2024 Tax Rate | 2023 Personal Amount | 2023 Tax Rate
+$18,491 | 10.5% | $17,661 | 10.5%
+
+Federal Basic Personal Amount
+2024 Personal Amount (1) Minimum / Maximum | 2024 Tax Rate | 2023 Personal Amount (1) Minimum / Maximum | 2023 Tax Rate
+$14,156 | $15,705 | 15% | $13,520 | $15,000 | 15%
+
+(1) See the federal tax rates page for information on the enhanced federal personal amount, which increases the marginal tax rates for taxable incomes in the second highest federal tax bracket. The marginal tax rates in blue above have been adjusted to reflect these changes.
+
+Revised: September 17, 2026
+
+© 2002- Boat Harbour Investments Ltd. All rights reserved.
+
+See Reproduction of information from TaxTips.ca
+
+Privacy Policy | Contact
+
+Facebook | Twitter | LinkedIn
+
+The authors of TaxTips.ca strive, but cannot guarantee, to provide information which is current and accurate. Individual circumstances have a significant effect on how tax and financial information can be used. Due to this, and to the nature of the information, it should not be relied upon for decision making without professional advice.
+
+TaxTips.ca provides links to other web sites. We cannot guarantee the accuracy of the information provided on linked sites.

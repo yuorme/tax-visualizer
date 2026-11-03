@@ -1,0 +1,173 @@
+Title: GUIDE – INCOME TAX RETURN – 2023
+URL: https://www.revenuquebec.ca/documents/en/formulaires/tp/2023-12/TP-1.G-V%282023-12%29.pdf
+Fetched: 2026-11-02
+SHA-256 of the original: 1e3d7068c8fcaa6e10a6aa4642c3ab46a46e5a47d4e4b00ec07d12687c05751d
+Publication date modified: 2023-12-13
+PDF pages: 4,32 of 86
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 4 of 86 ---
+
+4
+2023 – GUIDE-V
+NEW FOR
+2023
+Tax decrease for the first two income tax brackets
+For 2023, the tax rates dropped from:
+•• 15% to 14% for taxable income up to $49,275;
+•• 20% to 19% for taxable income more than $49,275, but not more
+than $98,540.
+See Work Chart 401.
+Decrease in some tax credit rates and increase
+in some amounts
+For 2023, the conversion rate for the amounts used to calculate some
+personal tax credits as well as the rates of some tax credits decreased
+from 15% to 14%.
+This decrease affects the following tax credits:
+•• the basic personal amount (line 350);
+•• the age amount, amount for a person living alone and amount
+for retirement income (line 361);
+•• the amount for dependants and amount transferred by a child
+18 or over enrolled in post-secondary studies (line 367);
+•• the amount for a severe and prolonged impairment in mental
+or physical functions (line 376);
+•• the tax credit for volunteer firefighters and search and rescue
+volunteers (line 390);
+•• the tax credit for career extension (line 391);
+•• the home buyers’ tax credit (line 396).
+In addition, the following amounts have been increased:
+•• the amount for a child under 18 enrolled in post-secondary studies
+(line 7 of Schedule A);
+•• the amount for other dependants (line 37 of Schedule A);
+•• the maximum amount that can be transferred by a child 18 or over
+enrolled in post-secondary studies (lines 2 and 4 of Schedule S);
+•• the amount used to calculate the tax credit for volunteer firefighters
+and search and rescue volunteers (line 390).
+Text or email notifications
+We will notify you by text or email when certain events occur in your file.
+See the instructions for lines 10 and 10.1.
+Consent to receiving correspondence online only
+You can choose to receive correspondence from us only in My Account
+for individuals whenever possible. To give your consent, check box 10.2
+in your income tax return and enter your email address on line 10.1.
+See the instructions for line 10.2.
+Expenses related to working remotely because
+of the COVID-19 pandemic
+As of 2023, you can no longer claim a deduction for expenses related
+to working remotely because of the COVID-19 pandemic. The deduction
+that could once be claimed on line 207 (point 10) has been eliminated.
+However, if you were a salaried employee or an employee who earned
+commissions in the year, you can deduct certain expenses that you were
+required to pay under the terms of your employment contract.
+See points 5 and 7 in the instructions for line 207.
+First home savings account (FHSA)
+If you contributed to an FHSA, you may be entitled to a deduction.
+See the instructions for line 215.
+Any amount you withdrew from an FHSA may have to be included
+in your income. See point 19 in the instructions for line 154.
+Tax credits respecting the work premium
+Starting in 2023, you can claim the adapted work premium if you or your
+spouse on December 31 received benefits under the Basic Income
+Program paid by the Ministère de l’Emploi et de la Solidarité sociale.
+See the instructions for line 456.
+Tax credit for home-support services for seniors
+For 2023, the tax credit rate has been increased from 36% to 37%.
+See the instructions for line 458.
+
+--- PDF page 32 of 86 ---
+
+32
+2023 – GUIDE-V
+NE T INCOME
+201 Deduction for workers
+The deduction for workers is equal to 6% of your
+eligible work income
+The maximum deduction you can claim is $1,315.
+To calculate your deduction, complete Work Chart 201
+Eligible work income
+Employment income, net income earned from a business you carried on
+alone or as a partner actively engaged in the business, research grants
+(net amount), Wage Earner Protection Program (WEPP) payments and
+amounts received under a work-incentive project.
+NOTE
+Do not include:
+•• employment income consisting solely of taxable benefits that
+you received from previous employment (this amount is shown
+in box 211 of your RL-1 slip);
+•• employment income received as:
+– an elected member of a municipal council,
+– a member of the council or executive committee of a
+metropolitan community, an agglomeration or a regional county
+municipality,
+– a member of a municipal utilities commission or corporation,
+– a member of the board of directors of a school service centre
+or school board, or
+– a member of the National Assembly, the House of Commons or
+the Senate of Canada, or the legislative assembly of a province
+other than Québec.
+Indian
+If you are an Indian, enter on line 7 of Work Chart 201 the eligible work
+income for which you can claim a deduction on line 293.
+205 Registered pension plan (RPP) deduction
+Generally speaking, the amount to enter on line 205 is the amount from
+box D of your RL-1 slip.
+If you contributed to a retirement compensation arrangement and there
+is an amount in box D-1 of your RL-1 slip, subtract the amount in box D-1
+from the amount in box D and enter the result on line 205.
+The deduction you can claim for RPP contributions for current service or
+for past service after 1989 cannot exceed the amount you are deducting
+for such contributions on line 20700 of your federal income tax return
+for 2023.
+If you made RPP contributions for service before 1990 and there is
+an amount in box D-2 or box D-3 of the RL-1 slip, contact us.
+Transfer to an RPP
+If the amount on line 20700 of your federal income tax return includes
+amounts transferred to an RPP (such as a retiring allowance), enter them
+on line 250 instead of line 205.
+207 Employment expenses and deductions
+If the employment you held in 2023 entitles you to a deduction for certain
+expenses or an employment-related deduction, enter the amount to be
+deducted on line 207 and, in box 206, enter the corresponding number
+from the list below. If you are claiming more than one type of expense
+or deduction, enter the total on line 207 and “22” in box 206.
+01 Expenses of a forestry worker
+02 Expenses of an employee of a transport business
+or of an employee whose duties include transporting goods
+03 Expenses of a salaried musician
+04 Residence deduction for a member of the clergy or a religious order
+05 Expenses of an employee who earns commissions
+06 Deduction for the purchase of tools
+07 Mandatory expenses of an employee
+08 Deduction for professional liability insurance
+09 Deduction for legal fees
+12 Deduction for the repayment of a salary, wages or wage loss
+replacement benefits
+13 Other employment expenses or deductions
+If you are self-employed, see the instructions for line 164.
+You can deduct certain employment expenses if you are not deducting
+them elsewhere in your return, they were not reimbursed and they do not
+entitle you to a reimbursement
+Most employees cannot deduct employment expenses. For example,
+you cannot deduct expenses for travel between your home and your
+employer’s place of business, expenses for parking at your employer’s place
+of business, or other expenses such as clothing.
+For more information about the expenses that can be deducted
+and the requirements that must be met in order to deduct them,
+see guide IN-118-V,
+Employment Expenses
+01 Expenses of a forestry worker
+You can deduct expenses related to the use of a chainsaw or a brushcutter
+in carrying out your duties, if your employment contract requires
+you to provide such tools and pay such expenses.
+Form to enclose
+Employment Expenses of Forestry Workers (TP-78-V)
+02 Expenses of an employee of a transport business
+or of an employee whose duties include transporting
+goods
+If you are an employee of a transport business (such as an airline, a railway
+or a bus company), or if you regularly collect or deliver goods for your
+employer, you can (under certain conditions) deduct the cost of your meals
+and lodging.
+Form to enclose
+Employment Expenses of Transport Employees (TP-66-V)
