@@ -1,0 +1,147 @@
+Title: Canada Pension Plan (CPP) contributions for CPP working beneficiaries
+URL: https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/cpp/canada-pension-plan-cpp-contributions-cpp-working-beneficiaries.html
+Fetched: 2026-11-03
+SHA-256 of the original: 716e4264a6347fe8eac9ab9a72dbcfcc635b28908f05415399ab25b9a72e170c
+Publication date modified: 2026-01-20
+Text extract made with scripts/fetch-source.ts extract/formatExtract helpers. Check figures against the original when layout matters (tables).
+================================================================================
+
+# Canada Pension Plan (CPP) contributions for CPP working beneficiaries
+
+You are a CPP working beneficiary and must make contributions to the CPP or the Québec Pension Plan (QPP) if you meet all of the following conditions:
+
+- You are 60 to 70 years of age
+- You are employed or self-employed
+- You are receiving a CPP or QPP retirement pension
+
+However, if you are at least 65 years of age but under 70, you can elect to stop contributing to the CPP or revoke a prior-year election. For more information, see Form CPT30, Election to Stop Contributing to the Canada Pension Plan, or Revocation of a Prior Election, and Schedule 8 or Form RC381, whichever applies.
+
+## Topics
+
+- Do you have to contribute to the CPP
+- How to stop contributing to the CPP
+- How to start contributing to the CPP again
+
+## Do you have to contribute to the CPP
+
+As a CPP working beneficiary, you have to contribute to the CPP unless you are in one of the following situations:
+
+- You are an employee working in Quebec
+- Your employment income is not subject to the CPP
+- You are self-employed and a resident of Quebec
+- You are at least 65 years of age but under 70 years of age and have elected to stop paying CPP contributions
+
+For more information on the requirement to pay CPP contributions, see Contributions to the Canada Pension Plan.
+
+## How to stop contributing to the CPP
+
+As a CPP working beneficiary, you have to contribute to the CPP. If you are at least 65 years of age but under 70, you can elect to stop contributing to the CPP.
+
+The way to stop contributing to the CPP is different if you are:
+
+- an employee
+- self-employed only
+- both an employee and self-employed
+
+### Employee
+
+If you are an employee who earned employment income in a province or territory other than Quebec, you can elect to stop contributing to the CPP by completing Form CPT30, Election to Stop Contributing to the Canada Pension Plan, or Revocation of a Prior Election. Give a copy of Form CPT30 to all of your employers and send the original to the Canada Revenue Agency.
+
+The election takes effect on the first day of the month following the date you give a copy of the completed Form CPT30 to your employer. For example, if you give Form CPT30 to your employer in June 2026, the election will take effect on July 1, 2026.
+
+#### Notes
+
+You cannot elect to stop contributing to the CPP until you are at least 65 years of age.
+
+The election stays in effect until you turn 70 years of age or until you revoke the election.
+
+### Self-employed only
+
+If you are self-employed only (in a province or territory other than Quebec), do not use Form CPT30, Election to Stop Contributing to the Canada Pension Plan, or Revocation of a Prior Election, to stop contributing to the CPP. For residents of Quebec, self-employment is subject to the Quebec Pension Plan rules.
+
+Instead, complete the applicable section of Schedule 8, Canada Pension Plan Contributions and Overpayment (for all except QC) and attach it with your income tax and benefit return. To be valid, an election that begins in 2025 must be filed on or before June 15, 2027.
+
+You cannot elect to stop contributing to the CPP until you are at least 65 years of age. The earliest month an election can take effect is the month you turn 65. For example, if you turn 65 in July 2026 the earliest month an election can take effect is July 2026.
+
+If you start receiving employment income (other than employment income earned in Quebec) in a future year, you will have to complete Form CPT30 in that year for your election to remain valid.
+
+#### Note
+
+If your situation does not change, the election stays in effect until you turn 70 years of age or until you revoke the election.
+
+### Employee and self-employed
+
+If you have both employment and self-employment income, you can elect to stop contributing to the CPP on any employment income earned outside Quebec by completing Form CPT30, Election to Stop Contributing to the Canada Pension Plan, or Revocation of a Prior Election. Give a copy of Form CPT30 to all your employers, and send the original to the Canada Revenue Agency.
+
+The election takes effect on the first day of the month following the date you give a copy of the completed Form CPT30 to your employer. This date will apply to both your employment income earned outside Quebec and self-employment income if you were not a resident of Quebec. If you were a resident of Quebec, this date will only apply to your employment income earned outside Quebec. For example, if you give Form CPT30 to your employer in June 2026, the election will take effect on July 1, 2026.
+
+However, if you want to elect to stop contributing to the CPP on your self-employment earnings (this only applies if you are resident in a province or territory other than Quebec) on an earlier date in 2025 than the effective date of Form CPT30, also complete Schedule 8, Canada Pension Plan Contributions and Overpayment (for all except QC), or Form RC381, Inter-Provincial Calculation for CPP and QPP Contributions and Overpayments, whichever applies.
+
+#### Notes
+
+You cannot elect to stop contributing to the CPP until you are at least 65 years of age.
+
+The election stays in effect until you turn 70 years of age or until you revoke the election.
+
+## How to start contributing to the CPP again
+
+If you elected to stop contributing to the CPP in a previous year and you want to start contributing to the CPP again, you need to revoke your election.
+
+You cannot revoke an election in the same calendar year that you elected to stop contributing to the CPP. For example, if you elected to stop contributing to the CPP in 2025, you cannot revoke this election before 2026.
+
+The way to start contributing to the CPP again is different if you have:
+
+- employment income
+- self-employment income only
+- both employment and self-employment income
+
+### How to revoke your election to stop contributing to the CPP
+
+#### Employment income
+
+If you earned employment income in a province or territory other than Quebec, you can revoke your election to stop contributing to the CPP by completing Form CPT30, Election to Stop Contributing to the Canada Pension Plan, or Revocation of a Prior Election. Give a copy of Form CPT30 to all of your employers and send the original to the Canada Revenue Agency (CRA).
+
+The revocation takes effect on the first day of the month after the date you give a copy of the completed Form CPT30 to your employer. For example, if you give Form CPT30 to your employer in June 2026, the revocation will take effect on July 1, 2026.
+
+##### Note
+
+If your situation does not change, the revocation stays in effect until you turn 70 years of age or until you make an election to stop contributing to the CPP.
+
+#### Self-employment income only
+
+If you have only self-employment income (in a province or territory other than Quebec), do not complete Form CPT30, Election to Stop Contributing to the Canada Pension Plan, or Revocation of a Prior Election, to revoke your election. For residents of Quebec, self-employment is subject to the Quebec Pension Plan rules.
+
+Instead, complete the applicable section of Schedule 8, Canada Pension Plan Contributions and Overpayment, or Schedule 8, Quebec Pension Plan Contributions, and attach it to your income tax and benefit return. To be valid, a revocation that begins in 2025 must be filed on or before June 15, 2027.
+
+##### Note
+
+If your situation does not change, the revocation stays in effect until you turn 70 years of age or until you make an election to stop contributing to the CPP.
+
+#### Employment and self-employment income
+
+If you have both employment and self-employment income, you can revoke your election to stop contributing to the CPP on any employment income earned outside Quebec by completing Form CPT30, Election to Stop Contributing to the Canada Pension Plan, or Revocation of a Prior Election. Give a copy of Form CPT30 to all of your employers and send the original to the CRA.
+
+The revocation takes effect on the first day of the month after the date you give a copy of the completed Form CPT30 to your employer. This date will apply to both your employment income earned outside Quebec and self-employment income if you were not a resident of Quebec. If you were a resident of Quebec, this date will only apply to your employment income earned outside Quebec. For example, if you give Form CPT30 to your employer in June 2026, the revocation will take effect on July 1, 2026.
+
+However, if you want to revoke an election made in a prior year to stop contributing to CPP on your self-employment earnings (this only applies if you are resident of a province or territory other than Quebec) on an earlier date in 2025 than the effective date of Form CPT30, also complete Schedule 8, Canada Pension Plan Contributions and Overpayment, or Schedule 8, Quebec Pension Plan Contributions, or Form RC381, Inter-Provincial Calculation for CPP and QPP Contributions and Overpayments, whichever applies. To be valid, a revocation that begins in 2025 must be filed on or before June 15, 2027.
+
+##### Note
+
+If your situation does not change, the revocation stays in effect until you turn 70 years of age or until you make an election to stop contributing to the CPP.
+
+## Forms and publications
+
+- Form CPT30, Election to Stop Contributing to the Canada Pension Plan, or Revocation of a Prior Election
+- Schedule 8, Canada Pension Plan Contributions and Overpayment (for all except QC)
+- Schedule 8, Quebec Pension Plan Contributions (for QC only)
+- Form RC381, Inter-Provincial Calculation for CPP and QPP Contributions and Overpayments
+
+## Related topics
+
+- Canada Pension Plan Post-Retirement Benefit
+- Changes to the rules for deducting Canada Pension Plan (CPP) contributions
+
+## Government partners
+
+- Service Canada
+- Employment and Social Development Canada

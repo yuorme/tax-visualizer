@@ -1,0 +1,78 @@
+Title: Worksheet for the 2026 Personal Tax Credits Return
+URL: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/td1-ws/td1-ws-26e.pdf
+Fetched: 2026-11-03
+SHA-256 of the original: c4a3e9fee9a10585e0e556365989ece396573a7ef6014b74f1fa056f9a376dff
+Publication date modified: 2025-12-03
+PDF pages: all 1
+Text extract made with scripts/fetch-source.ts extract/formatExtract helpers. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 1 of 1 ---
+
+Protected B when completed
+TD1-WSWorksheet for the
+2026 Personal Tax Credits Return
+Fill out this worksheet if you want to calculate partial claims for the following amounts on your Form TD1, 2026 Personal Tax
+Credits Return.
+Do not give your filled out worksheet to your employer or payer. Keep it for your records.
+Line 1 of Form TD1 – Basic personal amount
+If your estimated net income from will be more than $181,440, calculate your partial claim as follows:
+1Base amount
+2Your estimated net income from for the year
+3Income threshold –
+4Line 2 minus line 3 =
+5$77,042 minus line 4 (if "0" or negative, enter $14,829 at line 9 ) =
+6Line 5 divided by $77,042 =
+Ż
+7Applicable amount ×
+8Line 6 multiplied by line 7 =
+Ż +
+9
+Line 1 plus line 8
+Enter this amount on line 1 of Form TD1. =
+Line 3 of Form TD1 – Age amount
+If you will be 65 or older on December 31, 2026, and your estimated net income will be between $46,432 and $107,819, calculate your
+partial claim as follows:
+1Maximum amount
+2Your estimated net income for the year
+3Base amount –
+4Line 2 minus line 3 (if negative, enter "0") =
+5Applicable rate ×
+6Line 4 multiplied by line 5 =
+Ż –
+7
+Line 1 minus line 6
+Enter this amount on line 3 of Form TD1. =
+Line 9 of Form TD1 – Canada caregiver amount for eligible dependant or spouse or common-law partner
+If the estimated net income of your infirm eligible dependant (aged 18 or older) or your infirm spouse or common-law partner will be $29,374 or less for
+the year, calculate your partial claim as follows:
+1Base amount
+2Your infirm dependant's estimated net income for the year –
+3Line 1 minus line 2 (maximum $8,773) =
+4Enter whichever applies: the amount on line 7 or line 8 of Form TD1 for this dependant. –
+5
+Line 3 minus line 4
+Enter this amount on line 9 of Form TD1 (if negative, enter "0"). =
+Line 10 of Form TD1 – Canada caregiver amount for dependant(s) age 18 or older
+If the estimated net income of your infirm dependant (see notes below) will be between $20,601 and $29,374 for the year, calculate your partial claim as
+follows:
+1Base amount
+2Your infirm dependant's estimated net income for the year –
+3Line 1 minus line 2 (maximum $8,773) =
+4Enter the amount that will be claimed by the dependant's other caregiver (if any). –
+5
+Line 3 minus line 4
+Enter this amount on line 10 of Form TD1 (if negative, enter "0"). =
+Notes: If you are claiming this amount for more than one dependant, fill out a separate worksheet for each dependant.
+Add all of the amounts from line 5 of each worksheet and enter the total amount on line 10 of Form TD1.
+If you are claiming the Canada caregiver amount for your spouse or common-law partner or for an eligible
+dependant, see line 9 above.
+TD1-WS E (26) (Ce formulaire est disponible en français.)
+14,829.00
+181,440.00
+1,623.00
+9,208.00
+46,432.00
+15%
+29,374.00
+29,374.00

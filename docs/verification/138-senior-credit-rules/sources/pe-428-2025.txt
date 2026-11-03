@@ -1,0 +1,302 @@
+Title: Prince Edward Island Tax and Credits
+URL: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5002-c/5002-c-25e.pdf
+Fetched: 2026-11-03
+SHA-256 of the original: 40d12547d7d6b0732f74bf98c82e1a8602dcd21e363b6ea578e36e6d536510a7
+Publication date modified: 2025-10-23
+PDF pages: all 4
+Text extract made with scripts/fetch-source.ts extract/formatExtract helpers. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 1 of 4 ---
+
+Form PE428
+2025
+Protected B when completed
+Prince Edward Island Tax and Credits
+You can claim the refundable tax credit in Part D even if you do not have to pay any tax. If it is more than the taxes you have to
+pay, you may get a refund for the difference.
+For more information about this form, go to canada.ca/pe-tax-info.
+Part A – Prince Edward Island tax on taxable income
+1Enter your taxable income from line 26000 of your return.
+Use the amount from line 1 to complete the appropriate column below.
+Line 1 is
+$33,328 or less
+Amount from line 1
+–Line 2 minus line 3
+(cannot be negative) =
+×Line 4 multiplied by the
+percentage from line 5 =
++
+Prince Edward Island
+tax on taxable income
+Line 6 plus line 7
+=
+Line 1 is more than
+$33,328 but not
+more than $64,656
+–
+=
+×
+=
++
+=
+Line 1 is more
+than $64,656 but not
+more than $105,000
+–
+=
+×
+=
++
+=
+Line 1 is more
+than $105,000 but not
+more than $140,000
+–
+=
+×
+=
++
+=
+Line 1 is more
+than $140,000
+–
+=
+×
+=
++
+=
+2
+3
+4
+5
+6
+7
+8
+Enter the amount from line 8 on line 55 and continue at line 9.
+Part B – Prince Edward Island non-refundable tax credits 56010Internal use
+58040 9Basic personal amount Claim $14,650
+58080 10Age amount (if you were born in 1960 or earlier) (use Worksheet PE428) (maximum $6,510) +
+Spouse or common-law partner amount:
+11Base amount
+12
+Your spouse's or common-law partner's
+net income from line 23600 of their return –
+58120 13Line 11 minus line 12 (if negative, enter "0") (maximum $12,443) =
+Ż +
+Amount for an eligible dependant:
+14Base amount
+15Your eligible dependant's net income from line 23600 of their return –
+58160 16Line 14 minus line 15 (if negative, enter "0") (maximum $12,443) =
+Ż +
+58200 17Amount for infirm dependants age 18 or older (use Worksheet PE428) +
+58230 18
+Amount for young children
+(complete the chart at the end of page 2) 58229Number of months × $100 = +
+19Add lines 9, 10, 13, and 16 to 18. =
+CPP or QPP contributions:
+58240 20Amount from line 30800 of your return •
+58280 21Amount from line 31000 of your return + •
+Employment insurance premiums:
+58300 22Amount from line 31200 of your return + •
+58305 23Amount from line 31217 of your return + •
+24Add lines 20 to 23. =
+Ż +
+25Line 19 plus line 24 =
+5002-C E (25) (Ce formulaire est disponible en français.) Page 1 of 4
+0.00
+9.5%
+0.00
+33,328.00
+13.47%
+3,166.16
+64,656.00
+16.6%
+7,386.04
+105,000.00
+17.62%
+14,083.15
+140,000.00
+19%
+20,250.15
+13,687.00
+13,687.00
+
+--- PDF page 2 of 4 ---
+
+Protected B when completed
+Part B – Prince Edward Island non-refundable tax credits (continued)
+26Amount from line 25 of the previous page
+58360 27Pension income amount (maximum $1,000) +
+58365 28Children's wellness tax credit +
+58400 29Caregiver amount (use Worksheet PE428) +
+30Add lines 26 to 29. =
+58440 31
+Disability amount for self
+(claim $6,890 or, if you were under 18 years of age, use Worksheet PE428) +
+58480 32Disability amount transferred from a dependant (use Worksheet PE428) +
+58500 33Teacher school supply amount (maximum $500) +
+34Add lines 30 to 33. =
+58520 35Interest paid on your student loans (amount from line 31900 of your return) +
+58560 36Your tuition and education amounts (attach Schedule PE(S11)) +
+58600 37Tuition and education amounts transferred from a child or grandchild +
+58640 38Amounts transferred from your spouse or common-law partner (attach Schedule PE(S2)) +
+39Add lines 34 to 38. =
+Medical expenses:
+58689 40Amount from line 33099 of your return
+41Amount from line 23600 of your return
+42Applicable rate ×
+43Line 41 multiplied by the percentage from line 42 =
+44Enter whichever is less: $1,678 or the amount on line 43. –
+45Line 40 minus line 44 (if negative, enter "0") =
+58729 46
+Allowable amount of medical expenses for other dependants
+(use Worksheet PE428) +
+58769 47Line 45 plus line 46 =
+Ż +
+58800 48Line 39 plus line 47 =
+49Prince Edward Island non-refundable tax credit rate ×
+58840 50Line 48 multiplied by the percentage from line 49 =
+Donations and gifts:
+51
+Amount from line 13
+of your federal Schedule 9 × 9.5% =
+52
+Amount from line 14
+of your federal Schedule 9 × 19% = +
+58969 53Line 51 plus line 52 =
+Ż +
+61500 54Prince Edward Island non-refundable tax credits
+Line 50 plus line 53
+Enter this amount on line 58. =
+Details of amount for young children (if you need more space, attach additional pages)
+Child's name Relationship to you Date of birth
+(Year Month Day)
+Number of
+eligible months
++
++
+Total number of eligible months for all children =
+Enter the total number of months on line 58229 of page 1.
+5002-C E (25) Page 2 of 4
+3%
+9.5%
+
+--- PDF page 3 of 4 ---
+
+Protected B when completed
+Part C – Prince Edward Island tax
+55Prince Edward Island tax on taxable income from line 8
+61510 56Prince Edward Island tax on split income (complete Form T1206) + •
+57Line 55 plus line 56 =
+58Prince Edward Island non-refundable tax credits from line 54 –
+59Line 57 minus line 58 (if negative, enter "0") =
+61520 60Prince Edward Island dividend tax credit (use Worksheet PE428) •
+61540 61
+Prince Edward Island minimum tax carryover:
+Amount from line 40427 of your return × 57.5% = + •
+62Line 60 plus line 61 =
+Ż –
+63Line 59 minus line 62 (if negative, enter "0") =
+64
+Prince Edward Island additional tax for minimum tax purposes:
+Amount from Line 14 of Part 7 of Form T691 × 57.5% = +
+65Line 63 plus line 64 =
+Prince Edward Island low-income tax reduction
+If you had a spouse or common-law partner on December 31, 2025, you and your spouse or
+common-law partner need to decide who will claim this tax reduction for your family. Any unused
+amount from line 101 can be claimed by the other spouse or common-law partner on line 66 of
+their Form PE428.
+63360 66
+Unused low-income tax reduction from your spouse or common-law partner:
+Amount from line 101 of your spouse's or common-law partner's Form PE428, if any – •
+67
+Line 65 minus line 66 (if negative, enter "0")
+Enter this amount on line 74. =
+If you are claiming an amount on line 66, enter "0" on line 87 and continue on line 88.
+If not, continue on line 68.
+Adjusted family income calculation for the
+Prince Edward Island low-income tax reduction
+Column 1
+You
+Column 2
+Your spouse or
+common-law partner
+68
+Net income from line 23600 of the return (or the amount you
+would have entered if the instructions on line 23600 said
+"if negative, show in brackets")
+69
+Universal child care benefit (UCCB) repayment:
+Amount from line 21300 of the return + +
+70Line 68 plus line 69 = =
+71
+UCCB income:
+Amount from line 11700 of the return – –
+72Line 70 minus line 71 (if negative, enter "0") = =
+73Adjusted family income
+Add the amounts from line 72 of columns 1 and 2.
+Enter this amount on line 82 of the next page.
+5002-C E (25) Page 3 of 4
+
+--- PDF page 4 of 4 ---
+
+Protected B when completed
+Part C – Prince Edward Island tax (continued)
+74Amount from line 67 of the previous page
+63370 75Basic reduction Claim $350
+63380 76Age reduction for self (if you were born in 1960 or earlier) Claim $250 +
+63390 77
+Reduction for spouse or common-law partner (if you had
+a spouse or common-law partner on December 31, 2025) Claim $350 +
+63400 78
+Age reduction for spouse or common-law partner
+(if they were born in 1960 or earlier) Claim $250 +
+7963410Reduction for an eligible dependant claimed on line 58160 Claim $350 +
+80
+Reduction for dependent children born in 2007 or later:
+60999
+Number of dependent children
+(do not include a child claimed on line 63410) × $300 = +
+81Add lines 75 to 80. =
+82
+Adjusted family income:
+Amount from line 73 of the previous page
+83Base amount –
+84Line 82 minus line 83 (if negative, enter "0") =
+85Applicable rate ×
+86Line 84 multiplied by the percentage from line 85 =
+Ż –
+87
+Prince Edward Island low-income
+tax reduction
+Line 81 minus line 86
+(if negative, enter "0") =Ż –
+88Line 74 minus line 87 (if negative, enter "0") =
+89Provincial foreign tax credit (complete Form T2036) –
+90Line 88 minus line 89 (if negative, enter "0") =
+63420 91Prince Edward Island political contributions made in 2025
+92Prince Edward Island political contribution tax credit (use Worksheet PE428) (maximum $500) –
+93Line 90 minus line 92 (if negative, enter "0") =
+Equity tax credit:
+63500 94Equity tax credit from Certificate PE-ETC
+95
+Unused Prince Edward Island equity tax credit from your
+most recent notice of assessment or reassessment +
+96Line 94 plus line 95 (maximum $7,000) =
+Ż –
+97Prince Edward Island tax
+Line 93 minus line 96 (if negative, enter "0")
+Enter this amount on line 42800 of your return. =
+Part D – Prince Edward Island tax credits
+63510 98
+Prince Edward Island volunteer firefighter and volunteer search and rescue personnel tax credit
+Enter this amount on line 47900 of your return. Claim $1,000
+Unused low-income tax reduction that your spouse or common-law partner can claim
+99Amount from line 87 above
+100Amount from line 65 of the previous page –
+101Unused amountLine 99 minus line 100 (if negative, enter "0") =
+See the privacy notice on your return.
+5002-C E (25) Page 4 of 4
+22,650.00
+5%
