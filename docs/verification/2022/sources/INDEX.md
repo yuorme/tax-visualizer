@@ -21,6 +21,9 @@ keeps the pages the data uses). Nothing under `docs/` is imported by `src/`, so 
 
 | Name | Title | URL | Fetched | SHA-256 of the original |
 |---|---|---|---|---|
+| [rule-carbon-pe-amendment](rule-carbon-pe-amendment.txt) | An Act to Amend the Income Tax Act (No. 3) | https://docs.assembly.pe.ca/download/dms?fileName=bill-64.pdf&objectId=1d0b3ad4-988c-4eab-a8a2-7afea3a08bc5 | 2026-11-02 | `eb272e913474c62eff1856c855e729b1a195526177aa707738983aa8fbc90840` |
+| [rule-carbon-pe-examples](rule-carbon-pe-examples.txt) | PEI July 2022 carbon rebate: official examples, manual web extract | https://www.princeedwardisland.ca/en/news/islanders-to-receive-inflationary-support-payment-this-week | 2026-11-02 | unavailable; direct fetch returned a browser challenge |
+| [rule-carbon-pe-regular](rule-carbon-pe-regular.txt) | Income Tax Act | https://www.princeedwardisland.ca/sites/default/files/legislation/i-01-income_tax_act.pdf | 2026-11-02 | `4b50ee73ca3e3d968b2db5e2806752b8a18c33775478f5e222e364ea0b089ede` |
 | [federal-foreign-deduction](federal-foreign-deduction.txt) | Income Tax Act | https://laws-lois.justice.gc.ca/eng/acts/I-3.3/section-20-20190621.html | 2026-11-02 | `87488f2127ef16147ce010c7f137ac81faedab945fd42c37a920ca05ea81bde8` |
 | [federal-gst-calculation](federal-gst-calculation.txt) | UNCLASSIFIED | https://www.canada.ca/content/dam/cra-arc/serv-info/benefits/gstcclc21-eng.pdf | 2026-11-02 | `3e0cf7117ea724d25fb51848898681f0681c7434590312ad446fbb4074087bd1` |
 | [federal-investment](federal-investment.txt) | Archived - Report on Federal Tax Expenditures - Concepts, Estimates and Evaluations 2023: part 4 | https://www.canada.ca/en/department-finance/services/publications/federal-tax-expenditures/2023/part-4.html | 2026-11-02 | `39b4b2baf3a4eacb3b17953b686f1b96f87aca8f53100d55eca3406a3b319165` |

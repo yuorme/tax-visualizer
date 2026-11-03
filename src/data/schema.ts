@@ -43,6 +43,101 @@ const fuelRate = z.union([
 /** The dates in a rate, for checking that they fall in the data's year. */
 const fuelDates = (r: z.infer<typeof fuelRate> | undefined) => (typeof r === "object" ? r.map(x => x.from) : []);
 
+/** Calendar-year cash payments, including single-parent substitutions and income-tested provincial credits. */
+const ordinaryCarbonRebate = program(
+  "carbon-rebate-payments",
+  z.object({
+    payments: z
+      .array(
+        z.object({
+          date: isoDate,
+          adult: amount,
+          spouse: amount,
+          child: amount,
+          firstChild: amount,
+          threshold: pair,
+          rate,
+        }),
+      )
+      .min(1),
+  }),
+);
+// Historical payment evidence sometimes specifies only the month; do not invent a transaction day.
+const historicalPaymentDate = z.union([isoDate, z.string().regex(/^\d{4}-(0[1-9]|1[0-2])$/)]);
+const annualPeiCredit = z.object({
+  individual: amount,
+  spouseOrDependant: amount,
+  supplementRate: rate,
+  supplementFrom: amount,
+  supplementMax: amount,
+  threshold: amount,
+  rate,
+});
+const carbonRebate = z.discriminatedUnion("program", [
+  ordinaryCarbonRebate,
+  program(
+    "alberta-carbon-rebate-payments",
+    z.object({
+      payments: z
+        .array(
+          z.object({
+            date: historicalPaymentDate,
+            adult: amount,
+            spouse: amount,
+            child: amount,
+            firstChild: amount,
+            childCap: z.number().int().nonnegative(),
+            threshold: pair,
+            rate: ratePair,
+            minAnnual: amount,
+            weight: z.number().positive().max(1),
+          }),
+        )
+        .min(1),
+    }),
+  ),
+  program(
+    "pei-carbon-rebate-increment",
+    z.object({
+      payments: z
+        .array(
+          z.object({
+            date: isoDate,
+            weight: z.number().positive().max(1),
+            regular: annualPeiCredit,
+            enhanced: annualPeiCredit,
+          }),
+        )
+        .min(1),
+    }),
+  ),
+  program(
+    "carbon-rebate-consolidated-payments",
+    z.object({
+      payments: z
+        .array(
+          z.object({
+            date: historicalPaymentDate,
+            adult: amount,
+            spouse: amount,
+            child: amount,
+            firstChild: amount,
+            threshold: pair,
+            rate,
+            smallPayment: z.object({ below: z.number().positive(), multiplier: z.number().int().nonnegative() }),
+          }),
+        )
+        .min(1),
+    }),
+  ),
+]);
+const carbonPricing = z.object({
+  name: z.string(),
+  gasoline: fuelRate,
+  heating: z.object({ amount, estimated: z.literal(true), method: z.string().min(1) }),
+  rebates: z.array(carbonRebate),
+});
+
 // ---------- Federal ----------
 const cppLike = z.object({ exempt: amount, ympe: amount, yampe: amount, base: rate, enh1: rate, enh2: rate });
 const cwbRegion = z.object({ max: pair, rate, floor: pair, threshold: pair, phaseOut: ratePair });
@@ -487,6 +582,7 @@ export const provinceSchema = z
       .optional(),
     /** Starting yearly distance for the driving inputs: the average per light vehicle, in kilometres. */
     driving: z.object({ distance: amount, estimated: z.boolean().optional() }).optional(),
+    carbon: carbonPricing.optional(),
     childBenefit: childBenefit.optional(),
     credits: z.array(credit).optional(),
     sources: z.array(source).optional(),
@@ -502,18 +598,35 @@ export const yearSchema = z
   })
   .refine(y => y.federal.year === y.year, "federal.yaml year must match its folder")
   .refine(y => new Set(y.provinces.map(p => p.order)).size === 13, "province order values must be unique")
-  // Fuel data is all or nothing: federal and every province, rates and driving defaults together.
+  // Ordinary fuel rates are complete together. Carbon-only years also need complete driving defaults.
   .refine(
     y =>
-      [y.federal.fuelTax, y.federal.driving, ...y.provinces.flatMap(p => [p.fuelTax, p.driving])].every(
+      [y.federal.fuelTax, ...y.provinces.map(p => p.fuelTax)].every(
         (x, _, all) => (x === undefined) === (all[0] === undefined),
       ),
     "fuel data must be given for federal and every province (fuelTax and driving), or for none",
   )
   .refine(y => {
+    const drivingRequired = y.federal.fuelTax !== undefined || y.provinces.some(p => p.carbon !== undefined);
+    return [y.federal.driving, ...y.provinces.map(p => p.driving)].every(
+      value => (value !== undefined) === drivingRequired,
+    );
+  }, "fuel or carbon pricing requires federal and every province's driving defaults")
+  .refine(
+    y =>
+      y.provinces.every(
+        p =>
+          p.carbon?.rebates.every(rebate =>
+            rebate.params.payments.every(payment => payment.date.startsWith(`${y.year}-`)),
+          ) ?? true,
+      ),
+    "carbon rebate payment dates must fall within the tax year",
+  )
+  .refine(y => {
     const rates = [
       y.federal.fuelTax?.gasoline,
       ...y.provinces.flatMap(p => [p.fuelTax?.gasoline, p.fuelTax?.regional?.gasoline]),
+      ...y.provinces.map(p => p.carbon?.gasoline),
     ];
     return rates.every(r => {
       const d = fuelDates(r);

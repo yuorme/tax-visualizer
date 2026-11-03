@@ -36,6 +36,7 @@ keeps the pages the data uses). Nothing under `docs/` is imported by `src/`, so 
 
 | Name | Title | URL | Fetched | SHA-256 of the original |
 |---|---|---|---|---|
+| [rule-carbon-nt-annual](rule-carbon-nt-annual.txt) | NWT CARBON TAX REPORT | https://www.fin.gov.nt.ca/sites/fin/files/final_2023-2024_nwt_carbon_tax_report.pdf | 2026-11-02 | `d1f1b6930c7448e914e06cfd3f4cf092144f3af5fef094b3aa724e61af6a8aa2` |
 | [federal-foreign-deduction](federal-foreign-deduction.txt) | Income Tax Act | https://laws-lois.justice.gc.ca/eng/acts/I-3.3/section-20-20190621.html | 2026-11-02 | `916111b6ee50af6e933a15b207eaaecadc94c89a9c1f129a21ffad85c76f48fa` |
 | [federal-gst-calculation](federal-gst-calculation.txt) | Goods and services tax/harmonized sales tax (GST/HST) credit- calculation sheet for the July 2021 to | https://www.canada.ca/content/dam/cra-arc/serv-info/benefits/gstcclc20-eng.pdf | 2026-11-02 | `a796a49376cc553e09df3f14cdef23717ab9496279c6ae4d55a85914a5bd41c8` |
 | [federal-investment](federal-investment.txt) | Archived -Report on Federal Tax Expenditures - Concepts, Estimates and Evaluations 2022: part 4 | https://www.canada.ca/en/department-finance/services/publications/federal-tax-expenditures/2022/part-4.html | 2026-11-02 | `827f6eb1103e33f2b2b872fd8e8d4af5338f0e09335eebe3b6dfa7d4c91d25be` |
