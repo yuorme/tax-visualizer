@@ -1,0 +1,40 @@
+Title: New Brunswick harmonized sales
+URL: https://www.canada.ca/content/dam/cra-arc/migration/cra-arc/bnfts/rltd_prgrms/nbhstccs-eng.pdf
+Fetched: 2026-11-02
+SHA-256 of the original: ef71de40b992f4b0244a2d9f876122e7f1b9b697778bb41939df610fae64a4cf
+Publication date modified: 2016-06-20
+PDF pages: all 1
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 1 of 1 ---
+
+New Brunswick harmonized sales
+tax credit (NBHSTC)
+Calculation sheet
+Basic benefit
+Basic credit ($300) $
+Credit for spouse or common-law partner
+($300)
+$
+Credit for an eligible child in a single
+parent family ($300)
+$
+Credit for qualified children ($100 per
+child)
+$
+Total $ (1)
+Benefit reduction
+Adjusted family net income $ (2)
+Subtract base amount $35,000 (3)
+Net income over base amount:
+Line 2 minus line 3 (if negative, enter
+zero) $ (4)
+Credit reduction rate: 2% (5)
+Multiply line 4 by line 5 $ (6)
+Yearly NBHSTC amount:
+Line 1 minus line 6 (If the result is $2 or
+less, a payment will not be issued).
+$ (7)
+Quarterly NBHSTC amount:
+Line 7 divided by 4 $ (8)

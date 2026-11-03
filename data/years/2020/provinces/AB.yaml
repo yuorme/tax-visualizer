@@ -1,0 +1,42 @@
+# Benefit-year figures use July 2020 to June 2021, applied to current-year income.
+# The ACFB began July 2020. Its $24467 base threshold follows Budget 2020 and enacted section 30.2.
+# T4114-20 incorrectly prints $26769; the provincial budget and statute agree on $24467.
+# Property estimate sums rounded published mill rates (4.780 city + 2.743 school) / 1000.
+
+code: AB
+name: Alberta
+order: 2
+brackets:
+  - [131220, 0.1]
+  - [157464, 0.12]
+  - [209952, 0.13]
+  - [314928, 0.14]
+  - [.inf, 0.15]
+basicPersonalAmount: 19369
+dividendTaxCredit: {eligible: 0.1, nonEligible: 0.0218}
+spouseAmount: {max: 19369, threshold: 0}
+salesTax: {rate: 0.05, label: 5% GST}
+propertyTax: {rate: 0.007523, city: Calgary, estimated: true}
+childBenefit:
+  name: Alberta Child and Family Benefit
+  program: alberta-child-family-benefit-by-child
+  params:
+    base: [1330, 1995, 2660, 3325]
+    baseRate: [0.0805, 0.1207, 0.1609, 0.2011]
+    baseThreshold: 24467
+    working: [681, 1301, 1672, 1795]
+    workingRate: 0.15
+    workingFloor: 2760
+    workingThreshold: 41000
+    workingPhaseOut: [0.034, 0.0649, 0.0834, 0.0895]
+    minAnnual: 10
+sources:
+  - {label: "CRA, AB428 for 2020", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5009-c/5009-c-20e.pdf}
+  - {label: "CRA, AB428 worksheet for 2020", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5009-d/5009-d-20e.pdf}
+  - {label: "CRA, T4114-21: July 2020–June 2021 child benefits (official archive)", url: https://publications.gc.ca/collections/collection_2020/arc-cra/Rv1-36-2020-eng.pdf?download=1}
+  - {label: "CRA, GST/HST historical rates and provincial sales-tax rates", url: https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/charge-collect-which-rate/calculator.html}
+  - {label: "Alberta, child and family benefit working component phase-in", url: https://www.alberta.ca/alberta-child-and-family-benefit}
+  - {label: "Alberta Personal Income Tax Act, section 30.2 (statutory benefit reduction rates)", url: https://kings-printer.alberta.ca/documents/Acts/A30.pdf}
+  - {label: "Alberta, Bill 20 of 2019 section 9(23), original section 30.2 rates", url: https://docs.assembly.ab.ca/LADDAR_files/docs/bills/bill/legislature_30/session_1/20190521_bill-020.pdf}
+  - {label: "Calgary, 2022 annual report: historical 2021 mill rates", url: https://www.calgary.ca/content/dam/www/cfod/finance/documents/plans-budgets-and-financial-reports/annual-reports/annual-report-2022.pdf}
+  - {label: "Alberta, Budget 2020: complete ACFB 2020/21 parameter table", url: https://open.alberta.ca/dataset/05bd4008-c8e3-4c84-949e-cc18170bc7f7/resource/79caa22e-e417-44bd-8cac-64d7bb045509/download/budget-2020-fiscal-plan-2020-23.pdf}
