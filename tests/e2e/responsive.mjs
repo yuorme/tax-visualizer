@@ -18,6 +18,29 @@ const openDetails = async (p, selector) => {
 
 export const RESPONSIVE_STEPS = [
   [
+    "layout: flags fit selectors and heading, with chart flags only on wide screens",
+    async p => {
+      await p.selectOption("#home", "NL");
+      await p.selectOption("#dest", "NT");
+      for (const selector of ["#home-flag", "#cmp-home-flag", "#dest-flag"]) {
+        assert.equal(await p.locator(selector).isVisible(), true);
+        assert.equal(await p.locator(selector).evaluate(el => el.complete && el.naturalWidth > 0), true);
+      }
+      for (const selector of ["#home", "#dest"]) {
+        const box = await p.locator(selector).boundingBox();
+        assert.ok(box.x >= 0 && box.x + box.width <= p.viewportSize().width, `${selector} fits`);
+      }
+      assert.equal(await p.locator(".code .province-flag:visible").count(), p.viewportSize().width > 520 ? 13 : 0);
+      const order = await p.locator("#col-NL .code").evaluate(el => {
+        const image = el.querySelector("img");
+        const text = document.createRange();
+        text.selectNode(el.lastChild);
+        return { imageBottom: image.getBoundingClientRect().bottom, textTop: text.getBoundingClientRect().top };
+      });
+      if (p.viewportSize().width > 520) assert.ok(order.imageBottom <= order.textTop, "flag is above the code");
+    },
+  ],
+  [
     "layout: scenario link can be copied with the clipboard unavailable",
     async p => {
       await p.evaluate(() => Object.defineProperty(navigator, "clipboard", { configurable: true, value: undefined }));

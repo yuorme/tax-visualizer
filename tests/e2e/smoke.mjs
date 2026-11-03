@@ -27,6 +27,76 @@ const legacy = `<!doctype html><html><head><meta charset="utf-8"><meta name="vie
 const STRICT = process.argv.includes("--strict");
 const PHONE = 500; // widths below this are phones, where the page must not scroll sideways
 
+const flagUrl = code =>
+  `data:image/png;base64,${fs.readFileSync(new URL(`../../src/ui/flags/CA-${code}.png`, import.meta.url)).toString("base64")}`;
+async function expectProvinceFlags(p, chart = true) {
+  const home = await p.inputValue("#home"),
+    dest = await p.inputValue("#dest");
+  for (const [selector, code] of [
+    ["#home-flag", home],
+    ["#cmp-home-flag", home],
+    ["#dest-flag", dest],
+  ]) {
+    assert.equal(await p.getAttribute(selector, "src"), flagUrl(code), `${selector} shows ${code}`);
+    assert.equal(await p.getAttribute(selector, "alt"), "", "decorative flags do not repeat province names");
+    assert.equal(await p.getAttribute(selector, "aria-hidden"), "true");
+    assert.equal(await p.locator(selector).isVisible(), true);
+  }
+  if (!chart) return;
+  for (const code of loadYear(Math.max(...listYears())).provinces.map(p => p.code)) {
+    const selector = `#col-${code} .province-flag`;
+    assert.equal(await p.getAttribute(selector, "src"), flagUrl(code), `${code} chart asset`);
+    assert.equal(await p.locator(selector).isVisible(), p.viewportSize().width > 520);
+    assert.equal(await p.locator(selector).evaluate(el => el.complete && el.naturalWidth > 0), true);
+  }
+}
+
+const FLAG_STEPS = [
+  [
+    "all province selections use their supplied inline flags",
+    async p => {
+      const codes = loadYear(Math.max(...listYears())).provinces.map(p => p.code);
+      for (const [i, code] of codes.entries()) {
+        await p.selectOption("#home", code);
+        await p.selectOption("#dest", codes[(i + 1) % codes.length]);
+        await expectProvinceFlags(p, false);
+      }
+      await expectProvinceFlags(p);
+    },
+  ],
+  [
+    "flags follow swapped provinces, shared-link reload, year and sorting",
+    async p => {
+      await p.selectOption("#home", "QC");
+      await p.selectOption("#dest", "ON");
+      await p.selectOption("#home", "ON");
+      await p.selectOption("#dest", "QC");
+      await expectProvinceFlags(p);
+      await p.evaluate(() => localStorage.clear());
+      await p.reload();
+      assert.equal(await p.inputValue("#home"), "ON");
+      assert.equal(await p.inputValue("#dest"), "QC");
+      await expectProvinceFlags(p);
+      await p.selectOption("#tax-year", String(Math.min(...listYears())));
+      await p.click("#sort-geo");
+      await expectProvinceFlags(p);
+      await p.click("#sort-rate");
+      await expectProvinceFlags(p);
+      await p.click("#view-history");
+      assert.equal(await p.getAttribute("#home-flag", "src"), flagUrl("ON"));
+      await p.click("#view-provinces");
+      await expectProvinceFlags(p);
+      // Native select type-ahead remains available; BC is the only code starting with B.
+      await p.selectOption("#home", "AB");
+      await p.focus("#home");
+      await p.keyboard.press("b");
+      await p.keyboard.press("Enter");
+      assert.equal(await p.inputValue("#home"), "BC");
+      await expectProvinceFlags(p);
+    },
+  ],
+];
+
 // The same steps run on the built page and the legacy one, which differ in how optional inputs are revealed: the
 // built page has a tab bar (#tabbar) that opens one panel at a time; the legacy page has a <details> per section.
 const tabbed = async p => (await p.$("#tabbar")) !== null;
@@ -899,6 +969,7 @@ for (const [label, steps] of [
   ["carbon pricing", CARBON_STEPS],
   ["childcare", CHILDCARE_STEPS],
   ["shareable links", SHARE_STEPS],
+  ["province flags", FLAG_STEPS],
 ]) {
   check(`1000px light, ${label}`, 1000, await run({ width: 1000, steps }));
   console.log(`1000px light: ${steps.length} ${label} states checked`);

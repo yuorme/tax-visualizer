@@ -32,6 +32,7 @@ import {
 } from "./driving-units.ts";
 import { renderHistory } from "./history.ts";
 import { cents, footerNotes, share, tooltips } from "./notes.ts";
+import { provinceFlags, setProvinceFlag } from "./province-flags.ts";
 import { readScenario, scenarioHash } from "./scenario-url.ts";
 
 const availableYears = Object.keys(years)
@@ -394,7 +395,7 @@ P.forEach(p => {
   c.className = "col";
   c.id = `col-${p.c}`;
   c.innerHTML = `<div class="col-plot"><span class="cv"></span><div class="stack"><i class="f"></i><i class="p"></i><i class="y"></i><i class="w"></i><i class="s"></i><i class="h"></i><i class="g"></i><i class="c"></i></div><i class="ben"></i></div>
-    <div class="code" title="${p.n}">${p.c}${p.qc ? "<sup>†</sup>" : ""}</div><div class="cm"></div><div class="tag"></div>`;
+    <div class="code" title="${p.n}"><img class="province-flag" src="${provinceFlags[p.c]}" data-province="${p.c}" alt="" aria-hidden="true" width="72" height="52">${p.c}${p.qc ? "<sup>†</sup>" : ""}</div><div class="cm"></div><div class="tag"></div>`;
   colsEl.appendChild(c);
 });
 
@@ -538,6 +539,9 @@ function segTip(p: ProvView, r: Result, c: Seg) {
 
 const narrow = matchMedia("(max-width: 520px)"); // phone: compact chart labels
 function render() {
+  setProvinceFlag($<HTMLImageElement>("home-flag"), home);
+  setProvinceFlag($<HTMLImageElement>("cmp-home-flag"), home);
+  setProvinceFlag($<HTMLImageElement>("dest-flag"), dest);
   $("history-view").hidden = !historyOpen;
   $("province-view").hidden = historyOpen;
   $("detail").hidden = historyOpen;
@@ -603,7 +607,7 @@ function render() {
   };
   $("cc-y").innerHTML =
     ticks.map(t => `<span style="top:calc(var(--plot-h) * ${1 - (t - lo) / span})">${yLabel(t)}</span>`).join("") +
-    `<span class="key" style="top:calc(var(--plot-h) + 24px)">marg.</span>`;
+    `<span class="key" style="top:calc(var(--plot-h) + 24px + var(--flag-row))">marg.</span>`;
   $("cc-grid").innerHTML = ticks
     .map(t => `<i class="${Math.abs(t) < 1e-9 ? "base" : ""}" style="bottom:${pos(t)}%"></i>`)
     .join("");
