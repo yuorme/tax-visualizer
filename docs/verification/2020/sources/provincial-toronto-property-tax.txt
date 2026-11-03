@@ -1,0 +1,41 @@
+Title: 2020 ANNUAL FINANCIAL REPORT
+URL: https://www.toronto.ca/wp-content/uploads/2021/09/95b7-YE-2020-City-of-Toronto-Annual-Financial-Report.pdf
+Fetched: 2026-11-02
+SHA-256 of the original: 9440dbeb620ccc367a8e572bd89b08866a19beae0e372810a1a8fd3c70a3bff3
+Publication date modified: 2021-09-21
+PDF pages: 129 of 148
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 129 of 148 ---
+
+129 City of Toronto – 2020 Annual Financial Report
+SUPPLEMENTAL FINANCIAL AND STATISTICAL INFORMATION
+(Not subject to audit; all dollar amounts are in thousands except per capita figure. See accompanying notes and
+schedules to financial statements)
+3. TAX RATES (URBAN AREA) (Note 2)
+2020 2019 2018 2017 2016
+City purposes 0.4467040 0.4537700 0.4655054 0.4826472 0.4999731
+School board purposes 0.1530000 0.1610000 0.1700000 0.1790000 0.1880000
+TOTAL 0.5997040 0.6147700 0.6355054 0.6616472 0.6879731
+a. Residential, New Multi-Residential, Farmlands and Managed Forest (expressed in %, full rate only)
+2020 2019 2018 2017 2016
+City purposes 0.9403840 1.0323420 1.1447559 1.2844065 1.4521427
+School board purposes 0.1530000 0.1610000 0.1700000 0.1790000 0.1880000
+TOTAL 1.0933840 1.1933420 1.3147559 1.4634065 1.6401427
+b. Multi-Residential (expressed in %)
+2020 2019 2018 2017 2016
+City purposes 1.1918090 1.2467510 1.3138506 1.3802233 1.4598602
+School board purposes 0.9800000 1.0300000 1.0900000 1.1400000 1.1800000
+TOTAL 2.1718090 2.2767510 2.4038506 2.5202233 2.6398602
+c. Commercial (expressed in %)
+2020 2019 2018 2017 2016
+City purposes 1.1736660 1.2178330 1.2862662 1.3698567 1.4521427
+School board purposes 1.0672200 1.1108780 1.1607730 1.2164150 1.2536020
+TOTAL 2.2408860 2.3287110 2.4470392 2.5862717 2.7057447
+d. Industrial (expressed in %)
+2020 2019 2018 2017 2016
+City purposes 0.8592620 0.8728550 0.8954295 0.9284027 0.9617302
+School board purposes 1.2500000 1.2900000 1.3400000 1.3900000 1.4820840
+TOTAL 2.1092620 2.1628550 2.2354295 2.3184027 2.4438142
+e. Pipeline (expressed in %)

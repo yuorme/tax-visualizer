@@ -1,0 +1,64 @@
+Title: Nunavut 2023 and 2022 Tax Rates & Tax Brackets
+URL: https://www.taxtips.ca/priortaxrates/tax-rates-2022-2023/nu.htm
+Fetched: 2026-11-02
+SHA-256 of the original: 6a00ce25adc4e6e8057aa6c313b0689245d048e54466ec7918ffa4d644c99fb8
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+#### Home -> Territories -> Nunavut
+
+#### Tax Rates -> 2022-2023 Tax Rates -> Nunavut
+
+# Nunavut 2023 and 2022 Tax Rates & Tax Brackets
+
+The Federal and Nunavut tax brackets and personal tax credit amounts are increased for 2023 by an indexation factor of 1.063 (6.3% increase).
+
+Nunavut uses the Federal indexation factor.
+
+See Indexation of the Personal Income Tax System for how the indexation factors are calculated.
+
+The indexation factors, tax brackets and tax rates for 2023 have been confirmed to Canada Revenue Agency information.
+
+Tax Tip: read the article Understanding the Tables of Personal Income Tax Rates, especially if you are trying to compare the rates below to the marginal tax rates in the Basic Tax Calculator or the Detailed Tax Calculators.
+
+TaxTips.ca - Nunavut Tax Rates
+2023 Taxable Income | 2023 Tax Rates | 2022 Taxable Income | 2022 Tax Rates
+first $50,877 | 4.0% | first $47,862 | 4.0%
+over $50,877 up to $101,754 | 7.0% | over $47,862 up to $95,724 | 7.0%
+over $101,754 up to $165,429 | 9.0% | over $95,724 up to $155,625 | 9.0%
+over $165,429 | 11.5% | over $155,625 | 11.5%
+
+TaxTips.ca - Combined Federal & Nunavut Tax Brackets and Tax Rates
+2023 Taxable Income (1) | NU 2023 Marginal Tax Rates | 2022 Taxable Income (1) | NU 2022 Marginal Tax Rates
+Other Income | Capital Gains | Canadian Dividends | Other Income | Capital Gains | Canadian Dividends
+Eligible | Non-Eligible | Eligible | Non-Eligible
+first $50,877 | 19.00% | 9.50% | -2.11% | 8.46% | first $47,862 | 19.00% | 9.50% | -2.11% | 8.46%
+over $50,877 up to $53,359 | 22.00% | 11.00% | 2.03% | 11.91% | over $47,862 up to $50,197 | 22.00% | 11.00% | 2.03% | 11.91%
+over $53,359 up to $101,754 | 27.50% | 13.75% | 9.62% | 18.24% | over $50,197 up to $95,724 | 27.50% | 13.75% | 9.62% | 18.24%
+over $101,754 up to $106,717 | 29.50% | 14.75% | 12.38% | 20.54% | over $95,724 up to $100,392 | 29.50% | 14.75% | 12.38% | 20.54%
+over $106,717 up to $165,429 | 35.00% | 17.50% | 19.97% | 26.86% | over $100,392 up to $155,625 | 35.00% | 17.50% | 19.97% | 26.86%
+over $165,429 up to $235,675 | 40.82% | 20.41% | 28.00% | 33.56% | over $155,625 up to $221,708 | 40.88% | 20.44% | 28.08% | 33.63%
+over $235,675 | 44.50% | 22.25% | 33.08% | 37.79% | over $221,708 | 44.50% | 22.25% | 33.08% | 37.79%
+Marginal tax rate for dividends is a % of actual dividends received (not grossed-up amount). Marginal tax rate for capital gains is a % of total capital gains (not taxable capital gains). Gross-up rate for eligible dividends is 38%, and for non-eligible dividends is 15%. For more information see Nunavut dividend tax credits. Copyright © 2002 Boat Harbour Investments Ltd.
+TaxTips.ca Nunavut Basic Personal Amount
+2023 Personal Amount | 2023 Tax Rate | 2022 Personal Amount | 2022 Tax Rate
+$17,925 | 4% | $16,862 | 4%
+Federal Basic Personal Amount
+2023 Personal Amount (1) | 2023 Tax Rate | 2022 Personal Amount (1) | 2022 Tax Rate
+$15,000 | 15% | $14,398 | 15%
+
+(1) See the federal tax rates page for information on the enhanced federal personal amount, which increases the marginal tax rates for taxable incomes in the second highest federal tax bracket. The marginal tax rates in blue above have been adjusted to reflect these changes.
+
+Revised: September 20, 2026
+
+© 2002- Boat Harbour Investments Ltd. All rights reserved.
+
+See Reproduction of information from TaxTips.ca
+
+Privacy Policy | Contact
+
+Facebook | Twitter | LinkedIn
+
+The authors of TaxTips.ca strive, but cannot guarantee, to provide information which is current and accurate. Individual circumstances have a significant effect on how tax and financial information can be used. Due to this, and to the nature of the information, it should not be relied upon for decision making without professional advice.
+
+TaxTips.ca provides links to other web sites. We cannot guarantee the accuracy of the information provided on linked sites.

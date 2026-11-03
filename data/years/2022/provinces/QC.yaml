@@ -1,0 +1,50 @@
+# Benefit-year figures use July 2022 to June 2023, applied to current-year income.
+# Family allowance uses calendar 2022; solidarity credit uses July 2022–June 2023.
+# Living-alone amount retains the model assumption that every one-adult household qualifies.
+# Property estimate uses Montreal citywide residential average 0.7953 per 100 from 2022 budget Table 124.
+
+code: QC
+name: Quebec
+order: 8
+system: quebec
+brackets:
+  - [46295, 0.15]
+  - [92580, 0.2]
+  - [112655, 0.24]
+  - [.inf, 0.2575]
+basicPersonalAmount: 16143
+dividendTaxCredit: {eligible: 0.117, nonEligible: 0.0342}
+spouseAmount: transfer
+quebec:
+  workerDeduction: {rate: 0.06, max: 1235}
+  livingAlone: {max: 1850, rate: 0.1875, threshold: 36590}
+salesTax: {rate: 0.14975, label: 5% GST + 9.975% QST}
+propertyTax: {rate: 0.007953, city: Montreal, note: school tax is billed separately, estimated: true}
+childBenefit:
+  name: Family allowance
+  program: quebec-family-allowance
+  params: {max: 2614, maxSingleParent: 917, min: 1040, minSingleParent: 365, rate: 0.04, thresholdSingle: 37752, thresholdCouple: 51893, schoolSupplies: 108}
+credits:
+  - name: Solidarity tax credit
+    program: quebec-solidarity-tax-credit
+    params: {qstAdult: 309, qstSpouse: 309, qstAlone: 147, housingCouple: 727, housingSingle: 599, child: 128, rate: 0.06, threshold: 36790}
+  - name: Work premium
+    program: quebec-work-premium
+    params:
+      phaseOutRate: 0.1
+      single: [0.116, 2400, 11238]
+      couple: [0.116, 3600, 17398]
+      parent: [0.3, 2400, 11238]
+      coupleKids: [0.25, 3600, 17398]
+sources:
+  - {label: "CRA, GST/HST historical rates and provincial sales-tax rates", url: https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/charge-collect-which-rate/calculator.html}
+  - {label: "Finances Québec, Parameters of the personal income tax system for 2022 (National Assembly archive)", url: https://bibliotheque.assnat.qc.ca/DepotNumeriqueAPI/FichierStreaming?idFichier=270432}
+  - {label: "Revenu Québec, 2022 return", url: https://www.revenuquebec.ca/documents/en/formulaires/tp/2022-12/TP-1.D-V%282022-12%29.pdf}
+  - {label: "Revenu Québec, 2022 Schedule B (living-alone reduction)", url: https://www.revenuquebec.ca/documents/en/formulaires/tp/2022-12/TP-1.D.B-V%282022-12%29.pdf}
+  - {label: "Revenu Québec, 2022 Schedule P (work premium)", url: https://www.revenuquebec.ca/documents/en/formulaires/tp/2022-12/TP-1.D.P-V%282022-12%29.pdf}
+  - {label: "Finances Québec, historical dividend credit rates", url: https://www.budget.finances.gouv.qc.ca/budget/outils/depenses-fiscales/fiches/fiche-130501.asp}
+  - {label: "Finances Québec, historical family allowance amounts and 4% reduction", url: https://www.budget.finances.gouv.qc.ca/budget/outils/depenses-fiscales/fiches/fiche-110601.asp}
+  - {label: "Finances Québec, historical solidarity credit including July 2023 housing enhancement", url: https://www.budget.finances.gouv.qc.ca/Budget/outils/depenses-fiscales/fiches/fiche-110201.asp}
+  - {label: "Finances Québec, worker deduction rate and historical maxima", url: https://www.budget.finances.gouv.qc.ca/Budget/outils/depenses-fiscales/fiches/fiche-110906.asp}
+  - label: Montreal, 2022 budget Table 124 citywide residential municipal rate
+    url: https://portail-m4s.s3.montreal.ca/pdf/budget2022_pdi2022-2031_final_br.pdf

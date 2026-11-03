@@ -1,0 +1,16 @@
+Title: Montreal, 2020 official residential and borough tax rates (manual PDF web extract)
+URL: https://ville.montreal.qc.ca/pls/portal/docs/PAGE/SERVICE_FIN_FR/MEDIA/DOCUMENTS/2020_TAUX_FR.PDF
+Fetched: 2026-11-02
+SHA-256 of the original: unavailable (direct download returned HTTP 403; official PDF read by web tool)
+Manual transcription of the relevant rows of the official one-page PDF, not a fetch-source extraction.
+================================================================================
+
+Taux de taxation de 2020 (en $/100$), residual residential category:
+Montréal base: 0.6372. Water levy: 0.1043.
+Ville-Marie borough capital (PTI): 0.0064. Borough services: 0.0418.
+City residential road levy: 0.0035. ARTM levy: 0.0024.
+
+For the 2020 model, Ville-Marie is an explicitly estimated representative borough for Montreal.
+Sum of these six official components: 0.7956 per $100 = 0.007956 of assessed value.
+The 2020 citywide-average budget PDF could not be retrieved; this is not presented as a citywide mean.
+Separate school tax is excluded, as in the adjacent years' Montreal municipal-rate proxy.

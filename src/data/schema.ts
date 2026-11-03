@@ -109,7 +109,7 @@ export const federalSchema = z.object({
     estimationNote: z.string().optional(),
     standard: cwbRegion,
     secondaryEarnerExemption: amount,
-    regional: z.record(z.string().length(2), cwbRegion),
+    regional: z.record(z.string().length(2), cwbRegion.extend({ rate: z.union([rate, ratePair]) })),
     quebec: z.object({
       phaseOutRate: rate,
       single: qcCwbRow,
@@ -143,6 +143,15 @@ const nlChildReduction = z.object({
   rate: z.array(rate).length(3),
   additionalRate: rate,
 });
+const bcFamilyBenefit = z.object({
+  max: z.array(amount).length(3),
+  min: z.array(amount).length(3),
+  singleParent: amount,
+  rate,
+  threshold: amount,
+  minThreshold: amount,
+});
+const bcEarlyChildhoodBenefit = z.object({ perChild: amount, threshold: amount, rate });
 const childBenefit = z.discriminatedUnion("program", [
   program("ontario-child-benefit", z.object({ perChild: amount, threshold: amount, rate })),
   program(
@@ -158,15 +167,24 @@ const childBenefit = z.discriminatedUnion("program", [
       schoolSupplies: amount,
     }),
   ),
+  program("bc-family-benefit", bcFamilyBenefit),
+  program("bc-early-childhood-benefit", bcEarlyChildhoodBenefit),
   program(
-    "bc-family-benefit",
+    "bc-child-benefit-transition",
+    z
+      .object({
+        early: bcEarlyChildhoodBenefit.extend({ weight: z.number().positive().max(1) }),
+        opportunity: bcFamilyBenefit.extend({ weight: z.number().positive().max(1) }),
+      })
+      .refine(q => Math.abs(q.early.weight + q.opportunity.weight - 1) < 1e-9, "period weights must sum to 1"),
+  ),
+  program(
+    "bc-family-benefit-periods",
     z.object({
-      max: z.array(amount).length(3),
-      min: z.array(amount).length(3),
-      singleParent: amount,
-      rate,
-      threshold: amount,
-      minThreshold: amount,
+      periods: z
+        .array(bcFamilyBenefit.extend({ weight: z.number().positive().max(1) }))
+        .min(1)
+        .refine(ps => Math.abs(ps.reduce((sum, p) => sum + p.weight, 0) - 1) < 1e-9, "period weights must sum to 1"),
     }),
   ),
   program(
@@ -194,6 +212,15 @@ const childBenefit = z.discriminatedUnion("program", [
       workingThreshold: amount,
       workingPhaseOut: z.array(rate).length(4),
       minAnnual: amount,
+    }),
+  ),
+  program(
+    "nova-scotia-child-benefit-by-child",
+    z.object({
+      perChild: z.array(amount).length(3),
+      fullBelow: amount,
+      partialBelow: amount,
+      partialOtherRate: rate,
     }),
   ),
   program(
@@ -300,6 +327,16 @@ const credit = z.discriminatedUnion("program", [
   }),
   // Before the affordability credit: rebate a share of gross school taxes, then credit the remaining school
   // taxes up to a cap. schoolTaxShare estimates the school portion of the reference city's total property tax.
+  program(
+    "mb-school-tax-credits-rent-share",
+    z.object({
+      schoolTaxShare: rate,
+      schoolRebateRate: rate,
+      educationCreditMax: amount,
+      renterMax: amount,
+      renterShare: rate,
+    }),
+  ).extend({ nameRenter: z.string() }),
   program(
     "mb-school-tax-credits",
     z.object({ schoolTaxShare: rate, schoolRebateRate: rate, educationCreditMax: amount, renterMax: amount }),

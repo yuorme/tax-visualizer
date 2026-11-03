@@ -1,0 +1,41 @@
+Title: Goods and services tax/harmonized sales tax credit - calculation sheet for July 2020
+URL: https://www.canada.ca/content/dam/cra-arc/serv-info/benefits/gstcclc19-eng.pdf
+Fetched: 2026-11-02
+SHA-256 of the original: 5ced7f01929da8344b4e34a95f8bb2796da6520dc65bd1e22071acbb9e3b8749
+Publication date modified: 2020-06-08
+PDF pages: all 1
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 1 of 1 ---
+
+Goods and services tax/harmonized sales tax credit - calculation sheet for July 2020
+to June 2021 (2019 base year)
+Base Credit: ($296) 1 $296
+Credit for spouse or common-law partner: ($296) 2 $ ___________
+Credit for eligible dependant: ($296) 3 $ ___________
+Credit for eligible children: $155 × ____ = 4 $ ___________
+($155 for each child not included at line 3 above)
+Calculation of Additional Credit 1
+(Complete only if line 2 above indicates zero)
+Family net income: 5 $ ___________
+Minus base amount: 6- $9,590
+Family net income minus base amount: 7 $ ___________
+(Line 5 minus Line 6) If result is negative, enter "0"
+Additional Credit: 8 $ ___________
+(The less of $155 or 2% of Line 7)
+Subtotal: (Add lines 1, 2, 3, 4 and 8) 9 $ ___________
+Credit Reduction
+Adjusted family net income: 10 $ ___________
+(Family net income minus Universal Child Care Benefit
+(UCCB) and Registered Disability Savings Plan (RDSP)
+Income plus UCCB and RDSP repayment)
+Minus base amount: 11- $38,507
+Adjusted family net income minus base amount: 12 $ ___________
+(Line 10 minus Line 11). If the result is negative, enter "0"
+Enter 5% of Line 12: 13 $ ___________
+ANNUAL CREDIT: (Line 9 minus Line 13) 14 $ ___________
+All amounts are approximate. Your Notice of Determination will show your actual entitlement for the year.
+Footnotes
+1) Single parents will receive the full value of the supplement as part of their core GST/HST credit. For
+these clients, enter $155 at Line 8.

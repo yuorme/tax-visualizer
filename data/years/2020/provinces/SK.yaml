@@ -1,0 +1,30 @@
+# Benefit-year figures use July 2020 to June 2021, applied to current-year income.
+# SLITC amounts and $32643 published threshold are unchanged from the 2017 enactment through 2020.
+# Property estimate: ((7.0802 city + 0.7298 library) mills × 0.9322 + 4.12 school) × 80% / 1000.
+
+code: SK
+name: Saskatchewan
+order: 4
+brackets:
+  - [45225, 0.105]
+  - [129214, 0.125]
+  - [.inf, 0.145]
+basicPersonalAmount: 16065
+dividendTaxCredit: {eligible: 0.11, nonEligible: 0.03362}
+spouseAmount: {max: 16065, threshold: 1607}
+childAmount: {perChild: 6094, ages: all}
+salesTax: {rate: 0.11, label: 5% GST + 6% PST}
+propertyTax: {rate: 0.009120385600000001, city: Saskatoon, estimated: true}
+credits:
+  - name: Saskatchewan low-income tax credit
+    program: sk-low-income-tax-credit
+    params: {adult: 346, spouse: 346, child: 136, maxChildren: 2, rate: 0.0275, threshold: 32643}
+sources:
+  - {label: "CRA, SK428 for 2020", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5008-c/5008-c-20e.pdf}
+  - {label: "CRA, SK428 worksheet for 2020", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5008-d/5008-d-20e.pdf}
+  - {label: "CRA, GST/HST historical rates and provincial sales-tax rates", url: https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/charge-collect-which-rate/calculator.html}
+  - {label: "Saskatchewan, 2020 Bill 210 explanatory notes: SLITC amounts and indexing resumption", url: https://docs.legassembly.sk.ca/legdocs/Explanatory%20Notes/28L4S/Bill28-210EN.pdf}
+  - {label: "Saskatoon, historical 2022 city/library mills and residential factor", url: https://www.saskatoon.ca/sites/default/files/media/documents/Historical%20tax%20Rate%202018-2026.pdf}
+  - {label: "Saskatchewan, 2017 Hansard: SLITC amounts and threshold, frozen through 2020", url: https://docs.legassembly.sk.ca/legdocs/Legislative%20Assembly/Hansard/28L1S/170424Debates.pdf}
+  - {label: "Regina, 2020 bylaw: provincially uniform education mill rates", url: https://openregina.ca/dataset/4058d60b-3738-4877-8386-c47fede54856/resource/61658132-f592-49a9-b0dd-e3c0e035e69e/download/2020-24.pdf}
+  - {label: "Saskatoon, 2021 reassessment guide: historical 2020 residential 80% assessment portion", url: https://www.saskatoon.ca/sites/default/files/documents/asset-financial-management/assessment-taxation/cos_guide_to_2021_reassessment_notice_final.pdf}

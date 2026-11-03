@@ -1,0 +1,41 @@
+# Benefit-year figures use July 2020 to June 2021, applied to current-year income.
+# Child annual amounts are rounded published monthly amounts [34.08,36.16,38.83,41.66] × 12.
+
+code: NL
+name: Newfoundland and Labrador
+order: 12
+brackets:
+  - [37929, 0.087]
+  - [75858, 0.145]
+  - [135432, 0.158]
+  - [189604, 0.173]
+  - [.inf, 0.183]
+basicPersonalAmount: 9498
+dividendTaxCredit: {eligible: 0.054, nonEligible: 0.035}
+spouseAmount: {max: 7761, threshold: 777}
+lowIncomeReduction:
+  program: nl-low-income-reduction
+  params: {individual: 859, family: 479, rate: 0.16, thresholdIndividual: 20537, thresholdFamily: 34727}
+salesTax: {rate: 0.15, label: 15% HST}
+propertyTax: {rate: 0.0077, city: St. John's}
+childBenefit:
+  name: NL Child Benefit
+  program: nl-child-benefit-reduction
+  params:
+    perChild: [408.96, 433.92, 465.96, 499.92]
+    threshold: 17397
+    rate: [0.0507, 0.1045, 0.1622]
+    additionalRate: 0.0619
+  estimated: true
+credits:
+  - name: NL income supplement
+    program: nl-income-supplement
+    params: {base: 220, extraMax: 230, extraRate: 0.046, extraFrom: 15000, couple: 60, child: 200, rate: 0.09, threshold: 40000}
+sources:
+  - {label: "CRA, NL428 for 2020", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5001-c/5001-c-20e.pdf}
+  - {label: "CRA, NL428 worksheet for 2020", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5001-d/5001-d-20e.pdf}
+  - {label: "CRA, T4114-20: July 2020–June 2021 child benefits (official archive)", url: https://publications.gc.ca/collections/collection_2020/arc-cra/Rv1-36-2020-eng.pdf?download=1}
+  - {label: "CRA, GST/HST historical rates and provincial sales-tax rates", url: https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/charge-collect-which-rate/calculator.html}
+  - {label: "NL regulation 60/11, child benefit reduction rates before January 2024", url: https://www.assembly.nl.ca/Legislation/sr/Annualregs/2011/nr110060.htm}
+  - {label: "NL, 2016 income supplement calculation, unchanged until July 2022", url: https://www.budget.gov.nl.ca/budget2016/incomesupplement/Budget%202016%20NL%20Income%20Supplement%20Specifics.pdf}
+  - {label: "St. John's, historic residential mill rates", url: https://www.stjohns.ca/resident-services/property-taxes-assessments/tax-rates/}

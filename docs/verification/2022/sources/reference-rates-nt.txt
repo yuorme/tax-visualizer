@@ -1,0 +1,65 @@
+Title: Northwest Territories 2023 & 2022 Tax Rates & Tax Brackets
+URL: https://www.taxtips.ca/priortaxrates/tax-rates-2022-2023/nt.htm
+Fetched: 2026-11-02
+SHA-256 of the original: cc66ead420bc1c93769d7c970645b2a413db66e3590c7306e53efe31878357a0
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+#### Home -> Territories -> Northwest Territories
+
+#### Tax Rates -> 2022-2023 Tax Rates -> Northwest Territories
+
+# Northwest Territories 2023 & 2022 Tax Rates & Tax Brackets
+
+The Federal and Northwest Territories tax brackets and personal tax credit amounts are increased for 2023 by an indexation factor of 1.063 (6.3% increase).
+
+Northwest Territories uses the Federal indexation factor to increase their tax brackets and personal tax credit amounts.
+
+See Indexation of the Personal Income Tax System for how the indexation factors are calculated.
+
+The indexation factors, tax brackets and tax rates for 2023 have been confirmed to Canada Revenue Agency information.
+
+Tax Tip: read the article Understanding the Tables of Personal Income Tax Rates, especially if you are trying to compare the rates below to the marginal tax rates in the Basic Tax Calculator or the Detailed Tax Calculators.
+
+TaxTips.ca - Northwest Territories Tax Rates
+2023 Taxable Income | 2023 Tax Rates | 2022 Taxable Income | 2022 Tax Rates
+first $48,326 | 5.90% | first $45,462 | 5.90%
+over $48,326 up to $96,655 | 8.60% | over $45,462 up to $90,927 | 8.60%
+over $96,655 up to $157,139 | 12.20% | over $90,927 up to $147,826 | 12.20%
+over $157,139 | 14.05% | over $147,826 | 14.05%
+
+TaxTips.ca - Combined Federal & Northwest Territories Tax Brackets and Tax Rates
+2023 Taxable Income (1) | NT 2023 Marginal Tax Rates | 2022 Taxable Income (1) | NT 2022 Marginal Tax Rates
+Other Income | Capital Gains | Canadian Dividends | Other Income | Capital Gains | Canadian Dividends
+Eligible | Non-Eligible | Eligible | Non-Eligible
+first $48,326 | 20.90% | 10.45% | -7.76% | 6.75% | first $45,462 | 20.90% | 10.45% | -7.76% | 6.75%
+over $48,326 up to $53,359 | 23.60% | 11.80% | -4.03% | 9.86% | over $45,462 up to $50,197 | 23.60% | 11.80% | -4.03% | 9.86%
+over $53,359 up to $96,655 | 29.10% | 14.55% | 3.56% | 16.18% | over $50,197 up to $90,927 | 29.10% | 14.55% | 3.56% | 16.18%
+over $96,655 up to $106,717 | 32.70% | 16.35% | 8.53% | 20.32% | over $90,927 up to $100,392 | 32.70% | 16.35% | 8.53% | 20.32%
+over $106,717 up to $157,139 | 38.20% | 19.10% | 16.12% | 26.65% | over $100,392 up to $147,826 | 38.20% | 19.10% | 16.12% | 26.65%
+over $157,139 up to $165,430 | 40.05% | 20.03% | 18.67% | 28.77% | over $147,826 up to $155,625 | 40.05% | 20.03% | 18.67% | 28.77%
+over $165,430 up to $235,675 | 43.37% | 21.69% | 23.25% | 32.59% | over $155,625 up to $221,708 | 43.43% | 21.72% | 23.33% | 32.66%
+over $235,675 | 47.05% | 23.53% | 28.33% | 36.82% | over $221,708 | 47.05% | 23.53% | 28.33% | 36.82%
+Marginal tax rate for dividends is a % of actual dividends received (not grossed-up taxable amount). Marginal tax rate for capital gains is a % of total capital gains (not taxable capital gains). Gross-up rate for eligible dividends is 38%, and for non-eligible dividends is 15%. For more information see Northwest Territories dividend tax credits. Copyright © 2002 Boat Harbour Investments Ltd.
+TaxTips.ca Northwest Territories Basic Personal Amount
+2023 Personal Amount | 2023 Tax Rate | 2022 Personal Amount | 2022 Tax Rate
+$16,593 | 5.90% | $15,609 | 5.90%
+Federal Basic Personal Amount
+2023 Personal Amount (1) | 2023 Tax Rate | 2022 Personal Amount (1) | 2022 Tax Rate
+$15,000 | 15% | $14,398 | 15%
+
+(1) See the federal tax rates page for information on the enhanced federal personal amount, which increases the marginal tax rates for taxable incomes in the second highest federal tax bracket. The marginal tax rates in blue above have been adjusted to reflect these changes.
+
+Revised: September 20, 2026
+
+© 2002- Boat Harbour Investments Ltd. All rights reserved.
+
+See Reproduction of information from TaxTips.ca
+
+Privacy Policy | Contact
+
+Facebook | Twitter | LinkedIn
+
+The authors of TaxTips.ca strive, but cannot guarantee, to provide information which is current and accurate. Individual circumstances have a significant effect on how tax and financial information can be used. Due to this, and to the nature of the information, it should not be relied upon for decision making without professional advice.
+
+TaxTips.ca provides links to other web sites. We cannot guarantee the accuracy of the information provided on linked sites.

@@ -1,0 +1,163 @@
+Title: Quarterly report of Canada Pension Plan and Old Age Security monthly amounts and related figures – October to December 2021
+URL: https://www.canada.ca/en/employment-social-development/programs/pensions/pension/statistics/2021-quarterly-october-december.html
+Fetched: 2026-11-02
+SHA-256 of the original: 0a997871606cdbf4b803c9c043a61bd2fa2906529d98376bfcf8b24996f4cfb8
+Publication date modified: 2021-10-01
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+# Quarterly report of Canada Pension Plan and Old Age Security monthly amounts and related figures – October to December 2021
+
+Quarterly report of Canada Pension Plan and Old Age Security monthly amounts and related figures – October to December 2021 [PDF - 418 KB]
+
+## On this page
+
+- Canada Pension Plan and Quebec Pension Plan
+- Disability and survivor amounts
+- Calculation of CPP maximum monthly amounts for new benefits
+- Old Age Security
+- Other CPP and QPP figures
+- CPP and QPP forecasted expenditures, 2021 to 2022
+- Contact us
+
+Canada Pension Plan (CPP) and Quebec Pension Plan (QPP): Type of benefit
+| New benefits Maximum amount 2021 | Number of benefits June 2021 | Amounts paid June 2021
+CPP Footnote 1 | QPP Footnote 1 | CPP | QPP | CPP (in millions) | QPP (in millions)
+Retirement (at age 65) | $1,203.75 | $1,203.75 | 5,614,041 | 1,989,215 | $3,419.5 | $1,079.7
+Post–Retirement Benefit (CPP) (at age 65) Footnote 2 | $30.09 | not applicable | 4,931,671 | not applicable | $71.2 | not applicable
+Retirement Pension Supplement (QPP) | not applicable | $23.00 | not applicable | 800,579 | not applicable | $27.1
+Disability | $1,413.66 | $1,413.63 | 333,991 | 55,909 | $323.3 | $56.1
+Survivor: younger than 65 | $650.72 | (Details QPP) | 210,324 | 57,045 | $93.5 | $42.2
+Survivor: 65 and older | $722.25 | $712.55 | 956,182 | 321,397 | $304.2 | $104.5
+Total survivor benefits Footnote 3 | not applicable | not applicable | 1,166,506 | 378,442 | $397.7 | $146.7
+Children of disabled contributor | $257.58 | $81.78 | 83,103 | 6,301 | $21.4 | $0.7
+Children of deceased contributor | $257.58 | $257.58 | 63,855 | 12,228 | $16.4 | $3.2
+Death (maximum one-time payment) | $2,500.00 | $2,500.00 | 13,770 | 4,896 | $34.3 | $12.0
+Total CPP and QPP benefits Footnote 3 | not applicable | not applicable | 7,275,266 | 2,446,991 | $4,283.8 | $1,325.5
+Combined benefits
+Survivor and retirement (retirement at 65) | $1,203.75 | $1,203.75 | 920,052 | 293,958 | $799.0 | $230.0
+Survivor and disability | $1,413.66 | not applicable | 13,607 | 1,743 | $14.9 | $2.1
+Total: combined benefits Footnote 3 | not applicable | not applicable | 933,659 | 295,701 | $813.9 | $232.1
+
+Disability and survivor amounts 2021
+| Flat amount | Earnings-related portion | Total
+CPP disability benefit | $510.85 | $902.81 | $1,413.66
+CPP post-retirement disability benefit Footnote 4 | $510.85 | $0.00 | $510.85
+CPP survivor benefit: younger than 65 | $199.31 | $451.41 | $650.72
+QPP disability benefit | $510.82 | $902.81 | $1,413.63
+QPP additional amount for disability Footnote 4 | $510.82 | $0.00 | $510.82
+
+Details of QPP benefits
+QPP survivor benefit: younger than 45
+| Flat amount | Earnings-related portion | Total
+Not disabled, no child | $130.84 | $445.35 | $576.19
+Not disabled, with child | $474.31 | $445.35 | $919.66
+Disabled | $510.82 | $445.35 | $956.17
+QPP survivors: age 45 to 64 | $510.82 | $445.35 | $956.17
+
+## Calculation of CPP maximum monthly amounts for new benefits
+
+Retirement:
+25% of 1 over 12 of the average year's maximum pensionable earnings (YMPE) for the last 5 years.
+
+Disability:
+(retirement x 0.75) + flat amount ($510.85).
+
+Survivor:
+
+- younger than 65: (retirement x 0.375) + flat amount ($199.31)
+- 65 and older: retirement x 0.60
+
+Post Retirement:
+1 over 40 of the retirement benefit.
+
+Legend: $M = millions of dollars
+
+Old Age Security (OAS): Type of benefit
+| October to December 2021 | June 2021
+Maximum amount Footnote 5 | Income level cut-off Footnote 6 | Income level cut-off for top-ups Footnote 6 | Number of benefits | Amount paid (in millions)
+Old Age Security pension (at age 65) Footnote 7, Footnote 8 | $635.26 | not applicable | not applicable | 6,762,207 | $3,944.5
+Guaranteed Income Supplement (GIS)
+Single | $948.82 | $19,248 | $9,056 | 1,316,793 | $795.2
+Spouse or common-law partner of someone who:
+does not receive an OAS pension | $948.82 | $46,128 | $18,112 | 126,218 | $67.8
+receives an OAS pension | $571.15 | $25,440 | $8,032 | 734,544 | $263.6
+is an Allowance recipient | $571.15 | $46,128 | $8,032 | 58,015 | $27.5
+Total GIS Footnote 3 | not applicable | not applicable | not applicable | 2,235,570 | $1,154.1
+Allowance | $1,206.41 | $35,616 | $8,032 | 57,997 | $28.1
+Allowance for the Survivor | $1,438.11 | $25,920 | $9,056 | 22,449 | $17.5
+Total Allowance and Allowance for the Survivor Footnote 3 | not applicable | not applicable | not applicable | 80,446 | $45.6
+
+Other CPP and QPP figures
+| CPP | QPP
+Year's maximum pensionable earnings (YMPE) (2021) | $61,600.00 | $61,600.00
+Year's basic exemption (2021) | $3,500.00 | $3,500.00
+Contributions (2019 to 2020) | $56,142 million | $16,300 million
+Number of contributors (2019) | 14.9 million | (estimated) 4.2 million
+Indexation rate (January 2021) | 1% | 1%
+| Base | Enhancement | Total | Base | Enhancement | Total
+Contribution rate for employee and employer | 4.95% | 0.5% | 5.45% | 5.4% | 0.5% | 5.9%
+Employee and employer maximum contribution | $2,875.95 | $290.50 | $3,166.45 | $3,137.40 | $290.50 | $3,427.90
+Contribution rate for self-employed | 9.9% | 1% | 10.9% | 10.8% | 1% | 11.8%
+Self-employed maximum contribution | $5,751.90 | $581.00 | $6,332.90 | $6,274.80 | $581.00 | $6,855.80
+
+Legend: $M = millions of dollars
+
+OAS and CPP and QPP forecasted expenditures, 2021 to 2022 (in billions)
+OAS | CPP | QPP
+$62.4 | $53.7 | $16.6
+
+## Contact us
+
+Telephone: 1-800-277-9914
+TTY: 1-800-255-4786
+
+## Footnotes
+
+Footnote 1
+
+The CPP and QPP enhancement is not reflected in maximum benefit amounts.
+
+Return to first footnote 1 referrer
+
+Footnote 2
+
+Each year a valid contribution is made to the CPP while a retirement pension is being received, the person becomes eligible for a post-retirement benefit (PRB) in January of the following year and thus can receive more than one PRB.
+
+Return to footnote 2 referrer
+
+Footnote 3
+
+Total may not add up due to rounding.
+
+Return to first footnote 3 referrer
+
+Footnote 4
+
+This amount is added to the retirement benefit.
+
+Return to first footnote 4 referrer
+
+Footnote 5
+
+The maximum amount includes the top-ups for the GIS and the Allowances.
+
+Return to footnote 5 referrer
+
+Footnote 6
+
+The income level cut-offs do not include the OAS pension, the first $5,000 of employment or self employment income and 50% of employment or self employment income between $5,000 and $15,000.
+
+Return to first footnote 6 referrer
+
+Footnote 7
+
+The OAS pension repayment range in 2021 is from $79,845 to $129,757.
+
+Return to footnote 7 referrer
+
+Footnote 8
+
+Individuals can defer receiving the OAS pension beyond age 65 in exchange for a higher pension. The monthly OAS pension is increased by 0.6% for every month it is delayed up to a maximum of 36% at age 70.
+
+Return to footnote 8 referrer

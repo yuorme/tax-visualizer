@@ -341,6 +341,7 @@ export function footerNotes(y: YearData, page: PageDefaults): string {
   const ccb = F.childBenefit;
   const ocb = childBenefit("ON", "ontario-child-benefit").params;
   const qfa = childBenefit(quebec.code, "quebec-family-allowance").params;
+  const nsBenefit = prov("NS").childBenefit;
   const nwtBenefit = need(prov("NT").childBenefit, "NWT child benefit");
   if (nwtBenefit.program !== "nwt-child-benefit" && nwtBenefit.program !== "nwt-child-benefit-age-groups")
     throw new Error("page notes: unsupported NWT child benefit");
@@ -356,6 +357,21 @@ export function footerNotes(y: YearData, page: PageDefaults): string {
     nub = nu.params;
   const children = [
     `${benefitYear(y)} amounts, applied to current-year income: the Canada Child Benefit (${money(ccb.perChildUnder6)} per child under 6 or ${money(ccb.perChild6to17)} aged 6–17, reduced above ${money(ccb.threshold1)} of family net income), the Ontario Child Benefit (up to ${money(ocb.perChild)} per child), Quebec's family allowance (${money(qfa.max)} to ${money(qfa.min)} per child, plus the ${money(qfa.schoolSupplies)} school supplies supplement, applied to children aged 6–17), the B.C. family benefit, the Alberta Child and Family Benefit, the Nova Scotia Child Benefit, ${prov("PE").childBenefit ? "the PEI Child Benefit, " : ""}New Brunswick's Child Tax Benefit and Working Income Supplement, and the Yukon Child Benefit, all from CRA's T4114 booklet for ${benefitYear(y)} or the province's own rules.`,
+    ...(bc.childBenefit?.program === "bc-family-benefit-periods"
+      ? [
+          `B.C.'s child opportunity benefit was renamed the family benefit during this benefit year. Each period is calculated separately before weighting: ${bc.childBenefit.params.periods.map(period => `${period.weight * 12} months at annual maximum amounts of ${list(period.max.map(money))} for the first, second and each additional child, with minimum amounts of ${list(period.min.map(money))}`).join("; ")}. Each period applies its own income reduction, minimum and zero floor.`,
+        ]
+      : []),
+    ...(bc.childBenefit?.program === "bc-child-benefit-transition"
+      ? [
+          `B.C.'s benefit changed during this benefit year. The early childhood benefit covers ${bc.childBenefit.params.early.weight * 12} months for children under six: ${money(bc.childBenefit.params.early.perChild)} annually per eligible child, reduced by ${rate(bc.childBenefit.params.early.rate)} per child on family income above ${money(bc.childBenefit.params.early.threshold)}. The child opportunity benefit covers ${bc.childBenefit.params.opportunity.weight * 12} months for all children under 18, with annual maximum amounts of ${list(bc.childBenefit.params.opportunity.max.map(money))} for the first, second and each additional child. Each program applies its own reductions and zero floor before its share of the year is applied. Household ages are held fixed across both periods.`,
+        ]
+      : []),
+    ...(nsBenefit?.program === "nova-scotia-child-benefit-by-child"
+      ? [
+          `Nova Scotia pays annual amounts of ${list(nsBenefit.params.perChild.map(money))} for the first, second and each additional child below ${money(nsBenefit.params.fullBelow)} of family net income. From that threshold to below ${money(nsBenefit.params.partialBelow)}, the first child's amount stays whole and later children's amounts are paid at ${rate(nsBenefit.params.partialOtherRate)}. The benefit ends at the upper threshold.`,
+        ]
+      : []),
     ...(nlProgram.program === "nl-child-benefit"
       ? [
           `For the NWT, Newfoundland and Labrador and Nunavut benefits the amounts and the income where the reduction starts are official, but the reduction rate isn't published: the NWT and Newfoundland and Labrador benefits are tapered in a straight line to the published end points (${money(nwt.endsAt)} and ${money(nlProgram.params.endsAt)}), and Nunavut's uses the ${rate(nub.rateOneChild)} / ${rate(nub.rateMoreChildren)} rates in ${need(nu.rateSource, "Nunavut child benefit rate source")}.`,
@@ -380,13 +396,20 @@ export function footerNotes(y: YearData, page: PageDefaults): string {
   const ownCwb = [...Object.keys(cwb.regional).map(prov), quebec].sort(byName).map(short);
   const sk = credit("SK", "sk-low-income-tax-credit");
   const mb = need(
-    prov("MB").credits?.find(c => c.program === "mb-affordability-credits" || c.program === "mb-school-tax-credits"),
+    prov("MB").credits?.find(
+      c =>
+        c.program === "mb-affordability-credits" ||
+        c.program === "mb-school-tax-credits" ||
+        c.program === "mb-school-tax-credits-rent-share",
+    ),
     "Manitoba property credits",
   );
   const mbDescription =
-    mb.program === "mb-school-tax-credits"
-      ? `Manitoba's school tax rebate (${rate(mb.params.schoolRebateRate)} of estimated school taxes), education property tax credit (up to ${money(mb.params.educationCreditMax)} of remaining school taxes) and renters tax credit (up to ${money(mb.params.renterMax)}, capped by rent paid)`
-      : "Manitoba's renters and homeowners affordability credits";
+    mb.program === "mb-school-tax-credits-rent-share" && mb.params.schoolRebateRate === 0
+      ? `Manitoba's education property tax credit (up to ${money(mb.params.educationCreditMax)} of school taxes for owners, or ${rate(mb.params.renterShare)} of rent paid for renters, capped at ${money(mb.params.renterMax)})`
+      : mb.program === "mb-school-tax-credits" || mb.program === "mb-school-tax-credits-rent-share"
+        ? `Manitoba's school tax rebate (${rate(mb.params.schoolRebateRate)} of estimated school taxes), education property tax credit (up to ${money(mb.params.educationCreditMax)} of remaining school taxes) and renters tax credit (up to ${money(mb.params.renterMax)}, ${mb.program === "mb-school-tax-credits-rent-share" ? `${rate(mb.params.renterShare)} of rent paid before applying the cap` : "capped by rent paid"})`
+        : "Manitoba's renters and homeowners affordability credits";
   const cwbEstimate =
     cwb.estimationNote ?? `these ${year} values are CRA's ${lastYearIndexed} until CRA publishes them`;
   // The list below names these programs in prose; a year whose data drops one fails here instead of misreporting it.
@@ -395,25 +418,25 @@ export function footerNotes(y: YearData, page: PageDefaults): string {
     ["ON", "ontario-energy-property-tax-credit"],
     [quebec.code, "quebec-solidarity-tax-credit"],
     [quebec.code, "quebec-work-premium"],
-    ["BC", "bc-renters-tax-credit"],
     ["NB", "nb-hst-credit"],
     ["NS", "ns-affordable-living-tax-credit"],
     ["NL", "nl-income-supplement"],
   ];
   for (const [code, id] of named) credit(code, id);
+  const bcRenter = bc.credits?.some(c => c.program === "bc-renters-tax-credit");
   // PEI's sales tax credit gave way to the essentials benefit in 2026.
   const pei = creditName("PE", ["pei-essentials-benefit", "pei-sales-tax-credit"]);
   const estimates = [
     sk.estimated &&
       `Saskatchewan's reduction rate (${rate(sk.params.rate)}) is worked out from CRA's published start and end points`,
     mb.estimated &&
-      (mb.program === "mb-school-tax-credits"
+      (mb.program === "mb-school-tax-credits" || mb.program === "mb-school-tax-credits-rent-share"
         ? `Manitoba's school taxes are estimated as ${rate(mb.params.schoolTaxShare)} of the property tax bill using the reference city's school-tax share`
         : `Manitoba's renters credit is taken at its ${money(mb.params.renter)} maximum`),
     "Quebec's solidarity credit gives the living-alone amount to any household with one adult",
   ].filter(x => typeof x === "string");
   const credits = [
-    `Counted when "Include in totals" is on, for ${benefitYear(y)}: the ${gbName} (${gb.formerName ? `the renamed ${gb.formerName}: ` : ""}${money(gb.adult)} per adult, ${money(gb.child)} per child and a single supplement of up to ${money(gb.singleSupplement.max)}, less ${rate(gb.phaseOut.rate)} of family net income over ${money(gb.phaseOut.from)}); the Canada Workers Benefit basic amount for ${year} (${money(std.max[0])} single or ${money(std.max[1])} family, ${rate(std.rate)} of working income over ${either(std.floor, money)}, less ${either(std.phaseOut, rate)} of net income over ${either(std.threshold, money)}; ${list(ownCwb)} use their own versions${cwb.estimated ? `, and ${cwbEstimate}` : ""}); the Ontario sales tax credit and Ontario energy and property tax credit; Quebec's solidarity tax credit and work premium; B.C.'s renter's tax credit; ${mbDescription}; the Saskatchewan low-income tax credit; the New Brunswick HST credit; the Nova Scotia affordable living tax credit; the ${pei}; and the Newfoundland and Labrador income supplement.`,
+    `Counted when "Include in totals" is on, for ${benefitYear(y)}: the ${gbName} (${gb.formerName ? `the renamed ${gb.formerName}: ` : ""}${money(gb.adult)} per adult, ${money(gb.child)} per child and a single supplement of up to ${money(gb.singleSupplement.max)}, less ${rate(gb.phaseOut.rate)} of family net income over ${money(gb.phaseOut.from)}); the Canada Workers Benefit basic amount for ${year} (${money(std.max[0])} single or ${money(std.max[1])} family, ${rate(std.rate)} of working income over ${either(std.floor, money)}, less ${either(std.phaseOut, rate)} of net income over ${either(std.threshold, money)}; ${list(ownCwb)} use their own versions${cwb.estimated ? `, and ${cwbEstimate}` : ""}); the Ontario sales tax credit and Ontario energy and property tax credit; Quebec's solidarity tax credit and work premium; ${bcRenter ? "B.C.'s renter's tax credit; " : ""}${mbDescription}; the Saskatchewan low-income tax credit; the New Brunswick HST credit; the Nova Scotia affordable living tax credit; the ${pei}; and the Newfoundland and Labrador income supplement.`,
     `Estimates: ${clauses(estimates)}.`,
     "Not modelled: the Workers Benefit disability supplement, senior-specific credits, the Northern Ontario energy credit and Quebec's northern-village supplement.",
   ].join(" ");

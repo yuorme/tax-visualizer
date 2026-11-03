@@ -1,0 +1,56 @@
+Title: Newfoundland & Labrador 2022 and 2021 Personal Marginal Income Tax Rates
+URL: https://www.taxtips.ca/priortaxrates/tax-rates-2021-2022/nl.htm
+Fetched: 2026-11-02
+SHA-256 of the original: 682bb8b20ed146478c864cf9b9d6e8ef8a10178a0d7c754b3181864fb390911f
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+Ads keep this website free for you. TaxTips.ca does not research or endorse any product or service appearing in ads on this site. Before making a major financial decision you should consult a qualified professional. | Newfoundland & Labrador 2021 & 2022 Income Tax Rates | TaxTips.ca Canadian Tax and Financial Information
+TaxTips.ca Home What's New | | Links & Resources Site Map
+
+Need an accounting, tax or financial advisor? Look in our Directory. Use above search box to easily find your topic! Stay Connected with TaxTips.ca!
+
+Home -> Atlantic Provinces -> Newfoundland & Labrador -> Tax Rates -> 2021 and 2022 Tax Rates -> Newfoundland & Labrador Newfoundland & Labrador 2022 and 2021 Personal Marginal Income Tax Rates Newfoundland and Labrador Income Tax Act, 2000 s. 6.1, 7, 9 The Federal tax brackets and personal tax credit amounts are increased for 2022 by an indexation factor of 1.024 (a 2.4% increase). The NL tax brackets and personal tax credit amounts are increased for 2022 by an indexation factor of 1.028 (a 2.8% increase). The NL 2021 Budget increased tax rates for taxable incomes over $135,973 and added 3 new tax brackets, beginning January 1, 2022. Bill 15, An Act to Amend the Income Tax Act, 2000 No. 2 increased the eligible dividend tax credit rate from 5.4% to 6.3% and reduced the non-eligible dividend tax credit rate from 3.5% to 3.2%, effective January 1, 2022. The indexation factors, tax brackets and tax rates have been confirmed to Canada Revenue Agency information. Tax Tip: read the article Understanding the Tables of Personal Income Tax Rates, especially if you are trying to compare the rates below to the marginal tax rates in the Basic Tax Calculator.
+
+TaxTips.ca - Newfoundland & Labrador Personal Income Tax Brackets and Tax Rates
+2022 Taxable Income | 2022 Tax Rates | 2021 Taxable Income | 2021 Tax Rates
+first $39,147 | 8.7% | first $38,081 | 8.7%
+over $39,147 up to $78,294 | 14.5% | over $38,081 up to $76,161 | 14.5%
+over $78,294 up to $139,780 | 15.8% | over $76,161 up to $135,973 | 15.8%
+over $139,780 up to $195,693 | 17.8% | over $135,973 up to $190,363 | 17.3%
+over $195,693 up to $250,000 | 19.8% | over $190,363 | 18.3%
+over $250,000 up to $500,000 | 20.8%
+over $500,000 up to $1,000,000 | 21.3%
+over $1,000,000 | 21.8%
+
+TaxTips.ca - Combined Federal & Newfoundland & Labrador Tax Brackets and Tax Rates
+2022 Taxable Income | NL 2022 Marginal Tax Rates | 2021 Taxable Income | NL 2021 Marginal Tax Rates
+Other Income | Capital Gains | Canadian Dividends | Other Income | Capital Gains | Canadian Dividends
+Eligible | Non-Eligible | Eligible | Non-Eligible
+first $39,147 | 23.70% | 11.85% | 3.28% | 13.19% | first $38,081 | 23.70% | 11.85% | 4.53% | 12.85%
+over $39,147 up to $50,197 | 29.50% | 14.75% | 11.29% | 19.86% | over $38,081 up to $49,020 | 29.50% | 14.75% | 12.53% | 19.52%
+over $50,197 up to $78,294 | 35.00% | 17.50% | 18.88% | 26.19% | over $49,020 up to $76,161 | 35.00% | 17.50% | 20.12% | 25.84%
+over $78,294 up to $100,392 | 36.30% | 18.15% | 20.67% | 27.68% | over $76,161 up to $98,040 | 36.30% | 18.15% | 21.91% | 27.34%
+over $100,392 up to $139,780 | 41.80% | 20.90% | 28.26% | 34.01% | over $98,040 up to $135,973 | 41.80% | 20.90% | 29.50% | 33.66%
+over $139,780 up to $155,625 | 43.80% | 21.90% | 31.02% | 36.31% | over $135,973 up to $151,978 | 43.30% | 21.65% | 31.57% | 35.39%
+over $155,625 up to $195,693 | 47.18% | 23.59% | 35.68% | 40.20% | over $151,978 up to $190,363 | 46.62% | 23.31% | 36.16% | 39.21%
+over $195,693 up to $221,708 | 49.18% | 24.59% | 38.44% | 42.50% | over $190,363 up to $216,511 | 47.62% | 23.81% | 37.54% | 40.36%
+over $221,708 up to $250,000 | 52.80% | 26.40% | 43.44% | 46.66% | over $216,511 | 51.30% | 25.65% | 42.61% | 44.59%
+over $250,000 up to $500,000 | 53.80% | 26.90% | 44.82% | 47.81%
+over $500,000 up to $1,000,000 | 54.30% | 27.15% | 45.51% | 48.38%
+over $1,000,000 | 54.80% | 27.40% | 46.20% | 48.96%
+Marginal tax rate for dividends is a % of actual dividends received (not grossed-up taxable amount). Marginal tax rate for capital gains is a % of total capital gains (not taxable capital gains). Gross-up rate for eligible dividends is 38%, and for non-eligible dividends is 15%. For more information see NL dividend tax credits.
+Newfoundland & Labrador Basic Personal Amount
+2022 Personal Amount | 2022 Tax Rate | 2021 Personal Amount | 2021 Tax Rate
+$9,804 | 8.7% | $9,536 | 8.7%
+Federal Basic Personal Amount
+2022 Personal Amount (1) | 2022 Tax Rate | 2021 Personal Amount (1) | 2021 Tax Rate
+$14,398 | 15% | $13,808 | 15%
+
+(1) See the federal tax rates page for information on the enhanced federal personal amount, which increases the marginal tax rates for taxable incomes in the second highest federal tax bracket. The marginal tax rates in blue above have been adjusted to reflect these changes.
+
+Copyright © 2002 Boat Harbour Investments Ltd.
+
+Revised: September 20, 2024
+
+Copyright © 2002 Boat Harbour Investments Ltd. All Rights Reserved. See Reproduction of information from TaxTips.ca Facebook | Twitter | LinkedIn The information on this site is not intended to be a substitute for professional advice. Each person's situation differs, and a professional advisor can assist you in using the information on this web site to your best advantage Please see our legal disclaimer regarding the use of information on our site, and our Privacy Policy regarding information that may be collected from visitors to our site.

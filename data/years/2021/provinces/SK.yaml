@@ -1,0 +1,31 @@
+# Benefit-year figures use July 2021 to June 2022, applied to current-year income.
+# SLITC indexed estimates: round(346 × 1.01) = 349 per adult; round(136 × 1.01) = 137 per child.
+# Threshold estimate: round(round(45225 × 1.01) − 349 / 0.0275) = 32986; 2.75% is statutory.
+# Property estimate: ((7.8703 city + 0.8113 library) mills × 0.8860 + 4.46 school) × 80% / 1000.
+
+code: SK
+name: Saskatchewan
+order: 4
+brackets:
+  - [45677, 0.105]
+  - [130506, 0.125]
+  - [.inf, 0.145]
+basicPersonalAmount: 16225
+dividendTaxCredit: {eligible: 0.11, nonEligible: 0.01695}
+spouseAmount: {max: 16225, threshold: 1623}
+childAmount: {perChild: 6155, ages: all}
+salesTax: {rate: 0.11, label: 5% GST + 6% PST}
+propertyTax: {rate: 0.009721518080000002, city: Saskatoon, estimated: true}
+credits:
+  - name: Saskatchewan low-income tax credit
+    program: sk-low-income-tax-credit
+    params: {adult: 349, spouse: 349, child: 137, maxChildren: 2, rate: 0.0275, threshold: 32986}
+    estimated: true
+sources:
+  - {label: "CRA, SK428 for 2021", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5008-c/5008-c-21e.pdf}
+  - {label: "CRA, SK428 worksheet for 2021", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5008-d/5008-d-21e.pdf}
+  - {label: "CRA, GST/HST historical rates and provincial sales-tax rates", url: https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/charge-collect-which-rate/calculator.html}
+  - {label: "Saskatchewan, 2020 Bill 210 explanatory notes: SLITC amounts and indexing resumption", url: https://docs.legassembly.sk.ca/legdocs/Explanatory%20Notes/28L4S/Bill28-210EN.pdf}
+  - {label: "Saskatchewan, historical 2021 indexation factor of 1%", url: https://www.saskatchewan.ca/residents/taxes-and-investments/personal-income-tax}
+  - {label: "Saskatoon, historical 2022 city/library mills and residential factor", url: https://www.saskatoon.ca/sites/default/files/media/documents/Historical%20tax%20Rate%202018-2026.pdf}
+  - {label: "Saskatoon, 2021 property-tax guide: school mills and 80% assessment portion", url: https://www.saskatoon.ca/sites/default/files/documents/assessment-tax-tool/2021_guide_to_property_tax_final_april_21_mt.pdf}

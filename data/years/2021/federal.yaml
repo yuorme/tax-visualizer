@@ -1,0 +1,84 @@
+# Federal parameters for 2021. Recurring benefits use July 2021–June 2022 amounts, applied to current-year
+# income. Extraordinary pandemic-support payments (including the young-child supplement) and carbon pricing are outside this collection's scope.
+year: 2021
+
+# CRA T4127 January 2021, table 9.1 and federal BPA formula.
+brackets:
+  - [49020, 0.15]
+  - [98040, 0.205]
+  - [151978, 0.26]
+  - [216511, 0.29]
+  - [.inf, 0.33]
+basicPersonalAmount: {max: 13808, min: 12421, from: 151978, to: 216511}
+quebecAbatement: 0.165
+employmentAmount: 1257
+indexation: 0.010
+
+investment:
+  # Schedule 3 gives 50%; Finance Canada's 2022 tax-expenditures report explicitly states 2021 dividend rates.
+  capitalGainsInclusion: 0.5
+  grossUp: {eligible: 1.38, nonEligible: 1.15}
+  dividendTaxCredit: {eligible: 0.150198, nonEligible: 0.090301}
+  # Treaty Article X(2)(b) and Income Tax Act 20(11), archived section in force June 2019–June 2023.
+  foreignWithholding: {usTreaty: 0.15, deductibleAbove: 0.15}
+
+rrsp: {rate: 0.18, limit: 27830}
+
+# T4127 payroll caps/rates; ESDC's October–December 2021 table separates base and additional contributions.
+# CPP2/QPP2 do not exist yet: no second band and zero second additional rate.
+payroll:
+  cpp: {exempt: 3500, ympe: 61600, yampe: 61600, base: 0.0495, enh1: 0.005, enh2: 0}
+  qpp: {exempt: 3500, ympe: 61600, yampe: 61600, base: 0.054, enh1: 0.005, enh2: 0}
+  ei: {maxInsurable: 56300, rate: 0.0158, quebecRate: 0.0118}
+  qpip: {maxInsurable: 83500, rate: 0.00494}
+
+childBenefit: # T4114 July 2021–June 2022, printed pages 14–15.
+  perChildUnder6: 6833
+  perChild6to17: 5765
+  threshold1: 32028
+  threshold2: 69395
+  rate1: [0, 0.07, 0.135, 0.19, 0.23]
+  fixed2: [0, 2616, 5044, 7100, 8594]
+  rate2: [0, 0.032, 0.057, 0.08, 0.095]
+
+groceriesBenefit: # CRA recurring GST/HST calculation sheet, 2020 base year.
+  name: GST/HST credit
+  adult: 299
+  spouseOrFirstChild: 299
+  child: 157
+  singleSupplement: {max: 157, rate: 0.02, from: 9686}
+  phaseOut: {rate: 0.05, from: 38892}
+
+workersBenefit: # Published 2021 Schedule 6; disability supplement excluded.
+  # Quebec income-at-maximum thresholds are exact quotients: excluded earnings + maximum / phase-in rate.
+  # single 2400+3201.09/.373; couple 3600+5000.44/.373; parent 2400+1716.40/.20;
+  # couple with children 3600+3204.03/.239. This preserves the published dollar maxima without rounding.
+  estimated: true
+  estimationNote: "Quebec's income-at-maximum thresholds are derived from the published Schedule 6 maxima divided by their phase-in rates, plus excluded earnings; all benefit amounts and reduction thresholds are published 2021 values"
+  standard: {max: [1395, 2403], rate: 0.27, floor: [3000, 3000], threshold: [22944, 26177], phaseOut: [0.15, 0.15]}
+  secondaryEarnerExemption: 14000
+  regional:
+    AB: {max: [1495, 2238], rate: 0.21, floor: [2760, 2760], threshold: [22350, 28000], phaseOut: [0.15, 0.15]}
+    NU: {max: [1385, 2080], rate: 0.14, floor: [6000, 6000], threshold: [22925, 31550], phaseOut: [0.04, 0.08]}
+  quebec:
+    phaseOutRate: 0.20
+    single: [0.373, 2400, 10982.01072386059, 12385.80]
+    couple: [0.373, 3600, 17006.005361930293, 19001.73]
+    parent: [0.20, 2400, 10982, 12402.83]
+    coupleKids: [0.239, 3600, 17005.983263598326, 19051.09]
+
+sources:
+  - {"label": "Income Tax Act", "url": "https://laws-lois.justice.gc.ca/eng/acts/I-3.3/section-20-20190621.html"}
+  - {"label": "Goods and services tax/harmonized sales tax (GST/HST) credit- calculation sheet for the July 2021 to", "url": "https://www.canada.ca/content/dam/cra-arc/serv-info/benefits/gstcclc20-eng.pdf"}
+  - {"label": "Archived -Report on Federal Tax Expenditures - Concepts, Estimates and Evaluations 2022: part 4", "url": "https://www.canada.ca/en/department-finance/services/publications/federal-tax-expenditures/2022/part-4.html"}
+  - {"label": "Quarterly report of Canada Pension Plan and Old Age Security monthly amounts and related figures \u2013 October to December 2021", "url": "https://www.canada.ca/en/employment-social-development/programs/pensions/pension/statistics/2021-quarterly-october-december.html"}
+  - {"label": "MP, DB, RRSP, DPSP, ALDA, TFSA limits, YMPE and the YAMPE", "url": "https://www.canada.ca/en/revenue-agency/services/tax/registered-plans-administrators/pspa/mp-rrsp-dpsp-tfsa-limits-ympe.html"}
+  - {"label": "How contributions affect your RRSP deduction limit", "url": "https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/rrsps-related-plans/contributing-a-rrsp-prpp/contributions-affect-your-rrsp-prpp-deduction-limit.html"}
+  - {"label": "Capital Gains (or Losses)", "url": "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5000-s3/5000-s3-21e.pdf"}
+  - {"label": "Canada Workers Benefit", "url": "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5000-s6/5000-s6-21e.pdf"}
+  - {"label": "Canada Workers Benefit", "url": "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5005-s6/5005-s6-21e.pdf"}
+  - {"label": "Canada Workers Benefit", "url": "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5009-s6/5009-s6-21e.pdf"}
+  - {"label": "Canada Workers Benefit", "url": "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5014-s6/5014-s6-21e.pdf"}
+  - {"label": "T4127(E), Payroll Deductions Formulas", "url": "https://www.canada.ca/content/dam/cra-arc/formspubs/pub/t4127-jan/t4127-01-21e.pdf"}
+  - {"label": "Convention between Canada and the United States of America with Respect to Taxes on Income and on Capital", "url": "https://www.canada.ca/en/department-finance/programs/tax-policy/tax-treaties/country/united-states-america-convention-consolidated-1980-1983-1984-1995-1997-2007.html"}
+  - {"label": "Canada Child Benefit, July 2021\u2013June 2022", "url": "https://publications.gc.ca/collections/collection_2021/arc-cra/Rv1-36-2021-eng.pdf?download=1"}
