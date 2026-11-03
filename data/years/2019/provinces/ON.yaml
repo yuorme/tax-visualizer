@@ -43,10 +43,10 @@ credits:
     program: ontario-energy-property-tax-credit
     params: {rentShare: 0.2, energyMax: 237, propertyBase: 59, propertyRate: 0.1, propertyMax: 769, rate: 0.02, thresholdSingle: 23665, thresholdFamily: 29581}
 sources:
-  - {label: "CRA, ON428 for 2019", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5006-c/5006-c-19e.pdf}
-  - {label: "CRA, ON428 worksheet for 2019", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5006-d/5006-d-19e.pdf}
-  - {label: "CRA, T4114-19: July 2019–June 2020 child benefits (official archive)", url: https://publications.gc.ca/collections/collection_2019/arc-cra/Rv1-36-2019-eng.pdf?download=1}
+  - {label: "CRA, ON 428 for 2019", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5006-c/5006-c-19e.pdf}
+  - {label: "CRA, ON 428 worksheet for 2019", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5006-d/5006-d-19e.pdf}
+  - {label: "CRA, T 4114-19: July 2019–June 2020 child benefits (official archive)", url: https://publications.gc.ca/collections/collection_2019/arc-cra/Rv1-36-2019-eng.pdf?download=1}
   - {label: "CRA, GST/HST historical rates and provincial sales-tax rates", url: https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/charge-collect-which-rate/calculator.html}
-  - {label: "CRA, 2019 LIFT Schedule ON428-A", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5006-a/5006-a-19e.pdf}
+  - {label: "CRA, 2019 LIFT Schedule ON 428-A", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5006-a/5006-a-19e.pdf}
   - {label: "Ontario, 2019 tax transparency report: sales and energy/property credits", url: https://budget.ontario.ca/2019/fallstatement/provisions.html}
   - {label: "Toronto, 2020 annual financial report: residential tax rates", url: https://www.toronto.ca/wp-content/uploads/2021/09/95b7-YE-2020-City-of-Toronto-Annual-Financial-Report.pdf}

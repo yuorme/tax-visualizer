@@ -1,6 +1,10 @@
 # Benefit-year figures use July 2019 to June 2020, applied to current-year income.
 # The early-childhood benefit pays only children under six; opportunity benefit began October 2020.
-# Vancouver official Appendix A total residential2.56116 mills /1000; additional high-value school surtax excluded.
+# Vancouver official Appendix A total residential 2.56116 mills /1000; additional high-value school surtax excluded.
+# MSP assumes full-year enrolled residents eligible for regular premium assistance, using current-year family net income.
+# Annual per-adult premiums are statutory monthly [0,11.50,17.50,23,28,32.50,37.50] ×12.
+# Spouse and child deductions are 3000 each; half the child-care deduction is added back to family net income.
+# MSP age 65/disability/student exemptions follow the model scope: under 65 adults, children under 18, no disability inputs.
 
 code: BC
 name: British Columbia
@@ -23,10 +27,28 @@ childBenefit:
   program: bc-early-childhood-benefit
   params: {perChild: 660, threshold: 100000, rate: 0.0132}
 sources:
-  - {label: "CRA, BC428 for 2019", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5010-c/5010-c-19e.pdf}
-  - {label: "CRA, BC428 worksheet for 2019", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5010-d/5010-d-19e.pdf}
-  - {label: "CRA, T4114-19: July 2019–June 2020 child benefits (official archive)", url: https://publications.gc.ca/collections/collection_2019/arc-cra/Rv1-36-2019-eng.pdf?download=1}
+  - {label: "CRA, BC 428 for 2019", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5010-c/5010-c-19e.pdf}
+  - {label: "CRA, BC 428 worksheet for 2019", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5010-d/5010-d-19e.pdf}
+  - {label: "CRA, T 4114-19: July 2019–June 2020 child benefits (official archive)", url: https://publications.gc.ca/collections/collection_2019/arc-cra/Rv1-36-2019-eng.pdf?download=1}
   - {label: "CRA, GST/HST historical rates and provincial sales-tax rates", url: https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/charge-collect-which-rate/calculator.html}
   - {label: "Vancouver, 2019 residential property-tax rates (manual official PDF web extract)", url: https://council.vancouver.ca/20190514/documents/a3.pdf}
   - {label: "B.C. Income Tax Act sections 13.07/13.071: early childhood formula and October 2020 transition", url: https://www.bclaws.gov.bc.ca/civix/document/id/complete/statreg/96215_01}
   - {label: "B.C., early childhood benefit ended September 2020", url: https://www2.gov.bc.ca/gov/content/family-social-supports/affordability/early-childhood}
+  - {label: "B.C. archived Medical and Health Care Services Regulation, sections 7.6–11", url: https://www.bclaws.gov.bc.ca/civix/document/id/loo103/loo103/426_97}
+  - {label: "B.C. MSP group guide, explicit 2018–2019 premium table", url: https://www2.gov.bc.ca/assets/gov/health/practitioner-pro/medical-services-plan/group-procedure-guide.pdf}
+  - {label: "B.C. MSP group administrator FAQ, spouse and child deductions", url: https://www2.gov.bc.ca/assets/gov/health/health-drug-coverage/medical-services-plan/group-plan-administrators-faqs.pdf}
+householdPremium:
+  program: bc-msp-premiums
+  estimated: true
+  params:
+    spouseDeduction: 3000
+    childDeduction: 3000
+    childcareAddbackRate: 0.5
+    bands:
+      - [26000, 0]
+      - [28000, 138]
+      - [30000, 210]
+      - [34000, 276]
+      - [38000, 336]
+      - [42000, 390]
+      - [.inf, 450]

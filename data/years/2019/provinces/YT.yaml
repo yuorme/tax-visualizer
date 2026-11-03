@@ -1,6 +1,6 @@
 # Benefit-year figures use July 2019 to June 2020, applied to current-year income.
-# Yukon Hansard confirms annual $820 child benefit for2015/16 through2022/23.
-# Whitehorse2020budget explicit2019comparative residential1.097% /100=0.01097.
+# Yukon Hansard confirms annual $820 child benefit for 2015/16 through 2022/23.
+# Whitehorse 2020 budget explicit 2019 comparative residential 1.097% /100=0.01097.
 
 code: YT
 name: Yukon
@@ -23,10 +23,10 @@ childBenefit:
   program: per-child-reduced
   params: {perChild: 820, threshold: 35000, rateOneChild: 0.025, rateMoreChildren: 0.05}
 sources:
-  - {label: "CRA, YT428 for 2019", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5011-c/5011-c-19e.pdf}
-  - {label: "CRA, YT428 worksheet for 2019", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5011-d/5011-d-19e.pdf}
-  - {label: "CRA, T4114-19: July 2019–June 2020 child benefits (official archive)", url: https://publications.gc.ca/collections/collection_2019/arc-cra/Rv1-36-2019-eng.pdf?download=1}
+  - {label: "CRA, YT 428 for 2019", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5011-c/5011-c-19e.pdf}
+  - {label: "CRA, YT 428 worksheet for 2019", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5011-d/5011-d-19e.pdf}
+  - {label: "CRA, T 4114-19: July 2019–June 2020 child benefits (official archive)", url: https://publications.gc.ca/collections/collection_2019/arc-cra/Rv1-36-2019-eng.pdf?download=1}
   - {label: "CRA, GST/HST historical rates and provincial sales-tax rates", url: https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/charge-collect-which-rate/calculator.html}
   - {label: "Yukon Finance, spring 2024 briefing with 2023 child benefit parameters", url: https://open.yukon.ca/information/de20b25e-b7d5-45ed-aacd-5ce4e968bec4/resource/57bd0240-b717-3e8b-9c1e-f9a386d62022/download/fin_spring_2024.pdf}
-  - {label: "Yukon Hansard April 16 2026 p667, historical child benefit maximum (manual web extract)", url: https://yukonassembly.ca/sites/default/files/hansard/36-1-24.pdf}
-  - {label: "Whitehorse, operating-budget package with 2022 tax-rate comparison", url: https://www.whitehorse.ca/wp-content/uploads/2022/05/OperatingBudgetPackage2020.pdf}
+  - {label: "Yukon Hansard April 16 2026 p 667, historical child benefit maximum (manual web extract)", url: https://yukonassembly.ca/sites/default/files/hansard/36-1-24.pdf}
+  - {label: "Whitehorse, 2020 budget with explicit 2019 tax-rate comparative", url: https://www.whitehorse.ca/wp-content/uploads/2022/05/OperatingBudgetPackage2020.pdf}

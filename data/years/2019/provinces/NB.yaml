@@ -1,5 +1,5 @@
 # Benefit-year figures use July 2019 to June 2020, applied to current-year income.
-# Moncton historical table explicitly gives 2019 rate1.6497 per100. HST benefit unchanged.
+# Moncton historical table explicitly gives 2019 rate 1.6497 per 100. HST benefit unchanged.
 
 code: NB
 name: New Brunswick
@@ -32,9 +32,9 @@ credits:
     program: nb-hst-credit
     params: {adult: 300, spouse: 300, child: 100, rate: 0.02, threshold: 35000}
 sources:
-  - {label: "CRA, NB428 for 2019", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5004-c/5004-c-19e.pdf}
-  - {label: "CRA, NB428 worksheet for 2019", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5004-d/5004-d-19e.pdf}
-  - {label: "CRA, T4114-19: July 2019–June 2020 child benefits (official archive)", url: https://publications.gc.ca/collections/collection_2019/arc-cra/Rv1-36-2019-eng.pdf?download=1}
+  - {label: "CRA, NB 428 for 2019", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5004-c/5004-c-19e.pdf}
+  - {label: "CRA, NB 428 worksheet for 2019", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5004-d/5004-d-19e.pdf}
+  - {label: "CRA, T 4114-19: July 2019–June 2020 child benefits (official archive)", url: https://publications.gc.ca/collections/collection_2019/arc-cra/Rv1-36-2019-eng.pdf?download=1}
   - {label: "CRA, GST/HST historical rates and provincial sales-tax rates", url: https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/charge-collect-which-rate/calculator.html}
   - {label: "New Brunswick Finance, child benefit and working supplement annual amounts and reduction rates", url: https://www2.gnb.ca/content/gnb/en/departments/finance/taxes/child_tax_benefit.html}
   - {label: "CRA, New Brunswick HST calculation sheet (unchanged 2016 parameters)", url: https://www.canada.ca/content/dam/cra-arc/migration/cra-arc/bnfts/rltd_prgrms/nbhstccs-eng.pdf}

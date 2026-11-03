@@ -1,0 +1,823 @@
+Title: MEDICAL SERVICES PLAN
+URL: https://www2.gov.bc.ca/assets/gov/health/practitioner-pro/medical-services-plan/group-procedure-guide.pdf
+Fetched: 2026-11-02
+SHA-256 of the original: 350eb00bcfb4a6f9949b2b8021e8533a258d2afdef8f74a36533577c388dc178
+Publication date modified: 2026-06-30
+PDF pages: all 24
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 1 of 24 ---
+
+MEDICAL SERVICES PLAN
+GROUP PROCEDURE GUIDE
+
+--- PDF page 2 of 24 ---
+
+GROUP PROCEDURE GUIDE
+TABLE OF CONTENTS
+Elimination of MSP Premiums 1
+Introduction 2
+MSP Direct 3
+Eligibility for Health Care Benefits 4
+Employee Enrolment 5
+Assigning Employee’s Effective Date 8
+Changes to Employee’s Account 9
+Addition of Family Member 10
+Cancelling a Family Member’s Group Coverage 12
+Children Age 19 and Over 12
+Attending School Outside British Columbia 13
+Group Account Maintenance Letter & Account Summary 13
+Cancellation of Benefits 14
+Changing Company Name 15
+Group Invoice 16
+Leaving British Columbia 19
+Other Information 20
+Contact Information 21
+HLTH 462 REV. 2026/06/30
+
+--- PDF page 3 of 24 ---
+
+ELIMINATION OF MSP PREMIUMS
+Medical Services Plan (MSP) premiums were eliminated as of January 1, 2020. As of this date,
+residents of British Columbia are no longer charged MSP premiums. Enrolment in MSP remains
+mandatory for all residents.
+The structure of MSP accounts remains the same after January 1, 2020: accounts include an
+account holder and, if applicable, a spouse and/or children. All new and returning residents who
+have not already done so are required to complete two steps for MSP enrolment:
+· Submit an Application for MSP Enrolment to Health Insurance BC (HIBC); and
+· Obtain a BC Services Card by visiting an ICBC driver licensing office.
+Note: as of January 1, 2020, individuals applying for MSP enrolment on group accounts who
+have not completed enrolment by obtaining a BC Services Card are no longer placed on self-
+administered accounts. All group members will be placed on your group account. Those who have
+completed enrolment will be placed on the account with active MSP coverage. Those who have
+not completed enrolment will be placed on the account with pending (inactive) MSP coverage.
+Premium debts owed prior to January 1, 2020 remain a debt payable to the province. Revenue
+Services of British Columbia will continue to bill for unpaid premiums.
+Following January 1, 2020, those who have not already applied for Regular Premium Assistance
+and who want to apply for MSP supplementary benefits (which provide partial payment for
+certain medical services obtained in British Columbia and may provide access to other income-
+based programs) must submit an Application for Supplementary Benefits.
+1
+
+--- PDF page 4 of 24 ---
+
+INTRODUCTION
+Health Insurance BC (HIBC) is the operational arm of the Medical Services Plan (MSP), which
+provides basic medical benefits to eligible BC residents. Information on these benefits is available
+by visiting the Ministry of Health’s website at www.gov.bc.ca/medicalservicesplan
+This Group Procedure Guide is designed to help you in the administration of your organization’s
+group medical coverage. Definitions and regulations are outlined and we have provided
+instructions to assist you in the completion of our various forms.
+This guide provides a general outline only. All information is subject to change in accordance with
+the provisions of the Medicare Protection Act and Medical and Health Care Services Regulation,
+and the Hospital Insurance Act and Regulations. If a discrepancy exists between the guide and the
+legislation, the legislation will prevail.
+VERSION HISTORY
+January 2020: Updated to reflect changes to policies and procedures related to the elimination of
+Medical Services Plan (MSP) premiums effective January 1, 2020.
+GLOSSARY
+Two-Step Enrolment:
+To enrol in the Medical Services Plan (MSP), new and returning adult residents must complete
+two steps:
+1. Complete Identity Proofing by visiting an Insurance Corporation of BC (ICBC) driver
+licensing office, and requesting a Photo BC Services Card; and
+2. Submit an application for MSP enrolment to HIBC, along with supporting
+documentation.
+MSP Registration:
+MSP registration is one part of the two-step MSP enrolment process. An individual can register
+for MSP by submitting an MSP Application for Enrolment or MSP Application for Group
+Enrolment. An individual that has only completed MSP registration will not have access to
+insured provincial health care benefits. Enrolment must be completed by visiting an ICBC driver
+licensing office.
+MSP Enrolment:
+MSP enrolment is the complete process of obtaining MSP coverage via Two-Step Enrolment. An
+individual who has completed MSP enrolment will have access to insured provincial health care
+benefits.
+2
+
+--- PDF page 5 of 24 ---
+
+ICBC driver licensing office:
+MSP enrolment can be completed by visiting an ICBC driver licensing office and requesting a
+Photo BC Services Card. An ICBC driver licensing office may include an ICBC office, or, in
+some communities, a designated Service BC location. Residents can book an appointment to visit
+an ICBC driver licensing office at a location and time that suits them. For more information,
+please visit www.icbc.com/appointment. If they are unable to make an appointment, walk-in
+services are available at all ICBC driver licensing locations. Check the ICBC website for office
+hours at the desired location.
+Identity Proofing:
+When visiting an ICBC driver licensing office to complete enrolment, individuals must verify
+their identity with two pieces of acceptable identification. One of the pieces of identification must
+be primary ID. Visit www.icbc.com/acceptedID for more information.
+MSP DIRECT
+MSP Direct is an on-line service that allows group plan administrators to make on-line
+adjustments on behalf of their employees/pensioners. This service reduces turn around time
+and administrative costs, and eliminates billing for cancelled employees.
+With MSP Direct you are able to do the following, and more, under your group plan:
+• Validate an address
+• Record documents
+• Add employees
+• Add employee’s dependant(s) (spouse or child)
+• Cancel employees
+• Cancel employee’s dependant(s) (spouse or child)
+• Extend coverage for eligible children age 19 – 24
+• Obtain and update employee’s contact address
+It is no longer possible to submit personal information changes (e.g. name change) through MSP
+Direct. Please use a Group Change Request form for this purpose.
+To find out more about MSP Direct visit: http://www.gov.bc.ca/mspdirect
+3
+
+--- PDF page 6 of 24 ---
+
+ELIGIBILITY FOR HEALTH CARE BENEFITS
+WHO IS ELIGIBLE
+To qualify for health care benefits in British Columbia (BC) a person must be a resident of
+BC. The Medicare Protection Act defines a resident as a person who:
+“(a) is a citizen of Canada or is lawfully admitted to Canada for permanent residence,
+(b) makes his or her home in British Columbia, and
+(c) is physically present in British Columbia for
+(i) at least 6 months in a calendar year, or
+(ii) a shorter prescribed period,
+and includes a person who is deemed under the regulations to be a resident but does not
+include a tourist or visitor to British Columbia.”
+The shorter prescribed period is defined in the Medical and Health Care Services Regulation
+and applies to eligible BC residents for vacation purposes only, for a total absence of up to seven
+months per calendar year.
+Those deemed to be residents may include individuals who hold temporary immigration
+status or who are temporarily absent from British Columbia. For more information on residency
+requirements, visit the MSP website at http://www.gov.bc.ca/mspeligibility.
+REQUIREMENT TO ENROL
+Residents of BC are required to enrol with MSP.
+Under Section 7(1) of the Medicare Protection Act, a resident must apply to the Medical Services
+Commission
+“(a) for enrollment as a beneficiary if not already enrolled, and
+(b) for enrollment of each of the resident’s children as a beneficiary if the child
+(i) is a resident, and
+(ii) is not already enrolled, or does not already have someone applying for enrollment
+on the child’s behalf.”
+Benefits for active members of the Canadian Forces are a federal responsibility; therefore, these
+members are ineligible for provincial health care benefits and exempt from enrolling.
+A small number of residents, for religious or other reasons, may not want to participate in the
+province’s health care plans. These residents can file an Election to Opt Out statement with the
+Ministry of Health; however, the consequences of doing so are very serious. If a person chooses
+to file an Election to Opt Out statement, he/she must contact HIBC directly.
+Under no circumstances may an Election to Opt Out be made on behalf of a child who is a
+resident.
+4
+
+--- PDF page 7 of 24 ---
+
+EMPLOYEE ENROLMENT
+APPLICATION FOR GROUP ENROLMENT
+An Application for Group Enrolment must be submitted for each member who is to be registered
+under your group plan. To retain eligibility, a minimum of two members with active MSP
+coverage, who are not in the same family structure, must be maintained at all times.
+• For members with active MSP coverage, refer to EXISTING BC RESIDENTS.
+• For members who must enrol in MSP, refer to NEW AND RETURNING BC RESIDENTS.
+EXISTING BC RESIDENTS
+Applications to add a new member to your group should be submitted to HIBC as soon as
+possible. Please ensure the application form is completed in full by the member and that he/she
+includes any required documents before the application is sent to our office.
+If documents are not required (e.g. a new member with active MSP coverage is added), members
+can submit the Group Enrolment form electronically at
+www.gov.bc.ca/mspgroupplanadministratorforms.
+Pre-Existing Self-Administered Coverage
+If a member is enrolled with MSP on an individual basis or as a spouse or child, HIBC will
+cancel the existing account when your group application is processed. Revenue Services of British
+Columbia (RSBC) is responsible for refunding any over-payment of premiums.
+Pre-Existing Group Coverage
+If a member is already enrolled with MSP under another group (or spouse’s group), HIBC will
+not automatically cancel the existing account when your group application is processed. If the
+member’s former group does not cancel the member’s coverage, the member should contact that
+group directly for assistance.
+NEW AND RETURNING BC RESIDENTS
+BC Services Card and PHN
+To obtain access to insured provincial health care benefits, eligible BC residents must complete
+MSP enrolment and obtain a BC Services Card. Each resident of BC enrolling in MSP is issued a
+unique lifetime identifier for health care called the Personal Health Number (PHN). This number
+appears on the BC Services Card and is the same throughout the cardholder’s lifetime regardless
+of any change to personal status.
+There are three types of BC Services Cards:
+• Combined Card - BC Driver’s Licence & BC Services Card
+• Photo BC Services Card
+• Non-Photo BC Services Card
+There is currently no fee for replacement of cards. However, if combining a BC Services Card
+with a driver’s licence, fees that apply to the regular driver’s licence process still apply. For more
+information on replacing a card, please visit: www.gov.bc.ca/bcservicescard
+5
+
+--- PDF page 8 of 24 ---
+
+TWO STEPS TO ENROL IN MSP
+Enrolment in MSP is a two-step process for persons 19 years of age or over who have Canadian
+citizenship or permanent resident status in Canada.
+Step 1:
+New and returning residents that are to be added to an MSP group account need to identity
+proof by visiting an Insurance Corporation of BC (ICBC) driver licensing office, and requesting
+a Photo BC Services Card. The BC Services Card provides access to insured provincial health care
+benefits for eligible BC residents.
+Residents can book an appointment to visit an ICBC driver licensing office at a location and
+time that suits them. For more information, please visit www.icbc.com/appointment. If they
+are unable to make an appointment, walk-in services are available at all ICBC driver licensing
+locations. Check the ICBC website for office hours at the desired location.
+At the ICBC driver licensing office, residents will need to:
+• Provide two pieces of identification – one of which must be primary ID;
+(visit www.icbc.com/acceptedID for more information);
+• Declare that they are a BC resident; and
+• Have their photo taken.
+Step 2:
+New and returning BC residents will need to submit an application for MSP enrolment to HIBC,
+along with supporting documentation.
+Visit: www.gov.bc.ca/mspgroupplanadministratorforms for the Application for Group Enrolment.
+Account holders and/or spouses who have not completed both steps for MSP enrolment will
+be registered on an account under your group with pending (inactive) coverage status. These
+individuals will not be able to claim MSP benefits, including benefits accessible through income-
+based programs. Once each individual has completed both enrolment steps, and residency
+requirements are fulfilled, they will be enrolled with active coverage and will be able to claim
+MSP benefits.
+Note: children will be placed on your group with active coverage status, at the time of their
+parent’s/guardian’s registration.
+Pending and active coverage status will be reflected in the Group Account Maintenance
+Confirmation letter (sent monthly to all groups) and Group Account Coverage Summary letter
+(if requested). For more information, see “Monitoring Your Group Plan Membership”, p. 13.
+If a member submits an Application for Group Enrolment first, please ensure that the member
+visits an ICBC driver licensing office before the conclusion of their MSP wait period. The MSP
+wait period is the balance of the month in which residence in British Columbia is established,
+plus two months. If the MSP wait period has already been completed prior to application, the
+member should complete identity-proofing by visiting an ICBC driver licensing office as soon as
+possible to complete MSP enrolment.
+Premium Billing and Retroactive Coverage
+A new and returning resident will not be enrolled in MSP with active coverage until they
+have visited an ICBC driver licensing office to request a BC Services Card and completed the
+Application for Group Enrolment. 6
+
+--- PDF page 9 of 24 ---
+
+Temporary Immigration Status
+Individuals with temporary immigration status – regardless of age – are not required to visit
+an ICBC driver licensing office to obtain a BC Services Card. Individuals with temporary
+immigration status will automatically be issued a Non-Photo BC Services Card from HIBC.
+For more information on the BC Services Card, please visit: www.gov.bc.ca/bcservicescard
+Renew Enrolment in MSP
+Most BC residents 18.5 years of age and over will be sent a notification letter instructing them to
+renew enrolment in MSP by completing identity-proofing at an ICBC driver licensing office.
+If the person’s name on the notification letter is different than their current name, they will need
+to contact HIBC before visiting an ICBC driver licensing office.
+Residents can book an appointment to visit an ICBC driver licensing office at a location and time
+that suits them. For more information, please visit www.icbc.com/appointment. If they are unable
+to make an appointment, walk-in services are available at all ICBC driver licensing locations.
+Check the ICBC website for office hours at your desired location.
+At the ICBC driver licensing office, the individual will need to:
+• Provide two pieces of identification – one of which must be primary ID;
+(visit www.icbc.com/acceptedID for more information);
+• Declare that they are a BC resident; and
+• Have their photo taken.
+They should also bring their CareCard or expired/expiring BC Services Card with them.
+After meeting these requirements, the applicant will receive a BC Services Card Statement of
+Declaration which, in most cases, will include their PHN. The member can use this interim
+document to access insured health care benefits until their BC Services Card arrives in the mail.
+Children under the age of 19 have no obligation to renew their enrolment. Children under 18.5
+will automatically be issued a new BC Services Card when their cards expire.
+Beneficiaries 75 years of age or over are not required to renew enrolment in MSP. To obtain a
+Photo BC Services Card, they may visit an ICBC driver licensing office. To obtain a Non-Photo
+BC Services Card, they may contact HIBC.
+Persons with temporary immigration status are not required to visit an ICBC driver licensing
+office. See page 7 for more information.
+COLLECTION AND USE OF PERSONAL INFORMATION
+Personal information is collected under the authority of the Medicare Protection Act and section
+26 (a), (c) and (e) of the Freedom of Information and Protection of Privacy Act (FOIPPA) for the
+purposes of administration of the Medical Services Plan. Information may be disclosed pursuant
+to section 33 of FOIPPA. If you have any questions about the collection and use of your personal
+information, please contact the Health Insurance BC Chief Privacy Office at Health Insurance
+BC, Chief Privacy Office, PO Box 9035 STN PROV GOVT, Victoria, BC V8W 9E3 or call
+604 683-7151 (Vancouver) or 1 800 663-7100 (toll-free).
+7
+
+--- PDF page 10 of 24 ---
+
+ASSIGNING EMPLOYEE’S EFFECTIVE DATE
+COVERAGE FOR ESTABLISHED RESIDENTS
+Generally speaking, group coverage is provided when requested by the group administrator, on
+the first day of the month of employment or the first day of the month following employment,
+provided the applicant has met the residency requirements for provincial health care benefits.
+NEW RESIDENTS
+Moving from within Canada
+Canadian citizens and holders of permanent resident status (landed immigrants) who move to BC
+from another province are eligible for coverage after a wait period consisting of the balance of the
+month in which residence in BC is established, plus two months. If absences from Canada exceed
+a total of 30 days during the wait period, eligibility for benefits may be affected.
+There is an inter-provincial agreement to ensure that persons moving within Canada are able to
+maintain uninterrupted medical coverage. Arrangements should be made by the beneficiary to
+continue coverage with the former province until the wait period is completed.
+When a family moves to BC from within Canada and the applicant and spouse arrive separately,
+each person has their own wait period based on their individual BC arrival dates.
+Moving from outside Canada
+Canadian citizens and holders of permanent resident status (landed immigrants) who move to BC
+from outside Canada are eligible for coverage after a wait period consisting of the balance of the
+month in which residence in BC is established, plus two months. If absences from Canada exceed
+a total of 30 days during the wait period, eligibility may be affected. Obtaining private insurance
+for the wait period is the responsibility of the individual.
+Exceptions
+• Canadian Forces members who are discharged in BC do not have to fulfill the wait period.
+They are eligible for coverage on the date of release provided they are in BC on that date.
+Their spouse and/or children returning from a posting outside BC are eligible for coverage on
+their date of arrival in British Columbia.
+• When a child remains in another province or country to continue schooling and intends
+to join the family later, benefits are provided for the child effective the same date as for the
+account holder.
+TEMPORARY DOCUMENT HOLDERS
+Persons who hold temporary immigration status may be eligible for coverage. In order to
+determine eligibility, HIBC must view photocopies of their immigration documents.
+If eligible, coverage will generally be extended to the “valid until date” shown on their
+immigration document, provided residency requirements continue to be met. Photocopies of all
+new documents must be submitted to HIBC in order to determine whether coverage
+can continue.
+8
+
+--- PDF page 11 of 24 ---
+
+CHANGES TO EMPLOYEE’S ACCOUNT
+Personal information changes must be submitted with the Group Change Request form along
+with supporting documentation to HIBC. When the change is confirmed, all adults qualifying
+for a photo BC Services Card will receive a letter directing them to the ICBC driver license office
+(DLO). Those qualifying for non-photo cards will receive them automatically from HIBC.
+A Group Change Request can be completed to make adjustments to accounts. If documents are
+required (e.g. adding a dependant who is new to the province or changing the name of an existing
+employee or dependant) go to www.gov.bc.ca/mspgroupplanadministratorforms and use the Group
+Change Request. Complete and submit the forms along with supporting documentation.
+If no documents are required (e.g. removing an existing dependant) employees or group
+administrators can submit the Group Change Request electronically at
+www.gov.bc.ca/mspgroupplanadministratorforms.
+In some cases, when obtaining or renewing their BC Services Card at an ICBC DLO, an
+employee or dependant may provide a change of personal information, with supporting
+documentation, to the DLO counter agent. ICBC may forward the documentation to HIBC to
+update the employee’s MSP account; or the employee will have the option of forwarding their
+documents to HIBC. In this event, HIBC will update the employee or dependant’s personal
+information. For changes to the account holder’s information, HIBC will send you a letter
+outlining the change.
+GUARDIANSHIP
+If requesting addition of a child who is not the beneficiary’s child, HIBC requires a photocopy
+of a legal document indicating guardianship to determine eligibility as a dependant. This
+information must be sent with a change form.
+A person must be a resident of BC to qualify for provincial health care benefits. Please refer to
+page 2 for the definition of a resident, under “Who is Eligible”.
+9
+
+--- PDF page 12 of 24 ---
+
+ADDITION OF FAMILY MEMBER
+A family member includes a spouse, child or dependent post-secondary student.
+“Spouse” with respect to another person means a resident of BC who is married to another person
+or is living with another person in a marriage-like relationship.
+“Child”, for the purpose of determining who may be included on a member’s MSP account,
+means a resident of BC who:
+(a) is a child of a beneficiary or a person in respect of whom the beneficiary stands in place of
+a parent,
+(b) is a minor,
+(c) does not have a spouse, and
+(d) is supported by the beneficiary.
+“Dependent post-secondary student”, for the purpose of determining who may be included on a
+member’s MSP account, means a resident of BC who is:
+(a) older than 18 and younger than 25 years of age,
+(b) in full-time attendance at a recognized post-secondary institution, and
+(c) supported by a beneficiary who is the person’s parent or who stands in place of the person’s
+parent.
+A dependent post-secondary student may include a student enrolled in full-time studies at a trade
+school, technical school or high school.
+See Baby Enrolment / Addition of Newborn or Group Change Request, found at
+www.gov.bc.ca/mspgroupplanadministratorforms.
+10
+
+--- PDF page 13 of 24 ---
+
+ADDING A SPOUSE
+To add a spouse to a Group Account (employer, pension plan or other): the Group member or
+Group Administrator should submit an MSP Group Change Request form (HLTH 170) (PDF
+version) to HIBC, authorized by the Group Administrator if required, along with all required
+supporting documents.
+Groups submitting spouse changes (addition or removal of a spouse) via MSP Direct must retain
+a copy of one of the following:
+• MSP Group Change Request form (HLTH 170) completed and signed by the group
+account holder requesting the change; or
+• A statement completed and signed by the group account holder requesting the change and
+including the following:
+º the date of signature
+º the date of divorce or separation
+º the group member’s and former spouse’s full names
+º the former spouse’s current address, or an indication that the new address is unknown
+º the group member’s and former spouse’s Account Numbers or Personal Health
+Numbers
+Failure to update an MSP account after a Group member is married or begins living in a
+marriage-like relationship may impact eligibility for MSP supplementary benefits and other
+income-based programs.
+COVERAGE FOR ESTABLISHED RESIDENTS: ELIGIBILITY
+Spouse – is eligible as of the date of marriage.
+Newborn – is eligible as of the date of birth.
+Student age 19 to 24 – if coverage is required, is eligible for coverage under the parent’s plan on
+the first day of the month of enrolment at an accredited school or university. For studies outside
+of BC, please refer to page 13 “Attending School Outside British Columbia”.
+Adopted Child – if adopted within Canada the child is eligible from the date of adoption.
+A copy of the Notice of Placement from the adoption agency is required. If being adopted from
+outside Canada the child is generally eligible on the date of arrival in BC. A copy of the child’s
+immigration document and a letter from the Director of Adoptions, Ministry of Children and
+Family Development, to Immigration, Refugees and Citizenship Canada (either a letter of no
+objection or a Hague letter) is required. If the child is being adopted from the United States and
+arrives in BC before an immigration document has been issued, the parents should include a note
+to this effect, and a copy of the letter described previously.
+Common-law Spouse – is eligible on the first day of the month requested by the beneficiary.
+COVERAGE FOR NEW RESIDENTS
+Family members establishing residence in BC may be eligible for coverage as outlined on page 5.
+11
+
+--- PDF page 14 of 24 ---
+
+CANCELLING A FAMILY MEMBER’S GROUP COVERAGE
+A family member’s group coverage will be cancelled at the end of the month he/she ceases to be
+eligible. Please have your employee complete and submit a Group Change Request (found at
+www.gov.bc.ca/mspgroupplanadministratorforms), along with all required supporting documents,
+to cancel group coverage if any of the following situations occur:
+Spouse if
+• Divorced / separated
+• Deceased
+Child if
+• Employed full time
+• Married or living and cohabiting in a marriage-like relationship
+• Age 19* or older and no longer enrolled in a full-time study program at a recognized
+educational facility
+• Deceased
+If a spouse or child has moved permanently from British Columbia, direct your group member
+to update their account using the online Permanent Move form
+(www.health.gov.bc.ca/exforms/msp/7063.html).
+If a spouse or child obtains his/her own coverage, HIBC will cancel the spouse or child from the
+employee’s plan.
+* The next section provides information regarding children age 19 to 24.
+CHILDREN AGE 19 AND OVER
+In order to remain eligible for coverage upon a child’s 19th birthday, a child must meet the
+residency requirements and all of the following requirements as a dependent post-secondary
+student:
+• Single (not married or living and cohabiting in a marriage-like relationship)
+• 24 years of age or younger
+• Supported by the account holder, who is their parent or guardian
+• Enrolled in a full-time study program at an accredited recognized post-secondary institution
+A child between 19 and 25 years of age may be enrolled on a parent or guardian’s account if
+they are in full-time attendance at a recognized post-secondary institution, and are financially
+supported by the parent or guardian.
+An account holder with a child turning 19 or 25 years old will receive notification from
+Health Insurance BC providing options for the child’s ongoing MSP coverage. You will receive
+notification if any children are added to or removed from a family’s coverage on your group
+account.
+12
+
+--- PDF page 15 of 24 ---
+
+ATTENDING SCHOOL OUTSIDE BRITISH COLUMBIA
+Residents, who leave BC temporarily to attend school or university, may be eligible for MSP
+coverage for the duration of studies, provided they are in full-time attendance at an accredited
+educational facility and at the time of leaving were physically present in Canada for six of the 12
+months immediately preceding departure.
+Beneficiaries who have been studying outside BC must return to the province by the end of the
+month following the month in which studies are completed. Residents studying outside BC must
+contact HIBC prior to departure and upon return to BC to confirm eligibility. Students who do
+not plan to return to BC within the required timeframe, or who decide to leave BC permanently,
+must contact HIBC.
+Please provide our Leaving BC pamphlet to any account holder or family member who will be
+leaving the province to attend school or university.
+MONITORING YOUR GROUP PLAN MEMBERSHIP
+HIBC provides MSP Group Plan administrators with information on their plan membership
+through two types of monthly mailed letters:
+• Confirmation of MSP Group Account Changes. This letter indicates any changes to
+membership in the previous calendar month, including new additions and cancellations,
+with the associated account numbers/PHNs and effective dates. It is sent to all MSP Group
+Plans by default (if there were any changes in the past month).
+• Summary of MSP Group Account Enrolment. This letter lists all members of an MSP Group
+Plan, with the associated account numbers/PHNs and number of individuals covered with
+each account holder. It is available upon request by an MSP Group Plan administrator, and
+can be provided on an ongoing monthly basis, or as a single issuance.
+Please contact HIBC to request the Summary of MSP Group Account Enrolment letter, or to
+discontinue subscription to either letter type.
+13
+
+--- PDF page 16 of 24 ---
+
+CANCELLATION OF BENEFITS
+Group enrolment is cancelled on the last day of the month; however, if an employee leaves before
+becoming eligible, his/her group coverage can be cancelled as of the effective date. MSP requires
+the reason for cancellation, the person’s current address and, if the person has moved outside BC,
+the date of the move.
+To request a cancellation, submit a Coverage Cancellation form (HLTH 217, found at
+www.gov.bc.ca/mspgroupplanadministratorforms), to Health Insurance BC (HIBC), or submit a
+written request including your group number, employee account number(s) and name(s), and all
+the information required on the form.
+TWO MONTH RULE LIMIT
+Retroactive cancellations are allowed up to a maximum of two months including the current
+month. For example, if a cancellation request is received during December, groups can ask for
+cancellation retroactive to October 31.
+DUPLICATE COVERAGE
+If advised that duplicate MSP coverage has occurred, HIBC can cancel retroactive to the date the
+duplication began to a maximum of five years.
+EMPLOYEES TRANSFERRING BETWEEN GROUPS/DEPARTMENTS
+Administrators who have more than one group account and who transfer employees from one
+account to another can do so without completing applications for enrolment.
+Please contact HIBC for details.
+WHEN GROUP ENROLMENT ENDS
+Group administrators are asked to ensure that employees are:
+• Aware of the date their group account will be cancelled; and,
+• Provided with a “Notice to Terminating Employees” form
+(found at www.gov.bc.ca/mspgroupplanadministratorforms).
+The employee does not need to reapply to MSP. We will automatically set up a self-administered
+account for him or her and any family members.
+Exception: If the employee has a temporary immigration document, the employee must contact
+HIBC to arrange further coverage.
+COVERAGE FOR DEPENDANTS OF A DECEASED BENEFICIARY
+When you cancel coverage for a deceased employee or pensioner, coverage for a surviving spouse
+and children will be cancelled as of the same cancellation date as the account holder. The spouse
+and children will be enrolled on a new self-administered account. If you would like the coverage
+for the spouse and children to remain active under your group, you must advise Health Insurance BC.
+14
+
+--- PDF page 17 of 24 ---
+
+CANCELLATION OF A GROUP
+Cancelling a Medical Services Plan (MSP) Group Plan is a significant undertaking which must be
+carefully considered. For over 40 years, MSP Groups have worked in partnership with the Ministry of
+Health and partners to manage the coverage of members and dependents. MSP Group Administrators
+help to provide current demographic, address, and family structure information in the MSP system of
+record. Groups may take advantage of supported technical interfaces to facilitate their efforts, including
+MSP Direct.
+If your organization has determined that its MSP group(s) will be cancelled, detailed preparation by
+your Group Administrator is required. This begins with the submission of the HLTH 295 MSP Group
+Plan Termination Form to HIBC, with at least 90 days’ notice.
+In addition to providing formal notification to HIBC, third-party organizations, and technical
+interface providers (as appropriate), Group Administrators must also inform their members of this
+change. Prior to cancellation, Group Administrators are expected to consult with members to confirm
+that all address and family structure information in MSP is correct and current.
+For more information, and steps to cancel an MSP Group Plan, please refer to the HLTH 295 MSP
+Group Plan Termination Form, available online at www.gov.bc.ca/mspgroup-plan-cancellation.
+Allow at least 90 days for this process, to provide your Group and members sufficient time to prepare.
+Once all of the required steps have been completed, your MSP Group Plan will be cancelled on the last
+day of the specified month. HIBC will then move all members to self-administered accounts.
+To help inform your members, please provide your group members with the HLTH 1904: End of
+Group Coverage Notice at least 30 days prior to cancellation, available on the MSP website at
+www.gov.bc.ca/mspgroup-plan-cancellation.
+Care and attention from your MSP Group will ensure that this change is seamless for your group
+members and their families.
+CHANGING COMPANY NAME
+If you are simply changing the name of your company, HIBC requires a copy of the company’s
+legal name change. If, however, a new company has been created, a new
+Third Party Registration form (found at www.gov.bc.ca/mspgroupplanadministratorforms)
+must be completed. Please contact HIBC.
+HEALTHY KIDS PROGRAM
+Healthy Kids provides financial assistance for basic dental treatment, optical care, and hearing
+assistance for children under the age of 19, if the parent is receiving supplementary benefits
+and the employer does not offer extended health or dental benefits. For more information
+about the benefits available under the Healthy Kids program, please call the Ministry of Social
+Development and Social Innovation at 1 866 866-0800.
+15
+
+--- PDF page 18 of 24 ---
+
+GROUP INVOICE
+RSBC issues MSP premium invoices, processes payments and collects overdue accounts.
+MSP Groups in good standing received their last MSP premiums invoice in December 2019.
+If there are no outstanding premiums, no further invoices will be issued except in the case of
+retroactive adjustments. Overdue accounts and group plan adjustments are invoiced until the
+account is paid in full.
+PAYMENT OF INVOICES
+You can pay outstanding MSP premiums for your group plan through your bank or financial
+institution; at a government office; or by mail.
+Through Your Bank or Financial Institution
+Most banks and financial institutions offer bill payment services that can be accessed through:
+• your online banking account
+• an automated teller machine (ATM)
+• telephone banking
+Once your payment is received, it will be applied to your account within two business days.
+To pay your outstanding MSP premiums using a bill payment service you need to add a payee
+for MSP to your bank account. To add a new payee to your bank account you need to know the
+RSBC payee name and your account number.
+Payee Name
+You should be able to find RSBC listed with your bank under “MSP Group-RSBC”.
+Some banks and financial institutions will use a variation of the payee name above. If you are
+unable to find RSBC, call your bank for assistance.
+Account Number
+Your account number is listed on the top of your MSP invoice (e.g. X34012345678).
+At a Government Office
+You can pay your MSP invoice in person at a Service BC Centre. To make a payment you must
+have your MSP account number (e.g. X34012345678) from your invoice.
+Payments are accepted by cash, debit, cheque, bank draft or money order made payable to the
+Minister of Finance. Credit card payments aren’t accepted.
+Once your payment is received, it will be applied to your account within three business days.
+16
+
+--- PDF page 19 of 24 ---
+
+By Mail
+You can make payments by cheque, bank draft or money order made payable to the Minister of
+Finance through the mail. Do not send cash.
+If you administer multiple group plan accounts, you should pay each account with a separate
+cheque. You can include multiple payments in the same envelope, if you include a copy of the
+payment coupon portion of the invoice for each account.
+If the payment amount differs from the amount indicated on the invoices or your enclosed
+directions, RSBC will use its discretion in applying your payment(s) to the accounts involved.
+Send your payments to:
+Medical Services Plan
+PO BOX 9482 STN PROV GOVT
+VICTORIA BC V8W 9W6
+OVERDUE PAYMENT
+When an arrangement is made to pay all or part of another person’s premiums or to collect
+premiums from another person, those premiums must be paid on or before the required due date
+as stated in Section 32 (1) of the Medicare Protection Act.
+If you did not pay the MSP group premiums you owed in full by the due date, your account
+became overdue and you are charged interest on any overdue amount.
+MSP premium debts from before January 1, 2020 remain payable. Collection action will begin
+on overdue accounts and your group plan may be cancelled.
+INTEREST
+Interest is compounded monthly at a rate of prime plus 3%. Interest is charged on:
+1. all overdue MSP group premiums
+2. premium adjustments
+3. previously invoiced interest
+Interest will only appear on your invoice if you owe more than $5.00 of interest. If it is the first
+time the interest has appeared on your invoice it is calculated from the first day the amount
+became overdue up to the date the invoice was generated. You have 30 days to pay the interest
+amount to avoid further interest charges.
+If your payment is not received within the 30 day period, interest will begin compounding
+retroactive to the date the interest was due.
+MULTIPLE ACCOUNTS
+If you administer multiple group accounts, payment for each account should be made with a
+separate cheque reflecting the appropriate account number. This is required to ensure the correct
+amount is credited to the right account. Multiple payments can be sent in the same envelope,
+provided there is an accompanying payment coupon for each account.
+17
+
+--- PDF page 20 of 24 ---
+
+AMOUNT RECEIVED DIFFERS FROM DIRECTIONS/PAYMENT COUPON
+If the amount of the payment differs from the amount indicated on the coupons or the directions
+enclosed, RSBC will use its discretion in applying the payment to the accounts involved. To
+avoid reconciliation problems/interest charges, it is strongly recommended that payment for each
+account be made with a separate cheque.
+DISHONOURED PAYMENTS
+If your payment is returned by your financial institution as dishonoured for any reason, you will
+need to make another payment.
+Interest and a fee of $30.00 will be charged on all dishonoured payments. This fee is in addition
+to any fees that your financial institution may charge.
+NOTATIONS ON PAYMENT COUPONS
+The system for processing payments is automated; therefore, requests for changes noted on
+invoices will not be processed. The correct forms must be submitted to HIBC.
+ACCOUNT ADJUSTMENTS
+Changes to a premium amount and/or family size are flagged by an asterisk and an adjustment
+code on the invoice. Retroactive premium credits and debits appear in the adjustment column.
+Keys to Adjustment Codes on Invoice:
+A new application
+C addition of dependant
+D cancelled coverage/deletion of dependant
+E retroactive change in effective date
+F change in amount billed (Regular Premium Assistance)
+G forward effective date change
+L re-establishment of coverage
+M multiple adjustments; combination of two or more adjustments
+N forward change in cancellation date
+O retroactive change in cancellation date
+R premium for prior month(s) retroactive to last cancellation date
+T recertification subsidy change
+V premium adjustment for prior month(s) due to verification of income
+Size Codes
+00 cancelled coverage
+01 - 99 number of persons covered
+18
+
+--- PDF page 21 of 24 ---
+
+Subsidy Codes
+Subsidy Code Adjusted Net Income 2018-2019 MSP Premium Rate
+H $0 – $24,000 $0.00
+I $24,001 – $26,000 $0.00
+J $26,001 – $28,000 $23.00
+K $28,001 – $30,000 $35.00
+L $30,001 – $34,000 $46.00
+M $34,001 – $38,000 $56.00
+N $38,001 – $42,000 $65.00
+C over $42,000 $75.00
+LEAVING BRITISH COLUMBIA
+GENERAL INFORMATION
+Persons who are not residents of BC lose their eligibility for MSP benefits and other provincial
+health care benefits. For example, a person who chooses to reside in Washington State is not
+eligible for coverage, regardless of whether he/she commutes to Vancouver to work every day.
+For the definition of a resident refer to page 3.
+Out of country medical services may result in your personal information being provided to
+the out of country service provider for the adminstration of benefits (such as processing claim
+payment) under the Medicare Protection Act.
+Please provide a Leaving BC pamphlet to any employee or family member who will be outside
+the province on a temporary or permanent basis.
+LEAVING BRITISH COLUMBIA TEMPORARILY
+Temporary Absences
+To remain eligible for MSP coverage a beneficiary must continue to meet the residency
+requirements (see “Who is Eligible”, p. 2).
+Extended Absences
+When a person leaves BC on vacation or for temporary employment benefits may be available
+during an extended absence for up to 24 consecutive months. Approval is limited to once in a
+60 month (five year) period for such absences that exceed six months in a calendar year. If your
+employee/pensioner is unsure whether coverage can continue during an absence, or knows that
+eligibility will end, advise him or her to contact HIBC for details or visit the Leaving BC website
+at www.gov.bc.ca/leavingbctemporarily.
+19
+
+--- PDF page 22 of 24 ---
+
+Itinerant Worker
+A person who is engaged in an occupation that requires the person to routinely travel outside BC
+for more than six months in a calendar year, may continue to qualify for benefits. As the person
+must obtain approval prior to leaving BC and cases vary, please contact HIBC with full details in
+order that we can determine eligibility as a resident.
+LEAVING BRITISH COLUMBIA PERMANENTLY
+Within Canada
+Benefits will continue for the balance of the month of departure, plus two months.
+If requested, benefits may be extended up to three extra months to cover a person while in transit.
+Upon arrival, the individual should immediately apply to the health plan of the new home
+province or territory.
+Outside Canada
+Benefits will continue for the balance of the month of departure.
+OTHER INFORMATION
+The information below might be useful in providing advice about MSP coverage to your group members:
+FAIR PHARMACARE
+The Fair PharmaCare plan helps British Columbians with the cost of eligible prescription drugs
+and medical supplies. Fair PharmaCare coverage is based on income. The lower the individual’s
+income, the more help they receive.
+To be eligible for Fair PharmaCare, a beneficiary must have valid MSP coverage; and must have
+filed an income tax return for the relevant taxation year (that is, two years ago).
+More information about Fair PharmaCare eligibility can be found at:
+www.gov.bc.ca/fairpharmacare. Group members can register at www.gov.bc.ca/AHDC.
+SUPPLEMENTARY BENEFITS
+Supplementary Benefits provide partial payment for certain medical services obtained in British
+Columbia (for example, massage therapy and chiropractic services) and may provide access to
+other income-based programs. Eligibility for Supplementary Benefits is based on an Account
+Holder’s net income (combined, if applicable, with his or her spouse’s net income) less allowable
+deductions.
+More information about Supplementary Benefits can be found at:
+www.gov.bc.ca/msp/supplementarybenefits. Group members can apply at www.gov.bc.ca/AHDC.
+20
+
+--- PDF page 23 of 24 ---
+
+CONTACT INFORMATION
+We ask that you quote your group number and the employee’s account number or
+Personal Health Number (PHN) when contacting HIBC.
+For security reasons, please advise your employees that they should be directing all non-group
+related enquiries regarding their MSP account to HIBC.
+If you have questions about payment of MSP premium debts from before January 1, 2020,
+call Revenue Services of British Columbia at 1 877 405-4909 (toll-free).
+The Insurance Corporation of BC (ICBC) issues the photo BC Services Card and the combined
+Driver’s Licence and BC Services Card. HIBC issues the non-photo BC Services Card.
+INTERNET
+You can visit the following websites for MSP information:
+Health Insurance BC: www.hibc.gov.bc.ca
+Ministry of Health: www.gov.bc.ca/health
+Revenue Services of British Columbia/Ministry of Finance: www.fin.gov.bc.ca/rev.htm
+You can access MSP forms by visiting: www.gov.bc.ca/mspbcresidentforms
+For information on the BC Services Card, visit: www.gov.bc.ca/bcservicescard
+You can find information on ICBC Driver Licensing Offices by visiting: www.icbc.com
+CORRESPONDENCE
+Mailing address for
+Health Insurance BC:
+Health Insurance BC
+PO Box 9140 Stn Prov Govt
+Victoria BC V8W 9E5
+Mailing address for
+Revenue Services of British Columbia:
+Revenue Services of British Columbia
+PO Box 9482 Stn Prov Govt
+Victoria BC V8W 9W6
+TELEPHONE
+HIBC: Lower Mainland: 604 683-7520
+Other Areas in British Columbia: 1 877 955-5656
+RSBC: Toll-free: 1 877 405-4909
+21
+
+--- PDF page 24 of 24 ---
+
+WHO SHOULD I CALL TO ANSWER MY MSP QUESTIONS?
+HEALTH INSURANCE BC
+HIBC will update your company’s information
+including name, address, phone number and
+contact information.
+For persons under your group plan we:
+• Enrol with MSP or change coverage,
+including adding or removing family
+members
+• Cancel MSP coverage, including when
+moving outside BC
+• Update personal information including
+name, address, date of birth and phone
+number
+• Administer supplementary benefits
+• Replace/issue non-photo BC Services Cards
+REVENUE SERVICES OF
+BRITISH COLUMBIA
+• Payments of outstanding premium debts
+and refunds
+• Payment options
+• Payment arrangements
+• Payment history
+• Collection of overdue balances
+• Administrating insolvency (e.g. bankruptcy)
+22

@@ -38,21 +38,30 @@ keeps the pages the data uses). Nothing under `docs/` is imported by `src/`, so 
 | [provincial-5012-d](provincial-5012-d.txt) | Worksheet NT428 | https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5012-d/5012-d-19e.pdf | 2026-11-02 | `d3742e604020c24bca0afe82c2118b4aa78ecd75b04d83a20883faa3d735de23` |
 | [provincial-5014-c](provincial-5014-c.txt) | Nunavut Tax | https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5014-c/5014-c-19e.pdf | 2026-11-02 | `ab12657eaa84ad15ecb78fd816d85ed219fa23d270f76d3ad251d7f809ad3b8b` |
 | [provincial-5014-d](provincial-5014-d.txt) | Worksheet NU428 | https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5014-d/5014-d-19e.pdf | 2026-11-02 | `0d747b88996026c1e664549e8cc5e30023c13532afad317cbfc5aa72e0a97dc5` |
+| [provincial-ab-2015-act](provincial-ab-2015-act.txt) | © Published by Alberta Queen’s Printer | https://s3.amazonaws.com/rgi-documents/1995f5a489f31660be4ce633d7df47a2b0a0b119.pdf | 2026-11-02 | `c7dc08a9dbee7a65399553b18a1905e006fe52684e8f5fc3fbae260617a3f3dd` |
+| [provincial-ab-2017-budget](provincial-ab-2017-budget.txt) | 2017-20 Fiscal Plan - COMPLETE VOLUME (Alberta Budget 2017) - March 2017 | https://open.alberta.ca/dataset/aa40ded0-75b3-48fe-9bbf-ea33802b8825/resource/da23ee3c-b79c-4971-8f75-e28ab7684983/download/fiscal-plan-complete.pdf | 2026-11-02 | `3ed08f1c552f0f3fee7567464ddaefcd564c9db5e48a8c9084338346edc60026` |
 | [provincial-ab-2019-enactment](provincial-ab-2019-enactment.txt) | 2019 Bill 20 | https://docs.assembly.ab.ca/LADDAR_files/docs/bills/bill/legislature_30/session_1/20190521_bill-020.pdf | 2026-11-02 | `a937ec935b08642d3f06e437af4001116570a2d628e03b895c4a605eb0dcf2ce` |
 | [provincial-ab-act](provincial-ab-act.txt) | © Published by Alberta King’s Printer | https://kings-printer.alberta.ca/documents/Acts/A30.pdf | 2026-11-02 | `2a293bbb636247e4f52de4376357cbebb334a7da5c163c4032efa50554d9eb62` |
 | [provincial-ab-budget](provincial-ab-budget.txt) | 2020-23 Fiscal Plan (Alberta Budget 2020) - February 27, 2020 | https://open.alberta.ca/dataset/05bd4008-c8e3-4c84-949e-cc18170bc7f7/resource/79caa22e-e417-44bd-8cac-64d7bb045509/download/budget-2020-fiscal-plan-2020-23.pdf | 2026-11-02 | `f4258454cc82416667a90e9748cb0c98e6d7873b5bf10e1b61b4d2b9d82e9222` |
 | [provincial-ab-child](provincial-ab-child.txt) | Alberta Child and Family Benefit | https://www.alberta.ca/alberta-child-and-family-benefit | 2026-11-02 | `e58ab9596da4975d49dee568d13da244f42aafa420f6c4921465baf2d7f43d98` |
 | [provincial-bc-act](provincial-bc-act.txt) | BC Income Tax Act: early childhood benefit and October2020 transition | https://www.bclaws.gov.bc.ca/civix/document/id/complete/statreg/96215_01 | 2026-11-02 | `b82f37654e72a23d8c33232ba8b235a22e3eab40eafae828ef1ac2c8841a8b49` |
 | [provincial-bc-early-childhood](provincial-bc-early-childhood.txt) | B.C. early childhood tax benefit | https://www2.gov.bc.ca/gov/content/family-social-supports/affordability/early-childhood | 2026-11-02 | `cc6f9aa88f83cce0569f338df2a5c9cbb7e4987e7e816f0bac45ed2a04d77faf` |
+| [provincial-bc-msp-deductions](provincial-bc-msp-deductions.txt) | Group Plan Administrators Frequently Asked Questions | https://www2.gov.bc.ca/assets/gov/health/health-drug-coverage/medical-services-plan/group-plan-administrators-faqs.pdf | 2026-11-02 | `8e84a6baf55410bd667f16c62e7cb18e90f49e7aae8093c101aa016f66fc766e` |
+| [provincial-bc-msp-guide](provincial-bc-msp-guide.txt) | MEDICAL SERVICES PLAN | https://www2.gov.bc.ca/assets/gov/health/practitioner-pro/medical-services-plan/group-procedure-guide.pdf | 2026-11-02 | `350eb00bcfb4a6f9949b2b8021e8533a258d2afdef8f74a36533577c388dc178` |
+| [provincial-bc-msp-regulation](provincial-bc-msp-regulation.txt) | Medical and Health Care Services Regulation | https://www.bclaws.gov.bc.ca/civix/document/id/loo103/loo103/426_97 | 2026-11-02 | `887ea8e598ae3b27594fd0697b60d3e54b72ada2f656f9b7f396c46161e3da5a` |
 | [provincial-calgary-property-tax](provincial-calgary-property-tax.txt) | iThe City of Calgary 2022 Annual Financial Report | https://www.calgary.ca/content/dam/www/cfod/finance/documents/plans-budgets-and-financial-reports/annual-reports/annual-report-2022.pdf | 2026-11-02 | `0e3b43443f9b0adc4bb5eefd51c51b8c455e86b106e1c413260affa7f1aaa341` |
+| [provincial-mb-sales-change](provincial-mb-sales-change.txt) | NOTICE | https://www.gov.mb.ca/finance/taxation/pubs/bulletins/noticerst1901.pdf | 2026-11-02 | `5f2e20a74bf9a0331c9328f324436335afe6ca43ab86bbace3fd1eeddaf63ac7` |
 | [provincial-mb-school-tax-rebate](provincial-mb-school-tax-rebate.txt) | Education Property Tax Rebate Continues in 2022 | https://www.gov.mb.ca/edupropertytax/index.html | 2026-11-02 | `b1d2afc37efe276df57ab0a67770663ba46f8ede8fd96903772115c97d495dae` |
 | [provincial-nb-child](provincial-nb-child.txt) | Child Tax Benefit | https://www2.gnb.ca/content/gnb/en/departments/finance/taxes/child_tax_benefit.html | 2026-11-02 | `582ecc0930e4edb3f2bad076110cbb4a5951c80a80b026c21c068f79c25f75bb` |
 | [provincial-nb-hst-credit](provincial-nb-hst-credit.txt) | New Brunswick harmonized sales | https://www.canada.ca/content/dam/cra-arc/migration/cra-arc/bnfts/rltd_prgrms/nbhstccs-eng.pdf | 2026-11-02 | `ef71de40b992f4b0244a2d9f876122e7f1b9b697778bb41939df610fae64a4cf` |
 | [provincial-nl-child-2011](provincial-nl-child-2011.txt) | NEWFOUNDLAND AND LABRADOR REGULATION 60/11 | https://www.assembly.nl.ca/Legislation/sr/Annualregs/2011/nr110060.htm | 2026-11-02 | `d56c01886feab721ae691b8855f2d30b9f41f51e57e6908c9c4c4df3cf6e1bfb` |
 | [provincial-nl-income-supplement](provincial-nl-income-supplement.txt) | Budget 2016 Backgrounder | https://www.budget.gov.nl.ca/budget2016/incomesupplement/Budget%202016%20NL%20Income%20Supplement%20Specifics.pdf | 2026-11-02 | `72d110ccd6f1dbb82293a9f9d42224fc7688bfaa17afec01a76cff9e12a6ab5a` |
+| [provincial-ns-2009](provincial-ns-2009.txt) | NS Royal Gazette Part II - Volume 33, No. 21 - October 9, 2009 | https://novascotia.ca/just/regulations/rg2/2009/oc0909.pdf | 2026-11-02 | `65a9e14823a1189190f4d254bf43290cb0232ef3fdd8c587056cfc428a3894ee` |
 | [provincial-ns-affordable](provincial-ns-affordable.txt) | Nova Scotia Affordable Living Tax Credit Regulations - Income Tax Act (Nova Scotia) | https://novascotia.ca/JUST/REGULATIONS/regs/incaffordable.htm | 2026-11-02 | `7668215fb94bd44adeaee5f1bd47b6cd05039738dfc10080e01e8a7ab27f1881` |
+| [provincial-ns-child-2012](provincial-ns-child-2012.txt) | NS Royal Gazette Part II - Volume 36 dated August 10, 2012 | https://novascotia.ca/just/regulations/rg2/2012/au1012.pdf | 2026-11-02 | `66642484e139c8da8ab7775546973c80f708854caddf2ed8f11a512312522503` |
 | [provincial-ns-child-2014](provincial-ns-child-2014.txt) | Nova Scotia Royal Gazette Part II – Volume 38, No. 14 – July 11, 2014 | https://novascotia.ca/just/regulations/rg2/2014/jl1114.pdf | 2026-11-02 | `cfd684d4127a929358bb70e890182def34b22730da8675405280827733ff8338` |
 | [provincial-ns-child-regulation](provincial-ns-child-regulation.txt) | NS Royal Gazette Part II - Volume 44, No. 15, July 17, 2020 | https://novascotia.ca/just/regulations/RG2/2020/RG2-2020-07-17.pdf | 2026-11-02 | `5ea3688ead53e692ddeb589f6722cf4b687f3b6b04787625bb8985177c5e1273` |
+| [provincial-ns-original](provincial-ns-original.txt) | NS Royal Gazette Part II - Volume 23, No. 14, July 16, 1999 | https://novascotia.ca/just/regulations/rg2/1999/RG2-1999-07-16.pdf | 2026-11-02 | `63203d0b2a514993cf3991d82476427df6c72fa1ce38a8eb0ea1bce939e71a4e` |
 | [provincial-nt-child-formula](provincial-nt-child-formula.txt) | Page 1 | https://www.fin.gov.nt.ca/sites/fin/files/benefits_and_support-nwt_child_benefit-180320.pdf | 2026-11-02 | `cf7a4e469c59d6941dbb8ba73c133ccbf7be6af050f563e5fcc6d1f73733dba1` |
 | [provincial-nt-payroll](provincial-nt-payroll.txt) | Finance | https://www.fin.gov.nt.ca/en/services/licences-taxes-et-droits/payroll-tax-employees | 2026-11-02 | `f9cba1a580d9e0d3c3b3b16377fe27755da0739abeaca87adb7bf548efa318ee` |
 | [provincial-nu-payroll-response](provincial-nu-payroll-response.txt) | Response to the Standing Committee Report on the Review of the 2022-23 Public Accounts | https://www.assembly.nu.ca/sites/default/files/2025-05/TD-388-6%282%29-EN-GN%20Response%20to%202022-23%20Public%20Accounts%20Report.pdf | 2026-11-02 | `df52dff3c39c386380816990b5ba71a2f9dba2bc2295af4e5781ceaf31ebfd62` |
@@ -93,3 +102,42 @@ keeps the pages the data uses). Nothing under `docs/` is imported by `src/`, so 
 | [provincial-winnipeg-property-tax](provincial-winnipeg-property-tax.txt) | 2019 Combined Mill Rates | https://assessment.winnipeg.ca/Asmttax/pdfs/rates/2019CombinedMillRates.pdf | 2026-11-02 | `9378d0b327485bca82138203daca6fe8243406861ede00b70f4dfcbdb77091d2` |
 | [provincial-yt-child-2024](provincial-yt-child-2024.txt) | TAB# 01 | https://open.yukon.ca/information/de20b25e-b7d5-45ed-aacd-5ce4e968bec4/resource/57bd0240-b717-3e8b-9c1e-f9a386d62022/download/fin_spring_2024.pdf | 2026-11-02 | `e069c810c797c3f2a7220b8a68f0c826911edbe23a47f7706000dd8fa85084a8` |
 | [provincial-yukon-child-hansard](provincial-yukon-child-hansard.txt) | Yukon Hansard April 16 2026, historical child benefit maximum | https://yukonassembly.ca/sites/default/files/hansard/36-1-24.pdf | 2026-11-02 | `unavailable (direct PDF download returned HTTP 403)` |
+
+## Provincial collection audit
+
+All thirteen jurisdictions use the 2019 CRA forms and official benefit publications. Federal data,
+published references, golden results, and integration checks belong to the federal collector.
+
+The five new rule shapes are the separate Alberta child and employment benefits (each with a $10 annual
+minimum), B.C. MSP premiums, Nova Scotia's graduated child-benefit reduction, Newfoundland and Labrador's
+temporary deficit levy, and Quebec's ordinal family allowance. B.C.'s early-childhood benefit and Manitoba's
+rent-share credit also require the historical rule prerequisites from PRs 121 and 119 respectively.
+
+Estimates are explicit in the YAML: Calgary's rounded municipal and school mill-rate sum; Winnipeg and
+Saskatoon's assessment portions and school shares; Montreal's Ville-Marie municipal proxy, excluding the
+separate school levy; Iqaluit's assessed-value proxy; annualized rounded monthly child amounts in Ontario,
+Newfoundland and Labrador, and Nunavut; Nunavut's historical reduction-rate continuity; B.C.'s monthly MSP
+premium annualization with full-year enrollment; and Manitoba's equal-monthly-spending sales-tax average.
+Vancouver and Montreal PDF servers refused direct downloads. Their caches label the manual official web
+extracts and unavailable original hashes honestly. The Alberta 2015 statute is an official Queen's Printer
+publication retrieved from a mirror; sections 30(3) and 30.1(4) establish separate $10 annual minimums.
+
+The 2019-to-2020 diff has one large numerical flag: B.C.'s formerly unlimited 16.8% bracket became limited
+at $220,000 when the 20.5% bracket began in 2020. Program replacements are intentional: Alberta's consolidation,
+B.C.'s October 2020 benefit transition, Nova Scotia's July 2020 increase, and Quebec's equalized child maxima.
+B.C. MSP and Newfoundland's levy ended after 2019. Yukon's personal and spouse amounts adopted federal
+enhancement in 2020. Manitoba's temporary annual-average sales-tax estimate ends after the 2019 rate change.
+
+Every unchanged-amount group in the diff was checked against the cached 2019 publications: Alberta's frozen
+brackets/personal credits; Manitoba's spouse/property-credit limits; New Brunswick's child, working, and HST
+credits; Newfoundland's child threshold/income supplement; Nova Scotia's brackets, personal/spouse/child
+credits, low-income reduction, and affordable-living credit; NWT's age-group child tables; Nunavut's child
+credit and benefit; Ontario's upper brackets, LIFT, and health-premium bands; PEI's brackets, reduction,
+sales credit, child credit, and surtax; Quebec's work-premium working-income floors; Saskatchewan's frozen
+brackets, personal/child credits, and SLITC; and Yukon's $500,000 bracket and child-benefit amounts.
+Remaining changed values are published annual indexation, explicit tax-credit changes, or municipality rates.
+
+Validation: all thirteen YAML files pass the matching historical schemas (B.C. child and premium fields
+validated against their separate prerequisite schemas). Every cited URL has a corresponding source cache.
+The full local check passes lint and typecheck, then stops at missing federal files/goldens for unintegrated
+years; 110 tests pass and 17 fail for those integration prerequisites. Build/browser checks await integration.

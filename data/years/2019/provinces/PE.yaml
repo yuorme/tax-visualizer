@@ -1,6 +1,6 @@
 # Benefit-year figures use July 2019 to June 2020, applied to current-year income.
 # Regular sales credit only; extraordinary payments and carbon measures excluded.
-# Charlottetown 2019 report and unchanged2020budget establish0.67 city +1.50 province −0.50 resident credit per100.
+# Charlottetown 2019 report and unchanged 2020 budget establish 0.67 city +1.50 province −0.50 resident credit per 100.
 
 code: PE
 name: Prince Edward Island
@@ -23,10 +23,10 @@ credits:
     program: pei-sales-tax-credit
     params: {individual: 110, spouseOrDependant: 55, supplementRate: 0.005, supplementFrom: 30000, supplementMax: 55, rate: 0.02, threshold: 50000}
 sources:
-  - {label: "CRA, PE428 for 2019", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5002-c/5002-c-19e.pdf}
-  - {label: "CRA, PE428 worksheet for 2019", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5002-d/5002-d-19e.pdf}
+  - {label: "CRA, PE 428 for 2019", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5002-c/5002-c-19e.pdf}
+  - {label: "CRA, PE 428 worksheet for 2019", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5002-d/5002-d-19e.pdf}
   - {label: "CRA, GST/HST historical rates and provincial sales-tax rates", url: https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/charge-collect-which-rate/calculator.html}
-  - {label: "CRA, RC4210-2016: regular PE sales-tax credit formula, unchanged through 2021", url: https://publications.gc.ca/collections/collection_2017/arc-cra/Rv47-3-2016-eng.pdf?download=1}
+  - {label: "CRA, RC 4210-2016: regular PE sales-tax credit formula, unchanged through 2021", url: https://publications.gc.ca/collections/collection_2017/arc-cra/Rv47-3-2016-eng.pdf?download=1}
   - {label: "PEI, Budget 2016: regular sales-tax credit increase", url: https://www.princeedwardisland.ca/sites/default/files/publications/budget2016add.pdf}
   - {label: "PEI Real Property Tax Act sections 4 and 5: rates last amended before 2023", url: https://www.princeedwardisland.ca/sites/default/files/legislation/r-05-real_property_tax_act.pdf}
   - {label: "Charlottetown, 2020/21 budget: resident municipal rate", url: https://cdnsm5-hosted.civiclive.com/UserFiles/Servers/Server_10500298/File/Mayor%20and%20Council/Finance/Annual%20Budget/2020-2021%20Budget%20Address%20and%20Budget%20Documents.pdf}
