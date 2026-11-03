@@ -34,6 +34,7 @@ export const CARBON_STEPS = [
           }),
         );
       });
+      await p.evaluate(() => history.replaceState(null, "", location.pathname + location.search));
       await p.reload();
       assert.ok(await p.locator("#tab-driving").isVisible());
       assert.ok(await p.locator("#legend-carbon").isVisible());
