@@ -22,6 +22,20 @@ export function scaleHousehold(input: Household, factor: number): Household {
     homeValue: input.homeValue * factor,
     rent: input.rent * factor,
     monthlySpending: input.monthlySpending * factor,
+    childcare: input.childcare && {
+      ...input.childcare,
+      children: input.childcare.children?.map(child => ({
+        ...child,
+        expenses: child.expenses * factor,
+        qcEligibleExpenses: child.qcEligibleExpenses === undefined ? undefined : child.qcEligibleExpenses * factor,
+      })),
+      earnedIncome: input.childcare.earnedIncome?.map(value => (value === null ? null : value * factor)),
+      manualClaims: input.childcare.manualClaims?.map(value => value * factor),
+      declaredAnnualExpenses:
+        input.childcare.declaredAnnualExpenses === undefined
+          ? undefined
+          : input.childcare.declaredAnnualExpenses * factor,
+    },
   };
 }
 

@@ -1724,6 +1724,11 @@ footer a {
   margin: 24px 0 16px;
   width: fit-content;
 }
+
+#detail[hidden],
+#notes[hidden] {
+  display: none;
+}
 .history-head {
   display: flex;
   flex-wrap: wrap;

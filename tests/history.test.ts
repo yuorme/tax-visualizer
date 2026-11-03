@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import fs from "node:fs";
 import test from "node:test";
 import { cpiSchema } from "../src/data/cpi.ts";
 import { loadCpi, loadYear } from "../src/data/load.ts";
@@ -87,4 +88,78 @@ test("history converts tax back to base-year dollars, keeps nominal inputs fixed
   assert.equal(nominal.rows[0].provinces[0].tax, nominal.rows[1].provinces[0].tax);
   assert.equal(real.rows[1].provinces[0].tax, nominal.rows[1].provinces[0].tax);
   assert.notEqual(real.rows[0].provinces[0].tax, nominal.rows[0].provinces[0].tax);
+});
+
+test("real conversion scales childcare money while preserving missing values, ages and eligibility", () => {
+  const hh: Household = {
+    ...input,
+    childcare: {
+      mode: "manual",
+      children: [
+        { age: 3, expenses: 10000, qcEligibleExpenses: 4000, disabilityTaxCredit: true },
+        { age: 8, expenses: 0 },
+      ],
+      earnedIncome: [20000, null],
+      manualClaims: [8000, 0],
+      declaredAnnualExpenses: 10000,
+    },
+  };
+  const before = structuredClone(hh);
+  const result = scaleHousehold(hh, 0.5).childcare;
+  assert.deepEqual(result, {
+    mode: "manual",
+    children: [
+      { age: 3, expenses: 5000, qcEligibleExpenses: 2000, disabilityTaxCredit: true },
+      { age: 8, expenses: 0, qcEligibleExpenses: undefined },
+    ],
+    earnedIncome: [10000, null],
+    manualClaims: [4000, 0],
+    declaredAnnualExpenses: 5000,
+  });
+  assert.deepEqual(hh, before);
+  assert.throws(() => scaleHousehold(hh, 0));
+  assert.throws(() => scaleHousehold(hh, Infinity));
+});
+
+test("history golden: independently calculated progressive tax and monetary conversion", () => {
+  // This deliberately synthetic tax system isolates CPI conversion from Canadian tax-rule changes.
+  // Foreign dividends have no payroll, withholding is zero, and credits/benefits are disabled.
+  const base = loadYear(2025);
+  const ab = base.provinces.find(p => p.code === "AB");
+  assert.ok(ab);
+  const specimen = {
+    ...base,
+    federal: {
+      ...base.federal,
+      brackets: [
+        [50000, 0.1],
+        [Infinity, 0.2],
+      ] as [number, number][],
+    },
+    provinces: [
+      { ...ab, brackets: [[Infinity, 0]] as [number, number][], propertyTax: { ...ab.propertyTax, rate: 0.01 } },
+    ],
+  };
+  const years = [2019, 2025, 2026].map(year => ({ ...specimen, year }));
+  const hh: Household = {
+    ...input,
+    people: [{ ...blank(0), fd: 100000 }],
+    spouse: false,
+    adults: 1,
+    kids: 0,
+    under6: 0,
+    useBpa: false,
+    useCredits: false,
+    whRate: 0,
+    homeValue: 200000,
+    rent: 0,
+    monthlySpending: 1000,
+    propertyRates: undefined,
+    driving: undefined,
+  };
+  const cpi = { ...loadCpi(), values: { 2019: 50, 2025: 100 } };
+  const expected = JSON.parse(fs.readFileSync(new URL("./golden/features/history.json", import.meta.url), "utf8"));
+  for (const mode of ["real", "nominal"] as const) {
+    assert.deepEqual(historyComparison(years, cpi, hh, ["AB"], mode), expected[mode]);
+  }
 });

@@ -53,6 +53,13 @@ line-by-line tax return. Simpler and slightly less precise is acceptable where i
   household size); one national efficiency default. Users can override both.
 - A year without fuel data (2025 for now) has no driving inputs and no fuel tax.
 
+**Historical comparison.** A separate view compares the home province across installed tax years. Real mode
+holds income, deductions, childcare amounts, spending, rent and home value at the same purchasing power using
+Statistics Canada's annual Canada all-items CPI; household composition, ages, rates and driving stay fixed.
+Inputs and results use the latest completed annual CPI year's dollars, labelled in the view. Years without
+published annual CPI appear only in nominal mode, which holds the entered dollar amounts fixed. This is a
+comparison of modeled tax rules, not a reconstruction of the household's past circumstances or housing prices.
+
 ## How scope is decided
 
 The model is for comparing provinces, not for filing a return. A feature earns its inputs if, for the households

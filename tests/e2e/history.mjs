@@ -34,6 +34,8 @@ export const HISTORY_STEPS = [
       const problems = await checkRows(p, "real");
       if (!(await p.locator("#history-view").isVisible())) problems.push("history view did not open");
       if (await p.locator("#province-view").isVisible()) problems.push("province chart still visible in history view");
+      if ((await p.locator("#detail").isVisible()) || (await p.locator("#notes").isVisible()))
+        problems.push("single-year details still visible in history view");
       if (!(await p.locator("#tax-year").isDisabled()))
         problems.push("single-year selector is active during history comparison");
       if (
