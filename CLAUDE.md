@@ -5,7 +5,7 @@ territories. No server, no database: tax parameters are YAML files in `data/year
 TypeScript, and the build inlines everything into `dist/index.html`. See README.md for the layout.
 
 ## Commands
-- `npm run check` — lint, typecheck, tests, build, browser smoke test. Must pass before any merge.
+- `npm run check` — lint, typecheck, tests, build, browser smoke test. Required except for the Markdown path below.
 - `npm run lint` — Biome lint and formatting check, and no Markdown prose line over 120 characters.
 - `npm run format` — apply Biome's formatting and safe lint fixes.
 - `npm test` — data validation, golden results, published reference values (Node's built-in test runner). Runs
@@ -102,6 +102,13 @@ pull request for the user. Each change should also remove or merge a rule where 
 110 lines and each agent definition under about 45. Drop a rule that a later retro shows had no effect.
 
 ## Merging
+Markdown-only changes in root `*.md`, `docs/**/*.md` and `.claude/agents/*.md` use lightweight validation:
+run `node scripts/check-scope.mjs origin/<base> HEAD`; when it reports `docs_only=true`, run
+`node scripts/check-docs.mjs` instead of installing dependencies or running `npm run check`. The scope check
+includes local edits and untracked files. Any other path, mixed change, empty diff or unknown comparison uses
+`npm ci` and `npm run check`. CI keeps the required `check` job, validates Markdown, and skips application checks
+and deployment for Markdown-only PRs and pushes. Independent review and human-merge conditions still apply.
+
 `main` only changes through pull requests, and the `check` CI job must pass first (an admin can bypass in an
 emergency). The agent that finishes a branch pushes it and opens the pull request (`gh pr create`, body says
 `Closes #N`); the orchestrator then runs the reviewer, which posts its verdict on the pull request, and sends any

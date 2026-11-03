@@ -66,7 +66,8 @@ Use explicit paths owned by the completed task; a broad directory sweep can disr
 Keep dirty or unpushed worktrees until their work is preserved. For paused work, once the owner confirms all
 processes have stopped, reclaim only reinstallable dependencies with
 `node -e 'require("node:fs").rmSync(process.argv[1], {recursive:true, force:true})' /absolute/worktree/node_modules`.
-Check that exact path first, and run `npm ci` inside the worktree before resuming. Keep source caches and reports.
+Check that exact path first. Before resuming, follow CLAUDE.md's validation path; reinstall dependencies when full
+checks apply. Keep source caches and reports.
 
 After closing preview windows and stopping the preview process, run
 `npm run worktree:cleanup -- --apply /absolute/path/to/repo/.preview`.
