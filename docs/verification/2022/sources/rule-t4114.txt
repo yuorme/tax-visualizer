@@ -1,0 +1,162 @@
+Title: CRA T4114 2022: BC baseline benefits
+URL: https://publications.gc.ca/collections/collection_2022/arc-cra/Rv1-36-2022-eng.pdf?download=1
+Fetched: 2026-11-02
+SHA-256 of the original: 4590f37a7a95b6b72a7e4d3fc468329e3daea047bf695001f21d068ee73dd273
+Publication date modified: 2022-06-24
+PDF pages: 9-10 of 14
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 9 of 14 ---
+
+canada.ca/taxes 17
+ԏ  after you tell us about changes to your situation that could affect your benefit
+(for more information, see “When you should contact us” on page 22)
+If you were overpaid
+If a recalculation shows that you received too much CCB, we will send you a
+notice to tell you of the amount due. We may keep all or a part of future CCB
+payments, income tax refunds, or goods and services tax/harmonized sales tax
+(GST/HST) credits until the amount you owe is repaid. This may also apply to
+the other federal, provincial, and territorial programs that we administer.
+For more information on how to make a payment, go to canada.ca/payments.
+Related programs
+The CRA administers the following provincial and territorial child benefit and
+credit programs:
+ԏ  Alberta child and family benefit
+ԏ  BC child opportunity benefit
+ԏ  New Brunswick child tax benefit
+ԏ  Newfoundland and Labrador child benefit
+ԏ  Northwest Territories child benefit
+ԏ  Nova Scotia child benefit
+ԏ  Nunavut child benefit
+ԏ  Ontario child benefit
+ԏ  Yukon child benefit
+You do not need to apply to a province or a territory to get payments for these
+programs. We use the information from your Canada child benefits application
+to determine your eligibility for these programs. If you are eligible, the amount
+of your payments will be calculated based on information from the tax returns
+that you and your spouse or common-law partner file.
+If you share the custody of a child, you will get 50% of the provincial or
+territorial payment that you would have received if the child lived with you
+all of the time.
+If you use our direct deposit service for your CCB payments, we will deposit
+your provincial and territorial payments into the same account.
+Note
+The “earned income” and “working income” used to calculate certain
+provincial and territorial benefits include income from employment,
+self-employment, training allowances, scholarships (if taxable), research
+grants, and disability payments received under the Canada Pension Plan
+and the Quebec Pension Plan.
+canada.ca/taxes18
+Alberta child and family benefit
+This benefit is a non-taxable amount paid to families that have children under
+18 years of age. The quarterly amounts are issued in August 2022,
+November 2022, February 2023, and May 2023.
+The benefit includes both a base component and a working component, with
+combined benefits to a maximum of $5,120.
+The maximum base component ranges from $1,330 to $3,325 depending on
+the number of children. You may be entitled to:
+ԏ  $1,330 for the first qualified dependant
+ԏ  $665 for the second qualified dependant
+ԏ  $665 for the third qualified dependant
+ԏ  $665 for the fourth qualified dependant
+The base component of the benefit is reduced if your adjusted family net
+income is more than $24,467.
+Families may be eligible for the working component once their family
+employment income exceeds $2,760. The maximum working component will
+range from $681 to $1,795 depending on the number of children. You may be
+entitled to:
+ԏ  $681 for the first qualified dependant
+ԏ  $620 for the second qualified dependant
+ԏ  $371 for the third qualified dependant
+ԏ  $123 for the fourth qualified dependant
+The working component of the benefit is reduced once your adjusted family net
+income is more than $41,000.
+This program is fully funded by the Alberta provincial government.
+BC child opportunity benefit
+This benefit is a non-taxable amount paid monthly to qualifying families with
+children under 18 years of age. The amounts are combined with the CCB into a
+single monthly payment.
+You may be entitled to a maximum annual benefit of:
+ԏ  $1,600 for the first child
+ԏ  $1,000 for the second child
+ԏ  $800 for each additional child
+If the adjusted family net income is more than $25,806 but less than $82,578, the
+B.C. child opportunity benefit is reduced by 4% of the portion of the adjusted
+family net income over $25,806 until the amount is equal to:
+
+--- PDF page 10 of 14 ---
+
+canada.ca/taxes 19
+ԏ  $700 for the first child
+ԏ  $680 for the second child
+ԏ  $660 for each additional child
+For the 2021 base year, the BC child opportunity benefit payment period is from
+July 2022 to June 2023.
+This program is fully funded by the Province of British Columbia.
+New Brunswick child tax benefit
+This benefit is a non-taxable amount paid monthly to qualifying families
+with children under 18 years of age. The New Brunswick working income
+supplement (NBWIS) is an additional benefit paid to qualifying families with
+earned income who have children under 18 years of age. Benefits are combined
+with the CCB into a single monthly payment.
+You may be entitled to a basic benefit of $20.83 per month for each child. The
+amount of the basic benefit is reduced if your adjusted family net income is
+more than $20,000.
+The NBWIS is an additional benefit of up to $20.83 per month for each family.
+It is phased in once family earned income is more than $3,750. The maximum
+benefit is reached when family earned income is $10,000. If your adjusted
+family net income is between $20,921 and $25,921, you may get part of the
+supplement.
+Your New Brunswick child tax benefit payment may include a New Brunswick
+school supplement (NBSS) amount. The NBSS is paid once a year in July to help
+low income families with the cost of back to school supplies for their children.
+If your adjusted family net income is $20,000 or less, you will get $100 for each
+of your children born between January 1, 2005, and December 31, 2017.
+These amounts will be combined with the CCB into a single monthly payment.
+This program is fully funded by the Province of New Brunswick.
+Newfoundland and Labrador child benefit
+This benefit is a non-taxable amount paid monthly to help low-income families
+with the cost of raising children under 18 years of age. The pre-natal infant
+nutrition supplement is an additional benefit paid to qualifying families who
+have children under one year of age. Benefits are combined with the CCB into a
+single monthly payment.
+Under the Newfoundland and Labrador child benefit, you may be entitled to a
+benefit of:
+ԏ  $35.16 per month for the first child
+ԏ  $37.33 per month for the second child
+ԏ  $40.08 per month for the third child
+canada.ca/taxes20
+ԏ  $43 per month for each additional child
+If your adjusted family net income is above $17,397, you may get part of
+the benefit.
+Under the pre-natal infant nutrition supplement, you may be entitled to a
+benefit of $150 per month for each child under one year of age depending on
+your adjusted family net income.
+This program is fully funded by the Province of Newfoundland and Labrador.
+Northwest Territories child benefit
+This benefit is a non-taxable amount paid monthly to qualifying families with
+children under 18 years of age.
+You may be entitled to receive the following monthly amounts:
+Children under the age of 6:
+ԏ  $67.91 for one child
+ԏ  $122.25 for two children
+ԏ  $166.41 for three children
+ԏ  $203.75 for four children
+ԏ  $30.58 for each additional child
+Children aged 6 to 17:
+ԏ  $54.33 for one child
+ԏ  $97.83 for two children
+ԏ  $133.08 for three children
+ԏ  $163.00 for four children
+ԏ  $24.41 for each additional child
+If your adjusted family net income is above $30,000, you may get
+part of the benefit.
+These amounts are combined with the CCB into a single monthly payment.
+This program is fully funded by the Northwest Territories.
+Nova Scotia child benefit
+This benefit is a non-taxable amount paid monthly to help low- and
+modest-income families with the cost of raising children under 18 years of age.
+These amounts are combined with the CCB into a single monthly payment.
+Under proposed changes, you may be entitled to a monthly benefit of $106.25
+for each child under 18 years of age in your care.
