@@ -1,0 +1,109 @@
+Title: Worksheet for the 2026 Manitoba Personal Tax Credits Return
+URL: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/td1mb-ws/td1mb-ws-26e.pdf
+Fetched: 2026-11-03
+SHA-256 of the original: 86145ad54311053e7abc30665f044766aa853707dd9ad5e68fe6d031fc2d347f
+Publication date modified: 2025-12-03
+PDF pages: all 2
+Text extract made with scripts/fetch-source.ts extract/formatExtract helpers. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 1 of 2 ---
+
+Protected B when completed
+TD1MB-WSWorksheet for the 2026 Manitoba
+Personal Tax Credits Return
+Fill out this worksheet if you want to calculate partial claims for the following amounts on Form TD1MB, 2026 Manitoba Personal
+Tax Credits Return.
+Do not give your filled out worksheet to your employer or payer. Keep it for your records.
+Line 1 of Form TD1 MB – Basic personal amount
+If your estimated net income from will be more than $200,000, calculate your claim as follows:
+1Base amount
+2Your estimated net income for the year
+3Income threshold –
+4Line 2 minus line 3 =
+5Line 4 divided by $200,000 =
+Ż
+6Applicable amount ×
+7Line 5 multiplied by line 6 =
+Ż –
+8
+Line 1 minus line 7
+Enter this amount on line 1 of Form TD1 MB. =
+Line 2 of Form TD1MB – Age amount
+If you will be 65 or older on December 31, 2026, and your estimated net income will be between $27,749 and $52,602, calculate your
+partial claim as follows:
+1Maximum amount
+2Your estimated net income for the year
+3Base amount –
+4Line 2 minus line 3 (if negative, enter "0") =
+5Applicable rate ×
+6Line 4 multiplied by line 5 =
+Ż –
+7
+Line 1 minus line 6
+Enter this amount on line 2 of Form TD1MB. =
+Line 8 of Form TD1MB – Caregiver amount
+If your dependant's estimated net income for the year will be between $12,312 and $15,917, calculate your partial claim as follows:
+1Base amount
+2Your dependant's estimated net income for the year –
+3Line 1 minus line 2 (maximum $3,605, if negative, enter "0") =
+4Enter the amount you claimed on line 7 of Form TD1MB for this dependant. –
+5
+Line 3 minus line 4 (if negative, enter "0" )
+Enter this amount on line 8 of Form TD1MB. =
+Line 9 of Form TD1MB – Amount for infirm dependants age 18 or older
+You cannot claim this amount for a dependant for whom you claimed the caregiver amount on line 8 of Form TD1MB. If your dependant's
+estimated net income for the year will be between $5,115 and $8,720, calculate your partial claim as follows:
+1Base amount
+2Your infirm dependant's estimated net income for the year –
+3Line 1 minus line 2 (maximum $3,605, if negative, enter "0") =
+4Enter the amount you claimed on line 7 of Form TD1MB for this dependant. –
+5
+Line 3 minus line 4 (if negative, enter "0")
+Enter this amount on line 9 of Form TD1MB. =
+TD1MB-WS E (26) (Ce formulaire est disponible en français.) Page 1 of 2
+15,780.00
+200,000.00
+15,780.00
+3,728.00
+27,749.00
+15%
+15,917.00
+8,720.00
+
+--- PDF page 2 of 2 ---
+
+Protected B when completed
+Worksheet for the 2026 Manitoba Personal Tax Credits Return (continued)
+Line 12 of your Form TD1MB – Manitoba Family Tax Benefit
+1Basic benefit +
+2Age benefit for self – If you claimed an amount on line 2 of Form TD1MB, enter $2,065. +
+3Disability benefit for self – If you claimed an amount on line 5 of Form TD1MB, enter $2,752. +
+4
+Basic benefit for a dependent spouse or common-law partner
+If you claimed an amount on line 6 of Form TD1MB, enter $2,065. +
+5
+Basic benefit for an eligible dependant
+If you claimed an amount on line 7 of Form TD1MB, enter $2,065. +
+6
+Benefit for disabled dependents – Number of dependents
+for whom you claimed an amount on line 9 of Form TD1MB: × $2,752 = +
+7
+Benefit for dependent children born in 2004 or later – Number of children
+excluding those you claimed on line 7 or 9 of Form TD1MB: × $2,752 = +
+8
+Age benefit for spouse or common-law partner – If you claimed the unused age amount
+of your spouse or common-law partner on line 10 of Form TD1MB, enter $2,065. +
+9
+Disability benefit for spouse or common-law partner – If you claimed the unused disability
+amount of your spouse or common-law partner on line 10 of Form TD1MB, enter $2,752. +
+10
+Disability benefit for dependents – Number of dependents for whom
+you claimed an unused disability amount on line 11 of Form TD1MB: × $2,752 = +
+11Add lines 1 to 10. =
+12Enter your estimated net income for the year: × 9% = –
+13
+Line 11 minus line 12 (if negative, enter "0")
+Enter this amount on line 12 of Form TD1MB. =
+TD1MB-WS E (26) Page 2 of 2
+2,065.00

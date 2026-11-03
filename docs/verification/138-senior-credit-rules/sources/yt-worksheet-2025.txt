@@ -1,0 +1,70 @@
+Title: Worksheet YT428
+URL: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5011-d/5011-d-25e.pdf
+Fetched: 2026-11-03
+SHA-256 of the original: b142564095c35bd25f9692508e00782ee4adc4edec7654b21e775ef3ee37a498
+Publication date modified: 2025-10-27
+PDF pages: all 1
+Text extract made with scripts/fetch-source.ts extract/formatExtract helpers. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 1 of 1 ---
+
+2025
+Worksheet YT428
+Use this worksheet to calculate the amounts to enter on your Form YT428, Yukon Tax.
+Keep this worksheet for your records. Do not attach it to your return.
+Line 61520 – Yukon dividend tax credit
+AAmount from line 12000 of your return
+1BAmount from line 12010 of your return – × 0.67% =
+2CAmount A minus amount B = × 12.02% = +
+3
+Line 1 plus line 2
+Enter this amount on line 61520 of your Form YT428. =
+Line 78 – Yukon political contribution tax credit
+If your total political contributions are more than $1,275, enter $650 on line 78 of your Form YT428.
+If not, use the amount from line 63850 of your Form YT428 to complete the appropriate column below.
+Line 63850 is
+$400 or less
+Enter your total political contributions
+from line 63850 of your Form YT428.
+–
+Line 1 minus line 2 (cannot be negative) =
+×
+Line 3 multiplied by the percentage from line 4 =
++
+Line 5 plus line 6
+Enter this amount on line 78 of your Form YT428. =
+Line 63850 is
+more than $400 but
+not more than $750
+–
+=
+×
+=
++
+=
+Line 63850 is
+more than $750
+–
+=
+×
+=
++
+=
+1
+2
+3
+4
+5
+6
+7
+5011-D E (25) (Ce formulaire est disponible en français.) Page 1 of 1
+0.00
+75%
+0.00
+400.00
+50%
+300.00
+750.00
+33.33%
+475.00

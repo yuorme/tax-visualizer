@@ -1,0 +1,222 @@
+Title: Alberta Tax and Credits
+URL: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5009-c/5009-c-25e.pdf
+Fetched: 2026-11-03
+SHA-256 of the original: 5ff6ff15df5eabaf41130e50a63cf501daa8e79d89e04d6caea5350c7a918f4b
+Publication date modified: 2025-10-22
+PDF pages: all 3
+Text extract made with scripts/fetch-source.ts extract/formatExtract helpers. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 1 of 3 ---
+
+Form AB428
+2025
+Protected B when completed
+Alberta Tax and Credits
+For more information about this form, go to canada.ca/ab-tax-info.
+Part A – Alberta tax on taxable income
+1Enter your taxable income from line 26000 of your return.
+Use the amount from line 1 to complete the appropriate column below.
+Line 1 is
+$60,000 or less
+Amount from line 1
+–
+Line 2 minus line 3 (cannot be negative) =
+×
+Line 4 multiplied by the percentage from line 5 =
++
+Alberta tax on taxable income
+Line 6 plus line 7
+=
+Line 1 is more than
+$60,000 but not
+more than $151,234
+–
+=
+×
+=
++
+=
+Line 1 is more than
+$151,234 but not
+more than $181,481
+–
+=
+×
+=
++
+=
+2
+3
+4
+5
+6
+7
+8
+If you completed lines 2 to 8 for a column above, enter the amount from line 8 on line 59 and continue on line 16.
+Line 1 is more than
+$181,481 but not
+more than $241,974
+Amount from line 1
+–
+Line 9 minus line 10 (cannot be negative) =
+×
+Line 11 multiplied by the percentage from line 12 =
++
+Alberta tax on taxable income
+Line 13 plus line 14
+=
+Line 1 is more than
+$241,974 but not
+more than $362,961
+–
+=
+×
+=
++
+=
+Line 1 is more
+than $362,961
+–
+=
+×
+=
++
+=
+9
+10
+11
+12
+13
+14
+15
+If you completed lines 9 to 15 for a column above, enter the amount from line 15 on line 59 and continue on line 16.
+Part B – Alberta non-refundable tax credits 56080Internal use
+58040 16Basic personal amount Claim $22,323
+58080 17Age amount (if you were born in 1960 or earlier) (use Worksheet AB428) (maximum $6,221) +
+Spouse or common-law partner amount:
+18Base amount
+19
+Your spouse's or common-law partner's net income
+from line 23600 of their return –
+58120 20Line 18 minus line 19 (if negative, enter "0") =
+Ż +
+Amount for an eligible dependant:
+21Base amount
+22Your eligible dependant's net income from line 23600 of their return –
+58160 23Line 21 minus line 22 (if negative, enter "0") =
+Ż +
+58200 24Amount for infirm dependants age 18 or older (use Worksheet AB428) +
+25Add lines 16, 17, 20, 23, and 24. =
+5009-C E (25) (Ce formulaire est disponible en français.) Page 1 of 3
+0.00
+8%
+0.00
+60,000.00
+10%
+4,800.00
+151,234.00
+12%
+13,923.40
+181,481.00
+13%
+17,553.04
+241,974.00
+14%
+25,417.13
+362,961.00
+15%
+42,355.31
+22,323.00
+22,323.00
+
+--- PDF page 2 of 3 ---
+
+Protected B when completed
+Part B – Alberta non-refundable tax credits (continued)
+26Amount from line 25 of the previous page
+CPP or QPP contributions:
+58240 27Amount from line 30800 of your return •
+58280 28Amount from line 31000 of your return + •
+Employment insurance premiums:
+58300 29Amount from line 31200 of your return + •
+58305 30Amount from line 31217 of your return + •
+58330 31Adoption expenses +
+32Add lines 27 to 31. =
+Ż +
+33Line 26 plus line 32 =
+58360 34Pension income amount (maximum $1,719) +
+58400 35Caregiver amount (use Worksheet AB428) +
+36Add lines 33 to 35. =
+58440 37
+Disability amount for self
+(claim $17,219 or, if you were under 18 years of age, use Worksheet AB428) +
+58480 38Disability amount transferred from a dependant (use Worksheet AB428) +
+39Add lines 36 to 38. =
+58520 40Interest paid on your student loans (amount from line 31900 of your return) +
+58560 41Your unused tuition and education amounts (attach Schedule AB(S11)) +
+58640 42Amounts transferred from your spouse or common-law partner (attach Schedule AB(S2)) +
+43Add lines 39 to 42. =
+Medical expenses:
+58689 44Amount from line 33099 of your return
+45Amount from line 23600 of your return
+46Applicable rate ×
+47Line 45 multiplied by the percentage from line 46 =
+48Enter whichever is less: $2,884 or the amount from line 47. –
+49Line 44 minus line 48 (if negative, enter "0") =
+58729 50
+Allowable amount of medical expenses for other dependants
+(use Worksheet AB428) +
+58769 51Line 49 plus line 50 =
+Ż +
+58800 52Line 43 plus line 51 =
+53Alberta non-refundable tax credit rate ×
+58840 54Line 52 multiplied by the percentage from line 53 =
+Donations and gifts:
+55
+Amount from line 13
+of your federal Schedule 9 × 60% =
+56
+Amount from line 14
+of your federal Schedule 9 × 21% = +
+58969 57Line 55 plus line 56 =
+Ż +
+61500 58Alberta non-refundable tax credits
+Line 54 plus line 57
+Enter this amount on line 62. =
+5009-C E (25) Page 2 of 3
+3%
+8%
+
+--- PDF page 3 of 3 ---
+
+Protected B when completed
+Part C – Alberta tax
+59Alberta tax on taxable income from line 8 or line 15
+61510 60Alberta tax on split income (complete Form T1206) + •
+61Line 59 plus line 60 =
+62Alberta non-refundable tax credits from line 58
+61520 63Alberta dividend tax credit (use Worksheet AB428) + •
+61540 64
+Alberta minimum tax carryover:
+Amount from line 40427
+of your return × 35% = + •
+65Add lines 62 to 64. =
+Ż –
+66Line 61 minus line 65 (if negative, enter "0") =
+67
+Alberta additional tax for minimum tax purposes:
+Form T691: line 1 minus line 2 of Part 7 × 35% = +
+68Line 66 plus line 67 =
+69Provincial foreign tax credit (complete Form T2036) –
+70Line 68 minus line 69 (if negative, enter "0") =
+60030 71Alberta political contributions made in 2025
+72Alberta political contributions tax credit (use Worksheet AB428) (maximum $1,000) –
+73Line 70 minus line 72 (if negative, enter "0") =
+61545 74Alberta supplemental tax credit (use Worksheet AB428) – •
+75Alberta tax
+Line 73 minus line 74 (if negative, enter "0")
+Enter this amount on line 42800 of your return. =
+If you had any unused stock savings plan tax credit, complete Form T89, Alberta stock savings plan tax credit.
+See the privacy notice on your return.
+5009-C E (25) Page 3 of 3
