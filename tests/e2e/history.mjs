@@ -1,3 +1,4 @@
+import assert from "node:assert/strict";
 import { tsImport } from "tsx/esm/api";
 import { listYears, loadCpi, loadYear } from "../../src/data/load.ts";
 import { historyComparison } from "../../src/engine/history.ts";
@@ -25,7 +26,7 @@ async function checkRows(page, mode, overrides = {}) {
   care.restore(state.childcare);
   const people = compute(year, home, input).list.map(p => p.x);
   care.configure(
-    people.map(p => p.ord),
+    people.map(p => p.ord + (p.oth ?? 0)),
     state.kids,
   );
   const ages = care.benefitAgeProfile();
@@ -73,6 +74,21 @@ export const HISTORY_STEPS = [
     },
   ],
   [
+    "history: other income follows real and nominal inputs without employee payroll",
+    async p => {
+      await p.click("#tab-income");
+      await p.fill("#oth", "12,000");
+      await p.locator("#oth").blur();
+      const problems = await checkRows(p, "real");
+      const incomes = () => p.locator("#history-rows tr").evaluateAll(rows => rows.map(r => r.cells[1].textContent));
+      assert.ok((await incomes()).every(income => income === "$87,000"));
+      await p.click("#history-nominal");
+      problems.push(...(await checkRows(p, "nominal")));
+      assert.ok((await incomes()).every(income => income === "$87,000"));
+      return problems;
+    },
+  ],
+  [
     "history: nominal includes every year and follows household inputs",
     async p => {
       await p.click("#history-nominal");
@@ -90,6 +106,8 @@ export const HISTORY_STEPS = [
   [
     "history: childcare follows age and earnings edits immediately",
     async p => {
+      await p.fill("#oth", "0");
+      await p.locator("#oth").blur();
       await p.selectOption("#home", "ON");
       await p.locator("#kids").evaluate(el => {
         el.value = "1";
@@ -106,6 +124,10 @@ export const HISTORY_STEPS = [
       const problems = await checkRows(p, "nominal");
       await p.fill("#income", "3,000");
       await p.dispatchEvent("#income", "input");
+      problems.push(...(await checkRows(p, "nominal")));
+      // $3,000 employment permits $2,000 childcare; adding $3,000 other income raises the default to $4,000.
+      await p.fill("#oth", "3,000");
+      await p.locator("#oth").blur();
       problems.push(...(await checkRows(p, "nominal")));
       await p.fill("#care-age-0", "20");
       await p.locator("#care-age-0").blur();

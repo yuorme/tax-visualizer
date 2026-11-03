@@ -48,7 +48,7 @@ export function personTax(fed: Federal, p: Province, x: Person, sp: Extra, ctx: 
     : 0;
   const provincialNet = qc ? netOf(fed, x) : ti; // Quebec does not deduct federal childcare expenses
   const tiP = Math.max(0, provincialNet - workerDed); // Quebec allows an extra deduction for workers
-  const cash = x.ord + x.cg + x.ed + x.nd + x.fd;
+  const cash = x.ord + (x.oth ?? 0) + x.cg + x.ed + x.nd + x.fd;
   const f = walk(fed.brackets, ti),
     pr = walk(p.brackets, tiP);
   const k = qc ? 1 - fed.quebecAbatement : 1;
@@ -127,7 +127,7 @@ export function personTax(fed: Federal, p: Province, x: Person, sp: Extra, ctx: 
   }
   if (p.lift) {
     const q = p.lift;
-    const liftFull = Math.min(q.max, q.rate * Math.max(0, x.ord));
+    const liftFull = Math.min(q.max, q.rate * Math.max(0, x.ord)); // earned on employment income, reduced on net
     const liftCut = q.phaseOut * Math.max(0, ti - q.threshold, (ctx.famNet ?? ti) - q.familyThreshold);
     lift = Math.min(provPre, Math.max(0, liftFull - liftCut));
     provPre -= lift;

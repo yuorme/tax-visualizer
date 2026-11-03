@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 
 const fill = async (p, id, value) => {
+  if (id === "oth" && !(await p.locator("#oth").isVisible())) await p.click("#tab-income");
   if (id.startsWith("care-")) await open(p, "#childcare-details");
   if (/^care-(earnings|claim)-/.test(id)) await open(p, "#care-adjustments");
   if (id.startsWith("care-earnings-")) {
@@ -129,10 +130,26 @@ export const CHILDCARE_STEPS = [
       await p.reload();
       assert.equal(await cell(p, "Partner's federal childcare deduction"), "$4,000");
       assert.equal((await saved(p)).childcare.earningsOverridden[1], false);
+      // The default combines both income fields; the engine still receives an explicit eligibility assumption.
+      await fill(p, "oth", 3000);
+      assert.equal(await cell(p, "Partner's federal childcare deduction"), "$6,000");
+      await p.reload();
+      assert.equal(await cell(p, "Partner's federal childcare deduction"), "$6,000");
+      await fill(p, "care-earnings-1", 3000);
+      await fill(p, "oth", 6000);
+      assert.equal(await cell(p, "Partner's federal childcare deduction"), "$2,000");
+      await fill(p, "care-earnings-1", "");
+      await fill(p, "oth", 9000);
+      assert.equal(await cell(p, "Federal calculation"), "Details needed");
+      assert.equal(await cell(p, "Partner's federal childcare deduction"), "$0");
+      await p.uncheck("#care-override-1");
+      assert.equal(await cell(p, "Partner's federal childcare deduction"), "$10,000");
+      await fill(p, "oth", 0);
       await fill(p, "income", 30000);
       assert.equal(await cell(p, "Partner's federal childcare deduction"), "$12,000");
       await fill(p, "care-earnings-1", 0);
       await fill(p, "income", 40000);
+      await fill(p, "oth", 6000);
       assert.equal(await cell(p, "Partner's federal childcare deduction"), "$0");
       await p.reload();
       await open(p, "#childcare-details");
@@ -142,6 +159,7 @@ export const CHILDCARE_STEPS = [
       assert.equal(await cell(p, "Partner's federal childcare deduction"), "$0");
       await p.uncheck("#care-override-1");
       assert.equal(await cell(p, "Partner's federal childcare deduction"), "$12,000");
+      await fill(p, "oth", 0);
       await fill(p, "income", 30000);
       assert.equal(await p.textContent("#ded-total"), "$0");
       assert.match(await p.textContent("#detail-body"), /12,000 deductions/);

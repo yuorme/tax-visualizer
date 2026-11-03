@@ -33,6 +33,9 @@ const history2023Fixture: typeof fixture = JSON.parse(
 const history2022Fixture: typeof fixture = JSON.parse(
   fs.readFileSync(new URL("./golden/features/history2022.json", import.meta.url), "utf8"),
 );
+const otherIncomeFixture: typeof fixture = JSON.parse(
+  fs.readFileSync(new URL("./golden/features/other-income.json", import.meta.url), "utf8"),
+);
 const history2021Fixture: typeof fixture = JSON.parse(
   fs.readFileSync(new URL("./golden/features/history2021.json", import.meta.url), "utf8"),
 );
@@ -48,6 +51,7 @@ const fixtures = [
   history2024Fixture,
   history2023Fixture,
   history2022Fixture,
+  otherIncomeFixture,
   history2021Fixture,
   history2020Fixture,
   history2019Fixture,

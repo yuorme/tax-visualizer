@@ -16,7 +16,11 @@ export function scaleHousehold(input: Household, factor: number): Household {
         rrsp: (person.rrsp ?? 0) * factor,
         fhsa: (person.fhsa ?? 0) * factor,
       };
-      for (const key of INCOME_KEYS) scaled[key] = person[key] * factor;
+      for (const key of INCOME_KEYS) {
+        const value = person[key];
+        // Legacy inputs omit other income; keep that shape and never multiply undefined into NaN.
+        if (value !== undefined) scaled[key] = value * factor;
+      }
       return scaled;
     }),
     homeValue: input.homeValue * factor,

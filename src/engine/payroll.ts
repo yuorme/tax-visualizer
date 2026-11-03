@@ -9,7 +9,9 @@ export interface Payroll {
   terr: number;
 }
 
-/** Employee CPP/QPP (base and enhanced), EI, QPIP and territorial payroll tax on employment income. */
+/** Employee CPP/QPP (base and enhanced), EI, QPIP and territorial payroll tax on employment income. Other income
+ *  (x.oth) pays none of them: CPP/QPP, EI and QPIP are charged on employment earnings, and the NWT and Nunavut
+ *  payroll tax on employment remuneration. */
 export function payrollOf(fed: Federal, p: Province | null, x: Person): Payroll {
   const qc = p?.system === "quebec";
   const e = Math.max(0, x.ord),
@@ -33,7 +35,8 @@ export function healthPremium(p: Province, ti: number): number {
 /** The pieces of net income: each kind of income as it's counted (the taxable share of net capital gains,
  *  dividends grossed up), and the deductions taken off. */
 export interface NetIncomeParts {
-  ord: number;
+  ord: number; // employment income
+  oth?: number; // interest, rental and other income, counted in full
   cg: number; // taxable capital gains; a net loss counts as 0
   ed: number; // grossed-up eligible dividends
   nd: number; // grossed-up non-eligible dividends
@@ -53,6 +56,7 @@ export function netIncomeParts(fed: Federal, x: Person, childcareDeduction = 0):
   const inv = fed.investment;
   return {
     ord: x.ord,
+    ...(x.oth ? { oth: x.oth } : {}),
     cg: Math.max(0, x.cg) * inv.capitalGainsInclusion,
     ed: x.ed * inv.grossUp.eligible,
     nd: x.nd * inv.grossUp.nonEligible,
@@ -65,11 +69,12 @@ export function netIncomeParts(fed: Federal, x: Person, childcareDeduction = 0):
 /** Net income: total income less deductions and enhanced CPP/QPP contributions. */
 export function netOf(fed: Federal, x: Person, childcareDeduction = 0): number {
   const n = netIncomeParts(fed, x, childcareDeduction);
-  return Math.max(0, n.ord + n.cg + n.ed + n.nd + n.fd - n.ded - n.enh);
+  return Math.max(0, n.ord + (n.oth ?? 0) + n.cg + n.ed + n.nd + n.fd - n.ded - n.enh);
 }
 
 /** RRSP deduction room: a share of earned income up to the year's dollar limit, to the nearest dollar. Current
- *  employment income stands in for last year's earned income. */
+ *  employment income stands in for last year's earned income. Other income is left out: interest, pensions and
+ *  RRSP or RRIF withdrawals aren't earned income (net rental income is, but it isn't entered separately). */
 export function rrspRoom(fed: Federal, x: Person): number {
   return Math.min(fed.rrsp.limit, Math.round(x.ord * fed.rrsp.rate));
 }

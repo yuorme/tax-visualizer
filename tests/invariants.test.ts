@@ -41,7 +41,7 @@ const pick = <T>(r: Rng, xs: readonly T[]): T => xs[Math.floor(r() * xs.length)]
 /** A dollar amount: zero with probability `zero`, otherwise log-uniform between $500 and `max`. */
 const amount = (r: Rng, max: number, zero = 0.2) => (r() < zero ? 0 : Math.round(500 * (max / 500) ** r()));
 
-function randomPerson(r: Rng): Person {
+function randomPerson(r: Rng, ro: Rng): Person {
   const ord = amount(r, 500_000, 0.1);
   const inv = r() < 0.3;
   return {
@@ -51,8 +51,12 @@ function randomPerson(r: Rng): Person {
     nd: inv ? amount(r, 100_000, 0.6) : 0,
     fd: inv ? amount(r, 50_000, 0.6) : 0,
     ded: r() < 0.25 ? Math.round(r() * 0.18 * ord) : 0,
+    // Drawn from a generator of its own (ro), so adding other income left every other draw as it was
+    oth: ro() < 0.3 ? amount(ro, 200_000, 0) : 0,
   };
 }
+/** The generator for other income that goes with the main generator seeded with `seed`. */
+const otherRng = (seed: number) => rng(seed + 1_000_003);
 
 interface Shape {
   two?: boolean; // two people with income (otherwise one)
@@ -60,9 +64,9 @@ interface Shape {
   kids?: boolean; // at least one child (otherwise drawn)
 }
 
-function randomHousehold(r: Rng, shape: Shape = {}): Household {
+function randomHousehold(r: Rng, ro: Rng, shape: Shape = {}): Household {
   const two = shape.two ?? r() < 0.45;
-  const people = two ? [randomPerson(r), randomPerson(r)] : [randomPerson(r)];
+  const people = two ? [randomPerson(r, ro), randomPerson(r, ro)] : [randomPerson(r, ro)];
   const kids = shape.kids === undefined ? (r() < 0.5 ? 0 : int(r, 1, 6)) : shape.kids ? int(r, 1, 6) : 0;
   const owner = r() < 0.4;
   return {
@@ -84,8 +88,13 @@ function randomHousehold(r: Rng, shape: Shape = {}): Household {
 /** Run `check` for every year × province × `n` households drawn from `seed`. The same households go to every
  *  province, so a difference between provinces is the province's rules, not the draw. */
 function forAll(seed: number, n: number, shape: Shape, check: (y: YearData, p: Province, hh: Household) => void) {
-  const r = rng(seed);
-  const households = Array.from({ length: n }, () => randomHousehold(r, shape));
+  const r = rng(seed),
+    ro = otherRng(seed);
+  // Retain every original household as well as its other-income extension.
+  const households = Array.from({ length: n }, () => randomHousehold(r, ro, shape)).flatMap(hh => [
+    { ...hh, people: hh.people.map(x => ({ ...x, oth: 0 })) },
+    hh,
+  ]);
   for (const y of YEARS) for (const p of y.provinces) for (const hh of households) check(y, p, hh);
 }
 
@@ -137,7 +146,8 @@ const OTHER_EARNER = [0, 30_000, 70_000, 150_000];
  *  a single parent, a couple with or without children), with every other input drawn at random. Investment
  *  income is dropped so the sweep isolates employment income. */
 function sweepBases(seed: number): Household[] {
-  const r = rng(seed);
+  const r = rng(seed),
+    ro = otherRng(seed);
   let pairs = 0;
   const shapes: Shape[] = [
     { two: false, kids: false },
@@ -150,7 +160,7 @@ function sweepBases(seed: number): Household[] {
   ];
   return shapes.flatMap(shape =>
     [0, 1].map(() => {
-      const hh = randomHousehold(r, shape);
+      const hh = randomHousehold(r, ro, shape);
       hh.people = hh.people.map(x => ({ ...blank(x.ord), ded: x.ded }));
       hh.useCredits = true; // the credits are what the sweeps examine
       if (!shape.two) hh.adults = 1;
@@ -453,6 +463,62 @@ for (const y of YEARS) {
   });
 }
 
+// ---- Other income sweeps --------------------------------------------------------------------------------------
+
+/** The phase-ins that run on net income rather than working income, so other income can raise them too. */
+const NET_PHASE_IN = new Set(["groceries-benefit", "nl-income-supplement", "pei-sales-tax-credit"]);
+/** Who claims the children and the spouse amount: the person with the higher net income (see household()). */
+const claimant = (h: H) => (h.list.length === 2 && h.list[1].ti > h.list[0].ti ? 1 : 0);
+
+for (const y of YEARS)
+  test(`${y.year}: more other income never lowers tax, and raises no benefit that phases in with work`, () => {
+    const taxFell: string[] = [];
+    const rose = new Map<string, string>(); // program → an example
+    for (const p of y.provinces)
+      for (const base of BASES) {
+        let a: H | null = null;
+        for (let oth = 0; oth <= 150_000; oth += 1_000) {
+          const to = { ...base, people: base.people.map((x, i) => (i === base.active ? { ...x, oth } : x)) };
+          const b = household(y, p, to);
+          if (a) {
+            const step = `${where(y, p, to)} (other income ${oth - 1_000} → ${oth})`;
+            // Skipped where the claimant changes: the children's and spouse credits move to the other person, whose
+            // own credits differ (only employment income brings CPP and EI credits), so tax can step down there.
+            const fell = incomeTax(b) < incomeTax(a) - EPS || b.total < a.total - EPS;
+            if (fell && claimant(a) === claimant(b)) taxFell.push(step);
+            const la = benefitLines(p, a),
+              lb = benefitLines(p, b);
+            for (const key of keysOf(la, lb))
+              if (lineOf(lb, key) > lineOf(la, key) + EPS && !rose.has(key)) rose.set(key, step);
+          }
+          a = b;
+        }
+      }
+    assert.deepEqual(taxFell.slice(0, 3), [], "income tax, or income tax plus payroll, fell as other income rose");
+    // A wrong reading that counts other income as working income makes the Workers Benefit, Quebec's work premium
+    // or a working-income supplement rise here.
+    for (const [key, step] of rose) assert.ok(NET_PHASE_IN.has(key), `${key} rose with other income: ${step}`);
+  });
+
+test("other income pays no payroll but the health premium, and doesn't change employment-only amounts", () => {
+  forAll(10, 300, {}, (y, p, hh) => {
+    const withOther = { ...hh, people: hh.people.map((x, i) => ({ ...x, oth: x.oth || 20_000 * (i + 1) })) };
+    const without = { ...hh, people: hh.people.map(x => ({ ...x, oth: 0 })) };
+    const a = household(y, p, without),
+      b = household(y, p, withOther);
+    b.list.forEach((rb, i) => {
+      const ra = a.list[i],
+        at = `person ${i}: ${where(y, p, withOther)}`;
+      assert.deepEqual(rb.pay, ra.pay, `CPP/QPP, EI, QPIP or territorial payroll tax changed: ${at}`);
+      for (const k of ["empAmt", "fEmpFull", "pEmpFull", "workerDed"] as const)
+        assert.equal(rb[k], ra[k], `${k} changed: ${at}`);
+      assert.ok(rb.ohp >= ra.ohp - EPS, `health premium fell: ${at}`);
+      assert.ok(rb.ti >= ra.ti - EPS, `net income fell: ${at}`);
+    });
+    assert.ok(b.famNet >= a.famNet - EPS, `family net income fell: ${where(y, p, withOther)}`);
+  });
+});
+
 test("every known stacked-clawback exception is still seen", () => {
   const seen = new Set(YEARS.flatMap(y => findingsFor(y).stacked.map(stackedFor)));
   for (const k of STACKED)
@@ -470,7 +536,8 @@ function topCombinedRate(y: YearData, p: Province): number {
   return top(y.federal.brackets) * k + top(p.brackets) * (1 + surtax);
 }
 /** Income received, counting a capital loss as nothing: it can't offset other income. */
-const received = (hh: Household) => hh.people.reduce((a, x) => a + x.ord + Math.max(0, x.cg) + x.ed + x.nd + x.fd, 0);
+const received = (hh: Household) =>
+  hh.people.reduce((a, x) => a + x.ord + (x.oth ?? 0) + Math.max(0, x.cg) + x.ed + x.nd + x.fd, 0);
 
 test("the effective income tax rate is below the top combined marginal rate", () => {
   forAll(2, 300, {}, (y, p, hh) => {
@@ -558,6 +625,8 @@ test("swapping two spouses' incomes leaves the household's totals unchanged", ()
       assert.ok(close(a[k], b[k]), `${k}: ${a[k]} vs ${b[k]} swapped: ${where(y, p, hh)}`);
     for (const k of ["ord", "cg", "ed", "nd", "fd"] as const)
       assert.ok(close(a.margBy[k], b.margBy[k]), `marginal rate on ${k} for the same person: ${where(y, p, hh)}`);
+    const [ma, mb] = [a.breakdown.margOther, b.breakdown.margOther];
+    assert.ok(close(ma, mb), `marginal rate on other income for the same person: ${where(y, p, hh)}`);
   });
 });
 
@@ -601,7 +670,7 @@ test("with no income there is no income tax and no payroll", () => {
 const CHILD_EXCEPTIONS = new Set(["QC: canada-workers-benefit"]);
 
 // Alberta A30 s.30.2: with low earnings but high investment income, an extra child's higher working
-// reduction can exceed the unchanged phase-in amount. Only admit the exact uncapped, positive case.
+// reduction can exceed the unchanged phase-in amount. Admit only the exact statutory reduction and minimum.
 function albertaWorkingReduction(y: YearData, p: Province, hh: Household, a: H, b: H): boolean {
   const program = p.childBenefit;
   if (
@@ -620,9 +689,13 @@ function albertaWorkingReduction(y: YearData, p: Province, hh: Household, a: H, 
   const earned = hh.people[0].ord + (hh.spouse ? (hh.people[1]?.ord ?? 0) : 0);
   const phaseIn = q.workingRate * Math.max(0, earned - q.workingFloor);
   if (phaseIn <= 0 || phaseIn >= Math.min(q.working[i], q.working[i + 1])) return false;
-  if (a.provBen <= q.minAnnual || b.provBen <= q.minAnnual) return false;
-  const expectedFall = (q.workingPhaseOut[i + 1] - q.workingPhaseOut[i]) * netOver;
-  return expectedFall > 0 && Math.abs(a.provBen - b.provBen - expectedFall) < EPS;
+  const expected = (index: number) => {
+    const work = Math.max(0, phaseIn - q.workingPhaseOut[index] * netOver);
+    return work > 0 ? Math.max(q.minAnnual, work) : 0;
+  };
+  const before = expected(i),
+    after = expected(i + 1);
+  return before > after && Math.abs(a.provBen - before) < EPS && Math.abs(b.provBen - after) < EPS;
 }
 
 test("another child never raises income tax and benefit declines follow documented rules", () => {
