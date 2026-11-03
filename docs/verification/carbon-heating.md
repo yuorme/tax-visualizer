@@ -52,5 +52,34 @@ Example: Alberta's 2023 gas quantity is 160,857,628 GJ / 1,633,225 households. T
 (90 × $0.0979 + 275 × $0.1239) / 365 per m³. Multiply by 26.853 m³/GJ and the household quantity to get
 $310.73 after rounding. In 2025 only 90 days at $0.1525/m³ apply, giving $99.45.
 
-Territorial consumption assumptions and pre-federal provincial systems require separate regional evidence
-before final data activation.
+## Territorial proxies and earlier provincial systems
+
+Territorial survey quantities comparable to the provincial series were not available. The Yukon estimate uses
+1,750 litres of oil a year: the midpoint of the 1,500–2,000 L illustrative oil-heated-home range in the official
+2017 advisory report. This represents an oil-heated home, not a population average that includes electric heat.
+NWT uses 2,406 L/year from a 2012 Deline feasibility study's residential-building assumption. Nunavut explicitly
+borrows that same northern oil proxy; it is not a Nunavut measurement. These proxies stay fixed across years,
+exclude other fuels, and are identified in every affected YAML `method` field.
+
+NWT's heating-diesel charge is fully rebated through March 2023 and again from April 2024. Nunavut's fuel
+discount halves the heating-oil charge through March 2023; the full charge then applies until the federal
+November 9 exemption. Yukon also follows the federal heating-oil exemption. The resulting annual oil estimates:
+
+| Year | Yukon | NWT | Nunavut |
+|---|---:|---:|---:|
+| 2019 | 47.37 | 0.00 | 32.57 |
+| 2020 | 129.21 | 0.00 | 88.83 |
+| 2021 | 176.21 | 0.00 | 121.13 |
+| 2022 | 223.11 | 0.00 | 153.37 |
+| 2023 | 242.85 | 315.05 | 294.11 |
+| 2024 | 0.00 | 103.97 | 0.00 |
+| 2025 | 0.00 | 0.00 | 0.00 |
+
+Alberta's provincial 2019 levy was $1.517/GJ natural gas and $0.0803/L oil through May 29, then zero for the
+rest of the year. Applied to the same provincial consumption baseline, the estimate is $60.99. New Brunswick
+charged natural gas throughout its April 2020–June 2023 provincial system, but exempted domestic heating oil.
+The resulting NB estimates are $6.42, $6.26, $7.93 and $18.04 for 2020–2023. PEI and Newfoundland and Labrador
+exempted residential heating fuels under their provincial systems before the federal July 2023 transition.
+
+Exact schedules, source links and cache paths are in [regional evidence](carbon-regions.md) and
+`carbon-regional-records.json`. Those records include day-weighted effective oil rates and the proxy quantities.

@@ -27,3 +27,68 @@ sources:
   - {label: "CRA, GST/HST historical rates and provincial sales-tax rates", url: https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/charge-collect-which-rate/calculator.html}
   - {label: "City of Saskatoon, 2023 city/library mill rates and residential factor", url: https://www.saskatoon.ca/sites/default/files/media/documents/Historical%20tax%20Rate%202018-2026.pdf}
   - {label: "City of Saskatoon, 2023 property tax notice guide (80% portion, 4.54 school mills)", url: https://www.saskatoon.ca/sites/default/files/documents/assessment-tax-tool/2023-Guide%20to%20tax-web.pdf}
+  - label: "Carbon history: Statistics Canada, Canadian Vehicle Survey: Annual 2009 (53-223-X)"
+    url: https://www150.statcan.gc.ca/n1/pub/53-223-x/53-223-x2009000-eng.pdf
+  - label: "Carbon history: Statistics Canada 25-10-0060-01 household energy consumption, selected CSV rows"
+    url: https://www150.statcan.gc.ca/n1/tbl/csv/25100060-eng.zip
+  - label: "Carbon history: Natural Gas: A Primer"
+    url: https://natural-resources.canada.ca/energy-sources/fossil-fuels/natural-gas-primer
+  - label: "Carbon history: Fuel charge rates"
+    url: https://www.canada.ca/en/revenue-agency/services/forms-publications/publications/fcrates/fuel-charge-rates.html
+  - label: "Carbon history: Closed - Canada Carbon Rebate (CCR) for individuals"
+    url: https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-carbon-rebate/how-much.html
+  - label: "Carbon history: Pollution pricing in Canada"
+    url: https://www.canada.ca/en/environment-climate-change/news/2023/06/pollution-pricing-in-canada.html
+  - label: "Carbon history: Lowering energy bills for Canadians across the country"
+    url: https://www.canada.ca/en/department-finance/news/2023/10/lowering-energy-bills-for-canadians-across-the-country.html
+
+# Historical driving defaults use a common survey baseline; see cited sources.
+driving:
+  distance: 15300
+  estimated: true
+
+# Calendar-year carbon charges and cash rebates; heating is an explicit modeled estimate.
+carbon:
+  name: Federal carbon pricing
+  gasoline:
+    - from: 2023-01-01
+      rate: 0.1105
+    - from: 2023-04-01
+      rate: 0.1431
+  heating:
+    amount: 240.06
+    estimated: true
+    method: 2021 Statistics Canada household natural gas and heating oil use averaged across all households; 76.0915 GJ gas and 0.0000 GJ oil, held constant across years; calendar-day rates and applicable heating exemptions. See carbon heating verification.
+  rebates:
+    - program: carbon-rebate-payments
+      name: Climate Action Incentive / Canada Carbon Rebate
+      params:
+        payments:
+          - date: 2023-01-01
+            adult: 137.5
+            spouse: 68.75
+            child: 34.5
+            firstChild: 68.75
+            threshold: [0, 0]
+            rate: 0
+          - date: 2023-04-01
+            adult: 170
+            spouse: 85
+            child: 42.5
+            firstChild: 85
+            threshold: [0, 0]
+            rate: 0
+          - date: 2023-07-01
+            adult: 170
+            spouse: 85
+            child: 42.5
+            firstChild: 85
+            threshold: [0, 0]
+            rate: 0
+          - date: 2023-10-01
+            adult: 170
+            spouse: 85
+            child: 42.5
+            firstChild: 85
+            threshold: [0, 0]
+            rate: 0

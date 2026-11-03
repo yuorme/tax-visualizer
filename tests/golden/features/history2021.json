@@ -131,7 +131,7 @@
         "useCredits": true
       },
       "expected": {
-        "credits": [["Renters tax credit", 180]]
+        "credits": [["Renters tax credit", 180], ["Climate Action Incentive / Canada Carbon Rebate", 360]]
       }
     },
     {
@@ -148,7 +148,7 @@
         "useCredits": true
       },
       "expected": {
-        "credits": [["Renters tax credit", 525]]
+        "credits": [["Renters tax credit", 525], ["Climate Action Incentive / Canada Carbon Rebate", 360]]
       }
     },
     {
@@ -165,7 +165,7 @@
         "useCredits": true
       },
       "expected": {
-        "credits": [["Renters tax credit", 525]]
+        "credits": [["Renters tax credit", 525], ["Climate Action Incentive / Canada Carbon Rebate", 360]]
       }
     },
     {

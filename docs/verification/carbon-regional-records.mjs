@@ -167,6 +167,8 @@ for (let year = 2019; year <= 2025; year++)
           "NU published quarterly schedule; discretionary small-payment consolidation not activated without evidence of actual use.",
         );
       }
+      if (payments.some(p => p.smallPayment))
+        for (const p of payments) p.smallPayment ??= { below: 50, multiplier: 1 };
       if (payments.length)
         row.rebates.push({
           name:
@@ -360,7 +362,7 @@ for (const spec of Object.values(heating))
     (spec.validYears ?? [2019, 2020, 2021, 2022, 2023, 2024, 2025]).map(y => [y, effective(y, spec.oil)]),
   );
 const result = {
-  status: "Collector records; additive rule contracts pending integration; do not copy notes metadata into schema",
+  status: "Verified regional records; source paths and notes are collection metadata, not carbon schema fields",
   sourceRoot: root,
   records: data,
   heating,

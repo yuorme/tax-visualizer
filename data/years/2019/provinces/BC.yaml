@@ -37,6 +37,22 @@ sources:
   - {label: "B.C. archived Medical and Health Care Services Regulation, sections 7.6–11", url: https://www.bclaws.gov.bc.ca/civix/document/id/loo103/loo103/426_97}
   - {label: "B.C. MSP group guide, explicit 2018–2019 premium table", url: https://www2.gov.bc.ca/assets/gov/health/practitioner-pro/medical-services-plan/group-procedure-guide.pdf}
   - {label: "B.C. MSP group administrator FAQ, spouse and child deductions", url: https://www2.gov.bc.ca/assets/gov/health/health-drug-coverage/medical-services-plan/group-plan-administrators-faqs.pdf}
+  - label: "Carbon history: Statistics Canada, Canadian Vehicle Survey: Annual 2009 (53-223-X)"
+    url: https://www150.statcan.gc.ca/n1/pub/53-223-x/53-223-x2009000-eng.pdf
+  - label: "Carbon history: Statistics Canada 25-10-0060-01 household energy consumption, selected CSV rows"
+    url: https://www150.statcan.gc.ca/n1/tbl/csv/25100060-eng.zip
+  - label: "Carbon history: Natural Gas: A Primer"
+    url: https://natural-resources.canada.ca/energy-sources/fossil-fuels/natural-gas-primer
+  - label: "Carbon history: Climate action tax credit"
+    url: https://www2.gov.bc.ca/gov/content/taxes/income-taxes/personal/credits/climate-action
+  - label: "Carbon history: Climate Action Tax Credit Regulation"
+    url: https://www.bclaws.gov.bc.ca/civix/document/id/complete/statreg/135_2008
+  - label: "Carbon history: Past carbon tax rates"
+    url: https://www2.gov.bc.ca/gov/content/taxes/sales-taxes/motor-fuel-carbon-tax/publications/carbon-tax-rates-by-fuel-type/past-carbon-tax-rates
+  - label: "Carbon history: BC 2018 carbon-tax rates in the 2017 Budget Measures Implementation Act"
+    url: https://www.bclaws.gov.bc.ca/civix/document/id/lc/billsprevious/2nd41st%3Agov02-3
+  - label: "Carbon history: Budget and Fiscal Plan - Budget 2017 September Update"
+    url: https://bcbudget.gov.bc.ca/2017_sept_update/bfp/2017_sept_update_budget_and_fiscal_plan.pdf
 householdPremium:
   program: bc-msp-premiums
   estimated: true
@@ -52,3 +68,54 @@ householdPremium:
       - [38000, 336]
       - [42000, 390]
       - [.inf, 450]
+
+# Historical driving defaults use a common survey baseline; see cited sources.
+driving:
+  distance: 12900
+  estimated: true
+
+# Calendar-year carbon charges and cash rebates; heating is an explicit modeled estimate.
+carbon:
+  name: BC carbon tax
+  gasoline:
+    - from: 2019-01-01
+      rate: 0.0778
+    - from: 2019-04-01
+      rate: 0.0889
+  heating:
+    amount: 94.02
+    estimated: true
+    method: 2021 Statistics Canada household natural gas and heating oil use averaged across all households; 48.5060 GJ gas and 0.2385 GJ oil, held constant across years; calendar-day rates and applicable heating exemptions. See carbon heating verification.
+  rebates:
+    - program: carbon-rebate-payments
+      name: BC climate action tax credit
+      params:
+        payments:
+          - date: 2019-01-01
+            adult: 33.75
+            spouse: 33.75
+            child: 10
+            firstChild: 33.75
+            threshold: [33993, 39658]
+            rate: 0.005
+          - date: 2019-04-01
+            adult: 33.75
+            spouse: 33.75
+            child: 10
+            firstChild: 33.75
+            threshold: [33993, 39658]
+            rate: 0.005
+          - date: 2019-07-01
+            adult: 38.625
+            spouse: 38.625
+            child: 11.375
+            firstChild: 38.625
+            threshold: [34876, 40689]
+            rate: 0.005
+          - date: 2019-10-01
+            adult: 38.625
+            spouse: 38.625
+            child: 11.375
+            firstChild: 38.625
+            threshold: [34876, 40689]
+            rate: 0.005

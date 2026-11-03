@@ -38,4 +38,7 @@ Official sources are cached in `2025/sources/carbon-federal-rates.txt` and `carb
   $100 - 1% × $5,000 = $50. A couple and a single parent with one child each receive $150 without reduction;
   a single parent with two children receives $175. This isolates the family threshold and first-child substitution.
 
-Existing-year data is not yet activated by this prerequisite. No existing golden expectations are changed.
+The original engine prerequisite leaves existing-year data and goldens unchanged. The subsequent activation
+adds sourced 2019–2025 data and separate [published references](carbon-reference.md). Its affected historical
+snapshots are reconciled against independently calculated carbon-only deltas; unrelated fields, Quebec and
+all 2026 snapshots are preserved. See the activation audit for exact affected cases and before/after values.

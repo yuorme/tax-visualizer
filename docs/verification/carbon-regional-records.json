@@ -1,5 +1,5 @@
 {
-  "status": "Collector records; additive rule contracts pending integration; do not copy notes metadata into schema",
+  "status": "Verified regional records; source paths and notes are collection metadata, not carbon schema fields",
   "sourceRoot": ".",
   "records": [
     {
@@ -333,7 +333,11 @@
                   0,
                   0
                 ],
-                "rate": 0
+                "rate": 0,
+                "smallPayment": {
+                  "below": 50,
+                  "multiplier": 1
+                }
               },
               {
                 "date": "2020-07",
@@ -624,7 +628,11 @@
                   0,
                   0
                 ],
-                "rate": 0
+                "rate": 0,
+                "smallPayment": {
+                  "below": 50,
+                  "multiplier": 1
+                }
               },
               {
                 "date": "2021-10-01",
@@ -636,7 +644,11 @@
                   0,
                   0
                 ],
-                "rate": 0
+                "rate": 0,
+                "smallPayment": {
+                  "below": 50,
+                  "multiplier": 1
+                }
               }
             ]
           }

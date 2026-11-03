@@ -314,7 +314,7 @@ P.forEach(p => {
   const c = document.createElement("li");
   c.className = "col";
   c.id = `col-${p.c}`;
-  c.innerHTML = `<div class="col-plot"><span class="cv"></span><div class="stack"><i class="f"></i><i class="p"></i><i class="y"></i><i class="w"></i><i class="s"></i><i class="h"></i><i class="g"></i></div><i class="ben"></i></div>
+  c.innerHTML = `<div class="col-plot"><span class="cv"></span><div class="stack"><i class="f"></i><i class="p"></i><i class="y"></i><i class="w"></i><i class="s"></i><i class="h"></i><i class="g"></i><i class="c"></i></div><i class="ben"></i></div>
     <div class="code" title="${p.n}">${p.c}${p.qc ? "<sup>†</sup>" : ""}</div><div class="cm"></div><div class="tag"></div>`;
   colsEl.appendChild(c);
 });

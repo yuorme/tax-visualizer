@@ -37,3 +37,68 @@ sources:
     url: https://www.yellowknife.ca/sites/default/files/bylaws/0a206f22-74e3-4002-9f4e-254dcedf727b.pdf
   - label: Yellowknife, adopted 2022 school levy bylaw 5061
     url: https://www.yellowknife.ca/sites/default/files/bylaws/b1ffdb0a-7454-4b69-a20d-48b9e3382303.pdf
+  - label: "Carbon history: Statistics Canada, Canadian Vehicle Survey: Annual 2009 (53-223-X)"
+    url: https://www150.statcan.gc.ca/n1/pub/53-223-x/53-223-x2009000-eng.pdf
+  - label: "Carbon history: NWT CARBON TAX REPORT"
+    url: https://www.fin.gov.nt.ca/sites/fin/files/resources/nwt_carbon_tax_report_2024-2025.pdf
+  - label: "Carbon history: Finance"
+    url: https://www.fin.gov.nt.ca/en/services/licences-taxes-and-fees/residents-businesses-and-governments
+  - label: "Carbon history: Government of Northwest Territories"
+    url: https://www.gov.nt.ca/en/newsroom/first-2020-cost-living-offset-payments-be-made-april-30th-2020
+  - label: "Carbon history: NWT CARBON TAX"
+    url: https://www.fin.gov.nt.ca/sites/fin/files/resources/nwt_carbon_tax-2023_changes.pdf
+  - label: "Carbon history: Government of Northwest Territories"
+    url: https://www.gov.nt.ca/en/newsroom/gnwt-ending-nwt-carbon-tax-most-users-april-1
+  - label: "Carbon history: \x01\x01\x01"
+    url: https://www.iti.gov.nt.ca/fr/file/1216
+
+# Historical driving defaults use a common survey baseline; see cited sources.
+driving:
+  distance: 11000
+  estimated: true
+
+# Calendar-year carbon charges and cash rebates; heating is an explicit modeled estimate.
+carbon:
+  name: Carbon pricing
+  heating:
+    amount: 0
+    estimated: true
+    method: Estimated 2406 L/year oil proxy from a 2012 Deline residential-building feasibility assumption, reused for the territory; not measured Yellowknife household use. Calendar-day diesel heating rebates apply.
+  rebates:
+    - name: Cost of Living Offset
+      program: carbon-rebate-payments
+      params:
+        payments:
+          - date: 2022-01-01
+            adult: 52
+            spouse: 52
+            child: 60
+            firstChild: 60
+            threshold: [0, 0]
+            rate: 0
+          - date: 2022-04-01
+            adult: 52
+            spouse: 52
+            child: 60
+            firstChild: 60
+            threshold: [0, 0]
+            rate: 0
+          - date: 2022-07-01
+            adult: 65
+            spouse: 65
+            child: 75
+            firstChild: 75
+            threshold: [0, 0]
+            rate: 0
+          - date: 2022-10-01
+            adult: 65
+            spouse: 65
+            child: 75
+            firstChild: 75
+            threshold: [0, 0]
+            rate: 0
+  gasoline:
+    - from: 2022-01-01
+      rate: 0.094
+    - from: 2022-07-01
+      rate: 0.117

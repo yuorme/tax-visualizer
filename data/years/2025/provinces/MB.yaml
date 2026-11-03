@@ -23,3 +23,52 @@ sources:
   - {label: "Manitoba Finance, Personal tax credits (2025 basic and spouse amounts, affordability credits)", url: "https://www.gov.mb.ca/finance/personal/pcredits.html"}
   - {label: "CRA, Form MB428 for 2025", url: "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5007-c/5007-c-25e.pdf"}
   - {label: "nesto, Canada Property Tax Guide 2026 (residential property tax rate, carried over to 2025)", url: "https://www.nesto.ca/mortgage-basics/property-taxes-canada-highest-to-lowest/"}
+  - label: "Carbon history: Statistics Canada, Canadian Vehicle Survey: Annual 2009 (53-223-X)"
+    url: https://www150.statcan.gc.ca/n1/pub/53-223-x/53-223-x2009000-eng.pdf
+  - label: "Carbon history: Statistics Canada 25-10-0060-01 household energy consumption, selected CSV rows"
+    url: https://www150.statcan.gc.ca/n1/tbl/csv/25100060-eng.zip
+  - label: "Carbon history: Natural Gas: A Primer"
+    url: https://natural-resources.canada.ca/energy-sources/fossil-fuels/natural-gas-primer
+  - label: "Carbon history: Fuel charge rates"
+    url: https://www.canada.ca/en/revenue-agency/services/forms-publications/publications/fcrates/fuel-charge-rates.html
+  - label: "Carbon history: Closed - Canada Carbon Rebate (CCR) for individuals"
+    url: https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-carbon-rebate/how-much.html
+  - label: "Carbon history: Lowering energy bills for Canadians across the country"
+    url: https://www.canada.ca/en/department-finance/news/2023/10/lowering-energy-bills-for-canadians-across-the-country.html
+
+# Historical driving defaults use a common survey baseline; see cited sources.
+driving:
+  distance: 15000
+  estimated: true
+
+# Calendar-year carbon charges and cash rebates; heating is an explicit modeled estimate.
+carbon:
+  name: Federal carbon pricing
+  gasoline:
+    - from: 2025-01-01
+      rate: 0.1761
+    - from: 2025-04-01
+      rate: 0
+  heating:
+    amount: 49.77
+    estimated: true
+    method: 2021 Statistics Canada household natural gas and heating oil use averaged across all households; 49.2892 GJ gas and 0.0000 GJ oil, held constant across years; calendar-day rates and applicable heating exemptions. See carbon heating verification.
+  rebates:
+    - program: carbon-rebate-payments
+      name: Climate Action Incentive / Canada Carbon Rebate
+      params:
+        payments:
+          - date: 2025-01-01
+            adult: 150
+            spouse: 75
+            child: 37.5
+            firstChild: 75
+            threshold: [0, 0]
+            rate: 0
+          - date: 2025-04-01
+            adult: 150
+            spouse: 75
+            child: 37.5
+            firstChild: 75
+            threshold: [0, 0]
+            rate: 0

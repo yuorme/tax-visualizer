@@ -1,0 +1,358 @@
+Title: Goods and Services Tax/Harmonized Sales Tax (GST/HST) Credit and Related Benefits and Credits v3.0
+URL: https://www.canada.ca/en/revenue-agency/services/about-canada-revenue-agency-cra/protecting-your-privacy/privacy-impact-assessment/goods-services-tax-harmonized-sales-tax-gst-hst-credit-related-benefits-credits-v3.html
+Fetched: 2026-11-02
+SHA-256 of the original: 0b91de8561b53ac6a8df146c3cfdc31f07c9bfb716fc5b8ec9f50bb3d2a4f154
+Publication date modified: 2025-11-25
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+# Goods and Services Tax/Harmonized Sales Tax (GST/HST) Credit and Related Benefits and Credits v3.0
+
+## Assessment, Benefit and Service Branch
+Benefit Programs Directorate
+
+## On this page
+
+- Overview & Privacy Impact Assessment Initiation (PIA)
+- Summary of the project, initiative or change
+- Risk identification and categorization
+
+## Overview & Privacy Impact Assessment (PIA) Initiation
+
+### Government institution
+
+Canada Revenue Agency
+
+#### Government official responsible for the PIA
+
+Melanie Serjak
+Assistant Commissioner
+Assessment, Benefit, and Service Branch
+
+#### Head of the government institution or Delegate for section 10 of the Privacy Act
+
+Anne Marie Laurin
+Director General
+Access to Information and Privacy Directorate
+
+#### Name of program or activity of the government institution
+
+Benefits
+
+We deliver a range of ongoing benefits, credits, and one-time payment programs that support the economic and social well-being of Canadians. Through processing activities, we make sure that Canadians receive their rightful benefits in a timely manner. We offer recipients timely and accessible information on their entitlements and obligations through our contact centres, securely online services, and through the Benefits Outreach Program, which helps Canadians become more aware of the benefits they are entitled to and how to receive them. We also support community organizations and volunteers in their efforts to help individuals with modest income file their tax returns through the Community Volunteer Income Tax Program (CVITP).
+
+#### Standard or institution specific class of record:
+
+Benefits Programs – Goods and Services Tax/Harmonized Sales Tax (GST/HST) Credit and other related Provincial and Territorial Benefit and Credit Programs
+CRA ABSB 648
+
+#### Standard or institution specific personal information bank:
+
+Goods and Services Tax / Harmonized Sales Tax Credit (GST/HST credit) and related benefits and credits
+CRA PPU 140
+TBS Registration Number: 003016
+
+#### Legal authority for program or activity
+
+The goods and services/harmonized sales tax credits are administered under section 122.5 of the Income Tax Act (ITA).
+
+Subsection 220(1) of the ITA provides for the Minister’s duty to collect information for the purpose of the administration and enforcement of any program covered under the ITA. In this case, the goods and services/harmonized sales tax credits are administered under section 122.5 of the ITA. The Canada Carbon Rebate payment is administered under subsection 122.8(1) of the ITA and the advanced Canada workers benefit is administered under section 122.7 of the ITA.
+
+Section 61 of the Canada Revenue Agency Act allows the CRA to implement agreements with other federal, provincial, and territorial governments for the purpose of carrying out an activity or program administered by the CRA.
+
+The authority to perform a set-off is granted under subsection 164(2) of the ITA and subsection 155(1) of the Financial Administration Act.
+
+The legal authority to collect the Social Insurance Number is found under section 237 of the ITA and is used for identification purposes.
+
+The CRA collected direct deposit and contact information from Employment and Social Development Canada (ESDC) under subsection 241(5) of the ITA upon consent from the taxpayer to administer section 122.61 of the act.
+
+#### In-person direct deposit and address updates through Service Canada
+
+The CRA received direct deposit and contact information from ESDC upon consent from the taxpayer. ESDC acted as a service provider to collect the information on behalf of the CRA as authorized under subparagraph 5.1(1)(a) of the Department of Employment and Social Development Act (DESDA). This section authorized ESDC/Service Canada to perform services to the public for the CRA.
+
+ESDC/Service Canada then shared/disclosed the personal information to the CRA as per section 34.1 of DESDA, which states: “Information may be made available to any person or body for the administration of the service delivery program under which that information was obtained or prepared.”
+
+The CRA will be collecting the information from ESDC under section 220(1) of the ITA to fulfill the agencies mandate to administer and enforce programs under the ITA.
+
+#### Newfoundland and Labrador Disability Benefit (NLDB)
+
+The CRA administers the NLDB under the Tax Collection Agreement with the province. This agreement authorizes the CRA to administer the Newfoundland and Labrador Income Tax Act, 2000 and its regulations, including its provisions for the disability benefit.
+
+#### Nunavut Carbon Credit (NCC)
+
+The CRA administers the NCC under the Tax Collection Agreement with the territory. This agreement authorizes the CRA to administer the Nunavut Income Tax Act and its regulations, including its provisions for the carbon credit.
+
+## Summary of the project, initiative or change
+
+### Overview of the Program or Activity
+
+Goods and services tax/harmonized sales tax credit
+
+In cooperation with federal, provincial, and territorial partners, the CRA develops and coordinates a variety of federal, provincial, and territorial benefit and credit programs, which contribute to the economic and social well-being of Canadians. One of these programs is the goods and services tax/harmonized sales tax credit.
+
+The goods and services tax/harmonized sales tax credit is a tax-free quarterly payment that helps individuals and families with low and modest incomes offset the goods and services tax/harmonized sales tax that they pay. It may also integrate payments from provincial and territorial benefit and credit programs administered by the CRA. Taxpayers are automatically deemed to have applied for the goods and services tax/harmonized sales tax credit when they file their personal income tax and benefit return.
+
+Eligibility criteria for the goods and services tax/harmonized sales tax credits are as follows:
+
+- An individual must be a resident of Canada for income tax purposes at the beginning of the month in which the CRA makes a payment. In the month before the CRA makes a quarterly payment, the individual must also meet at least one of the following conditions during the same period:
+
+- Be 19 years of age or older.
+- Have (or had) a spouse or common-law partner.
+- Be (or were) a parent and live (or lived) with your child.
+
+The entitlement amount of the goods and services tax/harmonized sales tax credit(s) is based on the number of children under 19, the marital status (credit for the spouse), and the combined adjusted family net income (when applicable).
+
+#### Related programs
+
+The CRA administers the following federal, provincial, and territorial programs that are related to or integrated with the goods and services tax/harmonized sales tax credit:
+
+- Alberta climate leadership adjustment rebate
+- British Columbia climate action tax credit
+- British Columbia harmonized sales tax credit
+- New Brunswick harmonized sales tax credit
+- Newfoundland and Labrador disability benefit
+- Newfoundland and Labrador income supplement which includes:
+
+- Newfoundland and Labrador disability amount
+- Newfoundland and Labrador seniors’ benefit
+
+- Nunavut carbon credit
+- Prince Edward Island sales tax credit
+- Saskatchewan low-income tax credit
+- Ontario trillium benefit, which includes:
+
+- Ontario energy and property tax credit
+- Northern Ontario energy credit
+- Ontario sales tax credit
+
+- Ontario senior homeowners’ property tax grant
+- Yukon government carbon price rebate – Individuals
+- Northwest Territories cost of living offset
+- Nova Scotia affordable living tax credit
+- Climate action incentive payment (rebranded to Canada Carbon Rebate or CCR)
+- Advanced Canada workers benefit
+
+Note: Henceforward, the document will refer to the above programs as the “goods and services tax/harmonized sales tax credit and related programs.”
+
+There is no need, for most individuals, to apply separately to qualify under the above programs. If eligible, the payments are calculated automatically based on information from the recipient’s Canada child benefits application and/or their personal income tax and benefit return as well as their spouse or common-law partner’s file.
+
+Effective July 2023, individuals are deemed to have applied for the advanced Canada workers benefit payments if they are eligible for the Canada workers benefit on Schedule 6 of the personal income tax and benefit return in the previous year.
+
+Individuals can apply for the Ontario senior homeowner’s property tax grant and the Ontario trillium benefit (Ontario energy and property tax grant and Northern Ontario energy credit components) by completing form ON-BEN in the Ontario provincial schedule of the personal income tax and benefit return.
+
+Applications for the rural supplement of the Canada Carbon Credit payment are made on the personal income tax and benefit return, verbally through a CRA contact centre and on the RC325 form (Address and Telephone Number Change Request form).
+
+New residents of Canada who have not yet filed a Canadian personal income tax and benefit return and who have children can apply for the goods and services tax/harmonized sales tax credit and related programs using the form “RC66 Canada Child Benefits Application” and the form “RC66SCH Status in Canada and Income Information.”
+
+Individuals who become residents of Canada for tax purposes during the calendar year who are not Canada child benefit recipients can provide a separate application form titled “RC151 GST/HST Credit and Canada Carbon Rebate Application for Individuals Who Become Residents of Canada.”
+
+The Canada.ca site will host an estimator to help individuals to estimate what benefits and credits they may be entitled to based on their unique situation. No personal information will be collected or kept by the online estimator.
+
+The British Columbia low-income climate action tax credit was retitled as the British Columbia climate action tax credit. Although changing its name, there were no changes to administration or use of the data. The payments are integrated with the goods and services tax/harmonized sales tax credit.
+
+- The British Columbia harmonized sales tax credit eligibility period ended January 2013. There are no new entitlements after this date, but new assessments and reassessments continue for previous eligible periods. The payments are integrated with the goods and services tax/harmonized sales tax credit.
+- The New Brunswick harmonized sales tax credit was introduced in October 2016. This credit is a tax-free amount paid to help offset the increase in the sales tax for households with low and modest incomes for individuals living in New Brunswick. The payments are integrated with the goods and services tax/harmonized sales tax credit.
+- The Newfoundland and Labrador harmonized sales tax credit evolved into the Newfoundland and Labrador income supplement in October 2016. The Newfoundland and Labrador income supplement is a tax-free payment made to low-income individuals and families, living in Newfoundland and Labrador, who may be impacted by additional provincial tax measures. The amount is calculated based on family composition and adjusted family net income with additional supplements for seniors and persons with disabilities. Individuals or spouses eligible for the disability tax credit are eligible for the disability supplement amount. The payments are integrated with the goods and services tax/harmonized sales tax credit.
+- The Saskatchewan sales tax credit was retitled the Saskatchewan low-income tax credit. The payments are integrated with the goods and services tax/harmonized sales tax credit.
+- The Yukon government carbon price rebate – Individuals payment was introduced in October 2019. This rebate is a non-taxable amount paid to individuals and families living in the Yukon to help offset the cost of the federal carbon pollution pricing levy. The payment amount is integrated with the goods and services tax/harmonized sales tax credit.
+- The Northwest Territories cost of living offset payment was introduced in October 2019. This offset is a non-taxable payment made to individuals and families living in the Northwest Territories to help offset the cost of the Northwest Territories carbon tax. The payment is integrated with the goods and services tax/harmonized sales tax credit.
+- The Nova Scotia affordable living tax credit is a non-taxable quarterly payment to make life more affordable for low- and modest-income individuals and families living in Nova Scotia. The payments are integrated with the goods and services tax/harmonized sales tax credit.
+
+The CCR changed from a refundable tax credit claimed annually on the personal income tax and benefit returns to quarterly tax-free payments in July 2022. The CCR is a tax-free amount paid to help individuals and families offset the cost of the federal pollution pricing. It is available to residents of a province or territory that have chosen not to price pollution or proposed a system that did not meet the standards set by the federal pricing system. Starting in July 2022, Alberta, Saskatchewan, Manitoba, and Ontario residents were eligible for the CCR payments. Starting in July 2023, Newfoundland and Labrador, Nova Scotia, New Brunswick, and Prince Edward Island residents became eligible. The payments consist of a non income tested basic amount and a supplement for residents of small and rural communities. The payments are calculated based on family composition and are issued quarterly as a stand-alone payment.
+
+While the CCR payments are not integrated with the goods and services tax/harmonized sales tax credit, similar eligibility requirements apply. In the month before the CRA makes a quarterly payment, an individual residing in one of the eligible provinces must also meet at least one of the following conditions during the same period:
+
+- Be 19 years of age or older.
+- Have (or had) a spouse or common-law partner.
+- Be (or were) a parent and live (or lived) with your child
+
+Starting with the 2022 tax year, taxpayers eligible for a rural supplement of the CCR payment will no longer need to apply on Schedule 14 of the personal income tax and benefit return but will need to apply on page 2 of the return, fill out form RC325 or contact the CRA to review their eligibility. The rural supplement payments are integrated with the quarterly CCR payment.
+
+- In November 2022, a one-time top up to the goods and services tax credit was issued in an effort to address rising costs of living due to inflation.
+- A one-time grocery rebate supplement became available for all individuals who were entitled to the GST/HST credit in January 2023. The grocery rebate payment initiative began in July 2023 and is issued alongside the GST/HST credit payments, if applicable.
+- Effective January 2017, paper records are no longer sent to a third-party paper storage provider. All paper records are scanned and stored on an internal database. Existing records continue to be retained for the appropriate disposition period.
+- Effective February 2023, the goods and services tax/harmonized sales tax credit and related programs began to participate in the digital mailroom project (a separate privacy protocol assessment was done for this project in 2021). All direct deposit and identification change requests received by mail are sent to a third party, to be digitized into the document management portal prior to processing.
+- The Canada workers benefit is a refundable tax credit for low-income individuals and families who have working income earned from employment or business. This credit can be claimed each year on the personal income tax and benefit return if an individual has:
+
+- earned working income;
+- is 19 years of age or older on December 31; and
+- is a resident of Canada for income tax purposes throughout the year.
+- Individuals under 19 who have a spouse or common-law partner, or an eligible dependent on December 31, are also eligible.
+
+In the past, individuals could apply for this credit in advance of filing a tax return by completing the form RC201 – Canada Workers Benefit Advance Payments Application or applying through My Account. These early payments were referred to as the Canada workers benefit advance payments and corresponded to a maximum of 50% of the estimated income provided by the recipient and divided into four quarterly payments. The advance payments included a disability supplement if the eligible individuals had a valid disability tax credit. Payments were stand alone and not integrated with any other benefits. Privacy considerations for the original application-based payments were assessed under the Working Income Tax Benefit (WITB) Advance Payments PIA file and in personal information bank Working Income Tax Benefit (WITB) CRA PPU 178.
+
+Effective July 28, 2023, individuals are automatically deemed to have applied for the advanced Canada workers benefit payments if they were entitled to the Canada workers benefit refundable tax credit on their personal income tax and benefit return for the previous year. Eligible individuals will automatically receive 50% of the Canada workers benefit entitlement broken into three payments. Payments are issued in July, October and January; any additional entitlements for the year will be reconciled when the individual files a tax return for the new year. These advanced payments are calculated based on income, family status (married, dependants), province or territory of residence and include a disability supplement if the eligible individual has a valid disability tax credit for the tax year. Payments will continue to be stand alone and not integrated with any other benefits. An information slip (RC210) will be issued annually through MyAccount secure portal, or via mail for those who have not registered for secure online correspondence, and is used to report the advanced payments received on the income tax and benefit return.
+
+#### What’s New
+
+##### In-person direct deposit and address updates through Service Canada counter office
+
+From April 22, 2024, to October 31, 2024, when an individual visited a Service Canada Centre to update their direct deposit or address information for an Employment and Social Development (ESDC) program, the individual could consent to ESDC sharing information with the CRA. The updated information was electronically forwarded to the CRA to update the individual’s tax and benefit account.
+
+##### Rebranding of the climate action incentive payment
+
+The Government of Canada rebranded the climate action incentive payment (CAIP) to Canada Carbon Rebate (CCR). The CCR program will follow the same flow and program requirements that were in place prior to the name change. No new collection, use, disclosure, or retention of personal information was changed.
+
+##### Canada Carbon Rebate (CCR) for individuals
+
+On March 15, 2025, the Government of Canada stopped the federal fuel charge and the Canada Carbon Rebate for individuals.
+
+The final CCR payment period for individuals was issued starting April 22, 2025. There will be no further quarterly CCR payments.
+
+Following the cancellation of the CCR, the BCCATC, NTCOLO, NCC and YGCPRI programs were cancelled accordingly. The final quarterly payments for these programs were issued on April 4, 2025. While there will be no further quarterly payments, the CRA continues to administer these programs for prior years.
+
+##### New provincial program – Newfoundland and Labrador Disability Benefit (NLDB)
+
+The Government of Newfoundland and Labrador (NL) introduced, as part of its June 2024 Budget, the Newfoundland and Labrador Disability Benefit (NLDB). The CRA is administering this new program on behalf of NL.
+
+The NLDB is a stand-alone program designed to provide additional financial support for low-income persons with disabilities in NL. Monthly NLDB payments are normally issued on the 25th of each month as a distinct payment. The first monthly payment will be issued on July 25, 2025.
+
+No application is required. An individual, as well as their spouse or common-law partner if applicable, must file a T1 return every year to start or continue receiving the NLDB based on their adjusted family net income, province of residence, and disability tax credit status.
+
+##### Nunavut Carbon Credit (NCC)
+
+The Nunavut Government introduced, as part of its 2023 budget, the Nunavut Carbon Credit (NCC) which was a non-taxable payment made to individuals and families to help offset the cost of the federal carbon pollution pricing levy. No application is required. An individual living in Nunavut, as well as their spouse or common-law partner if applicable, must file a personal income tax and benefit return every year to start or continue receiving the NCC calculated based on GST/HST Credit biographical information such as marital status and eligible child(ren).
+
+The NCC payments were issued from September 5, 2023, to April 4, 2025, retroactive to July 2023. The payments were issued quarterly in July, October, January, and April and were combined with the GST/HST credit payments. Retroactive payments continue to be issued for previous base years.
+
+##### Robotic Processing Automation
+
+The CRA may use robotic processing automation in the administration of benefits and credits.
+
+##### Digital version of the application
+
+A new electronic version of the RC151 GST/HST Credit and Canada Carbon Rebate Application for Individuals Who Become Residents of Canada application was introduced in May 2025 on the Canada.ca website to allow newcomers and returning residents to Canada to apply in the year they become residents of Canada. Future edits to this webform will be evaluated in future assessments.
+
+#### Scope of the Privacy Impact Assessment
+
+This Privacy Impact Assessment (PIA) identifies and assesses privacy risks relating to the administration and enforcement of the goods and services tax/harmonized sales tax credit and the related federal, provincial, and territorial benefits and credits.
+
+Certain compliance activities such as audits and criminal investigations are separate programs, and therefore are not included within the scope of this PIA. In addition, the calculation, enforcement, and administration of the Canada child benefit and the federal and/or provincial personal income tax and benefit returns, and the application process to determine if a person with a disability is eligible for the disability tax credit and the income verification services are not included in this PIA. Personal information and deidentified information compiled using business intelligence and analytical tools disclosed to another government departments finance teams for fiscal, policy, or program evaluation are out of scope and will now be assessed in a separate business intelligence PIA.
+
+Programs and initiatives that focus on economic benefits and credits are constantly changing. Therefore, when a new initiative or a change to an existing credit or benefit is identified, this PIA will be reviewed and updated accordingly.
+
+## Risk identification and categorization
+
+### A) Type of program or activity
+
+Compliance / Regulatory investigations and enforcement
+
+#### Level of risk to privacy: 3
+
+Details:
+
+The personal information is used for the identification, determination, validation, and payment of benefits and credits.
+
+Information is also used to determine whether an individual knowingly participated in or made a false statement or omission. The consequences can include reviews, which may result in termination and/or recoup of benefits and possibly levying civil penalties under subsection 163(2) of the ITA.
+
+Also in limited cases, information obtained during validation or compliance activities may be referred to the CRA’s Criminal Investigations program for further investigation against a particular individual. This may result in the laying of criminal charges under section 238 or 239 of the ITA against a particular individual.
+
+### B) Type of personal information involved and context
+
+Social insurance number, medical, financial or other sensitive personal information and/or the context surrounding the personal information is sensitive. Personal information of minors or incompetent individuals or involving a representative acting on behalf of the individual.
+
+#### Level of risk to privacy: 3
+
+Details:
+
+Personal information collected includes details such as: name, contact information, financial information, social insurance number and signature, biographical information, disability tax credit indicator, student indicator, and residency.
+
+In addition, some of the information will include the personal information of minors, and individuals incarcerated in a federal institution.
+
+### C) Program or activity partners and private sector involvement
+
+Private sector organizations or international organizations or foreign governments
+
+#### Level of risk to privacy: 4
+
+Details:
+
+The program includes the administration of benefit and tax credit programs on behalf of federal, provincial, and territorial partners. Information is disclosed by the CRA to our partners for the purpose of accurate calculation of programs and/or program evaluation, and to Public Services and Procurement Canada for the issuance of payments.
+
+The CRA sends information including eligibility, entitlement, payment, and identification data to Provincial/Territorial Finance departments for policy and program evaluation.
+
+The information is also used internally within the CRA for collection of outstanding balances, audit activities, appeals, statistical gathering, and call centre enquiry responses.
+
+The CRA receives information from Correctional Service Canada (CSC) to determine continued eligibility to the goods and services tax/harmonized sales tax credits and related benefits and credits.
+
+Archived historical documents containing personal information are stored by a third party in the private sector.
+
+Select paper documents for changes are now digitized and stored by a third party in the private sector prior to processing.
+
+### D) Duration of the program or activity
+
+Long-term program
+
+#### Level of risk to privacy: 3
+
+Details:
+
+Although some of the individual provincial/territorial credits may be short term, most are not, and the goods and services tax/harmonized sales tax credit and related benefits and credits are long-term programs with no established end date.
+
+### E) Program population
+
+The program affects certain individuals for external administrative purposes.
+
+#### Level of risk to privacy: 3
+
+Details:
+
+The program affects any individual who submits an application or files a personal income tax and benefit return, their spouse or common-law partner, and their children under 19 years of age.
+
+### F) Technology & privacy
+
+- Does the new or modified program or activity involve the implementation of a new electronic system, software or application program including collaborative software (or groupware) that is implemented to support the program or activity in terms of the creation, collection or handling of personal information?
+Risk to privacy: Yes
+- Does the new or modified program or activity require any modifications to IT legacy systems and/or services?
+Risk to privacy: Yes
+- Does the new or modified program or activity involve the implementation of one or more of the following technologies?
+
+Enhanced identification methods - this includes biometric technology (i.e. facial recognition, gait analysis, iris scan, fingerprint analysis, voice print, radio frequency identification (RFID), etc.) as well as easy pass technology, new identification cards including magnetic stripe cards, "smart cards" (i.e. identification cards that are embedded with either an antenna or a contact pad that is connected to a microprocessor and a memory chip or only a memory chip with non-programmable logic).
+
+#### Risk to privacy: No
+
+Use of Surveillance - this includes surveillance technologies such as audio/video recording devices, thermal imaging, recognition devices, RFID, surreptitious surveillance/interception, computer aided monitoring including audit trails, satellite surveillance etc.
+
+#### Risk to privacy: No
+
+Use of automated personal information analysis, personal information matching and knowledge discovery techniques - for the purposes of the Directive on PIA, government institutions are to identify those activities that involve the use of automated technology to analyze, create, compare, identify or extract personal information elements. Such activities would include personal information matching, record linkage, personal information mining, personal information comparison, knowledge discovery, information filtering or analysis. Such activities involve some form of artificial intelligence and/or machine learning to uncover knowledge (intelligence), trends/patterns or to predict behavior.
+
+#### Risk to privacy: Yes
+
+### G) Personal information transmission
+
+The personal information is transmitted using wireless technologies.
+
+#### Level of risk to privacy: 4
+
+Details:
+
+Personal information can be used in a system that has access to other systems and can be transferred to a secure portable device using CRA approved encryption technologies as required.
+
+##### Online services:
+
+The CRA uses specially configured computer Web servers for any online services (e.g., My Account), and uses corporate firewalls to protect our Web servers from unauthorized access. Personal information is not stored on these servers; CRA securely stores personal information on separate computer systems that are not directly accessible from the Internet.
+
+When transmitting personal information, access to our Web servers is limited to Web browsers that meet our security standards of encryption. We ensure that personal and financial information is encrypted—or scrambled—when it is transmitted between an individual’s computer and our Web servers. This ensures that computer hackers and other Internet users cannot view or alter the data being transmitted. We encrypt all web communication as prescribed by the Canadian Centre for Cyber Security (CCCS) published standard ITSP.40.111. This is one of the most secure forms of encryption available in North America and is a typical requirement for Web-based services, such as online banking or shopping, where securing personal information is a priority.
+
+##### Portable devices:
+
+Some employees’ workstations are composed of CRA-issued laptops in docking stations. Laptops comply with the Security for the Computing Environment Policy with Encryption and access control. Any telework is done through secure remote access (SRA) with a combination of government issued phones and/or approved limited use of personal telephone devices such as landlines.
+
+Any USB keys used must be CRA issued and formatted with encryption technology specific to the user.
+
+##### Data transfers and exchanges:
+
+All electronic transactions are securely transferred using Entrust encryption software with public key infrastructure, as prescribed by the CCCS published standard ITSP.40.111. By using the Entrust public key, only the corresponding private key owned by the partner can decrypt the file.
+
+To register for a CRA public key infrastructure enabled program, participants must first become CRA public key infrastructure subscribers and be approved by a CRA Local Registration Authority. CRA system administrators can control or limit access to specific directories on the server. In addition to restricting access to the server, the data for each partner is encrypted using the Entrust public key; only the corresponding private key owned by the partner can decrypt the file.
+
+Although wireless technology (e.g., Wi-Fi) may be used to transmit information, CRA employees are located in Canada and utilize Secure Remote Access to authenticate using their public key infrastructure certificate.
+
+Direct deposit and identification changes (such as an address change) received in writing are digitized and stored in the Document Management Portal for later access by CRA employees on a need-to-know basis.
+
+### H) Potential risk that in the event of a privacy breach, there will be an impact on the individual or employee
+
+Details:
+
+If the personal information is compromised, it has the potential to cause financial harm and embarrassment to the affected individual. The affected individual may also become a victim of identity theft, and their information may be used without their knowledge or consent.

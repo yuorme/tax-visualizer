@@ -47,3 +47,10 @@ sources:
   - {label: "Nova Scotia, Regulation 92/2020: annual child benefit amounts effective July 2020", url: https://novascotia.ca/just/regulations/RG2/2020/RG2-2020-07-17.pdf}
   - {label: "Nova Scotia, Affordable Living Tax Credit Regulations (unchanged since 2014)", url: https://novascotia.ca/JUST/REGULATIONS/regs/incaffordable.htm}
   - {label: "Halifax, 2020 tax resolution: mandatory and area levies", url: https://www.halifax.ca/sites/default/files/documents/city-hall/regional-council/200609rc-votes.pdf}
+  - label: "Carbon history: Statistics Canada, Canadian Vehicle Survey: Annual 2009 (53-223-X)"
+    url: https://www150.statcan.gc.ca/n1/pub/53-223-x/53-223-x2009000-eng.pdf
+
+# Historical driving defaults use a common survey baseline; see cited sources.
+driving:
+  distance: 17400
+  estimated: true

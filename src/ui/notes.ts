@@ -541,11 +541,14 @@ export function footerNotes(y: YearData, page: PageDefaults): string {
         `Carbon charges on gasoline use the driving inputs and rates within ${year}, weighted by days as if driving were even through the year.`,
         ...carbonProvinces.map(p => {
           const c = need(p.carbon, `${p.code} carbon pricing`);
-          return `${short(p)}: gasoline ${rateText(c.gasoline, year)}; estimated household heating ${money(c.heating.amount)} (${c.heating.method}).`;
+          const timing = c.rebates.some(r => r.estimated)
+            ? " Cash follows the published quarterly schedule; discretionary consolidation of small payments is not reconstructed."
+            : "";
+          return `${short(p)}: gasoline ${rateText(c.gasoline, year)}; estimated household heating ${money(c.heating.amount)} (${c.heating.method}).${timing}`;
         }),
         "Heating estimates stay fixed when household size, home value or driving changes. Sales tax on gasoline and heating is counted in taxable spending, so it is not added again here.",
         `Rebates count cash payments in calendar ${year}, including any final payments after a charge ended. Family composition is held fixed and income-tested credits use the modeled current family income; payment arrears and individual filing dates are not reconstructed.`,
-        "Reference cities determine rural eligibility. Quebec cap-and-trade and carbon costs embedded in goods or electricity are excluded.",
+        "Reference-city rebate amounts include any province-wide rural supplement. Quebec cap-and-trade and carbon costs embedded in goods or electricity are excluded.",
       ].join(" ")
     : "";
 
@@ -584,7 +587,7 @@ export function footerNotes(y: YearData, page: PageDefaults): string {
     ...(carbon ? [para("Carbon pricing", carbon)] : []),
     para(
       "What's not included",
-      `Age, pension, disability, medical, donation and other personal credits; pension income splitting; ${carbon ? "ordinary diesel and heating-fuel excise taxes" : fd ? "taxes on diesel and heating fuel, other excise taxes" : "fuel, excise"} and corporate taxes.${bpaChanges.join("")}`,
+      `Age, pension, disability, medical, donation and other personal credits; pension income splitting; ${carbon ? (fd ? "ordinary diesel and heating-fuel taxes, other excise taxes" : "ordinary gasoline, diesel and heating-fuel taxes, other excise taxes") : fd ? "taxes on diesel and heating fuel, other excise taxes" : "fuel, excise"} and corporate taxes.${bpaChanges.join("")}`,
     ),
     para("Investment income", investment),
     para(

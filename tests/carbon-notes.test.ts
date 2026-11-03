@@ -32,5 +32,12 @@ test("carbon-only driving explains its costs, calendar rebates and fixed heating
   assert.match(notes, /estimated household heating \$100/);
   assert.match(notes, /Synthetic household energy estimate/);
   assert.match(notes, /cash payments in calendar 2025/);
+  assert.match(notes, /ordinary gasoline, diesel and heating-fuel taxes, other excise taxes/);
   assert.match(notes, /Quebec cap-and-trade and carbon costs embedded in goods or electricity are excluded/);
+});
+
+test("activated carbon notes disclose estimated payment timing separately from heating assumptions", () => {
+  const notes = footerNotes(loadYear(2025), { defaultIncome: 75000, spendEst: () => 2000 });
+  assert.match(notes, /Nunavut.*discretionary consolidation of small payments is not reconstructed/);
+  assert.match(notes, /province-wide rural supplement/);
 });

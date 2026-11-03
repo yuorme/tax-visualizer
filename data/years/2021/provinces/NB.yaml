@@ -39,3 +39,40 @@ sources:
   - {label: "New Brunswick Finance, child benefit and working supplement annual amounts and reduction rates", url: https://www2.gnb.ca/content/gnb/en/departments/finance/taxes/child_tax_benefit.html}
   - {label: "CRA, New Brunswick HST calculation sheet (unchanged 2016 parameters)", url: https://www.canada.ca/content/dam/cra-arc/migration/cra-arc/bnfts/rltd_prgrms/nbhstccs-eng.pdf}
   - {label: "Moncton, historical 2021 municipal property-tax rate", url: https://www.moncton.ca/en/budget}
+  - label: "Carbon history: Statistics Canada, Canadian Vehicle Survey: Annual 2009 (53-223-X)"
+    url: https://www150.statcan.gc.ca/n1/pub/53-223-x/53-223-x2009000-eng.pdf
+  - label: "Carbon history: Statistics Canada 25-10-0060-01 household energy consumption, selected CSV rows"
+    url: https://www150.statcan.gc.ca/n1/tbl/csv/25100060-eng.zip
+  - label: "Carbon history: Natural Gas: A Primer"
+    url: https://natural-resources.canada.ca/energy-sources/fossil-fuels/natural-gas-primer
+  - label: "Carbon history: Fuel charge rates"
+    url: https://www.canada.ca/en/revenue-agency/services/forms-publications/publications/fcrates/fuel-charge-rates.html
+  - label: "Carbon history: New Brunswick 2020 c.6 — manual statutory facts"
+    url: https://laws.gnb.ca/en/document/as/2020%2C%20c.6
+  - label: "Carbon history: New Brunswick 2021 c.7 — manual statutory facts"
+    url: https://laws.gnb.ca/en/document/as/2021%2C%20c.7
+  - label: "Carbon history: (Over) (Verso)"
+    url: https://www2.gnb.ca/content/dam/gnb/Departments/fin/pdf/Taxes-Impots/ftn-0411-carbon-emitting-product-tax-taxe-sur-ses-produits-emetteurs-de-carbone.pdf
+  - label: "Carbon history: This publication is issued for the sole purpose of aiding concerned parties in understanding the interpretation placed by the Revenue Administration Division on the Legislation"
+    url: https://www2.gnb.ca/content/dam/gnb/Departments/fin/pdf/Taxes-Impots/ftn-0412-carbon-emitting-product-tax-taxe-sur-les-produits-emetteurs-de-carbone.pdf
+  - label: "Carbon history: Gasoline and Motive Fuel Tax A basic overview of the taxation of gasoline and motive fuel"
+    url: https://www2.gnb.ca/content/gnb/en/departments/finance/taxes/gasoline_motive_fueltax.html
+
+# Historical driving defaults use a common survey baseline; see cited sources.
+driving:
+  distance: 16100
+  estimated: true
+
+# Calendar-year carbon charges and cash rebates; heating is an explicit modeled estimate.
+carbon:
+  name: Federal carbon pricing
+  gasoline:
+    - from: 2021-01-01
+      rate: 0.0663
+    - from: 2021-04-01
+      rate: 0.0884
+  heating:
+    amount: 6.26
+    estimated: true
+    method: Estimated 2021 Statistics Canada household natural gas (3.1727 GJ) and heating oil (5.0966 GJ), averaged across all households and held fixed across years. Calendar-day provincial and federal rates and heating exemptions apply; see carbon heating verification.
+  rebates: []

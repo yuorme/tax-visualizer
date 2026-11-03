@@ -37,3 +37,56 @@ sources:
   - {label: "Calgary, 2022 annual report: explicit 2019 historical mill rates", url: https://www.calgary.ca/content/dam/www/cfod/finance/documents/plans-budgets-and-financial-reports/annual-reports/annual-report-2022.pdf}
   - {label: "Alberta Queen’s Printer, 2015 Act sections 30(3) and 30.1(4): separate annual minima (mirror)", url: https://s3.amazonaws.com/rgi-documents/1995f5a489f31660be4ce633d7df47a2b0a0b119.pdf}
   - {label: "Alberta, 2017 fiscal plan: statutory-program phase-in and phase-out rates", url: https://open.alberta.ca/dataset/aa40ded0-75b3-48fe-9bbf-ea33802b8825/resource/da23ee3c-b79c-4971-8f75-e28ab7684983/download/fiscal-plan-complete.pdf}
+  - label: "Carbon history: Statistics Canada, Canadian Vehicle Survey: Annual 2009 (53-223-X)"
+    url: https://www150.statcan.gc.ca/n1/pub/53-223-x/53-223-x2009000-eng.pdf
+  - label: "Carbon history: Statistics Canada 25-10-0060-01 household energy consumption, selected CSV rows"
+    url: https://www150.statcan.gc.ca/n1/tbl/csv/25100060-eng.zip
+  - label: "Carbon history: Natural Gas: A Primer"
+    url: https://natural-resources.canada.ca/energy-sources/fossil-fuels/natural-gas-primer
+  - label: "Carbon history: 2016 Bill"
+    url: https://docs.assembly.ab.ca/LADDAR_files/docs/bills/bill/legislature_29/session_2/20160308_bill-020.pdf
+  - label: "Carbon history: Province of Alberta"
+    url: https://docs.assembly.ab.ca/LADDAR_files/docs/hansards/han/legislature_30/session_1/20190523_1330_01_han.pdf
+
+# Historical driving defaults use a common survey baseline; see cited sources.
+driving:
+  distance: 16100
+  estimated: true
+
+# Calendar-year carbon charges and cash rebates; heating is an explicit modeled estimate.
+carbon:
+  name: Federal carbon pricing
+  gasoline:
+    - from: 2019-01-01
+      rate: 0.0673
+    - from: 2019-05-30
+      rate: 0
+  heating:
+    amount: 60.99
+    estimated: true
+    method: Estimated 2021 Statistics Canada household natural gas (98.4908 GJ) and heating oil (0.0000 GJ), averaged across all households and held fixed across years. Calendar-day provincial and federal rates and heating exemptions apply; see carbon heating verification.
+  rebates:
+    - name: Alberta climate leadership adjustment rebate
+      program: alberta-carbon-rebate-payments
+      params:
+        payments:
+          - date: 2019-01
+            adult: 300
+            spouse: 150
+            child: 45
+            firstChild: 150
+            childCap: 4
+            threshold: [47500, 95000]
+            rate: [0.0267, 0.04]
+            minAnnual: 100
+            weight: 0.25
+          - date: 2019-04
+            adult: 300
+            spouse: 150
+            child: 45
+            firstChild: 150
+            childCap: 4
+            threshold: [47500, 95000]
+            rate: [0.0267, 0.04]
+            minAnnual: 100
+            weight: 0.25
