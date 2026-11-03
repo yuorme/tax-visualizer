@@ -310,6 +310,15 @@ const childBenefit = z.discriminatedUnion("program", [
     }),
   ),
   program(
+    "nova-scotia-child-benefit-by-child",
+    z.object({
+      perChild: z.array(amount).length(3),
+      fullBelow: amount,
+      partialBelow: amount,
+      partialOtherRate: rate,
+    }),
+  ),
+  program(
     "nova-scotia-child-benefit",
     z.object({ perChild: amount, fullBelow: amount, partialBelow: amount, partialOtherChildren: amount }),
   ),
@@ -413,6 +422,16 @@ const credit = z.discriminatedUnion("program", [
   }),
   // Before the affordability credit: rebate a share of gross school taxes, then credit the remaining school
   // taxes up to a cap. schoolTaxShare estimates the school portion of the reference city's total property tax.
+  program(
+    "mb-school-tax-credits-rent-share",
+    z.object({
+      schoolTaxShare: rate,
+      schoolRebateRate: rate,
+      educationCreditMax: amount,
+      renterMax: amount,
+      renterShare: rate,
+    }),
+  ).extend({ nameRenter: z.string() }),
   program(
     "mb-school-tax-credits",
     z.object({ schoolTaxShare: rate, schoolRebateRate: rate, educationCreditMax: amount, renterMax: amount }),

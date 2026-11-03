@@ -1,0 +1,106 @@
+Title: Budget 2022 et PDI 2022-2031 de la Ville de Montréal_électronique
+URL: https://portail-m4s.s3.montreal.ca/pdf/budget2022_pdi2022-2031_final_br.pdf
+Fetched: 2026-11-02
+SHA-256 of the original: 4dd1e3fc2bae3ba83915b7cab7a87380d2d63f67f04ef7f8605fbf0be5d4af9d
+Publication date modified: 2021-12-17
+PDF pages: 257-258 of 448
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 257 of 448 ---
+
+Budget de fonctionnement 2022 détaillé
+189
+Étalement des variations de valeurs au rôle d’évaluation foncière et taux moyens cumulés
+Étalement des variations de valeurs au rôle d’évaluation
+Lors du dépôt d’un nouveau rôle, presque tous les propriétaires voient la valeur de leur propriété varier.
+Cette variation peut être à la hausse, comme à la baisse. Le rôle triennal actuel a été déposé en
+septembre 2019 pour les exercices 2020 à 2022.
+Le propriétaire d’un immeuble dont la valeur foncière a augmenté plus que la moyenne verra sa charge
+fiscale augmenter, toutes choses étant égales par ailleurs. Inversement, le propriétaire d’un immeuble
+dont la valeur foncière a augmenté moins que la moyenne verra sa charge fiscale diminuer. Afin
+d’atténuer ces déplacements fiscaux, les variations de valeurs foncières observées à Montréal entre le
+rôle d’évaluation précédent et le rôle actuel sont étalées sur trois ans.
+Ainsi, pour établir les taxes foncières de chacune des années 2020, 2021 et 2022, le tiers de la variation
+entre la valeur foncière au rôle précédent et celle au rôle actuel est successivement ajouté à (ou retranché
+de, selon le cas) la valeur foncière inscrite au rôle précédent. La valeur ainsi obtenue est appelée
+« valeur ajustée ». L’année 2022 constitue la dernière année d’application du rôle d’évaluation actuel.
+À titre d’exemple, le tableau suivant présente le calcul de la valeur ajustée de deux propriétés, dont la
+valeur au rôle évolue différemment.
+Tableau 123 – Calcul de la valeur foncière ajustée pour 2020, 2021 et 2022Propriété A Propriété B
+Données de base
+Valeur au rôle 2017-2019 (3 ans) 359 800 $ 519 200 $
+Valeur au rôle 2020-2022 (3 ans) 340 000 $ 585 100 $
+Variation de la valeur au rôle (19 800) $ 65 900 $
+Calcul de la valeur ajustée
+Valeur au rôle 2017-2019 359 800 $ 519 200 $
++/– le tiers de la variation de valeur (6 600) $ 21 967 $
+Valeur ajustée pour 2020 353 200 $ 541 167 $
+Valeur ajustée pour 2021 346 600 $ 563 133 $
+Valeur ajustée pour 2022 340 000 $ 585 100 $
+
+--- PDF page 258 of 448 ---
+
+Budget de fonctionnement 2022 détaillé
+190
+Taux moyens cumulés
+Tableau 124 – Taux de taxation de 2022 – Immeubles de la catégorie résiduelle
+(par tranche de 100 $ d’évaluation foncière)
+1. Les taux pour certains arrondissements sont présentés par secteurs, selon le découpage géographique des anciennes villes telles qu’elles
+existaient avant le regroupement municipal de 2002.
+2. L’Arrondissement de Lachine impose un tarif de 49,52 $ par logement, ce qui correspond à un équivalent foncier de 0,0166 pour cette catégorie
+d’immeubles.
+3. Les chiffres étant arrondis, leur somme ne correspond pas nécessairement au total indiqué.Anjou 0,5712 0,0080 0,0975 0,0032 0,0023 0,1250 0,0749 0,1999 0,8821
+Lachine 0,5712 0,0017 0,0975 0,0032 0,0023 0,0670 0,0440 0,1110 0,7869
+LaSalle 0,5712 0,0045 0,0975 0,0032 0,0023 0,0500 0,0421 0,0922 0,7709
+L'Île-Bizard 0,5712 s. o. 0,0975 0,0032 0,0023 0,0781 0,0824 0,1605 0,8347
+Montréal
+Ahuntsic-Cartierville 0,5712 0,0281 0,0975 0,0032 0,0023 0,0438 0,0386 0,0824 0,7847
+Côte-des-Neiges–
+Notre-Dame-de-Grâce 0,5712 0,0281 0,0975 0,0032 0,0023 0,0413 0,0278 0,0691 0,7714
+Mercier–Hochelaga-
+Maisonneuve 0,5712 0,0281 0,0975 0,0032 0,0023 0,0661 0,0462 0,1123 0,8146
+Plateau-Mont-Royal 0,5712 0,0281 0,0975 0,0032 0,0023 0,0537 0,0308 0,0845 0,7868
+Rivière-des-Prairies–
+Pointe-aux-Trembles 0,5712 0,0281 0,0975 0,0032 0,0023 0,0843 0,0720 0,1563 0,8586
+Rosemont–La Petite-Patrie 0,5712 0,0281 0,0975 0,0032 0,0023 0,0487 0,0358 0,0845 0,7868
+Sud-Ouest 0,5712 0,0281 0,0975 0,0032 0,0023 0,0602 0,0338 0,0940 0,7963
+Ville-Marie 0,5712 0,0281 0,0975 0,0032 0,0023 0,0398 0,0065 0,0463 0,7486
+Villeray–Saint-Michel–
+Parc-Extension 0,5712 0,0281 0,0975 0,0032 0,0023 0,0542 0,0399 0,0941 0,7964
+Montréal-Nord 0,5712 0,0167 0,0975 0,0032 0,0023 0,1475 0,0637 0,2112 0,9021
+Outremont 0,5712 0,0076 0,0975 0,0032 0,0023 0,0447 0,0303 0,0750 0,7568
+Pierrefonds 0,5712 s. o. 0,0975 0,0032 0,0023 0,0788 0,0581 0,1369 0,8111
+Roxboro 0,5712 s. o. 0,0975 0,0032 0,0023 0,0788 0,0581 0,1369 0,8111
+Sainte-Geneviève 0,5712 s. o. 0,0975 0,0032 0,0023 0,0781 0,0822 0,1603 0,8345
+Saint-Laurent 0,5712 0,0041 0,0975 0,0032 0,0023 0,0709 0,0487 0,1197 0,7980
+Saint-Léonard 0,5712 0,0085 0,0975 0,0032 0,0023 0,0877 0,0525 0,1403 0,8230
+Verdun 0,5712 0,0054 0,0975 0,0032 0,0023 0,0625 0,0397 0,1022 0,7818
+VILLE DE MONTRÉAL 0,5712 0,0199 0,0975 0,0032 0,0023 0,1011 0,7953
+Taxe
+foncière
+générale
+Dettes
+anciennes
+villes
+Taxe relative
+à l'eau
+TAUX
+MOYEN
+CUMULÉ
+TOTAL3
+Arrondissements
+Taxe relative
+à la voirie Taxe relative
+aux
+services2
+Taxe relative
+à l'ARTM Taxe relative
+aux inves-
+tissements
+Taux
+moyen
+cumulé de
+l'arrondis-
+sement
+Secteurs ou arrondissements1
