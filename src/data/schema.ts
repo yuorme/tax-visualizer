@@ -44,7 +44,7 @@ const fuelRate = z.union([
 const fuelDates = (r: z.infer<typeof fuelRate> | undefined) => (typeof r === "object" ? r.map(x => x.from) : []);
 
 /** Calendar-year cash payments, including single-parent substitutions and income-tested provincial credits. */
-const carbonRebate = program(
+const ordinaryCarbonRebate = program(
   "carbon-rebate-payments",
   z.object({
     payments: z
@@ -62,6 +62,75 @@ const carbonRebate = program(
       .min(1),
   }),
 );
+// Historical payment evidence sometimes specifies only the month; do not invent a transaction day.
+const historicalPaymentDate = z.union([isoDate, z.string().regex(/^\d{4}-(0[1-9]|1[0-2])$/)]);
+const annualPeiCredit = z.object({
+  individual: amount,
+  spouseOrDependant: amount,
+  supplementRate: rate,
+  supplementFrom: amount,
+  supplementMax: amount,
+  threshold: amount,
+  rate,
+});
+const carbonRebate = z.discriminatedUnion("program", [
+  ordinaryCarbonRebate,
+  program(
+    "alberta-carbon-rebate-payments",
+    z.object({
+      payments: z
+        .array(
+          z.object({
+            date: historicalPaymentDate,
+            adult: amount,
+            spouse: amount,
+            child: amount,
+            firstChild: amount,
+            childCap: z.number().int().nonnegative(),
+            threshold: pair,
+            rate: ratePair,
+            minAnnual: amount,
+            weight: z.number().positive().max(1),
+          }),
+        )
+        .min(1),
+    }),
+  ),
+  program(
+    "pei-carbon-rebate-increment",
+    z.object({
+      payments: z
+        .array(
+          z.object({
+            date: isoDate,
+            weight: z.number().positive().max(1),
+            regular: annualPeiCredit,
+            enhanced: annualPeiCredit,
+          }),
+        )
+        .min(1),
+    }),
+  ),
+  program(
+    "carbon-rebate-consolidated-payments",
+    z.object({
+      payments: z
+        .array(
+          z.object({
+            date: historicalPaymentDate,
+            adult: amount,
+            spouse: amount,
+            child: amount,
+            firstChild: amount,
+            threshold: pair,
+            rate,
+            smallPayment: z.object({ below: z.number().positive(), multiplier: z.number().int().nonnegative() }),
+          }),
+        )
+        .min(1),
+    }),
+  ),
+]);
 const carbonPricing = z.object({
   name: z.string(),
   gasoline: fuelRate,
