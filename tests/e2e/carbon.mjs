@@ -34,15 +34,21 @@ export const CARBON_STEPS = [
           }),
         );
       });
+      await p.evaluate(() => history.replaceState(null, "", location.pathname + location.search));
       await p.reload();
       assert.ok(await p.locator("#tab-driving").isVisible());
       assert.ok(await p.locator("#legend-carbon").isVisible());
-      assert.ok(!(await p.locator("#legend-fuel").isVisible()));
+      assert.ok(await p.locator("#legend-fuel").isVisible());
+      const fuel = await p.locator("#detail-body tr").evaluateAll(rows => {
+        const match = rows.find(r => r.cells[0]?.textContent.startsWith("Fuel tax "));
+        return match ? [...match.cells].map(c => c.textContent) : null;
+      });
+      assert.deepEqual(fuel?.slice(1, 3), ["$230", "$322"]);
       assert.equal((await row(p, "Carbon charge on gasoline"))[1], "$43");
       assert.equal((await row(p, "Carbon charge on heating (estimate)"))[1], "$99");
       assert.equal((await row(p, "Carbon charge on gasoline"))[2], "$0");
       assert.match(await p.textContent("#cred-list"), /Canada Carbon Rebate.*\$906/);
-      assert.match(await p.textContent("#fuel-sum"), /\$43 a year in Alberta/);
+      assert.match(await p.textContent("#fuel-sum"), /\$273 a year in Alberta/);
     },
   ],
   [
