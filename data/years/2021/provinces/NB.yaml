@@ -38,4 +38,4 @@ sources:
   - {label: "CRA, GST/HST historical rates and provincial sales-tax rates", url: https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/charge-collect-which-rate/calculator.html}
   - {label: "New Brunswick Finance, child benefit and working supplement annual amounts and reduction rates", url: https://www2.gnb.ca/content/gnb/en/departments/finance/taxes/child_tax_benefit.html}
   - {label: "CRA, New Brunswick HST calculation sheet (unchanged 2016 parameters)", url: https://www.canada.ca/content/dam/cra-arc/migration/cra-arc/bnfts/rltd_prgrms/nbhstccs-eng.pdf}
-  - {label: "Moncton, historical 2022 municipal property-tax rate", url: https://www.moncton.ca/en/budget}
+  - {label: "Moncton, historical 2021 municipal property-tax rate", url: https://www.moncton.ca/en/budget}

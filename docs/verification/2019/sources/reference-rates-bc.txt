@@ -1,0 +1,54 @@
+Title: BC 2020 and 2019 Personal Marginal Income Tax Rates
+URL: https://www.taxtips.ca/priortaxrates/tax-rates-2019-2020/bc.htm
+Fetched: 2026-11-02
+SHA-256 of the original: f5758d9a7034c0d029d8ad18441309823f92aaf2b6029b49861e8c4ab0d42399
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+Ads keep this website free for you. TaxTips.ca does not research or endorse any product or service appearing in ads on this site. Before making a major financial decision you should consult a qualified professional. | BC 2019 & 2020 Income Tax Rates | TaxTips.ca Canadian Tax and Financial Information
+TaxTips.ca Home What's New | | Links & Resources Site Map
+
+Need an accounting, tax or financial advisor? Look in our Directory. Use above search box to easily find your topic! Stay Connected with TaxTips.ca!
+
+British Columbia Tax Rates -> 2019 and 2020 Tax Rates -> BC Personal Income Tax Rates BC 2020 and 2019 Personal Marginal Income Tax Rates BC Income Tax Act s. 4.1, 4.3, 4.52, 4.69 Please read the article Understanding the Tables of Personal Income Tax Rates. The Federal tax brackets and personal amounts are increased for 2020 by an indexation factor of 1.019, and the BC brackets and amounts are increased by an indexation factor of 1.025. The indexation factors, tax brackets and tax rates have been confirmed to Canada Revenue Agency information. The BC 2020 Budget added a new high tax bracket for taxable incomes over $220,000, as shown below. The BC September 2017 Budget increased the enhanced dividend tax credit from 10% of the taxable dividend to 12%, effective January 1, 2019.
+
+British Columbia Personal Income Tax Brackets and Tax Rates
+2020 Taxable Income | 2020 Tax Rates | 2019 Taxable Income | 2019 Tax Rates
+first $41,725 | 5.06% | first $40,707 | 5.06%
+over $41,725 up to $83,451 | 7.70% | over $40,707 up to $81,416 | 7.70%
+over $83,451 up to $95,812 | 10.50% | over $81,416 up to $93,476 | 10.50%
+over $95,812 up to $116,344 | 12.29% | over $93,476 up to $113,506 | 12.29%
+over $116,344 up to $157,748 | 14.70% | over $113,506 up to $153,900 | 14.70%
+over $157,748 up to $220,000 | 16.80% | over $153,900 | 16.80%
+over $220,000 | 20.50%
+
+Combined Federal & British Columbia Tax Brackets and Tax Rates
+2020 Taxable Income | 2020 Marginal Tax Rates | 2019 Taxable Income | 2019 Marginal Tax Rates
+Other Income | Capital Gains | Canadian Dividends | Other Income | Capital Gains | Canadian Dividends
+Eligible | Non-Eligible | Eligible | Non-Eligible
+first $41,725 | 20.06% | 10.03% | -9.60% | 10.43% | first $40,707 | 20.06% | 10.03% | -9.60% | 10.43%
+over $41,725 up to $48,535 | 22.70% | 11.35% | -5.96% | 13.47% | over $40,707 up to $47,630 | 22.70% | 11.35% | -5.96% | 13.47%
+over $48,535 up to $83,451 | 28.20% | 14.10% | 1.63% | 19.80% | over $47,630 up to $81,416 | 28.20% | 14.10% | 1.63% | 19.80%
+over $83,451 up to $95,812 | 31.00% | 15.50% | 5.49% | 23.02% | over $81,416 up to $93,476 | 31.00% | 15.50% | 5.49% | 23.02%
+over $95,812 up to $97,069 | 32.79% | 16.40% | 7.96% | 25.07% | over $93,476 up to $95,259 | 32.79% | 16.40% | 7.96% | 25.07%
+over $97,069 up to $116,344 | 38.29% | 19.15% | 15.55% | 31.40% | over $95,259 up to $113,506 | 38.29% | 19.15% | 15.55% | 31.40%
+over $116,344 up to $150,473 | 40.70% | 20.35% | 18.88% | 34.17% | over $113,506 up to $147,667 | 40.70% | 20.35% | 18.88% | 34.17%
+over $150,473 up to $157,748 | 43.92% | 21.96% | 23.32% | 37.87% | over $147,667 up to $153,900 | 43.70% | 21.85% | 23.02% | 37.62%
+over $157,748 up to $214,368 | 46.02% | 23.01% | 26.22% | 40.29% | over $153,900 up to $210,371 | 45.80% | 22.90% | 25.92% | 40.04%
+over $214,368 up to $220,000 | 49.80% | 24.90% | 31.44% | 44.64% | over $210,371 | 49.80% | 24.90% | 31.44% | 44.64%
+over $220,000 | 53.50% | 26.75% | 36.54% | 48.89%
+Marginal tax rate for dividends is a % of actual dividends received (not grossed-up taxable amount). Marginal tax rate for capital gains is a % of total capital gains (not taxable capital gains). Gross-up rate for eligible dividends is 38%, and for non-eligible dividends is 15%. For more information see BC dividend tax credits. Copyright © 2002 Boat Harbour Investments Ltd.
+British Columbia Basic Personal Amount
+2020 Personal Amount | 2020 Tax Rate | 2019 Personal Amount | 2019 Tax Rate
+$10,949 | 5.06% | $10,682 | 5.06%
+Federal Basic Personal Amount
+2020 Personal Amount (1) | 2020 Tax Rate | 2019 Personal Amount | 2019 Tax Rate
+$13,229 | 15% | $12,069 | 15%
+
+(1) The 2020 federal personal amount is increased from $12,298 to $13,229 for taxpayers with net income of $150,473 or less. For incomes above this threshold, the additional amount of $931 is reduced until it becomes zero at net income of $214,368. The marginal tax rates above have been adjusted to reflect this change.
+
+BC tax rates can also be seen on the BC Ministry of Finance website.
+
+Revised: June 27, 2026
+
+Copyright © 2002 Boat Harbour Investments Ltd. All Rights Reserved. See Reproduction of information from TaxTips.ca Facebook | Twitter | LinkedIn The information on this site is not intended to be a substitute for professional advice. Each person's situation differs, and a professional advisor can assist you in using the information on this web site to your best advantage Please see our legal disclaimer regarding the use of information on our site, and our Privacy Policy regarding information that may be collected from visitors to our site.

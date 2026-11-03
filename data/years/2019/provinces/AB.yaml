@@ -1,0 +1,39 @@
+# Benefit-year figures use July 2019 to June 2020, applied to current-year income.
+# Property estimate adds rounded published 2019 Calgary mills (4.211 municipal + 2.443 school) / 1000.
+# ACB cumulative maxima sum published increments 1155+577 for each second through fourth child.
+
+code: AB
+name: Alberta
+order: 2
+brackets:
+  - [131220, 0.1]
+  - [157464, 0.12]
+  - [209952, 0.13]
+  - [314928, 0.14]
+  - [.inf, 0.15]
+basicPersonalAmount: 19369
+dividendTaxCredit: {eligible: 0.1, nonEligible: 0.0218}
+spouseAmount: {max: 19369, threshold: 0}
+salesTax: {rate: 0.05, label: 5% GST}
+propertyTax: {rate: 0.006654, city: Calgary, estimated: true}
+childBenefit:
+  name: Alberta Child Benefit and Family Employment Tax Credit
+  program: alberta-child-benefit-and-employment
+  params:
+    base: [1155, 1732, 2309, 2886]
+    baseRate: [0.07, 0.105, 0.14, 0.175]
+    baseThreshold: 26769
+    working: [801, 1530, 1967, 2113]
+    workingRate: 0.11
+    workingFloor: 2760
+    workingThreshold: 43302
+    workingPhaseOut: 0.04
+    minAnnual: 10
+sources:
+  - {label: "CRA, AB 428 for 2019", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5009-c/5009-c-19e.pdf}
+  - {label: "CRA, AB 428 worksheet for 2019", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5009-d/5009-d-19e.pdf}
+  - {label: "CRA, T 4114-19: July 2019–June 2020 child benefits (official archive)", url: https://publications.gc.ca/collections/collection_2019/arc-cra/Rv1-36-2019-eng.pdf?download=1}
+  - {label: "CRA, GST/HST historical rates and provincial sales-tax rates", url: https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/charge-collect-which-rate/calculator.html}
+  - {label: "Calgary, 2022 annual report: explicit 2019 historical mill rates", url: https://www.calgary.ca/content/dam/www/cfod/finance/documents/plans-budgets-and-financial-reports/annual-reports/annual-report-2022.pdf}
+  - {label: "Alberta Queen’s Printer, 2015 Act sections 30(3) and 30.1(4): separate annual minima (mirror)", url: https://s3.amazonaws.com/rgi-documents/1995f5a489f31660be4ce633d7df47a2b0a0b119.pdf}
+  - {label: "Alberta, 2017 fiscal plan: statutory-program phase-in and phase-out rates", url: https://open.alberta.ca/dataset/aa40ded0-75b3-48fe-9bbf-ea33802b8825/resource/da23ee3c-b79c-4971-8f75-e28ab7684983/download/fiscal-plan-complete.pdf}

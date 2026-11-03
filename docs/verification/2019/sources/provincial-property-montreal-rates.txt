@@ -1,0 +1,12 @@
+Title: Montreal 2019 official tax rates, Ville-Marie proxy (manual web extract)
+URL: https://ville.montreal.qc.ca/pls/portal/docs/PAGE/SERVICE_FIN_FR/MEDIA/DOCUMENTS/1_2019_TAUX_FR.PDF
+Fetched: 2026-11-02
+SHA-256 of the original: unavailable (direct download returned HTTP 403; official PDF read by web tool)
+Manual transcription of relevant numeric rows of the one-page official PDF, not a fetch-source extraction.
+================================================================================
+
+2019 residual residential rates per $100:
+Montreal base 0.6519; water 0.1083; road levy 0.0036; ARTM 0.0025.
+Ville-Marie borough capital 0.0062; borough services 0.0433.
+Derived borough total: 0.8158 per $100 = 0.008158.
+This is a borough proxy, not a citywide average. Separate school taxes are excluded.

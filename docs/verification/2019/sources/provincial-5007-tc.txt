@@ -1,0 +1,255 @@
+Title: Manitoba Credits
+URL: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5007-tc/5007-tc-19e.pdf
+Fetched: 2026-11-02
+SHA-256 of the original: 9d7d92622a65659f204defb1219e0cd5d77e395ac1430f8ac7946873a4f96653
+Publication date modified: 2019-11-13
+PDF pages: all 5
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 1 of 5 ---
+
+Form MB479
+2019
+Protected B when completed
+Manitoba Credits
+Complete this form and attach a copy to your return if you were a resident of Manitoba at the end of the year.
+For more information about the personal tax credit, education property tax credit, seniors' school tax rebate, or
+the school tax credit for homeowners, see the "Information for residents of Manitoba" section of your tax package.
+Family income Column 1
+You
+Column 2
+Your spouse or
+common-law
+partner
+1Enter the net income amount from line 23600 of the return.
+2
+Total of the universal child care benefit (UCCB) repayment (line 21300
+of the return) and the registered disability savings plan (RDSP) income
+repayment (included on line 23200) + +
+3Add lines 1 and 2. = =
+4
+Total of the UCCB income (line 11700 of the return) and RDSP income
+(line 12500 of the return) – –
+5Line 3 minus line 4 (if negative, enter "0") = =
+6Family incomeAdd the amounts from line 5 in column 1 and column 2.
+60890If you and your spouse or common-law partner occupied separate
+principal residences for medical reasons at the end of the year,
+do not complete lines 1 to 5 of column 2.
+Enter their address on line 60890.
+Personal tax credit
+7Basic credit
+8
+Age credit for self
+(if you were 65 years of age or older at the end of the year) Claim $113 +
+9Basic credit for spouse or common-law partner Claim $195
+10
+Age credit for spouse or common-law partner
+(if they were 65 years of age or older at the end of the year) Claim $113 +
+11Disability credit for spouse or common-law partner Claim $113 +
+60900 12Add lines 9 to 11. =
+Ż +
+13Credit for an eligible dependant claimed on line 58160 of Form MB428 Claim $195 +
+60950 14
+Disability credit for self or for a dependant other than your spouse or
+common-law partner
+Number of disability claims × $113 = +
+60970 15
+Credit for disabled dependants born in 2001 or earlier
+Number of disabled dependants × $62 = +
+60999 16
+Credit for dependent children born in 2001 or later
+Number of dependent children × $26 = +
+61050 17Total creditsAdd lines 7, 8, and 12 to 16. =
+18Amount from line 6 above × 1% = –
+19Personal tax credit
+Line 17 minus line 18 (if negative, enter "0")
+Enter this amount on line 56. =
+5007-TC (Ce formulaire est disponible en français.)
+195.00
+
+--- PDF page 2 of 5 ---
+
+Protected B when completed
+If you are not claiming the education property tax credit, the seniors' school tax rebate, or the school tax credit for
+homeowners, enter "0" on line 55 and continue on line 56. Otherwise, continue with the next section.
+Education property tax credit
+You must complete the declaration for the education property tax credit below if you are claiming rent and/or school taxes paid
+for the education property tax credit.
+The Income Tax Act of Manitoba allows only one education property tax credit per residence. If you shared accommodation
+with one or more individuals, only one of you can claim an education property tax credit for that residence for the time you
+were sharing.
+Declaration for the education property tax credit (if you need more space, attach an additional page)
+By signing my return, I declare the following information about my principal residence(s) in Manitoba during 2019:
+Address
+Number
+of months
+resident
+in 2019
+Rent and/or
+school taxes
+paid for 2019
+Name of any individual(s)
+who shared accommodation
+with you in 2019*
+Name of landlord or
+municipality payment
+was made to
+Roll number
+(for homeowners only)
+*other than your spouse or common-law partner and/or dependent children
+61100 20Total rent paid in Manitoba for 2019 × 20% =
+61120 21School taxes paid in Manitoba for 2019 that apply to your principal residence +
+61140 22
+Manitoba education property tax credit advance received
+on your property tax statement (if not received, enter "0") +
+61160 23Occupancy cost: add lines 20 to 22. =
+Complete lines 24 to 26 only if you (or your spouse or common-law partner) were 65 years of age
+or older at the end of the year. If both of you were under 65 years of age at the end of the year,
+enter $700 on line 27 and continue on line 28.
+24Basic credit for individuals 65 years of age or older
+25Amount from line 6 on the previous page × 1% = –
+26Line 24 minus line 25 =
+27
+If you (or your spouse or common-law partner) were 65 years of age or older at the end of the
+year, enter $700 or the amount from line 26, whichever is more. If both of you were under 65
+years of age at the end of the year, enter $700.
+28Enter whichever is less: amount from line 23 or line 27 above
+29Amount of Manitoba education property tax credit advance received from line 22 above –
+30Education property tax credit
+Line 28 minus line 29
+(if negative, enter "0") =
+Continue on the next page.
+5007-TC
+1,100.00
+
+--- PDF page 3 of 5 ---
+
+Protected B when completed
+Seniors' school tax rebate
+Complete lines 32 to 40 if all of the following conditions are met:
+• You (or your spouse or common-law partner) were a homeowner.
+• You (or your spouse or common-law partner) were 65 years of age or older at the end of the year.
+• Your family income (line 6) is less than $63,500.
+Otherwise, enter "0" on line 40 and continue on line 41.
+Note: The person who claims the education property tax credit (line 30) must also be the person who claims the seniors' school
+tax rebate.
+31Amount from line 30 on the previous page
+61170 32
+Gross school taxes assessed in Manitoba for 2019 that apply to your
+principal residence. Include the community revitalization levy amounts in
+lieu of school taxes from your municipal property tax statement, if any.
+33Amount from line 28 on the previous page –
+34Line 32 minus line 33 (if negative, enter "0") (maximum $470) =
+35Family income: amount from line 6
+36Base amount –
+37Line 35 minus line 36 (if negative, enter "0") =
+38Applicable rate ×
+39Multiply line 37 by line 38. =
+Ż –
+40Seniors' school tax rebate
+Line 34 minus line 39
+(if negative, enter "0") =
+Ż +
+41Add lines 31 and 40. =
+Tenants – You may qualify for a school tax credit if all of the following conditions are met:
+• You were a tenant who was 55 years of age or older at the end of the year.
+• Your family income (line 6) is less than $23,800.
+• You do not live in subsidized housing.
+For more information, read "School tax credit for homeowners" in the "Information for residents of Manitoba" section of your
+tax package.
+Continue on the next page.
+5007-TC
+40,000.00
+2%
+
+--- PDF page 4 of 5 ---
+
+Protected B when completed
+School tax credit for homeowners
+Complete lines 43 to 52 if all of the following conditions are met:
+• You (or your spouse or common-law partner) were a homeowner.
+• You were 55 years of age or older at the end of the year.
+• Your family income (line 6) is less than $23,800.
+Otherwise, enter "0" on line 52 and continue on line 53.
+Note: The person who claims the education property tax credit (line 30) must also be the person who claims
+the school tax credit for homeowners.
+42Amount from line 41 on the previous page
+61200 43
+If the amount on line 6 is less than $15,100, enter $175. If not, enter the
+amount that corresponds to your family income using the "Homeowners'
+school tax credit table" in the "Information for residents of Manitoba"
+section of your tax package.
+61220 44
+School taxes assessed in Manitoba for 2019
+that apply to your principal residence
+45Base amount –
+46
+Line 44 minus line 45
+(if negative, enter "0") =
+47Enter your seniors' school tax rebate from line 40. –
+48
+Line 46 minus line 47
+(if negative, enter "0") =
+Ż
+49Occupancy cost: amount from line 23
+50Amount from line 28 –
+51
+Line 49 minus line 50
+(if negative, enter "0") =
+Ż
+61240 52School tax credit for homeowners
+Enter whichever is the least:
+amount from line 43, 48, or 51 +
+53Add lines 42 and 52. =
+61250 54Total rent assist benefits received –
+55Line 53 minus line 54 (if negative, enter "0") =
+56Enter your personal tax credit from line 19. +
+57Add lines 55 and 56. =
+61255 58
+If you (or your spouse or common-law partner) received social assistance in 2019,
+enter the fraction from box 14 of your (or your spouse's or common-law partner's) Slip T5007,
+whichever is less. × •
+59
+If you entered a fraction on line 58, multiply line 57 by line 58.
+If not, enter the amount from line 57. =
+Continue on the next page.
+5007-TC
+160.00
+
+--- PDF page 5 of 5 ---
+
+Protected B when completed
+Other tax credits
+60Amount from line 59 on the previous page
+61260 61Primary caregiver tax credit + •
+62Add lines 60 and 61. =
+61268 63
+Fertility treatment tax credit:
+Eligible medical expenses for fertility treatments × 40% = (maximum $8,000) +
+64Add lines 62 and 63. =
+61310 65Paid work experience tax credit + •
+66Add lines 64 and 65. =
+61340 67Enter your unused odour-control tax credit from your 2018 notice of assessment or reassessment. + •
+68Add lines 66 and 67. =
+61380 69Green energy equipment tax credit (purchaser) •
+61390 70Green energy equipment tax credit (manufacturer) + •
+71Add lines 69 and 70. =
+Ż +
+72Add lines 68 and 71. =
+61430 73Enter your book publishing tax credit from Form T1299. + •
+74Add lines 72 and 73. =
+61480 75Cultural industries printing tax credit + •
+76Add lines 74 and 75. =
+61484 77
+Enter your Manitoba community enterprise development tax credit
+from line 4 of Form T1256. (maximum $27,000) + •
+78Add lines 76 and 77. =
+61490 79
+Enter your Manitoba employee share purchase tax credit
+from line 6 of Form T1256-2. (maximum $27,000) + •
+80Manitoba credits
+Add lines 78 and 79.
+Enter the result on line 47900 of your return. =
+See the privacy notice on your return.
+5007-TC

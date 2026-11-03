@@ -412,6 +412,8 @@ function segTip(p: ProvView, r: Result, c: Seg) {
     sub = `Top ${p.n} bracket reached: ${each(y => rateFmt(y.pr.marg))}`;
     const { surtax, provReductions } = r.breakdown;
     if (surtax > 0.5) sub += `. Includes ${money(surtax)} ${p.n} surtax`;
+    if (p.d.additionalTax)
+      sub += `. Includes temporary deficit reduction levy: ${each(y => money(y.breakdown.provincialLevy))}`;
     if (provReductions > 0.5)
       sub += `. After ${money(provReductions)} of ${p.c === "BC" ? "BC tax reduction" : "Ontario tax reduction and LIFT credit"}`;
   } else if (c === "y") {
@@ -422,6 +424,7 @@ function segTip(p: ProvView, r: Result, c: Seg) {
       t.qpip > 0.5 && `QPIP ${money(t.qpip)}`,
       t.ohp > 0.5 && `Ontario Health Premium ${money(t.ohp)}`,
       t.terr > 0.5 && `${p.n} payroll tax ${money(t.terr)}`,
+      r.breakdown.householdPremium && `B.C. MSP premiums ${money(r.breakdown.householdPremium.total)}`,
     ]
       .filter(Boolean)
       .join(" · ");
@@ -760,6 +763,13 @@ function renderDetail(res: Row[], order: Row[]) {
     row("Provincial / territorial income tax", hr.prov, dr.prov) +
     (any(r => r.wh) ? row("Foreign tax withheld", hr.wh, dr.wh) : "") +
     row(`CPP/QPP, EI &amp; health premiums`, hr.payroll, dr.payroll) +
+    (hr.breakdown.householdPremium || dr.breakdown.householdPremium
+      ? row(
+          "Included B.C. MSP premiums",
+          hr.breakdown.householdPremium?.total ?? 0,
+          dr.breakdown.householdPremium?.total ?? 0,
+        )
+      : "") +
     (effSpend() > 0
       ? row(
           `Sales tax <small class="note">(${prov(home).d.salesTax.label} vs ${prov(dest).d.salesTax.label})</small>`,
@@ -926,6 +936,7 @@ function ledgerView({ p, r }: Row) {
     [`Less LIFT credit`, -m.lift],
     [`Less BC tax reduction`, -m.bcRed],
     [`Less foreign tax credit`, -m.pFtc],
+    [`Temporary deficit reduction levy`, m.breakdown.provincialLevy],
   ]);
   const payRows = (
     [
