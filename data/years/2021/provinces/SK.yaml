@@ -27,5 +27,5 @@ sources:
   - {label: "CRA, GST/HST historical rates and provincial sales-tax rates", url: https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/charge-collect-which-rate/calculator.html}
   - {label: "Saskatchewan, 2020 Bill 210 explanatory notes: SLITC amounts and indexing resumption", url: https://docs.legassembly.sk.ca/legdocs/Explanatory%20Notes/28L4S/Bill28-210EN.pdf}
   - {label: "Saskatchewan, historical 2021 indexation factor of 1%", url: https://www.saskatchewan.ca/residents/taxes-and-investments/personal-income-tax}
-  - {label: "Saskatoon, historical 2022 city/library mills and residential factor", url: https://www.saskatoon.ca/sites/default/files/media/documents/Historical%20tax%20Rate%202018-2026.pdf}
+  - {label: "Saskatoon, historical 2021 city/library mills and residential factor", url: https://www.saskatoon.ca/sites/default/files/media/documents/Historical%20tax%20Rate%202018-2026.pdf}
   - {label: "Saskatoon, 2021 property-tax guide: school mills and 80% assessment portion", url: https://www.saskatoon.ca/sites/default/files/documents/assessment-tax-tool/2021_guide_to_property_tax_final_april_21_mt.pdf}
