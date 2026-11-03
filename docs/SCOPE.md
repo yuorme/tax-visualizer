@@ -152,8 +152,6 @@ For now:
 - Disability, medical, tuition and donation credits; the alternative minimum tax. Medical and disability
   credits matter for seniors but depend on what each household spends; size them with the 0.1-point rule if
   they come up again.
-- Childcare inputs and credits are not connected to the UI yet. The federal and ON/QC/NL calculation backends
-  are implemented; the existing UI still accepts verified manual claims under other deductions.
 - One-time government payments, such as the June 2026 GST/HST credit top-up (50% of the 2025-26 credit). The
   model counts only recurring programs.
 - Smaller programs: Manitoba's child benefit for very low incomes, Newfoundland and Labrador's prenatal–early

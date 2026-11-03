@@ -144,7 +144,7 @@ const inputs = (withCare = true): Household => ({
   monthlySpending: effSpend(),
   propertyRates: propOverride != null ? { [home]: propOverride } : undefined,
   driving: FUEL ? { km: kmNow(), lPer100km: effNow() } : undefined,
-  childcare: withCare ? care.input() : undefined,
+  childcare: withCare ? care.claimInput() : undefined,
 });
 const calc = (p: ProvView) => compute(Y, p.d, inputs());
 const rowFor = (res: Row[], c: string) =>
@@ -462,11 +462,11 @@ function render() {
     YEAR,
     home === "QC",
   );
-  const profile = care.profileInput();
-  if (profile) {
+  const ageProfile = care.benefitAgeProfile();
+  if (ageProfile) {
     const counts = childcareOf(
       F,
-      { ...inputs(false), childcare: profile },
+      { ...inputs(false), childcare: ageProfile },
       base.list.map(p => p.x),
     ).childCounts;
     if (counts) {

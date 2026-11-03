@@ -186,23 +186,15 @@ export class ChildcareModel {
     this.state.touched = Array.isArray(s.touched) ? s.touched.filter(id => typeof id === "string") : [];
   }
 
-  input(): ChildcareInput | undefined {
+  /** Actual paid-care inputs. Bad amounts remain incomplete; this is the only profile used for relief. */
+  claimInput(): ChildcareInput | undefined {
     if (!this.enabled) return undefined;
-    return this.profileInput();
-  }
-
-  /** Retained ages still describe benefit eligibility when paid care is off; never use this to apply relief. */
-  profileInput(): ChildcareInput | undefined {
-    if (this.kids === 0 || this.state.activeChildren === 0) return undefined;
-    // No paid care is active at zero monthly cost. Project zero expenses for age-count derivation only,
-    // retaining original expense drafts for when paid care is restored. input() never returns this projection.
-    const ageOnly = this.state.monthly === 0;
     const children: ChildcareChild[] | undefined =
-      monthlyAmount(this.state.monthly) && this.children.every(c => wholeAge(c.age) && (ageOnly || amount(c.expenses)))
+      monthlyAmount(this.state.monthly) && this.children.every(c => wholeAge(c.age) && amount(c.expenses))
         ? this.children.map(c => ({
             ...c,
             age: c.age as number,
-            expenses: ageOnly ? 0 : (c.expenses as number),
+            expenses: c.expenses as number,
             qcEligibleExpenses: amount(c.qcEligibleExpenses) ? c.qcEligibleExpenses : undefined,
           }))
         : undefined;
@@ -213,6 +205,17 @@ export class ChildcareModel {
       declaredAnnualExpenses: monthlyAmount(this.state.monthly) ? this.state.monthly * 12 : undefined,
       earnedIncome: this.earnings.map(v => (amount(v) ? v : null)),
       manualClaims: claims.every(amount) ? (claims as number[]) : undefined,
+    };
+  }
+
+  /** Counts-only projection of valid ages, independent of claim inputs. Pass only to childcareOf for childCounts,
+   * never to compute: these zero expenses must never replace actual expense drafts or apply childcare relief. */
+  benefitAgeProfile(): ChildcareInput | undefined {
+    if (this.kids === 0 || this.state.activeChildren === 0 || !this.children.every(c => wholeAge(c.age)))
+      return undefined;
+    return {
+      mode: "automatic",
+      children: this.children.map(c => ({ age: c.age as number, expenses: 0 })),
     };
   }
 }

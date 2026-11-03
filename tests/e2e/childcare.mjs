@@ -443,6 +443,59 @@ export const CHILDCARE_STEPS = [
       assert.equal((await saved(p)).spendingAdjustment, -20);
     },
   ],
+  [
+    "invalid expenses cannot turn a valid adult age into child benefits or eligible-dependant relief",
+    async p => {
+      await p.evaluate(() =>
+        localStorage.setItem(
+          "taxcmp",
+          JSON.stringify({
+            v: 3,
+            year: 2026,
+            home: "ON",
+            dest: "AB",
+            adults: 1,
+            kids: 1,
+            under6: 0,
+            spouse: false,
+            people: [{ ord: 30000 }],
+            childcare: {
+              monthly: 1000,
+              mode: "automatic",
+              children: [{ age: 20, expenses: 12000 }],
+              earningsOverridden: [false, false],
+            },
+          }),
+        ),
+      );
+      await p.reload();
+      const noChildRelief = async () => {
+        const benefits = p.locator("table.cmp tr").filter({ hasText: "Child benefits" }).first();
+        assert.equal(await benefits.locator("td").nth(1).textContent(), "$0");
+        assert.doesNotMatch(await p.textContent("#detail-body"), /eligible dependant amount/);
+        assert.equal(await p.inputValue("#kids"), "1");
+        assert.equal(await p.inputValue("#u6"), "0");
+      };
+      await noChildRelief();
+      const baseline = await p.locator(".col .cv").allTextContents();
+      await fill(p, "care-expenses-0", "abc");
+      assert.equal(await cell(p, "Federal calculation"), "Details needed");
+      await noChildRelief();
+      assert.deepEqual(await p.locator(".col .cv").allTextContents(), baseline);
+      await p.reload();
+      await noChildRelief();
+      for (const monthly of ["0", "1000", "bad amount", "1000"]) {
+        await fill(p, "childcare-monthly", monthly);
+        await noChildRelief();
+        assert.deepEqual(await p.locator(".col .cv").allTextContents(), baseline);
+      }
+      await p.reload();
+      await open(p, "#childcare-details");
+      assert.equal(await p.inputValue("#care-expenses-0"), "abc");
+      assert.equal(await p.getAttribute("#care-expenses-0", "aria-invalid"), "true");
+      await noChildRelief();
+    },
+  ],
 ].map(([name, step]) => [
   name,
   async p => {
