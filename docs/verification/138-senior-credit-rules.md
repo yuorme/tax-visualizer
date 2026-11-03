@@ -196,7 +196,7 @@ Benefits and property relief remain #21/#22.
 | Rule | Verified evidence and implementation consequence |
 |---|---|
 | SK senior supplementary | [SK428](138-senior-credit-rules/sources/sk-428-2025.txt): $2,028 in 2025; [2026 TD1](138-senior-credit-rules/sources/td1sk-2026.txt): $2,569. Age 65+, no income taper, 10.5% credit, transferable through SK(S2). It survives complete phase-out of the ordinary age amount. |
-| MB family tax benefit | [MB428-A](138-senior-credit-rules/sources/mb-family-2025.txt) adds $2,065 per senior adult to its base, then subtracts 9% of claimant line 23600 income, floor zero, before 10.8% credit conversion. The [2026 TD1 worksheet](138-senior-credit-rules/sources/td1mb-ws-2026.txt) confirms $2,065/9%, but its payroll eligibility shorthand is not a substitute for final MB428-A spouse rules. |
+| MB family tax benefit | [MB428-A](138-senior-credit-rules/sources/mb-family-2025.txt) adds $2,065 for the claimant aged 65+. The spouse's $2,065 term requires a claimed spouse-age transfer with **MB(S2) line 1 > line 11**, per the [2025 guide](138-senior-credit-rules/sources/mb-guide-2025.txt); spouse age alone is insufficient. Subtract 9% of claimant line 23600 income from the combined benefit base, floor zero, then convert at 10.8%. The [2026 TD1 worksheet](138-senior-credit-rules/sources/td1mb-ws-2026.txt) confirms $2,065/9%; final 2026 filing conditions remain to be reconciled. |
 | NS separate age tax credit | [NS428 line 98](138-senior-credit-rules/sources/ns-428-2025.txt): up to $1,000 **tax dollars**, age 65+, **taxable** income strictly below $24,000. No 8.79% multiplication. Separate from the regular age amount. 2026 final filing confirmation outstanding; do not infer an indexed threshold from the ordinary age amount. |
 | PE low-income reduction | [PE428 lines 76/78](138-senior-credit-rules/sources/pe-428-2025.txt): $250 reduction for each senior adult, combined with the existing family reduction before its income taper. 2026 final filing confirmation outstanding. This is a reduction dollar amount, not a 9.5% credit base. |
 | AB supplemental credit | [AB worksheet line 61545](138-senior-credit-rules/sources/ab-worksheet-2025.txt): 25% of the excess over $4,800 of 8% × (line 58800 bases less tuition line 58560), floor zero. Age, pension and transferred bases can affect this subtotal. Do not treat the 8% table as a complete tax calculation. |
@@ -214,7 +214,8 @@ absent programs**, not existing programs that merely need a senior parameter. Ad
 non-senior results. Track the following separately before deciding how their effects enter #17:
 
 - **MB family tax benefit:** implement MB428-A's basic/dependant/child terms and individual-income reduction,
-  with senior terms prepared for #17; resolve spouse claim conditions against the guide and final 2026 form.
+  with separate own-age and transfer-qualified spouse-age terms prepared for #17. The 2025 spouse condition
+  above is verified; reconcile it against the final 2026 form when published.
   A usable non-senior example is a married adult with $40,000 ordinary non-employment income, a zero-income
   spouse and two dependent minor children, no other claims: base `2,065 + 2,065 + 2 × 2,752 − .09 × 40,000`
   is $6,034, worth **$651.672**. Tax before this credit is
@@ -303,7 +304,9 @@ year.province.seniorCredits
     { ageAmount, retirementMaximum, retirementMultiplier, livingAlone,
       singleParentAdditional, familyThreshold, reductionRate, creditRate }
   SK addition: senior-supplementary-base
-  MB prerequisite: new family-tax-benefit program, then age terms
+  MB prerequisite: new family-tax-benefit program
+    ownAgeTerm: claimant age 65+
+    spouseAgeTerm: claimed age transfer AND MB(S2) line1 > line11
   NS addition: age-taxable-income-credit
   PE addition: age terms in low-income-reduction program
 ```
@@ -351,6 +354,7 @@ saving into a full disposable-income golden result without those interactions.
 | Same donor, Ontario 2025 | Pool $7,985; adjusted income `20,000 − 12,747 = 7,253`; transfer $732 base, recipient relief at most $36.966 |
 | SK ordinary age amount fully phased out, age 65 | Supplementary credit still $212.94 (2025) or $269.745 (2026), before tax capacity |
 | MB 2025 single senior, net $30,000, no other family-benefit terms | Family-benefit base `2,065 + 2,065 − .09 × 30,000 = 1,430`; credit $154.44 |
+| MB 2025 married seniors, claimant net/taxable $30,000, spouse $60,000, ordinary non-employment income, no other claims | Spouse age base is zero, so no spouse-age transfer or spouse-age family-benefit term. Claimant base remains $1,430, usable credit $154.44. Automatically adding the spouse term would give $377.46, an overstatement of $223.02. |
 | NS 2025 senior taxable income $23,999.99 / $24,000 | Separate age tax credit $1,000 / $0 before capacity; strict boundary, not a taper |
 
 Further implementation tests must exercise zero recipient tax capacity, employment credit in donor capacity,

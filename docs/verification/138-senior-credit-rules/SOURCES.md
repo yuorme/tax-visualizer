@@ -26,6 +26,7 @@ The main report also reuses the already-committed 2025 seniors pension eligibili
 | [federal-worksheet-2025.txt](sources/federal-worksheet-2025.txt) | [Federal Worksheet](https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5000-d1/5000-d1-25e.pdf) |
 | [mb-428-2025.txt](sources/mb-428-2025.txt) | [Manitoba Tax](https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5007-c/5007-c-25e.pdf) |
 | [mb-family-2025.txt](sources/mb-family-2025.txt) | [Manitoba Family Tax Benefit](https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5007-a/5007-a-25e.pdf) |
+| [mb-guide-2025.txt](sources/mb-guide-2025.txt) | [Manitoba tax information for 2025 – Schedule MB428-A spouse age eligibility](https://www.canada.ca/en/revenue-agency/services/forms-publications/tax-packages-years/general-income-tax-benefit-package/manitoba/5007-pc.html) |
 | [mb-s2-2025.txt](sources/mb-s2-2025.txt) | [Provincial Amounts Transferred from your Spouse or Common-Law Partner](https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5007-s2/5007-s2-25e.pdf) |
 | [mb-worksheet-2025.txt](sources/mb-worksheet-2025.txt) | [Worksheet MB428](https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5007-d/5007-d-25e.pdf) |
 | [nb-428-2025.txt](sources/nb-428-2025.txt) | [New Brunswick Tax and Credits](https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5004-c/5004-c-25e.pdf) |

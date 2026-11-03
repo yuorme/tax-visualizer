@@ -99,6 +99,27 @@ equal(Math.max(0, -(-280)), 280, "QC negative line430 transferred dollars");
 equal(2028 * .105, 212.94, "SK 2025 supplementary");
 equal(2569 * .105, 269.745, "SK 2026 supplementary");
 equal(Math.max(0, 2065 + 2065 - .09 * 30000) * .108, 154.44, "MB senior family benefit");
+// MB428-A line5 is not an automatic amount for every spouse aged65+.
+// Official 2025 guide: claimed age transfer AND MB(S2) line1 strictly exceeds line11.
+const mbSpouseAgeTerm = (claimedAgeTransfer, line1, line11) =>
+  claimedAgeTransfer && line1 > line11 ? 2065 : 0;
+const mbSpouseAgeBase = ageBase(rows[2025].MB, 65, 60000);
+equal(mbSpouseAgeBase, 0, "MB spouse age base exhausted at 60000");
+const mbSpouseAdjustedIncome = (47000 * .108 + 13000 * .1275) / .108 - 15780;
+equal(Math.max(0, mbSpouseAgeBase - mbSpouseAdjustedIncome), 0, "MB spouse no unused age transfer");
+const mbSpouseTerm = mbSpouseAgeTerm(false, mbSpouseAgeBase, mbSpouseAdjustedIncome);
+equal(mbSpouseTerm, 0, "MB spouse60000 contributes no family-benefit age term");
+const mbMarriedSeniorCredit = (2065 + 2065 + mbSpouseTerm - .09 * 30000) * .108;
+equal(mbMarriedSeniorCredit, 154.44, "MB claimant30000 spouse60000 family credit");
+const mbMarriedSeniorCapacity = (30000 - 15780 - ageBase(rows[2025].MB, 65, 30000)) * .108;
+equal(mbMarriedSeniorCapacity, 1169.6022, "MB married senior capacity after own age credit");
+equal(Math.min(mbMarriedSeniorCapacity, mbMarriedSeniorCredit), 154.44, "MB married senior usable relief");
+equal((2065 + 2065 + 2065 - .09 * 30000) * .108, 377.46, "MB incorrect automatic spouse result");
+equal(377.46 - mbMarriedSeniorCredit, 223.02, "MB automatic spouse overstatement");
+equal(mbSpouseAgeTerm(true, 1000, 1000), 0, "MB spouse strict boundary: equal lines");
+equal(mbSpouseAgeTerm(true, 1000, 1001), 0, "MB spouse strict boundary: income above age base");
+equal(mbSpouseAgeTerm(true, 1000, 999), 2065, "MB claimed age transfer above adjusted income");
+equal(mbSpouseAgeTerm(false, 1000, 999), 0, "MB no spouse-age term without claimed transfer");
 const mbFamilyCredit = (2065 + 2065 + 2 * 2752 - .09 * 40000) * .108;
 const mbFamilyCapacity = (40000 - 15780 - 9134) * .108;
 equal(mbFamilyCredit, 651.672, "MB ordinary family omitted credit");
