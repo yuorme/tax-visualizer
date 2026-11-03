@@ -1,0 +1,73 @@
+Title: BC Bill35: temporary January-March2023 family benefit enhancement
+URL: https://www.bclaws.gov.bc.ca/civix/document/id/bills/billsprevious/3rd42nd%3Agov35-1
+Fetched: 2026-11-02
+SHA-256 of the original: 1e42f447789990138dcc9332b7840a77ce45ddb99d2520f23827e13f4e11fe29
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+##### 3rd Session, 42nd Parliament (2022)
+FIRST READING
+
+The following electronic version is for informational purposes only.
+The printed version remains the official version.
+
+HONOURABLE SELINA ROBINSON
+MINISTER OF FINANCE
+
+## BILL 35 – 2022
+
+### INCOME TAX AMENDMENT ACT, 2022
+
+HIS MAJESTY, by and with the advice and consent of the Legislative Assembly of the Province of British Columbia, enacts as follows:
+
+[image: Explanatory Note Icon]
+
+CLAUSE 1: [Income Tax Act, section 13.092] renames the benefit as the BC family benefit.
+
+1 Section 13.092 (1) of the Income Tax Act, R.S.B.C. 1996, c. 215, is amended by adding ", which overpayment is known as the BC family benefit," after "An overpayment on account of an individual's liability under this Act for a taxation year".
+
+[image: Explanatory Note Icon]
+
+CLAUSE 2: [Income Tax Act, section 13.092] provides for temporarily increased payments under the benefit in January, February and March 2023.
+
+2 Section 13.092 is amended
+
+(a) in subsection (2) by striking out "The amount of the overpayment" and substituting "Subject to subsection (2.1), the amount of the overpayment", and
+
+(b) by adding the following subsection:
+
+(2.1) For the purposes of determining under subsection (2) the amount of the overpayment deemed by subsection (1) to have arisen during the months of January, February and March 2023,
+
+(a) the description of "benefit" in subsection (2) (a) is to be read as follows:
+
+| benefit | = | the amount based on the number of qualified dependants in respect of whom the individual was an eligible individual at the beginning of the month, as follows:
+| | (i) for one qualified dependant, $2 300;
+| | (ii) for 2 qualified dependants, $4 000;
+| | (iii) for 3 or more qualified dependants, the amount determined by the following formula:
+| | $4 000 + [$1 500 × (number of qualified dependants – 2)];
+
+, and
+
+(b) the description of "benefit" in subsection (2) (b) is to be read as follows:
+
+| benefit | = | the amount based on the number of qualified dependants in respect of whom the individual was an eligible individual at the beginning of the month, as follows:
+| | (i) for one qualified dependant, $1 300;
+| | (ii) for 2 qualified dependants, $2 580;
+| | (iii) for 3 or more qualified dependants, the amount determined by the following formula:
+| | $2 580 + [$1 260 × (number of qualified dependants – 2)]; .
+
+#### Commencement
+
+3 The provisions of this Act referred to in column 1 of the following table come into force as set out in column 2 of the table:
+
+Item | Column 1 Provisions of Act | Column 2 Commencement
+1 | Anything not elsewhere covered by this table | The date of Royal Assent
+2 | Section 1 | January 1, 2023
+
+Explanatory Notes
+
+CLAUSE 1: [Income Tax Act, section 13.092] renames the benefit as the BC family benefit.
+
+CLAUSE 2: [Income Tax Act, section 13.092] provides for temporarily increased payments under the benefit in January, February and March 2023.
+
+Copyright © King's Printer, Victoria, British Columbia, Canada

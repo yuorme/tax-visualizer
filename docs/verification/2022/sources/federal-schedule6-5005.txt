@@ -1,0 +1,257 @@
+Title: Canada Workers Benefit
+URL: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5005-s6/5005-s6-22e.pdf
+Fetched: 2026-11-02
+SHA-256 of the original: 8406a8e9ee45dcb1b8b004b791022a4863412477a45631799f120858e8285e35
+Publication date modified: 2022-10-27
+PDF pages: all 5
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 1 of 5 ---
+
+T1-2022 Schedule 6
+Protected B when completed
+Canada Workers Benefit
+The Canada workers benefit (CWB) is a refundable tax credit intended to supplement the earnings of low-income workers.
+This benefit has two parts: a basic amount and a disability supplement. To claim the basic CWB, complete steps 1 and 2.
+To claim the CWB disability supplement, complete steps 1 and 3. To claim the basic CWB and the CWB disability supplement,
+complete steps 1, 2, and 3, if applicable.
+As of the 2019 tax year, you may choose to include or not include tax-exempt income when you calculate the CWB.
+Complete this schedule if you met all of the following conditions in 2022:
+• You were a resident of Canada throughout the year
+• You earned working income (see Part A)
+• You were, at the end of the year, 19 years of age or older, or you resided with your spouse or common-law partner or your child
+Attach a copy of this schedule to your paper return.
+You cannot claim the CWB for 2022 if any of the following conditions apply to you:
+• You were enrolled as a full-time student at a designated educational institution for a total of more than 13 weeks in the year,
+unless you had an eligible dependant at the end of the year
+• You were confined to a prison or similar institution for a period of at least 90 days during the year
+• You were exempt from income tax in Canada for a period in the year when you were an officer or a servant of another
+country (such as a diplomat) residing in Canada or you were a family member who resided with such a person, or an
+employee of such a person, at any time in the year
+Notes: If you had a spouse or common-law partner but did not have an eligible spouse or an eligible dependant as
+defined below, complete this schedule as if you did not have an eligible spouse or an eligible dependant.
+If you are completing a final return for a deceased person who met the conditions above, you can claim the CWB for
+that person if the date of death was after June 30, 2022.
+An eligible spouse is a person who meets all of the following conditions:
+• They were your cohabiting spouse or common-law partner on December 31, 2022 (or, if they died after June 30, 2022,
+they were your cohabiting spouse or common-law partner on the date of death and you were not the cohabiting spouse or
+common-law partner of another individual on December 31, 2022)
+Note: You are considered to have had a cohabiting spouse or common-law partner, on December 31, 2022, if you had not
+been living separate and apart because of a breakdown in your marriage or common-law partnership for a period of
+at least 90 days, that includes December 31, 2022.
+• They were a resident of Canada throughout 2022
+• They were not enrolled as a full-time student at a designated educational institution for a total of more than 13 weeks in
+the year unless they had an eligible dependant at the end of the year
+• They were not confined to a prison or similar institution for a period of at least 90 days during the year
+• They were not exempt from income tax in Canada for a period in the year when they were an officer or a servant of
+another country (such as a diplomat) residing in Canada or they were a family member who resided with such a person, or
+an employee of such a person, at any time in the year
+An eligible dependant is a person who meets all of the following conditions:
+• They were your or your spouse's or common-law partner's child
+Note: For the purposes of this claim, a child includes a person under your custody and control who was wholly dependent
+on you for support. A child you lived with and cared for under a kinship or close relationship program (of the federal
+government, a provincial or territorial government or an Indigenous governing body),can still be an eligible
+dependant, even if you received payments under that program, as long as the payments were not a children's
+special allowance for that child.
+• They were under 19 years of age and lived with you on December 31, 2022 (or, if they died after June 30, 2022, they lived
+with you on the date of death and would have been under 19 years of age on December 31, 2022)
+• They were not eligible for the CWB for 2022
+5005-S6 E (22) (Ce formulaire est disponible en français.) Page 1 of 5
+
+--- PDF page 2 of 5 ---
+
+Protected B when completed
+Step 1 – Working income and adjusted family net income
+38100Do you have an eligible dependant? 1 Yes 2 No
+38101Do you have an eligible spouse? 1 Yes 2 No
+38102
+Are you claiming the basic CWB?
+If yes, complete parts A and B, then, if applicable, complete Step 2. 1 Yes 2 No
+38103
+Are you eligible for the disability tax credit (DTC)?
+If yes, complete parts A and B, then, if applicable, complete Step 3. 1 Yes 2 No
+38104
+Is your eligible spouse eligible for the DTC for themselves?
+If yes, your eligible spouse must complete steps 1 and 3 on a separate Schedule 6. 1 Yes 2 No
+38105Are you choosing to include tax-exempt income to calculate the CWB? (1) 1 Yes 2 No
+Part A – Family working income
+Complete columns 1 and 2 if you had an eligible spouse on December 31, 2022.
+If not, complete column 1 only.
+Column 1
+You
+Column 2
+Your eligible
+spouse
+1
+Employment income and other employment income from line 10100 and
+line 10400 of the return
+38106 2
+Taxable scholarships, fellowships, bursaries, and artists' project grants
+from line 13010 of the return + +
+3
+Total self-employment income from lines 13500, 13700, 13900, 14100,
+and 14300 of the return (excluding losses) (2) + +
+38107 4
+Tax-exempt working income earned on a reserve (from line 10000 of
+Form T90, Income Exempt from Tax under the Indian Act) (1) or an allowance
+received as an emergency volunteer (from line 10105 of the return) + +
+38108 5Working incomeAdd lines 1 to 4. Enter the result, even if it is "0". = =
+6Family working income
+Add the amounts from line 5 in columns 1 and 2.
+Enter this amount on line 16.
+You can claim the basic CWB in Step 2 if the family working income on line 6 is more than $3,600 and you had an eligible spouse.
+If not, your working income on line 5 (column 1) must be more than $2,400.
+If you are eligible for the CWB disability supplement, your working income on line 5 (column 1) must be more than $1,200.
+(1) Including tax-exempt income is optional for the CWB. If you choose to include tax-exempt working income on line 4 in
+Part A, you also must include any tax-exempt income that applies on line 8 in Part B.
+If you choose to include your tax-exempt income in column 1 of parts A and B, you also must include your eligible
+spouse's tax-exempt income in column 2 of parts A and B.
+(2) If you have reported income from more than one business on one self-employment line (13500, 13700, 13900, 14100,
+or 14300) and you are reporting a profit from one business and a loss from another, include only the profit amounts on
+line 3 when calculating working income. If you are reporting a loss from only one business at one of these lines, do not
+include that loss.
+5005-S6 E (22) Page 2 of 5
+
+--- PDF page 3 of 5 ---
+
+Protected B when completed
+Part B – Adjusted family net income
+Complete columns 1 and 2 if you had an eligible spouse on December 31, 2022.
+If not, complete column 1 only.
+Column 1
+You
+Column 2
+Your eligible
+spouse
+7Net income from line 23600 of the return
+38109 8
+Tax-exempt part of all income earned or received on a reserve minus the
+deductions related to that income (from line 10026 of Form T90) or an
+allowance received as an emergency volunteer (from line 10105 of the return) + +
+9
+Total of universal child care benefit (UCCB) repayment (line 21300 of the
+return) and registered disability savings plan (RDSP) income repayment
+(included on line 23200 of the return) + +
+10Add lines 7 to 9. = =
+11
+Total of UCCB (line 11700 of the return) and RDSP income (line 12500 of
+the return) – –
+38110 12Line 10 minus line 11 (if negative, enter "0") = =
+13
+Add the amounts from line 12 in columns 1 and 2.
+If you had an eligible spouse, continue at line 14; if not, continue at line 15.
+14
+Secondary earner exemption:
+If your working income (line 5) is less than your eligible spouse's working income,
+enter whichever is less from column 1: amount from line 5 or line 12.
+If your working income (line 5) is equal to or more than your eligible spouse's working income,
+enter whichever is less from column 2: amount from line 5 or line 12. (maximum $14,336) –
+15Adjusted family net income
+Line 13 minus line 14
+Enter this amount on line 23 and line 35. =
+If your adjusted family net income from line 15 is:
+• equal to or more than the amount listed in the chart, you are not entitled to the CWB
+• less than the amount listed in the chart, you may be entitled to the CWB. Continue to Step 2 to calculate the basic CWB
+and/or Step 3 for the CWB disability supplement, whichever applies.
+Adjusted family net income limits for the basic CWB and the CWB disability supplement
+Your family status Basic CWB
+CWB disability supplement
+You are eligible for the DTC You and your eligible spouse
+are eligible for the DTC
+You did not have an eligible
+spouse or an eligible dependant $29,072.64 $32,772.84 not applicable
+You had an eligible spouse but did
+not have an eligible dependant $45,060.02 $48,760.22 $52,460.42
+You did not have an eligible spouse
+but you had an eligible dependant $21,488.47 $25,188.67 not applicable
+You had an eligible spouse and
+an eligible dependant $35,912.95 $39,613.15 $43,313.35
+5005-S6 E (22) Page 3 of 5
+
+--- PDF page 4 of 5 ---
+
+Protected B when completed
+Step 2 – Basic CWB
+If you had an eligible spouse, only one of you can claim the basic CWB. The person who received the CWB advance
+payments for 2022 must claim the basic CWB for the year.
+If you had an eligible dependant, only one person can claim the basic CWB for that eligible dependant.
+If you cannot decide who will claim the basic CWB when you have an eligible spouse or an eligible dependant, the Canada
+Revenue Agency will decide who will claim the basic CWB.
+16Family working income from line 6
+17
+Base amount:
+If you had an eligible spouse or you had both an eligible spouse and an
+eligible dependant, enter $3,600. If not, enter $2,400. –
+18Line 16 minus line 17 (if negative, enter "0") =
+19
+Rate:
+If you had an eligible dependant but did not have an eligible spouse,
+enter 20%. If you had both an eligible spouse and an eligible dependant,
+enter 23.9%. If not, enter 37.3%. ×
+20Line 18 multiplied by the percentage from line 19 =
+21
+Maximum benefit:
+If you did not have an eligible spouse or an eligible dependant,
+enter $3,296.57. If you had an eligible spouse but did not have an eligible
+dependant, enter $5,146.65. If you had an eligible dependant but did not
+have an eligible spouse, enter $1,767.60. If you had both an eligible
+spouse and an eligible dependant, enter $3,297.72.
+22Enter whichever is less: amount from line 20 or line 21.
+23Adjusted family net income from line 15
+24
+Base amount:
+If you did not have an eligible spouse or an eligible dependant,
+enter $12,589.79. If you had an eligible spouse but did not have an
+eligible dependant, enter $19,326.77. If you had an eligible dependant but
+did not have an eligible spouse, enter $12,650.47. If you had both an
+eligible spouse and an eligible dependant, enter $19,424.35. –
+25Line 23 minus line 24 (if negative, enter "0") =
+26Rate ×
+27Line 25 multiplied by the percentage from line 26 =
+Ż –
+28
+Line 22 minus line 27 (if negative, enter "0")
+If you are not completing Step 3, enter this amount on line 45300 of your return. =
+5005-S6 E (22) Page 4 of 5
+20%
+
+--- PDF page 5 of 5 ---
+
+Protected B when completed
+Step 3 – CWB disability supplement
+If you had an eligible spouse and one of you is eligible for the DTC, that person should claim the basic CWB and the CWB
+disability supplement.
+If you had an eligible spouse and you are both eligible for the DTC, only one of you can claim the basic CWB. However, each
+of you must claim the CWB disability supplement on a separate Schedule 6.
+29Amount from line 5 in column 1
+30Base amount –
+31Line 29 minus line 30 (if negative, enter "0") =
+32
+Rate:
+If you had an eligible spouse or you had both an eligible spouse and an
+eligible dependant, enter 20%. If not, enter 40%. ×
+33Line 31 multiplied by the percentage from line 32 =
+34Enter whichever is less: amount from line 33 or $740.04.
+35Adjusted family net income from line 15
+36
+Base amount:
+If you did not have an eligible spouse or an eligible dependant,
+enter $29,072.64. If you had an eligible spouse but did not have an
+eligible dependant, enter $45,060.02. If you had an eligible dependant but
+did not have an eligible spouse, enter $21,488.47. If you had both an
+eligible spouse and an eligible dependant, enter $35,912.95. –
+37Line 35 minus line 36 (if negative, enter "0") =
+38
+Rate: If you had an eligible spouse and they are also eligible for
+the DTC, enter 10%. If not, enter 20%. ×
+39Line 37 multiplied by the percentage from line 38 =
+Ż –
+40Line 34 minus line 39 (if negative, enter "0") =
+41If you completed Step 2, enter the amount from line 28. If not, enter "0". +
+42
+Line 40 plus line 41
+Enter this amount on line 45300 of your return. =
+See the privacy notice on your return.
+5005-S6 E (22) Page 5 of 5
+1,200.00

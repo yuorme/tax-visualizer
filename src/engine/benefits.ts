@@ -32,6 +32,34 @@ function nlChildBenefit(
   return Math.max(0, amt - reductionRate * Math.max(0, famNet - q.threshold));
 }
 
+/** BC early-childhood annual entitlement: both the amount and reduction scale with eligible young children. */
+function bcEarlyBenefit(
+  q: Extract<ChildBenefitProgram, { program: "bc-early-childhood-benefit" }>["params"],
+  famNet: number,
+  kidsU6: number,
+) {
+  return kidsU6 * Math.max(0, q.perChild - q.rate * Math.max(0, famNet - q.threshold));
+}
+
+/** BC annual entitlement; each period applies its own minimum and zero floor. */
+function bcBenefit(
+  q: Extract<ChildBenefitProgram, { program: "bc-family-benefit" }>["params"],
+  famNet: number,
+  kids: number,
+  single: boolean,
+) {
+  let mx = 0,
+    mn = 0;
+  for (let i = 0; i < kids; i++) {
+    mx += q.max[Math.min(i, 2)];
+    mn += q.min[Math.min(i, 2)];
+  }
+  if (single) mx += q.singleParent;
+  return famNet <= q.minThreshold
+    ? Math.max(mn, mx - q.rate * Math.max(0, famNet - q.threshold))
+    : Math.max(0, mn - q.rate * Math.max(0, famNet - q.minThreshold));
+}
+
 /** Provincial or territorial child benefit. single = one adult in the household. */
 export function provincialChildBenefit(
   b: ChildBenefitProgram | undefined,
@@ -62,18 +90,21 @@ export function provincialChildBenefit(
         q.schoolSupplies * (kids - kidsU6)
       );
     }
-    case "bc-family-benefit": {
+    case "bc-early-childhood-benefit": {
+      return bcEarlyBenefit(b.params, famNet, kidsU6);
+    }
+    case "bc-child-benefit-transition": {
       const q = b.params;
-      let mx = 0,
-        mn = 0;
-      for (let i = 0; i < kids; i++) {
-        mx += q.max[Math.min(i, 2)];
-        mn += q.min[Math.min(i, 2)];
-      }
-      if (single) mx += q.singleParent;
-      return famNet <= q.minThreshold
-        ? Math.max(mn, mx - q.rate * over(q.threshold))
-        : Math.max(0, mn - q.rate * over(q.minThreshold));
+      return (
+        q.early.weight * bcEarlyBenefit(q.early, famNet, kidsU6) +
+        q.opportunity.weight * bcBenefit(q.opportunity, famNet, kids, single)
+      );
+    }
+    case "bc-family-benefit": {
+      return bcBenefit(b.params, famNet, kids, single);
+    }
+    case "bc-family-benefit-periods": {
+      return b.params.periods.reduce((sum, q) => sum + q.weight * bcBenefit(q, famNet, kids, single), 0);
     }
     case "alberta-child-benefit-and-employment":
     case "alberta-child-family-benefit":
@@ -101,6 +132,13 @@ export function provincialChildBenefit(
       const maximum = q.perChild[0] + (kids > 1 ? q.perChild[1] : 0) + Math.max(0, kids - 2) * q.perChild[2];
       const rate = q.rate[Math.min(kids, 2) - 1] + Math.max(0, kids - 2) * q.additionalRate;
       return famNet < q.fullBelow ? maximum : Math.max(0, maximum - rate * over(q.threshold));
+    }
+    case "nova-scotia-child-benefit-by-child": {
+      const q = b.params;
+      if (famNet >= q.partialBelow) return 0;
+      let laterChildren = 0;
+      for (let i = 1; i < kids; i++) laterChildren += q.perChild[Math.min(i, 2)];
+      return q.perChild[0] + laterChildren * (famNet < q.fullBelow ? 1 : q.partialOtherRate);
     }
     case "nova-scotia-child-benefit": {
       const q = b.params;

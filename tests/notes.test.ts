@@ -23,6 +23,15 @@ test("flat federal basic personal amounts render without a fictitious federal ph
   assert.doesNotMatch(text, /federal amount[^.]*drops from/);
 });
 
+test("2022 notes explain BC's separate periods and omit the later renter credit", () => {
+  const text = render(loadYear(2022));
+  assert.match(text, /9 months at annual maximum amounts of \$1,600/);
+  assert.match(text, /3 months at annual maximum amounts of \$2,300/);
+  assert.match(text, /Each period applies its own income reduction, minimum and zero floor/);
+  assert.doesNotMatch(text, /B.C.'s renter's tax credit/);
+  assert.match(text, /the published straight-line taper to \$80,000/);
+});
+
 test("2023 notes describe PEI surtax and separate NL periods without later programs", () => {
   const text = render(loadYear(2023));
   assert.match(text, /Prince Edward Island adds a surtax of 10% of provincial tax above \$12,500/);

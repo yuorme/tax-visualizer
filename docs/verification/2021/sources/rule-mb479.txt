@@ -1,0 +1,65 @@
+Title: MB479 2021: rental occupancy cost and education property tax credit
+URL: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5007-tc/5007-tc-21e.pdf
+Fetched: 2026-11-02
+SHA-256 of the original: d40bb1c363dc74c2067f168467cacab43de3bbc5c2dfbf1418346ec90ad9188f
+Publication date modified: 2022-03-14
+PDF pages: 2 of 5
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 2 of 5 ---
+
+Protected B when completed
+If you are not claiming the education property tax credit, the seniors' school tax rebate, or the school tax credit for
+homeowners, enter "0" on line 62 and continue on line 63. Otherwise, continue with the next section.
+Education property tax credit
+You must complete the declaration for the education property tax credit below if you are claiming rent and/or school taxes paid
+for the education property tax credit.
+The Income Tax Act of Manitoba allows only one education property tax credit per residence. If you shared accommodation
+with one or more individuals, only one of you can claim an education property tax credit for that residence for the time you
+were sharing.
+Declaration for the education property tax credit (if you need more space, attach an additional page)
+By signing my return, I declare the following information about my principal residence(s) in Manitoba during 2021:
+Address
+Number
+of months
+resident
+in 2021
+Rent and/or
+school taxes
+paid for 2021
+Name of any individual(s)
+who shared accommodation
+with you in 2021 (1)
+Name of landlord or
+municipality payment
+was made to
+Roll number
+(for homeowners only)
+(1) other than your spouse or common-law partner and/or dependent children
+2061100Total rent paid in Manitoba for 2021 × 20% =
+61120 21Net school taxes paid in Manitoba for 2021 that apply to your principal residence +
+61140 22
+Manitoba education property tax credit advance received
+on your property tax statement (if not received, enter "0") +
+61160 23Total occupancy cost: Add lines 20 to 22 =
+24Applicable percentage ×
+25Allowable occupancy cost: line 23 multiplied by the percentage from line 24 =
+Complete lines 26 to 28 only if you (or your spouse or common-law partner) were 65 years of age
+or older at the end of the year. If both of you were under 65 years of age at the end of the year,
+enter $525 on line 29 and continue on line 30.
+26Basic credit for individuals 65 years of age or older
+27Amount from line 6 of the previous page × 0.75% = –
+28Line 26 minus line 27 =
+29
+If you (or your spouse or common-law partner) were 65 years of age or older at the end of the
+year, enter $525 or the amount from line 28, whichever is more.
+If both of you were under 65 years of age at the end of the year, enter $525.
+30
+Enter whichever is less:
+amount from line 25 or line 29
+31Amount of Manitoba education property tax credit advance received from line 22 –
+32Education property tax creditLine 30 minus line 31 (if negative, enter "0") =
+5007-TC E (21) Page 2 of 5
+75%
+825.00
