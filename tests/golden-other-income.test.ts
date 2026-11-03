@@ -21,6 +21,12 @@ for (const [year, expected] of Object.entries(fixture.years)) {
     // These pre-carbon specimens retain their original rule inputs, like history.test.ts's frozen specimens.
     // Activated carbon interactions have separate independent assertions in features/other-income.json.
     for (const province of data.provinces) delete province.carbon;
+    // PR #90's 2025 specimens also predate ordinary fuel activation (#7). Preserve their original data
+    // context and exact expectations; the original 2026 snapshots already include ordinary fuel.
+    if (Number(year) === 2025) {
+      delete data.federal.fuelTax;
+      for (const province of data.provinces) delete province.fuelTax;
+    }
     let checked = 0;
     for (const s of fixture.scenarios) {
       for (const { p, r } of computeAll(data, toHousehold(s))) {

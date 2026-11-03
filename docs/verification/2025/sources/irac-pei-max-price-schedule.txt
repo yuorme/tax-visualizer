@@ -1,0 +1,27 @@
+Title: IRAC, Maximum Consumer Petroleum Prices (archived August 3, 2025)
+URL: http://web.archive.org/web/20250803162328/https://irac.pe.ca/petrol/current-petroleum-prices/maximum-consumer-price-schedule/
+Fetched: 2026-11-01
+SHA-256 of the original: 0a4027f3762b0eaabdd6c081d526e8ea82a0a4aea3cd1ed588ae7726c166f466
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+[image: Print Friendly, PDF & Email]
+
+### Island Regulatory and Appeals Commission
+
+Prince Edward Island
+
+Effective: August 01, 2025
+
+## MAXIMUM CONSUMER PETROLEUM PRICES
+
+FOR PRODUCTS NOT SOLD AT RETAIL OUTLETS
+
+CENTS PER LITRE (CPL) | Maximum Consumer Base Price | Federal Excise Tax | Price Incl. Excise Tax | PEI Prov. Tax | Federal Fuel Charge | MAXIMUM Consumer Price (Before HST)*
+Regular Unleaded Gasoline | 116.2 | 10.0 | 126.2 | 8.47 | 0 | 134.7
+Mid-Grade Unleaded Gasoline | 118.9 | 10.0 | 128.9 | 8.47 | 0 | 137.4
+Premium Unleaded Gasoline | 121.6 | 10.0 | 131.6 | 8.47 | 0 | 140.1
+Ultra Low-Sulphur Diesel | 134.7 | 4.0 | 138.7 | 14.15 | 0 | 152.9
+Stove Oil | 123.1 | | 123.1 | | | 123.1
+Furnace Oil | 115.7 | | 115.7 | | | 115.7
+Furnace Oil-ThermaClean | 119.2 | | 119.2 | | | 119.2

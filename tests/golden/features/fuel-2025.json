@@ -1,0 +1,418 @@
+{
+  "year": 2025,
+  "cases": [
+    {
+      "id": "fuel2025-BC",
+      "province": "BC",
+      "driving": {
+        "km": 20000,
+        "lPer100km": 8
+      },
+      "useCredits": true,
+      "expected": {
+        "fuel.litres": 1600.0,
+        "fuel.perLitre.federal": 0.1,
+        "fuel.perLitre.provincial": 0.085,
+        "fuel.perLitre.regional": 0.185,
+        "fuel.perLitre.total": 0.37,
+        "fuel.federal": 160.0,
+        "fuel.provincial": 136.0,
+        "fuel.regional": 296.0,
+        "fuel.total": 592.0,
+        "delta.gross": 592.0,
+        "delta.total": 592.0,
+        "delta.left": -592.0
+      }
+    },
+    {
+      "id": "fuel2025-AB",
+      "province": "AB",
+      "driving": {
+        "km": 20000,
+        "lPer100km": 8
+      },
+      "useCredits": true,
+      "expected": {
+        "fuel.litres": 1600.0,
+        "fuel.perLitre.federal": 0.1,
+        "fuel.perLitre.provincial": 0.13,
+        "fuel.perLitre.regional": 0,
+        "fuel.perLitre.total": 0.23,
+        "fuel.federal": 160.0,
+        "fuel.provincial": 208.0,
+        "fuel.regional": 0.0,
+        "fuel.total": 368.0,
+        "delta.gross": 368.0,
+        "delta.total": 368.0,
+        "delta.left": -368.0,
+        "carbon.gasoline": 69.4751
+      }
+    },
+    {
+      "id": "fuel2025-SK",
+      "province": "SK",
+      "driving": {
+        "km": 20000,
+        "lPer100km": 8
+      },
+      "useCredits": true,
+      "expected": {
+        "fuel.litres": 1600.0,
+        "fuel.perLitre.federal": 0.1,
+        "fuel.perLitre.provincial": 0.15,
+        "fuel.perLitre.regional": 0,
+        "fuel.perLitre.total": 0.25,
+        "fuel.federal": 160.0,
+        "fuel.provincial": 240.0,
+        "fuel.regional": 0.0,
+        "fuel.total": 400.0,
+        "delta.gross": 400.0,
+        "delta.total": 400.0,
+        "delta.left": -400.0
+      }
+    },
+    {
+      "id": "fuel2025-MB",
+      "province": "MB",
+      "driving": {
+        "km": 20000,
+        "lPer100km": 8
+      },
+      "useCredits": true,
+      "expected": {
+        "fuel.litres": 1600.0,
+        "fuel.perLitre.federal": 0.1,
+        "fuel.perLitre.provincial": 0.125,
+        "fuel.perLitre.regional": 0,
+        "fuel.perLitre.total": 0.225,
+        "fuel.federal": 160.0,
+        "fuel.provincial": 200.0,
+        "fuel.regional": 0.0,
+        "fuel.total": 360.0,
+        "delta.gross": 360.0,
+        "delta.total": 360.0,
+        "delta.left": -360.0
+      }
+    },
+    {
+      "id": "fuel2025-ON",
+      "province": "ON",
+      "driving": {
+        "km": 20000,
+        "lPer100km": 8
+      },
+      "useCredits": true,
+      "expected": {
+        "fuel.litres": 1600.0,
+        "fuel.perLitre.federal": 0.1,
+        "fuel.perLitre.provincial": 0.09,
+        "fuel.perLitre.regional": 0,
+        "fuel.perLitre.total": 0.19,
+        "fuel.federal": 160.0,
+        "fuel.provincial": 144.0,
+        "fuel.regional": 0.0,
+        "fuel.total": 304.0,
+        "delta.gross": 304.0,
+        "delta.total": 304.0,
+        "delta.left": -304.0
+      }
+    },
+    {
+      "id": "fuel2025-QC",
+      "province": "QC",
+      "driving": {
+        "km": 20000,
+        "lPer100km": 8
+      },
+      "useCredits": true,
+      "expected": {
+        "fuel.litres": 1600.0,
+        "fuel.perLitre.federal": 0.1,
+        "fuel.perLitre.provincial": 0.192,
+        "fuel.perLitre.regional": 0.03,
+        "fuel.perLitre.total": 0.322,
+        "fuel.federal": 160.0,
+        "fuel.provincial": 307.2,
+        "fuel.regional": 48.0,
+        "fuel.total": 515.2,
+        "delta.gross": 515.2,
+        "delta.total": 515.2,
+        "delta.left": -515.2
+      }
+    },
+    {
+      "id": "fuel2025-NB",
+      "province": "NB",
+      "driving": {
+        "km": 20000,
+        "lPer100km": 8
+      },
+      "useCredits": true,
+      "expected": {
+        "fuel.litres": 1600.0,
+        "fuel.perLitre.federal": 0.1,
+        "fuel.perLitre.provincial": 0.1087,
+        "fuel.perLitre.regional": 0,
+        "fuel.perLitre.total": 0.2087,
+        "fuel.federal": 160.0,
+        "fuel.provincial": 173.92,
+        "fuel.regional": 0.0,
+        "fuel.total": 333.92,
+        "delta.gross": 333.92,
+        "delta.total": 333.92,
+        "delta.left": -333.92
+      }
+    },
+    {
+      "id": "fuel2025-NS",
+      "province": "NS",
+      "driving": {
+        "km": 20000,
+        "lPer100km": 8
+      },
+      "useCredits": true,
+      "expected": {
+        "fuel.litres": 1600.0,
+        "fuel.perLitre.federal": 0.1,
+        "fuel.perLitre.provincial": 0.155,
+        "fuel.perLitre.regional": 0,
+        "fuel.perLitre.total": 0.255,
+        "fuel.federal": 160.0,
+        "fuel.provincial": 248.0,
+        "fuel.regional": 0.0,
+        "fuel.total": 408.0,
+        "delta.gross": 408.0,
+        "delta.total": 408.0,
+        "delta.left": -408.0
+      }
+    },
+    {
+      "id": "fuel2025-PE",
+      "province": "PE",
+      "driving": {
+        "km": 20000,
+        "lPer100km": 8
+      },
+      "useCredits": true,
+      "expected": {
+        "fuel.litres": 1600.0,
+        "fuel.perLitre.federal": 0.1,
+        "fuel.perLitre.provincial": 0.0847,
+        "fuel.perLitre.regional": 0,
+        "fuel.perLitre.total": 0.1847,
+        "fuel.federal": 160.0,
+        "fuel.provincial": 135.52,
+        "fuel.regional": 0.0,
+        "fuel.total": 295.52,
+        "delta.gross": 295.52,
+        "delta.total": 295.52,
+        "delta.left": -295.52
+      }
+    },
+    {
+      "id": "fuel2025-NL",
+      "province": "NL",
+      "driving": {
+        "km": 20000,
+        "lPer100km": 8
+      },
+      "useCredits": true,
+      "expected": {
+        "fuel.litres": 1600.0,
+        "fuel.perLitre.federal": 0.1,
+        "fuel.perLitre.provincial": 0.075,
+        "fuel.perLitre.regional": 0,
+        "fuel.perLitre.total": 0.175,
+        "fuel.federal": 160.0,
+        "fuel.provincial": 120.0,
+        "fuel.regional": 0.0,
+        "fuel.total": 280.0,
+        "delta.gross": 280.0,
+        "delta.total": 280.0,
+        "delta.left": -280.0
+      }
+    },
+    {
+      "id": "fuel2025-YT",
+      "province": "YT",
+      "driving": {
+        "km": 20000,
+        "lPer100km": 8
+      },
+      "useCredits": true,
+      "expected": {
+        "fuel.litres": 1600.0,
+        "fuel.perLitre.federal": 0.1,
+        "fuel.perLitre.provincial": 0.062,
+        "fuel.perLitre.regional": 0,
+        "fuel.perLitre.total": 0.162,
+        "fuel.federal": 160.0,
+        "fuel.provincial": 99.2,
+        "fuel.regional": 0.0,
+        "fuel.total": 259.2,
+        "delta.gross": 259.2,
+        "delta.total": 259.2,
+        "delta.left": -259.2
+      }
+    },
+    {
+      "id": "fuel2025-NT",
+      "province": "NT",
+      "driving": {
+        "km": 20000,
+        "lPer100km": 8
+      },
+      "useCredits": true,
+      "expected": {
+        "fuel.litres": 1600.0,
+        "fuel.perLitre.federal": 0.1,
+        "fuel.perLitre.provincial": 0.107,
+        "fuel.perLitre.regional": 0,
+        "fuel.perLitre.total": 0.207,
+        "fuel.federal": 160.0,
+        "fuel.provincial": 171.2,
+        "fuel.regional": 0.0,
+        "fuel.total": 331.2,
+        "delta.gross": 331.2,
+        "delta.total": 331.2,
+        "delta.left": -331.2
+      }
+    },
+    {
+      "id": "fuel2025-NU",
+      "province": "NU",
+      "driving": {
+        "km": 20000,
+        "lPer100km": 8
+      },
+      "useCredits": true,
+      "expected": {
+        "fuel.litres": 1600.0,
+        "fuel.perLitre.federal": 0.1,
+        "fuel.perLitre.provincial": 0.064,
+        "fuel.perLitre.regional": 0,
+        "fuel.perLitre.total": 0.164,
+        "fuel.federal": 160.0,
+        "fuel.provincial": 102.4,
+        "fuel.regional": 0.0,
+        "fuel.total": 262.4,
+        "delta.gross": 262.4,
+        "delta.total": 262.4,
+        "delta.left": -262.4
+      }
+    },
+    {
+      "id": "fuel2025-no-distance",
+      "province": "BC",
+      "driving": {
+        "km": 0,
+        "lPer100km": 8
+      },
+      "useCredits": true,
+      "expected": {
+        "fuel.litres": 0.0,
+        "fuel.perLitre.federal": 0.1,
+        "fuel.perLitre.provincial": 0.085,
+        "fuel.perLitre.regional": 0.185,
+        "fuel.perLitre.total": 0.37,
+        "fuel.federal": 0.0,
+        "fuel.provincial": 0.0,
+        "fuel.regional": 0.0,
+        "fuel.total": 0.0,
+        "delta.gross": 0.0,
+        "delta.total": 0.0,
+        "delta.left": 0
+      }
+    },
+    {
+      "id": "fuel2025-no-consumption",
+      "province": "QC",
+      "driving": {
+        "km": 20000,
+        "lPer100km": 0
+      },
+      "useCredits": true,
+      "expected": {
+        "fuel.litres": 0.0,
+        "fuel.perLitre.federal": 0.1,
+        "fuel.perLitre.provincial": 0.192,
+        "fuel.perLitre.regional": 0.03,
+        "fuel.perLitre.total": 0.322,
+        "fuel.federal": 0.0,
+        "fuel.provincial": 0.0,
+        "fuel.regional": 0.0,
+        "fuel.total": 0.0,
+        "delta.gross": 0.0,
+        "delta.total": 0.0,
+        "delta.left": 0
+      }
+    },
+    {
+      "id": "fuel2025-no-driving-input",
+      "province": "ON",
+      "driving": null,
+      "useCredits": true,
+      "expected": {
+        "fuel.litres": 0.0,
+        "fuel.perLitre.federal": 0.1,
+        "fuel.perLitre.provincial": 0.09,
+        "fuel.perLitre.regional": 0,
+        "fuel.perLitre.total": 0.19,
+        "fuel.federal": 0.0,
+        "fuel.provincial": 0.0,
+        "fuel.regional": 0.0,
+        "fuel.total": 0.0,
+        "delta.gross": 0.0,
+        "delta.total": 0.0,
+        "delta.left": 0
+      }
+    },
+    {
+      "id": "fuel2025-fractional-driving",
+      "province": "PE",
+      "driving": {
+        "km": 1234.5,
+        "lPer100km": 7.25
+      },
+      "useCredits": true,
+      "expected": {
+        "fuel.litres": 89.5013,
+        "fuel.perLitre.federal": 0.1,
+        "fuel.perLitre.provincial": 0.0847,
+        "fuel.perLitre.regional": 0,
+        "fuel.perLitre.total": 0.1847,
+        "fuel.federal": 8.9501,
+        "fuel.provincial": 7.5808,
+        "fuel.regional": 0.0,
+        "fuel.total": 16.5309,
+        "delta.gross": 16.5309,
+        "delta.total": 16.5309,
+        "delta.left": -16.5309
+      }
+    },
+    {
+      "id": "fuel2025-carbon-credits-disabled",
+      "province": "AB",
+      "driving": {
+        "km": 20000,
+        "lPer100km": 8
+      },
+      "useCredits": false,
+      "expected": {
+        "fuel.litres": 1600.0,
+        "fuel.perLitre.federal": 0.1,
+        "fuel.perLitre.provincial": 0.13,
+        "fuel.perLitre.regional": 0,
+        "fuel.perLitre.total": 0.23,
+        "fuel.federal": 160.0,
+        "fuel.provincial": 208.0,
+        "fuel.regional": 0.0,
+        "fuel.total": 368.0,
+        "delta.gross": 368.0,
+        "delta.total": 368.0,
+        "delta.left": -368.0,
+        "carbon.gasoline": 69.4751
+      }
+    }
+  ]
+}

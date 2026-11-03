@@ -24,7 +24,16 @@ credits:
   - name: B.C. renter's tax credit
     program: bc-renters-tax-credit
     params: {max: 400, rate: 0.02, threshold: 64764}
+# Vancouver: 1.75 cents general revenue + 6.75 cents BCTFA, plus 18.5 cents TransLink.
+# The separate carbon program retains the gasoline carbon tax through March 31, 2025.
+fuelTax:
+  gasoline: 0.085
+  area: Vancouver area
+  regional: {name: TransLink, gasoline: 0.185}
+
 sources:
+  - {label: "NWT Finance, Budget 2025-2026, B22 (provincial/territorial fuel tax rates at January 30, 2025; regional additions separate)", url: "https://www.fin.gov.nt.ca/sites/fin/files/resources/2025-26_budget_address_and_papers_final_0.pdf"}
+  - {label: "B.C. Ministry of Finance, Motor fuel tax and carbon tax rates on fuels and substances (page updated May 23, 2025)", url: "https://www2.gov.bc.ca/gov/content/taxes/sales-taxes/motor-fuel-carbon-tax/publications/motor-fuel-tax-and-carbon-tax-rates"}
   - {label: "B.C., Personal income tax rates (2025 brackets)", url: "https://www2.gov.bc.ca/gov/content/taxes/income-taxes/personal/tax-rates"}
   - {label: "B.C., Basic tax credits (2025 basic and spouse amounts, tax reduction credit)", url: "https://www2.gov.bc.ca/gov/content/taxes/income-taxes/personal/credits/basic"}
   - {label: "CRA, Form BC428 for 2025", url: "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5010-c/5010-c-25e.pdf"}
