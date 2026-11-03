@@ -1,0 +1,50 @@
+Title: Revenu Québec, Fuel tax rates (archived September 11, 2025)
+URL: http://web.archive.org/web/20250911061524/https://www.revenuquebec.ca/en/businesses/consumption-taxes/fuel-tax/fuel-tax-rates/
+Fetched: 2026-11-01
+SHA-256 of the original: adf8faef696c12764ed7690202e111dd2986b6aec22a57ceaf06f53db6a63a53
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+# Fuel Tax Rates
+
+Fuel tax rates vary based on the type of fuel and the region in which the retail outlet is located.
+
+## Regular rate
+
+The regular rate applies to most regions.
+
+Fuel type | Tax per litre (regular rate)
+Gasoline | $0.1920
+Non-coloured fuel oil | $0.2020
+Aviation gasoline | $0.0300
+Blended diesel | $0.2020
+Gasohol | $0.1920
+Locomotive fuel | $0.0300
+Liquefied petroleum gas (LPG) or butane | $0.1920
+Pure ethanol | $0.2020
+Bunker fuel | $0.2020
+Kerosene | $0.0300
+Pure biodiesel | $0.2020
+
+## Increased or reduced rates
+
+In certain regions, the fuel tax rate is increased or reduced.
+
+Refer to the Table of Fuel Tax Rates in Québec, by Region (CA-1-V) to see the increased or reduced rates that apply to specific regions.
+
+Refer to Different Fuel Tax Rates in Certain Regions for a table that shows the regions in which the increased and reduced rates apply.
+
+Note
+Note
+
+Fuel that is sold on a reserve or in a First Nations settlement in Québec to a First Nations member, a band council, a tribal council or a band-empowered entity may be tax-exempt.
+
+End of note
+
+Help us improve our website
+
+Thanks for your help!
+
+Note
+Who can view this page?
+End of note

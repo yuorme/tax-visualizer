@@ -1,0 +1,45 @@
+Title: Budget Address
+URL: https://www.fin.gov.nt.ca/sites/fin/files/resources/2025-26_budget_address_and_papers_final_0.pdf
+Fetched: 2026-11-03
+SHA-256 of the original: 846b2ccd712dce5a8a24c62fd88f5e6d4edc5b21a3d6ba9e2ed634da4ee07e12
+Publication date modified: 2025-02-06
+PDF pages: 56 of 56
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 56 of 56 ---
+
+ Fiscal Review 2025-2026 B22
+Provincial/Territorial Tax Rates at January 30, 2025
+Combined
+Top Marginal Capital Tax
+Personal Income Retail Tobacco Payroll on Financial
+Tax (a) Sales Tax Gasoline Diesel Gasoline Diesel Tax (d) Tax (e) Small Large Institutions(f)
+(%) (%) (¢/litre) (¢/litre) (¢/litre) (¢/litre) ($/carton) (%) (%) (%) (%)
+Northwest Territories 47.05 - 10.7 9.1 17.61 21.39 68.80 2.00 2.0 11.5 -
+Nunavut 44.50 - 6.4 9.1 17.61 21.39 60.00 2.00 3.0 12.0 -
+Yukon 48.00 - 6.2 7.2 17.61 21.39 72.00 - - 12.0 -
+British Columbia 53.50 7.0 14.5 15.0 17.61 20.74 65.00 1.95 2.0 12.0 -
+Alberta 48.00 - 13.0 13.0 17.61 21.39 60.00 - 2.0 8.0 -
+Saskatchewan 47.50 6.0 15.0 15.0 17.61 21.39 58.00 - 1.0 12.0 4.0
+Manitoba 50.40 7.0 12.5 12.5 17.61 21.39 60.00 2.15 - 12.0 6.0
+Ontario 53.53 8.0 9.0 9.0 17.61 21.39 36.95 1.95 3.2 11.5 1.25
+Quebec 53.31 9.975 19.2 20.2 - - 41.80 4.26 3.2 11.5 1.25
+New Brunswick 52.50 10.0 10.87 15.45 17.61 21.39 51.04 - 2.5 14.0 5.0
+Nova Scotia 54.00 10.0 15.5 15.4 17.61 21.39 59.04 - 2.5 14.0 4.0
+Prince Edward Island 52.00 10.0 8.47 14.15 17.61 21.39 59.04 - 1.0 16.0 5.0
+Newfoundland & Labrador 54.80 10.0 7.5 9.5 17.61 21.39 65.00 2.00 2.5 15.0 6.0
+Weighted average(g) 52.51 7.4 13.0 13.4 13.75 16.61 47.51 2.07 2.7 11.4 1.41
+(f) Ontario and Quebec levy capital taxes on life insurance corporations. Saskatchewan and Manitoba also levy capital tax on provincial crown corporations.
+(a) Combined federal‐provincial/territorial highest 2025 personal income tax rate and surtax.
+(e) Nunavut and the NWT levy payroll taxes on employees. Other provinces that levy payroll taxes provide exemptions for small business and/or rates that vary depending on payroll size.
+(g) Average weighted by provincial/territorial populations at July 1, 2024.
+(b) The NWT’s off‐highway gasoline tax rate is 6.4 cents/litre. British Columbia fuel tax rates do not include surtaxes that apply only in Victoria and the Lower Mainland. Quebec fuel tax rates also vary
+regionally.
+(d) British Columbia, Manitoba and Saskatchewan apply provincial sales tax to tobacco products. Harmonized Sales Tax is applied to tobacco products in Ontario, New Brunswick, Prince Edward
+Island, Newfoundland & Labrador, and Nova Scotia. Quebec does not apply sales tax to tobacco products.
+(c) Carbon pricing is standardized for all Canadian jurisdictions effective July 1, 2023, except for Quebec that has cap and trade. British Columbia's diesel tax rate is based on lower carbon content fuel.
+Corporate
+Fuel Tax (b) Income Tax
+Notes:
+Carbon Tax (c)

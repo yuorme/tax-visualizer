@@ -8,6 +8,9 @@ import { blank, type Household } from "../src/engine/index.ts";
 test("history carbon golden: physical fuel and fixed heating stay nominal, then net tax converts to base dollars", () => {
   const years = [2019, 2025].map(year => {
     const data = loadYear(2025);
+    // This intentionally synthetic carbon-only system predates ordinary fuel activation in real 2025.
+    delete data.federal.fuelTax;
+    for (const province of data.provinces) delete province.fuelTax;
     data.year = year;
     data.federal.year = year;
     data.federal.brackets = [[Infinity, 0]];

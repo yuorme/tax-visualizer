@@ -12,6 +12,7 @@ interface FeatureCase {
   year: number;
   province: string;
   rule?: string;
+  omitFuelData?: boolean; // an explicit missing-fuel specimen, independent of the loaded year's coverage
   household: Omit<Partial<Household>, "people"> & { people: Partial<Person>[] };
   expected: Record<string, unknown>;
 }
@@ -92,6 +93,10 @@ for (const fixture of fixtures)
   for (const c of fixture.cases) {
     test(`feature golden: ${c.id}`, () => {
       const data = loadYear(c.year);
+      if (c.omitFuelData) {
+        delete data.federal.fuelTax;
+        for (const province of data.provinces) delete province.fuelTax;
+      }
       const base = data.provinces.find(p => p.code === c.province);
       assert.ok(base, c.province);
       // Historical rule specimens explicitly override only the relevant program. They are not 2024 tax returns.

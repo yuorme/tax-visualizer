@@ -34,7 +34,12 @@ childcareCredit:
   program: nl-childcare
   # NL428 line 58320 equals federal line 21400, converted at the first provincial bracket rate.
   params: {}
+# The 7-cent temporary reduction leaves 7.5 cents per litre throughout 2025; extended March 3, 2025.
+fuelTax: {gasoline: 0.075}
+
 sources:
+  - {label: "NWT Finance, Budget 2025-2026, B22 (provincial/territorial fuel tax rates at January 30, 2025; regional additions separate)", url: "https://www.fin.gov.nt.ca/sites/fin/files/resources/2025-26_budget_address_and_papers_final_0.pdf"}
+  - {label: "Government of Newfoundland and Labrador, Provincial Government Continues Tax Reduction on Gasoline and Diesel (March 3, 2025)", url: "https://www.gov.nl.ca/releases/2025/fin/0303n06/"}
   - {label: "CRA Newfoundland and Labrador guide, line 58320 equals federal line 21400", url: "https://www.canada.ca/en/revenue-agency/services/forms-publications/tax-packages-years/general-income-tax-benefit-package/newfoundland-labrador/5001-pc.html"}
   - {label: "CRA NL428, child care amount line 58320", url: "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5001-c/5001-c-25e.pdf"}
   - {label: "CRA, Form NL428 for 2025 (basic and spouse amounts, low-income reduction)", url: "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5001-c/5001-c-25e.pdf"}
