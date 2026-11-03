@@ -4,18 +4,25 @@ import { money, rate } from "../../src/ui/notes.ts";
 import { toHousehold } from "../golden/adapter.ts";
 import { settle } from "./page.mjs";
 
-async function checkRows(page, mode) {
+async function checkRows(page, mode, overrides = {}) {
   const state = await page.evaluate(() => JSON.parse(localStorage.getItem("taxcmp")));
   const year = loadYear(state.year);
   const home = year.provinces.find(p => p.code === state.home);
   const input = toHousehold({
     ...state,
+    frug: state.spendingAdjustment ?? state.frug ?? 0,
     homeValue: state.tenure === "own" ? state.homeValue : 0,
     rent: state.tenure === "rent" ? state.rent : 0,
     km: state.km ?? home.driving?.distance ?? 0,
     efficiency: state.eff ?? year.federal.driving?.efficiency ?? 0,
   });
-  const result = historyComparison(listYears().map(loadYear), loadCpi(), input, [state.home], mode);
+  const result = historyComparison(
+    listYears().map(loadYear),
+    loadCpi(),
+    { ...input, ...overrides },
+    [state.home],
+    mode,
+  );
   const expected = result.rows.map(row => {
     const r = row.provinces[0];
     return [String(row.year), money(r.income), r.tax < 0 ? `−${money(-r.tax)}` : money(r.tax), rate(r.rate)];
@@ -73,6 +80,70 @@ export const HISTORY_STEPS = [
       if (!(await p.locator("#province-view").isVisible()) || !(await p.locator("#detail").isVisible()))
         problems.push("provincial comparison did not return");
       if (await p.locator("#tax-year").isDisabled()) problems.push("single-year selector stayed disabled");
+      return problems;
+    },
+  ],
+  [
+    "history: childcare claims and edited dependant ages reach both dollar modes immediately",
+    async p => {
+      await p.evaluate(() =>
+        localStorage.setItem(
+          "taxcmp",
+          JSON.stringify({
+            v: 3,
+            year: 2026,
+            home: "ON",
+            dest: "AB",
+            adults: 1,
+            kids: 1,
+            under6: 1,
+            spouse: false,
+            people: [{ ord: 30000 }],
+            spendingAdjustment: -20,
+            childcare: {
+              monthly: 500,
+              mode: "automatic",
+              children: [{ age: 4, expenses: 6000 }],
+              earningsOverridden: [false, false],
+            },
+          }),
+        ),
+      );
+      await p.reload();
+      await settle(p);
+      await p.click("#view-history");
+      const problems = [];
+      for (const [mode, monthly] of [
+        ["real", 500],
+        ["nominal", 500],
+        ["real", 0],
+        ["nominal", 0],
+      ]) {
+        await p.click(`#history-${mode}`);
+        await p.fill("#childcare-monthly", String(monthly));
+        for (const age of [4, 20]) {
+          if (!(await p.$eval("#childcare-details", el => el.open)))
+            await p.locator("#childcare-details > summary").click();
+          await p.fill("#care-age-0", String(age));
+          problems.push(
+            ...(
+              await checkRows(p, mode, {
+                kids: age < 18 ? 1 : 0,
+                under6: age < 6 ? 1 : 0,
+                childcare:
+                  monthly > 0
+                    ? {
+                        mode: "automatic",
+                        children: [{ age, expenses: 6000 }],
+                        declaredAnnualExpenses: 6000,
+                        earnedIncome: [30000],
+                      }
+                    : undefined,
+              })
+            ).map(problem => `age ${age}, ${mode}, monthly ${monthly}: ${problem}`),
+          );
+        }
+      }
       return problems;
     },
   ],

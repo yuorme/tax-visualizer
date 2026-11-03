@@ -64,17 +64,23 @@ const STEPS = [
     },
   ],
   [
-    "home value, frugality, sort",
+    "home value, taxable spending, sort",
     async p => {
       await p.$eval("#prop-panel", el => {
         el.open = true;
       });
       await p.fill("#hv", "750,000");
       await p.dispatchEvent("#hv", "input");
-      await p.$eval("#frug", el => {
-        el.value = -20;
-        el.dispatchEvent(new Event("input", { bubbles: true }));
-      });
+      if (await p.$("#frug")) {
+        await p.$eval("#frug", el => {
+          el.value = -20;
+          el.dispatchEvent(new Event("input", { bubbles: true }));
+        });
+      } else {
+        const current = Number((await p.inputValue("#spend")).replace(/[^\d]/g, ""));
+        await p.fill("#spend", String(current * 0.8));
+        await p.locator("#spend").blur();
+      }
       await p.click("#sort-geo");
     },
   ],

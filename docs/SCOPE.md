@@ -60,6 +60,37 @@ Inputs and results use the latest completed annual CPI year's dollars, labelled 
 published annual CPI appear only in nominal mode, which holds the entered dollar amounts fixed. This is a
 comparison of modeled tax rules, not a reconstruction of the household's past circumstances or housing prices.
 
+**Childcare and expanded deductions (milestone 5, #94–98).** Itemized RRSP/FHSA/other claims are implemented;
+federal childcare calculations and Ontario/Quebec/Newfoundland and Labrador childcare credits are implemented for
+2025 and 2026 (#95–97). The childcare inputs accept child details and optional earned-income overrides, calculate
+ordinary claims or accept verified manual claims, and show results in the existing detailed comparison and tooltips.
+Missing information is distinguished from a zero claim. Annual child allocations are reconciled to the monthly
+household average, allowing rounding to cents; actual annual expenses remain the calculation source.
+Detailed contracts and existing benefit-model limitations are in
+[childcare verification](verification/childcare/README.md). The implemented scope is:
+- Replace frugality with a monthly household childcare amount, preserving the remaining spending controls and
+  their household-size behavior. Migrate saved spending without changing its effective dollar amount; add no reset UI.
+- Hold childcare expense constant across provinces, averaged over twelve months after fee subsidies/reimbursements.
+  Advance tax-credit payments are not fee subsidies. Expense itself is neither tax nor sales-taxable spending.
+- Per the subsequent UI feedback, default eligible earnings to each adult's employment and other income and follow
+  changes to that input. Explain this assumption in tooltips; allow explicit overrides, including zero, behind
+  optional adjustments. Preserve overrides and malformed drafts across reloads.
+- Hide childcare at zero children and deactivate its calculations, retaining drafts for restoration. Show paid-care
+  details only when costs are entered, using compact child age/expense rows and collapsed eligibility exceptions.
+  Keep the visible Children count consistent with active rows; derive benefit eligibility separately from ages.
+  Retained ages remain editable in the same disclosure when costs are zero and continue to determine benefits.
+- Apply federal childcare deduction rules, claimant selection and limits in 2025 and 2026, plus Ontario, Quebec
+  and Newfoundland and Labrador childcare relief, with each program's own income base and refundability.
+- Require a supplied Quebec-eligible expense portion to include that credit; distinguish missing from confirmed
+  zero, and allow qualifying extras alongside federally eligible subsidized fees. Show Quebec input fields only
+  when Home Province is Quebec, preserving their values when switching away.
+- Automate ordinary single-parent/couple cases. Deliberate manual mode accepts verified annual claims per adult
+  for exceptional cases, replacing automatic deductions; users remain responsible for eligibility.
+- Put expense, allowed claim, claimant and provincial-credit explanations in the existing detailed comparison and
+  tooltips only, with no additional summary widgets. Keep formulas in the engine and parameters in sourced year data.
+- Medical, donation, tuition and broader disability credits remain deferred. This is a tax-and-benefit comparison,
+  not a childcare-price or disposable-income/cost-of-living model.
+
 ## How scope is decided
 
 The model is for comparing provinces, not for filing a return. A feature earns its inputs if, for the households
@@ -72,32 +103,6 @@ The model counts **taxes the household actually pays**. Costs passed on through 
 ## Decided, not built yet
 
 Recorded here as the spec for the GitHub issues that implement them; the issues hold the order.
-
-**Childcare and expanded deductions (milestone 5, #94–98).** Itemized RRSP/FHSA/other claims are implemented;
-federal childcare calculations and Ontario/Quebec/Newfoundland and Labrador childcare credits are implemented in
-the backend for both existing years (#95–96). They accept
-explicit earned income and child details, calculate ordinary claims or accept verified manual claims, and expose
-calculation status and separate federal/Quebec income bases. The UI remains planned.
-Detailed contracts and existing benefit-model limitations are in
-[childcare verification](verification/childcare/README.md). The approved full scope is:
-- Replace frugality with a monthly household childcare amount, preserving the remaining spending controls and
-  their household-size behavior. Migrate saved spending without changing its effective dollar amount; add no reset UI.
-- Hold childcare expense constant across provinces, averaged over twelve months after fee subsidies/reimbursements.
-  Advance tax-credit payments are not fee subsidies. Expense itself is neither tax nor sales-taxable spending.
-- Require explicit eligible earned income per adult (including zero) for automatic deductions; never infer it
-  from the mixed ordinary-income field. Distinguish missing information from a calculated zero claim.
-- Use child-level year-end ages, relevant disability eligibility and expenses; detailed ages also determine benefit
-  child counts. Preserve aggregate child-count controls where no detailed ages exist.
-- Apply federal childcare deduction rules, claimant selection and limits in 2025 and 2026, plus Ontario, Quebec
-  and Newfoundland and Labrador childcare relief, with each program's own income base and refundability.
-- Require a supplied Quebec-eligible expense portion to include that credit; distinguish missing from confirmed
-  zero, and allow qualifying extras alongside federally eligible subsidized fees.
-- Automate ordinary single-parent/couple cases. Deliberate manual mode accepts verified annual claims per adult
-  for exceptional cases, replacing automatic deductions; users remain responsible for eligibility.
-- Put expense, allowed claim, claimant and provincial-credit explanations in the existing detailed comparison and
-  tooltips only, with no additional summary widgets. Keep formulas in the engine and parameters in sourced year data.
-- Medical, donation, tuition and broader disability credits remain deferred. This is a tax-and-benefit comparison,
-  not a childcare-price or disposable-income/cost-of-living model.
 
 **Other income.** A separate income type for interest, rental and pension income: taxed as ordinary income,
 no CPP/QPP or EI, no Canada employment amount. Today all "employment and other income" pays payroll.
@@ -157,8 +162,6 @@ For now:
 - Disability, medical, tuition and donation credits; the alternative minimum tax. Medical and disability
   credits matter for seniors but depend on what each household spends; size them with the 0.1-point rule if
   they come up again.
-- Childcare inputs and credits are not connected to the UI yet. The federal and ON/QC/NL calculation backends
-  are implemented; the existing UI still accepts verified manual claims under other deductions.
 - One-time government payments, such as the June 2026 GST/HST credit top-up (50% of the 2025-26 credit). The
   model counts only recurring programs.
 - Smaller programs: Manitoba's child benefit for very low incomes, Newfoundland and Labrador's prenatal–early
