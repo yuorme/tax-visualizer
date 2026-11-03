@@ -51,6 +51,21 @@ are disabled. Rates, amounts and provenance are in the respective `data/years/<y
 - **Claimant selection:** spouses earn $40,000 employment plus $20,000 other income, and $50,000 employment.
   Their enhanced CPP deductions are $365/$465, so pre-childcare net incomes are $59,635/$49,535. The second
   spouse claims $8,000, leaving family income $101,170. This catches ordering based on employment alone.
+- **Alberta 2023 working-component minimum:** the expanded property-test sample exposed this precise input:
+  $4,132 employment, $40,017 other income, $2,411 capital gains and $574 foreign dividends, with two versus
+  three children (two under six). Net income is `4132 + 40017 + 2411/2 + 574 − 6.32 = 45922.18`.
+  The base component is zero for both child counts. Working phase-in is `(4132 − 2760) × .15 = 205.8`.
+  Income above the working threshold is `45922.18 − 43460 = 2462.18`. The two-child component is
+  `205.8 − .0649 × 2462.18 = 46.004518`; the three-child component before its minimum is
+  `205.8 − .0834 × 2462.18 = .454188`, raised to $10 by the statutory positive-benefit minimum.
+  Fixed expectations lock $46.0045 and $10. The existing narrow invariant guard now verifies each amount
+  including its floor; it still requires zero base components and uncapped positive phase-in. Every original
+  seeded household is tested alongside its other-income extension. No engine benefit formula was changed.
+
+The browser integration also checks childcare defaults at employment $6,000 plus other income $3,000:
+eligible earnings $9,000 yield a $6,000 claim. A $3,000 override stays fixed when other income rises, yielding
+$2,000; a cleared override stays incomplete and explicit zero stays zero. Disabling the override resumes
+following both income fields. Reload preserves these choices. RRSP estimates remain employment-only.
 
 ## Source trail and limits
 
@@ -64,6 +79,8 @@ The existing cached primary sources support the interactions above:
   `2026/sources/quebec-family-income.txt`: Quebec expense eligibility, income bands and family income.
 - The federal and Alberta/Ontario YAML `sources` lists identify official rate, BPA, deduction and premium
   references; historical 2022 source extracts are cached in `2022/sources/`.
+- `2023/sources/rule-ab-act.txt` and the Alberta 2023 YAML record the child-count-specific working reduction
+  and positive-benefit minimum used in the invariant's two fixed examples.
 
 The tests deliberately do not claim full-return correctness. Quebec's Health Services Fund contribution is
 still unmodelled (#91), as are pension credits/splitting and separate rental-income RRSP-room treatment.
