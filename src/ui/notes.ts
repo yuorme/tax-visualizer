@@ -341,6 +341,7 @@ export function footerNotes(y: YearData, page: PageDefaults): string {
   const ccb = F.childBenefit;
   const ocb = childBenefit("ON", "ontario-child-benefit").params;
   const qfa = childBenefit(quebec.code, "quebec-family-allowance").params;
+  const nsBenefit = prov("NS").childBenefit;
   const nwtBenefit = need(prov("NT").childBenefit, "NWT child benefit");
   if (nwtBenefit.program !== "nwt-child-benefit" && nwtBenefit.program !== "nwt-child-benefit-age-groups")
     throw new Error("page notes: unsupported NWT child benefit");
@@ -359,6 +360,11 @@ export function footerNotes(y: YearData, page: PageDefaults): string {
     ...(bc.childBenefit?.program === "bc-family-benefit-periods"
       ? [
           `B.C.'s child opportunity benefit was renamed the family benefit during this benefit year. Each period is calculated separately before weighting: ${bc.childBenefit.params.periods.map(period => `${period.weight * 12} months at annual maximum amounts of ${list(period.max.map(money))} for the first, second and each additional child, with minimum amounts of ${list(period.min.map(money))}`).join("; ")}. Each period applies its own income reduction, minimum and zero floor.`,
+        ]
+      : []),
+    ...(nsBenefit?.program === "nova-scotia-child-benefit-by-child"
+      ? [
+          `Nova Scotia pays annual amounts of ${list(nsBenefit.params.perChild.map(money))} for the first, second and each additional child below ${money(nsBenefit.params.fullBelow)} of family net income. From that threshold to below ${money(nsBenefit.params.partialBelow)}, the first child's amount stays whole and later children's amounts are paid at ${rate(nsBenefit.params.partialOtherRate)}. The benefit ends at the upper threshold.`,
         ]
       : []),
     ...(nlProgram.program === "nl-child-benefit"
@@ -388,12 +394,17 @@ export function footerNotes(y: YearData, page: PageDefaults): string {
   const ownCwb = [...Object.keys(cwb.regional).map(prov), quebec].sort(byName).map(short);
   const sk = credit("SK", "sk-low-income-tax-credit");
   const mb = need(
-    prov("MB").credits?.find(c => c.program === "mb-affordability-credits" || c.program === "mb-school-tax-credits"),
+    prov("MB").credits?.find(
+      c =>
+        c.program === "mb-affordability-credits" ||
+        c.program === "mb-school-tax-credits" ||
+        c.program === "mb-school-tax-credits-rent-share",
+    ),
     "Manitoba property credits",
   );
   const mbDescription =
-    mb.program === "mb-school-tax-credits"
-      ? `Manitoba's school tax rebate (${rate(mb.params.schoolRebateRate)} of estimated school taxes), education property tax credit (up to ${money(mb.params.educationCreditMax)} of remaining school taxes) and renters tax credit (up to ${money(mb.params.renterMax)}, capped by rent paid)`
+    mb.program === "mb-school-tax-credits" || mb.program === "mb-school-tax-credits-rent-share"
+      ? `Manitoba's school tax rebate (${rate(mb.params.schoolRebateRate)} of estimated school taxes), education property tax credit (up to ${money(mb.params.educationCreditMax)} of remaining school taxes) and renters tax credit (up to ${money(mb.params.renterMax)}, ${mb.program === "mb-school-tax-credits-rent-share" ? `${rate(mb.params.renterShare)} of rent paid before applying the cap` : "capped by rent paid"})`
       : "Manitoba's renters and homeowners affordability credits";
   const cwbEstimate =
     cwb.estimationNote ?? `these ${year} values are CRA's ${lastYearIndexed} until CRA publishes them`;
@@ -413,9 +424,9 @@ export function footerNotes(y: YearData, page: PageDefaults): string {
   const pei = creditName("PE", ["pei-essentials-benefit", "pei-sales-tax-credit"]);
   const estimates = [
     sk.estimated &&
-      `Saskatchewan's reduction rate (${rate(sk.params.rate)}) is worked out from CRA's published start and end points`,
+      `Saskatchewan's low-income tax credit includes estimated parameters; its modelled reduction rate is ${rate(sk.params.rate)}`,
     mb.estimated &&
-      (mb.program === "mb-school-tax-credits"
+      (mb.program === "mb-school-tax-credits" || mb.program === "mb-school-tax-credits-rent-share"
         ? `Manitoba's school taxes are estimated as ${rate(mb.params.schoolTaxShare)} of the property tax bill using the reference city's school-tax share`
         : `Manitoba's renters credit is taken at its ${money(mb.params.renter)} maximum`),
     "Quebec's solidarity credit gives the living-alone amount to any household with one adult",
