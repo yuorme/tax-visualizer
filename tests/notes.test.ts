@@ -14,6 +14,17 @@ const render = (y: YearData) => [footerNotes(y, page), ...Object.values(tooltips
 const html = fs.readFileSync(new URL("../src/ui/index.html", import.meta.url), "utf8");
 const noteKeys = [...html.matchAll(/data-note="([^"]+)"/g)].map(m => m[1]);
 
+test("2023 notes describe PEI surtax and separate NL periods without later programs", () => {
+  const text = render(loadYear(2023));
+  assert.match(text, /Prince Edward Island adds a surtax of 10% of provincial tax above \$12,500/);
+  assert.match(text, /after dividend tax credits and before the low-income tax reduction/);
+  assert.match(text, /calculate each period separately, then weight its entitlement/);
+  assert.match(text, /Period 1 \(50% of the year\): annual amounts \$447/);
+  assert.match(text, /Period 2 \(50% of the year\): annual amounts \$1,788/);
+  assert.match(text, /no second additional contribution applies/);
+  assert.doesNotMatch(text, /the PEI Child Benefit|and 0% on earnings/);
+});
+
 test("historical notes distinguish school-tax relief and statutory NL reductions from later approximations", () => {
   const y = structuredClone(loadYear(2025));
   const mb = y.provinces.find(p => p.code === "MB");

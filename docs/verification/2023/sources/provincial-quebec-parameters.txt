@@ -1,0 +1,351 @@
+Title: Parameters of the personal income tax system for 2023
+URL: https://cdn-contenu.quebec.ca/cdn-contenu/adm/min/finances/publications-adm/parametres/AUTEN_IncomeTax2023.pdf
+Fetched: 2026-11-02
+SHA-256 of the original: 881dba1eb8e21a9e0f14b906f3fe3fd6bc919fe7789f4ea0f6432e7720cc35e3
+Publication date modified: 2022-12-06
+PDF pages: all 18
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 1 of 18 ---
+
+PARAMETERS OF
+THE PERSONAL INCOME
+TAX SYSTEM
+FOR 2023
+December 2022
+
+--- PDF page 2 of 18 ---
+
+PARAMETERS OF THE PERSONAL INCOME TAX SYSTEM FOR 2023
+Legal deposit – December 2022
+Bibliothèque et Archives nationales du Québec
+ISSN 2368-8815 (PDF)
+© Gouvernement du Québec, 2022
+
+--- PDF page 3 of 18 ---
+
+I
+Table of contents
+1. Indexing of the personal income tax system .......................................................... 1
+2. Impact of indexing for the government.................................................................... 3
+3. Increase in the work premium and family allowance ............................................. 5
+4. Comparison of indexing rates of the Québec, federal and provincial tax
+systems ....................................................................................................................... 7
+5. Tables of parameters ................................................................................................. 9
+
+--- PDF page 4 of 18 ---
+
+
+
+--- PDF page 5 of 18 ---
+
+1
+1. INDEXING OF THE PERSONAL INCOME TAX SYSTEM
+Under the tax legislation, the main parameters of the personal income tax system are automatically
+indexed each year. Indexing applies to the taxable income bracket thresholds of the tax table and to
+the basic personal amount. It also applies to most parameters used to determine tax credits.
+Indexing the personal income tax system helps keep the tax system up to date to reflect the annual
+rise in the price of goods and services. In concrete terms, indexing the tax system increases the
+amount of several deductions and tax credits by a rate determined on the basis of the rise in
+consumer prices in Québec.
+ Indexing rate for taxation year 2023
+The indexing rate for 2023 corresponds to the percentage change in the consumer price index for
+Québec (Québec CPI), excluding alcoholic beverages, tobacco products and recreational cannabis,
+between the 12-month period ending September 30, 2022 and the 12-month period ending
+September 30, 2021.
+According to the formula, the personal income tax system will be indexed at the rate of 6.44% for
+taxation year 2023.
+Indexing formula
+The indexing formula set out in the Taxation Act is applied by multiplying the parameter to be indexed by
+the difference between A and B. The result obtained is rounded according to the applicable rule.
+“A” is the overall average Québec CPI without alcoholic beverages, tobacco products and recreational
+cannabis for the 12-month period that ended on September 30 of the taxation year preceding that for
+which an amount is to be indexed.
+“B” is the overall average Québec CPI without alcoholic beverages, tobacco products and recreational
+cannabis for the 12-month period that ended on September 30 of the taxation year immediately before
+the year preceding that for which an amount is to be indexed.
+
+--- PDF page 6 of 18 ---
+
+
+
+--- PDF page 7 of 18 ---
+
+3
+2. IMPACT OF INDEXING FOR THE GOVERNMENT
+In 2023, the Québec government will index the personal income tax system at a cost of
+$2.152 billion. Over the period from 2015 to 2023, the cumulative impact will equal close to
+$5.5 billion.
+TABLE 1
+Impact of indexing the personal income tax system
+2015 2016 2017 2018 2019 2020 2021 2022 2023
+Indexing rate (%) 1.06 1.09 0.74 0.82 1.71 1.72 1.26 2.64 6.44
+Impact ($M) 268 295 199 229 488 527 424 898 2 152
+Cumulative impact ($M) 268 563 762 991 1 479 2 006 2 430 3 328 5 480
+
+--- PDF page 8 of 18 ---
+
+
+
+--- PDF page 9 of 18 ---
+
+5
+3. INCREASE IN THE WORK PREMIUM AND FAMILY
+ALLOWANCE
+The indexing of the basic benefits of last resort financial assistance programs requires that a different
+method be applied to increase the reduction thresholds of the work premium and family allowance
+in order to maintain the harmonization of the tax system and income security programs.
+ Work premium
+The general work premium is integrated with the last resort financial assistance system. It reaches
+its maximum at the income threshold at which a household fit for work is no longer eligible for last
+resort financial assistance. Above that income level, the general work premium is reduced.
+Moreover, the first dollars of earned income, up to $2 400 for a household consisting of one adult
+and $3 600 for a household consisting of two adults, are excluded from the calculation of the general
+work premium.
+Like the general work premium, the adapted work premium for individuals with a severely limited
+capacity for employment is integrated with the last resort financial assistance system. However, the
+parameters for calculating the adapted work premium are different from those used to determine the
+general work premium.
+ Family allowance
+To integrate the family allowance with the work premium, the income threshold at which the work
+premium becomes zero corresponds to the threshold at which the family allowance begins to reduce
+based on income.
+The maximum and minimum amount of the family allowance granted for each child are indexed
+according to the indexation rate provided for under the tax system.
+
+--- PDF page 10 of 18 ---
+
+
+
+--- PDF page 11 of 18 ---
+
+7
+4. COMPARISON OF INDEXING RATES OF THE QUÉBEC,
+FEDERAL AND PROVINCIAL TAX SYSTEMS
+In 2023, the indexing rate of the Québec tax system (6.44%) will be higher than the indexing rates
+applied by the federal government and the governments of the other provinces that index their tax
+system, with the exception of Manitoba and Ontario.
+TABLE 2
+Indexing rates of the federal and provincial personal income tax systems
+(per cent)
+2015 2016 2017 2018 2019 2020 2021 2022 2023(1)
+Federal(2) 1.7 1.3 1.4 1.5 2.2 1.9 1.0 2.4 6.3
+Provinces
+– Newfoundland and Labrador(3) 2.2 0.4 2.0 3.0 1.8 0.9 0.4 2.8 5.9
+– Prince Edward Island ― ― ― ― ― ― ― ― ―
+– Nova Scotia ― ― ― ― ― ― ― ― ―
+– New Brunswick(2) 1.7 1.3 1.4 1.5 2.2 1.9 1.0 2.4 6.3
+– Québec(4) 1.06 1.09 0.74 0.82 1.71 1.72 1.26 2.64 6.44
+– Ontario(3) 2.0 1.5 1.6 1.8 2.2 1.9 0.9 2.4 6.5
+– Manitoba(5) ― ― 1.5 1.2 2.6 2.2 1.0 2.1 7.0
+– Saskatchewan(2),(6) 1.7 1.3 1.4 ― ― ― 1.0 2.4 6.3
+– Alberta(3),(7) 2.4 1.3 1.3 1.2 2.4 ― ― 2.3 6,0
+– British Columbia(3) 0.7 0.9 1.8 2.0 2.6 2.5 1.1 2.1 6.0
+Note: An em dash (―) means the tax system was not indexed.
+(1) The federal and provincial, other than Québec, indexing rates are projected by the Ministère des Finances du Québec according to the
+method usually used in the province or at the federal level.
+(2) The indexing rate is calculated on the basis of Canada’s consumer price index. It is rounded to the nearest decimal.
+(3) The indexing rate is calculated on the basis of the consumer price index for the province.
+(4) Since the 2005 taxation year, Québec’s indexing rate is based on the consumer price index for Québec, excluding alcohol, tobacco and,
+since 2020, recreational cannabis.
+(5) Since the 2017 taxation year, Manitoba’s indexing rate is based on the consumer price index for Manitoba. The indexing rate is rounded
+to the nearest decimal.
+(6) In Saskatchewan’s 2017-2018 budget, the province announced the suspension of the indexation of the personal income tax system
+starting in 2018. In the 2020-2021 budget, Saskatchewan announced that the personal income tax parameters will be indexed again
+starting in 2021.
+(7) In Alberta’s 2019-2020 budget, the province announced the suspension of the indexation of the personal income tax system starting in
+2020. In August 2022, the province announced that the personal income tax parameters would be indexed again starting in 2022.
+
+--- PDF page 12 of 18 ---
+
+
+
+--- PDF page 13 of 18 ---
+
+9
+5. TABLES OF PARAMETERS
+TABLE 3
+Parameters of the personal income tax system subject to indexing
+(dollars)
+2022 2023
+Tax table
+– Maximum threshold of first taxable income bracket 46 295 49 275
+– Maximum threshold of second taxable income bracket 92 580 98 540
+– Maximum threshold of third taxable income bracket 112 655 119 910
+– Basic personal amount 16 143 17 183
+Amount of recognized essential needs
+– Amount for person living alone
+▪ basic amount 1 850 1 969
+▪ supplement for single-parent family 2 284 2 431
+– Amount with respect to age 3 395 3 614
+– Amount for retirement income 3 017 3 211
+– Amount of transfer of the recognized parental contribution
+▪ maximum amount of recognized needs 11 081 11 795
+▪ reduction where only one term of studies is completed 3 101 3 301
+– Amount for a minor child enrolled in vocational training or
+post-secondary studies (per term, maximum of two terms) 3 101 3 301
+– Amount respecting other dependents 4 519 4 810
+– Amount for a severe and prolonged impairment in mental or
+physical functions 3 584 3 815
+Certain deductions and exemptions
+– Maximum amount of the deduction for workers 1 235 1 315
+– Amount of the personal contribution for the purposes of the deduction
+for the purchase of tradespersons’ tools 1 245 1 325
+– Maximum amount of the exemption relating to amounts paid to
+emergency services volunteers 1 235 1 315
+– Maximum monthly amount for the exemption of certain allowances for
+room and board paid to young athletes 385 410
+Reduction thresholds
+– Reduction threshold of the tax credit for a person living alone, for age
+and for retirement income 36 590 38 945
+– Reduction threshold of the tax credit for career extension 36 590 38 945
+– Reduction thresholds of the refundable tax credit for home-support services
+for seniors
+▪ First reduction threshold 61 725 65 700
+▪ Second reduction threshold 100 000 106 440
+
+--- PDF page 14 of 18 ---
+
+10
+TABLE 3 (cont.)
+Parameters of the personal income tax system subject to indexing
+(dollars)
+2022 2023
+Maximum income to qualify for certain tax credits
+– Maximum family income to qualify for the tax credit for youth
+activities 146 450 155 880
+– Maximum family income to qualify for the grant for seniors to
+offset a municipal tax increase 54 700 58 200
+Refundable tax credit for childcare expenses(1)
+– Limit on fees in respect of children under 7 years of age 10 675 11 360
+– Limit on fees in respect of children with disabilities 14 605 15 545
+– Limit on fees in respect of another child (under 16 years of age
+or who has an infirmity) 5 375 5 720
+– Eligible child – Maximum income 11 081 11 795
+Certain refundable tax credits
+– Tax credit for medical expenses
+▪ maximum amount 1 274 1 356
+▪ minimum amount of work income 3 260 3 470
+▪ reduction threshold 24 635 26 220
+– Tax credit for caregivers
+▪ universal basic amount (co-residency) 1 299 1 383
+▪ reducible amount based on the care receiver’s income 1 299 1 383
+▪ reduction threshold 23 055 24 540
+– Québec education savings incentive
+▪ first income threshold for purposes of calculating the increase amount 46 295 49 275
+▪ second income threshold for purposes of calculating the increase amount 92 580 98 540
+– Senior assistance amount
+▪ reduction threshold for a single senior 24 195 25 755
+▪ reduction threshold for a couple 39 350 41 885
+▪ reduction rate (%)(2) 5.00 5.16
+1% contribution by individuals to the Health Services Fund
+– Maximum threshold of first income bracket 15 765 16 780
+– Maximum threshold of second income bracket 54 820 58 350
+(1) Indexing of family income thresholds for the refundable tax credit for childcare expenses is presented on page 13.
+(2) This rate will be revalued each year starting in 2023.
+
+--- PDF page 15 of 18 ---
+
+11
+TABLE 3 (cont.)
+Parameters of the personal income tax system subject to indexing
+(dollars)
+2022 2023
+Refundable tax credit granting an allowance to families
+– Family allowance
+▪ Maximum amounts
+○ each child 2 614 2 782
+○ single-parent family 917 976
+▪ Reduction threshold(3)
+○ single-parent family 37 752 40 168
+○ couple 51 893 55 183
+▪ Minimum amounts
+○ each child 1 040 1 107
+○ single-parent family 365 389
+– Supplement for the purchase of school supplies 108 115
+– Monthly amount of the supplement for handicapped children 205 218
+– Monthly amount of the supplement for handicapped children requiring
+exceptional care – Level 1 1 035 1 102
+– Monthly amount of the supplement for handicapped children requiring
+exceptional care – Level 2 689 733
+General work premium(3)
+– Maximum amounts
+▪ person living alone 1 025.21 1 095.27
+▪ couple without children 1 600.57 1 709.61
+▪ single-parent family 2 651.40 2 832.60
+▪ couple with children 3 449.50 3 684.50
+– Reduction threshold
+▪ one adult 11 238 11 842
+▪ couple 17 398 18 338
+Adapted work premium for persons with a severely limited capacity
+for employment(3)
+– Maximum amounts
+▪ person living alone 1 973.90 2 101.74
+▪ couple without children 3 075.78 3 263.73
+▪ single-parent family 3 628.50 3 863.50
+▪ couple with children 4 523.20 4 799.60
+– Reduction threshold
+▪ one adult 15 714 16 654
+▪ couple 23 816 25 198
+(3) The increase in the parameter values is based on a revaluation formula that considers, among other things, the indexing of last resort
+financial assistance benefits.
+
+--- PDF page 16 of 18 ---
+
+12
+TABLE 4
+Parameters of the personal income tax system subject to indexing
+(dollars)
+From July 2022
+to June 2023
+From July 2023
+to June 2024
+Solidarity tax credit
+– Amounts for the QST
+▪ basic amount 309 329
+▪ amount for spouse 309 329
+▪ additional amount for a person living alone 147 156
+– Amounts for housing
+▪ amount for a couple 727 774
+▪ amount for a person living alone or a single-parent family 599 638
+▪ amount for each dependent child 128 136
+– Amounts for individuals living in a northern village
+▪ amount per adult 1 818 1 935
+▪ amount for each dependent child 393 418
+– Solidarity tax credit reduction threshold 36 790 39 160
+– Maximum family income threshold at which only 50% of the
+solidarity tax credit amount can be allocated to the payment
+of a debt to the State 22 315 23 750
+Indexing period for the parameters of the solidarity tax credit
+The parameters of the solidarity tax credit are indexed each year on July 1 instead of on January 1. They
+remain unchanged from July of a given year to June of the following year.
+
+--- PDF page 17 of 18 ---
+
+13
+TABLE 5
+Parameters of the refundable tax credit for childcare expenses
+Taxation year 2022 Taxation year 2023
+Family income ($)
+Tax credit
+rate (%)
+Family income ($)
+Tax credit
+rate (%)Greater than
+Without
+exceeding Greater than
+Without
+exceeding
+― 21 555 78 ― 22 945 78
+21 555 38 010 75 22 945 40 460 75
+38 010 39 415 74 40 460 41 955 74
+39 415 40 830 73 41 955 43 460 73
+40 830 42 220 72 43 460 44 940 72
+42 220 43 635 71 44 940 46 445 71
+43 635 104 170 70 46 445 110 880 70
+104 170 or more 67 110 880 or more 67
+
+--- PDF page 18 of 18 ---
+
+
