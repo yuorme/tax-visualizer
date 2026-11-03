@@ -1,0 +1,31 @@
+# Benefit-year figures use July 2019 to June 2020, applied to current-year income.
+# Property estimate: (13.290 municipal + 15.130 Winnipeg school) mills × 45% assessed portion / 1000.
+# School-tax share is 15.130 / 28.420; no school-tax rebate before 2021.
+# MB479 caps the credit at $700 or school tax / 20% of annual rent, whichever is less.
+
+code: MB
+name: Manitoba
+order: 5
+brackets:
+  - [32670, 0.108]
+  - [70610, 0.1275]
+  - [.inf, 0.174]
+basicPersonalAmount: 9626
+dividendTaxCredit: {eligible: 0.08, nonEligible: 0.007835}
+spouseAmount: {max: 9134, threshold: 0}
+salesTax: {rate: 0.12, label: 5% GST + 7% RST}
+propertyTax: {rate: 0.012789000000000002, city: Winnipeg, estimated: true}
+creditsUseRent: true
+credits:
+  - name: Education property tax credit
+    nameRenter: Education property tax credit
+    program: mb-school-tax-credits-rent-share
+    params: {schoolTaxShare: 0.5323715693173822, schoolRebateRate: 0, educationCreditMax: 700, renterMax: 700, renterShare: 0.2}
+    estimated: true
+sources:
+  - {label: "CRA, MB428 for 2019", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5007-c/5007-c-19e.pdf}
+  - {label: "CRA, MB428 worksheet for 2019", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5007-d/5007-d-19e.pdf}
+  - {label: "CRA, GST/HST historical rates and provincial sales-tax rates", url: https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/charge-collect-which-rate/calculator.html}
+  - {label: "CRA, MB479 for 2019: education property-tax credit and eligible occupancy cost", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5007-tc/5007-tc-19e.pdf}
+  - {label: "Manitoba, historical property credits: school-tax rebate introduced in 2021", url: https://www.gov.mb.ca/edupropertytax/index.html}
+  - {label: "Winnipeg, 2019 combined mill rates and residential assessment portion", url: https://assessment.winnipeg.ca/Asmttax/pdfs/rates/2019CombinedMillRates.pdf}

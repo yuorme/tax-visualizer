@@ -1,0 +1,204 @@
+Title: Manitoba Tax
+URL: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5007-c/5007-c-19e.pdf
+Fetched: 2026-11-02
+SHA-256 of the original: f106e9615a24882ad0f09255f4d4978fb73976402b3de0060fcffa021300f967
+Publication date modified: 2019-11-13
+PDF pages: all 3
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 1 of 3 ---
+
+Form MB428
+2019
+Protected B when completed
+Manitoba Tax
+This is Step 6 in completing your return. Complete this form and attach a copy to your return.
+Claim only the credits that apply to you.
+Part A – Manitoba non-refundable tax credits 56060For internal use only
+58040 1Basic personal amount Claim $9,626
+58080 2
+Age amount (if born in 1954 or earlier)
+(use Worksheet MB428) (maximum $3,728) +
+Spouse or common-law partner amount
+3Base amount
+4
+Your spouse's or common-law partner's net income
+from line 23600 of their return –
+58120 5Line 3 minus line 4 (if negative, enter "0") =
+Ż +
+Amount for an eligible dependant
+6Base amount
+7Your eligible dependant's net income from line 23600 of their return –
+58160 8Line 6 minus line 7 (if negative, enter "0") =
+Ż +
+9Add lines 1, 2, 5, and 8. =
+58200 10
+Amount for infirm dependants age 18 or older
+(use Worksheet MB428) +
+CPP or QPP contributions:
+58240 11Amount from line 30800 of your return + •
+58280 12Amount from line 31000 of your return + •
+Employment insurance premiums:
+58300 13Amount from line 31200 of your return + •
+58305 14Amount from line 31217 of your return + •
+58315 15Volunteer firefighters' amount +
+58316 16Search and rescue volunteers' amount +
+58325 17Fitness amount +
+58326 18Children's arts amount +
+58330 19Adoption expenses +
+58360 20Pension income amount (maximum $1,000) +
+58400 21
+Caregiver amount
+(use Worksheet MB428) +
+58440 22
+Disability amount (for self)
+(Claim $6,180, or if you were under 18 years of age, use Worksheet MB428.) +
+58480 23
+Disability amount transferred from a dependant
+(use Worksheet MB428) +
+58520 24
+Interest paid on your student loans
+(amount from line 31900 of your return) +
+58560 25
+Your tuition and education amounts
+(attach Schedule MB(S11)) +
+58600 26Tuition and education amounts transferred from a child +
+58640 27
+Amounts transferred from your spouse or common-law partner
+(attach Schedule MB(S2)) +
+61470 28
+Family tax benefit
+(attach Schedule MB428-A) +
+29Add lines 9 to 28. =
+Continue on the next page.
+5007-C (Ce formulaire est disponible en français.)
+9,134.00
+9,134.00
+
+--- PDF page 2 of 3 ---
+
+Protected B when completed
+Part A – Manitoba non-refundable tax credits (continued)
+30Amount from line 29 of the previous page
+Medical expenses:
+58689 31Amount from line 33099 of your return
+32
+Enter whichever is less:
+$1,728 or 3% of the amount on line 23600 of your return –
+33Line 31 minus line 32 (if negative, enter "0") =
+58729 34
+Allowable amount of medical expenses for other dependants
+(use Worksheet MB428) +
+58769 35Add lines 33 and 34. =
+Ż +
+58800 36Add lines 30 and 35. =
+37Manitoba non-refundable tax credit rate ×
+58840 38Multiply line 36 by line 37. =
+Donations and gifts:
+39
+Amount from line 16
+of your federal Schedule 9 × 10.8% =
+40
+Amount from line 17
+of your federal Schedule 9 × 17.4% = +
+58969 41Add lines 39 and 40. =
+Ż +
+61500 42Manitoba non-refundable tax credits
+Add lines 38 and 41.
+Enter this amount on line 54. =
+Part B – Manitoba tax on taxable income
+43Enter your taxable income from line 26000 of your return.
+Use the amount from line 43 to decide which
+column to complete. Line 43 is
+$32,670 or less
+Amount from line 43
+–
+Line 44 minus line 45 (cannot be negative) =
+×
+Multiply line 46 by line 47. =
++
+Manitoba tax on
+taxable incomeAdd lines 48 and 49. =
+Line 43 is more than
+$32,670 but not
+more than $70,610
+–
+=
+×
+=
++
+=
+Line 43 is
+more than $70,610
+–
+=
+×
+=
++
+=
+44
+45
+46
+47
+48
+49
+50
+Part C – Manitoba tax
+51Enter your Manitoba tax on taxable income from line 50.
+61510 52Enter your Manitoba tax on split income from Form T1206. + •
+53Add lines 51 and 52. =
+54Enter your Manitoba non-refundable tax credits from line 42.
+61520 55
+Manitoba dividend tax credit
+Credit calculated for line 61520 on Worksheet MB428 + •
+61540 56
+Manitoba minimum tax carryover
+Amount from line 40427 of your return × 50% = + •
+57Add lines 54 to 56. =
+Ż –
+58Line 53 minus line 57 (if negative, enter "0") =
+Continue on the next page.
+5007-C
+10.8%
+0.00
+10.8%
+0.00
+32,670.00
+12.75%
+3,528.00
+70,610.00
+17.4%
+8,366.00
+
+--- PDF page 3 of 3 ---
+
+Protected B when completed
+Part C – Manitoba tax (continued)
+59Amount from line 58 of the previous page
+60
+Manitoba additional tax for minimum tax purposes
+Form T691: line 111 minus line 114 × 50% = +
+61Add lines 59 and 60. =
+Political contribution tax credit
+61794 62Total Manitoba political contributions made in 2019
+63Credit calculated on Worksheet MB428 for line 63 (maximum $1,000) –
+64Line 61 minus line 63 (if negative, enter "0") =
+60800 65Enter your labour-sponsored funds tax credit from Slip T2C (MAN.). – •
+66Line 64 minus line 65 (if negative, enter "0") =
+67Enter the provincial foreign tax credit from Form T2036. –
+68Line 66 minus line 67 (if negative, enter "0") =
+60830 69Enter your Manitoba community enterprise development tax credit from line 7 of Form T1256. – •
+70Line 68 minus line 69 (if negative, enter "0") =
+60850 71
+Enter your Manitoba small business venture capital tax credit
+for individuals from line 6 of Form T1256-1. (maximum $67,500) – •
+72Line 70 minus line 71 (if negative, enter "0") =
+60860 73Enter the Manitoba employee share purchase tax credit from line 14 of Form T1256-2. – •
+74Line 72 minus line 73 (if negative, enter "0") =
+60920 75Enter the Manitoba mineral exploration tax credit from Form T1241. – •
+76Manitoba tax
+Line 74 minus line 75 (if negative, enter "0")
+Enter the result on line 42800 of your return. =
+See the privacy notice on your return.
+5007-C
