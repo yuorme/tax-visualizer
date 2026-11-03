@@ -98,6 +98,13 @@ export function provincialChildBenefit(
         ? Math.max(b.params.minAnnual, total)
         : total;
     }
+    case "nova-scotia-child-benefit-by-child": {
+      const q = b.params;
+      if (famNet >= q.partialBelow) return 0;
+      let laterChildren = 0;
+      for (let i = 1; i < kids; i++) laterChildren += q.perChild[Math.min(i, 2)];
+      return q.perChild[0] + laterChildren * (famNet < q.fullBelow ? 1 : q.partialOtherRate);
+    }
     case "nova-scotia-child-benefit": {
       const q = b.params;
       return famNet < q.fullBelow
