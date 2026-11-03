@@ -43,7 +43,7 @@ export const DEDUCTION_STEPS = [
       assert.equal(x.rrsp, 8000);
       assert.equal(x.fhsa, 13000);
       assert.equal(x.cg, 2000);
-      assert.match(await p.textContent("#detail-body"), /22,200 deductions/);
+      assert.match(await p.getAttribute('[data-comparison-note="taxable income"]', "data-tip"), /22,200 deductions/);
       assert.match(await p.getAttribute('[data-note="fhsa"]', "data-tip"), /Transfers from an RRSP/);
     },
   ],

@@ -18,7 +18,7 @@ import { CHILDCARE_STEPS } from "./childcare.mjs";
 import { DEDUCTION_STEPS } from "./deductions.mjs";
 import { HISTORY_STEPS } from "./history.mjs";
 import { ALLOWED_HOSTS, openPage, settle } from "./page.mjs";
-import { RESPONSIVE_STEPS } from "./responsive.mjs";
+import { COMPARISON_STEPS, RESPONSIVE_STEPS } from "./responsive.mjs";
 import { COLUMN_COUNT, contrastViolations, inspect, KNOWN, MAX_LABEL_LENGTH } from "./rules.mjs";
 
 const started = Date.now();
@@ -475,7 +475,11 @@ const ledgers = p =>
   p.$$eval("#detail-body .ledger", els =>
     Object.fromEntries(
       els.map(el => [
-        el.querySelector("h4").textContent.trim(),
+        [...el.querySelector("h4").childNodes]
+          .filter(n => n.nodeType === Node.TEXT_NODE)
+          .map(n => n.textContent)
+          .join("")
+          .trim(),
         [...el.querySelectorAll("table")].map(t => [...t.rows].map(r => [...r.cells].map(c => c.textContent.trim()))),
       ]),
     ),
@@ -538,7 +542,9 @@ const OTHER_STEPS = [
       const federal = home.Federal[0].map(r => r[0]);
       if (federal.some(l => l.includes("employment amount")))
         problems.push(`employment amount on other income alone: ${federal.find(l => l.includes("employment amount"))}`);
-      const notes = await p.$$eval("#detail-body p.note", els => els.map(el => el.textContent));
+      const notes = await p.$$eval('#detail-body [data-comparison-note="taxable income"]', els =>
+        els.map(el => el.dataset.tip),
+      );
       if (!notes.some(n => n.includes("Taxable income is $30,000: $30,000 other income.")))
         problems.push(`the taxable income note should list the other income: ${notes.join(" | ")}`);
       await p.click('[data-view="dest"]');
@@ -689,24 +695,43 @@ function asLegacy(detail, run) {
 }
 
 const capture = p =>
-  p.evaluate(() => ({
-    cols: [...document.querySelectorAll(".col")].map(c => [
-      c.id,
-      c.querySelector(".cv").textContent,
-      c.querySelector(".cm").textContent,
-    ]),
-    title: document.getElementById("chart-title").textContent,
-    // innerText, not textContent: compare the text a reader sees (hidden elements and CSS line breaks matter).
-    // biome-ignore-start lint/performance/useDomNodeTextContent: rendered text is the point of this comparison
-    detail: document.getElementById("detail-body").innerText,
+  p.evaluate(() => {
+    const body = document.getElementById("detail-body");
+    // #57 moves these exact explanations into tooltips. Compare them separately against the legacy prose,
+    // retaining every word and computed amount, while still comparing all visible results and tables.
+    const tips = [...body.querySelectorAll("[data-comparison-note]")];
+    const notes = [...body.querySelectorAll("p.note")].filter(n => !n.textContent.startsWith("Net tax is "));
+    // biome-ignore-start lint/performance/useDomNodeTextContent: preserve rendered table formatting
+    let detail = body.innerText;
+    for (const node of tips) {
+      const heading = node.parentElement.innerText;
+      detail = detail.replace(heading, heading.slice(0, -node.innerText.length));
+    }
+    for (const node of notes) detail = detail.replace(node.innerText, "");
     // biome-ignore-end lint/performance/useDomNodeTextContent: see above
-    // The credits table cell by cell: innerText would depend on whether its panel is open, and the built page opens
-    // one panel at a time where the legacy page keeps several open.
-    credits: [...document.getElementById("cred-list").rows].map(r => [...r.cells].map(c => c.textContent)),
-    sums: ["prop-sum", "cred-sum", "invest-sum", "spend"].map(
-      id => document.getElementById(id).textContent || document.getElementById(id).value,
-    ),
-  }));
+    return {
+      cols: [...document.querySelectorAll(".col")].map(c => [
+        c.id,
+        c.querySelector(".cv").textContent,
+        c.querySelector(".cm").textContent,
+      ]),
+      title: document.getElementById("chart-title").textContent,
+      detail: detail
+        .split("\n")
+        .map(line => line.trim())
+        .filter(Boolean)
+        .join("\n"),
+      explanations: (tips.length ? tips.map(n => n.dataset.tip) : notes.map(n => n.textContent))
+        .map(text => text.trim())
+        .join("\n"),
+      // The credits table cell by cell: innerText would depend on whether its panel is open, and the built page opens
+      // one panel at a time where the legacy page keeps several open.
+      credits: [...document.getElementById("cred-list").rows].map(r => [...r.cells].map(c => c.textContent)),
+      sums: ["prop-sum", "cred-sum", "invest-sum", "spend"].map(
+        id => document.getElementById(id).textContent || document.getElementById(id).value,
+      ),
+    };
+  });
 
 const SHARE_STEPS = [
   [
@@ -905,12 +930,13 @@ async function run({ width, colorScheme = "light", html, contrast = false, steps
   await before(page);
   await settle(page);
   const states = [];
-  for (const [name, step] of steps) {
+  for (const [name, step, options = {}] of steps) {
     counts.states++;
     const problems = (await step(page)) ?? [];
     await settle(page);
-    if (contrast) counts.contrast++;
-    const axe = contrast ? await contrastViolations(page, colorScheme) : [];
+    const scanContrast = contrast && options.contrast !== false;
+    if (scanContrast) counts.contrast++;
+    const axe = scanContrast ? await contrastViolations(page, colorScheme) : [];
     states.push({ name, problems, capture: await capture(page), inspect: await inspect(page), axe });
   }
   await close();
@@ -943,7 +969,11 @@ for (const width of [1000, 430, 375]) {
   const [a, b] = [await run({ width, before: noDriving }), await run({ width, html: legacy })];
   check(`${width}px light`, width, a);
   a.states.forEach(({ name, capture: built }, i) => {
-    const s = { ...built, detail: asLegacy(built.detail, width) };
+    const s = {
+      ...built,
+      detail: asLegacy(built.detail, width),
+      explanations: asLegacy(built.explanations, width),
+    };
     const t = b.states[i].capture;
     for (const key of Object.keys(s))
       if (JSON.stringify(s[key]) !== JSON.stringify(t[key]))
@@ -970,6 +1000,7 @@ for (const [label, steps] of [
   ["childcare", CHILDCARE_STEPS],
   ["shareable links", SHARE_STEPS],
   ["province flags", FLAG_STEPS],
+  ["comparison explanation variants", COMPARISON_STEPS.slice(3)],
 ]) {
   check(`1000px light, ${label}`, 1000, await run({ width: 1000, steps }));
   console.log(`1000px light: ${steps.length} ${label} states checked`);
@@ -981,6 +1012,9 @@ const responsive = [
   YEAR_STEPS[0],
   YEAR_STEPS[2],
   ...RESPONSIVE_STEPS,
+  // Interactions and tooltip geometry repeat across widths/themes; text-only conditional variants run once above.
+  // One representative open tooltip adds contrast coverage; subsequent interactions use the same styling.
+  ...COMPARISON_STEPS.slice(0, 3).map(([name, step], i) => [name, step, { contrast: i === 0 }]),
   [
     "layout: driving units show equivalent values without clipping",
     async p => {

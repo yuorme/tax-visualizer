@@ -163,7 +163,7 @@ export const CHILDCARE_STEPS = [
       await fill(p, "oth", 0);
       await fill(p, "income", 30000);
       assert.equal(await p.textContent("#ded-total"), "$0");
-      assert.match(await p.textContent("#detail-body"), /12,000 deductions/);
+      assert.match(await p.getAttribute('[data-comparison-note="taxable income"]', "data-tip"), /12,000 deductions/);
       await fill(p, "care-age-0", 7);
       assert.equal(await p.inputValue("#u6"), "0");
       assert.equal(await cell(p, "Partner's federal childcare deduction"), "$10,000");
