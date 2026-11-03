@@ -518,20 +518,25 @@ export const CHILDCARE_STEPS = [
   name,
   async p => {
     await step(p);
-    const overflow = await p.evaluate(() => {
-      const card = document.querySelector("#spend-panel").closest(".control").getBoundingClientRect();
-      return [
-        ...document.querySelectorAll(
-          "#childcare-monthly, #childcare-info, #childcare-details input, #childcare-details button, #childcare-details select, #childcare-details fieldset",
-        ),
-      ]
-        .filter(el => el.checkVisibility())
-        .filter(el => {
-          const b = el.getBoundingClientRect();
-          return b.left < card.left - 1 || b.right > card.right + 1;
-        })
-        .map(el => el.id || el.className);
-    });
-    assert.deepEqual(overflow, [], "childcare controls stay inside their card");
+    await expectChildcareFits(p);
   },
 ]);
+
+/** Also used by the compact responsive suite, including expanded controls and invalid drafts. */
+export async function expectChildcareFits(p) {
+  const overflow = await p.evaluate(() => {
+    const card = document.querySelector("#spend-panel").closest(".control").getBoundingClientRect();
+    return [
+      ...document.querySelectorAll(
+        "#childcare-monthly, #childcare-info, #childcare-details input, #childcare-details button, #childcare-details select, #childcare-details fieldset",
+      ),
+    ]
+      .filter(el => el.checkVisibility())
+      .filter(el => {
+        const b = el.getBoundingClientRect();
+        return b.left < card.left - 1 || b.right > card.right + 1;
+      })
+      .map(el => el.id || el.className);
+  });
+  assert.deepEqual(overflow, [], "childcare controls stay inside their card");
+}
