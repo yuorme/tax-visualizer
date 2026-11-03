@@ -7,6 +7,7 @@ import { childcareOf } from "./childcare.ts";
 import { childcareCreditOf } from "./childcare-credits.ts";
 import { creditsOf } from "./credits.ts";
 import { fuelTaxOf } from "./fuel.ts";
+import { householdPremiumOf } from "./health-premiums.ts";
 import { netIncomeParts, netOf } from "./payroll.ts";
 import { type PersonResult, personTax } from "./personal.ts";
 import {
@@ -167,6 +168,9 @@ export function household(y: YearData, p: Province, hh: Household, peopleIn: Per
     list = ppl.map((x, i) => personTax(fed, p, x, NOSP, ctx(i), s));
   }
   const totals = addUp(list);
+  const householdPremium = householdPremiumOf(p, nets, couple, kids, childcare.claims);
+  totals.payroll += householdPremium?.total ?? 0;
+  totals.total += householdPremium?.total ?? 0;
   const ccb = ccbOf(fed, famNet, kids, under6);
   const provBen = provincialChildBenefit(p.childBenefit, provincialFamNet, famEmp, kids, single, under6);
   const childBen = ccb + provBen;
@@ -221,6 +225,7 @@ export function household(y: YearData, p: Province, hh: Household, peopleIn: Per
       ...householdBreakdown(list),
       incomeBases,
       childcareCredit,
+      householdPremium,
     }, // nested so the golden snapshot keeps its format (see personTax)
   };
 }

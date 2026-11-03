@@ -1,0 +1,105 @@
+Title: Microsoft Word - t4127-19e_clean.docx
+URL: https://www.canada.ca/content/dam/cra-arc/formspubs/pub/t4127-jan/t4127-01-19e.pdf
+Fetched: 2026-11-02
+SHA-256 of the original: 77b745fd0bd8271843a78bc32b4e94da37436b771c93f43d320d154f1075298e
+Publication date modified: 2018-12-07
+PDF pages: 5,32 of 36
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 5 of 36 ---
+
+canada.ca/taxes 5
+What’s new for January 1, 2019?
+This guide reflects some income tax changes recently announced which, if enacted as proposed, would be effective
+January 1, 2019. At the time of publishing, these proposed changes were not law. We recommend that you use the Payroll
+Deductions Online Calculator (PDOC), Publication T4032, Payroll Deductions Tables, or Publication T4008, Payroll Deductions
+Supplementary Tables, and the formulas in this guide for withholding, starting with your first payroll in 2019.
+Federal changes
+Indexing
+The income tax thresholds and many of the personal amounts on the federal Form TD1, Personal Tax Credits Return, are indexed
+for 2019. Indexing means that the values are adjusted based on changes to the consumer price index. The federal indexing factor
+for 2019 is 2.2%.
+Federal income thresholds
+The income thresholds and personal amounts are indexed. The current and previous figures can be found in chapter 9 –
+“Summary sheets” at the end of the publication.
+The claim code amounts are also indexed. The revised figures can be found in chapter 3 – “Claim codes.”
+Federal personal amounts
+Some federal personal amounts were increased as a result of federal indexing.
+Basic personal amount.............................................................................................................................................. $12,069
+For complete information on all personal amounts for 2019, see the 2019 federal Form TD1, Personal Tax Credits Return.
+Canada employment amount
+The Canada employment amount (factor K4) is the lesser of:
+(i) 0.15 × A; and
+(ii) 0.15 × $1,222
+Note
+For the Canada employment amount, A is the annual gross income from office or employment before deductions. This is the
+same amount you usually report in box 14 of a T4 slip. As administrative relief, you can use the regular factor A (annual
+taxable income) for this calculation, except when the total income is superannuation or pension benefits.
+Federal labour-sponsored funds tax credit
+The federal tax credit for provincially registered labour-sponsored venture capital corporations (LSVCC) is the lesser of: (i) $750
+and (ii) 15% of the amount deducted or withheld during the year for the acquisition, by the employee, of approved shares of the
+capital stock of a prescribed LSVCC.
+Canada Pension Plan (CPP)
+For 2019, the maximum pensionable earnings are $57,400, and the basic exemption for the year is $3,500. The contribution rate
+for employees is 5.1%. The increase in contribution rate is due to the CPP enhancement.
+The maximum an employee can contribute for the year is $2,748.90. The employer’s contribution is an amount equal to the total
+of the employee’s contributions.
+For insurance companies that need the year’s maximum pensionable earnings before rounding, the amount for this year
+is $57,448.48.
+Subject to the approval of Parliament
+There is a proposed amendment to the Canada Pension Plan Regulations published in the Canada Gazette on September 29,
+2018 outlining changes for the 2019 tax year.
+“Under the current provisions of the Regulations, when an employee who works in Quebec (and therefore contributes to the
+Quebec Pension Plan (QPP) at a higher rate than the contribution rate of the CPP) is transferred by their employer before the end
+of the calendar year to a location outside of Quebec, an insufficient amount of total CPP and QPP contributions may have been
+made which, in turn, may impact future benefits. A new provision is being added to the Regulations prescribing the formula to be
+
+--- PDF page 32 of 36 ---
+
+canada.ca/taxes32
+Replace the lowest provincial or territorial tax rate with the appropriate rate for the province or territory that applies
+to the employee or pensioner.
+Only for Quebec:
+T2 = $0
+Only for outside Canada or in Canada beyond the limits of any province or territory:
+T2 = $0
+Formula to calculate the estimated federal and provincial or territorial tax deductions (T) for the
+pay period
+T = [((T1 + T2 – M1) / S1) – M]* + L
+* If the result is negative, T = L.
+The resulting amount can be rounded to the nearest multiple of $0.05 or $0.01.
+Only for employees in Quebec, outside Canada, and in Canada beyond the limits of any province or territory:
+T = Estimated federal tax deduction for the pay period**
+= [((T1 – M1) / S1) – M]* + L
+* If the result is negative, T = L.
+** The resulting amount can be rounded to the nearest multiple of $0.05 or $0.01.
+M = Do not include any year-to-date extra tax deductions requested by the employee, factor L. Tax already deducted on
+non-periodic payments such as bonuses, is included in factor M1.
+M1 = Accumulated federal and provincial (or territorial) tax deductions on non-periodic payments such as bonuses, if any,
+to the last pay period. Do not include any year-to-date extra tax deductions for the year requested by the employee,
+factor L or any tax included in factor M. The T factor (tax deduction for the pay period) will not include the tax on
+the non-periodic payment. The tax to be deducted on a current non-periodic payment is kept in another field TB.
+TB = Estimated federal and provincial or territorial tax deduction on a non-periodic payment for the pay period
+= Step 1 minus Step 2 below (if negative, TB = $0)
+Step 1
+Projected annual taxable income including B1 and B payable now
+= [S1 × (I – F – F2 – U1)] + B1 + B – HD – F1
+Step 2
+Projected annual taxable income including B1, but not B payable now
+= [S1 × (I – F – F2 – U1)] + B1 – HD – F1
+Chapter 7 – Canada Pension Plan (CPP)
+Formula to determine CPP contributions for employees receiving salary or wages
+C = The lesser of:
+(i) $2,748.90* – D; and
+(ii) 0.0510** × [PI – ($3,500 / P)]
+If the result is negative, C = $0.
+* Use $2,991.45 for employees employed in Quebec.
+** Use 0.0555 for employees employed in Quebec.
+Formula to determine CPP contributions—only for employees paid by commission
+C = The lesser of:
+(i) $2,748.90* – D; and
+(ii) 0.0510** × [G – ($3,500 × N / 365, minimum $67.30)]
+If the result is negative, C = $0.
+* Use $2,991.45 for employees employed in Quebec.
+** Use 0.0555 for employees employed in Quebec.

@@ -14,6 +14,15 @@ const render = (y: YearData) => [footerNotes(y, page), ...Object.values(tooltips
 const html = fs.readFileSync(new URL("../src/ui/index.html", import.meta.url), "utf8");
 const noteKeys = [...html.matchAll(/data-note="([^"]+)"/g)].map(m => m[1]);
 
+test("flat federal basic personal amounts render without a fictitious federal phase-out", () => {
+  const y = structuredClone(loadYear(2025));
+  y.federal.basicPersonalAmount = 12069;
+  const text = render(y);
+  assert.match(text, /\$12,069 federally/);
+  assert.match(text, /is \$12,069 at every income/);
+  assert.doesNotMatch(text, /federal amount[^.]*drops from/);
+});
+
 test("2023 notes describe PEI surtax and separate NL periods without later programs", () => {
   const text = render(loadYear(2023));
   assert.match(text, /Prince Edward Island adds a surtax of 10% of provincial tax above \$12,500/);
@@ -175,7 +184,8 @@ const CASES: [string, (y: YearData) => void, string, string][] = [
   [
     "federal basic personal amount",
     y => {
-      y.federal.basicPersonalAmount.max = 17000;
+      assert.equal(typeof y.federal.basicPersonalAmount, "object");
+      if (typeof y.federal.basicPersonalAmount === "object") y.federal.basicPersonalAmount.max = 17000;
     },
     "$17,000",
     "$16,452",

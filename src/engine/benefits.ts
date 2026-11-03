@@ -48,10 +48,15 @@ export function provincialChildBenefit(
       const q = b.params;
       return Math.max(0, q.perChild * kids - q.rate * over(q.threshold));
     }
-    case "quebec-family-allowance": {
+    case "quebec-family-allowance":
+    case "quebec-family-allowance-by-child": {
       const q = b.params;
-      const mx = q.max * kids + (single ? q.maxSingleParent : 0),
-        mn = q.min * kids + (single ? q.minSingleParent : 0);
+      const sum = (amount: number | number[]) =>
+        typeof amount === "number"
+          ? amount * kids
+          : Array.from({ length: kids }, (_, i) => amount[Math.min(i, amount.length - 1)]).reduce((a, b) => a + b, 0);
+      const mx = sum(q.max) + (single ? q.maxSingleParent : 0),
+        mn = sum(q.min) + (single ? q.minSingleParent : 0);
       return (
         Math.max(mn, mx - q.rate * over(single ? q.thresholdSingle : q.thresholdCouple)) +
         q.schoolSupplies * (kids - kidsU6)
@@ -70,6 +75,7 @@ export function provincialChildBenefit(
         ? Math.max(mn, mx - q.rate * over(q.threshold))
         : Math.max(0, mn - q.rate * over(q.minThreshold));
     }
+    case "alberta-child-benefit-and-employment":
     case "alberta-child-family-benefit":
     case "alberta-child-family-benefit-by-child": {
       const q = b.params,
@@ -82,9 +88,19 @@ export function provincialChildBenefit(
           phaseOut * over(q.workingThreshold),
       );
       const total = base + work;
+      if (b.program === "alberta-child-benefit-and-employment") {
+        const minimum = (value: number) => (value > 0 ? Math.max(b.params.minAnnual, value) : 0);
+        return minimum(base) + minimum(work);
+      }
       return b.program === "alberta-child-family-benefit-by-child" && total > 0
         ? Math.max(b.params.minAnnual, total)
         : total;
+    }
+    case "nova-scotia-child-benefit-reduction": {
+      const q = b.params;
+      const maximum = q.perChild[0] + (kids > 1 ? q.perChild[1] : 0) + Math.max(0, kids - 2) * q.perChild[2];
+      const rate = q.rate[Math.min(kids, 2) - 1] + Math.max(0, kids - 2) * q.additionalRate;
+      return famNet < q.fullBelow ? maximum : Math.max(0, maximum - rate * over(q.threshold));
     }
     case "nova-scotia-child-benefit": {
       const q = b.params;
