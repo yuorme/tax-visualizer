@@ -38,6 +38,27 @@ open dist/index.html
 | `npm run year-diff -- <year> [<base-year>]` | Markdown report of a year's data against the previous year: changes, large changes, amounts left unchanged (likely carried over), added and removed fields. A `# not indexed` comment marks an amount that is meant to stay the same |
 | `npm run fetch-source -- <year> <url> [<name>]` | Caches a text extract of an official PDF, web page or text file in `docs/verification/<year>/sources/<name>.txt` and adds its row (title, URL, date, SHA-256 of the original) to `INDEX.md` there. The original isn't kept; extracts over 250 KB are refused, so pass `--pages 3-7,12` for a large PDF. `--force` replaces an extract, `--title` sets its title |
 
+## Agent test output
+
+Project hooks in `.codex/hooks.json` and `.claude/settings.json` share `scripts/trim-test-output.py`.
+They apply to main sessions and all subagent roles in this checkout, including new worktrees containing these files.
+They need Python 3.9 or newer. In Codex, review and trust the project hook using `/hooks` or Settings > Hooks;
+in Claude Code, review the project hook in `/hooks`. Restart existing sessions to reload changed hook settings.
+
+The filter recognizes `npm test`, `npm run check`, and direct `node --test` commands, including
+`fnm exec --using=26` wrappers and `cd` within this checkout. It removes recognized passing-test chatter, retains
+unknown text, and preserves everything from the first failure or warning onward. A private temporary log keeps
+the original output; its path appears first in the shortened result. Logs follow normal OS temp-file lifetime.
+Codex replacements include the exit code; Claude replacements preserve the Bash result metadata and report when
+no exit code was supplied. Tests, shell commands, approvals and exit codes are unchanged.
+
+Incomplete, already-truncated, small or unfamiliar results pass through unchanged. Claude tool failures also pass
+through unchanged because its failure hook does not support output replacement. Output seen in earlier streaming
+polls cannot be removed retroactively. Disable this filter in the client's `/hooks` menu.
+
+Run its regression suite with `npm run test:hooks` (also included in `npm run check`). Hook contracts:
+[Codex](https://learn.chatgpt.com/docs/hooks) and [Claude Code](https://code.claude.com/docs/en/hooks).
+
 ## Worktree lifecycle
 
 Each isolated agent checkout can install about 150 MB of dependencies. A pushed branch or PR retains the work;

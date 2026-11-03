@@ -1,0 +1,17 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "^Bash$",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "repo_root=$(git rev-parse --show-toplevel) && python3 \"$repo_root/scripts/trim-test-output.py\" --codex",
+            "timeout": 5,
+            "statusMessage": "Trimming passing test output"
+          }
+        ]
+      }
+    ]
+  }
+}
