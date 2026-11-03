@@ -129,8 +129,12 @@ adding year checks inside an existing one. Values that are estimates rather than
   name): results compared with figures published outside this project, such as each province's top marginal
   rate and Ontario's top dividend rates.
 - **Browser smoke test** (`tests/e2e/smoke.mjs`): the built page loads without errors at 1000, 430 and 375 px
-  wide, doesn't scroll sideways on phones, and shows exactly the same figures as the legacy page after a series
-  of inputs.
+  wide in both themes and doesn't scroll sideways on phones. Legacy comparisons retain all three widths.
+  Detailed functional flows (including every tax year, validation and persistence cases) run once at desktop width.
+  A compact responsive flow checks each panel, expanded childcare controls, invalid drafts, history and a year switch
+  across all six width/theme pairs. Contrast scans cover these visual states at 375 px in light and dark mode.
+  Numeric permutations are not repeated across the whole matrix; add new visual states to `tests/e2e/responsive.mjs`
+  when a feature introduces distinct controls or styling. The runner reports page, state and contrast-scan counts.
 
 ## Adding a year
 
