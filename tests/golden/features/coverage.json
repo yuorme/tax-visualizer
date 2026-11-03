@@ -1,0 +1,2106 @@
+{
+  "description": "Additive, hand-calculated feature goldens; see docs/verification/golden-coverage.md.",
+  "defaults": {
+    "active": 0,
+    "spouse": true,
+    "adults": 1,
+    "kids": 0,
+    "under6": 0,
+    "useBpa": true,
+    "whRate": 0,
+    "useCredits": false,
+    "homeValue": 0,
+    "rent": 0,
+    "monthlySpending": 0
+  },
+  "rules": {
+    "ns-2024": {
+      "basicPersonalAmount": {
+        "max": 11481,
+        "min": 8481,
+        "from": 25000,
+        "to": 75000
+      },
+      "spouseAmount": {
+        "program": "nova-scotia-spouse-amount",
+        "params": {
+          "max": 8481,
+          "threshold": 848,
+          "supplement": {
+            "max": 3000,
+            "rate": 0.06,
+            "threshold": 25000
+          }
+        }
+      }
+    },
+    "mb-2024": {
+      "credits": [
+        {
+          "program": "mb-school-tax-credits",
+          "name": "School relief",
+          "nameRenter": "Renters tax credit",
+          "params": {
+            "schoolTaxShare": 0.5,
+            "schoolRebateRate": 0.5,
+            "educationCreditMax": 350,
+            "renterMax": 525
+          }
+        }
+      ]
+    },
+    "nl-statutory": {
+      "childBenefit": {
+        "program": "nl-child-benefit-reduction",
+        "params": {
+          "perChild": [1788, 1896, 2036, 2188],
+          "threshold": 17397,
+          "rate": [0.161, 0.3318, 0.5151],
+          "additionalRate": 0.1971
+        }
+      }
+    },
+    "ab-statutory": {
+      "childBenefit": {
+        "program": "alberta-child-family-benefit-by-child",
+        "params": {
+          "base": [1330, 1995, 2660, 3325],
+          "baseRate": [0.0805, 0.1207, 0.1609, 0.2011],
+          "baseThreshold": 24467,
+          "working": [681, 1301, 1672, 1795],
+          "workingRate": 0.15,
+          "workingFloor": 2760,
+          "workingThreshold": 41000,
+          "workingPhaseOut": [0.034, 0.0649, 0.0834, 0.0895],
+          "minAnnual": 10
+        }
+      }
+    }
+  },
+  "cases": [
+    {
+      "id": "ns-spouse-25000-0",
+      "year": 2025,
+      "province": "NS",
+      "household": {
+        "people": [
+          {
+            "fd": 25000
+          },
+          {
+            "fd": 0
+          }
+        ],
+        "adults": 2
+      },
+      "expected": {
+        "claim.pAmt": 11481,
+        "claim.kind": "spouse",
+        "famNet": 25000
+      },
+      "rule": "ns-2024"
+    },
+    {
+      "id": "ns-spouse-50000-0",
+      "year": 2025,
+      "province": "NS",
+      "household": {
+        "people": [
+          {
+            "fd": 50000
+          },
+          {
+            "fd": 0
+          }
+        ],
+        "adults": 2
+      },
+      "expected": {
+        "claim.pAmt": 9981,
+        "claim.kind": "spouse",
+        "famNet": 50000
+      },
+      "rule": "ns-2024"
+    },
+    {
+      "id": "ns-spouse-75000-0",
+      "year": 2025,
+      "province": "NS",
+      "household": {
+        "people": [
+          {
+            "fd": 75000
+          },
+          {
+            "fd": 0
+          }
+        ],
+        "adults": 2
+      },
+      "expected": {
+        "claim.pAmt": 8481,
+        "claim.kind": "spouse",
+        "famNet": 75000
+      },
+      "rule": "ns-2024"
+    },
+    {
+      "id": "ns-spouse-100000-0",
+      "year": 2025,
+      "province": "NS",
+      "household": {
+        "people": [
+          {
+            "fd": 100000
+          },
+          {
+            "fd": 0
+          }
+        ],
+        "adults": 2
+      },
+      "expected": {
+        "claim.pAmt": 8481,
+        "claim.kind": "spouse",
+        "famNet": 100000
+      },
+      "rule": "ns-2024"
+    },
+    {
+      "id": "ns-spouse-25000-500",
+      "year": 2025,
+      "province": "NS",
+      "household": {
+        "people": [
+          {
+            "fd": 25000
+          },
+          {
+            "fd": 500
+          }
+        ],
+        "adults": 2
+      },
+      "expected": {
+        "claim.pAmt": 10981,
+        "claim.kind": "spouse",
+        "famNet": 25500
+      },
+      "rule": "ns-2024"
+    },
+    {
+      "id": "ns-spouse-25000-1000",
+      "year": 2025,
+      "province": "NS",
+      "household": {
+        "people": [
+          {
+            "fd": 25000
+          },
+          {
+            "fd": 1000
+          }
+        ],
+        "adults": 2
+      },
+      "expected": {
+        "claim.pAmt": 10329,
+        "claim.kind": "spouse",
+        "famNet": 26000
+      },
+      "rule": "ns-2024"
+    },
+    {
+      "id": "ns-spouse-50000-2000",
+      "year": 2025,
+      "province": "NS",
+      "household": {
+        "people": [
+          {
+            "fd": 50000
+          },
+          {
+            "fd": 2000
+          }
+        ],
+        "adults": 2
+      },
+      "expected": {
+        "claim.pAmt": 7329,
+        "claim.kind": "spouse",
+        "famNet": 52000
+      },
+      "rule": "ns-2024"
+    },
+    {
+      "id": "ns-spouse-75000-1000",
+      "year": 2025,
+      "province": "NS",
+      "household": {
+        "people": [
+          {
+            "fd": 75000
+          },
+          {
+            "fd": 1000
+          }
+        ],
+        "adults": 2
+      },
+      "expected": {
+        "claim.pAmt": 8329,
+        "claim.kind": "spouse",
+        "famNet": 76000
+      },
+      "rule": "ns-2024"
+    },
+    {
+      "id": "ns-spouse-25000-10000",
+      "year": 2025,
+      "province": "NS",
+      "household": {
+        "people": [
+          {
+            "fd": 25000
+          },
+          {
+            "fd": 10000
+          }
+        ],
+        "adults": 2
+      },
+      "expected": {
+        "claim.pAmt": 0,
+        "claim.kind": "spouse",
+        "famNet": 35000
+      },
+      "rule": "ns-2024"
+    },
+    {
+      "id": "ns-dependant-25000",
+      "year": 2025,
+      "province": "NS",
+      "household": {
+        "people": [
+          {
+            "fd": 25000
+          }
+        ],
+        "kids": 1
+      },
+      "expected": {
+        "claim.pAmt": 11481,
+        "claim.kind": "dependant",
+        "me.pAmt": 11481
+      },
+      "rule": "ns-2024"
+    },
+    {
+      "id": "ns-dependant-50000",
+      "year": 2025,
+      "province": "NS",
+      "household": {
+        "people": [
+          {
+            "fd": 50000
+          }
+        ],
+        "kids": 1
+      },
+      "expected": {
+        "claim.pAmt": 9981,
+        "claim.kind": "dependant",
+        "me.pAmt": 9981
+      },
+      "rule": "ns-2024"
+    },
+    {
+      "id": "ns-dependant-75000",
+      "year": 2025,
+      "province": "NS",
+      "household": {
+        "people": [
+          {
+            "fd": 75000
+          }
+        ],
+        "kids": 1
+      },
+      "expected": {
+        "claim.pAmt": 8481,
+        "claim.kind": "dependant",
+        "me.pAmt": 8481
+      },
+      "rule": "ns-2024"
+    },
+    {
+      "id": "ns-deducted-taper",
+      "year": 2025,
+      "province": "NS",
+      "household": {
+        "people": [
+          {
+            "fd": 80000,
+            "rrsp": 10000,
+            "fhsa": 13000,
+            "ded": 7000
+          },
+          {
+            "fd": 0
+          }
+        ],
+        "adults": 2
+      },
+      "expected": {
+        "claim.pAmt": 9981,
+        "me.pAmt": 9981,
+        "famNet": 50000
+      },
+      "rule": "ns-2024"
+    },
+    {
+      "id": "ns-credit-floor",
+      "year": 2025,
+      "province": "NS",
+      "household": {
+        "people": [
+          {
+            "fd": 1000
+          },
+          {
+            "fd": 0
+          }
+        ],
+        "adults": 2
+      },
+      "expected": {
+        "prov": 0,
+        "me.pSp": 0,
+        "claim.pAmt": 11481
+      },
+      "rule": "ns-2024"
+    },
+    {
+      "id": "ns-disabled",
+      "year": 2025,
+      "province": "NS",
+      "household": {
+        "people": [
+          {
+            "fd": 50000
+          },
+          {
+            "fd": 0
+          }
+        ],
+        "adults": 2,
+        "useBpa": false
+      },
+      "expected": {
+        "claim": null,
+        "me.pAmt": 0
+      },
+      "rule": "ns-2024"
+    },
+    {
+      "id": "mb-property-1000-rent-0",
+      "year": 2025,
+      "province": "MB",
+      "household": {
+        "people": [
+          {
+            "fd": 100000
+          }
+        ],
+        "homeValue": 100000,
+        "propertyRates": {
+          "MB": 0.01
+        },
+        "rent": 0,
+        "useCredits": true
+      },
+      "expected": {
+        "credits": [["School relief", 500]],
+        "property": 1000
+      },
+      "rule": "mb-2024"
+    },
+    {
+      "id": "mb-property-1400-rent-0",
+      "year": 2025,
+      "province": "MB",
+      "household": {
+        "people": [
+          {
+            "fd": 100000
+          }
+        ],
+        "homeValue": 140000,
+        "propertyRates": {
+          "MB": 0.01
+        },
+        "rent": 0,
+        "useCredits": true
+      },
+      "expected": {
+        "credits": [["School relief", 700]],
+        "property": 1400
+      },
+      "rule": "mb-2024"
+    },
+    {
+      "id": "mb-property-4000-rent-1000",
+      "year": 2025,
+      "province": "MB",
+      "household": {
+        "people": [
+          {
+            "fd": 100000
+          }
+        ],
+        "homeValue": 400000,
+        "propertyRates": {
+          "MB": 0.01
+        },
+        "rent": 1000,
+        "useCredits": true
+      },
+      "expected": {
+        "credits": [["School relief", 1350]],
+        "property": 4000
+      },
+      "rule": "mb-2024"
+    },
+    {
+      "id": "mb-property-0-rent-10",
+      "year": 2025,
+      "province": "MB",
+      "household": {
+        "people": [
+          {
+            "fd": 100000
+          }
+        ],
+        "homeValue": 0,
+        "propertyRates": {
+          "MB": 0.01
+        },
+        "rent": 10,
+        "useCredits": true
+      },
+      "expected": {
+        "credits": [["Renters tax credit", 120]],
+        "property": 0
+      },
+      "rule": "mb-2024"
+    },
+    {
+      "id": "mb-property-0-rent-1000",
+      "year": 2025,
+      "province": "MB",
+      "household": {
+        "people": [
+          {
+            "fd": 100000
+          }
+        ],
+        "homeValue": 0,
+        "propertyRates": {
+          "MB": 0.01
+        },
+        "rent": 1000,
+        "useCredits": true
+      },
+      "expected": {
+        "credits": [["Renters tax credit", 525]],
+        "property": 0
+      },
+      "rule": "mb-2024"
+    },
+    {
+      "id": "mb-property-0-rent-0",
+      "year": 2025,
+      "province": "MB",
+      "household": {
+        "people": [
+          {
+            "fd": 100000
+          }
+        ],
+        "homeValue": 0,
+        "propertyRates": {
+          "MB": 0.01
+        },
+        "rent": 0,
+        "useCredits": true
+      },
+      "expected": {
+        "credits": [],
+        "property": 0
+      },
+      "rule": "mb-2024"
+    },
+    {
+      "id": "mb-disabled",
+      "year": 2025,
+      "province": "MB",
+      "household": {
+        "people": [
+          {
+            "fd": 100000
+          }
+        ],
+        "homeValue": 400000,
+        "propertyRates": {
+          "MB": 0.01
+        },
+        "useCredits": false
+      },
+      "expected": {
+        "credits": [],
+        "refund": 0
+      },
+      "rule": "mb-2024"
+    },
+    {
+      "id": "nl-1-children-17397",
+      "year": 2025,
+      "province": "NL",
+      "household": {
+        "people": [
+          {
+            "fd": 17397
+          }
+        ],
+        "kids": 1
+      },
+      "expected": {
+        "provBen": 1788
+      },
+      "rule": "nl-statutory"
+    },
+    {
+      "id": "nl-1-children-18397",
+      "year": 2025,
+      "province": "NL",
+      "household": {
+        "people": [
+          {
+            "fd": 18397
+          }
+        ],
+        "kids": 1
+      },
+      "expected": {
+        "provBen": 1627
+      },
+      "rule": "nl-statutory"
+    },
+    {
+      "id": "nl-1-children-100000",
+      "year": 2025,
+      "province": "NL",
+      "household": {
+        "people": [
+          {
+            "fd": 100000
+          }
+        ],
+        "kids": 1
+      },
+      "expected": {
+        "provBen": 0
+      },
+      "rule": "nl-statutory"
+    },
+    {
+      "id": "nl-2-children-17397",
+      "year": 2025,
+      "province": "NL",
+      "household": {
+        "people": [
+          {
+            "fd": 17397
+          }
+        ],
+        "kids": 2
+      },
+      "expected": {
+        "provBen": 3684
+      },
+      "rule": "nl-statutory"
+    },
+    {
+      "id": "nl-2-children-18397",
+      "year": 2025,
+      "province": "NL",
+      "household": {
+        "people": [
+          {
+            "fd": 18397
+          }
+        ],
+        "kids": 2
+      },
+      "expected": {
+        "provBen": 3352.2
+      },
+      "rule": "nl-statutory"
+    },
+    {
+      "id": "nl-2-children-100000",
+      "year": 2025,
+      "province": "NL",
+      "household": {
+        "people": [
+          {
+            "fd": 100000
+          }
+        ],
+        "kids": 2
+      },
+      "expected": {
+        "provBen": 0
+      },
+      "rule": "nl-statutory"
+    },
+    {
+      "id": "nl-3-children-17397",
+      "year": 2025,
+      "province": "NL",
+      "household": {
+        "people": [
+          {
+            "fd": 17397
+          }
+        ],
+        "kids": 3
+      },
+      "expected": {
+        "provBen": 5720
+      },
+      "rule": "nl-statutory"
+    },
+    {
+      "id": "nl-3-children-18397",
+      "year": 2025,
+      "province": "NL",
+      "household": {
+        "people": [
+          {
+            "fd": 18397
+          }
+        ],
+        "kids": 3
+      },
+      "expected": {
+        "provBen": 5204.9
+      },
+      "rule": "nl-statutory"
+    },
+    {
+      "id": "nl-3-children-100000",
+      "year": 2025,
+      "province": "NL",
+      "household": {
+        "people": [
+          {
+            "fd": 100000
+          }
+        ],
+        "kids": 3
+      },
+      "expected": {
+        "provBen": 0
+      },
+      "rule": "nl-statutory"
+    },
+    {
+      "id": "nl-4-children-17397",
+      "year": 2025,
+      "province": "NL",
+      "household": {
+        "people": [
+          {
+            "fd": 17397
+          }
+        ],
+        "kids": 4
+      },
+      "expected": {
+        "provBen": 7908
+      },
+      "rule": "nl-statutory"
+    },
+    {
+      "id": "nl-4-children-18397",
+      "year": 2025,
+      "province": "NL",
+      "household": {
+        "people": [
+          {
+            "fd": 18397
+          }
+        ],
+        "kids": 4
+      },
+      "expected": {
+        "provBen": 7195.8
+      },
+      "rule": "nl-statutory"
+    },
+    {
+      "id": "nl-4-children-100000",
+      "year": 2025,
+      "province": "NL",
+      "household": {
+        "people": [
+          {
+            "fd": 100000
+          }
+        ],
+        "kids": 4
+      },
+      "expected": {
+        "provBen": 0
+      },
+      "rule": "nl-statutory"
+    },
+    {
+      "id": "nl-6-children-17397",
+      "year": 2025,
+      "province": "NL",
+      "household": {
+        "people": [
+          {
+            "fd": 17397
+          }
+        ],
+        "kids": 6
+      },
+      "expected": {
+        "provBen": 12284
+      },
+      "rule": "nl-statutory"
+    },
+    {
+      "id": "nl-6-children-18397",
+      "year": 2025,
+      "province": "NL",
+      "household": {
+        "people": [
+          {
+            "fd": 18397
+          }
+        ],
+        "kids": 6
+      },
+      "expected": {
+        "provBen": 11177.6
+      },
+      "rule": "nl-statutory"
+    },
+    {
+      "id": "nl-6-children-100000",
+      "year": 2025,
+      "province": "NL",
+      "household": {
+        "people": [
+          {
+            "fd": 100000
+          }
+        ],
+        "kids": 6
+      },
+      "expected": {
+        "provBen": 0
+      },
+      "rule": "nl-statutory"
+    },
+    {
+      "id": "nl-no-children",
+      "year": 2025,
+      "province": "NL",
+      "household": {
+        "people": [
+          {
+            "fd": 0
+          }
+        ]
+      },
+      "expected": {
+        "provBen": 0
+      },
+      "rule": "nl-statutory"
+    },
+    {
+      "id": "ab-1-base-threshold",
+      "year": 2025,
+      "province": "AB",
+      "household": {
+        "people": [
+          {
+            "fd": 24467
+          }
+        ],
+        "kids": 1
+      },
+      "expected": {
+        "provBen": 1330
+      },
+      "rule": "ab-statutory"
+    },
+    {
+      "id": "ab-1-base-taper",
+      "year": 2025,
+      "province": "AB",
+      "household": {
+        "people": [
+          {
+            "fd": 25467
+          }
+        ],
+        "kids": 1
+      },
+      "expected": {
+        "provBen": 1249.5
+      },
+      "rule": "ab-statutory"
+    },
+    {
+      "id": "ab-1-working-taper",
+      "year": 2025,
+      "province": "AB",
+      "household": {
+        "people": [
+          {
+            "ord": 50000,
+            "ded": 7535
+          }
+        ],
+        "kids": 1
+      },
+      "expected": {
+        "famNet": 42000,
+        "provBen": 647
+      },
+      "rule": "ab-statutory"
+    },
+    {
+      "id": "ab-2-base-threshold",
+      "year": 2025,
+      "province": "AB",
+      "household": {
+        "people": [
+          {
+            "fd": 24467
+          }
+        ],
+        "kids": 2
+      },
+      "expected": {
+        "provBen": 1995
+      },
+      "rule": "ab-statutory"
+    },
+    {
+      "id": "ab-2-base-taper",
+      "year": 2025,
+      "province": "AB",
+      "household": {
+        "people": [
+          {
+            "fd": 25467
+          }
+        ],
+        "kids": 2
+      },
+      "expected": {
+        "provBen": 1874.3
+      },
+      "rule": "ab-statutory"
+    },
+    {
+      "id": "ab-2-working-taper",
+      "year": 2025,
+      "province": "AB",
+      "household": {
+        "people": [
+          {
+            "ord": 50000,
+            "ded": 7535
+          }
+        ],
+        "kids": 2
+      },
+      "expected": {
+        "famNet": 42000,
+        "provBen": 1236.1
+      },
+      "rule": "ab-statutory"
+    },
+    {
+      "id": "ab-3-base-threshold",
+      "year": 2025,
+      "province": "AB",
+      "household": {
+        "people": [
+          {
+            "fd": 24467
+          }
+        ],
+        "kids": 3
+      },
+      "expected": {
+        "provBen": 2660
+      },
+      "rule": "ab-statutory"
+    },
+    {
+      "id": "ab-3-base-taper",
+      "year": 2025,
+      "province": "AB",
+      "household": {
+        "people": [
+          {
+            "fd": 25467
+          }
+        ],
+        "kids": 3
+      },
+      "expected": {
+        "provBen": 2499.1
+      },
+      "rule": "ab-statutory"
+    },
+    {
+      "id": "ab-3-working-taper",
+      "year": 2025,
+      "province": "AB",
+      "household": {
+        "people": [
+          {
+            "ord": 50000,
+            "ded": 7535
+          }
+        ],
+        "kids": 3
+      },
+      "expected": {
+        "famNet": 42000,
+        "provBen": 1588.6
+      },
+      "rule": "ab-statutory"
+    },
+    {
+      "id": "ab-4-base-threshold",
+      "year": 2025,
+      "province": "AB",
+      "household": {
+        "people": [
+          {
+            "fd": 24467
+          }
+        ],
+        "kids": 4
+      },
+      "expected": {
+        "provBen": 3325
+      },
+      "rule": "ab-statutory"
+    },
+    {
+      "id": "ab-4-base-taper",
+      "year": 2025,
+      "province": "AB",
+      "household": {
+        "people": [
+          {
+            "fd": 25467
+          }
+        ],
+        "kids": 4
+      },
+      "expected": {
+        "provBen": 3123.9
+      },
+      "rule": "ab-statutory"
+    },
+    {
+      "id": "ab-4-working-taper",
+      "year": 2025,
+      "province": "AB",
+      "household": {
+        "people": [
+          {
+            "ord": 50000,
+            "ded": 7535
+          }
+        ],
+        "kids": 4
+      },
+      "expected": {
+        "famNet": 42000,
+        "provBen": 1705.5
+      },
+      "rule": "ab-statutory"
+    },
+    {
+      "id": "ab-6-base-threshold",
+      "year": 2025,
+      "province": "AB",
+      "household": {
+        "people": [
+          {
+            "fd": 24467
+          }
+        ],
+        "kids": 6
+      },
+      "expected": {
+        "provBen": 3325
+      },
+      "rule": "ab-statutory"
+    },
+    {
+      "id": "ab-6-base-taper",
+      "year": 2025,
+      "province": "AB",
+      "household": {
+        "people": [
+          {
+            "fd": 25467
+          }
+        ],
+        "kids": 6
+      },
+      "expected": {
+        "provBen": 3123.9
+      },
+      "rule": "ab-statutory"
+    },
+    {
+      "id": "ab-6-working-taper",
+      "year": 2025,
+      "province": "AB",
+      "household": {
+        "people": [
+          {
+            "ord": 50000,
+            "ded": 7535
+          }
+        ],
+        "kids": 6
+      },
+      "expected": {
+        "famNet": 42000,
+        "provBen": 1705.5
+      },
+      "rule": "ab-statutory"
+    },
+    {
+      "id": "ab-phase-in-floor",
+      "year": 2025,
+      "province": "AB",
+      "household": {
+        "people": [
+          {
+            "ord": 2760,
+            "fd": 0,
+            "ded": 0
+          }
+        ],
+        "kids": 1
+      },
+      "expected": {
+        "famNet": 2760,
+        "provBen": 1330
+      },
+      "rule": "ab-statutory"
+    },
+    {
+      "id": "ab-phase-in",
+      "year": 2025,
+      "province": "AB",
+      "household": {
+        "people": [
+          {
+            "ord": 3760,
+            "fd": 0,
+            "ded": 0
+          }
+        ],
+        "kids": 1
+      },
+      "expected": {
+        "famNet": 3757.4,
+        "provBen": 1480
+      },
+      "rule": "ab-statutory"
+    },
+    {
+      "id": "ab-working-cap",
+      "year": 2025,
+      "province": "AB",
+      "household": {
+        "people": [
+          {
+            "ord": 50000,
+            "fd": 0,
+            "ded": 25068
+          }
+        ],
+        "kids": 1
+      },
+      "expected": {
+        "famNet": 24467,
+        "provBen": 2011
+      },
+      "rule": "ab-statutory"
+    },
+    {
+      "id": "ab-positive-minimum",
+      "year": 2025,
+      "province": "AB",
+      "household": {
+        "people": [
+          {
+            "ord": 3000,
+            "fd": 39000,
+            "ded": 0
+          }
+        ],
+        "kids": 1
+      },
+      "expected": {
+        "famNet": 42000,
+        "provBen": 10
+      },
+      "rule": "ab-statutory"
+    },
+    {
+      "id": "ab-zero-entitlement",
+      "year": 2025,
+      "province": "AB",
+      "household": {
+        "people": [
+          {
+            "ord": 2760,
+            "fd": 39240,
+            "ded": 0
+          }
+        ],
+        "kids": 1
+      },
+      "expected": {
+        "famNet": 42000,
+        "provBen": 0
+      },
+      "rule": "ab-statutory"
+    },
+    {
+      "id": "ab-combined-minimum",
+      "year": 2025,
+      "province": "AB",
+      "household": {
+        "people": [
+          {
+            "ord": 2800,
+            "fd": 38170,
+            "ded": 0
+          }
+        ],
+        "kids": 4
+      },
+      "expected": {
+        "famNet": 40970,
+        "provBen": 12.2467
+      },
+      "rule": "ab-statutory"
+    },
+    {
+      "id": "ab-last-dollar",
+      "year": 2025,
+      "province": "AB",
+      "household": {
+        "people": [
+          {
+            "ord": 50000,
+            "fd": 11465,
+            "ded": 0
+          }
+        ],
+        "kids": 1
+      },
+      "expected": {
+        "famNet": 61000,
+        "provBen": 10
+      },
+      "rule": "ab-statutory"
+    },
+    {
+      "id": "ab-exhausted",
+      "year": 2025,
+      "province": "AB",
+      "household": {
+        "people": [
+          {
+            "ord": 50000,
+            "fd": 12465,
+            "ded": 0
+          }
+        ],
+        "kids": 1
+      },
+      "expected": {
+        "famNet": 62000,
+        "provBen": 0
+      },
+      "rule": "ab-statutory"
+    },
+    {
+      "id": "ab-no-children",
+      "year": 2025,
+      "province": "AB",
+      "household": {
+        "people": [
+          {
+            "ord": 0,
+            "fd": 0,
+            "ded": 0
+          }
+        ],
+        "kids": 0
+      },
+      "expected": {
+        "famNet": 0,
+        "provBen": 0
+      },
+      "rule": "ab-statutory"
+    },
+    {
+      "id": "itemized-2025",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "fd": 50000,
+            "rrsp": 8000,
+            "fhsa": 13000,
+            "ded": 1000
+          }
+        ],
+        "useBpa": false
+      },
+      "expected": {
+        "famNet": 28000,
+        "cash": 50000,
+        "fed": 4060,
+        "prov": 1414,
+        "payroll": 300,
+        "total": 5774,
+        "me.breakdown.netIncome": {
+          "ord": 0,
+          "cg": 0,
+          "ed": 0,
+          "nd": 0,
+          "fd": 50000,
+          "ded": 22000,
+          "enh": 0
+        },
+        "me.breakdown.rrspRoom": 0,
+        "breakdown.left": 44226
+      }
+    },
+    {
+      "id": "itemized-floor-2025",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "fd": 2000,
+            "rrsp": 5000,
+            "fhsa": 13000
+          }
+        ],
+        "useBpa": false
+      },
+      "expected": {
+        "famNet": 0,
+        "cash": 2000,
+        "fed": 0,
+        "prov": 0,
+        "payroll": 0,
+        "total": 0,
+        "breakdown.left": 2000
+      }
+    },
+    {
+      "id": "itemized-2026",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "fd": 50000,
+            "rrsp": 8000,
+            "fhsa": 13000,
+            "ded": 1000
+          }
+        ],
+        "useBpa": false
+      },
+      "expected": {
+        "famNet": 28000,
+        "cash": 50000,
+        "fed": 3920,
+        "prov": 1414,
+        "payroll": 300,
+        "total": 5634,
+        "me.breakdown.netIncome": {
+          "ord": 0,
+          "cg": 0,
+          "ed": 0,
+          "nd": 0,
+          "fd": 50000,
+          "ded": 22000,
+          "enh": 0
+        },
+        "me.breakdown.rrspRoom": 0,
+        "breakdown.left": 44366
+      }
+    },
+    {
+      "id": "itemized-floor-2026",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "fd": 2000,
+            "rrsp": 5000,
+            "fhsa": 13000
+          }
+        ],
+        "useBpa": false
+      },
+      "expected": {
+        "famNet": 0,
+        "cash": 2000,
+        "fed": 0,
+        "prov": 0,
+        "payroll": 0,
+        "total": 0,
+        "breakdown.left": 2000
+      }
+    },
+    {
+      "id": "itemized-benefits-2025",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "fd": 60000,
+            "rrsp": 8000,
+            "fhsa": 13000,
+            "ded": 1000
+          }
+        ],
+        "kids": 1,
+        "under6": 1
+      },
+      "expected": {
+        "famNet": 38000,
+        "cash": 60000,
+        "ccb": 7961.09,
+        "provBen": 796.04,
+        "benefits": 8757.13
+      }
+    },
+    {
+      "id": "itemized-benefits-2026",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "fd": 60000,
+            "rrsp": 8000,
+            "fhsa": 13000,
+            "ded": 1000
+          }
+        ],
+        "kids": 1,
+        "under6": 1
+      },
+      "expected": {
+        "famNet": 38000,
+        "cash": 60000,
+        "ccb": 8157,
+        "provBen": 869.2,
+        "benefits": 9026.2
+      }
+    },
+    {
+      "id": "itemized-two-people-active-second",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "fd": 60000,
+            "rrsp": 8000,
+            "fhsa": 13000,
+            "ded": 1000
+          },
+          {
+            "fd": 30000,
+            "rrsp": 4000,
+            "fhsa": 5000,
+            "ded": 1000
+          }
+        ],
+        "adults": 2,
+        "active": 1,
+        "useBpa": false
+      },
+      "expected": {
+        "famNet": 58000,
+        "fed": 8410,
+        "prov": 2929,
+        "payroll": 420,
+        "total": 11759,
+        "margBy.fd": 0.2555,
+        "me.ti": 20000,
+        "list.0.ti": 38000,
+        "list.1.ti": 20000,
+        "list.0.breakdown.netIncome.ded": 22000,
+        "list.1.breakdown.netIncome.ded": 10000
+      }
+    },
+    {
+      "id": "fuel-ON",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [{}],
+        "driving": {
+          "km": 20000,
+          "lPer100km": 8
+        }
+      },
+      "expected": {
+        "fuel.litres": 1600,
+        "fuel.federal": 47.7808,
+        "fuel.provincial": 144,
+        "fuel.regional": 0,
+        "fuel.regionalName": null,
+        "fuel.total": 191.7808,
+        "gross": 191.7808,
+        "total": 191.7808,
+        "breakdown.left": -191.7808
+      }
+    },
+    {
+      "id": "fuel-BC",
+      "year": 2026,
+      "province": "BC",
+      "household": {
+        "people": [{}],
+        "driving": {
+          "km": 20000,
+          "lPer100km": 8
+        }
+      },
+      "expected": {
+        "fuel.litres": 1600,
+        "fuel.federal": 47.7808,
+        "fuel.provincial": 136,
+        "fuel.regional": 296,
+        "fuel.regionalName": "TransLink",
+        "fuel.total": 479.7808,
+        "gross": 479.7808,
+        "total": 479.7808,
+        "breakdown.left": -479.7808
+      }
+    },
+    {
+      "id": "fuel-QC",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [{}],
+        "driving": {
+          "km": 20000,
+          "lPer100km": 8
+        }
+      },
+      "expected": {
+        "fuel.litres": 1600,
+        "fuel.federal": 47.7808,
+        "fuel.provincial": 307.2,
+        "fuel.regional": 48,
+        "fuel.regionalName": "ARTM",
+        "fuel.total": 402.9808,
+        "gross": 402.9808,
+        "total": 402.9808,
+        "breakdown.left": -402.9808
+      }
+    },
+    {
+      "id": "fuel-AB",
+      "year": 2026,
+      "province": "AB",
+      "household": {
+        "people": [{}],
+        "driving": {
+          "km": 20000,
+          "lPer100km": 8
+        }
+      },
+      "expected": {
+        "fuel.litres": 1600,
+        "fuel.federal": 47.7808,
+        "fuel.provincial": 155.5726,
+        "fuel.regional": 0,
+        "fuel.regionalName": null,
+        "fuel.total": 203.3534,
+        "gross": 203.3534,
+        "total": 203.3534,
+        "breakdown.left": -203.3534
+      }
+    },
+    {
+      "id": "fuel-PE",
+      "year": 2026,
+      "province": "PE",
+      "household": {
+        "people": [{}],
+        "driving": {
+          "km": 20000,
+          "lPer100km": 8
+        }
+      },
+      "expected": {
+        "fuel.litres": 1600,
+        "fuel.federal": 47.7808,
+        "fuel.provincial": 99.5051,
+        "fuel.regional": 0,
+        "fuel.regionalName": null,
+        "fuel.total": 147.2859,
+        "gross": 147.2859,
+        "total": 147.2859,
+        "breakdown.left": -147.2859
+      }
+    },
+    {
+      "id": "fuel-NL",
+      "year": 2026,
+      "province": "NL",
+      "household": {
+        "people": [{}],
+        "driving": {
+          "km": 20000,
+          "lPer100km": 8
+        }
+      },
+      "expected": {
+        "fuel.litres": 1600,
+        "fuel.federal": 47.7808,
+        "fuel.provincial": 109.8082,
+        "fuel.regional": 0,
+        "fuel.regionalName": null,
+        "fuel.total": 157.589,
+        "gross": 157.589,
+        "total": 157.589,
+        "breakdown.left": -157.589
+      }
+    },
+    {
+      "id": "fuel-sales-property-integration",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [{}],
+        "driving": {
+          "km": 20000,
+          "lPer100km": 8
+        },
+        "monthlySpending": 2000,
+        "homeValue": 100000,
+        "propertyRates": {
+          "ON": 0.01
+        }
+      },
+      "expected": {
+        "fuel.total": 191.7808,
+        "sales": 3120,
+        "property": 1000,
+        "gross": 4311.7808,
+        "total": 4311.7808,
+        "breakdown.left": -4311.7808
+      }
+    },
+    {
+      "id": "fuel-negative-distance",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [{}],
+        "driving": {
+          "km": -100,
+          "lPer100km": 8
+        }
+      },
+      "expected": {
+        "fuel.litres": 0,
+        "fuel.total": 0,
+        "total": 0
+      }
+    },
+    {
+      "id": "fuel-negative-efficiency",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [{}],
+        "driving": {
+          "km": 100,
+          "lPer100km": -8
+        }
+      },
+      "expected": {
+        "fuel.litres": 0,
+        "fuel.total": 0,
+        "total": 0
+      }
+    },
+    {
+      "id": "fuel-zero",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [{}],
+        "driving": {
+          "km": 0,
+          "lPer100km": 8
+        }
+      },
+      "expected": {
+        "fuel.litres": 0,
+        "fuel.total": 0,
+        "total": 0
+      }
+    },
+    {
+      "id": "fuel-absent",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [{}]
+      },
+      "expected": {
+        "fuel.litres": 0,
+        "fuel.total": 0,
+        "total": 0
+      }
+    },
+    {
+      "id": "fuel-no-data",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [{}],
+        "driving": {
+          "km": 20000,
+          "lPer100km": 8
+        }
+      },
+      "expected": {
+        "fuel": null,
+        "total": 0
+      }
+    },
+    {
+      "id": "display-payroll-ON",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "ord": 95000
+          },
+          {
+            "ord": 40000
+          }
+        ],
+        "adults": 2
+      },
+      "expected": {
+        "breakdown.payroll": {
+          "cpp": 6601.85,
+          "ei": 1733.48,
+          "qpip": 0,
+          "terr": 0,
+          "ohp": 1200
+        },
+        "list.0.breakdown.rrspRoom": 17100,
+        "list.1.breakdown.rrspRoom": 7200
+      }
+    },
+    {
+      "id": "display-payroll-QC",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 95000
+          },
+          {
+            "ord": 40000
+          }
+        ],
+        "adults": 2
+      },
+      "expected": {
+        "breakdown.payroll": {
+          "cpp": 7071.2,
+          "ei": 1384.67,
+          "qpip": 666.9,
+          "terr": 0,
+          "ohp": 0
+        }
+      }
+    },
+    {
+      "id": "display-payroll-NT",
+      "year": 2025,
+      "province": "NT",
+      "household": {
+        "people": [
+          {
+            "ord": 95000
+          },
+          {
+            "ord": 40000
+          }
+        ],
+        "adults": 2
+      },
+      "expected": {
+        "breakdown.payroll": {
+          "cpp": 6601.85,
+          "ei": 1733.48,
+          "qpip": 0,
+          "terr": 2700,
+          "ohp": 0
+        }
+      }
+    },
+    {
+      "id": "display-investment-parts",
+      "year": 2025,
+      "province": "BC",
+      "household": {
+        "people": [
+          {
+            "ord": 40000,
+            "cg": 20000,
+            "ed": 10000,
+            "nd": 10000,
+            "fd": 3000,
+            "ded": 1000,
+            "rrsp": 5000,
+            "fhsa": 13000
+          }
+        ]
+      },
+      "expected": {
+        "me.breakdown.netIncome": {
+          "ord": 40000,
+          "cg": 10000,
+          "ed": 13800,
+          "nd": 11500,
+          "fd": 3000,
+          "ded": 19000,
+          "enh": 365
+        },
+        "me.ti": 58935,
+        "cash": 83000,
+        "hasInv": true,
+        "me.breakdown.rrspRoom": 7200,
+        "me.breakdown.quebecAbatement": 0
+      }
+    },
+    {
+      "id": "display-capital-loss",
+      "year": 2025,
+      "province": "BC",
+      "household": {
+        "people": [
+          {
+            "ord": 40000,
+            "cg": -20000
+          }
+        ]
+      },
+      "expected": {
+        "me.breakdown.netIncome.cg": 0,
+        "me.ti": 39635,
+        "cash": 20000
+      }
+    },
+    {
+      "id": "display-room-rounding",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "ord": 12345
+          }
+        ]
+      },
+      "expected": {
+        "me.breakdown.rrspRoom": 2222
+      }
+    },
+    {
+      "id": "display-room-cap",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "ord": 500000
+          }
+        ]
+      },
+      "expected": {
+        "me.breakdown.rrspRoom": 32490
+      }
+    },
+    {
+      "id": "display-qc-abatement-foreign-tax",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "fd": 50000
+          }
+        ],
+        "useBpa": false,
+        "whRate": 0.5
+      },
+      "expected": {
+        "me.fedBasic": 7250,
+        "me.breakdown.quebecAbatement": 1196.25,
+        "me.breakdown.ftc": 13053.75,
+        "me.breakdown.whUncredited": 11946.25,
+        "breakdown.ftc": 13053.75,
+        "fed": 0,
+        "prov": 0
+      }
+    },
+    {
+      "id": "display-no-income-money-left",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [{}],
+        "kids": 2,
+        "under6": 1
+      },
+      "expected": {
+        "ccb": 14745,
+        "provBen": 3453.84,
+        "total": -18198.84,
+        "breakdown.left": 18198.84,
+        "hasInv": false
+      }
+    },
+    {
+      "id": "display-two-person-surtax",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "fd": 250000
+          },
+          {
+            "fd": 220000
+          }
+        ],
+        "adults": 2,
+        "useBpa": false
+      },
+      "expected": {
+        "breakdown.surtax": 18138.3481
+      }
+    },
+    {
+      "id": "display-two-person-reductions",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "ord": 18000
+          },
+          {
+            "ord": 16000
+          }
+        ],
+        "adults": 2,
+        "spouse": false
+      },
+      "expected": {
+        "breakdown.provReductions": 320.2659
+      }
+    },
+    {
+      "id": "display-lift-reduction",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "ord": 30000
+          }
+        ]
+      },
+      "expected": {
+        "breakdown.provReductions": 766.8046,
+        "me.onRed": 0,
+        "me.lift": 766.8046
+      }
+    },
+    {
+      "id": "display-bc-reduction",
+      "year": 2025,
+      "province": "BC",
+      "household": {
+        "people": [
+          {
+            "ord": 30000
+          }
+        ]
+      },
+      "expected": {
+        "breakdown.provReductions": 394.146,
+        "me.bcRed": 394.146
+      }
+    },
+    {
+      "id": "display-bracket-lines",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "fd": 60000
+          }
+        ],
+        "useBpa": false
+      },
+      "expected": {
+        "me.f.lines.0.part": 57375,
+        "me.f.lines.0.t": 8319.375,
+        "me.f.lines.1.part": 2625,
+        "me.f.lines.1.t": 538.125,
+        "me.f.lines.2.part": 0,
+        "me.f.lines.2.t": 0,
+        "me.pr.lines.0.part": 52886,
+        "me.pr.lines.0.t": 2670.743,
+        "me.pr.lines.1.part": 7114,
+        "me.pr.lines.1.t": 650.931
+      }
+    }
+  ],
+  "ratePeriodCases": [
+    {
+      "id": "fuel-periods-common-year",
+      "year": 2026,
+      "rates": [
+        {
+          "from": "2026-01-01",
+          "rate": 0.1
+        },
+        {
+          "from": "2026-04-20",
+          "rate": 0
+        }
+      ],
+      "expected": {
+        "average": 0.0299,
+        "periods": [
+          {
+            "from": "2026-01-01",
+            "to": "2026-04-20",
+            "rate": 0.1,
+            "share": 0.2986
+          },
+          {
+            "from": "2026-04-20",
+            "to": "2027-01-01",
+            "rate": 0,
+            "share": 0.7014
+          }
+        ]
+      }
+    },
+    {
+      "id": "fuel-periods-leap-year",
+      "year": 2028,
+      "rates": [
+        {
+          "from": "2028-01-01",
+          "rate": 0.2
+        },
+        {
+          "from": "2028-03-01",
+          "rate": 0.1
+        }
+      ],
+      "expected": {
+        "average": 0.1164,
+        "periods": [
+          {
+            "from": "2028-01-01",
+            "to": "2028-03-01",
+            "rate": 0.2,
+            "share": 0.1639
+          },
+          {
+            "from": "2028-03-01",
+            "to": "2029-01-01",
+            "rate": 0.1,
+            "share": 0.8361
+          }
+        ]
+      }
+    },
+    {
+      "id": "fuel-periods-constant",
+      "year": 2026,
+      "rates": 0.15,
+      "expected": {
+        "average": 0.15,
+        "periods": [
+          {
+            "from": "2026-01-01",
+            "to": "2027-01-01",
+            "rate": 0.15,
+            "share": 1
+          }
+        ]
+      }
+    }
+  ]
+}

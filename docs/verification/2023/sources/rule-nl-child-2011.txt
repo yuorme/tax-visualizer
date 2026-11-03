@@ -1,0 +1,59 @@
+Title: NLR 60/11 child benefit reduction rates
+URL: https://www.assembly.nl.ca/Legislation/sr/Annualregs/2011/nr110060.htm
+Fetched: 2026-11-02
+SHA-256 of the original: d56c01886feab721ae691b8855f2d30b9f41f51e57e6908c9c4c4df3cf6e1bfb
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+NEWFOUNDLAND AND LABRADOR
+REGULATION 60/11
+
+Child and Parental Benefits Regulations (Amendment)
+under the
+Income Tax Act, 2000
+(O.C. 2011-184)
+
+(Filed June 21, 2011)
+
+Under the authority of section 68 of the Income Tax Act, 2000, the Lieutenant-Governor in Council makes the following regulations.
+
+Dated at St. John's, June 20, 2011.
+
+Robert Thompson
+Clerk of the Executive Council
+
+REGULATIONS
+
+Analysis
+
+1. S.7 R&S
+Benefit reduction calculation
+
+2. Commencement
+
+NLR 43/09
+as amended
+
+1. Section 7 of the Child and Parental Benefits Regulations is repealed and the following substituted:
+
+Benefit reduction calculation
+
+7. Where the adjusted income of an eligible individual for a base taxation year, in relation to a month
+
+(a) is less than or equal to $17,397, the benefit reduction "E" shall equal zero; and
+
+(b) is greater than $17,397, the benefit reduction "E" shall be calculated by multiplying the difference between the adjusted income and $17,397 by
+
+(i) 5.07% where there is one qualified dependent,
+
+(ii) 10.45% where there are 2 qualified dependents,
+
+(iii) 16.22% where there are 3 qualified dependents, and
+
+(iv) the total of 16.22%, and the product obtained by multiplying the number of qualified dependents in excess of 3 by 6.19%.
+
+Commencement
+
+2. This regulation comes into force on July 1, 2011.
+
+©Queen's Printer

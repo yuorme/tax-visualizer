@@ -1,0 +1,139 @@
+Title: 2019 Bill 20 Alberta child and family benefit enactment
+URL: https://docs.assembly.ab.ca/LADDAR_files/docs/bills/bill/legislature_30/session_1/20190521_bill-020.pdf
+Fetched: 2026-11-02
+SHA-256 of the original: a937ec935b08642d3f06e437af4001116570a2d628e03b895c4a605eb0dcf2ce
+Publication date modified: 2019-10-28
+PDF pages: 70,72,74,76 of 188
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 70 of 188 ---
+
+35
+(23) The following is added before section 31:
+Child and family benefit
+30.2(1) An eligible individual is deemed to have made an
+overpayment in a month on account of the eligible individual’s
+liability under this Act for the base taxation year in relation to
+that month if
+(a) the eligible individual has filed a return of income for
+the base taxation year, and
+(b) the eligible individual was resident in Alberta at the
+beginning of the month and on the last day of the
+immediately preceding month.
+(2) Subject to subsection (4), the amount that an eligible
+individual is deemed to have overpaid in a month is determined
+by the formula
+A + B
+where
+A is the positive amount, if any, determined by the formula
+(C - D)
+12
+where
+C is the lesser of
+(a) if the person was an eligible individual at the
+beginning of the month in respect of one or more
+qualified dependants, the total of
+(i) $681 for the first qualified dependant,
+
+--- PDF page 72 of 188 ---
+
+36
+(ii) $620 for the 2nd qualified dependant,
+(iii) $371 for the 3rd qualified dependant, and
+(iv) $123 for the 4th qualified dependant,
+and
+(b) the amount, if any, by which the eligible
+individual’s adjusted earned income for the base
+taxation year in relation to the month exceeds
+$2760, multiplied by 15%;
+D is the amount, if any, by which the eligible
+individual’s adjusted income for the base taxation
+year in relation to the month exceeds $41 000,
+multiplied by
+(a) 3.40% where the eligible individual has one
+qualified dependant,
+(b) 6.49% where the eligible individual has 2
+qualified dependants,
+(c) 8.34% where the eligible individual has 3
+qualified dependants, and
+(d) 8.95% where the eligible individual has 4 or more
+qualified dependants;
+B is the positive amount, if any, determined by the formula
+(E - F)
+12
+where
+E is, if the person was an eligible individual at the
+beginning of the month in respect of one or more
+qualified dependants, the total of
+(a) $1330 for the first qualified dependant,
+(b) $665 for the 2nd qualified dependant,
+
+--- PDF page 74 of 188 ---
+
+37
+(c) $665 for the 3rd qualified dependant, and
+(d) $665 for the 4th qualified dependant;
+F is the amount, if any, by which the eligible
+individual’s adjusted income for the base taxation
+year in relation to the month exceeds $24 467,
+multiplied by
+(a) 8.05% where the eligible individual has one
+qualified dependant,
+(b) 12.07% where the eligible individual has 2
+qualified dependants,
+(c) 16.09% where the eligible individual has 3
+qualified dependants, and
+(d) 20.11% where the eligible individual has 4 or
+more qualified dependants.
+(3) Notwithstanding subsection (2), if an eligible individual is a
+shared-custody parent in respect of one or more qualified
+dependants at the beginning of a month, the overpayment
+deemed by subsection (2) to have arisen during that month is
+equal to the amount determined by the formula
+(A + B)
+2
+where
+A is the amount determined under subsection (2) calculated
+without reference to this subsection;
+B is the amount determined under subsection (2) calculated
+without reference to this subsection and subparagraph
+(b)(ii) of the definition of “eligible individual” in
+section 122.6 of the federal Act.
+(4) If the total amount that an eligible individual is deemed to
+have overpaid during a 12-month period from July of one year
+to June of the next year would be, except for this subsection,
+greater than $0 and less than $10, the total amount that the
+
+--- PDF page 76 of 188 ---
+
+38
+eligible individual is deemed to have overpaid during that
+12-month period is $10.
+Repayment resulting from death
+30.3(1) Subject to subsection (2), no obligation to repay all or
+a portion of a refund of overpayment made under section 30.2
+arises as a result of the death of a person who, but for the
+person’s death, would be an eligible individual or qualified
+dependant for the purposes of that overpayment.
+(2) Subsection (1) does not apply with respect to a refund of
+overpayment or any portion thereof if the refund or portion of
+the refund arose as a result of the provision of false or
+misleading information.
+Transitional
+30.4 In respect of any month that relates to a base taxation
+year before 2019, sections 30 and 30.1, as they read at the
+beginning of that month, continue to apply notwithstanding
+their repeal, irrespective of whether a return for the base
+taxation year is filed prior to July 1, 2020.
+(24) Section 32(1) is amended by striking out “Despite section
+30” and substituting “Despite section 30.2”.
+(25) Section 33(1) is repealed and the following is substituted:
+Payment of refund
+33(1) The Provincial Minister may, based on considerations
+of administrative efficiency, refund an overpayment within or
+after the month in which the overpayment is deemed to arise
+or before the month in which the overpayment is expected to
+be deemed to arise.
+(26) Section 34(1)(d) is amended by striking out “section 30 or
+30.1” and substituting “section 30.2 or 30.4”.
