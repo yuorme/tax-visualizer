@@ -58,7 +58,15 @@ function inspect(target, list) {
   if (tree.locked !== undefined) throw new Error("Worktree is locked; its owner must stop the agent and unlock it.");
   if (fs.realpathSync(target) !== target) throw new Error("Use the worktree's canonical path.");
   if (activeDirectories().some(dir => inside(target, dir)))
-    throw new Error("A running process is using this worktree.");
+    throw new Error("A running process has its cwd inside this worktree.");
+  // Git status and worktree remove can both overlook edits hidden by these index flags.
+  const flagged = git(target, "ls-files", "-v", "-z")
+    .split("\0")
+    .filter(entry => /^[a-zS] /.test(entry));
+  if (flagged.length)
+    throw new Error(
+      `Contains assume-unchanged or skip-worktree entries: ${flagged.map(entry => entry.slice(2)).join(", ")}`,
+    );
   if (git(target, "status", "--porcelain=v1", "--untracked-files=all"))
     throw new Error("Contains tracked changes or untracked files.");
   const ignored = git(target, "ls-files", "--others", "--ignored", "--exclude-standard", "--directory", "-z")

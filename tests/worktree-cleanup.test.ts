@@ -93,6 +93,21 @@ test("cleanup preserves local-only commits even when a local branch retains them
   assert.ok(fs.existsSync(f.worktree));
 });
 
+for (const flags of [["--assume-unchanged"], ["--skip-worktree"], ["--assume-unchanged", "--skip-worktree"]]) {
+  test(`cleanup preserves hidden edits with ${flags.join(" and ")}`, t => {
+    const f = fixture(t);
+    for (const flag of flags) f.git(f.worktree, "update-index", flag, "source.txt");
+    const indexBefore = f.git(f.worktree, "ls-files", "-v", "--", "source.txt");
+    fs.writeFileSync(path.join(f.worktree, "source.txt"), "hidden work to preserve\n");
+    assert.equal(f.git(f.worktree, "status", "--porcelain"), "", "normal status hides this edit");
+    const result = f.run(["--apply", f.worktree]);
+    assert.equal(result.status, 1, result.output);
+    assert.match(result.output, /assume-unchanged or skip-worktree/);
+    assert.equal(fs.readFileSync(path.join(f.worktree, "source.txt"), "utf8"), "hidden work to preserve\n");
+    assert.equal(f.git(f.worktree, "ls-files", "-v", "--", "source.txt"), indexBefore, "index flags stay intact");
+  });
+}
+
 test("cleanup fetches and prunes stale origin branches before deciding", t => {
   const f = fixture(t);
   fs.writeFileSync(path.join(f.worktree, "source.txt"), "feature\n");

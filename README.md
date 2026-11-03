@@ -42,8 +42,9 @@ open dist/index.html
 
 Each isolated agent checkout can install about 150 MB of dependencies. A pushed branch or PR retains the work;
 the checkout is disposable once its agent has reported and stopped, even while the PR awaits human merge.
-The orchestrator locks active worktrees and unlocks only its own completed ones. Process inspection is an extra
-guard: an idle agent may still plan to use a checkout, so a missing process alone does not establish completion.
+The orchestrator locks active worktrees and unlocks only its own completed ones. These locks and the owner's
+confirmation that the task stopped protect active work. Process inspection checks only working directories:
+an idle agent or a preview launched from the repo root may not be detected, so this check cannot establish completion.
 
 Run from another checkout with Node 26 and `lsof` installed (macOS or Linux):
 
@@ -54,11 +55,12 @@ npm run worktree:cleanup -- --apply /absolute/path/to/finished-worktree
 ```
 
 The command fetches origin, then requires HEAD to be reachable from an origin branch. It keeps the main/current
-checkout, locked worktrees, worktrees with running processes or nested registered worktrees, local-only commits,
-tracked changes, untracked files and unknown ignored files. Only ignored `node_modules`, `dist`, `coverage`,
-`test-results`, `playwright-report` and `.DS_Store` metadata files are disposable. A failed fetch or process check
-stops cleanup. It uses `git worktree remove` without force, preserves branch refs, and performs a dry run unless
-`--apply` is given.
+checkout, locked worktrees, worktrees containing process working directories or nested registered worktrees,
+local-only commits, tracked changes, untracked files and unknown ignored files. It also refuses `assume-unchanged`
+and `skip-worktree` index flags, which can hide edits from Git's status and removal checks, leaving the flags intact.
+Only ignored `node_modules`, `dist`, `coverage`, `test-results`, `playwright-report` and `.DS_Store` metadata files
+are disposable. A failed fetch or process check stops cleanup. It uses `git worktree remove` without force,
+preserves branch refs, and performs a dry run unless `--apply` is given.
 Use explicit paths owned by the completed task; a broad directory sweep can disrupt another session.
 
 Keep dirty or unpushed worktrees until their work is preserved. For paused work, once the owner confirms all
