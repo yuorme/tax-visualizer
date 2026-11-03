@@ -14,12 +14,15 @@ interface CareState {
   monthly: NumericDraft;
   mode: "automatic" | "manual";
   children: ChildDraft[];
+  activeChildren: number;
   earnings: NumericDraft[];
+  earningsOverridden: boolean[];
   claims: NumericDraft[];
+  touched: string[];
 }
 const child = (): ChildDraft => ({
   age: null,
-  expenses: 0,
+  expenses: null,
   disabilityTaxCredit: false,
   infirm: false,
   qcEligibleExpenses: null,
@@ -42,7 +45,7 @@ const attrText = (v: string) => v.replace(/&/g, "&amp;").replace(/"/g, "&quot;")
 const info = (label: string, tip: string) =>
   `<button type="button" class="info" aria-label="About ${label}" data-tip="${attrText(tip)}">i</button>`;
 const field = (id: string, label: string, tip: string, value: NumericDraft, currency = true) =>
-  `<div class="field"><div class="lbl-row"><label class="lbl" for="${id}">${label}</label>${info(label, tip)}</div><div class="money sm">${currency ? "<span>$</span>" : ""}<input id="${id}" inputmode="decimal" autocomplete="off" value="${attrText(text(value))}">${currency ? '<span class="per">a year</span>' : ""}</div></div>`;
+  `<div class="field"><div class="lbl-row"><label class="lbl" for="${id}">${label}</label>${info(label, tip)}</div><div class="money sm">${currency ? "<span>$</span>" : ""}<input id="${id}" inputmode="${currency ? "decimal" : "numeric"}" autocomplete="off" value="${attrText(text(value))}">${currency ? '<span class="per">a year</span>' : ""}</div></div>`;
 const check = (id: string, label: string, tip: string, on: boolean) =>
   `<div class="care-check"><label class="check" for="${id}"><input id="${id}" type="checkbox" ${on ? "checked" : ""}>${label}</label>${info(label, tip)}</div>`;
 
@@ -77,24 +80,158 @@ export const careStatusText = (status: string) =>
     unsupported: "Not calculated",
   })[status] ?? "Check details";
 
-/** Owns form state and unit conversion only; the engine validates claims and computes every tax amount. */
-export class ChildcareEditor {
-  state: CareState = { monthly: 0, mode: "automatic", children: [], earnings: [null, null], claims: [null, null] };
-  private adults = 1;
-  private initialKids = 0;
+/** Draft state and unit conversion only. Tax eligibility and calculations stay in the engine. */
+export class ChildcareModel {
+  state: CareState = {
+    monthly: 0,
+    mode: "automatic",
+    children: [],
+    activeChildren: 0,
+    earnings: [null, null],
+    earningsOverridden: [false, false],
+    claims: [null, null],
+    touched: [],
+  };
+  protected incomes: number[] = [0];
+  protected kids = 0;
+
+  configure(incomes: number[], kids: number) {
+    this.incomes = incomes;
+    this.kids = kids;
+    if (this.state.activeChildren !== kids) this.setChildCount(kids);
+  }
+
+  setChildCount(count: number) {
+    this.kids = count;
+    this.state.activeChildren = count;
+    while (this.state.children.length < count) this.state.children.push(child());
+  }
+
+  removeChild(index: number) {
+    this.state.children.splice(index, 1);
+    this.setChildCount(Math.max(0, this.state.activeChildren - 1));
+    this.state.touched = this.state.touched.filter(id => !/^care-(age|expenses|qc)-/.test(id));
+  }
+
+  setMonthly(raw: string) {
+    this.state.monthly = parse(raw);
+    this.touch("childcare-monthly");
+    if (this.kids > 0 && !this.state.activeChildren) this.setChildCount(this.kids);
+  }
+
+  touch(id: string) {
+    if (!this.state.touched.includes(id)) this.state.touched.push(id);
+  }
+
+  setNumber(id: string, raw: string) {
+    const value = parse(raw);
+    const childField = /^care-(age|expenses|qc)-(\d+)$/.exec(id);
+    if (childField) {
+      const key = childField[1] === "qc" ? "qcEligibleExpenses" : childField[1] === "age" ? "age" : "expenses";
+      this.state.children[Number(childField[2])][key] = value;
+    } else {
+      const adult = /^care-(earnings|claim)-(\d+)$/.exec(id);
+      if (adult) this.state[adult[1] === "earnings" ? "earnings" : "claims"][Number(adult[2])] = value;
+    }
+    this.touch(id);
+  }
+
+  overrideEarnings(index: number, on: boolean) {
+    if (on && this.state.earnings[index] === null && !this.state.touched.includes(`care-earnings-${index}`))
+      this.state.earnings[index] = this.incomes[index];
+    this.state.earningsOverridden[index] = on;
+  }
+
+  get earnings() {
+    return this.incomes.map((income, i) => (this.state.earningsOverridden[i] ? this.state.earnings[i] : income));
+  }
+  get children() {
+    return this.state.children.slice(0, this.state.activeChildren);
+  }
+  get enabled() {
+    return this.kids > 0 && this.state.activeChildren > 0 && this.state.monthly !== 0;
+  }
+  get detailedAges() {
+    return (
+      this.enabled ||
+      (this.kids > 0 && this.children.some((c, i) => c.age !== null || this.state.touched.includes(`care-age-${i}`)))
+    );
+  }
+
+  restore(value: unknown) {
+    if (!value || typeof value !== "object") return;
+    const s = value as Partial<CareState>;
+    if ("monthly" in s) this.state.monthly = restoreNumber(s.monthly);
+    this.state.mode = s.mode === "manual" ? "manual" : "automatic";
+    for (const key of ["earnings", "claims"] as const)
+      if (Array.isArray(s[key])) this.state[key] = [0, 1].map(i => restoreNumber(s[key]?.[i]));
+    // Earlier saved explicit earnings remain overrides; old missing earnings now follow ordinary income.
+    this.state.earningsOverridden = [0, 1].map(i =>
+      Array.isArray(s.earningsOverridden) ? s.earningsOverridden[i] === true : this.state.earnings[i] !== null,
+    );
+    if (Array.isArray(s.children))
+      this.state.children = s.children.slice(0, 6).map(c => ({
+        age: restoreNumber(c?.age),
+        expenses: restoreNumber(c?.expenses),
+        disabilityTaxCredit: c?.disabilityTaxCredit === true,
+        infirm: c?.infirm === true,
+        qcEligibleExpenses: restoreNumber(c?.qcEligibleExpenses),
+        qcSevereImpairment: c?.qcSevereImpairment === true,
+      }));
+    this.state.activeChildren =
+      amount(s.activeChildren) && Number.isInteger(s.activeChildren)
+        ? Math.min(6, s.activeChildren)
+        : this.state.children.length;
+    while (this.state.children.length < this.state.activeChildren) this.state.children.push(child());
+    this.state.touched = Array.isArray(s.touched) ? s.touched.filter(id => typeof id === "string") : [];
+  }
+
+  input(): ChildcareInput | undefined {
+    if (!this.enabled) return undefined;
+    return this.profileInput();
+  }
+
+  /** Retained ages still describe benefit eligibility when paid care is off; never use this to apply relief. */
+  profileInput(): ChildcareInput | undefined {
+    if (this.kids === 0 || this.state.activeChildren === 0) return undefined;
+    // No paid care is active at zero monthly cost. Project zero expenses for age-count derivation only,
+    // retaining original expense drafts for when paid care is restored. input() never returns this projection.
+    const ageOnly = this.state.monthly === 0;
+    const children: ChildcareChild[] | undefined =
+      monthlyAmount(this.state.monthly) && this.children.every(c => wholeAge(c.age) && (ageOnly || amount(c.expenses)))
+        ? this.children.map(c => ({
+            ...c,
+            age: c.age as number,
+            expenses: ageOnly ? 0 : (c.expenses as number),
+            qcEligibleExpenses: amount(c.qcEligibleExpenses) ? c.qcEligibleExpenses : undefined,
+          }))
+        : undefined;
+    const claims = this.state.claims.slice(0, this.incomes.length);
+    return {
+      mode: this.state.mode,
+      children,
+      declaredAnnualExpenses: monthlyAmount(this.state.monthly) ? this.state.monthly * 12 : undefined,
+      earnedIncome: this.earnings.map(v => (amount(v) ? v : null)),
+      manualClaims: claims.every(amount) ? (claims as number[]) : undefined,
+    };
+  }
+}
+
+export class ChildcareEditor extends ChildcareModel {
   private fieldsKey = "";
   private year = 0;
+  private homeQuebec = false;
   private readonly monthly = document.getElementById("childcare-monthly") as HTMLInputElement;
   private readonly panel = document.getElementById("childcare-details") as HTMLDetailsElement;
   private readonly fields = document.getElementById("childcare-fields") as HTMLElement;
 
-  constructor(private readonly changed: (removedLastChild?: boolean) => void) {
+  constructor(private readonly changed: (childCount?: number) => void) {
+    super();
     this.monthly.addEventListener("input", () => {
-      this.state.monthly = parse(this.monthly.value);
-      if (monthlyAmount(this.state.monthly) && this.state.monthly > 0 && !this.state.children.length) {
-        this.state.children = Array.from({ length: Math.max(1, this.initialKids) }, child);
-        this.panel.open = true;
-      }
+      const wasEnabled = this.enabled;
+      this.setMonthly(this.monthly.value);
+      if (!wasEnabled && this.enabled) this.panel.open = true;
+      if (wasEnabled && !this.enabled) this.panel.open = false;
       this.changed();
     });
     this.monthly.addEventListener("blur", () => {
@@ -103,32 +240,16 @@ export class ChildcareEditor {
     this.fields.addEventListener("input", e => {
       const el = e.target;
       if (!(el instanceof HTMLInputElement)) return;
-      const match = /^care-(age|expenses|dtc|infirm|qc|severe)-(\d+)$/.exec(el.id);
-      if (match) {
-        const c = this.state.children[Number(match[2])];
-        switch (match[1]) {
-          case "age":
-            c.age = parse(el.value);
-            break;
-          case "expenses":
-            c.expenses = parse(el.value);
-            break;
-          case "qc":
-            c.qcEligibleExpenses = parse(el.value);
-            break;
-          case "dtc":
-            c.disabilityTaxCredit = el.checked;
-            break;
-          case "infirm":
-            c.infirm = el.checked;
-            break;
-          case "severe":
-            c.qcSevereImpairment = el.checked;
-            break;
-        }
-      } else {
-        const adult = /^care-(earnings|claim)-(\d+)$/.exec(el.id);
-        if (adult) this.state[adult[1] === "earnings" ? "earnings" : "claims"][Number(adult[2])] = parse(el.value);
+      if (el.type !== "checkbox") this.setNumber(el.id, el.value);
+      else {
+        const toggle = /^care-(dtc|infirm|severe|override)-(\d+)$/.exec(el.id);
+        if (!toggle) return;
+        const i = Number(toggle[2]);
+        if (toggle[1] === "override") this.overrideEarnings(i, el.checked);
+        else
+          this.state.children[i][
+            toggle[1] === "dtc" ? "disabilityTaxCredit" : toggle[1] === "infirm" ? "infirm" : "qcSevereImpairment"
+          ] = el.checked;
       }
       this.changed();
     });
@@ -141,151 +262,124 @@ export class ChildcareEditor {
     this.fields.addEventListener("click", e => {
       const button = e.target instanceof Element ? e.target.closest<HTMLButtonElement>("button[data-care]") : null;
       if (!button) return;
-      if (button.dataset.care === "add") this.state.children.push(child());
-      else if (button.dataset.care === "remove") this.state.children.splice(Number(button.dataset.index), 1);
+      if (button.dataset.care === "add") this.setChildCount(Math.min(6, this.state.activeChildren + 1));
+      else if (button.dataset.care === "remove") this.removeChild(Number(button.dataset.index));
       this.fieldsKey = "";
-      this.changed(button.dataset.care === "remove" && this.state.children.length === 0);
+      this.changed(this.state.activeChildren);
     });
     this.fields.addEventListener("focusout", e => {
-      if (e.target instanceof HTMLInputElement && e.target.type !== "checkbox") {
-        const n = parse(e.target.value);
-        e.target.value = text(n);
-      }
+      if (e.target instanceof HTMLInputElement && e.target.type !== "checkbox")
+        e.target.value = text(parse(e.target.value));
     });
   }
 
-  restore(value: unknown) {
-    if (!value || typeof value !== "object") return;
-    const s = value as Partial<CareState>;
-    if ("monthly" in s) this.state.monthly = restoreNumber(s.monthly);
-    this.state.mode = s.mode === "manual" ? "manual" : "automatic";
-    for (const key of ["earnings", "claims"] as const)
-      if (Array.isArray(s[key])) this.state[key] = [0, 1].map(i => restoreNumber(s[key]?.[i]));
-    if (Array.isArray(s.children))
-      this.state.children = s.children.slice(0, 6).map(c => ({
-        age: restoreNumber(c?.age),
-        expenses: restoreNumber(c?.expenses),
-        disabilityTaxCredit: c?.disabilityTaxCredit === true,
-        infirm: c?.infirm === true,
-        qcEligibleExpenses: restoreNumber(c?.qcEligibleExpenses),
-        qcSevereImpairment: c?.qcSevereImpairment === true,
-      }));
+  override restore(value: unknown) {
+    super.restore(value);
     this.monthly.value = text(this.state.monthly);
   }
 
-  get enabled() {
-    return this.state.monthly !== 0 || this.state.children.length > 0;
-  }
-  get detailedAges() {
-    return this.state.children.length > 0;
-  }
-
-  configure(adults: number, kids: number, year: number) {
-    this.adults = adults;
-    this.initialKids = kids;
+  configureView(incomes: number[], kids: number, year: number, homeQuebec: boolean) {
+    this.configure(incomes, kids);
     this.year = year;
+    this.homeQuebec = homeQuebec;
   }
 
-  input(): ChildcareInput | undefined {
-    if (!this.enabled) return undefined;
-    const children: ChildcareChild[] | undefined =
-      monthlyAmount(this.state.monthly) && this.state.children.every(c => wholeAge(c.age) && amount(c.expenses))
-        ? this.state.children.map(c => ({
-            ...c,
-            age: c.age as number,
-            expenses: c.expenses as number,
-            qcEligibleExpenses: amount(c.qcEligibleExpenses) ? c.qcEligibleExpenses : undefined,
-          }))
-        : undefined;
-    return {
-      mode: this.state.mode,
-      children,
-      declaredAnnualExpenses: monthlyAmount(this.state.monthly) ? this.state.monthly * 12 : undefined,
-      earnedIncome: this.state.earnings.slice(0, this.adults).map(v => (amount(v) ? v : null)),
-      manualClaims: this.state.claims.slice(0, this.adults).every(amount)
-        ? (this.state.claims.slice(0, this.adults) as number[])
-        : undefined,
-    };
+  private childRow(c: ChildDraft, i: number) {
+    if (!this.enabled)
+      return `<div class="care-child"><div class="care-child-row care-age-only"><b class="care-name">Child ${i + 1}</b>${field(`care-age-${i}`, "Age", `Age on December 31, ${this.year}. These retained ages determine benefit eligibility even without paid childcare.`, c.age, false)}<button type="button" class="linkbtn care-remove" data-care="remove" data-index="${i}" aria-label="Remove child ${i + 1}">×</button></div></div>`;
+    const qc = this.homeQuebec
+      ? `<details class="care-quebec" id="care-quebec-${i}"><summary>Quebec eligibility</summary><div class="care-grid">${field(`care-qc-${i}`, "Quebec-eligible portion", "The part of this child's annual expenses eligible for Quebec's credit. Leave blank to exclude an unverified credit; enter zero when no expenses qualify. Subsidized base fees are excluded, but eligible extras may qualify. Check eligible-activity rules; advance credit payments are not fee subsidies.", c.qcEligibleExpenses)}</div>${check(`care-severe-${i}`, "Quebec severe and prolonged impairment", "Select only if the child meets Quebec's severe and prolonged impairment criteria for the higher childcare limit. Federal disability tax credit eligibility is not a substitute.", c.qcSevereImpairment)}</details>`
+      : "";
+    return `<div class="care-child"><div class="care-child-row"><b class="care-name">Child ${i + 1}</b>${field(`care-age-${i}`, "Age", `Age on December 31, ${this.year}. Include each child or dependent, even with no childcare expenses. Benefit eligibility is determined separately from these ages.`, c.age, false)}${field(`care-expenses-${i}`, "Annual care", "Eligible annual expenses after fee subsidies and reimbursements. Across all children, annual amounts must match twelve times the monthly household amount. Enter zero for children without expenses. Do not subtract advance tax-credit payments.", c.expenses)}<button type="button" class="linkbtn care-remove" data-care="remove" data-index="${i}" aria-label="Remove child ${i + 1}">×</button></div><details class="care-exceptions" id="care-exceptions-${i}"><summary>Eligibility & exceptions</summary><div class="care-checks">${check(`care-dtc-${i}`, "Federal disability tax credit eligible", "This can increase the federal childcare limit. It is distinct from Quebec severe and prolonged impairment eligibility. This checkbox only informs childcare limits; the general disability tax credit itself is not modelled.", c.disabilityTaxCredit)}${check(`care-infirm-${i}`, "Dependent child with an infirmity", "Select when this dependent child's infirmity permits childcare eligibility beyond the ordinary age limit. This does not by itself establish eligibility for the higher disability limit.", c.infirm)}</div></details>${qc}</div>`;
+  }
+
+  private adjustments() {
+    const adults = this.incomes
+      .map((income, i) =>
+        this.state.mode === "manual"
+          ? field(
+              `care-claim-${i}`,
+              `${i ? "Partner's" : "Your"} verified claim`,
+              "Annual childcare deduction verified for this adult. Include zero when this adult has no claim. Manual claims replace automatic deductions. Do not also include this amount in Other deductions.",
+              this.state.claims[i],
+            )
+          : `<div class="field">${check(`care-override-${i}`, `Adjust ${i ? "partner's" : "your"} eligible earnings`, `Defaults to $${text(income)} a year from ${i ? "your partner's" : "your"} employment and other income, and follows changes to that input. This assumes the whole amount is eligible earned income; pensions and investment income generally do not qualify. Adjust if needed, including an explicit zero. The lower-net-income spouse usually claims, even with zero earnings.`, this.state.earningsOverridden[i])}${this.state.earningsOverridden[i] ? field(`care-earnings-${i}`, `${i ? "Partner's" : "Your"} eligible earnings`, "Enter the annual earned income eligible for the childcare deduction. This override stays fixed when ordinary income changes. Uncheck Adjust to follow employment and other income again.", this.state.earnings[i]) : ""}</div>`,
+      )
+      .join("");
+    return `<details id="care-adjustments" class="care-adjustments"><summary>Adjust earnings or claims</summary><div class="care-grid"><div class="field"><div class="lbl-row"><label class="lbl" for="care-mode">Claim method</label>${info("Claim method", "Automatic claims assume employment and other income is eligible earned income unless you adjust it below. For study, incapacity, separation or other exceptions, enter verified annual deductions per adult. You are responsible for checking manual claim eligibility.")}</div><select id="care-mode" class="prov-select"><option value="automatic" ${this.state.mode === "automatic" ? "selected" : ""}>Automatic</option><option value="manual" ${this.state.mode === "manual" ? "selected" : ""}>Verified manual claims</option></select></div>${adults}</div></details>`;
   }
 
   render(result: Result) {
-    this.panel.hidden = !this.enabled;
-    const key = `${this.state.children.length}/${this.adults}/${this.state.mode}/${this.year}`;
+    (document.getElementById("childcare-costs") as HTMLElement).hidden = this.kids === 0;
+    this.panel.hidden = !this.detailedAges;
+    const summary = this.panel.querySelector("summary");
+    if (summary) summary.textContent = this.enabled ? "Childcare details" : "Children's ages";
+    const key = `${this.enabled}/${this.state.activeChildren}/${this.incomes.join(",")}/${this.state.mode}/${this.state.earningsOverridden.join(",")}/${this.year}/${this.homeQuebec}`;
     if (key !== this.fieldsKey) {
       this.fieldsKey = key;
+      const openIds = new Set([...this.fields.querySelectorAll<HTMLDetailsElement>("details[open]")].map(el => el.id));
       this.fields.innerHTML =
-        `<div class="care-grid"><div class="field"><div class="lbl-row"><label class="lbl" for="care-mode">Claim method</label>${info("Claim method", "Automatic claims cover ordinary lone-parent and couple cases. For exceptions such as study, incapacity or separation, enter verified annual deductions per adult. Manual claims replace automatic claims; you are responsible for checking eligibility.")}</div><select id="care-mode" class="prov-select"><option value="automatic" ${this.state.mode === "automatic" ? "selected" : ""}>Automatic</option><option value="manual" ${this.state.mode === "manual" ? "selected" : ""}>Verified manual claims</option></select></div>${Array.from(
-          { length: this.adults },
-          (_, i) =>
-            this.state.mode === "manual"
-              ? field(
-                  `care-claim-${i}`,
-                  `${i ? "Partner's" : "Your"} verified claim`,
-                  "Annual childcare deduction verified for this adult. Include zero when this adult has no claim. Do not also include this amount in Other deductions.",
-                  this.state.claims[i],
-                )
-              : field(
-                  `care-earnings-${i}`,
-                  `${i ? "Partner's" : "Your"} eligible earnings`,
-                  "Annual earned income eligible for the childcare deduction. Enter zero explicitly if none. This is not necessarily the employment and other income total: pensions and investment income generally do not qualify. The lower-net-income spouse usually claims, even when their eligible earnings are zero. A spouse without income entered above still needs an explicit value here.",
-                  this.state.earnings[i],
-                ),
-        ).join("")}</div>` +
-        this.state.children
-          .map(
-            (c, i) =>
-              `<fieldset class="care-child"><legend>Child ${i + 1}</legend><div class="care-grid">${field(`care-age-${i}`, `Age at end of ${this.year}`, "Enter the child's age on December 31 of the selected tax year. Include every eligible child, even if no childcare expenses were paid for that child. These ages also determine child-benefit counts.", c.age, false)}${field(`care-expenses-${i}`, "Annual childcare", "Eligible annual childcare expenses after fee subsidies and reimbursements. Across all children, the annual amounts must equal twelve times the monthly household amount. Do not subtract advance tax-credit payments.", c.expenses)}</div><div class="care-checks">${check(`care-dtc-${i}`, "Federal disability tax credit eligible", "Eligibility for the federal disability tax credit can increase the federal annual childcare limit. This is distinct from Quebec's severe and prolonged impairment eligibility. This checkbox only informs childcare limits; the general disability tax credit itself is not modelled.", c.disabilityTaxCredit)}${check(`care-infirm-${i}`, "Dependent child with an infirmity", "Select when this dependent child's infirmity permits childcare eligibility beyond the ordinary age limit. This does not by itself establish eligibility for the higher disability tax credit limit.", c.infirm)}</div><details class="care-quebec"><summary>Quebec eligibility</summary><div class="care-grid">${field(`care-qc-${i}`, "Quebec-eligible portion", "The part of this child's annual expenses eligible for Quebec's credit. Leave blank to exclude an unverified credit; enter zero when no expenses qualify. Subsidized base fees are excluded, but eligible extras may qualify. Enter qualifying expenses only and check the eligible-activity rules; advance credit payments are not fee subsidies.", c.qcEligibleExpenses)}</div>${check(`care-severe-${i}`, "Quebec severe and prolonged impairment", "Select only if the child meets Quebec's severe and prolonged impairment criteria for the higher childcare limit. Federal disability tax credit eligibility is not used as a substitute.", c.qcSevereImpairment)}</details><button type="button" class="linkbtn" data-care="remove" data-index="${i}" aria-label="Remove child ${i + 1}">Remove child</button></fieldset>`,
-          )
-          .join("") +
-        `<button type="button" class="linkbtn" data-care="add" ${this.state.children.length >= 6 ? "disabled" : ""}>Add child</button>`;
+        this.children.map((c, i) => this.childRow(c, i)).join("") +
+        `<button type="button" class="linkbtn" data-care="add" ${this.state.activeChildren >= 6 ? "disabled" : ""}>Add child</button>` +
+        (this.enabled ? this.adjustments() : "");
+      for (const el of this.fields.querySelectorAll<HTMLDetailsElement>("details")) el.open = openIds.has(el.id);
     }
-    const federal = result.childcare;
-    const errors = federal.reasons.map(r => childcareReasons[r]).filter(Boolean);
-    const validate = (id: string, message: string) => {
+    const errors = result.childcare.reasons.map(r => childcareReasons[r]).filter(Boolean);
+    const validate = (id: string, value: NumericDraft, message: string, ready = false) => {
       const el = document.getElementById(id) as HTMLInputElement | null;
       if (!el) return;
+      const show = message !== "" && (typeof value === "string" || this.state.touched.includes(id) || ready);
       el.setCustomValidity(message);
-      el.setAttribute("aria-invalid", String(message !== ""));
+      el.setAttribute("aria-invalid", String(show));
     };
-    const requiredAmount = (v: NumericDraft) =>
+    const required = (v: NumericDraft) =>
       amount(v)
         ? ""
         : v === null
           ? "Enter an amount, including zero."
           : "Enter a nonnegative number with up to two decimal places.";
-    const annual = this.state.children.reduce((sum, c) => sum + (amount(c.expenses) ? c.expenses : 0), 0);
-    const matches =
+    const allocated = this.children.every(c => amount(c.expenses));
+    const annual = this.children.reduce((sum, c) => sum + (amount(c.expenses) ? c.expenses : 0), 0);
+    const mismatch =
+      this.enabled &&
+      allocated &&
       monthlyAmount(this.state.monthly) &&
-      this.state.children.every(c => amount(c.expenses)) &&
-      Math.abs(annual - this.state.monthly * 12) <= 0.06 + 1e-9;
+      Math.abs(annual - this.state.monthly * 12) > 0.06 + 1e-9;
     validate(
       "childcare-monthly",
+      this.state.monthly,
       !monthlyAmount(this.state.monthly)
-        ? requiredAmount(this.state.monthly) || "Enter a smaller monthly amount."
-        : this.enabled && !matches
+        ? required(this.state.monthly) || "Enter a smaller monthly amount."
+        : mismatch
           ? "Annual child expenses must match twelve times the monthly amount."
           : "",
     );
-    const tooltip = document.getElementById("childcare-info") as HTMLElement;
-    tooltip.dataset.tip = `Average monthly eligible childcare costs across the whole year, after fee subsidies and reimbursements. Do not subtract advance tax-credit payments. These costs are separate from taxable household spending. ${errors.join(" ")}`;
-    for (let i = 0; i < this.adults; i++) {
-      const id = this.state.mode === "manual" ? `care-claim-${i}` : `care-earnings-${i}`;
-      validate(id, requiredAmount(this.state[this.state.mode === "manual" ? "claims" : "earnings"][i]));
+    (document.getElementById("childcare-info") as HTMLElement).dataset.tip =
+      `Average monthly eligible childcare costs across the whole year, after fee subsidies and reimbursements. Do not subtract advance tax-credit payments. These costs are separate from taxable household spending. Eligible earnings follow employment and other income by default; use Adjust earnings or claims when that assumption does not fit. ${errors.join(" ")}`;
+    for (let i = 0; i < this.incomes.length; i++) {
+      const manual = this.state.mode === "manual",
+        value = manual ? this.state.claims[i] : this.earnings[i];
+      validate(manual ? `care-claim-${i}` : `care-earnings-${i}`, value, required(value));
     }
-    for (let i = 0; i < this.state.children.length; i++) {
-      const c = this.state.children[i];
-      validate(`care-age-${i}`, wholeAge(c.age) ? "" : "Enter a whole, nonnegative year-end age, including zero.");
-      validate(`care-expenses-${i}`, requiredAmount(c.expenses));
+    this.children.forEach((c, i) => {
+      validate(
+        `care-age-${i}`,
+        c.age,
+        wholeAge(c.age) ? "" : "Enter a whole, nonnegative year-end age, including zero.",
+        c.age !== null,
+      );
+      validate(`care-expenses-${i}`, c.expenses, required(c.expenses));
       validate(
         `care-qc-${i}`,
+        c.qcEligibleExpenses,
         c.qcEligibleExpenses === null
           ? ""
-          : requiredAmount(c.qcEligibleExpenses) ||
+          : required(c.qcEligibleExpenses) ||
               (amount(c.qcEligibleExpenses) && amount(c.expenses) && c.qcEligibleExpenses > c.expenses
                 ? "The Quebec-eligible portion cannot exceed this child's annual expenses."
                 : ""),
       );
-    }
+    });
   }
 }
 

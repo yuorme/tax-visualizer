@@ -55,8 +55,8 @@ line-by-line tax return. Simpler and slightly less precise is acceptable where i
 
 **Childcare and expanded deductions (milestone 5, #94–98).** Itemized RRSP/FHSA/other claims are implemented;
 federal childcare calculations and Ontario/Quebec/Newfoundland and Labrador childcare credits are implemented for
-2025 and 2026 (#95–97). The childcare inputs accept explicit earned income and child details, calculate ordinary
-claims or accept verified manual claims, and show results in the existing detailed comparison and tooltips.
+2025 and 2026 (#95–97). The childcare inputs accept child details and optional earned-income overrides, calculate
+ordinary claims or accept verified manual claims, and show results in the existing detailed comparison and tooltips.
 Missing information is distinguished from a zero claim. Annual child allocations are reconciled to the monthly
 household average, allowing rounding to cents; actual annual expenses remain the calculation source.
 Detailed contracts and existing benefit-model limitations are in
@@ -65,14 +65,18 @@ Detailed contracts and existing benefit-model limitations are in
   their household-size behavior. Migrate saved spending without changing its effective dollar amount; add no reset UI.
 - Hold childcare expense constant across provinces, averaged over twelve months after fee subsidies/reimbursements.
   Advance tax-credit payments are not fee subsidies. Expense itself is neither tax nor sales-taxable spending.
-- Require explicit eligible earned income per adult (including zero) for automatic deductions; never infer it
-  from the mixed ordinary-income field. Distinguish missing information from a calculated zero claim.
-- Use child-level year-end ages, relevant disability eligibility and expenses; detailed ages also determine benefit
-  child counts. Preserve aggregate child-count controls where no detailed ages exist.
+- Per the subsequent UI feedback, default eligible earnings to each adult's employment and other income and follow
+  changes to that input. Explain this assumption in tooltips; allow explicit overrides, including zero, behind
+  optional adjustments. Preserve overrides and malformed drafts across reloads.
+- Hide childcare at zero children and deactivate its calculations, retaining drafts for restoration. Show paid-care
+  details only when costs are entered, using compact child age/expense rows and collapsed eligibility exceptions.
+  Keep the visible Children count consistent with active rows; derive benefit eligibility separately from ages.
+  Retained ages remain editable in the same disclosure when costs are zero and continue to determine benefits.
 - Apply federal childcare deduction rules, claimant selection and limits in 2025 and 2026, plus Ontario, Quebec
   and Newfoundland and Labrador childcare relief, with each program's own income base and refundability.
 - Require a supplied Quebec-eligible expense portion to include that credit; distinguish missing from confirmed
-  zero, and allow qualifying extras alongside federally eligible subsidized fees.
+  zero, and allow qualifying extras alongside federally eligible subsidized fees. Show Quebec input fields only
+  when Home Province is Quebec, preserving their values when switching away.
 - Automate ordinary single-parent/couple cases. Deliberate manual mode accepts verified annual claims per adult
   for exceptional cases, replacing automatic deductions; users remain responsible for eligibility.
 - Put expense, allowed claim, claimant and provincial-credit explanations in the existing detailed comparison and

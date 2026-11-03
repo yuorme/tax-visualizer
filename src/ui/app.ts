@@ -123,18 +123,19 @@ const effNow = () => effOverride ?? defaultEff();
 const effText = (v: number) => (Number.isInteger(v * 10) ? v.toFixed(1) : String(v));
 const kmText = (v: number) => `${v.toLocaleString("en-CA")} km`;
 const effSpend = () => Math.round((spend * (1 + spendingAdjustment / 100)) / 10) * 10; // nearest $10
-const care = new ChildcareEditor(removedLastChild => {
-  if (removedLastChild) setHousehold(adults, 0);
+const care = new ChildcareEditor(childCount => {
+  if (childCount !== undefined) setHousehold(adults, childCount);
   render();
 });
+let benefitCounts: { kids: number; under6: number } | undefined;
 // Engine input built from the current state
 const inputs = (withCare = true): Household => ({
   people,
   active,
   spouse,
   adults,
-  kids,
-  under6,
+  kids: benefitCounts?.kids ?? kids,
+  under6: benefitCounts?.under6 ?? under6,
   useBpa,
   whRate,
   useCredits,
@@ -252,12 +253,14 @@ function save() {
 // Text that quotes the year's figures: footer notes, info tooltips and the withholding presets (see notes.ts)
 const WH_PRESETS = [0, 0.1, 0.25, 0.3]; // withholding choices offered besides the treaty rate
 const yearSelect = $<HTMLSelectElement>("tax-year");
+let aggregateChildrenTip = "";
 yearSelect.innerHTML = availableYears.map(year => `<option value="${year}">${year}</option>`).join("");
 function renderYearNotes() {
   yearSelect.value = String(YEAR);
   document.title = `Provincial Tax Compare ${YEAR}`;
   $("year-notes").innerHTML = footerNotes(Y, { defaultIncome: DEFAULT_INCOME, spendEst });
   const tips = tooltips(Y);
+  aggregateChildrenTip = tips.children;
   for (const b of document.querySelectorAll<HTMLElement>("[data-note]")) b.dataset.tip = tips[b.dataset.note ?? ""];
   const sources = $("year-sources");
   sources.replaceChildren(document.createTextNode(`Sources for ${YEAR}: `));
@@ -451,20 +454,23 @@ function segTip(p: ProvView, r: Result, c: Seg) {
 const narrow = matchMedia("(max-width: 520px)"); // phone: compact chart labels
 function render() {
   // Ask the engine for effective adults, including a spouse with no separate income entry, and for age counts.
+  benefitCounts = undefined;
   const base = compute(Y, prov(home).d, inputs(false));
-  care.configure(base.list.length, kids, YEAR);
-  if (care.enabled) {
+  care.configureView(
+    base.list.map(p => p.x.ord),
+    kids,
+    YEAR,
+    home === "QC",
+  );
+  const profile = care.profileInput();
+  if (profile) {
     const counts = childcareOf(
       F,
-      inputs(),
+      { ...inputs(false), childcare: profile },
       base.list.map(p => p.x),
     ).childCounts;
     if (counts) {
-      if (kids !== counts.kids) {
-        kids = counts.kids;
-        spend = spendEst(adults + kids);
-        syncSpend();
-      }
+      benefitCounts = counts;
       under6 = counts.under6;
     }
   }
@@ -611,9 +617,17 @@ function render() {
   $<HTMLInputElement>("u6").value = String(under6);
   $("u6-val").hidden = kids === 0;
   $("u6-val").textContent = `${under6} under 6`;
-  $<HTMLInputElement>("kids").disabled = care.detailedAges;
+  $<HTMLInputElement>("kids").disabled = false;
   $<HTMLInputElement>("u6").disabled = care.detailedAges;
-  $("kids").title = $("u6").title = care.detailedAges ? "Child counts come from the ages in Childcare details." : "";
+  $("kids").title = care.detailedAges ? "Number of children or dependants in the childcare details." : "";
+  $("u6").title = care.detailedAges
+    ? "The under-6 count comes from the ages in Childcare details."
+    : "Children under 6";
+  const childrenTip = document.querySelector<HTMLElement>('[data-note="children"]');
+  if (childrenTip)
+    childrenTip.dataset.tip = care.detailedAges
+      ? "The Children count matches the detailed child or dependant rows. Benefit eligibility is calculated separately from their year-end ages, including when childcare costs are zero. Edit retained ages in Children's ages. Adjust Children to change the number of rows; zero hides and deactivates childcare while retaining its saved inputs."
+      : aggregateChildrenTip;
   // Track fill: slate up to the under-6 count, purple from there to the number of children
   const at = (q: number) => `calc(9px + (100% - 18px) * ${q / 6})`;
   $("kids-track").style.background =
@@ -1183,6 +1197,7 @@ adultsIn.addEventListener("input", () => {
 });
 kidsIn.addEventListener("input", () => {
   setHousehold(adults, +kidsIn.value);
+  care.setChildCount(kids);
   render();
 });
 u6In.addEventListener("input", () => {

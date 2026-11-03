@@ -336,7 +336,7 @@ export function footerNotes(y: YearData, page: PageDefaults): string {
     // Manitoba's benefit isn't modelled, so it has no figures in the data; the income limit is approximate.
     "Saskatchewan has no child benefit; Manitoba's (for incomes under about $15,000), Newfoundland and Labrador's prenatal–early childhood nutrition supplement and Nunavut's territorial workers' supplement aren't modelled.",
     F.childcare
-      ? "Childcare deductions use explicit eligible earnings and child details. Ontario, Quebec and Newfoundland and Labrador childcare credits follow their own eligibility and income rules. Quebec-eligible expenses are entered separately; basic subsidized fees do not qualify for its credit. Childcare spending itself is not included in the tax total."
+      ? "Childcare deductions use child details and assume employment and other income is eligible earned income unless adjusted. Ontario, Quebec and Newfoundland and Labrador childcare credits follow their own eligibility and income rules. Quebec-eligible expenses are entered separately; basic subsidized fees do not qualify for its credit. Childcare spending itself is not included in the tax total."
       : "Childcare rules are not available for this tax year.",
   ].join(" ");
 
