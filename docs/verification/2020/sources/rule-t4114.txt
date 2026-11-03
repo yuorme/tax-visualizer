@@ -1,0 +1,88 @@
+Title: CRA T4114 2020: BC October transition and original opportunity amounts
+URL: https://publications.gc.ca/collections/collection_2020/arc-cra/Rv1-36-2020-eng.pdf?download=1
+Fetched: 2026-11-02
+SHA-256 of the original: 03701cc947870230ca71648d244ff48acada43316f27edb963f808f784e5a56f
+Publication date modified: 2020-06-26
+PDF pages: 9 of 13
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 9 of 13 ---
+
+canada.ca/taxes 17
+Note
+The “earned income” and “working income” used to calculate certain
+provincial and territorial benefits include income from employment,
+self-employment, training allowances, scholarships (if taxable), research
+grants, and disability payments received under the Canada Pension Plan
+and the Quebec Pension Plan.
+Alberta child and family benefit
+The Alberta child and family benefit replaces the Alberta child benefit and
+Alberta family employment tax credit effective July 1, 2020.
+This benefit is a non-taxable amount paid to lower income families with
+children under 18 years of age. The quarterly amounts are issued in
+August 2020, November 2020, February 2021, and May 2021.
+The child and family benefit includes both a base component and a working
+component, with combined benefits to a maximum of $5,120.
+The maximum base component ranges from $1,330 to $3,325 depending on
+the number of children. You may be entitled to:
+ԏ  $1330 for the first qualified dependant
+ԏ  $665 for the second qualified dependant
+ԏ  $665 for the third qualified dependant
+ԏ  $665 for the fourth qualified dependant
+The base component of the benefit is reduced if your adjusted family net
+income is more than $26,769.
+Families may be eligible for the working component once their family
+employment income exceeds $2,760. The maximum working component will
+range from $681 to $1,795 depending on the number of children. You may be
+entitled to:
+ԏ  $681 for the first qualified dependant
+ԏ  $620 for the second qualified dependant
+ԏ  $371 for the third qualified dependant
+ԏ  $123 for the fourth qualified dependant
+The working component of the benefit is reduced once your adjusted family net
+income is more than $41,000.
+This program is fully funded by the Alberta provincial government.
+BC child opportunity benefit
+This benefit is a non-taxable amount paid monthly to qualifying families with
+children under the age of 18. The amounts are combined with the CCB into a
+single monthly payment.
+canada.ca/taxes18
+You may be entitled to a maximum annual benefit of:
+ԏ  $1,600 for the first child
+ԏ  $1,000 for the second child
+ԏ  $800 for each additional child
+The amount is reduced if your adjusted family net income is more than $25,000.
+For the 2019 base year, the BC child opportunity benefit payment period is from
+October 2020 to June 2021.
+This program is fully funded by the Province of British Columbia.
+BC early childhood tax benefit
+This benefit is a non-taxable amount paid monthly to qualifying families to help
+with the cost of raising children under the age of six. The amount is combined
+with the CCB into a single monthly payment. It is calculated based on the
+number of eligible children you have and your adjusted family net income.
+For the 2019 base year, the BC early childhood tax benefit payment period is
+from July to September 2020 only. The BC child opportunity benefit replaces
+the BC early childhood tax benefit as of October 2020.
+This program is fully funded by the Province of British Columbia.
+New Brunswick child tax benefit
+This benefit is a non-taxable amount paid monthly to qualifying families
+with children under 18 years of age. The New Brunswick working income
+supplement (NBWIS) is an additional benefit paid to qualifying families with
+earned income who have children under 18 years of age. Benefits are combined
+with the CCB into a single monthly payment.
+You may be entitled to a basic benefit of $20.83 per month for each child. The
+amount of the basic benefit is reduced if your adjusted family net income is
+more than $20,000.
+The NBWIS is an additional benefit of up to $20.83 per month for each family.
+It is phased in once family earned income is more than $3,750. The maximum
+benefit is reached when family earned income is $10,000. If your adjusted
+family net income is between $20,921 and $25,921, you may get part of the
+supplement.
+Your New Brunswick child tax benefit payment may include a New Brunswick
+school supplement (NBSS) amount. The NBSS is paid once a year in July to help
+low income families with the cost of back to school supplies for their children.
+If your adjusted family net income is $20,000 or less, you will get $100 for each
+of your children born between January 1, 2003, and December 31, 2015.
+These amounts will be combined with the CCB into a single monthly payment.
+This program is fully funded by the Province of New Brunswick.

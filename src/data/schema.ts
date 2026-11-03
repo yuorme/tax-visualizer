@@ -238,6 +238,15 @@ const nlChildReduction = z.object({
   rate: z.array(rate).length(3),
   additionalRate: rate,
 });
+const bcFamilyBenefit = z.object({
+  max: z.array(amount).length(3),
+  min: z.array(amount).length(3),
+  singleParent: amount,
+  rate,
+  threshold: amount,
+  minThreshold: amount,
+});
+const bcEarlyChildhoodBenefit = z.object({ perChild: amount, threshold: amount, rate });
 const childBenefit = z.discriminatedUnion("program", [
   program("ontario-child-benefit", z.object({ perChild: amount, threshold: amount, rate })),
   program(
@@ -253,15 +262,24 @@ const childBenefit = z.discriminatedUnion("program", [
       schoolSupplies: amount,
     }),
   ),
+  program("bc-family-benefit", bcFamilyBenefit),
+  program("bc-early-childhood-benefit", bcEarlyChildhoodBenefit),
   program(
-    "bc-family-benefit",
+    "bc-child-benefit-transition",
+    z
+      .object({
+        early: bcEarlyChildhoodBenefit.extend({ weight: z.number().positive().max(1) }),
+        opportunity: bcFamilyBenefit.extend({ weight: z.number().positive().max(1) }),
+      })
+      .refine(q => Math.abs(q.early.weight + q.opportunity.weight - 1) < 1e-9, "period weights must sum to 1"),
+  ),
+  program(
+    "bc-family-benefit-periods",
     z.object({
-      max: z.array(amount).length(3),
-      min: z.array(amount).length(3),
-      singleParent: amount,
-      rate,
-      threshold: amount,
-      minThreshold: amount,
+      periods: z
+        .array(bcFamilyBenefit.extend({ weight: z.number().positive().max(1) }))
+        .min(1)
+        .refine(ps => Math.abs(ps.reduce((sum, p) => sum + p.weight, 0) - 1) < 1e-9, "period weights must sum to 1"),
     }),
   ),
   program(
