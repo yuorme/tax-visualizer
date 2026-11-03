@@ -1,5 +1,6 @@
 export { ccbOf, provincialChildBenefit } from "./benefits.ts";
 export { type BracketLine, phased, walk } from "./brackets.ts";
+export { carbonCostsOf, carbonRebatesOf } from "./carbon.ts";
 export { type ChildcareChild, type ChildcareInput, type ChildcareResult, childcareOf } from "./childcare.ts";
 export { type ChildcareCreditResult, childcareCreditOf } from "./childcare-credits.ts";
 export { creditsOf } from "./credits.ts";
