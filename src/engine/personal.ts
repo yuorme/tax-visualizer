@@ -107,6 +107,13 @@ export function personTax(fed: Federal, p: Province, x: Person, sp: Extra, ctx: 
     pLeft += surtax;
   }
   const pDtc = tp(pDtcFull);
+  // Historical PE428 adds surtax after the dividend credit, before the low-income reduction.
+  if (p.postDividendSurtax) {
+    const q = p.postDividendSurtax.params;
+    const extra = q.rate * Math.max(0, pLeft - q.threshold);
+    surtax += extra;
+    pLeft += extra;
+  }
   // Low-income tax reductions (claimed once per family, by the claimant). "fam" = spouse or eligible dependant.
   let lowRed = 0;
   if (ctx.claims && p.lowIncomeReduction)
