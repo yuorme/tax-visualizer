@@ -1,8 +1,13 @@
+import { tsImport } from "tsx/esm/api";
 import { listYears, loadCpi, loadYear } from "../../src/data/load.ts";
 import { historyComparison } from "../../src/engine/history.ts";
+import { childcareOf, compute } from "../../src/engine/index.ts";
 import { money, rate } from "../../src/ui/notes.ts";
 import { toHousehold } from "../golden/adapter.ts";
 import { settle } from "./page.mjs";
+
+// The UI module includes constructor parameter properties, which Node's native type stripping cannot load.
+const { ChildcareModel } = await tsImport("../../src/ui/childcare.ts", import.meta.url);
 
 async function checkRows(page, mode) {
   const state = await page.evaluate(() => JSON.parse(localStorage.getItem("taxcmp")));
@@ -10,11 +15,25 @@ async function checkRows(page, mode) {
   const home = year.provinces.find(p => p.code === state.home);
   const input = toHousehold({
     ...state,
+    frug: state.spendingAdjustment ?? state.frug ?? 0,
     homeValue: state.tenure === "own" ? state.homeValue : 0,
     rent: state.tenure === "rent" ? state.rent : 0,
     km: state.km ?? home.driving?.distance ?? 0,
     efficiency: state.eff ?? year.federal.driving?.efficiency ?? 0,
   });
+  const care = new ChildcareModel();
+  care.restore(state.childcare);
+  const people = compute(year, home, input).list.map(p => p.x);
+  care.configure(
+    people.map(p => p.ord),
+    state.kids,
+  );
+  const ages = care.benefitAgeProfile();
+  if (ages) {
+    const counts = childcareOf(year.federal, { ...input, childcare: ages }, people).childCounts;
+    if (counts) Object.assign(input, counts);
+  }
+  input.childcare = care.claimInput();
   const result = historyComparison(listYears().map(loadYear), loadCpi(), input, [state.home], mode);
   const expected = result.rows.map(row => {
     const r = row.provinces[0];
@@ -59,6 +78,34 @@ export const HISTORY_STEPS = [
         problems.push("history did not follow home province");
       if ((await p.locator("#history-rows tr").count()) !== listYears().length)
         problems.push("nominal history omits a year");
+      return problems;
+    },
+  ],
+  [
+    "history: childcare follows age and earnings edits immediately",
+    async p => {
+      await p.selectOption("#home", "ON");
+      await p.locator("#kids").evaluate(el => {
+        el.value = "1";
+        el.dispatchEvent(new Event("input", { bubbles: true }));
+      });
+      await p.fill("#childcare-monthly", "500");
+      await p.locator("#childcare-monthly").blur();
+      await p.locator("#childcare-details > summary").click();
+      await p.fill("#care-age-0", "4");
+      await p.locator("#care-age-0").blur();
+      await p.fill("#care-expenses-0", "6000");
+      await p.locator("#care-expenses-0").blur();
+      const problems = await checkRows(p, "nominal");
+      await p.fill("#income", "3,000");
+      await p.dispatchEvent("#income", "input");
+      problems.push(...(await checkRows(p, "nominal")));
+      await p.fill("#care-age-0", "20");
+      await p.locator("#care-age-0").blur();
+      problems.push(...(await checkRows(p, "nominal")));
+      await p.click("#history-real");
+      problems.push(...(await checkRows(p, "real")));
+      await p.click("#history-nominal");
       return problems;
     },
   ],
