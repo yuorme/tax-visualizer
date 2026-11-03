@@ -1,8 +1,15 @@
-Title: >
+Title: New Brunswick 2020 c.6 — manual statutory facts
 URL: https://laws.gnb.ca/en/document/as/2020%2C%20c.6
 Fetched: 2026-11-02
-SHA-256 of the original: f1f171adabf5cc55190d7939723f1a10e9fb3c86f8c1b77531ca936864b336a3
-Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+Direct download produced only the navigation shell, not the statute.
+The shell's SHA-256 was f1f171adabf5cc55190d7939723f1a10e9fb3c86f8c1b77531ca936864b336a3.
+Evidence below manually paraphrased from the official full statute through web reader on2026-11-02.
+No hash of the full statute is available. The navigation shell is retained below for retrieval transparency.
+
+Section26 commencement April1,2020. ScheduleC rates: gasoline.0663/litre;
+diesel/light fuel oil.0805/litre; propane.0464/litre; marketable natural gas.0587/cubic metre.
+Section6.3(11) extends diesel/light fuel oil/propane exemptions to uses under6(6)(i.1),(j),
+which include domestic heating/hot water; read with official finance exemption guidance.
 ================================================================================
 
 - Home

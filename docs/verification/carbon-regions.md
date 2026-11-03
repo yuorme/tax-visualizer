@@ -31,6 +31,10 @@ The NWT's final zero is legally a 100% point-of-sale rebate from April 2025, rat
 The first COLO payments were half of the $104 adult/$120 child entitlement in October 2019 and April 2020.
 Subsequent benefit years pay quarterly in July, October, January and April. The annual adult/child amounts were
 156/180 in 2020–21, 208/240 in 2021–22 and 260/300 in 2022–23. Zones begin with July 2023 payments.
+The following component table applies to families receiving regular quarterly payments. A childless single
+person instead received the entire $156 in July 2020, because $39 quarterly was below $50. Their calendar
+totals are therefore $208 in 2020 and $104 in 2021. Other years match the adult column.
+Source: [official April 2020 release][nt-small].
 
 | Calendar year | Zone A adult/child | Zone B adult/child | Zone C adult/child |
 | --- | ---: | ---: | ---: |
@@ -66,11 +70,13 @@ The payment is per person, including each dependent child. Whitehorse is the ref
 | 2024 | 341 | 390.60 |
 | 2025 | 155 | 186 |
 
-The interim $86 was paid half in October 2019 and half in April 2020. July–June annual amounts thereafter:
+The interim $86 was paid half on October 31, 2019 and half on April 30, 2020. July–June annual amounts thereafter:
 2020–21 192; 2021–22 176; 2022–23 320; 2023–24 372; 2024–25 310. The remote supplement is 10% in the
 first four regular years and 20% in 2024–25. Calendar 2020 adds $43 to two $48 payments; later complete
 years add half of the two overlapping annual amounts. Final payment: April 4, 2025.
 Source: [Yukon historical rebate table][yt-rebate].
+The [original payment announcement][yt-start] confirms the interim dates and July 2020 quarterly transition.
+The Yukon statute imports federal section 122.5(4)–(6.1), but not its small-payment provisions (3.1)/(3.2).
 
 ### Nunavut cash and heating
 
@@ -86,8 +92,11 @@ Do not interpret the delayed first payment as two quarters paid in September.
 
 The 50% point-of-sale discount also covered heating diesel before April 2023. Full heating-oil charges
 apply April 1–November 8, 2023, followed by the federal heating-oil exemption from November 9.
-The separate 2023 $1,000 homeowner fuel relief required an application and April 1 homeownership.
+The separate [2023 $1,000 homeowner fuel relief][nu-homeowner] required an application and April 1 homeownership.
 It is excluded as extraordinary housing/inflation support, by the orchestrator's explicit scope decision.
+Nunavut legislation imports discretionary small-payment consolidation provisions, while the contemporaneous
+July 2024 release expressly promises $25 every three months. Use that published regular schedule; no evidence
+of an actual 2024 single-person lump payment was found. This is a documented administrative timing limitation.
 
 ## Alberta provincial levy and rebate in 2019
 
@@ -115,17 +124,64 @@ system. NL heating oil and propane were likewise exempt. Ordinary gasoline-tax r
 these levies belong in the ordinary fuel-tax schedule; they must not also be subtracted as carbon rebates.
 No separate automatic provincial carbon cash payment has been identified for NB or NL.
 
-PE's July 2022 payment included a separately identified carbon amount up to $140 per family. Published
-examples give $140 at 45,000 income, $115 at 55,000, and $65 at 63,000. These support a .005 taper above
-50,000; the exact legislative formula is being checked. The accompanying $150-per-adult inflation support
-and January 2023 extraordinary support are excluded. Do not include the ordinary PE sales tax credit twice.
+NB domestic heating diesel, light fuel oil and propane were exempt under section 6.3(11), read with
+section 6(6)(i.1)/(j). Natural gas was not in this exemption. [Official guidance][nb-guide] explains the uses.
 
-## Outstanding source checks at this checkpoint
+PE's July 5, 2022 payment included a carbon increment, sharing a cheque with the ordinary sales credit and
+extraordinary inflation support. Let B = 55 for a couple or single parent, otherwise 0; C = min(55,
+.005 × max(0, income − 30,000)); and E = max(0, income − 50,000). The carbon-only amount is:
 
-- Complete NB historical rate/exemption evidence and PE carbon-payment statutory formula.
-- Replace blocked or empty direct downloads with clearly labelled official-page transcriptions.
-- Cache territorial household heating-use evidence; no unsupported per-household consumption chosen here.
-- Supply machine-readable schedules and exact payment dates to the integrator.
+```text
+(max(0, 670 + B + C - .04*E) - max(0, 110 + B + C - .02*E)) / 4
+```
+
+The ordinary formula comes from section 36.3(4)–(8); Bill 64 changes only 110→670 and .02→.04 for July.
+This matches published carbon increments: single at 45,000 gets 140; single at 55,000 gets 115; couple at 63,000
+gets 65. A simple $140 taper is wrong after the ordinary sales credit reaches zero. The later inflation
+enhancement changed the combined formula again; that extraordinary component is excluded here.
+Sources: [original Bill 64][pe-law], [ordinary formula][pe-regular], [published examples][pe-examples].
+
+## Heating consumption evidence and limitations
+
+The [2017 Yukon advisory report][yt-heat], PDF page 52, gives a typical oil-heated home range of 1500–2000 L/year.
+The midpoint 1750 L is an explicit illustrative proxy. Its approximately two-thirds combustible-fuel share
+conflicts with adjacent prose saying most heating is electric; do not use that share as a precise population mean.
+
+An [official-hosted 2012 NWT feasibility study][nt-heat], PDF pages 45/77, assumes 2406 L/year per residential
+building in Deline, based on total community fuel use allocated in proportion to electricity use and 1.13
+residential accounts/building. This is a modeled community proxy, not measured typical Yellowknife consumption.
+Do not divide all-sector territorial fuel sales by households: commercial and public-building fuel is included.
+No reliable Nunavut household heating-consumption figure was established in this collection. The orchestrator
+selected 1750 L for Yukon and 2406 L for NWT, with the same NWT northern-oil proxy reused for Nunavut.
+Every resulting heating cost must be marked estimated and identify those geographic/time assumptions.
+
+| Calendar year | Yukon net oil rate | NWT net heating-diesel rate | Nunavut net oil rate |
+| --- | ---: | ---: | ---: |
+| 2019 | .02707068493150685 | 0 | .013535342465753424 |
+| 2020 | .07383661202185793 | 0 | .036918306010928964 |
+| 2021 | .1006917808219178 | 0 | .0503458904109589 |
+| 2022 | .1274917808219178 | 0 | .0637458904109589 |
+| 2023 | .13877424657534249 | .13094520547945207 | .1222413698630137 |
+| 2024 | 0 | .04321256830601093 | 0 |
+| 2025 | 0 | 0 | 0 |
+
+These are derived dollar-per-litre calendar averages with uniform daily consumption, including leap days.
+The reproducible artifact preserves exact effective-date segments. They exclude sales tax on the levy.
+NB natural gas is .0391/m³ in January–March 2020, .0587 from April 2020, .0783 from April 2021,
+.0979 from April 2022 and .1239 from July 2023. Its heating-oil and propane carbon levies are zero during
+the provincial system, April 2020–June 2023. AB natural gas is $1.517/GJ and oil .0803/L through May 29, 2019.
+
+## Integration notes
+
+- Sources are under each year's `sources/carbon-regional-*`. Some blocked pages have explicitly labelled
+  manual factual notes; their missing original hashes are disclosed. INDEX records include these limitations.
+- The AB, PE and NWT small-payment rules need the additive engine prerequisite; no year data is activated here.
+- Calendar totals assume constant household composition and timely filing. Regular quarter records use month
+  anchors where only the month is sourced; the annual engine does not rely on the precise within-month date.
+- NU small-payment administration and territorial heating consumption remain the specific limitations above.
+- [The reproducible JSON](carbon-regional-records.json) contains 36 regional year records, including
+  default-city payments and gasoline schedules, with source-cache paths and explicit month-anchor notes.
+  Regenerate it with `fnm exec --using=26 node docs/verification/carbon-regional-records.mjs`.
 
 [cra-rates]: https://www.canada.ca/en/revenue-agency/services/forms-publications/publications/fcrates/fuel-charge-rates.html
 [nt-report]: https://www.fin.gov.nt.ca/sites/fin/files/resources/nwt_carbon_tax_report_2024-2025.pdf
@@ -137,3 +193,12 @@ and January 2023 extraordinary support are excluded. Do not include the ordinary
 [ab-budget]: https://open.alberta.ca/dataset/aa40ded0-75b3-48fe-9bbf-ea33802b8825/resource/da23ee3c-b79c-4971-8f75-e28ab7684983/download/fiscal-plan-complete.pdf
 [ab-law]: https://docs.assembly.ab.ca/LADDAR_files/docs/bills/bill/legislature_29/session_2/20160308_bill-020.pdf
 [ab-end]: https://docs.assembly.ab.ca/LADDAR_files/docs/hansards/han/legislature_30/session_1/20190523_1330_01_han.pdf
+[nt-small]: https://www.gov.nt.ca/en/newsroom/first-2020-cost-living-offset-payments-be-made-april-30th-2020
+[yt-start]: https://open.yukon.ca/information/b1cbb21a-1e7d-4bd5-b4ee-01b04901749c/resource/8189483c-ed69-49b2-8842-34def020c30a/download/19-237.html
+[nb-guide]: https://www2.gnb.ca/content/gnb/en/departments/finance/taxes/gasoline_motive_fueltax.html
+[pe-law]: https://docs.assembly.pe.ca/download/dms?fileName=bill-64.pdf&objectId=1d0b3ad4-988c-4eab-a8a2-7afea3a08bc5
+[pe-regular]: https://www.princeedwardisland.ca/sites/default/files/legislation/i-01-income_tax_act.pdf
+[pe-examples]: https://www.princeedwardisland.ca/en/news/islanders-to-receive-inflationary-support-payment-this-week
+[yt-heat]: https://yukon.ca/sites/yukon.ca/files/fin/fin-yukon-financial-advisory-panel-final-report-2017.pdf
+[nt-heat]: https://www.iti.gov.nt.ca/fr/file/1216
+[nu-homeowner]: https://www.gov.nu.ca/en/newsroom/nunavut-homeowner-fuel-rebate-available-april-1-2023-04-03

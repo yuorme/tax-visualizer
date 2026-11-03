@@ -1,8 +1,15 @@
-Title: >
+Title: New Brunswick 2021 c.7 — manual statutory facts
 URL: https://laws.gnb.ca/en/document/as/2021%2C%20c.7
 Fetched: 2026-11-02
-SHA-256 of the original: f23023097ac642c37dbb5abc47ac0e879432b5a38067fee81e081b38165bd086
-Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+Direct download produced only the navigation shell, not the statute.
+The shell's SHA-256 was f23023097ac642c37dbb5abc47ac0e879432b5a38067fee81e081b38165bd086.
+Evidence below manually paraphrased from the official full statute through web reader on2026-11-02:
+https://lois.gnb.ca/fr/document/la/2021%2C%20c.7?langcont=en
+No hash of the full statute is available. The navigation shell is retained below for retrieval transparency.
+
+AssentedJune11,2021; section2 deems commencementApril1,2021.
+ScheduleC: gasoline.0884/litre; diesel/light fuel oil.1073/litre;
+propane.0619/litre; marketable natural gas.0783/cubic metre.
 ================================================================================
 
 - Home

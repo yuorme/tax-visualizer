@@ -120,3 +120,11 @@ keeps the pages the data uses). Nothing under `docs/` is imported by `src/`, so 
 | [rule-rc4210-2024](rule-rc4210-2024.txt) | untitled | https://www.canada.ca/content/dam/cra-arc/formspubs/pub/rc4210/rc4210-24e.pdf | 2026-11-02 | `515fc2ae7decb5f74648487a0b03768a8d13f641ff7dfe601b49d55af47e5ed0` |
 | [rule-t4114-2024](rule-t4114-2024.txt) | untitled | https://www.canada.ca/content/dam/cra-arc/formspubs/pub/t4114/t4114-24e.pdf | 2026-11-02 | `498fa5faf37b90a37b271a7b9c53ec67aa70c84ce79f1cd3a8277cd3f9dfb988` |
 | [rule-t4127-2024](rule-t4127-2024.txt) | Payroll Deductions Formulas - 119th Edition Effective January 1, 2024 | https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/payroll-deductions-t4127-payroll-deductions-formulas/t4127-jan-119th-edition-effective-january-1-2024/t4127-jan-payroll-deductions-formulas-computer-programs.html | 2026-11-02 | `ce5e372cdaecd8fb880598a4be2b192cd3f0036b8e5412f090133ebfb1140a46` |
+
+Regional carbon notes marked "manual" paraphrase official sources whose direct downloads were blocked or incomplete.
+Their headers disclose retrieval limits; a navigation-shell hash is not a hash of the underlying publication.
+
+| Regional carbon cache | Title | URL | Read/fetched | Original hash |
+|---|---|---|---|---|
+| [carbon-regional-nt-report](carbon-regional-nt-report.txt) | NWT CARBON TAX REPORT | https://www.fin.gov.nt.ca/sites/fin/files/final_2023-2024_nwt_carbon_tax_report.pdf | 2026-11-02 | d1f1b6930c7448e914e06cfd3f4cf092144f3af5fef094b3aa724e61af6a8aa2 |
+| [carbon-regional-nu-rebate](carbon-regional-nu-rebate.txt) | Nunavut Carbon Credit Payments in 2024-25 | https://www.gov.nu.ca/en/newsroom/nunavut-carbon-credit-payments-2024-25-2024-07-08 | 2026-11-02 | manual; unavailable |

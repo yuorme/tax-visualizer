@@ -1,0 +1,2007 @@
+{
+  "status": "Collector records; additive rule contracts pending integration; do not copy notes metadata into schema",
+  "sourceRoot": ".",
+  "records": [
+    {
+      "year": 2019,
+      "region": "YT",
+      "gasoline": [
+        {
+          "from": "2019-01-01",
+          "rate": 0
+        },
+        {
+          "from": "2019-07-01",
+          "rate": 0.0442
+        }
+      ],
+      "sources": [
+        "2025/sources/carbon-regional-federal-rates.txt",
+        "2025/sources/carbon-regional-yt-rebates.txt",
+        "2019/sources/carbon-regional-yt-start.txt",
+        "2019/sources/carbon-regional-yt-law.txt"
+      ],
+      "rebates": [
+        {
+          "name": "Yukon carbon rebate",
+          "program": "carbon-rebate-payments",
+          "params": {
+            "payments": [
+              {
+                "date": "2019-10-31",
+                "adult": 43,
+                "spouse": 43,
+                "child": 43,
+                "firstChild": 43,
+                "threshold": [
+                  0,
+                  0
+                ],
+                "rate": 0
+              }
+            ]
+          }
+        }
+      ],
+      "notes": [
+        "Dates ending -01 are sourced payment-month anchors, not assertions about the bank-deposit day.",
+        "Whitehorse reference city; remote supplement10% benefit-years2020–23,20%2024."
+      ]
+    },
+    {
+      "year": 2019,
+      "region": "NT",
+      "gasoline": [
+        {
+          "from": "2019-01-01",
+          "rate": 0
+        },
+        {
+          "from": "2019-09-01",
+          "rate": 0.047
+        }
+      ],
+      "sources": [
+        "2025/sources/carbon-regional-nt-report-final.txt",
+        "2019/sources/carbon-regional-nt-start.txt",
+        "2020/sources/carbon-regional-nt-lump-sum.txt",
+        "2023/sources/carbon-regional-nt-change.txt",
+        "2025/sources/carbon-regional-nt-end.txt"
+      ],
+      "rebates": [
+        {
+          "name": "Cost of Living Offset",
+          "program": "carbon-rebate-payments",
+          "params": {
+            "payments": [
+              {
+                "date": "2019-10-31",
+                "adult": 52,
+                "spouse": 52,
+                "child": 60,
+                "firstChild": 60,
+                "threshold": [
+                  0,
+                  0
+                ],
+                "rate": 0
+              }
+            ]
+          }
+        }
+      ],
+      "notes": [
+        "Dates ending -01 are sourced payment-month anchors, not assertions about the bank-deposit day.",
+        "Zone A / Yellowknife reference city. B/C variants in research tables."
+      ]
+    },
+    {
+      "year": 2019,
+      "region": "NU",
+      "gasoline": [
+        {
+          "from": "2019-01-01",
+          "rate": 0
+        },
+        {
+          "from": "2019-07-01",
+          "rate": 0.0221
+        }
+      ],
+      "sources": [
+        "2025/sources/carbon-regional-federal-rates.txt",
+        "2019/sources/carbon-regional-nu-start.txt",
+        "2022/sources/carbon-regional-nu-rebate-extension.txt",
+        "2023/sources/carbon-regional-nu-change.txt",
+        "2023/sources/carbon-regional-nu-hansard.txt",
+        "2024/sources/carbon-regional-nu-rebate.txt",
+        "2025/sources/carbon-regional-nu-cra-dates.txt"
+      ],
+      "rebates": [],
+      "notes": [
+        "NU published quarterly schedule; discretionary small-payment consolidation not activated without evidence of actual use.",
+        "Dates ending -01 are sourced payment-month anchors, not assertions about the bank-deposit day.",
+        "Gasoline is net of50% point-of-sale rebate until2023-03-31; excluded extraordinary1000homeowner application benefit."
+      ]
+    },
+    {
+      "year": 2019,
+      "region": "AB",
+      "gasoline": [
+        {
+          "from": "2019-01-01",
+          "rate": 0.0673
+        },
+        {
+          "from": "2019-05-30",
+          "rate": 0
+        }
+      ],
+      "sources": [
+        "2019/sources/carbon-regional-ab-rates.txt",
+        "2019/sources/carbon-regional-ab-statute.txt",
+        "2019/sources/carbon-regional-ab-end.txt"
+      ],
+      "rebates": [
+        {
+          "name": "Alberta climate leadership adjustment rebate",
+          "program": "alberta-carbon-rebate-payments",
+          "params": {
+            "payments": [
+              {
+                "date": "2019-01",
+                "adult": 300,
+                "spouse": 150,
+                "child": 45,
+                "firstChild": 150,
+                "childCap": 4,
+                "threshold": [
+                  47500,
+                  95000
+                ],
+                "rate": [
+                  0.0267,
+                  0.04
+                ],
+                "minAnnual": 100,
+                "weight": 0.25
+              },
+              {
+                "date": "2019-04",
+                "adult": 300,
+                "spouse": 150,
+                "child": 45,
+                "firstChild": 150,
+                "childCap": 4,
+                "threshold": [
+                  47500,
+                  95000
+                ],
+                "rate": [
+                  0.0267,
+                  0.04
+                ],
+                "minAnnual": 100,
+                "weight": 0.25
+              }
+            ]
+          }
+        }
+      ],
+      "notes": []
+    },
+    {
+      "year": 2019,
+      "region": "PE",
+      "gasoline": [
+        {
+          "from": "2019-01-01",
+          "rate": 0
+        },
+        {
+          "from": "2019-04-01",
+          "rate": 0.0442
+        }
+      ],
+      "sources": [
+        "2019/sources/carbon-regional-pe-rates.txt",
+        "2022/sources/carbon-regional-pe-rates.txt",
+        "2023/sources/carbon-regional-pe-end.txt",
+        "2022/sources/carbon-regional-pe-statute.txt",
+        "2022/sources/carbon-regional-pe-regular-formula.txt",
+        "2022/sources/carbon-regional-pe-rebate.txt"
+      ],
+      "rebates": [],
+      "notes": []
+    },
+    {
+      "year": 2019,
+      "region": "NL",
+      "gasoline": 0.0442,
+      "sources": [
+        "2019/sources/carbon-regional-nl-start.txt",
+        "2020/sources/carbon-regional-nl-rates.txt",
+        "2023/sources/carbon-regional-nl-rates.txt",
+        "2023/sources/carbon-regional-nl-heating-exemptions.txt"
+      ],
+      "rebates": [],
+      "notes": []
+    },
+    {
+      "year": 2020,
+      "region": "YT",
+      "gasoline": [
+        {
+          "from": "2020-01-01",
+          "rate": 0.0442
+        },
+        {
+          "from": "2020-04-01",
+          "rate": 0.0663
+        }
+      ],
+      "sources": [
+        "2025/sources/carbon-regional-federal-rates.txt",
+        "2025/sources/carbon-regional-yt-rebates.txt",
+        "2019/sources/carbon-regional-yt-start.txt",
+        "2019/sources/carbon-regional-yt-law.txt"
+      ],
+      "rebates": [
+        {
+          "name": "Yukon carbon rebate",
+          "program": "carbon-rebate-payments",
+          "params": {
+            "payments": [
+              {
+                "date": "2020-04-30",
+                "adult": 43,
+                "spouse": 43,
+                "child": 43,
+                "firstChild": 43,
+                "threshold": [
+                  0,
+                  0
+                ],
+                "rate": 0
+              },
+              {
+                "date": "2020-07-01",
+                "adult": 48,
+                "spouse": 48,
+                "child": 48,
+                "firstChild": 48,
+                "threshold": [
+                  0,
+                  0
+                ],
+                "rate": 0
+              },
+              {
+                "date": "2020-10-01",
+                "adult": 48,
+                "spouse": 48,
+                "child": 48,
+                "firstChild": 48,
+                "threshold": [
+                  0,
+                  0
+                ],
+                "rate": 0
+              }
+            ]
+          }
+        }
+      ],
+      "notes": [
+        "Dates ending -01 are sourced payment-month anchors, not assertions about the bank-deposit day.",
+        "Whitehorse reference city; remote supplement10% benefit-years2020–23,20%2024."
+      ]
+    },
+    {
+      "year": 2020,
+      "region": "NT",
+      "gasoline": [
+        {
+          "from": "2020-01-01",
+          "rate": 0.047
+        },
+        {
+          "from": "2020-07-01",
+          "rate": 0.07
+        }
+      ],
+      "sources": [
+        "2025/sources/carbon-regional-nt-report-final.txt",
+        "2019/sources/carbon-regional-nt-start.txt",
+        "2020/sources/carbon-regional-nt-lump-sum.txt",
+        "2023/sources/carbon-regional-nt-change.txt",
+        "2025/sources/carbon-regional-nt-end.txt"
+      ],
+      "rebates": [
+        {
+          "name": "Cost of Living Offset",
+          "program": "carbon-rebate-consolidated-payments",
+          "params": {
+            "payments": [
+              {
+                "date": "2020-04-30",
+                "adult": 52,
+                "spouse": 52,
+                "child": 60,
+                "firstChild": 60,
+                "threshold": [
+                  0,
+                  0
+                ],
+                "rate": 0
+              },
+              {
+                "date": "2020-07",
+                "adult": 39,
+                "spouse": 39,
+                "child": 45,
+                "firstChild": 45,
+                "threshold": [
+                  0,
+                  0
+                ],
+                "rate": 0,
+                "smallPayment": {
+                  "below": 50,
+                  "multiplier": 4
+                }
+              },
+              {
+                "date": "2020-10",
+                "adult": 39,
+                "spouse": 39,
+                "child": 45,
+                "firstChild": 45,
+                "threshold": [
+                  0,
+                  0
+                ],
+                "rate": 0,
+                "smallPayment": {
+                  "below": 50,
+                  "multiplier": 0
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "notes": [
+        "Dates ending -01 are sourced payment-month anchors, not assertions about the bank-deposit day.",
+        "Zone A / Yellowknife reference city. B/C variants in research tables."
+      ]
+    },
+    {
+      "year": 2020,
+      "region": "NU",
+      "gasoline": [
+        {
+          "from": "2020-01-01",
+          "rate": 0.0221
+        },
+        {
+          "from": "2020-04-01",
+          "rate": 0.03315
+        }
+      ],
+      "sources": [
+        "2025/sources/carbon-regional-federal-rates.txt",
+        "2019/sources/carbon-regional-nu-start.txt",
+        "2022/sources/carbon-regional-nu-rebate-extension.txt",
+        "2023/sources/carbon-regional-nu-change.txt",
+        "2023/sources/carbon-regional-nu-hansard.txt",
+        "2024/sources/carbon-regional-nu-rebate.txt",
+        "2025/sources/carbon-regional-nu-cra-dates.txt"
+      ],
+      "rebates": [],
+      "notes": [
+        "NU published quarterly schedule; discretionary small-payment consolidation not activated without evidence of actual use.",
+        "Dates ending -01 are sourced payment-month anchors, not assertions about the bank-deposit day.",
+        "Gasoline is net of50% point-of-sale rebate until2023-03-31; excluded extraordinary1000homeowner application benefit."
+      ]
+    },
+    {
+      "year": 2020,
+      "region": "NB",
+      "gasoline": [
+        {
+          "from": "2020-01-01",
+          "rate": 0.0442
+        },
+        {
+          "from": "2020-04-01",
+          "rate": 0.0663
+        }
+      ],
+      "sources": [
+        "2020/sources/carbon-regional-nb-act.txt",
+        "2021/sources/carbon-regional-nb-act.txt",
+        "2022/sources/carbon-regional-nb-rates.txt",
+        "2023/sources/carbon-regional-nb-end.txt",
+        "2020/sources/carbon-regional-nb-exemptions.txt"
+      ],
+      "rebates": [],
+      "notes": []
+    },
+    {
+      "year": 2020,
+      "region": "PE",
+      "gasoline": [
+        {
+          "from": "2020-01-01",
+          "rate": 0.0442
+        },
+        {
+          "from": "2020-04-01",
+          "rate": 0.0663
+        }
+      ],
+      "sources": [
+        "2019/sources/carbon-regional-pe-rates.txt",
+        "2022/sources/carbon-regional-pe-rates.txt",
+        "2023/sources/carbon-regional-pe-end.txt",
+        "2022/sources/carbon-regional-pe-statute.txt",
+        "2022/sources/carbon-regional-pe-regular-formula.txt",
+        "2022/sources/carbon-regional-pe-rebate.txt"
+      ],
+      "rebates": [],
+      "notes": []
+    },
+    {
+      "year": 2020,
+      "region": "NL",
+      "gasoline": [
+        {
+          "from": "2020-01-01",
+          "rate": 0.0442
+        },
+        {
+          "from": "2020-11-07",
+          "rate": 0.0663
+        }
+      ],
+      "sources": [
+        "2019/sources/carbon-regional-nl-start.txt",
+        "2020/sources/carbon-regional-nl-rates.txt",
+        "2023/sources/carbon-regional-nl-rates.txt",
+        "2023/sources/carbon-regional-nl-heating-exemptions.txt"
+      ],
+      "rebates": [],
+      "notes": []
+    },
+    {
+      "year": 2021,
+      "region": "YT",
+      "gasoline": [
+        {
+          "from": "2021-01-01",
+          "rate": 0.0663
+        },
+        {
+          "from": "2021-04-01",
+          "rate": 0.0884
+        }
+      ],
+      "sources": [
+        "2025/sources/carbon-regional-federal-rates.txt",
+        "2025/sources/carbon-regional-yt-rebates.txt",
+        "2019/sources/carbon-regional-yt-start.txt",
+        "2019/sources/carbon-regional-yt-law.txt"
+      ],
+      "rebates": [
+        {
+          "name": "Yukon carbon rebate",
+          "program": "carbon-rebate-payments",
+          "params": {
+            "payments": [
+              {
+                "date": "2021-01-01",
+                "adult": 48,
+                "spouse": 48,
+                "child": 48,
+                "firstChild": 48,
+                "threshold": [
+                  0,
+                  0
+                ],
+                "rate": 0
+              },
+              {
+                "date": "2021-04-01",
+                "adult": 48,
+                "spouse": 48,
+                "child": 48,
+                "firstChild": 48,
+                "threshold": [
+                  0,
+                  0
+                ],
+                "rate": 0
+              },
+              {
+                "date": "2021-07-01",
+                "adult": 44,
+                "spouse": 44,
+                "child": 44,
+                "firstChild": 44,
+                "threshold": [
+                  0,
+                  0
+                ],
+                "rate": 0
+              },
+              {
+                "date": "2021-10-01",
+                "adult": 44,
+                "spouse": 44,
+                "child": 44,
+                "firstChild": 44,
+                "threshold": [
+                  0,
+                  0
+                ],
+                "rate": 0
+              }
+            ]
+          }
+        }
+      ],
+      "notes": [
+        "Dates ending -01 are sourced payment-month anchors, not assertions about the bank-deposit day.",
+        "Whitehorse reference city; remote supplement10% benefit-years2020–23,20%2024."
+      ]
+    },
+    {
+      "year": 2021,
+      "region": "NT",
+      "gasoline": [
+        {
+          "from": "2021-01-01",
+          "rate": 0.07
+        },
+        {
+          "from": "2021-07-01",
+          "rate": 0.094
+        }
+      ],
+      "sources": [
+        "2025/sources/carbon-regional-nt-report-final.txt",
+        "2019/sources/carbon-regional-nt-start.txt",
+        "2020/sources/carbon-regional-nt-lump-sum.txt",
+        "2023/sources/carbon-regional-nt-change.txt",
+        "2025/sources/carbon-regional-nt-end.txt"
+      ],
+      "rebates": [
+        {
+          "name": "Cost of Living Offset",
+          "program": "carbon-rebate-consolidated-payments",
+          "params": {
+            "payments": [
+              {
+                "date": "2021-01",
+                "adult": 39,
+                "spouse": 39,
+                "child": 45,
+                "firstChild": 45,
+                "threshold": [
+                  0,
+                  0
+                ],
+                "rate": 0,
+                "smallPayment": {
+                  "below": 50,
+                  "multiplier": 0
+                }
+              },
+              {
+                "date": "2021-04",
+                "adult": 39,
+                "spouse": 39,
+                "child": 45,
+                "firstChild": 45,
+                "threshold": [
+                  0,
+                  0
+                ],
+                "rate": 0,
+                "smallPayment": {
+                  "below": 50,
+                  "multiplier": 0
+                }
+              },
+              {
+                "date": "2021-07-01",
+                "adult": 52,
+                "spouse": 52,
+                "child": 60,
+                "firstChild": 60,
+                "threshold": [
+                  0,
+                  0
+                ],
+                "rate": 0
+              },
+              {
+                "date": "2021-10-01",
+                "adult": 52,
+                "spouse": 52,
+                "child": 60,
+                "firstChild": 60,
+                "threshold": [
+                  0,
+                  0
+                ],
+                "rate": 0
+              }
+            ]
+          }
+        }
+      ],
+      "notes": [
+        "Dates ending -01 are sourced payment-month anchors, not assertions about the bank-deposit day.",
+        "Zone A / Yellowknife reference city. B/C variants in research tables."
+      ]
+    },
+    {
+      "year": 2021,
+      "region": "NU",
+      "gasoline": [
+        {
+          "from": "2021-01-01",
+          "rate": 0.03315
+        },
+        {
+          "from": "2021-04-01",
+          "rate": 0.0442
+        }
+      ],
+      "sources": [
+        "2025/sources/carbon-regional-federal-rates.txt",
+        "2019/sources/carbon-regional-nu-start.txt",
+        "2022/sources/carbon-regional-nu-rebate-extension.txt",
+        "2023/sources/carbon-regional-nu-change.txt",
+        "2023/sources/carbon-regional-nu-hansard.txt",
+        "2024/sources/carbon-regional-nu-rebate.txt",
+        "2025/sources/carbon-regional-nu-cra-dates.txt"
+      ],
+      "rebates": [],
+      "notes": [
+        "NU published quarterly schedule; discretionary small-payment consolidation not activated without evidence of actual use.",
+        "Dates ending -01 are sourced payment-month anchors, not assertions about the bank-deposit day.",
+        "Gasoline is net of50% point-of-sale rebate until2023-03-31; excluded extraordinary1000homeowner application benefit."
+      ]
+    },
+    {
+      "year": 2021,
+      "region": "NB",
+      "gasoline": [
+        {
+          "from": "2021-01-01",
+          "rate": 0.0663
+        },
+        {
+          "from": "2021-04-01",
+          "rate": 0.0884
+        }
+      ],
+      "sources": [
+        "2020/sources/carbon-regional-nb-act.txt",
+        "2021/sources/carbon-regional-nb-act.txt",
+        "2022/sources/carbon-regional-nb-rates.txt",
+        "2023/sources/carbon-regional-nb-end.txt",
+        "2020/sources/carbon-regional-nb-exemptions.txt"
+      ],
+      "rebates": [],
+      "notes": []
+    },
+    {
+      "year": 2021,
+      "region": "PE",
+      "gasoline": 0.0663,
+      "sources": [
+        "2019/sources/carbon-regional-pe-rates.txt",
+        "2022/sources/carbon-regional-pe-rates.txt",
+        "2023/sources/carbon-regional-pe-end.txt",
+        "2022/sources/carbon-regional-pe-statute.txt",
+        "2022/sources/carbon-regional-pe-regular-formula.txt",
+        "2022/sources/carbon-regional-pe-rebate.txt"
+      ],
+      "rebates": [],
+      "notes": []
+    },
+    {
+      "year": 2021,
+      "region": "NL",
+      "gasoline": [
+        {
+          "from": "2021-01-01",
+          "rate": 0.0663
+        },
+        {
+          "from": "2021-07-01",
+          "rate": 0.0884
+        }
+      ],
+      "sources": [
+        "2019/sources/carbon-regional-nl-start.txt",
+        "2020/sources/carbon-regional-nl-rates.txt",
+        "2023/sources/carbon-regional-nl-rates.txt",
+        "2023/sources/carbon-regional-nl-heating-exemptions.txt"
+      ],
+      "rebates": [],
+      "notes": []
+    },
+    {
+      "year": 2022,
+      "region": "YT",
+      "gasoline": [
+        {
+          "from": "2022-01-01",
+          "rate": 0.0884
+        },
+        {
+          "from": "2022-04-01",
+          "rate": 0.1105
+        }
+      ],
+      "sources": [
+        "2025/sources/carbon-regional-federal-rates.txt",
+        "2025/sources/carbon-regional-yt-rebates.txt",
+        "2019/sources/carbon-regional-yt-start.txt",
+        "2019/sources/carbon-regional-yt-law.txt"
+      ],
+      "rebates": [
+        {
+          "name": "Yukon carbon rebate",
+          "program": "carbon-rebate-payments",
+          "params": {
+            "payments": [
+              {
+                "date": "2022-01-01",
+                "adult": 44,
+                "spouse": 44,
+                "child": 44,
+                "firstChild": 44,
+                "threshold": [
+                  0,
+                  0
+                ],
+                "rate": 0
+              },
+              {
+                "date": "2022-04-01",
+                "adult": 44,
+                "spouse": 44,
+                "child": 44,
+                "firstChild": 44,
+                "threshold": [
+                  0,
+                  0
+                ],
+                "rate": 0
+              },
+              {
+                "date": "2022-07-01",
+                "adult": 80,
+                "spouse": 80,
+                "child": 80,
+                "firstChild": 80,
+                "threshold": [
+                  0,
+                  0
+                ],
+                "rate": 0
+              },
+              {
+                "date": "2022-10-01",
+                "adult": 80,
+                "spouse": 80,
+                "child": 80,
+                "firstChild": 80,
+                "threshold": [
+                  0,
+                  0
+                ],
+                "rate": 0
+              }
+            ]
+          }
+        }
+      ],
+      "notes": [
+        "Dates ending -01 are sourced payment-month anchors, not assertions about the bank-deposit day.",
+        "Whitehorse reference city; remote supplement10% benefit-years2020–23,20%2024."
+      ]
+    },
+    {
+      "year": 2022,
+      "region": "NT",
+      "gasoline": [
+        {
+          "from": "2022-01-01",
+          "rate": 0.094
+        },
+        {
+          "from": "2022-07-01",
+          "rate": 0.117
+        }
+      ],
+      "sources": [
+        "2025/sources/carbon-regional-nt-report-final.txt",
+        "2019/sources/carbon-regional-nt-start.txt",
+        "2020/sources/carbon-regional-nt-lump-sum.txt",
+        "2023/sources/carbon-regional-nt-change.txt",
+        "2025/sources/carbon-regional-nt-end.txt"
+      ],
+      "rebates": [
+        {
+          "name": "Cost of Living Offset",
+          "program": "carbon-rebate-payments",
+          "params": {
+            "payments": [
+              {
+                "date": "2022-01-01",
+                "adult": 52,
+                "spouse": 52,
+                "child": 60,
+                "firstChild": 60,
+                "threshold": [
+                  0,
+                  0
+                ],
+                "rate": 0
+              },
+              {
+                "date": "2022-04-01",
+                "adult": 52,
+                "spouse": 52,
+                "child": 60,
+                "firstChild": 60,
+                "threshold": [
+                  0,
+                  0
+                ],
+                "rate": 0
+              },
+              {
+                "date": "2022-07-01",
+                "adult": 65,
+                "spouse": 65,
+                "child": 75,
+                "firstChild": 75,
+                "threshold": [
+                  0,
+                  0
+                ],
+                "rate": 0
+              },
+              {
+                "date": "2022-10-01",
+                "adult": 65,
+                "spouse": 65,
+                "child": 75,
+                "firstChild": 75,
+                "threshold": [
+                  0,
+                  0
+                ],
+                "rate": 0
+              }
+            ]
+          }
+        }
+      ],
+      "notes": [
+        "Dates ending -01 are sourced payment-month anchors, not assertions about the bank-deposit day.",
+        "Zone A / Yellowknife reference city. B/C variants in research tables."
+      ]
+    },
+    {
+      "year": 2022,
+      "region": "NU",
+      "gasoline": [
+        {
+          "from": "2022-01-01",
+          "rate": 0.0442
+        },
+        {
+          "from": "2022-04-01",
+          "rate": 0.05525
+        }
+      ],
+      "sources": [
+        "2025/sources/carbon-regional-federal-rates.txt",
+        "2019/sources/carbon-regional-nu-start.txt",
+        "2022/sources/carbon-regional-nu-rebate-extension.txt",
+        "2023/sources/carbon-regional-nu-change.txt",
+        "2023/sources/carbon-regional-nu-hansard.txt",
+        "2024/sources/carbon-regional-nu-rebate.txt",
+        "2025/sources/carbon-regional-nu-cra-dates.txt"
+      ],
+      "rebates": [],
+      "notes": [
+        "NU published quarterly schedule; discretionary small-payment consolidation not activated without evidence of actual use.",
+        "Dates ending -01 are sourced payment-month anchors, not assertions about the bank-deposit day.",
+        "Gasoline is net of50% point-of-sale rebate until2023-03-31; excluded extraordinary1000homeowner application benefit."
+      ]
+    },
+    {
+      "year": 2022,
+      "region": "NB",
+      "gasoline": [
+        {
+          "from": "2022-01-01",
+          "rate": 0.0884
+        },
+        {
+          "from": "2022-04-01",
+          "rate": 0.1105
+        }
+      ],
+      "sources": [
+        "2020/sources/carbon-regional-nb-act.txt",
+        "2021/sources/carbon-regional-nb-act.txt",
+        "2022/sources/carbon-regional-nb-rates.txt",
+        "2023/sources/carbon-regional-nb-end.txt",
+        "2020/sources/carbon-regional-nb-exemptions.txt"
+      ],
+      "rebates": [],
+      "notes": []
+    },
+    {
+      "year": 2022,
+      "region": "PE",
+      "gasoline": [
+        {
+          "from": "2022-01-01",
+          "rate": 0.0663
+        },
+        {
+          "from": "2022-05-09",
+          "rate": 0.1105
+        }
+      ],
+      "sources": [
+        "2019/sources/carbon-regional-pe-rates.txt",
+        "2022/sources/carbon-regional-pe-rates.txt",
+        "2023/sources/carbon-regional-pe-end.txt",
+        "2022/sources/carbon-regional-pe-statute.txt",
+        "2022/sources/carbon-regional-pe-regular-formula.txt",
+        "2022/sources/carbon-regional-pe-rebate.txt"
+      ],
+      "rebates": [
+        {
+          "name": "PEI carbon rebate",
+          "program": "pei-carbon-rebate-increment",
+          "params": {
+            "payments": [
+              {
+                "date": "2022-07-05",
+                "weight": 0.25,
+                "regular": {
+                  "individual": 110,
+                  "spouseOrDependant": 55,
+                  "supplementRate": 0.005,
+                  "supplementFrom": 30000,
+                  "supplementMax": 55,
+                  "threshold": 50000,
+                  "rate": 0.02
+                },
+                "enhanced": {
+                  "individual": 670,
+                  "spouseOrDependant": 55,
+                  "supplementRate": 0.005,
+                  "supplementFrom": 30000,
+                  "supplementMax": 55,
+                  "threshold": 50000,
+                  "rate": 0.04
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "notes": []
+    },
+    {
+      "year": 2022,
+      "region": "NL",
+      "gasoline": [
+        {
+          "from": "2022-01-01",
+          "rate": 0.0884
+        },
+        {
+          "from": "2022-05-01",
+          "rate": 0.1105
+        }
+      ],
+      "sources": [
+        "2019/sources/carbon-regional-nl-start.txt",
+        "2020/sources/carbon-regional-nl-rates.txt",
+        "2023/sources/carbon-regional-nl-rates.txt",
+        "2023/sources/carbon-regional-nl-heating-exemptions.txt"
+      ],
+      "rebates": [],
+      "notes": []
+    },
+    {
+      "year": 2023,
+      "region": "YT",
+      "gasoline": [
+        {
+          "from": "2023-01-01",
+          "rate": 0.1105
+        },
+        {
+          "from": "2023-04-01",
+          "rate": 0.1431
+        }
+      ],
+      "sources": [
+        "2025/sources/carbon-regional-federal-rates.txt",
+        "2025/sources/carbon-regional-yt-rebates.txt",
+        "2019/sources/carbon-regional-yt-start.txt",
+        "2019/sources/carbon-regional-yt-law.txt"
+      ],
+      "rebates": [
+        {
+          "name": "Yukon carbon rebate",
+          "program": "carbon-rebate-payments",
+          "params": {
+            "payments": [
+              {
+                "date": "2023-01-01",
+                "adult": 80,
+                "spouse": 80,
+                "child": 80,
+                "firstChild": 80,
+                "threshold": [
+                  0,
+                  0
+                ],
+                "rate": 0
+              },
+              {
+                "date": "2023-04-01",
+                "adult": 80,
+                "spouse": 80,
+                "child": 80,
+                "firstChild": 80,
+                "threshold": [
+                  0,
+                  0
+                ],
+                "rate": 0
+              },
+              {
+                "date": "2023-07-01",
+                "adult": 93,
+                "spouse": 93,
+                "child": 93,
+                "firstChild": 93,
+                "threshold": [
+                  0,
+                  0
+                ],
+                "rate": 0
+              },
+              {
+                "date": "2023-10-01",
+                "adult": 93,
+                "spouse": 93,
+                "child": 93,
+                "firstChild": 93,
+                "threshold": [
+                  0,
+                  0
+                ],
+                "rate": 0
+              }
+            ]
+          }
+        }
+      ],
+      "notes": [
+        "Dates ending -01 are sourced payment-month anchors, not assertions about the bank-deposit day.",
+        "Whitehorse reference city; remote supplement10% benefit-years2020–23,20%2024."
+      ]
+    },
+    {
+      "year": 2023,
+      "region": "NT",
+      "gasoline": [
+        {
+          "from": "2023-01-01",
+          "rate": 0.117
+        },
+        {
+          "from": "2023-04-01",
+          "rate": 0.1431
+        }
+      ],
+      "sources": [
+        "2025/sources/carbon-regional-nt-report-final.txt",
+        "2019/sources/carbon-regional-nt-start.txt",
+        "2020/sources/carbon-regional-nt-lump-sum.txt",
+        "2023/sources/carbon-regional-nt-change.txt",
+        "2025/sources/carbon-regional-nt-end.txt"
+      ],
+      "rebates": [
+        {
+          "name": "Cost of Living Offset",
+          "program": "carbon-rebate-payments",
+          "params": {
+            "payments": [
+              {
+                "date": "2023-01-01",
+                "adult": 65,
+                "spouse": 65,
+                "child": 75,
+                "firstChild": 75,
+                "threshold": [
+                  0,
+                  0
+                ],
+                "rate": 0
+              },
+              {
+                "date": "2023-04-01",
+                "adult": 65,
+                "spouse": 65,
+                "child": 75,
+                "firstChild": 75,
+                "threshold": [
+                  0,
+                  0
+                ],
+                "rate": 0
+              },
+              {
+                "date": "2023-07-01",
+                "adult": 110.25,
+                "spouse": 110.25,
+                "child": 123.25,
+                "firstChild": 123.25,
+                "threshold": [
+                  0,
+                  0
+                ],
+                "rate": 0
+              },
+              {
+                "date": "2023-10-01",
+                "adult": 110.25,
+                "spouse": 110.25,
+                "child": 123.25,
+                "firstChild": 123.25,
+                "threshold": [
+                  0,
+                  0
+                ],
+                "rate": 0
+              }
+            ]
+          }
+        }
+      ],
+      "notes": [
+        "Dates ending -01 are sourced payment-month anchors, not assertions about the bank-deposit day.",
+        "Zone A / Yellowknife reference city. B/C variants in research tables."
+      ]
+    },
+    {
+      "year": 2023,
+      "region": "NU",
+      "gasoline": [
+        {
+          "from": "2023-01-01",
+          "rate": 0.05525
+        },
+        {
+          "from": "2023-04-01",
+          "rate": 0.1431
+        }
+      ],
+      "sources": [
+        "2025/sources/carbon-regional-federal-rates.txt",
+        "2019/sources/carbon-regional-nu-start.txt",
+        "2022/sources/carbon-regional-nu-rebate-extension.txt",
+        "2023/sources/carbon-regional-nu-change.txt",
+        "2023/sources/carbon-regional-nu-hansard.txt",
+        "2024/sources/carbon-regional-nu-rebate.txt",
+        "2025/sources/carbon-regional-nu-cra-dates.txt"
+      ],
+      "rebates": [
+        {
+          "name": "Nunavut Carbon Credit",
+          "program": "carbon-rebate-payments",
+          "params": {
+            "payments": [
+              {
+                "date": "2023-09-05",
+                "adult": 77,
+                "spouse": 77,
+                "child": 77,
+                "firstChild": 77,
+                "threshold": [
+                  0,
+                  0
+                ],
+                "rate": 0
+              },
+              {
+                "date": "2023-10-05",
+                "adult": 77,
+                "spouse": 77,
+                "child": 77,
+                "firstChild": 77,
+                "threshold": [
+                  0,
+                  0
+                ],
+                "rate": 0
+              }
+            ]
+          }
+        }
+      ],
+      "notes": [
+        "NU published quarterly schedule; discretionary small-payment consolidation not activated without evidence of actual use.",
+        "Dates ending -01 are sourced payment-month anchors, not assertions about the bank-deposit day.",
+        "Gasoline is net of50% point-of-sale rebate until2023-03-31; excluded extraordinary1000homeowner application benefit."
+      ]
+    },
+    {
+      "year": 2023,
+      "region": "NB",
+      "gasoline": [
+        {
+          "from": "2023-01-01",
+          "rate": 0.1105
+        },
+        {
+          "from": "2023-07-01",
+          "rate": 0.1431
+        }
+      ],
+      "sources": [
+        "2020/sources/carbon-regional-nb-act.txt",
+        "2021/sources/carbon-regional-nb-act.txt",
+        "2022/sources/carbon-regional-nb-rates.txt",
+        "2023/sources/carbon-regional-nb-end.txt",
+        "2020/sources/carbon-regional-nb-exemptions.txt"
+      ],
+      "rebates": [],
+      "notes": []
+    },
+    {
+      "year": 2023,
+      "region": "PE",
+      "gasoline": [
+        {
+          "from": "2023-01-01",
+          "rate": 0.1105
+        },
+        {
+          "from": "2023-07-01",
+          "rate": 0.1431
+        }
+      ],
+      "sources": [
+        "2019/sources/carbon-regional-pe-rates.txt",
+        "2022/sources/carbon-regional-pe-rates.txt",
+        "2023/sources/carbon-regional-pe-end.txt",
+        "2022/sources/carbon-regional-pe-statute.txt",
+        "2022/sources/carbon-regional-pe-regular-formula.txt",
+        "2022/sources/carbon-regional-pe-rebate.txt"
+      ],
+      "rebates": [],
+      "notes": []
+    },
+    {
+      "year": 2023,
+      "region": "NL",
+      "gasoline": [
+        {
+          "from": "2023-01-01",
+          "rate": 0.1105
+        },
+        {
+          "from": "2023-07-01",
+          "rate": 0.1431
+        }
+      ],
+      "sources": [
+        "2019/sources/carbon-regional-nl-start.txt",
+        "2020/sources/carbon-regional-nl-rates.txt",
+        "2023/sources/carbon-regional-nl-rates.txt",
+        "2023/sources/carbon-regional-nl-heating-exemptions.txt"
+      ],
+      "rebates": [],
+      "notes": []
+    },
+    {
+      "year": 2024,
+      "region": "YT",
+      "gasoline": [
+        {
+          "from": "2024-01-01",
+          "rate": 0.1431
+        },
+        {
+          "from": "2024-04-01",
+          "rate": 0.1761
+        }
+      ],
+      "sources": [
+        "2025/sources/carbon-regional-federal-rates.txt",
+        "2025/sources/carbon-regional-yt-rebates.txt",
+        "2019/sources/carbon-regional-yt-start.txt",
+        "2019/sources/carbon-regional-yt-law.txt"
+      ],
+      "rebates": [
+        {
+          "name": "Yukon carbon rebate",
+          "program": "carbon-rebate-payments",
+          "params": {
+            "payments": [
+              {
+                "date": "2024-01-01",
+                "adult": 93,
+                "spouse": 93,
+                "child": 93,
+                "firstChild": 93,
+                "threshold": [
+                  0,
+                  0
+                ],
+                "rate": 0
+              },
+              {
+                "date": "2024-04-01",
+                "adult": 93,
+                "spouse": 93,
+                "child": 93,
+                "firstChild": 93,
+                "threshold": [
+                  0,
+                  0
+                ],
+                "rate": 0
+              },
+              {
+                "date": "2024-07-01",
+                "adult": 77.5,
+                "spouse": 77.5,
+                "child": 77.5,
+                "firstChild": 77.5,
+                "threshold": [
+                  0,
+                  0
+                ],
+                "rate": 0
+              },
+              {
+                "date": "2024-10-01",
+                "adult": 77.5,
+                "spouse": 77.5,
+                "child": 77.5,
+                "firstChild": 77.5,
+                "threshold": [
+                  0,
+                  0
+                ],
+                "rate": 0
+              }
+            ]
+          }
+        }
+      ],
+      "notes": [
+        "Dates ending -01 are sourced payment-month anchors, not assertions about the bank-deposit day.",
+        "Whitehorse reference city; remote supplement10% benefit-years2020–23,20%2024."
+      ]
+    },
+    {
+      "year": 2024,
+      "region": "NT",
+      "gasoline": [
+        {
+          "from": "2024-01-01",
+          "rate": 0.1431
+        },
+        {
+          "from": "2024-04-01",
+          "rate": 0.1761
+        }
+      ],
+      "sources": [
+        "2025/sources/carbon-regional-nt-report-final.txt",
+        "2019/sources/carbon-regional-nt-start.txt",
+        "2020/sources/carbon-regional-nt-lump-sum.txt",
+        "2023/sources/carbon-regional-nt-change.txt",
+        "2025/sources/carbon-regional-nt-end.txt"
+      ],
+      "rebates": [
+        {
+          "name": "Cost of Living Offset",
+          "program": "carbon-rebate-payments",
+          "params": {
+            "payments": [
+              {
+                "date": "2024-01-01",
+                "adult": 110.25,
+                "spouse": 110.25,
+                "child": 123.25,
+                "firstChild": 123.25,
+                "threshold": [
+                  0,
+                  0
+                ],
+                "rate": 0
+              },
+              {
+                "date": "2024-04-01",
+                "adult": 110.25,
+                "spouse": 110.25,
+                "child": 123.25,
+                "firstChild": 123.25,
+                "threshold": [
+                  0,
+                  0
+                ],
+                "rate": 0
+              },
+              {
+                "date": "2024-07-01",
+                "adult": 110.25,
+                "spouse": 110.25,
+                "child": 126.25,
+                "firstChild": 126.25,
+                "threshold": [
+                  0,
+                  0
+                ],
+                "rate": 0
+              },
+              {
+                "date": "2024-10-01",
+                "adult": 110.25,
+                "spouse": 110.25,
+                "child": 126.25,
+                "firstChild": 126.25,
+                "threshold": [
+                  0,
+                  0
+                ],
+                "rate": 0
+              }
+            ]
+          }
+        }
+      ],
+      "notes": [
+        "Dates ending -01 are sourced payment-month anchors, not assertions about the bank-deposit day.",
+        "Zone A / Yellowknife reference city. B/C variants in research tables."
+      ]
+    },
+    {
+      "year": 2024,
+      "region": "NU",
+      "gasoline": [
+        {
+          "from": "2024-01-01",
+          "rate": 0.1431
+        },
+        {
+          "from": "2024-04-01",
+          "rate": 0.1761
+        }
+      ],
+      "sources": [
+        "2025/sources/carbon-regional-federal-rates.txt",
+        "2019/sources/carbon-regional-nu-start.txt",
+        "2022/sources/carbon-regional-nu-rebate-extension.txt",
+        "2023/sources/carbon-regional-nu-change.txt",
+        "2023/sources/carbon-regional-nu-hansard.txt",
+        "2024/sources/carbon-regional-nu-rebate.txt",
+        "2025/sources/carbon-regional-nu-cra-dates.txt"
+      ],
+      "rebates": [
+        {
+          "name": "Nunavut Carbon Credit",
+          "program": "carbon-rebate-payments",
+          "params": {
+            "payments": [
+              {
+                "date": "2024-01-01",
+                "adult": 77,
+                "spouse": 77,
+                "child": 77,
+                "firstChild": 77,
+                "threshold": [
+                  0,
+                  0
+                ],
+                "rate": 0
+              },
+              {
+                "date": "2024-04-01",
+                "adult": 77,
+                "spouse": 77,
+                "child": 77,
+                "firstChild": 77,
+                "threshold": [
+                  0,
+                  0
+                ],
+                "rate": 0
+              },
+              {
+                "date": "2024-07-05",
+                "adult": 25,
+                "spouse": 25,
+                "child": 25,
+                "firstChild": 25,
+                "threshold": [
+                  0,
+                  0
+                ],
+                "rate": 0
+              },
+              {
+                "date": "2024-10-01",
+                "adult": 25,
+                "spouse": 25,
+                "child": 25,
+                "firstChild": 25,
+                "threshold": [
+                  0,
+                  0
+                ],
+                "rate": 0
+              }
+            ]
+          }
+        }
+      ],
+      "notes": [
+        "NU published quarterly schedule; discretionary small-payment consolidation not activated without evidence of actual use.",
+        "Dates ending -01 are sourced payment-month anchors, not assertions about the bank-deposit day.",
+        "Gasoline is net of50% point-of-sale rebate until2023-03-31; excluded extraordinary1000homeowner application benefit."
+      ]
+    },
+    {
+      "year": 2025,
+      "region": "YT",
+      "gasoline": [
+        {
+          "from": "2025-01-01",
+          "rate": 0.1761
+        },
+        {
+          "from": "2025-04-01",
+          "rate": 0
+        }
+      ],
+      "sources": [
+        "2025/sources/carbon-regional-federal-rates.txt",
+        "2025/sources/carbon-regional-yt-rebates.txt",
+        "2019/sources/carbon-regional-yt-start.txt",
+        "2019/sources/carbon-regional-yt-law.txt"
+      ],
+      "rebates": [
+        {
+          "name": "Yukon carbon rebate",
+          "program": "carbon-rebate-payments",
+          "params": {
+            "payments": [
+              {
+                "date": "2025-01-01",
+                "adult": 77.5,
+                "spouse": 77.5,
+                "child": 77.5,
+                "firstChild": 77.5,
+                "threshold": [
+                  0,
+                  0
+                ],
+                "rate": 0
+              },
+              {
+                "date": "2025-04-01",
+                "adult": 77.5,
+                "spouse": 77.5,
+                "child": 77.5,
+                "firstChild": 77.5,
+                "threshold": [
+                  0,
+                  0
+                ],
+                "rate": 0
+              }
+            ]
+          }
+        }
+      ],
+      "notes": [
+        "Dates ending -01 are sourced payment-month anchors, not assertions about the bank-deposit day.",
+        "Whitehorse reference city; remote supplement10% benefit-years2020–23,20%2024."
+      ]
+    },
+    {
+      "year": 2025,
+      "region": "NT",
+      "gasoline": [
+        {
+          "from": "2025-01-01",
+          "rate": 0.1761
+        },
+        {
+          "from": "2025-04-01",
+          "rate": 0
+        }
+      ],
+      "sources": [
+        "2025/sources/carbon-regional-nt-report-final.txt",
+        "2019/sources/carbon-regional-nt-start.txt",
+        "2020/sources/carbon-regional-nt-lump-sum.txt",
+        "2023/sources/carbon-regional-nt-change.txt",
+        "2025/sources/carbon-regional-nt-end.txt"
+      ],
+      "rebates": [
+        {
+          "name": "Cost of Living Offset",
+          "program": "carbon-rebate-payments",
+          "params": {
+            "payments": [
+              {
+                "date": "2025-01-01",
+                "adult": 110.25,
+                "spouse": 110.25,
+                "child": 126.25,
+                "firstChild": 126.25,
+                "threshold": [
+                  0,
+                  0
+                ],
+                "rate": 0
+              },
+              {
+                "date": "2025-04-01",
+                "adult": 110.25,
+                "spouse": 110.25,
+                "child": 126.25,
+                "firstChild": 126.25,
+                "threshold": [
+                  0,
+                  0
+                ],
+                "rate": 0
+              }
+            ]
+          }
+        }
+      ],
+      "notes": [
+        "Dates ending -01 are sourced payment-month anchors, not assertions about the bank-deposit day.",
+        "Zone A / Yellowknife reference city. B/C variants in research tables."
+      ]
+    },
+    {
+      "year": 2025,
+      "region": "NU",
+      "gasoline": [
+        {
+          "from": "2025-01-01",
+          "rate": 0.1761
+        },
+        {
+          "from": "2025-04-01",
+          "rate": 0
+        }
+      ],
+      "sources": [
+        "2025/sources/carbon-regional-federal-rates.txt",
+        "2019/sources/carbon-regional-nu-start.txt",
+        "2022/sources/carbon-regional-nu-rebate-extension.txt",
+        "2023/sources/carbon-regional-nu-change.txt",
+        "2023/sources/carbon-regional-nu-hansard.txt",
+        "2024/sources/carbon-regional-nu-rebate.txt",
+        "2025/sources/carbon-regional-nu-cra-dates.txt"
+      ],
+      "rebates": [
+        {
+          "name": "Nunavut Carbon Credit",
+          "program": "carbon-rebate-payments",
+          "params": {
+            "payments": [
+              {
+                "date": "2025-01-01",
+                "adult": 25,
+                "spouse": 25,
+                "child": 25,
+                "firstChild": 25,
+                "threshold": [
+                  0,
+                  0
+                ],
+                "rate": 0
+              },
+              {
+                "date": "2025-04-04",
+                "adult": 25,
+                "spouse": 25,
+                "child": 25,
+                "firstChild": 25,
+                "threshold": [
+                  0,
+                  0
+                ],
+                "rate": 0
+              }
+            ]
+          }
+        }
+      ],
+      "notes": [
+        "NU published quarterly schedule; discretionary small-payment consolidation not activated without evidence of actual use.",
+        "Dates ending -01 are sourced payment-month anchors, not assertions about the bank-deposit day.",
+        "Gasoline is net of50% point-of-sale rebate until2023-03-31; excluded extraordinary1000homeowner application benefit."
+      ]
+    }
+  ],
+  "heating": {
+    "YT": {
+      "unit": "CAD/litre",
+      "proxyLitres": 1750,
+      "proxy": "Midpoint of1500–2000L/year2017Yukon oil-heated-home illustration; estimated, not territorialmean",
+      "oil": [
+        [
+          "2019-01-01",
+          0
+        ],
+        [
+          "2019-07-01",
+          0.0537
+        ],
+        [
+          "2020-04-01",
+          0.0805
+        ],
+        [
+          "2021-04-01",
+          0.1073
+        ],
+        [
+          "2022-04-01",
+          0.1341
+        ],
+        [
+          "2023-04-01",
+          0.1738
+        ],
+        [
+          "2023-11-09",
+          0
+        ]
+      ],
+      "sources": [
+        "2025/sources/carbon-regional-federal-rates.txt",
+        "2023/sources/carbon-regional-yt-heating-proxy.txt",
+        "2025/sources/carbon-regional-yt-rebates.txt"
+      ],
+      "calendarEffectiveOilRates": {
+        "2019": 0.02707068493150685,
+        "2020": 0.07383661202185793,
+        "2021": 0.1006917808219178,
+        "2022": 0.1274917808219178,
+        "2023": 0.13877424657534249,
+        "2024": 0,
+        "2025": 0
+      }
+    },
+    "NT": {
+      "unit": "CAD/litre",
+      "proxyLitres": 2406,
+      "proxy": "2012Deline feasibility-study residential-building assumption reused for allNWT; estimated, not Yellowknifemeasurement",
+      "oil": [
+        [
+          "2019-01-01",
+          0
+        ],
+        [
+          "2023-04-01",
+          0.1738
+        ],
+        [
+          "2024-04-01",
+          0
+        ]
+      ],
+      "sources": [
+        "2025/sources/carbon-regional-nt-report-final.txt",
+        "2023/sources/carbon-regional-nt-heating-proxy.txt"
+      ],
+      "calendarEffectiveOilRates": {
+        "2019": 0,
+        "2020": 0,
+        "2021": 0,
+        "2022": 0,
+        "2023": 0.13094520547945207,
+        "2024": 0.04321256830601093,
+        "2025": 0
+      }
+    },
+    "NU": {
+      "unit": "CAD/litre",
+      "proxyLitres": 2406,
+      "proxy": "Reuse NWT2012Deline residential-building oil assumption because no reliableNUhousehold figure found; estimated cross-territoryproxy",
+      "oil": [
+        [
+          "2019-01-01",
+          0
+        ],
+        [
+          "2019-07-01",
+          0.02685
+        ],
+        [
+          "2020-04-01",
+          0.04025
+        ],
+        [
+          "2021-04-01",
+          0.05365
+        ],
+        [
+          "2022-04-01",
+          0.06705
+        ],
+        [
+          "2023-04-01",
+          0.1738
+        ],
+        [
+          "2023-11-09",
+          0
+        ]
+      ],
+      "sources": [
+        "2025/sources/carbon-regional-federal-rates.txt",
+        "2019/sources/carbon-regional-nu-start.txt",
+        "2022/sources/carbon-regional-nu-rebate-extension.txt",
+        "2023/sources/carbon-regional-nu-change.txt",
+        "2023/sources/carbon-regional-nt-heating-proxy.txt"
+      ],
+      "calendarEffectiveOilRates": {
+        "2019": 0.013535342465753424,
+        "2020": 0.036918306010928964,
+        "2021": 0.0503458904109589,
+        "2022": 0.0637458904109589,
+        "2023": 0.1222413698630137,
+        "2024": 0,
+        "2025": 0
+      }
+    },
+    "AB": {
+      "unit": "CAD/litre",
+      "oil": [
+        [
+          "2019-01-01",
+          0.0803
+        ],
+        [
+          "2019-05-30",
+          0
+        ]
+      ],
+      "naturalGasUnit": "CAD/GJ",
+      "naturalGas": [
+        [
+          "2019-01-01",
+          1.517
+        ],
+        [
+          "2019-05-30",
+          0
+        ]
+      ],
+      "validYears": [
+        2019
+      ],
+      "sources": [
+        "2019/sources/carbon-regional-ab-rates.txt",
+        "2019/sources/carbon-regional-ab-statute.txt",
+        "2019/sources/carbon-regional-ab-end.txt"
+      ],
+      "calendarEffectiveOilRates": {
+        "2019": 0.03278
+      }
+    },
+    "NB": {
+      "unit": "CAD/litre",
+      "oil": [
+        [
+          "2020-01-01",
+          0.0537
+        ],
+        [
+          "2020-04-01",
+          0
+        ],
+        [
+          "2023-07-01",
+          0.1738
+        ],
+        [
+          "2023-11-09",
+          0
+        ]
+      ],
+      "propane": [
+        [
+          "2020-01-01",
+          0.031
+        ],
+        [
+          "2020-04-01",
+          0
+        ],
+        [
+          "2023-07-01",
+          0.1006
+        ]
+      ],
+      "naturalGasUnit": "CAD/cubic metre",
+      "naturalGas": [
+        [
+          "2020-01-01",
+          0.0391
+        ],
+        [
+          "2020-04-01",
+          0.0587
+        ],
+        [
+          "2021-04-01",
+          0.0783
+        ],
+        [
+          "2022-04-01",
+          0.0979
+        ],
+        [
+          "2023-07-01",
+          0.1239
+        ]
+      ],
+      "validYears": [
+        2020,
+        2021,
+        2022,
+        2023
+      ],
+      "sources": [
+        "2020/sources/carbon-regional-nb-act.txt",
+        "2021/sources/carbon-regional-nb-act.txt",
+        "2022/sources/carbon-regional-nb-rates.txt",
+        "2023/sources/carbon-regional-nb-end.txt",
+        "2020/sources/carbon-regional-nb-exemptions.txt",
+        "2025/sources/carbon-regional-federal-rates.txt"
+      ],
+      "calendarEffectiveOilRates": {
+        "2020": 0.013351639344262294,
+        "2021": 0,
+        "2022": 0,
+        "2023": 0.06237753424657534
+      }
+    }
+  }
+}
