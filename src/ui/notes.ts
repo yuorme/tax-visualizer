@@ -288,6 +288,13 @@ export function footerNotes(y: YearData, page: PageDefaults): string {
     `Each person gets the Canada employment amount (${money(F.employmentAmount)}${empAlso.length ? `, also in ${list(empAlso)}` : ""}) and credits for base CPP/QPP contributions and EI/QPIP premiums, federally and in every province except ${quebec.name}, which instead allows a deduction for workers (${rate(wd.rate)} of employment income, up to ${money(wd.max)}).`,
     "Enhanced CPP/QPP contributions are deducted from income.",
     `Ontario adds its surtax (${list(surtax)}), the Ontario tax reduction (${money(onRed.base)} plus ${money(onRed.perChild)} per child) and the LIFT credit (up to ${money(lift.max)}).`,
+    ...P.flatMap(p =>
+      p.postDividendSurtax
+        ? [
+            `${p.name} adds a surtax of ${rate(p.postDividendSurtax.params.rate)} of provincial tax above ${money(p.postDividendSurtax.params.threshold)}, after dividend tax credits and before the low-income tax reduction.`,
+          ]
+        : [],
+    ),
     // The reduction is gone once net income passes the threshold by max ÷ rate.
     `BC applies its tax reduction (up to ${money(bcRed.max)}, phased out between ${money(bcRed.threshold)} and ${money(bcRed.threshold + bcRed.max / bcRed.rate)} of net income).`,
     `Low-income tax reductions are applied in ${list(lowIncome)}${indexed.length ? ` (${list(indexed)} ${indexed.length > 1 ? "are" : "is"} ${lastYearIndexed})` : ""}.`,
@@ -323,7 +330,7 @@ export function footerNotes(y: YearData, page: PageDefaults): string {
     ([r, ps]) => `${list(ps.map(p => article(short(p))))} withhold${ps.length > 1 ? "" : "s"} a ${rate(r)} payroll tax`,
   );
   const payroll = [
-    `CPP: ${fixed(cpp.base, 2)} base plus ${rate(cpp.enh1)} enhanced on earnings between ${money(cpp.exempt)} and ${money(cpp.ympe)}, and ${rate(cpp.enh2)} on earnings up to ${money(cpp.yampe)}.`,
+    `CPP: ${fixed(cpp.base, 2)} base plus ${rate(cpp.enh1)} enhanced on earnings between ${money(cpp.exempt)} and ${money(cpp.ympe)}${cpp.enh2 ? `, and ${rate(cpp.enh2)} on earnings up to ${money(cpp.yampe)}` : "; no second additional contribution applies"}.`,
     `Quebec's QPP is ${fixed(qpp.base, 2)} base plus ${sameEnhanced ? "the same enhanced rates" : `${rate(qpp.enh1)} enhanced on earnings between ${money(qpp.exempt)} and ${money(qpp.ympe)}, and ${rate(qpp.enh2)} on earnings up to ${money(qpp.yampe)}`}.`,
     `EI: ${fixed(ei.rate, 2)} of earnings up to ${money(ei.maxInsurable)}, or ${fixed(ei.quebecRate, 2)} in Quebec, where QPIP adds ${fixed(qpip.rate, 2)} up to ${money(qpip.maxInsurable)}.`,
     `${clauses([...premium, ...terrTax])}.`,
@@ -339,20 +346,28 @@ export function footerNotes(y: YearData, page: PageDefaults): string {
     throw new Error("page notes: unsupported NWT child benefit");
   const nwt = nwtBenefit.params;
   const nlProgram = need(prov("NL").childBenefit, "NL child benefit");
-  if (nlProgram.program !== "nl-child-benefit" && nlProgram.program !== "nl-child-benefit-reduction")
+  if (
+    nlProgram.program !== "nl-child-benefit" &&
+    nlProgram.program !== "nl-child-benefit-reduction" &&
+    nlProgram.program !== "nl-child-benefit-periods"
+  )
     throw new Error("page notes: unsupported NL child benefit");
   const nu = childBenefit("NU", "per-child-reduced"),
     nub = nu.params;
   const children = [
-    `${benefitYear(y)} amounts, applied to current-year income: the Canada Child Benefit (${money(ccb.perChildUnder6)} per child under 6 or ${money(ccb.perChild6to17)} aged 6–17, reduced above ${money(ccb.threshold1)} of family net income), the Ontario Child Benefit (up to ${money(ocb.perChild)} per child), Quebec's family allowance (${money(qfa.max)} to ${money(qfa.min)} per child, plus the ${money(qfa.schoolSupplies)} school supplies supplement, applied to children aged 6–17), the B.C. family benefit, the Alberta Child and Family Benefit, the Nova Scotia Child Benefit, the PEI Child Benefit, New Brunswick's Child Tax Benefit and Working Income Supplement, and the Yukon Child Benefit, all from CRA's T4114 booklet for ${benefitYear(y)} or the province's own rules.`,
+    `${benefitYear(y)} amounts, applied to current-year income: the Canada Child Benefit (${money(ccb.perChildUnder6)} per child under 6 or ${money(ccb.perChild6to17)} aged 6–17, reduced above ${money(ccb.threshold1)} of family net income), the Ontario Child Benefit (up to ${money(ocb.perChild)} per child), Quebec's family allowance (${money(qfa.max)} to ${money(qfa.min)} per child, plus the ${money(qfa.schoolSupplies)} school supplies supplement, applied to children aged 6–17), the B.C. family benefit, the Alberta Child and Family Benefit, the Nova Scotia Child Benefit, ${prov("PE").childBenefit ? "the PEI Child Benefit, " : ""}New Brunswick's Child Tax Benefit and Working Income Supplement, and the Yukon Child Benefit, all from CRA's T4114 booklet for ${benefitYear(y)} or the province's own rules.`,
     ...(nlProgram.program === "nl-child-benefit"
       ? [
           `For the NWT, Newfoundland and Labrador and Nunavut benefits the amounts and the income where the reduction starts are official, but the reduction rate isn't published: the NWT and Newfoundland and Labrador benefits are tapered in a straight line to the published end points (${money(nwt.endsAt)} and ${money(nlProgram.params.endsAt)}), and Nunavut's uses the ${rate(nub.rateOneChild)} / ${rate(nub.rateMoreChildren)} rates in ${need(nu.rateSource, "Nunavut child benefit rate source")}.`,
           `These approximations only affect families below about ${money(Math.max(nwt.endsAt, nlProgram.params.endsAt))}.`,
         ]
-      : [
-          `The NWT benefit uses ${nwtBenefit.estimated ? "an estimated" : "the published"} straight-line taper to ${money(nwt.endsAt)}. Newfoundland and Labrador's published reduction rates are ${list(nlProgram.params.rate.map(rate))} for one, two or three children, plus ${rate(nlProgram.params.additionalRate)} for each additional child, on family income above ${money(nlProgram.params.threshold)}. Nunavut's uses the ${rate(nub.rateOneChild)} / ${rate(nub.rateMoreChildren)} rates in ${need(nu.rateSource, "Nunavut child benefit rate source")}.`,
-        ]),
+      : nlProgram.program === "nl-child-benefit-periods"
+        ? [
+            `The NWT benefit uses ${nwtBenefit.estimated ? "an estimated" : "the published"} straight-line taper to ${money(nwt.endsAt)}. Newfoundland and Labrador changed its child benefit during this benefit year: calculate each period separately, then weight its entitlement by its share of the year. ${nlProgram.params.periods.map((period, i) => `Period ${i + 1} (${rate(period.weight)} of the year): annual amounts ${list(period.perChild.map(money))} for the first, second, third and each additional child; reduction rates ${list(period.rate.map(rate))} for one, two or three children, plus ${rate(period.additionalRate)} for each additional child, above ${money(period.threshold)} of family income.`).join(" ")} Nunavut uses the ${rate(nub.rateOneChild)} / ${rate(nub.rateMoreChildren)} rates in ${need(nu.rateSource, "Nunavut child benefit rate source")}.`,
+          ]
+        : [
+            `The NWT benefit uses ${nwtBenefit.estimated ? "an estimated" : "the published"} straight-line taper to ${money(nwt.endsAt)}. Newfoundland and Labrador's published reduction rates are ${list(nlProgram.params.rate.map(rate))} for one, two or three children, plus ${rate(nlProgram.params.additionalRate)} for each additional child, on family income above ${money(nlProgram.params.threshold)}. Nunavut's uses the ${rate(nub.rateOneChild)} / ${rate(nub.rateMoreChildren)} rates in ${need(nu.rateSource, "Nunavut child benefit rate source")}.`,
+          ]),
     // Manitoba's benefit isn't modelled, so it has no figures in the data; the income limit is approximate.
     "Saskatchewan has no child benefit; Manitoba's (for incomes under about $15,000), Newfoundland and Labrador's prenatal–early childhood nutrition supplement and Nunavut's territorial workers' supplement aren't modelled, and neither are childcare costs or credits.",
   ].join(" ");

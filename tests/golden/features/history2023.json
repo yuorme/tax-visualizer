@@ -1,0 +1,295 @@
+{
+  "description": "Hand-calculated 2023 historical paths; docs/verification/2023-golden-cases.md.",
+  "defaults": {
+    "active": 0,
+    "spouse": true,
+    "adults": 1,
+    "kids": 0,
+    "under6": 0,
+    "useBpa": false,
+    "whRate": 0,
+    "useCredits": false,
+    "homeValue": 0,
+    "rent": 0,
+    "monthlySpending": 0
+  },
+  "rules": {},
+  "cases": [
+    {
+      "id": "history2023-pe-below-surtax",
+      "year": 2023,
+      "province": "PE",
+      "household": {
+        "people": [
+          {
+            "fd": 90000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pr.tax": 11895.539,
+        "list.0.surtax": 0,
+        "list.0.prov": 11895.539
+      }
+    },
+    {
+      "id": "history2023-pe-surtax-boundary",
+      "year": 2023,
+      "province": "PE",
+      "household": {
+        "people": [
+          {
+            "fd": 93619.52694610777
+          }
+        ]
+      },
+      "expected": {
+        "list.0.surtax": 0,
+        "list.0.prov": 12500
+      }
+    },
+    {
+      "id": "history2023-pe-above-boundary",
+      "year": 2023,
+      "province": "PE",
+      "household": {
+        "people": [
+          {
+            "fd": 93629.52694610777
+          }
+        ]
+      },
+      "expected": {
+        "list.0.surtax": 0.167,
+        "list.0.prov": 12501.837
+      }
+    },
+    {
+      "id": "history2023-pe-surtax",
+      "year": 2023,
+      "province": "PE",
+      "household": {
+        "people": [
+          {
+            "fd": 100000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pr.tax": 13565.539,
+        "list.0.surtax": 106.5539,
+        "list.0.prov": 13672.0929
+      }
+    },
+    {
+      "id": "history2023-pe-eligible-before-surtax",
+      "year": 2023,
+      "province": "PE",
+      "household": {
+        "people": [
+          {
+            "fd": 100000,
+            "ed": 10000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pDtc": 1449,
+        "list.0.surtax": 192.1139,
+        "list.0.prov": 14613.2529
+      }
+    },
+    {
+      "id": "history2023-pe-noneligible-before-surtax",
+      "year": 2023,
+      "province": "PE",
+      "household": {
+        "people": [
+          {
+            "fd": 100000,
+            "nd": 10000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pDtc": 149.5,
+        "list.0.surtax": 283.6539,
+        "list.0.prov": 15620.1929
+      }
+    },
+    {
+      "id": "history2023-pe-dividend-floor",
+      "year": 2023,
+      "province": "PE",
+      "household": {
+        "people": [
+          {
+            "ed": 20000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pr.tax": 2704.8,
+        "list.0.pDtc": 2704.8,
+        "list.0.surtax": 0,
+        "list.0.prov": 0
+      }
+    },
+    {
+      "id": "history2023-nl-none",
+      "year": 2023,
+      "province": "NL",
+      "household": {
+        "people": [
+          {
+            "fd": 0
+          }
+        ],
+        "kids": 0,
+        "useCredits": true
+      },
+      "expected": {
+        "provBen": 0
+      }
+    },
+    {
+      "id": "history2023-nl-lower-bound",
+      "year": 2023,
+      "province": "NL",
+      "household": {
+        "people": [
+          {
+            "fd": 17397
+          }
+        ],
+        "kids": 1,
+        "useCredits": true
+      },
+      "expected": {
+        "provBen": 1117.5
+      }
+    },
+    {
+      "id": "history2023-nl-both-paying",
+      "year": 2023,
+      "province": "NL",
+      "household": {
+        "people": [
+          {
+            "fd": 18397
+          }
+        ],
+        "kids": 1,
+        "useCredits": true
+      },
+      "expected": {
+        "provBen": 1011.65
+      }
+    },
+    {
+      "id": "history2023-nl-first-exhausted",
+      "year": 2023,
+      "province": "NL",
+      "household": {
+        "people": [
+          {
+            "fd": 27000
+          }
+        ],
+        "kids": 1,
+        "useCredits": true
+      },
+      "expected": {
+        "provBen": 120.9585
+      }
+    },
+    {
+      "id": "history2023-nl-both-exhausted",
+      "year": 2023,
+      "province": "NL",
+      "household": {
+        "people": [
+          {
+            "fd": 40000
+          }
+        ],
+        "kids": 1,
+        "useCredits": true
+      },
+      "expected": {
+        "provBen": 0
+      }
+    },
+    {
+      "id": "history2023-nl-four-children",
+      "year": 2023,
+      "province": "NL",
+      "household": {
+        "people": [
+          {
+            "fd": 18397
+          }
+        ],
+        "kids": 4,
+        "useCredits": true
+      },
+      "expected": {
+        "provBen": 4474.35
+      }
+    },
+    {
+      "id": "history2023-nl-fifth-child",
+      "year": 2023,
+      "province": "NL",
+      "household": {
+        "people": [
+          {
+            "fd": 18397
+          }
+        ],
+        "kids": 5,
+        "useCredits": true
+      },
+      "expected": {
+        "provBen": 5712.35
+      }
+    },
+    {
+      "id": "history2023-payroll-AB",
+      "year": 2023,
+      "province": "AB",
+      "household": {
+        "people": [
+          {
+            "ord": 100000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 3123.45,
+        "list.0.pay.enh": 631,
+        "list.0.pay.ei": 1002.45,
+        "list.0.pay.qpip": 0
+      }
+    },
+    {
+      "id": "history2023-payroll-QC",
+      "year": 2023,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 100000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 3407.4,
+        "list.0.pay.enh": 631,
+        "list.0.pay.ei": 781.05,
+        "list.0.pay.qpip": 449.54
+      }
+    }
+  ],
+  "ratePeriodCases": []
+}

@@ -1,0 +1,80 @@
+Title: Ontario 2024 and 2023 Tax Rates & Tax Brackets
+URL: https://www.taxtips.ca/priortaxrates/tax-rates-2023-2024/on.htm
+Fetched: 2026-11-02
+SHA-256 of the original: 87930e6b5a557219ada6d3724e212544a15989cd90ee352d4dddde2bb5e6b136
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+#### Home -> Ontario
+
+#### Tax Rates -> 2023-2024 Tax Rates -> Ontario Personal Income Tax Rates
+
+# Ontario 2024 and 2023 Tax Rates & Tax Brackets
+
+The Ontario tax brackets and personal tax credit amounts are increased for 2024 by an indexation factor of 1.045 (4.5% increase), except for the $150,000 and $220,000 bracket amounts, which are not indexed for inflation.
+
+The Federal tax brackets and personal tax credit amounts are increased for 2024 by an indexation factor of 1.047 (4.7% increase).
+
+The 2024 Federal Budget proposed an increase in the capital gains inclusion rate to 66 2/3% for the portion of gains realized after June 24, 2024 in excess of $250,000, for an individual. We've added an extra column below, to show the marginal tax rate for those gains. The inclusion rate is still 50% for the portion of gains up to $250,000 after June 24, 2024.
+
+See Indexation of the Personal Income Tax System for how the indexation factors are calculated.
+
+The indexation factors, tax brackets and tax rates for 2024 have been confirmed to Canada Revenue Agency information.
+
+Tax Tip: read the article Understanding the Tables of Personal Income Tax Rates, especially if you are trying to compare the rates below to the marginal tax rates in the Basic Tax Calculator or the Detailed Tax Calculators.
+
+TaxTips.ca - Ontario Tax Rates
+2024 Taxable Income | 2024 Tax Rates | 2023 Taxable Income | 2023 Tax Rates
+first $51,446 | 5.05% | first $49,231 | 5.05%
+over $51,446 up to $102,894 | 9.15% | over $49,231 up to $98,463 | 9.15%
+over $102,894 up to $150,000 | 11.16% | over $98,463 up to $150,000 | 11.16%
+over $150,000 up to $220,000 | 12.16% | over $150,000 up to $220,000 | 12.16%
+over $220,000 | 13.16% | over $220,000 | 13.16%
+
+TaxTips.ca - Combined Federal & Ontario Tax Brackets and Tax Rates Including Surtaxes
+2024 Taxable Income (1) | ON 2024 Marginal Tax Rates | 2023 Taxable Income (1) | ON 2023 Marginal Tax Rates
+Other Income | Capital Gains | Canadian Dividends | Other Income | Capital Gains | Canadian Dividends
+All Pre- Jun 25 | >$250K Post- Jun 24 | Eligible | Non-Eligible | Eligible | Non-Eligible
+first $51,446 | 20.05% | 10.03% | 13.37% | -6.86% | 9.24% | first $49,231 | 20.05% | 10.03% | -6.86% | 9.24%
+over $51,446 up to $55,867 | 24.15% | 12.08% | 16.10% | -1.20% | 13.95% | over $49,231 up to $53,359 | 24.15% | 12.08% | -1.20% | 13.95%
+over $55,867 up to $90,599 | 29.65% | 14.83% | 19.77% | 6.39% | 20.28% | over $53,359 up to $86,698 | 29.65% | 14.83% | 6.39% | 20.28%
+over $90,599 up to $102,894 | 31.48% | 15.74% | 20.99% | 8.92% | 22.38% | over $86,698 up to $98,463 | 31.48% | 15.74% | 8.92% | 22.38%
+over $102,894 up to $106,732 | 33.89% | 16.95% | 22.59% | 12.24% | 25.16% | over $98,463 up to $102,135 | 33.89% | 16.95% | 12.24% | 25.16%
+over $106,732 up to $111,733 | 37.91% | 18.95% | 25.27% | 17.79% | 29.78% | over $102,135 up to $106,717 | 37.91% | 18.95% | 17.79% | 29.78%
+over $111,733 up to $150,000 | 43.41% | 21.70% | 28.94% | 25.38% | 36.10% | over $106,717 up to $150,000 | 43.41% | 21.70% | 25.38% | 36.10%
+over $150,000 up to $173,205 | 44.97% | 22.48% | 29.98% | 27.53% | 37.90% | over $150,000 up to $165,430 | 44.97% | 22.48% | 27.53% | 37.90%
+over $173,205 up to $220,000 | 48.29% | 24.14% | 32.19% | 32.11% | 41.72% | over $165,430 up to $220,000 | 48.29% | 24.14% | 32.11% | 41.72%
+over $220,000 up to $246,752 | 49.85% | 24.92% | 33.23% | 34.26% | 43.51% | over $220,000 up to $235,675 | 49.85% | 24.92% | 34.26% | 43.51%
+over $246,752 | 53.53% | 26.76% | 35.69% | 39.34% | 47.74% | over $235,675 | 53.53% | 26.76% | 39.34% | 47.74%
+Marginal tax rate for dividends is a % of actual dividends received (not grossed-up taxable amount). Marginal tax rate for capital gains is a % of total capital gains (not taxable capital gains). Gross-up rate for eligible dividends is 38%, and for non-eligible dividends is 15%. The surtax is calculated before deducting dividend tax credits. For more information see Ontario dividend tax credits. Marginal tax rates do not include the Ontario Health Premium, which increases the above marginal tax rates by up to 25%. Copyright © 2002 Boat Harbour Investments Ltd.
+
+TaxTips.ca Ontario Surtaxes
+2024 | 2023
+Surtax rate (included in above rates) | 20% | 36% | Surtax rate (included in above rates) | 20% | 36%
+Surtax is on ON tax greater than | $5,554 | $7,108 | Surtax is on ON tax greater than | $5,315 | $6,802
+Person with only basic personal amount - surtax starts at taxable income of | $90,599 | $106,732 | Person with only basic personal amount - surtax starts at taxable income of | $86,698 | $102,135
+The 36% surtax is in addition to the 20% surtax, for a total surtax of 56%. The surtax increases the 13.16% tax rate to 20.53% (13.16% x 1.56). Surtaxes are calculated before deducting dividend tax credits.
+
+TaxTips.ca Ontario Basic Personal Amount
+2024 Personal Amount | 2024 Tax Rate | 2023 Personal Amount | 2023 Tax Rate
+$12,399 | 5.05% | $11,865 | 5.05%
+
+Federal Basic Personal Amount
+2024 Personal Amount (1) Minimum / Maximum | 2024 Tax Rate | 2023 Personal Amount (1) Minimum / Maximum | 2023 Tax Rate
+$14,156 | $15,705 | 15% | $13,520 | $15,000 | 15%
+
+(1) See the federal tax rates page for information on the enhanced federal personal amount, which increases the marginal tax rates for taxable incomes in the second highest federal tax bracket. The marginal tax rates in blue above have been adjusted to reflect these changes.
+
+Revised: September 17, 2026
+
+© 2002- Boat Harbour Investments Ltd. All rights reserved.
+
+See Reproduction of information from TaxTips.ca
+
+Privacy Policy | Contact
+
+Facebook | Twitter | LinkedIn
+
+The authors of TaxTips.ca strive, but cannot guarantee, to provide information which is current and accurate. Individual circumstances have a significant effect on how tax and financial information can be used. Due to this, and to the nature of the information, it should not be relied upon for decision making without professional advice.
+
+TaxTips.ca provides links to other web sites. We cannot guarantee the accuracy of the information provided on linked sites.

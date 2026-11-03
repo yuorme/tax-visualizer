@@ -1,0 +1,116 @@
+Title: Property tax rates and bill calculation
+URL: https://www.calgary.ca/property-owners/taxes/bill-rate-calculation.html
+Fetched: 2026-11-02
+SHA-256 of the original: 84c3b7acc94c33e9ecfeb9215cb1d31961aaede275fa2b63ce1c8c762283498c
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+Information
+
+- Skip to main content
+
+[image: Return to the Calgary.ca homepage] [image: Return to the Calgary.ca homepage]
+
+# Property tax rates and bill calculation
+
+Property tax rates and property tax bills are calculated annually. Your property’s value is assessed each year, and the assessed value determines your share of property tax. The total tax payable on your property tax bill includes a portion that supports City services, and a portion collected for the province. Approximately 42% of the property tax you pay is sent to the Government of Alberta.
+
+### City property tax rate
+
+## City property tax rate
+
+Each year Council approves a yearly budget with the amount of property tax needed to support City services. From this, The City takes the overall expenditure and subtracts all other sources of revenue such as licence fees, permits, user fees and provincial grants. The balance is the total revenue required by The City from property tax.
+
+The formula used to determine The City's property tax rate is:
+
+City tax rate = Total revenue required by The City from property tax ÷ Total assessment
+
+### Provincial/Educational property tax rate
+
+## Provincial/Educational property tax rate
+
+The province calculates the local education or provincial tax rate for each municipality. You can learn more on how the provincial/education property tax is calculated, collected, and used on the Government of Alberta's website.
+
+## Current and historical property tax rates
+
+The City develops four-year plans and budgets to care for our community, striking a balance between the services you use every day and costs. The historical information below goes back to the first year of the four-year cycle in 2023.
+
+| A | B | C | D
+Year | A : Total residential Tax revenue required by The City | B : Total Residential taxable assessment value | C : City Tax rate (A ÷ B) | D : Provincial/ Educational Tax rate (set by province) | Total tax rate (C+D)
+2026 | A : $ 1,378,401,552 | B : $ 354,290,225,719 | C : 0.0038906 | D : 0.0027593 | 0.0066499
+2025 | A : $ 1,324,138,634 | B : $ 342,101,646,863 | C : 0.0038706 | D : 0.0023097 | 0.0061803
+2024 | A : $ 1,221,804,900 | B : $ 290,656,794,111 | C : 0.0042036 | D : 0.0022825 | 0.0064861
+2023 | A : $ 1,120,660,342 | B : $ 258,699,494,988 | C : 0.0043319 | D : 0.0022399 | 0.0065718
+
+Before approving the final tax rates, Council must receive the provincial budget to determine what funding will be made to available to The City and how much property tax revenue the province is requesting. This is done in the spring, typically March. The 2026 property tax rates are below.
+
+Assessment Class | City | Provincial | Total
+Assessment Class : Residential | City : 0.0038906 | Provincial : 0.0027593 | Total : 0.0066499
+Assessment Class : Non-Residential | City : 0.0179986 | Provincial : 0.0041502 | Total : 0.0221488
+Assessment Class : Farm Land | City : 0.0339557 | Provincial : 0.0027593 | Total : 0.0367150
+
+View the full Property Tax Bylaw 9M2026
+
+## Calculating your tax bill
+
+Your property assessment is used to calculate your share of property tax that support City services and sent to the Government of Alberta. Your property assessment is based on the market value of your property on July 1, 2025.
+
+Your property tax bill is mailed to you in May. It covers the period of January 1 to December 31, it has a due date of the last business day of June.
+
+The calculation used to determine the Total Tax Amount Due on your property tax bill is:
+
+Total property tax amount due = (Assessment x City's tax rate) + (Assessment x Province tax rate)
+
+### Median residential tax bill amounts
+
+The Median home assessment is based on the middle value when all house values of single detached homes are arranged in ascending order. This chart only represents the median residential values and tax bill for the year indicated. Your property value and its yearly change will determine your property’s tax bill and yearly change.
+
+| | A | B
+Year | Median single detached residential home assessment | Property Tax to The City (Assessment x City tax rate) | Property Tax to the province (Assessment x provincial tax rate) | Tax % staying in The City / Tax % going to the province | Total tax amount owing on tax bill (A+B)
+Year : 2026 | Median single detached residential home assessment : $ 706,000 | Property Tax to The City (Assessment x City tax rate) : $ 2,746.76 | Property Tax to the province (Assessment x provincial tax rate) : $ 1,948.06 | Tax % staying in The City / Tax % going to the province : 58/42 | Total tax amount owing on tax bill (A+B) : $ 4,694.82
+Year : 2025 | Median single detached residential home assessment : $ 697,000 | Property Tax to The City (Assessment x City tax rate) : $ 2,697.81 | Property Tax to the province (Assessment x provincial tax rate) : $ 1,610 | Tax % staying in The City / Tax % going to the province : 63/37 | Total tax amount owing on tax bill (A+B) : $ 4,308
+Year : 2024 | Median single detached residential home assessment : $ 610,000 | Property Tax to The City (Assessment x City tax rate) : $ 2,564.20 | Property Tax to the province (Assessment x provincial tax rate) : $ 1,392 | Tax % staying in The City / Tax % going to the province : 65/35 | Total tax amount owing on tax bill (A+B) : $ 3,956
+Year : 2023 | Median single detached residential home assessment : $ 555,000 | Property Tax to The City (Assessment x City tax rate) : $ 2,404.20 | Property Tax to the province (Assessment x provincial tax rate) : $ 1,243 | Tax % staying in The City / Tax % going to the province : 66/34 | Total tax amount owing on tax bill (A+B) : $ 3,647
+
+Return to top
+
+## About
+
+- Budget and finances
+
+How we budget to deliver programs and services.
+
+- Our strategy
+
+How we are aligned to deliver on Council’s direction.
+
+- About us
+- Events
+- Research and data
+
+## Services
+
+- 311
+- Careers
+- Live and Play
+- City Online
+- Maps
+- News
+
+## Employees
+
+- Employee Portal sign in
+- Employee resources
+
+[image: Return to the Calgary.ca homepage]
+
+We appreciate and acknowledge that we are gathered on the ancestral and traditional territory of the Blackfoot Nations, the Îethka Nakoda Wîcastabi First Nations and the Tsuut’ina First Nation and the homeland of the Métis - the Otipemisiwak. Read full Land Acknowledgement.
+
+See all social media channels
+
+- Privacy Policy
+- Terms of Use
+- Accessibility
+- Search Tips
+
+2026. All rights reserved. Official website of The City of Calgary, located in Calgary, Alberta, Canada.
