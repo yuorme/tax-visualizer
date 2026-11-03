@@ -467,7 +467,7 @@ export function footerNotes(y: YearData, page: PageDefaults): string {
   const pei = creditName("PE", ["pei-essentials-benefit", "pei-sales-tax-credit"]);
   const estimates = [
     sk.estimated &&
-      `Saskatchewan's reduction rate (${rate(sk.params.rate)}) is worked out from CRA's published start and end points`,
+      `Saskatchewan's low-income tax credit includes estimated parameters; its modelled reduction rate is ${rate(sk.params.rate)}`,
     mb.estimated &&
       (mb.program === "mb-school-tax-credits" || mb.program === "mb-school-tax-credits-rent-share"
         ? `Manitoba's school taxes are estimated as ${rate(mb.params.schoolTaxShare)} of the property tax bill using the reference city's school-tax share`
