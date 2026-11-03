@@ -12,6 +12,14 @@
     "coupleTwoChildren": 906,
     "parentTwoChildren": 792.75
   },
-  "independentIncomeTests": { "income15000": 170, "income30000": 0 },
+  "independentIncomeTests": {
+    "income10000": 220,
+    "income15000": 170,
+    "income20000": 120,
+    "income22000": 80,
+    "income26000": 0,
+    "income30000": 0
+  },
+  "familyThresholds": { "single": 50, "couple": 150, "parentOneChild": 150, "parentTwoChildren": 175 },
   "netTaxDelta": -762.5780821918
 }

@@ -74,6 +74,23 @@ test("carbon golden: each income-tested payment floors independently before bein
   ];
   assert.equal(carbonRebatesOf(p, 15000, false, 0)[0][1], fixture.independentIncomeTests.income15000);
   assert.equal(carbonRebatesOf(p, 30000, false, 0)[0][1], fixture.independentIncomeTests.income30000);
+  for (const income of [10000, 20000, 22000, 26000])
+    assert.equal(carbonRebatesOf(p, income, false, 0)[0][1], fixture.independentIncomeTests[`income${income}`]);
+});
+
+test("carbon golden: couples and single parents use the family income threshold", () => {
+  const p = structuredClone(province);
+  assert.ok(p.carbon);
+  p.carbon.rebates[0].params.payments = [
+    { date: "2025-01-01", adult: 100, spouse: 50, child: 25, firstChild: 50, threshold: [10000, 20000], rate: 0.01 },
+  ];
+  for (const [id, couple, kids] of [
+    ["single", false, 0],
+    ["couple", true, 0],
+    ["parentOneChild", false, 1],
+    ["parentTwoChildren", false, 2],
+  ] as const)
+    assert.equal(carbonRebatesOf(p, 15000, couple, kids)[0][1], fixture.familyThresholds[id]);
 });
 
 test("carbon golden: costs enter gross tax, rebates enter benefits once and follow the credits switch", () => {

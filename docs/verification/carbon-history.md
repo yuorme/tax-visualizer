@@ -25,6 +25,12 @@ Official sources are cached in `2025/sources/carbon-federal-rates.txt` and `carb
 - Net tax change for that couple is $143.4219178082 minus $906 = -$762.5780821918.
 - Synthetic provincial payment tests: at income $15,000, a $100 payment reduced at 1% above $10,000 gives $50;
   a $120 payment reduced at 2% above $20,000 stays $120. Their sum is $170. At income $30,000 both are zero.
-  This checks that separate payment floors cannot be replaced by averaging thresholds.
+  At $10,000 both are unreduced: $220. At $20,000 the first exhausts and the second starts reducing: $120.
+  At $22,000 the first stays zero and the second is $120 - 2% × $2,000 = $80. Combining reductions before
+  flooring would incorrectly produce $60. The second exhausts at $26,000, giving zero total.
+- Synthetic family thresholds: one payment with adult $100, spouse/first child $50 and other children $25;
+  single threshold $10,000, family threshold $20,000 and reduction 1%. At income $15,000 a single receives
+  $100 - 1% × $5,000 = $50. A couple and a single parent with one child each receive $150 without reduction;
+  a single parent with two children receives $175. This isolates the family threshold and first-child substitution.
 
 Existing-year data is not yet activated by this prerequisite. No existing golden expectations are changed.
