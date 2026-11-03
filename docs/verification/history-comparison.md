@@ -50,3 +50,14 @@ Browser tests compare table values with the engine, exercise real and nominal mo
 reload saved settings and return to the provincial view at 375 px, 430 px and desktop widths in light and dark mode.
 History holds household composition and monetary purchasing power fixed; it does not age the household or estimate
 historical house-price appreciation. Coverage is limited to programs represented in each installed year's data.
+
+## Carbon integration
+
+`features/history-carbon.json` isolates a zero-income-tax system with 1,000 litres of gasoline at $0.10/L,
+a fixed $50 heating estimate and a $20 calendar rebate. Nominal net tax is $100 + $50 − $20 = $130 in each
+year. With synthetic CPI 50 in the older year and 100 in the base year, real-dollar tax is $260 and $130.
+Driving quantities and nominal program amounts stay fixed; only the resulting monetary total is converted.
+Disabling credits gives $150 nominal and $300/$150 real. Zero driving gives $30 nominal and $60/$30 real.
+
+Existing synthetic income-tax specimens explicitly retain their original no-carbon data after real 2025 data
+gains carbon programs. Their household inputs, expected values, assertions and tolerances remain unchanged.

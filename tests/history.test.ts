@@ -6,6 +6,13 @@ import { loadCpi, loadYear } from "../src/data/load.ts";
 import { historyComparison, scaleHousehold } from "../src/engine/history.ts";
 import { blank, compute, type Household } from "../src/engine/index.ts";
 
+// Preserve the original synthetic specimens when real 2025 data later gains historical carbon programs.
+const withoutCarbon = () => {
+  const data = loadYear(2025);
+  for (const p of data.provinces) delete p.carbon;
+  return data;
+};
+
 const input: Household = {
   people: [{ ...blank(100000), cg: -4000, ed: 2000, ded: 3000, rrsp: 5000, fhsa: 12000 }, blank(20000)],
   active: 0,
@@ -57,7 +64,7 @@ test("real-income conversion scales all money including losses and claims, prese
 });
 
 test("history converts tax back to base-year dollars, keeps nominal inputs fixed and omits unpublished CPI", () => {
-  const recent = loadYear(2025);
+  const recent = withoutCarbon();
   const older = { ...recent, year: 2019 };
   const current = loadYear(2026);
   const cpi = { ...loadCpi(), values: { 2019: 50, 2025: 100 } };
@@ -124,7 +131,7 @@ test("real conversion scales childcare money while preserving missing values, ag
 test("history golden: independently calculated progressive tax and monetary conversion", () => {
   // This deliberately synthetic tax system isolates CPI conversion from Canadian tax-rule changes.
   // Foreign dividends have no payroll, withholding is zero, and credits/benefits are disabled.
-  const base = loadYear(2025);
+  const base = withoutCarbon();
   const ab = base.provinces.find(p => p.code === "AB");
   assert.ok(ab);
   const specimen = {
@@ -165,7 +172,7 @@ test("history golden: independently calculated progressive tax and monetary conv
 });
 
 test("history claims goldens: scaled deductions and childcare flow through unchanged annual caps", () => {
-  const data = loadYear(2025);
+  const data = withoutCarbon();
   const ab = data.provinces.find(p => p.code === "AB");
   assert.ok(ab);
   // Synthetic income-tax-only system, retaining the sourced 2025 federal childcare limits.
