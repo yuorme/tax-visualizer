@@ -271,6 +271,22 @@ function inSteepestOhpBand(s: Step): boolean {
 /** Where smooth clawbacks stack past 100%, so a raise lowers disposable income. Every entry must still be seen. */
 const STACKED: Stacked[] = [
   {
+    code: "NL",
+    year: 2023,
+    // CRA GST calculation sheet (2022 base year), T4114-23, Schedule 6, RC4210-23 and NL428-23;
+    // cached under docs/verification/2023/sources. The provincial child benefit is zero in this interval.
+    why:
+      "a single parent with 4+ children at the 2023 GST/HST clawback onset ($42,335 net income), below the " +
+      "generic NL exception's $45,000 bound. CCB 23%, CWB 15%, GST 5%, NL supplement 9% and NL tax reduction " +
+      "16%, plus income tax/payroll, yield a 102.54554% fully overlapping marginal burden. A $500 sweep " +
+      "step can straddle the onset",
+    applies: s =>
+      singleParent(s.to, 4) &&
+      s.a.famNet < 45_000 &&
+      s.b.famNet > 42_335 &&
+      netWithin(s, 42_335 - SWEEP_STEP, 45_000 + SWEEP_STEP),
+  },
+  {
     code: "ON",
     why:
       "a single parent with 3+ children in an Ontario Health Premium band charged at 25%, on top of the Canada " +
@@ -489,7 +505,12 @@ const CHILD_EXCEPTIONS = new Set(["QC: canada-workers-benefit"]);
 // reduction can exceed the unchanged phase-in amount. Only admit the exact uncapped, positive case.
 function albertaWorkingReduction(y: YearData, p: Province, hh: Household, a: H, b: H): boolean {
   const program = p.childBenefit;
-  if (y.year !== 2024 || p.code !== "AB" || program?.program !== "alberta-child-family-benefit-by-child") return false;
+  if (
+    (y.year !== 2023 && y.year !== 2024) ||
+    p.code !== "AB" ||
+    program?.program !== "alberta-child-family-benefit-by-child"
+  )
+    return false;
   if (hh.kids < 1 || hh.kids >= 4 || Math.abs(a.famNet - b.famNet) > EPS) return false;
   const q = program.params;
   const i = hh.kids - 1;
@@ -506,7 +527,7 @@ function albertaWorkingReduction(y: YearData, p: Province, hh: Household, a: H, 
 }
 
 test("another child never raises income tax and benefit declines follow documented rules", () => {
-  let sawAlbertaReduction = false;
+  const albertaReductionYears = new Set<number>();
   const excepted = new Set<string>();
   forAll(8, 300, {}, (y, p, hh) => {
     const a = household(y, p, hh),
@@ -521,7 +542,7 @@ test("another child never raises income tax and benefit declines follow document
       for (const key of keysOf(la, lb)) {
         if (lineOf(lb, key) >= lineOf(la, key) - EPS) continue;
         if (key === "alberta-child-family-benefit-by-child" && albertaWorkingReduction(y, p, hh, a, b)) {
-          sawAlbertaReduction = true;
+          albertaReductionYears.add(y.year);
           continue;
         }
         assert.ok(CHILD_EXCEPTIONS.has(`${p.code}: ${key}`), `${key} fell: ${step}`);
@@ -530,6 +551,7 @@ test("another child never raises income tax and benefit declines follow document
     }
   });
   assert.deepEqual([...excepted].sort(), [...CHILD_EXCEPTIONS].sort(), "CHILD_EXCEPTIONS lists exactly what falls");
-  if (YEARS.some(y => y.year === 2024))
-    assert.ok(sawAlbertaReduction, "2024 Alberta working-reduction exception is still seen");
+  for (const year of [2023, 2024])
+    if (YEARS.some(y => y.year === year))
+      assert.ok(albertaReductionYears.has(year), `${year} Alberta working-reduction exception is still seen`);
 });

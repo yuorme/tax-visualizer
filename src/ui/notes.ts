@@ -341,7 +341,10 @@ export function footerNotes(y: YearData, page: PageDefaults): string {
   const ccb = F.childBenefit;
   const ocb = childBenefit("ON", "ontario-child-benefit").params;
   const qfa = childBenefit(quebec.code, "quebec-family-allowance").params;
-  const nwt = childBenefit("NT", "nwt-child-benefit").params;
+  const nwtBenefit = need(prov("NT").childBenefit, "NWT child benefit");
+  if (nwtBenefit.program !== "nwt-child-benefit" && nwtBenefit.program !== "nwt-child-benefit-age-groups")
+    throw new Error("page notes: unsupported NWT child benefit");
+  const nwt = nwtBenefit.params;
   const nlProgram = need(prov("NL").childBenefit, "NL child benefit");
   if (
     nlProgram.program !== "nl-child-benefit" &&
@@ -360,10 +363,10 @@ export function footerNotes(y: YearData, page: PageDefaults): string {
         ]
       : nlProgram.program === "nl-child-benefit-periods"
         ? [
-            `The NWT benefit uses an estimated straight-line taper to ${money(nwt.endsAt)}. Newfoundland and Labrador changed its child benefit during this benefit year: calculate each period separately, then weight its entitlement by its share of the year. ${nlProgram.params.periods.map((period, i) => `Period ${i + 1} (${rate(period.weight)} of the year): annual amounts ${list(period.perChild.map(money))} for the first, second, third and each additional child; reduction rates ${list(period.rate.map(rate))} for one, two or three children, plus ${rate(period.additionalRate)} for each additional child, above ${money(period.threshold)} of family income.`).join(" ")} Nunavut uses the ${rate(nub.rateOneChild)} / ${rate(nub.rateMoreChildren)} rates in ${need(nu.rateSource, "Nunavut child benefit rate source")}.`,
+            `The NWT benefit uses ${nwtBenefit.estimated ? "an estimated" : "the published"} straight-line taper to ${money(nwt.endsAt)}. Newfoundland and Labrador changed its child benefit during this benefit year: calculate each period separately, then weight its entitlement by its share of the year. ${nlProgram.params.periods.map((period, i) => `Period ${i + 1} (${rate(period.weight)} of the year): annual amounts ${list(period.perChild.map(money))} for the first, second, third and each additional child; reduction rates ${list(period.rate.map(rate))} for one, two or three children, plus ${rate(period.additionalRate)} for each additional child, above ${money(period.threshold)} of family income.`).join(" ")} Nunavut uses the ${rate(nub.rateOneChild)} / ${rate(nub.rateMoreChildren)} rates in ${need(nu.rateSource, "Nunavut child benefit rate source")}.`,
           ]
         : [
-            `The NWT benefit uses an estimated straight-line taper to ${money(nwt.endsAt)}. Newfoundland and Labrador's published reduction rates are ${list(nlProgram.params.rate.map(rate))} for one, two or three children, plus ${rate(nlProgram.params.additionalRate)} for each additional child, on family income above ${money(nlProgram.params.threshold)}. Nunavut's uses the ${rate(nub.rateOneChild)} / ${rate(nub.rateMoreChildren)} rates in ${need(nu.rateSource, "Nunavut child benefit rate source")}.`,
+            `The NWT benefit uses ${nwtBenefit.estimated ? "an estimated" : "the published"} straight-line taper to ${money(nwt.endsAt)}. Newfoundland and Labrador's published reduction rates are ${list(nlProgram.params.rate.map(rate))} for one, two or three children, plus ${rate(nlProgram.params.additionalRate)} for each additional child, on family income above ${money(nlProgram.params.threshold)}. Nunavut's uses the ${rate(nub.rateOneChild)} / ${rate(nub.rateMoreChildren)} rates in ${need(nu.rateSource, "Nunavut child benefit rate source")}.`,
           ]),
     // Manitoba's benefit isn't modelled, so it has no figures in the data; the income limit is approximate.
     "Saskatchewan has no child benefit; Manitoba's (for incomes under about $15,000), Newfoundland and Labrador's prenatal–early childhood nutrition supplement and Nunavut's territorial workers' supplement aren't modelled, and neither are childcare costs or credits.",

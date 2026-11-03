@@ -156,3 +156,13 @@ test("2023 Alberta reductions and NL half-year periods match published statutory
   near(nl(0), 1117.5, "six months of each published annual maximum");
   near(nl(27_000), 120.9585, "first period exhausted; second period weighted after flooring");
 });
+
+test("2023 NWT annual amounts and taper match the Finance fact sheet", () => {
+  const nt = (net: number, kids: number, under6: number) =>
+    provincialChildBenefit(prov("NT").childBenefit, net, 0, kids, false, under6);
+  near(nt(30_000, 1, 1), 815, "one child under six");
+  near(nt(30_000, 1, 0), 652, "one older child");
+  near(nt(30_000, 5, 5), 2812, "four-child maximum plus fifth child");
+  near(nt(55_000, 3, 2), (1467 + 652) / 2, "half of the combined age-group amounts");
+  near(nt(80_000, 3, 2), 0, "published exhaustion threshold");
+});

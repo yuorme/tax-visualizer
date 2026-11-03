@@ -1,5 +1,5 @@
 # Benefit-year figures use July 2023 to June 2024, applied to current-year income.
-# Child benefit annualizes the CRA monthly amounts ×12; taper is estimated as a straight line from 30000 to 80000.
+# NWT Finance publishes exact annual child-benefit amounts and the linear reduction formula, effective July 2017.
 # Yellowknife total residential rate: (6.28 municipal + 2.96 school) mills / 1000.
 
 code: NT
@@ -19,15 +19,14 @@ salesTax: {rate: 0.05, label: 5% GST}
 propertyTax: {rate: 0.00924, city: Yellowknife}
 childBenefit:
   name: NWT Child Benefit
-  program: nwt-child-benefit
+  program: nwt-child-benefit-age-groups
   params:
-    under6: [0, 814.92, 1467, 1996.92, 2445]
-    under6More: 366.96
-    over6: [0, 651.96, 1173.96, 1596.96, 1956]
-    over6More: 292.92
+    under6: [0, 815, 1467, 1997, 2445]
+    under6More: 367
+    over6: [0, 652, 1174, 1597, 1956]
+    over6More: 293
     fullUpTo: 30000
     endsAt: 80000
-  estimated: true
 sources:
   - {label: "CRA, NT428 for 2023 (brackets, personal amounts and reductions)", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5012-c/5012-c-23e.pdf}
   - {label: "CRA, NT428 worksheet for 2023 (dividend credits)", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5012-d/5012-d-23e.pdf}
@@ -36,3 +35,4 @@ sources:
   - {label: "NWT Finance, employee payroll tax 2%", url: https://www.fin.gov.nt.ca/en/services/licences-taxes-et-droits/payroll-tax-employees}
   - {label: "Yellowknife, 2023 municipal tax levy bylaw 5070", url: https://www.yellowknife.ca/sites/default/files/bylaws/5e999186-2eb7-415d-89f5-10dea5cce099.pdf}
   - {label: "Yellowknife, 2023 school tax levy bylaw 5071", url: https://www.yellowknife.ca/sites/default/files/bylaws/62352229-2655-4315-be85-7220a56574a6.pdf}
+  - {label: "NWT Finance, child benefit annual amounts and exact reduction formula (July 2017 onward)", url: https://www.fin.gov.nt.ca/sites/fin/files/benefits_and_support-nwt_child_benefit-180320.pdf}
