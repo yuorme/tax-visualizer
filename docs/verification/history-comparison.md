@@ -23,6 +23,27 @@ These expected values were calculated directly above, not captured from engine o
 cover negative investment income, each deduction category, childcare expenses and claims, missing eligible earnings,
 fixed household composition, fixed driving, and input immutability. Existing golden fixtures remain unchanged.
 
+## Claims through fixed annual limits
+
+`tests/golden/features/history-claims.json` adds final-tax cases using the same synthetic progressive brackets.
+Payroll, employment credits and child benefits are zeroed to isolate deductions; income is $100,000 employment
+income. Sales and property tax still total $2,600 in base-year dollars. Federal childcare retains its sourced
+2025 $8,000 young-child limit and two-thirds earned-income limit. Those rule limits never scale with CPI.
+
+| Case | Nominal claim | Old-year claim | Nominal total tax | Old-year tax in base dollars |
+| --- | ---: | ---: | ---: | ---: |
+| Other $3,000 + RRSP $5,000 + FHSA $12,000 | $20,000 | $10,000 | $13,600 | $10,600 |
+| Automatic expenses $15,998, earned $30,000 | $8,000 | $7,999 | $16,000 | $11,000.20 |
+| Automatic expenses $16,000, earned $30,000 | $8,000 | $8,000 | $16,000 | $11,000 |
+| Automatic expenses $16,002, earned $30,000 | $8,000 | $8,000 | $16,000 | $11,000 |
+| Automatic expenses $10,000, earned $9,000 | $6,000 | $3,000 | $16,400 | $12,000 |
+| Verified manual claim $10,000, expenses $12,000 | $10,000 | $5,000 | $15,600 | $11,600 |
+
+For example, the automatic cap case has nominal taxable income $92,000, so income tax is
+$5,000 + $42,000 × 20% = $13,400; adding $2,600 gives $16,000. Its old-year income is $50,000,
+but its cap remains $8,000: $42,000 × 10% ÷ 0.5 + $2,600 = $11,000. At $15,998 expenses,
+the old-year claim is $7,999, raising base-dollar tax by $0.20. Manual claims deliberately override ordinary caps.
+
 ## Display checks
 
 Browser tests compare table values with the engine, exercise real and nominal modes, change income and province,

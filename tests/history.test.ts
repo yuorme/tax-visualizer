@@ -163,3 +163,92 @@ test("history golden: independently calculated progressive tax and monetary conv
     assert.deepEqual(historyComparison(years, cpi, hh, ["AB"], mode), expected[mode]);
   }
 });
+
+test("history claims goldens: scaled deductions and childcare flow through unchanged annual caps", () => {
+  const data = loadYear(2025);
+  const ab = data.provinces.find(p => p.code === "AB");
+  assert.ok(ab);
+  // Synthetic income-tax-only system, retaining the sourced 2025 federal childcare limits.
+  const specimen = {
+    ...data,
+    federal: {
+      ...data.federal,
+      brackets: [
+        [50000, 0.1],
+        [Infinity, 0.2],
+      ] as [number, number][],
+      employmentAmount: 0,
+      payroll: {
+        ...data.federal.payroll,
+        cpp: { ...data.federal.payroll.cpp, base: 0, enh1: 0, enh2: 0 },
+        ei: { ...data.federal.payroll.ei, rate: 0 },
+      },
+      childBenefit: { ...data.federal.childBenefit, perChildUnder6: 0, perChild6to17: 0 },
+    },
+    provinces: [
+      {
+        ...ab,
+        brackets: [[Infinity, 0]] as [number, number][],
+        childBenefit: undefined,
+        propertyTax: { ...ab.propertyTax, rate: 0.01 },
+      },
+    ],
+  };
+  const hh: Household = {
+    ...input,
+    people: [blank(100000)],
+    spouse: false,
+    adults: 1,
+    kids: 1,
+    under6: 1,
+    useBpa: false,
+    useCredits: false,
+    whRate: 0,
+    homeValue: 200000,
+    rent: 0,
+    monthlySpending: 1000,
+    propertyRates: undefined,
+    driving: undefined,
+  };
+  const fixture: Record<
+    string,
+    {
+      expenses?: number;
+      earned?: number;
+      claim?: number;
+      realOldTax: number;
+      nominalTax: number;
+    }
+  > = JSON.parse(fs.readFileSync(new URL("./golden/features/history-claims.json", import.meta.url), "utf8"));
+  const years = [2019, 2025].map(year => ({ ...specimen, year }));
+  const cpi = { ...loadCpi(), values: { 2019: 50, 2025: 100 } };
+  for (const [id, c] of Object.entries(fixture)) {
+    const household = structuredClone(hh);
+    if (id === "deductions") {
+      household.people[0].ded = 3000;
+      household.people[0].rrsp = 5000;
+      household.people[0].fhsa = 12000;
+    } else {
+      assert.ok(c.expenses !== undefined);
+      household.childcare = {
+        mode: id === "manual" ? "manual" : "automatic",
+        children: [{ age: 3, expenses: c.expenses }],
+        declaredAnnualExpenses: c.expenses,
+      };
+      if (id === "manual") {
+        assert.ok(c.claim !== undefined);
+        household.childcare.manualClaims = [c.claim];
+      } else {
+        assert.ok(c.earned !== undefined);
+        household.childcare.earnedIncome = [c.earned];
+      }
+    }
+    const real = historyComparison(years, cpi, household, ["AB"], "real");
+    const nominal = historyComparison(years, cpi, household, ["AB"], "nominal");
+    const rounded = (n: number) => Math.round(n * 10000) / 10000;
+    assert.equal(rounded(real.rows[0].provinces[0].tax), c.realOldTax, `${id}: real old year`);
+    assert.equal(rounded(real.rows[1].provinces[0].tax), c.nominalTax, `${id}: real base year`);
+    for (const row of nominal.rows)
+      assert.equal(rounded(row.provinces[0].tax), c.nominalTax, `${id}: nominal ${row.year}`);
+  }
+});

@@ -1,0 +1,8 @@
+{
+  "deductions": { "realOldTax": 10600, "nominalTax": 13600 },
+  "automatic-below-cap": { "expenses": 15998, "earned": 30000, "realOldTax": 11000.2, "nominalTax": 16000 },
+  "automatic-at-cap": { "expenses": 16000, "earned": 30000, "realOldTax": 11000, "nominalTax": 16000 },
+  "automatic-above-cap": { "expenses": 16002, "earned": 30000, "realOldTax": 11000, "nominalTax": 16000 },
+  "automatic-earned-limit": { "expenses": 10000, "earned": 9000, "realOldTax": 12000, "nominalTax": 16400 },
+  "manual": { "expenses": 12000, "claim": 10000, "realOldTax": 11600, "nominalTax": 15600 }
+}
