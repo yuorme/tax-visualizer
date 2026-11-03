@@ -1,0 +1,52 @@
+# Benefit-year figures use July 2021 to June 2022, applied to current-year income.
+# Child maximum annualizes rounded CRA monthly $122.83 × 12 = $1473.96.
+# OEPTC property component is the published $852 property maximum minus $61 base = $791.
+# Toronto rate: (0.451291 municipal + 0.006722 city building + 0.153000 education) / 100.
+
+code: ON
+name: Ontario
+order: 7
+brackets:
+  - [45142, 0.0505]
+  - [90287, 0.0915]
+  - [150000, 0.1116]
+  - [220000, 0.1216]
+  - [.inf, 0.1316]
+basicPersonalAmount: 10880
+dividendTaxCredit: {eligible: 0.1, nonEligible: 0.029863}
+spouseAmount: {max: 9238, threshold: 924}
+surtax:
+  - [4874, 0.2]
+  - [6237, 0.36]
+ontarioTaxReduction: {base: 251, perChild: 464}
+lift: {max: 850, rate: 0.0505, threshold: 30000, familyThreshold: 60000, phaseOut: 0.1}
+payroll:
+  healthPremium:
+    - [200000, 750, 0.25, 900]
+    - [72000, 600, 0.25, 750]
+    - [48000, 450, 0.25, 600]
+    - [36000, 300, 0.06, 450]
+    - [20000, 0, 0.06, 300]
+salesTax: {rate: 0.13, label: 13% HST}
+propertyTax: {rate: 0.00611013, city: Toronto}
+creditsUseRent: true
+childBenefit:
+  name: Ontario Child Benefit
+  program: ontario-child-benefit
+  params: {perChild: 1473.96, threshold: 22504, rate: 0.08}
+  estimated: true
+credits:
+  - name: Ontario sales tax credit
+    program: ontario-sales-tax-credit
+    params: {perPerson: 316, rate: 0.04, thresholdSingle: 24332, thresholdFamily: 30415}
+  - name: Ontario energy and property tax credit
+    program: ontario-energy-property-tax-credit
+    params: {rentShare: 0.2, energyMax: 243, propertyBase: 61, propertyRate: 0.1, propertyMax: 791, rate: 0.02, thresholdSingle: 24332, thresholdFamily: 30415}
+sources:
+  - {label: "CRA, ON428 for 2021", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5006-c/5006-c-21e.pdf}
+  - {label: "CRA, ON428 worksheet for 2021", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5006-d/5006-d-21e.pdf}
+  - {label: "CRA, T4114-21: July 2021–June 2022 child benefits (official archive)", url: https://publications.gc.ca/collections/collection_2021/arc-cra/Rv1-36-2021-eng.pdf?download=1}
+  - {label: "CRA, GST/HST historical rates and provincial sales-tax rates", url: https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/charge-collect-which-rate/calculator.html}
+  - {label: "CRA, 2021 LIFT Schedule ON428-A", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5006-a/5006-a-21e.pdf}
+  - {label: "Ontario, 2021 tax transparency report: sales and energy/property credits", url: https://budget.ontario.ca/2021/fallstatement/provisions.html}
+  - {label: "Toronto, 2021 annual financial report: residential tax rates", url: https://www.toronto.ca/wp-content/uploads/2022/08/8f03-City-of-Toronto-YE-2021-AFR-08-15-2022.pdf}

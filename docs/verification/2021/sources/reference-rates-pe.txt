@@ -1,0 +1,53 @@
+Title: Prince Edward Island 2022 and 2021 Personal Marginal Income Tax Rates
+URL: https://www.taxtips.ca/priortaxrates/tax-rates-2021-2022/pe.htm
+Fetched: 2026-11-02
+SHA-256 of the original: 437696b55b9f8e5bcf046ac1952069707c0e089bc8a02a6b6e5093806d98ac16
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+Ads keep this website free for you. TaxTips.ca does not research or endorse any product or service appearing in ads on this site. Before making a major financial decision you should consult a qualified professional. | Prince Edward Island 2021 & 2022 Personal Tax Rates | TaxTips.ca Canadian Tax and Financial Information
+TaxTips.ca Home What's New | | Links & Resources Site Map
+
+Need an accounting, tax or financial advisor? Look in our Directory. Use above search box to easily find your topic! Stay Connected with TaxTips.ca!
+
+Home -> Atlantic Provinces -> Prince Edward Island Tax Rates -> 2021 and 2022 Tax Rates -> Prince Edward Island Prince Edward Island 2022 and 2021 Personal Marginal Income Tax Rates The Prince Edward Island tax brackets and personal tax credit amounts are not increased for inflation. The Federal tax brackets and personal tax credit amounts are increased for 2022 by an indexation factor of 1.024 (a 2.4% increase). The indexation factors, tax brackets and tax rates have been confirmed to Canada Revenue Agency information. The PEI 2021 Budget increased the basic personal amount to $11,250 for 2022, and Bill 37 legislated an increase to the spouse/equivalent to spouse amount. Bill 37 also reduced the non-eligible dividend tax credit rate. If Prince Edward Island used indexing, their tax brackets and personal amounts would have been increased for 2022 by an indexation factor of 1.033 (a 3.3% increase). Tax Tip: read the article Understanding the Tables of Personal Income Tax Rates, especially if you are trying to compare the rates below to the marginal tax rates in the Basic Tax Calculator.
+
+TaxTips.ca - Prince Edward Island Personal Income Tax Brackets and Tax Rates Before Surtax
+2022 Taxable Income | 2022 Tax Rates | 2021 Taxable Income | 2021 Tax Rates
+first $31,984 | 9.8% | first $31,984 | 9.8%
+over $31,984 up to $63,969 | 13.8% | over $31,984 up to $63,969 | 13.8%
+over $63,969 | 16.7% | over $63,969 | 16.7%
+
+TaxTips.ca - Combined Federal & Prince Edward Island Tax Brackets and Tax Rates Including Surtax
+2022 Taxable Income | PE 2022 Marginal Tax Rates | 2021 Taxable Income | PE 2021 Marginal Tax Rates
+Other Income | Capital Gains | Canadian Dividends | Other Income | Capital Gains | Canadian Dividends
+Eligible | Non-Eligible | Eligible | Non-Eligible
+first $31,984 | 24.80% | 12.40% | -0.99% | 16.64% | first $31,984 | 24.80% | 12.40% | -0.99% | 15.88%
+over $31,984 up to $50,197 | 28.80% | 14.40% | 4.53% | 21.24% | over $31,984 up to $49,020 | 28.80% | 14.40% | 4.53% | 20.48%
+over $50,197 up to $63,969 | 34.30% | 17.15% | 12.12% | 27.57% | over $49,020 up to $63,969 | 34.30% | 17.15% | 12.12% | 26.81%
+over $63,969 up to $100,223 | 37.20% | 18.60% | 16.12% | 30.90% | over $63,969 up to $98,040 | 37.20% | 18.60% | 16.12% | 30.14%
+over $100,223 up to $100,392 | 38.87% | 19.44% | 16.97% | 32.67% | over $98,040 up to $99,783 | 42.70% | 21.35% | 23.71% | 36.47%
+over $100,392 up to $155,625 | 44.37% | 22.19% | 24.56% | 39.00% | over $99,783 up to $151,978 | 44.37% | 22.19% | 24.56% | 38.16%
+over $155,625 up to $221,708 | 47.75% | 23.88% | 29.23% | 42.89% | over $151,978 up to $216,511 | 47.69% | 23.85% | 29.15% | 41.98%
+over $221,708 | 51.37% | 25.69% | 34.22% | 47.05% | over $216,511 | 51.37% | 25.69% | 34.22% | 46.21%
+Marginal tax rate for dividends is a % of actual dividends received (not grossed-up taxable amount). Marginal tax rate for capital gains is a % of total capital gains (not taxable capital gains). Gross-up rate for eligible dividends is 38%, and for non-eligible dividends is 15%. For more information see Prince Edward Island dividend tax credits.
+Prince Edward Island Surtaxes
+2022 | 2021
+Surtax rate (included in above rates) | 10% | Surtax rate (included in above rates) | 10%
+Surtax is on PE tax greater than | $12,500 | Surtax is on PE tax greater than | $12,500
+Person with only basic personal amount - surtax starts at taxable income of | $100,223 | Person with only basic personal amount - surtax starts at taxable income of | $99,783
+The surtax is calculated based on the net tax payable after deducting personal tax credits.
+Prince Edward Island Basic Personal Amount
+2022 Personal Amount | 2022 Tax Rate | 2021 Personal Amount | 2021 Tax Rate
+$11,250 | 9.8% | $10,500 | 9.8%
+Federal Basic Personal Amount
+2022 Personal Amount (1) | 2022 Tax Rate | 2021 Personal Amount (1) | 2021 Tax Rate
+$14,398 | 15% | $13,808 | 15%
+
+(1) See the federal tax rates page for information on the enhanced federal personal amount, which increases the marginal tax rates for taxable incomes in the second highest federal tax bracket. The marginal tax rates in blue above have been adjusted to reflect these changes.
+
+Copyright © 2002 Boat Harbour Investments Ltd.
+
+Revised: September 20, 2024
+
+Copyright © 2002 Boat Harbour Investments Ltd. All Rights Reserved. See Reproduction of information from TaxTips.ca Facebook | Twitter | LinkedIn The information on this site is not intended to be a substitute for professional advice. Each person's situation differs, and a professional advisor can assist you in using the information on this web site to your best advantage Please see our legal disclaimer regarding the use of information on our site, and our Privacy Policy regarding information that may be collected from visitors to our site.

@@ -1,0 +1,307 @@
+Title: Income Tax Return 2021
+URL: https://www.revenuquebec.ca/documents/en/formulaires/tp/2021-12/TP-1.D-V%282021-12%29.pdf
+Fetched: 2026-11-02
+SHA-256 of the original: a2b07f31c81f46c0d8749c23d8b139fbaa765eae2ca795ab74eccb4ce117a86e
+Publication date modified: 2021-12-20
+PDF pages: all 4
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 1 of 4 ---
+
+D1-V – Version 5 – 10 nov. 2021
+I101 ZZ 73494849
+If you received an identification label,
+place it here.
+If you are planning to move, see page 15 in the guide.
+3 If this is your first Québec income tax return,
+check this box.
+Information about you
+(see page 23 in the guide)
+Last name
+1
+First name Date of birth
+2 6
+Y Y Y Y M M D D
+4 Sex 1 male 2 female 5
+Language of communication
+(if this is your first Québec income tax return) 1 French 2 English
+7
+Apartment Street number Street name, P.O. box
+8
+City, town or municipality Province
+9
+Postal code
+11 Social insurance number
+12
+Your situation on December 31, 2021
+(see the definition of “spouse on December 31, 2021,” at line 12 in the guide)
+1 You did not have a spouse. 2 You had a spouse.
+13
+If your situation (line 12) has changed
+since 2020, enter the date of the change. 2 0 Y Y M M D D
+17
+Tax residence status
+If, on December 31, 2021, you were not resident in Québec,
+state where (prov., terr. or country)
+you were resident. See the guide.
+18
+If you were resident in Canada for only part of the year, enter
+your date of arrival your date of departure
+2 0 2 0
+Y Y M M D D Y Y M M D D
+Reason for your arrival or departure (see the guide) 0
+19
+If you entered a date on line 18, enter the income
+you earned while you were not resident in Canada.
+If you did not earn any income, enter 0. .
+Date of bankruptcy
+(where applicable) Period covered by the return
+1 before the bankruptcy
+2 after the bankruptcy
+21 2 0 2 1 M M D D
+Election concerning the calculation of QPP contributions on income
+from self-employment (if you checked box 1). See the guide. ..................
+22 If you are the beneficiary of a designated trust, see the guide.
+20
+If the above information
+concerns a deceased person,
+enter the date of death. 2 0 Y Y M M D D
+23
+If you are filing one or more separate returns for the year of death,
+check this box and see the guide.
+24
+If you received or disposed of virtual currency (by selling,
+transferring, exchanging, giving, etc.), check this box.
+Information about your spouse on December 31, 2021
+31
+Last name
+50
+If your spouse earned income
+from self-employment or received
+an RL-29 slip, check this box.32
+First name
+36 Date of birth
+Y Y Y Y M M D D
+37
+If your spouse died in 2021,
+enter the date of death. 2 0 2 1 M M D D
+41 Social insurance number
+51
+Your spouse’s net income (see the guide).
+If your spouse had no income, enter 0. .
+52
+Tax residence status
+If, on December 31, 2021, your spouse was not resident in Québec,
+state where (prov., terr. or country) he or she was resident
+(see line 17 in the guide).
+Solidarity tax credit
+To make sure you get the full amount you’re entitled to, complete Schedule D
+and sign up for direct deposit. See page 20 in the guide.
+Use blue or black ink.
+TINCOME TA X RE TURN T P -1. D -V
+2021
+Form prescribed by the President and Chief Executive Officer
+
+--- PDF page 2 of 4 ---
+
+D1-V – Version 5 – 10 nov. 2021
+I102 ZZ 73494850
+Pay close attention to the lines preceded by an arrow .
+Total income
+If you held employment outside Canada, check this box. 94
+If you held employment in Canada, outside Québec, check this box. 95
+CPP contribution (see the guide) 96 . QPP contribution,
+RL-1 slip, box B 98 .
+Pensionable earnings (CPP) 96.1 . Pensionable salary or wages (QPP),
+RL-1 slip, box G
+(see the guide) 98.1 .QPIP premium,
+RL-1 slip, box H 97 .
+Commissions received,
+RL-1 slip, box M 100 . Taxable benefit,
+RL-1 slip, boxes G-1 and L-2 102 .
+Employment income,
+RL-1 slip, box A 101 .
+Correction of employment income, if you received an RL-22 slip (Work Chart 105) + 105 .
+Other employment income (see the guide) Specify: 106 0
+107 .Premiums paid to a wage loss replacement plan 165 . +
+Parental insurance benefits,
+RL-6 slip, box A + 110 .
+Employment Insurance benefits,
+T4E slip + 111 .
+Old Age Security pension (see the guide) + 114 .
+QPP or CPP benefits,
+RL-2 slip, box C + 119 .
+Payments from a pension plan, an RRSP, a RRIF, a DPSP or a PRPP/VRSP, or annuities + 122 .
+Retirement income transferred by your spouse (see the guide) + 123 .
+Dividends from taxable
+Canadian corporations
+Actual amount of eligible dividends 166 .
+Taxable amount + 128 .Actual amount of ordinary dividends 167 .
+Interest and other investment income + 130 .
+Rental income.
+Net income + 136 .Attach form TP-128-V or your financial statements. Gross income 168 .
+Taxable capital gains (see the guide). Complete Schedule G. + 139 .
+Support payments received (taxable amount) + 142 .
+Social assistance payments,
+RL-5 slip, box A, and similar financial assistance,
+RL-5 slip, box B + 147 .
+Income replacement indemnities and net federal supplements Specify: 149 + 148 .
+Other income
+(see the guide)
+CERB, CESB, CRB,
+CRSB, CRCB or CWLB 169 . Specify: 153 + 154 .
+Net business income (line 34 of Schedule L) + 164 .
+Add lines 101 and 105 through 164. Total income = 199 .
+Net income
+Deduction for workers (see the guide) 201 .
+Registered pension plan (RPP) deduction,
+RL-1 slip, box D + 205 .
+Employment expenses and deductions Specify: 206 + 207 .
+RRSP or PRPP/VRSP deduction HBP or LLP 212 . + 214 .
+Support payments made (deductible amount). See the guide.
+225 .Recipient’s social insurance number 224 +
+Moving expenses. Complete form TP-348-V. + 228 .
+Carrying charges and interest expenses (see lines 231 and 260 in the guide) + 231 .
+Business investment loss. Complete form TP-232.1-V.
+234 .Total losses 233 . Allowable loss +
+Deduction for residents of designated remote areas. Complete form TP-350.1-V. + 236 .
+Deduction for exploration and development expenses + 241 .
+Deduction for retirement income transferred to your spouse on December 31. Complete Schedule Q. + 245 .
+Deduction for a repayment of amounts overpaid to you (see the guide) + 246 .
+Deduction for QPP and CPP contributions and QPIP premiums Specify: 248.1 + 248 .
+Other deductions (see the guide) Specify: 249 + 250 .
+Carry-over of the adjustment of investment expenses (see the guide) + 252 .
+Add lines 201 through 207, 214 through 231, and 234 through 252. Total deductions = 254 . 254 .
+Subtract line 254 from line 199. = 256 .
+Adjustment of investment expenses (see the guide). Complete Schedule N. + 260 .
+Add lines 256 and 260.
+If the result is negative, enter 0. Carry the result to page 3. Net income = 275 .
+TP-1.D-V (2021-12) Page 2T
+
+--- PDF page 3 of 4 ---
+
+D1-V – Version 5 – 10 nov. 2021
+I103 ZZ 73494851
+Taxable income
+Amount from line 275 275 .
+Adjustment of deductions (see the guide) Specify: 277 + 276 .
+Universal Child Care Benefit and income from a registered disability savings plan (see the guide) + 278 .
+Add lines 275 through 278. = 279 .
+Deductions for strategic investments (see the guide) Specify: 286 287 .
+Non-capital losses from other years Specify: 289.1 + 289 .
+Net capital losses from other years (see line 276, point 9, and line 290 in the guide) + 290 .
+Capital gains deduction (see the guide) + 292 .
+Deduction for an Indian + 293 .
+Deductions for certain income (see the guide) + 295 .
+Miscellaneous deductions (see the guide) Specify: 296 + 297 .
+Add lines 287 through 297. Total deductions = 298 . 298 .
+Subtract line 298 from line 279. If the result is negative, enter 0. Taxable income = 299 .
+Non-refundable tax credits
+Basic personal amount 350 15,728 . 00
+Adjustment for income replacement indemnities (see the guide) – 358 .
+Subtract line 358 from line 350. = 359 .
+Age amount, amount for a person living alone and amount for retirement income. Complete Schedule B. + 361 .
+Amount for dependants and amount transferred by a child 18 or over enrolled in post-secondary studies. Complete Schedule A. + 367 .
+Amount for a severe and prolonged impairment in mental or physical functions (see the guide) + 376 .
+Add lines 359 through 376. = 377 .
+× 15%
+Multiply line 377 by 15%. = 377.1 .
+Expenses for medical services not available in your area 378 .
+Medical expenses. Complete Schedule B. + 381 .
+Interest paid on a student loan. Complete Schedule M. Amount claimed + 385 .
+Add lines 378 through 385. = 388 .
+× 20%
+Multiply line 388 by 20%. = 389 . 389 .
+Tax credit for volunteer firefighters and search and rescue volunteers (see the guide) Specify: 390.1 + 390 .
+Tax credit for career extension (see the guide) + 391 .
+Tax credit for recent graduates working in remote resource regions. Complete form TP-776.1.ND-V. + 392 .
+Tax credits for donations and gifts (see the guide) Amount from line 1 of Work Chart 395 393 . + 395 .
+Home buyers’ tax credit. Complete form TP-752.HA-V. + 396 .
+Tax credit for union, professional or other dues 397.1 . × 10% + 397 .
+Tax credit for tuition or examination fees. Complete Schedule T. + 398 .
+Tax credit for tuition or examination fees transferred by a child (see the guide) + 398.1 .
+Add lines 377.1, 389 through 392, 395 through 397, 398 and 398.1. Non-refundable tax credits = 399 .
+Income tax and contributions
+Income tax on taxable income.
+Complete Work Chart 401. If you must complete form TP-22-V or TP-25-V, check box 403. 403 401 .
+Non-refundable tax credits (line 399) – 406 .
+Subtract line 406 from line 401. If you must complete Part A of Schedule E, enter the amount from line 413
+of Schedule E instead. If you are completing form TP-766.2-V, check box 404.
+If you are completing Part 4 of form TP-766.2-V, check box 405.
+404
+413 .405 =
+Tax credit for contributions to authorized Québec political parties (Work Chart 414) 414 .
+Dividend tax credit + 415 .
+Tax credits for Capital régional et coopératif Desjardins shares,
+RL-26 slip, boxes B and D + 422 .
+Tax credit for a labour-sponsored fund (see the guide) + 424 .
+Add lines 414 through 424. = 425 . 425 .
+Subtract line 425 from line 413. If the result is negative, see line 431 in the guide. = 430 .
+Credits transferred from one spouse to the other (see the guide) – 431 .
+Subtract line 431 from line 430, or enter the amount from line 18 in Part B of Schedule E.
+If the result is negative, enter 0. Carry the result to page 4. = 432 .
+Attach your documents here (include only the required documents).
+If you have a balance due, attach your payment and the remittance slip to page 1.
+TP-1.D-V (2021-12) Page 3T
+
+--- PDF page 4 of 4 ---
+
+D1-V – Version 5 – 10 nov. 2021
+I104 ZZ 73494852
+Amount from line 432 432 .
+Annual registration fee for the enterprise register (see the guide)
+Is the information in the enterprise register correct?
+437 2 2
+436 Yes No + 438 .
+QPIP premium on income from self-employment or employment outside Québec. Complete Schedule R. + 439 .
+Advance payments of tax credits,
+RL-19 slip, box A, B, C, D, G or H + 441 .
+Special taxes and tax adjustment (see the guide) Specify: 442 + 443 .
+QPP contribution on income from self-employment (Work Chart 445) 444 + 445 .
+Contribution to the health services fund. Complete Schedule F. + 446 .
+Premium payable under the Québec prescription drug insurance plan.
+Complete Schedule K or enter the number corresponding to your situation in box 449. 447 .449 +
+Add lines 432 through 447. Income tax and contributions = 450 .
+Refund or balance due
+Québec income tax withheld at source,
+as shown on your RL slips or other information slips 451 .
+Amount from line 58 of your Schedule Q – 451.1 .
+Subtract line 451.1 from line 451. = 451.2 . 451.2 .
+Québec income tax withholding transferred by your spouse + 451.3 .
+QPP or CPP overpayment + 452 .
+Income tax paid in instalments + 453 .
+Transferable portion of the income tax withheld for another province + 454 .
+Tax credit for childcare expenses. Complete Schedule C. + 455 .
+Tax credits respecting the work premium. Complete Schedule P. + 456 .
+QPIP overpayment + 457 .
+Tax credit for home-support services for seniors. Complete Schedule J. + 458 .
+QST rebate for employees and partners + 459 .
+Tax shield + 460 .
+Other credits (see the guide) Specify: 461 + 462 .
+Senior assistance tax credit + 463 .
+Add lines 451.2 through 463. Income tax paid and other credits = 465 .
+Financial compensation for home-support services (see the guide) + 466 .
+Add lines 465 and 466. = 468 . 468 .
+Subtract line 468 from line 450. = 470 .
+To find out how to register for direct deposit or update your direct deposit information,
+see page 16 in the guide. Refund
+Amount from line 470, if it is negative 474 .
+Refund transferred to your spouse. See the guide before entering an amount. – 476 .
+Subtract line 476 from line 474. Refund = 478 .
+Accelerated refund (see the guide) 480 . Balance due
+Amount from line 470, if it is positive 475 .
+Amount transferred by your spouse. See the guide before entering an amount. – 477 .
+Subtract line 477 from line 475. You are not required to pay a balance of less than $2. Balance due = 479 .
+Amount enclosed. Complete the remittance slip and make your cheque or money order payable
+to the Minister of Revenue of Québec. Attach your payment and the remittance slip to page 1. 481 .
+I certify that, in this return and the documents attached to it, the information about me is accurate and complete and fully discloses all of my income.
+If I am entitled to a refund and entered an amount on line 476, I agree to have the amount applied to the payment of my spouse’s balance due
+(line 475 of my spouse’s return).
+If I entered an amount on line 123, it is because I have elected to add part of my spouse’s retirement income to my income.
+Signature X Date
+Area code Telephone (home or cell) Area code Telephone (work) Extension
+498 499
+We may compare the information in this return with information obtained from other sources or communicate it to other government departments and bodies.
+© Revenu Québec
+TP-1.D-V (2021-12) Page 4T

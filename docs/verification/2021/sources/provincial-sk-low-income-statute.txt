@@ -1,0 +1,377 @@
+Title: EXPLANATORY NOTES
+URL: https://docs.legassembly.sk.ca/legdocs/Explanatory%20Notes/28L4S/Bill28-210EN.pdf
+Fetched: 2026-11-02
+SHA-256 of the original: d4e56018f08df4617125851b45da5225d88ced830c6727c9e49e2bfefef99210
+Publication date modified: 2020-06-17
+PDF pages: 12-19 of 31
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 12 of 31 ---
+
+Page 12 of 31
+14 Existing Provision Section 36
+Capital gains refund to mutual fund trust
+36(1) Subject to subsection (2), where an amount is to be refunded to a trust with respect to a
+taxation year pursuant to section 132 of the federal Act, the minister shall, at the time and in
+the manner that is provided in that section, refund to the trust a capital gains refund in an
+amount R calculated in accordance with the following formula:
+R = HP/C x FR
+where:
+HP is the percentage set out in clause 8(1)(c), 8(2)(c), 8(3)(c), 8(3.1) (c) or 8(3.2) (c), as
+the case may be, for the taxation year;
+C is the percentage mentioned in paragraph (b) in the description of A in the definition
+of refundable capital gains tax on hand in subsection 132(4) of the federal Act for the
+taxation year;
+FR is the amount of the trust’s refund for the taxation year pursuant to subsection
+132(1) of the federal Act.
+2000, c.I-2.01, s.36; 2001, c.17, s.17; 2017, c 14, s.11; 2018, c 13, s.15.
+Explanation
+An amendment to this section are being made as a consequence to the amendment to
+section 8, which sets out the statutory tax rates.
+15 Existing Provision Section 39
+Saskatchewan low–income tax credit
+39(5) For the purposes of subsection (4), the amount B is the total of:
+(a) $346;
+(b) $346 where the individual has a qualified relation for the taxation year;
+(c) $346 where the individual:
+(i) has no qualified relation for the taxation year; and
+(ii) is entitled to deduct an amount for the taxation year pursuant to subsection
+118(1) of the federal Act because of paragraph (b) of the description of B in that
+subsection with respect to a qualified dependant of the individual for the taxation
+year; and
+(d) where the individual has one or more qualified dependants for the taxation year, not
+including a qualified dependant with respect to whom the amount set out in clause (c) is
+included in computing the amount B for the taxation year:
+(i) $136 if:
+(A) the amount set out in clause (c) is included in computing the amount B
+for the individual for the taxation year; or(B) the amount set out in clause
+(c) is not included in computing the amount B for the individual for the
+taxation year and the individual has only one qualified dependant for the
+taxation year; and
+(ii) two times the amount set out in subclause (i) if the amount set out in clause (c)
+is not included in computing the amount B for the individual for the taxation year
+and the individual has two or more qualified dependants for the taxation year.
+
+--- PDF page 13 of 31 ---
+
+Page 13 of 31
+(6) For the purposes of subsection (4), the amount C for the 2001 through 2015 taxation years
+is equal to two per cent of the amount, if any, by which the individual’s adjusted income for
+the taxation year exceeds the amount D, calculated in accordance with the following formula:
+D = E – (B/0.02)
+where:
+E is:
+(a) $35,000 for the 2001 and 2002 taxation years; and
+(b) for the 2003 through 2015 taxation years, the amount expressed in dollars in
+clause 8(3)(a), adjusted in accordance with subsection 51(9) where applicable, that
+applies to the immediately following taxation year; and
+B is:
+(a) $216 for the 2007 taxation year; and
+(b) for the 2008 through 2015 taxation years, the amount expressed in dollars in
+clause (5)(a), adjusted in accordance with subsection 51(8.1).
+(6.1) For the purposes of subsection (4), the amount C for the 2016 and subsequent taxation
+years is equal to 2.75% of the amount, if any, by which the individual’s adjusted income for
+the taxation year exceeds the amount D, calculated in accordance with the following formula:
+D = E – (B/0.0275)
+where:
+E is $45,225 for the 2016 taxation year and subsequent taxation years; and
+B is $346 for the 2016 taxation year and subsequent taxation years.
+2000, c.I-2.01, s.39; 2001, c.17, s.19; 2002, c.32, s.10; 2004, c.39, s.10; 2008,
+c.31, s.7; 2012, c.17, s.5; 2015, c.13, s.8; 2017, c 14, s.12.
+Explanation
+This section is being updated to reflect the current amount and calculation of the
+Saskatchewan Low-income Tax Credit, in effect for the 2016 through 2019 taxation
+years, and to re-introduce indexing beginning with the July 2021 benefit year.
+16 Existing Provision Section 42
+Credits in year of bankruptcy
+42(1) Notwithstanding sections 11 to 29 but subject to subsection (2), for the purpose of
+computing an individual’s tax payable pursuant to this Act for a taxation year that ends in a
+calendar year in which the individual becomes bankrupt, the individual is allowed:
+(a) of the deductions that the individual is entitled to pursuant to sections 18, 19.2, 21,
+22, 24, 25, 27, and 28, only those that can reasonably be considered wholly applicable
+to the taxation year; and
+(b) of the deductions that the individual is entitled to pursuant to sections 11, 12, 13, 14,
+14.1, 15, 15.1, 16, 16.1, 17, 19, 19.1, 20, 23 and 29, only the part that can reasonably be
+considered applicable to the taxation year.
+2000, c.I-2.01, s.42; 2007, c.27, s.4; 2008, c.13, s.8; 2012, c.17, s.7; 2016, c.3,
+s.8; 2018, c 13, s.16.
+
+--- PDF page 14 of 31 ---
+
+Page 14 of 31
+Explanation
+This section is amended to remove of references to sections 14.1, 15.1, and 16.1, which
+are themselves being removed as they are no longer necessary.
+17 Existing Provision Section 44
+Part-year residents
+44(1) Notwithstanding sections 11 to 29 but subject to subsection (2), where an individual is
+resident in Canada throughout part of a taxation year and throughout another part of the
+taxation year is non-resident, for the purpose of computing the individual’s tax payable
+pursuant to this Act for the taxation year:
+(a) the amount deductible for the taxation year pursuant to each of sections 11 to 29
+with respect to the part of the taxation year that is not included in the period or periods
+in the taxation year throughout which the individual is resident in Canada is to be
+computed as though that part were the whole taxation year; and
+(b) the individual is allowed:
+(i) pursuant to sections 18, 19.2, 21, 22, 24, 25, 27, and 28, only the deductions
+that can reasonably be considered wholly applicable to the period or periods in the
+taxation year throughout which the individual is resident in Canada, computed as
+though that period or those periods were the whole taxation year; and
+(ii) pursuant to sections 11, 12, 13, 14, 14.1, 15, 15.1, 16, 16.1, 17, 19, 19.1, 20,
+23 and 29, only the part of the deductions that can reasonably be considered
+applicable to the period or periods in the taxation year throughout which the
+individual is resident in Canada, computed as though that period or those periods
+were the whole taxation year.
+(2) The amount deductible for the taxation year by the individual pursuant to each section
+mentioned in subsection (1) cannot exceed the amount that would have been deductible
+pursuant to that section if the individual had been resident in Canada throughout the taxation
+year.
+2000, c.I-2.01, s.44; 2007, c.27, s.5; 2012, c.17, s.8; 2018, c 13, s.17.
+Explanation
+This section is amended to remove of references to sections 14.1, 15.1, and 16.1, which
+are themselves being removed as they are no longer necessary.
+18 Existing Provision Section 48
+Tax on split income
+48(3) In applying subsection 120.4(2) of the federal Act for the purposes of this Act, the
+percentage set out in clause 8(1)(c), 8(2)(c), 8(3)(c), 8(3.1)(c) or 8(3.2)(c) of this Act, as the
+case may be, for the taxation year is to be used instead of the percentage set out in subsection
+120.4(2) of the federal Act.
+2000, c.I-2.01, s.48; 2017, c 14, s.13; 2018, c 13, s.18.
+
+--- PDF page 15 of 31 ---
+
+Page 15 of 31
+Explanation
+An amendment to this section are being made as a consequence to the amendment to
+section 8, which sets out the statutory tax rates.
+19 Existing Provision Section 51
+Indexing
+51(1) Where subsection (6), (6.1), (6.2), (6.3), (6.4), (9), (10), (11) or (12) requires an amount
+set out in any provision of this Act to be adjusted for a taxation year, the adjusted amount is
+the amount NA calculated in accordance with subsection (3) or (5) as specified in subsection
+(6), (6.1), (6.2), (6.3), (6.4), (9), (10), (11) or (12) for that taxation year.
+(2) Subsections 117.1(3) and (4) of the federal Act apply for the purposes of this section.
+(3) For amounts that are to be adjusted in accordance with this subsection, the adjusted
+amount is the amount NA calculated in accordance with the following formula:
+NA = NP + [NP x (A/B – 1)]
+where:
+NP:
+(a) subject to subsection (7), for the first taxation year for which an adjustment to
+the amount is required, is the actual amount set out in the provision of this Act;
+and
+(b) for each subsequent taxation year, is the amount that would, but for the
+application of subsection 117.1(3) of the federal Act, be the value of NA
+calculated for the immediately preceding taxation year; A is the Consumer Price
+Index for the 12-month period that ends on September 30 of the year immediately
+preceding the taxation year for which the adjustment is required; and
+B is the Consumer Price Index for the 12-month period immediately preceding the
+period mentioned in the description of A.
+(4) In applying the formula set out in subsections (3) and (8.1), the amount resulting from the
+calculation of is to be rounded:
+(a) to the nearest one-thousandth; or
+(b) where the result is equidistant from two consecutive one-thousandths, to the higher
+of them.
+(5) For amounts that are to be adjusted in accordance with this subsection, the adjusted
+amount is the amount NA calculated in accordance with the following formula:
+NA = NP + (NP x C)
+where:
+NP, for the taxation year, is the amount that would, but for the application of subsection
+117.1(3) of the federal Act, be the value of NA calculated for the immediately
+preceding taxation year; and
+C is the indexation factor prescribed in the regulations for the taxation year.
+(6) For the 2002 and 2003 taxation years, each of the amounts expressed in dollars in sections
+14, 15 and 17, clause 22(2)(a) as it existed before January 1, 2004 and section 23 is to be
+adjusted in accordance with subsection (3).
+(6.1) For the 2004 taxation year, each of the amounts expressed in dollars in sections 14, 15,
+17 and 23 is to be adjusted in accordance with subsection (3).
+
+--- PDF page 16 of 31 ---
+
+Page 16 of 31
+(6.2) Each of the amounts expressed in dollars in section 17 and clause 22(2)(b) is to be
+adjusted:
+(a) in accordance with subsection (5) for the 2005, 2006 and 2007 taxation years; and
+(b) in accordance with subsection (3) for the 2008 through 2017 taxation years.
+(6.3) For the 2005, 2006 and 2007 taxation years, each of the amounts expressed in dollars in
+sections 14, 15 and 23 as those sections existed on December 31, 2007 is to be adjusted in
+accordance with subsection (5).
+(6.4) Each of the amounts expressed in dollars in sections 14, 15 and 23 is to be adjusted in
+accordance with subsection (3) for the 2009 through 2017 taxation years.
+(7) In applying clause (a) of the description of NP in subsection (3) for the purposes of
+subsection (6):
+(a) the actual amount expressed in dollars set out in the formula in section 17 is deemed
+to be $3,618.956263;
+(b) the actual amount expressed in dollars set out in the description of B in section 17 is
+deemed to be $26,940.99135; and(c) the actual amount expressed in dollars set out in
+clause 22(2)(a) as it existed before January 1, 2004 is deemed to be $1,677.5109.
+(8) For the 2004, 2005 and 2006 taxation years, each of the amounts expressed in dollars in
+subsection 39(5) as it existed on December 31, 2006 is to be adjusted in accordance with the
+following formula:
+NA = NP + (NP x C)
+where:
+NA is the adjusted amount;
+NP:
+(a) for the first taxation year for which an adjustment of an amount is required, is
+the actual amount set out in subsection 39(5) for the 2003 taxation year; and
+(b) for each subsequent taxation year is the amount that would, but for the
+application of subsection 117.1(3) of the federal Act, be the value of NA
+calculated for the immediately preceding taxation year; and
+C is the indexation factor prescribed in the regulations for the immediately following
+taxation year.
+(8.1) For the 2008 through 2015 taxation years, each of the amounts expressed in dollars in
+subsection 39(5) is to be adjusted in accordance with the following formula:
+NA = NP + (NP x C)
+where:
+NA is the adjusted amount;
+NP:
+(a) for the 2008 taxation year is the actual amount set out in subsection 39(5) for
+the 2007 taxation year; and
+(b) for each of the 2009 through 2015 taxation years is the amount that would, but
+for the application of subsection 117.1(3) of the federal Act, be the value of NA
+calculated for the immediately preceding taxation year; and
+C is the amount C calculated in accordance with the following formula:
+C = A/B – 1
+where:
+
+--- PDF page 17 of 31 ---
+
+Page 17 of 31
+A is the Consumer Price Index for the 12-month period that ends on September 30
+of the taxation year for which the adjustment is required; and
+B is the Consumer Price Index for the 12-month period immediately preceding the
+period mentioned in the description of A. (9) The amount expressed in dollars in
+subsection 8(3) is to be adjusted in accordance with subsection (3) for the 2004
+taxation year, in accordance with subsection (5) for the 2005, 2006 and 2007
+taxation years, and in accordance with subsection (3) for the 2008 through 2016
+taxation years.
+(9.1) The amount expressed in dollars in clause (c) in the description of Y in subsection 20(1)
+is to be adjusted in accordance with subsection (3) for the 2004 taxation year, in accordance
+with subsection (5) for the 2005, 2006 and 2007 taxation years, and in accordance with
+subsection (3) for the 2008 through 2017 taxation years.
+(10) Each of the amounts expressed in dollars in the provisions set out in clauses (a) and (b)
+as those provisions existed on December 31, 2007 is to be adjusted in accordance with
+subsection (3) for the 2004 taxation year and in accordance with subsection (5) for the 2005,
+2006 and 2007 taxation years:
+(a) sections 11, 12 and 13; and
+(b) clause (c) in the description of Y in subsection 19(1).
+(11) Each of the amounts expressed in dollars in the provisions set out in clauses (a) and (b)
+as those provisions existed on December 31, 2010 is to be adjusted in accordance with
+subsection (3) for the 2009 and 2010 taxation years:
+(a) sections 11, 12 and 13; and
+(b) subsection 19(1).
+(12) Each of the amounts expressed in dollars in the provisions set out in clauses (a) and (b) is
+to be adjusted in accordance with subsection (3) for the 2012 through 2017 taxation years:
+(a) sections 11, 12 and 13; and
+(b) subsection 19(1).
+2004, c.39, s.12; 2006, c.21, s.6; 2007, c.27, s.7; 2008, c.13, s.9; 2008, c.31,
+s.8; 2011, c.7, s.9; 2017, c 14, s.14.
+Explanation
+The 2020-21 Saskatchewan Budget announced the re-indexation of Saskatchewan’s
+Personal Income Tax system, to the national rate of inflation, beginning with the 2021
+taxation year.
+This section provides for the indexation of various tax credits. References to older
+taxation that are no longer relevant are being removed, and the section is also being
+simplified without altering its intention.
+20 Existing Provision Section 56
+Rates of tax
+56(1) For the purposes of sections 56.1 to 56.3 and 64.2, the rate of tax GR is:
+(a) 17% for the period ending on June 30, 2006;
+(b) 14% for the period commencing on July 1, 2006 and ending on June 30, 2007;
+(c) 13% for the period commencing on July 1, 2007 and ending on June 30, 2008;
+
+--- PDF page 18 of 31 ---
+
+Page 18 of 31
+(d) 12% for the period commencing on July 1, 2008 and ending on June 30, 2017;
+(e) 11.5% for the period commencing on July 1, 2017 and ending on December 31,
+2017; and
+(f) 12% for the period commencing on January 1, 2018.
+(2) For the purposes of sections 56.2 to 56.4, 64.2 and 64.6, the rate of tax SR is:
+(a) 8% for the period ending on June 30, 2001;
+(b) 6% for the period commencing on July 1, 2001 and ending on December 31, 2003;
+(c) 5.5% for the period commencing on January 1, 2004 and ending on December 31,
+2004;
+(d) 5% for the period commencing on January 1, 2005 and ending on December 31,
+2006;
+(e) 4.5% for the period commencing on January 1, 2007 and ending on June 30, 2011;
+and
+(f) 2% for the period commencing on July 1, 2011.
+2006, c.21, s.7; 2006, c.40, s.5; 2011, c.7, s.10; 2017, c 14, s.15; 2017, c 30, s.4.
+Explanation
+This section sets out the statutory corporate income tax rates. The amendment removes
+taxation years that are beyond the normal limitation period for tax assessments. This
+shortens and simplifies the Act.
+21 Existing Provision Section 60
+Investment tax credit for manufacturing and processing
+60(1) In this section:
+(a) “amalgamation” means an amalgamation as defined in subsection 87(1) of the
+federal Act;
+(b) “investment tax credit” means the investment tax credit calculated pursuant to
+subsection (4);
+(c) “manufacturing or processing” means, subject to subsection (1.1), manufacturing
+or processing within the meaning of subsection 125.1(3) of the federal Act, and includes
+qualified activities as defined in the federal regulations made for the purposes of the
+definition of Canadian manufacturing and processing profits in subsection 125.1(3) of
+the federal Act;
+(d) “qualified property” means, subject to subsections (1.2) and (1.3), property of a
+corporation that:
+(i) is qualified property within the meaning of subsections 127(9), (11) and (11.1)
+of the federal Act;
+(ii) is acquired after February 16, 1995 and before April 7, 2006;
+(iii) was not used, or acquired for use or lease, for any purpose before it was
+acquired by the corporation; and
+(iv) is:
+(A) used in Saskatchewan by the corporation primarily for manufacturing or
+processing goods for lease or sale; or
+
+--- PDF page 19 of 31 ---
+
+Page 19 of 31
+(B) leased by the corporation to a lessee, other than a person exempt from
+tax by virtue of section 149 of the federal Act, who can reasonably be
+expected to use the property in Saskatchewan primarily for manufacturing
+or processing goods for lease or sale, but this paragraph does not apply to
+property that is machinery and equipment unless the property is leased by
+the corporation in the ordinary course of carrying on business in
+Saskatchewan and the principal business of the corporation is
+manufacturing property that it sells or leases;
+(e) “winding-up” means the winding-up of a corporation to which subsection 88(1) of
+the federal Act applies. (1.1) In applying the definition of “manufacturing or processing”
+in subsection 125.1(3) of the federal Act for the purposes of clause (1)(c), that definition
+is to be read as if it did not include paragraph (h).
+(1.2) In applying the definition of “qualified property” in subsection 127(9) of the federal Act
+for the purposes of subclause (1)(d)(i), the following is to be substituted for paragraph (c.1) of
+that definition:
+“(c.1) to be used by the taxpayer in Saskatchewan primarily for the purpose of
+producing or processing electrical energy or steam for sale”.
+(1.3) In applying the definition of “manufacturing or processing” in subsection 127(11) of the
+federal Act for the purposes of subclause (1)(d)(i), the following is to be substituted for
+subparagraph (a)(i) of that definition:
+“(i) referred to in any of paragraphs (a) to (e), (g) and (i) of the definition of
+“manufacturing or processing” in subsection 125.1(3)”.
+(2) For the purposes of this section, property is acquired on the earlier of:
+(a) the date on which title to the property is obtained; and
+(b) the date on which the corporation has all the incidents of ownership of the property,
+including possession, use and risk, notwithstanding that legal title remains with the
+vendor as security for the purchase price.
+(3) A corporation may deduct from its tax otherwise payable pursuant to this Act for a
+taxation year an amount not more than the lesser of:
+(a) its investment tax credit at the end of the taxation year; and
+(b) its tax otherwise payable pursuant to this Act for the taxation year.
+(4) Subject to subsection (4.1), the investment tax credit for a corporation at the end of a
+taxation year is the amount ITCMP, if it is positive, calculated in accordance with the
+formula:
+ITCMP = (CC + CCPY + OA + OAPY) – PD
+where:
+ITCMP is the amount of the investment tax credit;
+CC is the total of:
+(a) with respect to qualified property acquired by the corporation on or before
+March 20, 1997, 9% of the sum of all amounts, each of which is the capital cost to
+the corporation of qualified property acquired by it in the taxation year,
+determined without reference to subsection 13(7.1) of the federal Act;
+(b) with respect to qualified property acquired by the corporation after March 20,
+1997 and before March 27, 1999, 7% of the sum of all amounts, each of which is
+the capital cost to the corporation of qualified property acquired by it in the
+taxation year, determined without reference to subsection 13(7.1) of the federal
+Act;

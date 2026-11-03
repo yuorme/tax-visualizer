@@ -1,0 +1,60 @@
+Title: Ontario 2022 and 2021 Personal Marginal Income Tax Rates
+URL: https://www.taxtips.ca/priortaxrates/tax-rates-2021-2022/on.htm
+Fetched: 2026-11-02
+SHA-256 of the original: 0b6e3d087c7e15412043a1b80b5fc00f7e4545044157090b83fd29101c63d160
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+Ads keep this website free for you. TaxTips.ca does not research or endorse any product or service appearing in ads on this site. Before making a major financial decision you should consult a qualified professional. | Ontario 2021 & 2022 Income Tax Rates | TaxTips.ca Canadian Tax and Financial Information
+TaxTips.ca Home What's New | | Links & Resources Site Map
+
+Need an accounting, tax or financial advisor? Look in our Directory. Use above search box to easily find your topic! Stay Connected with TaxTips.ca!
+
+Home -> Ontario Tax Rates -> 2021 and 2022 Tax Rates -> Ontario Personal Income Tax Rates Ontario 2022 and 2021 Personal Marginal Income Tax Rates The Federal tax brackets and personal tax credit amounts are increased for 2022 by an indexation factor of 1.024 (a 2.4% increase). The Ontario tax brackets and personal tax credit amounts are also increased for 2022 by an indexation factor of 1.024, except for the $150,000 and $220,000 bracket amounts, which are not indexed for inflation. The indexation factors, tax brackets and tax rates have been confirmed to Canada Revenue Agency information. Tax Tip: read the article Understanding the Tables of Personal Income Tax Rates, especially if you are trying to compare the rates below to the marginal tax rates in the Basic Tax Calculator.
+
+TaxTips.ca - Ontario Personal Income Tax Brackets and Tax Rates
+2022 Taxable Income | 2022 Tax Rates | 2021 Taxable Income | 2021 Tax Rates
+first $46,226 | 5.05% | first $45,142 | 5.05%
+over $46,226 up to $92,454 | 9.15% | over $45,142 up to $90,287 | 9.15%
+over $92,454 up to $150,000 | 11.16% | over $90,287 up to $150,000 | 11.16%
+over $150,000 up to $220,000 | 12.16% | over $150,000 up to $220,000 | 12.16%
+over $220,000 | 13.16% | over $220,000 | 13.16%
+
+TaxTips.ca - Combined Federal & Ontario Tax Brackets and Tax Rates Including Surtaxes
+2022 Taxable Income | ON 2022 Marginal Tax Rates | 2021 Taxable Income | ON 2021 Marginal Tax Rates
+Other Income | Capital Gains | Canadian Dividends | Other Income | Capital Gains | Canadian Dividends
+Eligible | Non-Eligible | Eligible | Non-Eligible
+first $46,226 | 20.05% | 10.03% | -6.86% | 9.24% | first $45,142 | 20.05% | 10.03% | -6.86% | 9.24%
+over $46,226 up to $50,197 | 24.15% | 12.08% | -1.20% | 13.95% | over $45,142 up to $49,020 | 24.15% | 12.08% | -1.20% | 13.95%
+over $50,197 up to $81,411 | 29.65% | 14.83% | 6.39% | 20.28% | over $49,020 up to $79,505 | 29.65% | 14.83% | 6.39% | 20.28%
+over $81,411 up to $92,454 | 31.48% | 15.74% | 8.92% | 22.38% | over $79,505 up to $90,287 | 31.48% | 15.74% | 8.92% | 22.38%
+over $92,454 up to $95,906 | 33.89% | 16.95% | 12.24% | 25.16% | over $90,287 up to $93,655 | 33.89% | 16.95% | 12.24% | 25.16%
+over $95,906 up to $100,392 | 37.91% | 18.95% | 17.79% | 29.78% | over $93,655 up to $98,040 | 37.91% | 18.95% | 17.79% | 29.78%
+over $100,392 up to $150,000 | 43.41% | 21.70% | 25.38% | 36.10% | over $98,040 up to $150,000 | 43.41% | 21.70% | 25.38% | 36.10%
+over $150,000 up to $155,625 | 44.97% | 22.48% | 27.53% | 37.90% | over $150,000 up to $151,978 | 44.97% | 22.48% | 27.53% | 37.90%
+over $155,625 up to $220,000 | 48.35% | 24.17% | 32.19% | 41.79% | over $151,978 up to $216,511 | 48.29% | 24.14% | 32.11% | 41.72%
+over $220,000 up to $221,708 | 49.91% | 24.95% | 34.34% | 43.58% | over $216,511 up to $220,000 | 51.97% | 25.98% | 37.19% | 45.95%
+over $221,708 | 53.53% | 26.76% | 39.34% | 47.74% | over $220,000 | 53.53% | 26.76% | 39.34% | 47.74%
+Marginal tax rate for dividends is a % of actual dividends received (not grossed-up taxable amount). Marginal tax rate for capital gains is a % of total capital gains (not taxable capital gains). Gross-up rate for eligible dividends is 38%, and for non-eligible dividends is 15%. The surtax is calculated before deducting dividend tax credits. For more information see Ontario dividend tax credits. Marginal tax rates do not include the Ontario Health Premium, which increases the above rates by up to 25%.
+
+Ontario Surtaxes
+2022 | 2021
+Surtax rate (included in above rates) | 20% | 36% | Surtax rate (included in above rates) | 20% | 36%
+Surtax is on ON tax greater than | $4,991 | $6,387 | Surtax is on ON tax greater than | $4,874 | $6,237
+Person with only basic personal amount - surtax starts at taxable income of | $81,411 | $95,906 | Person with only basic personal amount - surtax starts at taxable income of | $79,505 | $93,655
+The 36% surtax is in addition to the 20% surtax, for a total surtax of 56%. The surtax increases the 13.16% tax rate to 20.53% (13.16% x 1.56). Surtaxes are calculated before deducting dividend tax credits.
+
+Ontario Basic Personal Amount
+2022 Personal Amount | 2022 Tax Rate | 2021 Personal Amount | 2021 Tax Rate
+$11,141 | 5.05% | $10,880 | 5.05%
+Federal Basic Personal Amount
+2022 Personal Amount (1) | 2022 Tax Rate | 2021 Personal Amount (1) | 2021 Tax Rate
+$14,398 | 15% | $13,808 | 15%
+
+(1) See the federal tax rates page for information on the enhanced federal personal amount, which increases the marginal tax rates for taxable incomes in the second highest federal tax bracket. The marginal tax rates in blue above have been adjusted to reflect these changes.
+
+Copyright © 2002 Boat Harbour Investments Ltd.
+
+Revised: September 20, 2024
+
+Copyright © 2002 Boat Harbour Investments Ltd. All Rights Reserved. See Reproduction of information from TaxTips.ca Facebook | Twitter | LinkedIn The information on this site is not intended to be a substitute for professional advice. Each person's situation differs, and a professional advisor can assist you in using the information on this web site to your best advantage Please see our legal disclaimer regarding the use of information on our site, and our Privacy Policy regarding information that may be collected from visitors to our site.

@@ -14,6 +14,20 @@ const render = (y: YearData) => [footerNotes(y, page), ...Object.values(tooltips
 const html = fs.readFileSync(new URL("../src/ui/index.html", import.meta.url), "utf8");
 const noteKeys = [...html.matchAll(/data-note="([^"]+)"/g)].map(m => m[1]);
 
+test("2021 notes explain ordered NS child amounts and MB's rental share before its cap", () => {
+  const text = render(loadYear(2021));
+  assert.match(text, /Nova Scotia pays annual amounts of \$925, \$825 and \$900/);
+  assert.match(text, /first child's amount stays whole and later children's amounts are paid at 50%/);
+  assert.match(text, /up to \$525, 15% of rent paid before applying the cap/);
+  assert.match(text, /school tax rebate \(25% of estimated school taxes\)/);
+  assert.match(
+    text,
+    /Saskatchewan's low-income tax credit includes estimated parameters; its modelled reduction rate is 2.75%/,
+  );
+  assert.doesNotMatch(text, /Saskatchewan's reduction rate.*worked out from CRA/);
+  assert.doesNotMatch(text, /B.C.'s renter's tax credit/);
+});
+
 test("2022 notes explain BC's separate periods and omit the later renter credit", () => {
   const text = render(loadYear(2022));
   assert.match(text, /9 months at annual maximum amounts of \$1,600/);

@@ -1,0 +1,51 @@
+Title: iThe City of Calgary 2022 Annual Financial Report
+URL: https://www.calgary.ca/content/dam/www/cfod/finance/documents/plans-budgets-and-financial-reports/annual-reports/annual-report-2022.pdf
+Fetched: 2026-11-02
+SHA-256 of the original: 0e3b43443f9b0adc4bb5eefd51c51b8c455e86b106e1c413260affa7f1aaa341
+Publication date modified: 2023-04-27
+PDF pages: 112 of 118
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 112 of 118 ---
+
+110The City of Calgary 2022 Annual Financial Report
+Taxation and Assessments unaudited 2018 to 2022
+(in thousands unless otherwise stated)
+2022 2021 2020 2019 2018
+TAX RATES
+Residential
+Municipal and Library Mills 4.695 4.825 4.780 4.211 3.901
+Provincial property Mills 2.455 2.582 2.743 2.443 2.456
+Non-residential
+Municipal and Library Mills 17.884 16.513 15.828 17.775 15.323
+Provincial property Mills 4.050 4.095 3.580 4.247 4.103
+ASSESSED VALUES
+Residential $ 225,913,559 $ 208,942,946 $ 210,505,364 $ 215,899,419 $ 214,765,997
+Percentage of total (%) 80.4 78.6 77.9 78.7 76.7
+Commercial, industrial and farm $ 54,962,713 $ 57,012,414 $ 59,729,311 $ 58,382,878 $ 65,306,173
+Percentage of total (%) 19.6 21.4 22.1 21.3 23.3
+Total assessment $ 280,876,272 $ 265,955,360 $ 270,234,675 $ 274,282,297 $ 280,072,170
+TAX LEVIES
+Municipal property taxes
+Residential $ 1,054,942 $ 996,465 $ 968,850 $ 853,589 $ 842,238
+Non-residential 976,462 925,535 910,370 968,036 936,707
+Community Revitalization Levy 36,034 38,100 37,099 39,882 39,582
+(Business Improvement Area Relief ) Business taxes (64) (4,295) – 3,500 43,978
+Revenue in lieu of taxes 331,283 243,973 201,060 207,272 199,292
+Local improvement levies and special levies 7,699 9,235 6,092 16,476 6,273
+$ 2,406,356 $ 2,209,013 $ 2,123,471 $ 2,088,755 $ 2,068,070
+Provincial property taxes
+Residential $ 547,974 $ 535,364 $ 565,733 $ 539,762 $ 527,066
+Non-residential 225,265 228,149 206,678 249,949 258,590
+Revenue in lieu of taxes 7,689 7,598 6,668 7,364 7,196
+780,928 771,111 779,079 797,075 792,852
+Total taxes levied $ 3,187,284 $ 2,980,124 $ 2,902,550 $ 2,885,830 $ 2,860,922
+PERCENTAGE OF TOTAL LEVIES
+Property tax
+Residential property 50.29% 51.40% 52.87% 48.28% 47.86%
+Non-residential property 37.70% 38.71% 38.49% 42.21% 41.78%
+Local improvement levies 0.24% 0.31% 0.21% 0.57% 0.22%
+Community Revitalization Levy 1.13% 1.28% 1.28% 1.38% 1.38%
+(Business Improvement Area Relief ) Business taxes 0.00% (0.14%) 0.00% 0.12% 1.54%
+Revenue in lieu of taxes 10.64% 8.44% 7.15% 7.44% 7.22%
