@@ -1,0 +1,35 @@
+# Benefit-year figures use July 2020 to June 2021, applied to current-year income.
+# Child maximum annualizes CRA monthly $27.50 × 12 = $330.
+# Reduction rates 3%/5% are assumed unchanged from the Nunavut-commissioned 2013 report.
+# Property estimate applies Iqaluit residential classes 7/8: 19.35 mills / 1000 to home value as assessed value.
+
+code: NU
+name: Nunavut
+territory: true
+order: 6
+brackets:
+  - [46277, 0.04]
+  - [92555, 0.07]
+  - [150473, 0.09]
+  - [.inf, 0.115]
+basicPersonalAmount: 16304
+dividendTaxCredit: {eligible: 0.0551, nonEligible: 0.0261}
+spouseAmount: {max: 16304, threshold: 0}
+childAmount: {perChild: 1200, ages: under6}
+payroll: {employeeTax: 0.02}
+salesTax: {rate: 0.05, label: 5% GST}
+propertyTax: {rate: 0.01935, city: Iqaluit, estimated: true}
+childBenefit:
+  name: Nunavut Child Benefit
+  program: per-child-reduced
+  params: {perChild: 330, threshold: 20921, rateOneChild: 0.03, rateMoreChildren: 0.05}
+  rateSource: Nunavut Anti-Poverty Secretariat commissioned report (2013), page 49; rates assumed unchanged
+  estimated: true
+sources:
+  - {label: "CRA, NU428 for 2020", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5014-c/5014-c-20e.pdf}
+  - {label: "CRA, NU428 worksheet for 2020", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5014-d/5014-d-20e.pdf}
+  - {label: "CRA, T4114-20: July 2020–June 2021 child benefits (official archive)", url: https://publications.gc.ca/collections/collection_2020/arc-cra/Rv1-36-2020-eng.pdf?download=1}
+  - {label: "CRA, GST/HST historical rates and provincial sales-tax rates", url: https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/charge-collect-which-rate/calculator.html}
+  - {label: "Nunavut Anti-Poverty Secretariat, commissioned Poverty and Prosperity report 2013 p49 (child taper)", url: https://assembly.nu.ca/library/GNedocs/2013/001057-e.pdf}
+  - {label: "Government of Nunavut, response on 2022–23 public accounts (payroll tax 2%)", url: https://www.assembly.nu.ca/sites/default/files/2025-05/TD-388-6%282%29-EN-GN%20Response%20to%202022-23%20Public%20Accounts%20Report.pdf}
+  - {label: "Iqaluit, adopted 2020 mill-rate bylaw 886 (manual transcription of scanned schedule)", url: https://iqaluit.ca/sites/default/files/by-law_886_2020_mill_rate_eng.pdf}

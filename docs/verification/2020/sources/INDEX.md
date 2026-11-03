@@ -1,0 +1,134 @@
+# 2020 source extracts
+
+T4114-20 was retrieved from the official Publications Canada archive using its catalogue referral header.
+Alberta Budget 2020 and enacted section 30.2 confirm the $24467 ACFB threshold; T4114-20 prints $26769 in error.
+Only recurring modeled programs are included; extraordinary cost-of-living and COVID payments are excluded.
+Carbon measures remain outside this milestone (issue #29).
+Vancouver and Yukon Hansard caches explicitly identify manual web extracts.
+
+## Provincial year-diff audit: 2020 against 2021
+
+All 13 files validate against the 2021 Manitoba/Nova Scotia rules and 2020 B.C. transition rules.
+The provincial comparison reports 134 changed values, nine large changes, 113 unchanged amounts and two
+structural changes. Full checks pass lint and typechecking; this collection branch lacks federal files and
+locked golden results for 2020–23, so integrated tests/build await the federal integrator.
+
+Unchanged values were checked against the cached annual forms and benefit publications:
+
+- Alberta brackets, personal amounts and ACFB amounts were frozen; Manitoba spouse amount stays $9134.
+- New Brunswick child, working-income and HST credits retain the published fixed amounts and thresholds.
+- Newfoundland child threshold and income supplement remain the statutory fixed amounts.
+- Nova Scotia brackets, personal/spouse/child amounts, low-income reduction, child benefit and affordable
+  living credit are unchanged in these two years, as confirmed by the annual forms and 2020 child regulation.
+- Northwest Territories child age-group tables and taper, Nunavut child amount/benefit, and Yukon child
+  benefit remain fixed. Yukon upper bracket stays $500000.
+- Ontario upper brackets, LIFT and health-premium bands are not indexed; the annual forms confirm them.
+- PEI brackets, reduction amounts, child amount, sales credit and surtax threshold remain fixed.
+- Quebec work-premium employment exclusions stay $2400/$3600; other parameters were updated annually.
+
+The nine large changes are published dividend-credit changes in AB/PE/QC/SK/YT and Manitoba introducing
+its 25% school rebate in 2021 while reducing the education/renter caps from $700 to $525 and rent share
+from 20% to 15%. The B.C. replacement reflects its October 2020 transition from an under-six benefit to
+child opportunity benefit; 2021 uses the latter all year. Saskatchewan adds an estimated flag in 2021
+because that later year was derived by indexation; the 2020 frozen values are published directly.
+
+Estimates are explicit in YAML: annualized rounded monthly child payments (ON/NL/NU); assumed unchanged
+Nunavut taper from the commissioned report; rounded Calgary mill rates; Winnipeg assessment and school
+share; Saskatoon assessment portions/factors; Montreal Ville-Marie borough proxy excluding school tax;
+and Iqaluit assessed-value-to-home-value assumption. Municipal calculations are given in file comments.
+Montreal and Vancouver caches honestly mark manual web extracts because direct PDF retrieval was denied.
+Iqaluit uses a visually checked manual transcription of its scanned bylaw with the original PDF hash.
+
+Text extracts of official publications used for the 2020 data, made with
+`npm run fetch-source -- <year> <url> [<name>]`. A data collector and the reviewer read the same text, and a
+reviewer can check figures without opening PDFs. Each `.txt` file starts with the URL, the date fetched and the
+SHA-256 of the original file. For a PDF or text file, download it again and compare the hash to confirm it
+hasn't changed. Web pages embed per-request tracking code, so their hash differs on every fetch: refetch with
+`--force` and compare the text with `git diff` instead.
+
+The originals aren't kept in the repo, only the text, up to 250 KB per extract (for a larger PDF, `--pages`
+keeps the pages the data uses). Nothing under `docs/` is imported by `src/`, so the build never bundles these.
+
+| Name | Title | URL | Fetched | SHA-256 of the original |
+|---|---|---|---|---|
+| [provincial-5001-c](provincial-5001-c.txt) | Newfoundland and Labrador Tax and Credits | https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5001-c/5001-c-20e.pdf | 2026-11-02 | `4b3843473e11d155f22a509fe009648f597bab002b13f79975d14a9ceba68649` |
+| [provincial-5001-d](provincial-5001-d.txt) | Worksheet NL428 | https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5001-d/5001-d-20e.pdf | 2026-11-02 | `b8b350790cdbee689c5e8b115e2f7cc0be996c39555043db278333c0dc976f68` |
+| [provincial-5002-c](provincial-5002-c.txt) | Prince Edward Island Tax and Credits | https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5002-c/5002-c-20e.pdf | 2026-11-02 | `424486063a19c81ccb4b52bae1421555502e746f5de9d5eb7101e6432201b788` |
+| [provincial-5002-d](provincial-5002-d.txt) | Worksheet PE428 | https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5002-d/5002-d-20e.pdf | 2026-11-02 | `75bf1d86654d09835c3659c73da84b5f8c87ac3aebc471c32843eba768d4569a` |
+| [provincial-5003-c](provincial-5003-c.txt) | Nova Scotia Tax and Credits | https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5003-c/5003-c-20e.pdf | 2026-11-02 | `1fc938dc8c8def8aecd161e7b5d45845f987a684f64a624c4d73520054b02ac8` |
+| [provincial-5003-d](provincial-5003-d.txt) | Worksheet NS428 | https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5003-d/5003-d-20e.pdf | 2026-11-02 | `532fa0dd0dea7fad25d39a28e955181f2883ad8a203543c82613ffefeadbc051` |
+| [provincial-5004-c](provincial-5004-c.txt) | New Brunswick Tax and Credits | https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5004-c/5004-c-20e.pdf | 2026-11-02 | `b1fdd2c27893e2145cbe3992356b931e48738d6f43b4d5454415887d5b6e2475` |
+| [provincial-5004-d](provincial-5004-d.txt) | Worksheet NB428 | https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5004-d/5004-d-20e.pdf | 2026-11-02 | `3872dfdda11af97e362962851f03c0ded54d2fdeed3ba3e2a35110a114d239bc` |
+| [provincial-5006-a](provincial-5006-a.txt) | Low-income Individuals and Families Tax (LIFT) Credit | https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5006-a/5006-a-20e.pdf | 2026-11-02 | `5b68aac0eb5ca517de17678de7b779753b68045ade964cddc74fefedb5174816` |
+| [provincial-5006-c](provincial-5006-c.txt) | Ontario Tax | https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5006-c/5006-c-20e.pdf | 2026-11-02 | `3ffa93c78a5fd52246805a4a9d81cecd2cb0db4195d2a5297e4c4437915da890` |
+| [provincial-5006-d](provincial-5006-d.txt) | Worksheet ON428 | https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5006-d/5006-d-20e.pdf | 2026-11-02 | `62df0915a8b6c3c910f5f2138bd79bd0a92163c67f0dff44c83d83e5924385b7` |
+| [provincial-5007-c](provincial-5007-c.txt) | Manitoba Tax | https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5007-c/5007-c-20e.pdf | 2026-11-02 | `a0207cf3f3b85910ea5be64679560dc0f50ea17062dcd58434d198f59f29b185` |
+| [provincial-5007-d](provincial-5007-d.txt) | Worksheet MB428 | https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5007-d/5007-d-20e.pdf | 2026-11-02 | `15d21ef51c12ab8edf7e2c5ba7499f9bb3eef2ad44159de4aba805f1d9d122db` |
+| [provincial-5007-tc](provincial-5007-tc.txt) | Manitoba Credits | https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5007-tc/5007-tc-20e.pdf | 2026-11-02 | `0c2243c4aeeed3b56b39d13ce7265a084f28b92b329616b7815a92a6613b65b9` |
+| [provincial-5008-c](provincial-5008-c.txt) | Saskatchewan Tax and Credits | https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5008-c/5008-c-20e.pdf | 2026-11-02 | `6dc60fdddcd2f6bc8f65ddc5932f9404efa94ad787a227a27f158190f42ac8c9` |
+| [provincial-5008-d](provincial-5008-d.txt) | Worksheet SK428 | https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5008-d/5008-d-20e.pdf | 2026-11-02 | `9cd294068493e0952a5dbc706cce917a960118114e8a2262000edab934b3d244` |
+| [provincial-5009-c](provincial-5009-c.txt) | Alberta Tax and Credits | https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5009-c/5009-c-20e.pdf | 2026-11-02 | `57dbb717acd69035dd89d011c70aa7c7e0c4334b5de56e12dec83685cc67e36a` |
+| [provincial-5009-d](provincial-5009-d.txt) | Worksheet AB428 | https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5009-d/5009-d-20e.pdf | 2026-11-02 | `171a95d9c00894f0c9199e0c515c92e06c1765134986cdd77d363880065253a6` |
+| [provincial-5010-c](provincial-5010-c.txt) | 5010-c-20e.pdf | https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5010-c/5010-c-20e.pdf | 2026-11-02 | `5e43ec974e509c845142f44f5a7df8acc922f76b17cfa9e2a512c318e2f5b93b` |
+| [provincial-5010-d](provincial-5010-d.txt) | Worksheet BC428 | https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5010-d/5010-d-20e.pdf | 2026-11-02 | `b7422f3fd78492fe59f98d7ae42e94af5b9d40bdb7d147abd2ac21f2bca02f77` |
+| [provincial-5011-c](provincial-5011-c.txt) | Yukon Tax | https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5011-c/5011-c-20e.pdf | 2026-11-02 | `16578125d097ed0f66dd2f06b2c0ddf7b0b394c09d9bac6c57ccbfb89f3b1075` |
+| [provincial-5011-d](provincial-5011-d.txt) | Worksheet YT428 | https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5011-d/5011-d-20e.pdf | 2026-11-02 | `9c697896ecaedde60fafefc9e32a10e499ef9fd25ab10ebeb899d2a1a9ad1e09` |
+| [provincial-5012-c](provincial-5012-c.txt) | Northwest Territories Tax | https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5012-c/5012-c-20e.pdf | 2026-11-02 | `ce865fe8dc0cc9ea996d2adfaf222a6ae93736a376fccc670d86d1f70b7e7c5b` |
+| [provincial-5012-d](provincial-5012-d.txt) | Worksheet NT428 | https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5012-d/5012-d-20e.pdf | 2026-11-02 | `09c77061c99f7af8a14a50f1b7a129c731fcd92050d197865af023eb0737878c` |
+| [provincial-5014-c](provincial-5014-c.txt) | Nunavut Tax | https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5014-c/5014-c-20e.pdf | 2026-11-02 | `b8aaa31a30dd724a2797dd233e281bee04407a5f551dbc879b8bb13767638372` |
+| [provincial-5014-d](provincial-5014-d.txt) | Worksheet NU428 | https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5014-d/5014-d-20e.pdf | 2026-11-02 | `3dd062fcdd9950f45dcde8a1cc7269df7f1f237025d48b77ee9e0a6bea600ea2` |
+| [provincial-ab-2019-enactment](provincial-ab-2019-enactment.txt) | 2019 Bill 20 | https://docs.assembly.ab.ca/LADDAR_files/docs/bills/bill/legislature_30/session_1/20190521_bill-020.pdf | 2026-11-02 | `a937ec935b08642d3f06e437af4001116570a2d628e03b895c4a605eb0dcf2ce` |
+| [provincial-ab-act](provincial-ab-act.txt) | © Published by Alberta King’s Printer | https://kings-printer.alberta.ca/documents/Acts/A30.pdf | 2026-11-02 | `2a293bbb636247e4f52de4376357cbebb334a7da5c163c4032efa50554d9eb62` |
+| [provincial-ab-budget](provincial-ab-budget.txt) | 2020-23 Fiscal Plan (Alberta Budget 2020) - February 27, 2020 | https://open.alberta.ca/dataset/05bd4008-c8e3-4c84-949e-cc18170bc7f7/resource/79caa22e-e417-44bd-8cac-64d7bb045509/download/budget-2020-fiscal-plan-2020-23.pdf | 2026-11-02 | `f4258454cc82416667a90e9748cb0c98e6d7873b5bf10e1b61b4d2b9d82e9222` |
+| [provincial-ab-child](provincial-ab-child.txt) | Alberta Child and Family Benefit | https://www.alberta.ca/alberta-child-and-family-benefit | 2026-11-02 | `e58ab9596da4975d49dee568d13da244f42aafa420f6c4921465baf2d7f43d98` |
+| [provincial-bc-act](provincial-bc-act.txt) | Income Tax Act | https://www.bclaws.gov.bc.ca/civix/document/id/complete/statreg/96215_01 | 2026-11-02 | `b82f37654e72a23d8c33232ba8b235a22e3eab40eafae828ef1ac2c8841a8b49` |
+| [provincial-bc-early-childhood](provincial-bc-early-childhood.txt) | B.C. early childhood tax benefit | https://www2.gov.bc.ca/gov/content/family-social-supports/affordability/early-childhood | 2026-11-02 | `cc6f9aa88f83cce0569f338df2a5c9cbb7e4987e7e816f0bac45ed2a04d77faf` |
+| [provincial-bc-opportunity](provincial-bc-opportunity.txt) | BC Gov News | https://news.gov.bc.ca/releases/2019FIN0019-000248 | 2026-11-02 | `57b6737e9b8c413a3468e95ee40afb35e35b4013b397b3a29133a78d388fb695` |
+| [provincial-calgary-property-tax](provincial-calgary-property-tax.txt) | iThe City of Calgary 2022 Annual Financial Report | https://www.calgary.ca/content/dam/www/cfod/finance/documents/plans-budgets-and-financial-reports/annual-reports/annual-report-2022.pdf | 2026-11-02 | `0e3b43443f9b0adc4bb5eefd51c51b8c455e86b106e1c413260affa7f1aaa341` |
+| [provincial-mb-school-tax-rebate](provincial-mb-school-tax-rebate.txt) | Education Property Tax Rebate Continues in 2022 | https://www.gov.mb.ca/edupropertytax/index.html | 2026-11-02 | `b1d2afc37efe276df57ab0a67770663ba46f8ede8fd96903772115c97d495dae` |
+| [provincial-nb-child](provincial-nb-child.txt) | Child Tax Benefit | https://www2.gnb.ca/content/gnb/en/departments/finance/taxes/child_tax_benefit.html | 2026-11-02 | `582ecc0930e4edb3f2bad076110cbb4a5951c80a80b026c21c068f79c25f75bb` |
+| [provincial-nb-hst-credit](provincial-nb-hst-credit.txt) | New Brunswick harmonized sales | https://www.canada.ca/content/dam/cra-arc/migration/cra-arc/bnfts/rltd_prgrms/nbhstccs-eng.pdf | 2026-11-02 | `ef71de40b992f4b0244a2d9f876122e7f1b9b697778bb41939df610fae64a4cf` |
+| [provincial-nl-child-2011](provincial-nl-child-2011.txt) | NEWFOUNDLAND AND LABRADOR REGULATION 60/11 | https://www.assembly.nl.ca/Legislation/sr/Annualregs/2011/nr110060.htm | 2026-11-02 | `d56c01886feab721ae691b8855f2d30b9f41f51e57e6908c9c4c4df3cf6e1bfb` |
+| [provincial-nl-income-supplement](provincial-nl-income-supplement.txt) | Budget 2016 Backgrounder | https://www.budget.gov.nl.ca/budget2016/incomesupplement/Budget%202016%20NL%20Income%20Supplement%20Specifics.pdf | 2026-11-02 | `72d110ccd6f1dbb82293a9f9d42224fc7688bfaa17afec01a76cff9e12a6ab5a` |
+| [provincial-ns-affordable](provincial-ns-affordable.txt) | Nova Scotia Affordable Living Tax Credit Regulations - Income Tax Act (Nova Scotia) | https://novascotia.ca/JUST/REGULATIONS/regs/incaffordable.htm | 2026-11-02 | `7668215fb94bd44adeaee5f1bd47b6cd05039738dfc10080e01e8a7ab27f1881` |
+| [provincial-ns-child-regulation](provincial-ns-child-regulation.txt) | NS Royal Gazette Part II - Volume 44, No. 15, July 17, 2020 | https://novascotia.ca/just/regulations/RG2/2020/RG2-2020-07-17.pdf | 2026-11-02 | `5ea3688ead53e692ddeb589f6722cf4b687f3b6b04787625bb8985177c5e1273` |
+| [provincial-nt-child-formula](provincial-nt-child-formula.txt) | Page 1 | https://www.fin.gov.nt.ca/sites/fin/files/benefits_and_support-nwt_child_benefit-180320.pdf | 2026-11-02 | `cf7a4e469c59d6941dbb8ba73c133ccbf7be6af050f563e5fcc6d1f73733dba1` |
+| [provincial-nt-payroll](provincial-nt-payroll.txt) | Finance | https://www.fin.gov.nt.ca/en/services/licences-taxes-et-droits/payroll-tax-employees | 2026-11-02 | `f9cba1a580d9e0d3c3b3b16377fe27755da0739abeaca87adb7bf548efa318ee` |
+| [provincial-nu-payroll-response](provincial-nu-payroll-response.txt) | Response to the Standing Committee Report on the Review of the 2022-23 Public Accounts | https://www.assembly.nu.ca/sites/default/files/2025-05/TD-388-6%282%29-EN-GN%20Response%20to%202022-23%20Public%20Accounts%20Report.pdf | 2026-11-02 | `df52dff3c39c386380816990b5ba71a2f9dba2bc2295af4e5781ceaf31ebfd62` |
+| [provincial-nunavut-child-rates](provincial-nunavut-child-rates.txt) | Poverty and Prosperity | https://assembly.nu.ca/library/GNedocs/2013/001057-e.pdf | 2026-11-02 | `d2655e525dcfa313f17dbd3a5f9f0fd5d06d16efe19e8923aa427f8794c7b308` |
+| [provincial-ontario-benefits](provincial-ontario-benefits.txt) | Descriptions of the Tax Provisions Listed in the Taxation Transparency Report, 2020 | https://budget.ontario.ca/2020/provisions.html | 2026-11-02 | `c7f382595af21e1dff713b6bbe35dfa76dda95b18086587b32b5992fc21504c9` |
+| [provincial-pe-property-act](provincial-pe-property-act.txt) | Real Property Tax Act | https://www.princeedwardisland.ca/sites/default/files/legislation/r-05-real_property_tax_act.pdf | 2026-11-02 | `f97911c4dbb9bcfa039bafc90037c52328034a072b130891edc38eceb3bd94fd` |
+| [provincial-pe-sales-credit](provincial-pe-sales-credit.txt) | Presented by | https://www.princeedwardisland.ca/sites/default/files/publications/budget2016add.pdf | 2026-11-02 | `8719bd8f9e05e0e8042b31dc2417e85b6ab0366097d4a9234dacab17803520e8` |
+| [provincial-property-charlottetown](provincial-property-charlottetown.txt) | Master Budget 2020-2021.xlsm | https://cdnsm5-hosted.civiclive.com/UserFiles/Servers/Server_10500298/File/Mayor%20and%20Council/Finance/Annual%20Budget/2020-2021%20Budget%20Address%20and%20Budget%20Documents.pdf | 2026-11-02 | `33c78a82509542d0227dc753284007668535329b045d92b6c56a00bea190f812` |
+| [provincial-property-halifax](provincial-property-halifax.txt) | 2021 | https://www.halifax.ca/sites/default/files/documents/city-hall/budget-finances/OperatingBudgetBook2122.pdf | 2026-11-02 | `577ce935d12a67413df28cf0591ad6a5790b62fc55e3bb4204c02e341117169d` |
+| [provincial-property-halifax-adoption](provincial-property-halifax-adoption.txt) | June 9, 2020 Halifax Regional Council Summary of Recorded Votes \| Halifax.ca | https://www.halifax.ca/sites/default/files/documents/city-hall/regional-council/200609rc-votes.pdf | 2026-11-02 | `44f5d5e8554c2b548048002ea0d3ae8579407cfa0e4a6f5ffe72c66491314553` |
+| [provincial-property-iqaluit](provincial-property-iqaluit.txt) | property-iqaluit | https://iqaluit.ca/sites/default/files/by-law_886_2020_mill_rate_eng.pdf | 2026-11-02 | `360d7165c265c92de06b98f5f07e61aed97cc30c702f324c0bc1ab1fe5ea2053` |
+| [provincial-property-moncton](provincial-property-moncton.txt) | Budget Information | https://www.moncton.ca/en/budget | 2026-11-02 | `0463049f65f85df634c2babe6f3d8ccb0c23e2626ddb6527f820b08250fd5993` |
+| [provincial-property-montreal](provincial-property-montreal.txt) | Budget 2021 et PDI 2021-2030 de la Ville de Montréal | https://portail-m4s.s3.montreal.ca/pdf/budget_2021_et_pdi_2021-2030_web.pdf | 2026-11-02 | `05278565398408ddaf8f7dc247a19364f9c0a04fcbaccdb3438109dbd95be47f` |
+| [provincial-property-montreal-rates](provincial-property-montreal-rates.txt) | Montreal, 2020 official residential and borough tax rates (manual PDF web extract) | https://ville.montreal.qc.ca/pls/portal/docs/PAGE/SERVICE_FIN_FR/MEDIA/DOCUMENTS/2020_TAUX_FR.PDF | 2026-11-02 | `unavailable (direct download returned HTTP 403; official PDF read by web tool)` |
+| [provincial-property-stjohns](provincial-property-stjohns.txt) | Tax Rates | https://www.stjohns.ca/resident-services/property-taxes-assessments/tax-rates/ | 2026-11-02 | `b20d3a184f605409bd52be2eb2cc531b39eb1ea1814d02cd996823e18fedbedd` |
+| [provincial-property-whitehorse](provincial-property-whitehorse.txt) | Operating | https://whitehorse.ca/wp-content/uploads/2024/01/2024-2026-Operating-Budget-Public-Input-Package-FINAL.pdf | 2026-11-02 | `c590fe84b9db82962237300ac3281c1e7969a8234743b3866161eb3bbc672d5a` |
+| [provincial-property-yellowknife-municipal](provincial-property-yellowknife-municipal.txt) | CITY OF YELLOWKNIFE | https://www.yellowknife.ca/sites/default/files/bylaws/119cc2d4-c15d-4c9d-9c01-2b4a73187be4.pdf | 2026-11-02 | `eb5248c4cccb523af8f0282972c56072da3cfb2b92d6f36368ec38c80158f71a` |
+| [provincial-property-yellowknife-school](provincial-property-yellowknife-school.txt) | CITY OF YELLOWKNIFE | https://www.yellowknife.ca/sites/default/files/bylaws/b6dafc39-cda6-4360-ab70-2f28aeded69f.pdf | 2026-11-02 | `dd60c00c52973c08a7e3ec2db47f1187ef10b007b27a7a0315a8f25a11d41d5a` |
+| [provincial-quebec-dividends](provincial-quebec-dividends.txt) | Dépenses fiscales 2025 | https://www.budget.finances.gouv.qc.ca/budget/outils/depenses-fiscales/fiches/fiche-130501.asp | 2026-11-02 | `d9f94fbc24e08ca96d886f8c44f972eee88b58baf95d833aba5d0f45340b3842` |
+| [provincial-quebec-family-history](provincial-quebec-family-history.txt) | Dépenses fiscales 2025 | https://www.budget.finances.gouv.qc.ca/budget/outils/depenses-fiscales/fiches/fiche-110601.asp | 2026-11-02 | `4ac977c946880a3c9291140fe67338238eeaca757ef5c388102504e6c5e4cad3` |
+| [provincial-quebec-living-alone](provincial-quebec-living-alone.txt) | Schedule B – Tax Relief Measures | https://www.revenuquebec.ca/documents/en/formulaires/tp/2020-12/TP-1.D.B-V%282020-12%29.pdf | 2026-11-02 | `57d97389c60ad31667eabd475acf405e80ade9251fbb592205869d79b4238dff` |
+| [provincial-quebec-parameters](provincial-quebec-parameters.txt) | Paramètres du régime d’imposition des particuliers pour l’année d’imposition 2020 | https://www.finances.gouv.qc.ca/documents/Autres/fr/AUTFR_RegimeImpot2020.pdf | 2026-11-02 | `c99be200c13313e676e423e859360e43a5d698b11137b55937f200289f4e1928` |
+| [provincial-quebec-return](provincial-quebec-return.txt) | Income Tax Return 2020 | https://www.revenuquebec.ca/documents/en/formulaires/tp/2020-12/TP-1.D-V%282020-12%29.pdf | 2026-11-02 | `45ecf98003706e9ad77206d0d6ed416d0cee712a83522f80313e86a23b78e886` |
+| [provincial-quebec-solidarity-history](provincial-quebec-solidarity-history.txt) | Dépenses fiscales 2025 | https://www.budget.finances.gouv.qc.ca/Budget/outils/depenses-fiscales/fiches/fiche-110201.asp | 2026-11-02 | `d27c6e21e261cb778e860196d476f36f319d0d2da7451209f2755e194276bef2` |
+| [provincial-quebec-work-premium](provincial-quebec-work-premium.txt) | Schedule P – Tax Credits Respecting the Work Premium | https://www.revenuquebec.ca/documents/en/formulaires/tp/2020-12/TP-1.D.P-V%282020-12%29.pdf | 2026-11-02 | `1ba36b5a5428cd35a5cb55f0e061e6e5310954c9e7fc27fe6f883bf54ca971e0` |
+| [provincial-quebec-worker-history](provincial-quebec-worker-history.txt) | Dépenses fiscales 2025 | https://www.budget.finances.gouv.qc.ca/Budget/outils/depenses-fiscales/fiches/fiche-110906.asp | 2026-11-02 | `c8d9fcd4f397daf1f70d1ec02e1e4e15cfd25d75b6d5d9b46c2561df3c12578c` |
+| [provincial-rc4210-2016](provincial-rc4210-2016.txt) | Microsoft Word - rc4210-12-16e.docx | https://publications.gc.ca/collections/collection_2017/arc-cra/Rv47-3-2016-eng.pdf?download=1 | 2026-11-02 | `a5acd4834f6dcc13956cfce74cd27273a15c98b472585bc962549bd61bc4795b` |
+| [provincial-sales-rates](provincial-sales-rates.txt) | GST/HST calculator (and rates) | https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/charge-collect-which-rate/calculator.html | 2026-11-02 | `32cce81b4cb4817059e0f99a158a36c2faa26988dae962e84d3a7aa9c7fad81c` |
+| [provincial-saskatoon-assessment](provincial-saskatoon-assessment.txt) | NOTICE OF APPEAL TO THE BOARD OF REVISION | https://www.saskatoon.ca/sites/default/files/documents/asset-financial-management/assessment-taxation/cos_guide_to_2021_reassessment_notice_final.pdf | 2026-11-02 | `30d1bf17e5dd81164dd42c94cfaf5106e6fd5d6a0d5556e26761f0c36efe34d9` |
+| [provincial-saskatoon-property-tax](provincial-saskatoon-property-tax.txt) | Historical Tax Rate 2018-2026 | https://www.saskatoon.ca/sites/default/files/media/documents/Historical%20tax%20Rate%202018-2026.pdf | 2026-11-02 | `a8061028f8e3e8c164d8f42c1de4327eb3db5de43866d688edb201aab32b814f` |
+| [provincial-sk-education-mills](provincial-sk-education-mills.txt) | Bylaw No. 2020-24 | https://openregina.ca/dataset/4058d60b-3738-4877-8386-c47fede54856/resource/61658132-f592-49a9-b0dd-e3c0e035e69e/download/2020-24.pdf | 2026-11-02 | `473f8da8ff1457cf2d102cb6fb3b2a14c15621233126423f08e73d7f4175989c` |
+| [provincial-sk-indexation](provincial-sk-indexation.txt) | Personal Income Tax | https://www.saskatchewan.ca/residents/taxes-and-investments/personal-income-tax | 2026-11-02 | `d64c9e008705c851e68cb7a6cc93442398f715d6077422d2ee3371f6ca0d04a1` |
+| [provincial-sk-low-income-2017](provincial-sk-low-income-2017.txt) | Hansard: April 24, 2017 | https://docs.legassembly.sk.ca/legdocs/Legislative%20Assembly/Hansard/28L1S/170424Debates.pdf | 2026-11-02 | `f3257104ef6209a03ee948c4aa366fd990947cd090bb28952e029c07b5c97039` |
+| [provincial-sk-low-income-statute](provincial-sk-low-income-statute.txt) | EXPLANATORY NOTES | https://docs.legassembly.sk.ca/legdocs/Explanatory%20Notes/28L4S/Bill28-210EN.pdf | 2026-11-02 | `d4e56018f08df4617125851b45da5225d88ced830c6727c9e49e2bfefef99210` |
+| [provincial-t4114-20](provincial-t4114-20.txt) | Canada Child Benefit | https://publications.gc.ca/collections/collection_2020/arc-cra/Rv1-36-2020-eng.pdf?download=1 | 2026-11-02 | `03701cc947870230ca71648d244ff48acada43316f27edb963f808f784e5a56f` |
+| [provincial-toronto-property-tax](provincial-toronto-property-tax.txt) | 2020 ANNUAL FINANCIAL REPORT | https://www.toronto.ca/wp-content/uploads/2021/09/95b7-YE-2020-City-of-Toronto-Annual-Financial-Report.pdf | 2026-11-02 | `9440dbeb620ccc367a8e572bd89b08866a19beae0e372810a1a8fd3c70a3bff3` |
+| [provincial-vancouver-property-tax](provincial-vancouver-property-tax.txt) | Vancouver, 2020 property tax rates (manual official PDF web extract) | https://vancouver.ca/files/cov/2020-property-tax-rates.pdf | 2026-11-02 | `unavailable (direct download returned HTTP 403; official PDF read by web tool)` |
+| [provincial-winnipeg-property-tax](provincial-winnipeg-property-tax.txt) | 2020 Combined Mill Rates | https://assessment.winnipeg.ca/Asmttax/pdfs/rates/2020CombinedMillRates.pdf | 2026-11-02 | `05c32058949f7b1d98cb8081e091d20306b613911f7c4989fa082a4a7b281d04` |
+| [provincial-yt-child-2024](provincial-yt-child-2024.txt) | TAB# 01 | https://open.yukon.ca/information/de20b25e-b7d5-45ed-aacd-5ce4e968bec4/resource/57bd0240-b717-3e8b-9c1e-f9a386d62022/download/fin_spring_2024.pdf | 2026-11-02 | `e069c810c797c3f2a7220b8a68f0c826911edbe23a47f7706000dd8fa85084a8` |
+| [provincial-yukon-child-hansard](provincial-yukon-child-hansard.txt) | Yukon Hansard April 16 2026, historical child benefit maximum | https://yukonassembly.ca/sites/default/files/hansard/36-1-24.pdf | 2026-11-02 | `unavailable (direct PDF download returned HTTP 403)` |

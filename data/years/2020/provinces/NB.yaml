@@ -1,0 +1,41 @@
+# Benefit-year figures use July 2020 to June 2021, applied to current-year income.
+# HST credit uses the unchanged published 2016 calculation sheet; Moncton table explicitly lists 2020.
+
+code: NB
+name: New Brunswick
+order: 9
+brackets:
+  - [43401, 0.0968]
+  - [86803, 0.1482]
+  - [141122, 0.1652]
+  - [160776, 0.1784]
+  - [.inf, 0.203]
+basicPersonalAmount: 10459
+dividendTaxCredit: {eligible: 0.14, nonEligible: 0.0275}
+spouseAmount: {max: 8882, threshold: 889}
+lowIncomeReduction:
+  program: nb-low-income-reduction
+  params: {amount: 678, rate: 0.03, threshold: 17455}
+salesTax: {rate: 0.15, label: 15% HST}
+propertyTax: {rate: 0.016497, city: Moncton}
+childBenefit:
+  name: NB Child Tax Benefit
+  program: nb-child-tax-benefit
+  params:
+    perChild: 250
+    threshold: 20000
+    rateOneChild: 0.025
+    rateMoreChildren: 0.05
+    workingIncomeSupplement: {rate: 0.04, floor: 3750, max: 250, threshold: 20921, phaseOut: 0.05}
+credits:
+  - name: New Brunswick HST credit
+    program: nb-hst-credit
+    params: {adult: 300, spouse: 300, child: 100, rate: 0.02, threshold: 35000}
+sources:
+  - {label: "CRA, NB428 for 2020", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5004-c/5004-c-20e.pdf}
+  - {label: "CRA, NB428 worksheet for 2020", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5004-d/5004-d-20e.pdf}
+  - {label: "CRA, T4114-20: July 2020–June 2021 child benefits (official archive)", url: https://publications.gc.ca/collections/collection_2020/arc-cra/Rv1-36-2020-eng.pdf?download=1}
+  - {label: "CRA, GST/HST historical rates and provincial sales-tax rates", url: https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/charge-collect-which-rate/calculator.html}
+  - {label: "New Brunswick Finance, child benefit and working supplement annual amounts and reduction rates", url: https://www2.gnb.ca/content/gnb/en/departments/finance/taxes/child_tax_benefit.html}
+  - {label: "CRA, New Brunswick HST calculation sheet (unchanged 2016 parameters)", url: https://www.canada.ca/content/dam/cra-arc/migration/cra-arc/bnfts/rltd_prgrms/nbhstccs-eng.pdf}
+  - {label: "Moncton, historical 2022 municipal property-tax rate", url: https://www.moncton.ca/en/budget}

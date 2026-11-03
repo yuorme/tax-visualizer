@@ -1,0 +1,38 @@
+# Benefit-year figures use July 2020 to June 2021, applied to current-year income.
+# Child benefits count each age group separately using the exact annual table and statutory taper.
+# Property rate: (5.39 municipal + 2.96 school) mills / 1000.
+
+code: NT
+name: Northwest Territories
+territory: true
+order: 3
+brackets:
+  - [43957, 0.059]
+  - [87916, 0.086]
+  - [142932, 0.122]
+  - [.inf, 0.1405]
+basicPersonalAmount: 15093
+dividendTaxCredit: {eligible: 0.115, nonEligible: 0.06}
+spouseAmount: {max: 15093, threshold: 0}
+payroll: {employeeTax: 0.02}
+salesTax: {rate: 0.05, label: 5% GST}
+propertyTax: {rate: 0.00835, city: Yellowknife}
+childBenefit:
+  name: NWT Child Benefit
+  program: nwt-child-benefit-age-groups
+  params:
+    under6: [0, 815, 1467, 1997, 2445]
+    under6More: 367
+    over6: [0, 652, 1174, 1597, 1956]
+    over6More: 293
+    fullUpTo: 30000
+    endsAt: 80000
+sources:
+  - {label: "CRA, NT428 for 2020", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5012-c/5012-c-20e.pdf}
+  - {label: "CRA, NT428 worksheet for 2020", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5012-d/5012-d-20e.pdf}
+  - {label: "CRA, T4114-20: July 2020–June 2021 child benefits (official archive)", url: https://publications.gc.ca/collections/collection_2020/arc-cra/Rv1-36-2020-eng.pdf?download=1}
+  - {label: "CRA, GST/HST historical rates and provincial sales-tax rates", url: https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/charge-collect-which-rate/calculator.html}
+  - {label: "NWT Finance, employee payroll tax 2%", url: https://www.fin.gov.nt.ca/en/services/licences-taxes-et-droits/payroll-tax-employees}
+  - {label: "NWT Finance, annual child-benefit table and exact linear taper introduced July 2017", url: https://www.fin.gov.nt.ca/sites/fin/files/benefits_and_support-nwt_child_benefit-180320.pdf}
+  - {label: "Yellowknife, signed 2020 municipal mill-rate bylaw 5019", url: https://www.yellowknife.ca/sites/default/files/bylaws/119cc2d4-c15d-4c9d-9c01-2b4a73187be4.pdf}
+  - {label: "Yellowknife, signed 2020 school mill-rate bylaw 5020", url: https://www.yellowknife.ca/sites/default/files/bylaws/b6dafc39-cda6-4360-ab70-2f28aeded69f.pdf}
