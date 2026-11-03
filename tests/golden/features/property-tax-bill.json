@@ -1,0 +1,50 @@
+{
+  "cases": [
+    { "id": "blank-uses-existing-estimate", "province": "ON", "bills": {}, "property": 3800 },
+    { "id": "bill-replaces-estimate", "province": "ON", "bills": { "ON": 4200.25 }, "property": 4200.25 },
+    { "id": "zero-is-an-explicit-bill", "province": "ON", "bills": { "ON": 0 }, "property": 0 },
+    { "id": "destination-retains-city-rate", "province": "MB", "bills": { "ON": 4200 }, "property": 6900 },
+    {
+      "id": "bill-wins-over-rate-override",
+      "province": "ON",
+      "bills": { "ON": 4200 },
+      "rates": { "ON": 0.02 },
+      "property": 4200
+    },
+    {
+      "id": "bill-with-no-home-valuation",
+      "province": "ON",
+      "bills": { "ON": 4200 },
+      "homeValue": 0,
+      "property": 4200
+    },
+    { "id": "mb-owner-credit-below-cap", "province": "MB", "bills": { "MB": 800 }, "property": 800, "credit": 800 },
+    { "id": "mb-owner-credit-at-cap", "province": "MB", "bills": { "MB": 1600 }, "property": 1600, "credit": 1600 },
+    { "id": "mb-owner-credit-above-cap", "province": "MB", "bills": { "MB": 2400 }, "property": 2400, "credit": 1600 },
+    { "id": "mb-zero-bill-has-no-owner-credit", "province": "MB", "bills": { "MB": 0 }, "property": 0, "credit": 0 },
+    {
+      "id": "ontario-low-bill-bounds-credit",
+      "province": "ON",
+      "income": 20000,
+      "bills": { "ON": 50 },
+      "property": 50,
+      "credit": 100
+    },
+    {
+      "id": "ontario-bill-sets-occupancy-cost",
+      "province": "ON",
+      "income": 20000,
+      "bills": { "ON": 1000 },
+      "property": 1000,
+      "credit": 463
+    },
+    {
+      "id": "ontario-zero-bill-has-no-occupancy-credit",
+      "province": "ON",
+      "income": 20000,
+      "bills": { "ON": 0 },
+      "property": 0,
+      "credit": 0
+    }
+  ]
+}
