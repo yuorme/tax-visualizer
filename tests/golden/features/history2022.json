@@ -1,0 +1,158 @@
+{
+  "description": "Independently calculated 2022 integrated benefit/payroll cases; docs/verification/2022-golden-cases.md.",
+  "defaults": {
+    "active": 0,
+    "spouse": true,
+    "adults": 1,
+    "kids": 0,
+    "under6": 0,
+    "useBpa": false,
+    "whRate": 0,
+    "useCredits": false,
+    "homeValue": 0,
+    "rent": 0,
+    "monthlySpending": 0
+  },
+  "rules": {},
+  "cases": [
+    {
+      "id": "history2022-bc-maximum",
+      "year": 2022,
+      "province": "BC",
+      "household": {
+        "people": [
+          {
+            "fd": 0
+          }
+        ],
+        "kids": 1,
+        "useCredits": true
+      },
+      "expected": {
+        "provBen": 1775
+      }
+    },
+    {
+      "id": "history2022-bc-different-floors",
+      "year": 2022,
+      "province": "BC",
+      "household": {
+        "people": [
+          {
+            "fd": 50000
+          }
+        ],
+        "kids": 1,
+        "useCredits": true
+      },
+      "expected": {
+        "provBen": 858.06
+      }
+    },
+    {
+      "id": "history2022-bc-ordinary-exhausted",
+      "year": 2022,
+      "province": "BC",
+      "household": {
+        "people": [
+          {
+            "fd": 100078
+          }
+        ],
+        "kids": 1,
+        "useCredits": true
+      },
+      "expected": {
+        "provBen": 150
+      }
+    },
+    {
+      "id": "history2022-bc-all-exhausted",
+      "year": 2022,
+      "province": "BC",
+      "household": {
+        "people": [
+          {
+            "fd": 117000
+          }
+        ],
+        "kids": 1,
+        "useCredits": true
+      },
+      "expected": {
+        "provBen": 0
+      }
+    },
+    {
+      "id": "history2022-bc-four-children",
+      "year": 2022,
+      "province": "BC",
+      "household": {
+        "people": [
+          {
+            "fd": 0
+          }
+        ],
+        "kids": 4,
+        "useCredits": true
+      },
+      "expected": {
+        "provBen": 4900
+      }
+    },
+    {
+      "id": "history2022-bc-no-children",
+      "year": 2022,
+      "province": "BC",
+      "household": {
+        "people": [
+          {
+            "fd": 0
+          }
+        ],
+        "kids": 0,
+        "useCredits": true
+      },
+      "expected": {
+        "provBen": 0
+      }
+    },
+    {
+      "id": "history2022-payroll-AB",
+      "year": 2022,
+      "province": "AB",
+      "household": {
+        "people": [
+          {
+            "ord": 100000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 3039.3,
+        "list.0.pay.enh": 460.5,
+        "list.0.pay.ei": 952.74,
+        "list.0.pay.qpip": 0
+      }
+    },
+    {
+      "id": "history2022-payroll-QC",
+      "year": 2022,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 100000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 3315.6,
+        "list.0.pay.enh": 460.5,
+        "list.0.pay.ei": 723.6,
+        "list.0.pay.qpip": 434.72
+      }
+    }
+  ],
+  "ratePeriodCases": []
+}

@@ -1,0 +1,30 @@
+{
+  "program": "bc-family-benefit-periods",
+  "params": {
+    "periods": [
+      {"weight": 0.75, "max": [1600, 1000, 800], "min": [700, 680, 660], "singleParent": 0,
+        "threshold": 25806, "minThreshold": 82578, "rate": 0.04},
+      {"weight": 0.25, "max": [2300, 1700, 1500], "min": [1300, 1280, 1260], "singleParent": 0,
+        "threshold": 25806, "minThreshold": 82578, "rate": 0.04}
+    ]
+  },
+  "cases": [
+    {"income": 0, "kids": 0, "single": false, "expected": 0},
+    {"income": 0, "kids": 1, "single": false, "expected": 1775},
+    {"income": 25806, "kids": 1, "single": true, "expected": 1775},
+    {"income": 25807, "kids": 1, "single": false, "expected": 1774.96},
+    {"income": 48306, "kids": 1, "single": false, "expected": 875},
+    {"income": 50000, "kids": 1, "single": false, "expected": 858.06},
+    {"income": 50806, "kids": 1, "single": false, "expected": 850},
+    {"income": 82578, "kids": 1, "single": false, "expected": 850},
+    {"income": 82579, "kids": 1, "single": false, "expected": 849.96},
+    {"income": 92578, "kids": 1, "single": false, "expected": 450},
+    {"income": 100078, "kids": 1, "single": false, "expected": 150},
+    {"income": 100079, "kids": 1, "single": false, "expected": 149.99},
+    {"income": 115078, "kids": 1, "single": false, "expected": 0},
+    {"income": 120000, "kids": 1, "single": false, "expected": 0},
+    {"income": 0, "kids": 2, "single": false, "expected": 2950},
+    {"income": 0, "kids": 4, "single": true, "expected": 4900},
+    {"income": 82578, "kids": 2, "single": false, "expected": 1680}
+  ]
+}

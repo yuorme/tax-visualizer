@@ -1,0 +1,38 @@
+{
+  "early": {"perChild": 660, "threshold": 100000, "rate": 0.0132},
+  "opportunity": {"max": [1600, 1000, 800], "min": [700, 680, 660], "singleParent": 0,
+    "threshold": 25000, "minThreshold": 80000, "rate": 0.04},
+  "earlyCases": [
+    {"income": 0, "kids": 0, "young": 0, "expected": 0},
+    {"income": 0, "kids": 3, "young": 0, "expected": 0},
+    {"income": 0, "kids": 1, "young": 1, "expected": 660},
+    {"income": 100000, "kids": 3, "young": 2, "expected": 1320},
+    {"income": 100001, "kids": 1, "young": 1, "expected": 659.9868},
+    {"income": 125000, "kids": 3, "young": 2, "expected": 660},
+    {"income": 150000, "kids": 2, "young": 2, "expected": 0},
+    {"income": 150001, "kids": 2, "young": 2, "expected": 0}
+  ],
+  "transitionCases": [
+    {"income": 0, "kids": 0, "young": 0, "expected": 0},
+    {"income": 0, "kids": 1, "young": 0, "expected": 1200},
+    {"income": 0, "kids": 1, "young": 1, "expected": 1365},
+    {"income": 0, "kids": 3, "young": 1, "expected": 2715},
+    {"income": 0, "kids": 3, "young": 2, "expected": 2880},
+    {"income": 0, "kids": 4, "young": 1, "expected": 3315},
+    {"income": 25000, "kids": 1, "young": 1, "expected": 1365},
+    {"income": 25001, "kids": 1, "young": 1, "expected": 1364.97},
+    {"income": 47500, "kids": 1, "young": 1, "expected": 690},
+    {"income": 80000, "kids": 1, "young": 1, "expected": 690},
+    {"income": 80001, "kids": 1, "young": 1, "expected": 689.97},
+    {"income": 97500, "kids": 1, "young": 1, "expected": 165},
+    {"income": 100000, "kids": 1, "young": 1, "expected": 165},
+    {"income": 100001, "kids": 1, "young": 1, "expected": 164.9967},
+    {"income": 125000, "kids": 1, "young": 1, "expected": 82.5},
+    {"income": 150000, "kids": 1, "young": 1, "expected": 0},
+    {"income": 100000, "kids": 3, "young": 1, "expected": 1095},
+    {"income": 125000, "kids": 3, "young": 1, "expected": 262.5},
+    {"income": 131000, "kids": 3, "young": 1, "expected": 62.7},
+    {"income": 150000, "kids": 5, "young": 2, "expected": 420},
+    {"income": 200000, "kids": 5, "young": 2, "expected": 0}
+  ]
+}

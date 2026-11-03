@@ -1,0 +1,959 @@
+Title: untitled
+URL: https://www.canada.ca/content/dam/cra-arc/formspubs/pub/t4114/t4114-24e.pdf
+Fetched: 2026-11-02
+SHA-256 of the original: 498fa5faf37b90a37b271a7b9c53ec67aa70c84ce79f1cd3a8277cd3f9dfb988
+Publication date modified: 2024-06-26
+PDF pages: all 14
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 1 of 14 ---
+
+Canada Child Benefit
+and related federal, provincial,
+and territorial programs
+For the period from July 2024 to June 2025
+T4114(E) Rev. 24
+canada.ca/taxes
+The Canada Revenue Agency’s
+publications and personalized
+correspondence are available in
+braille, large print, e-text, and MP3. For
+more information, go to canada.ca/cra
+-multiple-formats or call 1-800-387-1193.
+La version française de ce livret est intitulée Allocation canadienne pour
+enfants.
+
+--- PDF page 2 of 14 ---
+
+canada.ca/taxes
+Find out if this booklet is for you
+This booklet gives information about the Canada child benefit (CCB), such as:
+ԏ who is eligible
+ԏ how you apply for it
+ԏ when you get it
+ԏ how it is calculated
+ԏ what are the related federal, provincial, and territorial child benefit and
+credit programs administered by the Canada Revenue Agency (CRA)
+canada.ca/taxes4
+Table of contents
+Page
+Definitions ............................................................................................................. 5
+Canada child benefit ............................................................................................ 6
+Eligibility criteria .................................................................................................. 6
+Situations in which you can apply .................................................................... 7
+When you can apply .............................................................................................. 8
+If you share custody of a child ........................................................................... 9
+How to apply ......................................................................................................... 10
+Automated Benefits Application ......................................................................... 11
+You need a social insurance number ................................................................... 11
+After you apply ..................................................................................................... 12
+If the CRA reviews your information ................................................................. 12
+If you have a spouse or common-law partner.................................................. 12
+If you have a new spouse or common-law partner ........................................... 13
+How your benefit is calculated........................................................................... 14
+Base year and payment period ............................................................................. 14
+Child and family benefits online calculator ....................................................... 15
+How much you can expect to receive ................................................................ 15
+Child disability benefit .......................................................................................... 16
+When your benefit is paid ................................................................................... 16
+When your benefit is recalculated ..................................................................... 17
+If you were overpaid ............................................................................................ 17
+Related programs .................................................................................................. 17
+Related program not administered by the CRA .............................................. 23
+When you should contact the CRA .................................................................... 23
+If the number of children in your care has changed ......................................... 23
+If your marital status has changed ...................................................................... 24
+If a CCB recipient has died ................................................................................... 24
+If you are moving ................................................................................................... 25
+Other changes ......................................................................................................... 25
+Tax centre addresses ............................................................................................. 25
+Digital services for individuals .......................................................................... 26
+For more information ........................................................................................... 27
+
+--- PDF page 3 of 14 ---
+
+canada.ca/taxes 5
+Definitions
+Adjusted family net income – your family net income minus any universal
+child care benefit (UCCB) and registered disability savings plan (RDSP) income
+received plus any UCCB and RDSP amounts repaid. If you received split
+income, refer to the information sheet for Form T1206, Tax on Split Income.
+Note
+If you are an individual registered, or entitled to be registered under the
+Indian Act, do not report the portion of income that qualifies for the tax
+exemption under section 87 of the Indian Act. For more information, go
+to canada.ca/taxes-benefits-indigenous.
+Common-law partner – a person to whom you are not married, with whom
+you are living in a conjugal relationship, and to whom one of the following
+situations apply. They:
+ԏ have been living with you for at least 12 continuous months. This includes
+any period you were separated for less than 90 days because of a breakdown
+in the relationship
+ԏ are the parent of your child by birth or adoption
+ԏ have custody and control of your child (or had custody and control
+immediately before the child turned 19 years of age) and your child is wholly
+dependent on that person for support
+Family net income – your net income added to the net income of your spouse
+or common-law partner, if you have one. Family net income does not include
+your child’s net income.
+If you or your spouse or common-law partner were non-residents of Canada
+for part or all of the year, family net income includes your or your spouse’s
+or common-law partner’s income from all sources, both inside and outside
+Canada, for any part of the year that either of you were not residents
+of Canada. Income from sources outside Canada must be determined in the
+same way net income is determined in Canada.
+Kinship or close relationship programs – programs of the Government of
+Canada, a provincial or territorial government, or an Indigenous governing
+body for the care and upbringing, on a temporary basis, of a child in need of
+protection.
+Unlike other foster care arrangements, the child is generally placed in the care
+of a grandparent, an extended family member, or a close friend without being
+brought into the legal custody and guardianship of the province or territory.
+Certain jurisdictions may offer financial assistance to help individuals cover the
+expenses in caring for the child.
+Married – you are legally married to someone.
+Primarily responsible for the care and upbringing of a child – you are
+responsible for such things as supervising the child’s daily activities and needs,
+making sure the child’s medical needs are met, and arranging for child care
+canada.ca/taxes6
+when necessary. The CRA usually considers the female parent who lives with
+the child to be primarily responsible for the care and upbringing of the child.
+Separated – you have been living apart from your spouse or common-law
+partner because of a breakdown in the relationship for a period of at least
+90 days and you have not reconciled.
+Once you have been separated for 90 days (because of a breakdown in the
+relationship), the effective day of your separation is the date you started living
+apart.
+You would still be considered to have a spouse or common-law partner if there is
+no breakdown in the relationship and you were living apart for reasons such as:
+ԏ work
+ԏ studies
+ԏ health problems
+Note
+Generally, you are not considered separated if your spouse or common-law
+partner is incarcerated or does not live in Canada, as long as there is no
+breakdown in your relationship.
+Single – you are single and no other marital status applies to you.
+Spouse – the person to whom you are legally married.
+Canada child benefit
+The CCB is a non-taxable amount paid monthly to help eligible families with
+the cost of raising children under 18 years of age. The CCB may include an
+additional amount for the child disability benefit (see page 16).
+By applying for the CCB, you also register your children for the goods and
+services tax/harmonized sales tax (GST/HST) credit, the Canada Carbon
+Rebate (CCR – formerly known as the climate action incentive payment), and
+any related federal, provincial, and territorial programs administered by the
+CRA.
+Eligibility criteria
+To get the CCB, you must meet all of the following conditions:
+1. You must live with the child, and the child must be under 18 years of age.
+2. You must be the person primarily responsible for the care and upbringing of
+the child.
+Note
+If a child does not live with you all the time, see “If you share custody of a
+child” on page 9.
+
+--- PDF page 4 of 14 ---
+
+canada.ca/taxes 7
+3. You must be a resident of Canada for tax purposes. You are considered a
+resident of Canada when you establish sufficient residential ties in Canada.
+For more information, see Income Tax Folio S5-F1-C1, Determining an
+Individual’s Residence Status.
+4. You or your spouse or common-law partner must be any of the following:
+ԏ a Canadian citizen
+ԏ a permanent resident (as defined in the Immigration and Refugee
+Protection Act)
+ԏ a protected person (as defined in the Immigration and Refugee
+Protection Act)
+ԏ a temporary resident (as defined in the Immigration and Refugee
+Protection Act) who has lived in Canada throughout the previous
+18 months, and who has a valid permit in the 19th month
+ԏ an individual registered, or entitled to be registered, under the Indian Act
+Note
+If the 18 months of continuous residency criteria has not been met or your
+permit has a remark stating “does not confer status” or “does not confer
+temporary resident status”, your application will only be used to register the
+child(ren) for the GST/HST credit, the CCR, and other programs
+administered by the CRA. You will need to re-apply for the CCB once you
+meet all of the conditions.
+Situations in which you can apply
+Only the person who is primarily responsible for the care and upbringing of the
+child can apply for the CCB. You can apply even if any of the following
+situations apply:
+ԏ your child only lives with you part of the time (see “If you share custody of a
+child” on page 9)
+ԏ your current adjusted family net income is too high (the CRA calculates your
+amount every July based on your adjusted family net income for the previous
+year)
+ԏ your child is living with you for a determined temporary period of time of at
+least one month, for example over the summer holidays
+ԏ you care for a child under a kinship or close relationship program and you
+otherwise meet all the CCB eligibility criteria
+Notes
+The CRA pays children’s special allowances for children under 18 years of
+age who are being maintained by a government department, agency,
+institution, or Indigenous governing body (or department or agency
+authorized or appointed by an Indigenous governing body). You cannot get
+the CCB for a foster child for any month in which children’s special
+canada.ca/taxes8
+allowances are payable for that child. For more information on the children’s
+special allowances, go to canada.ca/cra-csa and select “CSA fact sheet” or
+call 1-800-387-1193.
+If you live with a child whom you care for under a kinship or close
+relationship program from the government of Canada, a province, territory,
+or Indigenous governing body, you can still get the CCB for that child, even
+if you receive financial assistance under that program, as long as no
+children’s special allowances are payable for that child.
+When you can apply
+If you want to apply for the CCB, you should do so as soon as any of the
+following situations happen:
+ԏ your child is born
+ԏ a child starts to live with you
+ԏ you begin a new shared custody arrangement
+ԏ you or your spouse or common-law partner meet the eligibility conditions
+under “Eligibility criteria” on pages 6 and 7
+Notes
+If you are an individual registered, or entitled to be registered under the
+Indian Act, or you cared for a child under a kinship or close relationship
+program, you may be eligible for child benefits for prior year(s).
+Although regular payments for the Canada child tax benefit, the national
+child benefit supplement, and the universal child care benefit are no longer
+being issued after June 2016, you can still request child benefits for prior
+years, if applicable.
+Your application for the CCB is considered late if it includes a period that
+started more than 11 months ago.
+If your application is late, you must attach clear photocopies (including both
+sides of all pages) of all of the following documents for the entire period
+requested:
+ԏ proof of citizenship status (for example, a Canadian birth certificate) or
+immigration status in Canada for you and your spouse or common-law
+partner, if you have one
+ԏ proof that you resided in Canada, such as a lease agreement, rent receipts,
+utility bills or bank statements (at least three documents)
+ԏ proof of birth for each child
+ԏ proof that you were the person who is primarily responsible for the care and
+upbringing of the child(ren) (at least three documents) such as:
+ԏ a letter from the daycare or school authorities indicating the child’s home
+address and contact information on file
+
+--- PDF page 5 of 14 ---
+
+canada.ca/taxes 9
+ԏ a letter from a person in a position of authority (such as a social worker, a
+band council, or resettlement officer) stating that they have personal
+knowledge that the child lived with you for the period you indicated
+ԏ a registration form or a receipt from an activity or club the child was
+enrolled in for the period you indicated
+ԏ a court order, decree, or separation agreement
+For a complete list of supporting documents, go to canada.ca/child-benefits
+-supporting-documents.
+Note
+If you are not a Canadian citizen and are an individual registered, or entitled
+to be registered under the Indian Act, you must attach proof of registration
+with Indigenous Services Canada.
+For more information, see “How to apply” on the next page.
+If you share custody of a child
+You share custody of a child if the child lives part of the time with you and the
+rest of the time with another individual at a different address on a more or less
+equal basis. The CRA considers you to be in a shared custody situation if the
+child lives with you 40% to 60% of the time. For example, the child lives with
+you one week and with the other individual one week, or with you 4 days a
+week and with the other individual 3 days a week.
+When this is the case, both individuals may be considered primarily
+responsible for the child’s care and upbringing when the child lives with them.
+Each individual will get 50% of the payment they would have received if the
+child lived with them 100% of the time.
+Notes
+Due to illness or summer vacation schedules, the split may be 38% to 62% in
+a particular month.
+In situations where you received 100% of the payment because the other
+shared-custody parent chose not to apply, you may have to repay
+retroactively 50% of the child benefit payments you received if the other
+parent applies for them.
+If the child lives with you every second weekend (less than 40% of the time),
+you are not eligible for the child and family benefits for this child.
+canada.ca/taxes10
+Each parent must immediately tell the CRA of their new custody situation
+using one of the following ways:
+ԏ use “Apply for child benefits” in My Account at canada.ca/my-cra-account
+ԏ mail to the CRA a completed Form RC66, Canada Child Benefits Application
+If you are already eligible and get full benefits for a child, you may also:
+ԏ use My Account at canada.ca/my-cra-account
+ԏ call 1-800-387-1193
+ԏ send a letter explaining the shared custody situation
+All payments will be calculated based on each parent’s respective adjusted
+family net income.
+For more information, go to canada.ca/canada-child-benefit.
+How to apply
+If you are the mother of a newborn, you can use the Automated Benefits
+Application to apply for your child benefits. For more information, see
+“Automated Benefits Application” on the next page.
+You can also apply for the CCB by using “Apply for child benefits” in
+My Account at canada.ca/my-cra-account or by sending Form RC66, Canada
+Child Benefits Application.
+You must also fill out and attach to your application Form RC66SCH, Status in
+Canada and Income Information, if any of the following situations apply. You
+or your spouse or common-law partner:
+ԏ became a resident of Canada (for example, a newcomer to Canada or a
+returning resident of Canada) in the last 2 years
+ԏ became a Canadian citizen in the last 12 months
+ԏ are, as defined in the Immigration and Refugee Protection Act, a permanent
+resident, protected person, or temporary resident who has lived in Canada
+for the previous 18 months
+ԏ are not a Canadian citizen and are registered, or entitled to be registered
+under the Indian Act
+
+--- PDF page 6 of 14 ---
+
+canada.ca/taxes 11
+You must provide proof of birth for a child if the CRA has not previously paid
+benefits to anyone for this child.
+Proof of birth must include the child’s last name, given name, and date of birth.
+For the most up-to-date instructions and a complete list of supporting
+documents, go to canada.ca/child-benefits-supporting-documents.
+If your documents are in a language other than English or French, we need
+a copy of the original documents written in the foreign language with an
+acceptable English or French translation. For more information, go to canada.ca
+/child-benefits-supporting-documents.
+Note
+If you use the Automated Benefits Application to apply for child benefits,
+proof of birth for your child is securely shared with the CRA.
+Automated Benefits Application
+The Automated Benefits Application service is a quick, easy, and secure way to
+apply for your child benefits. This service is offered in all provinces and
+territories (except Nunavut).
+If you are the mother of a newborn, all you need to do is:
+ԏ fill out and sign your child’s birth registration form issued by your province
+or territory
+ԏ give your consent to the vital statistics office to share your information with
+the CRA
+ԏ provide your social insurance number (see “You need a social insurance
+number” below)
+For more information on this service, go to canada.ca/automated-benefits
+-application.
+If you choose to use this service to apply for your child benefits, do not re-apply
+using My Account or Form RC66, Canada Child Benefit Application.
+Re-applying may result in a delay in processing your application and getting
+your payments.
+You need a social insurance number
+You and your spouse or common-law partner (if you have one) need a social
+insurance number (SIN) to apply for the CCB.
+For more information or to get an application for a SIN, go to canada.ca/social
+-insurance-number or call 1-866-274-6627. To find the address of the Service
+Canada centre nearest you, visit canada.ca/service-canada-office or
+call 1-800-622-6232.
+If Service Canada will not give you a SIN, you can still apply for the CCB if you
+meet all of the conditions listed under “Eligibility criteria” on pages 6 and 7.
+Attach a note to your Form RC66, Canada Child Benefit Application, explaining
+canada.ca/taxes12
+why you cannot get a SIN and include a photocopy of one of the following
+documents:
+ԏ passport
+ԏ driver’s licence
+ԏ visitor record
+ԏ birth certificate or proof of birth
+ԏ any document issued by Immigration, Refugees and Citizenship Canada
+ԏ any document that proves your or your spouse’s or common-law partner’s
+identity
+After you apply
+If your application is not complete, the CRA will ask for the missing
+information. This will delay the processing of your application.
+After the CRA processes your application, you will receive a CCB notice. It will
+tell you how much you will get and what information was used to calculate the
+amount.
+If you do not meet the eligibility criteria for the CCB, you can re-apply once you
+meet all of the conditions.
+Note
+Keep your CCB notice in case you need to refer to it when you contact the
+CRA. You may also have to provide information from your notice to other
+federal, provincial, or territorial government departments.
+If the CRA reviews your information
+The CRA may send you a letter or questionnaire asking for documents to
+confirm the information on file is correct and up to date. This is to make sure
+that you get the right amount of benefits and credits.
+It’s important that you reply and send all the information requested as soon as
+possible so the CRA can do the review quickly and easily. If you do not reply,
+your child and family benefit and credit payments could stop.
+For more information, go to canada.ca/cra-benefits-validation. If you need help
+or have any questions, call the telephone number in the letter or 1-800-387-1193.
+If you have a spouse or common-law partner
+For CCB purposes, when a child resides with a female parent in the home, the
+female parent is usually considered to be primarily responsible for the child
+and should apply. However, if the child’s other parent is primarily responsible,
+they can apply. They must attach to Form RC66, Canada Child Benefit
+Application, a signed letter from the female parent that states that the other
+
+--- PDF page 7 of 14 ---
+
+canada.ca/taxes 13
+parent with whom she resides is primarily responsible for all the children in the
+household. If the child lives with same-sex parents, only one parent should
+apply for all the children in the home.
+Note
+The female presumption is a legislative requirement and only one payment
+per household can be issued under the Income Tax Act. No matter which
+parent receives the CCB, the amount will be the same. For more information,
+see “How your benefit is calculated” on page 14.
+If your spouse or common-law partner is a non-resident of Canada during any
+part of the year, you will have to fill out Form CTB9, Income of Non-Resident
+Spouse or Common-Law Partner.
+When your spouse immigrates to Canada, they have to send the CRA in
+writing all of the following information about themselves:
+ԏ social insurance number
+ԏ date of birth
+ԏ address
+ԏ immigration date
+ԏ statement of income
+If you have a new spouse or common-law partner
+Only one CCB payment is allowed per family each month. If both you and your
+new spouse or common-law partner were getting separate payments, only one
+payment will be made based on your new adjusted family net income. No
+matter which parent receives the CCB, the amount will be the same. Generally,
+all the children will be moved to the female parent’s account. If you continue to
+get separate payments, one of you will have to repay the amounts you got after
+your marital status changed.
+For more information on how to update your marital status, see “If your
+marital status has changed” on page 24.
+Example 1
+Salim and Iman had a child on August 15, 2024. On September 1, 2024, the
+couple applied for the CCB by completing Form RC66, Canada Child Benefit
+Application. Salim, a stay-at-home parent, applied and attached a signed letter
+from Iman stating that Salim is the parent who is primarily responsible for all
+the children in their home and should receive the CCB for the family. Without
+the letter, Iman would receive the CCB for the family.
+Example 2
+Akash has sole custody of two children from a previous relationship and
+receives CCB payments for the children. On October 17, 2024, Akash married
+Meera and they inform the CRA of their new marital status by using
+My Account. Because the female parent is usually presumed to be primarily
+canada.ca/taxes14
+responsible for the children, Meera will start receiving the CCB. However, if
+Akash continues to be the parent primarily responsible for the children, Meera
+will need to send the CRA a letter stating that Akash is the parent primarily
+responsible for all of the children in their home and should continue to receive
+the CCB for the family.
+Example 3
+Bill and Mia both have children from previous relationships. After a year of living
+together, the couple submitted Form RC65, Marital Status Change, to report their
+common-law relationship status on June 15, 2024. Because the female parent is
+usually presumed to be primarily responsible for the children, Mia will start
+receiving the CCB for all of the children in the household. If Bill is the parent
+primarily responsible for all of the children in their home, Mia will need to send
+the CRA a letter stating that Bill is the parent primarily responsible for all of the
+children in their household and should receive the CCB for the entire family.
+How your benefit is calculated
+For the payment period of July 2024 to June 2025, the CRA calculates your
+benefit based on all of the following information:
+ԏ the number of eligible children you have and their ages
+ԏ your adjusted family net income for the base year 2023
+ԏ the child’s eligibility for the disability tax credit (DTC)
+To continue getting the CCB, you and your spouse or common-law partner
+each have to file tax returns every year, even if you have not received income in
+the year.
+Base year and payment period
+The base year is the year of the tax return from which information is taken to
+calculate the CCB amount for the payment period. The base year is the calendar
+year just before the start of the payment period.
+The payment period is the 12-month period during which the CCB payments
+are paid. The payment period runs from July 1 of the year following the base
+year to June 30 of the next year. For example, CCB payments calculated based
+on the 2023 tax return will start being issued in July 2024, which is the
+beginning of the payment period. For more information, see “When your
+benefit is paid” on page 16.
+
+--- PDF page 8 of 14 ---
+
+canada.ca/taxes 15
+The chart below illustrates the link between the base year and the payment
+period.
+Base year (tax return) Payment period
+2023 July 2024 – June 2025
+2022 July 2023 – June 2024
+2021 July 2022 – June 2023
+Example
+Taylor just received the July 2024 CCB payment. The amount changed
+considerably compared to the amount received in June. There have not been
+any changes to the number of eligible children Taylor has. The June and
+July payments were calculated using two different base years (2022 and 2023).
+Since Taylor’s adjusted family net income was higher in 2023 than it was in
+2022, the July 2024 payment was lower than the June 2024 payment.
+Child and family benefits online calculator
+You can use the CRA’s online calculator to get an estimate of your child
+benefits at canada.ca/child-family-benefits-calculator.
+How much you can expect to receive
+The CCB is calculated as follows:
+ԏ $7,787 per year ($648.91 per month) for each eligible child under the age of 6
+ԏ $6,570 per year ($547.50 per month) for each eligible child aged 6 to 17
+These amounts start being reduced when the adjusted family net income
+(AFNI) is over $36,502. The reduction is calculated as follows:
+ԏ For families with one eligible child:
+ԏ the reduction is 7% of the amount of AFNI greater than $36,502 up
+to $79,087
+ԏ for income greater than $79,087, the reduction is $2,981 plus 3.2% of
+AFNI greater than $79,087
+ԏ For families with two eligible children:
+ԏ the reduction is 13.5% of the amount of AFNI greater than $36,502 up
+to $79,087
+ԏ for income greater than $79,087, the reduction is $5,749 plus 5.7% of
+AFNI greater than $79,087
+canada.ca/taxes16
+ԏ For families with three eligible children:
+ԏ the reduction is 19% of the amount of AFNI greater than $36,502 up
+to $79,087
+ԏ for income greater than $79,087, the reduction is $8,091 plus 8% of AFNI
+greater than $79,087
+ԏ For families with four or more eligible children:
+ԏ the reduction is 23% of the amount of AFNI greater than $36,502 up
+to $79,087
+ԏ for income greater than $79,087, the reduction is $9,795 plus 9.5% of
+AFNI greater than $79,087
+Child disability benefit
+The child disability benefit (CDB) is an additional monthly benefit included in
+the CCB to provide financial assistance to qualified families caring for children
+who have a severe and prolonged impairment in physical or mental functions.
+If you have a child under 18 years of age who is eligible for the disability tax
+credit (DTC), you are eligible for the CDB.
+A child is eligible for the DTC when the CRA has approved Form T2201,
+Disability Tax Credit Certificate, for that child. For more information on the
+DTC, go to canada.ca/disability-tax-credit. For more information on the CDB,
+go to canada.ca/child-disability-benefit or call 1-800-387-1193.
+The CDB provides up to $3,322 per year ($276.83 per month) for each child
+eligible for the DTC. The CDB starts being reduced when the adjusted family
+net income (AFNI) is greater than $79,087. The reduction is calculated as
+follows:
+ԏ for families with one child eligible for the DTC, the reduction is 3.2% of the
+amount of AFNI greater than $79,087
+ԏ for families with two or more children eligible for the DTC, the reduction is
+5.7% of the amount of AFNI greater than $79,087
+Note
+If you have already applied for the CCB or previous federal child benefits
+(such as the Canada child tax benefit) for a child who is eligible for the DTC,
+the CDB will be calculated automatically for the current and the two
+previous CCB payment periods. Beyond these payment periods, you have to
+send a written request to your tax centre (see page 25).
+When your benefit is paid
+You are eligible to receive the CCB in the month following the month you
+become an eligible individual. For more information, see “Eligibility criteria”
+on pages 6 and 7.
+
+--- PDF page 9 of 14 ---
+
+canada.ca/taxes 17
+The CRA generally pays your benefit on the 20th of each month. However, if
+your monthly amount is less than $20, you will get one lump-sum payment
+on July 20, 2024 or at a later date, to cover the entire payment period from
+July 2024 to June 2025.
+Note
+When the 20th falls on a Saturday, a Sunday, or a federal statutory holiday,
+the payment will be made on the last business day before the 20th.
+If you do not receive your payment on the scheduled day, wait 5 business days
+before calling 1-800-387-1193.
+You can view your benefit payment dates and amounts in My Account
+at canada.ca/my-cra-account.
+When your benefit is recalculated
+The CRA will recalculate your benefit when one of the following situations
+applies and, if applicable, send you a CCB notice:
+ԏ at the beginning of every payment period (every July) based on the tax
+returns that you and your spouse or common-law partner filed for the
+previous year
+ԏ after any reassessment of either your or your spouse’s or common-law
+partner’s tax return that affects the amount of your benefit
+ԏ after a change in your marital status
+ԏ after a change in the number of eligible children in your care
+ԏ after you tell the CRA about changes to your situation that could affect your
+benefit (for more information, see “When you should contact the CRA” on
+page 23)
+If you were overpaid
+If a recalculation shows that you received too much CCB, the CRA will send
+you a notice to tell you of the amount due. The CRA may keep all or a part of
+future CCB payments, income tax refunds, or GST/HST credits until the
+amount you owe is repaid. This may also apply to the other federal, provincial,
+and territorial programs that the CRA administers.
+For more information on how to make a payment, go to canada.ca/payments.
+Related programs
+The CRA administers the following provincial and territorial child benefit and
+credit programs:
+ԏ Alberta child and family benefit
+ԏ BC family benefit
+canada.ca/taxes18
+ԏ New Brunswick child tax benefit
+ԏ Newfoundland and Labrador child benefit
+ԏ Northwest Territories child benefit
+ԏ Nova Scotia child benefit
+ԏ Nunavut child benefit
+ԏ Ontario child benefit
+ԏ Yukon child benefit
+You do not need to apply to a province or a territory to get payments for these
+programs. The CRA uses the information from your Canada child benefit
+application to determine your eligibility for these programs. If you are eligible,
+the amount of your payments will be calculated based on information from the
+tax returns that you and your spouse or common-law partner file.
+If you share the custody of a child, you will get 50% of the provincial or
+territorial payment that you would have received if the child lived with you
+all of the time.
+If you use the direct deposit service for your CCB payments, the CRA will
+deposit your provincial and territorial payments into the same account.
+Note
+The “earned income” and “working income” used to calculate certain
+provincial and territorial benefits include income from employment,
+self-employment, training allowances, scholarships (if taxable), research
+grants, and disability payments received under the Canada Pension Plan
+and the Quebec Pension Plan.
+Alberta child and family benefit
+This benefit is a non-taxable amount paid to families that have children under
+18 years of age. The quarterly amounts are issued in August 2024,
+November 2024, February 2025, and May 2025.
+The benefit includes both a base component and a working component, with
+combined benefits to a maximum of $5,656.
+The maximum base component ranges from $1,469 to $3,674 depending on
+the number of children. You may be entitled to:
+ԏ $1,469 for the first qualified dependant
+ԏ $735 for the second qualified dependant
+ԏ $735 for the third qualified dependant
+ԏ $735 for the fourth qualified dependant
+The base component of the benefit is reduced if your adjusted family net
+income is more than $27,024.
+
+--- PDF page 10 of 14 ---
+
+canada.ca/taxes 19
+Families may be eligible for the working component once their family
+employment income exceeds $2,760. The maximum working component will
+range from $752 to $1,982 depending on the number of children. You may be
+entitled to:
+ԏ $752 for the first qualified dependant
+ԏ $685 for the second qualified dependant
+ԏ $410 for the third qualified dependant
+ԏ $135 for the fourth qualified dependant
+The working component of the benefit is reduced once your adjusted family net
+income is more than $45,285.
+This program is fully funded by the Province of Alberta.
+BC family benefit
+The BC family benefit is a non-taxable amount paid monthly to qualifying
+families with children under 18 years of age. The amounts are combined with the
+CCB into a single monthly payment.
+For the 2023 base year, the BC family benefit payment period is from July 2024
+to June 2025. Beginning in July 2024, eligible families will receive a BC family
+benefit bonus with their monthly BC family benefit payment. The bonus will be
+included in the monthly BC family benefit payment.
+You may be entitled to a maximum annual benefit (including the BC family
+benefit bonus) of:
+ԏ $2,188 for the first child
+ԏ $1,375 for the second child
+ԏ $1,125 for each additional child
+If the adjusted family net income is between $35,902 and $114,887, you may
+receive a reduced amount of at least:
+ԏ $969 for the first child
+ԏ $937 for the second child
+ԏ $906 for each additional child
+If the adjusted family net income is more than $114,887, you may get part of
+the benefit.
+An additional annual supplement of up to $500 is provided to single-parent
+families.
+This program is fully funded by the Province of British Columbia.
+canada.ca/taxes20
+New Brunswick child tax benefit
+This benefit is a non-taxable amount paid monthly to qualifying families
+with children under 18 years of age. The New Brunswick working income
+supplement (NBWIS) is an additional benefit paid to qualifying families with
+earned income who have children under 18 years of age. Benefits are combined
+with the CCB into a single monthly payment.
+You may be entitled to a basic benefit of $20.83 per month for each child. The
+amount of the basic benefit is reduced if your adjusted family net income is
+more than $20,000.
+The NBWIS is an additional benefit of up to $20.83 per month for each family. It is
+phased in once family earned income is more than $3,750. The maximum benefit
+is reached when family earned income is $10,000. If your adjusted family net
+income is between $20,921 and $25,921, you may get part of the supplement.
+Your New Brunswick child tax benefit payment may include a New Brunswick
+school supplement (NBSS) amount. The NBSS is paid once a year in July to help
+low-income families with the cost of back-to-school supplies for their children.
+If your adjusted family net income is $20,000 or less, you will get $100 for each
+of your children born between January 1, 2007, and December 31, 2019.
+These amounts will be combined with the CCB into a single monthly payment.
+This program is fully funded by the Province of New Brunswick.
+Newfoundland and Labrador child benefit
+This benefit is a non-taxable amount paid monthly to help low-income families
+with the cost of raising children under 18 years of age. The early childhood
+nutrition supplement is an additional benefit paid to qualifying families who
+have children under one year of age. Benefits are combined with the CCB into a
+single monthly payment.
+Under the Newfoundland and Labrador child benefit, you may be entitled to a
+benefit of:
+ԏ $152.16 per month for the first child
+ԏ $161.33 per month for the second child
+ԏ $173.25 per month for the third child
+ԏ $186.16 per month for each additional child
+If your adjusted family net income is more than $17,397, you may get part of
+the benefit.
+Under the early childhood nutrition supplement, you may be entitled to a
+benefit of $150 per month for each child under the age of 5 or if you are
+pregnant, depending on your adjusted family net income.
+This program is fully funded by the Province of Newfoundland and Labrador.
+
+--- PDF page 11 of 14 ---
+
+canada.ca/taxes 21
+Northwest Territories child benefit
+This benefit is a non-taxable amount paid monthly to qualifying families with
+children under 18 years of age.
+You may be entitled to receive the following monthly amounts:
+Children under the age of 6:
+ԏ $67.91 for one child
+ԏ $122.25 for two children
+ԏ $166.41 for three children
+ԏ $203.75 for four children
+ԏ $30.58 for each additional child
+Children aged 6 to 17:
+ԏ $54.33 for one child
+ԏ $97.83 for two children
+ԏ $133.08 for three children
+ԏ $163.00 for four children
+ԏ $24.41 for each additional child
+If your adjusted family net income is above $30,000, you may get
+part of the benefit, and it will be eliminated when your adjusted family income
+reaches $80,000.
+These amounts are combined with the CCB into a single monthly payment.
+This program is fully funded by the Northwest Territories.
+Nova Scotia child benefit
+This benefit is a non-taxable amount paid monthly to help low and
+modest-income families with the cost of raising children under 18 years of age.
+These amounts are combined with the CCB into a single monthly payment.
+You may be entitled to a monthly benefit of $127.08 for each child under
+18 years of age in your care.
+If your adjusted family net income is between $26,000 and $34,000, you may
+receive $127.08 per month for the first child and half the rate ($63.54) for the
+second and subsequent children.
+This program is fully funded by the Province of Nova Scotia.
+canada.ca/taxes22
+Nunavut child benefit
+This benefit is a non-taxable amount paid monthly to qualifying families with
+children under 18 years of age. You may be entitled to a basic benefit of $29 per
+month for each child.
+Families who have earned income of more than $3,955 and who have children
+under 18 years of age, may also get the territorial workers’ supplement of up to:
+ԏ $24.16 per month for one child
+ԏ $30.75 per month for two or more children
+If your adjusted family net income is above $22,065, you may get part of
+the benefit.
+These amounts are combined with the CCB into a single monthly payment.
+This program is fully funded by the Government of Nunavut.
+Ontario child benefit
+This is a non-taxable amount paid to help low- and modest-income families
+provide for their children. It is combined with the CCB into a single monthly
+payment.
+You may be entitled to a benefit of up to $140 per month for each child under 18
+years of age. If your adjusted family net income is over $25,646, you may get
+part of the benefit.
+This program is fully funded by the Province of Ontario. For more information,
+visit Ontario Ministry of Children and Youth Services at ontario.ca/childbenefit.
+Yukon child benefit
+This benefit is a non-taxable amount paid monthly to help low- and
+modest-income families with the cost of raising children under 18 years of age.
+This amount is combined with the CCB into a single monthly payment.
+You may be entitled to a benefit of $76.50 per month for each child. If your
+adjusted family net income is above $35,000, you may get part of the benefit.
+This program is funded by the Government of Yukon.
+
+--- PDF page 12 of 14 ---
+
+canada.ca/taxes 23
+Related program not administered by the CRA
+Quebec family allowance
+If you live in Quebec, you must file your application for the family allowance
+and make any changes to your family situation directly with Retraite Québec.
+However, you do not have to file an application for a child born in Quebec
+because Retraite Québec is automatically notified by the Registrar of Civil Status.
+For more information, visit rrq.gouv.qc.ca/en/enfants.
+When you should contact the CRA
+You should tell the CRA immediately about certain changes, as well as the date
+they happened or will happen. This section explains what the changes are and
+how you should tell the CRA about them.
+Note
+For confidentiality reasons, the CRA can only discuss a file with a benefit
+recipient, unless they give the CRA permission to speak to someone else.
+To give someone else permission, you can use “Authorize my
+representative” in My Account at canada.ca/my-cra-account or go
+to canada.ca/taxes-representative-authorization.
+If the number of children in your care has changed
+The CRA may need to recalculate your benefit payments based on new
+information, when one of the following situations applies:
+ԏ your child is born, a child starts to live with you, or you share custody of a
+child (see “How to apply” on page 10)
+ԏ a child for whom you are getting benefits no longer lives with you on a
+full-time basis, stops living with you, or has died. You can tell the CRA by
+using one of the following methods:
+ԏ My Account at canada.ca/my-cra-account
+ԏ calling 1-800-387-1193
+canada.ca/taxes24
+If your marital status has changed
+If your marital status changes, let the CRA know by the end of the month
+following the month in which your status changed. However, do not tell the CRA
+of your separation until you have been separated for more than 90 consecutive
+days. You can tell the CRA by using one of the following methods:
+ԏ My Account at canada.ca/my-cra-account
+ԏ calling 1-800-387-1193
+ԏ sending Form RC65, Marital Status Change
+When the CRA gets notification of your change in marital status, your CCB will
+be recalculated taking into consideration your new marital status and your new
+adjusted family net income.
+Your CCB will be adjusted starting with the month following the month that
+your marital status changed.
+Example 1
+Terry was a single parent and received the CCB for two children based on a net
+income of $50,000 in 2023. In September 2024, Terry married Peter who had a
+net income of $100,000 in 2023. Terry informed the CRA of their new marital
+status by using My Account. The CCB payments will be based on Terry’s new
+adjusted family net income of $150,000, and their CCB payments will change
+starting with the October 2024 payment.
+Example 2
+After 10 years of marriage, Drew and Alex separated on October 5, 2024.
+In January 2025, after being separated for more than 90 consecutive days, they
+informed the CRA of their separation by sending Form RC65. Alex’s income was
+very high in 2023. Drew has sole custody of the children. The CRA will base the
+CCB payments on Drew’s income alone from November until the end of the
+current payment period (June 2025), and Drew will get higher CCB payments.
+If a CCB recipient has died
+If a CCB recipient has died, the next of kin or the estate should inform the CRA
+as soon as possible. Someone else may be eligible to receive the benefits for
+the child(ren). Call 1-800-387-1193 or send a letter to your tax centre (see the
+next page).
+
+--- PDF page 13 of 14 ---
+
+canada.ca/taxes 25
+If you are moving
+If you move, let the CRA know your new address immediately. Otherwise,
+your payments may stop, even if you use direct deposit and your bank account
+does not change.
+You can change your address by using one of the following methods:
+ԏ My Account at canada.ca/my-cra-account
+ԏ calling 1-800-387-1193
+ԏ sending Form RC325, Address change request
+Other changes
+Call 1-800-387-1193 to tell the CRA if any of the following situations apply:
+ԏ any of the personal information, such as your name, marital status, or
+the spousal or child information shown on your CCB notice is not correct
+ԏ you (or your spouse or common-law partner) are no longer a resident
+of Canada
+Tax centre addresses
+Send your form or letter and any documents to the tax centre that serves your
+area. Use the chart below to find out the address:
+If your province or territory of
+residence is:
+Send your correspondence to
+the following address:
+Alberta, British Columbia, Manitoba,
+Northwest Territories, Nunavut,
+Saskatchewan, or Yukon
+Winnipeg Tax Centre
+Post Office Box 14005, Station Main
+Winnipeg MB R3C 0E3
+New Brunswick, Newfoundland and
+Labrador, Nova Scotia, Ontario, or
+Prince Edward Island
+Sudbury Tax Centre
+Post Office Box 20000, Station A
+Sudbury ON P3A 5C1
+Québec Jonquière Tax Centre
+2251 René-Lévesque Boulevard
+Jonquière QC G7S 5J2
+canada.ca/taxes26
+Digital services for individuals
+The CRA’s digital services are fast, easy, and secure!
+My Account
+My Account lets you view and manage your personal income tax and benefit
+information online.
+Use My Account throughout the year to:
+ԏ view your benefit and credit information and apply for certain benefits
+ԏ view your notice of assessment or reassessment
+ԏ view uncashed cheques and request a replacement payment
+ԏ change your address, phone numbers, direct deposit information, marital
+status, and information about children in your care
+ԏ manage notification preferences and receive email notifications when
+important changes are made to your account
+ԏ check your tax-free savings account (TFSA) contribution room, your
+registered retirement savings plan (RRSP) deduction limit, and your first
+home savings account (FHSA) participation room
+ԏ track the progress of certain files and enquiries you have submitted to the CRA
+ԏ make a payment online to the CRA with the My Payment service, create a
+pre-authorized debit (PAD) agreement, or create a QR code to pay in person
+at Canada Post for a fee (for more information on how to make a payment, go
+to canada.ca/payments)
+ԏ view and print your proof of income statement
+ԏ manage authorized representatives and authorize requests
+ԏ submit documents to the CRA
+ԏ submit an audit enquiry
+ԏ manage multi-factor authentication settings
+To sign in to or register for the CRA’s digital services, go to:
+ԏ My Account, at canada.ca/my-cra-account, if you are an individual
+ԏ Represent a Client, at canada.ca/taxes-representatives, if you are an
+authorized representative
+Receive your CRA mail online
+Set your correspondence preference to “Electronic mail” to receive email
+notifications when CRA mail, like your notice of assessment, is available in
+your account. For more information, go to canada.ca/cra-email-notifications.
+
+--- PDF page 14 of 14 ---
+
+canada.ca/taxes 27
+For more information
+If you need help
+If you need more information after reading this booklet, go to canada.ca/canada
+-child-benefit or call 1-800-387-1193.
+Direct deposit
+Direct deposit is a fast, convenient, and secure way to receive your CRA
+payments directly in your account at a financial institution in Canada. For more
+information and ways to enrol, go to canada.ca/cra-direct-deposit or contact
+your financial institution.
+Forms and publications
+The CRA encourages you to file your return electronically. If you need a paper
+version of the CRA’s forms and publications, go to canada.ca/cra-forms
+-publications or call 1-800-959-8281.
+Electronic mailing lists
+The CRA can send you an email when new information on a subject of interest
+to you is available on the website. To subscribe to the electronic mailing lists, go
+to canada.ca/cra-email-lists.
+Tax Information Phone Service (TIPS)
+For tax information by telephone, use the CRA’s automated service, TIPS, by
+calling 1-800-267-6999.
+Teletypewriter (TTY) and Video Relay Service
+(Canada VRS) users
+If you use a TTY for a hearing or speech impairment, call 1-800-665-0354.
+If you use the Canada VRS application, call 1-800-561-6393.
+If you use another operator-assisted relay service, call the CRA’s regular
+telephone numbers instead of the TTY or Canada VRS numbers.
+Formal disputes (objections and appeals)
+You have the right to file an objection (or an appeal for the Canada Pension
+Plan or Employment Insurance) if you disagree with an assessment,
+determination, or decision.
+For more information about objections and related deadlines, go to canada.ca
+/cra-file-objection.
+canada.ca/taxes28
+CRA Service Feedback Program
+Service complaints
+You can expect to be treated fairly under clear and established rules, and get a
+high level of service each time you deal with the CRA. For more information
+about the Taxpayer Bill of Rights, go to canada.ca/taxpayer-rights.
+You may provide compliments or suggestions, and if you are not satisfied with
+the service you received:
+1. Try to resolve the matter with the employee you have been dealing with or
+call the telephone number provided in the correspondence you received from
+the CRA. If you do not have contact information for the CRA, go to canada.ca
+/cra-contact.
+2. If you have not been able to resolve your service-related issue, you can ask to
+discuss the matter with the employee’s supervisor.
+3. If the problem is still not resolved, you can file a service-related complaint by
+filling out Form RC193, Service Feedback. For more information and to learn
+how to file a complaint, go to canada.ca/cra-service-feedback.
+If you are not satisfied with how the CRA has handled your service-related
+complaint, you can submit a complaint with the Office of the Taxpayers’
+Ombudsperson.
+Reprisal complaints
+If you have received a response regarding a previously submitted service
+complaint or a formal review of a CRA decision and feel you were not treated
+impartially by a CRA employee, you can submit a reprisal complaint by filling
+out Form RC459, Reprisal Complaint.
+For more information, go to canada.ca/cra-reprisal-complaints.

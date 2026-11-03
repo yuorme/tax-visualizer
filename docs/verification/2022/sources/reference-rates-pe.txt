@@ -1,0 +1,85 @@
+Title: Prince Edward Island 2024, 2023 and 2022 Tax Rates & Tax Brackets
+URL: https://www.taxtips.ca/priortaxrates/tax-rates-2022-2023/pe.htm
+Fetched: 2026-11-02
+SHA-256 of the original: dbd32b0ee1686a799e73a65c7e455c4a6034211ebcdc535fbc826d8092475e76
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+#### Home -> Atlantic Provinces -> Prince Edward Island
+
+#### Tax Rates -> 2022-2023 Tax Rates -> Prince Edward Island
+
+# Prince Edward Island 2024, 2023 and 2022 Tax Rates & Tax Brackets
+
+The Prince Edward Island tax brackets and personal tax credit amounts are not increased for inflation.
+
+If Prince Edward Island used indexing, their tax brackets and personal amounts would have been increased for 2023 by an indexation factor of 1.084 (8.4% increase).
+
+The Federal tax brackets and personal tax credit amounts are increased for 2023 by an indexation factor of 1.063 (6.3% increase).
+
+See Indexation of the Personal Income Tax System for how the indexation factors are calculated.
+
+The indexation factors, tax brackets and tax rates for 2023 have been confirmed to Canada Revenue Agency information.
+
+The PEI 2023 Budget increased the 2023 basic personal amount to $12,750, and it will be increased to $13,500 for 2024. There will also be additional tax brackets and revised tax rates for 2024, and the 10% surtax has been eliminated.
+
+TaxTips.ca - PEI 2024 Tax Rates Surtax Eliminated for 2024 and Later Years
+2024 Taxable Income | 2024 Tax Rates
+first $32,656 | 9.65%
+over $32,656 and up to $64,313 | 13.63%
+over $64,313 and up to $105,000 | 16.65%
+over $105,000 and up to $140,000 | 18.00%
+over $140,000 | 18.75%
+
+2024 Personal Amount | 2024 Tax Rate
+$13,500 | 9.65%
+
+Tax Tip: read the article Understanding the Tables of Personal Income Tax Rates, especially if you are trying to compare the rates below to the marginal tax rates in the Basic Tax Calculator or the Detailed Tax Calculators.
+
+TaxTips.ca - Prince Edward Island Tax Rates Before Surtax
+2023 Taxable Income | 2023 Tax Rates | 2022 Taxable Income | 2022 Tax Rates
+first $31,984 | 9.8% | first $31,984 | 9.8%
+over $31,984 up to $63,969 | 13.8% | over $31,984 up to $63,969 | 13.8%
+over $63,969 | 16.7% | over $63,969 | 16.7%
+
+TaxTips.ca - Combined Federal & Prince Edward Island Tax Brackets and Tax Rates Including Surtax
+2023 Taxable Income (1) | PE 2023 Marginal Tax Rates | 2022 Taxable Income (1) | PE 2022 Marginal Tax Rates
+Other Income | Capital Gains | Canadian Dividends | Other Income | Capital Gains | Canadian Dividends
+Eligible | Non-Eligible | Eligible | Non-Eligible
+first $31,984 | 24.80% | 12.40% | -0.99% | 16.64% | first $31,984 | 24.80% | 12.40% | -0.99% | 16.64%
+over $31,984 up to $53,359 | 28.80% | 14.40% | 4.53% | 21.24% | over $31,984 up to $50,197 | 28.80% | 14.40% | 4.53% | 21.24%
+over $53,359 up to $63,969 | 34.30% | 17.15% | 12.12% | 27.57% | over $50,197 up to $63,969 | 34.30% | 17.15% | 12.12% | 27.57%
+over $63,969 up to $101,104 | 37.20% | 18.60% | 16.12% | 30.90% | over $63,969 up to $100,223 | 37.20% | 18.60% | 16.12% | 30.90%
+over $101,104 up to $106,717 | 38.87% | 19.44% | 16.97% | 32.67% | over $100,223 up to $100,392 | 38.87% | 19.44% | 16.97% | 32.67%
+over $106,717 up to $165,430 | 44.37% | 22.19% | 24.56% | 39.00% | over $100,392 up to $155,625 | 44.37% | 22.19% | 24.56% | 39.00%
+over $165,430 up to $235,675 | 47.69% | 23.85% | 29.15% | 42.82% | over $155,625 up to $221,708 | 47.75% | 23.88% | 29.23% | 42.89%
+over $235,675 | 51.37% | 25.69% | 34.22% | 47.05% | over $221,708 | 51.37% | 25.69% | 34.22% | 47.05%
+Marginal tax rate for dividends is a % of actual dividends received (not grossed-up taxable amount). Marginal tax rate for capital gains is a % of total capital gains (not taxable capital gains). Gross-up rate for eligible dividends is 38%, and for non-eligible dividends is 15%. For more information see Prince Edward Island dividend tax credits. Copyright © 2002 Boat Harbour Investments Ltd.
+TaxTips.ca Prince Edward Island Surtaxes
+2023 | 2022
+Surtax rate (included in above rates) | 10% | Surtax rate (included in above rates) | 10%
+Surtax is on PE tax greater than | $12,500 | Surtax is on PE tax greater than | $12,500
+Person with only basic personal amount - surtax starts at taxable income of | $101,104 | Person with only basic personal amount - surtax starts at taxable income of | $100,223
+The surtax is calculated based on the net tax payable after deducting personal tax credits.
+Prince Edward Island Basic Personal Amount
+2023 Personal Amount | 2023 Tax Rate | 2022 Personal Amount | 2022 Tax Rate
+$12,750 | 9.8% | $11,250 | 9.8%
+Federal Basic Personal Amount
+2023 Personal Amount (1) | 2023 Tax Rate | 2022 Personal Amount (1) | 2022 Tax Rate
+$15,000 | 15% | $14,398 | 15%
+
+(1) See the federal tax rates page for information on the enhanced federal personal amount, which increases the marginal tax rates for taxable incomes in the second highest federal tax bracket. The marginal tax rates in blue above have been adjusted to reflect these changes.
+
+Revised: September 20, 2026
+
+© 2002- Boat Harbour Investments Ltd. All rights reserved.
+
+See Reproduction of information from TaxTips.ca
+
+Privacy Policy | Contact
+
+Facebook | Twitter | LinkedIn
+
+The authors of TaxTips.ca strive, but cannot guarantee, to provide information which is current and accurate. Individual circumstances have a significant effect on how tax and financial information can be used. Due to this, and to the nature of the information, it should not be relied upon for decision making without professional advice.
+
+TaxTips.ca provides links to other web sites. We cannot guarantee the accuracy of the information provided on linked sites.

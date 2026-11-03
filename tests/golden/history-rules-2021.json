@@ -1,0 +1,35 @@
+{
+  "ns": {
+    "params": {"perChild": [925, 825, 900], "fullBelow": 26000, "partialBelow": 34000, "partialOtherRate": 0.5},
+    "cases": [
+      {"income": 0, "kids": 0, "expected": 0},
+      {"income": 0, "kids": 1, "expected": 925},
+      {"income": 0, "kids": 2, "expected": 1750},
+      {"income": 25999, "kids": 3, "expected": 2650},
+      {"income": 26000, "kids": 3, "expected": 1787.5},
+      {"income": 26001, "kids": 3, "expected": 1787.5},
+      {"income": 30000, "kids": 1, "expected": 925},
+      {"income": 30000, "kids": 2, "expected": 1337.5},
+      {"income": 0, "kids": 5, "expected": 4450},
+      {"income": 33999, "kids": 5, "expected": 2687.5},
+      {"income": 34000, "kids": 5, "expected": 0},
+      {"income": 34001, "kids": 5, "expected": 0}
+    ]
+  },
+  "mb": {
+    "params": {"schoolTaxShare": 0.5, "schoolRebateRate": 0.25, "educationCreditMax": 525,
+      "renterMax": 525, "renterShare": 0.15},
+    "cases": [
+      {"propertyTax": 0, "rent": 0, "expected": 0},
+      {"propertyTax": 0, "rent": 1000, "expected": 150},
+      {"propertyTax": 0, "rent": 3499, "expected": 524.85},
+      {"propertyTax": 0, "rent": 3500, "expected": 525},
+      {"propertyTax": 0, "rent": 3501, "expected": 525},
+      {"propertyTax": 1000, "rent": 0, "expected": 500},
+      {"propertyTax": 1399, "rent": 0, "expected": 699.5},
+      {"propertyTax": 1400, "rent": 0, "expected": 700},
+      {"propertyTax": 1401, "rent": 0, "expected": 700.125},
+      {"propertyTax": 2000, "rent": 10000, "expected": 775}
+    ]
+  }
+}

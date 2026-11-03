@@ -1,0 +1,81 @@
+Title: Prince Edward Island 2025 and 2024 Tax Rates & Tax Brackets
+URL: https://www.taxtips.ca/priortaxrates/tax-rates-2024-2025/pe.htm
+Fetched: 2026-11-02
+SHA-256 of the original: 95e4a205610306dbb8c7ba0ccf230da8eadcc5ad71d0c3e2d143755fc69637bb
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+#### Home -> Atlantic Provinces -> Prince Edward Island
+
+#### Tax Rates -> Prince Edward Island Personal Income Tax Rates for 2024 & 2025
+
+# Prince Edward Island 2025 and 2024 Tax Rates & Tax Brackets
+
+The Prince Edward Island tax brackets and personal tax credit amounts are not increased for inflation.
+
+If Prince Edward Island used indexing, their tax brackets and personal amounts would have been increased for 2025 by an indexation factor of 1.02 (2.0% increase). The actual % increases, according to the amounts in the 2024 Budget, are:
+
+- 1st tax bracket 2.06%
+- 2nd tax bracket 0.53%
+- personal amount 5.56%
+
+The PEI 2024 Budget increased the 2025 basic personal amount to $14,250, raised two tax bracket thresholds, lowers the tax rates for the first 4 tax brackets, and raises the tax rate for the top tax bracket. However, the PEI 2025 Budget provided a further increase to the personal exemption to $14,650, resulting in a total 2025 increase of 8.5%.
+
+The Federal tax brackets and personal tax credit amounts are increased for 2025 by an indexation factor of 1.027 (2.7% increase).
+
+See Indexation of the Personal Income Tax System for how the indexation factors are calculated.
+
+The Federal and PEI indexation factors, tax brackets and tax rates for 2025 have been confirmed to Canada Revenue Agency information.
+
+Tax Tip: read the article Understanding the Tables of Personal Income Tax Rates, especially if you are trying to compare the rates below to the marginal tax rates in the Basic Tax Calculator or the Detailed Tax Calculators.
+
+TaxTips.ca - Prince Edward Island Tax Rates
+2025 Taxable Income | 2025 Tax Rates | 2024 Taxable Income | 2024 Tax Rates
+first $33,328 | 9.50% | first $32,656 | 9.65%
+over $33,328 up to $64,656 | 13.47% | over $32,656 up to $64,313 | 13.63%
+over $64,656 up to $105,000 | 16.60% | over $64,313 up to $105,000 | 16.65%
+over $105,000 up to $140,000 | 17.62% | over $105,000 up to $140,000 | 18.00%
+over $140,000 | 19.00% | over $140,000 | 18.75%
+
+TaxTips.ca - Combined Federal & Prince Edward Island Tax Brackets and Tax Rates
+2025 Taxable Income (1) | PE 2025 Marginal Tax Rates | 2024 Taxable Income (1) | PE 2024 Marginal Tax Rates
+Other Income | Capital Gains | Canadian Dividends | Other Income | Capital Gains | Canadian Dividends
+Eligible | Non-Eligible | Eligible | Non-Eligible
+first $33,328 | 24.00% | 12.00% | -2.10% | 15.72% | first $32,656 | 24.65% | 12.33% | -1.20% | 16.47%
+over $33,328 up to $57,375 | 27.97% | 13.99% | 3.38% | 20.29% | over $32,656 up to $55,867 | 28.63% | 14.32% | 4.29% | 21.04%
+over $57,375 up to $64,656 | 33.97% | 16.99% | 11.66% | 27.19% | over $55,867 up to $64,313 | 34.13% | 17.07% | 11.88% | 27.37%
+over $64,656 up to $105,000 | 37.10% | 18.55% | 15.98% | 30.79% | over $64,313 up to $105,000 | 37.15% | 18.58% | 16.05% | 30.84%
+over $105,000 up to $114,750 | 38.12% | 19.06% | 17.39% | 31.96% | over $105,000 up to $111,733 | 38.50% | 19.25% | 17.91% | 32.40%
+over $114,750 up to $140,000 | 43.62% | 21.81% | 24.98% | 38.28% | over $111,733 up to $140,000 | 44.00% | 22.00% | 25.50% | 38.72%
+over $140,000 up to $177,882 | 45.00% | 22.50% | 26.88% | 39.87% | over $140,000 up to $173,205 | 44.75% | 22.38% | 26.54% | 39.58%
+over $177,882 up to $253,414 | 48.31% | 24.16% | 31.45% | 43.68% | over $173,205 up to $246,752 | 48.07% | 24.04% | 31.12% | 43.40%
+over $253,414 | 52.00% | 26.00% | 36.54% | 47.92% | over $246,752 | 51.75% | 25.88% | 36.20% | 47.63%
+Marginal tax rate for dividends is a % of actual dividends received (not grossed-up taxable amount). Marginal tax rate for capital gains is a % of total capital gains (not taxable capital gains). Gross-up rate for eligible dividends is 38%, and for non-eligible dividends is 15%. For more information see Prince Edward Island dividend tax credits. Copyright © 2002 Boat Harbour Investments Ltd.
+
+TaxTips.ca Prince Edward Island Basic Personal Amount
+2025 Personal Amount | 2025 Tax Rate | 2024 Personal Amount | 2024 Tax Rate
+$14,650 | 9.50% | $13,500 | 9.65%
+
+Federal Basic Personal Amount
+2025 Personal Amount (1) Minimum / Maximum | 2025 Tax Rate | 2024 Personal Amount (1) Minimum / Maximum | 2024 Tax Rate
+$14,538 | $16,129 | 14.5% | $14,156 | $15,705 | 15%
+
+(1) See the federal tax rates page for information on the enhanced federal personal amount, which increases the marginal tax rates for taxable incomes in the second highest federal tax bracket. The marginal tax rates in blue above have been adjusted to reflect these changes.
+
+Copyright © 2002 Boat Harbour Investments Ltd.
+
+Revised: February 22, 2026
+
+Revised: August 27, 2026
+
+© 2002- Boat Harbour Investments Ltd. All rights reserved.
+
+See Reproduction of information from TaxTips.ca
+
+Privacy Policy | Contact
+
+Facebook | Twitter | LinkedIn
+
+The authors of TaxTips.ca strive, but cannot guarantee, to provide information which is current and accurate. Individual circumstances have a significant effect on how tax and financial information can be used. Due to this, and to the nature of the information, it should not be relied upon for decision making without professional advice.
+
+TaxTips.ca provides links to other web sites. We cannot guarantee the accuracy of the information provided on linked sites.

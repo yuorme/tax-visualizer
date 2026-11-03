@@ -1,0 +1,1001 @@
+Title: Bill 5 – 2019: Budget Measures Implementation Act, 2019
+URL: https://www.bclaws.gov.bc.ca/civix/document/id/bills/billsprevious/4th41st%3Agov05-3
+Fetched: 2026-11-02
+SHA-256 of the original: ab1c4688d27dcc32f7af545990d876f55198d650c7f991dc0df45b1f86b16c49
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+##### 2019 Legislative Session: 4th Session, 41st Parliament
+THIRD READING
+
+The following electronic version is for informational purposes only.
+The printed version remains the official version.
+
+Certified correct as passed Third Reading on the 9th day of April, 2019
+Kate Ryan-Lloyd, Acting Clerk of the House
+
+HONOURABLE CAROLE JAMES
+MINISTER OF FINANCE AND DEPUTY PREMIER
+
+## BILL 5 – 2019
+
+### BUDGET MEASURES IMPLEMENTATION ACT, 2019
+
+HER MAJESTY, by and with the advice and consent of the Legislative Assembly of the Province of British Columbia, enacts as follows:
+
+Carbon Tax Act
+
+1 Section 47 of the Carbon Tax Act, S.B.C. 2008, c. 40, is amended
+
+(a) in subsection (2) by adding "other than natural gas" after "a type or subcategory of a type of fuel", and
+
+(b) by adding the following subsection:
+
+(6) If the director is satisfied that a person has sold natural gas contrary to section 18, the director may impose on the person, in addition to any other penalty, a penalty equal to the difference between the total tax payable in respect of the natural gas under this Act and the amount of tax and security paid or remitted to the government under this Act in respect of that natural gas.
+
+Community Charter
+
+2 Section 198 of the Community Charter, S.B.C. 2003, c. 26, is amended
+
+(a) in subsection (1) by striking out "Instead of imposing tax rates" and substituting "Subject to subsection (1.1), instead of imposing tax rates", and
+
+(b) by adding the following subsection:
+
+(1.1) Subsection (1) does not apply to a tax rate imposed by the municipality to collect a tax imposed by the Province under section 120.1 of the School Act.
+
+Financial Administration Act
+
+3 Section 19 of the Financial Administration Act, R.S.B.C. 1996, c. 138, is amended
+
+(a) by repealing subsection (1) (b) and substituting the following:
+
+(b) any forfeiture, fine or pecuniary penalty that is
+
+(i) paid or payable to the government or paid or payable, in whole or in part, to another person, and
+
+(ii) imposed or authorized to be imposed by an enactment. , and
+
+(b) in subsection (2) by striking out "a remission of an item referred to in subsection (1) (a)".
+
+Income Tax Act
+
+4 Section 1 (8) (d) of the Income Tax Act, R.S.B.C. 1996, c. 215, is amended by striking out "sections 13.07 to 13.09" and substituting "sections 13.07 to 13.095".
+
+5 Section 4.32 (1) is amended in paragraph (b) of the description of "B" by striking out "the individual's eligible pension income used in computing the deduction under section 118 (3) of the federal Act" and substituting "determined under paragraph (b) of the description of "B" in section 118 (3) of the federal Act and used in computing the individual's deduction under that section".
+
+6 Section 4.5 (1) is amended
+
+(a) in the description of "C" by striking out "the individual's income for the year" and substituting "the individual's income for the taxation year referred to in the description of "C" in section 118.2 (1) of the federal Act", and
+
+(b) in the description of "F" by striking out "the dependant's income for the year" and substituting "the dependant's income for the taxation year referred to in the description of "F" in section 118.2 (1) of the federal Act".
+
+7 Section 4.721 is amended
+
+(a) in subsection (1) in paragraph (d) of the definition of "BC flow-through mining expenditure" by striking out "and before 2019", and
+
+(b) in subsection (1.1) by striking out "by a corporation before 2019" and substituting "by a corporation in a particular year" and by striking out "incurred before 2019" and substituting "incurred in that particular year".
+
+8 Section 4.84 (3) is amended
+
+(a) by adding the following paragraph:
+
+(a.1) the reference in the description of "A" in section 120.4 (3) of the federal Act to section 118.3 of the federal Act must be read as a reference to section 4.51 [credit for mental or physical impairment] of this Act, ,
+
+(b) in paragraph (b) by striking out "section 120.4 (3) (b) (i) of the federal Act" and substituting "paragraph (a) of the description of "B" in section 120.4 (3) of the federal Act", and
+
+(c) in paragraph (c) by striking out "section 120.4 (3) (b) (i) of the federal Act" and substituting "paragraph (a) of the description of "B" in section 120.4 (3) of the federal Act".
+
+9 Section 13.071 (1) (a) is amended by striking out "after March 2015" and substituting "after March 2015 and before October 2020".
+
+10 The following sections are added:
+
+#### Application of federal provisions –
+interpretation for BC child opportunity benefit
+
+13.091 Section 122.6 of the federal Act applies, with any necessary modifications, for the purposes of this section and sections 13.092 to 13.095 of this Act.
+
+#### BC child opportunity benefit
+
+13.092 (1) An overpayment on account of an individual's liability under this Act for a taxation year is deemed to have arisen during a month in relation to which the year is the base taxation year, if the following requirements are met:
+
+(a) the month is after September 2020;
+
+(b) the individual is an eligible individual in respect of one or more qualified dependants at the beginning of the month;
+
+(c) the individual has filed a return of income for that year;
+
+(d) if the minister so demands, the individual's cohabiting spouse or common-law partner at the end of the taxation year has filed a return of income for that year;
+
+(e) the individual was resident in British Columbia for a period that
+
+(i) includes the first day of that month, and
+
+(ii) began before the first day of that month.
+
+(2) The amount of the overpayment deemed by subsection (1) to have arisen during a month in respect of an individual's liability under this Act for a taxation year is the greater of the following 2 amounts:
+
+(a) the amount determined by the following formula:
+
+1 12 | x [benefit – (EAI x 4%)]
+
+where
+
+| benefit | = | the amount based on the number of qualified dependants in respect of whom the individual was an eligible individual at the beginning of the month, as follows:
+(i) | for one qualified dependant, $1 600;
+(ii) | for 2 qualified dependants, $2 600;
+(iii) | for 3 or more qualified dependants, the amount determined by the following formula:
+| $2 600 + [$800 x (number of qualified dependants – 2)];
+EAI | = | the amount, if any, by which the individual's adjusted income for the base taxation year exceeds $25 000;
+
+(b) the amount determined by the following formula:
+
+1 12 | x [benefit – (EAI x 4%)]
+
+where
+
+| benefit | = | the amount based on the number of qualified dependants in respect of whom the individual was an eligible individual at the beginning of the month, as follows:
+(i) | for one qualified dependant, $700;
+(ii) | for 2 qualified dependants, $1 380;
+(iii) | for 3 or more qualified dependants, the amount determined by the following formula:
+| $1 380 + [$660 x (number of qualified dependants – 2)];
+EAI | = | the amount, if any, by which the individual's adjusted income for the base taxation year exceeds $80 000.
+
+amount = | 1 2 | (A + B)
+
+(3) Despite subsection (2), if an eligible individual is a shared-custody parent in respect of one or more qualified dependants at the beginning of a month, the amount of the overpayment deemed by subsection (1) to have arisen during the month is equal to the amount determined by the following formula:
+
+where
+
+| A | = | the amount of the overpayment determined under subsection (2), calculated without reference to this subsection;
+B | = | the amount of the overpayment determined under subsection (2), calculated without reference to this subsection and subparagraph (b) (ii) of the definition of "eligible individual" in section 122.6 of the federal Act as it applies for the purposes of this section.
+
+(4) If an amount determined by applying a formula in subsection (2) or (3) would, but for this subsection, be a negative amount, that amount is deemed to be nil.
+
+(5) Section 122.61 (2) of the federal Act applies for the purposes of this section, except that, in addition to any other necessary modifications, section 122.61 (2) of the federal Act is to be read as if
+
+(a) a reference to subsection (1) of section 122.61 of the federal Act were a reference to subsection (1) of this section, and
+
+(b) the phrase "under this Part" were "under this Act".
+
+(6) For the purposes of this section, if an individual was resident in Canada for only part of a taxation year or was not resident in Canada at any time in a taxation year, the individual's income for the year is deemed to be equal to the amount that would have been the individual's income for the year had the individual been resident in Canada throughout the year.
+
+(7) For the purposes of this section, if an individual becomes bankrupt in a taxation year,
+
+(a) the individual's income for the year includes the individual's income for the taxation year that begins on January 1 of the calendar year that includes the date of bankruptcy, and
+
+(b) the total of all amounts deducted under section 63 of the federal Act in computing the individual's income for the year includes the amount deducted under that section for the individual's taxation year that begins on January 1 of the calendar year that includes the date of bankruptcy.
+
+(8) The amounts expressed in dollars in the descriptions of "EAI" in subsection (2) must be adjusted so that, if the base taxation year in relation to a particular month is after 2019, the amount to be used under that subsection for the month is the total of
+
+(a) the amount that would, but for subsection (9), be the relevant amount used under subsection (2) for the month that is one year before the particular month, and
+
+(b) the product obtained by multiplying
+
+(i) the amount referred to in paragraph (a)
+
+by
+
+(ii) the amount, adjusted in the prescribed manner and rounded to the nearest one-thousandth or, if the result obtained is equidistant from 2 consecutive one-thousandths, to the higher one-thousandth, that is determined by the following formula:
+
+| A B | | – 1
+
+where
+
+| A | = | is the Consumer Price Index for British Columbia, within the meaning of section 4.52 (7), for the 12-month period that ended on September 30 of the base taxation year, and
+B | = | is the Consumer Price Index for British Columbia for the 12-month period preceding the period referred to in the description of "A".
+
+(9) If an amount referred to in subsection (2), adjusted as provided in subsection (8), is not a multiple of one dollar, it must be rounded to the nearest multiple of one dollar or, if it is equidistant from 2 consecutive multiples, to the higher of them.
+
+#### Application of federal provisions to BC child opportunity benefit –
+rules about eligible individuals and their spouses or common-law partners
+
+13.093 Section 122.62 (1), (2) and (4) to (8) of the federal Act applies for the purposes of this section and sections 13.091, 13.092, 13.094 and 13.095 of this Act, except that, in addition to any other necessary modifications, section 122.62 (5) (b), (6) (b) and (7) (b) of the federal Act is to be read as if
+
+(a) a reference to section 122.61 (1) of the federal Act were a reference to section 13.092 of this Act, and
+
+(b) the phrase "under this Part" were "under this Act".
+
+#### BC child opportunity benefit cannot be attached or assigned
+
+13.094 A refund of an amount deemed by section 13.092 to be an overpayment on account of an individual's liability under this Act for a taxation year
+
+(a) cannot be charged or given as security,
+
+(b) cannot be assigned except under a prescribed Act,
+
+(c) cannot be garnished or attached,
+
+(d) is exempt from execution or seizure, and
+
+(e) cannot be retained by way of deduction or set-off under the Financial Administration Act.
+
+#### BC child opportunity benefit regulations
+
+13.095 Without limiting section 48 (1) and (2), the Lieutenant Governor in Council may make regulations for the purposes of sections 13.091 to 13.094, including prescribing Acts for the purposes of section 13.094 (b).
+
+11 Section 20.1 (2) (c) is amended by striking out "January 1, 2020" and substituting "January 1, 2021".
+
+12 Section 21 is amended
+
+(a) in subsection (1) by adding the following definition:
+
+"convertible right" has the same meaning as in the Small Business Venture Capital Act; ,
+
+(b) in subsection (1) in the definition of "venture capital tax credit" by adding "or convertible right" after "share" wherever it appears, and
+
+(c) in subsection (16) by adding "or convertible right" after "share".
+
+13 Section 21 (2) (b), (3) (b), (4) (c), (5) (b) and (7) is amended by striking out "$60 000" and substituting "$120 000".
+
+14 Section 21 (11) is amended
+
+(a) by striking out "his or her" and substituting "the taxpayer's", and
+
+(b) by striking out ", a copy of the certificate issued by the administrator under section 20 (4) of the Small Business Venture Capital Act" and substituting "a copy of the venture capital tax credit certificate issued to that taxpayer".
+
+15 Section 21 (11) is repealed and the following substituted:
+
+(11) A taxpayer who is entitled to a deduction or payment under this section must,
+
+(a) in the taxpayer's return of income under section 29 for any taxation year in respect of which a deduction or payment under this section applies, include the number of the venture capital tax credit certificate issued to that taxpayer, and
+
+(b) if the taxpayer's return of income under section 29 for any taxation year in respect of which a deduction or payment under this section applies is not filed by way of electronic filing, file a copy of the venture capital tax credit certificate issued to that taxpayer with the taxpayer's return of income.
+
+16 Section 25.1 (1) is amended by repealing paragraph (f.2) of the definition of "excluded expense" and substituting the following:
+
+(f.2) an amount that, under an agreement described in section 66 (12.6) of the federal Act and made after July 30, 2001, is renounced in accordance with that section, in respect of an expense incurred after July 30, 2001, .
+
+17 Section 25.1 (1) is amended in paragraph (b) of the definition of "qualified mining exploration expense" by striking out "and before January 1, 2020".
+
+18 Section 29 (3) is amended by striking out "by section 13.071 [BC early childhood tax benefit] of this Act" and substituting "by section 13.071 [BC early childhood tax benefit] or 13.092 [BC child opportunity benefit] of this Act".
+
+19 Section 38 (1) (a) is amended by striking out "section 13.071 of this Act" and substituting "section 13.071 or 13.092 of this Act, as applicable".
+
+20 Section 42 (2) (a) (i) is amended by striking out "section 2 or 13.071 or any other provision of this Act" and substituting "section 2, 13.071, 13.092 or any other provision of this Act".
+
+21 Section 64 (5) is amended
+
+(a) in paragraph (c) by adding the following subparagraph:
+
+(iii.6) to an official solely for the purposes of the administration or enforcement of the Workers Compensation Act, , and
+
+(b) in paragraph (d) (i) by striking out "44 (2)" and substituting "44 (1)".
+
+22 Section 64 (5) (i) is amended by striking out "the amount determined under section 13.071 (2) to (4)" and substituting "an amount determined under section 13.071 (2) to (4) or 13.092 (2) to (4)".
+
+23 Section 65 (3.1) (a) is amended by adding "the Home Owner Grant Act, the Land Tax Deferment Act," before "the International Financial Business (Tax Refund) Act".
+
+24 Section 117 is amended by striking out "January 1, 2019" and substituting "January 1, 2020".
+
+25 Section 121 is amended by striking out "December 31, 2018" and substituting "December 31, 2019".
+
+26 Section 126.1 is amended in the definition of "applicable period" by striking out "December 31, 2019" and substituting "December 31, 2022".
+
+Motor Fuel Tax Act
+
+27 Section 4 (1) (d) of the Motor Fuel Tax Act, R.S.B.C. 1996, c. 317, is amended by striking out "and" at the end of subparagraph (i), by adding ", and" at the end of subparagraph (ii) and by adding the following subparagraph:
+
+(iii) tax on the gasoline at the rate, not exceeding 1.5¢ per litre, set under section 27.12 of the South Coast British Columbia Transportation Authority Act.
+
+28 Section 10 (1) (d) is amended by striking out "and" at the end of subparagraph (i), by adding ", and" at the end of subparagraph (ii) and by adding the following subparagraph:
+
+(iii) tax on the fuel at the rate, not exceeding 1.5¢ per litre, set under section 27.12 of the South Coast British Columbia Transportation Authority Act.
+
+29 Section 20.11 (3.01) is amended by striking out "or" at the end of paragraph (a), by adding ", or" at the end of paragraph (b) and by adding the following paragraph:
+
+(c) in the case of a person who has paid security on a substance as a type of fuel or a subcategory of a type of fuel and has subsequently sold the substance as another type of fuel or another subcategory of a type of fuel, the person has not complied with section 29.
+
+30 Section 36 is repealed and the following substituted:
+
+#### Allowance for collectors
+
+36 (1) Subject to the regulations, a collector who pays an amount of security as required under this Act in relation to a reporting period may deduct from the amount payable and retain a prescribed allowance for the reporting period.
+
+(2) Despite any other Act, a person retaining an allowance under this section is not, by retaining the allowance, made ineligible as a member of the Legislative Assembly of British Columbia.
+
+31 Section 50 (1) (c.4) is amended by adding "14 (1), 14.1 (1) or" before "29 (2)".
+
+32 Section 71 is amended
+
+(a) in subsection (2) by adding the following paragraph:
+
+(c.01) for the purposes of section 36, setting conditions of, or limitations on, the deduction of a prescribed allowance; , and
+
+(b) by adding the following subsection:
+
+(10) A regulation made before September 1, 2019 under this section in relation to section 36 may be made retroactive to February 20, 2015 or a later date, and if made retroactive is deemed to have come into force on the specified date.
+
+Property Transfer Tax Act
+
+33 Section 32.1 (1) (b) of the Property Transfer Tax Act, R.S.B.C. 1996, c. 378, is amended by adding the following subparagraph:
+
+(i.1) the Income Tax Act; .
+
+34 Section 32.2 is amended by adding "the Speculation and Vacancy Tax Act or" before "the Taxation (Rural Area) Act".
+
+35 Section 32.2 is amended by adding "the Income Tax Act," after "other than".
+
+Provincial Sales Tax Act
+
+36 Section 1 of the Provincial Sales Tax Act, S.B.C. 2012, c. 35, is amended
+
+(a) by adding the following definition:
+
+"promotional sale" means the provision of promotional material as described in paragraph (a) of the definition of "promotional distribution"; ,
+
+(b) in the definition of "small seller" by adding the following paragraph:
+
+(b.4) who in the previous 12 months has not knowingly sold eligible tangible personal property or software at a sale other than a retail sale, , and
+
+(c) in paragraph (f) of the definition of "small seller" by adding "retail" before "sales".
+
+37 Section 16 is amended
+
+(a) in subsection (1) by striking out "is to be provided by way of promotional distribution" and substituting "is provided by way of promotional sale", and
+
+(b) in subsection (2) by striking out "promotional distribution" and substituting "promotional sale".
+
+38 Section 28 (2) is amended by striking out "sections 29 and 30" and substituting "sections 29, 30 and 30.1".
+
+39 Section 30 (7) is amended by adding "the person must nevertheless pay tax imposed under section 37, 49, 50, 52 or 100 and" before "the Insurance Corporation of British Columbia must nevertheless levy".
+
+40 The following section is added:
+
+#### When tax is payable in respect of promotional material
+
+30.1 (1) If a collector sells tangible personal property, software or a telecommunication service to a person who alleges that the tangible personal property, software or telecommunication service will be used for promotional sale, the person must pay tax under section 37 (1), 92 (1), 105 (1), 130 (1) or 131 (1), as applicable, and the collector must levy and collect the tax under that section unless the collector obtains, at or before the time the tax is payable,
+
+(a) that person's registration number, or
+
+(b) if that person does not have a registration number, a declaration in a form acceptable to the director from that person.
+
+(2) If a collector causes tangible personal property to be delivered to a person in British Columbia who alleges that the tangible personal property will be used for promotional sale, the person must pay tax under section 49 (5), 52 (4) or 93 (3), as applicable, and the collector must levy and collect the tax under that section unless the collector obtains, at or before the time tax is payable,
+
+(a) that person's registration number, or
+
+(b) if that person does not have a registration number, a declaration in a form acceptable to the director from that person.
+
+(3) If a promotional distributor must pay tax in respect of promotional material and, in accordance with subsection (1) or (2), the tax is not required to be levied and collected, the tax imposed is payable on or before the earliest of the following:
+
+(a) if the tax is payable by a promotional distributor who is not a registrant, the last day of the month after the month in which the promotional distributor provides, by way of promotional distribution, the promotional material to another person;
+
+(b) if the tax is payable by a promotional distributor who is a registrant, on or before the prescribed date.
+
+(4) If a promotional distributor who is not a registrant must pay tax in respect of promotional material purchased for promotional sale and, in accordance with subsection (1) or (2), the tax is not required to be levied and collected, the promotional distributor must file a taxpayer return with the director.
+
+(5) If a promotional distributor who is a registrant must pay tax in respect of promotional material purchased for promotional sale and, in accordance with subsection (1) or (2), the tax is not required to be levied and collected, the promotional distributor must pay the tax in the prescribed manner.
+
+41 Section 37 is amended
+
+(a) in subsection (4) by striking out "the collector must nevertheless levy and collect the tax under subsection (1) of this section" and substituting "the person must nevertheless pay tax under subsection (1) of this section and the collector must nevertheless levy and collect the tax under subsection (1)", and
+
+(b) in subsections (5) and (6) by adding "the person must nevertheless pay tax under subsection (1) and" before "the collector must nevertheless levy".
+
+42 Sections 39 (4) and 105 (3) are amended by striking out "the collector must nevertheless levy and collect the tax under subsection (1) of this section" and substituting "the person must nevertheless pay tax under subsection (1) of this section and the collector must nevertheless levy and collect the tax under subsection (1)".
+
+43 Sections 44 (2) and 95 (3) are amended by adding "the person must nevertheless pay tax under this Division and" before "the collector must nevertheless levy".
+
+44 Section 48 (d) is repealed and the following substituted:
+
+(d) subject to section 49 (9.1), a multijurisdictional vehicle or a vehicle that is to be immediately licensed in British Columbia as described in section 69 (1) (a) [tax if multijurisdictional vehicle licensed].
+
+45 Section 49 is amended by adding the following subsection:
+
+(9.1) If a collector, other than as lessor of a vehicle, causes the vehicle to be delivered in British Columbia to a person who alleges that the vehicle is to be immediately licensed in British Columbia as described in section 69 (1) (a), the person must nevertheless pay tax under subsection (5) of this section and the collector must nevertheless levy and collect the tax under subsection (5) of this section unless the collector obtains from that person, at or before the time the tax is payable,
+
+(a) the account number assigned by the Insurance Corporation of British Columbia to the person who licenses the vehicle in British Columbia under a licence to which a prorating agreement applies, or
+
+(b) a declaration in a form acceptable to the director.
+
+46 Section 49 (10) and (12) is amended by adding "the person must nevertheless pay tax under subsection (5) and" before "the collector must nevertheless levy".
+
+47 Section 119 (2) is amended by adding "the person must nevertheless pay tax under subsection (1) and" before "the collector must nevertheless levy".
+
+48 Section 125 is amended
+
+(a) in subsection (2) (a) by adding ", subject to subsection (9)" after "prescribed purpose",
+
+(b) in subsection (5) by striking out "the appropriation under subsection (1)" and substituting "an appropriation under subsection (1) or (11)", and
+
+(c) by adding the following subsections:
+
+(6) A designated recipient must not voluntarily dissolve, or liquidate and dissolve, under the Societies Act without first notifying the director regarding the pending dissolution or liquidation.
+
+(7) A person who applies for court-ordered liquidation and dissolution under section 130 of the Societies Act must notify the director of the application.
+
+(8) Despite subsection (1), the director may withhold a payment under that subsection to a designated recipient if any of the following applies:
+
+(a) the designated recipient has been liquidated or has been dissolved and not restored;
+
+(b) the designated recipient is a society that has not filed an annual report with the registrar as required under section 73 of the Societies Act;
+
+(c) the director has received notice, or otherwise has reason to believe, that the designated recipient may be dissolved or liquidated.
+
+(9) Despite section 124 (2) of the Societies Act, a designated recipient may, before the designated recipient dissolves or is liquidated, transfer to the government any unspent money paid to the designated recipient under subsection (1) of this section.
+
+(10) Despite the Financial Administration Act, any money transferred to the government under subsection (9) must be paid into the consolidated revenue fund.
+
+(11) If
+
+(a) a designated recipient is liquidated or is dissolved and not restored, and
+
+(b) within 2 years after the date of the dissolution or liquidation, a new municipality, regional district or eligible entity is designated as the designated recipient in relation to the designated accommodation area,
+
+the director must pay to the new designated recipient any payments withheld under subsection (8) and any money transferred to the government by the previous designated recipient under subsection (9).
+
+(12) If a new municipality, regional district or eligible entity has not been designated as the designated recipient in relation to the designated accommodation area within 2 years of the date of dissolution or liquidation of the previous designated recipient, then any payments withheld by the director under subsection (8) and any money transferred to the government by the previous designated recipient under subsection (9) vest in the government.
+
+(13) A payment withheld under subsection (8) or money transferred to the government under subsection (9) is not the money or property of the designated recipient from which it is withheld or from which it is transferred.
+
+49 Section 130 is amended
+
+(a) in subsection (2.1) by striking out "the collector must nevertheless levy and collect the tax under subsection (1) of this section" and substituting "the person must nevertheless pay tax under subsection (1) of this section and the collector must nevertheless levy and collect the tax under subsection (1)", and
+
+(b) in subsection (3) by adding "the person must nevertheless pay tax under subsection (1) and" before "the collector must nevertheless levy".
+
+50 Section 145 is amended
+
+(a) in subsection (1) by striking out "to a collector if the collector" and substituting "if a collector",
+
+(b) in subsection (1.1) by adding ", and the person must nevertheless pay the tax," before "in respect of the tangible personal property", and
+
+(c) in subsection (2) by adding "the person must nevertheless pay tax under that Part and" before "the collector must nevertheless levy".
+
+51 The following section is added:
+
+#### Refund if promotional distributor fails
+to provide evidence at time of sale
+
+153.2 (1) If the director is satisfied that
+
+(a) a promotional distributor was required to pay to a collector an amount of tax under section 30.1 (1) or (2) in circumstances in which the promotional distributor would not have been required to pay the amount if the collector had obtained from the promotional distributor, at or before the time tax was payable, the registration number or declaration required under section 30.1 (1) or (2), and
+
+(b) the promotional distributor has provided the promotional material to another person by way of promotional sale,
+
+the director must refund to the promotional distributor the amount referred to in subsection (2).
+
+(2) The amount of the refund under subsection (1) is equal to the difference between
+
+(a) the amount of tax paid by the promotional distributor in accordance with section 30.1 (1) or (2), and
+
+(b) the amount of tax that would have been payable had the purchase price of the promotional material been calculated at the time of the promotional sale.
+
+52 Section 154 (a) is amended by striking out "more than one year after the date of purchase".
+
+53 Section 159 is amended
+
+(a) in subsection (1) in the definition of "transaction" by striking out "subsection (2) (a)" and substituting "subsection (2) (a) (i)", and
+
+(b) by repealing subsection (2) (a) and substituting the following:
+
+(a) the person
+
+(i) sells or provides tangible personal property, software or a taxable service or leases tangible personal property, or
+
+(ii) is a designated collector under section 179.1 [designation of collector if agent and principal] in respect of a transaction, .
+
+54 Section 173 is amended
+
+(a) by repealing subsection (1) and substituting the following:
+
+(1) The director may, without advance notice to a person, suspend the person's registration under section 168 for a period of up to 60 days if one or more of the following applies:
+
+(a) the director is satisfied that the person knowingly gave false information on an application for registration;
+
+(b) the person refuses or neglects to comply with a condition imposed by the director under section 168 (4);
+
+(c) the person does not hold the registrations, licences, permits or other authorizations that the person is required by law to hold in order to carry on business;
+
+(d) the person has failed to deposit a bond required under section 216 [collection bond] by the date specified by the director;
+
+(e) the person has refused or neglected to comply with a provision of, or has committed an offence against,
+
+(i) this Act or any other Act that has, as its purpose, the imposition of a tax, or
+
+(ii) the regulations made under this Act or any other Act described in subparagraph (i);
+
+(f) the director reasonably believes that the person is or will be committing an offence under this Act or any other enactment, or under a law of Canada or another province, in selling or leasing tangible personal property or providing software or a taxable service;
+
+(g) in relation to a person referred to in section 168 (1) (f) or (i),
+
+(i) the person has not entered into an agreement with the director, on behalf of the government, setting out
+
+(A) the duties to be performed by the person when the person is acting as a registrant, and
+
+(B) any other matters the director considers necessary or advisable, or
+
+(ii) the person has entered into an agreement referred to in subparagraph (i) and the person has breached the agreement or the agreement is no longer in force;
+
+(h) the person is an independent sales contractor and does not carry on, or intend to carry on, a business other than a business that is related to the sale of exclusive products;
+
+(i) in relation to a person referred to in section 168 (1) (g) or (h),
+
+(i) the director no longer considers the person to be suitable, or
+
+(ii) the person has breached an agreement referred to in section 168 (9.1) (b) or the agreement is no longer in force. ,
+
+(b) by adding the following subsection:
+
+(1.1) If a person is a motor dealer, as defined in the Motor Dealer Act, and the person's registration has been suspended under that Act, then the director may, without advance notice to the person, suspend the person's registration under section 168 of this Act until the director is satisfied that the person's registration under the Motor Dealer Act is no longer suspended. ,
+
+(c) by repealing subsection (3) and substituting the following:
+
+(3) Subject to subsection (4), the director may, by notice delivered to a person, cancel the person's registration under section 168 if one or more of the following applies:
+
+(a) the director is satisfied that the person knowingly gave false information on an application for registration;
+
+(b) the person refuses or neglects to comply with a condition imposed by the director under section 168 (4);
+
+(c) the person does not hold the registrations, licences, permits or other authorizations that the person is required by law to hold in order to carry on business;
+
+(d) the person has failed to deposit a bond required under section 216 [collection bond] by the date specified by the director;
+
+(e) the person has refused or neglected to comply with a provision of, or has committed an offence against,
+
+(i) this Act or any other Act that has, as its purpose, the imposition of a tax, or
+
+(ii) the regulations made under this Act or any other Act described in subparagraph (i);
+
+(f) the director reasonably believes that the person is or will be committing an offence under this Act or any other enactment, or under a law of Canada or another province, in selling or leasing tangible personal property or providing software or a taxable service;
+
+(g) in relation to a person referred to in section 168 (1) (f) or (i),
+
+(i) the person has not entered into an agreement with the director, on behalf of the government, setting out
+
+(A) the duties to be performed by the person when the person is acting as a registrant, and
+
+(B) any other matters the director considers necessary or advisable, or
+
+(ii) the person has entered into an agreement referred to in subparagraph (i) and the person has breached the agreement or the agreement is no longer in force;
+
+(h) the person is an independent sales contractor and does not carry on, or intend to carry on, a business other than a business that is related to the sale of exclusive products;
+
+(i) in relation to a person referred to in section 168 (1) (g) or (h),
+
+(i) the director no longer considers the person to be suitable, or
+
+(ii) the person has breached an agreement referred to in section 168 (9.1) (b) or the agreement is no longer in force. ,
+
+(d) by adding the following subsection:
+
+(3.1) Subject to subsection (4), the director may, by notice delivered to a person, cancel the person's registration under section 168 of this Act if the person is a motor dealer, as defined in the Motor Dealer Act, and the person's registration under that Act has been
+
+(a) suspended for at least one year, or
+
+(b) cancelled. , and
+
+(e) in subsections (4) and (5) by striking out "under subsection (3)" and substituting "under subsection (3) or (3.1)".
+
+55 Section 179 is amended by adding the following subsection:
+
+(1.4) Subsection (1) of this section does not apply to a collector if tax is imposed under this Act in relation to tangible personal property, software or a telecommunication service that a person alleges is being purchased for promotional sale, and if the collector, in accordance with section 30.1 (1) or (2), obtains the person's registration number or a declaration in a form acceptable to the director.
+
+56 The following sections are added:
+
+#### Designation of collector if agent and principal
+
+179.1 (1) In this section:
+
+"designated collector" means the person designated under subsection (2) (b) during the period the designation is in effect;
+
+"designation" means a designation under subsection (2);
+
+"sale, provision or lease" means a sale, provision or lease referred to in subsection (2) (a).
+
+(2) Subject to subsection (3), this section applies if
+
+(a) a person acts as agent in selling or providing tangible personal property, software or a taxable service or in leasing as lessor tangible personal property on behalf of another person acting as principal, and
+
+(b) the persons referred to in paragraph (a) jointly designate, in accordance with subsection (4), one of them as having the obligation to perform the duties referred to in subsection (8) (a) (i) to (iii) in relation to tax under this Act.
+
+(3) This section does not apply in relation to tangible personal property, software or a taxable service sold by auction.
+
+(4) In order to jointly designate a person for the purposes of subsection (2) (b), the agent or principal must file with the director, on or before the prescribed date and in the manner specified by the director,
+
+(a) a designation in a form specified by the director, and
+
+(b) any information required by the director.
+
+(5) A designated collector must,
+
+(a) subject to paragraph (b), be a registrant, or
+
+(b) if not a registrant at the time of the sale, provision or lease, be registered under section 168 on or before the date prescribed for the purposes of subsection (4) of this section.
+
+(6) If a person designated as the designated collector is not registered under section 168 on or before the date prescribed for the purposes of subsection (4) of this section, the person's designation is void.
+
+(7) If a person is designated as the designated collector and the person's registration under section 168 is suspended or cancelled, the person's designation is cancelled at the time the person's registration is suspended or cancelled.
+
+(8) If this section applies in relation to a sale, provision or lease,
+
+(a) the designated collector, and not the person who is the other party to the designation, must do all of the following:
+
+(i) levy and collect the tax under section 179 (1);
+
+(ii) remit under section 179 (2) the amount of tax levied;
+
+(iii) file a collector's return in respect of the tax, and
+
+(b) despite paragraph (a) of this subsection and subsection (9) of this section, the agent and the principal are jointly and severally liable to pay an amount assessed or imposed against the designated collector in respect of the tax if the director
+
+(i) makes an assessment in respect of that tax under section 198 [assessment of tax not remitted by collector] or 199 (2), (2.1) or (3) [assessment if amount not remitted or if excess deduction or refund],
+
+(ii) imposes a penalty in respect of that tax under section 203 [failure to levy tax] or 205 (c) [failure to levy, remit or pay tax and excess deduction or refund], or
+
+(iii) assesses interest in respect of that tax under section 206 [interest until notice of assessment issued] or 206.1 [interest after notice of assessment issued].
+
+(9) Subsection (8) (a) applies despite sections 179 (1) and (2) and 186 if, in respect of the tax, those sections apply to a person who is a party to the designation and not the designated collector.
+
+(10) If a person acts as agent of a principal in charging and collecting consideration and in levying and collecting tax as required under this Act in respect of a sale, provision or lease made or entered into by the principal but the person does not act as agent in making or entering into the sale, provision or lease, the person is deemed to have acted as agent of the principal in making or entering into the sale, provision or lease for the purposes of subsection (2).
+
+(11) The persons who jointly made a designation may, in a form specified by the director and filed with the director in the manner specified by the director, jointly revoke the designation with respect to any sale, provision or lease made or entered into on or after the effective date specified in the revocation.
+
+(12) On application, in a form and manner specified by the director, by one of the persons who jointly made a designation, the director may cancel the designation with respect to any sale, provision or lease made or entered into on or after the date the cancellation takes effect.
+
+(13) The director must deliver a notice of cancellation to the persons who made the designation.
+
+(14) Cancellation of a designation under subsection (12) takes effect on the later of
+
+(a) the date the notice of cancellation is delivered to the last person of all the persons to whom it must be delivered, and
+
+(b) the date stated in the notice.
+
+(15) Subject to subsection (16), the following provisions do not apply to a person who is a party to a designation that is in effect unless a provision applies to the person in respect of another sale, provision or lease to which the designation does not apply:
+
+(a) section 169 (1) [vendor of tangible personal property must be registered];
+
+(b) section 169 (2) [lessor of tangible personal property must be registered];
+
+(c) section 169 (3) [vendor of software must be registered];
+
+(d) section 169 (4) [vendor of taxable service must be registered];
+
+(e) section 171 (1) [direct seller must be registered];
+
+(f) section 171 (2) [direct seller located in Canada but outside British Columbia must be registered];
+
+(g) section 172 (1) [person located in Canada but outside British Columbia must be registered – tangible personal property];
+
+(h) section 172 (2.1) [person located in Canada but outside British Columbia must be registered – software or telecommunication service];
+
+(i) section 172.1 [person located outside British Columbia must be registered].
+
+(16) Subsection (15) applies to
+
+(a) a person who is a designated collector during the period from the time of the sale, provision or lease until the person becomes a registrant, if the person is registered under section 168 on or before the date prescribed for the purposes of subsection (4) of this section and despite any requirement to otherwise be registered under section 168 on or before that date, or
+
+(b) a person who is not the designated collector.
+
+#### Collection of tax if sale by auction
+
+179.2 (1) If a collector, acting as auctioneer and agent for another person, sells by auction, on behalf of the other person, tangible personal property, software or a taxable service to a purchaser, the sale is deemed, for the purposes of this Act, to be a sale made by the collector and not by the other person.
+
+(2) Subsection (1) does not apply to a sale if the collector and the other person jointly elect, in a form specified by the director and filed with the director in the manner specified by the director, that the sale is not deemed to be made by the collector.
+
+57 Section 197 (1) (a) is amended by adding ", 199.1" after "199".
+
+58 The following section is added:
+
+#### Assessment if joint and several liability for amount
+assessed or imposed against designated collector
+
+199.1 (1) In this section, "designated collector" has the same meaning as in section 179.1.
+
+(2) If a person is jointly and severally liable to pay an amount referred to in section 179.1 (8) (b) as an amount assessed or imposed against a designated collector in respect of tax, the director may assess the person for the following:
+
+(a) the amount assessed under the following sections against the designated collector in respect of the tax, any related penalty and any interest on that amount and the penalty:
+
+(i) section 198 [assessment of tax not remitted by collector];
+
+(ii) section 199 (2) [assessment if amount not remitted];
+
+(iii) section 199 (2.1) [assessment if excess deduction];
+
+(iv) section 199 (3) [assessment of amount if excess deduction or refund];
+
+(b) the amount imposed under section 203 [failure to levy tax] on the designated collector in respect of the tax, any related penalty and any interest on that amount and the penalty.
+
+(3) Section 200 applies to an assessment made under subsection (2) (a) of this section as if the assessment were made under section 198 or 199.
+
+(4) If the director makes an assessment under subsection (2) (b) against a person and the person pays to the government an amount in respect of a penalty imposed under section 203 (1) or (1.1), then section 203 (2.1) and (2.2) applies to the person as if the person were the collector in relation to the tax.
+
+(5) Section 203 (3) and (4) applies to an assessment made under subsection (2) (b) of this section as if the amount assessed were a penalty imposed under section 203.
+
+59 Section 211 (1) (e) is amended by adding the following subparagraph:
+
+(ii.1) section 199.1 [assessment if joint and several liability for amount assessed or imposed against designated collector]; .
+
+Small Business Venture Capital Act
+
+60 Section 1 of the Small Business Venture Capital Act, R.S.B.C. 1996, c. 429, is amended
+
+(a) in subsection (1) by adding the following definitions:
+
+"convertible right" means a right entitling its holder to receive a share referred to in paragraph (a) of the definition of "equity share" without the holder paying any further amount to receive the share;
+
+"shareholder" includes the holder of a convertible right; ,
+
+(b) in subsection (1) in the definition of "equity share" by striking out "or" at the end of paragraph (b) and by adding the following paragraph:
+
+(b.1) a convertible right, or ,
+
+(c) in subsection (1) in the definition of "major shareholder" by adding "or convertible rights" after "shares" wherever it appears,
+
+(d) in subsection (6) by adding "and convertible rights" after "shares",
+
+(e) in subsections (6.1) and (8) by adding "or convertible rights" after "shares" wherever it appears, and
+
+(f) by adding the following subsection:
+
+(12) For the purposes of this Act, if the holder of a convertible right exercises the holder's right to receive a share referred to in paragraph (a) of the definition of "equity share" in subsection (1),
+
+(a) the exercise of the right
+
+(i) is deemed not to be a disposition of the convertible right, and
+
+(ii) is deemed not to result in a redemption, acquisition or cancellation of the convertible right,
+
+(b) the share
+
+(i) is deemed to have been issued on the date that the convertible right was issued, and
+
+(ii) is deemed to have remained outstanding from the date that the convertible right was issued to the holder until the date that the holder disposes of the right or the convertible right is redeemed or cancelled, and
+
+(c) any tax credit or tax credit certificate issued under this Act for the convertible right is deemed to have been issued for the share.
+
+61 Section 1 is amended
+
+(a) in subsection (1) by adding the following definitions:
+
+"TFSA" has the same meaning as in the Income Tax Act (Canada);
+
+"TFSA holder" has the same meaning as "holder" in section 146.2 (1) of the Income Tax Act (Canada); , and
+
+(b) by adding the following subsection:
+
+(6.2) The TFSA holder of a TFSA is deemed to have purchased, held or disposed of shares or convertible rights that are purchased, held or disposed of by the TFSA.
+
+62 Section 3 is amended by adding the following subsection:
+
+(1.1) For the purposes of subsection (1) (d), the definition of "equity capital" in section 1 is to be read as if the reference to "equity shares" were a reference to "shares".
+
+63 Section 7 is amended by adding the following subsection:
+
+(4) A venture capital corporation must not issue a convertible right.
+
+64 Section 8 is amended by adding the following subsection:
+
+(1.1) For the purposes of subsection (1), the definition of "equity capital" in section 1 is to be read as if the reference to "equity shares" were a reference to "shares".
+
+65 Sections 12 (1) (g) (i) and 13 (1) are amended by adding "or convertible rights" after "shares".
+
+66 Section 22 (3.2) (b) is amended by striking out "3 years" and substituting "2 years".
+
+67 Section 28.2 is amended by adding the following subsection:
+
+(1.1) For the purposes of subsection (1) (b), the definition of "equity capital" in section 1 is to be read as if the reference to "equity shares" were a reference to "shares".
+
+68 Section 28.3 is amended
+
+(a) in subsection (1) (b) by adding "or convertible rights" after "shares" wherever it appears and by adding "or convertible right" after "share" wherever it appears, and
+
+(b) in subsection (2) by adding "or convertible rights" after "any of the shares" and by adding "or of a convertible right of any class of convertible rights" after "class of shares".
+
+69 Section 28.4 (1) is amended
+
+(a) by adding "of additional equity capital" before "received", and
+
+(b) by striking out "$5 million" and substituting "$10 million".
+
+70 Section 28.5 (1) is amended by adding "or convertible rights" after "shares".
+
+71 Section 28.6 is amended
+
+(a) in subsection (3) by adding "or convertible rights" after "shares", and
+
+(b) in subsections (4) and (5) by adding "or convertible right" after "share" wherever it appears.
+
+72 Section 28.6 (5) is amended by striking out "or" at the end of paragraph (a) and by adding the following paragraph:
+
+(a.1) a TFSA of which the original purchaser of the share is the TFSA holder, or .
+
+73 Section 28.9 (1) (a) and (2) (b) and (c) is amended by adding "or convertible rights" after "shares".
+
+74 Section 28.9 (2) (b) is amended by striking out "3 years" and substituting "2 years".
+
+75 Sections 28.91 (1) and (3) (b) and (c) and 28.92 (1) are amended by adding "or convertible right" after "share" wherever it appears.
+
+76 Section 28.91 (3) (b) is amended by striking out "3 years" and substituting "2 years".
+
+77 Section 28.93 is amended
+
+(a) by adding "or convertible rights" after "issue of shares", and
+
+(b) in paragraph (g) (i) by adding "or convertible rights" after "shares".
+
+78 Sections 28.94, 28.95 (1) (c), (e), (f) and (g), 28.97 (2) and 29.1 (2) (i) are amended by adding "or convertible rights" after "shares".
+
+79 Section 29.1 (1) (b) is amended by striking out "prescribed business activities or business activities described in the regulations" and substituting "prescribed business activities, business activities described in the regulations or portions of those business activities".
+
+80 Section 37 (2) is amended by adding the following paragraph:
+
+(g) establishing conditions or restrictions on an activity being a business activity for the purposes of sections 9, 10, 28.3 and 29.1, which conditions or restrictions may relate to other matters, including whether a small business or eligible business corporation is or was substantially engaged in another business activity.
+
+South Coast British Columbia Transportation Authority Act
+
+81 The following section is added to the South Coast British Columbia Transportation Authority Act, S.B.C. 1998, c. 30:
+
+#### 2018 – 2027 Phase Two Plan fuel tax
+
+27.12 (1) In this section, "director" has the same meaning as in the Motor Fuel Tax Act.
+
+(2) The authority may, by bylaw referred to in subsection (5), set, as the rate of tax payable under sections 4 (1) (d) (iii) and 10 (1) (d) (iii) of the Motor Fuel Tax Act, a rate of tax that does not exceed $0.015 per litre.
+
+(3) Before passing a bylaw referred to in subsection (5) of this section,
+
+(a) the authority must identify the rate of tax in an investment plan, and
+
+(b) without limiting section 204.1 (1) (c), the mayors' council on regional transportation must, if it approves the investment plan under section 204.1, provide the authority with a copy of the resolution approving the investment plan.
+
+(4) The authority must not set a rate of tax under subsection (2) unless the authority has received, in relation to the investment plan referred to in subsection (3) (a), a copy of the resolution referred to in subsection (3) (b).
+
+(5) If the authority is entitled under subsection (4) to set a rate of tax under subsection (2), the authority may, by bylaw,
+
+(a) set, as the rate of tax payable under sections 4 (1) (d) (iii) and 10 (1) (d) (iii) of the Motor Fuel Tax Act, the rate of tax, in an amount that does not exceed $0.015 per litre, that the authority is authorized to set by the strategic plan that results from the approval of the investment plan referred to in subsection (3) (a) of this section, and
+
+(b) set, as the date on which that rate of tax is to take effect, a date on or after July 1, 2019 that is
+
+(i) at least 2 months after the date on which the bylaw is received by the director under subsection (6) of this section, and
+
+(ii) the first day of January, April, July or October.
+
+(6) If the authority passes a bylaw under subsection (5), the authority must deliver the following to the director:
+
+(a) a copy of the bylaw;
+
+(b) a copy of the resolution of the mayors' council on regional transportation referred to in subsection (3) (b).
+
+(7) After delivering to the director the records referred to in subsection (6), the rate of tax payable under sections 4 (1) (d) (iii) and 10 (1) (d) (iii) of the Motor Fuel Tax Act is, effective on the date set by the authority under subsection (5) (b) of this section, the rate of tax set under subsection (5) (a).
+
+Speculation and Vacancy Tax Act
+
+82 Section 24 (2) (a) of the Speculation and Vacancy Tax Act, S.B.C. 2018, c. 46, is amended by adding "or fewer than 60 days before the end of the immediately preceding calendar year" after "in the calendar year".
+
+83 Section 36 (5) (d) (i) is amended by adding "in" after "a beneficial owner".
+
+84 Section 78 (3) is repealed and the following substituted:
+
+(3) If, for a calendar year, an additional amount of tax is payable by an owner of a residential property because of an assessment of the owner under a provision referred to in section 74 (1) (b) to (f) [consequential and other assessments], the owner must pay to the government the additional amount as stated in a notice of assessment on or before the later of
+
+(a) the date that is 30 days after the date of the notice of assessment, and
+
+(b) the annual tax due date for the calendar year.
+
+85 Section 157 is repealed.
+
+Taxation (Rural Area) Act
+
+86 Section 3.1 (1) (b) of the Taxation (Rural Area) Act, R.S.B.C. 1996, c. 448, is amended by adding the following subparagraph:
+
+(i.1) the Income Tax Act; .
+
+87 Section 3.2 is amended by adding "the Income Tax Act," after "other than".
+
+Vancouver Charter
+
+88 Section 374.4 of the Vancouver Charter, S.B.C. 1953, c. 55, is amended
+
+(a) in subsection (1) by striking out "Instead of levying rates" and substituting "Subject to subsection (1.1), instead of levying rates",
+
+(b) by adding the following subsection:
+
+(1.1) Subsection (1) does not apply to a rate levied by the Council to collect a tax imposed by the Province under section 120.1 of the School Act. , and
+
+(c) in subsection (7) (a) (ii) by striking out ", 120.1".
+
+### Transitional Provisions
+
+#### Income Tax Act transition
+
+89 (1) Subject to subsection (2), section 21 (2) to (5) and (7) of the Income Tax Act, as amended by this Act, applies only to the 2019 and subsequent taxation years.
+
+(2) For a taxpayer who is an individual, the maximum aggregate of all amounts that may be deducted by the taxpayer or paid to the taxpayer under section 21 (2), (3), (4) or (5) of the Income Tax Act for each of the 2019 to 2023 taxation years may not include more than $60 000 in tax credit amounts shown on all venture capital tax credit certificates issued for share purchases made before February 20, 2019.
+
+(3) Section 21 (11) of the Income Tax Act, as amended by section 15 of this Act, applies only to taxation years ending after December 31, 2018.
+
+#### Motor Fuel Tax Act transition – tax on purchase
+
+90 (1) The terms used in this section and in section 91 have the same meanings as in the Motor Fuel Tax Act.
+
+(2) In this section and in section 91, "effective date" means the date that, under section 27.12 (7) of the South Coast British Columbia Transportation Authority Act, is the date on which the rate of tax set under section 27.12 (5) (a) of that Act takes effect.
+
+(3) A purchaser who buys gasoline or motive fuel before the effective date and takes delivery of that gasoline or motive fuel inside the South Coast British Columbia transportation service region on or after the effective date must pay to the South Coast British Columbia Transportation Authority tax on that gasoline or motive fuel at the rate set out in section 4 (1) (d) (iii) or 10 (1) (d) (iii), as applicable, of the Motor Fuel Tax Act.
+
+#### Motor Fuel Tax Act transition – fixed-price contracts
+
+91 (1) Subject to subsections (3) and (4) of this section, if a purchaser
+
+(a) takes delivery of gasoline or motive fuel inside the South Coast British Columbia transportation service region on or after the effective date under a fixed-price contract described in subsection (2) of this section, and
+
+(b) pays to the South Coast British Columbia Transportation Authority tax on the purchase of the gasoline or motive fuel under section 4 (1) (d) (iii) or 10 (1) (d) (iii), as applicable, of the Motor Fuel Tax Act,
+
+the director, on application and on receipt of evidence satisfactory to the director, must pay to the purchaser, from the consolidated revenue fund, a refund of the tax paid under section 4 (1) (d) (iii) or 10 (1) (d) (iii).
+
+(2) For the purposes of subsection (1), a fixed-price contract must
+
+(a) have been entered into, in writing, by the purchaser and the seller before the date this Act receives First Reading in the Legislative Assembly, and
+
+(b) specify the quantity of gasoline or motive fuel to be delivered under the contract.
+
+(3) No refund is to be paid under subsection (1) if
+
+(a) the purchaser is entitled, under the fixed-price contract, to recover the tax imposed under section 4 (1) (d) (iii) or 10 (1) (d) (iii), or
+
+(b) the purchaser receives delivery of the gasoline or motive fuel on or after the date that is one year after the effective date.
+
+(4) No refund is to be paid under subsection (1) of this section in respect of a quantity of gasoline or motive fuel that exceeds the quantity specified in the fixed-price contract.
+
+#### Provincial Sales Tax Act transition –
+retroactive regulation-making power
+
+92 A regulation made under section 241 of the Act on or before August 31, 2019, with respect to the sale or lease of tangible personal property, or the provision of a telecommunication service or related service at a retail sale, in British Columbia on a passenger-carrying commercial vessel, may be made retroactive to April 1, 2013 or a later date, and if made retroactive is deemed to have come into force on the specified date.
+
+#### Small Business Venture Capital Act transition
+
+93 (1) Section 22 (3.2) of the Small Business Venture Capital Act, as amended by this Act, applies in relation to a venture capital corporation only if, on or after February 20, 2019, the venture capital corporation
+
+(a) is deemed to have acquired a share under section 23 of that Act, or
+
+(b) is deemed under section 25 (i) of that Act to have acquired all of its shares.
+
+(2) Section 28.91 (3) of the Small Business Venture Capital Act, as amended by section 76 of this Act, applies in relation to an eligible business corporation only if, on or after February 20, 2019, the eligible business corporation redeems, acquires or cancels a share or convertible right issued by the eligible business corporation for which a tax credit certificate was issued under Part 2 of that Act.
+
+(3) A regulation made under the Small Business Venture Capital Act on or before August 31, 2019 may be made retroactive to February 20, 2019 or a later date, and if made retroactive is deemed to have come into force on the specified date.
+
+#### Commencement
+
+94 The provisions of this Act referred to in column 1 of the following table come into force as set out in column 2 of the table:
+
+Item | Column 1 Provisions of Act | Column 2 Commencement
+1 | Anything not elsewhere covered by this table | The date of Royal Assent
+2 | Section 4 | July 1, 2020
+3 | Section 5 | January 1, 2015
+4 | Section 6 | January 1, 2018
+5 | Section 7 | January 1, 2019
+6 | Section 8 | January 1, 2018
+7 | Section 10 | July 1, 2020
+8 | Section 12 | March 2, 2019
+9 | Section 13 | January 1, 2019
+10 | Section 14 | March 28, 2003
+11 | Sections 15 and 16 | January 1, 2019
+12 | Sections 18 to 20 | July 1, 2020
+13 | Section 22 | July 1, 2020
+14 | Sections 24 and 25 | January 1, 2019
+15 | Sections 27 and 28 | July 1, 2019
+16 | Section 29 | January 1, 2018
+17 | Section 30 | February 20, 2015
+18 | Section 32 | February 20, 2015
+19 | Section 34 | November 27, 2018
+20 | Section 39 | April 1, 2013
+21 | Sections 41 to 47 | April 1, 2013
+22 | Sections 49 and 50 | April 1, 2013
+23 | Section 52 | By regulation of the Lieutenant Governor in Council
+24 | Section 60 | March 2, 2019
+25 | Section 61 | February 20, 2019
+26 | Sections 62 to 65 | March 2, 2019
+27 | Section 66 | February 20, 2019
+28 | Sections 67 and 68 | March 2, 2019
+29 | Section 69 | February 20, 2019
+30 | Sections 70 and 71 | March 2, 2019
+31 | Section 72 | February 20, 2019
+32 | Section 73 | March 2, 2019
+33 | Section 74 | February 20, 2019
+34 | Section 75 | March 2, 2019
+35 | Section 76 | February 20, 2019
+36 | Sections 77 and 78 | March 2, 2019
+37 | Sections 79 and 80 | February 20, 2019
+38 | Sections 82 to 85 | November 27, 2018
+39 | Section 88 | January 1, 2019
+40 | Sections 90 and 91 | July 1, 2019
+
+Copyright (c) Queen’s Printer, Victoria, British Columbia, Canada

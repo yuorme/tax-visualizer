@@ -14,6 +14,65 @@ const render = (y: YearData) => [footerNotes(y, page), ...Object.values(tooltips
 const html = fs.readFileSync(new URL("../src/ui/index.html", import.meta.url), "utf8");
 const noteKeys = [...html.matchAll(/data-note="([^"]+)"/g)].map(m => m[1]);
 
+test("2022 notes explain BC's separate periods and omit the later renter credit", () => {
+  const text = render(loadYear(2022));
+  assert.match(text, /9 months at annual maximum amounts of \$1,600/);
+  assert.match(text, /3 months at annual maximum amounts of \$2,300/);
+  assert.match(text, /Each period applies its own income reduction, minimum and zero floor/);
+  assert.doesNotMatch(text, /B.C.'s renter's tax credit/);
+  assert.match(text, /the published straight-line taper to \$80,000/);
+});
+
+test("2023 notes describe PEI surtax and separate NL periods without later programs", () => {
+  const text = render(loadYear(2023));
+  assert.match(text, /Prince Edward Island adds a surtax of 10% of provincial tax above \$12,500/);
+  assert.match(text, /after dividend tax credits and before the low-income tax reduction/);
+  assert.match(text, /calculate each period separately, then weight its entitlement/);
+  assert.match(text, /Period 1 \(50% of the year\): annual amounts \$447/);
+  assert.match(text, /Period 2 \(50% of the year\): annual amounts \$1,788/);
+  assert.match(text, /no second additional contribution applies/);
+  assert.doesNotMatch(text, /the PEI Child Benefit|and 0% on earnings/);
+});
+
+test("historical notes distinguish school-tax relief and statutory NL reductions from later approximations", () => {
+  const y = structuredClone(loadYear(2025));
+  const mb = y.provinces.find(p => p.code === "MB");
+  const nl = y.provinces.find(p => p.code === "NL");
+  assert.ok(mb && nl);
+  mb.credits = [
+    {
+      program: "mb-school-tax-credits",
+      name: "School relief",
+      nameRenter: "Renters tax credit",
+      estimated: true,
+      params: { schoolTaxShare: 0.5, schoolRebateRate: 0.5, educationCreditMax: 350, renterMax: 525 },
+    },
+  ];
+  nl.childBenefit = {
+    program: "nl-child-benefit-reduction",
+    params: {
+      perChild: [1788, 1896, 2036, 2188],
+      threshold: 17397,
+      rate: [0.161, 0.3318, 0.5151],
+      additionalRate: 0.1971,
+    },
+  };
+  y.federal.workersBenefit.estimated = true;
+  y.federal.workersBenefit.estimationNote = "Quebec thresholds are derived from published maxima and rates";
+  const text = render(y);
+  assert.match(text, /school tax rebate \(50% of estimated school taxes\)/);
+  assert.match(text, /up to \$350 of remaining school taxes/);
+  assert.match(text, /up to \$525, capped by rent paid/);
+  assert.match(text, /school taxes are estimated as 50%/);
+  assert.match(text, /published reduction rates are 16.1%, 33.18% and 51.51%/);
+  assert.match(text, /plus 19.71% for each additional child/);
+  assert.match(text, /Quebec thresholds are derived from published maxima and rates/);
+  assert.doesNotMatch(
+    text,
+    /until CRA publishes them|homeowners affordability|Newfoundland and Labrador benefits are tapered/,
+  );
+});
+
 for (const year of listYears()) {
   test(`${year}: notes and tooltips render from the data`, () => {
     const y = loadYear(year);

@@ -1,0 +1,39 @@
+Title: UNCLASSIFIED
+URL: https://www.canada.ca/content/dam/cra-arc/serv-info/benefits/gstcclc21-eng.pdf
+Fetched: 2026-11-02
+SHA-256 of the original: 3e0cf7117ea724d25fb51848898681f0681c7434590312ad446fbb4074087bd1
+Publication date modified: 2022-05-24
+PDF pages: all 1
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 1 of 1 ---
+
+UNCLASSIFIED
+Goods and services tax/harmonized sales tax (GST/HST) credit - calculation sheet for the July 2022 to
+June 2023 payments (2021 base year)
+Base credit: ($306) 1 $306
+Credit for spouse or common-law partner: ($306) 2 $_________
+Credit for eligible dependant: ($306) 3 $_________
+Credit for eligible children:
+($161 for each child not included on line 3) $161 × ____ = 4 $_________
+Calculation of additional credit Footnote1
+(complete only if line 2 is zero)
+Family net income: 5 $_________
+Base amount: 6 - $9,919
+Line 5 minus line 6. If the result is negative, enter "0". 7 $_________
+Additional credit: Enter $161 or 2% of line 7, whichever is less. 8 $_________
+Subtotal: (add lines 1, 2, 3, 4 and 8) 9 $_________
+Credit reduction
+Adjusted family net income:
+(Family net income minus Universal child care benefit (UCCB) and Registered Disability Savings Plan
+(RDSP) income plus UCCB and RDSP repayment) 10 $_________
+Base amount: 11 - $39,826
+Line 10 minus line 11. If the result is negative, enter "0". 12 $_________
+Enter 5% of line 12: 13 $_________
+Annual credit: (line 9 minus line 13) 14 $_________
+All amounts are approximate. Your Notice of Determination will show your actual entitlement for the
+year.
+Footnote 1
+Single parents will receive the full value of the supplement as part of their base GST/HST credit. For
+these clients enter $161 on line 8.

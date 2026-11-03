@@ -1,0 +1,83 @@
+Title: Alberta 2025 and 2024 Tax Rates & Tax Brackets
+URL: https://www.taxtips.ca/priortaxrates/tax-rates-2024-2025/ab.htm
+Fetched: 2026-11-02
+SHA-256 of the original: d7f5c4ce8e20f6a0ccd8a1560e18d571f18611af3ad8c03dc0f2381707dee53d
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+#### Home -> Alberta
+
+#### Tax Rates -> Alberta Personal Income Tax Rates for 2024 & 2025
+
+# Alberta 2025 and 2024 Tax Rates & Tax Brackets
+
+##### Alberta Personal Income Tax Act s. 6.1, 8, 21, 44
+
+The Alberta tax brackets and personal tax credit amounts are increased for 2025 by an indexation factor of 1.02 (2% increase), as per Alberta's Bill 32, Financial Statutes Amendment Act, 2024 (No. 2)
+
+If Bill 32 did not apply, the Alberta increase for 2025 would be 2.9%
+
+As per Bill 32, indexation in subsequent years will be the lesser of 2% or the amount determined using the change in the Alberta Consumer Price Index. Bill 32 received Royal Assent on December 5, 2024.
+
+The Federal tax brackets and personal tax credit amounts are increased for 2025 by an indexation factor of 1.027 (2.7% increase).
+
+The Alberta 2025 Budget introduced a new tax bracket for taxable income up to $60,000, with a rate of 8%.
+
+See Indexation of the Personal Income Tax System for how the indexation factors are calculated.
+
+The Federal and Alberta indexation factors, tax brackets and tax rates for 2025 have been confirmed to Canada Revenue Agency information.
+
+Tax Tip: read the article Understanding the Tables of Personal Income Tax Rates, especially if you are trying to compare the rates below to the marginal tax rates in the Basic Tax Calculator or the Detailed Tax Calculators.
+
+TaxTips.ca - Alberta Tax Rates
+2025 Taxable Income | 2025 Tax Rates | 2024 Taxable Income | 2024 Tax Rates
+first $60,000 | 8% | first $148,269 | 10%
+over $60,000 up to $151,234 | 10% | over $148,269 up to $177,922 | 12%
+over $151,234 up to $181,481 | 12% | over $177,922 up to $237,230 | 13%
+over $181,481 up to $241,974 | 13% | over $237,230 up to $355,845 | 14%
+over $241,974 up to $362,961 | 14% | over $355,845 | 15%
+over $362,961 | 15%
+
+TaxTips.ca - Combined Federal & Alberta Tax Brackets and Tax Rates
+2025 Taxable Income (1) | AB 2025 Marginal Tax Rates | 2024 Taxable Income (1) | AB 2024 Marginal Tax Rates
+Other Income | Capital Gains | Canadian Dividends | Other Income | Capital Gains | Canadian Dividends
+Eligible | Non-Eligible | Eligible | Non-Eligible
+first $57,375 | 22.50% | 11.25% | -0.88% | 12.98% | first $55,867 | 25.00% | 12.50% | 2.57% | 15.86%
+over $57,375 up to $60,000 | 28.50% | 14.25% | 7.40% | 19.88% | over $55,867 up to $111,733 | 30.50% | 15.25% | 10.16% | 22.18%
+over $60,000 up to $114,750 | 30.50% | 15.25% | 10.16% | 22.18% | over $111,733 up to $148,269 | 36.00% | 18.00% | 17.75% | 28.51%
+over $114,750 up to $151,234 | 36.00% | 18.00% | 17.75% | 28.51% | over $148,269 up to $173,205 | 38.00% | 19.00% | 20.51% | 30.81%
+over $151,234 up to $177,882 | 38.00% | 19.00% | 20.51% | 30.81% | over $173,205 up to $177,922 | 41.32% | 20.66% | 25.09% | 34.63%
+over $177,882 up to $181,481 | 41.31% | 20.66% | 25.08% | 34.62% | over $177,922 up to $237,230 | 42.32% | 21.16% | 26.47% | 35.78%
+over $181,481 up to $241,974 | 42.31% | 21.16% | 26.46% | 35.77% | over $237,230 up to $246,752 | 43.32% | 21.66% | 27.85% | 36.93%
+over $241,974 up to $253,414 | 43.31% | 21.66% | 27.84% | 36.92% | over $246,752 up to $355,845 | 47.00% | 23.50% | 32.93% | 41.16%
+over $253,414 up to $362,961 | 47.00% | 23.50% | 32.93% | 41.16% | over $355,845 | 48.00% | 24.00% | 34.31% | 42.31%
+over $362,961 | 48.00% | 24.00% | 34.31% | 42.31%
+Marginal tax rate for dividends is a % of actual dividends received (not grossed-up taxable amount). Marginal tax rate for capital gains is a % of total capital gains (not taxable capital gains). Gross-up rate for eligible dividends is 38%, and for non-eligible dividends is 15%. For more information see Alberta dividend tax credits. Copyright © 2002 Boat Harbour Investments Ltd.
+
+TaxTips.ca Alberta Basic Personal Amount
+2025 Personal Amount | 2025 Tax Rate | 2024 Personal Amount | 2024 Tax Rate
+$22,323 | 8% | $21,885 | 10%
+
+Federal Basic Personal Amount
+2025 Personal Amount (1) Minimum / Maximum | 2025 Tax Rate | 2024 Personal Amount (1) Minimum / Maximum | 2024 Tax Rate
+$14,538 | $16,129 | 14.5% | $14,156 | $15,705 | 15%
+
+(1) See the federal tax rates page for information on the enhanced federal personal amount, which increases the marginal tax rates for taxable incomes in the second highest federal tax bracket. The marginal tax rates in blue above have been adjusted to reflect these changes.
+
+Copyright © 2002 Boat Harbour Investments Ltd.
+
+Revised: June 27, 2026
+
+Revised: August 27, 2026
+
+© 2002- Boat Harbour Investments Ltd. All rights reserved.
+
+See Reproduction of information from TaxTips.ca
+
+Privacy Policy | Contact
+
+Facebook | Twitter | LinkedIn
+
+The authors of TaxTips.ca strive, but cannot guarantee, to provide information which is current and accurate. Individual circumstances have a significant effect on how tax and financial information can be used. Due to this, and to the nature of the information, it should not be relied upon for decision making without professional advice.
+
+TaxTips.ca provides links to other web sites. We cannot guarantee the accuracy of the information provided on linked sites.

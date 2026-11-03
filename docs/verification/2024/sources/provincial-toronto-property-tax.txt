@@ -1,0 +1,41 @@
+Title: 2024 Property Tax Rates
+URL: https://www.toronto.ca/services-payments/property-taxes-utilities/property-tax/property-tax-rates-and-fees/2024-property-tax-rates-and-fees/
+Fetched: 2026-11-02
+SHA-256 of the original: 7bbdd522dc2f61dd8a97aabf0ef339649a6f85e8367734c1ee6eb797ce883b47
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+Skip to content [image: City of Toronto]
+
+[image: City of Toronto]
+Contact 311
+
+# 2024 Property Tax Rates
+
+### 2024 Property Tax Rates
+
+Description | City Tax Rate | Education Tax Rate | City Building Fund | Total Tax Rate
+Residential | 0.554586% | 0.153000% | 0.007703% | 0.715289%
+Multi-Residential | 1.004080% | 0.153000% | 0.005398% | 1.162478%
+New Multi-Residential | 0.554586% | 0.153000% | 0.007703% | 0.715289%
+Commercial | 1.339053% | 0.880000% | 0.009624% | 2.228677%
+Industrial | 1.386700% | 0.880000% | 0.019256% | 2.285956%
+Pipelines | 1.066705% | 0.880000% | 0.014815% | 1.961520%
+Farmlands | 0.138647% | 0.038250% | 0.001926% | 0.178823%
+Managed Forests | 0.138647% | 0.038250% | 0.001926% | 0.178823%
+
+2025 Property Tax Rates
+
+2026 Property Tax Rates
+
+### Small Business Tax Subclass
+
+The introduction of the small business tax subclass offers property tax relief to small businesses who meet the eligibility criteria. The small business tax subclass will provide a 15 per cent reduction in the commercial tax rate for eligible properties.
+
+### How Your Property Tax Bill is Calculated
+
+Your property tax bill is calculated by multiplying the current year phased-in property assessment value, as determined by the Municipal Property Assessment Corporation (MPAC), by Council approved City Tax Rate(s) with the City Building Fund Levy and the Education Tax Rate, as set by the Government of Ontario.
+
+Date modified: May 14, 2026
+
+Back to Top

@@ -1,0 +1,82 @@
+Title: Prince Edward Island 2024 and 2023 Tax Rates & Tax Brackets
+URL: https://www.taxtips.ca/priortaxrates/tax-rates-2023-2024/pe.htm
+Fetched: 2026-11-02
+SHA-256 of the original: 76dc623a62d892f40acc3cc3a94243fd8893bf6b445c95bf97dd4a3a62294f7f
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+#### Home -> Atlantic Provinces -> Prince Edward Island
+
+#### Tax Rates -> 2023-2024 Tax Rates -> Prince Edward Island
+
+# Prince Edward Island 2024 and 2023 Tax Rates & Tax Brackets
+
+The Prince Edward Island tax brackets and personal tax credit amounts are not increased for inflation.
+
+If Prince Edward Island used indexing, their tax brackets and personal amounts would have been increased for 2024 by an indexation factor of 1.046 (4.6% increase).
+
+The PEI 2023 Budget increased the 2024 basic personal amount to $13,500, introduced additional tax brackets and revised tax rates for 2024, and eliminated the 10% surtax for 2024 and later years.
+
+The 2024 Federal Budget proposed an increase in the capital gains inclusion rate to 66 2/3% for the portion of gains realized after June 24, 2024 in excess of $250,000, for an individual. We've added an extra column below, to show the marginal tax rate for those gains. The inclusion rate is still 50% for the portion of gains up to $250,000 after June 24, 2024.
+
+The Federal tax brackets and personal tax credit amounts are increased for 2024 by an indexation factor of 1.047 (4.7% increase).
+
+See Indexation of the Personal Income Tax System for how the indexation factors are calculated.
+
+The indexation factors, tax brackets and tax rates for 2024 have been confirmed to Canada Revenue Agency information.
+
+Tax Tip: read the article Understanding the Tables of Personal Income Tax Rates, especially if you are trying to compare the rates below to the marginal tax rates in the Basic Tax Calculator or the Detailed Tax Calculators.
+
+TaxTips.ca - Prince Edward Island Tax Rates Before Surtax Surtax Eliminated for 2024 and Later Years
+2024 Taxable Income | 2024 Tax Rates | 2023 Taxable Income | 2023 Tax Rates
+first $32,656 | 9.65% | first $31,984 | 9.8%
+over $32,656 up to $64,313 | 13.63% | over $31,984 up to $63,969 | 13.8%
+over $64,313 up to $105,000 | 16.65% | over $63,969 | 16.7%
+over $105,000 up to $140,000 | 18.00%
+over $140,000 | 18.75%
+
+TaxTips.ca - Combined Federal & Prince Edward Island Tax Brackets and Tax Rates Including Surtax in 2023 Only
+2024 Taxable Income (1) | PE 2024 Marginal Tax Rates | 2023 Taxable Income (1) | PE 2023 Marginal Tax Rates
+Other Income | Capital Gains | Canadian Dividends | Other Income | Capital Gains | Canadian Dividends
+All Pre- Jun 25 | >$250K Post- Jun 24 | Eligible | Non-Eligible | Eligible | Non-Eligible
+first $32,656 | 24.65% | 12.33% | 16.43% | -1.20% | 16.47% | first $31,984 | 24.80% | 12.40% | -0.99% | 16.64%
+over $32,656 up to $55,867 | 28.63% | 14.32% | 19.09% | 4.29% | 21.04% | over $31,984 up to $53,359 | 28.80% | 14.40% | 4.53% | 21.24%
+over $55,867 up to $64,313 | 34.13% | 17.07% | 22.75% | 11.88% | 27.37% | over $53,359 up to $63,969 | 34.30% | 17.15% | 12.12% | 27.57%
+over $64,313 up to $105,000 | 37.15% | 18.58% | 24.77% | 16.05% | 30.84% | over $63,969 up to $101,104 | 37.20% | 18.60% | 16.12% | 30.90%
+over $105,000 up to $111,733 | 38.50% | 19.25% | 25.67% | 17.91% | 32.40% | over $101,104 up to $106,717 | 38.87% | 19.44% | 16.97% | 32.67%
+over $111,733 up to $140,000 | 44.00% | 22.00% | 29.33% | 25.50% | 38.72% | over $106,717 up to $165,430 | 44.37% | 22.19% | 24.56% | 39.00%
+over $140,000 up to $173,205 | 44.75% | 22.38% | 29.83% | 26.54% | 39.58% | over $165,430 up to $235,675 | 47.69% | 23.85% | 29.15% | 42.82%
+over $173,205 up to $246,752 | 48.07% | 24.04% | 32.05% | 31.12% | 43.40% | over $235,675 | 51.37% | 25.69% | 34.22% | 47.05%
+over $246,752 | 51.75% | 25.88% | 34.50% | 36.20% | 47.63%
+Marginal tax rate for dividends is a % of actual dividends received (not grossed-up taxable amount). Marginal tax rate for capital gains is a % of total capital gains (not taxable capital gains). Gross-up rate for eligible dividends is 38%, and for non-eligible dividends is 15%. For more information see Prince Edward Island dividend tax credits. Copyright © 2002 Boat Harbour Investments Ltd.
+
+TaxTips.ca Prince Edward Island Surtaxes
+2024 | 2023
+Surtax rate (included in above rates) | 0% | Surtax rate (included in above rates) | 10%
+Surtax is on PE tax greater than | n/a | Surtax is on PE tax greater than | $12,500
+Person with only basic personal amount - surtax starts at taxable income of | n/a | Person with only basic personal amount - surtax starts at taxable income of | $101,104
+The surtax is calculated based on the net tax payable after deducting personal tax credits.
+
+TaxTips.ca Prince Edward Island Basic Personal Amount
+2024 Personal Amount | 2024 Tax Rate | 2023 Personal Amount | 2023 Tax Rate
+$13,500 | 9.65% | $12,750 | 9.8%
+
+Federal Basic Personal Amount
+2024 Personal Amount (1) Minimum / Maximum | 2024 Tax Rate | 2023 Personal Amount (1) Minimum / Maximum | 2023 Tax Rate
+$14,156 | $15,705 | 15% | $13,520 | $15,000 | 15%
+
+(1) See the federal tax rates page for information on the enhanced federal personal amount, which increases the marginal tax rates for taxable incomes in the second highest federal tax bracket. The marginal tax rates in blue above have been adjusted to reflect these changes.
+
+Revised: September 17, 2026
+
+© 2002- Boat Harbour Investments Ltd. All rights reserved.
+
+See Reproduction of information from TaxTips.ca
+
+Privacy Policy | Contact
+
+Facebook | Twitter | LinkedIn
+
+The authors of TaxTips.ca strive, but cannot guarantee, to provide information which is current and accurate. Individual circumstances have a significant effect on how tax and financial information can be used. Due to this, and to the nature of the information, it should not be relied upon for decision making without professional advice.
+
+TaxTips.ca provides links to other web sites. We cannot guarantee the accuracy of the information provided on linked sites.
