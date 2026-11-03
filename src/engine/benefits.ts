@@ -16,7 +16,7 @@ export function ccbOf(fed: Federal, famNet: number, kids: number, under6: number
   return Math.max(0, full - red);
 }
 
-/** Straight-line phase-out between published start and end incomes (where the in-between rate isn't published). */
+/** Straight-line phase-out between the start and end incomes. */
 const taper = (amt: number, famNet: number, from: number, to: number) =>
   amt * Math.max(0, Math.min(1, (to - famNet) / (to - from)));
 
@@ -107,6 +107,13 @@ export function provincialChildBenefit(
     case "per-child-reduced": {
       const q = b.params;
       return Math.max(0, q.perChild * kids - (kids === 1 ? q.rateOneChild : q.rateMoreChildren) * over(q.threshold));
+    }
+    case "nwt-child-benefit-age-groups": {
+      const q = b.params,
+        older = kids - kidsU6;
+      const youngAmount = q.under6[Math.min(kidsU6, 4)] + Math.max(0, kidsU6 - 4) * q.under6More;
+      const olderAmount = q.over6[Math.min(older, 4)] + Math.max(0, older - 4) * q.over6More;
+      return taper(youngAmount + olderAmount, famNet, q.fullUpTo, q.endsAt);
     }
     case "nwt-child-benefit": {
       const q = b.params,

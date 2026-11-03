@@ -1,5 +1,7 @@
 export { ccbOf, provincialChildBenefit } from "./benefits.ts";
 export { type BracketLine, phased, walk } from "./brackets.ts";
+export { type ChildcareChild, type ChildcareInput, type ChildcareResult, childcareOf } from "./childcare.ts";
+export { type ChildcareCreditResult, childcareCreditOf } from "./childcare-credits.ts";
 export { creditsOf } from "./credits.ts";
 export { type FuelTax, fuelTaxOf, type RatePeriod, ratePeriods, yearAverage } from "./fuel.ts";
 export { type Claim, compute, computeAll, hasInv, household, propertyRate, type Result } from "./household.ts";

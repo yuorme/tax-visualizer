@@ -30,6 +30,41 @@ const hh: Household = {
 const close = (actual: number, expected: number) =>
   assert.ok(Math.abs(actual - expected) < 1e-8, `${actual} != ${expected}`);
 
+// NWT Income Tax Regulations s1.1(1)(b),(c): count each age group separately, then taper their sum.
+const nt = provinceSchema.parse({
+  ...y.provinces.find(p => p.code === "NT"),
+  childBenefit: {
+    program: "nwt-child-benefit-age-groups",
+    params: {
+      under6: [0, 815, 1467, 1997, 2445],
+      under6More: 367,
+      over6: [0, 652, 1174, 1597, 1956],
+      over6More: 293,
+      fullUpTo: 30000,
+      endsAt: 80000,
+    },
+  },
+});
+const nwtBenefit = (income: number, kids: number, young: number) =>
+  provincialChildBenefit(nt.childBenefit, income, 0, kids, false, young);
+
+test("historical NWT child benefit counts each age group independently", () => {
+  close(nwtBenefit(55000, 3, 2), 1059.5); // (1467 + 652) / 2, not a blend of three-child maxima
+  close(nwtBenefit(30000, 3, 1), 1989); // 815 + 1174
+  close(nwtBenefit(0, 6, 5), 3464); // fifth-young-child increment plus first older child
+  close(nwtBenefit(0, 6, 1), 3064); // first young child plus fifth-older-child increment
+  close(nwtBenefit(0, 10, 5), 5061); // both age groups independently pass four children
+});
+
+test("historical NWT child benefit applies the statutory linear taper and zero floor", () => {
+  close(nwtBenefit(45000, 3, 3), 1397.9);
+  close(nwtBenefit(30000, 3, 0), 1597);
+  close(nwtBenefit(55000, 3, 0), 798.5);
+  close(nwtBenefit(80000, 3, 2), 0);
+  close(nwtBenefit(90000, 3, 2), 0);
+  close(nwtBenefit(0, 0, 0), 0);
+});
+
 // PE428 (2023), lines 60–67: subtract the dividend credit before testing the $12,500 surtax threshold.
 test("historical PEI surtax follows both dividend credits and keeps the nonrefundable floor", () => {
   const eligible = household(y, pe, { ...hh, people: [{ ...blank(0), ed: 100000 }] }).list[0];

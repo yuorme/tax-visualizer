@@ -1,0 +1,152 @@
+Title: Parameters of the Personal Income Tax System for 2026
+URL: https://cdn-contenu.quebec.ca/cdn-contenu/adm/min/finances/publications-adm/parametres/AUTEN_IncomeTax2026.pdf
+Fetched: 2026-11-02
+SHA-256 of the original: a9467bcddf17d30e3df184e661ec21099ee7631518ec98eb7d8f84d2ed182775
+Publication date modified: 2025-11-27
+PDF pages: 14-17 of 18
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 14 of 18 ---
+
+10
+TABLE 3
+Parameters of the personal income tax system subject to indexing (cont.)
+(dollars)
+2025 2026
+Reduction thresholds
+– Reduction threshold of the tax credit for a person living alone, for age
+and for retirement income 42 090 42 955
+– Reduction thresholds of the refundable tax credit for home-support services
+for seniors
+▪ First reduction threshold 71 010 72 465
+▪ Second reduction threshold 115 035 117 395
+Tax credit for career extension
+– Exclusion of the first dollars of eligible employment income 7 500 7 655
+– Maximum amount of eligible employment income 12 500 12 755
+– Reduction threshold of the tax credit for career extension 56 500 57 660
+Refundable tax credit for childcare expenses(1)
+– Limit on fees in respect of children under 7 years of age 12 275 12 525
+– Limit on fees in respect of children with disabilities 16 800 17 145
+– Limit on fees in respect of another child 6 180 6 305
+– Eligible child – Maximum income 13 658 13 938
+Certain refundable tax credits
+– Tax credit for medical expenses
+▪ maximum amount 1 466 1 496
+▪ minimum amount of work income 3 750 3 825
+▪ reduction threshold 28 335 28 915
+– Tax credit for caregivers
+▪ universal basic amount (co-residency) 1 494 1 525
+▪ reducible amount based on the care receiver’s income 1 494 1 525
+▪ reduction threshold 26 520 27 065
+– Québec education savings incentive
+▪ first income threshold for purposes of calculating the increase amount 53 255 54 345
+▪ second income threshold for purposes of calculating the increase amount 106 495 108 680
+– Senior assistance amount
+▪ reduction threshold for a single senior 27 835 28 405
+▪ reduction threshold for a couple 45 270 46 200
+▪ reduction rate (%)(2) 5.40 5.47
+1% contribution by individuals to the Health Services Fund
+– Maximum threshold of first income bracket 18 130 18 500
+– Maximum threshold of second income bracket 63 060 64 355
+
+--- PDF page 15 of 18 ---
+
+11
+TABLE 3
+Parameters of the personal income tax system subject to indexing (cont.)
+(dollars)
+2025 2026
+Refundable tax credit granting an allowance to families
+– Family allowance
+▪ Maximum amounts
+○ each child 3 006 3 068
+○ single-parent family 1 055 1 077
+▪ Reduction threshold(3)
+○ single-parent family 43 280 44 032
+○ couple 59 369 60 398
+▪ Minimum amounts
+○ each child 1 196 1 221
+○ single-parent family 421 430
+– Supplement for the purchase of school supplies 124 127
+– Monthly amount of the supplement for handicapped children 236 241
+– Monthly amount of the supplement for handicapped children requiring
+exceptional care – Level 1 1 191 1 215
+– Monthly amount of the supplement for handicapped children requiring
+exceptional care – Level 2 792 808
+General work premium(3)
+– Maximum amounts
+▪ person living alone 1 185.52 1 207.33
+▪ couple without children 1 848.34 1 882.45
+▪ single-parent family 3 066.00 3 122.40
+▪ couple with children 3 983.50 4 057.00
+– Reduction threshold
+▪ one adult 12 620 12 808
+▪ couple 19 534 19 828
+Adapted work premium for persons with a severely limited capacity
+for employment(3)
+– Maximum amounts
+▪ person living alone 2 257.33 2 294.59
+▪ couple without children 3 501.46 3 559.12
+▪ single-parent family 4 149.50 4 218.00
+▪ couple with children 5 149.20 5 234.00
+– Reduction threshold
+▪ one adult 17 798 18 072
+▪ couple 26 946 27 370
+(1) Indexing of family income thresholds for the refundable tax credit for childcare expenses is presented on page 13.
+(2) This rate is revalued each year.
+(3) The increase in the parameter values is based on a revaluation formula that considers, among other things, the indexing of basic
+benefits of social assistance programs.
+
+--- PDF page 16 of 18 ---
+
+12
+TABLE 4
+Parameters of the refundable solidarity tax credit
+(dollars)
+July 2025
+to June 2026
+July 2026
+to June 2027
+Amounts for the QST
+– basic amount 356 363
+– amount for spouse 356 363
+– additional amount for a person living alone 169 172
+Amounts for housing
+– amount for a couple 888 906
+– amount for a person living alone or a single-parent family 731 746
+– amount for each dependent child 155 158
+Amounts for individuals living in a northern village
+– amount per adult 2 091 2 134
+– amount for each dependent child 452 461
+Solidarity tax credit reduction threshold 42 325 43 195
+Maximum family income threshold at which only 50% of the solidarity
+tax credit amount can be allocated to the payment of a debt to the State 25 665 26 190
+Indexing period for the parameters of the solidarity tax credit
+The parameters of the solidarity tax credit are indexed each year on July 1 instead of on January 1.
+They remain unchanged from July of a given year to June of the following year.
+
+--- PDF page 17 of 18 ---
+
+13
+TABLE 5
+Parameters of the refundable tax credit for childcare expenses
+Taxation year 2025 Taxation year 2026
+Family income ($)
+Tax credit
+rate (%)
+Family income ($)
+Tax credit
+rate (%)Greater than
+Without
+exceeding Greater than
+Without
+exceeding
+― 24 795 78 ― 25 305 78
+24 795 43 725 75 25 305 44 620 75
+43 725 45 340 74 44 620 46 270 74
+45 340 46 970 73 46 270 47 935 73
+46 970 48 570 72 47 935 49 565 72
+48 570 50 195 71 49 565 51 225 71
+50 195 119 835 70 51 225 122 290 70
+119 835 or more 67 122 290 or more 67

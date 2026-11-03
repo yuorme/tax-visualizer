@@ -27,8 +27,8 @@ While working:
   year, report it as needing a new program id rather than forcing it into the data.
 - Add reference tests in `tests/reference/<year>.test.ts` from figures published outside this project: top
   combined marginal rate per province at minimum, plus any published worked examples.
-- Capture golden results only for the year you're adding (`npm run golden:capture -- <year>`). Other years'
-  golden files must not change.
+- Capture golden results only for the year you're adding (`npm run golden:capture -- <year>`), after independent
+  verification. Follow CLAUDE.md's baseline policy for existing cases and add coverage for newly activated rules.
 - After each jurisdiction or other logical chunk, commit it as `WIP #<issue>: <what>` and push the branch
   (`git push -u origin <branch>`), so the work survives an interruption. Once a PR exists, run the same open-PR check
   as below before each push.
