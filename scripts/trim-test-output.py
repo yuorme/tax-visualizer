@@ -149,8 +149,9 @@ def compact(output):
         summary = NOISE.fullmatch(line)
         passing = PASS.fullmatch(line)
         test_title = re.fullmatch(r"\s*# Subtest:.*", line)
+        command_banner = line.startswith("> ")
         if (
-            DIAGNOSTIC.search(line) and not passing and not test_title
+            DIAGNOSTIC.search(line) and not passing and not test_title and not command_banner
             and not (summary and re.search(r"\bfail\s+0\b", line))
         ):
             diagnostic = True

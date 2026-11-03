@@ -103,6 +103,12 @@ class FilterTests(unittest.TestCase):
         self.assertNotIn("warning handling", message)
         self.assertNotIn("throws an error", message)
 
+    def test_npm_check_command_banner_is_not_a_warning(self):
+        banner = "> tax-visualizer@0.1.0 lint\n> biome check --error-on-warnings && node scripts/check-docs.mjs\n"
+        message = self.filtered(self.event(banner + PASSES, command="npm run check"))
+        self.assertIn(banner.strip(), message)
+        self.assertNotIn("passing test number", message)
+
     def test_command_recognition(self):
         for command in ("npm test", "npm run check", "cd tests && npm test",
                         "CI=1 fnm exec --using=26 npm test", "fnm exec --using 26 -- npm run check",
