@@ -24,7 +24,10 @@ const fixture: {
 const childcareFixture: typeof fixture = JSON.parse(
   fs.readFileSync(new URL("./golden/features/childcare.json", import.meta.url), "utf8"),
 );
-const fixtures = [fixture, childcareFixture];
+const history2024Fixture: typeof fixture = JSON.parse(
+  fs.readFileSync(new URL("./golden/features/history2024.json", import.meta.url), "utf8"),
+);
+const fixtures = [fixture, childcareFixture, history2024Fixture];
 
 function rounded(value: unknown): unknown {
   if (typeof value === "number") {

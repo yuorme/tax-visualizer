@@ -1,0 +1,42 @@
+# Benefit-year figures use July 2024 to June 2025, applied to current-year income.
+# Child benefit uses the province's exact annual amounts effective July 2023.
+
+code: NS
+name: Nova Scotia
+order: 11
+brackets:
+  - [29590, 0.0879]
+  - [59180, 0.1495]
+  - [93000, 0.1667]
+  - [150000, 0.175]
+  - [.inf, 0.21]
+basicPersonalAmount: {max: 11481, min: 8481, from: 25000, to: 75000}
+dividendTaxCredit: {eligible: 0.0885, nonEligible: 0.0299}
+spouseAmount:
+  program: nova-scotia-spouse-amount
+  params:
+    max: 8481
+    threshold: 848
+    supplement: {max: 3000, rate: 0.06, threshold: 25000}
+childAmount: {perChild: 1200, ages: under6}
+lowIncomeReduction:
+  program: family-low-income-reduction
+  params: {individual: 300, spouse: 300, child: 165, rate: 0.05, threshold: 15000}
+salesTax: {rate: 0.15, label: 15% HST}
+propertyTax: {rate: 0.0111, city: Halifax}
+childBenefit:
+  name: Nova Scotia Child Benefit
+  program: nova-scotia-child-benefit
+  params: {perChild: 1525, fullBelow: 26000, partialBelow: 34000, partialOtherChildren: 762.5}
+credits:
+  - name: Nova Scotia affordable living tax credit
+    program: ns-affordable-living-tax-credit
+    params: {base: 255, child: 60, rate: 0.05, threshold: 30000}
+sources:
+  - {label: "Nova Scotia, child benefit annual amounts effective July 2023", url: https://novascotia.ca/coms/families/childbenefit.html}
+  - {label: "CRA, NS428 for 2024 (brackets, personal amounts and reductions)", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5003-c/5003-c-24e.pdf}
+  - {label: "CRA, NS428 worksheet for 2024 (dividend credits)", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5003-d/5003-d-24e.pdf}
+  - {label: "CRA, T4114: provincial child benefits July 2024 to June 2025", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pub/t4114/t4114-24e.pdf}
+  - {label: "CRA, RC4210: provincial credits July 2024 to June 2025", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pub/rc4210/rc4210-24e.pdf}
+  - {label: "CRA, GST/HST historical rates and provincial sales-tax rates", url: https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/charge-collect-which-rate/calculator.html}
+  - {label: "Halifax, approved 2024/25 budget tax-rate summary: urban 0.770 + mandatory 0.340 per 100", url: https://www.halifax.ca/sites/default/files/documents/city-hall/budget-finances/budgetbook_2024-25_final.pdf}

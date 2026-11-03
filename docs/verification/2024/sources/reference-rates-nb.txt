@@ -1,0 +1,73 @@
+Title: New Brunswick 2025 and 2024 Tax Rates & Tax Brackets
+URL: https://www.taxtips.ca/priortaxrates/tax-rates-2024-2025/nb.htm
+Fetched: 2026-11-02
+SHA-256 of the original: 01ac4bb0fc7eb112521bf48b7a3aaad0eddfabd94a55cd6c4337ffe8c7088084
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+#### Home -> Atlantic Provinces -> New Brunswick ->
+
+#### Tax Rates -> New Brunswick Personal Income Tax Rates for 2024 & 2025
+
+# New Brunswick 2025 and 2024 Tax Rates & Tax Brackets
+
+##### New Brunswick Income Tax Act s. 14, 16.1, 19, 35
+
+The Federal and New Brunswick tax brackets and personal tax credit amounts are increased for 2025 by an indexation factor of 1.027 (2.7% increase).
+
+New Brunswick uses the Federal indexation factor.
+
+See Indexation of the Personal Income Tax System for how the indexation factors are calculated.
+
+The Federal and New Brunswick indexation factors, tax brackets and tax rates for 2025 have been confirmed to Canada Revenue Agency information.
+
+Tax Tip: read the article Understanding the Tables of Personal Income Tax Rates, especially if you are trying to compare the rates below to the marginal tax rates in the Basic Tax Calculator or the Detailed Tax Calculators.
+
+TaxTips.ca - New Brunswick Tax Rates
+2025 Taxable Income | 2025 Tax Rates | 2024 Taxable Income | 2024 Tax Rates
+first $51,306 | 9.4% | first $49,958 | 9.4%
+over $51,306 up to $102,614 | 14.0% | over $49,958 up to $99,916 | 14.0%
+over $102,614 up to $190,060 | 16.0% | over $99,916 up to $185,064 | 16.0%
+over $190,060 | 19.5% | over $185,064 | 19.5%
+
+TaxTips.ca - Combined Federal & New Brunswick Tax Brackets and Tax Rates
+2025 Taxable Income (1) | NB 2025 Marginal Tax Rates | 2024 Taxable Income (1) | NB 2024 Marginal Tax Rates
+Other Income | Capital Gains | Canadian Dividends | Other Income | Capital Gains | Canadian Dividends
+Eligible | Non-Eligible | Eligible | Non-Eligible
+first $51,306 | 23.90% | 11.95% | -7.07% | 13.94% | first $49,958 | 24.40% | 12.20% | -6.38% | 14.51%
+over $51,306 up to $57,375 | 28.50% | 14.25% | -0.72% | 19.23% | over $49,958 up to $55,867 | 29.00% | 14.50% | -0.03% | 19.80%
+over $57,375 up to $102,614 | 34.50% | 17.25% | 7.56% | 26.13% | over $55,867 up to $99,916 | 34.50% | 17.25% | 7.56% | 26.13%
+over $102,614 up to $114,750 | 36.50% | 18.25% | 10.32% | 28.43% | over $99,916 up to $111,733 | 36.50% | 18.25% | 10.32% | 28.43%
+over $114,750 up to $177,882 | 42.00% | 21.00% | 17.91% | 34.75% | over $111,733 up to $173,205 | 42.00% | 21.00% | 17.91% | 34.75%
+over $177,882 up to $190,060 | 45.31% | 22.66% | 22.48% | 38.56% | over $173,205 up to $185,064 | 45.32% | 22.66% | 22.49% | 38.57%
+over $190,060 up to $253,414 | 48.81% | 24.41% | 27.31% | 42.59% | over $185,064 up to $246,752 | 48.82% | 24.41% | 27.32% | 42.60%
+over $253,414 | 52.50% | 26.25% | 32.40% | 46.83% | over $246,752 | 52.50% | 26.25% | 32.40% | 46.83%
+Marginal tax rate for dividends is a % of actual dividends received (not grossed-up taxable amount). Marginal tax rate for capital gains is a % of total capital gains (not taxable capital gains). Gross-up rate for eligible dividends is 38%, and for non-eligible dividends is 15%. For more information see New Brunswick dividend tax credits. Copyright © 2002 Boat Harbour Investments Ltd.
+
+TaxTips.ca New Brunswick Basic Personal Amount
+2025 Personal Amount | 2025 Tax Rate | 2024 Personal Amount | 2024 Tax Rate
+$13,396 | 9.40% | $13,044 | 9.40%
+
+Federal Basic Personal Amount
+2025 Personal Amount (1) Minimum / Maximum | 2025 Tax Rate | 2024 Personal Amount (1) Minimum / Maximum | 2024 Tax Rate
+$14,538 | $16,129 | 14.5% | $14,156 | $15,705 | 15%
+
+(1) See the federal tax rates page for information on the enhanced federal personal amount, which increases the marginal tax rates for taxable incomes in the second highest federal tax bracket. The marginal tax rates in blue above have been adjusted to reflect these changes.
+
+Copyright © 2002 Boat Harbour Investments Ltd.
+
+Revised: June 27, 2026
+
+Revised: August 27, 2026
+
+© 2002- Boat Harbour Investments Ltd. All rights reserved.
+
+See Reproduction of information from TaxTips.ca
+
+Privacy Policy | Contact
+
+Facebook | Twitter | LinkedIn
+
+The authors of TaxTips.ca strive, but cannot guarantee, to provide information which is current and accurate. Individual circumstances have a significant effect on how tax and financial information can be used. Due to this, and to the nature of the information, it should not be relied upon for decision making without professional advice.
+
+TaxTips.ca provides links to other web sites. We cannot guarantee the accuracy of the information provided on linked sites.
