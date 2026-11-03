@@ -1,0 +1,79 @@
+Title: Canada Workers Benefit
+URL: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5014-s6/5014-s6-20e.pdf
+Fetched: 2026-11-02
+SHA-256 of the original: b5597ebfb51771b9316505db06e56028f8ec540c970ed9fc2cde92fce354a563
+Publication date modified: 2020-11-16
+PDF pages: 4 of 4
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 4 of 4 ---
+
+Protected B when completed
+Step 2 – Calculating your basic CWB
+If you had an eligible spouse, only one of you can claim the basic CWB. The person who received the CWB advance
+payments for 2020 is the person who must claim the basic CWB for the year. If you had an eligible dependant, only one
+person can claim the basic CWB for that eligible dependant. If you cannot decide who will claim the basic CWB when you
+have an eligible spouse or an eligible dependant, the Canada Revenue Agency will designate who will claim the basic CWB.
+16Working income amount from line 8 in Step 1
+17Base amount –
+18Line 16 minus line 17 (if negative, enter "0") =
+19
+Rate: If you had neither an eligible spouse nor an eligible dependant,
+enter 10%. If you had an eligible spouse or an eligible dependant,
+enter 14%. ×
+20Multiply line 18 by line 19. =
+21
+If you had neither an eligible spouse nor an eligible dependant,
+enter $1,085. If you had an eligible spouse or an eligible dependant,
+enter $1,630.
+22Enter the amount from line 20 or line 21, whichever is less.Ż
+23Adjusted family net income amount from line 15 from the previous page
+24
+Base amount:
+If you had neither an eligible spouse nor an eligible dependant,
+enter $21,654. If you had an eligible spouse or an eligible dependant,
+enter $29,551. –
+25Line 23 minus line 24 (if negative, enter "0") =
+26
+Rate: If you had neither an eligible spouse nor an eligible dependant,
+enter 4%. If you had an eligible spouse or an eligible dependant,
+enter 8%. ×
+27Multiply line 25 by line 26. =
+Ż –
+28
+Line 22 minus line 27 (if negative, enter "0")
+Enter the amount from line 28 on line 45300 of your return unless you complete Step 3. =
+Step 3 – Calculating your CWB disability supplement
+If you had an eligible spouse and one of you is eligible for the disability tax credit, that person should claim both the basic
+CWB and the CWB disability supplement. If you had an eligible spouse and both of you are eligible for the disability tax
+credit, only one of you can claim the basic CWB. However, each of you must claim the CWB disability supplement on a
+separate Schedule 6.
+29Amount from line 7 in column 1 from Step 1
+30Base amount –
+31Line 29 minus line 30 (if negative, enter "0") =
+32Rate ×
+33Multiply line 31 by line 32. =
+34Enter the amount from line 33 or $713, whichever is less.Ż
+35Adjusted family net income amount from line 15 from the previous page
+36
+Base amount:
+If you had neither an eligible spouse nor an eligible dependant,
+enter $48,779. If you had an eligible spouse or an eligible dependant,
+enter $49,926. –
+37Line 35 minus line 36 (if negative, enter "0") =
+38
+Rate: If you had an eligible spouse and they are also eligible for the
+disability tax credit, enter 6%. Otherwise, enter 12%. ×
+39Multiply line 37 by line 38. =
+Ż –
+40Line 34 minus line 39 (if negative, enter "0") =
+41If you completed Step 2, enter the amount from line 28. Otherwise, enter "0". +
+42
+Add lines 40 and 41.
+Enter this amount on line 45300 of your return. =
+See the privacy notice on your return.
+5014-S6 E (20) Page 4 of 4
+6,000.00
+4,800.00
+26%
