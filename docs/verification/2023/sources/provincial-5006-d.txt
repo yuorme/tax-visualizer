@@ -1,0 +1,160 @@
+Title: Worksheet ON428
+URL: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5006-d/5006-d-23e.pdf
+Fetched: 2026-11-02
+SHA-256 of the original: c4aec46e274adc1f67012b57bd40aeea2b1b0af07614337e22013e4f964019a8
+Publication date modified: 2023-11-21
+PDF pages: all 3
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 1 of 3 ---
+
+2023
+Worksheet ON428
+Use this worksheet to calculate the amounts to enter on your Form ON428, Ontario Tax.
+Keep this worksheet for your records. Do not attach it to your return.
+Line 58080 – Age amount (if you were born in 1958 or earlier)
+If the amount from line 23600 of your return is:
+• $43,127 or less, enter $5,793 on line 58080 of your Form ON428
+• $81,747 or more, enter "0" on line 58080 of your Form ON428
+Otherwise, complete the calculation below.
+1Maximum amount
+2Amount from line 23600 of your return
+3Income threshold –
+4Line 2 minus line 3 (if negative, enter "0") =
+5Applicable rate ×
+6Line 4 multiplied by the percentage from line 5 =
+Ż –
+7Line 1 minus line 6 (if negative, enter "0") =
+Enter the amount from line 7 on line 58080 of your Form ON428.
+Line 58185 – Ontario caregiver amount
+Complete one column for each dependant. If you have more than three dependants, use a separate sheet of paper.
+Dependant 1
+Base amount
+Dependant's net income from line 23600 of their return –
+Line 1 minus line 2 (if negative, enter "0")
+(maximum $5,593 per dependant) =
+Amount claimed for this dependant on line 58160
+of your Form ON428, if any –
+Allowable amount for this dependant:
+line 3 minus line 4 (if negative, enter "0") =
+Dependant 2
+–
+=
+–
+=
+Dependant 3
+–
+=
+–
+=
+1
+2
+3
+4
+5
+6Add the amounts from line 5 for columns 1, 2, and 3 (and others, if any). =
+Enter the total from line 6 on line 58185 of your Form ON428.
+Line 58440 – Disability amount for self
+Complete the following calculation if you were under 18 years of age on December 31, 2023:
+1Base amount
+2Maximum amount
+3
+Total child care and attendant care expenses for you,
+claimed by you or another person
+4Threshold for child and attendant care expenses –
+5Line 3 minus line 4 (if negative, enter "0") =
+Ż –
+6Line 2 minus line 5 (if negative, enter "0") =
+Ż +
+7Line 1 plus line 6 (maximum $15,177) =
+Enter the amount from line 7 on line 58440 of your Form ON428.
+5006-D E (23) (Ce formulaire est disponible en français.) Page 1 of 3
+5,793.00
+43,127.00
+15%
+24,726.00 24,726.00 24,726.00
+9,586.00
+5,591.00
+3,275.00
+
+--- PDF page 2 of 3 ---
+
+Line 58480 – Disability amount transferred from a dependant
+Complete this calculation for each dependant. If you have more than one dependant, use a separate sheet of paper.
+Note: If you and your dependant were not residents of the same province or territory at the end of the year, special rules may
+apply. For more information, call the Canada Revenue Agency at 1-800-959-8281.
+1Base amount
+If the dependant was under 18 years of age on December 31, 2023, complete lines 2 to 12.
+If the dependant was 18 years of age or older, enter "0" on line 6 and continue on line 7.
+2Maximum amount
+3
+Total child care and attendant care expenses for this
+dependant claimed by you or another person
+4Threshold for child and attendant care expenses –
+5Line 3 minus line 4 (if negative, enter "0") =
+Ż –
+6Line 2 minus line 5 (if negative, enter "0") =
+Ż +
+7Line 1 plus line 6 (maximum $15,177) =
+8Enter the amount from line 28 of the dependant's Form ON428. +
+9Line 7 plus line 8 =
+10Dependant's taxable income from line 26000 of their return –
+11Line 9 minus line 10 (if negative, enter "0") =
+12Allowable amount for this dependant
+Enter whichever is less:
+amount from line 7 or line 11.
+Enter on line 58480 of your Form ON428 the total of allowable amounts claimed for all dependants.
+Line 58729 – Allowable amount of medical expenses for other dependants
+Complete one column for each dependant. If you have more than three dependants, use a separate sheet of paper.
+Dependant 1
+Medical expenses for other dependant
+Enter the amount from line 40 of the dependant's
+Form ON428. –
+Line 1 minus line 2 (if negative, enter "0")
+(maximum $14,476 per dependant) =
+Dependant 2
+–
+=
+Dependant 3
+–
+=
+1
+2
+3
+4Add the amounts from line 3 for columns 1, 2 and 3 (and others, if any).
+Enter the total from line 4 on line 58729 of your Form ON428.
+Line 61520 – Ontario dividend tax credit
+AAmount from line 12000 of your return
+1BAmount from line 12010 of your return – × 2.9863% =
+2CAmount A minus amount B = × 10% = +
+3Line 1 plus line 2 =
+Enter the amount from line 3 on line 61520 of your Form ON428.
+5006-D E (23) Page 2 of 3
+9,586.00
+5,591.00
+3,275.00
+
+--- PDF page 3 of 3 ---
+
+Line 72 – Ontario additional tax for minimum tax purposes
+Complete this calculation if you entered an amount on line 98 of your Form T691.
+1
+Ontario basic additional tax:
+Amount from line 98 of your Form T691 × 33.67% =
+Ż
+2
+Ontario surtax on additional tax:
+Amount from line 65 of your Form ON428 +
+3Line 1 plus line 2 =
+If the amount on line 3 is more than $5,315, complete lines 4 to 9.
+If not, enter the amount from line 1 on line 72 of your Form ON428.
+4(Line 3 – $5,315) × 20% (if negative, enter "0") =
+5(Line 3 – $6,802) × 36% (if negative, enter "0") = +
+6Line 4 plus line 5 =
+7Amount from line 68 of your Form ON428 –
+8Line 6 minus line 7 =
+Ż +
+9Line 1 plus line 8 =
+Enter the amount from line 9 on line 72 of your Form ON428.
+5006-D E (23) Page 3 of 3

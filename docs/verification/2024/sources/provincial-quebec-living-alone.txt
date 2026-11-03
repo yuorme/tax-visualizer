@@ -1,0 +1,113 @@
+Title: Schedule B – Tax Relief Measures
+URL: https://www.revenuquebec.ca/documents/en/formulaires/tp/2024-12/TP-1.D.B-V%282024-12%29.pdf
+Fetched: 2026-11-02
+SHA-256 of the original: f25fd2313092863af3346ee26563cd61de91b28870f0b4ca7f496829080e5eed
+Publication date modified: 2024-12-13
+PDF pages: all 2
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 1 of 2 ---
+
+If you and your spouse on December 31, 2024, are both entering an amount on line 361, 381 or 462 of your respective returns, you must each
+file your own Schedule B.
+A Family income
+Amount from line 275 of your return 10
+Amount from line 275 of your spouse’s return (spouse on December 31, 2024) + 12
+Add lines 10 and 12. Family income = 14
+B Age amount, amount for a person living alone and amount for retirement income
+Amount from line 14 15
+– 16 40,925 00
+Subtract line 16 from line 15. If the result is negative, enter 0. = 18
+You are not entitled to any of these amounts if you had a spouse on December 31, 2024, and the amount on line 18 is more than $87,536,
+or if you did not have a spouse on December 31, 2024, and the amount on line 18 is more than $62,907.
+If, throughout 2024, you maintained and ordinarily lived in a dwelling in which you lived alone
+or only with one or more individuals under the age of 18, or with one or more of your children, grandchildren
+or great-grandchildren 18 or older who were full-time students pursuing vocational training at the secondary level
+or post-secondary studies, enter $2,069. See line 361 in the guide. 20
+Additional amount for a person living alone (single-parent family). See line 361 in the guide.
+21.1
+Social insurance number of the child 18 or older
++ 21
+If you were born before January 1, 1960, enter $3,798. + 22
+If your spouse on December 31, 2024, was born before January 1, 1960, enter $3,798. + 23
+If you entered an amount on line 122 or 123 of your return, complete the work chart below. + 27
+If your spouse on December 31, 2024, entered an amount on line 122 or 123 of their return,
+complete the work chart below. + 28
+Add lines 20 through 28. = 30
+Amount from line 18 × 18.75% 31
+Subtract line 31 from line 30.
+If the result is negative, enter 0. Amount to which you or, if applicable, your spouse is entitled = 32
+Amount claimed on line 361 of your spouse’s return (spouse on December 31, 2024) – 33
+Subtract line 33 from line 32. Carry the result to line 361 of your return.
+Age amount, amount for a person living alone and amount for retirement income = 34
+WORK CHART – Amount for retirement income You Your spouse
+on December 31, 2024
+Total of the amounts from lines 122 and 123 1
+Amount from line 1 transferred to an RRSP, a RRIF or a PRPP/VRSP,
+or used to purchase an annuity (see line 250, point 4, in the guide) 2
+Deduction claimed on line 250, point 6, for a refund of unused contributions
+to a PRPP/VRSP included in the amount on line 1 + 3
+Deduction claimed on line 293 for the amount on line 1 + 4
+Deduction claimed on line 297 (points 9 and 12) for the amount on line 1 + 5
+Retirement income transferred to your spouse (amount from line 245) + 6
+Add lines 2 through 6. = 7
+Subtract line 7 from line 1. 8
+× 1.25 1.25
+Multiply line 8 by 1.25 (maximum $3,374).
+Carry this amount to line 27 and/or line 28, as applicable. = 9
+NOTE
+When life annuity payments made under a retirement compensation arrangement (line 154, point 3) are transferred between spouses, the amounts entered
+on lines 123 and 245 of the return must not be included on lines 1 and 6 of the work chart.
+Y 4 B 1 Z Z 8 9 5 2 6 6 4 9
+T P -1. D. B-V (2024-12) 1 of 2T
+BPrescribed form
+S C H E D U L E
+BTax Relief Measures
+
+--- PDF page 2 of 2 ---
+
+C Medical expenses
+Medical expenses (see line 381 in the guide) 36
+Family income (amount from line 14) 37
+× 3%
+Multiply line 37 by 3%. = 39
+Subtract line 39 from line 36. If the result is negative, enter 0.
+Carry this amount to line 381 of your return. Medical expenses = 40
+NOTE
+If you enter an amount on line 40, you may also be entitled to the refundable tax credit for medical expenses. See Part D below.
+D Refundable tax credit for medical expenses
+You are not entitled to this credit if the amount on line 14 is over $56,050.
+You can claim this tax credit if you meet all of the following conditions:
+•• You were resident in Québec on December 31, 2024.
+•• You were resident in Canada throughout 2024.
+•• You were 18 or older on December 31, 2024.
+•• Your work income (line 10 of the work chart under point 1 at line 462 in the guide) is $3,645 or more.
+Amount from line 40 above 41
+Disability supports deduction (see line 250, point 7, in the guide) + 42
+Add lines 41 and 42. = 43
+× 25%
+Multiply line 43 by 25% (maximum $1,425). = 44
+Family income (amount from line 14) 45
+– 46 27,550 00
+Subtract line 46 from line 45. If the result is negative, enter 0. = 47
+× 5%
+Multiply line 47 by 5%. = 48
+Subtract line 48 from line 44. If the result is negative, enter 0.
+Carry this amount to line 462 of your return. Refundable tax credit for medical expenses = 50
+E Independent living tax credit for seniors
+You can claim this tax credit if you meet both of the following conditions:
+•• You were resident in Québec on December 31, 2024.
+•• You were 70 or older on December 31, 2024.
+Expenses incurred for the purchase, lease and installation of eligible equipment or fixtures 60
+– 62 250 00
+Subtract line 62 from line 60. If the result is negative, enter 0. = 64
+Expenses incurred for one or more stays in a functional rehabilitation transition unit + 66
+Add lines 64 and 66. = 67
+× 20%
+Multiply line 67 by 20%.
+Carry the result to line 462 of your return. Independent living tax credit for seniors = 69
+Y 4 B 2 Z Z 8 9 5 2 6 6 5 0T
+T P -1. D. B-V (2024-12) 2 of 2
+BEnclose this schedule with your return.
+If you want to keep a copy for your records, see the guide.

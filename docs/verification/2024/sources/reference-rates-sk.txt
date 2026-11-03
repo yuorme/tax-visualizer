@@ -1,0 +1,71 @@
+Title: Saskatchewan 2025 and 2024 Tax Rates & Tax Brackets
+URL: https://www.taxtips.ca/priortaxrates/tax-rates-2024-2025/sk.htm
+Fetched: 2026-11-02
+SHA-256 of the original: e29e59cc1df97227e95355796c5a8db4347e8bdd2ade34808f13df505486e7c0
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+#### Home -> Saskatchewan
+
+#### Tax Rates -> Saskatchewan Personal Income Tax Rates for 2024 & 2025
+
+# Saskatchewan 2025 and 2024 Tax Rates & Tax Brackets
+
+The Federal and Saskatchewan tax brackets and personal tax credit amounts are increased for 2025 by an indexation factor of 1.027 (2.7% increase).
+
+Saskatchewan uses the federal indexation factor.
+
+See Indexation of the Personal Income Tax System for how the indexation factors are calculated.
+
+Saskatchewan's December 2024 Affordability Measures increased the basic personal amount and other tax credits for 2025, and cancelled the changes to the non-eligible dividend tax credit for 2025 and subsequent years.
+
+The Federal and Saskatchewan indexation factors, tax brackets and tax rates for 2025 have been confirmed to Canada Revenue Agency information.
+
+Tax Tip: read the article Understanding the Tables of Personal Income Tax Rates, especially if you are trying to compare the rates below to the marginal tax rates in the Basic Tax Calculator or the Detailed Tax Calculators.
+
+TaxTips.ca - Saskatchewan Tax Rates
+2025 Taxable Income | 2025 Tax Rates | 2024 Taxable Income | 2024 Tax Rates
+first $53,463 | 10.50% | first $52,057 | 10.50%
+over $53,463 up to $152,750 | 12.50% | over $52,057 up to $148,734 | 12.50%
+over $152,750 | 14.50% | over $148,734 | 14.50%
+
+TaxTips.ca - Combined Federal & Saskatchewan Tax Brackets and Tax Rates
+2025 Taxable Income (1) | SK 2025 Marginal Tax Rates | 2024 Taxable Income (1) | SK 2024 Marginal Tax Rates
+Other Income | Capital Gains | Canadian Dividends | Other Income | Capital Gains | Canadian Dividends
+Eligible | Non-Eligible | Eligible | Non-Eligible
+first $53,463 | 25.00% | 12.50% | -1.41% | 15.47% | first $52,057 | 25.50% | 12.75% | -0.72% | 16.04%
+over $53,463 up to $57,375 | 27.00% | 13.50% | 1.35% | 17.77% | over $52,057 up to $55,867 | 27.50% | 13.75% | 2.04% | 18.34%
+over $57,375 up to $114,750 | 33.00% | 16.50% | 9.63% | 24.67% | over $55,867 up to $111,733 | 33.00% | 16.50% | 9.63% | 24.67%
+over $114,750 up to $152,750 | 38.50% | 19.25% | 17.22% | 30.99% | over $111,733 up to $148,734 | 38.50% | 19.25% | 17.22% | 30.99%
+over $152,750 up to $177,882 | 40.50% | 20.25% | 19.98% | 33.29% | over $148,734 up to $173,205 | 40.50% | 20.25% | 19.98% | 33.29%
+over $177,882 up to $253,414 | 43.81% | 21.91% | 24.55% | 37.10% | over $173,205 up to $246,752 | 43.82% | 21.91% | 24.56% | 37.11%
+over $253,414 | 47.50% | 23.75% | 29.64% | 41.34% | over $246,752 | 47.50% | 23.75% | 29.64% | 41.34%
+Marginal tax rate for dividends is a % of actual dividends received (not grossed-up taxable amount). Marginal tax rate for capital gains is a % of total capital gains (not taxable capital gains). Gross-up rate for eligible dividends is 38%, and for non-eligible dividends is 15%. For more information see Saskatchewan dividend tax credits. Copyright © 2002 Boat Harbour Investments Ltd.
+
+TaxTips.ca Saskatchewan Basic Personal Amount
+2025 Personal Amount | 2025 Tax Rate | 2024 Personal Amount | 2024 Tax Rate
+$19,491 | 10.5% | $18,491 | 10.5%
+
+Federal Basic Personal Amount
+2025 Personal Amount (1) Minimum / Maximum | 2025 Tax Rate | 2024 Personal Amount (1) Minimum / Maximum | 2024 Tax Rate
+$14,538 | $16,129 | 14.5% | $14,156 | $15,705 | 15%
+
+(1) See the federal tax rates page for information on the enhanced federal personal amount, which increases the marginal tax rates for taxable incomes in the second highest federal tax bracket. The marginal tax rates in blue above have been adjusted to reflect these changes.
+
+Copyright © 2002 Boat Harbour Investments Ltd.
+
+Revised: June 27, 2026
+
+Revised: August 27, 2026
+
+© 2002- Boat Harbour Investments Ltd. All rights reserved.
+
+See Reproduction of information from TaxTips.ca
+
+Privacy Policy | Contact
+
+Facebook | Twitter | LinkedIn
+
+The authors of TaxTips.ca strive, but cannot guarantee, to provide information which is current and accurate. Individual circumstances have a significant effect on how tax and financial information can be used. Due to this, and to the nature of the information, it should not be relied upon for decision making without professional advice.
+
+TaxTips.ca provides links to other web sites. We cannot guarantee the accuracy of the information provided on linked sites.

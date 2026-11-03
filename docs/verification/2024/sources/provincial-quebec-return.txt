@@ -1,0 +1,366 @@
+Title: Income Tax Return
+URL: https://www.revenuquebec.ca/documents/en/formulaires/tp/2024-12/TP-1.D-V%282024-12%29.pdf
+Fetched: 2026-11-02
+SHA-256 of the original: 08bfe65c6703c2ee55af5617a5934fb2ed70c14744c29a3379cc568d66cf7616
+Publication date modified: 2024-12-13
+PDF pages: all 6
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 1 of 6 ---
+
+Information about you
+Last name First name
+1 2
+Social insurance number Date of birth
+11 6 4 Sex: 1 male 2 female
+Y Y Y Y M M D D
+If this is your first Québec income tax return:
+•• check this box � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � 3
+•• choose your language of communication � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � 5 1 French 2 English
+Address
+Apartment Street number Street name, PO box
+7
+City, town or municipality Province Postal code
+8 9
+Forhelpwithyourreturn,seetheguide.
+Use blue or black ink.
+The symbol means that something is newfor2024�
+Ifyoureceivedanidentificationlabel,placeithere.
+If you are planning to move, see the instructions
+for lines 1 to 9 in the guide.
+Communicationpreferences
+Documents
+You can receive documents online or by mail�
+If you agree to receive your
+documents online only, check this box. � � � � � � � � � � � � � � � � 10�2
+Enter your email address on line 10.1.
+Notifications
+To help protect you against fraud, we can send you email or text notifications
+if certain incidents occur in your file�
+To receive notifications, check one of the following boxes:
+10�3 Email 10�4 Text 10�5 Email and text
+Enter your cell phone number on line 10 and/or your email address on line 10.1.
+Area code Cell (Canadian number only) Email
+10 10�1
+Situation
+Did you have a spouseonDecember31,2024 (see the definition in the guide)? � � � � � � � � � � � � � � 12 1 No 2 Yes
+If your situation (line 12) haschangedsince2023, enter the date of the change. � � � � � � � � � � � � � � � � � � � � � � � � � � � � 13
+Y Y M M D D
+2 0
+Tax residence status
+If you were not resident in Québec on December 31, 2024, state where (province, territory or country) you were resident. 17
+If you were resident in Canada
+foronlypartoftheyear, enter 18
+Y Y M M D D
+2 0
+your date of arrival
+Y Y M M D D
+2 0
+your date of departure
+Reason for your arrival or departure: 0
+If you entered a date on line 18, enter the income you earned while you were not resident in Canada�
+If you did not earn any income, enter 0. � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � 19
+Deceasedperson
+If the above information concerns a deceased person, enter the date of death. � � � � � � � � � � � � � � � � � � � � � � � � � � � � � 20
+Y Y M M D D
+2 0
+If you are filing one or more separatereturns for the year of death, check this box. � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � 23
+Bankruptcy
+Date of bankruptcy
+(where applicable): 21
+M M D D
+2 0 2 4 Period covered by the return: 21�1 before the bankruptcy 21�2 after the bankruptcy
+If you checked box 21.1 and want to make the election concerning the calculation of QPP contributions on income from self-employment, check this box. 21�3
+Y 4 0 1 Z Z 8 9 5 2 4 8 4 9
+T
+TP-1.D-V (2024-12) 1 of 6Prescribed form
+INCOME TAX RETURN 2024
+
+--- PDF page 2 of 6 ---
+
+Trust
+If you are the beneficiary of a designated trust, check this box. � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � 22
+Cryptoassets
+Did you receive,holdordisposeof(sell,transfer,exchange,give,etc.) any cryptoassets? � � � � � � � � � � � � � � � � � � � � � � � 24 1 Yes 2 No
+If you answered YES, complete a
+Cryptoasset Return (form TP-21.4.39-V).
+Information about your spouse on December 31, 2024
+Last name First name
+31 32
+Social insurance number Date of birth If your spouse died in 2024, enter the date of death�
+41 36 37 2 0 2 4
+Y Y Y Y M M D D M M D D
+If your spouse earned income from self-employment or received an RL-29slip, check this box. � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � 50
+Your spouse’s net income. If your spouse had no income, enter 0. � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � 51
+Tax residence status
+If your spouse wasnotresidentinQuébec on December 31, 2024, state where (province, territory or country) they were resident. � � 52
+Total income
+If you held employment outside Canada, check this box. � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � 94
+If you held employment in Canada, outside Québec, check this box. � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � 95
+CPP contributionRL-1, box B-1 Pensionable earnings (CPP)
+Additional contribution to the CPP
+RL-1 slip, box B-2
+QPIP premium
+RL-1 slip, box H
+QPP contribution
+RL-1 slip, box B.A
+96 96�1 96�2 97 98
+Pensionable salary or wages (QPP)RL-1 slip, box G
+Additional contribution to the QPP
+RL-1, box B.B
+Commissions received
+RL-1 slip, box M
+Taxable benefit
+RL-1 slip, boxes G-1 and
+L-2
+98�1 98�2 100 102
+Employment income,
+RL-1 slip, box A 101
+Correction of employment income, if you received an RL-22 slip. Complete Work Chart 105. + 105
+Other employment income
+165
+Premiums paid to a wage loss replacement plan
+Specify: 106 0 + 107
+Parental insurance benefits,
+RL-6 slip, box A + 110
+Employment Insurance benefits,
+T4E slip + 111
+Old Age Security pension,
+T4A(OAS) slip + 114
+QPP or CPP benefits,
+RL-2 slip, box C + 119
+Payments from a pension plan, an RRSP, a RRIF, a DPSP or a PRPP/VRSP, or annuities + 122
+Retirement income transferred by your spouse + 123
+Dividends from taxable Canadian corporations
+166
+Actual amount of eligible dividends
+167
+Actual amount of ordinary dividends
+Taxable amount + 128
+Interest and other investment income + 130
+Rental income� Attach form TP-128-V or your financial statements.
+168
+Gross income
+Net income 136+
+Taxable capital gains
+137
+Taxable capital gains
+138
+Capital gains reduction
++ 139
+Support payments received (taxable amount) + 142
+Social assistance payments,
+RL-5 slip, box A, and similar financial assistance,
+RL-5 slip, box B + 147
+Income replacement indemnities and net federal supplements Specify: 149 + 148
+Other income
+169
+CRSB, CRCB or CWLB
+Specify: 153 + 154
+Net business income. Complete Schedule L. + 164
+Add lines 101, 105 through 136 and 139 through 164. Total income = 199
+Y 4 0 2 Z Z 8 9 5 2 4 8 5 0
+TP-1.D-V (2024-12) 2 of 6T
+
+--- PDF page 3 of 6 ---
+
+Net income
+Amount from line 199 199
+Deduction for workers 201
+Registered pension plan (RPP) deduction,
+RL-1 slip, box D + 205
+Employment expenses and deductions Specify: 206 + 207
+RRSP or PRPP/VRSP deduction
+212
+HBP or LLP
++ 214
+FHSA deduction + 215
+Support payments made (deductible amount)
+224
+Recipient’s social insurance number
++ 225
+Moving expenses. Complete form TP-348-V. + 228
+Carrying charges and interest expenses + 231
+Business investment loss� Complete form TP-232.1-V.
+233�1
+Total losses sustained
+before June 25, 2024
+233�2
+Total losses sustained
+after June 24, 2024
+Allowable loss + 234
+Deduction for residents of designated remote areas.
+Complete form TP-350.1-V. + 236
+Deduction for exploration and development expenses + 241
+Deduction for retirement income transferred to your spouse on December 31�
+Complete Schedule Q. + 245
+Deduction for a repayment of amounts overpaid to you + 246
+Deduction for QPP and CPP contributions and QPIP premiums Specify: 248�1 + 248
+Other deductions Specify: 249 + 250
+Carry-over of the adjustment of investment expenses + 252
+Add lines 201 through 207, 214 through 231, and 234 through 252. Total deductions = 254
+Subtract line 254 from line 199� = 256
+Adjustment of investment expenses. Complete Schedule N. + 260
+Add lines 256 and 260�
+If the result is negative, enter 0� Net income = 275
+Taxable income
+Adjustment of deductions Specify: 277 + 276
+Universal Child Care Benefit and income from a registered disability savings plan + 278
+Add lines 275 through 278. = 279
+Deductions for strategic investments Specify: 286 287
+Non-capital losses from other years Specify: 289�1 + 289
+Net capital losses from other years + 290
+Capital gains deduction for a qualifying business transfer + 291
+Capital gains deduction + 292
+Deduction for income situated on a reserve + 293
+Deductions for certain income + 295
+Miscellaneous deductions Specify: 296 + 297
+Additional deduction + 297�1
+Add lines 287 through 297.1. Total deductions = 298
+Subtract line 298 from line 279� If the result is negative, enter 0� = 298�1
+Adjustment of the capital gains reduction + 298�2
+Add lines 298�1 and 298�2�
+Taxable income = 299
+© Revenu Québec
+Y 4 0 3 Z Z 8 9 5 2 4 8 5 1
+TP-1.D-V (2024-12) 3 of 6T
+
+--- PDF page 4 of 6 ---
+
+Non-refundable tax credits
+Basic personal amount 350 18,056 00
+Adjustment for income replacement indemnities – 358
+Subtract line 358 from line 350� = 359
+Age amount, amount for a person living alone and amount for retirement income. Complete Schedule B. + 361
+Amount for dependants and amount transferred by a child 18 or over enrolled in post-secondary studies.
+Complete Schedule A. + 367
+Amount for a severe and prolonged impairment in mental or physical functions + 376
+Add lines 359 through 376. = 377
+× 14%
+Multiply line 377 by 14%� = 377�1
+Expenses for medical services not available in your area.
+Complete form TP-752.0.13.1-V. 378
+Medical expenses� Complete Schedule B. + 381
+Interest paid on a student loan� Complete Schedule M. Amount claimed + 385
+Add lines 378 through 385. = 388
+× 20%
+Multiply line 388 by 20%� = 389
+Tax credit for volunteer firefighters and search and rescue volunteers Specify: 390�1 + 390
+Tax credit for career extension� Complete form TP-752.PC-V. + 391
+Tax credit for recent graduates working in remote resource regions. Complete form TP-776.1.ND-V. + 392
+Tax credits for donations and gifts
+393
+Amount from line 1 of Work Chart 395
++ 395
+Home buyers’ tax credit� Complete form TP-752.HA-V. + 396
+Tax credit for union, professional or other dues 397�1
+× 10%
+Multiply line 397�1 by 10%�
+Tax credit for union, professional or other dues = 397
+Tax credit for tuition or examination fees� Complete Schedule T. + 398
+Tax credit for tuition or examination fees transferred by a child + 398�1
+Add lines 377.1, 389 through 392, 395 through 397, 398 and 398.1.
+Non-refundable tax credits = 399
+Y 4 0 4 Z Z 8 9 5 2 4 8 5 2
+TP-1.D-V (2024-12) 4 of 6T
+
+--- PDF page 5 of 6 ---
+
+Income tax and contributions
+Income tax on taxable income� Complete Work Chart 401.
+If you must complete form TP-22-V or TP-25-V, check box 403� 403 401
+Non-refundable tax credits (line 399) – 406
+Subtract line 406 from line 401. If you must complete Part A of Schedule E, enter the amount from line 413
+of Schedule E instead.
+If you are completing form TP-766.2-V, check box 404. � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � � 404
+If you are completing Part 4 of form TP-766.2-V, check box 405� 405 413=
+Tax credit for contributions to authorized Québec political parties.
+Complete Work Chart 414. 414
+Dividend tax credit + 415
+Tax credit for the acquisition of Capital régional et coopératif Desjardins shares,RL-26 slip, box B + 422
+Tax credit for a labour-sponsored fund + 424
+Add lines 414 through 424. = 425
+Subtract line 425 from line 413� If the result is negative, see line 431 in the guide. = 430
+Credits transferred from one spouse to the other – 431
+Subtract line 431 from line 430, or enter the amount from line 18 in Part B of Schedule E.
+If the result is negative, enter 0� = 432
+Annual registration fee for the enterprise register
+Québec enterprise number (NEQ)
+437 2 2
+Is the information in the enterprise register correct? 436 Yes No + 438
+QPIP premium on income from self-employment or employment outside Québec.
+Complete Schedule R. + 439
+Advance payments of tax credits,
+RL-19 slip, box A, B, C, D, G or
+H + 441
+Special taxes and tax adjustment Specify: 442 + 443
+QPP contribution on income from self-employment. Complete Schedule U. 444 + 445
+Contribution to the health services fund� Complete Schedule F. + 446
+Premium payable under the Québec prescription drug insurance plan.
+Complete Schedule K or enter the number corresponding to your situation in box 449. 449 + 447
+Add lines 432 through 447.
+Carry the result to page 6. Income tax and contributions = 450
+Attach your documents here (include only the required documents).
+If you are paying a balance due by cheque or money order, attach your payment and the remittance slip to page 1�
+Y 4 0 5 Z Z 8 9 5 2 4 8 5 3
+TP-1.D-V (2024-12) 5 of 6T
+
+--- PDF page 6 of 6 ---
+
+Refund or balance due
+Amount from line 450 450
+Québec income tax withheld at source, as shown on your RL slips or other information slips 451
+Amount from line 58 of your Schedule Q – 451�1
+Subtract line 451�1 from line 451� = 451�2
+Québec income tax withholding transferred by your spouse + 451�3
+QPP or CPP overpayment + 452
+Income tax paid in instalments + 453
+Transferable portion of the income tax withheld for another province + 454
+Tax credit for childcare expenses� Complete Schedule C. + 455
+Tax credits respecting the work premium. Complete Schedule P. + 456
+QPIP overpayment + 457
+Tax credit for home-support services for seniors. Complete Schedule J. + 458
+QST rebate for employees and partners + 459
+Tax shield + 460
+Other credits Specify: 461 + 462
+Senior assistance tax credit + 463
+Add lines 451.2 through 463. Incometaxpaidandothercredits = 465
+Financial compensation for home-support services + 466
+Add lines 465 and 466� = 468
+Subtract line 468 from line 450�
+If the result is negative, enter it on line 474 below�
+If the result is positive, enter it on line 475 below� = 470
+Refund
+Amount from line 470, if it is negative 474
+Refund transferred to your spouse – 476
+Subtract line 476 from line 474�
+Refund = 478
+Accelerated refund 480
+To find out how to registerfordirectdepositorupdateyourdirectdeposit
+information, see page 10 in the guide.
+Balance due
+Amount from line 470, if it is positive 475
+Amount transferred by your spouse – 477
+Subtract line 477 from line 475�
+You are not required to pay
+a balance of less than $2� Balance due = 479
+For information on how to make
+your payment, see the instructions
+for line 479 in the guide. Amount enclosed 481
+© Revenu Québec
+Certification
+•• Icertifythat,inthisreturnandthedocumentsattachedtoit,theinformationaboutmeisaccurateandcompleteandfullydiscloses
+all ofmyincome.
+•• If I am entitled to a refund and enteredanamountonline476, I agree to have the amount applied to the payment of my spouse’s balance due
+(line 475 of my spouse’s return)�
+•• IfIenteredanamountonline123, it is because I have elected to add part of my spouse’s retirement income to my income�
+•• IfIelected(orrevokedanelection)inScheduleUtostopmakingQuébecPensionPlancontributionson my self-employment income
+or my activities as a person responsible for a family-type resource or an intermediate resource, I accept that it will take effect on the first day
+of the month I made the election (or revocation)�
+Signature Date
+Area code Phone (home) Area code Phone (work) Extension
+498 499
+We may compare the information in this return with information obtained from other sources or communicate it to other government departments and bodies.
+Y 4 0 6 Z Z 8 9 5 2 4 8 5 4
+TP-1.D-V (2024-12) 6 of 6T

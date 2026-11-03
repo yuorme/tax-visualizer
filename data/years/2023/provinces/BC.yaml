@@ -1,0 +1,43 @@
+# Benefit-year figures use July 2023 to June 2024, applied to current-year income.
+# The single-parent family benefit supplement and renter tax credit begin in 2023.
+
+code: BC
+name: British Columbia
+order: 0
+brackets:
+  - [45654, 0.0506]
+  - [91310, 0.077]
+  - [104835, 0.105]
+  - [127299, 0.1229]
+  - [172602, 0.147]
+  - [240716, 0.168]
+  - [.inf, 0.205]
+basicPersonalAmount: 11981
+dividendTaxCredit: {eligible: 0.12, nonEligible: 0.0196}
+spouseAmount: {max: 10259, threshold: 1026}
+bcTaxReduction: {max: 521, rate: 0.0356, threshold: 23179}
+salesTax: {rate: 0.12, label: 5% GST + 7% PST}
+propertyTax: {rate: 0.0027807, city: Vancouver}
+creditsUseRent: true
+childBenefit:
+  name: B.C. family benefit
+  program: bc-family-benefit
+  params:
+    max: [1750, 1100, 900]
+    min: [775, 750, 725]
+    singleParent: 500
+    rate: 0.04
+    threshold: 27354
+    minThreshold: 87533
+credits:
+  - name: B.C. renter's tax credit
+    program: bc-renters-tax-credit
+    params: {max: 400, rate: 0.02, threshold: 60000}
+sources:
+  - {label: "CRA, BC428 for 2023 (brackets, personal amounts and reductions)", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5010-c/5010-c-23e.pdf}
+  - {label: "CRA, BC428 worksheet for 2023 (dividend credits)", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5010-d/5010-d-23e.pdf}
+  - {label: "CRA, T4114: provincial child benefits July 2023 to June 2024", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pub/t4114/t4114-23e.pdf}
+  - {label: "CRA, GST/HST historical rates and provincial sales-tax rates", url: https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/charge-collect-which-rate/calculator.html}
+  - {label: "B.C., renter credit historical 2023 threshold", url: https://www2.gov.bc.ca/gov/content/taxes/income-taxes/personal/credits/renters-tax-credit}
+  - {label: "B.C., family benefit historical amounts and reduction rates", url: https://www2.gov.bc.ca/gov/content/family-social-supports/affordability/family-benefit}
+  - {label: "Vancouver, 2023 residential total rate, council report Appendix A", url: https://council.vancouver.ca/20230510/documents/cfsc1-updatedmay5.pdf}

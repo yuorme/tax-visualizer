@@ -1,0 +1,81 @@
+Title: Nova Scotia 2025 & 2024 Tax Rates & Tax Brackets
+URL: https://www.taxtips.ca/priortaxrates/tax-rates-2024-2025/ns.htm
+Fetched: 2026-11-02
+SHA-256 of the original: b738ba20f8f99745e8d008d81ac9fb1377b5521414d101a910fb2e59a7680aeb
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+#### Home -> Atlantic Provinces -> Nova Scotia
+
+#### Tax Rates -> Nova Scotia Personal Income Tax Rates for 2024 & 2025
+
+# Nova Scotia 2025 & 2024 Tax Rates & Tax Brackets
+
+The Nova Scotia 2024 Budget provided that starting January 1, 2025, tax brackets and some personal tax credit amounts would be increased for inflation, using the Nova Scotia indexation factor. The Nova Scotia indexation factor is calculated using the 12 month CPI average ending August. The Federal and all other provinces and territories that index their personal income tax system use the 12 month CPI average ending September.
+
+The Nova Scotia tax brackets and personal tax credit amounts are increased for 2025 by an indexation factor of 1.031 (3.1% increase).
+
+The Federal tax brackets and personal tax credit amounts are increased for 2025 by an indexation factor of 1.027 (2.7% increase).
+
+The Nova Scotia 2025 Budget announced an increase to the basic personal amount, and the elimination of the $3,000 supplement. The small business tax rate was reduced from 2.5% to 1.5% effective April 1, 2025. Bill 68 was subsequently tabled and passed, reducing the non-eligible dividend tax credit rate to 1.5% of the taxable dividend for 2025.
+
+See Indexation of the Personal Income Tax System for how the indexation factors are calculated.
+
+The Federal and Nova Scotia indexation factors, tax brackets and tax rates for 2025 have been confirmed to Canada Revenue Agency information.
+
+Tax Tip: read the article Understanding the Tables of Personal Income Tax Rates, especially if you are trying to compare the rates below to the marginal tax rates in the Basic Tax Calculator or the Detailed Tax Calculators.
+
+TaxTips.ca - Nova Scotia Tax Rates
+2025 Taxable Income | 2025 Tax Rates | 2024 Taxable Income | 2024 Tax Rates
+first $30,507 | 8.79% | first $29,590 | 8.79%
+over $30,507 up to $61,015 | 14.95% | over $29,590 up to $59,180 | 14.95%
+over $61,015 up to $95,883 | 16.67% | over $59,180 up to $93,000 | 16.67%
+over $95,883 up to $154,650 | 17.50% | over $93,000 up to $150,000 | 17.50%
+over $154,650 | 21.00% | over $150,000 | 21.00%
+
+TaxTips.ca - Combined Federal & Nova Scotia Tax Brackets and Tax Rates
+2025 Taxable Income (1) | NS 2025 Marginal Tax Rates | 2024 Taxable Income (1)(2) | NS 2024 Marginal Tax Rates
+Other Income | Capital Gains | Canadian Dividends | Other Income | Capital Gains | Canadian Dividends
+Eligible | Non-Eligible | Eligible | Non-Eligible
+first $30,507 | 23.29% | 11.65% | -0.80% | 14.67% | first $25,000 | 23.79% | 11.90% | -0.11% | 13.54%
+over $30,507 up to $57,375 | 29.45% | 14.73% | 7.70% | 21.76% | over $25,000 up to $29,590 | 24.32% | 12.16% | 0.62% | 14.14%
+over $57,375 up to $61,015 | 35.45% | 17.73% | 15.98% | 28.66% | over $29,590 up to $55,867 | 30.48% | 15.24% | 9.12% | 21.23%
+over $61,015 up to $95,883 | 37.17% | 18.59% | 18.35% | 30.64% | over $55,867 up to $59,180 | 35.98% | 17.99% | 16.71% | 27.55%
+over $95,883 up to $114,750 | 38.00% | 19.00% | 19.50% | 31.59% | over $59,180 up to $74,999 | 37.70% | 18.85% | 19.09% | 29.53%
+over $114,750 up to $154,650 | 43.50% | 21.75% | 27.09% | 37.92% | over $74,999 up to $93,000 | 37.17% | 18.59% | 18.35% | 28.92%
+over $154,650 up to $177,882 | 47.00% | 23.50% | 31.92% | 41.94% | over $93,000 up to $111,733 | 38.00% | 19.00% | 19.50% | 29.88%
+over $177,882 up to $253,414 | 50.31% | 25.16% | 36.49% | 45.75% | over $111,733 up to $150,000 | 43.50% | 21.75% | 27.09% | 36.20%
+over $253,414 | 54.00% | 27.00% | 41.58% | 49.99% | over $150,000 up to $173,205 | 47.00% | 23.50% | 31.92% | 40.23%
+| over $173,205 up to $246,752 | 50.32% | 25.16% | 36.50% | 44.05%
+over $246,752 | 54.00% | 27.00% | 41.58% | 48.28%
+Marginal tax rate for dividends is a % of actual dividends received (not grossed-up taxable amount). Marginal tax rate for capital gains is a % of total capital gains (not taxable capital gains). Gross-up rate for eligible dividends is 38%, and for non-eligible dividends is 15%. For more information see Nova Scotia dividend tax credits. Copyright © 2002 Boat Harbour Investments Ltd.
+
+Nova Scotia Basic Personal Amount
+2025 Personal Amount | 2025 Tax Rate | 2024 Personal Amount (2) | 2024 Tax Rate
+$11,744 | 8.79% | $8,481 | 8.79%
+
+Federal Basic Personal Amount
+2025 Personal Amount (1) Minimum / Maximum | 2025 Tax Rate | 2024 Personal Amount (1) Minimum / Maximum | 2024 Tax Rate
+$14,538 | $16,129 | 14.5% | $14,156 | $15,705 | 15%
+
+(1) See the federal tax rates page for information on the enhanced federal personal amount, which increases the marginal tax rates for taxable incomes in the second highest federal tax bracket. The marginal tax rates in blue above have been adjusted to reflect these changes.
+
+(2) An additional $3,000 personal amount for 2018 to 2024, which is reduced at the rate of 6% of taxable income in excess of $25,000, is reflected in the purple marginal tax rates above. It is reduced to zero at taxable income of $75,000. This increases the marginal tax rates for taxable incomes over $25,000 and under $75,000. The regular personal amount of $8,481 does not affect marginal tax rates for taxable income over $8,481, because it is not reduced as taxable income increases.
+
+Copyright © 2002 Boat Harbour Investments Ltd.
+
+Revised: June 27, 2026
+
+Revised: August 27, 2026
+
+© 2002- Boat Harbour Investments Ltd. All rights reserved.
+
+See Reproduction of information from TaxTips.ca
+
+Privacy Policy | Contact
+
+Facebook | Twitter | LinkedIn
+
+The authors of TaxTips.ca strive, but cannot guarantee, to provide information which is current and accurate. Individual circumstances have a significant effect on how tax and financial information can be used. Due to this, and to the nature of the information, it should not be relied upon for decision making without professional advice.
+
+TaxTips.ca provides links to other web sites. We cannot guarantee the accuracy of the information provided on linked sites.

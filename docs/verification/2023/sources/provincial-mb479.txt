@@ -1,0 +1,303 @@
+Title: Manitoba Credits
+URL: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5007-tc/5007-tc-23e.pdf
+Fetched: 2026-11-02
+SHA-256 of the original: 04234618b7517ff904518d1dd806c6528e3598a70390dd5df101fac3383ec17f
+Publication date modified: 2023-12-08
+PDF pages: all 5
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 1 of 5 ---
+
+Form MB479
+2023
+Protected B when completed
+Manitoba Credits
+You can claim these refundable tax credits even if you do not have to pay any tax. If it is more than the taxes you have to pay,
+you may get a refund for the difference.
+Complete the calculations that apply to you and attach a copy of this form to your return.
+For more information about these credits, go to canada.ca/mb-tax-info.
+Family income Column 1
+You
+Net income amount from line 23600 of the return
+Total of the universal child care benefit (UCCB) repayment (line 21300
+of the return) and the registered disability savings plan (RDSP) income
+repayment (included on line 23200 of the return) +
+Line 1 plus line 2 =
+Total of the UCCB income (line 11700 of the return) and RDSP income
+(line 12500 of the return) –
+Line 3 minus line 4 (if negative, enter "0") =
+Column 2
+Your spouse or
+common-law
+partner
++
+=
+–
+=
+1
+2
+3
+4
+5
+6Family incomeAdd the amounts from line 5 of columns 1 and 2.
+60890If you and your spouse or common-law partner occupied separate
+principal residences for medical reasons at the end of the year,
+do not complete lines 1 to 5 of column 2.
+Enter their address on line 60890.
+Personal tax credit
+7Basic credit
+8Age credit for self (if you were born in 1958 or earlier) Claim $113 +
+9Basic credit for spouse or common-law partner Claim $195
+10
+Age credit for spouse or common-law partner
+(if they were born in 1958 or earlier) Claim $113 +
+11Disability credit for spouse or common-law partner Claim $113 +
+60900 12Add lines 9 to 11. =
+Ż +
+13Credit for an eligible dependant claimed on line 58160 of your Form MB428 Claim $195 +
+14
+Disability credit for self or for a dependant other than your spouse or
+common-law partner
+60950Number of disability claims × $113 = +
+15
+Credit for disabled dependants born in 2005 or earlier
+60970Number of disabled dependants × $62 = +
+16
+Credit for dependent children born in 2005 or later
+60999Number of dependent children × $26 = +
+61050 17Total creditsAdd lines 7, 8, and 12 to 16. =
+18Amount from line 6 above × 1% = –
+19Personal tax credit
+Line 17 minus line 18 (if negative, enter "0")
+Enter this amount on line 73. =
+If you are not claiming the education property tax credit, renters tax credit, seniors school tax rebate, or school tax
+credit for homeowners, enter "0" on line 72 and continue at line 73. Otherwise, continue with the next section.
+5007-TC E (23) (Ce formulaire est disponible en français.) Page 1 of 5
+195.00
+
+--- PDF page 2 of 5 ---
+
+Protected B when completed
+Education property tax credit
+If you have a spouse or common-law partner, only one of you can claim this credit for a principal residence for the same year.
+Declaration for the education property tax credit (if you need more space, attach an additional page)
+By signing my return, I declare the following information about my principal residence(s) in Manitoba during 2023:
+Column A
+Address
+Column B
+Number
+of days at
+address (1)
+Column C
+Net school
+taxes paid
+Column D
+Name of any individual(s)
+who shared accommodation
+with you (2)
+Column E
+Municipality payment
+was made to
+Column F
+Roll number
+(1) Number of days in the year that you qualified to claim the credit for this property
+(2) Other than your spouse or common-law partner and/or dependent children
+61120 20Net school taxes paid (total of column C above) +
+61140 21
+Manitoba education property tax credit advance shown
+on your property tax statement (if not received, enter "0") +
+61160 22Line 20 plus line 21 =
+23Applicable percentage ×
+24Line 22 multiplied by the percentage from line 23 =
+Complete lines 25 to 27 only if you (or your spouse or common-law partner) were 65 years of age
+or older at the end of the year. If both of you were under 65 years of age at the end of the year,
+enter $350 on line 28 and continue on line 29.
+25Basic credit for individuals 65 years of age or older
+26Amount from line 6 of the previous page × 0.5% = –
+27Line 25 minus line 26 =
+28
+If you (or your spouse or common-law partner) were 65 years of age or older at the end of the
+year, enter $350 or the amount from line 27, whichever is more. If both of you were under
+65 years of age at the end of the year, enter $350.
+61163 29Number of days at address (total of column B above) ÷ 365 = ×
+30Line 28 multiplied by line 29 =
+31Enter whichever is less: amount from line 24 or line 30.
+32Amount of Manitoba education property tax credit advance received from line 21 –
+33Education property tax creditLine 31 minus line 32 (if negative, enter "0") =
+Renters tax credit
+Only one person can claim this credit for a given residence for a given month.
+A person cannot claim this credit for any month for a residence they shared with the owner of the residence.
+Declaration for the renters tax credit (if you need more space, attach an additional page)
+By signing my return, I declare the following information about my rental in Manitoba during 2023:
+Column A
+Rental address
+Column B
+Rent paid at
+address
+Column C
+Number
+of months
+(3)
+Column D
+Name of any individual(s)
+who shared accommodation
+with you (4)
+Column E
+Name of landlord
+payment was made to
+(3) You must qualify and have resided at the address for more than half of the days of the month being claimed
+(4) Other than your spouse or common-law partner and/or dependent children
+5007-TC E (23) Page 2 of 5
+50.0%
+550.00
+
+--- PDF page 3 of 5 ---
+
+Protected B when completed
+Renters tax credit (continued)
+34Amount from line 33 of the previous page
+61165 35Rent paid (total of column B from the second table on the previous page) •
+If you (or your spouse or common-law partner) were 65 years of age or older at the end of the
+year, complete lines 36 to 40. If both of you were under 65 years of age at the end of the year,
+enter "0" on line 40 and continue at line 41.
+36Base amount
+37Amount from line 6 × 0.75% = (maximum $300) –
+38Line 36 minus line 37 =
+39Number of months in the year ÷
+40Line 38 divided by line 39 =
+41Enter whichever is more: amount from line 40 or $43.75.
+61167 42
+Number of months
+(total of column C from the second table on the previous page) ×
+43Line 41 multiplied by line 42 =
+44Renters tax creditEnter whichever is less: amount from line 35 or line 43. +
+45Line 34 plus line 44 =
+Seniors school tax rebate
+Complete lines 46 to 56 if all of the following conditions are met:
+• You (or your spouse or common-law partner) were a homeowner
+• You (or your spouse or common-law partner) were 65 years of age or older at the end of the year
+• Your family income (line 6) is less than $63,500
+Otherwise, enter "0" on line 56 and continue at line 57.
+Note: The person who claims the education property tax credit (line 33) must also be the person
+who claims the seniors school tax rebate. If you have a spouse or common-law partner, only
+one of you can claim this rebate for a principal residence for the same year.
+61170 46
+Gross school taxes assessed in Manitoba for 2023 that apply to your
+principal residence. Include the community revitalization levy amounts in
+lieu of school taxes from your municipal property tax statement, if any.
+47Applicable percentage ×
+48Line 46 multiplied by the percentage from line 47 =
+49Amount from line 31 of the previous page –
+50Line 48 minus line 49 (if negative, enter "0") (maximum $235) =
+51Amount from line 6
+52Base amount –
+53Line 51 minus line 52 (if negative, enter "0") =
+54Applicable percentage ×
+55Line 53 multiplied by the percentage from line 54 =
+Ż –
+56Seniors school tax rebate
+Line 50 minus line 55
+(if negative, enter "0") =Ż +
+57Line 45 plus line 56 =
+5007-TC E (23) Page 3 of 5
+825.00
+12
+50.0%
+40,000.00
+1.0%
+
+--- PDF page 4 of 5 ---
+
+Protected B when completed
+58Amount from line 57 of the previous page
+School tax credit for homeowners
+Complete lines 59 to 71 if all of the following conditions are met:
+• You (or your spouse or common-law partner) were a homeowner
+• You were 55 years of age or older at the end of the year
+• Your family income (line 6) is less than $23,750
+Otherwise, enter "0" on line 71 and continue on line 72.
+Notes: The person who claims the education property tax credit (line 33) must also be the person
+who claims the school tax credit for homeowners.
+If you were a tenant, you may qualify for a credit. For more information, go
+to canada.ca/mb-tax-info and read "School tax credit for homeowners" under
+"Form MB479-Manitoba credits".
+59
+If the amount on line 6 is $15,000 or less, enter $87.50 on line 65 and
+continue at line 66. If the amount on line 6 is more than $15,000 but
+less than $23,750, continue at line 60.
+60Amount from line 6
+61Base amount –
+62Line 60 minus line 61 =
+63Applicable percentage ×
+64Line 62 multiplied by the percentage from line 63 =
+Ż –
+61200 65Line 59 minus line 64 =
+66Amount from line 24
+67Amount from line 31 –
+68Line 66 minus line 67 (if negative, enter "0") =
+69Enter your seniors school tax rebate from line 56. –
+70Line 68 minus line 69 (if negative, enter "0") =
+Ż
+61240 71School tax credit for homeowners
+Enter whichever is less:
+amount from line 65 or line 70. +
+72Line 58 plus line 71 =
+73Enter your personal tax credit from line 19. +
+74Line 72 plus line 73 =
+Employment and Income Assistance (EIA)
+If you (or your spouse or common-law partner) did not receive EIA from Manitoba in 2023, do not
+complete line 75. Instead, enter the amount from line 74 on line 76 and continue at line 77.
+If you (or your spouse or common-law partner) did receive EIA from Manitoba in 2023, enter
+the number from box 14 of your (or your spouse's or common-law partner's) Form T5007,
+Statement of Benefits (even if it is 0.00). If you and your spouse or common-law partner both
+received EIA from Manitoba in 2023, enter the number shown in box 14 of either your T5007 slip
+or theirs, whichever is less. 61255 75× •
+76
+If you entered a number on line 75, multiply line 74 by line 75.
+Otherwise, enter the amount from line 74. =
+5007-TC E (23) Page 4 of 5
+87.50
+15,000.00
+1.0%
+
+--- PDF page 5 of 5 ---
+
+Protected B when completed
+Other tax credits
+77Amount from line 76 of the previous page
+61260 78Primary caregiver tax credit + •
+79Line 77 plus line 78 =
+80
+Fertility treatment tax credit:
+61268Eligible medical expenses for fertility treatments × 40% = (maximum $8,000) +
+81Line 79 plus line 80 =
+61310 82Paid work experience tax credit + •
+83Line 81 plus line 82 =
+61340 84Enter your unused odour-control tax credit from your 2022 notice of assessment or reassessment. + •
+85Line 83 plus line 84 =
+61380 86Green energy equipment tax credit (purchaser) •
+61390 87Green energy equipment tax credit (manufacturer) + •
+88Line 86 plus line 87 =
+Ż +
+89Line 85 plus line 88 =
+61430 90Enter your book publishing tax credit from Form T1299. + •
+91Line 89 plus line 90 =
+61480 92Cultural industries printing tax credit + •
+93Line 91 plus line 92 =
+61484 94
+Enter your Manitoba community enterprise development tax credit
+from line 4 of Form T1256. (maximum $27,000) + •
+95Line 93 plus line 94 =
+61490 96
+Enter your Manitoba employee share purchase tax credit
+from line 6 of Form T1256-2. (maximum $27,000) + •
+97Line 95 plus line 96 =
+98
+Teaching expense tax credit:
+61495Eligible teaching supplies expenses (maximum $1,000) × 15% = +
+99Manitoba credits
+Line 97 plus line 98
+Enter this amount on line 47900 of your return. =
+See the privacy notice on your return.
+5007-TC E (23) Page 5 of 5

@@ -1,0 +1,50 @@
+Title: Update on the Canada Revenue Agency's administration of the proposed capital gains taxation changes
+URL: https://www.canada.ca/en/revenue-agency/news/newsroom/tax-tips/tax-tips-2025/update-cra-administration-proposed-capital-gains-taxation-changes.html
+Fetched: 2026-11-02
+SHA-256 of the original: 3cb1eb9781abef1a6812ef8cf12e8a77c9b7b334a108d8d72066f199af14a71e
+Publication date modified: 2025-01-31
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+# Update on the Canada Revenue Agency's administration of the proposed capital gains taxation changes
+
+January 31, 2025
+
+Ottawa, Ontario
+
+Canada Revenue Agency
+
+The Department of Finance announced today that it will introduce legislation in Parliament in due course, related to the capital gains inclusion rate change with a new effective date of January 1, 2026. The announcement confirms the government’s intention that, effective for dispositions that occur on or after January 1, 2026, the inclusion rate will increase from one-half to two-thirds on capital gains realized in excess of $250,000 annually for individuals and on all capital gains realized by corporations and most types of trusts.
+
+As a result, the Canada Revenue Agency (CRA) has reverted to administering the currently enacted capital gains inclusion rate of one-half. This means that all capital gains realized before January 1, 2026 will be subject to the currently enacted inclusion rate of one-half, unless an exemption applies.
+
+The announcement also confirmed that the government intends to maintain the existing coming into force date of the proposed increase to the Lifetime Capital Gains Exemption (LCGE) limit to $1.25 million of eligible capital gains included in the previous Notice of Ways and Means Motion (NWMM) tabled in Parliament on September 23, 2024. This measure remains unchanged, and the CRA will continue to administer the proposed change, which applies to dispositions that occur on or after June 25, 2024. Indexation of the LCGE would resume in 2026.
+
+## Individuals and Trusts – Proposed capital gains rule changes effective January 1, 2026
+
+With the proposed change to the effective date, the CRA will issue forms that have been reverted to the currently enacted rate in the coming weeks.
+
+The CRA will grant relief in respect of late-filing penalties and arrears interest until June 2, 2025, for impacted T1 Individual filers and until May 1, 2025, for impacted T3 Trust filers to provide additional time for taxpayers reporting capital dispositions to meet their tax filing obligations.
+
+Now that the government has communicated its intentions regarding the proposed capital gains inclusion rate, we are working as quickly as we can to adjust our systems and forms so that taxpayers who need to report capital dispositions can do so as early as possible.
+
+This relief does not include any Special Elections and Returns forms such as the T2057, Election on Disposition of Property by a Taxpayer to a Taxable Canadian Corporation, T2058, Election on Disposition of Property by a Partnership to a Taxable Canadian Corporation, and T2059, Election on Disposition of Property by a Taxpayer to a Canadian Partnership.
+
+## Corporations – Proposed capital gains rule changes effective January 1, 2026
+
+As the capital gains rate change is now proposed to be effective January 1, 2026, corporations can continue to use existing forms and tax software to file using the one-half inclusion rate until further notice.
+
+For the small number of corporations that followed CRA’s guidance to file on the basis of the NWMM tabled in Parliament on September 23, 2024, the CRA will coordinate corrective reassessments to reverse the application of the two-thirds inclusion rate.
+
+## If you need additional information
+
+The CRA offers a variety of tools and services to help taxpayers understand and meet their tax obligations. Whether it is through the Liaison Officer service or the resources for small and medium businesses page, Personal income tax information, and Trust income tax information, we are here to help.
+
+## Contacts
+
+Media Relations
+Canada Revenue Agency
+613-948-8366
+cra-arc.media@cra-arc.gc.ca
+
+- 30 -

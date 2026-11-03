@@ -1,0 +1,83 @@
+Title: Canada Child Benefit
+URL: https://www.canada.ca/content/dam/cra-arc/formspubs/pub/t4114/t4114-25e.pdf
+Fetched: 2026-11-02
+SHA-256 of the original: 5db4ff195008a9cab6252ddc6c8d9773eb2707236fbbe59c54a18fdc13b615d4
+Publication date modified: 2025-07-07
+PDF pages: 12 of 15
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 12 of 15 ---
+
+canada.ca/taxes 23
+Families who have earned income of more than $3,955 and who have children
+under 18 years of age, may also get the territorial workers’ supplement of up to:
+■ $24.16 per month for 1 child
+■ $30.75 per month for 2 or more children
+If your adjusted family net income is above $22,065, you may get part of
+the benefit.
+These amounts are combined with the CCB into a single monthly payment.
+This program is fully funded by the Government of Nunavut.
+Ontario child benefit
+This is a non-taxable amount paid to help low- and modest-income families
+provide for their children. It is combined with the CCB into a single monthly
+payment.
+You may be entitled to a benefit of up to $143.91 per month for each child under
+18 years of age. If your adjusted family net income is over $26,364, you may get
+part of the benefit.
+This program is fully funded by the Province of Ontario. For more information,
+visit Ontario Ministry of Children and Youth Services at ontario.ca/childbenefit.
+Prince Edward Island child benefit
+This benefit is a non-taxable amount paid to help low- to medium-income
+families with the cost of raising children. It is combined with the CCB into a
+single monthly payment.
+You may be eligible to receive:
+■ $30 per month for each child under 18 years of age if your adjusted family
+net income is less than $45,000
+■ $20 per month for each child under 18 years of age if your adjusted family
+net income is between $45,000 and $80,000
+If your adjusted family net income is greater than $80,000, the amount is
+reduced to zero.
+This program is fully funded by the province of Prince Edward Island.
+Yukon child benefit
+This benefit is a non-taxable amount paid monthly to help low- and
+modest-income families with the cost of raising children under 18 years of age.
+This amount is combined with the CCB into a single monthly payment.
+You may be entitled to a benefit of $78.08 per month for each child. If your
+adjusted family net income is above $35,000, you may get part of the benefit.
+This program is funded by the Government of Yukon.
+canada.ca/taxes24
+Related program not administered by the CRA
+Quebec family allowance
+If you live in Quebec, you must file your application for the family allowance
+and make any changes to your family situation directly with Retraite Québec.
+However, you do not have to file an application for a child born in Quebec
+because Retraite Québec is automatically notified by the Registrar of Civil Status.
+For more information, visit rrq.gouv.qc.ca/en/enfants.
+When you should contact the CRA
+You should tell the CRA immediately about certain changes, as well as the date
+they happened or will happen. This section explains what the changes are and
+how you should tell the CRA about them.
+Note
+For confidentiality reasons, the CRA can only discuss a file with a benefit
+recipient, unless they give the CRA permission to speak to someone else.
+To give someone else permission, you can use “Authorize my
+representative” in My Account at canada.ca/cra-sign-in-services or go
+to canada.ca/taxes-representative-authorization.
+If the number of children in your care has changed
+The CRA may need to recalculate your benefit payments based on new
+information, when one of the following situations applies:
+■ your child is born, a child starts to live with you, or you share custody of a
+child (see “How to apply” on page 11)
+■ a child for whom you are getting benefits no longer lives with you on a
+full-time basis, stops living with you, or has died. You can tell the CRA by
+using one of the following methods:
+■ My Account at canada.ca/cra-sign-in-services
+■ calling 1-800-387-1193
+If an eligible child has died, you must tell the CRA as soon as possible. If you
+were the eligible CCB recipient for a child who passed away on or after
+January 1, 2025, you may remain eligible to receive CCB payments for
+6 additional months, or until the date the child would have turned 18. The
+6-month extension also applies to the child disability benefit, as well as the
+child benefit programs in Alberta, British Columbia, New Brunswick,
+Nova Scotia, Nunavut, Ontario, Prince Edward Island, and Yukon.
