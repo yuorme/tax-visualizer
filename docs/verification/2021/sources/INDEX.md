@@ -4,12 +4,12 @@ T4114-21 was retrieved from the official Publications Canada archive using its c
 The original CRA link is retired. Vancouver and Yukon Hansard caches explicitly identify manual web extracts;
 Iqaluit appends a manual transcription of its scanned schedule to the hashed official PDF extract.
 Only recurring modeled programs are included; extraordinary cost-of-living and COVID payments are excluded.
-Carbon measures remain outside this milestone (issue #29).
+Carbon measures are handled separately by issue #29.
 
-The provincial comparison against 2022 reports 144 changed values, three changes over 15%, 95 unchanged
-amounts, four additions, two removals and two replacements. The large changes are the 2022 NL bracket
+The provincial comparison against 2022 flags the 2022 NL bracket
 expansion, Ontario's LIFT taper falling from 10% to 5%, and PEI's non-eligible dividend credit falling from
-1.96% to 1.30%; the adjacent years' official forms confirm each change. Program changes reflect BC's later
+1.96% to 1.30%. NL's eligible dividend credit also rises from 5.4% to 6.3%; the adjacent years' official forms
+confirm each change. Program changes reflect BC's later
 temporary enhancement, Manitoba's 2021 rent-share rule and Nova Scotia's unequal 2021 child amounts.
 Calgary's 2021 property estimate uses the annual report's rounded mill rates; the 2022 source is more precise.
 
