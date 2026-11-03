@@ -1,0 +1,92 @@
+Title: DEPARTMENT OF FINANCE
+URL: https://www.gov.nl.ca/fin/files/Gasoline-and-Carbon-Products-Information-Bulletin-RAA-CARBON-002-November-7-2020.pdf
+Fetched: 2026-11-02
+SHA-256 of the original: 97ffd545ecda1f8426d0208819f78cb6c87a1e022422eb5933cc0859d8341e7e
+Publication date modified: 2020-11-05
+PDF pages: all 2
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 1 of 2 ---
+
+DEPARTMENT OF FINANCE
+TAX ADMINISTRATION DIVISION
+Bulletin No. RAA-CARBON-002
+Issue Date: November 6, 2020
+INFORMATION BULLETIN
+GASOLINE TAX AND CARBON TAX
+Gasoline and Carbon Product Tax Rates and Inventory Return
+CARBON TAX DUE ON RETAILER INVENTORY AS AT NOVEMBER 7, 2020:
+Effective 12:01 a.m., November 7, 2020, carbon tax imposed under Part III.1 of the Revenue
+Administration Act will increase as follows:Carbon Product Unit Old Carbon Tax Rates
+Effective Jan. 1, 2019 to
+Nov. 6, 2020
+New Carbon Tax Rates
+Effective
+Nov. 7, 2020
+Gasoline $ per litre 0.0442$ 0.0663$
+Light Fuel Oil (Diesel) $ per litre 0.0537 0.0805
+Propane $ per litre 0.0310 0.0464
+Butane $ per litre 0.0356 0.0534
+Ethane $ per litre 0.0204 0.0306
+Gas Liquids $ per litre 0.0333 0.0499
+Heavy Fuel Oil $ per litre 0.0637 0.0956
+Kerosene $ per litre 0.0516 0.0775
+Methanol $ per litre 0.0220 0.0329
+Naphtha $ per litre 0.0451 0.0676
+Petroleum Coke $ per litre 0.0767 0.1151
+Pentanes Plus $ per litre 0.0356 0.0534
+Coke Oven Gas $ per cubic metre 0.0140 0.0210
+Marketable Natural Gas $ per cubic metre 0.0391 0.0587
+Non-marketable Natural Gas $ per cubic metre 0.0517 0.0776
+Still Gas $ per cubic metre 0.0540 0.0810
+Coke $ per tonne 63.59 95.39
+High Heat Value Coal $ per tonne 45.03 67.55
+Low Heat Value Coal $ per tonne 35.45 53.17
+Combustible Waste $ per tonne 39.95 59.92
+
+--- PDF page 2 of 2 ---
+
+2
+Gasoline and carbon product retailers must take and record their existing inventory of carbon
+products as of 12:01 am, November 7, 2020. The Gasoline and Carbon Products Inventory
+Return must be completed and submitted with the additional tax payable resulting from the new
+carbon tax rates no later than December 21, 2020. Retailers must file a $Nil return if there is no
+carbon tax due.
+GASOLINE TAX CREDIT ON RETAILER INVENTORY AS AT NOVEMBER 7, 2020:
+Effective 12:01 a.m., November 7, 2020, the provincial gasoline tax per litre imposed on gasoline
+under Part III of the Revenue Administration Act will decrease as follows:
+Product
+Old Gasoline Tax Rate
+in effect until
+November 6, 2020
+New Gasoline Tax Rate
+as of
+November 7, 2020
+Gasoline 16.5 cents 14.5 cents
+The rate of gasoline tax on other products is unchanged, as follows:
+Product Current Gasoline Tax Rate
+Diesel 16.5 cents
+Propane 7.0 cents
+Aviation Fuel 2.5 cents
+Marine Fuel 3.5 cents
+A gasoline tax credit amount for gasoline will result since a higher gasoline tax rate will have been
+paid by retailers on inventory held at November 7, 2020, than the gasoline tax rates the retailers
+will charge their end consumers on sales after November 6, 2020. The gasoline tax credit amounts
+should be reported on the Gasoline and Carbon Products Inventory Return. The calculated credit
+amount should be netted against the carbon tax amounts due, reducing the overall balance due.
+Failure to submit the inventory return by December 21, 2020 will result in the imposition of
+a $100 late filing penalty and may result in the assessment of a penalty equal to the tax that
+should have been submitted.
+Further information regarding this change may be obtained by contacting:
+Department of Finance
+Tax Administration Division
+P.O. Box 8720
+St. John’s, NL
+A1B 4K1
+Phone: (709) 729-6297
+Toll Free: 1-877-729-6376
+Fax: (709) 729-2856
+Email: taxadmin@gov.nl.ca
+Disclaimer: This bulletin is prepared as a guideline and for interpretation of the statutes.
+Where a conflict between the bulletin and statutes arise, the statutes will take precedence.

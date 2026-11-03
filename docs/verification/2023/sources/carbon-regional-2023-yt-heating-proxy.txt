@@ -1,0 +1,12 @@
+Title: Yukon Financial Advisory Panel final report,2017 — heating-use proxy
+URL: https://yukon.ca/sites/yukon.ca/files/fin/fin-yukon-financial-advisory-panel-final-report-2017.pdf
+Read:2026-11-02
+Retrieval: Manual factual paraphrase from official-hosted PDF, page52 (printed51), through web reader.
+Direct Yukon downloads returnHTTP403. No original binary hash available.
+
+The report estimates typical heating-oil home use at1500–2000litres per year.
+Approximately two-thirds of Yukon homes use combustible heating, primarily oil.
+Its adjacent narrative says most heating is electric, conflicting with that two-thirds figure;
+do not treat the fuel-share statement as a precise modern statistical estimate.
+Midpoint1750L is a derived illustrative oil-heated-home proxy, not an observed all-household mean.
+This2017estimate predates the2019–2025modeledyears and cannot describe household variation.

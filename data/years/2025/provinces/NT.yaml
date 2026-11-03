@@ -28,3 +28,54 @@ sources:
   - {label: "CRA, Form NT428 for 2025 (basic and spouse amounts)", url: "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5012-c/5012-c-25e.pdf"}
   - {label: "CRA, 2025 tax rates and income brackets", url: "https://www.canada.ca/en/revenue-agency/services/tax/individuals/tax-rates-brackets/last-year.html"}
   - {label: "CRA, T4114 (NWT child benefit, July 2025 to June 2026)", url: "https://www.canada.ca/content/dam/cra-arc/formspubs/pub/t4114/t4114-25e.pdf"}
+  - label: "Carbon history: Statistics Canada, Canadian Vehicle Survey: Annual 2009 (53-223-X)"
+    url: https://www150.statcan.gc.ca/n1/pub/53-223-x/53-223-x2009000-eng.pdf
+  - label: "Carbon history: NWT CARBON TAX REPORT"
+    url: https://www.fin.gov.nt.ca/sites/fin/files/resources/nwt_carbon_tax_report_2024-2025.pdf
+  - label: "Carbon history: Finance"
+    url: https://www.fin.gov.nt.ca/en/services/licences-taxes-and-fees/residents-businesses-and-governments
+  - label: "Carbon history: Government of Northwest Territories"
+    url: https://www.gov.nt.ca/en/newsroom/first-2020-cost-living-offset-payments-be-made-april-30th-2020
+  - label: "Carbon history: NWT CARBON TAX"
+    url: https://www.fin.gov.nt.ca/sites/fin/files/resources/nwt_carbon_tax-2023_changes.pdf
+  - label: "Carbon history: Government of Northwest Territories"
+    url: https://www.gov.nt.ca/en/newsroom/gnwt-ending-nwt-carbon-tax-most-users-april-1
+  - label: "Carbon history: \x01\x01\x01"
+    url: https://www.iti.gov.nt.ca/fr/file/1216
+
+# Historical driving defaults use a common survey baseline; see cited sources.
+driving:
+  distance: 11000
+  estimated: true
+
+# Calendar-year carbon charges and cash rebates; heating is an explicit modeled estimate.
+carbon:
+  name: Carbon pricing
+  heating:
+    amount: 0
+    estimated: true
+    method: Estimated 2406 L/year oil proxy from a 2012 Deline residential-building feasibility assumption, reused for the territory; not measured Yellowknife household use. Calendar-day diesel heating rebates apply.
+  rebates:
+    - name: Cost of Living Offset
+      program: carbon-rebate-payments
+      params:
+        payments:
+          - date: 2025-01-01
+            adult: 110.25
+            spouse: 110.25
+            child: 126.25
+            firstChild: 126.25
+            threshold: [0, 0]
+            rate: 0
+          - date: 2025-04-01
+            adult: 110.25
+            spouse: 110.25
+            child: 126.25
+            firstChild: 126.25
+            threshold: [0, 0]
+            rate: 0
+  gasoline:
+    - from: 2025-01-01
+      rate: 0.1761
+    - from: 2025-04-01
+      rate: 0

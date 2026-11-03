@@ -1,0 +1,55 @@
+Title: Newfoundland and Labrador
+URL: https://www.assembly.nl.ca/business/electronicdocuments/PUBAnnualReport2023-24.pdf
+Fetched: 2026-11-02
+SHA-256 of the original: 0c2f966999571d093fb1bc053015b6f1cacc3f8bd8a5df92220e0cc8f438bae3
+Publication date modified: 2024-08-30
+PDF pages: 16 of 39
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 16 of 39 ---
+
+16
+Changes to Taxation Applicable to Regulated Petroleum Products
+Effective July 1, 2023 the Government of Canada mandated provinces to update carbon tax rates and
+remove exemptions to align with federally proposed changes for 2023. As a result, Federal Fuel Charge
+rates, rather than Provincial carbon taxation rates, were applied to all fuels sold in the province of
+Newfoundland and Labrador.12 The table below summarizes the changes to taxation applicable to the
+Board’s maximum pricing:
+Table 5
+Summary of Changes to Carbon Taxation
+Applicable to Regulated Petroleum Products (cents per litre)
+Fuel
+Product
+Provincial Carbon Tax Rate
+Effective
+May 1, 2022 to June 30,
+2023
+Federal Fuel Charge Rate
+Effective
+July 1, 2023 to
+November 8, 2023.
+Federal Fuel Charge Rate
+Effective
+July 1, 2023 to March 31,
+2024
+Gasoline 11.05 14.31 14.31
+Diesel 13.41 17.38 17.38
+Furnace Oil n/a 17.38
+Stove Oil n/a 17.38
+Propane n/a 10.06 10.06
+The provincial fuel tax rates for gasoline and diesel motor fuels introduced on June 2, 2022 were
+extended to March 31, 2025.
+Carbon Price Adjustment Introduction and Updates
+Pursuant to the federal Clean Fuel Regulations, the Government of Canada directed carbon intensity
+reduction requirements in respect to gasoline and diesel motor fuels produced or imported into
+Canada effective July 1, 2023. The carbon intensity reduction requirements do not apply to heating
+fuels.
+On June 23, 2023 the Petroleum Products Regulations in Newfoundland and Labrador were
+amended to require that the Board include a Carbon Price Adjustment in maximum prices for motor
+fuels and heating fuels to mitigate the costs incurred for wholesalers and retailers associated with the
+federal Clean Fuel Regulations. The Board engaged Grant Thornton to review and report on the
+potential impact of the federal Clean Fuel Regulations on the Board’s maximum prices. The report
+prepared by Grant Thornton can be found here.
+12 Department of Finance Bulletin No. RAA-CARBON-004 provides additional information in relation to the tax changes
+implemented.

@@ -28,3 +28,43 @@ sources:
   - {label: "Saskatchewan, 2017 Hansard: SLITC amounts and threshold, frozen through 2020", url: https://docs.legassembly.sk.ca/legdocs/Legislative%20Assembly/Hansard/28L1S/170424Debates.pdf}
   - {label: "Meeting Lake, May 2019 minutes confirm province-wide residential education mill 4.12", url: https://rmofmeetinglake.ca/pdfs/Minutes/2019/May-2019.pdf}
   - {label: "Saskatoon, 2021 reassessment guide: historical 2020 residential 80% assessment portion", url: https://www.saskatoon.ca/sites/default/files/documents/asset-financial-management/assessment-taxation/cos_guide_to_2021_reassessment_notice_final.pdf}
+  - label: "Carbon history: Statistics Canada, Canadian Vehicle Survey: Annual 2009 (53-223-X)"
+    url: https://www150.statcan.gc.ca/n1/pub/53-223-x/53-223-x2009000-eng.pdf
+  - label: "Carbon history: Statistics Canada 25-10-0060-01 household energy consumption, selected CSV rows"
+    url: https://www150.statcan.gc.ca/n1/tbl/csv/25100060-eng.zip
+  - label: "Carbon history: Natural Gas: A Primer"
+    url: https://natural-resources.canada.ca/energy-sources/fossil-fuels/natural-gas-primer
+  - label: "Carbon history: Fuel charge rates"
+    url: https://www.canada.ca/en/revenue-agency/services/forms-publications/publications/fcrates/fuel-charge-rates.html
+  - label: "Carbon history: GREENHOUSE"
+    url: https://www.canada.ca/content/dam/eccc/documents/pdf/climate-change/pricing-pollution/greenhouse-gas-pollution-pricing-act-annual-report-2019.pdf
+
+# Historical driving defaults use a common survey baseline; see cited sources.
+driving:
+  distance: 15300
+  estimated: true
+
+# Calendar-year carbon charges and cash rebates; heating is an explicit modeled estimate.
+carbon:
+  name: Federal carbon pricing
+  gasoline:
+    - from: 2019-01-01
+      rate: 0
+    - from: 2019-04-01
+      rate: 0.0442
+  heating:
+    amount: 60.19
+    estimated: true
+    method: 2021 Statistics Canada household natural gas and heating oil use averaged across all households; 76.0915 GJ gas and 0.0000 GJ oil, held constant across years; calendar-day rates and applicable heating exemptions. See carbon heating verification.
+  rebates:
+    - program: carbon-rebate-payments
+      name: Climate Action Incentive / Canada Carbon Rebate
+      params:
+        payments:
+          - date: 2019-04-01
+            adult: 305
+            spouse: 152
+            child: 76
+            firstChild: 152
+            threshold: [0, 0]
+            rate: 0

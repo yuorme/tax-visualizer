@@ -1,8 +1,9 @@
 # Federal parameters for the 2025 tax year.
 # Benefit amounts (CCB, GST/HST credit) are for the July 2025 – June 2026 payment year, which is based on 2024
 # income; the calculator applies them to current-year income.
-# Left out on purpose: the fuel charge and Canada Carbon Rebate (ended April 2025), the one-time GST/HST top-up paid
-# June 5, 2026, and the top-up tax credit on line 34990 (zero for every household the model can represent).
+# Calendar carbon charges and January/final April rebates are recorded in each province.
+# Excluded: the one-time GST/HST top-up paid June 5, 2026, and the top-up tax credit on line 34990
+# (zero for every household the model can represent).
 year: 2025
 
 # [upper limit of bracket, rate]; .inf = no upper limit
@@ -115,3 +116,12 @@ sources:
   - {label: "CRA, 2025 Schedule 6 Canada Workers Benefit (QC)", url: "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5005-s6/5005-s6-25e.pdf"}
   - {label: "Canada–United States Tax Convention, Article X", url: "https://www.canada.ca/en/department-finance/programs/tax-policy/tax-treaties/country/united-states-america-convention-consolidated-1980-1983-1984-1995-1997-2007.html"}
   - {label: "Income Tax Act, s. 20(11)", url: "https://laws-lois.justice.gc.ca/eng/acts/I-3.3/section-20.html"}
+  - label: "Carbon history: Natural Resources Canada, Energy Use Data Handbook: Passenger Transportation Explanatory Variables"
+    url: https://oee.nrcan.gc.ca/corporate/statistics/neud/dpa/showTable.cfm?type=HB&sector=tran&juris=00&rn=7&page=0
+
+# Historical driving defaults use a common survey baseline; see cited sources.
+driving:
+  efficiency: 9
+  efficiencySource: Natural Resources Canada's 2023 on-road average for gasoline cars and light trucks, weighted by how far each type is driven
+  distanceSource: 2009 Canadian Vehicle Survey
+  estimated: true

@@ -43,3 +43,62 @@ sources:
   - {label: "B.C. Income Tax Act sections 13.07/13.071: early childhood formula and October 2020 transition", url: https://www.bclaws.gov.bc.ca/civix/document/id/complete/statreg/96215_01}
   - {label: "B.C., early childhood benefit ended September 2020", url: https://www2.gov.bc.ca/gov/content/family-social-supports/affordability/early-childhood}
   - {label: "B.C., original child opportunity benefit parameters and October 2020 commencement", url: https://news.gov.bc.ca/releases/2019FIN0019-000248}
+  - label: "Carbon history: Statistics Canada, Canadian Vehicle Survey: Annual 2009 (53-223-X)"
+    url: https://www150.statcan.gc.ca/n1/pub/53-223-x/53-223-x2009000-eng.pdf
+  - label: "Carbon history: Statistics Canada 25-10-0060-01 household energy consumption, selected CSV rows"
+    url: https://www150.statcan.gc.ca/n1/tbl/csv/25100060-eng.zip
+  - label: "Carbon history: Natural Gas: A Primer"
+    url: https://natural-resources.canada.ca/energy-sources/fossil-fuels/natural-gas-primer
+  - label: "Carbon history: Climate action tax credit"
+    url: https://www2.gov.bc.ca/gov/content/taxes/income-taxes/personal/credits/climate-action
+  - label: "Carbon history: Climate Action Tax Credit Regulation"
+    url: https://www.bclaws.gov.bc.ca/civix/document/id/complete/statreg/135_2008
+  - label: "Carbon history: Past carbon tax rates"
+    url: https://www2.gov.bc.ca/gov/content/taxes/sales-taxes/motor-fuel-carbon-tax/publications/carbon-tax-rates-by-fuel-type/past-carbon-tax-rates
+
+# Historical driving defaults use a common survey baseline; see cited sources.
+driving:
+  distance: 12900
+  estimated: true
+
+# Calendar-year carbon charges and cash rebates; heating is an explicit modeled estimate.
+carbon:
+  name: BC carbon tax
+  gasoline: 0.0889
+  heating:
+    amount: 97.01
+    estimated: true
+    method: 2021 Statistics Canada household natural gas and heating oil use averaged across all households; 48.5060 GJ gas and 0.2385 GJ oil, held constant across years; calendar-day rates and applicable heating exemptions. See carbon heating verification.
+  rebates:
+    - program: carbon-rebate-payments
+      name: BC climate action tax credit
+      params:
+        payments:
+          - date: 2020-01-01
+            adult: 38.625
+            spouse: 38.625
+            child: 11.375
+            firstChild: 38.625
+            threshold: [34876, 40689]
+            rate: 0.005
+          - date: 2020-04-01
+            adult: 38.625
+            spouse: 38.625
+            child: 11.375
+            firstChild: 38.625
+            threshold: [34876, 40689]
+            rate: 0.005
+          - date: 2020-07-01
+            adult: 218
+            spouse: 218
+            child: 64
+            firstChild: 218
+            threshold: [35748, 41706]
+            rate: 0.005
+          - date: 2020-10-01
+            adult: 43.5
+            spouse: 43.5
+            child: 12.75
+            firstChild: 43.5
+            threshold: [35748, 41706]
+            rate: 0.005

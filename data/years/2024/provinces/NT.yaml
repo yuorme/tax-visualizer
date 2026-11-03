@@ -35,3 +35,68 @@ sources:
   - {label: "Yellowknife, bylaw 5088 residential municipal levy 6.60 mills", url: https://www.yellowknife.ca/sites/default/files/bylaws/343df5fc-64d6-43e6-852d-3d5cbcbd8e1b.pdf}
   - {label: "Yellowknife, bylaw 5089 residential school levy 2.96 mills", url: https://www.yellowknife.ca/sites/default/files/bylaws/aefb6738-e1b4-4b8d-b4c2-82f78692406f.pdf}
   - {label: "NWT Finance, child benefit annual amounts and exact reduction formula (July 2017 onward)", url: https://www.fin.gov.nt.ca/sites/fin/files/benefits_and_support-nwt_child_benefit-180320.pdf}
+  - label: "Carbon history: Statistics Canada, Canadian Vehicle Survey: Annual 2009 (53-223-X)"
+    url: https://www150.statcan.gc.ca/n1/pub/53-223-x/53-223-x2009000-eng.pdf
+  - label: "Carbon history: NWT CARBON TAX REPORT"
+    url: https://www.fin.gov.nt.ca/sites/fin/files/resources/nwt_carbon_tax_report_2024-2025.pdf
+  - label: "Carbon history: Finance"
+    url: https://www.fin.gov.nt.ca/en/services/licences-taxes-and-fees/residents-businesses-and-governments
+  - label: "Carbon history: Government of Northwest Territories"
+    url: https://www.gov.nt.ca/en/newsroom/first-2020-cost-living-offset-payments-be-made-april-30th-2020
+  - label: "Carbon history: NWT CARBON TAX"
+    url: https://www.fin.gov.nt.ca/sites/fin/files/resources/nwt_carbon_tax-2023_changes.pdf
+  - label: "Carbon history: Government of Northwest Territories"
+    url: https://www.gov.nt.ca/en/newsroom/gnwt-ending-nwt-carbon-tax-most-users-april-1
+  - label: "Carbon history: \x01\x01\x01"
+    url: https://www.iti.gov.nt.ca/fr/file/1216
+
+# Historical driving defaults use a common survey baseline; see cited sources.
+driving:
+  distance: 11000
+  estimated: true
+
+# Calendar-year carbon charges and cash rebates; heating is an explicit modeled estimate.
+carbon:
+  name: Carbon pricing
+  heating:
+    amount: 103.97
+    estimated: true
+    method: Estimated 2406 L/year oil proxy from a 2012 Deline residential-building feasibility assumption, reused for the territory; not measured Yellowknife household use. Calendar-day diesel heating rebates apply.
+  rebates:
+    - name: Cost of Living Offset
+      program: carbon-rebate-payments
+      params:
+        payments:
+          - date: 2024-01-01
+            adult: 110.25
+            spouse: 110.25
+            child: 123.25
+            firstChild: 123.25
+            threshold: [0, 0]
+            rate: 0
+          - date: 2024-04-01
+            adult: 110.25
+            spouse: 110.25
+            child: 123.25
+            firstChild: 123.25
+            threshold: [0, 0]
+            rate: 0
+          - date: 2024-07-01
+            adult: 110.25
+            spouse: 110.25
+            child: 126.25
+            firstChild: 126.25
+            threshold: [0, 0]
+            rate: 0
+          - date: 2024-10-01
+            adult: 110.25
+            spouse: 110.25
+            child: 126.25
+            firstChild: 126.25
+            threshold: [0, 0]
+            rate: 0
+  gasoline:
+    - from: 2024-01-01
+      rate: 0.1431
+    - from: 2024-04-01
+      rate: 0.1761

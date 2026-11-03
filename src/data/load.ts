@@ -3,9 +3,14 @@
 import fs from "node:fs";
 import path from "node:path";
 import { parse } from "yaml";
+import { cpiSchema } from "./cpi.ts";
 import { type YearData, yearSchema } from "./schema.ts";
 
 export const DATA_DIR = path.resolve(import.meta.dirname, "../../data/years");
+
+export function loadCpi() {
+  return cpiSchema.parse(parse(fs.readFileSync(path.join(DATA_DIR, "../cpi.yaml"), "utf8")));
+}
 
 export function listYears(): number[] {
   return fs

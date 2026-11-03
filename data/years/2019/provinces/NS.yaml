@@ -51,3 +51,10 @@ sources:
   - {label: "Nova Scotia regulation 280/2009: income threshold 18000/18001", url: https://novascotia.ca/just/regulations/rg2/2009/oc0909.pdf}
   - {label: "Nova Scotia original child benefit regulation: reduction formula", url: https://novascotia.ca/just/regulations/rg2/1999/RG2-1999-07-16.pdf}
   - {label: "Halifax, 2019 adopted tax-rate schedule", url: https://cdn.halifax.ca/sites/default/files/documents/city-hall/regional-council/190416bc3.pdf}
+  - label: "Carbon history: Statistics Canada, Canadian Vehicle Survey: Annual 2009 (53-223-X)"
+    url: https://www150.statcan.gc.ca/n1/pub/53-223-x/53-223-x2009000-eng.pdf
+
+# Historical driving defaults use a common survey baseline; see cited sources.
+driving:
+  distance: 17400
+  estimated: true

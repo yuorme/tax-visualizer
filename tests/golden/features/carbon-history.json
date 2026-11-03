@@ -1,0 +1,275 @@
+{
+  "source": "Independent sums of official calendar-year federal and BC payments; see docs/verification/carbon-reference.md",
+  "familyFour": {
+    "2019": {
+      "BC": 375,
+      "SK": 609,
+      "MB": 339,
+      "ON": 307,
+      "NB": 256,
+      "YT": 172,
+      "NT": 224,
+      "NU": 0,
+      "AB": 270
+    },
+    "2020": {
+      "BC": 876.5,
+      "AB": 888,
+      "SK": 809,
+      "MB": 486,
+      "ON": 448,
+      "YT": 556,
+      "NT": 560,
+      "NU": 0
+    },
+    "2021": {
+      "BC": 450,
+      "AB": 981,
+      "SK": 1000,
+      "MB": 720,
+      "ON": 600,
+      "YT": 736,
+      "NT": 784,
+      "NU": 0
+    },
+    "2022": {
+      "BC": 885,
+      "AB": 809.25,
+      "SK": 825.75,
+      "MB": 624,
+      "ON": 558.75,
+      "YT": 992,
+      "NT": 1008,
+      "NU": 0,
+      "PE": 140
+    },
+    "2023": {
+      "BC": 1516.75,
+      "AB": 1427.75,
+      "SK": 1295.25,
+      "MB": 1000,
+      "ON": 918.25,
+      "NB": 368,
+      "NL": 656,
+      "NS": 496,
+      "PE": 480,
+      "YT": 1384,
+      "NT": 1494,
+      "NU": 616
+    },
+    "2024": {
+      "BC": 950.75,
+      "AB": 1736,
+      "SK": 1468,
+      "MB": 1164,
+      "ON": 1084,
+      "NB": 754,
+      "NL": 1222,
+      "NS": 866,
+      "PE": 900,
+      "YT": 1364,
+      "NT": 1880,
+      "NU": 816
+    },
+    "2025": {
+      "BC": 504,
+      "AB": 906,
+      "SK": 788,
+      "MB": 600,
+      "ON": 582,
+      "NB": 520,
+      "NL": 596,
+      "NS": 426,
+      "PE": 440,
+      "YT": 620,
+      "NT": 946,
+      "NU": 200
+    }
+  },
+  "bc2025IncomeTests": [
+    {
+      "couple": true,
+      "kids": 2,
+      "income": 57288,
+      "expected": 504
+    },
+    {
+      "couple": true,
+      "kids": 2,
+      "income": 100000,
+      "expected": 76.88
+    },
+    {
+      "couple": true,
+      "kids": 2,
+      "income": 107688,
+      "expected": 0
+    },
+    {
+      "couple": false,
+      "kids": 2,
+      "income": 100000,
+      "expected": 13.88
+    },
+    {
+      "couple": true,
+      "kids": 1,
+      "income": 100000,
+      "expected": 13.88
+    }
+  ],
+  "costs2025": {
+    "AB": {
+      "gasoline": 43.4219178082,
+      "heating": 99.45
+    },
+    "BC": {
+      "gasoline": 43.4219178082,
+      "heating": 48
+    },
+    "SK": {
+      "gasoline": 43.4219178082,
+      "heating": 0
+    },
+    "NL": {
+      "gasoline": 43.4219178082,
+      "heating": 0
+    }
+  },
+  "regionalPayments": [
+    {
+      "year": 2019,
+      "code": "AB",
+      "couple": false,
+      "kids": 0,
+      "income": 0,
+      "expected": 150
+    },
+    {
+      "year": 2019,
+      "code": "AB",
+      "couple": true,
+      "kids": 0,
+      "income": 0,
+      "expected": 225
+    },
+    {
+      "year": 2019,
+      "code": "AB",
+      "couple": false,
+      "kids": 2,
+      "income": 0,
+      "expected": 247.5
+    },
+    {
+      "year": 2019,
+      "code": "AB",
+      "couple": true,
+      "kids": 2,
+      "income": 106000,
+      "expected": 50
+    },
+    {
+      "year": 2019,
+      "code": "AB",
+      "couple": true,
+      "kids": 2,
+      "income": 106000.01,
+      "expected": 0
+    },
+    {
+      "year": 2020,
+      "code": "NT",
+      "couple": false,
+      "kids": 0,
+      "income": 0,
+      "expected": 208
+    },
+    {
+      "year": 2021,
+      "code": "NT",
+      "couple": false,
+      "kids": 0,
+      "income": 0,
+      "expected": 104
+    },
+    {
+      "year": 2022,
+      "code": "PE",
+      "couple": false,
+      "kids": 0,
+      "income": 45000,
+      "expected": 140
+    },
+    {
+      "year": 2022,
+      "code": "PE",
+      "couple": false,
+      "kids": 0,
+      "income": 55000,
+      "expected": 115
+    },
+    {
+      "year": 2022,
+      "code": "PE",
+      "couple": true,
+      "kids": 0,
+      "income": 63000,
+      "expected": 65
+    },
+    {
+      "year": 2024,
+      "code": "NU",
+      "couple": false,
+      "kids": 0,
+      "income": 0,
+      "expected": 204
+    },
+    {
+      "year": 2025,
+      "code": "NU",
+      "couple": false,
+      "kids": 0,
+      "income": 0,
+      "expected": 50
+    }
+  ],
+  "historicalCosts": [
+    {
+      "year": 2019,
+      "code": "AB",
+      "gasoline": 27.4731506849,
+      "heating": 60.99
+    },
+    {
+      "year": 2022,
+      "code": "PE",
+      "gasoline": 94.9997260274,
+      "heating": 0
+    },
+    {
+      "year": 2023,
+      "code": "YT",
+      "gasoline": 135.0616438356,
+      "heating": 242.85
+    },
+    {
+      "year": 2023,
+      "code": "NT",
+      "gasoline": 136.6643835616,
+      "heating": 315.05
+    },
+    {
+      "year": 2023,
+      "code": "NU",
+      "gasoline": 121.4383561644,
+      "heating": 294.11
+    },
+    {
+      "year": 2024,
+      "code": "NT",
+      "gasoline": 167.8950819672,
+      "heating": 103.97
+    }
+  ]
+}

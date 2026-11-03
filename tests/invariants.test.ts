@@ -108,6 +108,7 @@ function benefitLines(p: Province, h: H): Map<string, number> {
 function creditProgram(p: Province, name: string): string {
   for (const cr of p.credits ?? [])
     if (name === (cr.name ?? cr.program) || ("nameRenter" in cr && name === cr.nameRenter)) return cr.program;
+  for (const cr of p.carbon?.rebates ?? []) if (name === (cr.name ?? p.carbon?.name ?? cr.program)) return cr.program;
   if (name === "Canada Workers Benefit") return "canada-workers-benefit";
   return "groceries-benefit"; // the federal sales tax credit, whose name changes with the year's data
 }
@@ -119,6 +120,7 @@ function programsIn(p: Province): Set<string> {
   const ids = ["canada-child-benefit", "groceries-benefit", "canada-workers-benefit"];
   if (p.childBenefit) ids.push(p.childBenefit.program);
   for (const cr of p.credits ?? []) ids.push(cr.program);
+  for (const cr of p.carbon?.rebates ?? []) ids.push(cr.program);
   return new Set(ids);
 }
 

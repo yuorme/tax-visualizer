@@ -1,0 +1,75 @@
+Title: Climate Action Incentive payment amounts for 2022-23
+URL: https://www.canada.ca/en/department-finance/news/2022/03/climate-action-incentive-payment-amounts-for-2022-23.html
+Fetched: 2026-11-02
+SHA-256 of the original: b50106665d25e2288fb23dbcae4d01b0bb37088676972ec78147c4f553742cba
+Publication date modified: 2022-10-14
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+# Climate Action Incentive payment amounts for 2022-23
+
+From: Department of Finance Canada
+
+## Backgrounder
+
+The government has proposed to deliver CAI payments on a quarterly basis starting this year
+
+Under the federal carbon pollution pricing system, the government applies a price on pollution in jurisdictions that do not have their own systems that meet the federal benchmark – specifically Ontario, Manitoba, Saskatchewan, and Alberta.
+
+The Government of Canada does not keep any direct proceeds from pollution pricing. All direct proceeds are returned to the province or territory of origin in the following way:
+
+- For those jurisdictions that have voluntarily adopted the federal system, direct proceeds are returned to the governments of those jurisdictions.
+- For those provinces that do not meet the federal stringency requirements—Ontario, Manitoba, Saskatchewan and Alberta— approximately 90 per cent of direct proceeds are returned to residents of those provinces through Climate Action Incentive (CAI) payments. The other 10 per cent is used to support small businesses, farmers, and Indigenous groups.
+
+The government has proposed to deliver CAI payments on a quarterly basis starting this year. Payments will start in July 2022 with a "double-up" payment that will return proceeds from the first two quarters of the 2022-23 fuel charge year (April-June and July-September), followed by single quarterly payments in October 2022 and January 2023.
+
+Even though individuals will no longer receive CAI payments through their tax returns, they still need to file a return to receive the quarterly payments. If they are eligible for the 10-per-cent supplementary amount for residents of small and rural communities, they will need to complete Schedule 14 and include it with their tax return.
+
+For a family of four, total annual CAI payments for 2022-23 will be as follows:
+Family Member | Ontario | Manitoba | Saskatchewan | Alberta
+First adult | $373 | $416 | $550 | $539
+Second adult | $186 | $208 | $275 | $270
+First child | $93 | $104 | $138 | $135
+Second child | $93 | $104 | $138 | $135
+Total | $745 | $832 | $1,101 | $1,079
+Amounts do not reflect the 10 per cent supplement for residents of small and rural communities.
+
+The federal government has specified the following quarterly CAI payment amounts for 2022-23:
+
+CAI Payment Amounts for Single Adult (or First Adult in a Couple), for 2022-23
+Amount | Ontario | Manitoba | Saskatchewan | Alberta
+July 2022 (Double-Up) | $186.50 | $208.00 | $275.00 | $269.50
+October 2022 | $93.25 | $104.00 | $137.50 | $134.75
+January 2023 | $93.25 | $104.00 | $137.50 | $134.75
+Total | $373 | $416 | $550 | $539
+Referred to as a qualified individual in the legislation. Amounts do not reflect the 10 per cent supplement for residents of small and rural communities.
+
+CAI Payment Amounts for Second Adult in a Couple (or First Child of a Single Parent), 2022-23
+Amount | Ontario | Manitoba | Saskatchewan | Alberta
+July 2022 (Double-Up) | $93.00 | $104.00 | $137.50 | $135.00
+October 2022 | $46.50 | $52.00 | $68.75 | $67.50
+January 2023 | $46.50 | $52.00 | $68.75 | $67.50
+Total for 2022-23 | $186 | $208 | $275 | $270
+Referred to as a qualified relation in the legislation. Amounts do not reflect the 10 per cent supplement for residents of small and rural communities.
+
+CAI Payment Amounts for Each Child Under 19 (Starting With the Second Child for Single Parents), for 2022-23
+Amount | Ontario | Manitoba | Saskatchewan | Alberta
+July 2022 (Double-Up) | $46.50 | $52.00 | $69.00 | $67.50
+October 2022 | $23.25 | $26.00 | $34.50 | $33.75
+January 2023 | $23.25 | $26.00 | $34.50 | $33.75
+Total | $93 | $104 | $138 | $135
+Referred to as a qualified dependant in the legislation. Amounts do not reflect the 10 per cent supplement for residents of small and rural communities.
+
+These CAI payment amounts have been adjusted in each jurisdiction to account for over-distributions of proceeds in previous years (primarily 2020-21). This is in line with the government's commitment that any actual variance between the proceeds originating in a given jurisdiction and the amount of proceeds returned to that jurisdiction would be addressed through changes in future payment amounts to that jurisdiction. Further details on this reconciliation are provided in Table 3 of Greenhouse Gas Pollution Pricing Act: Annual report for 2020.
+
+## Continuing to Make Sure Most Households Get More Money Back Than They Pay
+
+In the provinces where Canadians receive CAI payments, most households will receive more than they pay as a result of the federal carbon pollution pricing system. For 2022-23, the table below presents updated estimates of the average cost impact of the federal system per household in each of these provinces, as well as the average CAI payment per household in those provinces.
+
+Average Costs and CAI Payments, per Household, for 2022-23
+| Ontario | Manitoba | Saskatchewan | Alberta
+Average cost impact per household 1 of the federal system | $578 | $559 | $734 | $700
+Average Climate Action Incentive payment per household 2 | $712 | $788 | $1,053 | $1,038
+Source: Department of Finance Canada calculations using inputs from Environment and Climate Change Canada, Canada Revenue Agency and Statistics Canada. 1 The estimated average impact per household reflects the impact on household spending costs, accounting for direct impacts (reflecting consumption of fuels to which the federal carbon pollution pricing system applies) and indirect impacts (reflecting consumption of goods and services with federal carbon pollution pricing embedded in them). These impacts are inclusive of carbon pollution pricing embedded in imports that households purchase from other provinces/territories on which a federal carbon pollution price is applied. They do not include the costs associated with other carbon pricing systems; accordingly, they do not include the costs associated with the provincial systems for large industrial facilities such as those in Saskatchewan and Alberta. Estimates also assume full pass-through from businesses to consumers. 2 The 2022-23 Climate Action Incentive payment amounts include an adjustment for over-distributions made with respect to proceeds generated in previous years in each of the above provinces respectively. As a result, the average payment amount per household also reflects this adjustment.
+
+Search for related information by keyword: Economics and Industry | Department of Finance Canada | Canada | Money and finances | general public | backgrounders

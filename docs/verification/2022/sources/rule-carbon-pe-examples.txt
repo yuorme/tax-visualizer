@@ -1,0 +1,19 @@
+Title: PEI July 2022 carbon rebate: official implementation examples
+URL: https://www.princeedwardisland.ca/en/news/islanders-to-receive-inflationary-support-payment-this-week
+Fetched: 2026-11-02
+SHA-256 of the original: unavailable (direct fetch returned a browser challenge)
+Publication date: 2022-07-04
+Manual factual extract independently read through the web reader; not a fetch-source text extraction.
+================================================================================
+
+The official release says direct-deposit payments start July 5, 2022 and confirms the passed Bill 64.
+It separates the ordinary sales-tax credit, carbon rebate, and extraordinary inflation support.
+
+Published examples (income is annual family income):
+- Single, $45,000: regular quarterly credit $41.25; carbon increment $140; inflation support $150.
+- Single, $55,000: regular quarterly credit $16.25; carbon increment $115; inflation support $150.
+- Single parent, $45,000: regular quarterly credit $55; carbon increment $140; inflation support $300.
+- Couple, $63,000: regular credit zero; carbon increment $65; inflation support $300.
+
+Only the carbon increment is implemented by the new carbon program. The separately modeled recurring sales-tax
+credit remains outside this increment, and extraordinary inflation support is excluded from this project scope.

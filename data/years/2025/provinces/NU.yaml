@@ -25,3 +25,62 @@ sources:
   - {label: "CRA, 2025 tax rates and income brackets", url: "https://www.canada.ca/en/revenue-agency/services/tax/individuals/tax-rates-brackets/last-year.html"}
   - {label: "CRA, T4114 (Nunavut child benefit, July 2025 to June 2026)", url: "https://www.canada.ca/content/dam/cra-arc/formspubs/pub/t4114/t4114-25e.pdf"}
   - {label: "Legislative Assembly of Nunavut, Bill 4 (2026), Income Tax Act amendments (child benefit reduction rates)", url: "https://assembly.nu.ca/sites/default/files/2026-05/Bill_4_AATA_Income_Tax_Act_EF.pdf"}
+  - label: "Carbon history: Statistics Canada, Canadian Vehicle Survey: Annual 2009 (53-223-X)"
+    url: https://www150.statcan.gc.ca/n1/pub/53-223-x/53-223-x2009000-eng.pdf
+  - label: "Carbon history: Lowering energy bills for Canadians across the country"
+    url: https://www.canada.ca/en/department-finance/news/2023/10/lowering-energy-bills-for-canadians-across-the-country.html
+  - label: "Carbon history: Fuel charge rates"
+    url: https://www.canada.ca/en/revenue-agency/services/forms-publications/publications/fcrates/fuel-charge-rates.html
+  - label: "Carbon history: Nunavut carbon tax FAQ, July2019"
+    url: https://www.gov.nu.ca/sites/default/files/documents/2021-10/faq_-_carbon_tax_in_nunavut-eng.pdf
+  - label: "Carbon history: Nunavut fuel prices April1,2022"
+    url: https://www.gov.nu.ca/en/newsroom/fuel-price-increase-effective-april-1-2022-2022-04-01
+  - label: "Carbon history: Nunavut fuel prices April1,2023"
+    url: https://www.gov.nu.ca/en/newsroom/increase-fuel-prices-2023-03-31
+  - label: "Carbon history: NUNAVUT HANSARD"
+    url: https://assembly.nu.ca/sites/default/files/2025-09/20231020_Hansard.pdf
+  - label: "Carbon history: Nunavut Carbon Credit Payments in 2024-25"
+    url: https://www.gov.nu.ca/en/newsroom/nunavut-carbon-credit-payments-2024-25-2024-07-08
+  - label: "Carbon history: Goods and Services Tax/Harmonized Sales Tax (GST/HST) Credit and Related Benefits and Credits v3.0"
+    url: https://www.canada.ca/en/revenue-agency/services/about-canada-revenue-agency-cra/protecting-your-privacy/privacy-impact-assessment/goods-services-tax-harmonized-sales-tax-gst-hst-credit-related-benefits-credits-v3.html
+  - label: "Carbon history: \x01\x01\x01"
+    url: https://www.iti.gov.nt.ca/fr/file/1216
+
+# Historical driving defaults use a common survey baseline; see cited sources.
+driving:
+  distance: 6800
+  estimated: true
+
+# Calendar-year carbon charges and cash rebates; heating is an explicit modeled estimate.
+# Cash uses the published quarterly schedule; discretionary small-payment consolidation is not reconstructed.
+carbon:
+  name: Carbon pricing
+  heating:
+    amount: 0
+    estimated: true
+    method: Estimated 2406 L/year oil proxy borrowed from the 2012 Deline (NWT) residential-building feasibility assumption because a reliable Nunavut household figure was unavailable. Calendar-day rates, Nunavut point-of-sale discount and federal heating-oil exemption apply.
+  rebates:
+    - name: Nunavut Carbon Credit
+      program: carbon-rebate-payments
+      params:
+        payments:
+          - date: 2025-01-01
+            adult: 25
+            spouse: 25
+            child: 25
+            firstChild: 25
+            threshold: [0, 0]
+            rate: 0
+          - date: 2025-04-04
+            adult: 25
+            spouse: 25
+            child: 25
+            firstChild: 25
+            threshold: [0, 0]
+            rate: 0
+      estimated: true
+  gasoline:
+    - from: 2025-01-01
+      rate: 0.1761
+    - from: 2025-04-01
+      rate: 0

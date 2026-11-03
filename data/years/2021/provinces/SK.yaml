@@ -29,3 +29,43 @@ sources:
   - {label: "Saskatchewan, historical 2021 indexation factor of 1%", url: https://www.saskatchewan.ca/residents/taxes-and-investments/personal-income-tax}
   - {label: "Saskatoon, historical 2021 city/library mills and residential factor", url: https://www.saskatoon.ca/sites/default/files/media/documents/Historical%20tax%20Rate%202018-2026.pdf}
   - {label: "Saskatoon, 2021 property-tax guide: school mills and 80% assessment portion", url: https://www.saskatoon.ca/sites/default/files/documents/assessment-tax-tool/2021_guide_to_property_tax_final_april_21_mt.pdf}
+  - label: "Carbon history: Statistics Canada, Canadian Vehicle Survey: Annual 2009 (53-223-X)"
+    url: https://www150.statcan.gc.ca/n1/pub/53-223-x/53-223-x2009000-eng.pdf
+  - label: "Carbon history: Statistics Canada 25-10-0060-01 household energy consumption, selected CSV rows"
+    url: https://www150.statcan.gc.ca/n1/tbl/csv/25100060-eng.zip
+  - label: "Carbon history: Natural Gas: A Primer"
+    url: https://natural-resources.canada.ca/energy-sources/fossil-fuels/natural-gas-primer
+  - label: "Carbon history: Fuel charge rates"
+    url: https://www.canada.ca/en/revenue-agency/services/forms-publications/publications/fcrates/fuel-charge-rates.html
+  - label: "Carbon history: Climate Action Incentive Payment Amounts for 2021"
+    url: https://www.canada.ca/en/department-finance/news/2020/12/climate-action-incentive-payment-amounts-for-2021.html
+
+# Historical driving defaults use a common survey baseline; see cited sources.
+driving:
+  distance: 15300
+  estimated: true
+
+# Calendar-year carbon charges and cash rebates; heating is an explicit modeled estimate.
+carbon:
+  name: Federal carbon pricing
+  gasoline:
+    - from: 2021-01-01
+      rate: 0.0663
+    - from: 2021-04-01
+      rate: 0.0884
+  heating:
+    amount: 150.11
+    estimated: true
+    method: 2021 Statistics Canada household natural gas and heating oil use averaged across all households; 76.0915 GJ gas and 0.0000 GJ oil, held constant across years; calendar-day rates and applicable heating exemptions. See carbon heating verification.
+  rebates:
+    - program: carbon-rebate-payments
+      name: Climate Action Incentive / Canada Carbon Rebate
+      params:
+        payments:
+          - date: 2021-04-01
+            adult: 500
+            spouse: 250
+            child: 125
+            firstChild: 250
+            threshold: [0, 0]
+            rate: 0

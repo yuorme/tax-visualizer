@@ -45,3 +45,10 @@ sources:
   - {label: "Finances Québec, historical dividend credit rates", url: https://www.budget.finances.gouv.qc.ca/budget/outils/depenses-fiscales/fiches/fiche-130501.asp}
   - {label: "Montreal, Budget 2024 Table 55 municipal residential average", url: https://portail-m4s.s3.montreal.ca/pdf/budget_2024_pdi_2024-2033_web.pdf}
   - {label: "Revenu Québec, 2024 income tax guide page 30 (worker deduction 6%)", url: https://www.revenuquebec.ca/documents/en/formulaires/tp/2024-12/TP-1.G-V%282024-12%29.pdf}
+  - label: "Carbon history: Statistics Canada, Canadian Vehicle Survey: Annual 2009 (53-223-X)"
+    url: https://www150.statcan.gc.ca/n1/pub/53-223-x/53-223-x2009000-eng.pdf
+
+# Historical driving defaults use a common survey baseline; see cited sources.
+driving:
+  distance: 14800
+  estimated: true
