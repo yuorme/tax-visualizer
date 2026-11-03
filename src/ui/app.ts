@@ -32,15 +32,25 @@ import {
 } from "./driving-units.ts";
 import { renderHistory } from "./history.ts";
 import { cents, footerNotes, share, tooltips } from "./notes.ts";
+import { readScenario, scenarioHash } from "./scenario-url.ts";
 
 const availableYears = Object.keys(years)
   .map(Number)
   .sort((a, b) => b - a);
+const scenarioContext = {
+  years: availableYears,
+  provinces: years[availableYears[0]].provinces.map(p => p.code),
+  treatyRate: (year: number) => years[year].federal.investment.foreignWithholding.usTreaty,
+};
+let initialState: Record<string, unknown> = readScenario(location.hash, scenarioContext) ?? {};
+if (!readScenario(location.hash, scenarioContext)) {
+  try {
+    initialState = JSON.parse(localStorage.getItem("taxcmp") || "{}");
+  } catch {}
+}
 let YEAR = availableYears[0];
-try {
-  const saved = JSON.parse(localStorage.getItem("taxcmp") || "{}");
-  if (saved.v === 3 && availableYears.includes(saved.year)) YEAR = saved.year;
-} catch {}
+if (initialState?.v === 3 && typeof initialState.year === "number" && availableYears.includes(initialState.year))
+  YEAR = initialState.year;
 let Y = years[YEAR],
   F = Y.federal;
 /** View model for each province: c = code, n = name, qc = Quebec system, geo = west-to-east position, b = brackets */
@@ -192,7 +202,7 @@ function cleanPerson(o: unknown): Person {
 // Saved state from before the defaults changed (v < 3) is ignored so the new defaults show.
 // Values are checked for the types save() writes, so a damaged save can't put a string where a number belongs.
 try {
-  const s: Record<string, unknown> = JSON.parse(localStorage.getItem("taxcmp") || "{}");
+  const s = initialState;
   if (s.v === 3) {
     if (typeof s.historyOpen === "boolean") historyOpen = s.historyOpen;
     if (s.historyMode === "nominal") historyMode = "nominal";
@@ -227,7 +237,7 @@ try {
     else tab = s.invOpen === true ? "income" : s.propOpen === true ? "home" : s.credOpen === true ? "credits" : null;
     if (s.metric === "usd") metric = "usd";
     const adjustment = s.spendingAdjustment ?? s.frug;
-    if (isNum(adjustment) && adjustment >= -100 && adjustment <= 100000) spendingAdjustment = adjustment;
+    if (isNum(adjustment) && adjustment >= -100 && adjustment <= 1000000) spendingAdjustment = adjustment;
     care.restore(s.childcare);
   }
 } catch {}
@@ -236,45 +246,74 @@ if (!DRIVING) {
   $("tab-driving").hidden = true;
   if (tab === "driving") tab = null;
 }
+function scenarioState() {
+  return {
+    v: 3,
+    year: YEAR,
+    historyOpen,
+    historyMode,
+    people,
+    active,
+    spouse,
+    sort,
+    home,
+    dest,
+    view,
+    useBpa,
+    whRate,
+    adults,
+    kids,
+    under6,
+    spend,
+    spendingAdjustment,
+    childcare: care.state,
+    metric,
+    homeValue,
+    propOverride,
+    propertyTaxBill,
+    rent,
+    tenure,
+    useCredits,
+    tab,
+    km: kmOverride,
+    eff: effOverride,
+    drivingUnits,
+  };
+}
+function shareUrl() {
+  const url = new URL(location.href);
+  url.hash = scenarioHash(scenarioState(), scenarioContext);
+  return url.href;
+}
 function save() {
   try {
-    localStorage.setItem(
-      "taxcmp",
-      JSON.stringify({
-        v: 3,
-        year: YEAR,
-        historyOpen,
-        historyMode,
-        people,
-        active,
-        spouse,
-        sort,
-        home,
-        dest,
-        view,
-        useBpa,
-        whRate,
-        adults,
-        kids,
-        under6,
-        spend,
-        spendingAdjustment,
-        childcare: care.state,
-        metric,
-        homeValue,
-        propOverride,
-        propertyTaxBill,
-        rent,
-        tenure,
-        useCredits,
-        tab,
-        km: kmOverride,
-        eff: effOverride,
-        drivingUnits,
-      }),
-    );
+    localStorage.setItem("taxcmp", JSON.stringify(scenarioState()));
   } catch {}
+  // Replace, rather than append, history on each edit. The fragment is never sent with network requests.
+  try {
+    history.replaceState(null, "", shareUrl());
+  } catch {}
+  $("share-status").textContent = "";
+  $("share-fallback").hidden = true;
 }
+
+$("copy-link").addEventListener("click", async () => {
+  const url = shareUrl();
+  try {
+    await navigator.clipboard.writeText(url);
+    $("share-status").textContent = "Link copied";
+  } catch {
+    $("share-fallback").hidden = false;
+    const input = $<HTMLInputElement>("share-url");
+    input.value = url;
+    input.focus();
+    input.select();
+    $("share-status").textContent = "Select and copy the link";
+  }
+});
+window.addEventListener("hashchange", () => {
+  if (readScenario(location.hash, scenarioContext)) location.reload();
+});
 
 // Text that quotes the year's figures: footer notes, info tooltips and the withholding presets (see notes.ts)
 const WH_PRESETS = [0, 0.1, 0.25, 0.3]; // withholding choices offered besides the treaty rate

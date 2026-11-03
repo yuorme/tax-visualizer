@@ -21,6 +21,7 @@ export const DEDUCTION_STEPS = [
           JSON.stringify({ v: 3, adults: 1, people: [{ ord: 75000, cg: 2000, ed: 0, nd: 0, fd: 0, ded: 1200 }] }),
         );
       });
+      await p.evaluate(() => history.replaceState(null, "", location.pathname + location.search));
       await p.reload();
       assert.equal(await total(p), "$1,200");
       await p.locator("#deductions summary").focus();
