@@ -1,0 +1,23 @@
+Title: Nova Scotia Child Benefit
+URL: https://novascotia.ca/coms/families/childbenefit.html
+Fetched: 2026-11-02
+SHA-256 of the original: 8bef0c571c96a8311f39a50de47d9474abd492ff27a77f0a48d074874d993309
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+# Nova Scotia Child Benefit
+
+Nova Scotia is continuing efforts to support people living on lower incomes and reduce childhood poverty in the province.
+In July 2023, government is increasing the Nova Scotia Child Benefit (NSCB) amount eligible families receive to help with the cost of raising children under 18 years of age.
+The 2023-24 budget announced an increase to the NSCB with changes to take effect 1 July 2023. Families whose adjusted family net income is below $26,000 will receive $1,525 annually for each child they have, where families whose net income is above $26,000, and below $34,000, will receive $1,525 annually for the first child and half the rate ($762.50) for the second and subsequent children.
+The first monthly payment will be issued 20 July 2023, in combination with the federal government's Canada Child Benefit (CCB) payment. Families do not have to apply.
+
+Receipt of the NSCB and CCB is tied to when Nova Scotians choose to file their personal income tax return. For that reason, there may be a delay in payments for newly eligible families or a retroactive correction for those who file after the federal deadline.
+
+## Eligibility and Rates (as of July 2023)
+
+Note: chart does not include CCB payments.
+
+Income | Family with 1 child | Family with 2 children | Family with 3 children | Each additional child
+$0-$25,999 | $1,525/year $127.08/month | $3,050/year $254.17/month | $4,575/year $381.25/month | +$1,525/child/year +$127.08/child/month
+$26,000-$33,999 | $1,525/year $127.08/month | $2,287.50/year $190.63/month | $3,050/year $254.17/month | +$762.50/child/year +$63.54/child/month

@@ -1,0 +1,77 @@
+Title: Quebec 2025 and 2024 Tax Rates & Tax Brackets
+URL: https://www.taxtips.ca/priortaxrates/tax-rates-2024-2025/qc.htm
+Fetched: 2026-11-02
+SHA-256 of the original: 6c8ab85a92941a3e1e5138aa59bb170e851accf849a11f3779532f54da0b6e22
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+#### Home -> Quebec
+
+#### Tax Rates -> Quebec Personal Income Tax Rates for 2024 & 2025
+
+# Quebec 2025 and 2024 Tax Rates & Tax Brackets
+
+The Quebec tax brackets and personal tax credit amounts are increased for 2025 by an indexation factor of 1.0285 (2.85% increase).
+
+The Federal tax brackets and personal tax credit amounts are increased for 2025 by an indexation factor of 1.027 (2.7% increase).
+
+See Indexation of the Personal Income Tax System for how the indexation factors are calculated.
+
+The Federal indexation factors, tax brackets and tax rates for 2025 have been confirmed to Canada Revenue Agency information.
+
+The Quebec indexation factor, tax brackets and tax rates for 2025 have been confirmed to Quebec Ministry of Finance information.
+
+The Quebec basic personal amount is rounded to the nearest $1, beginning with the 2018 taxation year. The Quebec tax thresholds are rounded to the nearest $5. 2017 is the base year for the thresholds and the personal amount.
+
+The marginal tax rates below include the reduction in rate due to the federal tax abatement of 16.5% of federal tax. However, this abatement is applied to the net federal tax after deducting the basic personal amount. For this reason, the federal personal amount tax credit is also reduced by 16.5%. The Federal personal amount shown below is before the reduction from the federal tax abatement.
+
+Tax Tip: read the article Understanding the Tables of Personal Income Tax Rates, especially if you are trying to compare the rates below to the marginal tax rates in the Basic Tax Calculator or the Detailed Tax Calculators.
+
+TaxTips.ca - Quebec Tax Rates
+2025 Taxable Income | 2025 Tax Rates | 2024 Taxable Income | 2024 Tax Rates
+first $53,255 | 14.00% | first $51,780 | 14.00%
+over $53,255 up to $106,495 | 19.00% | over $51,780 up to $103,545 | 19.00%
+over $106,495 up to $129,590 | 24.00% | over $103,545 up to $126,000 | 24.00%
+over $129,590 | 25.75% | over $126,000 | 25.75%
+
+TaxTips.ca - Combined Federal & Quebec Tax Brackets and Tax Rates
+2025 Taxable Income (1) | QC 2025 Marginal Tax Rates | 2024 Taxable Income (1) | QC 2024 Marginal Tax Rates
+Other Income | Capital Gains | Canadian Dividends | Other Income | Capital Gains | Canadian Dividends
+Eligible | Non-Eligible | Eligible | Non-Eligible
+first $53,255 | 26.11% | 13.05% | 2.58% | 17.42% | first $51,780 | 26.53% | 13.26% | 3.15% | 17.90%
+over $53,255 up to $57,375 | 31.11% | 15.55% | 9.48% | 23.17% | over $51,780 up to $55,867 | 31.53% | 15.76% | 10.05% | 23.65%
+over $57,375 up to $106,495 | 36.12% | 18.06% | 16.39% | 28.93% | over $55,867 up to $103,545 | 36.12% | 18.06% | 16.39% | 28.93%
+over $106,495 up to $114,750 | 41.12% | 20.56% | 23.29% | 34.68% | over $103,545 up to $111,733 | 41.12% | 20.56% | 23.29% | 34.68%
+over $114,750 up to $129,590 | 45.71% | 22.86% | 29.63% | 39.96% | over $111,733 up to $126,000 | 45.71% | 22.86% | 29.63% | 39.96%
+over $129,590 up to $177,882 | 47.46% | 23.73% | 32.04% | 41.97% | over $126,000 up to $173,205 | 47.46% | 23.73% | 32.04% | 41.97%
+over $177,882 up to $253,414 | 50.22% | 25.11% | 35.86% | 45.15% | over $173,205 up to $246,752 | 50.23% | 25.12% | 35.87% | 45.16%
+over $253,414 | 53.31% | 26.65% | 40.11% | 48.70% | over $246,752 | 53.31% | 26.65% | 40.11% | 48.70%
+Marginal tax rate for dividends is a % of actual dividends received (not grossed-up taxable amount). Marginal tax rate for capital gains is a % of total capital gains (not taxable capital gains). Gross-up rate for eligible dividends is 38%, and for non-eligible dividends is 15%. For more information see Quebec dividend tax credits. Copyright © 2002 Boat Harbour Investments Ltd.
+
+TaxTips.ca Quebec Basic Personal Amount
+2025 Personal Amount | 2025 Tax Rate | 2024 Personal Amount | 2024 Tax Rate
+$18,571 | 14% | $18,056 | 14%
+
+Federal Basic Personal Amount
+2025 Personal Amount (1) Minimum / Maximum | 2025 Tax Rate | 2024 Personal Amount (1) Minimum / Maximum | 2024 Tax Rate
+$14,538 | $16,129 | 14.5% | $14,156 | $15,705 | 15%
+
+(1) See the federal tax rates page for information on the enhanced federal personal amount, which increases the marginal tax rates for taxable incomes in the second highest federal tax bracket. The marginal tax rates in blue above have been adjusted to reflect these changes.
+
+Copyright © 2002 Boat Harbour Investments Ltd.
+
+Revised: June 27, 2026
+
+Revised: August 27, 2026
+
+© 2002- Boat Harbour Investments Ltd. All rights reserved.
+
+See Reproduction of information from TaxTips.ca
+
+Privacy Policy | Contact
+
+Facebook | Twitter | LinkedIn
+
+The authors of TaxTips.ca strive, but cannot guarantee, to provide information which is current and accurate. Individual circumstances have a significant effect on how tax and financial information can be used. Due to this, and to the nature of the information, it should not be relied upon for decision making without professional advice.
+
+TaxTips.ca provides links to other web sites. We cannot guarantee the accuracy of the information provided on linked sites.

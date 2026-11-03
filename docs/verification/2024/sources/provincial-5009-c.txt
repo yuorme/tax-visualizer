@@ -1,0 +1,198 @@
+Title: Alberta Tax and Credits
+URL: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5009-c/5009-c-24e.pdf
+Fetched: 2026-11-02
+SHA-256 of the original: a5d1274870f1ea6fd88244ee205c7bee158a5b66856a4a4e4afc033dbeedef2b
+Publication date modified: 2024-11-21
+PDF pages: all 3
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 1 of 3 ---
+
+Form AB428
+2024
+Protected B when completed
+Alberta Tax and Credits
+For more information about this form, go to canada.ca/ab-tax-info.
+Part A – Alberta tax on taxable income
+1Enter your taxable income from line 26000 of your return.
+Use the amount from line 1 to complete the appropriate column below.
+Line 1 is
+$148,269 or less
+Amount from line 1
+–Line 2 minus line 3
+(cannot be negative) =
+×Line 4 multiplied by the
+percentage from line 5 =
++
+Alberta tax on
+taxable income
+Line 6 plus line 7
+=
+Line 1 is more than
+$148,269 but not
+more than $177,922
+–
+=
+×
+=
++
+=
+Line 1 is more than
+$177,922 but not
+more than $237,230
+–
+=
+×
+=
++
+=
+Line 1 is more than
+$237,230 but not
+more than $355,845
+–
+=
+×
+=
++
+=
+Line 1 is more
+than $355,845
+–
+=
+×
+=
++
+=
+2
+3
+4
+5
+6
+7
+8
+Enter the amount from line 8 on line 52 and continue at line 9.
+Part B – Alberta non-refundable tax credits 56080Internal use
+58040 9Basic personal amount Claim $21,885
+58080 10Age amount (if you were born in 1959 or earlier) (use Worksheet AB428) (maximum $6,099) +
+Spouse or common-law partner amount:
+11Base amount
+12
+Your spouse's or common-law partner's net income
+from line 23600 of their return –
+58120 13Line 11 minus line 12 (if negative, enter "0") =
+Ż +
+Amount for an eligible dependant:
+14Base amount
+15Your eligible dependant's net income from line 23600 of their return –
+58160 16Line 14 minus line 15 (if negative, enter "0") =
+Ż +
+58200 17Amount for infirm dependants age 18 or older (use Worksheet AB428) +
+18Add lines 9, 10, 13, 16, and 17. =
+CPP or QPP contributions:
+58240 19Amount from line 30800 of your return •
+58280 20Amount from line 31000 of your return + •
+Employment insurance premiums:
+58300 21Amount from line 31200 of your return + •
+58305 22Amount from line 31217 of your return + •
+58330 23Adoption expenses +
+24Add lines 19 to 23. =
+Ż +
+25Line 18 plus line 24 =
+5009-C E (24) (Ce formulaire est disponible en français.) Page 1 of 3
+0.00
+10%
+0.00
+148,269.00
+12%
+14,826.90
+177,922.00
+13%
+18,385.26
+237,230.00
+14%
+26,095.30
+355,845.00
+15%
+42,701.40
+21,885.00
+21,885.00
+
+--- PDF page 2 of 3 ---
+
+Protected B when completed
+Part B – Alberta non-refundable tax credits (continued)
+26Amount from line 25 of the previous page
+58360 27Pension income amount (maximum $1,685) +
+58400 28Caregiver amount (use Worksheet AB428) +
+29Add lines 26 to 28. =
+58440 30
+Disability amount for self
+(claim $16,882 or, if you were under 18 years of age, use Worksheet AB428) +
+58480 31Disability amount transferred from a dependant (use Worksheet AB428) +
+32Add lines 29 to 31. =
+58520 33Interest paid on your student loans (amount from line 31900 of your return) +
+58560 34Your unused tuition and education amounts (attach Schedule AB(S11)) +
+58640 35Amounts transferred from your spouse or common-law partner (attach Schedule AB(S2)) +
+36Add lines 32 to 35. =
+Medical expenses:
+58689 37Amount from line 33099 of your return
+38Amount from line 23600 of your return
+39Applicable rate ×
+40Line 38 multiplied by the percentage from line 39 =
+41Enter whichever is less: $2,828 or the amount from line 40. –
+42Line 37 minus line 41 (if negative, enter "0") =
+58729 43
+Allowable amount of medical expenses for other dependants
+(use Worksheet AB428) +
+58769 44Line 42 plus line 43 =
+Ż +
+58800 45Line 36 plus line 44 =
+46Alberta non-refundable tax credit rate ×
+58840 47Line 45 multiplied by the percentage from line 46 =
+Donations and gifts:
+48
+Amount from line 13
+of your federal Schedule 9 × 60% =
+49
+Amount from line 14
+of your federal Schedule 9 × 21% = +
+58969 50Line 48 plus line 49 =
+Ż +
+61500 51Alberta non-refundable tax credits
+Line 47 plus line 50
+Enter this amount on line 55. =
+5009-C E (24) Page 2 of 3
+3%
+10%
+
+--- PDF page 3 of 3 ---
+
+Protected B when completed
+Part C – Alberta tax
+52Alberta tax on taxable income from line 8
+61510 53Alberta tax on split income (complete Form T1206) + •
+54Line 52 plus line 53 =
+55Alberta non-refundable tax credits from line 51
+61520 56Alberta dividend tax credit (use Worksheet AB428) + •
+61540 57
+Alberta minimum tax carryover:
+Amount from line 40427
+of your return × 35% = + •
+58Add lines 55 to 57. =
+Ż –
+59Line 54 minus line 58 (if negative, enter "0") =
+60
+Alberta additional tax for minimum tax purposes:
+Form T691: line 1 minus line 2 of Part 7 × 35% = +
+61Line 59 plus line 60 =
+62Provincial foreign tax credit (complete Form T2036) –
+63Line 61 minus line 62 (if negative, enter "0") =
+60030 64Alberta political contributions made in 2024
+65Alberta political contributions tax credit (use Worksheet AB428) (maximum $1,000) –
+66Alberta tax
+Line 63 minus line 65 (if negative, enter "0")
+Enter this amount on line 42800 of your return. =
+If you had any unused stock savings plan tax credit, complete Form T89, Alberta stock savings plan tax credit.
+See the privacy notice on your return.
+5009-C E (24) Page 3 of 3

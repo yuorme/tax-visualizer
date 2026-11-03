@@ -1,0 +1,77 @@
+Title: BC 2025 and 2024 Tax Rates & Tax Brackets
+URL: https://www.taxtips.ca/priortaxrates/tax-rates-2024-2025/bc.htm
+Fetched: 2026-11-02
+SHA-256 of the original: 1c9b67f2d275458a10907714da74e8837ae53581005ebdd4d4e724d19c59e97c
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+#### Home -> British Columbia
+
+#### Tax Rates -> BC Personal Income Tax Rates for 2024 & 2025
+
+# BC 2025 and 2024 Tax Rates & Tax Brackets
+
+##### BC Income Tax Act s. 4.1, 4.3, 4.52, 4.69
+
+The BC tax brackets and personal tax credit amounts are increased for 2025 by an indexation factor of 1.028 (2.8% increase).
+
+The Federal tax brackets and personal tax credit amounts are increased for 2025 by an indexation factor of 1.027 (2.7% increase).
+
+See Indexation of the Personal Income Tax System for how the indexation factors are calculated.
+
+The Federal and BC indexation factors, tax brackets and tax rates for 2025 have been confirmed to Canada Revenue Agency information.
+
+Tax Tip: read the article Understanding the Tables of Personal Income Tax Rates, especially if you are trying to compare the rates below to the marginal tax rates in the Basic Tax Calculator or the Detailed Tax Calculators.
+
+TaxTips.ca - BC Tax Rates
+2025 Taxable Income | 2025 Tax Rates | 2024 Taxable Income | 2024 Tax Rates
+first $49,279 | 5.06% | first $47,937 | 5.06%
+over $49,279 up to $98,560 | 7.70% | over $47,937 up to $95,875 | 7.70%
+over $98,560 up to $113,158 | 10.50% | over $95,875 up to $110,076 | 10.50%
+over $113,158 up to $137,407 | 12.29% | over $110,076 up to $133,664 | 12.29%
+over $137,407 up to $186,306 | 14.70% | over $133,664 up to $181,232 | 14.70%
+over $186,306 up to $259,829 | 16.80% | over $181,232 up to $252,752 | 16.80%
+over $259,829 | 20.50% | over $252,752 | 20.50%
+
+TaxTips.ca - Combined Federal & BC Tax Brackets and Tax Rates
+2025 Taxable Income (1) | BC 2025 Marginal Tax Rates | 2024 Taxable Income (1) | BC 2024 Marginal Tax Rates
+Other Income | Capital Gains | Canadian Dividends | Other Income | Capital Gains | Canadian Dividends
+Eligible | Non-Eligible | Eligible | Non-Eligible
+first $49,279 | 19.56% | 9.78% | -10.29% | 9.86% | first $47,937 | 20.06% | 10.03% | -9.60% | 10.43%
+over $49,279 up to $57,375 | 22.20% | 11.10% | -6.65% | 12.90% | over $47,937 up to $55,867 | 22.70% | 11.35% | -5.96% | 13.47%
+over $57,375 up to $98,560 | 28.20% | 14.10% | 1.63% | 19.80% | over $55,867 up to $95,875 | 28.20% | 14.10% | 1.63% | 19.80%
+over $98,560 up to $113,158 | 31.00% | 15.50% | 5.49% | 23.02% | over $95,875 up to $110,076 | 31.00% | 15.50% | 5.49% | 23.02%
+over $113,158 up to $114,750 | 32.79% | 16.40% | 7.96% | 25.07% | over $110,076 up to $111,733 | 32.79% | 16.40% | 7.96% | 25.07%
+over $114,750 up to $137,407 | 38.29% | 19.15% | 15.55% | 31.40% | over $111,733 up to $133,664 | 38.29% | 19.15% | 15.55% | 31.40%
+over $137,407 up to $177,882 | 40.70% | 20.35% | 18.88% | 34.17% | over $133,664 up to $173,205 | 40.70% | 20.35% | 18.88% | 34.17%
+over $177,882 up to $186,306 | 44.01% | 22.01% | 23.45% | 37.98% | over $173,205 up to $181,232 | 44.02% | 22.01% | 23.46% | 37.99%
+over $186,306 up to $253,414 | 46.11% | 23.06% | 26.35% | 40.40% | over $181,232 up to $246,752 | 46.12% | 23.06% | 26.36% | 40.41%
+over $253,414 up to $259,829 | 49.80% | 24.90% | 31.44% | 44.64% | over $246,752 up to $252,752 | 49.80% | 24.90% | 31.44% | 44.64%
+over $259,829 | 53.50% | 26.75% | 36.54% | 48.89% | over $252,752 | 53.50% | 26.75% | 36.54% | 48.89%
+Marginal tax rate for dividends is a % of actual dividends received (not grossed-up taxable amount). Marginal tax rate for capital gains is a % of total capital gains (not taxable capital gains). Gross-up rate for eligible dividends is 38%, and for non-eligible dividends is 15%. For more information see BC dividend tax credits. Copyright © 2002 Boat Harbour Investments Ltd.
+
+TaxTips.ca British Columbia Basic Personal Amount
+2025 Personal Amount | 2025 Tax Rate | 2024 Personal Amount | 2024 Tax Rate
+$12,932 | 5.06% | $12,580 | 5.06%
+
+Federal Basic Personal Amount
+2025 Personal Amount (1) Minimum / Maximum | 2025 Tax Rate | 2024 Personal Amount (1) Minimum / Maximum | 2024 Tax Rate
+$14,538 | $16,129 | 14.5% | $14,156 | $15,705 | 15%
+
+(1) See the federal tax rates page for information on the enhanced federal personal amount, which increases the marginal tax rates for taxable incomes in the second highest federal tax bracket. The marginal tax rates in blue above have been adjusted to reflect these changes.
+
+BC tax rates can also be seen on the BC Ministry of Finance website.
+
+Revised: October 31, 2026
+
+© 2002- Boat Harbour Investments Ltd. All rights reserved.
+
+See Reproduction of information from TaxTips.ca
+
+Privacy Policy | Contact
+
+Facebook | Twitter | LinkedIn
+
+The authors of TaxTips.ca strive, but cannot guarantee, to provide information which is current and accurate. Individual circumstances have a significant effect on how tax and financial information can be used. Due to this, and to the nature of the information, it should not be relied upon for decision making without professional advice.
+
+TaxTips.ca provides links to other web sites. We cannot guarantee the accuracy of the information provided on linked sites.

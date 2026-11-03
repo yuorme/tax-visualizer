@@ -1,0 +1,22 @@
+Title: Vancouver residential property tax rates (2024 column)
+URL: https://vancouver.ca/home-property-development/residential.aspx
+Fetched: 2026-11-02
+SHA-256 of the original: unavailable (direct download returned HTTP 403)
+Manual evidence extract from the official page as retrieved by the web browsing tool.
+The prescribed fetch-source command and a direct curl request returned HTTP 403. No original-file
+hash is available, and this file must not be represented as an automatic fetch-source extract.
+================================================================================
+
+2024 residential rates, dollars charged per $1,000 taxable value:
+City levy: 1.73578
+School levy: 0.87187
+Transit levy: 0.27069
+Assessment authority: 0.03475
+Regional district: 0.05489
+Finance authority: 0.00020
+Total: 2.96818
+
+The total converts to a decimal rate of 0.00296818.
+Independently corroborated against the city's April 30, 2024 council report, Appendix A, page 8:
+https://council.vancouver.ca/20240507/documents/r2.pdf
+The web browsing tool retrieved this report; its direct download was also blocked with HTTP 403.

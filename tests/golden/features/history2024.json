@@ -1,0 +1,164 @@
+{
+  "description": "Hand-calculated NWT historical age-group cases; docs/verification/2024-nwt-correction.md.",
+  "defaults": {
+    "active": 0,
+    "spouse": true,
+    "adults": 1,
+    "kids": 0,
+    "under6": 0,
+    "useBpa": true,
+    "whRate": 0,
+    "useCredits": true,
+    "homeValue": 0,
+    "rent": 0,
+    "monthlySpending": 0
+  },
+  "rules": {},
+  "cases": [
+    {
+      "id": "nwt-2024-none",
+      "year": 2024,
+      "province": "NT",
+      "household": {
+        "people": [
+          {
+            "fd": 0
+          }
+        ],
+        "kids": 0,
+        "under6": 0
+      },
+      "expected": {
+        "famNet": 0,
+        "provBen": 0
+      }
+    },
+    {
+      "id": "nwt-2024-under-six",
+      "year": 2024,
+      "province": "NT",
+      "household": {
+        "people": [
+          {
+            "fd": 30000
+          }
+        ],
+        "kids": 1,
+        "under6": 1
+      },
+      "expected": {
+        "famNet": 30000,
+        "provBen": 815
+      }
+    },
+    {
+      "id": "nwt-2024-older",
+      "year": 2024,
+      "province": "NT",
+      "household": {
+        "people": [
+          {
+            "fd": 30000
+          }
+        ],
+        "kids": 1,
+        "under6": 0
+      },
+      "expected": {
+        "famNet": 30000,
+        "provBen": 652
+      }
+    },
+    {
+      "id": "nwt-2024-mixed-lower-bound",
+      "year": 2024,
+      "province": "NT",
+      "household": {
+        "people": [
+          {
+            "fd": 30000
+          }
+        ],
+        "kids": 3,
+        "under6": 2
+      },
+      "expected": {
+        "famNet": 30000,
+        "provBen": 2119
+      }
+    },
+    {
+      "id": "nwt-2024-mixed-midpoint",
+      "year": 2024,
+      "province": "NT",
+      "household": {
+        "people": [
+          {
+            "fd": 55000
+          }
+        ],
+        "kids": 3,
+        "under6": 2
+      },
+      "expected": {
+        "famNet": 55000,
+        "provBen": 1059.5
+      }
+    },
+    {
+      "id": "nwt-2024-mixed-exhaustion",
+      "year": 2024,
+      "province": "NT",
+      "household": {
+        "people": [
+          {
+            "fd": 80000
+          }
+        ],
+        "kids": 3,
+        "under6": 2
+      },
+      "expected": {
+        "famNet": 80000,
+        "provBen": 0
+      }
+    },
+    {
+      "id": "nwt-2024-fifth-young",
+      "year": 2024,
+      "province": "NT",
+      "household": {
+        "people": [
+          {
+            "fd": 30000
+          }
+        ],
+        "kids": 6,
+        "under6": 5
+      },
+      "expected": {
+        "famNet": 30000,
+        "provBen": 3464
+      }
+    },
+    {
+      "id": "nwt-2024-fifth-older",
+      "year": 2024,
+      "province": "NT",
+      "household": {
+        "people": [
+          {
+            "fd": 30000
+          }
+        ],
+        "kids": 6,
+        "under6": 1
+      },
+      "expected": {
+        "famNet": 30000,
+        "provBen": 3064
+      }
+    }
+  ],
+  "ratePeriodCases": []
+}

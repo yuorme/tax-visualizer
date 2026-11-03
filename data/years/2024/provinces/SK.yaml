@@ -1,0 +1,29 @@
+# Benefit-year figures use July 2024 to June 2025, applied to current-year income.
+# SK low-income reduction rate estimated as 1110 / (77947 - 37584), published maximum and endpoints.
+# Property rate derived: ((city 9.0532 + library 0.9289) mills × residential factor 0.8871 + school 4.54) × 80% /1000.
+
+code: SK
+name: Saskatchewan
+order: 4
+brackets:
+  - [52057, 0.105]
+  - [148734, 0.125]
+  - [.inf, 0.145]
+basicPersonalAmount: 18491
+dividendTaxCredit: {eligible: 0.11, nonEligible: 0.02519}
+spouseAmount: {max: 18491, threshold: 1850}
+childAmount: {perChild: 7015, ages: all}
+salesTax: {rate: 0.11, label: 5% GST + 6% PST}
+propertyTax: {rate: 0.010716096728, city: Saskatoon, estimated: true}
+credits:
+  - name: Saskatchewan low-income tax credit
+    program: sk-low-income-tax-credit
+    params: {adult: 398, spouse: 398, child: 157, maxChildren: 2, rate: 0.02750043356539405, threshold: 37584}
+    estimated: true
+sources:
+  - {label: "CRA, SK428 for 2024 (brackets, personal amounts and reductions)", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5008-c/5008-c-24e.pdf}
+  - {label: "CRA, SK428 worksheet for 2024 (dividend credits)", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5008-d/5008-d-24e.pdf}
+  - {label: "CRA, RC4210: provincial credits July 2024 to June 2025", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pub/rc4210/rc4210-24e.pdf}
+  - {label: "CRA, GST/HST historical rates and provincial sales-tax rates", url: https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/charge-collect-which-rate/calculator.html}
+  - {label: "City of Saskatoon, 2024 city/library mill rates and residential factor", url: https://www.saskatoon.ca/sites/default/files/media/documents/Historical%20tax%20Rate%202018-2026.pdf}
+  - {label: "City of Saskatoon, 2024 property tax notice guide (80% portion, 4.54 school mills)", url: https://www.saskatoon.ca/sites/default/files/documents/assessment-tax-tool/2024-Guide%20to%20tax-web-FINAL.pdf}
