@@ -80,7 +80,7 @@ test("pei-sales-tax-credit: a couple's supplement and reduction use family net i
   // $22,500 each: family net income is about $44,600 (pay less enhanced CPP), so the supplement is at its maximum.
   // Per spouse (about $22,300, under $30,000) there would be no supplement and the credit would be 165.
   const even = peiCouple(22_500, 22_500);
-  assert.equal(even.famNet, 2 * netOf(y.federal, blank(22_500)));
+  assert.equal(even.famNet, 2 * netOf(y.federal, null, blank(22_500)));
   assert.ok(even.famNet > 41_000 && even.famNet < 50_000);
   assert.equal(even.credit, 220);
   // $30,000 each: family net income is about $59,500, so the 2% reduction applies; per spouse it wouldn't.

@@ -1,0 +1,85 @@
+{
+  "plan": { "exempt": 5000, "ympe": 40000, "yampe": 50000, "enh1": 0.02, "enh2": 0.06 },
+  "cases": [
+    {
+      "id": "quebec-below-exemption",
+      "province": "QC",
+      "people": [{ "ord": 4999 }],
+      "expected": { "me.breakdown.netIncome.enh": 0, "me.ti": 4999, "famNet": 4999 }
+    },
+    {
+      "id": "quebec-at-exemption",
+      "province": "QC",
+      "people": [{ "ord": 5000 }],
+      "expected": { "me.breakdown.netIncome.enh": 0, "me.ti": 5000, "famNet": 5000 }
+    },
+    {
+      "id": "quebec-above-exemption",
+      "province": "QC",
+      "people": [{ "ord": 5001 }],
+      "expected": { "me.breakdown.netIncome.enh": 0.02, "me.ti": 5000.98, "famNet": 5000.98 }
+    },
+    {
+      "id": "quebec-first-ceiling",
+      "province": "QC",
+      "people": [{ "ord": 40000 }],
+      "expected": { "me.breakdown.netIncome.enh": 700, "me.ti": 39300, "famNet": 39300 }
+    },
+    {
+      "id": "quebec-between-ceilings-and-benefits",
+      "province": "QC",
+      "people": [{ "ord": 45000 }],
+      "expected": {
+        "me.breakdown.netIncome.enh": 1000,
+        "me.ti": 44000,
+        "me.tiP": 42550,
+        "famNet": 44000,
+        "breakdown.incomeBases.beforeChildcare": [44000],
+        "ccb": 7753.59,
+        "provBen": 4145
+      }
+    },
+    {
+      "id": "quebec-second-ceiling",
+      "province": "QC",
+      "people": [{ "ord": 50000 }],
+      "expected": { "me.breakdown.netIncome.enh": 1300, "me.ti": 48700, "famNet": 48700 }
+    },
+    {
+      "id": "quebec-above-second-ceiling",
+      "province": "QC",
+      "people": [{ "ord": 70000 }],
+      "expected": { "me.breakdown.netIncome.enh": 1300, "me.ti": 68700, "famNet": 68700 }
+    },
+    {
+      "id": "ontario-retains-cpp",
+      "province": "ON",
+      "people": [{ "ord": 50000 }],
+      "expected": { "me.breakdown.netIncome.enh": 465, "me.ti": 49535, "famNet": 49535 }
+    },
+    {
+      "id": "quebec-childcare-claimant-follows-qpp-net-income",
+      "province": "QC",
+      "people": [{ "ord": 45000 }, { "oth": 44500 }],
+      "childcare": {
+        "mode": "automatic",
+        "children": [{ "age": 3, "expenses": 8000, "qcEligibleExpenses": 0 }],
+        "earnedIncome": [45000, 0]
+      },
+      "expected": {
+        "childcare.claimant": 0,
+        "childcare.claims": [8000, 0],
+        "me.breakdown.netIncome.enh": 1000,
+        "me.breakdown.netIncome.ded": 8000,
+        "me.ti": 36000,
+        "me.tiP": 42550,
+        "famNet": 80500,
+        "breakdown.incomeBases.beforeChildcare": [44000, 44500],
+        "breakdown.incomeBases.federal": [36000, 44500],
+        "breakdown.incomeBases.provincial": [42550, 44500],
+        "ccb": 5198.59,
+        "provBen": 1943.92
+      }
+    }
+  ]
+}

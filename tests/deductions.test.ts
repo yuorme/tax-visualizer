@@ -65,7 +65,7 @@ test("CRA deferred FHSA example: Nagia's 2026 claim is $13,000, not capped at $8
   // https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/first-home-savings-account/tax-deductions-fhsa-contributions.html
   const y = loadYear(2026);
   const x = blank(80_000);
-  assert.equal(netOf(y.federal, x) - netOf(y.federal, { ...x, fhsa: 13_000 }), 13_000);
+  assert.equal(netOf(y.federal, null, x) - netOf(y.federal, null, { ...x, fhsa: 13_000 }), 13_000);
   assert.equal(deductionsOf({ ...x, ded: 1000, rrsp: 5000, fhsa: 13_000 }), 19_000);
-  assert.equal(netOf(y.federal, { ...blank(2000), rrsp: 5000, fhsa: 13_000 }), 0);
+  assert.equal(netOf(y.federal, null, { ...blank(2000), rrsp: 5000, fhsa: 13_000 }), 0);
 });
