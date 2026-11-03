@@ -11,7 +11,7 @@ brackets:
   - [190363, 0.173]
   - [.inf, 0.183]
 basicPersonalAmount: 9536
-dividendTaxCredit: {eligible: 0.063, nonEligible: 0.032}
+dividendTaxCredit: {eligible: 0.054, nonEligible: 0.035}
 spouseAmount: {max: 7792, threshold: 780}
 lowIncomeReduction:
   program: nl-low-income-reduction
