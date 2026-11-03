@@ -157,3 +157,13 @@ test("2024 Alberta child benefit follows the statutory child-specific reduction 
   near(ab(67_300, 70_000, 1), 10, "statutory minimum for a positive annual entitlement below $10");
   near(ab(67_500, 70_000, 1), 0, "no minimum once fully phased out");
 });
+
+test("2024 NWT annual amounts and taper match the Finance fact sheet", () => {
+  const nt = (net: number, kids: number, under6: number) =>
+    provincialChildBenefit(prov("NT").childBenefit, net, 0, kids, false, under6);
+  near(nt(30_000, 1, 1), 815, "one child under six");
+  near(nt(30_000, 1, 0), 652, "one older child");
+  near(nt(30_000, 5, 5), 2812, "four-child maximum plus fifth child");
+  near(nt(55_000, 3, 2), (1467 + 652) / 2, "half of the combined age-group amounts");
+  near(nt(80_000, 3, 2), 0, "published exhaustion threshold");
+});
