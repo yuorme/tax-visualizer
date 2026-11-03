@@ -2,7 +2,8 @@
 
 This prerequisite represents the recurring 2019 rules without changing any existing year's data or golden results.
 The year integration supplies the amounts and explains historical assumptions in the interface. New formulas select
-program identifiers, never calendar years. Source extracts and original-file hashes are in [sources](2019/sources/INDEX.md).
+program identifiers, never calendar years. Source extracts and original-file hashes are in
+[sources](2019/sources/INDEX.md).
 
 ## Alberta: two benefits before ACFB
 
