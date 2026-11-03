@@ -362,6 +362,11 @@ export function footerNotes(y: YearData, page: PageDefaults): string {
           `B.C.'s child opportunity benefit was renamed the family benefit during this benefit year. Each period is calculated separately before weighting: ${bc.childBenefit.params.periods.map(period => `${period.weight * 12} months at annual maximum amounts of ${list(period.max.map(money))} for the first, second and each additional child, with minimum amounts of ${list(period.min.map(money))}`).join("; ")}. Each period applies its own income reduction, minimum and zero floor.`,
         ]
       : []),
+    ...(bc.childBenefit?.program === "bc-child-benefit-transition"
+      ? [
+          `B.C.'s benefit changed during this benefit year. The early childhood benefit covers ${bc.childBenefit.params.early.weight * 12} months for children under six: ${money(bc.childBenefit.params.early.perChild)} annually per eligible child, reduced by ${rate(bc.childBenefit.params.early.rate)} per child on family income above ${money(bc.childBenefit.params.early.threshold)}. The child opportunity benefit covers ${bc.childBenefit.params.opportunity.weight * 12} months for all children under 18, with annual maximum amounts of ${list(bc.childBenefit.params.opportunity.max.map(money))} for the first, second and each additional child. Each program applies its own reductions and zero floor before its share of the year is applied. Household ages are held fixed across both periods.`,
+        ]
+      : []),
     ...(nsBenefit?.program === "nova-scotia-child-benefit-by-child"
       ? [
           `Nova Scotia pays annual amounts of ${list(nsBenefit.params.perChild.map(money))} for the first, second and each additional child below ${money(nsBenefit.params.fullBelow)} of family net income. From that threshold to below ${money(nsBenefit.params.partialBelow)}, the first child's amount stays whole and later children's amounts are paid at ${rate(nsBenefit.params.partialOtherRate)}. The benefit ends at the upper threshold.`,
@@ -400,7 +405,9 @@ export function footerNotes(y: YearData, page: PageDefaults): string {
     "Manitoba property credits",
   );
   const mbDescription =
-    mb.program === "mb-school-tax-credits" || mb.program === "mb-school-tax-credits-rent-share"
+    mb.program === "mb-school-tax-credits-rent-share" && mb.params.schoolRebateRate === 0
+      ? `Manitoba's education property tax credit (up to ${money(mb.params.educationCreditMax)} of school taxes for owners, or ${rate(mb.params.renterShare)} of rent paid for renters, capped at ${money(mb.params.renterMax)})`
+      : mb.program === "mb-school-tax-credits" || mb.program === "mb-school-tax-credits-rent-share"
       ? `Manitoba's school tax rebate (${rate(mb.params.schoolRebateRate)} of estimated school taxes), education property tax credit (up to ${money(mb.params.educationCreditMax)} of remaining school taxes) and renters tax credit (up to ${money(mb.params.renterMax)}, ${mb.program === "mb-school-tax-credits-rent-share" ? `${rate(mb.params.renterShare)} of rent paid before applying the cap` : "capped by rent paid"})`
       : "Manitoba's renters and homeowners affordability credits";
   const cwbEstimate =

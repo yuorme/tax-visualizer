@@ -1,0 +1,268 @@
+{
+  "description": "Independent 2020 historical calculations; docs/verification/2020-golden-cases.md.",
+  "defaults": {
+    "active": 0,
+    "spouse": true,
+    "adults": 1,
+    "kids": 0,
+    "under6": 0,
+    "useBpa": false,
+    "whRate": 0,
+    "useCredits": false,
+    "homeValue": 0,
+    "rent": 0,
+    "monthlySpending": 0
+  },
+  "rules": {},
+  "cases": [
+    {
+      "id": "history2020-bc-older",
+      "year": 2020,
+      "province": "BC",
+      "household": {
+        "people": [
+          {
+            "fd": 0
+          }
+        ],
+        "kids": 1,
+        "under6": 0,
+        "useCredits": true
+      },
+      "expected": {
+        "provBen": 1200
+      }
+    },
+    {
+      "id": "history2020-bc-young",
+      "year": 2020,
+      "province": "BC",
+      "household": {
+        "people": [
+          {
+            "fd": 0
+          }
+        ],
+        "kids": 1,
+        "under6": 1,
+        "useCredits": true
+      },
+      "expected": {
+        "provBen": 1365
+      }
+    },
+    {
+      "id": "history2020-bc-mixed",
+      "year": 2020,
+      "province": "BC",
+      "household": {
+        "people": [
+          {
+            "fd": 0
+          }
+        ],
+        "kids": 3,
+        "under6": 2,
+        "useCredits": true
+      },
+      "expected": {
+        "provBen": 2880
+      }
+    },
+    {
+      "id": "history2020-bc-early-only",
+      "year": 2020,
+      "province": "BC",
+      "household": {
+        "people": [
+          {
+            "fd": 125000
+          }
+        ],
+        "kids": 1,
+        "under6": 1,
+        "useCredits": true
+      },
+      "expected": {
+        "provBen": 82.5
+      }
+    },
+    {
+      "id": "history2020-bc-opportunity-only",
+      "year": 2020,
+      "province": "BC",
+      "household": {
+        "people": [
+          {
+            "fd": 150000
+          }
+        ],
+        "kids": 5,
+        "under6": 2,
+        "useCredits": true
+      },
+      "expected": {
+        "provBen": 420
+      }
+    },
+    {
+      "id": "history2020-bc-exhausted",
+      "year": 2020,
+      "province": "BC",
+      "household": {
+        "people": [
+          {
+            "fd": 200000
+          }
+        ],
+        "kids": 5,
+        "under6": 2,
+        "useCredits": true
+      },
+      "expected": {
+        "provBen": 0
+      }
+    },
+    {
+      "id": "history2020-nu-single-phase",
+      "year": 2020,
+      "province": "NU",
+      "household": {
+        "people": [
+          {
+            "ord": 7000
+          }
+        ],
+        "kids": 0,
+        "useCredits": true
+      },
+      "expected": {
+        "credits": [
+          [
+            "GST/HST credit",
+            296
+          ],
+          [
+            "Canada Workers Benefit",
+            100
+          ]
+        ]
+      }
+    },
+    {
+      "id": "history2020-nu-parent-phase",
+      "year": 2020,
+      "province": "NU",
+      "household": {
+        "people": [
+          {
+            "ord": 7000
+          }
+        ],
+        "kids": 1,
+        "useCredits": true
+      },
+      "expected": {
+        "credits": [
+          [
+            "GST/HST credit",
+            747
+          ],
+          [
+            "Canada Workers Benefit",
+            140
+          ]
+        ]
+      }
+    },
+    {
+      "id": "history2020-nu-single-cap",
+      "year": 2020,
+      "province": "NU",
+      "household": {
+        "people": [
+          {
+            "ord": 20000
+          }
+        ],
+        "kids": 0,
+        "useCredits": true
+      },
+      "expected": {
+        "credits": [
+          [
+            "GST/HST credit",
+            451
+          ],
+          [
+            "Canada Workers Benefit",
+            1085
+          ]
+        ]
+      }
+    },
+    {
+      "id": "history2020-nu-parent-cap",
+      "year": 2020,
+      "province": "NU",
+      "household": {
+        "people": [
+          {
+            "ord": 20000
+          }
+        ],
+        "kids": 1,
+        "useCredits": true
+      },
+      "expected": {
+        "credits": [
+          [
+            "GST/HST credit",
+            747
+          ],
+          [
+            "Canada Workers Benefit",
+            1630
+          ]
+        ]
+      }
+    },
+    {
+      "id": "history2020-payroll-AB",
+      "year": 2020,
+      "province": "AB",
+      "household": {
+        "people": [
+          {
+            "ord": 100000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 2732.4,
+        "list.0.pay.enh": 165.6,
+        "list.0.pay.ei": 856.36,
+        "list.0.pay.qpip": 0
+      }
+    },
+    {
+      "id": "history2020-payroll-QC",
+      "year": 2020,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 100000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 2980.8,
+        "list.0.pay.enh": 165.6,
+        "list.0.pay.ei": 650.4,
+        "list.0.pay.qpip": 387.79
+      }
+    }
+  ],
+  "ratePeriodCases": []
+}

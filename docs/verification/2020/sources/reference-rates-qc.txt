@@ -1,0 +1,50 @@
+Title: Quebec 2021 and 2020 Personal Marginal Income Tax Rates
+URL: https://www.taxtips.ca/priortaxrates/tax-rates-2020-2021/qc.htm
+Fetched: 2026-11-02
+SHA-256 of the original: e272790264f7c95bd4804a839ff6f518f723ecb91c35daada022393fbf8b7c1f
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+Ads keep this website free for you. TaxTips.ca does not research or endorse any product or service appearing in ads on this site. Before making a major financial decision you should consult a qualified professional. | Quebec 2020 & 2021 Income Tax Rates | TaxTips.ca Canadian Tax and Financial Information
+TaxTips.ca Home What's New | | Links & Resources Site Map
+
+Need an accounting, tax or financial advisor? Look in our Directory. Use above search box to easily find your topic! Stay Connected with TaxTips.ca!
+
+Quebec Tax Rates -> 2020 and 2021 Tax Rates -> Quebec Personal Income Tax Rates Quebec 2021 and 2020 Personal Marginal Income Tax Rates The Quebec tax brackets and personal tax credit amounts are increased for 2021 by an indexation factor of 1.0126. Quebec's indexation factor is calculated using the Quebec consumer price index (CPI) All-items excluding alcoholic beverages, tobacco products and smokers' supplies and recreational cannabis. The Federal tax brackets and personal tax credit amounts are increased for 2021 by an indexation factor of 1.010. The federal indexation factor, tax brackets and tax rates have been confirmed to Canada Revenue Agency. The Quebec indexation factor, tax brackets and tax rates have been confirmed to Quebec Ministry of Finance information. The Quebec basic personal amount is rounded to the nearest $1, beginning with the 2018 taxation year. The Quebec tax thresholds are rounded to the nearest $5. 2017 is the base year for the thresholds and the personal amount. The dividend tax credit rates for both eligible and non-eligible dividends were reduced for dividends received after March 27, 2018, and were further reduced each year until 2020 for eligible dividends, and 2021 for non-eligible dividends. The marginal rates below reflect the reduced dividend tax rates. The tax rates below include the reduction in rate due to the federal tax abatement of 16.5% of federal tax. However, this abatement is applied to the net federal tax after deducting the basic personal amount. For this reason, the federal personal amount tax credit is also reduced by 16.5%. The Federal personal amount shown below is before the reduction from the federal tax abatement. Tax Tip: read the article Understanding the Tables of Personal Income Tax Rates, especially if you are trying to compare the rates below to the marginal tax rates in the Basic Tax Calculator.
+
+Quebec Personal Income Tax Brackets and Tax Rates
+2021 Taxable Income | 2021 Tax Rates | 2020 Taxable Income | 2020 Tax Rates
+first $45,105 | 15.00% | first $44,545 | 15.00%
+over $45,105 up to $90,200 | 20.00% | over $44,545 up to $89,080 | 20.00%
+over $90,200 up to $109,755 | 24.00% | over $89,080 up to $108,390 | 24.00%
+over $109,755 | 25.75% | over $108,390 | 25.75%
+
+Combined Federal & Quebec Tax Brackets and Tax Rates
+2021 Taxable Income | 2021 Marginal Tax Rates | 2020 Taxable Income | 2020 Marginal Tax Rates
+Other Income | Capital Gains | Canadian Dividends | Other Income | Capital Gains | Canadian Dividends
+Eligible | Non-Eligible | Eligible | Non-Eligible
+first $45,105 | 27.53% | 13.76% | 4.53% | 18.37% | first $44,545 | 27.53% | 13.76% | 4.53% | 17.50%
+over $45,105 up to $49,020 | 32.53% | 16.26% | 11.43% | 24.12% | over $44,545 up to $48,535 | 32.53% | 16.26% | 11.43% | 23.25%
+over $49,020 up to $90,200 | 37.12% | 18.56% | 17.77% | 29.40% | over $48,535 up to $89,080 | 37.12% | 18.56% | 17.77% | 28.53%
+over $90,200 up to $98,040 | 41.12% | 20.56% | 23.29% | 34.00% | over $89,080 up to $97,069 | 41.12% | 20.56% | 23.29% | 33.13%
+over $98,040 up to $109,755 | 45.71% | 22.86% | 29.62% | 39.28% | over $97,069 up to $108,390 | 45.71% | 22.86% | 29.62% | 38.41%
+over $109,755 up to $151,978 | 47.46% | 23.73% | 32.04% | 41.30% | over $108,390 up to $150,473 | 47.46% | 23.73% | 32.04% | 40.42%
+over $151,978 up to $216,511(1) | 50.23% | 25.12% | 35.86% | 44.48% | over $150,473 up to $214,368(1) | 50.15% | 25.07% | 35.75% | 43.51%
+over $216,511 | 53.31% | 26.65% | 40.10% | 48.02% | over $214,368 | 53.31% | 26.65% | 40.10% | 47.14%
+Marginal tax rate for dividends is a % of actual dividends received (not grossed-up taxable amount). Marginal tax rate for capital gains is a % of total capital gains (not taxable capital gains). Gross-up rate for eligible dividends is 38%, and for non-eligible dividends is 15%. For more information see Quebec dividend tax credits.
+Quebec Basic Personal Amount
+2021 Personal Amount | 2021 Tax Rate | 2020 Personal Amount | 2020 Tax Rate
+$15,728 | 15% | $15,532 | 15%
+Federal Basic Personal Amount
+2021 Personal Amount (1) | 2021 Tax Rate | 2020 Personal Amount (1) | 2020 Tax Rate
+$13,808 | 15% | $13,229 | 15%
+
+(1) See the federal tax rates page for information on the federal personal amount increase.
+
+The marginal tax rates above have been adjusted to reflect these changes.
+
+Copyright © 2002 Boat Harbour Investments Ltd.
+
+Revised: May 18, 2025
+
+Copyright © 2002 Boat Harbour Investments Ltd. All Rights Reserved. See Reproduction of information from TaxTips.ca Facebook | Twitter | LinkedIn The information on this site is not intended to be a substitute for professional advice. Each person's situation differs, and a professional advisor can assist you in using the information on this web site to your best advantage Please see our legal disclaimer regarding the use of information on our site, and our Privacy Policy regarding information that may be collected from visitors to our site.
