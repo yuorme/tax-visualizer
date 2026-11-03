@@ -68,7 +68,7 @@ test("net income parts add up to taxable income in every province, enhanced CPP/
       const m = compute(y, p, household([x])).me;
       const n = m.breakdown.netIncome;
       assert.equal(Math.max(0, n.ord + n.cg + n.ed + n.nd + n.fd - n.ded - n.enh), m.ti, `${p.code} ${x.ord}`);
-      assert.equal(n.enh, payrollOf(F, null, x).enh, `${p.code} ${x.ord}`);
+      assert.equal(n.enh, payrollOf(F, p, x).enh, `${p.code} ${x.ord}`);
     }
   // The enhanced contribution is part of the breakdown, not left out of it
   assert.ok(me("ON", people[0]).breakdown.netIncome.enh > 0);

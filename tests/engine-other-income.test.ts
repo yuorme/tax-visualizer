@@ -134,7 +134,7 @@ test("other income is not working income for the Workers Benefit or Quebec's wor
         rent: 0,
       });
       assert.deepEqual(couple.credits, expected, `${at}: couple's credits`);
-      close(couple.famNet, netOf(yd.federal, blank(8_000)) + 25_000, `${at}: family net income`);
+      close(couple.famNet, netOf(yd.federal, p, blank(8_000)) + 25_000, `${at}: family net income`);
     }
 });
 
@@ -144,7 +144,7 @@ test("other income counts in family net income for child benefits, but not in wo
     const kids = 2,
       under6 = 1;
     const h = household(y, p, hh([person({ ord: 15_000, oth: 30_000 })], { kids, under6 }));
-    close(h.famNet, netOf(F, blank(15_000)) + 30_000, `${code}: family net income`);
+    close(h.famNet, netOf(F, p, blank(15_000)) + 30_000, `${code}: family net income`);
     close(h.ccb, ccbOf(F, h.famNet, kids, under6), `${code}: CCB`);
     // The working components (Alberta, New Brunswick) see $15,000 of working income, not $45,000
     close(h.provBen, provincialChildBenefit(p.childBenefit, h.famNet, 15_000, kids, true, under6), `${code}: benefit`);

@@ -42,11 +42,11 @@ export type PersonResult = ReturnType<typeof personTax>;
 export function personTax(fed: Federal, p: Province, x: Person, sp: Extra, ctx: Ctx, s: Settings) {
   const qc = p.system === "quebec";
   const pay = payrollOf(fed, p, x);
-  const ti = netOf(fed, x, ctx.childcareDeduction); // taxable income (federal)
+  const ti = netOf(fed, p, x, ctx.childcareDeduction); // taxable income (federal)
   const workerDed = p.quebec
     ? Math.min(p.quebec.workerDeduction.max, Math.max(0, x.ord) * p.quebec.workerDeduction.rate)
     : 0;
-  const provincialNet = qc ? netOf(fed, x) : ti; // Quebec does not deduct federal childcare expenses
+  const provincialNet = qc ? netOf(fed, p, x) : ti; // Quebec does not deduct federal childcare expenses
   const tiP = Math.max(0, provincialNet - workerDed); // Quebec allows an extra deduction for workers
   const cash = x.ord + (x.oth ?? 0) + x.cg + x.ed + x.nd + x.fd;
   const f = walk(fed.brackets, ti),
@@ -203,7 +203,7 @@ export function personTax(fed: Federal, p: Province, x: Person, sp: Extra, ctx: 
     breakdown: {
       provincialLevy,
       childcareCredit: { calculated: childcareCreditFull, applied: childcareCredit },
-      netIncome: netIncomeParts(fed, x, ctx.childcareDeduction), // what net income is made of
+      netIncome: netIncomeParts(fed, p, x, ctx.childcareDeduction), // what net income is made of
       rrspRoom: rrspRoom(fed, x),
       quebecAbatement: fedBasic * (1 - k), // the share of basic federal tax that Quebec residents don't pay federally
       ftc, // foreign tax credit, federal and provincial

@@ -50,9 +50,9 @@ export function deductionsOf(x: Person): number {
   return (x.ded || 0) + (x.rrsp || 0) + (x.fhsa || 0);
 }
 
-/** Net income before it's floored at zero, piece by piece (the enhanced rates are the same in both plans). A net
- *  capital loss adds nothing and can't offset other income. */
-export function netIncomeParts(fed: Federal, x: Person, childcareDeduction = 0): NetIncomeParts {
+/** Net income before it's floored at zero, using the province's pension plan. A net capital loss adds nothing
+ *  and can't offset other income. A null province explicitly selects CPP. */
+export function netIncomeParts(fed: Federal, p: Province | null, x: Person, childcareDeduction = 0): NetIncomeParts {
   const inv = fed.investment;
   return {
     ord: x.ord,
@@ -62,13 +62,13 @@ export function netIncomeParts(fed: Federal, x: Person, childcareDeduction = 0):
     nd: x.nd * inv.grossUp.nonEligible,
     fd: x.fd,
     ded: deductionsOf(x) + childcareDeduction,
-    enh: payrollOf(fed, null, x).enh,
+    enh: payrollOf(fed, p, x).enh,
   };
 }
 
 /** Net income: total income less deductions and enhanced CPP/QPP contributions. */
-export function netOf(fed: Federal, x: Person, childcareDeduction = 0): number {
-  const n = netIncomeParts(fed, x, childcareDeduction);
+export function netOf(fed: Federal, p: Province | null, x: Person, childcareDeduction = 0): number {
+  const n = netIncomeParts(fed, p, x, childcareDeduction);
   return Math.max(0, n.ord + (n.oth ?? 0) + n.cg + n.ed + n.nd + n.fd - n.ded - n.enh);
 }
 

@@ -87,10 +87,10 @@ export function household(y: YearData, p: Province, hh: Household, peopleIn: Per
   const s = { useBpa, whRate: hh.whRate };
   // A second adult with no income entered is treated as a spouse with no income
   const ppl = peopleIn.length === 1 && adults >= 2 ? [peopleIn[0], blank(0)] : peopleIn;
-  const childcare = childcareOf(fed, hh, ppl);
+  const childcare = childcareOf(fed, hh, ppl, p);
   const { kids, under6 } = childcare.childCounts ?? hh;
-  const nets = ppl.map((x, i) => netOf(fed, x, childcare.claims[i]));
-  const provincialNets = qc ? ppl.map(x => netOf(fed, x)) : nets;
+  const nets = ppl.map((x, i) => netOf(fed, p, x, childcare.claims[i]));
+  const provincialNets = qc ? ppl.map(x => netOf(fed, p, x)) : nets;
   const couple = ppl.length === 2 && spouse;
   const famNet = couple ? nets[0] + nets[1] : nets[0];
   const provincialFamNet = couple ? provincialNets[0] + provincialNets[1] : provincialNets[0];
@@ -179,7 +179,7 @@ export function household(y: YearData, p: Province, hh: Household, peopleIn: Per
   const childBen = ccb + provBen;
   const incomeBases = {
     beforeChildcare: ppl.map(x => {
-      const n = netIncomeParts(fed, x);
+      const n = netIncomeParts(fed, p, x);
       return n.ord + (n.oth ?? 0) + n.cg + n.ed + n.nd + n.fd - n.ded - n.enh;
     }),
     federal: nets,
