@@ -7,6 +7,45 @@ import type { Credit, Driving } from "./types.ts";
 export function carbonRebatesOf(p: Province, income: number, couple: boolean, kids: number): Credit[] {
   const parent = !couple && kids > 0;
   return (p.carbon?.rebates ?? []).map(rebate => {
+    if (rebate.program === "alberta-carbon-rebate-payments") {
+      const amount = rebate.params.payments.reduce((sum, payment) => {
+        const children = Math.min(payment.childCap, parent ? kids - 1 : kids);
+        const maximum =
+          payment.adult + (couple ? payment.spouse : parent ? payment.firstChild : 0) + payment.child * children;
+        const family = couple || parent ? 1 : 0;
+        const annual = Math.max(0, maximum - payment.rate[family] * Math.max(0, income - payment.threshold[family]));
+        return sum + (annual < payment.minAnnual ? 0 : annual * payment.weight);
+      }, 0);
+      return [rebate.name ?? p.carbon?.name ?? rebate.program, amount];
+    }
+    if (rebate.program === "pei-carbon-rebate-increment") {
+      const amount = rebate.params.payments.reduce((sum, payment) => {
+        const annual = (q: typeof payment.regular) =>
+          Math.max(
+            0,
+            q.individual +
+              (couple || parent ? q.spouseOrDependant : 0) +
+              Math.min(q.supplementMax, q.supplementRate * Math.max(0, income - q.supplementFrom)) -
+              q.rate * Math.max(0, income - q.threshold),
+          );
+        return sum + payment.weight * (annual(payment.enhanced) - annual(payment.regular));
+      }, 0);
+      return [rebate.name ?? p.carbon?.name ?? rebate.program, amount];
+    }
+    if (rebate.program === "carbon-rebate-consolidated-payments") {
+      const amount = rebate.params.payments.reduce((sum, payment) => {
+        const maximum =
+          payment.adult +
+          (couple ? payment.spouse : parent ? payment.firstChild : 0) +
+          payment.child * (parent ? kids - 1 : kids);
+        const entitlement = Math.max(
+          0,
+          maximum - payment.rate * Math.max(0, income - payment.threshold[couple || parent ? 1 : 0]),
+        );
+        return sum + entitlement * (entitlement < payment.smallPayment.below ? payment.smallPayment.multiplier : 1);
+      }, 0);
+      return [rebate.name ?? p.carbon?.name ?? rebate.program, amount];
+    }
     const amount = rebate.params.payments.reduce((sum, payment) => {
       const maximum =
         payment.adult +
