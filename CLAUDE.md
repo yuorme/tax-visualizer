@@ -80,6 +80,11 @@ significant layout changes, pass `model: opus` on the call. Give each agent one 
 it owns; never run two agents on the same file at once. Exception: in `src/data/schema.ts`, adding new fields or
 program entries doesn't need exclusive ownership (editing existing ones does). Every branch gets a reviewer pass
 before it merges; give the reviewer the pull request number from the agent's report.
+The orchestrator owns worktree cleanup: lock each agent's worktree while it is active (`git worktree lock <path>`).
+After its final report and process exit, unlock it and run `npm run worktree:cleanup -- --apply <path>` from outside
+it, including reviewer checkouts and PRs awaiting `needs-human` merge. Keep unfinished work; recreate a checkout
+for follow-ups. At session start, inspect leftover worktrees and clean only confirmed finished ones. See
+[Worktree lifecycle](README.md#worktree-lifecycle) for safeguards, paused work and preview cleanup.
 When one issue needs another's unmerged work, branch from that branch (stacked), open the pull request against it
 (GitHub retargets it to `main` when the parent merges), and say so in "Blocked by".
 
