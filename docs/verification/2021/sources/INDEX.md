@@ -6,6 +6,24 @@ Iqaluit appends a manual transcription of its scanned schedule to the hashed off
 Only recurring modeled programs are included; extraordinary cost-of-living and COVID payments are excluded.
 Carbon measures remain outside this milestone (issue #29).
 
+The provincial comparison against 2022 reports 144 changed values, three changes over 15%, 95 unchanged
+amounts, four additions, two removals and two replacements. The large changes are the 2022 NL bracket
+expansion, Ontario's LIFT taper falling from 10% to 5%, and PEI's non-eligible dividend credit falling from
+1.96% to 1.30%; the adjacent years' official forms confirm each change. Program changes reflect BC's later
+temporary enhancement, Manitoba's 2021 rent-share rule and Nova Scotia's unequal 2021 child amounts.
+Calgary's 2021 property estimate uses the annual report's rounded mill rates; the 2022 source is more precise.
+
+Unchanged figures are intentional: Alberta child benefits; Manitoba spouse amount; NB child and HST credits;
+NL child and income-supplement thresholds; NS brackets, personal/spouse/child amounts, low-income reduction
+and affordable-living credit; NT and NU child benefits; Ontario's upper brackets and health premium;
+PEI brackets, child amount, regular sales credit, low-income credit amounts and surtax threshold;
+Quebec work-premium earnings exclusions; and Yukon's upper bracket and child benefit. The cited annual forms,
+benefit guide and unchanged statutory provisions support these values, rather than assumed annual inflation.
+
+All 13 provincial files validate against the 2021 rule branch schema. Formatting, lint and typecheck pass.
+The collector's full check stops at tests because federal files and golden results for its stacked 2021–2023
+data are intentionally supplied by the federal integrator. Full-year checks and reference tests remain there.
+
 Text extracts of official publications used for the 2021 data, made with
 `npm run fetch-source -- <year> <url> [<name>]`. A data collector and the reviewer read the same text, and a
 reviewer can check figures without opening PDFs. Each `.txt` file starts with the URL, the date fetched and the
