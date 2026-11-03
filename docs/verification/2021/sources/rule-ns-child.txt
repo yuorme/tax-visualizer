@@ -1,0 +1,92 @@
+Title: Nova Scotia Regulation92/2020: ordered child benefit amounts
+URL: https://novascotia.ca/just/regulations/RG2/2020/RG2-2020-07-17.pdf
+Fetched: 2026-11-02
+SHA-256 of the original: 5ea3688ead53e692ddeb589f6722cf4b687f3b6b04787625bb8985177c5e1273
+Publication date modified: 2020-07-14
+PDF pages: 2-3 of 8
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 2 of 8 ---
+
+288© NS Office of the Registrar of Regulations. Web version.
+N.S. Reg. 92/2020 Royal Gazette Part II - Regulations Vol. 44, No. 15
+N.S. Reg. 92/2020
+Made: June 25, 2020
+Filed: June 25, 2020
+Nova Scotia Child Benefit Regulations–amendment
+Order in Council 2020-180 dated June 25, 2020
+Amendment to regulations made by the Governor in Council
+pursuant to Section 80 of the Income Tax Act
+The Governor in Council on the report and recommendation of the Minister of Finance and Treasury Board and
+the Minister of Community Services dated May 25, 2020, and pursuant to Section 80 of Chapter 217 of the
+Revised Statutes of Nova Scotia,1989, the Income Tax Act, is pleased to amend the Nova Scotia Child Benefit
+Regulations, N.S. Reg. 62/1998, made by the Governor in Council by Order in Council 1998-430 dated August
+28, 1998, to increase the Nova Scotia Child Benefit rates, and to increase the partial and upper income
+thresholds for the Nova Scotia Child Benefit, in the manner set forth in Schedule “A” attached to and forming
+part of the report and recommendation, effective on and after July 1, 2020.
+Schedule “A”
+Amendment to the Nova Scotia Child Benefit Regulations
+made by the Governor in Council under Section 80
+of Chapter 217 of the Revised Statutes of Nova Scotia, 1989,
+the Income Tax Act
+1 Section 3 of the Nova Scotia Child Benefit Regulations, N.S. Reg. 62/1998, made by the Governor in
+Council by Order in Council 1998-430 dated August 28, 1998, is repealed and the following Section
+substituted:
+3 Where a person and, where the Minister so demands, the person’s cohabiting spouse or common-law
+partner at the end of the taxation year, have filed a return of income for the year, an overpayment on
+account of the person’s liability under Part II of the Act for the year shall be deemed to have arisen
+during a month in relation to which the year is the base taxation year, equal to the amount
+determined by the following formula:
+NSCB = [1/12 (A + B + C)] - D
+where
+A is $925 for the first qualified dependant in respect of whom the person was an eligible individual
+at the beginning of the month,
+B is $825 for the second qualified dependant, if any, in respect of whom the person was an eligible
+individual at the beginning of the month,
+C is the amount calculated in accordance with the following formula:
+C = $900 x E
+where E is the number of qualified dependants in excess of two in respect of whom the person was
+an eligible individual at the beginning of the month, and
+D is the benefit reduction applicable to the eligible individual which is calculated in accordance
+with Section 4.
+
+--- PDF page 3 of 8 ---
+
+N.S. Reg. 92/2020 - 93/2020 Royal Gazette Part II - Regulations Vol. 44, No. 15
+2 Section 4 of the regulations is repealed and the following Section substituted:
+4 (1) Where the adjusted income of the eligible individual for the base taxation year in relation to
+the month is less than $26 000, D equals zero.
+(2) Where the adjusted income of the eligible individual for the base taxation year in relation to
+the month is equal to or greater than $26 000 and less than $34 000,
+(a) if there is only 1 qualified dependant in respect of whom the person was an eligible
+individual at the beginning of the month,
+D = 0.
+(b) if there are only 2 qualified dependants in respect of whom the person was an eligible
+individual at the beginning of the month,
+D = 1/12 × 50% × B, where B is as defined in Section 3.
+(c) if there are more than 2 qualified dependants in respect of whom the person was an
+eligible individual at the beginning of the month,
+D = 1/12 × 50% × (B + C), where B and C are as defined in Section 3.
+N.S. Reg. 93/2020
+Made: June 25, 2020
+Filed: June 29, 2020
+Prescribed Petroleum Products Prices
+Order dated June 25, 2020
+made by the Nova Scotia Utility and Review Board
+pursuant to Section 14 of the Petroleum Products Pricing Act
+and Sections 16 to 19 of the Petroleum Products Pricing Regulations
+Order M09766
+In the matter of the Petroleum Products Pricing Act
+- and -
+In the matter of prescribing prices for petroleum products
+pursuant to Section 14 of the Petroleum Products Pricing Act and
+Sections 16 to 19 of the Petroleum Products Pricing Regulations
+Before: Richard J. Melanson, LL.B., Member
+Whereas the purpose of the Petroleum Products Pricing Regulations is to ensure just and reasonable prices for
+specified petroleum products taking into consideration the objectives of preserving the availability of such
+products in rural areas, stabilizing prices of such products and minimizing the variances in prices of such
+products across the Province;
+And whereas the Nova Scotia Utility and Review Board (“Board”) considered the manner in which it would
+proceed to set petroleum product prices in its decision, 2006 NSUARB 108, issued on October 16, 2006;© NS Office of the Registrar of Regulations. Web version.
+289
