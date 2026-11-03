@@ -1,0 +1,39 @@
+{
+  "real": {
+    "baseYear": 2025,
+    "omittedYears": [2026],
+    "rows": [
+      {
+        "year": 2019,
+        "factor": 0.5,
+        "provinces": [{ "code": "AB", "name": "Alberta", "income": 100000, "tax": 12600, "rate": 0.126 }]
+      },
+      {
+        "year": 2025,
+        "factor": 1,
+        "provinces": [{ "code": "AB", "name": "Alberta", "income": 100000, "tax": 17600, "rate": 0.176 }]
+      }
+    ]
+  },
+  "nominal": {
+    "baseYear": 2025,
+    "omittedYears": [],
+    "rows": [
+      {
+        "year": 2019,
+        "factor": 1,
+        "provinces": [{ "code": "AB", "name": "Alberta", "income": 100000, "tax": 17600, "rate": 0.176 }]
+      },
+      {
+        "year": 2025,
+        "factor": 1,
+        "provinces": [{ "code": "AB", "name": "Alberta", "income": 100000, "tax": 17600, "rate": 0.176 }]
+      },
+      {
+        "year": 2026,
+        "factor": 1,
+        "provinces": [{ "code": "AB", "name": "Alberta", "income": 100000, "tax": 17600, "rate": 0.176 }]
+      }
+    ]
+  }
+}

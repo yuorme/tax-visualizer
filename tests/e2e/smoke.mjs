@@ -22,6 +22,7 @@ import { compute } from "../../src/engine/index.ts";
 import { toHousehold } from "../golden/adapter.ts";
 import { CARBON_STEPS } from "./carbon.mjs";
 import { DEDUCTION_STEPS } from "./deductions.mjs";
+import { HISTORY_STEPS } from "./history.mjs";
 import { ALLOWED_HOSTS, openPage, settle } from "./page.mjs";
 import { COLUMN_COUNT, contrastViolations, inspect, KNOWN, MAX_LABEL_LENGTH } from "./rules.mjs";
 
@@ -406,6 +407,9 @@ for (const width of [1000, 430, 375]) {
     const deductions = await run({ width, colorScheme, contrast: width === 375, steps: DEDUCTION_STEPS });
     check(`${width}px ${colorScheme}, deductions`, width, deductions);
     console.log(`${width}px ${colorScheme}: ${DEDUCTION_STEPS.length} deduction states checked`);
+    const history = await run({ width, colorScheme, contrast: width === 375, steps: HISTORY_STEPS });
+    check(`${width}px ${colorScheme}, history`, width, history);
+    console.log(`${width}px ${colorScheme}: ${HISTORY_STEPS.length} history states checked`);
     const carbon = await run({ width, colorScheme, contrast: width === 375, steps: CARBON_STEPS });
     check(`${width}px ${colorScheme}, carbon pricing`, width, carbon);
     console.log(`${width}px ${colorScheme}: ${CARBON_STEPS.length} carbon states checked`);

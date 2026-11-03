@@ -1,6 +1,7 @@
 // Page logic: reads the inputs, runs the engine for every province and draws the chart and comparison.
 // All tax rules and amounts live in data/years/<year>/ and src/engine/; nothing here computes tax.
 import years from "virtual:years";
+import type { HistoryMode } from "../engine/history.ts";
 import {
   type BracketLine,
   blank,
@@ -17,6 +18,7 @@ import {
   type Result,
 } from "../engine/index.ts";
 import { DEFAULT_INCOME, spendEst } from "./defaults.ts";
+import { renderHistory } from "./history.ts";
 import { cents, footerNotes, share, tooltips } from "./notes.ts";
 
 const availableYears = Object.keys(years)
@@ -87,6 +89,8 @@ let metric: Metric = "pct",
   adults = 1,
   kids = 0,
   under6 = 0; // under6: children under 6, out of kids
+let historyOpen = false;
+let historyMode: HistoryMode = "real";
 // homeValue and rent keep what was typed in each; tenure picks which one the engine sees (ownedValue, rentPaid).
 let homeValue = 0,
   propOverride: number | null = null,
@@ -168,6 +172,8 @@ function cleanPerson(o: unknown): Person {
 try {
   const s: Record<string, unknown> = JSON.parse(localStorage.getItem("taxcmp") || "{}");
   if (s.v === 3) {
+    if (typeof s.historyOpen === "boolean") historyOpen = s.historyOpen;
+    if (s.historyMode === "nominal") historyMode = "nominal";
     if (Array.isArray(s.people) && s.people.length) people = s.people.slice(0, 2).map(cleanPerson);
     if (s.active === 1 && people.length === 2) active = 1;
     if (typeof s.spouse === "boolean") spouse = s.spouse;
@@ -210,6 +216,8 @@ function save() {
       JSON.stringify({
         v: 3,
         year: YEAR,
+        historyOpen,
+        historyMode,
         people,
         active,
         spouse,
@@ -456,6 +464,16 @@ function segTip(p: ProvView, r: Result, c: Seg) {
 
 const narrow = matchMedia("(max-width: 520px)"); // phone: compact chart labels
 function render() {
+  $("history-view").hidden = !historyOpen;
+  $("province-view").hidden = historyOpen;
+  $("detail").hidden = historyOpen;
+  $("notes").hidden = historyOpen;
+  yearSelect.disabled = historyOpen;
+  $("view-provinces").setAttribute("aria-pressed", String(!historyOpen));
+  $("view-history").setAttribute("aria-pressed", String(historyOpen));
+  $("history-real").setAttribute("aria-pressed", String(historyMode === "real"));
+  $("history-nominal").setAttribute("aria-pressed", String(historyMode === "nominal"));
+  if (historyOpen) renderHistory(inputs(), home, historyMode);
   const res: Row[] = P.map(p => ({ p, r: calc(p) }));
   const usd = metric === "usd";
   const val = (r: Result) => (usd ? r.total : r.avg); // net of benefits: what the label shows and sorting uses
@@ -1447,6 +1465,22 @@ $("detail-body").addEventListener("click", e => {
 syncAll();
 syncSpend();
 syncHome();
+$("view-provinces").addEventListener("click", () => {
+  historyOpen = false;
+  render();
+});
+$("view-history").addEventListener("click", () => {
+  historyOpen = true;
+  render();
+});
+$("history-real").addEventListener("click", () => {
+  historyMode = "real";
+  render();
+});
+$("history-nominal").addEventListener("click", () => {
+  historyMode = "nominal";
+  render();
+});
 rentIn.value = rent.toLocaleString("en-CA");
 showTab();
 render();
