@@ -21,10 +21,10 @@ For July 2022–June 2023, baseline months have weight 0.75, `max: [1600,1000,80
 `minThreshold: 82578`. Arrays contain incremental amounts; the third repeats for further children.
 
 Baseline figures come from CRA's
-[T4114 2022](https://www.publications.gc.ca/collections/collection_2022/arc-cra/Rv1-36-2022-eng.pdf),
-printed pages 18–19. The official host returns a consent HTML page to `fetch-source`, though the web reader
-can read the PDF. `rule-t4114-mirror.txt` caches PDF pages 9–10 of the same CRA publication distributed by
-CCH. Its source URL and original-byte hash are explicit in the index. Current BC web-page historical amounts
+[T4114 2022](https://publications.gc.ca/collections/collection_2022/arc-cra/Rv1-36-2022-eng.pdf?download=1),
+printed pages 18–19, cached as `rule-t4114.txt` (PDF pages 9–10). The archive download requires its catalogue
+page as the HTTP Referer, in addition to the `download=1` query parameter. The official PDF's byte hash
+matches the available CCH mirror. Current BC web-page historical amounts
 were not used: its baseline nine-month figures reflect later amounts and conflict with the contemporary guide.
 
 ## Independent golden calculations
