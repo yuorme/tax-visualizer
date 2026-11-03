@@ -1,0 +1,219 @@
+Title: Age amount – Personal income tax
+URL: https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/tax-return/completing-a-tax-return/deductions-credits-expenses/line-30100-amount.html
+Fetched: 2026-11-03
+SHA-256 of the original: 5d2fa41832c3ee13e30994bf212c79397e3be4c12e51c472eb22c3b239955b1f
+Publication date modified: 2026-07-29
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+# Age amount – Personal income tax
+
+- Federal: Line 30100
+- Provincial or territorial: Line 58080
+- Tax year: 2025| Prior tax years: 2024 and earlier
+
+You may be able to claim the age amount to reduce the amount of income tax you owe.
+
+If you were bankrupt or moved to Canada or from Canada during the tax year, special rules apply for claiming this amount. To learn more, contact the Canada Revenue Agency (CRA).
+
+## On this page
+
+- Who can claim the age amount
+- How much you can claim
+
+- Transferring the age amount
+
+- How to claim this amount
+- References
+
+## Who can claim the age amount
+
+Generally, you can claim the age amount if you meet all of the following conditions:
+
+- You were 65 years of age or older on December 31, 2025
+- Your net income (line 23600 of your return) is less than $105,709
+
+## How much you can claim
+
+The amount you can claim depends on your net income (line 23600 of your return).
+
+### Claim amount based on your net income
+
+### Federal amount for 2025
+
+If your net income (line 23600 of you return) was:
+
+- $45,522 or less, claim $9,028
+- more than $45,522 but less than $105,709, complete the chart for line 30100 on your Federal Worksheet to calculate your claim
+
+### Provincial and territorial amounts for 2025
+
+The age amount you can claim may also vary depending on the province or territory where you lived at the end of the year :
+
+Alberta
+
+If your net income (line 23600 of you return) was:
+
+- $46,308 or less, claim $6,221
+- more than $46,308 but less than $87,782, complete the chart for line 58080 on Worksheet AB428 to calculate your claim
+
+British Columbia
+
+If your net income (line 23600 of you return) was:
+
+- $43,169 or less, claim $5,799
+- more than $43,169 but less than $81,829, complete the chart for line 58080 on Worksheet BC428 to calculate your claim
+
+Manitoba
+
+If your net income (line 23600 of you return) was:
+
+- $27,749 or less, claim $3,728
+- more than $27,749 but less than $52,602, complete the chart for line 58080 on Worksheet MB428 to calculate your claim
+
+New Brunswick
+
+If your net income (line 23600 of you return) was:
+
+- $44,945 or less, claim $6,037
+- more than $44,945 but less than $85,192, complete the chart for line 58080 on Worksheet NB428 to calculate your claim
+
+Newfoundland and Labrador
+
+If your net income (line 23600 of you return) was:
+
+- $38,712 or less, claim $7,064
+- more than $38,712 but less than $85,806, complete the chart for line 58080 on Worksheet NL428 to calculate your claim
+
+Northwest Territories
+
+If your net income (line 23600 of you return) was:
+
+- $45,522 or less, claim $8,727
+- more than $45,522 but less than $103,702, complete the chart for line 58080 on Worksheet NT428 to calculate your claim
+
+Nova Scotia
+
+If your net income (line 23600 of you return) was:
+
+- $30,828 or less, claim $5,734
+- more than $30,828 but less than $69,055, complete the chart for line 58080 on Worksheet NS428 to calculate your claim
+
+Nunavut
+
+If your net income (line 23600 of you return) was:
+
+- $45,522 or less, claim $12,303
+- more than $45,522 but less than $127,542, complete the chart for line 58080 on Worksheet NU428 to calculate your claim
+
+Ontario
+
+If your net income (line 23600 of you return) was:
+
+- $46,330 or less, claim $6,223
+- more than $46,330 but less than $87,817, complete the chart for line 58080 on Worksheet ON428 to calculate your claim
+
+Prince Edward Island
+
+If your net income (line 23600 of you return) was:
+
+- $36,600 or less, claim $6,510
+- more than $36,600 but less than $80,000, complete the chart for line 58080 on Worksheet PE428 to calculate your claim
+
+Quebec
+
+Refer to: Revenu Québec
+
+Saskatchewan
+
+If your net income (line 23600 of you return) was:
+
+- $43,066 or less, claim $5,785
+- more than $43,066 but less than $81,633, complete the chart for line 58080 on Worksheet SK428 to calculate your claim
+
+Yukon
+
+Claim the amount from line 30100 of your federal tax return.
+
+### Transferring the age amount
+
+You may be able to transfer all or part of your age amount to your spouse or common-law partner. You may also be able to claim all or part of their age amount. For more information, see Line 32600 – Amounts transferred from your spouse or common-law partner.
+
+## How to claim this amount
+
+You can claim the age amount if you meet the conditions and your net income is below the threshold.
+
+Claim the age amount on your federal tax return and your provincial and territorial Form 428.
+
+#### Federal tax return
+
+On line 30100 of your federal tax return, enter the federal age amount that you determined under How much you can claim.
+
+#### Provincial or territorial Form 428
+
+Residents of a province or territory other than Quebec
+
+On line 58080 of your provincial or territorial Form 428, enter the provincial or territorial age amount that you determined under How much you can claim.
+
+Province or territory | Form
+Alberta | Form AB428
+British Columbia | Form BC428
+Manitoba | Form MB428
+New Brunswick | Form NB428
+Newfoundland and Labrador | Form NL428
+Northwest Territories | Form NT428
+Nova Scotia | Form NS428
+Nunavut | Form NU428
+Ontario | Form ON428
+Prince Edward Island | Form PE428
+Saskatchewan | Form SK428
+Yukon | Form YK428
+
+Residents of Quebec
+
+Province or territory | Form
+Quebec | Refer to: Revenu Québec
+
+## References
+
+### Forms and publications
+
+- Worksheet 5000-D1, Federal Worksheet (for all except non-residents)
+- Form 5009-C, AB428 – Alberta Tax and Credits
+- Worksheet 5009-D, Worksheet AB428 – Alberta
+- Form 5010-C, BC428 – British Columbia Tax
+- Worksheet 5010-D, Worksheet BC428 – British Columbia
+- Form 5007-C, MB428 – Manitoba Tax
+- Worksheet 5007-D, Worksheet MB428 – Manitoba
+- Form 5004-C, NB428 – New Brunswick Tax and Credits
+- Worksheet 5004-D, Worksheet NB428 – New Brunswick
+- Form 5001-C, NL428 – Newfoundland and Labrador Tax
+- Worksheet 5001-D, Worksheet NL428 – Newfoundland and Labrador
+- Form 5012-C, NT428 – Northwest Territories Tax
+- Worksheet 5012-D, Worksheet NT428 – Northwest Territories
+- Form 5003-C, NS428 – Nova Scotia Tax
+- Worksheet 5003-D, Worksheet NS428 – Nova Scotia
+- Form 5014-C, NU428 – Nunavut Tax
+- Worksheet 5014-D, Worksheet NU428 – Nunavut
+- Form 5006-C, ON428 – Ontario Tax
+- Worksheet 5006-D, Worksheet ON428 – Ontario
+- Form 5002-C, PE428 – Prince Edward Island Tax and Credits
+- Worksheet 5002-D, Worksheet PE428 – Prince Edward Island
+- Form 5008-C, SK428 – Saskatchewan Tax
+- Worksheet 5008-D, Worksheet SK428 – Saskatchewan
+- Form 5011-C, YT428 – Yukon Tax
+- Income Tax Folio S1-F4-C1, Basic Personal and Dependant Tax Credits
+
+### Related topics
+
+- Line 32600 – Amounts transferred from your spouse or common-law partner
+- Newcomers to Canada and the CRA
+
+### Legislation
+
+ITA: 117.1
+Annual Adjustment
+ITA: 118(2)
+Age credit
+ITA: 118(8)
+Interpretation

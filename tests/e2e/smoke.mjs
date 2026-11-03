@@ -227,6 +227,93 @@ const FUEL_STEPS = [
   ],
 ];
 
+// Unit toggles never rewrite canonical driving amounts, even when the displayed conversion is rounded.
+const drivingSaved = p =>
+  p.evaluate(() => {
+    const saved = JSON.parse(localStorage.getItem("taxcmp"));
+    return { km: saved.km, eff: saved.eff, units: saved.drivingUnits };
+  });
+const drivingResults = p =>
+  p.evaluate(() => ({
+    chart: document.querySelector("#cols").textContent,
+    detail: document.querySelector("#detail-body").textContent,
+  }));
+FUEL_STEPS.push([
+  "fuel: US units preserve inputs, results, defaults and saved state",
+  async p => {
+    const problems = [];
+    await p.click("#eff-reset");
+    const initial = await drivingResults(p);
+    await p.click('[data-driving-units="us"]');
+    problems.push(...(await expectValue(p, "#km", "9,196.294", "Quebec distance in miles")));
+    problems.push(...(await expectValue(p, "#eff", "26.134954", "US mpg")));
+    for (const selector of ["#km", "#eff"])
+      if (await p.$eval(selector, input => input.scrollWidth > input.clientWidth + 1))
+        problems.push(`${selector} clips its converted value`);
+    if ((await p.textContent("#eff-unit")) !== "US mpg" || (await p.textContent("#km-unit")) !== "mi a year")
+      problems.push("distance and efficiency unit labels did not switch together");
+    if (JSON.stringify(initial) !== JSON.stringify(await drivingResults(p)))
+      problems.push("switching units changed tax results");
+    if ((await drivingSaved(p)).km !== null || (await drivingSaved(p)).eff !== null)
+      problems.push("switching units replaced province/national defaults with overrides");
+    await p.selectOption("#home", "BC");
+    problems.push(...(await expectValue(p, "#km", "8,015.688", "BC default in miles")));
+    await type(p, "#km", "10,000");
+    await type(p, "#eff", "30");
+    const typed = await drivingSaved(p);
+    if (typed.km !== 16093.44 || Math.abs(typed.eff - 7.840486111111111) > 1e-12)
+      problems.push("US inputs did not save equivalent metric amounts");
+    const result = await drivingResults(p);
+    for (let i = 0; i < 4; i++) {
+      await p.click('[data-driving-units="metric"]');
+      await p.click('[data-driving-units="us"]');
+    }
+    if (
+      JSON.stringify(typed) !== JSON.stringify(await drivingSaved(p)) ||
+      JSON.stringify(result) !== JSON.stringify(await drivingResults(p))
+    )
+      problems.push("repeated unit toggles drifted inputs or results");
+    await p.reload();
+    await settle(p);
+    problems.push(...(await expectValue(p, "#km", "10,000", "saved miles")));
+    problems.push(...(await expectValue(p, "#eff", "30.0", "saved US mpg")));
+    await p.click('[data-driving-units="metric"]');
+    problems.push(...(await expectValue(p, "#km", "16,093.44", "equivalent metric distance")));
+    if (JSON.stringify(result) !== JSON.stringify(await drivingResults(p)))
+      problems.push("metric view of US inputs has different results");
+    await p.click('[data-driving-units="us"]');
+    await type(p, "#eff", "0");
+    problems.push(...(await expectValue(p, "#eff", "∞", "no-gasoline US mpg")));
+    problems.push(...(await expectNoFuelRow(p, "no-gasoline US mpg")));
+    await p.click('[data-driving-units="metric"]');
+    problems.push(...(await expectValue(p, "#eff", "0.0", "no-gasoline metric consumption")));
+    await p.click('[data-driving-units="us"]');
+    await type(p, "#eff", "30,5");
+    problems.push(...(await expectValue(p, "#eff", "30.5", "decimal-comma US mpg")));
+    await type(p, "#km", "0");
+    problems.push(...(await expectNoFuelRow(p, "zero miles")));
+    await type(p, "#km", "-100");
+    problems.push(...(await expectValue(p, "#km", "0", "negative miles")));
+    await type(p, "#eff", "invalid");
+    if ((await drivingSaved(p)).eff !== 0) problems.push("invalid mpg did not become safe zero consumption");
+    await p.click("#km-reset");
+    await p.click("#eff-reset");
+    if ((await drivingSaved(p)).km !== null || (await drivingSaved(p)).eff !== null)
+      problems.push("Reset in US units did not restore default tracking");
+    await p.focus("#km-range");
+    await p.keyboard.press("End");
+    if (Math.abs((await drivingSaved(p)).km - 50000) > 1e-8)
+      problems.push("US distance slider no longer represents its 50,000 km maximum");
+    if (!(await p.getAttribute("#km-range", "aria-valuetext")).endsWith(" mi"))
+      problems.push("US distance slider has no accessible miles value");
+    await p.keyboard.press("Home");
+    problems.push(...(await expectNoFuelRow(p, "US slider at zero")));
+    if (!((await p.getAttribute('[aria-label="About driving units"]', "data-tip")) ?? "").includes("imperial mpg"))
+      problems.push("unit tooltip lacks the imperial gallon distinction");
+    return problems;
+  },
+]);
+
 // Other income checks (#13), from the page's starting values (Ontario home, Alberta destination, $75,000 of
 // employment income): the employment income box says what it holds, other income has a box of its own for each adult
 // above the investment boxes, it pays no CPP/QPP or EI and gets no employment amount, it isn't working income for the
@@ -559,7 +646,30 @@ for (const [label, steps] of [
 
 // The first step establishes income/driving values; the previous year's step checks all 13 chart values and
 // year-specific notes, sources and controls. Only this representative switch repeats across viewport/theme pairs.
-const responsive = [YEAR_STEPS[0], YEAR_STEPS[2], ...RESPONSIVE_STEPS];
+const responsive = [
+  YEAR_STEPS[0],
+  YEAR_STEPS[2],
+  ...RESPONSIVE_STEPS,
+  [
+    "layout: driving units show equivalent values without clipping",
+    async p => {
+      await p.click("#view-provinces");
+      await openTab(p, "driving");
+      await type(p, "#km", "16,093.44");
+      await type(p, "#eff", "9");
+      const before = await drivingResults(p);
+      await p.click('[data-driving-units="us"]');
+      const problems = await expectValue(p, "#km", "10,000", "responsive US miles");
+      problems.push(...(await expectValue(p, "#eff", "26.134954", "responsive US mpg")));
+      if (JSON.stringify(before) !== JSON.stringify(await drivingResults(p)))
+        problems.push("responsive unit toggle changed tax results");
+      for (const selector of ["#km", "#eff"])
+        if (await p.$eval(selector, input => input.scrollWidth > input.clientWidth + 1))
+          problems.push(`${selector} clips its converted value`);
+      return problems;
+    },
+  ],
+];
 for (const width of [1000, 430, 375]) {
   for (const colorScheme of ["light", "dark"]) {
     const result = await run({ width, colorScheme, contrast: width === 375, steps: responsive });
