@@ -9,3 +9,7 @@ declare module "virtual:cpi" {
   const cpi: import("../data/cpi.ts").CpiData;
   export default cpi;
 }
+declare module "*.png" {
+  const url: string;
+  export default url;
+}

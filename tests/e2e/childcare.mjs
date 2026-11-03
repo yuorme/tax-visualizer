@@ -48,6 +48,7 @@ export const CHILDCARE_STEPS = [
           }),
         ),
       );
+      await p.evaluate(() => history.replaceState(null, "", location.pathname + location.search));
       await p.reload();
       assert.equal(await p.locator("#frug").count(), 0);
       assert.equal(await p.inputValue("#spend"), "3,200");
@@ -162,7 +163,7 @@ export const CHILDCARE_STEPS = [
       await fill(p, "oth", 0);
       await fill(p, "income", 30000);
       assert.equal(await p.textContent("#ded-total"), "$0");
-      assert.match(await p.textContent("#detail-body"), /12,000 deductions/);
+      assert.match(await p.getAttribute('[data-comparison-note="taxable income"]', "data-tip"), /12,000 deductions/);
       await fill(p, "care-age-0", 7);
       assert.equal(await p.inputValue("#u6"), "0");
       assert.equal(await cell(p, "Partner's federal childcare deduction"), "$10,000");
@@ -440,9 +441,11 @@ export const CHILDCARE_STEPS = [
       await p.reload();
       assert.deepEqual(await totals(), hiddenTotals);
       await p.evaluate(s => localStorage.setItem("taxcmp", JSON.stringify({ ...s, childcare: undefined })), hidden);
+      await p.evaluate(() => history.replaceState(null, "", location.pathname + location.search));
       await p.reload();
       assert.deepEqual(await totals(), hiddenTotals);
       await p.evaluate(s => localStorage.setItem("taxcmp", JSON.stringify(s)), hidden);
+      await p.evaluate(() => history.replaceState(null, "", location.pathname + location.search));
       await p.reload();
       await setCount(p, 1);
       await open(p, "#childcare-details");
@@ -486,6 +489,7 @@ export const CHILDCARE_STEPS = [
           }),
         ),
       );
+      await p.evaluate(() => history.replaceState(null, "", location.pathname + location.search));
       await p.reload();
       const noChildRelief = async () => {
         const benefits = p.locator("table.cmp tr").filter({ hasText: "Child benefits" }).first();

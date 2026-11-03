@@ -675,6 +675,33 @@ tfoot tr:last-child td {
 .home-sel .prov-select {
   justify-self: end;
 }
+.prov-control {
+  position: relative;
+  display: inline-flex;
+  min-width: 0;
+  max-width: 100%;
+}
+.province-flag {
+  width: 28px;
+  height: auto;
+  flex: none;
+  vertical-align: middle;
+}
+.prov-control .province-flag {
+  position: absolute;
+  left: 9px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+.prov-control .prov-select {
+  padding-left: 44px;
+}
+.cmp-province {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
 .prov-select:hover {
   border-color: var(--muted);
 }
@@ -1024,6 +1051,7 @@ table.cmp .worse {
 }
 .cc {
   --plot-h: 260px;
+  --flag-row: 24px;
   display: grid;
   grid-template-columns: 34px minmax(0, 1fr);
   grid-template-rows: auto auto;
@@ -1176,6 +1204,13 @@ table.cmp .worse {
   font-weight: 700;
   font-size: 13px;
   letter-spacing: 0.02em;
+  text-align: center;
+}
+.code .province-flag {
+  display: block;
+  height: 20px;
+  width: auto;
+  margin: 0 auto 4px;
 }
 .code sup {
   font-size: 9px;
@@ -1549,7 +1584,9 @@ table {
 tr.top td:first-child {
   box-shadow: inset 3px 0 0 var(--prov);
 }
-.note {
+.note,
+.result-summary,
+.result-annotation {
   font-size: 13px;
   color: var(--muted);
   margin: 0;
@@ -1657,6 +1694,7 @@ footer a {
 /* Chart: all 13 columns fit on a phone; labels drop the % sign and shrink */
 @media (max-width: 520px) {
   .cc {
+    --flag-row: 0px;
     min-width: 0;
     grid-template-columns: 30px minmax(0, 1fr);
     column-gap: 4px;
@@ -1684,6 +1722,9 @@ footer a {
   }
   .code {
     font-size: 12px;
+  }
+  .code .province-flag {
+    display: none;
   }
   .tag {
     font-size: 7px;
@@ -1862,4 +1903,27 @@ footer a {
 .history-source {
   font-size: 12px;
   color: var(--muted);
+}
+
+.share-tools {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  font-size: 12px;
+}
+#share-url {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  font: inherit;
+  color: var(--ink);
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  padding: 8px;
+}
+
+#detail-body h4 .info {
+  margin-left: 8px;
 }

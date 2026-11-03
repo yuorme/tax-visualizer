@@ -7,6 +7,7 @@
 // Every built-page state still checks script errors, unexpected requests, chart labels, visible hints and phone
 // overflow. The legacy comparison disables driving because the legacy page predates fuel tax.
 // Known failures (rules.KNOWN) are reported but don't fail the run; `npm run e2e -- --strict` fails on them too.
+import assert from "node:assert/strict";
 import fs from "node:fs";
 import { chromium } from "playwright";
 import { listYears, loadYear } from "../../src/data/load.ts";
@@ -17,7 +18,7 @@ import { CHILDCARE_STEPS } from "./childcare.mjs";
 import { DEDUCTION_STEPS } from "./deductions.mjs";
 import { HISTORY_STEPS } from "./history.mjs";
 import { ALLOWED_HOSTS, openPage, settle } from "./page.mjs";
-import { RESPONSIVE_STEPS } from "./responsive.mjs";
+import { COMPARISON_STEPS, RESPONSIVE_STEPS } from "./responsive.mjs";
 import { COLUMN_COUNT, contrastViolations, inspect, KNOWN, MAX_LABEL_LENGTH } from "./rules.mjs";
 
 const started = Date.now();
@@ -25,6 +26,76 @@ const read = f => fs.readFileSync(new URL(f, import.meta.url), "utf8");
 const legacy = `<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head><body>${read("../../legacy/tax-compare.html")}</body></html>`;
 const STRICT = process.argv.includes("--strict");
 const PHONE = 500; // widths below this are phones, where the page must not scroll sideways
+
+const flagUrl = code =>
+  `data:image/png;base64,${fs.readFileSync(new URL(`../../src/ui/flags/CA-${code}.png`, import.meta.url)).toString("base64")}`;
+async function expectProvinceFlags(p, chart = true) {
+  const home = await p.inputValue("#home"),
+    dest = await p.inputValue("#dest");
+  for (const [selector, code] of [
+    ["#home-flag", home],
+    ["#cmp-home-flag", home],
+    ["#dest-flag", dest],
+  ]) {
+    assert.equal(await p.getAttribute(selector, "src"), flagUrl(code), `${selector} shows ${code}`);
+    assert.equal(await p.getAttribute(selector, "alt"), "", "decorative flags do not repeat province names");
+    assert.equal(await p.getAttribute(selector, "aria-hidden"), "true");
+    assert.equal(await p.locator(selector).isVisible(), true);
+  }
+  if (!chart) return;
+  for (const code of loadYear(Math.max(...listYears())).provinces.map(p => p.code)) {
+    const selector = `#col-${code} .province-flag`;
+    assert.equal(await p.getAttribute(selector, "src"), flagUrl(code), `${code} chart asset`);
+    assert.equal(await p.locator(selector).isVisible(), p.viewportSize().width > 520);
+    assert.equal(await p.locator(selector).evaluate(el => el.complete && el.naturalWidth > 0), true);
+  }
+}
+
+const FLAG_STEPS = [
+  [
+    "all province selections use their supplied inline flags",
+    async p => {
+      const codes = loadYear(Math.max(...listYears())).provinces.map(p => p.code);
+      for (const [i, code] of codes.entries()) {
+        await p.selectOption("#home", code);
+        await p.selectOption("#dest", codes[(i + 1) % codes.length]);
+        await expectProvinceFlags(p, false);
+      }
+      await expectProvinceFlags(p);
+    },
+  ],
+  [
+    "flags follow swapped provinces, shared-link reload, year and sorting",
+    async p => {
+      await p.selectOption("#home", "QC");
+      await p.selectOption("#dest", "ON");
+      await p.selectOption("#home", "ON");
+      await p.selectOption("#dest", "QC");
+      await expectProvinceFlags(p);
+      await p.evaluate(() => localStorage.clear());
+      await p.reload();
+      assert.equal(await p.inputValue("#home"), "ON");
+      assert.equal(await p.inputValue("#dest"), "QC");
+      await expectProvinceFlags(p);
+      await p.selectOption("#tax-year", String(Math.min(...listYears())));
+      await p.click("#sort-geo");
+      await expectProvinceFlags(p);
+      await p.click("#sort-rate");
+      await expectProvinceFlags(p);
+      await p.click("#view-history");
+      assert.equal(await p.getAttribute("#home-flag", "src"), flagUrl("ON"));
+      await p.click("#view-provinces");
+      await expectProvinceFlags(p);
+      // Native select type-ahead remains available; BC is the only code starting with B.
+      await p.selectOption("#home", "AB");
+      await p.focus("#home");
+      await p.keyboard.press("b");
+      await p.keyboard.press("Enter");
+      assert.equal(await p.inputValue("#home"), "BC");
+      await expectProvinceFlags(p);
+    },
+  ],
+];
 
 // The same steps run on the built page and the legacy one, which differ in how optional inputs are revealed: the
 // built page has a tab bar (#tabbar) that opens one panel at a time; the legacy page has a <details> per section.
@@ -404,7 +475,11 @@ const ledgers = p =>
   p.$$eval("#detail-body .ledger", els =>
     Object.fromEntries(
       els.map(el => [
-        el.querySelector("h4").textContent.trim(),
+        [...el.querySelector("h4").childNodes]
+          .filter(n => n.nodeType === Node.TEXT_NODE)
+          .map(n => n.textContent)
+          .join("")
+          .trim(),
         [...el.querySelectorAll("table")].map(t => [...t.rows].map(r => [...r.cells].map(c => c.textContent.trim()))),
       ]),
     ),
@@ -467,7 +542,9 @@ const OTHER_STEPS = [
       const federal = home.Federal[0].map(r => r[0]);
       if (federal.some(l => l.includes("employment amount")))
         problems.push(`employment amount on other income alone: ${federal.find(l => l.includes("employment amount"))}`);
-      const notes = await p.$$eval("#detail-body p.note", els => els.map(el => el.textContent));
+      const notes = await p.$$eval('#detail-body [data-comparison-note="taxable income"]', els =>
+        els.map(el => el.dataset.tip),
+      );
       if (!notes.some(n => n.includes("Taxable income is $30,000: $30,000 other income.")))
         problems.push(`the taxable income note should list the other income: ${notes.join(" | ")}`);
       await p.click('[data-view="dest"]');
@@ -584,6 +661,7 @@ const YEAR_STEPS = [
         saved.year = "invalid";
         localStorage.setItem("taxcmp", JSON.stringify(saved));
       });
+      await p.evaluate(() => history.replaceState(null, "", location.pathname + location.search));
       await p.reload();
       if ((await p.inputValue("#tax-year")) !== String(Math.max(...listYears())))
         problems.push("invalid year did not fall back");
@@ -617,24 +695,223 @@ function asLegacy(detail, run) {
 }
 
 const capture = p =>
-  p.evaluate(() => ({
-    cols: [...document.querySelectorAll(".col")].map(c => [
-      c.id,
-      c.querySelector(".cv").textContent,
-      c.querySelector(".cm").textContent,
-    ]),
-    title: document.getElementById("chart-title").textContent,
-    // innerText, not textContent: compare the text a reader sees (hidden elements and CSS line breaks matter).
-    // biome-ignore-start lint/performance/useDomNodeTextContent: rendered text is the point of this comparison
-    detail: document.getElementById("detail-body").innerText,
+  p.evaluate(() => {
+    const body = document.getElementById("detail-body");
+    // #57 moves these exact explanations into tooltips. Compare them separately against the legacy prose,
+    // retaining every word and computed amount, while still comparing all visible results and tables.
+    const tips = [...body.querySelectorAll("[data-comparison-note]")];
+    const notes = [...body.querySelectorAll("p.note")].filter(n => !n.textContent.startsWith("Net tax is "));
+    // biome-ignore-start lint/performance/useDomNodeTextContent: preserve rendered table formatting
+    let detail = body.innerText;
+    for (const node of tips) {
+      const heading = node.parentElement.innerText;
+      detail = detail.replace(heading, heading.slice(0, -node.innerText.length));
+    }
+    for (const node of notes) detail = detail.replace(node.innerText, "");
     // biome-ignore-end lint/performance/useDomNodeTextContent: see above
-    // The credits table cell by cell: innerText would depend on whether its panel is open, and the built page opens
-    // one panel at a time where the legacy page keeps several open.
-    credits: [...document.getElementById("cred-list").rows].map(r => [...r.cells].map(c => c.textContent)),
-    sums: ["prop-sum", "cred-sum", "invest-sum", "spend"].map(
-      id => document.getElementById(id).textContent || document.getElementById(id).value,
-    ),
-  }));
+    return {
+      cols: [...document.querySelectorAll(".col")].map(c => [
+        c.id,
+        c.querySelector(".cv").textContent,
+        c.querySelector(".cm").textContent,
+      ]),
+      title: document.getElementById("chart-title").textContent,
+      detail: detail
+        .split("\n")
+        .map(line => line.trim())
+        .filter(Boolean)
+        .join("\n"),
+      explanations: (tips.length ? tips.map(n => n.dataset.tip) : notes.map(n => n.textContent))
+        .map(text => text.trim())
+        .join("\n"),
+      // The credits table cell by cell: innerText would depend on whether its panel is open, and the built page opens
+      // one panel at a time where the legacy page keeps several open.
+      credits: [...document.getElementById("cred-list").rows].map(r => [...r.cells].map(c => c.textContent)),
+      sums: ["prop-sum", "cred-sum", "invest-sum", "spend"].map(
+        id => document.getElementById(id).textContent || document.getElementById(id).value,
+      ),
+    };
+  });
+
+const SHARE_STEPS = [
+  [
+    "the default address is compact and explicit; edits keep it current",
+    async p => {
+      assert.match(p.url(), /#s=1&year=\d{4}$/);
+      await type(p, "#income", "83,456");
+      const params = new URL(p.url()).hash;
+      assert.match(params, /people=/);
+      assert.equal(new URLSearchParams(params.slice(1)).has("spend"), false);
+      await p.evaluate(() => {
+        Object.defineProperty(navigator, "clipboard", {
+          configurable: true,
+          value: {
+            writeText: async value => {
+              window.copiedScenario = value;
+            },
+          },
+        });
+      });
+      await p.click("#copy-link");
+      assert.equal(await p.evaluate(() => window.copiedScenario), p.url());
+      assert.equal(await p.textContent("#share-status"), "Link copied");
+      await type(p, "#income", "84,000");
+      assert.equal(await p.textContent("#share-status"), "");
+    },
+  ],
+  [
+    "every saved input and result survives sharing into a fresh context with conflicting storage",
+    async p => {
+      await p.evaluate(() => {
+        const state = JSON.parse(localStorage.getItem("taxcmp"));
+        Object.assign(state, {
+          year: 2025,
+          home: "QC",
+          dest: "BC",
+          adults: 3,
+          kids: 2,
+          under6: 1,
+          people: [
+            { ord: 84000, oth: 1234, cg: -500, ed: 2000, nd: 300, fd: 400, ded: 100, rrsp: 1200, fhsa: 800 },
+            { ord: 35000, oth: 500, cg: 1000, ed: 200, nd: 100, fd: 300, ded: 50 },
+          ],
+          active: 1,
+          spouse: false,
+          sort: "geo",
+          view: "dest",
+          metric: "usd",
+          useBpa: false,
+          useCredits: true,
+          whRate: 0.3,
+          spend: 4000,
+          spendingAdjustment: -20,
+          homeValue: 650000,
+          propOverride: 0.007,
+          propertyTaxBill: 4200.25,
+          rent: 1500,
+          tenure: "own",
+          tab: "home",
+          km: 16093.44,
+          eff: 7.840486111111111,
+          drivingUnits: "us",
+          historyOpen: false,
+          historyMode: "nominal",
+          childcare: {
+            monthly: 1000,
+            mode: "manual",
+            activeChildren: 2,
+            earnings: [40000, 0],
+            earningsOverridden: [true, true],
+            claims: [4000, 0],
+            touched: ["care-age-0", "care-age-1"],
+            children: [
+              {
+                age: 4,
+                expenses: 8000,
+                qcEligibleExpenses: 7000,
+                disabilityTaxCredit: false,
+                infirm: false,
+                qcSevereImpairment: false,
+              },
+              {
+                age: 10,
+                expenses: 4000,
+                qcEligibleExpenses: 3000,
+                disabilityTaxCredit: true,
+                infirm: true,
+                qcSevereImpairment: true,
+              },
+            ],
+          },
+        });
+        localStorage.setItem("taxcmp", JSON.stringify(state));
+        history.replaceState(null, "", location.pathname);
+      });
+      await p.reload();
+      await settle(p);
+      const expected = await p.evaluate(() => JSON.parse(localStorage.getItem("taxcmp")));
+      const expectedResults = await capture(p);
+      const link = p.url();
+      const recipient = await openPage(browser, { width: 1000 });
+      counts.pages++;
+      try {
+        await recipient.page.evaluate(url => {
+          localStorage.setItem("taxcmp", JSON.stringify({ v: 3, year: 2026, home: "AB", people: [{ ord: 999 }] }));
+          history.replaceState(null, "", url);
+        }, link);
+        await recipient.page.reload();
+        await settle(recipient.page);
+        assert.deepEqual(await recipient.page.evaluate(() => JSON.parse(localStorage.getItem("taxcmp"))), expected);
+        assert.deepEqual(await capture(recipient.page), expectedResults);
+        assert.deepEqual(recipient.errors, []);
+        assert.deepEqual(recipient.blocked, []);
+      } finally {
+        await recipient.close();
+      }
+    },
+  ],
+  [
+    "history mode, disabled credits, zero overrides and drafts also reproduce",
+    async p => {
+      await openTab(p, "credits");
+      await p.click("label[for=cred-toggle]");
+      assert.equal(await p.isChecked("#cred-toggle"), false);
+      await openTab(p, "home");
+      await type(p, "#property-tax-bill", "0");
+      await p.click('[data-tenure="rent"]');
+      await p.$eval("#childcare-details", el => {
+        el.open = true;
+      });
+      await p.fill("#care-age-0", "not an age");
+      await p.locator("#care-age-0").blur();
+      await p.click("#view-history");
+      await p.click("#history-real");
+      const expected = await p.evaluate(() => JSON.parse(localStorage.getItem("taxcmp")));
+      const rows = await p.textContent("#history-rows");
+      await p.evaluate(() => localStorage.clear());
+      await p.reload();
+      assert.deepEqual(await p.evaluate(() => JSON.parse(localStorage.getItem("taxcmp"))), expected);
+      assert.equal(await p.textContent("#history-rows"), rows);
+      assert.equal(await p.getAttribute("#history-real", "aria-pressed"), "true");
+    },
+  ],
+  [
+    "clipboard failure exposes a selectable link without changing the scenario",
+    async p => {
+      await p.evaluate(() => Object.defineProperty(navigator, "clipboard", { configurable: true, value: undefined }));
+      const before = p.url();
+      await p.click("#copy-link");
+      assert.equal(await p.inputValue("#share-url"), before);
+      assert.equal(await p.$eval("#share-url", el => el.selectionEnd - el.selectionStart), before.length);
+      assert.equal(await p.locator("#share-url").isVisible(), true);
+    },
+  ],
+  [
+    "old, malformed and explicit default links ignore saved values",
+    async p => {
+      for (const hash of [
+        "#s=0&year=2019",
+        "#s=1&year=9999&people=broken&kids=1.5&home=%22ZZ%22",
+        `#s=1&year=${Math.max(...listYears())}`,
+      ]) {
+        await p.evaluate(hash => history.replaceState(null, "", hash), hash);
+        await p.reload();
+        assert.equal(await p.inputValue("#income"), "75,000");
+        assert.equal(await p.inputValue("#home"), "ON");
+        assert.equal(await p.inputValue("#kids"), "0");
+        assert.equal(await p.inputValue("#tax-year"), String(Math.max(...listYears())));
+      }
+      // Pasting another scenario into the address bar can navigate within the same document.
+      await Promise.all([
+        p.waitForEvent("load"),
+        p.evaluate(() => {
+          location.hash = "s=1&people=%5B%7B%22ord%22%3A12345%7D%5D";
+        }),
+      ]);
+      assert.equal(await p.inputValue("#income"), "12,345");
+    },
+  ],
+];
 
 // Failures are grouped by message, so a problem seen in every run and step prints once, with where it was seen.
 const failures = new Map();
@@ -653,12 +930,13 @@ async function run({ width, colorScheme = "light", html, contrast = false, steps
   await before(page);
   await settle(page);
   const states = [];
-  for (const [name, step] of steps) {
+  for (const [name, step, options = {}] of steps) {
     counts.states++;
     const problems = (await step(page)) ?? [];
     await settle(page);
-    if (contrast) counts.contrast++;
-    const axe = contrast ? await contrastViolations(page, colorScheme) : [];
+    const scanContrast = contrast && options.contrast !== false;
+    if (scanContrast) counts.contrast++;
+    const axe = scanContrast ? await contrastViolations(page, colorScheme) : [];
     states.push({ name, problems, capture: await capture(page), inspect: await inspect(page), axe });
   }
   await close();
@@ -691,7 +969,11 @@ for (const width of [1000, 430, 375]) {
   const [a, b] = [await run({ width, before: noDriving }), await run({ width, html: legacy })];
   check(`${width}px light`, width, a);
   a.states.forEach(({ name, capture: built }, i) => {
-    const s = { ...built, detail: asLegacy(built.detail, width) };
+    const s = {
+      ...built,
+      detail: asLegacy(built.detail, width),
+      explanations: asLegacy(built.explanations, width),
+    };
     const t = b.states[i].capture;
     for (const key of Object.keys(s))
       if (JSON.stringify(s[key]) !== JSON.stringify(t[key]))
@@ -716,6 +998,9 @@ for (const [label, steps] of [
   ["history", HISTORY_STEPS],
   ["carbon pricing", CARBON_STEPS],
   ["childcare", CHILDCARE_STEPS],
+  ["shareable links", SHARE_STEPS],
+  ["province flags", FLAG_STEPS],
+  ["comparison explanation variants", COMPARISON_STEPS.slice(3)],
 ]) {
   check(`1000px light, ${label}`, 1000, await run({ width: 1000, steps }));
   console.log(`1000px light: ${steps.length} ${label} states checked`);
@@ -727,6 +1012,9 @@ const responsive = [
   YEAR_STEPS[0],
   YEAR_STEPS[2],
   ...RESPONSIVE_STEPS,
+  // Interactions and tooltip geometry repeat across widths/themes; text-only conditional variants run once above.
+  // One representative open tooltip adds contrast coverage; subsequent interactions use the same styling.
+  ...COMPARISON_STEPS.slice(0, 3).map(([name, step], i) => [name, step, { contrast: i === 0 }]),
   [
     "layout: driving units show equivalent values without clipping",
     async p => {

@@ -17,6 +17,10 @@ export const MAX_LABEL_LENGTH = 2;
 //    hint text added under either name is caught.
 // Rule: no visible element with one of those classes, except inside <header> (title and introduction), <footer>
 // (the methodology notes and sources) and the tooltip itself.
+// #57's approved visible results use .result-summary only for the net-rate/lowest-province summary, and
+// .result-annotation only for short comparison-row values: sales/property/fuel rates and benefit composition.
+// These classes are not for explanations. Taxable-income, spouse/dependant and marginal-rate explanations must
+// use button.info[data-tip]; responsive acceptance checks assert this and keep ordinary .note text detectable.
 export const HINT_TEXT = ".note, .hint, .help";
 export const HINT_ALLOWED_IN = "header, footer, [role=tooltip]";
 
@@ -27,15 +31,7 @@ export const HINT_ALLOWED_IN = "header, footer, [role=tooltip]";
 //  - hint: the visible element itself must match `selector`;
 //  - contrast: the element must be inside `within`, in a colour scheme listed in `colours`, and its colours must be
 //    one of the foreground-on-background pairs listed for that scheme (as axe-core reports them).
-export const KNOWN = [
-  {
-    rule: "hint",
-    issue: "#57",
-    // The comparison's summary line, row annotations and explanatory notes are p.note / small.note.
-    selector: "#detail-body .note",
-    what: "explanatory .note text is visible in the home vs destination comparison",
-  },
-].map(k => ({ ...k, id: `${k.issue} ${k.rule} ${k.selector ?? k.within}` }));
+export const KNOWN = [];
 
 /** Reads the page for the per-state rules: sideways scrolling, chart column labels and visible hint text. */
 export const inspect = page =>

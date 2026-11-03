@@ -21,6 +21,7 @@ export const DEDUCTION_STEPS = [
           JSON.stringify({ v: 3, adults: 1, people: [{ ord: 75000, cg: 2000, ed: 0, nd: 0, fd: 0, ded: 1200 }] }),
         );
       });
+      await p.evaluate(() => history.replaceState(null, "", location.pathname + location.search));
       await p.reload();
       assert.equal(await total(p), "$1,200");
       await p.locator("#deductions summary").focus();
@@ -42,7 +43,7 @@ export const DEDUCTION_STEPS = [
       assert.equal(x.rrsp, 8000);
       assert.equal(x.fhsa, 13000);
       assert.equal(x.cg, 2000);
-      assert.match(await p.textContent("#detail-body"), /22,200 deductions/);
+      assert.match(await p.getAttribute('[data-comparison-note="taxable income"]', "data-tip"), /22,200 deductions/);
       assert.match(await p.getAttribute('[data-note="fhsa"]', "data-tip"), /Transfers from an RRSP/);
     },
   ],

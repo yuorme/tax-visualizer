@@ -1710,6 +1710,7 @@
     },
     {
       "id": "fuel-no-data",
+      "omitFuelData": true,
       "year": 2025,
       "province": "ON",
       "household": {

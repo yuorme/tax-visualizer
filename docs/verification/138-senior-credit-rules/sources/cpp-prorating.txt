@@ -1,0 +1,774 @@
+Title: Calculate payroll deductions and contributions
+URL: https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/payroll/payroll-deductions-contributions/canada-pension-plan-cpp/cpp-contribution-rates-maximums.html
+Fetched: 2026-11-03
+SHA-256 of the original: 3e1848777d986d243c62b5ee4b539c4442b052d6f9352534a3b03cb6516dd974
+Publication date modified: 2025-12-29
+Text extract made with scripts/fetch-source.ts extract/formatExtract helpers. Check figures against the original when layout matters (tables).
+================================================================================
+
+# Calculate CPP contributions deductions
+
+Beginning January 1, 2024, you must begin to calculate the second additional CPP contributions (CPP2) on earnings above the annual maximum pensionable earnings.
+
+You may be looking for: CPP contribution rates, maximums and exemptions
+
+How to use the CPP contributions tables and how to manually calculate the amount to withhold.
+
+If the employee's province of employment is Quebec, you are required to deduct the Quebec Pension Plan (QPP) contributions and not the CPP contributions, refer to: Québec Pension Plan Contributions | Revenu Québec
+
+## On this page
+
+- Calculation methods
+- References
+
+## Calculation methods
+
+Reminder: There is an online calculator that will calculate the CPP deductions for you.
+
+Calculate CPP deductions based on the type of payment:
+
+- Regular payments (CPP tables)
+- Regular payments at irregular intervals
+- Bonus, retroactive or irregular payments
+- Regular payments (manual calculation)
+- Verification – Year-end or multiple pay periods
+
+Regular payments (CPP tables)
+
+CPP contributions tables calculate the required CPP contributions for you on given ranges of income for a specified pay period. The share of the annual exemption for that pay period has already been factored into these calculations.
+
+### Steps
+
+#### Determine if you can use CPP contributions tables
+
+CPP contributions tables can be used in most common situations.
+
+### Use when
+
+- The payment is for regular employment income or was made with regular pay for one of the common or uncommon pay periods for which tables are provided
+- If the payment is made to a First Nations worker and you received Form TD1-IN, only use these tables on the portion of their income which is taxable
+
+### Do not use when
+
+- The payment is for regular payments at irregular intervals (not paid regularly), use: Regular payments at irregular intervals
+- The payment is for a bonus, a retroactive or an irregular payment made separately from regular pay, use: Bonus, retroactive or irregular payments
+- Your pay period does not have a table provided in the common or uncommon pay periods per year, use: Regular payments (manual calculation)
+- You are doing a year-end verification of your CPP contributions, use: Verification – Year-end or multiple pay periods
+- The employee already reached their CPP maximum contributions for the year
+
+#### Determine if your employee reached the maximum contribution
+
+Use the applicable calculation if your employee has a pensionable employment for the full year or only for part of the year (prorate)
+
+##### Employee has more than one employer
+
+You must withhold CPP contributions until your employee reaches the maximum without taking into account deductions made by another employer.
+
+Calculation – Employee pensionable for full year
+
+- Maximum annual employee CPP contributions in their employment with you
+- minus Employee's contributions to date for the year in their employment with you
+- equals This amount is the maximum CPP contributions that you can deduct from your employee's pay for the rest of the year
+
+Calculation example
+
+All of Joseph's earnings were pensionable for the year 2026. You have already deducted $300 in CPP from his earnings with you this year.
+
+- $4,230.45 is the maximum 2026 annual CPP contributions
+- minus $300 is the amount Joseph contributed for the year to date (in his employment with you)
+- equals $3,930.45 is the maximum CPP amount you can deduct
+
+Calculation – Employee pensionable only for part of the year (prorate)
+
+- Maximum annual pensionable earnings
+- minus Basic exemption amount ($3,500)
+- equals This amount is the maximum CPP contributory earnings
+- multiply by Number of months the employee is pensionable
+- equals Result of first step of proration calculation
+- divide by 12 months
+- equals Maximum pensionable earnings after prorating
+- multiply by CPP rate
+- equals This amount is the maximum CPP contributions after prorating in their employment with you
+- minus Employee's contributions to date for the year in their employment with you
+- equals This amount is the maximum CPP contributions that you can deduct from your employee's pay for the rest of the year
+
+Calculation example
+
+Joseph turns 70 on February 24, 2026 and is pensionable for 2 months. You have already deducted $300 in CPP from his earnings with you this year.
+
+- $74,600 is Joseph's maximum annual pensionable earnings in his employment with you
+- minus $3,500 for the basic exemption amount
+- equals $71,100 is the maximum CPP contributory earnings
+- multiply by 2 months that Joseph is pensionable
+- equals $142,200 is the first step of the proration calculation
+- divide by 12 months
+- equals $11,850 is Joseph's maximum pensionable earnings after prorating
+- multiply by 5.95% is the 2025 CPP rate
+- equals $705.08 is Joseph's maximum CPP contributions after prorating in his employment with you
+- minus $300.00 is Joseph's contributions to date for the year in his employment with you
+- equals $405.08 is the maximum CPP contributions that you can deduct from Joseph's pay for the rest of the year
+
+No CPP contributions should be deducted after the end of February 2026.
+
+Do not continue to next step if your employee has reached the first maximum.
+
+You must continue to: Calculate second additional CPP contributions (CPP2) deductions.
+
+- Continue to next step if your employee has not reached the maximum.
+
+#### Get the CPP contributions tables
+
+### 2026 tax year
+
+Use the CPP contributions tables that matches your pay period.
+
+#### Common pay periods per year: Option 1
+
+- 12 periods (Monthly) [PDF]
+- 24 periods (Semi-monthly) [PDF]
+- 26 periods (Biweekly) [PDF]
+- 52 periods (Weekly) [PDF]
+
+#### Uncommon pay periods per year: Option 2
+
+- 10 periods [PDF]
+- 13 periods [PDF]
+- 22 periods [PDF]
+- 27 periods (Biweekly) [PDF]
+- 53 periods (Weekly) [PDF]
+- 240 periods (Daily) [PDF]
+
+Previous years
+
+### Previous years
+
+2025 tax year
+
+### 2025 tax year
+
+Use the CPP contributions tables that matches your pay period.
+
+#### Common pay periods per year: Option 1
+
+- 12 periods (Monthly) [PDF]
+- 24 periods (Semi-monthly) [PDF]
+- 26 periods (Biweekly) [PDF]
+- 52 periods (Weekly) [PDF]
+
+#### Uncommon pay periods per year: Option 2
+
+- 10 periods [PDF]
+- 13 periods [PDF]
+- 22 periods [PDF]
+- 27 periods (Biweekly) [PDF]
+- 53 periods (Weekly) [PDF]
+- 240 periods (Daily) [PDF]
+
+2024 tax year
+
+### 2024 tax year
+
+Use the CPP contributions tables that matches your pay period.
+
+#### Common pay periods per year: Option 1
+
+- 12 periods (Monthly) [PDF]
+- 24 periods (Semi-monthly) [PDF]
+- 26 periods (Biweekly) [PDF]
+- 52 periods (Weekly) [PDF]
+
+#### Uncommon pay periods per year: Option 2
+
+- 10 periods [PDF]
+- 13 periods [PDF]
+- 22 periods [PDF]
+- 27 periods (Biweekly) [PDF]
+- 53 periods (Weekly) [PDF]
+- 240 periods (Daily) [PDF]
+
+2023 tax year
+
+### 2023 tax year
+
+Use the CPP contributions tables that matches your pay period.
+
+#### Common pay periods per year: Option 1
+
+- 12 periods (Monthly) [PDF]
+- 24 periods (Semi-monthly) [PDF]
+- 26 periods (Biweekly) [PDF]
+- 52 periods (Weekly) [PDF]
+
+#### Uncommon pay periods per year: Option 2
+
+- 10 periods [PDF]
+- 13 periods [PDF]
+- 22 periods [PDF]
+- 27 periods (Biweekly) [PDF]
+- 53 periods (Weekly) [PDF]
+- 240 periods (Daily) [PDF]
+
+#### Determine the pay range
+
+Find the range that includes your employee's gross remuneration (including any taxable benefits) in the "Pay" column.
+
+If the maximum CPP contribution is reached during the pay period, use only the part of their pensionable earnings for the pay period up to the first maximum annual pensionable earnings ceiling to determine the pay range to use.
+
+[image: Screenshot of CPP contributions table, highlighting the field: Pay]
+
+#### Get the amount of CPP contributions to deduct
+
+Find the amount under the "CPP" column that corresponds with the range that includes your employee's pay for the pay period.
+
+[image: Screenshot of CPP contributions table, highlighting the field: CPP]
+
+### Calculate the amount of CPP contributions you have to withhold
+
+Use one of the following amount that applies to your situation:
+
+- If the amount in step 5 is less than step 2, withhold the amount from step 5.
+- If the amount in step 5 is greater than step 2, withhold the amount from step 2.
+
+### Calculate the amount of CPP contributions you have to remit
+
+- CPP contributions you have to withhold from your employee (step 6)
+- multiply by 2 (matching employer CPP contribution)
+- equals This is the total amount you have to remit: your employee's share and your share of the CPP contributions
+
+Calculation example
+
+You have reviewed the CPP contributions tables and found that the required CPP contributions for Joseph's earnings in this pay period is $240.40. You have also confirmed that this amount is not more than the remaining CPP contributions that you can deduct for the rest of the year.
+
+- $240.40 is Joseph's CPP contributions you have to withhold (step 6)
+- multiply by 2 (your matching CPP contributions)
+- equals $480.80 is the total CPP contributions to remit (Joseph's share and your share of the CPP contributions
+
+Regular payments at irregular intervals
+
+Use this method if you make regular payments at irregular intervals (not paid regularly) to calculate the required CPP contribution. This may include payments for:
+
+- commissions paid at irregular intervals
+- director's fees
+
+### Steps
+
+#### Determine if your employee reached the maximum contribution
+
+Use the applicable calculation if your employee has a pensionable employment for the full year or only for part of the year (prorate)
+
+##### Employee has more than one employer
+
+You must withhold CPP contributions until your employee reaches the maximum without taking into account deductions made by another employer.
+
+Calculation – Employee pensionable for full year
+
+- Maximum annual employee CPP contributions in their employment with you
+- minus Employee's contributions to date for the year in their employment with you
+- equals This amount is the maximum CPP contributions that you can deduct from your employee's pay for the rest of the year
+
+Calculation example
+
+All of Joseph's earnings were pensionable for the year 2026. You have already deducted $300 in CPP from his earnings with you this year.
+
+- $4,230.45 is the maximum 2026 annual CPP contribution
+- minus $300 is the amount Joseph contributed for the year to date (in his employment with you)
+- equals $3,930.45 is the maximum CPP amount you can deduct
+
+Calculation – Employee pensionable only for part of the year (prorate)
+
+- Maximum annual pensionable earnings
+- minus Basic exemption amount ($3,500)
+- equals This amount is the maximum CPP contributory earnings
+- multiply by Number of months the employee is pensionable
+- equals Result of first step of proration calculation
+- divide by 12 months
+- equals Maximum pensionable earnings after prorating
+- multiply by CPP rate
+- equals This amount is the maximum CPP contributions after prorating in their employment with you
+- minus Employee's contributions to date for the year in their employment with you
+- equals This amount is the maximum CPP contributions that you can deduct from your employee's pay for the rest of the year
+
+Calculation example
+
+Joseph turns 70 on February 24, 2026 and is pensionable for 2 months. You have already deducted $300 in CPP from his earnings with you this year.
+
+- $74,600 is Joseph's maximum annual pensionable earnings in his employment with you
+- minus $3,500 for the basic exemption amount
+- equals $71,100 is the maximum CPP contributory earnings
+- multiply by 2 months that Joseph is pensionable
+- equals $142,200 is the first step of the proration calculation
+- divide by 12 months
+- equals $11,850.00 is Joseph's maximum pensionable earnings after prorating
+- multiply by 5.95% is the 2026 CPP rate
+- equals $705.08 is Joseph's maximum CPP contributions after prorating in his employment with you
+- minus $300.00 is Joseph's contributions to date for the year in his employment with you
+- equals $405.08 is the maximum CPP contributions that you can deduct from Joseph's pay for the rest of the year
+
+No CPP contributions should be deducted after the end of February 2026.
+
+Do not continue to next step if your employee has reached the first maximum.
+
+You must continue to: Calculate second additional CPP contributions (CPP2) deductions.
+
+- Continue to next step if your employee has not reached the maximum.
+
+#### Calculate the basic yearly exemption for part of the year (prorate)
+
+- Number of days since the last payment
+- divide by 365 days (366 days for a leap year)
+- equals Result
+- multiply by Basic exemption amount ($3,500)
+- equals This is the prorated yearly exemption for the interval
+
+Calculation example
+
+Joseph, your employee, works on commission and is paid only after making a sale, not on a regular basis. You paid her a first commission on March 16, 2026. You had just paid her a commission on June 1, 2026 of $1,800. There are 76 days between these 2 payments.
+
+- 76 is the number of days since the last payment
+- divide by 365 days
+- equals 0.208219 is the result
+- multiply by Basic exemption amount ($3,500)
+- equals $728.77 is Joseph's prorated yearly exemption for the interval
+
+#### Determine the amount of CPP contributions to deduct
+
+- Payment made at an irregular interval
+- minus Prorated share of the yearly exemption (step 2)
+- equals This is the contributory earnings from the payment
+- multiply by CPP rate
+- equals This amount is the CPP contributions to deduct
+
+If the maximum CPP contribution is reached when the irregular payment is received, use only the part of the payment up to the first maximum annual pensionable earnings ceiling as the amount for the payment made at an irregular interval.
+
+Calculation example
+
+After determining the prorated CPP exemption, you move on to calculating the required CPP deduction from the $1,800 commission payment received on June 1, 2026.
+
+- $1,800 is Joseph's payment made at an irregular interval
+- minus $728.77 is Joseph's prorated share of the yearly exemption (step 2)
+- equals $1,071.23 is Joseph's contributory earnings from the payment
+- multiply by 5.95% is the 2025 CPP rate
+- equals $63.73 is the amount of CPP contributions to deduct
+
+### Calculate the amount of CPP contributions you have to withhold
+
+Use one of the following amount that applies to your situation:
+
+- If the amount in step 2 is less than step 1, withhold the amount from step 2.
+- If the amount in step 2 is greater than step 1, withhold the amount from step 1.
+
+### Calculate the amount of CPP contributions you have to remit
+
+- CPP contributions you have to withhold from your employee (step 4)
+- multiply by 2 (matching employer CPP contribution)
+- equals This is the total amount you have to remit: your employee's share and your share of the CPP contributions
+
+Calculation example
+
+You have completed the calculation and found that the required CPP contributions for Joseph's commission payment is $63.73. You have also confirmed that this amount is not more than the remaining CPP contributions that you can deduct for the rest of the year.
+
+- $63.73 is Joseph's CPP contributions you have to withhold (step 4)
+- multiply by 2 (your matching CPP contributions)
+- equals $127.46 is the total CPP contributions to remit (Joseph's share and your share of the CPP contribution)
+
+Bonus, retroactive or irregular payments
+
+In addition to regular types of payments, you must deduct CPP contributions from bonuses, retroactive, lump-sum payments or other types of irregular payments. This includes payments for:
+
+- overtime earned in another pay period
+- vacation pay paid when the employee does not take holidays
+- commissions paid without expenses (for any other commissions payments, use: Regular payments (manual calculation)
+
+### Steps
+
+#### Determine if you can use the bonus method
+
+If the payment is made with regular pay, do not continue to next step. Use one of the following method:
+
+- Payroll Deductions Online Calculator (PDOC)
+- Regular payments (CPP tables)
+- Regular payments at irregular intervals
+
+Continue to next step if the payment is made separately from regular pay, this is because no basic exemption is included.
+
+#### Determine if your employee reached the maximum contribution
+
+Use the applicable calculation if your employee has a pensionable employment for the full year or only for part of the year (prorate) .
+
+##### Employee has more than one employer
+
+You must withhold CPP contributions until your employee reaches the maximum without taking into account deductions made by another employer.
+
+Calculation – Employee pensionable for full year
+
+- Maximum annual employee CPP contributions in their employment with you
+- minus Employee's contributions to date for the year in their employment with you
+- equals This amount is the maximum CPP contributions that you can deduct from your employee's pay for the rest of the year
+
+Calculation example
+
+All of Joseph's earnings were pensionable for the year 2026. You have already deducted $300 in CPP from his earnings with you this year.
+
+- $4,230.45 is the maximum 2026 annual CPP contributions
+- minus $300 is the amount Joseph contributed for the year to date (in his employment with you)
+- equals $3,930.45 is the maximum CPP amount you can deduct
+
+Calculation – Employee pensionable only for part of the year (prorate)
+
+- Maximum annual pensionable earnings
+- minus Basic exemption amount ($3,500)
+- equals This amount is the maximum CPP contributory earnings
+- multiply by Number of months the employee is pensionable
+- equals Result of first step of proration calculation
+- divide by 12 months
+- equals Maximum pensionable earnings after prorating
+- multiply by CPP rate
+- equals This amount is the maximum CPP contributions after prorating in their employment with you
+- minus Employee's contributions to date for the year in their employment with you
+- equals This amount is the maximum CPP contributions that you can deduct from your employee's pay for the rest of the year
+
+Calculation example
+
+Joseph turns 70 on February 24, 2026 and is pensionable for 2 months. You have already deducted $300 in CPP from his earnings with you this year.
+
+- $74,600 is Joseph's maximum annual pensionable earnings in his employment with you
+- minus $3,500 for the basic exemption amount
+- equals $71,100 is the maximum CPP contributory earnings
+- multiply by 2 months that Joseph is pensionable
+- equals $142,200 is the first step of the proration calculation
+- divide by 12 months
+- equals $11,850 is Joseph's maximum pensionable earnings after prorating
+- multiply by 5.95% is the 2026 CPP rate
+- equals $705.08 is Joseph's maximum CPP contributions after prorating in his employment with you
+- minus $300.00 is Joseph's contributions to date for the year in his employment with you
+- equals $405.08 is the maximum CPP contributions that you can deduct from Joseph's pay for the rest of the year
+
+No CPP contributions should be deducted after the end of February 2026.
+
+Do not continue to next step if your employee has reached the first maximum.
+
+You must continue to: Calculate second additional CPP contributions (CPP2) deductions.
+
+- Continue to next step if your employee has not reached the maximum.
+
+### Determine the amount of CPP contributions to deduct
+
+- Bonus, retroactive, lump-sum or irregular payment
+- multiply by CPP rate
+- equals This amount is the CPP contributions to deduct
+
+If the maximum CPP contribution is reached when the bonus, retroactive or irregular payment is received, use only the part of the payment up to the first maximum annual pensionable earnings ceiling as the amount for the bonus, retroactive, lump-sum or irregular payment.
+
+Calculation example
+
+Your employee Joseph received a pay increase that was retroactive for six weeks and was paid to him on June 29, 2026.
+
+- $450 is the retroactive pay increase Joseph received on June 29 2026
+- multiply by 5.95% is the 2026 CPP rate
+- equals $26.78 is the amount of CPP contributions to deduct
+
+### Calculate the amount of CPP contributions you have to withhold
+
+Use one of the following amount that applies to your situation:
+
+- If the amount in step 3 is less than step 2, withhold the amount from step 3.
+- If the amount in step 3 is greater than step 2, withhold the amount from step 2.
+
+### Calculate the amount of CPP contributions you have to remit
+
+- CPP contributions you have to withhold from your employee (step 4)
+- multiply by 2 (matching employer CPP contribution)
+- equals This is the total amount you have to remit: your employee's share and your share of the CPP contributions
+
+Calculation example
+
+You have calculated the required CPP contributions for Joseph's retroactive pay is $26.78. You have also confirmed that this amount is not more than the remaining CPP contributions that you can deduct for the rest of the year.
+
+- $26.78 is Joseph's CPP contributions you have to withhold (step 6)
+- multiply by 2 (your matching CPP contributions)
+- equals $53.56 is the total CPP contributions to remit (Joseph's share and your share of the CPP contributions)
+
+Regular payments (manual calculation)
+
+You can use the manual calculation method to calculate the CPP contributions that must be withheld for all regular payments made to your employees in a pay period without using the CPP tables.
+
+Continue to other tabs for other types of specific payments.
+
+### Steps
+
+#### Determine if your employee reached the maximum contribution
+
+Use the applicable calculation if your employee has a pensionable employment for the full year or only for part of the year (prorate) .
+
+##### Employee has more than one employer
+
+You must withhold CPP contributions until your employee reaches the maximum without taking into account deductions made by another employer.
+
+Calculation – Employee pensionable for full year
+
+- Maximum annual employee CPP contributions in their employment with you
+- minus Employee's contribution to date for the year in their employment with you
+- equals This amount is the maximum CPP contribution that you can deduct from your employee's pay for the rest of the year
+
+Calculation example
+
+All of Joseph's earnings were pensionable for the year 2026. You have already deducted $300 in CPP from his earnings with you this year.
+
+- $4,230.45 is the maximum 2026 annual CPP contributions
+- minus $300 is the amount Joseph contributed for the year to date (in his employment with you)
+- equals $3,930.45 is the maximum CPP amount you can deduct
+
+Calculation – Employee pensionable only for part of the year (prorate)
+
+- Maximum annual pensionable earnings
+- minus Basic exemption amount ($3,500)
+- equals This amount is the maximum CPP contributory earnings
+- multiply by Number of months the employee is pensionable
+- equals Result of first step of proration calculation
+- divide by 12 months
+- equals Maximum pensionable earnings after prorating
+- multiply by CPP rate
+- equals This amount is the maximum CPP contributions after prorating in their employment with you
+- minus Employee's contributions to date for the year in their employment with you
+- equals This amount is the maximum CPP contributions that you can deduct from your employee's pay for the rest of the year
+
+Calculation example
+
+Joseph turns 70 on February 24, 2026 and is pensionable for 2 months. You have already deducted $300 in CPP from his earnings with you this year.
+
+- $74,600 is Joseph's maximum annual pensionable earnings in his employment with you
+- minus $3,500 for the basic exemption amount
+- equals $71,100 is the maximum CPP contributory earnings
+- multiply by 2 months that Joseph is pensionable
+- equals $142,200 is the first step of the proration calculation
+- divide by 12 months
+- equals $11,850 is Joseph's maximum pensionable earnings after prorating
+- multiply by 5.95% is the 2025 CPP rate
+- equals $705.08 is Joseph's maximum CPP contributions after prorating in his employment with you
+- minus $300.00 is Joseph's contributions to date for the year in his employment with you
+- equals $405.08 is the maximum CPP contributions that you can deduct from Joseph's pay for the rest of the year
+
+No CPP contributions should be deducted after the end of February 2026.
+
+Do not continue to next step if your employee has reached the first maximum.
+
+You must continue to: Calculate second additional CPP contributions (CPP2) deductions.
+
+- Continue to next step if your employee has not reached the maximum.
+
+### Calculate the basic pay-period exemption
+
+Use the basic exemption amount that matches your pay period.
+
+### Calculate the total pensionable income
+
+- Employee's gross pay for the pay period
+- plus Employee's taxable benefits and allowances for the pay period
+- minus Employee's non-pensionable earnings
+
+What are non-pensionable earnings
+
+Non-pensionable earnings are:
+
+- Received before and including the month they turned 18
+- Received after the month they turned 70
+- Received after the effective date of their completed and signed Form CPT30 to elect to stop contributing to the CPP
+- Received before and including the month where the employee provided you a completed and signed Form CPT30 to restart contributing to the CPP
+- Received while the employee is considered to be disabled under the CPP or QPP
+- Employment income, benefits, and payments from which you are not required to deduct CPP
+
+- equals This is the total pensionable income
+
+If the maximum CPP contribution is reached during the pay period, use only the part of their pensionable earnings for the pay period up to the first maximum annual pensionable earnings ceiling to determine their total pensionable income for the pay period.
+
+Calculation example
+
+Joseph receives a weekly salary of $500 and $50 in taxable benefits.
+
+- $500 is Joseph's gross pay for the pay period
+- plus $50 is Joseph's taxable benefits for the pay period
+- minus $0 because all of Joseph's earnings require CPP contributions
+- equals $550 is Joseph's total pensionable income for the pay period
+
+### Determine the amount of CPP contributions to deduct
+
+- Total pensionable income (step 3)
+- minus Basic pay-period exemption (step 2)
+- equals CPP contributory earnings
+- multiply by CPP rate
+- equals This amount is the CPP contributions to deduct
+
+Calculation example
+
+The total of Joseph's gross pay and taxable benefits for the weekly pay period is $550. All of Joseph's earnings require CPP contributions.
+
+- $550 is Joseph's total pensionable income
+- minus $67.30 is Joseph's basic pay-period exemption
+- equals $482.70 is Joseph's CPP contributory earnings
+- multiply by 5.95% is the 2026 CPP rate
+- equals $28.72 is the amount of CPP contributions to deduct
+
+### Calculate the amount of CPP contributions you have to withhold
+
+Use one of the following amount that applies to your situation:
+
+- If the amount in step 4 is less than step 1, withhold the amount from step 4.
+- If the amount in step 4 is greater than step 1, withhold the amount from step 1.
+
+### Calculate the amount of CPP contributions you have to remit
+
+- CPP contributions you have to withhold from your employee (step 5)
+- multiply by 2 (matching employer CPP contribution)
+- equals This is the total amount you have to remit: your employee's share and your share of the CPP contributions
+
+Calculation example
+
+You have calculated the required CPP contributions for Joseph's earnings in the pay period is $28.72. You have also confirmed that this amount is not more than the remaining CPP contributions that you can deduct for the rest of the year.
+
+- $28.72 is Joseph's contributions you have to withhold (step 5)
+- multiply by 2 (your matching CPP contribution)
+- equals $57.44 is the total CPP contributions to remit (Joseph's share and your share of the CPP contributions
+
+Verification – Year-end or multiple pay periods
+
+Use this calculation to verify an employee's CPP contributions at year-end or for multiple pay periods at any time of year. This verification is used to determine if you have deducted properly, under deducted or over deducted CPP contributions.
+
+### Steps
+
+#### Calculate the amount of pensionable earnings for the period of employment
+
+The following calculation must include only pensionable earnings in their employment with you:
+
+- Employee's gross pay for the total period of employment which will be included in box 14 of their T4 slip
+- plus Employee's taxable benefits and allowances for the total period of employment which will be included in box 14 of their T4 slip
+- minus Employee's non-pensionable earnings
+
+What are non-pensionable earnings
+
+Non-pensionable earnings are:
+
+- Received before and including the month they turned 18
+- Received after the month they turned 70
+- Received after the effective date of their completed and signed Form CPT30 to elect to stop contributing to the CPP
+- Received before and including the month where the employee provided you a completed and signed Form CPT30 to restart contributing to the CPP
+- Received while the employee is considered to be disabled under the CPP or QPP
+- Employment income, benefits, and payments from which you are not required to deduct CPP
+
+- equals This amount is the pensionable earnings for the period of employment
+
+Calculation example
+
+Your employee Joseph was pensionable for the whole year of 2026. You are about to prepare his T4 and are reviewing your payroll records to confirm that you have deducted enough CPP from his earnings this year. He was pensionable for the entire year.
+
+- $35,000 is Joseph's total salary, wages benefits, and allowances for the total period of employment which will be included in box 14 of their T4 slip
+- minus $0 is Joseph's non-pensionable earnings. These are earnings:
+
+- Received before and including the month they turned 18
+- Received after the month they turned 70
+- Received after the effective date of their completed and signed Form CPT30 to elect to stop contributing to the CPP
+- Received before and including the month where the employee provided you a completed and signed Form CPT30 to start contributing to the CPP
+- Received while the employee is considered to be disabled under the CPP or QPP
+- From employment, benefits, and payments from which you do not deduct CPP
+
+- equals $35,000 is Joseph's pensionable earnings for the period of employment
+
+### Confirm the amount of pensionable earnings for the period of employment
+
+Use one of the following amount that applies to your situation:
+
+If the amount in step 1 is less than maximum annual pensionable earnings , use the amount from step 1.
+
+If the amount in step 1 is greater than maximum annual pensionable earnings , use the maximum annual pensionable earnings.
+
+### Determine the amount of required CPP contributions for the period of employment
+
+- Pensionable earnings for the period of employment (step 2)
+- minus Basic exemption amount that matches your pay period multiply by Number of pay periods of pensionable earnings for the period of employment
+- equals Employee's contributory earnings for the period of employment
+- multiply by CPP rate
+- equals This amount is the employee's required CPP contributions for the period of employment
+
+Calculation example 1
+
+Joseph was paid monthly during his employment with your company in the year of 2026.
+
+- $35,000 is Joseph's pensionable earnings for the period of employment (step 2)
+- minus $3,500 is Joseph's basic exemption amount for the period of employment ($291.67 X 12 pay periods)
+- equals $31,500 is Joseph's contributory earnings for the period of employment
+- multiply by 5.95% is the 2025 CPP rate
+- equals $1,874.25 is Joseph's required CPP contributions for the period of employment
+
+Calculation example 2
+
+Joseph was paid bi-weekly during his employment with your company in the year of 2026. He was paid by your company for 15 pay periods.
+
+- $35,000 is Joseph's pensionable earnings for the period of employment (step 2)
+- minus $1,944.30 is Joseph's basic exemption amount for the period of employment ($129.62 X 15 pay periods)
+- equals $33,055.15 is Joseph's contributory earnings for the period of employment
+- multiply by 5.95% is the 2026 CPP rate
+- equals $1,966.81 is Joseph's required CPP contributions for the period of employment
+
+### Determine if you have under or over remitted for the period of employment
+
+- Employee's required CPP contributions for the period of employment (step 3)
+- minus CPP contributions you deducted from the employee for the period of employment
+- equals This amount should be $0 if you have deducted correctly
+
+Calculation example
+
+You confirmed in your payroll records that a total of $1,874.25 in CPP was deducted from Joseph's pay during the year of 2026.
+
+- $1,874.25 is Joseph's required CPP contributions for the period of employment (step 3, example 1)
+- minus $1,874.25 is the CPP contributions you deducted from Joseph for the period of employment
+- equals $0 is the amount, this means you have deducted correctly
+
+- If the amount is positive you have under deducted for the period of employment.
+- If the amount is negative you have over deducted for the period of employment.
+
+To correct a deduction error:
+
+- If you have not filed the information return, refer to: Make corrections before filing
+- If you already filed the information return, refer to: Make corrections after filing
+
+## References
+
+### Multimedia
+
+- Webinar – How to use the payroll deductions tables | 18 minutes
+
+### Legislation
+
+CPP: 8
+Contributions by employees in respect of pensionable employment
+CPP: 9
+Contributions by employers in respect of pensionable employment
+CPP: 11.1
+Contribution rate
+CPP: 12
+Contributory salary and wages
+CPP: 19
+Basic exemption
+CPP: 20
+Year's basic exemption
+CPP: 21(2)
+Amount to be deducted and remitted by employer
+CPP Reg: 4
+Computation of employee's contribution
+CPP Reg: 5
+Computation of employee's contribution
+CPP Reg: 5(5)
+Basic exemption per pay period
+CPP Reg: 7
+Employer's contribution
+
+## Special situations – Only pensionable for part of the year
+
+## CPP contribution rates, maximums and exemptions
+
+Reminder: Use the "Maximum annual employee and employer contribution" (column 6) that matches the "Year" (column 1)
+
+Reminder: Use the "Maximum annual pensionable earnings" (column 2) that matches the "Year" (column 1)
+
+Reminder: Use the "Employee and employer contribution rate" (column 5) that matches the "Year" (column 1)
+
+## CPP basic exemption chart

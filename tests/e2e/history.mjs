@@ -178,6 +178,7 @@ export const HISTORY_STEPS = [
           }),
         ),
       );
+      await p.evaluate(() => history.replaceState(null, "", location.pathname + location.search));
       await p.reload();
       await settle(p);
       await p.click("#view-history");

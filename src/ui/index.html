@@ -18,13 +18,15 @@
     <div class="eyebrow"><label for="tax-year">Tax year</label> <select id="tax-year" class="year-select"></select> · federal + provincial brackets</div>
     <h1>Where does the same paycheque get taxed most?</h1>
     <p class="lede">Pick your home province, enter your household's income and spending, and see the blended tax rate in every province and territory. The comparison below shows what moving to another province would change.</p>
+    <div class="share-tools"><button type="button" class="linkbtn" id="copy-link">Copy link</button><button type="button" class="info" data-tip="This link contains your scenario inputs, including income and childcare details. Anyone with the link can see them. The address bar stays current as you edit; no account or server stores your scenario." aria-label="About sharing a scenario">i</button><span id="share-status" role="status"></span></div>
+    <div id="share-fallback" hidden><label class="lbl" for="share-url">Scenario link</label><input id="share-url" readonly autocomplete="off"></div>
   </header>
 
   <section class="control" aria-label="Income">
     <div class="top-row">
       <div class="field home-sel">
         <label class="lbl" for="home">Home province</label>
-        <select id="home" class="prov-select"></select>
+        <div class="prov-control"><img id="home-flag" class="province-flag" alt="" aria-hidden="true" width="72" height="52"><select id="home" class="prov-select"></select></div>
       </div>
       <fieldset class="people" id="people" aria-label="Household members"></fieldset>
     </div>
@@ -286,10 +288,10 @@
     <div class="cmp-head">
       <div class="eyebrow" id="cmp-eyebrow">Compare</div>
       <div class="cmp-sel">
-        <span class="cmp-home" id="cmp-home">Ontario</span>
+        <span class="cmp-province"><img id="cmp-home-flag" class="province-flag" alt="" aria-hidden="true" width="72" height="52"><span class="cmp-home" id="cmp-home">Ontario</span></span>
         <span class="cmp-vs">vs</span>
         <label class="sr-only" for="dest">Destination province</label>
-        <select id="dest" class="prov-select"></select>
+        <div class="prov-control"><img id="dest-flag" class="province-flag" alt="" aria-hidden="true" width="72" height="52"><select id="dest" class="prov-select"></select></div>
       </div>
     </div>
     <div id="detail-body"></div>
