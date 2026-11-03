@@ -31,13 +31,13 @@ function fixture(t: TestContext) {
   write("src/app.ts", "export const value = 1;\n");
   write("docs/remove.md", "old documentation\n");
   const base = commit();
-  const run = (args: string[], eventName?: string, event?: unknown) => {
+  const run = (args: string[], eventName?: string, event?: unknown, cwd = repo) => {
     const eventFile = path.join(root, "event.json");
     const outputFile = path.join(root, "output.txt");
     fs.writeFileSync(eventFile, typeof event === "string" ? event : JSON.stringify(event ?? {}));
     fs.writeFileSync(outputFile, "");
     const result = spawnSync(process.execPath, [script, ...args], {
-      cwd: repo,
+      cwd,
       encoding: "utf8",
       env: {
         ...process.env,
@@ -191,6 +191,27 @@ test("local scope includes unstaged, staged and untracked changes, including ren
   fs.unlinkSync(path.join(f.repo, "untracked.mjs"));
   f.git("mv", "src/app.ts", "docs/moved.md");
   assert.equal(f.run([f.base, "HEAD"]), false);
+});
+
+test("local scope preserves staged code changes even when the worktree reverses them", t => {
+  const f = fixture(t);
+  f.write("CLAUDE.md");
+  f.commit();
+  f.write("src/app.ts", "export const value = 2;\n");
+  f.git("add", "src/app.ts");
+  f.write("src/app.ts", "export const value = 1;\n");
+  assert.equal(f.git("diff", "HEAD", "--name-only"), "");
+  assert.equal(f.git("diff", "--cached", "--name-only"), "src/app.ts");
+  assert.equal(f.run([f.base, "HEAD"]), false);
+});
+
+test("local scope checks the whole repository when called from a subdirectory", t => {
+  const f = fixture(t);
+  f.write("CLAUDE.md");
+  f.commit();
+  f.write("src/notes.md");
+  assert.equal(f.run([f.base, "HEAD"], undefined, undefined, path.join(f.repo, "src")), false);
+  assert.equal(f.run([f.base, "HEAD"], undefined, undefined, path.join(f.repo, "docs")), false);
 });
 
 test("required check runs on docs PRs while dependency, browser, application and deployment steps are gated", () => {

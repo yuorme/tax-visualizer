@@ -10,6 +10,7 @@ const commit = ref => git("rev-parse", "--verify", "--end-of-options", `${ref}^{
 const markdown = file => /^(?:[^/]+|docs\/.+|\.claude\/agents\/[^/]+)\.md$/s.test(file);
 
 function docsOnly() {
+  process.chdir(git("rev-parse", "--show-toplevel").trim());
   const args = process.argv.slice(2);
   const eventMode = args.length === 1 && args[0] === "--event";
   let base;
@@ -35,6 +36,7 @@ function docsOnly() {
     git("diff", "--no-renames", "--name-only", "-z", `${commit(base)}${comparison}${commit(head)}`, "--"),
   );
   if (!eventMode) {
+    changed.push(...paths(git("diff", "--cached", "--no-renames", "--name-only", "-z", commit(head), "--")));
     changed.push(...paths(git("diff", "--no-renames", "--name-only", "-z", commit(head), "--")));
     changed.push(...paths(git("ls-files", "--others", "--exclude-standard", "-z")));
   }
