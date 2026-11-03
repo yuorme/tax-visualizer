@@ -1,0 +1,290 @@
+Title: Pension income amount – Personal income tax
+URL: https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/tax-return/completing-a-tax-return/deductions-credits-expenses/line-31400-pension-income-amount.html
+Fetched: 2026-11-03
+SHA-256 of the original: 5889589ce9f901f29ad5e9287ee0b5fa0432d3007f7aec20783972270936156e
+Publication date modified: 2026-01-20
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+# Pension income amount – Personal income tax
+
+- Federal: Line 31400
+- Provincial or territorial: Line 58360
+- Tax year: 2025| Prior tax years: 2024 and earlier
+
+You may be able to claim the pension income amount if you reported eligible pension, superannuation, or annuity payments on your income tax and benefit return.
+
+If you are claiming this amount for someone who died, special rules may apply.
+
+To learn more: Line 31400 – Pension income amount, for someone who died.
+
+## On this page
+
+- Who can claim the pension income amount
+- How much you can claim
+- How to claim this amount
+- References
+
+## Who can claim the pension income amount
+
+Answer interactive questions
+
+A text version is available if needed.
+
+Choose the situation that applies to you and scroll down for further questions and results.
+
+Based on your selections above:
+
+You are not eligible to claim the pension income amount because you did not report eligible pension, superannuation or annuity payments on line 11500, line 11600, or line 12900 of your return.
+
+Based on your selections above:
+
+You can claim the pension income amount. See How much you can claim.
+
+Based on your selections above:
+
+You are not eligible to claim the pension income amount because the income that you reported on line 11500, line 11600, or line 12900 of your return was not listed in the chart or was not received as a result of the condition listed for that type of income.
+
+Based on your selections above:
+
+You can claim the pension income amount. See How much you can claim.
+
+Based on your selections above:
+
+You are not eligible to claim the pension income amount because the income that you reported on line 11500, line 11600, or line 12900 was not listed in the chart or was not received as a result of the condition listed for that type of income.
+
+View text version
+
+Use this version if you do not want to answer the interactive questions.
+
+Generally, you can claim the pension income amount if:
+
+You reported eligible annuity or pension income (or both) on line 11500
+
+You reported eligible pension income on line 11600
+
+You reported annuity payments on line 12900 (box 16 of your T4RSP slips) only if the payments were received because of the death of your spouse or common-law partner, or were included as elected split-pension income
+
+### Eligible pension and annuity income
+
+List of eligible pension and annuity income (less than 65 years of age)
+
+Eligible pension and annuity income (less than 65 years of age)
+Slip or Form | Box number | Type of income | Conditions | Line number
+T3 | Box 31 | RPP lifetime retirement benefits (including retroactive lump-sum payments) | None | line 11500
+T4A | Box 016 | EBP benefits | If there is a box 109, the applicable amount in box 016 is not eligible for the amount on line 31400. | line 11500
+T4A | Box 016 | RPP lifetime retirement benefits (including retroactive lump-sum payments) | None | line 11500
+T4A | Box 018 | Lump-sum payment from an SPP or money purchase RPP | Received upon the death of your spouse or common-law partner | line 11500
+T4A | Box 024 (Box 115) | DPSP income | Received upon the death of your spouse or common-law partner | line 11500
+T4A | Box 024 | Regular annuities and IAAC | Received upon the death of your spouse or common-law partner | line 11500
+T4A | Box 028 (Box 133) | Variable pension benefits | Received upon the death of your spouse or common-law partner | line 11500
+T4A | Box 133 | Variable payment life annuity paid out of a money purchase RPP | None | line 11500
+T4RIF | Box 16 Box 22 | RRIF income | Received upon the death of your spouse or common-law partner Note: Any portion transferred to an RRSP, RRIF, or to purchase an annuity does not qualify for the pension income amount. | line 11500
+T4RSP | Box 16 | RRSP income | Received upon the death of your spouse or common-law partner | line 12900
+T5 | Box 19 | Regular annuities and IAAC | Received upon the death of your spouse or common-law partner | line 11500
+Form T1032 | line 14 | Elected split pension income | All or part of the elected split-pension income amount is included on line 28 of Form T1032, Joint Election to Split Pension Income | line 11600
+None | None | Foreign pensions (including US Social Security) | The amount of foreign pension income that is not deductible on line 25600 is still eligible for this amount. Any amount of foreign pension income that is tax-free in Canada because of a tax treaty and income from a United States individual retirement arrangement account are not eligible for the pension income amount. | line 11500
+
+List of eligible pension and annuity income (65 years of age or older)
+
+Eligible pension and annuity income (65 years of age or older)
+Slip or Form | Box number | Type of income | Conditions | Line number
+T3 | Box 31 | RPP lifetime retirement benefits (includes retroactive lump-sum payments) | None | line 11500
+T4A | Box 016 | EBP benefits | If there is a box 109, the applicable amount in box 016 is not eligible for the amount on line 31400. | line 11500
+T4A | Box 016 | RPP lifetime retirement benefits (includes retroactive lump-sum payments) | None | line 11500
+T4A | Box 018 | Lump-sum payment from an SPP or money purchase RPP | None | line 11500
+T4A | Box 024 (Box 115) | DPSP income | None | line 11500
+T4A | Box 024 | Regular annuities and IAAC | None | line 11500
+T4A | Box 028 (Box 133) | Variable pension benefits | None | line 11500
+T4A | Box 133 | Variable payment life annuity paid out of a money purchase RPP | None | line 11500
+T4RIF | Box 16 Box 22 | RRIF income | None Note: Any portion transferred to an RRSP, a RRIF or to purchase an annuity does not qualify for the pension income amount. | line 11500
+T4RSP | Box 16 | RRSP income | None | line 12900
+T5 | Box 19 | Regular annuities and IAAC | None | line 11500
+Form T1032 | line 14 | Elected split pension income | None | line 11600
+None | None | Foreign pensions (including US Social Security) | The amount of foreign pension income that is not deductible on line 25600 is still eligible for this amount. Any amount of foreign pension income that is tax-free in Canada because of a tax treaty and income from a United States individual retirement arrangement account are not eligible for the pension income amount. | line 11500
+
+#### Types of non-eligible pension
+
+The following types of pension income do not qualify for the pension income amount:
+
+- Any foreign source pension income that is tax-free in Canada because of a tax treaty that allows you to claim a deduction on line 25600
+- Income from a United States individual retirement arrangement account
+- Excess amounts from a RRIF included on line 11500 of your return that were transferred to an RRSP, another RRIF, or an annuity
+- Old age security benefits
+- Canada Pension Plan benefits
+- Quebec Pension Plan benefits
+- Death benefits
+- Retiring allowances
+- Amounts shown on T4RSP slips in boxes 18, 20, 22, 26, 28, and 34
+- Amounts distributed from a retirement compensation arrangement shown on T4A-RCA
+
+### Splitting pension income
+
+If you and your spouse or common-law partner elected to split pension income, follow the instructions at Step 4 of Form T1032, Joint Election to Split Pension Income, to calculate the amount to enter on line 31400 of your and your spouse's or common-law partner's returns.
+
+## How much you can claim
+
+### Federal amount for 2025
+
+Claim whichever is less:
+
+- $2,000
+- amount you calculated using the chart for line 31400 on your Federal Worksheet
+
+### Provincial and territorial amounts for 2025
+
+The pension income amount you can claim may vary depending on the province or territory you lived in at the end of the year:
+
+Alberta
+
+Claim whichever is less:
+
+- $1,719
+- amount entered on line 31400 of your federal tax return
+
+British Columbia
+
+Claim whichever is less:
+
+- $1,000
+- amount entered on line 31400 of your federal tax return
+
+Manitoba
+
+Claim whichever is less:
+
+- $1,000
+- amount entered on line 31400 of your federal tax return
+
+New Brunswick
+
+Claim whichever is less:
+
+- $1,000
+- amount entered on line 31400 of your federal tax return
+
+Newfoundland and Labrador
+
+Claim whichever is less:
+
+- $1,000
+- amount entered on line 31400 of your federal tax return
+
+Northwest Territories
+
+Claim whichever is less:
+
+- $1,000
+- amount entered on line 31400 of your federal tax return
+
+Nova Scotia
+
+Claim whichever is less:
+
+- $1,173
+- amount entered on line 31400 of your federal tax return
+
+Nunavut
+
+Claim whichever is less:
+
+- $2,000
+- amount entered on line 31400 of your federal tax return
+
+Ontario
+
+Claim whichever is less:
+
+- $1,762
+- amount entered on line 31400 of your federal tax return
+
+Prince Edward Island
+
+Claim whichever is less:
+
+- $1,000
+- amount entered on line 31400 of your federal tax return
+
+Quebec
+
+Refer to: Revenu Québec
+
+Saskatchewan
+
+Claim whichever is less:
+
+- $1,000
+- amount entered on line 31400 of your federal tax return
+
+Yukon
+
+Claim whichever is less:
+
+- $2,000
+- amount entered on line 31400 of your federal tax return
+
+## How to claim this amount
+
+### Federal tax return
+
+On line 31400 of your federal tax return, enter the federal pension income amount you determined under how much you can claim.
+
+### Provincial or territorial Form 428
+
+Residents of a province or territory other than Quebec
+
+On line 58360 of your provincial or territorial Form 428, enter the provincial or territorial pension income amount you determined under how much you can claim.
+
+Province or territory | Form
+Alberta | Form AB428
+British Columbia | Form BC428
+Manitoba | Form MB428
+New Brunswick | Form NB428
+Newfoundland and Labrador | Form NL428
+Northwest Territories | Form NT428
+Nova Scotia | Form NS428
+Nunavut | Form NU428
+Ontario | Form ON428
+Prince Edward Island | Form PE428
+Saskatchewan | Form SK428
+Yukon | Form YK428
+
+Residents of Quebec
+
+Province or territory | Form
+Quebec | Refer to: Revenu Québec
+
+## References
+
+### Forms and publications
+
+- Form T1032, Joint Election to Split Pension Income
+- Form 5009-C, AB428 – Alberta Tax and Credits
+- Form 5010-C, BC428 – British Columbia Tax
+- Form 5007-C, MB428 – Manitoba Tax
+- Form 5004-C, NB428 – New Brunswick Tax and Credits
+- Form 5001-C, NL428 – Newfoundland and Labrador Tax
+- Form 5012-C, NT428 – Northwest Territories Tax
+- Form 5003-C, NS428 – Nova Scotia Tax
+- Form 5014-C, NU428 – Nunavut Tax
+- Form 5006-C, ON428 – Ontario Tax
+- Form 5002-C, PE428 – Prince Edward Island Tax and Credits
+- Form 5008-C, SK428 – Saskatchewan Tax
+- Form 5011-C, YT428 – Yukon Tax
+
+### Related topics
+
+- Line 11500 – Other pensions and superannuation
+- Line 11600 – Elected split-pension amount
+- Line 12900 – Registered retirement savings plan (RRSP) income
+- Line 25600 – Additional deductions
+- Line 32600 – Amounts transferred from your spouse or common-law partner
+
+### Legislation
+
+ITA: 118(3)
+Pension Credit
+ITA: 118(7)
+Definitions
+ITA: 60.03
+Pension splitting
