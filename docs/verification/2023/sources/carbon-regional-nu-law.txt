@@ -1,0 +1,196 @@
+Title: SECOND SESSION
+URL: https://assembly.nu.ca/sites/default/files/2023-02/Bill%2019%20-%20AATA%20Income%20Tax%20Act%20-%20EF.pdf
+Fetched: 2026-11-02
+SHA-256 of the original: 418d55e14cc8c175e0c587d6d1b0e16e1756274c67fb4de0db6c7f6126c2b45f
+Publication date modified: 2023-02-22
+PDF pages: all 5
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 1 of 5 ---
+
+SECOND SESSION
+SIXTH LEGISLATIVE ASSEMBLY
+OF NUNAVUT
+DEUXIÈME SESSION
+SIXIÈME ASSEMBLÉE LÉGISLATIVE
+DU NUNAVUT
+GOVERNMENT BILL PROJET DE LOI DU GOUVERNEMENT
+BILL 19
+AN ACT TO AMEND THE INCOME
+TAX ACT
+PROJET DE LOI Nº 19
+LOI MODIFIANT LA LOI DE L’IMPÔT
+SUR LE REVENU
+Summary Résumé
+This Bill creates the Nunavut Carbon
+Credit.
+Le présent projet de loi créé le crédit de
+carbone du Nunavut.
+Date of Notice
+Date de l’avis
+1st Reading
+1re lecture
+2nd Reading
+2e lecture
+Reported from
+Standing
+Committee
+Présentation du
+rapport du comité
+permanent
+Reported from
+Committee of the
+Whole
+Présentation du
+rapport du comité
+plénier
+3rd Reading
+3e lecture
+Date of Assent
+Date de sanction
+ᐄᕙ ᖃᒪᓂᖅ ᐋᕆᐊᒃ, C.M., O.Nu.
+ᑲᒥᓴᓇᖓ ᓄᓇᕗᑦ
+Eva Qamaniq Aariak, C.M., O. Nu.
+Commissioner of Nunavut
+Commissaire du Nunavut
+
+--- PDF page 2 of 5 ---
+
+1
+BILL 19
+AN ACT TO AMEND THE INCOME TAX ACT
+The Commissioner, by and with the advice and consent of the Legislative Assembly, enacts as
+follows:
+1. This Act amends the Income Tax Act, R.S.N.W.T. 1988,c.I-1.
+2. The following is added after section 3.4:
+Deemed payment
+3.5 (1) An individual in relation to a month specified for a taxation year is deemed to have
+paid during the specified month, on account of their tax payable under this Act, an amount
+calculated under subsection (2), if the individual
+(a) is a resident of Nunavut on the first day of the specified month and
+preceding specified month;
+(b) has filed a return of income for the taxation year; and
+(c) is an eligible individual, within the meaning of section 122.5 of the federal
+Act, for the specified month.
+Calculation of deemed payment
+(2) The amount of the deemed payment by an individual under subsection (1) is
+determined by the formula
+DP = AP × (1 + QD + QR) ÷ 4
+where
+DP is the amount of the deemed payment;
+AP is the amount prescribed by regulation;
+QD is the number of qualified dependents of the individual in relation to the
+specified month; and
+QR is
+(a) one, if the individual has a qualified relation in relation to the
+specified month; and
+(b) otherwise, zero.
+Federal Act
+(3) The following provisions of the federal Act apply for the purposes of this section with
+any modifications that the circumstances require:
+
+--- PDF page 3 of 5 ---
+
+2
+(a) the definitions of “qualified dependent”, “qualified relation” and “return of
+income” in subsection 122.5(1);
+(b) subsection 122.5(2), except paragraph (c);
+(c) subsections 122.5(3.01), (3.1) and (3.2), with the references to
+subsection 122.5(3) of the federal Act read as references to subsection (1)
+of this section;
+(d) subsections 122.5(4) and (5) to (6);
+(e) subsection 122.5(6.1), with the addition of the following paragraph:
+(d) the individual becomes or ceases to be a resident of Nunavut.
+3. (1) Section 19 is renumbered as subsection 19(1).
+(2) The following is added after subsection 19(1):
+Incorporation of federal provisions – Nunavut Carbon Credit
+(2) Subsections 160.1(1.1) and (2) of the federal Act apply for the purposes of this Act,
+with the reference to subsection 122.5(3) or (3.002) of the federal Act read as a reference to
+subsection 3.5(1) of this Act.
+4. Subsection 23(1) is repealed and replaced by:
+Incorporation of federal provisions respecting repeated failures
+23. (1) The following provisions of the federal Act apply for the purposes of this Act:
+(a) subsection 163(1);
+(b) paragraph 163(2)(a) as it would apply without references to
+subsection 120(2) of the federal Act;
+(c) paragraph 163(2)(c.1), with the references to section 122.5 of the federal
+Act read as references to section 3.5 of this Act;
+(d) subsections 163(2.1), (3) and (4).
+5. The following is added after subsection 24(1):
+Incorporation of federal provisions – Nunavut Carbon Credit
+(1.1) Subsection 164(2.1) of the federal Act applies for the purposes of this Act, with the
+reference to section 122.5 of the federal Act read as a reference to section 3.5 of this Act.
+Transitional
+6. The first specified month for the deemed payment under section 3.5 of the Income
+Tax Act is July, 2023.
+
+--- PDF page 4 of 5 ---
+
+3
+PROJET DE LOI Nº 19
+LOI MODIFIANT LA LOI DE L’IMPÔT SUR LE REVENU
+Sur l’avis et avec le consentement de l’Assemblée législative, la commissaire du Nunavut
+édicte :
+1. La présente loi modifie la Loi de l’impôt sur le revenu, L.R.T.N.-O. 1988, ch. I-1.
+2. La disposition suivante est ajoutée après l’article 3.4:
+Montant réputé
+3.5 (1) Le particulier par rapport à un mois précisé d’une année d’imposition est réputé avoir
+payé au cours du mois précisé, au titre de son impôt payable en vertu de la présente loi, le
+montant calculé au titre du paragraphe (2), si le particulier rempli les conditions suivantes :
+a) il réside au Nunavut le premier jour du mois précisé et du mois précisé
+précédent;
+b) il a produit une déclaration de revenu pour l’année d’imposition;
+c) il est un particulier admissible, au sens de l’article 122.5 de la loi fédérale,
+pour le mois précisé.
+Calcul du montant réputé
+(2) La somme du montant réputé avoir été payé par un particulier au titre du
+paragraphe (1) s’obtient par la formule suivante :
+MR = MP × (1+ PCA + PA) ÷ 4
+où :
+MR est la somme du montant réputé;
+MP est le montant prévu par règlement;
+PCA est le nombre de personnes à charge admissibles du particulier par rapport
+au mois précisé;
+PA est :
+a) un, si le particulier a un proche admissible par rapport au mois
+précisé;
+b) zéro, dans les autres cas.
+Loi fédérale
+(3) Pour l’application du présent article, les dispositions suivantes de la loi fédérale
+s’appliquent avec les adaptations qui s’imposent dans les circonstances :
+a) les définitions de « personne à charge admissible », de « proche
+admissible » et de « déclaration de revenu » au paragraphe 122.5(1);
+
+--- PDF page 5 of 5 ---
+
+4
+b) le paragraphe 122.5(2), à l’exception de l’alinéa c);
+c) les paragraphes 122.5(3.01), (3.1) et (3.2), les mentions du
+paragraphe 122.5(3) de la loi fédérale valant mention du paragraphe (1) du
+présent article;
+d) les paragraphes 122.5(4) et (5) à (6);
+e) le paragraphe 122.5(6.1), suivi de l’insertion de l’alinéa suivant :
+d) le particulier devient un résident du Nunavut ou cesse de l’être.
+3. (1) L’article 19 devient le paragraphe 19(1).
+(2) Le paragraphe suivant est ajouté après le paragraphe 19(1) :
+Incorporation des dispositions de la loi fédérale – crédit de carbone du Nunavut
+(2) Les paragraphes 160.1(1.1) et (2) de la loi fédérale s’appliquent à la présente loi. Les
+mentions du paragraphe 122.5(3) ou (3.002) de la loi fédérale valent mention du
+paragraphe 3.5(1) de la présente loi.
+4. Le paragraphe 23(1) est abrogé et remplacé par le paragraphe suivant :
+Incorporation des dispositions fédérales concernant les omissions répétées
+23. (1) Les dispositions suivantes de la loi fédérale s’appliquent à la présente loi :
+a) le paragraphe 163(1);
+b) le paragraphe 163(2), dans la mesure où ce dernier serait susceptible de
+s’appliquer sans le renvoi au paragraphe 120(2) de la loi fédérale;
+c) l’alinéa 163(2)c.1), les mentions de l’article 122.5 de la loi fédérale valant
+mention de l’article 3.5 de la présente loi;
+d) les paragraphes 163(2.1), (3) et (4).
+5. Le paragraphe suivant est ajouté après le paragraphe 24(1) :
+Incorporation des dispositions de la loi fédérale – crédit de carbone du Nunavut
+(1.1) Le paragraphe 164(2.1) de la loi fédérale s’applique à la présente loi. Les mentions
+de l’article 122.5 de la loi fédérale valent mention de l’article 3.5 de la présente loi.
+Disposition transitoire
+6. Le premier mois précisé quant au montant réputé aux termes de l’article 3.5 de la Loi
+de l’impôt sur le revenu est juillet 2023.

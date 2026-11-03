@@ -39,3 +39,14 @@ keeps the pages the data uses). Nothing under `docs/` is imported by `src/`, so 
 | [rc4210-25](rc4210-25.txt) | RC4210-25 GST/HST Credit (July 2025 to June 2026), text version | https://www.canada.ca/content/dam/cra-arc/formspubs/pub/rc4210/rc4210-25e.txt | 2026-11-01 | `e515cb67c2324624162e41e15adee790719baf3b2da11c4b30d87a69b909a580` |
 | [t4114-25](t4114-25.txt) | T4114-25 Canada Child Benefit and related federal, provincial and territorial programs (July 2025 to June 2026) | https://www.canada.ca/content/dam/cra-arc/formspubs/pub/t4114/t4114-25e.pdf | 2026-11-01 | `5db4ff195008a9cab6252ddc6c8d9773eb2707236fbbe59c54a18fdc13b615d4` |
 | [t778-childcare](t778-childcare.txt) | Child Care Expenses Deduction | https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/t778/t778-25e.pdf | 2026-11-02 | `825e3dce80164cb311f234774c13680fca2c5648cd3fb41d84d608540419d7f3` |
+
+Regional carbon notes marked "manual" paraphrase official sources whose direct downloads were blocked or incomplete.
+Their headers disclose retrieval limits; a navigation-shell hash is not a hash of the underlying publication.
+
+| Regional carbon cache | Title | URL | Read/fetched | Original hash |
+|---|---|---|---|---|
+| [carbon-regional-federal-rates](carbon-regional-federal-rates.txt) | Fuel charge rates | https://www.canada.ca/en/revenue-agency/services/forms-publications/publications/fcrates/fuel-charge-rates.html | 2026-11-02 | 9e8139762ad81dc12e83c5a92dbf707d433280e39e28c3c2566195ec52486ccf |
+| [carbon-regional-nt-end](carbon-regional-nt-end.txt) | Government of Northwest Territories | https://www.gov.nt.ca/en/newsroom/gnwt-ending-nwt-carbon-tax-most-users-april-1 | 2026-11-02 | 92b501db7d006a427635f6765f208862bbc6c0750616dece1e9b5271956b6885 |
+| [carbon-regional-nt-report-final](carbon-regional-nt-report-final.txt) | NWT CARBON TAX REPORT | https://www.fin.gov.nt.ca/sites/fin/files/resources/nwt_carbon_tax_report_2024-2025.pdf | 2026-11-02 | 89c04413f3504527d95f724a5cc3cd38360b3b0f74752b8127c9f616e742ce4f |
+| [carbon-regional-nu-cra-dates](carbon-regional-nu-cra-dates.txt) | Goods and Services Tax/Harmonized Sales Tax (GST/HST) Credit and Related Benefits and Credits v3.0 | https://www.canada.ca/en/revenue-agency/services/about-canada-revenue-agency-cra/protecting-your-privacy/privacy-impact-assessment/goods-services-tax-harmonized-sales-tax-gst-hst-credit-related-benefits-credits-v3.html | 2026-11-02 | 0b91de8561b53ac6a8df146c3cfdc31f07c9bfb716fc5b8ec9f50bb3d2a4f154 |
+| [carbon-regional-yt-rebates](carbon-regional-yt-rebates.txt) | Yukon historical carbon rebates | https://yukon.ca/en/doing-business/taxation/learn-about-federal-price-pollution-and-yukons-carbon-rebate | 2026-11-02 | manual; unavailable |
