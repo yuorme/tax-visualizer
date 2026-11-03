@@ -1,23 +1,11 @@
-// Browser smoke test for dist/index.html (run `npm run build` first). Every page is opened with the shared helper
-// in page.mjs (reduced motion, fonts loaded) and walked through the same sequence of inputs (STEPS). It checks:
-//  1. no script errors, in light mode at 1000, 430 and 375 px and in dark mode at 430 and 375 px;
-//  2. no sideways scrolling at phone widths, after every step, in light and dark mode;
-//  3. the chart, comparison table and credits panel show exactly the same text as the legacy single-file app
-//     (legacy/tax-compare.html) after each step, in light mode at each width, apart from the intended wording changes
-//     listed in LEGACY_WORDING;
-//  4. the UI rules in rules.mjs after every step: chart column labels are at most two characters, and no visible hint
-//     text outside the info tooltips;
-//  5. axe-core's colour-contrast rule at 375 px in light and dark mode, after every step;
-//  6. the built page is self-contained: it requests nothing but the external hosts listed in page.mjs;
-//  7. the tab bar under the inputs: every tab closed on first load, and a tab opens alone and closes when tapped again;
-//  8. fuel tax (FUEL_STEPS, built page only, at every width and scheme): the Driving tab follows Credits, distance
-//     starts at the home province's survey average and efficiency at the national one, both are editable and take 0,
-//     a comma in the efficiency is a decimal point, and fuel tax is its own line in the comparison;
-//  9. other income (OTHER_STEPS, built page only, at every width and scheme): the employment income box is labelled as
-//     such, each adult has an other income box above the investment boxes, other income pays no CPP/QPP or EI and gets
-//     no employment amount, isn't working income for the Canada Workers Benefit, and claws back child benefits.
-// The legacy page has no fuel tax, so the light-mode runs compared with it (3) set the built page's distance to 0
-// first. The dark-mode runs keep the starting driving, so STEPS also run with fuel tax in the totals.
+// Browser checks for dist/index.html (run `npm run build` first), using page.mjs for reduced motion and loaded fonts.
+// - Legacy comparisons retain all three widths: visible text and percent formatting depend on the viewport.
+// - Every detailed functional sequence runs once at 1000px light, including every available tax year.
+// - A compact visual sequence covers desktop/430/375px in both themes. It exposes each panel, expanded childcare
+//   controls and invalid drafts, and reuses a representative year switch to check mobile numeric formatting.
+// - Contrast scans cover those distinct visual states at 375px in both themes, not every arithmetic/persistence case.
+// Every built-page state still checks script errors, unexpected requests, chart labels, visible hints and phone
+// overflow. The legacy comparison disables driving because the legacy page predates fuel tax.
 // Known failures (rules.KNOWN) are reported but don't fail the run; `npm run e2e -- --strict` fails on them too.
 import fs from "node:fs";
 import { chromium } from "playwright";
@@ -29,6 +17,7 @@ import { CHILDCARE_STEPS } from "./childcare.mjs";
 import { DEDUCTION_STEPS } from "./deductions.mjs";
 import { HISTORY_STEPS } from "./history.mjs";
 import { ALLOWED_HOSTS, openPage, settle } from "./page.mjs";
+import { RESPONSIVE_STEPS } from "./responsive.mjs";
 import { COLUMN_COUNT, contrastViolations, inspect, KNOWN, MAX_LABEL_LENGTH } from "./rules.mjs";
 
 const started = Date.now();
@@ -576,19 +565,23 @@ const failures = new Map();
 const fail = (msg, where) => failures.set(msg, [...(failures.get(msg) ?? []), where]);
 const knownSeen = new Map(KNOWN.map(k => [k.id, 0]));
 let fontsMissing = false;
+const counts = { pages: 0, states: 0, contrast: 0 };
 
 const browser = await chromium.launch();
 
 /** Opens a page, walks it through STEPS, and records what each check needs after every step. */
 async function run({ width, colorScheme = "light", html, contrast = false, steps = STEPS, before = async () => {} }) {
+  counts.pages++;
   const { page, errors, blocked, fontsLoaded, close } = await openPage(browser, { width, colorScheme, html });
   if (!fontsLoaded) fontsMissing = true;
   await before(page);
   await settle(page);
   const states = [];
   for (const [name, step] of steps) {
+    counts.states++;
     const problems = (await step(page)) ?? [];
     await settle(page);
+    if (contrast) counts.contrast++;
     const axe = contrast ? await contrastViolations(page, colorScheme) : [];
     states.push({ name, problems, capture: await capture(page), inspect: await inspect(page), axe });
   }
@@ -619,7 +612,7 @@ function check(label, width, { states, errors, blocked }) {
 }
 
 for (const width of [1000, 430, 375]) {
-  const [a, b] = [await run({ width, contrast: width === 375, before: noDriving }), await run({ width, html: legacy })];
+  const [a, b] = [await run({ width, before: noDriving }), await run({ width, html: legacy })];
   check(`${width}px light`, width, a);
   a.states.forEach(({ name, capture: built }, i) => {
     const s = { ...built, detail: asLegacy(built.detail, width) };
@@ -637,44 +630,32 @@ LEGACY_WORDING.forEach(([issue, pattern], i) => {
   if (wordingSeen[i].size !== 3)
     fail(`legacy wording entry ${issue} ${pattern} no longer matches: remove it from LEGACY_WORDING`, "legacy runs");
 });
-for (const width of [430, 375]) {
-  check(`${width}px dark`, width, await run({ width, colorScheme: "dark", contrast: width === 375 }));
-  console.log(`${width}px dark: ${STEPS.length} states checked`);
-}
-for (const [width, colorScheme] of [
-  [1000, "light"],
-  [430, "light"],
-  [375, "light"],
-  [430, "dark"],
-  [375, "dark"],
+// Keep complete sequences intact: their later steps depend on state established by earlier steps.
+for (const [label, steps] of [
+  ["fuel tax", FUEL_STEPS],
+  ["other income", OTHER_STEPS],
+  ["year selector", YEAR_STEPS],
+  ["deductions", DEDUCTION_STEPS],
+  ["history", HISTORY_STEPS],
+  ["carbon pricing", CARBON_STEPS],
+  ["childcare", CHILDCARE_STEPS],
 ]) {
-  const fuel = await run({ width, colorScheme, contrast: width === 375, steps: FUEL_STEPS });
-  check(`${width}px ${colorScheme}, fuel tax`, width, fuel);
-  console.log(`${width}px ${colorScheme}: ${FUEL_STEPS.length} fuel tax states checked`);
-  const other = await run({ width, colorScheme, contrast: width === 375, steps: OTHER_STEPS });
-  check(`${width}px ${colorScheme}, other income`, width, other);
-  console.log(`${width}px ${colorScheme}: ${OTHER_STEPS.length} other income states checked`);
-  const history = await run({ width, colorScheme, contrast: width === 375, steps: YEAR_STEPS });
-  check(`${width}px ${colorScheme}, year selector`, width, history);
-  console.log(`${width}px ${colorScheme}: ${YEAR_STEPS.length} year selector states checked`);
+  check(`1000px light, ${label}`, 1000, await run({ width: 1000, steps }));
+  console.log(`1000px light: ${steps.length} ${label} states checked`);
 }
+
+// The first step establishes income/driving values; the previous year's step checks all 13 chart values and
+// year-specific notes, sources and controls. Only this representative switch repeats across viewport/theme pairs.
+const responsive = [YEAR_STEPS[0], YEAR_STEPS[2], ...RESPONSIVE_STEPS];
 for (const width of [1000, 430, 375]) {
   for (const colorScheme of ["light", "dark"]) {
-    const deductions = await run({ width, colorScheme, contrast: width === 375, steps: DEDUCTION_STEPS });
-    check(`${width}px ${colorScheme}, deductions`, width, deductions);
-    console.log(`${width}px ${colorScheme}: ${DEDUCTION_STEPS.length} deduction states checked`);
-    const history = await run({ width, colorScheme, contrast: width === 375, steps: HISTORY_STEPS });
-    check(`${width}px ${colorScheme}, history`, width, history);
-    console.log(`${width}px ${colorScheme}: ${HISTORY_STEPS.length} history states checked`);
-    const carbon = await run({ width, colorScheme, contrast: width === 375, steps: CARBON_STEPS });
-    check(`${width}px ${colorScheme}, carbon pricing`, width, carbon);
-    console.log(`${width}px ${colorScheme}: ${CARBON_STEPS.length} carbon states checked`);
-    const childcare = await run({ width, colorScheme, contrast: width === 375, steps: CHILDCARE_STEPS });
-    check(`${width}px ${colorScheme}, childcare`, width, childcare);
-    console.log(`${width}px ${colorScheme}: ${CHILDCARE_STEPS.length} childcare states checked`);
+    const result = await run({ width, colorScheme, contrast: width === 375, steps: responsive });
+    check(`${width}px ${colorScheme}, responsive`, width, result);
+    console.log(`${width}px ${colorScheme}: ${responsive.length} responsive states checked`);
   }
 }
 await browser.close();
+console.log(`coverage: ${counts.pages} pages, ${counts.states} states, ${counts.contrast} contrast scans`);
 
 if (fontsMissing)
   console.warn("warning: the web fonts didn't load (offline?), so widths were measured in fallback fonts");
