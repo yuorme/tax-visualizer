@@ -245,7 +245,7 @@ FUEL_STEPS.push([
     await p.click("#eff-reset");
     const initial = await drivingResults(p);
     await p.click('[data-driving-units="us"]');
-    problems.push(...(await expectValue(p, "#km", "9,196.292", "Quebec distance in miles")));
+    problems.push(...(await expectValue(p, "#km", "9,196.294", "Quebec distance in miles")));
     problems.push(...(await expectValue(p, "#eff", "26.134954", "US mpg")));
     for (const selector of ["#km", "#eff"])
       if (await p.$eval(selector, input => input.scrollWidth > input.clientWidth + 1))
@@ -257,7 +257,7 @@ FUEL_STEPS.push([
     if ((await drivingSaved(p)).km !== null || (await drivingSaved(p)).eff !== null)
       problems.push("switching units replaced province/national defaults with overrides");
     await p.selectOption("#home", "BC");
-    problems.push(...(await expectValue(p, "#km", "8,015.833", "BC default in miles")));
+    problems.push(...(await expectValue(p, "#km", "8,015.688", "BC default in miles")));
     await type(p, "#km", "10,000");
     await type(p, "#eff", "30");
     const typed = await drivingSaved(p);
@@ -646,7 +646,30 @@ for (const [label, steps] of [
 
 // The first step establishes income/driving values; the previous year's step checks all 13 chart values and
 // year-specific notes, sources and controls. Only this representative switch repeats across viewport/theme pairs.
-const responsive = [YEAR_STEPS[0], YEAR_STEPS[2], ...RESPONSIVE_STEPS];
+const responsive = [
+  YEAR_STEPS[0],
+  YEAR_STEPS[2],
+  ...RESPONSIVE_STEPS,
+  [
+    "layout: driving units show equivalent values without clipping",
+    async p => {
+      await p.click("#view-provinces");
+      await openTab(p, "driving");
+      await type(p, "#km", "16,093.44");
+      await type(p, "#eff", "9");
+      const before = await drivingResults(p);
+      await p.click('[data-driving-units="us"]');
+      const problems = await expectValue(p, "#km", "10,000", "responsive US miles");
+      problems.push(...(await expectValue(p, "#eff", "26.134954", "responsive US mpg")));
+      if (JSON.stringify(before) !== JSON.stringify(await drivingResults(p)))
+        problems.push("responsive unit toggle changed tax results");
+      for (const selector of ["#km", "#eff"])
+        if (await p.$eval(selector, input => input.scrollWidth > input.clientWidth + 1))
+          problems.push(`${selector} clips its converted value`);
+      return problems;
+    },
+  ],
+];
 for (const width of [1000, 430, 375]) {
   for (const colorScheme of ["light", "dark"]) {
     const result = await run({ width, colorScheme, contrast: width === 375, steps: responsive });

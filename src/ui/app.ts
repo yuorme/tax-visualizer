@@ -731,19 +731,14 @@ function renderDriving(H: Row) {
     drivingTax = fuelAmt(H.r) + (H.r.carbon?.gasoline ?? 0);
   const distance = displayDistance(km, drivingUnits);
   if (document.activeElement !== kmIn) kmIn.value = distanceText(distance);
-  kmRange.max = String(displayDistance(50000, drivingUnits));
-  kmRange.step = String(displayDistance(500, drivingUnits));
-  kmRange.value = String(Math.min(distance, +kmRange.max));
-  kmRange.setAttribute("aria-valuetext", kmText(km));
+  // Keep native slider steps in metric too: fractional converted steps can make its endpoint unreachable.
+  kmRange.value = String(Math.min(km, +kmRange.max));
+  kmRange.setAttribute("aria-valuetext", kmText(+kmRange.value));
   $("km-unit").textContent = `${distanceUnit()} a year`;
   $("eff-unit").textContent = drivingUnits === "us" ? "US mpg" : "L/100 km";
   for (const button of document.querySelectorAll<HTMLElement>("[data-driving-units]"))
     button.setAttribute("aria-pressed", String(button.dataset.drivingUnits === drivingUnits));
-  const scale = $("km-scale");
-  scale.dataset.ticks = [0, 10000, 20000, 30000, 40000, 50000]
-    .map(value => displayDistance(value, drivingUnits))
-    .join(",");
-  renderScale(scale);
+  renderScale($("km-scale"));
   if (document.activeElement !== effIn) effIn.value = effText(eff);
   $("km-note").textContent =
     kmOverride != null
@@ -1341,7 +1336,7 @@ kmIn.addEventListener("keydown", e => {
   if (e.key === "Enter") kmIn.blur();
 });
 kmRange.addEventListener("input", () => {
-  kmOverride = metricDistance(+kmRange.value, drivingUnits);
+  kmOverride = +kmRange.value;
   render();
 });
 $("km-reset").addEventListener("click", () => {
@@ -1431,7 +1426,8 @@ function renderScale(sc: HTMLElement) {
       if (minor) return `<span class="minor" style="left:calc(9px + (100% - 18px) * ${q})"></span>`;
       const cls = i === 0 ? "first" : i === ticks.length - 1 ? "last" : "";
       const left = i === 0 ? "0" : i === ticks.length - 1 ? "100%" : `calc(9px + (100% - 18px) * ${q})`;
-      return `<span class="${cls}${v === 0 && min < 0 ? " zero" : ""}" style="left:${left}">${fmtTick(v, signed, plain)}</span>`;
+      const display = sc.id === "km-scale" ? displayDistance(v, drivingUnits) : v;
+      return `<span class="${cls}${v === 0 && min < 0 ? " zero" : ""}" style="left:${left}">${fmtTick(display, signed, plain)}</span>`;
     })
     .join("");
 }

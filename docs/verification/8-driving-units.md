@@ -3,6 +3,8 @@
 The driving panel stores kilometres and litres per 100 kilometres in memory and in the existing saved scenario.
 A separate `drivingUnits` preference selects metric or US display; missing or unrecognized preferences use metric.
 Toggling units changes neither canonical amount nor the distinction between defaults and user overrides.
+The slider also keeps metric steps internally; its tick labels and accessible value convert to the selected unit.
+This avoids floating-point step rounding that can otherwise make its maximum unreachable in miles.
 
 ## Conversion evidence
 
