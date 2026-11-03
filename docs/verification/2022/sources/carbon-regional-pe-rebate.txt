@@ -1,0 +1,10 @@
+Title: Radware Page
+URL: https://www.princeedwardisland.ca/en/news/islanders-to-receive-inflationary-support-payment-this-week
+Fetched: 2026-11-02
+SHA-256 of the original: 572d0353be94020ed25a3b3f00b3e21620ffa2e1fb71ad4ac6c8e5d7ef244584
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+Verifying your browser before proceeding...
+
+Incident ID: 33932dc1-cbnf-4290-a16a-5bf8fe1b1297
