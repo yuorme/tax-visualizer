@@ -32,10 +32,45 @@ open dist/index.html
 | `npm run e2e` | Loads the built page in Chromium on desktop and phone widths |
 | `npm run compare -- <git-ref>` | Diffs the page's visible text and control state at a ref against the working tree |
 | `npm run preview [-- <PR#\|branch>]` | Opens a pull request, ref or this checkout in phone and desktop windows, dark and light |
+| `npm run worktree:cleanup -- [--apply] <path>...` | Checks explicitly named finished worktrees; `--apply` removes eligible checkouts and their generated files, preserving branches |
 | `npm run golden:capture -- <year>` | Captures `tests/golden/<year>.json` from the engine; `--force` overwrites |
 | `npm run golden:capture-legacy` | How 2026 was first locked: reruns the original app in `legacy/` |
 | `npm run year-diff -- <year> [<base-year>]` | Markdown report of a year's data against the previous year: changes, large changes, amounts left unchanged (likely carried over), added and removed fields. A `# not indexed` comment marks an amount that is meant to stay the same |
 | `npm run fetch-source -- <year> <url> [<name>]` | Caches a text extract of an official PDF, web page or text file in `docs/verification/<year>/sources/<name>.txt` and adds its row (title, URL, date, SHA-256 of the original) to `INDEX.md` there. The original isn't kept; extracts over 250 KB are refused, so pass `--pages 3-7,12` for a large PDF. `--force` replaces an extract, `--title` sets its title |
+
+## Worktree lifecycle
+
+Each isolated agent checkout can install about 150 MB of dependencies. A pushed branch or PR retains the work;
+the checkout is disposable once its agent has reported and stopped, even while the PR awaits human merge.
+The orchestrator locks active worktrees and unlocks only its own completed ones. These locks and the owner's
+confirmation that the task stopped protect active work. Process inspection checks only working directories:
+an idle agent or a preview launched from the repo root may not be detected, so this check cannot establish completion.
+
+Run from another checkout with Node 26 and `lsof` installed (macOS or Linux):
+
+```sh
+git worktree list
+npm run worktree:cleanup -- /absolute/path/to/finished-worktree
+npm run worktree:cleanup -- --apply /absolute/path/to/finished-worktree
+```
+
+The command fetches origin, then requires HEAD to be reachable from an origin branch. It keeps the main/current
+checkout, locked worktrees, worktrees containing process working directories or nested registered worktrees,
+local-only commits, tracked changes, untracked files and unknown ignored files. It also refuses `assume-unchanged`
+and `skip-worktree` index flags, which can hide edits from Git's status and removal checks, leaving the flags intact.
+Only ignored `node_modules`, `dist`, `coverage`, `test-results`, `playwright-report` and `.DS_Store` metadata files
+are disposable. A failed fetch or process check stops cleanup. It uses `git worktree remove` without force,
+preserves branch refs, and performs a dry run unless `--apply` is given.
+Use explicit paths owned by the completed task; a broad directory sweep can disrupt another session.
+
+Keep dirty or unpushed worktrees until their work is preserved. For paused work, once the owner confirms all
+processes have stopped, reclaim only reinstallable dependencies with
+`node -e 'require("node:fs").rmSync(process.argv[1], {recursive:true, force:true})' /absolute/worktree/node_modules`.
+Check that exact path first, and run `npm ci` inside the worktree before resuming. Keep source caches and reports.
+
+After closing preview windows and stopping the preview process, run
+`npm run worktree:cleanup -- --apply /absolute/path/to/repo/.preview`.
+If a preview contains local-only commits, preserve it or use the paused-work dependency cleanup instead.
 
 ## How it's organized
 

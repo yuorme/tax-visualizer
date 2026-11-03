@@ -151,6 +151,7 @@ const bcFamilyBenefit = z.object({
   threshold: amount,
   minThreshold: amount,
 });
+const bcEarlyChildhoodBenefit = z.object({ perChild: amount, threshold: amount, rate });
 const childBenefit = z.discriminatedUnion("program", [
   program("ontario-child-benefit", z.object({ perChild: amount, threshold: amount, rate })),
   program(
@@ -167,6 +168,16 @@ const childBenefit = z.discriminatedUnion("program", [
     }),
   ),
   program("bc-family-benefit", bcFamilyBenefit),
+  program("bc-early-childhood-benefit", bcEarlyChildhoodBenefit),
+  program(
+    "bc-child-benefit-transition",
+    z
+      .object({
+        early: bcEarlyChildhoodBenefit.extend({ weight: z.number().positive().max(1) }),
+        opportunity: bcFamilyBenefit.extend({ weight: z.number().positive().max(1) }),
+      })
+      .refine(q => Math.abs(q.early.weight + q.opportunity.weight - 1) < 1e-9, "period weights must sum to 1"),
+  ),
   program(
     "bc-family-benefit-periods",
     z.object({
