@@ -1,8 +1,8 @@
 # 2022 source extracts
 
-CRA T4114-22 and RC4210-22 are official CRA-authored guides retrieved from archived CCH and DT Tax copies
-after the original CRA PDF URLs returned 404. Their cover dates identify the July 2022–June 2023 benefit year.
-The source entries preserve the actual retrieval URLs and original-file hashes.
+CRA T4114-22 now uses the official publications archive; its download required the catalogue Referer header.
+The earlier CCH copy remains as audit evidence. RC4210-22 uses the official CRA-authored guide archived by
+DT Tax after the original CRA URL returned 404. The cache preserves its retrieval URL and original hash.
 
 Calgary and Vancouver property-tax tables and the Yukon Hansard extract were read through the web browsing
 tool after direct downloads returned HTTP 403. Their caches explicitly identify manual transcriptions and
@@ -87,6 +87,7 @@ keeps the pages the data uses). Nothing under `docs/` is imported by `src/`, so 
 | [provincial-saskatoon-guide](provincial-saskatoon-guide.txt) | Guide to 2021 Property Tax Notice | https://www.saskatoon.ca/sites/default/files/documents/assessment-tax-tool/2023-Guide%20to%20tax-web.pdf | 2026-11-02 | `4f40e7d6ddb4750fb51c0bd6562320764a98fc43220a14318ad2c400330a8ca4` |
 | [provincial-saskatoon-property-tax](provincial-saskatoon-property-tax.txt) | Historical Tax Rate 2018-2026 | https://www.saskatoon.ca/sites/default/files/media/documents/Historical%20tax%20Rate%202018-2026.pdf | 2026-11-02 | `a8061028f8e3e8c164d8f42c1de4327eb3db5de43866d688edb201aab32b814f` |
 | [provincial-t4114](provincial-t4114.txt) | Canada Child Benefit | https://www.cchwebsites.com/content/pdf/tax_forms/ca/en/t4114_en.pdf | 2026-11-02 | `4590f37a7a95b6b72a7e4d3fc468329e3daea047bf695001f21d068ee73dd273` |
+| [provincial-t4114-official](provincial-t4114-official.txt) | Canada Child Benefit | https://publications.gc.ca/collections/collection_2022/arc-cra/Rv1-36-2022-eng.pdf?download=1 | 2026-11-02 | `4590f37a7a95b6b72a7e4d3fc468329e3daea047bf695001f21d068ee73dd273` |
 | [provincial-toronto-property-tax](provincial-toronto-property-tax.txt) | Achieving Financial Sustainability - 2022 Annual Report | https://www.toronto.ca/wp-content/uploads/2023/09/981e-2022AFRV2FINALAODAcompressedfinalversion.pdf | 2026-11-02 | `62fc17986cb4b0df0aedd0c9e7b3d258e84b5eb9a46bac9d4a9333066755a22c` |
 | [provincial-vancouver-property-tax](provincial-vancouver-property-tax.txt) | Vancouver 2022 property tax rates and tax levies, Appendix A | https://vancouver.ca/files/cov/2022-property-tax-rates.pdf | 2026-11-02 | `unavailable (direct PDF download returned HTTP 403)` |
 | [provincial-winnipeg-property-tax](provincial-winnipeg-property-tax.txt) | 2022 Combined Mill Rates.xlsx | https://assessment.winnipeg.ca/Asmttax/pdfs/rates/2022CombinedMillRates.pdf | 2026-11-02 | `f6d754dae8c52a2196ab86b079545e3d21c10dcc4f795dc6fb4550572ee43bc4` |
