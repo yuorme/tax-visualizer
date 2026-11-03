@@ -16,41 +16,57 @@ concurrency:
 jobs:
   check:
     runs-on: ubuntu-latest
+    outputs:
+      docs_only: ${{ steps.scope.outputs.docs_only }}
     steps:
       - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
       - uses: actions/setup-node@v7
         with:
           node-version-file: .node-version
           cache: npm
+      - id: scope
+        run: node scripts/check-scope.mjs --event
+      - if: steps.scope.outputs.docs_only == 'true'
+        run: node scripts/check-docs.mjs
       - run: npm ci
+        if: steps.scope.outputs.docs_only != 'true'
       - run: npm run lint          # Biome lint and formatting, and the 120-character wrap in Markdown
+        if: steps.scope.outputs.docs_only != 'true'
       # The headless Chromium shell is all the smoke test needs. It's cached per Playwright version, and on a cache hit
       # the system libraries aren't reinstalled: ubuntu-latest already has them. If the runner image ever drops one,
       # e2e fails with Playwright's "missing dependencies" message; then add `npx playwright install-deps chromium`.
       - id: playwright
+        if: steps.scope.outputs.docs_only != 'true'
         run: |
           echo "version=$(node -p 'require("playwright/package.json").version')" >> "$GITHUB_OUTPUT"
           echo "image=${ImageOS:?runner sets ImageOS}" >> "$GITHUB_OUTPUT"
       - id: browser-cache
+        if: steps.scope.outputs.docs_only != 'true'
         uses: actions/cache@v6
         with:
           path: ~/.cache/ms-playwright
           # The runner's ImageOS (e.g. ubuntu26) changes when ubuntu-latest moves to a new Ubuntu release, which
           # needs a new browser build
           key: playwright-shell-${{ steps.playwright.outputs.image }}-${{ steps.playwright.outputs.version }}
-      - if: steps.browser-cache.outputs.cache-hit != 'true'
+      - if: steps.scope.outputs.docs_only != 'true' && steps.browser-cache.outputs.cache-hit != 'true'
         run: npx playwright install --with-deps --only-shell chromium
       - run: npm run typecheck
+        if: steps.scope.outputs.docs_only != 'true'
       - run: npm test            # data validation, golden results, published reference values
+        if: steps.scope.outputs.docs_only != 'true'
       - run: npm run build
+        if: steps.scope.outputs.docs_only != 'true'
       - run: npm run e2e         # browser smoke test and comparison with the legacy page
+        if: steps.scope.outputs.docs_only != 'true'
       - uses: actions/upload-pages-artifact@v5
-        if: github.ref == 'refs/heads/main'
+        if: github.ref == 'refs/heads/main' && steps.scope.outputs.docs_only != 'true'
         with:
           path: dist
 
   deploy:
-    if: github.ref == 'refs/heads/main'
+    if: github.ref == 'refs/heads/main' && needs.check.outputs.docs_only != 'true'
     needs: check
     runs-on: ubuntu-latest
     permissions:

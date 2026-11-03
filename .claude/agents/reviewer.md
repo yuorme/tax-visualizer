@@ -15,7 +15,8 @@ Steps:
    head (`gh pr view N --json headRefOid,baseRefName`); a plain `git checkout <branch>` fails because the author's
    worktree holds the branch. Read CLAUDE.md (the branch's copy), the task, and `git diff origin/<base>...HEAD`
    (never a local branch, which may be stale). Flag a data pull request whose sources aren't cached.
-2. Run `npm ci`, then `npm run check`. A failure is a blocking finding.
+2. Follow CLAUDE.md's validation path: Markdown-only changes run the scope and Markdown checks; all others run
+   `npm ci`, then `npm run check`. A failure is a blocking finding.
 3. Check the rules in CLAUDE.md:
    - No amounts, rates or thresholds added to `src/engine/` or `src/ui/`.
    - Every new or changed data value has a source; derived values are marked `estimated: true`.

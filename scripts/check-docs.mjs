@@ -5,7 +5,7 @@ import { execFileSync } from "node:child_process";
 import fs from "node:fs";
 
 const MAX = 120;
-const files = execFileSync("git", ["ls-files", "*.md"], { encoding: "utf8" }).split("\n").filter(Boolean);
+const files = execFileSync("git", ["ls-files", "-z", "--", "*.md"], { encoding: "utf8" }).split("\0").filter(Boolean);
 const long = [];
 
 for (const file of files) {
