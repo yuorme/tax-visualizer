@@ -26,7 +26,7 @@
     <div class="top-row">
       <div class="field home-sel">
         <label class="lbl" for="home">Home province</label>
-        <select id="home" class="prov-select"></select>
+        <div class="prov-control"><img id="home-flag" class="province-flag" alt="" aria-hidden="true" width="72" height="52"><select id="home" class="prov-select"></select></div>
       </div>
       <fieldset class="people" id="people" aria-label="Household members"></fieldset>
     </div>
@@ -288,10 +288,10 @@
     <div class="cmp-head">
       <div class="eyebrow" id="cmp-eyebrow">Compare</div>
       <div class="cmp-sel">
-        <span class="cmp-home" id="cmp-home">Ontario</span>
+        <span class="cmp-province"><img id="cmp-home-flag" class="province-flag" alt="" aria-hidden="true" width="72" height="52"><span class="cmp-home" id="cmp-home">Ontario</span></span>
         <span class="cmp-vs">vs</span>
         <label class="sr-only" for="dest">Destination province</label>
-        <select id="dest" class="prov-select"></select>
+        <div class="prov-control"><img id="dest-flag" class="province-flag" alt="" aria-hidden="true" width="72" height="52"><select id="dest" class="prov-select"></select></div>
       </div>
     </div>
     <div id="detail-body"></div>
