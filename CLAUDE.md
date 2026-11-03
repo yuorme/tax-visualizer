@@ -110,10 +110,12 @@ findings to fix back to the same agent. Use merge commits, not squash or rebase,
 
 Once the pull request is final (reviewer approved, no open should-fix findings, no more commits planned), the
 orchestrator queues it with `gh pr merge N --auto --merge`; GitHub merges it once CI passes (at once if it already
-has) and the repo deletes the branch. The user merges instead, and the orchestrator labels the pull request
+has) and the repo deletes the branch. Engine and rule changes follow this path once the reviewer verifies the
+golden-test requirements above; the reviewer's model alone does not require human review or human merge.
+The user merges instead, and the orchestrator labels the pull request
 `needs-human` and says so, when:
 - its issue is labelled `needs-human`, or
-- the review ran on Opus (engine or rule changes, significant layout changes), or
+- it makes significant layout changes, or
 - it changes this merge process, the agent definitions or `.claude/settings.json`.
 
 After queueing, push nothing except `gh pr update-branch N`: extra commits would merge unreviewed once CI passes, so

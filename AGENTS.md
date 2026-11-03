@@ -9,6 +9,5 @@ Codex adaptations:
   models, tools, turn limits or isolation. Use available Codex agents and tools, create the required worktrees
   explicitly, and report the actual review model; Opus and Sonnet are Claude model names.
 - `.claude/settings.json` permissions do not apply to Codex. Follow the active Codex sandbox and approvals.
-- Interpret the Opus-based human-merge condition by change type: engine or rule changes and significant layout
-  changes require thorough review and human merge regardless of the Codex reviewer's model. Other human-merge
-  conditions still apply; changes to this file count as agent configuration changes.
+- Apply `CLAUDE.md`'s review and human-merge conditions regardless of the Codex reviewer's model.
+  Changes to this file count as agent configuration changes.
