@@ -1,0 +1,181 @@
+Title: Yukon Tax
+URL: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5011-c/5011-c-20e.pdf
+Fetched: 2026-11-02
+SHA-256 of the original: 16578125d097ed0f66dd2f06b2c0ddf7b0b394c09d9bac6c57ccbfb89f3b1075
+Publication date modified: 2020-10-30
+PDF pages: all 2
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 1 of 2 ---
+
+Form YT428
+2020
+Protected B when completed
+Yukon Tax
+Part A – Yukon tax on taxable income
+1Enter your taxable income from line 26000 of your return.
+Use the amount from line 1 to decide which column to complete.
+Line 1 is
+$48,535 or less
+Amount from line 1
+–Line 2 minus line 3
+(cannot be negative) =
+×Line 4 multiplied by the
+percentage from line 5 =
++
+Yukon tax on
+taxable income
+Line 6 plus line 7
+=
+Line 1 is more than
+$48,535 but not
+more than $97,069
+–
+=
+×
+=
++
+=
+Line 1 is more than
+$97,069 but not
+more than $150,473
+–
+=
+×
+=
++
+=
+Line 1 is more than
+$150,473 but not
+more than $500,000
+–
+=
+×
+=
++
+=
+Line 1 is more
+than $500,000
+–
+=
+×
+=
++
+=
+2
+3
+4
+5
+6
+7
+8
+Enter the amount from line 8 on line 47 and continue on line 9.
+Part B – Yukon non-refundable tax credits 56110Internal use
+58040 9Basic personal amount (amount from line 30000 of your return)
+58080 10Age amount (amount from line 30100 of your return) (maximum $7,637) +
+58120 11Spouse or common-law partner amount (amount from line 30300 of your return) +
+58160 12Amount for an eligible dependant (amount from line 30400 of your return) +
+58170 13
+Caregiver amount for spouse or common-law partner, or eligible dependant age 18 or older
+(amount from line 30425 of your return) +
+58180 14Caregiver amount for infirm dependants age 18 or older (amount from line 30450 of your return) +
+58189 15
+Caregiver amount for infirm children under 18 years of age
+(amount from line 30500 of your return) +
+16Add lines 9 to 15. =
+CPP or QPP contributions:
+58240 17Amount from line 30800 of your return + •
+58280 18Amount from line 31000 of your return + •
+Employment insurance premiums:
+58300 19Amount from line 31200 of your return + •
+58305 20Amount from line 31217 of your return + •
+58310 21Canada employment amount +
+58326 22Children's arts amount +
+58330 23Adoption expenses +
+24Add lines 17 to 23. =
+Ż +
+58360 25Pension income amount (amount from line 31400 of your return) (maximum $2,000) +
+58440 26Disability amount for self (amount from line 31600 of your return) +
+58480 27Disability amount transferred from a dependant (amount from line 31800 of your return) +
+28Add lines 16, and 24 to 27. =
+Continue on the next page.
+5011-C E (20) (Ce formulaire est disponible en français.) Page 1 of 2
+0.00
+6.4%
+0.00
+48,535.00
+9%
+3,106.00
+97,069.00
+10.9%
+7,474.00
+150,473.00
+12.8%
+13,295.00
+500,000.00
+15%
+58,035.00
+
+--- PDF page 2 of 2 ---
+
+Protected B when completed
+Part B – Yukon non-refundable tax credits (continued)
+29Amount from line 28 of the previous page
+58520 30Interest paid on your student loans (amount from line 31900 of your return) +
+58560 31Your tuition, education, and textbook amounts (attach Schedule YT(S11)) +
+58600 32Tuition amount transferred from a child +
+58640 33Amounts transferred from your spouse or common-law partner (attach Schedule YT(S2)) +
+34Add lines 29 to 33. =
+Medical expenses:
+58689 35Amount from line 33099 of your return
+36
+Enter whichever is less:
+$2,397 or 3% of the amount from line 23600 of your return –
+37Line 35 minus line 36 (if negative, enter "0") =
+58729 38
+Allowable amount of medical expenses for other dependants
+(amount from line 33199 of your return) +
+58769 39Line 37 plus line 38 =
+Ż +
+58800 40Line 34 plus line 39 =
+41Yukon non-refundable tax credit rate ×
+58840 42Line 40 multiplied by the percentage from line 41 =
+Donations and gifts:
+43
+Amount from line 17
+of your federal Schedule 9 × 6.4% =
+44
+Amount from line 18
+of your federal Schedule 9 × 12.8% = +
+58969 45Line 43 plus line 44 =
+Ż +
+61500 46Yukon non-refundable tax credits
+Line 42 plus line 45
+Enter this amount on line 50. =
+Part C – Yukon tax
+47Yukon tax on taxable income from line 8
+61510 48Yukon tax on split income (complete Form T1206) + •
+49Line 47 plus line 48 =
+50Yukon non-refundable tax credits from line 46
+61520 51Yukon dividend tax credit (use Worksheet YT428) + •
+61540 52
+Yukon minimum tax carryover:
+Amount from line 40427 of your return × 42.67% = + •
+53Add lines 50 to 52. =
+Ż –
+54Line 49 minus line 53 (if negative, enter "0") =
+55
+Yukon additional tax for minimum tax purposes:
+× 42.67% = +Amount from line 120 of Form T691
+56Line 54 plus line 55 =
+57Territorial foreign tax credit (complete Form T2036) –
+58Line 56 minus line 57 (if negative, enter "0") =
+63850 59Yukon political contributions made in 2020
+60Yukon political contribution tax credit (use Worksheet YT428) (maximum $650) –
+61Yukon tax
+Line 58 minus line 60 (if negative, enter "0")
+Enter this amount on line 42800 of your return. =
+See the privacy notice on your return.
+5011-C E (20) Page 2 of 2
+6.4%
