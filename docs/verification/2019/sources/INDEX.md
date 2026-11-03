@@ -10,10 +10,6 @@ hasn't changed. Web pages embed per-request tracking code, so their hash differs
 The originals aren't kept in the repo, only the text, up to 250 KB per extract (for a larger PDF, `--pages`
 keeps the pages the data uses). Nothing under `docs/` is imported by `src/`, so the build never bundles these.
 
-
-Federal QPIP source exception: direct official retrieval returned HTTP 403. The 2019 row was transcribed
-from the official Revenu Québec page through the web reader; the original-byte hash is unavailable.
-
 | Name | Title | URL | Fetched | SHA-256 |
 | --- | --- | --- | --- | --- |
 | [federal-ccb-calculation](federal-ccb-calculation.txt) | Canada child benefit (CCB) - calculation sheet for the | https://www.canada.ca/content/dam/cra-arc/serv-info/benefits/ccb18byclc-e.pdf | 2026-11-02 | `6333f160ed9e8ea548457bf9a5eafffb77d4146c81a7c0f2200248ca4ddd2970` |
@@ -22,7 +18,7 @@ from the official Revenu Québec page through the web reader; the original-byte 
 | [federal-gst-rates](federal-gst-rates.txt) | Goods and services tax/harmonized sales tax (GST/HST) credit calculation sheet | https://www.canada.ca/content/dam/cra-arc/serv-info/benefits/gstc_covid-19_calc-e.pdf | 2026-11-02 | `68fc2c20db953203566e2510749c1f8867e81084df15fb66f1c9eb4f32b37784` |
 | [federal-investment](federal-investment.txt) | Report on Federal Tax Expenditures - Concepts, Estimates and Evaluations 2020: part 4 | https://www.canada.ca/en/department-finance/services/publications/federal-tax-expenditures/2020/part-4.html | 2026-11-02 | `07d712ea9b363499d58e5cf10019ae3ce13623727cb0355a2d11913eb22fc2c6` |
 | [federal-pension-components](federal-pension-components.txt) | Quarterly report of Canada Pension Plan and Old Age Security monthly amounts and related figures - October to December 2019 | https://www.canada.ca/en/employment-social-development/programs/pensions/pension/statistics/2019-quarterly-october-december.html | 2026-11-02 | `d16b9e220a73a25ccba48617ed6c7509c7eefc965c7a61bd92cb1846c213222e` |
-| [federal-qpip](federal-qpip.txt) | Revenu Québec historical QPIP table | 2026-11-02 | Manual official-page extract; hash unavailable |
+| [federal-qpip](federal-qpip.txt) | Revenu Québec historical QPIP table | https://www.revenuquebec.ca/fr/entreprises/retenues-a-la-source-et-cotisations-de-lemployeur/calcul-des-retenues-et-des-cotisations/cotisations-au-rqap/maximum-de-revenus-assurables-et-taux-de-cotisation/ | 2026-11-02 | unavailable; manual official-page extract |
 | [federal-rrsp-limits](federal-rrsp-limits.txt) | MP, DB, RRSP, DPSP, ALDA, TFSA limits, YMPE and the YAMPE | https://www.canada.ca/en/revenue-agency/services/tax/registered-plans-administrators/pspa/mp-rrsp-dpsp-tfsa-limits-ympe.html | 2026-11-02 | `2933b5e561256306a81c3ab8c8fc550fee82a988911c3afb1471bd89ac893852` |
 | [federal-rrsp-rate](federal-rrsp-rate.txt) | How contributions affect your RRSP deduction limit | https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/rrsps-related-plans/contributing-a-rrsp-prpp/contributions-affect-your-rrsp-prpp-deduction-limit.html | 2026-11-02 | `481f3f2ad09497903e3841c00fac0d0f4b3ab71a4721369776406a378edf4d3d` |
 | [federal-schedule3](federal-schedule3.txt) | Capital Gains (or Losses) in 2019 | https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5000-s3/5000-s3-19e.pdf | 2026-11-02 | `fb521f034ef7646b4c377ce225d7e6668430829e67705477bdaaaf9502e613dc` |
@@ -135,3 +131,59 @@ from the official Revenu Québec page through the web reader; the original-byte 
 | [reference-rates-qc](reference-rates-qc.txt) | Quebec 2020 and 2019 Personal Marginal Income Tax Rates | https://www.taxtips.ca/priortaxrates/tax-rates-2019-2020/qc.htm | 2026-11-02 | `15bd800a8d24820944eadf0d05795176c79d88f8e2a8531a0c3994d58c669f5c` |
 | [reference-rates-sk](reference-rates-sk.txt) | Saskatchewan 2020 and 2019 Personal Marginal Income Tax Rates | https://www.taxtips.ca/priortaxrates/tax-rates-2019-2020/sk.htm | 2026-11-02 | `9418608f36a768c44d0ec7bb3fdb310e0db02bc1f8553122d9f727929774a8a7` |
 | [reference-rates-yt](reference-rates-yt.txt) | Yukon 2020 and 2019 Personal Marginal Income Tax Rates | https://www.taxtips.ca/priortaxrates/tax-rates-2019-2020/yt.htm | 2026-11-02 | `058f9875bd3385c5f1875eb2022241140900fddca0b9c80075cdf8ce6609635b` |
+| [rule-ab-2015-act](rule-ab-2015-act.txt) | © Published by Alberta Queen’s Printer | https://s3.amazonaws.com/rgi-documents/1995f5a489f31660be4ce633d7df47a2b0a0b119.pdf | 2026-11-02 | `c7dc08a9dbee7a65399553b18a1905e006fe52684e8f5fc3fbae260617a3f3dd` |
+| [rule-ab-2017-budget](rule-ab-2017-budget.txt) | 2017-20 Fiscal Plan - COMPLETE VOLUME (Alberta Budget 2017) - March 2017 | https://open.alberta.ca/dataset/aa40ded0-75b3-48fe-9bbf-ea33802b8825/resource/da23ee3c-b79c-4971-8f75-e28ab7684983/download/fiscal-plan-complete.pdf | 2026-11-02 | `3ed08f1c552f0f3fee7567464ddaefcd564c9db5e48a8c9084338346edc60026` |
+| [rule-bc-msp](rule-bc-msp.txt) | Medical and Health Care Services Regulation | https://www.bclaws.gov.bc.ca/civix/document/id/loo103/loo103/426_97 | 2026-11-02 | `887ea8e598ae3b27594fd0697b60d3e54b72ada2f656f9b7f396c46161e3da5a` |
+| [rule-bc-msp-deductions](rule-bc-msp-deductions.txt) | Group Plan Administrators Frequently Asked Questions | https://www2.gov.bc.ca/assets/gov/health/health-drug-coverage/medical-services-plan/group-plan-administrators-faqs.pdf | 2026-11-02 | `8e84a6baf55410bd667f16c62e7cb18e90f49e7aae8093c101aa016f66fc766e` |
+| [rule-bc-msp-guide](rule-bc-msp-guide.txt) | MEDICAL SERVICES PLAN | https://www2.gov.bc.ca/assets/gov/health/practitioner-pro/medical-services-plan/group-procedure-guide.pdf | 2026-11-02 | `350eb00bcfb4a6f9949b2b8021e8533a258d2afdef8f74a36533577c388dc178` |
+| [rule-federal-bpa](rule-federal-bpa.txt) | Microsoft Word - t4127-19e_clean.docx | https://www.canada.ca/content/dam/cra-arc/formspubs/pub/t4127-jan/t4127-01-19e.pdf | 2026-11-02 | `77b745fd0bd8271843a78bc32b4e94da37436b771c93f43d320d154f1075298e` |
+| [rule-nl-levy](rule-nl-levy.txt) | Newfoundland and Labrador Tax and Credits | https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5001-c/5001-c-19e.pdf | 2026-11-02 | `6fbd79926f7e0a89f25deec559d68fc1fdf107a922da8f322fd22709c16e810d` |
+| [rule-ns-2009](rule-ns-2009.txt) | NS Royal Gazette Part II - Volume 33, No. 21 - October 9, 2009 | https://novascotia.ca/just/regulations/rg2/2009/oc0909.pdf | 2026-11-02 | `65a9e14823a1189190f4d254bf43290cb0232ef3fdd8c587056cfc428a3894ee` |
+| [rule-ns-2012-amounts](rule-ns-2012-amounts.txt) | NS Royal Gazette Part II - Volume 36, No. 10 dated May 18, 2012 | https://novascotia.ca/just/regulations/rg2/2012/ma1812.pdf | 2026-11-02 | `c229373ef507bde98aeadd3dad7a3c3be85f16a24065ceb9a1428af0e416e938` |
+| [rule-ns-2012-threshold](rule-ns-2012-threshold.txt) | NS Royal Gazette Part II - Volume 36 dated August 10, 2012 | https://novascotia.ca/just/regulations/rg2/2012/au1012.pdf | 2026-11-02 | `66642484e139c8da8ab7775546973c80f708854caddf2ed8f11a512312522503` |
+| [rule-ns-2014](rule-ns-2014.txt) | Nova Scotia Royal Gazette Part II – Volume 38, No. 14 – July 11, 2014 | https://novascotia.ca/just/regulations/rg2/2014/jl1114.pdf | 2026-11-02 | `cfd684d4127a929358bb70e890182def34b22730da8675405280827733ff8338` |
+| [rule-ns-original](rule-ns-original.txt) | NS Royal Gazette Part II - Volume 23, No. 14, July 16, 1999 | https://novascotia.ca/just/regulations/rg2/1999/RG2-1999-07-16.pdf | 2026-11-02 | `63203d0b2a514993cf3991d82476427df6c72fa1ce38a8eb0ea1bce939e71a4e` |
+| [rule-qc-allowance](rule-qc-allowance.txt) | Paramètres du régime d’imposition des particuliers pour l’année d’imposition 2020 | https://www.finances.gouv.qc.ca/documents/Autres/fr/AUTFR_RegimeImpot2020.pdf | 2026-11-02 | `c99be200c13313e676e423e859360e43a5d698b11137b55937f200289f4e1928` |
+| [rule-t4114](rule-t4114.txt) | untitled | https://publications.gc.ca/collections/collection_2019/arc-cra/Rv1-36-2019-eng.pdf?download=1 | 2026-11-02 | `71823ca91df934f391fce8bbe1e1701a7681ccaa028ce2b50c1b64403720b856` |
+
+## Provincial collection audit
+
+All thirteen jurisdictions use the 2019 CRA forms and official benefit publications. Federal data,
+published references, golden results, and integration checks belong to the federal collector.
+
+The five new rule shapes are the separate Alberta child and employment benefits (each with a $10 annual
+minimum), B.C. MSP premiums, Nova Scotia's graduated child-benefit reduction, Newfoundland and Labrador's
+temporary deficit levy, and Quebec's ordinal family allowance. B.C.'s early-childhood benefit and Manitoba's
+rent-share credit also require the historical rule prerequisites from PRs 121 and 119 respectively.
+
+Estimates are explicit in the YAML: Calgary's rounded municipal and school mill-rate sum; Winnipeg and
+Saskatoon's assessment portions and school shares; Montreal's Ville-Marie municipal proxy, excluding the
+separate school levy; Iqaluit's assessed-value proxy; annualized rounded monthly child amounts in Ontario,
+Newfoundland and Labrador, and Nunavut; Nunavut's historical reduction-rate continuity; B.C.'s monthly MSP
+premium annualization with full-year enrollment; and Manitoba's equal-monthly-spending sales-tax average.
+Vancouver and Montreal PDF servers refused direct downloads. Their caches label the manual official web
+extracts and unavailable original hashes honestly. The Alberta 2015 statute is an official Queen's Printer
+publication retrieved from a mirror; sections 30(3) and 30.1(4) establish separate $10 annual minimums.
+
+The 2019-to-2020 diff has one large numerical flag: B.C.'s formerly unlimited 16.8% bracket became limited
+at $220,000 when the 20.5% bracket began in 2020. Program replacements are intentional: Alberta's consolidation,
+B.C.'s October 2020 benefit transition, Nova Scotia's July 2020 increase, and Quebec's equalized child maxima.
+B.C. MSP and Newfoundland's levy ended after 2019. Yukon's personal and spouse amounts adopted federal
+enhancement in 2020. Manitoba's temporary annual-average sales-tax estimate ends after the 2019 rate change.
+
+Every unchanged-amount group in the diff was checked against the cached 2019 publications: Alberta's frozen
+brackets/personal credits; Manitoba's spouse/property-credit limits; New Brunswick's child, working, and HST
+credits; Newfoundland's child threshold/income supplement; Nova Scotia's brackets, personal/spouse/child
+credits, low-income reduction, and affordable-living credit; NWT's age-group child tables; Nunavut's child
+credit and benefit; Ontario's upper brackets, LIFT, and health-premium bands; PEI's brackets, reduction,
+sales credit, child credit, and surtax; Quebec's work-premium working-income floors; Saskatchewan's frozen
+brackets, personal/child credits, and SLITC; and Yukon's $500,000 bracket and child-benefit amounts.
+Remaining changed values are published annual indexation, explicit tax-credit changes, or municipality rates.
+
+Validation: all thirteen YAML files pass the matching historical schemas (B.C. child and premium fields
+validated against their separate prerequisite schemas). Every cited URL has a corresponding source cache.
+The full local check passes lint and typecheck, then stops at missing federal files/goldens for unintegrated
+years; 110 tests pass and 17 fail for those integration prerequisites. Build/browser checks await integration.
+
+Federal QPIP source exception: direct official retrieval returned HTTP 403. The 2019 row was transcribed
+from the official Revenu Québec page through the web reader; the original-byte hash is unavailable.

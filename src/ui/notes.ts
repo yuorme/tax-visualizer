@@ -118,7 +118,8 @@ function estimatedRates(y: YearData, listed: Province[], estimated: Province[], 
 /** The provincial basic personal amount before any phase-out. */
 const provincialBpa = (y: YearData, p: Province) => {
   const a = p.basicPersonalAmount;
-  return a === "federal" ? y.federal.basicPersonalAmount.max : typeof a === "number" ? a : a.max;
+  const value = a === "federal" ? y.federal.basicPersonalAmount : a;
+  return typeof value === "number" ? value : value.max;
 };
 const isPhased = (a: Province["basicPersonalAmount"]): a is PhasedAmount => typeof a === "object";
 /** Benefit amounts run July to June, starting in the tax year. */
@@ -207,7 +208,7 @@ export function tooltips(y: YearData): Record<string, string> {
     fhsa: "Your annual FHSA deduction claimed, including eligible contributions deferred from earlier years. The claim can exceed one year's contribution allowance. Transfers from an RRSP to an FHSA are not deductible. Check your FHSA records and Schedule 15 for the amount you can claim; the calculator does not calculate contribution room or enforce your lifetime limit.",
     otherDeductions:
       "Annual deductions other than the RRSP and FHSA claims entered separately: union and professional dues, eligible childcare expenses, deductible support payments, moving expenses and similar. Existing saved deductions are kept here. Exclude anything already entered as RRSP or FHSA to avoid counting it twice.",
-    bpa: `Every taxpayer gets a non-refundable credit on a basic amount of income: ${money(F.basicPersonalAmount.max)} federally in ${y.year}, plus a provincial amount from ${money(bpa.lo)} in ${places(y, bpa.atLo)} to ${money(bpa.hi)} in ${places(y, bpa.atHi)}. Switch off to see bracket rates alone.`,
+    bpa: `Every taxpayer gets a non-refundable credit on a basic amount of income: ${money(typeof F.basicPersonalAmount === "number" ? F.basicPersonalAmount : F.basicPersonalAmount.max)} federally in ${y.year}, plus a provincial amount from ${money(bpa.lo)} in ${places(y, bpa.atLo)} to ${money(bpa.hi)} in ${places(y, bpa.atHi)}. Switch off to see bracket rates alone.`,
     spending: `Your household's monthly spending on things sales tax applies to, before tax. A quick estimate: your average monthly credit card and debit spending, minus groceries, prescriptions and healthcare. Usually exempt across Canada: basic groceries, rent and mortgage payments, prescription drugs, most medical and dental care, insurance premiums and banking fees, childcare, tuition, and public transit. Usually taxed: restaurant meals and takeout, alcohol, clothing, electronics, furniture and household goods, gas, utilities, phone and internet, vehicles and repairs, travel, and most services. ${y.year} rates run from ${sales.atLo[0].salesTax.label} in ${places(y, sales.atLo)} to ${sales.atHi[0].salesTax.label} in ${places(y, sales.atHi)}. The starting amount is a rough estimate for a household with the adults and children set here; adjust it to match your own spending.${fd ? " Include gasoline: its GST/HST (and QST in Quebec) is counted here, and the per-litre fuel taxes come from the Driving tab." : ""}`,
     children: `Children under 18. They raise the spending estimate and add child benefits: the Canada Child Benefit plus your province's benefit (every province and territory with one), using ${benefitYear(y)} amounts. Benefits are netted off the tax shown. Once you have at least one child, drag the small slate handle on the same track to say how many are under 6, since they get a higher CCB.`,
     property: `Annual property tax = home value × municipal rate. Each province uses the typical ${y.year} residential rate in its largest city, from ${fixed(prop.lo, 2)} in ${city(prop.atLo)} to ${fixed(prop.hi, 2)} in ${city(prop.atHi)}${propCaveats.length ? `; ${clauses(propCaveats)}` : ""}. Editing the rate changes your home province only. The same home value is used everywhere, though home prices differ a lot between cities. Renters pay property tax indirectly through rent, which isn't counted here.`,
@@ -240,7 +241,7 @@ export function footerNotes(y: YearData, page: PageDefaults): string {
   });
   const fb = F.basicPersonalAmount;
   const phaseOuts = [
-    `The federal amount${mirrors.length ? ` (and ${list(mirrors)}, which ${mirrors.length > 1 ? "mirror" : "mirrors"} it)` : ""} drops from ${money(fb.max)} to ${money(fb.min)} ${phase(fb)}.`,
+    `The federal amount${mirrors.length ? ` (and ${list(mirrors)}, which ${mirrors.length > 1 ? "mirror" : "mirrors"} it)` : ""} ${typeof fb === "number" ? `is ${money(fb)} at every income` : `drops from ${money(fb.max)} to ${money(fb.min)} ${phase(fb)}`}.`,
     ...phased,
     "Phase-outs are based on net income.",
   ].join(" ");
@@ -505,7 +506,7 @@ export function footerNotes(y: YearData, page: PageDefaults): string {
   return [
     para(
       "What's included",
-      `Each bracket rate is applied to the portion of taxable income in that bracket, federal plus provincial. With basic personal amounts on, each government's amount is credited at its lowest bracket rate (federal: ${rate(F.brackets[0][1])} of ${money(fb.max)}), and a credit can reduce tax to zero but not below. The blended rate is total tax ÷ actual income received; the marginal rate is the tax on the next dollar, including credit phase-outs.`,
+      `Each bracket rate is applied to the portion of taxable income in that bracket, federal plus provincial. With basic personal amounts on, each government's amount is credited at its lowest bracket rate (federal: ${rate(F.brackets[0][1])} of ${money(typeof fb === "number" ? fb : fb.max)}), and a credit can reduce tax to zero but not below. The blended rate is total tax ÷ actual income received; the marginal rate is the tax on the next dollar, including credit phase-outs.`,
     ),
     para(
       "Deductions",
