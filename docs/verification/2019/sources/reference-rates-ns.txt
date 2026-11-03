@@ -1,0 +1,54 @@
+Title: Nova Scotia 2020 and 2019 Personal Marginal Income Tax Rates
+URL: https://www.taxtips.ca/priortaxrates/tax-rates-2019-2020/ns.htm
+Fetched: 2026-11-02
+SHA-256 of the original: c5a7c49f4051286a33236050942d255c8f3f6b52d996f9028557cc668cc2b4ef
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+Ads keep this website free for you. TaxTips.ca does not research or endorse any product or service appearing in ads on this site. Before making a major financial decision you should consult a qualified professional. | Nova Scotia 2019 & 2020 Income Tax Rates | TaxTips.ca Canadian Tax and Financial Information
+TaxTips.ca Home What's New | | Links & Resources Site Map
+
+Need an accounting, tax or financial advisor? Look in our Directory. Use above search box to easily find your topic! Stay Connected with TaxTips.ca!
+
+Atlantic Provinces -> Nova Scotia Tax Rates -> 2019 and 2020 Tax Rates -> Nova Scotia Nova Scotia 2020 and 2019 Personal Marginal Income Tax Rates Please read the article Understanding the Tables of Personal Income Tax Rates. The Nova Scotia tax brackets and personal tax credits are not increased for inflation. The Federal tax brackets and personal amount are increased for 2020 by an indexation factor of 1.019. The indexation factors, tax brackets and tax rates have been confirmed to Canada Revenue Agency information. If Nova Scotia had not discontinued indexing, the Nova Scotia tax brackets and personal amounts would have been increased for 2020 by an indexation factor of 1.017.
+
+Nova Scotia Personal Income Tax Brackets and Tax Rates
+2020 Taxable Income | 2020 Tax Rates | 2019 Taxable Income | 2019 Tax Rates
+first $29,590 | 8.79% | first $29,590 | 8.79%
+over $29,590 up to $59,180 | 14.95% | over $29,590 up to $59,180 | 14.95%
+over $59,180 up to $93,000 | 16.67% | over $59,180 up to $93,000 | 16.67%
+over $93,000 up to $150,000 | 17.50% | over $93,000 up to $150,000 | 17.50%
+over $150,000 | 21.00% | over $150,000 | 21.00%
+
+Combined Federal & Nova Scotia Tax Brackets and Tax Rates
+2020 Taxable Income | 2020 Marginal Tax Rates | 2019 Taxable Income | 2019 Marginal Tax Rates
+Other Income | Capital Gains | Canadian Dividends | Other Income | Capital Gains | Canadian Dividends
+Eligible | Non-Eligible | Eligible | Non-Eligible
+first $25,000 | 23.79% | 11.90% | -0.11% | 13.54% | first $25,000 | 23.79% | 11.90% | -0.11% | 13.54%
+over $25,000 up to $29,590 | 24.32% | 12.16% | 0.62% | 14.14% | over $25,000 up to $29,590 | 24.32% | 12.16% | 0.62% | 14.14%
+over $29,590 up to $48,535 | 30.48% | 15.24% | 9.12% | 21.23% | over $29,590 up to $47,630 | 30.48% | 15.24% | 9.12% | 21.23%
+over $48,535 up to $59,180 | 35.98% | 17.99% | 16.71% | 27.55% | over $47,630 up to $59,180 | 35.98% | 17.99% | 16.71% | 27.55%
+over $59,180 up to $74,999 | 37.70% | 18.85% | 19.09% | 29.53% | over $59,180 up to $74,999 | 37.70% | 18.85% | 19.09% | 29.53%
+over $74,999 up to $93,000 | 37.17% | 18.59% | 18.35% | 28.92% | over $74,999 up to $93,000 | 37.17% | 18.59% | 18.35% | 28.92%
+over $93,000 up to $97,069 | 38.00% | 19.00% | 19.50% | 29.88% | over $93,000 up to $95,259 | 38.00% | 19.00% | 19.50% | 29.88%
+over $97,069 up to $150,000 | 43.50% | 21.75% | 27.09% | 36.20% | over $95,259 up to $147,667 | 43.50% | 21.75% | 27.09% | 36.20%
+over $150,000 up to $150,473 | 47.00% | 23.50% | 31.92% | 40.23% | over $147,667 up to $150,000 | 46.50% | 23.25% | 31.23% | 39.65%
+over $150,473 up to $214,368 | 50.22% | 25.11% | 36.36% | 43.93% | over $150,000 up to $210,371 | 50.00% | 25.00% | 36.06% | 43.68%
+over $214,368 | 54.00% | 27.00% | 41.58% | 48.28% | over $210,371 | 54.00% | 27.00% | 41.58% | 48.28%
+Marginal tax rate for dividends is a % of actual dividends received (not grossed-up taxable amount). Marginal tax rate for capital gains is a % of total capital gains (not taxable capital gains). Gross-up rate for eligible dividends is 38%, and for non-eligible dividends is 15%. For more information see Nova Scotia dividend tax credits.
+Nova Scotia Basic Personal Amount
+2020 Personal Amount (1) | 2020 Tax Rate | 2019 Personal Amount | 2019 Tax Rate
+$8,481 | 8.79% | $8,481 (1) | 8.79%
+Federal Basic Personal Amount
+2020 Personal Amount (2) | 2020 Tax Rate | 2019 Personal Amount | 2019 Tax Rate
+$13,229 | 15% | $12,069 | 15%
+
+(1) An additional $3,000 personal amount for 2018 and subsequent years, which is reduced at the rate of 6% of taxable income in excess of $25,000, is reflected in the marginal tax rates above. It is reduced to zero at taxable income of $75,000. This increases the marginal tax rates for taxable incomes over $25,000 and under $75,000. The regular personal amount of $8,481 for 2019/2020 does not affect marginal tax rates for taxable income over $8,481, because it is not reduced as taxable income increases.
+
+(2) The 2020 federal personal amount is increased from $12,298 to $13,229 for taxpayers with net income of $150,473 or less. For incomes above this threshold, the additional amount of $931 is reduced until it becomes zero at net income of $214,368. The marginal tax rates above have been adjusted to reflect this change.
+
+Copyright © 2002 Boat Harbour Investments Ltd.
+
+Revised: June 27, 2026
+
+Copyright © 2002 Boat Harbour Investments Ltd. All Rights Reserved. See Reproduction of information from TaxTips.ca Facebook | Twitter | LinkedIn The information on this site is not intended to be a substitute for professional advice. Each person's situation differs, and a professional advisor can assist you in using the information on this web site to your best advantage Please see our legal disclaimer regarding the use of information on our site, and our Privacy Policy regarding information that may be collected from visitors to our site.

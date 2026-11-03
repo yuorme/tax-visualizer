@@ -1,0 +1,91 @@
+# Federal parameters for 2019. Recurring benefits use July 2019–June 2020 amounts, applied to current-year
+# income. Extraordinary pandemic-support payments and carbon pricing are outside this collection's scope.
+year: 2019
+
+# CRA T4127 January 2019, table 9.1; the federal BPA is flat before 2020.
+brackets:
+  - [47630, 0.15]
+  - [95259, 0.205]
+  - [147667, 0.26]
+  - [210371, 0.29]
+  - [.inf, 0.33]
+basicPersonalAmount: 12069
+quebecAbatement: 0.165
+employmentAmount: 1222
+indexation: 0.022
+
+investment:
+  # Schedule 3 gives 50%; Finance Canada's 2020 tax-expenditures report states the dividend gross-ups and credit fractions.
+  capitalGainsInclusion: 0.5
+  grossUp: {eligible: 1.38, nonEligible: 1.15}
+  dividendTaxCredit: {eligible: 0.150198, nonEligible: 0.090301}
+  # Treaty Article X(2)(b) and Income Tax Act 20(11), archived section in force June 2019–June 2023.
+  foreignWithholding: {usTreaty: 0.15, deductibleAbove: 0.15}
+
+rrsp: {rate: 0.18, limit: 26500}
+
+# T4127 payroll caps/rates; ESDC's October–December 2019 table separates base and additional contributions.
+# CPP2/QPP2 do not exist yet: no second band and zero second additional rate.
+payroll:
+  cpp: {exempt: 3500, ympe: 57400, yampe: 57400, base: 0.0495, enh1: 0.0015, enh2: 0}
+  qpp: {exempt: 3500, ympe: 57400, yampe: 57400, base: 0.054, enh1: 0.0015, enh2: 0}
+  ei: {maxInsurable: 53100, rate: 0.0162, quebecRate: 0.0125}
+  qpip: {maxInsurable: 76500, rate: 0.00526}
+
+childBenefit: # CRA ccb18byclc-e, July 2019–June 2020: published whole-dollar Step 2 reductions.
+  perChildUnder6: 6639
+  perChild6to17: 5602
+  threshold1: 31120
+  threshold2: 67426
+  rate1: [0, 0.07, 0.135, 0.19, 0.23]
+  fixed2: [0, 2541, 4901, 6898, 8351]
+  rate2: [0, 0.032, 0.057, 0.08, 0.095]
+
+# Finance 2020 part 5 publishes regular July 2019–June 2020 amounts (its base-year label is a typo).
+# CRA gstc_covid-19_calc-e supplies the unchanged $9412/$37789 thresholds and 2%/5% rates only;
+# its doubled payment amounts are extraordinary pandemic support and are NOT used here.
+groceriesBenefit:
+  name: GST/HST credit
+  adult: 290
+  spouseOrFirstChild: 290
+  child: 153
+  singleSupplement: {max: 153, rate: 0.02, from: 9412}
+  phaseOut: {rate: 0.05, from: 37789}
+
+workersBenefit: # Published 2019 Schedule 6; disability supplement excluded.
+  # Quebec saturation thresholds are excluded earnings + published maximum / phase-in rate:
+  # single 2400+2279.68/.274; couple 3600+3557.62/.274; parent 2400+1248.00/.15;
+  # couple with children 3600+1817.76/.14. Exact quotients preserve the published dollar maxima.
+  estimated: true
+  estimationNote: "Quebec's income-at-maximum thresholds are derived from the published Schedule 6 maxima divided by their phase-in rates, plus excluded earnings; all benefit amounts and reduction thresholds are published 2019 values"
+  standard: {max: [1355, 2335], rate: 0.26, floor: [3000, 3000], threshold: [12820, 17025], phaseOut: [0.12, 0.12]}
+  # The secondary-earner exemption starts in 2021; 2019 Schedule 6 adds both spouses' net income without it.
+  secondaryEarnerExemption: 0
+  regional:
+    AB: {max: [1453, 2175], rate: 0.21, floor: [2760, 2760], threshold: [13200, 17950], phaseOut: [0.12, 0.12]}
+    NU: {max: [1065, 1600], rate: [0.10, 0.14], floor: [6000, 6000], threshold: [21250, 29000], phaseOut: [0.04, 0.08]}
+  quebec:
+    phaseOutRate: 0.20
+    single: [0.274, 2400, 10720, 12060]
+    couple: [0.274, 3600, 16584.014598540147, 18520]
+    parent: [0.15, 2400, 10720, 12065]
+    coupleKids: [0.14, 3600, 16584, 18540]
+
+sources:
+  - {"label": "Canada child benefit (CCB) - calculation sheet for the", "url": "https://www.canada.ca/content/dam/cra-arc/serv-info/benefits/ccb18byclc-e.pdf"}
+  - {"label": "Income Tax Act", "url": "https://laws-lois.justice.gc.ca/eng/acts/I-3.3/section-20-20190621.html"}
+  - {"label": "Report on Federal Tax Expenditures - Concepts, Estimates and Evaluations 2020: part 5", "url": "https://www.canada.ca/en/department-finance/services/publications/federal-tax-expenditures/2020/part-5.html"}
+  - {"label": "Goods and services tax/harmonized sales tax (GST/HST) credit calculation sheet", "url": "https://www.canada.ca/content/dam/cra-arc/serv-info/benefits/gstc_covid-19_calc-e.pdf"}
+  - {"label": "Report on Federal Tax Expenditures - Concepts, Estimates and Evaluations 2020: part 4", "url": "https://www.canada.ca/en/department-finance/services/publications/federal-tax-expenditures/2020/part-4.html"}
+  - {"label": "Quarterly report of Canada Pension Plan and Old Age Security monthly amounts and related figures - October to December 2019", "url": "https://www.canada.ca/en/employment-social-development/programs/pensions/pension/statistics/2019-quarterly-october-december.html"}
+  - {"label": "Revenu Québec — historical QPIP contribution table (2019 row)", "url": "https://www.revenuquebec.ca/fr/entreprises/retenues-a-la-source-et-cotisations-de-lemployeur/calcul-des-retenues-et-des-cotisations/cotisations-au-rqap/maximum-de-revenus-assurables-et-taux-de-cotisation/"}
+  - {"label": "MP, DB, RRSP, DPSP, ALDA, TFSA limits, YMPE and the YAMPE", "url": "https://www.canada.ca/en/revenue-agency/services/tax/registered-plans-administrators/pspa/mp-rrsp-dpsp-tfsa-limits-ympe.html"}
+  - {"label": "How contributions affect your RRSP deduction limit", "url": "https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/rrsps-related-plans/contributing-a-rrsp-prpp/contributions-affect-your-rrsp-prpp-deduction-limit.html"}
+  - {"label": "Capital Gains (or Losses) in 2019", "url": "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5000-s3/5000-s3-19e.pdf"}
+  - {"label": "Canada Workers Benefit", "url": "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5000-s6/5000-s6-19e.pdf"}
+  - {"label": "Canada Workers Benefit", "url": "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5005-s6/5005-s6-19e.pdf"}
+  - {"label": "Canada Workers Benefit", "url": "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5009-s6/5009-s6-19e.pdf"}
+  - {"label": "Canada Workers Benefit", "url": "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5014-s6/5014-s6-19e.pdf"}
+  - {"label": "Microsoft Word - t4127-19e_clean.docx", "url": "https://www.canada.ca/content/dam/cra-arc/formspubs/pub/t4127-jan/t4127-01-19e.pdf"}
+  - {"label": "Convention between Canada and the United States of America with Respect to Taxes on Income and on Capital", "url": "https://www.canada.ca/en/department-finance/programs/tax-policy/tax-treaties/country/united-states-america-convention-consolidated-1980-1983-1984-1995-1997-2007.html"}
+  - {"label": "Canada Child Benefit, July 2019–June 2020", "url": "https://publications.gc.ca/collections/collection_2019/arc-cra/Rv1-36-2019-eng.pdf?download=1"}
