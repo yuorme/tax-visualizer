@@ -100,6 +100,8 @@ export const HISTORY_STEPS = [
   [
     "history: childcare follows age and earnings edits immediately",
     async p => {
+      await p.fill("#oth", "0");
+      await p.locator("#oth").blur();
       await p.selectOption("#home", "ON");
       await p.locator("#kids").evaluate(el => {
         el.value = "1";
@@ -116,6 +118,10 @@ export const HISTORY_STEPS = [
       const problems = await checkRows(p, "nominal");
       await p.fill("#income", "3,000");
       await p.dispatchEvent("#income", "input");
+      problems.push(...(await checkRows(p, "nominal")));
+      // $3,000 employment permits $2,000 childcare; adding $3,000 other income raises the default to $4,000.
+      await p.fill("#oth", "3,000");
+      await p.locator("#oth").blur();
       problems.push(...(await checkRows(p, "nominal")));
       await p.fill("#care-age-0", "20");
       await p.locator("#care-age-0").blur();
