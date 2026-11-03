@@ -64,6 +64,20 @@ export const federalSchema = z.object({
     foreignWithholding: z.object({ usTreaty: rate, deductibleAbove: rate }),
   }),
   rrsp: z.object({ rate, limit: amount }),
+  childcare: program(
+    "federal-childcare",
+    z.object({
+      youngUnder: z.number().int().positive(),
+      eligibleThrough: z.number().int().nonnegative(),
+      annualYoung: amount,
+      annualOther: amount,
+      annualDisability: amount,
+      earnedNumerator: z.number().int().positive(),
+      earnedDenominator: z.number().int().positive(),
+      benefitChildUnder: z.number().int().positive(),
+      benefitYoungUnder: z.number().int().positive(),
+    }),
+  ).optional(),
   payroll: z.object({
     cpp: cppLike,
     qpp: cppLike,
@@ -123,6 +137,12 @@ export const federalSchema = z.object({
 });
 
 // ---------- Provinces and territories ----------
+const nlChildReduction = z.object({
+  perChild: z.array(amount).length(4),
+  threshold: amount,
+  rate: z.array(rate).length(3),
+  additionalRate: rate,
+});
 const childBenefit = z.discriminatedUnion("program", [
   program("ontario-child-benefit", z.object({ perChild: amount, threshold: amount, rate })),
   program(
@@ -198,6 +218,17 @@ const childBenefit = z.discriminatedUnion("program", [
     rateSource: z.string().optional(),
   }),
   program(
+    "nwt-child-benefit-age-groups",
+    z.object({
+      under6: z.array(amount).length(5),
+      under6More: amount,
+      over6: z.array(amount).length(5),
+      over6More: amount,
+      fullUpTo: amount,
+      endsAt: amount,
+    }),
+  ),
+  program(
     "nwt-child-benefit",
     z.object({
       under6: z.array(amount).length(5),
@@ -210,14 +241,15 @@ const childBenefit = z.discriminatedUnion("program", [
   ),
   program("nl-child-benefit", z.object({ perChild: z.array(amount).length(4), fullUpTo: amount, endsAt: amount })),
   program(
-    "nl-child-benefit-reduction",
+    "nl-child-benefit-periods",
     z.object({
-      perChild: z.array(amount).length(4),
-      threshold: amount,
-      rate: z.array(rate).length(3),
-      additionalRate: rate,
+      periods: z
+        .array(nlChildReduction.extend({ weight: z.number().positive().max(1) }))
+        .min(1)
+        .refine(ps => Math.abs(ps.reduce((sum, p) => sum + p.weight, 0) - 1) < 1e-9, "period weights must sum to 1"),
     }),
   ),
+  program("nl-child-benefit-reduction", nlChildReduction),
   program("income-band-per-child", z.object({ bands: z.array(z.tuple([amount, amount])).min(1) })),
 ]);
 
@@ -323,6 +355,33 @@ const lowIncomeReduction = z.discriminatedUnion("program", [
   ),
 ]);
 
+const childcareCredit = z.discriminatedUnion("program", [
+  program(
+    "ontario-care",
+    z.object({
+      fullThrough: amount,
+      maxRate: rate,
+      decrement: rate,
+      steps: z
+        .array(z.tuple([amount, z.number().positive()]))
+        .min(1)
+        .refine(xs => xs.every((x, i) => i === 0 || x[0] > xs[i - 1][0]), "CARE band limits must increase"),
+    }),
+  ),
+  program(
+    "quebec-childcare",
+    z.object({
+      youngUnder: z.number().int().positive(),
+      eligibleThrough: z.number().int().nonnegative(),
+      annualYoung: amount,
+      annualOther: amount,
+      annualSevere: amount,
+      rates: brackets,
+    }),
+  ),
+  program("nl-childcare", z.object({})),
+]);
+
 export const provinceSchema = z
   .object({
     code: z.string().length(2),
@@ -350,7 +409,9 @@ export const provinceSchema = z
     ]),
     employmentAmountCredit: z.boolean().optional(),
     childAmount: z.object({ perChild: amount, ages: z.enum(["all", "under6"]) }).optional(),
+    childcareCredit: childcareCredit.optional(),
     surtax: z.array(z.tuple([amount, rate])).optional(),
+    postDividendSurtax: program("pei-surtax", z.object({ threshold: amount, rate })).optional(),
     ontarioTaxReduction: z.object({ base: amount, perChild: amount }).optional(),
     lift: z.object({ max: amount, rate, threshold: amount, familyThreshold: amount, phaseOut: rate }).optional(),
     bcTaxReduction: z.object({ max: amount, rate, threshold: amount }).optional(),

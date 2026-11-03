@@ -80,12 +80,16 @@ adding year checks inside an existing one. Values that are estimates rather than
 - **Golden results** (`tests/golden.test.ts`): for every year in `data/years/`, 148 households × 13 provinces
   (singles, couples, single parents, up to six children, investment income, deductions, renters and owners) must
   reproduce `tests/golden/<year>.json` to the hundredth of a cent. A year without a fixture fails the test. A
-  change here means a result changed: if it's intended, explain it in the commit and re-capture.
+  change here means a result changed: diagnose it using the golden-baseline policy in [CLAUDE.md](CLAUDE.md).
+  Existing cases stay locked; new engine behavior needs additive golden cases with independently checked expectations.
   - `npm run golden:capture -- <year>` captures one year's fixture from the engine. It writes only that year's
     file and refuses to replace an existing one unless given `--force`; `--out <file>` writes elsewhere.
   - `npm run golden:capture-legacy` (`tests/golden/capture-legacy.mjs`) is how `2026.json` was first locked:
     it runs the original single-file app in `legacy/`, which only knows 2026. Capturing 2026 from the engine
     writes the same bytes except the `source` field, which names the engine instead of the legacy app.
+- **Feature goldens** (`tests/golden-features.test.ts`): additive cases in `tests/golden/features/` lock new inputs,
+  rule paths and nested outputs without replacing yearly baselines. Expected values use independent calculations;
+  there is no capture mode. See the [coverage audit](docs/verification/golden-coverage.md) for cases and derivations.
 - **Reference values** (`tests/reference/<year>.test.ts`, one file per year, which takes its year from the file
   name): results compared with figures published outside this project, such as each province's top marginal
   rate and Ontario's top dividend rates.

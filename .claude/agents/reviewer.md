@@ -19,7 +19,10 @@ Steps:
 3. Check the rules in CLAUDE.md:
    - No amounts, rates or thresholds added to `src/engine/` or `src/ui/`.
    - Every new or changed data value has a source; derived values are marked `estimated: true`.
-   - `tests/golden/*.json` unchanged, or the commit explains each intended change.
+   - Existing golden inputs, expectations and checks follow CLAUDE.md's baseline policy; explanation alone is
+     insufficient. Verify any unavoidable correction independently, including its affected cases and values.
+   - Every new/changed engine rule path has golden coverage in this PR, with independently checked expectations
+     and material boundaries; passing old fixtures or capturing engine output alone does not establish coverage.
    - New data years have reference tests from outside sources.
 4. Spot-check any new or changed figures against their listed sources where you can, using the cached text in
    `docs/verification/<year>/sources/` first. For a data year, check each value the pull request's year-diff

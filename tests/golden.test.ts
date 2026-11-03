@@ -1,6 +1,6 @@
 // Regression test: the engine must reproduce the locked results in tests/golden/<year>.json for every scenario
-// and every province, to the hundredth of a cent. A difference means a calculation changed. If the change is
-// intended (a data correction or a rule fix), say so in the commit and re-capture the fixture.
+// and every province, to the hundredth of a cent. Diagnose differences under CLAUDE.md's golden-baseline policy;
+// preserve existing cases and add separate fixtures for new behavior. Intention alone does not justify recapture.
 // Runs for every year in data/years/. A year without a fixture fails: capture it with
 // `npm run golden:capture -- <year>` once the year's data is verified.
 import assert from "node:assert/strict";
