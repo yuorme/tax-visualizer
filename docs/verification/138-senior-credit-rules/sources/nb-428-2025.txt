@@ -1,0 +1,266 @@
+Title: New Brunswick Tax and Credits
+URL: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5004-c/5004-c-25e.pdf
+Fetched: 2026-11-03
+SHA-256 of the original: 727e1cce1dbdf965ce17d7768688fa54e5c3b089d99dd4c4a3effc233ce68c05
+Publication date modified: 2025-10-23
+PDF pages: all 4
+Text extract made with scripts/fetch-source.ts extract/formatExtract helpers. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 1 of 4 ---
+
+Form NB428
+2025
+Protected B when completed
+New Brunswick Tax and Credits
+For more information about this form, go to canada.ca/nb-tax-info.
+Part A – New Brunswick tax on taxable income
+1Enter your taxable income from line 26000 of your return.
+Use the amount from line 1 to complete the appropriate column below.
+Line 1 is
+$51,306 or less
+Amount from line 1
+–
+Line 2 minus line 3 (cannot be negative) =
+×Line 4 multiplied by the percentage
+from line 5 =
++
+New Brunswick tax
+on taxable income
+Line 6 plus line 7
+=
+Line 1 is more than
+$51,306 but not
+more than $102,614
+–
+=
+×
+=
++
+=
+Line 1 is more than
+$102,614 but not
+more than $190,060
+–
+=
+×
+=
++
+=
+Line 1 is more
+than $190,060
+–
+=
+×
+=
++
+=
+2
+3
+4
+5
+6
+7
+8
+Enter the amount from line 8 on line 54 and continue at line 9.
+Part B – New Brunswick non-refundable tax credits 56030Internal use
+58040 9Basic personal amount Claim $13,396
+58080 10Age amount (if you were born in 1960 or earlier) (use Worksheet NB428) (maximum $6,037) +
+Spouse or common-law partner amount:
+11Base amount
+12
+Your spouse's or common-law partner's net income
+from line 23600 of their return –
+58120 13Line 11 minus line 12 (if negative, enter "0") (maximum $10,499) =
+Ż +
+Amount for an eligible dependant:
+14Base amount
+15Your eligible dependant's net income from line 23600 of their return –
+58160 16Line 14 minus line 15 (if negative, enter "0") (maximum $10,499) =
+Ż +
+58200 17Amount for infirm dependants age 18 or older (use Worksheet NB428) +
+18Add lines 9, 10, 13, 16, and 17. =
+CPP or QPP contributions:
+58240 19Amount from line 30800 of your return •
+58280 20Amount from line 31000 of your return + •
+Employment insurance premiums:
+58300 21Amount from line 31200 of your return + •
+58305 22Amount from line 31217 of your return + •
+58315 23Volunteer firefighters' amount +
+58316 24Search and rescue volunteers' amount +
+25Add lines 19 to 24. =
+Ż +
+26Line 18 plus line 25 =
+5004-C E (25) (Ce formulaire est disponible en français.) Page 1 of 4
+0.00
+9.4%
+0.00
+51,306.00
+14%
+4,822.76
+102,614.00
+16%
+12,005.88
+190,060.00
+19.5%
+25,997.24
+11,550.00
+11,550.00
+
+--- PDF page 2 of 4 ---
+
+Protected B when completed
+Part B – New Brunswick non-refundable tax credits (continued)
+27Amount from line 26 of the previous page
+58360 28Pension income amount (maximum $1,000) +
+58400 29Caregiver amount (use Worksheet NB428) +
+30Add lines 27 to 29. =
+58440 31
+Disability amount for self
+(claim $10,010 or, if you were under 18 years of age, use Worksheet NB428) +
+58480 32Disability amount transferred from a dependant (use Worksheet NB428) +
+33Add lines 30 to 32. =
+58520 34Interest paid on your student loans (amount from line 31900 of your return) +
+58560 35Your tuition and education amounts (attach Schedule NB(S11)) +
+58600 36Tuition amounts transferred from a child or grandchild +
+58640 37Amounts transferred from your spouse or common-law partner (attach Schedule NB(S2)) +
+38Add lines 33 to 37. =
+Medical expenses:
+58689 39Amount from line 33099 of your return
+40Amount from line 23600 of your return
+41Applicable rate ×
+42Line 40 multiplied by the percentage from line 41 =
+43Enter whichever is less: $2,798 or the amount on line 42. –
+44Line 39 minus line 43 (if negative, enter "0") =
+58729 45
+Allowable amount of medical expenses for other dependants
+(use Worksheet NB428) +
+58769 46Line 44 plus line 45 =
+Ż +
+58800 47Line 38 plus line 46 =
+48New Brunswick non-refundable tax credit rate ×
+58840 49Line 47 multiplied by the percentage from line 48 =
+Donations and gifts:
+50
+Amount from line 13 of your federal
+Schedule 9 × 9.4% =
+51
+Amount from line 14 of your federal
+Schedule 9 × 17.95% = +
+58969 52Line 50 plus line 51 =
+Ż +
+61500 53New Brunswick non-refundable tax credits
+Line 49 plus line 52
+Enter this amount on line 57. =
+Part C – New Brunswick tax
+54New Brunswick tax on taxable income from line 8
+61510 55New Brunswick Tax on split income (complete Form T1206) + •
+56Line 54 plus line 55 =
+57New Brunswick non-refundable tax credits from line 53 –
+58Line 56 minus line 57 (if negative, enter "0") =
+5004-C E (25) Page 2 of 4
+3%
+9.4%
+
+--- PDF page 3 of 4 ---
+
+Protected B when completed
+Part C – New Brunswick tax (continued)
+59Amount from line 58 of the previous page
+61520 60New Brunswick dividend tax credit (use Worksheet NB428) •
+61540 61
+New Brunswick minimum tax carryover:
+Amount from line 40427 of your return × 57% = + •
+62Line 60 plus line 61 =
+Ż –
+63Line 59 minus line 62 (if negative, enter "0") =
+64
+New Brunswick additional tax for minimum tax purposes:
+Form T691: line 1 minus line 2 of Part 7 × 57% = +
+65Line 63 plus line 64 =
+66Provincial foreign tax credit (complete Form T2036) –
+67Line 65 minus line 66 (if negative, enter "0") =
+New Brunswick low-income tax reduction
+If you had a spouse or common-law partner on December 31, 2025, you and your spouse or
+common-law partner need to decide who will claim this tax reduction for your family. Any unused
+amount from line 90 can be claimed by the other spouse or common-law partner on line 68 of their
+Form NB428.
+61560 68
+Unused low-income tax reduction from your spouse or common-law partner:
+Amount from line 90 of your spouse's or common-law partner's Form NB428, if any – •
+69
+Line 67 minus line 68 (if negative, enter "0")
+Enter this amount on line 76 of the next page. =
+If you claimed an amount on line 68, enter the amount from line 69 on line 87 and continue on
+line 91. If not, continue below.
+You are eligible to claim the low-income tax reduction if either of the following applies:
+• You are single and your net income from line 23600 of your return is less than $48,653
+• You have an eligible dependant or spouse or common-law partner and your adjusted family
+income (calculated using the chart below) is less than $75,387
+If neither of these conditions applies to you, enter "0" on line 86, enter the amount from line 76
+on line 87, and continue on line 91.
+Adjusted family income calculation for
+the New Brunswick low-income tax reduction
+Column 1
+You
+Column 2
+Your spouse or
+common-law partner
+70
+Net income from line 23600 of the return (or the amount you would have
+entered if the instructions on line 23600 said "if negative, show in
+brackets")
+71
+Total of the universal child care benefit (UCCB) repayment (line 21300
+of the return) and the registered disability savings plan (RDSP) income
+repayment (included on line 23200 of the return) + +
+72Line 70 plus line 71 = =
+73
+Total of the UCCB income (line 11700 of the return) and the RDSP
+income (line 12500 of the return) – –
+74Line 72 minus line 73 (if negative, enter "0") = =
+75Adjusted family income
+Add the amounts from line 74 of columns 1 and 2, if any.
+Enter this amount on line 81 of the next page.
+5004-C E (25) Page 3 of 4
+
+--- PDF page 4 of 4 ---
+
+Protected B when completed
+Part C – New Brunswick tax (continued)
+76Amount from line 69 of the previous page
+61570 77Basic reduction Claim $802
+61580 78Reduction for spouse or common-law partner Claim $802 +
+61590 79
+Reduction for an eligible dependant claimed on
+line 30400 of your return Claim $802 +
+80Add lines 77 to 79. (maximum $1,604) =
+81
+Adjusted family income:
+Amount from line 75 of the previous page
+82Base amount –
+83Line 81 minus line 82 (if negative, enter "0") =
+84Applicable rate ×
+85Line 83 multiplied by the percentage from line 84 =
+Ż –
+86New Brunswick low-income tax reduction
+Line 80 minus line 85
+(if negative, enter "0") =Ż –
+87Line 76 minus line 86 (if negative, enter "0") =
+Unused low-income tax reduction that your spouse or common-law partner can claim
+88Amount from line 86 above
+89Amount from line 67 of the previous page –
+90Unused amountLine 88 minus line 89 (if negative, enter "0") =
+61550 91New Brunswick political contributions made in 2025
+92New Brunswick political contribution tax credit (use Worksheet NB428) (maximum $500) –
+93Line 87 minus line 92 (if negative, enter "0") =
+61670 94Labour-sponsored venture capital fund tax credit from NB-LSVC-1 certificate(s) (maximum $2,000) – •
+95Line 93 minus line 94 (if negative, enter "0") =
+96Small business investor tax credit (complete Form T1258) (maximum $125,000) –
+97New Brunswick tax
+Line 95 minus line 96 (if negative, enter "0")
+Enter this amount on line 42800 of your return. =
+See the privacy notice on your return.
+5004-C E (25) Page 4 of 4
+21,920.00
+3%

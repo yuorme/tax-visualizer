@@ -1,0 +1,136 @@
+Title: Payroll Deductions Supplementary Tables - British Columbia
+URL: https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4008-payroll-deductions-supplementary-tables/t4008bc-july/t4008bc-july-general-information.html
+Fetched: 2026-11-03
+SHA-256 of the original: 3e5b6c168de04ffaa4ec19aca0cdc73a0d0629d51fd55743742b87db1b210361
+Publication date modified: 2026-06-15
+Text extract made with scripts/fetch-source.ts extract/formatExtract helpers. Check figures against the original when layout matters (tables).
+================================================================================
+
+# Payroll Deductions Supplementary Tables - British Columbia
+
+T4008-BC (E) Rev. 26
+
+This guide uses plain language to explain the most common tax situations. If you need more help, visit Contact the Canada Revenue Agency (CRA) - Canada.ca.
+
+Note
+You must look up amount in two tax deductions tables – a federal table and a provincial table.
+
+This guide is a supplement to the Guide T4032, Payroll Deductions Tables. If you need more information, see the Payroll Deductions Tables for your province or territory.
+
+## Table of contents
+
+### Section A
+
+- What’s new as of July 1, 2026
+
+- Provincial legislative updates
+
+- Payroll Deductions Tables
+- Payroll Deductions Online Calculator
+- Let us notify you
+- General information
+- Claim codes
+
+- Explanation of claim codes
+
+- Claim code 0
+- Claim codes 1 to 10
+- Indexing of claim codes amounts
+
+- Chart 1 – 2026 Federal claim codes (using maximum BPA)
+- Chart 2 – 2026 British Columbia claim codes
+- Employment income from all sources
+
+## What's new as of July 1, 2026
+
+This guide reflects some income tax changes recently announced which, if enacted as proposed, would be effective July 1, 2026. At the time of publishing, some of these proposed changes were not law. We recommend that you use the new payroll deductions tables in this guide for withholding starting with the first payroll in July 2026.
+
+### Provincial legislative updates
+
+On February 17, 2026, the Government of British Columbia announced a change to the lowest personal income tax rate and the BC tax reduction. For 2026 and subsequent years, the lowest personal tax rate is increased from 5.06% to 5.6%.
+
+Since the employers have used a lower tax rate for the first six months of the year, a prorated lowest personal income tax rate of 6.14% will apply for the remaining six months commencing with the first payroll in July. The tax rates and brackets are as follows:
+
+- For income under $50,363, the tax rate is 6.14% (prorated)
+- For income from $50,363 to $100,728, the tax rate is 7.70%
+- For income from $100,728 to $115,648, the tax rate is 10.50%
+- For income from $115,648 to $140,430, the tax rate is 12.29%
+- For income from $140,430 to $190,405, the tax rate is 14.70%
+- For income from $190,405 to $265,545, the tax rate is 16.80%
+- For income of $265,545 and over, the tax rate is 20.50%
+
+In addition, for 2026 and subsequent years, the basic reduction is increased from $562 to $690. The basic reduction amount was indexed to $575 effective January 1, 2026. Since this amount was used for the first six months of the year, a prorated basic reduction amount of $805 will apply for the remaining six months.
+
+## Payroll Deductions Tables
+
+You can download Guides T4008, Payroll Deductions Supplementary Tables, and T4032, Payroll Deductions Tables, from our website at canada.ca/payroll. You can also choose to print only the pages or information that you need.
+
+## Payroll Deductions Online Calculator
+
+For your 2026 payroll deductions, we strongly recommend using our PDOC. The online calculator makes it faster and easier to calculate payroll deductions. The calculator also uses exact salary figures and provides more accurate calculations. It calculates payroll deductions for the applicable province (except Quebec) or territory for the most common pay periods.
+
+PDOC is available at canada.ca/pdoc.
+
+## Let us notify you
+
+We provide a digital service that can notify you immediately, free of charge, of any changes for payroll deductions.
+
+To subscribe, visit our webpage at canada.ca/cra-email-lists and enter your business’s email address for each mailing list that you want to join.
+
+## General information
+
+This guide is a supplement to the Guide T4032, Payroll Deductions Tables. See the Payroll Deductions Tables for your province or territory if you need more information about:
+
+- what’s new for July 1, 2026
+- how to calculate tax deductions when you cannot use the tables
+- how to deduct income tax, Canada Pension Plan (CPP) contributions, and Employment Insurance (EI) premiums and
+- the payroll deductions required for pay periods other than those included in this guide
+
+For information on deducting, remitting, and reporting payroll deductions, visit canada.ca/payroll.
+
+You can also use the Payroll Deductions Online Calculator free of charge.
+
+The provincial and federal tables are designed to accurately calculate the deductions provided by the CPP additional contributions in most situations. However, for the following situations, we recommend using the PDOC for more accurate calculations:
+
+- If at any point during the year, the employee reaches the YMPE of $74,600 or;
+- A payment of remuneration, if annualized by the number of pay periods in the cycle, is over the YMPE of $74,600
+
+If the tables are used in these situations, it may result in over or under deduction of federal and provincial taxes during the year.
+
+### Note
+
+Refer to the 2025 edition of this guide to resolve any pensionable and insurable earnings review (PIER) deficiencies that we identify in processing your 2025 T4 return.
+
+## Claim codes
+
+You may have to ask your employees or your pensioners to complete a federal and a provincial personal tax credits return using a federal Form TD1 and a provincial Form TD1.
+
+The total personal amount an employee claims on a TD1 form will determine which claim code you use. The claim amounts that correspond to the federal claim codes are not the same as the claim amounts that correspond to the provincial claim codes. Go to Chart 1 and Chart 2.
+
+The claim codes and corresponding amounts do not appear on either the federal or the provincial TD1 form.
+
+### Explanation of claim codes
+
+#### Claim code 0
+
+This code represents no claim amount. If the federal claim code is “0” because the employee is a non-resident, the provincial claim code must also be “0.” This code may also be used if the employee indicated they have more than one employer or payer at the same time and have entered “0” on the front page of Form TD1 for 2026.
+
+#### Claim codes 1 to 10
+
+The claim code amounts do not appear on either the federal or the provincial TD1 form.
+
+You match the "Total claim amount" reported on your employee’s or pensioner’s TD1 forms with the appropriate claim codes. Then, you look up the tax for the employee’s pay under the claim code in the federal and provincial tax tables for the pay period.
+
+#### Indexing of claim codes amounts
+
+The credits that apply to each federal and provincial claim code have been automatically changed in the tax tables by the indexing factor for the current year. If your employee did not complete the federal and provincial TD1 forms for 2026 you continue to deduct income tax using the same claim code that you used last year.
+
+### Chart 1 – 2026 Federal claim codes (using maximum BPA)
+
+### Chart 2 – 2026 British Columbia claim codes
+
+### Employment income from all sources
+
+On the federal and provincial TD1 forms, under the heading "Income from other employers or payers," employees can indicate that their expected employment income from all sources will be less than their total claim amount. If an employee states that his or her total expected income will be less than the "Total claim amount" of the TD1 forms, do not deduct any federal or provincial tax.
+
+However, as an employer, if you know that this statement is false, you must deduct federal and provincial tax from the salary. Deduct tax according to the claim code that applies to the "Total claim amount" of the TD1 forms.
