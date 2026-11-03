@@ -1,6 +1,7 @@
 // Captures one year's golden results from the TypeScript engine: every scenario in scenarios.mjs × every province,
 // reduced by snapshot.mjs, written to tests/golden/<year>.json in the format tests/golden.test.ts reads. Run it
-// only on purpose: for a new year once its data is verified, or with --force after an intended result change.
+// for a new year once its data is independently verified. Existing baselines follow CLAUDE.md's stricter policy;
+// --force is a mechanical escape hatch, not permission to replace expectations after a failure.
 //   npm run golden:capture -- <year>                   write tests/golden/<year>.json (refuses if it exists)
 //   npm run golden:capture -- <year> --force           overwrite it
 //   npm run golden:capture -- <year> --out <file>      write somewhere else, e.g. to compare with the fixture

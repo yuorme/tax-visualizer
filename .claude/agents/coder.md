@@ -16,8 +16,7 @@ Before you start:
 
 While working:
 - Keep amounts, rates and thresholds in `data/years/`, never in code. Add sources; mark estimates `estimated: true`.
-- Don't edit `tests/golden/*.json` unless the task says results should change. If a golden test fails
-  unexpectedly, stop and report the difference instead of re-capturing.
+- Follow CLAUDE.md's golden-baseline policy: diagnose failures, preserve existing cases and add separate fixtures.
 - Add or update tests for what you change: reference tests for new data, unit tests for new engine programs.
 - For UI work, check the page at 375 px, 430 px and desktop width, in light and dark mode
   (`npm run compare -- origin/main` shows what changed in text and control state).
@@ -26,7 +25,7 @@ While working:
 
 Before reporting, check:
 - every new data field has a source;
-- each new rule has a test that a plausible wrong reading of the rule fails;
+- each new/changed rule has independently checked golden coverage and a test that a plausible wrong reading fails;
 - each UI acceptance criterion in the issue has an e2e assertion;
 - known-failure lists (such as `KNOWN` in `tests/e2e/rules.mjs`) match exactly what now fails;
 - nothing still refers to a file or name you renamed.
