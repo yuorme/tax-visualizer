@@ -1,0 +1,252 @@
+Title: British Columbia Tax
+URL: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5010-c/5010-c-21e.pdf
+Fetched: 2026-11-02
+SHA-256 of the original: 76868e59e96f568691f26482fe78e412148355523d0ccf6421df01967b2d2462
+Publication date modified: 2021-11-15
+PDF pages: all 3
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 1 of 3 ---
+
+Form BC428
+2021
+Protected B when completed
+British Columbia Tax
+Part A – British Columbia tax on taxable income
+1Enter your taxable income from line 26000 of your return.
+Use the amount from line 1 to complete the appropriate column below.
+Note: Line 4 cannot be negative.
+Line 1 is $42,184
+or less
+–
+=
+×
+=
++
+=
+Line 1 is more
+than $42,184
+but not more
+than $84,369
+–
+=
+×
+=
++
+=
+Line 1 is more
+than $84,369
+but not more
+than $96,866
+–
+=
+×
+=
++
+=
+Line 1 is more
+than $96,866
+but not more
+than $117,623
+–
+=
+×
+=
++
+=
+Line 1 is more
+than $117,623
+but not more
+than $159,483
+–
+=
+×
+=
++
+=
+Line 1 is more
+than $159,483
+but not more
+than $222,420
+–
+=
+×
+=
++
+=
+Line 1 is more
+than $222,420
+–
+=
+×
+=
++
+=
+2
+3
+4
+5
+6
+7
+8
+Enter the amount from line 8 on line 54 and continue on line 9.
+Part B – British Columbia non-refundable tax credits 56090Internal use
+58040 9Basic personal amount Claim $11,070
+58080 10Age amount (if you were born in 1956 or earlier) (use Worksheet BC428) (maximum $4,964) +
+Spouse or common-law partner amount:
+11Base amount
+12
+Your spouse's or common-law partner's net income
+from line 23600 of their return –
+58120 13Line 11 minus line 12 (if negative, enter "0") (maximum $9,479) =
+Ż +
+Amount for an eligible dependant:
+14Base amount
+15Your eligible dependant's net income from line 23600 of their return –
+58160 16Line 14 minus line 15 (if negative, enter "0") (maximum $9,479) =
+Ż +
+58175 17British Columbia caregiver amount (use Worksheet BC428) +
+18Add lines 9, 10, 13, 16 and 17. =
+CPP or QPP contributions:
+58240 19Amount from line 30800 of your return •
+58280 20Amount from line 31000 of your return + •
+Employment insurance premiums:
+58300 21Amount from line 31200 of your return + •
+58305 22Amount from line 31217 of your return + •
+58315 23Volunteer firefighters' amount +
+58316 24Search and rescue volunteers' amount +
+25Add lines 19 to 24. =
+Ż +
+58330 26Adoption expenses +
+27Add lines 18, 25, and 26. =
+5010-C E (21) (Ce formulaire est disponible en français.) Page 1 of 3
+0.00
+5.06%
+0.00
+42,184.00
+7.7%
+2,134.51
+84,369.00
+10.5%
+5,382.76
+96,866.00
+12.29%
+6,694.94
+117,623.00
+14.7%
+9,245.98
+159,483.00
+16.8%
+15,399.40
+222,420.00
+20.5%
+25,972.81
+10,427.00
+10,427.00
+
+--- PDF page 2 of 3 ---
+
+Protected B when completed
+Part B – British Columbia non-refundable tax credits (continued)
+28Amount from line 27 of the previous page
+58360 29Pension income amount (maximum $1,000) +
+30Line 28 plus line 29 =
+58440 31
+Disability amount for self
+(claim $8,303 or, if you were under 18 years of age, use Worksheet BC428) +
+58480 32Disability amount transferred from a dependant (use Worksheet BC428) +
+33Add lines 30 to 32. =
+58520 34Interest paid on your student loans (amount from line 31900 of your return) +
+58560 35Your tuition and education amounts (attach Schedule BC(S11)) +
+58600 36Tuition amounts transferred from a child or grandchild +
+58640 37Amounts transferred from your spouse or common-law partner (attach Schedule BC(S2)) +
+38Add lines 33 to 37. =
+Medical expenses:
+58689 39Amount from line 33099 of your return
+40Amount from line 23600 of your return
+41Applicable rate ×
+42Line 40 multiplied by the percentage from line 41 =
+43Enter whichever is less: $2,302 or the amount from line 42. –
+44Line 39 minus line 43 (if negative, enter "0") =
+58729 45
+Allowable amount of medical expenses for other dependants
+(use Worksheet BC428) +
+58769 46Line 44 plus line 45 =
+Ż +
+58800 47Line 38 plus line 46 =
+48British Columbia non-refundable tax credit rate ×
+58840 49Line 47 multiplied by the percentage from line 48 =
+58969 50Donations and gifts (use Worksheet BC428) +
+51Line 49 plus line 50 =
+58980 52
+Farmers' food donation tax credit:
+Amount of qualifying gifts also claimed on line 50 × 25% = +
+61500 53British Columbia non-refundable tax credits
+Line 51 plus line 52
+Enter this amount on line 57. =
+5010-C E (21) Page 2 of 3
+3%
+5.06%
+
+--- PDF page 3 of 3 ---
+
+Protected B when completed
+Part C – British Columbia tax
+54British Columbia tax on taxable income from line 8
+61510 55British Columbia tax on split income (complete Form T1206) + •
+56Line 54 plus line 55 =
+57British Columbia non-refundable tax credits from line 53
+61520 58British Columbia dividend tax credit (use Worksheet BC428) + •
+61540 59
+British Columbia minimum tax carryover:
+Amount from line 40427
+of your return × 33.7% = + •
+60Add lines 57 to 59. =
+Ż –
+61Line 56 minus line 60 (if negative, enter "0") =
+62
+British Columbia additional tax for minimum tax purposes:
+Amount from line 118 of Form T691 × 33.7% = +
+63Line 61 plus line 62 =
+64Provincial foreign tax credit (complete Form T2036) –
+65Line 63 minus line 64 (if negative, enter "0") =
+British Columbia tax reduction
+If your net income from line 23600 of your return is $34,929 or more, enter "0" on line 72 and
+continue on line 73. If it is less than $34,929, complete the following calculation:
+66Basic reduction Claim $481
+67
+Enter your net income from line 23600
+of your return.
+68Base amount –
+69Line 67 minus line 68 (if negative, enter "0") =
+70Applicable rate ×
+71Line 69 multiplied by the percentage from line 70 =
+Ż –
+72British Columbia tax reduction
+Line 66 minus line 71
+(if negative, enter "0") =Ż –
+73Line 65 minus line 72 (if negative, enter "0") =
+74British Columbia logging tax credit from Form FIN 542S or Form FIN 542P –
+75Line 73 minus line 74 (if negative, enter "0") =
+60400 76British Columbia political contributions made in 2021
+77British Columbia political contribution tax credit (use Worksheet BC428) (maximum $500) –
+78Line 75 minus line 77 (if negative, enter "0") =
+60450 79
+British Columbia employee share ownership plan tax credit
+from Certificate ESOP 20 •
+60470 80
+British Columbia employee venture capital corporation tax credit
+from Certificate EVCC 30 + •
+81
+Total ESOP and EVCC credits:
+Line 79 plus line 80 (maximum $2,000) =Ż –
+82Line 78 minus line 81 (if negative, enter "0") =
+68810 83British Columbia mining flow-through share tax credit (complete Form T1231) – •
+84British Columbia tax
+Line 82 minus line 83 (if negative, enter "0")
+Enter this amount on line 42800 of your return. =
+See the privacy notice on your return.
+5010-C E (21) Page 3 of 3
+21,418.00
+3.56%

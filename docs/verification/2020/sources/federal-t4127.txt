@@ -1,0 +1,1682 @@
+Title: Payroll Deductions Formulas
+URL: https://www.canada.ca/content/dam/cra-arc/formspubs/pub/t4127-jan/t4127-01-20e.pdf
+Fetched: 2026-11-02
+SHA-256 of the original: 4e3e9143693e55dc7c97971056b565f539f6d3fc6e0b59542949602a88d7deb3
+Publication date modified: 2020-02-21
+PDF pages: all 35
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 1 of 35 ---
+
+Payroll Deductions Formulas
+111th Edition
+Effective January 1, 2020
+This guide has been changed since the December 12, 2019 release.
+T4127(E) Rev. 20/01
+
+--- PDF page 2 of 35 ---
+
+canada.ca/taxes
+Changes since the December 12, 2019 release
+The proposed changes to the federal Basic Personal Amount (BPAF), announced by the Minister of Finance on December 9, 2019
+will be effective January 1, 2020. For your convenience we have provided a simplified version of the BPAF formula that is
+similar to the Nova Scotia BPA (BPANS). As administrative relief for 2020 employers may apply BPAF as $13,229 for all
+employees.
+Is this guide for you?
+Use this guide if you are a payroll software provider or a company which develops its own in-house payroll solution.
+This guide has the formulas you need to determine federal, provincial (except Quebec), and territorial income taxes, Canada
+Pension Plan (CPP) contributions, and employment insurance (EI) premium deductions. The formulas also let you calculate
+payroll deductions for income sources such as commission, pension, bonuses, and retroactive pay increases.
+The formulas used in this guide to calculate statutory deductions have been approved for purposes of the Income Tax Act, the
+Canada Pension Plan, and the Employment Insurance Act, as well as their related regulations and any amendments proposed to
+these acts.
+For more information on income amounts that are subject to payroll deductions, see the publication T4001, Employers’ Guide –
+Payroll Deductions and Remittances.
+If you have questions about the formulas in this guide, contact your tax services office or tax centre. For the address and
+telephone numbers of your tax services office or tax centre, see the listings in the government section of your telephone book or
+visit canada.ca/taxes.
+Distribution of this guide
+This guide is available in electronic format only.
+Electronic mailing lists – more ways to serve you!
+We provide an electronic service that can notify you immediately, free of charge, of any changes for payroll deductions.
+To subscribe, go to canada.ca/cra-email-lists and enter your business’s email address for each mailing list that you want to join.
+Payroll Deductions Online Calculator
+For your payroll deductions, you can use our Payroll Deductions Online Calculator (PDOC). The calculator includes an option to
+help you make sure that enough Canada Pension Plan contributions and employment insurance premiums have been withheld for
+full-year employees.
+It calculates payroll deductions for the most common pay periods, as well as the applicable province (except Quebec) or territory.
+The calculation is based on exact salary figures.
+The version of PDOC released on January 9, 2020 applies the BPAF as per the proposed legislation.
+PDOC is available at canada.ca/pdoc.
+Payroll Deductions Tables
+Using the following links you can download the publications T4032, Payroll Deductions Tables and T4008, Payroll
+Deductions Supplementary Tables. You can also choose to print only the pages or information that you need. For more
+information on payroll, see our webpage at canada.ca/payroll.
+
+--- PDF page 3 of 35 ---
+
+canada.ca/taxes 3
+Table of contents
+page
+What’s new for January 1, 2020? ............................................................................................................................................. 5
+Comma-Separated Values (CSV) ................................................................................................................................................. 5
+Federal Changes ........................................................................................................................................................................... 5
+Federal Basic Personal Amount............................................................................................................................................... 5
+Canada Employment Amount Credit (K4) .............................................................................................................................. 5
+Canada Pension Plan (CPP) ..................................................................................................................................................... 6
+Quebec Pension Plan (QPP) .................................................................................................................................................... 6
+Employment Insurance (EI)..................................................................................................................................................... 6
+Provincial and territorial tax changes ........................................................................................................................................... 6
+Alberta ..................................................................................................................................................................................... 6
+British Columbia ..................................................................................................................................................................... 7
+Newfoundland and Labrador ................................................................................................................................................... 7
+Nova Scotia ............................................................................................................................................................................. 7
+Ontario ..................................................................................................................................................................................... 7
+Prince Edward Island ............................................................................................................................................................... 7
+Yukon ...................................................................................................................................................................................... 7
+Chapter 1 – General information .............................................................................................................................................. 8
+Rounding procedures.................................................................................................................................................................... 8
+Tax deductions comparison .......................................................................................................................................................... 8
+Chapter 2 – Personal tax credits returns (TD1 forms)............................................................................................................ 8
+Federal Form TD1, 2020 Personal Tax Credits Return ................................................................................................................ 8
+Indexing of personal amounts ...................................................................................................................................................... 8
+Chapter 3 – Claim codes ............................................................................................................................................................ 9
+Federal, provincial, and territorial claim codes ............................................................................................................................ 9
+Chapter 4 – Glossary .................................................................................................................................................................. 9
+Table 4.1 Glossary ................................................................................................................................................................... 9
+Chapter 5 – Option 1 – Tax formula ........................................................................................................................................ 11
+Formula to calculate Federal Basic Personal Amount (BPAF) .................................................................................................... 12
+Formula to calculate annual taxable income (A) .......................................................................................................................... 13
+Formula to calculate basic federal tax (T3) .................................................................................................................................. 13
+Formula to calculate the annual federal tax payable (T1) ............................................................................................................ 14
+Tax calculation formula for bonuses, retroactive pay increases, and other non-periodic payments ............................................. 15
+Formula to calculate annual basic provincial or territorial tax (T4) ............................................................................................. 16
+Formulas to calculate the annual provincial or territorial tax deduction (T2) .............................................................................. 16
+Alberta ..................................................................................................................................................................................... 16
+British Columbia ..................................................................................................................................................................... 16
+Manitoba .................................................................................................................................................................................. 17
+New Brunswick ....................................................................................................................................................................... 17
+Newfoundland and Labrador ................................................................................................................................................... 17
+Northwest Territories............................................................................................................................................................... 18
+Nova Scotia ............................................................................................................................................................................. 18
+Nunavut ................................................................................................................................................................................... 18
+Ontario ..................................................................................................................................................................................... 19
+Prince Edward Island ............................................................................................................................................................... 20
+Quebec ..................................................................................................................................................................................... 20
+Saskatchewan .......................................................................................................................................................................... 20
+Yukon ...................................................................................................................................................................................... 20
+Formula to calculate the estimated federal and provincial or territorial tax deductions (T) for the pay period............................ 21
+Chapter 6 – Option 2 – Tax formula based on cumulative averaging ................................................................................... 21
+Federal Basic Personal Amount............................................................................................................................................... 21
+Calculation of income .............................................................................................................................................................. 22
+Calculation of tax for the pay period ....................................................................................................................................... 22
+Special situations ..................................................................................................................................................................... 22
+Formula to calculate annual taxable income (A) ..................................................................................................................... 22
+
+--- PDF page 4 of 35 ---
+
+canada.ca/taxes4
+Formula to calculate basic federal tax (T3) ............................................................................................................................. 23
+Formula to calculate the federal tax payable (T1) ................................................................................................................... 24
+Formula to calculate provincial and territorial tax payable (T2) ............................................................................................. 24
+Formula to calculate the estimated federal and provincial or territorial tax deductions (T) for the pay period ....................... 24
+Chapter 7 – Canada Pension Plan (CPP) ................................................................................................................................. 25
+Formula to determine CPP contributions for employees receiving salary or wages ............................................................... 25
+Formula to determine CPP contributions—only for employees paid by commission ............................................................. 25
+Formula to determine CPP contributions for employees who were transferred by their employer from Quebec to a
+location outside Quebec during the year receiving salary or wages..................................................................................... 25
+Formula to determine CPP contributions for employees who were transferred by their employer from Quebec to a
+location outside Quebec during the year paid by commission ............................................................................................. 26
+Special CPP situations ............................................................................................................................................................. 26
+Employee’s CPP basic exemption for various pay periods ..................................................................................................... 27
+Chapter 8 – Employment Insurance (EI) ................................................................................................................................. 27
+Formula to calculate Employment Insurance (EI) premiums .................................................................................................. 27
+Chapter 9 – Rates and amounts ................................................................................................................................................ 28
+Table 9.1 Rates (R, V), income thresholds (A), and constants (K, KP) for 2020 .................................................................... 28
+Table 9.2 Other rates and amounts for 2020 ............................................................................................................................ 29
+Table 9.3 Canada Pension Plan / Quebec Pension Plan 2020 rates and amounts .................................................................... 29
+Table 9.4 Employment Insurance 2020 rates and amounts ..................................................................................................... 29
+Claim codes for 2020 ................................................................................................................................................................... 30
+Table 9.5 Alberta claim codes ................................................................................................................................................. 30
+Table 9.6 British Columbia claim codes .................................................................................................................................. 30
+Table 9.7 Manitoba claim codes .............................................................................................................................................. 31
+Table 9.8 New Brunswick claim codes ................................................................................................................................... 31
+Table 9.9 Newfoundland claim codes...................................................................................................................................... 31
+Table 9.10 Northwest Territories claim codes ......................................................................................................................... 32
+Table 9.11 Nunavut claim codes ............................................................................................................................................. 32
+Table 9.12 Ontario claim codes ............................................................................................................................................... 32
+Table 9.13 Prince Edward Island claim codes ......................................................................................................................... 33
+Table 9.14 Saskatchewan claim codes ..................................................................................................................................... 33
+Table 9.15 Yukon claim codes ................................................................................................................................................ 33
+Table 9.16 Rates (R, V), income thresholds (A) and constants (K, KP) for 2019 ................................................................... 34
+Table 9.17 Other rates and amounts for 2019 .......................................................................................................................... 35
+Table 9.18 Canada Pension Plan / Quebec Pension Plan indexes for 2019 ............................................................................. 35
+Table 9.19 Employment Insurance indexes for 2019 .............................................................................................................. 35
+La version française de cette publication est intitulée Formules pour le calcul des retenues sur la paie – 111e édition.
+
+--- PDF page 5 of 35 ---
+
+canada.ca/taxes 5
+What’s new for January 1, 2020?
+This guide reflects some income tax changes recently announced which, if enacted as proposed, would be effective
+January 1, 2020. At the time of publishing, these proposed changes were not law. We recommend that you use the Payroll
+Deductions Online Calculator (PDOC), the publication T4032 Payroll Deductions Tables, or the publication T4008 Payroll
+Deductions Supplementary Tables, and the formulas in this guide for withholding, starting with your first payroll in 2020.
+Comma-Separated Values (CSV)
+We now offer the most commonly used rates and amounts from this guide in CSV format. To provide this service we have made
+the following changes: the claim code tables previously found in Chapter 3 have been moved to Chapter 9; the threshold tables
+previously found in Chapter 5 have been moved and combined with the threshold tables in Chapter 9; Canada Pension Plan,
+Quebec Pension Plan, and Employment Insurance tables have been added to Chapter 9; and Chapter 9 has been renamed to Rates
+and amounts. The CSV files are available at the T4127 Payroll Deductions Formulas website.
+Federal Changes
+Federal Basic Personal Amount
+The federal Basic Personal Amount (BPAF) has been changed from $12,298.00 to the following formula and the new factors
+BPAF and NI have been created and added to the Chapter 4 — Glossary.
+Either
+Where NI* ≤ $150,473, BPAF = $13,229
+Where $150,473 < NI* ≤ $214,368, BPAF** = $12,298 + [($13,229-$12,298) - ($13,229-$12,298) × Lesser of (1, (NI* –
+$150,473)/($214,368-$150,473))***]
+Or
+Where NI* ≤ $150,473, BPAF = $13,229
+Where $150,473 < NI* < $214,368, BPAF**= $13,229 - (NI* - $150,473) x ($931 / $63,895)***
+Where NI* ≥ $214,368, BPAF = $12,298
+* Variable NI represents Net Income = A + HD
+** If the BPAF has three or more digits after the decimal point, increase the second digit after the decimal point by one if
+the third digit is five or more, and drop the third digit. If the third digit after the decimal point is less than five, drop the third
+digit
+*** Note that there is no rounding on this division
+The federal Claim Code Chart and corresponding CSV file has been removed as the BPAF will be unique to each employee’s
+annual income.
+This new calculation is effective January 1, 2020, the CRA will allow a reasonable time for payroll systems to be brought up-to-
+date with regard to this change.
+For 2020, employers can use a BPAF of $13,229 for all employees, while payroll systems and procedures are updated to fully
+implement the proposed legislation.
+If the employer uses a BPAF of $13,229 for its employees, employees with net income above $150,473 can ask for additional tax
+to be deducted, by completing the form TD1.
+The version of PDOC released on January 20,2020 applies the BPAF as per the proposed legislation.
+Canada Employment Amount Credit (K4)
+The federal K4 calculation has been simplified. Factor CEA has been created and added to the Glossary. It’s value can be found in
+Table 9.2 Other rates and amounts.
+
+--- PDF page 6 of 35 ---
+
+canada.ca/taxes6
+K4 = The lesser of:
+(i) 0.15 × A*; and
+(ii) 0.15 × CEA
+CEA is an indexed amount. See Table 9.2 Other rates and amounts in Chapter 9.
+* For the Canada employment amount, A is the annual gross income from office or employment before deductions. Only include
+the amounts from office or employment, this is the same amount you normally report in box 14 of the T4 slip(s).
+The CRA will allow a reasonable time for payroll systems to be brought up-to-date with this change.
+K2 Glossary Definition
+The Glossary definition of K2 has been updated. Quebec Pension Plan (QPP) and Quebec Parental Insurance Plan (QPIP) are
+removed from the K2 Glossary definition because QPP and QPIP are not involved in the factor calculation of K2.
+Canada Pension Plan (CPP)
+For 2020, the maximum pensionable earnings are $58,700, and the basic exemption for the year is $3,500. The contribution rate
+for employees is 5.25%. The increase in contribution rate is due to the CPP enhancement.
+The maximum an employee can contribute for the year is $2,898.00. The employer’s contribution is an amount equal to the total
+of the employee’s contributions.
+For insurance companies that need the year’s maximum pensionable earnings before rounding, the amount for this year
+is $58,712.35.
+Minor revisions have been made to Factor C to calculate CPP in the situation where an employee is transferred by their employer
+from Quebec to a location outside of Quebec. The Canada Revenue Agency will expect from employers their best efforts to
+comply with this proposed Regulation during 2020 calendar year. Starting January 1, 2021, employers should be fully compliant
+with respect to this Regulation.
+Quebec Pension Plan (QPP)
+For 2020, the QPP contribution rate for employees is 5.70%. The maximum an employee can contribute for the year is $3,146.40.
+The employer’s contribution is an amount equal to the total of the employee’s contributions.
+Employment Insurance (EI)
+For 2020 in Canada (except Quebec), the maximum annual insurable earnings are $54,200 and the EI premium rate is 1.58%, for
+a maximum annual premium of $856.36. In Quebec, the premium rate is 1.20%, for a maximum annual premium of $650.40.
+The Quebec Parental Insurance Plan (QPIP) maximum earnings amount is $387.79 for employees and $543.22 for employers. For
+2020, the maximum insurable earnings is $78,500.
+When an employee changes their province or territory of employment during the year but stays with the same employer, the
+maximum premium for the year will vary based on the province or territory where the first $54,200 of insurable earnings are paid.
+Example:
+An employee makes $30,000 of insurable earnings in Ontario, changes their province of employment to Quebec, and makes an
+extra $40,000 with the same employer. The employee’s maximum premium is calculated as follows:
+In Ontario: $30,000 × 1.58% = $474.00
+In Quebec: $24,200 × 1.20% = $290.40
+Totals: $54,200 = $764.40
+Provincial and territorial tax changes
+You will find below the provincial and territorial tax changes effective January 1, 2020. The current and previous figures for the
+most commonly used rates, amounts, and claim codes can be found in Chapter 9.
+Please note that that there is no change for Quebec, Nova Scotia or Outside Canada.
+Alberta
+Indexation of the Alberta Basic Personal Amount and income thresholds has been suspended for 2020 and future years.
+
+--- PDF page 7 of 35 ---
+
+canada.ca/taxes 7
+British Columbia
+Provincial tax reduction
+The provincial tax reduction for British Columbia is indexed and is calculated as follows:
+ If net income is less than or equal to $21,185, the reduction is equal to the lesser of (i) basic provincial tax and (ii) $476.
+ If net income is more than $21,185 and less than or equal to $34,556, the reduction is equal to the lesser of (i) basic provincial
+tax and (ii) $476 – [(Annual net income – $21,185) × 3.56%].
+ If net income is more than $34,556, there is no reduction.
+Newfoundland and Labrador
+The Newfoundland and Labrador's Temporary Deficit Reduction Levy was in effect from 2016 to 2019. As a result the factor V2
+has been removed from the calculation of T2 for Newfoundland Labrador for 2020.
+Nova Scotia
+Basic Personal Amount factor for Nova Scotia has been renamed BPANS in Chapter 4 - Glossary.
+Ontario
+Ontario provincial surtax
+The Ontario provincial surtax thresholds for 2020 are as follows:
+ If the basic provincial tax payable (T4) is less than or equal to $4,830, the surtax payable (V1) is $0.
+ If the basic provincial tax payable (T4) is more than $4,830 and less than or equal to $6,182, the surtax payable (V1) is 20% of
+the basic provincial tax payable that is over $4,830.
+ If the basic provincial tax payable (T4) is more than $6,182, the surtax payable (V1) is the total of 20% of the basic provincial
+tax payable that is over $4,830 and 36% of the basic provincial tax payable that is over $6,182.
+Provincial tax reduction
+The provincial tax reduction for Ontario has changed as a result of provincial indexing. When possible, you should implement the
+Y factor based on the total of the applicable amounts shown on the employee’s or pensioner’s Form TD1ON. If you do not use
+the Y factor, any over deduction of tax will be adjusted when the individual files an income tax and benefit return.
+The provincial tax reduction amounts for 2020 are as follows:
+ $249 for the basic personal amount;
+ $460 for each dependant under age 19*; and
+ $460 for each dependant with a disability that the employee or pensioner has claimed on Form TD1ON
+* Since the tax reduction for dependants under age 19 is not shown on Form TD1ON, the employee or pensioner will have to
+provide the employer or payer with a written or electronic request to include such amounts.
+The reduction is equal to twice the individual’s personal amounts minus the Ontario income tax. The reduction cannot be more
+than the Ontario income tax otherwise payable. There is no reduction when that tax is more than twice the personal amounts.
+Prince Edward Island
+The basic personal amount, spouse or common-law partner amount, and amount for an eligible dependant are increased with
+administrative relief. The amounts for 2020 are as follows:
+ $10,000 for the basic personal amount;
+ $8,493 for the spouse or common-law partner amount; and
+ $8,493 for the amount for an eligible dependant
+For complete information on personal amounts, see Form TD1PE.
+The CRA will allow a reasonable time for payroll systems to be brought up-to-date with this change.
+Yukon
+The Yukon K4P calculation has been simplified. Factor CEA has been created and added to the Glossary. Its value can be found
+in Table 9.2. Other rates and amounts.
+
+--- PDF page 8 of 35 ---
+
+canada.ca/taxes8
+K4P = The lesser of:
+(i) 0.064 × A*; and
+(ii) 0.064 × CEA
+CEA is an indexed amount. See Table 9.2 Other rates and amounts in Chapter 9.
+* For the Canada employment amount, A is the annual gross income from office or employment before deductions. Only
+include the amounts from office or employment, this is the same amount you normally report in box 14 of the T4 slip(s).
+The CRA will allow a reasonable time for payroll systems to be brought up-to-date with this change.
+Chapter 1 – General information
+Rounding procedures
+For all mathematical calculations in this guide, use the following rounding rules except when we specify otherwise.
+For income tax deductions
+If the figure calculated for an employee’s income tax deduction for a certain pay period has three or more digits after the decimal
+point, increase the second digit after the decimal point by one if the third digit is five or more, and drop the third digit. If the third
+digit after the decimal point is less than five, drop the third digit.
+For Canada Pension Plan (CPP) basic exemption and contributions
+Determine an employee’s basic exemption for a pay period by dividing the annual basic exemption by the number of pay periods
+in the calendar year. If the figure has three or more digits after the decimal point, drop the third digit after the decimal point.
+When the employee’s contribution to CPP for the pay period has three or more digits after the decimal point, increase the second
+digit after the decimal point by one if the third digit is five or more, and drop the third digit. If the third digit after the decimal
+point is less than five, drop the third digit.
+For employment insurance (EI) premiums
+When the employee’s or employer’s EI premium for the pay period has three or more digits after the decimal point, increase the
+second digit by one if the third digit is five or more, and drop the third digit. If the third digit after the decimal point is less than
+five, drop the third digit.
+Tax deductions comparison
+When the tax deductions amount using Option 1 in this guide is compared to the tax deductions amount in the publication T4032,
+Payroll Deductions Tables, the amounts will not necessarily be the same. Any difference results from the fact that the amounts in
+the T4032 are based on:
+(i) the mid-point of the range of remuneration under the “Pay” column;
+(ii) the federal tax credit for Canada Pension Plan or Quebec Pension Plan contributions and employment insurance premium
+deductions is based on the amount determined in item (i); and
+(iii) the midpoint of the “Claim code” amounts on federal, provincial, and territorial TD1 forms is used, except for code 1 where
+the actual basic personal non-refundable tax credit amount is used. For claim code 0, no personal tax credits amounts are used
+when calculating the tax deduction amounts.
+Chapter 2 – Personal tax credits returns (TD1 forms)
+Federal Form TD1, 2020 Personal Tax Credits Return
+Form TD1 was revised for 2020.
+A separate worksheet, TD1-WS, is available for employees or pensioners who want to calculate partial claims for some of the
+federal personal tax credits amounts.
+Indexing of personal amounts
+Each year, certain personal tax credit amounts are indexed based on changes to the consumer price index. Since only some of the
+amounts are indexed, we recommend that you record separately in your payroll records each item shown on the employee’s or
+
+--- PDF page 9 of 35 ---
+
+canada.ca/taxes 9
+pensioner’s TD1 form. This will allow you to automatically increase the applicable indexed claim amounts when necessary. This
+also means you will not have to ask your employees or pensioners to file a new TD1 form when indexing applies.
+You can use the following method to calculate the value of TC or TCP (personal tax credits amount) when indexing applies:
+Description Amount
+1. Enter the total claim amount reported on Form TD1 ....................................................................................... $________
+2. Minus: any pension income amount, tuition fees, and full-time or part-time education amounts claimed
+on Form TD1* ................................................................................................................................................. $________
+3. Amount subject to annual indexing (line 1 minus line 2) ................................................................................ $________
+4. Enter the indexing factor that applies for the year** ....................................................................................... x________
+5. Multiply line 3 by line 4 (rounded to the nearest dollar) ................................................................................. $________
+6. Enter the amount from line 2 (non-indexed amounts) ..................................................................................... $________
+7. Revised factor TC or TCP (total of personal tax credits amounts) (line 5 plus line 6) .................................... $________
+* For Ontario only, do not include any amounts on line 2, since Ontario credits are indexed.
+** Some changes to Yukon personal amounts are not directly attributable to indexing, because they have harmonized
+amounts with the federal values.
+No indexing applies to Nova Scotia, Prince Edward Island, Alberta and Saskatchewan.
+Chapter 3 – Claim codes
+You have to deduct tax according to the claim code. The claim code depends on the total personal amount an employee claims on
+Form TD1.
+Claim code 0
+This code represents no claim amount allowed. If the federal claim code is 0 because the employee is a non-resident, the
+provincial claim code must also be 0.
+Federal, provincial, and territorial claim codes
+The claim amounts that correspond to the federal claim codes are different than the claim amounts that correspond to the
+provincial or territorial claim codes. In Chapter 9 you will find a listing of claim codes and amount ranges.
+Note: Due to the proposed changes to the Federal basic personal amount (BPAF) and existing Nova Scotia legislation to the Basic
+Personal Amount (BPANS), the Claim Code charts cannot be produced with ranges, as was previously done. Accordingly, the
+Federal and Nova Scotia Claim Code Charts will not be produced as the BPAF and BPANS will be unique to each employee’s
+annual income.
+The Federal Claim Code chart income range is $2,350 between all claim codes once the BPAF has been calculated. For example,
+if the Federal BPAF is $12,298 for a particular employee, then the claim code 2 range would be $12,298 – $14,648 and so forth
+up to claim code 10.
+The Nova Scotia Claim Code chart income range is $1,600 between all claim codes once the BPANS has been calculated. For
+example, if Nova Scotia’s BPANS is $11,481 for a particular employee, then the claim code 2 range would be $11,481 – $13,081
+and so forth up to claim code 10.
+Chapter 4 – Glossary
+Table 4.1 Glossary
+Factor Meaning (for complete details, see the formulas)
+A Annual taxable income
+B Gross bonus, retroactive pay increase, vacation pay when vacation is not taken, accumulated overtime payment or
+other non-periodic payment
+B1 Gross bonuses, retroactive pay increases, vacation pay when vacation is not taken, accumulated overtime payments
+or other non-periodic payments year-to-date (before the pay period)
+BPAF Federal Basic Personal Amount
+
+--- PDF page 10 of 35 ---
+
+canada.ca/taxes10
+Factor Meaning (for complete details, see the formulas)
+BPANS Basic Personal Amount for Nova Scotia
+C Canada (or Quebec) Pension Plan contributions for the pay period
+CEA Canada Employment Amount, a non refundable tax credit used in the calculation for K4 and K4P
+D Employee’s year-to-date Canada Pension Plan contribution with the employer (cannot be more than the annual
+maximum)
+DQ Employee’s year-to-date Quebec Pension Plan contribution with the employer (cannot be more than the annual
+maximum)
+D1 Employee’s year-to-date employment insurance premium with the employer
+E Total commission expenses deductions reported on Form TD1X
+EI Employment insurance premiums for the pay period
+F Payroll deductions for the pay period for employee contributions to a registered pension plan (RPP) for current and
+past services, a registered retirement savings plan (RRSP), to a pooled registered pension plan (PRPP), or a
+retirement compensation arrangement (RCA). For tax deduction purposes, employers can deduct amounts
+contributed to an RPP, RRSP, PRPP, or RCA by or on behalf of an employee to determine the employee’s taxable
+income
+F1 Annual deductions such as child care expenses and support payments, requested by an employee or pensioner and
+authorized by a tax services office or tax centre
+F2 Alimony or maintenance payments required by a legal document dated before May 1, 1997, to be payroll-deducted
+authorized by a tax services office or tax centre
+F3 Employee registered pension plan or registered retirement savings plan contributions deducted from the current
+non-periodic payment. You can also use this field or design another to apply other tax-deductible amounts to the
+non-periodic payment, such as union dues
+F4 Employee registered pension plan or registered retirement savings plan contributions deducted from the year-to-date
+non-periodic payments. You can also use this field or design another to apply other tax-deductible amounts to the
+non-periodic payment, such as union dues
+G Gross commission amount including gross salary at the time of payment, plus any taxable benefits for
+commission-remunerated employees who have filled out Form TD1X. When an employee has not filed Form TD1X,
+tax is calculated the regular way
+HD Annual deduction for living in a prescribed zone, as shown on Form TD1
+I Gross remuneration for the pay period. This includes overtime earned and paid in the same pay period, pension
+income, qualified pension income, and taxable benefits, but does not include bonuses, retroactive pay increases, or
+other non-periodic payments
+I1 Total remuneration for the year reported on Form TD1X. This include commission payments, salary (where
+applicable), non-periodic payments, and taxable benefits
+IE Insurable earnings for the pay period including insurable taxable benefits, bonuses, and retroactive pay increases
+K Federal constant. The constant is the tax overcharged when applying the 20.5%, 26%, 29%, and 33% rates to the
+annual taxable income A
+KP Provincial or territorial constant
+K1 Federal non-refundable personal tax credit (the lowest federal tax rate is used to calculate this credit)
+K1P Provincial or territorial non-refundable personal tax credit (the lowest tax rate is used to calculate this credit)
+K2 Federal Canada Pension Plan contributions and employment insurance premiums tax credits for the year (the lowest
+federal tax rate is used to calculate this credit). Note: If an employee has already contributed the maximum CPP and
+EI, for the year with the employer, use the maximum CPP and EI deduction to determine the credit for the rest of the
+year. If, during the pay period in which the employee reaches the maximum, the CPP and EI, when annualized, is
+less than the annual maximum, use the maximum annual deduction(s) in that pay period
+K2P Provincial or territorial Canada Pension Plan contributions and employment insurance premiums tax credits for the
+year (the lowest provincial or territorial tax rate is used to calculate this credit). If an employee reaches the maximum
+CPP or EI for the year with an employer, the instructions in the note for the K2 factor also apply to the K2P factor.
+For employees paid by commission, use the federal K2 formula for commissions and replace the lowest federal rate
+in the K2 formula with the lowest provincial or territorial tax rate
+K2Q Quebec Pension Plan contributions, employment insurance premiums, and Quebec Parental Insurance Plan
+premiums federal tax credits for the year (the lowest federal tax rate is used to calculate this credit)
+K3 Other federal tax credits (such as medical expenses and charitable donations) authorized by a tax services office or
+tax centre
+
+--- PDF page 11 of 35 ---
+
+canada.ca/taxes 11
+Factor Meaning (for complete details, see the formulas)
+K3P Other provincial or territorial tax credits (such as medical expenses and charitable donations) authorized by a tax
+services office or tax centre
+K4 Canada employment amount credit (the lowest federal tax rate is used to calculate this credit)
+K4P Provincial or territorial Canada employment amount credit (only applies to Yukon)
+L Additional tax deductions for the pay period requested by the employee or pensioner as shown on Form TD1
+LCF Federal labour-sponsored funds tax credit
+LCP Provincial or territorial labour-sponsored funds tax credit (only applies to New Brunswick, Newfoundland
+and Labrador, Nova Scotia, Saskatchewan, British Columbia, and Yukon)
+M Accumulated federal and provincial or territorial tax deductions (if any) to the end of the last pay period
+M1 Year-to-date tax deducted on all payments included in B year-to-date
+N The number of days since the last commission payment. The minimum basic exemption amount of $67.30 is
+included in the formula in line with CPP legislation
+NI Net income for the year
+P The number of pay periods in the year
+PI Pensionable income for the pay period, or the gross income plus any taxable benefits for the pay period, including
+bonuses and retroactive pay increases where applicable
+PR The number of pay periods left in the year (including the current pay period)
+R Federal tax rate that applies to the annual taxable income A
+S Provincial tax reduction (only applies to Ontario and British Columbia)
+S1 Annualizing factor
+T Estimated federal and provincial or territorial tax deductions for the pay period
+T1 Annual federal tax deduction
+T2 Annual provincial or territorial tax deduction (except Quebec)
+T3 Annual basic federal tax
+T4 Annual basic provincial or territorial tax
+TB Tax deductions, i.e., bonuses or retroactive pay increases, payable now
+TC “Total claim amount” reported on federal Form TD1. If Form TD1 is not filed by the employee or pensioner, TC is the
+basic personal amount, and for non-resident individuals, TC is $0. If the claim code is E, T = $0. If the province is
+Ontario, even if the claim code is E, the Ontario Health Premium is payable on annual income over $20,000
+TCP “Total claim amount” reported on the provincial or territorial Form TD1. If that form is not filed, TCP is the provincial
+or territorial basic personal amount
+U1 Union dues for the pay period paid to a trade union, an association of public servants, or dues required under the law
+of a province to a parity or advisory committee or similar body
+V Provincial or territorial tax rate for the year (does not apply to Quebec, outside Canada, or in Canada beyond the
+limits of any province or territory)
+V1 Provincial or territorial surtax calculated on the basic provincial or territorial tax (only applies to Prince Edward Island
+and Ontario)
+V2 Additional tax calculated on taxable income (only applies to the Ontario Health Premium)
+Y Additional provincial or territorial tax reduction based on applicable amounts reported on the provincial or territorial
+Form TD1
+YTD Year-to-date
+All factor definitions appear only in the Glossary unless further details are required in specific situations.
+1
+Chapter 5 – Option 1 – Tax formula
+This option determines the federal and provincial or territorial tax deductions on salary, wages, taxable benefits, pension income,
+commissions, and other periodic payments. This option can also be used to calculate the tax on a bonus or other non-periodic
+payment.
+
+--- PDF page 12 of 35 ---
+
+canada.ca/taxes12
+We use Option 1, with the exception of a few factors, to determine the tax deduction amounts in the publications T4032, Payroll
+Deductions Tables, and T4008, Payroll Deductions Supplementary Tables, for each province and territory, as well as for Canada
+beyond the limits of any province or territory and outside Canada.
+Outline of Option 1
+In general, the Option 1 steps are as follows:
+1. Determine the net taxable income for the pay period (pay minus allowable deductions) and multiply it by the number of pay
+periods in the year to get an estimated annual taxable income amount. This annual taxable income amount is factor A.
+2. Calculate the basic federal tax on the estimated annual taxable income, after allowable federal personal tax credits. The basic
+federal tax is factor T3.
+3. Calculate the annual federal tax payable. This is factor T1.
+4. Calculate the basic provincial or territorial tax on the estimated annual taxable income, after allowable provincial or territorial
+personal tax credits. The annual basic provincial or territorial tax is factor T4.
+5. Calculate the annual provincial or territorial tax deduction. This is factor T2.
+6. To get the estimated federal and provincial or territorial tax deductions for a pay period, add the federal and provincial or
+territorial tax, and divide the result by the number of pay periods. This is factor T.
+Special rules apply to determine the annual income for employees paid by commissions. A calculation is provided to determine
+the tax deductions for bonuses, retroactive pay increases, and other non-periodic payments.
+Note
+If an employee or a pensioner has income from another source from which no tax has been deducted (for example, investment
+income or support payments), they could have a tax liability when they file an income tax and benefit return for the year. The
+employee or pensioner can ask for more tax deductions, factor L, using Form TD1.
+Formula to calculate Federal Basic Personal Amount (BPAF)
+The federal Basic Personal Amount (BPAF) has been changed from $12,298.00 to the following formula.
+Either
+Where NI* ≤ $150,473, BPAF = $13,229
+Where $150473 < NI* ≤ $214,368, BPAF** = $12,298 + [($13,229-$12,298) - ($13,229-$12,298) × Lesser of (1, (NI* –
+$150,473)/($214,368-$150,473))***]
+Or
+Where NI* ≤ $150,473, BPAF = $13,229
+Where $150,473 < NI* < $214,368, BPAF**= $13,229 - (NI* - $150,473) x ($931 / $63,895)***
+Where NI* ≥ $214,368, BPAF = $12,298
+* Variable NI represents Net Income = A + HD
+** If the BPAF has three or more digits after the decimal point, increase the second digit after the decimal point by one if
+the third digit is five or more, and drop the third digit. If the third digit after the decimal point is less than five, drop the third
+digit
+*** Note that there is no rounding on this division
+This new calculation is effective January 1, 2020, the CRA will allow a reasonable time for payroll systems to be brought up-to-
+date with regard to this change.
+For 2020, employers can use a BPAF of $13,229 for all employees, while payroll systems and procedures are updated to fully
+implement the proposed legislation.
+If the employer uses a BPAF of $13,229 for its employees, employees with net income above $150,473 can ask for additional tax
+to be deducted, by completing the form TD1.
+
+--- PDF page 13 of 35 ---
+
+canada.ca/taxes 13
+Formula to calculate annual taxable income (A)
+A = Annual taxable income
+= [P × (I – F – F2 – U1 )] – HD – F1
+If the result is negative, T = L.
+Only for employees paid by commission:
+A = I1 – F* – F2* – U1* – HD – F1 – E
+If the result is negative, T = L.
+* Estimated deduction amounts for the year. For registered retirement savings plan (RRSP) contributions included
+in F, you will need to find out from your employee paid by commission the estimated or expected annual
+deduction. We recommend that you caution employees not to exceed their RRSP contribution limit for the year.
+P = The number of pay periods in the year:
+Weekly P = 52 (or 53 where applicable)
+Biweekly P = 26 (or 27 where applicable)
+Semi-monthly P = 24
+Monthly P = 12
+Other P = 10, 13, 22, or any other number of pay periods for the year
+F2 = In situations where a garnishment or a similar order of a court or competent tribunal states that the alimony or
+maintenance payment cannot be more than a certain percentage of the employee’s net salary (net salary as defined in
+the garnishment or order), more calculations may be required, as follows:
+1. Calculate the tax deduction amount and the net salary amount using the alimony or maintenance amount shown
+in the garnishment or order.
+2. Determine the alimony or maintenance payment to be withheld (F2). This will be either the maximum allowable
+as a percentage of the employee’s net salary calculated in 1 or the amount shown in the garnishment or order,
+whichever is less.
+3. Determine the tax deduction for the pay period using the F2 amount in 2.
+F1 = If the F1 amount is implemented after the first pay period in the year, F1 must be adjusted using the following
+formula:
+(P × F1) / PR
+Formula to calculate basic federal tax (T3)
+T3 = Annual basic federal tax
+= (R × A) – K – K1 – K2 – K3 – K4
+If the result is negative, T3 = $0.
+Only for employees in Quebec:
+(R × A) – K – K1 – K2Q – K3 – K4
+If the result is negative, T3 = $0.
+R and K are based on 2020 index values for A see the Rates (R, V), income thresholds (A), and constants (K,
+KP) for 2020 Table 9.1 in Chapter 9.
+K1 = 0.15 × TC
+K2 = [(0.15 × (P x C, maximum $2,898.00)) + (0.15 x (P × EI, maximum $856.36))]
+Only for employees in Quebec:
+K2Q = Quebec Pension Plan contributions, employment insurance premiums, and Quebec Parental Insurance
+Plan premiums federal tax credits for the year
+= [(0.15 × (P × C, maximum $3,146.40)) + (0.15 × (P × EI, maximum $650.40)) +
+(0.15 × (P × IE × 0.00494, maximum $387.79))]*
+In either case, for the rest of the pay periods in the year, (P × C), (P × EI), or (P × IE × 0.00494) (as applicable) is
+replaced by the maximum annual deduction(s). This modification ensures that the employee will get the maximum
+CPP, EI, and QPIP tax credit for the rest of the pay periods in the year.
+
+--- PDF page 14 of 35 ---
+
+canada.ca/taxes14
+If you want to use a year-to-date method to calculate CPP, EI, and QPIP federal tax credits, (P × C) and (P × EI) can
+be modified as follows:
+(P × C) is changed to the lesser of:
+(i) $2,898.00; and
+(ii) Year-to-date C + (PR × C)
+(P × EI) is changed to the lesser of:
+(i) $856.36; and
+(ii) Year-to-date EI + (PR × EI)
+Only for employees in Quebec:
+(P × EI) is changed to the lesser of:
+(i) $650.40; and
+(ii) Year-to-date EI + (PR × EI)
+(P × IE × 0.00494) is changed to the lesser of:
+(i) $387.79; and
+(ii) Year-to-date QPIP + (PR × IE × 0.00494)
+Only for employees paid by commission:
+K2 = [(0.15 × (0.0525 × (I1 – $3,500)*, maximum $2,898.00)) + (0.15 × (0.0158 × I1, maximum $856.36))]
+* If the resulting amount is negative, enter $0.
+Only for employees in Quebec:
+K2Q = [(0.15 × (0.0570 × (I1 – $3,500)*, maximum $3,146.40)) +
+(0.15 × (0.0120 × I1, maximum $650.40)) + (0.15 × (0.00494 × I1, maximum $387.79))]
+* If the resulting amount is negative, enter $0.
+Note
+The preceding is subject to the rules in Chapter 7 – “Canada Pension Plan (CPP)” and Chapter 8 – “Employment
+Insurance (EI)” of this document and the instructions in Guide T4001 Employers’ Guide – Payroll Deductions and
+Remittances.
+K3 = If the K3 amount is implemented after the first pay period in the year, K3 must be adjusted using the following
+formula:
+(P × K3) / PR
+K4 = The lesser of:
+(i) 0.15 × A*; and
+(ii) 0.15 × CEA
+CEA is an indexed amount. See Table 9.2 Other rates and amounts in Chapter 9.
+* For the Canada employment amount, A is the annual gross income from office or employment before deductions. Only include
+the amounts from office or employment, this is the same amount you normally report in box 14 of the T4 slip (s).
+Formula to calculate the annual federal tax payable (T1)
+T1 = Annual federal tax deduction, except for employees in Quebec, outside Canada, and in Canada beyond the limits of
+any province or territory
+= (T3 – LCF)*
+* If the result is negative, enter $0.
+Only for employees in Quebec:
+T1 = [(T3 – LCF)* – (0.165 × T3)]*
+* If the result is negative, enter $0.
+Only for employees outside Canada and in Canada beyond the limits of any province or territory:
+T1 = [T3 + (0.48 × T3) – LCF]*
+* If result is negative, enter $0.
+LCF = The lesser of:
+(i) $750; and
+(ii) 15% of the amount deducted or withheld during the year for the acquisition, by the employee, of approved
+shares of the capital stock of a prescribed labour-sponsored venture capital corporation
+
+--- PDF page 15 of 35 ---
+
+canada.ca/taxes 15
+Note
+If the shares are invested in a registered retirement savings plan, the amount invested can be used to determine the
+annual taxable income amount.
+Tax calculation formula for bonuses, retroactive pay increases, and other
+non-periodic payments
+Introduction
+Generally, the tax on a bonus (or retroactive pay increase) is calculated by finding the tax on the total of regular annual income
+plus any previous bonuses plus the current bonus and subtracting the tax on the total of regular annual income plus any previous
+bonuses. The difference will be the tax on the current bonus.
+In the optional year-to-date method outlined below, instead of annualizing the current income, use year-to-date income values and
+year-to-date deductions as the annual income with and without the bonus. In either case the tax on the bonus is as follows:
+TB = The difference between:
+(i) the annual tax amount (T1 + T2) based on the instructions in Step 1 below; and
+(ii) the annual tax amount (T1 + T2) based on the instructions in Step 2 below
+(1) Regular bonus calculation
+Step 1
+Determine the annual tax (T1 + T2) based on the annual taxable income (factor A) with the non-periodic payment payable now.
+The formula to calculate factor A is as follows:
+A = ([P × (I – F – F2 – U1)] – HD – F1)* + (B – F3)** + (B1 – F4)**
+* If the result is negative, enter $0.
+** Result cannot be negative, and result cannot be negative after deducting CPP and EI.
+Note
+If the result above is $5,000 or less, deduct 15% tax (10% in Quebec) from the bonus or retroactive pay increase.
+Step 2
+Determine the annual tax (T1 + T2) based on the annual taxable income (factor A) without the non-periodic payment payable
+now. The formula to calculate factor A is as follows:
+A = ([P × (I – F – F2 – U1)] – HD – F1)* + (B1 – F4)**
+* If the result is negative, enter $0.
+** Result cannot be negative, and result cannot be negative after deducting CPP and EI.
+If there is no current I, use the most recent I.
+(2) Year-to-date bonus calculation (optional)
+Step 1
+Determine the annual tax (T1 + T2) based on the annual taxable income (factor A) with the non-periodic payment payable now.
+The annual taxable income (factor A) is based on a year-to-date concept, plus the estimated income for the rest of the pay periods
+in the year. YTD means year-to-date (before this pay period). The formula to calculate factor A is as follows:
+A = [(IYTD – FYTD – F2YTD – U1YTD) + (PR × (I – F – F2 – U1)) – F1 – HD]* + (B – F3)** + (B1 – F4)**
+* If the result is negative, enter $0.
+** Result cannot be negative, and result cannot be negative after deducting CPP and EI.
+Note
+If the result above is $5,000 or less, deduct 15% tax (10% in Quebec) from the bonus or retroactive pay increase.
+Step 2
+A = [(IYTD – FYTD – F2YTD – U1YTD) + (PR × (I – F – F2 – U1)) – F1 – HD]* + (B1 – F4)**
+* If the result is negative, enter $0.
+** Result cannot be negative, and result cannot be negative after deducting CPP and EI.
+Example for year-to-date bonus calculation method
+In this example, an employee got a retroactive pay increase from $1,000 to $1,100 per week that applies to 25 weeks. Therefore, a
+retroactive pay increase payment of $2,500 is payable now. $1,000 will be directed to the employee’s RRSP. Thirty pay periods
+have passed and 22 pay periods remain in the year. Year-to-date income is $30,000, year-to-date RPP is $1,350, and year-to-date
+union dues are $150. The current income is $1,100 with RPP withheld of $45 and union dues of $5. The employee received a
+previous bonus of $1,000 with only CPP, EI, and tax withheld from it.
+
+--- PDF page 16 of 35 ---
+
+canada.ca/taxes16
+Step 1
+A = Annual taxable income with the non-periodic payment payable now
+= [(IYTD – FYTD – F2YTD – U1YTD) + (PR × (I – F – F2 – U1)) – F1 – HD]* + (B – F3)** + (B1 – F4)**
+= [($30,000 – $1,350 – $0 – $150) + (22 × ($1,100 – $45 – $0 – $5)) – $0 – $0] + ($2,500 – $1,000) + ($1,000 – $0)
+= $28,500 + (22 × $1,050) + $1,500 + $1,000
+= $54,100
+Step 2
+A = Annual taxable income without the non-periodic payment payable now
+= [(IYTD – FYTD – F2YTD – U1YTD) + (PR × (I – F – F2 – U1)) – F1 – HD]* + (B1 – F4)**
+= [($30,000 – $1,350 – $0 – $150) + (22 × ($1,100 – $45 – $0 – $5)) – $0 – $0] + ($1,000 – $0)
+= $28,500 + (22 × $1,050) + $1,000
+= $52,600
+After you have calculated the annual taxable income, factor A, in steps 1 and 2, calculate the factors T1 and T2 in the same way
+as for regular remuneration.
+Note
+The formula above can be used to calculate the tax deductions on non-periodic payments such as accumulated overtime not
+paid in the same pay period earned, paid vacation not taken by the employee, and bonuses.
+Formula to calculate annual basic provincial or territorial tax (T4)
+T4 = (V × A) – KP – K1P – K2P – K3P – K4P
+If the result is negative, T4 = $0.
+Formulas to calculate the annual provincial or territorial tax deduction (T2)
+T2 = T4 + V1 + V2 – S – LCP
+If the result is negative, T2 = $0.
+Only for employees in Quebec:
+T2 = $0
+Only for employees outside Canada and in Canada beyond the limits of any province or territory:
+T2 = $0
+Alberta
+T2 = T4 + V1 – S – LCP
+If the result is negative, T2 = $0.
+Where:
+T4 = (V × A) – KP – K1P – K2P – K3P
+V and KP are based on 2020 values for A see the Rates (R, V), income thresholds (A), and constants (K, KP) for
+2020 Table 9.1 in Chapter 9.
+K1P = 0.10 × TCP
+K2P = [(0.10 × (P × C, maximum $2,898.00)) + (0.10 × (P × EI, maximum $856.36))]
+V1, S, and LCP = $0
+British Columbia
+T2 = T4 + V1 – S – LCP
+If the result is negative, T2 = $0.
+Where:
+T4 = (V × A) – KP – K1P – K2P – K3P
+V and KP are based on 2020 index values for A see the Rates (R, V), income thresholds (A), and constants (K,
+KP) for 2020 Table 9.1 in Chapter 9.
+K1P = 0.0506 × TCP
+K2P = [(0.0506 × (P × C, maximum $2,898.00)) + (0.0506 × (P × EI, maximum $856.36))]
+
+--- PDF page 17 of 35 ---
+
+canada.ca/taxes 17
+V1 = $0
+S = Where A ≤ $21,185, S is equal to the lesser of:
+(i) T4; and
+(ii) $476
+= Where $21,185 < A≤ $34,556, S is equal to the lesser of:
+(i) T4; and
+(ii) $476 – [(A – $21,185) × 3.56%]
+= Where A > $34,556
+= $0
+LCP = The lesser of:
+(i) $2,000; and
+(ii) 15% of the amount deducted or withheld during the year for the acquisition by the employee of approved shares
+of the capital stock of a prescribed labour-sponsored venture capital corporation
+Manitoba
+T2 = T4 + V1 – S – LCP
+If the result is negative, T2 = $0.
+Where:
+T4 = (V × A) – KP – K1P – K2P – K3P
+V and KP are based on 2020 index values for A see the Rates (R, V), income thresholds (A), and constants (K,
+KP) for 2020 Table 9.1 in Chapter 9.
+K1P = 0.108 × TCP
+K2P = [(0.108 × (P × C, maximum $2,898.00)) + (0.108 × (P × EI, maximum $856.36))]
+V1, S, and LCP = $0
+New Brunswick
+T2 = T4 + V1 – S – LCP
+If the result is negative, T2 = $0.
+Where:
+T4 = (V × A) – KP – K1P – K2P – K3P
+V and KP are based on 2020 index values for A see the Rates (R, V), income thresholds (A), and constants (K,
+KP) for 2020 Table 9.1 in Chapter 9.
+K1P = 0.0968 × TCP
+K2P = [(0.0968 × (P × C, maximum $2,898.00)) + (0.0968 × (P × EI, maximum $856.36))]
+V1 and S = $0
+LCP = The lesser of:
+(i) $2,000; and
+(ii) 20% of the amount deducted or withheld during the year for the acquisition by the employee of approved shares
+of the capital stock of a prescribed labour-sponsored venture capital corporation
+Newfoundland and Labrador
+T2 = T4 + V1 – S – LCP
+If the result is negative, T2 = $0.
+Where:
+T4 = (V × A) – KP – K1P – K2P – K3P
+V and KP are based on 2020 index values for A see the Rates (R, V), income thresholds (A), and constants (K,
+KP) for 2020 Table 9.1 in Chapter 9.
+K1P = 0.087 × TCP
+
+--- PDF page 18 of 35 ---
+
+canada.ca/taxes18
+K2P = [(0.087 × (P × C, maximum $2,898.00)) + (0.087 × (P × EI, maximum $856.36))]
+V1 and S = $0
+LCP = The lesser of:
+(i) $2,000; and
+(ii) 20% of the amount deducted or withheld during the year for the acquisition by the employee of approved shares
+of the capital stock of a prescribed labour-sponsored venture capital corporation
+Northwest Territories
+T2 = T4 + V1 – S – LCP
+If the result is negative, T2 = $0.
+Where:
+T4 = (V × A) – KP – K1P – K2P – K3P
+V and KP are based on 2020 index values for A see the Rates (R, V), income thresholds (A), and constants (K,
+KP) for 2020 Table 9.1 in Chapter 9.
+K1P = 0.059 × TCP
+K2P = [(0.059 × (P × C, maximum $2,898.00)) + (0.059 × (P × EI, maximum $856.36))]
+V1, S, and LCP = $0
+Nova Scotia
+BPANS = Where A ≤ $25,000, BPANS is equal to $11,481;
+Where $25,000 < A < $75,000, BPANS is equal to:
+$11,481 – [(A – $25,000) × 6%)];*
+Where A ≥ $75,000, BPANS is equal to $8,481
+* If Nova Scotia’s basic personal amount (BPANS) has three or more digits after the decimal point, increase the second digit by
+one if the third digit is five or more, and drop the third digit. If the third digit after the decimal point is less than five, drop the
+third digit.
+T2 = T4 + V1 – S – LCP
+If the result is negative, T2 = $0.
+Where:
+T4 = (V × A) – KP – K1P – K2P – K3P
+V and KP are based on 2020 index values for A see the Rates (R, V), income thresholds (A), and constants (K,
+KP) for 2020 Table 9.1 in Chapter 9.
+K1P = 0.0879 × TCP
+K2P = [(0.0879 × (P × C, maximum $2,898.00)) + (0.0879 × (P × EI, maximum $856.36))]
+V1 and S = $0
+LCP = The lesser of:
+(i) $2,000; and
+(ii) 20% of the amount deducted or withheld during the year for the acquisition by the employee of approved shares
+of the capital stock of a prescribed labour-sponsored venture capital corporation
+Nunavut
+T2 = T4 + V1 – S – LCP
+If the result is negative, T2 = $0.
+Where:
+T4 = (V × A) – KP – K1P – K2P – K3P
+V and KP are based on 2020 index values for A see the Rates (R, V), income thresholds (A), and constants (K,
+KP) for 2020 Table 9.1 in Chapter 9.
+K1P = 0.040 × TCP
+
+--- PDF page 19 of 35 ---
+
+canada.ca/taxes 19
+K2P = [(0.040 × (P × C, maximum $2,898.00)) + (0.040 × (P × EI, maximum $856.36))]
+V1, S, and LCP = $0
+Ontario
+T2 = T4 + V1 + V2 – S – LCP
+If the result is negative, T2 = $0.
+Where:
+T4 = (V × A) – KP – K1P – K2P – K3P
+V and KP are based on 2020 index values for A see the Rates (R, V), income thresholds (A), and constants (K,
+KP) for 2020 Table 9.1 in Chapter 9.
+K1P = 0.0505 × TCP
+K2P = [(0.0505 × (P × C, maximum $2,898.00)) + (0.0505 × (P × EI, maximum $856.36))]
+V1 = Where T4 ≤ $4,830
+V1 = $0
+Where $4,830 < T4 ≤ $6,182
+V1 = 0.20 × (T4 – $4,830)
+Where T4 > $6,182
+V1 = 0.20 × (T4 – $4,830) + 0.36 × (T4 – $6,182)
+V2 = Where A ≤ $20,000, V2 = $0
+Where $20,000 < A ≤ $36,000, V2 = the lesser of:
+(i) $300; and
+(ii) 0.06 × (A – $20,000)
+Where $36,000 < A ≤ $48,000, V2 = the lesser of:
+(i) $450; and
+(ii) $300 + (0.06 × (A – $36,000))
+Where $48,000 < A ≤ $72,000, V2 = the lesser of:
+(i) $600; and
+(ii) $450 + (0.25 × (A – $48,000))
+Where $72,000 < A ≤ $200,000, V2 = the lesser of:
+(i) $750; and
+(ii) $600 + (0.25 × (A – $72,000))
+Where A > $200,000, V2 = the lesser of:
+(i) $900; and
+(ii) $750 + (0.25 × (A – $200,000))
+Note
+The Ontario Health Premium (OHP) is not reduced by the Ontario tax reduction (factor S). The OHP is not related to
+the employer health tax for Ontario. Include the OHP in the total federal and provincial tax deducted on T4 slips.
+S = The lesser of:
+(i) T4 + V1; and
+(ii) [2 × ($249 + Y)] – [T4 + V1]
+If the result is negative, S = $0.
+Where:
+Y = The total of the following amounts:
+ $460 multiplied by the number of disabled dependants as shown on Form TD1ON; and
+ $460 multiplied by the number of dependants under age 19 for which the employee or pensioner has made a
+written or electronic request
+Note
+If Y is not used, any over deduction of tax will be considered when the individual files their income tax and benefit
+return. When possible, use the Y factor.
+LCP = $0
+
+--- PDF page 20 of 35 ---
+
+canada.ca/taxes20
+Prince Edward Island
+T2 = T4 + V1 – S – LCP
+If the result is negative, T2 = $0.
+Where:
+T4 = (V × A) – KP – K1P – K2P – K3P
+V and KP are based on 2020 index values for A see the Rates (R, V), income thresholds (A), and constants (K,
+KP) for 2020 Table 9.1 in Chapter 9.
+K1P = 0.098 × TCP
+K2P = [(0.098 × (P × C, maximum $2,898.00)) + (0.098 × (P × EI, maximum $856.36))]
+V1 = Where T4 ≤ $12,500
+V1 = $0
+Where T4 > $12,500
+V1 = 0.10 × (T4 – $12,500)
+S and LCP = $0
+Quebec
+In this publication, we refer to the annual provincial or territorial tax deduction as factor T2. However, factor T2 does not apply in
+the province of Quebec. Quebec administers its own provincial income tax and Quebec Pension Plan contributions. If you have
+questions about the formulas for Quebec, please contact Revenu Québec:
+Revenu Québec
+3800, rue de Marly
+Québec (Québec) G1X 4A5
+Telephone: ............................... 1-800-567-4692
+Outside Canada: ....................... 1-418-659-4692
+Quebec employers whose employees receive income from tips and gratuities should review the section called “Calculating payroll
+deductions for employees in the hotel and restaurant business in Quebec,” in the publication T4032QC, Payroll Deductions
+Tables.
+Saskatchewan
+T2 = T4 + V1 – S – LCP
+If the result is negative, T2 = $0.
+Where:
+T4 = (V × A) – KP – K1P – K2P – K3P
+V and KP are based on 2020 index values for A see the Rates (R, V), income thresholds (A), and constants (K,
+KP) for 2020 Table 9.1 in Chapter 9.
+K1P = 0.105 × TCP
+K2P = [(0.105 × (P × C, maximum $2,898.00)) + (0.105 × (P × EI, maximum $856.36))]
+V1 and S = $0
+LCP = The lesser of:
+(i) $875; and
+(ii) 17.5% of the amount deducted or withheld during the year for the acquisition by the employee of approved
+shares of the capital stock of a prescribed labour-sponsored venture capital corporation
+Yukon
+T2 = T4 + V1 – S – LCP
+If the result is negative, T2 = $0.
+Where:
+T4 = (V × A) – KP – K1P – K2P – K3P – K4P
+V and KP are based on 2020 index values for A see the Rates (R, V), income thresholds (A), and constants (K,
+KP) for 2020 Table 9.1 in Chapter 9.
+K1P = 0.064 × TCP
+
+--- PDF page 21 of 35 ---
+
+canada.ca/taxes 21
+K2P = [(0.064 × (P × C, maximum $2,898.00)) + (0.064 × (P × EI, maximum $856.36))]
+K4P = The lesser of:
+(i) 0.064 × A*; and
+(ii) 0.064 × CEA
+CEA is an indexed amount. See Table 9.2 Other rates and amounts in Chapter 9.
+* For the Canada employment amount, A is the annual gross income from office or employment before deductions. Only include
+the amounts from office or employment, this is the same amount you normally report in box 14 of the T4 slip (s).
+V1 = $0
+S = $0
+LCP = The lesser of:
+(i) $1,250; and
+(ii) 25% of the amount deducted or withheld during the year for the acquisition by the employee of approved shares
+of the capital stock of a prescribed labour-sponsored venture capital corporation
+Outside Canada and in Canada beyond the limits of any province or territory:
+V, V1, V2, S, and LCP = $0
+Formula to calculate the estimated federal and provincial or territorial tax
+deductions (T) for the pay period
+T = [(T1 + T2) / P] + L
+You can round the resulting amount to the nearest multiple of $0.05 or $0.01.
+Only for employees in Quebec, outside Canada, and in Canada beyond the limits of any province or territory:
+T = (T1 / P) + L
+You can round the resulting amount to the nearest multiple of $0.05 or $0.01.
+For employees paid by commission who have filled out Form TD1X:
+T = The tax to be deducted on the current commission payment (factor G)
+= [(T1 + T2) / (I1 / (G – F – F1))] + L
+You can round the resulting amount to the nearest multiple of $0.05 or 0.01.
+Note: The F and F1 amounts used here are additional amounts that were not known or considered when
+calculating the Annual taxable income (A) variable.
+Chapter 6 – Option 2 – Tax formula based on cumulative averaging
+Option 2 formulas are intended for employees whose pay varies considerably from one pay period to the next. In the Option 2
+formulas, the amount of tax to be deducted is based on the projected annual taxable income (including bonuses) compared to the
+amount of tax already deducted in the year. Option 2 works well for employees who are employed for a full calendar year. If the
+employee’s income is relatively stable for each pay period, there will not be much difference in the tax deductions with Option 2
+compared to Option 1.
+The following sections explain in detail how Option 2 works. The initials YTD used in this option means year-to-date and
+applies to payments or deductions for the current year, but not the payment payable now and the deductions for the current pay
+period.
+Federal Basic Personal Amount
+The federal Basic Personal Amount (BPAF) has been changed from $12,298.00 to the following formula:
+Either
+Where NI* ≤ $150,473, BPAF = $13,229
+Where $150473 < NI* ≤ $214,368, BPAF** = $12,298 + [($13,229-$12,298) - ($13,229-$12,298) × Lesser of (1, (NI* –
+$150,473)/($214,368-$150,473))***]
+
+--- PDF page 22 of 35 ---
+
+canada.ca/taxes22
+Or
+Where NI* ≤ $150,473, BPAF = $13,229
+Where $150,473 < NI* < $214,368, BPAF**= $13,229 - (NI* - $150,473) x ($931 / $63,895)***
+Where NI* ≥ $214,368, BPAF = $12,298
+* Variable NI represents Net Income = A + HD
+** If the BPAF has three or more digits after the decimal point, increase the second digit after the decimal point by one if
+the third digit is five or more, and drop the third digit. If the third digit after the decimal point is less than five, drop the
+third digit
+*** Note that there is no rounding on this division
+This new calculation is effective January 1, 2020, the CRA will allow a reasonable time for payroll systems to be brought up-to-
+date with regard to this change.
+For 2020, employers can use a BPAF of $13,229 for all employees, while payroll systems and procedures are updated to fully
+implement the proposed legislation.
+If the employer uses a BPAF of $13,229 for its employees, employees with net income above $150,473 can ask for additional tax
+to be deducted, by completing the form TD1.
+Calculation of income
+In Option 2, the actual year-to-date income plus the current income is projected over the rest of the pay periods in the year. For
+example, an employee received a total of $20,000 in 20 previous pay periods and $500 in the current pay period, and there are 5
+pay periods left. The projected income for the year using Option 2 will be $25,380.95 [($20,000 + $500) × 26/21].
+To determine year-to-date income, you have to use the year-to-date taxable income. Therefore, you will have to store and use the
+year-to-date values for each pay period factor, such as RPP (factor F) and union dues (U1).
+Calculation of tax for the pay period
+For Option 2, you calculate the tax on the projected income for the year, and then find the tax amount that is proportional to the
+number of pay periods that have occurred (including the current pay period). Compare the result to the tax deducted in the
+year-to-date. The difference is the tax payable on the current income.
+Continuing the above example, if the total federal and provincial or territorial tax on $25,380.95 is $3,560.17, the proportional
+year-to-date tax is $2,875.52 ($3,560.17/26 × 21). If the total tax deducted year-to-date is $2,736.40, the tax on the current income
+of $500 is $139.12 ($2,875.52 – $2,736.40). The tax values used in this example are fictitious.
+Special situations
+When you change tax options during the year, we recommend that you reset the S1 factor to the first pay period. For example, if
+your pay period is weekly and the tax option is changed for the first pay period after July 1, then S1 should be reset to 52/1 instead
+of 52/27. In this way, the tax deductions that have been made under the previous option are not considered when calculating the
+deductions under the new option. This modification could also apply when an employee starts employment with you during the
+year.
+When there are tax changes during the year, the first pay period after the change will show a significant adjustment to balance the
+new annual tax with the tax deducted at the old rates. We recommend that you reduce this impact by resetting the S1 factor or by
+averaging the tax increase or decrease over the rest of the pay periods.
+Note
+If an employee or a pensioner has income from another source from which no tax has been deducted (for example, investment
+income or rental income), they could have a tax liability when they file an income tax and benefit return for the year. The
+employee or pensioner can ask for more tax deductions, factor L, using Form TD1.
+Formula to calculate annual taxable income (A)
+A = Projected annual taxable income
+= [S1 × (I – F – F2 – U1)] + B1 – HD – F1
+If the result is negative, A = $0.
+S1 = This is a set of two numbers: the number of total pay periods (or the employee’s pay periods if the employees
+worked less than the total pay periods) divided by the applicable number of the current pay period, as in the chart
+below. Also, see the information under “Special situations.”
+
+--- PDF page 23 of 35 ---
+
+canada.ca/taxes 23
+Table 6.1 S1 Examples
+Examples 52pp 26pp 24pp 12pp
+1st pay period, S1 = 52/1 26/1 24/1 12/1
+2nd pay period, S1 = 52/2 26/2 24/2 12/2
+3rd pay period, S1 = 52/3 26/3 24/3 12/3
+Etc., last pay period, S1 = 52/52 26/26 24/24 12/12
+I = Gross pay for the pay period. This includes overtime earned and paid in the same pay period, pension income,
+qualified pension income, and taxable benefits, plus IYTD, but does not include amounts in factor B.
+F = Payroll deductions for the pay period for employee contributions to a registered pension plan for current and past
+services, a registered retirement savings plan (RRSP), or a retirement compensation arrangement plus FYTD.
+Note
+For full details, see the description under Option 1.
+F2 = Alimony or maintenance payments required by a legal document dated before May 1, 1997, to be deducted at source
+from the employee’s salary for the pay period plus F2YTD. The legal document could be a garnishment or a similar
+order of a court or competent tribunal.
+Note
+For full details, see the description under Option 1.
+U1 = Union dues for the pay period, plus U1YTD.
+B1 = Year-to-date (before this pay period) non-periodic payments such as bonuses, retroactive pay increases, vacation pay
+when vacation is not taken, and accumulated overtime. Since tax on a current non-periodic payment is calculated
+separately, do not include the current non-periodic payment in calculating A.
+Note
+For overtime earned and paid in the same pay period, the payment is included with the I factor. Also, when the
+employee gets vacation pay and takes vacation, the income is included in the I factor. If you want to make
+deductions such as RRSP contributions from the bonus payment, see the instructions in Option 1 for using factors F3
+and F4.
+Formula to calculate basic federal tax (T3)
+T3 = (R × A) – K – K1 – K2 – K3 – K4
+If the result is negative, T3 = $0.
+Only for employees in Quebec:
+T3 = (R × A) – K – K1 – K2Q – K3 – K4
+If the result is negative, T3 = $0.
+R and K are based on 2020 index values for A see the Rates (R, V), income thresholds (A), and constants (K,
+KP) for 2020 Table 9.1 in Chapter 9.
+A = Projected annual taxable income
+K1 = 0.15 × TC
+K2 = [(0.15 × (0.0525 × ((S1 × PI) + B1 – $3,500)*, maximum $2,898.00)) +
+(0.15 × (0.0158 × ((S1 × IE) + B1), maximum $856.36))]
+Only for employees in Quebec:
+K2Q = [(0.15 × (0.0570 × ((S1 × PI) + B1 – $3,500)*, maximum $3,146.40)) +
+(0.15 × (0.0120 × ((S1 × IE) + B1), maximum $650.40)) +
+(0.15 × (0.00494 × S1 × IE) + B1), maximum $387.79))]
+* If the result is negative, enter $0.
+Where:
+
+--- PDF page 24 of 35 ---
+
+canada.ca/taxes24
+PI = Pensionable income for the pay period, or the gross income plus any taxable benefits for the pay period,
+plus PIYTD
+IE = Insurable earnings for the pay period including insurable taxable benefits for the pay period, plus IEYTD
+The above has to follow the rules in Chapter 7 – “Canada Pension Plan (CPP)” and Chapter 8 – “Employment
+Insurance (EI)” of this publication and the instructions contained in Guide T4001, Employers’ Guide – Payroll
+Deductions and Remittances.
+K4 = The lesser of:
+(i) 0.15 × A*; and
+(ii) 0.15 × CEA
+CEA is an indexed amount. See Table 9.2 Other rates and amounts in Chapter 9.
+* For the Canada employment amount, A is the annual gross income from office or employment before deductions. Only include
+the amounts from office or employment, this is the same amount you normally report in box 14 of the T4 slip (s).
+Formula to calculate the federal tax payable (T1)
+T1 = Annual federal tax deduction except for Quebec, outside Canada, and in Canada beyond the limits of any province
+or territory
+= (T3 – LCF)*
+* If the result is negative, enter $0.
+Only for Quebec:
+T1 = (T3 – LCF)* – (0.165 × T3)
+* If the result is negative, enter $0.
+Only for outside Canada or in Canada beyond the limits of any province or territory:
+T1 = [T3 + (0.48 × T3) – LCF]*
+* If the result is negative, enter $0.
+LCF = The lesser of:
+(i) $750; and
+(ii) 15% of the amount deducted or withheld during the year for the acquisition by the employee of approved shares
+of the capital stock of a prescribed labour-sponsored venture capital corporation
+Note
+If the shares are invested in an RRSP, then the amount invested can be used to determine the annual taxable income
+amount.
+Formula to calculate provincial and territorial tax payable (T2)
+We have not repeated the entire explanation for the provincial and territorial variables. Effective January 1, 2020, the variables for
+Option 2 are the same as for Option 1, except for factor K2P, which is as follows:
+K2P = [(Lowest provincial or territorial tax rate × (0.0525 × ((S1 × PI) + B1 – $3,500)*, maximum $2,898.00)) + (lowest
+provincial or territorial tax rate × (0.0158 × ((S1 × IE) + B1), maximum $856.36))]
+* If the result is negative, enter $0.
+Replace the lowest provincial or territorial tax rate with the appropriate rate for the province or territory that applies
+to the employee or pensioner.
+Only for Quebec:
+T2 = $0
+Only for outside Canada or in Canada beyond the limits of any province or territory:
+T2 = $0
+Formula to calculate the estimated federal and provincial or territorial tax deductions (T) for the
+pay period
+T = [((T1 + T2 – M1) / S1) – M]* + L
+* If the result is negative, T = L.
+The resulting amount can be rounded to the nearest multiple of $0.05 or $0.01.
+Only for employees in Quebec, outside Canada, and in Canada beyond the limits of any province or territory:
+T = Estimated federal tax deduction for the pay period**
+
+--- PDF page 25 of 35 ---
+
+canada.ca/taxes 25
+= [((T1 – M1) / S1) – M]* + L
+* If the result is negative, T = L.
+** The resulting amount can be rounded to the nearest multiple of $0.05 or $0.01.
+M = Do not include any year-to-date extra tax deductions requested by the employee, factor L. Tax already deducted on
+non-periodic payments such as bonuses, is included in factor M1.
+M1 = Accumulated federal and provincial (or territorial) tax deductions on non-periodic payments such as bonuses, if any,
+to the last pay period. Do not include any year-to-date extra tax deductions for the year requested by the employee,
+factor L or any tax included in factor M. The T factor (tax deduction for the pay period) will not include the tax on
+the non-periodic payment. The tax to be deducted on a current non-periodic payment is kept in another field TB.
+TB = Estimated federal and provincial or territorial tax deduction on a non-periodic payment for the pay period
+= Step 1 minus Step 2 below (if negative, TB = $0)
+Step 1
+Projected annual taxable income including B1 and B payable now
+= [S1 × (I – F – F2 – U1)] + B1 + B – HD – F1
+Step 2
+Projected annual taxable income including B1, but not B payable now
+= [S1 × (I – F – F2 – U1)] + B1 – HD – F1
+Chapter 7 – Canada Pension Plan (CPP)
+Formula to determine CPP contributions for employees receiving salary or wages
+C = The lesser of:
+(i) $2,898.00* – D*; and
+(ii) 0.0525* × [PI – ($3,500 / P)]
+If the result is negative, C = $0.
+* For employees employed in Quebec
+use the QPP max contribution amount of $3,146.40 instead of $2,898.00;
+use DQ instead of D; and,
+use the QPP contribution rate of 0.0570 instead of 0.0525.
+Formula to determine CPP contributions—only for employees paid by commission
+C = The lesser of:
+(i) $2,898.00* – D*; and
+(ii) 0.0525* × [G – ($3,500 × N / 365, minimum $67.30)]
+If the result is negative, C = $0.
+* For employees employed in Quebec
+use the QPP max contribution amount of $3,146.40 instead of $2,898.00;
+use DQ instead of D; and,
+use the QPP contribution rate of 0.0570 instead of 0.0525.
+Formula to determine CPP contributions for employees who were transferred by their employer
+from Quebec to a location outside Quebec during the year receiving salary or wages
+C = The lesser of:
+(i) $2,898.00 – [(DQ x (0.0525/0.0570)*) + D]; and
+(ii) 0.0525 × [PI – ($3,500 / P)]
+If the result is negative, C = $0.
+* No rounding required for this factor.
+
+--- PDF page 26 of 35 ---
+
+canada.ca/taxes26
+Formula to determine CPP contributions for employees who were transferred by their employer
+from Quebec to a location outside Quebec during the year paid by commission
+C = The lesser of:
+(i) $2,898.00 – [(DQ x (0.0525/0.0570*)) + D]; and
+(ii) 0.0525 × [G – ($3,500 × N / 365, minimum $67.30)]
+If the result is negative, C = $0.
+* No rounding required for this factor.
+Note
+For these formulas, round the resulting amount to the nearest $0.01. The maximum amount for the year [amount (i) above] will
+vary according to the rules in the section called “Special CPP Situations.”
+Each employer needs to deduct CPP contributions based on the employee’s pensionable income, without regard to any other
+earnings the employee may have had with another employer in the same year. Accordingly, you must use the maximum above
+even if the employee works for you less than 12 months. Similarly, you are not entitled to a refund of the employer’s share of
+CPP if the employee works for you less than 12 months.
+For payments where the employee receives remuneration such as a bonus, retroactive pay increase, vacation pay when vacation is
+not taken, or accumulated overtime pay, and the payment is not included with the regular remuneration for the current pay period,
+you should introduce a code or use the factor B with the record. Also do this if a non-periodic payment is made and no regular
+remuneration is paid in the pay period. You do this to avoid allowing the basic exemption for the pay period ($3,500 / P) in the
+formula described above.
+The basic exemption amount ($3,500 / P) used to determine the employee’s contributions for the pay period has to stay the same
+throughout the year, regardless of whether an employee has worked in each week of the pay period.
+Also, you should determine the number of pay periods at the start of the year (for example, for weekly, you can have 52 or 53 pay
+periods and, for biweekly, you can have 26 or 27 pay periods.) This is to make sure that you have deducted employee
+contributions properly.
+Special CPP situations
+You will have to either start or stop deducting CPP contributions under the following circumstances:
+Your employee turns 18 – Start deducting CPP contributions for the first pay dated in the month after the employee turns 18.
+Your employee turns 70 – Deduct CPP contributions up to and including the last pay dated in the month in which the employee
+turns 70.
+
+--- PDF page 27 of 35 ---
+
+canada.ca/taxes 27
+Employee’s CPP basic exemption for various pay periods
+Table 7.1 Basic exemption
+Pay period Basic exemption ($)
+Annually (1) 3,500.00
+Semi-annually (2) 1,750.00
+Quarterly (4) 875.00
+Monthly (12) 291.66
+Semi-monthly (24) 145.83
+Biweekly (26) 134.61
+Biweekly (27) 129.62
+Weekly (52) 67.30
+Weekly (53) 66.03
+22 pay periods 159.09
+13 pay periods 269.23
+10 pay periods 350.00
+Daily (240) 14.58
+Hourly (2000) 1.75
+Chapter 8 – Employment Insurance (EI)
+Formula to calculate Employment Insurance (EI) premiums
+The formula below will allow you to determine, in your payroll calculations, the premium payable by an insured person under the
+Employment Insurance Act. The formula is:
+EI = The lesser of:
+(i) $856.36 – D1; and
+(ii) 0.0158 × IE
+Only for employees in Quebec:
+EI = the lesser of
+(i) $650.40 – D1; and
+(ii) 0.0120 × IE*
+* Round the resulting amount(s) in (ii) to the nearest $0.01.
+Note
+When an employee changes province of employment during the year but stays with the same employer, the
+maximum premium for the year is based on the province where the first $54,200 of insurable earnings is paid.
+
+--- PDF page 28 of 35 ---
+
+canada.ca/taxes28
+Chapter 9 – Rates and amounts
+To download the Chapter 9 tables in comma-separated value (CSV) format see the T4127 Payroll Deductions Formulas website.
+Table 9.1 Rates (R, V), income thresholds (A), and constants (K, KP) for 2020
+1st 2nd 3rd 4th 5th 6th
+Federal A 0 48,535 97,069 150,473 214,368
+Federal R 0.1500 0.2050 0.2600 0.2900 0.3300
+Federal K 0 2,669 8,008 12,522 21,097
+AB A 0 131,220 157,464 209,952 314,928
+AB V 0.1000 0.1200 0.1300 0.1400 0.1500
+AB KP 0 2,624 4,199 6,299 9,448
+BC A 0 41,725 83,451 95,812 116,344 157,748
+BC V 0.0506 0.0770 0.1050 0.1229 0.1470 0.1680
+BC KP 0 1,102 3,438 5,153 7,957 11,270
+MB A 0 33,389 72,164
+MB V 0.1080 0.1275 0.1740
+MB KP 0 651 4,007
+NB A 0 43,401 86,803 141,122 160,776
+NB V 0.0968 0.1482 0.1652 0.1784 0.2030
+NB KP 0 2,231 3,706 5,569 9,524
+NL A 0 37,929 75,858 135,432 189,604
+NL V 0.0870 0.1450 0.1580 0.1730 0.1830
+NL KP 0 2,200 3,186 5,218 7,114
+NT A 0 43,957 87,916 142,932
+NT V 0.0590 0.0860 0.1220 0.1405
+NT KP 0 1,187 4,352 6,996
+NS A 0 29,590 59,180 93,000 150,000
+NS V 0.0879 0.1495 0.1667 0.1750 0.2100
+NS KP 0 1,823 2,841 3,613 8,863
+NU A 0 46,277 92,555 150,473
+NU V 0.0400 0.0700 0.0900 0.1150
+NU KP 0 1,388 3,239 7,001
+ON A 0 44,740 89,482 150,000 220,000
+ON V 0.0505 0.0915 0.1116 0.1216 0.1316
+ON KP 0 1,834 3,633 5,133 7,333
+PE A 0 31,984 63,969
+PE V 0.0980 0.1380 0.1670
+PE KP 0 1,279 3,134
+SK A 0 45,225 129,214
+SK V 0.1050 0.1250 0.1450
+SK KP 0 905 3,489
+YT A 0 48,535 97,069 150,473 500,000
+YT V 0.0640 0.0900 0.1090 0.1280 0.1500
+YT KP 0 1,262 3,106 5,965 16,965
+
+--- PDF page 29 of 35 ---
+
+canada.ca/taxes 29
+Table 9.2 Other rates and amounts for 2020
+Basic
+amount
+Index
+rate
+LCP
+rate
+LCP
+amount CEA S T4 → V1 V1 rate Abatement Surtax
+Federal BPAF 0.019 0.150 750 1,245
+AB 19,369 –
+BC 10,949 0.025 0.150 2,000 476
+MB 9,838 0.022
+NB 10,459 0.019 0.200 2,000
+NL 9,498 0.009 0.200 2,000
+NS BPANS – 0.200 2,000
+NT 15,093 0.019
+NU 16,304 0.019
+ON 10,783 0.019 249 0 0.000
+ON 4,830 0.200
+ON 6,182 0.360
+PE 10,000 – 0 0.000
+PE 12,500 0.100
+QC 0.165
+SK 16,065 – 0.175 875
+YT 12,298 0.019 0.250 1,250 1, 245
+Outside
+Canada 0.480
+For information on 2020 federal personal amounts, see the form TD1, Personal Tax Credits Return and the form TD1X, Commission Income
+and Expenses for Payroll Tax Deductions. For information on 2020 provincial or territorial personal amounts, see the respective form TD1AB,
+TD1BC, TD1MB, TD1NB, TD1NL, TD1NS, TD1NT, TD1NU, TD1ON, TD1PE, TD1QC, TD1SK, or TD1YT.
+Table 9.3 Canada Pension Plan / Quebec Pension Plan 2020 rates and amounts
+CPP/QPP YMPE Basic
+Exemption
+Max
+contributory
+earnings
+Employee
+contribution
+rate
+Employee
+max
+contribution
+Self-
+employed
+max
+contribution
+YMPE
+before
+rounding
+CPP
+(Canada
+except
+QC)
+58,700 3,500 55,200 0.0525 2,898.00 5,796.00 58,712.35
+QPP (QC) 58,700 3,500 55,200 0.0570 3,146.40 6,292.80 58,712.35
+Table 9.4 Employment Insurance 2020 rates and amounts
+EI
+Annual max
+insurable
+earnings
+Employee
+contribution rate
+Employer
+contribution rate
+Annual max
+employee
+premium
+Annual max
+employer
+premium
+Canada
+except QC 54,200 0.0158 0.02212 856.36 1,198.90
+QC 54,200 0.0120 0.0168 650.40 910.56
+
+--- PDF page 30 of 35 ---
+
+canada.ca/taxes30
+Claim codes for 2020
+Table 9.5 Alberta claim codes
+Claim code Total claim amount ($) from Total claim amount ($) to Option 1, TCP = ($) Option 1, K1P ($)
+0 No claim amount No claim amount 0.00 0.00
+1 0.00 19,369.00 19,369.00 1,936.90
+2 19,369.01 22,203.00 20,786.50 2,078.60
+3 22,203.01 25,037.00 23,620.50 2,362.00
+4 25,037.01 27,871.00 26,454.50 2,645.40
+5 27,871.01 30,705.00 29,288.50 2,928.80
+6 30,705.01 33,539.00 32,122.50 3,212.20
+7 33,539.01 36,373.00 34,956.50 3,495.60
+8 36,373.01 39,207.00 37,790.50 3,779.00
+9 39,207.01 42,041.00 40,624.50 4,062.40
+10 42,041.01 44,875.00 43,458.50 4,345.80
+Table 9.6 British Columbia claim codes
+Claim code Total claim amount ($) from Total claim amount ($) to Option 1, TCP = ($) Option 1, K1P ($)
+0 No claim amount No claim amount 0.00 0.00
+1 0.00 10,949.00 10,949.00 554.02
+2 10,949.01 13,413.00 12,181.00 616.36
+3 13,413.01 15,877.00 14,645.00 741.04
+4 15,877.01 18,341.00 17,109.00 865.72
+5 18,341.01 20,805.00 19,573.00 990.39
+6 20,805.01 23,269.00 22,037.00 1,115.07
+7 23,269.01 25,733.00 24,501.00 1,239.75
+8 25,733.01 28,197.00 26,965.00 1,364.43
+9 28,197.01 30,661.00 29,429.00 1,489.11
+10 30,661.01 33,125.00 31,893.00 1,613.79
+
+--- PDF page 31 of 35 ---
+
+canada.ca/taxes 31
+Table 9.7 Manitoba claim codes
+Claim code Total claim amount ($) from Total claim amount ($) to Option 1, TCP = ($) Option 1, K1P ($)
+0 No claim amount No claim amount 0.00 0.00
+1 0.00 9,838.00 9,838.00 1,062.50
+2 9,838.01 11,531.00 10,684.50 1,153.93
+3 11,531.01 13,224.00 12,377.50 1,336.77
+4 13,224.01 14,917.00 14,070.50 1,519.61
+5 14,917.01 16,610.00 15,763.50 1,702.46
+6 16,610.01 18,303.00 17,456.50 1,885.30
+7 18,303.01 19,996.00 19,149.50 2,068.15
+8 19,996.01 21,689.00 20,842.50 2,250.99
+9 21,689.01 23,382.00 22,535.50 2,433.83
+10 23,382.01 25,075.00 24,228.50 2,616.68
+Table 9.8 New Brunswick claim codes
+Claim code Total claim amount ($) from Total claim amount ($) to Option 1, TCP = ($) Option 1, K1P ($)
+0 No claim amount No claim amount 0.00 0.00
+1 0.00 10,459.00 10,459.00 1,012.43
+2 10,459.01 12,779.00 11,619.00 1,124.72
+3 12,779.01 15,099.00 13,939.00 1,349.30
+4 15,099.01 17,419.00 16,259.00 1,573.87
+5 17,419.01 19,739.00 18,579.00 1,798.45
+6 19,739.01 22,059.00 20,899.00 2,023.02
+7 22,059.01 24,379.00 23,219.00 2,247.60
+8 24,379.01 26,699.00 25,539.00 2,472.18
+9 26,699.01 29,019.00 27,859.00 2,696.75
+10 29,019.01 31,339.00 30,179.00 2,921.33
+Table 9.9 Newfoundland claim codes
+Claim code Total claim amount ($) from Total claim amount ($) to Option 1, TCP = ($) Option 1, K1P ($)
+0 No claim amount No claim amount 0.00 0.00
+1 0.00 9,498.00 9,498.00 826.33
+2 9,498.01 11,549.00 10,523.50 915.54
+3 11,549.01 13,600.00 12,574.50 1,093.98
+4 13,600.01 15,651.00 14,625.50 1,272.42
+5 15,651.01 17,702.00 16,676.50 1,450.86
+6 17,702.01 19,753.00 18,727.50 1,629.29
+7 19,753.01 21,804.00 20,778.50 1,807.73
+8 21,804.01 23,855.00 22,829.50 1,986.17
+9 23,855.01 25,906.00 24,880.50 2,164.60
+10 25,906.01 27,957.00 26,931.50 2,343.04
+
+--- PDF page 32 of 35 ---
+
+canada.ca/taxes32
+Table 9.10 Northwest Territories claim codes
+Claim code Total claim amount ($) from Total claim amount ($) to Option 1, TCP = ($) Option 1, K1P ($)
+0 No claim amount No claim amount 0.00 0.00
+1 0.00 15,093.00 15,093.00 890.49
+2 15,093.01 17,688.00 16,390.50 967.04
+3 17,688.01 20,283.00 18,985.50 1,120.14
+4 20,283.01 22,878.00 21,580.50 1,273.25
+5 22,878.01 25,473.00 24,175.50 1,426.35
+6 25,473.01 28,068.00 26,770.50 1,579.46
+7 28,068.01 30,663.00 29,365.50 1,732.56
+8 30,663.01 33,258.00 31,960.50 1,885.67
+9 33,258.01 35,853.00 34,555.50 2,038.77
+10 35,853.01 38,448.00 37,150.50 2,191.88
+Table 9.11 Nunavut claim codes
+Claim code Total claim amount ($) from Total claim amount ($) to Option 1, TCP = ($) Option 1, K1P ($)
+0 No claim amount No claim amount 0.00 0.00
+1 0.00 16,304.00 16,304.00 652.16
+2 16,304.01 18,941.00 17,622.50 704.90
+3 18,941.01 21,578.00 20,259.50 810.38
+4 21,578.01 24,215.00 22,896.50 915.86
+5 24,215.01 26,852.00 25,533.50 1,021.34
+6 26,852.01 29,489.00 28,170.50 1,126.82
+7 29,489.01 32,126.00 30,807.50 1,232.30
+8 32,126.01 34,763.00 33,444.50 1,337.78
+9 34,763.01 37,400.00 36,081.50 1,443.26
+10 37,400.01 40,037.00 38,718.50 1,548.74
+Table 9.12 Ontario claim codes
+Claim code Total claim amount ($) from Total claim amount ($) to Option 1, TCP = ($) Option 1, K1P ($)
+0 No claim amount No claim amount 0.00 0.00
+1 0.00 10,783.00 10,783.00 544.54
+2 10,783.01 13,106.00 11,944.50 603.20
+3 13,106.01 15,429.00 14,267.50 720.51
+4 15,429.01 17,752.00 16,590.50 837.82
+5 17,752.01 20,075.00 18,913.50 955.13
+6 20,075.01 22,398.00 21,236.50 1,072.44
+7 22,398.01 24,721.00 23,559.50 1,189.75
+8 24,721.01 27,044.00 25,882.50 1,307.07
+9 27,044.01 29,367.00 28,205.50 1,424.38
+10 29,367.01 31,690.00 30,528.50 1,541.69
+
+--- PDF page 33 of 35 ---
+
+canada.ca/taxes 33
+Table 9.13 Prince Edward Island claim codes
+Claim code Total claim amount ($) from Total claim amount ($) to Option 1, TCP = ($) Option 1, K1P ($)
+0 No claim amount No claim amount 0.00 0.00
+1 0.00 10,000.00 10,000.00 980.00
+2 10,000.01 11,600.00 10,800.00 1,058.40
+3 11,600.01 13,200.00 12,400.00 1,215.20
+4 13,200.01 14,800.00 14,000.00 1,372.00
+5 14,800.01 16,400.00 15,600.00 1,528.80
+6 16,400.01 18,000.00 17,200.00 1,685.60
+7 18,000.01 19,600.00 18,800.00 1,842.40
+8 19,600.01 21,200.00 20,400.00 1,999.20
+9 21,200.01 22,800.00 22,000.00 2,156.00
+10 22,800.01 24,400.00 23,600.00 2,312.80
+Table 9.14 Saskatchewan claim codes
+Claim code Total claim amount ($) from Total claim amount ($) to Option 1, TCP = ($) Option 1, K1P ($)
+0 No claim amount No claim amount 0.00 0.00
+1 0.00 16,065.00 16,065.00 1,686.83
+2 16,065.01 18,132.00 17,098.50 1,795.34
+3 18,132.01 20,199.00 19,165.50 2,012.38
+4 20,199.01 22,266.00 21,232.50 2,229.41
+5 22,266.01 24,333.00 23,299.50 2,446.45
+6 24,333.01 26,400.00 25,366.50 2,663.48
+7 26,400.01 28,467.00 27,433.50 2,880.52
+8 28,467.01 30,534.00 29,500.50 3,097.55
+9 30,534.01 32,601.00 31,567.50 3,314.59
+10 32,601.01 34,668.00 33,634.50 3,531.62
+Table 9.15 Yukon claim codes
+Claim code Total claim amount ($) from Total claim amount ($) to Option 1, TCP = ($) Option 1, K1P ($)
+0 No claim amount No claim amount 0.00 0.00
+1 0.00 12,298.00 12,298.00 787.07
+2 12,298.01 14,648.00 13,473.00 862.27
+3 14,648.01 16,998.00 15,823.00 1,012.67
+4 16,998.01 19,348.00 18,173.00 1,163.07
+5 19,348.01 21,698.00 20,523.00 1,313.47
+6 21,698.01 24,048.00 22,873.00 1,463.87
+7 24,048.01 26,398.00 25,223.00 1,614.27
+8 26,398.01 28,748.00 27,573.00 1,764.67
+9 28,748.01 31,098.00 29,923.00 1,915.07
+10 31,098.01 33,448.00 32,273.00 2,065.47
+
+--- PDF page 34 of 35 ---
+
+canada.ca/taxes34
+Table 9.16 Rates (R, V), income thresholds (A) and constants (K, KP) for 2019
+1st 2nd 3rd 4th 5th 6th
+Federal A 0 47,630 95,259 147,667 210,371
+Federal R 0.1500 0.2050 0.2600 0.2900 0.3300
+Federal K 0 2,620 7,859 12,289 20,704
+AB A 0 131,220 157,464 209,952 314,928
+AB V 0.1000 0.1200 0.1300 0.1400 0.1500
+AB KP 0 2,624 4,199 6,299 9,448
+BC A 0 40,707 81,416 93,476 113,506 153,900
+BC V 0.0506 0.0770 0.1050 0.1229 0.1470 0.1680
+BC KP 0 1,075 3,354 5,028 7,763 10,995
+MB A 0 32,670 70,610
+MB V 0.1080 0.1275 0.1740
+MB KP 0 637 3,920
+NB A 0 42,592 85,184 138,491 157,778
+NB V 0.0968 0.1482 0.1652 0.1784 0.2030
+NB KP 0 2,189 3,637 5,465 9,347
+NL A 0 37,591 75,181 134,224 187,913
+NL V 0.0870 0.1450 0.1580 0.1730 0.1830
+NL KP 0 2,180 3,158 5,171 7,050
+NT A 0 43,137 86,277 140,267
+NT V 0.0590 0.0860 0.1220 0.1405
+NT KP 0 1,165 4,271 6,866
+NS A 0 29,590 59,180 93,000 150,000
+NS V 0.0879 0.1495 0.1667 0.1750 0.2100
+NS KP 0 1,823 2,841 3,613 8,863
+NU A 0 45,414 90,829 147,667
+NU V 0.0400 0.0700 0.0900 0.1150
+NU KP 0 1,362 3,179 6,871
+ON A 0 43,906 87,813 150,000 220,000
+ON V 0.0505 0.0915 0.1116 0.1216 0.1316
+ON KP 0 1,800 3,565 5,065 7,265
+PE A 0 31,984 63,969
+PE V 0.0980 0.1380 0.1670
+PE KP 0 1,279 3,134
+SK A 0 45,225 129,214
+SK V 0.1050 0.1250 0.1450
+SK KP 0 905 3,489
+YT A 0 47,630 95,259 147,667 500,000
+YT V 0.0640 0.0900 0.1090 0.1280 0.1500
+YT KP 0 1,238 3,048 5,854 16,854
+
+--- PDF page 35 of 35 ---
+
+canada.ca/taxes 35
+Table 9.17 Other rates and amounts for 2019
+Basic
+amount
+Index
+rate
+LCP
+rate
+LCP
+amount CEA S T4 → V1 V1
+rate Abatement Surtax
+Federal 12,069 0.022 0.150 750 1,222
+AB 19,369 0.024
+BC 10,682 0.026 0.150 2,000 464
+MB 9,626 0.026
+NB 10,264 0.022 0.200 2,000
+NL 9,414 0.018 0.200 2,000
+NT 14,811 0.022
+NS BPA – 0.200 2,000
+NU 13,618 0.022
+ON 10,582 0.022 244 0 0.000
+ON 4,740 0.200
+ON 6,067 0.360
+PE 9,160 – 0 0.000
+PE 12,500 0.100
+QC 0.165
+SK 16,065 – 0.175 875
+YT 12,069 0.022 0.250 1,250 1,222
+Outside
+Canada 0.480
+For information on 2019 federal personal amounts, see the form TD1, Personal Tax Credits Return and the form TD1X, Commission Income
+and Expenses for Payroll Tax Deductions. For information on 2019 provincial or territorial personal amounts, see the respective form TD1AB,
+TD1BC, TD1MB, TD1NB, TD1NL, TD1NS, TD1NT, TD1NU, TD1ON, TD1PE, TD1QC, TD1SK, or TD1YT.
+Table 9.18 Canada Pension Plan / Quebec Pension Plan indexes for 2019
+CPP/QPP YMPE Basic
+Exemption
+Max
+contributory
+earnings
+Employee
+contribution
+rate
+Employee
+max
+contribution
+Self-
+employed
+max
+contribution
+YMPE
+before
+rounding
+CPP
+(Canada
+except
+QC)
+57,400 3,500 53,900 0.0510 2,748.90 5,497.80 57,448.48
+QPP (QC) 57,400 3,500 53,900 0.0555 2,991.45 5,982.90 57,448.48
+Table 9.19 Employment Insurance indexes for 2019
+EI
+Annual max
+insurable
+earnings
+Employee
+contribution rate
+Employer
+contribution rate
+Annual max
+employee
+premium
+Annual max
+employer
+premium
+Canada
+except QC 53,100 0.0162 0.02268 860.22 1,204.31
+QC 53,100 0.0125 0.0175 663.75 929.25

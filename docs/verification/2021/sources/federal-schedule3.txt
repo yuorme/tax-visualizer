@@ -1,0 +1,117 @@
+Title: Capital Gains (or Losses)
+URL: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5000-s3/5000-s3-21e.pdf
+Fetched: 2026-11-02
+SHA-256 of the original: c3b708f58ba19d7acdbaace24f9e40acd4e2a4481b1845707a7b3cc16e9661ec
+Publication date modified: 2021-11-16
+PDF pages: all 2
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 1 of 2 ---
+
+T1-2021 Protected B when completed
+Schedule 3Capital Gains (or Losses)
+Complete this schedule to report your taxable capital gains on line 12700 of your return. If you need more space, attach a
+separate sheet. Attach a copy of this schedule to your paper return.
+For more information about capital gains or losses, including business investment losses, see Guide T4037, Capital Gains.
+If you realized a gain on a disposition, you may be able to claim a capital gains deduction on line 25400 of your return.
+If you have capital gains or losses on your T5, T5013, T4PS, and T3 information slips, report them on line 17400 or
+line 17600 of this schedule.
+Property type
+(1)
+Year of
+acquisition
+(2)
+Proceeds of
+disposition
+(3)
+Adjusted
+cost base
+(4)
+Outlays and
+expenses
+(from dispositions)
+(5)
+Gain (or loss)
+(column 2 minus
+columns 3 and 4)
+1. Qualified small business corporation shares
+Number Name of corp. and class of shares (1) (2) (3) (4) (5)
+10699Total 10700 1Gain (or loss)
+2. Qualified farm or fishing property
+Address or legal description Prov./Terr. (1) (2) (3) (4) (5)
+10999Total 11000 2Gain (or loss) +
+Mortgage foreclosures and conditional sales repossessions
+Address or legal description Prov./Terr. (1) (2) (3) (4) (5)
+12399Total 12400 3Gain (or loss) +
+3. Publicly traded shares, mutual fund units, deferral of eligible small business corporation shares, and other shares
+Number Name of fund/corp. and class of shares (1) (2) (3) (4) (5)
+13199Total 13200 4Gain (or loss) +
+4. Real estate, depreciable property, and other properties (see the next page for principal residence)
+Address or legal description Prov./Terr. (1) (2) (3) (4) (5)
+13599Total 13800 5Gain (or loss) +
+5. Bonds, debentures, promissory notes, and other similar properties
+Face value Maturity date Name of issuer (1) (2) (3) (4) (5)
+15199Total 15300 6Gain (or loss) +
+6. Other mortgage foreclosures and conditional sales repossessions
+Address or legal description Prov./Terr. (1) (2) (3) (4) (5)
+15499Total 15500 7Gain (or loss) +
+7. Personal-use property (see the next page for principal residence)
+(Provide full description) (1) (2) (3) (4) (5)
+15800 8Gain only +
+8. Listed personal property (LPP) (LPP losses can only be applied against LPP gains)
+(Provide full description) (1) (2) (3) (4) (5)
+Subtract: unapplied LPP losses from other years –
+15900 9Net gain only +
+10Total of gains (or losses) of qualified properties and other propertiesAdd lines 1 to 9. =
+5000-S3 E (21) (Ce formulaire est disponible en français.) Page 1 of 2
+
+--- PDF page 2 of 2 ---
+
+Protected B when completed
+11Amount from line 10 of the previous page
+16100 12
+Capital gains deferral from qualifying dispositions of eligible small business corporation shares
+included on line 4 of the previous page –
+13Line 11 minus line 12 =
+17400 14Capital gains (or losses) from T5, T5013, and T4PS information slips +
+17600 15Capital gains (or losses) from T3 information slips +
+16Add lines 13 to 15. =
+17800 17Capital loss from a reduction in your business investment loss –
+19100 18
+Total of all gains (or losses) before reserves
+line 16 minus line 17 =
+19200 19Reserves from line 67060 of Form T2017 (if negative, show in brackets and subtract) +
+19700 20
+Total capital gains (or losses)
+line 18 plus line 19 =
+21Applicable rate × 50%
+19900 22
+Taxable capital gains
+(or net capital loss) in 2021
+Line 20 multiplied by the percentage on line 21
+If the result is positive, enter it on line 12700 of your return.
+If the result is negative (loss), read the instructions below. =
+If the amount on line 22 is negative (loss), do not report the amount on line 12700 of your return. Your latest notice of assessment
+or reassessment will give you the amount of the loss that you can use to reduce your taxable capital gains of other years.
+If you have a net capital loss in 2021 and would like to apply it against the taxable capital gains that you reported on your 2018,
+2019, or 2020 return, complete Form T1A, Request for Loss Carryback.
+You can carry forward your net capital losses indefinitely and apply them against your taxable capital gains in the future.
+Principal residence
+Complete this part if you disposed of a property (or properties) in 2021 that you are claiming a principal residence exemption for.
+Also complete Form T2091(IND), Designation of a property as a principal residence by an individual, or Form T1255,
+Designation of a Property as a Principal Residence by the Legal Representative of a Deceased Individual, whichever applies.
+Even if you do not sell your property, you may have a deemed disposition that you must report. A deemed disposition occurs
+when you are considered to have disposed of property even though you did not actually sell it. For example, a deemed
+disposition may occur when you change how you use your principal residence, such as when you change all or part of your
+principal residence to a rental or business operation, or change your rental or business operation to a principal residence.
+If you were not a resident of Canada for the entire time you owned the designated property, your period of non-residence may
+reduce or eliminate the amount of the principal residence exemption. For more information, call the CRA at 1-800-959-8281.
+Principal residence designation
+Tick the box that applies to your designation of the property described on Form T2091(IND) or Form T1255.
+17900 1 I designate the property to have been my principal residence for all years owned or for all years owned
+except one year in which I replaced my principal residence.
+2 I designate the property to have been my principal residence for some but not all years owned.
+3 I designate the properties to have been my principal residences for some or all of the years owned.
+See the privacy notice on your return.
+5000-S3 E (21) Page 2 of 2

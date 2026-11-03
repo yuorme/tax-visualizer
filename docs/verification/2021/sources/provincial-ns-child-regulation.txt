@@ -1,0 +1,350 @@
+Title: NS Royal Gazette Part II - Volume 44, No. 15, July 17, 2020
+URL: https://novascotia.ca/just/regulations/RG2/2020/RG2-2020-07-17.pdf
+Fetched: 2026-11-02
+SHA-256 of the original: 5ea3688ead53e692ddeb589f6722cf4b687f3b6b04787625bb8985177c5e1273
+Publication date modified: 2020-07-14
+PDF pages: all 8
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 1 of 8 ---
+
+Volume 44, No. 15
+July 17, 2020
+Part II Halifax, Nova Scotia
+Regulations under the Regulations Act Printed by the Queen’s Printer
+Contents
+Act Reg. No. Page
+Human Organ and Tissue Donation Act
+Proclamation of Act, S. 44, S.N.S. 2019, c. 6 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 94/2020 291
+Income Tax Act
+Nova Scotia Child Benefit Regulations–amendment . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 92/2020 288
+Petroleum Products Pricing Act
+Prescribed Petroleum Products Prices . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 93/2020 289
+Prescribed Petroleum Products Prices . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 95/2020 293
+In force date of regulations: As of March 4, 2005*, the date a regulation comes into force is
+determined by subsection 3(6) of the Regulations Act. The date a regulation is made, the date a
+regulation is approved, the date a regulation is filed and any date specified in a regulation are important
+to determine when the regulation is in force.
+*Date that subsections 3(6) and (7) and Sections 11 and 13 of the Regulations Act and amendments to the Regulations Act made
+by Chapter 46 of the Acts of 2004 were proclaimed in force.© NS Office of the Registrar of Regulations. Web version.
+287
+
+--- PDF page 2 of 8 ---
+
+288© NS Office of the Registrar of Regulations. Web version.
+N.S. Reg. 92/2020 Royal Gazette Part II - Regulations Vol. 44, No. 15
+N.S. Reg. 92/2020
+Made: June 25, 2020
+Filed: June 25, 2020
+Nova Scotia Child Benefit Regulations–amendment
+Order in Council 2020-180 dated June 25, 2020
+Amendment to regulations made by the Governor in Council
+pursuant to Section 80 of the Income Tax Act
+The Governor in Council on the report and recommendation of the Minister of Finance and Treasury Board and
+the Minister of Community Services dated May 25, 2020, and pursuant to Section 80 of Chapter 217 of the
+Revised Statutes of Nova Scotia,1989, the Income Tax Act, is pleased to amend the Nova Scotia Child Benefit
+Regulations, N.S. Reg. 62/1998, made by the Governor in Council by Order in Council 1998-430 dated August
+28, 1998, to increase the Nova Scotia Child Benefit rates, and to increase the partial and upper income
+thresholds for the Nova Scotia Child Benefit, in the manner set forth in Schedule “A” attached to and forming
+part of the report and recommendation, effective on and after July 1, 2020.
+Schedule “A”
+Amendment to the Nova Scotia Child Benefit Regulations
+made by the Governor in Council under Section 80
+of Chapter 217 of the Revised Statutes of Nova Scotia, 1989,
+the Income Tax Act
+1 Section 3 of the Nova Scotia Child Benefit Regulations, N.S. Reg. 62/1998, made by the Governor in
+Council by Order in Council 1998-430 dated August 28, 1998, is repealed and the following Section
+substituted:
+3 Where a person and, where the Minister so demands, the person’s cohabiting spouse or common-law
+partner at the end of the taxation year, have filed a return of income for the year, an overpayment on
+account of the person’s liability under Part II of the Act for the year shall be deemed to have arisen
+during a month in relation to which the year is the base taxation year, equal to the amount
+determined by the following formula:
+NSCB = [1/12 (A + B + C)] - D
+where
+A is $925 for the first qualified dependant in respect of whom the person was an eligible individual
+at the beginning of the month,
+B is $825 for the second qualified dependant, if any, in respect of whom the person was an eligible
+individual at the beginning of the month,
+C is the amount calculated in accordance with the following formula:
+C = $900 x E
+where E is the number of qualified dependants in excess of two in respect of whom the person was
+an eligible individual at the beginning of the month, and
+D is the benefit reduction applicable to the eligible individual which is calculated in accordance
+with Section 4.
+
+--- PDF page 3 of 8 ---
+
+N.S. Reg. 92/2020 - 93/2020 Royal Gazette Part II - Regulations Vol. 44, No. 15
+2 Section 4 of the regulations is repealed and the following Section substituted:
+4 (1) Where the adjusted income of the eligible individual for the base taxation year in relation to
+the month is less than $26 000, D equals zero.
+(2) Where the adjusted income of the eligible individual for the base taxation year in relation to
+the month is equal to or greater than $26 000 and less than $34 000,
+(a) if there is only 1 qualified dependant in respect of whom the person was an eligible
+individual at the beginning of the month,
+D = 0.
+(b) if there are only 2 qualified dependants in respect of whom the person was an eligible
+individual at the beginning of the month,
+D = 1/12 × 50% × B, where B is as defined in Section 3.
+(c) if there are more than 2 qualified dependants in respect of whom the person was an
+eligible individual at the beginning of the month,
+D = 1/12 × 50% × (B + C), where B and C are as defined in Section 3.
+N.S. Reg. 93/2020
+Made: June 25, 2020
+Filed: June 29, 2020
+Prescribed Petroleum Products Prices
+Order dated June 25, 2020
+made by the Nova Scotia Utility and Review Board
+pursuant to Section 14 of the Petroleum Products Pricing Act
+and Sections 16 to 19 of the Petroleum Products Pricing Regulations
+Order M09766
+In the matter of the Petroleum Products Pricing Act
+- and -
+In the matter of prescribing prices for petroleum products
+pursuant to Section 14 of the Petroleum Products Pricing Act and
+Sections 16 to 19 of the Petroleum Products Pricing Regulations
+Before: Richard J. Melanson, LL.B., Member
+Whereas the purpose of the Petroleum Products Pricing Regulations is to ensure just and reasonable prices for
+specified petroleum products taking into consideration the objectives of preserving the availability of such
+products in rural areas, stabilizing prices of such products and minimizing the variances in prices of such
+products across the Province;
+And whereas the Nova Scotia Utility and Review Board (“Board”) considered the manner in which it would
+proceed to set petroleum product prices in its decision, 2006 NSUARB 108, issued on October 16, 2006;© NS Office of the Registrar of Regulations. Web version.
+289
+
+--- PDF page 4 of 8 ---
+
+290© NS Office of the Registrar of Regulations. Web version.
+N.S. Reg. 93/2020 Royal Gazette Part II - Regulations Vol. 44, No. 15
+And whereas the Board revised the wholesale margin effective January 4, 2013, in its decision, 2012 NSUARB
+213, issued on December 12, 2012;
+And whereas the Board revised the retail margin and the transportation allowance effective October 28, 2016,
+in its decision, 2016 NSUARB 168, issued on September 26, 2016;
+And whereas the average of the average of the daily high and low reported product prices (in Canadian cents)
+for the period ended June 24, 2020, are:
+Grade 1 Regular gasoline 43.19¢ per litre
+Ultra-low-sulfur diesel oil 42.98¢ per litre
+Now therefore the Board prescribes the benchmark prices for petroleum products to be:
+Gasoline:
+Grade 1 43.19¢ per litre
+Grade 2 46.19¢ per litre
+Grade 3 49.19¢ per litre
+Ultra-low-sulfur diesel oil 42.98¢ per litre
+And now therefore the Board has determined, based on historical data regarding price changes and to achieve
+revenue neutrality, it is appropriate to apply, and the Board so orders, forward averaging corrections of:
+Gasoline: plus 0.8¢ per litre
+Ultra-low-sulfur diesel oil: plus 0.5¢ per litre
+And now therefore the Board prescribes the prices for petroleum products as set forth in Schedule “A”
+effective on and after 12:01 a.m., June 26, 2020.
+Dated at Halifax, Nova Scotia, this 25th day of June, 2020.
+sgd. Bruce A. Kiley
+Clerk of the Board
+Schedule “A”
+Prices Prescribed for Petroleum Products
+under the Petroleum Products Pricing Act and the
+Petroleum Products Pricing Regulations
+effective on and after 12:01 a.m. on June 26, 2020
+Nova Scotia Petroleum Price Schedule
+Petroleum Prices in Cents/Litre Self-Service Full-Service
+Pump Prices Pump Prices
+(Pump Prices includes 15% HST)
+Base Fed. Wholesale
+Prov.
+Wholesale Excise Selling
+Tax
+Price Tax Price
+Min Max Min Max
+Zone 1
+Regular Unleaded 52.44 10.0 15.5 77.94
+Mid-Grade Unleaded 55.44 10.0 15.5 80.94
+Premium Unleaded 58.44 10.0 15.5 83.94
+Ultra-Low-Sulfur Diesel 52.25 4.0 15.4 71.65
+95.5 97.7
+98.9 101.1
+102.4 104.6
+88.3 90.4
+95.5 999.9
+98.9 999.9
+102.4 999.9
+88.3 999.9
+
+--- PDF page 5 of 8 ---
+
+N.S. Reg. 93/2020 - 94/2020 Royal Gazette Part II - Regulations Vol. 44, No. 15
+Zone 2
+Regular Unleaded 52.94 10.0 15.5 78.44 96.1 98.3 96.1 999.9
+Mid-Grade Unleaded 55.94 10.0 15.5 81.44 99.5 101.7 99.5 999.9
+Premium Unleaded 58.94 10.0 15.5 84.44 103.0 105.2 103.0 999.9
+Ultra-Low-Sulfur Diesel 52.75 4.0 15.4 72.15 88.8 91.0 88.8 999.9
+Zone 3
+Regular Unleaded 53.34 10.0 15.5 78.84 96.5 98.7 96.5 999.9
+Mid-Grade Unleaded 56.34 10.0 15.5 81.84 100.0 102.2 100.0 999.9
+Premium Unleaded 59.34 10.0 15.5 84.84 103.4 105.6 103.4 999.9
+Ultra-Low-Sulfur Diesel 53.15 4.0 15.4 72.55 89.3 91.5 89.3 999.9
+Zone 4
+Regular Unleaded 53.44 10.0 15.5 78.94 96.6 98.8 96.6 999.9
+Mid-Grade Unleaded 56.44 10.0 15.5 81.94 100.1 102.3 100.1 999.9
+Premium Unleaded 59.44 10.0 15.5 84.94 103.5 105.7 103.5 999.9
+Ultra-Low-Sulfur Diesel 53.25 4.0 15.4 72.65 89.4 91.6 89.4 999.9
+Zone 5
+Regular Unleaded 53.44 10.0 15.5 78.94 96.6 98.8 96.6 999.9
+Mid-Grade Unleaded 56.44 10.0 15.5 81.94 100.1 102.3 100.1 999.9
+Premium Unleaded 59.44 10.0 15.5 84.94 103.5 105.7 103.5 999.9
+Ultra-Low-Sulfur Diesel 53.25 4.0 15.4 72.65 89.4 91.6 89.4 999.9
+Zone 6
+Regular Unleaded 54.14 10.0 15.5 79.64 97.5 99.6 97.5 999.9
+Mid-Grade Unleaded 57.14 10.0 15.5 82.64 100.9 103.1 100.9 999.9
+Premium Unleaded 60.14 10.0 15.5 85.64 104.4 106.5 104.4 999.9
+Ultra-Low-Sulfur Diesel 53.95 4.0 15.4 73.35 90.2 92.4 90.2 999.9
+N.S. Reg. 94/2020
+Made: June 30, 2020
+Filed: June 30, 2020
+Proclamation of Act, S. 44, S.N.S. 2019, c. 6
+Order in Council 2020-182 dated June 30, 2020
+Proclamation made by the Governor in Council
+pursuant to Section 44 of the
+Human Organ and Tissue Donation Act
+The Governor in Council on the report and recommendation of the Minister of Heath [Health] and Wellness
+dated June 15, 2020, [and] pursuant to Section 44 of Chapter 6 of the Acts of 2019, the Human Organ and
+Tissue Donation Act, is pleased to order and declare by proclamation that Chapter 6 of the Acts of 2019, the
+Human Organ and Tissue Donation Act, do come into force on and not before January 18, 2021.
+PROVINCE OF NOVA SCOTIA sgd: Arthur J. LeBlanc
+G/S ELIZABETH THE SECOND, by the Grace of God,
+of the United Kingdom, Canada and Her Other
+Realms and Territories, Queen, Head of the
+Commonwealth, Defender of the Faith.© NS Office of the Registrar of Regulations. Web version.
+291
+
+--- PDF page 6 of 8 ---
+
+292© NS Office of the Registrar of Regulations. Web version.
+N.S. Reg. 94/2020 Royal Gazette Part II - Regulations Vol. 44, No. 15
+TO ALL TO WHOM THESE PRESENTS SHALL COME, OR WHOM THE SAME MAY IN ANY WISE
+CONCERN,
+G R E E T I N G:
+A PROCLAMATION
+WHEREAS in and by Section 44 of Chapter 6 of the Acts of 2019, [the] Human Organ and Tissue Donation
+Act, it is enacted as follows:
+44 This Act comes into force on such day as the Governor in Council orders and declares by
+proclamation.
+AND WHEREAS it is deemed expedient that Chapter 6 of the Acts of 2019, [the] Human Organ and Tissue
+Donation Act, do come into force on and not before January 18, 2021;
+NOW KNOW YE THAT WE, by and with the advice of the Executive Council of Nova Scotia, do by this Our
+Proclamation order and declare that Chapter 6 of the Acts of 2019, [the] Human Organ and Tissue Donation
+Act, do come into force on and not before January 18, 2021, of which all persons concerned are to take notice
+and govern themselves accordingly.
+IN TESTIMONY WHEREOF We have caused these
+our Letters to be made Patent and the Great Seal of
+Nova Scotia to be hereunto affixed.
+WITNESS, Our Trusty and Well Beloved His Honour
+Arthur J. LeBlanc, ONS, Q.C., Lieutenant Governor of
+the Province of Nova Scotia.
+AT Our Government House in the Halifax Regional
+Municipality, this 30th day of June in the year of Our
+Lord two thousand and twenty and in the sixty-ninth
+year of Our Reign.
+BY COMMAND:
+sgd: Honourable Mark Furey
+Provincial Secretary
+Attorney General and Minister of Justice
+
+--- PDF page 7 of 8 ---
+
+N.S. Reg. 95/2020 Royal Gazette Part II - Regulations Vol. 44, No. 15
+N.S. Reg. 95/2020
+Made: July 2, 2020
+Filed: July 3, 2020
+Prescribed Petroleum Products Prices
+Order dated July 2, 2020
+made by the Nova Scotia Utility and Review Board
+pursuant to Section 14 of the Petroleum Products Pricing Act
+and Sections 16 to 19 of the Petroleum Products Pricing Regulations
+Order M09770
+In the matter of the Petroleum Products Pricing Act
+- and -
+In the matter of prescribing prices for petroleum products
+pursuant to Section 14 of the Petroleum Products Pricing Act and
+Sections 16 to 19 of the Petroleum Products Pricing Regulations
+Before: Roberta J. Clarke, Q.C., Member
+Whereas the purpose of the Petroleum Products Pricing Regulations is to ensure just and reasonable prices for
+specified petroleum products taking into consideration the objectives of preserving the availability of such
+products in rural areas, stabilizing prices of such products and minimizing the variances in prices of such
+products across the Province;
+And whereas the Nova Scotia Utility and Review Board (“Board”) considered the manner in which it would
+proceed to set petroleum product prices in its decision, 2006 NSUARB 108, issued on October 16, 2006;
+And whereas the Board revised the wholesale margin effective January 4, 2013, in its decision, 2012 NSUARB
+213, issued on December 12, 2012;
+And whereas the Board revised the retail margin and the transportation allowance effective October 28, 2016,
+in its decision, 2016 NSUARB 168, issued on September 26, 2016;
+And whereas the average of the average of the daily high and low reported product prices (in Canadian cents)
+for the period ended July 1, 2020, are:
+Grade 1 Regular gasoline 41.49¢ per litre
+Ultra-low-sulfur diesel oil 42.11¢ per litre
+Now therefore the Board prescribes the benchmark prices for petroleum products to be:
+Gasoline:
+Grade 1 41.49¢ per litre
+Grade 2 44.49¢ per litre
+Grade 3 47.49¢ per litre
+Ultra-low-sulfur diesel oil 42.11¢ per litre
+And now therefore the Board has determined, based on historical data regarding price changes and to achieve
+revenue neutrality, it is appropriate to apply, and the Board so orders, forward averaging corrections of:
+Gasoline: plus 1.3¢ per litre
+Ultra-low-sulfur diesel oil: plus 0.4¢ per litre
+And now therefore the Board prescribes the prices for petroleum products as set forth in Schedule “A”
+effective on and after 12:01 a.m., July 3, 2020.© NS Office of the Registrar of Regulations. Web version.
+293
+
+--- PDF page 8 of 8 ---
+
+294© NS Office of the Registrar of Regulations. Web version.
+N.S. Reg. 95/2020 Royal Gazette Part II - Regulations Vol. 44, No. 15
+Dated at Halifax, Nova Scotia, this 2nd day of July, 2020.
+sgd. Lisa Wallace
+Clerk of the Board
+Schedule “A”
+Prices Prescribed for Petroleum Products
+under the Petroleum Products Pricing Act and the
+Petroleum Products Pricing Regulations
+effective on and after 12:01 a.m. on July 3, 2020
+Nova Scotia Petroleum Price Schedule
+Petroleum Prices in Cents/Litre Self-Service Full-Service
+Pump Prices Pump Prices
+(Pump Prices includes 15% HST)
+Base Fed. Wholesale
+Prov.
+Wholesale Excise Selling
+Tax
+Price Tax Price
+Min Max Min Max
+Zone 1
+Regular Unleaded 51.24 10.0 15.5 76.74 94.1 96.3 94.1 999.9
+Mid-Grade Unleaded 54.24 10.0 15.5 79.74 97.6 99.8 97.6 999.9
+Premium Unleaded 57.24 10.0 15.5 82.74 101.0 103.2 101.0 999.9
+Ultra-Low-Sulfur Diesel 51.28 4.0 15.4 70.68 87.1 89.3 87.1 999.9
+Zone 2
+Regular Unleaded 51.74 10.0 15.5 77.24 94.7 96.9 94.7 999.9
+Mid-Grade Unleaded 54.74 10.0 15.5 80.24 98.1 100.3 98.1 999.9
+Premium Unleaded 57.74 10.0 15.5 83.24 101.6 103.8 101.6 999.9
+Ultra-Low-Sulfur Diesel 51.78 4.0 15.4 71.18 87.7 89.9 87.7 999.9
+Zone 3
+Regular Unleaded 52.14 10.0 15.5 77.64 95.2 97.3 95.2 999.9
+Mid-Grade Unleaded 55.14 10.0 15.5 80.64 98.6 100.8 98.6 999.9
+Premium Unleaded 58.14 10.0 15.5 83.64 102.1 104.2 102.1 999.9
+Ultra-Low-Sulfur Diesel 52.18 4.0 15.4 71.58 88.2 90.4 88.2 999.9
+Zone 4
+Regular Unleaded 52.24 10.0 15.5 77.74 95.3 97.5 95.3 999.9
+Mid-Grade Unleaded 55.24 10.0 15.5 80.74 98.7 100.9 98.7 999.9
+Premium Unleaded 58.24 10.0 15.5 83.74 102.2 104.4 102.2 999.9
+Ultra-Low-Sulfur Diesel 52.28 4.0 15.4 71.68 88.3 90.5 88.3 999.9
+Zone 5
+Regular Unleaded 52.24 10.0 15.5 77.74 95.3 97.5 95.3 999.9
+Mid-Grade Unleaded 55.24 10.0 15.5 80.74 98.7 100.9 98.7 999.9
+Premium Unleaded 58.24 10.0 15.5 83.74 102.2 104.4 102.2 999.9
+Ultra-Low-Sulfur Diesel 52.28 4.0 15.4 71.68 88.3 90.5 88.3 999.9
+Zone 6
+Regular Unleaded 52.94 10.0 15.5 78.44 96.1 98.3 96.1 999.9
+Mid-Grade Unleaded 55.94 10.0 15.5 81.44 99.5 101.7 99.5 999.9
+Premium Unleaded 58.94 10.0 15.5 84.44 103.0 105.2 103.0 999.9
+Ultra-Low-Sulfur Diesel 52.98 4.0 15.4 72.38 89.1 91.3 89.1 999.9
