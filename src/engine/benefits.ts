@@ -32,6 +32,15 @@ function nlChildBenefit(
   return Math.max(0, amt - reductionRate * Math.max(0, famNet - q.threshold));
 }
 
+/** BC early-childhood annual entitlement: both the amount and reduction scale with eligible young children. */
+function bcEarlyBenefit(
+  q: Extract<ChildBenefitProgram, { program: "bc-early-childhood-benefit" }>["params"],
+  famNet: number,
+  kidsU6: number,
+) {
+  return kidsU6 * Math.max(0, q.perChild - q.rate * Math.max(0, famNet - q.threshold));
+}
+
 /** BC annual entitlement; each period applies its own minimum and zero floor. */
 function bcBenefit(
   q: Extract<ChildBenefitProgram, { program: "bc-family-benefit" }>["params"],
@@ -74,6 +83,16 @@ export function provincialChildBenefit(
       return (
         Math.max(mn, mx - q.rate * over(single ? q.thresholdSingle : q.thresholdCouple)) +
         q.schoolSupplies * (kids - kidsU6)
+      );
+    }
+    case "bc-early-childhood-benefit": {
+      return bcEarlyBenefit(b.params, famNet, kidsU6);
+    }
+    case "bc-child-benefit-transition": {
+      const q = b.params;
+      return (
+        q.early.weight * bcEarlyBenefit(q.early, famNet, kidsU6) +
+        q.opportunity.weight * bcBenefit(q.opportunity, famNet, kids, single)
       );
     }
     case "bc-family-benefit": {
