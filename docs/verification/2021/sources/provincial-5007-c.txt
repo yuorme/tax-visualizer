@@ -1,0 +1,188 @@
+Title: Manitoba Tax
+URL: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5007-c/5007-c-21e.pdf
+Fetched: 2026-11-02
+SHA-256 of the original: 4c85d20eed9f994c384cf2c57c59294095445c66e2ade9bb31718e08286f2830
+Publication date modified: 2021-11-12
+PDF pages: all 3
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 1 of 3 ---
+
+Form MB428
+2021
+Protected B when completed
+Manitoba Tax
+Part A – Manitoba tax on taxable income
+1Enter your taxable income from line 26000 of your return.
+Use the amount from line 1 to complete the appropriate column below.
+Line 1 is
+$33,723 or less
+Amount from line 1
+–
+Line 2 minus line 3 (cannot be negative) =
+×
+Line 4 multiplied by the percentage from line 5 =
++
+Manitoba tax on taxable income
+Line 6 plus line 7
+=
+Line 1 is more than
+$33,723 but not
+more than $72,885
+–
+=
+×
+=
++
+=
+Line 1 is more
+than $72,885
+–
+=
+×
+=
++
+=
+2
+3
+4
+5
+6
+7
+8
+Enter the amount from line 8 on line 58 and continue on line 9.
+Part B – Manitoba non-refundable tax credits 56060Internal use
+58040 9Basic personal amount Claim $9,936
+58080 10Age amount (if you were born in 1956 or earlier) (use Worksheet MB428) (maximum $3,728) +
+Spouse or common-law partner amount:
+11Base amount
+12
+Your spouse's or common-law partner's net income
+from line 23600 of their return –
+58120 13Line 11 minus line 12 (if negative, enter "0") =
+Ż +
+Amount for an eligible dependant:
+14Base amount
+15Your eligible dependant's net income from line 23600 of their return –
+58160 16Line 14 minus line 15 (if negative, enter "0") =
+Ż +
+58200 17Amount for infirm dependants age 18 or older (use Worksheet MB428) +
+18Add lines 9, 10, 13, 16, and 17. =
+CPP or QPP contributions:
+58240 19Amount from line 30800 of your return •
+58280 20Amount from line 31000 of your return + •
+Employment insurance premiums:
+58300 21Amount from line 31200 of your return + •
+58305 22Amount from line 31217 of your return + •
+58315 23Volunteer firefighters' amount +
+58316 24Search and rescue volunteers' amount +
+58325 25Fitness amount +
+58326 26Children's arts amount +
+58330 27Adoption expenses +
+28Add lines 19 to 27. =
+Ż +
+29Line 18 plus line 28 =
+5007-C E (21) (Ce formulaire est disponible en français.) Page 1 of 3
+0.00
+10.8%
+0.00
+33,723.00
+12.75%
+3,642.08
+72,885.00
+17.4%
+8,635.24
+9,134.00
+9,134.00
+
+--- PDF page 2 of 3 ---
+
+Protected B when completed
+Part B – Manitoba non-refundable tax credits (continued)
+30Amount from line 29 of the previous page
+58360 31Pension income amount (maximum $1,000) +
+58400 32Caregiver amount (use Worksheet MB428) +
+33Add lines 30 to 32. =
+58440 34
+Disability amount for self
+(claim $6,180 or, if you were under 18 years of age, use Worksheet MB428) +
+58480 35Disability amount transferred from a dependant (use Worksheet MB428) +
+36Add lines 33 to 35. =
+58520 37Interest paid on your student loans (amount from line 31900 of your return) +
+58560 38Your tuition and education amounts (attach Schedule MB(S11)) +
+58600 39Tuition and education amounts transferred from a child or grandchild +
+58640 40Amounts transferred from your spouse or common-law partner (attach Schedule MB(S2)) +
+61470 41Family tax benefit (attach Schedule MB428–A) +
+42Add lines 36 to 41. =
+Medical expenses:
+58689 43Amount from line 33099 of your return
+44Amount from line 23600 of your return
+45Applicable rate ×
+46Line 44 multiplied by the percentage from line 45 =
+47Enter whichever is less: $1,728 or the amount from line 46. –
+48Line 43 minus line 47 (if negative, enter "0") =
+58729 49
+Allowable amount of medical expenses for other dependants
+(use Worksheet MB428) +
+58769 50Line 48 plus line 49 =
+Ż +
+58800 51Line 42 plus line 50 =
+52Manitoba non-refundable tax credit rate ×
+58840 53Line 51 multiplied by the percentage from line 52 =
+Donations and gifts:
+54
+Amount from line 13
+of your federal Schedule 9 × 10.8% =
+55
+Amount from line 14
+of your federal Schedule 9 × 17.4% = +
+58969 56Line 54 plus line 55 =
+Ż +
+61500 57Manitoba non-refundable tax credits
+Line 53 plus line 56
+Enter this amount on line 61. =
+5007-C E (21) Page 2 of 3
+3%
+10.8%
+
+--- PDF page 3 of 3 ---
+
+Protected B when completed
+Part C – Manitoba tax
+58Manitoba tax on taxable income from line 8
+61510 59Manitoba tax on split income (complete Form T1206) + •
+60Line 58 plus line 59 =
+61Manitoba non-refundable tax credits from line 57
+61520 62Manitoba dividend tax credit (use Worksheet MB428) + •
+61540 63
+Manitoba minimum tax carryover:
+Amount from line 40427 of your return × 50% = + •
+64Add lines 61 to 63. =
+Ż –
+65Line 60 minus line 64 (if negative, enter "0") =
+66
+Manitoba additional tax for minimum tax purposes:
+Form T691: line 111 minus line 112 × 50% = +
+67Line 65 plus line 66 =
+61794 68Manitoba political contributions made in 2021
+69Manitoba political contribution tax credit (use Worksheet MB428) (maximum $1,000) –
+70Line 67 minus line 69 (if negative, enter "0") =
+60800 71Enter your labour-sponsored funds tax credit from Slip T2C (MAN.) – •
+72Line 70 minus line 71 (if negative, enter "0") =
+73Provincial foreign tax credit (complete Form T2036) –
+74Line 72 minus line 73 (if negative, enter "0") =
+60830 75Manitoba community enterprise development tax credit (complete Form T1256) – •
+76Line 74 minus line 75 (if negative, enter "0") =
+60850 77
+Manitoba small business venture capital tax credit for individuals
+(complete Form T1256-1) (maximum $120,000) – •
+78Line 76 minus line 77 (if negative, enter "0") =
+60860 79Manitoba employee share purchase tax credit (complete Form T1256-2) – •
+80Line 78 minus line 79 (if negative, enter "0") =
+60920 81Manitoba mineral exploration tax credit (complete Form T1241) – •
+82Manitoba tax
+Line 80 minus line 81 (if negative, enter "0")
+Enter this amount on line 42800 of your return. =
+See the privacy notice on your return.
+5007-C E (21) Page 3 of 3
