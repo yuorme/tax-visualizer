@@ -1,0 +1,115 @@
+Title: Ontario Open Data, Gasoline tax rates (archived October 11, 2025)
+URL: http://web.archive.org/web/20251011160549/https://data.ontario.ca/en/dataset/gasoline-tax-rates
+Fetched: 2026-11-01
+SHA-256 of the original: d98c4bbb0463fafb85b2d4d5eaf4de0fe35376f5da7877f3623e9bdb53d83c4c
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+Skip to content
+
+[image: Ontario.ca homepage]
+Français
+
+Data Catalogue
+
+- Datasets
+- Ministries
+- About
+
+- Datasets
+- Ministries
+
+- Home
+- Ministries
+- Finance
+
+## Ministry
+
+### Finance
+
+Leading the province’s fiscal, tax, economic and statistics policy, administering tax and benefit programs and reporting on Ontario’s economic and fiscal plans. Read more
+
+## Licence
+
+Open Government Licence – Ontario
+
+Data in this record is open and is published in the language in which it’s collected. Please contact us to obtain assistance in either official language.
+
+# Gasoline tax rates
+
+- Asset
+- Groups
+- History
+
+Gasoline tax rates were last changed on July 1, 2022. The current rates are:
+
+- unleaded gasoline - 9¢ per litre
+- leaded gasoline - 17.7¢ per litre
+
+The Aviation fuel tax rate was last changed on April 1, 2017. The current rate is 6.7¢ per litre.
+
+Effective January 1, 2020, a new rate was established for Northern Ontario. The rate for Northern Ontario is 2.7¢ per litre.
+
+The Gasoline Tax Act has been amended to eliminate the taxation of propane under the Act, beginning July 1, 2025.
+
+- However, interjurisdictional carriers who acquires propane anywhere will pay a tax at the rate of 0 cents per litre on all propane used by the interjurisdictional carrier in Ontario to generate power in a qualified motor vehicle.
+
+You can download the dataset to view the historical price points for these taxes.
+
+Ministry contact: Finance
+
+## Additional information
+
+Tags
+
+- Economy and Business Economy and Business
+- Environment and Nat... Environment and Natural Resources
+- Government and Finance Government and Finance
+- Taxes and benefits Taxes and benefits
+
+Geographic coverage
+Ontario
+Last Validated Date
+July 1, 2025
+Update frequency
+As required
+
+## Gasoline tax rates
+
+Learn more about accessing data using different formats.
+
+Date range: May 20, 1981 - June 30, 2025
+
+CSV
+Gasoline tax rates English and French [1.3 KiB] [image: Valid data]
+
+Last Updated: July 1, 2025
+
+Explore
+
+## Report an issue with this data
+
+Submit a report if you are experiencing issues with the data resources in this dataset.
+
+## Help us improve the Data Catalogue
+
+Provide feedback about our data and how you’re using it.
+
+## Ministry
+
+### Finance
+
+Leading the province’s fiscal, tax, economic and statistics policy, administering tax and benefit programs and reporting on Ontario’s economic and fiscal plans. Read more
+
+## Licence
+
+Open Government Licence – Ontario
+
+Data in this record is open and is published in the language in which it’s collected. Please contact us to obtain assistance in either official language.
+
+- Accessibility
+- Privacy
+- Contact us
+- Terms of use
+
+© King’s Printer for Ontario, 2012–25

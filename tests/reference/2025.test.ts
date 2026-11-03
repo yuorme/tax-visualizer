@@ -32,6 +32,36 @@ const single = (ord: number, extra: Partial<Household> = {}): Household => ({
 const pct = (v: number) => Math.round(v * 10000) / 100;
 const credits = (r: ReturnType<typeof compute>) => r.credits.map(([n, v]) => [n, Math.round(v)]);
 
+// NWT Budget 2025-2026 B22, rates at January 30, 2025 (cached fuel7-nwt-budget-2025.txt).
+// Vancouver uses BC's May 2025 breakdown: 1.75 + 6.75 provincial cents and 18.5 TransLink cents;
+// Montreal adds 3 ARTM cents (ARTM Budget 2026, confirming the unchanged historical rate).
+// Ordinary gasoline taxes held throughout 2025. Carbon is separately modeled and not part of these rates.
+test("2025 published ordinary gasoline rates in every reference city", () => {
+  const cents: Record<string, [number, number]> = {
+    BC: [8.5, 18.5],
+    AB: [13, 0],
+    SK: [15, 0],
+    MB: [12.5, 0],
+    ON: [9, 0],
+    QC: [19.2, 3],
+    NB: [10.87, 0],
+    NS: [15.5, 0],
+    PE: [8.47, 0],
+    NL: [7.5, 0],
+    YT: [6.2, 0],
+    NT: [10.7, 0],
+    NU: [6.4, 0],
+  };
+  assert.equal(y.federal.fuelTax?.gasoline, 0.1, "NRCan: federal gasoline excise is 10 cents in 2025");
+  for (const [code, [provincial, regional]] of Object.entries(cents)) {
+    const result = compute(y, prov(code), single(60000, { driving: { km: 10000, lPer100km: 10 } }));
+    assert.ok(result.fuel);
+    assert.equal(Math.round(result.fuel.perLitre.provincial * 10000) / 100, provincial, code);
+    assert.equal(Math.round(result.fuel.perLitre.regional * 10000) / 100, regional, code);
+    assert.equal(Math.round(result.fuel.total * 100) / 100, Math.round((10 + provincial + regional) * 1000) / 100);
+  }
+});
+
 // Top combined (federal + provincial) marginal rates for 2025 on income above the top bracket, from TaxTips.ca's
 // "2024 & 2025 tax rates" tables for each province and territory
 // (https://www.taxtips.ca/priortaxrates/tax-rates-2024-2025/<code>.htm). Quebec includes the 16.5% abatement and

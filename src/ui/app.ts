@@ -32,6 +32,7 @@ import {
 } from "./driving-units.ts";
 import { renderHistory } from "./history.ts";
 import { cents, footerNotes, share, tooltips } from "./notes.ts";
+import { provinceFlags, setProvinceFlag } from "./province-flags.ts";
 import { readScenario, scenarioHash } from "./scenario-url.ts";
 
 const availableYears = Object.keys(years)
@@ -394,7 +395,7 @@ P.forEach(p => {
   c.className = "col";
   c.id = `col-${p.c}`;
   c.innerHTML = `<div class="col-plot"><span class="cv"></span><div class="stack"><i class="f"></i><i class="p"></i><i class="y"></i><i class="w"></i><i class="s"></i><i class="h"></i><i class="g"></i><i class="c"></i></div><i class="ben"></i></div>
-    <div class="code" title="${p.n}">${p.c}${p.qc ? "<sup>†</sup>" : ""}</div><div class="cm"></div><div class="tag"></div>`;
+    <div class="code" title="${p.n}"><img class="province-flag" src="${provinceFlags[p.c]}" data-province="${p.c}" alt="" aria-hidden="true" width="72" height="52">${p.c}${p.qc ? "<sup>†</sup>" : ""}</div><div class="cm"></div><div class="tag"></div>`;
   colsEl.appendChild(c);
 });
 
@@ -538,6 +539,9 @@ function segTip(p: ProvView, r: Result, c: Seg) {
 
 const narrow = matchMedia("(max-width: 520px)"); // phone: compact chart labels
 function render() {
+  setProvinceFlag($<HTMLImageElement>("home-flag"), home);
+  setProvinceFlag($<HTMLImageElement>("cmp-home-flag"), home);
+  setProvinceFlag($<HTMLImageElement>("dest-flag"), dest);
   $("history-view").hidden = !historyOpen;
   $("province-view").hidden = historyOpen;
   $("detail").hidden = historyOpen;
@@ -603,7 +607,7 @@ function render() {
   };
   $("cc-y").innerHTML =
     ticks.map(t => `<span style="top:calc(var(--plot-h) * ${1 - (t - lo) / span})">${yLabel(t)}</span>`).join("") +
-    `<span class="key" style="top:calc(var(--plot-h) + 24px)">marg.</span>`;
+    `<span class="key" style="top:calc(var(--plot-h) + 24px + var(--flag-row))">marg.</span>`;
   $("cc-grid").innerHTML = ticks
     .map(t => `<i class="${Math.abs(t) < 1e-9 ? "base" : ""}" style="bottom:${pos(t)}%"></i>`)
     .join("");
@@ -835,8 +839,14 @@ interface LedgerData {
   rows: Adj[];
   net: number;
 }
+// Comparison explanations are plain text; escape quotes before embedding them in a tooltip attribute.
+function comparisonInfo(name: string, text: string) {
+  const attr = text.replaceAll("&", "&amp;").replaceAll('"', "&quot;");
+  return `<button type="button" class="info" data-comparison-note="${name}" data-tip="${attr}" aria-label="About ${name}">i</button>`;
+}
+
 // One government's bracket ledger. w.rows: [label, amount] adjustments after bracket tax (negative = reduces tax).
-function ledger(title: string, sw: string, w: LedgerData, ti: number) {
+function ledger(title: string, sw: string, w: LedgerData, ti: number, explanation = "") {
   const rows = w.lines
     .map(l => {
       const isOn = l.part > 0,
@@ -851,7 +861,7 @@ function ledger(title: string, sw: string, w: LedgerData, ti: number) {
       `<tr class="sub"><td colspan="3">${label}</td><td class="r">${a < 0 ? "−" : "+"}${money(Math.abs(a))}</td></tr>`,
     );
   foot.push(`<tr><td colspan="3">${title} tax</td><td class="r">${money(w.net)}</td></tr>`);
-  return `<div class="ledger"><h4><i class="sw" style="background:${sw}"></i>${title}</h4>
+  return `<div class="ledger"><h4><i class="sw" style="background:${sw}"></i>${title}${explanation}</h4>
     <table><thead><tr><th>Bracket</th><th class="r">Rate</th><th class="r">Income in it</th><th class="r">Tax</th></tr></thead>
     <tbody>${rows}</tbody><tfoot>${foot.join("")}</tfoot></table></div>`;
 }
@@ -923,21 +933,21 @@ function renderDetail(res: Row[], order: Row[]) {
       : "") +
     (effSpend() > 0
       ? row(
-          `Sales tax <small class="note">(${prov(home).d.salesTax.label} vs ${prov(dest).d.salesTax.label})</small>`,
+          `Sales tax <small class="result-annotation">(${prov(home).d.salesTax.label} vs ${prov(dest).d.salesTax.label})</small>`,
           hr.sales,
           dr.sales,
         )
       : "") +
     (ownedValue() > 0 || hasPropertyBill()
       ? row(
-          `Property tax <small class="note">(${hasPropertyBill() ? "your bill" : rateFmt(hr.propRate)} vs ${rateFmt(dr.propRate)})</small>`,
+          `Property tax <small class="result-annotation">(${hasPropertyBill() ? "your bill" : rateFmt(hr.propRate)} vs ${rateFmt(dr.propRate)})</small>`,
           hr.property,
           dr.property,
         )
       : "") +
     (any(fuelAmt)
       ? row(
-          `Fuel tax <small class="note">(${cents(hr.fuel?.perLitre.total ?? 0)} vs ${cents(dr.fuel?.perLitre.total ?? 0)} a litre)</small>`,
+          `Fuel tax <small class="result-annotation">(${cents(hr.fuel?.perLitre.total ?? 0)} vs ${cents(dr.fuel?.perLitre.total ?? 0)} a litre)</small>`,
           fuelAmt(hr),
           fuelAmt(dr),
         )
@@ -948,7 +958,7 @@ function renderDetail(res: Row[], order: Row[]) {
       : "") +
     (kids > 0
       ? row(
-          `Child benefits <small class="note">(CCB${any(r => r.provBen) ? " + provincial" : ""})</small>`,
+          `Child benefits <small class="result-annotation">(CCB${any(r => r.provBen) ? " + provincial" : ""})</small>`,
           hr.childBen,
           dr.childBen,
           "credit",
@@ -996,15 +1006,14 @@ function renderDetail(res: Row[], order: Row[]) {
   $("detail-body").innerHTML = `
     <div style="display:grid;gap:6px">
       <p class="headline">${headline}</p>
-      <p class="note">${sub}</p>
+      <p class="result-summary">${sub}</p>
     </div>
     <div class="cmp-wrap"><table class="cmp">
       <thead><tr><th></th><th class="r">${H.p.n}</th><th class="r">${D.p.n}</th><th class="r">Difference</th></tr></thead>
       <tbody>${rows}</tbody>
     </table></div>
-    ${spouseNote ? `<p class="note">${spouseNote}</p>` : ""}
     <div class="views">
-      <h4>Income tax detail${two ? ` for ${active ? "Partner" : "you"}` : ""}</h4>
+      <h4>Income tax detail${two ? ` for ${active ? "Partner" : "you"}` : ""}${spouseNote ? comparisonInfo("spouse and dependant amounts", spouseNote) : ""}</h4>
       <fieldset class="seg" aria-label="Province for income tax detail">
         <button type="button" data-view="home" aria-pressed="${view !== "dest"}">${H.p.n}</button>
         <button type="button" data-view="dest" aria-pressed="${view === "dest"}">${D.p.n}</button>
@@ -1111,17 +1120,23 @@ function ledgerView({ p, r }: Row) {
       [`${p.n} payroll tax (${rateFmt(p.d.payroll?.employeeTax ?? 0)})`, m.pay.terr],
     ] satisfies Adj[]
   ).filter(([, a]) => a > 0.5);
+  const taxableInfo =
+    hasInv(x) || x.oth || n.ded || n.enh > 0.5
+      ? comparisonInfo(
+          "taxable income",
+          `${two ? `${who}: t` : "T"}axable income is ${money(m.ti)}: ${tiText}.${hasInv(x) ? ` "Tax on investment income" is the extra tax the ${two ? "household's " : ""}investment income adds on top of the rest of its income.` : ""} ${extra.join(" ")}`,
+        )
+      : "";
   return `
-    ${hasInv(x) || x.oth || n.ded || n.enh > 0.5 ? `<p class="note">${two ? `${who}: t` : "T"}axable income is ${money(m.ti)}: ${tiText}.${hasInv(x) ? ` "Tax on investment income" is the extra tax the ${two ? "household's " : ""}investment income adds on top of the rest of its income.` : ""} ${extra.join(" ")}</p>` : ""}
     <div class="ledgers">
-      ${ledger(`Federal${suffix}`, "var(--fed)", { lines: m.f.lines, gross: m.f.tax, rows: fRows, net: m.fed }, m.ti)}
+      ${ledger(`Federal${suffix}`, "var(--fed)", { lines: m.f.lines, gross: m.f.tax, rows: fRows, net: m.fed }, m.ti, taxableInfo)}
       ${ledger(p.n + suffix, "var(--prov)", { lines: m.pr.lines, gross: m.pr.tax, rows: pRows, net: m.prov }, m.tiP)}
       <div class="ledger">
         <h4><i class="sw" style="background:var(--pay)"></i>Payroll${suffix}</h4>
         <table class="margs"><thead><tr><th>Contribution</th><th class="r">Amount</th></tr></thead><tbody>
           ${payRows.map(([l, a]) => `<tr><td>${l}</td><td class="r">${money(a)}</td></tr>`).join("") || `<tr><td>None at this income</td><td class="r">$0</td></tr>`}
         </tbody><tfoot><tr><td>Total</td><td class="r">${money(m.payroll)}</td></tr></tfoot></table>
-        <h4 style="margin-top:16px">Marginal rate on ${two ? `${active ? "Partner's" : "your"} ` : "the "}next dollar of…</h4>
+        <h4 style="margin-top:16px">Marginal rate on ${two ? `${active ? "Partner's" : "your"} ` : "the "}next dollar of…${comparisonInfo("marginal rates", "Includes payroll contributions and any child benefit clawback. A negative dividend rate means the dividend tax credit is worth more than the tax on that dividend.")}</h4>
         <table class="margs"><thead><tr><th>Income type</th><th class="r">${hh() ? "Household rate" : "Combined rate"}</th></tr></thead><tbody>
           ${mrow("Employment income", r.margBy.ord)}
           ${mrow("Interest, rental &amp; other income", r.breakdown.margOther)}
@@ -1130,7 +1145,6 @@ function ledgerView({ p, r }: Row) {
           ${mrow("Non-eligible dividends", r.margBy.nd)}
           ${mrow("Foreign dividends", r.margBy.fd)}
         </tbody></table>
-        <p class="note" style="margin-top:8px">Includes payroll contributions and any child benefit clawback. A negative dividend rate means the dividend tax credit is worth more than the tax on that dividend.</p>
       </div>
     </div>`;
 }

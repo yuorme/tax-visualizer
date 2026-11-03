@@ -1,0 +1,71 @@
+Title: Personal income tax rates and indexation
+URL: https://www.novascotia.ca/personal-income-tax-rates-and-indexation
+Fetched: 2026-11-03
+SHA-256 of the original: 7d84608677ed4fe165d5506b9406e469b1f01d5bb7eabf9f031b8ba952914fa4
+Text extract made with scripts/fetch-source.ts extract/formatExtract helpers. Check figures against the original when layout matters (tables).
+================================================================================
+
+# Personal income tax rates and indexation
+
+Nova Scotia’s personal income tax is collected by the Canada Revenue Agency at the same time federal income tax is collected. The Government of Nova Scotia sets the tax rates and taxable income brackets for Nova Scotia.
+
+The personal income tax is collected under the authority of the Income Tax Act.
+
+The provincial personal income tax is calculated on an individual’s taxable income amount. The federal government defines the calculation of personal taxable income including:
+
+- employment income
+- interest gains or losses
+- various tax deductions
+
+The Government of Nova Scotia sets the tax rates and taxable income brackets for Nova Scotia. Both federal and provincial taxes are determined through the annual tax return to Canada Revenue Agency.
+
+## Personal income tax indexation
+
+The indexation of taxable income brackets and certain non-refundable tax credits implemented is effective starting with the 2025 tax year.
+
+The Personal Income Tax Indexation Regulations under the Income Tax Act prescribes the consumer price index (CPI) amount for a given taxation year.
+
+For the 2025 taxation year the personal income tax system is indexed at a rate of 3.1% (OIC 2024-36).
+
+For the 2026 taxation year the personal income tax system is indexed at a rate of 1.6% (OIC 2025-274).
+
+### Taxable income brackets and maximum non-refundable tax credit amounts
+
+Taxable income brackets and the maximum non-refundable tax credit amounts that can be claimed for tax years 2024, 2025 and 2026.
+
+Tax rate | 2024 Tax Year | 2025 Tax Year | 2026 Tax Year
+8.79% | $29,590 | $30,507 | $30,995
+14.95% | $59,180 | $61,015 | $61,991
+16.67% | $93,000 | $95,883 | $97,417
+17.5% | $150,000 | $154,650 | $157,124
+21% | Over $150,000 | Over $154,650 | Over $157,124
+
+### Non-refundable tax credits indexed (maximum amounts)
+
+Amount | 2024 Tax Year | 2025 Tax Year | 2026 Tax Year
+Basic Personal Amount | $11,481 | $11,744 | $11,932
+Spouse or Common-law Partner Amount | $11,481 | $11,744 | $11,932
+Amount for an Eligible Dependent | $11,481 | $11,744 | $11,932
+Amount for Infirm Dependents Age 18 or Older | $2,798 | $2,885 | $2,931
+Age Amount | $5,606 | $5,734 | $5,826
+
+### Other provincial income tax credits
+
+Other provincial tax credits are administered by Canada Revenue Agency. Income tax guides and forms are on the Canada Revenue Agency website for a complete list of personal income tax credits and deductions administered by the CRA on behalf of the province.
+
+- Affordable Living Tax Credit Factsheet (PDF)
+- Age Tax Credit Factsheet (PDF)
+- Poverty Reduction Credit
+
+## Related information
+
+- Canada Revenue Agency (CRA)
+
+## Related legislation
+
+- Income Tax Act (PDF)
+- Personal Income Tax Indexation Regulations
+
+### Was the information on this page helpful?
+
+Let us know about your experience with this content

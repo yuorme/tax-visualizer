@@ -1,0 +1,723 @@
+Title: GUIDE FOR EMPLOYERS - SOURCE DEDUCTIONS AND CONTRIBUTIONS
+URL: https://www.revenuquebec.ca/documents/en/formulaires/tp/TP-1015.G-V(2026-01).pdf
+Fetched: 2026-11-03
+SHA-256 of the original: aa2edce33edf10534530e8b3ce79c56f50b888cbeb14ead8d6ac8694ef4f4c97
+Publication date modified: 2026-01-13
+PDF pages: 49-64 of 125
+Text extract made with scripts/fetch-source.ts extract/formatExtract helpers. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 49 of 125 ---
+
+49
+4.5.2 Employee who receives a disability pension under the QPP
+As a rule, you must withhold employee QPP contributions from an employee’s pensionable salary or wages up to
+and including the month that includes the date (set by Retraite Québec) on which the employee becomes disabled.
+However, you must withhold the contributions from an employee 60 or older who receives a salary or wages and
+also both a disability pension and a QPP retirement pension�
+If the employee starts receiving a retirement pension or is no longer considered disabled by Retraite Québec,
+you must begin withholding QPP contributions on their pensionable salary or wages as of the month they start
+receiving the retirement pension—even if they also receive a disability pension—or as of the month after the month
+they stopped receiving a disability pension�
+In these situations, the maximum employee contributions for the year must be reduced based on the number of
+months the employee has to contribute to the QPP�
+4.5.3 Employee who dies in the year
+Withhold employee QPP contributions up to and including the day the employee dies. To calculate the QPP
+contributions, take into account the number of months up to and including the month of the employee’s death.
+Example
+At the time of their death on March 8, 2026, an employee was receiving a weekly salary of $900. Their
+pensionable salary at the time of their death was $9,000. This amount does not exceed the maximum
+pensionable earnings under the QPP of $74,600 for 2026. The exemption is $67.30 ($3,500 ÷ 52).
+You have to withhold the employee contribution up to the last pay of the month of March, the month the
+employee died. The employee’s maximum contribution for the year must be reduced based on the number of
+months they have to contribute to the QPP (here, three months), so their contribution for the year must not
+be more than $1,119.83 ($4,479.30 × (3 ÷ 12)).
+Employee contribution for the first 10 weeks of the year
+The lesser of the following amounts:
+•• Pensionable salary or wages for the pay period $900.00
+Exemption for the pay period – $67.30
+= $832.70
+Contribution rate × 6.30%
+Employee contribution per pay period = $52.46
+Number of weeks × 10
+= $524.60 $524.60 $524.60
+•• Employee’s maximum contribution for the year ($4,479.30 × (3 ÷ 12)) $1,119.83
+Employee’s contributions for the year $524.60
+
+--- PDF page 50 of 125 ---
+
+50
+4.5.4 Employee who is at least 65 but under 73 at the end of the year who elects to
+stop contributing to the QPP
+An employee who is at least 65 but under 73 at the end of the year who receives a QPP or CPP retirement pension
+can elect to stop contributing to the QPP by giving you a copy of form RR-50-V,
+Election to Stop Contributing to
+the Québec Pension Plan, or Revocation of an Election� The employee can also give you this form to revoke an
+election made in a previous year and restart making QPP contributions�
+Election to stop contributing to the QPP
+An employee can elect to stop contributing to the QPP if all the following conditions are met:
+•• The employee is at least 65 but under 73 at the end of the year.
+•• The employee receives a QPP or CPP retirement pension�
+•• The employee has not revoked their election in the year�
+Employees can elect to stop making QPP contributions as of the day following the day of their 65th birthday.
+The election takes effect on the first day of the month following the date on which the employee gives you the election
+form. When you get the form, stop withholding employee QPP contributions and stop paying your employer
+contributions as of the first pay of the month following the month in which the employee gave you the election form�
+This election remains in effect until the employee revokes it or until December 31 of the year in which the employee
+turns 72.
+If an employee’s QPP or CPP retirement pension is cancelled, the employee’s election to stop making QPP contributions
+is also cancelled. In this situation, you have to restart withholding employee QPP contributions and paying employer
+QPP contributions. You also have to remit any employee QPP contributions you should have withheld, as well as
+your employer contribution. You can recover the employee contributions that you paid out of your own funds later
+by deducting the amounts from any pensionable salary or wages you pay the employee in the 12 months following
+the date the contributions should have been withheld. For more information, see section 4.7.2.
+Revocation of the election to stop contributing to the QPP
+An employee can revoke an election made in a previous year and restart making QPP contributions if both the
+following conditions are met:
+•• The employee gave you form RR-50-V in a previous year.
+•• The employee receives a pensionable salary or wages under the QPP�
+Resume withholding the employee’s QPP contributions and paying your employer contributions as of the first pay
+of the month following the month in which the employee gave you form RR-50-V.
+An employee’s revocation of the election with respect to their job remains in effect until they make another election,
+in another year, to stop making QPP contributions in the context of the same job, or until December 31 of the year
+in which they turn 72.
+Making or revoking the election does not reduce the maximum employee contributions for the year.
+
+--- PDF page 51 of 125 ---
+
+51
+Example
+A 65-year-old employee receives a QPP retirement pension. They elect to stop making QPP contributions by
+giving you a copy of form RR-50-V on October 26, 2026, the day after their 65th birthday. The employee receives
+$2,000 every two weeks (26 pay periods), for an annual salary of $52,000. This amount does not exceed the
+maximum pensionable earnings under the QPP of $74,600 for 2026. The exemption is $134.61 ($3,500 ÷ 26).
+You have to withhold the employee contribution up to the last pay of the month of October (the month in which
+the employee gave you form RR-50-V). The employee’s maximum QPP contribution must not be reduced. The
+employee’s maximum contribution for the year is $4,479.30.
+Employee contribution for the months of January to October 2026
+The lesser of the following amounts:
+•• Pensionable salary or wages for the pay period $2,000.00
+Exemption for the pay period – $134.61
+= $1,865.39
+Contribution rate × 6.30%
+Employee contribution per pay period = $117.52
+Number of pay periods × 22
+= $2,585.44 $2,585.44 $2,585.44
+•• Employee’s maximum contribution for the year $4,479.30
+Employee contribution for the months of November and December 2026 + $0.00
+Employee’s contribution for the year = $2,585.44
+4.5.5 Employee who turns 72 in the year
+You must withhold QPP contributions until December 31 of the year in which an employee turns 72. Stop withholding
+employee QPP contributions as of January 1 of the year following the year the employee turned 72.
+4.5.6 Employee who receives a retirement pension
+Withhold QPP contributions from the pensionable salary or wages paid to an employee during the year, even if the
+employee receives a QPP or CPP retirement pension�
+4.5.7 Employee who works for more than one employer
+Withhold QPP contributions regardless of whether other amounts have been, are being or will be withheld by
+another employer with respect to the same employee, unless you have succeeded the other employer (see
+section 2.6).
+4.5.8 Employee taking phased retirement
+An employee who is at least 55 but under 72 who reduces their working time by taking phased retirement can, if
+certain conditions are met, make an agreement with you to have all or part of the amount by which their salary or
+wages are reduced be deemed paid to them for the purpose of determining their QPP contributions�
+The agreement must be formalized using the form prescribed by Retraite Québec and is valid only if approved by
+Retraite Québec� Payment of an additional QPP contribution resulting from the agreement is shared equally by
+you and the employee. For more information on the conditions that must be met in order to enter into such an
+agreement, contact Retraite Québec�
+
+--- PDF page 52 of 125 ---
+
+52
+Pensionable salary or wages
+The amount by which the salary or wages are reduced that is referred to in the agreement is considered to be a
+pensionable salary or wages paid to the employee at the frequency provided for in the agreement. Consequently,
+in order to calculate the QPP contributions for a pay period, you must add to the employee’s salary or wages the
+corresponding portion of the amount referred to in the agreement�
+Example
+You sign a phased retirement agreement with an employee whose annual salary is $36,000. Under the
+agreement, the employee’s normal work week is reduced by 20%. The agreement provides that $7,200 (20%
+of $36,000) will be considered pensionable salary paid during the year at weekly intervals.
+The QPP contributions for each weekly pay period are calculated on the total of the following amounts:
+•• $553.85 (which is the actual salary earned by the employee [($36,000 − $7,200) ÷ 52]);
+•• $138.46 (which is the deemed salary paid to the employee [$7,200 ÷ 52]).
+Enter the salary deemed paid to the employee after the additional information code G-3 (“Retraite progressive”
+[phased retirement]) on the employee’s RL-1 slip for the year for the purpose of calculating an additional
+contribution to the QPP�
+4.5.9 Employee transferred from an establishment subject to the CPP
+to an establishment subject to the QPP
+If, during the year, an employee is transferred from an establishment subject to the CPP to an establishment
+subject to the QPP, you must take into account the contribution rate applicable to the establishment where the
+employee reports for work or, if the employee is not required to report for work at one of your establishments, you
+must take into account the contribution rate applicable to the establishment from which they are paid. You must
+remit the amount withheld to the appropriate plan�
+If an employee is transferred during a pay period, the employee is considered to have worked during the entire
+pay period at the establishment to which they were transferred, and you must remit to the new plan the full amount
+withheld from the employee’s salary or wages for the pay period.
+Where an employee is transferred from an establishment subject to the CPP to an establishment subject to the QPP,
+you must multiply the total CPP contributions withheld since the beginning of the year by the ratio of the
+QPP contribution rate for the year to the CPP contribution rate for the year�
+The QPP contributions to withhold for a pay period must not exceed the total maximum employee contributions
+for the year�
+
+--- PDF page 53 of 125 ---
+
+53
+Example
+An employer has one establishment in Québec and another in Ontario. The employer transfers one employee
+from one establishment to the other twice during the year. The employee earns $4,000 every two weeks (26 pay
+periods), for an annual salary of $104,000. This amount exceeds the maximum pensionable earnings under
+the QPP ($74,600) and the additional maximum pensionable earnings under the QPP ($85,000) for the year.
+The basic exemption is $134.61 per pay period.
+For the first 10 pay periods, the employee’s QPP contributions (base contribution and first additional
+contribution) total $2,435.20 (($4,000 – $134.61) × 6.30% × 10 pay periods), and the pensionable salary or
+wages accrued is $40,000 ($4,000 × 10 pay periods).
+Employee contribution for the first 10 pay periods $2,435.20
+At the beginning of the 11th pay period, the employee is transferred to the establishment in
+Ontario, where they work until the middle of the 19th pay period.
+Employee contribution for the following 8 pay periods
+Pensionable salary or wages for the pay period $4,000.00
+Exemption for the pay period – $134.61
+= $3,865.39
+CPP contribution rate × 5.95%
+= $229.99
+Number of pay periods × 8
+CPP contribution = $1,839.93
+QPP contribution rate (6.30%) ÷ CPP contribution rate (5.95%) × 1.0588235294
+CPP contribution to add to the employee contribution = $1,948.16 $1,948.16
+During the 19th pay period, the employee is recalled to the establishment in Québec, where
+they work for the remainder of the year�
+Subtotal = $4,383.36
+Employee contribution for the 19th pay period
+The lesser of the following amounts:
+•• Pensionable salary or wages for the pay period $4,000.00
+Exemption for the pay period – $134.61
+= $3,865.39
+Contribution rate × 6.30%
+= $243.52 $243.52
+•• Employee’s maximum contribution $4,479.30
+Employee contribution accrued before the pay period – $4,383.36
+= $95.94 $95.94 $95.94
+Subtotal = $4,479.30
+
+--- PDF page 54 of 125 ---
+
+54
+Subtotal $4,479.30
+Second additional employee contribution for the 19th pay period
+The lesser of the following amounts:
+•• Pensionable salary or wages accrued to the 19th pay
+period ($4,000 × 19 pay periods) $76,000.00
+The greater of the following amounts:
+– Pensionable salary or wages accrued before the
+pay period ($72,000)
+– Maximum pensionable earnings ($74,600) – $74,600.00
+= $1,400.00
+Second additional contribution rate × 4%
+= $56.00 $56.00 $56.00
+•• Employee’s maximum second additional contribution $416.00
+Second additional employee contribution accrued
+before the pay period – $0.00
+= $416.00 $416.00
+Second additional employee contribution for the 20th and 21st pay periods
+($4,000 × 4% × 2 pay periods) + $320.00
+Second additional employee contribution for the 22nd pay period
+The lesser of the following amounts:
+•• Pensionable salary or wages accrued to the 22nd pay
+period ($4,000 × 22 pay periods) $88,000.00
+The greater of the following amounts:
+– Pensionable salary or wages accrued before
+the pay period ($84,000)
+– Maximum pensionable earnings ($74,600) – $84,000.00
+= $4,000.00
+Second additional contribution rate × 4%
+= $160.00 $160.00
+•• Employee’s maximum second additional contribution $416.00
+Accrued second additional employee contribution – $376.00
+= $40.00 $40.00 $40.00
+Second additional employee contribution for the last 5 pay periods + $0.00
+Employee’s contributions for the year = $4,895.30
+4.5.10 Employee temporarily posted to a country that has a social security agreement
+If you have a Québec employee who is temporarily posted outside Canada or a foreign employee who is temporarily
+posted to Québec, there are certain situations in which you have to remit the employee’s and your QPP contributions
+to us. See section 4.6.
+
+--- PDF page 55 of 125 ---
+
+55
+4.5.11 Employee temporarily posted to a country that does not have a social
+security agreement
+When an employee is temporarily posted to a country that does not have a social security agreement with Québec,
+you can make an arrangement with Retraite Québec relative to the employee’s work outside Canada. For more
+information, see section 10.8.3.
+4.6 Social security agreements and the QPP
+Québec has social security agreements with a number of countries. Under these agreements, certain individuals
+who are temporarily posted to a foreign country can continue to pay contributions in their country of origin and
+do not have to pay contributions in the country to which they are posted� The agreements apply to employees who
+are temporarily posted outside Canada and to foreign employees who are temporarily posted to Québec�
+Certificate of coverage
+To take advantage of the social security agreements, you must get a certificate of coverage from Retraite Québec’s
+Bureau des ententes de sécurité sociale. With the certificate, you will be able to make certain social security
+contributions (such as the QPP contribution and the contribution to the health services fund) only to Québec.
+The countries below have a social security agreement with Québec under which you can apply for a certificate
+of coverage�
+TABLE 3 Countries that have a social security agreement for the QPP
+Austria
+Barbados
+Belgium
+Brazil
+Bulgaria
+Chile
+Croatia
+Cyprus
+Czech Republic
+Denmark
+Dominica
+Finland
+France
+Germany
+Greece
+Hungary
+India
+Ireland
+Italy
+Jamaica
+Luxembourg
+Malta
+Morocco
+Netherlands
+Norway
+Philippines
+Poland
+Portugal
+Romania
+Saint Lucia
+Serbia
+Slovak Republic
+Slovenia
+South Korea
+Sweden
+Switzerland
+Turkey
+United States
+Uruguay
+Québec currently has social security agreements providing for reciprocal coverage of both pension plans and
+health insurance plans with the following countries: Belgium, Denmark, Finland, France, Greece, Luxembourg,
+Norway, Portugal, Romania, Serbia and Sweden. New agreements could take effect during the year.
+For more information, go to the Retraite Québec or Régie de l’assurance maladie website�
+Québec employee temporarily posted outside Canada
+If you have temporarily posted a Québec employee to a country that has a social security agreement with Québec
+and you have a certificate of coverage from Retraite Québec’s Bureau des ententes de sécurité sociale for the
+employee, you are required, under certain conditions, to remit the employee’s and your QPP contributions to us.
+Foreign employee temporarily posted to Québec
+If a foreign employee is temporarily posted to Québec by an employer situated in a country that has a social
+security agreement with Québec providing for reciprocal coverage of pension plans, you are not required to withhold
+or pay QPP contributions on the salary or wages the employee is paid�
+
+--- PDF page 56 of 125 ---
+
+56
+4.7 Total QPP contributions paid in the year
+Refer to section 4.5 to ensure that the total amount of QPP contributions you withheld during the year for an
+employee who held continuous employment is correct�
+4.7.1 Excess contributions
+You may have made an overpayment of QPP contributions for a year. This may happen if, for example, an employee
+died during the year, received a disability pension under the QPP after you deducted the maximum contributions
+for the year, or was under 18 when you paid contributions.
+The overpayment will be refunded to you if you submit a written request within four years after the end of the year
+in which the excess amount was paid�
+If the overpayment results from a decision under section 65 of the
+Act respecting the Québec Pension Plan
+concerning the determination of an individual’s employment status, or from a decision on objection or appeal, you
+will receive a refund without having to request one.
+An employee whose contributions exceed the maximum contribution for the year and who is resident in Québec
+at the end of the year can be refunded the excess contributions when they file their provincial income tax return
+for the year. If the employee is not resident in Québec at the end of the year, they can be refunded the excess
+contributions when they file their federal income tax return for the year. Note that the employee can also submit
+a written request for the refund of an overpayment of contributions in the four years following the end of the year.
+4.7.2 Insufficient QPP contributions
+If the employee QPP contribution amounts you withhold are insufficient, you are required to remit the amounts
+you did not withhold to us, together with your employer contributions. You can recover the employee contributions
+that you paid out of your own funds later by deducting the amounts from any pensionable salary or wages you
+pay the employee in the 12 months following the date on which the contributions should have been withheld. You
+can recover the equivalent of only one QPP contribution from each payment of pensionable salary or wages. If
+the employee does not reimburse you, the amount becomes a taxable benefit that you must report in boxes A
+and L of the employee’s RL-1 slip.
+If you should have withheld an amount in a previous year and you recover that amount in the current year, do not
+enter the amount on the employee’s RL-1 slip for the current year. Amend the employee’s RL-1 slip for the previous
+year instead. For more information on how to amend an RL-1 slip, see the
+Guide to Filing the RL-1 Slip (RL-1.G-V).
+4.7.3 Time limit for making an assessment
+We may adjust the amount of the QPP contributions you are required to pay and make a reassessment or an
+additional assessment. Once you are notified of the contribution assessed, you must pay it immediately. If you
+are not satisfied with the decision, you may request an explanation or take one of the steps described in the
+document
+Recourse for Your Tax-Related Problems (IN-106-V).
+We have four years after the date on which an amount becomes payable to make an assessment. This deadline does
+not apply in the following cases:
+•• You have not filed a return.
+•• You have made a false statement or committed fraud in supplying the required information.
+•• You have filed an application for a waiver on the prescribed form.
+
+--- PDF page 57 of 125 ---
+
+57
+5 QPIP PREMIUMS
+The Québec parental insurance plan (QPIP) provides for the payment of benefits to an employee who takes a
+maternity, paternity, adoption or parental leave during which they sustain an interruption of earnings.
+NOTE
+Information about the benefit application process and the payment of benefits for your employees is available on the
+QPIP website�
+You have to withhold QPIP premiums from each of your employees, regardless of an employee’s age and place of
+residence and of whether the employee receives benefits under the plan. As an employer, you also have to pay
+a QPIP premium�
+You stop withholding an employee’s QPIP premium and paying your premium when the employee’s eligible salary
+or wages reach the maximum insurable earnings for the year�
+You must remit an employee’s QPIP premium and your employer premium to us at the same time. The remittance
+must be made periodically, according to your remittance frequency, using the payment option that is best for you
+(see Part 11).
+We remit the QPIP premiums to the Parental Insurance Fund. The Ministère de l’Emploi et de la Solidarité sociale
+pays benefits to employees from this fund and issues an RL-6 slip to each beneficiary.
+To calculate QPIP premiums, use one of the following:
+•• WebRAS (tool for calculating source deductions and employer contributions);
+•• the
+Table for Québec Parental Insurance Plan Premiums (TP-1015.TA-V);
+•• the
+Formulas to Calculate Source Deductions and Contributions (TP-1015.F-V).
+5.1 Maximum insurable earnings under the QPIP and premium rate
+The table below provides the QPIP data for 2026.
+QPIP data 2026
+Maximum insurable earnings $103,000
+Employee’s premium rate 0.430%
+Employee’s maximum premium ($103,000 × 0.00430) $442.90
+Employer’s premium rate 0.602%
+Employer’s maximum premium (per employee) ($103,000 × 0.00602) $620.06
+The total of the amounts you withhold during the year for an employee must not exceed the maximum employee
+premium for the year. Once the maximum employee premium is reached, you must stop withholding QPIP premiums
+from the employee’s remuneration. You must also stop paying your employer premium on this remuneration because
+the maximum employer premium for the year is also reached once the maximum employee premium is reached�
+
+--- PDF page 58 of 125 ---
+
+58
+5.2 Remuneration subject to QPIP premiums (eligible salary or wages)
+Remuneration subject to Employment Insurance premiums is also generally subject to QPIP premiums.
+Employment that is not insurable under the
+Employment Insurance Act is not necessarily excluded employment
+under the
+Act respecting parental insurance. Consequently, you may be required to withhold and pay QPIP premiums
+respecting remuneration that is not subject to Employment Insurance premiums. If this is the case, the remuneration
+subject to QPIP premiums is equal to the remuneration from which you would have withheld Employment Insurance
+premiums had the employment been insurable under the
+Employment Insurance Act. For example, you must
+withhold and pay QPIP premiums respecting salary or wages paid to a shareholder (or a shareholder’s spouse)
+as an employee, regardless of the number of shares held by that person.
+Minimum qualifying threshold
+If an employee’s work income (including eligible salary or wages) for the year is less than $2,000, the employee
+is not required to pay QPIP premiums for that year. However, regardless of the $2,000 threshold, you must start
+withholding and paying QPIP premiums as soon as you pay the employee one dollar of eligible salary or wages�
+NOTE
+You must take into account any cash remuneration paid to an employee because a benefit in kind does not generally
+constitute eligible salary or wages under the QPIP�
+You must withhold and pay QPIP premiums on the following types of remuneration:
+•• employment income;
+•• a taxable benefit in cash (see IN-253-V,
+Taxable Benefits);
+•• a taxable benefit for board and lodging granted to an employee for a pay period in which the employee receives
+cash remuneration;
+•• a taxable benefit related to the contributions paid to the employee’s individual RRSP;
+•• a taxable benefit related to an amount you pay a third person on behalf of an employee (e.g., tuition fees,
+professional membership dues) for property or a service the third person provides your employee, if the
+employee continues to own the property or service and would otherwise pay the amount if you did not (this
+taxable benefit in kind is part of insurable remuneration under the Employment Insurance plan).
+You must also withhold and pay QPIP premiums on the following types of remuneration:
+•• an indemnity in lieu of notice, except in the case of a retiring allowance under the Employment Insurance plan;
+•• the portion of salary or wages earned in the year that will be paid in another year as part of a deferred salary
+leave (self-funded) or a salary deferral arrangement;
+•• a non-taxable allowance paid under the
+Taxation Act to an elected member of a municipal council, to a member
+of the council or executive committee of a metropolitan community, regional county municipality or similar
+body created under a Québec statute, to a member of a municipal utilities commission or corporation or a
+similar body responsible for administering such services, to a member of a school service centre’s board of
+directors, or to a member of a public or separate school board, for expenses related to the individual’s duties;
+•• an allowance for travel expenses paid to an employee in the construction sector under the collective agreements
+governed by the
+Act respecting labour relations, vocational training and workforce management in the
+construction industry which constitutes insurable remuneration under the Employment Insurance plan;
+•• a non-taxable allowance for travel expenses paid to a member of the council of a regional county municipality
+or of the Kativik Regional Government under the
+Taxation Act;
+•• a non-taxable allowance for travel expenses paid to a member of a board of directors or of different committees
+under the
+Taxation Act;
+
+--- PDF page 59 of 125 ---
+
+59
+•• financial compensation of up to $1,450 paid to an individual as an emergency services volunteer, unless the
+compensation is paid to an individual who participates in a rescue operation, is not regularly employed by the
+employer and is employed by the employer for fewer than seven days in the year;
+•• a non-taxable benefit related to a public transit pass or a paratransit pass with regard to which you reimburse
+an amount to your employee (a public transit pass or a paratransit pass that you provide to your employee is
+not subject to QPIP premiums);
+•• a non-taxable allowance paid to a juror for meals, accommodation and transportation, as well as an allowance
+paid for the care of children or other dependents and for psychological treatment, pursuant to sections 2 to 4
+of the
+Regulation respecting indemnities and allowances to jurors;
+•• the portion of a non-taxable allowance for moving and relocation expenses that exceeds $650.
+5.3 Remuneration not subject to QPIP premiums
+You are not required to withhold or pay QPIP premiums on the following types of remuneration:
+•• salary or wages paid to:
+– an employee for employment that is excluded from the QPIP (see below),
+– an employee after their maximum premium for the year has been reached,
+– a person not subject to QPIP premiums;
+•• taxable benefits in kind (that is, other than in cash), except a taxable benefit for board and lodging granted
+to an employee for a pay period in which the employee receives cash remuneration;
+•• a taxable benefit related to contributions made to a group RRSP, if the employee cannot withdraw amounts
+before their retirement or termination of employment or if the employee is permitted to withdraw RRSP funds
+under the HBP or the LLP;
+•• an allocated tip (see section 9.17);
+•• an amount paid during a deferred salary leave (self-funded) (see section 9.3);
+•• earnings loss benefits, income replacement benefits, supplementary retirement benefits and career impact
+allowances paid under the federal
+Veterans Well-being Act;
+•• an amount you pay to an employee to increase parental insurance benefits paid under the
+Act respecting
+parental insurance or to increase compassionate care benefits paid under the
+Employment Insurance Act if:
+– the total of the top-up payments and the parental insurance or compassionate care benefits is not more
+than the employee’s normal weekly remuneration, and
+– the top-up amount does not reduce severance pay, unused sick leaves or vacation days, or any other credit
+accumulated by the employee;
+•• certain amounts paid further to an industrial accident – CNESST (see section 9.9);
+•• a retiring allowance under the Employment Insurance plan (note that an indemnity in lieu of notice does not
+constitute a retiring allowance under the Employment Insurance plan and is therefore subject to QPIP premiums;
+see section 9.7);
+•• death benefits (see the definition in section 9.18);
+•• pension benefits;
+•• patronage dividends;
+•• wage loss replacement benefits paid by an insurer under a wage loss replacement plan to which the employer
+contributed, except where:
+– the employer pays the benefits directly to an employee under a plan funded in part by the employer,
+– an employee receives the benefits from a third party under a plan funded in part by the employer and in
+respect of which the employer controls certain terms and conditions and determines, either directly or
+indirectly, eligibility for benefits;
+
+--- PDF page 60 of 125 ---
+
+60
+•• the deferred portion of salary or wages paid under a salary deferral arrangement (see section 9.4);
+•• amounts you pay to a trustee of a profit-sharing plan or an employee trust, or to a custodian of an employee
+benefit plan (see section 9.20);
+•• amounts paid by a trustee of a profit-sharing plan or an employee trust, or by a custodian of an employee
+benefit plan;
+•• supplementary unemployment benefits paid under a registered supplementary unemployment benefit plan
+with Employment and Social Development Canada and covering periods of unemployment due to a temporary
+work stoppage, training, sickness, accident or quarantine;
+•• gift certificates and gift cards (see IN-253-V,
+Taxable Benefits);
+•• the salary or wages paid to a judge or to a presiding justice of the peace appointed in accordance with the
+Courts of Justice Act or with the
+Act respecting municipal courts;
+•• fees calculated on an hourly, half-day or full-day basis that are paid to a person who is appointed:
+– by the government as a member of a commission, including a public inquiry commission, an evaluation
+committee, a committee or panel of experts or a working group created for a set period,
+– as a member of a candidate selection or review committee established for that purpose under a
+Québec statute�
+Employment excluded from the QPIP
+The following employment categories are excluded employment, that is, they are not subject to QPIP premiums:
+•• the employment of a member of a religious order who has taken a vow of poverty and whose remuneration is
+paid to the religious order, either directly or by the member;
+•• employment in Québec of a Canadian resident by another government or by an international government
+organization, unless that government or organization agrees to the employment being included;
+•• employment that constitutes an exchange of work or services;
+•• employment in agriculture, an agricultural enterprise or horticulture, if the following two conditions are met:
+– the person is not regularly employed by you, and
+– the person is employed by you for fewer than seven days in the year;
+•• employment by the Government of Canada, the government of a province, a municipality or a school board in
+connection with a referendum or election, if the following two conditions are met:
+– the person is not regularly employed by you, and
+– the person is employed by you for fewer than 35 hours in the year with respect to such referendum
+or election;
+•• employment (other than employment as an entertainer) in a circus, show, fair, parade, carnival, exposition,
+exhibition or similar activity, if the following two conditions are met:
+– the person is not regularly employed by you, and
+– the person is employed by you for fewer than seven days in the year;
+•• employment in a rescue operation, if the following two conditions are met:
+– the person is not regularly employed by you, and
+– the person is employed by you for fewer than seven days in the year;
+•• employment as part of an exchange program, if the employee receives remuneration from an employer not
+resident in Canada;
+•• casual employment not performed in the course of your business or usual trade�
+
+--- PDF page 61 of 125 ---
+
+61
+5.4 Persons not subject to QPIP premiums
+You are not required to withhold or pay QPIP premiums on amounts you pay the following persons:
+•• foreign officers and members of their family or their personnel, if they are exempt from income tax under
+sections 982 and 983 of the
+Taxation Act or under section 96 of the
+Tax Administration Act;
+•• officers and employees of prescribed international organizations and the members of their families, if they
+are exempt from income tax under section 96 of the
+Tax Administration Act;
+•• representatives of member states on international organizations and members of their families and their
+personnel, if they are exempt from income tax under section 96 of the
+Tax Administration Act;
+•• members of prescribed offices of a political division of a foreign state and the members of their families, if
+they are exempt from income tax under section 96 of the
+Tax Administration Act�
+5.5 QPIP premiums based on an employee’s situation
+You have to take an employee’s situation into account when calculating their QPIP premium.
+5.5.1 Employee whose work income for the year is less than $2,000
+An employee is not required to pay QPIP premiums for the year if their work income (eligible salary or wages and
+business income) for the year is less than $2,000. You must, however, start withholding and paying QPIP premiums
+as soon as you pay the employee one dollar of eligible salary or wages. In other words, the $2,000 threshold is
+not taken into account in the employee premiums you withhold, nor in your employer premiums.
+If, however, the employee’s work income for the year is less than $2,000 and they are resident in Québec at the end
+of the year, they can be refunded the amounts withheld when they file their provincial income tax return for the
+year. If the employee is not resident in Québec at the end of the year and their work income is also subject to
+Employment Insurance, they can be refunded the amounts withheld when they file their federal income tax return
+for the year. The employee can also submit a written request for the refund of the amounts withheld in the four years
+following the end of the year�
+Note that the employer premium is not refunded because the $2,000 threshold does not apply to the
+employer premium�
+5.5.2 Employee who works for more than one employer
+You must withhold QPIP premiums regardless of whether other amounts have been, are being or will be withheld
+by another employer with respect to the same employee, unless you have succeeded the other employer (see
+section 2.6).
+5.5.3 Employee who is paid in part from one of your establishments located
+outside Québec
+If an employee reports for work at one of your establishments located in Québec and at one of your establishments
+located outside Québec, or if an employee is not required to report for work at any of your establishments (located
+in Québec or elsewhere), but receives pay from both one of your establishments located in Québec and one of
+your establishments located outside Québec, you can take into account the employer premium you paid (under
+the Employment Insurance plan or a plan like the QPIP) on the employee’s salary or wages paid by one of your
+establishments located outside Québec�
+
+--- PDF page 62 of 125 ---
+
+62
+Your premium under a plan in force outside Québec and your QPIP premium should not total more than the employer
+QPIP premium you would have paid had one of your establishments located in Québec paid all of the employee’s
+salary or wages�
+Example
+An employee earns an eligible salary of $70,000 in Ontario and $60,000 in Québec.
+Employer’s Employment Insurance (EI) premium
+The lesser of the following amounts:
+•• Eligible salary earned in Ontario ($70,000)
+•• Maximum insurable earnings under the EI plan ($68,900) $68,900.00
+Reduction of the employee’s EI premium rate (employee’s EI premium rate
+outside Québec [1.63%] minus employee’s EI premium rate in Québec [1.30%]) × 0.33%
+= $227.37
+Employer’s EI premium rate × 1.4
+= 318.32 $318.32
+Reduction of the maximum insurable earnings under the QPIP ($318.32 ÷ 0.602%) $52,877.08
+Maximum insurable earnings under the QPIP ($103,000 − $52,877.08) $50,122.92
+Employer’s QPIP premium
+The lesser of the following amounts:
+•• Maximum insurable earnings under the QPIP ($50,122.92)
+•• Eligible salary under the QPIP earned in Québec ($60,000) $50,122.92
+Employer’s QPIP premium rate × 0.602%
+= $301.74 $301.74
+Employer’s maximum QPIP premium for the year = $620.06
+5.5.4 Employee who dies or who stops being resident in Canada
+The eligible salary or wages of an employee who dies or stops being resident in Canada in the year are subject
+to QPIP premiums for the period of the year prior to death or to the cessation of residence in Canada, since
+the moment that immediately precedes death or the cessation of residence is deemed to be the end of the year�
+You must withhold and pay QPIP premiums on the eligible salary or wages the employee is paid in the year up to
+the day before the day the employee dies or stops being resident in Canada�
+Any amounts owed to an employee before the employee dies or stops being resident in Canada that are paid after
+the employee dies or stops being resident in Canada are not subject to QPIP premiums (e.g. amounts for
+accumulated vacation, retroactive payments).
+For more information, see section 10.2.
+
+--- PDF page 63 of 125 ---
+
+63
+5.6 Total QPIP premiums paid during the year
+5.6.1 Excess premiums
+Employee premiums
+If the amount you withheld from an employee’s eligible salary or wages for a year is too high, and the employee
+is resident in Québec at the end of the year, the employee can be refunded the excess premiums when they file
+their provincial income tax return for the year� If the employee is not resident in Québec at the end of the year and
+their work income was also subject to Employment Insurance, the employee can be refunded the excess premiums
+when they file their federal income tax return for the year. The employee can also submit a written request for
+the refund of an overpayment of premiums in the four years following the end of the year�
+Employer premiums
+You may have made an overpayment of employer QPIP premiums for a year. If this is the case, the overpayment
+will be refunded to you if you submit a written request within four years after the end of the year in which the
+excess amount was paid�
+If the overpayment results from a decision under section 44 of the
+Act respecting parental insurance concerning
+the determination of an individual’s employment status, or from a decision on objection or appeal, you will receive
+a refund without having to request one.
+5.6.2 Insufficient QPIP premiums
+If the employee QPIP premium amount you withhold is insufficient, you are required to remit the amount you did
+not withhold to us, together with your employer premium. You can recover the employee premium that you paid
+out of your own funds later by deducting the amount from any salary or wages you pay the employee in the
+12 months following the date on which the premium should have been withheld. You can recover the equivalent
+of only one QPIP premium from each payment of salary or wages. If the employee does not reimburse you, the
+amount becomes a taxable benefit that you must report in boxes A and L of the employee’s RL-1 slip.
+5.6.3 Time limit for making an assessment
+We may adjust the amount of the QPIP premium you are required to pay and make a reassessment or an additional
+assessment. Once you are notified of the premium assessed, you must pay it immediately. If you are not satisfied
+with the decision, you may request an explanation or take one of the steps described in the document
+Recourse
+for Your Tax-Related Problems (IN-106-V).
+We have four years after the date on which an amount becomes payable to make an assessment. This deadline does
+not apply in the following cases:
+•• You have not filed a return.
+•• You have made a false statement or committed fraud in supplying the required information.
+•• You have filed an application for a waiver on the prescribed form.
+
+--- PDF page 64 of 125 ---
+
+64
+6 CONTRIBUTION TO THE HEALTH
+SERVICES FUND
+You must pay a contribution to the health services fund corresponding to the total remuneration subject
+to the contribution that you paid your employees in the year multiplied by the applicable contribution rate� The
+rate is determined using your total payroll for the year and your sector of activity�
+Your total payroll is equal to the total remuneration you and any employer associated with you on December 31
+of the year paid in the year, even if you or the associated employer carry on activities outside Québec (see section 6.4).
+You must pay your contribution to the health services fund periodically, according to your remittance frequency,
+using the payment option that is best for you (see Part 11).
+To calculate your contribution to the health services fund, use one of the following:
+•• WebRAS (tool for calculating source deductions and employer contributions);
+•• the
+Formulas to Calculate Source Deductions and Contributions (TP-1015.F-V).
+You have to use an estimated contribution rate to calculate the periodic remittances you have to make in the year
+because the actual contribution rate for the year will only be determined when you file the RL-1 summary. For
+more information, see section 6.5.
+The contribution to the health services fund payable for the year is determined when you file the RL-1 summary
+(form RLZ-1.S-V) for the year. For more information, see the
+Guide to Filing the RL-1 Summary (RLZ-1.S.G-V).
+Employees generally do not pay the contribution to the health services fund. See the guide to filing the personal
+income tax return (TP-1.G-V) for special cases when an employee is required to pay the contribution when filing
+their income tax return�
+6.1 Total payroll threshold and contribution rate
+The table below shows the health services fund contribution rates for 2026, by total payroll. For 2026 and
+subsequent years, the total payroll threshold for eligibility for a reduction of the health services fund contribution
+rate remains $7.8 million.
+Health services fund contribution rates (%) for 2026
+Total payroll
+Rates for all employers, other
+than employers in the primary
+and manufacturing sectors
+and public sector employers
+Rates for employers
+in the primary and
+manufacturing sectors
+Rate for public
+sector employers
+$1,000,000 or less 1.65 1.25 4.26
+$1,000,001 to $7,799,999 1.2662 + (0.3838 × total
+payroll ÷ 1,000,000)
+0.8074 + (0.4426 × total
+payroll ÷ 1,000,000) 4.26
+$7,800,000 or more 4.26 4.26 4.26
+An employer in the primary and manufacturing sectors is an employer whose total payroll is more than 50%
+attributable to activities in the primary and manufacturing sectors. The activities are classified under codes 11,
+21 and 31 to 33 of the North American Industry Classification System (NAICS). For a description of the codes,
+visit the Statistics Canada website.

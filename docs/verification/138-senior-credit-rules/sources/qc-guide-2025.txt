@@ -1,0 +1,1015 @@
+Title: GUIDE – INCOME TAX RETURN – 2025
+URL: https://www.revenuquebec.ca/documents/en/formulaires/tp/2025-12/TP-1.G-V(2025-12).pdf
+Fetched: 2026-11-03
+SHA-256 of the original: 84badbd0c3e35d93d3ea2fd36470b7664f6552c1dca81e8aad3f569637d3317b
+Publication date modified: 2025-12-05
+PDF pages: 20-23,46-48,57-58,65 of 84
+Text extract made with scripts/fetch-source.ts extract/formatExtract helpers. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 20 of 84 ---
+
+20
+2025 – GUIDE-V
+96.1 Pensionable earnings under
+the Canada Pension Plan (CPP)
+On line 96.1, enter the total of the following amounts:
+•• the amounts in box G-2 of your RL-1 slips;
+•• the amounts in box 26 of your T4 slips, if you did not receive any
+corresponding RL-1 slips.
+Deduction for QPP and CPP contributions
+If you entered an amount on line 96.1, use form LE-35-V,
+Contribution
+and Deduction Related to the QPP or the CPP, to calculate the amount
+to enter on line 248.
+97 Québec parental insurance plan (QPIP) premium
+On line 97, enter the QPIP premium shown in box H of your RL-1 slip.
+If you received more than one RL-1 slip, enter the total of the amounts
+shown in box H of all your RL-1 slips.
+Overpayment
+If the amount on line 97 is more than $484.12, enter the overpayment
+(that is, the excess) on line 457 of your return.
+You may have made an overpayment even if the amount you entered
+on line 97 is less than $484.12. If that is the case, we will enter the
+overpayment on line 457.
+If the total of your employment income, your net business income and your
+insurable earnings as a person responsible for a family-type resource
+or an intermediate resource is less than $2,000, carry the amount
+from line 97 to line 457.
+You worked outside Québec
+If you worked outside Québec (in Canada or elsewhere), and you did not
+receive an RL-1 slip for that employment, complete Schedule R to find out
+whether you must pay a QPIP premium.
+98and98.2 Québec Pension Plan (QPP) contribution
+On line 98, enter the total of the base and first additional QPP contributions
+shown in box B.A of your RL-1 slips.
+On line 98.2, enter the total of the second additional QPP contributions
+shown in box B.B of your RL-1 slips.
+Election to stop making QPP contributions
+If you are 65 or over but under 73 at the end of the year, you have employment
+income and you are receiving a QPP or Canada Pension Plan (CPP)
+retirement pension, you can elect to stop making QPP contributions
+by filing form RR-50-V,
+Election to Stop Contributing to the Québec
+Pension Plan, or Revocation of an Election. Send the completed form
+to us and give a copy to your employer.
+Deduction for QPP and CPP contributions
+If you entered an amount on line 98 and, if applicable, line 98.2, and
+you did not earn income from self-employment, complete Part B of
+Schedule U to calculate the amount to enter on line 248. If you earned
+income from self-employment, complete PartCofScheduleU to calculate
+the amount to enter on line 248.
+Overpayment
+You may have made an overpayment. If so, you can enter it on line 452.
+For more information, see the instructions for line 452.
+98.1 Pensionable salary or wages under the Québec
+Pension Plan (QPP)
+On line 98.1, enter the amount shown in box G of your RL-1 slip. If you
+received more than one RL-1 slip, enter the total of the amounts shown
+in box G of all your RL-1 slips.
+Deduction for QPP and CPP contributions
+If you entered an amount on line 98.1 and did not earn income from
+self-employment, complete Part B of Schedule U to calculate the amount
+to enter on line 248. If you earned income from self-employment,
+complete Part C of Schedule U to calculate the amount to enter
+on lines 248 and 445.
+101 Employment income
+Add the following amounts and enter the total on line 101:
+•• the amount shown in box A of your RL-1 slip;
+•• the amount shown in box R-1 of your RL-1 slip; and
+•• the amount shown in box D-1 of your RL-25 slip.
+You worked in Québec but did not receive an RL-1 slip
+Ask your employer for an RL-1 slip if you have not received one
+by mid-March 2026. If you are unable to obtain one, estimate your gross
+employment income and your source deductions (income tax, Québec
+Pension Plan contribution, Québec parental insurance plan premium, etc.)
+and enter the estimated amounts in your return.
+If you worked in Québec for an employer located outside Québec, you must
+include in your employment income the total income shown on
+your T4 slip(s). Enclose a copy of the T4 slip(s) with your return.
+You worked outside Québec
+You must include on line 101 the employment income you earned
+outside Québec:
+•• If you worked outside Canada, check box 94 of your return.
+•• If the income was earned in Canada and you did not receive an RL-1 slip,
+check box 95 and enclose a copy of your T4 slip with your return.
+If either of the above situations applies, complete Schedule R to find out
+whether you are required to pay a Québec parental insurance plan (QPIP)
+premium
+Emergency services volunteers
+The tax-exempt portion of the remuneration paid to you as an emergency
+services volunteer (box L-2 of your RL-1 slip) must be included in your
+income if you are claiming the non-refundable tax credit for volunteer
+firefighters and search and rescue volunteers. See the instructions
+for line 390 to find out if you are entitled to the credit.
+If you are claiming the tax credit for volunteer firefighters and search
+and rescue volunteers (line 390):
+•• include the total of the amounts shown in boxes A and L-2 of your RL-1 slip
+on line 101;
+•• include the amount shown in box L-2 of your RL-1 slip on line 102.
+If you are not claiming this tax credit, include on line 101 only the amount
+from box A of your RL-1 slip.
+
+--- PDF page 21 of 84 ---
+
+21
+2025 – GUIDE-V
+Taxable benefits
+If you received taxable benefits that are not included in the amount in box A
+or box R of your RL-1 slip (or on your T4 slip, if you did not receive
+an RL-1 slip), contact your employer to find out the amount you are required
+to report.
+Deferred taxation of the benefit from a security option
+If, under an agreement with your employer, you acquired an option
+for the purchase of shares or mutual fund units, and at the time you
+exercised the option you advised the employer of your election to defer
+taxation of the benefit related to the securities until the year you disposed
+of them, complete theworkchartbelow to determine the benefit to include
+in your income if you disposed of any of the shares or units in the year.
+Thebenefitcalculatedusingtheworkchart mayentitleyoutoasecurity
+optiondeduction. See point 2 in the instructions for line 297.
+Optional contribution to the Québec Pension Plan (QPP)
+You can make an additional QPP contribution for 2025 if, in 2025,
+your total QPP contributions as an employee were less than $4,735.20
+(total of lines 96, 96.2, 98 and 98.2) and, for example:
+•• you worked for more than one employer;
+•• you entered an amount on line 102; or
+•• you are an Indian and an amount on which you did not make a QPP
+contribution is shown in box R-1 of your RL-1 slip.
+For more information, see Schedule U.
+Work chart – Taxable benefit related to a security option to include in your income for the year
+Fair market value of the share or unit at the time of acquisition 1
+Amount paid to acquire the share or unit 2
+Amount paid to acquire the option + 3
+Add lines 2 and 3. = 4 4
+Subtract line 4 from line 1. = 5
+Number of shares or units disposed of in 2025 × 6
+Multiply line 5 by line 6. Enter the result on line 101. = 7
+102 Taxable benefit on which no QPP contribution
+was withheld
+Include, on line 102, the amount shown in box G-1 of your RL-1 slip.
+If you are claiming the tax credit for volunteer firefighters and search and
+rescue volunteers (line 390), also include the amount shown in box L-2
+of your RL-1 slip.
+105 Correction of employment income
+If you received an RL-22 slip for 2025, you must correct the amount
+of your employment income (line 101) in order to take into account the
+benefit you received under an insurance plan.
+To calculate the amount of the correction, complete Work Chart 105.
+You were self-employed or did not earn employment
+income in 2025
+If you received an RL-22 slip for 2025, enter the amount from box A of
+the slip on line 105 to take into account the value of the coverage you had
+under certain insurance plans
+107 Other employment income
+On line 107, enter the total of your other employment income (not including
+income from self-employment) and, in box 106, enter the number from the
+list below that corresponds to the source of that income.Ifyourother
+employmentincomecomesfrom morethan onesource,enterthetotal
+online 107and“09”in box 106.
+01 Tips not included on the RL-1 slip
+02 Wage loss replacement benefits (box O of the RL-1 slip)
+03 Amounts allocated or paid under a profit-sharing plan
+04 GST and QST rebates
+05 Other employment income
+01 Tips not included on the RL-1 slip
+Enter any tips you received that are not included in box S or T of
+your RL-1 slip.
+02 Wage loss replacement benefits (box O of the RL-1 slip)
+Enter the total wage loss replacement benefits that you received and
+that are included in the amount in box O of your RL-1 slip.
+From the benefits you received under a wage loss replacement plan
+(health insurance plan, accident insurance plan, disability insurance plan
+or income insurance plan), you can subtract the premiums that you paid
+tothatplanafter 1967 and have not already subtracted from benefits
+received in a previous year. Enter them on line 165. Keep the document
+certifying that you paid the premiums in question in case we ask for it.
+03 Amounts allocated or paid under a profit-sharing plan
+Enter the total of the amounts allocated or paid to you under a profit-sharing
+plan, which are shown in box D-2 of your RL-25 slip.
+04 GST and QST rebates
+Enter the GST and QST rebates you received in 2025 if the GST and QST
+are included in the expenses you are deducting as an employee or in the
+deduction for the purchase of tools to which you are entitled as a salaried
+tradesperson, an apprentice mechanic, an apprentice automotive painter
+or an apprentice auto body repairer. Do not include, on line 107, the portion
+of the GST and QST rebates related to capital cost allowance for an
+automobile or a musical instrument; instead, subtract that portion from
+the undepreciated capital cost at the beginning of 2025.
+GST and QST rebates for professional dues you paid as an employee
+are tax-exempt. Do not enter them on line 107.
+
+--- PDF page 22 of 84 ---
+
+22
+2025 – GUIDE-V
+05 Other employment income
+On line 107, enter the employment income for which no other line is
+provided in the return. Make sure that the income does not have to be
+entered elsewhere on the return. Enclose a note specifying the type of
+income you are reporting.
+Optional contribution to the Québec Pension Plan (QPP)
+If, in 2025, your total QPP contributions as an employee were less
+than $4,735.20 (total of lines 96, 96.2, 98 and 98.2), and you want to
+increase your QPP benefits, you can (under certain conditions) make an
+additional contribution on all or part of the income that you are reporting
+on line 107. For more information, see Schedule U.
+110 Parental insurance benefits
+If you received benefits under the Québec parental insurance plan (QPIP),
+enter the amount shown in box A of your RL-6 slip on line 110.
+111 Employment Insurance benefits
+If you received Employment Insurance benefits, enter the amount shown
+in that respect on your T4E slip on line 111.
+114 Old Age Security pension
+If you received the Old Age Security pension, enter the amount from
+your T4A(OAS) slip on line 114.
+EnterthenetfederalsupplementsfromyourT4A(OAS)sliponline148,
+notonline114.
+119 Québec Pension Plan (QPP) or Canada Pension
+Plan (CPP) benefits
+If you received, from Retraite Québec or under the CPP, a retirement,
+disability, surviving spouse’s or orphan’s pension, or a pension for a disabled
+person’s child, enter on line 119 the amount shown in this respect
+in box C of your RL-2 slip (or on your T4A(P) slip, if you did not receive
+an RL-2 slip).
+Orphan’s pension or pension for a disabled
+person’s child
+A pension paid for an orphan or for the child of a disabled person is part
+of the child’s income, even if you received it.
+Death benefit
+Donotincludeadeathbenefitintheincomeofthedeceased. The amount
+of the benefit must be reported in the succession’s income tax return
+(filed using the
+Trust Income Tax Return [form TP-646-V]), regardless
+of whom the cheque was made payable to. However, if the death benefit
+is the only income to be reported in the trust return, the return does not
+need to be filed; instead, each beneficiary of the succession must include
+their share of the death benefit in their income. If you are a beneficiary,
+enter your share of the benefit on line 154 of your income tax return
+and enter “08” in box 153.
+122 Payments from a pension plan, an RRSP, a RRIF,
+a DPSP or a PRPP/VRSP, or annuities
+On line 122, enter the total of the following:
+•• payments you received from:
+– a pension plan,
+– a registered retirement savings plan (RRSP),
+– a registered retirement income fund (RRIF), including a life income
+fund (LIF),
+– a pooled registered pension plan (PRPP), including a voluntary
+retirement savings plan (VRSP),
+– a deferred profit-sharing plan (DPSP);
+•• the Income Replacement Benefit (IRB) received under the federal
+Veterans Well-being Act for the months following the month in which
+the veteran turned (or would have turned) 65; and
+•• annuities you received, including an advanced life deferred annuity
+(ALDA).
+IMPORTANT
+• The amount on line 122 may entitle you to an amount for retirement
+income. See the instructions for line 361.
+• If you were born before January 1, 1961, and had a spouse
+on December 31, 2025 (see the definition at line 12), you and
+your spouse (regardless of age) can jointly decide to include up to 50%
+of your eligible retirement income for the year in the calculation of
+your spouse’s income. See“Transferofretirementincomebetween
+spouses”onthenextpage.
+Payments from a pension plan
+If you received payments from a pension plan, enter on line 122 the total
+of the amounts shown in box A of your RL-2 slip and in box D
+of your RL-16 slip
+Pension from a foreign country
+Any pension you received from a foreign country must be included in your
+income. However, you can claim a deduction on line 297 of your income
+tax return if all or part of the pension is not taxable pursuant to a tax treaty
+or agreement concluded between the foreign country and Québec
+or Canada. You must report these amounts in Canadiandollars. To convert
+them, use the exchange rate in effect at the time you received them. You
+can use the average exchange rate for the year if the amounts were received
+over the entire year. To find out the exchange rate, consult the Bank
+of Canada website at bank-banque-canada.ca
+United States individual retirement account (IRA)
+If, in 2025, you received payments from a United States individual retirement
+account (IRA) or converted an IRA into a Roth IRA, contact us.
+Payments from an RRSP, a RRIF, a DPSP or a PRPP/VRSP
+Enter the amount from box Bof your RL-2slip if you received payments
+from a registered retirement savings plan (RRSP), a registered retirement
+income fund (RRIF) (including a life income fund [LIF]), a deferred
+profit-sharing plan (DPSP) or a pooled registered pension plan (PRPP)
+(including a voluntary retirement savings plan [VRSP]).
+Amounts received from a RRIF or a PRPP/VRSP
+further to a death
+If you received amounts from a RRIF or a PRPP/VRSP further to the death
+of your spouse or another person, enter the amount from box K
+of your RL-2 slip
+
+--- PDF page 23 of 84 ---
+
+23
+2025 – GUIDE-V
+Recovery of a deduction for contributions to a spousal RRSP
+If your spouse contributed to one of your RRSPs after 2022, they may have
+to include all or part of any payments you received from your registered
+retirement income fund (RRIF) in their income. Complete form TP-931.1-V,Amounts from a Spousal RRSP or RRIF, to calculate the amounts you
+and your spouse must each include in your income.
+NOTE
+If, on the date the amounts were withdrawn, you and your spouse were
+separated because of the breakdown of your relationship, you must
+report the total of the amounts received.
+Annuities
+Annuities that constitute retirement income
+If you received an income-averaging annuity or an ordinary annuity, enter
+the amount from boxBofyourRL-2slip. In the “Provenance des revenus”
+box of the slip, income-averaging annuities are identified by the abbreviation
+“RE” and ordinary annuities by the abbreviation “RO.”
+Income accrued under certain life insurance policies
+You must report income accrued under certain life insurance policies
+or annuity contracts. This income is shown in boxJof your RL-3 slip
+Advanced life deferred annuity (ALDA)
+If you received payments under an advanced life deferred annuity,
+enter the amount from box B of your RL-2 slip.
+Transfer of retirement income between spouses
+If you were born before January 1, 1961, and had a spouse
+on December 31, 2025 (see the definition at line 12), you and your spouse
+(regardless of age) can jointly decide to include up to 50% of your eligible
+retirement income for the year in the calculation of your spouse’s income.
+You can deduct the transferred amount on line 245 of your return, and
+your spouse must include the amount on line 123 of their return.
+You must also transfer the corresponding Québec income tax withheld
+from that income to your spouse. To make the transfer, you must
+complete Schedule Q and file it with your return.
+NOTE
+IfyouceasedtoberesidentinCanadain 2025, you must have been
+at least 65 years old on the day you ceased to be resident in order
+to transfer part of your retirement income to your spouse.
+Eligible retirement income
+Eligible retirement income includes:
+•• the income reported on line 122; and
+•• the amount entered on line 154 (point 3) as life annuity payments under
+a retirement compensation arrangement, if certain conditions are met
+(contact us for more information).
+Your spouse was resident in Canada, outside Québec
+If you are transferring part of your retirement income toyourspouse, who
+was residentinCanada,outsideQuébec, the amount you deduct on line 245
+must be the same as the amount you are deducting on line 21000
+of your federal income tax return.
+123 Retirement income transferred by your spouse
+If your spouse on December 31, 2025 (see the definition at line 12),
+was 65 or older at the end of the year (or on the day they ceased
+to be resident in Canada in 2025) and received eligible retirement income
+(see the instructions for line 122), you and your spouse can jointly decide
+to include up to 50% of the eligible retirement income your spouse
+received during the year in the calculation of your income. You must
+include the transferred amount on line 123 of your return, and your spouse
+can deduct the amount on line 245 of their return. To make the transfer,
+your spousemustcompleteScheduleQ and enclose it with their return.
+They must also transfer the corresponding Québec income tax withheld
+from that income to you.
+Your spouse was resident in Canada, outside Québec
+If your spouse was resident in Canada, outside Québec, and was 65 or older
+at the end of the year, the amount deducted on line 21000 of their federal
+return must be included on line 123 of your return.
+IMPORTANT
+The amount on line 123 may entitle you to an amount for retirement
+income. For more information, see the instructions for line 361.
+128 Taxable amount of dividends from taxable
+Canadian corporations
+The taxable amount of dividends from taxableCanadiancorporations
+is the total of the following amounts:
+•• the amount from box B of your RL-3 slip;
+•• the amount from box I of your RL-16 slip;
+•• the amount from box F of your RL-25 slip; and
+•• the amounts from boxes 6-1 to 6-3 of your RL-15 slip.
+If you did not receive one or more of the above-mentioned RL slips,
+the amounts are shown on your T3, T4PS, T5 and T5013 slips.
+If you did not receive RL slips or other information slips for certain
+dividends, you can determine the amount to be reported by multiplying
+the actual amount of the dividends by the following rates:
+•• 138% for eligibledividends;
+•• 115% for ordinarydividends
+If you do not know what type of dividends you received, contact the payer
+of the dividends.
+Reporting dividends
+To report dividends, enter:
+•• the taxable amount of all your dividends on line 128;
+•• the actual amount of all your eligible dividends on line 166;
+•• the actual amount of all your ordinary dividends on line 167.
+IMPORTANT
+Dividends from taxable Canadian corporations entitle you to a dividend
+tax credit. See the instructions for line 415.
+
+--- PDF page 46 of 84 ---
+
+46
+2025 – GUIDE-V
+NON-REFUNDABLE TA X CREDI TS
+There are two types of tax credits: refundable and non-refundable.
+Refundable tax credits are paid to you even if you have no income tax
+payable, whereas non-refundable tax credits reduce or cancel your income
+tax payable
+You were not resident in Canada throughout the year
+You must reduce certain amounts used to calculate your non-refundable
+tax credits in proportion to the number of days you were resident in Canada
+in 2025. For more information, see brochure IN-119-V,
+New Residents
+and Income Tax
+350 Basic personal amount
+The basic personal amount for 2025 is $18,571. It takes into account
+contributions to the Québec Pension Plan and the health services fund, and
+premiums under the Québec parental insurance plan and the Employment
+Insurance program.
+358 Adjustment for income replacement indemnities
+Income replacement indemnities from the Commission
+des normes, de l’équité, de la santé et de la sécurité
+du travail (CNESST) or the Société de l’assurance
+automobile du Québec (SAAQ)
+If you were resident in Québec on December 31, 2025, and you received
+income replacement indemnities or compensation for the loss of financial
+support from the CNESST or the SAAQ, entertheamountfrombox M
+of your RL-5 slip(maximum $16,713.90).
+This will reduce the basic personal amount for 2025, which was taken into
+account in calculating your indemnities or compensation.
+If, in 2025, you received income replacement indemnities or compensation
+for the loss of financial support owed to you for one or more previous
+years, and one or more amounts are shown in box O of your RL-5 slip,
+we will calculate a tax adjustment for you on line 443.
+In calculating the tax adjustment for the previous year(s) concerned,
+we can, at your request, include the carry-over of non-capital losses
+or non-refundable tax credits. If you want us to do so, check box 405 of
+your return, complete Part 4 of form TP-766.2-V,
+Averaging of a Retroactive
+Payment, Support-Payment Arrears or a Repayment of Support,
+and enclose theformwithyourreturn
+Income replacement indemnities received under a law
+of Canada or a province other than Québec
+If, under a law of Canada or a province other than Québec, you received
+income replacement indemnities or compensation for the loss of financial
+support basedonyournetemploymentincome and relating to a period
+in 2025, complete form TP-752.0.0.6-V,
+Adjustment for Income Replacement
+Indemnities Received from a Public Compensation Plan Outside Québec,
+and enclose itwith your return. (Income replacement indemnities include
+workers’ compensation and indemnities received further to a precautionary
+cessation of work, a traffic accident or an act of good citizenship,
+or because you were the victim of a crime.)
+If you received income replacement indemnities or compensation for
+the loss of financial support that was not based on your net employment
+income (for example, benefits from the Workplace Safety and Insurance
+Board [WSIB] of Ontario received further to an accident that occurred
+before April 1, 1985), you do not have to calculate an adjustment using
+form TP-752.0.0.6-V.
+Contact us if:
+•• in 2025, you received income replacement indemnities that were owed
+to you for 2004 to 2024; or
+•• in 2025, you received compensation for the loss of financial support
+that was owed to you for 2005 to 2024.
+NOTE
+If you are an Indianand you received any of the previously mentioned
+indemnities, do not include the income replacement indemnities situated
+on a reserve or premises in calculating the adjustment to be entered
+on line 358. An indemnity is considered to be situated on a reserve
+or premises if the income entitling you to the indemnity was situated
+on a reserve or premises.
+361 Age amount, amount for a person living alone
+and amount for retirement income
+The age amount, the amount for a person living alone and the amount
+for retirement income may be reduced on the basis of net family income.
+Age amount
+You can claim an amount if you were born before January 1, 1961. If your
+spouse on December 31, 2025 (see the definition at line 12), was born
+before January 1, 1961, they can also claim an amount. To calculate
+the amount you can claim, completeparts AandBofSchedule B
+The age amount can be claimed for a deceased person only if they
+were 65 or older at the time of death.
+Amount for a person living alone
+You can claim the amount for a person living alone if,throughout 2025,
+you maintained and ordinarily resided in a
+dwelling in which you lived:
+•• alone (that is, you did not share your dwelling at any time in 2025 with
+another person, such as a co-tenant, your mother or father, or a sister
+or brother); or
+•• onlywithone or more people under 18, or one or more of your children,
+grandchildren or great-grandchildren 18 or older who were full-time
+students pursuing vocational training at the secondary level or
+post-secondary studies for which they received an RL-8 slip with
+an amount in box A.
+NOTE
+You can also enter an amount for a person living alone if boxQ1of
+your RL-5slip contains the code “O” or “P” and the following conditions
+are met:
+• You did not have a spouse on December 31, 2025 .
+• If box Q1 of your RL-5 slip contains the code“O,” the Basic Income
+Program benefits included in your income exceed the amount
+on line 359 of your return.
+• If box Q1 of your RL-5 slip contains the code“P,” the total of the
+following benefits included in your income exceeds the amount
+on line 359 of your return:
+
+--- PDF page 47 of 84 ---
+
+47
+2025 – GUIDE-V
+– benefits under the Basic Income Program or the Social Solidarity
+Program (box A of the RL-5 slip);
+– a disability pension or an additional amount for disability for a
+recipient of a retirement pension under the Québec Pension Plan
+(box C-4c of the RL-2 slip);
+– a disability pension or a Canada Pension Plan Post-Retirement
+Disability Benefit (T4AP slip).
+If you meet the conditions and do not claim the amount for a person
+living alone in your income tax return, we will grant it to you
+automatically
+Dwelling
+A house, an apartment or a similar place of residence in which a person
+ordinarily eats and sleeps, and that is equipped with kitchen and
+bathroom facilities.
+NOTE
+A room in a hotel establishment or a rooming house is not a dwelling.
+Couple living separate and apart for a reason
+other than the breakdown of their relationship
+If you and your spouse on December 31, 2025, are living separate and
+apart forareasonotherthanthebreakdownofyourrelationship, one
+or both of you may be able to enter an amount on line 20 of Schedule B.
+If your spouse completes their own Schedule B, you must both enter
+the same amount on line 20. For more information, contact us.
+To calculate the amount you can claim, complete parts A and B
+of Schedule B
+NOTE
+Keep any documents that support your claim for the amount for a person
+living alone (school and municipal tax bills, lease, home insurance
+policy, phone and utility bills, etc.).
+Additional amount for a person living alone
+(single-parent family) (line 21 of Schedule B)
+The additional amount for a person living alone (single-parent family)
+is $2,627.
+You can claim this amount if you are entitled to the amount for a person
+living alone and you meet bothof the following conditions:
+•• Atanytimein 2025, you lived with a child 18 or over who can transfer
+an amount to you as a child 18 or over enrolled in post-secondary studies
+(line 367 of your return) or who could have transferred such an amount
+to you if they had not earned any income.
+•• For the month of December 2025, you were not entitled to the Family
+Allowance payment from Retraite Québec.
+Reduction of the additional amount for a person living alone
+(single-parent family)
+The additional amount for a person living alone (single-parent family) must
+be reduced if, at any time in 2025, you were entitled to the Family
+Allowance from Retraite Québec. To calculate the additional amount
+to which you are entitled, use the work chart opposite.
+NOTE
+If you are entitled to the amount for a person living alone onlybecause
+of the Basic Income Program benefits included in your income,
+you are not eligible for the additional amount for a person living alone.
+Work chart – Additional amount for a person living alone
+(single parent family)
+Number of months for which you
+were entitled to the Family Allowance
+from Retraite Québec
+1 218 92
+× 2
+Multiply line 1 by line 2. = 3
+Additional amount for a person living alone
+(single-parent family) 4 2,627 00
+Amount from line 3 – 5
+Subtract line 5 from line 4.
+Additional amount for a person living alone
+(single-parent family).
+Carrytheresulttoline 21ofSchedule B. = 6
+Amount for retirement income
+You can claim the amount for retirement income if you (or your spouse
+on December 31, 2025) are entering an amount on line 122 or line 123
+of the return.
+The Old Age Security pension (line 114), pensions paid by Retraite Québec
+under the Québec Pension Plan, pensions paid under the Canada Pension
+Plan (line 119) and life annuity payments made under a retirement
+compensation arrangement (line 123 or 154, as applicable) do not entitle
+you to the amount for retirement income.
+To calculate the amount you can claim, complete parts A and B
+of Schedule B
+You or your spouse did not reside in Canada
+throughout the year
+If, for all or part of the year, you or your spouse on December 31, 2025,
+was not resident in Canada, do not reduce the amount on line 34
+of Schedule B in proportion to the number of days you were resident
+in Canada in 2025. Instead, determine your net family income (Part A
+of Schedule B) by taking into account all of the income that you and
+your spouse earned, including income earned while you or your spouse
+was not resident in Canada.
+367 Amount for dependants and amount transferred
+by a child 18 or over enrolled in post-secondary
+studies
+Child under 18 enrolled in post-secondary studies
+(Part A of Schedule A)
+You can enter an amount for post-secondary studies for a child who
+was born after December 31, 2007, if in 2025 the child was your dependant
+and was a full-time student pursuing vocational training at the secondary
+level or post-secondary studies. You can claim $3,823 for each completed
+term that the child began in 2025, uptoamaximumoftwotermsper child
+The amount that you can claim is shown on the RL-8 slip issued to the
+child by the educational institution they attended in 2025.
+To calculate the amount you can claim, completePart AofSchedule A
+Child under 18 who had a spouse
+You cannot claim an amount for a
+childunder 18enrolledinpost-secondary
+studies if the child had a spouse on December 31, 2025 (see the definition
+at line 12), and the spouse is claiming an amount for credits transferred
+from one spouse to the other on line 431 of their return.
+
+--- PDF page 48 of 84 ---
+
+48
+2025 – GUIDE-V
+Educational institution located outside Québec
+If the educational institution is located outside Québec, contact us for
+a blank RL-8 slip and then have the registrar at the institution complete it.
+Keep the slip in case we ask for it.
+Child’s income
+The child’s net income for the year is calculated without including
+any scholarships, bursaries, fellowships or prizes for achievement they
+received, or the deduction for residents of designated remote areas.
+If, for all or part of the year, the child was not resident in Canada,
+you must take into account all of the child’s income, including income
+earned while not resident in Canada.
+Childunder 18enrolledinpost-secondarystudies
+A person born after December 31, 2007, who, in 2025, was your
+dependant and was a full-time student pursuing vocational training
+at the secondary level or post-secondary studies.
+NOTE
+The person can be:
+•• your or your spouse’s child;
+•• a person of whom you or your spouse has the custody and
+supervision (legally or in fact);
+•• your child’s spouse;
+•• the spouse of your spouse’s child.
+Splitting the amount for a child under 18 enrolled
+in post-secondary studies
+If someone else also contributed to the support of a child under 18 who was
+a full-time student pursuing vocational training at the secondary level or
+post-secondary studies, you may have to split the amount claimed
+regarding the child on line 21 of Schedule A with that person.
+If that is the case, multiply the amount on line 21 by the percentage
+that you and the other person agree on. The total percentage must
+not be more than 100%.
+Amount transferred by a child 18 or over enrolled
+in post-secondary studies (Part B of Schedule A)
+If you are the
+ father or mother of a child who was born before
+January 1, 2008, your child can transfer an amount to you representing
+the recognized parental contribution, provided they:
+•• were a full-time student enrolled in vocational training at the secondary
+level or in post-secondary studies; and
+•• completedatleastoneterm that they began in 2025.
+Fatherormother
+A person who:
+•• has a bond of filiation with the child (that is, the person is the father
+or mother named on the child’s certificate of birth);
+•• is the spouse of the child’s father or mother;
+•• is the father or mother of the child’s spouse;or
+•• had custody of the child, supervised the child, and fully supported
+the child immediately before their 19th birthday.
+Claiming the amount
+ThechildmustcompleteScheduleS to calculate the amount that can
+be transferred and designate the recipient(s) of the transfer. Schedule S
+must be enclosed with the child’s return. The child can divide the
+transferred amount between their father and mother.
+If the child is transferring an amount to you, youmustcompletePart B
+of ScheduleA. Enter the transferred amount on line 28.
+Child 18 or over enrolled in post-secondary studies who does
+not transfer an amount
+If the child can transfer an amount to you butdoesnotdoso, you may be
+able to claim an amount for other dependants in Part C of Schedule A
+(see below).
+Educational institution located outside Québec
+If the educational institution is located outside Québec, contact us for
+a blank RL-8 slip and then have the registrar at the institution complete it.
+Keep the slip in case we ask for it.
+Child 18 or over not enrolled in post-secondary studies
+on a full-time basis
+If a child born before January 1, 2008, was your dependant in 2025 but
+was notafull-timestudentpursuing vocational training at the secondary
+level or post-secondary studies, you may be able to claim an amount
+for other dependants in Part C of Schedule A (see below).
+Other dependants (Part C of Schedule A)
+Under certain conditions, you can claim an amount for
+otherdependants
+on line 367.
+Otherdependant
+A person who meetsallthree of the following conditions:
+•• The person was born before January 1, 2008
+•• The person is related to you by blood, marriage or adoption.
+•• In 2025, the person ordinarilylivedwithyou and was supported
+by you.
+Thepersoncannotbe:
+•• your spouse;
+•• a child who, in 2025, is transferring an amount as a child 18
+or over enrolled in post-secondary studies (lines 20.1 and 20.2
+of Schedule S); or
+•• a person whose spouse is deducting, on line 431 of their return,
+an amount for credits transferred from one spouse to the other.
+NOTE
+The person can be:
+•• your or your spouse’s brother, sister, niece, nephew, mother, father,
+grandmother, grandfather, aunt or uncle;
+•• a child for whom you cannot claim an amount in Part B of
+Schedule A because they were not, in 2025, a full-time
+student pursuing vocational training at the secondary level or
+post-secondary studies;
+•• a child who can transfer you an amount as a child 18 or over
+enrolled in post-secondary studies, but does not do so
+Basic amount
+The basic amount is $5,570 for each of your other dependants.
+
+--- PDF page 57 of 84 ---
+
+57
+2025 – GUIDE-V
+INCOME TA X AND CONTRIBUT IONS
+401 Income tax on taxable income
+To calculate the income tax payable on your taxable income, complete
+Work Chart 401. The work charts follow the schedules.
+The amount you enter on this line constitutes the income tax you are
+required to pay on your taxable income. However, if either of
+the two situations below applies to you, carry the amount from line 401
+to the applicable form (see below) to calculate the income tax you are
+required to pay.
+You carried on a business in Canada (outside Québec)
+(box 403)
+If you were resident in Québec on December 31, 2025, and you carried on
+a business in Canada (outside Québec) in 2025, checkbox 403on your
+return. To calculate the income tax that you are required to pay, complete
+form TP-22-V,
+Income Tax Payable by an Individual Who Carries On
+a Business in Canada, Outside Québec
+You were resident in Canada (outside Québec)
+and you carried on a business in Québec (box 403)
+If you were resident in Canada (outside Québec) on December 31, 2025,
+and you carried on a business in Québec in 2025, check box 403 on your
+return. To calculate the income tax that you are required to pay, complete
+form TP-25-V,
+Income Tax Payable by an Individual Resident in Canada,
+Outside Québec, Who Carries On a Business in Québec
+402 Tax adjustment for a single payment
+accrued to December 31, 1971 (Schedule E)
+You can enter a tax adjustment for the portion accrued to December 31, 1971,
+of a single payment received in 2025 under a pension plan or a deferred
+profit-sharing plan. If you do so, you are not required to report on line 154
+the portion of the payment to which the adjustment applies. To determine
+the income tax payable on this income, contact us.
+409 Foreign tax credit (Schedule E)
+You can claim a foreign tax credit on your business or non-business income
+if you meet bothof the following conditions:
+•• You were resident in Québec on December 31, 2025, or on the day
+you ceased to reside in Canada in 2025.
+•• You paid, on the income in question, income tax to the government
+of a foreign country or of a political subdivision of a foreign country,
+or you paid a similar contribution to certain international organizations.
+Your foreign tax credit on non-business income cannot exceed the result
+of the following calculation: the total foreign income tax paid on
+your non-business income, minus the foreign tax credit granted
+by the Canada Revenue Agency on that income.
+The foreign income tax paid on non-business income may be shown in
+box G of your RL-3 slip, box 17 of your RL-15 slip, box L of your RL-16 slip
+or box H of your RL-25 slip.
+Foreign income tax paid on business income may be shown in box 18
+of your RL-15 slip or box K of your RL-16 slip.
+Form to enclose
+Enclose a separate copy of form TP-772-V,
+Foreign Tax Credit, for each
+country to which you paid income tax.
+411 Tax credit for the beneficiary
+of a designated trust (Schedule E)
+You may be entitled to this tax credit if you are the designated beneficiary
+of a designated trust and you are including in your income the amounts
+from lines 15 and 16 of the
+Information Return of the Beneficiary
+of a Designated Trust (form TP-671.9-V).
+To claim the credit, enter the amount from line 25 of form TP-671.9-V
+on line 411 of your return.
+Form to enclose
+Information Return of the Beneficiary of a Designated Trust (TP-671.9-V)
+414 Tax credit for contributions to authorized
+Québec political parties
+You can claim this tax credit if, in 2025, you made contributions in cash
+or by cheque to:
+•• official representatives of municipal political parties or independent
+candidates authorized under Québec’s
+Act respecting elections and
+referendums in municipalities;
+•• financial representatives of municipal party leadership candidates
+authorized under Québec’s
+Act respecting elections and referendums
+in municipalities
+However, you cannot claim this credit if you were a candidate of
+an authorized party, an authorized independent candidate or a leadership
+candidate of an authorized party and you made contributions for your own
+benefit or for that of the party for which you were running.
+The maximum credit is $155. To calculate the amount of your credit,
+completeWorkChart 414
+In calculating the credit, do not include contributions for which you are or
+were entitled to a refund, reimbursement or any other form of assistance.
+415 Dividend tax credit
+To receive the dividend tax credit, you must have been resident in Québec
+on December 31 (or on the day you ceased being resident in Canada).
+To claim a tax credit for dividends from taxable Canadian corporations,
+add the amounts from box C of all your RL-3 slips, box 44 of all your
+RL-15 slips, box J of all your RL-16 slips and box G of all your RL-25 slips,
+and enter the total on line 415.
+If you did not receive an RL-3 slip, RL-15 slip, RL-16 slip or RL-25 slip for
+any of the dividends reported on line 128, enter the result of the following
+calculation on line 415: the amount on line 166 multiplied by 16.1460%
+plus the amount on line 167 multiplied by 3.9330%.
+Special case
+You cannot claim a dividend tax credit for dividend income
+(or any portion thereof) deducted on line 293 or entitling you to a deduction
+on line 297 (point 9).
+
+--- PDF page 58 of 84 ---
+
+58
+2025 – GUIDE-V
+422 Tax credit for the acquisition of Capital régional
+et coopératif Desjardins shares
+You can claim this tax credit if you were resident in Québec on
+December 31, 2025, and you acquired, as first purchaser, Capital régional
+et coopératif Desjardins shares during the period from March 1, 2025,
+to February 28, 2026.
+To claim this credit, enter the amount from box B of your RL-26 slip
+on line 422.
+Note that you cannot carry forward the portion of the credit you are not
+claiming in 2025.
+IMPORTANT
+You are not entitled to this tax credit if:
+• you requested that Capital régional et coopératif Desjardins
+redeem shares that you acquired after February 28, 2025;
+• before March 1, 2026, Capital régional et coopératif Desjardins
+redeemed or purchased shares that you acquired before
+March 1, 2025, and for which you were entitled to a tax credit for
+a year prior to 2025;
+• you have reached the $45,000 cumulative subscription ceiling.
+Special tax related to the redemption
+of Capital régional et coopératif Desjardins shares
+If you claim a tax credit on line 422 of your return and, in a future year,
+you request that Capital régional et coopératif Desjardins redeem shares
+that you held for fewer than seven years, a portion of the tax credit
+you obtained will be recovered.
+424 Tax credit for a labour-sponsored fund
+You can claim this credit if, in 2025 or the first 60 days of 2026,
+you acquired, as first purchaser, class A shares in the Fonds de solidarité
+des travailleurs et des travailleuses du Québec (FTQ) or class A or class B
+shares in Fondaction (le Fonds de développement de la Confédération
+des syndicats nationaux pour la coopération et l’emploi).
+To calculate the amount of your credit, add the tax credits shown
+on your RL-10 slip and the tax credits you did not use before 2025
+and then subtract the cancelled credits shown on your RL-10 slip
+from the result. However, the total amount of the shares acquired
+in a labour-sponsored fund that you can take into account in calculating
+your credit cannot be more than $5,000.
+Under certain conditions, you can carry forward the portion of the credit
+you are not claiming for 2025 to reduce your income tax for future years.
+For example, if the total of the amounts shown in boxes A and G
+of your RL-10 slip is more than $5,000, the surplus can be used to calculate
+your credit for future years.
+You are not entitled to this credit if any of the following situations
+apply to you:
+•• You were born before January 1, 1961
+•• You were born before January 1, 1981, and were either retired
+or on pre-retirement leave in 2025.
+•• You asked the FTQ or Fondaction to redeem your shares within 60 days
+of acquiring them.
+•• You transferred the acquired shares to a spousal registered retirement
+savings plan (RRSP) or a spousal registered retirement investment
+fund (RRIF), and your spouse (or former spouse):
+– was born before January 1, 1961; or
+– was born before January 1, 1981, and was either retired or
+on pre-retirement leave.
+A person is considered to be retired or on pre-retirement leave if, in 2025,
+they:
+•• received a retirement pension under the Québec Pension Plan (QPP)
+or the Canada Pension Plan (CPP);
+•• received pension or annuity payments under one of the following (unless
+the payments they received were further to the death of their spouse):
+– a registered pension plan (RPP),
+– an RRSP,
+– a RRIF,
+– a pooled registered pension plan (PRPP), including a voluntary
+retirement savings plan (VRSP),
+– a deferred profit-sharing plan (DPSP); or
+•• were on paid leave and was not expected to return to work (for example,
+the person was using accumulated sick leave before retiring).
+However, a person is not considered to be retired or on pre-retirement leave
+if the total of the person’s employment and business income for 2025
+was over $3,500, and they had yet to turn 65 or redeem all or part of their
+shares by the end of the year.
+Purchase of replacement shares
+If you purchased replacement shares (RL-10 slip) because you redeemed
+your shares in a labour-sponsored fund in a previous year in order
+to participate in the Home Buyers’ Plan (HBP) or the Lifelong Learning
+Plan (LLP), you cannot claim the credit for the replacement shares.
+431 Credits transferred from one spouse
+to the other
+Negative amount on line 430
+If the amount on line 430 is negative, you can transfer it to your spouse
+on December 31, 2025 (see the definition at line 12), to reduce their
+income tax. However, if you claimed a deduction for split income on
+line 295, refer to Part 4 of form TP-766.3.4-V,
+Income Tax on Split Income,
+to find out whether you can transfer an amount.
+To make the transfer, carry the amount from line 430 to line 431 and
+enter “0” on line 432. Your spouse must enter the transferred amount on
+line 431 of their return. You must filea return in order for the amount
+to be transferred to your spouse.
+If you are claiming amounts on lines 381, 385, 395, 398, 409 and 424,
+you can reduce them instead of transferring the unused portion of the
+credits to your spouse. This will reduce your income tax for future years.
+
+--- PDF page 65 of 84 ---
+
+65
+2025 – GUIDE-V
+REFUND OR BAL ANCE DUE
+451 Québec income tax withheld at source
+Enter the amount of Québec income tax withheld at source shown
+in box E of your RL-1 slip, box J of your RL-2 slip, box G of your RL-6 slip,
+box 16 of your RL-15 slip, box I of your RL-25 slip or box D of your RL-32 slip.
+Income tax withheld from Employment Insurance benefits is shown on
+your T4E slip, and the income tax withheld from the Old Age Security
+pension is shown on your T4A(OAS) slip.
+451.1 Amount from line 58 of your Schedule Q
+If, by mutual agreement between you and your spouse, youaretransferring
+aportionofyourretirementincometoyourspouse, you must also transfer
+the Québec income tax withheld from that income to your spouse.
+On line 451.1 of your return, enter the amount from line 58 of your
+Schedule Q. Your spouse must enter the same amount on line 451.3
+of their return.
+451.3 Québec income tax withholding
+transferred by your spouse
+If, by mutual agreement between you and your spouse, yourspouseis
+transferringaportionoftheirretirementincometoyou, your spouse must
+also transfer the Québec income tax withheld from that income to you.
+On line 451.3 of your return, enter the amount from line 58 of your spouse’s
+Schedule Q.
+452 Québec Pension Plan (QPP)
+or Canada Pension Plan (CPP) overpayment
+You made only QPP contributions
+If lines 98 and 98.2 total more than $4,735.20, enter the overpayment
+(that is, the excess) on line 452. You may have made an overpayment even
+if the total is less than $4,735.20. If this is the case, we will calculate
+the overpayment for you.
+You made only CPP contributions
+If lines 96 and 96.2 total more than $4,430.10, enter the overpayment
+(that is, the excess) on line 452. You may have made an overpayment even
+if the total is less than $4,430.10. If this is the case, we will calculate
+the overpayment for you.
+You made both QPP and CPP contributions
+If you entered amounts on lines 98 and 96 (and 98.2 and 96.2, if applicable),
+we will determine whether you made an overpayment and enter the amount
+of any overpayment on line 452 of your return.
+If you completed form LE-35-V,
+Contribution and Deduction Related
+to the QPP or the CPP, in order to calculate the amount of the QPP
+contribution you are required to make on income from self-employment
+(line 445), enter on line 452 the amount from line 58 of form LE-35-V.
+IMPORTANT
+In your return, make sure that you have entered:
+• on line 96, the total base and first additional CPP contributions shown
+on your RL slip(s) or other information slip(s);
+• on line 96.1, the total pensionable earnings under the CPP shown
+on your RL slip(s) or other information slip(s);
+• on line 96.2, the total additional contributions to the CPP shown
+on your RL slip(s) or other information slip(s);
+• on line 98, the total base and first additional QPP contributions
+shown on your RL slip(s);
+• on line 98.1, the total pensionable salary or wages under the QPP
+shown on your RL slip(s);
+• on line 98.2, the total additional contributions to the QPP shown
+on your RL slip(s) or other information slip(s).
+Form to enclose
+CPP contributions
+If you are at least 65 but younger than 70 and you either elected to stop
+making CPP contributions or revoked such an election, enclose your
+Election to Stop Contributing to the Canada Pension Plan, or Revocation
+of a Prior Election (Canada Revenue Agency form CPT30) with your return,
+unless you are filing your return using software.
+QPP contributions
+If you are self-employed or a person responsible for a family-type resource
+or an intermediate resource, you are 65 or older but younger than 73 and
+you want to make an election to stop paying QPP contributions or revoke
+such an election, complete section 2 of Part A of Schedule U.
+453 Income tax paid in instalments
+Enter the total of the instalments you paid for 2025, which may be shown
+on the copy of form TPZ-1026.A-V,
+Instalment Payments Made by an
+Individual, that you received for the purposes of your March 2026 payment.
+Interest on instalments
+We charge interest, compounded daily, on any instalment (or portion
+thereof) not paid by the due date. If the amount paid is less than 75%
+of the required instalment, additional interest of 10% per year, compounded
+daily, is charged on the unpaid portion of the instalment.
+454 Transferable portion of the income tax withheld
+for another province
+If you were resident in Québec on December 31, 2025, and your employer
+(or a payer) withheld income tax at source for a province or territory other
+than Québec, you can obtain a credit for a portion of the total income tax
+withheld. The credit represents the amount transferred to Québec
+by the Government of Canada under a federal-provincial agreement.
+To be entitled to this credit, you must have requested a tax transfer
+on line 43800 of your federal income tax return. Enter the amount
+of that transfer.

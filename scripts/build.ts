@@ -41,6 +41,7 @@ async function bundle(): Promise<string> {
     minify: !watch,
     write: false,
     plugins: [virtualYears],
+    loader: { ".png": "dataurl" },
     logLevel: "warning",
   });
   return res.outputFiles[0].text;

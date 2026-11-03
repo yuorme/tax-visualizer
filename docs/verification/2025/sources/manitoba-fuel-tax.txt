@@ -1,0 +1,88 @@
+Title: Province of Manitoba | finance - Fuel Tax
+URL: https://www.gov.mb.ca/finance/taxation/taxes/gasoline.html
+Fetched: 2026-11-01
+SHA-256 of the original: 356c86172db99a3fcf73647e1d3a6a191665850d29c0a63cacf5ce7fa8506647
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+Header Side Menu Content Footer Search
+Printer FriendlyFrançaisSite Map Contact Government
+[image: Government of Manitoba]
+Finance
+
+- manitoba.ca
+- > Taxes Administered
+- > Fuel Tax
+
+Page Content
+
+## Fuel Tax
+
+The Fuel Tax Act taxes consumer purchases of fuel at the following rates:
+
+Product Description | Tax Rate Per Litre | Effective Date
+Clear- Diesel and Gasoline | 12.5¢ | January 1, 2025
+Railway Diesel | 6.3¢ | January 1, 1995
+Propane and Butane | 3.0¢ | July 1, 2002
+Marked Gasoline | 2.7¢ | January 1, 2025
+Commercial Heating Fuel | 1.9¢ | April 1, 1987
+Bunker Fuel and Crude Oil | 1.7¢ | April 1, 1987
+Aviation Fuel | 3.2¢ | October 1, 1997
+Aviation Fuel- Commercial Cargo Flights | 1.5¢ | July 1, 2009
+
+Product Description | Tax Rate Per Cubic Metre | Effective Date
+Natural Gas to be used in operating a motor vehicle | 9.0¢ | January 1, 2025
+
+Interjurisdictional Motor Carriers
+
+- International Fuel Tax Agreement (IFTA)
+
+Manitoba Tax Publications
+
+- Bulletins - (IFTA only)
+- Notices
+- Pamphlets
+- The Fuel Tax Act and Regulations
+
+Manitoba Tax Forms
+
+Interest Rates
+
+Get Started
+
+- Finance Home
+- Taxation Home
+- Taxes Administered
+
+- Retail Sales Tax
+- Health and Post-Secondary Education Tax Levy
+- Insurance Corporations Tax
+- Corporation Capital Tax
+- Tobacco Tax
+- Fuel Tax
+- Mining Tax
+- Emissions Tax on Coal and Petroleum Coke
+- Tax Administration and Miscellaneous Taxes Act
+
+- Interjurisdictional Motor Carriers
+- Manitoba Tax Publications
+- Manitoba Tax Forms
+- Related Sites
+- Contact Us
+- Feedback-Questions
+- Disclaimer
+- Workshops
+- Interest Rates
+- Tax Appeals
+
+Stay Connected
+
+- Join us on Facebook
+- Follow us on Twitter
+- Subscribe to our RSS
+- View our videos on YouTube
+- View our photos on Flickr
+
+[image: Government of Manitoba]
+https://www.gov.mb.ca/finance/pubs/css/taxation.css
+Yes
