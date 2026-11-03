@@ -1,0 +1,187 @@
+Title: BC Bill35 passed unchanged and assented November3,2022
+URL: https://www.bclaws.gov.bc.ca/civix/document/id/lc/billsprevious/3rd42nd_progress-of-bills_government
+Fetched: 2026-11-02
+SHA-256 of the original: b9ac3ed63b6566204be14e80508b8bdd7d73a735829bf784bbb720b1cb3dfa78
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+# Progress of Bills with Hansard Debates
+
+## 3rd Session, 42nd Parliament (2022)
+
+GOVERNMENT BILLS
+Bill 1: An Act to Ensure the Supremacy of Parliament (Hon. D. Eby)
+| First Reading | Second Reading | Committee | Report | Amended | Third Reading | Royal Assent | S.B.C. Chap. No.
+Bill | Feb. 8
+Bill 2: Municipalities Enabling and Validating (No. 4) Amendment Act, 2022 (Hon. J. Osborne)
+| First Reading | Second Reading | Committee | Report | Amended | Third Reading | Royal Assent | S.B.C. Chap. No.
+Bill | Feb. 9 | Feb. 10 | Feb. 15 | Feb. 15 | | Feb. 15 | Mar. 10 | 1
+Debate | Feb. 9 | Feb. 10 | Feb. 14 Feb. 15-A Feb. 15-P | | | Feb. 15 | Mar. 10
+Bill 3: Protected Areas of British Columbia Amendment Act, 2022 (Hon. G. Heyman)
+| First Reading | Second Reading | Committee | Report | Amended | Third Reading | Royal Assent | S.B.C. Chap. No.
+Bill | Feb. 10 | Feb. 14 | Feb. 15 | Feb. 15 | | Feb. 15 | Mar. 10 | 2
+Debate | Feb. 10 | Feb. 14 | Feb. 15 | | | Feb. 15 | Mar. 10
+Bill 4: Skilled Trades BC Act (Hon. A. Kang)
+| First Reading | Second Reading | Committee | Report | Amended | Third Reading | Royal Assent | S.B.C. Chap. No.
+Bill | Feb. 14 | Feb. 17 | Mar. 7 | Mar. 7 | | Mar. 7 | Mar. 10 | 4
+Debate | Feb. 14 | Feb. 16 Feb. 17-A Feb. 17-P | Mar. 7 | | | Mar. 7 | Mar. 10
+Bill 5: Workers Compensation Amendment Act, 2022 (Hon. H. Bains)
+| First Reading | Second Reading | Committee | Report | Amended | Third Reading | Royal Assent | S.B.C. Chap. No.
+Bill | Feb. 16 | Feb. 17 | Mar. 3 | Mar. 3 | | Mar. 3 | Mar. 10 | 3
+Debate | Feb. 16 | Feb. 17 | Mar. 3 | | | Mar. 3 | Mar. 10
+Bill 6: Budget Measures Implementation Act, 2022 (Hon. S. Robinson)
+| First Reading | Second Reading | Committee | Report | Amended | Third Reading | Royal Assent | S.B.C. Chap. No.
+Bill | Feb. 22 | Mar. 10 | Apr. 6 | Apr. 6 | Apr. 6 House Ams | Apr. 25 | Jun. 2 | 11
+Debate | Feb. 22 | Mar. 9 Mar. 10-A Mar. 10-P | Apr. 5 Apr. 6 | Apr. 6 | | Apr. 25 | Jun. 2
+Bill 7: Coastal Ferry Amendment Act, 2022 (Hon. R. Fleming)
+| First Reading | Second Reading | Committee | Report | Amended | Third Reading | Royal Assent | S.B.C. Chap. No.
+Bill | Feb. 23
+Debate | Feb. 23
+Bill 8: Attorney General Statutes (Hague Convention on Child and Family Support) Amendment Act, 2022 (Hon. D. Eby)
+| First Reading | Second Reading | Committee | Report | Amended | Third Reading | Royal Assent | S.B.C. Chap. No.
+Bill | Mar. 2 | Mar. 8 | Mar. 28 | Mar. 28 | | Mar. 28 | Mar. 31 | 5
+Debate | Mar. 2 | Mar. 8 | Mar. 28 | | | Mar. 28 | Mar. 31
+Bill 9: Attorney General Statutes Amendment Act, 2022 (Hon. D. Eby)
+| First Reading | Second Reading | Committee | Report | Amended | Third Reading | Royal Assent | S.B.C. Chap. No.
+Bill | Mar. 2 | Mar. 8 | Mar. 29 | Mar. 29 | | Mar. 29 | Mar. 31 | 6
+Debate | Mar. 2 | Mar. 8-A Mar. 8-P | Mar. 28 Mar. 29 | | | Mar. 29 | Mar. 31
+Bill 10: Labour Relations Code Amendment Act, 2022 (Hon. H. Bains)
+| First Reading | Second Reading | Committee | Report | Amended | Third Reading | Royal Assent | S.B.C. Chap. No.
+Bill | Apr. 6 | May 5 | May 16 | May 16 | | May 17 | Jun. 2 | 22
+Debate | Apr. 6 | Apr. 27 Apr. 28 May 2 May 4 May 5-A May 5-P | May 9 May 10-A May 10-P May 11 May 12 May 16 | May 16 | | May 17 | Jun. 2
+Bill 11: Commercial Liens Act (Hon. S. Robinson)
+| First Reading | Second Reading | Committee | Report | Amended | Third Reading | Royal Assent | S.B.C. Chap. No.
+Bill | Mar. 7 | Mar. 10 | Mar. 29 | Mar. 29 | Mar. 29 House Ams | Mar. 31 | Mar. 31 | 9
+Debate | Mar. 7 | Mar. 10 | Mar. 29 | | | Mar. 31 | Mar. 31
+Bill 12: Property Law Amendment Act, 2022 (Hon. S. Robinson)
+| First Reading | Second Reading | Committee | Report | Amended | Third Reading | Royal Assent | S.B.C. Chap. No.
+Bill | Mar. 28 | Apr. 5 | Apr. 25 | Apr. 25 | | Apr. 25 | Jun. 2 | 12
+Debate | Mar. 28 | Mar. 30 Mar. 31-A Mar. 31-P Apr. 4-P Apr. 5-A Apr. 5-P | Apr. 25 | | | Apr. 25 | Jun. 2
+Bill 13: Passenger Transportation Amendment Act, 2022 (Hon. R. Fleming)
+| First Reading | Second Reading | Committee | Report | Amended | Third Reading | Royal Assent | S.B.C. Chap. No.
+Bill | Mar. 8 | Mar. 30 | Apr. 7 | Apr. 7 | Apr. 7 House Ams | Apr. 25 | Jun. 2 | 10
+Debate | Mar. 8 | Mar. 30 | Apr. 7-A Apr. 7-P | Apr. 7 | | Apr. 25 | Jun. 2
+Bill 14: Wildlife Amendment Act, 2022 (Hon. K. Conroy)
+| First Reading | Second Reading | Committee | Report | Amended | Third Reading | Royal Assent | S.B.C. Chap. No.
+Bill | Mar. 9 | Mar. 30 | Apr. 26 | Apr. 26 | | Apr. 26 | Jun. 2 | 13
+Debate | Mar. 9 | Mar. 29-A Mar. 29-P Mar. 30-P | Apr. 6 Apr. 7 Apr. 25 Apr. 26-A Apr. 26-P | | | Apr. 26 | Jun. 2
+Bill 15: Low Carbon Fuels Act (Hon. B. Ralston)
+| First Reading | Second Reading | Committee | Report | Amended | Third Reading | Royal Assent | S.B.C. Chap. No.
+Bill | May 9 | May 10 | May 17 | May 17 | | May 17 | Jun. 2 | 21
+Debate | May 9 | May 10 | May 17-A May 17-P | | | May 17 | Jun. 2
+Bill 16: Transportation Amendment Act, 2022 (Hon. R. Fleming)
+| First Reading | Second Reading | Committee | Report | Amended | Third Reading | Royal Assent | S.B.C. Chap. No.
+Bill | Apr. 5 | Apr. 27 | May 3 | May 3 | | May 9 | Jun. 2 | 16
+Debate | Apr. 5 | Apr. 27 | May 3-A May 3-P | May 3 | | May 9 | Jun. 2
+Bill 17: Miscellaneous Statutes Amendment Act, 2022 (Hon. D. Eby)
+| First Reading | Second Reading | Committee | Report | Amended | Third Reading | Royal Assent | S.B.C. Chap. No.
+Bill | Mar. 31 | Apr. 7 | Apr. 28 | Apr. 28 | | Apr. 28 | Jun. 2 | 14
+Debate | Mar. 31 | Apr. 7 | Apr. 28-A Apr. 28-P | | | Apr. 28 | Jun. 2
+Bill 18: Supply Act (No. 1), 2022 (Hon. S. Robinson)
+| First Reading | Second Reading | Committee | Report | Amended | Third Reading | Royal Assent | S.B.C. Chap. No.
+Bill | Mar. 28 | Mar. 29 | Mar. 30 | Mar. 30 | | Mar. 30 | Mar. 31 | 7
+Debate | Mar. 28 | Mar. 29 | Mar. 30 | | | Mar. 30 | Mar. 31
+Bill 19: Employment Standards Amendment Act, 2022 (Hon. H. Bains)
+| First Reading | Second Reading | Committee | Report | Amended | Third Reading | Royal Assent | S.B.C. Chap. No.
+Bill | Mar. 28 | Mar. 29 | Mar. 30 | Mar. 30 | | Mar. 30 | Mar. 31 | 8
+Debate | Mar. 28 | Mar. 29 | Mar. 30 | | | Mar. 30 | Mar. 31
+Bill 20: Municipal Affairs Statutes Amendment Act, 2022 (Hon. N. Cullen)
+| First Reading | Second Reading | Committee | Report | Amended | Third Reading | Royal Assent | S.B.C. Chap. No.
+Bill | Apr. 7 | Apr. 26 | May 3 | May 3 | May 3 House Ams | May 3 | Jun. 2 | 15
+Debate | Apr. 7 | Apr. 26 | May 3 | May 3 | | May 3 | Jun. 2
+Bill 21: Professional Governance Amendment Act, 2022 (Hon. D. Eby)
+| First Reading | Second Reading | Committee | Report | Amended | Third Reading | Royal Assent | S.B.C. Chap. No.
+Bill | Apr. 25 | May 2 | May 11 | May 11 | | May 11 | Jun. 2 | 19
+Debate | Apr. 25 | May 2 | May 11 | | | May 11 | Jun. 2
+Bill 22: School Amendment Act, 2022 (Hon. J. Whiteside)
+| First Reading | Second Reading | Committee | Report | Amended | Third Reading | Royal Assent | S.B.C. Chap. No.
+Bill | Apr. 26 | May 2 | May 16 | May 16 | | May 16 | Jun. 2 | 20
+Debate | Apr. 26 | May 2 | May 16 | | | May 16 | Jun. 2
+Bill 23: Mental Health Amendment Act, 2022 (Hon. D. Eby)
+| First Reading | Second Reading | Committee | Report | Amended | Third Reading | Royal Assent | S.B.C. Chap. No.
+Bill | Apr. 28 | May 4 | May 9 | May 9 | | May 9 | Jun. 2 | 17
+Debate | Apr. 28 | May 4 | May 5 May 9 | | | May 9 | Jun. 2
+Bill 24: Anti-Racism Data Act (Hon. D. Eby)
+| First Reading | Second Reading | Committee | Report | Amended | Third Reading | Royal Assent | S.B.C. Chap. No.
+Bill | May 2 | May 4 | May 9 | May 9 | | May 9 | Jun. 2 | 18
+Debate | May 2 | May 4 | May 9 | | | May 9 | Jun. 2
+Bill 25: Supply Act, 2022-2023 (Hon. S. Robinson)
+| First Reading | Second Reading | Committee | Report | Amended | Third Reading | Royal Assent | S.B.C. Chap. No.
+Bill | Jun. 2 | Jun. 2 | Jun. 2 | Jun. 2 | | Jun. 2 | Jun. 2 | 24
+Debate | Jun. 2 | Jun. 2 | Jun. 2 | | | Jun. 2 | Jun. 2
+Bill 26: Environmental Management Amendment Act, 2022 (Hon. G. Heyman)
+| First Reading | Second Reading | Committee | Report | Amended | Third Reading | Royal Assent | S.B.C. Chap. No.
+Bill | Jun. 2 | Oct. 3 | Oct. 4 | Oct. 4 | | Oct. 4 | Nov. 3 | 25
+Debate | Jun. 2 | Oct. 3 | Oct. 4 | | | Oct. 4 | Nov. 3
+Bill 27: Attorney General Statutes Amendment Act (No. 2), 2022 (Hon. M. Rankin)
+| First Reading | Second Reading | Committee | Report | Amended | Third Reading | Royal Assent | S.B.C. Chap. No.
+Bill | Oct. 3 | Oct. 18 | Oct. 19 | Oct. 19 | | Oct. 19 | Nov. 3 | 31
+Debate | Oct. 3 | Oct. 18 | Oct. 19 | | | Oct. 19 | Nov. 3
+Bill 28: Municipal Affairs Statutes (Property Taxation) Amendment Act, 2022 (Hon. N. Cullen)
+| First Reading | Second Reading | Committee | Report | Amended | Third Reading | Royal Assent | S.B.C. Chap. No.
+Bill | Oct. 3 | Oct. 4 | Oct. 17 | Oct. 17 | | Oct. 17 | Nov. 3 | 26
+Debate | Oct. 3 | Oct. 4-A Oct. 4-P | Oct. 6-A Oct. 6-P Oct. 17 | | | Oct. 17 | Nov. 3
+Bill 29: Mortgage Services Act (Hon. S. Robinson)
+| First Reading | Second Reading | Committee | Report | Amended | Third Reading | Royal Assent | S.B.C. Chap. No.
+Bill | Oct. 4 | Oct. 5 | Oct. 18 | Oct. 18 | | Oct. 18 | Nov. 3 | 27
+Debate | Oct. 4 | Oct. 5 | Oct. 17 Oct. 18 | | | Oct. 18 | Nov. 3
+Bill 30: Cannabis Control and Licensing Amendment Act, 2022 (Hon. M. Farnworth)
+| First Reading | Second Reading | Committee | Report | Amended | Third Reading | Royal Assent | S.B.C. Chap. No.
+Bill | Oct. 4 | Oct. 5 | Oct. 18 | Oct. 18 | | Oct. 18 | Nov. 3 | 28
+Debate | Oct. 4 | Oct. 5 | Oct. 18 | | | Oct. 18 | Nov. 3
+Bill 31: B.C. Pavilion Corporation Act (Hon. N. Cullen)
+| First Reading | Second Reading | Committee | Report | Amended | Third Reading | Royal Assent | S.B.C. Chap. No.
+Bill | Oct. 5 | Oct. 19 | Oct. 20 | Oct. 20 | | Oct. 20 | Nov. 3 | 33
+Debate | Oct. 5 | Oct. 19 | Oct. 20 | | | Oct. 20 | Nov. 3
+Bill 32: Gaming Control Act (Hon. M. Farnworth)
+| First Reading | Second Reading | Committee | Report | Amended | Third Reading | Royal Assent | S.B.C. Chap. No.
+Bill | Oct. 5 | Oct. 6 | Oct. 18 | Oct. 18 | Oct. 18 House Ams | Oct. 18 | Nov. 3 | 29
+Debate | Oct. 5 | Oct. 6 | Oct. 18 | Oct. 18 | | Oct. 18 | Nov. 3
+Bill 33: Food Delivery Service Fee Act (Hon. R. Kahlon)
+| First Reading | Second Reading | Committee | Report | Amended | Third Reading | Royal Assent | S.B.C. Chap. No.
+Bill | Oct. 6 | Oct. 18 | Oct. 19 | Oct. 19 | | Oct. 19 | Nov. 3 | 30
+Debate | Oct. 6 | Oct. 18 | Oct. 19 | | | Oct. 19 | Nov. 3
+Bill 34: Opioid Damages and Health Care Costs Recovery Amendment Act, 2022 (Hon. A. Dix)
+| First Reading | Second Reading | Committee | Report | Amended | Third Reading | Royal Assent | S.B.C. Chap. No.
+Bill | Oct. 17 | Oct. 20 | Oct. 31 | Oct. 31 | | Oct. 31 | Nov. 3 | 34
+Debate | Oct. 17 | Oct. 20 | Oct. 27 Oct. 31 | | | Oct. 31 | Nov. 3
+Bill 35: Income Tax Amendment Act, 2022 (Hon. S. Robinson)
+| First Reading | Second Reading | Committee | Report | Amended | Third Reading | Royal Assent | S.B.C. Chap. No.
+Bill | Oct. 18 | Oct. 19 | Oct. 20 | Oct. 20 | | Oct. 20 | Nov. 3 | 32
+Debate | Oct. 18 | Oct. 19 | Oct. 20 | | | Oct. 20 | Nov. 3
+Bill 36: Health Professions and Occupations Act (Hon. A. Dix)
+| First Reading | Second Reading | Committee | Report | Amended | Third Reading | Royal Assent | S.B.C. Chap. No.
+Bill | Oct. 19 | Oct. 27 | Nov. 24 | Nov. 24 | Nov. 24 House Ams | Nov. 24 | Nov. 24 | 43
+Debate | Oct. 19 | Oct. 24 Oct. 25-A Oct. 25-P Oct. 27-A Oct. 27-P | Oct. 31 Nov. 1-A Nov. 1-P Nov. 2 Nov. 3-A Nov. 3-P Nov. 21 Nov. 23 Nov. 24-A Nov. 24-P | | | Nov. 24 | Nov. 24
+Bill 37: Energy Statutes Amendment Act, 2022 (Hon. B. Ralston)
+| First Reading | Second Reading | Committee | Report | Amended | Third Reading | Royal Assent | S.B.C. Chap. No.
+Bill | Oct. 27 | Nov. 22 | Nov. 24 | Nov. 24 | Nov. 24 House Ams | Nov. 24 | Nov. 24 | 42
+Debate | Oct. 27 | Nov. 21 Nov. 22-A Nov. 22-P | Nov. 24 | | | Nov. 24 | Nov. 24
+Bill 38: Indigenous Self-Government in Child and Family Services Amendment Act (Hon. M. Dean)
+| First Reading | Second Reading | Committee | Report | Amended | Third Reading | Royal Assent | S.B.C. Chap. No.
+Bill | Oct. 26 | Nov. 21 | Nov. 24 | Nov. 24 | | Nov. 24 | Nov. 24 | 40
+Debate | Oct. 26 | Nov. 3-A Nov. 3-P Nov. 21-1 Nov. 21-2 | Nov. 22 Nov. 23 Nov. 24-A Nov. 24-P | | | Nov. 24 | Nov. 24
+Bill 39: Judicial Review Procedure Amendment Act, 2022 (Hon. M. Rankin)
+| First Reading | Second Reading | Committee | Report | Amended | Third Reading | Royal Assent | S.B.C. Chap. No.
+Bill | Nov. 2 | Nov. 22 | Nov. 24 | Nov. 24 | | Nov. 24 | Nov. 24 | 39
+Debate | Nov. 2 | Nov. 22 | Nov. 24 | | | Nov. 24 | Nov. 24
+Bill 40: Passenger Transportation Amendment Act (No. 2), 2022 (Hon. R. Fleming)
+| First Reading | Second Reading | Committee | Report | Amended | Third Reading | Royal Assent | S.B.C. Chap. No.
+Bill | Oct. 27 | Oct. 31 | Nov. 21 | Nov. 21 | Nov. 21 House Ams | Nov. 21 | Nov. 24 | 35
+Debate | Oct. 27 | Oct. 31-1 Oct. 31-2 | Nov. 21 | Nov. 21 | | Nov. 21 | Nov. 24
+Bill 41: Workers Compensation Amendment Act (No. 2), 2022 (Hon. H. Bains)
+| First Reading | Second Reading | Committee | Report | Amended | Third Reading | Royal Assent | S.B.C. Chap. No.
+Bill | Oct. 31 | Nov. 1 | Nov. 23 | Nov. 23 | | Nov. 23 | Nov. 24 | 37
+Debate | Oct. 31 | Nov. 1-A Nov. 1-P | Nov. 21 Nov. 22-A Nov. 22-P Nov. 23 | | | Nov. 23 | Nov. 24
+Bill 42: Provincial Sales Tax Amendment Act, 2022 (Hon. S. Robinson)
+| First Reading | Second Reading | Committee | Report | Amended | Third Reading | Royal Assent | S.B.C. Chap. No.
+Bill | Oct. 31 | Nov. 3 | Nov. 22 | Nov. 22 | | Nov. 22 | Nov. 24 | 36
+Debate | Oct. 31 | Nov. 2 Nov. 3 | Nov. 22-A Nov. 22-P | | | Nov. 22 | Nov. 24
+Bill 43: Housing Supply Act (Hon. M. Rankin)
+| First Reading | Second Reading | Committee | Report | Amended | Third Reading | Royal Assent | S.B.C. Chap. No.
+Bill | Nov. 21 | Nov. 22 | Nov. 24 | Nov. 24 | | Nov. 24 | Nov. 24 | 38
+Debate | Nov. 21 | Nov. 22-1 Nov. 22-2 | Nov. 23-1 Nov. 23-2 Nov. 24 | | | Nov. 24 | Nov. 24
+Bill 44: Building and Strata Statutes Amendment Act, 2022 (Hon. M. Rankin)
+| First Reading | Second Reading | Committee | Report | Amended | Third Reading | Royal Assent | S.B.C. Chap. No.
+Bill | Nov. 21 | Nov. 22 | Nov. 24 | Nov. 24 | | Nov. 24 | Nov. 24 | 41
+Debate | Nov. 21 | Nov. 22 | Nov. 24-1 Nov. 24-2 | | | Nov. 24 | Nov. 24
