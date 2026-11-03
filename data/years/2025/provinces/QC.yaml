@@ -45,7 +45,15 @@ childcareCredit:
     annualOther: 6180
     annualSevere: 16800
     rates: [[24795, 0.78], [43725, 0.75], [45340, 0.74], [46970, 0.73], [48570, 0.72], [50195, 0.71], [119835, 0.7], [.inf, 0.67]]
+# Montreal adds the 3-cent ARTM tax. Cap-and-trade costs and sales tax are not added here.
+fuelTax:
+  gasoline: 0.192
+  regional: {name: ARTM, gasoline: 0.03}   # Autorité régionale de transport métropolitain
+
 sources:
+  - {label: "NWT Finance, Budget 2025-2026, B22 (provincial/territorial fuel tax rates at January 30, 2025; regional additions separate)", url: "https://www.fin.gov.nt.ca/sites/fin/files/resources/2025-26_budget_address_and_papers_final_0.pdf"}
+  - {label: "Revenu Québec, Fuel tax rates (gasoline $0.1920 a litre, regular rate; archived September 11, 2025)", url: "http://web.archive.org/web/20250911061524/https://www.revenuquebec.ca/en/businesses/consumption-taxes/fuel-tax/fuel-tax-rates/"}
+  - {label: "ARTM, Budget 2026 (ARTM gasoline tax: $0.03 a litre in its territory, not indexed since 1992)", url: "https://www.artm.quebec/wp-content/uploads/2025/12/RP_Budget_2026.pdf"}
   - {label: "Revenu Quebec, new childcare age limit in 2026", url: "https://www.revenuquebec.ca/en/press-room/tax-news/details/2025-09-23/new-age-limit-for-the-refundable-tax-credit-for-childcare-expenses/"}
   - {label: "Revenu Quebec, Schedule C pooled expenses and family income", url: "https://www.revenuquebec.ca/documents/en/formulaires/tp/2025-12/TP-1.D.C-V%282025-12%29.pdf"}
   - {label: "Finances Quebec, 2025 and 2026 childcare expense limits and income rates, Tables 3 and 5", url: "https://cdn-contenu.quebec.ca/cdn-contenu/adm/min/finances/publications-adm/parametres/AUTEN_IncomeTax2026.pdf"}

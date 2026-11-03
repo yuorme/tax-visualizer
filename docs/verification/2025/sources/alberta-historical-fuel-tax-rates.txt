@@ -1,0 +1,136 @@
+Title: Historical fuel tax rates
+URL: https://open.alberta.ca/dataset/7769b631-d034-4690-9b3c-f9b1b00e2dfb/resource/30ef4caa-9321-4085-9a0e-0a606c2dacd2/download/tbf-tra-historical-fuel-tax-rates.pdf
+Fetched: 2026-11-01
+SHA-256 of the original: 7d31265ba45e4a7a205dcecb8b1f55d503ab74306a0ea0f8a1725735fe70b902
+Publication date modified: 2026-09-22
+PDF pages: all 2
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 1 of 2 ---
+
+Tax and Revenue Administration ⬧ tra.alberta.ca ⬧ tra.revenue@gov.ab.ca ⬧ 780-427-3044
+©2026 Government of Alberta | September 22, 2026 | Treasury Board and Finance
+Classification: Public
+Last updated: September 22, 2026
+The following tables provide historic Alberta fuel tax rates and effective dates. Rates listed are
+per litre. Fuel tax applies on the volume of fuel, including additives.
+Effective
+dates
+Aviation
+gas
+and
+jet
+fuel
+Gasoline
+(All
+grades)
+*
+Diesel
+(All
+grades)
+*
+Ethanol
+and
+bio-
+diesel
+Liquid
+petro-
+leum
+gas
+(LPG)
+*
+Loco-
+motive
+*
+Bunker
+fuel,
+kerosene,
+methanol,
+conden-
+sate
+*
+March 1, 2025 –
+September 30, 2026 $0.015 $0.130 $0.130 $0.130 $0.094 $0.065 $0.130
+April 1, 2024 –
+February 28, 2025 $0.015 $0.130 $0.130 $0.130 $0.094 $0.055 $0.130
+January 1, 2024 –
+March 31, 2024 $0.015 $0.090 $0.090 $0.090 $0.094 $0.055 $0.090
+January 1, 2023 –
+December 31, 2023 $0.015 $0.00 $0.00 $0.00 $0.094 $0.055 $0.00
+October 1, 2022 –
+December 31, 2022 $0.015 $0.045 $0.045 $0.045 $0.094 $0.055 $0.045
+April 1, 2022 –
+September 30, 2022 $0.015 $0.00 $0.00 $0.00 $0.094 $0.055 $0.00
+November 1, 2015 –
+March 31, 2022 $0.015 $0.13 $0.13 $0.13 $0.094 $0.055 $0.13
+March 27, 2015 –
+October 31, 2015 $0.015 $0.13 $0.13 $0.13 $0.094 $0.015 $0.13
+April 1, 2007 –
+March 26, 2015 $0.015 $0.090 $0.090 $0.090 $0.065 $0.015 $0.090
+May 1, 2001 –
+March 31, 2007 $0.015 $0.090 $0.090 - $0.065 $0.015 -
+January 1, 1999 –
+April 30, 2001 $0.015 $0.090 $0.090 - $0.065 $0.030 -
+January 1, 1998 –
+December 31, 1998 $0.015 $0.090 $0.090 - $0.065 $0.060 -
+January 1, 1997 –
+December 31, 1997 $0.015 $0.090 $0.090 - $0.065 $0.090 -
+April 7, 1991 –
+December 31, 1996 $0.050 $0.090 $0.090 - $0.065 $0.090 -
+April 5, 1991 –
+April 6, 1991 $0.050 $0.090 $0.090 - $0.050 $0.090 -
+June 1, 1990 –
+April 4, 1990 $0.050 $0.070 $0.070 - $0.050 $0.070 -
+March 23, 1990 –
+May 31, 1990 $0.050 $0.070 $0.070 - $0.000 $0.070 -
+June 1, 1987 –
+March 22, 1990 $0.050 $0.050 $0.050 - $0.000 $0.050 -
+* Fuel tax rate table notes:
+Historical fuel tax rates
+
+--- PDF page 2 of 2 ---
+
+Tax and Revenue Administration ⬧ tra.alberta.ca ⬧ tra.revenue@gov.ab.ca ⬧ 780-427-3044
+©2026 Government of Alberta | September 22, 2026 | Treasury Board and Finance
+Classification: Public
+Oil Price tax rate adjustments
+Starting April 1, 2022, fuel tax rates for gasoline, diesel, ethanol, biodiesel, bunker fuel, kerosene, methanol and
+condensate used to generate power by means of an internal combustion or turbine engine are adjusted quarterly
+based on the average price of West Texas Intermediate for the most recent 20 trading days before the 16th day of
+the calendar month that immediately precedes the particular calendar quarter. The fuel tax rates will not increase
+by more than 9 cents per litre per quarter.
+Where the ‘oil price’ for a calendar quarter is:
+$90 USD or higher, the adjustment for that calendar quarter is CDN$0.13 per litre, resulting in a tax rate of nil
+$85 USD to $89.99 USD, the adjustment for that calendar quarter is CDN$0.085 per litre, resulting in a tax rate of
+CDN$0.045 per litre
+$80 USD to $84.99 USD, the adjustment for that calendar quarter is CDN$0.04 per litre, resulting in a tax rate of
+CDN$0.09 per litre.
+Liquid petroleum gas (LPG)
+Every distributor of LPG currently pays this tax on LPG delivered into a dispensing system capable of being used
+to dispense LPG for motive use.
+Locomotive
+Locomotive fuel tax is based on consumption in Alberta and payable by the railway.
+Bunker fuel, kerosene, methanol, condensate
+If used by a consumer to generate motive power with an internal combustion or turbine engine.
+There is no tax if the product is used for heating or other non-motive purposes.
+Natural gas is not taxed under the Fuel Tax Act.
+Marked gasoline and marked diesel (all grades)
+Effective
+dates
+Marked
+gasoline
+(all
+grades)
+Marked
+diesel
+(all
+grades)
+April 1, 2024 –
+September 30, 2026 $0.04 $0.04
+April 1, 2022 –
+March 31, 2024 $0.00 $0.00
+March 27, 2015 –
+March 31, 2022 $0.04 $0.04
+Prior to March 27,
+2015 $0.00 $0.00
