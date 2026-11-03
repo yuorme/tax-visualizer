@@ -203,7 +203,7 @@ export function household(y: YearData, p: Province, hh: Household, peopleIn: Per
         couple,
         kids,
         ppl,
-        propTax: hh.homeValue * propertyRate(p, hh),
+        propTax: propertyTax(p, hh),
         rent: hh.homeValue > 0 ? 0 : hh.rent * 12,
       })
     : [];
@@ -235,6 +235,12 @@ export function household(y: YearData, p: Province, hh: Household, peopleIn: Per
 
 export const propertyRate = (p: Province, hh: Household) => hh.propertyRates?.[p.code] ?? p.propertyTax.rate;
 
+/** A supplied owner's bill replaces the estimate in this province, including for occupancy-based credits. */
+export function propertyTax(p: Province, hh: Household): number {
+  const bill = hh.propertyTaxBills?.[p.code];
+  return typeof bill === "number" && Number.isFinite(bill) && bill >= 0 ? bill : hh.homeValue * propertyRate(p, hh);
+}
+
 const bump = (x: Person, key: IncomeKey, d: number): Person => ({ ...x, [key]: (x[key] ?? 0) + d });
 const zeroInv = (x: Person): Person => ({ ...x, cg: 0, ed: 0, nd: 0, fd: 0 });
 export const hasInv = (x: Person) => x.cg !== 0 || x.ed > 0 || x.nd > 0 || x.fd > 0;
@@ -265,7 +271,7 @@ export function compute(y: YearData, p: Province, hh: Household) {
   const salesRate = p.salesTax.rate;
   const sales = hh.monthlySpending * 12 * salesRate;
   const propRate = propertyRate(p, hh);
-  const property = hh.homeValue * propRate;
+  const property = propertyTax(p, hh);
   // fuel is null for a year without fuel data (an object, so the golden snapshot, which locks top-level numbers,
   // keeps its format; the fuel tax is locked through gross and total).
   const fuel = fuelTaxOf(y, p, hh.driving);

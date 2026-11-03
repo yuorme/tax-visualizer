@@ -227,6 +227,82 @@ const FUEL_STEPS = [
   ],
 ];
 
+const propertyRow = p =>
+  p.$$eval("#detail-body table.cmp tbody tr", rows => {
+    const row = rows.find(tr => tr.cells[0]?.textContent.startsWith("Property tax"));
+    return row ? [...row.cells].slice(1, 3).map(cell => Number(cell.textContent.replace(/[^\d.]/g, ""))) : null;
+  });
+const PROPERTY_STEPS = [
+  [
+    "property bill: optional override affects only home province",
+    async p => {
+      await openTab(p, "home");
+      await type(p, "#hv", "500000");
+      await type(p, "#pr-rate", "1");
+      const before = await propertyRow(p);
+      const problems = [];
+      if (before?.[0] !== 5000) problems.push("blank property bill changed the existing municipal-rate override");
+      await type(p, "#property-tax-bill", "4200");
+      const after = await propertyRow(p);
+      if (after?.[0] !== 4200 || after?.[1] !== before?.[1])
+        problems.push("annual bill did not replace only the home-province tax");
+      await type(p, "#property-tax-bill", "");
+      if ((await propertyRow(p))?.[0] !== 5000) problems.push("empty bill did not restore the rate estimate");
+      await type(p, "#property-tax-bill", "4200");
+      if (!(await p.locator("#pr-rate").isDisabled())) problems.push("unused rate control remains active");
+      if (
+        !((await p.getAttribute('[aria-label="About your annual property tax"]', "data-tip")) ?? "").includes(
+          "largest city's rate",
+        )
+      )
+        problems.push("bill tooltip does not explain other provinces' city rates");
+      if (!(await p.textContent("#prop-sum")).includes("your bill"))
+        problems.push("property summary mislabels bill as rate estimate");
+      return problems;
+    },
+  ],
+  [
+    "property bill: reload, year, rent and restore retain the owner's bill",
+    async p => {
+      await p.reload();
+      await settle(p);
+      const problems = await expectValue(p, "#property-tax-bill", "4,200", "saved annual bill");
+      await p.selectOption("#tax-year", "2025");
+      if ((await propertyRow(p))?.[0] !== 4200) problems.push("year switch lost annual bill");
+      await p.click('[data-tenure="rent"]');
+      await type(p, "#rent", "1200");
+      if (await propertyRow(p)) problems.push("renter still pays retained owner bill");
+      await p.click('[data-tenure="own"]');
+      if ((await propertyRow(p))?.[0] !== 4200) problems.push("owner bill was lost while renting");
+      await p.click("#property-tax-bill-reset");
+      if ((await propertyRow(p))?.[0] !== 5000 || (await p.locator("#pr-rate").isDisabled()))
+        problems.push("Use estimate did not restore the retained rate override");
+      return problems;
+    },
+  ],
+  [
+    "property bill: explicit zero, missing valuation, invalid input and changing home",
+    async p => {
+      const problems = [];
+      await type(p, "#property-tax-bill", "0");
+      await p.reload();
+      await settle(p);
+      problems.push(...(await expectValue(p, "#property-tax-bill", "0", "saved zero bill")));
+      if ((await propertyRow(p))?.[0] !== 0) problems.push("zero bill fell back to estimate");
+      await type(p, "#hv", "0");
+      await type(p, "#property-tax-bill", "800");
+      if ((await propertyRow(p))?.[0] !== 800) problems.push("bill requires an unnecessary home valuation");
+      await type(p, "#property-tax-bill", "-4");
+      problems.push(...(await expectValue(p, "#property-tax-bill", "", "invalid negative bill")));
+      await type(p, "#property-tax-bill", "800");
+      await p.selectOption("#home", "BC");
+      problems.push(...(await expectValue(p, "#property-tax-bill", "", "bill cleared for another home province")));
+      if (await propertyRow(p)) problems.push("previous home's bill leaked into new province");
+      return problems;
+    },
+  ],
+];
+
 // Unit toggles never rewrite canonical driving amounts, even when the displayed conversion is rounded.
 const drivingSaved = p =>
   p.evaluate(() => {
@@ -633,6 +709,7 @@ LEGACY_WORDING.forEach(([issue, pattern], i) => {
 // Keep complete sequences intact: their later steps depend on state established by earlier steps.
 for (const [label, steps] of [
   ["fuel tax", FUEL_STEPS],
+  ["property bill", PROPERTY_STEPS],
   ["other income", OTHER_STEPS],
   ["year selector", YEAR_STEPS],
   ["deductions", DEDUCTION_STEPS],

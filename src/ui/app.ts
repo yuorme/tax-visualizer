@@ -106,6 +106,7 @@ let historyMode: HistoryMode = "real";
 // homeValue and rent keep what was typed in each; tenure picks which one the engine sees (ownedValue, rentPaid).
 let homeValue = 0,
   propOverride: number | null = null,
+  propertyTaxBill: number | null = null,
   rent = 0,
   tenure: Tenure = "own",
   useCredits = true,
@@ -126,6 +127,7 @@ let sort: Sort = "rate",
   spend = spendEst(1);
 const ownedValue = () => (tenure === "own" ? homeValue : 0);
 const rentPaid = () => (tenure === "rent" ? rent : 0);
+const hasPropertyBill = () => tenure === "own" && propertyTaxBill !== null;
 const byCode = (c: string) => P.find(p => p.c === c);
 /** The province with this code; home and dest always hold one. */
 const prov = (c: string) => must(byCode(c), `province ${c}`);
@@ -157,6 +159,7 @@ const inputs = (withCare = true): Household => ({
   rent: rentPaid(),
   monthlySpending: effSpend(),
   propertyRates: propOverride != null ? { [home]: propOverride } : undefined,
+  propertyTaxBills: tenure === "own" && propertyTaxBill !== null ? { [home]: propertyTaxBill } : undefined,
   driving: DRIVING ? { km: kmNow(), lPer100km: effNow() } : undefined,
   childcare: withCare ? care.claimInput() : undefined,
 });
@@ -208,6 +211,8 @@ try {
     else if (s.under6 === true) under6 = kids; // older saves stored a yes/no
     if (isNum(s.homeValue) && s.homeValue >= 0) homeValue = s.homeValue;
     if (isNum(s.propOverride)) propOverride = s.propOverride;
+    if (isNum(s.propertyTaxBill) && Number.isFinite(s.propertyTaxBill) && s.propertyTaxBill >= 0)
+      propertyTaxBill = s.propertyTaxBill;
     if (isNum(s.rent) && s.rent >= 0) rent = s.rent;
     if (isNum(s.km) && Number.isFinite(s.km) && s.km >= 0) kmOverride = s.km;
     if (isNum(s.eff) && Number.isFinite(s.eff) && s.eff >= 0) effOverride = s.eff;
@@ -258,6 +263,7 @@ function save() {
         metric,
         homeValue,
         propOverride,
+        propertyTaxBill,
         rent,
         tenure,
         useCredits,
@@ -471,7 +477,10 @@ function segTip(p: ProvView, r: Result, c: Seg) {
   } else if (c === "s") {
     sub = `${p.d.salesTax.label} on ${money(effSpend())} a month of taxable spending`;
   } else if (c === "h") {
-    sub = `${rateFmt(r.propRate)} on a ${money(ownedValue())} home${p.c === home && propOverride != null ? " (your rate)" : ` (${p.d.propertyTax.city} rate)`}`;
+    sub =
+      p.c === home && hasPropertyBill()
+        ? `${money(r.property)} annual property tax (your bill)`
+        : `${rateFmt(r.propRate)} on a ${money(ownedValue())} home${p.c === home && propOverride != null ? " (your rate)" : ` (${p.d.propertyTax.city} rate)`}`;
   } else if (c === "g") {
     sub = `${fuelParts(p, r)}, averaged over ${YEAR}`;
   } else if (c === "c") {
@@ -682,8 +691,18 @@ function render() {
     kids === 0
       ? ""
       : `linear-gradient(to right, var(--fed) 0 ${at(under6)}, var(--sales) ${at(under6)} ${at(kids)}, var(--rule) ${at(kids)} 100%)`;
-  $("prop-sum").textContent =
-    ownedValue() > 0 ? `${money(H.r.property)} a year on a ${money(ownedValue())} home` : "not included";
+  $("prop-sum").textContent = hasPropertyBill()
+    ? `${money(H.r.property)} a year (your bill)`
+    : ownedValue() > 0
+      ? `${money(H.r.property)} a year on a ${money(ownedValue())} home`
+      : "not included";
+  const billInput = $<HTMLInputElement>("property-tax-bill");
+  if (document.activeElement !== billInput)
+    billInput.value =
+      propertyTaxBill === null ? "" : propertyTaxBill.toLocaleString("en-CA", { maximumFractionDigits: 2 });
+  $("property-tax-bill-reset").hidden = propertyTaxBill === null;
+  $<HTMLInputElement>("pr-rate").disabled = hasPropertyBill();
+  $<HTMLButtonElement>("pr-reset").disabled = hasPropertyBill();
   if (document.activeElement !== $("pr-rate"))
     $<HTMLInputElement>("pr-rate").value = (+(propRate(home) * 100).toFixed(3)).toString();
   $("pr-note").textContent =
@@ -703,8 +722,14 @@ function render() {
   tabSum("income", anyInc ? (incNet < 0 ? `−${kMoney(-incNet)}` : kMoney(incNet)) : "none", anyInc);
   tabSum(
     "home",
-    ownedValue() > 0 ? `${kMoney(ownedValue())} home` : rentPaid() > 0 ? `${kMoney(rentPaid())}/mo rent` : "not set",
-    ownedValue() > 0 || rentPaid() > 0,
+    ownedValue() > 0
+      ? `${kMoney(ownedValue())} home`
+      : hasPropertyBill()
+        ? `${kMoney(H.r.property)} tax`
+        : rentPaid() > 0
+          ? `${kMoney(rentPaid())}/mo rent`
+          : "not set",
+    ownedValue() > 0 || hasPropertyBill() || rentPaid() > 0,
   );
   tabSum("credits", !useCredits ? "off" : kMoney(H.r.refund), useCredits && H.r.refund > 0.5);
   if (DRIVING) renderDriving(H);
@@ -864,9 +889,9 @@ function renderDetail(res: Row[], order: Row[]) {
           dr.sales,
         )
       : "") +
-    (ownedValue() > 0
+    (ownedValue() > 0 || hasPropertyBill()
       ? row(
-          `Property tax <small class="note">(${rateFmt(hr.propRate)} vs ${rateFmt(dr.propRate)})</small>`,
+          `Property tax <small class="note">(${hasPropertyBill() ? "your bill" : rateFmt(hr.propRate)} vs ${rateFmt(dr.propRate)})</small>`,
           hr.property,
           dr.property,
         )
@@ -1286,6 +1311,21 @@ u6In.addEventListener("input", () => {
   render();
 });
 // Property tax
+const propertyBillIn = $<HTMLInputElement>("property-tax-bill");
+propertyBillIn.addEventListener("input", () => {
+  const raw = propertyBillIn.value.replace(/[,\s]/g, "");
+  const value = Number(raw);
+  propertyTaxBill = raw !== "" && Number.isFinite(value) && value >= 0 ? value : null;
+  render();
+});
+propertyBillIn.addEventListener("blur", () => render());
+propertyBillIn.addEventListener("keydown", e => {
+  if (e.key === "Enter") propertyBillIn.blur();
+});
+$("property-tax-bill-reset").addEventListener("click", () => {
+  propertyTaxBill = null;
+  render();
+});
 const hvIn = $<HTMLInputElement>("hv"),
   hvRange = $<HTMLInputElement>("hv-range");
 function syncHome() {
@@ -1518,6 +1558,7 @@ narrow.addEventListener?.("change", () => render());
 homeSel.addEventListener("change", () => {
   home = homeSel.value;
   propOverride = null;
+  propertyTaxBill = null;
   if (dest === home) dest = home === "AB" ? "BC" : "AB";
   fillSelects();
   render();
