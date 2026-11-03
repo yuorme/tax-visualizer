@@ -1,8 +1,8 @@
 Title: property-iqaluit
-URL: https://iqaluit.ca/sites/default/files/bylaw_906_2021_mill_rate_eng.pdf
+URL: https://iqaluit.ca/sites/default/files/by-law_886_2020_mill_rate_eng.pdf
 Fetched: 2026-11-02
-SHA-256 of the original: e6a05d20976c2bc8d66ef3ddd98ae54c44c4dc50e701b7f0e134c080aa4e937e
-Publication date modified: 2021-02-08
+SHA-256 of the original: 360d7165c265c92de06b98f5f07e61aed97cc30c702f324c0bc1ab1fe5ea2053
+Publication date modified: 2020-08-14
 PDF pages: all 6
 Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
 ================================================================================
@@ -29,14 +29,14 @@ Text extract made by `npm run fetch-source`. Check figures against the original 
 
 --- PDF page 6 of 6 ---
 
-MANUAL VISUAL TRANSCRIPTION (the original PDF is scanned; not machine-extracted text).
-Verified against the original hash above, rendered with PDFKit.
-PDF page 3: third and final reading January 26, 2021, signed Kenny Bell and Amy Elgersma.
-PDF page 6, Schedule C, Mill Rates Proposed (adopted by the signed bylaw):
-Residential classification 7/8: 19.54 mills.
-Residential classification 9/10/11: 27.36 mills.
-Commercial/Transmission/Mixed Use: 42.20 mills.
-Industrial: 46.46 mills.
-Institutional: 56.62 mills.
+Manual transcription from visually inspected original scanned PDF (2026-11-02):
+Page 3: Third and final reading: 10th day of March, 2020. Signed by Mayor Kenny Bell
+and Chief Administrative Officer Amy Elgersma.
+Page 6, Schedule C, Mill Rates Proposed:
+Residential classifications 7/8: 19.35 mills.
+Residential classifications 9/10/11: 27.09 mills.
+Commercial/Transmission/Mixed Use: 41.78 mills.
+Industrial: 46.00 mills. Institutional: 56.06 mills.
+The PDF is an image scan; the automatic text extract above is empty.
 
 
