@@ -198,17 +198,24 @@
     </section>
     <section class="tab-panel" id="panel-driving" aria-labelledby="tab-driving-name" hidden>
       <div class="panel-head"><b class="panel-title" id="driving-tax-title">Fuel tax</b><button type="button" class="info" data-note="fuel" aria-label="About gasoline taxes">i</button><span class="panel-sum" id="fuel-sum">none</span></div>
+      <div class="sub-row">
+        <fieldset class="seg" aria-label="Driving units">
+          <button type="button" data-driving-units="metric" aria-pressed="true">km · L/100 km</button>
+          <button type="button" data-driving-units="us" aria-pressed="false">mi · US mpg</button>
+        </fieldset>
+        <button type="button" class="info" data-tip="Miles use US miles per gallon. NRCan's EnerGuide labels use imperial mpg, about 20% higher than US mpg. Switching units converts both inputs without changing your results. Enter 0 for no gasoline use (for example, an electric vehicle); this displays as ∞ US mpg." aria-label="About driving units">i</button>
+      </div>
       <div class="prop-grid">
         <div class="field">
           <div class="lbl-row"><label class="lbl" for="km">Distance driven</label><button type="button" class="info" data-note="distance" aria-label="About distance driven">i</button></div>
-          <div class="money md"><input id="km" inputmode="numeric" autocomplete="off" value="0"><span class="per">km a year</span></div>
+          <div class="money md"><input id="km" inputmode="decimal" autocomplete="off" value="0"><span class="per" id="km-unit">km a year</span></div>
           <input type="range" id="km-range" class="inv-range" min="0" max="50000" step="500" value="0" aria-label="Distance driven slider">
-          <div class="scale" data-for="km-range" data-ticks="0,10000,20000,30000,40000,50000" data-plain aria-hidden="true"></div>
+          <div class="scale" id="km-scale" data-for="km-range" data-ticks="0,10000,20000,30000,40000,50000" data-plain aria-hidden="true"></div>
           <div class="pr-note"><span id="km-note"></span> <button type="button" class="linkbtn" id="km-reset" hidden>Reset</button></div>
         </div>
         <div class="field">
           <div class="lbl-row"><label class="lbl" for="eff">Fuel efficiency</label><button type="button" class="info" data-note="efficiency" aria-label="About fuel efficiency">i</button></div>
-          <div class="money md"><input id="eff" inputmode="decimal" autocomplete="off" value="0"><span class="per">L/100 km</span></div>
+          <div class="money md"><input id="eff" inputmode="decimal" autocomplete="off" value="0"><span class="per" id="eff-unit">L/100 km</span></div>
           <div class="pr-note"><span id="eff-note"></span> <button type="button" class="linkbtn" id="eff-reset" hidden>Reset</button></div>
         </div>
       </div>

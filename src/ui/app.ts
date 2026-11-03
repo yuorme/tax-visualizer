@@ -21,6 +21,15 @@ import {
 } from "../engine/index.ts";
 import { ChildcareEditor, childcareComparison } from "./childcare.ts";
 import { DEFAULT_INCOME, spendEst } from "./defaults.ts";
+import {
+  type DrivingUnits,
+  displayDistance,
+  displayEfficiency,
+  distanceText,
+  efficiencyText,
+  metricDistance,
+  metricEfficiency,
+} from "./driving-units.ts";
 import { renderHistory } from "./history.ts";
 import { cents, footerNotes, share, tooltips } from "./notes.ts";
 
@@ -105,6 +114,7 @@ let homeValue = 0,
 // the national average efficiency). The Driving tab is available with fuel or carbon pricing data.
 let kmOverride: number | null = null,
   effOverride: number | null = null;
+let drivingUnits: DrivingUnits = "metric";
 let DRIVING = F.driving != null;
 let TREATY_WH = F.investment.foreignWithholding.usTreaty;
 let sort: Sort = "rate",
@@ -123,9 +133,9 @@ const defaultKm = (c: string) => prov(c).d.driving?.distance ?? 0;
 const kmNow = () => kmOverride ?? defaultKm(home);
 const defaultEff = () => F.driving?.efficiency ?? 0;
 const effNow = () => effOverride ?? defaultEff();
-/** Efficiency as typed or shown: at least one decimal (9.0), more only when entered (7.25). */
-const effText = (v: number) => (Number.isInteger(v * 10) ? v.toFixed(1) : String(v));
-const kmText = (v: number) => `${v.toLocaleString("en-CA")} km`;
+const distanceUnit = () => (drivingUnits === "us" ? "mi" : "km");
+const effText = (v: number) => efficiencyText(displayEfficiency(v, drivingUnits));
+const kmText = (v: number) => `${distanceText(displayDistance(v, drivingUnits))} ${distanceUnit()}`;
 const effSpend = () => Math.round((spend * (1 + spendingAdjustment / 100)) / 10) * 10; // nearest $10
 const care = new ChildcareEditor(childCount => {
   if (childCount !== undefined) setHousehold(adults, childCount);
@@ -199,8 +209,9 @@ try {
     if (isNum(s.homeValue) && s.homeValue >= 0) homeValue = s.homeValue;
     if (isNum(s.propOverride)) propOverride = s.propOverride;
     if (isNum(s.rent) && s.rent >= 0) rent = s.rent;
-    if (isNum(s.km) && s.km >= 0) kmOverride = s.km;
-    if (isNum(s.eff) && s.eff >= 0) effOverride = s.eff;
+    if (isNum(s.km) && Number.isFinite(s.km) && s.km >= 0) kmOverride = s.km;
+    if (isNum(s.eff) && Number.isFinite(s.eff) && s.eff >= 0) effOverride = s.eff;
+    if (s.drivingUnits === "us") drivingUnits = "us";
     // Saves from before the Own/Rent switch: rent only counted with no home value, so that meant renting
     if (s.tenure === "own" || s.tenure === "rent") tenure = s.tenure;
     else if (rent > 0 && homeValue === 0) tenure = "rent";
@@ -253,6 +264,7 @@ function save() {
         tab,
         km: kmOverride,
         eff: effOverride,
+        drivingUnits,
       }),
     );
   } catch {}
@@ -717,8 +729,21 @@ function renderDriving(H: Row) {
   const km = kmNow(),
     eff = effNow(),
     drivingTax = fuelAmt(H.r) + (H.r.carbon?.gasoline ?? 0);
-  if (document.activeElement !== kmIn) kmIn.value = km.toLocaleString("en-CA");
-  kmRange.value = String(Math.min(km, +kmRange.max));
+  const distance = displayDistance(km, drivingUnits);
+  if (document.activeElement !== kmIn) kmIn.value = distanceText(distance);
+  kmRange.max = String(displayDistance(50000, drivingUnits));
+  kmRange.step = String(displayDistance(500, drivingUnits));
+  kmRange.value = String(Math.min(distance, +kmRange.max));
+  kmRange.setAttribute("aria-valuetext", kmText(km));
+  $("km-unit").textContent = `${distanceUnit()} a year`;
+  $("eff-unit").textContent = drivingUnits === "us" ? "US mpg" : "L/100 km";
+  for (const button of document.querySelectorAll<HTMLElement>("[data-driving-units]"))
+    button.setAttribute("aria-pressed", String(button.dataset.drivingUnits === drivingUnits));
+  const scale = $("km-scale");
+  scale.dataset.ticks = [0, 10000, 20000, 30000, 40000, 50000]
+    .map(value => displayDistance(value, drivingUnits))
+    .join(",");
+  renderScale(scale);
   if (document.activeElement !== effIn) effIn.value = effText(eff);
   $("km-note").textContent =
     kmOverride != null
@@ -737,7 +762,7 @@ function renderDriving(H: Row) {
           : "no fuel bought"
         : "no driving";
   $("driving-tax-title").textContent = Y.provinces.some(p => p.carbon) ? "Gasoline taxes" : "Fuel tax";
-  tabSum("driving", km > 0 ? `${+(km / 1000).toFixed(1)}k km` : "none", drivingTax > 0.5);
+  tabSum("driving", km > 0 ? `${+(distance / 1000).toFixed(1)}k ${distanceUnit()}` : "none", drivingTax > 0.5);
 }
 
 /** An adjustment after bracket tax: [label, amount], negative when it reduces tax. */
@@ -1307,7 +1332,8 @@ const kmIn = $<HTMLInputElement>("km"),
   kmRange = $<HTMLInputElement>("km-range"),
   effIn = $<HTMLInputElement>("eff");
 kmIn.addEventListener("input", () => {
-  kmOverride = Math.min(+kmIn.value.replace(/[^\d]/g, "") || 0, 999999);
+  const value = Number(kmIn.value.replace(/[,\s]/g, ""));
+  kmOverride = Number.isFinite(value) ? Math.min(Math.max(0, metricDistance(value, drivingUnits)), 999999) : 0;
   render();
 });
 kmIn.addEventListener("blur", () => render());
@@ -1315,7 +1341,7 @@ kmIn.addEventListener("keydown", e => {
   if (e.key === "Enter") kmIn.blur();
 });
 kmRange.addEventListener("input", () => {
-  kmOverride = +kmRange.value;
+  kmOverride = metricDistance(+kmRange.value, drivingUnits);
   render();
 });
 $("km-reset").addEventListener("click", () => {
@@ -1324,8 +1350,9 @@ $("km-reset").addEventListener("click", () => {
 });
 effIn.addEventListener("input", () => {
   // A comma is a decimal point here (9,5 is 9.5, as many keyboards and locales write it), never a thousands mark
-  const v = parseFloat(effIn.value.replace(/,/g, ".").replace(/[^\d.]/g, ""));
-  effOverride = Number.isFinite(v) ? Math.min(v, 99) : 0;
+  const v = Number(effIn.value.replace(/,/g, "."));
+  const metric = metricEfficiency(v, drivingUnits);
+  effOverride = Number.isFinite(metric) ? Math.min(Math.max(0, metric), 99) : 0;
   render();
 });
 effIn.addEventListener("blur", () => render());
@@ -1336,6 +1363,11 @@ $("eff-reset").addEventListener("click", () => {
   effOverride = null;
   render();
 });
+for (const button of document.querySelectorAll<HTMLElement>("[data-driving-units]"))
+  button.addEventListener("click", () => {
+    drivingUnits = button.dataset.drivingUnits === "us" ? "us" : "metric";
+    render();
+  });
 const credToggle = $<HTMLInputElement>("cred-toggle");
 credToggle.addEventListener("change", () => {
   useCredits = credToggle.checked;
@@ -1383,7 +1415,7 @@ function fmtTick(v: number, signed: boolean, plain: boolean) {
     k = a >= 1e6 ? `${+(a / 1e6).toFixed(1)}M` : a >= 1000 ? `${+(a / 1000).toFixed(1)}k` : a;
   return `${v < 0 ? "−" : signed ? "+" : ""}${cur}${k}`;
 }
-document.querySelectorAll<HTMLElement>(".scale").forEach(sc => {
+function renderScale(sc: HTMLElement) {
   const r = $<HTMLInputElement>(sc.dataset.for ?? ""),
     min = +r.min,
     max = +r.max,
@@ -1402,7 +1434,8 @@ document.querySelectorAll<HTMLElement>(".scale").forEach(sc => {
       return `<span class="${cls}${v === 0 && min < 0 ? " zero" : ""}" style="left:${left}">${fmtTick(v, signed, plain)}</span>`;
     })
     .join("");
-});
+}
+document.querySelectorAll<HTMLElement>(".scale").forEach(renderScale);
 
 // Tooltips: hover with a mouse, focus with the keyboard, or tap on touch.
 const tip = $("tip");
