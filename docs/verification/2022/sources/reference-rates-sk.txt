@@ -1,0 +1,65 @@
+Title: Saskatchewan 2023 and 2022 Tax Rates & Tax Brackets
+URL: https://www.taxtips.ca/priortaxrates/tax-rates-2022-2023/sk.htm
+Fetched: 2026-11-02
+SHA-256 of the original: 4ba7528c64ee118b55bbdb5580d3430cb30b9c59ff46c3858b023f0a7d32f7e1
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+#### Home -> Saskatchewan
+
+#### Tax Rates -> 2022-2023 Tax Rates -> Saskatchewan Personal Income Tax Rates
+
+# Saskatchewan 2023 and 2022 Tax Rates & Tax Brackets
+
+The Federal and Saskatchewan tax brackets and personal tax credit amounts are increased for 2023 by an indexation factor of 1.063 (6.3% increase).
+
+Saskatchewan uses the federal indexation factor.
+
+See Indexation of the Personal Income Tax System for how the indexation factors are calculated.
+
+Saskatchewan's Bill 89, The Income Tax (Affordability) Amendment Act, 2022, which was tabled on November 2, 2022, delays the increase of the non-eligible dividend tax credit by 1 year, in concert with the delay in increase of the small business corporate income tax rate, also by 1 year.
+
+The indexation factors, tax brackets and tax rates for 2023 have been confirmed to Canada Revenue Agency information.
+
+Tax Tip: read the article Understanding the Tables of Personal Income Tax Rates, especially if you are trying to compare the rates below to the marginal tax rates in the Basic Tax Calculator or the Detailed Tax Calculators.
+
+TaxTips.ca - Saskatchewan Tax Rates
+2023 Taxable Income | 2023 Tax Rates | 2022 Taxable Income | 2022 Tax Rates
+first $49,720 | 10.50% | first $46,773 | 10.50%
+over $49,720 up to $142,058 | 12.50% | over $46,773 up to $133,638 | 12.50%
+over $142,058 | 14.50% | over $133,638 | 14.50%
+
+TaxTips.ca - Combined Federal & Saskatchewan Tax Brackets and Tax Rates
+2023 Taxable Income (1) | SK 2023 Marginal Tax Rates | 2022 Taxable Income (1) | SK 2022 Marginal Tax Rates
+Other Income | Capital Gains | Canadian Dividends | Other Income | Capital Gains | Canadian Dividends
+Eligible | Non-Eligible | Eligible | Non-Eligible
+first $49,720 | 25.50% | 12.75% | -0.72% | 16.52% | first $46,773 | 25.50% | 12.75% | -0.72% | 16.99%
+over $49,720 up to $53,359 | 27.50% | 13.75% | 2.04% | 18.82% | over $46,773 up to $50,197 | 27.50% | 13.75% | 2.04% | 19.29%
+over $53,359 up to $106,717 | 33.00% | 16.50% | 9.63% | 25.14% | over $50,197 up to $100,392 | 33.00% | 16.50% | 9.63% | 25.62%
+over $106,717 up to $142,058 | 38.50% | 19.25% | 17.22% | 31.47% | over $100,392 up to $133,638 | 38.50% | 19.25% | 17.22% | 31.94%
+over $142,058 up to $165,430 | 40.50% | 20.25% | 19.98% | 33.77% | over $133,638 up to $155,625 | 40.50% | 20.25% | 19.98% | 34.24%
+over $165,430 up to $235,675 | 43.82% | 21.91% | 24.56% | 37.59% | over $155,625 up to $221,708 | 43.88% | 21.94% | 24.64% | 38.13%
+over $235,675 | 47.50% | 23.75% | 29.64% | 41.82% | over $221,708 | 47.50% | 23.75% | 29.64% | 42.29%
+Marginal tax rate for dividends is a % of actual dividends received (not grossed-up taxable amount). Marginal tax rate for capital gains is a % of total capital gains (not taxable capital gains). Gross-up rate for eligible dividends is 38%, and for non-eligible dividends is 15%. For more information see Saskatchewan dividend tax credits. Copyright © 2002 Boat Harbour Investments Ltd.
+TaxTips.ca Saskatchewan Basic Personal Amount
+2023 Personal Amount | 2023 Tax Rate | 2022 Personal Amount | 2022 Tax Rate
+$17,661 | 10.50% | $16,615 | 10.50%
+Federal Basic Personal Amount
+2023 Personal Amount (1) | 2023 Tax Rate | 2022 Personal Amount (1) | 2022 Tax Rate
+$15,000 | 15% | $14,398 | 15%
+
+(1) See the federal tax rates page for information on the enhanced federal personal amount, which increases the marginal tax rates for taxable incomes in the second highest federal tax bracket. The marginal tax rates in blue above have been adjusted to reflect these changes.
+
+Revised: September 20, 2026
+
+© 2002- Boat Harbour Investments Ltd. All rights reserved.
+
+See Reproduction of information from TaxTips.ca
+
+Privacy Policy | Contact
+
+Facebook | Twitter | LinkedIn
+
+The authors of TaxTips.ca strive, but cannot guarantee, to provide information which is current and accurate. Individual circumstances have a significant effect on how tax and financial information can be used. Due to this, and to the nature of the information, it should not be relied upon for decision making without professional advice.
+
+TaxTips.ca provides links to other web sites. We cannot guarantee the accuracy of the information provided on linked sites.

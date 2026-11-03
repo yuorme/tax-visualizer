@@ -1,0 +1,71 @@
+Title: Alberta 2023 and 2022 Tax Rates & Tax Brackets
+URL: https://www.taxtips.ca/priortaxrates/tax-rates-2022-2023/ab.htm
+Fetched: 2026-11-02
+SHA-256 of the original: 1b54219613db9e1acea3298bfa53c74eabd0c316c0ab470e6411ead399dc21e6
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+#### Home -> Alberta
+
+#### Tax Rates -> 2022-2023 Tax Rates -> Alberta
+
+# Alberta 2023 and 2022 Tax Rates & Tax Brackets
+
+##### Alberta Personal Income Tax Act s. 6.1, 8, 21, 44
+
+The Alberta tax brackets and personal tax credit amounts are increased for 2023 by an indexation factor of 1.06 (6% increase).
+
+The Federal tax brackets and personal tax credit amounts are increased for 2023 by an indexation factor of 1.063 (6.3% increase).
+
+See Indexation of the Personal Income Tax System for how the indexation factors are calculated.
+
+On August 31, 2022, Premier Jason Kenney announced as part of the 2022 Q1 Update that indexation of the personal tax system would be restored, retroactive to January 1, 2022. The 2022 brackets were updated using an indexation factor of 1.023 (2.3% increase).
+
+The federal and Alberta indexation factors, tax brackets and tax rates for 2023 have been confirmed to Canada Revenue Agency (CRA) information.
+
+Tax Tip: read the article Understanding the Tables of Personal Income Tax Rates, especially if you are trying to compare the rates below to the marginal tax rates in the Basic Tax Calculator or the Detailed Tax Calculators.
+
+TaxTips.ca - Alberta Tax Rates
+2023 Taxable Income | 2023 Tax Rates | 2022 Taxable Income | 2022 Tax Rates
+first $142,292 | 10% | first $134,238 | 10%
+over $142,292 up to $170,751 | 12% | over $134,238 up to $161,086 | 12%
+over $170,751 up to $227,668 | 13% | over $161,086 up to $214,781 | 13%
+over $227,668 up to $341,502 | 14% | over $214,781 up to $322,171 | 14%
+over $341,502 | 15% | over $322,171 | 15%
+
+TaxTips.ca - Combined Federal & Alberta Tax Brackets and Tax Rates
+2023 Taxable Income (1) | AB 2023 Marginal Tax Rates | 2022 Taxable Income (1) | AB 2022 Marginal Tax Rates
+Other Income | Capital Gains | Canadian Dividends | Other Income | Capital Gains | Canadian Dividends
+Eligible | Non-Eligible | Eligible | Non-Eligible
+first $53,359 | 25.00% | 12.50% | 2.57% | 15.86% | first $50,197 | 25.00% | 12.50% | 2.57% | 15.86%
+over $53,359 up to $106,717 | 30.50% | 15.25% | 10.16% | 22.18% | over $50,197 up to $100,392 | 30.50% | 15.25% | 10.16% | 22.18%
+over $106,717 up to $142,292 | 36.00% | 18.00% | 17.75% | 28.51% | over $100,392 up to $134,238 | 36.00% | 18.00% | 17.75% | 28.51%
+over $142,292 up to $165,430 | 38.00% | 19.00% | 20.51% | 30.81% | over $134,238 up to $155,625 | 38.00% | 19.00% | 20.51% | 30.81%
+over $165,430 up to $170,751 | 41.32% | 20.66% | 25.09% | 34.63% | over $155,625 up to $161,086 | 41.38% | 20.69% | 25.17% | 34.70%
+over $170,751 up to $227,668 | 42.32% | 21.16% | 26.47% | 35.78% | over $161,086 up to $214,781 | 42.38% | 21.19% | 26.55% | 35.85%
+over $227,668 up to $235,675 | 43.32% | 21.66% | 27.85% | 36.93% | over $214,781 up to $221,708 | 43.38% | 21.69% | 27.93% | 37.00%
+over $235,675 up to $341,502 | 47.00% | 23.50% | 32.93% | 41.16% | over $221,708 up to $322,171 | 47.00% | 23.50% | 32.93% | 41.16%
+over $341,502 | 48.00% | 24.00% | 34.31% | 42.31% | over $322,171 | 48.00% | 24.00% | 34.31% | 42.31%
+Marginal tax rate for dividends is a % of actual dividends received (not grossed-up taxable amount). Marginal tax rate for capital gains is a % of total capital gains (not taxable capital gains). Gross-up rate for eligible dividends is 38%, and for non-eligible dividends is 15%. For more information see Alberta dividend tax credits. Copyright © 2002 Boat Harbour Investments Ltd.
+TaxTips.ca Alberta Basic Personal Amount
+2023 Personal Amount | 2022 Tax Rate | 2022 Personal Amount | 2022 Tax Rate
+$21,003 | 10% | $19,814 | 10%
+Federal Basic Personal Amount
+2023 Personal Amount (1) | 2023 Tax Rate | 2022 Personal Amount (1) | 2022 Tax Rate
+$15,000 | 15% | $14,398 | 15%
+
+(1) See the federal tax rates page for information on the enhanced federal personal amount, which increases the marginal tax rates for taxable incomes in the second highest federal tax bracket. The marginal tax rates in blue above have been adjusted to reflect these changes.
+
+Revised: September 20, 2026
+
+© 2002- Boat Harbour Investments Ltd. All rights reserved.
+
+See Reproduction of information from TaxTips.ca
+
+Privacy Policy | Contact
+
+Facebook | Twitter | LinkedIn
+
+The authors of TaxTips.ca strive, but cannot guarantee, to provide information which is current and accurate. Individual circumstances have a significant effect on how tax and financial information can be used. Due to this, and to the nature of the information, it should not be relied upon for decision making without professional advice.
+
+TaxTips.ca provides links to other web sites. We cannot guarantee the accuracy of the information provided on linked sites.

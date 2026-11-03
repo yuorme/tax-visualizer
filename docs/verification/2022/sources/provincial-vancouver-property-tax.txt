@@ -1,0 +1,16 @@
+Title: Vancouver 2022 property tax rates and tax levies, Appendix A
+URL: https://vancouver.ca/files/cov/2022-property-tax-rates.pdf
+Fetched: 2026-11-02
+SHA-256 of the original: unavailable (direct PDF download returned HTTP 403)
+Manual-extract exception: official PDF Appendix A was read through the web browsing tool.
+The original binary could not be downloaded; no original-file hash is claimed.
+================================================================================
+
+Residential Class 1, dollars per $1000 taxable value:
+General purpose tax levy: 1.53131
+Provincial school tax: 0.84961
+TransLink: 0.22641
+BC Assessment: 0.03498
+Metro Vancouver: 0.05042
+Municipal Finance Authority: 0.00020
+Published total: 2.69293

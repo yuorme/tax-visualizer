@@ -30,7 +30,10 @@ const history2024Fixture: typeof fixture = JSON.parse(
 const history2023Fixture: typeof fixture = JSON.parse(
   fs.readFileSync(new URL("./golden/features/history2023.json", import.meta.url), "utf8"),
 );
-const fixtures = [fixture, childcareFixture, history2024Fixture, history2023Fixture];
+const history2022Fixture: typeof fixture = JSON.parse(
+  fs.readFileSync(new URL("./golden/features/history2022.json", import.meta.url), "utf8"),
+);
+const fixtures = [fixture, childcareFixture, history2024Fixture, history2023Fixture, history2022Fixture];
 
 function rounded(value: unknown): unknown {
   if (typeof value === "number") {

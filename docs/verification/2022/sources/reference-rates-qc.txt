@@ -1,0 +1,71 @@
+Title: Quebec 2023 and 2022 Tax Rates & Tax Brackets
+URL: https://www.taxtips.ca/priortaxrates/tax-rates-2022-2023/qc.htm
+Fetched: 2026-11-02
+SHA-256 of the original: 843477c834a27ffa33756d575b236b5d20f875514ba1dd5deeb8e41e5221963d
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+#### Home -> Quebec
+
+#### Tax Rates -> 2022-2023 Tax Rates -> Quebec Personal Income Tax Rates
+
+# Quebec 2023 and 2022 Tax Rates & Tax Brackets
+
+The Quebec tax brackets and personal tax credit amounts are increased for 2023 by an indexation factor of 1.0644 (6.44% increase).
+
+The Federal tax brackets and personal tax credit amounts are increased for 2023 by an indexation factor of 1.063 (6.3% increase).
+
+See Indexation of the Personal Income Tax System for how the indexation factors are calculated.
+
+The federal indexation factor, tax brackets and tax rates for 2023 have been confirmed to Canada Revenue Agency.
+
+The Quebec indexation factor, tax brackets and tax rates for 2023 have been confirmed to Quebec Ministry of Finance information. The Quebec 2023 Budget on March 21, 2023 reduced the tax rate for the bottom 2 tax rates, and reduced the tax rate for personal tax credits from 15% to 14%.
+
+The Quebec basic personal amount is rounded to the nearest $1, beginning with the 2018 taxation year. The Quebec tax thresholds are rounded to the nearest $5. 2017 is the base year for the thresholds and the personal amount.
+
+The marginal tax rates below include the reduction in rate due to the federal tax abatement of 16.5% of federal tax. However, this abatement is applied to the net federal tax after deducting the basic personal amount. For this reason, the federal personal amount tax credit is also reduced by 16.5%. The Federal personal amount shown below is before the reduction from the federal tax abatement.
+
+Tax Tip: read the article Understanding the Tables of Personal Income Tax Rates, especially if you are trying to compare the rates below to the marginal tax rates in the Basic Tax Calculator or the Detailed Tax Calculators.
+
+TaxTips.ca - Quebec Tax Rates
+2023 Taxable Income | 2023 Tax Rates | 2022 Taxable Income | 2022 Tax Rates
+first $49,275 | 14.00% | first $46,295 | 15.00%
+over $49,275 up to $98,540 | 19.00% | over $46,295 up to $92,580 | 20.00%
+over $98,540 up to $119,910 | 24.00% | over $92,580 up to $112,655 | 24.00%
+over $119,910 | 25.75% | over $112,655 | 25.75%
+
+TaxTips.ca - Combined Federal & Quebec Tax Brackets and Tax Rates
+2023 Taxable Income (1) | QC 2023 Marginal Tax Rates | 2022 Taxable Income (1) | QC 2022 Marginal Tax Rates
+Other Income | Capital Gains | Canadian Dividends | Other Income | Capital Gains | Canadian Dividends
+Eligible | Non-Eligible | Eligible | Non-Eligible
+first $49,275 | 26.53% | 13.26% | 3.15% | 17.90% | first $46,295 | 27.53% | 13.76% | 4.53% | 19.05%
+over $49,275 up to $53,359 | 31.53% | 15.76% | 10.05% | 23.65% | over $46,295 up to $50,197 | 32.53% | 16.26% | 11.43% | 24.80%
+over $53,359 up to $98,540 | 36.12% | 18.06% | 16.39% | 28.93% | over $50,197 up to $92,580 | 37.12% | 18.56% | 17.77% | 30.08%
+over $98,540 up to $106,717 | 41.12% | 20.56% | 23.29% | 34.68% | over $92,580 up to $100,392 | 41.12% | 20.56% | 23.29% | 34.68%
+over $106,717 up to $119,910 | 45.71% | 22.86% | 29.63% | 39.96% | over $100,392 up to $112,655 | 45.71% | 22.86% | 29.63% | 39.96%
+over $119,910 up to $165,430 | 47.46% | 23.73% | 32.04% | 41.97% | over $112,655 up to $155,625 | 47.46% | 23.73% | 32.04% | 41.97%
+over $165,430 up to $235,675 | 50.23% | 25.12% | 35.87% | 45.16% | over $155,625 up to $221,708 | 50.28% | 25.14% | 35.94% | 45.22%
+over $235,675 | 53.31% | 26.65% | 40.11% | 48.70% | over $221,708 | 53.31% | 26.65% | 40.11% | 48.70%
+Marginal tax rate for dividends is a % of actual dividends received (not grossed-up taxable amount). Marginal tax rate for capital gains is a % of total capital gains (not taxable capital gains). Gross-up rate for eligible dividends is 38%, and for non-eligible dividends is 15%. For more information see Quebec dividend tax credits. Copyright © 2002 Boat Harbour Investments Ltd.
+TaxTips.ca Quebec Basic Personal Amount
+2023 Personal Amount | 2023 Tax Rate | 2022 Personal Amount | 2022 Tax Rate
+$17,183 | 14% | $16,143 | 15%
+Federal Basic Personal Amount
+2023 Personal Amount (1) | 2023 Tax Rate | 2022 Personal Amount (1) | 2022 Tax Rate
+$15,000 | 15% | $14,398 | 15%
+
+(1) See the federal tax rates page for information on the enhanced federal personal amount, which increases the marginal tax rates for taxable incomes in the second highest federal tax bracket. The marginal tax rates in blue above have been adjusted to reflect these changes.
+
+Revised: September 20, 2026
+
+© 2002- Boat Harbour Investments Ltd. All rights reserved.
+
+See Reproduction of information from TaxTips.ca
+
+Privacy Policy | Contact
+
+Facebook | Twitter | LinkedIn
+
+The authors of TaxTips.ca strive, but cannot guarantee, to provide information which is current and accurate. Individual circumstances have a significant effect on how tax and financial information can be used. Due to this, and to the nature of the information, it should not be relied upon for decision making without professional advice.
+
+TaxTips.ca provides links to other web sites. We cannot guarantee the accuracy of the information provided on linked sites.
