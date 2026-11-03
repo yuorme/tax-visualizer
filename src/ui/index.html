@@ -87,16 +87,19 @@
           </div>
           <div class="sl-scale" aria-hidden="true"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span></div>
         </div>
-        <div class="frug">
-          <div class="lbl-row"><label class="lbl" for="frug">Frugality</label><button type="button" class="info" data-tip="Scales your monthly spending down or up: slide left to spend up to 50% less, right to spend up to 50% more. The spending amount and slider update to match, and typing an amount moves this slider to show how it compares with the estimate for your household size. Double-click to reset to typical." aria-label="About frugality">i</button><span class="frug-val" id="frug-val">Typical</span></div>
-          <input type="range" id="frug" min="-50" max="50" step="1" value="0" aria-label="Frugality: percent change to monthly spending" title="Double-click to reset to typical">
-          <div class="frug-scale" aria-hidden="true"><span>Frugal</span><span>Typical</span><span>Lavish</span></div>
-        </div>
       </div>
       <div>
         <input type="range" id="spend-range" min="0" max="10000" step="100" value="2000" aria-label="Monthly household spending slider">
         <div class="scale" data-for="spend-range" data-ticks="0,2000,4000,6000,8000,10000" aria-hidden="true"></div>
       </div>
+      <div class="field care-monthly" id="childcare-costs" hidden>
+        <div class="lbl-row"><label class="lbl" for="childcare-monthly">Childcare costs</label><button type="button" class="info" id="childcare-info" data-tip="Average monthly eligible childcare costs across the whole year, after fee subsidies and reimbursements. Do not subtract advance tax-credit payments. These costs are separate from taxable household spending." aria-label="About childcare costs">i</button></div>
+        <div class="money md"><span>$</span><input id="childcare-monthly" inputmode="decimal" autocomplete="off" value="0"><span class="per">a month</span></div>
+      </div>
+      <details id="childcare-details" class="care-details" hidden>
+        <summary>Childcare details</summary>
+        <div id="childcare-fields"></div>
+      </details>
     </div>
     <!-- More inputs: one tab bar, one panel open at a time, all closed by default; tapping the open tab closes it.
          Each tab shows a short summary of its panel. The 65+ tab (#17) is added with its inputs, after Driving.
