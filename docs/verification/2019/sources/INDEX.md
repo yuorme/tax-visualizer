@@ -182,7 +182,7 @@ sales credit, child credit, and surtax; Quebec's work-premium working-income flo
 brackets, personal/child credits, and SLITC; and Yukon's $500,000 bracket and child-benefit amounts.
 Remaining changed values are published annual indexation, explicit tax-credit changes, or municipality rates.
 
-Validation details and independently calculated boundary cases are in ../2019-golden-cases.md.
+Validation details and independently calculated boundary cases are in ../../2019-golden-cases.md.
 Every cited data URL has a corresponding source cache. Carbon is collected separately under History issue #29.
 
 Federal QPIP source exception: direct official retrieval returned HTTP 403. The 2019 row was transcribed

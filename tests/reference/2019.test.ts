@@ -39,7 +39,7 @@ const single = (ord: number, extra: Partial<Household> = {}): Household => ({
 const near = (actual: number, expected: number, message: string) =>
   assert.ok(Math.abs(actual - expected) < 0.005, `${message}: ${actual} vs ${expected}`);
 
-// TaxTips.ca 2019 columns: https://www.taxtips.ca/priortaxrates/tax-rates-2019-2019/<code>.htm
+// TaxTips.ca 2019 columns: https://www.taxtips.ca/priortaxrates/tax-rates-2019-2020/<code>.htm
 // Cached as reference-rates-<code>.txt. Quebec includes the federal abatement and Ontario includes surtax.
 // NT/NU published ordinary rates are 47.05%/44.5%; add the territories' 2% employee payroll tax for this model.
 // Dividends and gains are rates per dollar received; the capital-gains inclusion was 50% in 2019.
