@@ -91,7 +91,8 @@ export const HISTORY_STEPS = [
       });
       await p.fill("#childcare-monthly", "500");
       await p.locator("#childcare-monthly").blur();
-      await p.locator("#childcare-details > summary").click();
+      if (!(await p.$eval("#childcare-details", el => el.open)))
+        await p.locator("#childcare-details > summary").click();
       await p.fill("#care-age-0", "4");
       await p.locator("#care-age-0").blur();
       await p.fill("#care-expenses-0", "6000");
