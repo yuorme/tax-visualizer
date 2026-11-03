@@ -1,0 +1,310 @@
+Title: Nova Scotia Tax and Credits
+URL: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5003-c/5003-c-19e.pdf
+Fetched: 2026-11-02
+SHA-256 of the original: 12b30902f37209ada599c8e1ae3bf7e654a4ecebb02b1287b35c8bffa4444ef8
+Publication date modified: 2019-11-13
+PDF pages: all 4
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 1 of 4 ---
+
+Form NS428
+2019
+Protected B when completed
+Nova Scotia Tax and Credits
+This is Step 6 in completing your return. Complete this form and attach a copy to your return.
+Claim only the credits that apply to you.
+Part A – Nova Scotia non-refundable tax credits 56020For internal use only
+58040 1
+Basic personal amount
+(use Worksheet NS428) (maximum $11,481)
+58080 2
+Age amount (if born in 1954 or earlier)
+(use Worksheet NS428) (maximum $5,606) +
+58120 3
+Spouse or common-law partner amount
+(use Worksheet NS428) (maximum $11,481) +
+58160 4
+Amount for an eligible dependant
+(use Worksheet NS428) (maximum $11,481) +
+58200 5
+Amount for infirm dependants age 18 or older
+(use Worksheet NS428) +
+58230 6
+Amount for young children
+(Complete the chart on the last page of this form.) 58229Number of months × $100 = +
+CPP or QPP contributions:
+58240 7Amount from line 30800 of your return + •
+58280 8Amount from line 31000 of your return + •
+Employment insurance premiums:
+58300 9Amount from line 31200 of your return + •
+58305 10Amount from line 31217 of your return + •
+58360 11Pension income amount (maximum $1,173) +
+58400 12
+Caregiver amount
+(use Worksheet NS428) +
+58440 13
+Disability amount (for self)
+(Claim $7,341 or, if you were under 18 years of age, use Worksheet NS428.) +
+58480 14
+Disability amount transferred from a dependant
+(use Worksheet NS428) +
+58520 15
+Interest paid on your student loans
+(amount from line 31900 of your return) +
+58560 16
+Your tuition and education amounts
+(attach Schedule NS(S11)) +
+58600 17Tuition and education amounts transferred from a child +
+58640 18
+Amounts transferred from your spouse or common-law partner
+(attach Schedule NS(S2)) +
+Medical expenses:
+58689 19Amount from line 33099 of your return
+20
+Enter whichever is less:
+$1,637 or 3% of line 23600 of your return –
+21Line 19 minus line 20 (if negative, enter "0") =
+58729 22
+Allowable amount of medical expenses for other dependants
+(use Worksheet NS428) +
+58769 23Add lines 21 and 22. =
+Ż +
+58800 24Add lines 1 to 18, and line 23. =
+25Nova Scotia non-refundable tax credit rate ×
+58840 26Multiply line 24 by line 25. =
+Continue on the next page.
+5003-C (Ce formulaire est disponible en français.)
+8.79%
+
+--- PDF page 2 of 4 ---
+
+Protected B when completed
+Part A – Nova Scotia non-refundable tax credits (continued)
+27Amount from line 26 on the previous page
+Donations and gifts:
+28
+Amount from line 16
+of your federal Schedule 9 × 8.79% =
+29
+Amount from line 17
+of your federal Schedule 9 × 21% = +
+58969 30Add lines 28 and 29. =
+Ż +
+61500 31Nova Scotia non-refundable tax credits
+Add lines 27 and 30.
+Enter this amount on line 43. =
+Part B – Nova Scotia tax on taxable income
+32Enter your taxable income from line 26000 of your return.
+Use the amount from line 32 to decide which column to complete.
+Line 32 is
+$29,590 or less
+Amount from line 32
+–Line 33 minus line 34
+(cannot be negative) =
+×
+Multiply line 35 by line 36. =
++
+Nova Scotia tax on
+taxable income
+Add lines 37 and 38.
+=
+Line 32 is more
+than $29,590
+but not more
+than $59,180
+–
+=
+×
+=
++
+=
+Line 32 is more
+than $59,180
+but not more
+than $93,000
+–
+=
+×
+=
++
+=
+Line 32 is more
+than $93,000
+but not more
+than $150,000
+–
+=
+×
+=
++
+=
+Line 32 is more
+than $150,000
+–
+=
+×
+=
++
+=
+33
+34
+35
+36
+37
+38
+39
+Part C – Nova Scotia tax
+40Enter your Nova Scotia tax on taxable income from line 39.
+61510 41Enter your Nova Scotia tax on split income from Form T1206. + •
+42Add lines 40 and 41. =
+43Enter your Nova Scotia non-refundable tax credits from line 31.
+61520 44
+Nova Scotia dividend tax credit
+Credit calculated for line 61520 on Worksheet NS428 + •
+61540 45
+Nova Scotia minimum tax carryover
+Amount from line 40427 of your return × 57.5% = + •
+46Add lines 43 to 45. =
+Ż –
+47Line 42 minus line 46 (if negative, enter "0") =
+48
+Nova Scotia additional tax for minimum tax purposes
+Amount from line 120 of Form T691 × 57.5% = +
+49Add lines 47 and 48. =
+50Enter the provincial foreign tax credit from Form T2036. –
+51Line 49 minus line 50 (if negative, enter "0") =
+Continue on the next page.
+5003-C
+0.00
+8.79%
+0.00
+29,590.00
+14.95%
+2,601.00
+59,180.00
+16.67%
+7,025.00
+93,000.00
+17.5%
+12,662.00
+150,000.00
+21%
+22,637.00
+
+--- PDF page 3 of 4 ---
+
+Protected B when completed
+Part C – Nova Scotia tax (continued)
+Nova Scotia low-income tax reduction
+If you had a spouse or common-law partner on December 31, 2019, you and your spouse or common-law partner need to
+decide who will claim the tax reduction for your family.
+Adjusted family income for the calculation
+of the Nova Scotia low-income tax reduction
+Column 1
+You
+Column 2
+Your spouse or
+common-law
+partner
+52Net income from line 23600 of the return
+53
+Total of the universal child care benefit (UCCB) repayment
+(line 21300 of the return) and the registered disability savings plan
+(RDSP) income repayment (included on line 23200 of the return) +
+54Add lines 52 and 53. =
+55
+Total of the UCCB income (line 11700 of the return) and the RDSP
+income (line 12500 of the return) –
+56Line 54 minus line 55 (if negative, enter "0") =
+52
+53+
+54=
+55–
+56=
+57Adjusted family income
+Add the amounts from line 56 in columns 1 and 2, if applicable.
+Enter the result on line 65.
+58Amount from line 51 of the previous page
+61950 59Basic reduction Claim $300
+61970 60Reduction for your spouse or common-law partner Claim $300 +
+61990 61Reduction for an eligible dependant claimed on line 58160 Claim $300 +
+62Add lines 59 to 61. (maximum $600) =
+63
+Reduction for dependent children born in 2001 or later:
+60999
+Number of dependent children:
+(do not include a child claimed on line 61) × $165 = +
+64Add lines 62 and 63. =
+Adjusted family income
+65Amount from line 57
+66Base amount –
+67Line 65 minus line 66 (if negative, enter "0") =
+68Applicable rate ×
+69Multiply line 67 by line 68. =
+Ż –
+70Nova Scotia low-income tax reduction
+Line 64 minus line 69
+(if negative, enter "0") =
+Ż –
+71Line 58 minus line 70 (if negative enter "0") =
+72
+Political contribution tax credit
+62100
+Nova Scotia political contributions
+made in 2019 × 75% = (maximum $750) –
+73Line 71 minus line 72 (if negative, enter "0") =
+74
+Food bank tax credit for farmers
+62150
+Enter the amount of qualifying donations that have also
+been claimed as charitable donations. × 25% = –
+75Line 73 minus line 74 (if negative, enter "0") =
+Continue on the next page.
+5003-C
+15,000.00
+5%
+
+--- PDF page 4 of 4 ---
+
+Protected B when completed
+Part C – Nova Scotia tax (continued)
+76Amount from line 75 of the previous page
+62180 77
+Labour-sponsored venture capital tax credit
+Cost of shares from Form NSLSV × 20% = (maximum $2,000) – •
+78Line 76 minus line 77 (if negative, enter "0") =
+79
+Equity tax credit
+Enter the equity tax credit calculated on Form T1285. –
+80Line 78 minus line 79 (if negative, enter "0") =
+81
+Innovation equity tax credit
+Enter the innovation equity tax credit calculated on Form T225. –
+82Line 80 minus line 81 (if negative, enter "0") =
+83
+Venture capital tax credit
+Enter the venture capital tax credit calculated on Form T224. –
+84Line 82 minus line 83 (if negative, enter "0") =
+Age tax credit
+85
+Nova Scotia age tax credit
+(if born in 1954 or earlier and your taxable income is less than $24,000) Claim $1,000 –
+86Nova Scotia tax
+Line 84 minus line 85 (if negative, enter "0")
+Enter this result on line 42800 of your return. =
+62400 87
+Nova Scotia volunteer firefighters and ground search and rescue tax credit
+Volunteer firefighters and ground search and rescue tax credit
+Enter this amount on line 47900 of your return. Claim $500
+Details of amount for young children (If you need more space, attach a separate piece of paper.)
+Child's name Relationship to you Date of birth
+(Year Month Day) Number of
+eligible months
++
++
+Total number of eligible months for all children =
+Enter the number of months on line 58229 in Part A.
+See the privacy notice on your return.
+5003-C

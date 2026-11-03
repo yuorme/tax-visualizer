@@ -1,0 +1,51 @@
+Title: Yukon 2020 and 2019 Personal Marginal Income Tax Rates
+URL: https://www.taxtips.ca/priortaxrates/tax-rates-2019-2020/yt.htm
+Fetched: 2026-11-02
+SHA-256 of the original: 058f9875bd3385c5f1875eb2022241140900fddca0b9c80075cdf8ce6609635b
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+Ads keep this website free for you. TaxTips.ca does not research or endorse any product or service appearing in ads on this site. Before making a major financial decision you should consult a qualified professional. | Yukon 2019 & 2020 Income Tax Rates | TaxTips.ca Canadian Tax and Financial Information
+TaxTips.ca Home What's New | | Links & Resources Site Map
+
+Need an accounting, tax or financial advisor? Look in our Directory. Use above search box to easily find your topic! Stay Connected with TaxTips.ca!
+
+Territories -> Yukon Tax Rates -> 2019 and 2020 Tax Rates -> Yukon Yukon 2020 and 2019 Personal Marginal Income Tax Rates The Federal and Yukon tax brackets and personal tax credits are increased for 2020 by an indexation factor of 1.019, except for the Yukon amount of $500,000, which is equal to the corporate small business limit. Yukon uses the Federal tax brackets for their first 3 tax brackets. The indexation factors, tax brackets and tax rates have been confirmed to Canada Revenue Agency information. Please read the article Understanding the Tables of Personal Income Tax Rates.
+
+Yukon Personal Income Tax Brackets and Tax Rates
+2020 Taxable Income | 2020 Tax Rates | 2019 Taxable Income | 2019 Tax Rates
+first $48,535 | 6.40% | first $47,630 | 6.40%
+over $48,535 up to $97,069 | 9.00% | over $47,630 up to $95,259 | 9.00%
+over $97,069 up to $150,473 | 10.90% | over $95,259 up to $147,667 | 10.90%
+over $150,473 up to $500,000 | 12.80% | over $147,667 up to $500,000 | 12.80%
+over $500,000 | 15.00% | over $500,000 | 15.00%
+
+Combined Federal & Yukon Tax Brackets and Tax Rates
+2020 Taxable Income | 2020 Marginal Tax Rates | 2019 Taxable Income | 2019 Marginal Tax Rates
+Other Income | Capital Gains | Canadian Dividends | Other Income | Capital Gains | Canadian Dividends
+Eligible | Non-Eligible | Eligible | Non-Eligible
+first $48,535 | 21.40% | 10.70% | -7.78% | 11.58% | first $47,630 | 21.40% | 10.70% | -7.78% | 11.58%
+over $48,535 up to $97,069 | 29.50% | 14.75% | 3.40% | 20.90% | over $47,630 up to $95,259 | 29.50% | 14.75% | 3.40% | 20.90%
+over $97,069 up to $150,473 | 36.90% | 18.45% | 13.61% | 29.41% | over $95,259 up to $147,667 | 36.90% | 18.45% | 13.61% | 29.41%
+over $150,473 up to $214,368 | 42.11% | 21.06% | 20.79% | 35.39% | over $147,667 up to $210,371 | 41.80% | 20.90% | 20.37% | 35.04%
+over $214,368 up to $500,000 | 45.80% | 22.90% | 25.89% | 39.64% | over $210,371 up to $500,000 | 45.80% | 22.90% | 25.89% | 39.64%
+over $500,000 | 48.00% | 24.00% | 28.93% | 42.17% | over $500,000 | 48.00% | 24.00% | 28.93% | 42.17%
+Marginal tax rate for dividends is a % of actual dividends received (not grossed-up taxable amount). Marginal tax rate for capital gains is a % of total capital gains (not taxable capital gains). Gross-up rate for eligible dividends is 38%, and for non-eligible dividends is 15% in 2020, and 16% in 2019. For more information see Yukon Dividend Tax Credits.
+Yukon Basic Personal Amount
+2020 Personal Amount (1) | 2020 Tax Rate | 2019 Personal Amount | 2019 Tax Rate
+$13,229 | 6.40% | $12,069 | 6.40%
+Federal Basic Personal Amount
+2020 Personal Amount (1) | 2020 Tax Rate | 2019 Personal Amount | 2019 Tax Rate
+$13,229 | 15% | $12,069 | 15%
+
+(1) The 2020 federal basic personal amount (BPA) is increased from $12,298 to $13,229 for taxpayers with net income of $150,473 or less. For incomes above this threshold, the additional amount of $931 is reduced until it becomes zero at net income of $214,368.
+
+On June 20, 2020, Yukon tabled Bill No. 8, Budget Measures Implementation Act, 2020 to enable their BPA to mirror the changes in the federal BPA.
+
+The marginal tax rates above have been adjusted to reflect these changes.
+
+Copyright © 2002 Boat Harbour Investments Ltd.
+
+Revised: June 27, 2026
+
+Copyright © 2002 Boat Harbour Investments Ltd. All Rights Reserved. See Reproduction of information from TaxTips.ca Facebook | Twitter | LinkedIn The information on this site is not intended to be a substitute for professional advice. Each person's situation differs, and a professional advisor can assist you in using the information on this web site to your best advantage Please see our legal disclaimer regarding the use of information on our site, and our Privacy Policy regarding information that may be collected from visitors to our site.

@@ -1,0 +1,53 @@
+Title: Prince Edward Island 2020 and 2019 Personal Marginal Income Tax Rates
+URL: https://www.taxtips.ca/priortaxrates/tax-rates-2019-2020/pe.htm
+Fetched: 2026-11-02
+SHA-256 of the original: d5be9145e1fe7722505c2815eddab02b202e98738c950058c117a3e22af6c14c
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+Ads keep this website free for you. TaxTips.ca does not research or endorse any product or service appearing in ads on this site. Before making a major financial decision you should consult a qualified professional. | Prince Edward Island 2019 & 2020 Income Tax Rates | TaxTips.ca Canadian Tax and Financial Information
+TaxTips.ca Home What's New | | Links & Resources Site Map
+
+Need an accounting, tax or financial advisor? Look in our Directory. Use above search box to easily find your topic! Stay Connected with TaxTips.ca!
+
+Atlantic Provinces -> Prince Edward Island Tax Rates -> 2019 and 2020 Tax Rates -> Prince Edward Island Prince Edward Island 2020 and 2019 Personal Marginal Income Tax Rates Please read the article Understanding the Tables of Personal Income Tax Rates. The Prince Edward Island tax brackets and personal tax credits are not increased for inflation. The Federal tax brackets and personal amount are increased for 2020 by an indexation factor of 1.019. The indexation factors, tax brackets and tax rates have been confirmed to Canada Revenue Agency information. The PEI 2019 Budget increased the basic personal amount to $10,000 for 2020, with a proportional increase to the spouse/equivalent to spouse amount.
+
+Prince Edward Island Personal Income Tax Brackets and Tax Rates Before Surtax
+2020 Taxable Income | 2020 Tax Rates | 2019 Taxable Income | 2019 Tax Rates
+first $31,984 | 9.8% | first $31,984 | 9.8%
+over $31,984 up to $63,969 | 13.8% | over $31,984 up to $63,969 | 13.8%
+over $63,969 | 16.7% | over $63,969 | 16.7%
+
+Combined Federal & Prince Edward Island Tax Brackets and Tax Rates Including Surtax
+2020 Taxable Income | 2020 Marginal Tax Rates | 2019 Taxable Income | 2019 Marginal Tax Rates
+Other Income | Capital Gains | Canadian Dividends | Other Income | Capital Gains | Canadian Dividends
+Eligible | Non-Eligible | Eligible | Non-Eligible
+first $31,984 | 24.80% | 12.40% | -0.99% | 14.98% | first $31,984 | 24.80% | 12.40% | -0.99% | 14.98%
+over $31,984 up to $48,535 | 28.80% | 14.40% | 4.53% | 19.58% | over $31,984 up to $47,630 | 28.80% | 14.40% | 4.53% | 19.58%
+over $48,535 up to $63,969 | 34.30% | 17.15% | 12.12% | 25.91% | over $47,630 up to $63,969 | 34.30% | 17.15% | 12.12% | 25.91%
+over $63,969 up to $97,069 | 37.20% | 18.60% | 16.12% | 29.24% | over $63,969 up to $95,259 | 37.20% | 18.60% | 16.12% | 29.24%
+over $97,069 up to $99,490 | 42.70% | 21.35% | 23.71% | 35.57% | over $95,259 up to $98,997 | 42.70% | 21.35% | 23.71% | 35.57%
+over $99,490 up to $150,473 | 44.37% | 22.19% | 24.56% | 37.17% | over $98,997 up to $147,667 | 44.37% | 22.19% | 24.56% | 37.17%
+over $150,473 up to $214,368 | 47.59% | 23.80% | 29.01% | 40.87% | over $147,667 up to $210,371 | 47.37% | 23.69% | 28.70% | 40.62%
+over $214,368 | 51.37% | 25.69% | 34.22% | 45.22% | over $210,371 | 51.37% | 25.69% | 34.22% | 45.22%
+Marginal tax rate for dividends is a % of actual dividends received (not grossed-up taxable amount). Marginal tax rate for capital gains is a % of total capital gains (not taxable capital gains). Gross-up rate for eligible dividends is 38%, and for non-eligible dividends is 15%. For more information see Prince Edward Island dividend tax credits.
+Prince Edward Island Surtaxes
+2020 | 2019
+Surtax rate (included in above rates) | 10% | Surtax rate (included in above rates) | 10%
+Surtax is on PE tax greater than | $12,500 | Surtax is on PE tax greater than | $12,500
+Person with only basic personal amount - surtax starts at taxable income of | $99,490 | Person with only basic personal amount - surtax starts at taxable income of | $98,997
+The surtax is calculated based on the net tax payable after deducting personal tax credits.
+Prince Edward Island Basic Personal Amount
+2020 Personal Amount | 2020 Tax Rate | 2019 Personal Amount | 2019 Tax Rate
+$10,000 | 9.8% | $9,160 | 9.8%
+Federal Basic Personal Amount
+2020 Personal Amount (1) | 2020 Tax Rate | 2019 Personal Amount | 2019 Tax Rate
+$13,229 | 15% | $12,069 | 15%
+
+(1) The 2020 federal personal amount is increased from $12,298 to $13,229 for taxpayers with net income of $150,473 or less. For incomes above this threshold, the additional amount of $931 is reduced until it becomes zero at net income of $214,368. The marginal tax rates above have been adjusted to reflect this change.
+
+Copyright © 2002 Boat Harbour Investments Ltd.
+
+Revised: June 27, 2026
+
+Copyright © 2002 Boat Harbour Investments Ltd. All Rights Reserved. See Reproduction of information from TaxTips.ca Facebook | Twitter | LinkedIn The information on this site is not intended to be a substitute for professional advice. Each person's situation differs, and a professional advisor can assist you in using the information on this web site to your best advantage Please see our legal disclaimer regarding the use of information on our site, and our Privacy Policy regarding information that may be collected from visitors to our site.

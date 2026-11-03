@@ -1,0 +1,57 @@
+Title: Paramètres du régime d’imposition des particuliers pour l’année d’imposition 2020
+URL: https://www.finances.gouv.qc.ca/documents/Autres/fr/AUTFR_RegimeImpot2020.pdf
+Fetched: 2026-11-02
+SHA-256 of the original: c99be200c13313e676e423e859360e43a5d698b11137b55937f200289f4e1928
+Publication date modified: 2019-11-21
+PDF pages: 15 of 18
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 15 of 18 ---
+
+11
+TABLEAU 3 (suite)
+Paramètres du régime d’imposition des particuliers visés par l’indexation
+(en dollars)
+2019 2020
+Crédit d’impôt remboursable accordant une allocation aux familles
+– Allocation famille
+▪ Montants maximaux
+○ 1er enfant 2 472 2 515
+○ 2e et 3e enfants 1 735 2 515
+○ 4e enfant et suivants 1 852 2 515
+○ Famille monoparentale 867 882
+▪ Seuil de réduction(2)
+○ Famille monoparentale 35 680 36 256
+○ Couple 49 044 49 842
+▪ Montants minimaux
+○ 1er enfant 694 1 000
+○ 2e enfant et suivants 641 1 000
+○ Famille monoparentale 346 352
+– Supplément pour l’achat de fournitures scolaires 102 104
+– Montant mensuel du supplément pour enfant handicapé 195 198
+– Montant mensuel du supplément pour enfant handicapé nécessitant
+des soins exceptionnels – palier 1 978 995
+– Montant mensuel du supplément pour enfant handicapé nécessitant
+des soins exceptionnels – palier 2 652 663
+Prime au travail générale(2)
+– Montants maximaux
+▪ Personne seule 873,60 914,11
+▪ Couple sans enfants 1 363,32 1 426,90
+▪ Famille monoparentale 2 496,00 2 539,20
+▪ Couple avec enfants 3 246,00 3 303,00
+– Seuil de réduction
+▪ Un adulte 10 720 10 864
+▪ Couple 16 584 16 812
+Prime au travail adaptée aux personnes présentant
+des contraintes sévères à l’emploi(2)
+– Montants maximaux
+▪ Personne seule 1 746,75 1 816,58
+▪ Couple sans enfants 2 677,25 2 784,51
+▪ Famille monoparentale 3 493,50 3 548,00
+▪ Couple avec enfants 4 283,60 4 350,80
+– Seuil de réduction
+▪ Un adulte 15 174 15 392
+▪ Couple 22 618 22 954
+(2) L’augmentation de la valeur des paramètres est basée sur une formule de revalorisation qui tient compte, entre autres, de l’indexation
+des prestations d’aide financière de dernier recours.

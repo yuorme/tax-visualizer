@@ -1,0 +1,198 @@
+Title: Worksheet NT428
+URL: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5012-d/5012-d-19e.pdf
+Fetched: 2026-11-02
+SHA-256 of the original: d3742e604020c24bca0afe82c2118b4aa78ecd75b04d83a20883faa3d735de23
+Publication date modified: 2019-11-21
+PDF pages: all 3
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 1 of 3 ---
+
+2019
+Protected B when completed
+Worksheet NT428
+Use this worksheet to calculate the amounts to enter on your Form NT428, Northwest Territories Tax.
+Keep this worksheet for your records. Do not attach it to your return.
+Line 58080 – Age amount (if born in 1954 or earlier)
+If the amount from line 23600 of your return is:
+• $37,790 or less, enter $7,245 on line 58080 of your Form NT428
+• more than $37,790 but not more than $86,090, complete the calculation below
+• more than $86,090, enter "0" on line 58080 of your Form NT428
+1Maximum amount
+2Amount from line 23600 of your return
+3Income threshold –
+4Line 2 minus line 3 (if negative, enter "0") =
+5Applicable rate ×
+6Multiply line 4 by line 5. =
+Ż –
+7Line 1 minus line 6 (if negative, enter "0") =
+Enter this amount on line 58080 of your Form NT428.
+Line 58200 – Amount for infirm dependants age 18 or older
+Complete one column for each dependant. If you have more than three dependants, use a separate sheet of paper.
+Dependant 1
+1Base amount
+2
+Dependant's net income from line 23600
+of their return –
+3
+Line 1 minus line 2 (if negative, enter "0")
+(maximum $4,909 per dependant) =
+4
+Amount claimed for this dependant on line 58160
+of your Form NT428, if any –
+5
+Allowable amount for this dependant:
+line 3 minus line 4 (if negative, enter "0") =
+Dependant 2
+1
+2–
+3=
+4–
+5=
+Dependant 3
+1
+2–
+3=
+4–
+5=
+6Add the amounts from line 5 for columns 1, 2, and 3 (and others, if any).
+Enter the total on line 58200 of your Form NT428.
+Line 58400 – Caregiver amount
+Complete one column for each dependant. If you have more than three dependants, use a separate sheet of paper.
+Dependant 1
+1Base amount
+2Dependant's net income from line 23600 of their return –
+3
+Line 1 minus line 2 (if negative, enter "0")
+(maximum $4,910 per dependant) =
+4
+Amount claimed for this dependant on line 58160
+of your Form NT428, if any –
+5
+Allowable amount for this dependant:
+line 3 minus line 4 (if negative, enter "0") =
+Dependant 2
+1
+2–
+3=
+4–
+5=
+Dependant 3
+1
+2–
+3=
+4–
+5=
+6Add the amounts from line 5 for columns 1, 2, and 3 (and others, if any).
+Enter the total on line 58400 of your Form NT428.
+5012-D (Ce formulaire est disponible en français.)
+7,245.00
+37,790.00
+15%
+11,875.00 11,875.00 11,875.00
+21,676.00 21,676.00 21,676.00
+
+--- PDF page 2 of 3 ---
+
+Protected B when completed
+Worksheet NT428 (continued)
+Line 58440 – Disability amount (for self)
+Complete the following calculation if you were under 18 years of age on December 31, 2019:
+1Base amount
+2Maximum amount
+3
+Total child care and attendant care expenses for you
+claimed by you or another person
+4Threshold for child and attendant care expenses –
+5Line 3 minus line 4 (if negative, enter "0") =
+Ż –
+6Line 2 minus line 5 (if negative, enter "0") =
+Ż +
+7Add lines 1 and 6 (maximum $16,920) =
+Enter this amount on line 58440 of your Form NT428.
+Line 58480 – Disability amount transferred from a dependant
+Complete this calculation for each dependant. If you have more than one dependant, use a separate sheet of paper.
+Note: If you and your dependant were not residents of the same territory or province at the end of the year, special rules may
+apply. Contact the Canada Revenue Agency to find out how much you can claim.
+1Base amount
+If the dependant was under 18 years of age on December 31, 2019, complete lines 2 to 12.
+If the dependant was 18 years of age or older, enter "0" on line 6 and continue on line 7.
+2Maximum amount
+3
+Total child care and attendant care expenses for this
+dependant claimed by you or another person
+4Threshold for child and attendant care expenses –
+5Line 3 minus line 4 (if negative, enter "0") =
+Ż –
+6Line 2 minus line 5 (if negative, enter "0") =
+Ż +
+7Add lines 1 and 6. (maximum $16,920) =
+8Total of amounts your dependant can claim on lines 9 to 16 of their Form NT428 +
+9Add lines 7 and 8. =
+10Dependant's taxable income from line 26000 of their return –
+11Line 9 minus line 10 (if negative, enter "0") =
+12
+Allowable amount for this dependant:
+Enter the amount from line 7 or line 11, whichever is less.
+Enter on line 58480 of your Form NT428 the total of allowable amounts claimed for all dependants.
+5012-D
+12,011.00
+4,909.00
+2,875.00
+12,011.00
+4,909.00
+2,875.00
+
+--- PDF page 3 of 3 ---
+
+Protected B when completed
+Worksheet NT428 (continued)
+Line 58729 – Allowable amount of medical expenses for other dependants
+Complete one column for each dependant. If you have more than three dependants, use a separate sheet of paper.
+Dependant 1
+1Medical expenses for other dependant
+2
+Enter whichever is less: $2,352 or 3% of the
+dependant's net income for line 23600 of their return –
+3
+Line 1 minus line 2 (if negative, enter "0")
+(maximum $5,000 per dependant) =
+Dependant 2
+1
+2–
+3=
+Dependant 3
+1
+2–
+3=
+4Add the amounts from line 3 for columns 1, 2, and 3 (and others, if any).
+Enter the total on line 58729 of your Form NT428.
+Line 61520 – Northwest Territories dividend tax credit
+Calculate the amount to enter on line 61520 of your Form NT428 by completing one of the following calculations:
+• If you entered an amount on line 12000 of your return but no amount on line 12010:
+Amount from line 12000 of your return × 11.5% =
+Enter this amount on line 61520 of Form NT428.
+• If you entered an amount on lines 12000 and 12010 of your return:
+1Amount from line 12000 of your return
+32Amount from line 12010 of your return – × 6% =
+54Line 1 minus line 2 = × 11.5% = +
+6Add lines 3 and 5. =
+Enter this amount on line 61520 of your Form NT428.
+Line 58 – Political contribution tax credit
+Calculate the amount to enter on line 58 of Form NT428 as follows:
+• For contributions of $100 or less, enter the amount of your contributions on line 58.
+• For contributions of more than $100 but not more than $900, complete the calculation below.
+• For contributions of more than $900, enter $500 on line 58.
+1Enter your total contributions from line 57 of your Form NT428.
+2–
+3Line 1 minus line 2 (cannot be negative) =
+4×
+5Multiply line 3 by line 4. =
+6+
+7Add lines 5 and 6. (maximum $500) =
+Enter this amount on line 58 of your Form NT428.
+5012-D
+100.00
+50%
+100.00

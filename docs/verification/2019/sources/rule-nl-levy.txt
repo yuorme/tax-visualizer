@@ -1,0 +1,103 @@
+Title: Newfoundland and Labrador Tax and Credits
+URL: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5001-c/5001-c-19e.pdf
+Fetched: 2026-11-02
+SHA-256 of the original: 6fbd79926f7e0a89f25deec559d68fc1fdf107a922da8f322fd22709c16e810d
+Publication date modified: 2019-11-13
+PDF pages: 4-5 of 5
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 4 of 5 ---
+
+Protected B when completed
+Part C – Newfoundland and Labrador tax (continued)
+Adjusted family income for the calculation of the
+Newfoundland and Labrador low-income tax reduction
+Column 1
+You
+Column 2
+Your spouse or
+common-law partner
+75Net income from line 23600 of the return 75
+76
+Total of the universal child care benefit (UCCB) repayment (line 21300 of
+the return) and the registered disability savings plan (RDSP) income
+repayment (included on line 23200 of the return) + 76+
+77Add lines 75 and 76. = 77=
+78
+Total of the UCCB income (line 11700 of the return) and the RDSP
+income (line 12500 of the return) – 78–
+79Line 77 minus line 78 (if negative, enter "0") = 79=
+80Adjusted family income
+Add the amounts on line 79 from columns 1 and 2.
+Enter the result on line 86 below.
+81Enter the amount from line 74 of the previous page.
+61870 82Basic reduction Claim $850
+61880 83Reduction for your spouse or common-law partner Claim $474 +
+61890 84
+Reduction for an eligible dependant
+claimed on line 58160 Claim $474 +
+85Add lines 82 to 84. (maximum $1,324) =
+Adjusted family income
+86Enter the amount from line 80.
+87
+If you claimed an amount on line 83 or line 84,
+enter $34,417; If not, enter $20,354. –
+88Line 86 minus line 87 (if negative, enter "0") =
+89Applicable rate ×
+90Multiply line 88 by line 89. =
+Ż –
+91
+Newfoundland and Labrador
+low-income tax reduction
+Line 85 minus line 90
+(if negative, enter "0") =
+Ż –
+92Line 81 minus line 91 (if negative, enter "0") =
+Temporary deficit reduction levy
+93
+Temporary deficit
+reduction levy
+If your taxable income from line 41 is $50,000 or less, enter "0".
+If not, enter the amount calculated in the chart on the next page. +
+94Newfoundland and Labrador tax
+Add lines 92 and 93.
+Enter the result on line 42800 of your return. =
+Unused low-income tax reduction that your spouse or common-law partner can claim
+95Amount from line 91 above
+96Amount from line 72 of the previous page –
+97Unused amountLine 95 minus line 96 (if negative, enter "0") =
+5001-C
+16%
+
+--- PDF page 5 of 5 ---
+
+Protected B when completed
+Temporary deficit reduction levy
+1Enter your taxable income from line 41.
+Go to the line below that corresponds to your taxable income.
+Enter your taxable income in the first box and complete the calculation.
+Enter on line 93 whichever amount is less: the result or the maximum.
+Taxable income Temporary deficit reduction levy
+Result or maximum
+(whichever is less)
+more than $50,000, but not more than $55,000 – $50,000 = × 10% = or $100
+more than $55,000, but not more than $60,000 – $55,000 = × 10% = + $100 = or $200
+more than $60,000, but not more than $65,000 – $60,000 = × 10% = + $200 = or $300
+more than $65,000, but not more than $70,000 – $65,000 = × 10% = + $300 = or $400
+more than $70,000, but not more than $75,000 – $70,000 = × 10% = + $400 = or $500
+more than $75,000, but not more than $80,000 – $75,000 = × 10% = + $500 = or $600
+more than $80,000, but not more than $100,000 – $80,000 = × 10% = + $600 = or $700
+more than $100,000, but not more than $125,000 – $100,000 = × 10% = + $700 = or $800
+more than $125,000, but not more than $175,000 – $125,000 = × 10% = + $800 = or $900
+more than $175,000, but not more than $250,000 – $175,000 = × 10% = + $900 = or $1,000
+more than $250,000, but not more than $300,000 – $250,000 = × 10% = + $1,000 = or $1,100
+more than $300,000, but not more than $350,000 – $300,000 = × 10% = + $1,100 = or $1,200
+more than $350,000, but not more than $400,000 – $350,000 = × 10% = + $1,200 = or $1,300
+more than $400,000, but not more than $450,000 – $400,000 = × 10% = + $1,300 = or $1,400
+more than $450,000, but not more than $500,000 – $450,000 = × 10% = + $1,400 = or $1,500
+more than $500,000, but not more than $550,000 – $500,000 = × 10% = + $1,500 = or $1,600
+more than $550,000, but not more than $600,000 – $550,000 = × 10% = + $1,600 = or $1,700
+more than $600,000 – $600,000 = × 10% = + $1,700 = or $1,800
+See the privacy notice on your return.
+5001-C

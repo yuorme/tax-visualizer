@@ -1,0 +1,50 @@
+Title: Newfoundland & Labrador 2020 and 2019 Personal Marginal Income Tax Rates
+URL: https://www.taxtips.ca/priortaxrates/tax-rates-2019-2020/nl.htm
+Fetched: 2026-11-02
+SHA-256 of the original: e172a55ba5eac70afdb409b2707859ff2962366be3cfba3d84794ef11b41ff77
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+Ads keep this website free for you. TaxTips.ca does not research or endorse any product or service appearing in ads on this site. Before making a major financial decision you should consult a qualified professional. | Newfoundland & Labrador 2019 & 2020 Income Tax Rates | TaxTips.ca Canadian Tax and Financial Information
+TaxTips.ca Home What's New | | Links & Resources Site Map
+
+Need an accounting, tax or financial advisor? Look in our Directory. Use above search box to easily find your topic! Stay Connected with TaxTips.ca!
+
+Atlantic Provinces -> Newfoundland & Labrador -> Tax Rates -> 2019 and 2020 Tax Rates -> Newfoundland & Labrador Newfoundland & Labrador 2020 and 2019 Personal Marginal Income Tax Rates Newfoundland and Labrador Income Tax Act, 2000 s. 6.1, 7, 9 Please read the article Understanding the Tables of Personal Income Tax Rates. The Federal tax brackets and personal amounts are increased for 2020 by an indexation factor of 1.019, and the NL brackets and amounts are increased by an indexation factor of 1.009. The indexation factors, tax brackets and tax rates have been confirmed to Canada Revenue Agency information. The tax rates do not include the NL Deficit Reduction Levy, which can add 10% to the marginal tax rate at various levels of taxable income over $50,000. 2020 is the last year for this levy, unless legislation is tabled to extend it. See the effect of the Deficit Reduction Levy by using our Detailed Canadian Tax and RRSP Savings Calculator.
+
+Newfoundland & Labrador Personal Income Tax Brackets and Tax Rates
+2020 Taxable Income | 2020 Tax Rates | 2019 Taxable Income | 2019 Tax Rates
+first $37,929 | 8.7% | first $37,591 | 8.7%
+over $37,929 up to $75,858 | 14.5% | over $37,591 up to $75,181 | 14.5%
+over $75,858 up to $135,432 | 15.8% | over $75,181 up to $134,224 | 15.8%
+over $135,432 up to $189,604 | 17.3% | over $134,224 up to $187,913 | 17.3%
+over $189,604 | 18.3% | over $187,913 | 18.3%
+
+Combined Federal & Newfoundland & Labrador Tax Brackets and Tax Rates
+2020 Taxable Income | 2020 Marginal Tax Rates | 2019 Taxable Income | 2019 Marginal Tax Rates
+Other Income | Capital Gains | Canadian Dividends | Other Income | Capital Gains | Canadian Dividends
+Eligible | Non-Eligible | Eligible | Non-Eligible
+first $37,929 | 23.70% | 11.85% | 4.53% | 12.85% | first $37,591 | 23.7% | 11.85% | 4.53% | 12.85%
+over $37,929 up to $48,535 | 29.50% | 14.75% | 12.53% | 19.52% | over $37,591 up to $47,630 | 29.5% | 14.75% | 12.53% | 19.52%
+over $48,535 up to $75,858 | 35.00% | 17.50% | 20.12% | 25.84% | over $47,630 up to $75,181 | 35.0% | 17.50% | 20.12% | 25.84%
+over $75,858 up to $97,069 | 36.30% | 18.15% | 21.91% | 27.34% | over $75,181 up to $95,259 | 36.3% | 18.15% | 21.91% | 27.34%
+over $97,069 up to $135,432 | 41.80% | 20.90% | 29.50% | 33.66% | over $95,259 up to $134,224 | 41.8% | 20.90% | 29.50% | 33.66%
+over $135,432 up to $150,473 | 43.30% | 21.65% | 31.57% | 35.39% | over $134,224 up to $147,667 | 43.3% | 21.65% | 31.57% | 35.39%
+over $150,473 up to $189,604 | 46.52% | 23.26% | 36.02% | 39.09% | over $147,667 up to $187,913 | 46.3% | 23.15% | 35.71% | 38.84%
+over $189,604 up to $214,368 | 47.52% | 23.76% | 37.40% | 40.24% | over $187,913 up to $210,371 | 47.3% | 23.65% | 37.09% | 39.99%
+over $214,368 | 51.30% | 25.65% | 42.61% | 44.59% | over $210,371 | 51.3% | 25.65% | 42.61% | 44.59%
+Marginal tax rate for dividends is a % of actual dividends received (not grossed-up taxable amount). Marginal tax rate for capital gains is a % of total capital gains (not taxable capital gains). Gross-up rate for eligible dividends is 38%, and for non-eligible dividends is 15%. For more information see NL dividend tax credits.
+Newfoundland & Labrador Basic Personal Amount
+2020 Personal Amount | 2020 Tax Rate | 2019 Personal Amount | 2019 Tax Rate
+$9,498 | 8.7% | $9,414 | 8.7%
+Federal Basic Personal Amount
+2020 Personal Amount (1) | 2020 Tax Rate | 2019 Personal Amount | 2019 Tax Rate
+$13,229 | 15% | $12,069 | 15%
+
+(1) The 2020 federal personal amount is increased from $12,298 to $13,229 for taxpayers with net income of $150,473 or less. For incomes above this threshold, the additional amount of $931 is reduced until it becomes zero at net income of $214,368. The marginal tax rates above have been adjusted to reflect this change.
+
+Copyright © 2002 Boat Harbour Investments Ltd.
+
+Revised: June 27, 2026
+
+Copyright © 2002 Boat Harbour Investments Ltd. All Rights Reserved. See Reproduction of information from TaxTips.ca Facebook | Twitter | LinkedIn The information on this site is not intended to be a substitute for professional advice. Each person's situation differs, and a professional advisor can assist you in using the information on this web site to your best advantage Please see our legal disclaimer regarding the use of information on our site, and our Privacy Policy regarding information that may be collected from visitors to our site.

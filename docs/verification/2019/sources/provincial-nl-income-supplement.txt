@@ -1,0 +1,116 @@
+Title: Budget 2016 Backgrounder
+URL: https://www.budget.gov.nl.ca/budget2016/incomesupplement/Budget%202016%20NL%20Income%20Supplement%20Specifics.pdf
+Fetched: 2026-11-02
+SHA-256 of the original: 72d110ccd6f1dbb82293a9f9d42224fc7688bfaa17afec01a76cff9e12a6ab5a
+Publication date modified: 2016-05-02
+PDF pages: all 4
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 1 of 4 ---
+
+Budget 2016 Backgrounder
+New and Enhanced Benefits
+Newfoundland and Labrador Income Supplement
+Budget 2016 introduced the Newfoundland and Labrador Income Supplement.
+The Newfoundland and Labrador Income Supplement will be effective July 1, 2016 and
+eligible recipients will receive their first payment, consisting of two quarterly payments, in
+October 2016 (for July 2016 and October 2016). The next payments will be in January
+2017 and April 2017.
+No application for the supplement is required. However, eligible individuals must ensure
+their annual income tax return is filed in order to receive the supplement.
+The annual amounts for the supplement are shown in the table below:
+NL Income Supplement Amount
+(Effective July 1, 2016)
+Amount for Eligible Individuals Basic credit of $220
+Maximum credit of $450 (1)
+Amount for Spouse $60
+Amount for Eligible Children $200
+Amount for Individuals Claiming the Disability Tax Credit $200 (3)
+Phase-in Income Threshold for Eligible Individuals (1) $15,000
+Beginning Phase-out Income Threshold (2) $40,000
+(1) Additional amount of $230 to be phased in at a rate of 4.6 per cent for
+family net income in excess of $15,000. Eligible individuals with family net
+income of $20,000 to $40,000 will receive the maximum benefit of $450.
+(2) The phase out of the benefit begins at family net income of $40,000 at a
+rate of 9 per cent. The income threshold at which the benefit is phased out
+completely will vary depending on individual circumstances.
+(3) The additional amount for individuals claiming the disability tax credit will
+be phased out beginning at family net income of $29,402 at a rate of 1.4 per
+cent.
+
+--- PDF page 2 of 4 ---
+
+2
+The amount of the Newfoundland and Labrador Income Supplement for a single
+individual at various income amounts is shown in the table.
+Net Income Annual Amount Quarterly
+Installment (1)
+$15,000 & under $220 $55.00
+$16,000 $266 $66.50
+$17,000 $312 $78.00
+$18,000 $358 $89.50
+$19,000 $404 $101.00
+$20,000 - $40,000 $450 $112.50
+$41,000 $360 $90.00
+$42,000 $270 $67.50
+$43,000 $180 $45.00
+$44,000 $90 $22.50
+$45,000 $0 $0
+(1) If the calculated amount of your quarterly installment for the
+Newfoundland and Labrador Income Supplement and the Seniors’
+Benefit is less than $10, you will receive one lump sum annual
+payment in October. In subsequent years, a lump sum annual payment
+would be received in July.
+
+--- PDF page 3 of 4 ---
+
+3
+Seniors’ Benefit
+Budget 2016 increased the Newfoundland and Labrador Low Income Seniors’ Benefit to
+provide additional support to the province’s seniors. The maximum amount under the
+Seniors’ Benefit will increase from $1,063 to $1,313, an increase of $250 (1).
+About 48,000 households will benefit from these changes, including seniors who receive a
+higher benefit amount or receive a partial Seniors’ Benefit for the first time.
+The following table shows the impact of the announcements for seniors.
+Family
+Net Income
+($)
+Annual Increase to
+Seniors’ Benefit
+($)
+Total
+Annual Seniors’
+Benefit
+($)
+< 29,402 250 1,313
+30,000 250 1,243
+31,000 250 1,127
+32,000 250 1,010
+33,000 250 893
+34,000 250 777
+35,000 250 660
+36,000 250 544
+37,000 250 427
+38,000 250 310
+39,000 194 194
+40,000 77 77
+40,500 19 19
+(1) For 2015, the Seniors’ Benefit was $1,059. For 2016, the benefit would
+have been $1,063 due to indexation, prior to the increase announced in Budget
+2016.
+Seniors with family net income more than $40,663 are not eligible for the benefit.
+
+--- PDF page 4 of 4 ---
+
+4
+Last year, the Seniors’ Benefit was paid in a lump sum on October 5. Starting this year, the
+Seniors’ Benefit will now be paid in quarterly installments by the Canada Revenue Agency,
+on the same cheque as the GST credit (July, October, January and April).
+Eligible recipients will receive their first payment, consisting of two quarterly payments, in
+October 2016 (for July 2016 and October 2016). The next two payments will be in January
+2017 and April 2017.
+No application for the benefits is required. Eligible individuals must ensure their annual
+income tax return is filed in order to receive the benefits. Eligibility will be based on family
+net income from the previous year (i.e. 2016 benefits paid will be based on 2015 family
+net income).

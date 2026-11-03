@@ -1,0 +1,423 @@
+Title: Descriptions of the Tax Provisions Listed in the Taxation Transparency Report, 2019
+URL: https://budget.ontario.ca/2019/fallstatement/provisions.html
+Fetched: 2026-11-02
+SHA-256 of the original: 34dedafc55ccf60c89b5e6fe267fa5e01cd429e9341a447aded0d2e00e5fc709
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+# Descriptions of the Tax Provisions Listed in the Taxation Transparency Report, 2019
+
+## On this page Skip this page navigation
+
+- Descriptions of Tax Provisions Personal Income Tax
+- Corporate Income Tax (CIT)
+- Sales and Commodity Taxes
+- Education Property Tax
+- Employer Health Tax
+- Mining Tax
+- Estate Administration Tax
+- Gross Revenue Charge
+
+November 6, 2019
+
+The following descriptions are intended to provide a basic understanding of the tax provisions listed in the Taxation Transparency Report, 2019, but do not replace the relevant legislation or regulations. The descriptions are listed in the order that they appear in Tables 1 to 10 of the Taxation Transparency Report, 2019.
+
+For the conditions and limitations of the tax provisions, please refer to the legislation and regulations available at www.ontario.ca/laws. For the conditions and limitations of the tax provisions related to the Harmonized Sales Tax (HST), please refer to the federal Excise Tax Act and regulations made under that Act.
+
+## Descriptions of Tax Provisions
+Personal Income Tax
+
+### Ontario Non-Refundable Tax Credits
+
+Adoption Expense Credit — Tax filers may claim eligible expenses incurred to adopt a child under 18 years of age. The credit is equal to 5.05 per cent of eligible adoption expenses up to $12,910 for each child.
+
+Age Credit — Tax filers aged 65 and over are entitled to claim a credit of 5.05 per cent of up to $5,166. The base amount is reduced by the lesser of $5,166 and 15 per cent of the individual’s net income above $38,463. Any unused portion may be transferred to a spouse or common-law partner.
+
+Amounts Transferred from a Spouse or Common-Law Partner — Unused portions of the age credit, pension income credit and disability credit may be transferred to a spouse or common-law partner.
+
+Basic Personal Credit — Tax filers are entitled to claim a basic personal credit of 5.05 per cent of $10,582.
+
+Canada Pension Plan (CPP)/Quebec Pension Plan (QPP) Contributions Credit — Employees are entitled to claim 5.05 per cent of their CPP and QPP contributions. The self-employed are entitled to claim 5.05 per cent of half of their contributions. (Beginning in 2019, both employees and self-employed individuals may deduct the enhanced portion of their CPP contributions from their income.)
+
+Ontario Caregiver Credit — Tax filers with a dependent adult relative with an infirmity may claim a credit equal to 5.05 per cent of $4,987, less the amount by which the dependant’s net income for the year exceeds $17,064.
+
+Charitable Donations Credit — Tax filers may claim a credit of 5.05 per cent of the first $200 of eligible charitable donations and gifts plus 11.16 per cent of eligible donations and gifts above $200.
+
+Community Food Program Donation Tax Credit for Farmers — Tax filers in the business of farming may claim a tax credit of up to 25 per cent of charitable donations of agricultural products that are made to eligible community food programs.
+
+Disability Credit — Tax filers who have a severe and prolonged mental or physical impairment causing a marked restriction in basic activities of daily living may claim a credit equal to 5.05 per cent of $8,549. Eligible tax filers under 18 years of age may claim an additional amount, the disability supplement, equal to 5.05 per cent of up to $4,987. The disability supplement is reduced by total child and attendant care expenses in excess of $2,920 claimed for the child by anyone. Any unused portion may be transferred to a supporting relative.
+
+Eligible Dependant Credit — Tax filers with eligible dependants may claim 5.05 per cent of $8,985 less the amount by which the eligible dependant’s net income exceeds $898.
+
+Employment Insurance (EI) Premiums Credit — Tax filers may claim 5.05 per cent of their EI premiums.
+
+Medical Expense Credit — Tax filers may claim a credit for eligible non-reimbursed medical expenses, including those incurred on behalf of the tax filer’s spouse or common-law partner or minor children. For 2019, the credit is calculated as 5.05 per cent of eligible expenses over the lesser of $2,395 and three per cent of the individual’s net income for the year. Also, up to $12,910 of eligible medical expenses paid on behalf of other dependent relatives may be claimed to the extent that they exceed the lesser of $2,395 and three per cent of the dependant’s net income.
+
+Pension Income Credit — A 5.05 per cent tax credit on up to $1,463 of eligible pension income may be claimed by qualifying tax filers. Any unused portion may be transferred to a spouse or common-law partner.
+
+Spouse or Common-Law Partner Credit — Tax filers who are married or have a common-law partner may claim 5.05 per cent of $8,985 less the amount by which their spouse’s or common-law partner’s net income exceeds $898.
+
+Student Loan Interest Credit — A tax filer who takes out an eligible student loan may claim a credit of 5.05 per cent of the amount of interest paid on that loan in the year the interest is paid or in any of the subsequent five years. The credit is available for payments under the Canada Student Loans Program and similar provincial programs.
+
+Tuition and Education Credits — Tuition and education tax credits were discontinued in September 2017. Tax filers who were resident in Ontario on December 31, 2017 can claim unused tuition and education tax credits carried forward from previous years.
+
+Summary of 2019 Indexed Amounts for Ontario Non-Refundable Tax Credits
+Adoption Expense Credit, the maximum claim | $12,910
+Age Credit, the maximum claim Reduced by 15 per cent of the individual’s net income in excess of $38,463 Fully phased out when individual’s net income exceeds $72,903 | $5,166
+Basic Personal Credit | $10,582
+Ontario Caregiver Credit, maximum claim per dependant Reduced by dependant’s net income in excess of $17,064 Fully phased out when dependant’s net income reaches $22,051 | $4,987
+Disability Credit Disability supplement for individuals under 18 years of age, the maximum claim | $8,549
+Disability Credit Reduced by child/attendant care expenses over $2,920 | $4,987
+Eligible Dependant Credit, the maximum claim Reduced by dependant’s net income in excess of $898 Fully phased out when dependant’s net income reaches $9,883 | $8,985
+Medical Expense Credit Qualifying medical expenses of self, spouse or common-law partner, and dependent children in excess of the lesser of three per cent of net income and $2,395 | no limit
+Medical Expense Credit Qualifying medical expenses of other dependants in excess of the lesser of three per cent of the dependant’s net income and $2,395, the maximum claim for each | $12,910
+Pension Income Credit, the maximum claim | $1,463
+Spouse or Common-Law Partner Credit, the maximum claim Reduced by the spouse’s or common-law partner’s net income in excess of $898 Fully phased out when the spouse or common-law partner’s net income reaches $9,883 | $8,985
+
+### Ontario-Specific Tax Reductions
+
+Ontario Tax Reduction — This program eliminates or reduces Ontario Personal Income Tax otherwise payable by lower-income tax filers. Ontario tax filers may claim a basic exemption of $244 plus a supplementary amount of $452 for each dependent child aged 18 or under and each dependant with a disability or infirmity, where the $452 supplementary amount may be claimed twice for a child with a disability or infirmity. An individual pays no Ontario tax if tax otherwise payable is less than the sum of these amounts.
+
+Low-income Individuals and Families Tax Credit — Beginning in 2019, tax filers who have employment income may claim a credit calculated as 5.05 per cent of their employment income, to a maximum of $850. The amount claimed is reduced by 10 per cent of the greater of adjusted individual net income over $30,000, and adjusted family net income over $60,000.
+
+### Exemptions, Deductions, Deferrals and Other Measures Shared with the Federal Government
+
+#### Business
+
+Deduction for Canada Pension Plan (CPP)/Quebec Pension Plan (QPP) Contributions on Self-Employment and Other Earnings — Self-employed individuals, and employees with certain types of employment income who have contributed less CPP/QPP than required, may deduct from income one-half of the CPP/QPP contributions they make on their self-employment income or one-half of their additional contributions on other employment income.
+
+Deduction for CPP and QPP Enhanced Contributions on Self-Employment and Other Earnings — Beginning in 2019, people will contribute more to the CPP/QPP as part of the CPP/QPP enhancement. Self-employed individuals, and employees with certain types of employment income who have contributed less CPP/QPP than required, may deduct these additional CPP/QPP contributions from their income.
+
+#### Employment
+
+Deduction for CPP and QPP Enhanced Contributions on Employment Income — Beginning in 2019, people will contribute more to the CPP/QPP as part of the CPP/QPP enhancement. Employees may deduct the enhanced portion of their CPP/QPP contributions from their income.
+
+Deduction for Clergy Residence — A full-time member of the clergy or a regular minister of a religious denomination may deduct housing costs from income for tax purposes. Where a member of the clergy is supplied living accommodation by his or her employer or receives housing allowances, an offsetting deduction may be claimed to the extent that this benefit is included in income.
+
+Deduction of Employment Expenses — Only certain specific employment expenses (such as automobile expenses, cost of meals and lodging for certain transport employees, legal fees paid to collect salary) are deductible in certain circumstances in the computation of income.
+
+Deduction of Union and Professional Dues — Annual union, professional or similar dues are deductible from income.
+
+Deduction for Employee Stock Options — Provided certain conditions are met, an employee of a corporation or Canadian mutual fund is allowed to deduct from net income 50 per cent of the employment benefit earned on employee stock options.
+
+Moving Expense Deduction — A deduction may be made for eligible moving expenses if the tax filer changes residences within Canada and moves at least 40 kilometres closer to a new job, business location, or post-secondary institution where the individual will engage in full-time schooling. Eligible expenses do not include non-taxable reimbursements received from employers.
+
+Northern Residents Deductions — To offset the relatively higher cost of living and travelling in the North, individuals living in a qualifying remote location in Canada for a continuous period of at least six months may claim certain deductions from income.
+
+#### Investment
+
+Lifetime Capital Gains Exemption for Farm or Fishing Property and Small Business Shares — A lifetime capital gains exemption is available for gains from the disposition of qualified farm and fishing property and small business shares. The maximum exemption for dispositions of qualified farming and fishing property made after April 20, 2015 is $1,000,000. The maximum exemption for dispositions of small business shares is $866,912 for 2019.
+
+Deduction of Allowable Business Investment Losses — Fifty per cent of capital losses with respect to shares or debts of a small business corporation (allowable business investment losses) may be used to offset other income.
+
+Deduction of Carrying Charges Incurred to Earn Income — Interest and other carrying charges, such as fees for certain investment advice, incurred to earn business or investment income are deductible.
+
+Deduction of Resource-Related Expenditures — Individuals are entitled to deduct certain expenses associated with the exploration for, and the development of, Canadian natural resources. These expenses are deductible if the taxpayer either engages directly in these resource activities or provides financing to a resource company that in turn flows through the tax deductions to the taxpayer.
+
+Partial Inclusion of Capital Gains — Fifty per cent of net realized capital gains are included in income.
+
+Tax-Free Savings Accounts (TFSAs) — Non-Taxation of Investment Income — In 2019, $6,000 of new contribution room is available to individuals aged 18 and over. Capital gains and investment income earned within and withdrawals from the account are not taxable. Withdrawals and the unused room may be carried forward for contributions in the future. Qualified investments that may be held in TFSAs are similar to those that may be held in a Registered Retirement Savings Plan, such as bonds, stocks, mutual funds and Guaranteed Investment Certificates.
+
+#### Non-Taxable Income
+
+Guaranteed Income Supplement (GIS) and Allowance Benefits — GIS and Allowance benefits must be included in income. However, an offsetting deduction from net income is provided. This approach effectively exempts such benefits from taxation while ensuring that they are accounted for in determining income-tested credits and benefits.
+
+Social Assistance Benefits and Provincial Supplements — Social assistance benefits and provincial supplements such as Ontario Guaranteed Annual Income System (GAINS) payments must be included in income. However, an offsetting deduction from net income is provided. This approach effectively exempts such benefits from taxation while ensuring that they are accounted for in determining income-tested credits and benefits.
+
+Workers’ Compensation Benefits — Workers’ compensation benefits must be included in income. However, an offsetting deduction from net income is provided. This approach effectively exempts such benefits from taxation while ensuring that they are accounted for in determining income-tested credits and benefits.
+
+#### Special Circumstances
+
+Child Care Expense Deduction — Individuals may deduct from their income all or part of the child care expenses they incurred to earn employment or business income, to study or to conduct research for which a grant is received. The maximum deduction is $8,000 for each child under age seven, $5,000 for each child aged seven to 16 or each dependent child over age 16 with a mental or physical infirmity, and $11,000 for each child of any age with a severe and prolonged disability (i.e., eligible for the disability credit). The spouse or common-law partner with the lower income must generally claim the deduction.
+
+Pension Income Splitting — Individuals may allocate up to half of their qualifying pension income to their spouse or common-law partner and may claim a deduction from income for the allocated amount. The person to whom the amount is allocated must include the allocated amount in income and may claim the pension income credit to the extent that the allocated amount is eligible, based on the transferee’s age.
+
+Treatment of Spousal and Child Support Payments — As of May 1, 1997, child support paid according to a written agreement or court order made on or after that day is not deductible to the payer nor included in the income of the recipient. Child support paid under a court order or written agreement made before that date continues to be deductible to the payer and included in the income of the recipient unless the agreement is varied or both parties elect to have the new rules apply. The tax changes do not apply to spousal support. Spousal support payments remain deductible by the payer and are included in the income of the recipient.
+
+#### Tax-Deferred Savings
+
+Registered Pension Plans (RPPs) — Deduction for Contributions — Contributions by individuals to registered plans are deductible, subject to certain limits.
+
+Registered Retirement Savings Plans (RRSPs) — Deduction for Contributions — Contributions by individuals to registered plans are deductible, subject to certain limits.
+
+## Corporate Income Tax (CIT)
+
+### Ontario Deductions, Non-Refundable Tax Credits and Exemptions
+
+Community Food Program Donation Tax Credit for Farmers — Corporations that carry on a farming business in Ontario may claim a non-refundable tax credit of up to 25 per cent of charitable donations of agricultural products that are made to eligible community food programs.
+
+Ontario Credit Union Tax Reduction — Credit unions are eligible for a reduced CIT rate of 3.5 per cent on income in excess of the income eligible for the Ontario Small Business Deduction. The 2019 Ontario Economic Outlook and Fiscal Review announced that this rate would be lowered to 3.2 per cent from 3.5 per cent starting January 1, 2020.
+
+Ontario Research and Development Tax Credit — A 3.5 per cent non-refundable tax credit is available to corporations on eligible Scientific Research and Experimental Development (SR&ED) expenditures in Ontario.
+
+Ontario Small Business Deduction (SBD) — Canadian-controlled private corporations (CCPCs) operating in Ontario are eligible for a reduced CIT rate of 3.5 per cent on the first $500,000 of active business income. The 2019 Ontario Economic Outlook and Fiscal Review announced that this rate would be lowered to 3.2 per cent from 3.5 per cent starting January 1, 2020. The $500,000 income limit begins to be reduced when a CCPC’s taxable capital reaches $10 million, and is eliminated when taxable capital reaches $15 million. The cost of the SBD is partially offset by the lower Dividend Tax Credit rate that is applied to non-eligible dividends. This offset is not included in the SBD estimate.
+
+Ontario Tax Credit for Manufacturing and Processing — The general CIT rate is reduced to 10 per cent for income from manufacturing and processing (including income from the generation of electricity and from the production of steam), farming, fishing, mining and logging.
+
+### Exemptions, Deductions, Deferrals and Other Measures Shared with the Federal Government
+
+Allowable Business Investment Losses — Fifty per cent of capital losses with respect to shares or debts of a small business corporation (allowable business investment losses) may be used to offset other income.
+
+Deductibility of Charitable Donations — Donations to registered charities are deductible in computing taxable income within certain limits.
+
+Deductibility of Gifts of Cultural Property and Ecologically Sensitive Land — Gifts of cultural property and ecologically sensitive land are deductible in computing taxable income within certain limits.
+
+Deductibility of Gifts to the Crown — Gifts to Canada or a province are deductible in computing taxable income within certain limits.
+
+Holdback on Progress Payments to Contractors — A contractor may exclude from taxable income the portion of progress payments (e.g., 10 per cent to 15 per cent) that may be held back until a project is completed satisfactorily.
+
+Non-Taxation of Non-profit Organizations — Non-profit corporations are generally exempt from income tax.
+
+Partial Inclusion of Capital Gains — Fifty per cent of net realized capital gains are included in income.
+
+## Sales and Commodity Taxes
+
+### Harmonized Sales Tax (HST)
+
+#### Ontario Point-of-Sale Rebates
+
+Point-of-sale rebates for specified supplies allow vendors to credit customers with the Provincial portion of the HST at the point of sale and only collect the federal portion of the HST. However, vendors are entitled to recover the Provincial portion of the HST paid on inputs to these supplies.
+
+Books — Generally means a printed book, an audio book, a bound or unbound printed version of a scripture of any religion, a printed magazine or periodical purchased by subscription and with five per cent or less of its total printed space devoted to advertising, a printed book and a read-only medium (e.g., CD-ROM) whose content is related to and integrated with the book’s content and when sold together as a single package, and a printed book and a read-only medium and/or a right to access a website when sold together as a single package and if specifically designed for students enrolled in a qualifying course, such as educational courses of elementary or secondary schools.
+
+Children’s Car Seats/Car Booster Seats — Means restraint systems or booster cushions that conform to Transport Canada’s safety requirements for Standards 213, 213.1, 213.2 or 213.5 as described under the federal Motor Vehicle Safety Act. Excluded are children’s car seats and car booster seats that do not meet Transport Canada safety standards and travel systems that are a combination stroller, carrier and car seat sold in a single package.
+
+Children’s Clothing — Generally means clothing designed for babies, girls and boys up to and including girls’ Canada Standard Size 16 and boys’ Canada Standard Size 20, clothing designated for girls and boys in sizes extra small, small, medium or large if the clothing does not have a designated Canada Standard Size, and socks, stockings, scarves, belts, mittens and gloves designed for children and babies. Excluded are adult-sized clothing acquired for a child, costumes and garments used exclusively in sports or recreational activities.
+
+Children’s Diapers — Diapers means cloth and disposable diapers designed for babies and children, and diaper inserts and liners, rubber pants and training pants. Excluded are adult-sized diapers acquired for a child and children’s diapers provided as part of a diaper service.
+
+Children’s Footwear — Generally means footwear designed for babies, girls and boys up to and including girls’ size 6 and boys’ size 6, including footwear without a numerical size that is designated for girls or boys in sizes small, medium or large. Excluded are adult-sized footwear acquired for a child, skates, rollerblades, ski-boots, footwear that has cleats and similar footwear.
+
+Prepared Foods and Beverages ($4.00 or less) — Qualifying prepared food and beverages that are ready for immediate consumption and are sold for a total price (for all qualifying items purchased, excluding HST) of $4.00 or less. Included are items such as heated food and beverages, fresh salads, fresh sandwiches and single servings of unpackaged baked goods.
+
+Print Newspapers — Print newspapers that contain news, editorials, feature stories or other information of interest to the general public, and that are published at regular intervals, typically on a daily, weekly or monthly basis. Excluded are flyers, inserts, magazines, periodicals and shoppers.
+
+Qualifying Purchases by First Nations — Most goods and some services purchased off-reserve for personal use by a Status Indian, or for use by an Indian band or band council. Services included are warranty and maintenance agreements for goods, installation and repair services for goods, and telecommunication services. Goods and services excluded include off-reserve purchases of energy, restaurant meals, catering, gasoline, fuel, tobacco, alcoholic beverages, and all services not specifically included.
+
+#### Ontario Public Service Body Rebates
+
+Hospitals, Facility Operators and External Suppliers — Public hospitals are eligible for an 87 per cent rebate of the Provincial portion of the HST paid on purchases related to their supply of exempt services. Government-funded charities and non-profit organizations that provide health care services similar to those traditionally performed in hospitals or supply ancillary support services to hospitals and eligible health care facilities (“facility operators and external suppliers”) are also eligible for an 87 per cent rebate of the Provincial portion of the HST paid on purchases related to their exempt health care supplies.
+
+Municipalities — Municipalities, including entities determined or designated by the Minister of National Revenue to be a municipality, are eligible for a rebate of 78 per cent of the Provincial portion of the HST paid on purchases related to their supply of exempt services.
+
+Public Colleges — Publicly funded colleges operating on a not-for-profit basis are eligible for a rebate of 78 per cent of the Provincial portion of the HST paid on purchases related to their supply of exempt services.
+
+Qualifying Non-Profit Organizations — Qualifying non-profit organizations are eligible for a rebate of 82 per cent of the Provincial portion of the HST paid on purchases related to their supply of exempt services. To be eligible for this rebate, a non-profit organization must receive at least 40 per cent of its funding from governments, municipalities or Indian bands.
+
+Registered Charities — Charities registered under the Income Tax Act (Canada) are eligible for a rebate of 82 per cent of the Provincial portion of the HST paid on purchases related to their supply of exempt services. Registered Canadian amateur athletic associations and non-profit organizations operating a facility or part thereof to provide nursing home care are also eligible for the rebate.
+
+School Authorities — Elementary and secondary schools operating on a not-for-profit basis are eligible for a rebate of 93 per cent of the Provincial portion of the HST paid on purchases related to their supply of exempt services.
+
+Universities — Recognized degree-granting universities operating on a not-for-profit basis are eligible for a rebate of 78 per cent of the Provincial portion of the HST paid on purchases related to their supply of exempt services.
+
+#### Other Ontario Measures
+
+Ontario Energy and Property Tax Credit (OEPTC) — This credit provides relief for the sales tax on energy and property tax to low- to moderate-income tax filers. For the 2019–20 benefit year, eligible tax filers who own or rent a home or who live on a reserve in Ontario may be eligible for an energy amount of up to $237, not exceeding their occupancy cost or home energy costs on a reserve for the individual’s principal residence. An individual’s occupancy cost is equal to property tax paid by or for them plus 20 per cent of rent paid by or for them for their principal residence.
+
+Also, eligible Ontario residents may receive a property tax amount.
+
+For the 2019­–20 benefit year, non-seniors may be eligible for a property tax amount of $59 plus 10 per cent of their occupancy cost for a maximum property tax amount of $828. The property tax amount may not exceed the occupancy cost. The maximum combined energy and property tax amount for a non-senior is $1,065. This total is reduced by two per cent of adjusted family net income over $23,665 for a single person or over $29,581 for a family (including a single parent).
+
+For the 2019–20 benefit year, seniors may be eligible for a property tax amount of $503 plus 10 per cent of their occupancy cost for a maximum property tax amount of $976. The property tax amount may not exceed the occupancy cost. The maximum combined energy and property tax amount for a senior is $1,213. This total is reduced by two per cent of adjusted family net income over $29,581 for a single senior or over $35,497 for a senior family.
+
+Ontario New Housing Rebate (including New Residential Rental Housing) — Builders or purchasers of newly constructed and substantially renovated housing are eligible for a rebate of the Provincial portion of the HST paid if the housing is for use as a primary place of residence. The rebate is calculated as 75 per cent of the Provincial portion of the HST payable on the purchase of new housing, up to a maximum rebate of $24,000. This rebate is provided for the same types of new residential housing for which a Goods and Services Tax (GST) new housing rebate is available. A similar rebate for new residential rental housing is available for the same types of new residential rental housing for which a GST rebate is available.
+
+Ontario Sales Tax Credit — This credit provides sales tax relief to low- to moderate-income tax filers. The credit for the 2019–20 benefit year provides up to $308 in annual relief for a single eligible person and up to $308 per eligible adult and child in a family. It is reduced by four per cent of adjusted family net income over $23,665 for a single person or over $29,581 for a family (including a single parent).
+
+#### Exemptions, Zero-Rating and Other Measures Shared with the Federal Government
+
+Exemptions (Exempt Supply) — A supply of a good or service where the purchaser pays no GST/HST and the supplier is not entitled to claim input tax credits to recover the GST/HST paid on inputs to the supplies. Examples of exempt supplies would generally include domestic financial services and health care services.
+
+Zero-Rating (Zero-Rated Supply) — A supply of a good or service where the purchaser pays no GST/HST and the supplier of these goods or services is entitled to claim input tax credits to recover the GST/HST paid on inputs to the supplies. Examples of zero-rated supplies include basic groceries, prescription drugs and certain medical devices.
+
+##### Business
+
+Exemption for Ferry, Road and Bridge Tolls — Ferry services and road and bridge tolls are generally exempt from the GST/HST. The exemption does not include international ferry services, which are zero-rated, consistent with other international transportation services.
+
+Exemption and Rebate for Legal Aid Services — Legal aid services delivered directly by a Province or Provincial agency are exempt from the GST/HST. Legal aid services provided by private practitioners to a legal aid plan administrator are taxable. However, the person responsible for the legal aid plan is entitled to a rebate of 100 per cent of any GST/HST paid on the supply.
+
+Foreign Convention and Tour Incentive Program— Rebates are provided for the GST/HST paid in respect of: certain property and services used in the course of a foreign convention (generally defined as a convention where at least 75 per cent of participants are non-residents and the sponsor is a non-resident) held in Canada; and the use of a convention site and related convention supplies acquired by non-resident exhibitors in respect of a foreign or Canadian convention held in Canada. A rebate in respect of the accommodation portion of eligible tour packages supplied to a non-resident was also provided, but was repealed for accommodation supplies made after March 22, 2017.
+
+Rebate for Poppies and Wreaths — The Royal Canadian Legion is eligible to recover the GST/HST paid on their purchases of Remembrance Day poppies and wreaths.
+
+Small Suppliers’ Threshold — Small suppliers (other than taxi businesses, which include ride-sharing providers) are not required to register for GST/HST. A small supplier is a person whose total taxable supplies in the preceding year are $30,000 or less ($50,000 or less in the case of public service bodies). Charities and public institutions (e.g., a registered charity that is a university, public college, school authority, hospital authority or designated municipality) can also qualify as a small supplier if their gross annual revenue in either of their previous two fiscal years is $250,000 or less.
+
+##### Charities and Non-Profit Organizations
+
+Exemption for Certain Supplies Made by Charities and Non-Profit Organizations — Most supplies made by charities are GST/HST exempt. Supplies that are exempt when made by non-profit organizations include supplies made for no consideration; supplies of food and lodging made for the relief of poverty or distress; subsidized home care services; Meals on Wheels; recreational programs established for children, individuals with a disability and disadvantaged individuals; memberships in organizations providing no significant benefit to individual members; and trade union and mandatory professional dues.
+
+##### Education
+
+Exemption for Tuition and Educational Services — Most educational services are exempt from GST/HST, including tuition fees paid for courses provided primarily for elementary or secondary school students; courses leading to credits towards a diploma or degree awarded by a recognized school authority, university or college; and certain other types of training for a trade or vocation. In addition, certain ancillary supplies are also exempt, such as most meal plans at a university or college and supplies by school authorities of a service of transporting students to or from school.
+
+##### Health Care
+
+Exemption for Health Care Services — Basic health care services are exempt under the GST/HST, including: services provided by physicians, dentists and certain health care practitioners whose profession is regulated by the governments of at least five Provinces; services covered by a Provincial health insurance plan; and institutional health care services provided in a health care facility, including accommodation, meals provided with accommodation, rentals of medical equipment to patients or residents of the facility, and a number of other supplies.
+
+Exemption for Hospital Parking — Parking at a public hospital is generally exempt from GST/HST when supplied by a charity, a non-profit organization, a hospital or another public sector body to persons such as patients, visitors and volunteers.
+
+Zero-Rating of Medical and Assistive Devices — A wide range of medical and assistive devices are zero-rated under the GST/HST, including wheelchairs, medical and surgical prostheses, hearing and speaking aids, prescription eyeglasses and various diabetic supplies. Certain devices are zero-rated only if provided on the written order of a physician, physiotherapist, occupational therapist or registered nurse. Certain devices are zero-rated only when for use by a final consumer, but others are zero-rated whether the final user is the final consumer or a health care provider.
+
+Zero-Rating of Prescription Drugs — Drugs that are controlled substances for which a prescription is required, drugs that have been prescribed by a recognized health care practitioner, and the service of dispensing these prescribed drugs, are zero-rated under the GST/HST. Certain drugs that do not require a prescription but that are used to treat life-threatening conditions are also zero-rated under the GST/HST.
+
+##### Households
+
+Exemption for Child Care — Child care services provided for periods of less than 24 hours to children 14 years of age or under are generally exempt under the GST/HST.
+
+Zero-Rating of Basic Groceries — Basic groceries, which include the majority of foodstuffs for preparation and consumption at home, are zero-rated under the GST/HST. A specified list of goods, such as soft drinks, candies, confections and alcoholic beverages are not staple grocery items and are therefore taxable.
+
+Zero-Rating of Feminine Hygiene Products — Sanitary napkins, tampons, sanitary belts, menstrual cups and other similar products that are marketed exclusively for feminine hygiene purposes are zero-rated under the GST/HST.
+
+##### Housing
+
+Exemption for Certain Residential Rent — Rentals of a residential complex (such as a house) or a residential unit (such as an apartment) for a period of at least one month are exempt from GST/HST.
+
+##### Municipalities
+
+Exemption for Municipal Transit — Municipal transit services are exempt from GST/HST. Specifically, no tax applies on fares charged by transit systems operated by a local authority or government, or by a government-funded non-profit organization. A municipal transit service is defined as a public passenger transportation service provided by a transit authority whose services are all or substantially all within a particular municipality and its surrounding areas.
+
+Exemption for Water, Sewage and Basic Garbage Collection Services — Water and sewage services are exempt under the GST/HST when made by a municipality or organization designated to be a municipality. Basic garbage collection services are also exempt under the GST/HST when the supplies are made by or on behalf of a government or municipality to a recipient who has no option but to receive the service.
+
+### Retail Sales Tax
+
+Exemption for Automobile Insurance Premiums — Auto insurance premiums are exempt from Retail Sales Tax (RST).
+
+Exemption for Individual Life and Health Insurance Premiums — Premiums for individual life and health insurance are exempt from RST.
+
+Vendor Compensation — Compensation to vendors for collecting RST on insurance premiums on behalf of the Province is based on the amount of RST collected on premiums for the period. The maximum amount that can be claimed as compensation is $1,500 for the 12-month period from April 1 to March 31.
+
+### Fuel Tax
+
+#### Exemptions/Reduced Rates
+
+Exemption for Coloured Fuel — Coloured fuel is exempt from the 14.3 cents per litre tax under the Fuel Tax Act. Examples of permitted coloured fuel use are operating unlicensed construction, forestry, mining, farm and other business equipment; generating electricity; use as heating, lighting or cooking fuel; and operating commercial marine vessels.
+
+Reduced Rate for Railway Diesel — Diesel fuel used to power locomotives is taxed at the rate of 4.5 cents per litre.
+
+#### Refunds
+
+Auxiliary Power Take Off Equipment — Powering a unit from an engine that uses fuel from the vehicle’s fuel tank is considered a “power take off” function (e.g., refrigeration units). The tax paid on the fuel used to power the unit may qualify for a refund of the 14.3 cents per litre fuel tax.
+
+### Gasoline Tax
+
+#### Exemptions/Reduced Rates
+
+Exemption for Methanol and Natural Gas — Methanol and natural gas are exempt from the 14.7 cents per litre gasoline tax.
+
+Reduced Rate for Aviation Fuel — Aviation fuel is taxed at the rate of 6.7 cents per litre. The 2019 Ontario Economic Outlook and Fiscal Review proposes to reduce the aviation fuel tax rate in Northern Ontario from 6.7 cents per litre to 2.7 cents per litre effective January 1, 2020.
+
+Reduced Rate for Propane — Propane used to power licensed motor vehicles is taxed at the rate of 4.3 cents per litre.
+
+#### Refunds
+
+Auxiliary Power Take Off Equipment — Powering a unit from an engine that uses gasoline from the vehicle’s fuel tank is considered a “power take off” function. The tax paid on the gasoline used to power the unit may qualify for a refund of the 14.7 cents per litre gasoline tax.
+
+Aviation Fuel — Aviation fuel delivered to aircraft on transoceanic flights making technical stops at Ottawa International Airport for refuelling is eligible for a refund of the 6.7 cents per litre aviation fuel tax.
+
+Tax-Exempt Use in Unlicensed Equipment — Any equipment or vehicle that is not licensed or required to be licensed under the Highway Traffic Act and operated in Ontario by any business, industry or institution (excluding recreational use) may qualify for a refund of gasoline and/or propane tax. Examples of equipment for which a refund may be claimed include unlicensed farming, construction and forestry equipment, and boats used in business operations such as commercial or construction boats.
+
+### Land Transfer Tax (LTT)
+
+#### Exemptions
+
+Deferrals and Exemptions for Corporate Reorganizations — Conveyances of land between corporations can be made without LTT, providing the conveyance is between affiliated corporations, or as part of certain corporate reorganizations, and is not registered on title.
+
+Family Business Conveyances — There is an LTT exemption for conveyances of land from one or more family members to a family business corporation, where the land is to be used in the continued operation of an active business.
+
+Family Farms — There are LTT exemptions for conveyances of farmed land to a family farm corporation, between individual family members, and from family farm corporations to individual family members.
+
+Life Leases — There is an LTT exemption for the acquisition of a unit in a life-lease development owned by a non-profit organization or a registered charity. The unit must be used as the principal residence of the purchaser, the purchaser’s spouse or the purchaser’s parent. The unit must have a right to occupy for the lifetime of the occupant or a term of at least 20 years.
+
+#### Refunds
+
+First-Time Homebuyers Refund — An LTT refund is available for qualifying first-time purchases of new and resale homes, to a maximum amount of $4,000.
+
+### Tobacco Tax
+
+The Tobacco Tax rate is 18.475 cents per cigarette and per gram or part gram of fine cut tobacco and all other tobacco products except cigars. The Tobacco Tax rate for cigars is 56.6 per cent of the taxable price of a cigar.
+
+Compensation for Tax Collection — Those who collect Tobacco Tax may be paid the lesser of $2,000 or four per cent of the tax collected from April 1 to March 31 annually. If there is an increase in the rate of tax, dealers may claim five per cent of the tax differential when required to conduct an inventory by the Minister.
+
+### Beer, Wine and Spirits Taxes
+
+#### Exemptions/Reduced Rates
+
+##### Exemptions
+
+Exemption for Promotional Distribution — Wine and beer manufacturers, and licensees of brew pubs, are not subject to tax on a maximum of 10,000 litres of wine and wine coolers or beer distributed by them without charge for promotional purposes in Ontario. Spirits manufacturers are not subject to tax on a maximum of 1,250 litres of spirits distributed by them without charge for promotional purposes in Ontario. The exemption is for a 12-month period.
+
+##### Reduced Rates
+
+Reduced Rate for Beer made by Ontario Microbrewers* — Reduced rate applies on beer sales when sold in The Beer Store, in on-site manufacturers’ stores and in licensed establishments. Draft beer made by an Ontario microbrewer purchased by, or delivered to, a person after February 28, 2018, and before December 31, 2019, would be taxed at a rate of 35.96 cents per litre, which is 36.49 cents per litre lower than the rate that applies on draft beer made by a beer manufacturer. Non-draft beer made by an Ontario microbrewer purchased by, or delivered to, a person after February 28, 2018, and before December 31, 2019, is taxed at a rate of 39.75 cents per litre, which is 49.99 cents per litre lower than the rate that applies on non-draft beer produced by a beer manufacturer.
+
+Reduced Rate for Beer Made and Sold at Ontario Brew Pubs* — Draft beer made and sold to purchasers at a brew pub in Ontario or a secondary location related to the brew pub after February 28, 2018, and before December 31, 2019, is taxed at a rate of 33.41 cents per litre. Draft beer made and sold to purchasers at a brew pub in Ontario or a secondary location related to the brew pub is not subject to the volume tax.
+
+Reduced Rate for Ontario Wine and Ontario Wine Coolers — Ontario wine and Ontario wine coolers sold to purchasers in Winery Retail Stores (WRS) are taxed at a rate of 6.1 per cent of the retail price of the Ontario wine or Ontario wine cooler. Ontario wine and Ontario wine coolers sold to purchasers in wine boutiques are taxed at a rate of 9.6 per cent of the retail price of the Ontario wine or Ontario wine cooler after March 31, 2018 and before January 1, 2020.
+
+Reduced Rate for Other Wine and Other Wine Coolers — Wine and wine coolers sold to purchasers in Winery Retail Stores (WRS) that does not meet the definition of "Reduced Rate for Ontario Wine and Ontario Wine Coolers" is taxed at a rate of 19.1 per cent of the retail price of the wine or wine coolers after March 31, 2018 and before January 1, 2020. A higher rate of 22.6 per cent applies in wine boutiques after March 31, 2018 and before January 1, 2020.
+
+Reduced Volume Rate for Wine Coolers — Wine coolers sold to purchasers in Winery Retail Stores (WRS) are taxed at a rate of 28 cents per litre, or 1 cent per litre lower than the respective volume rate for wine.
+
+Reduced Volume Rate for Spirits Coolers — Spirits coolers sold to purchasers in Distillery Retail Stores (DRS) are taxed at a rate of 28 cents per litre, or 10 cents per litre lower than the respective volume rate for spirits.
+
+* The beer basic tax rates are adjusted annually, based on a three-year average of the Ontario Consumer Price Index (CPI). For 2011 to 2018, the annual adjustment date was March 1. For 2019, the annual adjustment date is December 31.
+
+## Education Property Tax
+
+Brownfields Financial Tax Incentive Program — Municipalities may freeze or cancel the taxes on eligible brownfields properties for a defined period, and the Province may provide matching relief from education property taxes.
+
+Charity Rebate — Municipalities must rebate a minimum of 40 per cent of the municipal and education property taxes paid by charities occupying property in the commercial and industrial property classes, and may rebate any amount of property taxes paid by charities in other property classes. Municipalities may also rebate any percentage of the municipal and education property taxes paid by organizations that are similar to eligible charities such as non-profit organizations.
+
+Conservation Land Property Tax Exemption Program — Eligible conservation lands are exempt from municipal and education property taxes.
+
+Eligible Convention Centres Exemption — Eligible large, privately owned convention centres are exempt from education property taxes.
+
+Eligible Live Performance Theatres Exemption and Professional Sports Facility Tax Rate Reduction — Eligible theatres for live performances are exempt from municipal and education property taxes. Eligible professional sports facilities may receive a locally determined reduction from the otherwise applicable tax rates. Education property taxes are reduced by an equivalent amount to the municipal taxes.
+
+Farm Property Class Tax Rate Reduction — Eligible farm properties are subject to residential Education Property Tax rates reduced by 75 per cent. For municipal purposes, these properties are subject to residential property tax rates reduced by a locally determined amount of at least 75 per cent.
+
+Farmlands Awaiting Development Sub-Class Tax Rate Reduction — Eligible farmlands awaiting development may receive a locally determined reduction from the otherwise applicable tax rates.
+
+Heritage Property Tax Rebate — Municipalities may adopt a program to reduce the municipal and education property taxes of eligible heritage properties by up to 40 per cent.
+
+Managed Forest Tax Incentive Program — Eligible managed forest properties are subject to residential property tax rates for municipal and education purposes that are reduced by 75 per cent.
+
+Ontario Energy and Property Tax Credit — See description in the Harmonized Sales Tax section.
+
+Ontario Senior Homeowners’ Property Tax Grant — This grant is available to low- to middle-income Ontario senior homeowners for property taxes paid. The maximum grant is $500 per year for a single person or a couple. It is reduced by 3.33 per cent of adjusted family net income over $35,000 for a single senior or over $45,000 for a senior couple.
+
+Seniors and Persons with Disabilities Property Tax Relief — Expenditures under this category include locally determined municipal and Education Property Tax relief in the form of reduced, cancelled or deferred reassessment-related tax increases on residential properties of low-income seniors and persons with disabilities; the exemption from property taxation of improvements to an existing home to accommodate seniors or persons with disabilities; and the exemption from taxation on 10 per cent of the assessment of newly built homes that provide accommodation to seniors and persons with disabilities.
+
+Tax Exemptions under Private Statutes — Property tax exemptions have been granted through private statutes to various cultural, heritage, recreational and community service organizations (e.g., YMCA).
+
+Vacant Commercial and Industrial Unit Rebate — Municipalities have the option to rebate a percentage of the municipal and education property taxes paid with respect to vacant commercial and industrial buildings or portions of buildings.
+
+Vacant Land and Excess Land Sub-Class Tax Rate Reduction — Municipal and education property tax rates on vacant and excess lands in the commercial and industrial property classes may be reduced by a percentage of the otherwise applicable class tax rates.
+
+## Employer Health Tax
+
+$490,000 Exemption for Private-Sector Employers — The Employer Health Tax is payable by all Ontario employers. Private-sector employers are exempt from tax on the first $490,000 of annual total Ontario remuneration. Private-sector employers with annual Ontario remuneration above $5 million do not receive an exemption. Registered charities claim the exemption at all payroll sizes. Effective January 1, 2017, special rules apply to registered charities so they may claim more than one exemption in certain circumstances.
+
+## Mining Tax
+
+Mining Tax Annual $500,000 Deduction — The Mining Tax is applied to an operator's annual profit in excess of a $500,000 annual deduction, which needs to be shared by associated corporations.
+
+Mining Tax Holiday for New Mines (other than Remote Mines) — Up to $10 million of profit over the first three years generated by a new Ontario mine or a major expansion of an existing Ontario mine is exempt from Mining Tax.
+
+Mining Tax Holiday for New Remote Mines — Up to $10 million of profit over the first 10 years generated by a new mine opened in a remote Ontario location is exempt from Mining Tax.
+
+Mining Tax Rate for Remote Mines — After the Mining Tax holiday ends for new remote mines, the Mining Tax rate is reduced from 10 per cent to 5 per cent on the profits from the operation of a remote Ontario mine.
+
+Processing Allowance — Mine operators that process mine output in Canada receive a deduction from mining profits based on the capital cost of processing assets. The deduction can range from 8 per cent to 20 per cent, depending on the type and location of the asset.
+
+## Estate Administration Tax
+
+Exemption Where the Value of the Estate Does Not Exceed $1,000 — The Estate Administration Tax is payable by the estate of a deceased person upon the issuance of an estate certificate. If the value of the estate does not exceed $1,000, the estate is exempt from tax.
+
+## Gross Revenue Charge
+
+Gross Revenue Charge (GRC) 10-Year Holiday — The GRC is paid with respect to hydro-electric generating stations and includes a property tax component replacing municipal and education property taxes and a water rental component replacing provincial water rental charges. A 10-year holiday from the GRC is provided for eligible new, redeveloped and upgraded hydro-electric generating stations.
+
+Updated: November 6, 2019
+Published: November 6, 2019
+Back to top

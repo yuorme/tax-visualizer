@@ -1,0 +1,50 @@
+Title: Alberta 2020 and 2019 Personal Marginal Income Tax Rates
+URL: https://www.taxtips.ca/priortaxrates/tax-rates-2019-2020/ab.htm
+Fetched: 2026-11-02
+SHA-256 of the original: b9c024a560498ed1245dbea2fb641b5335809b86623b95e8fc4c31983e9087a0
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+Ads keep this website free for you. TaxTips.ca does not research or endorse any product or service appearing in ads on this site. Before making a major financial decision you should consult a qualified professional. | Alberta 2019 & 2020 Income Tax Rates | TaxTips.ca Canadian Tax and Financial Information
+TaxTips.ca Home What's New | | Links & Resources Site Map
+
+Need an accounting, tax or financial advisor? Look in our Directory. Use above search box to easily find your topic! Stay Connected with TaxTips.ca!
+
+Alberta Tax Rates -> 2019 and 2020 Tax Rates -> Alberta Personal Income Tax Rates Alberta 2020 and 2019 Personal Marginal Income Tax Rates Alberta Personal Income Tax Act s. 6.1, 8, 21, 44 Please read the article Understanding the Tables of Personal Income Tax Rates. The Federal tax brackets and personal amounts are increased for 2020 by an indexation factor of 1.019. As per the Alberta 2019 Budget, the Alberta brackets and amounts are not increased for 2020. The indexation factors, tax brackets and tax rates have been confirmed to Canada Revenue Agency information. If Alberta had not discontinued indexing, the Alberta tax brackets and personal amounts would have been increased for 2020 by an indexation factor of 1.018. The 2019/2020 marginal tax rates for non-eligible dividends reflect the change from Bill 10 which received Royal Assent on June 28, 2019. For more information see Alberta dividend tax credits.
+
+Alberta (AB) Personal Income Tax Brackets and Tax Rates
+2020 Taxable Income | 2020 Tax Rates | 2019 Taxable Income | 2019 Tax Rates
+first $131,220 | 10% | first $131,220 | 10%
+over $131,220 up to $157,464 | 12% | over $131,220 up to $157,464 | 12%
+over $157,464 up to $209,952 | 13% | over $157,464 up to $209,952 | 13%
+over $209,952 up to $314,928 | 14% | over $209,952 up to $314,928 | 14%
+over $314,928 | 15% | over $314,928 | 15%
+
+Combined Federal & Alberta Tax Brackets and Tax Rates
+2020 Taxable Income | 2020 Marginal Tax Rates | 2019 Taxable Income | 2019 Marginal Tax Rates
+Other Income | Capital Gains | Canadian Dividends | Other Income | Capital Gains | Canadian Dividends
+Eligible | Non-Eligible | Eligible | Non-Eligible
+first $48,535 | 25.00% | 12.50% | -0.03% | 15.86% | first $47,630 | 25.0% | 12.50% | -0.03% | 15.86%
+over $48,535 up to $97,069 | 30.50% | 15.25% | 7.56% | 22.18% | over $47,630 up to $95,259 | 30.5% | 15.25% | 7.56% | 22.18%
+over $97,069 up to $131,220 | 36.00% | 18.00% | 15.15% | 28.51% | over $95,259 up to $131,220 | 36.0% | 18.00% | 15.15% | 28.51%
+over $131,220 up to $150,473 | 38.00% | 19.00% | 17.91% | 30.81% | over $131,220 up to $147,667 | 38.0% | 19.00% | 17.91% | 30.81%
+over $150,473 up to $157,464 | 41.22% | 20.61% | 22.35% | 34.51% | over $147,667 up to $157,464 | 41.0% | 20.50% | 22.05% | 34.26%
+over $157,464 up to $209,952 | 42.22% | 21.11% | 23.73% | 35.66% | over $157,464 up to $209,952 | 42.0% | 21.00% | 23.43% | 35.41%
+over $209,952 up to $214,368 | 43.22% | 21.61% | 25.11% | 36.81% | over $209,952 up to $210,371 | 43.0% | 21.50% | 24.81% | 36.56%
+over $214,368 up to $314,928 | 47.00% | 23.50% | 30.33% | 41.16% | over $210,371 up to $314,928 | 47.0% | 23.50% | 30.33% | 41.16%
+over $314,928 | 48.00% | 24.00% | 31.71% | 42.31% | over $314,928 | 48.0% | 24.00% | 31.71% | 42.31%
+Marginal tax rate for dividends is a % of actual dividends received (not grossed-up taxable amount). Marginal tax rate for capital gains is a % of total capital gains (not taxable capital gains). Gross-up rate for eligible dividends is 38%, and for non-eligible dividends is 15%. For more information see Alberta dividend tax credits.
+Alberta Basic Personal Amount
+2020 Personal Amount | 2020 Tax Rate | 2019 Personal Amount | 2019 Tax Rate
+$19,369 | 10% | $19,369 | 10%
+Federal Basic Personal Amount
+2020 Personal Amount (1) | 2020 Tax Rate | 2019 Personal Amount | 2019 Tax Rate
+$13.229 | 15% | $12,069 | 15%
+
+(1) The 2020 federal personal amount is increased from $12,298 to $13,229 for taxpayers with net income of $150,473 or less. For incomes above this threshold, the additional amount of $931 is reduced until it becomes zero at net income of $214,368. The marginal tax rates above have been adjusted to reflect this change.
+
+Copyright © 2002 Boat Harbour Investments Ltd.
+
+Revised: June 27, 2026
+
+Copyright © 2002 Boat Harbour Investments Ltd. All Rights Reserved. See Reproduction of information from TaxTips.ca Facebook | Twitter | LinkedIn The information on this site is not intended to be a substitute for professional advice. Each person's situation differs, and a professional advisor can assist you in using the information on this web site to your best advantage Please see our legal disclaimer regarding the use of information on our site, and our Privacy Policy regarding information that may be collected from visitors to our site.
