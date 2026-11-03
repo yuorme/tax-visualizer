@@ -1,0 +1,75 @@
+Title: This webpage was last updated: July 01, 2025
+URL: https://www2.gov.bc.ca/assets/gov/british-columbians-our-governments/policies-for-government/bc-employment-assistance-policy-procedure-manual/additional-resources/archived-rate-tables/seniors_supplement_rate_table_-_july_2025.pdf
+Fetched: 2026-11-03
+SHA-256 of the original: b20635b75c7be5b454cf9d655a32e832aab3124142dc1201c3041b1d39955f50
+Publication date modified: 2026-01-29
+PDF pages: all 2
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 1 of 2 ---
+
+This webpage was last updated: July 01, 2025
+Senior's Supplement Rate Table
+Effective: July 1, 2025
+The following table shows how to calculate the senior’s supplement (SS) based on July 1, 2025, federal old
+age security (OAS)/guaranteed income supplement (GIS)/allowance payment levels.
+The asterisk indicates the most recent rate table changes
+Supplement
+Single
+or married to spouse not
+on OAS/GIS/Allowance
+Married
+(both on
+OAS/GIS)
+(each) x 2 =
+couple
+Married (spouse
+on allowance)
+pensioner
+married (spouse on
+allowance)
+spouse
+OAS *$734.95 *$734.95 *$734.95 *$734.95
+GIS +*$1097.75 +*$660.78 +*$660.78 +*$660.78
+*$1,832.70 *$1395.73 *$1,395.73 *$1,395.73
+Seniors
+Supplement +$99.30 +$110.25 +$110.25 +$99.83
+*$1,505.98 +*$1,495.56
+Guaranteed
+Totals = *$1,932 =*$3,011.96 =*$3,001.54
+OAS/GIS/Allowance are reviewed for adjustment quarterly.
+Notes:
+In cases where the family unit consists of a couple where one adult only receives OAS/GIS/Allowance and the
+Senior's Supplement and the family receives top up from BCEA, the system will automatically deduct these
+payments. Deductions are first taken from the family’s support portion, then the shelter portion. Any remaining
+entitlement will be paid by the system.
+BC senior’s supplement rates by income and marital status are available here.
+* Rate table for seniors over 75 years old
+Supplement
+Single
+or married to spouse not
+on OAS/GIS/allowance
+Married
+(both on
+OAS/GIS)
+(each) x 2 =
+couple
+Married (spouse
+on allowance)
+pensioner
+Married (spouse on
+allowance)
+spouse
+OAS *$808.45 *$808.45 *$808.45 *$808.45
+GIS +*$1097.75 +*$660.78 +*$660.78 +*$660.78
+*$1,906.20 *$1,469.23 *$1,469.23 *$1,469.23
+Seniors
+supplement +$99.30 +$110.25 +$110.25 +$99.83
+*$1,579.48 +*$1,569.06
+Guaranteed
+totals = *$2,005.50 =*$3,158.96 =*$3,148.54
+
+--- PDF page 2 of 2 ---
+
+This webpage was last updated: July 01, 2025

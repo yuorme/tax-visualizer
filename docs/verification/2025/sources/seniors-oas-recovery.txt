@@ -1,0 +1,91 @@
+Title: Old Age Security pension recovery tax
+URL: https://www.canada.ca/en/services/benefits/publicpensions/old-age-security/recovery-tax.html
+Fetched: 2026-11-03
+SHA-256 of the original: e2e32853e10501412cf5993886cd8b8be0fe18b58908d62dcf12f7c5e2e40f3b
+Publication date modified: 2026-09-29
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+# Old Age Security pension recovery tax
+
+If your net world income exceeds the threshold amount ($93,454 for 2025), you have to repay part or your entire OAS pension. Part or your entire OAS pension is reduced as a monthly recovery tax.
+
+You must pay the recovery tax if:
+
+- your annual net world income is more than $93,454 (for 2025, in Canadian dollars), and
+- you live in a country where the non-resident tax on Canadian pensions is 25% or more.
+
+Recovery tax period | Income year | Minimum income recovery threshold | Maximum income recovery threshold
+Age 65 to 74 | Age 75 and over
+July 2025 to June 2026 | 2024 | $90,997 | $148,451 | $154,196
+July 2026 to June 2027 | 2025 | $93,454 | $152,062 | $157,923
+July 2027 to June 2028 | 2026 | $95,323 | $155,320 1 | $161,320 1
+
+- 1 From January to September of the current tax year, the amounts in this table are estimates based on maximum OAS pension amounts. From October to December, the amounts are final.
+
+## Calculate the repayment amount
+
+Your repayment calculation is based on the difference between your income and the threshold amount for the year. The first step is to figure out how much higher your income is than the threshold. You must repay 15% of that amount.
+
+### Example:
+
+The threshold for 2025 is $93,454.
+
+If your income in 2025 was $100,000, then your repayment would be 15% of the difference between $100,000 and $93,454:
+
+$100,000 - $93,454 = $6,546
+
+$6,546 x 0.15 = $981.90
+
+You would have to repay $981.90 for the July 2026 to June 2027 period.
+
+### Note:
+
+This calculation is presented for reference only and is not official. In order to calculate your true and accurate repayment amount, please refer to the Calculating OAS recovery tax chart in the T4155, Old Age Security Return of Income guide for Non-Residents.
+
+## Return of Income form
+
+In January, you will receive:
+
+- an Old Age Security Return of Income form that you must fill out
+- an NR4 Old Age Security information slip to use when you fill out your Old Age Security Return of Income form
+
+Your NR4 Old Age Security information slip shows the amount of Old Age Security (OAS) paid to you in the previous year and the amounts deducted for taxes. When you fill out your Old Age Security Return of Income form, be sure to enter the amounts that are indicated on your NR4 OAS slip. Also, be sure to enter the OAS repayment amount on line 23500 of your Old Age Security Return of Income form.
+
+You must send the Old Age Security Return of Income form to the Canada Revenue Agency (CRA). If the CRA does not receive this form, you will stop receiving your OAS payments beginning in July. To make sure that your OAS pension payments are not interrupted, be sure to submit your Old Age Security Return of Income form by April 30.
+
+### Note:
+
+If you live in a country where the non-resident tax on Canadian pensions is lower than 25%, you do not need to file an Old Age Security Return of Income form.
+
+## How does the recovery tax deduction work
+
+Once your Old Age Security Return of Income form is received, the net world income you report is used to estimate your Old Age Security (OAS) pension repayment amount for the following tax year. The repayment amount is then divided monthly and deducted from your OAS pension payments as a recovery tax. You will receive a letter informing you of any recovery tax deductions being withheld from your OAS pension payments.
+
+## What if these deductions cause financial hardship
+
+In that case, you may ask the Canada Revenue Agency to review your situation.
+
+### Note:
+
+If you live outside Canada and receive an Old Age Security (OAS) pension, you must also pay the non-resident tax. This tax is deducted from monthly OAS pension payments.
+
+The total of the non-resident tax and the OAS recovery tax cannot be more than the amount of OAS benefits you receive.
+
+## Canadian publications and forms
+
+Canada Revenue Agency forms and publications.
+
+Service Canada forms and publications.
+
+You can also contact the nearest Canadian Government office abroad for forms and publications, or visit the Publications section of the Consular Services website.
+
+## Questions about your taxes
+
+### Canada Revenue Agency
+
+Telephone: 1-800-959-8281 (toll-free in Canada and the United States)
+Telephone: 613-940-8495 (from all other countries)
+TTY 1-800-665-0354 (toll-free in Canada and United States)
+Fax: 1-705-671-0794
+Find out more about the Canada Revenue Agency.

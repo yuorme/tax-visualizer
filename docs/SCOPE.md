@@ -129,6 +129,8 @@ Canada Workers Benefit and Quebec's work premium.
 - CPP/QPP retirement benefits as income.
 - Pension income splitting, optimised automatically per province (the engine tries 0–50% and keeps the lowest
   household tax; no input).
+  The [seniors sizing study](verification/16-seniors-sizing.md) finds a feasible split saves 0.93–1.25 effective-rate
+  points for its unequal-pension couple and moves the BC–Ontario gap by 0.32 points, so splitting passes scope.
 - Provincial seniors' supplements (Ontario GAINS, Alberta Seniors Benefit, BC Senior's Supplement,
   Saskatchewan Seniors Income Plan and equivalents elsewhere).
 - Seniors' property tax grants and rebates (e.g. BC's additional Home Owner Grant, Ontario Senior Homeowners'
@@ -203,4 +205,3 @@ Marked `estimated: true` in the data files where they appear:
 
 - Should the household be able to say it lives outside the reference city (no regional fuel tax, a non-city
   property tax rate), and per province or once for all?
-- Does pension income splitting pass the 0.1-point rule for typical couples? (Expected yes; check before building.)
