@@ -272,6 +272,26 @@ function inSteepestOhpBand(s: Step): boolean {
 const STACKED: Stacked[] = [
   {
     code: "NL",
+    year: 2022,
+    // Cached 2022 GST calculation, T4114, Schedule 6, NL428 and RC4210. NL child benefit is already zero.
+    why:
+      "a single parent with 4+ children between the NL supplement's $40,000 reduction onset and standard " +
+      "family CWB exhaustion: CCB 23%, CWB 15%, GST 5%, NL supplement 9% and tax reduction 16%, plus tax " +
+      "and payroll, yield a 102.50114% marginal burden. Admit only that source-derived overlap and steps " +
+      "straddling its boundaries",
+    applies: s => {
+      const cwb = s.y.federal.workersBenefit.standard;
+      const end = cwb.threshold[1] + cwb.max[1] / cwb.phaseOut[1];
+      return (
+        singleParent(s.to, 4) &&
+        s.a.famNet < end &&
+        s.b.famNet > 40_000 &&
+        netWithin(s, 40_000 - SWEEP_STEP, end + SWEEP_STEP)
+      );
+    },
+  },
+  {
+    code: "NL",
     year: 2023,
     // CRA GST calculation sheet (2022 base year), T4114-23, Schedule 6, RC4210-23 and NL428-23;
     // cached under docs/verification/2023/sources. The provincial child benefit is zero in this interval.
