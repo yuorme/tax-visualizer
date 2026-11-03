@@ -1719,3 +1719,41 @@ footer a {
     padding: 2px 12px 8px;
   }
 }
+
+.comparison-view {
+  margin: 24px 0 16px;
+  width: fit-content;
+}
+.history-head {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+}
+.history-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-num);
+  font-size: clamp(11px, 2.8vw, 14px);
+  font-variant-numeric: tabular-nums;
+  margin-top: 20px;
+}
+.history-table caption {
+  text-align: left;
+  color: var(--muted);
+  padding-bottom: 12px;
+}
+#history-view th,
+#history-view td {
+  padding: 12px 4px;
+  text-align: right;
+  border-bottom: 1px solid var(--rule);
+}
+#history-view th:first-child {
+  text-align: left;
+}
+.history-source {
+  font-size: 12px;
+  color: var(--muted);
+}

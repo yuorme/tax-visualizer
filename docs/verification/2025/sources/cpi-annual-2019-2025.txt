@@ -1,0 +1,19 @@
+Title: Consumer Price Index, annual average, not seasonally adjusted 1 , 2 , 3
+URL: https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810000501&pickMembers%5B0%5D=2.1&cubeTimeFrame.startYear=2019&cubeTimeFrame.endYear=2025&referencePeriods=20190101%2C20250101
+Fetched: 2026-11-02
+SHA-256 of the original: c7809fa8dabf4c2dcb8c53e562ed9244cf487914d2b8ffd89a1fe3f672f18a9d
+Publication date modified: 2026-01-19
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+# Consumer Price Index, annual average, not seasonally adjusted 1, 2, 3
+
+Frequency: Annual
+
+Table: 18-10-0005-01 (formerly CANSIM 326-0021)
+
+Release date: 2026-01-19
+
+Geography: Canada, Province or territory, Census subdivision, Census metropolitan area, Census metropolitan area part
+
+Help

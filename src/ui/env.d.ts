@@ -5,3 +5,7 @@ declare module "virtual:years" {
   const years: Record<number, import("../data/schema.ts").YearData>;
   export default years;
 }
+declare module "virtual:cpi" {
+  const cpi: import("../data/cpi.ts").CpiData;
+  export default cpi;
+}

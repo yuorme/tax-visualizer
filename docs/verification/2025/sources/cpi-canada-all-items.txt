@@ -1,0 +1,15 @@
+Title: cpi-canada-all-items
+URL: https://www150.statcan.gc.ca/t1/tbl1/en/dtl!downloadDbLoadingData-nonTraduit.action?pid=1810000501&latestN=0&startDate=20190101&endDate=20250101&csvLocale=en&selectedMembers=%5B%5B2%5D%2C%5B2%5D%5D&checkedLevels=
+Fetched: 2026-11-02
+SHA-256 of the original: e23d71afac6a7a4713b3d181ce66ff6a8fa1d9014dc29a43ecb076daa1736bb4
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+"REF_DATE","GEO","DGUID","Products and product groups","UOM","UOM_ID","SCALAR_FACTOR","SCALAR_ID","VECTOR","COORDINATE","VALUE","STATUS","SYMBOL","TERMINATED","DECIMALS"
+"2019","Canada","2021A000011124","All-items","2002=100","17","units","0","v41693271","2.2","136.0","","","","1"
+"2020","Canada","2021A000011124","All-items","2002=100","17","units","0","v41693271","2.2","137.0","","","","1"
+"2021","Canada","2021A000011124","All-items","2002=100","17","units","0","v41693271","2.2","141.6","","","","1"
+"2022","Canada","2021A000011124","All-items","2002=100","17","units","0","v41693271","2.2","151.2","","","","1"
+"2023","Canada","2021A000011124","All-items","2002=100","17","units","0","v41693271","2.2","157.1","","","","1"
+"2024","Canada","2021A000011124","All-items","2002=100","17","units","0","v41693271","2.2","160.9","","","","1"
+"2025","Canada","2021A000011124","All-items","2002=100","17","units","0","v41693271","2.2","164.2","","","","1"
