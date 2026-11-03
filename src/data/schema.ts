@@ -204,7 +204,7 @@ export const federalSchema = z.object({
     estimationNote: z.string().optional(),
     standard: cwbRegion,
     secondaryEarnerExemption: amount,
-    regional: z.record(z.string().length(2), cwbRegion),
+    regional: z.record(z.string().length(2), cwbRegion.extend({ rate: z.union([rate, ratePair]) })),
     quebec: z.object({
       phaseOutRate: rate,
       single: qcCwbRow,

@@ -49,7 +49,8 @@ export function creditsOf(fed: Federal, p: Province, f: CreditInput): Credit[] {
   } else {
     const c = wb.regional[p.code] || wb.standard,
       i = fam ? 1 : 0;
-    cwb = Math.min(c.max[i], c.rate * Math.max(0, work - c.floor[i])) - c.phaseOut[i] * over(c.threshold[i], adjNet);
+    const phaseIn = typeof c.rate === "number" ? c.rate : c.rate[i];
+    cwb = Math.min(c.max[i], phaseIn * Math.max(0, work - c.floor[i])) - c.phaseOut[i] * over(c.threshold[i], adjNet);
   }
   out.push(["Canada Workers Benefit", Math.max(0, cwb)]);
   const adultsN = couple ? 2 : 1;

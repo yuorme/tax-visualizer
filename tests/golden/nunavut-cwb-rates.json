@@ -1,0 +1,20 @@
+[
+  {"id":"single-floor","work":6000,"net":6000,"couple":false,"kids":0,"expected":0},
+  {"id":"single-first-displayed-amount","work":6005,"net":6005,"couple":false,"kids":0,"expected":0.5},
+  {"id":"family-floor","work":6000,"net":6000,"couple":true,"kids":0,"expected":0},
+  {"id":"family-next-five-dollars","work":6005,"net":6005,"couple":true,"kids":0,"expected":0.7},
+  {"id":"single-phase-in","work":10000,"net":10000,"couple":false,"kids":0,"expected":400},
+  {"id":"couple-phase-in","work":10000,"net":10000,"couple":true,"kids":0,"expected":560},
+  {"id":"parent-phase-in","work":10000,"net":10000,"couple":false,"kids":1,"expected":560},
+  {"id":"single-cap","work":16850,"net":16850,"couple":false,"kids":0,"expected":1085},
+  {"id":"family-below-cap","work":17642,"net":17642,"couple":true,"kids":0,"expected":1629.88},
+  {"id":"family-above-cap","work":17643,"net":17643,"couple":true,"kids":0,"expected":1630},
+  {"id":"single-reduction-onset","work":30000,"net":21654,"couple":false,"kids":0,"expected":1085},
+  {"id":"single-reduction","work":30000,"net":22654,"couple":false,"kids":0,"expected":1045},
+  {"id":"family-reduction-onset","work":30000,"net":29551,"couple":true,"kids":0,"expected":1630},
+  {"id":"parent-reduction","work":30000,"net":30551,"couple":false,"kids":1,"expected":1550},
+  {"id":"single-exhaustion","work":50000,"net":48779,"couple":false,"kids":0,"expected":0},
+  {"id":"family-exhaustion","work":50000,"net":49926,"couple":true,"kids":0,"expected":0},
+  {"id":"scalar-single","work":10000,"net":10000,"couple":false,"kids":0,"scalar":0.14,"expected":560},
+  {"id":"scalar-family","work":10000,"net":10000,"couple":true,"kids":0,"scalar":0.14,"expected":560}
+]
