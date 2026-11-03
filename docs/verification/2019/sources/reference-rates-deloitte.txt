@@ -1,0 +1,40 @@
+Title: 2019 Top marginal income tax rates for individuals
+URL: https://www2.deloitte.com/content/dam/Deloitte/ca/Documents/tax/ca-en-tax-2019-Top-Marginal-tax-rates_AODA.pdf
+Fetched: 2026-11-02
+SHA-256 of the original: aec50277108c88628e79965055484c252e2ead78d118059dbf8fc7fb1f4e03b7
+Publication date modified: 2019-08-01
+PDF pages: all 1
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 1 of 1 ---
+
+2019 Top marginal income tax rates for individuals4
+4 Rates shown in this table reflect the announcements in the 2019-2020 budgets and various releases since our last update. Some of the measures in these documents are not legislated as of this update; accordingly, rates are subject to change.
+(Updated to May 31, 2019)
+British
+Columbia Alberta1 Saskatchewan Manitoba Ontario2 Quebec
+New
+Brunswick
+Nova
+Scotia
+Prince
+Edward
+Island
+Newfoundland
+and Labrador Yukon3
+Northwest
+Territories Nunavut
+Canadian
+non-resident
+Ordinary income 49.80% 47.00 / 48.00% 47.50% 50.40% 51.97 / 53.53% 53.31% 53.30% 54.00% 51.37% 51.30% 45.80 / 48.00% 47.05% 44.50% 48.84%
+Non-eligible dividends *** 44.63% 41.15 / 42.30% 40.37% 46.67% 45.60 / 47.40% 46.25% 47.75% 48.28% 45.22% 44.59% 39.64 / 42.17% 36.82% 37.79% *
+Eligible dividends ** 31.44% 30.33 / 31.71% 29.64% 37.78% 37.19 / 39.34% 39.99% 33.51% 41.58% 34.22% 42.61% 25.89 / 28.93% 28.33% 33.08% *
+Capital gains 24.90% 23.50 / 24.00% 23.75% 25.20% 25.98 / 26.76% 26.65% 26.65% 27.00% 25.69% 25.65% 22.90 / 24.00% 23.53% 22.25% 24.42%
+1 Alberta: the lower rate applies on income in excess of $210,371 up to $314,928; the higher rate applies on income in excess of $314,928.
+2 Ontario: the lower rate applies on income in excess of $210,371 up to $220,000; the higher rate applies on income in excess of $220,000.
+3 Yukon: the lower rate applies on income in excess of $210,371 up to $500,000; the higher rate applies on income in excess of $500,000.
+* Dividends earned by non-residents are subject to a federal withholding tax of 25% and the rate of such withholding tax may be lowered where a tax treaty applies.
+** Generally, eligible dividends are dividends paid from income, which is subject to the general corporate tax rate, excluding investment income.
+*** Generally, non-eligible dividends are those paid by CCPCs from income eligible for the SBD or from investment income.
+© Deloitte LLP and affiliated entities. This publication is produced by Deloitte LLP as an information service to clients and friends of the firm, and is not intended to substitute for competent professional advice. No action should be initiated without consulting your professional advisors. Your use of this document is at your own risk.

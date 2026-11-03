@@ -43,9 +43,11 @@ const near = (actual: number, expected: number, message: string) =>
 // Cached as reference-rates-<code>.txt. Quebec includes the federal abatement and Ontario includes surtax.
 // NT/NU published ordinary rates are 47.05%/44.5%; add the territories' 2% employee payroll tax for this model.
 // Dividends and gains are rates per dollar received; the capital-gains inclusion was 50% in 2019.
+// BC noneligible44.63% comes from Deloitte; Quebec eligible40.00% comes from Richter's July2019 card.
+// Older TaxTips entries44.64%/39.99% disagree with exact official credit arithmetic; tolerances are unchanged.
 // Columns: employment income, capital gains, eligible dividends, non-eligible dividends.
 const TOP: Record<string, [number, number, number, number]> = {
-  BC: [49.8, 24.9, 31.44, 44.64],
+  BC: [49.8, 24.9, 31.44, 44.63],
   YT: [48, 24, 28.93, 42.17],
   AB: [48, 24, 31.71, 42.31],
   NT: [49.05, 23.53, 28.33, 36.82],
@@ -53,7 +55,7 @@ const TOP: Record<string, [number, number, number, number]> = {
   MB: [50.4, 25.2, 37.78, 46.67],
   NU: [46.5, 22.25, 33.08, 37.79],
   ON: [53.53, 26.76, 39.34, 47.4],
-  QC: [53.31, 26.65, 39.99, 46.25],
+  QC: [53.31, 26.65, 40, 46.25],
   NB: [53.3, 26.65, 33.51, 47.75],
   PE: [51.37, 25.69, 34.22, 45.22],
   NS: [54, 27, 41.58, 48.28],
@@ -110,7 +112,7 @@ const benefits = (code: string, net: number, work: number, couple = false, kids 
     }),
   );
 
-test("2019–21 recurring GST/HST matches the official calculation sheet", () => {
+test("2019–20 recurring GST/HST matches Finance amounts and CRA thresholds", () => {
   near(benefits("ON", 20_000, 20_000)["GST/HST credit"], 443, "single maximum");
   near(benefits("ON", 20_000, 20_000, true)["GST/HST credit"], 580, "couple maximum");
   near(benefits("ON", 0, 0, false, 1)["GST/HST credit"], 733, "single parent supplement");

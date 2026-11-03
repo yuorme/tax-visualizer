@@ -327,6 +327,13 @@ export function footerNotes(y: YearData, page: PageDefaults): string {
     p =>
       `${p.name} adds its Health Premium (up to ${money(Math.max(...need(p.payroll?.healthPremium, "health premium").map(b => b[3])))}, based on taxable income)`,
   );
+  const familyPremiums = P.flatMap(p =>
+    p.householdPremium
+      ? [
+          `${p.name}'s MSP premiums are assessed per adult on family net income after a ${money(p.householdPremium.params.spouseDeduction)} spouse deduction and ${money(p.householdPremium.params.childDeduction)} per child, adding back ${rate(p.householdPremium.params.childcareAddbackRate)} of claimed childcare deductions. Annual per-adult bands are ${p.householdPremium.params.bands.map(([limit, amount]) => `${money(amount)} ${Number.isFinite(limit) ? `up to ${money(limit)}` : "above the last threshold"}`).join("; ")}. This estimates full-year enrollment and premium-assistance eligibility for adults under 65, using current modeled income; disability and student exemptions are not modeled. The household premium is included in payroll totals`,
+        ]
+      : [],
+  );
   const terrTax = groupBy(P.filter(p => p.payroll?.employeeTax).sort(byName), p => p.payroll?.employeeTax ?? 0).map(
     ([r, ps]) => `${list(ps.map(p => article(short(p))))} withhold${ps.length > 1 ? "" : "s"} a ${rate(r)} payroll tax`,
   );
@@ -334,14 +341,30 @@ export function footerNotes(y: YearData, page: PageDefaults): string {
     `CPP: ${fixed(cpp.base, 2)} base plus ${rate(cpp.enh1)} enhanced on earnings between ${money(cpp.exempt)} and ${money(cpp.ympe)}${cpp.enh2 ? `, and ${rate(cpp.enh2)} on earnings up to ${money(cpp.yampe)}` : "; no second additional contribution applies"}.`,
     `Quebec's QPP is ${fixed(qpp.base, 2)} base plus ${sameEnhanced ? "the same enhanced rates" : `${rate(qpp.enh1)} enhanced on earnings between ${money(qpp.exempt)} and ${money(qpp.ympe)}, and ${rate(qpp.enh2)} on earnings up to ${money(qpp.yampe)}`}.`,
     `EI: ${fixed(ei.rate, 2)} of earnings up to ${money(ei.maxInsurable)}, or ${fixed(ei.quebecRate, 2)} in Quebec, where QPIP adds ${fixed(qpip.rate, 2)} up to ${money(qpip.maxInsurable)}.`,
-    `${clauses([...premium, ...terrTax])}.`,
+    `${clauses([...premium, ...terrTax, ...familyPremiums])}.`,
     "Employment and other income is treated as employment income.",
   ].join(" ");
+
+  const extraLevies = P.flatMap(p =>
+    p.additionalTax
+      ? [
+          `${p.name}'s temporary deficit reduction levy is added after provincial credits. It starts above ${money(p.additionalTax.params.bands[0][0])} of taxable income; each statutory band charges ${rate(p.additionalTax.params.bands[0][2])} of its excess with its own cap, up to ${money(Math.max(...p.additionalTax.params.bands.map(b => b[3])))} overall. Deductions and dividend gross-ups affect taxable income; credits do not offset this levy.`,
+        ]
+      : [],
+  );
 
   // Child benefits
   const ccb = F.childBenefit;
   const ocb = childBenefit("ON", "ontario-child-benefit").params;
-  const qfa = childBenefit(quebec.code, "quebec-family-allowance").params;
+  const qfaProgram = need(quebec.childBenefit, "Quebec family allowance");
+  if (qfaProgram.program !== "quebec-family-allowance" && qfaProgram.program !== "quebec-family-allowance-by-child")
+    throw new Error("page notes: unsupported Quebec family allowance");
+  const qfa = qfaProgram.params;
+  const qfaAmounts =
+    typeof qfa.max === "number" && typeof qfa.min === "number"
+      ? `${money(qfa.max)} to ${money(qfa.min)} per child`
+      : `ordered maximum amounts ${list((qfa.max as number[]).map(money))} and minimum amounts ${list((qfa.min as number[]).map(money))}; the last amount repeats for additional children`;
+  const abBenefit = prov("AB").childBenefit;
   const nsBenefit = prov("NS").childBenefit;
   const nwtBenefit = need(prov("NT").childBenefit, "NWT child benefit");
   if (nwtBenefit.program !== "nwt-child-benefit" && nwtBenefit.program !== "nwt-child-benefit-age-groups")
@@ -357,7 +380,22 @@ export function footerNotes(y: YearData, page: PageDefaults): string {
   const nu = childBenefit("NU", "per-child-reduced"),
     nub = nu.params;
   const children = [
-    `${benefitYear(y)} amounts, applied to current-year income: the Canada Child Benefit (${money(ccb.perChildUnder6)} per child under 6 or ${money(ccb.perChild6to17)} aged 6–17, reduced above ${money(ccb.threshold1)} of family net income), the Ontario Child Benefit (up to ${money(ocb.perChild)} per child), Quebec's family allowance (${money(qfa.max)} to ${money(qfa.min)} per child, plus the ${money(qfa.schoolSupplies)} school supplies supplement, applied to children aged 6–17), the B.C. family benefit, the Alberta Child and Family Benefit, the Nova Scotia Child Benefit, ${prov("PE").childBenefit ? "the PEI Child Benefit, " : ""}New Brunswick's Child Tax Benefit and Working Income Supplement, and the Yukon Child Benefit, all from CRA's T4114 booklet for ${benefitYear(y)} or the province's own rules.`,
+    `${benefitYear(y)} amounts, applied to current-year income: the Canada Child Benefit (${money(ccb.perChildUnder6)} per child under 6 or ${money(ccb.perChild6to17)} aged 6–17, reduced above ${money(ccb.threshold1)} of family net income), the Ontario Child Benefit (up to ${money(ocb.perChild)} per child), Quebec's family allowance (${qfaAmounts}, plus the ${money(qfa.schoolSupplies)} school supplies supplement, applied to children aged 6–17), ${bc.childBenefit?.name ?? "the B.C. family benefit"}, ${abBenefit?.name ?? "the Alberta Child and Family Benefit"}, the Nova Scotia Child Benefit, ${prov("PE").childBenefit ? "the PEI Child Benefit, " : ""}New Brunswick's Child Tax Benefit and Working Income Supplement, and the Yukon Child Benefit, all from CRA's T4114 booklet for ${benefitYear(y)} or the province's own rules.`,
+    ...(bc.childBenefit?.program === "bc-early-childhood-benefit"
+      ? [
+          `B.C.'s early childhood tax benefit pays ${money(bc.childBenefit.params.perChild)} annually only for children under six, reduced by ${rate(bc.childBenefit.params.rate)} per eligible child on family income above ${money(bc.childBenefit.params.threshold)}.`,
+        ]
+      : []),
+    ...(abBenefit?.program === "alberta-child-benefit-and-employment"
+      ? [
+          `Alberta pays separate child and employment benefits. The child component has cumulative maximum amounts of ${list(abBenefit.params.base.map(money))} for one through four children, reduced at ${list(abBenefit.params.baseRate.map(rate))} above ${money(abBenefit.params.baseThreshold)}. The employment component phases in at ${rate(abBenefit.params.workingRate)} above ${money(abBenefit.params.workingFloor)} of working income, capped at cumulative amounts of ${list(abBenefit.params.working.map(money))}, and falls by ${rate(abBenefit.params.workingPhaseOut)} of family income above ${money(abBenefit.params.workingThreshold)}. Each positive component has its own ${money(abBenefit.params.minAnnual)} annual minimum; zero remains zero.`,
+        ]
+      : []),
+    ...(nsBenefit?.program === "nova-scotia-child-benefit-reduction"
+      ? [
+          `Nova Scotia pays annual amounts of ${list(nsBenefit.params.perChild.map(money))} for the first, second and each additional child, in full below ${money(nsBenefit.params.fullBelow)}. Above that boundary, the reduction applies to income over ${money(nsBenefit.params.threshold)} at ${list(nsBenefit.params.rate.map(rate))} for one or two children, plus ${rate(nsBenefit.params.additionalRate)} for each additional child, until the benefit reaches zero.`,
+        ]
+      : []),
     ...(bc.childBenefit?.program === "bc-family-benefit-periods"
       ? [
           `B.C.'s child opportunity benefit was renamed the family benefit during this benefit year. Each period is calculated separately before weighting: ${bc.childBenefit.params.periods.map(period => `${period.weight * 12} months at annual maximum amounts of ${list(period.max.map(money))} for the first, second and each additional child, with minimum amounts of ${list(period.min.map(money))}`).join("; ")}. Each period applies its own income reduction, minimum and zero floor.`,
@@ -508,6 +546,7 @@ export function footerNotes(y: YearData, page: PageDefaults): string {
       "What's included",
       `Each bracket rate is applied to the portion of taxable income in that bracket, federal plus provincial. With basic personal amounts on, each government's amount is credited at its lowest bracket rate (federal: ${rate(F.brackets[0][1])} of ${money(typeof fb === "number" ? fb : fb.max)}), and a credit can reduce tax to zero but not below. The blended rate is total tax ÷ actual income received; the marginal rate is the tax on the next dollar, including credit phase-outs.`,
     ),
+    ...(extraLevies.length ? [para("Additional provincial tax", extraLevies.join(" "))] : []),
     para(
       "Deductions",
       `Annual RRSP, FHSA and other deductions claimed are added once and subtracted from total income to get taxable income. Enter eligible claims, including deferred contributions, rather than contributions made this year; account room and eligibility are not calculated. The Use estimate RRSP link uses ${rate(F.rrsp.rate)} of the employment income entered, up to the ${year} dollar limit of ${money(F.rrsp.limit)}; your real limit is based on last year's earned income and any unused room, as shown on your notice of assessment.`,

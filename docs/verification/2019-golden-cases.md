@@ -58,3 +58,26 @@ the exact 2019 row is transparently transcribed from the official page retrieved
 no claimed original-byte hash. Other municipal manual extracts and archival mirrors are described in the source index.
 The GST reference combines regular amounts published by Finance with unchanged thresholds/rates in CRA's
 2019–2020 supplemental worksheet. Its extraordinary doubled-payment amounts are not used.
+
+## Invariant boundaries and source corrections
+
+The independently reproduced MSP sweep case has a couple with one child, earnings $0/$32,000 increasing to
+$0/$32,500. Family net income rises $31,957.25 to $32,456.50; subtracting spouse and child deductions gives
+adjusted $25,957.25 to $26,456.50. Crossing the statutory upper-inclusive $26,000 band raises the two-adult
+premium from $0 to $276. Disposable income falls $15.79064; excluding that exact premium jump it rises $260.20936.
+The year-specific exception independently checks every family's adjusted income and band amount, requires an
+actual upward band crossing, and requires disposable income excluding the verified premium to remain nondecreasing.
+It does not admit unrelated clawback declines. Every prior-year overlap predicate remains unchanged.
+
+The unrelated-adult swap case has incomes $0 and $605 employment plus $67,215 capital gains, with six children.
+The second adult's net income is $34,212.50 and attracts $336 MSP when the children belong to the first family.
+After swapping incomes, six $3,000 child deductions reduce adjusted income to $16,212.50 and the premium is zero.
+Person payroll remains $9.801 in either order. The test independently verifies each household premium and retains
+swap symmetry for payroll after removing only that verified amount. All years without this optional program
+still have zero adjustment and retain the same payroll equality.
+
+Published reference checks caught a collection error before the 2019 snapshot was captured: Quebec's eligible
+dividend credit was initially 11.70%, but its official historical table explicitly publishes 11.78% for 2019.
+The corrected top combined eligible-dividend rate is 39.99718446%, rounded to 40.00% by Richter's July 2019 card.
+For B.C. noneligible dividends, official rates give 44.631385%, rounded to 44.63% by Deloitte. Older TaxTips
+entries print 39.99% and 44.64% respectively; references use the corroborated publications without widening tolerance.

@@ -17,7 +17,7 @@ brackets:
   - [106555, 0.24]
   - [.inf, 0.2575]
 basicPersonalAmount: 15269
-dividendTaxCredit: {eligible: 0.117, nonEligible: 0.0555}
+dividendTaxCredit: {eligible: 0.1178, nonEligible: 0.0555}
 spouseAmount: transfer
 quebec:
   workerDeduction: {rate: 0.06, max: 1170}

@@ -118,8 +118,10 @@ keeps the pages the data uses). Nothing under `docs/` is imported by `src/`, so 
 | [provincial-winnipeg-property-tax](provincial-winnipeg-property-tax.txt) | 2019 Combined Mill Rates | https://assessment.winnipeg.ca/Asmttax/pdfs/rates/2019CombinedMillRates.pdf | 2026-11-02 | `9378d0b327485bca82138203daca6fe8243406861ede00b70f4dfcbdb77091d2` |
 | [provincial-yt-child-2024](provincial-yt-child-2024.txt) | TAB# 01 | https://open.yukon.ca/information/de20b25e-b7d5-45ed-aacd-5ce4e968bec4/resource/57bd0240-b717-3e8b-9c1e-f9a386d62022/download/fin_spring_2024.pdf | 2026-11-02 | `e069c810c797c3f2a7220b8a68f0c826911edbe23a47f7706000dd8fa85084a8` |
 | [provincial-yukon-child-hansard](provincial-yukon-child-hansard.txt) | Yukon Hansard April 16 2026, historical child benefit maximum | https://yukonassembly.ca/sites/default/files/hansard/36-1-24.pdf | 2026-11-02 | `unavailable (direct PDF download returned HTTP 403)` |
+| [reference-qc-richter](reference-qc-richter.txt) | TAX_Rates_Publication_QC_8,5x11po_E_2019-08-14.indd | https://cdn.richter.ca/wp-content/uploads/2019/08/tax_rates_publication_qc_print-friendly_version_e_2019-08-14.pdf | 2026-11-02 | `ae157358377af38e8e54bab383e50e9be4914a2dc8b52b1f8a5a3aedcfed5259` |
 | [reference-rates-ab](reference-rates-ab.txt) | Alberta 2020 and 2019 Personal Marginal Income Tax Rates | https://www.taxtips.ca/priortaxrates/tax-rates-2019-2020/ab.htm | 2026-11-02 | `b9c024a560498ed1245dbea2fb641b5335809b86623b95e8fc4c31983e9087a0` |
 | [reference-rates-bc](reference-rates-bc.txt) | BC 2020 and 2019 Personal Marginal Income Tax Rates | https://www.taxtips.ca/priortaxrates/tax-rates-2019-2020/bc.htm | 2026-11-02 | `f5758d9a7034c0d029d8ad18441309823f92aaf2b6029b49861e8c4ab0d42399` |
+| [reference-rates-deloitte](reference-rates-deloitte.txt) | 2019 Top marginal income tax rates for individuals | https://www2.deloitte.com/content/dam/Deloitte/ca/Documents/tax/ca-en-tax-2019-Top-Marginal-tax-rates_AODA.pdf | 2026-11-02 | `aec50277108c88628e79965055484c252e2ead78d118059dbf8fc7fb1f4e03b7` |
 | [reference-rates-mb](reference-rates-mb.txt) | Manitoba 2020 and 2019 Personal Marginal Income Tax Rates | https://www.taxtips.ca/priortaxrates/tax-rates-2019-2020/mb.htm | 2026-11-02 | `ba5c0aee67e117807804e6c8153e658be952665f4ec90780a96cdaa254ebc35c` |
 | [reference-rates-nb](reference-rates-nb.txt) | New Brunswick 2020 and 2019 Personal Marginal Income Tax Rates | https://www.taxtips.ca/priortaxrates/tax-rates-2019-2020/nb.htm | 2026-11-02 | `a30e4d7e4af0cfe44b5d2c6922f0828570cfce4eef1af7c1a775c692b7d6b040` |
 | [reference-rates-nl](reference-rates-nl.txt) | Newfoundland & Labrador 2020 and 2019 Personal Marginal Income Tax Rates | https://www.taxtips.ca/priortaxrates/tax-rates-2019-2020/nl.htm | 2026-11-02 | `e172a55ba5eac70afdb409b2707859ff2962366be3cfba3d84794ef11b41ff77` |
@@ -148,8 +150,8 @@ keeps the pages the data uses). Nothing under `docs/` is imported by `src/`, so 
 
 ## Provincial collection audit
 
-All thirteen jurisdictions use the 2019 CRA forms and official benefit publications. Federal data,
-published references, golden results, and integration checks belong to the federal collector.
+All thirteen jurisdictions and federal parameters use official 2019 publications. Integrated references,
+independent feature cases, household snapshots and validation complete the collection.
 
 The five new rule shapes are the separate Alberta child and employment benefits (each with a $10 annual
 minimum), B.C. MSP premiums, Nova Scotia's graduated child-benefit reduction, Newfoundland and Labrador's
@@ -180,10 +182,8 @@ sales credit, child credit, and surtax; Quebec's work-premium working-income flo
 brackets, personal/child credits, and SLITC; and Yukon's $500,000 bracket and child-benefit amounts.
 Remaining changed values are published annual indexation, explicit tax-credit changes, or municipality rates.
 
-Validation: all thirteen YAML files pass the matching historical schemas (B.C. child and premium fields
-validated against their separate prerequisite schemas). Every cited URL has a corresponding source cache.
-The full local check passes lint and typecheck, then stops at missing federal files/goldens for unintegrated
-years; 110 tests pass and 17 fail for those integration prerequisites. Build/browser checks await integration.
+Validation details and independently calculated boundary cases are in ../2019-golden-cases.md.
+Every cited data URL has a corresponding source cache. Carbon is collected separately under History issue #29.
 
 Federal QPIP source exception: direct official retrieval returned HTTP 403. The 2019 row was transcribed
 from the official Revenu Québec page through the web reader; the original-byte hash is unavailable.
