@@ -3,15 +3,15 @@
 T4114-20 was retrieved from the official Publications Canada archive using its catalogue referral header.
 Alberta Budget 2020 and enacted section 30.2 confirm the $24467 ACFB threshold; T4114-20 prints $26769 in error.
 Only recurring modeled programs are included; extraordinary cost-of-living and COVID payments are excluded.
-Carbon measures remain outside this milestone (issue #29).
+Carbon measures are handled separately by issue #29.
 Vancouver and Yukon Hansard caches explicitly identify manual web extracts.
 
 ## Provincial year-diff audit: 2020 against 2021
 
 All 13 files validate against the 2021 Manitoba/Nova Scotia rules and 2020 B.C. transition rules.
-The provincial comparison reports 134 changed values, nine large changes, 113 unchanged amounts and two
-structural changes. Full checks pass lint and typechecking; this collection branch lacks federal files and
-locked golden results for 2020–23, so integrated tests/build await the federal integrator.
+The provincial comparison reports nine large changes and two structural changes, explained below.
+The complete federal/provincial year-diff and integrated verification are recorded in the data PR;
+independent fixture arithmetic is documented in `../../2020-golden-cases.md`.
 
 Unchanged values were checked against the cached annual forms and benefit publications:
 

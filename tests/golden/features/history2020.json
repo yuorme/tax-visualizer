@@ -137,16 +137,7 @@
         "useCredits": true
       },
       "expected": {
-        "credits": [
-          [
-            "GST/HST credit",
-            296
-          ],
-          [
-            "Canada Workers Benefit",
-            100
-          ]
-        ]
+        "credits": [["GST/HST credit", 296], ["Canada Workers Benefit", 100]]
       }
     },
     {
@@ -163,16 +154,7 @@
         "useCredits": true
       },
       "expected": {
-        "credits": [
-          [
-            "GST/HST credit",
-            747
-          ],
-          [
-            "Canada Workers Benefit",
-            140
-          ]
-        ]
+        "credits": [["GST/HST credit", 747], ["Canada Workers Benefit", 140]]
       }
     },
     {
@@ -189,16 +171,7 @@
         "useCredits": true
       },
       "expected": {
-        "credits": [
-          [
-            "GST/HST credit",
-            451
-          ],
-          [
-            "Canada Workers Benefit",
-            1085
-          ]
-        ]
+        "credits": [["GST/HST credit", 451], ["Canada Workers Benefit", 1085]]
       }
     },
     {
@@ -215,16 +188,7 @@
         "useCredits": true
       },
       "expected": {
-        "credits": [
-          [
-            "GST/HST credit",
-            747
-          ],
-          [
-            "Canada Workers Benefit",
-            1630
-          ]
-        ]
+        "credits": [["GST/HST credit", 747], ["Canada Workers Benefit", 1630]]
       }
     },
     {

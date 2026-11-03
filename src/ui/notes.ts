@@ -408,8 +408,8 @@ export function footerNotes(y: YearData, page: PageDefaults): string {
     mb.program === "mb-school-tax-credits-rent-share" && mb.params.schoolRebateRate === 0
       ? `Manitoba's education property tax credit (up to ${money(mb.params.educationCreditMax)} of school taxes for owners, or ${rate(mb.params.renterShare)} of rent paid for renters, capped at ${money(mb.params.renterMax)})`
       : mb.program === "mb-school-tax-credits" || mb.program === "mb-school-tax-credits-rent-share"
-      ? `Manitoba's school tax rebate (${rate(mb.params.schoolRebateRate)} of estimated school taxes), education property tax credit (up to ${money(mb.params.educationCreditMax)} of remaining school taxes) and renters tax credit (up to ${money(mb.params.renterMax)}, ${mb.program === "mb-school-tax-credits-rent-share" ? `${rate(mb.params.renterShare)} of rent paid before applying the cap` : "capped by rent paid"})`
-      : "Manitoba's renters and homeowners affordability credits";
+        ? `Manitoba's school tax rebate (${rate(mb.params.schoolRebateRate)} of estimated school taxes), education property tax credit (up to ${money(mb.params.educationCreditMax)} of remaining school taxes) and renters tax credit (up to ${money(mb.params.renterMax)}, ${mb.program === "mb-school-tax-credits-rent-share" ? `${rate(mb.params.renterShare)} of rent paid before applying the cap` : "capped by rent paid"})`
+        : "Manitoba's renters and homeowners affordability credits";
   const cwbEstimate =
     cwb.estimationNote ?? `these ${year} values are CRA's ${lastYearIndexed} until CRA publishes them`;
   // The list below names these programs in prose; a year whose data drops one fails here instead of misreporting it.
