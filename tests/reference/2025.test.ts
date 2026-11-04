@@ -32,6 +32,28 @@ const single = (ord: number, extra: Partial<Household> = {}): Household => ({
 const pct = (v: number) => Math.round(v * 10000) / 100;
 const credits = (r: ReturnType<typeof compute>) => r.credits.map(([n, v]) => [n, Math.round(v)]);
 
+test("2025 Schedule F published worksheet: both columns, maxima and zero threshold", () => {
+  // Revenu Québec TP-1.D.F-V (2025-12), Part B, lines 77–82; examples evaluated directly from that worksheet.
+  assert.deepEqual(prov("QC").healthServicesFund?.params, {
+    threshold: 18130,
+    upperThreshold: 63060,
+    rate: 0.01,
+    firstCap: 150,
+    max: 1000,
+  });
+  for (const [income, amount] of [
+    [18130, 0],
+    [25000, 68.7],
+    [33130, 150],
+    [63060, 150],
+    [80000, 319.4],
+    [148060, 1000],
+  ]) {
+    const r = compute(y, prov("QC"), single(0, { people: [{ ...blank(0), oth: income }] }));
+    assert.ok(Math.abs(r.me.breakdown.healthServicesFund.contribution - amount) < 1e-9);
+  }
+});
+
 test("2025 MB428-A ordinary family benefit: published bases, own-income taper and example", () => {
   // Cached MB428-A lines 1–3, 9, 11; guide line 9; MB428 lines 41, 52, 61–65.
   assert.deepEqual(prov("MB").familyTaxBenefit?.params, {

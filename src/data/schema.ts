@@ -623,6 +623,10 @@ export const provinceSchema = z
       .extend({ claimant: z.literal("higher-net-income"), tie: z.literal("household-minimum") })
       .optional(),
     childcareCredit: childcareCredit.optional(),
+    healthServicesFund: program(
+      "qc-health-services-fund",
+      z.object({ threshold: amount, upperThreshold: amount, rate, firstCap: amount, max: amount }),
+    ).optional(),
     surtax: z.array(z.tuple([amount, rate])).optional(),
     postDividendSurtax: program("pei-surtax", z.object({ threshold: amount, rate })).optional(),
     householdPremium: program(
