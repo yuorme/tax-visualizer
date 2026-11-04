@@ -80,6 +80,19 @@ line-by-line tax return. Simpler and slightly less precise is acceptable where i
   the annual burden excludes excess withholding. EI/QPIP continue on employment income. One continuing employer,
   no disability/death or pension cancellation. New inputs fail explicitly in unsupported historical data;
   legacy inputs remain available in every year. Self-employment needs its own timing under #14.
+  The page contract is to retain birth year and derive `age = taxYear - birthYear` for the selected year
+  and each history row; pension receipt and election dates stay in their original calendar years.
+  A June 1960 birth with a valid June 2025 stop and no revocation remains stopped when selecting 2026.
+  When any person has retirement inputs, the UI branch must filter years on
+  `federal.payroll.employeeRetirement` before calling `historyComparison`, show only supported years with
+  a note explaining the coverage, and compute rows with each year's age. Unsupported selected years are gated.
+  UI and #17 must omit unset retirement fields: `age: null` activates the path and throws, and any supplied
+  `age` throws in 2019–2024 even at zero pay. Childcare's nullable drafts cannot be passed through as adult ages.
+  One stop and optional revocation cannot represent two cycles affecting one tax year, or validate RR-50's
+  condition that no earlier election was revoked in the year of a new stop; those histories are unsupported.
+  Schedule 8's possible CRA proration of the basic exemption in the year a CPP pension starts is unmodelled.
+  This can understate employee contributions by up to about $190 before income-tax credits and deductions;
+  pension-start dates currently establish election eligibility only.
   See [input contract and audit](verification/146-retirement-payroll.md).
 - Quebec's Health Services Fund contribution (2025–2026) also appears in the Payroll subtotal and ledger,
   separately from income tax. It is added exactly once and does not reduce income or any modelled benefit base.

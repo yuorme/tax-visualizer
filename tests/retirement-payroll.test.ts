@@ -131,6 +131,7 @@ test("malformed timing fails instead of silently choosing a contribution period"
   const good: Person = { ...blank(50000), age: 66, birthMonth: 6 };
   for (const bad of [
     { age: undefined },
+    { age: null as unknown as number },
     { age: 65.5 },
     { age: NaN },
     { age: -1 },
@@ -139,6 +140,7 @@ test("malformed timing fails instead of silently choosing a contribution period"
     { birthMonth: 0 },
     { birthMonth: 13 },
     { employeePayroll: { monthlyEarningsWeights: [1] } },
+    { employeePayroll: { monthlyEarningsWeights: { length: 12 } as unknown as number[] } },
     { employeePayroll: { monthlyEarningsWeights: Array<number>(12).fill(0) } },
     { employeePayroll: { monthlyEarningsWeights: [NaN, ...Array<number>(11).fill(1)] } },
     { employeePayroll: { retirementPensionSince: { year: 2025, month: 0 } } },

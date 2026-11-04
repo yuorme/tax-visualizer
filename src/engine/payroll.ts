@@ -105,6 +105,7 @@ function retirementContributions(fed: Federal, x: Person, qc: boolean, earnings:
     if (election.restart) validMonth(election.restart);
   }
   const weights = input?.monthlyEarningsWeights ?? Array<number>(monthsInYear).fill(1);
+  if (!Array.isArray(weights)) throw new RangeError("Employee monthly earnings weights must be an array");
   const weightSum = weights.reduce((a, b) => a + b, 0);
   if (
     weights.length !== monthsInYear ||
