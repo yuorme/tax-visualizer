@@ -12,8 +12,17 @@ line-by-line tax return. Simpler and slightly less precise is acceptable where i
 - Employment income: pays CPP/QPP, EI, QPIP and the territorial payroll tax; gets the Canada employment amount
   (and Yukon's), the CPP/EI credits, Quebec's deduction for workers and Ontario's LIFT credit; and is the working
   income for the Canada Workers Benefit (phase-in and secondary earner exemption), Quebec's work premium and the
-  working-income parts of the Alberta Child and Family Benefit and New Brunswick's child benefit. Self-employment
-  income is entered here until it has its own field.
+  working-income parts of the Alberta Child and Family Benefit and New Brunswick's child benefit.
+- Self-employment engine (2025–2026, #14): optional net business profit per adult, after business expenses.
+  Both CPP/QPP shares and second additional contributions share ceilings with employment. The employer base
+  share and both enhanced shares are deducted; one base share earns a credit. No EI opt-in, employment amount,
+  LIFT phase-in or territorial wage tax on profit. Quebec charges self-employed QPIP on the remaining insurable
+  earnings ceiling, with its deduction and federal credit. Profit counts for CWB, Quebec's work premium,
+  Quebec's worker deduction, AB/NB child working-income components, and the illustrative RRSP shortcut.
+  Business is wholly in the compared province; losses and multi-province allocation are unsupported.
+  Unsupported years reject even an explicit zero; omitted inputs preserve historical results.
+  The page controls and saved/URL state are a separate stacked UI branch, still pending.
+  See the [input contract, evidence and golden map](verification/14-self-employment.md).
 - Interest, rental and other income: taxed at the same rates and counted in net income and family net income for
   every benefit, credit, clawback and the Ontario Health Premium, but none of the employment-only treatment above,
   and no RRSP room. Pensions and RRSP/RRIF withdrawals go here until pension income has its own field; the
@@ -22,7 +31,9 @@ line-by-line tax return. Simpler and slightly less precise is acceptable where i
   subject: OAS, taxable support receipts and other Schedule F exclusions are not separately identified.
   RRSP, FHSA and federal childcare deductions do not reduce this base. Unclassified other deductions are not
   subtracted; eligible carrying charges, deductible support and retirement-income transfers need separate
-  classification and remain unsupported. Ignoring an eligible claim can overstate this contribution; leaving
+  classification and remain unsupported. Business payroll deductions are classified separately:
+  Schedule R line 26 and Schedule U lines 101, 103 and 115 reduce the business-inclusive base.
+  Ignoring an eligible claim can overstate this contribution; leaving
   RRSP/FHSA out is correct. Employee enhanced QPP/QPIP does not qualify for Schedule F lines 43/43.1.
   For 20,000 pension plus an illustrative 9,000 OAS entered together, this contribution is 90 too high;
   OAS alone or income on the 150 plateau can produce no error. The contribution base is an explicit allow-list:
@@ -48,7 +59,7 @@ line-by-line tax return. Simpler and slightly less precise is acceptable where i
   withheld on foreign dividends.
 - Annual deductions claimed per adult, itemized as RRSP, FHSA and other deductions; each reduces net income.
   Account room and contribution history are not calculated: the RRSP shortcut estimates room from employment
-  income and is not a verified maximum, and FHSA claims may include deferred eligible contributions.
+  income and supported business profit and is not a verified maximum. FHSA claims may include deferred claims.
 - Federal childcare expense deduction (2025 and 2026); see Childcare below.
 - Province-specific: Ontario surtax, Ontario tax reduction and LIFT credit, BC tax reduction, low-income
   reductions in Newfoundland and Labrador, New Brunswick, PEI and Nova Scotia, Saskatchewan's child amount,
@@ -70,16 +81,21 @@ line-by-line tax return. Simpler and slightly less precise is acceptable where i
   No senior/disability components. Earlier years remain omitted and locked despite their MB428 forms listing
   the program. See [audit](verification/145-manitoba-family-benefit.md).
 
-**Payroll (employee share)**
+**Payroll (employee share, plus both shares on self-employment)**
 - CPP/QPP base and enhanced contributions, EI or EI plus QPIP, Ontario Health Premium, the 2% payroll tax in the
-  Northwest Territories and Nunavut. All but the health premium are on employment income only.
+  Northwest Territories and Nunavut. EI and territorial payroll tax are on employment income only.
+  CPP/QPP and Quebec QPIP also apply to the new business-profit input for 2025–2026.
 - Retirement-age employee CPP/QPP for 2025–2026 (#146), entered per adult in the Income tab: birth year and month,
   continuous retirement-pension receipt, independent CPP/QPP stop/restart elections, and monthly
   earnings weights (equal monthly pay by default). CPP includes the 70th birthday month; QPP includes the whole
   year turning 72. Turning 65 alone stops neither plan. QPP optional elections retain annual ceilings/exemption;
   the annual burden excludes excess withholding. EI/QPIP continue on employment income. One continuing employer,
   no disability/death or pension cancellation. New inputs fail explicitly in unsupported historical data;
-  legacy inputs remain available in every year. Self-employment needs its own timing under #14.
+  legacy inputs remain available in every year. Business profit uses independently verified timing under #14:
+  CPP includes the 70th birthday month and prorates annual profit; QPP includes the whole year turning 72.
+  Mixed-earner CPT30 applies to both income sources, but RR-50 applies only to wages.
+  Self-employed-only CPP elections and separate QPP business elections need effective-month inputs and remain
+  unsupported. A positive-profit, zero-wage person cannot use an employee CPP election; the engine rejects it.
   The page retains birth year and derives `age = taxYear - birthYear` for the selected year
   and each history row; pension receipt and election dates stay in their original calendar years.
   A June 1960 birth with a valid June 2025 stop and no revocation remains stopped when selecting 2026.
@@ -173,10 +189,8 @@ The model counts **taxes the household actually pays**. Costs passed on through 
 
 Recorded here as the spec for the GitHub issues that implement them; the issues hold the order.
 
-**Self-employment.** A separate amount per adult, next to employment income (the CPP maximum is shared). Both
-CPP/QPP shares including CPP2, a deduction for the employer half, no EI (opting in is not modelled), no Canada
-employment amount on that part, QPIP at the self-employed rate in Quebec. Counts as working income for the
-Canada Workers Benefit and Quebec's work premium.
+**Self-employment page inputs.** The engine contract is included above. A stacked UI branch will add the
+separate amount per adult next to employment income, the explanations, and versioned URL/saved-state support.
 
 **Seniors (65+ per adult).** Moving in retirement is a main use case, so this is modelled fully. The
 [seniors sizing study](verification/16-seniors-sizing.md) finds all seven planned categories below pass the
@@ -199,8 +213,8 @@ built.
 ## Not included
 
 Settled exclusions:
-- **Employer share of payroll taxes** (employer CPP/EI, provincial employer health taxes). The model shows what
-  the household itself pays.
+- **Employer-paid payroll taxes** (employer CPP/EI, provincial employer health taxes). The model shows what
+  the household itself pays; a self-employed person's two CPP/QPP shares are included.
 - **Property tax paid by renters** through rent (a pass-on, not a tax the household pays; in the backlog if
   this changes).
 - **Corporate taxes** and other taxes not paid directly by the household.
@@ -226,6 +240,9 @@ For now:
 ## Estimates in the 2026 data
 
 Marked `estimated: true` in the data files where they appear:
+- Self-employment 2026 annual filing formulas continue 2025 Schedule 8 and Quebec Schedules U/R/10.
+  Rates and ceilings are published; the QPIP deductible fraction is derived from the 2026 self-employed and
+  employee rates, pending final filing forms. See the [audit](verification/14-self-employment.md).
 - Retirement-age employee payroll annual settlement: published 2026 employer rules, rates and ceilings with
   2025 Schedule 8/Quebec Schedule U annual settlement continued pending the final 2026 return forms.
 - Canada Workers Benefit 2026 amounts (2025 figures indexed by 2% until CRA publishes them).

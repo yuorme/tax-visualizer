@@ -13,8 +13,10 @@ export {
   type NetIncomeParts,
   netIncomeParts,
   netOf,
+  payrollDetailsOf,
   payrollOf,
   rrspRoom,
 } from "./payroll.ts";
 export { type PersonResult, personTax, provincialBpa } from "./personal.ts";
+export { UnsupportedSelfEmploymentError } from "./self-employment.ts";
 export * from "./types.ts";

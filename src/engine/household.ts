@@ -21,6 +21,7 @@ import {
   type MarginalKey,
   type Person,
   type Province,
+  workingIncomeOf,
   type YearData,
 } from "./types.ts";
 
@@ -125,8 +126,8 @@ export function household(y: YearData, p: Province, hh: Household, peopleIn: Per
   const couple = ppl.length === 2 && spouse;
   const famNet = couple ? nets[0] + nets[1] : nets[0];
   const provincialFamNet = couple ? provincialNets[0] + provincialNets[1] : provincialNets[0];
-  // Only employment enters working-income components; other income still enters family net income.
-  const famEmp = couple ? ppl[0].ord + ppl[1].ord : ppl[0].ord;
+  // Wages and net business profit enter working-income components; other income enters family net income only.
+  const famEmp = couple ? workingIncomeOf(ppl[0]) + workingIncomeOf(ppl[1]) : workingIncomeOf(ppl[0]);
   const c = ppl.length === 2 && nets[1] > nets[0] ? 1 : 0,
     o = 1 - c;
   const single = ppl.length === 1 && adults === 1;
@@ -278,7 +279,7 @@ export function household(y: YearData, p: Province, hh: Household, peopleIn: Per
   const incomeBases = {
     beforeChildcare: ppl.map(x => {
       const n = netIncomeParts(fed, p, x);
-      return n.ord + (n.oth ?? 0) + n.cg + n.ed + n.nd + n.fd - n.ded - n.enh;
+      return n.ord + (n.selfEmployment ?? 0) + (n.oth ?? 0) + n.cg + n.ed + n.nd + n.fd - n.ded - n.enh;
     }),
     federal: nets,
     provincial: list.map(r => r.tiP),
@@ -351,7 +352,8 @@ export function propertyTax(p: Province, hh: Household): number {
   return typeof bill === "number" && Number.isFinite(bill) && bill >= 0 ? bill : hh.homeValue * propertyRate(p, hh);
 }
 
-const bump = (x: Person, key: IncomeKey, d: number): Person => ({ ...x, [key]: (x[key] ?? 0) + d });
+type MarginalIncome = IncomeKey | "selfEmployment";
+const bump = (x: Person, key: MarginalIncome, d: number): Person => ({ ...x, [key]: (x[key] ?? 0) + d });
 const zeroInv = (x: Person): Person => ({ ...x, cg: 0, ed: 0, nd: 0, fd: 0 });
 export const hasInv = (x: Person) => x.cg !== 0 || x.ed > 0 || x.nd > 0 || x.fd > 0;
 
@@ -368,7 +370,7 @@ export function compute(y: YearData, p: Province, hh: Household) {
   // Claimant selection is recomputed for each counterfactual; investment bumps never create earned income.
   // Marginal rates measured directly (next $100 of each type for the selected person), so phase-outs,
   // payroll ceilings, benefit clawbacks and spouse-amount interactions all show up.
-  const margOf = (key: IncomeKey) =>
+  const margOf = (key: MarginalIncome) =>
     netChange(
       household(
         y,
@@ -419,7 +421,21 @@ export function compute(y: YearData, p: Province, hh: Household) {
     grossAvg: on ? gross / base : 0,
     // left: income after every tax, benefits and credits added. margOther: the marginal rate on the next dollar of
     // other income, measured like margBy (which the golden snapshot locks, so it can't take a new key).
-    breakdown: { ...h.breakdown, left: h.cash - total, margOther: margOf("oth") },
+    breakdown: {
+      ...h.breakdown,
+      left: h.cash - total,
+      margOther: margOf("oth"),
+      ...(hh.people[hh.active]?.selfEmployment !== undefined
+        ? {
+            margSelfEmployment:
+              p.system !== "quebec" &&
+              hh.people[hh.active].ord === 0 &&
+              hh.people[hh.active].employeePayroll?.cppElection
+                ? null
+                : margOf("selfEmployment"),
+          }
+        : {}),
+    },
   };
 }
 

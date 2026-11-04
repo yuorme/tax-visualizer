@@ -7,9 +7,17 @@ import type { Person } from "./types.ts";
  *  claims are not on its deduction list. See docs/verification/91-qc-health-fund.md for every form line.
  *  Schedule F 43/43.1 use Schedule R 26 and U 101 + 103 + 115, not the employment deductions
  *  at U 23/113/123. In particular, payrollOf(...).enh must not reduce this base.
- *  #14 can add net business income here and pass its specifically allowed Schedule R/U deductions below. */
+ *  Business profit is included; personTax passes only its allowed Schedule R/U deductions below.
+ *  Business is wholly in the province being compared: the TP-22 allocation is therefore 100%. */
 export function healthServicesIncome(fed: Federal, x: Person): number {
-  return (x.oth ?? 0) + Math.max(0, x.cg) * fed.investment.capitalGainsInclusion + x.ed + x.nd + x.fd;
+  return (
+    (x.oth ?? 0) +
+    (x.selfEmployment ?? 0) +
+    Math.max(0, x.cg) * fed.investment.capitalGainsInclusion +
+    x.ed +
+    x.nd +
+    x.fd
+  );
 }
 
 /** Per-person Schedule F, separate from income tax. `deductions` means only the enumerated lines 41–62,

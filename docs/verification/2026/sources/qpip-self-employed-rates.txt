@@ -1,0 +1,36 @@
+Title: Quebec QPIP rates for 2025 and 2026
+URL: https://www.quebec.ca/entreprises-et-travailleurs-autonomes/administrer-gerer/embauche-gestion-personnel/assurance-parentale/taux-cotisations
+Fetched: 2026-11-04
+SHA-256 of the original: a1b19ff50152d138fc6ea272d882679e3c8504d370877588124d35aad5629750
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+# Taux de cotisations au Régime québécois d’assurance parentale (RQAP)
+
+Tous les employeurs et leur personnel doivent cotiser au Régime québécois d’assurance parentale (RQAP). Ces cotisations au RQAP sont perçues par Revenu Québec.
+
+Les taux de cotisation au Régime québécois d'assurance parentale qui entreront en vigueur le 1 er janvier 2026 diminueront de 13 % par rapport aux taux précédents.
+
+Taux de cotisation et montant des cotisations annuelles maximales
+Type de cotisants | 2025 | 2026
+Salariés | Taux de cotisation : 0,494 % Cotisations maximales : 484,12 $ | Taux de cotisation : 0,430 % Cotisations maximales : 442,90 $
+Employeurs | Taux de cotisation : 0,692 % Cotisations maximales : 678,16 $ | Taux de cotisation : 0,602 % Cotisations maximales : 620,06 $
+Travailleurs autonomes | Taux de cotisation : 0,878 % Cotisations maximales : 860,44 $ | Taux de cotisation : 0,764 % Cotisations maximales : 786,92 $
+
+Pour en savoir plus au sujet des cotisations au RQAP, consultez le site Web de Revenu Québec.
+
+## Réduction de taux
+
+Au Québec, les cotisations à l’assurance-emploi sont réduites pour tenir compte du RQAP. Pour 2025 et 2026, la réduction établie par le gouvernement fédéral représente 0,33 % du salaire assurable dans le cas du personnel salarié. La réduction pour les employeurs correspond à 1,4 fois celle pour les salariées et salariés.
+
+Une réduction de 0,33 % s’applique également aux travailleuses et travailleurs autonomes qui choisissent de participer au volet maladie, proches aidants et compassion du régime d’assurance-emploi.
+
+## À consulter aussi
+
+Maximum de revenus assurables et taux de cotisation au Régime québécois d’assurance parentale – Revenu Québec
+
+Guide de l’employeur – Retenues à la source et cotisation de Revenu Québec
+
+Régime québécois d’assurance parentale
+
+Dernière mise à jour : 19 mars 2026

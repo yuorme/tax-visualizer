@@ -1,0 +1,4965 @@
+{
+  "defaults": {
+    "active": 0,
+    "spouse": false,
+    "adults": 1,
+    "kids": 0,
+    "under6": 0,
+    "useBpa": true,
+    "whRate": 0.15,
+    "useCredits": true,
+    "homeValue": 0,
+    "rent": 0,
+    "monthlySpending": 0
+  },
+  "cases": [
+    {
+      "id": "2025-on-pierre-75000",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "ord": 0,
+            "selfEmployment": 75000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 6712.2,
+        "list.0.pay.enh": 1652.0,
+        "list.0.pay.ei": 0.0,
+        "list.0.pay.qpip": 0,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 0,
+        "list.0.workerDed": 0,
+        "list.0.ti": 69991.9,
+        "list.0.tiP": 69991.9,
+        "list.0.cash": 75000,
+        "list.0.fEmpFull": 486.6345,
+        "list.0.breakdown.rrspRoom": 13500,
+        "list.0.breakdown.netIncome.ded": 3356.1,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "list.0.breakdown.selfEmployment.base": 6712.2,
+        "list.0.breakdown.selfEmployment.enhanced": 1652.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 3356.1,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 3356.1,
+        "list.0.breakdown.selfEmployment.qpip": 0,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.qpipCredit": 0.0,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 5008.1,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 5008.1,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 75000.0,
+        "list.0.pEmpFull": 169.4831,
+        "list.0.lift": 0,
+        "list.0.fed": 8080.5,
+        "list.0.prov": 3422.7263,
+        "list.0.payroll": 8964.2,
+        "list.0.total": 20467.4263,
+        "breakdown.margSelfEmployment": 0.3528
+      }
+    },
+    {
+      "id": "2025-on-below-exemption",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "ord": 0,
+            "selfEmployment": 3499
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 0.0,
+        "list.0.pay.enh": 0.0,
+        "list.0.pay.ei": 0.0,
+        "list.0.pay.qpip": 0,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 0,
+        "list.0.workerDed": 0,
+        "list.0.ti": 3499.0,
+        "list.0.tiP": 3499.0,
+        "list.0.cash": 3499,
+        "list.0.fEmpFull": 0.0,
+        "list.0.breakdown.rrspRoom": 630,
+        "list.0.breakdown.netIncome.ded": 0.0,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "list.0.breakdown.selfEmployment.base": 0.0,
+        "list.0.breakdown.selfEmployment.enhanced": 0.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 0.0,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.qpip": 0,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.qpipCredit": 0.0,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 3499.0,
+        "list.0.pEmpFull": 0.0,
+        "list.0.lift": 0
+      }
+    },
+    {
+      "id": "2025-on-at-exemption",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "ord": 0,
+            "selfEmployment": 3500
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 0.0,
+        "list.0.pay.enh": 0.0,
+        "list.0.pay.ei": 0.0,
+        "list.0.pay.qpip": 0,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 0,
+        "list.0.workerDed": 0,
+        "list.0.ti": 3500.0,
+        "list.0.tiP": 3500.0,
+        "list.0.cash": 3500,
+        "list.0.fEmpFull": 0.0,
+        "list.0.breakdown.rrspRoom": 630,
+        "list.0.breakdown.netIncome.ded": 0.0,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "list.0.breakdown.selfEmployment.base": 0.0,
+        "list.0.breakdown.selfEmployment.enhanced": 0.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 0.0,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.qpip": 0,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.qpipCredit": 0.0,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 3500.0,
+        "list.0.pEmpFull": 0.0,
+        "list.0.lift": 0
+      }
+    },
+    {
+      "id": "2025-on-above-exemption",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "ord": 0,
+            "selfEmployment": 3501
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 0.099,
+        "list.0.pay.enh": 0.02,
+        "list.0.pay.ei": 0.0,
+        "list.0.pay.qpip": 0,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 0,
+        "list.0.workerDed": 0,
+        "list.0.ti": 3500.9305,
+        "list.0.tiP": 3500.9305,
+        "list.0.cash": 3501,
+        "list.0.fEmpFull": 0.0072,
+        "list.0.breakdown.rrspRoom": 630,
+        "list.0.breakdown.netIncome.ded": 0.0495,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "list.0.breakdown.selfEmployment.base": 0.099,
+        "list.0.breakdown.selfEmployment.enhanced": 0.02,
+        "list.0.breakdown.selfEmployment.baseCredit": 0.0495,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 0.0495,
+        "list.0.breakdown.selfEmployment.qpip": 0,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.qpipCredit": 0.0,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 0.0695,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 0.0695,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 3501.0,
+        "list.0.pEmpFull": 0.0025,
+        "list.0.lift": 0
+      }
+    },
+    {
+      "id": "2025-on-at-ympe",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "ord": 0,
+            "selfEmployment": 71300
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 6712.2,
+        "list.0.pay.enh": 1356.0,
+        "list.0.pay.ei": 0.0,
+        "list.0.pay.qpip": 0,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 0,
+        "list.0.workerDed": 0,
+        "list.0.ti": 66587.9,
+        "list.0.tiP": 66587.9,
+        "list.0.cash": 71300,
+        "list.0.fEmpFull": 486.6345,
+        "list.0.breakdown.rrspRoom": 12834,
+        "list.0.breakdown.netIncome.ded": 3356.1,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "list.0.breakdown.selfEmployment.base": 6712.2,
+        "list.0.breakdown.selfEmployment.enhanced": 1356.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 3356.1,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 3356.1,
+        "list.0.breakdown.selfEmployment.qpip": 0,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.qpipCredit": 0.0,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 4712.1,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 4712.1,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 71300.0,
+        "list.0.pEmpFull": 169.4831,
+        "list.0.lift": 0
+      }
+    },
+    {
+      "id": "2025-on-above-ympe",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "ord": 0,
+            "selfEmployment": 71301
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 6712.2,
+        "list.0.pay.enh": 1356.08,
+        "list.0.pay.ei": 0.0,
+        "list.0.pay.qpip": 0,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 0,
+        "list.0.workerDed": 0,
+        "list.0.ti": 66588.82,
+        "list.0.tiP": 66588.82,
+        "list.0.cash": 71301,
+        "list.0.fEmpFull": 486.6345,
+        "list.0.breakdown.rrspRoom": 12834,
+        "list.0.breakdown.netIncome.ded": 3356.1,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "list.0.breakdown.selfEmployment.base": 6712.2,
+        "list.0.breakdown.selfEmployment.enhanced": 1356.08,
+        "list.0.breakdown.selfEmployment.baseCredit": 3356.1,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 3356.1,
+        "list.0.breakdown.selfEmployment.qpip": 0,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.qpipCredit": 0.0,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 4712.18,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 4712.18,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 71301.0,
+        "list.0.pEmpFull": 169.4831,
+        "list.0.lift": 0
+      }
+    },
+    {
+      "id": "2025-on-at-yampe",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "ord": 0,
+            "selfEmployment": 81200
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 6712.2,
+        "list.0.pay.enh": 2148.0,
+        "list.0.pay.ei": 0.0,
+        "list.0.pay.qpip": 0,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 0,
+        "list.0.workerDed": 0,
+        "list.0.ti": 75695.9,
+        "list.0.tiP": 75695.9,
+        "list.0.cash": 81200,
+        "list.0.fEmpFull": 486.6345,
+        "list.0.breakdown.rrspRoom": 14616,
+        "list.0.breakdown.netIncome.ded": 3356.1,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "list.0.breakdown.selfEmployment.base": 6712.2,
+        "list.0.breakdown.selfEmployment.enhanced": 2148.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 3356.1,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 3356.1,
+        "list.0.breakdown.selfEmployment.qpip": 0,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.qpipCredit": 0.0,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 5504.1,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 5504.1,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 81200.0,
+        "list.0.pEmpFull": 169.4831,
+        "list.0.lift": 0
+      }
+    },
+    {
+      "id": "2025-on-above-yampe",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "ord": 0,
+            "selfEmployment": 81201
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 6712.2,
+        "list.0.pay.enh": 2148.0,
+        "list.0.pay.ei": 0.0,
+        "list.0.pay.qpip": 0,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 0,
+        "list.0.workerDed": 0,
+        "list.0.ti": 75696.9,
+        "list.0.tiP": 75696.9,
+        "list.0.cash": 81201,
+        "list.0.fEmpFull": 486.6345,
+        "list.0.breakdown.rrspRoom": 14616,
+        "list.0.breakdown.netIncome.ded": 3356.1,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "list.0.breakdown.selfEmployment.base": 6712.2,
+        "list.0.breakdown.selfEmployment.enhanced": 2148.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 3356.1,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 3356.1,
+        "list.0.breakdown.selfEmployment.qpip": 0,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.qpipCredit": 0.0,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 5504.1,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 5504.1,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 81201.0,
+        "list.0.pEmpFull": 169.4831,
+        "list.0.lift": 0
+      }
+    },
+    {
+      "id": "2025-on-mixed-unused-exemption",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "ord": 2000,
+            "selfEmployment": 3000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 148.5,
+        "list.0.pay.enh": 30.0,
+        "list.0.pay.ei": 32.8,
+        "list.0.pay.qpip": 0,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 1471,
+        "list.0.workerDed": 0,
+        "list.0.ti": 4895.75,
+        "list.0.tiP": 4895.75,
+        "list.0.cash": 5000,
+        "list.0.fEmpFull": 228.8172,
+        "list.0.breakdown.rrspRoom": 900,
+        "list.0.breakdown.netIncome.ded": 74.25,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "list.0.breakdown.selfEmployment.base": 148.5,
+        "list.0.breakdown.selfEmployment.enhanced": 30.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 74.25,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 74.25,
+        "list.0.breakdown.selfEmployment.qpip": 0,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.qpipCredit": 0.0,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 104.25,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 104.25,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 3000.0,
+        "list.0.pEmpFull": 5.406
+      }
+    },
+    {
+      "id": "2025-on-mixed-first-tier",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "ord": 30000,
+            "selfEmployment": 30000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 4281.75,
+        "list.0.pay.enh": 865.0,
+        "list.0.pay.ei": 492.0,
+        "list.0.pay.qpip": 0,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 1471,
+        "list.0.workerDed": 0,
+        "list.0.ti": 57650.0,
+        "list.0.tiP": 57650.0,
+        "list.0.cash": 60000,
+        "list.0.fEmpFull": 690.1637,
+        "list.0.breakdown.rrspRoom": 10800,
+        "list.0.breakdown.netIncome.ded": 1485.0,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "list.0.breakdown.selfEmployment.base": 2970.0,
+        "list.0.breakdown.selfEmployment.enhanced": 600.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 1485.0,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 1485.0,
+        "list.0.breakdown.selfEmployment.qpip": 0,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.qpipCredit": 0.0,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 2085.0,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 2085.0,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 30000.0,
+        "list.0.pEmpFull": 166.0819
+      }
+    },
+    {
+      "id": "2025-on-mixed-cross-ympe",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "ord": 66300,
+            "selfEmployment": 10000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 3603.6,
+        "list.0.pay.enh": 1128.0,
+        "list.0.pay.ei": 1077.48,
+        "list.0.pay.qpip": 0,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 1471,
+        "list.0.workerDed": 0,
+        "list.0.ti": 74924.5,
+        "list.0.tiP": 74924.5,
+        "list.0.cash": 76300,
+        "list.0.fEmpFull": 856.1641,
+        "list.0.breakdown.rrspRoom": 13734,
+        "list.0.breakdown.netIncome.ded": 247.5,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "list.0.breakdown.selfEmployment.base": 495.0,
+        "list.0.breakdown.selfEmployment.enhanced": 500.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 247.5,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 247.5,
+        "list.0.breakdown.selfEmployment.qpip": 0,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.qpipCredit": 0.0,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 747.5,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 747.5,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 10000.0,
+        "list.0.pEmpFull": 223.8958
+      }
+    },
+    {
+      "id": "2025-on-mixed-employee-at-ympe",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "ord": 71300,
+            "selfEmployment": 20000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 3356.1,
+        "list.0.pay.enh": 1470.0,
+        "list.0.pay.ei": 1077.48,
+        "list.0.pay.qpip": 0,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 1471,
+        "list.0.workerDed": 0,
+        "list.0.ti": 89830.0,
+        "list.0.tiP": 89830.0,
+        "list.0.cash": 91300,
+        "list.0.fEmpFull": 856.1641,
+        "list.0.breakdown.rrspRoom": 16434,
+        "list.0.breakdown.netIncome.ded": 0.0,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "list.0.breakdown.selfEmployment.base": 0.0,
+        "list.0.breakdown.selfEmployment.enhanced": 792.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 0.0,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.qpip": 0,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.qpipCredit": 0.0,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 792.0,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 792.0,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 20000.0,
+        "list.0.pEmpFull": 223.8958
+      }
+    },
+    {
+      "id": "2025-on-mixed-employee-in-tier2",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "ord": 72300,
+            "selfEmployment": 20000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 3356.1,
+        "list.0.pay.enh": 1430.0,
+        "list.0.pay.ei": 1077.48,
+        "list.0.pay.qpip": 0,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 1471,
+        "list.0.workerDed": 0,
+        "list.0.ti": 90870.0,
+        "list.0.tiP": 90870.0,
+        "list.0.cash": 92300,
+        "list.0.fEmpFull": 856.1641,
+        "list.0.breakdown.rrspRoom": 16614,
+        "list.0.breakdown.netIncome.ded": 0.0,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "list.0.breakdown.selfEmployment.base": 0.0,
+        "list.0.breakdown.selfEmployment.enhanced": 712.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 0.0,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.qpip": 0,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.qpipCredit": 0.0,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 712.0,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 712.0,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 20000.0,
+        "list.0.pEmpFull": 223.8958
+      }
+    },
+    {
+      "id": "2025-on-mixed-employee-max",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "ord": 81200,
+            "selfEmployment": 20000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 3356.1,
+        "list.0.pay.enh": 1074.0,
+        "list.0.pay.ei": 1077.48,
+        "list.0.pay.qpip": 0,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 1471,
+        "list.0.workerDed": 0,
+        "list.0.ti": 100126.0,
+        "list.0.tiP": 100126.0,
+        "list.0.cash": 101200,
+        "list.0.fEmpFull": 856.1641,
+        "list.0.breakdown.rrspRoom": 18216,
+        "list.0.breakdown.netIncome.ded": 0.0,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "list.0.breakdown.selfEmployment.base": 0.0,
+        "list.0.breakdown.selfEmployment.enhanced": 0.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 0.0,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.qpip": 0,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.qpipCredit": 0.0,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 20000.0,
+        "list.0.pEmpFull": 223.8958
+      }
+    },
+    {
+      "id": "2025-qc-pierre-75000",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 0,
+            "selfEmployment": 75000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 7322.4,
+        "list.0.pay.enh": 1652.0,
+        "list.0.pay.ei": 0.0,
+        "list.0.pay.qpip": 658.5,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 0,
+        "list.0.workerDed": 1420,
+        "list.0.ti": 69398.7984,
+        "list.0.tiP": 67978.7984,
+        "list.0.cash": 75000,
+        "list.0.fEmpFull": 584.5963,
+        "list.0.breakdown.rrspRoom": 13500,
+        "list.0.breakdown.netIncome.ded": 3949.2016,
+        "list.0.breakdown.healthServicesFund.income": 69398.7984,
+        "list.0.breakdown.healthServicesFund.contribution": 213.388,
+        "list.0.breakdown.selfEmployment.base": 7322.4,
+        "list.0.breakdown.selfEmployment.enhanced": 1652.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 3661.2,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 3661.2,
+        "list.0.breakdown.selfEmployment.qpip": 658.5,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 288.0016,
+        "list.0.breakdown.selfEmployment.qpipCredit": 370.4984,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 5313.2,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 5601.2016,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 75000.0
+      }
+    },
+    {
+      "id": "2025-qc-below-exemption",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 0,
+            "selfEmployment": 3499
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 0.0,
+        "list.0.pay.enh": 0.0,
+        "list.0.pay.ei": 0.0,
+        "list.0.pay.qpip": 30.7212,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 0,
+        "list.0.workerDed": 209.94,
+        "list.0.ti": 3485.5638,
+        "list.0.tiP": 3275.6238,
+        "list.0.cash": 3499,
+        "list.0.fEmpFull": 2.5063,
+        "list.0.breakdown.rrspRoom": 630,
+        "list.0.breakdown.netIncome.ded": 13.4362,
+        "list.0.breakdown.healthServicesFund.income": 3485.5638,
+        "list.0.breakdown.healthServicesFund.contribution": 0.0,
+        "list.0.breakdown.selfEmployment.base": 0.0,
+        "list.0.breakdown.selfEmployment.enhanced": 0.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 0.0,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.qpip": 30.7212,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 13.4362,
+        "list.0.breakdown.selfEmployment.qpipCredit": 17.285,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 13.4362,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 3499.0
+      }
+    },
+    {
+      "id": "2025-qc-at-exemption",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 0,
+            "selfEmployment": 3500
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 0.0,
+        "list.0.pay.enh": 0.0,
+        "list.0.pay.ei": 0.0,
+        "list.0.pay.qpip": 30.73,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 0,
+        "list.0.workerDed": 210.0,
+        "list.0.ti": 3486.5599,
+        "list.0.tiP": 3276.5599,
+        "list.0.cash": 3500,
+        "list.0.fEmpFull": 2.507,
+        "list.0.breakdown.rrspRoom": 630,
+        "list.0.breakdown.netIncome.ded": 13.4401,
+        "list.0.breakdown.healthServicesFund.income": 3486.5599,
+        "list.0.breakdown.healthServicesFund.contribution": 0.0,
+        "list.0.breakdown.selfEmployment.base": 0.0,
+        "list.0.breakdown.selfEmployment.enhanced": 0.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 0.0,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.qpip": 30.73,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 13.4401,
+        "list.0.breakdown.selfEmployment.qpipCredit": 17.2899,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 13.4401,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 3500.0
+      }
+    },
+    {
+      "id": "2025-qc-above-exemption",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 0,
+            "selfEmployment": 3501
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 0.108,
+        "list.0.pay.enh": 0.02,
+        "list.0.pay.ei": 0.0,
+        "list.0.pay.qpip": 30.7388,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 0,
+        "list.0.workerDed": 210.06,
+        "list.0.ti": 3487.4821,
+        "list.0.tiP": 3277.4221,
+        "list.0.cash": 3501,
+        "list.0.fEmpFull": 2.5156,
+        "list.0.breakdown.rrspRoom": 630,
+        "list.0.breakdown.netIncome.ded": 13.4979,
+        "list.0.breakdown.healthServicesFund.income": 3487.4821,
+        "list.0.breakdown.healthServicesFund.contribution": 0.0,
+        "list.0.breakdown.selfEmployment.base": 0.108,
+        "list.0.breakdown.selfEmployment.enhanced": 0.02,
+        "list.0.breakdown.selfEmployment.baseCredit": 0.054,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 0.054,
+        "list.0.breakdown.selfEmployment.qpip": 30.7388,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 13.4439,
+        "list.0.breakdown.selfEmployment.qpipCredit": 17.2949,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 0.074,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 13.5179,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 3501.0
+      }
+    },
+    {
+      "id": "2025-qc-at-ympe",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 0,
+            "selfEmployment": 71300
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 7322.4,
+        "list.0.pay.enh": 1356.0,
+        "list.0.pay.ei": 0.0,
+        "list.0.pay.qpip": 626.014,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 0,
+        "list.0.workerDed": 1420,
+        "list.0.ti": 66009.0065,
+        "list.0.tiP": 64589.0065,
+        "list.0.cash": 71300,
+        "list.0.fEmpFull": 581.946,
+        "list.0.breakdown.rrspRoom": 12834,
+        "list.0.breakdown.netIncome.ded": 3934.9935,
+        "list.0.breakdown.healthServicesFund.income": 66009.0065,
+        "list.0.breakdown.healthServicesFund.contribution": 179.4901,
+        "list.0.breakdown.selfEmployment.base": 7322.4,
+        "list.0.breakdown.selfEmployment.enhanced": 1356.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 3661.2,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 3661.2,
+        "list.0.breakdown.selfEmployment.qpip": 626.014,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 273.7935,
+        "list.0.breakdown.selfEmployment.qpipCredit": 352.2205,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 5017.2,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 5290.9935,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 71300.0
+      }
+    },
+    {
+      "id": "2025-qc-above-ympe",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 0,
+            "selfEmployment": 71301
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 7322.4,
+        "list.0.pay.enh": 1356.08,
+        "list.0.pay.ei": 0.0,
+        "list.0.pay.qpip": 626.0228,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 0,
+        "list.0.workerDed": 1420,
+        "list.0.ti": 66009.9227,
+        "list.0.tiP": 64589.9227,
+        "list.0.cash": 71301,
+        "list.0.fEmpFull": 581.9467,
+        "list.0.breakdown.rrspRoom": 12834,
+        "list.0.breakdown.netIncome.ded": 3934.9973,
+        "list.0.breakdown.healthServicesFund.income": 66009.9227,
+        "list.0.breakdown.healthServicesFund.contribution": 179.4992,
+        "list.0.breakdown.selfEmployment.base": 7322.4,
+        "list.0.breakdown.selfEmployment.enhanced": 1356.08,
+        "list.0.breakdown.selfEmployment.baseCredit": 3661.2,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 3661.2,
+        "list.0.breakdown.selfEmployment.qpip": 626.0228,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 273.7973,
+        "list.0.breakdown.selfEmployment.qpipCredit": 352.2255,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 5017.28,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 5291.0773,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 71301.0
+      }
+    },
+    {
+      "id": "2025-qc-at-yampe",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 0,
+            "selfEmployment": 81200
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 7322.4,
+        "list.0.pay.enh": 2148.0,
+        "list.0.pay.ei": 0.0,
+        "list.0.pay.qpip": 712.936,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 0,
+        "list.0.workerDed": 1420,
+        "list.0.ti": 75078.9903,
+        "list.0.tiP": 73658.9903,
+        "list.0.cash": 81200,
+        "list.0.fEmpFull": 589.0373,
+        "list.0.breakdown.rrspRoom": 14616,
+        "list.0.breakdown.netIncome.ded": 3973.0097,
+        "list.0.breakdown.healthServicesFund.income": 75078.9903,
+        "list.0.breakdown.healthServicesFund.contribution": 270.1899,
+        "list.0.breakdown.selfEmployment.base": 7322.4,
+        "list.0.breakdown.selfEmployment.enhanced": 2148.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 3661.2,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 3661.2,
+        "list.0.breakdown.selfEmployment.qpip": 712.936,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 311.8097,
+        "list.0.breakdown.selfEmployment.qpipCredit": 401.1263,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 5809.2,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 6121.0097,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 81200.0
+      }
+    },
+    {
+      "id": "2025-qc-above-yampe",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 0,
+            "selfEmployment": 81201
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 7322.4,
+        "list.0.pay.enh": 2148.0,
+        "list.0.pay.ei": 0.0,
+        "list.0.pay.qpip": 712.9448,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 0,
+        "list.0.workerDed": 1420,
+        "list.0.ti": 75079.9865,
+        "list.0.tiP": 73659.9865,
+        "list.0.cash": 81201,
+        "list.0.fEmpFull": 589.038,
+        "list.0.breakdown.rrspRoom": 14616,
+        "list.0.breakdown.netIncome.ded": 3973.0135,
+        "list.0.breakdown.healthServicesFund.income": 75079.9865,
+        "list.0.breakdown.healthServicesFund.contribution": 270.1999,
+        "list.0.breakdown.selfEmployment.base": 7322.4,
+        "list.0.breakdown.selfEmployment.enhanced": 2148.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 3661.2,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 3661.2,
+        "list.0.breakdown.selfEmployment.qpip": 712.9448,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 311.8135,
+        "list.0.breakdown.selfEmployment.qpipCredit": 401.1313,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 5809.2,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 6121.0135,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 81201.0
+      }
+    },
+    {
+      "id": "2025-qc-mixed-unused-exemption",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 2000,
+            "selfEmployment": 3000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 162.0,
+        "list.0.pay.enh": 30.0,
+        "list.0.pay.ei": 26.2,
+        "list.0.pay.qpip": 36.22,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 1471,
+        "list.0.workerDed": 300.0,
+        "list.0.ti": 4877.4799,
+        "list.0.tiP": 4577.4799,
+        "list.0.cash": 5000,
+        "list.0.fEmpFull": 232.4205,
+        "list.0.breakdown.rrspRoom": 900,
+        "list.0.breakdown.netIncome.ded": 92.5201,
+        "list.0.breakdown.healthServicesFund.income": 2877.4799,
+        "list.0.breakdown.healthServicesFund.contribution": 0.0,
+        "list.0.breakdown.selfEmployment.base": 162.0,
+        "list.0.breakdown.selfEmployment.enhanced": 30.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 81.0,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 81.0,
+        "list.0.breakdown.selfEmployment.qpip": 26.34,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 11.5201,
+        "list.0.breakdown.selfEmployment.qpipCredit": 14.8199,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 111.0,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 122.5201,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 3000.0
+      }
+    },
+    {
+      "id": "2025-qc-mixed-first-tier",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 30000,
+            "selfEmployment": 30000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 4671.0,
+        "list.0.pay.enh": 865.0,
+        "list.0.pay.ei": 393.0,
+        "list.0.pay.qpip": 411.6,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 1471,
+        "list.0.workerDed": 1420,
+        "list.0.ti": 57399.7994,
+        "list.0.tiP": 55979.7994,
+        "list.0.cash": 60000,
+        "list.0.fEmpFull": 755.6529,
+        "list.0.breakdown.rrspRoom": 10800,
+        "list.0.breakdown.netIncome.ded": 1735.2006,
+        "list.0.breakdown.healthServicesFund.income": 27664.7994,
+        "list.0.breakdown.healthServicesFund.contribution": 95.348,
+        "list.0.breakdown.selfEmployment.base": 3240.0,
+        "list.0.breakdown.selfEmployment.enhanced": 600.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 1620.0,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 1620.0,
+        "list.0.breakdown.selfEmployment.qpip": 263.4,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 115.2006,
+        "list.0.breakdown.selfEmployment.qpipCredit": 148.1994,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 2220.0,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 2335.2006,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 30000.0
+      }
+    },
+    {
+      "id": "2025-qc-mixed-cross-ympe",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 66300,
+            "selfEmployment": 10000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 3931.2,
+        "list.0.pay.enh": 1128.0,
+        "list.0.pay.ei": 860.67,
+        "list.0.pay.qpip": 415.322,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 1471,
+        "list.0.workerDed": 1420,
+        "list.0.ti": 74863.5998,
+        "list.0.tiP": 73443.5998,
+        "list.0.cash": 76300,
+        "list.0.fEmpFull": 923.6198,
+        "list.0.breakdown.rrspRoom": 13734,
+        "list.0.breakdown.netIncome.ded": 308.4002,
+        "list.0.breakdown.healthServicesFund.income": 9191.5998,
+        "list.0.breakdown.healthServicesFund.contribution": 0.0,
+        "list.0.breakdown.selfEmployment.base": 540.0,
+        "list.0.breakdown.selfEmployment.enhanced": 500.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 270.0,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 270.0,
+        "list.0.breakdown.selfEmployment.qpip": 87.8,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 38.4002,
+        "list.0.breakdown.selfEmployment.qpipCredit": 49.3998,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 770.0,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 808.4002,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 10000.0
+      }
+    },
+    {
+      "id": "2025-qc-mixed-employee-at-ympe",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 71300,
+            "selfEmployment": 20000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 3661.2,
+        "list.0.pay.enh": 1470.0,
+        "list.0.pay.ei": 860.67,
+        "list.0.pay.qpip": 527.822,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 1471,
+        "list.0.workerDed": 1420,
+        "list.0.ti": 89753.1996,
+        "list.0.tiP": 88333.1996,
+        "list.0.cash": 91300,
+        "list.0.fEmpFull": 934.3643,
+        "list.0.breakdown.rrspRoom": 16434,
+        "list.0.breakdown.netIncome.ded": 76.8004,
+        "list.0.breakdown.healthServicesFund.income": 19131.1996,
+        "list.0.breakdown.healthServicesFund.contribution": 10.012,
+        "list.0.breakdown.selfEmployment.base": 0.0,
+        "list.0.breakdown.selfEmployment.enhanced": 792.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 0.0,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.qpip": 175.6,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 76.8004,
+        "list.0.breakdown.selfEmployment.qpipCredit": 98.7996,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 792.0,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 868.8004,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 20000.0
+      }
+    },
+    {
+      "id": "2025-qc-mixed-employee-in-tier2",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 72300,
+            "selfEmployment": 20000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 3661.2,
+        "list.0.pay.enh": 1430.0,
+        "list.0.pay.ei": 860.67,
+        "list.0.pay.qpip": 532.762,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 1471,
+        "list.0.workerDed": 1420,
+        "list.0.ti": 90793.1996,
+        "list.0.tiP": 89373.1996,
+        "list.0.cash": 92300,
+        "list.0.fEmpFull": 935.0806,
+        "list.0.breakdown.rrspRoom": 16614,
+        "list.0.breakdown.netIncome.ded": 76.8004,
+        "list.0.breakdown.healthServicesFund.income": 19211.1996,
+        "list.0.breakdown.healthServicesFund.contribution": 10.812,
+        "list.0.breakdown.selfEmployment.base": 0.0,
+        "list.0.breakdown.selfEmployment.enhanced": 712.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 0.0,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.qpip": 175.6,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 76.8004,
+        "list.0.breakdown.selfEmployment.qpipCredit": 98.7996,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 712.0,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 788.8004,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 20000.0
+      }
+    },
+    {
+      "id": "2025-qc-mixed-employee-max",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 81200,
+            "selfEmployment": 20000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 3661.2,
+        "list.0.pay.enh": 1074.0,
+        "list.0.pay.ei": 860.67,
+        "list.0.pay.qpip": 548.632,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 1471,
+        "list.0.workerDed": 1420,
+        "list.0.ti": 100061.4877,
+        "list.0.tiP": 98641.4877,
+        "list.0.cash": 101200,
+        "list.0.fEmpFull": 939.1635,
+        "list.0.breakdown.rrspRoom": 18216,
+        "list.0.breakdown.netIncome.ded": 64.5123,
+        "list.0.breakdown.healthServicesFund.income": 19935.4877,
+        "list.0.breakdown.healthServicesFund.contribution": 18.0549,
+        "list.0.breakdown.selfEmployment.base": 0.0,
+        "list.0.breakdown.selfEmployment.enhanced": 0.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 0.0,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.qpip": 147.504,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 64.5123,
+        "list.0.breakdown.selfEmployment.qpipCredit": 82.9917,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 64.5123,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 20000.0
+      }
+    },
+    {
+      "id": "2025-qc-qpip-below-minimum",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 0,
+            "selfEmployment": 1999
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 0.0,
+        "list.0.pay.enh": 0.0,
+        "list.0.pay.ei": 0.0,
+        "list.0.pay.qpip": 0,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 0,
+        "list.0.workerDed": 119.94,
+        "list.0.ti": 1999.0,
+        "list.0.tiP": 1879.06,
+        "list.0.cash": 1999,
+        "list.0.fEmpFull": 0.0,
+        "list.0.breakdown.rrspRoom": 360,
+        "list.0.breakdown.netIncome.ded": 0.0,
+        "list.0.breakdown.healthServicesFund.income": 1999.0,
+        "list.0.breakdown.healthServicesFund.contribution": 0.0,
+        "list.0.breakdown.selfEmployment.base": 0.0,
+        "list.0.breakdown.selfEmployment.enhanced": 0.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 0.0,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.qpip": 0,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.qpipCredit": 0.0,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 1999.0
+      }
+    },
+    {
+      "id": "2025-qc-qpip-minimum",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 0,
+            "selfEmployment": 2000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 0.0,
+        "list.0.pay.enh": 0.0,
+        "list.0.pay.ei": 0.0,
+        "list.0.pay.qpip": 17.56,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 0,
+        "list.0.workerDed": 120.0,
+        "list.0.ti": 1992.32,
+        "list.0.tiP": 1872.32,
+        "list.0.cash": 2000,
+        "list.0.fEmpFull": 1.4326,
+        "list.0.breakdown.rrspRoom": 360,
+        "list.0.breakdown.netIncome.ded": 7.68,
+        "list.0.breakdown.healthServicesFund.income": 1992.32,
+        "list.0.breakdown.healthServicesFund.contribution": 0.0,
+        "list.0.breakdown.selfEmployment.base": 0.0,
+        "list.0.breakdown.selfEmployment.enhanced": 0.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 0.0,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.qpip": 17.56,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 7.68,
+        "list.0.breakdown.selfEmployment.qpipCredit": 9.88,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 7.68,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 2000.0
+      }
+    },
+    {
+      "id": "2025-qc-qpip-mixed-below-minimum",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 1500,
+            "selfEmployment": 499
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 0.0,
+        "list.0.pay.enh": 0.0,
+        "list.0.pay.ei": 19.65,
+        "list.0.pay.qpip": 0,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 1471,
+        "list.0.workerDed": 119.94,
+        "list.0.ti": 1999.0,
+        "list.0.tiP": 1879.06,
+        "list.0.cash": 1999,
+        "list.0.fEmpFull": 216.1442,
+        "list.0.breakdown.rrspRoom": 360,
+        "list.0.breakdown.netIncome.ded": 0.0,
+        "list.0.breakdown.healthServicesFund.income": 499.0,
+        "list.0.breakdown.healthServicesFund.contribution": 0.0,
+        "list.0.breakdown.selfEmployment.base": 0.0,
+        "list.0.breakdown.selfEmployment.enhanced": 0.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 0.0,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.qpip": 0,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.qpipCredit": 0.0,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 499.0
+      }
+    },
+    {
+      "id": "2025-qc-qpip-combined-minimum",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 1500,
+            "selfEmployment": 500
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 0.0,
+        "list.0.pay.enh": 0.0,
+        "list.0.pay.ei": 19.65,
+        "list.0.pay.qpip": 11.8,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 1471,
+        "list.0.workerDed": 120.0,
+        "list.0.ti": 1998.08,
+        "list.0.tiP": 1878.08,
+        "list.0.cash": 2000,
+        "list.0.fEmpFull": 217.5768,
+        "list.0.breakdown.rrspRoom": 360,
+        "list.0.breakdown.netIncome.ded": 1.92,
+        "list.0.breakdown.healthServicesFund.income": 498.08,
+        "list.0.breakdown.healthServicesFund.contribution": 0.0,
+        "list.0.breakdown.selfEmployment.base": 0.0,
+        "list.0.breakdown.selfEmployment.enhanced": 0.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 0.0,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.qpip": 4.39,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 1.92,
+        "list.0.breakdown.selfEmployment.qpipCredit": 2.47,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 1.92,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 500.0
+      }
+    },
+    {
+      "id": "2025-qc-qpip-at-ceiling",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 0,
+            "selfEmployment": 98000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 7322.4,
+        "list.0.pay.enh": 2148.0,
+        "list.0.pay.ei": 0.0,
+        "list.0.pay.qpip": 860.44,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 0,
+        "list.0.workerDed": 1420,
+        "list.0.ti": 91814.478,
+        "list.0.tiP": 90394.478,
+        "list.0.cash": 98000,
+        "list.0.fEmpFull": 601.0711,
+        "list.0.breakdown.rrspRoom": 17640,
+        "list.0.breakdown.netIncome.ded": 4037.522,
+        "list.0.breakdown.healthServicesFund.income": 91814.478,
+        "list.0.breakdown.healthServicesFund.contribution": 437.5448,
+        "list.0.breakdown.selfEmployment.base": 7322.4,
+        "list.0.breakdown.selfEmployment.enhanced": 2148.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 3661.2,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 3661.2,
+        "list.0.breakdown.selfEmployment.qpip": 860.44,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 376.322,
+        "list.0.breakdown.selfEmployment.qpipCredit": 484.118,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 5809.2,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 6185.522,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 98000.0
+      }
+    },
+    {
+      "id": "2025-qc-qpip-above-ceiling",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 0,
+            "selfEmployment": 99000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 7322.4,
+        "list.0.pay.enh": 2148.0,
+        "list.0.pay.ei": 0.0,
+        "list.0.pay.qpip": 860.44,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 0,
+        "list.0.workerDed": 1420,
+        "list.0.ti": 92814.478,
+        "list.0.tiP": 91394.478,
+        "list.0.cash": 99000,
+        "list.0.fEmpFull": 601.0711,
+        "list.0.breakdown.rrspRoom": 17820,
+        "list.0.breakdown.netIncome.ded": 4037.522,
+        "list.0.breakdown.healthServicesFund.income": 92814.478,
+        "list.0.breakdown.healthServicesFund.contribution": 447.5448,
+        "list.0.breakdown.selfEmployment.base": 7322.4,
+        "list.0.breakdown.selfEmployment.enhanced": 2148.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 3661.2,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 3661.2,
+        "list.0.breakdown.selfEmployment.qpip": 860.44,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 376.322,
+        "list.0.breakdown.selfEmployment.qpipCredit": 484.118,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 5809.2,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 6185.522,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 99000.0
+      }
+    },
+    {
+      "id": "2025-qc-qpip-shared-ceiling",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 97000,
+            "selfEmployment": 5000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 3661.2,
+        "list.0.pay.enh": 1074.0,
+        "list.0.pay.ei": 860.67,
+        "list.0.pay.qpip": 487.96,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 1471,
+        "list.0.workerDed": 1420,
+        "list.0.ti": 100922.16,
+        "list.0.tiP": 99502.16,
+        "list.0.cash": 102000,
+        "list.0.fEmpFull": 939.1635,
+        "list.0.breakdown.rrspRoom": 18360,
+        "list.0.breakdown.netIncome.ded": 3.84,
+        "list.0.breakdown.healthServicesFund.income": 4996.16,
+        "list.0.breakdown.healthServicesFund.contribution": 0.0,
+        "list.0.breakdown.selfEmployment.base": 0.0,
+        "list.0.breakdown.selfEmployment.enhanced": 0.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 0.0,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.qpip": 8.78,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 3.84,
+        "list.0.breakdown.selfEmployment.qpipCredit": 4.94,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 3.84,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 5000.0
+      }
+    },
+    {
+      "id": "2025-qc-qpip-employee-exhausts",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 98000,
+            "selfEmployment": 5000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 3661.2,
+        "list.0.pay.enh": 1074.0,
+        "list.0.pay.ei": 860.67,
+        "list.0.pay.qpip": 484.12,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 1471,
+        "list.0.workerDed": 1420,
+        "list.0.ti": 101926.0,
+        "list.0.tiP": 100506.0,
+        "list.0.cash": 103000,
+        "list.0.fEmpFull": 939.1635,
+        "list.0.breakdown.rrspRoom": 18540,
+        "list.0.breakdown.netIncome.ded": 0.0,
+        "list.0.breakdown.healthServicesFund.income": 5000.0,
+        "list.0.breakdown.healthServicesFund.contribution": 0.0,
+        "list.0.breakdown.selfEmployment.base": 0.0,
+        "list.0.breakdown.selfEmployment.enhanced": 0.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 0.0,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.qpip": 0.0,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.qpipCredit": 0.0,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 5000.0
+      }
+    },
+    {
+      "id": "2025-on-turns-70-june",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "ord": 0,
+            "selfEmployment": 100000,
+            "age": 70,
+            "birthMonth": 6
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 3356.1,
+        "list.0.pay.enh": 1074.0,
+        "list.0.pay.ei": 0.0,
+        "list.0.pay.qpip": 0,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 0,
+        "list.0.workerDed": 0,
+        "list.0.ti": 97247.95,
+        "list.0.tiP": 97247.95,
+        "list.0.cash": 100000,
+        "list.0.fEmpFull": 243.3173,
+        "list.0.breakdown.rrspRoom": 18000,
+        "list.0.breakdown.netIncome.ded": 1678.05,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "list.0.breakdown.selfEmployment.base": 3356.1,
+        "list.0.breakdown.selfEmployment.enhanced": 1074.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 1678.05,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 1678.05,
+        "list.0.breakdown.selfEmployment.qpip": 0,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.qpipCredit": 0.0,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 2752.05,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 2752.05,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 50000.0,
+        "list.0.pEmpFull": 84.7415,
+        "list.0.lift": 0,
+        "list.0.breakdown.selfEmployment.contributoryMonths": [1, 2, 3, 4, 5, 6]
+      }
+    },
+    {
+      "id": "2025-on-past-70",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "ord": 0,
+            "selfEmployment": 100000,
+            "age": 71,
+            "birthMonth": 6
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 0.0,
+        "list.0.pay.enh": 0.0,
+        "list.0.pay.ei": 0.0,
+        "list.0.pay.qpip": 0,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 0,
+        "list.0.workerDed": 0,
+        "list.0.ti": 100000.0,
+        "list.0.tiP": 100000.0,
+        "list.0.cash": 100000,
+        "list.0.fEmpFull": 0.0,
+        "list.0.breakdown.rrspRoom": 18000,
+        "list.0.breakdown.netIncome.ded": 0.0,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "list.0.breakdown.selfEmployment.base": 0.0,
+        "list.0.breakdown.selfEmployment.enhanced": 0.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 0.0,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.qpip": 0,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.qpipCredit": 0.0,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 0.0,
+        "list.0.pEmpFull": 0.0,
+        "list.0.lift": 0
+      }
+    },
+    {
+      "id": "2025-qc-turns-72",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 0,
+            "selfEmployment": 100000,
+            "age": 72,
+            "birthMonth": 6
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 7322.4,
+        "list.0.pay.enh": 2148.0,
+        "list.0.pay.ei": 0.0,
+        "list.0.pay.qpip": 860.44,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 0,
+        "list.0.workerDed": 1420,
+        "list.0.ti": 93814.478,
+        "list.0.tiP": 92394.478,
+        "list.0.cash": 100000,
+        "list.0.fEmpFull": 601.0711,
+        "list.0.breakdown.rrspRoom": 18000,
+        "list.0.breakdown.netIncome.ded": 4037.522,
+        "list.0.breakdown.healthServicesFund.income": 93814.478,
+        "list.0.breakdown.healthServicesFund.contribution": 457.5448,
+        "list.0.breakdown.selfEmployment.base": 7322.4,
+        "list.0.breakdown.selfEmployment.enhanced": 2148.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 3661.2,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 3661.2,
+        "list.0.breakdown.selfEmployment.qpip": 860.44,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 376.322,
+        "list.0.breakdown.selfEmployment.qpipCredit": 484.118,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 5809.2,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 6185.522,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 100000.0
+      }
+    },
+    {
+      "id": "2025-qc-past-72",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 0,
+            "selfEmployment": 100000,
+            "age": 73,
+            "birthMonth": 6
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 0.0,
+        "list.0.pay.enh": 0.0,
+        "list.0.pay.ei": 0.0,
+        "list.0.pay.qpip": 860.44,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 0,
+        "list.0.workerDed": 1420,
+        "list.0.ti": 99623.678,
+        "list.0.tiP": 98203.678,
+        "list.0.cash": 100000,
+        "list.0.fEmpFull": 70.1971,
+        "list.0.breakdown.rrspRoom": 18000,
+        "list.0.breakdown.netIncome.ded": 376.322,
+        "list.0.breakdown.healthServicesFund.income": 99623.678,
+        "list.0.breakdown.healthServicesFund.contribution": 515.6368,
+        "list.0.breakdown.selfEmployment.base": 0.0,
+        "list.0.breakdown.selfEmployment.enhanced": 0.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 0.0,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.qpip": 860.44,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 376.322,
+        "list.0.breakdown.selfEmployment.qpipCredit": 484.118,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 376.322,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 0.0
+      }
+    },
+    {
+      "id": "2025-on-mixed-cpt30-prorates-profit",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "ord": 10000,
+            "selfEmployment": 60000,
+            "age": 66,
+            "birthMonth": 1,
+            "employeePayroll": {
+              "retirementPensionSince": {
+                "year": 2023,
+                "month": 1
+              },
+              "monthlyEarningsWeights": [1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0],
+              "cppElection": {
+                "stop": {
+                  "year": 2025,
+                  "month": 6
+                }
+              },
+              "qppElection": {
+                "stop": {
+                  "year": 2025,
+                  "month": 6
+                }
+              }
+            }
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 2947.725,
+        "list.0.pay.enh": 943.5,
+        "list.0.pay.ei": 164.0,
+        "list.0.pay.qpip": 0,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 1471,
+        "list.0.workerDed": 0,
+        "list.0.ti": 67786.825,
+        "list.0.tiP": 67786.825,
+        "list.0.cash": 70000,
+        "list.0.fEmpFull": 480.3922,
+        "list.0.breakdown.rrspRoom": 12600,
+        "list.0.breakdown.netIncome.ded": 1269.675,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "list.0.breakdown.selfEmployment.base": 2539.35,
+        "list.0.breakdown.selfEmployment.enhanced": 861.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 1269.675,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 1269.675,
+        "list.0.breakdown.selfEmployment.qpip": 0,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.qpipCredit": 0.0,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 2130.675,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 2130.675,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 30000.0,
+        "list.0.pEmpFull": 93.0235
+      }
+    },
+    {
+      "id": "2025-qc-rr50-does-not-stop-business",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 10000,
+            "selfEmployment": 60000,
+            "age": 66,
+            "birthMonth": 1,
+            "employeePayroll": {
+              "retirementPensionSince": {
+                "year": 2023,
+                "month": 1
+              },
+              "monthlyEarningsWeights": [1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0],
+              "cppElection": {
+                "stop": {
+                  "year": 2025,
+                  "month": 6
+                }
+              },
+              "qppElection": {
+                "stop": {
+                  "year": 2025,
+                  "month": 6
+                }
+              }
+            }
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 6831.0,
+        "list.0.pay.enh": 1265.0,
+        "list.0.pay.ei": 131.0,
+        "list.0.pay.qpip": 576.2,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 1471,
+        "list.0.workerDed": 1420,
+        "list.0.ti": 65264.5988,
+        "list.0.tiP": 63844.5988,
+        "list.0.cash": 70000,
+        "list.0.fEmpFull": 803.1258,
+        "list.0.breakdown.rrspRoom": 12600,
+        "list.0.breakdown.netIncome.ded": 3470.4012,
+        "list.0.breakdown.healthServicesFund.income": 55329.5988,
+        "list.0.breakdown.healthServicesFund.contribution": 150,
+        "list.0.breakdown.selfEmployment.base": 6480.0,
+        "list.0.breakdown.selfEmployment.enhanced": 1200.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 3240.0,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 3240.0,
+        "list.0.breakdown.selfEmployment.qpip": 526.8,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 230.4012,
+        "list.0.breakdown.selfEmployment.qpipCredit": 296.3988,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 4440.0,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 4670.4012,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 60000.0
+      }
+    },
+    {
+      "id": "2025-qc-hsf-threshold",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 0,
+            "selfEmployment": 10000,
+            "oth": 8649.400208,
+            "rrsp": 1000,
+            "fhsa": 500,
+            "ded": 200
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 702.0,
+        "list.0.pay.enh": 130.0,
+        "list.0.pay.ei": 0.0,
+        "list.0.pay.qpip": 87.8,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 0,
+        "list.0.workerDed": 600.0,
+        "list.0.ti": 16430.0,
+        "list.0.tiP": 15830.0,
+        "list.0.cash": 18649.4002,
+        "list.0.fEmpFull": 58.058,
+        "list.0.breakdown.rrspRoom": 1800,
+        "list.0.breakdown.netIncome.ded": 2089.4002,
+        "list.0.breakdown.healthServicesFund.income": 18130.0,
+        "list.0.breakdown.healthServicesFund.contribution": 0.0,
+        "list.0.breakdown.selfEmployment.base": 702.0,
+        "list.0.breakdown.selfEmployment.enhanced": 130.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 351.0,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 351.0,
+        "list.0.breakdown.selfEmployment.qpip": 87.8,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 38.4002,
+        "list.0.breakdown.selfEmployment.qpipCredit": 49.3998,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 481.0,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 519.4002,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 10000.0
+      }
+    },
+    {
+      "id": "2025-qc-hsf-above-threshold",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 0,
+            "selfEmployment": 10000,
+            "oth": 8650.400208,
+            "rrsp": 1000,
+            "fhsa": 500,
+            "ded": 200
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 702.0,
+        "list.0.pay.enh": 130.0,
+        "list.0.pay.ei": 0.0,
+        "list.0.pay.qpip": 87.8,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 0,
+        "list.0.workerDed": 600.0,
+        "list.0.ti": 16431.0,
+        "list.0.tiP": 15831.0,
+        "list.0.cash": 18650.4002,
+        "list.0.fEmpFull": 58.058,
+        "list.0.breakdown.rrspRoom": 1800,
+        "list.0.breakdown.netIncome.ded": 2089.4002,
+        "list.0.breakdown.healthServicesFund.income": 18131.0,
+        "list.0.breakdown.healthServicesFund.contribution": 0.01,
+        "list.0.breakdown.selfEmployment.base": 702.0,
+        "list.0.breakdown.selfEmployment.enhanced": 130.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 351.0,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 351.0,
+        "list.0.breakdown.selfEmployment.qpip": 87.8,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 38.4002,
+        "list.0.breakdown.selfEmployment.qpipCredit": 49.3998,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 481.0,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 519.4002,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 10000.0
+      }
+    },
+    {
+      "id": "2025-qc-hsf-plateau",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 0,
+            "selfEmployment": 10000,
+            "oth": 23649.400208,
+            "rrsp": 1000,
+            "fhsa": 500,
+            "ded": 200
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 702.0,
+        "list.0.pay.enh": 130.0,
+        "list.0.pay.ei": 0.0,
+        "list.0.pay.qpip": 87.8,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 0,
+        "list.0.workerDed": 600.0,
+        "list.0.ti": 31430.0,
+        "list.0.tiP": 30830.0,
+        "list.0.cash": 33649.4002,
+        "list.0.fEmpFull": 58.058,
+        "list.0.breakdown.rrspRoom": 1800,
+        "list.0.breakdown.netIncome.ded": 2089.4002,
+        "list.0.breakdown.healthServicesFund.income": 33130.0,
+        "list.0.breakdown.healthServicesFund.contribution": 150,
+        "list.0.breakdown.selfEmployment.base": 702.0,
+        "list.0.breakdown.selfEmployment.enhanced": 130.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 351.0,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 351.0,
+        "list.0.breakdown.selfEmployment.qpip": 87.8,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 38.4002,
+        "list.0.breakdown.selfEmployment.qpipCredit": 49.3998,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 481.0,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 519.4002,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 10000.0
+      }
+    },
+    {
+      "id": "2025-qc-hsf-upper",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 0,
+            "selfEmployment": 10000,
+            "oth": 53579.400208,
+            "rrsp": 1000,
+            "fhsa": 500,
+            "ded": 200
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 702.0,
+        "list.0.pay.enh": 130.0,
+        "list.0.pay.ei": 0.0,
+        "list.0.pay.qpip": 87.8,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 0,
+        "list.0.workerDed": 600.0,
+        "list.0.ti": 61360.0,
+        "list.0.tiP": 60760.0,
+        "list.0.cash": 63579.4002,
+        "list.0.fEmpFull": 58.058,
+        "list.0.breakdown.rrspRoom": 1800,
+        "list.0.breakdown.netIncome.ded": 2089.4002,
+        "list.0.breakdown.healthServicesFund.income": 63060.0,
+        "list.0.breakdown.healthServicesFund.contribution": 150,
+        "list.0.breakdown.selfEmployment.base": 702.0,
+        "list.0.breakdown.selfEmployment.enhanced": 130.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 351.0,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 351.0,
+        "list.0.breakdown.selfEmployment.qpip": 87.8,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 38.4002,
+        "list.0.breakdown.selfEmployment.qpipCredit": 49.3998,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 481.0,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 519.4002,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 10000.0
+      }
+    },
+    {
+      "id": "2025-qc-hsf-above-upper",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 0,
+            "selfEmployment": 10000,
+            "oth": 53580.400208,
+            "rrsp": 1000,
+            "fhsa": 500,
+            "ded": 200
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 702.0,
+        "list.0.pay.enh": 130.0,
+        "list.0.pay.ei": 0.0,
+        "list.0.pay.qpip": 87.8,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 0,
+        "list.0.workerDed": 600.0,
+        "list.0.ti": 61361.0,
+        "list.0.tiP": 60761.0,
+        "list.0.cash": 63580.4002,
+        "list.0.fEmpFull": 58.058,
+        "list.0.breakdown.rrspRoom": 1800,
+        "list.0.breakdown.netIncome.ded": 2089.4002,
+        "list.0.breakdown.healthServicesFund.income": 63061.0,
+        "list.0.breakdown.healthServicesFund.contribution": 150.01,
+        "list.0.breakdown.selfEmployment.base": 702.0,
+        "list.0.breakdown.selfEmployment.enhanced": 130.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 351.0,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 351.0,
+        "list.0.breakdown.selfEmployment.qpip": 87.8,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 38.4002,
+        "list.0.breakdown.selfEmployment.qpipCredit": 49.3998,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 481.0,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 519.4002,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 10000.0
+      }
+    },
+    {
+      "id": "2025-qc-hsf-cap",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 0,
+            "selfEmployment": 10000,
+            "oth": 138579.400208,
+            "rrsp": 1000,
+            "fhsa": 500,
+            "ded": 200
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 702.0,
+        "list.0.pay.enh": 130.0,
+        "list.0.pay.ei": 0.0,
+        "list.0.pay.qpip": 87.8,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 0,
+        "list.0.workerDed": 600.0,
+        "list.0.ti": 146360.0,
+        "list.0.tiP": 145760.0,
+        "list.0.cash": 148579.4002,
+        "list.0.fEmpFull": 58.058,
+        "list.0.breakdown.rrspRoom": 1800,
+        "list.0.breakdown.netIncome.ded": 2089.4002,
+        "list.0.breakdown.healthServicesFund.income": 148060.0,
+        "list.0.breakdown.healthServicesFund.contribution": 1000,
+        "list.0.breakdown.selfEmployment.base": 702.0,
+        "list.0.breakdown.selfEmployment.enhanced": 130.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 351.0,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 351.0,
+        "list.0.breakdown.selfEmployment.qpip": 87.8,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 38.4002,
+        "list.0.breakdown.selfEmployment.qpipCredit": 49.3998,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 481.0,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 519.4002,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 10000.0
+      }
+    },
+    {
+      "id": "2025-nt-self-not-wages",
+      "year": 2025,
+      "province": "NT",
+      "household": {
+        "people": [
+          {
+            "ord": 0,
+            "selfEmployment": 30000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 2623.5,
+        "list.0.pay.enh": 530.0,
+        "list.0.pay.ei": 0.0,
+        "list.0.pay.qpip": 0,
+        "list.0.pay.terr": 0.0,
+        "list.0.empAmt": 0,
+        "list.0.workerDed": 0,
+        "list.0.ti": 28158.25,
+        "list.0.tiP": 28158.25,
+        "list.0.cash": 30000,
+        "list.0.fEmpFull": 190.2037,
+        "list.0.breakdown.rrspRoom": 5400,
+        "list.0.breakdown.netIncome.ded": 1311.75,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "list.0.breakdown.selfEmployment.base": 2623.5,
+        "list.0.breakdown.selfEmployment.enhanced": 530.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 1311.75,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 1311.75,
+        "list.0.breakdown.selfEmployment.qpip": 0,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.qpipCredit": 0.0,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 1841.75,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 1841.75,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 30000.0
+      }
+    },
+    {
+      "id": "2025-nt-mixed-only-wages-payroll",
+      "year": 2025,
+      "province": "NT",
+      "household": {
+        "people": [
+          {
+            "ord": 10000,
+            "selfEmployment": 30000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 3291.75,
+        "list.0.pay.enh": 665.0,
+        "list.0.pay.ei": 164.0,
+        "list.0.pay.qpip": 0,
+        "list.0.pay.terr": 200.0,
+        "list.0.empAmt": 1471,
+        "list.0.workerDed": 0,
+        "list.0.ti": 37850.0,
+        "list.0.tiP": 37850.0,
+        "list.0.cash": 40000,
+        "list.0.fEmpFull": 499.0537,
+        "list.0.breakdown.rrspRoom": 7200,
+        "list.0.breakdown.netIncome.ded": 1485.0,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "list.0.breakdown.selfEmployment.base": 2970.0,
+        "list.0.breakdown.selfEmployment.enhanced": 600.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 1485.0,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 1485.0,
+        "list.0.breakdown.selfEmployment.qpip": 0,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.qpipCredit": 0.0,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 2085.0,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 2085.0,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 30000.0
+      }
+    },
+    {
+      "id": "2025-nu-self-not-wages",
+      "year": 2025,
+      "province": "NU",
+      "household": {
+        "people": [
+          {
+            "ord": 0,
+            "selfEmployment": 30000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 2623.5,
+        "list.0.pay.enh": 530.0,
+        "list.0.pay.ei": 0.0,
+        "list.0.pay.qpip": 0,
+        "list.0.pay.terr": 0.0,
+        "list.0.empAmt": 0,
+        "list.0.workerDed": 0,
+        "list.0.ti": 28158.25,
+        "list.0.tiP": 28158.25,
+        "list.0.cash": 30000,
+        "list.0.fEmpFull": 190.2037,
+        "list.0.breakdown.rrspRoom": 5400,
+        "list.0.breakdown.netIncome.ded": 1311.75,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "list.0.breakdown.selfEmployment.base": 2623.5,
+        "list.0.breakdown.selfEmployment.enhanced": 530.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 1311.75,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 1311.75,
+        "list.0.breakdown.selfEmployment.qpip": 0,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.qpipCredit": 0.0,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 1841.75,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 1841.75,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 30000.0
+      }
+    },
+    {
+      "id": "2025-nu-mixed-only-wages-payroll",
+      "year": 2025,
+      "province": "NU",
+      "household": {
+        "people": [
+          {
+            "ord": 10000,
+            "selfEmployment": 30000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 3291.75,
+        "list.0.pay.enh": 665.0,
+        "list.0.pay.ei": 164.0,
+        "list.0.pay.qpip": 0,
+        "list.0.pay.terr": 200.0,
+        "list.0.empAmt": 1471,
+        "list.0.workerDed": 0,
+        "list.0.ti": 37850.0,
+        "list.0.tiP": 37850.0,
+        "list.0.cash": 40000,
+        "list.0.fEmpFull": 499.0537,
+        "list.0.breakdown.rrspRoom": 7200,
+        "list.0.breakdown.netIncome.ded": 1485.0,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "list.0.breakdown.selfEmployment.base": 2970.0,
+        "list.0.breakdown.selfEmployment.enhanced": 600.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 1485.0,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 1485.0,
+        "list.0.breakdown.selfEmployment.qpip": 0,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.qpipCredit": 0.0,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 2085.0,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 2085.0,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 30000.0
+      }
+    },
+    {
+      "id": "2025-yt-self-not-wages",
+      "year": 2025,
+      "province": "YT",
+      "household": {
+        "people": [
+          {
+            "ord": 0,
+            "selfEmployment": 30000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 2623.5,
+        "list.0.pay.enh": 530.0,
+        "list.0.pay.ei": 0.0,
+        "list.0.pay.qpip": 0,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 0,
+        "list.0.workerDed": 0,
+        "list.0.ti": 28158.25,
+        "list.0.tiP": 28158.25,
+        "list.0.cash": 30000,
+        "list.0.fEmpFull": 190.2037,
+        "list.0.breakdown.rrspRoom": 5400,
+        "list.0.breakdown.netIncome.ded": 1311.75,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "list.0.breakdown.selfEmployment.base": 2623.5,
+        "list.0.breakdown.selfEmployment.enhanced": 530.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 1311.75,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 1311.75,
+        "list.0.breakdown.selfEmployment.qpip": 0,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.qpipCredit": 0.0,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 1841.75,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 1841.75,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 30000.0,
+        "list.0.pEmpFull": 83.952
+      }
+    },
+    {
+      "id": "2025-yt-mixed-only-wages-payroll",
+      "year": 2025,
+      "province": "YT",
+      "household": {
+        "people": [
+          {
+            "ord": 10000,
+            "selfEmployment": 30000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 3291.75,
+        "list.0.pay.enh": 665.0,
+        "list.0.pay.ei": 164.0,
+        "list.0.pay.qpip": 0,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 1471,
+        "list.0.workerDed": 0,
+        "list.0.ti": 37850.0,
+        "list.0.tiP": 37850.0,
+        "list.0.cash": 40000,
+        "list.0.fEmpFull": 499.0537,
+        "list.0.breakdown.rrspRoom": 7200,
+        "list.0.breakdown.netIncome.ded": 1485.0,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "list.0.breakdown.selfEmployment.base": 2970.0,
+        "list.0.breakdown.selfEmployment.enhanced": 600.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 1485.0,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 1485.0,
+        "list.0.breakdown.selfEmployment.qpip": 0,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.qpipCredit": 0.0,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 2085.0,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 2085.0,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 30000.0,
+        "list.0.pEmpFull": 220.272
+      }
+    },
+    {
+      "id": "2026-on-pierre-75000",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "ord": 0,
+            "selfEmployment": 75000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 7038.9,
+        "list.0.pay.enh": 1454.0,
+        "list.0.pay.ei": 0.0,
+        "list.0.pay.qpip": 0,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 0,
+        "list.0.workerDed": 0,
+        "list.0.ti": 70026.55,
+        "list.0.tiP": 70026.55,
+        "list.0.cash": 75000,
+        "list.0.fEmpFull": 492.723,
+        "list.0.breakdown.rrspRoom": 13500,
+        "list.0.breakdown.netIncome.ded": 3519.45,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "list.0.breakdown.selfEmployment.base": 7038.9,
+        "list.0.breakdown.selfEmployment.enhanced": 1454.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 3519.45,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 3519.45,
+        "list.0.breakdown.selfEmployment.qpip": 0,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.qpipCredit": 0.0,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 4973.45,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 4973.45,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 75000.0,
+        "list.0.pEmpFull": 177.7322,
+        "list.0.lift": 0
+      }
+    },
+    {
+      "id": "2026-on-below-exemption",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "ord": 0,
+            "selfEmployment": 3499
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 0.0,
+        "list.0.pay.enh": 0.0,
+        "list.0.pay.ei": 0.0,
+        "list.0.pay.qpip": 0,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 0,
+        "list.0.workerDed": 0,
+        "list.0.ti": 3499.0,
+        "list.0.tiP": 3499.0,
+        "list.0.cash": 3499,
+        "list.0.fEmpFull": 0.0,
+        "list.0.breakdown.rrspRoom": 630,
+        "list.0.breakdown.netIncome.ded": 0.0,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "list.0.breakdown.selfEmployment.base": 0.0,
+        "list.0.breakdown.selfEmployment.enhanced": 0.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 0.0,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.qpip": 0,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.qpipCredit": 0.0,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 3499.0,
+        "list.0.pEmpFull": 0.0,
+        "list.0.lift": 0
+      }
+    },
+    {
+      "id": "2026-on-at-exemption",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "ord": 0,
+            "selfEmployment": 3500
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 0.0,
+        "list.0.pay.enh": 0.0,
+        "list.0.pay.ei": 0.0,
+        "list.0.pay.qpip": 0,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 0,
+        "list.0.workerDed": 0,
+        "list.0.ti": 3500.0,
+        "list.0.tiP": 3500.0,
+        "list.0.cash": 3500,
+        "list.0.fEmpFull": 0.0,
+        "list.0.breakdown.rrspRoom": 630,
+        "list.0.breakdown.netIncome.ded": 0.0,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "list.0.breakdown.selfEmployment.base": 0.0,
+        "list.0.breakdown.selfEmployment.enhanced": 0.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 0.0,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.qpip": 0,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.qpipCredit": 0.0,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 3500.0,
+        "list.0.pEmpFull": 0.0,
+        "list.0.lift": 0
+      }
+    },
+    {
+      "id": "2026-on-above-exemption",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "ord": 0,
+            "selfEmployment": 3501
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 0.099,
+        "list.0.pay.enh": 0.02,
+        "list.0.pay.ei": 0.0,
+        "list.0.pay.qpip": 0,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 0,
+        "list.0.workerDed": 0,
+        "list.0.ti": 3500.9305,
+        "list.0.tiP": 3500.9305,
+        "list.0.cash": 3501,
+        "list.0.fEmpFull": 0.0069,
+        "list.0.breakdown.rrspRoom": 630,
+        "list.0.breakdown.netIncome.ded": 0.0495,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "list.0.breakdown.selfEmployment.base": 0.099,
+        "list.0.breakdown.selfEmployment.enhanced": 0.02,
+        "list.0.breakdown.selfEmployment.baseCredit": 0.0495,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 0.0495,
+        "list.0.breakdown.selfEmployment.qpip": 0,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.qpipCredit": 0.0,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 0.0695,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 0.0695,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 3501.0,
+        "list.0.pEmpFull": 0.0025,
+        "list.0.lift": 0
+      }
+    },
+    {
+      "id": "2026-on-at-ympe",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "ord": 0,
+            "selfEmployment": 74600
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 7038.9,
+        "list.0.pay.enh": 1422.0,
+        "list.0.pay.ei": 0.0,
+        "list.0.pay.qpip": 0,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 0,
+        "list.0.workerDed": 0,
+        "list.0.ti": 69658.55,
+        "list.0.tiP": 69658.55,
+        "list.0.cash": 74600,
+        "list.0.fEmpFull": 492.723,
+        "list.0.breakdown.rrspRoom": 13428,
+        "list.0.breakdown.netIncome.ded": 3519.45,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "list.0.breakdown.selfEmployment.base": 7038.9,
+        "list.0.breakdown.selfEmployment.enhanced": 1422.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 3519.45,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 3519.45,
+        "list.0.breakdown.selfEmployment.qpip": 0,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.qpipCredit": 0.0,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 4941.45,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 4941.45,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 74600.0,
+        "list.0.pEmpFull": 177.7322,
+        "list.0.lift": 0
+      }
+    },
+    {
+      "id": "2026-on-above-ympe",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "ord": 0,
+            "selfEmployment": 74601
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 7038.9,
+        "list.0.pay.enh": 1422.08,
+        "list.0.pay.ei": 0.0,
+        "list.0.pay.qpip": 0,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 0,
+        "list.0.workerDed": 0,
+        "list.0.ti": 69659.47,
+        "list.0.tiP": 69659.47,
+        "list.0.cash": 74601,
+        "list.0.fEmpFull": 492.723,
+        "list.0.breakdown.rrspRoom": 13428,
+        "list.0.breakdown.netIncome.ded": 3519.45,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "list.0.breakdown.selfEmployment.base": 7038.9,
+        "list.0.breakdown.selfEmployment.enhanced": 1422.08,
+        "list.0.breakdown.selfEmployment.baseCredit": 3519.45,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 3519.45,
+        "list.0.breakdown.selfEmployment.qpip": 0,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.qpipCredit": 0.0,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 4941.53,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 4941.53,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 74601.0,
+        "list.0.pEmpFull": 177.7322,
+        "list.0.lift": 0
+      }
+    },
+    {
+      "id": "2026-on-at-yampe",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "ord": 0,
+            "selfEmployment": 85000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 7038.9,
+        "list.0.pay.enh": 2254.0,
+        "list.0.pay.ei": 0.0,
+        "list.0.pay.qpip": 0,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 0,
+        "list.0.workerDed": 0,
+        "list.0.ti": 79226.55,
+        "list.0.tiP": 79226.55,
+        "list.0.cash": 85000,
+        "list.0.fEmpFull": 492.723,
+        "list.0.breakdown.rrspRoom": 15300,
+        "list.0.breakdown.netIncome.ded": 3519.45,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "list.0.breakdown.selfEmployment.base": 7038.9,
+        "list.0.breakdown.selfEmployment.enhanced": 2254.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 3519.45,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 3519.45,
+        "list.0.breakdown.selfEmployment.qpip": 0,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.qpipCredit": 0.0,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 5773.45,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 5773.45,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 85000.0,
+        "list.0.pEmpFull": 177.7322,
+        "list.0.lift": 0
+      }
+    },
+    {
+      "id": "2026-on-above-yampe",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "ord": 0,
+            "selfEmployment": 85001
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 7038.9,
+        "list.0.pay.enh": 2254.0,
+        "list.0.pay.ei": 0.0,
+        "list.0.pay.qpip": 0,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 0,
+        "list.0.workerDed": 0,
+        "list.0.ti": 79227.55,
+        "list.0.tiP": 79227.55,
+        "list.0.cash": 85001,
+        "list.0.fEmpFull": 492.723,
+        "list.0.breakdown.rrspRoom": 15300,
+        "list.0.breakdown.netIncome.ded": 3519.45,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "list.0.breakdown.selfEmployment.base": 7038.9,
+        "list.0.breakdown.selfEmployment.enhanced": 2254.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 3519.45,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 3519.45,
+        "list.0.breakdown.selfEmployment.qpip": 0,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.qpipCredit": 0.0,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 5773.45,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 5773.45,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 85001.0,
+        "list.0.pEmpFull": 177.7322,
+        "list.0.lift": 0
+      }
+    },
+    {
+      "id": "2026-on-mixed-unused-exemption",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "ord": 2000,
+            "selfEmployment": 3000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 148.5,
+        "list.0.pay.enh": 30.0,
+        "list.0.pay.ei": 32.6,
+        "list.0.pay.qpip": 0,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 1501,
+        "list.0.workerDed": 0,
+        "list.0.ti": 4895.75,
+        "list.0.tiP": 4895.75,
+        "list.0.cash": 5000,
+        "list.0.fEmpFull": 225.099,
+        "list.0.breakdown.rrspRoom": 900,
+        "list.0.breakdown.netIncome.ded": 74.25,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "list.0.breakdown.selfEmployment.base": 148.5,
+        "list.0.breakdown.selfEmployment.enhanced": 30.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 74.25,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 74.25,
+        "list.0.breakdown.selfEmployment.qpip": 0,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.qpipCredit": 0.0,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 104.25,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 104.25,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 3000.0,
+        "list.0.pEmpFull": 5.3959
+      }
+    },
+    {
+      "id": "2026-on-mixed-first-tier",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "ord": 30000,
+            "selfEmployment": 30000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 4281.75,
+        "list.0.pay.enh": 865.0,
+        "list.0.pay.ei": 489.0,
+        "list.0.pay.qpip": 0,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 1501,
+        "list.0.workerDed": 0,
+        "list.0.ti": 57650.0,
+        "list.0.tiP": 57650.0,
+        "list.0.cash": 60000,
+        "list.0.fEmpFull": 670.145,
+        "list.0.breakdown.rrspRoom": 10800,
+        "list.0.breakdown.netIncome.ded": 1485.0,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "list.0.breakdown.selfEmployment.base": 2970.0,
+        "list.0.breakdown.selfEmployment.enhanced": 600.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 1485.0,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 1485.0,
+        "list.0.breakdown.selfEmployment.qpip": 0,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.qpipCredit": 0.0,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 2085.0,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 2085.0,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 30000.0,
+        "list.0.pEmpFull": 165.9304
+      }
+    },
+    {
+      "id": "2026-on-mixed-cross-ympe",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "ord": 69600,
+            "selfEmployment": 10000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 3766.95,
+        "list.0.pay.enh": 1161.0,
+        "list.0.pay.ei": 1123.07,
+        "list.0.pay.qpip": 0,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 1501,
+        "list.0.workerDed": 0,
+        "list.0.ti": 78191.5,
+        "list.0.tiP": 78191.5,
+        "list.0.cash": 79600,
+        "list.0.fEmpFull": 860.0928,
+        "list.0.breakdown.rrspRoom": 14328,
+        "list.0.breakdown.netIncome.ded": 247.5,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "list.0.breakdown.selfEmployment.base": 495.0,
+        "list.0.breakdown.selfEmployment.enhanced": 500.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 247.5,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 247.5,
+        "list.0.breakdown.selfEmployment.qpip": 0,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.qpipCredit": 0.0,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 747.5,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 747.5,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 10000.0,
+        "list.0.pEmpFull": 234.4473
+      }
+    },
+    {
+      "id": "2026-on-mixed-employee-at-ympe",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "ord": 74600,
+            "selfEmployment": 20000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 3519.45,
+        "list.0.pay.enh": 1543.0,
+        "list.0.pay.ei": 1123.07,
+        "list.0.pay.qpip": 0,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 1501,
+        "list.0.workerDed": 0,
+        "list.0.ti": 93057.0,
+        "list.0.tiP": 93057.0,
+        "list.0.cash": 94600,
+        "list.0.fEmpFull": 860.0928,
+        "list.0.breakdown.rrspRoom": 17028,
+        "list.0.breakdown.netIncome.ded": 0.0,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "list.0.breakdown.selfEmployment.base": 0.0,
+        "list.0.breakdown.selfEmployment.enhanced": 832.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 0.0,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.qpip": 0,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.qpipCredit": 0.0,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 832.0,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 832.0,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 20000.0,
+        "list.0.pEmpFull": 234.4473
+      }
+    },
+    {
+      "id": "2026-on-mixed-employee-in-tier2",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "ord": 75600,
+            "selfEmployment": 20000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 3519.45,
+        "list.0.pay.enh": 1503.0,
+        "list.0.pay.ei": 1123.07,
+        "list.0.pay.qpip": 0,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 1501,
+        "list.0.workerDed": 0,
+        "list.0.ti": 94097.0,
+        "list.0.tiP": 94097.0,
+        "list.0.cash": 95600,
+        "list.0.fEmpFull": 860.0928,
+        "list.0.breakdown.rrspRoom": 17208,
+        "list.0.breakdown.netIncome.ded": 0.0,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "list.0.breakdown.selfEmployment.base": 0.0,
+        "list.0.breakdown.selfEmployment.enhanced": 752.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 0.0,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.qpip": 0,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.qpipCredit": 0.0,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 752.0,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 752.0,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 20000.0,
+        "list.0.pEmpFull": 234.4473
+      }
+    },
+    {
+      "id": "2026-on-mixed-employee-max",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "ord": 85000,
+            "selfEmployment": 20000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 3519.45,
+        "list.0.pay.enh": 1127.0,
+        "list.0.pay.ei": 1123.07,
+        "list.0.pay.qpip": 0,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 1501,
+        "list.0.workerDed": 0,
+        "list.0.ti": 103873.0,
+        "list.0.tiP": 103873.0,
+        "list.0.cash": 105000,
+        "list.0.fEmpFull": 860.0928,
+        "list.0.breakdown.rrspRoom": 18900,
+        "list.0.breakdown.netIncome.ded": 0.0,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "list.0.breakdown.selfEmployment.base": 0.0,
+        "list.0.breakdown.selfEmployment.enhanced": 0.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 0.0,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.qpip": 0,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.qpipCredit": 0.0,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 20000.0,
+        "list.0.pEmpFull": 234.4473
+      }
+    },
+    {
+      "id": "2026-qc-pierre-75000",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 0,
+            "selfEmployment": 75000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 7536.6,
+        "list.0.pay.enh": 1454.0,
+        "list.0.pay.ei": 0.0,
+        "list.0.pay.qpip": 573.0,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 0,
+        "list.0.workerDed": 1450,
+        "list.0.ti": 69527.2016,
+        "list.0.tiP": 68077.2016,
+        "list.0.cash": 75000,
+        "list.0.fEmpFull": 572.7122,
+        "list.0.breakdown.rrspRoom": 13500,
+        "list.0.breakdown.netIncome.ded": 4018.7984,
+        "list.0.breakdown.healthServicesFund.income": 69527.2016,
+        "list.0.breakdown.healthServicesFund.contribution": 201.722,
+        "list.0.breakdown.selfEmployment.base": 7536.6,
+        "list.0.breakdown.selfEmployment.enhanced": 1454.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 3768.3,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 3768.3,
+        "list.0.breakdown.selfEmployment.qpip": 573.0,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 250.4984,
+        "list.0.breakdown.selfEmployment.qpipCredit": 322.5016,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 5222.3,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 5472.7984,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 75000.0
+      }
+    },
+    {
+      "id": "2026-qc-below-exemption",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 0,
+            "selfEmployment": 3499
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 0.0,
+        "list.0.pay.enh": 0.0,
+        "list.0.pay.ei": 0.0,
+        "list.0.pay.qpip": 26.7324,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 0,
+        "list.0.workerDed": 209.94,
+        "list.0.ti": 3487.3134,
+        "list.0.tiP": 3277.3734,
+        "list.0.cash": 3499,
+        "list.0.fEmpFull": 2.1064,
+        "list.0.breakdown.rrspRoom": 630,
+        "list.0.breakdown.netIncome.ded": 11.6866,
+        "list.0.breakdown.healthServicesFund.income": 3487.3134,
+        "list.0.breakdown.healthServicesFund.contribution": 0.0,
+        "list.0.breakdown.selfEmployment.base": 0.0,
+        "list.0.breakdown.selfEmployment.enhanced": 0.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 0.0,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.qpip": 26.7324,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 11.6866,
+        "list.0.breakdown.selfEmployment.qpipCredit": 15.0458,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 11.6866,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 3499.0
+      }
+    },
+    {
+      "id": "2026-qc-at-exemption",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 0,
+            "selfEmployment": 3500
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 0.0,
+        "list.0.pay.enh": 0.0,
+        "list.0.pay.ei": 0.0,
+        "list.0.pay.qpip": 26.74,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 0,
+        "list.0.workerDed": 210.0,
+        "list.0.ti": 3488.3101,
+        "list.0.tiP": 3278.3101,
+        "list.0.cash": 3500,
+        "list.0.fEmpFull": 2.107,
+        "list.0.breakdown.rrspRoom": 630,
+        "list.0.breakdown.netIncome.ded": 11.6899,
+        "list.0.breakdown.healthServicesFund.income": 3488.3101,
+        "list.0.breakdown.healthServicesFund.contribution": 0.0,
+        "list.0.breakdown.selfEmployment.base": 0.0,
+        "list.0.breakdown.selfEmployment.enhanced": 0.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 0.0,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.qpip": 26.74,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 11.6899,
+        "list.0.breakdown.selfEmployment.qpipCredit": 15.0501,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 11.6899,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 3500.0
+      }
+    },
+    {
+      "id": "2026-qc-above-exemption",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 0,
+            "selfEmployment": 3501
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 0.106,
+        "list.0.pay.enh": 0.02,
+        "list.0.pay.ei": 0.0,
+        "list.0.pay.qpip": 26.7476,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 0,
+        "list.0.workerDed": 210.06,
+        "list.0.ti": 3489.2337,
+        "list.0.tiP": 3279.1737,
+        "list.0.cash": 3501,
+        "list.0.fEmpFull": 2.115,
+        "list.0.breakdown.rrspRoom": 630,
+        "list.0.breakdown.netIncome.ded": 11.7463,
+        "list.0.breakdown.healthServicesFund.income": 3489.2337,
+        "list.0.breakdown.healthServicesFund.contribution": 0.0,
+        "list.0.breakdown.selfEmployment.base": 0.106,
+        "list.0.breakdown.selfEmployment.enhanced": 0.02,
+        "list.0.breakdown.selfEmployment.baseCredit": 0.053,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 0.053,
+        "list.0.breakdown.selfEmployment.qpip": 26.7476,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 11.6933,
+        "list.0.breakdown.selfEmployment.qpipCredit": 15.0544,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 0.073,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 11.7663,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 3501.0
+      }
+    },
+    {
+      "id": "2026-qc-at-ympe",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 0,
+            "selfEmployment": 74600
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 7536.6,
+        "list.0.pay.enh": 1422.0,
+        "list.0.pay.ei": 0.0,
+        "list.0.pay.qpip": 569.944,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 0,
+        "list.0.workerDed": 1450,
+        "list.0.ti": 69160.5376,
+        "list.0.tiP": 67710.5376,
+        "list.0.cash": 74600,
+        "list.0.fEmpFull": 572.4714,
+        "list.0.breakdown.rrspRoom": 13428,
+        "list.0.breakdown.netIncome.ded": 4017.4624,
+        "list.0.breakdown.healthServicesFund.income": 69160.5376,
+        "list.0.breakdown.healthServicesFund.contribution": 198.0554,
+        "list.0.breakdown.selfEmployment.base": 7536.6,
+        "list.0.breakdown.selfEmployment.enhanced": 1422.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 3768.3,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 3768.3,
+        "list.0.breakdown.selfEmployment.qpip": 569.944,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 249.1624,
+        "list.0.breakdown.selfEmployment.qpipCredit": 320.7816,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 5190.3,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 5439.4624,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 74600.0
+      }
+    },
+    {
+      "id": "2026-qc-above-ympe",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 0,
+            "selfEmployment": 74601
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 7536.6,
+        "list.0.pay.enh": 1422.08,
+        "list.0.pay.ei": 0.0,
+        "list.0.pay.qpip": 569.9516,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 0,
+        "list.0.workerDed": 1450,
+        "list.0.ti": 69161.4542,
+        "list.0.tiP": 67711.4542,
+        "list.0.cash": 74601,
+        "list.0.fEmpFull": 572.472,
+        "list.0.breakdown.rrspRoom": 13428,
+        "list.0.breakdown.netIncome.ded": 4017.4658,
+        "list.0.breakdown.healthServicesFund.income": 69161.4542,
+        "list.0.breakdown.healthServicesFund.contribution": 198.0645,
+        "list.0.breakdown.selfEmployment.base": 7536.6,
+        "list.0.breakdown.selfEmployment.enhanced": 1422.08,
+        "list.0.breakdown.selfEmployment.baseCredit": 3768.3,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 3768.3,
+        "list.0.breakdown.selfEmployment.qpip": 569.9516,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 249.1658,
+        "list.0.breakdown.selfEmployment.qpipCredit": 320.7859,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 5190.38,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 5439.5458,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 74601.0
+      }
+    },
+    {
+      "id": "2026-qc-at-yampe",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 0,
+            "selfEmployment": 85000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 7536.6,
+        "list.0.pay.enh": 2254.0,
+        "list.0.pay.ei": 0.0,
+        "list.0.pay.qpip": 649.4,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 0,
+        "list.0.workerDed": 1450,
+        "list.0.ti": 78693.8018,
+        "list.0.tiP": 77243.8018,
+        "list.0.cash": 85000,
+        "list.0.fEmpFull": 578.7323,
+        "list.0.breakdown.rrspRoom": 15300,
+        "list.0.breakdown.netIncome.ded": 4052.1982,
+        "list.0.breakdown.healthServicesFund.income": 78693.8018,
+        "list.0.breakdown.healthServicesFund.contribution": 293.388,
+        "list.0.breakdown.selfEmployment.base": 7536.6,
+        "list.0.breakdown.selfEmployment.enhanced": 2254.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 3768.3,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 3768.3,
+        "list.0.breakdown.selfEmployment.qpip": 649.4,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 283.8982,
+        "list.0.breakdown.selfEmployment.qpipCredit": 365.5018,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 6022.3,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 6306.1982,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 85000.0
+      }
+    },
+    {
+      "id": "2026-qc-above-yampe",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 0,
+            "selfEmployment": 85001
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 7536.6,
+        "list.0.pay.enh": 2254.0,
+        "list.0.pay.ei": 0.0,
+        "list.0.pay.qpip": 649.4076,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 0,
+        "list.0.workerDed": 1450,
+        "list.0.ti": 78694.7985,
+        "list.0.tiP": 77244.7985,
+        "list.0.cash": 85001,
+        "list.0.fEmpFull": 578.7329,
+        "list.0.breakdown.rrspRoom": 15300,
+        "list.0.breakdown.netIncome.ded": 4052.2015,
+        "list.0.breakdown.healthServicesFund.income": 78694.7985,
+        "list.0.breakdown.healthServicesFund.contribution": 293.398,
+        "list.0.breakdown.selfEmployment.base": 7536.6,
+        "list.0.breakdown.selfEmployment.enhanced": 2254.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 3768.3,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 3768.3,
+        "list.0.breakdown.selfEmployment.qpip": 649.4076,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 283.9015,
+        "list.0.breakdown.selfEmployment.qpipCredit": 365.5061,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 6022.3,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 6306.2015,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 85001.0
+      }
+    },
+    {
+      "id": "2026-qc-mixed-unused-exemption",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 2000,
+            "selfEmployment": 3000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 159.0,
+        "list.0.pay.enh": 30.0,
+        "list.0.pay.ei": 26.0,
+        "list.0.pay.qpip": 31.52,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 1501,
+        "list.0.workerDed": 300.0,
+        "list.0.ti": 4880.4801,
+        "list.0.tiP": 4580.4801,
+        "list.0.cash": 5000,
+        "list.0.fEmpFull": 227.92,
+        "list.0.breakdown.rrspRoom": 900,
+        "list.0.breakdown.netIncome.ded": 89.5199,
+        "list.0.breakdown.healthServicesFund.income": 2880.4801,
+        "list.0.breakdown.healthServicesFund.contribution": 0.0,
+        "list.0.breakdown.selfEmployment.base": 159.0,
+        "list.0.breakdown.selfEmployment.enhanced": 30.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 79.5,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 79.5,
+        "list.0.breakdown.selfEmployment.qpip": 22.92,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 10.0199,
+        "list.0.breakdown.selfEmployment.qpipCredit": 12.9001,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 109.5,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 119.5199,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 3000.0
+      }
+    },
+    {
+      "id": "2026-qc-mixed-first-tier",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 30000,
+            "selfEmployment": 30000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 4584.5,
+        "list.0.pay.enh": 865.0,
+        "list.0.pay.ei": 390.0,
+        "list.0.pay.qpip": 358.2,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 1501,
+        "list.0.workerDed": 1450,
+        "list.0.ti": 57444.8006,
+        "list.0.tiP": 55994.8006,
+        "list.0.cash": 60000,
+        "list.0.fEmpFull": 720.0901,
+        "list.0.breakdown.rrspRoom": 10800,
+        "list.0.breakdown.netIncome.ded": 1690.1994,
+        "list.0.breakdown.healthServicesFund.income": 27709.8006,
+        "list.0.breakdown.healthServicesFund.contribution": 92.098,
+        "list.0.breakdown.selfEmployment.base": 3180.0,
+        "list.0.breakdown.selfEmployment.enhanced": 600.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 1590.0,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 1590.0,
+        "list.0.breakdown.selfEmployment.qpip": 229.2,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 100.1994,
+        "list.0.breakdown.selfEmployment.qpipCredit": 129.0006,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 2190.0,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 2290.1994,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 30000.0
+      }
+    },
+    {
+      "id": "2026-qc-mixed-cross-ympe",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 69600,
+            "selfEmployment": 10000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 4033.3,
+        "list.0.pay.enh": 1161.0,
+        "list.0.pay.ei": 895.7,
+        "list.0.pay.qpip": 375.68,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 1501,
+        "list.0.workerDed": 1450,
+        "list.0.ti": 78140.6002,
+        "list.0.tiP": 76690.6002,
+        "list.0.cash": 79600,
+        "list.0.fEmpFull": 911.0192,
+        "list.0.breakdown.rrspRoom": 14328,
+        "list.0.breakdown.netIncome.ded": 298.3998,
+        "list.0.breakdown.healthServicesFund.income": 9201.6002,
+        "list.0.breakdown.healthServicesFund.contribution": 0.0,
+        "list.0.breakdown.selfEmployment.base": 530.0,
+        "list.0.breakdown.selfEmployment.enhanced": 500.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 265.0,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 265.0,
+        "list.0.breakdown.selfEmployment.qpip": 76.4,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 33.3998,
+        "list.0.breakdown.selfEmployment.qpipCredit": 43.0002,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 765.0,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 798.3998,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 10000.0
+      }
+    },
+    {
+      "id": "2026-qc-mixed-employee-at-ympe",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 74600,
+            "selfEmployment": 20000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 3768.3,
+        "list.0.pay.enh": 1543.0,
+        "list.0.pay.ei": 895.7,
+        "list.0.pay.qpip": 473.58,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 1501,
+        "list.0.workerDed": 1450,
+        "list.0.ti": 92990.2004,
+        "list.0.tiP": 91540.2004,
+        "list.0.cash": 94600,
+        "list.0.fEmpFull": 920.0493,
+        "list.0.breakdown.rrspRoom": 17028,
+        "list.0.breakdown.netIncome.ded": 66.7996,
+        "list.0.breakdown.healthServicesFund.income": 19101.2004,
+        "list.0.breakdown.healthServicesFund.contribution": 6.012,
+        "list.0.breakdown.selfEmployment.base": 0.0,
+        "list.0.breakdown.selfEmployment.enhanced": 832.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 0.0,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.qpip": 152.8,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 66.7996,
+        "list.0.breakdown.selfEmployment.qpipCredit": 86.0004,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 832.0,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 898.7996,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 20000.0
+      }
+    },
+    {
+      "id": "2026-qc-mixed-employee-in-tier2",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 75600,
+            "selfEmployment": 20000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 3768.3,
+        "list.0.pay.enh": 1503.0,
+        "list.0.pay.ei": 895.7,
+        "list.0.pay.qpip": 477.88,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 1501,
+        "list.0.workerDed": 1450,
+        "list.0.ti": 94030.2004,
+        "list.0.tiP": 92580.2004,
+        "list.0.cash": 95600,
+        "list.0.fEmpFull": 920.6513,
+        "list.0.breakdown.rrspRoom": 17208,
+        "list.0.breakdown.netIncome.ded": 66.7996,
+        "list.0.breakdown.healthServicesFund.income": 19181.2004,
+        "list.0.breakdown.healthServicesFund.contribution": 6.812,
+        "list.0.breakdown.selfEmployment.base": 0.0,
+        "list.0.breakdown.selfEmployment.enhanced": 752.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 0.0,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.qpip": 152.8,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 66.7996,
+        "list.0.breakdown.selfEmployment.qpipCredit": 86.0004,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 752.0,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 818.7996,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 20000.0
+      }
+    },
+    {
+      "id": "2026-qc-mixed-employee-max",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 85000,
+            "selfEmployment": 20000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 3768.3,
+        "list.0.pay.enh": 1127.0,
+        "list.0.pay.ei": 895.7,
+        "list.0.pay.qpip": 503.02,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 1501,
+        "list.0.workerDed": 1450,
+        "list.0.ti": 103812.8804,
+        "list.0.tiP": 102362.8804,
+        "list.0.cash": 105000,
+        "list.0.fEmpFull": 925.1061,
+        "list.0.breakdown.rrspRoom": 18900,
+        "list.0.breakdown.netIncome.ded": 60.1196,
+        "list.0.breakdown.healthServicesFund.income": 19939.8804,
+        "list.0.breakdown.healthServicesFund.contribution": 14.3988,
+        "list.0.breakdown.selfEmployment.base": 0.0,
+        "list.0.breakdown.selfEmployment.enhanced": 0.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 0.0,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.qpip": 137.52,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 60.1196,
+        "list.0.breakdown.selfEmployment.qpipCredit": 77.4004,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 60.1196,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 20000.0
+      }
+    },
+    {
+      "id": "2026-qc-qpip-below-minimum",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 0,
+            "selfEmployment": 1999
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 0.0,
+        "list.0.pay.enh": 0.0,
+        "list.0.pay.ei": 0.0,
+        "list.0.pay.qpip": 0,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 0,
+        "list.0.workerDed": 119.94,
+        "list.0.ti": 1999.0,
+        "list.0.tiP": 1879.06,
+        "list.0.cash": 1999,
+        "list.0.fEmpFull": 0.0,
+        "list.0.breakdown.rrspRoom": 360,
+        "list.0.breakdown.netIncome.ded": 0.0,
+        "list.0.breakdown.healthServicesFund.income": 1999.0,
+        "list.0.breakdown.healthServicesFund.contribution": 0.0,
+        "list.0.breakdown.selfEmployment.base": 0.0,
+        "list.0.breakdown.selfEmployment.enhanced": 0.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 0.0,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.qpip": 0,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.qpipCredit": 0.0,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 1999.0
+      }
+    },
+    {
+      "id": "2026-qc-qpip-minimum",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 0,
+            "selfEmployment": 2000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 0.0,
+        "list.0.pay.enh": 0.0,
+        "list.0.pay.ei": 0.0,
+        "list.0.pay.qpip": 15.28,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 0,
+        "list.0.workerDed": 120.0,
+        "list.0.ti": 1993.32,
+        "list.0.tiP": 1873.32,
+        "list.0.cash": 2000,
+        "list.0.fEmpFull": 1.204,
+        "list.0.breakdown.rrspRoom": 360,
+        "list.0.breakdown.netIncome.ded": 6.68,
+        "list.0.breakdown.healthServicesFund.income": 1993.32,
+        "list.0.breakdown.healthServicesFund.contribution": 0.0,
+        "list.0.breakdown.selfEmployment.base": 0.0,
+        "list.0.breakdown.selfEmployment.enhanced": 0.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 0.0,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.qpip": 15.28,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 6.68,
+        "list.0.breakdown.selfEmployment.qpipCredit": 8.6,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 6.68,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 2000.0
+      }
+    },
+    {
+      "id": "2026-qc-qpip-mixed-below-minimum",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 1500,
+            "selfEmployment": 499
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 0.0,
+        "list.0.pay.enh": 0.0,
+        "list.0.pay.ei": 19.5,
+        "list.0.pay.qpip": 0,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 1500,
+        "list.0.workerDed": 119.94,
+        "list.0.ti": 1999.0,
+        "list.0.tiP": 1879.06,
+        "list.0.cash": 1999,
+        "list.0.fEmpFull": 212.73,
+        "list.0.breakdown.rrspRoom": 360,
+        "list.0.breakdown.netIncome.ded": 0.0,
+        "list.0.breakdown.healthServicesFund.income": 499.0,
+        "list.0.breakdown.healthServicesFund.contribution": 0.0,
+        "list.0.breakdown.selfEmployment.base": 0.0,
+        "list.0.breakdown.selfEmployment.enhanced": 0.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 0.0,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.qpip": 0,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.qpipCredit": 0.0,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 499.0
+      }
+    },
+    {
+      "id": "2026-qc-qpip-combined-minimum",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 1500,
+            "selfEmployment": 500
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 0.0,
+        "list.0.pay.enh": 0.0,
+        "list.0.pay.ei": 19.5,
+        "list.0.pay.qpip": 10.27,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 1500,
+        "list.0.workerDed": 120.0,
+        "list.0.ti": 1998.33,
+        "list.0.tiP": 1878.33,
+        "list.0.cash": 2000,
+        "list.0.fEmpFull": 213.934,
+        "list.0.breakdown.rrspRoom": 360,
+        "list.0.breakdown.netIncome.ded": 1.67,
+        "list.0.breakdown.healthServicesFund.income": 498.33,
+        "list.0.breakdown.healthServicesFund.contribution": 0.0,
+        "list.0.breakdown.selfEmployment.base": 0.0,
+        "list.0.breakdown.selfEmployment.enhanced": 0.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 0.0,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.qpip": 3.82,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 1.67,
+        "list.0.breakdown.selfEmployment.qpipCredit": 2.15,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 1.67,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 500.0
+      }
+    },
+    {
+      "id": "2026-qc-qpip-at-ceiling",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 0,
+            "selfEmployment": 103000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 7536.6,
+        "list.0.pay.enh": 2254.0,
+        "list.0.pay.ei": 0.0,
+        "list.0.pay.qpip": 786.92,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 0,
+        "list.0.workerDed": 1450,
+        "list.0.ti": 96633.6822,
+        "list.0.tiP": 95183.6822,
+        "list.0.cash": 103000,
+        "list.0.fEmpFull": 589.5683,
+        "list.0.breakdown.rrspRoom": 18540,
+        "list.0.breakdown.netIncome.ded": 4112.3178,
+        "list.0.breakdown.healthServicesFund.income": 96633.6822,
+        "list.0.breakdown.healthServicesFund.contribution": 472.7868,
+        "list.0.breakdown.selfEmployment.base": 7536.6,
+        "list.0.breakdown.selfEmployment.enhanced": 2254.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 3768.3,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 3768.3,
+        "list.0.breakdown.selfEmployment.qpip": 786.92,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 344.0178,
+        "list.0.breakdown.selfEmployment.qpipCredit": 442.9022,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 6022.3,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 6366.3178,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 103000.0
+      }
+    },
+    {
+      "id": "2026-qc-qpip-above-ceiling",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 0,
+            "selfEmployment": 104000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 7536.6,
+        "list.0.pay.enh": 2254.0,
+        "list.0.pay.ei": 0.0,
+        "list.0.pay.qpip": 786.92,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 0,
+        "list.0.workerDed": 1450,
+        "list.0.ti": 97633.6822,
+        "list.0.tiP": 96183.6822,
+        "list.0.cash": 104000,
+        "list.0.fEmpFull": 589.5683,
+        "list.0.breakdown.rrspRoom": 18720,
+        "list.0.breakdown.netIncome.ded": 4112.3178,
+        "list.0.breakdown.healthServicesFund.income": 97633.6822,
+        "list.0.breakdown.healthServicesFund.contribution": 482.7868,
+        "list.0.breakdown.selfEmployment.base": 7536.6,
+        "list.0.breakdown.selfEmployment.enhanced": 2254.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 3768.3,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 3768.3,
+        "list.0.breakdown.selfEmployment.qpip": 786.92,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 344.0178,
+        "list.0.breakdown.selfEmployment.qpipCredit": 442.9022,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 6022.3,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 6366.3178,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 104000.0
+      }
+    },
+    {
+      "id": "2026-qc-qpip-shared-ceiling",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 102000,
+            "selfEmployment": 5000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 3768.3,
+        "list.0.pay.enh": 1127.0,
+        "list.0.pay.ei": 895.7,
+        "list.0.pay.qpip": 446.24,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 1501,
+        "list.0.workerDed": 1450,
+        "list.0.ti": 105869.66,
+        "list.0.tiP": 104419.66,
+        "list.0.cash": 107000,
+        "list.0.fEmpFull": 925.106,
+        "list.0.breakdown.rrspRoom": 19260,
+        "list.0.breakdown.netIncome.ded": 3.34,
+        "list.0.breakdown.healthServicesFund.income": 4996.66,
+        "list.0.breakdown.healthServicesFund.contribution": 0.0,
+        "list.0.breakdown.selfEmployment.base": 0.0,
+        "list.0.breakdown.selfEmployment.enhanced": 0.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 0.0,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.qpip": 7.64,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 3.34,
+        "list.0.breakdown.selfEmployment.qpipCredit": 4.3,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 3.34,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 5000.0
+      }
+    },
+    {
+      "id": "2026-qc-qpip-employee-exhausts",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 103000,
+            "selfEmployment": 5000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 3768.3,
+        "list.0.pay.enh": 1127.0,
+        "list.0.pay.ei": 895.7,
+        "list.0.pay.qpip": 442.9,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 1501,
+        "list.0.workerDed": 1450,
+        "list.0.ti": 106873.0,
+        "list.0.tiP": 105423.0,
+        "list.0.cash": 108000,
+        "list.0.fEmpFull": 925.106,
+        "list.0.breakdown.rrspRoom": 19440,
+        "list.0.breakdown.netIncome.ded": 0.0,
+        "list.0.breakdown.healthServicesFund.income": 5000.0,
+        "list.0.breakdown.healthServicesFund.contribution": 0.0,
+        "list.0.breakdown.selfEmployment.base": 0.0,
+        "list.0.breakdown.selfEmployment.enhanced": 0.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 0.0,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.qpip": 0.0,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.qpipCredit": 0.0,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 5000.0
+      }
+    },
+    {
+      "id": "2026-on-turns-70-june",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "ord": 0,
+            "selfEmployment": 100000,
+            "age": 70,
+            "birthMonth": 6
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 3519.45,
+        "list.0.pay.enh": 1127.0,
+        "list.0.pay.ei": 0.0,
+        "list.0.pay.qpip": 0,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 0,
+        "list.0.workerDed": 0,
+        "list.0.ti": 97113.275,
+        "list.0.tiP": 97113.275,
+        "list.0.cash": 100000,
+        "list.0.fEmpFull": 246.3615,
+        "list.0.breakdown.rrspRoom": 18000,
+        "list.0.breakdown.netIncome.ded": 1759.725,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "list.0.breakdown.selfEmployment.base": 3519.45,
+        "list.0.breakdown.selfEmployment.enhanced": 1127.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 1759.725,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 1759.725,
+        "list.0.breakdown.selfEmployment.qpip": 0,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.qpipCredit": 0.0,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 2886.725,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 2886.725,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 50000.0,
+        "list.0.pEmpFull": 88.8661,
+        "list.0.lift": 0,
+        "list.0.breakdown.selfEmployment.contributoryMonths": [1, 2, 3, 4, 5, 6]
+      }
+    },
+    {
+      "id": "2026-on-past-70",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "ord": 0,
+            "selfEmployment": 100000,
+            "age": 71,
+            "birthMonth": 6
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 0.0,
+        "list.0.pay.enh": 0.0,
+        "list.0.pay.ei": 0.0,
+        "list.0.pay.qpip": 0,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 0,
+        "list.0.workerDed": 0,
+        "list.0.ti": 100000.0,
+        "list.0.tiP": 100000.0,
+        "list.0.cash": 100000,
+        "list.0.fEmpFull": 0.0,
+        "list.0.breakdown.rrspRoom": 18000,
+        "list.0.breakdown.netIncome.ded": 0.0,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "list.0.breakdown.selfEmployment.base": 0.0,
+        "list.0.breakdown.selfEmployment.enhanced": 0.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 0.0,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.qpip": 0,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.qpipCredit": 0.0,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 0.0,
+        "list.0.pEmpFull": 0.0,
+        "list.0.lift": 0
+      }
+    },
+    {
+      "id": "2026-qc-turns-72",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 0,
+            "selfEmployment": 100000,
+            "age": 72,
+            "birthMonth": 6
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 7536.6,
+        "list.0.pay.enh": 2254.0,
+        "list.0.pay.ei": 0.0,
+        "list.0.pay.qpip": 764.0,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 0,
+        "list.0.workerDed": 1450,
+        "list.0.ti": 93643.7021,
+        "list.0.tiP": 92193.7021,
+        "list.0.cash": 100000,
+        "list.0.fEmpFull": 587.7623,
+        "list.0.breakdown.rrspRoom": 18000,
+        "list.0.breakdown.netIncome.ded": 4102.2979,
+        "list.0.breakdown.healthServicesFund.income": 93643.7021,
+        "list.0.breakdown.healthServicesFund.contribution": 442.887,
+        "list.0.breakdown.selfEmployment.base": 7536.6,
+        "list.0.breakdown.selfEmployment.enhanced": 2254.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 3768.3,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 3768.3,
+        "list.0.breakdown.selfEmployment.qpip": 764.0,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 333.9979,
+        "list.0.breakdown.selfEmployment.qpipCredit": 430.0021,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 6022.3,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 6356.2979,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 100000.0
+      }
+    },
+    {
+      "id": "2026-qc-past-72",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 0,
+            "selfEmployment": 100000,
+            "age": 73,
+            "birthMonth": 6
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 0.0,
+        "list.0.pay.enh": 0.0,
+        "list.0.pay.ei": 0.0,
+        "list.0.pay.qpip": 764.0,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 0,
+        "list.0.workerDed": 1450,
+        "list.0.ti": 99666.0021,
+        "list.0.tiP": 98216.0021,
+        "list.0.cash": 100000,
+        "list.0.fEmpFull": 60.2003,
+        "list.0.breakdown.rrspRoom": 18000,
+        "list.0.breakdown.netIncome.ded": 333.9979,
+        "list.0.breakdown.healthServicesFund.income": 99666.0021,
+        "list.0.breakdown.healthServicesFund.contribution": 503.11,
+        "list.0.breakdown.selfEmployment.base": 0.0,
+        "list.0.breakdown.selfEmployment.enhanced": 0.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 0.0,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.qpip": 764.0,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 333.9979,
+        "list.0.breakdown.selfEmployment.qpipCredit": 430.0021,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 333.9979,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 0.0
+      }
+    },
+    {
+      "id": "2026-on-mixed-cpt30-prorates-profit",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "ord": 10000,
+            "selfEmployment": 60000,
+            "age": 66,
+            "birthMonth": 1,
+            "employeePayroll": {
+              "retirementPensionSince": {
+                "year": 2024,
+                "month": 1
+              },
+              "monthlyEarningsWeights": [1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0],
+              "cppElection": {
+                "stop": {
+                  "year": 2026,
+                  "month": 6
+                }
+              },
+              "qppElection": {
+                "stop": {
+                  "year": 2026,
+                  "month": 6
+                }
+              }
+            }
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 3111.075,
+        "list.0.pay.enh": 844.5,
+        "list.0.pay.ei": 163.0,
+        "list.0.pay.qpip": 0,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 1501,
+        "list.0.workerDed": 0,
+        "list.0.ti": 67804.15,
+        "list.0.tiP": 67804.15,
+        "list.0.cash": 70000,
+        "list.0.fEmpFull": 479.3215,
+        "list.0.breakdown.rrspRoom": 12600,
+        "list.0.breakdown.netIncome.ded": 1351.35,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "list.0.breakdown.selfEmployment.base": 2702.7,
+        "list.0.breakdown.selfEmployment.enhanced": 762.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 1351.35,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 1351.35,
+        "list.0.breakdown.selfEmployment.qpip": 0,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.qpipCredit": 0.0,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 2113.35,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 2113.35,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 30000.0,
+        "list.0.pEmpFull": 97.0976
+      }
+    },
+    {
+      "id": "2026-qc-rr50-does-not-stop-business",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 10000,
+            "selfEmployment": 60000,
+            "age": 66,
+            "birthMonth": 1,
+            "employeePayroll": {
+              "retirementPensionSince": {
+                "year": 2024,
+                "month": 1
+              },
+              "monthlyEarningsWeights": [1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0],
+              "cppElection": {
+                "stop": {
+                  "year": 2026,
+                  "month": 6
+                }
+              },
+              "qppElection": {
+                "stop": {
+                  "year": 2026,
+                  "month": 6
+                }
+              }
+            }
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 6704.5,
+        "list.0.pay.enh": 1265.0,
+        "list.0.pay.ei": 130.0,
+        "list.0.pay.qpip": 501.4,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 1501,
+        "list.0.workerDed": 1450,
+        "list.0.ti": 65354.6013,
+        "list.0.tiP": 63904.6013,
+        "list.0.cash": 70000,
+        "list.0.fEmpFull": 763.9102,
+        "list.0.breakdown.rrspRoom": 12600,
+        "list.0.breakdown.netIncome.ded": 3380.3987,
+        "list.0.breakdown.healthServicesFund.income": 55419.6013,
+        "list.0.breakdown.healthServicesFund.contribution": 150,
+        "list.0.breakdown.selfEmployment.base": 6360.0,
+        "list.0.breakdown.selfEmployment.enhanced": 1200.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 3180.0,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 3180.0,
+        "list.0.breakdown.selfEmployment.qpip": 458.4,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 200.3987,
+        "list.0.breakdown.selfEmployment.qpipCredit": 258.0013,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 4380.0,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 4580.3987,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 60000.0
+      }
+    },
+    {
+      "id": "2026-qc-hsf-threshold",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 0,
+            "selfEmployment": 10000,
+            "oth": 9007.899788,
+            "rrsp": 1000,
+            "fhsa": 500,
+            "ded": 200
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 689.0,
+        "list.0.pay.enh": 130.0,
+        "list.0.pay.ei": 0.0,
+        "list.0.pay.qpip": 76.4,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 0,
+        "list.0.workerDed": 600.0,
+        "list.0.ti": 16800.0,
+        "list.0.tiP": 16200.0,
+        "list.0.cash": 19007.8998,
+        "list.0.fEmpFull": 54.25,
+        "list.0.breakdown.rrspRoom": 1800,
+        "list.0.breakdown.netIncome.ded": 2077.8998,
+        "list.0.breakdown.healthServicesFund.income": 18500.0,
+        "list.0.breakdown.healthServicesFund.contribution": 0.0,
+        "list.0.breakdown.selfEmployment.base": 689.0,
+        "list.0.breakdown.selfEmployment.enhanced": 130.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 344.5,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 344.5,
+        "list.0.breakdown.selfEmployment.qpip": 76.4,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 33.3998,
+        "list.0.breakdown.selfEmployment.qpipCredit": 43.0002,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 474.5,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 507.8998,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 10000.0
+      }
+    },
+    {
+      "id": "2026-qc-hsf-above-threshold",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 0,
+            "selfEmployment": 10000,
+            "oth": 9008.899788,
+            "rrsp": 1000,
+            "fhsa": 500,
+            "ded": 200
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 689.0,
+        "list.0.pay.enh": 130.0,
+        "list.0.pay.ei": 0.0,
+        "list.0.pay.qpip": 76.4,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 0,
+        "list.0.workerDed": 600.0,
+        "list.0.ti": 16801.0,
+        "list.0.tiP": 16201.0,
+        "list.0.cash": 19008.8998,
+        "list.0.fEmpFull": 54.25,
+        "list.0.breakdown.rrspRoom": 1800,
+        "list.0.breakdown.netIncome.ded": 2077.8998,
+        "list.0.breakdown.healthServicesFund.income": 18501.0,
+        "list.0.breakdown.healthServicesFund.contribution": 0.01,
+        "list.0.breakdown.selfEmployment.base": 689.0,
+        "list.0.breakdown.selfEmployment.enhanced": 130.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 344.5,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 344.5,
+        "list.0.breakdown.selfEmployment.qpip": 76.4,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 33.3998,
+        "list.0.breakdown.selfEmployment.qpipCredit": 43.0002,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 474.5,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 507.8998,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 10000.0
+      }
+    },
+    {
+      "id": "2026-qc-hsf-plateau",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 0,
+            "selfEmployment": 10000,
+            "oth": 24007.899788,
+            "rrsp": 1000,
+            "fhsa": 500,
+            "ded": 200
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 689.0,
+        "list.0.pay.enh": 130.0,
+        "list.0.pay.ei": 0.0,
+        "list.0.pay.qpip": 76.4,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 0,
+        "list.0.workerDed": 600.0,
+        "list.0.ti": 31800.0,
+        "list.0.tiP": 31200.0,
+        "list.0.cash": 34007.8998,
+        "list.0.fEmpFull": 54.25,
+        "list.0.breakdown.rrspRoom": 1800,
+        "list.0.breakdown.netIncome.ded": 2077.8998,
+        "list.0.breakdown.healthServicesFund.income": 33500.0,
+        "list.0.breakdown.healthServicesFund.contribution": 150.0,
+        "list.0.breakdown.selfEmployment.base": 689.0,
+        "list.0.breakdown.selfEmployment.enhanced": 130.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 344.5,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 344.5,
+        "list.0.breakdown.selfEmployment.qpip": 76.4,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 33.3998,
+        "list.0.breakdown.selfEmployment.qpipCredit": 43.0002,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 474.5,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 507.8998,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 10000.0
+      }
+    },
+    {
+      "id": "2026-qc-hsf-upper",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 0,
+            "selfEmployment": 10000,
+            "oth": 54862.899788,
+            "rrsp": 1000,
+            "fhsa": 500,
+            "ded": 200
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 689.0,
+        "list.0.pay.enh": 130.0,
+        "list.0.pay.ei": 0.0,
+        "list.0.pay.qpip": 76.4,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 0,
+        "list.0.workerDed": 600.0,
+        "list.0.ti": 62655.0,
+        "list.0.tiP": 62055.0,
+        "list.0.cash": 64862.8998,
+        "list.0.fEmpFull": 54.25,
+        "list.0.breakdown.rrspRoom": 1800,
+        "list.0.breakdown.netIncome.ded": 2077.8998,
+        "list.0.breakdown.healthServicesFund.income": 64355.0,
+        "list.0.breakdown.healthServicesFund.contribution": 150,
+        "list.0.breakdown.selfEmployment.base": 689.0,
+        "list.0.breakdown.selfEmployment.enhanced": 130.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 344.5,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 344.5,
+        "list.0.breakdown.selfEmployment.qpip": 76.4,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 33.3998,
+        "list.0.breakdown.selfEmployment.qpipCredit": 43.0002,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 474.5,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 507.8998,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 10000.0
+      }
+    },
+    {
+      "id": "2026-qc-hsf-above-upper",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 0,
+            "selfEmployment": 10000,
+            "oth": 54863.899788,
+            "rrsp": 1000,
+            "fhsa": 500,
+            "ded": 200
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 689.0,
+        "list.0.pay.enh": 130.0,
+        "list.0.pay.ei": 0.0,
+        "list.0.pay.qpip": 76.4,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 0,
+        "list.0.workerDed": 600.0,
+        "list.0.ti": 62656.0,
+        "list.0.tiP": 62056.0,
+        "list.0.cash": 64863.8998,
+        "list.0.fEmpFull": 54.25,
+        "list.0.breakdown.rrspRoom": 1800,
+        "list.0.breakdown.netIncome.ded": 2077.8998,
+        "list.0.breakdown.healthServicesFund.income": 64356.0,
+        "list.0.breakdown.healthServicesFund.contribution": 150.01,
+        "list.0.breakdown.selfEmployment.base": 689.0,
+        "list.0.breakdown.selfEmployment.enhanced": 130.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 344.5,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 344.5,
+        "list.0.breakdown.selfEmployment.qpip": 76.4,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 33.3998,
+        "list.0.breakdown.selfEmployment.qpipCredit": 43.0002,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 474.5,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 507.8998,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 10000.0
+      }
+    },
+    {
+      "id": "2026-qc-hsf-cap",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 0,
+            "selfEmployment": 10000,
+            "oth": 139862.899788,
+            "rrsp": 1000,
+            "fhsa": 500,
+            "ded": 200
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 689.0,
+        "list.0.pay.enh": 130.0,
+        "list.0.pay.ei": 0.0,
+        "list.0.pay.qpip": 76.4,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 0,
+        "list.0.workerDed": 600.0,
+        "list.0.ti": 147655.0,
+        "list.0.tiP": 147055.0,
+        "list.0.cash": 149862.8998,
+        "list.0.fEmpFull": 54.25,
+        "list.0.breakdown.rrspRoom": 1800,
+        "list.0.breakdown.netIncome.ded": 2077.8998,
+        "list.0.breakdown.healthServicesFund.income": 149355.0,
+        "list.0.breakdown.healthServicesFund.contribution": 1000,
+        "list.0.breakdown.selfEmployment.base": 689.0,
+        "list.0.breakdown.selfEmployment.enhanced": 130.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 344.5,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 344.5,
+        "list.0.breakdown.selfEmployment.qpip": 76.4,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 33.3998,
+        "list.0.breakdown.selfEmployment.qpipCredit": 43.0002,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 474.5,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 507.8998,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 10000.0
+      }
+    },
+    {
+      "id": "2026-nt-self-not-wages",
+      "year": 2026,
+      "province": "NT",
+      "household": {
+        "people": [
+          {
+            "ord": 0,
+            "selfEmployment": 30000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 2623.5,
+        "list.0.pay.enh": 530.0,
+        "list.0.pay.ei": 0.0,
+        "list.0.pay.qpip": 0,
+        "list.0.pay.terr": 0.0,
+        "list.0.empAmt": 0,
+        "list.0.workerDed": 0,
+        "list.0.ti": 28158.25,
+        "list.0.tiP": 28158.25,
+        "list.0.cash": 30000,
+        "list.0.fEmpFull": 183.645,
+        "list.0.breakdown.rrspRoom": 5400,
+        "list.0.breakdown.netIncome.ded": 1311.75,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "list.0.breakdown.selfEmployment.base": 2623.5,
+        "list.0.breakdown.selfEmployment.enhanced": 530.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 1311.75,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 1311.75,
+        "list.0.breakdown.selfEmployment.qpip": 0,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.qpipCredit": 0.0,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 1841.75,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 1841.75,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 30000.0
+      }
+    },
+    {
+      "id": "2026-nt-mixed-only-wages-payroll",
+      "year": 2026,
+      "province": "NT",
+      "household": {
+        "people": [
+          {
+            "ord": 10000,
+            "selfEmployment": 30000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 3291.75,
+        "list.0.pay.enh": 665.0,
+        "list.0.pay.ei": 163.0,
+        "list.0.pay.qpip": 0,
+        "list.0.pay.terr": 200.0,
+        "list.0.empAmt": 1501,
+        "list.0.workerDed": 0,
+        "list.0.ti": 37850.0,
+        "list.0.tiP": 37850.0,
+        "list.0.cash": 40000,
+        "list.0.fEmpFull": 485.905,
+        "list.0.breakdown.rrspRoom": 7200,
+        "list.0.breakdown.netIncome.ded": 1485.0,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "list.0.breakdown.selfEmployment.base": 2970.0,
+        "list.0.breakdown.selfEmployment.enhanced": 600.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 1485.0,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 1485.0,
+        "list.0.breakdown.selfEmployment.qpip": 0,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.qpipCredit": 0.0,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 2085.0,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 2085.0,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 30000.0
+      }
+    },
+    {
+      "id": "2026-nu-self-not-wages",
+      "year": 2026,
+      "province": "NU",
+      "household": {
+        "people": [
+          {
+            "ord": 0,
+            "selfEmployment": 30000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 2623.5,
+        "list.0.pay.enh": 530.0,
+        "list.0.pay.ei": 0.0,
+        "list.0.pay.qpip": 0,
+        "list.0.pay.terr": 0.0,
+        "list.0.empAmt": 0,
+        "list.0.workerDed": 0,
+        "list.0.ti": 28158.25,
+        "list.0.tiP": 28158.25,
+        "list.0.cash": 30000,
+        "list.0.fEmpFull": 183.645,
+        "list.0.breakdown.rrspRoom": 5400,
+        "list.0.breakdown.netIncome.ded": 1311.75,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "list.0.breakdown.selfEmployment.base": 2623.5,
+        "list.0.breakdown.selfEmployment.enhanced": 530.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 1311.75,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 1311.75,
+        "list.0.breakdown.selfEmployment.qpip": 0,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.qpipCredit": 0.0,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 1841.75,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 1841.75,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 30000.0
+      }
+    },
+    {
+      "id": "2026-nu-mixed-only-wages-payroll",
+      "year": 2026,
+      "province": "NU",
+      "household": {
+        "people": [
+          {
+            "ord": 10000,
+            "selfEmployment": 30000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 3291.75,
+        "list.0.pay.enh": 665.0,
+        "list.0.pay.ei": 163.0,
+        "list.0.pay.qpip": 0,
+        "list.0.pay.terr": 200.0,
+        "list.0.empAmt": 1501,
+        "list.0.workerDed": 0,
+        "list.0.ti": 37850.0,
+        "list.0.tiP": 37850.0,
+        "list.0.cash": 40000,
+        "list.0.fEmpFull": 485.905,
+        "list.0.breakdown.rrspRoom": 7200,
+        "list.0.breakdown.netIncome.ded": 1485.0,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "list.0.breakdown.selfEmployment.base": 2970.0,
+        "list.0.breakdown.selfEmployment.enhanced": 600.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 1485.0,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 1485.0,
+        "list.0.breakdown.selfEmployment.qpip": 0,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.qpipCredit": 0.0,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 2085.0,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 2085.0,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 30000.0
+      }
+    },
+    {
+      "id": "2026-yt-self-not-wages",
+      "year": 2026,
+      "province": "YT",
+      "household": {
+        "people": [
+          {
+            "ord": 0,
+            "selfEmployment": 30000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 2623.5,
+        "list.0.pay.enh": 530.0,
+        "list.0.pay.ei": 0.0,
+        "list.0.pay.qpip": 0,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 0,
+        "list.0.workerDed": 0,
+        "list.0.ti": 28158.25,
+        "list.0.tiP": 28158.25,
+        "list.0.cash": 30000,
+        "list.0.fEmpFull": 183.645,
+        "list.0.breakdown.rrspRoom": 5400,
+        "list.0.breakdown.netIncome.ded": 1311.75,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "list.0.breakdown.selfEmployment.base": 2623.5,
+        "list.0.breakdown.selfEmployment.enhanced": 530.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 1311.75,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 1311.75,
+        "list.0.breakdown.selfEmployment.qpip": 0,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.qpipCredit": 0.0,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 1841.75,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 1841.75,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 30000.0,
+        "list.0.pEmpFull": 83.952
+      }
+    },
+    {
+      "id": "2026-yt-mixed-only-wages-payroll",
+      "year": 2026,
+      "province": "YT",
+      "household": {
+        "people": [
+          {
+            "ord": 10000,
+            "selfEmployment": 30000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 3291.75,
+        "list.0.pay.enh": 665.0,
+        "list.0.pay.ei": 163.0,
+        "list.0.pay.qpip": 0,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 1501,
+        "list.0.workerDed": 0,
+        "list.0.ti": 37850.0,
+        "list.0.tiP": 37850.0,
+        "list.0.cash": 40000,
+        "list.0.fEmpFull": 485.905,
+        "list.0.breakdown.rrspRoom": 7200,
+        "list.0.breakdown.netIncome.ded": 1485.0,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "list.0.breakdown.selfEmployment.base": 2970.0,
+        "list.0.breakdown.selfEmployment.enhanced": 600.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 1485.0,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 1485.0,
+        "list.0.breakdown.selfEmployment.qpip": 0,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.qpipCredit": 0.0,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 2085.0,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 2085.0,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 30000.0,
+        "list.0.pEmpFull": 222.128
+      }
+    },
+    {
+      "id": "2025-on-cwb-phase-in",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "ord": 0,
+            "selfEmployment": 5000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 148.5,
+        "list.0.pay.enh": 30.0,
+        "list.0.pay.ei": 0.0,
+        "list.0.pay.qpip": 0,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 0,
+        "list.0.workerDed": 0,
+        "list.0.ti": 4895.75,
+        "list.0.tiP": 4895.75,
+        "list.0.cash": 5000,
+        "list.0.fEmpFull": 10.7662,
+        "list.0.breakdown.rrspRoom": 900,
+        "list.0.breakdown.netIncome.ded": 74.25,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "list.0.breakdown.selfEmployment.base": 148.5,
+        "list.0.breakdown.selfEmployment.enhanced": 30.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 74.25,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 74.25,
+        "list.0.breakdown.selfEmployment.qpip": 0,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.qpipCredit": 0.0,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 104.25,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 104.25,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 5000.0,
+        "list.0.pEmpFull": 3.7496,
+        "list.0.lift": 0,
+        "credits.1.1": 540
+      }
+    },
+    {
+      "id": "2025-qc-work-premium-phase-in",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 0,
+            "selfEmployment": 5000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 162.0,
+        "list.0.pay.enh": 30.0,
+        "list.0.pay.ei": 0.0,
+        "list.0.pay.qpip": 43.9,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 0,
+        "list.0.workerDed": 300.0,
+        "list.0.ti": 4869.7999,
+        "list.0.tiP": 4569.7999,
+        "list.0.cash": 5000,
+        "list.0.fEmpFull": 15.3265,
+        "list.0.breakdown.rrspRoom": 900,
+        "list.0.breakdown.netIncome.ded": 100.2001,
+        "list.0.breakdown.healthServicesFund.income": 4869.7999,
+        "list.0.breakdown.healthServicesFund.contribution": 0.0,
+        "list.0.breakdown.selfEmployment.base": 162.0,
+        "list.0.breakdown.selfEmployment.enhanced": 30.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 81.0,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 81.0,
+        "list.0.breakdown.selfEmployment.qpip": 43.9,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 19.2001,
+        "list.0.breakdown.selfEmployment.qpipCredit": 24.6999,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 111.0,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 130.2001,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 5000.0,
+        "credits.1.1": 969.8,
+        "credits.3.1": 301.6
+      }
+    },
+    {
+      "id": "2025-qc-work-premium-phase-out",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "ord": 0,
+            "selfEmployment": 20000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pay.base": 1782.0,
+        "list.0.pay.enh": 330.0,
+        "list.0.pay.ei": 0.0,
+        "list.0.pay.qpip": 175.6,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 0,
+        "list.0.workerDed": 1200.0,
+        "list.0.ti": 18702.1996,
+        "list.0.tiP": 17502.1996,
+        "list.0.cash": 20000,
+        "list.0.fEmpFull": 143.5209,
+        "list.0.breakdown.rrspRoom": 3600,
+        "list.0.breakdown.netIncome.ded": 967.8004,
+        "list.0.breakdown.healthServicesFund.income": 18702.1996,
+        "list.0.breakdown.healthServicesFund.contribution": 5.722,
+        "list.0.breakdown.selfEmployment.base": 1782.0,
+        "list.0.breakdown.selfEmployment.enhanced": 330.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 891.0,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 891.0,
+        "list.0.breakdown.selfEmployment.qpip": 175.6,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 76.8004,
+        "list.0.breakdown.selfEmployment.qpipCredit": 98.7996,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 1221.0,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 1297.8004,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 20000.0,
+        "credits.1.1": 2905.6301,
+        "credits.3.1": 697.3
+      }
+    },
+    {
+      "id": "2025-ab-child-working-component",
+      "year": 2025,
+      "province": "AB",
+      "household": {
+        "people": [
+          {
+            "ord": 0,
+            "selfEmployment": 5000
+          }
+        ],
+        "kids": 1,
+        "under6": 1
+      },
+      "expected": {
+        "list.0.pay.base": 148.5,
+        "list.0.pay.enh": 30.0,
+        "list.0.pay.ei": 0.0,
+        "list.0.pay.qpip": 0,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 0,
+        "list.0.workerDed": 0,
+        "list.0.ti": 4895.75,
+        "list.0.tiP": 4895.75,
+        "list.0.cash": 5000,
+        "list.0.fEmpFull": 10.7662,
+        "list.0.breakdown.rrspRoom": 900,
+        "list.0.breakdown.netIncome.ded": 74.25,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "list.0.breakdown.selfEmployment.base": 148.5,
+        "list.0.breakdown.selfEmployment.enhanced": 30.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 74.25,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 74.25,
+        "list.0.breakdown.selfEmployment.qpip": 0,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.qpipCredit": 0.0,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 104.25,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 104.25,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 5000.0,
+        "provBen": 1835.0
+      }
+    },
+    {
+      "id": "2025-nb-child-working-supplement",
+      "year": 2025,
+      "province": "NB",
+      "household": {
+        "people": [
+          {
+            "ord": 0,
+            "selfEmployment": 5000
+          }
+        ],
+        "kids": 1,
+        "under6": 1
+      },
+      "expected": {
+        "list.0.pay.base": 148.5,
+        "list.0.pay.enh": 30.0,
+        "list.0.pay.ei": 0.0,
+        "list.0.pay.qpip": 0,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 0,
+        "list.0.workerDed": 0,
+        "list.0.ti": 4895.75,
+        "list.0.tiP": 4895.75,
+        "list.0.cash": 5000,
+        "list.0.fEmpFull": 10.7662,
+        "list.0.breakdown.rrspRoom": 900,
+        "list.0.breakdown.netIncome.ded": 74.25,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "list.0.breakdown.selfEmployment.base": 148.5,
+        "list.0.breakdown.selfEmployment.enhanced": 30.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 74.25,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 74.25,
+        "list.0.breakdown.selfEmployment.qpip": 0,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.qpipCredit": 0.0,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 104.25,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 104.25,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 5000.0,
+        "provBen": 300.0
+      }
+    },
+    {
+      "id": "2025-on-cwb-secondary-business-earner",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "ord": 5000,
+            "selfEmployment": 40000
+          },
+          {
+            "ord": 15000,
+            "selfEmployment": 0
+          }
+        ],
+        "adults": 2,
+        "spouse": true
+      },
+      "expected": {
+        "list.0.pay.base": 4034.25,
+        "list.0.pay.enh": 815.0,
+        "list.0.pay.ei": 82.0,
+        "list.0.pay.qpip": 0,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 1471,
+        "list.0.workerDed": 0,
+        "list.0.ti": 42205.0,
+        "list.0.tiP": 42205.0,
+        "list.0.cash": 45000,
+        "list.0.fEmpFull": 523.0512,
+        "list.0.breakdown.rrspRoom": 8100,
+        "list.0.breakdown.netIncome.ded": 1980.0,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "list.0.breakdown.selfEmployment.base": 3960.0,
+        "list.0.breakdown.selfEmployment.enhanced": 800.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 1980.0,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 1980.0,
+        "list.0.breakdown.selfEmployment.qpip": 0,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.qpipCredit": 0.0,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 2780.0,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 2780.0,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 40000.0,
+        "list.0.pEmpFull": 107.8806,
+        "famNet": 57090,
+        "credits.1.1": 1078.1000000000001
+      }
+    },
+    {
+      "id": "2025-on-cwb-equal-working-income",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "ord": 5000,
+            "selfEmployment": 10000,
+            "oth": 20000
+          },
+          {
+            "ord": 15000,
+            "selfEmployment": 0
+          }
+        ],
+        "adults": 2,
+        "spouse": true
+      },
+      "expected": {
+        "list.0.pay.base": 1064.25,
+        "list.0.pay.enh": 215.0,
+        "list.0.pay.ei": 82.0,
+        "list.0.pay.qpip": 0,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 1471,
+        "list.0.workerDed": 0,
+        "list.0.ti": 34290.0,
+        "list.0.tiP": 34290.0,
+        "list.0.cash": 35000,
+        "list.0.fEmpFull": 307.7262,
+        "list.0.breakdown.rrspRoom": 2700,
+        "list.0.breakdown.netIncome.ded": 495.0,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "list.0.breakdown.selfEmployment.base": 990.0,
+        "list.0.breakdown.selfEmployment.enhanced": 200.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 495.0,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 495.0,
+        "list.0.breakdown.selfEmployment.qpip": 0,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.qpipCredit": 0.0,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 695.0,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 695.0,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 10000.0,
+        "list.0.pEmpFull": 32.8881,
+        "famNet": 49175,
+        "credits.1.1": 2282.6
+      }
+    },
+    {
+      "id": "2025-on-ccb-net-income",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "ord": 0,
+            "selfEmployment": 75000
+          }
+        ],
+        "kids": 1,
+        "under6": 1
+      },
+      "expected": {
+        "list.0.pay.base": 6712.2,
+        "list.0.pay.enh": 1652.0,
+        "list.0.pay.ei": 0.0,
+        "list.0.pay.qpip": 0,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 0,
+        "list.0.workerDed": 0,
+        "list.0.ti": 69991.9,
+        "list.0.tiP": 69991.9,
+        "list.0.cash": 75000,
+        "list.0.fEmpFull": 486.6345,
+        "list.0.breakdown.rrspRoom": 13500,
+        "list.0.breakdown.netIncome.ded": 3356.1,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "list.0.breakdown.selfEmployment.base": 6712.2,
+        "list.0.breakdown.selfEmployment.enhanced": 1652.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 3356.1,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 3356.1,
+        "list.0.breakdown.selfEmployment.qpip": 0,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.qpipCredit": 0.0,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 5008.1,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 5008.1,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 75000.0,
+        "list.0.pEmpFull": 169.4831,
+        "list.0.lift": 0,
+        "ccb": 5721.657
+      }
+    },
+    {
+      "id": "2025-on-childcare-and-personal-deductions",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "ord": 0,
+            "selfEmployment": 75000,
+            "rrsp": 2000,
+            "fhsa": 1000,
+            "ded": 500
+          }
+        ],
+        "kids": 1,
+        "under6": 1,
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 4,
+              "expenses": 6000
+            }
+          ],
+          "earnedIncome": [75000]
+        }
+      },
+      "expected": {
+        "list.0.pay.base": 6712.2,
+        "list.0.pay.enh": 1652.0,
+        "list.0.pay.ei": 0.0,
+        "list.0.pay.qpip": 0,
+        "list.0.pay.terr": 0,
+        "list.0.empAmt": 0,
+        "list.0.workerDed": 0,
+        "list.0.ti": 60491.899999999994,
+        "list.0.tiP": 60491.899999999994,
+        "list.0.cash": 75000,
+        "list.0.fEmpFull": 486.6345,
+        "list.0.breakdown.rrspRoom": 13500,
+        "list.0.breakdown.netIncome.ded": 12856.1,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "list.0.breakdown.selfEmployment.base": 6712.2,
+        "list.0.breakdown.selfEmployment.enhanced": 1652.0,
+        "list.0.breakdown.selfEmployment.baseCredit": 3356.1,
+        "list.0.breakdown.selfEmployment.employerBaseDeduction": 3356.1,
+        "list.0.breakdown.selfEmployment.qpip": 0,
+        "list.0.breakdown.selfEmployment.qpipDeduction": 0.0,
+        "list.0.breakdown.selfEmployment.qpipCredit": 0.0,
+        "list.0.breakdown.selfEmployment.pensionDeduction": 5008.1,
+        "list.0.breakdown.selfEmployment.healthServicesDeduction": 5008.1,
+        "list.0.breakdown.selfEmployment.pensionableEarnings": 75000.0,
+        "list.0.pEmpFull": 169.4831,
+        "list.0.lift": 0,
+        "childcare.claims.0": 6000
+      }
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+Title: CRA Schedule 10 2025 QPIP
+URL: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5005-s10/5005-s10-25e.pdf
+Fetched: 2026-11-04
+SHA-256 of the original: e3cca6f5a357d85bbf1ec0463253a377fc5e82fd39e4089082cd4dc4910df830
+Publication date modified: 2025-12-01
+PDF pages: all 2
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 1 of 2 ---
+
+T1-2025 Schedule 10
+Protected B
+when completed
+Employment Insurance (EI) and
+Provincial Parental Insurance Plan (PPIP) Premiums
+Complete this schedule to calculate your EI and PPIP premium amounts if any of the following situations apply:
+• You reported only net self-employment income of $2,000 or more on lines 13500, 13700, 13900, 14100, and 14300 of your return
+• You reported net self-employment and employment income (including employment income from outside Canada) and the
+total of those incomes is $2,000 or more
+• Box 10 of any of your T4 slips has a province or territory of employment other than Quebec and you reported employment
+income (including employment income from outside Canada) of $2,000 or more
+Attach a copy of this schedule to your paper return.
+For more information about lines 31200 and 45000, go to canada.ca/fed-tax-information.
+Part A – PPIP premiums payable on self-employment income
+54375 1
+Net business income:
+Enter the amount from line 27 of Schedule L of your Revenu Québec Income Tax Return.
+2Maximum PPIP insurable income
+3
+Employment income:
+Enter the amount from box 14 of all of your T4 slips, including
+employment income from outside Canada and any employment income
+that you did not get a T4 slip for, or the amount from box 56, if applicable –
+4Line 2 minus line 3 (if negative, enter "0") =
+5Enter whichever is less: amount from line 1 or line 4.
+6PPIP rate on self-employment income ×
+7Line 5 multiplied by the percentage on line 6 (maximum $860.44) =
+Ż
+8Applicable rate ×
+9
+Deduction for PPIP premiums on self-employment income:
+Line 7 multiplied by the percentage on line 8
+Enter this amount on line 22300 of your federal return. (maximum $376.32) =Ż –
+10
+Non-refundable tax credit for PPIP premiums payable on self-employment income:
+Line 7 minus line 9
+Enter this amount on line 31215 of your federal return. (maximum $484.12) =
+Do not complete Part B or Part C if Quebec is the province of employment on all of your T4 slips. The Canada Revenue
+Agency (CRA) will calculate the overpayment for you. If you want to calculate your overpayment, complete Form T2204,
+Employee Overpayment of Employment Insurance Premiums.
+Part B – PPIP premiums payable on employment income
+54377 11
+Employment income:
+Enter the amount from box 14 of all of your T4 slips where the province or territory of employment
+is other than Quebec, including employment income from outside Canada, any exempt income
+earned outside Quebec and any employment income that you did not get a T4 slip for.
+12Maximum PPIP insurable income
+54388 13
+Total of PPIP insurable earnings:
+Enter the amount from box 56 of all of your T4 slips where Quebec is the
+province of employment (if box 56 is blank, enter the amount from box 14 of
+the T4 slip) (include employment income that you did not get a T4 slip for). –
+14Line 12 minus line 13 (if negative, enter "0") =
+15Enter whichever is less: amount from line 11 or line 14.
+16PPIP rate on employment income ×
+17
+Non-refundable tax credit for PPIP premiums payable on employment income:
+Line 15 multiplied by the percentage on line 16
+Enter this amount on line 31210 of your federal return. (maximum $484.12) =
+5005-S10 E (25) (Ce formulaire est disponible en français.) Page 1 of 2
+98,000.00
+0.878%
+43.736%
+98,000.00
+0.494%
+
+--- PDF page 2 of 2 ---
+
+Protected B when completed
+Part C – Employment insurance overpayment
+18
+Total EI insurable earnings:
+Enter the amount from box 24 of all of your T4 slips (if box 24 is blank, enter the amount from
+box 14 unless box 28 shows that the T4 earnings are EI-exempt) (include employment income that
+you did not get a T4 slip for). If the total amount is $2,000 or less, enter "0". (maximum $65,700)
+19EI rate on self-employment and other earnings ×
+20Line 18 multiplied by the percentage on line 19 (maximum $860.67) =
+21Total EI premiums (box 18 of all of your T4 slips) (1)
+22Amount from line 20 –
+23
+Employment insurance overpayment:
+Line 21 minus line 22 (if negative, enter "0")
+Enter this amount on line 45000 of your federal return. =
+24
+Non-refundable tax credit for employment insurance premiums through employment:
+Enter whichever is less: amount from line 20 or line 21.
+Enter this amount on line 31200 of your federal return.
+(1) Include EI premiums shown on your pay stub if you have employment income that you did not get a T4 slip for.
+See the privacy notice on your return.
+5005-S10 E (25) Page 2 of 2
+1.31%

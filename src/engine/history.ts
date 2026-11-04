@@ -12,6 +12,7 @@ export function scaleHousehold(input: Household, factor: number): Household {
     people: input.people.map(person => {
       const scaled = {
         ...person,
+        ...(person.selfEmployment !== undefined ? { selfEmployment: person.selfEmployment * factor } : {}),
         ded: person.ded * factor,
         rrsp: (person.rrsp ?? 0) * factor,
         fhsa: (person.fhsa ?? 0) * factor,

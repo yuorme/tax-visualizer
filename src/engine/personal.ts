@@ -7,11 +7,11 @@ import {
   healthPremium,
   netIncomeParts,
   netOf,
-  payrollOf,
+  payrollDetailsOf,
   rrspRoom,
   workerDeductionOf,
 } from "./payroll.ts";
-import type { Ctx, Extra, Person } from "./types.ts";
+import { type Ctx, cashOf, type Extra, type Person } from "./types.ts";
 
 export interface Settings {
   useBpa: boolean;
@@ -50,13 +50,13 @@ export type PersonResult = ReturnType<typeof personTax>;
  *  ctx = {kids: children this person claims, famNet: family net income, ...} */
 export function personTax(fed: Federal, p: Province, x: Person, sp: Extra, ctx: Ctx, s: Settings) {
   const qc = p.system === "quebec";
-  const pay = payrollOf(fed, p, x);
+  const { pay, selfEmployment: self } = payrollDetailsOf(fed, p, x);
   const retirement = employeeRetirementPayrollOf(fed, p, x)?.retirement;
   const ti = netOf(fed, p, x, ctx.childcareDeduction); // taxable income (federal)
   const workerDed = workerDeductionOf(p, x);
   const provincialNet = qc ? netOf(fed, p, x) : ti; // Quebec does not deduct federal childcare expenses
   const tiP = Math.max(0, provincialNet - workerDed); // Quebec allows an extra deduction for workers
-  const cash = x.ord + (x.oth ?? 0) + x.cg + x.ed + x.nd + x.fd;
+  const cash = cashOf(x);
   const f = walk(fed.brackets, ti),
     pr = walk(p.brackets, tiP);
   const k = qc ? 1 - fed.quebecAbatement : 1;
@@ -80,8 +80,10 @@ export function personTax(fed: Federal, p: Province, x: Person, sp: Extra, ctx: 
     return v;
   };
   const empAmt = Math.min(Math.max(0, x.ord), fed.employmentAmount);
-  const fEmpFull = (empAmt + pay.base + pay.ei + pay.qpip) * fr;
-  const pEmpFull = qc ? 0 : (pay.base + pay.ei + (p.employmentAmountCredit ? empAmt : 0)) * prr;
+  const pensionCredit = pay.base - (self?.employerBaseDeduction ?? 0);
+  const qpipCredit = pay.qpip - (self?.qpipDeduction ?? 0);
+  const fEmpFull = (empAmt + pensionCredit + pay.ei + qpipCredit) * fr;
+  const pEmpFull = qc ? 0 : (pensionCredit + pay.ei + (p.employmentAmountCredit ? empAmt : 0)) * prr;
   const fCred = tf(fBpaFull),
     fSp = tf(sp.f),
     fEmp = tf(fEmpFull);
@@ -192,7 +194,7 @@ export function personTax(fed: Federal, p: Province, x: Person, sp: Extra, ctx: 
   const fedTax = fedBasic * k - fFtc,
     prov = provPre - pFtc - (afterForeign ? lowRed : 0) + provincialLevy;
   const ohp = healthPremium(p, ti);
-  const healthFund = healthServicesFund(p, healthServicesIncome(fed, x));
+  const healthFund = healthServicesFund(p, healthServicesIncome(fed, x), self?.healthServicesDeduction);
   // TP-1 line 446 joins contributions after income tax/credits (432), once, in the page's payroll subtotal.
   const employmentAndHealthPremiums = pay.base + pay.enh + pay.ei + pay.qpip + pay.terr + ohp;
   const payroll = employmentAndHealthPremiums + healthFund.contribution;
@@ -246,6 +248,7 @@ export function personTax(fed: Federal, p: Province, x: Person, sp: Extra, ctx: 
     // Figures the page shows that aren't steps of the calculation above. They sit in a nested object because the
     // golden snapshot (tests/golden/snapshot.mjs) locks every top-level number of this result.
     breakdown: {
+      ...(self ? { selfEmployment: self } : {}),
       ...(retirement ? { retirementPayroll: retirement } : {}),
       healthServicesFund: healthFund,
       totalBeforeHealthServicesFund,

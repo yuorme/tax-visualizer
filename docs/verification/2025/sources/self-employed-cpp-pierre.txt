@@ -1,0 +1,235 @@
+Title: CRA CPP enhancement: Pierre self-employed examples
+URL: https://www.canada.ca/en/revenue-agency/news/2023/05/the-canada-pension-plan-enhancement--businesses-individuals-and-self-employed-what-it-means-for-you.html
+Fetched: 2026-11-04
+SHA-256 of the original: 7a3761a795d0a75deb9cbe6a00135c09428eb221e5bd69f4511252d270f76685
+Publication date modified: 2025-12-04
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+# The Canada Pension Plan enhancement – Businesses, individuals, and self-employed: what it means for you
+
+From: Canada Revenue Agency
+
+## Backgrounder
+
+The Canada Pension Plan (CPP) enhancement, which was introduced on January 1, 2019, is designed to help increase retirement income for working Canadians and their families.The CPP is a mandatory pension plan financed by contributions from employees, employers and self-employed individuals. It covers virtually all workers in Canada except Quebec, which administers its own plan called the Quebec Pension Plan (QPP). The CPP replaces a basic level of earnings for contributors upon retirement, disability, or death.
+
+## The Canada Pension Plan (CPP) and the CPP enhancement
+
+The Canada Pension Plan (CPP) enhancement was introduced on January 1, 2019 to help increase retirement income for working Canadians and their families.
+
+The CPP is a mandatory pension plan financed by contributions from employees, employers, and self-employed individuals. It covers virtually all workers in Canada except Quebec, which administers its own plan called the Quebec Pension Plan (QPP). The CPP replaces a basic level of earnings for contributors upon retirement, disability, or death.
+
+Once mature, the CPP enhancement will increase the maximum CPP retirement pension by about 50%. It will also increase the survivor and disability pensions.
+
+The CPP enhancement will significantly reduce the number of Canadian families at risk of not saving enough for retirement, particularly those who do not have a workplace pension plan.
+
+### How the CPP enhancement affects you
+
+- In 2019, annual CPP contribution rates began to rise modestly and continued to do so for seven years, until 2025.
+- How much your CPP benefits increase will depend on how much and for how long you contributed to the enhancement. Canadians just entering the workforce will see the largest increase in CPP benefits. Employees who are near the end of their working life will see a small increase.
+- The CPP enhancement will benefit you only if you have worked and contributed in 2019 or later. If you are retired, not working, and not making contributions to the CPP, nothing will change and your CPP benefits will not increase.
+
+### How do Canadians save for retirement and how does the CPP fit into the picture
+
+Canada's retirement income system provides a balanced mix of public pensions and voluntary savings opportunities to help Canadians save for retirement. It is based on three pillars:
+
+- The Old Age Security program provides a basic level of retirement income to Canadian residents. It also offers additional support for low-income seniors through the Guaranteed Income Supplement. It is funded by government revenues.
+- The CPP and the QPP provide basic income replacement for contributors and their families when the contributor retires, or dies, or if they become disabled. CPP and QPP are financed by contributions from employees, employers, and self-employed individuals in addition to the investment income from these contributions.
+- Voluntary tax-assisted private savings and employer-sponsored pension plans, such as registered pension plans, pooled registered pension plans, registered retirement savings plans, and tax-free savings accounts. Individuals and their employers may contribute to these savings vehicles.
+
+Canadians may also draw upon other assets for their retirement income.
+
+### Who participates in the CPP
+
+With very few exceptions, every person over the age of 18 who works in Canada, outside of Quebec, and earns more than $3,500 per year must contribute to the CPP. If you earn less than $3,500, you do not pay CPP contributions.
+
+### How do you make contributions
+
+Your employer deducts your share of CPP contributions from your paycheque each pay period until you reach the maximum amount of contributions for that year. Employers contribute an equal amount.
+
+If you are self-employed, you contribute the full amount when you file your T1 income tax and benefit return using Schedule 8, Canada Pension Plan Contributions and Overpayment. Your contributions are based on your net business income. You do not contribute on any other type of income, such as investment earnings.
+
+If, during a year, you contributed too much, or earned less than the set minimum amount, your contributions will be refunded when you file your tax return.
+
+### How much do you contribute
+
+You make contributions only on your annual earnings (your net business income if you are self-employed) between a minimum and a maximum amount.
+
+The government sets the maximum amount each year based on increases in the average wage in Canada. This maximum amount is referred to as the Year's Maximum Pensionable Earnings (YMPE).
+
+The YMPE is announced annually. To keep things simple, we will refer to the YMPE as the first earnings ceiling throughout the rest of this page.
+
+On January 1, 2024, the government introduced a second earnings ceiling known as the Year's Additional Maximum Pensionable Earnings (YAMPE). People who have income above the first earnings ceiling contribute an additional percentage of the income they earn above the first earnings ceiling up to the second earnings ceiling. This additional CPP contribution is part of the CPP enhancement known as second additional CPP contributions (CPP2).
+
+### What do you need to do
+
+#### Employees
+
+- You don't need to do anything until tax time.
+- When you do your taxes, your CPP contributions must be separated into two parts: CPP base alongside first additional CPP contributions and CPP2 contributions (starting in 2024). Base contributions are calculated at a rate of 4.95% while first CPP contributions are calculated at a rate of 1%. Both are reported together in Box 16 on the T4 slip. Box 16A has been added to the T4 slip to report any CPP2 contributions starting with the 2024 tax year. Any year you do not make CPP2 contributions, Box 16A will be left blank.
+- You can claim a non-refundable tax credit for your base CPP contributions. You will claim a tax deduction for the enhanced portions such as first additional and CPP2 contributions.
+- Electronic filers: if you file your return electronically using commercial tax software that is certified for NETFILE, or if a tax preparer completes and files your return using EFILE, the tax software will do all the necessary calculations and automatically separate and apply the base and enhanced contributions for you.
+- Paper filers: if you file a paper income tax and benefit return, the CRA forms will guide you through a calculation of the base and enhanced CPP contributions so you can claim the non-refundable tax credit and the tax deduction properly. Schedule 8/RC381 will break down your base and enhanced amounts. Once you have completed Schedule 8 or RC381, enter the enhanced amount of your contributions on line 22215 of your T1 return. The CPP base amount is to be entered on line 30800, as in the past.
+
+#### Employers
+
+- Withhold and remit CPP2 contributions the same way as base and first additional CPP contributions.
+- Report employees base and first additional CPP contributions in Box 16 on the T4 slip. For T4 slips filed for calendar year 2024 and after, report the amount of CPP2 contributions you deducted from your employee in Box 16A.
+- Do not report any amount using Box 16A if you did not deduct CPP2.
+- All employer contributions to the CPP are tax deductible.
+
+#### Self-employed
+
+- Send your CPP contributions when you file your T1 return.
+- Your contributions are based on net business income.
+- When you do your taxes, you will separate your CPP contributions into two parts: CPP base alongside first additional CPP contributions, and CPP2 contributions (starting in 2024). The base contribution is the amount that is calculated at a rate of 9.9%, and first additional CPP contributions are calculated at a rate of 2%. Claim a non-refundable tax credit on 4.95% of the base CPP contributions, and claim a tax deduction on the other 4.95%. Claim a tax deduction on the enhanced portion of your contributions (2%). Starting in the 2024 tax year, CPP2 contributions are calculated at a rate of 8%. All CPP2 contributions are tax deductible.
+- Electronic filers: if you file your return electronically using commercial tax software that is certified for NETFILE, or a tax preparer completes and files your return using EFILE, the tax software will perform all of the necessary calculations and automatically separate and apply the base and enhanced CPP contributions for you.
+- Paper filers: Schedule 8/RC381, Canada Pension Plan Contributions and Overpayment, will break down your base and enhanced contribution amounts. Since 2019, a new line (line 22215) is present on your T1 return where you will enter the enhanced amount of your contributions from Schedule 8/RC381. The CPP base amount will be entered on line 30800.
+
+### What is the difference between a non-refundable tax credit and a tax deduction
+
+#### Tax Deduction
+
+- A tax deduction reduces the amount of income that is subject to income tax.
+- For example, if your income for the year was $30,000, and you have a $1,000 tax deduction, your taxable income is reduced to $29,000.
+- How it affects your taxes depends on what tax bracket your income is in once the tax deduction has been applied.
+- For example, a $1,000 tax deduction in a 26% tax bracket means that you will pay $260 less in taxes.
+
+#### Tax Credit
+
+- Tax credits reduce income tax.
+- Non-refundable tax credits are calculated by multiplying the tax credit by the lowest federal tax rate.
+- For example, if you claim a $1,000 non-refundable tax credit of 14.5% for 2025, it will reduce the tax you owe for 2025 by $145.
+- What if the credit is more than what you owe? A non-refundable tax credit reduces your taxes owing, but you won't receive a refund of any amount over that.
+
+### How will the CPP enhancement affect you
+
+#### CPP enhancements: 2019 to 2023
+
+Since 2019, the CPP contribution rate for employees and employers increased gradually every year to a total increase of 1% by January 1, 2023. For self-employed individuals CPP contribution rates increased every year to a total increase of 2% by January 1, 2023.
+
+First additional CPP contribution rate increase per year
+Year | Contribution rate split (employee/ employer) | Contribution rate (self-employed) | YMPE, or earnings ceiling | Maximum yearly contribution (employee/employer) | Maximum yearly contribution (self-employed)
+2018 (Before enhancement) | 4.95% | 9.9% | $55,900 | $2,594 | $5,188
+2019 (Enhancement starts) | 5.1% | 10.2% | $57,400 | $2,749 | $5,498
+2020 | 5.25% | 10.5% | $58,700 | $2,898 | $5,796
+2021 | 5.45% | 10.9% | $61,600 | $3,166 | $6,333
+2022 | 5.7% | 11.4% | $64,900 | $3,500 | $7,000
+2023 | 5.95% | 11.9% | $66,600 | $3,754 | $7,509
+2024 | 5.95% | 11.9% | $68,500 | $3,867 | $7,734
+2025 | 5.95% | 11.9% | $71,300 | $4,034 | $8,068
+2026 | 5.95% | 11.9% | $74,600 | $4,230 | $8,461
+
+Note that yearly contribution amounts in the table above are calculated on the earnings ceiling minus the $3,500 basic exemption.
+
+If you earn less than the first earnings ceiling (the YMPE), there will be no further rate increases for you. The CPP contribution rate will stay at 5.95% for employers and employees, and at 11.9% for people who are self-employed, unless their earnings rise higher than the earnings ceiling.
+
+#### CPP enhancements: 2024 and subsequent years
+
+On January 1, 2024, a second, higher limit was introduced, allowing an additional portion of earnings to be invested in the CPP. This new limit is known as the Year’s Additional Maximum Pensionable Earnings (YAMPE), or second earnings ceiling. It will not replace the first earnings ceiling. Instead, it will subject worker’s earnings to two earnings limits.
+
+Starting in 2024, employees and employers each contribute an additional 4% on earnings above the first earnings ceiling (the YMPE), up to the amount of the second earnings ceiling (the YAMPE). These are their CPP2 contributions.
+
+The rate of CPP2 contributions for self-employed individuals is 8% of income earned between the first and second earnings ceiling. The value of the second earnings ceiling is based on the value of the first earnings ceiling. In 2024, the second earnings ceiling was approximately 7% higher than the first earnings ceiling. In 2025, the second earnings ceiling is approximately 14% higher than the first earnings ceiling. From 2026 on, the first and second earnings ceiling will increase incrementally each year, but the contribution rates will remain the same.
+
+The first earnings ceiling in 2026 is $74,600, and the second earnings ceiling is $85,000 (approximately 14% higher than the first earnings ceiling). If you earn between $74,600 and $85,000, you will make CPP2 contributions on $10,400, the difference between the first and second ceilings.
+
+Second additional CPP contributions in 2024 and subsequent years
+Year | Contribution rate split (employee/ employer) | Contribution rate (self-employed) | YMPE, or first earnings ceiling | YAMPE, or second earnings ceiling | Maximum yearly CPP2 contribution (employee/employer) | Maximum yearly CPP2 contribution (self-employed)
+2024 | 4% | 8% | $68,500 | $73,200 | $188 | $376
+2025 | 4% | 8% | $71,300 | $81,200 | $396 | $792
+2026 | 4% | 8% | $74,600 | $85,000 | $416 | $832
+
+### Examples - CPP Contributions 2019 to 2023, 2024, and subsequent years
+
+Damien (employee) - $45,000 income
+
+Damien's income is lower than the first earnings ceiling so they will not be affected by the second earnings ceiling and will not make CPP2 contributions. The total CPP amounts Damien will contribute are as follows:
+
+- Annual contribution rate and amount on income below first earnings ceiling
+
+Damien (employee) - $45,000 income - Annual contribution rate and amount on income below first earnings ceiling
+Year | Contribution rate split (employee/employer) | First earnings ceiling | Second earnings ceiling | Damien's annual CPP contributions at 5.95%
+2024 | 5.95% | $68,500 | $73,200 | ($45,000 - $3,500) × 5.95% = $2,469.25
+2025 | 5.95% | $71,300 | $81,200 | ($45,000 - $3,500) × 5.95% = $2,469.25
+2026 | 5.95% | $74,600 | $85,000 | ($45,000 - $3,500) × 5.95% = $2,469.25
+
+Pierre (self-employed) - $75,000 income
+
+Pierre's situation is different since Pierre is self-employed. Pierre has earnings above the first earnings ceiling, and will make CPP2 contributions in addition to base and first additional CPP contributions of 11.9%.
+
+- Annual contribution rate and amount on income below first earnings ceiling
+
+Pierre (self-employed) - $75,000 income - Annual contribution rate and amount on income below first earnings ceiling
+Year | Contribution rate | First earnings ceiling | Second earnings ceiling | Pierre's annual CPP contributions at 11.9%
+2023 | 11.9% | $66,600 | N/A | ($66,600 - $3,500) × 11.9% = $7,508.90
+2024 | 11.9% | $68,500 | $73,200 | ($68,500 - $3,500) × 11.9% = $7,735.00
+2025 | 11.9% | $71,300 | $81,200 | ($71,300 - $3,500) × 11.9% = $8,068.20
+2026 | 11.9% | $74,600 | $85,000 | ($74,600 - $3,500) × 11.9% = $8,460.90
+
+- Annual CPP2 contributions rate and amount on income above the first earnings ceiling up to the second earnings ceiling
+
+Pierre (self-employed) - $75,000 income - Annual CPP2 contributions rate and amount on income above the first earnings ceiling up to the second earnings ceiling
+Year | Contribution rate | First earnings ceiling | Second earnings ceiling | Contribution rate | Pierre's annual CPP2 contributions at 8%
+2024 | 8% | $68,500 | $73,200 | 8% | ($73,200 - $68,500) × 8% = $376
+2025 | 8% | $71,300 | $81,200 | 8% | ($75,000 - $71,300) × 8% = $296
+2026 | 8% | $74,600 | $85,000 | 8% | ($75,000 - $74,600) × 8% = $32
+
+- Pierre's total contributions will be:
+
+Pierre (self-employed) - $75,000 income - Pierre's total contributions will be:
+Year | Base CPP contribution amount (11.9%) | + CPP2 contributions (8%) | = Total annual CPP contributions
+2023 | $7,508.90 | N/A | $7,508.90
+2024 | $7,735.00 | $376 | $8,111.00
+2025 | $8,068.20 | $296 | $8,364.20
+2026 | $8,460.90 | $32 | $8,492.90
+
+Ayesha (employee) - $150,000 income
+
+Since Ayesha's income is higher than the first earnings ceiling, they will make base and first additional CPP contributions at 5.95% and, beginning in 2024, CPP2 contributions, 4% of YAMPE - YMPE.
+
+To calculate how much Ayesha will contribute to the CPP in 2024 and subsequent years, each contribution amount is calculated separately, then added together.
+
+- Annual contribution rate and amount on income below first earnings ceiling
+
+Ayesha (employee) - $150,000 income - Annual contribution rate and amount on income below first earnings ceiling
+Year | Contribution rate split (employee/ employer) | First earnings ceiling | Second earnings ceiling | Ayesha's annual CPP contributions at 5.95%
+2023 | 5.95% | $66,600 | N/A | ($66,600 - $3,500) × 5.95% = $3,754.45
+2024 | 5.95% | $68,500 | $73,200 | ($68,500 - $3,500) × 5.95% = $3,867.50
+2025 | 5.95% | $71,300 | $81,200 | ($71,300 - $3,500) × 5.95% = $4,034.10
+2026 | 5.95% | $74,600 | $85,000 | ($74,600 - $3,500) × 5.95% = $4,230.45
+
+- Annual CPP2 contributions rate and amount on income above first earnings ceiling up to second earnings ceiling
+
+Ayesha (employee) - $150,000 income - Annual CPP2 contributions rate and amount on income above first earnings ceiling up to second earnings ceiling
+Year | Contribution rate split (employee/ employer) | First earnings ceiling | Second earnings ceiling | Ayesha's annual CPP2 contributions at 4%
+2023 | N/A | $66,600 | N/A | N/A
+2024 | 4% | $68,500 | $73,200 | ($73,200 - $68,500) × 4% = $188
+2025 | 4% | $71,300 | $81,200 | ($81,200 - $71,300) × 4% = $396
+2026 | 4% | $74,600 | $85,000 | ($81,200 - $74,600) × 4% = $416
+
+- Ayesha's total contributions will be:
+
+Ayesha (employee) - $150,000 income - Ayesha's total contributions will then be:
+Year | First contribution amount | + CPP2 contribution amount | = Total annual CPP contribution
+2023 | $3,754.45 | $0 | $3,754.45
+2024 | $3,867.50 | $188 | $4,055.50
+2025 | $4,034.10 | $396 | $4,430.10
+2026 | $4,230.45 | $416 | $4,646.45
+
+### More information
+
+For more information on payroll deductions, please visit the following pages on Canada.ca
+
+- About the deduction of Canada Pension Plan (CPP) contributions
+- How to calculate payroll deductions and contributions
+- Payroll Deductions Online Calculator (PDOC), payroll tables, TD1s, and more
+
+For more information on CPP benefits, the CPP enhancements, and the Canada Workers benefit, please visit the following pages on Canada.ca
+
+- CPP Retirement pension - How much you could receive
+- Canada Pension Plan (CPP) and the CPP enhancement
+- Canada Workers Benefit
+
+Search for related information by keyword: Pensions | Canada Revenue Agency | Canada | Taxes | general public | backgrounders
