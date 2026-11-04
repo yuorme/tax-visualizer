@@ -1,0 +1,28 @@
+{
+  "cases": [
+    {
+      "id": "2025-qpp-business-marginal-with-cpp-election",
+      "province": "QC",
+      "profit": 75000,
+      "expected": 0.42823757229792
+    },
+    {
+      "id": "2025-qpp-zero-business-marginal-with-cpp-election",
+      "province": "QC",
+      "profit": 0,
+      "expected": 0
+    },
+    {
+      "id": "2025-cpp-unsupported-business-counterfactual",
+      "province": "ON",
+      "profit": 0,
+      "expected": null
+    }
+  ],
+  "workerDeductionMerge": {
+    "person": { "selfEmployment": 5000, "oth": 40000 },
+    "expectedWorkerDeduction": 300,
+    "expectedProvincialNet": 44569.799896,
+    "expectedLivingAloneCredit": 232.82525273
+  }
+}

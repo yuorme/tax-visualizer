@@ -9,8 +9,9 @@ import {
   netOf,
   payrollDetailsOf,
   rrspRoom,
+  workerDeductionOf,
 } from "./payroll.ts";
-import { type Ctx, cashOf, type Extra, type Person, workingIncomeOf } from "./types.ts";
+import { type Ctx, cashOf, type Extra, type Person } from "./types.ts";
 
 export interface Settings {
   useBpa: boolean;
@@ -52,9 +53,7 @@ export function personTax(fed: Federal, p: Province, x: Person, sp: Extra, ctx: 
   const { pay, selfEmployment: self } = payrollDetailsOf(fed, p, x);
   const retirement = employeeRetirementPayrollOf(fed, p, x)?.retirement;
   const ti = netOf(fed, p, x, ctx.childcareDeduction); // taxable income (federal)
-  const workerDed = p.quebec
-    ? Math.min(p.quebec.workerDeduction.max, Math.max(0, workingIncomeOf(x)) * p.quebec.workerDeduction.rate)
-    : 0;
+  const workerDed = workerDeductionOf(p, x);
   const provincialNet = qc ? netOf(fed, p, x) : ti; // Quebec does not deduct federal childcare expenses
   const tiP = Math.max(0, provincialNet - workerDed); // Quebec allows an extra deduction for workers
   const cash = cashOf(x);

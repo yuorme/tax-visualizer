@@ -233,6 +233,9 @@ For now:
   the Northern Ontario energy credit, Quebec's northern-village supplement.
 - Differences in what each province's sales tax exempts beyond the basics; Ontario's 8% RST on some insurance.
 - Living outside the reference city: one city per province sets property tax and regional fuel tax rates.
+- PEI's 1.67% Charlottetown rate already includes the resident credit. Additional owner credits need ownership
+  and assessment history and are not modelled; the annual-bill override can reflect them.
+  See [the owner-credit audit](verification/86-charlottetown-owner-credit.md).
 
 ## Estimates in the 2026 data
 
@@ -259,6 +262,8 @@ Marked `estimated: true` in the data files where they appear:
 - New Brunswick low-income reduction and Newfoundland and Labrador family threshold (2025 indexed by 2%).
 - Property tax rates for Whitehorse, Yellowknife and Iqaluit (rough 1%).
 - Quebec living-alone amount applied to any household with one adult.
+- Quebec living-alone line 275 income base provisionally continues the 2025 Schedule B pending the 2026 form;
+  the 2026 amounts are published.
 - Starting monthly spending by household size (derived from Statistics Canada spending data; see the page notes).
 - Starting distance driven per province: the average per light vehicle in the 2009 Canadian Vehicle Survey, the
   last one (vehicle-kilometres ÷ vehicles, to the nearest 100 km).

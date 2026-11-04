@@ -1,0 +1,295 @@
+Title: Real Property Tax Act Regulations
+URL: https://www.princeedwardisland.ca/sites/default/files/legislation/r05g-real_property_tax_act_regulations.pdf
+Fetched: 2026-11-04
+SHA-256 of the original: f677afe3698b4f76c051ed85c6cbc19205f943571016f28c320ebae858aad4f1
+Publication date modified: 2024-06-27
+PDF pages: 11-19 of 22
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 11 of 22 ---
+
+Real Property Tax Act Regulations Section 20
+c t Current to: June 29, 2024 Page 11
+20. Remuneration
+Revoked by EC639/93.
+21. Notice of appeal
+Revoked by EC639/93.
+22. Return of overpaid tax
+(1) Where as a result of an appeal, the Appeals board orders a reduction in tax, the Minister shall
+return to the person in whose name the tax was levied all or any portion of the resultant
+excess tax which may have been paid in respect of the property on which the appeal was filed
+together with interest calculated at the rate of twelve per cent per annum.
+Interest
+(2) Interest required to be paid under the provisions of subsection (1) shall be calculated from the
+date on which such excess payments were received to the date on which the repayment is
+authorized by the Minister inclusive of both dates. (EC512/72; 1028/81)
+23. Procedure
+Revoked by EC639/93.
+24. Tax credit, eligibility
+(1) For the purpose of section 5 of the Act
+(a) a person shall be deemed to be a resident person if he resides in the province for 183
+consecutive days or more each taxation year;
+(b) a corporation shall be deemed to be a resident corporation if 50% or more of the
+voting shares of the corporation are held by persons who qualify as residents under
+clause (a);
+(c) joint tenants and tenants in common shall be entitled to the credit if half or more of
+the tenants qualify as residents under clause (a);
+(d) a person who is a full-time student in attendance at an approved post-secondary
+educational institution located outside of the province and whose ordinary residence
+is in the province shall be deemed to be a resident person.
+Idem
+(2) No person or corporation shall be entitled to the credit referred to unless the property is
+(a) assessed in the name of that person or corporation pursuant to section 10 of the Real
+Property Assessment Act; or
+(b) vested in a resident person or resident corporation by a registered document as a life
+interest. (EC255/87; 189/88)
+24.1 Tax credit, residential property
+(1) Where a person is eligible under section 5.1 of the Act to receive a tax credit in respect of a
+residential property for a calendar year, the amount of the tax credit is the amount determined
+by the formula
+[A - B] x [(C/D) x ((1.50 - E)/100)]
+
+--- PDF page 12 of 22 ---
+
+Section 24 Real Property Tax Act Regulations
+Page 12 Current to: June 29, 2024 t c
+where
+A is the assessed value of the residential property as of December 31, 2007;
+B is the sum of
+(a) the value obtained by adjusting the assessed value of the residential property as of
+December 31, 2002 with the annual percentage increase in the All-Items Consumer
+Price Index for Prince Edward Island for the calendar year 2002 and for every
+subsequent calendar year up to and including the calendar year 2006; and
+(b) the value obtained by adjusting the assessed value of any improvements made to the
+residential property after December 31, 2002 with the percentage increase in the
+All-Items Consumer Price Index for Prince Edward Island for every calendar year
+after the calendar year in which the improvement was made up to and including the
+calendar year 2006;
+C is the number of days during the calendar year for which the credit is calculated that the
+residential property was owned by the person;
+D is the number of days in the calendar year for which the credit is calculated; and
+E is the amount of the tax credit per $100 of assessment that the person was eligible to
+receive under section 5 at December 31, 2007, in respect of the residential property.
+Tax credit, residential property, City of Charlottetown
+(2) Revoked by EC354/15. (EC205/04; 335/05; 379/08; 419/10; 354/15)
+24.2 Tax credit, sloped land, buffer zones
+(1) The amount of the tax credit that a person may receive under section 5.2 or 5.3 of the Act is
+(a) $1.50 per acre for property receiving farm assessment; or
+(b) $5.00 per acre for property receiving farm use assessment.
+Idem
+(2) A person not eligible to receive a tax credit for a calendar year under section 5.2 or 5.3 of
+the Act unless the person
+(a) has completed an environmental farm plan that includes all of the agricultural land
+owned by the person; and
+(b) has completed, and submitted to the Department of Agriculture a statement, in a form
+approved by the Minister, in which the person certifies that he or she has complied
+with the following:
+(i) the Environmental Protection Act Watercourse and Wetland Protection
+Regulations,
+(ii) the provisions of the Fisheries Act (Canada) that pertain to livestock access,
+(iii) the Guidelines for Manure Management for Prince Edward Island published
+in 1999 by the Department of Agriculture, Fisheries, Aquaculture and
+Forestry and the Department of Technology and Environment.
+Environmentally friendly farm buildings or structures
+(3) A person is not eligible to receive a tax credit for a calendar year under section 5.4 of the Act
+in respect of an environmentally friendly farm building or structure unless the person
+(a) has complied with the requirements of subsection (2); and
+(b) is eligible for funding, in respect of the building or structure, under the Sustainable
+Resource Conservation Program of the Department of Agriculture.
+
+--- PDF page 13 of 22 ---
+
+Real Property Tax Act Regulations Section 24
+c t Current to: June 29, 2024 Page 13
+“environmental farm plan”, defined
+(4) In this section, an “environmental farm plan” means an environmental farm plan as defined in
+the Agricultural Crop Rotation Act General Regulations.
+Tax credit, environmentally friendly farm buildings
+(5) For the purpose of section 5.4 of the Act and these regulations, the following are prescribed
+as environmentally friendly farm buildings or structures:
+(a) manure storage lagoons and pits and their covers;
+(b) pesticide storage buildings;
+(c) pesticide mixing and filling areas, including spill containment areas;
+(d) petroleum storage tanks, dispensers and containment areas;
+(e) milk house waste management systems, including septic tanks;
+(f) silage effluent containment areas;
+(g) deadstock composting facilities;
+(h) feedlot and livestock yard structures;
+(i) greenhouse spill containment areas. (EC351/04; 379/08; 419/10)
+24.3 Tax credit, owner-occupied residential property - 2024 and after
+(1) Where a person is eligible under section 5.5 of the Act to receive a tax credit in respect of a
+residential property for a calendar year, the amount of the tax credit is the amount determined
+by the formula
+[A-((B+C) x (1+D))] x [(E/F) x ((1.50 - G)/100)]
+where
+A is the owner-occupied residential property assessment in accordance with section 9.2 of the
+Real Property Assessment Act as of January 1, 2024;
+B is
+(a) where the property last became the person’s owner-occupied residential property
+after December 31, 2020, but before January 1, 2024, the owner-occupied residential
+property assessment in accordance with section 9.2 of the Real Property Assessment
+Act as of the date the property last became the person’s owner-occupied residential
+property; or
+(b) where the property last became the person’s owner-occupied residential property on
+or before December 31, 2020, the owner-occupied residential property assessment in
+accordance with section 9.2 of the Real Property Assessment Act as of December 31,
+2020;
+C is
+(a) where the property last became the person’s owner-occupied residential property
+after December 31, 2020, but before January 1, 2024, the assessed value of any new
+residential construction or changes to the property on and after the date on which the
+property last became the taxpayer’s owner-occupied residential property and up to
+December 31, 2023; or
+(b) where the property last became the person’s owner-occupied residential property on
+or before December 31, 2020, the assessed value of any new construction or changes
+to the property between January 1, 2021, and December 31, 2023;
+D is the percentage increase for 2024 in the owner-occupied residential property assessment
+in accordance with section 9.2 of the Real Property Assessment Act;
+
+--- PDF page 14 of 22 ---
+
+Section 24 Real Property Tax Act Regulations
+Page 14 Current to: June 29, 2024 t c
+E is the number of days during the calendar year for which the credit is calculated that the
+residential property was owned by the person;
+F is the number of days in the calendar year for which the credit is calculated; and
+G is the amount of the tax credit per $100 of assessment that the person was eligible to
+receive under section 5 of the Act at December 31, 2023, in respect of the residential
+property.
+Where result less than $0
+(2) Where the calculation based on the formula in subsection (1) results in a value of less than
+$0, the amount of the tax credit shall be $0. (EC653/24)
+24.4 Tax credit, leased or rented multiple dwelling accommodation units – 2024 and after
+(1) Where a person is eligible under section 5.6 of the Act to receive a tax credit for a calendar
+year in respect of a property with multiple dwelling accommodation units, the amount of the
+tax credit is the amount determined by the formula
+[A-((B+C) x (1+D))] x [(E/F) x ((1.50 - G)/100)]
+where
+A is the non-commercial realty assessment on the portion of the property that is in the form of
+multiple dwelling accommodation units in accordance with the Real Property
+Assessment Act as of January 1, 2024;
+B is
+(a) where the property was last acquired by the person after December 31, 2022, but
+before January 1, 2024, the non-commercial realty assessment on the portion of the
+property that is in the form of multiple dwelling accommodation units in accordance
+with the Real Property Assessment Act as of date the property was last acquired by
+the person; or
+(b) where the property was last acquired by the person on or before December 31, 2022,
+the non-commercial realty assessment on the portion of the property that is in the
+form of multiple dwelling accommodation units in accordance with the Real Property
+Assessment Act as of December 31, 2022;
+C is
+(a) where the property was last acquired by the person after December 31, 2022 but
+before January 1, 2024, the assessed value of any new non-commercial construction
+or changes to the property subsequent to the property last being acquired by the
+person and up to December 31, 2023; or
+(b) where the property was last acquired by the person on or before January 1, 2023, the
+assessed value of any new construction or changes to the property between January 1,
+2023 and December 31, 2023;
+D is the 2024 increase percentage in the non-commercial realty assessment on the portion of
+the property that is in the form of multiple dwelling accommodation units;
+E is the number of days during the calendar year for which the credit is calculated that the
+non-commercial property was owned by the person;
+F is the number of days in the calendar year for which the credit is calculated; and
+G is the amount of the tax credit per $100 of assessment that the person was eligible to
+receive under section 5 of the Real Property Tax Act at December 31, 2023, in respect of the
+non-commercial property.
+
+--- PDF page 15 of 22 ---
+
+Real Property Tax Act Regulations Section 25
+c t Current to: June 29, 2024 Page 15
+Where result less than $0
+(2) Where the calculation based on the formula in subsection (1) results in a value of less than
+$0, the amount of the tax credit shall be $0. (EC653/24)
+25. Residence
+Proof of residence may be required and where required, a person or corporation shall
+complete a form approved by the Minister. (EC255/87)
+26. Tax credit
+Where, during a taxation year, a person qualifies as a resident person under clause 24(1)(a) or
+a corporation qualifies as a resident corporation under clause 24(1)(b) and, as a result, the
+person or the corporation becomes eligible under section 24 for the tax credit under section 5
+of the Act, the tax credit shall be calculated on a pro-rated basis as follows:
+(a) from the date that the person or the corporation took ownership of the property to
+which the tax credit relates, if that date is on or after January 1 of the taxation year;
+(b) from January 1 of the taxation year, if the date that the person or the corporation took
+ownership of the property to which the tax credit relates is before January 1 of the
+taxation year and the date that the person or the corporation took up residency in the
+province is on or after January 1 of the taxation year;
+(c) from the later of the date that the person or the corporation took ownership of the
+property to which the tax credit relates and the date that the person or the corporation
+took up residency in the province, if both dates are before January 1 of the taxation
+year. (EC189/88; 427/16)
+27. Acquisition of property
+Revoked by EC189/88
+
+--- PDF page 16 of 22 ---
+
+
+
+--- PDF page 17 of 22 ---
+
+Real Property Tax Act Regulations SCHEDULE A
+c t Current to: June 29, 2024 Page 17
+SCHEDULE A
+FORM A - TAX NOTICE {revoked by EC351/04}
+FORM C - NOTICE OF LIABILITY TO TAX SALE
+FORM D - NOTICE OF TAX SALE
+FORM E - NOTICE OF TAX SALE (for publication)
+FORM G - NOTICE OF APPEAL TO APPEALS BOARD {revoked by EC639/93}
+FORM H - TAX DEED
+FORM I - CERTIFICATE OF OWNERSHIP
+FORM A
+Revoked by EC351/04
+
+--- PDF page 18 of 22 ---
+
+SCHEDULE A Real Property Tax Act Regulations
+Page 18 Current to: June 29, 2024 t c
+FORM C
+PROVINCE OF PRINCE EDWARD ISLAND
+DEPARTMENT OF FINANCE AND MUNICIPAL AFFAIRS
+NOTICE OF LIABILITY TO TAX SALE
+PURSUANT TO THE REAL PROPERTY TAX ACT
+Name and address in whose
+name the tax is levied .............................................................................................................
+.............................................................................................................
+Date: .................................................
+PARCEL NUMBER PROPERTY LOCATION DESCRIPTION
+TAKE NOTICE that real property tax levied in your name on the property described above
+is overdue and unpaid as follows:
+Arrears to December 31 $...............................
+Tax Arrears $...............................
+Tax Arrears $...............................
+Interest $...............................
+Total Arrears and Interest $...............................
+AND TAKE NOTICE that the property is liable to be sold at a public sale as provided by
+section 16 of the Act.
+…………......................................................
+Minister of Finance and Municipal Affairs
+Province of Prince Edward Island
+(EC419/10)
+
+--- PDF page 19 of 22 ---
+
+Real Property Tax Act Regulations SCHEDULE A
+c t Current to: June 29, 2024 Page 19
+FORM D
+PROVINCE OF PRINCE EDWARD ISLAND
+DEPARTMENT OF FINANCE AND MUNICIPAL AFFAIRS
+NOTICE OF TAX SALE
+PURSUANT TO THE REAL PROPERTY TAX ACT
+Name and address in whose
+name the tax is levied ............................................................................................................
+............................................................................................................
+Date: .................................................
+PARCEL NUMBER PROPERTY LOCATION DESCRIPTION
+TAKE NOTICE that real property tax levied in your name on the property described above
+is overdue and unpaid as follows:
+AND TAKE NOTICE that the property is liable to be sold as provided by section 16 of the
+Act.
+…………......................................................
+Minister of Finance and Municipal Affairs
+Province of Prince Edward Island
+(EC419/10)

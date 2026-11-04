@@ -5,6 +5,7 @@ Sources and continuation assumptions are documented in 14-self-employment.md.
 """
 import json
 import sys
+from decimal import Decimal as D
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -193,3 +194,32 @@ if "--write" in sys.argv:
 else:
     assert json.loads(DEST.read_text()) == fixture, "Committed self-employment fixture differs from independent forms"
 print(f"Verified {len(CASES)} independent self-employment cases")
+
+# Review regression fixtures are separately committed; never regenerate the locked original cases.
+# At 75,000 business profit in 2025, the next 100 stays in the second QPP band, below the QPIP
+# ceiling, in federal/provincial second tax brackets, and in the HSF second column. Credits are phased out.
+review = json.loads((DEST.parent / "self-employment-marginal.json").read_text())
+qpp_delta = D("100") * D(".08")
+qpip_delta = D("100") * D(".00878")
+qpip_deduction_delta = qpip_delta * D(".43736")
+net_delta = D("100") - qpp_delta - qpip_deduction_delta
+federal_delta = (net_delta * D(".205") - (qpip_delta - qpip_deduction_delta) * D(".145")) * D(".835")
+provincial_delta = net_delta * D(".19")  # worker deduction already capped
+hsf_delta = net_delta * D(".01")
+marginal = (federal_delta + provincial_delta + qpp_delta + qpip_delta + hsf_delta) / 100
+assert D(str(review["cases"][0]["expected"])) == marginal, marginal
+# From zero to 100: below contribution/benefit floors, non-refundable credits absorb both income taxes.
+assert review["cases"][1]["expected"] == 0
+# CPP's new positive-profit counterfactual needs an unsupported effective-month election, not a tax estimate.
+assert review["cases"][2]["expected"] is None
+
+# Merge integration: main's Schedule B line 275 base must use the business-inclusive worker deduction.
+merge = review["workerDeductionMerge"]
+worker = D("5000") * D(".06")
+net = D("45000") - D("1500") * D(".074") - D("5000") * D(".00878") * D(".43736")
+line275 = net - worker
+living_alone = (D("2128") - (line275 - D("42090")) * D(".1875")) * D(".14")
+assert D(str(merge["expectedWorkerDeduction"])) == worker
+assert D(str(merge["expectedProvincialNet"])) == line275
+assert D(str(merge["expectedLivingAloneCredit"])) == living_alone
+print(f"Verified 4 review/merge goldens; Quebec marginal = {marginal * 100}%")

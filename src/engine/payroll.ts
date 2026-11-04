@@ -1,6 +1,6 @@
 import type { Federal, Province } from "../data/schema.ts";
 import { selfEmploymentContributions, validateSelfEmployment } from "./self-employment.ts";
-import type { EmployeeContributionElection, PayrollMonth, Person } from "./types.ts";
+import { type EmployeeContributionElection, type PayrollMonth, type Person, workingIncomeOf } from "./types.ts";
 
 type RetirementRule = NonNullable<Federal["payroll"]["employeeRetirement"]>["cpp" | "qpp"];
 
@@ -245,6 +245,12 @@ export function netIncomeParts(fed: Federal, p: Province | null, x: Person, chil
 export function netOf(fed: Federal, p: Province | null, x: Person, childcareDeduction = 0): number {
   const n = netIncomeParts(fed, p, x, childcareDeduction);
   return Math.max(0, n.ord + (n.selfEmployment ?? 0) + (n.oth ?? 0) + n.cg + n.ed + n.nd + n.fd - n.ded - n.enh);
+}
+
+/** Quebec TP-1 line 201: wages and active business profit, included in line 275 net income. */
+export function workerDeductionOf(p: Province, x: Person): number {
+  const rule = p.quebec?.workerDeduction;
+  return rule ? Math.min(rule.max, Math.max(0, workingIncomeOf(x)) * rule.rate) : 0;
 }
 
 /** RRSP deduction shortcut: a share of wages and business profit up to the year's dollar limit, rounded.

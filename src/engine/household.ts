@@ -9,7 +9,7 @@ import { childcareCreditOf } from "./childcare-credits.ts";
 import { creditsOf } from "./credits.ts";
 import { fuelTaxOf } from "./fuel.ts";
 import { householdPremiumOf } from "./health-premiums.ts";
-import { netIncomeParts, netOf } from "./payroll.ts";
+import { netIncomeParts, netOf, workerDeductionOf } from "./payroll.ts";
 import { type PersonResult, personTax } from "./personal.ts";
 import {
   blank,
@@ -204,7 +204,9 @@ export function household(y: YearData, p: Province, hh: Household, peopleIn: Per
         f = fAmt * fr;
       }
       const la = p.quebec.livingAlone;
-      pAmt = Math.max(0, la.max - la.rate * Math.max(0, provincialNets[0] - la.threshold)); // amount for a person living alone
+      // Schedule B lines 10–18 use TP-1 line 275: deduct line 201, but not federal childcare expenses.
+      const livingAloneNet = Math.max(0, provincialNets[0] - workerDeductionOf(p, ppl[0]));
+      pAmt = Math.max(0, la.max - la.rate * Math.max(0, livingAloneNet - la.threshold));
       pp = pAmt * prr;
     }
     const r0 = personTax(fed, p, ppl[0], { f, p: pp }, ctx(0), s);
@@ -426,7 +428,9 @@ export function compute(y: YearData, p: Province, hh: Household) {
       ...(hh.people[hh.active]?.selfEmployment !== undefined
         ? {
             margSelfEmployment:
-              hh.people[hh.active].ord === 0 && hh.people[hh.active].employeePayroll?.cppElection
+              p.system !== "quebec" &&
+              hh.people[hh.active].ord === 0 &&
+              hh.people[hh.active].employeePayroll?.cppElection
                 ? null
                 : margOf("selfEmployment"),
           }

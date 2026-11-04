@@ -1,0 +1,9236 @@
+[
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 6,
+    "province": "QC",
+    "path": "total",
+    "before": -35176.3144,
+    "after": -35181.2526
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 6,
+    "province": "QC",
+    "path": "prov",
+    "before": 4274.8125,
+    "after": 4269.8742
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 6,
+    "province": "QC",
+    "path": "netTotal",
+    "before": -38770.3144,
+    "after": -38775.2526
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 6,
+    "province": "QC",
+    "path": "marg",
+    "before": 0.7573,
+    "after": 0.7854
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 6,
+    "province": "QC",
+    "path": "incomeTax",
+    "before": 6346.1406,
+    "after": 6341.2024
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 6,
+    "province": "QC",
+    "path": "gross",
+    "before": 13042.5906,
+    "after": 13037.6524
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 6,
+    "province": "QC",
+    "path": "avg",
+    "before": -0.7817,
+    "after": -0.7818
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 6,
+    "province": "QC",
+    "path": "grossAvg",
+    "before": 0.2898,
+    "after": 0.2897
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 6,
+    "province": "QC",
+    "path": "margBy.ord",
+    "before": 0.7573,
+    "after": 0.7854
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 6,
+    "province": "QC",
+    "path": "margBy.cg",
+    "before": 0.3415,
+    "after": 0.3556
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 6,
+    "province": "QC",
+    "path": "margBy.ed",
+    "before": 0.6265,
+    "after": 0.6653
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 6,
+    "province": "QC",
+    "path": "margBy.nd",
+    "before": 0.6494,
+    "after": 0.6817
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 6,
+    "province": "QC",
+    "path": "margBy.fd",
+    "before": 0.6941,
+    "after": 0.7222
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 6,
+    "province": "QC",
+    "path": "claim.pAmt",
+    "before": 0,
+    "after": 32.9219
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 6,
+    "province": "QC",
+    "path": "claim.saved",
+    "before": 1511.6422,
+    "after": 1516.5805
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 6,
+    "province": "QC",
+    "path": "people.0.pSp",
+    "before": 0,
+    "after": 4.9383
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 6,
+    "province": "QC",
+    "path": "people.0.pSpFull",
+    "before": 0,
+    "after": 4.9383
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 6,
+    "province": "QC",
+    "path": "people.0.prov",
+    "before": 4274.8125,
+    "after": 4269.8742
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 6,
+    "province": "QC",
+    "path": "people.0.total",
+    "before": 9448.5906,
+    "after": 9443.6524
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 24,
+    "province": "QC",
+    "path": "total",
+    "before": 16546.3684,
+    "after": 16513.4621
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 24,
+    "province": "QC",
+    "path": "prov",
+    "before": 3413.4914,
+    "after": 3380.5852
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 24,
+    "province": "QC",
+    "path": "netTotal",
+    "before": 8057.5684,
+    "after": 8024.6621
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 24,
+    "province": "QC",
+    "path": "incomeTax",
+    "before": 6416.0909,
+    "after": 6383.1846
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 24,
+    "province": "QC",
+    "path": "gross",
+    "before": 17641.0409,
+    "after": 17608.1346
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 24,
+    "province": "QC",
+    "path": "avg",
+    "before": 0.4137,
+    "after": 0.4128
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 24,
+    "province": "QC",
+    "path": "grossAvg",
+    "before": 0.441,
+    "after": 0.4402
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 24,
+    "province": "QC",
+    "path": "claim.pAmt",
+    "before": 749.6406,
+    "after": 969.0156
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 24,
+    "province": "QC",
+    "path": "claim.saved",
+    "before": 112.4461,
+    "after": 145.3523
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 24,
+    "province": "QC",
+    "path": "people.0.pSp",
+    "before": 112.4461,
+    "after": 145.3523
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 24,
+    "province": "QC",
+    "path": "people.0.pSpFull",
+    "before": 112.4461,
+    "after": 145.3523
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 24,
+    "province": "QC",
+    "path": "people.0.prov",
+    "before": 3413.4914,
+    "after": 3380.5852
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 24,
+    "province": "QC",
+    "path": "people.0.total",
+    "before": 9152.2409,
+    "after": 9119.3346
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 25,
+    "province": "QC",
+    "path": "total",
+    "before": 16546.3684,
+    "after": 16513.4621
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 25,
+    "province": "QC",
+    "path": "prov",
+    "before": 3413.4914,
+    "after": 3380.5852
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 25,
+    "province": "QC",
+    "path": "netTotal",
+    "before": 8057.5684,
+    "after": 8024.6621
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 25,
+    "province": "QC",
+    "path": "incomeTax",
+    "before": 6416.0909,
+    "after": 6383.1846
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 25,
+    "province": "QC",
+    "path": "gross",
+    "before": 17641.0409,
+    "after": 17608.1346
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 25,
+    "province": "QC",
+    "path": "avg",
+    "before": 0.4137,
+    "after": 0.4128
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 25,
+    "province": "QC",
+    "path": "grossAvg",
+    "before": 0.441,
+    "after": 0.4402
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 25,
+    "province": "QC",
+    "path": "claim.pAmt",
+    "before": 749.6406,
+    "after": 969.0156
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 25,
+    "province": "QC",
+    "path": "claim.saved",
+    "before": 112.4461,
+    "after": 145.3523
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 25,
+    "province": "QC",
+    "path": "people.0.pSp",
+    "before": 112.4461,
+    "after": 145.3523
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 25,
+    "province": "QC",
+    "path": "people.0.pSpFull",
+    "before": 112.4461,
+    "after": 145.3523
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 25,
+    "province": "QC",
+    "path": "people.0.prov",
+    "before": 3413.4914,
+    "after": 3380.5852
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 25,
+    "province": "QC",
+    "path": "people.0.total",
+    "before": 9152.2409,
+    "after": 9119.3346
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 36,
+    "province": "QC",
+    "path": "total",
+    "before": -25904.1596,
+    "after": -25937.0659
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 36,
+    "province": "QC",
+    "path": "prov",
+    "before": 2319.8883,
+    "after": 2286.982
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 36,
+    "province": "QC",
+    "path": "netTotal",
+    "before": -29498.1596,
+    "after": -29531.0659
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 36,
+    "province": "QC",
+    "path": "invTax",
+    "before": 5090.6579,
+    "after": 5057.7516
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 36,
+    "province": "QC",
+    "path": "incomeTax",
+    "before": 2868.9929,
+    "after": 2836.0866
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 36,
+    "province": "QC",
+    "path": "gross",
+    "before": 7880.4629,
+    "after": 7847.5566
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 36,
+    "province": "QC",
+    "path": "avg",
+    "before": -0.6817,
+    "after": -0.6826
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 36,
+    "province": "QC",
+    "path": "grossAvg",
+    "before": 0.2074,
+    "after": 0.2065
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 36,
+    "province": "QC",
+    "path": "claim.pAmt",
+    "before": 1363.3281,
+    "after": 1582.7031
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 36,
+    "province": "QC",
+    "path": "claim.saved",
+    "before": 1716.1415,
+    "after": 1749.0477
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 36,
+    "province": "QC",
+    "path": "people.0.pSp",
+    "before": 204.4992,
+    "after": 237.4055
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 36,
+    "province": "QC",
+    "path": "people.0.pSpFull",
+    "before": 204.4992,
+    "after": 237.4055
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 36,
+    "province": "QC",
+    "path": "people.0.prov",
+    "before": 2319.8883,
+    "after": 2286.982
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 36,
+    "province": "QC",
+    "path": "people.0.total",
+    "before": 4286.4629,
+    "after": 4253.5566
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 101,
+    "province": "QC",
+    "path": "total",
+    "before": -1135.5314,
+    "after": -1140.9928
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 101,
+    "province": "QC",
+    "path": "prov",
+    "before": 4272.0225,
+    "after": 4266.5611
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 101,
+    "province": "QC",
+    "path": "netTotal",
+    "before": -12208.5314,
+    "after": -12213.9928
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 101,
+    "province": "QC",
+    "path": "marg",
+    "before": 0.6494,
+    "after": 0.6776
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 101,
+    "province": "QC",
+    "path": "incomeTax",
+    "before": 6224.7076,
+    "after": 6219.2462
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 101,
+    "province": "QC",
+    "path": "gross",
+    "before": 21347.4076,
+    "after": 21341.9462
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 101,
+    "province": "QC",
+    "path": "avg",
+    "before": -0.0151,
+    "after": -0.0152
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 101,
+    "province": "QC",
+    "path": "margBy.ord",
+    "before": 0.6494,
+    "after": 0.6776
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 101,
+    "province": "QC",
+    "path": "margBy.cg",
+    "before": 0.3122,
+    "after": 0.3263
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 101,
+    "province": "QC",
+    "path": "margBy.ed",
+    "before": 0.562,
+    "after": 0.6008
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 101,
+    "province": "QC",
+    "path": "margBy.nd",
+    "before": 0.5941,
+    "after": 0.6264
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 101,
+    "province": "QC",
+    "path": "margBy.fd",
+    "before": 0.6473,
+    "after": 0.6754
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 101,
+    "province": "QC",
+    "path": "claim.pAmt",
+    "before": 0,
+    "after": 36.4094
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 101,
+    "province": "QC",
+    "path": "claim.saved",
+    "before": 1511.6422,
+    "after": 1517.1037
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 101,
+    "province": "QC",
+    "path": "people.0.pSp",
+    "before": 0,
+    "after": 5.4614
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 101,
+    "province": "QC",
+    "path": "people.0.pSpFull",
+    "before": 0,
+    "after": 5.4614
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 101,
+    "province": "QC",
+    "path": "people.0.prov",
+    "before": 4272.0225,
+    "after": 4266.5611
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 101,
+    "province": "QC",
+    "path": "people.0.total",
+    "before": 10274.4076,
+    "after": 10268.9462
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 103,
+    "province": "QC",
+    "path": "total",
+    "before": 867.6796,
+    "after": 834.7734
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 103,
+    "province": "QC",
+    "path": "prov",
+    "before": 3057.7758,
+    "after": 3024.8695
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 103,
+    "province": "QC",
+    "path": "netTotal",
+    "before": -4275.2204,
+    "after": -4308.1266
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 103,
+    "province": "QC",
+    "path": "incomeTax",
+    "before": 4316.5846,
+    "after": 4283.6784
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 103,
+    "province": "QC",
+    "path": "gross",
+    "before": 12049.1146,
+    "after": 12016.2084
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 103,
+    "province": "QC",
+    "path": "avg",
+    "before": 0.0228,
+    "after": 0.022
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 103,
+    "province": "QC",
+    "path": "grossAvg",
+    "before": 0.3171,
+    "after": 0.3162
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 103,
+    "province": "QC",
+    "path": "margBy.fd",
+    "before": 0.6525,
+    "after": 0.6534
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 103,
+    "province": "QC",
+    "path": "claim.pAmt",
+    "before": 1124.0781,
+    "after": 1343.4531
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 103,
+    "province": "QC",
+    "path": "claim.saved",
+    "before": 1680.254,
+    "after": 1713.1602
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 103,
+    "province": "QC",
+    "path": "people.0.pSp",
+    "before": 168.6117,
+    "after": 201.518
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 103,
+    "province": "QC",
+    "path": "people.0.pSpFull",
+    "before": 168.6117,
+    "after": 201.518
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 103,
+    "province": "QC",
+    "path": "people.0.prov",
+    "before": 3057.7758,
+    "after": 3024.8695
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 103,
+    "province": "QC",
+    "path": "people.0.total",
+    "before": 6906.2146,
+    "after": 6873.3084
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 112,
+    "province": "QC",
+    "path": "total",
+    "before": 20332.9144,
+    "after": 20300.0081
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 112,
+    "province": "QC",
+    "path": "prov",
+    "before": 3057.7758,
+    "after": 3024.8695
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 112,
+    "province": "QC",
+    "path": "netTotal",
+    "before": 7103.5144,
+    "after": 7070.6081
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 112,
+    "province": "QC",
+    "path": "incomeTax",
+    "before": 5828.2269,
+    "after": 5795.3206
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 112,
+    "province": "QC",
+    "path": "gross",
+    "before": 21647.2569,
+    "after": 21614.3506
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 112,
+    "province": "QC",
+    "path": "avg",
+    "before": 0.5351,
+    "after": 0.5342
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 112,
+    "province": "QC",
+    "path": "grossAvg",
+    "before": 0.5697,
+    "after": 0.5688
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 112,
+    "province": "QC",
+    "path": "claim.pAmt",
+    "before": 1124.0781,
+    "after": 1343.4531
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 112,
+    "province": "QC",
+    "path": "claim.saved",
+    "before": 168.6117,
+    "after": 201.518
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 112,
+    "province": "QC",
+    "path": "people.0.pSp",
+    "before": 168.6117,
+    "after": 201.518
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 112,
+    "province": "QC",
+    "path": "people.0.pSpFull",
+    "before": 168.6117,
+    "after": 201.518
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 112,
+    "province": "QC",
+    "path": "people.0.prov",
+    "before": 3057.7758,
+    "after": 3024.8695
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 112,
+    "province": "QC",
+    "path": "people.0.total",
+    "before": 8417.8569,
+    "after": 8384.9506
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 113,
+    "province": "QC",
+    "path": "total",
+    "before": 11605.9051,
+    "after": 11572.9988
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 113,
+    "province": "QC",
+    "path": "prov",
+    "before": 3203.8336,
+    "after": 3170.9273
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 113,
+    "province": "QC",
+    "path": "netTotal",
+    "before": 8910.4051,
+    "after": 8877.4988
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 113,
+    "province": "QC",
+    "path": "invTax",
+    "before": 5603.8163,
+    "after": 5570.9101
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 113,
+    "province": "QC",
+    "path": "incomeTax",
+    "before": 5661.4351,
+    "after": 5628.5288
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 113,
+    "province": "QC",
+    "path": "gross",
+    "before": 11605.9051,
+    "after": 11572.9988
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 113,
+    "province": "QC",
+    "path": "avg",
+    "before": 0.1398,
+    "after": 0.1394
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 113,
+    "province": "QC",
+    "path": "grossAvg",
+    "before": 0.1398,
+    "after": 0.1394
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 113,
+    "province": "QC",
+    "path": "claim.pAmt",
+    "before": 432.8594,
+    "after": 652.2344
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 113,
+    "province": "QC",
+    "path": "claim.saved",
+    "before": 64.9289,
+    "after": 97.8352
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 113,
+    "province": "QC",
+    "path": "people.0.pSp",
+    "before": 64.9289,
+    "after": 97.8352
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 113,
+    "province": "QC",
+    "path": "people.0.pSpFull",
+    "before": 64.9289,
+    "after": 97.8352
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 113,
+    "province": "QC",
+    "path": "people.0.prov",
+    "before": 3203.8336,
+    "after": 3170.9273
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 113,
+    "province": "QC",
+    "path": "people.0.total",
+    "before": 8910.4051,
+    "after": 8877.4988
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 121,
+    "province": "QC",
+    "path": "total",
+    "before": -17526.7004,
+    "after": -17559.6066
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 121,
+    "province": "QC",
+    "path": "prov",
+    "before": 3057.7758,
+    "after": 3024.8695
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 121,
+    "province": "QC",
+    "path": "netTotal",
+    "before": -28308.7004,
+    "after": -28341.6066
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 121,
+    "province": "QC",
+    "path": "incomeTax",
+    "before": 4316.5846,
+    "after": 4283.6784
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 121,
+    "province": "QC",
+    "path": "gross",
+    "before": 17688.2146,
+    "after": 17655.3084
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 121,
+    "province": "QC",
+    "path": "avg",
+    "before": -0.4612,
+    "after": -0.4621
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 121,
+    "province": "QC",
+    "path": "grossAvg",
+    "before": 0.4655,
+    "after": 0.4646
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 121,
+    "province": "QC",
+    "path": "margBy.fd",
+    "before": 0.7125,
+    "after": 0.7134
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 121,
+    "province": "QC",
+    "path": "claim.pAmt",
+    "before": 1124.0781,
+    "after": 1343.4531
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 121,
+    "province": "QC",
+    "path": "claim.saved",
+    "before": 1680.254,
+    "after": 1713.1602
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 121,
+    "province": "QC",
+    "path": "people.0.pSp",
+    "before": 168.6117,
+    "after": 201.518
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 121,
+    "province": "QC",
+    "path": "people.0.pSpFull",
+    "before": 168.6117,
+    "after": 201.518
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 121,
+    "province": "QC",
+    "path": "people.0.prov",
+    "before": 3057.7758,
+    "after": 3024.8695
+  },
+  {
+    "file": "tests/golden/2019.json",
+    "year": 2019,
+    "scenario": 121,
+    "province": "QC",
+    "path": "people.0.total",
+    "before": 6906.2146,
+    "after": 6873.3084
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 6,
+    "province": "QC",
+    "path": "total",
+    "before": -40117.9127,
+    "after": -40146.3986
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 6,
+    "province": "QC",
+    "path": "prov",
+    "before": 4223.025,
+    "after": 4194.5391
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 6,
+    "province": "QC",
+    "path": "netTotal",
+    "before": -43711.9127,
+    "after": -43740.3986
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 6,
+    "province": "QC",
+    "path": "marg",
+    "before": 0.7183,
+    "after": 0.7464
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 6,
+    "province": "QC",
+    "path": "incomeTax",
+    "before": 5997.7173,
+    "after": 5969.2314
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 6,
+    "province": "QC",
+    "path": "gross",
+    "before": 12719.5173,
+    "after": 12691.0314
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 6,
+    "province": "QC",
+    "path": "avg",
+    "before": -0.8915,
+    "after": -0.8921
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 6,
+    "province": "QC",
+    "path": "grossAvg",
+    "before": 0.2827,
+    "after": 0.282
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 6,
+    "province": "QC",
+    "path": "margBy.ord",
+    "before": 0.7183,
+    "after": 0.7464
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 6,
+    "province": "QC",
+    "path": "margBy.cg",
+    "before": 0.3276,
+    "after": 0.3417
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 6,
+    "province": "QC",
+    "path": "margBy.ed",
+    "before": 0.5697,
+    "after": 0.6085
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 6,
+    "province": "QC",
+    "path": "margBy.nd",
+    "before": 0.612,
+    "after": 0.6443
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 6,
+    "province": "QC",
+    "path": "margBy.fd",
+    "before": 0.6634,
+    "after": 0.6921
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 6,
+    "province": "QC",
+    "path": "claim.pAmt",
+    "before": 0,
+    "after": 189.9063
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 6,
+    "province": "QC",
+    "path": "claim.saved",
+    "before": 1656.9322,
+    "after": 1685.4182
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 6,
+    "province": "QC",
+    "path": "people.0.pSp",
+    "before": 0,
+    "after": 28.4859
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 6,
+    "province": "QC",
+    "path": "people.0.pSpFull",
+    "before": 0,
+    "after": 28.4859
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 6,
+    "province": "QC",
+    "path": "people.0.prov",
+    "before": 4223.025,
+    "after": 4194.5391
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 6,
+    "province": "QC",
+    "path": "people.0.total",
+    "before": 9125.5173,
+    "after": 9097.0314
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 24,
+    "province": "QC",
+    "path": "total",
+    "before": 16118.6392,
+    "after": 16085.1704
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 24,
+    "province": "QC",
+    "path": "prov",
+    "before": 3340.0547,
+    "after": 3306.5859
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 24,
+    "province": "QC",
+    "path": "netTotal",
+    "before": 7751.0392,
+    "after": 7717.5704
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 24,
+    "province": "QC",
+    "path": "incomeTax",
+    "before": 6191.7342,
+    "after": 6158.2654
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 24,
+    "province": "QC",
+    "path": "gross",
+    "before": 17317.4342,
+    "after": 17283.9654
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 24,
+    "province": "QC",
+    "path": "avg",
+    "before": 0.403,
+    "after": 0.4021
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 24,
+    "province": "QC",
+    "path": "grossAvg",
+    "before": 0.4329,
+    "after": 0.4321
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 24,
+    "province": "QC",
+    "path": "claim.pAmt",
+    "before": 901.4688,
+    "after": 1124.5938
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 24,
+    "province": "QC",
+    "path": "claim.saved",
+    "before": 135.2203,
+    "after": 168.6891
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 24,
+    "province": "QC",
+    "path": "people.0.pSp",
+    "before": 135.2203,
+    "after": 168.6891
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 24,
+    "province": "QC",
+    "path": "people.0.pSpFull",
+    "before": 135.2203,
+    "after": 168.6891
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 24,
+    "province": "QC",
+    "path": "people.0.prov",
+    "before": 3340.0547,
+    "after": 3306.5859
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 24,
+    "province": "QC",
+    "path": "people.0.total",
+    "before": 8949.8342,
+    "after": 8916.3654
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 25,
+    "province": "QC",
+    "path": "total",
+    "before": 16118.6392,
+    "after": 16085.1704
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 25,
+    "province": "QC",
+    "path": "prov",
+    "before": 3340.0547,
+    "after": 3306.5859
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 25,
+    "province": "QC",
+    "path": "netTotal",
+    "before": 7751.0392,
+    "after": 7717.5704
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 25,
+    "province": "QC",
+    "path": "incomeTax",
+    "before": 6191.7342,
+    "after": 6158.2654
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 25,
+    "province": "QC",
+    "path": "gross",
+    "before": 17317.4342,
+    "after": 17283.9654
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 25,
+    "province": "QC",
+    "path": "avg",
+    "before": 0.403,
+    "after": 0.4021
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 25,
+    "province": "QC",
+    "path": "grossAvg",
+    "before": 0.4329,
+    "after": 0.4321
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 25,
+    "province": "QC",
+    "path": "claim.pAmt",
+    "before": 901.4688,
+    "after": 1124.5938
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 25,
+    "province": "QC",
+    "path": "claim.saved",
+    "before": 135.2203,
+    "after": 168.6891
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 25,
+    "province": "QC",
+    "path": "people.0.pSp",
+    "before": 135.2203,
+    "after": 168.6891
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 25,
+    "province": "QC",
+    "path": "people.0.pSpFull",
+    "before": 135.2203,
+    "after": 168.6891
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 25,
+    "province": "QC",
+    "path": "people.0.prov",
+    "before": 3340.0547,
+    "after": 3306.5859
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 25,
+    "province": "QC",
+    "path": "people.0.total",
+    "before": 8949.8342,
+    "after": 8916.3654
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 36,
+    "province": "QC",
+    "path": "total",
+    "before": -29205.5464,
+    "after": -29239.0151
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 36,
+    "province": "QC",
+    "path": "prov",
+    "before": 2323.0209,
+    "after": 2289.5522
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 36,
+    "province": "QC",
+    "path": "netTotal",
+    "before": -32799.5464,
+    "after": -32833.0151
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 36,
+    "province": "QC",
+    "path": "invTax",
+    "before": 4669.0486,
+    "after": 4635.5799
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 36,
+    "province": "QC",
+    "path": "incomeTax",
+    "before": 2577.4486,
+    "after": 2543.9799
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 36,
+    "province": "QC",
+    "path": "gross",
+    "before": 7598.6286,
+    "after": 7565.1599
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 36,
+    "province": "QC",
+    "path": "avg",
+    "before": -0.7686,
+    "after": -0.7694
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 36,
+    "province": "QC",
+    "path": "grossAvg",
+    "before": 0.2,
+    "after": 0.1991
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 36,
+    "province": "QC",
+    "path": "claim.pAmt",
+    "before": 1510.0938,
+    "after": 1733.2188
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 36,
+    "province": "QC",
+    "path": "claim.saved",
+    "before": 1883.4463,
+    "after": 1916.9151
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 36,
+    "province": "QC",
+    "path": "people.0.pSp",
+    "before": 226.5141,
+    "after": 259.9828
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 36,
+    "province": "QC",
+    "path": "people.0.pSpFull",
+    "before": 226.5141,
+    "after": 259.9828
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 36,
+    "province": "QC",
+    "path": "people.0.prov",
+    "before": 2323.0209,
+    "after": 2289.5522
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 36,
+    "province": "QC",
+    "path": "people.0.total",
+    "before": 4004.6286,
+    "after": 3971.1599
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 101,
+    "province": "QC",
+    "path": "total",
+    "before": -3662.9291,
+    "after": -3692.571
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 101,
+    "province": "QC",
+    "path": "prov",
+    "before": 4216.86,
+    "after": 4187.2181
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 101,
+    "province": "QC",
+    "path": "netTotal",
+    "before": -14675.3291,
+    "after": -14704.9709
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 101,
+    "province": "QC",
+    "path": "marg",
+    "before": 0.6196,
+    "after": 0.6477
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 101,
+    "province": "QC",
+    "path": "incomeTax",
+    "before": 5861.3549,
+    "after": 5831.7131
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 101,
+    "province": "QC",
+    "path": "gross",
+    "before": 21041.0549,
+    "after": 21011.4131
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 101,
+    "province": "QC",
+    "path": "avg",
+    "before": -0.0488,
+    "after": -0.0492
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 101,
+    "province": "QC",
+    "path": "grossAvg",
+    "before": 0.2805,
+    "after": 0.2802
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 101,
+    "province": "QC",
+    "path": "margBy.ord",
+    "before": 0.6196,
+    "after": 0.6477
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 101,
+    "province": "QC",
+    "path": "margBy.cg",
+    "before": 0.3076,
+    "after": 0.3217
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 101,
+    "province": "QC",
+    "path": "margBy.ed",
+    "before": 0.5145,
+    "after": 0.5533
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 101,
+    "province": "QC",
+    "path": "margBy.nd",
+    "before": 0.566,
+    "after": 0.5983
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 101,
+    "province": "QC",
+    "path": "margBy.fd",
+    "before": 0.6269,
+    "after": 0.6556
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 101,
+    "province": "QC",
+    "path": "claim.pAmt",
+    "before": 0,
+    "after": 197.6125
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 101,
+    "province": "QC",
+    "path": "claim.saved",
+    "before": 1656.9322,
+    "after": 1686.5741
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 101,
+    "province": "QC",
+    "path": "people.0.pSp",
+    "before": 0,
+    "after": 29.6419
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 101,
+    "province": "QC",
+    "path": "people.0.pSpFull",
+    "before": 0,
+    "after": 29.6419
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 101,
+    "province": "QC",
+    "path": "people.0.prov",
+    "before": 4216.86,
+    "after": 4187.2181
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 101,
+    "province": "QC",
+    "path": "people.0.total",
+    "before": 10028.6549,
+    "after": 9999.0131
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 103,
+    "province": "QC",
+    "path": "total",
+    "before": 122.5576,
+    "after": 89.0889
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 103,
+    "province": "QC",
+    "path": "prov",
+    "before": 2984.8734,
+    "after": 2951.4047
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 103,
+    "province": "QC",
+    "path": "netTotal",
+    "before": -4959.7424,
+    "after": -4993.2111
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 103,
+    "province": "QC",
+    "path": "incomeTax",
+    "before": 3947.6426,
+    "after": 3914.1739
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 103,
+    "province": "QC",
+    "path": "gross",
+    "before": 11640.1626,
+    "after": 11606.6939
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 103,
+    "province": "QC",
+    "path": "avg",
+    "before": 0.0032,
+    "after": 0.0023
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 103,
+    "province": "QC",
+    "path": "grossAvg",
+    "before": 0.3063,
+    "after": 0.3054
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 103,
+    "province": "QC",
+    "path": "margBy.fd",
+    "before": 0.6136,
+    "after": 0.6145
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 103,
+    "province": "QC",
+    "path": "claim.pAmt",
+    "before": 1275.3438,
+    "after": 1498.4688
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 103,
+    "province": "QC",
+    "path": "claim.saved",
+    "before": 1848.2338,
+    "after": 1881.7026
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 103,
+    "province": "QC",
+    "path": "people.0.pSp",
+    "before": 191.3016,
+    "after": 224.7703
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 103,
+    "province": "QC",
+    "path": "people.0.pSpFull",
+    "before": 191.3016,
+    "after": 224.7703
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 103,
+    "province": "QC",
+    "path": "people.0.prov",
+    "before": 2984.8734,
+    "after": 2951.4047
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 103,
+    "province": "QC",
+    "path": "people.0.total",
+    "before": 6557.8626,
+    "after": 6524.3939
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 112,
+    "province": "QC",
+    "path": "total",
+    "before": 19995.9849,
+    "after": 19962.5161
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 112,
+    "province": "QC",
+    "path": "prov",
+    "before": 2984.8734,
+    "after": 2951.4047
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 112,
+    "province": "QC",
+    "path": "netTotal",
+    "before": 6827.1849,
+    "after": 6793.7161
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 112,
+    "province": "QC",
+    "path": "incomeTax",
+    "before": 5604.5749,
+    "after": 5571.1061
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 112,
+    "province": "QC",
+    "path": "gross",
+    "before": 21383.5949,
+    "after": 21350.1261
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 112,
+    "province": "QC",
+    "path": "avg",
+    "before": 0.5262,
+    "after": 0.5253
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 112,
+    "province": "QC",
+    "path": "grossAvg",
+    "before": 0.5627,
+    "after": 0.5618
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 112,
+    "province": "QC",
+    "path": "claim.pAmt",
+    "before": 1275.3438,
+    "after": 1498.4688
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 112,
+    "province": "QC",
+    "path": "claim.saved",
+    "before": 191.3016,
+    "after": 224.7703
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 112,
+    "province": "QC",
+    "path": "people.0.pSp",
+    "before": 191.3016,
+    "after": 224.7703
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 112,
+    "province": "QC",
+    "path": "people.0.pSpFull",
+    "before": 191.3016,
+    "after": 224.7703
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 112,
+    "province": "QC",
+    "path": "people.0.prov",
+    "before": 2984.8734,
+    "after": 2951.4047
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 112,
+    "province": "QC",
+    "path": "people.0.total",
+    "before": 8214.7949,
+    "after": 8181.3261
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 113,
+    "province": "QC",
+    "path": "total",
+    "before": 11477.5519,
+    "after": 11444.0831
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 113,
+    "province": "QC",
+    "path": "prov",
+    "before": 3200.2866,
+    "after": 3166.8178
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 113,
+    "province": "QC",
+    "path": "netTotal",
+    "before": 8782.0519,
+    "after": 8748.5831
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 113,
+    "province": "QC",
+    "path": "invTax",
+    "before": 5506.3719,
+    "after": 5472.9031
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 113,
+    "province": "QC",
+    "path": "incomeTax",
+    "before": 5506.3719,
+    "after": 5472.9031
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 113,
+    "province": "QC",
+    "path": "gross",
+    "before": 11477.5519,
+    "after": 11444.0831
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 113,
+    "province": "QC",
+    "path": "avg",
+    "before": 0.1383,
+    "after": 0.1379
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 113,
+    "province": "QC",
+    "path": "grossAvg",
+    "before": 0.1383,
+    "after": 0.1379
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 113,
+    "province": "QC",
+    "path": "claim.pAmt",
+    "before": 586.6563,
+    "after": 809.7813
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 113,
+    "province": "QC",
+    "path": "claim.saved",
+    "before": 87.9984,
+    "after": 121.4672
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 113,
+    "province": "QC",
+    "path": "people.0.pSp",
+    "before": 87.9984,
+    "after": 121.4672
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 113,
+    "province": "QC",
+    "path": "people.0.pSpFull",
+    "before": 87.9984,
+    "after": 121.4672
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 113,
+    "province": "QC",
+    "path": "people.0.prov",
+    "before": 3200.2866,
+    "after": 3166.8178
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 113,
+    "province": "QC",
+    "path": "people.0.total",
+    "before": 8782.0519,
+    "after": 8748.5831
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 121,
+    "province": "QC",
+    "path": "total",
+    "before": -20909.0624,
+    "after": -20942.5311
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 121,
+    "province": "QC",
+    "path": "prov",
+    "before": 2984.8734,
+    "after": 2951.4047
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 121,
+    "province": "QC",
+    "path": "netTotal",
+    "before": -31691.0624,
+    "after": -31724.5311
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 121,
+    "province": "QC",
+    "path": "incomeTax",
+    "before": 3947.6426,
+    "after": 3914.1739
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 121,
+    "province": "QC",
+    "path": "gross",
+    "before": 17339.8626,
+    "after": 17306.3939
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 121,
+    "province": "QC",
+    "path": "avg",
+    "before": -0.5502,
+    "after": -0.5511
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 121,
+    "province": "QC",
+    "path": "grossAvg",
+    "before": 0.4563,
+    "after": 0.4554
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 121,
+    "province": "QC",
+    "path": "margBy.fd",
+    "before": 0.6736,
+    "after": 0.6745
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 121,
+    "province": "QC",
+    "path": "claim.pAmt",
+    "before": 1275.3438,
+    "after": 1498.4688
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 121,
+    "province": "QC",
+    "path": "claim.saved",
+    "before": 1848.2338,
+    "after": 1881.7026
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 121,
+    "province": "QC",
+    "path": "people.0.pSp",
+    "before": 191.3016,
+    "after": 224.7703
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 121,
+    "province": "QC",
+    "path": "people.0.pSpFull",
+    "before": 191.3016,
+    "after": 224.7703
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 121,
+    "province": "QC",
+    "path": "people.0.prov",
+    "before": 2984.8734,
+    "after": 2951.4047
+  },
+  {
+    "file": "tests/golden/2020.json",
+    "year": 2020,
+    "scenario": 121,
+    "province": "QC",
+    "path": "people.0.total",
+    "before": 6557.8626,
+    "after": 6524.3939
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 6,
+    "province": "QC",
+    "path": "total",
+    "before": -41051.7709,
+    "after": -41085.6615
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 6,
+    "province": "QC",
+    "path": "prov",
+    "before": 4165.7578,
+    "after": 4131.8672
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 6,
+    "province": "QC",
+    "path": "netTotal",
+    "before": -44645.7709,
+    "after": -44679.6615
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 6,
+    "province": "QC",
+    "path": "incomeTax",
+    "before": 5784.6391,
+    "after": 5750.7485
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 6,
+    "province": "QC",
+    "path": "gross",
+    "before": 12580.4391,
+    "after": 12546.5485
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 6,
+    "province": "QC",
+    "path": "avg",
+    "before": -0.9123,
+    "after": -0.913
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 6,
+    "province": "QC",
+    "path": "grossAvg",
+    "before": 0.2796,
+    "after": 0.2788
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 6,
+    "province": "QC",
+    "path": "margBy.fd",
+    "before": 0.6967,
+    "after": 0.6974
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 6,
+    "province": "QC",
+    "path": "claim.pAmt",
+    "before": 87.7813,
+    "after": 313.7188
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 6,
+    "province": "QC",
+    "path": "claim.saved",
+    "before": 1742.6192,
+    "after": 1776.5098
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 6,
+    "province": "QC",
+    "path": "people.0.pSp",
+    "before": 13.1672,
+    "after": 47.0578
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 6,
+    "province": "QC",
+    "path": "people.0.pSpFull",
+    "before": 13.1672,
+    "after": 47.0578
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 6,
+    "province": "QC",
+    "path": "people.0.prov",
+    "before": 4165.7578,
+    "after": 4131.8672
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 6,
+    "province": "QC",
+    "path": "people.0.total",
+    "before": 8986.4391,
+    "after": 8952.5485
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 24,
+    "province": "QC",
+    "path": "total",
+    "before": 16065.3264,
+    "after": 16031.4358
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 24,
+    "province": "QC",
+    "path": "prov",
+    "before": 3279.5859,
+    "after": 3245.6953
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 24,
+    "province": "QC",
+    "path": "netTotal",
+    "before": 7600.5264,
+    "after": 7566.6358
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 24,
+    "province": "QC",
+    "path": "incomeTax",
+    "before": 6049.1014,
+    "after": 6015.2108
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 24,
+    "province": "QC",
+    "path": "gross",
+    "before": 17337.0014,
+    "after": 17303.1108
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 24,
+    "province": "QC",
+    "path": "avg",
+    "before": 0.4016,
+    "after": 0.4008
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 24,
+    "province": "QC",
+    "path": "grossAvg",
+    "before": 0.4334,
+    "after": 0.4326
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 24,
+    "province": "QC",
+    "path": "claim.pAmt",
+    "before": 1020.5938,
+    "after": 1246.5313
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 24,
+    "province": "QC",
+    "path": "claim.saved",
+    "before": 153.0891,
+    "after": 186.9797
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 24,
+    "province": "QC",
+    "path": "people.0.pSp",
+    "before": 153.0891,
+    "after": 186.9797
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 24,
+    "province": "QC",
+    "path": "people.0.pSpFull",
+    "before": 153.0891,
+    "after": 186.9797
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 24,
+    "province": "QC",
+    "path": "people.0.prov",
+    "before": 3279.5859,
+    "after": 3245.6953
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 24,
+    "province": "QC",
+    "path": "people.0.total",
+    "before": 8872.2014,
+    "after": 8838.3108
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 25,
+    "province": "QC",
+    "path": "total",
+    "before": 16065.3264,
+    "after": 16031.4358
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 25,
+    "province": "QC",
+    "path": "prov",
+    "before": 3279.5859,
+    "after": 3245.6953
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 25,
+    "province": "QC",
+    "path": "netTotal",
+    "before": 7600.5264,
+    "after": 7566.6358
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 25,
+    "province": "QC",
+    "path": "incomeTax",
+    "before": 6049.1014,
+    "after": 6015.2108
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 25,
+    "province": "QC",
+    "path": "gross",
+    "before": 17337.0014,
+    "after": 17303.1108
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 25,
+    "province": "QC",
+    "path": "avg",
+    "before": 0.4016,
+    "after": 0.4008
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 25,
+    "province": "QC",
+    "path": "grossAvg",
+    "before": 0.4334,
+    "after": 0.4326
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 25,
+    "province": "QC",
+    "path": "claim.pAmt",
+    "before": 1020.5938,
+    "after": 1246.5313
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 25,
+    "province": "QC",
+    "path": "claim.saved",
+    "before": 153.0891,
+    "after": 186.9797
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 25,
+    "province": "QC",
+    "path": "people.0.pSp",
+    "before": 153.0891,
+    "after": 186.9797
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 25,
+    "province": "QC",
+    "path": "people.0.pSpFull",
+    "before": 153.0891,
+    "after": 186.9797
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 25,
+    "province": "QC",
+    "path": "people.0.prov",
+    "before": 3279.5859,
+    "after": 3245.6953
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 25,
+    "province": "QC",
+    "path": "people.0.total",
+    "before": 8872.2014,
+    "after": 8838.3108
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 36,
+    "province": "QC",
+    "path": "total",
+    "before": -29860.7983,
+    "after": -29887.728
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 36,
+    "province": "QC",
+    "path": "prov",
+    "before": 2338.8847,
+    "after": 2311.955
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 36,
+    "province": "QC",
+    "path": "netTotal",
+    "before": -33454.7983,
+    "after": -33481.728
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 36,
+    "province": "QC",
+    "path": "marg",
+    "before": 0.6971,
+    "after": 0.6691
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 36,
+    "province": "QC",
+    "path": "invTax",
+    "before": 4490.0967,
+    "after": 4463.167
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 36,
+    "province": "QC",
+    "path": "incomeTax",
+    "before": 2442.6867,
+    "after": 2415.757
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 36,
+    "province": "QC",
+    "path": "gross",
+    "before": 7496.4667,
+    "after": 7469.537
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 36,
+    "province": "QC",
+    "path": "avg",
+    "before": -0.7858,
+    "after": -0.7865
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 36,
+    "province": "QC",
+    "path": "grossAvg",
+    "before": 0.1973,
+    "after": 0.1966
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 36,
+    "province": "QC",
+    "path": "margBy.ord",
+    "before": 0.6971,
+    "after": 0.6691
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 36,
+    "province": "QC",
+    "path": "margBy.cg",
+    "before": 0.3167,
+    "after": 0.3026
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 36,
+    "province": "QC",
+    "path": "margBy.ed",
+    "before": 0.5395,
+    "after": 0.5007
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 36,
+    "province": "QC",
+    "path": "margBy.nd",
+    "before": 0.5956,
+    "after": 0.5632
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 36,
+    "province": "QC",
+    "path": "margBy.fd",
+    "before": 0.6334,
+    "after": 0.6053
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 36,
+    "province": "QC",
+    "path": "claim.pAmt",
+    "before": 1622.4688,
+    "after": 1802
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 36,
+    "province": "QC",
+    "path": "claim.saved",
+    "before": 1972.8223,
+    "after": 1999.752
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 36,
+    "province": "QC",
+    "path": "people.0.pSp",
+    "before": 243.3703,
+    "after": 270.3
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 36,
+    "province": "QC",
+    "path": "people.0.pSpFull",
+    "before": 243.3703,
+    "after": 270.3
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 36,
+    "province": "QC",
+    "path": "people.0.prov",
+    "before": 2338.8847,
+    "after": 2311.955
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 36,
+    "province": "QC",
+    "path": "people.0.total",
+    "before": 3902.4667,
+    "after": 3875.537
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 101,
+    "province": "QC",
+    "path": "total",
+    "before": -4049.348,
+    "after": -4083.2386
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 101,
+    "province": "QC",
+    "path": "prov",
+    "before": 4150.9734,
+    "after": 4117.0828
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 101,
+    "province": "QC",
+    "path": "netTotal",
+    "before": -15110.348,
+    "after": -15144.2386
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 101,
+    "province": "QC",
+    "path": "incomeTax",
+    "before": 5611.922,
+    "after": 5578.0314
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 101,
+    "province": "QC",
+    "path": "gross",
+    "before": 21135.662,
+    "after": 21101.7714
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 101,
+    "province": "QC",
+    "path": "avg",
+    "before": -0.054,
+    "after": -0.0544
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 101,
+    "province": "QC",
+    "path": "grossAvg",
+    "before": 0.2818,
+    "after": 0.2814
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 101,
+    "province": "QC",
+    "path": "margBy.fd",
+    "before": 0.661,
+    "after": 0.6617
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 101,
+    "province": "QC",
+    "path": "claim.pAmt",
+    "before": 103.3438,
+    "after": 329.2813
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 101,
+    "province": "QC",
+    "path": "claim.saved",
+    "before": 1744.9536,
+    "after": 1778.8442
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 101,
+    "province": "QC",
+    "path": "people.0.pSp",
+    "before": 15.5016,
+    "after": 49.3922
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 101,
+    "province": "QC",
+    "path": "people.0.pSpFull",
+    "before": 15.5016,
+    "after": 49.3922
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 101,
+    "province": "QC",
+    "path": "people.0.prov",
+    "before": 4150.9734,
+    "after": 4117.0828
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 101,
+    "province": "QC",
+    "path": "people.0.total",
+    "before": 10074.662,
+    "after": 10040.7714
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 103,
+    "province": "QC",
+    "path": "total",
+    "before": -202.7615,
+    "after": -236.6521
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 103,
+    "province": "QC",
+    "path": "prov",
+    "before": 2925.1172,
+    "after": 2891.2266
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 103,
+    "province": "QC",
+    "path": "netTotal",
+    "before": -5333.6615,
+    "after": -5367.5521
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 103,
+    "province": "QC",
+    "path": "incomeTax",
+    "before": 3733.6535,
+    "after": 3699.7629
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 103,
+    "province": "QC",
+    "path": "gross",
+    "before": 11536.1735,
+    "after": 11502.2829
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 103,
+    "province": "QC",
+    "path": "avg",
+    "before": -0.0053,
+    "after": -0.0062
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 103,
+    "province": "QC",
+    "path": "grossAvg",
+    "before": 0.3036,
+    "after": 0.3027
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 103,
+    "province": "QC",
+    "path": "margBy.fd",
+    "before": 0.6799,
+    "after": 0.6807
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 103,
+    "province": "QC",
+    "path": "claim.pAmt",
+    "before": 1393.7188,
+    "after": 1619.6563
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 103,
+    "province": "QC",
+    "path": "claim.saved",
+    "before": 1938.5098,
+    "after": 1972.4004
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 103,
+    "province": "QC",
+    "path": "people.0.pSp",
+    "before": 209.0578,
+    "after": 242.9484
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 103,
+    "province": "QC",
+    "path": "people.0.pSpFull",
+    "before": 209.0578,
+    "after": 242.9484
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 103,
+    "province": "QC",
+    "path": "people.0.prov",
+    "before": 2925.1172,
+    "after": 2891.2266
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 103,
+    "province": "QC",
+    "path": "people.0.total",
+    "before": 6405.2735,
+    "after": 6371.3829
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 112,
+    "province": "QC",
+    "path": "total",
+    "before": 19914.7755,
+    "after": 19880.8849
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 112,
+    "province": "QC",
+    "path": "prov",
+    "before": 2925.1172,
+    "after": 2891.2266
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 112,
+    "province": "QC",
+    "path": "netTotal",
+    "before": 6697.3755,
+    "after": 6663.4849
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 112,
+    "province": "QC",
+    "path": "incomeTax",
+    "before": 5463.1055,
+    "after": 5429.2149
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 112,
+    "province": "QC",
+    "path": "gross",
+    "before": 21352.1255,
+    "after": 21318.2349
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 112,
+    "province": "QC",
+    "path": "avg",
+    "before": 0.5241,
+    "after": 0.5232
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 112,
+    "province": "QC",
+    "path": "grossAvg",
+    "before": 0.5619,
+    "after": 0.561
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 112,
+    "province": "QC",
+    "path": "claim.pAmt",
+    "before": 1393.7188,
+    "after": 1619.6563
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 112,
+    "province": "QC",
+    "path": "claim.saved",
+    "before": 209.0578,
+    "after": 242.9484
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 112,
+    "province": "QC",
+    "path": "people.0.pSp",
+    "before": 209.0578,
+    "after": 242.9484
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 112,
+    "province": "QC",
+    "path": "people.0.pSpFull",
+    "before": 209.0578,
+    "after": 242.9484
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 112,
+    "province": "QC",
+    "path": "people.0.prov",
+    "before": 2925.1172,
+    "after": 2891.2266
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 112,
+    "province": "QC",
+    "path": "people.0.total",
+    "before": 8134.7255,
+    "after": 8100.8349
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 113,
+    "province": "QC",
+    "path": "total",
+    "before": 11478.3672,
+    "after": 11444.4766
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 113,
+    "province": "QC",
+    "path": "prov",
+    "before": 3207.2441,
+    "after": 3173.3534
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 113,
+    "province": "QC",
+    "path": "netTotal",
+    "before": 8782.8672,
+    "after": 8748.9766
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 113,
+    "province": "QC",
+    "path": "invTax",
+    "before": 5429.5872,
+    "after": 5395.6966
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 113,
+    "province": "QC",
+    "path": "incomeTax",
+    "before": 5429.5872,
+    "after": 5395.6966
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 113,
+    "province": "QC",
+    "path": "gross",
+    "before": 11478.3672,
+    "after": 11444.4766
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 113,
+    "province": "QC",
+    "path": "avg",
+    "before": 0.1383,
+    "after": 0.1379
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 113,
+    "province": "QC",
+    "path": "grossAvg",
+    "before": 0.1383,
+    "after": 0.1379
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 113,
+    "province": "QC",
+    "path": "claim.pAmt",
+    "before": 708.4063,
+    "after": 934.3438
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 113,
+    "province": "QC",
+    "path": "claim.saved",
+    "before": 106.2609,
+    "after": 140.1516
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 113,
+    "province": "QC",
+    "path": "people.0.pSp",
+    "before": 106.2609,
+    "after": 140.1516
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 113,
+    "province": "QC",
+    "path": "people.0.pSpFull",
+    "before": 106.2609,
+    "after": 140.1516
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 113,
+    "province": "QC",
+    "path": "people.0.prov",
+    "before": 3207.2441,
+    "after": 3173.3534
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 113,
+    "province": "QC",
+    "path": "people.0.total",
+    "before": 8782.8672,
+    "after": 8748.9766
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 121,
+    "province": "QC",
+    "path": "total",
+    "before": -21646.7415,
+    "after": -21680.6321
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 121,
+    "province": "QC",
+    "path": "prov",
+    "before": 2925.1172,
+    "after": 2891.2266
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 121,
+    "province": "QC",
+    "path": "netTotal",
+    "before": -32428.7415,
+    "after": -32462.6321
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 121,
+    "province": "QC",
+    "path": "incomeTax",
+    "before": 3733.6535,
+    "after": 3699.7629
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 121,
+    "province": "QC",
+    "path": "gross",
+    "before": 17187.2735,
+    "after": 17153.3829
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 121,
+    "province": "QC",
+    "path": "avg",
+    "before": -0.5697,
+    "after": -0.5705
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 121,
+    "province": "QC",
+    "path": "grossAvg",
+    "before": 0.4523,
+    "after": 0.4514
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 121,
+    "province": "QC",
+    "path": "margBy.fd",
+    "before": 0.7399,
+    "after": 0.7407
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 121,
+    "province": "QC",
+    "path": "claim.pAmt",
+    "before": 1393.7188,
+    "after": 1619.6563
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 121,
+    "province": "QC",
+    "path": "claim.saved",
+    "before": 1938.5098,
+    "after": 1972.4004
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 121,
+    "province": "QC",
+    "path": "people.0.pSp",
+    "before": 209.0578,
+    "after": 242.9484
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 121,
+    "province": "QC",
+    "path": "people.0.pSpFull",
+    "before": 209.0578,
+    "after": 242.9484
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 121,
+    "province": "QC",
+    "path": "people.0.prov",
+    "before": 2925.1172,
+    "after": 2891.2266
+  },
+  {
+    "file": "tests/golden/2021.json",
+    "year": 2021,
+    "scenario": 121,
+    "province": "QC",
+    "path": "people.0.total",
+    "before": 6405.2735,
+    "after": 6371.3829
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 6,
+    "province": "QC",
+    "path": "total",
+    "before": -43011.2183,
+    "after": -43045.9527
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 6,
+    "province": "QC",
+    "path": "prov",
+    "before": 4046.8898,
+    "after": 4012.1555
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 6,
+    "province": "QC",
+    "path": "netTotal",
+    "before": -46605.2183,
+    "after": -46639.9527
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 6,
+    "province": "QC",
+    "path": "incomeTax",
+    "before": 5500.0967,
+    "after": 5465.3623
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 6,
+    "province": "QC",
+    "path": "gross",
+    "before": 12408.6467,
+    "after": 12373.9123
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 6,
+    "province": "QC",
+    "path": "avg",
+    "before": -0.9558,
+    "after": -0.9566
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 6,
+    "province": "QC",
+    "path": "grossAvg",
+    "before": 0.2757,
+    "after": 0.275
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 6,
+    "province": "QC",
+    "path": "margBy.fd",
+    "before": 0.7034,
+    "after": 0.7042
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 6,
+    "province": "QC",
+    "path": "claim.pAmt",
+    "before": 331.4844,
+    "after": 563.0469
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 6,
+    "province": "QC",
+    "path": "claim.saved",
+    "before": 1853.0722,
+    "after": 1887.8065
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 6,
+    "province": "QC",
+    "path": "people.0.pSp",
+    "before": 49.7227,
+    "after": 84.457
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 6,
+    "province": "QC",
+    "path": "people.0.pSpFull",
+    "before": 49.7227,
+    "after": 84.457
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 6,
+    "province": "QC",
+    "path": "people.0.prov",
+    "before": 4046.8898,
+    "after": 4012.1555
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 6,
+    "province": "QC",
+    "path": "people.0.total",
+    "before": 8814.6467,
+    "after": 8779.9123
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 24,
+    "province": "QC",
+    "path": "total",
+    "before": 15710.5989,
+    "after": 15675.8646
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 24,
+    "province": "QC",
+    "path": "prov",
+    "before": 3162.9445,
+    "after": 3128.2102
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 24,
+    "province": "QC",
+    "path": "netTotal",
+    "before": 7344.7989,
+    "after": 7310.0646
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 24,
+    "province": "QC",
+    "path": "incomeTax",
+    "before": 5842.3739,
+    "after": 5807.6396
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 24,
+    "province": "QC",
+    "path": "gross",
+    "before": 17130.5239,
+    "after": 17095.7896
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 24,
+    "province": "QC",
+    "path": "avg",
+    "before": 0.3928,
+    "after": 0.3919
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 24,
+    "province": "QC",
+    "path": "grossAvg",
+    "before": 0.4283,
+    "after": 0.4274
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 24,
+    "province": "QC",
+    "path": "claim.pAmt",
+    "before": 1261.9531,
+    "after": 1493.5156
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 24,
+    "province": "QC",
+    "path": "claim.saved",
+    "before": 189.293,
+    "after": 224.0273
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 24,
+    "province": "QC",
+    "path": "people.0.pSp",
+    "before": 189.293,
+    "after": 224.0273
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 24,
+    "province": "QC",
+    "path": "people.0.pSpFull",
+    "before": 189.293,
+    "after": 224.0273
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 24,
+    "province": "QC",
+    "path": "people.0.prov",
+    "before": 3162.9445,
+    "after": 3128.2102
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 24,
+    "province": "QC",
+    "path": "people.0.total",
+    "before": 8764.7239,
+    "after": 8729.9896
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 25,
+    "province": "QC",
+    "path": "total",
+    "before": 15710.5989,
+    "after": 15675.8646
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 25,
+    "province": "QC",
+    "path": "prov",
+    "before": 3162.9445,
+    "after": 3128.2102
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 25,
+    "province": "QC",
+    "path": "netTotal",
+    "before": 7344.7989,
+    "after": 7310.0646
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 25,
+    "province": "QC",
+    "path": "incomeTax",
+    "before": 5842.3739,
+    "after": 5807.6396
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 25,
+    "province": "QC",
+    "path": "gross",
+    "before": 17130.5239,
+    "after": 17095.7896
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 25,
+    "province": "QC",
+    "path": "avg",
+    "before": 0.3928,
+    "after": 0.3919
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 25,
+    "province": "QC",
+    "path": "grossAvg",
+    "before": 0.4283,
+    "after": 0.4274
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 25,
+    "province": "QC",
+    "path": "claim.pAmt",
+    "before": 1261.9531,
+    "after": 1493.5156
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 25,
+    "province": "QC",
+    "path": "claim.saved",
+    "before": 189.293,
+    "after": 224.0273
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 25,
+    "province": "QC",
+    "path": "people.0.pSp",
+    "before": 189.293,
+    "after": 224.0273
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 25,
+    "province": "QC",
+    "path": "people.0.pSpFull",
+    "before": 189.293,
+    "after": 224.0273
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 25,
+    "province": "QC",
+    "path": "people.0.prov",
+    "before": 3162.9445,
+    "after": 3128.2102
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 25,
+    "province": "QC",
+    "path": "people.0.total",
+    "before": 8764.7239,
+    "after": 8729.9896
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 36,
+    "province": "QC",
+    "path": "marg",
+    "before": 0.5747,
+    "after": 0.5548
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 36,
+    "province": "QC",
+    "path": "margBy.ord",
+    "before": 0.5747,
+    "after": 0.5548
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 36,
+    "province": "QC",
+    "path": "margBy.cg",
+    "before": 0.246,
+    "after": 0.24
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 36,
+    "province": "QC",
+    "path": "margBy.ed",
+    "before": 0.5317,
+    "after": 0.5009
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 36,
+    "province": "QC",
+    "path": "margBy.nd",
+    "before": 0.5369,
+    "after": 0.5127
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 36,
+    "province": "QC",
+    "path": "margBy.fd",
+    "before": 0.5,
+    "after": 0.48
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 90,
+    "province": "QC",
+    "path": "total",
+    "before": 15724.1121,
+    "after": 15695.4832
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 90,
+    "province": "QC",
+    "path": "prov",
+    "before": 4394.3625,
+    "after": 4365.7336
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 90,
+    "province": "QC",
+    "path": "netTotal",
+    "before": 10692.5121,
+    "after": 10663.8832
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 90,
+    "province": "QC",
+    "path": "marg",
+    "before": 0.4519,
+    "after": 0.4798
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 90,
+    "province": "QC",
+    "path": "incomeTax",
+    "before": 7881.7696,
+    "after": 7853.1407
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 90,
+    "province": "QC",
+    "path": "gross",
+    "before": 16384.7996,
+    "after": 16356.1707
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 90,
+    "province": "QC",
+    "path": "avg",
+    "before": 0.3346,
+    "after": 0.3339
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 90,
+    "province": "QC",
+    "path": "grossAvg",
+    "before": 0.3486,
+    "after": 0.348
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 90,
+    "province": "QC",
+    "path": "margBy.ord",
+    "before": 0.4519,
+    "after": 0.4798
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 90,
+    "province": "QC",
+    "path": "margBy.cg",
+    "before": 0.1926,
+    "after": 0.2067
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 90,
+    "province": "QC",
+    "path": "margBy.ed",
+    "before": 0.1971,
+    "after": 0.2359
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 90,
+    "province": "QC",
+    "path": "margBy.nd",
+    "before": 0.317,
+    "after": 0.3493
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 90,
+    "province": "QC",
+    "path": "margBy.fd",
+    "before": 0.3852,
+    "after": 0.4134
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 90,
+    "province": "QC",
+    "path": "claim",
+    "before": null,
+    "after": {
+      "c": 0,
+      "fAmt": 0,
+      "pAmt": 190.8594,
+      "qc": 1,
+      "saved": 28.6289
+    }
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 90,
+    "province": "QC",
+    "path": "claimKind",
+    "before": null,
+    "after": "alone"
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 90,
+    "province": "QC",
+    "path": "people.0.pSp",
+    "before": 0,
+    "after": 28.6289
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 90,
+    "province": "QC",
+    "path": "people.0.pSpFull",
+    "before": 0,
+    "after": 28.6289
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 90,
+    "province": "QC",
+    "path": "people.0.prov",
+    "before": 4394.3625,
+    "after": 4365.7336
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 90,
+    "province": "QC",
+    "path": "people.0.total",
+    "before": 11353.1996,
+    "after": 11324.5707
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 101,
+    "province": "QC",
+    "path": "total",
+    "before": -5085.9136,
+    "after": -5120.648
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 101,
+    "province": "QC",
+    "path": "prov",
+    "before": 4020.3047,
+    "after": 3985.5703
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 101,
+    "province": "QC",
+    "path": "netTotal",
+    "before": -16097.4136,
+    "after": -16132.148
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 101,
+    "province": "QC",
+    "path": "incomeTax",
+    "before": 5278.6664,
+    "after": 5243.932
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 101,
+    "province": "QC",
+    "path": "gross",
+    "before": 21160.3664,
+    "after": 21125.632
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 101,
+    "province": "QC",
+    "path": "avg",
+    "before": -0.0678,
+    "after": -0.0683
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 101,
+    "province": "QC",
+    "path": "grossAvg",
+    "before": 0.2821,
+    "after": 0.2817
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 101,
+    "province": "QC",
+    "path": "margBy.fd",
+    "before": 0.6688,
+    "after": 0.6696
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 101,
+    "province": "QC",
+    "path": "claim.pAmt",
+    "before": 359.4688,
+    "after": 591.0313
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 101,
+    "province": "QC",
+    "path": "claim.saved",
+    "before": 1857.2698,
+    "after": 1892.0042
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 101,
+    "province": "QC",
+    "path": "people.0.pSp",
+    "before": 53.9203,
+    "after": 88.6547
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 101,
+    "province": "QC",
+    "path": "people.0.pSpFull",
+    "before": 53.9203,
+    "after": 88.6547
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 101,
+    "province": "QC",
+    "path": "people.0.prov",
+    "before": 4020.3047,
+    "after": 3985.5703
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 101,
+    "province": "QC",
+    "path": "people.0.total",
+    "before": 10148.8664,
+    "after": 10114.132
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 103,
+    "province": "QC",
+    "path": "total",
+    "before": -961.012,
+    "after": -993.3909
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 103,
+    "province": "QC",
+    "path": "prov",
+    "before": 2809.3664,
+    "after": 2776.9875
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 103,
+    "province": "QC",
+    "path": "netTotal",
+    "before": -6042.412,
+    "after": -6074.7909
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 103,
+    "province": "QC",
+    "path": "marg",
+    "before": 0.5394,
+    "after": 0.5158
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 103,
+    "province": "QC",
+    "path": "incomeTax",
+    "before": 3454.5955,
+    "after": 3422.2166
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 103,
+    "province": "QC",
+    "path": "gross",
+    "before": 11301.4655,
+    "after": 11269.0866
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 103,
+    "province": "QC",
+    "path": "avg",
+    "before": -0.0253,
+    "after": -0.0261
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 103,
+    "province": "QC",
+    "path": "grossAvg",
+    "before": 0.2974,
+    "after": 0.2966
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 103,
+    "province": "QC",
+    "path": "margBy.ord",
+    "before": 0.5394,
+    "after": 0.5158
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 103,
+    "province": "QC",
+    "path": "margBy.cg",
+    "before": 0.2367,
+    "after": 0.2226
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 103,
+    "province": "QC",
+    "path": "margBy.ed",
+    "before": 0.3187,
+    "after": 0.2952
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 103,
+    "province": "QC",
+    "path": "margBy.nd",
+    "before": 0.4183,
+    "after": 0.3948
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 103,
+    "province": "QC",
+    "path": "margBy.fd",
+    "before": 0.6278,
+    "after": 0.6052
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 103,
+    "province": "QC",
+    "path": "claim.pAmt",
+    "before": 1634.1406,
+    "after": 1850
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 103,
+    "province": "QC",
+    "path": "claim.saved",
+    "before": 2048.4706,
+    "after": 2080.8495
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 103,
+    "province": "QC",
+    "path": "people.0.pSp",
+    "before": 245.1211,
+    "after": 277.5
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 103,
+    "province": "QC",
+    "path": "people.0.pSpFull",
+    "before": 245.1211,
+    "after": 277.5
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 103,
+    "province": "QC",
+    "path": "people.0.prov",
+    "before": 2809.3664,
+    "after": 2776.9875
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 103,
+    "province": "QC",
+    "path": "people.0.total",
+    "before": 6220.0655,
+    "after": 6187.6866
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 112,
+    "province": "QC",
+    "path": "total",
+    "before": 19669.315,
+    "after": 19636.9361
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 112,
+    "province": "QC",
+    "path": "prov",
+    "before": 2809.3664,
+    "after": 2776.9875
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 112,
+    "province": "QC",
+    "path": "netTotal",
+    "before": 6501.415,
+    "after": 6469.0361
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 112,
+    "province": "QC",
+    "path": "marg",
+    "before": 0.3707,
+    "after": 0.3471
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 112,
+    "province": "QC",
+    "path": "incomeTax",
+    "before": 5257.945,
+    "after": 5225.5661
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 112,
+    "province": "QC",
+    "path": "gross",
+    "before": 21191.315,
+    "after": 21158.9361
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 112,
+    "province": "QC",
+    "path": "avg",
+    "before": 0.5176,
+    "after": 0.5168
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 112,
+    "province": "QC",
+    "path": "grossAvg",
+    "before": 0.5577,
+    "after": 0.5568
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 112,
+    "province": "QC",
+    "path": "margBy.ord",
+    "before": 0.3707,
+    "after": 0.3471
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 112,
+    "province": "QC",
+    "path": "margBy.cg",
+    "before": 0.1517,
+    "after": 0.1376
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 112,
+    "province": "QC",
+    "path": "margBy.ed",
+    "before": 0.0841,
+    "after": 0.0606
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 112,
+    "province": "QC",
+    "path": "margBy.nd",
+    "before": 0.2228,
+    "after": 0.1993
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 112,
+    "province": "QC",
+    "path": "margBy.fd",
+    "before": 0.3034,
+    "after": 0.2798
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 112,
+    "province": "QC",
+    "path": "claim.pAmt",
+    "before": 1634.1406,
+    "after": 1850
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 112,
+    "province": "QC",
+    "path": "claim.saved",
+    "before": 245.1211,
+    "after": 277.5
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 112,
+    "province": "QC",
+    "path": "people.0.pSp",
+    "before": 245.1211,
+    "after": 277.5
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 112,
+    "province": "QC",
+    "path": "people.0.pSpFull",
+    "before": 245.1211,
+    "after": 277.5
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 112,
+    "province": "QC",
+    "path": "people.0.prov",
+    "before": 2809.3664,
+    "after": 2776.9875
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 112,
+    "province": "QC",
+    "path": "people.0.total",
+    "before": 8023.415,
+    "after": 7991.0361
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 113,
+    "province": "QC",
+    "path": "total",
+    "before": 11438.5853,
+    "after": 11403.851
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 113,
+    "province": "QC",
+    "path": "prov",
+    "before": 3141.7655,
+    "after": 3107.0311
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 113,
+    "province": "QC",
+    "path": "netTotal",
+    "before": 8743.0853,
+    "after": 8708.351
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 113,
+    "province": "QC",
+    "path": "invTax",
+    "before": 5271.6553,
+    "after": 5236.921
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 113,
+    "province": "QC",
+    "path": "incomeTax",
+    "before": 5271.6553,
+    "after": 5236.921
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 113,
+    "province": "QC",
+    "path": "gross",
+    "before": 11438.5853,
+    "after": 11403.851
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 113,
+    "province": "QC",
+    "path": "avg",
+    "before": 0.1378,
+    "after": 0.1374
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 113,
+    "province": "QC",
+    "path": "grossAvg",
+    "before": 0.1378,
+    "after": 0.1374
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 113,
+    "province": "QC",
+    "path": "claim.pAmt",
+    "before": 953.0469,
+    "after": 1184.6094
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 113,
+    "province": "QC",
+    "path": "claim.saved",
+    "before": 142.957,
+    "after": 177.6914
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 113,
+    "province": "QC",
+    "path": "people.0.pSp",
+    "before": 142.957,
+    "after": 177.6914
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 113,
+    "province": "QC",
+    "path": "people.0.pSpFull",
+    "before": 142.957,
+    "after": 177.6914
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 113,
+    "province": "QC",
+    "path": "people.0.prov",
+    "before": 3141.7655,
+    "after": 3107.0311
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 113,
+    "province": "QC",
+    "path": "people.0.total",
+    "before": 8743.0853,
+    "after": 8708.351
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 114,
+    "province": "QC",
+    "path": "invTax",
+    "before": 24230.8142,
+    "after": 24259.4431
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 121,
+    "province": "QC",
+    "path": "total",
+    "before": -23183.332,
+    "after": -23215.7109
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 121,
+    "province": "QC",
+    "path": "prov",
+    "before": 2809.3664,
+    "after": 2776.9875
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 121,
+    "province": "QC",
+    "path": "netTotal",
+    "before": -33965.332,
+    "after": -33997.7109
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 121,
+    "province": "QC",
+    "path": "marg",
+    "before": 0.6982,
+    "after": 0.6746
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 121,
+    "province": "QC",
+    "path": "incomeTax",
+    "before": 3454.5955,
+    "after": 3422.2166
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 121,
+    "province": "QC",
+    "path": "gross",
+    "before": 17002.0655,
+    "after": 16969.6866
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 121,
+    "province": "QC",
+    "path": "avg",
+    "before": -0.6101,
+    "after": -0.6109
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 121,
+    "province": "QC",
+    "path": "grossAvg",
+    "before": 0.4474,
+    "after": 0.4466
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 121,
+    "province": "QC",
+    "path": "margBy.ord",
+    "before": 0.6982,
+    "after": 0.6746
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 121,
+    "province": "QC",
+    "path": "margBy.cg",
+    "before": 0.3167,
+    "after": 0.3026
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 121,
+    "province": "QC",
+    "path": "margBy.ed",
+    "before": 0.5395,
+    "after": 0.516
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 121,
+    "province": "QC",
+    "path": "margBy.nd",
+    "before": 0.6023,
+    "after": 0.5788
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 121,
+    "province": "QC",
+    "path": "margBy.fd",
+    "before": 0.6878,
+    "after": 0.6652
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 121,
+    "province": "QC",
+    "path": "claim.pAmt",
+    "before": 1634.1406,
+    "after": 1850
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 121,
+    "province": "QC",
+    "path": "claim.saved",
+    "before": 2048.4706,
+    "after": 2080.8495
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 121,
+    "province": "QC",
+    "path": "people.0.pSp",
+    "before": 245.1211,
+    "after": 277.5
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 121,
+    "province": "QC",
+    "path": "people.0.pSpFull",
+    "before": 245.1211,
+    "after": 277.5
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 121,
+    "province": "QC",
+    "path": "people.0.prov",
+    "before": 2809.3664,
+    "after": 2776.9875
+  },
+  {
+    "file": "tests/golden/2022.json",
+    "year": 2022,
+    "scenario": 121,
+    "province": "QC",
+    "path": "people.0.total",
+    "before": 6220.0655,
+    "after": 6187.6866
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 6,
+    "province": "QC",
+    "path": "total",
+    "before": -48288.0694,
+    "after": -48322.5882
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 6,
+    "province": "QC",
+    "path": "prov",
+    "before": 3524.57,
+    "after": 3490.0513
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 6,
+    "province": "QC",
+    "path": "netTotal",
+    "before": -51882.0694,
+    "after": -51916.5882
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 6,
+    "province": "QC",
+    "path": "incomeTax",
+    "before": 4799.8906,
+    "after": 4765.3718
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 6,
+    "province": "QC",
+    "path": "gross",
+    "before": 11843.6906,
+    "after": 11809.1718
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 6,
+    "province": "QC",
+    "path": "avg",
+    "before": -1.0731,
+    "after": -1.0738
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 6,
+    "province": "QC",
+    "path": "grossAvg",
+    "before": 0.2632,
+    "after": 0.2624
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 6,
+    "province": "QC",
+    "path": "margBy.cg",
+    "before": 0.3358,
+    "after": 0.3357
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 6,
+    "province": "QC",
+    "path": "margBy.fd",
+    "before": 0.7077,
+    "after": 0.7085
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 6,
+    "province": "QC",
+    "path": "claim.pAmt",
+    "before": 911.5,
+    "after": 1158.0625
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 6,
+    "province": "QC",
+    "path": "claim.saved",
+    "before": 2006.36,
+    "after": 2040.8788
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 6,
+    "province": "QC",
+    "path": "people.0.pSp",
+    "before": 127.61,
+    "after": 162.1288
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 6,
+    "province": "QC",
+    "path": "people.0.pSpFull",
+    "before": 127.61,
+    "after": 162.1288
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 6,
+    "province": "QC",
+    "path": "people.0.prov",
+    "before": 3524.57,
+    "after": 3490.0513
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 6,
+    "province": "QC",
+    "path": "people.0.total",
+    "before": 8249.6906,
+    "after": 8215.1718
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 20,
+    "province": "QC",
+    "path": "total",
+    "before": 14771.9735,
+    "after": 14739.7823
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 20,
+    "province": "QC",
+    "path": "prov",
+    "before": 4345.18,
+    "after": 4312.9888
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 20,
+    "province": "QC",
+    "path": "netTotal",
+    "before": 11177.9735,
+    "after": 11145.7823
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 20,
+    "province": "QC",
+    "path": "marg",
+    "before": 0.4442,
+    "after": 0.4702
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 20,
+    "province": "QC",
+    "path": "incomeTax",
+    "before": 8074.3735,
+    "after": 8042.1823
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 20,
+    "province": "QC",
+    "path": "gross",
+    "before": 15526.3735,
+    "after": 15494.1823
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 20,
+    "province": "QC",
+    "path": "margBy.ord",
+    "before": 0.4442,
+    "after": 0.4702
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 20,
+    "province": "QC",
+    "path": "margBy.ed",
+    "before": 0.1833,
+    "after": 0.2195
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 20,
+    "province": "QC",
+    "path": "margBy.nd",
+    "before": 0.3055,
+    "after": 0.3357
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 20,
+    "province": "QC",
+    "path": "margBy.fd",
+    "before": 0.3752,
+    "after": 0.4015
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 20,
+    "province": "QC",
+    "path": "claim",
+    "before": null,
+    "after": {
+      "c": 0,
+      "fAmt": 0,
+      "pAmt": 229.9375,
+      "qc": 1,
+      "saved": 32.1913
+    }
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 20,
+    "province": "QC",
+    "path": "claimKind",
+    "before": null,
+    "after": "alone"
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 20,
+    "province": "QC",
+    "path": "people.0.pSp",
+    "before": 0,
+    "after": 32.1913
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 20,
+    "province": "QC",
+    "path": "people.0.pSpFull",
+    "before": 0,
+    "after": 32.1913
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 20,
+    "province": "QC",
+    "path": "people.0.prov",
+    "before": 4345.18,
+    "after": 4312.9888
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 20,
+    "province": "QC",
+    "path": "people.0.total",
+    "before": 11932.3735,
+    "after": 11900.1823
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 24,
+    "province": "QC",
+    "path": "total",
+    "before": 14706.5801,
+    "after": 14688.4676
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 24,
+    "province": "QC",
+    "path": "prov",
+    "before": 2701.6325,
+    "after": 2683.52
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 24,
+    "province": "QC",
+    "path": "netTotal",
+    "before": 6664.1801,
+    "after": 6646.0676
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 24,
+    "province": "QC",
+    "path": "marg",
+    "before": 0.3613,
+    "after": 0.3353
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 24,
+    "province": "QC",
+    "path": "incomeTax",
+    "before": 5280.5801,
+    "after": 5262.4676
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 24,
+    "province": "QC",
+    "path": "gross",
+    "before": 16364.5801,
+    "after": 16346.4676
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 24,
+    "province": "QC",
+    "path": "avg",
+    "before": 0.3677,
+    "after": 0.3672
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 24,
+    "province": "QC",
+    "path": "grossAvg",
+    "before": 0.4091,
+    "after": 0.4087
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 24,
+    "province": "QC",
+    "path": "margBy.ord",
+    "before": 0.3613,
+    "after": 0.3353
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 24,
+    "province": "QC",
+    "path": "margBy.cg",
+    "before": 0.1458,
+    "after": 0.1326
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 24,
+    "province": "QC",
+    "path": "margBy.ed",
+    "before": 0.0677,
+    "after": 0.0315
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 24,
+    "province": "QC",
+    "path": "margBy.nd",
+    "before": 0.2092,
+    "after": 0.179
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 24,
+    "province": "QC",
+    "path": "margBy.fd",
+    "before": 0.295,
+    "after": 0.2693
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 24,
+    "province": "QC",
+    "path": "claim.pAmt",
+    "before": 1839.625,
+    "after": 1969
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 24,
+    "province": "QC",
+    "path": "claim.saved",
+    "before": 257.5475,
+    "after": 275.66
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 24,
+    "province": "QC",
+    "path": "people.0.pSp",
+    "before": 257.5475,
+    "after": 275.66
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 24,
+    "province": "QC",
+    "path": "people.0.pSpFull",
+    "before": 257.5475,
+    "after": 275.66
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 24,
+    "province": "QC",
+    "path": "people.0.prov",
+    "before": 2701.6325,
+    "after": 2683.52
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 24,
+    "province": "QC",
+    "path": "people.0.total",
+    "before": 8322.1801,
+    "after": 8304.0676
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 25,
+    "province": "QC",
+    "path": "total",
+    "before": 14706.5801,
+    "after": 14688.4676
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 25,
+    "province": "QC",
+    "path": "prov",
+    "before": 2701.6325,
+    "after": 2683.52
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 25,
+    "province": "QC",
+    "path": "netTotal",
+    "before": 6664.1801,
+    "after": 6646.0676
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 25,
+    "province": "QC",
+    "path": "marg",
+    "before": 0.3613,
+    "after": 0.3353
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 25,
+    "province": "QC",
+    "path": "incomeTax",
+    "before": 5280.5801,
+    "after": 5262.4676
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 25,
+    "province": "QC",
+    "path": "gross",
+    "before": 16364.5801,
+    "after": 16346.4676
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 25,
+    "province": "QC",
+    "path": "avg",
+    "before": 0.3677,
+    "after": 0.3672
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 25,
+    "province": "QC",
+    "path": "grossAvg",
+    "before": 0.4091,
+    "after": 0.4087
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 25,
+    "province": "QC",
+    "path": "margBy.ord",
+    "before": 0.3613,
+    "after": 0.3353
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 25,
+    "province": "QC",
+    "path": "margBy.cg",
+    "before": 0.1458,
+    "after": 0.1326
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 25,
+    "province": "QC",
+    "path": "margBy.ed",
+    "before": 0.0677,
+    "after": 0.0315
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 25,
+    "province": "QC",
+    "path": "margBy.nd",
+    "before": 0.2092,
+    "after": 0.179
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 25,
+    "province": "QC",
+    "path": "margBy.fd",
+    "before": 0.295,
+    "after": 0.2693
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 25,
+    "province": "QC",
+    "path": "claim.pAmt",
+    "before": 1839.625,
+    "after": 1969
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 25,
+    "province": "QC",
+    "path": "claim.saved",
+    "before": 257.5475,
+    "after": 275.66
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 25,
+    "province": "QC",
+    "path": "people.0.pSp",
+    "before": 257.5475,
+    "after": 275.66
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 25,
+    "province": "QC",
+    "path": "people.0.pSpFull",
+    "before": 257.5475,
+    "after": 275.66
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 25,
+    "province": "QC",
+    "path": "people.0.prov",
+    "before": 2701.6325,
+    "after": 2683.52
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 25,
+    "province": "QC",
+    "path": "people.0.total",
+    "before": 8322.1801,
+    "after": 8304.0676
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 90,
+    "province": "QC",
+    "path": "total",
+    "before": 14801.4447,
+    "after": 14766.926
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 90,
+    "province": "QC",
+    "path": "prov",
+    "before": 3853.745,
+    "after": 3819.2263
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 90,
+    "province": "QC",
+    "path": "netTotal",
+    "before": 9769.8447,
+    "after": 9735.326
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 90,
+    "province": "QC",
+    "path": "incomeTax",
+    "before": 7237.8647,
+    "after": 7203.346
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 90,
+    "province": "QC",
+    "path": "gross",
+    "before": 15882.5447,
+    "after": 15848.026
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 90,
+    "province": "QC",
+    "path": "avg",
+    "before": 0.3149,
+    "after": 0.3142
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 90,
+    "province": "QC",
+    "path": "grossAvg",
+    "before": 0.3379,
+    "after": 0.3372
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 90,
+    "province": "QC",
+    "path": "claim.pAmt",
+    "before": 540.25,
+    "after": 786.8125
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 90,
+    "province": "QC",
+    "path": "claim.saved",
+    "before": 75.635,
+    "after": 110.1538
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 90,
+    "province": "QC",
+    "path": "people.0.pSp",
+    "before": 75.635,
+    "after": 110.1538
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 90,
+    "province": "QC",
+    "path": "people.0.pSpFull",
+    "before": 75.635,
+    "after": 110.1538
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 90,
+    "province": "QC",
+    "path": "people.0.prov",
+    "before": 3853.745,
+    "after": 3819.2263
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 90,
+    "province": "QC",
+    "path": "people.0.total",
+    "before": 10850.9447,
+    "after": 10816.426
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 101,
+    "province": "QC",
+    "path": "total",
+    "before": -8406.3032,
+    "after": -8440.822
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 101,
+    "province": "QC",
+    "path": "prov",
+    "before": 3488.66,
+    "after": 3454.1413
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 101,
+    "province": "QC",
+    "path": "netTotal",
+    "before": -19256.1032,
+    "after": -19290.622
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 101,
+    "province": "QC",
+    "path": "incomeTax",
+    "before": 4546.0268,
+    "after": 4511.508
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 101,
+    "province": "QC",
+    "path": "gross",
+    "before": 20585.7768,
+    "after": 20551.258
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 101,
+    "province": "QC",
+    "path": "avg",
+    "before": -0.1121,
+    "after": -0.1125
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 101,
+    "province": "QC",
+    "path": "grossAvg",
+    "before": 0.2745,
+    "after": 0.274
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 101,
+    "province": "QC",
+    "path": "margBy.fd",
+    "before": 0.6739,
+    "after": 0.6746
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 101,
+    "province": "QC",
+    "path": "claim.pAmt",
+    "before": 952,
+    "after": 1198.5625
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 101,
+    "province": "QC",
+    "path": "claim.saved",
+    "before": 2012.03,
+    "after": 2046.5488
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 101,
+    "province": "QC",
+    "path": "people.0.pSp",
+    "before": 133.28,
+    "after": 167.7988
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 101,
+    "province": "QC",
+    "path": "people.0.pSpFull",
+    "before": 133.28,
+    "after": 167.7988
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 101,
+    "province": "QC",
+    "path": "people.0.prov",
+    "before": 3488.66,
+    "after": 3454.1413
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 101,
+    "province": "QC",
+    "path": "people.0.total",
+    "before": 9735.9768,
+    "after": 9701.458
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 113,
+    "province": "QC",
+    "path": "total",
+    "before": 10993.1624,
+    "after": 10958.6437
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 113,
+    "province": "QC",
+    "path": "prov",
+    "before": 2657.98,
+    "after": 2623.4613
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 113,
+    "province": "QC",
+    "path": "netTotal",
+    "before": 8297.6624,
+    "after": 8263.1437
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 113,
+    "province": "QC",
+    "path": "invTax",
+    "before": 4684.5824,
+    "after": 4650.0637
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 113,
+    "province": "QC",
+    "path": "incomeTax",
+    "before": 4684.5824,
+    "after": 4650.0637
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 113,
+    "province": "QC",
+    "path": "gross",
+    "before": 10993.1624,
+    "after": 10958.6437
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 113,
+    "province": "QC",
+    "path": "avg",
+    "before": 0.1324,
+    "after": 0.132
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 113,
+    "province": "QC",
+    "path": "grossAvg",
+    "before": 0.1324,
+    "after": 0.132
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 113,
+    "province": "QC",
+    "path": "claim.pAmt",
+    "before": 1534,
+    "after": 1780.5625
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 113,
+    "province": "QC",
+    "path": "claim.saved",
+    "before": 214.76,
+    "after": 249.2788
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 113,
+    "province": "QC",
+    "path": "people.0.pSp",
+    "before": 214.76,
+    "after": 249.2788
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 113,
+    "province": "QC",
+    "path": "people.0.pSpFull",
+    "before": 214.76,
+    "after": 249.2788
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 113,
+    "province": "QC",
+    "path": "people.0.prov",
+    "before": 2657.98,
+    "after": 2623.4613
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 113,
+    "province": "QC",
+    "path": "people.0.total",
+    "before": 8297.6624,
+    "after": 8263.1437
+  },
+  {
+    "file": "tests/golden/2023.json",
+    "year": 2023,
+    "scenario": 114,
+    "province": "QC",
+    "path": "invTax",
+    "before": 23802.4946,
+    "after": 23837.0133
+  },
+  {
+    "file": "tests/golden/2024.json",
+    "year": 2024,
+    "scenario": 6,
+    "province": "QC",
+    "path": "total",
+    "before": -52359.4663,
+    "after": -52395.6913
+  },
+  {
+    "file": "tests/golden/2024.json",
+    "year": 2024,
+    "scenario": 6,
+    "province": "QC",
+    "path": "prov",
+    "before": 3327.275,
+    "after": 3291.05
+  },
+  {
+    "file": "tests/golden/2024.json",
+    "year": 2024,
+    "scenario": 6,
+    "province": "QC",
+    "path": "netTotal",
+    "before": -55953.4663,
+    "after": -55989.6913
+  },
+  {
+    "file": "tests/golden/2024.json",
+    "year": 2024,
+    "scenario": 6,
+    "province": "QC",
+    "path": "incomeTax",
+    "before": 4415.0337,
+    "after": 4378.8087
+  },
+  {
+    "file": "tests/golden/2024.json",
+    "year": 2024,
+    "scenario": 6,
+    "province": "QC",
+    "path": "gross",
+    "before": 11481.3337,
+    "after": 11445.1087
+  },
+  {
+    "file": "tests/golden/2024.json",
+    "year": 2024,
+    "scenario": 6,
+    "province": "QC",
+    "path": "avg",
+    "before": -1.1635,
+    "after": -1.1643
+  },
+  {
+    "file": "tests/golden/2024.json",
+    "year": 2024,
+    "scenario": 6,
+    "province": "QC",
+    "path": "grossAvg",
+    "before": 0.2551,
+    "after": 0.2543
+  },
+  {
+    "file": "tests/golden/2024.json",
+    "year": 2024,
+    "scenario": 6,
+    "province": "QC",
+    "path": "margBy.fd",
+    "before": 0.7172,
+    "after": 0.718
+  },
+  {
+    "file": "tests/golden/2024.json",
+    "year": 2024,
+    "scenario": 6,
+    "province": "QC",
+    "path": "claim.pAmt",
+    "before": 1382.75,
+    "after": 1641.5
+  },
+  {
+    "file": "tests/golden/2024.json",
+    "year": 2024,
+    "scenario": 6,
+    "province": "QC",
+    "path": "claim.saved",
+    "before": 2160.6363,
+    "after": 2196.8613
+  },
+  {
+    "file": "tests/golden/2024.json",
+    "year": 2024,
+    "scenario": 6,
+    "province": "QC",
+    "path": "people.0.pSp",
+    "before": 193.585,
+    "after": 229.81
+  },
+  {
+    "file": "tests/golden/2024.json",
+    "year": 2024,
+    "scenario": 6,
+    "province": "QC",
+    "path": "people.0.pSpFull",
+    "before": 193.585,
+    "after": 229.81
+  },
+  {
+    "file": "tests/golden/2024.json",
+    "year": 2024,
+    "scenario": 6,
+    "province": "QC",
+    "path": "people.0.prov",
+    "before": 3327.275,
+    "after": 3291.05
+  },
+  {
+    "file": "tests/golden/2024.json",
+    "year": 2024,
+    "scenario": 6,
+    "province": "QC",
+    "path": "people.0.total",
+    "before": 7887.3337,
+    "after": 7851.1087
+  },
+  {
+    "file": "tests/golden/2024.json",
+    "year": 2024,
+    "scenario": 20,
+    "province": "QC",
+    "path": "total",
+    "before": 14197.6823,
+    "after": 14161.4573
+  },
+  {
+    "file": "tests/golden/2024.json",
+    "year": 2024,
+    "scenario": 20,
+    "province": "QC",
+    "path": "prov",
+    "before": 4150.2125,
+    "after": 4113.9875
+  },
+  {
+    "file": "tests/golden/2024.json",
+    "year": 2024,
+    "scenario": 20,
+    "province": "QC",
+    "path": "netTotal",
+    "before": 10603.6823,
+    "after": 10567.4573
+  },
+  {
+    "file": "tests/golden/2024.json",
+    "year": 2024,
+    "scenario": 20,
+    "province": "QC",
+    "path": "incomeTax",
+    "before": 7779.8323,
+    "after": 7743.6073
+  },
+  {
+    "file": "tests/golden/2024.json",
+    "year": 2024,
+    "scenario": 20,
+    "province": "QC",
+    "path": "gross",
+    "before": 15256.8323,
+    "after": 15220.6073
+  },
+  {
+    "file": "tests/golden/2024.json",
+    "year": 2024,
+    "scenario": 20,
+    "province": "QC",
+    "path": "claim.pAmt",
+    "before": 454.625,
+    "after": 713.375
+  },
+  {
+    "file": "tests/golden/2024.json",
+    "year": 2024,
+    "scenario": 20,
+    "province": "QC",
+    "path": "claim.saved",
+    "before": 63.6475,
+    "after": 99.8725
+  },
+  {
+    "file": "tests/golden/2024.json",
+    "year": 2024,
+    "scenario": 20,
+    "province": "QC",
+    "path": "people.0.pSp",
+    "before": 63.6475,
+    "after": 99.8725
+  },
+  {
+    "file": "tests/golden/2024.json",
+    "year": 2024,
+    "scenario": 20,
+    "province": "QC",
+    "path": "people.0.pSpFull",
+    "before": 63.6475,
+    "after": 99.8725
+  },
+  {
+    "file": "tests/golden/2024.json",
+    "year": 2024,
+    "scenario": 20,
+    "province": "QC",
+    "path": "people.0.prov",
+    "before": 4150.2125,
+    "after": 4113.9875
+  },
+  {
+    "file": "tests/golden/2024.json",
+    "year": 2024,
+    "scenario": 20,
+    "province": "QC",
+    "path": "people.0.total",
+    "before": 11662.8323,
+    "after": 11626.6073
+  },
+  {
+    "file": "tests/golden/2024.json",
+    "year": 2024,
+    "scenario": 90,
+    "province": "QC",
+    "path": "total",
+    "before": 14223.5139,
+    "after": 14187.2889
+  },
+  {
+    "file": "tests/golden/2024.json",
+    "year": 2024,
+    "scenario": 90,
+    "province": "QC",
+    "path": "prov",
+    "before": 3656.45,
+    "after": 3620.225
+  },
+  {
+    "file": "tests/golden/2024.json",
+    "year": 2024,
+    "scenario": 90,
+    "province": "QC",
+    "path": "netTotal",
+    "before": 9191.9139,
+    "after": 9155.6889
+  },
+  {
+    "file": "tests/golden/2024.json",
+    "year": 2024,
+    "scenario": 90,
+    "province": "QC",
+    "path": "incomeTax",
+    "before": 6941.1839,
+    "after": 6904.9589
+  },
+  {
+    "file": "tests/golden/2024.json",
+    "year": 2024,
+    "scenario": 90,
+    "province": "QC",
+    "path": "gross",
+    "before": 15609.3639,
+    "after": 15573.1389
+  },
+  {
+    "file": "tests/golden/2024.json",
+    "year": 2024,
+    "scenario": 90,
+    "province": "QC",
+    "path": "avg",
+    "before": 0.3026,
+    "after": 0.3019
+  },
+  {
+    "file": "tests/golden/2024.json",
+    "year": 2024,
+    "scenario": 90,
+    "province": "QC",
+    "path": "grossAvg",
+    "before": 0.3321,
+    "after": 0.3313
+  },
+  {
+    "file": "tests/golden/2024.json",
+    "year": 2024,
+    "scenario": 90,
+    "province": "QC",
+    "path": "claim.pAmt",
+    "before": 1011.5,
+    "after": 1270.25
+  },
+  {
+    "file": "tests/golden/2024.json",
+    "year": 2024,
+    "scenario": 90,
+    "province": "QC",
+    "path": "claim.saved",
+    "before": 141.61,
+    "after": 177.835
+  },
+  {
+    "file": "tests/golden/2024.json",
+    "year": 2024,
+    "scenario": 90,
+    "province": "QC",
+    "path": "people.0.pSp",
+    "before": 141.61,
+    "after": 177.835
+  },
+  {
+    "file": "tests/golden/2024.json",
+    "year": 2024,
+    "scenario": 90,
+    "province": "QC",
+    "path": "people.0.pSpFull",
+    "before": 141.61,
+    "after": 177.835
+  },
+  {
+    "file": "tests/golden/2024.json",
+    "year": 2024,
+    "scenario": 90,
+    "province": "QC",
+    "path": "people.0.prov",
+    "before": 3656.45,
+    "after": 3620.225
+  },
+  {
+    "file": "tests/golden/2024.json",
+    "year": 2024,
+    "scenario": 90,
+    "province": "QC",
+    "path": "people.0.total",
+    "before": 10577.7639,
+    "after": 10541.5389
+  },
+  {
+    "file": "tests/golden/2024.json",
+    "year": 2024,
+    "scenario": 101,
+    "province": "QC",
+    "path": "total",
+    "before": -10804.4652,
+    "after": -10840.6902
+  },
+  {
+    "file": "tests/golden/2024.json",
+    "year": 2024,
+    "scenario": 101,
+    "province": "QC",
+    "path": "prov",
+    "before": 3256.9513,
+    "after": 3220.7263
+  },
+  {
+    "file": "tests/golden/2024.json",
+    "year": 2024,
+    "scenario": 101,
+    "province": "QC",
+    "path": "netTotal",
+    "before": -21542.9652,
+    "after": -21579.1902
+  },
+  {
+    "file": "tests/golden/2024.json",
+    "year": 2024,
+    "scenario": 101,
+    "province": "QC",
+    "path": "incomeTax",
+    "before": 4084.1348,
+    "after": 4047.9098
+  },
+  {
+    "file": "tests/golden/2024.json",
+    "year": 2024,
+    "scenario": 101,
+    "province": "QC",
+    "path": "gross",
+    "before": 20375.3748,
+    "after": 20339.1498
+  },
+  {
+    "file": "tests/golden/2024.json",
+    "year": 2024,
+    "scenario": 101,
+    "province": "QC",
+    "path": "avg",
+    "before": -0.1441,
+    "after": -0.1445
+  },
+  {
+    "file": "tests/golden/2024.json",
+    "year": 2024,
+    "scenario": 101,
+    "province": "QC",
+    "path": "grossAvg",
+    "before": 0.2717,
+    "after": 0.2712
+  },
+  {
+    "file": "tests/golden/2024.json",
+    "year": 2024,
+    "scenario": 101,
+    "province": "QC",
+    "path": "margBy.fd",
+    "before": 0.6348,
+    "after": 0.6356
+  },
+  {
+    "file": "tests/golden/2024.json",
+    "year": 2024,
+    "scenario": 101,
+    "province": "QC",
+    "path": "claim.pAmt",
+    "before": 1462.0625,
+    "after": 1720.8125
+  },
+  {
+    "file": "tests/golden/2024.json",
+    "year": 2024,
+    "scenario": 101,
+    "province": "QC",
+    "path": "claim.saved",
+    "before": 2171.74,
+    "after": 2207.965
+  },
+  {
+    "file": "tests/golden/2024.json",
+    "year": 2024,
+    "scenario": 101,
+    "province": "QC",
+    "path": "people.0.pSp",
+    "before": 204.6888,
+    "after": 240.9138
+  },
+  {
+    "file": "tests/golden/2024.json",
+    "year": 2024,
+    "scenario": 101,
+    "province": "QC",
+    "path": "people.0.pSpFull",
+    "before": 204.6888,
+    "after": 240.9138
+  },
+  {
+    "file": "tests/golden/2024.json",
+    "year": 2024,
+    "scenario": 101,
+    "province": "QC",
+    "path": "people.0.prov",
+    "before": 3256.9513,
+    "after": 3220.7263
+  },
+  {
+    "file": "tests/golden/2024.json",
+    "year": 2024,
+    "scenario": 101,
+    "province": "QC",
+    "path": "people.0.total",
+    "before": 9636.8748,
+    "after": 9600.6498
+  },
+  {
+    "file": "tests/golden/2024.json",
+    "year": 2024,
+    "scenario": 113,
+    "province": "QC",
+    "path": "total",
+    "before": 10719.9816,
+    "after": 10711.0566
+  },
+  {
+    "file": "tests/golden/2024.json",
+    "year": 2024,
+    "scenario": 113,
+    "province": "QC",
+    "path": "prov",
+    "before": 2460.685,
+    "after": 2451.76
+  },
+  {
+    "file": "tests/golden/2024.json",
+    "year": 2024,
+    "scenario": 113,
+    "province": "QC",
+    "path": "netTotal",
+    "before": 8024.4816,
+    "after": 8015.5566
+  },
+  {
+    "file": "tests/golden/2024.json",
+    "year": 2024,
+    "scenario": 113,
+    "province": "QC",
+    "path": "marg",
+    "before": 0.3617,
+    "after": 0.3357
+  },
+  {
+    "file": "tests/golden/2024.json",
+    "year": 2024,
+    "scenario": 113,
+    "province": "QC",
+    "path": "invTax",
+    "before": 4387.9016,
+    "after": 4378.9766
+  },
+  {
+    "file": "tests/golden/2024.json",
+    "year": 2024,
+    "scenario": 113,
+    "province": "QC",
+    "path": "incomeTax",
+    "before": 4387.9016,
+    "after": 4378.9766
+  },
+  {
+    "file": "tests/golden/2024.json",
+    "year": 2024,
+    "scenario": 113,
+    "province": "QC",
+    "path": "gross",
+    "before": 10719.9816,
+    "after": 10711.0566
+  },
+  {
+    "file": "tests/golden/2024.json",
+    "year": 2024,
+    "scenario": 113,
+    "province": "QC",
+    "path": "avg",
+    "before": 0.1292,
+    "after": 0.129
+  },
+  {
+    "file": "tests/golden/2024.json",
+    "year": 2024,
+    "scenario": 113,
+    "province": "QC",
+    "path": "grossAvg",
+    "before": 0.1292,
+    "after": 0.129
+  },
+  {
+    "file": "tests/golden/2024.json",
+    "year": 2024,
+    "scenario": 113,
+    "province": "QC",
+    "path": "margBy.ord",
+    "before": 0.3617,
+    "after": 0.3357
+  },
+  {
+    "file": "tests/golden/2024.json",
+    "year": 2024,
+    "scenario": 113,
+    "province": "QC",
+    "path": "margBy.cg",
+    "before": 0.1457,
+    "after": 0.1326
+  },
+  {
+    "file": "tests/golden/2024.json",
+    "year": 2024,
+    "scenario": 113,
+    "province": "QC",
+    "path": "margBy.ed",
+    "before": 0.0677,
+    "after": 0.0315
+  },
+  {
+    "file": "tests/golden/2024.json",
+    "year": 2024,
+    "scenario": 113,
+    "province": "QC",
+    "path": "margBy.nd",
+    "before": 0.2092,
+    "after": 0.179
+  },
+  {
+    "file": "tests/golden/2024.json",
+    "year": 2024,
+    "scenario": 113,
+    "province": "QC",
+    "path": "margBy.fd",
+    "before": 0.2915,
+    "after": 0.2652
+  },
+  {
+    "file": "tests/golden/2024.json",
+    "year": 2024,
+    "scenario": 113,
+    "province": "QC",
+    "path": "claim.pAmt",
+    "before": 2005.25,
+    "after": 2069
+  },
+  {
+    "file": "tests/golden/2024.json",
+    "year": 2024,
+    "scenario": 113,
+    "province": "QC",
+    "path": "claim.saved",
+    "before": 280.735,
+    "after": 289.66
+  },
+  {
+    "file": "tests/golden/2024.json",
+    "year": 2024,
+    "scenario": 113,
+    "province": "QC",
+    "path": "people.0.pSp",
+    "before": 280.735,
+    "after": 289.66
+  },
+  {
+    "file": "tests/golden/2024.json",
+    "year": 2024,
+    "scenario": 113,
+    "province": "QC",
+    "path": "people.0.pSpFull",
+    "before": 280.735,
+    "after": 289.66
+  },
+  {
+    "file": "tests/golden/2024.json",
+    "year": 2024,
+    "scenario": 113,
+    "province": "QC",
+    "path": "people.0.prov",
+    "before": 2460.685,
+    "after": 2451.76
+  },
+  {
+    "file": "tests/golden/2024.json",
+    "year": 2024,
+    "scenario": 113,
+    "province": "QC",
+    "path": "people.0.total",
+    "before": 8024.4816,
+    "after": 8015.5566
+  },
+  {
+    "file": "tests/golden/2024.json",
+    "year": 2024,
+    "scenario": 114,
+    "province": "QC",
+    "path": "invTax",
+    "before": 24034.0026,
+    "after": 24070.2276
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 6,
+    "province": "QC",
+    "path": "total",
+    "before": -54327.7778,
+    "after": -54365.0528
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 6,
+    "province": "QC",
+    "path": "prov",
+    "before": 3210.7338,
+    "after": 3173.4588
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 6,
+    "province": "QC",
+    "path": "netTotal",
+    "before": -58391.2538,
+    "after": -58428.5288
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 6,
+    "province": "QC",
+    "path": "incomeTax",
+    "before": 4155.5062,
+    "after": 4118.2312
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 6,
+    "province": "QC",
+    "path": "gross",
+    "before": 11686.7822,
+    "after": 11649.5072
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 6,
+    "province": "QC",
+    "path": "avg",
+    "before": -1.2073,
+    "after": -1.2081
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 6,
+    "province": "QC",
+    "path": "grossAvg",
+    "before": 0.2597,
+    "after": 0.2589
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 6,
+    "province": "QC",
+    "path": "margBy.fd",
+    "before": 0.7295,
+    "after": 0.7303
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 6,
+    "province": "QC",
+    "path": "claim.pAmt",
+    "before": 1660.1875,
+    "after": 1926.4375
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 6,
+    "province": "QC",
+    "path": "claim.saved",
+    "before": 2185.2449,
+    "after": 2222.5199
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 6,
+    "province": "QC",
+    "path": "people.0.pSp",
+    "before": 232.4263,
+    "after": 269.7013
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 6,
+    "province": "QC",
+    "path": "people.0.pSpFull",
+    "before": 232.4263,
+    "after": 269.7013
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 6,
+    "province": "QC",
+    "path": "people.0.prov",
+    "before": 3210.7338,
+    "after": 3173.4588
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 6,
+    "province": "QC",
+    "path": "people.0.total",
+    "before": 7623.3062,
+    "after": 7586.0312
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 20,
+    "province": "QC",
+    "path": "total",
+    "before": 14187.5484,
+    "after": 14150.2734
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 20,
+    "province": "QC",
+    "path": "prov",
+    "before": 4033.6713,
+    "after": 3996.3963
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 20,
+    "province": "QC",
+    "path": "netTotal",
+    "before": 10124.0724,
+    "after": 10086.7974
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 20,
+    "province": "QC",
+    "path": "incomeTax",
+    "before": 7486.9724,
+    "after": 7449.6974
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 20,
+    "province": "QC",
+    "path": "gross",
+    "before": 15428.4484,
+    "after": 15391.1734
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 20,
+    "province": "QC",
+    "path": "claim.pAmt",
+    "before": 732.0625,
+    "after": 998.3125
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 20,
+    "province": "QC",
+    "path": "claim.saved",
+    "before": 102.4888,
+    "after": 139.7638
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 20,
+    "province": "QC",
+    "path": "people.0.pSp",
+    "before": 102.4888,
+    "after": 139.7638
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 20,
+    "province": "QC",
+    "path": "people.0.pSpFull",
+    "before": 102.4888,
+    "after": 139.7638
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 20,
+    "province": "QC",
+    "path": "people.0.prov",
+    "before": 4033.6713,
+    "after": 3996.3963
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 20,
+    "province": "QC",
+    "path": "people.0.total",
+    "before": 11364.9724,
+    "after": 11327.6974
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 28,
+    "province": "QC",
+    "path": "invTax",
+    "before": 9060.0252,
+    "after": 9069.8514
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 40,
+    "province": "QC",
+    "path": "total",
+    "before": -50157.1315,
+    "after": -50166.9577
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 40,
+    "province": "QC",
+    "path": "prov",
+    "before": 4829.16,
+    "after": 4819.3338
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 40,
+    "province": "QC",
+    "path": "netTotal",
+    "before": -52243.9075,
+    "after": -52253.7337
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 40,
+    "province": "QC",
+    "path": "marg",
+    "before": 0.708,
+    "after": 0.734
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 40,
+    "province": "QC",
+    "path": "incomeTax",
+    "before": 6885.3525,
+    "after": 6875.5263
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 40,
+    "province": "QC",
+    "path": "gross",
+    "before": 13260.3285,
+    "after": 13250.5023
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 40,
+    "province": "QC",
+    "path": "avg",
+    "before": -0.9119,
+    "after": -0.9121
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 40,
+    "province": "QC",
+    "path": "grossAvg",
+    "before": 0.2411,
+    "after": 0.2409
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 40,
+    "province": "QC",
+    "path": "margBy.ord",
+    "before": 0.708,
+    "after": 0.734
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 40,
+    "province": "QC",
+    "path": "margBy.cg",
+    "before": 0.3205,
+    "after": 0.3337
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 40,
+    "province": "QC",
+    "path": "margBy.ed",
+    "before": 0.5502,
+    "after": 0.5864
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 40,
+    "province": "QC",
+    "path": "margBy.nd",
+    "before": 0.6112,
+    "after": 0.6414
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 40,
+    "province": "QC",
+    "path": "margBy.fd",
+    "before": 0.657,
+    "after": 0.6834
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 40,
+    "province": "QC",
+    "path": "claim.pAmt",
+    "before": 0,
+    "after": 70.1875
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 40,
+    "province": "QC",
+    "path": "claim.saved",
+    "before": 1952.8187,
+    "after": 1962.6449
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 40,
+    "province": "QC",
+    "path": "people.0.pSp",
+    "before": 0,
+    "after": 9.8263
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 40,
+    "province": "QC",
+    "path": "people.0.pSpFull",
+    "before": 0,
+    "after": 9.8263
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 40,
+    "province": "QC",
+    "path": "people.0.prov",
+    "before": 4829.16,
+    "after": 4819.3338
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 40,
+    "province": "QC",
+    "path": "people.0.total",
+    "before": 11173.5525,
+    "after": 11163.7263
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 63,
+    "province": "QC",
+    "path": "total",
+    "before": -7903.5375,
+    "after": -7913.3637
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 63,
+    "province": "QC",
+    "path": "prov",
+    "before": 4829.16,
+    "after": 4819.3338
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 63,
+    "province": "QC",
+    "path": "netTotal",
+    "before": -10740.7175,
+    "after": -10750.5437
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 63,
+    "province": "QC",
+    "path": "marg",
+    "before": 0.6139,
+    "after": 0.6399
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 63,
+    "province": "QC",
+    "path": "incomeTax",
+    "before": 6885.3525,
+    "after": 6875.5263
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 63,
+    "province": "QC",
+    "path": "gross",
+    "before": 14010.7325,
+    "after": 14000.9063
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 63,
+    "province": "QC",
+    "path": "avg",
+    "before": -0.1437,
+    "after": -0.1439
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 63,
+    "province": "QC",
+    "path": "grossAvg",
+    "before": 0.2547,
+    "after": 0.2546
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 63,
+    "province": "QC",
+    "path": "margBy.ord",
+    "before": 0.6139,
+    "after": 0.6399
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 63,
+    "province": "QC",
+    "path": "margBy.cg",
+    "before": 0.273,
+    "after": 0.2862
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 63,
+    "province": "QC",
+    "path": "margBy.ed",
+    "before": 0.4191,
+    "after": 0.4553
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 63,
+    "province": "QC",
+    "path": "margBy.nd",
+    "before": 0.5019,
+    "after": 0.5321
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 63,
+    "province": "QC",
+    "path": "margBy.fd",
+    "before": 0.5461,
+    "after": 0.5723
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 63,
+    "province": "QC",
+    "path": "claim.pAmt",
+    "before": 0,
+    "after": 70.1875
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 63,
+    "province": "QC",
+    "path": "claim.saved",
+    "before": 1952.8187,
+    "after": 1962.6449
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 63,
+    "province": "QC",
+    "path": "people.0.pSp",
+    "before": 0,
+    "after": 9.8263
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 63,
+    "province": "QC",
+    "path": "people.0.pSpFull",
+    "before": 0,
+    "after": 9.8263
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 63,
+    "province": "QC",
+    "path": "people.0.prov",
+    "before": 4829.16,
+    "after": 4819.3338
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 63,
+    "province": "QC",
+    "path": "people.0.total",
+    "before": 11173.5525,
+    "after": 11163.7263
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 81,
+    "province": "QC",
+    "path": "total",
+    "before": 33117.9712,
+    "after": 33108.1449
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 81,
+    "province": "QC",
+    "path": "prov",
+    "before": 4829.16,
+    "after": 4819.3338
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 81,
+    "province": "QC",
+    "path": "netTotal",
+    "before": 12429.9712,
+    "after": 12420.1449
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 81,
+    "province": "QC",
+    "path": "marg",
+    "before": 0.4407,
+    "after": 0.4667
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 81,
+    "province": "QC",
+    "path": "incomeTax",
+    "before": 8838.1712,
+    "after": 8828.3449
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 81,
+    "province": "QC",
+    "path": "gross",
+    "before": 33814.3712,
+    "after": 33804.5449
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 81,
+    "province": "QC",
+    "path": "avg",
+    "before": 0.6021,
+    "after": 0.602
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 81,
+    "province": "QC",
+    "path": "grossAvg",
+    "before": 0.6148,
+    "after": 0.6146
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 81,
+    "province": "QC",
+    "path": "margBy.ord",
+    "before": 0.4407,
+    "after": 0.4667
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 81,
+    "province": "QC",
+    "path": "margBy.cg",
+    "before": 0.1855,
+    "after": 0.1987
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 81,
+    "province": "QC",
+    "path": "margBy.ed",
+    "before": 0.1776,
+    "after": 0.2138
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 81,
+    "province": "QC",
+    "path": "margBy.nd",
+    "before": 0.3007,
+    "after": 0.3309
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 81,
+    "province": "QC",
+    "path": "margBy.fd",
+    "before": 0.4441,
+    "after": 0.4705
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 81,
+    "province": "QC",
+    "path": "claim",
+    "before": null,
+    "after": {
+      "c": 0,
+      "fAmt": 0,
+      "pAmt": 70.1875,
+      "qc": 1,
+      "saved": 9.8263
+    }
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 81,
+    "province": "QC",
+    "path": "claimKind",
+    "before": null,
+    "after": "alone"
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 81,
+    "province": "QC",
+    "path": "people.0.pSp",
+    "before": 0,
+    "after": 9.8263
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 81,
+    "province": "QC",
+    "path": "people.0.pSpFull",
+    "before": 0,
+    "after": 9.8263
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 81,
+    "province": "QC",
+    "path": "people.0.prov",
+    "before": 4829.16,
+    "after": 4819.3338
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 81,
+    "province": "QC",
+    "path": "people.0.total",
+    "before": 13126.3712,
+    "after": 13116.5449
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 90,
+    "province": "QC",
+    "path": "total",
+    "before": 14225.1399,
+    "after": 14187.8649
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 90,
+    "province": "QC",
+    "path": "prov",
+    "before": 3539.9088,
+    "after": 3502.6338
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 90,
+    "province": "QC",
+    "path": "netTotal",
+    "before": 8724.0639,
+    "after": 8686.7889
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 90,
+    "province": "QC",
+    "path": "incomeTax",
+    "before": 6659.7839,
+    "after": 6622.5089
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 90,
+    "province": "QC",
+    "path": "gross",
+    "before": 15792.7399,
+    "after": 15755.4649
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 90,
+    "province": "QC",
+    "path": "avg",
+    "before": 0.3027,
+    "after": 0.3019
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 90,
+    "province": "QC",
+    "path": "grossAvg",
+    "before": 0.336,
+    "after": 0.3352
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 90,
+    "province": "QC",
+    "path": "claim.pAmt",
+    "before": 1288.9375,
+    "after": 1555.1875
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 90,
+    "province": "QC",
+    "path": "claim.saved",
+    "before": 180.4513,
+    "after": 217.7263
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 90,
+    "province": "QC",
+    "path": "people.0.pSp",
+    "before": 180.4513,
+    "after": 217.7263
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 90,
+    "province": "QC",
+    "path": "people.0.pSpFull",
+    "before": 180.4513,
+    "after": 217.7263
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 90,
+    "province": "QC",
+    "path": "people.0.prov",
+    "before": 3539.9088,
+    "after": 3502.6338
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 90,
+    "province": "QC",
+    "path": "people.0.total",
+    "before": 10291.6639,
+    "after": 10254.3889
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 101,
+    "province": "QC",
+    "path": "total",
+    "before": -11557.6703,
+    "after": -11594.9453
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 101,
+    "province": "QC",
+    "path": "prov",
+    "before": 3142.405,
+    "after": 3105.13
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 101,
+    "province": "QC",
+    "path": "netTotal",
+    "before": -22883.2703,
+    "after": -22920.5453
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 101,
+    "province": "QC",
+    "path": "incomeTax",
+    "before": 3814.6897,
+    "after": 3777.4147
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 101,
+    "province": "QC",
+    "path": "gross",
+    "before": 20858.6597,
+    "after": 20821.3847
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 101,
+    "province": "QC",
+    "path": "avg",
+    "before": -0.1541,
+    "after": -0.1546
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 101,
+    "province": "QC",
+    "path": "grossAvg",
+    "before": 0.2781,
+    "after": 0.2776
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 101,
+    "province": "QC",
+    "path": "margBy.fd",
+    "before": 0.6975,
+    "after": 0.6983
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 101,
+    "province": "QC",
+    "path": "claim.pAmt",
+    "before": 1737.25,
+    "after": 2003.5
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 101,
+    "province": "QC",
+    "path": "claim.saved",
+    "before": 2196.0337,
+    "after": 2233.3087
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 101,
+    "province": "QC",
+    "path": "people.0.pSp",
+    "before": 243.215,
+    "after": 280.49
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 101,
+    "province": "QC",
+    "path": "people.0.pSpFull",
+    "before": 243.215,
+    "after": 280.49
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 101,
+    "province": "QC",
+    "path": "people.0.prov",
+    "before": 3142.405,
+    "after": 3105.13
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 101,
+    "province": "QC",
+    "path": "people.0.total",
+    "before": 9533.0597,
+    "after": 9495.7847
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 114,
+    "province": "QC",
+    "path": "invTax",
+    "before": 24282.2781,
+    "after": 24319.5531
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 127,
+    "province": "QC",
+    "path": "invTax",
+    "before": 14548.8877,
+    "after": 14558.7139
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 141,
+    "province": "QC",
+    "path": "total",
+    "before": -2397.2275,
+    "after": -2407.0537
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 141,
+    "province": "QC",
+    "path": "prov",
+    "before": 4829.16,
+    "after": 4819.3338
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 141,
+    "province": "QC",
+    "path": "netTotal",
+    "before": -17772.8275,
+    "after": -17782.6537
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 141,
+    "province": "QC",
+    "path": "marg",
+    "before": 0.6684,
+    "after": 0.6944
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 141,
+    "province": "QC",
+    "path": "incomeTax",
+    "before": 6885.3525,
+    "after": 6875.5263
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 141,
+    "province": "QC",
+    "path": "gross",
+    "before": 26549.1525,
+    "after": 26539.3263
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 141,
+    "province": "QC",
+    "path": "avg",
+    "before": -0.0436,
+    "after": -0.0438
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 141,
+    "province": "QC",
+    "path": "grossAvg",
+    "before": 0.4827,
+    "after": 0.4825
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 141,
+    "province": "QC",
+    "path": "margBy.ord",
+    "before": 0.6684,
+    "after": 0.6944
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 141,
+    "province": "QC",
+    "path": "margBy.cg",
+    "before": 0.3005,
+    "after": 0.3137
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 141,
+    "province": "QC",
+    "path": "margBy.ed",
+    "before": 0.495,
+    "after": 0.5312
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 141,
+    "province": "QC",
+    "path": "margBy.nd",
+    "before": 0.5652,
+    "after": 0.5954
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 141,
+    "province": "QC",
+    "path": "margBy.fd",
+    "before": 0.617,
+    "after": 0.6434
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 141,
+    "province": "QC",
+    "path": "claim.pAmt",
+    "before": 0,
+    "after": 70.1875
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 141,
+    "province": "QC",
+    "path": "claim.saved",
+    "before": 1952.8187,
+    "after": 1962.6449
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 141,
+    "province": "QC",
+    "path": "people.0.pSp",
+    "before": 0,
+    "after": 9.8263
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 141,
+    "province": "QC",
+    "path": "people.0.pSpFull",
+    "before": 0,
+    "after": 9.8263
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 141,
+    "province": "QC",
+    "path": "people.0.prov",
+    "before": 4829.16,
+    "after": 4819.3338
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 141,
+    "province": "QC",
+    "path": "people.0.total",
+    "before": 11173.5525,
+    "after": 11163.7263
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 6,
+    "province": "QC",
+    "path": "total",
+    "before": -56818.2024,
+    "after": -56856.2649
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 6,
+    "province": "QC",
+    "path": "prov",
+    "before": 3124.3275,
+    "after": 3086.265
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 6,
+    "province": "QC",
+    "path": "netTotal",
+    "before": -60779.4187,
+    "after": -60817.4812
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 6,
+    "province": "QC",
+    "path": "incomeTax",
+    "before": 3966.2413,
+    "after": 3928.1788
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 6,
+    "province": "QC",
+    "path": "gross",
+    "before": 11320.4576,
+    "after": 11282.3951
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 6,
+    "province": "QC",
+    "path": "avg",
+    "before": -1.2626,
+    "after": -1.2635
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 6,
+    "province": "QC",
+    "path": "grossAvg",
+    "before": 0.2516,
+    "after": 0.2507
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 6,
+    "province": "QC",
+    "path": "margBy.fd",
+    "before": 0.694,
+    "after": 0.6948
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 6,
+    "province": "QC",
+    "path": "claim.pAmt",
+    "before": 1866.375,
+    "after": 2138.25
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 6,
+    "province": "QC",
+    "path": "claim.saved",
+    "before": 2184.5313,
+    "after": 2222.5938
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 6,
+    "province": "QC",
+    "path": "people.0.pSp",
+    "before": 261.2925,
+    "after": 299.355
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 6,
+    "province": "QC",
+    "path": "people.0.pSpFull",
+    "before": 261.2925,
+    "after": 299.355
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 6,
+    "province": "QC",
+    "path": "people.0.prov",
+    "before": 3124.3275,
+    "after": 3086.265
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 6,
+    "province": "QC",
+    "path": "people.0.total",
+    "before": 7359.2413,
+    "after": 7321.1788
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 20,
+    "province": "QC",
+    "path": "total",
+    "before": 13494.2485,
+    "after": 13456.186
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 20,
+    "province": "QC",
+    "path": "prov",
+    "before": 3947.265,
+    "after": 3909.2025
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 20,
+    "province": "QC",
+    "path": "netTotal",
+    "before": 9533.0323,
+    "after": 9494.9698
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 20,
+    "province": "QC",
+    "path": "incomeTax",
+    "before": 7249.9823,
+    "after": 7211.9198
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 20,
+    "province": "QC",
+    "path": "gross",
+    "before": 15005.6985,
+    "after": 14967.636
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 20,
+    "province": "QC",
+    "path": "claim.pAmt",
+    "before": 938.25,
+    "after": 1210.125
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 20,
+    "province": "QC",
+    "path": "claim.saved",
+    "before": 131.355,
+    "after": 169.4175
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 20,
+    "province": "QC",
+    "path": "people.0.pSp",
+    "before": 131.355,
+    "after": 169.4175
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 20,
+    "province": "QC",
+    "path": "people.0.pSpFull",
+    "before": 131.355,
+    "after": 169.4175
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 20,
+    "province": "QC",
+    "path": "people.0.prov",
+    "before": 3947.265,
+    "after": 3909.2025
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 20,
+    "province": "QC",
+    "path": "people.0.total",
+    "before": 11044.4823,
+    "after": 11006.4198
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 28,
+    "province": "QC",
+    "path": "invTax",
+    "before": 9197.9192,
+    "after": 9235.9817
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 40,
+    "province": "QC",
+    "path": "total",
+    "before": -52698.0281,
+    "after": -52736.0906
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 40,
+    "province": "QC",
+    "path": "prov",
+    "before": 4770.2025,
+    "after": 4732.14
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 40,
+    "province": "QC",
+    "path": "netTotal",
+    "before": -54682.5444,
+    "after": -54720.6069
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 40,
+    "province": "QC",
+    "path": "marg",
+    "before": 0.7168,
+    "after": 0.7286
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 40,
+    "province": "QC",
+    "path": "incomeTax",
+    "before": 6687.2456,
+    "after": 6649.1831
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 40,
+    "province": "QC",
+    "path": "gross",
+    "before": 12867.7619,
+    "after": 12829.6994
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 40,
+    "province": "QC",
+    "path": "avg",
+    "before": -0.9581,
+    "after": -0.9588
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 40,
+    "province": "QC",
+    "path": "grossAvg",
+    "before": 0.234,
+    "after": 0.2333
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 40,
+    "province": "QC",
+    "path": "margBy.ord",
+    "before": 0.7168,
+    "after": 0.7286
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 40,
+    "province": "QC",
+    "path": "margBy.ed",
+    "before": 0.5586,
+    "after": 0.5806
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 40,
+    "province": "QC",
+    "path": "margBy.nd",
+    "before": 0.6206,
+    "after": 0.6366
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 40,
+    "province": "QC",
+    "path": "margBy.fd",
+    "before": 0.6711,
+    "after": 0.6838
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 40,
+    "province": "QC",
+    "path": "claim.pAmt",
+    "before": 10.125,
+    "after": 282
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 40,
+    "province": "QC",
+    "path": "claim.saved",
+    "before": 1924.6563,
+    "after": 1962.7188
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 40,
+    "province": "QC",
+    "path": "people.0.pSp",
+    "before": 1.4175,
+    "after": 39.48
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 40,
+    "province": "QC",
+    "path": "people.0.pSpFull",
+    "before": 1.4175,
+    "after": 39.48
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 40,
+    "province": "QC",
+    "path": "people.0.prov",
+    "before": 4770.2025,
+    "after": 4732.14
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 40,
+    "province": "QC",
+    "path": "people.0.total",
+    "before": 10883.2456,
+    "after": 10845.1831
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 63,
+    "province": "QC",
+    "path": "total",
+    "before": -9245.7847,
+    "after": -9283.8472
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 63,
+    "province": "QC",
+    "path": "prov",
+    "before": 4770.2025,
+    "after": 4732.14
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 63,
+    "province": "QC",
+    "path": "netTotal",
+    "before": -12052.1044,
+    "after": -12090.1669
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 63,
+    "province": "QC",
+    "path": "marg",
+    "before": 0.6227,
+    "after": 0.6346
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 63,
+    "province": "QC",
+    "path": "incomeTax",
+    "before": 6687.2456,
+    "after": 6649.1831
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 63,
+    "province": "QC",
+    "path": "gross",
+    "before": 13689.5653,
+    "after": 13651.5028
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 63,
+    "province": "QC",
+    "path": "avg",
+    "before": -0.1681,
+    "after": -0.1688
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 63,
+    "province": "QC",
+    "path": "grossAvg",
+    "before": 0.2489,
+    "after": 0.2482
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 63,
+    "province": "QC",
+    "path": "margBy.ord",
+    "before": 0.6227,
+    "after": 0.6346
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 63,
+    "province": "QC",
+    "path": "margBy.ed",
+    "before": 0.4275,
+    "after": 0.4495
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 63,
+    "province": "QC",
+    "path": "margBy.nd",
+    "before": 0.5113,
+    "after": 0.5273
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 63,
+    "province": "QC",
+    "path": "margBy.fd",
+    "before": 0.5561,
+    "after": 0.5681
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 63,
+    "province": "QC",
+    "path": "claim.pAmt",
+    "before": 10.125,
+    "after": 282
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 63,
+    "province": "QC",
+    "path": "claim.saved",
+    "before": 1924.6563,
+    "after": 1962.7188
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 63,
+    "province": "QC",
+    "path": "people.0.pSp",
+    "before": 1.4175,
+    "after": 39.48
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 63,
+    "province": "QC",
+    "path": "people.0.pSpFull",
+    "before": 1.4175,
+    "after": 39.48
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 63,
+    "province": "QC",
+    "path": "people.0.prov",
+    "before": 4770.2025,
+    "after": 4732.14
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 63,
+    "province": "QC",
+    "path": "people.0.total",
+    "before": 10883.2456,
+    "after": 10845.1831
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 81,
+    "province": "QC",
+    "path": "total",
+    "before": 32527.5344,
+    "after": 32489.4719
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 81,
+    "province": "QC",
+    "path": "prov",
+    "before": 4770.2025,
+    "after": 4732.14
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 81,
+    "province": "QC",
+    "path": "netTotal",
+    "before": 11839.5344,
+    "after": 11801.4719
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 81,
+    "province": "QC",
+    "path": "marg",
+    "before": 0.4495,
+    "after": 0.4613
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 81,
+    "province": "QC",
+    "path": "incomeTax",
+    "before": 8610.4844,
+    "after": 8572.4219
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 81,
+    "province": "QC",
+    "path": "gross",
+    "before": 33494.4844,
+    "after": 33456.4219
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 81,
+    "province": "QC",
+    "path": "avg",
+    "before": 0.5914,
+    "after": 0.5907
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 81,
+    "province": "QC",
+    "path": "grossAvg",
+    "before": 0.609,
+    "after": 0.6083
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 81,
+    "province": "QC",
+    "path": "margBy.ord",
+    "before": 0.4495,
+    "after": 0.4613
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 81,
+    "province": "QC",
+    "path": "margBy.ed",
+    "before": 0.186,
+    "after": 0.208
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 81,
+    "province": "QC",
+    "path": "margBy.nd",
+    "before": 0.3101,
+    "after": 0.3261
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 81,
+    "province": "QC",
+    "path": "margBy.fd",
+    "before": 0.4589,
+    "after": 0.4716
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 81,
+    "province": "QC",
+    "path": "claim.pAmt",
+    "before": 10.125,
+    "after": 282
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 81,
+    "province": "QC",
+    "path": "claim.saved",
+    "before": 1.4175,
+    "after": 39.48
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 81,
+    "province": "QC",
+    "path": "people.0.pSp",
+    "before": 1.4175,
+    "after": 39.48
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 81,
+    "province": "QC",
+    "path": "people.0.pSpFull",
+    "before": 1.4175,
+    "after": 39.48
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 81,
+    "province": "QC",
+    "path": "people.0.prov",
+    "before": 4770.2025,
+    "after": 4732.14
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 81,
+    "province": "QC",
+    "path": "people.0.total",
+    "before": 12806.4844,
+    "after": 12768.4219
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 90,
+    "province": "QC",
+    "path": "total",
+    "before": 13547.9472,
+    "after": 13509.8847
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 90,
+    "province": "QC",
+    "path": "prov",
+    "before": 3453.5025,
+    "after": 3415.44
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 90,
+    "province": "QC",
+    "path": "netTotal",
+    "before": 8149.131,
+    "after": 8111.0685
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 90,
+    "province": "QC",
+    "path": "incomeTax",
+    "before": 6433.681,
+    "after": 6395.6185
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 90,
+    "province": "QC",
+    "path": "gross",
+    "before": 15386.0972,
+    "after": 15348.0347
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 90,
+    "province": "QC",
+    "path": "avg",
+    "before": 0.2883,
+    "after": 0.2874
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 90,
+    "province": "QC",
+    "path": "grossAvg",
+    "before": 0.3274,
+    "after": 0.3266
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 90,
+    "province": "QC",
+    "path": "claim.pAmt",
+    "before": 1495.125,
+    "after": 1767
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 90,
+    "province": "QC",
+    "path": "claim.saved",
+    "before": 209.3175,
+    "after": 247.38
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 90,
+    "province": "QC",
+    "path": "people.0.pSp",
+    "before": 209.3175,
+    "after": 247.38
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 90,
+    "province": "QC",
+    "path": "people.0.pSpFull",
+    "before": 209.3175,
+    "after": 247.38
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 90,
+    "province": "QC",
+    "path": "people.0.prov",
+    "before": 3453.5025,
+    "after": 3415.44
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 90,
+    "province": "QC",
+    "path": "people.0.total",
+    "before": 9987.281,
+    "after": 9949.2185
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 101,
+    "province": "QC",
+    "path": "total",
+    "before": -12949.8551,
+    "after": -12984.4526
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 101,
+    "province": "QC",
+    "path": "prov",
+    "before": 3072.4575,
+    "after": 3037.86
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 101,
+    "province": "QC",
+    "path": "netTotal",
+    "before": -24275.4551,
+    "after": -24310.0526
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 101,
+    "province": "QC",
+    "path": "marg",
+    "before": 0.594,
+    "after": 0.5688
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 101,
+    "province": "QC",
+    "path": "incomeTax",
+    "before": 3643.1049,
+    "after": 3608.5074
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 101,
+    "province": "QC",
+    "path": "gross",
+    "before": 20682.2049,
+    "after": 20647.6073
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 101,
+    "province": "QC",
+    "path": "avg",
+    "before": -0.1727,
+    "after": -0.1731
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 101,
+    "province": "QC",
+    "path": "grossAvg",
+    "before": 0.2758,
+    "after": 0.2753
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 101,
+    "province": "QC",
+    "path": "margBy.ord",
+    "before": 0.594,
+    "after": 0.5688
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 101,
+    "province": "QC",
+    "path": "margBy.cg",
+    "before": 0.2866,
+    "after": 0.2735
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 101,
+    "province": "QC",
+    "path": "margBy.ed",
+    "before": 0.4564,
+    "after": 0.4218
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 101,
+    "province": "QC",
+    "path": "margBy.nd",
+    "before": 0.5331,
+    "after": 0.5029
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 101,
+    "province": "QC",
+    "path": "margBy.fd",
+    "before": 0.6378,
+    "after": 0.6124
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 101,
+    "province": "QC",
+    "path": "claim.pAmt",
+    "before": 1924.875,
+    "after": 2172
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 101,
+    "province": "QC",
+    "path": "claim.saved",
+    "before": 2192.7213,
+    "after": 2227.3188
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 101,
+    "province": "QC",
+    "path": "people.0.pSp",
+    "before": 269.4825,
+    "after": 304.08
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 101,
+    "province": "QC",
+    "path": "people.0.pSpFull",
+    "before": 269.4825,
+    "after": 304.08
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 101,
+    "province": "QC",
+    "path": "people.0.prov",
+    "before": 3072.4575,
+    "after": 3037.86
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 101,
+    "province": "QC",
+    "path": "people.0.total",
+    "before": 9356.6049,
+    "after": 9322.0074
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 114,
+    "province": "QC",
+    "path": "invTax",
+    "before": 24337.5038,
+    "after": 24375.5663
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 127,
+    "province": "QC",
+    "path": "invTax",
+    "before": 14840.4317,
+    "after": 14878.4942
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 141,
+    "province": "QC",
+    "path": "total",
+    "before": -3958.8644,
+    "after": -3996.9269
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 141,
+    "province": "QC",
+    "path": "prov",
+    "before": 4770.2025,
+    "after": 4732.14
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 141,
+    "province": "QC",
+    "path": "netTotal",
+    "before": -19334.4644,
+    "after": -19372.5269
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 141,
+    "province": "QC",
+    "path": "marg",
+    "before": 0.6772,
+    "after": 0.689
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 141,
+    "province": "QC",
+    "path": "incomeTax",
+    "before": 6687.2456,
+    "after": 6649.1831
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 141,
+    "province": "QC",
+    "path": "gross",
+    "before": 26258.8456,
+    "after": 26220.7831
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 141,
+    "province": "QC",
+    "path": "avg",
+    "before": -0.072,
+    "after": -0.0727
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 141,
+    "province": "QC",
+    "path": "grossAvg",
+    "before": 0.4774,
+    "after": 0.4767
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 141,
+    "province": "QC",
+    "path": "margBy.ord",
+    "before": 0.6772,
+    "after": 0.689
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 141,
+    "province": "QC",
+    "path": "margBy.ed",
+    "before": 0.5034,
+    "after": 0.5254
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 141,
+    "province": "QC",
+    "path": "margBy.nd",
+    "before": 0.5746,
+    "after": 0.5906
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 141,
+    "province": "QC",
+    "path": "margBy.fd",
+    "before": 0.6311,
+    "after": 0.6438
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 141,
+    "province": "QC",
+    "path": "claim.pAmt",
+    "before": 10.125,
+    "after": 282
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 141,
+    "province": "QC",
+    "path": "claim.saved",
+    "before": 1924.6563,
+    "after": 1962.7188
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 141,
+    "province": "QC",
+    "path": "people.0.pSp",
+    "before": 1.4175,
+    "after": 39.48
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 141,
+    "province": "QC",
+    "path": "people.0.pSpFull",
+    "before": 1.4175,
+    "after": 39.48
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 141,
+    "province": "QC",
+    "path": "people.0.prov",
+    "before": 4770.2025,
+    "after": 4732.14
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 141,
+    "province": "QC",
+    "path": "people.0.total",
+    "before": 10883.2456,
+    "after": 10845.1831
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2025,
+    "scenario": 154,
+    "province": "QC",
+    "path": "total",
+    "before": -12710.7875,
+    "after": -12745.4375
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2025,
+    "scenario": 154,
+    "province": "QC",
+    "path": "prov",
+    "before": 3595.4713,
+    "after": 3560.8213
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2025,
+    "scenario": 154,
+    "province": "QC",
+    "path": "netTotal",
+    "before": -16304.7875,
+    "after": -16339.4375
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2025,
+    "scenario": 154,
+    "province": "QC",
+    "path": "marg",
+    "before": 0.6255,
+    "after": 0.6239
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2025,
+    "scenario": 154,
+    "province": "QC",
+    "path": "incomeTax",
+    "before": 5010.8525,
+    "after": 4976.2025
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2025,
+    "scenario": 154,
+    "province": "QC",
+    "path": "gross",
+    "before": 10254.4325,
+    "after": 10219.7825
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2025,
+    "scenario": 154,
+    "province": "QC",
+    "path": "avg",
+    "before": -0.2704,
+    "after": -0.2712
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2025,
+    "scenario": 154,
+    "province": "QC",
+    "path": "grossAvg",
+    "before": 0.2182,
+    "after": 0.2174
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2025,
+    "scenario": 154,
+    "province": "QC",
+    "path": "margBy.ord",
+    "before": 0.6255,
+    "after": 0.6239
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2025,
+    "scenario": 154,
+    "province": "QC",
+    "path": "margBy.fd",
+    "before": 0.6189,
+    "after": 0.6196
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2025,
+    "scenario": 154,
+    "province": "QC",
+    "path": "claim.pAmt",
+    "before": 1242.0625,
+    "after": 1489.5625
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2025,
+    "scenario": 154,
+    "province": "QC",
+    "path": "claim.saved",
+    "before": 2126.7074,
+    "after": 2161.3574
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2025,
+    "scenario": 154,
+    "province": "QC",
+    "path": "people.0.pSp",
+    "before": 173.8888,
+    "after": 208.5388
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2025,
+    "scenario": 154,
+    "province": "QC",
+    "path": "people.0.pSpFull",
+    "before": 173.8888,
+    "after": 208.5388
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2025,
+    "scenario": 154,
+    "province": "QC",
+    "path": "people.0.prov",
+    "before": 3595.4713,
+    "after": 3560.8213
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2025,
+    "scenario": 154,
+    "province": "QC",
+    "path": "people.0.total",
+    "before": 6660.4325,
+    "after": 6625.7825
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2026,
+    "scenario": 154,
+    "province": "QC",
+    "path": "total",
+    "before": -13584.1023,
+    "after": -13618.7523
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2026,
+    "scenario": 154,
+    "province": "QC",
+    "path": "prov",
+    "before": 3513.265,
+    "after": 3478.615
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2026,
+    "scenario": 154,
+    "province": "QC",
+    "path": "netTotal",
+    "before": -17545.3186,
+    "after": -17579.9686
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2026,
+    "scenario": 154,
+    "province": "QC",
+    "path": "marg",
+    "before": 0.6202,
+    "after": 0.6186
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2026,
+    "scenario": 154,
+    "province": "QC",
+    "path": "incomeTax",
+    "before": 4804.8814,
+    "after": 4770.2314
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2026,
+    "scenario": 154,
+    "province": "QC",
+    "path": "gross",
+    "before": 10377.1977,
+    "after": 10342.5477
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2026,
+    "scenario": 154,
+    "province": "QC",
+    "path": "avg",
+    "before": -0.289,
+    "after": -0.2898
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2026,
+    "scenario": 154,
+    "province": "QC",
+    "path": "grossAvg",
+    "before": 0.2208,
+    "after": 0.2201
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2026,
+    "scenario": 154,
+    "province": "QC",
+    "path": "margBy.ord",
+    "before": 0.6202,
+    "after": 0.6186
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2026,
+    "scenario": 154,
+    "province": "QC",
+    "path": "margBy.fd",
+    "before": 0.6196,
+    "after": 0.6204
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2026,
+    "scenario": 154,
+    "province": "QC",
+    "path": "claim.pAmt",
+    "before": 1448.25,
+    "after": 1695.75
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2026,
+    "scenario": 154,
+    "province": "QC",
+    "path": "claim.saved",
+    "before": 2125.9938,
+    "after": 2160.6438
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2026,
+    "scenario": 154,
+    "province": "QC",
+    "path": "people.0.pSp",
+    "before": 202.755,
+    "after": 237.405
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2026,
+    "scenario": 154,
+    "province": "QC",
+    "path": "people.0.pSpFull",
+    "before": 202.755,
+    "after": 237.405
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2026,
+    "scenario": 154,
+    "province": "QC",
+    "path": "people.0.prov",
+    "before": 3513.265,
+    "after": 3478.615
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2026,
+    "scenario": 154,
+    "province": "QC",
+    "path": "people.0.total",
+    "before": 6415.9814,
+    "after": 6381.3314
+  }
+]

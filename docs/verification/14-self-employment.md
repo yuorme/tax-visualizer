@@ -42,8 +42,10 @@ const person: Person = {
   Base payroll includes both business shares; only the employee-equivalent base earns a credit.
   The stacked UI must use that breakdown when explaining deductions and credits.
 - `compute().breakdown.margSelfEmployment` is available when the active person supplies the field.
-  It is `null` for a zero-profit, zero-wage person with an employee CPP election because that hypothetical
-  business income needs an unsupported self-employed-only election. Legacy `margBy` keys stay unchanged.
+  In a CPP jurisdiction it is `null` for a zero-profit, zero-wage person with an employee CPP election because
+  that hypothetical business income needs an unsupported self-employed-only election. A retained CPP election
+  does not suppress the QPP marginal: `province.system` selects the plan, not the province display code.
+  Legacy `margBy` keys stay unchanged.
   History callers must filter unsupported years before calling `historyComparison` and derive ages per row,
   retaining the existing #146 entry-age guard. Nominal and real modes both require supported year data.
 - The UI branch must extend the versioned URL codec and saved-state schema without replacing or reinterpreting
@@ -125,3 +127,43 @@ All IDs below are in `tests/golden/features/self-employment.json`; ordinary case
 Targeted tests additionally reject invalid/unsupported inputs, preserve omitted and zero inputs across all
 provinces, exercise program-driven year support, and check business marginal rates and real-history scaling.
 The existing golden inputs, assertions, expectations and tolerances are untouched.
+
+## PR 192 review and main integration
+
+The marginal guard previously suppressed Quebec's business marginal whenever an employee CPP election was
+retained. It now uses the same data-selected plan boundary as payroll validation: `system !== "quebec"`.
+The separate `self-employment-marginal.json` fixture adds these cases without rewriting the original 117:
+
+| Case | Expected result |
+| --- | --- |
+| `2025-qpp-business-marginal-with-cpp-election` | 75,000 profit, no wages, age 66, January birth, CPP stop June 2025: 0.42823757229792. |
+| `2025-qpp-zero-business-marginal-with-cpp-election` | Same retirement input, zero profit: 0. |
+| `2025-cpp-unsupported-business-counterfactual` | Ontario, zero profit/wages with that CPP election: null remains intentional. |
+| `workerDeductionMerge` | 5,000 profit + 40,000 other income: worker deduction 300, line 275 44,569.799896, living-alone credit 232.82525273. |
+
+The marginal calculation is independent Decimal arithmetic in the audit, using the cached 2025 QPP,
+Schedule R/10, Schedule F, tax bracket and abatement parameters:
+
+```text
+For the next 100 of profit above 75,000:
+  QPP2 = 100 × 8% = 8
+  QPIP = 100 × 0.878% = 0.878
+  deductible QPIP = 0.878 × 43.736% = 0.38400208
+  net-income increase = 100 - 8 - 0.38400208 = 91.61599792
+  federal increase = (net increase × 20.5% - (0.878 - 0.38400208) × 14.5%) × 83.5%
+  provincial increase = net increase × 19% (worker deduction already capped)
+  HSF increase = net increase × 1%
+  total increase = federal + provincial + HSF + 8 + 0.878 = 42.823757229792
+  marginal rate = 42.823757229792%
+```
+
+At zero profit, the next 100 remains below QPP/QPIP/HSF and work-benefit thresholds, and personal credits
+absorb income tax; the marginal is zero. CPP's positive-profit counterfactual would instead require the
+unsupported self-employed-only election, so it has no estimated rate.
+
+Merging main conflicted in the 2025 source index, `payroll.ts` and `personal.ts`. The index retains both
+Schedule 10 and Schedule B entries. The code retains main's `workerDeductionOf` helper and calls it from
+both personal tax and the living-alone calculation, with this branch's business-inclusive working income.
+The integration golden independently verifies that line 275 and the living-alone credit share that deduction.
+No golden files conflicted: main's reviewed corrections were retained without recapture, and this branch's
+original self-employment fixture remains unchanged.

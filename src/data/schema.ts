@@ -686,7 +686,7 @@ export const provinceSchema = z
     quebec: z
       .object({
         workerDeduction: z.object({ rate, max: amount }),
-        livingAlone: z.object({ max: amount, rate, threshold: amount }),
+        livingAlone: z.object({ max: amount, rate, threshold: amount, estimated: z.boolean().optional() }),
       })
       .optional(),
     payroll: z

@@ -45,6 +45,53 @@ test("self-employment fixtures have unique IDs and cover both supported years", 
   assert.equal(new Set(fixture.cases.map(c => c.id)).size, fixture.cases.length);
   assert.deepEqual(new Set(fixture.cases.map(c => c.year)), new Set([2025, 2026]));
 });
+const marginalFixture: {
+  cases: { id: string; province: string; profit: number; expected: number | null }[];
+  workerDeductionMerge: {
+    person: Partial<Person>;
+    expectedWorkerDeduction: number;
+    expectedProvincialNet: number;
+    expectedLivingAloneCredit: number;
+  };
+} = JSON.parse(fs.readFileSync(new URL("./golden/features/self-employment-marginal.json", import.meta.url), "utf8"));
+for (const c of marginalFixture.cases) {
+  test(`self-employment plan-specific marginal golden: ${c.id}`, () => {
+    const y = yearOf(2025);
+    const p = y.provinces.find(p => p.code === c.province);
+    assert.ok(p);
+    const hh = hhOf({
+      selfEmployment: c.profit,
+      age: 66,
+      birthMonth: 1,
+      employeePayroll: {
+        retirementPensionSince: { year: 2024, month: 1 },
+        cppElection: { stop: { year: 2025, month: 6 } },
+      },
+    });
+    const result = compute(y, p, hh);
+    const marginal = result.breakdown.margSelfEmployment;
+    if (c.expected === null) assert.equal(marginal, null);
+    else {
+      assert.ok(
+        typeof marginal === "number" && Math.abs(marginal - c.expected) < 1e-10,
+        `${c.id}: ${marginal} vs ${c.expected}`,
+      );
+    }
+    // A jurisdiction's data selects its plan; its display code must not control the guard.
+    const renamed = { ...p, code: "TEST" };
+    assert.equal(compute(y, renamed, hh).breakdown.margSelfEmployment, marginal);
+  });
+}
+test("self-employment merge golden: living-alone credit shares the business worker deduction", () => {
+  const y = yearOf(2025);
+  const p = y.provinces.find(p => p.system === "quebec");
+  assert.ok(p);
+  const c = marginalFixture.workerDeductionMerge;
+  const result = compute(y, p, hhOf(c.person)).list[0];
+  assert.equal(result.workerDed, c.expectedWorkerDeduction);
+  assert.ok(Math.abs(result.tiP - c.expectedProvincialNet) < 1e-9);
+  assert.ok(Math.abs(result.pSpFull - c.expectedLivingAloneCredit) < 1e-9);
+});
 for (const c of fixture.cases) {
   test(`self-employment independent golden: ${c.id}`, () => {
     const y = yearOf(c.year);
