@@ -21,7 +21,9 @@ lowIncomeReduction:
   program: family-low-income-reduction
   params: {individual: 350, spouse: 350, child: 300, rate: 0.05, threshold: 22650}
 salesTax: {rate: 0.15, label: "15% HST"}
-propertyTax: {rate: 0.0167, city: Charlottetown}   # WOWA's 2025 row: 0.67% municipal + 1% provincial
+# 0.67% municipal + (1.50% provincial - 0.50% resident credit); additional owner credits need history.
+# See docs/verification/86-charlottetown-owner-credit.md; the annual-bill override can reflect owner credits.
+propertyTax: {rate: 0.0167, city: Charlottetown}
 childBenefit:
   name: PEI Child Benefit
   program: income-band-per-child
