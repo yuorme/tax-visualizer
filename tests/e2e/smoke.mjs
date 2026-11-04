@@ -23,6 +23,7 @@ import { ALLOWED_HOSTS, openPage, settle } from "./page.mjs";
 import { PORTFOLIO_RESPONSIVE_STEPS, PORTFOLIO_STEPS } from "./portfolio.mjs";
 import { checkQuebecHealthFund } from "./qc-health-fund.mjs";
 import { COMPARISON_STEPS, RESPONSIVE_STEPS } from "./responsive.mjs";
+import { RETIREMENT_RESPONSIVE_STEPS, RETIREMENT_STEPS } from "./retirement.mjs";
 import { COLUMN_COUNT, contrastViolations, inspect, KNOWN, MAX_LABEL_LENGTH } from "./rules.mjs";
 
 const started = Date.now();
@@ -1084,6 +1085,7 @@ for (const [label, steps] of [
   ["year selector", YEAR_STEPS],
   ["deductions", DEDUCTION_STEPS],
   ["portfolio", PORTFOLIO_STEPS],
+  ["retirement-age payroll", RETIREMENT_STEPS],
   ["history", HISTORY_STEPS],
   ["carbon pricing", CARBON_STEPS],
   ["childcare", CHILDCARE_STEPS],
@@ -1105,6 +1107,7 @@ const responsive = [
   // One representative open tooltip adds contrast coverage; subsequent interactions use the same styling.
   ...COMPARISON_STEPS.slice(0, 3).map(([name, step], i) => [name, step, { contrast: i === 0 }]),
   ...PORTFOLIO_RESPONSIVE_STEPS,
+  ...RETIREMENT_RESPONSIVE_STEPS,
   [
     "layout: driving units show equivalent values without clipping",
     async p => {

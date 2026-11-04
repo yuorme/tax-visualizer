@@ -6,7 +6,7 @@ import test from "node:test";
 import { listYears, loadYear } from "../src/data/load.ts";
 import type { YearData } from "../src/data/schema.ts";
 import { DEFAULT_INCOME, spendEst } from "../src/ui/defaults.ts";
-import { footerNotes, type PageDefaults, portfolioTooltips, tooltips } from "../src/ui/notes.ts";
+import { footerNotes, type PageDefaults, portfolioTooltips, retirementTooltips, tooltips } from "../src/ui/notes.ts";
 import { portfolioAssumptions } from "../src/ui/portfolio.ts";
 
 // The page's own starting values, so the notes are checked against what the page uses.
@@ -228,8 +228,9 @@ test("historical notes distinguish school-tax relief and statutory NL reductions
 for (const year of listYears()) {
   test(`${year}: notes and tooltips render from the data`, () => {
     const y = loadYear(year);
-    // The page adds the Portfolio tooltips to every year's, from assumptions that don't follow the selected year.
-    const tips = { ...tooltips(y), ...portfolioTooltips(portfolioAssumptions(listYears().map(loadYear))) };
+    // The page adds the Portfolio and retirement tooltips to every year's, from data that doesn't follow the selection.
+    const all = listYears().map(loadYear);
+    const tips = { ...tooltips(y), ...portfolioTooltips(portfolioAssumptions(all)), ...retirementTooltips(all) };
     assert.ok(noteKeys.length > 0);
     for (const k of noteKeys) assert.ok(tips[k], `no tooltip for data-note="${k}"`);
     const text = render(y);

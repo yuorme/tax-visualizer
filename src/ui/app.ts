@@ -31,7 +31,7 @@ import {
   metricEfficiency,
 } from "./driving-units.ts";
 import { renderHistory } from "./history.ts";
-import { cents, footerNotes, portfolioTooltips, share, tooltips } from "./notes.ts";
+import { cents, footerNotes, portfolioTooltips, retirementTooltips, share, tooltips } from "./notes.ts";
 import {
   defaultPortfolio,
   enginePerson,
@@ -46,6 +46,19 @@ import {
   portfolioAssumptions,
 } from "./portfolio.ts";
 import { provinceFlags, setProvinceFlag } from "./province-flags.ts";
+import {
+  normalizeRetirement,
+  normalizeRetirements,
+  type Retirement,
+  retirementActive,
+  retirementGate,
+  retirementResult,
+  retirementStatus,
+  retirementSummary,
+  retirementYears,
+  withRetirement,
+} from "./retirement.ts";
+import { retirementEditor } from "./retirement-editor.ts";
 import { readScenario, scenarioHash } from "./scenario-url.ts";
 
 const availableYears = Object.keys(years)
@@ -126,6 +139,9 @@ let people: Person[] = [blank(DEFAULT_INCOME)],
 // Each person's portfolio, by index; null keeps them in the manual view. people[] always holds the manual amounts,
 // so the amounts the engine sees come from enginePeople(), and only what a person typed is edited through me().
 let portfolios: (Portfolio | null)[] = [];
+// Each person's retirement-age payroll inputs, by index; null leaves their payroll as it always was. Kept beside people[]
+// because a birth year gives a different age in each tax year, so enginePeople() works out the Person for a given year.
+let retirements: (Retirement | null)[] = [];
 let metric: Metric = "pct",
   spendingAdjustment = 0,
   adults = 1,
@@ -204,8 +220,10 @@ const propRate = (c: string) => propertyRate(prov(c).d, inputs());
 const pct2 = (r: number) => `${(r * 100).toFixed(2)}%`; // payroll rates shown to two decimals, e.g. 4.95%
 const me = () => people[active];
 const portfolioOf = (i: number) => portfolios[i] ?? null;
+const retirementOf = (i: number) => retirements[i] ?? null;
 /** Each person's income as the engine sees it, for reading. In the portfolio view it differs from what's in people. */
-const enginePeople = () => people.map((x, i) => enginePerson(x, portfolioOf(i)));
+const enginePeople = (data: typeof Y = Y) =>
+  people.map((x, i) => withRetirement(enginePerson(x, portfolioOf(i)), retirementOf(i), data));
 const counted = () => enginePerson(me(), portfolioOf(active));
 const isNum = (v: unknown): v is number => typeof v === "number";
 /** A person read back from saved state, keeping only valid amounts. */
@@ -233,6 +251,7 @@ try {
     if (s.historyMode === "nominal") historyMode = "nominal";
     if (Array.isArray(s.people) && s.people.length) people = s.people.slice(0, 2).map(cleanPerson);
     portfolios = normalizePortfolios(s.portfolios, people.length, PORTFOLIO); // absent in older saves: the manual view
+    retirements = normalizeRetirements(s.retirement, people.length); // absent in older saves: ordinary payroll
     if (s.active === 1 && people.length === 2) active = 1;
     if (typeof s.spouse === "boolean") spouse = s.spouse;
     if (s.sort === "rate" || s.sort === "geo") sort = s.sort;
@@ -280,6 +299,7 @@ function scenarioState() {
     historyMode,
     people,
     portfolios: normalizePortfolios(portfolios, people.length, PORTFOLIO),
+    retirement: normalizeRetirements(retirements, people.length),
     active,
     spouse,
     sort,
@@ -351,7 +371,7 @@ function renderYearNotes() {
   yearSelect.value = String(YEAR);
   document.title = `Provincial Tax Compare ${YEAR}`;
   $("year-notes").innerHTML = footerNotes(Y, { defaultIncome: DEFAULT_INCOME, spendEst });
-  const tips = { ...tooltips(Y), ...portfolioTooltips(PORTFOLIO) };
+  const tips = { ...tooltips(Y), ...portfolioTooltips(PORTFOLIO), ...retirementTooltips(Object.values(years)) };
   aggregateChildrenTip = tips.children;
   for (const b of document.querySelectorAll<HTMLElement>("[data-note]")) b.dataset.tip = tips[b.dataset.note ?? ""];
   const sources = $("year-sources");
@@ -599,7 +619,7 @@ function render() {
       under6 = counts.under6;
     }
   }
-  if (historyOpen) renderHistory(inputs(), home, historyMode);
+  if (historyOpen) renderHistory(data => ({ ...inputs(), people: enginePeople(data) }), retirements, home, historyMode);
   const res: Row[] = P.map(p => ({ p, r: calc(p) }));
   const usd = metric === "usd";
   const val = (r: Result) => (usd ? r.total : r.avg); // net of benefits: what the label shows and sorting uses
@@ -794,7 +814,9 @@ function render() {
   const otherAmt = enginePeople().reduce((a, y) => a + (y.oth ?? 0), 0);
   const anyInc = H.r.hasInv || otherAmt > 0;
   const incNet = otherAmt + H.r.invAmt;
-  tabSum("income", anyInc ? (incNet < 0 ? `−${kMoney(-incNet)}` : kMoney(incNet)) : "none", anyInc);
+  const anyAge = retirements.some(retirementActive);
+  const incSum = anyInc ? (incNet < 0 ? `−${kMoney(-incNet)}` : kMoney(incNet)) : "";
+  tabSum("income", anyAge ? (anyInc ? `${incSum} + age` : "age set") : anyInc ? incSum : "none", anyInc || anyAge);
   tabSum(
     "home",
     ownedValue() > 0
@@ -814,6 +836,7 @@ function render() {
   $<HTMLSelectElement>("wh").value = String(whRate);
   paintCg();
   renderPortfolio();
+  renderRetirement(H);
   renderPeople();
   $("sort-rate").setAttribute("aria-pressed", String(sort === "rate"));
   $("sort-geo").setAttribute("aria-pressed", String(sort === "geo"));
@@ -822,6 +845,19 @@ function render() {
   $<HTMLInputElement>("bpa-toggle").checked = useBpa;
   $("bpa-state").textContent = useBpa ? "Credits applied" : "Brackets only";
   save();
+}
+
+/** The retirement-age section for the selected person, and the notice beside results missing some of what's entered. */
+function renderRetirement(H: Row) {
+  const entry = retirementOf(active);
+  retirement.sync();
+  $("retirement-sum").textContent = retirementSummary(entry, Y);
+  const status = $("retirement-status");
+  status.textContent = retirementStatus(entry, Y, H.r.me.breakdown.retirementPayroll, H.p.qc ? "QPP" : "CPP", money);
+  status.hidden = !status.textContent;
+  const gate = $("retirement-gate");
+  gate.textContent = retirementGate(retirements, Y, retirementYears(Object.values(years)), ["you", "your partner"]);
+  gate.hidden = historyOpen || !gate.textContent;
 }
 
 /** The Driving panel and tab: the distance and efficiency boxes (unless being typed in), where each starting value
@@ -1170,7 +1206,7 @@ function ledgerView({ p, r }: Row) {
       ${ledger(`Federal${suffix}`, "var(--fed)", { lines: m.f.lines, gross: m.f.tax, rows: fRows, net: m.fed }, m.ti, taxableInfo)}
       ${ledger(p.n + suffix, "var(--prov)", { lines: m.pr.lines, gross: m.pr.tax, rows: pRows, net: m.prov }, m.tiP)}
       <div class="ledger">
-        <h4><i class="sw" style="background:var(--pay)"></i>Payroll${suffix}</h4>
+        <h4><i class="sw" style="background:var(--pay)"></i>Payroll${suffix}${m.breakdown.retirementPayroll ? comparisonInfo("retirement-age payroll", retirementResult(m.breakdown.retirementPayroll, p.qc ? "QPP" : "CPP", money)) : ""}</h4>
         <table class="margs"><thead><tr><th>Contribution</th><th class="r">Amount</th></tr></thead><tbody>
           ${payRows.map(([l, a]) => `<tr><td>${l}</td><td class="r">${money(a)}</td></tr>`).join("") || `<tr><td>None at this income</td><td class="r">$0</td></tr>`}
         </tbody><tfoot><tr><td>Total</td><td class="r">${money(m.payroll)}</td></tr></tfoot></table>
@@ -1230,6 +1266,13 @@ $("max-rrsp").addEventListener("click", () => {
   $<HTMLInputElement>("rrsp").value = estimate.toLocaleString("en-CA");
   render();
 });
+const retirement = retirementEditor(
+  () => retirementOf(active),
+  entry => {
+    retirements[active] = normalizeRetirement(entry); // a section emptied by hand is the same as one never used
+    render();
+  },
+);
 function syncAll() {
   for (const key of deductionInputs) $<HTMLInputElement>(key).value = (me()[key] || 0).toLocaleString("en-CA");
   inp.value = me().ord.toLocaleString("en-CA");
@@ -1246,6 +1289,7 @@ $("people").addEventListener("click", e => {
   } else if (t.id === "remove-partner") {
     people = [people[0]];
     portfolios = portfolios.slice(0, 1);
+    retirements = retirements.slice(0, 1);
     active = 0;
     if (adults === 2) setHousehold(1, kids);
   } else if (t.dataset.i != null) active = +t.dataset.i;

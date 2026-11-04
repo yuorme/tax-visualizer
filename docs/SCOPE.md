@@ -73,21 +73,24 @@ line-by-line tax return. Simpler and slightly less precise is acceptable where i
 **Payroll (employee share)**
 - CPP/QPP base and enhanced contributions, EI or EI plus QPIP, Ontario Health Premium, the 2% payroll tax in the
   Northwest Territories and Nunavut. All but the health premium are on employment income only.
-- Retirement-age employee CPP/QPP engine inputs for 2025–2026 (#146; page inputs follow separately): year-end
-  age/birth month, continuous retirement-pension receipt, independent CPP/QPP stop/restart elections, and monthly
+- Retirement-age employee CPP/QPP for 2025–2026 (#146), entered per adult in the Income tab: birth year and month,
+  continuous retirement-pension receipt, independent CPP/QPP stop/restart elections, and monthly
   earnings weights (equal monthly pay by default). CPP includes the 70th birthday month; QPP includes the whole
   year turning 72. Turning 65 alone stops neither plan. QPP optional elections retain annual ceilings/exemption;
   the annual burden excludes excess withholding. EI/QPIP continue on employment income. One continuing employer,
   no disability/death or pension cancellation. New inputs fail explicitly in unsupported historical data;
   legacy inputs remain available in every year. Self-employment needs its own timing under #14.
-  The page contract is to retain birth year and derive `age = taxYear - birthYear` for the selected year
+  The page retains birth year and derives `age = taxYear - birthYear` for the selected year
   and each history row; pension receipt and election dates stay in their original calendar years.
   A June 1960 birth with a valid June 2025 stop and no revocation remains stopped when selecting 2026.
-  When any person has retirement inputs, the UI branch must filter years on
-  `federal.payroll.employeeRetirement` before calling `historyComparison`, show only supported years with
-  a note explaining the coverage, and compute rows with each year's age. Unsupported selected years are gated.
-  UI and #17 must omit unset retirement fields: `age: null` activates the path and throws, and any supplied
-  `age` throws in 2019–2024 even at zero pay. Childcare's nullable drafts cannot be passed through as adult ages.
+  An incomplete birth date leaves the person on ordinary payroll. A selected year without
+  `federal.payroll.employeeRetirement`, or an age at or below the contribution start age, uses ordinary
+  CPP/QPP for that person and says so beside the results. When any person has retirement inputs, the
+  historical view leaves out those years, and says which in its tooltip. Real mode needs published annual
+  CPI as well, so with these inputs it can show one row or none.
+  #17 must omit unset retirement fields as the page does: `age: null` activates the path and throws, and any
+  supplied `age` throws in 2019–2024 even at zero pay. Childcare's nullable drafts cannot be passed through as adult
+  ages.
   One stop and optional revocation cannot represent two cycles affecting one tax year, or validate RR-50's
   condition that no earlier election was revoked in the year of a new stop; those histories are unsupported.
   Schedule 8's possible CRA proration of the basic exemption in the year a CPP pension starts is unmodelled.
@@ -136,7 +139,8 @@ worked examples are in [carbon history](verification/carbon-history.md).
 
 **Historical comparison.** A separate view compares the home province across installed tax years. Real mode
 holds income, deductions, childcare amounts, spending, rent and home value at the same purchasing power using
-Statistics Canada's annual Canada all-items CPI; household composition, ages, rates and driving stay fixed.
+Statistics Canada's annual Canada all-items CPI; household composition, ages, rates and driving stay fixed,
+except that retirement-age CPP/QPP uses each person's age in that year from their birth year.
 Inputs and results use the latest completed annual CPI year's dollars, labelled in the view. Years without
 published annual CPI appear only in nominal mode, which holds the entered dollar amounts fixed. This is a
 comparison of modeled tax rules, not a reconstruction of the household's past circumstances or housing prices.

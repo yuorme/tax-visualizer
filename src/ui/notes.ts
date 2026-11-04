@@ -259,6 +259,25 @@ export function portfolioTooltips(a: PortfolioAssumptions): Record<string, strin
   };
 }
 
+/** Retirement-age payroll tooltips, for every selected year: the rules come from the newest year that has them, and
+ *  the years come from the data, so no year or age is written here. */
+export function retirementTooltips(years: YearData[]): Record<string, string> {
+  const supported = years.filter(y => y.federal.payroll.employeeRetirement).sort((a, b) => a.year - b.year);
+  const rules = supported.at(-1)?.federal.payroll.employeeRetirement;
+  if (!rules) throw new Error("No year has retirement payroll rules");
+  const cpp = rules.cpp.params,
+    qpp = rules.qpp.params;
+  return {
+    retirementAge: `For someone working at retirement age. Birth year and month apply the age rules for employee CPP/QPP to the selected person: CPP stops after the month they turn ${cpp.mandatoryStopAge}, and QPP continues to the end of the year they turn ${qpp.mandatoryStopAge}. Turning ${cpp.electionFromAge} or receiving a pension stops neither, and EI and QPIP continue on all employment income. Each tax year uses that year minus the birth year as the age. Modelled for ${list(supported.map(y => String(y.year)))} only, for one continuing job paid monthly in the province compared, not self-employment. Leave both blank for ordinary payroll.`,
+    retirementPension:
+      "The first month of continuous CPP or QPP retirement pension, which is what makes an election possible. A pension from either plan qualifies for either election. This date isn't income: enter the pension itself under Other income. Cancelled and disability pensions aren't covered.",
+    retirementCpp: `Only someone receiving a pension, aged ${cpp.electionFromAge} up to ${cpp.mandatoryStopAge}, can elect to stop. Enter the month a completed CPT30 reached the employer, not the month it takes effect: contributions stop the next month, and a June form means July 1. A form in the birthday month is taken to have arrived after the birthday. A restart revokes the election, must fall in a later calendar year, and also takes effect the next month. Enter one stop and its restart: two election cycles affecting one tax year aren't supported. Keep these dates when changing tax year; a stop from an earlier year still applies.`,
+    retirementQpp: `Quebec's own election, from the day after the ${qpp.electionFromAge}th birthday through the year turning ${qpp.mandatoryStopAge}, for someone receiving a pension${qpp.electionsFromYear ? `, from ${qpp.electionsFromYear} on` : ""}. Enter the month a completed RR-50-V reached the employer: deductions stop the next month. A form in the birthday month is taken to have arrived after the birthday, so a December 31 birthday can't use December: enter January of the next year. A restart must fall in a later calendar year. It doesn't reduce QPP's annual exemption or maximums, so more can be withheld than the year requires; that excess comes back at filing and isn't counted as tax. CPP and QPP elections are separate, and each province uses its own plan's.`,
+    retirementPay:
+      "How the Employment income above falls across the year, which matters when contributions stop or restart part way through. Even splits it into twelve equal months. By month divides it in proportion to what you enter, such as 1 for each month worked and 0 otherwise; these aren't added to income. Months with no pay still count toward CPP's prorated limits.",
+  };
+}
+
 // ---------- Footer notes ----------
 /** The methodology notes, as HTML paragraphs. */
 export function footerNotes(y: YearData, page: PageDefaults): string {

@@ -5,6 +5,7 @@ import { blank } from "../src/engine/types.ts";
 import { ChildcareModel } from "../src/ui/childcare.ts";
 import { spendEst } from "../src/ui/defaults.ts";
 import { defaultPortfolio, type Portfolio, portfolioAssumptions } from "../src/ui/portfolio.ts";
+import { emptyRetirement } from "../src/ui/retirement.ts";
 import { normalizeScenario, readScenario, scenarioDefaults, scenarioHash } from "../src/ui/scenario-url.ts";
 
 const assumptions = portfolioAssumptions([loadYear(2026)]);
@@ -76,6 +77,60 @@ test("all scenario inputs round-trip including explicit zeros, retained fields a
   assert.deepEqual(readScenario(hash, context), state);
   assert.equal(scenarioHash(readScenario(hash, context), context), hash);
   assert.ok(!hash.includes("v="), "local-storage version is not a URL field");
+});
+
+const retirement = {
+  ...emptyRetirement(),
+  birthYear: 1956,
+  birthMonth: 12,
+  pensionSince: { year: 2021, month: 7 },
+  cppStop: { year: 2025, month: 6 },
+  cppRestart: { year: 2026, month: 2 },
+  qppStop: { year: 2026, month: 3 },
+  qppRestart: { year: 2027, month: null },
+  weights: [1, 1, 1, 1, 1, 1, 0.5, 0, 0, 0, 0, 0],
+};
+
+test("retirement inputs round-trip for each person, keeping a birth year rather than an age", () => {
+  const state = {
+    ...scenarioDefaults(context, 2025),
+    people: [blank(40000), blank(30000)],
+    adults: 2,
+    retirement: [retirement, { ...emptyRetirement(), birthYear: 1960 }],
+  };
+  const hash = scenarioHash(state, context);
+  assert.deepEqual(readScenario(hash, context), state);
+  assert.equal(scenarioHash(readScenario(hash, context), context), hash);
+  const link = JSON.parse(new URLSearchParams(hash.slice(1)).get("retirement") ?? "null");
+  assert.equal(link[0].birthYear, 1956);
+  assert.equal(Object.hasOwn(link[0], "age"), false);
+  assert.deepEqual(link[1], { birthYear: 1960 }, "blank fields stay out of the link");
+  const people = JSON.parse(new URLSearchParams(hash.slice(1)).get("people") ?? "null");
+  assert.ok(!JSON.stringify(people).includes("age"), "people carry no derived age");
+});
+
+test("links without retirement inputs have no retirement field and restore none", () => {
+  const empty = { ...scenarioDefaults(context), retirement: [emptyRetirement()] };
+  assert.equal(scenarioHash(empty, context), "#s=1&year=2026");
+  assert.deepEqual(readScenario("#s=1&year=2026", context)?.retirement, []);
+});
+
+test("malformed retirement parameters fail to the same safe result, field by field", () => {
+  for (const value of ["null", "7", "{bad", '"x"', "[1]", '[{"birthYear":"1960"}]', '[{"birthMonth":0}]'])
+    assert.deepEqual(
+      readScenario(`#s=1&retirement=${encodeURIComponent(value)}`, context),
+      scenarioDefaults(context),
+      value,
+    );
+  const damaged = [{ birthYear: 1960, birthMonth: 6, age: null, cppStop: { year: "2025", month: 99 }, weights: [1] }];
+  const hash = `#s=1&retirement=${encodeURIComponent(JSON.stringify(damaged))}`;
+  assert.deepEqual(readScenario(hash, context)?.retirement, [{ ...emptyRetirement(), birthYear: 1960, birthMonth: 6 }]);
+  const repeated = "#s=1&retirement=%5B%5D&retirement=%5B%5D";
+  assert.deepEqual(readScenario(repeated, context)?.retirement, []);
+  const extra = JSON.stringify([{ birthYear: 1960 }, { birthYear: 1961 }]);
+  assert.deepEqual(readScenario(`#s=1&retirement=${extra}`, context)?.retirement, [
+    { ...emptyRetirement(), birthYear: 1960 },
+  ]);
 });
 
 test("household defaults omit derived spending, preserve zero income and restore partner defaults", () => {
