@@ -50,7 +50,8 @@ async function bundle(): Promise<string> {
 async function build() {
   const t0 = Date.now();
   const js = (await bundle()).replaceAll("</script", "<\\/script");
-  const css = fs.readFileSync(path.join(root, "src/ui/styles.css"), "utf8");
+  const sourceCss = fs.readFileSync(path.join(root, "src/ui/styles.css"), "utf8");
+  const css = watch ? sourceCss : (await esbuild.transform(sourceCss, { loader: "css", minify: true })).code;
   const year = String(Math.max(...listYears()));
   const html = fs
     .readFileSync(path.join(root, "src/ui/index.html"), "utf8")
