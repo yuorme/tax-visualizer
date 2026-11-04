@@ -38,6 +38,7 @@ export async function checkQuebecHealthFund(page) {
     await page.selectOption("#tax-year", String(year));
     await type("oth", 25000);
     assert.equal(await rowAmount("Quebec Health Services Fund"), amount);
+    await page.getByText("Quebec Health Services Fund", { exact: true }).waitFor({ state: "visible", timeout: 5000 });
     assert.equal(await page.getByText("Quebec Health Services Fund", { exact: true }).isVisible(), true);
     assert.equal(await rowAmount("CPP/QPP, EI & health premiums"), amount);
     assert.equal(await rowAmount("Net tax"), total, "contribution reaches total exactly once");
@@ -93,6 +94,7 @@ export async function checkQuebecHealthFund(page) {
   await type("income", 60000);
   await type("oth", 40000);
   await page.locator("#col-QC .stack .y").click();
+  await page.locator("#tip").waitFor({ state: "visible", timeout: 5000 });
   assert.equal(await page.locator("#tip").isVisible(), true);
   assert.match(await page.textContent("#tip .t-num"), /^\$4,748 a year/);
   assert.equal(
