@@ -15,15 +15,17 @@ data fallback. Pass `model` and `effort` on every Agent call, taken from the tie
 frontmatter values are only defaults.
 
 ## Dispatching Codex
-Create and lock the worktree yourself (`git worktree add .claude/worktrees/<name> -b <branch> origin/main`), run
-`npm ci` in it, write the brief (issue, role file, owned files) to a file in your scratchpad, and start Codex in the
-background: `fnm exec --using=26 codex exec --approve-for-me -m <id> -c model_reasoning_effort='"<level>"'
--C <worktree> -o <result-file> - < <brief>`, with the model id and effort from the tier table. Its sandbox has no
-network and can't write git, so cache sources first and commit, push and post verdicts for it. The brief says to
-request escalation only for commands that launch Chromium or `npm run compare`; the plugin's `task --write` can't,
-so don't use it for issue work or reviews. Codex reviews of Claude's branches use the same command in a detached
-reviewer worktree with `docs/agents/reviewer.md` as the brief. A UI review that didn't run the browser steps itself
-doesn't count. `/codex:rescue` is for an ad-hoc second opinion in the current checkout, not for issue work.
+Create and lock the worktree yourself (`git worktree add .claude/worktrees/<name> -b <branch> origin/main`), run `fnm
+exec --using=26 npm ci` in it unless the Markdown-only path applies, write the brief (issue, role file, owned files)
+to a file in your scratchpad, and start Codex in the background: `fnm exec --using=26 codex exec --approve-for-me -m
+<id> -c model_reasoning_effort='"<level>"' -C <worktree> -o <result-file> - < <brief>`, with the model id and effort
+from the tier table. Its sandbox has no network and can't write git, so cache sources first and commit, push and post
+verdicts for it. The brief says to request escalation only for commands that launch Chromium or `npm run compare`; the
+plugin's `task --write` can't, so don't use it for issue work or reviews. Codex reviews of Claude's branches use the
+same command in a detached reviewer worktree already at the pull request's head, with `docs/agents/reviewer.md` as the
+brief plus an override: skip the fetch, checkout and posting steps and write the verdict to `REVIEW.md`, which you
+post unchanged. A UI review that didn't run the browser steps itself doesn't count. `/codex:rescue` is for an ad-hoc
+second opinion in the current checkout, not for issue work.
 
 ## Permissions
 - `.claude/settings.json` allows `gh pr merge *`. If auto mode denies a merge, the rule is missing: tell the user
