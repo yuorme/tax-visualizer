@@ -1,7 +1,7 @@
 # What the model covers
 
-"Included" describes the prototype as built, for the 2026 tax year. "Decided, not built yet" records scope
-choices made since (October 2026) that roadmap items will implement. Open questions are listed at the end.
+"Included" describes the model as built, for the 2026 tax year and the historical years back to 2019. "Decided,
+not built yet" records scope choices that roadmap items will implement. Open questions are listed at the end.
 
 The calculator aims to be a quick, see-what-you-get estimate of a household's yearly tax burden, not a
 line-by-line tax return. Simpler and slightly less precise is acceptable where it keeps the inputs easy.
@@ -26,11 +26,10 @@ line-by-line tax return. Simpler and slightly less precise is acceptable where i
   CPP/QPP and EI/QPIP.
 - Dividend gross-up and dividend tax credits; 50% inclusion of net capital gains; foreign tax credit for tax
   withheld on foreign dividends.
-- Annual deductions claimed per adult, itemized as RRSP, FHSA and other deductions. Existing saved generic
-  deductions remain other deductions. All three components reduce net income once; absent new claims count as zero.
-  Account room and contribution history are not calculated. The RRSP shortcut estimates room using employment
-  income; it is not a verified maximum. FHSA claims may include deferred eligible contributions.
-  [CRA FHSA deductions](https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/first-home-savings-account/tax-deductions-fhsa-contributions.html).
+- Annual deductions claimed per adult, itemized as RRSP, FHSA and other deductions; each reduces net income.
+  Account room and contribution history are not calculated: the RRSP shortcut estimates room from employment
+  income and is not a verified maximum, and FHSA claims may include deferred eligible contributions.
+- Federal childcare expense deduction (2025 and 2026); see Childcare below.
 - Province-specific: Ontario surtax, Ontario tax reduction and LIFT credit, BC tax reduction, low-income
   reductions in Newfoundland and Labrador, New Brunswick, PEI and Nova Scotia, Saskatchewan's child amount,
   Nova Scotia's and Nunavut's credits for children under 6, Quebec abatement, Quebec deduction for workers and
@@ -50,7 +49,8 @@ line-by-line tax return. Simpler and slightly less precise is acceptable where i
 
 **Consumption and property**
 - Sales tax (GST/HST/PST/QST/RST) on monthly taxable spending, estimated from household size and adjustable.
-- Property tax for owners: home value × the typical rate in each province's largest city.
+- Property tax for owners: home value × the typical rate in each province's largest city, or, in the home
+  province only, the household's own annual bill if entered. The bill also feeds property-based credits there.
 
 **Fuel tax on gasoline**
 - Federal excise, provincial or territorial fuel tax and the regional transit tax of each province's reference
@@ -63,7 +63,18 @@ line-by-line tax return. Simpler and slightly less precise is acceptable where i
 - A rate that changed during the year counts for the share of days it applied (driving spread evenly).
 - Defaults: distance per province from the last Canadian Vehicle Survey (2009, per vehicle, not scaled by
   household size); one national efficiency default. Users can override both.
-- A year without fuel data (2025 for now) has no driving inputs and no fuel tax.
+- Inputs can be shown in km and L/100 km, or miles and **US** mpg (what Canadian-market cars display when set to
+  miles; the tooltip notes NRCan ratings use imperial mpg, about 20% higher). The engine stays metric.
+- Fuel tax data covers 2025 and 2026. Earlier years have no fuel tax; their driving inputs feed carbon pricing
+  only.
+
+**Carbon pricing in historical years.** The federal fuel charge on gasoline from the driving inputs, a typical
+household heating carbon cost held in data (`estimated: true`, no input), and the Climate Action Incentive /
+Canada Carbon Rebate, in the years and provinces where they applied; BC's carbon tax and climate action credit
+get the same treatment. It is material: an Alberta family of four received about $1,500 a year in rebates
+against a few hundred dollars of direct cost. Quebec's cap-and-trade has no tax line and stays out; indirect
+carbon costs in goods and electricity are excluded. None of this applies to 2026. Rates, payment timing and
+worked examples are in [carbon history](verification/carbon-history.md).
 
 **Historical comparison.** A separate view compares the home province across installed tax years. Real mode
 holds income, deductions, childcare amounts, spending, rent and home value at the same purchasing power using
@@ -71,37 +82,21 @@ Statistics Canada's annual Canada all-items CPI; household composition, ages, ra
 Inputs and results use the latest completed annual CPI year's dollars, labelled in the view. Years without
 published annual CPI appear only in nominal mode, which holds the entered dollar amounts fixed. This is a
 comparison of modeled tax rules, not a reconstruction of the household's past circumstances or housing prices.
+Coverage starts at 2019; 2016–2018 are possible later but not planned.
 
-**Childcare and expanded deductions (milestone 5, #94–98).** Itemized RRSP/FHSA/other claims are implemented;
-federal childcare calculations and Ontario/Quebec/Newfoundland and Labrador childcare credits are implemented for
-2025 and 2026 (#95–97). The childcare inputs accept child details and optional earned-income overrides, calculate
-ordinary claims or accept verified manual claims, and show results in the existing detailed comparison and tooltips.
-Missing information is distinguished from a zero claim. Annual child allocations are reconciled to the monthly
-household average, allowing rounding to cents; actual annual expenses remain the calculation source.
-Detailed contracts and existing benefit-model limitations are in
-[childcare verification](verification/childcare/README.md). The implemented scope is:
-- Replace frugality with a monthly household childcare amount, preserving the remaining spending controls and
-  their household-size behavior. Migrate saved spending without changing its effective dollar amount; add no reset UI.
-- Hold childcare expense constant across provinces, averaged over twelve months after fee subsidies/reimbursements.
-  Advance tax-credit payments are not fee subsidies. Expense itself is neither tax nor sales-taxable spending.
-- Per the subsequent UI feedback, default eligible earnings to each adult's employment and other income and follow
-  changes to that input. Explain this assumption in tooltips; allow explicit overrides, including zero, behind
-  optional adjustments. Preserve overrides and malformed drafts across reloads.
-- Hide childcare at zero children and deactivate its calculations, retaining drafts for restoration. Show paid-care
-  details only when costs are entered, using compact child age/expense rows and collapsed eligibility exceptions.
-  Keep the visible Children count consistent with active rows; derive benefit eligibility separately from ages.
-  Retained ages remain editable in the same disclosure when costs are zero and continue to determine benefits.
-- Apply federal childcare deduction rules, claimant selection and limits in 2025 and 2026, plus Ontario, Quebec
-  and Newfoundland and Labrador childcare relief, with each program's own income base and refundability.
-- Require a supplied Quebec-eligible expense portion to include that credit; distinguish missing from confirmed
-  zero, and allow qualifying extras alongside federally eligible subsidized fees. Show Quebec input fields only
-  when Home Province is Quebec, preserving their values when switching away.
-- Automate ordinary single-parent/couple cases. Deliberate manual mode accepts verified annual claims per adult
-  for exceptional cases, replacing automatic deductions; users remain responsible for eligibility.
-- Put expense, allowed claim, claimant and provincial-credit explanations in the existing detailed comparison and
-  tooltips only, with no additional summary widgets. Keep formulas in the engine and parameters in sourced year data.
-- Medical, donation, tuition and broader disability credits remain deferred. This is a tax-and-benefit comparison,
-  not a childcare-price or disposable-income/cost-of-living model.
+**Childcare (2025 and 2026).** A monthly household childcare amount, after fee subsidies and averaged over the
+year, replaces the old frugality setting. It is the same in every province and is neither a tax nor taxable
+spending.
+- Federal childcare expense deduction with its claimant rules and limits, plus Ontario's, Quebec's and
+  Newfoundland and Labrador's childcare credits, each with its own income base and refundability.
+- Eligible earnings default to each adult's employment and other income and can be overridden. Ordinary
+  single-parent and couple cases are automatic; a manual mode takes verified annual claims for exceptional cases.
+- Quebec's credit needs the Quebec-eligible part of the expense, asked only when Quebec is the home province.
+- Childcare inputs hide at zero children and keep their drafts; children's ages stay editable when costs are zero,
+  since they still set benefit eligibility. Results go in the existing detailed comparison and tooltips, with no
+  new summary widgets and no reset control.
+- A tax-and-benefit comparison, not a childcare-price or cost-of-living model. Input behaviour and rule
+  details: [childcare verification](verification/childcare/README.md).
 
 ## How scope is decided
 
@@ -116,21 +111,21 @@ The model counts **taxes the household actually pays**. Costs passed on through 
 
 Recorded here as the spec for the GitHub issues that implement them; the issues hold the order.
 
-
-
 **Self-employment.** A separate amount per adult, next to employment income (the CPP maximum is shared). Both
 CPP/QPP shares including CPP2, a deduction for the employer half, no EI (opting in is not modelled), no Canada
 employment amount on that part, QPIP at the self-employed rate in Quebec. Counts as working income for the
 Canada Workers Benefit and Quebec's work premium.
 
-**Seniors (65+ per adult).** Moving in retirement is a main use case, so this is modelled fully:
+**Seniors (65+ per adult).** Moving in retirement is a main use case, so this is modelled fully. The
+[seniors sizing study](verification/16-seniors-sizing.md) finds all seven planned categories below pass the
+0.1-point rule for at least one applicable household; pension splitting also moves the BC–Ontario gap by 0.32
+points. Individual provincial and territorial programs beyond the ones it measured are still sized before they're
+built.
 - Federal and provincial age amounts, pension income credit.
 - OAS with its recovery tax (clawback) and the 10% increase at 75; GIS and the Allowance.
 - CPP/QPP retirement benefits as income.
 - Pension income splitting, optimised automatically per province (the engine tries 0–50% and keeps the lowest
   household tax; no input).
-  The [seniors sizing study](verification/16-seniors-sizing.md) finds a feasible split saves 0.93–1.25 effective-rate
-  points for its unequal-pension couple and moves the BC–Ontario gap by 0.32 points, so splitting passes scope.
 - Provincial seniors' supplements (Ontario GAINS, Alberta Seniors Benefit, BC Senior's Supplement,
   Saskatchewan Seniors Income Plan and equivalents elsewhere).
 - Seniors' property tax grants and rebates (e.g. BC's additional Home Owner Grant, Ontario Senior Homeowners'
@@ -138,26 +133,6 @@ Canada Workers Benefit and Quebec's work premium.
   reduce it.
 - RRIF/RRSP withdrawals and workplace pensions are entered as amounts. Not modelled: minimum RRIF withdrawals,
   deferring OAS or CPP, partial OAS from residency rules (full OAS is assumed).
-- Each piece is still sized with the 0.1-point rule before it's built.
-
-**Metric/imperial toggle for the driving inputs.** Shows km and L/100 km, or miles and **US** mpg (what
-Canadian-market cars display when set to miles; the tooltip notes NRCan ratings use imperial mpg, about 20%
-higher). The engine stays metric.
-
-**Your own property tax.** An optional annual property tax amount for the home province replaces home value ×
-rate there. Every other province keeps the reference-city rate.
-
-**Carbon pricing in historical years.** CRA rates confirm a $1,544 rebate for an Alberta family of four in the
-April 2023–January 2024 payment cycle: four payments of $193 + $96.50 + 2 × $48.25.
-Calendar-year receipts are $1,427.75 in 2023 and $1,736 in 2024, including January at the prior cycle's rate
-([CRA amounts](https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-carbon-rebate/how-much.html)).
-Direct costs depend on driving and the heating estimate; they are not a fixed published household bill.
-It's included in years where it applied: the federal fuel charge on gasoline from the driving inputs, a typical
-household heating carbon cost held in data (`estimated: true`, no input), and the Climate Action Incentive /
-Canada Carbon Rebate. BC's carbon tax and climate action credit get the same treatment.
-Quebec's cap-and-trade has no tax line and stays out. None of this applies to 2026.
-
-**Historical coverage** starts at 2019. 2016–2018 are possible later but not planned.
 
 ## Not included
 
