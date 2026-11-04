@@ -329,7 +329,9 @@ export function footerNotes(y: YearData, page: PageDefaults): string {
     // The reduction is gone once net income passes the threshold by max ÷ rate.
     `BC applies its tax reduction (up to ${money(bcRed.max)}, phased out between ${money(bcRed.threshold)} and ${money(bcRed.threshold + bcRed.max / bcRed.rate)} of net income).`,
     `Low-income tax reductions are applied in ${list(lowIncome)}${indexed.length ? ` (${list(indexed)} ${indexed.length > 1 ? "are" : "is"} ${lastYearIndexed})` : ""}.`,
-    kidPhrases.length ? `${list(kidPhrases)} are claimed by the parent who claims the children.` : "",
+    kidPhrases.length
+      ? `${list(kidPhrases)} follow each program's rules for who can claim them and whether unused amounts can transfer to a spouse.`
+      : "",
     "A single parent claims the eligible dependant amount; in Quebec a single adult gets the amount for a person living alone.",
     ...P.flatMap(p =>
       typeof p.spouseAmount === "object" &&

@@ -229,18 +229,9 @@ The full T2036 cap passes every unrelated locked baseline, so no transfer-only f
 
 ## Deferred work and issue handoff
 
-Finding 5 is deliberately deferred: `src/ui/notes.ts` remains owned by another agent. Its child-claimant tooltip
-still needs the later correction. No UI file is changed in this round.
+Finding 5 is resolved: the child-claimant tooltip now refers to each program's claimant and transfer rules.
 
-Finding 8 needs the orchestrator to file a separate issue (this coder is prohibited from running `gh`):
-
-- **Title:** Model PE428 line 58230 amount for young children.
-- **Evidence:** cached PE428 2025 line 58230 and the young-children chart, plus `pe-guide-2025.txt` line 58230.
-  The form allows $100 per eligible month ($1,200 for a full year); the guide assigns it to the lower-net-income
-  spouse, with an election on equal income. This predates #92 and is not the reduction's $300-per-child component.
-- **Acceptance:** source the eligibility and child-counting rules; add a separate PE child program and appropriate
-  claimant behavior; verify interaction with PE's reduction-before-FTC order; add independent boundary and couple
-  goldens; explicitly mark any 2026 continuation provisional.
+Finding 8: PE428 line 58230 amount for young children is tracked in #162.
 
 ## Why existing values changed
 
