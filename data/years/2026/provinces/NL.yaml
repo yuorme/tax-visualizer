@@ -16,7 +16,7 @@ dividendTaxCredit: {eligible: 0.063, nonEligible: 0.032}
 spouseAmount: {max: 9142, threshold: 915}
 # Provisional continuation of the verified 2025 return rules pending 2026 CRA forms.
 claimants:
-  lowIncomeReduction: {claimant: minimum-household-tax, transferUnused: true, estimated: true}
+  lowIncomeReduction: {claimant: minimum-household-tax, transferUnused: true, order: after-foreign-tax-credit, estimated: true}
 lowIncomeReduction:
   program: nl-low-income-reduction
   params: {individual: 842, family: 563, rate: 0.16, thresholdIndividual: 24191, thresholdFamily: 40905}

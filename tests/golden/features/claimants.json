@@ -415,7 +415,7 @@
       }
     },
     {
-      "id": "pe-foreign-before-reduction",
+      "id": "pe-reduction-before-foreign",
       "year": 2025,
       "province": "PE",
       "household": {
@@ -429,9 +429,9 @@
       },
       "expected": {
         "prov": 0,
-        "list.0.lowRed": 0,
-        "list.0.pFtc": 508.25,
-        "list.0.breakdown.lowIncomeReduction.unused": 350
+        "list.0.lowRed": 350,
+        "list.0.pFtc": 158.25,
+        "list.0.breakdown.lowIncomeReduction.unused": 0
       }
     },
     {
@@ -822,9 +822,9 @@
       },
       "expected": {
         "prov": 557.4048,
-        "list.1.kidAmt": 1200.0,
-        "list.0.pKid": 0.0,
-        "list.0.breakdown.childTransfer.base": 0.0
+        "list.1.kidAmt": 1200,
+        "list.0.pKid": 0,
+        "list.0.breakdown.childTransfer.base": 0
       }
     },
     {
@@ -866,9 +866,9 @@
       },
       "expected": {
         "prov": 524.3544,
-        "list.1.kidAmt": 1200.0,
-        "list.0.pKid": 0.0,
-        "list.0.breakdown.childTransfer.base": 0.0
+        "list.1.kidAmt": 1200,
+        "list.0.pKid": 0,
+        "list.0.breakdown.childTransfer.base": 0
       }
     },
     {
@@ -910,8 +910,8 @@
       },
       "expected": {
         "prov": 681.6645,
-        "list.1.kidAmt": 1200.0,
-        "list.0.kidAmt": 0.0
+        "list.1.kidAmt": 1200,
+        "list.0.kidAmt": 0
       }
     },
     {
@@ -932,8 +932,8 @@
       },
       "expected": {
         "prov": 681.7524,
-        "list.1.kidAmt": 1200.0,
-        "list.0.kidAmt": 0.0
+        "list.1.kidAmt": 1200,
+        "list.0.kidAmt": 0
       }
     },
     {
@@ -954,8 +954,8 @@
       },
       "expected": {
         "prov": 787.3203,
-        "list.1.kidAmt": 0.0,
-        "list.0.kidAmt": 1200.0
+        "list.1.kidAmt": 0,
+        "list.0.kidAmt": 1200
       }
     },
     {
@@ -977,9 +977,9 @@
       },
       "expected": {
         "prov": 24.9271215,
-        "list.1.kidAmt": 1200.0,
+        "list.1.kidAmt": 1200,
         "list.0.lowRed": 198.3024,
-        "list.1.lowRed": 0.0
+        "list.1.lowRed": 0
       }
     },
     {
@@ -999,8 +999,8 @@
         "under6": 0
       },
       "expected": {
-        "list.0.kidAmt": 0.0,
-        "list.1.kidAmt": 0.0,
+        "list.0.kidAmt": 0,
+        "list.1.kidAmt": 0,
         "prov": 2330.4048
       }
     },
@@ -1022,9 +1022,9 @@
       },
       "expected": {
         "prov": 410.08,
-        "list.0.breakdown.childTransfer.base": 1200.0,
-        "list.0.pKid": 48.0,
-        "list.1.kidAmt": 1200.0
+        "list.0.breakdown.childTransfer.base": 1200,
+        "list.0.pKid": 48,
+        "list.1.kidAmt": 1200
       }
     },
     {
@@ -1045,7 +1045,7 @@
       },
       "expected": {
         "prov": 410.08,
-        "list.0.breakdown.childTransfer.base": 474.0,
+        "list.0.breakdown.childTransfer.base": 474,
         "list.1.pKid": 29.04
       }
     },
@@ -1067,9 +1067,9 @@
       },
       "expected": {
         "prov": 379.28,
-        "list.0.breakdown.childTransfer.base": 1200.0,
-        "list.0.pKid": 48.0,
-        "list.1.kidAmt": 1200.0
+        "list.0.breakdown.childTransfer.base": 1200,
+        "list.0.pKid": 48,
+        "list.1.kidAmt": 1200
       }
     },
     {
@@ -1090,7 +1090,7 @@
       },
       "expected": {
         "prov": 379.28,
-        "list.0.breakdown.childTransfer.base": 859.0,
+        "list.0.breakdown.childTransfer.base": 859,
         "list.1.pKid": 13.64
       }
     },
@@ -1111,8 +1111,8 @@
         "under6": 1
       },
       "expected": {
-        "list.0.breakdown.childTransfer.base": 1.0,
-        "list.1.prov": 0.0
+        "list.0.breakdown.childTransfer.base": 1,
+        "list.1.prov": 0
       }
     },
     {
@@ -1132,8 +1132,8 @@
         "under6": 1
       },
       "expected": {
-        "list.0.breakdown.childTransfer.base": 0.0,
-        "list.1.prov": 0.0
+        "list.0.breakdown.childTransfer.base": 0,
+        "list.1.prov": 0
       }
     },
     {
@@ -1153,7 +1153,7 @@
         "under6": 1
       },
       "expected": {
-        "list.0.breakdown.childTransfer.base": 0.0,
+        "list.0.breakdown.childTransfer.base": 0,
         "list.1.prov": 0.04
       }
     },
@@ -1177,7 +1177,7 @@
       },
       "expected": {
         "prov": 410.08,
-        "list.0.breakdown.childTransfer.base": 474.0,
+        "list.0.breakdown.childTransfer.base": 474,
         "list.1.pKid": 29.04
       }
     },
@@ -1200,7 +1200,7 @@
       },
       "expected": {
         "prov": 410.08,
-        "list.0.breakdown.childTransfer.base": 474.0,
+        "list.0.breakdown.childTransfer.base": 474,
         "list.1.pKid": 29.04
       }
     },
@@ -1222,10 +1222,10 @@
         "under6": 1
       },
       "expected": {
-        "prov": 0.0,
-        "list.1.kidAmt": 1200.0,
-        "list.0.kidAmt": 0.0,
-        "list.0.breakdown.childTransfer.base": 474.0
+        "prov": 0,
+        "list.1.kidAmt": 1200,
+        "list.0.kidAmt": 0,
+        "list.0.breakdown.childTransfer.base": 474
       }
     },
     {
@@ -1244,10 +1244,10 @@
         "kids": 1
       },
       "expected": {
-        "prov": 0.0,
-        "list.1.kidAmt": 8358.0,
-        "list.0.kidAmt": 0.0,
-        "list.0.breakdown.childTransfer.base": 1139.0
+        "prov": 0,
+        "list.1.kidAmt": 8358,
+        "list.0.kidAmt": 0,
+        "list.0.breakdown.childTransfer.base": 1139
       }
     },
     {
@@ -1268,8 +1268,8 @@
       },
       "expected": {
         "list.1.prov": 1739.83,
-        "list.0.breakdown.childTransfer.base": 0.0,
-        "list.1.pKid": 48.0
+        "list.0.breakdown.childTransfer.base": 0,
+        "list.1.pKid": 48
       }
     },
     {
@@ -1290,8 +1290,8 @@
       },
       "expected": {
         "prov": 458.08,
-        "list.0.pKid": 0.0,
-        "list.1.pKid": 0.0
+        "list.0.pKid": 0,
+        "list.1.pKid": 0
       }
     },
     {
@@ -1329,7 +1329,7 @@
         ]
       },
       "expected": {
-        "prov": 0.0,
+        "prov": 0,
         "list.0.lowRed": 600.822,
         "list.1.lowRed": 513.822
       }
@@ -1350,9 +1350,9 @@
         "kids": 4
       },
       "expected": {
-        "prov": 0.0,
-        "list.0.lowRed": 475.0,
-        "list.1.lowRed": 380.0
+        "prov": 0,
+        "list.0.lowRed": 475,
+        "list.1.lowRed": 380
       }
     },
     {
@@ -1372,8 +1372,8 @@
       },
       "expected": {
         "prov": 404.1772,
-        "list.0.lowRed": 0.0,
-        "list.1.lowRed": 305.0
+        "list.0.lowRed": 0,
+        "list.1.lowRed": 305
       }
     },
     {
@@ -1393,7 +1393,423 @@
       },
       "expected": {
         "prov": 93.8772,
-        "list.1.lowRed": 0.0
+        "list.1.lowRed": 0
+      }
+    },
+    {
+      "id": "nb-2025-mixed-foreign-share",
+      "year": 2025,
+      "province": "NB",
+      "household": {
+        "adults": 1,
+        "spouse": false,
+        "whRate": 0.15,
+        "people": [
+          {
+            "oth": 15000,
+            "fd": 15000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 220.788,
+        "list.0.pFtc": 780.388,
+        "list.0.lowRed": 559.6,
+        "list.0.breakdown.lowIncomeReduction.calculated": 559.6,
+        "list.0.breakdown.lowIncomeReduction.unused": 0
+      }
+    },
+    {
+      "id": "nl-2025-mixed-foreign-share",
+      "year": 2025,
+      "province": "NL",
+      "household": {
+        "adults": 1,
+        "spouse": false,
+        "whRate": 0.15,
+        "people": [
+          {
+            "oth": 14000,
+            "fd": 14000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 391.1055,
+        "list.0.pFtc": 736.5855,
+        "list.0.lowRed": 345.48,
+        "list.0.breakdown.lowIncomeReduction.calculated": 345.48,
+        "list.0.breakdown.lowIncomeReduction.unused": 0
+      }
+    },
+    {
+      "id": "ns-2025-mixed-foreign-share",
+      "year": 2025,
+      "province": "NS",
+      "household": {
+        "adults": 1,
+        "spouse": false,
+        "whRate": 0.15,
+        "people": [
+          {
+            "oth": 10000,
+            "fd": 10000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 312.8512,
+        "list.0.pFtc": 362.8512,
+        "list.0.lowRed": 50,
+        "list.0.breakdown.lowIncomeReduction.calculated": 50,
+        "list.0.breakdown.lowIncomeReduction.unused": 0
+      }
+    },
+    {
+      "id": "pe-2025-mixed-foreign-share",
+      "year": 2025,
+      "province": "PE",
+      "household": {
+        "adults": 1,
+        "spouse": false,
+        "whRate": 0.15,
+        "people": [
+          {
+            "oth": 10000,
+            "fd": 10000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 79.125,
+        "list.0.pFtc": 79.125,
+        "list.0.lowRed": 350,
+        "list.0.breakdown.lowIncomeReduction.calculated": 350,
+        "list.0.breakdown.lowIncomeReduction.unused": 0
+      }
+    },
+    {
+      "id": "nb-2025-foreign-and-reduction-transfer",
+      "year": 2025,
+      "province": "NB",
+      "household": {
+        "whRate": 0.4,
+        "people": [
+          {
+            "oth": 3000,
+            "fd": 27000
+          },
+          {
+            "oth": 20000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 15.2536,
+        "list.0.prov": 0,
+        "list.0.pFtc": 1404.6984,
+        "list.0.lowRed": 156.0776,
+        "list.0.breakdown.lowIncomeReduction.calculated": 761.6,
+        "list.0.breakdown.lowIncomeReduction.unused": 605.5224,
+        "list.1.pFtc": 0,
+        "list.1.lowRed": 605.5224,
+        "list.1.breakdown.lowIncomeReduction.calculated": 605.5224,
+        "list.1.breakdown.lowIncomeReduction.unused": 0
+      }
+    },
+    {
+      "id": "nl-2025-foreign-and-reduction-transfer",
+      "year": 2025,
+      "province": "NL",
+      "household": {
+        "whRate": 0.4,
+        "people": [
+          {
+            "oth": 3000,
+            "fd": 27000
+          },
+          {
+            "oth": 18000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 420.2881,
+        "list.0.prov": 0,
+        "list.0.pFtc": 1482.4539,
+        "list.0.lowRed": 164.7171,
+        "list.0.breakdown.lowIncomeReduction.calculated": 347.6,
+        "list.0.breakdown.lowIncomeReduction.unused": 182.8829,
+        "list.1.pFtc": 0,
+        "list.1.lowRed": 182.8829,
+        "list.1.breakdown.lowIncomeReduction.calculated": 182.8829,
+        "list.1.breakdown.lowIncomeReduction.unused": 0
+      }
+    },
+    {
+      "id": "pe-2025-foreign-and-reduction-transfer",
+      "year": 2025,
+      "province": "PE",
+      "household": {
+        "whRate": 0.15,
+        "people": [
+          {
+            "oth": 15000
+          },
+          {
+            "oth": 10000,
+            "fd": 10000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 229.5,
+        "list.0.prov": 0,
+        "list.0.lowRed": 33.25,
+        "list.0.pFtc": 0,
+        "list.0.breakdown.lowIncomeReduction.calculated": 82.5,
+        "list.0.breakdown.lowIncomeReduction.unused": 49.25,
+        "list.1.lowRed": 49.25,
+        "list.1.pFtc": 229.5,
+        "list.1.prov": 229.5,
+        "list.1.breakdown.lowIncomeReduction.calculated": 49.25,
+        "list.1.breakdown.lowIncomeReduction.unused": 0
+      }
+    },
+    {
+      "id": "nl-2025-foreign-exceeds-net-income",
+      "year": 2025,
+      "province": "NL",
+      "household": {
+        "whRate": 0.4,
+        "people": [
+          {
+            "fd": 40000,
+            "fhsa": 8000
+          },
+          {
+            "oth": 18000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 575.571,
+        "list.0.prov": 0,
+        "list.0.pFtc": 1821.171,
+        "list.0.lowRed": 0,
+        "list.0.breakdown.lowIncomeReduction.calculated": 27.6,
+        "list.0.breakdown.lowIncomeReduction.unused": 27.6,
+        "list.1.lowRed": 27.6,
+        "list.1.breakdown.lowIncomeReduction.calculated": 27.6,
+        "list.1.breakdown.lowIncomeReduction.unused": 0
+      }
+    },
+    {
+      "id": "nb-2026-mixed-foreign-share",
+      "year": 2026,
+      "province": "NB",
+      "household": {
+        "adults": 1,
+        "spouse": false,
+        "whRate": 0.15,
+        "people": [
+          {
+            "oth": 15000,
+            "fd": 15000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 179.052,
+        "list.0.pFtc": 767.792,
+        "list.0.lowRed": 588.74,
+        "list.0.breakdown.lowIncomeReduction.calculated": 588.74,
+        "list.0.breakdown.lowIncomeReduction.unused": 0
+      }
+    },
+    {
+      "id": "nl-2026-mixed-foreign-share",
+      "year": 2026,
+      "province": "NL",
+      "household": {
+        "adults": 1,
+        "spouse": false,
+        "whRate": 0.15,
+        "people": [
+          {
+            "oth": 14000,
+            "fd": 14000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 415.851,
+        "list.0.pFtc": 648.411,
+        "list.0.lowRed": 232.56,
+        "list.0.breakdown.lowIncomeReduction.calculated": 232.56,
+        "list.0.breakdown.lowIncomeReduction.unused": 0
+      }
+    },
+    {
+      "id": "ns-2026-mixed-foreign-share",
+      "year": 2026,
+      "province": "NS",
+      "household": {
+        "adults": 1,
+        "spouse": false,
+        "whRate": 0.15,
+        "people": [
+          {
+            "oth": 10000,
+            "fd": 10000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 304.5886,
+        "list.0.pFtc": 354.5886,
+        "list.0.lowRed": 50,
+        "list.0.breakdown.lowIncomeReduction.calculated": 50,
+        "list.0.breakdown.lowIncomeReduction.unused": 0
+      }
+    },
+    {
+      "id": "pe-2026-mixed-foreign-share",
+      "year": 2026,
+      "province": "PE",
+      "household": {
+        "adults": 1,
+        "spouse": false,
+        "whRate": 0.15,
+        "people": [
+          {
+            "oth": 10000,
+            "fd": 10000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 62.5,
+        "list.0.pFtc": 62.5,
+        "list.0.lowRed": 350,
+        "list.0.breakdown.lowIncomeReduction.calculated": 350,
+        "list.0.breakdown.lowIncomeReduction.unused": 0
+      }
+    },
+    {
+      "id": "nb-2026-foreign-and-reduction-transfer",
+      "year": 2026,
+      "province": "NB",
+      "household": {
+        "whRate": 0.4,
+        "people": [
+          {
+            "oth": 3000,
+            "fd": 27000
+          },
+          {
+            "oth": 20000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 0,
+        "list.0.prov": 0,
+        "list.0.pFtc": 1382.0256,
+        "list.0.lowRed": 153.5584,
+        "list.0.breakdown.lowIncomeReduction.calculated": 806.74,
+        "list.0.breakdown.lowIncomeReduction.unused": 653.1816,
+        "list.1.pFtc": 0,
+        "list.1.lowRed": 595.584,
+        "list.1.breakdown.lowIncomeReduction.calculated": 653.1816,
+        "list.1.breakdown.lowIncomeReduction.unused": 57.5976
+      }
+    },
+    {
+      "id": "nl-2026-foreign-and-reduction-transfer",
+      "year": 2026,
+      "province": "NL",
+      "household": {
+        "whRate": 0.4,
+        "people": [
+          {
+            "oth": 3000,
+            "fd": 27000
+          },
+          {
+            "oth": 18000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 304.1042,
+        "list.0.prov": 0,
+        "list.0.pFtc": 1323.7398,
+        "list.0.lowRed": 147.0822,
+        "list.0.breakdown.lowIncomeReduction.calculated": 269.8,
+        "list.0.breakdown.lowIncomeReduction.unused": 122.7178,
+        "list.1.pFtc": 0,
+        "list.1.lowRed": 122.7178,
+        "list.1.breakdown.lowIncomeReduction.calculated": 122.7178,
+        "list.1.breakdown.lowIncomeReduction.unused": 0
+      }
+    },
+    {
+      "id": "pe-2026-foreign-and-reduction-transfer",
+      "year": 2026,
+      "province": "PE",
+      "household": {
+        "whRate": 0.15,
+        "people": [
+          {
+            "oth": 15350
+          },
+          {
+            "oth": 10000,
+            "fd": 10000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 212.875,
+        "list.0.prov": 0,
+        "list.0.lowRed": 33.25,
+        "list.0.pFtc": 0,
+        "list.0.breakdown.lowIncomeReduction.calculated": 82.5,
+        "list.0.breakdown.lowIncomeReduction.unused": 49.25,
+        "list.1.lowRed": 49.25,
+        "list.1.pFtc": 212.875,
+        "list.1.prov": 212.875,
+        "list.1.breakdown.lowIncomeReduction.calculated": 49.25,
+        "list.1.breakdown.lowIncomeReduction.unused": 0
+      }
+    },
+    {
+      "id": "nl-2026-foreign-exceeds-net-income",
+      "year": 2026,
+      "province": "NL",
+      "household": {
+        "whRate": 0.4,
+        "people": [
+          {
+            "fd": 40000,
+            "fhsa": 8000
+          },
+          {
+            "oth": 18000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 426.822,
+        "list.0.prov": 0,
+        "list.0.pFtc": 1644.822,
+        "list.0.lowRed": 0,
+        "list.0.breakdown.lowIncomeReduction.calculated": 0,
+        "list.0.breakdown.lowIncomeReduction.unused": 0,
+        "list.1.lowRed": 0,
+        "list.1.breakdown.lowIncomeReduction.calculated": 0,
+        "list.1.breakdown.lowIncomeReduction.unused": 0
       }
     }
   ]

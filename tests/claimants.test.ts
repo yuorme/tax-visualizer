@@ -49,3 +49,43 @@ for (const c of fixture.cases) {
     }
   });
 }
+
+test("PE428 applies the reduction before T2036 for mixed foreign income", () => {
+  const y = loadYear(2025);
+  const p = y.provinces.find(p => p.code === "PE");
+  assert.ok(p);
+  const hh = {
+    ...fixture.defaults,
+    spouse: false,
+    adults: 1,
+    whRate: 0.15,
+    people: [{ ...blank(0), oth: 10000, fd: 10000 }],
+  };
+  const result = household(y, p, hh).list[0];
+  // PE428: line 65 = 508.25; line 87 = 350; line 88 = 158.25.
+  // T2036 line 4: 158.25 * (10,000 / 20,000) = 79.125.
+  assert.equal(result.lowRed, 350);
+  assert.equal(result.pFtc, 79.125);
+  assert.equal(result.prov, 79.125);
+  assert.equal(result.breakdown.lowIncomeReduction.unused, 0);
+});
+
+test("T2036 line 5 prevents a foreign credit from creating a phantom NL transfer", () => {
+  const y = loadYear(2025);
+  const p = y.provinces.find(p => p.code === "NL");
+  assert.ok(p);
+  const hh = {
+    ...fixture.defaults,
+    whRate: 0.4,
+    people: [
+      { ...blank(0), fd: 40000, fhsa: 8000 },
+      { ...blank(0), oth: 18000 },
+    ],
+  };
+  const result = household(y, p, hh);
+  // NL428 line 108 may transfer only the unused family reduction, never excess foreign tax credit.
+  assert.ok(result.list.every(r => r.lowRed >= 0));
+  assert.ok(
+    result.list[0].breakdown.lowIncomeReduction.unused <= result.list[0].breakdown.lowIncomeReduction.calculated,
+  );
+});

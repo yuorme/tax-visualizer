@@ -14,7 +14,7 @@ basicPersonalAmount: 11067
 dividendTaxCredit: {eligible: 0.063, nonEligible: 0.032}
 spouseAmount: {max: 9043, threshold: 905}     # base amount 9,948 on Form NL428, maximum 9,043
 claimants:
-  lowIncomeReduction: {claimant: minimum-household-tax, transferUnused: true}
+  lowIncomeReduction: {claimant: minimum-household-tax, transferUnused: true, order: after-foreign-tax-credit}
 lowIncomeReduction:
   program: nl-low-income-reduction
   # Form NL428: basic $997, spouse or eligible dependant $557 each, reduced by 16% of family income over

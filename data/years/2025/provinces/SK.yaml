@@ -9,7 +9,7 @@ basicPersonalAmount: 19491      # raised by $500 for 2025 (Form SK428)
 dividendTaxCredit: {eligible: 0.11, nonEligible: 0.02519}
 spouseAmount: {max: 19491, threshold: 1949}     # base amount 21,440 on Form SK428, maximum 19,491
 claimants:
-  childAmount: {claimant: lower-taxable-income, transfer: sk-s2}
+  childAmount: {claimant: lower-taxable-income, transfer: schedule-2}
 childAmount: {perChild: 7704, ages: all}
 salesTax: {rate: 0.11, label: "5% GST + 6% PST"}
 propertyTax: {rate: 0.0134, city: Saskatoon, estimated: true}   # carried over from 2026 (estimated); not checked against 2025 municipal rates

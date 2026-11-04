@@ -217,7 +217,7 @@ export function household(y: YearData, p: Province, hh: Household, peopleIn: Per
         }
         if (!lowRule || !couple) return contexts.map((context, i) => calculate(i, context));
         // A child election on tied income can change the best family reduction election. Evaluate both
-        // together, after FTC, rather than picking the child claimant using their standalone tax capacity.
+        // together using final tax after both FTC and the form-ordered reduction.
         return bestElection(
           [c, o].map(initial => {
             const allocated = contexts.map((context, i) => ({

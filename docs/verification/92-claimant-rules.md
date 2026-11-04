@@ -25,6 +25,7 @@ and extended file ownership to `tests/golden/other-income-original.json` and `do
 
 All six 2025 guides are cached under `docs/verification/2025/sources/` as `{sk,ns,nu,nb,nl,pe}-guide-2025.txt`.
 The forms and schedules below are cached under `docs/verification/138-senior-credit-rules/sources/`.
+T2036 is cached at `docs/verification/2025/sources/t2036-2025.txt`, including its line 5 cap and note 4.
 
 Official guides:
 
@@ -61,6 +62,7 @@ Official forms and schedules:
 - [NB428 2025](https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5004-c/5004-c-25e.pdf)
 - [NL428 2025](https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5001-c/5001-c-25e.pdf)
 - [PE428 2025](https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5002-c/5002-c-25e.pdf)
+- [T2036 2025](https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/t2036/t2036-25e.pdf)
 - [ON428 2025](https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5006-c/5006-c-25e.pdf)
 - [TD1 2026](https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/td1/td1-26e.pdf)
 - [TD1SK 2026](https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/td1sk/td1sk-26e.pdf)
@@ -77,7 +79,11 @@ roundoff (such as `20000 * 1.38`) does not turn mathematically equal incomes int
 
 NS(S2)'s transferable pool excludes the child amount. NS428 has no unused family-reduction transfer line.
 NU(S2) includes the child amount; SK(S2) includes it with other transferable bases. NB/NL/PE explicitly provide
-unused-reduction transfers. All four Atlantic forms apply the provincial foreign tax credit before the reduction.
+unused-reduction transfers. NB428 (66, 86), NL428 (73, 104) and NS428 (63, 84) apply FTC before the reduction.
+PE428 applies the reduction at line 87 before FTC at line 89; a transferred reduction is also before FTC (66).
+PE's unused reduction is line 87 less line 65, floored at zero (99–101), not a balance measured after FTC.
+T2036 note 4 therefore uses PE tax after the reduction. Its line 5 caps the credit at tax otherwise payable,
+including when foreign dividends exceed net income after deductions.
 
 ## Provisional 2026 continuation
 
@@ -109,15 +115,18 @@ Schedule 2 does not subtract spouse, dividend or foreign credits when finding ca
 it uses bracket tax divided by the lowest rate, not taxable income. The receiver applies the unused base once
 as a non-refundable credit before dividends and FTC. An excess never becomes a refund. The existing `pKid`
 display subtotal includes received child credits; the nested breakdown identifies the transferred base/share.
+Both identical Schedule 2 paths use `transfer: schedule-2`; separate province-named ids served no behavior.
+The reduction's required `order` field selects its position relative to FTC, with no province-code engine check.
 
 `unusedSpouseTransferBase` is the seam for #17: combine child, age, senior supplementary, pension and other
 applicable bases in **one** Schedule 2 pool, then subtract donor capacity once. Do not calculate separate
 child and senior capacities and add the results. This issue introduces no senior transfer behavior.
-For #145, add Manitoba's own claimant key; do not implicitly reuse the supporting-spouse claimant.
+For #145, use existing supporting-spouse context `c` or add Manitoba's own key and decide ties. Do not reuse
+`claimants.childAmount`: that key permits only lower-income claimants. No #145 behavior is implemented here.
 
 ## Independent checks and feature goldens
 
-`tests/golden/features/claimants.json` has 66 independently calculated cases, with no capture mode. Its runner
+`tests/golden/features/claimants.json` has 82 independently calculated cases, with no capture mode. Its runner
 uses a 1e-8 dollar tolerance, preserving exact decimals rather than introducing four-place rounding ties.
 Every two-spouse case reverses person order and checks unchanged total household tax. A data test checks all
 six provinces' 2025/2026 claimant coverage and verifies that every 2026 continuation is marked estimated.
@@ -140,7 +149,8 @@ six provinces' 2025/2026 claimant coverage and verifies that every 2026 continua
 | PE child transfer | Tax 508.25 + 413.25; reduction 700 + 1,200 - .05 × (39,000 - 22,650) = 1,082.5 |
 | NS best election | A grossed dividends 20,700 give zero tax; B tax 725.7024; six-child reduction 305 goes to B |
 | NS no transfer | Each 13,000 gives 110.4024 tax; reduction 710 wipes one only, leaving 110.4024 |
-| All four foreign cases | 100% foreign income 20,000, withholding 40%; provincial FTC wipes tax before reduction |
+| NB/NL/NS full foreign | Income 20,000, withholding 40%; FTC wipes tax before reduction |
+| PE full foreign | Line 65 = 508.25; reduction 350; FTC 158.25; unused reduction 0 |
 | All four phaseout cases | Family ceilings NB 75,386.6667, NL 50,172.5, PE 36,650, NS 27,000; ±1 and exact |
 | Federal spouse | Supporting A claims `(16,452 - 10,000) × .14 = 903.28`; SK child initially belongs to B |
 | ON before/after | B 29,734/29,736 crosses A net 29,735; child reduction switches, and A's LIFT absorbs A's tax |
@@ -172,33 +182,82 @@ Additional independently calculated cases for the completed NS/NU and tie paths:
 The Saskatchewan reproduction is $957.495 before the change and $0 afterwards (2026 provincial income tax).
 Ontario's switch remains at **net** income: in that example A's $30,000 employment produces net income $29,735.
 
-`tests/claimants-audit.test.ts` independently verifies 15,168 provincial calculations: all 148 shared and
-10 original other-income scenarios, six affected provinces, two years, six $100 income bumps and an
-investment-free counterfactual alongside the original household. It takes unchanged bracket tax, income,
-payroll, spouse credits and federal FTC from a neutral calculation with affected programs removed, then uses
-return-line arithmetic to calculate the correction. For transferable reductions it uses aggregate capacity;
-for NS it uses maximum individual capacity, independently of the engine's reduction-election search.
-This checks base tax and marginal/investment consequences, including high brackets, dividends and withholding.
+`tests/claimants-audit.test.ts` checks 15,168 provincial calculations: all 148 shared and 10 original other-income
+scenarios, six affected provinces, two years, six $100 income bumps and an investment-free counterfactual alongside
+the original household. Its independent worksheet, `tests/claimants-forms.ts`, imports no engine functions or
+runtime YAML. It derives net income, payroll, bracket tax, basic/spouse/child credits, federal FTC, provincial FTC,
+reductions and transfers from household inputs and separately typed constants. The 2025 provincial bases and
+brackets come from cached 428 forms; federal T1 and existing verified contribution/dividend parameters supply the
+unchanged federal steps. The 2026 constants are transcribed from annual YAML and test the provisional formulas;
+they are not independent verification of unpublished 2026 return figures.
+
+The worksheet follows each form's own order and checks 14 individual values, including FTC, used/unused reduction
+and child transfers, as well as household provincial tax. On equal final tax, all individual lines must match
+one legal whole election. It also checks 147 feature households including reversed spouses (the two ON fixtures
+are outside its six-province scope). A negative-control test reverses PE's order: total tax stays zero, but the
+audit rejects the incorrect individual lines. No expected amount comes from `household()` or `personTax()`.
+
+Round 2 adds 16 feature goldens: eight mixed-share singles, six FTC-plus-transfer couples and two over-cap NL
+couples. Every group covers both 2025 and the provisional 2026 continuation. The following calculations use no
+payroll or dividend credits; all stated tax amounts are after the basic personal credit.
+
+| Mixed-share single | Income (half foreign), withholding 15% | 2025 tax / 2026 tax |
+| --- | --- | --- |
+| NB | 30,000; tax 1,560.776 / 1,535.584; FTC half; reduction 559.60 / 588.74 | 220.788 / 179.052 |
+| NL | 28,000; tax 1,473.171 / 1,296.822; FTC half; reduction 345.48 / 232.56 | 391.1055 / 415.851 |
+| NS | 20,000; tax 725.7024 / 709.1772; FTC half; reduction 50 | 312.8512 / 304.5886 |
+| PE | 20,000; tax 508.25 / 475; subtract 350, then FTC half | 79.125 / 62.5 |
+
+| Couple (2025 / 2026) | Independent return-line calculation |
+| --- | --- |
+| NB, A 3,000 other + 27,000 foreign; B 20,000 other | Family reduction 761.60 / 806.74 |
+| NB line 90 | A uses 156.0776 / 153.5584 after 90% FTC; transfers 605.5224 / 653.1816 |
+| NB result | B tax 620.776 / 595.584; final 15.2536 / 0; 2026 excess 57.5976 is not refunded |
+| NL, A 3,000 other + 27,000 foreign; B 18,000 other | Family reduction 347.60 / 269.80 |
+| NL line 108 | A uses 164.7171 / 147.0822 after 90% FTC; transfers 182.8829 / 122.7178 |
+| NL result | B tax 603.171 / 426.822; final 420.2881 / 304.1042 |
+| PE, A 15,000 / 15,350 other; B 10,000 other + 10,000 foreign | Family reduction 82.50, A tax 33.25 |
+| PE line 101 | A transfers 49.25; B subtracts it on line 66 before FTC at half of line 88 |
+| PE result | B tax 508.25 / 475 before transfer; final 229.50 / 212.875 |
+| NL, A 40,000 foreign less 8,000 FHSA; B 18,000 other | Net 32,000 + 18,000; family reduction 27.60 / 0 |
+| NL cap and result | A FTC capped at 1,821.171 / 1,644.822; transfer 27.60 / 0; final 575.571 / 426.822 |
+
+NB/NL transfer couples use 40% withholding; PE couples use 15%. The former single PE foreign fixture is renamed
+`pe-reduction-before-foreign`: applied reduction 0 → 350, FTC 508.25 → 158.25, unused 350 → 0; total stays zero.
+The cap fixes the reported NL 2025 phantom transfer of 482.89275 to 27.60 (a 455.29275 overstatement).
+The full T2036 cap passes every unrelated locked baseline, so no transfer-only fallback or deferred cap fix is needed.
+
+## Deferred work and issue handoff
+
+Finding 5 is deliberately deferred: `src/ui/notes.ts` remains owned by another agent. Its child-claimant tooltip
+still needs the later correction. No UI file is changed in this round.
+
+Finding 8 needs the orchestrator to file a separate issue (this coder is prohibited from running `gh`):
+
+- **Title:** Model PE428 line 58230 amount for young children.
+- **Evidence:** cached PE428 2025 line 58230 and the young-children chart, plus `pe-guide-2025.txt` line 58230.
+  The form allows $100 per eligible month ($1,200 for a full year); the guide assigns it to the lower-net-income
+  spouse, with an election on equal income. This predates #92 and is not the reduction's $300-per-child component.
+- **Acceptance:** source the eligibility and child-counting rules; add a separate PE child program and appropriate
+  claimant behavior; verify interaction with PE's reduction-before-FTC order; add independent boundary and couple
+  goldens; explicitly mark any 2026 continuation provisional.
 
 ## Why existing values changed
 
-The initial partial handoff changed 542 shared golden values: **501 SK** claim/transfer consequences,
-**39 foreign-dividend marginal rates** from applying FTC before Atlantic reductions, and **two investment-tax
-values** where an investment-free comparison household can now transfer a family reduction. These were not
-542 new tax rules or 542 changed household tax totals; they include per-person credit bases and applied credits,
-tax subtotals and derived household/marginal results for the same correction.
-
-Completion adds the authorized **27 original other-income corrections** unchanged (22 SK values, five foreign
-marginal rates), plus **861** values from NS/NU claims and 2026 continuation. The final diff has **1,430 numeric
-leaves in 292 province/scenario results**, in only three fixtures: 681 in `2025.json`, 682 in `2026.json`, and
-67 in `other-income-original.json`. Grouped for review:
+The final diff against `origin/main` has **1,409 numeric leaves in 271 province/scenario results**, in only three
+existing fixtures: **671** in `2025.json`, **671** in `2026.json`, and **67** in `other-income-original.json`.
+Round 2 restores exactly **21 PE `margBy.fd` values** (10 in 2025, 11 in 2026) to their pre-PR values, reducing the
+previous 1,430 total by 21. There is no difference from the expected 1,409. Only SK, NU, NS, NB and NL retain
+changes in these existing fixtures; PE behavior is covered by the separate feature goldens. The leaves include
+per-person credits, tax subtotals and derived household/marginal results, not 1,409 separate household tax totals.
+Grouped for review:
 
 | Cause | Numeric leaves | What a reviewer should expect |
 | --- | --- | --- |
 | SK initial claim and Schedule 2 transfer | 523 | Child credits move to the lower taxable income spouse; unused bases transfer |
 | NU initial claim and Schedule 2 transfer | 292 | Under-6 credits move to the lower net income spouse; unused bases transfer |
 | NS child claimant and resulting interactions | 520 | Lower net income must claim; unused child credit cannot move to the spouse |
-| FTC order, isolated foreign marginal changes | 91 | Foreign bumps apply FTC before family reductions |
+| FTC order, isolated foreign marginal changes | 70 | NB/NL/NS foreign bumps apply FTC before family reductions |
 | Family-reduction transfer in investment-free comparison | 4 | Actual tax unchanged; better comparison tax raises reported investment tax |
 
 Most SK/NU rows only reallocate credits between people without changing the household total. SK case 39 raises
@@ -214,6 +273,33 @@ Some .0001 SK changes occur at binary rounding ties after reallocating the same 
 numeric leaf is listed below. Inputs, assertions, tolerances, unrelated values and all pre-2025 fixtures are
 unchanged. Corrections were applied by matching old values at specific paths, never by recapturing a year.
 
+The round 2 PE restorations below are **removed** from the final baseline diff. Each path is
+`tests/golden/<year>.json`, scenario id, `results.PE.margBy.fd`; restored values match `origin/main`.
+
+| Year | Scenario | Reviewed c510eb99 | Restored |
+| --- | --- | --- | --- |
+| 2025 | 3 | 0.3727 | 0.3823 |
+| 2025 | 6 | 0.7917 | 0.8162 |
+| 2025 | 7 | 0.7207 | 0.7266 |
+| 2025 | 10 | 0.6872 | 0.6928 |
+| 2025 | 26 | 0.3439 | 0.3599 |
+| 2025 | 40 | 0.6762 | 0.6872 |
+| 2025 | 97 | 0.4303 | 0.4363 |
+| 2025 | 101 | 0.7625 | 0.7675 |
+| 2025 | 121 | 0.8226 | 0.8449 |
+| 2025 | 124 | 0.3439 | 0.3599 |
+| 2026 | 3 | 0.3722 | 0.3824 |
+| 2026 | 6 | 0.7916 | 0.8165 |
+| 2026 | 7 | 0.7066 | 0.7129 |
+| 2026 | 10 | 0.6887 | 0.6949 |
+| 2026 | 26 | 0.3234 | 0.3393 |
+| 2026 | 40 | 0.656 | 0.6674 |
+| 2026 | 72 | 0.4962 | 0.4965 |
+| 2026 | 97 | 0.4372 | 0.4437 |
+| 2026 | 101 | 0.7629 | 0.7681 |
+| 2026 | 121 | 0.5975 | 0.6204 |
+| 2026 | 124 | 0.3234 | 0.3393 |
+
 ## Exact golden corrections
 
 `shared` means `tests/golden/<year>.json`; `other` means `tests/golden/other-income-original.json`.
@@ -222,17 +308,14 @@ unchanged. Corrections were applied by matching old values at specific paths, ne
 | Fixture | Year | Scenario | Province | Field | Before | After |
 | --- | --- | --- | --- | --- | --- | --- |
 | shared | 2025 | 3 | NB | margBy.fd | 0.376 | 0.3473 |
-| shared | 2025 | 3 | PE | margBy.fd | 0.3823 | 0.3727 |
 | shared | 2025 | 3 | NL | margBy.fd | 0.4989 | 0.465 |
 | shared | 2025 | 6 | NB | margBy.fd | 0.8253 | 0.8046 |
-| shared | 2025 | 6 | PE | margBy.fd | 0.8162 | 0.7917 |
 | shared | 2025 | 6 | NL | margBy.fd | 1.0201 | 1.0005 |
 | shared | 2025 | 7 | SK | p0.kidAmt | 38520 | 0 |
 | shared | 2025 | 7 | SK | p1.kidAmt | 0 | 38520 |
 | shared | 2025 | 7 | NU | p0.kidAmt | 2400 | 0 |
 | shared | 2025 | 7 | NU | p1.kidAmt | 0 | 2400 |
 | shared | 2025 | 7 | NB | margBy.fd | 0.7205 | 0.7125 |
-| shared | 2025 | 7 | PE | margBy.fd | 0.7266 | 0.7207 |
 | shared | 2025 | 7 | NS | total | -16792.0314 | -16581.0714 |
 | shared | 2025 | 7 | NS | prov | 4398.4182 | 4609.3782 |
 | shared | 2025 | 7 | NS | netTotal | -20651.0806 | -20440.1206 |
@@ -257,7 +340,6 @@ unchanged. Corrections were applied by matching old values at specific paths, ne
 | shared | 2025 | 10 | SK | p0.kidAmt | 15408 | 0 |
 | shared | 2025 | 10 | SK | p1.kidAmt | 0 | 15408 |
 | shared | 2025 | 10 | NB | margBy.fd | 0.6659 | 0.6394 |
-| shared | 2025 | 10 | PE | margBy.fd | 0.6928 | 0.6872 |
 | shared | 2025 | 10 | NL | margBy.fd | 0.8512 | 0.8261 |
 | shared | 2025 | 11 | SK | p0.kidAmt | 23112 | 0 |
 | shared | 2025 | 11 | SK | p1.kidAmt | 0 | 23112 |
@@ -278,7 +360,6 @@ unchanged. Corrections were applied by matching old values at specific paths, ne
 | shared | 2025 | 23 | NS | margBy.fd | 0.2753 | 0.2745 |
 | shared | 2025 | 24 | NB | margBy.fd | 0.3175 | 0.3107 |
 | shared | 2025 | 25 | NB | margBy.fd | 0.3175 | 0.3107 |
-| shared | 2025 | 26 | PE | margBy.fd | 0.3599 | 0.3439 |
 | shared | 2025 | 29 | SK | margBy.ed | -0.0141 | 0.1377 |
 | shared | 2025 | 29 | SK | margBy.nd | 0.1547 | 0.1837 |
 | shared | 2025 | 29 | SK | margBy.fd | 0.3872 | 0.4315 |
@@ -371,7 +452,6 @@ unchanged. Corrections were applied by matching old values at specific paths, ne
 | shared | 2025 | 39 | SK | p1.prov | 4358.7413 | 2483.549 |
 | shared | 2025 | 39 | SK | p1.total | 17968.428 | 16093.2357 |
 | shared | 2025 | 40 | NB | margBy.fd | 0.6805 | 0.6691 |
-| shared | 2025 | 40 | PE | margBy.fd | 0.6872 | 0.6762 |
 | shared | 2025 | 42 | SK | p0.pKid | 1617.84 | 0 |
 | shared | 2025 | 42 | SK | p0.kidAmt | 15408 | 0 |
 | shared | 2025 | 42 | SK | p0.prov | 11477.4691 | 13095.3091 |
@@ -605,7 +685,6 @@ unchanged. Corrections were applied by matching old values at specific paths, ne
 | shared | 2025 | 91 | NU | p1.kidAmt | 0 | 1200 |
 | shared | 2025 | 91 | NS | p0.kidAmt | 1200 | 0 |
 | shared | 2025 | 91 | NS | p1.kidAmt | 0 | 1200 |
-| shared | 2025 | 97 | PE | margBy.fd | 0.4363 | 0.4303 |
 | shared | 2025 | 98 | SK | total | -13060.0562 | -15595.801 |
 | shared | 2025 | 98 | SK | prov | 2535.7448 | 0 |
 | shared | 2025 | 98 | SK | netTotal | -16885.1618 | -19420.9066 |
@@ -660,7 +739,6 @@ unchanged. Corrections were applied by matching old values at specific paths, ne
 | shared | 2025 | 100 | NS | p0.kidAmt | 2400 | 0 |
 | shared | 2025 | 100 | NS | p1.kidAmt | 0 | 2400 |
 | shared | 2025 | 101 | NB | margBy.fd | 0.7462 | 0.7251 |
-| shared | 2025 | 101 | PE | margBy.fd | 0.7675 | 0.7625 |
 | shared | 2025 | 101 | NL | margBy.fd | 0.982 | 0.9607 |
 | shared | 2025 | 102 | SK | p0.pKid | 0 | 808.92 |
 | shared | 2025 | 102 | SK | p0.kidAmt | 0 | 7704 |
@@ -774,7 +852,6 @@ unchanged. Corrections were applied by matching old values at specific paths, ne
 | shared | 2025 | 119 | NS | p0.prov | 0 | 32.3117 |
 | shared | 2025 | 119 | NS | p0.total | 2068.75 | 2101.0617 |
 | shared | 2025 | 119 | NS | p1.kidAmt | 0 | 2400 |
-| shared | 2025 | 121 | PE | margBy.fd | 0.8449 | 0.8226 |
 | shared | 2025 | 123 | SK | total | 25143.2048 | 24256.9785 |
 | shared | 2025 | 123 | SK | prov | 886.2263 | 0 |
 | shared | 2025 | 123 | SK | netTotal | -3005.9009 | -3892.1271 |
@@ -793,7 +870,6 @@ unchanged. Corrections were applied by matching old values at specific paths, ne
 | shared | 2025 | 123 | SK | p0.prov | 886.2263 | 0 |
 | shared | 2025 | 123 | SK | p0.total | 4453.0075 | 3566.7813 |
 | shared | 2025 | 123 | SK | p1.kidAmt | 23112 | 0 |
-| shared | 2025 | 124 | PE | margBy.fd | 0.3599 | 0.3439 |
 | shared | 2025 | 126 | SK | prov | 13642.4893 | 13642.4894 |
 | shared | 2025 | 126 | SK | p0.pKid | 0 | 2426.76 |
 | shared | 2025 | 126 | SK | p0.kidAmt | 0 | 23112 |
@@ -903,17 +979,14 @@ unchanged. Corrections were applied by matching old values at specific paths, ne
 | shared | 2025 | 145 | NS | p1.prov | 3581.9547 | 3792.9147 |
 | shared | 2025 | 145 | NS | p1.total | 10716.9425 | 10927.9025 |
 | shared | 2026 | 3 | NB | margBy.fd | 0.3763 | 0.3465 |
-| shared | 2026 | 3 | PE | margBy.fd | 0.3824 | 0.3722 |
 | shared | 2026 | 3 | NL | margBy.fd | 0.4996 | 0.4702 |
 | shared | 2026 | 6 | NB | margBy.fd | 0.8253 | 0.8037 |
-| shared | 2026 | 6 | PE | margBy.fd | 0.8165 | 0.7916 |
 | shared | 2026 | 6 | NL | margBy.fd | 0.9672 | 0.9493 |
 | shared | 2026 | 7 | SK | p0.kidAmt | 41790 | 0 |
 | shared | 2026 | 7 | SK | p1.kidAmt | 0 | 41790 |
 | shared | 2026 | 7 | NU | p0.kidAmt | 2400 | 0 |
 | shared | 2026 | 7 | NU | p1.kidAmt | 0 | 2400 |
 | shared | 2026 | 7 | NB | margBy.fd | 0.7273 | 0.7186 |
-| shared | 2026 | 7 | PE | margBy.fd | 0.7129 | 0.7066 |
 | shared | 2026 | 7 | NS | total | -18157.1804 | -17946.2204 |
 | shared | 2026 | 7 | NS | prov | 4335.8344 | 4546.7944 |
 | shared | 2026 | 7 | NS | netTotal | -21786.7106 | -21575.7506 |
@@ -941,7 +1014,6 @@ unchanged. Corrections were applied by matching old values at specific paths, ne
 | shared | 2026 | 10 | SK | p0.kidAmt | 16716 | 0 |
 | shared | 2026 | 10 | SK | p1.kidAmt | 0 | 16716 |
 | shared | 2026 | 10 | NB | margBy.fd | 0.6675 | 0.6397 |
-| shared | 2026 | 10 | PE | margBy.fd | 0.6949 | 0.6887 |
 | shared | 2026 | 10 | NL | margBy.fd | 0.8533 | 0.8304 |
 | shared | 2026 | 11 | SK | p0.kidAmt | 25074 | 0 |
 | shared | 2026 | 11 | SK | p1.kidAmt | 0 | 25074 |
@@ -962,7 +1034,6 @@ unchanged. Corrections were applied by matching old values at specific paths, ne
 | shared | 2026 | 23 | NS | margBy.fd | 0.2764 | 0.2756 |
 | shared | 2026 | 24 | NB | margBy.fd | 0.3175 | 0.3101 |
 | shared | 2026 | 25 | NB | margBy.fd | 0.3175 | 0.3101 |
-| shared | 2026 | 26 | PE | margBy.fd | 0.3393 | 0.3234 |
 | shared | 2026 | 29 | SK | margBy.ed | -0.021 | 0.1308 |
 | shared | 2026 | 29 | SK | margBy.nd | 0.1489 | 0.1779 |
 | shared | 2026 | 29 | SK | margBy.fd | 0.3884 | 0.4302 |
@@ -1045,7 +1116,6 @@ unchanged. Corrections were applied by matching old values at specific paths, ne
 | shared | 2026 | 39 | SK | p1.prov | 4270.2539 | 2235.8747 |
 | shared | 2026 | 39 | SK | p1.total | 17634.713 | 15600.3339 |
 | shared | 2026 | 40 | NB | margBy.fd | 0.6813 | 0.6691 |
-| shared | 2026 | 40 | PE | margBy.fd | 0.6674 | 0.656 |
 | shared | 2026 | 42 | SK | p0.pKid | 1755.18 | 0 |
 | shared | 2026 | 42 | SK | p0.kidAmt | 16716 | 0 |
 | shared | 2026 | 42 | SK | p0.prov | 11196.7354 | 12951.9154 |
@@ -1195,7 +1265,6 @@ unchanged. Corrections were applied by matching old values at specific paths, ne
 | shared | 2026 | 70 | NS | p1.prov | 188.0401 | 82.5601 |
 | shared | 2026 | 70 | NS | p1.total | 1116.7901 | 1011.3101 |
 | shared | 2026 | 72 | NB | margBy.fd | 0.4913 | 0.4714 |
-| shared | 2026 | 72 | PE | margBy.fd | 0.4965 | 0.4962 |
 | shared | 2026 | 79 | SK | p0.kidAmt | 25074 | 0 |
 | shared | 2026 | 79 | SK | p1.kidAmt | 0 | 25074 |
 | shared | 2026 | 79 | NS | margBy.fd | 0.2827 | 0.2709 |
@@ -1292,7 +1361,6 @@ unchanged. Corrections were applied by matching old values at specific paths, ne
 | shared | 2026 | 91 | NU | p1.kidAmt | 0 | 1200 |
 | shared | 2026 | 91 | NS | p0.kidAmt | 1200 | 0 |
 | shared | 2026 | 91 | NS | p1.kidAmt | 0 | 1200 |
-| shared | 2026 | 97 | PE | margBy.fd | 0.4437 | 0.4372 |
 | shared | 2026 | 98 | SK | total | -13336.4446 | -15779.2329 |
 | shared | 2026 | 98 | SK | prov | 2442.7882 | 0 |
 | shared | 2026 | 98 | SK | netTotal | -17111.5843 | -19554.3726 |
@@ -1347,7 +1415,6 @@ unchanged. Corrections were applied by matching old values at specific paths, ne
 | shared | 2026 | 100 | NS | p0.kidAmt | 2400 | 0 |
 | shared | 2026 | 100 | NS | p1.kidAmt | 0 | 2400 |
 | shared | 2026 | 101 | NB | margBy.fd | 0.7466 | 0.7247 |
-| shared | 2026 | 101 | PE | margBy.fd | 0.7681 | 0.7629 |
 | shared | 2026 | 101 | NL | margBy.fd | 0.9351 | 0.9159 |
 | shared | 2026 | 102 | SK | margBy.fd | 0.3658 | 0.362 |
 | shared | 2026 | 102 | SK | p0.pKid | 0 | 877.59 |
@@ -1453,7 +1520,6 @@ unchanged. Corrections were applied by matching old values at specific paths, ne
 | shared | 2026 | 119 | NS | p0.kidAmt | 2400 | 0 |
 | shared | 2026 | 119 | NS | p0.lowRed | 146.815 | 357.775 |
 | shared | 2026 | 119 | NS | p1.kidAmt | 0 | 2400 |
-| shared | 2026 | 121 | PE | margBy.fd | 0.6204 | 0.5975 |
 | shared | 2026 | 123 | SK | total | 24248.695 | 23455.6037 |
 | shared | 2026 | 123 | SK | prov | 793.0912 | 0 |
 | shared | 2026 | 123 | SK | netTotal | -3850.4448 | -4643.536 |
@@ -1472,7 +1538,6 @@ unchanged. Corrections were applied by matching old values at specific paths, ne
 | shared | 2026 | 123 | SK | p0.prov | 793.0912 | 0 |
 | shared | 2026 | 123 | SK | p0.total | 4256.2162 | 3463.125 |
 | shared | 2026 | 123 | SK | p1.kidAmt | 25074 | 0 |
-| shared | 2026 | 124 | PE | margBy.fd | 0.3393 | 0.3234 |
 | shared | 2026 | 126 | SK | prov | 13178.3396 | 13178.3397 |
 | shared | 2026 | 126 | SK | netTotal | 36880.6613 | 36880.6614 |
 | shared | 2026 | 126 | SK | invTax | 17339.4287 | 17339.4288 |
@@ -1654,8 +1719,12 @@ unchanged. Corrections were applied by matching old values at specific paths, ne
 
 ## Validation
 
-`fnm exec --using=26 npm run check` passes lint, typecheck, all **1,123 tests** (zero failures) and the build,
-including the independent feature/return-line tests and locked 2019–2024 golden suites. It stops at browser
-launch: the sandbox denies Chromium's macOS `MachPortRendezvousServer` registration (`bootstrap_check_in`,
-error 1100). The orchestrator must run browser smoke outside the sandbox before merging.
-No installation, git write, commit, push or network fetch was attempted by this coder.
+`fnm exec --using=26 npm run check` passed with escalation: lint, typecheck, all **1,143 tests** (zero failures),
+build and Chromium smoke. Browser coverage: **24 pages, 219 states, 36 contrast scans**, including desktop,
+430 px and 375 px in light and dark mode. The targeted claimant suite passes all **88 tests**.
+`npm run format`, `git diff --check` and the Markdown checker also pass.
+
+An exact path comparison confirms that this round restores only the 21 PE foreign marginal values in the
+existing annual goldens. Among the original 66 feature cases, only PE's name and the three documented expected
+values change; 16 cases are added. `src/ui/notes.ts` is unchanged. No installation, commit, push, `gh` command
+or source fetch was attempted by this coder. All changes remain uncommitted for the orchestrator.

@@ -10,7 +10,7 @@ dividendTaxCredit: {eligible: 0.11, nonEligible: 0.02519}
 spouseAmount: {max: 20381, threshold: 2038}
 # Provisional continuation of the verified 2025 return rules pending 2026 CRA forms.
 claimants:
-  childAmount: {claimant: lower-taxable-income, transfer: sk-s2, estimated: true}
+  childAmount: {claimant: lower-taxable-income, transfer: schedule-2, estimated: true}
 childAmount: {perChild: 8358, ages: all}
 salesTax: {rate: 0.11, label: "5% GST + 6% PST"}
 propertyTax: {rate: 0.0134, city: Saskatoon}

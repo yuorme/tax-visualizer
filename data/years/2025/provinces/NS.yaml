@@ -12,7 +12,7 @@ dividendTaxCredit: {eligible: 0.0885, nonEligible: 0.015}
 spouseAmount: {max: 11744, threshold: 874}     # Form NS428: base 12,618 less the greater of 874 and the spouse's income
 claimants:
   childAmount: {claimant: lower-net-income, transfer: none}
-  lowIncomeReduction: {claimant: minimum-household-tax, transferUnused: false}
+  lowIncomeReduction: {claimant: minimum-household-tax, transferUnused: false, order: after-foreign-tax-credit}
 childAmount: {perChild: 1200, ages: under6}    # $100 a month
 lowIncomeReduction:
   program: family-low-income-reduction

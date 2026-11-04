@@ -583,7 +583,7 @@ export const provinceSchema = z
         childAmount: z
           .object({
             claimant: z.enum(["lower-taxable-income", "lower-net-income"]),
-            transfer: z.enum(["sk-s2", "nu-s2", "none"]),
+            transfer: z.enum(["schedule-2", "none"]),
             estimated: z.boolean().optional(),
           })
           .optional(),
@@ -591,6 +591,7 @@ export const provinceSchema = z
           .object({
             claimant: z.literal("minimum-household-tax"),
             transferUnused: z.boolean(),
+            order: z.enum(["before-foreign-tax-credit", "after-foreign-tax-credit"]),
             estimated: z.boolean().optional(),
           })
           .optional(),

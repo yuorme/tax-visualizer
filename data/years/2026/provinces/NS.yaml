@@ -13,7 +13,7 @@ spouseAmount: {max: 11932, threshold: 888}
 # Provisional continuation of the verified 2025 return rules pending 2026 CRA forms.
 claimants:
   childAmount: {claimant: lower-net-income, transfer: none, estimated: true}
-  lowIncomeReduction: {claimant: minimum-household-tax, transferUnused: false, estimated: true}
+  lowIncomeReduction: {claimant: minimum-household-tax, transferUnused: false, order: after-foreign-tax-credit, estimated: true}
 childAmount: {perChild: 1200, ages: under6}
 lowIncomeReduction:
   program: family-low-income-reduction

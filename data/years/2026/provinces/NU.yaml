@@ -12,7 +12,7 @@ dividendTaxCredit: {eligible: 0.0551, nonEligible: 0.0261}
 spouseAmount: {max: 19659, threshold: 0}
 # Provisional continuation of the verified 2025 return rules pending 2026 CRA forms.
 claimants:
-  childAmount: {claimant: lower-net-income, transfer: nu-s2, estimated: true}
+  childAmount: {claimant: lower-net-income, transfer: schedule-2, estimated: true}
 childAmount: {perChild: 1200, ages: under6}
 payroll: {employeeTax: 0.02}
 salesTax: {rate: 0.05, label: "5% GST"}
