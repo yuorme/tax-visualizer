@@ -232,7 +232,9 @@ Marked `estimated: true` in the data files where they appear:
   child age cutoff, claimant restrictions and credit ordering provisionally continue 2025. These are not verified
   2026 filing rules; CRA's 2026 return forms publish in January 2027. The worksheet's "born in 2004" child cutoff
   is inconsistent with the Act's eligibility condition and the 2025 filing guide; it is not used as filing evidence.
-- NWT and Newfoundland and Labrador child benefits: straight-line taper between published start and end incomes.
+- Newfoundland and Labrador child benefit: estimated straight-line taper between published start and end incomes.
+  NWT's separate age-group amounts and linear reduction are published by NWT Finance; CRA's T4114-26 confirms
+  continuity for July 2026 to June 2027 (see [verification](verification/116-nwt-child-benefit.md)).
 - Alberta Child and Family Benefit base rates.
 - New Brunswick low-income reduction and Newfoundland and Labrador family threshold (2025 indexed by 2%).
 - Property tax rates for Whitehorse, Yellowknife and Iqaluit (rough 1%).

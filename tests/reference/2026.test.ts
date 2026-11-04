@@ -267,3 +267,17 @@ test(`${year} starting fuel efficiency is NRCan's 2023 on-road average for gasol
   assert.equal(d.efficiency, Math.round(((cars * 7.7 + trucks * 10.0) / (cars + trucks)) * 10) / 10);
   assert.equal(d.estimated, true);
 });
+
+// NWT Finance fact sheet p. 2, exact annual C + D tables; T4114-26 pp. 21–22 confirms
+// the same age groups, monthly tables and income boundaries for July 2026 to June 2027.
+// These are independent calculations from published inputs, not worked examples printed by CRA.
+test("2026 NWT mixed-age annual entitlement matches the published separate tables", () => {
+  const benefit = (income: number, kids: number, under6: number) =>
+    compute(y, prov("NT"), single(0, { people: [{ ...blank(0), fd: income }], whRate: 0, kids, under6 })).provBen;
+  assert.equal(benefit(30000, 3, 2), 2119); // C(2) 1467 + D(1) 652
+  assert.equal(benefit(55000, 3, 2), 1059.5); // (1467 + 652) × (80000 − 55000) / 50000
+  assert.equal(benefit(55000, 3, 1), 994.5); // (815 + 1174) / 2; the age counts cannot be interchanged
+  assert.equal(benefit(30000, 6, 5), 3464); // 2445 + 367 + 652
+  assert.equal(benefit(30000, 6, 1), 3064); // 815 + 1956 + 293
+  assert.equal(benefit(80000, 3, 2), 0);
+});
