@@ -120,26 +120,17 @@ The minimal reproduction failed in both years before the YAML correction: actual
 $1,059.50. The same command passes after correction.
 
 - `fnm exec --using=26 npm run format`: passed.
-- `fnm exec --using=26 npm run check`: passed; lint, typecheck, 1,379 tests, build and Chromium smoke checks.
+- `fnm exec --using=26 npm run check`: passed; lint, typecheck, 1,389 tests, build and Chromium smoke checks.
 - Browser smoke: 43 pages, 261 states, 40 contrast scans; desktop, 430 px and 375 px, light and dark.
   All legacy comparisons passed without changing any guarded NWT smoke cells.
-- `fnm exec --using=26 npm run compare -- origin/main`: six runs, five steps each. Exit 1 reports the single
-  intended difference: the 2026 source list gains the CRA continuity publication and NWT annual formula source.
+- `fnm exec --using=26 npm run compare -- origin/main`: six runs, five steps each. Exit 1 reports intended changes
+  to the child-benefit note and the 2026 source list, which gains the CRA continuity and NWT annual formula sources.
   Control state and all displayed scenario results match; these existing steps round away the small NWT changes.
 - Structural comparison with HEAD: 290 permitted NT leaf changes in 2025, 289 in 2026 and 29 per year in the
   original other-income fixture. All unrelated fields, provinces, years, feature fixtures and inputs are unchanged.
 
-## Outstanding rendered wording
-
-The assigned file list excludes `src/ui/notes.ts`. Its Newfoundland branch hard-codes that the NWT reduction rate
-is unpublished, regardless of the NWT program and estimate flag. The required wording correction therefore needs
-an ownership extension, requested during this task. The source list and child tooltip already render the correct
-year, but the footer caveat remains inaccurate until that correction is applied.
-
-A narrow patch was prepared outside the checkout as `116-notes.patch` in the task's temporary directory. It gives
-NWT its own data-driven explanation, keeps Newfoundland's estimated taper and Nunavut's rate-source qualifier,
-and removes the incorrect shared caveat. Isolated rendering checks of the proposed module pass for 2019–2026,
-including changed income thresholds and the estimate flag. This patch has not been applied to the repository.
+The NWT note now describes the selected program, income thresholds and estimate status while preserving
+Newfoundland’s estimated taper and Nunavut’s rate-source qualifier.
 
 ## Exact before/after inventory
 
