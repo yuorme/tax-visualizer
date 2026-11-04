@@ -20,7 +20,17 @@ export async function checkManitobaFamilyLedger(page) {
     el.value = "2";
     el.dispatchEvent(new Event("input", { bubbles: true }));
   });
-  for (const year of [2025, 2026, 2024]) {
+  // Independently calculated MB428 values: verification/166-manitoba-family-benefit-history.md.
+  for (const [year, tax] of [
+    [2019, 1785],
+    [2020, 1748],
+    [2021, 1731],
+    [2022, 1695],
+    [2023, 1123],
+    [2024, 978],
+    [2025, 978],
+    [2026, 978],
+  ]) {
     await page.selectOption("#tax-year", String(year));
     await settle(page);
     const rows = await page.$$eval("#detail-body .ledger", ledgers => {
@@ -28,16 +38,12 @@ export async function checkManitobaFamilyLedger(page) {
       return [...mb.querySelector("table").rows].map(r => [...r.cells].map(c => c.textContent.trim()));
     });
     const family = rows.find(r => r[0] === "Less family tax benefit");
-    if (year === 2024) {
-      assert.equal(family, undefined, "historical year must not advertise the correction");
-    } else {
-      assert.ok(family, `${year}: missing family benefit ledger row`);
-      assert.match(family.at(-1), /652/, "example's $651.672 credit rounds to $652");
-      assert.match(rows.at(-1).at(-1), /978/, "example's $977.616 Manitoba tax rounds to $978");
-      const familyIndex = rows.indexOf(family);
-      const dividendIndex = rows.findIndex(r => r[0] === "Less dividend tax credit");
-      assert.ok(dividendIndex === -1 || familyIndex < dividendIndex);
-    }
+    assert.ok(family, `${year}: missing family benefit ledger row`);
+    assert.match(family.at(-1), /652/, "example's $651.672 credit rounds to $652");
+    assert.equal(rows.at(-1).at(-1), `$${tax.toLocaleString("en-CA")}`, `${year}: independent MB428 tax`);
+    const familyIndex = rows.indexOf(family);
+    const dividendIndex = rows.findIndex(r => r[0] === "Less dividend tax credit");
+    assert.ok(dividendIndex === -1 || familyIndex < dividendIndex);
     assert.equal(
       await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth),
       false,

@@ -1,17 +1,85 @@
 // Independent MB428 / MB428-A worksheet. Imports only input TYPES, never engine functions or YAML.
-// MB constants: cached Act s. 4.6(16.1)–(16.2), 2025 MB428/MB428-A/guide; 2026 TD1MB(-WS) and T4127.
-// Federal 2025 T1 / 2026 T4127; T2036 lines 3–5 for FTC. See verification/145-manitoba-family-benefit.md.
+// MB constants: cached 2019–2025 MB428/MB428-A/guides; 2026 TD1MB(-WS) and T4127.
+// Federal 2019–2024 T4127, 2025 T1 / 2026 T4127; T2036 FTC. See verification/145 and 166 notes.
 import assert from "node:assert/strict";
 import type { Household, Person } from "../src/engine/types.ts";
 
 const pos = (n: number) => Math.max(0, n);
 const sum = (ns: number[]) => ns.reduce((a, b) => a + b, 0);
 const federal = {
+  2019: {
+    thresholds: [47630, 95259, 147667, 210371],
+    first: 0.15,
+    bpa: [12069, 12069],
+    employment: 1222,
+    ympe: 57400,
+    yampe: 57400,
+    enh1: 0.0015,
+    eiMax: 53100,
+    eiRate: 0.0162,
+  },
+  2020: {
+    thresholds: [48535, 97069, 150473, 214368],
+    first: 0.15,
+    bpa: [13229, 12298],
+    employment: 1245,
+    ympe: 58700,
+    yampe: 58700,
+    enh1: 0.003,
+    eiMax: 54200,
+    eiRate: 0.0158,
+  },
+  2021: {
+    thresholds: [49020, 98040, 151978, 216511],
+    first: 0.15,
+    bpa: [13808, 12421],
+    employment: 1257,
+    ympe: 61600,
+    yampe: 61600,
+    enh1: 0.005,
+    eiMax: 56300,
+    eiRate: 0.0158,
+  },
+  2022: {
+    thresholds: [50197, 100392, 155625, 221708],
+    first: 0.15,
+    bpa: [14398, 12719],
+    employment: 1287,
+    ympe: 64900,
+    yampe: 64900,
+    enh1: 0.0075,
+    eiMax: 60300,
+    eiRate: 0.0158,
+  },
+  2023: {
+    thresholds: [53359, 106717, 165430, 235675],
+    first: 0.15,
+    bpa: [15000, 13521],
+    employment: 1368,
+    ympe: 66600,
+    yampe: 66600,
+    enh1: 0.01,
+    eiMax: 61500,
+    eiRate: 0.0163,
+  },
+  2024: {
+    thresholds: [55867, 111733, 173205, 246752],
+    first: 0.15,
+    bpa: [15705, 14156],
+    employment: 1433,
+    ympe: 68500,
+    yampe: 73200,
+    enh1: 0.01,
+    eiMax: 63200,
+    eiRate: 0.0166,
+  },
+
   2025: {
     thresholds: [57375, 114750, 177882, 253414],
     first: 0.145,
     bpa: [16129, 14538],
     employment: 1471,
+    enh1: 0.01,
     ympe: 71300,
     yampe: 81200,
     eiMax: 65700,
@@ -22,11 +90,24 @@ const federal = {
     first: 0.14,
     bpa: [16452, 14829],
     employment: 1501,
+    enh1: 0.01,
     ympe: 74600,
     yampe: 85000,
     eiMax: 68900,
     eiRate: 0.0163,
   },
+};
+
+// Each year's cached MB428; numbering changed in 2020, ordinary calculation did not.
+const manitoba = {
+  2019: { first: 32670, second: 70610, bpa: 9626 },
+  2020: { first: 33389, second: 72164, bpa: 9838 },
+  2021: { first: 33723, second: 72885, bpa: 9936 },
+  2022: { first: 34431, second: 74416, bpa: 10145 },
+  2023: { first: 36842, second: 79625, bpa: 15000 },
+  2024: { first: 47000, second: 100000, bpa: 15780 },
+  2025: { first: 47000, second: 100000, bpa: 15780 },
+  2026: { first: 47000, second: 100000, bpa: 15780 },
 };
 
 export type ManitobaYear = keyof typeof federal;
@@ -44,6 +125,7 @@ export function mbForms(
   } = {},
 ) {
   const f = federal[year];
+  const mb = manitoba[year];
   const people: Person[] = [...hh.people];
   if (people.length === 1 && hh.adults >= 2) people.push({ ord: 0, oth: 0, cg: 0, ed: 0, nd: 0, fd: 0, ded: 0 });
   assert.ok(!hh.childcare || options.childcareClaims, "supply independently checked childcare claims");
@@ -51,7 +133,7 @@ export function mbForms(
     const earnings = pos(x.ord);
     const pensionable = pos(Math.min(earnings, f.ympe) - 3500);
     const cpp = pensionable * 0.0495;
-    const enhanced = pensionable * 0.01 + pos(Math.min(earnings, f.yampe) - f.ympe) * 0.04;
+    const enhanced = pensionable * f.enh1 + pos(Math.min(earnings, f.yampe) - f.ympe) * 0.04;
     const ei = Math.min(earnings, f.eiMax) * f.eiRate;
     const net = pos(
       x.ord +
@@ -92,8 +174,8 @@ export function mbForms(
       const supports = hh.useBpa && ((couple && i === supporter) || (single && minors > 0));
       const dependentNet = couple ? bases[1 - i].net : 0;
       // MB428 Part A, line 8, independently expressed as marginal rate increments.
-      const line8 = net * 0.108 + pos(net - 47000) * 0.0195 + pos(net - 100000) * 0.0465;
-      const line9 = hh.useBpa ? 15780 * (1 - Math.min(1, pos(net - 200000) / 200000)) : 0;
+      const line8 = net * 0.108 + pos(net - mb.first) * 0.0195 + pos(net - mb.second) * 0.0465;
+      const line9 = hh.useBpa ? mb.bpa * (year >= 2025 ? 1 - Math.min(1, pos(net - 200000) / 200000) : 1) : 0;
       const dependent = supports ? pos(9134 - dependentNet) : 0; // line 13 or 16, never both
       const line28 = cpp + ei;
       // MB428-A lines 1–3, 9, 10–12. No senior or disability claims in these specimens.

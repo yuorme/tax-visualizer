@@ -1,0 +1,5472 @@
+{
+  "source": "Independent year-specific MB428-A/MB428 calculations; no engine imports. See docs/verification/166-manitoba-family-benefit-history.md.",
+  "defaults": {
+    "active": 0,
+    "spouse": true,
+    "adults": 1,
+    "kids": 0,
+    "under6": 0,
+    "useBpa": true,
+    "whRate": 0.15,
+    "useCredits": false,
+    "homeValue": 0,
+    "rent": 0,
+    "monthlySpending": 0
+  },
+  "cases": [
+    {
+      "id": "2019-example",
+      "year": 2019,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "oth": 40000
+          },
+          {
+            "oth": 0
+          }
+        ]
+      },
+      "expected": {
+        "prov": 1785.183,
+        "list.0.breakdown.familyTaxBenefit.base": 6034,
+        "list.0.breakdown.familyTaxBenefit.calculated": 651.672,
+        "list.0.breakdown.familyTaxBenefit.applied": 651.672,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 1785.183,
+        "list.1.breakdown.familyTaxBenefit.base": 2065,
+        "list.1.breakdown.familyTaxBenefit.calculated": 223.02,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0
+      }
+    },
+    {
+      "id": "2019-zero-capacity",
+      "year": 2019,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "oth": 10000
+          },
+          {
+            "oth": 0
+          }
+        ]
+      },
+      "expected": {
+        "prov": 0,
+        "list.0.breakdown.familyTaxBenefit.base": 8734,
+        "list.0.breakdown.familyTaxBenefit.calculated": 943.272,
+        "list.0.breakdown.familyTaxBenefit.applied": 0,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 0,
+        "list.1.breakdown.familyTaxBenefit.base": 2065,
+        "list.1.breakdown.familyTaxBenefit.calculated": 223.02,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0
+      }
+    },
+    {
+      "id": "2019-capped-capacity",
+      "year": 2019,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "oth": 26000
+          },
+          {
+            "oth": 0
+          }
+        ]
+      },
+      "expected": {
+        "prov": 0,
+        "list.0.breakdown.familyTaxBenefit.base": 7294,
+        "list.0.breakdown.familyTaxBenefit.calculated": 787.752,
+        "list.0.breakdown.familyTaxBenefit.applied": 781.92,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 0,
+        "list.1.breakdown.familyTaxBenefit.base": 2065,
+        "list.1.breakdown.familyTaxBenefit.calculated": 223.02,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0
+      }
+    },
+    {
+      "id": "2019-basic-capped",
+      "year": 2019,
+      "household": {
+        "people": [
+          {
+            "oth": 16000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 620.892,
+        "list.0.breakdown.familyTaxBenefit.base": 625,
+        "list.0.breakdown.familyTaxBenefit.calculated": 67.5,
+        "list.0.breakdown.familyTaxBenefit.applied": 67.5,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 620.892
+      }
+    },
+    {
+      "id": "2019-basic-taper",
+      "year": 2019,
+      "household": {
+        "people": [
+          {
+            "oth": 20000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 1091.772,
+        "list.0.breakdown.familyTaxBenefit.base": 265,
+        "list.0.breakdown.familyTaxBenefit.calculated": 28.62,
+        "list.0.breakdown.familyTaxBenefit.applied": 28.62,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 1091.772
+      }
+    },
+    {
+      "id": "2019-basic-taper-last-dollar",
+      "year": 2019,
+      "household": {
+        "people": [
+          {
+            "oth": 22944
+          }
+        ]
+      },
+      "expected": {
+        "prov": 1438.3397,
+        "list.0.breakdown.familyTaxBenefit.base": 0.04,
+        "list.0.breakdown.familyTaxBenefit.calculated": 0.0043,
+        "list.0.breakdown.familyTaxBenefit.applied": 0.0043,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 1438.3397
+      }
+    },
+    {
+      "id": "2019-basic-taper-exhausted",
+      "year": 2019,
+      "household": {
+        "people": [
+          {
+            "oth": 22945
+          }
+        ]
+      },
+      "expected": {
+        "prov": 1438.452,
+        "list.0.breakdown.familyTaxBenefit.base": 0,
+        "list.0.breakdown.familyTaxBenefit.calculated": 0,
+        "list.0.breakdown.familyTaxBenefit.applied": 0,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 1438.452
+      }
+    },
+    {
+      "id": "2019-single-parent-one",
+      "year": 2019,
+      "household": {
+        "kids": 1,
+        "people": [
+          {
+            "oth": 40000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 2379.615,
+        "list.0.breakdown.familyTaxBenefit.base": 530,
+        "list.0.breakdown.familyTaxBenefit.calculated": 57.24,
+        "list.0.breakdown.familyTaxBenefit.applied": 57.24,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 2379.615
+      }
+    },
+    {
+      "id": "2019-single-parent-two",
+      "year": 2019,
+      "household": {
+        "kids": 2,
+        "people": [
+          {
+            "oth": 40000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 2082.399,
+        "list.0.breakdown.familyTaxBenefit.base": 3282,
+        "list.0.breakdown.familyTaxBenefit.calculated": 354.456,
+        "list.0.breakdown.familyTaxBenefit.applied": 354.456,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 2082.399
+      }
+    },
+    {
+      "id": "2019-spouse-below-limit",
+      "year": 2019,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "oth": 40000
+          },
+          {
+            "oth": 9133.99
+          }
+        ]
+      },
+      "expected": {
+        "prov": 2771.6539,
+        "list.0.breakdown.familyTaxBenefit.base": 6034,
+        "list.0.breakdown.familyTaxBenefit.calculated": 651.672,
+        "list.0.breakdown.familyTaxBenefit.applied": 651.672,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 2771.6539,
+        "list.1.breakdown.familyTaxBenefit.base": 1242.9409,
+        "list.1.breakdown.familyTaxBenefit.calculated": 134.2376,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0
+      }
+    },
+    {
+      "id": "2019-spouse-at-limit",
+      "year": 2019,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "oth": 40000
+          },
+          {
+            "oth": 9134
+          }
+        ]
+      },
+      "expected": {
+        "prov": 2994.675,
+        "list.0.breakdown.familyTaxBenefit.base": 3969,
+        "list.0.breakdown.familyTaxBenefit.calculated": 428.652,
+        "list.0.breakdown.familyTaxBenefit.applied": 428.652,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 2994.675,
+        "list.1.breakdown.familyTaxBenefit.base": 1242.94,
+        "list.1.breakdown.familyTaxBenefit.calculated": 134.2375,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0
+      }
+    },
+    {
+      "id": "2019-higher-income-child-claim",
+      "year": 2019,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "oth": 50000
+          },
+          {
+            "oth": 20000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 5458.647,
+        "list.0.breakdown.familyTaxBenefit.base": 3069,
+        "list.0.breakdown.familyTaxBenefit.calculated": 331.452,
+        "list.0.breakdown.familyTaxBenefit.applied": 331.452,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 4366.875,
+        "list.1.breakdown.familyTaxBenefit.base": 265,
+        "list.1.breakdown.familyTaxBenefit.calculated": 28.62,
+        "list.1.breakdown.familyTaxBenefit.applied": 28.62,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 1091.772
+      }
+    },
+    {
+      "id": "2019-net-income-not-cash",
+      "year": 2019,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "oth": 50000,
+            "ded": 20000
+          },
+          {
+            "oth": 40000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 5195.067,
+        "list.0.breakdown.familyTaxBenefit.base": 0,
+        "list.0.breakdown.familyTaxBenefit.calculated": 0,
+        "list.0.breakdown.familyTaxBenefit.applied": 0,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 2200.392,
+        "list.1.breakdown.familyTaxBenefit.base": 3969,
+        "list.1.breakdown.familyTaxBenefit.calculated": 428.652,
+        "list.1.breakdown.familyTaxBenefit.applied": 428.652,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 2994.675
+      }
+    },
+    {
+      "id": "2019-dividend-gross-up-claimant",
+      "year": 2019,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "ed": 30000
+          },
+          {
+            "oth": 40000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 3423.327,
+        "list.0.breakdown.familyTaxBenefit.base": 3843,
+        "list.0.breakdown.familyTaxBenefit.calculated": 415.044,
+        "list.0.breakdown.familyTaxBenefit.applied": 415.044,
+        "list.0.pDtc": 3186.783,
+        "list.0.pFtc": 0,
+        "list.0.prov": 0,
+        "list.1.breakdown.familyTaxBenefit.base": 0,
+        "list.1.breakdown.familyTaxBenefit.calculated": 0,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 3423.327
+      }
+    },
+    {
+      "id": "2019-mixed-dividends-foreign",
+      "year": 2019,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "oth": 20000,
+            "ed": 5000,
+            "fd": 10000
+          },
+          {
+            "oth": 0
+          }
+        ],
+        "whRate": 0.4
+      },
+      "expected": {
+        "prov": 588.8847,
+        "list.0.breakdown.familyTaxBenefit.base": 6313,
+        "list.0.breakdown.familyTaxBenefit.calculated": 681.804,
+        "list.0.breakdown.familyTaxBenefit.applied": 681.804,
+        "list.0.pDtc": 552,
+        "list.0.pFtc": 218.9163,
+        "list.0.prov": 588.8847,
+        "list.1.breakdown.familyTaxBenefit.base": 2065,
+        "list.1.breakdown.familyTaxBenefit.calculated": 223.02,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0
+      }
+    },
+    {
+      "id": "2019-dividend-credit-capped",
+      "year": 2019,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "ed": 22000
+          },
+          {
+            "oth": 0
+          }
+        ]
+      },
+      "expected": {
+        "prov": 0,
+        "list.0.breakdown.familyTaxBenefit.base": 6901.6,
+        "list.0.breakdown.familyTaxBenefit.calculated": 745.3728,
+        "list.0.breakdown.familyTaxBenefit.applied": 745.3728,
+        "list.0.pDtc": 507.4272,
+        "list.0.pFtc": 0,
+        "list.0.prov": 0,
+        "list.1.breakdown.familyTaxBenefit.base": 2065,
+        "list.1.breakdown.familyTaxBenefit.calculated": 223.02,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0
+      }
+    },
+    {
+      "id": "2019-personal-credits-off",
+      "year": 2019,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "oth": 40000
+          },
+          {
+            "oth": 0
+          }
+        ],
+        "useBpa": false
+      },
+      "expected": {
+        "prov": 4462.935,
+        "list.0.breakdown.familyTaxBenefit.base": 0,
+        "list.0.breakdown.familyTaxBenefit.calculated": 0,
+        "list.0.breakdown.familyTaxBenefit.applied": 0,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 4462.935,
+        "list.1.breakdown.familyTaxBenefit.base": 0,
+        "list.1.breakdown.familyTaxBenefit.calculated": 0,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0
+      }
+    },
+    {
+      "id": "2019-refund-switch-independent",
+      "year": 2019,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "oth": 40000
+          },
+          {
+            "oth": 0
+          }
+        ],
+        "useCredits": true
+      },
+      "expected": {
+        "prov": 1785.183,
+        "list.0.breakdown.familyTaxBenefit.base": 6034,
+        "list.0.breakdown.familyTaxBenefit.calculated": 651.672,
+        "list.0.breakdown.familyTaxBenefit.applied": 651.672,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 1785.183,
+        "list.1.breakdown.familyTaxBenefit.base": 2065,
+        "list.1.breakdown.familyTaxBenefit.calculated": 223.02,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0
+      }
+    },
+    {
+      "id": "2019-implicit-zero-income-spouse",
+      "year": 2019,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "oth": 40000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 1785.183,
+        "list.0.breakdown.familyTaxBenefit.base": 6034,
+        "list.0.breakdown.familyTaxBenefit.calculated": 651.672,
+        "list.0.breakdown.familyTaxBenefit.applied": 651.672,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 1785.183,
+        "list.1.breakdown.familyTaxBenefit.base": 2065,
+        "list.1.breakdown.familyTaxBenefit.calculated": 223.02,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0
+      }
+    },
+    {
+      "id": "2019-unrelated-adults",
+      "year": 2019,
+      "household": {
+        "adults": 2,
+        "spouse": false,
+        "kids": 2,
+        "people": [
+          {
+            "oth": 40000
+          },
+          {
+            "oth": 20000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 4086.447,
+        "list.0.breakdown.familyTaxBenefit.base": 3969,
+        "list.0.breakdown.familyTaxBenefit.calculated": 428.652,
+        "list.0.breakdown.familyTaxBenefit.applied": 428.652,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 2994.675,
+        "list.1.breakdown.familyTaxBenefit.base": 265,
+        "list.1.breakdown.familyTaxBenefit.calculated": 28.62,
+        "list.1.breakdown.familyTaxBenefit.applied": 28.62,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 1091.772
+      }
+    },
+    {
+      "id": "2019-equal-income-spouses",
+      "year": 2019,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "oth": 30000
+          },
+          {
+            "oth": 30000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 3874.932,
+        "list.0.breakdown.familyTaxBenefit.base": 4869,
+        "list.0.breakdown.familyTaxBenefit.calculated": 525.852,
+        "list.0.breakdown.familyTaxBenefit.applied": 525.852,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 1674.54,
+        "list.1.breakdown.familyTaxBenefit.base": 0,
+        "list.1.breakdown.familyTaxBenefit.calculated": 0,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 2200.392
+      }
+    },
+    {
+      "id": "2019-equal-income-dividend-capacity",
+      "year": 2019,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "ed": 20000
+          },
+          {
+            "oth": 27600
+          }
+        ]
+      },
+      "expected": {
+        "prov": 1392.012,
+        "list.0.breakdown.familyTaxBenefit.base": 0,
+        "list.0.breakdown.familyTaxBenefit.calculated": 0,
+        "list.0.breakdown.familyTaxBenefit.applied": 0,
+        "list.0.pDtc": 1941.192,
+        "list.0.pFtc": 0,
+        "list.0.prov": 0,
+        "list.1.breakdown.familyTaxBenefit.base": 5085,
+        "list.1.breakdown.familyTaxBenefit.calculated": 549.18,
+        "list.1.breakdown.familyTaxBenefit.applied": 549.18,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 1392.012
+      }
+    },
+    {
+      "id": "2019-equal-income-foreign-tax",
+      "year": 2019,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "fd": 30000
+          },
+          {
+            "oth": 30000
+          }
+        ],
+        "whRate": 0.4
+      },
+      "expected": {
+        "prov": 1674.54,
+        "list.0.breakdown.familyTaxBenefit.base": 0,
+        "list.0.breakdown.familyTaxBenefit.calculated": 0,
+        "list.0.breakdown.familyTaxBenefit.applied": 0,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 2200.392,
+        "list.0.prov": 0,
+        "list.1.breakdown.familyTaxBenefit.base": 4869,
+        "list.1.breakdown.familyTaxBenefit.calculated": 525.852,
+        "list.1.breakdown.familyTaxBenefit.applied": 525.852,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 1674.54
+      }
+    },
+    {
+      "id": "2019-near-equal-dividend-restriction",
+      "year": 2019,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "ed": 20000,
+            "oth": 0.01
+          },
+          {
+            "oth": 27600
+          }
+        ]
+      },
+      "expected": {
+        "prov": 1941.192,
+        "list.0.breakdown.familyTaxBenefit.base": 5084.9991,
+        "list.0.breakdown.familyTaxBenefit.calculated": 549.1799,
+        "list.0.breakdown.familyTaxBenefit.applied": 549.1799,
+        "list.0.pDtc": 1392.0132,
+        "list.0.pFtc": 0,
+        "list.0.prov": 0,
+        "list.1.breakdown.familyTaxBenefit.base": 0,
+        "list.1.breakdown.familyTaxBenefit.calculated": 0,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 1941.192
+      }
+    },
+    {
+      "id": "2019-near-equal-income-spouses",
+      "year": 2019,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "oth": 30000
+          },
+          {
+            "oth": 30000.01
+          }
+        ]
+      },
+      "expected": {
+        "prov": 3874.9332,
+        "list.0.breakdown.familyTaxBenefit.base": 0,
+        "list.0.breakdown.familyTaxBenefit.calculated": 0,
+        "list.0.breakdown.familyTaxBenefit.applied": 0,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 2200.392,
+        "list.1.breakdown.familyTaxBenefit.base": 4868.9991,
+        "list.1.breakdown.familyTaxBenefit.calculated": 525.8519,
+        "list.1.breakdown.familyTaxBenefit.applied": 525.8519,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 1674.5412
+      }
+    },
+    {
+      "id": "2019-family-taper-exhausted",
+      "year": 2019,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "oth": 110000
+          },
+          {
+            "oth": 0
+          }
+        ]
+      },
+      "expected": {
+        "prov": 13193.49,
+        "list.0.breakdown.familyTaxBenefit.base": 0,
+        "list.0.breakdown.familyTaxBenefit.calculated": 0,
+        "list.0.breakdown.familyTaxBenefit.applied": 0,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 13193.49,
+        "list.1.breakdown.familyTaxBenefit.base": 2065,
+        "list.1.breakdown.familyTaxBenefit.calculated": 223.02,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0
+      }
+    },
+    {
+      "id": "2019-ages-only-17",
+      "year": 2019,
+      "household": {
+        "adults": 2,
+        "kids": 1,
+        "people": [
+          {
+            "oth": 40000
+          },
+          {
+            "oth": 0
+          }
+        ],
+        "childAges": [17]
+      },
+      "expected": {
+        "prov": 2082.399,
+        "list.0.breakdown.familyTaxBenefit.base": 3282,
+        "list.0.breakdown.familyTaxBenefit.calculated": 354.456,
+        "list.0.breakdown.familyTaxBenefit.applied": 354.456,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 2082.399,
+        "list.1.breakdown.familyTaxBenefit.base": 2065,
+        "list.1.breakdown.familyTaxBenefit.calculated": 223.02,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0
+      }
+    },
+    {
+      "id": "2019-ages-only-18",
+      "year": 2019,
+      "household": {
+        "adults": 2,
+        "kids": 0,
+        "people": [
+          {
+            "oth": 40000
+          },
+          {
+            "oth": 0
+          }
+        ],
+        "childAges": [18]
+      },
+      "expected": {
+        "prov": 2082.399,
+        "list.0.breakdown.familyTaxBenefit.base": 3282,
+        "list.0.breakdown.familyTaxBenefit.calculated": 354.456,
+        "list.0.breakdown.familyTaxBenefit.applied": 354.456,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 2082.399,
+        "list.1.breakdown.familyTaxBenefit.base": 2065,
+        "list.1.breakdown.familyTaxBenefit.calculated": 223.02,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0
+      }
+    },
+    {
+      "id": "2019-ages-only-19",
+      "year": 2019,
+      "household": {
+        "adults": 2,
+        "kids": 0,
+        "people": [
+          {
+            "oth": 40000
+          },
+          {
+            "oth": 0
+          }
+        ],
+        "childAges": [19]
+      },
+      "expected": {
+        "prov": 2379.615,
+        "list.0.breakdown.familyTaxBenefit.base": 530,
+        "list.0.breakdown.familyTaxBenefit.calculated": 57.24,
+        "list.0.breakdown.familyTaxBenefit.applied": 57.24,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 2379.615,
+        "list.1.breakdown.familyTaxBenefit.base": 2065,
+        "list.1.breakdown.familyTaxBenefit.calculated": 223.02,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0
+      }
+    },
+    {
+      "id": "2019-equal-income-unrelated-dividend-capacity",
+      "year": 2019,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "ed": 20000
+          },
+          {
+            "oth": 27600
+          }
+        ],
+        "spouse": false
+      },
+      "expected": {
+        "prov": 1392.012,
+        "list.0.breakdown.familyTaxBenefit.base": 0,
+        "list.0.breakdown.familyTaxBenefit.calculated": 0,
+        "list.0.breakdown.familyTaxBenefit.applied": 0,
+        "list.0.pDtc": 1941.192,
+        "list.0.pFtc": 0,
+        "list.0.prov": 0,
+        "list.1.breakdown.familyTaxBenefit.base": 5085,
+        "list.1.breakdown.familyTaxBenefit.calculated": 549.18,
+        "list.1.breakdown.familyTaxBenefit.applied": 549.18,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 1392.012
+      }
+    },
+    {
+      "id": "2019-equal-income-unrelated-foreign-tax",
+      "year": 2019,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "fd": 30000
+          },
+          {
+            "oth": 30000
+          }
+        ],
+        "whRate": 0.4,
+        "spouse": false
+      },
+      "expected": {
+        "prov": 1674.54,
+        "list.0.breakdown.familyTaxBenefit.base": 0,
+        "list.0.breakdown.familyTaxBenefit.calculated": 0,
+        "list.0.breakdown.familyTaxBenefit.applied": 0,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 2200.392,
+        "list.0.prov": 0,
+        "list.1.breakdown.familyTaxBenefit.base": 4869,
+        "list.1.breakdown.familyTaxBenefit.calculated": 525.852,
+        "list.1.breakdown.familyTaxBenefit.applied": 525.852,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 1674.54
+      }
+    },
+    {
+      "id": "2020-example",
+      "year": 2020,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "oth": 40000
+          },
+          {
+            "oth": 0
+          }
+        ]
+      },
+      "expected": {
+        "prov": 1748.2665,
+        "list.0.breakdown.familyTaxBenefit.base": 6034,
+        "list.0.breakdown.familyTaxBenefit.calculated": 651.672,
+        "list.0.breakdown.familyTaxBenefit.applied": 651.672,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 1748.2665,
+        "list.1.breakdown.familyTaxBenefit.base": 2065,
+        "list.1.breakdown.familyTaxBenefit.calculated": 223.02,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0
+      }
+    },
+    {
+      "id": "2020-zero-capacity",
+      "year": 2020,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "oth": 10000
+          },
+          {
+            "oth": 0
+          }
+        ]
+      },
+      "expected": {
+        "prov": 0,
+        "list.0.breakdown.familyTaxBenefit.base": 8734,
+        "list.0.breakdown.familyTaxBenefit.calculated": 943.272,
+        "list.0.breakdown.familyTaxBenefit.applied": 0,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 0,
+        "list.1.breakdown.familyTaxBenefit.base": 2065,
+        "list.1.breakdown.familyTaxBenefit.calculated": 223.02,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0
+      }
+    },
+    {
+      "id": "2020-capped-capacity",
+      "year": 2020,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "oth": 26000
+          },
+          {
+            "oth": 0
+          }
+        ]
+      },
+      "expected": {
+        "prov": 0,
+        "list.0.breakdown.familyTaxBenefit.base": 7294,
+        "list.0.breakdown.familyTaxBenefit.calculated": 787.752,
+        "list.0.breakdown.familyTaxBenefit.applied": 759.024,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 0,
+        "list.1.breakdown.familyTaxBenefit.base": 2065,
+        "list.1.breakdown.familyTaxBenefit.calculated": 223.02,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0
+      }
+    },
+    {
+      "id": "2020-basic-capped",
+      "year": 2020,
+      "household": {
+        "people": [
+          {
+            "oth": 16000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 597.996,
+        "list.0.breakdown.familyTaxBenefit.base": 625,
+        "list.0.breakdown.familyTaxBenefit.calculated": 67.5,
+        "list.0.breakdown.familyTaxBenefit.applied": 67.5,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 597.996
+      }
+    },
+    {
+      "id": "2020-basic-taper",
+      "year": 2020,
+      "household": {
+        "people": [
+          {
+            "oth": 20000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 1068.876,
+        "list.0.breakdown.familyTaxBenefit.base": 265,
+        "list.0.breakdown.familyTaxBenefit.calculated": 28.62,
+        "list.0.breakdown.familyTaxBenefit.applied": 28.62,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 1068.876
+      }
+    },
+    {
+      "id": "2020-basic-taper-last-dollar",
+      "year": 2020,
+      "household": {
+        "people": [
+          {
+            "oth": 22944
+          }
+        ]
+      },
+      "expected": {
+        "prov": 1415.4437,
+        "list.0.breakdown.familyTaxBenefit.base": 0.04,
+        "list.0.breakdown.familyTaxBenefit.calculated": 0.0043,
+        "list.0.breakdown.familyTaxBenefit.applied": 0.0043,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 1415.4437
+      }
+    },
+    {
+      "id": "2020-basic-taper-exhausted",
+      "year": 2020,
+      "household": {
+        "people": [
+          {
+            "oth": 22945
+          }
+        ]
+      },
+      "expected": {
+        "prov": 1415.556,
+        "list.0.breakdown.familyTaxBenefit.base": 0,
+        "list.0.breakdown.familyTaxBenefit.calculated": 0,
+        "list.0.breakdown.familyTaxBenefit.applied": 0,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 1415.556
+      }
+    },
+    {
+      "id": "2020-single-parent-one",
+      "year": 2020,
+      "household": {
+        "kids": 1,
+        "people": [
+          {
+            "oth": 40000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 2342.6985,
+        "list.0.breakdown.familyTaxBenefit.base": 530,
+        "list.0.breakdown.familyTaxBenefit.calculated": 57.24,
+        "list.0.breakdown.familyTaxBenefit.applied": 57.24,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 2342.6985
+      }
+    },
+    {
+      "id": "2020-single-parent-two",
+      "year": 2020,
+      "household": {
+        "kids": 2,
+        "people": [
+          {
+            "oth": 40000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 2045.4825,
+        "list.0.breakdown.familyTaxBenefit.base": 3282,
+        "list.0.breakdown.familyTaxBenefit.calculated": 354.456,
+        "list.0.breakdown.familyTaxBenefit.applied": 354.456,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 2045.4825
+      }
+    },
+    {
+      "id": "2020-spouse-below-limit",
+      "year": 2020,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "oth": 40000
+          },
+          {
+            "oth": 9133.99
+          }
+        ]
+      },
+      "expected": {
+        "prov": 2734.7374,
+        "list.0.breakdown.familyTaxBenefit.base": 6034,
+        "list.0.breakdown.familyTaxBenefit.calculated": 651.672,
+        "list.0.breakdown.familyTaxBenefit.applied": 651.672,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 2734.7374,
+        "list.1.breakdown.familyTaxBenefit.base": 1242.9409,
+        "list.1.breakdown.familyTaxBenefit.calculated": 134.2376,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0
+      }
+    },
+    {
+      "id": "2020-spouse-at-limit",
+      "year": 2020,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "oth": 40000
+          },
+          {
+            "oth": 9134
+          }
+        ]
+      },
+      "expected": {
+        "prov": 2957.7585,
+        "list.0.breakdown.familyTaxBenefit.base": 3969,
+        "list.0.breakdown.familyTaxBenefit.calculated": 428.652,
+        "list.0.breakdown.familyTaxBenefit.applied": 428.652,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 2957.7585,
+        "list.1.breakdown.familyTaxBenefit.base": 1242.94,
+        "list.1.breakdown.familyTaxBenefit.calculated": 134.2375,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0
+      }
+    },
+    {
+      "id": "2020-higher-income-child-claim",
+      "year": 2020,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "oth": 50000
+          },
+          {
+            "oth": 20000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 5398.8345,
+        "list.0.breakdown.familyTaxBenefit.base": 3069,
+        "list.0.breakdown.familyTaxBenefit.calculated": 331.452,
+        "list.0.breakdown.familyTaxBenefit.applied": 331.452,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 4329.9585,
+        "list.1.breakdown.familyTaxBenefit.base": 265,
+        "list.1.breakdown.familyTaxBenefit.calculated": 28.62,
+        "list.1.breakdown.familyTaxBenefit.applied": 28.62,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 1068.876
+      }
+    },
+    {
+      "id": "2020-net-income-not-cash",
+      "year": 2020,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "oth": 50000,
+            "ded": 20000
+          },
+          {
+            "oth": 40000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 5135.2545,
+        "list.0.breakdown.familyTaxBenefit.base": 0,
+        "list.0.breakdown.familyTaxBenefit.calculated": 0,
+        "list.0.breakdown.familyTaxBenefit.applied": 0,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 2177.496,
+        "list.1.breakdown.familyTaxBenefit.base": 3969,
+        "list.1.breakdown.familyTaxBenefit.calculated": 428.652,
+        "list.1.breakdown.familyTaxBenefit.applied": 428.652,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 2957.7585
+      }
+    },
+    {
+      "id": "2020-dividend-gross-up-claimant",
+      "year": 2020,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "ed": 30000
+          },
+          {
+            "oth": 40000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 3386.4105,
+        "list.0.breakdown.familyTaxBenefit.base": 3843,
+        "list.0.breakdown.familyTaxBenefit.calculated": 415.044,
+        "list.0.breakdown.familyTaxBenefit.applied": 415.044,
+        "list.0.pDtc": 3149.8665,
+        "list.0.pFtc": 0,
+        "list.0.prov": 0,
+        "list.1.breakdown.familyTaxBenefit.base": 0,
+        "list.1.breakdown.familyTaxBenefit.calculated": 0,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 3386.4105
+      }
+    },
+    {
+      "id": "2020-mixed-dividends-foreign",
+      "year": 2020,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "oth": 20000,
+            "ed": 5000,
+            "fd": 10000
+          },
+          {
+            "oth": 0
+          }
+        ],
+        "whRate": 0.4
+      },
+      "expected": {
+        "prov": 561.9727,
+        "list.0.breakdown.familyTaxBenefit.base": 6313,
+        "list.0.breakdown.familyTaxBenefit.calculated": 681.804,
+        "list.0.breakdown.familyTaxBenefit.applied": 681.804,
+        "list.0.pDtc": 552,
+        "list.0.pFtc": 208.9118,
+        "list.0.prov": 561.9727,
+        "list.1.breakdown.familyTaxBenefit.base": 2065,
+        "list.1.breakdown.familyTaxBenefit.calculated": 223.02,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0
+      }
+    },
+    {
+      "id": "2020-dividend-credit-capped",
+      "year": 2020,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "ed": 22000
+          },
+          {
+            "oth": 0
+          }
+        ]
+      },
+      "expected": {
+        "prov": 0,
+        "list.0.breakdown.familyTaxBenefit.base": 6901.6,
+        "list.0.breakdown.familyTaxBenefit.calculated": 745.3728,
+        "list.0.breakdown.familyTaxBenefit.applied": 745.3728,
+        "list.0.pDtc": 484.5312,
+        "list.0.pFtc": 0,
+        "list.0.prov": 0,
+        "list.1.breakdown.familyTaxBenefit.base": 2065,
+        "list.1.breakdown.familyTaxBenefit.calculated": 223.02,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0
+      }
+    },
+    {
+      "id": "2020-personal-credits-off",
+      "year": 2020,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "oth": 40000
+          },
+          {
+            "oth": 0
+          }
+        ],
+        "useBpa": false
+      },
+      "expected": {
+        "prov": 4448.9145,
+        "list.0.breakdown.familyTaxBenefit.base": 0,
+        "list.0.breakdown.familyTaxBenefit.calculated": 0,
+        "list.0.breakdown.familyTaxBenefit.applied": 0,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 4448.9145,
+        "list.1.breakdown.familyTaxBenefit.base": 0,
+        "list.1.breakdown.familyTaxBenefit.calculated": 0,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0
+      }
+    },
+    {
+      "id": "2020-refund-switch-independent",
+      "year": 2020,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "oth": 40000
+          },
+          {
+            "oth": 0
+          }
+        ],
+        "useCredits": true
+      },
+      "expected": {
+        "prov": 1748.2665,
+        "list.0.breakdown.familyTaxBenefit.base": 6034,
+        "list.0.breakdown.familyTaxBenefit.calculated": 651.672,
+        "list.0.breakdown.familyTaxBenefit.applied": 651.672,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 1748.2665,
+        "list.1.breakdown.familyTaxBenefit.base": 2065,
+        "list.1.breakdown.familyTaxBenefit.calculated": 223.02,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0
+      }
+    },
+    {
+      "id": "2020-implicit-zero-income-spouse",
+      "year": 2020,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "oth": 40000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 1748.2665,
+        "list.0.breakdown.familyTaxBenefit.base": 6034,
+        "list.0.breakdown.familyTaxBenefit.calculated": 651.672,
+        "list.0.breakdown.familyTaxBenefit.applied": 651.672,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 1748.2665,
+        "list.1.breakdown.familyTaxBenefit.base": 2065,
+        "list.1.breakdown.familyTaxBenefit.calculated": 223.02,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0
+      }
+    },
+    {
+      "id": "2020-unrelated-adults",
+      "year": 2020,
+      "household": {
+        "adults": 2,
+        "spouse": false,
+        "kids": 2,
+        "people": [
+          {
+            "oth": 40000
+          },
+          {
+            "oth": 20000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 4026.6345,
+        "list.0.breakdown.familyTaxBenefit.base": 3969,
+        "list.0.breakdown.familyTaxBenefit.calculated": 428.652,
+        "list.0.breakdown.familyTaxBenefit.applied": 428.652,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 2957.7585,
+        "list.1.breakdown.familyTaxBenefit.base": 265,
+        "list.1.breakdown.familyTaxBenefit.calculated": 28.62,
+        "list.1.breakdown.familyTaxBenefit.applied": 28.62,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 1068.876
+      }
+    },
+    {
+      "id": "2020-equal-income-spouses",
+      "year": 2020,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "oth": 30000
+          },
+          {
+            "oth": 30000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 3829.14,
+        "list.0.breakdown.familyTaxBenefit.base": 4869,
+        "list.0.breakdown.familyTaxBenefit.calculated": 525.852,
+        "list.0.breakdown.familyTaxBenefit.applied": 525.852,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 1651.644,
+        "list.1.breakdown.familyTaxBenefit.base": 0,
+        "list.1.breakdown.familyTaxBenefit.calculated": 0,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 2177.496
+      }
+    },
+    {
+      "id": "2020-equal-income-dividend-capacity",
+      "year": 2020,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "ed": 20000
+          },
+          {
+            "oth": 27600
+          }
+        ]
+      },
+      "expected": {
+        "prov": 1369.116,
+        "list.0.breakdown.familyTaxBenefit.base": 0,
+        "list.0.breakdown.familyTaxBenefit.calculated": 0,
+        "list.0.breakdown.familyTaxBenefit.applied": 0,
+        "list.0.pDtc": 1918.296,
+        "list.0.pFtc": 0,
+        "list.0.prov": 0,
+        "list.1.breakdown.familyTaxBenefit.base": 5085,
+        "list.1.breakdown.familyTaxBenefit.calculated": 549.18,
+        "list.1.breakdown.familyTaxBenefit.applied": 549.18,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 1369.116
+      }
+    },
+    {
+      "id": "2020-equal-income-foreign-tax",
+      "year": 2020,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "fd": 30000
+          },
+          {
+            "oth": 30000
+          }
+        ],
+        "whRate": 0.4
+      },
+      "expected": {
+        "prov": 1651.644,
+        "list.0.breakdown.familyTaxBenefit.base": 0,
+        "list.0.breakdown.familyTaxBenefit.calculated": 0,
+        "list.0.breakdown.familyTaxBenefit.applied": 0,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 2177.496,
+        "list.0.prov": 0,
+        "list.1.breakdown.familyTaxBenefit.base": 4869,
+        "list.1.breakdown.familyTaxBenefit.calculated": 525.852,
+        "list.1.breakdown.familyTaxBenefit.applied": 525.852,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 1651.644
+      }
+    },
+    {
+      "id": "2020-near-equal-dividend-restriction",
+      "year": 2020,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "ed": 20000,
+            "oth": 0.01
+          },
+          {
+            "oth": 27600
+          }
+        ]
+      },
+      "expected": {
+        "prov": 1918.296,
+        "list.0.breakdown.familyTaxBenefit.base": 5084.9991,
+        "list.0.breakdown.familyTaxBenefit.calculated": 549.1799,
+        "list.0.breakdown.familyTaxBenefit.applied": 549.1799,
+        "list.0.pDtc": 1369.1172,
+        "list.0.pFtc": 0,
+        "list.0.prov": 0,
+        "list.1.breakdown.familyTaxBenefit.base": 0,
+        "list.1.breakdown.familyTaxBenefit.calculated": 0,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 1918.296
+      }
+    },
+    {
+      "id": "2020-near-equal-income-spouses",
+      "year": 2020,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "oth": 30000
+          },
+          {
+            "oth": 30000.01
+          }
+        ]
+      },
+      "expected": {
+        "prov": 3829.1412,
+        "list.0.breakdown.familyTaxBenefit.base": 0,
+        "list.0.breakdown.familyTaxBenefit.calculated": 0,
+        "list.0.breakdown.familyTaxBenefit.applied": 0,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 2177.496,
+        "list.1.breakdown.familyTaxBenefit.base": 4868.9991,
+        "list.1.breakdown.familyTaxBenefit.calculated": 525.8519,
+        "list.1.breakdown.familyTaxBenefit.applied": 525.8519,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 1651.6452
+      }
+    },
+    {
+      "id": "2020-family-taper-exhausted",
+      "year": 2020,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "oth": 110000
+          },
+          {
+            "oth": 0
+          }
+        ]
+      },
+      "expected": {
+        "prov": 13084.3125,
+        "list.0.breakdown.familyTaxBenefit.base": 0,
+        "list.0.breakdown.familyTaxBenefit.calculated": 0,
+        "list.0.breakdown.familyTaxBenefit.applied": 0,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 13084.3125,
+        "list.1.breakdown.familyTaxBenefit.base": 2065,
+        "list.1.breakdown.familyTaxBenefit.calculated": 223.02,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0
+      }
+    },
+    {
+      "id": "2020-ages-only-17",
+      "year": 2020,
+      "household": {
+        "adults": 2,
+        "kids": 1,
+        "people": [
+          {
+            "oth": 40000
+          },
+          {
+            "oth": 0
+          }
+        ],
+        "childAges": [17]
+      },
+      "expected": {
+        "prov": 2045.4825,
+        "list.0.breakdown.familyTaxBenefit.base": 3282,
+        "list.0.breakdown.familyTaxBenefit.calculated": 354.456,
+        "list.0.breakdown.familyTaxBenefit.applied": 354.456,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 2045.4825,
+        "list.1.breakdown.familyTaxBenefit.base": 2065,
+        "list.1.breakdown.familyTaxBenefit.calculated": 223.02,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0
+      }
+    },
+    {
+      "id": "2020-ages-only-18",
+      "year": 2020,
+      "household": {
+        "adults": 2,
+        "kids": 0,
+        "people": [
+          {
+            "oth": 40000
+          },
+          {
+            "oth": 0
+          }
+        ],
+        "childAges": [18]
+      },
+      "expected": {
+        "prov": 2045.4825,
+        "list.0.breakdown.familyTaxBenefit.base": 3282,
+        "list.0.breakdown.familyTaxBenefit.calculated": 354.456,
+        "list.0.breakdown.familyTaxBenefit.applied": 354.456,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 2045.4825,
+        "list.1.breakdown.familyTaxBenefit.base": 2065,
+        "list.1.breakdown.familyTaxBenefit.calculated": 223.02,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0
+      }
+    },
+    {
+      "id": "2020-ages-only-19",
+      "year": 2020,
+      "household": {
+        "adults": 2,
+        "kids": 0,
+        "people": [
+          {
+            "oth": 40000
+          },
+          {
+            "oth": 0
+          }
+        ],
+        "childAges": [19]
+      },
+      "expected": {
+        "prov": 2342.6985,
+        "list.0.breakdown.familyTaxBenefit.base": 530,
+        "list.0.breakdown.familyTaxBenefit.calculated": 57.24,
+        "list.0.breakdown.familyTaxBenefit.applied": 57.24,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 2342.6985,
+        "list.1.breakdown.familyTaxBenefit.base": 2065,
+        "list.1.breakdown.familyTaxBenefit.calculated": 223.02,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0
+      }
+    },
+    {
+      "id": "2020-equal-income-unrelated-dividend-capacity",
+      "year": 2020,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "ed": 20000
+          },
+          {
+            "oth": 27600
+          }
+        ],
+        "spouse": false
+      },
+      "expected": {
+        "prov": 1369.116,
+        "list.0.breakdown.familyTaxBenefit.base": 0,
+        "list.0.breakdown.familyTaxBenefit.calculated": 0,
+        "list.0.breakdown.familyTaxBenefit.applied": 0,
+        "list.0.pDtc": 1918.296,
+        "list.0.pFtc": 0,
+        "list.0.prov": 0,
+        "list.1.breakdown.familyTaxBenefit.base": 5085,
+        "list.1.breakdown.familyTaxBenefit.calculated": 549.18,
+        "list.1.breakdown.familyTaxBenefit.applied": 549.18,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 1369.116
+      }
+    },
+    {
+      "id": "2020-equal-income-unrelated-foreign-tax",
+      "year": 2020,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "fd": 30000
+          },
+          {
+            "oth": 30000
+          }
+        ],
+        "whRate": 0.4,
+        "spouse": false
+      },
+      "expected": {
+        "prov": 1651.644,
+        "list.0.breakdown.familyTaxBenefit.base": 0,
+        "list.0.breakdown.familyTaxBenefit.calculated": 0,
+        "list.0.breakdown.familyTaxBenefit.applied": 0,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 2177.496,
+        "list.0.prov": 0,
+        "list.1.breakdown.familyTaxBenefit.base": 4869,
+        "list.1.breakdown.familyTaxBenefit.calculated": 525.852,
+        "list.1.breakdown.familyTaxBenefit.applied": 525.852,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 1651.644
+      }
+    },
+    {
+      "id": "2021-example",
+      "year": 2021,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "oth": 40000
+          },
+          {
+            "oth": 0
+          }
+        ]
+      },
+      "expected": {
+        "prov": 1731.1695,
+        "list.0.breakdown.familyTaxBenefit.base": 6034,
+        "list.0.breakdown.familyTaxBenefit.calculated": 651.672,
+        "list.0.breakdown.familyTaxBenefit.applied": 651.672,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 1731.1695,
+        "list.1.breakdown.familyTaxBenefit.base": 2065,
+        "list.1.breakdown.familyTaxBenefit.calculated": 223.02,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0
+      }
+    },
+    {
+      "id": "2021-zero-capacity",
+      "year": 2021,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "oth": 10000
+          },
+          {
+            "oth": 0
+          }
+        ]
+      },
+      "expected": {
+        "prov": 0,
+        "list.0.breakdown.familyTaxBenefit.base": 8734,
+        "list.0.breakdown.familyTaxBenefit.calculated": 943.272,
+        "list.0.breakdown.familyTaxBenefit.applied": 0,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 0,
+        "list.1.breakdown.familyTaxBenefit.base": 2065,
+        "list.1.breakdown.familyTaxBenefit.calculated": 223.02,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0
+      }
+    },
+    {
+      "id": "2021-capped-capacity",
+      "year": 2021,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "oth": 26000
+          },
+          {
+            "oth": 0
+          }
+        ]
+      },
+      "expected": {
+        "prov": 0,
+        "list.0.breakdown.familyTaxBenefit.base": 7294,
+        "list.0.breakdown.familyTaxBenefit.calculated": 787.752,
+        "list.0.breakdown.familyTaxBenefit.applied": 748.44,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 0,
+        "list.1.breakdown.familyTaxBenefit.base": 2065,
+        "list.1.breakdown.familyTaxBenefit.calculated": 223.02,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0
+      }
+    },
+    {
+      "id": "2021-basic-capped",
+      "year": 2021,
+      "household": {
+        "people": [
+          {
+            "oth": 16000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 587.412,
+        "list.0.breakdown.familyTaxBenefit.base": 625,
+        "list.0.breakdown.familyTaxBenefit.calculated": 67.5,
+        "list.0.breakdown.familyTaxBenefit.applied": 67.5,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 587.412
+      }
+    },
+    {
+      "id": "2021-basic-taper",
+      "year": 2021,
+      "household": {
+        "people": [
+          {
+            "oth": 20000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 1058.292,
+        "list.0.breakdown.familyTaxBenefit.base": 265,
+        "list.0.breakdown.familyTaxBenefit.calculated": 28.62,
+        "list.0.breakdown.familyTaxBenefit.applied": 28.62,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 1058.292
+      }
+    },
+    {
+      "id": "2021-basic-taper-last-dollar",
+      "year": 2021,
+      "household": {
+        "people": [
+          {
+            "oth": 22944
+          }
+        ]
+      },
+      "expected": {
+        "prov": 1404.8597,
+        "list.0.breakdown.familyTaxBenefit.base": 0.04,
+        "list.0.breakdown.familyTaxBenefit.calculated": 0.0043,
+        "list.0.breakdown.familyTaxBenefit.applied": 0.0043,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 1404.8597
+      }
+    },
+    {
+      "id": "2021-basic-taper-exhausted",
+      "year": 2021,
+      "household": {
+        "people": [
+          {
+            "oth": 22945
+          }
+        ]
+      },
+      "expected": {
+        "prov": 1404.972,
+        "list.0.breakdown.familyTaxBenefit.base": 0,
+        "list.0.breakdown.familyTaxBenefit.calculated": 0,
+        "list.0.breakdown.familyTaxBenefit.applied": 0,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 1404.972
+      }
+    },
+    {
+      "id": "2021-single-parent-one",
+      "year": 2021,
+      "household": {
+        "kids": 1,
+        "people": [
+          {
+            "oth": 40000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 2325.6015,
+        "list.0.breakdown.familyTaxBenefit.base": 530,
+        "list.0.breakdown.familyTaxBenefit.calculated": 57.24,
+        "list.0.breakdown.familyTaxBenefit.applied": 57.24,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 2325.6015
+      }
+    },
+    {
+      "id": "2021-single-parent-two",
+      "year": 2021,
+      "household": {
+        "kids": 2,
+        "people": [
+          {
+            "oth": 40000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 2028.3855,
+        "list.0.breakdown.familyTaxBenefit.base": 3282,
+        "list.0.breakdown.familyTaxBenefit.calculated": 354.456,
+        "list.0.breakdown.familyTaxBenefit.applied": 354.456,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 2028.3855
+      }
+    },
+    {
+      "id": "2021-spouse-below-limit",
+      "year": 2021,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "oth": 40000
+          },
+          {
+            "oth": 9133.99
+          }
+        ]
+      },
+      "expected": {
+        "prov": 2717.6404,
+        "list.0.breakdown.familyTaxBenefit.base": 6034,
+        "list.0.breakdown.familyTaxBenefit.calculated": 651.672,
+        "list.0.breakdown.familyTaxBenefit.applied": 651.672,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 2717.6404,
+        "list.1.breakdown.familyTaxBenefit.base": 1242.9409,
+        "list.1.breakdown.familyTaxBenefit.calculated": 134.2376,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0
+      }
+    },
+    {
+      "id": "2021-spouse-at-limit",
+      "year": 2021,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "oth": 40000
+          },
+          {
+            "oth": 9134
+          }
+        ]
+      },
+      "expected": {
+        "prov": 2940.6615,
+        "list.0.breakdown.familyTaxBenefit.base": 3969,
+        "list.0.breakdown.familyTaxBenefit.calculated": 428.652,
+        "list.0.breakdown.familyTaxBenefit.applied": 428.652,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 2940.6615,
+        "list.1.breakdown.familyTaxBenefit.base": 1242.94,
+        "list.1.breakdown.familyTaxBenefit.calculated": 134.2375,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0
+      }
+    },
+    {
+      "id": "2021-higher-income-child-claim",
+      "year": 2021,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "oth": 50000
+          },
+          {
+            "oth": 20000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 5371.1535,
+        "list.0.breakdown.familyTaxBenefit.base": 3069,
+        "list.0.breakdown.familyTaxBenefit.calculated": 331.452,
+        "list.0.breakdown.familyTaxBenefit.applied": 331.452,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 4312.8615,
+        "list.1.breakdown.familyTaxBenefit.base": 265,
+        "list.1.breakdown.familyTaxBenefit.calculated": 28.62,
+        "list.1.breakdown.familyTaxBenefit.applied": 28.62,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 1058.292
+      }
+    },
+    {
+      "id": "2021-net-income-not-cash",
+      "year": 2021,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "oth": 50000,
+            "ded": 20000
+          },
+          {
+            "oth": 40000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 5107.5735,
+        "list.0.breakdown.familyTaxBenefit.base": 0,
+        "list.0.breakdown.familyTaxBenefit.calculated": 0,
+        "list.0.breakdown.familyTaxBenefit.applied": 0,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 2166.912,
+        "list.1.breakdown.familyTaxBenefit.base": 3969,
+        "list.1.breakdown.familyTaxBenefit.calculated": 428.652,
+        "list.1.breakdown.familyTaxBenefit.applied": 428.652,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 2940.6615
+      }
+    },
+    {
+      "id": "2021-dividend-gross-up-claimant",
+      "year": 2021,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "ed": 30000
+          },
+          {
+            "oth": 40000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 3369.3135,
+        "list.0.breakdown.familyTaxBenefit.base": 3843,
+        "list.0.breakdown.familyTaxBenefit.calculated": 415.044,
+        "list.0.breakdown.familyTaxBenefit.applied": 415.044,
+        "list.0.pDtc": 3132.7695,
+        "list.0.pFtc": 0,
+        "list.0.prov": 0,
+        "list.1.breakdown.familyTaxBenefit.base": 0,
+        "list.1.breakdown.familyTaxBenefit.calculated": 0,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 3369.3135
+      }
+    },
+    {
+      "id": "2021-mixed-dividends-foreign",
+      "year": 2021,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "oth": 20000,
+            "ed": 5000,
+            "fd": 10000
+          },
+          {
+            "oth": 0
+          }
+        ],
+        "whRate": 0.4
+      },
+      "expected": {
+        "prov": 549.509,
+        "list.0.breakdown.familyTaxBenefit.base": 6313,
+        "list.0.breakdown.familyTaxBenefit.calculated": 681.804,
+        "list.0.breakdown.familyTaxBenefit.applied": 681.804,
+        "list.0.pDtc": 552,
+        "list.0.pFtc": 204.2785,
+        "list.0.prov": 549.509,
+        "list.1.breakdown.familyTaxBenefit.base": 2065,
+        "list.1.breakdown.familyTaxBenefit.calculated": 223.02,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0
+      }
+    },
+    {
+      "id": "2021-dividend-credit-capped",
+      "year": 2021,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "ed": 22000
+          },
+          {
+            "oth": 0
+          }
+        ]
+      },
+      "expected": {
+        "prov": 0,
+        "list.0.breakdown.familyTaxBenefit.base": 6901.6,
+        "list.0.breakdown.familyTaxBenefit.calculated": 745.3728,
+        "list.0.breakdown.familyTaxBenefit.applied": 745.3728,
+        "list.0.pDtc": 473.9472,
+        "list.0.pFtc": 0,
+        "list.0.prov": 0,
+        "list.1.breakdown.familyTaxBenefit.base": 2065,
+        "list.1.breakdown.familyTaxBenefit.calculated": 223.02,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0
+      }
+    },
+    {
+      "id": "2021-personal-credits-off",
+      "year": 2021,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "oth": 40000
+          },
+          {
+            "oth": 0
+          }
+        ],
+        "useBpa": false
+      },
+      "expected": {
+        "prov": 4442.4015,
+        "list.0.breakdown.familyTaxBenefit.base": 0,
+        "list.0.breakdown.familyTaxBenefit.calculated": 0,
+        "list.0.breakdown.familyTaxBenefit.applied": 0,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 4442.4015,
+        "list.1.breakdown.familyTaxBenefit.base": 0,
+        "list.1.breakdown.familyTaxBenefit.calculated": 0,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0
+      }
+    },
+    {
+      "id": "2021-refund-switch-independent",
+      "year": 2021,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "oth": 40000
+          },
+          {
+            "oth": 0
+          }
+        ],
+        "useCredits": true
+      },
+      "expected": {
+        "prov": 1731.1695,
+        "list.0.breakdown.familyTaxBenefit.base": 6034,
+        "list.0.breakdown.familyTaxBenefit.calculated": 651.672,
+        "list.0.breakdown.familyTaxBenefit.applied": 651.672,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 1731.1695,
+        "list.1.breakdown.familyTaxBenefit.base": 2065,
+        "list.1.breakdown.familyTaxBenefit.calculated": 223.02,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0
+      }
+    },
+    {
+      "id": "2021-implicit-zero-income-spouse",
+      "year": 2021,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "oth": 40000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 1731.1695,
+        "list.0.breakdown.familyTaxBenefit.base": 6034,
+        "list.0.breakdown.familyTaxBenefit.calculated": 651.672,
+        "list.0.breakdown.familyTaxBenefit.applied": 651.672,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 1731.1695,
+        "list.1.breakdown.familyTaxBenefit.base": 2065,
+        "list.1.breakdown.familyTaxBenefit.calculated": 223.02,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0
+      }
+    },
+    {
+      "id": "2021-unrelated-adults",
+      "year": 2021,
+      "household": {
+        "adults": 2,
+        "spouse": false,
+        "kids": 2,
+        "people": [
+          {
+            "oth": 40000
+          },
+          {
+            "oth": 20000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 3998.9535,
+        "list.0.breakdown.familyTaxBenefit.base": 3969,
+        "list.0.breakdown.familyTaxBenefit.calculated": 428.652,
+        "list.0.breakdown.familyTaxBenefit.applied": 428.652,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 2940.6615,
+        "list.1.breakdown.familyTaxBenefit.base": 265,
+        "list.1.breakdown.familyTaxBenefit.calculated": 28.62,
+        "list.1.breakdown.familyTaxBenefit.applied": 28.62,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 1058.292
+      }
+    },
+    {
+      "id": "2021-equal-income-spouses",
+      "year": 2021,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "oth": 30000
+          },
+          {
+            "oth": 30000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 3807.972,
+        "list.0.breakdown.familyTaxBenefit.base": 4869,
+        "list.0.breakdown.familyTaxBenefit.calculated": 525.852,
+        "list.0.breakdown.familyTaxBenefit.applied": 525.852,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 1641.06,
+        "list.1.breakdown.familyTaxBenefit.base": 0,
+        "list.1.breakdown.familyTaxBenefit.calculated": 0,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 2166.912
+      }
+    },
+    {
+      "id": "2021-equal-income-dividend-capacity",
+      "year": 2021,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "ed": 20000
+          },
+          {
+            "oth": 27600
+          }
+        ]
+      },
+      "expected": {
+        "prov": 1358.532,
+        "list.0.breakdown.familyTaxBenefit.base": 0,
+        "list.0.breakdown.familyTaxBenefit.calculated": 0,
+        "list.0.breakdown.familyTaxBenefit.applied": 0,
+        "list.0.pDtc": 1907.712,
+        "list.0.pFtc": 0,
+        "list.0.prov": 0,
+        "list.1.breakdown.familyTaxBenefit.base": 5085,
+        "list.1.breakdown.familyTaxBenefit.calculated": 549.18,
+        "list.1.breakdown.familyTaxBenefit.applied": 549.18,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 1358.532
+      }
+    },
+    {
+      "id": "2021-equal-income-foreign-tax",
+      "year": 2021,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "fd": 30000
+          },
+          {
+            "oth": 30000
+          }
+        ],
+        "whRate": 0.4
+      },
+      "expected": {
+        "prov": 1641.06,
+        "list.0.breakdown.familyTaxBenefit.base": 0,
+        "list.0.breakdown.familyTaxBenefit.calculated": 0,
+        "list.0.breakdown.familyTaxBenefit.applied": 0,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 2166.912,
+        "list.0.prov": 0,
+        "list.1.breakdown.familyTaxBenefit.base": 4869,
+        "list.1.breakdown.familyTaxBenefit.calculated": 525.852,
+        "list.1.breakdown.familyTaxBenefit.applied": 525.852,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 1641.06
+      }
+    },
+    {
+      "id": "2021-near-equal-dividend-restriction",
+      "year": 2021,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "ed": 20000,
+            "oth": 0.01
+          },
+          {
+            "oth": 27600
+          }
+        ]
+      },
+      "expected": {
+        "prov": 1907.712,
+        "list.0.breakdown.familyTaxBenefit.base": 5084.9991,
+        "list.0.breakdown.familyTaxBenefit.calculated": 549.1799,
+        "list.0.breakdown.familyTaxBenefit.applied": 549.1799,
+        "list.0.pDtc": 1358.5332,
+        "list.0.pFtc": 0,
+        "list.0.prov": 0,
+        "list.1.breakdown.familyTaxBenefit.base": 0,
+        "list.1.breakdown.familyTaxBenefit.calculated": 0,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 1907.712
+      }
+    },
+    {
+      "id": "2021-near-equal-income-spouses",
+      "year": 2021,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "oth": 30000
+          },
+          {
+            "oth": 30000.01
+          }
+        ]
+      },
+      "expected": {
+        "prov": 3807.9732,
+        "list.0.breakdown.familyTaxBenefit.base": 0,
+        "list.0.breakdown.familyTaxBenefit.calculated": 0,
+        "list.0.breakdown.familyTaxBenefit.applied": 0,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 2166.912,
+        "list.1.breakdown.familyTaxBenefit.base": 4868.9991,
+        "list.1.breakdown.familyTaxBenefit.calculated": 525.8519,
+        "list.1.breakdown.familyTaxBenefit.applied": 525.8519,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 1641.0612
+      }
+    },
+    {
+      "id": "2021-family-taper-exhausted",
+      "year": 2021,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "oth": 110000
+          },
+          {
+            "oth": 0
+          }
+        ]
+      },
+      "expected": {
+        "prov": 13033.689,
+        "list.0.breakdown.familyTaxBenefit.base": 0,
+        "list.0.breakdown.familyTaxBenefit.calculated": 0,
+        "list.0.breakdown.familyTaxBenefit.applied": 0,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 13033.689,
+        "list.1.breakdown.familyTaxBenefit.base": 2065,
+        "list.1.breakdown.familyTaxBenefit.calculated": 223.02,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0
+      }
+    },
+    {
+      "id": "2021-ages-only-17",
+      "year": 2021,
+      "household": {
+        "adults": 2,
+        "kids": 1,
+        "people": [
+          {
+            "oth": 40000
+          },
+          {
+            "oth": 0
+          }
+        ],
+        "childAges": [17]
+      },
+      "expected": {
+        "prov": 2028.3855,
+        "list.0.breakdown.familyTaxBenefit.base": 3282,
+        "list.0.breakdown.familyTaxBenefit.calculated": 354.456,
+        "list.0.breakdown.familyTaxBenefit.applied": 354.456,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 2028.3855,
+        "list.1.breakdown.familyTaxBenefit.base": 2065,
+        "list.1.breakdown.familyTaxBenefit.calculated": 223.02,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0
+      }
+    },
+    {
+      "id": "2021-ages-only-18",
+      "year": 2021,
+      "household": {
+        "adults": 2,
+        "kids": 0,
+        "people": [
+          {
+            "oth": 40000
+          },
+          {
+            "oth": 0
+          }
+        ],
+        "childAges": [18]
+      },
+      "expected": {
+        "prov": 2028.3855,
+        "list.0.breakdown.familyTaxBenefit.base": 3282,
+        "list.0.breakdown.familyTaxBenefit.calculated": 354.456,
+        "list.0.breakdown.familyTaxBenefit.applied": 354.456,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 2028.3855,
+        "list.1.breakdown.familyTaxBenefit.base": 2065,
+        "list.1.breakdown.familyTaxBenefit.calculated": 223.02,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0
+      }
+    },
+    {
+      "id": "2021-ages-only-19",
+      "year": 2021,
+      "household": {
+        "adults": 2,
+        "kids": 0,
+        "people": [
+          {
+            "oth": 40000
+          },
+          {
+            "oth": 0
+          }
+        ],
+        "childAges": [19]
+      },
+      "expected": {
+        "prov": 2325.6015,
+        "list.0.breakdown.familyTaxBenefit.base": 530,
+        "list.0.breakdown.familyTaxBenefit.calculated": 57.24,
+        "list.0.breakdown.familyTaxBenefit.applied": 57.24,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 2325.6015,
+        "list.1.breakdown.familyTaxBenefit.base": 2065,
+        "list.1.breakdown.familyTaxBenefit.calculated": 223.02,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0
+      }
+    },
+    {
+      "id": "2021-equal-income-unrelated-dividend-capacity",
+      "year": 2021,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "ed": 20000
+          },
+          {
+            "oth": 27600
+          }
+        ],
+        "spouse": false
+      },
+      "expected": {
+        "prov": 1358.532,
+        "list.0.breakdown.familyTaxBenefit.base": 0,
+        "list.0.breakdown.familyTaxBenefit.calculated": 0,
+        "list.0.breakdown.familyTaxBenefit.applied": 0,
+        "list.0.pDtc": 1907.712,
+        "list.0.pFtc": 0,
+        "list.0.prov": 0,
+        "list.1.breakdown.familyTaxBenefit.base": 5085,
+        "list.1.breakdown.familyTaxBenefit.calculated": 549.18,
+        "list.1.breakdown.familyTaxBenefit.applied": 549.18,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 1358.532
+      }
+    },
+    {
+      "id": "2021-equal-income-unrelated-foreign-tax",
+      "year": 2021,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "fd": 30000
+          },
+          {
+            "oth": 30000
+          }
+        ],
+        "whRate": 0.4,
+        "spouse": false
+      },
+      "expected": {
+        "prov": 1641.06,
+        "list.0.breakdown.familyTaxBenefit.base": 0,
+        "list.0.breakdown.familyTaxBenefit.calculated": 0,
+        "list.0.breakdown.familyTaxBenefit.applied": 0,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 2166.912,
+        "list.0.prov": 0,
+        "list.1.breakdown.familyTaxBenefit.base": 4869,
+        "list.1.breakdown.familyTaxBenefit.calculated": 525.852,
+        "list.1.breakdown.familyTaxBenefit.applied": 525.852,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 1641.06
+      }
+    },
+    {
+      "id": "2022-example",
+      "year": 2022,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "oth": 40000
+          },
+          {
+            "oth": 0
+          }
+        ]
+      },
+      "expected": {
+        "prov": 1694.7915,
+        "list.0.breakdown.familyTaxBenefit.base": 6034,
+        "list.0.breakdown.familyTaxBenefit.calculated": 651.672,
+        "list.0.breakdown.familyTaxBenefit.applied": 651.672,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 1694.7915,
+        "list.1.breakdown.familyTaxBenefit.base": 2065,
+        "list.1.breakdown.familyTaxBenefit.calculated": 223.02,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0
+      }
+    },
+    {
+      "id": "2022-zero-capacity",
+      "year": 2022,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "oth": 10000
+          },
+          {
+            "oth": 0
+          }
+        ]
+      },
+      "expected": {
+        "prov": 0,
+        "list.0.breakdown.familyTaxBenefit.base": 8734,
+        "list.0.breakdown.familyTaxBenefit.calculated": 943.272,
+        "list.0.breakdown.familyTaxBenefit.applied": 0,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 0,
+        "list.1.breakdown.familyTaxBenefit.base": 2065,
+        "list.1.breakdown.familyTaxBenefit.calculated": 223.02,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0
+      }
+    },
+    {
+      "id": "2022-capped-capacity",
+      "year": 2022,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "oth": 26000
+          },
+          {
+            "oth": 0
+          }
+        ]
+      },
+      "expected": {
+        "prov": 0,
+        "list.0.breakdown.familyTaxBenefit.base": 7294,
+        "list.0.breakdown.familyTaxBenefit.calculated": 787.752,
+        "list.0.breakdown.familyTaxBenefit.applied": 725.868,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 0,
+        "list.1.breakdown.familyTaxBenefit.base": 2065,
+        "list.1.breakdown.familyTaxBenefit.calculated": 223.02,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0
+      }
+    },
+    {
+      "id": "2022-basic-capped",
+      "year": 2022,
+      "household": {
+        "people": [
+          {
+            "oth": 16000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 564.84,
+        "list.0.breakdown.familyTaxBenefit.base": 625,
+        "list.0.breakdown.familyTaxBenefit.calculated": 67.5,
+        "list.0.breakdown.familyTaxBenefit.applied": 67.5,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 564.84
+      }
+    },
+    {
+      "id": "2022-basic-taper",
+      "year": 2022,
+      "household": {
+        "people": [
+          {
+            "oth": 20000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 1035.72,
+        "list.0.breakdown.familyTaxBenefit.base": 265,
+        "list.0.breakdown.familyTaxBenefit.calculated": 28.62,
+        "list.0.breakdown.familyTaxBenefit.applied": 28.62,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 1035.72
+      }
+    },
+    {
+      "id": "2022-basic-taper-last-dollar",
+      "year": 2022,
+      "household": {
+        "people": [
+          {
+            "oth": 22944
+          }
+        ]
+      },
+      "expected": {
+        "prov": 1382.2877,
+        "list.0.breakdown.familyTaxBenefit.base": 0.04,
+        "list.0.breakdown.familyTaxBenefit.calculated": 0.0043,
+        "list.0.breakdown.familyTaxBenefit.applied": 0.0043,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 1382.2877
+      }
+    },
+    {
+      "id": "2022-basic-taper-exhausted",
+      "year": 2022,
+      "household": {
+        "people": [
+          {
+            "oth": 22945
+          }
+        ]
+      },
+      "expected": {
+        "prov": 1382.4,
+        "list.0.breakdown.familyTaxBenefit.base": 0,
+        "list.0.breakdown.familyTaxBenefit.calculated": 0,
+        "list.0.breakdown.familyTaxBenefit.applied": 0,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 1382.4
+      }
+    },
+    {
+      "id": "2022-single-parent-one",
+      "year": 2022,
+      "household": {
+        "kids": 1,
+        "people": [
+          {
+            "oth": 40000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 2289.2235,
+        "list.0.breakdown.familyTaxBenefit.base": 530,
+        "list.0.breakdown.familyTaxBenefit.calculated": 57.24,
+        "list.0.breakdown.familyTaxBenefit.applied": 57.24,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 2289.2235
+      }
+    },
+    {
+      "id": "2022-single-parent-two",
+      "year": 2022,
+      "household": {
+        "kids": 2,
+        "people": [
+          {
+            "oth": 40000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 1992.0075,
+        "list.0.breakdown.familyTaxBenefit.base": 3282,
+        "list.0.breakdown.familyTaxBenefit.calculated": 354.456,
+        "list.0.breakdown.familyTaxBenefit.applied": 354.456,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 1992.0075
+      }
+    },
+    {
+      "id": "2022-spouse-below-limit",
+      "year": 2022,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "oth": 40000
+          },
+          {
+            "oth": 9133.99
+          }
+        ]
+      },
+      "expected": {
+        "prov": 2681.2624,
+        "list.0.breakdown.familyTaxBenefit.base": 6034,
+        "list.0.breakdown.familyTaxBenefit.calculated": 651.672,
+        "list.0.breakdown.familyTaxBenefit.applied": 651.672,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 2681.2624,
+        "list.1.breakdown.familyTaxBenefit.base": 1242.9409,
+        "list.1.breakdown.familyTaxBenefit.calculated": 134.2376,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0
+      }
+    },
+    {
+      "id": "2022-spouse-at-limit",
+      "year": 2022,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "oth": 40000
+          },
+          {
+            "oth": 9134
+          }
+        ]
+      },
+      "expected": {
+        "prov": 2904.2835,
+        "list.0.breakdown.familyTaxBenefit.base": 3969,
+        "list.0.breakdown.familyTaxBenefit.calculated": 428.652,
+        "list.0.breakdown.familyTaxBenefit.applied": 428.652,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 2904.2835,
+        "list.1.breakdown.familyTaxBenefit.base": 1242.94,
+        "list.1.breakdown.familyTaxBenefit.calculated": 134.2375,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0
+      }
+    },
+    {
+      "id": "2022-higher-income-child-claim",
+      "year": 2022,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "oth": 50000
+          },
+          {
+            "oth": 20000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 5312.2035,
+        "list.0.breakdown.familyTaxBenefit.base": 3069,
+        "list.0.breakdown.familyTaxBenefit.calculated": 331.452,
+        "list.0.breakdown.familyTaxBenefit.applied": 331.452,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 4276.4835,
+        "list.1.breakdown.familyTaxBenefit.base": 265,
+        "list.1.breakdown.familyTaxBenefit.calculated": 28.62,
+        "list.1.breakdown.familyTaxBenefit.applied": 28.62,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 1035.72
+      }
+    },
+    {
+      "id": "2022-net-income-not-cash",
+      "year": 2022,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "oth": 50000,
+            "ded": 20000
+          },
+          {
+            "oth": 40000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 5048.6235,
+        "list.0.breakdown.familyTaxBenefit.base": 0,
+        "list.0.breakdown.familyTaxBenefit.calculated": 0,
+        "list.0.breakdown.familyTaxBenefit.applied": 0,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 2144.34,
+        "list.1.breakdown.familyTaxBenefit.base": 3969,
+        "list.1.breakdown.familyTaxBenefit.calculated": 428.652,
+        "list.1.breakdown.familyTaxBenefit.applied": 428.652,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 2904.2835
+      }
+    },
+    {
+      "id": "2022-dividend-gross-up-claimant",
+      "year": 2022,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "ed": 30000
+          },
+          {
+            "oth": 40000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 3332.9355,
+        "list.0.breakdown.familyTaxBenefit.base": 3843,
+        "list.0.breakdown.familyTaxBenefit.calculated": 415.044,
+        "list.0.breakdown.familyTaxBenefit.applied": 415.044,
+        "list.0.pDtc": 3096.3915,
+        "list.0.pFtc": 0,
+        "list.0.prov": 0,
+        "list.1.breakdown.familyTaxBenefit.base": 0,
+        "list.1.breakdown.familyTaxBenefit.calculated": 0,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 3332.9355
+      }
+    },
+    {
+      "id": "2022-mixed-dividends-foreign",
+      "year": 2022,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "oth": 20000,
+            "ed": 5000,
+            "fd": 10000
+          },
+          {
+            "oth": 0
+          }
+        ],
+        "whRate": 0.4
+      },
+      "expected": {
+        "prov": 522.9896,
+        "list.0.breakdown.familyTaxBenefit.base": 6313,
+        "list.0.breakdown.familyTaxBenefit.calculated": 681.804,
+        "list.0.breakdown.familyTaxBenefit.applied": 681.804,
+        "list.0.pDtc": 552,
+        "list.0.pFtc": 194.4199,
+        "list.0.prov": 522.9896,
+        "list.1.breakdown.familyTaxBenefit.base": 2065,
+        "list.1.breakdown.familyTaxBenefit.calculated": 223.02,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0
+      }
+    },
+    {
+      "id": "2022-dividend-credit-capped",
+      "year": 2022,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "ed": 22000
+          },
+          {
+            "oth": 0
+          }
+        ]
+      },
+      "expected": {
+        "prov": 0,
+        "list.0.breakdown.familyTaxBenefit.base": 6901.6,
+        "list.0.breakdown.familyTaxBenefit.calculated": 745.3728,
+        "list.0.breakdown.familyTaxBenefit.applied": 745.3728,
+        "list.0.pDtc": 451.3752,
+        "list.0.pFtc": 0,
+        "list.0.prov": 0,
+        "list.1.breakdown.familyTaxBenefit.base": 2065,
+        "list.1.breakdown.familyTaxBenefit.calculated": 223.02,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0
+      }
+    },
+    {
+      "id": "2022-personal-credits-off",
+      "year": 2022,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "oth": 40000
+          },
+          {
+            "oth": 0
+          }
+        ],
+        "useBpa": false
+      },
+      "expected": {
+        "prov": 4428.5955,
+        "list.0.breakdown.familyTaxBenefit.base": 0,
+        "list.0.breakdown.familyTaxBenefit.calculated": 0,
+        "list.0.breakdown.familyTaxBenefit.applied": 0,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 4428.5955,
+        "list.1.breakdown.familyTaxBenefit.base": 0,
+        "list.1.breakdown.familyTaxBenefit.calculated": 0,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0
+      }
+    },
+    {
+      "id": "2022-refund-switch-independent",
+      "year": 2022,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "oth": 40000
+          },
+          {
+            "oth": 0
+          }
+        ],
+        "useCredits": true
+      },
+      "expected": {
+        "prov": 1694.7915,
+        "list.0.breakdown.familyTaxBenefit.base": 6034,
+        "list.0.breakdown.familyTaxBenefit.calculated": 651.672,
+        "list.0.breakdown.familyTaxBenefit.applied": 651.672,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 1694.7915,
+        "list.1.breakdown.familyTaxBenefit.base": 2065,
+        "list.1.breakdown.familyTaxBenefit.calculated": 223.02,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0
+      }
+    },
+    {
+      "id": "2022-implicit-zero-income-spouse",
+      "year": 2022,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "oth": 40000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 1694.7915,
+        "list.0.breakdown.familyTaxBenefit.base": 6034,
+        "list.0.breakdown.familyTaxBenefit.calculated": 651.672,
+        "list.0.breakdown.familyTaxBenefit.applied": 651.672,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 1694.7915,
+        "list.1.breakdown.familyTaxBenefit.base": 2065,
+        "list.1.breakdown.familyTaxBenefit.calculated": 223.02,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0
+      }
+    },
+    {
+      "id": "2022-unrelated-adults",
+      "year": 2022,
+      "household": {
+        "adults": 2,
+        "spouse": false,
+        "kids": 2,
+        "people": [
+          {
+            "oth": 40000
+          },
+          {
+            "oth": 20000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 3940.0035,
+        "list.0.breakdown.familyTaxBenefit.base": 3969,
+        "list.0.breakdown.familyTaxBenefit.calculated": 428.652,
+        "list.0.breakdown.familyTaxBenefit.applied": 428.652,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 2904.2835,
+        "list.1.breakdown.familyTaxBenefit.base": 265,
+        "list.1.breakdown.familyTaxBenefit.calculated": 28.62,
+        "list.1.breakdown.familyTaxBenefit.applied": 28.62,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 1035.72
+      }
+    },
+    {
+      "id": "2022-equal-income-spouses",
+      "year": 2022,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "oth": 30000
+          },
+          {
+            "oth": 30000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 3762.828,
+        "list.0.breakdown.familyTaxBenefit.base": 4869,
+        "list.0.breakdown.familyTaxBenefit.calculated": 525.852,
+        "list.0.breakdown.familyTaxBenefit.applied": 525.852,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 1618.488,
+        "list.1.breakdown.familyTaxBenefit.base": 0,
+        "list.1.breakdown.familyTaxBenefit.calculated": 0,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 2144.34
+      }
+    },
+    {
+      "id": "2022-equal-income-dividend-capacity",
+      "year": 2022,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "ed": 20000
+          },
+          {
+            "oth": 27600
+          }
+        ]
+      },
+      "expected": {
+        "prov": 1335.96,
+        "list.0.breakdown.familyTaxBenefit.base": 0,
+        "list.0.breakdown.familyTaxBenefit.calculated": 0,
+        "list.0.breakdown.familyTaxBenefit.applied": 0,
+        "list.0.pDtc": 1885.14,
+        "list.0.pFtc": 0,
+        "list.0.prov": 0,
+        "list.1.breakdown.familyTaxBenefit.base": 5085,
+        "list.1.breakdown.familyTaxBenefit.calculated": 549.18,
+        "list.1.breakdown.familyTaxBenefit.applied": 549.18,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 1335.96
+      }
+    },
+    {
+      "id": "2022-equal-income-foreign-tax",
+      "year": 2022,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "fd": 30000
+          },
+          {
+            "oth": 30000
+          }
+        ],
+        "whRate": 0.4
+      },
+      "expected": {
+        "prov": 1618.488,
+        "list.0.breakdown.familyTaxBenefit.base": 0,
+        "list.0.breakdown.familyTaxBenefit.calculated": 0,
+        "list.0.breakdown.familyTaxBenefit.applied": 0,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 2144.34,
+        "list.0.prov": 0,
+        "list.1.breakdown.familyTaxBenefit.base": 4869,
+        "list.1.breakdown.familyTaxBenefit.calculated": 525.852,
+        "list.1.breakdown.familyTaxBenefit.applied": 525.852,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 1618.488
+      }
+    },
+    {
+      "id": "2022-near-equal-dividend-restriction",
+      "year": 2022,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "ed": 20000,
+            "oth": 0.01
+          },
+          {
+            "oth": 27600
+          }
+        ]
+      },
+      "expected": {
+        "prov": 1885.14,
+        "list.0.breakdown.familyTaxBenefit.base": 5084.9991,
+        "list.0.breakdown.familyTaxBenefit.calculated": 549.1799,
+        "list.0.breakdown.familyTaxBenefit.applied": 549.1799,
+        "list.0.pDtc": 1335.9612,
+        "list.0.pFtc": 0,
+        "list.0.prov": 0,
+        "list.1.breakdown.familyTaxBenefit.base": 0,
+        "list.1.breakdown.familyTaxBenefit.calculated": 0,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 1885.14
+      }
+    },
+    {
+      "id": "2022-near-equal-income-spouses",
+      "year": 2022,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "oth": 30000
+          },
+          {
+            "oth": 30000.01
+          }
+        ]
+      },
+      "expected": {
+        "prov": 3762.8292,
+        "list.0.breakdown.familyTaxBenefit.base": 0,
+        "list.0.breakdown.familyTaxBenefit.calculated": 0,
+        "list.0.breakdown.familyTaxBenefit.applied": 0,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 2144.34,
+        "list.1.breakdown.familyTaxBenefit.base": 4868.9991,
+        "list.1.breakdown.familyTaxBenefit.calculated": 525.8519,
+        "list.1.breakdown.familyTaxBenefit.applied": 525.8519,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 1618.4892
+      }
+    },
+    {
+      "id": "2022-family-taper-exhausted",
+      "year": 2022,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "oth": 110000
+          },
+          {
+            "oth": 0
+          }
+        ]
+      },
+      "expected": {
+        "prov": 12926.1195,
+        "list.0.breakdown.familyTaxBenefit.base": 0,
+        "list.0.breakdown.familyTaxBenefit.calculated": 0,
+        "list.0.breakdown.familyTaxBenefit.applied": 0,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 12926.1195,
+        "list.1.breakdown.familyTaxBenefit.base": 2065,
+        "list.1.breakdown.familyTaxBenefit.calculated": 223.02,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0
+      }
+    },
+    {
+      "id": "2022-ages-only-17",
+      "year": 2022,
+      "household": {
+        "adults": 2,
+        "kids": 1,
+        "people": [
+          {
+            "oth": 40000
+          },
+          {
+            "oth": 0
+          }
+        ],
+        "childAges": [17]
+      },
+      "expected": {
+        "prov": 1992.0075,
+        "list.0.breakdown.familyTaxBenefit.base": 3282,
+        "list.0.breakdown.familyTaxBenefit.calculated": 354.456,
+        "list.0.breakdown.familyTaxBenefit.applied": 354.456,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 1992.0075,
+        "list.1.breakdown.familyTaxBenefit.base": 2065,
+        "list.1.breakdown.familyTaxBenefit.calculated": 223.02,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0
+      }
+    },
+    {
+      "id": "2022-ages-only-18",
+      "year": 2022,
+      "household": {
+        "adults": 2,
+        "kids": 0,
+        "people": [
+          {
+            "oth": 40000
+          },
+          {
+            "oth": 0
+          }
+        ],
+        "childAges": [18]
+      },
+      "expected": {
+        "prov": 1992.0075,
+        "list.0.breakdown.familyTaxBenefit.base": 3282,
+        "list.0.breakdown.familyTaxBenefit.calculated": 354.456,
+        "list.0.breakdown.familyTaxBenefit.applied": 354.456,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 1992.0075,
+        "list.1.breakdown.familyTaxBenefit.base": 2065,
+        "list.1.breakdown.familyTaxBenefit.calculated": 223.02,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0
+      }
+    },
+    {
+      "id": "2022-ages-only-19",
+      "year": 2022,
+      "household": {
+        "adults": 2,
+        "kids": 0,
+        "people": [
+          {
+            "oth": 40000
+          },
+          {
+            "oth": 0
+          }
+        ],
+        "childAges": [19]
+      },
+      "expected": {
+        "prov": 2289.2235,
+        "list.0.breakdown.familyTaxBenefit.base": 530,
+        "list.0.breakdown.familyTaxBenefit.calculated": 57.24,
+        "list.0.breakdown.familyTaxBenefit.applied": 57.24,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 2289.2235,
+        "list.1.breakdown.familyTaxBenefit.base": 2065,
+        "list.1.breakdown.familyTaxBenefit.calculated": 223.02,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0
+      }
+    },
+    {
+      "id": "2022-equal-income-unrelated-dividend-capacity",
+      "year": 2022,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "ed": 20000
+          },
+          {
+            "oth": 27600
+          }
+        ],
+        "spouse": false
+      },
+      "expected": {
+        "prov": 1335.96,
+        "list.0.breakdown.familyTaxBenefit.base": 0,
+        "list.0.breakdown.familyTaxBenefit.calculated": 0,
+        "list.0.breakdown.familyTaxBenefit.applied": 0,
+        "list.0.pDtc": 1885.14,
+        "list.0.pFtc": 0,
+        "list.0.prov": 0,
+        "list.1.breakdown.familyTaxBenefit.base": 5085,
+        "list.1.breakdown.familyTaxBenefit.calculated": 549.18,
+        "list.1.breakdown.familyTaxBenefit.applied": 549.18,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 1335.96
+      }
+    },
+    {
+      "id": "2022-equal-income-unrelated-foreign-tax",
+      "year": 2022,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "fd": 30000
+          },
+          {
+            "oth": 30000
+          }
+        ],
+        "whRate": 0.4,
+        "spouse": false
+      },
+      "expected": {
+        "prov": 1618.488,
+        "list.0.breakdown.familyTaxBenefit.base": 0,
+        "list.0.breakdown.familyTaxBenefit.calculated": 0,
+        "list.0.breakdown.familyTaxBenefit.applied": 0,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 2144.34,
+        "list.0.prov": 0,
+        "list.1.breakdown.familyTaxBenefit.base": 4869,
+        "list.1.breakdown.familyTaxBenefit.calculated": 525.852,
+        "list.1.breakdown.familyTaxBenefit.applied": 525.852,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 1618.488
+      }
+    },
+    {
+      "id": "2023-example",
+      "year": 2023,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "oth": 40000
+          },
+          {
+            "oth": 0
+          }
+        ]
+      },
+      "expected": {
+        "prov": 1123.437,
+        "list.0.breakdown.familyTaxBenefit.base": 6034,
+        "list.0.breakdown.familyTaxBenefit.calculated": 651.672,
+        "list.0.breakdown.familyTaxBenefit.applied": 651.672,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 1123.437,
+        "list.1.breakdown.familyTaxBenefit.base": 2065,
+        "list.1.breakdown.familyTaxBenefit.calculated": 223.02,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0
+      }
+    },
+    {
+      "id": "2023-zero-capacity",
+      "year": 2023,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "oth": 10000
+          },
+          {
+            "oth": 0
+          }
+        ]
+      },
+      "expected": {
+        "prov": 0,
+        "list.0.breakdown.familyTaxBenefit.base": 8734,
+        "list.0.breakdown.familyTaxBenefit.calculated": 943.272,
+        "list.0.breakdown.familyTaxBenefit.applied": 0,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 0,
+        "list.1.breakdown.familyTaxBenefit.base": 2065,
+        "list.1.breakdown.familyTaxBenefit.calculated": 223.02,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0
+      }
+    },
+    {
+      "id": "2023-capped-capacity",
+      "year": 2023,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "oth": 26000
+          },
+          {
+            "oth": 0
+          }
+        ]
+      },
+      "expected": {
+        "prov": 0,
+        "list.0.breakdown.familyTaxBenefit.base": 7294,
+        "list.0.breakdown.familyTaxBenefit.calculated": 787.752,
+        "list.0.breakdown.familyTaxBenefit.applied": 201.528,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 0,
+        "list.1.breakdown.familyTaxBenefit.base": 2065,
+        "list.1.breakdown.familyTaxBenefit.calculated": 223.02,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0
+      }
+    },
+    {
+      "id": "2023-basic-capped",
+      "year": 2023,
+      "household": {
+        "people": [
+          {
+            "oth": 16000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 40.5,
+        "list.0.breakdown.familyTaxBenefit.base": 625,
+        "list.0.breakdown.familyTaxBenefit.calculated": 67.5,
+        "list.0.breakdown.familyTaxBenefit.applied": 67.5,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 40.5
+      }
+    },
+    {
+      "id": "2023-basic-taper",
+      "year": 2023,
+      "household": {
+        "people": [
+          {
+            "oth": 20000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 511.38,
+        "list.0.breakdown.familyTaxBenefit.base": 265,
+        "list.0.breakdown.familyTaxBenefit.calculated": 28.62,
+        "list.0.breakdown.familyTaxBenefit.applied": 28.62,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 511.38
+      }
+    },
+    {
+      "id": "2023-basic-taper-last-dollar",
+      "year": 2023,
+      "household": {
+        "people": [
+          {
+            "oth": 22944
+          }
+        ]
+      },
+      "expected": {
+        "prov": 857.9477,
+        "list.0.breakdown.familyTaxBenefit.base": 0.04,
+        "list.0.breakdown.familyTaxBenefit.calculated": 0.0043,
+        "list.0.breakdown.familyTaxBenefit.applied": 0.0043,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 857.9477
+      }
+    },
+    {
+      "id": "2023-basic-taper-exhausted",
+      "year": 2023,
+      "household": {
+        "people": [
+          {
+            "oth": 22945
+          }
+        ]
+      },
+      "expected": {
+        "prov": 858.06,
+        "list.0.breakdown.familyTaxBenefit.base": 0,
+        "list.0.breakdown.familyTaxBenefit.calculated": 0,
+        "list.0.breakdown.familyTaxBenefit.applied": 0,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 858.06
+      }
+    },
+    {
+      "id": "2023-single-parent-one",
+      "year": 2023,
+      "household": {
+        "kids": 1,
+        "people": [
+          {
+            "oth": 40000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 1717.869,
+        "list.0.breakdown.familyTaxBenefit.base": 530,
+        "list.0.breakdown.familyTaxBenefit.calculated": 57.24,
+        "list.0.breakdown.familyTaxBenefit.applied": 57.24,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 1717.869
+      }
+    },
+    {
+      "id": "2023-single-parent-two",
+      "year": 2023,
+      "household": {
+        "kids": 2,
+        "people": [
+          {
+            "oth": 40000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 1420.653,
+        "list.0.breakdown.familyTaxBenefit.base": 3282,
+        "list.0.breakdown.familyTaxBenefit.calculated": 354.456,
+        "list.0.breakdown.familyTaxBenefit.applied": 354.456,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 1420.653
+      }
+    },
+    {
+      "id": "2023-spouse-below-limit",
+      "year": 2023,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "oth": 40000
+          },
+          {
+            "oth": 9133.99
+          }
+        ]
+      },
+      "expected": {
+        "prov": 2109.9079,
+        "list.0.breakdown.familyTaxBenefit.base": 6034,
+        "list.0.breakdown.familyTaxBenefit.calculated": 651.672,
+        "list.0.breakdown.familyTaxBenefit.applied": 651.672,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 2109.9079,
+        "list.1.breakdown.familyTaxBenefit.base": 1242.9409,
+        "list.1.breakdown.familyTaxBenefit.calculated": 134.2376,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0
+      }
+    },
+    {
+      "id": "2023-spouse-at-limit",
+      "year": 2023,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "oth": 40000
+          },
+          {
+            "oth": 9134
+          }
+        ]
+      },
+      "expected": {
+        "prov": 2332.929,
+        "list.0.breakdown.familyTaxBenefit.base": 3969,
+        "list.0.breakdown.familyTaxBenefit.calculated": 428.652,
+        "list.0.breakdown.familyTaxBenefit.applied": 428.652,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 2332.929,
+        "list.1.breakdown.familyTaxBenefit.base": 1242.94,
+        "list.1.breakdown.familyTaxBenefit.calculated": 134.2375,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0
+      }
+    },
+    {
+      "id": "2023-higher-income-child-claim",
+      "year": 2023,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "oth": 50000
+          },
+          {
+            "oth": 20000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 4216.509,
+        "list.0.breakdown.familyTaxBenefit.base": 3069,
+        "list.0.breakdown.familyTaxBenefit.calculated": 331.452,
+        "list.0.breakdown.familyTaxBenefit.applied": 331.452,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 3705.129,
+        "list.1.breakdown.familyTaxBenefit.base": 265,
+        "list.1.breakdown.familyTaxBenefit.calculated": 28.62,
+        "list.1.breakdown.familyTaxBenefit.applied": 28.62,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 511.38
+      }
+    },
+    {
+      "id": "2023-net-income-not-cash",
+      "year": 2023,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "oth": 50000,
+            "ded": 20000
+          },
+          {
+            "oth": 40000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 3952.929,
+        "list.0.breakdown.familyTaxBenefit.base": 0,
+        "list.0.breakdown.familyTaxBenefit.calculated": 0,
+        "list.0.breakdown.familyTaxBenefit.applied": 0,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 1620,
+        "list.1.breakdown.familyTaxBenefit.base": 3969,
+        "list.1.breakdown.familyTaxBenefit.calculated": 428.652,
+        "list.1.breakdown.familyTaxBenefit.applied": 428.652,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 2332.929
+      }
+    },
+    {
+      "id": "2023-dividend-gross-up-claimant",
+      "year": 2023,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "ed": 30000
+          },
+          {
+            "oth": 40000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 2761.581,
+        "list.0.breakdown.familyTaxBenefit.base": 3843,
+        "list.0.breakdown.familyTaxBenefit.calculated": 415.044,
+        "list.0.breakdown.familyTaxBenefit.applied": 415.044,
+        "list.0.pDtc": 2525.037,
+        "list.0.pFtc": 0,
+        "list.0.prov": 0,
+        "list.1.breakdown.familyTaxBenefit.base": 0,
+        "list.1.breakdown.familyTaxBenefit.calculated": 0,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 2761.581
+      }
+    },
+    {
+      "id": "2023-mixed-dividends-foreign",
+      "year": 2023,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "oth": 20000,
+            "ed": 5000,
+            "fd": 10000
+          },
+          {
+            "oth": 0
+          }
+        ],
+        "whRate": 0.4
+      },
+      "expected": {
+        "prov": 106.4737,
+        "list.0.breakdown.familyTaxBenefit.base": 6313,
+        "list.0.breakdown.familyTaxBenefit.calculated": 681.804,
+        "list.0.breakdown.familyTaxBenefit.applied": 681.804,
+        "list.0.pDtc": 552,
+        "list.0.pFtc": 39.5813,
+        "list.0.prov": 106.4737,
+        "list.1.breakdown.familyTaxBenefit.base": 2065,
+        "list.1.breakdown.familyTaxBenefit.calculated": 223.02,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0
+      }
+    },
+    {
+      "id": "2023-dividend-credit-capped",
+      "year": 2023,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "ed": 22000
+          },
+          {
+            "oth": 0
+          }
+        ]
+      },
+      "expected": {
+        "prov": 0,
+        "list.0.breakdown.familyTaxBenefit.base": 6901.6,
+        "list.0.breakdown.familyTaxBenefit.calculated": 745.3728,
+        "list.0.breakdown.familyTaxBenefit.applied": 672.408,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 0,
+        "list.1.breakdown.familyTaxBenefit.base": 2065,
+        "list.1.breakdown.familyTaxBenefit.calculated": 223.02,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0
+      }
+    },
+    {
+      "id": "2023-personal-credits-off",
+      "year": 2023,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "oth": 40000
+          },
+          {
+            "oth": 0
+          }
+        ],
+        "useBpa": false
+      },
+      "expected": {
+        "prov": 4381.581,
+        "list.0.breakdown.familyTaxBenefit.base": 0,
+        "list.0.breakdown.familyTaxBenefit.calculated": 0,
+        "list.0.breakdown.familyTaxBenefit.applied": 0,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 4381.581,
+        "list.1.breakdown.familyTaxBenefit.base": 0,
+        "list.1.breakdown.familyTaxBenefit.calculated": 0,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0
+      }
+    },
+    {
+      "id": "2023-refund-switch-independent",
+      "year": 2023,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "oth": 40000
+          },
+          {
+            "oth": 0
+          }
+        ],
+        "useCredits": true
+      },
+      "expected": {
+        "prov": 1123.437,
+        "list.0.breakdown.familyTaxBenefit.base": 6034,
+        "list.0.breakdown.familyTaxBenefit.calculated": 651.672,
+        "list.0.breakdown.familyTaxBenefit.applied": 651.672,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 1123.437,
+        "list.1.breakdown.familyTaxBenefit.base": 2065,
+        "list.1.breakdown.familyTaxBenefit.calculated": 223.02,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0
+      }
+    },
+    {
+      "id": "2023-implicit-zero-income-spouse",
+      "year": 2023,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "oth": 40000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 1123.437,
+        "list.0.breakdown.familyTaxBenefit.base": 6034,
+        "list.0.breakdown.familyTaxBenefit.calculated": 651.672,
+        "list.0.breakdown.familyTaxBenefit.applied": 651.672,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 1123.437,
+        "list.1.breakdown.familyTaxBenefit.base": 2065,
+        "list.1.breakdown.familyTaxBenefit.calculated": 223.02,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0
+      }
+    },
+    {
+      "id": "2023-unrelated-adults",
+      "year": 2023,
+      "household": {
+        "adults": 2,
+        "spouse": false,
+        "kids": 2,
+        "people": [
+          {
+            "oth": 40000
+          },
+          {
+            "oth": 20000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 2844.309,
+        "list.0.breakdown.familyTaxBenefit.base": 3969,
+        "list.0.breakdown.familyTaxBenefit.calculated": 428.652,
+        "list.0.breakdown.familyTaxBenefit.applied": 428.652,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 2332.929,
+        "list.1.breakdown.familyTaxBenefit.base": 265,
+        "list.1.breakdown.familyTaxBenefit.calculated": 28.62,
+        "list.1.breakdown.familyTaxBenefit.applied": 28.62,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 511.38
+      }
+    },
+    {
+      "id": "2023-equal-income-spouses",
+      "year": 2023,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "oth": 30000
+          },
+          {
+            "oth": 30000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 2714.148,
+        "list.0.breakdown.familyTaxBenefit.base": 4869,
+        "list.0.breakdown.familyTaxBenefit.calculated": 525.852,
+        "list.0.breakdown.familyTaxBenefit.applied": 525.852,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 1094.148,
+        "list.1.breakdown.familyTaxBenefit.base": 0,
+        "list.1.breakdown.familyTaxBenefit.calculated": 0,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 1620
+      }
+    },
+    {
+      "id": "2023-equal-income-dividend-capacity",
+      "year": 2023,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "ed": 20000
+          },
+          {
+            "oth": 27600
+          }
+        ]
+      },
+      "expected": {
+        "prov": 811.62,
+        "list.0.breakdown.familyTaxBenefit.base": 0,
+        "list.0.breakdown.familyTaxBenefit.calculated": 0,
+        "list.0.breakdown.familyTaxBenefit.applied": 0,
+        "list.0.pDtc": 1360.8,
+        "list.0.pFtc": 0,
+        "list.0.prov": 0,
+        "list.1.breakdown.familyTaxBenefit.base": 5085,
+        "list.1.breakdown.familyTaxBenefit.calculated": 549.18,
+        "list.1.breakdown.familyTaxBenefit.applied": 549.18,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 811.62
+      }
+    },
+    {
+      "id": "2023-equal-income-foreign-tax",
+      "year": 2023,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "fd": 30000
+          },
+          {
+            "oth": 30000
+          }
+        ],
+        "whRate": 0.4
+      },
+      "expected": {
+        "prov": 1094.148,
+        "list.0.breakdown.familyTaxBenefit.base": 0,
+        "list.0.breakdown.familyTaxBenefit.calculated": 0,
+        "list.0.breakdown.familyTaxBenefit.applied": 0,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 1620,
+        "list.0.prov": 0,
+        "list.1.breakdown.familyTaxBenefit.base": 4869,
+        "list.1.breakdown.familyTaxBenefit.calculated": 525.852,
+        "list.1.breakdown.familyTaxBenefit.applied": 525.852,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 1094.148
+      }
+    },
+    {
+      "id": "2023-near-equal-dividend-restriction",
+      "year": 2023,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "ed": 20000,
+            "oth": 0.01
+          },
+          {
+            "oth": 27600
+          }
+        ]
+      },
+      "expected": {
+        "prov": 1360.8,
+        "list.0.breakdown.familyTaxBenefit.base": 5084.9991,
+        "list.0.breakdown.familyTaxBenefit.calculated": 549.1799,
+        "list.0.breakdown.familyTaxBenefit.applied": 549.1799,
+        "list.0.pDtc": 811.6212,
+        "list.0.pFtc": 0,
+        "list.0.prov": 0,
+        "list.1.breakdown.familyTaxBenefit.base": 0,
+        "list.1.breakdown.familyTaxBenefit.calculated": 0,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 1360.8
+      }
+    },
+    {
+      "id": "2023-near-equal-income-spouses",
+      "year": 2023,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "oth": 30000
+          },
+          {
+            "oth": 30000.01
+          }
+        ]
+      },
+      "expected": {
+        "prov": 2714.1492,
+        "list.0.breakdown.familyTaxBenefit.base": 0,
+        "list.0.breakdown.familyTaxBenefit.calculated": 0,
+        "list.0.breakdown.familyTaxBenefit.applied": 0,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 1620,
+        "list.1.breakdown.familyTaxBenefit.base": 4868.9991,
+        "list.1.breakdown.familyTaxBenefit.calculated": 525.8519,
+        "list.1.breakdown.familyTaxBenefit.applied": 525.8519,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 1094.1492
+      }
+    },
+    {
+      "id": "2023-family-taper-exhausted",
+      "year": 2023,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "oth": 110000
+          },
+          {
+            "oth": 0
+          }
+        ]
+      },
+      "expected": {
+        "prov": 12112.5465,
+        "list.0.breakdown.familyTaxBenefit.base": 0,
+        "list.0.breakdown.familyTaxBenefit.calculated": 0,
+        "list.0.breakdown.familyTaxBenefit.applied": 0,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 12112.5465,
+        "list.1.breakdown.familyTaxBenefit.base": 2065,
+        "list.1.breakdown.familyTaxBenefit.calculated": 223.02,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0
+      }
+    },
+    {
+      "id": "2023-ages-only-17",
+      "year": 2023,
+      "household": {
+        "adults": 2,
+        "kids": 1,
+        "people": [
+          {
+            "oth": 40000
+          },
+          {
+            "oth": 0
+          }
+        ],
+        "childAges": [17]
+      },
+      "expected": {
+        "prov": 1420.653,
+        "list.0.breakdown.familyTaxBenefit.base": 3282,
+        "list.0.breakdown.familyTaxBenefit.calculated": 354.456,
+        "list.0.breakdown.familyTaxBenefit.applied": 354.456,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 1420.653,
+        "list.1.breakdown.familyTaxBenefit.base": 2065,
+        "list.1.breakdown.familyTaxBenefit.calculated": 223.02,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0
+      }
+    },
+    {
+      "id": "2023-ages-only-18",
+      "year": 2023,
+      "household": {
+        "adults": 2,
+        "kids": 0,
+        "people": [
+          {
+            "oth": 40000
+          },
+          {
+            "oth": 0
+          }
+        ],
+        "childAges": [18]
+      },
+      "expected": {
+        "prov": 1420.653,
+        "list.0.breakdown.familyTaxBenefit.base": 3282,
+        "list.0.breakdown.familyTaxBenefit.calculated": 354.456,
+        "list.0.breakdown.familyTaxBenefit.applied": 354.456,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 1420.653,
+        "list.1.breakdown.familyTaxBenefit.base": 2065,
+        "list.1.breakdown.familyTaxBenefit.calculated": 223.02,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0
+      }
+    },
+    {
+      "id": "2023-ages-only-19",
+      "year": 2023,
+      "household": {
+        "adults": 2,
+        "kids": 0,
+        "people": [
+          {
+            "oth": 40000
+          },
+          {
+            "oth": 0
+          }
+        ],
+        "childAges": [19]
+      },
+      "expected": {
+        "prov": 1717.869,
+        "list.0.breakdown.familyTaxBenefit.base": 530,
+        "list.0.breakdown.familyTaxBenefit.calculated": 57.24,
+        "list.0.breakdown.familyTaxBenefit.applied": 57.24,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 1717.869,
+        "list.1.breakdown.familyTaxBenefit.base": 2065,
+        "list.1.breakdown.familyTaxBenefit.calculated": 223.02,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0
+      }
+    },
+    {
+      "id": "2023-equal-income-unrelated-dividend-capacity",
+      "year": 2023,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "ed": 20000
+          },
+          {
+            "oth": 27600
+          }
+        ],
+        "spouse": false
+      },
+      "expected": {
+        "prov": 811.62,
+        "list.0.breakdown.familyTaxBenefit.base": 0,
+        "list.0.breakdown.familyTaxBenefit.calculated": 0,
+        "list.0.breakdown.familyTaxBenefit.applied": 0,
+        "list.0.pDtc": 1360.8,
+        "list.0.pFtc": 0,
+        "list.0.prov": 0,
+        "list.1.breakdown.familyTaxBenefit.base": 5085,
+        "list.1.breakdown.familyTaxBenefit.calculated": 549.18,
+        "list.1.breakdown.familyTaxBenefit.applied": 549.18,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 811.62
+      }
+    },
+    {
+      "id": "2023-equal-income-unrelated-foreign-tax",
+      "year": 2023,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "fd": 30000
+          },
+          {
+            "oth": 30000
+          }
+        ],
+        "whRate": 0.4,
+        "spouse": false
+      },
+      "expected": {
+        "prov": 1094.148,
+        "list.0.breakdown.familyTaxBenefit.base": 0,
+        "list.0.breakdown.familyTaxBenefit.calculated": 0,
+        "list.0.breakdown.familyTaxBenefit.applied": 0,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 1620,
+        "list.0.prov": 0,
+        "list.1.breakdown.familyTaxBenefit.base": 4869,
+        "list.1.breakdown.familyTaxBenefit.calculated": 525.852,
+        "list.1.breakdown.familyTaxBenefit.applied": 525.852,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 1094.148
+      }
+    },
+    {
+      "id": "2024-example",
+      "year": 2024,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "oth": 40000
+          },
+          {
+            "oth": 0
+          }
+        ]
+      },
+      "expected": {
+        "prov": 977.616,
+        "list.0.breakdown.familyTaxBenefit.base": 6034,
+        "list.0.breakdown.familyTaxBenefit.calculated": 651.672,
+        "list.0.breakdown.familyTaxBenefit.applied": 651.672,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 977.616,
+        "list.1.breakdown.familyTaxBenefit.base": 2065,
+        "list.1.breakdown.familyTaxBenefit.calculated": 223.02,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0
+      }
+    },
+    {
+      "id": "2024-zero-capacity",
+      "year": 2024,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "oth": 10000
+          },
+          {
+            "oth": 0
+          }
+        ]
+      },
+      "expected": {
+        "prov": 0,
+        "list.0.breakdown.familyTaxBenefit.base": 8734,
+        "list.0.breakdown.familyTaxBenefit.calculated": 943.272,
+        "list.0.breakdown.familyTaxBenefit.applied": 0,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 0,
+        "list.1.breakdown.familyTaxBenefit.base": 2065,
+        "list.1.breakdown.familyTaxBenefit.calculated": 223.02,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0
+      }
+    },
+    {
+      "id": "2024-capped-capacity",
+      "year": 2024,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "oth": 26000
+          },
+          {
+            "oth": 0
+          }
+        ]
+      },
+      "expected": {
+        "prov": 0,
+        "list.0.breakdown.familyTaxBenefit.base": 7294,
+        "list.0.breakdown.familyTaxBenefit.calculated": 787.752,
+        "list.0.breakdown.familyTaxBenefit.applied": 117.288,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 0,
+        "list.1.breakdown.familyTaxBenefit.base": 2065,
+        "list.1.breakdown.familyTaxBenefit.calculated": 223.02,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0
+      }
+    },
+    {
+      "id": "2024-basic-capped",
+      "year": 2024,
+      "household": {
+        "people": [
+          {
+            "oth": 16000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 0,
+        "list.0.breakdown.familyTaxBenefit.base": 625,
+        "list.0.breakdown.familyTaxBenefit.calculated": 67.5,
+        "list.0.breakdown.familyTaxBenefit.applied": 23.76,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 0
+      }
+    },
+    {
+      "id": "2024-basic-taper",
+      "year": 2024,
+      "household": {
+        "people": [
+          {
+            "oth": 20000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 427.14,
+        "list.0.breakdown.familyTaxBenefit.base": 265,
+        "list.0.breakdown.familyTaxBenefit.calculated": 28.62,
+        "list.0.breakdown.familyTaxBenefit.applied": 28.62,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 427.14
+      }
+    },
+    {
+      "id": "2024-basic-taper-last-dollar",
+      "year": 2024,
+      "household": {
+        "people": [
+          {
+            "oth": 22944
+          }
+        ]
+      },
+      "expected": {
+        "prov": 773.7077,
+        "list.0.breakdown.familyTaxBenefit.base": 0.04,
+        "list.0.breakdown.familyTaxBenefit.calculated": 0.0043,
+        "list.0.breakdown.familyTaxBenefit.applied": 0.0043,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 773.7077
+      }
+    },
+    {
+      "id": "2024-basic-taper-exhausted",
+      "year": 2024,
+      "household": {
+        "people": [
+          {
+            "oth": 22945
+          }
+        ]
+      },
+      "expected": {
+        "prov": 773.82,
+        "list.0.breakdown.familyTaxBenefit.base": 0,
+        "list.0.breakdown.familyTaxBenefit.calculated": 0,
+        "list.0.breakdown.familyTaxBenefit.applied": 0,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 773.82
+      }
+    },
+    {
+      "id": "2024-single-parent-one",
+      "year": 2024,
+      "household": {
+        "kids": 1,
+        "people": [
+          {
+            "oth": 40000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 1572.048,
+        "list.0.breakdown.familyTaxBenefit.base": 530,
+        "list.0.breakdown.familyTaxBenefit.calculated": 57.24,
+        "list.0.breakdown.familyTaxBenefit.applied": 57.24,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 1572.048
+      }
+    },
+    {
+      "id": "2024-single-parent-two",
+      "year": 2024,
+      "household": {
+        "kids": 2,
+        "people": [
+          {
+            "oth": 40000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 1274.832,
+        "list.0.breakdown.familyTaxBenefit.base": 3282,
+        "list.0.breakdown.familyTaxBenefit.calculated": 354.456,
+        "list.0.breakdown.familyTaxBenefit.applied": 354.456,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 1274.832
+      }
+    },
+    {
+      "id": "2024-spouse-below-limit",
+      "year": 2024,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "oth": 40000
+          },
+          {
+            "oth": 9133.99
+          }
+        ]
+      },
+      "expected": {
+        "prov": 1964.0869,
+        "list.0.breakdown.familyTaxBenefit.base": 6034,
+        "list.0.breakdown.familyTaxBenefit.calculated": 651.672,
+        "list.0.breakdown.familyTaxBenefit.applied": 651.672,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 1964.0869,
+        "list.1.breakdown.familyTaxBenefit.base": 1242.9409,
+        "list.1.breakdown.familyTaxBenefit.calculated": 134.2376,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0
+      }
+    },
+    {
+      "id": "2024-spouse-at-limit",
+      "year": 2024,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "oth": 40000
+          },
+          {
+            "oth": 9134
+          }
+        ]
+      },
+      "expected": {
+        "prov": 2187.108,
+        "list.0.breakdown.familyTaxBenefit.base": 3969,
+        "list.0.breakdown.familyTaxBenefit.calculated": 428.652,
+        "list.0.breakdown.familyTaxBenefit.applied": 428.652,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 2187.108,
+        "list.1.breakdown.familyTaxBenefit.base": 1242.94,
+        "list.1.breakdown.familyTaxBenefit.calculated": 134.2375,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0
+      }
+    },
+    {
+      "id": "2024-higher-income-child-claim",
+      "year": 2024,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "oth": 50000
+          },
+          {
+            "oth": 20000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 3849.948,
+        "list.0.breakdown.familyTaxBenefit.base": 3069,
+        "list.0.breakdown.familyTaxBenefit.calculated": 331.452,
+        "list.0.breakdown.familyTaxBenefit.applied": 331.452,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 3422.808,
+        "list.1.breakdown.familyTaxBenefit.base": 265,
+        "list.1.breakdown.familyTaxBenefit.calculated": 28.62,
+        "list.1.breakdown.familyTaxBenefit.applied": 28.62,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 427.14
+      }
+    },
+    {
+      "id": "2024-net-income-not-cash",
+      "year": 2024,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "oth": 50000,
+            "ded": 20000
+          },
+          {
+            "oth": 40000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 3722.868,
+        "list.0.breakdown.familyTaxBenefit.base": 0,
+        "list.0.breakdown.familyTaxBenefit.calculated": 0,
+        "list.0.breakdown.familyTaxBenefit.applied": 0,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 1535.76,
+        "list.1.breakdown.familyTaxBenefit.base": 3969,
+        "list.1.breakdown.familyTaxBenefit.calculated": 428.652,
+        "list.1.breakdown.familyTaxBenefit.applied": 428.652,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 2187.108
+      }
+    },
+    {
+      "id": "2024-dividend-gross-up-claimant",
+      "year": 2024,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "ed": 30000
+          },
+          {
+            "oth": 40000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 2615.76,
+        "list.0.breakdown.familyTaxBenefit.base": 3843,
+        "list.0.breakdown.familyTaxBenefit.calculated": 415.044,
+        "list.0.breakdown.familyTaxBenefit.applied": 415.044,
+        "list.0.pDtc": 2351.916,
+        "list.0.pFtc": 0,
+        "list.0.prov": 0,
+        "list.1.breakdown.familyTaxBenefit.base": 0,
+        "list.1.breakdown.familyTaxBenefit.calculated": 0,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 2615.76
+      }
+    },
+    {
+      "id": "2024-mixed-dividends-foreign",
+      "year": 2024,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "oth": 20000,
+            "ed": 5000,
+            "fd": 10000
+          },
+          {
+            "oth": 0
+          }
+        ],
+        "whRate": 0.4
+      },
+      "expected": {
+        "prov": 44.2385,
+        "list.0.breakdown.familyTaxBenefit.base": 6313,
+        "list.0.breakdown.familyTaxBenefit.calculated": 681.804,
+        "list.0.breakdown.familyTaxBenefit.applied": 681.804,
+        "list.0.pDtc": 552,
+        "list.0.pFtc": 16.4455,
+        "list.0.prov": 44.2385,
+        "list.1.breakdown.familyTaxBenefit.base": 2065,
+        "list.1.breakdown.familyTaxBenefit.calculated": 223.02,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0
+      }
+    },
+    {
+      "id": "2024-dividend-credit-capped",
+      "year": 2024,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "ed": 22000
+          },
+          {
+            "oth": 0
+          }
+        ]
+      },
+      "expected": {
+        "prov": 0,
+        "list.0.breakdown.familyTaxBenefit.base": 6901.6,
+        "list.0.breakdown.familyTaxBenefit.calculated": 745.3728,
+        "list.0.breakdown.familyTaxBenefit.applied": 588.168,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 0,
+        "list.1.breakdown.familyTaxBenefit.base": 2065,
+        "list.1.breakdown.familyTaxBenefit.calculated": 223.02,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0
+      }
+    },
+    {
+      "id": "2024-personal-credits-off",
+      "year": 2024,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "oth": 40000
+          },
+          {
+            "oth": 0
+          }
+        ],
+        "useBpa": false
+      },
+      "expected": {
+        "prov": 4320,
+        "list.0.breakdown.familyTaxBenefit.base": 0,
+        "list.0.breakdown.familyTaxBenefit.calculated": 0,
+        "list.0.breakdown.familyTaxBenefit.applied": 0,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 4320,
+        "list.1.breakdown.familyTaxBenefit.base": 0,
+        "list.1.breakdown.familyTaxBenefit.calculated": 0,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0
+      }
+    },
+    {
+      "id": "2024-refund-switch-independent",
+      "year": 2024,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "oth": 40000
+          },
+          {
+            "oth": 0
+          }
+        ],
+        "useCredits": true
+      },
+      "expected": {
+        "prov": 977.616,
+        "list.0.breakdown.familyTaxBenefit.base": 6034,
+        "list.0.breakdown.familyTaxBenefit.calculated": 651.672,
+        "list.0.breakdown.familyTaxBenefit.applied": 651.672,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 977.616,
+        "list.1.breakdown.familyTaxBenefit.base": 2065,
+        "list.1.breakdown.familyTaxBenefit.calculated": 223.02,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0
+      }
+    },
+    {
+      "id": "2024-implicit-zero-income-spouse",
+      "year": 2024,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "oth": 40000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 977.616,
+        "list.0.breakdown.familyTaxBenefit.base": 6034,
+        "list.0.breakdown.familyTaxBenefit.calculated": 651.672,
+        "list.0.breakdown.familyTaxBenefit.applied": 651.672,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 977.616,
+        "list.1.breakdown.familyTaxBenefit.base": 2065,
+        "list.1.breakdown.familyTaxBenefit.calculated": 223.02,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0
+      }
+    },
+    {
+      "id": "2024-unrelated-adults",
+      "year": 2024,
+      "household": {
+        "adults": 2,
+        "spouse": false,
+        "kids": 2,
+        "people": [
+          {
+            "oth": 40000
+          },
+          {
+            "oth": 20000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 2614.248,
+        "list.0.breakdown.familyTaxBenefit.base": 3969,
+        "list.0.breakdown.familyTaxBenefit.calculated": 428.652,
+        "list.0.breakdown.familyTaxBenefit.applied": 428.652,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 2187.108,
+        "list.1.breakdown.familyTaxBenefit.base": 265,
+        "list.1.breakdown.familyTaxBenefit.calculated": 28.62,
+        "list.1.breakdown.familyTaxBenefit.applied": 28.62,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 427.14
+      }
+    },
+    {
+      "id": "2024-equal-income-spouses",
+      "year": 2024,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "oth": 30000
+          },
+          {
+            "oth": 30000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 2545.668,
+        "list.0.breakdown.familyTaxBenefit.base": 4869,
+        "list.0.breakdown.familyTaxBenefit.calculated": 525.852,
+        "list.0.breakdown.familyTaxBenefit.applied": 525.852,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 1009.908,
+        "list.1.breakdown.familyTaxBenefit.base": 0,
+        "list.1.breakdown.familyTaxBenefit.calculated": 0,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 1535.76
+      }
+    },
+    {
+      "id": "2024-equal-income-dividend-capacity",
+      "year": 2024,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "ed": 20000
+          },
+          {
+            "oth": 27600
+          }
+        ]
+      },
+      "expected": {
+        "prov": 727.38,
+        "list.0.breakdown.familyTaxBenefit.base": 0,
+        "list.0.breakdown.familyTaxBenefit.calculated": 0,
+        "list.0.breakdown.familyTaxBenefit.applied": 0,
+        "list.0.pDtc": 1276.56,
+        "list.0.pFtc": 0,
+        "list.0.prov": 0,
+        "list.1.breakdown.familyTaxBenefit.base": 5085,
+        "list.1.breakdown.familyTaxBenefit.calculated": 549.18,
+        "list.1.breakdown.familyTaxBenefit.applied": 549.18,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 727.38
+      }
+    },
+    {
+      "id": "2024-equal-income-foreign-tax",
+      "year": 2024,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "fd": 30000
+          },
+          {
+            "oth": 30000
+          }
+        ],
+        "whRate": 0.4
+      },
+      "expected": {
+        "prov": 1009.908,
+        "list.0.breakdown.familyTaxBenefit.base": 0,
+        "list.0.breakdown.familyTaxBenefit.calculated": 0,
+        "list.0.breakdown.familyTaxBenefit.applied": 0,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 1535.76,
+        "list.0.prov": 0,
+        "list.1.breakdown.familyTaxBenefit.base": 4869,
+        "list.1.breakdown.familyTaxBenefit.calculated": 525.852,
+        "list.1.breakdown.familyTaxBenefit.applied": 525.852,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 1009.908
+      }
+    },
+    {
+      "id": "2024-near-equal-dividend-restriction",
+      "year": 2024,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "ed": 20000,
+            "oth": 0.01
+          },
+          {
+            "oth": 27600
+          }
+        ]
+      },
+      "expected": {
+        "prov": 1276.56,
+        "list.0.breakdown.familyTaxBenefit.base": 5084.9991,
+        "list.0.breakdown.familyTaxBenefit.calculated": 549.1799,
+        "list.0.breakdown.familyTaxBenefit.applied": 549.1799,
+        "list.0.pDtc": 727.3812,
+        "list.0.pFtc": 0,
+        "list.0.prov": 0,
+        "list.1.breakdown.familyTaxBenefit.base": 0,
+        "list.1.breakdown.familyTaxBenefit.calculated": 0,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 1276.56
+      }
+    },
+    {
+      "id": "2024-near-equal-income-spouses",
+      "year": 2024,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "oth": 30000
+          },
+          {
+            "oth": 30000.01
+          }
+        ]
+      },
+      "expected": {
+        "prov": 2545.6692,
+        "list.0.breakdown.familyTaxBenefit.base": 0,
+        "list.0.breakdown.familyTaxBenefit.calculated": 0,
+        "list.0.breakdown.familyTaxBenefit.applied": 0,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 1535.76,
+        "list.1.breakdown.familyTaxBenefit.base": 4868.9991,
+        "list.1.breakdown.familyTaxBenefit.calculated": 525.8519,
+        "list.1.breakdown.familyTaxBenefit.applied": 525.8519,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 1009.9092
+      }
+    },
+    {
+      "id": "2024-family-taper-exhausted",
+      "year": 2024,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "oth": 110000
+          },
+          {
+            "oth": 0
+          }
+        ]
+      },
+      "expected": {
+        "prov": 10882.788,
+        "list.0.breakdown.familyTaxBenefit.base": 0,
+        "list.0.breakdown.familyTaxBenefit.calculated": 0,
+        "list.0.breakdown.familyTaxBenefit.applied": 0,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 10882.788,
+        "list.1.breakdown.familyTaxBenefit.base": 2065,
+        "list.1.breakdown.familyTaxBenefit.calculated": 223.02,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0
+      }
+    },
+    {
+      "id": "2024-ages-only-17",
+      "year": 2024,
+      "household": {
+        "adults": 2,
+        "kids": 1,
+        "people": [
+          {
+            "oth": 40000
+          },
+          {
+            "oth": 0
+          }
+        ],
+        "childAges": [17]
+      },
+      "expected": {
+        "prov": 1274.832,
+        "list.0.breakdown.familyTaxBenefit.base": 3282,
+        "list.0.breakdown.familyTaxBenefit.calculated": 354.456,
+        "list.0.breakdown.familyTaxBenefit.applied": 354.456,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 1274.832,
+        "list.1.breakdown.familyTaxBenefit.base": 2065,
+        "list.1.breakdown.familyTaxBenefit.calculated": 223.02,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0
+      }
+    },
+    {
+      "id": "2024-ages-only-18",
+      "year": 2024,
+      "household": {
+        "adults": 2,
+        "kids": 0,
+        "people": [
+          {
+            "oth": 40000
+          },
+          {
+            "oth": 0
+          }
+        ],
+        "childAges": [18]
+      },
+      "expected": {
+        "prov": 1274.832,
+        "list.0.breakdown.familyTaxBenefit.base": 3282,
+        "list.0.breakdown.familyTaxBenefit.calculated": 354.456,
+        "list.0.breakdown.familyTaxBenefit.applied": 354.456,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 1274.832,
+        "list.1.breakdown.familyTaxBenefit.base": 2065,
+        "list.1.breakdown.familyTaxBenefit.calculated": 223.02,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0
+      }
+    },
+    {
+      "id": "2024-ages-only-19",
+      "year": 2024,
+      "household": {
+        "adults": 2,
+        "kids": 0,
+        "people": [
+          {
+            "oth": 40000
+          },
+          {
+            "oth": 0
+          }
+        ],
+        "childAges": [19]
+      },
+      "expected": {
+        "prov": 1572.048,
+        "list.0.breakdown.familyTaxBenefit.base": 530,
+        "list.0.breakdown.familyTaxBenefit.calculated": 57.24,
+        "list.0.breakdown.familyTaxBenefit.applied": 57.24,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 1572.048,
+        "list.1.breakdown.familyTaxBenefit.base": 2065,
+        "list.1.breakdown.familyTaxBenefit.calculated": 223.02,
+        "list.1.breakdown.familyTaxBenefit.applied": 0,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0
+      }
+    },
+    {
+      "id": "2024-equal-income-unrelated-dividend-capacity",
+      "year": 2024,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "ed": 20000
+          },
+          {
+            "oth": 27600
+          }
+        ],
+        "spouse": false
+      },
+      "expected": {
+        "prov": 727.38,
+        "list.0.breakdown.familyTaxBenefit.base": 0,
+        "list.0.breakdown.familyTaxBenefit.calculated": 0,
+        "list.0.breakdown.familyTaxBenefit.applied": 0,
+        "list.0.pDtc": 1276.56,
+        "list.0.pFtc": 0,
+        "list.0.prov": 0,
+        "list.1.breakdown.familyTaxBenefit.base": 5085,
+        "list.1.breakdown.familyTaxBenefit.calculated": 549.18,
+        "list.1.breakdown.familyTaxBenefit.applied": 549.18,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 727.38
+      }
+    },
+    {
+      "id": "2024-equal-income-unrelated-foreign-tax",
+      "year": 2024,
+      "household": {
+        "adults": 2,
+        "kids": 2,
+        "people": [
+          {
+            "fd": 30000
+          },
+          {
+            "oth": 30000
+          }
+        ],
+        "whRate": 0.4,
+        "spouse": false
+      },
+      "expected": {
+        "prov": 1009.908,
+        "list.0.breakdown.familyTaxBenefit.base": 0,
+        "list.0.breakdown.familyTaxBenefit.calculated": 0,
+        "list.0.breakdown.familyTaxBenefit.applied": 0,
+        "list.0.pDtc": 0,
+        "list.0.pFtc": 1535.76,
+        "list.0.prov": 0,
+        "list.1.breakdown.familyTaxBenefit.base": 4869,
+        "list.1.breakdown.familyTaxBenefit.calculated": 525.852,
+        "list.1.breakdown.familyTaxBenefit.applied": 525.852,
+        "list.1.pDtc": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 1009.908
+      }
+    }
+  ]
+}
