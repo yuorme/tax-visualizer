@@ -32,6 +32,18 @@ import {
 } from "./driving-units.ts";
 import { renderHistory } from "./history.ts";
 import { cents, footerNotes, share, tooltips } from "./notes.ts";
+import {
+  defaultPortfolio,
+  enginePerson,
+  type InvestView,
+  MAX_PORTFOLIO_VALUE,
+  mixIsWhole,
+  mixTotal,
+  normalizePortfolios,
+  type Portfolio,
+  parsePercent,
+  portfolioAmounts,
+} from "./portfolio.ts";
 import { provinceFlags, setProvinceFlag } from "./province-flags.ts";
 import { readScenario, scenarioHash } from "./scenario-url.ts";
 
@@ -107,6 +119,9 @@ type Tenure = "own" | "rent";
 let people: Person[] = [blank(DEFAULT_INCOME)],
   active = 0,
   spouse = true;
+// Each person's portfolio, by index; null keeps them in the manual view. people[] always holds the manual amounts,
+// so the amounts the engine sees come from enginePeople(), and only what a person typed is edited through me().
+let portfolios: (Portfolio | null)[] = [];
 let metric: Metric = "pct",
   spendingAdjustment = 0,
   adults = 1,
@@ -157,7 +172,7 @@ const care = new ChildcareEditor(childCount => {
 let benefitCounts: { kids: number; under6: number } | undefined;
 // Engine input built from the current state
 const inputs = (withCare = true): Household => ({
-  people,
+  people: enginePeople(),
   active,
   spouse,
   adults,
@@ -183,6 +198,10 @@ const rowFor = (res: Row[], c: string) =>
 const propRate = (c: string) => propertyRate(prov(c).d, inputs());
 const pct2 = (r: number) => `${(r * 100).toFixed(2)}%`; // payroll rates shown to two decimals, e.g. 4.95%
 const me = () => people[active];
+const portfolioOf = (i: number) => portfolios[i] ?? null;
+/** Each person's income as the engine sees it, for reading. In the portfolio view it differs from what's in people. */
+const enginePeople = () => people.map((x, i) => enginePerson(x, portfolioOf(i)));
+const counted = () => enginePerson(me(), portfolioOf(active));
 const isNum = (v: unknown): v is number => typeof v === "number";
 /** A person read back from saved state, keeping only valid amounts. */
 function cleanPerson(o: unknown): Person {
@@ -208,6 +227,7 @@ try {
     if (typeof s.historyOpen === "boolean") historyOpen = s.historyOpen;
     if (s.historyMode === "nominal") historyMode = "nominal";
     if (Array.isArray(s.people) && s.people.length) people = s.people.slice(0, 2).map(cleanPerson);
+    portfolios = normalizePortfolios(s.portfolios, people.length); // absent in older saves: the manual view
     if (s.active === 1 && people.length === 2) active = 1;
     if (typeof s.spouse === "boolean") spouse = s.spouse;
     if (s.sort === "rate" || s.sort === "geo") sort = s.sort;
@@ -254,6 +274,7 @@ function scenarioState() {
     historyOpen,
     historyMode,
     people,
+    portfolios: normalizePortfolios(portfolios, people.length),
     active,
     spouse,
     sort,
@@ -426,7 +447,7 @@ $("tabbar").addEventListener("click", e => {
 });
 
 function renderPeople() {
-  let html = people
+  let html = enginePeople()
     .map((x, i) => {
       const btn = `<button class="person" data-i="${i}" aria-pressed="${i === active}"><b>${NAMES[i]}</b><small>${money(cashOf(x))}</small></button>`;
       return i === 0
@@ -661,7 +682,7 @@ function render() {
   if (tipFor && segTips.get(tipFor) && tipFor.closest(".col")) showTip(tipFor); // keep an open segment tip current
 
   const two = people.length === 2,
-    x = me();
+    x = counted();
   const H = rowFor(res, home);
   const totalInc = H.r.cash;
   const anyBen = res.some(y => y.r.benefits > 0.5);
@@ -675,20 +696,25 @@ function render() {
   $("max-rrsp").textContent = `Use estimate ${money(rm)}`;
   $("max-rrsp").setAttribute("aria-pressed", String(rm > 0 && x.rrsp === rm));
   $("other-title").textContent = two ? `${active ? "Partner's" : "Your"} other income` : "Other income";
-  $("other-sum").textContent = (x.oth ?? 0) > 0 ? `${money(x.oth ?? 0)} a year` : "none added";
+  const portfolio = portfolioOf(active);
+  const bondInterest = portfolio?.view === "portfolio" ? portfolioAmounts(portfolio).interest : 0;
+  $("other-sum").textContent =
+    (x.oth ?? 0) > 0
+      ? `${money(x.oth ?? 0)} a year${bondInterest > 0 ? `, including ${money(bondInterest)} bond interest` : ""}`
+      : "none added";
   $("invest-title").textContent = two ? `${active ? "Partner's" : "Your"} investment income` : "Investment income";
-  $("invest-sum").textContent = hasInv(x)
-    ? [
-        x.cg > 0 && `${money(x.cg)} net gains`,
-        x.cg < 0 && `${money(-x.cg)} net loss`,
-        x.ed && `${money(x.ed)} eligible div.`,
-        x.nd && `${money(x.nd)} non-eligible div.`,
-        x.fd && `${money(x.fd)} foreign div.`,
-      ]
-        .filter(Boolean)
-        .join(" · ")
-    : "none added";
-  $("legend-wh").hidden = !(people.some(y => y.fd > 0) && whRate > 0);
+  const setAside = portfolio?.view === "portfolio" && [me().ed, me().nd, me().fd].some(v => v > 0);
+  const investParts = [
+    x.cg > 0 && `${money(x.cg)} net gains`,
+    x.cg < 0 && `${money(-x.cg)} net loss`,
+    x.ed && `${money(x.ed)} eligible div.`,
+    x.nd && `${money(x.nd)} non-eligible div.`,
+    x.fd && `${money(x.fd)} foreign div.`,
+    bondInterest > 0 && `${money(bondInterest)} bond interest`,
+    setAside && "Manual dividends not counted",
+  ].filter(Boolean);
+  $("invest-sum").textContent = investParts.length ? investParts.join(" · ") : "none added";
+  $("legend-wh").hidden = !(enginePeople().some(y => y.fd > 0) && whRate > 0);
   $("legend-sales").hidden = !(effSpend() > 0);
   $("legend-prop").hidden = !(ownedValue() > 0);
   $("legend-fuel").hidden = !res.some(y => fuelAmt(y.r) > 0.5);
@@ -759,7 +785,7 @@ function render() {
   $("rent-body").hidden = tenure !== "rent";
   // Tab summaries: what each panel holds, highlighted whenever the summary is an amount rather than none, not set,
   // $0 or off. Income covers everyone's other and investment income, though its panel shows the selected person's.
-  const otherAmt = people.reduce((a, y) => a + (y.oth ?? 0), 0);
+  const otherAmt = enginePeople().reduce((a, y) => a + (y.oth ?? 0), 0);
   const anyInc = H.r.hasInv || otherAmt > 0;
   const incNet = otherAmt + H.r.invAmt;
   tabSum("income", anyInc ? (incNet < 0 ? `−${kMoney(-incNet)}` : kMoney(incNet)) : "none", anyInc);
@@ -781,6 +807,7 @@ function render() {
   care.render(H.r);
   $<HTMLSelectElement>("wh").value = String(whRate);
   paintCg();
+  renderPortfolio();
   renderPeople();
   $("sort-rate").setAttribute("aria-pressed", String(sort === "rate"));
   $("sort-geo").setAttribute("aria-pressed", String(sort === "geo"));
@@ -1024,7 +1051,7 @@ function renderDetail(res: Row[], order: Row[]) {
 
 function ledgerView({ p, r }: Row) {
   const two = people.length === 2,
-    x = me(),
+    x = counted(),
     m = r.me,
     n = m.breakdown.netIncome,
     who = two ? NAMES[active] : "";
@@ -1207,6 +1234,7 @@ $("people").addEventListener("click", e => {
     if (adults < 2) setHousehold(2, kids);
   } else if (t.id === "remove-partner") {
     people = [people[0]];
+    portfolios = portfolios.slice(0, 1);
     active = 0;
     if (adults === 2) setHousehold(1, kids);
   } else if (t.dataset.i != null) active = +t.dataset.i;
@@ -1305,6 +1333,53 @@ document.querySelectorAll<HTMLInputElement>("input.inv-range").forEach(el => {
     render();
   });
 });
+// The Portfolio view of the selected person's investment income. A box being typed in keeps its draft until blur.
+const PF_PERCENTS = [
+  ["canadian", "pf-canadian"],
+  ["foreign", "pf-foreign"],
+  ["bonds", "pf-bonds"],
+  ["yieldPct", "pf-yield"],
+] as const;
+const pfValueIn = $<HTMLInputElement>("pf-value");
+function setPortfolio(change: Partial<Portfolio>) {
+  portfolios[active] = { ...(portfolioOf(active) ?? defaultPortfolio()), ...change };
+  render();
+}
+function renderPortfolio() {
+  const entry = portfolioOf(active) ?? defaultPortfolio();
+  const isPortfolio = entry.view === "portfolio";
+  for (const b of document.querySelectorAll<HTMLElement>("[data-invest-view]"))
+    b.setAttribute("aria-pressed", String(b.dataset.investView === entry.view));
+  $("pf-body").hidden = !isPortfolio;
+  $("invest-grid").classList.toggle("portfolio-view", isPortfolio);
+  if (document.activeElement !== pfValueIn) pfValueIn.value = entry.value.toLocaleString("en-CA");
+  for (const [key, id] of PF_PERCENTS) {
+    const input = $<HTMLInputElement>(id);
+    if (document.activeElement !== input) input.value = String(entry[key]);
+  }
+  const status = $("pf-mix-status");
+  status.hidden = mixIsWhole(entry);
+  status.textContent =
+    mixTotal(entry) > 0 ? `Mix totals ${+mixTotal(entry).toFixed(2)}%: scaled to 100%` : "Mix totals 0%: no income";
+}
+for (const button of document.querySelectorAll<HTMLElement>("[data-invest-view]"))
+  button.addEventListener("click", () => {
+    const view: InvestView = button.dataset.investView === "portfolio" ? "portfolio" : "manual";
+    setPortfolio({ view });
+  });
+pfValueIn.addEventListener("input", () =>
+  setPortfolio({ value: Math.min(+pfValueIn.value.replace(/[^\d]/g, "") || 0, MAX_PORTFOLIO_VALUE) }),
+);
+for (const [key, id] of PF_PERCENTS) {
+  const input = $<HTMLInputElement>(id);
+  input.addEventListener("input", () => setPortfolio({ [key]: parsePercent(input.value) }));
+}
+for (const input of [pfValueIn, ...PF_PERCENTS.map(([, id]) => $<HTMLInputElement>(id))]) {
+  input.addEventListener("blur", () => render());
+  input.addEventListener("keydown", e => {
+    if (e.key === "Enter") input.blur();
+  });
+}
 const whSel = $<HTMLSelectElement>("wh");
 whSel.addEventListener("change", () => {
   whRate = +whSel.value;

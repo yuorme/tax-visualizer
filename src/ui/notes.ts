@@ -4,6 +4,7 @@
 // tests can render it in Node.
 import type { ChildBenefitProgram, CreditProgram, FuelRate, PhasedAmount, Province, YearData } from "../data/schema.ts";
 import { ratePeriods, yearAverage } from "../engine/index.ts";
+import { PORTFOLIO_DEFAULTS } from "./defaults.ts";
 
 /** Values the page itself sets, rather than the year's data. */
 export interface PageDefaults {
@@ -226,6 +227,12 @@ export function tooltips(y: YearData): Record<string, string> {
     capitalGains: `Profit from selling investments for more than you paid (their adjusted cost base), minus losses on anything sold at a loss during the year. Only ${rate(inv.capitalGainsInclusion)} of a net gain is taxable. A net loss doesn't reduce other income this year, but it can be carried back 3 years or forward indefinitely against future gains. Double-click the amount or slider to reset to 0.`,
     eligibleDividends: `Dividends from Canadian public companies, and from private corporations paying out income taxed at the general corporate rate. Most dividends from Canadian stocks and Canadian equity ETFs are eligible. They're grossed up by ${rate(inv.grossUp.eligible - 1)} and earn the enhanced dividend tax credit, so they're taxed well below salary.`,
     nonEligibleDividends: `Dividends paid from corporate income taxed at the small business rate, usually from a small private corporation you own. They're grossed up by ${rate(inv.grossUp.nonEligible - 1)} and earn a smaller dividend tax credit than eligible dividends.`,
+    portfolioView:
+      "Manual takes the exact amounts from your tax slips. Portfolio is a quick estimate of the same amounts from what you hold, and won't match your slips. Each person's two views are kept separately, and only the one selected counts: in Portfolio, the eligible and foreign dividends entered in Manual are set aside. Non-eligible dividends are entered in Manual only, so they count as $0 in Portfolio. Net capital gains are the same amount in both views.",
+    portfolioValue:
+      "The market value of the selected person's investments in non-registered (taxable) accounts. Leave out TFSAs, RRSPs and other registered accounts: their income isn't taxed each year. Income is the value × each share of the asset mix × the average yield, to the nearest dollar.",
+    portfolioMix: `The share of the portfolio in each kind of investment. Canadian stocks are assumed to pay eligible dividends, and U.S. and international stocks foreign dividends, with tax withheld abroad at the rate chosen below. Bonds are assumed to pay interest, which is added to any amount under Other income and treated the same way, so don't enter that interest there too. Cash and any other holdings aren't modelled. It starts at ${PORTFOLIO_DEFAULTS.canadian}% Canadian stocks, ${PORTFOLIO_DEFAULTS.foreign}% U.S. and international stocks and ${PORTFOLIO_DEFAULTS.bonds}% bonds, an estimate rounded from ${PORTFOLIO_DEFAULTS.basis}. Shares that don't total 100% are scaled to 100%.`,
+    portfolioYield: `The income the portfolio pays in a year as a percentage of its value. One yield applies to every asset class, though bonds and stocks often pay different rates. It starts at ${PORTFOLIO_DEFAULTS.yieldPct}%, an estimate rounded from the distribution yield of ${PORTFOLIO_DEFAULTS.basis}. Yield doesn't include growth in value: no gains are assumed to be realized, so enter any you sold for under Net capital gains.`,
     foreignDividends: `Dividends from non-Canadian companies, such as U.S. stocks. They get no gross-up or dividend tax credit, so they're taxed like salary. The other country usually withholds tax first (${rate(inv.foreignWithholding.usTreaty)} for the U.S. under the tax treaty), which you mostly recover as a foreign tax credit.`,
   };
 }
