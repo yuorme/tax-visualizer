@@ -1011,6 +1011,25 @@ for (const width of [1000, 430, 375]) {
       assert.deepEqual(mb, ["col-MB", `-19.4${suffix}`, `17.6${suffix}`]);
       mb[1] = `-19.8${suffix}`;
       mb[2] = `7.6${suffix}`;
+      // #103: $28k employment gets the $1,450 worker deduction. Schedule P's 10% reduction falls by $145,
+      // moving Quebec's net rate down 145 / 28000 = 0.517857 percentage points and ahead of BC.
+      const qc = t.cols.find(col => col[0] === "col-QC");
+      assert.deepEqual(qc, ["col-QC", `-27.0${suffix}`, `31.8${suffix}`]);
+      qc[1] = `-27.5${suffix}`;
+      t.cols.splice(t.cols.indexOf(qc), 1);
+      t.cols.splice(
+        t.cols.findIndex(col => col[0] === "col-BC"),
+        0,
+        qc,
+      );
+    }
+    if (name === "partner, BC home, $ view") {
+      // #103: the two workers' deductions raise Family Allowance by 2 × 1450 × 4% = $116.
+      // Mobile rounds both old/new annual tax to $27k; only the desktop label changes.
+      const qc = t.cols.find(col => col[0] === "col-QC");
+      const suffix = width < PHONE ? "" : "%";
+      assert.deepEqual(qc, ["col-QC", width < PHONE ? "27k" : "$26.6k", `46.0${suffix}`]);
+      if (width >= PHONE) qc[1] = "$26.5k";
     }
     if (name === "investments, Quebec destination" || name === "home value, taxable spending, sort") {
       // #91: partner's subject income = 20,000 × 50% + 12,000 + 8,000 = 30,000.
@@ -1056,6 +1075,11 @@ for (const width of [1000, 430, 375]) {
         assert.equal(t.detail.split(before).length, 2, `legacy health fund value: ${before}`);
         t.detail = t.detail.replace(before, after);
       }
+      // #103: with investment income the allowance is already at its minimum. Without that income the
+      // corrected allowance rises $116, so the investment-tax difference rises by $116 (9871 → 9987).
+      const before = "Tax on investment income\t$7,161\t$9,871\t+$2,710";
+      assert.equal(t.detail.split(before).length, 2, "legacy Quebec investment-tax benefit base");
+      t.detail = t.detail.replace(before, "Tax on investment income\t$7,161\t$9,987\t+$2,826");
       if (own) {
         const suffix = width < PHONE ? "" : "%";
         const qc = t.cols.find(col => col[0] === "col-QC");
