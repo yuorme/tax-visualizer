@@ -1,0 +1,294 @@
+Title: Vanguard Balanced ETF Portfolio product page
+URL: https://www.vanguard.ca/en/product/etf/asset-allocation/9578/vanguard-balanced-etf-portfolio
+Fetched: 2026-11-03
+SHA-256 of the original: 1a12c3e6aec39b800c8e255055cf2e1e8d8680d75d5b47c255ff010fc10ff55f
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+Vanguard Balanced ETF Portfolio
+
+# (VBAL) Vanguard Balanced ETF Portfolio
+
+Related documents
+
+- Factsheet
+- ETF facts
+- Prospectus
+- Prospectus Amendment 1
+- Annual financial statement
+- Annual MRFP
+- DRIP document
+- Interim financial statement
+- Interim MRFP
+- IRC annual report to unit holders
+- Quarterly portfolio disclosure
+
+- About this fund
+- Performance
+- Portfolio data
+- Prices and distribution
+- Purchase information
+
+$39.09
+CAD
+Change
+-$0.06-0.15%
+As at Nov 03 2026
+0.22%
+2.11%
+As at Sep 30 2026
+
+## About this fund
+
+### Fund objectives
+
+Vanguard Balanced ETF Portfolio seeks to provide long-term capital growth with a moderate level of income by investing in equity and fixed income securities.
+
+### Why this fund
+
+- Seeks to achieve its investment objective by primarily investing in equity and fixed income securities. It may do so either directly or indirectly through investment in one or more exchange traded funds managed by the manager or an affiliate or certain other investment funds.
+- In seeking to achieve the investment objective (under normal market conditions), the sub-advisor will strive to maintain a long-term strategic asset allocation of equity (approximately 60%) and fixed income (approximately 40%) securities. The portfolio asset mix may be reconstituted and rebalanced from time to time at the discretion of the sub-advisor.
+- The underlying funds are expected to be index funds that provide exposure to broad-based equity and fixed income markets.
+
+### Fund facts
+
+Inception date
+Jan 25 2018
+Total assets
+Management Fee
+Asset class
+Multi-Asset
+Investment manager
+Vanguard Global Equity Index Management
+Management Expense Ratio (MER)
+Distribution Per Unit
+$0.19
+Distribution frequency
+Quarterly
+Trading Expense Ratio (TER)
+Benchmark
+Internal Composite
+Fund Expense Ratio (FER)
+
+## Performance
+
+##### Risk and Volatility
+
+As at Sep 30 2026
+
+Beta
+—
+R²
+—
+Alpha
+—
+Standard Deviation
+Sharpe Ratio
+
+Please note Beta and R 2 data will only display for funds with 3 full years of history.
+
+## Portfolio data
+
+##### Allocation to underlying Vanguard funds
+
+As at Sep 30 2026
+
+| Percentage
+Morningstar U.S. Total Market Index ETF | 27.98%
+Canadian Aggregate Bond Index ETF | 22.89%
+FTSE Canada All Cap Index ETF | 18.08%
+FTSE Developed All Cap ex North America Index ETF | 11.05%
+Global ex-U.S. Aggregate Bond Index ETF (CAD-hedged) | 7.84%
+U.S. Aggregate Bond Index ETF (CAD-hedged) | 7.43%
+FTSE Emerging Markets All Cap Index ETF | 4.70%
+
+Total allocation percentages shown may not equal 100% due to rounding
+
+Allocation percentages reflect the breakdown of security type.
+
+##### Asset allocation
+
+As at Sep 30 2026
+
+Asset allocation
+Asset class | Percentage
+Bond | 38.16%
+Short-term reserves | 0.02%
+Stock | 61.82%
+
+Weighted equity exposures exclude any temporary cash investments and equity index futures. Some short-term fixed income securities are classified as cash and are excluded from the weighted bond exposures.
+
+##### Characteristics
+
+Stocks | Fund | As at
+Number of stocks | 13,936 | Sep 30 2026
+Median market capital | 142.3 B | Sep 30 2026
+Price earning / ratio (P/E) | 19.9 x | Sep 30 2026
+Price / book ratio (P/B) | 3.1 x | Sep 30 2026
+Return on equity (ROE) | 14.9% | Sep 30 2026
+Earnings growth rate | 17.3% | Sep 30 2026
+
+Fundamentals | Fund | As at
+Number of bonds | 17,347 | Sep 30 2026
+YTM (Yield to Maturity) effective | 4.4% | Sep 30 2026
+Average Duration | 6.5 Years | Sep 30 2026
+Average maturity | 9.8 Years | Sep 30 2026
+Average quality | AA- | Sep 30 2026
+Cash Investment | 0.0% | Sep 30 2026
+
+##### Market allocation
+
+As at Sep 30 2026
+
+Country | Region | Fund | Benchmark | Variance +/-
+United States of America | North America | 45.45% | — | —
+Canada | North America | 29.38% | — | —
+Japan | Pacific | 4.37% | — | —
+Taiwan | Emerging Markets | 2.56% | — | —
+United Kingdom | Europe | 2.24% | — | —
+China | Emerging Markets | 1.90% | — | —
+Republic Of Korea | Pacific | 1.84% | — | —
+Switzerland | Europe | 1.32% | — | —
+France | Europe | 1.31% | — | —
+Germany | Europe | 1.24% | — | —
+India | Emerging Markets | 1.17% | — | —
+Australia | Pacific | 1.13% | — | —
+Netherlands | Europe | 0.81% | — | —
+Spain | Europe | 0.58% | — | —
+Italy | Europe | 0.54% | — | —
+
+##### Top 10 Holdings
+
+As at Sep 30 2026
+
+View:
+Equity
+Bond
+
+Holding name | % of market value | Sector | Region | Market value | Shares
+NVIDIA Corp | 1.99179% | Technology | US | $118,214,707.97 | 364,587.141
+Apple Inc | 1.85138% | Technology | US | $109,881,242.16 | 232,402.688
+Microsoft Corp | 1.45079% | Technology | US | $86,105,452.77 | 118,245.837
+Royal Bank of Canada | 1.42616% | Financials | CA | $84,644,028.08 | 302,364.893
+Toronto-Dominion Bank/The | 1.00284% | Financials | CA | $59,519,503.94 | 355,701.332
+Shopify Inc | 0.94098% | Technology | CA | $55,848,035.56 | 264,783.025
+Amazon.com Inc | 0.92135% | Consumer Discretionary | US | $54,682,979.05 | 154,589.21
+Alphabet Inc | 0.77066% | Technology | US | $45,739,502.57 | 93,631.054
+Taiwan Semiconductor Manufacturing Co Ltd | 0.73389% | Technology | TW | $43,557,014.24 | 391,828.929
+Broadcom Inc | 0.63646% | Technology | US | $37,774,689.80 | 75,761.169
+
+Total allocation percentages shown in the holdings details or the spreadsheet may not equal 100%, due to rounding or omission of cash and/or futures contracts.
+
+Weighted equity exposures exclude any temporary cash investments and equity index futures. Some short-term fixed income securities are classified as cash and are excluded from the weighted bond exposures.
+
+## Prices and distribution
+
+### Prices
+
+Nav Price (CAD)
+$39.09
+CAD
+Change
+-$0.06-0.15%
+As at Nov 03 2026
+NAV 52-week high
+$40.24
+As at Nov 04 2026
+NAV 52-week low
+$36.11
+As at Nov 04 2026
+NAV 52-week difference
+$4.13
+Change
++10.26%
+As at Nov 04 2026
+
+##### Historical Prices
+
+Inception date
+
+Jan 25 2018
+
+Listing date
+
+Feb 01 2018
+
+Date | NAV (CAD) | Market price (CAD)
+Nov 03 2026 | $39.0900 | $39.0800
+Nov 02 2026 | $39.1493 | $39.1250
+Oct 30 2026 | $39.0689 | $39.0900
+Oct 29 2026 | $39.4706 | $39.4700
+Oct 28 2026 | $39.4594 | $39.4700
+Oct 27 2026 | $39.4981 | $39.4900
+Oct 26 2026 | $39.2918 | $39.2900
+Oct 23 2026 | $39.1509 | $39.1600
+Oct 22 2026 | $39.2889 | $39.3200
+Oct 21 2026 | $39.5532 | $39.5600
+
+[image: undefined]
+
+With an online brokerage | With a financial advisor
+
+There are two ways to buy Vanguard's funds in Canada
+
+How to buy
+
+### Distribution history
+
+Distribution frequency
+
+Quarterly
+
+12 month trailing yield
+
+2.11%
+
+(Sep 30 2026)
+
+Distribution yield
+
+2.22%
+
+(Sep 30 2026)
+
+Type | Ex-dividend date | Record date | Payment date | Cash distribution per unit | Reinvestment distribution per unit | Total distribution per unit
+Income | Oct 01 2026 | Oct 01 2026 | Oct 08 2026 | $0.19326 | — | $0.19326
+Income | Jul 02 2026 | Jul 02 2026 | Jul 09 2026 | $0.21997 | — | $0.21997
+Income | Apr 01 2026 | Apr 01 2026 | Apr 09 2026 | $0.18982 | — | $0.18982
+Income | Dec 30 2025 | Dec 30 2025 | Jan 07 2026 | $0.24319 | — | $0.24319
+CGCA | Dec 30 2025 | Dec 30 2025 | Jan 07 2026 | — | $0.43024 | $0.43024
+Income | Oct 01 2025 | Oct 01 2025 | Oct 08 2025 | $0.18118 | — | $0.18118
+Income | Jul 02 2025 | Jul 02 2025 | Jul 09 2025 | $0.19960 | — | $0.19960
+Income | Apr 01 2025 | Apr 01 2025 | Apr 08 2025 | $0.18885 | — | $0.18885
+CGCA | Dec 30 2024 | Dec 30 2024 | Jan 07 2025 | — | $0.33707 | $0.33707
+Income | Dec 30 2024 | Dec 30 2024 | Jan 07 2025 | $0.18573 | — | $0.18573
+
+##### Annual distributions
+
+Year | Eligible dividends | Non eligible dividends | Other income | Capital gains | Return of capital | Foreign income | Foreign tax paid | Total distribution per unit
+2018 | $0.09888 | $0.00000 | $0.10761 | $0.05502 | $0.00335 | $0.31146 | $0.04142 | $0.53490
+2019 | $0.13341 | $0.00000 | $0.13064 | $0.00354 | $0.00190 | $0.37836 | $0.04916 | $0.59869
+2020 | $0.13712 | $0.00000 | $0.13433 | $0.11432 | $0.00134 | $0.28195 | $0.03204 | $0.63702
+2021 | $0.14061 | $0.00000 | $0.14010 | $0.28959 | $0.00056 | $0.36988 | $0.04808 | $0.89266
+2022 | $0.14409 | $0.00000 | $0.15660 | $0.21475 | $0.00220 | $0.32779 | $0.03754 | $0.80789
+2023 | $0.16101 | $0.00000 | $0.16675 | $0.12181 | $0.00009 | $0.41716 | $0.04829 | $0.81852
+2024 | $0.16589 | $0.00000 | $0.20378 | $0.33707 | $0.00112 | $0.44449 | $0.05478 | $1.09757
+2025 | $0.15589 | $0.00000 | $0.23065 | $0.43024 | $0.00154 | $0.48107 | $0.05633 | $1.24306
+
+Return of Capital represents the distribution amount that is paid back to investors. Each January, Vanguard Investments Canada Inc. will report the actual return of capital for the investment funds. The total payout will remain the same, but the percentage of the payout that equals return of capital (the principal value) and the amount that equals earnings (capital gains and dividends) may differ slightly.
+
+Vanguard ETFs trade at market price not NAV. Investors must buy or sell Vanguard ETFs in the secondary market with the assistance of a brokerage firm. In doing so, investors may incur brokerage commissions and may pay more than NAV when buying and receive less than NAV when selling.
+
+## Purchase information
+
+### Currencies and stock exchanges
+
+Listed currencies: CAD
+
+Base currency:CAD
+
+Exchanges: Toronto Stock Exchange
+
+### Fund codes
+
+The management expense ratio (MER) is the MER as of the most recent fund year end, including waivers and absorptions, and is expressed as an annualized percentage of the daily average net asset value. Vanguard Investments Canada Inc. expects to continue absorbing or waiving certain fees indefinitely but may, in its discretion, discontinue this practice at any time. For recently launched funds, MER information is not yet available.
