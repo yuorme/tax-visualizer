@@ -8,6 +8,23 @@ const pair = z.tuple([amount, amount]); // [single, family]
 const ratePair = z.tuple([rate, rate]);
 const source = z.object({ label: z.string(), url: z.string().url() });
 
+/**
+ * Starting values for the page's Portfolio view; the engine never reads them. The page takes them from the newest year
+ * that has them, whichever tax year is selected, and each scenario stores its own copy once its portfolio is used.
+ */
+export const portfolioDefaults = z
+  .object({
+    canadian: rate,
+    foreign: rate,
+    bonds: rate,
+    yield: rate,
+    estimated: z.literal(true),
+    basis: z.string().min(1),
+    source,
+  })
+  .refine(d => Math.abs(d.canadian + d.foreign + d.bonds - 1) < 1e-9, "the mix must total 100%");
+export type PortfolioAssumptions = z.infer<typeof portfolioDefaults>;
+
 /** [upper limit of the bracket, rate]. The last bracket's limit is Infinity (.inf in YAML). */
 const brackets = z
   .array(z.tuple([z.union([z.number().positive(), z.literal(Infinity)]), rate]))
@@ -157,6 +174,7 @@ export const federalSchema = z.object({
     dividendTaxCredit: z.object({ eligible: rate, nonEligible: rate }),
     /** Not used by the engine (withholding is an input); quoted in the page notes and the withholding presets. */
     foreignWithholding: z.object({ usTreaty: rate, deductibleAbove: rate }),
+    portfolioDefaults: portfolioDefaults.optional(),
   }),
   rrsp: z.object({ rate, limit: amount }),
   childcare: program(

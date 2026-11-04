@@ -614,6 +614,47 @@ tfoot tr:last-child td {
 .invest-grid.one {
   grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
 }
+/* Portfolio view: dividends come from the portfolio. Gains and the withholding rate still apply, so they stay. */
+.invest-grid.portfolio-view .manual-only {
+  display: none;
+}
+/* The value gets the wider column: a full eight-digit amount has to fit beside the yield on a 375px phone. */
+.pf-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+  gap: 14px;
+  max-width: 460px;
+  margin-top: 14px;
+}
+.pf-body[hidden],
+#pf-mix-status[hidden],
+#oth-portfolio-status[hidden] {
+  display: none;
+}
+.pf-body .field {
+  display: grid;
+  gap: 4px;
+  align-content: end;
+}
+.pf-mix {
+  grid-column: 1 / -1;
+  display: grid;
+  gap: 6px;
+  min-inline-size: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.pf-mix-fields {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px 14px;
+}
+.money.md #pf-value,
+.money.md #pf-yield {
+  width: 100%;
+  min-width: 0;
+}
 .money.sm span {
   font-size: 18px;
 }
@@ -1525,6 +1566,13 @@ table.cmp .worse {
   margin-left: 6px;
   white-space: nowrap;
 }
+/* Three boxes share a phone's width: a smaller amount keeps two decimals readable, at the 16px iOS doesn't zoom. */
+.pf-mix-fields .money.sm input {
+  font-size: 16px;
+}
+.pf-mix-fields .money .per {
+  margin-left: 0;
+}
 
 .wh-select {
   font: inherit;
@@ -1543,6 +1591,9 @@ table.cmp .worse {
   flex-wrap: wrap;
   font-size: 12px;
   color: var(--muted);
+}
+.invest-grid.portfolio-view .wh-row {
+  grid-row: 2;
 }
 
 /* Detail ledger */

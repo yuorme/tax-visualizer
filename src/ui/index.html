@@ -118,14 +118,41 @@
       <div class="panel-head"><b class="panel-title" id="other-title">Other income</b><button type="button" class="info" data-note="otherIncome" aria-label="About other income">i</button><span class="panel-sum" id="other-sum">none added</span></div>
       <div class="invest-grid one">
         <div class="field">
-          <div class="lbl-row"><label class="lbl" for="oth">Interest, rental &amp; other</label></div>
+          <div class="lbl-row"><label class="lbl" for="oth" id="oth-label">Interest, rental &amp; other</label></div>
           <div class="money sm"><span>$</span><input id="oth" class="inv" inputmode="numeric" autocomplete="off" value="0"></div>
           <input type="range" id="oth-range" class="inv-range" data-k="oth" min="0" max="100000" step="500" value="0" aria-label="Interest, rental and other income slider">
           <div class="scale" data-for="oth-range" data-ticks="0,~25000,50000,~75000,100000" aria-hidden="true"></div>
         </div>
       </div>
-      <div class="panel-head"><b class="panel-title" id="invest-title">Investment income</b><button type="button" class="info" data-tip="Capital gains and dividends from investments held in a non-registered (taxable) account; interest goes under Other income above. Income inside a TFSA isn't taxed at all, and RRSP/RRIF withdrawals also go under Other income. CRA taxes investment income to whoever supplied the money, regardless of whose name is on the account." aria-label="About investment income">i</button><span class="panel-sum">Non-registered accounts · <span id="invest-sum">none added</span></span></div>
-      <div class="invest-grid">
+      <div class="pr-note" id="oth-portfolio-status" role="status" hidden></div>
+      <div class="panel-head"><b class="panel-title" id="invest-title">Investment income</b><button type="button" class="info" data-tip="Capital gains and dividends from investments held in a non-registered (taxable) account. In Manual, interest goes under Other income above. In Portfolio, bond interest comes from the portfolio, so leave it out of Other income. Income inside a TFSA isn't taxed at all, and RRSP/RRIF withdrawals also go under Other income. CRA taxes investment income to whoever supplied the money, regardless of whose name is on the account." aria-label="About investment income">i</button><span class="panel-sum">Non-registered accounts · <span id="invest-sum">none added</span></span></div>
+      <div class="sub-row">
+        <fieldset class="seg" aria-label="How to enter investment income">
+          <button type="button" id="invest-view-manual" data-invest-view="manual" aria-pressed="true">Manual</button>
+          <button type="button" id="invest-view-portfolio" data-invest-view="portfolio" aria-pressed="false">Portfolio</button>
+        </fieldset>
+        <button type="button" class="info" data-note="portfolioView" aria-label="About manual and portfolio entry">i</button>
+      </div>
+      <div class="pf-body" id="pf-body" hidden>
+        <div class="field">
+          <div class="lbl-row"><label class="lbl" for="pf-value">Portfolio value</label><button type="button" class="info" data-note="portfolioValue" aria-label="About portfolio value">i</button></div>
+          <div class="money md"><span>$</span><input id="pf-value" inputmode="numeric" autocomplete="off" value="0"></div>
+        </div>
+        <div class="field">
+          <div class="lbl-row"><label class="lbl" for="pf-yield">Average yield</label><button type="button" class="info" data-note="portfolioYield" aria-label="About average yield">i</button></div>
+          <div class="money md"><input id="pf-yield" inputmode="decimal" autocomplete="off" value="0"><span class="per">%</span></div>
+        </div>
+        <fieldset class="pf-mix" aria-labelledby="pf-mix-label">
+          <div class="lbl-row"><span class="lbl" id="pf-mix-label">Asset mix</span><button type="button" class="info" data-note="portfolioMix" aria-label="About asset mix">i</button></div>
+          <div class="pf-mix-fields">
+            <div class="field"><label class="lbl" for="pf-canadian">Canadian stocks</label><div class="money sm"><input id="pf-canadian" inputmode="decimal" autocomplete="off" value="0"><span class="per">%</span></div></div>
+            <div class="field"><label class="lbl" for="pf-foreign">U.S. &amp; intl. stocks</label><div class="money sm"><input id="pf-foreign" inputmode="decimal" autocomplete="off" value="0"><span class="per">%</span></div></div>
+            <div class="field"><label class="lbl" for="pf-bonds">Bonds</label><div class="money sm"><input id="pf-bonds" inputmode="decimal" autocomplete="off" value="0"><span class="per">%</span></div></div>
+          </div>
+          <div class="pr-note" id="pf-mix-status" role="status" hidden></div>
+        </fieldset>
+      </div>
+      <div class="invest-grid" id="invest-grid">
         <div class="field">
           <div class="lbl-row"><label class="lbl" for="cg">Net capital gains / losses</label><button type="button" class="info" data-note="capitalGains" aria-label="About net capital gains and losses">i</button></div>
           <div class="money sm"><span>$</span><input id="cg" class="inv" inputmode="text" autocomplete="off" value="0" title="Double-click to reset to 0"></div>
@@ -134,23 +161,23 @@
           </div>
           <div class="scale" data-for="cg-range" data-ticks="-50000,~-25000,0,~25000,50000" data-signed aria-hidden="true"></div>
         </div>
-        <div class="field">
+        <div class="field manual-only">
           <div class="lbl-row"><label class="lbl" for="ed">Eligible dividends</label><button type="button" class="info" data-note="eligibleDividends" aria-label="About eligible dividends">i</button></div>
           <div class="money sm"><span>$</span><input id="ed" class="inv" inputmode="numeric" autocomplete="off" value="0"></div>
           <input type="range" id="ed-range" class="inv-range" data-k="ed" min="0" max="50000" step="250" value="0" aria-label="Eligible dividends slider">
           <div class="scale" data-for="ed-range" data-ticks="0,~12500,25000,~37500,50000" aria-hidden="true"></div>
         </div>
-        <div class="field">
+        <div class="field manual-only">
           <div class="lbl-row"><label class="lbl" for="nd">Non-eligible dividends</label><button type="button" class="info" data-note="nonEligibleDividends" aria-label="About non-eligible dividends">i</button></div>
           <div class="money sm"><span>$</span><input id="nd" class="inv" inputmode="numeric" autocomplete="off" value="0"></div>
           <input type="range" id="nd-range" class="inv-range" data-k="nd" min="0" max="50000" step="250" value="0" aria-label="Non-eligible dividends slider">
           <div class="scale" data-for="nd-range" data-ticks="0,~12500,25000,~37500,50000" aria-hidden="true"></div>
         </div>
         <div class="field">
-          <div class="lbl-row"><label class="lbl" for="fd">Foreign dividends</label><button type="button" class="info" data-note="foreignDividends" aria-label="About foreign dividends">i</button></div>
-          <div class="money sm"><span>$</span><input id="fd" class="inv" inputmode="numeric" autocomplete="off" value="0"></div>
-          <input type="range" id="fd-range" class="inv-range" data-k="fd" min="0" max="50000" step="250" value="0" aria-label="Foreign dividends slider">
-          <div class="scale" data-for="fd-range" data-ticks="0,~12500,25000,~37500,50000" aria-hidden="true"></div>
+          <div class="lbl-row manual-only"><label class="lbl" for="fd">Foreign dividends</label><button type="button" class="info" data-note="foreignDividends" aria-label="About foreign dividends">i</button></div>
+          <div class="money sm manual-only"><span>$</span><input id="fd" class="inv" inputmode="numeric" autocomplete="off" value="0"></div>
+          <input type="range" id="fd-range" class="inv-range manual-only" data-k="fd" min="0" max="50000" step="250" value="0" aria-label="Foreign dividends slider">
+          <div class="scale manual-only" data-for="fd-range" data-ticks="0,~12500,25000,~37500,50000" aria-hidden="true"></div>
           <div class="wh-row"><label for="wh">Tax withheld abroad</label>
             <select id="wh" class="wh-select"></select></div>
         </div>
@@ -302,7 +329,7 @@
     <!-- The methodology notes are built from the year's data (src/ui/notes.ts) and inserted here. -->
     <div id="year-notes"></div>
     <p id="year-sources"></p>
-    <p id="default-sources">Shared spending assumptions: <a href="https://www150.statcan.gc.ca/n1/daily-quotidien/260429/dq260429a-eng.htm" target="_blank" rel="noopener">Statistics Canada, Canadian Income Survey 2024</a> · <a href="https://www150.statcan.gc.ca/n1/daily-quotidien/250521/dq250521a-eng.htm" target="_blank" rel="noopener">Statistics Canada, Survey of Household Spending 2023</a> · <a href="https://www.fraserinstitute.org/studies/taxes-versus-necessities-life-canadian-consumer-tax-index-2026-edition" target="_blank" rel="noopener">Fraser Institute, Canadian Consumer Tax Index 2026</a>.</p>
+    <p id="default-sources">Shared spending assumptions: <a href="https://www150.statcan.gc.ca/n1/daily-quotidien/260429/dq260429a-eng.htm" target="_blank" rel="noopener">Statistics Canada, Canadian Income Survey 2024</a> · <a href="https://www150.statcan.gc.ca/n1/daily-quotidien/250521/dq250521a-eng.htm" target="_blank" rel="noopener">Statistics Canada, Survey of Household Spending 2023</a> · <a href="https://www.fraserinstitute.org/studies/taxes-versus-necessities-life-canadian-consumer-tax-index-2026-edition" target="_blank" rel="noopener">Fraser Institute, Canadian Consumer Tax Index 2026</a>. Portfolio assumptions: <a id="portfolio-source" href="https://www.vanguard.ca/en/product/etf/asset-allocation/9578/vanguard-balanced-etf-portfolio" target="_blank" rel="noopener">Vanguard Canada, Vanguard Balanced ETF Portfolio (holdings and yield as at Sep 30 2026)</a>.</p>
   </footer>
 </div>
 <script>

@@ -18,6 +18,7 @@ import { CHILDCARE_STEPS } from "./childcare.mjs";
 import { DEDUCTION_STEPS } from "./deductions.mjs";
 import { HISTORY_STEPS } from "./history.mjs";
 import { ALLOWED_HOSTS, openPage, settle } from "./page.mjs";
+import { PORTFOLIO_RESPONSIVE_STEPS, PORTFOLIO_STEPS } from "./portfolio.mjs";
 import { COMPARISON_STEPS, RESPONSIVE_STEPS } from "./responsive.mjs";
 import { COLUMN_COUNT, contrastViolations, inspect, KNOWN, MAX_LABEL_LENGTH } from "./rules.mjs";
 
@@ -634,7 +635,7 @@ const YEAR_STEPS = [
         const tip = await p.getAttribute('[data-note="rrsp"]', "data-tip");
         if (!tip.includes(`the ${year} limit`)) problems.push("RRSP tooltip did not follow selected year");
         const sharedSources = await p.locator("#default-sources a").count();
-        if (sharedSources !== 3) problems.push("shared spending assumption sources disappeared");
+        if (sharedSources !== 4) problems.push("shared spending and portfolio assumption sources disappeared");
         if ((await p.title()) !== `Provincial Tax Compare ${year}`) problems.push("page title did not follow year");
         const driving = data.federal.driving != null;
         if ((await shown(p, "#tab-driving")) !== driving)
@@ -995,6 +996,7 @@ for (const [label, steps] of [
   ["other income", OTHER_STEPS],
   ["year selector", YEAR_STEPS],
   ["deductions", DEDUCTION_STEPS],
+  ["portfolio", PORTFOLIO_STEPS],
   ["history", HISTORY_STEPS],
   ["carbon pricing", CARBON_STEPS],
   ["childcare", CHILDCARE_STEPS],
@@ -1015,6 +1017,7 @@ const responsive = [
   // Interactions and tooltip geometry repeat across widths/themes; text-only conditional variants run once above.
   // One representative open tooltip adds contrast coverage; subsequent interactions use the same styling.
   ...COMPARISON_STEPS.slice(0, 3).map(([name, step], i) => [name, step, { contrast: i === 0 }]),
+  ...PORTFOLIO_RESPONSIVE_STEPS,
   [
     "layout: driving units show equivalent values without clipping",
     async p => {
