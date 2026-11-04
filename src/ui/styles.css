@@ -1019,16 +1019,28 @@ table.cmp .worse {
   display: flex;
   border: 1px solid var(--rule);
   border-radius: 7px;
-  overflow: hidden;
 }
 .seg button {
   border: 0;
+  border-radius: 0;
   background: transparent;
   color: var(--muted);
   font: inherit;
   font-size: 12.5px;
   padding: 5px 10px;
   cursor: pointer;
+}
+/* The end buttons round themselves to fit inside the group's border: clipping the group would cut their focus rings. */
+.seg button:first-child {
+  border-radius: 6px 0 0 6px;
+}
+.seg button:last-child {
+  border-radius: 0 6px 6px 0;
+}
+/* A later button paints over an earlier one's ring, unless the focused button is raised above it. */
+.seg button:focus-visible,
+.tabbar button:focus-visible {
+  z-index: 1;
 }
 .seg button[aria-pressed="true"] {
   background: var(--track);
@@ -1772,7 +1784,6 @@ footer a {
   grid-auto-columns: minmax(0, 1fr);
   border: 1px solid var(--rule);
   border-radius: 8px;
-  overflow: hidden;
 }
 .tabbar button {
   display: grid;
@@ -1782,16 +1793,19 @@ footer a {
   padding: 7px 3px 8px;
   border: 0;
   border-left: 1px solid var(--rule);
+  border-radius: 0;
   background: transparent;
   color: var(--ink);
   font: inherit;
   cursor: pointer;
 }
+/* Rounded like .seg's ends, for the same reason. The last tab is the last one showing: Driving can be hidden. */
 .tabbar button:first-child {
   border-left: 0;
+  border-radius: 7px 0 0 7px;
 }
-.tabbar button:focus-visible {
-  outline-offset: -2px; /* inside the bar, which clips anything outside it */
+.tabbar button:nth-last-child(1 of :not([hidden])) {
+  border-radius: 0 7px 7px 0;
 }
 .tab-name {
   font-size: 13px;
@@ -1809,16 +1823,14 @@ footer a {
 .tabbar .set small {
   color: var(--prov);
 }
+/* A gradient bar, not an inset shadow: a shadow would bend up around an end tab's rounded corner. */
 .tabbar button[aria-expanded="true"] {
-  box-shadow: inset 0 -3px 0 var(--prov);
-}
-.tabbar button[aria-expanded="true"] {
-  background: var(--bg);
+  background: linear-gradient(var(--prov), var(--prov)) bottom / 100% 3px no-repeat var(--bg);
 }
 /* Touch screens keep :hover on the last tab tapped, which would leave a closed tab looking open */
 @media (hover: hover) {
   .tabbar button:hover {
-    background: var(--bg);
+    background-color: var(--bg);
   }
 }
 .tab-panel {

@@ -79,6 +79,83 @@ async function expectComparisonTip(p, name, pattern) {
   assert.equal(await p.locator("#tip").isVisible(), false, "clicking away dismisses tooltip");
 }
 
+// Segmented groups: bordered, rounded rows of adjoining buttons. An outline isn't part of any box the page reports, so
+// the ring's box is worked out from the button's. Square-cornered ancestors may clip around it, but a rounded one
+// can't: a ring inside its box still loses its corners.
+const SEGMENTED = ".seg, .tabbar";
+
+/** Checks each showing button in every segmented group; `seen` names them, as `<group label> <button index>`. */
+const inspectSegmented = p =>
+  p.evaluate(selector => {
+    const problems = [];
+    const seen = [];
+    const probe = document.body.appendChild(document.createElement("i"));
+    probe.style.color = "var(--focus)";
+    const focusColor = getComputedStyle(probe).color;
+    probe.remove();
+    for (const group of document.querySelectorAll(selector)) {
+      const label = group.getAttribute("aria-label");
+      const buttons = [...group.querySelectorAll("button")];
+      const showing = buttons.filter(b => b.checkVisibility());
+      if (!showing.length) continue;
+      const box = getComputedStyle(group);
+      const radius = group.matches(".seg") ? 7 : 8;
+      if (box.borderTopLeftRadius !== `${radius}px`) problems.push(`${label}: radius ${box.borderTopLeftRadius}`);
+      if (box.borderTopWidth !== "1px" || box.borderTopStyle !== "solid") problems.push(`${label}: border changed`);
+      if (group.scrollWidth > group.clientWidth || group.scrollHeight > group.clientHeight)
+        problems.push(`${label}: its buttons overflow the outline`);
+      showing.forEach((button, i) => {
+        const name = `${label} ${buttons.indexOf(button)}`;
+        seen.push(name);
+        button.focus();
+        const style = getComputedStyle(button);
+        // End buttons' fills stop at the inner edge of the group's rounded border, since nothing clips them now.
+        const first = i === 0;
+        const last = i === showing.length - 1;
+        for (const [corner, rounded] of [
+          ["TopLeft", first],
+          ["BottomLeft", first],
+          ["TopRight", last],
+          ["BottomRight", last],
+        ]) {
+          const expected = rounded ? `${radius - 1}px` : "0px";
+          const actual = style[`border${corner}Radius`];
+          if (actual !== expected) problems.push(`${name}: ${corner} radius ${actual}, expected ${expected}`);
+        }
+        if (!button.matches(":focus-visible")) problems.push(`${name}: keyboard focus isn't focus-visible`);
+        if (style.outlineStyle !== "solid" || style.outlineWidth !== "2px" || style.outlineColor !== focusColor)
+          problems.push(`${name}: ring is ${style.outlineStyle} ${style.outlineWidth} ${style.outlineColor}`);
+        // Flex and grid items paint in order, so a next button with a fill would cover this ring's edge.
+        if (style.zIndex === "auto") problems.push(`${name}: the next button paints over its ring`);
+        const grow = Number.parseFloat(style.outlineOffset) + Number.parseFloat(style.outlineWidth);
+        const rect = button.getBoundingClientRect();
+        const ring = {
+          left: rect.left - grow,
+          right: rect.right + grow,
+          top: rect.top - grow,
+          bottom: rect.bottom + grow,
+        };
+        if (ring.left < 0 || ring.right > innerWidth) problems.push(`${name}: ring runs off the page`);
+        for (let el = button.parentElement; el; el = el.parentElement) {
+          const clip = getComputedStyle(el);
+          if (clip.overflowX === "visible" && clip.overflowY === "visible") continue;
+          const edge = el.getBoundingClientRect();
+          const left = edge.left + el.clientLeft;
+          const top = edge.top + el.clientTop;
+          const clipped =
+            ring.left < left ||
+            ring.right > left + el.clientWidth ||
+            ring.top < top ||
+            ring.bottom > top + el.clientHeight;
+          if (clipped || clip.borderTopLeftRadius !== "0px")
+            problems.push(`${name}: ring clipped by ${el.tagName.toLowerCase()}.${el.className}`);
+        }
+      });
+    }
+    document.activeElement.blur();
+    return { problems, seen };
+  }, SEGMENTED);
+
 export const COMPARISON_STEPS = [
   [
     "comparison: explanations, summaries and annotations remain distinct",
@@ -341,6 +418,44 @@ export const RESPONSIVE_STEPS = [
       assert.equal(await p.locator("#history-view").isVisible(), true);
       assert.equal(await p.locator("#history-rows tr").count(), listYears().length);
       assert.equal(await p.locator("#tax-year").isDisabled(), true);
+    },
+  ],
+  [
+    "layout: every segmented button shows its whole focus ring",
+    async p => {
+      const problems = [];
+      const seen = new Set();
+      const scan = async () => {
+        await p.keyboard.press("Shift"); // scripted focus only shows a ring after keyboard input
+        const result = await inspectSegmented(p);
+        problems.push(...result.problems);
+        for (const name of result.seen) seen.add(name);
+      };
+      await p.click("#view-provinces");
+      await openTab(p, "home");
+      await scan();
+      await openTab(p, "driving");
+      await scan();
+      await p.click("#view-history");
+      await scan();
+      // With its last tab gone, the bar's rounded end moves to the tab before.
+      const driving = p.locator("#tab-driving");
+      await driving.evaluate(el => {
+        el.hidden = true;
+        el.style.display = "none";
+      });
+      await scan();
+      await driving.evaluate(el => {
+        el.hidden = false;
+        el.style.display = "";
+      });
+      // A group added later fails here until a step above opens it.
+      const all = await p.$$eval(SEGMENTED, groups =>
+        groups.flatMap(g => [...g.querySelectorAll("button")].map((_, i) => `${g.getAttribute("aria-label")} ${i}`)),
+      );
+      assert.ok(all.length > 0);
+      for (const name of all) if (!seen.has(name)) problems.push(`${name}: not checked`);
+      return problems;
     },
   ],
 ];
