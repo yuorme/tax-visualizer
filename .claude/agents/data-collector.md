@@ -1,6 +1,6 @@
 ---
 name: data-collector
-description: Fills in one year's (or one program's) tax figures in data/years/ from official sources, on its own branch in an isolated worktree. Fallback for data issues when Codex is unavailable; Codex is the default data collector.
+description: Fills in one year's (or one program's) tax figures in data/years/ from official sources, on its own branch in an isolated worktree. Fallback data-collector when the agent AGENTS.md "Roles" assigns is unavailable.
 model: sonnet
 effort: high
 maxTurns: 150

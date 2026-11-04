@@ -5,13 +5,10 @@ territories. No server, no database: tax parameters are YAML files in `data/year
 TypeScript, and the build inlines everything into `dist/index.html`. See README.md for the layout and the full
 command table.
 
-These are the shared instructions for every agent: Codex reads this file directly, Claude Code through `CLAUDE.md`.
-Role instructions are in `docs/agents/`; tool-specific notes are at the end.
-
-## The user
-A data scientist, fluent in Python and SQL, newer to JavaScript, TypeScript and npm. Explain JS tooling by Python
-analogy (fnm ≈ pyenv, `package-lock.json` ≈ `uv.lock`, `npm ci` ≈ `uv sync --frozen`, `node_modules` ≈ `.venv`).
-Python is welcome for verification and analysis tooling; the engine stays TypeScript.
+These are the shared instructions for every coding agent; Claude Code reads them through `CLAUDE.md`. They name
+roles, not tools: the table under Roles says which agent fills each one. Role instructions are in `docs/agents/`;
+tool-specific notes are at the end. Work is tracked in GitHub Issues, scope decisions in `docs/SCOPE.md`, and past
+verification work in `docs/verification/`.
 
 ## Commands
 - `npm run check` — lint, typecheck, tests, build, browser smoke test. Required except for the Markdown-only path
@@ -59,6 +56,7 @@ and deployment for Markdown-only PRs and pushes. Independent review and human-me
   fits this codebase.
 - **zod 4 rejects `Infinity` in `z.number()`.** Bracket limits use `.inf` in YAML, so the schema allows
   `z.literal(Infinity)` explicitly.
+- Python is fine for verification and analysis tooling; the engine stays TypeScript.
 - Upgrade on a dedicated branch, not mid-feature. Move to the next Node major when it reaches Active LTS (each
   October; from v27 every major becomes LTS).
 
@@ -85,30 +83,30 @@ and deployment for Markdown-only PRs and pushes. Independent review and human-me
 - Explanations go in info tooltips, not visible hint text. Chart columns use two-letter codes.
 - Keep the page a single self-contained file (it's also published as an artifact).
 
-## Planning and scope
-- Work is tracked in GitHub Issues; scope decisions in `docs/SCOPE.md`.
-- Past verification work: `docs/verification/`.
+## Roles
+The **orchestrator** (the main session) scopes issues, dispatches, runs reviews, queues merges and writes retros.
+A **coder** or **data-collector** implements one issue on its own branch; a **reviewer** judges a finished branch
+cold. Role files: `docs/agents/<role>.md`. This table is the only place that assigns tools; edit it to reassign.
 
-## Who does what
-Claude Code plans and orchestrates; Codex does most of the hands-on engine and data work.
+| Work | Role | Agent | Fallback |
+| --- | --- | --- | --- |
+| Planning, dispatch, merge decisions, retros | orchestrator | Claude Code | Codex |
+| UI and layout | coder | Claude Code | Codex |
+| Engine, rules, schema, scripts, tests, debugging | coder | Codex | Claude Code |
+| A year's or a program's figures | data-collector | Codex | Claude Code |
 
-| Work | Agent | Role file in `docs/agents/` |
-| --- | --- | --- |
-| Planning, issue scoping, dispatch, merge decisions, retros | Claude (main session) | — |
-| UI and layout: design, code and review | Claude | `coder.md`, `reviewer.md` |
-| Engine, rules, schema, scripts, tests, debugging | Codex | `coder.md` |
-| A year's or a program's figures | Codex | `data-collector.md` |
-| Review of engine, data and script changes | Codex, in a session that didn't write it | `reviewer.md` |
-
-An issue touching both UI and engine is split into stacked branches (engine first), or goes to whoever owns most
-of it, with the other agent reviewing.
+**Reviews cross agents:** the reviewer is a different agent (and model) from the one that wrote the branch, so
+Codex's branches get a Claude review and Claude's get a Codex review. Only when the other agent is unavailable does
+a fresh session of the author's agent review, and its verdict says so. An issue touching both UI and engine is split
+into stacked branches (engine first), or goes to whoever owns most of it.
 
 ## Running agents
 The orchestrator gives each agent one issue, its role file and an explicit list of files it owns; never run two
 agents on the same file at once. Exception: in `src/data/schema.ts`, adding new fields or program entries doesn't
-need exclusive ownership (editing existing ones does). Each agent works in its own git worktree under
-`.claude/worktrees/`, branched from `origin/main`, never in the main checkout another session may be using. Every
-branch gets a reviewer pass before it merges; give the reviewer the pull request number from the agent's report.
+need exclusive ownership (editing existing ones does). Each agent, whatever the tool, works in its own git
+worktree under `.claude/worktrees/` (ignored by git), branched from `origin/main`, never in the main checkout
+another session may be using. Every branch gets a reviewer pass before it merges; give the reviewer the pull
+request number from the agent's report.
 
 The orchestrator owns worktree cleanup: lock each agent's worktree while it is active (`git worktree lock <path>`).
 After its final report and process exit, unlock it and run `npm run worktree:cleanup -- --apply <path>` from outside
@@ -126,7 +124,7 @@ results and opens the one pull request that gets reviewed. Collectors cache what
 
 ## Milestone retros
 When a milestone's last pull request merges, the orchestrator writes `docs/retros/<milestone>.md`: per issue, the
-agent (Claude or Codex) and its tokens, review rounds to approval and what the extra rounds fixed; defects found
+agent and its tokens, review rounds to approval and what the extra rounds fixed; defects found
 after merge; and time lost to blocking or interruptions. It proposes at most three process changes, each tied to a
 number in the retro, in one pull request for the user. Each change should also remove or merge a rule where it
 can: keep this file under about 160 lines, `CLAUDE.md` under about 40 and each role file under about 45. Drop a
@@ -161,7 +159,6 @@ rather than a printed value: `[ "$(gh pr view N --json state --jq .state)" = OPE
 to any agent sent review fixes. Wrap every CI wait in `timeout` or a fixed number of polls.
 
 ## Tool notes
-- **Codex:** `.claude/` files don't configure Codex (models, tools, isolation, permissions); `.codex/hooks.json`
-  does. Create worktrees explicitly, follow the active sandbox and approvals, and put your actual model in review
-  headers.
-- **Claude Code:** see `CLAUDE.md`.
+**Claude Code:** see `CLAUDE.md`. **Codex:** `.claude/` files don't configure Codex (models, tools, isolation,
+permissions); `.codex/hooks.json` does. Create worktrees explicitly, follow the active sandbox and approvals, and
+put your actual model in review headers.

@@ -1,6 +1,6 @@
 ---
 name: coder
-description: Implements one well-scoped GitHub issue on its own branch in an isolated worktree. Use for UI and layout work; engine, data, test and debugging issues go to Codex (see AGENTS.md "Who does what").
+description: Implements one well-scoped GitHub issue on its own branch in an isolated worktree. Use for the coder rows AGENTS.md "Roles" assigns to Claude Code (UI and layout), and as the fallback for the rows assigned to Codex.
 model: opus
 effort: high
 maxTurns: 120
