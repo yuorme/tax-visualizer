@@ -13,7 +13,7 @@ line-by-line tax return. Simpler and slightly less precise is acceptable where i
   (and Yukon's), the CPP/EI credits, Quebec's deduction for workers and Ontario's LIFT credit; and is the working
   income for the Canada Workers Benefit (phase-in and secondary earner exemption), Quebec's work premium and the
   working-income parts of the Alberta Child and Family Benefit and New Brunswick's child benefit.
-- Self-employment engine (2025–2026, #14): optional net business profit per adult, after business expenses.
+- Self-employment (2025–2026, #14): optional net business profit per adult, after business expenses.
   Both CPP/QPP shares and second additional contributions share ceilings with employment. The employer base
   share and both enhanced shares are deducted; one base share earns a credit. No EI opt-in, employment amount,
   LIFT phase-in or territorial wage tax on profit. Quebec charges self-employed QPIP on the remaining insurable
@@ -21,7 +21,13 @@ line-by-line tax return. Simpler and slightly less precise is acceptable where i
   Quebec's worker deduction, AB/NB child working-income components, and the illustrative RRSP shortcut.
   Business is wholly in the compared province; losses and multi-province allocation are unsupported.
   Unsupported years reject even an explicit zero; omitted inputs preserve historical results.
-  The page controls and saved/URL state are a separate stacked UI branch, still pending.
+  Each adult enters profit in the existing Income tab; saved scenarios and versioned links retain it separately
+  from employment. Empty means omitted; explicit zero stays zero. Malformed amounts are ignored on restore.
+  Unsupported selected years retain the input but exclude profit with a visible notice, like retirement inputs.
+  History omits years without self-employment data in both modes and retains the retirement entry-age guard.
+  The contribution tooltip uses the engine's credit/deduction breakdown; the ledger shows the business marginal.
+  A positive-profit, zero-wage employee CPP election is retained but not applied, with a visible notice;
+  ordinary business contributions and mandatory age limits apply. The history tooltip also states this limitation.
   See the [input contract, evidence and golden map](verification/14-self-employment.md).
 - Interest, rental and other income: taxed at the same rates and counted in net income and family net income for
   every benefit, credit, clawback and the Ontario Health Premium, but none of the employment-only treatment above,
@@ -167,7 +173,7 @@ year, replaces the old frugality setting. It is the same in every province and i
 spending.
 - Federal childcare expense deduction with its claimant rules and limits, plus Ontario's, Quebec's and
   Newfoundland and Labrador's childcare credits, each with its own income base and refundability.
-- Eligible earnings default to each adult's employment and other income and can be overridden. Ordinary
+- Eligible earnings default to each adult's employment, self-employment and other income and can be overridden. Ordinary
   single-parent and couple cases are automatic; a manual mode takes verified annual claims for exceptional cases.
 - Quebec's credit needs the Quebec-eligible part of the expense, asked only when Quebec is the home province.
 - Childcare inputs hide at zero children and keep their drafts; children's ages stay editable when costs are zero,
@@ -188,9 +194,6 @@ The model counts **taxes the household actually pays**. Costs passed on through 
 ## Decided, not built yet
 
 Recorded here as the spec for the GitHub issues that implement them; the issues hold the order.
-
-**Self-employment page inputs.** The engine contract is included above. A stacked UI branch will add the
-separate amount per adult next to employment income, the explanations, and versioned URL/saved-state support.
 
 **Seniors (65+ per adult).** Moving in retirement is a main use case, so this is modelled fully. The
 [seniors sizing study](verification/16-seniors-sizing.md) finds all seven planned categories below pass the

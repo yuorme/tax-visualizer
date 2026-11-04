@@ -5,6 +5,7 @@ import { ChildcareModel } from "./childcare.ts";
 import { DEFAULT_INCOME, spendEst } from "./defaults.ts";
 import { normalizePortfolios } from "./portfolio.ts";
 import { compactRetirements, normalizeRetirements, type Retirement } from "./retirement.ts";
+import { validSelfEmployment } from "./self-employment.ts";
 
 export interface ScenarioContext {
   years: number[];
@@ -68,6 +69,7 @@ function person(value: unknown, index: number): Person {
         !(value[key] === 0 && ["rrsp", "fhsa"].includes(key))
       )
         result[key] = value[key];
+  if (record(value) && validSelfEmployment(value.selfEmployment)) result.selfEmployment = value.selfEmployment;
   return result;
 }
 

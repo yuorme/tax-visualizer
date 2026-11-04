@@ -25,6 +25,7 @@ import { checkQuebecHealthFund } from "./qc-health-fund.mjs";
 import { COMPARISON_STEPS, RESPONSIVE_STEPS } from "./responsive.mjs";
 import { RETIREMENT_RESPONSIVE_STEPS, RETIREMENT_STEPS } from "./retirement.mjs";
 import { COLUMN_COUNT, contrastViolations, inspect, KNOWN, MAX_LABEL_LENGTH } from "./rules.mjs";
+import { SELF_EMPLOYMENT_RESPONSIVE_STEPS, SELF_EMPLOYMENT_STEPS } from "./self-employment.mjs";
 
 const started = Date.now();
 const read = f => fs.readFileSync(new URL(f, import.meta.url), "utf8");
@@ -1110,6 +1111,7 @@ for (const [label, steps] of [
   ["deductions", DEDUCTION_STEPS],
   ["portfolio", PORTFOLIO_STEPS],
   ["retirement-age payroll", RETIREMENT_STEPS],
+  ["self-employment", SELF_EMPLOYMENT_STEPS],
   ["history", HISTORY_STEPS],
   ["carbon pricing", CARBON_STEPS],
   ["childcare", CHILDCARE_STEPS],
@@ -1132,6 +1134,7 @@ const responsive = [
   ...COMPARISON_STEPS.slice(0, 3).map(([name, step], i) => [name, step, { contrast: i === 0 }]),
   ...PORTFOLIO_RESPONSIVE_STEPS,
   ...RETIREMENT_RESPONSIVE_STEPS,
+  ...SELF_EMPLOYMENT_RESPONSIVE_STEPS,
   [
     "layout: driving units show equivalent values without clipping",
     async p => {

@@ -187,7 +187,7 @@ export class ChildcareModel {
   }
 
   /** Actual paid-care inputs. Bad amounts remain incomplete; this is the only profile used for relief. */
-  claimInput(): ChildcareInput | undefined {
+  claimInput(incomes = this.incomes): ChildcareInput | undefined {
     if (!this.enabled) return undefined;
     const children: ChildcareChild[] | undefined =
       monthlyAmount(this.state.monthly) && this.children.every(c => wholeAge(c.age) && amount(c.expenses))
@@ -203,7 +203,10 @@ export class ChildcareModel {
       mode: this.state.mode,
       children,
       declaredAnnualExpenses: monthlyAmount(this.state.monthly) ? this.state.monthly * 12 : undefined,
-      earnedIncome: this.earnings.map(v => (amount(v) ? v : null)),
+      earnedIncome: incomes.map((income, i) => {
+        const value = this.state.earningsOverridden[i] ? this.state.earnings[i] : income;
+        return amount(value) ? value : null;
+      }),
       manualClaims: claims.every(amount) ? (claims as number[]) : undefined,
     };
   }
@@ -306,10 +309,10 @@ export class ChildcareEditor extends ChildcareModel {
               "Annual childcare deduction verified for this adult. Include zero when this adult has no claim. Manual claims replace automatic deductions. Do not also include this amount in Other deductions.",
               this.state.claims[i],
             )
-          : `<div class="field">${check(`care-override-${i}`, `Adjust ${i ? "partner's" : "your"} eligible earnings`, `Defaults to $${text(income)} a year from ${i ? "your partner's" : "your"} employment and other income, and follows changes to that input. This assumes the whole amount is eligible earned income; pensions and investment income generally do not qualify. Adjust if needed, including an explicit zero. The lower-net-income spouse usually claims, even with zero earnings.`, this.state.earningsOverridden[i])}${this.state.earningsOverridden[i] ? field(`care-earnings-${i}`, `${i ? "Partner's" : "Your"} eligible earnings`, "Enter the annual earned income eligible for the childcare deduction. This override stays fixed when ordinary income changes. Uncheck Adjust to follow employment and other income again.", this.state.earnings[i]) : ""}</div>`,
+          : `<div class="field">${check(`care-override-${i}`, `Adjust ${i ? "partner's" : "your"} eligible earnings`, `Defaults to $${text(income)} a year from ${i ? "your partner's" : "your"} employment, self-employment and other income, and follows changes to that input. This assumes the whole amount is eligible earned income; pensions and investment income generally do not qualify. Adjust if needed, including an explicit zero. The lower-net-income spouse usually claims, even with zero earnings.`, this.state.earningsOverridden[i])}${this.state.earningsOverridden[i] ? field(`care-earnings-${i}`, `${i ? "Partner's" : "Your"} eligible earnings`, "Enter the annual earned income eligible for the childcare deduction. This override stays fixed when ordinary income changes. Uncheck Adjust to follow employment, self-employment and other income again.", this.state.earnings[i]) : ""}</div>`,
       )
       .join("");
-    return `<details id="care-adjustments" class="care-adjustments"><summary>Adjust earnings or claims</summary><div class="care-grid"><div class="field"><div class="lbl-row"><label class="lbl" for="care-mode">Claim method</label>${info("Claim method", "Automatic claims assume employment and other income is eligible earned income unless you adjust it below. For study, incapacity, separation or other exceptions, enter verified annual deductions per adult. You are responsible for checking manual claim eligibility.")}</div><select id="care-mode" class="prov-select"><option value="automatic" ${this.state.mode === "automatic" ? "selected" : ""}>Automatic</option><option value="manual" ${this.state.mode === "manual" ? "selected" : ""}>Verified manual claims</option></select></div>${adults}</div></details>`;
+    return `<details id="care-adjustments" class="care-adjustments"><summary>Adjust earnings or claims</summary><div class="care-grid"><div class="field"><div class="lbl-row"><label class="lbl" for="care-mode">Claim method</label>${info("Claim method", "Automatic claims assume employment, self-employment and other income is eligible earned income unless you adjust it below. For study, incapacity, separation or other exceptions, enter verified annual deductions per adult. You are responsible for checking manual claim eligibility.")}</div><select id="care-mode" class="prov-select"><option value="automatic" ${this.state.mode === "automatic" ? "selected" : ""}>Automatic</option><option value="manual" ${this.state.mode === "manual" ? "selected" : ""}>Verified manual claims</option></select></div>${adults}</div></details>`;
   }
 
   render(result: Result) {
@@ -358,7 +361,7 @@ export class ChildcareEditor extends ChildcareModel {
           : "",
     );
     (document.getElementById("childcare-info") as HTMLElement).dataset.tip =
-      `Average monthly eligible childcare costs across the whole year, after fee subsidies and reimbursements. Do not subtract advance tax-credit payments. These costs are separate from taxable household spending. Eligible earnings follow employment and other income by default; use Adjust earnings or claims when that assumption does not fit. ${errors.join(" ")}`;
+      `Average monthly eligible childcare costs across the whole year, after fee subsidies and reimbursements. Do not subtract advance tax-credit payments. These costs are separate from taxable household spending. Eligible earnings follow employment, self-employment and other income by default; use Adjust earnings or claims when that assumption does not fit. ${errors.join(" ")}`;
     for (let i = 0; i < this.incomes.length; i++) {
       const manual = this.state.mode === "manual",
         value = manual ? this.state.claims[i] : this.earnings[i];

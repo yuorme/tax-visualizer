@@ -74,7 +74,7 @@ export const CHILDCARE_STEPS = [
       assert.equal(await p.getAttribute("#childcare-monthly", "aria-invalid"), "false");
       assert.match(
         await p.getAttribute("#childcare-info", "data-tip"),
-        /follow employment and other income by default/,
+        /follow employment, self-employment and other income by default/,
       );
       assert.equal(await cell(p, "Federal calculation"), "Details needed");
       assert.equal(await p.inputValue("#spend"), "3,200");
