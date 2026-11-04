@@ -3,19 +3,21 @@
 Research for #147, following [#138's senior-credit study](138-senior-credit-rules.md). Checked on 2026-11-03
 against cached primary sources. This is a sizing study, not an engine implementation or completion of #17.
 
-The current supported Alberta credit bases cannot reach the supplemental-credit threshold. Adding #17's age,
-pension and spouse-transfer bases can produce a usable credit, but remaining tax sharply limits its dollar
-value. With nonnegative net capital gains, the conservative household-rate bounds below stay under the
-[scope test](../SCOPE.md#how-scope-is-decided) of 0.1 percentage points. However, a valid #17 example with the
-existing negative-capital-gain input reaches **0.204279 points in 2025**: the calculator subtracts the loss from
-displayed household income without deducting it from ordinary taxable income. This establishes materiality
-for that supported input combination, even though its supplemental tax saving is only **$50.5346**.
+**Conclusion: below threshold for current and proposed #17 inputs.** Current Alberta credit bases cannot
+trigger the supplement. With #17's age, pension and spouse-transfer bases, verified maximum usable relief is
+**$50.54 in 2025 and $53.59 in 2026**. The household effective-rate and province-gap bounds are **0.0808 and
+0.0839 percentage points**, below the [0.1-point scope test](../SCOPE.md#how-scope-is-decided).
 
-The annual structure is now verified from the full Alberta Act, including explicit indexation after 2025.
-Its 2026 amounts reconcile to TD1AB/T4127, giving $53.5924 usable relief and a 0.190680-point loss-case effect.
-One specific legislative currency check remains: the consolidation omits **2026 c3 s2**, which amends personal
-credits and indexation. The 2026 figures remain conditional on that amendment's applicability, not on an
-assumed continuation of a payroll formula. See the statutory verification below.
+Those rate bounds use nonnegative income components. A freely chosen, unrelated capital loss can shrink the
+displayed denominator without changing the credit or tax capacity. The loss case is retained as a disclosed
+sensitivity, but does not establish materiality: otherwise any nonzero program could be made to pass the rule.
+This is the orchestrator's scope decision for #147; it does not change the calculator's accepted inputs or
+edit SCOPE.md. No implementation issue is proposed, and this credit is not a blocker for #17. Revisit sizing
+after #18 automatic OAS and #20 pension splitting land and their combined household effects can be measured.
+
+The annual rules and 2026 indexed amounts are verified against the full Alberta Act and CRA publications.
+The separately checked 2026 c3 s2 amendment takes effect January 1, 2027 and changes caregiver provisions,
+not section 20.2 or the supported credit bases. Both annual calculations are verified.
 
 ## Sources and annual formula
 
@@ -30,7 +32,8 @@ extracts, allowing offline reproduction.
 | [2025 AB(S2)](138-senior-credit-rules/sources/ab-s2-2025.txt) | Transfers and donor own-use calculation. |
 | [2026 TD1AB](138-senior-credit-rules/sources/td1ab-2026.txt) | Personal amounts and withholding transfer claims. |
 | [2026 T4127](138-senior-credit-rules/sources/t4127-2026.txt) | Alberta K5P; tables 8.1, 8.4, 8.7, 8.25 and 8.28. |
-| [Full Alberta Act](2026/sources/ab-pita-act.txt) | Sections 4, 7–10, 19, 20.1, 20.2, 42 and 44.2; cover caveat. |
+| [Full Alberta Act](2026/sources/ab-pita-act.txt) | Sections 4, 7–10, 19, 20.1, 20.2, 42 and 44.2. |
+| [2026 amending Act](2026/sources/ab-fiscal-measures-2026.txt) | Section 2: caregiver changes from January 1, 2027. |
 
 Define `B` as Alberta non-tuition credit **bases**, before multiplying by the 8% credit rate. The 2025 worksheet
 sets `B = AB428 line 58800 − line 58560`. Its calculation is:
@@ -101,10 +104,9 @@ continued contributions during an eligible age, rather than assuming contributio
 Let `p` be the basic/spouse maximum, `a` the age maximum, `h` its taper-start income, `k` the pension maximum,
 and `w` maximum base CPP plus EI. The 2025 figures come from the annual forms; 2026 personal amounts come from
 TD1AB and payroll maxima from T4127. Act section 9 directly supplies the 15% age taper; section 44.2 indexes
-the dollar maximum and income threshold. The 2026 column is the consolidated-law calculation, subject to the
-specific unincorporated-amendment check described below.
+the dollar maximum and income threshold. The separate 2026 amendment does not take effect until 2027.
 
-| Parameter | 2025 | 2026 consolidated law* |
+| Parameter | 2025 | 2026 |
 | --- | ---: | ---: |
 | `p` | $22,323 | $22,769 |
 | `a` | $6,221 | $6,345 |
@@ -150,7 +152,7 @@ Eliminating `B` gives `u <= .02(t − q)`. This increases with `t`, whereas the 
 in the age-taper band. Their intersection is `t = M(t)`. There,
 `t = (2p + 2a + 2k + w + .15h) / 1.15`. These are conservative maxima, not engine snapshots:
 
-| Bound | 2025 | 2026 consolidated law* |
+| Bound | 2025 | 2026 |
 | --- | ---: | ---: |
 | `M(t)` in the relevant taper band | $71,905.78 − .15t | $73,461.62 − .15t |
 | Intersection taxable income/base | $62,526.765217 | $63,879.669565 |
@@ -161,7 +163,7 @@ net income exceeding the spouse-amount maximum. The other spouse cannot claim a 
 even generously allowing both age/pension bases and payroll on the other spouse cannot reach `q` without it.
 Thus the individual dollar bound is also a household dollar bound for these supported inputs.
 
-## Household-rate bound and the capital-loss exception
+## Household-rate bound and capital-loss sensitivity
 
 For households with nonnegative net capital gains, dividend gross-up alone cannot evade the rate bound.
 Let `D` be the Alberta dividend tax credit, and `de`, `dn` grossed-up eligible and non-eligible dividends.
@@ -179,18 +181,19 @@ gross-up factors and the continuing 2026 percentages are also recorded in the pr
 Deductions and positive capital gains make cash income larger relative to taxable income, not smaller.
 For nonnegative capital gains and other income components, household cash income `H >= q + 50u`.
 Therefore `100u/H <= 100u/(q+50u)`, which increases with `u`. Evaluating it at the dollar bounds gives
-**0.080822 percentage points for 2025** and **0.083897 points for the 2026 consolidated-law calculation**.
-The same isolated
-Alberta correction changes its gap to any unaffected province by that amount. No affected household in this
-nonnegative-income subset reaches 0.1 points.
+**0.080822 percentage points for 2025** and **0.083897 points for 2026**. These are the bounds used for the
+below-threshold scope conclusion. The same isolated Alberta correction changes its gap to any unaffected
+province by that amount. No affected household in this nonnegative-income subset reaches 0.1 points.
 
-That conclusion is deliberately conditional. The repository's [Person type and cashOf](../../src/engine/types.ts)
+The mathematical rate bound assumes nonnegative gains. The [Person type and cashOf](../../src/engine/types.ts)
 allow negative net capital gains and include them, signed, in cash income. Its
 [netIncomeParts](../../src/engine/payroll.ts) instead counts a net capital loss as zero for current taxable
 income. Thus a household with the same positive supplemental saving can have smaller positive displayed income
-after realizing a loss. The preceding `H` inequality then does not apply. Reproducible loss examples must
-report the unchanged tax-base calculation and the reduced household denominator separately; they cannot be
-dismissed by silently restricting the existing input domain to nonnegative gains.
+after realizing a loss. The preceding `H` inequality then does not apply. Reachability and the resulting
+displayed rates are disclosed below; they do not turn the unrelated loss into evidence of a material credit.
+The amount of the loss is a free parameter. For any positive saving `u`, choosing a loss that brings positive
+household cash close to zero makes `100u/H` arbitrarily large. That would make the scope test unable to exclude
+any nonzero program. The orchestrator therefore directs sizing from the verified no-loss bounds above.
 
 ### Reachability in the page, engine and #17 scope
 
@@ -219,11 +222,13 @@ independent statutory calculation, not from that reachability check.
 [#138 specification](138-senior-credit-rules.md#concrete-schema-and-program-outline) retains legacy income
 and requires reclassifying `oth` into pension receipts without changing cash; its reference-case requirements
 preserve unrelated existing behavior and locked baselines. Neither that specification nor
-[SCOPE.md](../SCOPE.md) adds a prohibition on capital losses for seniors. Existing
-[golden scenarios](../../tests/golden/scenarios.mjs) already include `cg: -50000`.
+[SCOPE.md](../SCOPE.md) adds a prohibition on capital losses for seniors. The existing
+[golden scenario](../../tests/golden/scenarios.mjs) with wages $50,000 and `cg: -50000` tests the zero-cash guard;
+it does not establish a representative household for sizing a credit.
 Thus the case remains reachable when #17 adds the specified age/pension/transfer credits. #17 is not yet built,
 so this is a conclusion about its recorded scope, not a claim to have executed its future page. Disallowing
-losses would be a separate scope change; the implementation issue below requires preserving this regression case.
+losses would be a separate scope change. Their continued acceptance is compatible with treating unrelated
+losses as sensitivities rather than scope evidence.
 
 ## Concrete 2025 senior household
 
@@ -256,13 +261,24 @@ Final Alberta income tax = .0270
 Without a capital loss, actual household income is $74,738 and the isolated supplemental saving is
 0.067616 percentage points. Entering a $50,000 net capital loss leaves the same taxable income, age taper,
 spouse transfer and Alberta tax calculation, but reduces the existing calculator's denominator to $24,738.
-The same $50.5346 saving is then **0.204279 percentage points**, exceeding the scope threshold. The loss is
+The same $50.5346 saving is then **0.204279 percentage points**, a denominator sensitivity only. The loss is
 within the existing UI's range, and the UI notes explicitly describe its effect on actual income:
 [input controls](../../src/ui/index.html) and [notes](../../src/ui/notes.ts).
 
-This is a denominator-sensitive case, not evidence that a typical senior couple receives a large supplement.
-It nevertheless prevents an unconditional exclusion under the scope rule as currently written. The comparison
-holds all other provincial calculations fixed, so the isolated Alberta gap changes by the same 0.204279 points.
+Holding the qualifying base and $50.5346 usable relief fixed gives the following sensitivity. The isolated
+Alberta gap changes by the same displayed amount because all other provincial calculations are held fixed.
+
+| Unrelated capital loss | Household cash | Displayed effect |
+| ---: | ---: | ---: |
+| $0 | $74,738 | 0.067616 pp |
+| $24,204 | $50,534 | 0.100001 pp |
+| $50,000 | $24,738 | 0.204279 pp |
+| $74,000 | $738 | 6.847507 pp |
+| $74,700 | $38 | 132.985789 pp |
+
+Typed losses can exceed the slider endpoint; the amount handler caps their magnitude at 99,999,999.
+None of these losses changes eligibility, qualifying bases, remaining tax or usable relief. Their apparent
+threshold crossings therefore do not change the below-threshold conclusion.
 
 ## Reproduction and additional households
 
@@ -286,7 +302,7 @@ Claimant net income is $63,880; own age base is $3,848.10; donor transfers $8,09
 law, `B = $63,879.62`, bracket tax is $5,164, ordinary credits are $5,110.3696, remaining capacity is
 $53.6304 and usable supplement is $53.5924. The donor's Alberta tax is zero in both years.
 
-| Household | 2025 usable | 2025 rate drop | 2026 usable* | 2026 rate drop* |
+| Household | 2025 usable | 2025 rate drop | 2026 usable | 2026 rate drop |
 | --- | ---: | ---: | ---: | ---: |
 | Current worker and zero-income spouse | $0 | 0 pp | $0 | 0 pp |
 | Current single parent | $0 | 0 pp | $0 | 0 pp |
@@ -298,8 +314,7 @@ $53.6304 and usable supplement is $53.5924. The donor's Alberta tax is zero in b
 | No-loss couple, claimant deducts $27 more | $47.5376 | 0.063606 pp | $50.6064 | 0.064792 pp |
 | No-loss couple, claimant net income $45,000 | $0 | 0 pp | $0 | 0 pp |
 
-`*` 2026 follows the consolidated annual law and published indexed amounts. Only the effect/applicability of
-the consolidation's omitted 2026 c3 s2 amendment remains unverified; see below.
+Rows containing a capital loss are denominator sensitivities, excluded from the scope determination.
 
 The extra-income variant increases each adult's ordinary taxable receipts and RRSP deduction by $10,000,
 leaving every credit base and tax-capacity figure unchanged. Household income after the loss becomes $44,738
@@ -316,60 +331,52 @@ the displayed rate drop. Federal taxes, benefits, payroll, sales/property/fuel t
 taxes do not change when this one credit is toggled at fixed inputs. Thus no full thirteen-province simulation
 is needed to establish this isolated gap effect; this does not claim a particular ranking reversal.
 
-## Follow-up recommendation
+## Decision and when to revisit
 
-No correction to existing non-senior results is needed for this credit: supported current bases make it zero.
-For #17, scope a linked supplemental-credit implementation for the verified 2025 annual rule, including the
-existing spouse claim, new age/pension bases, verified unused spouse transfers and the final remaining-tax cap.
-Treat it as part of completing those senior results, rather than adding disability, medical or other excluded
-inputs merely to enlarge the credit. Age-aware payroll remains a prerequisite for the employed senior example.
+Close #147 through its below-threshold branch. Current inputs yield no supplement; with #17's supported
+senior credits, maximum relief and rate/gap effects remain below the scope threshold when sized without an
+unrelated loss shrinking the denominator. Do not implement the credit or make it a prerequisite for #17 on
+this evidence. No implementation issue is proposed.
 
-The annual Act now establishes the 2026 mechanism and indexation. Resolve the narrow 2026 c3 s2 currency check
-before treating its numeric cases as unconditionally final. The implementation should reproduce the capital-loss
-case and its no-loss counterpart, the threshold floor and the capacity limit with independently calculated golden
-cases, while preserving unrelated baselines and the existing signed capital-gain input.
+Revisit the sizing **after #18 automatic OAS and #20 pension splitting land**. The current worked household
+is a #17 case, not a completed-retirement-model case: [SCOPE.md](../SCOPE.md) requires full OAS automatically
+for eligible adults, and splitting will change each adult's net income, own credits, spouse claim, transfers
+and remaining tax. Recalculate the complete household with those rules and actual year-specific receipts
+before drawing a new scope conclusion. No pension-splitting optimum is claimed by this report.
 
-### Proposed implementation issue (orchestrator to file)
+### OAS effect on the worked household
 
-**Title:** Apply Alberta supplemental credit to supported senior credit bases and remaining tax
+The [ESDC Q4 2025 table](2025/sources/seniors-oas-q4.txt) gives $740.09 monthly OAS at ages 65–74.
+Following [#16's convention](16-seniors-sizing.md), use `$740.09 × 12 = $8,881.08` per adult as an annualized
+run-rate sensitivity. This is **not calendar-2025 OAS receipts**, nor a 2026 entitlement estimate.
+OAS enters ordinary income and cash, but does not qualify for the pension-income credit.
 
-**Body:**
+Adding that amount to each adult without increasing the original RRSP claims raises claimant net income to
+$71,408.08 and spouse net income to $8,881.08. The own age base falls by `$8,881.08 × .15 = $1,332.162` and
+the spouse claim falls by $8,881.08. The donor still transfers the same age/pension bases. Therefore:
 
-Alberta's supplemental credit becomes material with #17 age/pension/spouse-transfer inputs and existing
-capital losses. The independently verified 2025 case in
-[the #147 sizing report](147-alberta-supplemental-credit.md#concrete-2025-senior-household) saves $50.5346,
-changing the household effective rate and Alberta province gaps by 0.204279 percentage points. Current inputs
-without #17 credits produce no supplement. This is a narrow correction within supported inputs.
+```text
+new qualifying base = 62,526.73 − 1,332.162 − 8,881.08 = 52,313.488
+calculated and usable supplemental relief = 0
+```
 
-Blocked by: #17 credit-base and spouse-transfer integration, including age-aware payroll. The annual Act
-supports the 2026 mechanism; verify the omitted 2026 c3 s2 amendment's commencement and applicability before
-promoting the report's conditional 2026 numbers to final expected values.
+Increasing each RRSP claim by $8,881.08 restores the original $62,526.73 base and $50.5346 usable relief.
+Cash still rises by $17,762.16: the effect becomes **0.054632 points without the loss**, or **0.118904 points
+with it**. The latter remains an excluded denominator sensitivity. The donor would have to claim **$10,600.08**
+against accumulated RRSP room despite zero current earned income and a page room estimate of $0; it is not
+an automatic deduction created by OAS. These additional deductions are an assumption about available room.
 
-Acceptance criteria:
+For comparison, removing the donor's $1,719 RRSP claim from the original, pre-OAS loss case leaves only
+$16.1546 usable relief: **0.065303 points**, already below threshold even with the $50,000 loss. Adding OAS
+and fully deducting it for the claimant, while leaving the donor with no RRSP claim, gives a $51,926.65 base
+and zero supplement. The script reproduces all four OAS variants and the pre-OAS donor-deduction sensitivity.
 
-- Implement the verified annual formula and non-refundable remaining-tax cap with sourced year parameters.
-  Preserve qualifying credit bases separately from the credits actually absorbed by tax; a used-credit-dollar
-  subtotal would lose the excess that generates this supplement.
-- Include basic, spouse/eligible-dependant, base CPP/EI, own age/pension and eligible unused spouse-transfer
-  bases. Exclude tuition, enhanced CPP, donations, dividend/foreign credits and unsupported credit inputs.
-- Apply the supplement after the annual return's prior adjustments and floor Alberta tax at zero. It cannot
-  become a refundable benefit, exceed remaining tax or be shared as an extra spouse-transfer amount.
-- Add independent 2025 golden cases for the exact no-loss and $50,000-loss household above: bases $62,526.73,
-  capacity $50.5616 and usable relief $50.5346. The loss changes only the effective-rate denominator here.
-- Add the claimant RRSP $9,841 variant: base $62,530.78, calculated supplement $50.6156, usable $47.5376.
-  Add the $45,000-net-income variant: base $64,959.58, calculated $99.1916, usable zero.
-- Cover donor RRSP zero (spouse net $1,719, reduced spouse claim, usable $16.1546), transfer own-use limits,
-  subtotal below/at/above $60,000, tuition exclusion, and current non-senior households with zero supplement.
-  Use targeted component tests for synthetic boundaries that supported household fixtures cannot reach exactly.
-- Preserve unrelated existing golden cases and tax data. The report reconciles 2026 annual formula, indexation,
-  spouse-transfer and ordering rules under the consolidation; close the identified amendment check and add
-  equivalent independent cases then. Retain negative capital gains in the page, persisted inputs and engine.
-- Confirm the same dollar correction flows to both effective rates and Alberta-versus-province gaps, with no
-  new user inputs. Do not expand into disability, medical, tuition or future self-employment modeling.
+These results show why the favorable #17 household cannot simply be carried through the milestone unchanged.
+The eventual #18/#20 re-evaluation must include automatic OAS and the actual split selected per province,
+not just reclassify a pension field or assume additional deductions. Independently verify any newly material
+case before proposing implementation; also resize if future supported credit categories enlarge the subtotal.
 
-Refs #17, #138, #141, #147. This is a proposed issue body, not an issue filed by this research task.
-
-## Annual 2026 statutory verification and the remaining amendment check
+## Annual 2026 statutory verification
 
 The [full Act](2026/sources/ab-pita-act.txt), unlike the earlier three-page child-benefit extract, establishes
 the following annual rules. Page references are PDF page numbers, not the printed page numbers:
@@ -414,32 +421,30 @@ factor. The script checks every listed indexation result and keeps the supplemen
 bracket threshold. The Act therefore closes the previously missing annual base, exclusion, ordering and
 indexation evidence; the calculation no longer relies on treating withholding instructions as annual law.
 
-**Precisely unresolved:** the supplied consolidation says **current as of December 11, 2025** on PDF page 1.
-Page 2 lists **2026 c3 s2, amending sections 8 and 44.2**, under amendments not incorporated because they were
-not in force at the consolidation date. The July 2026 PDF modification date does not replace that legal cutoff.
-The cache does not contain that amending provision or its commencement/application provisions. Consequently,
-this report cannot establish whether it changes personal-credit eligibility/amounts or indexation for the
-**2026 taxation year**, or only a later year. Its text and effective dates must be checked before removing
-the narrow qualification on the 2026 numbers. The note alone neither proves a 2026 change nor proves the
-amendment was still uncommenced on November 3, 2026. No unresolved annual-mechanics question is being hidden
-behind a general request to wait for forms.
+The principal Act's consolidation is current as of December 11, 2025 and lists 2026 c3 s2 as unincorporated.
+That question is settled by the separately read
+[Fiscal Measures Statutes Amendment Act, 2026](2026/sources/ab-fiscal-measures-2026.txt), PDF pages 3–5:
 
-This residual check does not alter the independently verified 2025 materiality finding. No source in the
-supplied cache establishes an additional operative restriction on the worked households, and no such
-restriction is assumed. The study does not extrapolate the 2025 introduction into earlier tax years.
+- Section 2(2) repeals the in-home caregiver clause 8(1)(d), replaces clause 8(1)(e) with an Alberta caregiver
+  credit, and makes related adjustments to clauses 8(1)(f) and 8(2). It does not amend basic/spouse amounts
+  under 8(1)(a)–(c), the age amount in section 9, the pension amount in section 10, or section 20.2.
+- Section 2(3) removes the repealed caregiver clause from indexation and adds subsection 44.2(1.01), which
+  specifies indexation of the replacement caregiver amounts for the **2027 taxation year**.
+- Section 2(4) states that section 2 comes into force **January 1, 2027**.
+
+Thus the amendment does not affect 2026 or the supported bases sized here. The annual 2025–2026 calculations
+are verified without the previous qualification. Section 20.2's enactment is attributed to 2025 c9 in the
+principal Act; this study does not apply the credit to the model's 2019–2024 historical years.
 
 The bounds cover current employment, investment, deduction and family inputs plus the proposed #17 age/pension
 and spouse transfers. Revisit them when disability, medical, caregiver, adoption, student-loan or other eligible
 amounts become supported. Those amounts can materially enlarge `B`; excluded tuition and donation credits
-cannot simply be inserted into it. Any later implementation needs separate golden cases for threshold,
-remaining-tax, transfer and loss-denominator paths, without recapturing unrelated existing baselines.
+cannot simply be inserted into it. Any future implementation would first require independently established
+materiality for the expanded model and separate golden cases, preserving unrelated existing baselines.
 
-## Validation and handoff
+## Calculation checks
 
-The calculation passes 67 named arithmetic checks plus bound, capacity and materiality assertions; running
-`--verify-model` adds 15 executed input/engine checks for **82** in total. Markdown
-validation, lint, typecheck, all 1,055 existing tests and the build passed under Node 26. Browser smoke was
-attempted but Chromium failed at sandbox launch with `bootstrap_check_in ... Permission denied (1100)`.
-The orchestrator must run the full check outside this sandbox before committing. No production code, tax data
-or existing golden baselines were edited. The supplied Act and source-index changes belong to the orchestrator;
-this follow-up edits only the two verification deliverables and the two requested handoff files.
+The calculation has 88 named arithmetic checks plus bound, capacity and sensitivity assertions. Running
+`--verify-model` adds 15 executed input/engine checks for 103 in total. The loss sweeps preserve credit bases
+and usable relief while varying only the denominator. The OAS variants check changed bases, relief and cash
+against independent calculations above. Neither set is a simulation of #20's future splitting optimizer.

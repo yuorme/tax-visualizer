@@ -15,6 +15,7 @@ announcement returned HTTP 403 to direct requests. It is explicitly a short veri
 
 | Name | Title | URL | Fetched | SHA-256 of the original |
 |---|---|---|---|---|
+| [ab-fiscal-measures-2026](ab-fiscal-measures-2026.txt) | Alberta Fiscal Measures Statutes Amendment Act, 2026 | https://kings-printer.alberta.ca/documents/Acts/2026ch03_unpr.pdf | 2026-11-03 | `9e0cbac6d89b57671291cfdbc2f736ac75dcfe0095d8c0320fe086536c4e6e39` |
 | [ab-pita-act](ab-pita-act.txt) | Alberta Personal Income Tax Act | https://kings-printer.alberta.ca/documents/Acts/A30.pdf | 2026-11-03 | `2a293bbb636247e4f52de4376357cbebb334a7da5c163c4032efa50554d9eb62` |
 | [alberta-historical-fuel-tax-rates](alberta-historical-fuel-tax-rates.txt) | Historical fuel tax rates | https://open.alberta.ca/dataset/7769b631-d034-4690-9b3c-f9b1b00e2dfb/resource/30ef4caa-9321-4085-9a0e-0a606c2dacd2/download/tbf-tra-historical-fuel-tax-rates.pdf | 2026-11-01 | `7d31265ba45e4a7a205dcecb8b1f55d503ab74306a0ea0f8a1725735fe70b902` |
 | [alberta-tax-levy-rates](alberta-tax-levy-rates.txt) | Tax, levy, and prescribed interest rates | https://www.alberta.ca/about-tax-levy-rates-prescribed-interest-rates | 2026-11-01 | `06013b25c96e10e9d6d99b071496f816be62b6c987b3531e4bc6bc3fc842377e` |

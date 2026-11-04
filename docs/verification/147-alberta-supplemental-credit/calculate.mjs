@@ -1,7 +1,7 @@
 // Independent worksheet arithmetic for #147. Node 26; default mode has no production imports. No file writes.
 // Sources and model boundaries are documented in ../147-alberta-supplemental-credit.md.
 // Annual rules: AB PITA ss4,7,8-10,19,20.1,20.2,42,44.2; parameters: AB428, TD1AB, T4127.
-// The cached consolidation omits 2026 c3 s2; its effect/commencement remains unverified.
+// Fiscal Measures Statutes Amendment Act 2026 s2(4): caregiver amendments take effect January 1, 2027.
 import assert from "node:assert/strict";
 
 const years = {
@@ -120,7 +120,9 @@ for (const [year, q] of Object.entries(years)) {
   ];
   for (const [name, people, options] of inputs) {
     const result = household(q, people, options);
-    cases.push({ year, name, inputs: people, ...result });
+    cases.push({ year, name, inputs: people,
+      scopeUse: people.some(p => p.cg < 0) ? "denominator sensitivity only" : "supported-household sizing",
+      ...result });
     if (name.startsWith("current") || name === "single senior pensioner") equal(result.usable, 0, name);
     if (name === "senior credits but zero capacity") {
       assert.ok(result.adults[0].creditBase > q.firstBracket);
@@ -137,6 +139,7 @@ for (const [year, q] of Object.entries(years)) {
       equal(result.usable, result.adults[0].capacity, `${year} partial remaining capacity`);
     }
     if (name.includes("capital loss 50000") || name.startsWith("loss case")) {
+      // Numeric threshold crossing only: an unrelated loss does not establish program materiality.
       assert.ok(result.ownRateDropPP >= 0.1);
     }
     equal(result.gapChangePP, -result.ownRateDropPP, `${year} ${name} gap effect`);
@@ -171,6 +174,51 @@ equal(cases.find(c => c.year === "2025" && c.name === "senior partial remaining 
 equal(cases.find(c => c.year === "2026" && c.name === "senior partial remaining capacity").usable,
   50.6064, "2026 consolidated-law partial capacity");
 equal(supplemental(years[2025], 70000), 200, "2025 hypothetical 70000 (not a household)");
+
+// The free loss parameter changes only H, so these crossings are excluded from the scope conclusion.
+const q2025 = years[2025];
+const claimant2025 = { age: 65, employment: q2025.ympe, pension: q2025.pension, rrsp: q2025.rrsp };
+const donor2025 = { age: 65, pension: q2025.pension, rrsp: q2025.pension };
+const lossSensitivity = [0, 24204, 50000, 74000, 74700].map(loss => {
+  const result = household(q2025, [{ ...claimant2025, cg: -loss }, donor2025]);
+  equal(result.usable, 50.5346, `loss ${loss}: unchanged usable relief`);
+  equal(result.adults[0].creditBase, 62526.73, `loss ${loss}: unchanged qualifying base`);
+  return { loss, gross: result.gross, usable: result.usable, ownRateDropPP: result.ownRateDropPP };
+});
+
+// #16's ESDC Q4 2025 OAS monthly maximum, annualized; a sensitivity, NOT calendar-2025 receipts.
+// OAS is ordinary taxable income, not eligible pension-credit income; no #20 splitting is simulated.
+const oasRunRate = 740.09 * 12;
+equal(oasRunRate, 8881.08, "OAS Q4 2025 annualized run rate");
+const oasClaimant = { ...claimant2025, other: oasRunRate };
+const oasDonor = { ...donor2025, other: oasRunRate };
+const oasMatchedClaimant = { ...oasClaimant, rrsp: claimant2025.rrsp + oasRunRate };
+const oasMatchedDonor = { ...oasDonor, rrsp: donor2025.rrsp + oasRunRate };
+const oasSensitivity = [
+  ["automatic OAS, original RRSP claims", [oasClaimant, oasDonor]],
+  ["automatic OAS, matching RRSP claims", [oasMatchedClaimant, oasMatchedDonor]],
+  ["automatic OAS, matching RRSP claims, loss 50000", [
+    { ...oasMatchedClaimant, cg: -50000 }, oasMatchedDonor,
+  ]],
+  ["automatic OAS, claimant matching RRSP, donor no RRSP, loss 50000", [
+    { ...oasMatchedClaimant, cg: -50000 }, { ...oasDonor, rrsp: 0 },
+  ]],
+].map(([name, people]) => ({ name, inputs: people, ...household(q2025, people) }));
+equal(oasSensitivity[0].adults[0].creditBase, 52313.488, "OAS reduces qualifying base without extra deductions");
+equal(oasSensitivity[0].usable, 0, "OAS removes usable relief without extra deductions");
+equal(oasSensitivity[1].usable, 50.5346, "OAS matched deductions restore relief");
+equal(oasSensitivity[1].gross, 92500.16, "OAS cash without loss");
+equal(oasSensitivity[2].usable, 50.5346, "OAS loss does not change relief");
+equal(oasSensitivity[2].gross, 42500.16, "OAS cash with loss");
+equal(oasMatchedDonor.rrsp, 10600.08, "donor deduction needs accumulated room");
+equal(oasSensitivity[3].usable, 0, "OAS plus no donor RRSP leaves no supplement");
+const lossWithoutDonorDeduction = household(q2025, [
+  { ...claimant2025, cg: -50000 }, { ...donor2025, rrsp: 0 },
+]);
+equal(lossWithoutDonorDeduction.usable, 16.1546, "original loss case with no donor deduction");
+equal(lossWithoutDonorDeduction.ownRateDropPP, 100 * 16.1546 / 24738,
+  "original loss case with no donor deduction rate effect");
+assert.ok(lossWithoutDonorDeduction.ownRateDropPP < 0.1);
 
 // Optional reachability audit is separate from the independent tax arithmetic above.
 // It executes the actual current input handler bodies and production engine without modifying either.
@@ -232,6 +280,9 @@ if (process.argv.includes("--verify-model")) {
   }
 }
 console.log(JSON.stringify({
-  status: "Annual structure verified from Act; 2026 amounts reconcile to TD1AB/T4127; 2026 c3 s2 applicability unresolved",
-  bounds, cases, checks, ...(modelReachability ? { modelReachability } : {}),
+  status: "2025 and 2026 annual rules verified; 2026 c3 s2 caregiver amendments commence January 1, 2027",
+  scopeDecision: "Below threshold; unrelated capital losses are denominator sensitivities, not materiality evidence",
+  revisit: "After #18 automatic OAS and #20 pension splitting are implemented",
+  bounds, cases, lossSensitivity, oasRunRate, oasSensitivity, lossWithoutDonorDeduction, checks,
+  ...(modelReachability ? { modelReachability } : {}),
 }, null, 2));
