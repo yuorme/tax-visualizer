@@ -115,9 +115,12 @@ go below `high`. The brief records the tier and effort, and the retro reports th
 
 ### When an agent or model is out
 An agent or model is unavailable when it is down, its plugin fails, or a usage limit won't reset before the work is
-needed. If a limit resets within a few hours and nothing is waiting on the work, wait instead. When one model is out:
-- coding and data work may step down a tier on the same agent, and the dispatch says so;
-- a review never steps down: if the reviewing agent's strong model is out, treat that agent as unavailable.
+needed. If a limit resets within a few hours and nothing is waiting on the work, wait instead. When the model a task's
+tier calls for is out, stay on the same agent and say so in the dispatch:
+- Standard work, including Standard reviews, moves up to Strong;
+- coding may step down from Strong to Standard;
+- a Strong review never steps down. If the reviewing agent has no model at or above the review's tier, treat that
+  agent as unavailable.
 
 When the other agent is unavailable, a fresh session of the author's agent reviews, at the strong tier and `high`
 effort or above, and its verdict header says "same-agent review".
