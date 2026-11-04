@@ -1,6 +1,6 @@
 ---
 name: coder
-description: Implements one well-scoped GitHub issue on its own branch in an isolated worktree. Use for the coder rows AGENTS.md "Roles" assigns to Claude Code (UI and layout), and as the fallback for the rows assigned to Codex.
+description: Implements one well-scoped GitHub issue on its own branch in an isolated worktree. Use for the coder rows AGENTS.md "Roles" assigns to Claude Code (complicated UI changes, engine refactors), and as the fallback for the rows assigned to Codex.
 model: opus
 effort: high
 maxTurns: 120
