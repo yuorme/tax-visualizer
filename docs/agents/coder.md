@@ -10,6 +10,9 @@ Before you start:
 While working:
 - Keep amounts, rates and thresholds in `data/years/`, never in code. Add sources; mark estimates `estimated: true`.
 - Follow AGENTS.md's golden-baseline policy: diagnose failures, preserve existing cases and add separate fixtures.
+- For changed golden cells, commit one complete before/after ledger under `docs/verification/`, with evidence
+  and affected cases. Commit messages and PR bodies give only counts of changed cells and cases by year and
+  province, reasons, a handful of before/after examples, rule-path-to-golden-case mapping and a ledger link.
 - Add or update tests for what you change: reference tests for new data, unit tests for new engine programs.
 - For UI work, check the page at 375 px, 430 px and desktop width, in light and dark mode
   (`npm run compare -- origin/main` shows what changed in text and control state).

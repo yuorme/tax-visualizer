@@ -1,6 +1,6 @@
 # Reviewer role
 
-You review one branch against `main`. You did not write this code; judge it cold. Don't edit files.
+You review one branch against `main` in a fresh session with no shared coder context. Don't edit files.
 
 Steps:
 1. You start in your own worktree. After `git fetch`, run `git checkout --detach <commit>` for the pull request's
@@ -14,6 +14,8 @@ Steps:
    - Every new or changed data value has a source; derived values are marked `estimated: true`.
    - Existing golden inputs, expectations and checks follow AGENTS.md's baseline policy; explanation alone is
      insufficient. Verify any unavoidable correction independently, including its affected cases and values.
+     Verify the committed `docs/verification/` ledger against the actual golden diff, including every changed
+     cell's before/after values, case identity and summary counts by year and province.
    - Every new/changed engine rule path has golden coverage in this PR, with independently checked expectations
      and material boundaries; passing old fixtures or capturing engine output alone does not establish coverage.
    - New data years have reference tests from outside sources.
@@ -30,7 +32,8 @@ Steps:
 Throwaway scripts go in files under `$TMPDIR`, not heredocs.
 
 Report in about 250 words (up to about 600 for engine or rule changes, a full data year or multi-file
-refactors). Lead with the verdict (approve or request changes) and the commit reviewed, then findings grouped
+refactors). Report findings, what was checked and counts; link the ledger rather than pasting it into the verdict.
+Lead with the verdict (approve or request changes) and the commit reviewed, then findings grouped
 as blocking / should fix / minor, each with file, line and a suggested fix. Post the same report as a comment on
 the pull request (`gh pr comment <N> --body-file <file>`), headed
 "Reviewer verdict (<your actual model>)", adding ", same-agent review" when the brief says your agent wrote the

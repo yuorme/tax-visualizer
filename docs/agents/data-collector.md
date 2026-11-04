@@ -22,6 +22,7 @@ While working:
   combined marginal rate per province at minimum, plus any published worked examples.
 - Capture golden results only for the year you're adding (`npm run golden:capture -- <year>`), after independent
   verification. Follow AGENTS.md's baseline policy for existing cases and add coverage for newly activated rules.
+  For golden changes, follow `docs/agents/coder.md`'s ledger and compact commit/PR summary requirements.
 - After each jurisdiction or other logical chunk, commit it as `WIP #<issue>: <what>` and push the branch
   (`git push -u origin <branch>`), so the work survives an interruption. Once a PR exists, run the same open-PR check
   as below before each push.

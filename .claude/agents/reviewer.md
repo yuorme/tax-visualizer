@@ -1,6 +1,8 @@
 ---
 name: reviewer
-description: Independent review of a finished branch before it merges. Doesn't edit tracked files; runs the checks and reports findings. Use after a coder or data-collector finishes a task.
+description: >-
+  Independent review of a finished branch; runs checks and reports findings without editing tracked files.
+  Use for Claude review assignments in AGENTS.md's tier table or its outage fallbacks; Normal defaults to Codex.
 tools: Read, Grep, Glob, Bash, WebFetch
 model: sonnet
 effort: high
