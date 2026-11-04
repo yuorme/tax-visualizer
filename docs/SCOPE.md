@@ -242,6 +242,8 @@ Marked `estimated: true` in the data files where they appear:
 - New Brunswick low-income reduction and Newfoundland and Labrador family threshold (2025 indexed by 2%).
 - Property tax rates for Whitehorse, Yellowknife and Iqaluit (rough 1%).
 - Quebec living-alone amount applied to any household with one adult.
+- Quebec living-alone line 275 income base provisionally continues the 2025 Schedule B pending the 2026 form;
+  the 2026 amounts are published.
 - Starting monthly spending by household size (derived from Statistics Canada spending data; see the page notes).
 - Starting distance driven per province: the average per light vehicle in the 2009 Canadian Vehicle Survey, the
   last one (vehicle-kilometres ÷ vehicles, to the nearest 100 km).
