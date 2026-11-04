@@ -203,10 +203,10 @@ test("MB audit negative controls distinguish incorrect FTC order and lower-incom
   }
 });
 
-test("Manitoba family benefit is selected through data only for 2025–2026", () => {
+test("Manitoba family benefit is selected through data for every supported year", () => {
   for (const year of listYears()) {
     const { p } = province(year);
-    assert.equal(!!p.familyTaxBenefit, year === 2025 || year === 2026);
+    assert.equal(p.familyTaxBenefit?.program, "mb-family-tax-benefit");
     if (year === 2026) assert.equal(p.familyTaxBenefit?.estimated, true);
   }
 });
