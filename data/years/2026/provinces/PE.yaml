@@ -14,7 +14,11 @@ dividendTaxCredit: {eligible: 0.105, nonEligible: 0.013}
 spouseAmount: {max: 12740, threshold: 1274}
 # Provisional continuation of the verified 2025 return rules pending 2026 CRA forms.
 claimants:
+  childAmount: {claimant: lower-net-income, transfer: none, estimated: true}
   lowIncomeReduction: {claimant: minimum-household-tax, transferUnused: true, order: before-foreign-tax-credit, estimated: true}
+# Provisional 2025 amount/rules continued pending 2026 return forms; annualized as for NS.
+# Birthdays/residence changes within the year are not prorated; see verification/162-pei-young-children.md.
+childAmount: {perChild: 1200, ages: under6, estimated: true}
 lowIncomeReduction:
   program: family-low-income-reduction
   params: {individual: 350, spouse: 350, child: 300, rate: 0.05, threshold: 23000}
@@ -41,6 +45,8 @@ credits:
     program: pei-essentials-benefit
     params: {single: 310, family: 365, rate: 0.01, threshold: 95000, minimum: 175}
 sources:
+  - {label: "CRA PE428 2025, line 58230 young-child base; provisional 2026 continuation", url: "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5002-c/5002-c-25e.pdf"}
+  - {label: "CRA PE(S2) 2025, no young-child transfer; provisional 2026 continuation", url: "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5002-s2/5002-s2-25e.pdf"}
   - {label: "CRA PE 2025 guide, claimant and transfer rules", url: "https://www.canada.ca/en/revenue-agency/services/forms-publications/tax-packages-years/general-income-tax-benefit-package/prince-edward-island/5002-pc.html"}
   - {label: "CRA PE428 2025, reduction before FTC (87–89), unused balance before FTC (99–101); provisional 2026 continuation", url: "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5002-c/5002-c-25e.pdf"}
   - {label: "CRA T2036 2025, line 5 credit cap and note 4 tax otherwise payable; provisional 2026 continuation", url: "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/t2036/t2036-25e.pdf"}

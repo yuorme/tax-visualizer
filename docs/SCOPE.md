@@ -52,10 +52,10 @@ line-by-line tax return. Simpler and slightly less precise is acceptable where i
 - Federal childcare expense deduction (2025 and 2026); see Childcare below.
 - Province-specific: Ontario surtax, Ontario tax reduction and LIFT credit, BC tax reduction, low-income
   reductions in Newfoundland and Labrador, New Brunswick, PEI and Nova Scotia, Saskatchewan's child amount,
-  Nova Scotia's and Nunavut's credits for children under 6, Quebec abatement, Quebec deduction for workers and
+  PEI's, Nova Scotia's and Nunavut's credits for children under 6, Quebec abatement, Quebec deduction for workers and
   amount for a person living alone.
 - For 2025–2026, each child amount and family reduction uses its own spouse claimant rule. SK and NU transfer
-  unused child bases; NS does not. NB/NL/PE transfer unused family reductions; NS does not. Eligible tied
+  unused child bases; NS and PE do not. NB/NL/PE transfer unused family reductions; NS does not. Eligible tied
   child claimants and discretionary reduction elections minimize household tax. Earlier years keep their
   historical claimant calculation. See [claimant rules](verification/92-claimant-rules.md).
 - Manitoba family tax benefit correction for 2025–2026 (#145):
