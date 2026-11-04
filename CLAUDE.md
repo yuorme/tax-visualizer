@@ -1,132 +1,30 @@
-# Provincial Tax Compare
+@AGENTS.md
 
-Static single-page app comparing a household's full yearly tax burden across Canada's 13 provinces and
-territories. No server, no database: tax parameters are YAML files in `data/years/<year>/`, the engine is pure
-TypeScript, and the build inlines everything into `dist/index.html`. See README.md for the layout.
+# Claude Code notes
+Shared rules are in `AGENTS.md` above. This file holds only what is specific to Claude Code.
 
-## Commands
-- `npm run check` — lint, typecheck, tests, build, browser smoke test. Required except for the Markdown path below.
-- `npm run lint` — Biome lint and formatting check, and no Markdown prose line over 120 characters.
-- `npm run format` — apply Biome's formatting and safe lint fixes.
-- `npm test` — data validation, golden results, published reference values (Node's built-in test runner). Runs
-  every `tests/**/*.test.ts`; reference tests are one file per year in `tests/reference/<year>.test.ts`.
-- `npm run golden:capture -- <year>` — capture one year's `tests/golden/<year>.json` from the engine. Refuses to
-  overwrite without `--force`; never touches other years. `npm run golden:capture-legacy` is how 2026 was locked.
-- `npm run build` / `npm run dev` — single-file build / rebuild on change.
-- `npm run compare -- <git-ref>` — build the page at a ref and at the working tree, walk both through the smoke
-  steps at 375, 430 and desktop width in light and dark, and diff visible text and control state.
-- `npm run preview [-- <PR#|branch>]` — build a PR, ref or this checkout; open it at 375, 430, desktop, dark and light.
-- `node scripts/make-flags.mjs` — regenerate the waving flag icons from `assets/flags/source/`.
+## Your part
+You are the planner and orchestrator: scope issues, pick the agent per "Who does what", dispatch, read reports,
+run reviews, queue merges and write retros. Use your own judgement on UI work: layout, interaction, copy, tooltips
+and how a change reads at 375 px and in dark mode. Hand engine, data, test and debugging work to Codex, even when
+it looks quick enough to do yourself.
 
-## Toolchain
-- **Node 26** (Active LTS from Oct 2026, supported to Apr 2029), pinned by major in `.node-version`; CI reads the
-  same file. `.npmrc` sets `engine-strict`, so the wrong Node fails `npm ci` instead of warning. Locally, fnm
-  switches versions on `cd`. In agent shells, run commands as `fnm exec --using=26 <cmd>` (sandboxes refuse
-  `eval "$(fnm env)"`) — the system `node` on this machine is v16.
-- **Dependencies are pinned exactly** in `package.json` and `package-lock.json` is committed. Install with
-  `npm ci`; use `npm install -E <pkg>@<version>` only to add or upgrade, and commit the lockfile with it.
-  `@types/node` tracks the Node major.
-- **npm 11 runs install scripts only for packages listed in `allowScripts`** (esbuild, fsevents), keyed by
-  version. After upgrading one of them, run `npm install-scripts approve <pkg>` (or the install warns), then
-  `npm install-scripts prune` to drop the old version's entry.
-- **TypeScript (7) only typechecks.** `tsx` and esbuild strip types without checking them, so a compiler upgrade
-  can't change the built page. Upgrades that touch output (esbuild, zod, yaml) should leave `dist/index.html`
-  byte-identical, or explain why not.
-- **Biome formats and lints** `src/`, `tests/` and `scripts/` (2 spaces, 120 columns; it doesn't format HTML or
-  YAML, but does lint `index.html`). Run `npm run format` before committing. The whole codebase was reformatted in
-  one commit listed in `.git-blame-ignore-revs`; run `git config blame.ignoreRevsFile .git-blame-ignore-revs` once
-  so `git blame` skips it.
-- **New lint findings** (Biome minor releases add recommended rules, and warnings fail CI): fix the code if the rule
-  makes sense here. If a few lines need the flagged pattern on purpose, suppress it for those lines with a comment
-  saying why (`biome-ignore`, as in `tests/e2e/smoke.mjs`). Switch a rule off in `biome.json` only if it never
-  fits this codebase.
-- **zod 4 rejects `Infinity` in `z.number()`.** Bracket limits use `.inf` in YAML, so the schema allows
-  `z.literal(Infinity)` explicitly.
-- Upgrade on a dedicated branch, not mid-feature. Move to the next Node major when it reaches Active LTS (each
-  October; from v27 every major becomes LTS).
+## Claude subagents
+`.claude/agents/` registers `coder` (Opus), `data-collector` (Sonnet) and `reviewer` (Sonnet), each in its own
+worktree; their bodies point at `docs/agents/`. Use `coder` and `reviewer` for UI work, and pass `model: opus` on
+the reviewer call for significant layout changes. `data-collector` is the fallback when Codex is unavailable.
 
-## Rules that keep the numbers trustworthy
-- **Numbers live in data, formulas in code.** No amounts, rates or thresholds in `src/engine/` or `src/ui/`.
-  Read them from the year's data. When a rule changes shape, add a new `program` id; don't add year checks
-  inside an existing formula.
-- **Every data value is sourced.** Keep `sources` lists current. Anything not taken directly from an official
-  publication gets `estimated: true` and a comment saying how it was derived.
-- **Existing golden tests are locked.** Preserve their inputs, expected values, assertions and tolerances.
-  Never re-capture, delete, skip or weaken them to make a failure pass. Changing an existing case is allowed only
-  when an independently verified data/rule correction or task-required behavior change makes it unavoidable. Document
-  the evidence, affected cases and before/after values in the commit and PR; change only those cases, preserving
-  unrelated baselines. Diagnose unexpected failures before changing any expectation; intention alone is insufficient.
-- **New engine behavior needs new golden cases in the same PR**, alongside targeted correctness tests. Add separate
-  fixtures for new features/rule paths without rewriting existing baselines. Verify new expected values against
-  published examples or documented independent calculations; engine-generated snapshots alone prove no correctness.
-  Review must map every changed rule path to a golden case that exercises it, including material boundaries.
-- **New years need reference tests** from figures published outside this project (top marginal rates at minimum).
-- **The engine never touches the DOM**, and the UI never computes tax.
+## Dispatching Codex
+Create and lock the worktree yourself (`git worktree add .claude/worktrees/<name> -b <branch> origin/main`), write
+the brief (issue, role file, owned files) to a file in your scratchpad, and start Codex there with the plugin's
+companion script (`ls ~/.claude/plugins/cache/openai-codex/codex/*/scripts/codex-companion.mjs`):
+`node <companion> task --write --background --cwd <worktree> --prompt-file <brief>`. Follow it with
+`status --cwd <worktree>` and `result --cwd <worktree>`. Reviews use the same command in a detached reviewer
+worktree with `docs/agents/reviewer.md` as the brief; it needs `--write` so it can post the verdict with `gh`.
+`/codex:rescue` is for an ad-hoc second opinion in the current checkout, not for issue work.
 
-## UI conventions
-- Must work at 375 px and 430 px wide with no sideways scrolling, in light and dark mode.
-- Explanations go in info tooltips, not visible hint text. Chart columns use two-letter codes.
-- Keep the page a single self-contained file (it's also published as an artifact).
-
-## Planning and scope
-- Work is tracked in GitHub Issues; scope decisions in `docs/SCOPE.md`.
-- Past verification work: `docs/verification/`.
-
-## Working with agents
-The main session orchestrates; `.claude/agents/` defines a `coder` (Opus, code changes in its own git worktree),
-a `data-collector` (Sonnet, a year's figures from official sources, also in a worktree) and a `reviewer` (Sonnet,
-its own worktree, doesn't edit tracked files, runs the checks). For reviews of engine or rule changes and of
-significant layout changes, pass `model: opus` on the call. Give each agent one issue and an explicit list of files
-it owns; never run two agents on the same file at once. Exception: in `src/data/schema.ts`, adding new fields or
-program entries doesn't need exclusive ownership (editing existing ones does). Every branch gets a reviewer pass
-before it merges; give the reviewer the pull request number from the agent's report.
-The orchestrator owns worktree cleanup: lock each agent's worktree while it is active (`git worktree lock <path>`).
-After its final report and process exit, unlock it and run `npm run worktree:cleanup -- --apply <path>` from outside
-it, including reviewer checkouts and PRs awaiting `needs-human` merge. Keep unfinished work; recreate a checkout
-for follow-ups. At session start, inspect leftover worktrees and clean only confirmed finished ones. See
-[Worktree lifecycle](README.md#worktree-lifecycle) for safeguards, paused work and preview cleanup.
-When one issue needs another's unmerged work, branch from that branch (stacked), open the pull request against it
-(GitHub retargets it to `main` when the parent merges), and say so in "Blocked by".
-
-A data year can be split across parallel data-collectors by region (federal; BC, AB, SK, MB; ON, QC; Atlantic;
-territories), each owning its own `data/years/<year>/` files on its own branch. One of them, usually federal, is
-told to merge the others' branches when they finish, then writes the reference tests, captures the golden
-results and opens the one pull request that gets reviewed. Collectors cache what they read with
-`npm run fetch-source` in `docs/verification/<year>/sources/`, so reviewers check figures against the same text.
-
-## Milestone retros
-When a milestone's last pull request merges, the orchestrator writes `docs/retros/<milestone>.md`: per issue, the
-agent tokens, review rounds to approval and what the extra rounds fixed; defects found after merge; and time lost to
-blocking or interruptions. It proposes at most three process changes, each tied to a number in the retro, in one
-pull request for the user. Each change should also remove or merge a rule where it can: keep this file under about
-110 lines and each agent definition under about 45. Drop a rule that a later retro shows had no effect.
-
-## Merging
-Markdown-only changes in root `*.md`, `docs/**/*.md` and `.claude/agents/*.md` use lightweight validation:
-run `node scripts/check-scope.mjs origin/<base> HEAD`; when it reports `docs_only=true`, run
-`node scripts/check-docs.mjs` instead of installing dependencies or running `npm run check`. The scope check
-includes local edits and untracked files. Any other path, mixed change, empty diff or unknown comparison uses
-`npm ci` and `npm run check`. CI keeps the required `check` job, validates Markdown, and skips application checks
-and deployment for Markdown-only PRs and pushes. Independent review and human-merge conditions still apply.
-
-`main` only changes through pull requests, and the `check` CI job must pass first (an admin can bypass in an
-emergency). The agent that finishes a branch pushes it and opens the pull request (`gh pr create`, body says
-`Closes #N`); the orchestrator then runs the reviewer, which posts its verdict on the pull request, and sends any
-findings to fix back to the same agent. Use merge commits, not squash or rebase, so commit hashes survive
-(`.git-blame-ignore-revs` lists formatting commits by hash).
-
-Once the pull request is final (reviewer approved, no open should-fix findings, no more commits planned), the
-orchestrator queues it with `gh pr merge N --auto --merge`; GitHub merges it once CI passes (at once if it already
-has) and the repo deletes the branch. Engine and rule changes follow this path once the reviewer verifies the
-golden-test requirements above; the reviewer's model alone does not require human review or human merge.
-The user merges instead, and the orchestrator labels the pull request
-`needs-human` and says so, when:
-- its issue is labelled `needs-human`, or
-- it makes significant layout changes, or
-- it changes this merge process, the agent definitions or `.claude/settings.json`.
-
-After queueing, push nothing except `gh pr update-branch N`: extra commits would merge unreviewed once CI passes, so
-to add some, cancel first with `gh pr merge N --disable-auto`. Strict "up to date" means a queued pull request stalls
-when another merges first; `gh pr update-branch N` brings it current and it merges after CI. A failed check leaves
-it open. Dependabot opens monthly update pull requests; each gets a reviewer pass and is then queued the same way,
-treated like an upgrade branch (see Toolchain).
+## Permissions
+- `.claude/settings.json` allows `gh pr merge *`. If auto mode denies a merge, the rule is missing: tell the user
+  rather than working around it. You may not edit your own permission settings.
+- Committing `.claude/settings.json` on a branch and switching back to `main` drops the rule from the working copy
+  until that pull request merges.

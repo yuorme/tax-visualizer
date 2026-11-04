@@ -1,4 +1,4 @@
-// The UI rules from CLAUDE.md that a browser can check. Each check reads the page's structure through the
+// The UI rules from AGENTS.md that a browser can check. Each check reads the page's structure through the
 // selectors documented here, so if the markup changes, update the selector and its comment together.
 import AxeBuilder from "@axe-core/playwright";
 

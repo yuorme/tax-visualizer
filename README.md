@@ -87,7 +87,7 @@ Use explicit paths owned by the completed task; a broad directory sweep can disr
 Keep dirty or unpushed worktrees until their work is preserved. For paused work, once the owner confirms all
 processes have stopped, reclaim only reinstallable dependencies with
 `node -e 'require("node:fs").rmSync(process.argv[1], {recursive:true, force:true})' /absolute/worktree/node_modules`.
-Check that exact path first. Before resuming, follow CLAUDE.md's validation path; reinstall dependencies when full
+Check that exact path first. Before resuming, follow AGENTS.md's validation path; reinstall dependencies when full
 checks apply. Keep source caches and reports.
 
 After closing preview windows and stopping the preview process, run
@@ -111,8 +111,9 @@ scripts/build.ts        bundles everything into dist/index.html with esbuild
 tests/                  see "How the numbers are checked"
 legacy/                 the original single-file app, kept as the reference for the golden tests
 assets/flags/           public-domain flag sources; scripts/make-flags.mjs makes the waving icons
-docs/                   SCOPE.md (what's modelled), verification/ (audits)
-CLAUDE.md, .claude/     project rules and agent definitions for Claude Code
+docs/                   SCOPE.md (what's modelled), verification/ (audits), agents/ (agent roles)
+AGENTS.md               shared rules for every coding agent; CLAUDE.md adds Claude Code notes
+.claude/, .codex/       agent registrations, settings and hooks for Claude Code and Codex
 ```
 
 **Rules in code, numbers in data.** Formulas live in the engine; every amount, rate and threshold lives in the
@@ -137,7 +138,7 @@ adding year checks inside an existing one. Values that are estimates rather than
 - **Golden results** (`tests/golden.test.ts`): for every year in `data/years/`, 148 households × 13 provinces
   (singles, couples, single parents, up to six children, investment income, deductions, renters and owners) must
   reproduce `tests/golden/<year>.json` to the hundredth of a cent. A year without a fixture fails the test. A
-  change here means a result changed: diagnose it using the golden-baseline policy in [CLAUDE.md](CLAUDE.md).
+  change here means a result changed: diagnose it using the golden-baseline policy in [AGENTS.md](AGENTS.md).
   Existing cases stay locked; new engine behavior needs additive golden cases with independently checked expectations.
   - `npm run golden:capture -- <year>` captures one year's fixture from the engine. It writes only that year's
     file and refuses to replace an existing one unless given `--force`; `--out <file>` writes elsewhere.
