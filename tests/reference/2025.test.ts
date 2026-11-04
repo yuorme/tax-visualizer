@@ -32,6 +32,28 @@ const single = (ord: number, extra: Partial<Household> = {}): Household => ({
 const pct = (v: number) => Math.round(v * 10000) / 100;
 const credits = (r: ReturnType<typeof compute>) => r.credits.map(([n, v]) => [n, Math.round(v)]);
 
+test("2025 Schedule 8 six-month maxima and Schedule U unreduced QPP election maxima", () => {
+  // Cached Schedule 8 Part 2 row 6: YMPE 35,650, YAMPE 40,600, exemption 1,750.
+  // Schedule U Part B/Table 1: an employee RR-50 election does not reduce annual ceilings/exemption.
+  const person = {
+    ...blank(180000),
+    age: 66,
+    birthMonth: 6,
+    employeePayroll: {
+      retirementPensionSince: { year: 2024, month: 1 },
+      cppElection: { stop: { year: 2025, month: 6 } },
+      qppElection: { stop: { year: 2025, month: 6 } },
+    },
+  };
+  const cpp = compute(y, prov("ON"), single(0, { people: [person] })).me;
+  const qpp = compute(y, prov("QC"), single(0, { people: [person] })).me;
+  assert.ok(Math.abs(cpp.pay.base - 1678.05) < 1e-9);
+  assert.equal(cpp.pay.enh, 537); // first 339 + CPP2 198
+  assert.ok(Math.abs(qpp.pay.base - 3661.2) < 1e-9);
+  assert.equal(qpp.pay.enh, 1074); // first 678 + QPP2 396, full annual maximum
+  assert.equal(qpp.breakdown.netIncome.enh, 1074);
+});
+
 test("2025 Schedule F published worksheet: both columns, maxima and zero threshold", () => {
   // Revenu Québec TP-1.D.F-V (2025-12), Part B, lines 77–82; examples evaluated directly from that worksheet.
   assert.deepEqual(prov("QC").healthServicesFund?.params, {
@@ -213,4 +235,18 @@ test("Quebec two-parent family under the thresholds gets the published maximums"
   // benefit amounts: family allowance $3,006 per child plus $124 for school supplies (income below $59,369)
   const r = compute(y, prov("QC"), single(30_000, { kids: 1, under6: 0, adults: 2 }));
   assert.ok(Math.abs(r.childBen - (6748 + 3006 + 124)) < 0.01, `child benefits ${r.childBen}`);
+});
+
+// NWT Finance fact sheet p. 2, exact annual C + D tables; T4114-25 pp. 21–22 confirms
+// the same age groups, monthly tables and income boundaries for July 2025 to June 2026.
+// These are independent calculations from published inputs, not worked examples printed by CRA.
+test("2025 NWT mixed-age annual entitlement matches the published separate tables", () => {
+  const benefit = (income: number, kids: number, under6: number) =>
+    compute(y, prov("NT"), single(0, { people: [{ ...blank(0), fd: income }], whRate: 0, kids, under6 })).provBen;
+  assert.equal(benefit(30000, 3, 2), 2119); // C(2) 1467 + D(1) 652
+  assert.equal(benefit(55000, 3, 2), 1059.5); // (1467 + 652) × (80000 − 55000) / 50000
+  assert.equal(benefit(55000, 3, 1), 994.5); // (815 + 1174) / 2; the age counts cannot be interchanged
+  assert.equal(benefit(30000, 6, 5), 3464); // 2445 + 367 + 652
+  assert.equal(benefit(30000, 6, 1), 3064); // 815 + 1956 + 293
+  assert.equal(benefit(80000, 3, 2), 0);
 });

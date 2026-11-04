@@ -41,6 +41,45 @@ const single = (ord: number, extra: Partial<Household> = {}): Household => ({
   ...extra,
 });
 const pct = (v: number) => Math.round(v * 10000) / 100;
+
+test("2026 CRA Joseph age-70 example and published QPP maxima", () => {
+  // Cached CRA cpp-prorating: turns 70 February 24, maximum tier 1 is 705.08 (705.075 before cent rounding).
+  // T4127 tables 8.3–8.6: QPP first-tier maximum 4,479.30, second tier 416, total enhanced 1,127.
+  const cpp = compute(
+    y,
+    prov("ON"),
+    single(74600, {
+      people: [{ ...blank(74600), age: 70, birthMonth: 2 }],
+    }),
+  ).me;
+  assert.equal(Math.round((cpp.pay.base + cpp.pay.enh) * 100) / 100, 705.08);
+  const qpp = compute(
+    y,
+    prov("QC"),
+    single(180000, {
+      people: [
+        {
+          ...blank(180000),
+          age: 65,
+          birthMonth: 6,
+          employeePayroll: {
+            retirementPensionSince: { year: 2025, month: 1 },
+            qppElection: { stop: { year: 2026, month: 6 } },
+          },
+        },
+      ],
+    }),
+  ).me;
+  assert.ok(Math.abs(qpp.pay.base - 3768.3) < 1e-9);
+  assert.equal(qpp.pay.enh, 1127);
+  assert.ok(Math.abs((qpp.breakdown.retirementPayroll?.withheldBase ?? 0) - 3768.3) < 1e-9);
+  assert.equal(
+    y.federal.payroll.employeeRetirement?.qpp.estimated,
+    true,
+    "2026 annual settlement continues Schedule U 2025; final 2026 form is not in the cache",
+  );
+});
+
 function need<T>(v: T | null | undefined): T {
   assert.ok(v != null);
   return v;
@@ -227,4 +266,18 @@ test(`${year} starting fuel efficiency is NRCan's 2023 on-road average for gasol
   const d = need(y.federal.driving);
   assert.equal(d.efficiency, Math.round(((cars * 7.7 + trucks * 10.0) / (cars + trucks)) * 10) / 10);
   assert.equal(d.estimated, true);
+});
+
+// NWT Finance fact sheet p. 2, exact annual C + D tables; T4114-26 pp. 21–22 confirms
+// the same age groups, monthly tables and income boundaries for July 2026 to June 2027.
+// These are independent calculations from published inputs, not worked examples printed by CRA.
+test("2026 NWT mixed-age annual entitlement matches the published separate tables", () => {
+  const benefit = (income: number, kids: number, under6: number) =>
+    compute(y, prov("NT"), single(0, { people: [{ ...blank(0), fd: income }], whRate: 0, kids, under6 })).provBen;
+  assert.equal(benefit(30000, 3, 2), 2119); // C(2) 1467 + D(1) 652
+  assert.equal(benefit(55000, 3, 2), 1059.5); // (1467 + 652) × (80000 − 55000) / 50000
+  assert.equal(benefit(55000, 3, 1), 994.5); // (815 + 1174) / 2; the age counts cannot be interchanged
+  assert.equal(benefit(30000, 6, 5), 3464); // 2445 + 367 + 652
+  assert.equal(benefit(30000, 6, 1), 3064); // 815 + 1956 + 293
+  assert.equal(benefit(80000, 3, 2), 0);
 });

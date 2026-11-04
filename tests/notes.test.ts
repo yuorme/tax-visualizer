@@ -123,6 +123,47 @@ test("2022 notes explain BC's separate periods and omit the later renter credit"
   assert.match(text, /the published straight-line taper to \$80,000/);
 });
 
+for (const year of [2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026]) {
+  test(`${year}: NWT notes describe the selected age-group program and published taper`, () => {
+    const y = loadYear(year);
+    assert.equal(byCode(y, "NT").childBenefit?.program, "nwt-child-benefit-age-groups");
+    const text = render(y);
+    assert.match(
+      text,
+      /counts children under six and aged 6–17 separately, then adds the two annual table entitlements/,
+    );
+    assert.match(text, /full amount up to \$30,000 of family net income/);
+    assert.match(text, /the published straight-line taper to \$80,000, where the benefit reaches zero/);
+    assert.doesNotMatch(text, /blends the age-specific table amounts/);
+  });
+}
+
+for (const program of ["nwt-child-benefit", "nwt-child-benefit-age-groups"] as const) {
+  test(`NWT ${program} wording follows program, thresholds and estimate status`, () => {
+    const y = structuredClone(loadYear(2026));
+    const nt = byCode(y, "NT");
+    const original = nt.childBenefit;
+    assert.ok(original?.program === "nwt-child-benefit-age-groups");
+    const selected = { ...original, program };
+    nt.childBenefit = selected;
+    const text = render(y);
+    const ageGroups = "counts children under six and aged 6–17 separately";
+    const blend = "blends the age-specific table amounts by the share of children under six";
+    assert.equal(text.includes(ageGroups), program === "nwt-child-benefit-age-groups");
+    assert.equal(text.includes(blend), program === "nwt-child-benefit");
+    assert.match(text, /the published straight-line taper to \$80,000/);
+    assert.match(text, /Nunavut's uses the 3% \/ 5% rates in its 2026 Bill 4\./);
+
+    selected.params.fullUpTo = 31000;
+    selected.params.endsAt = 81000;
+    selected.estimated = true;
+    const changed = render(y);
+    assert.match(changed, /full amount up to \$31,000 of family net income/);
+    assert.match(changed, /an estimated straight-line taper to \$81,000/);
+    assert.doesNotMatch(changed, /the published straight-line taper to \$80,000/);
+  });
+}
+
 test("flat federal basic personal amounts render without a fictitious federal phase-out", () => {
   const y = structuredClone(loadYear(2025));
   y.federal.basicPersonalAmount = 12069;

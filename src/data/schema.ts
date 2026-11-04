@@ -157,6 +157,14 @@ const carbonPricing = z.object({
 
 // ---------- Federal ----------
 const cppLike = z.object({ exempt: amount, ympe: amount, yampe: amount, base: rate, enh1: rate, enh2: rate });
+const employeeRetirementParams = z.object({
+  contributionStartAge: z.number().int().nonnegative(),
+  electionFromAge: z.number().int().positive(),
+  mandatoryStopAge: z.number().int().positive(),
+  electionEffectiveMonthOffset: z.number().int().positive(),
+  restartAfterCalendarYears: z.number().int().positive(),
+  electionsFromYear: z.number().int().optional(),
+});
 const cwbRegion = z.object({ max: pair, rate, floor: pair, threshold: pair, phaseOut: ratePair });
 const qcCwbRow = z.tuple([rate, amount, amount, amount]);
 
@@ -194,6 +202,12 @@ export const federalSchema = z.object({
   payroll: z.object({
     cpp: cppLike,
     qpp: cppLike,
+    employeeRetirement: z
+      .object({
+        cpp: program("cpp-employee-retirement", employeeRetirementParams),
+        qpp: program("qpp-employee-retirement", employeeRetirementParams),
+      })
+      .optional(),
     ei: z.object({ maxInsurable: amount, rate, quebecRate: rate }),
     qpip: z.object({ maxInsurable: amount, rate }),
   }),

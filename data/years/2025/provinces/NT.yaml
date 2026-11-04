@@ -15,15 +15,16 @@ salesTax: {rate: 0.05, label: "5% GST"}
 propertyTax: {rate: 0.0100, city: "Yellowknife (est.)", estimated: true, rough: true}   # no published rate used: a rough placeholder
 childBenefit:
   name: NWT Child Benefit
-  program: nwt-child-benefit
+  program: nwt-child-benefit-age-groups
   params:
-    under6: [0, 814.92, 1467, 1996.92, 2445]      # by number of children (index 1–4); $67.91, $122.25, $166.41, $203.75 a month
-    under6More: 366.96                            # each child after the fourth ($30.58 a month)
-    over6: [0, 651.96, 1173.96, 1596.96, 1956]
-    over6More: 292.92
+    # Exact annual amounts from NWT Finance; count each age group separately.
+    # T4114-25 confirms continuity for July 2025 to June 2026; apply to current-year income.
+    under6: [0, 815, 1467, 1997, 2445]
+    under6More: 367
+    over6: [0, 652, 1174, 1597, 1956]
+    over6More: 293
     fullUpTo: 30000
     endsAt: 80000
-  estimated: true   # straight-line taper between the published start and end incomes
 fuelTax: {gasoline: 0.107}   # Zone A (highway system), including Yellowknife
 
 sources:
@@ -32,6 +33,7 @@ sources:
   - {label: "CRA, Form NT428 for 2025 (basic and spouse amounts)", url: "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5012-c/5012-c-25e.pdf"}
   - {label: "CRA, 2025 tax rates and income brackets", url: "https://www.canada.ca/en/revenue-agency/services/tax/individuals/tax-rates-brackets/last-year.html"}
   - {label: "CRA, T4114 (NWT child benefit, July 2025 to June 2026)", url: "https://www.canada.ca/content/dam/cra-arc/formspubs/pub/t4114/t4114-25e.pdf"}
+  - {label: "NWT Finance, child benefit exact annual amounts, separate age groups and reduction formula (page 2)", url: "https://www.fin.gov.nt.ca/sites/fin/files/benefits_and_support-nwt_child_benefit-180320.pdf"}
   - label: "Carbon history: Statistics Canada, Canadian Vehicle Survey: Annual 2009 (53-223-X)"
     url: https://www150.statcan.gc.ca/n1/pub/53-223-x/53-223-x2009000-eng.pdf
   - label: "Carbon history: NWT CARBON TAX REPORT"
