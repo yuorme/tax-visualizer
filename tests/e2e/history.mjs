@@ -110,7 +110,7 @@ export const HISTORY_STEPS = [
         await p.click(`#history-${mode}`);
         for (const [province, expected, absent] of [
           ["QC", "Quebec's Health Services Fund contribution is modelled only from 2025", "Manitoba's"],
-          ["MB", "Manitoba's family tax benefit is modelled only from 2025", "Quebec's"],
+          ["MB", null, "modelled only from"],
           ["ON", null, "modelled only from"],
         ]) {
           await p.selectOption("#home", province);

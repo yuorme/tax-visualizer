@@ -50,7 +50,9 @@ for (const year of [2019, 2020, 2021, 2022, 2023, 2024]) {
     const text = footerNotes(loadYear(year), page);
     assert.match(text, /are claimed by the parent who claims the children\./);
     assert.doesNotMatch(text, /follow each program's rules for who can claim them/);
-    assert.doesNotMatch(text, /non-refundable family tax benefit/);
+    assert.match(text, /Manitoba's non-refundable family tax benefit adds a base of \$2,065/);
+    assert.match(text, /9% of the claimant's own net income and converts at 10.8%/);
+    assert.match(text, /The higher-net-income spouse claims the children/);
   });
 }
 

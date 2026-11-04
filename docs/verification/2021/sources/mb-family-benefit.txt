@@ -1,0 +1,46 @@
+Title: CRA 2021 MB428-A Manitoba Family Tax Benefit
+URL: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5007-a/5007-a-21e.pdf
+Fetched: 2026-11-04
+SHA-256 of the original: 833649e23b91f72637773f6e18a073195b201d0fc95798959aeb233223f104a5
+Publication date modified: 2021-11-11
+PDF pages: all 1
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 1 of 1 ---
+
+Schedule MB428–A
+2021
+Protected B when completed
+Manitoba Family Tax Benefit
+Complete this schedule to claim the family tax benefit. Attach a copy of this schedule to your return.
+1Basic amount
+2
+Amount for dependent spouse or common-law partner claimed on line 58120 of
+your Form MB428 Claim $2,065 +
+3Amount for an eligible dependant claimed on line 58160 of your Form MB428 Claim $2,065 +
+4Age amount for self if you were born in 1956 or earlier Claim $2,065 +
+60700 5Age amount for spouse or common-law partner who was born in 1956 or earlier Claim $2,065 +
+60710 6Disability amount for spouse or common-law partner Claim $2,752 +
+7
+Disability amount for self or for a dependant other than your spouse or common-law partner
+60720Number of disability claims × $2,752 = +
+8
+Amount for disabled dependants born in 2003 or earlier
+60740Number of disabled dependants × $2,752 = +
+9
+Amount for dependent children born in 2003 or later (complete the chart below)
+60760Number of dependent children × $2,752 = +
+10Add lines 1 to 9. =
+11Net income from line 23600 of your return × 9% = –
+12Family tax benefit
+Line 10 minus line 11 (if negative, enter "0")
+Enter this amount on line 61470 of your Form MB428. =
+Details of dependent children born in 2003 or later (if you need more space, attach a separate sheet of paper)
+Child's name Relationship to you Date of birth
+Year Month Day
+Social insurance number
+(if available)
+See the privacy notice on your return.
+5007-A E (21) (Ce formulaire est disponible en français.) Page 1 of 1
+2,065.00
