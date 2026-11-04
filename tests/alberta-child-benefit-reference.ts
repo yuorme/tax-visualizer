@@ -1,5 +1,5 @@
 // Independent arithmetic; no engine or YAML imports. Evidence: verification/106-alberta-child-benefit.md.
-// ACFB amounts: Alberta's published 2025–26/2026–27 table. Rates/minimum: Income Tax Act s.30.2.
+// ACFB amounts: Alberta's published 2025–26/2026–27 table. Rates/minimum: Alberta Personal Income Tax Act s.30.2.
 export type AlbertaYear = 2025 | 2026;
 export const published = {
   2025: { base: [1499, 2248, 2997, 3746], work: [767, 1465, 1883, 2021], baseStart: 27565, workStart: 46191 },
