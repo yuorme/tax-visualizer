@@ -54,11 +54,17 @@ The credit predates 2025: cached PE428 forms already list it in
 Contrary to the initial assumption, **all six historical PE YAML files already contain the $1,200 child amount**.
 Their gap is claimant coverage: they omit `claimants.childAmount` and use the legacy supporting-parent allocation.
 Thus 2025 is a claimant-coverage step, not the introduction of a historically absent credit. Earlier amounts,
-allocation rules and golden results remain untouched, as requested. The user will file the history follow-up.
+allocation rules and golden results remain untouched, as requested. The history follow-up is
+[#182](https://github.com/yuorme/tax-visualizer/issues/182).
+When the lower-income spouse lacks capacity, history overstates the credit by allocating it to the higher earner.
+At the 2025 rate this is up to $114 per child, so the claimant change at 2025 is a tax increase for those households.
+The historical dollar amounts use their own rates: up to `$1,200 × 9.65% = $115.80` in 2024 and
+`$1,200 × 9.8% = $117.60` in 2019–2023 before surtax (up to $129.36 including the old 10% surtax).
+Thus $114 describes the effect at the 2025 rate, not a ceiling on every historical year's error.
 
 ## Independent cases and rule-path map
 
-The 56 cases in `tests/golden/features/pei-young-children.json` have both 2025 and 2026 versions.
+The 58 cases in `tests/golden/features/pei-young-children.json` have both 2025 and 2026 versions.
 Their values were calculated with the independent PE return worksheet in `tests/claimants-forms.ts`, which imports
 neither engine functions nor runtime data. The two PE child constants now read 1200 rather than 0; other constants,
 assertions and tolerances are preserved. The new runner checks frozen values and independent provincial totals,
@@ -73,6 +79,7 @@ reverses two-adult households, and tests plausible wrong claimant and transfer s
 | Net income after deductions and enhanced CPP | `net-not-gross`, `enhanced-cpp-net` |
 | Dividend gross-up determines claimant | `dividend-gross-up` |
 | Equal-net-income election after dividend/foreign credits | `tie-dividends`, `tie-foreign-tax` |
+| Joint tied child election and live transferable family reduction | `tie-family-reduction` |
 | Single parent and eligible dependant coexist | `single-parent`, `single-parent-low-reduction` |
 | Separate family-reduction election/transfer | `family-reduction` |
 | Child amount before PE reduction and FTC | `foreign-tax-order` |
@@ -80,6 +87,7 @@ reverses two-adult households, and tests plausible wrong claimant and transfer s
 | Existing basic-personal-amount switch behavior | `bpa-off` |
 | Annual child count from explicit childcare ages | `age-0`, `age-5`, `age-6` |
 | Verified childcare claim changes lower-net-income claimant | `childcare-net-claimant` |
+| Two unrelated adults retain the legacy supporting-parent claimant | Scenario 71 in `tests/golden/2025.json` and `tests/golden/2026.json` |
 
 For capacity cases, the lower spouse's income is BPA plus the suffix amount; the higher spouse has $60,000.
 The usable child credit is `.095 × clamp(suffix, 0, 1200)`: $0, $0.095, $57, $113.905 or $114 at the boundaries.
@@ -91,6 +99,22 @@ the dividend recipient already has no final PE tax, so the other adult must rece
 In `childcare-net-claimant`, a verified $4,000 line 21400 claim reduces the $32,000 adult below the $30,000 adult.
 For these fixtures only, the independent worksheet receives that known claim as a deduction and receives the
 independently counted children. It does not derive expected claims from the childcare engine.
+
+For `tie-family-reduction`, the first adult's $15,000 eligible dividends gross up to `$15,000 × 1.38 = $20,700`,
+equal to the second adult's other income. Neither has payroll or a spouse amount. PE428 tax before child and
+dividend credits is `(20,700 - 14,650) × .095 = 574.75` in 2025 and `(20,700 - 15,000) × .095 = 541.50` in 2026.
+The first adult's dividend credit is `$20,700 × .105 = $2,173.50`, already exhausting that adult's tax; the whole
+$1,200 child base must go to the second adult to save $114. Family net income is $41,400. The live reduction is
+`350 + 350 + 300 - .05 × (41,400 - 22,650) = 62.50` in 2025 and
+`350 + 350 + 300 - .05 × (41,400 - 23,000) = 80` in 2026. Electing it on the first adult leaves the entire reduction
+unused and transferable to the second; electing it directly on the second has the same total. The golden locks
+the existing first-election tie convention, including the unused balance and received reduction.
+Final provincial taxes are `574.75 - 114 - 62.50 = 398.25` and `541.50 - 114 - 80 = 347.50`.
+These line-by-line calculations were confirmed against the independent PE worksheet, without engine-generated values.
+
+Existing scenario 71 has two unrelated adults (`spouse: false`) and two young children. In both years the legacy
+supporting-parent proxy retains the whole $2,400 child base on the higher-net-income adult; spouse claimant
+restrictions do not activate. Its existing PE cells remain unchanged in this review round.
 
 ## Existing golden reconciliation
 

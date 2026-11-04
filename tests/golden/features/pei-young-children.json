@@ -1803,6 +1803,76 @@
         "list.1.prov": 1425,
         "list.1.breakdown.childTransfer.base": 0
       }
+    },
+    {
+      "id": "2025-tie-family-reduction",
+      "year": 2025,
+      "household": {
+        "people": [
+          {
+            "ed": 15000
+          },
+          {
+            "oth": 20700
+          }
+        ]
+      },
+      "expected": {
+        "prov": 398.25,
+        "list.0.ti": 20700,
+        "list.0.kidAmt": 0,
+        "list.0.pKid": 0,
+        "list.0.lowRed": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 0,
+        "list.0.breakdown.childTransfer.base": 0,
+        "list.0.breakdown.lowIncomeReduction.calculated": 62.5,
+        "list.0.breakdown.lowIncomeReduction.unused": 62.5,
+        "list.1.ti": 20700,
+        "list.1.kidAmt": 1200,
+        "list.1.pKid": 114,
+        "list.1.lowRed": 62.5,
+        "list.1.pFtc": 0,
+        "list.1.prov": 398.25,
+        "list.1.breakdown.childTransfer.base": 0,
+        "list.1.breakdown.lowIncomeReduction.calculated": 62.5,
+        "list.1.breakdown.lowIncomeReduction.unused": 0
+      }
+    },
+    {
+      "id": "2026-tie-family-reduction",
+      "year": 2026,
+      "household": {
+        "people": [
+          {
+            "ed": 15000
+          },
+          {
+            "oth": 20700
+          }
+        ]
+      },
+      "expected": {
+        "prov": 347.5,
+        "list.0.ti": 20700,
+        "list.0.kidAmt": 0,
+        "list.0.pKid": 0,
+        "list.0.lowRed": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 0,
+        "list.0.breakdown.childTransfer.base": 0,
+        "list.0.breakdown.lowIncomeReduction.calculated": 80,
+        "list.0.breakdown.lowIncomeReduction.unused": 80,
+        "list.1.ti": 20700,
+        "list.1.kidAmt": 1200,
+        "list.1.pKid": 114,
+        "list.1.lowRed": 80,
+        "list.1.pFtc": 0,
+        "list.1.prov": 347.5,
+        "list.1.breakdown.childTransfer.base": 0,
+        "list.1.breakdown.lowIncomeReduction.calculated": 80,
+        "list.1.breakdown.lowIncomeReduction.unused": 0
+      }
     }
   ]
 }
