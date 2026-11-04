@@ -10,6 +10,9 @@ brackets:
 basicPersonalAmount: 19659
 dividendTaxCredit: {eligible: 0.0551, nonEligible: 0.0261}
 spouseAmount: {max: 19659, threshold: 0}
+# Provisional continuation of the verified 2025 return rules pending 2026 CRA forms.
+claimants:
+  childAmount: {claimant: lower-net-income, transfer: schedule-2, estimated: true}
 childAmount: {perChild: 1200, ages: under6}
 payroll: {employeeTax: 0.02}
 salesTax: {rate: 0.05, label: "5% GST"}
@@ -24,6 +27,8 @@ childBenefit:
   params: {perChild: 696, threshold: 22065, rateOneChild: 0.03, rateMoreChildren: 0.05}
   rateSource: its 2026 Bill 4   # T4114 gives the amounts and threshold, not the reduction rates
 sources:
+  - {label: "CRA NU 2025 guide, claimant and transfer rules", url: "https://www.canada.ca/en/revenue-agency/services/forms-publications/tax-packages-years/general-income-tax-benefit-package/nunavut/5014-pc.html"}
+  - {label: "CRA NU(S2) 2025, shared unused-base calculation, lines 6–13", url: "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5014-s2/5014-s2-25e.pdf"}
   - {label: "Legislative Assembly of Nunavut, Bill 4 (2026), Income Tax Act amendments (child benefit reduction rates)", url: "https://assembly.nu.ca/sites/default/files/2026-05/Bill_4_AATA_Income_Tax_Act_EF.pdf"}
   - {label: "Natural Resources Canada, Fuel Consumption Levies in Canada (provincial gasoline tax, rates as of September 2, 2026)", url: "https://natural-resources.canada.ca/domestic-international-markets/fuel-consumption-levies-canada"}
   - {label: "Statistics Canada, Canadian Vehicle Survey: Annual 2009, Tables 3-1 and 4-1 (distance per light vehicle)", url: "https://www150.statcan.gc.ca/n1/pub/53-223-x/53-223-x2009000-eng.pdf"}

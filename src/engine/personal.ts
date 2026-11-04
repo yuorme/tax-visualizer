@@ -80,10 +80,13 @@ export function personTax(fed: Federal, p: Province, x: Person, sp: Extra, ctx: 
   const pCred = tp(pBpaFull),
     pSp = tp(sp.p),
     pEmp = tp(pEmpFull);
-  // Provincial child amounts, claimed by the parent who claims the children
+  // Provincial child amounts, with the program's claimant supplied by the household allocation.
   const ca = p.childAmount;
-  const kidAmt = ca ? ca.perChild * ((ca.ages === "all" ? ctx.kids : ctx.u6) || 0) : 0;
-  const pKid = tp(kidAmt * prr);
+  const kidAmt = ctx.childAmountBase ?? (ca ? ca.perChild * ((ca.ages === "all" ? ctx.kids : ctx.u6) || 0) : 0);
+  const ownChild = tp(kidAmt * prr);
+  const childTransfer = tp((ctx.childTransferBase ?? 0) * prr);
+  // Keep the existing display subtotal complete; the nested breakdown identifies the transferred share.
+  const pKid = ownChild + childTransfer;
   // NL428 line 58320 joins the ordinary non-refundable credit base, before dividends and low-income reduction.
   const childcareCreditFull = p.childcareCredit?.program === "nl-childcare" ? (ctx.childcareDeduction ?? 0) * prr : 0;
   const childcareCredit = tp(childcareCreditFull);
@@ -115,9 +118,17 @@ export function personTax(fed: Federal, p: Province, x: Person, sp: Extra, ctx: 
     pLeft += extra;
   }
   // Low-income tax reductions (claimed once per family, by the claimant). "fam" = spouse or eligible dependant.
+  const lowRule = p.claimants?.lowIncomeReduction;
+  const lowFull =
+    lowRule && p.lowIncomeReduction
+      ? (ctx.lowIncomeReduction ??
+        (ctx.claims ? lowIncomeReduction(p.lowIncomeReduction, ti, ctx.famNet ?? ti, !!ctx.fam, ctx.kidsAll || 0) : 0))
+      : 0;
   let lowRed = 0;
-  if (ctx.claims && p.lowIncomeReduction)
+  if (ctx.claims && p.lowIncomeReduction && !lowRule)
     lowRed = tp(lowIncomeReduction(p.lowIncomeReduction, ti, ctx.famNet ?? ti, !!ctx.fam, ctx.kidsAll || 0));
+  // PE428 lines 66/87 reduce tax before FTC; unused reduction is measured against line 65.
+  if (lowRule?.order === "before-foreign-tax-credit") lowRed = tp(lowFull);
   let provPre = pLeft;
   // Ontario: the Ontario tax reduction, then the LIFT credit
   if (p.ontarioTaxReduction) {
@@ -144,12 +155,16 @@ export function personTax(fed: Federal, p: Province, x: Person, sp: Extra, ctx: 
   const fedBasic = fLeft;
   const fFtc = Math.min(wh, fedBasic * share, fedBasic * k);
   const provincialShare = provincialNet > 0 ? x.fd / provincialNet : 0;
-  const pFtc = Math.min(wh - fFtc, provPre * provincialShare);
+  // T2036 line 5 also caps the credit at tax otherwise payable when foreign income exceeds net income.
+  const pFtc = Math.min(wh - fFtc, provPre * provincialShare, provPre);
+  // NB/NL/NS apply reductions after FTC. Allocation changes the amount, never the form's order.
+  const afterForeign = lowRule?.order === "after-foreign-tax-credit";
+  if (afterForeign) lowRed = Math.min(provPre - pFtc, lowFull);
   // NL428 adds the temporary deficit levy after all credits, including the provincial foreign tax credit.
   const levyBand = p.additionalTax?.params.bands.findLast(([from]) => tiP > from);
   const provincialLevy = levyBand ? Math.min(levyBand[3], levyBand[1] + levyBand[2] * (tiP - levyBand[0])) : 0;
   const fedTax = fedBasic * k - fFtc,
-    prov = provPre - pFtc + provincialLevy;
+    prov = provPre - pFtc - (afterForeign ? lowRed : 0) + provincialLevy;
   const ohp = healthPremium(p, ti);
   const payroll = pay.base + pay.enh + pay.ei + pay.qpip + pay.terr + ohp;
   const ftc = fFtc + pFtc;
@@ -201,6 +216,11 @@ export function personTax(fed: Federal, p: Province, x: Person, sp: Extra, ctx: 
     // Figures the page shows that aren't steps of the calculation above. They sit in a nested object because the
     // golden snapshot (tests/golden/snapshot.mjs) locks every top-level number of this result.
     breakdown: {
+      childTransfer: { base: ctx.childTransferBase ?? 0, applied: childTransfer },
+      lowIncomeReduction: {
+        calculated: p.claimants?.lowIncomeReduction ? lowFull : lowRed,
+        unused: p.claimants?.lowIncomeReduction ? lowFull - lowRed : 0,
+      },
       provincialLevy,
       childcareCredit: { calculated: childcareCreditFull, applied: childcareCredit },
       netIncome: netIncomeParts(fed, p, x, ctx.childcareDeduction), // what net income is made of

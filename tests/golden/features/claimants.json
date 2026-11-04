@@ -1,0 +1,1816 @@
+{
+  "description": "Independent claimant calculations: docs/verification/92-claimant-rules.md",
+  "defaults": {
+    "active": 0,
+    "spouse": true,
+    "adults": 2,
+    "kids": 0,
+    "under6": 0,
+    "useBpa": true,
+    "whRate": 0,
+    "useCredits": false,
+    "homeValue": 0,
+    "rent": 0,
+    "monthlySpending": 0
+  },
+  "cases": [
+    {
+      "id": "sk-2026-repro",
+      "year": 2026,
+      "province": "SK",
+      "household": {
+        "people": [
+          {
+            "ord": 30000
+          },
+          {
+            "oth": 29500
+          }
+        ],
+        "kids": 4,
+        "under6": 1
+      },
+      "expected": {
+        "prov": 0,
+        "list.1.kidAmt": 33432,
+        "list.1.pKid": 957.495,
+        "list.0.breakdown.childTransfer.base": 24313,
+        "list.0.breakdown.childTransfer.applied": 793.09125
+      }
+    },
+    {
+      "id": "sk-2025-repro",
+      "year": 2025,
+      "province": "SK",
+      "household": {
+        "people": [
+          {
+            "ord": 30000
+          },
+          {
+            "oth": 29500
+          }
+        ],
+        "kids": 4,
+        "under6": 1
+      },
+      "expected": {
+        "prov": 0,
+        "list.1.kidAmt": 30816,
+        "list.1.pKid": 1050.945,
+        "list.0.breakdown.childTransfer.base": 20807,
+        "list.0.breakdown.childTransfer.applied": 886.22625
+      }
+    },
+    {
+      "id": "sk-full-transfer",
+      "year": 2026,
+      "province": "SK",
+      "household": {
+        "people": [
+          {
+            "oth": 50000
+          },
+          {
+            "oth": 0
+          }
+        ],
+        "kids": 1
+      },
+      "expected": {
+        "prov": 92.4,
+        "list.1.pKid": 0,
+        "list.0.breakdown.childTransfer.base": 8358,
+        "list.0.breakdown.childTransfer.applied": 877.59
+      }
+    },
+    {
+      "id": "sk-transfer-boundary--1",
+      "year": 2026,
+      "province": "SK",
+      "household": {
+        "people": [
+          {
+            "oth": 60000
+          },
+          {
+            "oth": 28738
+          }
+        ],
+        "kids": 1
+      },
+      "expected": {
+        "list.1.prov": 0,
+        "list.0.breakdown.childTransfer.base": 1
+      }
+    },
+    {
+      "id": "sk-transfer-boundary-0",
+      "year": 2026,
+      "province": "SK",
+      "household": {
+        "people": [
+          {
+            "oth": 60000
+          },
+          {
+            "oth": 28739
+          }
+        ],
+        "kids": 1
+      },
+      "expected": {
+        "list.1.prov": 0,
+        "list.0.breakdown.childTransfer.base": 0
+      }
+    },
+    {
+      "id": "sk-transfer-boundary-1",
+      "year": 2026,
+      "province": "SK",
+      "household": {
+        "people": [
+          {
+            "oth": 60000
+          },
+          {
+            "oth": 28740
+          }
+        ],
+        "kids": 1
+      },
+      "expected": {
+        "list.1.prov": 0.105,
+        "list.0.breakdown.childTransfer.base": 0
+      }
+    },
+    {
+      "id": "sk-upper-bracket-donor",
+      "year": 2026,
+      "province": "SK",
+      "household": {
+        "people": [
+          {
+            "oth": 90000
+          },
+          {
+            "oth": 60000
+          }
+        ],
+        "kids": 1
+      },
+      "expected": {
+        "list.1.prov": 3391.765,
+        "list.1.pKid": 877.59,
+        "list.0.breakdown.childTransfer.base": 0
+      }
+    },
+    {
+      "id": "sk-dividends-do-not-free-transfer",
+      "year": 2026,
+      "province": "SK",
+      "household": {
+        "people": [
+          {
+            "oth": 60000
+          },
+          {
+            "ed": 20000
+          }
+        ],
+        "kids": 1
+      },
+      "expected": {
+        "list.1.prov": 0,
+        "list.1.pKid": 757.995,
+        "list.0.breakdown.childTransfer.base": 1139
+      }
+    },
+    {
+      "id": "sk-foreign-credit-does-not-free-transfer",
+      "year": 2026,
+      "province": "SK",
+      "household": {
+        "people": [
+          {
+            "oth": 60000
+          },
+          {
+            "fd": 27600
+          }
+        ],
+        "kids": 1,
+        "whRate": 0.4
+      },
+      "expected": {
+        "list.1.prov": 0,
+        "list.1.pKid": 757.995,
+        "list.0.breakdown.childTransfer.base": 1139
+      }
+    },
+    {
+      "id": "sk-tied-incomes",
+      "year": 2026,
+      "province": "SK",
+      "household": {
+        "people": [
+          {
+            "oth": 29500
+          },
+          {
+            "oth": 29500
+          }
+        ],
+        "kids": 1
+      },
+      "expected": {
+        "prov": 1037.4,
+        "list.0.kidAmt": 8358,
+        "list.1.kidAmt": 0
+      }
+    },
+    {
+      "id": "sk-non-spouses-no-transfer",
+      "year": 2026,
+      "province": "SK",
+      "household": {
+        "people": [
+          {
+            "ord": 30000
+          },
+          {
+            "oth": 29500
+          }
+        ],
+        "kids": 4,
+        "spouse": false
+      },
+      "expected": {
+        "prov": 957.495,
+        "list.0.breakdown.childTransfer.base": 0,
+        "list.1.breakdown.childTransfer.base": 0
+      }
+    },
+    {
+      "id": "sk-no-children",
+      "year": 2026,
+      "province": "SK",
+      "household": {
+        "people": [
+          {
+            "ord": 30000
+          },
+          {
+            "oth": 29500
+          }
+        ]
+      },
+      "expected": {
+        "prov": 1750.58625,
+        "list.0.breakdown.childTransfer.base": 0,
+        "list.1.breakdown.childTransfer.base": 0
+      }
+    },
+    {
+      "id": "nb-partial-transfer",
+      "year": 2025,
+      "province": "NB",
+      "household": {
+        "people": [
+          {
+            "oth": 20000
+          },
+          {
+            "oth": 19000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 55.952,
+        "list.0.lowRed": 620.776,
+        "list.1.lowRed": 470.824
+      }
+    },
+    {
+      "id": "nl-transfer-exhausts-both",
+      "year": 2025,
+      "province": "NL",
+      "household": {
+        "people": [
+          {
+            "oth": 20000
+          },
+          {
+            "oth": 19000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 0,
+        "list.0.lowRed": 777.171,
+        "list.1.lowRed": 690.171
+      }
+    },
+    {
+      "id": "pe-child-reduction-transfer",
+      "year": 2025,
+      "province": "PE",
+      "household": {
+        "people": [
+          {
+            "oth": 20000
+          },
+          {
+            "oth": 19000
+          }
+        ],
+        "kids": 4
+      },
+      "expected": {
+        "prov": 0,
+        "list.0.lowRed": 508.25,
+        "list.1.lowRed": 413.25
+      }
+    },
+    {
+      "id": "ns-lower-income-best-election",
+      "year": 2025,
+      "province": "NS",
+      "household": {
+        "people": [
+          {
+            "ed": 15000
+          },
+          {
+            "oth": 20000
+          }
+        ],
+        "kids": 6
+      },
+      "expected": {
+        "prov": 420.7024,
+        "list.0.lowRed": 0,
+        "list.1.lowRed": 305
+      }
+    },
+    {
+      "id": "ns-unused-cannot-transfer",
+      "year": 2025,
+      "province": "NS",
+      "household": {
+        "people": [
+          {
+            "oth": 13000
+          },
+          {
+            "oth": 13000
+          }
+        ],
+        "kids": 4
+      },
+      "expected": {
+        "prov": 110.4024,
+        "list.0.lowRed": 110.4024,
+        "list.1.lowRed": 0
+      }
+    },
+    {
+      "id": "nb-foreign-before-reduction",
+      "year": 2025,
+      "province": "NB",
+      "household": {
+        "people": [
+          {
+            "fd": 20000
+          }
+        ],
+        "adults": 1,
+        "whRate": 0.4
+      },
+      "expected": {
+        "prov": 0,
+        "list.0.lowRed": 0,
+        "list.0.pFtc": 620.776,
+        "list.0.breakdown.lowIncomeReduction.unused": 802
+      }
+    },
+    {
+      "id": "nl-foreign-before-reduction",
+      "year": 2025,
+      "province": "NL",
+      "household": {
+        "people": [
+          {
+            "fd": 20000
+          }
+        ],
+        "adults": 1,
+        "whRate": 0.4
+      },
+      "expected": {
+        "prov": 0,
+        "list.0.lowRed": 0,
+        "list.0.pFtc": 777.171,
+        "list.0.breakdown.lowIncomeReduction.unused": 997
+      }
+    },
+    {
+      "id": "pe-reduction-before-foreign",
+      "year": 2025,
+      "province": "PE",
+      "household": {
+        "people": [
+          {
+            "fd": 20000
+          }
+        ],
+        "adults": 1,
+        "whRate": 0.4
+      },
+      "expected": {
+        "prov": 0,
+        "list.0.lowRed": 350,
+        "list.0.pFtc": 158.25,
+        "list.0.breakdown.lowIncomeReduction.unused": 0
+      }
+    },
+    {
+      "id": "ns-foreign-before-reduction",
+      "year": 2025,
+      "province": "NS",
+      "household": {
+        "people": [
+          {
+            "fd": 20000
+          }
+        ],
+        "adults": 1,
+        "whRate": 0.4
+      },
+      "expected": {
+        "prov": 0,
+        "list.0.lowRed": 0,
+        "list.0.pFtc": 725.7024,
+        "list.0.breakdown.lowIncomeReduction.unused": 50
+      }
+    },
+    {
+      "id": "nb-reduction-exhausted",
+      "year": 2025,
+      "province": "NB",
+      "household": {
+        "people": [
+          {
+            "oth": 40000
+          },
+          {
+            "oth": 36000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.lowRed": 0,
+        "list.1.lowRed": 0
+      }
+    },
+    {
+      "id": "nb-zero-capacity",
+      "year": 2025,
+      "province": "NB",
+      "household": {
+        "people": [
+          {
+            "oth": 0
+          },
+          {
+            "oth": 0
+          }
+        ]
+      },
+      "expected": {
+        "prov": 0,
+        "list.0.lowRed": 0,
+        "list.1.lowRed": 0
+      }
+    },
+    {
+      "id": "federal-supporting-spouse-independent",
+      "year": 2026,
+      "province": "SK",
+      "household": {
+        "people": [
+          {
+            "oth": 30000
+          },
+          {
+            "oth": 10000
+          }
+        ],
+        "kids": 1
+      },
+      "expected": {
+        "claim.c": 0,
+        "list.0.fSpFull": 903.28,
+        "list.1.kidAmt": 8358
+      }
+    },
+    {
+      "id": "on-higher-net-before",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "ord": 30000
+          },
+          {
+            "oth": 29734
+          }
+        ],
+        "kids": 4
+      },
+      "expected": {
+        "list.1.onRed": 0,
+        "list.1.prov": 845.6225000000001
+      }
+    },
+    {
+      "id": "on-higher-net-after",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "ord": 30000
+          },
+          {
+            "oth": 29736
+          }
+        ],
+        "kids": 4
+      },
+      "expected": {
+        "prov": 0,
+        "list.0.onRed": 0
+      }
+    },
+    {
+      "id": "nb-phaseout-boundary--1",
+      "year": 2025,
+      "province": "NB",
+      "household": {
+        "people": [
+          {
+            "oth": 40000
+          },
+          {
+            "oth": 35385.666666666664
+          }
+        ]
+      },
+      "expected": {
+        "list.0.lowRed": 0.03,
+        "list.1.lowRed": 0
+      }
+    },
+    {
+      "id": "nb-phaseout-boundary-0",
+      "year": 2025,
+      "province": "NB",
+      "household": {
+        "people": [
+          {
+            "oth": 40000
+          },
+          {
+            "oth": 35386.666666666664
+          }
+        ]
+      },
+      "expected": {
+        "list.0.lowRed": 0,
+        "list.1.lowRed": 0
+      }
+    },
+    {
+      "id": "nb-phaseout-boundary-1",
+      "year": 2025,
+      "province": "NB",
+      "household": {
+        "people": [
+          {
+            "oth": 40000
+          },
+          {
+            "oth": 35387.666666666664
+          }
+        ]
+      },
+      "expected": {
+        "list.0.lowRed": 0,
+        "list.1.lowRed": 0
+      }
+    },
+    {
+      "id": "nl-phaseout-boundary--1",
+      "year": 2025,
+      "province": "NL",
+      "household": {
+        "people": [
+          {
+            "oth": 30000
+          },
+          {
+            "oth": 20171.5
+          }
+        ]
+      },
+      "expected": {
+        "list.0.lowRed": 0.16,
+        "list.1.lowRed": 0
+      }
+    },
+    {
+      "id": "nl-phaseout-boundary-0",
+      "year": 2025,
+      "province": "NL",
+      "household": {
+        "people": [
+          {
+            "oth": 30000
+          },
+          {
+            "oth": 20172.5
+          }
+        ]
+      },
+      "expected": {
+        "list.0.lowRed": 0,
+        "list.1.lowRed": 0
+      }
+    },
+    {
+      "id": "nl-phaseout-boundary-1",
+      "year": 2025,
+      "province": "NL",
+      "household": {
+        "people": [
+          {
+            "oth": 30000
+          },
+          {
+            "oth": 20173.5
+          }
+        ]
+      },
+      "expected": {
+        "list.0.lowRed": 0,
+        "list.1.lowRed": 0
+      }
+    },
+    {
+      "id": "pe-phaseout-boundary--1",
+      "year": 2025,
+      "province": "PE",
+      "household": {
+        "people": [
+          {
+            "oth": 20000
+          },
+          {
+            "oth": 16649
+          }
+        ]
+      },
+      "expected": {
+        "list.0.lowRed": 0.05,
+        "list.1.lowRed": 0
+      }
+    },
+    {
+      "id": "pe-phaseout-boundary-0",
+      "year": 2025,
+      "province": "PE",
+      "household": {
+        "people": [
+          {
+            "oth": 20000
+          },
+          {
+            "oth": 16650
+          }
+        ]
+      },
+      "expected": {
+        "list.0.lowRed": 0,
+        "list.1.lowRed": 0
+      }
+    },
+    {
+      "id": "pe-phaseout-boundary-1",
+      "year": 2025,
+      "province": "PE",
+      "household": {
+        "people": [
+          {
+            "oth": 20000
+          },
+          {
+            "oth": 16651
+          }
+        ]
+      },
+      "expected": {
+        "list.0.lowRed": 0,
+        "list.1.lowRed": 0
+      }
+    },
+    {
+      "id": "ns-phaseout-boundary--1",
+      "year": 2025,
+      "province": "NS",
+      "household": {
+        "people": [
+          {
+            "oth": 15000
+          },
+          {
+            "oth": 11999
+          }
+        ]
+      },
+      "expected": {
+        "list.0.lowRed": 0.05,
+        "list.1.lowRed": 0
+      }
+    },
+    {
+      "id": "ns-phaseout-boundary-0",
+      "year": 2025,
+      "province": "NS",
+      "household": {
+        "people": [
+          {
+            "oth": 15000
+          },
+          {
+            "oth": 12000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.lowRed": 0,
+        "list.1.lowRed": 0
+      }
+    },
+    {
+      "id": "ns-phaseout-boundary-1",
+      "year": 2025,
+      "province": "NS",
+      "household": {
+        "people": [
+          {
+            "oth": 15000
+          },
+          {
+            "oth": 12001
+          }
+        ]
+      },
+      "expected": {
+        "list.0.lowRed": 0,
+        "list.1.lowRed": 0
+      }
+    },
+    {
+      "id": "sk-net-not-gross-claimant",
+      "year": 2026,
+      "province": "SK",
+      "household": {
+        "people": [
+          {
+            "ord": 30000
+          },
+          {
+            "oth": 29900
+          }
+        ],
+        "kids": 1
+      },
+      "expected": {
+        "list.0.kidAmt": 8358,
+        "list.1.kidAmt": 0,
+        "list.1.breakdown.childTransfer.base": 804.75,
+        "prov": 914.99625
+      }
+    },
+    {
+      "id": "ns-2025-lower-zero-no-transfer",
+      "year": 2025,
+      "province": "NS",
+      "household": {
+        "people": [
+          {
+            "oth": 30000
+          },
+          {
+            "oth": 0
+          }
+        ],
+        "kids": 1,
+        "under6": 1
+      },
+      "expected": {
+        "prov": 557.4048,
+        "list.1.kidAmt": 1200,
+        "list.0.pKid": 0,
+        "list.0.breakdown.childTransfer.base": 0
+      }
+    },
+    {
+      "id": "ns-2025-lower-uses-child",
+      "year": 2025,
+      "province": "NS",
+      "household": {
+        "people": [
+          {
+            "oth": 30000
+          },
+          {
+            "oth": 20000
+          }
+        ],
+        "kids": 1,
+        "under6": 1
+      },
+      "expected": {
+        "prov": 2224.9248,
+        "list.1.pKid": 105.48
+      }
+    },
+    {
+      "id": "ns-2026-lower-zero-no-transfer",
+      "year": 2026,
+      "province": "NS",
+      "household": {
+        "people": [
+          {
+            "oth": 30000
+          },
+          {
+            "oth": 0
+          }
+        ],
+        "kids": 1,
+        "under6": 1
+      },
+      "expected": {
+        "prov": 524.3544,
+        "list.1.kidAmt": 1200,
+        "list.0.pKid": 0,
+        "list.0.breakdown.childTransfer.base": 0
+      }
+    },
+    {
+      "id": "ns-2026-lower-uses-child",
+      "year": 2026,
+      "province": "NS",
+      "household": {
+        "people": [
+          {
+            "oth": 30000
+          },
+          {
+            "oth": 20000
+          }
+        ],
+        "kids": 1,
+        "under6": 1
+      },
+      "expected": {
+        "prov": 2191.8744,
+        "list.1.pKid": 105.48
+      }
+    },
+    {
+      "id": "ns-child-tie--1",
+      "year": 2025,
+      "province": "NS",
+      "household": {
+        "people": [
+          {
+            "ed": 15000
+          },
+          {
+            "oth": 20699
+          }
+        ],
+        "kids": 1,
+        "under6": 1
+      },
+      "expected": {
+        "prov": 681.6645,
+        "list.1.kidAmt": 1200,
+        "list.0.kidAmt": 0
+      }
+    },
+    {
+      "id": "ns-child-tie-0",
+      "year": 2025,
+      "province": "NS",
+      "household": {
+        "people": [
+          {
+            "ed": 15000
+          },
+          {
+            "oth": 20700
+          }
+        ],
+        "kids": 1,
+        "under6": 1
+      },
+      "expected": {
+        "prov": 681.7524,
+        "list.1.kidAmt": 1200,
+        "list.0.kidAmt": 0
+      }
+    },
+    {
+      "id": "ns-child-tie-1",
+      "year": 2025,
+      "province": "NS",
+      "household": {
+        "people": [
+          {
+            "ed": 15000
+          },
+          {
+            "oth": 20701
+          }
+        ],
+        "kids": 1,
+        "under6": 1
+      },
+      "expected": {
+        "prov": 787.3203,
+        "list.1.kidAmt": 0,
+        "list.0.kidAmt": 1200
+      }
+    },
+    {
+      "id": "ns-child-and-reduction-joint-tie-election",
+      "year": 2025,
+      "province": "NS",
+      "household": {
+        "people": [
+          {
+            "oth": 14000
+          },
+          {
+            "ord": 14350,
+            "ded": 241.5
+          }
+        ],
+        "kids": 2,
+        "under6": 1
+      },
+      "expected": {
+        "prov": 24.9271215,
+        "list.1.kidAmt": 1200,
+        "list.0.lowRed": 198.3024,
+        "list.1.lowRed": 0
+      }
+    },
+    {
+      "id": "ns-no-under6",
+      "year": 2025,
+      "province": "NS",
+      "household": {
+        "people": [
+          {
+            "oth": 30000
+          },
+          {
+            "oth": 20000
+          }
+        ],
+        "kids": 4,
+        "under6": 0
+      },
+      "expected": {
+        "list.0.kidAmt": 0,
+        "list.1.kidAmt": 0,
+        "prov": 2330.4048
+      }
+    },
+    {
+      "id": "nu-2025-full-transfer",
+      "year": 2025,
+      "province": "NU",
+      "household": {
+        "people": [
+          {
+            "oth": 50000
+          },
+          {
+            "oth": 0
+          }
+        ],
+        "kids": 1,
+        "under6": 1
+      },
+      "expected": {
+        "prov": 410.08,
+        "list.0.breakdown.childTransfer.base": 1200,
+        "list.0.pKid": 48,
+        "list.1.kidAmt": 1200
+      }
+    },
+    {
+      "id": "nu-2025-partial-transfer",
+      "year": 2025,
+      "province": "NU",
+      "household": {
+        "people": [
+          {
+            "oth": 30000
+          },
+          {
+            "oth": 20000
+          }
+        ],
+        "kids": 1,
+        "under6": 1
+      },
+      "expected": {
+        "prov": 410.08,
+        "list.0.breakdown.childTransfer.base": 474,
+        "list.1.pKid": 29.04
+      }
+    },
+    {
+      "id": "nu-2026-full-transfer",
+      "year": 2026,
+      "province": "NU",
+      "household": {
+        "people": [
+          {
+            "oth": 50000
+          },
+          {
+            "oth": 0
+          }
+        ],
+        "kids": 1,
+        "under6": 1
+      },
+      "expected": {
+        "prov": 379.28,
+        "list.0.breakdown.childTransfer.base": 1200,
+        "list.0.pKid": 48,
+        "list.1.kidAmt": 1200
+      }
+    },
+    {
+      "id": "nu-2026-partial-transfer",
+      "year": 2026,
+      "province": "NU",
+      "household": {
+        "people": [
+          {
+            "oth": 30000
+          },
+          {
+            "oth": 20000
+          }
+        ],
+        "kids": 1,
+        "under6": 1
+      },
+      "expected": {
+        "prov": 379.28,
+        "list.0.breakdown.childTransfer.base": 859,
+        "list.1.pKid": 13.64
+      }
+    },
+    {
+      "id": "nu-transfer-boundary--1",
+      "year": 2025,
+      "province": "NU",
+      "household": {
+        "people": [
+          {
+            "oth": 30000
+          },
+          {
+            "oth": 20473
+          }
+        ],
+        "kids": 1,
+        "under6": 1
+      },
+      "expected": {
+        "list.0.breakdown.childTransfer.base": 1,
+        "list.1.prov": 0
+      }
+    },
+    {
+      "id": "nu-transfer-boundary-0",
+      "year": 2025,
+      "province": "NU",
+      "household": {
+        "people": [
+          {
+            "oth": 30000
+          },
+          {
+            "oth": 20474
+          }
+        ],
+        "kids": 1,
+        "under6": 1
+      },
+      "expected": {
+        "list.0.breakdown.childTransfer.base": 0,
+        "list.1.prov": 0
+      }
+    },
+    {
+      "id": "nu-transfer-boundary-1",
+      "year": 2025,
+      "province": "NU",
+      "household": {
+        "people": [
+          {
+            "oth": 30000
+          },
+          {
+            "oth": 20475
+          }
+        ],
+        "kids": 1,
+        "under6": 1
+      },
+      "expected": {
+        "list.0.breakdown.childTransfer.base": 0,
+        "list.1.prov": 0.04
+      }
+    },
+    {
+      "id": "nu-dividend-does-not-free-transfer",
+      "year": 2025,
+      "province": "NU",
+      "household": {
+        "people": [
+          {
+            "oth": 30000
+          },
+          {
+            "ed": 10000,
+            "oth": 6200
+          }
+        ],
+        "kids": 1,
+        "under6": 1,
+        "whRate": 0.4
+      },
+      "expected": {
+        "prov": 410.08,
+        "list.0.breakdown.childTransfer.base": 474,
+        "list.1.pKid": 29.04
+      }
+    },
+    {
+      "id": "nu-foreign-does-not-free-transfer",
+      "year": 2025,
+      "province": "NU",
+      "household": {
+        "people": [
+          {
+            "oth": 30000
+          },
+          {
+            "fd": 20000
+          }
+        ],
+        "kids": 1,
+        "under6": 1,
+        "whRate": 0.4
+      },
+      "expected": {
+        "prov": 410.08,
+        "list.0.breakdown.childTransfer.base": 474,
+        "list.1.pKid": 29.04
+      }
+    },
+    {
+      "id": "nu-tie-best-initial-claimant",
+      "year": 2025,
+      "province": "NU",
+      "household": {
+        "people": [
+          {
+            "ed": 10000,
+            "oth": 6200
+          },
+          {
+            "oth": 20000
+          }
+        ],
+        "kids": 1,
+        "under6": 1
+      },
+      "expected": {
+        "prov": 0,
+        "list.1.kidAmt": 1200,
+        "list.0.kidAmt": 0,
+        "list.0.breakdown.childTransfer.base": 474
+      }
+    },
+    {
+      "id": "sk-tie-best-initial-claimant",
+      "year": 2026,
+      "province": "SK",
+      "household": {
+        "people": [
+          {
+            "ed": 20000
+          },
+          {
+            "oth": 27600
+          }
+        ],
+        "kids": 1
+      },
+      "expected": {
+        "prov": 0,
+        "list.1.kidAmt": 8358,
+        "list.0.kidAmt": 0,
+        "list.0.breakdown.childTransfer.base": 1139
+      }
+    },
+    {
+      "id": "nu-upper-bracket-donor",
+      "year": 2025,
+      "province": "NU",
+      "household": {
+        "people": [
+          {
+            "oth": 90000
+          },
+          {
+            "oth": 60000
+          }
+        ],
+        "kids": 1,
+        "under6": 1
+      },
+      "expected": {
+        "list.1.prov": 1739.83,
+        "list.0.breakdown.childTransfer.base": 0,
+        "list.1.pKid": 48
+      }
+    },
+    {
+      "id": "nu-no-under6",
+      "year": 2025,
+      "province": "NU",
+      "household": {
+        "people": [
+          {
+            "oth": 30000
+          },
+          {
+            "oth": 20000
+          }
+        ],
+        "kids": 4,
+        "under6": 0
+      },
+      "expected": {
+        "prov": 458.08,
+        "list.0.pKid": 0,
+        "list.1.pKid": 0
+      }
+    },
+    {
+      "id": "nb-2026-transfer",
+      "year": 2026,
+      "province": "NB",
+      "household": {
+        "people": [
+          {
+            "oth": 20000
+          },
+          {
+            "oth": 19000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 0,
+        "list.0.lowRed": 595.584,
+        "list.1.lowRed": 501.584
+      }
+    },
+    {
+      "id": "nl-2026-transfer",
+      "year": 2026,
+      "province": "NL",
+      "household": {
+        "people": [
+          {
+            "oth": 20000
+          },
+          {
+            "oth": 19000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 0,
+        "list.0.lowRed": 600.822,
+        "list.1.lowRed": 513.822
+      }
+    },
+    {
+      "id": "pe-2026-transfer",
+      "year": 2026,
+      "province": "PE",
+      "household": {
+        "people": [
+          {
+            "oth": 20000
+          },
+          {
+            "oth": 19000
+          }
+        ],
+        "kids": 4
+      },
+      "expected": {
+        "prov": 0,
+        "list.0.lowRed": 475,
+        "list.1.lowRed": 380
+      }
+    },
+    {
+      "id": "ns-2026-best-reduction-election",
+      "year": 2026,
+      "province": "NS",
+      "household": {
+        "people": [
+          {
+            "ed": 15000
+          },
+          {
+            "oth": 20000
+          }
+        ],
+        "kids": 6
+      },
+      "expected": {
+        "prov": 404.1772,
+        "list.0.lowRed": 0,
+        "list.1.lowRed": 305
+      }
+    },
+    {
+      "id": "ns-2026-unused-cannot-transfer",
+      "year": 2026,
+      "province": "NS",
+      "household": {
+        "people": [
+          {
+            "oth": 13000
+          },
+          {
+            "oth": 13000
+          }
+        ],
+        "kids": 4
+      },
+      "expected": {
+        "prov": 93.8772,
+        "list.1.lowRed": 0
+      }
+    },
+    {
+      "id": "nb-2025-mixed-foreign-share",
+      "year": 2025,
+      "province": "NB",
+      "household": {
+        "adults": 1,
+        "spouse": false,
+        "whRate": 0.15,
+        "people": [
+          {
+            "oth": 15000,
+            "fd": 15000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 220.788,
+        "list.0.pFtc": 780.388,
+        "list.0.lowRed": 559.6,
+        "list.0.breakdown.lowIncomeReduction.calculated": 559.6,
+        "list.0.breakdown.lowIncomeReduction.unused": 0
+      }
+    },
+    {
+      "id": "nl-2025-mixed-foreign-share",
+      "year": 2025,
+      "province": "NL",
+      "household": {
+        "adults": 1,
+        "spouse": false,
+        "whRate": 0.15,
+        "people": [
+          {
+            "oth": 14000,
+            "fd": 14000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 391.1055,
+        "list.0.pFtc": 736.5855,
+        "list.0.lowRed": 345.48,
+        "list.0.breakdown.lowIncomeReduction.calculated": 345.48,
+        "list.0.breakdown.lowIncomeReduction.unused": 0
+      }
+    },
+    {
+      "id": "ns-2025-mixed-foreign-share",
+      "year": 2025,
+      "province": "NS",
+      "household": {
+        "adults": 1,
+        "spouse": false,
+        "whRate": 0.15,
+        "people": [
+          {
+            "oth": 10000,
+            "fd": 10000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 312.8512,
+        "list.0.pFtc": 362.8512,
+        "list.0.lowRed": 50,
+        "list.0.breakdown.lowIncomeReduction.calculated": 50,
+        "list.0.breakdown.lowIncomeReduction.unused": 0
+      }
+    },
+    {
+      "id": "pe-2025-mixed-foreign-share",
+      "year": 2025,
+      "province": "PE",
+      "household": {
+        "adults": 1,
+        "spouse": false,
+        "whRate": 0.15,
+        "people": [
+          {
+            "oth": 10000,
+            "fd": 10000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 79.125,
+        "list.0.pFtc": 79.125,
+        "list.0.lowRed": 350,
+        "list.0.breakdown.lowIncomeReduction.calculated": 350,
+        "list.0.breakdown.lowIncomeReduction.unused": 0
+      }
+    },
+    {
+      "id": "nb-2025-foreign-and-reduction-transfer",
+      "year": 2025,
+      "province": "NB",
+      "household": {
+        "whRate": 0.4,
+        "people": [
+          {
+            "oth": 3000,
+            "fd": 27000
+          },
+          {
+            "oth": 20000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 15.2536,
+        "list.0.prov": 0,
+        "list.0.pFtc": 1404.6984,
+        "list.0.lowRed": 156.0776,
+        "list.0.breakdown.lowIncomeReduction.calculated": 761.6,
+        "list.0.breakdown.lowIncomeReduction.unused": 605.5224,
+        "list.1.pFtc": 0,
+        "list.1.lowRed": 605.5224,
+        "list.1.breakdown.lowIncomeReduction.calculated": 605.5224,
+        "list.1.breakdown.lowIncomeReduction.unused": 0
+      }
+    },
+    {
+      "id": "nl-2025-foreign-and-reduction-transfer",
+      "year": 2025,
+      "province": "NL",
+      "household": {
+        "whRate": 0.4,
+        "people": [
+          {
+            "oth": 3000,
+            "fd": 27000
+          },
+          {
+            "oth": 18000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 420.2881,
+        "list.0.prov": 0,
+        "list.0.pFtc": 1482.4539,
+        "list.0.lowRed": 164.7171,
+        "list.0.breakdown.lowIncomeReduction.calculated": 347.6,
+        "list.0.breakdown.lowIncomeReduction.unused": 182.8829,
+        "list.1.pFtc": 0,
+        "list.1.lowRed": 182.8829,
+        "list.1.breakdown.lowIncomeReduction.calculated": 182.8829,
+        "list.1.breakdown.lowIncomeReduction.unused": 0
+      }
+    },
+    {
+      "id": "pe-2025-foreign-and-reduction-transfer",
+      "year": 2025,
+      "province": "PE",
+      "household": {
+        "whRate": 0.15,
+        "people": [
+          {
+            "oth": 15000
+          },
+          {
+            "oth": 10000,
+            "fd": 10000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 229.5,
+        "list.0.prov": 0,
+        "list.0.lowRed": 33.25,
+        "list.0.pFtc": 0,
+        "list.0.breakdown.lowIncomeReduction.calculated": 82.5,
+        "list.0.breakdown.lowIncomeReduction.unused": 49.25,
+        "list.1.lowRed": 49.25,
+        "list.1.pFtc": 229.5,
+        "list.1.prov": 229.5,
+        "list.1.breakdown.lowIncomeReduction.calculated": 49.25,
+        "list.1.breakdown.lowIncomeReduction.unused": 0
+      }
+    },
+    {
+      "id": "nl-2025-foreign-exceeds-net-income",
+      "year": 2025,
+      "province": "NL",
+      "household": {
+        "whRate": 0.4,
+        "people": [
+          {
+            "fd": 40000,
+            "fhsa": 8000
+          },
+          {
+            "oth": 18000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 575.571,
+        "list.0.prov": 0,
+        "list.0.pFtc": 1821.171,
+        "list.0.lowRed": 0,
+        "list.0.breakdown.lowIncomeReduction.calculated": 27.6,
+        "list.0.breakdown.lowIncomeReduction.unused": 27.6,
+        "list.1.lowRed": 27.6,
+        "list.1.breakdown.lowIncomeReduction.calculated": 27.6,
+        "list.1.breakdown.lowIncomeReduction.unused": 0
+      }
+    },
+    {
+      "id": "nb-2026-mixed-foreign-share",
+      "year": 2026,
+      "province": "NB",
+      "household": {
+        "adults": 1,
+        "spouse": false,
+        "whRate": 0.15,
+        "people": [
+          {
+            "oth": 15000,
+            "fd": 15000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 179.052,
+        "list.0.pFtc": 767.792,
+        "list.0.lowRed": 588.74,
+        "list.0.breakdown.lowIncomeReduction.calculated": 588.74,
+        "list.0.breakdown.lowIncomeReduction.unused": 0
+      }
+    },
+    {
+      "id": "nl-2026-mixed-foreign-share",
+      "year": 2026,
+      "province": "NL",
+      "household": {
+        "adults": 1,
+        "spouse": false,
+        "whRate": 0.15,
+        "people": [
+          {
+            "oth": 14000,
+            "fd": 14000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 415.851,
+        "list.0.pFtc": 648.411,
+        "list.0.lowRed": 232.56,
+        "list.0.breakdown.lowIncomeReduction.calculated": 232.56,
+        "list.0.breakdown.lowIncomeReduction.unused": 0
+      }
+    },
+    {
+      "id": "ns-2026-mixed-foreign-share",
+      "year": 2026,
+      "province": "NS",
+      "household": {
+        "adults": 1,
+        "spouse": false,
+        "whRate": 0.15,
+        "people": [
+          {
+            "oth": 10000,
+            "fd": 10000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 304.5886,
+        "list.0.pFtc": 354.5886,
+        "list.0.lowRed": 50,
+        "list.0.breakdown.lowIncomeReduction.calculated": 50,
+        "list.0.breakdown.lowIncomeReduction.unused": 0
+      }
+    },
+    {
+      "id": "pe-2026-mixed-foreign-share",
+      "year": 2026,
+      "province": "PE",
+      "household": {
+        "adults": 1,
+        "spouse": false,
+        "whRate": 0.15,
+        "people": [
+          {
+            "oth": 10000,
+            "fd": 10000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 62.5,
+        "list.0.pFtc": 62.5,
+        "list.0.lowRed": 350,
+        "list.0.breakdown.lowIncomeReduction.calculated": 350,
+        "list.0.breakdown.lowIncomeReduction.unused": 0
+      }
+    },
+    {
+      "id": "nb-2026-foreign-and-reduction-transfer",
+      "year": 2026,
+      "province": "NB",
+      "household": {
+        "whRate": 0.4,
+        "people": [
+          {
+            "oth": 3000,
+            "fd": 27000
+          },
+          {
+            "oth": 20000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 0,
+        "list.0.prov": 0,
+        "list.0.pFtc": 1382.0256,
+        "list.0.lowRed": 153.5584,
+        "list.0.breakdown.lowIncomeReduction.calculated": 806.74,
+        "list.0.breakdown.lowIncomeReduction.unused": 653.1816,
+        "list.1.pFtc": 0,
+        "list.1.lowRed": 595.584,
+        "list.1.breakdown.lowIncomeReduction.calculated": 653.1816,
+        "list.1.breakdown.lowIncomeReduction.unused": 57.5976
+      }
+    },
+    {
+      "id": "nl-2026-foreign-and-reduction-transfer",
+      "year": 2026,
+      "province": "NL",
+      "household": {
+        "whRate": 0.4,
+        "people": [
+          {
+            "oth": 3000,
+            "fd": 27000
+          },
+          {
+            "oth": 18000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 304.1042,
+        "list.0.prov": 0,
+        "list.0.pFtc": 1323.7398,
+        "list.0.lowRed": 147.0822,
+        "list.0.breakdown.lowIncomeReduction.calculated": 269.8,
+        "list.0.breakdown.lowIncomeReduction.unused": 122.7178,
+        "list.1.pFtc": 0,
+        "list.1.lowRed": 122.7178,
+        "list.1.breakdown.lowIncomeReduction.calculated": 122.7178,
+        "list.1.breakdown.lowIncomeReduction.unused": 0
+      }
+    },
+    {
+      "id": "pe-2026-foreign-and-reduction-transfer",
+      "year": 2026,
+      "province": "PE",
+      "household": {
+        "whRate": 0.15,
+        "people": [
+          {
+            "oth": 15350
+          },
+          {
+            "oth": 10000,
+            "fd": 10000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 212.875,
+        "list.0.prov": 0,
+        "list.0.lowRed": 33.25,
+        "list.0.pFtc": 0,
+        "list.0.breakdown.lowIncomeReduction.calculated": 82.5,
+        "list.0.breakdown.lowIncomeReduction.unused": 49.25,
+        "list.1.lowRed": 49.25,
+        "list.1.pFtc": 212.875,
+        "list.1.prov": 212.875,
+        "list.1.breakdown.lowIncomeReduction.calculated": 49.25,
+        "list.1.breakdown.lowIncomeReduction.unused": 0
+      }
+    },
+    {
+      "id": "nl-2026-foreign-exceeds-net-income",
+      "year": 2026,
+      "province": "NL",
+      "household": {
+        "whRate": 0.4,
+        "people": [
+          {
+            "fd": 40000,
+            "fhsa": 8000
+          },
+          {
+            "oth": 18000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 426.822,
+        "list.0.prov": 0,
+        "list.0.pFtc": 1644.822,
+        "list.0.lowRed": 0,
+        "list.0.breakdown.lowIncomeReduction.calculated": 0,
+        "list.0.breakdown.lowIncomeReduction.unused": 0,
+        "list.1.lowRed": 0,
+        "list.1.breakdown.lowIncomeReduction.calculated": 0,
+        "list.1.breakdown.lowIncomeReduction.unused": 0
+      }
+    }
+  ]
+}

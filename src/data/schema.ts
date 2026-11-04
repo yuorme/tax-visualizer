@@ -595,6 +595,26 @@ export const provinceSchema = z
       z.literal("transfer"),
     ]),
     employmentAmountCredit: z.boolean().optional(),
+    /** Opt-in claimant rules: omitted years retain their locked historical calculation. */
+    claimants: z
+      .object({
+        childAmount: z
+          .object({
+            claimant: z.enum(["lower-taxable-income", "lower-net-income"]),
+            transfer: z.enum(["schedule-2", "none"]),
+            estimated: z.boolean().optional(),
+          })
+          .optional(),
+        lowIncomeReduction: z
+          .object({
+            claimant: z.literal("minimum-household-tax"),
+            transferUnused: z.boolean(),
+            order: z.enum(["before-foreign-tax-credit", "after-foreign-tax-credit"]),
+            estimated: z.boolean().optional(),
+          })
+          .optional(),
+      })
+      .optional(),
     childAmount: z.object({ perChild: amount, ages: z.enum(["all", "under6"]) }).optional(),
     childcareCredit: childcareCredit.optional(),
     surtax: z.array(z.tuple([amount, rate])).optional(),

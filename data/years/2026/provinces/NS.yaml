@@ -10,6 +10,10 @@ brackets:
 basicPersonalAmount: 11932
 dividendTaxCredit: {eligible: 0.0885, nonEligible: 0.015}
 spouseAmount: {max: 11932, threshold: 888}
+# Provisional continuation of the verified 2025 return rules pending 2026 CRA forms.
+claimants:
+  childAmount: {claimant: lower-net-income, transfer: none, estimated: true}
+  lowIncomeReduction: {claimant: minimum-household-tax, transferUnused: false, order: after-foreign-tax-credit, estimated: true}
 childAmount: {perChild: 1200, ages: under6}
 lowIncomeReduction:
   program: family-low-income-reduction
@@ -32,6 +36,9 @@ credits:
     program: ns-affordable-living-tax-credit
     params: {base: 255, child: 60, rate: 0.05, threshold: 30000}
 sources:
+  - {label: "CRA NS 2025 guide, claimant and transfer rules", url: "https://www.canada.ca/en/revenue-agency/services/forms-publications/tax-packages-years/general-income-tax-benefit-package/nova-scotia/5003-pc.html"}
+  - {label: "CRA NS(S2) 2025, transferable amounts exclude the child amount", url: "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5003-s2/5003-s2-25e.pdf"}
+  - {label: "CRA NS428 2025, reduction order and unused balance", url: "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5003-c/5003-c-25e.pdf"}
   - {label: "nesto, Canada Property Tax Guide 2026 (residential property tax rate)", url: "https://www.nesto.ca/mortgage-basics/property-taxes-canada-highest-to-lowest/"}
   - {label: "Natural Resources Canada, Fuel Consumption Levies in Canada (provincial gasoline tax, rates as of September 2, 2026)", url: "https://natural-resources.canada.ca/domestic-international-markets/fuel-consumption-levies-canada"}
   - {label: "Statistics Canada, Canadian Vehicle Survey: Annual 2009, Tables 3-1 and 4-1 (distance per light vehicle)", url: "https://www150.statcan.gc.ca/n1/pub/53-223-x/53-223-x2009000-eng.pdf"}

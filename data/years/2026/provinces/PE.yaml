@@ -12,6 +12,9 @@ brackets:
 basicPersonalAmount: 15000
 dividendTaxCredit: {eligible: 0.105, nonEligible: 0.013}
 spouseAmount: {max: 12740, threshold: 1274}
+# Provisional continuation of the verified 2025 return rules pending 2026 CRA forms.
+claimants:
+  lowIncomeReduction: {claimant: minimum-household-tax, transferUnused: true, order: before-foreign-tax-credit, estimated: true}
 lowIncomeReduction:
   program: family-low-income-reduction
   params: {individual: 350, spouse: 350, child: 300, rate: 0.05, threshold: 23000}
@@ -38,6 +41,9 @@ credits:
     program: pei-essentials-benefit
     params: {single: 310, family: 365, rate: 0.01, threshold: 95000, minimum: 175}
 sources:
+  - {label: "CRA PE 2025 guide, claimant and transfer rules", url: "https://www.canada.ca/en/revenue-agency/services/forms-publications/tax-packages-years/general-income-tax-benefit-package/prince-edward-island/5002-pc.html"}
+  - {label: "CRA PE428 2025, reduction before FTC (87–89), unused balance before FTC (99–101); provisional 2026 continuation", url: "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5002-c/5002-c-25e.pdf"}
+  - {label: "CRA T2036 2025, line 5 credit cap and note 4 tax otherwise payable; provisional 2026 continuation", url: "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/t2036/t2036-25e.pdf"}
   - {label: "WOWA, Charlottetown property tax (2026 residential rate: 0.67% municipal + 1% provincial)", url: "https://wowa.ca/taxes/charlottetown-property-tax"}
   - {label: "Island Regulatory and Appeals Commission, Temporary Suspension of Provincial Tax on Gasoline and Diesel (September 25, 2026)", url: "https://irac.pe.ca/wp-content/uploads/Notice-Removal-of-Provincial-Tax-September-25-2026.pdf"}
   - {label: "Natural Resources Canada, Fuel Consumption Levies in Canada (provincial gasoline tax, rates as of September 2, 2026)", url: "https://natural-resources.canada.ca/domestic-international-markets/fuel-consumption-levies-canada"}

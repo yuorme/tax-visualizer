@@ -15,6 +15,25 @@ const render = (y: YearData) => [footerNotes(y, page), ...Object.values(tooltips
 const html = fs.readFileSync(new URL("../src/ui/index.html", import.meta.url), "utf8");
 const noteKeys = [...html.matchAll(/data-note="([^"]+)"/g)].map(m => m[1]);
 
+for (const year of [2019, 2020, 2021, 2022, 2023, 2024]) {
+  test(`${year}: child amount notes retain the historical claimant wording`, () => {
+    const text = footerNotes(loadYear(year), page);
+    assert.match(text, /are claimed by the parent who claims the children\./);
+    assert.doesNotMatch(text, /follow each program's rules for who can claim them/);
+  });
+}
+
+for (const year of [2025, 2026]) {
+  test(`${year}: child amount notes describe program-specific claimants and transfers`, () => {
+    const text = footerNotes(loadYear(year), page);
+    assert.match(
+      text,
+      /follow each program's rules for who can claim them and whether unused amounts can transfer to a spouse\./,
+    );
+    assert.doesNotMatch(text, /are claimed by the parent who claims the children/);
+  });
+}
+
 test("2019 notes describe the historical benefits, levy, MSP premiums and flat personal amount", () => {
   const text = render(loadYear(2019));
   assert.match(text, /is \$12,069 at every income/);
