@@ -1,8 +1,8 @@
 # Issue 86: owner credit needs more than a reference rate
 
 Investigated November 4, 2026. Outcome: retain the reference rate and document the additional owner-credit
-limitation, as agreed after investigating the issue's rate-only correction. Only comments changed in the two
-PE data files; no data values, tests, assertions or golden cells changed.
+limitation, as agreed after investigating the issue's rate-only correction. Only comments and source metadata
+changed in the two PE data files; no tax parameter values, tests, assertions or golden cells changed.
 
 ## Resident credit already included
 
@@ -11,6 +11,16 @@ $0.50 through 2025 and $0.70 from 2026. [Stratford's official municipal tax page
 provincial levy is $1.50. The [current provincial charges page][charges] states a $1.70 non-commercial levy.
 Thus the net provincial rate is 1% in both years. Subtracting the resident credit again from the existing 1.67%
 Charlottetown reference rate would double-count it.
+
+The cached Real Property Tax Act is current to May 29, 2026. Sections 4 and 5 state the 1.70% levy and 0.70%
+resident credit and cite the 2026 amendment, but the cached text does **not state the 2026 effective date**.
+The January 1, 2026 timing rests on the resident-credit page read through the web reader, supported by the
+amendment citation; the current charges page confirms the amounts, not their commencement date.
+
+For **both 2025 and 2026**, the municipal 0.67% is carried forward from the existing WOWA-based data, unverified
+against an official municipal publication for either year. WOWA remains the municipal-rate source in each
+file; the official provincial sources establish the levy and resident credit. This records the uncertainty
+explicitly without changing the rate or its existing estimate flag.
 
 Before/after: 2025 `propertyTax.rate` 0.0167 -> 0.0167; 2026 0.0167 -> 0.0167. No golden changes are justified
 by this resident credit. The historical 2019–2024 files already use the net 1% provincial component.
@@ -27,6 +37,14 @@ Implementing these needs a property-tax program with eligibility/ownership and r
 assessments, assessed improvements, applicable assessment increases and days owned; alternatively, an explicit
 annual dollar credit supplied by the user. The existing actual annual bill override can already reflect relief.
 The current data schema exposes only a reference rate; the engine fallback is home value multiplied by that rate.
+
+There is also an assessment-base limitation: Real Property Tax Act section 4(2)(c) taxes owner-occupiers on their
+owner-occupied assessment, governed by [Real Property Assessment Act section 9.2][assessment-act], rather than
+automatically using market value. For continuing eligible ownership, annual CPI adjustments are capped at 5%
+(with negative CPI treated as zero), improvements are added, and the result cannot exceed the residential
+assessment. Acquisition or conversion to owner-occupied use can reset the base. The [assessment explanation][assessment]
+confirms this distinction. The capped assessment depends on property history, so applying one flat rate to
+today's home value cannot reproduce every eligible owner's tax even before the separate dollar credits.
 
 ## Exactly what 2024 needs
 
@@ -64,8 +82,10 @@ avoid a step in History at 2025. The 2022–2023 inflation subsidies require sep
 
 ## Retrieval and validation
 
-`npm ci` and `npm run check` passed under Node 26: lint, typecheck, all 2,167 tests, build and Chromium smoke
-tests (43 pages, 261 states, 40 contrast scans). Both edited PE YAML files parse identically to their originals.
+`npm ci` passed under Node 26. The initial full check passed, but a later edit introduced a 121-character
+Markdown line and review reproduced the lint failure. That line is rewrapped here. The PR records the full
+`npm run check` result after the final review edit. Both edited PE YAML files retain their original tax
+parameters; their source metadata now includes the official provincial references.
 There are no changed rule paths to map to golden cases and no changed existing assertions. Existing goldens
 remain locked; all existing expected values are preserved.
 
@@ -88,11 +108,13 @@ Direct `fetch-source` calls for the owner-credit explanation, resident-credit pr
 pages returned a Radware challenge: `Verifying your browser before proceeding...`. The web reader could read
 these pages. Challenge extracts were discarded. Both official legislation PDFs downloaded successfully and
 were cached with `fetch-source`; no source figures depend on a secondary publication. Stratford's official
-2024 comparison was already cached. A labelled [web-reader paraphrase](2025/sources/issue-86-owner-credit-web-reader.txt)
+2024 comparison was already cached. A labelled
+[web-reader paraphrase](2025/sources/issue-86-owner-credit-web-reader.txt)
 preserves the owner-credit explanation's 2024 ceiling and terms; no original-publication hash is claimed.
 The official Stratford page independently confirms the provincial resident-rate calculation.
 Charlottetown search results did not yield a usable
 official 2025/2026 budget during this investigation; its existing municipal component was left unchanged.
+The assessment Act pages 10–11 were also downloaded with `fetch-source` for the section 9.2 assessment limit.
 
 [resident]: https://www.princeedwardisland.ca/en/information/finance-and-affordability/provincial-tax-credit-program
 [stratford]: https://townofstratford.ca/about-stratford/municipal-tax-rates/
@@ -100,3 +122,5 @@ official 2025/2026 budget during this investigation; its existing municipal comp
 [owner]: https://www.princeedwardisland.ca/en/information/finance/2024-owner-occupied-residential-property-credit
 [comparison]: https://stratford.civicweb.net/document/145695/Property%20Tax%20rate%20info%20PEI%20Muncipalities.pdf?handle=B3C35C69B38A44879CD6127A49CE7B5C
 [regulations]: https://www.princeedwardisland.ca/sites/default/files/legislation/r05g-real_property_tax_act_regulations.pdf
+[assessment-act]: https://www.princeedwardisland.ca/sites/default/files/legislation/r-04-real_property_assessment_act.pdf
+[assessment]: https://www.princeedwardisland.ca/en/information/finance-and-affordability/property-assessment
