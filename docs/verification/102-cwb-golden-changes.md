@@ -1,5 +1,7 @@
 # Issue 102: existing golden corrections
 
+Before values are from merged main `90122f4` (PR #171 included).
+
 Every changed leaf is listed below. Inputs, assertions, tolerances and unrelated values are preserved.
 Derivation and verification method: [CWB secondary cap](102-cwb-secondary-cap.md).
 
@@ -611,10 +613,10 @@ Scenario 156 is in `tests/golden/other-income-original.json`; all others are in 
 | 2025 | 10 | AB | netTotal | -14244.3712 | -14234.6212 |
 | 2025 | 10 | AB | avg | -0.2788 | -0.2786 |
 | 2025 | 10 | AB | credits.1.1 | 2341.8 | 2332.05 |
-| 2025 | 10 | NT | total | -10456.2379 | -10446.4879 |
+| 2025 | 10 | NT | total | -10456.2662 | -10446.5162 |
 | 2025 | 10 | NT | refund | 4227.85 | 4218.1 |
-| 2025 | 10 | NT | benefits | 17591.5891 | 17581.8391 |
-| 2025 | 10 | NT | netTotal | -12021.3531 | -12011.6031 |
+| 2025 | 10 | NT | benefits | 17591.6174 | 17581.8674 |
+| 2025 | 10 | NT | netTotal | -12021.3814 | -12011.6314 |
 | 2025 | 10 | NT | avg | -0.2324 | -0.2321 |
 | 2025 | 10 | NT | credits.1.1 | 2215.85 | 2206.1 |
 | 2025 | 10 | SK | total | -10288.2492 | -10278.4992 |
@@ -715,17 +717,17 @@ Scenario 156 is in `tests/golden/other-income-original.json`; all others are in 
 | 2025 | 70 | AB | margBy.nd | 0.644 | 0.4715 |
 | 2025 | 70 | AB | margBy.fd | 0.81 | 0.66 |
 | 2025 | 70 | AB | credits.1.1 | 567.3 | 550.05 |
-| 2025 | 70 | NT | total | -1619.1451 | -1601.8951 |
+| 2025 | 70 | NT | total | -1673.504 | -1656.254 |
 | 2025 | 70 | NT | refund | 1656.9 | 1639.65 |
-| 2025 | 70 | NT | benefits | 13656.7931 | 13639.5431 |
-| 2025 | 70 | NT | netTotal | -3184.2603 | -3167.0103 |
-| 2025 | 70 | NT | marg | 0.5057 | 0.5072 |
-| 2025 | 70 | NT | avg | -0.0261 | -0.0258 |
-| 2025 | 70 | NT | margBy.ord | 0.5057 | 0.5072 |
-| 2025 | 70 | NT | margBy.cg | 0.2827 | 0.2077 |
-| 2025 | 70 | NT | margBy.ed | 0.7803 | 0.6078 |
-| 2025 | 70 | NT | margBy.nd | 0.6502 | 0.4777 |
-| 2025 | 70 | NT | margBy.fd | 0.8154 | 0.6654 |
+| 2025 | 70 | NT | benefits | 13711.152 | 13693.902 |
+| 2025 | 70 | NT | netTotal | -3238.6192 | -3221.3692 |
+| 2025 | 70 | NT | marg | 0.5086 | 0.5101 |
+| 2025 | 70 | NT | avg | -0.027 | -0.0267 |
+| 2025 | 70 | NT | margBy.ord | 0.5086 | 0.5101 |
+| 2025 | 70 | NT | margBy.cg | 0.2842 | 0.2092 |
+| 2025 | 70 | NT | margBy.ed | 0.7843 | 0.6118 |
+| 2025 | 70 | NT | margBy.nd | 0.6536 | 0.4811 |
+| 2025 | 70 | NT | margBy.fd | 0.8183 | 0.6683 |
 | 2025 | 70 | NT | credits.1.1 | 441.35 | 424.1 |
 | 2025 | 70 | SK | total | -2363.2583 | -2346.0083 |
 | 2025 | 70 | SK | refund | 2035.5599 | 2018.3099 |
@@ -825,7 +827,7 @@ Scenario 156 is in `tests/golden/other-income-original.json`; all others are in 
 | 2025 | 70 | NL | credits.1.1 | 441.35 | 424.1 |
 | 2025 | 133 | BC | invTax | 18212.0775 | 18205.3275 |
 | 2025 | 133 | YT | invTax | 18354.2815 | 18347.5315 |
-| 2025 | 133 | NT | invTax | 18370.7381 | 18363.9881 |
+| 2025 | 133 | NT | invTax | 18370.8373 | 18364.0873 |
 | 2025 | 133 | SK | invTax | 16044.3703 | 16037.6203 |
 | 2025 | 133 | MB | invTax | 17783.6266 | 17776.8766 |
 | 2025 | 133 | ON | invTax | 19172.1535 | 19165.4035 |
@@ -852,10 +854,10 @@ Scenario 156 is in `tests/golden/other-income-original.json`; all others are in 
 | 2026 | 10 | AB | netTotal | -14434.43 | -14424.68 |
 | 2026 | 10 | AB | avg | -0.29 | -0.2898 |
 | 2026 | 10 | AB | credits.1.1 | 2492.05 | 2482.3 |
-| 2026 | 10 | NT | total | -10671.0971 | -10661.3471 |
+| 2026 | 10 | NT | total | -10671.1254 | -10661.3754 |
 | 2026 | 10 | NT | refund | 3721.65 | 3711.9 |
-| 2026 | 10 | NT | benefits | 17456.6391 | 17446.8891 |
-| 2026 | 10 | NT | netTotal | -12070.6433 | -12060.8933 |
+| 2026 | 10 | NT | benefits | 17456.6674 | 17446.9174 |
+| 2026 | 10 | NT | netTotal | -12070.6717 | -12060.9217 |
 | 2026 | 10 | NT | avg | -0.2371 | -0.2369 |
 | 2026 | 10 | NT | credits.1.1 | 2363.65 | 2353.9 |
 | 2026 | 10 | SK | total | -10719.4372 | -10709.6872 |
@@ -956,17 +958,17 @@ Scenario 156 is in `tests/golden/other-income-original.json`; all others are in 
 | 2026 | 70 | AB | margBy.nd | 0.6383 | 0.4658 |
 | 2026 | 70 | AB | margBy.fd | 0.805 | 0.655 |
 | 2026 | 70 | AB | credits.1.1 | 717.55 | 700.3 |
-| 2026 | 70 | NT | total | -1986.2115 | -1968.9615 |
+| 2026 | 70 | NT | total | -2040.5704 | -2023.3204 |
 | 2026 | 70 | NT | refund | 1196.25 | 1179 |
-| 2026 | 70 | NT | benefits | 13592.3931 | 13575.1431 |
-| 2026 | 70 | NT | netTotal | -3385.7577 | -3368.5077 |
-| 2026 | 70 | NT | marg | 0.5006 | 0.5021 |
-| 2026 | 70 | NT | avg | -0.032 | -0.0318 |
-| 2026 | 70 | NT | margBy.ord | 0.5006 | 0.5021 |
-| 2026 | 70 | NT | margBy.cg | 0.2802 | 0.2052 |
-| 2026 | 70 | NT | margBy.ed | 0.7734 | 0.6009 |
-| 2026 | 70 | NT | margBy.nd | 0.6445 | 0.472 |
-| 2026 | 70 | NT | margBy.fd | 0.8104 | 0.6604 |
+| 2026 | 70 | NT | benefits | 13646.752 | 13629.502 |
+| 2026 | 70 | NT | netTotal | -3440.1166 | -3422.8666 |
+| 2026 | 70 | NT | marg | 0.5035 | 0.505 |
+| 2026 | 70 | NT | avg | -0.0329 | -0.0326 |
+| 2026 | 70 | NT | margBy.ord | 0.5035 | 0.505 |
+| 2026 | 70 | NT | margBy.cg | 0.2817 | 0.2067 |
+| 2026 | 70 | NT | margBy.ed | 0.7774 | 0.6049 |
+| 2026 | 70 | NT | margBy.nd | 0.6478 | 0.4753 |
+| 2026 | 70 | NT | margBy.fd | 0.8133 | 0.6633 |
 | 2026 | 70 | NT | credits.1.1 | 589.15 | 571.9 |
 | 2026 | 70 | SK | total | -3151.7822 | -3134.5322 |
 | 2026 | 70 | SK | refund | 1808.4685 | 1791.2185 |
@@ -1066,7 +1068,7 @@ Scenario 156 is in `tests/golden/other-income-original.json`; all others are in 
 | 2026 | 70 | NL | credits.1.1 | 589.15 | 571.9 |
 | 2026 | 133 | BC | invTax | 18285.0075 | 18278.2575 |
 | 2026 | 133 | YT | invTax | 18301.4315 | 18294.6815 |
-| 2026 | 133 | NT | invTax | 18289.8351 | 18283.0851 |
+| 2026 | 133 | NT | invTax | 18289.9343 | 18283.1843 |
 | 2026 | 133 | SK | invTax | 16036.8095 | 16030.0595 |
 | 2026 | 133 | MB | invTax | 17731.2842 | 17724.5342 |
 | 2026 | 133 | ON | invTax | 19119.3035 | 19112.5535 |
@@ -1159,10 +1161,10 @@ Scenario 156 is in `tests/golden/other-income-original.json`; all others are in 
 | 2026 | 156 | AB | margBy.nd | 0.5635 | 0.391 |
 | 2026 | 156 | AB | margBy.fd | 0.64 | 0.49 |
 | 2026 | 156 | AB | credits.1.1 | 242.05 | 224.8 |
-| 2026 | 156 | NT | total | 5266.0301 | 5283.2801 |
+| 2026 | 156 | NT | total | 5266.0178 | 5283.2678 |
 | 2026 | 156 | NT | refund | 328.25 | 311 |
-| 2026 | 156 | NT | benefits | 5564.9829 | 5547.7329 |
-| 2026 | 156 | NT | netTotal | 3866.4839 | 3883.7339 |
+| 2026 | 156 | NT | benefits | 5564.9952 | 5547.7452 |
+| 2026 | 156 | NT | netTotal | 3866.4716 | 3883.7216 |
 | 2026 | 156 | NT | marg | 0.423 | 0.4245 |
 | 2026 | 156 | NT | avg | 0.081 | 0.0813 |
 | 2026 | 156 | NT | margBy.ord | 0.423 | 0.4245 |
@@ -1267,3 +1269,53 @@ Scenario 156 is in `tests/golden/other-income-original.json`; all others are in 
 | 2026 | 156 | NL | margBy.nd | 0.5348 | 0.3623 |
 | 2026 | 156 | NL | margBy.fd | 0.6407 | 0.4907 |
 | 2026 | 156 | NL | credits.1.1 | 113.65 | 96.4 |
+
+## Reconciliation after PR #171
+
+Three golden files conflicted: `2025.json`, `2026.json` and `other-income-original.json`.
+The set of 1,259 CWB-related changed cells is unchanged. Exactly 31 NT rows have revised before/after
+values because their aggregates also incorporate the corrected NWT child benefit. All other ledger rows
+are unchanged. Values changed only by PR #171 retain main's expectations, including `provBen` and `childBen`.
+No capture command was used; fixture inputs and unrelated expectations are preserved.
+
+The reconciliation started with main's locked values and patched only independently verified CWB leaves.
+The separate Schedule 6 worksheet verified every affected snapshot, including each $100 marginal-income
+and no-investment counterfactual. For NT, `tests/nwt-child-benefit-form.ts` independently checked family
+net income and the NWT benefit from its source-transcribed constants, without engine or YAML imports.
+The original main engine matched every affected baseline before any patch. Combining its unchanged tax
+components with the independently checked benefits then matched the merged engine's snapshots exactly.
+
+The intersecting NT rows are:
+
+| Years | Case | Fields whose stored values depend on both corrections |
+| --- | --- | --- |
+| 2025, 2026 | 10 | `total`, `benefits`, `netTotal` |
+| 2025, 2026 | 70 | `total`, `benefits`, `netTotal`, `avg`, `marg`, `margBy.ord/cg/ed/nd/fd` |
+| 2025, 2026 | 133 | `invTax` |
+| 2026 | 156 (other-income fixture) | `total`, `benefits`, `netTotal` |
+
+Independent component calculations (dollars; these inputs are identical in both years):
+
+| Case | Family net income | NWT maximum | Corrected NWT benefit | CWB phase-out income |
+| --- | --- | --- | --- | --- |
+| 10 | 44620 | 1174 | 830.7224 | 34685 |
+| 70 | 61450 | 1467 | 544.257 | 46565 |
+| 133 | 70540 | 2542 | 480.9464 | 62540 |
+| 133 without investments | 39520 | 2542 | 2058.0032 | 31565 |
+| 156 | 64620 | 652 | 200.5552 | 49735 |
+
+For example, case 70 has one child in each age group: maximum `815 + 652 = 1467`.
+NWT benefit is `1467 * (80000 - 61450) / 50000 = 544.257` (formerly 489.89808).
+The secondary earner's $15,000 earnings produce $14,885 net income after $115 enhanced CPP;
+the CWB exemption drops $115, reducing CWB by $17.25. The net change in benefits from the common base is
+`54.35892 - 17.25 = 37.10892`, so 2026 total becomes -2023.3204, from -1986.2115 before either correction.
+
+For case 70's active secondary earner, a $100 employment bump adds $99 net income; NWT falls $2.90466.
+An investment bump increases NWT phase-out income by its taxable amount. At the same time, the CWB cap
+uses the secondary earner's own net income, up to working income. The separate worksheet recalculated
+both benefits for every bump; marginal changes use `(benefit_change_base - benefit_change_bumped) / 100`.
+
+Case 133 has no CWB at its actual income. Removing investments leaves net incomes $7,955 and $31,565;
+the corrected exemption is $7,955 instead of $8,000. Counterfactual CWB falls $6.75, so `invTax` falls $6.75
+on top of main's $0.0992 NWT investment-tax correction. Final `invTax` is 18364.0873 in 2025 and
+18283.1843 in 2026. Every exact stored before/after value appears in the ledger above.

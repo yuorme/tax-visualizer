@@ -62,6 +62,30 @@ childcare:
     benefitYoungUnder: 6
 
 payroll:
+  # Employee retirement timing; CPP Schedule 8 prorates, QPP employee elections retain annual ceilings.
+  # QPP annual settlement uses Schedule U's full personal exemption, separately from monthly withholding.
+  employeeRetirement:
+    cpp:
+      program: cpp-employee-retirement
+      # Annual settlement continues 2025 Schedule 8 with published 2026 payroll rates and ceilings.
+      estimated: true
+      params:
+        contributionStartAge: 18
+        electionFromAge: 65
+        mandatoryStopAge: 70
+        electionEffectiveMonthOffset: 1
+        restartAfterCalendarYears: 1
+    qpp:
+      program: qpp-employee-retirement
+      # Annual settlement continues 2025 Schedule U; 2026 employer timing and maxima are published.
+      estimated: true
+      params:
+        contributionStartAge: 18
+        electionFromAge: 65
+        mandatoryStopAge: 72
+        electionEffectiveMonthOffset: 1
+        restartAfterCalendarYears: 1
+        electionsFromYear: 2024
   # CPP: base contributions earn a credit; enhanced (first and second additional) contributions are deducted
   cpp: {exempt: 3500, ympe: 74600, yampe: 85000, base: 0.0495, enh1: 0.01, enh2: 0.04}
   qpp: {exempt: 3500, ympe: 74600, yampe: 85000, base: 0.053, enh1: 0.01, enh2: 0.04}
@@ -122,6 +146,24 @@ driving:
   estimated: true
 
 sources:
+  - label: "Retraite Québec, Choosing to stop contributing (employee elections available from January 2024)"
+    url: https://www.retraitequebec.gouv.qc.ca/en/citizens/work/work-retirement/choosing-stop-contributing-quebec-pension-plan
+  - label: "CRA, T4127 January 2026, chapter 6 and tables 8.3–8.6 (published 2026 payroll thresholds and rates)"
+    url: https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jan/t4127-jan-payroll-deductions-formulas-computer-programs.html
+  - label: "CRA, Starting and stopping CPP deductions (age, employee elections and maximum proration)"
+    url: https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/payroll/payroll-deductions-contributions/canada-pension-plan-cpp/starting-stopping-cpp-deductions.html
+  - label: "CRA, CPP contributions for working beneficiaries (prior-year elections and next-month revocations)"
+    url: https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/cpp/canada-pension-plan-cpp-contributions-cpp-working-beneficiaries.html
+  - label: "CRA, Schedule 8 2025 Parts 2–3 (annual employee CPP thresholds and required contributions)"
+    url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5000-s8/5000-s8-25e.pdf
+  - label: "CRA, Quebec Schedule 8 2025 Parts 1–2 (QPP annual thresholds, line 30800 credit and excess contributions)"
+    url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5005-s8/5005-s8-25e.pdf
+  - label: "Revenu Québec, RR-50-V 2025-04 (QPP employee election eligibility and timing)"
+    url: https://www.revenuquebec.ca/documents/en/formulaires/rr/RR-50-V(2025-04).pdf
+  - label: "Revenu Québec, 2026 employer guide 4.5.4–4.5.6 (QPP unreduced election maximum and mandatory stop)"
+    url: https://www.revenuquebec.ca/documents/en/formulaires/tp/TP-1015.G-V(2026-01).pdf
+  - label: "Revenu Québec, Schedule U 2025 Part B and Table 1 (annual employee exemption and ceilings)"
+    url: https://www.revenuquebec.ca/documents/en/formulaires/tp/2025-12/TP-1.D.U-V(2025-12).pdf
   - {label: "CRA, T778 Child Care Expenses Deduction (2025 birth-year bands, pooled limits and explicit earnings)", url: "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/t778/t778-25e.pdf"}
   - {label: "CRA, Income Tax Folio S1-F3-C1 (rules from 2015 onward)", url: "https://www.canada.ca/en/revenue-agency/services/tax/technical-information/income-tax/income-tax-folios-index/series-1-individuals/folio-3-family-unit-issues/income-tax-folio-s1-f3-c1-child-care-expense-deduction.html"}
   - {label: "CRA, Current year tax rates and income brackets", url: "https://www.canada.ca/en/revenue-agency/services/tax/individuals/tax-rates-brackets/current-year.html"}

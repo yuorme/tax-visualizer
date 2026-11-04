@@ -1,0 +1,882 @@
+{
+  "description": "Independent NWT Finance p. 2 annual table cases; continuity verified separately in T4114-25/-26. See docs/verification/116-nwt-child-benefit.md.",
+  "defaults": {
+    "active": 0,
+    "spouse": true,
+    "adults": 1,
+    "kids": 0,
+    "under6": 0,
+    "useBpa": true,
+    "whRate": 0,
+    "useCredits": true,
+    "homeValue": 0,
+    "rent": 0,
+    "monthlySpending": 0
+  },
+  "cases": [
+    {
+      "id": "nwt-2025-none",
+      "year": 2025,
+      "province": "NT",
+      "household": {
+        "people": [
+          {
+            "fd": 0
+          }
+        ],
+        "kids": 0,
+        "under6": 0
+      },
+      "expected": {
+        "famNet": 0,
+        "provBen": 0
+      }
+    },
+    {
+      "id": "nwt-2025-young-1",
+      "year": 2025,
+      "province": "NT",
+      "household": {
+        "people": [
+          {
+            "fd": 30000
+          }
+        ],
+        "kids": 1,
+        "under6": 1
+      },
+      "expected": {
+        "famNet": 30000,
+        "provBen": 815
+      }
+    },
+    {
+      "id": "nwt-2025-older-1",
+      "year": 2025,
+      "province": "NT",
+      "household": {
+        "people": [
+          {
+            "fd": 30000
+          }
+        ],
+        "kids": 1,
+        "under6": 0
+      },
+      "expected": {
+        "famNet": 30000,
+        "provBen": 652
+      }
+    },
+    {
+      "id": "nwt-2025-young-2",
+      "year": 2025,
+      "province": "NT",
+      "household": {
+        "people": [
+          {
+            "fd": 30000
+          }
+        ],
+        "kids": 2,
+        "under6": 2
+      },
+      "expected": {
+        "famNet": 30000,
+        "provBen": 1467
+      }
+    },
+    {
+      "id": "nwt-2025-older-2",
+      "year": 2025,
+      "province": "NT",
+      "household": {
+        "people": [
+          {
+            "fd": 30000
+          }
+        ],
+        "kids": 2,
+        "under6": 0
+      },
+      "expected": {
+        "famNet": 30000,
+        "provBen": 1174
+      }
+    },
+    {
+      "id": "nwt-2025-young-3",
+      "year": 2025,
+      "province": "NT",
+      "household": {
+        "people": [
+          {
+            "fd": 30000
+          }
+        ],
+        "kids": 3,
+        "under6": 3
+      },
+      "expected": {
+        "famNet": 30000,
+        "provBen": 1997
+      }
+    },
+    {
+      "id": "nwt-2025-older-3",
+      "year": 2025,
+      "province": "NT",
+      "household": {
+        "people": [
+          {
+            "fd": 30000
+          }
+        ],
+        "kids": 3,
+        "under6": 0
+      },
+      "expected": {
+        "famNet": 30000,
+        "provBen": 1597
+      }
+    },
+    {
+      "id": "nwt-2025-young-4",
+      "year": 2025,
+      "province": "NT",
+      "household": {
+        "people": [
+          {
+            "fd": 30000
+          }
+        ],
+        "kids": 4,
+        "under6": 4
+      },
+      "expected": {
+        "famNet": 30000,
+        "provBen": 2445
+      }
+    },
+    {
+      "id": "nwt-2025-older-4",
+      "year": 2025,
+      "province": "NT",
+      "household": {
+        "people": [
+          {
+            "fd": 30000
+          }
+        ],
+        "kids": 4,
+        "under6": 0
+      },
+      "expected": {
+        "famNet": 30000,
+        "provBen": 1956
+      }
+    },
+    {
+      "id": "nwt-2025-young-5",
+      "year": 2025,
+      "province": "NT",
+      "household": {
+        "people": [
+          {
+            "fd": 30000
+          }
+        ],
+        "kids": 5,
+        "under6": 5
+      },
+      "expected": {
+        "famNet": 30000,
+        "provBen": 2812
+      }
+    },
+    {
+      "id": "nwt-2025-older-5",
+      "year": 2025,
+      "province": "NT",
+      "household": {
+        "people": [
+          {
+            "fd": 30000
+          }
+        ],
+        "kids": 5,
+        "under6": 0
+      },
+      "expected": {
+        "famNet": 30000,
+        "provBen": 2249
+      }
+    },
+    {
+      "id": "nwt-2025-young-6",
+      "year": 2025,
+      "province": "NT",
+      "household": {
+        "people": [
+          {
+            "fd": 30000
+          }
+        ],
+        "kids": 6,
+        "under6": 6
+      },
+      "expected": {
+        "famNet": 30000,
+        "provBen": 3179
+      }
+    },
+    {
+      "id": "nwt-2025-older-6",
+      "year": 2025,
+      "province": "NT",
+      "household": {
+        "people": [
+          {
+            "fd": 30000
+          }
+        ],
+        "kids": 6,
+        "under6": 0
+      },
+      "expected": {
+        "famNet": 30000,
+        "provBen": 2542
+      }
+    },
+    {
+      "id": "nwt-2025-mixed-below-lower",
+      "year": 2025,
+      "province": "NT",
+      "household": {
+        "people": [
+          {
+            "fd": 29999
+          }
+        ],
+        "kids": 3,
+        "under6": 2
+      },
+      "expected": {
+        "famNet": 29999,
+        "provBen": 2119
+      }
+    },
+    {
+      "id": "nwt-2025-mixed-lower",
+      "year": 2025,
+      "province": "NT",
+      "household": {
+        "people": [
+          {
+            "fd": 30000
+          }
+        ],
+        "kids": 3,
+        "under6": 2
+      },
+      "expected": {
+        "famNet": 30000,
+        "provBen": 2119
+      }
+    },
+    {
+      "id": "nwt-2025-mixed-above-lower",
+      "year": 2025,
+      "province": "NT",
+      "household": {
+        "people": [
+          {
+            "fd": 30001
+          }
+        ],
+        "kids": 3,
+        "under6": 2
+      },
+      "expected": {
+        "famNet": 30001,
+        "provBen": 2118.9576
+      }
+    },
+    {
+      "id": "nwt-2025-mixed-midpoint",
+      "year": 2025,
+      "province": "NT",
+      "household": {
+        "people": [
+          {
+            "fd": 55000
+          }
+        ],
+        "kids": 3,
+        "under6": 2
+      },
+      "expected": {
+        "famNet": 55000,
+        "provBen": 1059.5
+      }
+    },
+    {
+      "id": "nwt-2025-mixed-below-upper",
+      "year": 2025,
+      "province": "NT",
+      "household": {
+        "people": [
+          {
+            "fd": 79999
+          }
+        ],
+        "kids": 3,
+        "under6": 2
+      },
+      "expected": {
+        "famNet": 79999,
+        "provBen": 0.0424
+      }
+    },
+    {
+      "id": "nwt-2025-mixed-upper",
+      "year": 2025,
+      "province": "NT",
+      "household": {
+        "people": [
+          {
+            "fd": 80000
+          }
+        ],
+        "kids": 3,
+        "under6": 2
+      },
+      "expected": {
+        "famNet": 80000,
+        "provBen": 0
+      }
+    },
+    {
+      "id": "nwt-2025-mixed-above-upper",
+      "year": 2025,
+      "province": "NT",
+      "household": {
+        "people": [
+          {
+            "fd": 80001
+          }
+        ],
+        "kids": 3,
+        "under6": 2
+      },
+      "expected": {
+        "famNet": 80001,
+        "provBen": 0
+      }
+    },
+    {
+      "id": "nwt-2025-mixed-reversed",
+      "year": 2025,
+      "province": "NT",
+      "household": {
+        "people": [
+          {
+            "fd": 55000
+          }
+        ],
+        "kids": 3,
+        "under6": 1
+      },
+      "expected": {
+        "famNet": 55000,
+        "provBen": 994.5
+      }
+    },
+    {
+      "id": "nwt-2025-mixed-fifth-young",
+      "year": 2025,
+      "province": "NT",
+      "household": {
+        "people": [
+          {
+            "fd": 30000
+          }
+        ],
+        "kids": 6,
+        "under6": 5
+      },
+      "expected": {
+        "famNet": 30000,
+        "provBen": 3464
+      }
+    },
+    {
+      "id": "nwt-2025-mixed-fifth-older",
+      "year": 2025,
+      "province": "NT",
+      "household": {
+        "people": [
+          {
+            "fd": 30000
+          }
+        ],
+        "kids": 6,
+        "under6": 1
+      },
+      "expected": {
+        "famNet": 30000,
+        "provBen": 3064
+      }
+    },
+    {
+      "id": "nwt-2025-mixed-fifth-both",
+      "year": 2025,
+      "province": "NT",
+      "household": {
+        "people": [
+          {
+            "fd": 55000
+          }
+        ],
+        "kids": 10,
+        "under6": 5
+      },
+      "expected": {
+        "famNet": 55000,
+        "provBen": 2530.5
+      }
+    },
+    {
+      "id": "nwt-2026-none",
+      "year": 2026,
+      "province": "NT",
+      "household": {
+        "people": [
+          {
+            "fd": 0
+          }
+        ],
+        "kids": 0,
+        "under6": 0
+      },
+      "expected": {
+        "famNet": 0,
+        "provBen": 0
+      }
+    },
+    {
+      "id": "nwt-2026-young-1",
+      "year": 2026,
+      "province": "NT",
+      "household": {
+        "people": [
+          {
+            "fd": 30000
+          }
+        ],
+        "kids": 1,
+        "under6": 1
+      },
+      "expected": {
+        "famNet": 30000,
+        "provBen": 815
+      }
+    },
+    {
+      "id": "nwt-2026-older-1",
+      "year": 2026,
+      "province": "NT",
+      "household": {
+        "people": [
+          {
+            "fd": 30000
+          }
+        ],
+        "kids": 1,
+        "under6": 0
+      },
+      "expected": {
+        "famNet": 30000,
+        "provBen": 652
+      }
+    },
+    {
+      "id": "nwt-2026-young-2",
+      "year": 2026,
+      "province": "NT",
+      "household": {
+        "people": [
+          {
+            "fd": 30000
+          }
+        ],
+        "kids": 2,
+        "under6": 2
+      },
+      "expected": {
+        "famNet": 30000,
+        "provBen": 1467
+      }
+    },
+    {
+      "id": "nwt-2026-older-2",
+      "year": 2026,
+      "province": "NT",
+      "household": {
+        "people": [
+          {
+            "fd": 30000
+          }
+        ],
+        "kids": 2,
+        "under6": 0
+      },
+      "expected": {
+        "famNet": 30000,
+        "provBen": 1174
+      }
+    },
+    {
+      "id": "nwt-2026-young-3",
+      "year": 2026,
+      "province": "NT",
+      "household": {
+        "people": [
+          {
+            "fd": 30000
+          }
+        ],
+        "kids": 3,
+        "under6": 3
+      },
+      "expected": {
+        "famNet": 30000,
+        "provBen": 1997
+      }
+    },
+    {
+      "id": "nwt-2026-older-3",
+      "year": 2026,
+      "province": "NT",
+      "household": {
+        "people": [
+          {
+            "fd": 30000
+          }
+        ],
+        "kids": 3,
+        "under6": 0
+      },
+      "expected": {
+        "famNet": 30000,
+        "provBen": 1597
+      }
+    },
+    {
+      "id": "nwt-2026-young-4",
+      "year": 2026,
+      "province": "NT",
+      "household": {
+        "people": [
+          {
+            "fd": 30000
+          }
+        ],
+        "kids": 4,
+        "under6": 4
+      },
+      "expected": {
+        "famNet": 30000,
+        "provBen": 2445
+      }
+    },
+    {
+      "id": "nwt-2026-older-4",
+      "year": 2026,
+      "province": "NT",
+      "household": {
+        "people": [
+          {
+            "fd": 30000
+          }
+        ],
+        "kids": 4,
+        "under6": 0
+      },
+      "expected": {
+        "famNet": 30000,
+        "provBen": 1956
+      }
+    },
+    {
+      "id": "nwt-2026-young-5",
+      "year": 2026,
+      "province": "NT",
+      "household": {
+        "people": [
+          {
+            "fd": 30000
+          }
+        ],
+        "kids": 5,
+        "under6": 5
+      },
+      "expected": {
+        "famNet": 30000,
+        "provBen": 2812
+      }
+    },
+    {
+      "id": "nwt-2026-older-5",
+      "year": 2026,
+      "province": "NT",
+      "household": {
+        "people": [
+          {
+            "fd": 30000
+          }
+        ],
+        "kids": 5,
+        "under6": 0
+      },
+      "expected": {
+        "famNet": 30000,
+        "provBen": 2249
+      }
+    },
+    {
+      "id": "nwt-2026-young-6",
+      "year": 2026,
+      "province": "NT",
+      "household": {
+        "people": [
+          {
+            "fd": 30000
+          }
+        ],
+        "kids": 6,
+        "under6": 6
+      },
+      "expected": {
+        "famNet": 30000,
+        "provBen": 3179
+      }
+    },
+    {
+      "id": "nwt-2026-older-6",
+      "year": 2026,
+      "province": "NT",
+      "household": {
+        "people": [
+          {
+            "fd": 30000
+          }
+        ],
+        "kids": 6,
+        "under6": 0
+      },
+      "expected": {
+        "famNet": 30000,
+        "provBen": 2542
+      }
+    },
+    {
+      "id": "nwt-2026-mixed-below-lower",
+      "year": 2026,
+      "province": "NT",
+      "household": {
+        "people": [
+          {
+            "fd": 29999
+          }
+        ],
+        "kids": 3,
+        "under6": 2
+      },
+      "expected": {
+        "famNet": 29999,
+        "provBen": 2119
+      }
+    },
+    {
+      "id": "nwt-2026-mixed-lower",
+      "year": 2026,
+      "province": "NT",
+      "household": {
+        "people": [
+          {
+            "fd": 30000
+          }
+        ],
+        "kids": 3,
+        "under6": 2
+      },
+      "expected": {
+        "famNet": 30000,
+        "provBen": 2119
+      }
+    },
+    {
+      "id": "nwt-2026-mixed-above-lower",
+      "year": 2026,
+      "province": "NT",
+      "household": {
+        "people": [
+          {
+            "fd": 30001
+          }
+        ],
+        "kids": 3,
+        "under6": 2
+      },
+      "expected": {
+        "famNet": 30001,
+        "provBen": 2118.9576
+      }
+    },
+    {
+      "id": "nwt-2026-mixed-midpoint",
+      "year": 2026,
+      "province": "NT",
+      "household": {
+        "people": [
+          {
+            "fd": 55000
+          }
+        ],
+        "kids": 3,
+        "under6": 2
+      },
+      "expected": {
+        "famNet": 55000,
+        "provBen": 1059.5
+      }
+    },
+    {
+      "id": "nwt-2026-mixed-below-upper",
+      "year": 2026,
+      "province": "NT",
+      "household": {
+        "people": [
+          {
+            "fd": 79999
+          }
+        ],
+        "kids": 3,
+        "under6": 2
+      },
+      "expected": {
+        "famNet": 79999,
+        "provBen": 0.0424
+      }
+    },
+    {
+      "id": "nwt-2026-mixed-upper",
+      "year": 2026,
+      "province": "NT",
+      "household": {
+        "people": [
+          {
+            "fd": 80000
+          }
+        ],
+        "kids": 3,
+        "under6": 2
+      },
+      "expected": {
+        "famNet": 80000,
+        "provBen": 0
+      }
+    },
+    {
+      "id": "nwt-2026-mixed-above-upper",
+      "year": 2026,
+      "province": "NT",
+      "household": {
+        "people": [
+          {
+            "fd": 80001
+          }
+        ],
+        "kids": 3,
+        "under6": 2
+      },
+      "expected": {
+        "famNet": 80001,
+        "provBen": 0
+      }
+    },
+    {
+      "id": "nwt-2026-mixed-reversed",
+      "year": 2026,
+      "province": "NT",
+      "household": {
+        "people": [
+          {
+            "fd": 55000
+          }
+        ],
+        "kids": 3,
+        "under6": 1
+      },
+      "expected": {
+        "famNet": 55000,
+        "provBen": 994.5
+      }
+    },
+    {
+      "id": "nwt-2026-mixed-fifth-young",
+      "year": 2026,
+      "province": "NT",
+      "household": {
+        "people": [
+          {
+            "fd": 30000
+          }
+        ],
+        "kids": 6,
+        "under6": 5
+      },
+      "expected": {
+        "famNet": 30000,
+        "provBen": 3464
+      }
+    },
+    {
+      "id": "nwt-2026-mixed-fifth-older",
+      "year": 2026,
+      "province": "NT",
+      "household": {
+        "people": [
+          {
+            "fd": 30000
+          }
+        ],
+        "kids": 6,
+        "under6": 1
+      },
+      "expected": {
+        "famNet": 30000,
+        "provBen": 3064
+      }
+    },
+    {
+      "id": "nwt-2026-mixed-fifth-both",
+      "year": 2026,
+      "province": "NT",
+      "household": {
+        "people": [
+          {
+            "fd": 55000
+          }
+        ],
+        "kids": 10,
+        "under6": 5
+      },
+      "expected": {
+        "famNet": 55000,
+        "provBen": 2530.5
+      }
+    }
+  ]
+}
