@@ -73,6 +73,14 @@ line-by-line tax return. Simpler and slightly less precise is acceptable where i
 **Payroll (employee share)**
 - CPP/QPP base and enhanced contributions, EI or EI plus QPIP, Ontario Health Premium, the 2% payroll tax in the
   Northwest Territories and Nunavut. All but the health premium are on employment income only.
+- Retirement-age employee CPP/QPP engine inputs for 2025–2026 (#146; page inputs follow separately): year-end
+  age/birth month, continuous retirement-pension receipt, independent CPP/QPP stop/restart elections, and monthly
+  earnings weights (equal monthly pay by default). CPP includes the 70th birthday month; QPP includes the whole
+  year turning 72. Turning 65 alone stops neither plan. QPP optional elections retain annual ceilings/exemption;
+  the annual burden excludes excess withholding. EI/QPIP continue on employment income. One continuing employer,
+  no disability/death or pension cancellation. New inputs fail explicitly in unsupported historical data;
+  legacy inputs remain available in every year. Self-employment needs its own timing under #14.
+  See [input contract and audit](verification/146-retirement-payroll.md).
 - Quebec's Health Services Fund contribution (2025–2026) also appears in the Payroll subtotal and ledger,
   separately from income tax. It is added exactly once and does not reduce income or any modelled benefit base.
 
@@ -198,6 +206,8 @@ For now:
 ## Estimates in the 2026 data
 
 Marked `estimated: true` in the data files where they appear:
+- Retirement-age employee payroll annual settlement: published 2026 employer rules, rates and ceilings with
+  2025 Schedule 8/Quebec Schedule U annual settlement continued pending the final 2026 return forms.
 - Canada Workers Benefit 2026 amounts (2025 figures indexed by 2% until CRA publishes them).
 - Ontario CARE 2026: continuing statutory formula, pending the 2026 return form (the budget confirms the program).
 - SK/NS/NU child claimant and transfer rules and NS/NB/NL/PE family reduction elections/transfers: provisional

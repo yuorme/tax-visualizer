@@ -32,6 +32,28 @@ const single = (ord: number, extra: Partial<Household> = {}): Household => ({
 const pct = (v: number) => Math.round(v * 10000) / 100;
 const credits = (r: ReturnType<typeof compute>) => r.credits.map(([n, v]) => [n, Math.round(v)]);
 
+test("2025 Schedule 8 six-month maxima and Schedule U unreduced QPP election maxima", () => {
+  // Cached Schedule 8 Part 2 row 6: YMPE 35,650, YAMPE 40,600, exemption 1,750.
+  // Schedule U Part B/Table 1: an employee RR-50 election does not reduce annual ceilings/exemption.
+  const person = {
+    ...blank(180000),
+    age: 66,
+    birthMonth: 6,
+    employeePayroll: {
+      retirementPensionSince: { year: 2024, month: 1 },
+      cppElection: { stop: { year: 2025, month: 6 } },
+      qppElection: { stop: { year: 2025, month: 6 } },
+    },
+  };
+  const cpp = compute(y, prov("ON"), single(0, { people: [person] })).me;
+  const qpp = compute(y, prov("QC"), single(0, { people: [person] })).me;
+  assert.ok(Math.abs(cpp.pay.base - 1678.05) < 1e-9);
+  assert.equal(cpp.pay.enh, 537); // first 339 + CPP2 198
+  assert.ok(Math.abs(qpp.pay.base - 3661.2) < 1e-9);
+  assert.equal(qpp.pay.enh, 1074); // first 678 + QPP2 396, full annual maximum
+  assert.equal(qpp.breakdown.netIncome.enh, 1074);
+});
+
 test("2025 Schedule F published worksheet: both columns, maxima and zero threshold", () => {
   // Revenu Québec TP-1.D.F-V (2025-12), Part B, lines 77–82; examples evaluated directly from that worksheet.
   assert.deepEqual(prov("QC").healthServicesFund?.params, {
