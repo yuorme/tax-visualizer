@@ -1,0 +1,231 @@
+Title: Canada Child Benefit
+URL: https://www.canada.ca/content/dam/cra-arc/formspubs/pub/t4114/t4114-25e.pdf
+Fetched: 2026-11-04
+SHA-256 of the original: 5db4ff195008a9cab6252ddc6c8d9773eb2707236fbbe59c54a18fdc13b615d4
+Publication date modified: 2025-07-07
+PDF pages: 8-10 of 15
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 8 of 15 ---
+
+canada.ca/taxes 15
+will need to send the CRA a letter stating that Akash is the parent primarily
+responsible for all of the children in their home and should continue to receive
+the CCB for the family.
+Example 3
+Bill and Mia both have children from previous relationships. After a year of living
+together, the couple submitted Form RC65, Marital Status Change, to report their
+common-law relationship status on June 15, 2025. Because the female parent is
+usually presumed to be primarily responsible for the children, Mia will start
+receiving the CCB for all of the children in the household. If Bill is the parent
+primarily responsible for all of the children in their home, Mia will need to send
+the CRA a letter stating that Bill is the parent primarily responsible for all of the
+children in their household and should receive the CCB for the entire family.
+How your benefit is calculated
+For the payment period of July 2025 to June 2026, the CRA calculates your
+benefit based on all of the following information:
+■ the number of eligible children you have and their ages
+■ your adjusted family net income for the base year 2024
+■ the child’s eligibility for the disability tax credit (DTC)
+To continue getting the CCB, you and your spouse or common-law partner
+each have to file tax returns every year, even if you have not received income in
+the year.
+Base year and payment period
+The base year is the year of the tax return from which information is taken to
+calculate the CCB amount for the payment period. The base year is the calendar
+year just before the start of the payment period.
+The payment period is the 12-month period during which the CCB payments
+are paid. The payment period runs from July 1 of the year following the base
+year to June 30 of the next year. For example, CCB payments calculated based
+on the 2024 tax return will start being issued in July 2025, which is the
+beginning of the payment period. For more information, see “When your
+benefit is paid” on page 17.
+canada.ca/taxes16
+The chart below illustrates the link between the base year and the payment
+period.
+Base year (tax return) Payment period
+2024 July 2025 – June 2026
+2023 July 2024 – June 2025
+2022 July 2023 – June 2024
+Example
+Taylor just received the July 2025 CCB payment. The amount changed
+considerably compared to the amount received in June. There have not been
+any changes to the number of eligible children Taylor has. The June and
+July payments were calculated using 2 different base years (2023 and 2024).
+Since Taylor’s adjusted family net income was higher in 2024 than it was in
+2023, the July 2025 payment was lower than the June 2025 payment.
+Child and family benefits online calculator
+You can use the CRA’s online calculator to get an estimate of your child
+benefits at canada.ca/child-family-benefits-calculator.
+How much you can expect to receive
+The CCB is calculated as follows:
+■ $7,997 per year ($666.41 per month) for each eligible child under the age of 6
+■ $6,748 per year ($562.33 per month) for each eligible child aged 6 to 17
+These amounts start being reduced when the adjusted family net income
+(AFNI) is over $37,487. The reduction is calculated as follows:
+■ For families with 1 eligible child:
+■ the reduction is 7% of the amount of AFNI greater than $37,487 up
+to $81,222
+■ for income greater than $81,222, the reduction is $3,061 plus 3.2% of
+AFNI greater than $81,222
+■ For families with 2 eligible children:
+■ the reduction is 13.5% of the amount of AFNI greater than $37,487 up
+to $81,222
+■ for income greater than $81,222, the reduction is $5,904 plus 5.7% of
+AFNI greater than $81,222
+
+--- PDF page 9 of 15 ---
+
+canada.ca/taxes 17
+■ For families with 3 eligible children:
+■ the reduction is 19% of the amount of AFNI greater than $37,487 up
+to $81,222
+■ for income greater than $81,222, the reduction is $8,310 plus 8% of AFNI
+greater than $81,222
+■ For families with 4 or more eligible children:
+■ the reduction is 23% of the amount of AFNI greater than $37,487 up
+to $81,222
+■ for income greater than $81,222, the reduction is $10,059 plus 9.5% of
+AFNI greater than $81,222
+Child disability benefit
+The child disability benefit (CDB) is an additional monthly benefit included in
+the CCB to provide financial assistance to qualified families caring for children
+who have a severe and prolonged impairment in physical or mental functions.
+If you have a child under 18 years of age who is eligible for the disability tax
+credit (DTC), you are eligible for the CDB.
+A child is eligible for the DTC when the CRA has approved Form T2201,
+Disability Tax Credit Certificate, for that child. For more information on the DTC,
+go to canada.ca/disability-tax-credit. For more information on the CDB, go
+to canada.ca/child-disability-benefit or call 1-800-387-1193.
+The CDB provides up to $3,411 per year ($284.25 per month) for each child
+eligible for the DTC. The CDB starts being reduced when the adjusted family
+net income (AFNI) is greater than $79,087. The reduction is calculated as
+follows:
+■ for families with 1 child eligible for the DTC, the reduction is 3.2% of the
+amount of AFNI greater than $81,222
+■ for families with 2 or more children eligible for the DTC, the reduction is
+5.7% of the amount of AFNI greater than $81,222
+Note
+If you have already applied for the CCB or previous federal child benefits
+(such as the Canada child tax benefit) for a child who is eligible for the DTC,
+the CDB will be calculated automatically for the current and the 2 previous
+CCB payment periods. Beyond these payment periods, you have to send
+a written request to your tax centre (see page 26).
+When your benefit is paid
+You are eligible to receive the CCB in the month following the month you
+become an eligible individual. For more information, see “Eligibility criteria”
+on pages 6 and 7.
+canada.ca/taxes18
+The CRA generally pays your benefit on the 20th of each month. However, if
+your monthly amount is less than $20, you will get one lump-sum payment
+on July 20, 2025 or at a later date, to cover the entire payment period from
+July 2025 to June 2026.
+Note
+When the 20th falls on a Saturday, a Sunday, or a federal statutory holiday,
+the payment will be made on the last business day before the 20th.
+If you do not receive your payment on the scheduled day, wait 5 business days
+before calling 1-800-387-1193.
+You can view your benefit payment dates and amounts in My Account
+at canada.ca/cra-sign-in-services.
+When your benefit is recalculated
+The CRA will recalculate your benefit when one of the following situations
+applies and, if applicable, send you a CCB notice:
+■ at the beginning of every payment period (every July) based on the tax
+returns that you and your spouse or common-law partner filed for the
+previous year
+■ after any reassessment of either your or your spouse’s or common-law
+partner’s tax return that affects the amount of your benefit
+■ after a change in your marital status
+■ after a change in the number of eligible children in your care
+■ after you tell the CRA about changes to your situation that could affect your
+benefit (for more information, see “When you should contact the CRA” on
+page 24)
+If you were overpaid
+If a recalculation shows that you received too much CCB, the CRA will send
+you a notice to tell you of the amount due. The CRA may keep all or a part of
+future CCB payments, income tax refunds, or GST/HST credits until the
+amount you owe is repaid. This may also apply to the other federal, provincial,
+and territorial programs that the CRA administers.
+For more information on how to make a payment, go to canada.ca/payments.
+Related programs
+The CRA administers the following provincial and territorial child benefit and
+credit programs:
+■ Alberta child and family benefit
+■ BC family benefit
+
+--- PDF page 10 of 15 ---
+
+canada.ca/taxes 19
+■ New Brunswick child tax benefit
+■ Newfoundland and Labrador child benefit
+■ Northwest Territories child benefit
+■ Nova Scotia child benefit
+■ Nunavut child benefit
+■ Ontario child benefit
+■ Prince Edward Island child benefit
+■ Yukon child benefit
+You do not need to apply to a province or a territory to get payments for these
+programs. The CRA uses the information from your Canada child benefit
+application to determine your eligibility for these programs. If you are eligible,
+the amount of your payments will be calculated based on information from the
+tax returns that you and your spouse or common-law partner file.
+If you share the custody of a child, you will get 50% of the provincial or
+territorial payment that you would have received if the child lived with you
+all of the time.
+If you use the direct deposit service for your CCB payments, the CRA will
+deposit your provincial and territorial payments into the same account.
+Note
+The “earned income” and “working income” used to calculate certain
+provincial and territorial benefits include income from employment,
+self-employment, training allowances, scholarships (if taxable), research
+grants, and disability payments received under the Canada Pension Plan
+and the Quebec Pension Plan.
+Alberta child and family benefit
+This benefit is a non-taxable amount paid to families that have children under
+18 years of age. The quarterly amounts are issued in August 2025,
+November 2025, February 2026, and May 2026.
+The benefit includes both a base component and a working component, with
+combined benefits to a maximum of $5,768.
+The maximum base component ranges from $1,499 to $3,746 depending on
+the number of children. You may be entitled to:
+■ $1,499 for the 1st qualified dependant
+■ $749 for the 2nd qualified dependant
+■ $749 for the 3rd qualified dependant
+■ $749 for the 4th qualified dependant
+canada.ca/taxes20
+The base component of the benefit is reduced if your adjusted family net
+income is more than $27,565.
+Families may be eligible for the working component once their family
+employment income exceeds $2,760. The maximum working component will
+range from $767 to $2,021 depending on the number of children. You may be
+entitled to:
+■ $767 for the 1st qualified dependant
+■ $698 for the 2nd qualified dependant
+■ $418 for the 3rd qualified dependant
+■ $138 for the 4th qualified dependant
+The working component of the benefit is reduced once your adjusted family net
+income is more than $46,191.
+This program is fully funded by the Province of Alberta.
+BC family benefit
+The BC family benefit is a non-taxable amount paid monthly to qualifying
+families with children under 18 years of age. The amount is combined with the
+CCB into a single monthly payment.
+You may be entitled to a maximum annual benefit of:
+■ $1,750 for the 1st child
+■ $1,100 for the 2nd child
+■ $900 for each additional child
+If the adjusted family net income is between $29,526 and $94,483, you may
+receive a reduced amount of at least:
+■ $775 for the 1st child
+■ $750 for the 2nd child
+■ $725 for each additional child
+If the adjusted family net income is more than $94,483, you may get part of
+the benefit.
+An additional annual supplement of up to $500 is provided to single-parent
+families.
+This program is fully funded by the Province of British Columbia.
+New Brunswick child tax benefit
+This benefit is a non-taxable amount paid monthly to qualifying families
+with children under 18 years of age. The New Brunswick working income
+supplement (NBWIS) is an additional benefit paid to qualifying families with

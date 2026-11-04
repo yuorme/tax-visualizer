@@ -16,21 +16,23 @@ salesTax: {rate: 0.05, label: "5% GST"}
 propertyTax: {rate: 0.0066, city: Calgary, estimated: true}   # carried over from 2026 (estimated); not checked against 2025 municipal rates
 childBenefit:
   name: Alberta Child and Family Benefit
-  program: alberta-child-family-benefit
+  program: alberta-child-family-benefit-by-child
   params:
     base: [1499, 2248, 2997, 3746]          # by number of children, 1 to 4+ (1,499 + 749 for each later child)
-    baseRate: [0.08, 0.12, 0.16, 0.20]
+    baseRate: [0.0805, 0.1207, 0.1609, 0.2011]
     baseThreshold: 27565
     working: [767, 1465, 1883, 2021]        # 767 + 698 + 418 + 138, cumulative
     workingRate: 0.15
     workingFloor: 2760
     workingThreshold: 46191
-    workingPhaseOut: 0.15
-  estimated: true   # base reduction rates are the 2026 file's approximation; CRA publishes only the start and maximums
+    workingPhaseOut: [0.034, 0.0649, 0.0834, 0.0895]
+    minAnnual: 10                      # positive combined annual entitlement below $10 is raised to $10
 # Gasoline stays at 13 cents throughout 2025; the March change in the historical table is locomotive fuel.
 fuelTax: {gasoline: 0.13}
 
 sources:
+  - {label: "Alberta Personal Income Tax Act, section 30.2(2) and (4) (child-count reduction rates and combined annual minimum)", url: "https://kings-printer.alberta.ca/documents/Acts/A30.pdf"}
+  - {label: "Alberta, Child and Family Benefit (July 2025–June 2026 maxima and working phase-in)", url: "https://www.alberta.ca/alberta-child-and-family-benefit"}
   - {label: "NWT Finance, Budget 2025-2026, B22 (provincial/territorial fuel tax rates at January 30, 2025; regional additions separate)", url: "https://www.fin.gov.nt.ca/sites/fin/files/resources/2025-26_budget_address_and_papers_final_0.pdf"}
   - {label: "Alberta Treasury Board and Finance, Historical fuel tax rates (September 22, 2026)", url: "https://open.alberta.ca/dataset/7769b631-d034-4690-9b3c-f9b1b00e2dfb/resource/30ef4caa-9321-4085-9a0e-0a606c2dacd2/download/tbf-tra-historical-fuel-tax-rates.pdf"}
   - {label: "Alberta, Personal income tax (2025 brackets)", url: "https://www.alberta.ca/personal-income-tax"}
