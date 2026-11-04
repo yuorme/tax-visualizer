@@ -22,7 +22,7 @@ While working:
   combined marginal rate per province at minimum, plus any published worked examples.
 - Capture golden results only for the year you're adding (`npm run golden:capture -- <year>`), after independent
   verification. Follow AGENTS.md's baseline policy for existing cases and add coverage for newly activated rules.
-  For golden changes, follow `docs/agents/coder.md`'s ledger and compact commit/PR summary requirements.
+  For golden changes, follow `docs/agents/coder.md`'s verification note and compact commit/PR requirements.
 - After each jurisdiction or other logical chunk, commit it as `WIP #<issue>: <what>` and push the branch
   (`git push -u origin <branch>`), so the work survives an interruption. Once a PR exists, run the same open-PR check
   as below before each push.
@@ -37,4 +37,4 @@ When done:
   it's still open: `[ "$(gh pr view <branch> --json state --jq .state)" = OPEN ]`.
 - Report in about 250 words (up to about 600 for a full data year). Lead with the result, pull request number,
   branch and commit hash, then values marked estimated, values you couldn't source, rule-shape changes and open
-  questions. Put each estimate's derivation in the data comments and commit message.
+  questions. Put each estimate's derivation in the data comments and verification note; keep commit messages short.

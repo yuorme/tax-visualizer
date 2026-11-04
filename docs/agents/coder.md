@@ -10,9 +10,10 @@ Before you start:
 While working:
 - Keep amounts, rates and thresholds in `data/years/`, never in code. Add sources; mark estimates `estimated: true`.
 - Follow AGENTS.md's golden-baseline policy: diagnose failures, preserve existing cases and add separate fixtures.
-- For changed golden cells, commit one complete before/after ledger under `docs/verification/`, with evidence
-  and affected cases. Commit messages and PR bodies give only counts of changed cells and cases by year and
-  province, reasons, a handful of before/after examples, rule-path-to-golden-case mapping and a ledger link.
+- For golden changes, the PR body gives changed cell and case counts by year and province, reasons, a few
+  before/after examples and rule-to-golden mapping. Identify cells combining two changes and explain how they
+  were computed independently of the engine. Commit a verification note with reasoning, sources and calculations;
+  never commit a cell-by-cell list anywhere. Keep commit messages short.
 - Add or update tests for what you change: reference tests for new data, unit tests for new engine programs.
 - For UI work, check the page at 375 px, 430 px and desktop width, in light and dark mode
   (`npm run compare -- origin/main` shows what changed in text and control state).
@@ -28,7 +29,7 @@ Before reporting, check:
 
 When done:
 - Run the validation required by AGENTS.md's Markdown-only or full-check path and make sure it passes.
-- Commit on your branch with a message that explains what changed and, for any result change, why. For a GitHub
+- Commit on your branch with a short message explaining what changed and, for result changes, why. For a GitHub
   issue, put `Closes #<issue>` on its own line before any trailers, or `Refs #<issue>` if the issue is only
   partly done.
 - Push your branch (`git push -u origin <branch>`) and open the pull request (`gh pr create`) unless told not to;
@@ -36,4 +37,4 @@ When done:
   it's still open: `[ "$(gh pr view <branch> --json state --jq .state)" = OPEN ]`.
 - Report in about 250 words (up to about 600 for engine or rule changes and multi-file refactors). Lead with the
   result, pull request number, branch and commit hash, then deviations from the task and open questions. Details
-  go in the commit message and pull request body.
+  go in the verification note and pull request body.

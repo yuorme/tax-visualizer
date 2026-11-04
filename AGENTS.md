@@ -67,9 +67,9 @@ and deployment for Markdown-only PRs and pushes. Independent review and human-me
   publication gets `estimated: true` and a comment saying how it was derived.
 - **Golden inputs, expected values, assertions and tolerances are locked:** never re-capture, delete, skip or weaken.
   Change only unavoidable cases for independently verified data/rule corrections or task-required behavior changes.
-  Preserve unrelated baselines; commit evidence, affected cases and a full before/after ledger in `docs/verification/`.
+  Preserve unrelated baselines; commit reasoning, sources and calculations in `docs/verification/` notes; no cell lists.
   Diagnose unexpected failures before changing expectations; intention is insufficient.
-- **Golden ledgers:** coder/reviewer role files define compact commit/PR summaries and verification of the full ledger.
+- **Golden changes:** coder/reviewer roles define PR summaries, independent diff checks and sample recalculations.
 - **New engine behavior needs separate golden cases and targeted correctness tests in the same PR.** Preserve baselines.
   Verify expectations against published examples or documented independent calculations; engine snapshots aren't proof.
   Review maps every changed rule path, including material boundaries, to golden cases.
