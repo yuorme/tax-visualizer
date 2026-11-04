@@ -14,6 +14,14 @@ brackets:
 basicPersonalAmount: 9626
 dividendTaxCredit: {eligible: 0.08, nonEligible: 0.007835}
 spouseAmount: {max: 9134, threshold: 0}
+# MB428-A lines 1–3, 9 and 11: ordinary bases and taper are not indexed.
+# Line 9 includes children turning 18; ordinary eligible-parent assumptions follow #145.
+familyTaxBenefit:
+  program: mb-family-tax-benefit
+  claimant: higher-net-income
+  # Interpretation from #145/#92: on equal net incomes elect the whole child claim minimizing household tax.
+  tie: household-minimum
+  params: {basic: 2065, dependant: 2065, child: 2752, reductionRate: 0.09, childThrough: 18}
 salesTax: {rate: 0.125, label: 5% GST + 7.5% average RST, estimated: true}
 propertyTax: {rate: 0.012789000000000002, city: Winnipeg, estimated: true}
 creditsUseRent: true
@@ -24,6 +32,8 @@ credits:
     params: {schoolTaxShare: 0.5323715693173822, schoolRebateRate: 0, educationCreditMax: 700, renterMax: 700, renterShare: 0.2}
     estimated: true
 sources:
+  - {label: "CRA, 2019 MB428-A (family benefit bases and individual net-income taper)", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5007-a/5007-a-19e.pdf}
+  - {label: "CRA, 2019 Manitoba guide (family benefit child eligibility, exclusions and higher-income spouse)", url: https://www.canada.ca/en/revenue-agency/services/forms-publications/tax-packages-years/archived-general-income-tax-benefit-package-2019/manitoba/5007-pc/information-residents-manitoba.html}
   - {label: "CRA, MB 428 for 2019", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5007-c/5007-c-19e.pdf}
   - {label: "CRA, MB 428 worksheet for 2019", url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5007-d/5007-d-19e.pdf}
   - {label: "CRA, GST/HST historical rates and provincial sales-tax rates", url: https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/charge-collect-which-rate/calculator.html}

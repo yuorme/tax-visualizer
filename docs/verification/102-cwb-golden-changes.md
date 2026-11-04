@@ -1,6 +1,6 @@
 # Issue 102: existing golden corrections
 
-Before values are from merged main `90122f4` (PR #171 included).
+Before values are from merged main `dfd124f` (PRs #171 and #177 included).
 
 Every changed leaf is listed below. Inputs, assertions, tolerances and unrelated values are preserved.
 Derivation and verification method: [CWB secondary cap](102-cwb-secondary-cap.md).
@@ -40,11 +40,11 @@ Scenario 156 is in `tests/golden/other-income-original.json`; all others are in 
 | 2021 | 10 | SK | netTotal | -8319.7075 | -8314.8325 |
 | 2021 | 10 | SK | avg | -0.1202 | -0.1201 |
 | 2021 | 10 | SK | credits.1.1 | 1108.05 | 1103.175 |
-| 2021 | 10 | MB | total | -2336.0762 | -2331.2012 |
+| 2021 | 10 | MB | total | -2814.8591 | -2809.9841 |
 | 2021 | 10 | MB | refund | 2969.15 | 2964.275 |
 | 2021 | 10 | MB | benefits | 12773.58 | 12768.705 |
-| 2021 | 10 | MB | netTotal | -5434.2582 | -5429.3832 |
-| 2021 | 10 | MB | avg | -0.0519 | -0.0518 |
+| 2021 | 10 | MB | netTotal | -5913.0411 | -5908.1661 |
+| 2021 | 10 | MB | avg | -0.0626 | -0.0624 |
 | 2021 | 10 | MB | credits.1.1 | 1108.05 | 1103.175 |
 | 2021 | 10 | NU | total | -4711.8665 | -4709.2665 |
 | 2021 | 10 | NU | refund | 2435.3 | 2432.7 |
@@ -105,7 +105,7 @@ Scenario 156 is in `tests/golden/other-income-original.json`; all others are in 
 | 2021 | 133 | AB | invTax | 19532.5867 | 19529.2117 |
 | 2021 | 133 | NT | invTax | 18120.3483 | 18116.9733 |
 | 2021 | 133 | SK | invTax | 15474.771 | 15471.396 |
-| 2021 | 133 | MB | invTax | 17928.0221 | 17924.6471 |
+| 2021 | 133 | MB | invTax | 18307.0778 | 18303.7028 |
 | 2021 | 133 | NU | invTax | 17622.555 | 17620.755 |
 | 2021 | 133 | ON | invTax | 18711.456 | 18708.081 |
 | 2021 | 133 | QC | invTax | 21591.87 | 21587.37 |
@@ -143,11 +143,11 @@ Scenario 156 is in `tests/golden/other-income-original.json`; all others are in 
 | 2022 | 10 | SK | netTotal | -8928.4999 | -8921.1874 |
 | 2022 | 10 | SK | avg | -0.1321 | -0.132 |
 | 2022 | 10 | SK | credits.1.1 | 1274.5 | 1267.1875 |
-| 2022 | 10 | MB | total | -2961.623 | -2954.3105 |
+| 2022 | 10 | MB | total | -3441.1713 | -3433.8588 |
 | 2022 | 10 | MB | refund | 3113.05 | 3105.7375 |
 | 2022 | 10 | MB | benefits | 13310.12 | 13302.8075 |
-| 2022 | 10 | MB | netTotal | -6117.9669 | -6110.6544 |
-| 2022 | 10 | MB | avg | -0.0658 | -0.0657 |
+| 2022 | 10 | MB | netTotal | -6597.5152 | -6590.2027 |
+| 2022 | 10 | MB | avg | -0.0765 | -0.0763 |
 | 2022 | 10 | MB | credits.1.1 | 1274.5 | 1267.1875 |
 | 2022 | 10 | NU | total | -5383.9156 | -5380.0156 |
 | 2022 | 10 | NU | refund | 2626.91 | 2623.01 |
@@ -208,7 +208,7 @@ Scenario 156 is in `tests/golden/other-income-original.json`; all others are in 
 | 2022 | 133 | AB | invTax | 19790.2875 | 19785.225 |
 | 2022 | 133 | NT | invTax | 18420.5988 | 18415.5363 |
 | 2022 | 133 | SK | invTax | 15857.1832 | 15852.1207 |
-| 2022 | 133 | MB | invTax | 18221.4922 | 18216.4297 |
+| 2022 | 133 | MB | invTax | 18565.2076 | 18560.1451 |
 | 2022 | 133 | ON | invTax | 19043.4248 | 19038.3623 |
 | 2022 | 133 | QC | invTax | 22016.8314 | 22010.0814 |
 | 2022 | 133 | NB | invTax | 19789.5511 | 19784.4886 |
@@ -245,11 +245,11 @@ Scenario 156 is in `tests/golden/other-income-original.json`; all others are in 
 | 2023 | 10 | SK | netTotal | -11260.3135 | -11250.5635 |
 | 2023 | 10 | SK | avg | -0.1819 | -0.1816 |
 | 2023 | 10 | SK | credits.1.1 | 1697.1 | 1687.35 |
-| 2023 | 10 | MB | total | -5541.4306 | -5531.6806 |
+| 2023 | 10 | MB | total | -6021.7444 | -6011.9944 |
 | 2023 | 10 | MB | refund | 4099.85 | 4090.1 |
 | 2023 | 10 | MB | benefits | 15332.655 | 15322.905 |
-| 2023 | 10 | MB | netTotal | -8773.8505 | -8764.1005 |
-| 2023 | 10 | MB | avg | -0.1231 | -0.1229 |
+| 2023 | 10 | MB | netTotal | -9254.1643 | -9244.4143 |
+| 2023 | 10 | MB | avg | -0.1338 | -0.1336 |
 | 2023 | 10 | MB | credits.1.1 | 1697.1 | 1687.35 |
 | 2023 | 10 | NU | total | -7468.7804 | -7463.5804 |
 | 2023 | 10 | NU | refund | 3735.59 | 3730.39 |
@@ -297,7 +297,7 @@ Scenario 156 is in `tests/golden/other-income-original.json`; all others are in 
 | 2023 | 39 | YT | invTax | 49503.1598 | 49485.9098 |
 | 2023 | 39 | NT | invTax | 47158.3773 | 47141.1273 |
 | 2023 | 39 | SK | invTax | 52226.0893 | 52208.8393 |
-| 2023 | 39 | MB | invTax | 57335.1828 | 57317.9328 |
+| 2023 | 39 | MB | invTax | 58160.8266 | 58143.5766 |
 | 2023 | 39 | ON | invTax | 55689.7608 | 55672.5108 |
 | 2023 | 39 | QC | invTax | 64246.606 | 64223.606 |
 | 2023 | 39 | NB | invTax | 53304.2565 | 53287.0065 |
@@ -346,7 +346,7 @@ Scenario 156 is in `tests/golden/other-income-original.json`; all others are in 
 | 2023 | 133 | AB | invTax | 20286.043 | 20279.293 |
 | 2023 | 133 | NT | invTax | 18455.3433 | 18448.5933 |
 | 2023 | 133 | SK | invTax | 15989.1157 | 15982.3657 |
-| 2023 | 133 | MB | invTax | 18160.314 | 18153.564 |
+| 2023 | 133 | MB | invTax | 18052.7352 | 18045.9852 |
 | 2023 | 133 | ON | invTax | 19158.4335 | 19151.6835 |
 | 2023 | 133 | QC | invTax | 21947.6387 | 21938.6387 |
 | 2023 | 133 | NB | invTax | 19867.3675 | 19860.6175 |
@@ -383,11 +383,11 @@ Scenario 156 is in `tests/golden/other-income-original.json`; all others are in 
 | 2024 | 10 | SK | netTotal | -13019.2144 | -13009.4644 |
 | 2024 | 10 | SK | avg | -0.2252 | -0.225 |
 | 2024 | 10 | SK | credits.1.1 | 2020.95 | 2011.2 |
-| 2024 | 10 | MB | total | -7195.8935 | -7186.1435 |
+| 2024 | 10 | MB | total | -7676.2073 | -7666.4573 |
 | 2024 | 10 | MB | refund | 4733.15 | 4723.4 |
 | 2024 | 10 | MB | benefits | 16777.22 | 16767.47 |
-| 2024 | 10 | MB | netTotal | -10513.1145 | -10503.3645 |
-| 2024 | 10 | MB | avg | -0.1599 | -0.1597 |
+| 2024 | 10 | MB | netTotal | -10993.4283 | -10983.6783 |
+| 2024 | 10 | MB | avg | -0.1706 | -0.1704 |
 | 2024 | 10 | MB | credits.1.1 | 2020.95 | 2011.2 |
 | 2024 | 10 | ON | total | -11216.8865 | -11207.1365 |
 | 2024 | 10 | ON | refund | 5676.61 | 5666.86 |
@@ -500,13 +500,13 @@ Scenario 156 is in `tests/golden/other-income-original.json`; all others are in 
 | 2024 | 70 | SK | margBy.nd | 0.7101 | 0.5376 |
 | 2024 | 70 | SK | margBy.fd | 0.8675 | 0.7175 |
 | 2024 | 70 | SK | credits.1.1 | 246.45 | 229.2 |
-| 2024 | 70 | MB | total | 1371.7509 | 1389.0009 |
+| 2024 | 70 | MB | total | 1006.9107 | 1024.1607 |
 | 2024 | 70 | MB | refund | 2117.15 | 2099.9 |
 | 2024 | 70 | MB | benefits | 13106.17 | 13088.92 |
-| 2024 | 70 | MB | netTotal | -1945.4701 | -1928.2201 |
-| 2024 | 70 | MB | marg | 0.4063 | 0.4078 |
-| 2024 | 70 | MB | avg | 0.0221 | 0.0224 |
-| 2024 | 70 | MB | margBy.ord | 0.4063 | 0.4078 |
+| 2024 | 70 | MB | netTotal | -2310.3103 | -2293.0603 |
+| 2024 | 70 | MB | marg | 0.4063 | 0.4077 |
+| 2024 | 70 | MB | avg | 0.0162 | 0.0165 |
+| 2024 | 70 | MB | margBy.ord | 0.4063 | 0.4077 |
 | 2024 | 70 | MB | margBy.cg | 0.2425 | 0.1675 |
 | 2024 | 70 | MB | margBy.ed | 0.6693 | 0.4968 |
 | 2024 | 70 | MB | margBy.nd | 0.5578 | 0.3853 |
@@ -588,7 +588,7 @@ Scenario 156 is in `tests/golden/other-income-original.json`; all others are in 
 | 2024 | 133 | YT | invTax | 18451.9295 | 18445.1795 |
 | 2024 | 133 | NT | invTax | 18480.4863 | 18473.7363 |
 | 2024 | 133 | SK | invTax | 16075.557 | 16068.807 |
-| 2024 | 133 | MB | invTax | 18048.693 | 18041.943 |
+| 2024 | 133 | MB | invTax | 17855.3514 | 17848.6014 |
 | 2024 | 133 | ON | invTax | 19244.8935 | 19238.1435 |
 | 2024 | 133 | QC | invTax | 22023.8988 | 22014.8988 |
 | 2024 | 133 | NB | invTax | 19910.7695 | 19904.0195 |
@@ -1319,3 +1319,51 @@ Case 133 has no CWB at its actual income. Removing investments leaves net income
 the corrected exemption is $7,955 instead of $8,000. Counterfactual CWB falls $6.75, so `invTax` falls $6.75
 on top of main's $0.0992 NWT investment-tax correction. Final `invTax` is 18364.0873 in 2025 and
 18283.1843 in 2026. Every exact stored before/after value appears in the ledger above.
+
+## Reconciliation after PR #177
+
+Four golden files conflicted: `2021.json`, `2022.json`, `2023.json` and `2024.json`.
+The same 1,259 CWB-related cells remain changed. This merge revises 22 MB before/after rows across ten
+year/scenario results; the prior NT reconciliation and every other ledger row are unchanged.
+All Manitoba tax, personal-credit and other values from #177 are retained, with the CWB correction on top.
+No fixture inputs, assertions or tolerances changed, and no capture command was used.
+
+| Years | Case | Interacting fields under MB | Cells |
+| --- | --- | --- | --- |
+| 2021–2024 | 10 | `total`, `netTotal`, `avg` | 12 |
+| 2021–2024 | 133 | `invTax` | 4 |
+| 2023 | 39 | `invTax` | 1 |
+| 2024 | 70 | `total`, `netTotal`, `avg`, `marg`, `margBy.ord` | 5 |
+
+Before patching each leaf, main's engine reproduced its locked snapshot exactly. A separate Schedule 6
+worksheet computed CWB. The independent `tests/mb-family-forms.ts` worksheet checked each person's net
+income, MB428-A base, applied family credit, dividend credit, federal/provincial FTC and provincial tax,
+including every $100 marginal-income and zero-investment counterfactual. It imports no engine functions
+or YAML. The combined snapshot matched the independently checked component calculation exactly.
+
+Component changes below are relative to omission of the Manitoba family benefit and the old CWB cap.
+For case 10, tax and CWB fall independently, so net tax changes by `tax change - CWB change`.
+Its applied MB credit is the higher earner's positive MB428-A base times 10.8%; the other adult has no
+remaining tax capacity. For investment cases, apply that equation to both actual and no-investment returns.
+
+| Years | Case | MB tax change at actual income | MB tax change without investments | CWB change relevant to interaction |
+| --- | --- | --- | --- | --- |
+| 2021 | 10 | -478.7829 | same | -4.875 at actual income |
+| 2022 | 10 | -479.54835 | same | -7.3125 at actual income |
+| 2023, 2024 | 10 | -480.3138 | same | -9.75 at actual income |
+| 2021 | 133 | -1541.3544 | -1920.4101 | -3.375 without investments |
+| 2022 | 133 | -1542.5208 | -1886.2362 | -5.0625 without investments |
+| 2023 | 133 | -1453.977 | -1346.3982 | -6.75 without investments |
+| 2024 | 133 | -1453.977 | -1260.6354 | -6.75 without investments |
+| 2023 | 39 | 0 | -825.6438 | -17.25 without investments |
+| 2024 | 70 | -364.8402 | same | -17.25 at actual income |
+
+For example, 2023 case 39 gains $825.6438 in investment tax from the restored Manitoba benefit on its
+no-investment return, then loses $17.25 from the CWB correction: `57335.1828 + 825.6438 - 17.25 = 58143.5766`.
+2024 case 70's MB428-A base is `2065 + 2 * 2752 - .09 * 46565 = 3378.15`, yielding $364.8402 credit.
+Its total becomes `1371.7509 - 364.8402 + 17.25 = 1024.1607` at stored four-decimal precision.
+
+The two marginal cells for 2024 case 70 also move across a binary rounding boundary. The exact-arithmetic
+rate remains 0.40775; subtracting the combined unrounded totals gives 0.40774999999999634, stored as 0.4077
+instead of the pre-merge 0.4078. Both independent component recomposition and the merged engine produce
+this result under the existing snapshot rounding; no rounding rule or tolerance was changed.

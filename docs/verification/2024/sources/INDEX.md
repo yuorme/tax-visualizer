@@ -157,3 +157,6 @@ Their headers disclose retrieval limits; a navigation-shell hash is not a hash o
 |---|---|---|---|---|
 | [carbon-regional-nt-report](carbon-regional-nt-report.txt) | NWT CARBON TAX REPORT | https://www.fin.gov.nt.ca/sites/fin/files/final_2023-2024_nwt_carbon_tax_report.pdf | 2026-11-02 | d1f1b6930c7448e914e06cfd3f4cf092144f3af5fef094b3aa724e61af6a8aa2 |
 | [carbon-regional-nu-rebate](carbon-regional-nu-rebate.txt) | Nunavut Carbon Credit Payments in 2024-25 | https://www.gov.nu.ca/en/newsroom/nunavut-carbon-credit-payments-2024-25-2024-07-08 | 2026-11-02 | manual; unavailable |
+| [mb-family-benefit](mb-family-benefit.txt) | CRA 2024 MB428-A Manitoba Family Tax Benefit | https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5007-a/5007-a-24e.pdf | 2026-11-04 | `33dc1aadcc54aa2e57aa3ea0d9a82daf84d7a422286df981806d33c1f3556136` |
+| [mb-guide](mb-guide.txt) | CRA 2024 Manitoba guide | https://www.canada.ca/en/revenue-agency/services/forms-publications/tax-packages-years/archived-general-income-tax-benefit-package-2024/manitoba/5007-pc.html | 2026-11-04 | `5019d710a1c7ef20eb0336b38afd189f42dfa04c5994f82133582fa61b696606` |
+| [mb428](mb428.txt) | CRA 2024 MB428 Manitoba Tax | https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5007-c/5007-c-24e.pdf | 2026-11-04 | `58f76fd7b05e33af205db68d3f0b3e1d09c494181cd54ee502d35000a5133473` |

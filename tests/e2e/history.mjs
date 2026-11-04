@@ -13,7 +13,7 @@ const { ChildcareModel } = await tsImport("../../src/ui/childcare.ts", import.me
 export async function checkHistoryCoverageNotes(p) {
   const provincialNotes = [
     ["Quebec's Health Services Fund contribution", ["QC"]],
-    ["Manitoba's family tax benefit", ["MB"]],
+    ["Manitoba's family tax benefit", []],
     ["The provincial childcare tax credit", ["ON", "QC", "NL"]],
   ];
   const codes = loadYear(Math.max(...listYears())).provinces.map(province => province.code);
