@@ -2,7 +2,15 @@
 import type { Federal, LowIncomeProgram, Province } from "../data/schema.ts";
 import { phased, walk } from "./brackets.ts";
 import { healthServicesFund, healthServicesIncome } from "./health-services-fund.ts";
-import { employeeRetirementPayrollOf, healthPremium, netIncomeParts, netOf, payrollOf, rrspRoom } from "./payroll.ts";
+import {
+  employeeRetirementPayrollOf,
+  healthPremium,
+  netIncomeParts,
+  netOf,
+  payrollOf,
+  rrspRoom,
+  workerDeductionOf,
+} from "./payroll.ts";
 import type { Ctx, Extra, Person } from "./types.ts";
 
 export interface Settings {
@@ -45,9 +53,7 @@ export function personTax(fed: Federal, p: Province, x: Person, sp: Extra, ctx: 
   const pay = payrollOf(fed, p, x);
   const retirement = employeeRetirementPayrollOf(fed, p, x)?.retirement;
   const ti = netOf(fed, p, x, ctx.childcareDeduction); // taxable income (federal)
-  const workerDed = p.quebec
-    ? Math.min(p.quebec.workerDeduction.max, Math.max(0, x.ord) * p.quebec.workerDeduction.rate)
-    : 0;
+  const workerDed = workerDeductionOf(p, x);
   const provincialNet = qc ? netOf(fed, p, x) : ti; // Quebec does not deduct federal childcare expenses
   const tiP = Math.max(0, provincialNet - workerDed); // Quebec allows an extra deduction for workers
   const cash = x.ord + (x.oth ?? 0) + x.cg + x.ed + x.nd + x.fd;

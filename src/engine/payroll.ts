@@ -229,6 +229,12 @@ export function netOf(fed: Federal, p: Province | null, x: Person, childcareDedu
   return Math.max(0, n.ord + (n.oth ?? 0) + n.cg + n.ed + n.nd + n.fd - n.ded - n.enh);
 }
 
+/** Quebec TP-1 line 201: employment-only deduction, included in line 275 net income. */
+export function workerDeductionOf(p: Province, x: Person): number {
+  const rule = p.quebec?.workerDeduction;
+  return rule ? Math.min(rule.max, Math.max(0, x.ord) * rule.rate) : 0;
+}
+
 /** RRSP deduction room: a share of earned income up to the year's dollar limit, to the nearest dollar. Current
  *  employment income stands in for last year's earned income. Other income is left out: interest, pensions and
  *  RRSP or RRIF withdrawals aren't earned income (net rental income is, but it isn't entered separately). */
