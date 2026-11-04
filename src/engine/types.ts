@@ -53,6 +53,9 @@ export interface Driving {
 export type Credit = [name: string, amount: number];
 
 export interface Ctx {
+  childAmountBase?: number; // initial child claim, independent of Ontario's higher-net-income child reduction
+  childTransferBase?: number; // unused SK(S2)/NU(S2) child base received from the spouse
+  lowIncomeReduction?: number; // resolved family reduction, in tax dollars (including any transfer)
   childcareDeduction?: number; // calculated federal claim; not a user-entered generic deduction
   kids?: number;
   u6?: number;

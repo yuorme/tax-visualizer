@@ -34,6 +34,10 @@ line-by-line tax return. Simpler and slightly less precise is acceptable where i
   reductions in Newfoundland and Labrador, New Brunswick, PEI and Nova Scotia, Saskatchewan's child amount,
   Nova Scotia's and Nunavut's credits for children under 6, Quebec abatement, Quebec deduction for workers and
   amount for a person living alone.
+- For 2025–2026, each child amount and family reduction uses its own spouse claimant rule. SK and NU transfer
+  unused child bases; NS does not. NB/NL/PE transfer unused family reductions; NS does not. Eligible tied
+  child claimants and discretionary reduction elections minimize household tax. Earlier years keep their
+  historical claimant calculation. See [claimant rules](verification/92-claimant-rules.md).
 
 **Payroll (employee share)**
 - CPP/QPP base and enhanced contributions, EI or EI plus QPIP, Ontario Health Premium, the 2% payroll tax in the
@@ -163,6 +167,9 @@ For now:
 Marked `estimated: true` in the data files where they appear:
 - Canada Workers Benefit 2026 amounts (2025 figures indexed by 2% until CRA publishes them).
 - Ontario CARE 2026: continuing statutory formula, pending the 2026 return form (the budget confirms the program).
+- SK/NS/NU child claimant and transfer rules and NS/NB/NL/PE family reduction elections/transfers: provisional
+  continuation of verified 2025 return rules, pending 2026 CRA forms. The cached 2026 material indicates no change;
+  these are not verified 2026 return rules. Claimant data is marked `estimated: true` separately from amounts.
 - Saskatchewan low-income tax credit reduction rate (worked out from the published start and end points).
 - Manitoba renters credit taken at its $625 maximum.
 - NWT and Newfoundland and Labrador child benefits: straight-line taper between published start and end incomes.

@@ -8,6 +8,8 @@ brackets:
 basicPersonalAmount: 19491      # raised by $500 for 2025 (Form SK428)
 dividendTaxCredit: {eligible: 0.11, nonEligible: 0.02519}
 spouseAmount: {max: 19491, threshold: 1949}     # base amount 21,440 on Form SK428, maximum 19,491
+claimants:
+  childAmount: {claimant: lower-taxable-income, transfer: sk-s2}
 childAmount: {perChild: 7704, ages: all}
 salesTax: {rate: 0.11, label: "5% GST + 6% PST"}
 propertyTax: {rate: 0.0134, city: Saskatoon, estimated: true}   # carried over from 2026 (estimated); not checked against 2025 municipal rates
@@ -20,6 +22,9 @@ credits:
 fuelTax: {gasoline: 0.15}   # $ per litre
 
 sources:
+  - {label: "CRA SK 2025 guide, claimant and transfer rules", url: "https://www.canada.ca/en/revenue-agency/services/forms-publications/tax-packages-years/general-income-tax-benefit-package/saskatchewan/5008-pc.html"}
+  - {label: "CRA TD1SK 2025, child claimant and eligible-dependant exclusion (line 8), transfer (line 11)", url: "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/td1sk/td1sk-25e.pdf"}
+  - {label: "CRA SK(S2) 2025, shared unused-base calculation, lines 6–13", url: "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5008-s2/5008-s2-25e.pdf"}
   - {label: "NWT Finance, Budget 2025-2026, B22 (provincial/territorial fuel tax rates at January 30, 2025; regional additions separate)", url: "https://www.fin.gov.nt.ca/sites/fin/files/resources/2025-26_budget_address_and_papers_final_0.pdf"}
   - {label: "Saskatchewan, Fuel tax licences (15¢ a litre on gasoline; archived October 12, 2025)", url: "http://web.archive.org/web/20251012170910/https://www.saskatchewan.ca/business/taxes-licensing-and-reporting/provincial-taxes-policies-and-bulletins/fuel-tax/fuel-tax-licences"}
   - {label: "CRA, Form SK428 for 2025 (basic, spouse and child amounts)", url: "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5008-c/5008-c-25e.pdf"}

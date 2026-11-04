@@ -60,6 +60,24 @@ function addUp(list: PersonResult[]) {
   return s;
 }
 
+/** SK(S2)/NU(S2) lines 6–13, for the currently modelled credits. The donor must first absorb tax less BPA and
+ *  contribution credits, BEFORE dividends, foreign credits or spouse amounts. #17 must put child and senior
+ *  bases in ONE pool here, deduct this capacity once, then allocate the balance; never add a second transfer. */
+export function unusedSpouseTransferBase(donor: PersonResult, pool: number, creditRate: number): number {
+  const capacity = Math.max(0, (donor.pr.tax - donor.pBpaFull - donor.pEmpFull) / creditRate);
+  return Math.max(0, pool - capacity);
+}
+
+/** Compare final household tax, retaining the first legal election on a tie within floating-point roundoff. */
+function bestElection(candidates: PersonResult[][]): PersonResult[] {
+  return candidates.reduce((first, second) => {
+    const firstTotal = addUp(first).total;
+    const secondTotal = addUp(second).total;
+    const roundoff = Number.EPSILON * Math.max(1, Math.abs(firstTotal), Math.abs(secondTotal)) * 8;
+    return secondTotal < firstTotal - roundoff ? second : first;
+  });
+}
+
 /** Household sums the page shows: the Ontario surtax, the provincial tax reductions (Ontario tax reduction, LIFT
  *  credit, BC tax reduction), the foreign tax credit, and payroll by kind (cpp is base plus enhanced CPP or QPP). */
 function householdBreakdown(list: PersonResult[]) {
@@ -78,8 +96,8 @@ function householdBreakdown(list: PersonResult[]) {
 }
 
 /** Income tax, payroll, child benefits and refundable credits for the household in province p.
- *  With two spouses, the higher earner claims the spouse amount and the children; a single parent claims the
- *  eligible dependant amount. Child benefits use family net income. */
+ *  The higher-net-income spouse is the supporting-spouse proxy and claims Ontario's child reduction.
+ *  Verified programs resolve their own claims separately. Child benefits use family net income. */
 export function household(y: YearData, p: Province, hh: Household, peopleIn: Person[] = hh.people) {
   const fed = y.federal,
     qc = p.system === "quebec";
@@ -169,6 +187,55 @@ export function household(y: YearData, p: Province, hh: Household, peopleIn: Per
       claim = { c: 0, o: null, fAmt, pAmt, qc, kind: kids > 0 ? "dependant" : "alone", saved: r0.fSp * r0.k + r0.pSp };
   } else {
     list = ppl.map((x, i) => personTax(fed, p, x, NOSP, ctx(i), s));
+  }
+  // Keep the legacy path untouched unless the year's data opts into a verified program rule.
+  const childRule = p.claimants?.childAmount;
+  const lowRule = p.claimants?.lowIncomeReduction;
+  if (childRule || lowRule) {
+    const extras = list.map(r => ({ f: r.fSpFull, p: r.pSpFull }));
+    const calculate = (i: number, context: Ctx) => personTax(fed, p, ppl[i], extras[i], context, s);
+    let childClaimants = [c];
+    if (childRule && p.childAmount && couple) {
+      const incomes = childRule.claimant === "lower-taxable-income" ? list.map(r => r.tiP) : nets;
+      // Grossing up dividends can differ from an equal dollar income by a few binary floating-point bits.
+      const tieTolerance = Number.EPSILON * Math.max(1, ...incomes) * 8;
+      const tied = Math.abs(incomes[0] - incomes[1]) <= tieTolerance;
+      childClaimants = tied ? [0, 1] : [incomes[0] < incomes[1] ? 0 : 1];
+    }
+    list = bestElection(
+      childClaimants.map(childClaimant => {
+        const contexts = ppl.map((_, i) => ctx(i));
+        if (childRule && p.childAmount && couple) {
+          const base = p.childAmount.perChild * (p.childAmount.ages === "all" ? kids : under6);
+          contexts.forEach((context, i) => {
+            context.childAmountBase = i === childClaimant ? base : 0;
+          });
+          if (childRule.transfer !== "none") {
+            const donor = calculate(childClaimant, contexts[childClaimant]);
+            contexts[1 - childClaimant].childTransferBase = unusedSpouseTransferBase(donor, base, prr);
+          }
+        }
+        if (!lowRule || !couple) return contexts.map((context, i) => calculate(i, context));
+        // A child election on tied income can change the best family reduction election. Evaluate both
+        // together, after FTC, rather than picking the child claimant using their standalone tax capacity.
+        return bestElection(
+          [c, o].map(initial => {
+            const allocated = contexts.map((context, i) => ({
+              ...context,
+              claims: i === initial,
+              kidsAll: i === initial ? kids : 0,
+            }));
+            const results = allocated.map((context, i) => calculate(i, context));
+            if (lowRule.transferUnused) {
+              allocated[1 - initial].lowIncomeReduction = results[initial].breakdown.lowIncomeReduction.unused;
+              results[1 - initial] = calculate(1 - initial, allocated[1 - initial]);
+            }
+            return results;
+          }),
+        );
+      }),
+    );
+    if (claim) claim.saved = list[claim.c].fSp * list[claim.c].k + list[claim.provincialClaimant ?? claim.c].pSp;
   }
   const totals = addUp(list);
   const householdPremium = householdPremiumOf(p, nets, couple, kids, childcare.claims);

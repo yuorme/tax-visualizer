@@ -14,6 +14,9 @@ basicPersonalAmount: 13094
 basicPersonalAmountChange: {change: April 2026 budget increase, effective: "January 1, 2026"}
 dividendTaxCredit: {eligible: 0.063, nonEligible: 0.032}
 spouseAmount: {max: 9142, threshold: 915}
+# Provisional continuation of the verified 2025 return rules pending 2026 CRA forms.
+claimants:
+  lowIncomeReduction: {claimant: minimum-household-tax, transferUnused: true, estimated: true}
 lowIncomeReduction:
   program: nl-low-income-reduction
   params: {individual: 842, family: 563, rate: 0.16, thresholdIndividual: 24191, thresholdFamily: 40905}
@@ -47,6 +50,8 @@ childcareCredit:
   # NL428 line 58320 equals federal line 21400, converted at the first provincial bracket rate.
   params: {}
 sources:
+  - {label: "CRA NL 2025 guide, claimant and transfer rules", url: "https://www.canada.ca/en/revenue-agency/services/forms-publications/tax-packages-years/general-income-tax-benefit-package/newfoundland-labrador/5001-pc.html"}
+  - {label: "CRA NL428 2025, reduction order and unused balance", url: "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5001-c/5001-c-25e.pdf"}
   - {label: "CRA Newfoundland and Labrador guide, line 58320 equals federal line 21400", url: "https://www.canada.ca/en/revenue-agency/services/forms-publications/tax-packages-years/general-income-tax-benefit-package/newfoundland-labrador/5001-pc.html"}
   - {label: "Government of Newfoundland and Labrador, child care amount and 2026 personal tax rates", url: "https://www.gov.nl.ca/fin/tax-programs-incentives/personal/personalincometax/"}
   - {label: "SNL 2026 c. 14, An Act to Amend the Income Tax Act, 2000 (basic personal amount $13,094 from January 1, 2026)", url: "https://www.assembly.nl.ca/legislation/sr/annualstatutes/2026/2614.chp.htm"}

@@ -10,6 +10,9 @@ brackets:
 basicPersonalAmount: 11744      # a flat amount for everyone in 2025 (Form NS428)
 dividendTaxCredit: {eligible: 0.0885, nonEligible: 0.015}
 spouseAmount: {max: 11744, threshold: 874}     # Form NS428: base 12,618 less the greater of 874 and the spouse's income
+claimants:
+  childAmount: {claimant: lower-net-income, transfer: none}
+  lowIncomeReduction: {claimant: minimum-household-tax, transferUnused: false}
 childAmount: {perChild: 1200, ages: under6}    # $100 a month
 lowIncomeReduction:
   program: family-low-income-reduction
@@ -28,6 +31,8 @@ credits:
 fuelTax: {gasoline: 0.155}   # $ per litre; the UARB price schedules show 15.5¢ on January 15, April 1 and September 12, 2025
 
 sources:
+  - {label: "CRA NS 2025 guide, claimant and transfer rules", url: "https://www.canada.ca/en/revenue-agency/services/forms-publications/tax-packages-years/general-income-tax-benefit-package/nova-scotia/5003-pc.html"}
+  - {label: "CRA NS(S2) 2025, transferable amounts exclude the child amount", url: "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5003-s2/5003-s2-25e.pdf"}
   - {label: "NWT Finance, Budget 2025-2026, B22 (provincial/territorial fuel tax rates at January 30, 2025; regional additions separate)", url: "https://www.fin.gov.nt.ca/sites/fin/files/resources/2025-26_budget_address_and_papers_final_0.pdf"}
   - {label: "Nova Scotia Utility and Review Board, Petroleum price schedule effective January 15, 2025", url: "https://nsuarb.novascotia.ca/sites/default/files/gasprice_251.pdf"}
   - {label: "Nova Scotia Utility and Review Board, Petroleum price schedule effective April 1, 2025", url: "https://nserbt.ca/sites/default/files/gasprice_263.pdf"}

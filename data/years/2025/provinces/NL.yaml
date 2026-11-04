@@ -13,6 +13,8 @@ brackets:
 basicPersonalAmount: 11067
 dividendTaxCredit: {eligible: 0.063, nonEligible: 0.032}
 spouseAmount: {max: 9043, threshold: 905}     # base amount 9,948 on Form NL428, maximum 9,043
+claimants:
+  lowIncomeReduction: {claimant: minimum-household-tax, transferUnused: true}
 lowIncomeReduction:
   program: nl-low-income-reduction
   # Form NL428: basic $997, spouse or eligible dependant $557 each, reduced by 16% of family income over
@@ -38,6 +40,7 @@ childcareCredit:
 fuelTax: {gasoline: 0.075}
 
 sources:
+  - {label: "CRA NL 2025 guide, claimant and transfer rules", url: "https://www.canada.ca/en/revenue-agency/services/forms-publications/tax-packages-years/general-income-tax-benefit-package/newfoundland-labrador/5001-pc.html"}
   - {label: "NWT Finance, Budget 2025-2026, B22 (provincial/territorial fuel tax rates at January 30, 2025; regional additions separate)", url: "https://www.fin.gov.nt.ca/sites/fin/files/resources/2025-26_budget_address_and_papers_final_0.pdf"}
   - {label: "Government of Newfoundland and Labrador, Provincial Government Continues Tax Reduction on Gasoline and Diesel (March 3, 2025)", url: "https://www.gov.nl.ca/releases/2025/fin/0303n06/"}
   - {label: "CRA Newfoundland and Labrador guide, line 58320 equals federal line 21400", url: "https://www.canada.ca/en/revenue-agency/services/forms-publications/tax-packages-years/general-income-tax-benefit-package/newfoundland-labrador/5001-pc.html"}

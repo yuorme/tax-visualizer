@@ -10,6 +10,8 @@ brackets:
 basicPersonalAmount: 19274
 dividendTaxCredit: {eligible: 0.0551, nonEligible: 0.0261}
 spouseAmount: {max: 19274, threshold: 0}
+claimants:
+  childAmount: {claimant: lower-net-income, transfer: nu-s2}
 childAmount: {perChild: 1200, ages: under6}
 payroll: {employeeTax: 0.02}
 salesTax: {rate: 0.05, label: "5% GST"}
@@ -23,6 +25,8 @@ childBenefit:
 fuelTax: {gasoline: 0.064}   # NWT Budget 2025-2026, B22; Nunavut gasoline 6.4 cents per litre
 
 sources:
+  - {label: "CRA NU 2025 guide, claimant and transfer rules", url: "https://www.canada.ca/en/revenue-agency/services/forms-publications/tax-packages-years/general-income-tax-benefit-package/nunavut/5014-pc.html"}
+  - {label: "CRA NU(S2) 2025, shared unused-base calculation, lines 6–13", url: "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5014-s2/5014-s2-25e.pdf"}
   - {label: "NWT Finance, Budget 2025-2026, B22 (provincial/territorial fuel tax rates at January 30, 2025; regional additions separate)", url: "https://www.fin.gov.nt.ca/sites/fin/files/resources/2025-26_budget_address_and_papers_final_0.pdf"}
   - {label: "CRA, Form NU428 for 2025 (basic and spouse amounts, children under 6)", url: "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5014-c/5014-c-25e.pdf"}
   - {label: "CRA, 2025 tax rates and income brackets", url: "https://www.canada.ca/en/revenue-agency/services/tax/individuals/tax-rates-brackets/last-year.html"}
