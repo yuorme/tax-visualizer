@@ -20,7 +20,8 @@ As orchestrator, follow `docs/agents/orchestrator.md`. Create and lock the workt
 and start Codex with a Bash call that uses `run_in_background`, so you're notified on exit and never poll:
 `fnm exec --using=26 codex exec --approve-for-me -m <id> -c model_reasoning_effort='"<level>"'
 -c sandbox_workspace_write.network_access=true -C <worktree> -o <scratchpad>/<name>.out - < <scratchpad>/<name>.md
-> <scratchpad>/<name>.log 2>&1`, with the model id and effort from the tier table. With network on, Codex runs
+> <scratchpad>/<name>.log 2>&1`, resolving Sol/Astra via AGENTS.md's mapping and taking effort from its table.
+With network on, Codex runs
 `npm ci`, `gh`, `git push` and `fetch-source` itself, and gets `git commit` and browser commands through escalation
 (tested November 2026). So its brief says to do its own git, pull request and verdict steps; don't do them for it.
 Read only `<name>.out`; `grep -m1 'session id' <name>.log` and `grep -A1 'tokens used' <name>.log` give the rest.

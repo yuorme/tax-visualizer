@@ -2,9 +2,9 @@
 name: reviewer
 description: >-
   Independent review of a finished branch; runs checks and reports findings without editing tracked files.
-  Use for Claude review assignments in AGENTS.md's tier table or its outage fallbacks; Normal defaults to Codex.
+  Use when AGENTS.md's outage rules assign a review to Claude; Data and Normal default to Codex Astra.
 tools: Read, Grep, Glob, Bash, WebFetch
-model: sonnet
+model: opus
 effort: high
 maxTurns: 60
 isolation: worktree

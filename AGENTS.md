@@ -102,15 +102,15 @@ is split into stacked branches (engine first), or goes to whoever owns most of i
 
 ### Models and effort
 The orchestrator classes each issue, sets the model and effort from this table on every dispatch, and records both
-in the brief; frontmatter and tool defaults are only fallbacks. This is the only place model ids are written. Tiers:
-Standard is `sonnet` or `gpt-6.1-sol`, Strong is `opus` or `gpt-6-astra`.
+in the brief; frontmatter and tool defaults are only fallbacks. Resolve Codex names using this sole ID mapping:
+Standard: Claude `sonnet`/Sol; Strong: Claude `opus`/Astra. `codex -m` IDs: Sol=`gpt-6.1-sol`, Astra=`gpt-6-astra`.
 
 | Class | Examples | Coder | Reviewer |
 | --- | --- | --- | --- |
-| Simple | mechanical work, Markdown, one-area fixes, small UI tweaks | Codex `gpt-6.1-sol` or `gpt-6-astra` | Codex `gpt-6-astra` |
-| Data | a year's or a program's figures | Codex `gpt-6.1-sol` | Claude `sonnet` or Codex `gpt-6-astra` |
-| Normal | engine rules, schema, scripts, tests, ordinary UI | Codex `gpt-6-astra` | Codex `gpt-6-astra` |
-| Complex | complicated UI changes, engine refactors | Claude `opus` | Codex `gpt-6-astra` |
+| Simple | mechanical work, Markdown, one-area fixes, small UI tweaks | Codex Sol or Astra | Codex Astra |
+| Data | a year's or a program's figures | Codex Sol | Codex Astra |
+| Normal | engine rules, schema, scripts, tests, ordinary UI | Codex Astra | Codex Astra |
+| Complex | complicated UI changes, engine refactors | Claude `opus` | Codex Astra |
 
 Use Claude `opus` only for Complex work and the outage fallbacks below. Effort is `high`, also the cap for coders
 and reviewers; `medium` only for Markdown-only or mechanical work (renames, dependency bumps, lint fixes).
