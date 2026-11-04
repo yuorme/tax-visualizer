@@ -62,20 +62,20 @@ and deployment for Markdown-only PRs and pushes. Independent review and human-me
 
 ## Rules that keep the numbers trustworthy
 - **Numbers live in data, formulas in code.** No amounts, rates or thresholds in `src/engine/` or `src/ui/`.
-  Read them from the year's data. When a rule changes shape, add a new `program` id; don't add year checks
-  inside an existing formula.
+  Read the year's data; rule-shape changes need a new `program` id, never year checks in an existing formula.
 - **Every data value is sourced.** Keep `sources` lists current. Anything not taken directly from an official
   publication gets `estimated: true` and a comment saying how it was derived.
-- **Existing golden tests are locked.** Preserve their inputs, expected values, assertions and tolerances.
-  Never re-capture, delete, skip or weaken them to make a failure pass. Changing an existing case is allowed only
-  when an independently verified data/rule correction or task-required behavior change makes it unavoidable. Document
-  the evidence, affected cases and complete before/after ledger in one committed file under `docs/verification/`.
-  Preserve unrelated baselines; diagnose unexpected failures before changing expectations. Intention is insufficient.
+- **Golden inputs, expected values, assertions and tolerances are locked:** never re-capture, delete, skip or weaken.
+  Change only unavoidable cases for independently verified data/rule corrections or task-required behavior changes.
+  Preserve unrelated baselines; commit evidence, affected cases and a full before/after ledger in `docs/verification/`.
+  Diagnose unexpected failures before changing expectations; intention is insufficient.
 - **Golden ledgers:** coder/reviewer role files define compact commit/PR summaries and verification of the full ledger.
-- **New engine behavior needs new golden cases in the same PR**, alongside targeted correctness tests. Add separate
-  fixtures for new features/rule paths without rewriting existing baselines. Verify new expected values against
-  published examples or documented independent calculations; engine-generated snapshots alone prove no correctness.
-  Review must map every changed rule path to a golden case that exercises it, including material boundaries.
+- **New engine behavior needs separate golden cases and targeted correctness tests in the same PR.** Preserve baselines.
+  Verify expectations against published examples or documented independent calculations; engine snapshots aren't proof.
+  Review maps every changed rule path, including material boundaries, to golden cases.
+- **New engine features (e.g. seniors) cover only the latest two tax years.** State coverage; don't imply older years
+  are complete. At merge, the coder or orchestrator files a separate back-fill issue in the History milestone as fits.
+  Corrections to existing rules are not new features and may span affected years.
 - **New years need reference tests** from figures published outside this project (top marginal rates at minimum).
 - **The engine never touches the DOM**, and the UI never computes tax.
 
