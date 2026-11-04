@@ -53,6 +53,16 @@ childcare:
     benefitYoungUnder: 6
 
 payroll:
+  # Schedule 8 Parts 4–5; Quebec Schedules U/R. Both pension shares; one base share earns a credit.
+  selfEmployment:
+    program: self-employment-payroll
+    params:
+      contributionShares: 2
+      baseCreditShare: 0.5
+      contributionStartAge: 18
+      cppStopAge: 70
+      qppStopAge: 72
+      qpip: {rate: 0.00878, minimumIncome: 2000, deductionShare: 0.43736}
   # Employee retirement timing; CPP Schedule 8 prorates, QPP employee elections retain annual ceilings.
   # QPP annual settlement uses Schedule U's full personal exemption, separately from monthly withholding.
   employeeRetirement:
@@ -120,6 +130,16 @@ fuelTax:
   gasoline: 0.10
 
 sources:
+  - label: "CRA Schedule 8 2025, Parts 1–2 and 4–5 (self-employment timing, both shares, deductions)"
+    url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5000-s8/5000-s8-25e.pdf
+  - label: "Revenu Québec Schedule U 2025, Part A.2, Part C and Table 1 (self-employment QPP)"
+    url: https://www.revenuquebec.ca/documents/en/formulaires/tp/2025-12/TP-1.D.U-V(2025-12).pdf
+  - label: "Revenu Québec Schedule R 2025 (QPIP threshold, shared ceiling, premium and deduction)"
+    url: https://www.revenuquebec.ca/documents/en/formulaires/tp/2025-12/TP-1.D.R-V(2025-12).pdf
+  - label: "Québec, QPIP premium rates and maxima for 2025 and 2026"
+    url: https://www.quebec.ca/entreprises-et-travailleurs-autonomes/administrer-gerer/embauche-gestion-personnel/assurance-parentale/taux-cotisations
+  - label: "CRA line 22300 (self-employment QPIP deduction)"
+    url: https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/tax-return/completing-a-tax-return/deductions-credits-expenses/line-22300-deduction-provincial-parental-insurance-plan-ppip-premiums-on-self-employment-income.html
   - label: "CRA, T4127 January 2026, tables 8.24–8.29 (2025 payroll thresholds and rates)"
     url: https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4127-payroll-deductions-formulas/t4127-jan/t4127-jan-payroll-deductions-formulas-computer-programs.html
   - label: "Retraite Québec, Choosing to stop contributing (employee elections available from January 2024)"

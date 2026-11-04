@@ -2,7 +2,7 @@
 import type { Federal, Province } from "../data/schema.ts";
 import { carbonRebatesOf } from "./carbon.ts";
 import { netOf } from "./payroll.ts";
-import type { Credit, Person } from "./types.ts";
+import { type Credit, type Person, workingIncomeOf } from "./types.ts";
 
 export interface CreditInput {
   famNet: number;
@@ -40,20 +40,22 @@ export function creditsOf(fed: Federal, p: Province, f: CreditInput): Credit[] {
     gb.name ?? "Canada Groceries and Essentials Benefit",
     Math.max(0, g - gb.phaseOut.rate * over(gb.phaseOut.from)),
   ]);
-  // Canada Workers Benefit (basic amount; no disability supplement). Working income is employment income only, for
-  // the phase-in, the secondary earner exemption and Quebec's work premium below; other income isn't working income,
+  // Canada Workers Benefit (basic amount; no disability supplement). Working income is wages plus net business
+  // profit for phase-in, secondary earner exemption and Quebec's work premium; other income isn't working income,
   // though it counts in family net income, which the phase-outs use.
   const wb = fed.workersBenefit;
-  const work = couple ? ppl[0].ord + ppl[1].ord : ppl[0].ord;
+  const earnings = ppl.map(workingIncomeOf);
+  const work = couple ? earnings[0] + earnings[1] : earnings[0];
   let exemption = 0;
   if (couple) {
     // Schedule 6, lines 12–14: select by WORKING income, then cap by that person's adjusted net income.
     // Modelled income needs no UCCB/RDSP/exempt-income adjustments, so line 12 is federal net income.
     const capped = (i: number) =>
-      Math.min(wb.secondaryEarnerExemption, ppl[i].ord, f.federalNets?.[i] ?? netOf(fed, p, ppl[i]));
+      Math.min(wb.secondaryEarnerExemption, earnings[i], f.federalNets?.[i] ?? netOf(fed, p, ppl[i]));
     // Either spouse can claim the basic CWB. At equal earnings, elect the claimant whose spouse gives the
     // larger exemption (Schedule 6 line 14's equal-earnings branch); input order must not change the benefit.
-    exemption = ppl[0].ord === ppl[1].ord ? Math.max(capped(0), capped(1)) : capped(ppl[0].ord < ppl[1].ord ? 0 : 1);
+    exemption =
+      earnings[0] === earnings[1] ? Math.max(capped(0), capped(1)) : capped(earnings[0] < earnings[1] ? 0 : 1);
   }
   const adjNet = famNet - exemption;
   let cwb: number;

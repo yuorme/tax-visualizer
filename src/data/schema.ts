@@ -202,6 +202,17 @@ export const federalSchema = z.object({
   payroll: z.object({
     cpp: cppLike,
     qpp: cppLike,
+    selfEmployment: program(
+      "self-employment-payroll",
+      z.object({
+        contributionShares: z.number().positive(),
+        baseCreditShare: rate,
+        contributionStartAge: z.number().int().nonnegative(),
+        cppStopAge: z.number().int().positive(),
+        qppStopAge: z.number().int().positive(),
+        qpip: z.object({ rate, minimumIncome: amount, deductionShare: rate }),
+      }),
+    ).optional(),
     employeeRetirement: z
       .object({
         cpp: program("cpp-employee-retirement", employeeRetirementParams),

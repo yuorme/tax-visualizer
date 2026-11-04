@@ -39,6 +39,7 @@ export interface EmployeePayrollInput {
  *  ded = other deductions, excluding separately entered RRSP/FHSA claims. */
 export interface Person {
   ord: number;
+  selfEmployment?: number; // annual net business profit after expenses, before personal payroll deductions; >= 0
   oth?: number; // omitted in legacy inputs
   cg: number;
   ed: number;
@@ -100,4 +101,6 @@ export interface Extra {
 
 export type { FuelRate, Province, YearData };
 export const blank = (ord: number): Person => ({ ord, oth: 0, cg: 0, ed: 0, nd: 0, fd: 0, ded: 0 });
-export const cashOf = (x: Person) => x.ord + (x.oth ?? 0) + x.cg + x.ed + x.nd + x.fd;
+export const cashOf = (x: Person) => x.ord + (x.selfEmployment ?? 0) + (x.oth ?? 0) + x.cg + x.ed + x.nd + x.fd;
+/** Profit before personal CPP/QPP/QPIP deductions is working income; investment/other income is not. */
+export const workingIncomeOf = (x: Person) => x.ord + (x.selfEmployment ?? 0);

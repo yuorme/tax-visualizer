@@ -1,0 +1,412 @@
+Title: Revenu Quebec 2025 guide, business profit and worker deduction
+URL: https://www.revenuquebec.ca/documents/en/formulaires/tp/2025-12/TP-1.G-V(2025-12).pdf
+Fetched: 2026-11-04
+SHA-256 of the original: 84badbd0c3e35d93d3ea2fd36470b7664f6552c1dca81e8aad3f569637d3317b
+Publication date modified: 2025-12-05
+PDF pages: 30-33 of 84
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 30 of 84 ---
+
+30
+2025 – GUIDE-V
+End-of-career allowance received by a physician
+(line 28 of Schedule L)
+If you are a physician and you received an end-of-career allowance
+(provided you did not practise medicine as a self-employed person
+in 2025), enter the allowance on line 28 of Schedule L. If you received
+the allowance as a salaried physician, enter it on line 154 instead.
+Member of a partnership
+If you were a member of a partnership, enter the partnership’s gross income
+and your share of the net income (or of the net loss) in Schedule L.
+If you were a specified member of a partnership, see “Income from
+a partnership of which you were a specified member” below.
+IfyoudidnotreceiveanRL-15slip, enclose a copy of the partnership’s
+financial statements or form TP-80-V or TP-80.AP-V, as applicable.
+Income from a partnership of which you were
+a retiring partner (line 28 of Schedule L)
+Enter the share of a partnership’s income or losses that the partnership
+allocated to you:
+•• as a retiring partner, for the period in which you were not a member of the
+partnership; or
+•• as the surviving spouse of a deceased member of the partnership
+(provided you were not a member or employee of the partnership and
+did not carry out any activities on behalf of the partnership).
+This amount may be shown in box 1-10 of your RL-15 slip.
+Income from a partnership of which you were
+a specified member (line 29 of Schedule L)
+Enter your share of the income or losses of a partnership of which you were
+a specifiedmember. This amount is shown in box 1 of your RL-15 slip
+if the code “0” or “1” appears in box 40 of the slip.
+Specifiedmember
+As a rule, a limited partner or a partner who is not actively engaged
+in the operation of the business carried on by the partnership or
+in the operation of a similar business (silent partner).
+If, on line 29 of Schedule L, you enter a loss from a partnership of which
+you were a specified member, see the instructions for line 260 and complete
+Schedule N.
+IfyoudidnotreceiveanRL-15slip, enclose a copy of the partnership’s
+financial statements. Enter your share of the partnership’s income,
+excluding any amounts you can report elsewhere in your income tax return.
+Commissions you received from a business
+in the years following the end of its operations
+(line 30 of Schedule L)
+Enter commissions you received from a business intheyearsfollowing
+theendofitsoperations on line 30 of Schedule L, instead of on line 26.
+You are not required to pay the Québec Pension Plan (QPP) contribution
+or the Québec parental insurance plan (QPIP) premium on this amount.
+Note that any commissions that were owed to you while you operated your
+business but were paid to you in a year following the year you ceased
+to operate it must be entered on line 26 of Schedule L.
+Insurable earnings (QPIP) and pensionable earnings (QPP)
+of a person responsible for a family-type resource
+or an intermediate resource
+(line 40 of Schedule L)
+IfyoureceivedanRL-29slip, enter on line 40 of Schedule L the amount
+of your insurable earnings and pensionable earnings (calculated
+in form LM-53-V,
+Insurable Earnings Under the QPIP and Pensionable
+Earnings Under the QPP of a Person Responsible for a Family-Type
+Resource or an Intermediate Resource, which you must enclose with
+your return). This amount will be used to determine your Québec Pension
+Plan (QPP) contribution and Québec parental insurance plan (QPIP)
+premium on income from self-employment. For more information,
+see the instructions for line 439 and Schedule U.
+Other amounts to include in your business income
+You must include the following in your business income:
+•• amounts received as a result of a disaster (see guide IN-125-V,
+The Tax
+Effects of Financial Assistance Received as a Result of a Disaster);
+•• government payments shown on the RL-27 slip;
+•• investments entitling you to certain tax benefits.
+Professional dues
+In calculating your business income, do not take into account
+professional dues paid to maintain your professional status,
+dues paid to a recognized artists’ association or the contribution paid
+to the Office des professions du Québec. However, these amounts
+entitle you to a tax credit. See the instructions for line 397.
+Labour costs
+If you incurred labour costs (other than salaries and wages paid to your
+employees), you must provide information about every person or business
+that carried out work for any of the following purposes:
+•• maintaining, repairing or renovating a building from which you earned
+rental income, or a building that you owned and where you operated
+a business;
+•• maintaining, repairing or renovating commercial premises you rented; or
+•• maintaining land from which you earned rental income.
+Complete form TP-1086.R.23.12-V,
+Costs Incurred for Work on an
+Immovable, and encloseit with your return. If you do not provide the
+required information, you are liable to a penalty.
+
+--- PDF page 31 of 84 ---
+
+31
+2025 – GUIDE-V
+NE T INCOME
+201 Deduction for workers
+The deduction for workers is equal to 6% of your
+eligibleworkincome
+The maximum deduction you can claim is $1,420.
+To calculate your deduction, completeWorkChart 201
+Eligibleworkincome
+Employment income, net income earned from a business you carried on
+alone or as a partner actively engaged in the business, research grants
+(net amount), Wage Earner Protection Program (WEPP) payments and
+amounts received under a work-incentive project.
+NOTE
+Donot include:
+•• employment income consisting solely of taxable benefits that
+you received from previous employment (this amount is shown
+in box 211 of your RL-1 slip);
+•• employment income received as:
+– an elected member of a municipal council,
+– a member of the council or executive committee of a
+metropolitan community, an agglomeration or a regional county
+municipality,
+– a member of a municipal utilities commission or corporation,
+– a member of the board of directors of a school service centre
+or school board, or
+– a member of the National Assembly, the House of Commons or
+the Senate of Canada, or the legislative assembly of a province
+other than Québec.
+Indian
+If you are an Indian, enter on line 7 of Work Chart 201 the eligible work
+income for which you can claim a deduction on line 293.
+205 Registered pension plan (RPP) deduction
+Generally speaking, the amount to enter on line 205 is the amount from
+box D of your RL-1 slip.
+If you contributed to a retirement compensation arrangement and there
+is an amount in box D-1 of your RL-1 slip, subtract the amount in box D-1
+from the amount in box D and enter the result on line 205.
+The deduction you can claim for RPP contributions for current service or
+for past service after 1989 cannot exceed the amount you are deducting
+for such contributions on line 20700 of your federal income tax return
+for 2025.
+If you made RPP contributions for service before 1990 and there is
+an amount in box D-2 or box D-3 of the RL-1 slip, contact us.
+Transfer to an RPP
+If the amount on line 20700 of your federal income tax return includes
+amounts transferred to an RPP (such as a retiring allowance), enter them
+on line 250 instead of line 205.
+207 Employment expenses and deductions
+Iftheemploymentyouheldin 2025entitlesyoutoadeductionfor certain
+expensesoranemployment-relateddeduction, enter the amount to be
+deducted on line 207 and, in box 206, enter the corresponding number
+from the list below.Ifyouareclaimingmorethanone typeof expense
+or deduction,enterthetotalon line 207and “22”in box 206.
+01 Expenses of a forestry worker
+02 Expenses of an employee of a transport business
+or of an employee whose duties include transporting goods
+03 Expenses of a salaried musician
+04 Residence deduction for a member of the clergy or a religious order
+05 Expenses of an employee who earns commissions
+06 Deduction for the purchase of tools
+07 Mandatory expenses of an employee
+08 Deduction for professional liability insurance
+09 Deduction for legal fees
+12 Deduction for the repayment of a salary, wages or wage loss
+replacement benefits
+13 Other employment expenses or deductions
+If you are self-employed, see the instructions for line 164.
+You can deduct certain employment expenses if you are not deducting
+them elsewhere in your return, they were not reimbursed and they do not
+entitle you to a reimbursement
+Most employees cannot deduct employment expenses. For example,
+you cannot deduct expenses for travel between your home and your
+employer’s place of business, expenses for parking at your employer’s
+place of business, or other expenses such as clothing.
+For more information about the expenses that can be deducted
+and the requirements that must be met in order to deduct them,
+see guide IN-118-V,
+Employment Expenses
+01 Expenses of a forestry worker
+You can deduct expenses related to the use of a chainsaw or a brushcutter
+in carrying out your duties, if your employment contract requires
+you to provide such tools and pay such expenses.
+Form to enclose
+Employment Expenses of Forestry Workers (TP-78-V)
+02 Expenses of an employee of a transport business
+or of an employee whose duties include
+transporting goods
+If you are an employee of a transport business (such as an airline, a railway
+or a bus company), or if you regularly collect or deliver goods for
+your employer, you can (under certain conditions) deduct the cost of
+your meals and lodging.
+Form to enclose
+Employment Expenses of Transport Employees (TP-66-V)
+
+--- PDF page 32 of 84 ---
+
+32
+2025 – GUIDE-V
+03 Expenses of a salaried musician
+You can deduct the expenses related to the use of a musical instrument
+if you are required to provide your own instrument during the year.
+The deduction claimed for such expenses cannot exceed the income
+you earned from your employment as a musician in the year.
+Forms to enclose
+••
+Employment Expenses of Salaried Musicians (TP-78.4-V)
+•• If you have other expenses, also enclose:
+–
+General Employment Conditions (TP-64.3-V);
+–
+Employment Expenses of Salaried Employees and Employees Who
+Earn Commissions (TP-59-V) or a detailed statement of your expenses.
+04 Residence deduction for a member of the clergy
+or a religious order
+If you are a member of the clergy or a religious order, you can claim
+a deduction for the residence or lodgings you lived in in 2025 and were
+required to use for your employment duties.
+Form to enclose
+Residence Deduction for a Member of the Clergy or a Religious Order
+(TP-76-V)
+05 Expenses of an employee who earns commissions
+If, in 2025, you sold property or negotiated contracts for your employer,
+the amount you deduct for certain employment expenses cannot exceed
+the commissions you received for this employment (box M of your RL-1 slip).
+However, the deduction of the following expenses is not limited
+to the amountofyourcommissions:
+•• office rent, certain expenses incurred to maintain an office in your home,
+supplies used in the course of employment duties, wages paid to
+an assistant, capital cost allowance for your automobile, and interest
+paid on a loan taken out to purchase your automobile;
+•• motor vehicle expenses and travel expenses (expenses for meals,
+lodging and transportation). However, the deduction for such expenses
+is limited to the amount of your commissions if you deduct expenses
+other than those listed in the previous point.
+Forms to enclose
+••
+General Employment Conditions (TP-64.3-V)
+••
+Employment Expenses of Salaried Employees and Employees Who
+Earn Commissions (TP-59-V) or a detailed statement of your expenses
+06 Deduction for the purchase of tools
+You can claim a deduction for the purchase of eligible tools if you are:
+•• a salaried tradesperson (such as a hairdresser, cook, plumber or
+construction worker);
+•• an apprentice who holds an apprenticeship card (issued by an automobile
+parity committee) that leads to certification as a mechanic, an automotive
+painter or an auto body repairer licensed to repair self-propelled
+motorized vehicles (automobiles, trucks, motorcycles, snowmobiles,
+boats, aircraft, etc.);
+•• an apprentice registered in a program leading to certification
+as a mechanic, an automotive painter or an auto body repairer licensed
+to repair self-propelled motorized vehicles.
+Form to enclose
+Employment Expenses of Salaried Tradespeople (TP-75.2-V)
+07 Mandatory expenses of an employee
+You can deduct certain expenses if you were required to pay them under the
+terms of your employment contract If you are an employee
+who earns commissions, see point 5 opposite.
+Forms to enclose
+••
+General Employment Conditions (TP-64.3-V)
+•• Employment Expenses of Salaried Employees and Employees
+Who Earn Commissions (TP-59-V) or a detailed statement
+of your expenses
+08 Deduction for professional liability insurance
+You can deduct the premium paid for professional liability insurance
+requiredto maintain your professional status
+09 Deduction for legal fees
+You can deduct the legal or extrajudicial fees you paid in 2025 to collect
+a salary, wages or wage loss replacement benefits (where your employer
+contributed to the wage loss replacement plan), or to establish
+your entitlement to the salary, wages or benefits, whether or not it has
+been determined that an amount is owed to you.
+12 Deduction for the repayment of a salary,
+wages or wage loss replacement benefits
+You can deduct the amounts included in your income for 2025 or
+a previous year, provided you meetbothof the following conditions:
+•• You received the amounts for a period in which you were not carrying
+out your employment duties
+•• Youwererequiredtorepaytheamountsin 2025 to your employer or
+former employer, or to the insurer that administered your wage loss
+replacement plan under the terms of an agreement.
+To claim this deduction, enter the amount shown in box A-3 or box O-4
+of your RL-1 slip. If you repaid an amount to the insurer that administered
+your wage loss replacement plan, keep the document confirming
+the repayment in case we ask for it.
+If the repayment of a salary, wages or wage loss replacement benefits
+is greater than your total income from all sources, you can use the excess
+to reduce your income for the previous three years or for the next
+twenty years. If you want to reduce your income for previous years,
+complete form TP-1012.A-V,
+Carry-Back of a Loss, and file it separately
+from your return
+At your request, we may authorize you to use the excess to reduce your
+income for the year in which the amount you repaid was included in
+your income, even if that year is more than three years before the year
+of the repayment. For more information, contact us.
+Repayment of an amount included in your income
+for a previous year and deducted from your taxable income
+for that year
+If, in 2025, you repaid a salary, wages or wage loss replacement benefits
+that you included in your income for a previous year and deducted
+in calculating your taxable income (line 293 or 297) for the previous year
+in question, also enter the amount of the repayment on line 276.
+
+--- PDF page 33 of 84 ---
+
+33
+2025 – GUIDE-V
+13 Other employment expenses or deductions
+Such expenses or deductions include:
+•• the contribution you made under a retirement compensation arrangement.
+This amount is shown in box D-1 of your RL-1 slip;
+•• allocations that were cancelled when you ceased to be a beneficiary
+under a profit-sharing plan. This amount is shown in box E
+of your RL-25 slip;
+•• the deduction for an excess amount from a profit-sharing plan on which
+you must pay a special tax. This deduction is equal to the amount
+on line 5 of form TP-1129.RI-V,
+Special Tax on an Excess Amount Under
+a Profit-Sharing Plan. The special tax you are required to pay must
+be included on line 443 of your return.
+214 RRSP or PRPP/VRSP deduction
+The amount you can deduct for contributions that you made to your
+registered retirement savings plan (RRSP), to a spousal RRSP or to a pooled
+registered pension plan (PRPP), including a voluntary retirement
+savings plan (VRSP), corresponds to the RRSPor PRPPdeduction entered
+on line 20800 of your federal income tax return for 2025.
+IMPORTANT
+In the federal income tax return, the term “pooled registered pension
+plan (PRPP)” refers to both PRPPs and VRSPs.
+Transfer to an RRSP or to a PRPP/VRSP
+If the amount on line 20800 of your federal income tax return includes
+amounts deducted as transfers, donottakethemintoaccounton line 214.
+Enterthemonline 250instead.
+Repayment of amounts withdrawn from an RRSP
+under the Home Buyers’ Plan (HBP)
+or the Lifelong Learning Plan (LLP) (line 212)
+If you made RRSP or PRPP/VRSP contributions in 2025 or the first 60 days
+of 2026 and withdrew amounts from an RRSP in previous years under
+the HBP or the LLP, you can designate an amount as a repayment
+on line 212
+The minimum repayment required in 2025 is shown on the most recent
+notice of assessment, notice of reassessment or statement of account
+that the federal government sent you. If you are not repaying the minimum
+amount, see point 10 in the instructions for line 154.
+Pleasenotethattheamountyoudesignatemustnothavebeendeducted
+on line 214or 250of your 2024or 2025return.
+Form to encloseRepayment of RRSP Funds Withdrawn Under the Home Buyers’ Plan
+or the Lifelong Learning Plan (TP-935.3-V)
+215 FHSA deduction
+The amount you can deduct for contributions to a first home savings
+account (FHSA) corresponds to the amount deducted on line 20805
+of your 2025 federal income tax return.
+225 Support payments made (deductible amount)
+Under certain conditions, you can deduct the support payments you
+made in 2025 as an allowance payable periodically further to a written
+agreement or a judgment, if you made the payments to your spouse or
+former spouse, the mother or father of your child, or a third party for
+the benefit of the child and/or one of these people.
+You are not entitled to a deduction if you were living with the recipient at
+the time the payments were made. If you are covered by the measures
+under which child support is non-taxable for the recipient and non-deductible
+for the payer, see “Tax treatment of child support” below and complete
+Work Chart 225
+If you paid support for the benefit of more than one person, write the name
+and social insurance number of the other beneficiary or beneficiaries
+on a separate sheet and enclose it with your return.
+Tax treatment of child support
+In general,
+childsupport (see the definition at line 142) paid under a written
+agreement entered into or a judgment rendered after April 30, 1997, cannot
+be deducted by the person who made the payments and does not have
+to be included in the income of the person who received them.
+For more information, see guide IN-128-V,
+The Tax Effects of Separation
+and Divorce
+Payments made under the support-payment
+collection program
+If the support payments you made to us in 2025 are deductible, enter
+the total amount of the payments on line 225. However, if the amount
+you paid as support is non-deductible, complete Work Chart 225.
+See “Support-payment arrears” below if any portion of the payments
+you made constitutes arrears
+Non-deductible support owing on December 31, 2024
+(line 2 of Work Chart 225)
+On line 2 of Work Chart 225, enter the amount of non-deductible support
+that you were required to pay for 1997 through 2024, but had not paid
+by December 31, 2024. If you completed Work Chart 225 for 2024
+and the amount on line 5 was negative, enter that amount on line 2
+of Work Chart 225 for 2025.
+Carry-forward of non-deductible support
+(line 5 of Work Chart 225)
+If the amount on line 5 of Work Chart 225 is negative, that is, if the amount
+of child support that you were required to pay is greater than the
+amount that you actually paid, you will have to take the difference into
+account in your 2026 income tax return.
+Support-payment arrears
+If you paid support-payment arrears that entitle you to a deduction,
+enter on line 225 the portion of the arrears applicable to 2025 and previous
+years. If the portion of the arrears applicable to previous years is $300
+or more, enter it on line 276 aswell and check box 404 of your return.
+In such a case, you must also complete form TP-766.2-V,
+Averaging
+of a Retroactive Payment, Support-Payment Arrears or a Repayment
+of Support, and encloseit with your return. We will calculate a tax adjustment
+that may reduce your income tax for the year.

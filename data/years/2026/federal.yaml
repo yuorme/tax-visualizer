@@ -62,6 +62,18 @@ childcare:
     benefitYoungUnder: 6
 
 payroll:
+  selfEmployment:
+    program: self-employment-payroll
+    # 2025 filing formulas continued pending 2026 forms; published 2026 contribution rates/ceilings.
+    # QPIP deduction fraction estimated as (0.764 - 0.430) / 0.764, rounded as Schedule R (five decimals).
+    estimated: true
+    params:
+      contributionShares: 2
+      baseCreditShare: 0.5
+      contributionStartAge: 18
+      cppStopAge: 70
+      qppStopAge: 72
+      qpip: {rate: 0.00764, minimumIncome: 2000, deductionShare: 0.43717}
   # Employee retirement timing; CPP Schedule 8 prorates, QPP employee elections retain annual ceilings.
   # QPP annual settlement uses Schedule U's full personal exemption, separately from monthly withholding.
   employeeRetirement:
@@ -146,6 +158,14 @@ driving:
   estimated: true
 
 sources:
+  - label: "CRA Schedule 8 2025, Parts 1–2 and 4–5 (self-employment timing, both shares, deductions)"
+    url: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5000-s8/5000-s8-25e.pdf
+  - label: "Revenu Québec Schedule U 2025, Part A.2, Part C and Table 1 (self-employment QPP)"
+    url: https://www.revenuquebec.ca/documents/en/formulaires/tp/2025-12/TP-1.D.U-V(2025-12).pdf
+  - label: "Revenu Québec Schedule R 2025 (QPIP threshold, shared ceiling, premium and deduction)"
+    url: https://www.revenuquebec.ca/documents/en/formulaires/tp/2025-12/TP-1.D.R-V(2025-12).pdf
+  - label: "Québec, QPIP premium rates and maxima for 2025 and 2026"
+    url: https://www.quebec.ca/entreprises-et-travailleurs-autonomes/administrer-gerer/embauche-gestion-personnel/assurance-parentale/taux-cotisations
   - label: "Retraite Québec, Choosing to stop contributing (employee elections available from January 2024)"
     url: https://www.retraitequebec.gouv.qc.ca/en/citizens/work/work-retirement/choosing-stop-contributing-quebec-pension-plan
   - label: "CRA, T4127 January 2026, chapter 6 and tables 8.3–8.6 (published 2026 payroll thresholds and rates)"
