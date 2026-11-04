@@ -1,13 +1,14 @@
 # Milestone 2 retro: New inputs
 
-18 issues, closed November 1 to 4, 2026. Tokens exist only for the last session (November 4), which finished #14 alongside
-#146 from milestone 3 and 11 unmilestoned fixes, all listed below. Earlier sessions kept no token record, so they give
-rounds only.
+18 issues, closed November 1 to 4, 2026. Tokens exist only for the last session (November 4), which finished #14
+alongside #146 from milestone 3 and 11 unmilestoned fixes, all listed below. Earlier sessions kept no token record.
+Their class, model, effort and tokens are marked unknown, not reconstructed.
 
 ## Per issue
 
 Codex tokens come from each session's rollout: uncached tokens, then the total including cached input. Claude tokens are
-the reviewer's reported total. Codex ran at `high` except as noted; #116's fix round ran at `medium`.
+the agent's reported total. Codex ran at `high` except as noted; #116's fix round ran at `medium`. #146's page coder ran
+Opus at `high`.
 
 | Issue | Class, coder | Coder tokens | Reviewer, tokens | Rounds | What the extra rounds fixed |
 |---|---|---|---|---|---|
@@ -28,11 +29,23 @@ the reviewer's reported total. Codex ran at `high` except as noted; #116's fix r
 | #58 (#180) | Data, Sol | 70k / 2.6M | Sonnet, 28k | 1 | |
 | #191 process rules | Simple, Sol `medium` | 73k / 2.2M | Astra `medium`, 55k / 961k | 4 | User changed the rule three times |
 
-Earlier milestone issues, by verdicts on their pull requests: one round for #56, #63, #10, #8, #11, #84, #12, #7, #9
-and #57; two for #61, #6, #13, #15 and #91; three for #92. #55 has no linked pull request to count.
+Earlier milestone issues, from the verdicts on their pull requests. For all of them, class, coder, effort and tokens
+are unknown. Reviewer models are named only where the verdict gives one.
+
+| Issue | Reviewer | Rounds | What the extra rounds fixed |
+|---|---|---|---|
+| #61 (#82) | Sonnet | 2 | Nunavut's 2025 rates were taken from the 2026 bill |
+| #6 (#88) | Opus | 2 | `docs/SCOPE.md` still listed fuel tax as unbuilt |
+| #13 (#90) | Opus | 2 | Quebec Health Services Fund missing, later #91 |
+| #15 (#161) | Unknown | 2 | Default mix and yield hardcoded in `src/ui/` |
+| #91 (#167) | Opus | 2 | Payroll tooltip omitted the contribution; History claimed full coverage |
+| #92 (#159) | Opus | 3 | PEI reduction applied after the foreign tax credit |
+
+#56, #63, #10, #8, #11, #84, #12, #7, #9 and #57 took one round. #55 has no linked pull request to count.
 
 Seven of 17 counted milestone issues needed more than one round, against six of seven in milestone 1. Across all 24
-Codex sessions on November 4: 2.9M uncached tokens, 134.5M including cache, for 11 points of the weekly limit (75% to 86%).
+Codex sessions on November 4: 2.9M uncached tokens, 134.5M including cache, for 11 points of the weekly limit (75% to
+86%).
 
 ## Defects found after merge
 
@@ -46,18 +59,18 @@ Codex sessions on November 4: 2.9M uncached tokens, 134.5M including cache, for 
 - **Golden merges:** #102, #162, #166 and #103 ran in parallel. Five merges of `main` cost 142k uncached and 21.6M with
   cache, 16% of the session. Provinces didn't overlap, but neighbouring lines still conflicted in git. Each #102 merge
   also needed a fresh review of its combined cells.
-- **Stopping over file ownership:** five stops on #166, #106 and #162 for test files the briefs hadn't listed. The resumes
-  that followed came to 11.4M with cache, 8%, partly on real work. All were approved at once.
+- **Stopping over file ownership:** five stops on #166, #106 and #162 for test files the briefs hadn't listed. The
+  resumes that followed came to 11.4M with cache, 8%, partly on real work. All were approved at once.
 - **Documentation-only second rounds:** #171, #183, #190 and #189, 10.5M with cache, 8%, plus their re-reviews. #189
   reported a passing check that a later edit had broken.
 - **Briefs saying "stop on any failure":** a Chromium sandbox refusal on #178 and a script buffer overflow on #102 each
   cost a round; neither was an access block. The escalation route was in the docs but not the brief.
-- **Orchestrator errors:** a flag conflict killed one Codex start (`--approve-for-me` refuses `--sandbox`). Worktrees were
-  removed before a conflict appeared on #177 and #181, so both were recreated.
+- **Orchestrator errors:** a flag conflict killed one Codex start (`--approve-for-me` refuses `--sandbox`). Worktrees
+  were removed before a conflict appeared on #177 and #181, so both were recreated.
 - **Worktree cleanup:** six merged worktrees are still held by idle plugin brokers from a previous session, because auto
   mode refused to stop them. They wait on the user, along with two leftover checkouts.
-- **Reviewer scratch files:** reviewers share the session scratchpad; one may have overwritten another's throwaway files.
-  No repository effect.
+- **Reviewer scratch files:** reviewers share the session scratchpad; one may have overwritten another's throwaway
+  files. No repository effect.
 
 ## Changes
 
@@ -67,12 +80,12 @@ Codex sessions on November 4: 2.9M uncached tokens, 134.5M including cache, for 
    in the pull request. Tied to the five stops above. Merged into the existing "stay inside that set" line.
 3. **The self-check runs on the final head.** Coders confirm the verification note, `docs/SCOPE.md` and the pull request
    body describe the final head, and run checks after the last edit. Tied to the four documentation rounds above. It
-   replaces the renamed-file check, which it covers.
+   sits alongside the renamed-file check, merged into one line.
 
 #191 made three further changes during the milestone at the user's direction: no committed cell lists, Astra for Normal
 and Data reviews, and new engine features limited to the latest two tax years.
 
 Next retro: `tokens used` in a Codex log is cumulative per session and excludes cached input, so the last value is the
 total, and resumed sessions shouldn't be summed. Compare golden merges, ownership stops and documentation-only rounds
-against the numbers above. Check whether Astra reviews catch what Opus did: Opus found the missing #181 golden, and Astra
-found the #192 Quebec bug.
+against the numbers above. Check whether Astra reviews catch what Opus did: Opus found the missing #181 golden, and
+Astra found the #192 Quebec bug.

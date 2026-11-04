@@ -26,8 +26,9 @@ Before reporting, check:
 - each new/changed rule has independently checked golden coverage and a test that a plausible wrong reading fails;
 - each UI acceptance criterion in the issue has an e2e assertion;
 - known-failure lists (such as `KNOWN` in `tests/e2e/rules.mjs`) match exactly what now fails;
-- the verification note, `docs/SCOPE.md` and pull request body describe the final head, with no stale name or claim,
-  and the checks ran after your last edit.
+- nothing in the repository still refers to a file or name you renamed;
+- the verification note, `docs/SCOPE.md` and pull request body describe the final head, and checks ran after your
+  last edit.
 
 When done:
 - Run the validation required by AGENTS.md's Markdown-only or full-check path and make sure it passes.
