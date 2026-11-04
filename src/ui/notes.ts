@@ -333,6 +333,14 @@ export function footerNotes(y: YearData, page: PageDefaults): string {
       ? `${list(kidPhrases)} ${P.some(p => p.claimants?.childAmount) ? "follow each program's rules for who can claim them and whether unused amounts can transfer to a spouse" : "are claimed by the parent who claims the children"}.`
       : "",
     "A single parent claims the eligible dependant amount; in Quebec a single adult gets the amount for a person living alone.",
+    ...P.flatMap(p => {
+      const benefit = p.familyTaxBenefit;
+      if (!benefit) return [];
+      const q = benefit.params;
+      return [
+        `${p.name}'s non-refundable family tax benefit adds a base of ${money(q.basic)}, ${money(q.dependant)} for a claimed spouse or eligible dependant, and ${money(q.child)} per qualifying child through age ${q.childThrough}, excluding a child claimed as an eligible dependant. The base falls by ${rate(q.reductionRate)} of the claimant's own net income and converts at ${rate(p.brackets[0][1])}, limited to tax owing before dividend and foreign tax credits. The higher-net-income spouse claims the children. On equal incomes, the model interprets the Act's silence as allowing either spouse and chooses the lower household tax. The child component assumes the claimant or spouse met CCB eligible-individual conditions at some time in the year, including before a child turned ${q.childThrough}; age alone does not establish eligibility. Entered children are assumed to live with their eligible parent in Canada, with no competing claims or children's special allowances. For unrelated adults, the higher-income adult is assumed to be the eligible parent; agreements between multiple eligible adults are not modelled. Senior and disability components are not included.${benefit.estimated ? ` The ${year} amounts are published; filing conditions provisionally continue the prior year's rules pending CRA's ${year} return forms.` : ""}`,
+      ];
+    }),
     ...P.flatMap(p =>
       typeof p.spouseAmount === "object" &&
       "program" in p.spouseAmount &&

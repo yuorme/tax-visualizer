@@ -78,6 +78,11 @@ function bestElection(candidates: PersonResult[][]): PersonResult[] {
   });
 }
 
+/** Grossed-up dividends can differ from equal dollar income by a few binary floating-point bits. */
+function incomesTied(incomes: number[]): boolean {
+  return Math.abs(incomes[0] - incomes[1]) <= Number.EPSILON * Math.max(1, ...incomes) * 8;
+}
+
 /** Household sums the page shows: the Ontario surtax, the provincial tax reductions (Ontario tax reduction, LIFT
  *  credit, BC tax reduction), the foreign tax credit, and payroll by kind (cpp is base plus enhanced CPP or QPP). */
 function householdBreakdown(list: PersonResult[]) {
@@ -117,8 +122,20 @@ export function household(y: YearData, p: Province, hh: Household, peopleIn: Per
   const c = ppl.length === 2 && nets[1] > nets[0] ? 1 : 0,
     o = 1 - c;
   const single = ppl.length === 1 && adults === 1;
+  const familyRule = p.familyTaxBenefit;
+  const familyParams = p.familyTaxBenefit?.params;
+  // MB s. 4.6(16.1)(b) requires eligible-individual status at ANY time in the year. MB428-A's birth-year band
+  // includes children turning 18, assuming the parent qualified before then; CCB's year-end count excludes them.
+  // Use validated age details when available; legacy counts represent qualifying minor children.
+  const familyAges =
+    hh.childAges ?? (childcare.childCounts ? hh.childcare?.children?.map(child => child.age) : undefined);
+  const familyChildren = familyParams
+    ? (familyAges?.filter(age => age <= familyParams.childThrough).length ?? kids)
+    : 0;
+  const familyChildCount = Math.max(0, familyChildren - (single && useBpa && kids > 0 ? 1 : 0));
   // kidsAll: children counted for low-income reductions, other than a child already claimed as an eligible dependant
   const ctx = (i: number): Ctx => ({
+    familyBenefitChildren: familyRule && i === c ? familyChildCount : 0,
     childcareDeduction: childcare.claims[i],
     kids: i === c ? kids : 0,
     u6: i === c ? under6 : 0,
@@ -188,23 +205,29 @@ export function household(y: YearData, p: Province, hh: Household, peopleIn: Per
   } else {
     list = ppl.map((x, i) => personTax(fed, p, x, NOSP, ctx(i), s));
   }
-  // Keep the legacy path untouched unless the year's data opts into a verified program rule.
+  // Keep the legacy path untouched unless the year's data opts into a program-specific claimant rule.
   const childRule = p.claimants?.childAmount;
   const lowRule = p.claimants?.lowIncomeReduction;
-  if (childRule || lowRule) {
+  if (childRule || lowRule || familyRule) {
     const extras = list.map(r => ({ f: r.fSpFull, p: r.pSpFull }));
     const calculate = (i: number, context: Ctx) => personTax(fed, p, ppl[i], extras[i], context, s);
     let childClaimants = [c];
     if (childRule && p.childAmount && couple) {
       const incomes = childRule.claimant === "lower-taxable-income" ? list.map(r => r.tiP) : nets;
-      // Grossing up dividends can differ from an equal dollar income by a few binary floating-point bits.
-      const tieTolerance = Number.EPSILON * Math.max(1, ...incomes) * 8;
-      const tied = Math.abs(incomes[0] - incomes[1]) <= tieTolerance;
-      childClaimants = tied ? [0, 1] : [incomes[0] < incomes[1] ? 0 : 1];
+      childClaimants = incomesTied(incomes) ? [0, 1] : [incomes[0] < incomes[1] ? 0 : 1];
     }
+    // MB s. 4.6(16.2)(a) is silent on equality. The documented interpretation elects the whole child claim
+    // by final household tax, as in #92. On equal incomes, unrelated adults also elect one claimant by
+    // agreement under (16.2)(b); otherwise they retain the existing higher-income eligible-parent proxy.
+    const familyClaimants = familyRule && ppl.length === 2 && incomesTied(nets) ? [0, 1] : [c];
+    const elections = childClaimants.flatMap(child => familyClaimants.map(family => ({ child, family })));
     list = bestElection(
-      childClaimants.map(childClaimant => {
+      elections.map(({ child: childClaimant, family: familyClaimant }) => {
         const contexts = ppl.map((_, i) => ctx(i));
+        if (familyRule)
+          contexts.forEach((context, i) => {
+            context.familyBenefitChildren = i === familyClaimant ? familyChildCount : 0;
+          });
         if (childRule && p.childAmount && couple) {
           const base = p.childAmount.perChild * (p.childAmount.ages === "all" ? kids : under6);
           contexts.forEach((context, i) => {

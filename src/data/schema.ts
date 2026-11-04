@@ -616,6 +616,12 @@ export const provinceSchema = z
       })
       .optional(),
     childAmount: z.object({ perChild: amount, ages: z.enum(["all", "under6"]) }).optional(),
+    familyTaxBenefit: program(
+      "mb-family-tax-benefit",
+      z.object({ basic: amount, dependant: amount, child: amount, reductionRate: rate, childThrough: amount.int() }),
+    )
+      .extend({ claimant: z.literal("higher-net-income"), tie: z.literal("household-minimum") })
+      .optional(),
     childcareCredit: childcareCredit.optional(),
     surtax: z.array(z.tuple([amount, rate])).optional(),
     postDividendSurtax: program("pei-surtax", z.object({ threshold: amount, rate })).optional(),

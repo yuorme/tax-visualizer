@@ -32,6 +32,7 @@ export interface Household {
   adults: number; // adults living in the household (a second adult with no income is a spouse with none)
   kids: number;
   under6: number; // how many of the children are under 6
+  childAges?: number[]; // validated whole, nonnegative year-end ages, independent of paid childcare and CCB counts
   useBpa: boolean; // apply basic personal amounts and other personal credits
   whRate: number; // foreign tax withheld on foreign dividends
   useCredits: boolean; // count refundable credits
@@ -53,6 +54,7 @@ export interface Driving {
 export type Credit = [name: string, amount: number];
 
 export interface Ctx {
+  familyBenefitChildren?: number; // MB428-A line 9: allocated once, excluding a line 3 eligible dependant
   childAmountBase?: number; // initial child claim, independent of Ontario's higher-net-income child reduction
   childTransferBase?: number; // unused SK(S2)/NU(S2) child base received from the spouse
   lowIncomeReduction?: number; // resolved family reduction, in tax dollars (including any transfer)

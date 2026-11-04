@@ -32,6 +32,25 @@ const single = (ord: number, extra: Partial<Household> = {}): Household => ({
 const pct = (v: number) => Math.round(v * 10000) / 100;
 const credits = (r: ReturnType<typeof compute>) => r.credits.map(([n, v]) => [n, Math.round(v)]);
 
+test("2025 MB428-A ordinary family benefit: published bases, own-income taper and example", () => {
+  // Cached MB428-A lines 1–3, 9, 11; guide line 9; MB428 lines 41, 52, 61–65.
+  assert.deepEqual(prov("MB").familyTaxBenefit?.params, {
+    basic: 2065,
+    dependant: 2065,
+    child: 2752,
+    reductionRate: 0.09,
+    childThrough: 18,
+  });
+  const r = compute(y, prov("MB"), single(0, { people: [{ ...blank(0), oth: 40000 }], adults: 2, kids: 2 }));
+  const base = 2065 + 2065 + 2 * 2752 - 0.09 * 40000;
+  const capacity = (40000 - 15780 - 9134) * 0.108;
+  assert.equal(base, 6034);
+  assert.ok(capacity > base * 0.108);
+  assert.ok(Math.abs(r.list[0].breakdown.familyTaxBenefit.applied - 651.672) < 1e-9);
+  assert.ok(Math.abs(r.prov - 977.616) < 1e-9);
+  assert.ok(Math.abs((651.672 / 40000) * 100 - 1.62918) < 1e-9);
+});
+
 // NWT Budget 2025-2026 B22, rates at January 30, 2025 (cached fuel7-nwt-budget-2025.txt).
 // Vancouver uses BC's May 2025 breakdown: 1.75 + 6.75 provincial cents and 18.5 TransLink cents;
 // Montreal adds 3 ARTM cents (ARTM Budget 2026, confirming the unchanged historical rate).

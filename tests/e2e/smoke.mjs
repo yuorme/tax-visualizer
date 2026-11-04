@@ -17,6 +17,7 @@ import { CARBON_STEPS } from "./carbon.mjs";
 import { CHILDCARE_STEPS } from "./childcare.mjs";
 import { DEDUCTION_STEPS } from "./deductions.mjs";
 import { HISTORY_STEPS } from "./history.mjs";
+import { checkManitobaFamilyLedger } from "./mb-family-benefit.mjs";
 import { ALLOWED_HOSTS, openPage, settle } from "./page.mjs";
 import { PORTFOLIO_RESPONSIVE_STEPS, PORTFOLIO_STEPS } from "./portfolio.mjs";
 import { COMPARISON_STEPS, RESPONSIVE_STEPS } from "./responsive.mjs";
@@ -967,6 +968,17 @@ function check(label, width, { states, errors, blocked }) {
 }
 
 for (const width of [1000, 430, 375]) {
+  for (const colorScheme of ["light", "dark"]) {
+    const family = await run({
+      width,
+      colorScheme,
+      steps: [["Manitoba family ledger, ages 17–19 and persistence", checkManitobaFamilyLedger]],
+    });
+    check(`${width}px ${colorScheme}, Manitoba family benefit`, width, family);
+  }
+}
+
+for (const width of [1000, 430, 375]) {
   const [a, b] = [await run({ width, before: noDriving }), await run({ width, html: legacy })];
   check(`${width}px light`, width, a);
   a.states.forEach(({ name, capture: built }, i) => {
@@ -976,6 +988,16 @@ for (const width of [1000, 430, 375]) {
       explanations: asLegacy(built.explanations, width),
     };
     const t = b.states[i].capture;
+    if (name === "income 28k, 1 child, rent") {
+      // #145: independently audited MB tax 126.5598 → 0; the +$100 tax 136.54116 → 0.
+      // Correct only these two obsolete chart values; every other legacy cell and state still compares exactly.
+      // Full arithmetic and before/after inventory: docs/verification/145-manitoba-family-benefit.md.
+      const suffix = width < PHONE ? "" : "%";
+      const mb = t.cols.find(col => col[0] === "col-MB");
+      assert.deepEqual(mb, ["col-MB", `-19.4${suffix}`, `17.6${suffix}`]);
+      mb[1] = `-19.8${suffix}`;
+      mb[2] = `7.6${suffix}`;
+    }
     for (const key of Object.keys(s))
       if (JSON.stringify(s[key]) !== JSON.stringify(t[key]))
         fail(

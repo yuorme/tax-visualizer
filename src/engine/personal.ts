@@ -90,6 +90,24 @@ export function personTax(fed: Federal, p: Province, x: Person, sp: Extra, ctx: 
   // NL428 line 58320 joins the ordinary non-refundable credit base, before dividends and low-income reduction.
   const childcareCreditFull = p.childcareCredit?.program === "nl-childcare" ? (ctx.childcareDeduction ?? 0) * prr : 0;
   const childcareCredit = tp(childcareCreditFull);
+  // MB428-A lines 1–3 and 9–12; MB428 line 41 joins the ordinary credit base (lines 51–57), before the
+  // dividend credit (62) and FTC (73). A claimed spouse/dependant base qualifies even if its usable tax is zero.
+  // #17 must add own-age and transfer-qualified spouse-age bases BEFORE this single income reduction.
+  // Spouse age alone cannot qualify: the guide requires a claimed age transfer AND MB(S2) line 1 > line 11.
+  // Disability claims cannot be inferred from childcare disability flags.
+  const family = p.familyTaxBenefit?.params;
+  const familyBase =
+    family && s.useBpa
+      ? Math.max(
+          0,
+          family.basic +
+            (sp.p > 0 ? family.dependant : 0) +
+            family.child * (ctx.familyBenefitChildren ?? 0) -
+            family.reductionRate * provincialNet,
+        )
+      : 0;
+  const familyFull = familyBase * prr;
+  const familyApplied = tp(familyFull);
   const inv = fed.investment;
   const fDtcFull =
     x.ed * inv.grossUp.eligible * inv.dividendTaxCredit.eligible +
@@ -216,6 +234,7 @@ export function personTax(fed: Federal, p: Province, x: Person, sp: Extra, ctx: 
     // Figures the page shows that aren't steps of the calculation above. They sit in a nested object because the
     // golden snapshot (tests/golden/snapshot.mjs) locks every top-level number of this result.
     breakdown: {
+      familyTaxBenefit: { base: familyBase, calculated: familyFull, applied: familyApplied },
       childTransfer: { base: ctx.childTransferBase ?? 0, applied: childTransfer },
       lowIncomeReduction: {
         calculated: p.claimants?.lowIncomeReduction ? lowFull : lowRed,

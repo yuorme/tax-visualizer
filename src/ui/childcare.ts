@@ -208,8 +208,8 @@ export class ChildcareModel {
     };
   }
 
-  /** Counts-only projection of valid ages, independent of claim inputs. Pass only to childcareOf for childCounts,
-   * never to compute: these zero expenses must never replace actual expense drafts or apply childcare relief. */
+  /** Valid ages independent of claim inputs. Use for childcareOf's childCounts and Household.childAges;
+   * never pass as compute's childcare input: zero expenses must not replace drafts or apply childcare relief. */
   benefitAgeProfile(): ChildcareInput | undefined {
     if (this.kids === 0 || this.state.activeChildren === 0 || !this.children.every(c => wholeAge(c.age)))
       return undefined;
