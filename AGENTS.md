@@ -96,9 +96,9 @@ cold. Role files: `docs/agents/<role>.md`. This table is the only place that ass
 | A year's or a program's figures | data-collector | Codex | Claude Code |
 
 **Reviews cross agents:** the reviewer is a different agent from the one that wrote the branch, so Codex's
-branches get a Claude review and Claude's get a Codex review. The exception is Simple work (below), which a fresh
-Codex session reviews. An issue touching both UI and engine is split into stacked branches (engine first), or goes
-to whoever owns most of it.
+branches get a Claude review and Claude's get a Codex review. The exception is Simple and Data work (below), which
+a fresh Codex session may review. An issue touching both UI and engine is split into stacked branches (engine
+first), or goes to whoever owns most of it.
 
 ### Models and effort
 The orchestrator classes each issue, sets the model and effort from this table on every dispatch, and records both
@@ -108,14 +108,14 @@ Standard is `sonnet` or `gpt-6.1-sol`, Strong is `opus` or `gpt-6-astra`.
 | Class | Examples | Coder | Reviewer |
 | --- | --- | --- | --- |
 | Simple | mechanical work, Markdown, one-area fixes, small UI tweaks | Codex `gpt-6.1-sol` or `gpt-6-astra` | Codex `gpt-6-astra` |
-| Data | a year's or a program's figures | Codex `gpt-6.1-sol` | Claude `sonnet` |
-| Normal | engine rules, schema, scripts, tests, ordinary UI | Codex `gpt-6-astra` | Claude `sonnet` |
+| Data | a year's or a program's figures | Codex `gpt-6.1-sol` | Claude `sonnet` or Codex `gpt-6-astra` |
+| Normal | engine rules, schema, scripts, tests, ordinary UI | Codex `gpt-6-astra` | Claude `opus`, `medium` |
 | Complex | complicated UI changes, engine refactors | Claude `opus` | Codex `gpt-6-astra` |
 
-Use Claude `opus` only for Complex work, or when the outage fallbacks below require it. Effort is `high`, which is
-also the cap for coders and reviewers alike; `medium` only for Markdown-only or mechanical work (renames,
-dependency bumps, lint fixes). When in doubt between two classes, pick the higher one. The retro reports class,
-model and effort per issue.
+Use Claude `opus` only for Complex work, Normal reviews and the outage fallbacks below. Effort is `high`, which is
+also the cap for coders and reviewers alike; `medium` only for Normal reviews and Markdown-only or mechanical work
+(renames, dependency bumps, lint fixes). When in doubt between two classes, pick the higher one. The retro reports
+class, model and effort per issue.
 
 ### When an agent or model is out
 An agent or model is unavailable when it is down, its plugin fails, or a usage limit won't reset before the work is
@@ -169,7 +169,7 @@ the golden-test requirements above; the reviewer's model alone does not require 
 The user merges instead, and the orchestrator labels the pull request `needs-human` and says so, when:
 - its issue is labelled `needs-human`, or
 - it makes significant layout changes, or
-- its review was a same-agent review, other than a Simple task's, or
+- its review was a same-agent review, other than a Simple or Data task's, or
 - it changes this merge process, `AGENTS.md`, `CLAUDE.md`, `docs/agents/`, `.claude/agents/`, `.claude/settings.json`
   or `.codex/`.
 
