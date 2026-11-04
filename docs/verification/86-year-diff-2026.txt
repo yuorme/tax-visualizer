@@ -1,0 +1,374 @@
+## Data diff: 2026 against 2025
+
+226 values changed from 2025 to 2026 (12 over 15%), 127 amounts suspiciously unchanged, 22 added, 23 removed, 4 replaced. 19 unchanged values opted out.
+
+### Suspiciously unchanged (127)
+
+Amounts, thresholds and bracket limits that are the same in both years. If one is meant to stay put, say so with a `# not indexed` comment on its line (or `bracketsFrozenSince` for bracket limits).
+
+| File | In | Unchanged values |
+|---|---|---|
+| federal | `childcare.params` | `youngUnder` 7, `eligibleThrough` 16, `annualYoung` 8000, `annualOther` 5000, `annualDisability` 11000, `earnedNumerator` 2, `earnedDenominator` 3, `benefitChildUnder` 18, `benefitYoungUnder` 6 |
+| federal | `payroll.employeeRetirement.cpp.params` | `contributionStartAge` 18, `electionFromAge` 65, `mandatoryStopAge` 70, `electionEffectiveMonthOffset` 1, `restartAfterCalendarYears` 1 |
+| federal | `payroll.employeeRetirement.qpp.params` | `contributionStartAge` 18, `electionFromAge` 65, `mandatoryStopAge` 72, `electionEffectiveMonthOffset` 1, `restartAfterCalendarYears` 1, `electionsFromYear` 2024 |
+| federal | `payroll.cpp` | `exempt` 3500 |
+| federal | `payroll.qpp` | `exempt` 3500 |
+| federal | `workersBenefit.standard` | `floor[0]` 3000, `floor[1]` 3000 |
+| federal | `workersBenefit.regional.AB` | `floor[0]` 2760, `floor[1]` 2760 |
+| federal | `workersBenefit.regional.NU` | `floor[0]` 6000, `floor[1]` 6000 |
+| federal | `workersBenefit.quebec` | `single[1]` 2400, `couple[1]` 3600, `parent[1]` 2400, `coupleKids[1]` 3600 |
+| federal | `driving` | `efficiency` 9 |
+| AB | `driving` | `distance` 16100 |
+| AB | `childBenefit.params` | `workingFloor` 2760, `minAnnual` 10 |
+| BC | `driving` | `distance` 12900 |
+| BC | `childBenefit.params` | `max[0]` 1750, `max[1]` 1100, `max[2]` 900, `min[0]` 775, `min[1]` 750, `min[2]` 725, `singleParent` 500 |
+| BC | `credits[bc-renters-tax-credit].params` | `max` 400 |
+| MB | `basicPersonalAmount` | `max` 15780, `from` 200000, `to` 400000 |
+| MB | `spouseAmount` | `max` 9134 |
+| MB | `familyTaxBenefit.params` | `basic` 2065, `dependant` 2065, `child` 2752, `childThrough` 18 |
+| MB | `driving` | `distance` 15000 |
+| NB | `driving` | `distance` 16100 |
+| NB | `childBenefit.params` | `perChild` 250, `threshold` 20000 |
+| NB | `childBenefit.params.workingIncomeSupplement` | `floor` 3750, `max` 250, `threshold` 20921 |
+| NB | `credits[nb-hst-credit].params` | `adult` 300, `spouse` 300, `child` 100, `threshold` 35000 |
+| NL | `driving` | `distance` 15100 |
+| NL | `credits[nl-income-supplement].params` | `base` 254, `extraMax` 266, `extraFrom` 15000, `couple` 69, `child` 231, `threshold` 40000 |
+| NS | `childAmount` | `perChild` 1200 |
+| NS | `lowIncomeReduction.params` | `individual` 300, `spouse` 300, `child` 165, `threshold` 15000 |
+| NS | `driving` | `distance` 17400 |
+| NS | `childBenefit.params` | `fullBelow` 26000, `partialBelow` 34000 |
+| NS | `credits[ns-affordable-living-tax-credit].params` | `base` 255, `child` 60, `threshold` 30000 |
+| NT | `driving` | `distance` 11000 |
+| NT | `childBenefit.params` | `under6[1]` 815, `under6[2]` 1467, `under6[3]` 1997, `under6[4]` 2445, `under6More` 367, `over6[1]` 652, `over6[2]` 1174, `over6[3]` 1597, `over6[4]` 1956, `over6More` 293, `fullUpTo` 30000, `endsAt` 80000 |
+| NU | `childAmount` | `perChild` 1200 |
+| NU | `driving` | `distance` 6800 |
+| NU | `childBenefit.params` | `threshold` 22065 |
+| ON | `brackets` | `[2].limit` 150000, `[3].limit` 220000 |
+| ON | `driving` | `distance` 16200 |
+| ON | `childcareCredit.params` | `fullThrough` 20000, `steps[0][0]` 40000, `steps[0][1]` 2500, `steps[1][0]` 60000, `steps[1][1]` 5000, `steps[2][0]` 150000, `steps[2][1]` 3600 |
+| PE | `childAmount` | `perChild` 1200 |
+| PE | `lowIncomeReduction.params` | `individual` 350, `spouse` 350, `child` 300 |
+| PE | `driving` | `distance` 15100 |
+| PE | `childBenefit.params` | `bands[0][0]` 45000, `bands[1][0]` 80000 |
+| QC | `healthServicesFund.params` | `firstCap` 150, `max` 1000 |
+| QC | `driving` | `distance` 14800 |
+| QC | `credits[quebec-work-premium].params` | `single[1]` 2400, `couple[1]` 3600, `parent[1]` 2400, `coupleKids[1]` 3600 |
+| QC | `childcareCredit.params` | `youngUnder` 7 |
+| SK | `driving` | `distance` 15300 |
+| YT | `brackets` | `[3].limit` 500000 |
+| YT | `driving` | `distance` 13200 |
+| YT | `childBenefit.params` | `threshold` 35000 |
+
+### Large changes, over 15% (12)
+
+| File | Field | 2025 | 2026 | Change |
+|---|---|--:|--:|--:|
+| federal | `indexation` | 0.027 | 0.02 | -25.9% |
+| federal | `groceriesBenefit.adult` | 349 | 445 | +27.5% |
+| federal | `groceriesBenefit.spouseOrFirstChild` | 349 | 445 | +27.5% |
+| federal | `groceriesBenefit.child` | 184 | 234 | +27.2% |
+| federal | `groceriesBenefit.singleSupplement.max` | 184 | 234 | +27.2% |
+| BC | `bcTaxReduction.max` | 562 | 690 | +22.8% |
+| NL | `basicPersonalAmount` | 11067 | 13094 | +18.3% |
+| NL | `lowIncomeReduction.params.individual` | 997 | 842 | -15.5% |
+| NL | `childBenefit.params.fullUpTo` | 17397 | 20397 | +17.2% |
+| NU | `childBenefit.params.perChild` | 348 | 696 | +100.0% |
+| PE | `brackets[4].limit` | .inf | 200000 | n/a |
+| PE | `childBenefit.params.bands[1][1]` | 240 | 290 | +20.8% |
+
+### Added, removed and replaced (49)
+
+| File | Field | | Value |
+|---|---|---|---|
+| federal | `investment.portfolioDefaults` | added | {canadian: 0.2, foreign: 0.4, bonds: 0.4, yield: 0.022, estimated: true, basis:… |
+| federal | `payroll.employeeRetirement.cpp.estimated` | added | true |
+| federal | `payroll.employeeRetirement.qpp.estimated` | added | true |
+| federal | `groceriesBenefit.formerName` | added | GST/HST credit |
+| federal | `workersBenefit.estimated` | added | true |
+| federal | `fuelTax.gasoline` | replaced | 0.1 → [{from: 2026-01-01, rate: 0.1}, {from: 2026-04-20, rate: 0,… |
+| AB | `propertyTax.estimated` | removed | true |
+| AB | `fuelTax.gasoline` | replaced | 0.13 → [{from: 2026-01-01, rate: 0.13}, {from: 2026-10-01, rate: 0… |
+| AB | `carbon` | removed | {name: Federal carbon pricing, gasoline: [{from: 2025-01-01, rate: 0.1761}, {fr… |
+| BC | `propertyTax.estimated` | removed | true |
+| BC | `carbon` | removed | {name: BC carbon tax, gasoline: [{from: 2025-01-01, rate: 0.1761}, {from: 2025-… |
+| MB | `familyTaxBenefit.estimated` | added | true |
+| MB | `propertyTax.estimated` | removed | true |
+| MB | `carbon` | removed | {name: Federal carbon pricing, gasoline: [{from: 2025-01-01, rate: 0.1761}, {fr… |
+| NB | `claimants.lowIncomeReduction.estimated` | added | true |
+| NB | `lowIncomeReduction.estimated` | added | true |
+| NB | `propertyTax.estimated` | removed | true |
+| NB | `carbon` | removed | {name: Federal carbon pricing, gasoline: [{from: 2025-01-01, rate: 0.1761}, {fr… |
+| NL | `basicPersonalAmountChange` | added | {change: April 2026 budget increase, effective: January 1, 2026} |
+| NL | `claimants.lowIncomeReduction.estimated` | added | true |
+| NL | `lowIncomeReduction.estimated` | added | true |
+| NL | `propertyTax.estimated` | removed | true |
+| NL | `fuelTax.gasoline` | replaced | 0.075 → [{from: 2026-01-01, rate: 0.075}, {from: 2026-12-01, rate: … |
+| NL | `carbon` | removed | {name: Federal carbon pricing, gasoline: [{from: 2025-01-01, rate: 0.1761}, {fr… |
+| NS | `claimants.childAmount.estimated` | added | true |
+| NS | `claimants.lowIncomeReduction.estimated` | added | true |
+| NS | `propertyTax.estimated` | removed | true |
+| NS | `carbon` | removed | {name: Federal carbon pricing, gasoline: [{from: 2025-01-01, rate: 0.1761}, {fr… |
+| NT | `carbon` | removed | {name: Carbon pricing, heating: {amount: 0, estimated: true, method: "Estimated… |
+| NU | `claimants.childAmount.estimated` | added | true |
+| NU | `childBenefit.estimated` | removed | true |
+| NU | `carbon` | removed | {name: Carbon pricing, heating: {amount: 0, estimated: true, method: Estimated … |
+| ON | `propertyTax.estimated` | removed | true |
+| ON | `childcareCredit.estimated` | added | true |
+| ON | `carbon` | removed | {name: Federal carbon pricing, gasoline: [{from: 2025-01-01, rate: 0.1761}, {fr… |
+| PE | `brackets[5]` | added | [.inf, 0.2] |
+| PE | `claimants.childAmount.estimated` | added | true |
+| PE | `claimants.lowIncomeReduction.estimated` | added | true |
+| PE | `childAmount.estimated` | added | true |
+| PE | `fuelTax.gasoline` | replaced | 0.0847 → [{from: 2026-01-01, rate: 0.0847}, {from: 2026-09-26, rate:… |
+| PE | `credits[pei-essentials-benefit]` | added | {name: PEI essentials benefit, program: pei-essentials-benefit, params: {single… |
+| PE | `credits[pei-sales-tax-credit]` | removed | {name: PEI sales tax credit, program: pei-sales-tax-credit, params: {individual… |
+| PE | `carbon` | removed | {name: Federal carbon pricing, gasoline: [{from: 2025-01-01, rate: 0.1761}, {fr… |
+| QC | `healthServicesFund.estimated` | added | true |
+| QC | `propertyTax.estimated` | removed | true |
+| SK | `claimants.childAmount.estimated` | added | true |
+| SK | `propertyTax.estimated` | removed | true |
+| SK | `carbon` | removed | {name: Federal carbon pricing, gasoline: [{from: 2025-01-01, rate: 0.1761}, {fr… |
+| YT | `carbon` | removed | {name: Carbon pricing, heating: {amount: 0, estimated: true, method: "Estimated… |
+
+<details><summary>All 226 changed values</summary>
+
+| File | Field | 2025 | 2026 | Change |
+|---|---|--:|--:|--:|
+| federal | `brackets[0].limit` | 57375 | 58523 | +2.0% |
+| federal | `brackets[0].rate` | 0.145 | 0.14 | -3.4% |
+| federal | `brackets[1].limit` | 114750 | 117045 | +2.0% |
+| federal | `brackets[2].limit` | 177882 | 181440 | +2.0% |
+| federal | `brackets[3].limit` | 253414 | 258482 | +2.0% |
+| federal | `basicPersonalAmount.max` | 16129 | 16452 | +2.0% |
+| federal | `basicPersonalAmount.min` | 14538 | 14829 | +2.0% |
+| federal | `basicPersonalAmount.from` | 177882 | 181440 | +2.0% |
+| federal | `basicPersonalAmount.to` | 253414 | 258482 | +2.0% |
+| federal | `employmentAmount` | 1471 | 1501 | +2.0% |
+| federal | `indexation` | 0.027 | 0.02 | -25.9% |
+| federal | `rrsp.limit` | 32490 | 33810 | +4.1% |
+| federal | `payroll.cpp.ympe` | 71300 | 74600 | +4.6% |
+| federal | `payroll.cpp.yampe` | 81200 | 85000 | +4.7% |
+| federal | `payroll.qpp.ympe` | 71300 | 74600 | +4.6% |
+| federal | `payroll.qpp.yampe` | 81200 | 85000 | +4.7% |
+| federal | `payroll.qpp.base` | 0.054 | 0.053 | -1.9% |
+| federal | `payroll.ei.maxInsurable` | 65700 | 68900 | +4.9% |
+| federal | `payroll.ei.rate` | 0.0164 | 0.0163 | -0.6% |
+| federal | `payroll.ei.quebecRate` | 0.0131 | 0.013 | -0.8% |
+| federal | `payroll.qpip.maxInsurable` | 98000 | 103000 | +5.1% |
+| federal | `payroll.qpip.rate` | 0.00494 | 0.0043 | -13.0% |
+| federal | `childBenefit.perChildUnder6` | 7997 | 8157 | +2.0% |
+| federal | `childBenefit.perChild6to17` | 6748 | 6883 | +2.0% |
+| federal | `childBenefit.threshold1` | 37487 | 38237 | +2.0% |
+| federal | `childBenefit.threshold2` | 81222 | 82847 | +2.0% |
+| federal | `childBenefit.fixed2[1]` | 3061 | 3123 | +2.0% |
+| federal | `childBenefit.fixed2[2]` | 5904 | 6022 | +2.0% |
+| federal | `childBenefit.fixed2[3]` | 8310 | 8476 | +2.0% |
+| federal | `childBenefit.fixed2[4]` | 10059 | 10260 | +2.0% |
+| federal | `groceriesBenefit.name` | GST/HST credit | Canada Groceries and Essentials Benefit |  |
+| federal | `groceriesBenefit.adult` | 349 | 445 | +27.5% |
+| federal | `groceriesBenefit.spouseOrFirstChild` | 349 | 445 | +27.5% |
+| federal | `groceriesBenefit.child` | 184 | 234 | +27.2% |
+| federal | `groceriesBenefit.singleSupplement.max` | 184 | 234 | +27.2% |
+| federal | `groceriesBenefit.singleSupplement.from` | 11337 | 11564 | +2.0% |
+| federal | `groceriesBenefit.phaseOut.from` | 45521 | 46432 | +2.0% |
+| federal | `workersBenefit.standard.max[0]` | 1633 | 1665 | +2.0% |
+| federal | `workersBenefit.standard.max[1]` | 2813 | 2869 | +2.0% |
+| federal | `workersBenefit.standard.threshold[0]` | 26855 | 27392 | +2.0% |
+| federal | `workersBenefit.standard.threshold[1]` | 30639 | 31251 | +2.0% |
+| federal | `workersBenefit.secondaryEarnerExemption` | 16386 | 16714 | +2.0% |
+| federal | `workersBenefit.regional.AB.max[0]` | 1750 | 1785 | +2.0% |
+| federal | `workersBenefit.regional.AB.max[1]` | 2619 | 2671 | +2.0% |
+| federal | `workersBenefit.regional.AB.threshold[0]` | 26159 | 26682 | +2.0% |
+| federal | `workersBenefit.regional.AB.threshold[1]` | 32772 | 33427 | +2.0% |
+| federal | `workersBenefit.regional.NU.max[0]` | 1621 | 1653 | +2.0% |
+| federal | `workersBenefit.regional.NU.max[1]` | 2435 | 2484 | +2.0% |
+| federal | `workersBenefit.regional.NU.threshold[0]` | 26832 | 27369 | +2.0% |
+| federal | `workersBenefit.regional.NU.threshold[1]` | 36927 | 37666 | +2.0% |
+| federal | `workersBenefit.quebec.single[2]` | 12620 | 12808 | +1.5% |
+| federal | `workersBenefit.quebec.single[3]` | 14170.05 | 14453 | +2.0% |
+| federal | `workersBenefit.quebec.couple[2]` | 19534 | 19828 | +1.5% |
+| federal | `workersBenefit.quebec.couple[3]` | 21787.19 | 22223 | +2.0% |
+| federal | `workersBenefit.quebec.parent[2]` | 12620 | 12808 | +1.5% |
+| federal | `workersBenefit.quebec.parent[3]` | 14341.56 | 14612 | +1.9% |
+| federal | `workersBenefit.quebec.coupleKids[2]` | 19534 | 19828 | +1.5% |
+| federal | `workersBenefit.quebec.coupleKids[3]` | 22007.75 | 22424 | +1.9% |
+| AB | `brackets[0].limit` | 60000 | 61200 | +2.0% |
+| AB | `brackets[1].limit` | 151234 | 154259 | +2.0% |
+| AB | `brackets[2].limit` | 181481 | 185111 | +2.0% |
+| AB | `brackets[3].limit` | 241974 | 246813 | +2.0% |
+| AB | `brackets[4].limit` | 362961 | 370220 | +2.0% |
+| AB | `basicPersonalAmount` | 22323 | 22769 | +2.0% |
+| AB | `spouseAmount.max` | 22323 | 22769 | +2.0% |
+| AB | `childBenefit.params.base[0]` | 1499 | 1529 | +2.0% |
+| AB | `childBenefit.params.base[1]` | 2248 | 2293 | +2.0% |
+| AB | `childBenefit.params.base[2]` | 2997 | 3057 | +2.0% |
+| AB | `childBenefit.params.base[3]` | 3746 | 3821 | +2.0% |
+| AB | `childBenefit.params.baseThreshold` | 27565 | 28116 | +2.0% |
+| AB | `childBenefit.params.working[0]` | 767 | 782 | +2.0% |
+| AB | `childBenefit.params.working[1]` | 1465 | 1494 | +2.0% |
+| AB | `childBenefit.params.working[2]` | 1883 | 1920 | +2.0% |
+| AB | `childBenefit.params.working[3]` | 2021 | 2061 | +2.0% |
+| AB | `childBenefit.params.workingThreshold` | 46191 | 47115 | +2.0% |
+| BC | `brackets[0].limit` | 49279 | 50363 | +2.2% |
+| BC | `brackets[0].rate` | 0.0506 | 0.056 | +10.7% |
+| BC | `brackets[1].limit` | 98560 | 100728 | +2.2% |
+| BC | `brackets[2].limit` | 113158 | 115648 | +2.2% |
+| BC | `brackets[3].limit` | 137407 | 140430 | +2.2% |
+| BC | `brackets[4].limit` | 186306 | 190405 | +2.2% |
+| BC | `brackets[5].limit` | 259829 | 265545 | +2.2% |
+| BC | `basicPersonalAmount` | 12932 | 13216 | +2.2% |
+| BC | `spouseAmount.max` | 11073 | 11317 | +2.2% |
+| BC | `spouseAmount.threshold` | 1108 | 1132 | +2.2% |
+| BC | `bcTaxReduction.max` | 562 | 690 | +22.8% |
+| BC | `bcTaxReduction.threshold` | 25020 | 25570 | +2.2% |
+| BC | `childBenefit.params.threshold` | 29526 | 30176 | +2.2% |
+| BC | `childBenefit.params.minThreshold` | 94483 | 96562 | +2.2% |
+| BC | `credits[bc-renters-tax-credit].params.threshold` | 64764 | 66189 | +2.2% |
+| MB | `credits[mb-affordability-credits].params.homeownerMax` | 1500 | 1600 | +6.7% |
+| MB | `credits[mb-affordability-credits].params.renter` | 575 | 625 | +8.7% |
+| NB | `brackets[0].limit` | 51306 | 52333 | +2.0% |
+| NB | `brackets[1].limit` | 102614 | 104666 | +2.0% |
+| NB | `brackets[2].limit` | 190060 | 193861 | +2.0% |
+| NB | `basicPersonalAmount` | 13396 | 13664 | +2.0% |
+| NB | `spouseAmount.max` | 10499 | 10709 | +2.0% |
+| NB | `spouseAmount.threshold` | 1051 | 1072 | +2.0% |
+| NB | `lowIncomeReduction.params.amount` | 802 | 818 | +2.0% |
+| NB | `lowIncomeReduction.params.threshold` | 21920 | 22358 | +2.0% |
+| NL | `brackets[0].limit` | 44192 | 44678 | +1.1% |
+| NL | `brackets[1].limit` | 88382 | 89354 | +1.1% |
+| NL | `brackets[2].limit` | 157792 | 159528 | +1.1% |
+| NL | `brackets[3].limit` | 220910 | 223340 | +1.1% |
+| NL | `brackets[4].limit` | 282214 | 285319 | +1.1% |
+| NL | `brackets[5].limit` | 564429 | 570638 | +1.1% |
+| NL | `brackets[6].limit` | 1128858 | 1141275 | +1.1% |
+| NL | `basicPersonalAmount` | 11067 | 13094 | +18.3% |
+| NL | `spouseAmount.max` | 9043 | 9142 | +1.1% |
+| NL | `spouseAmount.threshold` | 905 | 915 | +1.1% |
+| NL | `lowIncomeReduction.params.individual` | 997 | 842 | -15.5% |
+| NL | `lowIncomeReduction.params.family` | 557 | 563 | +1.1% |
+| NL | `lowIncomeReduction.params.thresholdIndividual` | 23928 | 24191 | +1.1% |
+| NL | `lowIncomeReduction.params.thresholdFamily` | 40460 | 40905 | +1.1% |
+| NL | `childBenefit.params.perChild[0]` | 1868 | 1888 | +1.1% |
+| NL | `childBenefit.params.perChild[1]` | 1980 | 2002 | +1.1% |
+| NL | `childBenefit.params.perChild[2]` | 2127 | 2150 | +1.1% |
+| NL | `childBenefit.params.perChild[3]` | 2285 | 2310 | +1.1% |
+| NL | `childBenefit.params.fullUpTo` | 17397 | 20397 | +17.2% |
+| NL | `childBenefit.params.endsAt` | 38192 | 38193 | +0.0% |
+| NS | `brackets[0].limit` | 30507 | 30995 | +1.6% |
+| NS | `brackets[1].limit` | 61015 | 61991 | +1.6% |
+| NS | `brackets[2].limit` | 95883 | 97417 | +1.6% |
+| NS | `brackets[3].limit` | 154650 | 157124 | +1.6% |
+| NS | `basicPersonalAmount` | 11744 | 11932 | +1.6% |
+| NS | `spouseAmount.max` | 11744 | 11932 | +1.6% |
+| NS | `spouseAmount.threshold` | 874 | 888 | +1.6% |
+| NS | `salesTax.rate` | 0.1425 | 0.14 | -1.8% |
+| NS | `salesTax.label` | 14% HST (15% before April 1) | 14% HST |  |
+| NS | `childBenefit.params.perChild` | 1524.96 | 1525 | +0.0% |
+| NS | `childBenefit.params.partialOtherChildren` | 762.48 | 762.5 | +0.0% |
+| NT | `brackets[0].limit` | 51964 | 53003 | +2.0% |
+| NT | `brackets[1].limit` | 103930 | 106009 | +2.0% |
+| NT | `brackets[2].limit` | 168967 | 172346 | +2.0% |
+| NT | `basicPersonalAmount` | 17842 | 18198 | +2.0% |
+| NT | `spouseAmount.max` | 17842 | 18198 | +2.0% |
+| NU | `brackets[0].limit` | 54707 | 55801 | +2.0% |
+| NU | `brackets[1].limit` | 109413 | 111602 | +2.0% |
+| NU | `brackets[2].limit` | 177881 | 181439 | +2.0% |
+| NU | `basicPersonalAmount` | 19274 | 19659 | +2.0% |
+| NU | `spouseAmount.max` | 19274 | 19659 | +2.0% |
+| NU | `childBenefit.params.perChild` | 348 | 696 | +100.0% |
+| NU | `childBenefit.rateSource` | its 2026 Bill 4 (no 2025 source gives t… | its 2026 Bill 4 |  |
+| ON | `brackets[0].limit` | 52886 | 53891 | +1.9% |
+| ON | `brackets[1].limit` | 105775 | 107785 | +1.9% |
+| ON | `basicPersonalAmount` | 12747 | 12989 | +1.9% |
+| ON | `spouseAmount.max` | 10823 | 11029 | +1.9% |
+| ON | `spouseAmount.threshold` | 1082 | 1103 | +1.9% |
+| ON | `surtax[0][0]` | 5710 | 5818 | +1.9% |
+| ON | `surtax[1][0]` | 7307 | 7446 | +1.9% |
+| ON | `ontarioTaxReduction.base` | 294 | 300 | +2.0% |
+| ON | `ontarioTaxReduction.perChild` | 544 | 554 | +1.8% |
+| ON | `childBenefit.params.perChild` | 1726.92 | 1760 | +1.9% |
+| ON | `childBenefit.params.threshold` | 26364 | 26865 | +1.9% |
+| ON | `credits[ontario-sales-tax-credit].params.perPerson` | 371 | 378 | +1.9% |
+| ON | `credits[ontario-sales-tax-credit].params.thresholdSingle` | 28506 | 29047 | +1.9% |
+| ON | `credits[ontario-sales-tax-credit].params.thresholdFamily` | 35632 | 36309 | +1.9% |
+| ON | `credits[ontario-energy-property-tax-credit].params.energyMax` | 285 | 290 | +1.8% |
+| ON | `credits[ontario-energy-property-tax-credit].params.propertyBase` | 71 | 73 | +2.8% |
+| ON | `credits[ontario-energy-property-tax-credit].params.propertyMax` | 927 | 944 | +1.8% |
+| ON | `credits[ontario-energy-property-tax-credit].params.thresholdSingle` | 28506 | 29047 | +1.9% |
+| ON | `credits[ontario-energy-property-tax-credit].params.thresholdFamily` | 35632 | 36309 | +1.9% |
+| PE | `brackets[0].limit` | 33328 | 33928 | +1.8% |
+| PE | `brackets[1].limit` | 64656 | 65820 | +1.8% |
+| PE | `brackets[2].limit` | 105000 | 106890 | +1.8% |
+| PE | `brackets[3].limit` | 140000 | 142520 | +1.8% |
+| PE | `brackets[4].limit` | .inf | 200000 | n/a |
+| PE | `basicPersonalAmount` | 14650 | 15000 | +2.4% |
+| PE | `spouseAmount.max` | 12443 | 12740 | +2.4% |
+| PE | `spouseAmount.threshold` | 1244 | 1274 | +2.4% |
+| PE | `lowIncomeReduction.params.threshold` | 22650 | 23000 | +1.5% |
+| PE | `childBenefit.params.bands[0][1]` | 360 | 410 | +13.9% |
+| PE | `childBenefit.params.bands[1][1]` | 240 | 290 | +20.8% |
+| QC | `brackets[0].limit` | 53255 | 54345 | +2.0% |
+| QC | `brackets[1].limit` | 106495 | 108680 | +2.1% |
+| QC | `brackets[2].limit` | 129590 | 132245 | +2.0% |
+| QC | `basicPersonalAmount` | 18571 | 18952 | +2.1% |
+| QC | `healthServicesFund.params.threshold` | 18130 | 18500 | +2.0% |
+| QC | `healthServicesFund.params.upperThreshold` | 63060 | 64355 | +2.1% |
+| QC | `quebec.workerDeduction.max` | 1420 | 1450 | +2.1% |
+| QC | `quebec.livingAlone.max` | 2128 | 2172 | +2.1% |
+| QC | `quebec.livingAlone.threshold` | 42090 | 42955 | +2.1% |
+| QC | `childBenefit.params.max` | 3006 | 3068 | +2.1% |
+| QC | `childBenefit.params.maxSingleParent` | 1055 | 1077 | +2.1% |
+| QC | `childBenefit.params.min` | 1196 | 1221 | +2.1% |
+| QC | `childBenefit.params.minSingleParent` | 421 | 430 | +2.1% |
+| QC | `childBenefit.params.thresholdSingle` | 43280 | 44032 | +1.7% |
+| QC | `childBenefit.params.thresholdCouple` | 59369 | 60398 | +1.7% |
+| QC | `childBenefit.params.schoolSupplies` | 124 | 127 | +2.4% |
+| QC | `credits[quebec-solidarity-tax-credit].params.qstAdult` | 356 | 363 | +2.0% |
+| QC | `credits[quebec-solidarity-tax-credit].params.qstSpouse` | 356 | 363 | +2.0% |
+| QC | `credits[quebec-solidarity-tax-credit].params.qstAlone` | 169 | 172 | +1.8% |
+| QC | `credits[quebec-solidarity-tax-credit].params.housingCouple` | 888 | 906 | +2.0% |
+| QC | `credits[quebec-solidarity-tax-credit].params.housingSingle` | 731 | 746 | +2.1% |
+| QC | `credits[quebec-solidarity-tax-credit].params.child` | 155 | 158 | +1.9% |
+| QC | `credits[quebec-solidarity-tax-credit].params.threshold` | 42325 | 43195 | +2.1% |
+| QC | `credits[quebec-work-premium].params.single[2]` | 12620 | 12808 | +1.5% |
+| QC | `credits[quebec-work-premium].params.couple[2]` | 19534 | 19828 | +1.5% |
+| QC | `credits[quebec-work-premium].params.parent[2]` | 12620 | 12808 | +1.5% |
+| QC | `credits[quebec-work-premium].params.coupleKids[2]` | 19534 | 19828 | +1.5% |
+| QC | `childcareCredit.params.eligibleThrough` | 16 | 14 | -12.5% |
+| QC | `childcareCredit.params.annualYoung` | 12275 | 12525 | +2.0% |
+| QC | `childcareCredit.params.annualOther` | 6180 | 6305 | +2.0% |
+| QC | `childcareCredit.params.annualSevere` | 16800 | 17145 | +2.1% |
+| QC | `childcareCredit.params.rates[0][0]` | 24795 | 25305 | +2.1% |
+| QC | `childcareCredit.params.rates[1][0]` | 43725 | 44620 | +2.0% |
+| QC | `childcareCredit.params.rates[2][0]` | 45340 | 46270 | +2.1% |
+| QC | `childcareCredit.params.rates[3][0]` | 46970 | 47935 | +2.1% |
+| QC | `childcareCredit.params.rates[4][0]` | 48570 | 49565 | +2.0% |
+| QC | `childcareCredit.params.rates[5][0]` | 50195 | 51225 | +2.1% |
+| QC | `childcareCredit.params.rates[6][0]` | 119835 | 122290 | +2.0% |
+| SK | `brackets[0].limit` | 53463 | 54532 | +2.0% |
+| SK | `brackets[1].limit` | 152750 | 155805 | +2.0% |
+| SK | `basicPersonalAmount` | 19491 | 20381 | +4.6% |
+| SK | `spouseAmount.max` | 19491 | 20381 | +4.6% |
+| SK | `spouseAmount.threshold` | 1949 | 2038 | +4.6% |
+| SK | `childAmount.perChild` | 7704 | 8358 | +8.5% |
+| SK | `credits[sk-low-income-tax-credit].params.adult` | 429 | 460 | +7.2% |
+| SK | `credits[sk-low-income-tax-credit].params.spouse` | 429 | 460 | +7.2% |
+| SK | `credits[sk-low-income-tax-credit].params.child` | 169 | 181 | +7.1% |
+| SK | `credits[sk-low-income-tax-credit].params.rate` | 0.02884 | 0.0303 | +5.1% |
+| SK | `credits[sk-low-income-tax-credit].params.threshold` | 38588 | 39345 | +2.0% |
+| YT | `brackets[0].limit` | 57375 | 58523 | +2.0% |
+| YT | `brackets[1].limit` | 114750 | 117045 | +2.0% |
+| YT | `brackets[2].limit` | 177882 | 181440 | +2.0% |
+| YT | `childBenefit.params.perChild` | 936.96 | 966 | +3.1% |
+
+</details>
+
+<details><summary>19 unchanged values opted out</summary>
+
+| File | In | Unchanged values | Why |
+|---|---|---|---|
+| MB | `brackets` | `[0].limit` 47000, `[1].limit` 100000 | bracketsFrozenSince: 2025 |
+| ON | `lift` | `max` 875, `threshold` 32500, `familyThreshold` 65000 | not indexed comment |
+| ON | `payroll` | `healthPremium[0][0]` 200000, `healthPremium[0][1]` 750, `healthPremium[0][3]` 900, `healthPremium[1][0]` 72000, `healthPremium[1][1]` 600, `healthPremium[1][3]` 750, `healthPremium[2][0]` 48000, `healthPremium[2][1]` 450, `healthPremium[2][3]` 600, `healthPremium[3][0]` 36000, `healthPremium[3][1]` 300, `healthPremium[3][3]` 450, `healthPremium[4][0]` 20000, `healthPremium[4][3]` 300 | not indexed comment |
+
+</details>

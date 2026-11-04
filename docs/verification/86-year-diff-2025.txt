@@ -1,0 +1,628 @@
+## Data diff: 2025 against 2024
+
+389 values changed from 2024 to 2025 (81 over 15%), 108 amounts suspiciously unchanged, 40 added, 28 removed, 4 replaced. 23 unchanged values opted out.
+
+### Suspiciously unchanged (108)
+
+Amounts, thresholds and bracket limits that are the same in both years. If one is meant to stay put, say so with a `# not indexed` comment on its line (or `bracketsFrozenSince` for bracket limits).
+
+| File | In | Unchanged values |
+|---|---|---|
+| federal | `payroll.cpp` | `exempt` 3500 |
+| federal | `payroll.qpp` | `exempt` 3500 |
+| federal | `workersBenefit.standard` | `floor[0]` 3000, `floor[1]` 3000 |
+| federal | `workersBenefit.regional.AB` | `floor[0]` 2760, `floor[1]` 2760 |
+| federal | `workersBenefit.regional.NU` | `floor[0]` 6000, `floor[1]` 6000 |
+| federal | `workersBenefit.quebec` | `single[1]` 2400, `couple[1]` 3600, `parent[1]` 2400, `coupleKids[1]` 3600 |
+| federal | `driving` | `efficiency` 9 |
+| AB | `childBenefit.params` | `workingFloor` 2760, `minAnnual` 10 |
+| AB | `driving` | `distance` 16100 |
+| BC | `childBenefit.params` | `singleParent` 500 |
+| BC | `credits[bc-renters-tax-credit].params` | `max` 400 |
+| BC | `driving` | `distance` 12900 |
+| MB | `spouseAmount` | `max` 9134 |
+| MB | `driving` | `distance` 15000 |
+| MB | `carbon.rebates[carbon-rebate-payments].params.payments` | `[1].adult` 150, `[1].spouse` 75, `[1].child` 37.5, `[1].firstChild` 75 |
+| NB | `childBenefit.params` | `perChild` 250, `threshold` 20000 |
+| NB | `childBenefit.params.workingIncomeSupplement` | `floor` 3750, `max` 250, `threshold` 20921 |
+| NB | `credits[nb-hst-credit].params` | `adult` 300, `spouse` 300, `child` 100, `threshold` 35000 |
+| NB | `driving` | `distance` 16100 |
+| NL | `credits[nl-income-supplement].params` | `base` 254, `extraMax` 266, `extraFrom` 15000, `couple` 69, `child` 231, `threshold` 40000 |
+| NL | `driving` | `distance` 15100 |
+| NL | `carbon.rebates[carbon-rebate-payments].params.payments` | `[1].adult` 149, `[1].spouse` 74.5, `[1].child` 37.25, `[1].firstChild` 74.5 |
+| NS | `childAmount` | `perChild` 1200 |
+| NS | `lowIncomeReduction.params` | `individual` 300, `spouse` 300, `child` 165, `threshold` 15000 |
+| NS | `childBenefit.params` | `fullBelow` 26000, `partialBelow` 34000 |
+| NS | `credits[ns-affordable-living-tax-credit].params` | `base` 255, `child` 60, `threshold` 30000 |
+| NS | `driving` | `distance` 17400 |
+| NT | `childBenefit.params` | `under6[1]` 815, `under6[2]` 1467, `under6[3]` 1997, `under6[4]` 2445, `under6More` 367, `over6[1]` 652, `over6[2]` 1174, `over6[3]` 1597, `over6[4]` 1956, `over6More` 293, `fullUpTo` 30000, `endsAt` 80000 |
+| NT | `driving` | `distance` 11000 |
+| NT | `carbon.rebates[carbon-rebate-payments].params.payments` | `[0].adult` 110.25, `[0].spouse` 110.25, `[1].adult` 110.25, `[1].spouse` 110.25 |
+| NU | `childAmount` | `perChild` 1200 |
+| NU | `childBenefit.params` | `perChild` 348, `threshold` 22065 |
+| NU | `driving` | `distance` 6800 |
+| ON | `brackets` | `[2].limit` 150000, `[3].limit` 220000 |
+| ON | `driving` | `distance` 16200 |
+| PE | `brackets` | `[2].limit` 105000, `[3].limit` 140000 |
+| PE | `childAmount` | `perChild` 1200 |
+| PE | `lowIncomeReduction.params` | `individual` 350, `spouse` 350, `child` 300 |
+| PE | `childBenefit.params` | `bands[0][0]` 45000, `bands[1][0]` 80000 |
+| PE | `credits[pei-sales-tax-credit].params` | `individual` 110, `spouseOrDependant` 55, `supplementFrom` 30000, `supplementMax` 55, `threshold` 50000 |
+| PE | `driving` | `distance` 15100 |
+| PE | `carbon.rebates[carbon-rebate-payments].params.payments` | `[1].adult` 110, `[1].spouse` 55, `[1].child` 27.5, `[1].firstChild` 55 |
+| QC | `credits[quebec-work-premium].params` | `single[1]` 2400, `couple[1]` 3600, `parent[1]` 2400, `coupleKids[1]` 3600 |
+| QC | `driving` | `distance` 14800 |
+| SK | `driving` | `distance` 15300 |
+| YT | `brackets` | `[3].limit` 500000 |
+| YT | `childBenefit.params` | `threshold` 35000 |
+| YT | `driving` | `distance` 13200 |
+
+### Large changes, over 15% (81)
+
+| File | Field | 2024 | 2025 | Change |
+|---|---|--:|--:|--:|
+| federal | `indexation` | 0.047 | 0.027 | -42.6% |
+| AB | `brackets[0].limit` | 148269 | 60000 | -59.5% |
+| AB | `brackets[0].rate` | 0.1 | 0.08 | -20.0% |
+| AB | `brackets[1].rate` | 0.12 | 0.1 | -16.7% |
+| AB | `brackets[2].limit` | 237230 | 181481 | -23.5% |
+| AB | `brackets[3].limit` | 355845 | 241974 | -32.0% |
+| AB | `brackets[4].limit` | .inf | 362961 | n/a |
+| AB | `carbon.gasoline[0].rate` | 0.1431 | 0.1761 | +23.1% |
+| AB | `carbon.gasoline[1].rate` | 0.1761 | 0 | -100.0% |
+| AB | `carbon.heating.amount` | 384.52 | 99.45 | -74.1% |
+| AB | `carbon.rebates[carbon-rebate-payments].params.payments[0].adult` | 193 | 225 | +16.6% |
+| AB | `carbon.rebates[carbon-rebate-payments].params.payments[0].spouse` | 96.5 | 112.5 | +16.6% |
+| AB | `carbon.rebates[carbon-rebate-payments].params.payments[0].child` | 48.25 | 56.25 | +16.6% |
+| AB | `carbon.rebates[carbon-rebate-payments].params.payments[0].firstChild` | 96.5 | 112.5 | +16.6% |
+| BC | `childBenefit.params.max[0]` | 2188 | 1750 | -20.0% |
+| BC | `childBenefit.params.max[1]` | 1375 | 1100 | -20.0% |
+| BC | `childBenefit.params.max[2]` | 1125 | 900 | -20.0% |
+| BC | `childBenefit.params.min[0]` | 969 | 775 | -20.0% |
+| BC | `childBenefit.params.min[1]` | 937 | 750 | -20.0% |
+| BC | `childBenefit.params.min[2]` | 906 | 725 | -20.0% |
+| BC | `childBenefit.params.threshold` | 35902 | 29526 | -17.8% |
+| BC | `childBenefit.params.minThreshold` | 114887 | 94483 | -17.8% |
+| BC | `carbon.gasoline[0].rate` | 0.1431 | 0.1761 | +23.1% |
+| BC | `carbon.gasoline[1].rate` | 0.1761 | 0 | -100.0% |
+| BC | `carbon.heating.amount` | 185.6 | 48 | -74.1% |
+| MB | `carbon.gasoline[0].rate` | 0.1431 | 0.1761 | +23.1% |
+| MB | `carbon.gasoline[1].rate` | 0.1761 | 0 | -100.0% |
+| MB | `carbon.heating.amount` | 192.43 | 49.77 | -74.1% |
+| NB | `carbon.gasoline[0].rate` | 0.1431 | 0.1761 | +23.1% |
+| NB | `carbon.gasoline[1].rate` | 0.1761 | 0 | -100.0% |
+| NB | `carbon.heating.amount` | 12.39 | 3.2 | -74.2% |
+| NB | `carbon.rebates[carbon-rebate-payments].params.payments[1].adult` | 95 | 165 | +73.7% |
+| NB | `carbon.rebates[carbon-rebate-payments].params.payments[1].spouse` | 47.5 | 82.5 | +73.7% |
+| NB | `carbon.rebates[carbon-rebate-payments].params.payments[1].child` | 23.75 | 41.25 | +73.7% |
+| NB | `carbon.rebates[carbon-rebate-payments].params.payments[1].firstChild` | 47.5 | 82.5 | +73.7% |
+| NL | `carbon.gasoline[0].rate` | 0.1431 | 0.1761 | +23.1% |
+| NL | `carbon.gasoline[1].rate` | 0.1761 | 0 | -100.0% |
+| NS | `dividendTaxCredit.nonEligible` | 0.0299 | 0.015 | -49.8% |
+| NS | `propertyTax.rate` | 0.0111 | 0.0061 | -45.0% |
+| NS | `carbon.gasoline[0].rate` | 0.1431 | 0.1761 | +23.1% |
+| NS | `carbon.gasoline[1].rate` | 0.1761 | 0 | -100.0% |
+| NS | `carbon.heating.amount` | 15.28 | 3.95 | -74.1% |
+| NS | `carbon.rebates[carbon-rebate-payments].params.payments[0].adult` | 124 | 103 | -16.9% |
+| NS | `carbon.rebates[carbon-rebate-payments].params.payments[0].spouse` | 62 | 51.5 | -16.9% |
+| NS | `carbon.rebates[carbon-rebate-payments].params.payments[0].child` | 31 | 25.75 | -16.9% |
+| NS | `carbon.rebates[carbon-rebate-payments].params.payments[0].firstChild` | 62 | 51.5 | -16.9% |
+| NT | `carbon.heating.amount` | 103.97 | 0 | -100.0% |
+| NT | `carbon.gasoline[0].rate` | 0.1431 | 0.1761 | +23.1% |
+| NT | `carbon.gasoline[1].rate` | 0.1761 | 0 | -100.0% |
+| NU | `propertyTax.rate` | 0.02033 | 0.01 | -50.8% |
+| NU | `carbon.rebates[carbon-rebate-payments].params.payments[0].adult` | 77 | 25 | -67.5% |
+| NU | `carbon.rebates[carbon-rebate-payments].params.payments[0].spouse` | 77 | 25 | -67.5% |
+| NU | `carbon.rebates[carbon-rebate-payments].params.payments[0].child` | 77 | 25 | -67.5% |
+| NU | `carbon.rebates[carbon-rebate-payments].params.payments[0].firstChild` | 77 | 25 | -67.5% |
+| NU | `carbon.rebates[carbon-rebate-payments].params.payments[1].adult` | 77 | 25 | -67.5% |
+| NU | `carbon.rebates[carbon-rebate-payments].params.payments[1].spouse` | 77 | 25 | -67.5% |
+| NU | `carbon.rebates[carbon-rebate-payments].params.payments[1].child` | 77 | 25 | -67.5% |
+| NU | `carbon.rebates[carbon-rebate-payments].params.payments[1].firstChild` | 77 | 25 | -67.5% |
+| NU | `carbon.gasoline[0].rate` | 0.1431 | 0.1761 | +23.1% |
+| NU | `carbon.gasoline[1].rate` | 0.1761 | 0 | -100.0% |
+| ON | `carbon.gasoline[0].rate` | 0.1431 | 0.1761 | +23.1% |
+| ON | `carbon.gasoline[1].rate` | 0.1761 | 0 | -100.0% |
+| ON | `carbon.heating.amount` | 227.57 | 58.86 | -74.1% |
+| PE | `childBenefit.params.bands[0][1]` | 180 | 360 | +100.0% |
+| PE | `childBenefit.params.bands[1][1]` | 120 | 240 | +100.0% |
+| PE | `carbon.gasoline[0].rate` | 0.1431 | 0.1761 | +23.1% |
+| PE | `carbon.gasoline[1].rate` | 0.1761 | 0 | -100.0% |
+| QC | `propertyTax.rate` | 0.007043 | 0.009 | +27.8% |
+| SK | `propertyTax.rate` | 0.010716096728 | 0.0134 | +25.0% |
+| SK | `carbon.gasoline[0].rate` | 0.1431 | 0.1761 | +23.1% |
+| SK | `carbon.gasoline[1].rate` | 0.1761 | 0 | -100.0% |
+| YT | `carbon.rebates[carbon-rebate-payments].params.payments[0].adult` | 93 | 77.5 | -16.7% |
+| YT | `carbon.rebates[carbon-rebate-payments].params.payments[0].spouse` | 93 | 77.5 | -16.7% |
+| YT | `carbon.rebates[carbon-rebate-payments].params.payments[0].child` | 93 | 77.5 | -16.7% |
+| YT | `carbon.rebates[carbon-rebate-payments].params.payments[0].firstChild` | 93 | 77.5 | -16.7% |
+| YT | `carbon.rebates[carbon-rebate-payments].params.payments[1].adult` | 93 | 77.5 | -16.7% |
+| YT | `carbon.rebates[carbon-rebate-payments].params.payments[1].spouse` | 93 | 77.5 | -16.7% |
+| YT | `carbon.rebates[carbon-rebate-payments].params.payments[1].child` | 93 | 77.5 | -16.7% |
+| YT | `carbon.rebates[carbon-rebate-payments].params.payments[1].firstChild` | 93 | 77.5 | -16.7% |
+| YT | `carbon.gasoline[0].rate` | 0.1431 | 0.1761 | +23.1% |
+| YT | `carbon.gasoline[1].rate` | 0.1761 | 0 | -100.0% |
+
+### Added, removed and replaced (72)
+
+| File | Field | | Value |
+|---|---|---|---|
+| federal | `childcare` | added | {program: federal-childcare, params: {youngUnder: 7, eligibleThrough: 16, annua… |
+| federal | `payroll.employeeRetirement` | added | {cpp: {program: cpp-employee-retirement, params: {contributionStartAge: 18, ele… |
+| federal | `workersBenefit.estimated` | removed | true |
+| federal | `workersBenefit.estimationNote` | removed | "Quebec's income-at-maximum thresholds are derived from the published Schedule … |
+| federal | `fuelTax` | added | {gasoline: 0.1} |
+| AB | `brackets[5]` | added | [.inf, 0.15] |
+| AB | `propertyTax.estimated` | added | true |
+| AB | `fuelTax` | added | {gasoline: 0.13} |
+| AB | `carbon.rebates[carbon-rebate-payments].params.payments[2]` | removed | {date: 2024-07-01, adult: 225, spouse: 112.5, child: 56.25, firstChild: 112.5, … |
+| AB | `carbon.rebates[carbon-rebate-payments].params.payments[3]` | removed | {date: 2024-10-01, adult: 225, spouse: 112.5, child: 56.25, firstChild: 112.5, … |
+| BC | `propertyTax.estimated` | added | true |
+| BC | `fuelTax` | added | {gasoline: 0.085, area: Vancouver area, regional: {name: TransLink, gasoline: 0… |
+| BC | `carbon.rebates[carbon-rebate-payments].params.payments[2]` | removed | {date: 2024-07-01, adult: 126, spouse: 63, child: 31.5, firstChild: 63, thresho… |
+| BC | `carbon.rebates[carbon-rebate-payments].params.payments[3]` | removed | {date: 2024-10-01, adult: 126, spouse: 63, child: 31.5, firstChild: 63, thresho… |
+| MB | `bracketsFrozenSince` | added | 2025 |
+| MB | `basicPersonalAmount` | replaced | 15780 → {max: 15780, min: 0, from: 200000, to: 400000} |
+| MB | `credits[mb-affordability-credits]` | added | {name: Homeowners affordability tax credit, nameRenter: Renters affordability t… |
+| MB | `credits[mb-school-tax-credits]` | removed | {name: School tax rebate and education property tax credit, nameRenter: Renters… |
+| MB | `fuelTax` | added | {gasoline: 0.125} |
+| MB | `carbon.rebates[carbon-rebate-payments].params.payments[2]` | removed | {date: 2024-07-01, adult: 150, spouse: 75, child: 37.5, firstChild: 75, thresho… |
+| MB | `carbon.rebates[carbon-rebate-payments].params.payments[3]` | removed | {date: 2024-10-01, adult: 150, spouse: 75, child: 37.5, firstChild: 75, thresho… |
+| NB | `claimants` | added | {lowIncomeReduction: {claimant: minimum-household-tax, transferUnused: true, or… |
+| NB | `propertyTax.estimated` | added | true |
+| NB | `fuelTax` | added | {gasoline: 0.1087} |
+| NB | `carbon.rebates[carbon-rebate-payments].params.payments[2]` | removed | {date: 2024-07-01, adult: 95, spouse: 47.5, child: 23.75, firstChild: 47.5, thr… |
+| NB | `carbon.rebates[carbon-rebate-payments].params.payments[3]` | removed | {date: 2024-10-01, adult: 95, spouse: 47.5, child: 23.75, firstChild: 47.5, thr… |
+| NL | `claimants` | added | {lowIncomeReduction: {claimant: minimum-household-tax, transferUnused: true, or… |
+| NL | `propertyTax.estimated` | added | true |
+| NL | `childBenefit` | replaced | {name: NL Child Benefit, program: nl-child-benefit-reductio… → {name: NL Child Benefit, program: nl-child-benefit, params:… |
+| NL | `childcareCredit` | added | {name: Newfoundland and Labrador child care amount, program: nl-childcare, para… |
+| NL | `fuelTax` | added | {gasoline: 0.075} |
+| NL | `carbon.rebates[carbon-rebate-payments].params.payments[2]` | removed | {date: 2024-07-01, adult: 149, spouse: 74.5, child: 37.25, firstChild: 74.5, th… |
+| NL | `carbon.rebates[carbon-rebate-payments].params.payments[3]` | removed | {date: 2024-10-01, adult: 149, spouse: 74.5, child: 37.25, firstChild: 74.5, th… |
+| NS | `basicPersonalAmount` | replaced | {max: 11481, min: 8481, from: 25000, to: 75000} → 11744 |
+| NS | `spouseAmount` | replaced | {program: nova-scotia-spouse-amount, params: {max: 8481, th… → {max: 11744, threshold: 874} |
+| NS | `claimants` | added | {childAmount: {claimant: lower-net-income, transfer: none}, lowIncomeReduction:… |
+| NS | `propertyTax.estimated` | added | true |
+| NS | `fuelTax` | added | {gasoline: 0.155} |
+| NS | `carbon.rebates[carbon-rebate-payments].params.payments[2]` | removed | {date: 2024-07-01, adult: 103, spouse: 51.5, child: 25.75, firstChild: 51.5, th… |
+| NS | `carbon.rebates[carbon-rebate-payments].params.payments[3]` | removed | {date: 2024-10-01, adult: 103, spouse: 51.5, child: 25.75, firstChild: 51.5, th… |
+| NT | `propertyTax.estimated` | added | true |
+| NT | `propertyTax.rough` | added | true |
+| NT | `fuelTax` | added | {gasoline: 0.107} |
+| NT | `carbon.rebates[carbon-rebate-payments].params.payments[2]` | removed | {date: 2024-07-01, adult: 110.25, spouse: 110.25, child: 126.25, firstChild: 12… |
+| NT | `carbon.rebates[carbon-rebate-payments].params.payments[3]` | removed | {date: 2024-10-01, adult: 110.25, spouse: 110.25, child: 126.25, firstChild: 12… |
+| NU | `claimants` | added | {childAmount: {claimant: lower-net-income, transfer: schedule-2}} |
+| NU | `propertyTax.rough` | added | true |
+| NU | `fuelTax` | added | {gasoline: 0.064} |
+| NU | `carbon.rebates[carbon-rebate-payments].params.payments[2]` | removed | {date: 2024-07-05, adult: 25, spouse: 25, child: 25, firstChild: 25, threshold:… |
+| NU | `carbon.rebates[carbon-rebate-payments].params.payments[3]` | removed | {date: 2024-10-01, adult: 25, spouse: 25, child: 25, firstChild: 25, threshold:… |
+| ON | `propertyTax.estimated` | added | true |
+| ON | `childcareCredit` | added | {name: Ontario CARE tax credit, program: ontario-care, params: {fullThrough: 20… |
+| ON | `fuelTax` | added | {gasoline: 0.09} |
+| ON | `carbon.rebates[carbon-rebate-payments].params.payments[2]` | removed | {date: 2024-07-01, adult: 140, spouse: 70, child: 35, firstChild: 70, threshold… |
+| ON | `carbon.rebates[carbon-rebate-payments].params.payments[3]` | removed | {date: 2024-10-01, adult: 140, spouse: 70, child: 35, firstChild: 70, threshold… |
+| PE | `claimants` | added | {childAmount: {claimant: lower-net-income, transfer: none}, lowIncomeReduction:… |
+| PE | `childBenefit.estimated` | removed | true |
+| PE | `fuelTax` | added | {gasoline: 0.0847} |
+| PE | `carbon.rebates[carbon-rebate-payments].params.payments[2]` | removed | {date: 2024-07-01, adult: 110, spouse: 55, child: 27.5, firstChild: 55, thresho… |
+| PE | `carbon.rebates[carbon-rebate-payments].params.payments[3]` | removed | {date: 2024-10-01, adult: 110, spouse: 55, child: 27.5, firstChild: 55, thresho… |
+| QC | `healthServicesFund` | added | {name: Quebec Health Services Fund, program: qc-health-services-fund, params: {… |
+| QC | `childcareCredit` | added | {name: Quebec childcare expenses tax credit, program: quebec-childcare, params:… |
+| QC | `fuelTax` | added | {gasoline: 0.192, regional: {name: ARTM, gasoline: 0.03}} |
+| SK | `claimants` | added | {childAmount: {claimant: lower-taxable-income, transfer: schedule-2}} |
+| SK | `fuelTax` | added | {gasoline: 0.15} |
+| SK | `carbon.rebates[carbon-rebate-payments].params.payments[2]` | removed | {date: 2024-07-01, adult: 188, spouse: 94, child: 47, firstChild: 94, threshold… |
+| SK | `carbon.rebates[carbon-rebate-payments].params.payments[3]` | removed | {date: 2024-10-01, adult: 188, spouse: 94, child: 47, firstChild: 94, threshold… |
+| YT | `propertyTax.estimated` | added | true |
+| YT | `propertyTax.rough` | added | true |
+| YT | `fuelTax` | added | {gasoline: 0.062} |
+| YT | `carbon.rebates[carbon-rebate-payments].params.payments[2]` | removed | {date: 2024-07-01, adult: 77.5, spouse: 77.5, child: 77.5, firstChild: 77.5, th… |
+| YT | `carbon.rebates[carbon-rebate-payments].params.payments[3]` | removed | {date: 2024-10-01, adult: 77.5, spouse: 77.5, child: 77.5, firstChild: 77.5, th… |
+
+<details><summary>All 389 changed values</summary>
+
+| File | Field | 2024 | 2025 | Change |
+|---|---|--:|--:|--:|
+| federal | `brackets[0].limit` | 55867 | 57375 | +2.7% |
+| federal | `brackets[0].rate` | 0.15 | 0.145 | -3.3% |
+| federal | `brackets[1].limit` | 111733 | 114750 | +2.7% |
+| federal | `brackets[2].limit` | 173205 | 177882 | +2.7% |
+| federal | `brackets[3].limit` | 246752 | 253414 | +2.7% |
+| federal | `basicPersonalAmount.max` | 15705 | 16129 | +2.7% |
+| federal | `basicPersonalAmount.min` | 14156 | 14538 | +2.7% |
+| federal | `basicPersonalAmount.from` | 173205 | 177882 | +2.7% |
+| federal | `basicPersonalAmount.to` | 246752 | 253414 | +2.7% |
+| federal | `employmentAmount` | 1433 | 1471 | +2.7% |
+| federal | `indexation` | 0.047 | 0.027 | -42.6% |
+| federal | `rrsp.limit` | 31560 | 32490 | +2.9% |
+| federal | `payroll.cpp.ympe` | 68500 | 71300 | +4.1% |
+| federal | `payroll.cpp.yampe` | 73200 | 81200 | +10.9% |
+| federal | `payroll.qpp.ympe` | 68500 | 71300 | +4.1% |
+| federal | `payroll.qpp.yampe` | 73200 | 81200 | +10.9% |
+| federal | `payroll.ei.maxInsurable` | 63200 | 65700 | +4.0% |
+| federal | `payroll.ei.rate` | 0.0166 | 0.0164 | -1.2% |
+| federal | `payroll.ei.quebecRate` | 0.0132 | 0.0131 | -0.8% |
+| federal | `payroll.qpip.maxInsurable` | 94000 | 98000 | +4.3% |
+| federal | `childBenefit.perChildUnder6` | 7787 | 7997 | +2.7% |
+| federal | `childBenefit.perChild6to17` | 6570 | 6748 | +2.7% |
+| federal | `childBenefit.threshold1` | 36502 | 37487 | +2.7% |
+| federal | `childBenefit.threshold2` | 79087 | 81222 | +2.7% |
+| federal | `childBenefit.fixed2[1]` | 2981 | 3061 | +2.7% |
+| federal | `childBenefit.fixed2[2]` | 5749 | 5904 | +2.7% |
+| federal | `childBenefit.fixed2[3]` | 8091 | 8310 | +2.7% |
+| federal | `childBenefit.fixed2[4]` | 9795 | 10059 | +2.7% |
+| federal | `groceriesBenefit.adult` | 340 | 349 | +2.6% |
+| federal | `groceriesBenefit.spouseOrFirstChild` | 340 | 349 | +2.6% |
+| federal | `groceriesBenefit.child` | 179 | 184 | +2.8% |
+| federal | `groceriesBenefit.singleSupplement.max` | 179 | 184 | +2.8% |
+| federal | `groceriesBenefit.singleSupplement.from` | 11039 | 11337 | +2.7% |
+| federal | `groceriesBenefit.phaseOut.from` | 44324 | 45521 | +2.7% |
+| federal | `workersBenefit.standard.max[0]` | 1590 | 1633 | +2.7% |
+| federal | `workersBenefit.standard.max[1]` | 2739 | 2813 | +2.7% |
+| federal | `workersBenefit.standard.threshold[0]` | 26149 | 26855 | +2.7% |
+| federal | `workersBenefit.standard.threshold[1]` | 29833 | 30639 | +2.7% |
+| federal | `workersBenefit.secondaryEarnerExemption` | 15955 | 16386 | +2.7% |
+| federal | `workersBenefit.regional.AB.max[0]` | 1704 | 1750 | +2.7% |
+| federal | `workersBenefit.regional.AB.max[1]` | 2551 | 2619 | +2.7% |
+| federal | `workersBenefit.regional.AB.threshold[0]` | 25472 | 26159 | +2.7% |
+| federal | `workersBenefit.regional.AB.threshold[1]` | 31911 | 32772 | +2.7% |
+| federal | `workersBenefit.regional.NU.max[0]` | 1578 | 1621 | +2.7% |
+| federal | `workersBenefit.regional.NU.max[1]` | 2371 | 2435 | +2.7% |
+| federal | `workersBenefit.regional.NU.threshold[0]` | 26127 | 26832 | +2.7% |
+| federal | `workersBenefit.regional.NU.threshold[1]` | 35957 | 36927 | +2.7% |
+| federal | `workersBenefit.quebec.single[2]` | 12333.994638069706 | 12620 | +2.3% |
+| federal | `workersBenefit.quebec.single[3]` | 13829.82 | 14170.05 | +2.5% |
+| federal | `workersBenefit.quebec.couple[2]` | 19092.010723860592 | 19534 | +2.3% |
+| federal | `workersBenefit.quebec.couple[3]` | 21257.44 | 21787.19 | +2.5% |
+| federal | `workersBenefit.quebec.parent[2]` | 12334 | 12620 | +2.3% |
+| federal | `workersBenefit.quebec.parent[3]` | 13981.83 | 14341.56 | +2.6% |
+| federal | `workersBenefit.quebec.coupleKids[2]` | 19092.00836820084 | 19534 | +2.3% |
+| federal | `workersBenefit.quebec.coupleKids[3]` | 21456.77 | 22007.75 | +2.6% |
+| AB | `brackets[0].limit` | 148269 | 60000 | -59.5% |
+| AB | `brackets[0].rate` | 0.1 | 0.08 | -20.0% |
+| AB | `brackets[1].limit` | 177922 | 151234 | -15.0% |
+| AB | `brackets[1].rate` | 0.12 | 0.1 | -16.7% |
+| AB | `brackets[2].limit` | 237230 | 181481 | -23.5% |
+| AB | `brackets[2].rate` | 0.13 | 0.12 | -7.7% |
+| AB | `brackets[3].limit` | 355845 | 241974 | -32.0% |
+| AB | `brackets[3].rate` | 0.14 | 0.13 | -7.1% |
+| AB | `brackets[4].limit` | .inf | 362961 | n/a |
+| AB | `brackets[4].rate` | 0.15 | 0.14 | -6.7% |
+| AB | `basicPersonalAmount` | 21885 | 22323 | +2.0% |
+| AB | `spouseAmount.max` | 21885 | 22323 | +2.0% |
+| AB | `propertyTax.rate` | 0.0064861 | 0.0066 | +1.8% |
+| AB | `childBenefit.params.base[0]` | 1469 | 1499 | +2.0% |
+| AB | `childBenefit.params.base[1]` | 2204 | 2248 | +2.0% |
+| AB | `childBenefit.params.base[2]` | 2939 | 2997 | +2.0% |
+| AB | `childBenefit.params.base[3]` | 3674 | 3746 | +2.0% |
+| AB | `childBenefit.params.baseThreshold` | 27024 | 27565 | +2.0% |
+| AB | `childBenefit.params.working[0]` | 752 | 767 | +2.0% |
+| AB | `childBenefit.params.working[1]` | 1437 | 1465 | +1.9% |
+| AB | `childBenefit.params.working[2]` | 1847 | 1883 | +1.9% |
+| AB | `childBenefit.params.working[3]` | 1982 | 2021 | +2.0% |
+| AB | `childBenefit.params.workingThreshold` | 45285 | 46191 | +2.0% |
+| AB | `carbon.gasoline[0].from` | 2024-01-01 | 2025-01-01 |  |
+| AB | `carbon.gasoline[0].rate` | 0.1431 | 0.1761 | +23.1% |
+| AB | `carbon.gasoline[1].from` | 2024-04-01 | 2025-04-01 |  |
+| AB | `carbon.gasoline[1].rate` | 0.1761 | 0 | -100.0% |
+| AB | `carbon.heating.amount` | 384.52 | 99.45 | -74.1% |
+| AB | `carbon.rebates[carbon-rebate-payments].params.payments[0].date` | 2024-01-01 | 2025-01-01 |  |
+| AB | `carbon.rebates[carbon-rebate-payments].params.payments[0].adult` | 193 | 225 | +16.6% |
+| AB | `carbon.rebates[carbon-rebate-payments].params.payments[0].spouse` | 96.5 | 112.5 | +16.6% |
+| AB | `carbon.rebates[carbon-rebate-payments].params.payments[0].child` | 48.25 | 56.25 | +16.6% |
+| AB | `carbon.rebates[carbon-rebate-payments].params.payments[0].firstChild` | 96.5 | 112.5 | +16.6% |
+| AB | `carbon.rebates[carbon-rebate-payments].params.payments[1].date` | 2024-04-01 | 2025-04-01 |  |
+| AB | `carbon.rebates[carbon-rebate-payments].params.payments[1].adult` | 225 | 228 | +1.3% |
+| AB | `carbon.rebates[carbon-rebate-payments].params.payments[1].spouse` | 112.5 | 114 | +1.3% |
+| AB | `carbon.rebates[carbon-rebate-payments].params.payments[1].child` | 56.25 | 57 | +1.3% |
+| AB | `carbon.rebates[carbon-rebate-payments].params.payments[1].firstChild` | 112.5 | 114 | +1.3% |
+| BC | `brackets[0].limit` | 47937 | 49279 | +2.8% |
+| BC | `brackets[1].limit` | 95875 | 98560 | +2.8% |
+| BC | `brackets[2].limit` | 110076 | 113158 | +2.8% |
+| BC | `brackets[3].limit` | 133664 | 137407 | +2.8% |
+| BC | `brackets[4].limit` | 181232 | 186306 | +2.8% |
+| BC | `brackets[5].limit` | 252752 | 259829 | +2.8% |
+| BC | `basicPersonalAmount` | 12580 | 12932 | +2.8% |
+| BC | `spouseAmount.max` | 10772 | 11073 | +2.8% |
+| BC | `spouseAmount.threshold` | 1078 | 1108 | +2.8% |
+| BC | `bcTaxReduction.max` | 547 | 562 | +2.7% |
+| BC | `bcTaxReduction.threshold` | 24338 | 25020 | +2.8% |
+| BC | `propertyTax.rate` | 0.00296818 | 0.003 | +1.1% |
+| BC | `childBenefit.params.max[0]` | 2188 | 1750 | -20.0% |
+| BC | `childBenefit.params.max[1]` | 1375 | 1100 | -20.0% |
+| BC | `childBenefit.params.max[2]` | 1125 | 900 | -20.0% |
+| BC | `childBenefit.params.min[0]` | 969 | 775 | -20.0% |
+| BC | `childBenefit.params.min[1]` | 937 | 750 | -20.0% |
+| BC | `childBenefit.params.min[2]` | 906 | 725 | -20.0% |
+| BC | `childBenefit.params.threshold` | 35902 | 29526 | -17.8% |
+| BC | `childBenefit.params.minThreshold` | 114887 | 94483 | -17.8% |
+| BC | `credits[bc-renters-tax-credit].params.threshold` | 63000 | 64764 | +2.8% |
+| BC | `carbon.gasoline[0].from` | 2024-01-01 | 2025-01-01 |  |
+| BC | `carbon.gasoline[0].rate` | 0.1431 | 0.1761 | +23.1% |
+| BC | `carbon.gasoline[1].from` | 2024-04-01 | 2025-04-01 |  |
+| BC | `carbon.gasoline[1].rate` | 0.1761 | 0 | -100.0% |
+| BC | `carbon.heating.amount` | 185.6 | 48 | -74.1% |
+| BC | `carbon.rebates[carbon-rebate-payments].params.payments[0].date` | 2024-01-01 | 2025-01-01 |  |
+| BC | `carbon.rebates[carbon-rebate-payments].params.payments[0].adult` | 111.75 | 126 | +12.8% |
+| BC | `carbon.rebates[carbon-rebate-payments].params.payments[0].spouse` | 55.875 | 63 | +12.8% |
+| BC | `carbon.rebates[carbon-rebate-payments].params.payments[0].child` | 27.875 | 31.5 | +13.0% |
+| BC | `carbon.rebates[carbon-rebate-payments].params.payments[0].firstChild` | 55.875 | 63 | +12.8% |
+| BC | `carbon.rebates[carbon-rebate-payments].params.payments[0].threshold[0]` | 39115 | 41071 | +5.0% |
+| BC | `carbon.rebates[carbon-rebate-payments].params.payments[0].threshold[1]` | 50170 | 57288 | +14.2% |
+| BC | `carbon.rebates[carbon-rebate-payments].params.payments[1].date` | 2024-04-01 | 2025-04-01 |  |
+| BC | `carbon.rebates[carbon-rebate-payments].params.payments[1].adult` | 111.75 | 126 | +12.8% |
+| BC | `carbon.rebates[carbon-rebate-payments].params.payments[1].spouse` | 55.875 | 63 | +12.8% |
+| BC | `carbon.rebates[carbon-rebate-payments].params.payments[1].child` | 27.875 | 31.5 | +13.0% |
+| BC | `carbon.rebates[carbon-rebate-payments].params.payments[1].firstChild` | 55.875 | 63 | +12.8% |
+| BC | `carbon.rebates[carbon-rebate-payments].params.payments[1].threshold[0]` | 39115 | 41071 | +5.0% |
+| BC | `carbon.rebates[carbon-rebate-payments].params.payments[1].threshold[1]` | 50170 | 57288 | +14.2% |
+| MB | `propertyTax.rate` | 0.0122769 | 0.0138 | +12.4% |
+| MB | `carbon.gasoline[0].from` | 2024-01-01 | 2025-01-01 |  |
+| MB | `carbon.gasoline[0].rate` | 0.1431 | 0.1761 | +23.1% |
+| MB | `carbon.gasoline[1].from` | 2024-04-01 | 2025-04-01 |  |
+| MB | `carbon.gasoline[1].rate` | 0.1761 | 0 | -100.0% |
+| MB | `carbon.heating.amount` | 192.43 | 49.77 | -74.1% |
+| MB | `carbon.rebates[carbon-rebate-payments].params.payments[0].date` | 2024-01-01 | 2025-01-01 |  |
+| MB | `carbon.rebates[carbon-rebate-payments].params.payments[0].adult` | 132 | 150 | +13.6% |
+| MB | `carbon.rebates[carbon-rebate-payments].params.payments[0].spouse` | 66 | 75 | +13.6% |
+| MB | `carbon.rebates[carbon-rebate-payments].params.payments[0].child` | 33 | 37.5 | +13.6% |
+| MB | `carbon.rebates[carbon-rebate-payments].params.payments[0].firstChild` | 66 | 75 | +13.6% |
+| MB | `carbon.rebates[carbon-rebate-payments].params.payments[1].date` | 2024-04-01 | 2025-04-01 |  |
+| NB | `brackets[0].limit` | 49958 | 51306 | +2.7% |
+| NB | `brackets[1].limit` | 99916 | 102614 | +2.7% |
+| NB | `brackets[2].limit` | 185064 | 190060 | +2.7% |
+| NB | `basicPersonalAmount` | 13044 | 13396 | +2.7% |
+| NB | `spouseAmount.max` | 10223 | 10499 | +2.7% |
+| NB | `spouseAmount.threshold` | 1023 | 1051 | +2.7% |
+| NB | `lowIncomeReduction.params.amount` | 781 | 802 | +2.7% |
+| NB | `lowIncomeReduction.params.threshold` | 21343 | 21920 | +2.7% |
+| NB | `propertyTax.rate` | 0.014231 | 0.0136 | -4.4% |
+| NB | `carbon.gasoline[0].from` | 2024-01-01 | 2025-01-01 |  |
+| NB | `carbon.gasoline[0].rate` | 0.1431 | 0.1761 | +23.1% |
+| NB | `carbon.gasoline[1].from` | 2024-04-01 | 2025-04-01 |  |
+| NB | `carbon.gasoline[1].rate` | 0.1761 | 0 | -100.0% |
+| NB | `carbon.heating.amount` | 12.39 | 3.2 | -74.2% |
+| NB | `carbon.rebates[carbon-rebate-payments].params.payments[0].date` | 2024-01-01 | 2025-01-01 |  |
+| NB | `carbon.rebates[carbon-rebate-payments].params.payments[0].adult` | 92 | 95 | +3.3% |
+| NB | `carbon.rebates[carbon-rebate-payments].params.payments[0].spouse` | 46 | 47.5 | +3.3% |
+| NB | `carbon.rebates[carbon-rebate-payments].params.payments[0].child` | 23 | 23.75 | +3.3% |
+| NB | `carbon.rebates[carbon-rebate-payments].params.payments[0].firstChild` | 46 | 47.5 | +3.3% |
+| NB | `carbon.rebates[carbon-rebate-payments].params.payments[1].date` | 2024-04-01 | 2025-04-01 |  |
+| NB | `carbon.rebates[carbon-rebate-payments].params.payments[1].adult` | 95 | 165 | +73.7% |
+| NB | `carbon.rebates[carbon-rebate-payments].params.payments[1].spouse` | 47.5 | 82.5 | +73.7% |
+| NB | `carbon.rebates[carbon-rebate-payments].params.payments[1].child` | 23.75 | 41.25 | +73.7% |
+| NB | `carbon.rebates[carbon-rebate-payments].params.payments[1].firstChild` | 47.5 | 82.5 | +73.7% |
+| NL | `brackets[0].limit` | 43198 | 44192 | +2.3% |
+| NL | `brackets[1].limit` | 86395 | 88382 | +2.3% |
+| NL | `brackets[2].limit` | 154244 | 157792 | +2.3% |
+| NL | `brackets[3].limit` | 215943 | 220910 | +2.3% |
+| NL | `brackets[4].limit` | 275870 | 282214 | +2.3% |
+| NL | `brackets[5].limit` | 551739 | 564429 | +2.3% |
+| NL | `brackets[6].limit` | 1103478 | 1128858 | +2.3% |
+| NL | `basicPersonalAmount` | 10818 | 11067 | +2.3% |
+| NL | `spouseAmount.max` | 8840 | 9043 | +2.3% |
+| NL | `spouseAmount.threshold` | 885 | 905 | +2.3% |
+| NL | `lowIncomeReduction.params.individual` | 974 | 997 | +2.4% |
+| NL | `lowIncomeReduction.params.family` | 544 | 557 | +2.4% |
+| NL | `lowIncomeReduction.params.thresholdIndividual` | 23390 | 23928 | +2.3% |
+| NL | `lowIncomeReduction.params.thresholdFamily` | 39551 | 40460 | +2.3% |
+| NL | `carbon.gasoline[0].from` | 2024-01-01 | 2025-01-01 |  |
+| NL | `carbon.gasoline[0].rate` | 0.1431 | 0.1761 | +23.1% |
+| NL | `carbon.gasoline[1].from` | 2024-04-01 | 2025-04-01 |  |
+| NL | `carbon.gasoline[1].rate` | 0.1761 | 0 | -100.0% |
+| NL | `carbon.rebates[carbon-rebate-payments].params.payments[0].date` | 2024-01-01 | 2025-01-01 |  |
+| NL | `carbon.rebates[carbon-rebate-payments].params.payments[0].adult` | 164 | 149 | -9.1% |
+| NL | `carbon.rebates[carbon-rebate-payments].params.payments[0].spouse` | 82 | 74.5 | -9.1% |
+| NL | `carbon.rebates[carbon-rebate-payments].params.payments[0].child` | 41 | 37.25 | -9.1% |
+| NL | `carbon.rebates[carbon-rebate-payments].params.payments[0].firstChild` | 82 | 74.5 | -9.1% |
+| NL | `carbon.rebates[carbon-rebate-payments].params.payments[1].date` | 2024-04-01 | 2025-04-01 |  |
+| NS | `brackets[0].limit` | 29590 | 30507 | +3.1% |
+| NS | `brackets[1].limit` | 59180 | 61015 | +3.1% |
+| NS | `brackets[2].limit` | 93000 | 95883 | +3.1% |
+| NS | `brackets[3].limit` | 150000 | 154650 | +3.1% |
+| NS | `dividendTaxCredit.nonEligible` | 0.0299 | 0.015 | -49.8% |
+| NS | `salesTax.rate` | 0.15 | 0.1425 | -5.0% |
+| NS | `salesTax.label` | 15% HST | 14% HST (15% before April 1) |  |
+| NS | `propertyTax.rate` | 0.0111 | 0.0061 | -45.0% |
+| NS | `childBenefit.params.perChild` | 1525 | 1524.96 | -0.0% |
+| NS | `childBenefit.params.partialOtherChildren` | 762.5 | 762.48 | -0.0% |
+| NS | `carbon.gasoline[0].from` | 2024-01-01 | 2025-01-01 |  |
+| NS | `carbon.gasoline[0].rate` | 0.1431 | 0.1761 | +23.1% |
+| NS | `carbon.gasoline[1].from` | 2024-04-01 | 2025-04-01 |  |
+| NS | `carbon.gasoline[1].rate` | 0.1761 | 0 | -100.0% |
+| NS | `carbon.heating.amount` | 15.28 | 3.95 | -74.1% |
+| NS | `carbon.rebates[carbon-rebate-payments].params.payments[0].date` | 2024-01-01 | 2025-01-01 |  |
+| NS | `carbon.rebates[carbon-rebate-payments].params.payments[0].adult` | 124 | 103 | -16.9% |
+| NS | `carbon.rebates[carbon-rebate-payments].params.payments[0].spouse` | 62 | 51.5 | -16.9% |
+| NS | `carbon.rebates[carbon-rebate-payments].params.payments[0].child` | 31 | 25.75 | -16.9% |
+| NS | `carbon.rebates[carbon-rebate-payments].params.payments[0].firstChild` | 62 | 51.5 | -16.9% |
+| NS | `carbon.rebates[carbon-rebate-payments].params.payments[1].date` | 2024-04-01 | 2025-04-01 |  |
+| NS | `carbon.rebates[carbon-rebate-payments].params.payments[1].adult` | 103 | 110 | +6.8% |
+| NS | `carbon.rebates[carbon-rebate-payments].params.payments[1].spouse` | 51.5 | 55 | +6.8% |
+| NS | `carbon.rebates[carbon-rebate-payments].params.payments[1].child` | 25.75 | 27.5 | +6.8% |
+| NS | `carbon.rebates[carbon-rebate-payments].params.payments[1].firstChild` | 51.5 | 55 | +6.8% |
+| NT | `brackets[0].limit` | 50597 | 51964 | +2.7% |
+| NT | `brackets[1].limit` | 101198 | 103930 | +2.7% |
+| NT | `brackets[2].limit` | 164525 | 168967 | +2.7% |
+| NT | `basicPersonalAmount` | 17373 | 17842 | +2.7% |
+| NT | `spouseAmount.max` | 17373 | 17842 | +2.7% |
+| NT | `propertyTax.rate` | 0.00956 | 0.01 | +4.6% |
+| NT | `propertyTax.city` | Yellowknife | Yellowknife (est.) |  |
+| NT | `carbon.heating.amount` | 103.97 | 0 | -100.0% |
+| NT | `carbon.rebates[carbon-rebate-payments].params.payments[0].date` | 2024-01-01 | 2025-01-01 |  |
+| NT | `carbon.rebates[carbon-rebate-payments].params.payments[0].child` | 123.25 | 126.25 | +2.4% |
+| NT | `carbon.rebates[carbon-rebate-payments].params.payments[0].firstChild` | 123.25 | 126.25 | +2.4% |
+| NT | `carbon.rebates[carbon-rebate-payments].params.payments[1].date` | 2024-04-01 | 2025-04-01 |  |
+| NT | `carbon.rebates[carbon-rebate-payments].params.payments[1].child` | 123.25 | 126.25 | +2.4% |
+| NT | `carbon.rebates[carbon-rebate-payments].params.payments[1].firstChild` | 123.25 | 126.25 | +2.4% |
+| NT | `carbon.gasoline[0].from` | 2024-01-01 | 2025-01-01 |  |
+| NT | `carbon.gasoline[0].rate` | 0.1431 | 0.1761 | +23.1% |
+| NT | `carbon.gasoline[1].from` | 2024-04-01 | 2025-04-01 |  |
+| NT | `carbon.gasoline[1].rate` | 0.1761 | 0 | -100.0% |
+| NU | `brackets[0].limit` | 53268 | 54707 | +2.7% |
+| NU | `brackets[1].limit` | 106537 | 109413 | +2.7% |
+| NU | `brackets[2].limit` | 173205 | 177881 | +2.7% |
+| NU | `basicPersonalAmount` | 18767 | 19274 | +2.7% |
+| NU | `spouseAmount.max` | 18767 | 19274 | +2.7% |
+| NU | `propertyTax.rate` | 0.02033 | 0.01 | -50.8% |
+| NU | `propertyTax.city` | Iqaluit | Iqaluit (est.) |  |
+| NU | `childBenefit.rateSource` | "Nunavut Anti-Poverty Secretariat commi… | its 2026 Bill 4 (no 2025 source gives t… |  |
+| NU | `carbon.rebates[carbon-rebate-payments].params.payments[0].date` | 2024-01-01 | 2025-01-01 |  |
+| NU | `carbon.rebates[carbon-rebate-payments].params.payments[0].adult` | 77 | 25 | -67.5% |
+| NU | `carbon.rebates[carbon-rebate-payments].params.payments[0].spouse` | 77 | 25 | -67.5% |
+| NU | `carbon.rebates[carbon-rebate-payments].params.payments[0].child` | 77 | 25 | -67.5% |
+| NU | `carbon.rebates[carbon-rebate-payments].params.payments[0].firstChild` | 77 | 25 | -67.5% |
+| NU | `carbon.rebates[carbon-rebate-payments].params.payments[1].date` | 2024-04-01 | 2025-04-04 |  |
+| NU | `carbon.rebates[carbon-rebate-payments].params.payments[1].adult` | 77 | 25 | -67.5% |
+| NU | `carbon.rebates[carbon-rebate-payments].params.payments[1].spouse` | 77 | 25 | -67.5% |
+| NU | `carbon.rebates[carbon-rebate-payments].params.payments[1].child` | 77 | 25 | -67.5% |
+| NU | `carbon.rebates[carbon-rebate-payments].params.payments[1].firstChild` | 77 | 25 | -67.5% |
+| NU | `carbon.gasoline[0].from` | 2024-01-01 | 2025-01-01 |  |
+| NU | `carbon.gasoline[0].rate` | 0.1431 | 0.1761 | +23.1% |
+| NU | `carbon.gasoline[1].from` | 2024-04-01 | 2025-04-01 |  |
+| NU | `carbon.gasoline[1].rate` | 0.1761 | 0 | -100.0% |
+| ON | `brackets[0].limit` | 51446 | 52886 | +2.8% |
+| ON | `brackets[1].limit` | 102894 | 105775 | +2.8% |
+| ON | `basicPersonalAmount` | 12399 | 12747 | +2.8% |
+| ON | `spouseAmount.max` | 10528 | 10823 | +2.8% |
+| ON | `spouseAmount.threshold` | 1053 | 1082 | +2.8% |
+| ON | `surtax[0][0]` | 5554 | 5710 | +2.8% |
+| ON | `surtax[1][0]` | 7108 | 7307 | +2.8% |
+| ON | `ontarioTaxReduction.base` | 286 | 294 | +2.8% |
+| ON | `ontarioTaxReduction.perChild` | 529 | 544 | +2.8% |
+| ON | `propertyTax.rate` | 0.00715289 | 0.0076 | +6.3% |
+| ON | `childBenefit.params.perChild` | 1680 | 1726.92 | +2.8% |
+| ON | `childBenefit.params.threshold` | 25646 | 26364 | +2.8% |
+| ON | `credits[ontario-sales-tax-credit].params.perPerson` | 360 | 371 | +3.1% |
+| ON | `credits[ontario-sales-tax-credit].params.thresholdSingle` | 27729 | 28506 | +2.8% |
+| ON | `credits[ontario-sales-tax-credit].params.thresholdFamily` | 34661 | 35632 | +2.8% |
+| ON | `credits[ontario-energy-property-tax-credit].params.energyMax` | 277 | 285 | +2.9% |
+| ON | `credits[ontario-energy-property-tax-credit].params.propertyBase` | 69 | 71 | +2.9% |
+| ON | `credits[ontario-energy-property-tax-credit].params.propertyMax` | 902 | 927 | +2.8% |
+| ON | `credits[ontario-energy-property-tax-credit].params.thresholdSingle` | 27729 | 28506 | +2.8% |
+| ON | `credits[ontario-energy-property-tax-credit].params.thresholdFamily` | 34661 | 35632 | +2.8% |
+| ON | `carbon.gasoline[0].from` | 2024-01-01 | 2025-01-01 |  |
+| ON | `carbon.gasoline[0].rate` | 0.1431 | 0.1761 | +23.1% |
+| ON | `carbon.gasoline[1].from` | 2024-04-01 | 2025-04-01 |  |
+| ON | `carbon.gasoline[1].rate` | 0.1761 | 0 | -100.0% |
+| ON | `carbon.heating.amount` | 227.57 | 58.86 | -74.1% |
+| ON | `carbon.rebates[carbon-rebate-payments].params.payments[0].date` | 2024-01-01 | 2025-01-01 |  |
+| ON | `carbon.rebates[carbon-rebate-payments].params.payments[0].adult` | 122 | 140 | +14.8% |
+| ON | `carbon.rebates[carbon-rebate-payments].params.payments[0].spouse` | 61 | 70 | +14.8% |
+| ON | `carbon.rebates[carbon-rebate-payments].params.payments[0].child` | 30.5 | 35 | +14.8% |
+| ON | `carbon.rebates[carbon-rebate-payments].params.payments[0].firstChild` | 61 | 70 | +14.8% |
+| ON | `carbon.rebates[carbon-rebate-payments].params.payments[1].date` | 2024-04-01 | 2025-04-01 |  |
+| ON | `carbon.rebates[carbon-rebate-payments].params.payments[1].adult` | 140 | 151 | +7.9% |
+| ON | `carbon.rebates[carbon-rebate-payments].params.payments[1].spouse` | 70 | 75.5 | +7.9% |
+| ON | `carbon.rebates[carbon-rebate-payments].params.payments[1].child` | 35 | 37.75 | +7.9% |
+| ON | `carbon.rebates[carbon-rebate-payments].params.payments[1].firstChild` | 70 | 75.5 | +7.9% |
+| PE | `brackets[0].limit` | 32656 | 33328 | +2.1% |
+| PE | `brackets[0].rate` | 0.0965 | 0.095 | -1.6% |
+| PE | `brackets[1].limit` | 64313 | 64656 | +0.5% |
+| PE | `brackets[1].rate` | 0.1363 | 0.1347 | -1.2% |
+| PE | `brackets[2].rate` | 0.1665 | 0.166 | -0.3% |
+| PE | `brackets[3].rate` | 0.18 | 0.1762 | -2.1% |
+| PE | `brackets[4].rate` | 0.1875 | 0.19 | +1.3% |
+| PE | `basicPersonalAmount` | 13500 | 14650 | +8.5% |
+| PE | `spouseAmount.max` | 11466 | 12443 | +8.5% |
+| PE | `spouseAmount.threshold` | 1147 | 1244 | +8.5% |
+| PE | `lowIncomeReduction.params.threshold` | 21500 | 22650 | +5.3% |
+| PE | `childBenefit.params.bands[0][1]` | 180 | 360 | +100.0% |
+| PE | `childBenefit.params.bands[1][1]` | 120 | 240 | +100.0% |
+| PE | `carbon.gasoline[0].from` | 2024-01-01 | 2025-01-01 |  |
+| PE | `carbon.gasoline[0].rate` | 0.1431 | 0.1761 | +23.1% |
+| PE | `carbon.gasoline[1].from` | 2024-04-01 | 2025-04-01 |  |
+| PE | `carbon.gasoline[1].rate` | 0.1761 | 0 | -100.0% |
+| PE | `carbon.rebates[carbon-rebate-payments].params.payments[0].date` | 2024-01-01 | 2025-01-01 |  |
+| PE | `carbon.rebates[carbon-rebate-payments].params.payments[0].adult` | 120 | 110 | -8.3% |
+| PE | `carbon.rebates[carbon-rebate-payments].params.payments[0].spouse` | 60 | 55 | -8.3% |
+| PE | `carbon.rebates[carbon-rebate-payments].params.payments[0].child` | 30 | 27.5 | -8.3% |
+| PE | `carbon.rebates[carbon-rebate-payments].params.payments[0].firstChild` | 60 | 55 | -8.3% |
+| PE | `carbon.rebates[carbon-rebate-payments].params.payments[1].date` | 2024-04-01 | 2025-04-01 |  |
+| QC | `brackets[0].limit` | 51780 | 53255 | +2.8% |
+| QC | `brackets[1].limit` | 103545 | 106495 | +2.8% |
+| QC | `brackets[2].limit` | 126000 | 129590 | +2.8% |
+| QC | `basicPersonalAmount` | 18056 | 18571 | +2.9% |
+| QC | `quebec.workerDeduction.max` | 1380 | 1420 | +2.9% |
+| QC | `quebec.livingAlone.max` | 2069 | 2128 | +2.9% |
+| QC | `quebec.livingAlone.threshold` | 40925 | 42090 | +2.8% |
+| QC | `propertyTax.rate` | 0.007043 | 0.009 | +27.8% |
+| QC | `propertyTax.note` | school tax is billed separately | school tax may be extra |  |
+| QC | `childBenefit.params.max` | 2923 | 3006 | +2.8% |
+| QC | `childBenefit.params.maxSingleParent` | 1026 | 1055 | +2.8% |
+| QC | `childBenefit.params.min` | 1163 | 1196 | +2.8% |
+| QC | `childBenefit.params.minSingleParent` | 409 | 421 | +2.9% |
+| QC | `childBenefit.params.thresholdSingle` | 42136 | 43280 | +2.7% |
+| QC | `childBenefit.params.thresholdCouple` | 57822 | 59369 | +2.7% |
+| QC | `childBenefit.params.schoolSupplies` | 121 | 124 | +2.5% |
+| QC | `credits[quebec-solidarity-tax-credit].params.qstAdult` | 346 | 356 | +2.9% |
+| QC | `credits[quebec-solidarity-tax-credit].params.qstSpouse` | 346 | 356 | +2.9% |
+| QC | `credits[quebec-solidarity-tax-credit].params.qstAlone` | 164 | 169 | +3.0% |
+| QC | `credits[quebec-solidarity-tax-credit].params.housingCouple` | 863 | 888 | +2.9% |
+| QC | `credits[quebec-solidarity-tax-credit].params.housingSingle` | 711 | 731 | +2.8% |
+| QC | `credits[quebec-solidarity-tax-credit].params.child` | 151 | 155 | +2.6% |
+| QC | `credits[quebec-solidarity-tax-credit].params.threshold` | 41150 | 42325 | +2.9% |
+| QC | `credits[quebec-work-premium].params.single[2]` | 12334 | 12620 | +2.3% |
+| QC | `credits[quebec-work-premium].params.couple[2]` | 19092 | 19534 | +2.3% |
+| QC | `credits[quebec-work-premium].params.parent[2]` | 12334 | 12620 | +2.3% |
+| QC | `credits[quebec-work-premium].params.coupleKids[2]` | 19092 | 19534 | +2.3% |
+| SK | `brackets[0].limit` | 52057 | 53463 | +2.7% |
+| SK | `brackets[1].limit` | 148734 | 152750 | +2.7% |
+| SK | `basicPersonalAmount` | 18491 | 19491 | +5.4% |
+| SK | `spouseAmount.max` | 18491 | 19491 | +5.4% |
+| SK | `spouseAmount.threshold` | 1850 | 1949 | +5.4% |
+| SK | `childAmount.perChild` | 7015 | 7704 | +9.8% |
+| SK | `propertyTax.rate` | 0.010716096728 | 0.0134 | +25.0% |
+| SK | `credits[sk-low-income-tax-credit].params.adult` | 398 | 429 | +7.8% |
+| SK | `credits[sk-low-income-tax-credit].params.spouse` | 398 | 429 | +7.8% |
+| SK | `credits[sk-low-income-tax-credit].params.child` | 157 | 169 | +7.6% |
+| SK | `credits[sk-low-income-tax-credit].params.rate` | 0.02750043356539405 | 0.02884 | +4.9% |
+| SK | `credits[sk-low-income-tax-credit].params.threshold` | 37584 | 38588 | +2.7% |
+| SK | `carbon.gasoline[0].from` | 2024-01-01 | 2025-01-01 |  |
+| SK | `carbon.gasoline[0].rate` | 0.1431 | 0.1761 | +23.1% |
+| SK | `carbon.gasoline[1].from` | 2024-04-01 | 2025-04-01 |  |
+| SK | `carbon.gasoline[1].rate` | 0.1761 | 0 | -100.0% |
+| SK | `carbon.rebates[carbon-rebate-payments].params.payments[0].date` | 2024-01-01 | 2025-01-01 |  |
+| SK | `carbon.rebates[carbon-rebate-payments].params.payments[0].adult` | 170 | 188 | +10.6% |
+| SK | `carbon.rebates[carbon-rebate-payments].params.payments[0].spouse` | 85 | 94 | +10.6% |
+| SK | `carbon.rebates[carbon-rebate-payments].params.payments[0].child` | 42.5 | 47 | +10.6% |
+| SK | `carbon.rebates[carbon-rebate-payments].params.payments[0].firstChild` | 85 | 94 | +10.6% |
+| SK | `carbon.rebates[carbon-rebate-payments].params.payments[1].date` | 2024-04-01 | 2025-04-01 |  |
+| SK | `carbon.rebates[carbon-rebate-payments].params.payments[1].adult` | 188 | 206 | +9.6% |
+| SK | `carbon.rebates[carbon-rebate-payments].params.payments[1].spouse` | 94 | 103 | +9.6% |
+| SK | `carbon.rebates[carbon-rebate-payments].params.payments[1].child` | 47 | 51.5 | +9.6% |
+| SK | `carbon.rebates[carbon-rebate-payments].params.payments[1].firstChild` | 94 | 103 | +9.6% |
+| YT | `brackets[0].limit` | 55867 | 57375 | +2.7% |
+| YT | `brackets[1].limit` | 111733 | 114750 | +2.7% |
+| YT | `brackets[2].limit` | 173205 | 177882 | +2.7% |
+| YT | `propertyTax.rate` | 0.01076 | 0.01 | -7.1% |
+| YT | `propertyTax.city` | Whitehorse | Whitehorse (est.) |  |
+| YT | `childBenefit.params.perChild` | 918 | 936.96 | +2.1% |
+| YT | `carbon.rebates[carbon-rebate-payments].params.payments[0].date` | 2024-01-01 | 2025-01-01 |  |
+| YT | `carbon.rebates[carbon-rebate-payments].params.payments[0].adult` | 93 | 77.5 | -16.7% |
+| YT | `carbon.rebates[carbon-rebate-payments].params.payments[0].spouse` | 93 | 77.5 | -16.7% |
+| YT | `carbon.rebates[carbon-rebate-payments].params.payments[0].child` | 93 | 77.5 | -16.7% |
+| YT | `carbon.rebates[carbon-rebate-payments].params.payments[0].firstChild` | 93 | 77.5 | -16.7% |
+| YT | `carbon.rebates[carbon-rebate-payments].params.payments[1].date` | 2024-04-01 | 2025-04-01 |  |
+| YT | `carbon.rebates[carbon-rebate-payments].params.payments[1].adult` | 93 | 77.5 | -16.7% |
+| YT | `carbon.rebates[carbon-rebate-payments].params.payments[1].spouse` | 93 | 77.5 | -16.7% |
+| YT | `carbon.rebates[carbon-rebate-payments].params.payments[1].child` | 93 | 77.5 | -16.7% |
+| YT | `carbon.rebates[carbon-rebate-payments].params.payments[1].firstChild` | 93 | 77.5 | -16.7% |
+| YT | `carbon.gasoline[0].from` | 2024-01-01 | 2025-01-01 |  |
+| YT | `carbon.gasoline[0].rate` | 0.1431 | 0.1761 | +23.1% |
+| YT | `carbon.gasoline[1].from` | 2024-04-01 | 2025-04-01 |  |
+| YT | `carbon.gasoline[1].rate` | 0.1761 | 0 | -100.0% |
+
+</details>
+
+<details><summary>23 unchanged values opted out</summary>
+
+| File | In | Unchanged values | Why |
+|---|---|---|---|
+| MB | `brackets` | `[0].limit` 47000, `[1].limit` 100000 | bracketsFrozenSince: 2025 |
+| MB | `familyTaxBenefit.params` | `basic` 2065, `dependant` 2065, `child` 2752, `childThrough` 18 | not indexed comment |
+| ON | `lift` | `max` 875, `threshold` 32500, `familyThreshold` 65000 | not indexed comment |
+| ON | `payroll` | `healthPremium[0][0]` 200000, `healthPremium[0][1]` 750, `healthPremium[0][3]` 900, `healthPremium[1][0]` 72000, `healthPremium[1][1]` 600, `healthPremium[1][3]` 750, `healthPremium[2][0]` 48000, `healthPremium[2][1]` 450, `healthPremium[2][3]` 600, `healthPremium[3][0]` 36000, `healthPremium[3][1]` 300, `healthPremium[3][3]` 450, `healthPremium[4][0]` 20000, `healthPremium[4][3]` 300 | not indexed comment |
+
+</details>

@@ -219,6 +219,9 @@ For now:
   the Northern Ontario energy credit, Quebec's northern-village supplement.
 - Differences in what each province's sales tax exempts beyond the basics; Ontario's 8% RST on some insurance.
 - Living outside the reference city: one city per province sets property tax and regional fuel tax rates.
+- PEI's 1.67% Charlottetown rate already includes the resident credit. Additional owner credits need ownership
+  and assessment history and are not modelled; the annual-bill override can reflect them.
+  See [the owner-credit audit](verification/86-charlottetown-owner-credit.md).
 
 ## Estimates in the 2026 data
 
