@@ -31,9 +31,12 @@ credits:
   - name: Homeowners affordability tax credit
     nameRenter: Renters affordability tax credit
     program: mb-affordability-credits
-    params: {homeownerMax: 1600, renter: 625}
+    params:
+      homeownerMax: 1600   # not indexed: fixed 2026 maximum; Budget 2026's $1,700 starts in tax year 2027
+      renter: 625
     estimated: true   # renters credit taken at its maximum
 sources:
+  - {label: "Manitoba Finance, Budget 2026 taxation bulletin (2026 homeowner maximum $1,600; $1,700 starts in 2027)", url: "https://www.gov.mb.ca/finance/taxation/pubs/bulletins/2026budget.pdf"}
   - {label: "Manitoba Income Tax Act, s. 4.6(16.1)–(16.2) (family benefit eligibility and claimant limits)", url: "https://web2.gov.mb.ca/laws/statutes/ccsm/_pdf.php?cap=i10"}
   - {label: "CRA, 2026 TD1MB (family tax benefit line 12)", url: "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/td1mb/td1mb-26e.pdf"}
   - {label: "CRA, 2026 TD1MB-WS (family benefit amounts and individual 9% taper)", url: "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/td1mb-ws/td1mb-ws-26e.pdf"}
