@@ -674,7 +674,7 @@ const CHILD_EXCEPTIONS = new Set(["QC: canada-workers-benefit"]);
 function albertaWorkingReduction(y: YearData, p: Province, hh: Household, a: H, b: H): boolean {
   const program = p.childBenefit;
   if (
-    (y.year !== 2023 && y.year !== 2024) ||
+    (y.year !== 2023 && y.year !== 2024 && y.year !== 2025 && y.year !== 2026) ||
     p.code !== "AB" ||
     program?.program !== "alberta-child-family-benefit-by-child"
   )
@@ -723,7 +723,7 @@ test("another child never raises income tax and benefit declines follow document
     }
   });
   assert.deepEqual([...excepted].sort(), [...CHILD_EXCEPTIONS].sort(), "CHILD_EXCEPTIONS lists exactly what falls");
-  for (const year of [2023, 2024])
+  for (const year of [2023, 2024, 2025, 2026])
     if (YEARS.some(y => y.year === year))
       assert.ok(albertaReductionYears.has(year), `${year} Alberta working-reduction exception is still seen`);
 });

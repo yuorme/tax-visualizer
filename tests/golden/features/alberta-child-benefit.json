@@ -1,0 +1,2850 @@
+{
+  "description": "Independent Decimal calculations from Alberta statutory schedules and published maxima; see docs/verification/106-alberta-child-benefit.md.",
+  "defaults": {
+    "active": 0,
+    "spouse": true,
+    "adults": 1,
+    "kids": 0,
+    "under6": 0,
+    "useBpa": true,
+    "whRate": 0,
+    "useCredits": true,
+    "homeValue": 0,
+    "rent": 0,
+    "monthlySpending": 0
+  },
+  "cases": [
+    {
+      "id": "ab-2025-0-no-children",
+      "year": 2025,
+      "net": 0.0,
+      "earned": 0.0,
+      "kids": 0,
+      "person": {
+        "ord": 0.0,
+        "oth": 0.0
+      },
+      "calculation": {
+        "base": 0.0,
+        "working": 0.0
+      },
+      "expected": 0.0
+    },
+    {
+      "id": "ab-2025-1-base-below",
+      "year": 2025,
+      "net": 27564.0,
+      "earned": 0.0,
+      "kids": 1,
+      "person": {
+        "ord": 0.0,
+        "oth": 27564.0
+      },
+      "calculation": {
+        "base": 1499.0,
+        "working": 0.0
+      },
+      "expected": 1499.0
+    },
+    {
+      "id": "ab-2025-1-base-at",
+      "year": 2025,
+      "net": 27565.0,
+      "earned": 0.0,
+      "kids": 1,
+      "person": {
+        "ord": 0.0,
+        "oth": 27565.0
+      },
+      "calculation": {
+        "base": 1499.0,
+        "working": 0.0
+      },
+      "expected": 1499.0
+    },
+    {
+      "id": "ab-2025-1-base-reduction",
+      "year": 2025,
+      "net": 28565.0,
+      "earned": 0.0,
+      "kids": 1,
+      "person": {
+        "ord": 0.0,
+        "oth": 28565.0
+      },
+      "calculation": {
+        "base": 1418.5,
+        "working": 0.0
+      },
+      "expected": 1418.5
+    },
+    {
+      "id": "ab-2025-1-working-below",
+      "year": 2025,
+      "net": 46190.0,
+      "earned": 20000.0,
+      "kids": 1,
+      "person": {
+        "ord": 20000.0,
+        "oth": 26355.0
+      },
+      "calculation": {
+        "base": 0.0,
+        "working": 767.0
+      },
+      "expected": 767.0
+    },
+    {
+      "id": "ab-2025-1-working-at",
+      "year": 2025,
+      "net": 46191.0,
+      "earned": 20000.0,
+      "kids": 1,
+      "person": {
+        "ord": 20000.0,
+        "oth": 26356.0
+      },
+      "calculation": {
+        "base": 0.0,
+        "working": 767.0
+      },
+      "expected": 767.0
+    },
+    {
+      "id": "ab-2025-1-working-above",
+      "year": 2025,
+      "net": 46192.0,
+      "earned": 20000.0,
+      "kids": 1,
+      "person": {
+        "ord": 20000.0,
+        "oth": 26357.0
+      },
+      "calculation": {
+        "base": 0.0,
+        "working": 766.966
+      },
+      "expected": 766.966
+    },
+    {
+      "id": "ab-2025-1-working-reduction",
+      "year": 2025,
+      "net": 47191.0,
+      "earned": 20000.0,
+      "kids": 1,
+      "person": {
+        "ord": 20000.0,
+        "oth": 27356.0
+      },
+      "calculation": {
+        "base": 0.0,
+        "working": 733.0
+      },
+      "expected": 733.0
+    },
+    {
+      "id": "ab-2025-1-working-survives",
+      "year": 2025,
+      "net": 61191.0,
+      "earned": 20000.0,
+      "kids": 1,
+      "person": {
+        "ord": 20000.0,
+        "oth": 41356.0
+      },
+      "calculation": {
+        "base": 0.0,
+        "working": 257.0
+      },
+      "expected": 257.0
+    },
+    {
+      "id": "ab-2025-1-earned-floor",
+      "year": 2025,
+      "net": 27565.0,
+      "earned": 2760.0,
+      "kids": 1,
+      "person": {
+        "ord": 2760.0,
+        "oth": 24805.0
+      },
+      "calculation": {
+        "base": 1499.0,
+        "working": 0.0
+      },
+      "expected": 1499.0
+    },
+    {
+      "id": "ab-2025-1-earned-phase-in",
+      "year": 2025,
+      "net": 27565.0,
+      "earned": 3760.0,
+      "kids": 1,
+      "person": {
+        "ord": 3760.0,
+        "oth": 23807.6
+      },
+      "calculation": {
+        "base": 1499.0,
+        "working": 150.0
+      },
+      "expected": 1649.0
+    },
+    {
+      "id": "ab-2025-1-maximum",
+      "year": 2025,
+      "net": 27565.0,
+      "earned": 20000.0,
+      "kids": 1,
+      "person": {
+        "ord": 20000.0,
+        "oth": 7730.0
+      },
+      "calculation": {
+        "base": 1499.0,
+        "working": 767.0
+      },
+      "expected": 2266.0
+    },
+    {
+      "id": "ab-2025-1-base-last-positive",
+      "year": 2025,
+      "net": 46186.0,
+      "earned": 0.0,
+      "kids": 1,
+      "person": {
+        "ord": 0.0,
+        "oth": 46186.0
+      },
+      "calculation": {
+        "base": 0.0095,
+        "working": 0.0
+      },
+      "expected": 10.0
+    },
+    {
+      "id": "ab-2025-1-base-zero",
+      "year": 2025,
+      "net": 46187.0,
+      "earned": 0.0,
+      "kids": 1,
+      "person": {
+        "ord": 0.0,
+        "oth": 46187.0
+      },
+      "calculation": {
+        "base": 0.0,
+        "working": 0.0
+      },
+      "expected": 0.0
+    },
+    {
+      "id": "ab-2025-1-working-last-positive",
+      "year": 2025,
+      "net": 68749.0,
+      "earned": 20000.0,
+      "kids": 1,
+      "person": {
+        "ord": 20000.0,
+        "oth": 48914.0
+      },
+      "calculation": {
+        "base": 0.0,
+        "working": 0.028
+      },
+      "expected": 10.0
+    },
+    {
+      "id": "ab-2025-1-working-zero",
+      "year": 2025,
+      "net": 68750.0,
+      "earned": 20000.0,
+      "kids": 1,
+      "person": {
+        "ord": 20000.0,
+        "oth": 48915.0
+      },
+      "calculation": {
+        "base": 0.0,
+        "working": 0.0
+      },
+      "expected": 0.0
+    },
+    {
+      "id": "ab-2025-1-combined-minimum",
+      "year": 2025,
+      "net": 46186.0,
+      "earned": 2800.0,
+      "kids": 1,
+      "person": {
+        "ord": 2800.0,
+        "oth": 43386.0
+      },
+      "calculation": {
+        "base": 0.0095,
+        "working": 6.0
+      },
+      "expected": 10.0
+    },
+    {
+      "id": "ab-2025-1-combined-above-minimum",
+      "year": 2025,
+      "net": 46111.0,
+      "earned": 2800.0,
+      "kids": 1,
+      "person": {
+        "ord": 2800.0,
+        "oth": 43311.0
+      },
+      "calculation": {
+        "base": 6.047,
+        "working": 6.0
+      },
+      "expected": 12.047
+    },
+    {
+      "id": "ab-2025-2-base-below",
+      "year": 2025,
+      "net": 27564.0,
+      "earned": 0.0,
+      "kids": 2,
+      "person": {
+        "ord": 0.0,
+        "oth": 27564.0
+      },
+      "calculation": {
+        "base": 2248.0,
+        "working": 0.0
+      },
+      "expected": 2248.0
+    },
+    {
+      "id": "ab-2025-2-base-at",
+      "year": 2025,
+      "net": 27565.0,
+      "earned": 0.0,
+      "kids": 2,
+      "person": {
+        "ord": 0.0,
+        "oth": 27565.0
+      },
+      "calculation": {
+        "base": 2248.0,
+        "working": 0.0
+      },
+      "expected": 2248.0
+    },
+    {
+      "id": "ab-2025-2-base-reduction",
+      "year": 2025,
+      "net": 28565.0,
+      "earned": 0.0,
+      "kids": 2,
+      "person": {
+        "ord": 0.0,
+        "oth": 28565.0
+      },
+      "calculation": {
+        "base": 2127.3,
+        "working": 0.0
+      },
+      "expected": 2127.3
+    },
+    {
+      "id": "ab-2025-2-working-below",
+      "year": 2025,
+      "net": 46190.0,
+      "earned": 20000.0,
+      "kids": 2,
+      "person": {
+        "ord": 20000.0,
+        "oth": 26355.0
+      },
+      "calculation": {
+        "base": 0.0,
+        "working": 1465.0
+      },
+      "expected": 1465.0
+    },
+    {
+      "id": "ab-2025-2-working-at",
+      "year": 2025,
+      "net": 46191.0,
+      "earned": 20000.0,
+      "kids": 2,
+      "person": {
+        "ord": 20000.0,
+        "oth": 26356.0
+      },
+      "calculation": {
+        "base": 0.0,
+        "working": 1465.0
+      },
+      "expected": 1465.0
+    },
+    {
+      "id": "ab-2025-2-working-above",
+      "year": 2025,
+      "net": 46192.0,
+      "earned": 20000.0,
+      "kids": 2,
+      "person": {
+        "ord": 20000.0,
+        "oth": 26357.0
+      },
+      "calculation": {
+        "base": 0.0,
+        "working": 1464.9351
+      },
+      "expected": 1464.9351
+    },
+    {
+      "id": "ab-2025-2-working-reduction",
+      "year": 2025,
+      "net": 47191.0,
+      "earned": 20000.0,
+      "kids": 2,
+      "person": {
+        "ord": 20000.0,
+        "oth": 27356.0
+      },
+      "calculation": {
+        "base": 0.0,
+        "working": 1400.1
+      },
+      "expected": 1400.1
+    },
+    {
+      "id": "ab-2025-2-working-survives",
+      "year": 2025,
+      "net": 61191.0,
+      "earned": 20000.0,
+      "kids": 2,
+      "person": {
+        "ord": 20000.0,
+        "oth": 41356.0
+      },
+      "calculation": {
+        "base": 0.0,
+        "working": 491.5
+      },
+      "expected": 491.5
+    },
+    {
+      "id": "ab-2025-2-earned-floor",
+      "year": 2025,
+      "net": 27565.0,
+      "earned": 2760.0,
+      "kids": 2,
+      "person": {
+        "ord": 2760.0,
+        "oth": 24805.0
+      },
+      "calculation": {
+        "base": 2248.0,
+        "working": 0.0
+      },
+      "expected": 2248.0
+    },
+    {
+      "id": "ab-2025-2-earned-phase-in",
+      "year": 2025,
+      "net": 27565.0,
+      "earned": 3760.0,
+      "kids": 2,
+      "person": {
+        "ord": 3760.0,
+        "oth": 23807.6
+      },
+      "calculation": {
+        "base": 2248.0,
+        "working": 150.0
+      },
+      "expected": 2398.0
+    },
+    {
+      "id": "ab-2025-2-maximum",
+      "year": 2025,
+      "net": 27565.0,
+      "earned": 20000.0,
+      "kids": 2,
+      "person": {
+        "ord": 20000.0,
+        "oth": 7730.0
+      },
+      "calculation": {
+        "base": 2248.0,
+        "working": 1465.0
+      },
+      "expected": 3713.0
+    },
+    {
+      "id": "ab-2025-2-base-last-positive",
+      "year": 2025,
+      "net": 46189.0,
+      "earned": 0.0,
+      "kids": 2,
+      "person": {
+        "ord": 0.0,
+        "oth": 46189.0
+      },
+      "calculation": {
+        "base": 0.0832,
+        "working": 0.0
+      },
+      "expected": 10.0
+    },
+    {
+      "id": "ab-2025-2-base-zero",
+      "year": 2025,
+      "net": 46190.0,
+      "earned": 0.0,
+      "kids": 2,
+      "person": {
+        "ord": 0.0,
+        "oth": 46190.0
+      },
+      "calculation": {
+        "base": 0.0,
+        "working": 0.0
+      },
+      "expected": 0.0
+    },
+    {
+      "id": "ab-2025-2-working-last-positive",
+      "year": 2025,
+      "net": 68764.0,
+      "earned": 20000.0,
+      "kids": 2,
+      "person": {
+        "ord": 20000.0,
+        "oth": 48929.0
+      },
+      "calculation": {
+        "base": 0.0,
+        "working": 0.0123
+      },
+      "expected": 10.0
+    },
+    {
+      "id": "ab-2025-2-working-zero",
+      "year": 2025,
+      "net": 68765.0,
+      "earned": 20000.0,
+      "kids": 2,
+      "person": {
+        "ord": 20000.0,
+        "oth": 48930.0
+      },
+      "calculation": {
+        "base": 0.0,
+        "working": 0.0
+      },
+      "expected": 0.0
+    },
+    {
+      "id": "ab-2025-2-combined-minimum",
+      "year": 2025,
+      "net": 46189.0,
+      "earned": 2800.0,
+      "kids": 2,
+      "person": {
+        "ord": 2800.0,
+        "oth": 43389.0
+      },
+      "calculation": {
+        "base": 0.0832,
+        "working": 6.0
+      },
+      "expected": 10.0
+    },
+    {
+      "id": "ab-2025-2-combined-above-minimum",
+      "year": 2025,
+      "net": 46139.0,
+      "earned": 2800.0,
+      "kids": 2,
+      "person": {
+        "ord": 2800.0,
+        "oth": 43339.0
+      },
+      "calculation": {
+        "base": 6.1182,
+        "working": 6.0
+      },
+      "expected": 12.1182
+    },
+    {
+      "id": "ab-2025-3-base-below",
+      "year": 2025,
+      "net": 27564.0,
+      "earned": 0.0,
+      "kids": 3,
+      "person": {
+        "ord": 0.0,
+        "oth": 27564.0
+      },
+      "calculation": {
+        "base": 2997.0,
+        "working": 0.0
+      },
+      "expected": 2997.0
+    },
+    {
+      "id": "ab-2025-3-base-at",
+      "year": 2025,
+      "net": 27565.0,
+      "earned": 0.0,
+      "kids": 3,
+      "person": {
+        "ord": 0.0,
+        "oth": 27565.0
+      },
+      "calculation": {
+        "base": 2997.0,
+        "working": 0.0
+      },
+      "expected": 2997.0
+    },
+    {
+      "id": "ab-2025-3-base-reduction",
+      "year": 2025,
+      "net": 28565.0,
+      "earned": 0.0,
+      "kids": 3,
+      "person": {
+        "ord": 0.0,
+        "oth": 28565.0
+      },
+      "calculation": {
+        "base": 2836.1,
+        "working": 0.0
+      },
+      "expected": 2836.1
+    },
+    {
+      "id": "ab-2025-3-working-below",
+      "year": 2025,
+      "net": 46190.0,
+      "earned": 20000.0,
+      "kids": 3,
+      "person": {
+        "ord": 20000.0,
+        "oth": 26355.0
+      },
+      "calculation": {
+        "base": 0.2375,
+        "working": 1883.0
+      },
+      "expected": 1883.2375
+    },
+    {
+      "id": "ab-2025-3-working-at",
+      "year": 2025,
+      "net": 46191.0,
+      "earned": 20000.0,
+      "kids": 3,
+      "person": {
+        "ord": 20000.0,
+        "oth": 26356.0
+      },
+      "calculation": {
+        "base": 0.0766,
+        "working": 1883.0
+      },
+      "expected": 1883.0766
+    },
+    {
+      "id": "ab-2025-3-working-above",
+      "year": 2025,
+      "net": 46192.0,
+      "earned": 20000.0,
+      "kids": 3,
+      "person": {
+        "ord": 20000.0,
+        "oth": 26357.0
+      },
+      "calculation": {
+        "base": 0.0,
+        "working": 1882.9166
+      },
+      "expected": 1882.9166
+    },
+    {
+      "id": "ab-2025-3-working-reduction",
+      "year": 2025,
+      "net": 47191.0,
+      "earned": 20000.0,
+      "kids": 3,
+      "person": {
+        "ord": 20000.0,
+        "oth": 27356.0
+      },
+      "calculation": {
+        "base": 0.0,
+        "working": 1799.6
+      },
+      "expected": 1799.6
+    },
+    {
+      "id": "ab-2025-3-working-survives",
+      "year": 2025,
+      "net": 61191.0,
+      "earned": 20000.0,
+      "kids": 3,
+      "person": {
+        "ord": 20000.0,
+        "oth": 41356.0
+      },
+      "calculation": {
+        "base": 0.0,
+        "working": 632.0
+      },
+      "expected": 632.0
+    },
+    {
+      "id": "ab-2025-3-earned-floor",
+      "year": 2025,
+      "net": 27565.0,
+      "earned": 2760.0,
+      "kids": 3,
+      "person": {
+        "ord": 2760.0,
+        "oth": 24805.0
+      },
+      "calculation": {
+        "base": 2997.0,
+        "working": 0.0
+      },
+      "expected": 2997.0
+    },
+    {
+      "id": "ab-2025-3-earned-phase-in",
+      "year": 2025,
+      "net": 27565.0,
+      "earned": 3760.0,
+      "kids": 3,
+      "person": {
+        "ord": 3760.0,
+        "oth": 23807.6
+      },
+      "calculation": {
+        "base": 2997.0,
+        "working": 150.0
+      },
+      "expected": 3147.0
+    },
+    {
+      "id": "ab-2025-3-maximum",
+      "year": 2025,
+      "net": 27565.0,
+      "earned": 20000.0,
+      "kids": 3,
+      "person": {
+        "ord": 20000.0,
+        "oth": 7730.0
+      },
+      "calculation": {
+        "base": 2997.0,
+        "working": 1883.0
+      },
+      "expected": 4880.0
+    },
+    {
+      "id": "ab-2025-3-base-last-positive",
+      "year": 2025,
+      "net": 46191.0,
+      "earned": 0.0,
+      "kids": 3,
+      "person": {
+        "ord": 0.0,
+        "oth": 46191.0
+      },
+      "calculation": {
+        "base": 0.0766,
+        "working": 0.0
+      },
+      "expected": 10.0
+    },
+    {
+      "id": "ab-2025-3-base-zero",
+      "year": 2025,
+      "net": 46192.0,
+      "earned": 0.0,
+      "kids": 3,
+      "person": {
+        "ord": 0.0,
+        "oth": 46192.0
+      },
+      "calculation": {
+        "base": 0.0,
+        "working": 0.0
+      },
+      "expected": 0.0
+    },
+    {
+      "id": "ab-2025-3-working-last-positive",
+      "year": 2025,
+      "net": 68768.0,
+      "earned": 20000.0,
+      "kids": 3,
+      "person": {
+        "ord": 20000.0,
+        "oth": 48933.0
+      },
+      "calculation": {
+        "base": 0.0,
+        "working": 0.0782
+      },
+      "expected": 10.0
+    },
+    {
+      "id": "ab-2025-3-working-zero",
+      "year": 2025,
+      "net": 68769.0,
+      "earned": 20000.0,
+      "kids": 3,
+      "person": {
+        "ord": 20000.0,
+        "oth": 48934.0
+      },
+      "calculation": {
+        "base": 0.0,
+        "working": 0.0
+      },
+      "expected": 0.0
+    },
+    {
+      "id": "ab-2025-3-combined-minimum",
+      "year": 2025,
+      "net": 46191.0,
+      "earned": 2800.0,
+      "kids": 3,
+      "person": {
+        "ord": 2800.0,
+        "oth": 43391.0
+      },
+      "calculation": {
+        "base": 0.0766,
+        "working": 6.0
+      },
+      "expected": 10.0
+    },
+    {
+      "id": "ab-2025-3-combined-above-minimum",
+      "year": 2025,
+      "net": 46154.0,
+      "earned": 2800.0,
+      "kids": 3,
+      "person": {
+        "ord": 2800.0,
+        "oth": 43354.0
+      },
+      "calculation": {
+        "base": 6.0299,
+        "working": 6.0
+      },
+      "expected": 12.0299
+    },
+    {
+      "id": "ab-2025-4-base-below",
+      "year": 2025,
+      "net": 27564.0,
+      "earned": 0.0,
+      "kids": 4,
+      "person": {
+        "ord": 0.0,
+        "oth": 27564.0
+      },
+      "calculation": {
+        "base": 3746.0,
+        "working": 0.0
+      },
+      "expected": 3746.0
+    },
+    {
+      "id": "ab-2025-4-base-at",
+      "year": 2025,
+      "net": 27565.0,
+      "earned": 0.0,
+      "kids": 4,
+      "person": {
+        "ord": 0.0,
+        "oth": 27565.0
+      },
+      "calculation": {
+        "base": 3746.0,
+        "working": 0.0
+      },
+      "expected": 3746.0
+    },
+    {
+      "id": "ab-2025-4-base-reduction",
+      "year": 2025,
+      "net": 28565.0,
+      "earned": 0.0,
+      "kids": 4,
+      "person": {
+        "ord": 0.0,
+        "oth": 28565.0
+      },
+      "calculation": {
+        "base": 3544.9,
+        "working": 0.0
+      },
+      "expected": 3544.9
+    },
+    {
+      "id": "ab-2025-4-working-below",
+      "year": 2025,
+      "net": 46190.0,
+      "earned": 20000.0,
+      "kids": 4,
+      "person": {
+        "ord": 20000.0,
+        "oth": 26355.0
+      },
+      "calculation": {
+        "base": 0.5125,
+        "working": 2021.0
+      },
+      "expected": 2021.5125
+    },
+    {
+      "id": "ab-2025-4-working-at",
+      "year": 2025,
+      "net": 46191.0,
+      "earned": 20000.0,
+      "kids": 4,
+      "person": {
+        "ord": 20000.0,
+        "oth": 26356.0
+      },
+      "calculation": {
+        "base": 0.3114,
+        "working": 2021.0
+      },
+      "expected": 2021.3114
+    },
+    {
+      "id": "ab-2025-4-working-above",
+      "year": 2025,
+      "net": 46192.0,
+      "earned": 20000.0,
+      "kids": 4,
+      "person": {
+        "ord": 20000.0,
+        "oth": 26357.0
+      },
+      "calculation": {
+        "base": 0.1103,
+        "working": 2020.9105
+      },
+      "expected": 2021.0208
+    },
+    {
+      "id": "ab-2025-4-working-reduction",
+      "year": 2025,
+      "net": 47191.0,
+      "earned": 20000.0,
+      "kids": 4,
+      "person": {
+        "ord": 20000.0,
+        "oth": 27356.0
+      },
+      "calculation": {
+        "base": 0.0,
+        "working": 1931.5
+      },
+      "expected": 1931.5
+    },
+    {
+      "id": "ab-2025-4-working-survives",
+      "year": 2025,
+      "net": 61191.0,
+      "earned": 20000.0,
+      "kids": 4,
+      "person": {
+        "ord": 20000.0,
+        "oth": 41356.0
+      },
+      "calculation": {
+        "base": 0.0,
+        "working": 678.5
+      },
+      "expected": 678.5
+    },
+    {
+      "id": "ab-2025-4-earned-floor",
+      "year": 2025,
+      "net": 27565.0,
+      "earned": 2760.0,
+      "kids": 4,
+      "person": {
+        "ord": 2760.0,
+        "oth": 24805.0
+      },
+      "calculation": {
+        "base": 3746.0,
+        "working": 0.0
+      },
+      "expected": 3746.0
+    },
+    {
+      "id": "ab-2025-4-earned-phase-in",
+      "year": 2025,
+      "net": 27565.0,
+      "earned": 3760.0,
+      "kids": 4,
+      "person": {
+        "ord": 3760.0,
+        "oth": 23807.6
+      },
+      "calculation": {
+        "base": 3746.0,
+        "working": 150.0
+      },
+      "expected": 3896.0
+    },
+    {
+      "id": "ab-2025-4-maximum",
+      "year": 2025,
+      "net": 27565.0,
+      "earned": 20000.0,
+      "kids": 4,
+      "person": {
+        "ord": 20000.0,
+        "oth": 7730.0
+      },
+      "calculation": {
+        "base": 3746.0,
+        "working": 2021.0
+      },
+      "expected": 5767.0
+    },
+    {
+      "id": "ab-2025-4-base-last-positive",
+      "year": 2025,
+      "net": 46192.0,
+      "earned": 0.0,
+      "kids": 4,
+      "person": {
+        "ord": 0.0,
+        "oth": 46192.0
+      },
+      "calculation": {
+        "base": 0.1103,
+        "working": 0.0
+      },
+      "expected": 10.0
+    },
+    {
+      "id": "ab-2025-4-base-zero",
+      "year": 2025,
+      "net": 46193.0,
+      "earned": 0.0,
+      "kids": 4,
+      "person": {
+        "ord": 0.0,
+        "oth": 46193.0
+      },
+      "calculation": {
+        "base": 0.0,
+        "working": 0.0
+      },
+      "expected": 0.0
+    },
+    {
+      "id": "ab-2025-4-working-last-positive",
+      "year": 2025,
+      "net": 68772.0,
+      "earned": 20000.0,
+      "kids": 4,
+      "person": {
+        "ord": 20000.0,
+        "oth": 48937.0
+      },
+      "calculation": {
+        "base": 0.0,
+        "working": 0.0005
+      },
+      "expected": 10.0
+    },
+    {
+      "id": "ab-2025-4-working-zero",
+      "year": 2025,
+      "net": 68773.0,
+      "earned": 20000.0,
+      "kids": 4,
+      "person": {
+        "ord": 20000.0,
+        "oth": 48938.0
+      },
+      "calculation": {
+        "base": 0.0,
+        "working": 0.0
+      },
+      "expected": 0.0
+    },
+    {
+      "id": "ab-2025-4-combined-minimum",
+      "year": 2025,
+      "net": 46192.0,
+      "earned": 2800.0,
+      "kids": 4,
+      "person": {
+        "ord": 2800.0,
+        "oth": 43392.0
+      },
+      "calculation": {
+        "base": 0.1103,
+        "working": 5.9105
+      },
+      "expected": 10.0
+    },
+    {
+      "id": "ab-2025-4-combined-above-minimum",
+      "year": 2025,
+      "net": 46162.0,
+      "earned": 2800.0,
+      "kids": 4,
+      "person": {
+        "ord": 2800.0,
+        "oth": 43362.0
+      },
+      "calculation": {
+        "base": 6.1433,
+        "working": 6.0
+      },
+      "expected": 12.1433
+    },
+    {
+      "id": "ab-2025-5-base-below",
+      "year": 2025,
+      "net": 27564.0,
+      "earned": 0.0,
+      "kids": 5,
+      "person": {
+        "ord": 0.0,
+        "oth": 27564.0
+      },
+      "calculation": {
+        "base": 3746.0,
+        "working": 0.0
+      },
+      "expected": 3746.0
+    },
+    {
+      "id": "ab-2025-5-base-at",
+      "year": 2025,
+      "net": 27565.0,
+      "earned": 0.0,
+      "kids": 5,
+      "person": {
+        "ord": 0.0,
+        "oth": 27565.0
+      },
+      "calculation": {
+        "base": 3746.0,
+        "working": 0.0
+      },
+      "expected": 3746.0
+    },
+    {
+      "id": "ab-2025-5-base-reduction",
+      "year": 2025,
+      "net": 28565.0,
+      "earned": 0.0,
+      "kids": 5,
+      "person": {
+        "ord": 0.0,
+        "oth": 28565.0
+      },
+      "calculation": {
+        "base": 3544.9,
+        "working": 0.0
+      },
+      "expected": 3544.9
+    },
+    {
+      "id": "ab-2025-5-working-below",
+      "year": 2025,
+      "net": 46190.0,
+      "earned": 20000.0,
+      "kids": 5,
+      "person": {
+        "ord": 20000.0,
+        "oth": 26355.0
+      },
+      "calculation": {
+        "base": 0.5125,
+        "working": 2021.0
+      },
+      "expected": 2021.5125
+    },
+    {
+      "id": "ab-2025-5-working-at",
+      "year": 2025,
+      "net": 46191.0,
+      "earned": 20000.0,
+      "kids": 5,
+      "person": {
+        "ord": 20000.0,
+        "oth": 26356.0
+      },
+      "calculation": {
+        "base": 0.3114,
+        "working": 2021.0
+      },
+      "expected": 2021.3114
+    },
+    {
+      "id": "ab-2025-5-working-above",
+      "year": 2025,
+      "net": 46192.0,
+      "earned": 20000.0,
+      "kids": 5,
+      "person": {
+        "ord": 20000.0,
+        "oth": 26357.0
+      },
+      "calculation": {
+        "base": 0.1103,
+        "working": 2020.9105
+      },
+      "expected": 2021.0208
+    },
+    {
+      "id": "ab-2025-5-working-reduction",
+      "year": 2025,
+      "net": 47191.0,
+      "earned": 20000.0,
+      "kids": 5,
+      "person": {
+        "ord": 20000.0,
+        "oth": 27356.0
+      },
+      "calculation": {
+        "base": 0.0,
+        "working": 1931.5
+      },
+      "expected": 1931.5
+    },
+    {
+      "id": "ab-2025-5-working-survives",
+      "year": 2025,
+      "net": 61191.0,
+      "earned": 20000.0,
+      "kids": 5,
+      "person": {
+        "ord": 20000.0,
+        "oth": 41356.0
+      },
+      "calculation": {
+        "base": 0.0,
+        "working": 678.5
+      },
+      "expected": 678.5
+    },
+    {
+      "id": "ab-2025-5-earned-floor",
+      "year": 2025,
+      "net": 27565.0,
+      "earned": 2760.0,
+      "kids": 5,
+      "person": {
+        "ord": 2760.0,
+        "oth": 24805.0
+      },
+      "calculation": {
+        "base": 3746.0,
+        "working": 0.0
+      },
+      "expected": 3746.0
+    },
+    {
+      "id": "ab-2025-5-earned-phase-in",
+      "year": 2025,
+      "net": 27565.0,
+      "earned": 3760.0,
+      "kids": 5,
+      "person": {
+        "ord": 3760.0,
+        "oth": 23807.6
+      },
+      "calculation": {
+        "base": 3746.0,
+        "working": 150.0
+      },
+      "expected": 3896.0
+    },
+    {
+      "id": "ab-2025-5-maximum",
+      "year": 2025,
+      "net": 27565.0,
+      "earned": 20000.0,
+      "kids": 5,
+      "person": {
+        "ord": 20000.0,
+        "oth": 7730.0
+      },
+      "calculation": {
+        "base": 3746.0,
+        "working": 2021.0
+      },
+      "expected": 5767.0
+    },
+    {
+      "id": "ab-2025-5-base-last-positive",
+      "year": 2025,
+      "net": 46192.0,
+      "earned": 0.0,
+      "kids": 5,
+      "person": {
+        "ord": 0.0,
+        "oth": 46192.0
+      },
+      "calculation": {
+        "base": 0.1103,
+        "working": 0.0
+      },
+      "expected": 10.0
+    },
+    {
+      "id": "ab-2025-5-base-zero",
+      "year": 2025,
+      "net": 46193.0,
+      "earned": 0.0,
+      "kids": 5,
+      "person": {
+        "ord": 0.0,
+        "oth": 46193.0
+      },
+      "calculation": {
+        "base": 0.0,
+        "working": 0.0
+      },
+      "expected": 0.0
+    },
+    {
+      "id": "ab-2025-5-working-last-positive",
+      "year": 2025,
+      "net": 68772.0,
+      "earned": 20000.0,
+      "kids": 5,
+      "person": {
+        "ord": 20000.0,
+        "oth": 48937.0
+      },
+      "calculation": {
+        "base": 0.0,
+        "working": 0.0005
+      },
+      "expected": 10.0
+    },
+    {
+      "id": "ab-2025-5-working-zero",
+      "year": 2025,
+      "net": 68773.0,
+      "earned": 20000.0,
+      "kids": 5,
+      "person": {
+        "ord": 20000.0,
+        "oth": 48938.0
+      },
+      "calculation": {
+        "base": 0.0,
+        "working": 0.0
+      },
+      "expected": 0.0
+    },
+    {
+      "id": "ab-2025-5-combined-minimum",
+      "year": 2025,
+      "net": 46192.0,
+      "earned": 2800.0,
+      "kids": 5,
+      "person": {
+        "ord": 2800.0,
+        "oth": 43392.0
+      },
+      "calculation": {
+        "base": 0.1103,
+        "working": 5.9105
+      },
+      "expected": 10.0
+    },
+    {
+      "id": "ab-2025-5-combined-above-minimum",
+      "year": 2025,
+      "net": 46162.0,
+      "earned": 2800.0,
+      "kids": 5,
+      "person": {
+        "ord": 2800.0,
+        "oth": 43362.0
+      },
+      "calculation": {
+        "base": 6.1433,
+        "working": 6.0
+      },
+      "expected": 12.1433
+    },
+    {
+      "id": "ab-2025-3-low-earnings-reduction",
+      "year": 2025,
+      "net": 51682.68,
+      "earned": 8050.0,
+      "kids": 3,
+      "person": {
+        "ord": 8050.0,
+        "oth": 43678.18
+      },
+      "calculation": {
+        "base": 0.0,
+        "working": 335.493888
+      },
+      "expected": 335.493888
+    },
+    {
+      "id": "ab-2025-4-low-earnings-reduction",
+      "year": 2025,
+      "net": 51682.68,
+      "earned": 8050.0,
+      "kids": 4,
+      "person": {
+        "ord": 8050.0,
+        "oth": 43678.18
+      },
+      "calculation": {
+        "base": 0.0,
+        "working": 301.99464
+      },
+      "expected": 301.99464
+    },
+    {
+      "id": "ab-2026-0-no-children",
+      "year": 2026,
+      "net": 0.0,
+      "earned": 0.0,
+      "kids": 0,
+      "person": {
+        "ord": 0.0,
+        "oth": 0.0
+      },
+      "calculation": {
+        "base": 0.0,
+        "working": 0.0
+      },
+      "expected": 0.0
+    },
+    {
+      "id": "ab-2026-1-base-below",
+      "year": 2026,
+      "net": 28115.0,
+      "earned": 0.0,
+      "kids": 1,
+      "person": {
+        "ord": 0.0,
+        "oth": 28115.0
+      },
+      "calculation": {
+        "base": 1529.0,
+        "working": 0.0
+      },
+      "expected": 1529.0
+    },
+    {
+      "id": "ab-2026-1-base-at",
+      "year": 2026,
+      "net": 28116.0,
+      "earned": 0.0,
+      "kids": 1,
+      "person": {
+        "ord": 0.0,
+        "oth": 28116.0
+      },
+      "calculation": {
+        "base": 1529.0,
+        "working": 0.0
+      },
+      "expected": 1529.0
+    },
+    {
+      "id": "ab-2026-1-base-reduction",
+      "year": 2026,
+      "net": 29116.0,
+      "earned": 0.0,
+      "kids": 1,
+      "person": {
+        "ord": 0.0,
+        "oth": 29116.0
+      },
+      "calculation": {
+        "base": 1448.5,
+        "working": 0.0
+      },
+      "expected": 1448.5
+    },
+    {
+      "id": "ab-2026-1-working-below",
+      "year": 2026,
+      "net": 47114.0,
+      "earned": 20000.0,
+      "kids": 1,
+      "person": {
+        "ord": 20000.0,
+        "oth": 27279.0
+      },
+      "calculation": {
+        "base": 0.0,
+        "working": 782.0
+      },
+      "expected": 782.0
+    },
+    {
+      "id": "ab-2026-1-working-at",
+      "year": 2026,
+      "net": 47115.0,
+      "earned": 20000.0,
+      "kids": 1,
+      "person": {
+        "ord": 20000.0,
+        "oth": 27280.0
+      },
+      "calculation": {
+        "base": 0.0,
+        "working": 782.0
+      },
+      "expected": 782.0
+    },
+    {
+      "id": "ab-2026-1-working-above",
+      "year": 2026,
+      "net": 47116.0,
+      "earned": 20000.0,
+      "kids": 1,
+      "person": {
+        "ord": 20000.0,
+        "oth": 27281.0
+      },
+      "calculation": {
+        "base": 0.0,
+        "working": 781.966
+      },
+      "expected": 781.966
+    },
+    {
+      "id": "ab-2026-1-working-reduction",
+      "year": 2026,
+      "net": 48115.0,
+      "earned": 20000.0,
+      "kids": 1,
+      "person": {
+        "ord": 20000.0,
+        "oth": 28280.0
+      },
+      "calculation": {
+        "base": 0.0,
+        "working": 748.0
+      },
+      "expected": 748.0
+    },
+    {
+      "id": "ab-2026-1-working-survives",
+      "year": 2026,
+      "net": 62115.0,
+      "earned": 20000.0,
+      "kids": 1,
+      "person": {
+        "ord": 20000.0,
+        "oth": 42280.0
+      },
+      "calculation": {
+        "base": 0.0,
+        "working": 272.0
+      },
+      "expected": 272.0
+    },
+    {
+      "id": "ab-2026-1-earned-floor",
+      "year": 2026,
+      "net": 28116.0,
+      "earned": 2760.0,
+      "kids": 1,
+      "person": {
+        "ord": 2760.0,
+        "oth": 25356.0
+      },
+      "calculation": {
+        "base": 1529.0,
+        "working": 0.0
+      },
+      "expected": 1529.0
+    },
+    {
+      "id": "ab-2026-1-earned-phase-in",
+      "year": 2026,
+      "net": 28116.0,
+      "earned": 3760.0,
+      "kids": 1,
+      "person": {
+        "ord": 3760.0,
+        "oth": 24358.6
+      },
+      "calculation": {
+        "base": 1529.0,
+        "working": 150.0
+      },
+      "expected": 1679.0
+    },
+    {
+      "id": "ab-2026-1-maximum",
+      "year": 2026,
+      "net": 28116.0,
+      "earned": 20000.0,
+      "kids": 1,
+      "person": {
+        "ord": 20000.0,
+        "oth": 8281.0
+      },
+      "calculation": {
+        "base": 1529.0,
+        "working": 782.0
+      },
+      "expected": 2311.0
+    },
+    {
+      "id": "ab-2026-1-base-last-positive",
+      "year": 2026,
+      "net": 47109.0,
+      "earned": 0.0,
+      "kids": 1,
+      "person": {
+        "ord": 0.0,
+        "oth": 47109.0
+      },
+      "calculation": {
+        "base": 0.0635,
+        "working": 0.0
+      },
+      "expected": 10.0
+    },
+    {
+      "id": "ab-2026-1-base-zero",
+      "year": 2026,
+      "net": 47110.0,
+      "earned": 0.0,
+      "kids": 1,
+      "person": {
+        "ord": 0.0,
+        "oth": 47110.0
+      },
+      "calculation": {
+        "base": 0.0,
+        "working": 0.0
+      },
+      "expected": 0.0
+    },
+    {
+      "id": "ab-2026-1-working-last-positive",
+      "year": 2026,
+      "net": 70114.0,
+      "earned": 20000.0,
+      "kids": 1,
+      "person": {
+        "ord": 20000.0,
+        "oth": 50279.0
+      },
+      "calculation": {
+        "base": 0.0,
+        "working": 0.034
+      },
+      "expected": 10.0
+    },
+    {
+      "id": "ab-2026-1-working-zero",
+      "year": 2026,
+      "net": 70115.0,
+      "earned": 20000.0,
+      "kids": 1,
+      "person": {
+        "ord": 20000.0,
+        "oth": 50280.0
+      },
+      "calculation": {
+        "base": 0.0,
+        "working": 0.0
+      },
+      "expected": 0.0
+    },
+    {
+      "id": "ab-2026-1-combined-minimum",
+      "year": 2026,
+      "net": 47109.0,
+      "earned": 2800.0,
+      "kids": 1,
+      "person": {
+        "ord": 2800.0,
+        "oth": 44309.0
+      },
+      "calculation": {
+        "base": 0.0635,
+        "working": 6.0
+      },
+      "expected": 10.0
+    },
+    {
+      "id": "ab-2026-1-combined-above-minimum",
+      "year": 2026,
+      "net": 47035.0,
+      "earned": 2800.0,
+      "kids": 1,
+      "person": {
+        "ord": 2800.0,
+        "oth": 44235.0
+      },
+      "calculation": {
+        "base": 6.0205,
+        "working": 6.0
+      },
+      "expected": 12.0205
+    },
+    {
+      "id": "ab-2026-2-base-below",
+      "year": 2026,
+      "net": 28115.0,
+      "earned": 0.0,
+      "kids": 2,
+      "person": {
+        "ord": 0.0,
+        "oth": 28115.0
+      },
+      "calculation": {
+        "base": 2293.0,
+        "working": 0.0
+      },
+      "expected": 2293.0
+    },
+    {
+      "id": "ab-2026-2-base-at",
+      "year": 2026,
+      "net": 28116.0,
+      "earned": 0.0,
+      "kids": 2,
+      "person": {
+        "ord": 0.0,
+        "oth": 28116.0
+      },
+      "calculation": {
+        "base": 2293.0,
+        "working": 0.0
+      },
+      "expected": 2293.0
+    },
+    {
+      "id": "ab-2026-2-base-reduction",
+      "year": 2026,
+      "net": 29116.0,
+      "earned": 0.0,
+      "kids": 2,
+      "person": {
+        "ord": 0.0,
+        "oth": 29116.0
+      },
+      "calculation": {
+        "base": 2172.3,
+        "working": 0.0
+      },
+      "expected": 2172.3
+    },
+    {
+      "id": "ab-2026-2-working-below",
+      "year": 2026,
+      "net": 47114.0,
+      "earned": 20000.0,
+      "kids": 2,
+      "person": {
+        "ord": 20000.0,
+        "oth": 27279.0
+      },
+      "calculation": {
+        "base": 0.0,
+        "working": 1494.0
+      },
+      "expected": 1494.0
+    },
+    {
+      "id": "ab-2026-2-working-at",
+      "year": 2026,
+      "net": 47115.0,
+      "earned": 20000.0,
+      "kids": 2,
+      "person": {
+        "ord": 20000.0,
+        "oth": 27280.0
+      },
+      "calculation": {
+        "base": 0.0,
+        "working": 1494.0
+      },
+      "expected": 1494.0
+    },
+    {
+      "id": "ab-2026-2-working-above",
+      "year": 2026,
+      "net": 47116.0,
+      "earned": 20000.0,
+      "kids": 2,
+      "person": {
+        "ord": 20000.0,
+        "oth": 27281.0
+      },
+      "calculation": {
+        "base": 0.0,
+        "working": 1493.9351
+      },
+      "expected": 1493.9351
+    },
+    {
+      "id": "ab-2026-2-working-reduction",
+      "year": 2026,
+      "net": 48115.0,
+      "earned": 20000.0,
+      "kids": 2,
+      "person": {
+        "ord": 20000.0,
+        "oth": 28280.0
+      },
+      "calculation": {
+        "base": 0.0,
+        "working": 1429.1
+      },
+      "expected": 1429.1
+    },
+    {
+      "id": "ab-2026-2-working-survives",
+      "year": 2026,
+      "net": 62115.0,
+      "earned": 20000.0,
+      "kids": 2,
+      "person": {
+        "ord": 20000.0,
+        "oth": 42280.0
+      },
+      "calculation": {
+        "base": 0.0,
+        "working": 520.5
+      },
+      "expected": 520.5
+    },
+    {
+      "id": "ab-2026-2-earned-floor",
+      "year": 2026,
+      "net": 28116.0,
+      "earned": 2760.0,
+      "kids": 2,
+      "person": {
+        "ord": 2760.0,
+        "oth": 25356.0
+      },
+      "calculation": {
+        "base": 2293.0,
+        "working": 0.0
+      },
+      "expected": 2293.0
+    },
+    {
+      "id": "ab-2026-2-earned-phase-in",
+      "year": 2026,
+      "net": 28116.0,
+      "earned": 3760.0,
+      "kids": 2,
+      "person": {
+        "ord": 3760.0,
+        "oth": 24358.6
+      },
+      "calculation": {
+        "base": 2293.0,
+        "working": 150.0
+      },
+      "expected": 2443.0
+    },
+    {
+      "id": "ab-2026-2-maximum",
+      "year": 2026,
+      "net": 28116.0,
+      "earned": 20000.0,
+      "kids": 2,
+      "person": {
+        "ord": 20000.0,
+        "oth": 8281.0
+      },
+      "calculation": {
+        "base": 2293.0,
+        "working": 1494.0
+      },
+      "expected": 3787.0
+    },
+    {
+      "id": "ab-2026-2-base-last-positive",
+      "year": 2026,
+      "net": 47113.0,
+      "earned": 0.0,
+      "kids": 2,
+      "person": {
+        "ord": 0.0,
+        "oth": 47113.0
+      },
+      "calculation": {
+        "base": 0.0621,
+        "working": 0.0
+      },
+      "expected": 10.0
+    },
+    {
+      "id": "ab-2026-2-base-zero",
+      "year": 2026,
+      "net": 47114.0,
+      "earned": 0.0,
+      "kids": 2,
+      "person": {
+        "ord": 0.0,
+        "oth": 47114.0
+      },
+      "calculation": {
+        "base": 0.0,
+        "working": 0.0
+      },
+      "expected": 0.0
+    },
+    {
+      "id": "ab-2026-2-working-last-positive",
+      "year": 2026,
+      "net": 70135.0,
+      "earned": 20000.0,
+      "kids": 2,
+      "person": {
+        "ord": 20000.0,
+        "oth": 50300.0
+      },
+      "calculation": {
+        "base": 0.0,
+        "working": 0.002
+      },
+      "expected": 10.0
+    },
+    {
+      "id": "ab-2026-2-working-zero",
+      "year": 2026,
+      "net": 70136.0,
+      "earned": 20000.0,
+      "kids": 2,
+      "person": {
+        "ord": 20000.0,
+        "oth": 50301.0
+      },
+      "calculation": {
+        "base": 0.0,
+        "working": 0.0
+      },
+      "expected": 0.0
+    },
+    {
+      "id": "ab-2026-2-combined-minimum",
+      "year": 2026,
+      "net": 47113.0,
+      "earned": 2800.0,
+      "kids": 2,
+      "person": {
+        "ord": 2800.0,
+        "oth": 44313.0
+      },
+      "calculation": {
+        "base": 0.0621,
+        "working": 6.0
+      },
+      "expected": 10.0
+    },
+    {
+      "id": "ab-2026-2-combined-above-minimum",
+      "year": 2026,
+      "net": 47063.0,
+      "earned": 2800.0,
+      "kids": 2,
+      "person": {
+        "ord": 2800.0,
+        "oth": 44263.0
+      },
+      "calculation": {
+        "base": 6.0971,
+        "working": 6.0
+      },
+      "expected": 12.0971
+    },
+    {
+      "id": "ab-2026-3-base-below",
+      "year": 2026,
+      "net": 28115.0,
+      "earned": 0.0,
+      "kids": 3,
+      "person": {
+        "ord": 0.0,
+        "oth": 28115.0
+      },
+      "calculation": {
+        "base": 3057.0,
+        "working": 0.0
+      },
+      "expected": 3057.0
+    },
+    {
+      "id": "ab-2026-3-base-at",
+      "year": 2026,
+      "net": 28116.0,
+      "earned": 0.0,
+      "kids": 3,
+      "person": {
+        "ord": 0.0,
+        "oth": 28116.0
+      },
+      "calculation": {
+        "base": 3057.0,
+        "working": 0.0
+      },
+      "expected": 3057.0
+    },
+    {
+      "id": "ab-2026-3-base-reduction",
+      "year": 2026,
+      "net": 29116.0,
+      "earned": 0.0,
+      "kids": 3,
+      "person": {
+        "ord": 0.0,
+        "oth": 29116.0
+      },
+      "calculation": {
+        "base": 2896.1,
+        "working": 0.0
+      },
+      "expected": 2896.1
+    },
+    {
+      "id": "ab-2026-3-working-below",
+      "year": 2026,
+      "net": 47114.0,
+      "earned": 20000.0,
+      "kids": 3,
+      "person": {
+        "ord": 20000.0,
+        "oth": 27279.0
+      },
+      "calculation": {
+        "base": 0.2218,
+        "working": 1920.0
+      },
+      "expected": 1920.2218
+    },
+    {
+      "id": "ab-2026-3-working-at",
+      "year": 2026,
+      "net": 47115.0,
+      "earned": 20000.0,
+      "kids": 3,
+      "person": {
+        "ord": 20000.0,
+        "oth": 27280.0
+      },
+      "calculation": {
+        "base": 0.0609,
+        "working": 1920.0
+      },
+      "expected": 1920.0609
+    },
+    {
+      "id": "ab-2026-3-working-above",
+      "year": 2026,
+      "net": 47116.0,
+      "earned": 20000.0,
+      "kids": 3,
+      "person": {
+        "ord": 20000.0,
+        "oth": 27281.0
+      },
+      "calculation": {
+        "base": 0.0,
+        "working": 1919.9166
+      },
+      "expected": 1919.9166
+    },
+    {
+      "id": "ab-2026-3-working-reduction",
+      "year": 2026,
+      "net": 48115.0,
+      "earned": 20000.0,
+      "kids": 3,
+      "person": {
+        "ord": 20000.0,
+        "oth": 28280.0
+      },
+      "calculation": {
+        "base": 0.0,
+        "working": 1836.6
+      },
+      "expected": 1836.6
+    },
+    {
+      "id": "ab-2026-3-working-survives",
+      "year": 2026,
+      "net": 62115.0,
+      "earned": 20000.0,
+      "kids": 3,
+      "person": {
+        "ord": 20000.0,
+        "oth": 42280.0
+      },
+      "calculation": {
+        "base": 0.0,
+        "working": 669.0
+      },
+      "expected": 669.0
+    },
+    {
+      "id": "ab-2026-3-earned-floor",
+      "year": 2026,
+      "net": 28116.0,
+      "earned": 2760.0,
+      "kids": 3,
+      "person": {
+        "ord": 2760.0,
+        "oth": 25356.0
+      },
+      "calculation": {
+        "base": 3057.0,
+        "working": 0.0
+      },
+      "expected": 3057.0
+    },
+    {
+      "id": "ab-2026-3-earned-phase-in",
+      "year": 2026,
+      "net": 28116.0,
+      "earned": 3760.0,
+      "kids": 3,
+      "person": {
+        "ord": 3760.0,
+        "oth": 24358.6
+      },
+      "calculation": {
+        "base": 3057.0,
+        "working": 150.0
+      },
+      "expected": 3207.0
+    },
+    {
+      "id": "ab-2026-3-maximum",
+      "year": 2026,
+      "net": 28116.0,
+      "earned": 20000.0,
+      "kids": 3,
+      "person": {
+        "ord": 20000.0,
+        "oth": 8281.0
+      },
+      "calculation": {
+        "base": 3057.0,
+        "working": 1920.0
+      },
+      "expected": 4977.0
+    },
+    {
+      "id": "ab-2026-3-base-last-positive",
+      "year": 2026,
+      "net": 47115.0,
+      "earned": 0.0,
+      "kids": 3,
+      "person": {
+        "ord": 0.0,
+        "oth": 47115.0
+      },
+      "calculation": {
+        "base": 0.0609,
+        "working": 0.0
+      },
+      "expected": 10.0
+    },
+    {
+      "id": "ab-2026-3-base-zero",
+      "year": 2026,
+      "net": 47116.0,
+      "earned": 0.0,
+      "kids": 3,
+      "person": {
+        "ord": 0.0,
+        "oth": 47116.0
+      },
+      "calculation": {
+        "base": 0.0,
+        "working": 0.0
+      },
+      "expected": 0.0
+    },
+    {
+      "id": "ab-2026-3-working-last-positive",
+      "year": 2026,
+      "net": 70136.0,
+      "earned": 20000.0,
+      "kids": 3,
+      "person": {
+        "ord": 20000.0,
+        "oth": 50301.0
+      },
+      "calculation": {
+        "base": 0.0,
+        "working": 0.0486
+      },
+      "expected": 10.0
+    },
+    {
+      "id": "ab-2026-3-working-zero",
+      "year": 2026,
+      "net": 70137.0,
+      "earned": 20000.0,
+      "kids": 3,
+      "person": {
+        "ord": 20000.0,
+        "oth": 50302.0
+      },
+      "calculation": {
+        "base": 0.0,
+        "working": 0.0
+      },
+      "expected": 0.0
+    },
+    {
+      "id": "ab-2026-3-combined-minimum",
+      "year": 2026,
+      "net": 47115.0,
+      "earned": 2800.0,
+      "kids": 3,
+      "person": {
+        "ord": 2800.0,
+        "oth": 44315.0
+      },
+      "calculation": {
+        "base": 0.0609,
+        "working": 6.0
+      },
+      "expected": 10.0
+    },
+    {
+      "id": "ab-2026-3-combined-above-minimum",
+      "year": 2026,
+      "net": 47078.0,
+      "earned": 2800.0,
+      "kids": 3,
+      "person": {
+        "ord": 2800.0,
+        "oth": 44278.0
+      },
+      "calculation": {
+        "base": 6.0142,
+        "working": 6.0
+      },
+      "expected": 12.0142
+    },
+    {
+      "id": "ab-2026-4-base-below",
+      "year": 2026,
+      "net": 28115.0,
+      "earned": 0.0,
+      "kids": 4,
+      "person": {
+        "ord": 0.0,
+        "oth": 28115.0
+      },
+      "calculation": {
+        "base": 3821.0,
+        "working": 0.0
+      },
+      "expected": 3821.0
+    },
+    {
+      "id": "ab-2026-4-base-at",
+      "year": 2026,
+      "net": 28116.0,
+      "earned": 0.0,
+      "kids": 4,
+      "person": {
+        "ord": 0.0,
+        "oth": 28116.0
+      },
+      "calculation": {
+        "base": 3821.0,
+        "working": 0.0
+      },
+      "expected": 3821.0
+    },
+    {
+      "id": "ab-2026-4-base-reduction",
+      "year": 2026,
+      "net": 29116.0,
+      "earned": 0.0,
+      "kids": 4,
+      "person": {
+        "ord": 0.0,
+        "oth": 29116.0
+      },
+      "calculation": {
+        "base": 3619.9,
+        "working": 0.0
+      },
+      "expected": 3619.9
+    },
+    {
+      "id": "ab-2026-4-working-below",
+      "year": 2026,
+      "net": 47114.0,
+      "earned": 20000.0,
+      "kids": 4,
+      "person": {
+        "ord": 20000.0,
+        "oth": 27279.0
+      },
+      "calculation": {
+        "base": 0.5022,
+        "working": 2061.0
+      },
+      "expected": 2061.5022
+    },
+    {
+      "id": "ab-2026-4-working-at",
+      "year": 2026,
+      "net": 47115.0,
+      "earned": 20000.0,
+      "kids": 4,
+      "person": {
+        "ord": 20000.0,
+        "oth": 27280.0
+      },
+      "calculation": {
+        "base": 0.3011,
+        "working": 2061.0
+      },
+      "expected": 2061.3011
+    },
+    {
+      "id": "ab-2026-4-working-above",
+      "year": 2026,
+      "net": 47116.0,
+      "earned": 20000.0,
+      "kids": 4,
+      "person": {
+        "ord": 20000.0,
+        "oth": 27281.0
+      },
+      "calculation": {
+        "base": 0.1,
+        "working": 2060.9105
+      },
+      "expected": 2061.0105
+    },
+    {
+      "id": "ab-2026-4-working-reduction",
+      "year": 2026,
+      "net": 48115.0,
+      "earned": 20000.0,
+      "kids": 4,
+      "person": {
+        "ord": 20000.0,
+        "oth": 28280.0
+      },
+      "calculation": {
+        "base": 0.0,
+        "working": 1971.5
+      },
+      "expected": 1971.5
+    },
+    {
+      "id": "ab-2026-4-working-survives",
+      "year": 2026,
+      "net": 62115.0,
+      "earned": 20000.0,
+      "kids": 4,
+      "person": {
+        "ord": 20000.0,
+        "oth": 42280.0
+      },
+      "calculation": {
+        "base": 0.0,
+        "working": 718.5
+      },
+      "expected": 718.5
+    },
+    {
+      "id": "ab-2026-4-earned-floor",
+      "year": 2026,
+      "net": 28116.0,
+      "earned": 2760.0,
+      "kids": 4,
+      "person": {
+        "ord": 2760.0,
+        "oth": 25356.0
+      },
+      "calculation": {
+        "base": 3821.0,
+        "working": 0.0
+      },
+      "expected": 3821.0
+    },
+    {
+      "id": "ab-2026-4-earned-phase-in",
+      "year": 2026,
+      "net": 28116.0,
+      "earned": 3760.0,
+      "kids": 4,
+      "person": {
+        "ord": 3760.0,
+        "oth": 24358.6
+      },
+      "calculation": {
+        "base": 3821.0,
+        "working": 150.0
+      },
+      "expected": 3971.0
+    },
+    {
+      "id": "ab-2026-4-maximum",
+      "year": 2026,
+      "net": 28116.0,
+      "earned": 20000.0,
+      "kids": 4,
+      "person": {
+        "ord": 20000.0,
+        "oth": 8281.0
+      },
+      "calculation": {
+        "base": 3821.0,
+        "working": 2061.0
+      },
+      "expected": 5882.0
+    },
+    {
+      "id": "ab-2026-4-base-last-positive",
+      "year": 2026,
+      "net": 47116.0,
+      "earned": 0.0,
+      "kids": 4,
+      "person": {
+        "ord": 0.0,
+        "oth": 47116.0
+      },
+      "calculation": {
+        "base": 0.1,
+        "working": 0.0
+      },
+      "expected": 10.0
+    },
+    {
+      "id": "ab-2026-4-base-zero",
+      "year": 2026,
+      "net": 47117.0,
+      "earned": 0.0,
+      "kids": 4,
+      "person": {
+        "ord": 0.0,
+        "oth": 47117.0
+      },
+      "calculation": {
+        "base": 0.0,
+        "working": 0.0
+      },
+      "expected": 0.0
+    },
+    {
+      "id": "ab-2026-4-working-last-positive",
+      "year": 2026,
+      "net": 70142.0,
+      "earned": 20000.0,
+      "kids": 4,
+      "person": {
+        "ord": 20000.0,
+        "oth": 50307.0
+      },
+      "calculation": {
+        "base": 0.0,
+        "working": 0.0835
+      },
+      "expected": 10.0
+    },
+    {
+      "id": "ab-2026-4-working-zero",
+      "year": 2026,
+      "net": 70143.0,
+      "earned": 20000.0,
+      "kids": 4,
+      "person": {
+        "ord": 20000.0,
+        "oth": 50308.0
+      },
+      "calculation": {
+        "base": 0.0,
+        "working": 0.0
+      },
+      "expected": 0.0
+    },
+    {
+      "id": "ab-2026-4-combined-minimum",
+      "year": 2026,
+      "net": 47116.0,
+      "earned": 2800.0,
+      "kids": 4,
+      "person": {
+        "ord": 2800.0,
+        "oth": 44316.0
+      },
+      "calculation": {
+        "base": 0.1,
+        "working": 5.9105
+      },
+      "expected": 10.0
+    },
+    {
+      "id": "ab-2026-4-combined-above-minimum",
+      "year": 2026,
+      "net": 47086.0,
+      "earned": 2800.0,
+      "kids": 4,
+      "person": {
+        "ord": 2800.0,
+        "oth": 44286.0
+      },
+      "calculation": {
+        "base": 6.133,
+        "working": 6.0
+      },
+      "expected": 12.133
+    },
+    {
+      "id": "ab-2026-5-base-below",
+      "year": 2026,
+      "net": 28115.0,
+      "earned": 0.0,
+      "kids": 5,
+      "person": {
+        "ord": 0.0,
+        "oth": 28115.0
+      },
+      "calculation": {
+        "base": 3821.0,
+        "working": 0.0
+      },
+      "expected": 3821.0
+    },
+    {
+      "id": "ab-2026-5-base-at",
+      "year": 2026,
+      "net": 28116.0,
+      "earned": 0.0,
+      "kids": 5,
+      "person": {
+        "ord": 0.0,
+        "oth": 28116.0
+      },
+      "calculation": {
+        "base": 3821.0,
+        "working": 0.0
+      },
+      "expected": 3821.0
+    },
+    {
+      "id": "ab-2026-5-base-reduction",
+      "year": 2026,
+      "net": 29116.0,
+      "earned": 0.0,
+      "kids": 5,
+      "person": {
+        "ord": 0.0,
+        "oth": 29116.0
+      },
+      "calculation": {
+        "base": 3619.9,
+        "working": 0.0
+      },
+      "expected": 3619.9
+    },
+    {
+      "id": "ab-2026-5-working-below",
+      "year": 2026,
+      "net": 47114.0,
+      "earned": 20000.0,
+      "kids": 5,
+      "person": {
+        "ord": 20000.0,
+        "oth": 27279.0
+      },
+      "calculation": {
+        "base": 0.5022,
+        "working": 2061.0
+      },
+      "expected": 2061.5022
+    },
+    {
+      "id": "ab-2026-5-working-at",
+      "year": 2026,
+      "net": 47115.0,
+      "earned": 20000.0,
+      "kids": 5,
+      "person": {
+        "ord": 20000.0,
+        "oth": 27280.0
+      },
+      "calculation": {
+        "base": 0.3011,
+        "working": 2061.0
+      },
+      "expected": 2061.3011
+    },
+    {
+      "id": "ab-2026-5-working-above",
+      "year": 2026,
+      "net": 47116.0,
+      "earned": 20000.0,
+      "kids": 5,
+      "person": {
+        "ord": 20000.0,
+        "oth": 27281.0
+      },
+      "calculation": {
+        "base": 0.1,
+        "working": 2060.9105
+      },
+      "expected": 2061.0105
+    },
+    {
+      "id": "ab-2026-5-working-reduction",
+      "year": 2026,
+      "net": 48115.0,
+      "earned": 20000.0,
+      "kids": 5,
+      "person": {
+        "ord": 20000.0,
+        "oth": 28280.0
+      },
+      "calculation": {
+        "base": 0.0,
+        "working": 1971.5
+      },
+      "expected": 1971.5
+    },
+    {
+      "id": "ab-2026-5-working-survives",
+      "year": 2026,
+      "net": 62115.0,
+      "earned": 20000.0,
+      "kids": 5,
+      "person": {
+        "ord": 20000.0,
+        "oth": 42280.0
+      },
+      "calculation": {
+        "base": 0.0,
+        "working": 718.5
+      },
+      "expected": 718.5
+    },
+    {
+      "id": "ab-2026-5-earned-floor",
+      "year": 2026,
+      "net": 28116.0,
+      "earned": 2760.0,
+      "kids": 5,
+      "person": {
+        "ord": 2760.0,
+        "oth": 25356.0
+      },
+      "calculation": {
+        "base": 3821.0,
+        "working": 0.0
+      },
+      "expected": 3821.0
+    },
+    {
+      "id": "ab-2026-5-earned-phase-in",
+      "year": 2026,
+      "net": 28116.0,
+      "earned": 3760.0,
+      "kids": 5,
+      "person": {
+        "ord": 3760.0,
+        "oth": 24358.6
+      },
+      "calculation": {
+        "base": 3821.0,
+        "working": 150.0
+      },
+      "expected": 3971.0
+    },
+    {
+      "id": "ab-2026-5-maximum",
+      "year": 2026,
+      "net": 28116.0,
+      "earned": 20000.0,
+      "kids": 5,
+      "person": {
+        "ord": 20000.0,
+        "oth": 8281.0
+      },
+      "calculation": {
+        "base": 3821.0,
+        "working": 2061.0
+      },
+      "expected": 5882.0
+    },
+    {
+      "id": "ab-2026-5-base-last-positive",
+      "year": 2026,
+      "net": 47116.0,
+      "earned": 0.0,
+      "kids": 5,
+      "person": {
+        "ord": 0.0,
+        "oth": 47116.0
+      },
+      "calculation": {
+        "base": 0.1,
+        "working": 0.0
+      },
+      "expected": 10.0
+    },
+    {
+      "id": "ab-2026-5-base-zero",
+      "year": 2026,
+      "net": 47117.0,
+      "earned": 0.0,
+      "kids": 5,
+      "person": {
+        "ord": 0.0,
+        "oth": 47117.0
+      },
+      "calculation": {
+        "base": 0.0,
+        "working": 0.0
+      },
+      "expected": 0.0
+    },
+    {
+      "id": "ab-2026-5-working-last-positive",
+      "year": 2026,
+      "net": 70142.0,
+      "earned": 20000.0,
+      "kids": 5,
+      "person": {
+        "ord": 20000.0,
+        "oth": 50307.0
+      },
+      "calculation": {
+        "base": 0.0,
+        "working": 0.0835
+      },
+      "expected": 10.0
+    },
+    {
+      "id": "ab-2026-5-working-zero",
+      "year": 2026,
+      "net": 70143.0,
+      "earned": 20000.0,
+      "kids": 5,
+      "person": {
+        "ord": 20000.0,
+        "oth": 50308.0
+      },
+      "calculation": {
+        "base": 0.0,
+        "working": 0.0
+      },
+      "expected": 0.0
+    },
+    {
+      "id": "ab-2026-5-combined-minimum",
+      "year": 2026,
+      "net": 47116.0,
+      "earned": 2800.0,
+      "kids": 5,
+      "person": {
+        "ord": 2800.0,
+        "oth": 44316.0
+      },
+      "calculation": {
+        "base": 0.1,
+        "working": 5.9105
+      },
+      "expected": 10.0
+    },
+    {
+      "id": "ab-2026-5-combined-above-minimum",
+      "year": 2026,
+      "net": 47086.0,
+      "earned": 2800.0,
+      "kids": 5,
+      "person": {
+        "ord": 2800.0,
+        "oth": 44286.0
+      },
+      "calculation": {
+        "base": 6.133,
+        "working": 6.0
+      },
+      "expected": 12.133
+    },
+    {
+      "id": "ab-2026-1-working-cent-before-zero",
+      "year": 2026,
+      "net": 70114.99,
+      "earned": 20000.0,
+      "kids": 1,
+      "person": {
+        "ord": 20000.0,
+        "oth": 50279.99
+      },
+      "calculation": {
+        "base": 0.0,
+        "working": 0.00034
+      },
+      "expected": 10.0
+    },
+    {
+      "id": "ab-2026-3-low-earnings-reduction",
+      "year": 2026,
+      "net": 51682.68,
+      "earned": 8050.0,
+      "kids": 3,
+      "person": {
+        "ord": 8050.0,
+        "oth": 43678.18
+      },
+      "calculation": {
+        "base": 0.0,
+        "working": 412.555488
+      },
+      "expected": 412.555488
+    },
+    {
+      "id": "ab-2026-4-low-earnings-reduction",
+      "year": 2026,
+      "net": 51682.68,
+      "earned": 8050.0,
+      "kids": 4,
+      "person": {
+        "ord": 8050.0,
+        "oth": 43678.18
+      },
+      "calculation": {
+        "base": 0.0,
+        "working": 384.69264
+      },
+      "expected": 384.69264
+    }
+  ]
+}
