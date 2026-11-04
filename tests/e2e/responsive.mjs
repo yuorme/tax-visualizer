@@ -432,6 +432,8 @@ export const RESPONSIVE_STEPS = [
         for (const name of result.seen) seen.add(name);
       };
       await p.click("#view-provinces");
+      await openTab(p, "income");
+      await scan();
       await openTab(p, "home");
       await scan();
       await openTab(p, "driving");

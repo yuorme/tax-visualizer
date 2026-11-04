@@ -2,7 +2,15 @@
 // Every amount, rate and threshold here is read from the year's data, so the text can't drift from the numbers
 // the engine uses. This module only formats values; it never works out anyone's tax. No DOM access, so the
 // tests can render it in Node.
-import type { ChildBenefitProgram, CreditProgram, FuelRate, PhasedAmount, Province, YearData } from "../data/schema.ts";
+import type {
+  ChildBenefitProgram,
+  CreditProgram,
+  FuelRate,
+  PhasedAmount,
+  PortfolioAssumptions,
+  Province,
+  YearData,
+} from "../data/schema.ts";
 import { ratePeriods, yearAverage } from "../engine/index.ts";
 
 /** Values the page itself sets, rather than the year's data. */
@@ -222,11 +230,23 @@ export function tooltips(y: YearData): Record<string, string> {
     children: `Children under 18. They raise the spending estimate and add child benefits: the Canada Child Benefit plus your province's benefit (every province and territory with one), using ${benefitYear(y)} amounts. Benefits are netted off the tax shown. Once you have at least one child, drag the small slate handle on the same track to say how many are under 6, since they get a higher CCB.`,
     property: `Estimated annual property tax = home value × municipal rate. Each province uses the typical ${y.year} residential rate in its largest city, from ${fixed(prop.lo, 2)} in ${city(prop.atLo)} to ${fixed(prop.hi, 2)} in ${city(prop.atHi)}${propCaveats.length ? `; ${clauses(propCaveats)}` : ""}. Editing the rate changes your home province only. An optional annual bill replaces that estimate in your home province; the other provinces keep their city rates. The same home value is used everywhere, though home prices differ a lot between cities. Renters pay property tax indirectly through rent, which isn't counted here.`,
     credits: `Credits paid to lower- and modest-income households, worked out from the income and household above: the ${gbName}${gb.formerName ? ` (formerly the ${gb.formerName})` : ""}, the Canada Workers Benefit, and your province's credits, such as the Ontario Trillium Benefit, Quebec's solidarity credit and work premium, and the low-income credits in Saskatchewan, New Brunswick, Nova Scotia, PEI and Newfoundland and Labrador. Amounts are for ${benefitYear(y)} (the ${y.year} tax year for the Workers Benefit). They're netted off the tax shown, together with child benefits.`,
-    otherIncome: `Interest, rental income after expenses, pensions, RRSP and RRIF withdrawals, and any other income that's taxed in full but doesn't come from a job. It's taxed at the same rates as employment income but pays no CPP/QPP, EI or QPIP, gets no Canada employment amount (${money(F.employmentAmount)}), and isn't working income for the Canada Workers Benefit, Quebec's work premium or the working-income parts of the Alberta and New Brunswick child benefits. It does count in net income, so it reduces income-tested benefits and credits like any other income. Quebec's Health Services Fund contribution on non-employment income is not modelled. The pension income credit and pension splitting aren't applied. Interest earned in a TFSA isn't taxed: leave it out.`,
+    otherIncome: `Interest, rental income after expenses, pensions, RRSP and RRIF withdrawals, and any other income that's taxed in full but doesn't come from a job. It's taxed at the same rates as employment income but pays no CPP/QPP, EI or QPIP, gets no Canada employment amount (${money(F.employmentAmount)}), and isn't working income for the Canada Workers Benefit, Quebec's work premium or the working-income parts of the Alberta and New Brunswick child benefits. It does count in net income, so it reduces income-tested benefits and credits like any other income. Quebec's Health Services Fund contribution on non-employment income is not modelled. The pension income credit and pension splitting aren't applied. Interest earned in a TFSA isn't taxed: leave it out. In the Portfolio view, also leave out interest from that portfolio: its bond interest is worked out there and added to this amount. A change made here in Portfolio doesn't change the amount in Manual.`,
     capitalGains: `Profit from selling investments for more than you paid (their adjusted cost base), minus losses on anything sold at a loss during the year. Only ${rate(inv.capitalGainsInclusion)} of a net gain is taxable. A net loss doesn't reduce other income this year, but it can be carried back 3 years or forward indefinitely against future gains. Double-click the amount or slider to reset to 0.`,
     eligibleDividends: `Dividends from Canadian public companies, and from private corporations paying out income taxed at the general corporate rate. Most dividends from Canadian stocks and Canadian equity ETFs are eligible. They're grossed up by ${rate(inv.grossUp.eligible - 1)} and earn the enhanced dividend tax credit, so they're taxed well below salary.`,
     nonEligibleDividends: `Dividends paid from corporate income taxed at the small business rate, usually from a small private corporation you own. They're grossed up by ${rate(inv.grossUp.nonEligible - 1)} and earn a smaller dividend tax credit than eligible dividends.`,
     foreignDividends: `Dividends from non-Canadian companies, such as U.S. stocks. They get no gross-up or dividend tax credit, so they're taxed like salary. The other country usually withholds tax first (${rate(inv.foreignWithholding.usTreaty)} for the U.S. under the tax treaty), which you mostly recover as a foreign tax credit.`,
+  };
+}
+
+/** Tooltips for the Portfolio view. They quote the starting assumptions, which don't follow the selected tax year. */
+export function portfolioTooltips(a: PortfolioAssumptions): Record<string, string> {
+  return {
+    portfolioView:
+      "Manual takes the exact amounts from your tax slips. Portfolio is a quick estimate of the same amounts from what you hold, and won't match your slips. Each person's two views are kept separately, and only the one selected counts: in Portfolio, the eligible and foreign dividends entered in Manual are set aside. Non-eligible dividends are entered in Manual only, so they count as $0 in Portfolio. Net capital gains are the same amount in both views. Other income starts at the Manual amount, and changing it in Portfolio leaves the Manual amount as it was.",
+    portfolioValue:
+      "The market value of the selected person's investments in non-registered (taxable) accounts. Leave out TFSAs, RRSPs and other registered accounts: their income isn't taxed each year. Income is the value × each share of the asset mix × the average yield, to the nearest dollar.",
+    portfolioMix: `The share of the portfolio in each kind of investment. Canadian stocks are assumed to pay eligible dividends, and U.S. and international stocks foreign dividends, with tax withheld abroad at the rate chosen below. Bonds are assumed to pay interest, which is added to any amount under Other income and treated the same way, so take that interest out of Other income. Cash and any other holdings aren't modelled. It starts at ${rate(a.canadian)} Canadian stocks, ${rate(a.foreign)} U.S. and international stocks and ${rate(a.bonds)} bonds, an estimate rounded from ${a.basis}. Shares that don't total 100% are scaled to 100%.`,
+    portfolioYield: `The income the portfolio pays in a year as a percentage of its value. One yield applies to every asset class, though bonds and stocks often pay different rates. It starts at ${rate(a.yield)}, an estimate rounded from the distribution yield of ${a.basis}. Yield doesn't include growth in value: no gains are assumed to be realized, so enter any you sold for under Net capital gains.`,
   };
 }
 
