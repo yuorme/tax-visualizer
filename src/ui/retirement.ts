@@ -223,6 +223,7 @@ export function retirementStatus(
 
 type Comparison = ReturnType<typeof historyComparison>;
 export interface RetirementHistory extends Comparison {
+  noSelfEmploymentData: number[];
   noData: number[]; // years left out: no retirement payroll rules
   young: number[]; // years left out: a person is too young for the retirement payroll rules
 }
@@ -238,9 +239,11 @@ export function retirementHistory(
   inputFor: (data: YearData) => Household,
   home: string,
   mode: HistoryMode,
+  selfEmployment = false,
 ): RetirementHistory {
   const sorted = [...years].sort((a, b) => a.year - b.year);
   const covered = (data: YearData) =>
+    (!selfEmployment || !!data.federal.payroll.selfEmployment) &&
     entries.every(entry => ["inactive", "applied"].includes(retirementCoverage(entry, data)));
   const left = (reason: RetirementCoverage) =>
     sorted.filter(data => entries.some(entry => retirementCoverage(entry, data) === reason)).map(data => data.year);
@@ -251,6 +254,9 @@ export function retirementHistory(
     rows: parts.flatMap(part => part.rows),
     noData: left("no-data"),
     young: left("young"),
+    noSelfEmploymentData: sorted
+      .filter(data => selfEmployment && !data.federal.payroll.selfEmployment)
+      .map(data => data.year),
   };
 }
 

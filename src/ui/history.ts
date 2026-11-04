@@ -10,7 +10,9 @@ import {
   retirementActive,
   retirementHistory,
   retirementYears,
+  yearList,
 } from "./retirement.ts";
+import { selfEmploymentYears } from "./self-employment.ts";
 
 const installedYears = Object.values(years).sort((a, b) => a.year - b.year);
 const coveragePrograms = [
@@ -43,8 +45,10 @@ export function renderHistory(
   retirement: (Retirement | null)[],
   home: string,
   mode: HistoryMode,
+  selfEmployment = false,
+  businessNotice = "",
 ) {
-  const comparison = retirementHistory(installedYears, cpi, retirement, inputFor, home, mode);
+  const comparison = retirementHistory(installedYears, cpi, retirement, inputFor, home, mode, selfEmployment);
   const name = installedYears.at(-1)?.provinces.find(p => p.code === home)?.name ?? home;
   const byBirthYear = retirement.some(retirementActive);
   const ageing = byBirthYear
@@ -59,12 +63,16 @@ export function renderHistory(
   const omitted = comparison.noData.length + comparison.young.length > 0;
   basis.textContent =
     (mode === "real" ? `${comparison.baseYear} dollars` : "Each year's dollars") +
-    (omitted ? " · retirement-age payroll years only" : "");
+    (omitted ? " · retirement-age payroll years only" : "") +
+    (comparison.noSelfEmploymentData.length ? " · self-employment years only" : "");
   info.dataset.tip =
     mode === "real"
       ? `Treat the amounts entered above as ${comparison.baseYear} dollars, the latest completed annual CPI year. Income, deductions, spending, rent and home value are converted together using Canada's annual all-items CPI. Each year's tax rules are applied, then income and tax are shown back in ${comparison.baseYear} dollars. Household members, ${byBirthYear ? "" : "ages, "}rates and driving stay fixed.${ageing} This compares the same household, not a household ageing over time.${comparison.omittedYears.length ? ` Annual CPI is not yet available for ${comparison.omittedYears.join(", ")}; those tax years appear in nominal mode only.` : ""}`
       : `Apply each year's rules to the same dollar amounts entered above. Household members and driving stay fixed.${ageing} Dollar amounts are not adjusted for inflation. The effective rate is net tax after benefits divided by household income.`;
   info.dataset.tip += historyRetirementNote(comparison, retirementYears(installedYears));
+  if (comparison.noSelfEmploymentData.length)
+    info.dataset.tip += ` Self-employment is modelled only for ${yearList(selfEmploymentYears(installedYears))}, so ${yearList(comparison.noSelfEmploymentData)} are left out.`;
+  if (businessNotice) info.dataset.tip += ` ${businessNotice}`;
   info.dataset.tip += coverageNote(home, comparison.rows[0]?.year ?? installedYears[0].year);
   const rows = comparison.rows
     .map(row => {
@@ -73,7 +81,9 @@ export function renderHistory(
       return `<tr data-year="${row.year}"><th scope="row">${row.year}</th><td>${money(result.income)}</td><td>${tax}</td><td>${rate(result.rate)}</td></tr>`;
     })
     .join("");
-  body.innerHTML = rows || `<tr><td colspan="4">No year in this view covers these retirement-age inputs</td></tr>`;
+  body.innerHTML =
+    rows ||
+    `<tr><td colspan="4">No year in this view covers these ${selfEmployment ? "self-employment and retirement-age" : "retirement-age"} inputs</td></tr>`;
   const source = document.getElementById("history-source") as HTMLAnchorElement;
   source.href = cpi.sources[0].url;
   source.textContent = cpi.series;

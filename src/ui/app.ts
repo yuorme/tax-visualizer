@@ -60,6 +60,14 @@ import {
 } from "./retirement.ts";
 import { retirementEditor } from "./retirement-editor.ts";
 import { readScenario, scenarioHash } from "./scenario-url.ts";
+import {
+  childcareEarnings,
+  parseSelfEmployment,
+  selfEmploymentGate,
+  selfEmploymentYears,
+  validSelfEmployment,
+  withSelfEmployment,
+} from "./self-employment.ts";
 
 const availableYears = Object.keys(years)
   .map(Number)
@@ -222,8 +230,9 @@ const me = () => people[active];
 const portfolioOf = (i: number) => portfolios[i] ?? null;
 const retirementOf = (i: number) => retirements[i] ?? null;
 /** Each person's income as the engine sees it, for reading. In the portfolio view it differs from what's in people. */
-const enginePeople = (data: typeof Y = Y) =>
+const retirementPeople = (data: typeof Y = Y) =>
   people.map((x, i) => withRetirement(enginePerson(x, portfolioOf(i)), retirementOf(i), data));
+const enginePeople = (data: typeof Y = Y) => retirementPeople(data).map(p => withSelfEmployment(p, data));
 const counted = () => enginePerson(me(), portfolioOf(active));
 const isNum = (v: unknown): v is number => typeof v === "number";
 /** A person read back from saved state, keeping only valid amounts. */
@@ -231,6 +240,7 @@ function cleanPerson(o: unknown): Person {
   const x = blank(0);
   if (o && typeof o === "object") {
     const saved = o as Partial<Record<keyof Person, unknown>>;
+    if (validSelfEmployment(saved.selfEmployment)) x.selfEmployment = saved.selfEmployment;
     for (const k of KEYS) {
       const v = saved[k];
       if (isNum(v) && (k === "cg" || v >= 0)) x[k] = v;
@@ -602,7 +612,7 @@ function render() {
   benefitCounts = undefined;
   const base = compute(Y, prov(home).d, inputs(false));
   care.configureView(
-    base.list.map(p => p.x.ord + (p.x.oth ?? 0)),
+    base.list.map(p => childcareEarnings(p.x)),
     kids,
     YEAR,
     home === "QC",
@@ -619,7 +629,26 @@ function render() {
       under6 = counts.under6;
     }
   }
-  if (historyOpen) renderHistory(data => ({ ...inputs(), people: enginePeople(data) }), retirements, home, historyMode);
+  if (historyOpen)
+    renderHistory(
+      data => {
+        const rowPeople = enginePeople(data);
+        return {
+          ...inputs(),
+          people: rowPeople,
+          childcare: care.claimInput(base.list.map((_, i) => (rowPeople[i] ? childcareEarnings(rowPeople[i]) : 0))),
+        };
+      },
+      retirements,
+      home,
+      historyMode,
+      people.some(p => p.selfEmployment !== undefined),
+      selfEmploymentGate(
+        retirementPeople(years[availableYears[0]]),
+        years[availableYears[0]],
+        selfEmploymentYears(Object.values(years)),
+      ),
+    );
   const res: Row[] = P.map(p => ({ p, r: calc(p) }));
   const usd = metric === "usd";
   const val = (r: Result) => (usd ? r.total : r.avg); // net of benefits: what the label shows and sorting uses
@@ -811,7 +840,7 @@ function render() {
   $("rent-body").hidden = tenure !== "rent";
   // Tab summaries: what each panel holds, highlighted whenever the summary is an amount rather than none, not set,
   // $0 or off. Income covers everyone's other and investment income, though its panel shows the selected person's.
-  const otherAmt = enginePeople().reduce((a, y) => a + (y.oth ?? 0), 0);
+  const otherAmt = enginePeople().reduce((a, y) => a + (y.oth ?? 0) + (y.selfEmployment ?? 0), 0);
   const anyInc = H.r.hasInv || otherAmt > 0;
   const incNet = otherAmt + H.r.invAmt;
   const anyAge = retirements.some(retirementActive);
@@ -837,6 +866,9 @@ function render() {
   paintCg();
   renderPortfolio();
   renderRetirement(H);
+  const businessGate = $("self-employment-gate");
+  businessGate.textContent = selfEmploymentGate(retirementPeople(), Y, selfEmploymentYears(Object.values(years)));
+  businessGate.hidden = historyOpen || !businessGate.textContent;
   renderPeople();
   $("sort-rate").setAttribute("aria-pressed", String(sort === "rate"));
   $("sort-geo").setAttribute("aria-pressed", String(sort === "geo"));
@@ -1093,12 +1125,13 @@ function renderDetail(res: Row[], order: Row[]) {
 
 function ledgerView({ p, r }: Row) {
   const two = people.length === 2,
-    x = counted(),
+    x = r.me.x,
     m = r.me,
     n = m.breakdown.netIncome,
     who = two ? NAMES[active] : "";
   const tiParts: string[] = [];
-  if (x.ord || !(x.oth || hasInv(x))) tiParts.push(`${money(n.ord)} employment income`);
+  if (x.ord || !(x.selfEmployment || x.oth || hasInv(x))) tiParts.push(`${money(n.ord)} employment income`);
+  if (x.selfEmployment) tiParts.push(`${money(n.selfEmployment ?? 0)} self-employment profit`);
   if (x.oth) tiParts.push(`${money(n.oth ?? 0)} other income`);
   if (x.cg > 0) tiParts.push(`${money(n.cg)} taxable ${share(F.investment.capitalGainsInclusion)} of net gains`);
   if (x.ed) tiParts.push(`${money(n.ed)} grossed-up eligible dividends`);
@@ -1109,6 +1142,11 @@ function ledgerView({ p, r }: Row) {
     (n.ded ? ` − ${money(n.ded)} deductions` : "") +
     (n.enh > 0.5 ? ` − ${money(n.enh)} enhanced ${p.qc ? "QPP" : "CPP"}` : "");
   const extra: string[] = [];
+  const business = m.breakdown.selfEmployment;
+  const businessInfo = business
+    ? `Business contributions include both CPP/QPP shares, sharing annual ceilings with wages. Of the business base contribution, ${money(business.baseCredit)} earns the employee-equivalent credit and ${money(business.employerBaseDeduction)} is the employer-base deduction. Both enhanced shares (${money(business.enhanced)}) are deducted. Business QPIP is ${money(business.qpip)}: ${money(business.qpipDeduction)} deductible and ${money(business.qpipCredit)} eligible for the federal credit. No EI or employment amount applies to profit. QPP employee stop elections do not stop business contributions.`
+    : "";
+  if (businessInfo) extra.push(businessInfo);
   if (m.workerDed > 0.5)
     extra.push(`Quebec taxable income is ${money(m.tiP)} after the ${money(m.workerDed)} deduction for workers.`);
   if (p.qc && r.childcare.claims[active] > 0)
@@ -1185,17 +1223,20 @@ function ledgerView({ p, r }: Row) {
   ]);
   const payRows = (
     [
-      [`${p.qc ? "QPP" : "CPP"} base (${pct2((p.qc ? F.payroll.qpp : F.payroll.cpp).base)})`, m.pay.base],
+      [
+        `${p.qc ? "QPP" : "CPP"} base ${business ? "(employment + both business shares)" : `(${pct2((p.qc ? F.payroll.qpp : F.payroll.cpp).base)})`}`,
+        m.pay.base,
+      ],
       [`${p.qc ? "QPP" : "CPP"} enhanced`, m.pay.enh],
       [`EI (${pct2(p.qc ? F.payroll.ei.quebecRate : F.payroll.ei.rate)})`, m.pay.ei],
-      [`QPIP (${pct2(F.payroll.qpip.rate)})`, m.pay.qpip],
+      [business ? "QPIP (employment + business)" : `QPIP (${pct2(F.payroll.qpip.rate)})`, m.pay.qpip],
       [`Ontario Health Premium`, m.ohp],
       [`Quebec Health Services Fund`, m.breakdown.healthServicesFund.contribution],
       [`${p.n} payroll tax (${rateFmt(p.d.payroll?.employeeTax ?? 0)})`, m.pay.terr],
     ] satisfies Adj[]
   ).filter(([, a]) => a > 0.5);
   const taxableInfo =
-    hasInv(x) || x.oth || n.ded || n.enh > 0.5
+    hasInv(x) || x.selfEmployment || x.oth || n.ded || n.enh > 0.5
       ? comparisonInfo(
           "taxable income",
           `${two ? `${who}: t` : "T"}axable income is ${money(m.ti)}: ${tiText}.${hasInv(x) ? ` "Tax on investment income" is the extra tax the ${two ? "household's " : ""}investment income adds on top of the rest of its income.` : ""} ${extra.join(" ")}`,
@@ -1206,13 +1247,14 @@ function ledgerView({ p, r }: Row) {
       ${ledger(`Federal${suffix}`, "var(--fed)", { lines: m.f.lines, gross: m.f.tax, rows: fRows, net: m.fed }, m.ti, taxableInfo)}
       ${ledger(p.n + suffix, "var(--prov)", { lines: m.pr.lines, gross: m.pr.tax, rows: pRows, net: m.prov }, m.tiP)}
       <div class="ledger">
-        <h4><i class="sw" style="background:var(--pay)"></i>Payroll${suffix}${m.breakdown.retirementPayroll ? comparisonInfo("retirement-age payroll", retirementResult(m.breakdown.retirementPayroll, p.qc ? "QPP" : "CPP", money)) : ""}</h4>
+        <h4><i class="sw" style="background:var(--pay)"></i>Payroll${suffix}${businessInfo ? comparisonInfo("self-employment contributions", businessInfo) : ""}${m.breakdown.retirementPayroll ? comparisonInfo("retirement-age payroll", retirementResult(m.breakdown.retirementPayroll, p.qc ? "QPP" : "CPP", money)) : ""}</h4>
         <table class="margs"><thead><tr><th>Contribution</th><th class="r">Amount</th></tr></thead><tbody>
           ${payRows.map(([l, a]) => `<tr><td>${l}</td><td class="r">${money(a)}</td></tr>`).join("") || `<tr><td>None at this income</td><td class="r">$0</td></tr>`}
         </tbody><tfoot><tr><td>Total</td><td class="r">${money(m.payroll)}</td></tr></tfoot></table>
         <h4 style="margin-top:16px">Marginal rate on ${two ? `${active ? "Partner's" : "your"} ` : "the "}next dollar of…${comparisonInfo("marginal rates", "Includes payroll contributions and any child benefit clawback. A negative dividend rate means the dividend tax credit is worth more than the tax on that dividend.")}</h4>
         <table class="margs"><thead><tr><th>Income type</th><th class="r">${hh() ? "Household rate" : "Combined rate"}</th></tr></thead><tbody>
           ${mrow("Employment income", r.margBy.ord)}
+          ${r.breakdown.margSelfEmployment === undefined ? "" : r.breakdown.margSelfEmployment === null ? '<tr><td>Self-employment income</td><td class="r">Not modelled</td></tr>' : mrow("Self-employment income", r.breakdown.margSelfEmployment)}
           ${mrow("Interest, rental &amp; other income", r.breakdown.margOther)}
           ${mrow("Net capital gains", r.margBy.cg)}
           ${mrow("Eligible dividends", r.margBy.ed)}
@@ -1245,6 +1287,23 @@ inp.addEventListener("keydown", e => {
 });
 sl.addEventListener("input", () => setIncome(+sl.value, "slider"));
 
+const businessInput = $<HTMLInputElement>("self-employment");
+businessInput.addEventListener("input", () => {
+  const value = parseSelfEmployment(businessInput.value);
+  businessInput.setCustomValidity(value === null ? "Enter nonnegative net profit, with up to two decimal places." : "");
+  businessInput.setAttribute("aria-invalid", String(value === null));
+  if (value === null) return;
+  if (value === undefined) delete me().selfEmployment;
+  else me().selfEmployment = value;
+  render();
+});
+businessInput.addEventListener("blur", () => {
+  if (businessInput.validity.valid) businessInput.value = me().selfEmployment?.toLocaleString("en-CA") ?? "";
+});
+businessInput.addEventListener("keydown", e => {
+  if (e.key === "Enter") businessInput.blur();
+});
+
 // Annual deductions claimed for the selected adult. The engine supplies their combined total.
 const deductionInputs = ["ded", "rrsp", "fhsa"] as const;
 for (const key of deductionInputs) {
@@ -1274,6 +1333,9 @@ const retirement = retirementEditor(
   },
 );
 function syncAll() {
+  businessInput.value = me().selfEmployment?.toLocaleString("en-CA") ?? "";
+  businessInput.setCustomValidity("");
+  businessInput.setAttribute("aria-invalid", "false");
   for (const key of deductionInputs) $<HTMLInputElement>(key).value = (me()[key] || 0).toLocaleString("en-CA");
   inp.value = me().ord.toLocaleString("en-CA");
   sl.value = String(Math.min(me().ord, +sl.max));

@@ -163,9 +163,17 @@ test("no birth year throws in any province of any year, including each boundary 
 test("with no retirement inputs, history is exactly the single engine call it replaced", () => {
   const legacy = historyComparison(years, cpi, household([person]), ["ON"], "real");
   for (const entries of [[], [null], [entry({ birthMonth: null })]]) {
-    const { noData, young, ...rows } = retirementHistory(years, cpi, entries, () => household([person]), "ON", "real");
+    const { noData, young, noSelfEmploymentData, ...rows } = retirementHistory(
+      years,
+      cpi,
+      entries,
+      () => household([person]),
+      "ON",
+      "real",
+    );
     assert.deepEqual(rows, legacy);
     assert.deepEqual([noData, young], [[], []]);
+    assert.deepEqual(noSelfEmploymentData, []);
   }
 });
 

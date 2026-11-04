@@ -984,6 +984,18 @@ table.cmp .worse {
   outline: none;
   font-variant-numeric: tabular-nums;
 }
+.business-income {
+  max-width: 320px;
+  margin: 14px 0 20px;
+}
+.business-income .money input {
+  width: 13ch;
+  min-width: 0;
+  flex: 1;
+}
+.business-income .per {
+  flex-shrink: 0;
+}
 .check.sm input {
   width: 13px;
   height: 13px;

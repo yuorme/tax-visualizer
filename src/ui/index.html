@@ -32,7 +32,7 @@
     </div>
     <div class="control-row">
       <div class="field">
-        <div class="lbl-row"><label class="lbl" for="income" id="income-label">Employment income</label><button type="button" class="info" data-tip="Salary, wages, tips, bonuses and other pay from a job (and self-employment income, which is treated the same way here). It pays CPP/QPP and EI (and QPIP in Quebec) and gets the Canada employment amount. Enter it before deductions, and put RRSP contributions and other deductions in the Deductions box. Interest, rental income, pensions and RRSP/RRIF withdrawals go under Other income, in the Income tab." aria-label="About employment income">i</button></div>
+        <div class="lbl-row"><label class="lbl" for="income" id="income-label">Employment income</label><button type="button" class="info" data-tip="Salary, wages, tips, bonuses and other pay from a job. It pays CPP/QPP and EI (and QPIP in Quebec) and gets the Canada employment amount. Enter it before deductions, and put RRSP contributions and other deductions in the Deductions box. Net business profit goes in Self-employment income in the Income tab. Interest, rental income, pensions and RRSP/RRIF withdrawals go under Other income there." aria-label="About employment income">i</button></div>
         <div class="money"><span>$</span><input id="income" inputmode="numeric" autocomplete="off" value="75,000"></div>
       </div>
       <div class="field ded">
@@ -113,8 +113,11 @@
       <button type="button" id="tab-driving" data-tab="driving" aria-expanded="false" aria-controls="panel-driving"><b class="tab-name" id="tab-driving-name">Driving</b><small id="tab-driving-sum">none</small></button>
     </fieldset>
     <section class="tab-panel" id="panel-income" aria-labelledby="tab-income-name" hidden>
-      <!-- More income types go here, above investments, per person: self-employment (#14), and pension and RRIF
-           income as a field of its own, for the pension income credit (#17). -->
+      <!-- More income types go here, above investments, per person; pension and RRIF income follow in #17. -->
+      <div class="field business-income">
+        <div class="lbl-row"><label class="lbl" for="self-employment">Self-employment income</label><button type="button" class="info" data-note="selfEmployment" aria-label="About self-employment income">i</button></div>
+        <div class="money md"><span>$</span><input id="self-employment" inputmode="decimal" autocomplete="off" placeholder="0"><span class="per">a year</span></div>
+      </div>
       <div class="panel-head"><b class="panel-title" id="other-title">Other income</b><button type="button" class="info" data-note="otherIncome" aria-label="About other income">i</button><span class="panel-sum" id="other-sum">none added</span></div>
       <div class="invest-grid one">
         <div class="field">
@@ -305,6 +308,7 @@
   </section>
 
   <p class="ret-gate" id="retirement-gate" role="status" hidden></p>
+  <p class="ret-gate" id="self-employment-gate" role="status" hidden></p>
 
   <fieldset class="seg comparison-view" aria-label="Comparison view">
     <button type="button" id="view-provinces" aria-pressed="true">Across provinces</button>
