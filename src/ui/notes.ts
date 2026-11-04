@@ -360,6 +360,10 @@ export function footerNotes(y: YearData, page: PageDefaults): string {
     kidPhrases.length
       ? `${list(kidPhrases)} ${P.some(p => p.claimants?.childAmount) ? "follow each program's rules for who can claim them and whether unused amounts can transfer to a spouse" : "are claimed by the parent who claims the children"}.`
       : "",
+    ...P.filter(p => p.code === "PE" && p.childAmount && p.claimants?.childAmount).map(
+      p =>
+        `${p.name}'s young-child amount is a non-refundable base, worth up to ${money(need(p.childAmount, "child amount").perChild * p.brackets[0][1])} in tax savings per child. The lower-net-income spouse claims it, including at zero income; on equal incomes the model chooses the claimant giving the lower household tax. Unused amounts do not transfer. The model assumes a full year of eligibility for each entered child under the age limit, with no competing claims or children's special allowances; it does not prorate for births, birthdays or residence changes.${p.childAmount?.estimated ? ` The ${year} amount and rules provisionally continue the prior year's return.` : ""} Earlier years include the amount but retain the legacy claimant calculation, so history has a claimant-coverage step at 2025.`,
+    ),
     "A single parent claims the eligible dependant amount; in Quebec a single adult gets the amount for a person living alone.",
     ...P.flatMap(p => {
       const benefit = p.familyTaxBenefit;

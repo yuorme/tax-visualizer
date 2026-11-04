@@ -1,0 +1,1878 @@
+{
+  "description": "Independent PE428/PE(S2) calculations; docs/verification/162-pei-young-children.md",
+  "defaults": {
+    "active": 0,
+    "spouse": true,
+    "adults": 2,
+    "kids": 1,
+    "under6": 1,
+    "useBpa": true,
+    "whRate": 0,
+    "useCredits": false,
+    "homeValue": 0,
+    "rent": 0,
+    "monthlySpending": 0
+  },
+  "cases": [
+    {
+      "id": "2025-size-check",
+      "year": 2025,
+      "household": {
+        "people": [
+          {
+            "oth": 30000
+          },
+          {
+            "oth": 30000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 2802.5,
+        "list.0.ti": 30000,
+        "list.0.kidAmt": 1200,
+        "list.0.pKid": 114,
+        "list.0.lowRed": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 1344.25,
+        "list.0.breakdown.childTransfer.base": 0,
+        "list.1.ti": 30000,
+        "list.1.kidAmt": 0,
+        "list.1.pKid": 0,
+        "list.1.lowRed": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 1458.25,
+        "list.1.breakdown.childTransfer.base": 0
+      }
+    },
+    {
+      "id": "2025-lower-income",
+      "year": 2025,
+      "household": {
+        "people": [
+          {
+            "oth": 40000
+          },
+          {
+            "oth": 30000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 4017.3784,
+        "list.0.ti": 40000,
+        "list.0.kidAmt": 0,
+        "list.0.pKid": 0,
+        "list.0.lowRed": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 2673.1284,
+        "list.0.breakdown.childTransfer.base": 0,
+        "list.1.ti": 30000,
+        "list.1.kidAmt": 1200,
+        "list.1.pKid": 114,
+        "list.1.lowRed": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 1344.25,
+        "list.1.breakdown.childTransfer.base": 0
+      }
+    },
+    {
+      "id": "2025-zero-income-no-transfer",
+      "year": 2025,
+      "household": {
+        "people": [
+          {
+            "oth": 60000
+          },
+          {}
+        ]
+      },
+      "expected": {
+        "prov": 4185.0434,
+        "list.0.ti": 60000,
+        "list.0.kidAmt": 0,
+        "list.0.pKid": 0,
+        "list.0.lowRed": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 4185.0434,
+        "list.0.breakdown.childTransfer.base": 0,
+        "list.1.ti": 0,
+        "list.1.kidAmt": 1200,
+        "list.1.pKid": 0,
+        "list.1.lowRed": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0,
+        "list.1.breakdown.childTransfer.base": 0
+      }
+    },
+    {
+      "id": "2025-implicit-zero-spouse",
+      "year": 2025,
+      "household": {
+        "people": [
+          {
+            "oth": 60000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 4185.0434,
+        "list.0.ti": 60000,
+        "list.0.kidAmt": 0,
+        "list.0.pKid": 0,
+        "list.0.lowRed": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 4185.0434,
+        "list.0.breakdown.childTransfer.base": 0,
+        "list.1.ti": 0,
+        "list.1.kidAmt": 1200,
+        "list.1.pKid": 0,
+        "list.1.lowRed": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0,
+        "list.1.breakdown.childTransfer.base": 0
+      }
+    },
+    {
+      "id": "2025-capacity--1",
+      "year": 2025,
+      "household": {
+        "people": [
+          {
+            "oth": 60000
+          },
+          {
+            "oth": 14649
+          }
+        ]
+      },
+      "expected": {
+        "prov": 5367.1284,
+        "list.0.ti": 60000,
+        "list.0.kidAmt": 0,
+        "list.0.pKid": 0,
+        "list.0.lowRed": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 5367.1284,
+        "list.0.breakdown.childTransfer.base": 0,
+        "list.1.ti": 14649,
+        "list.1.kidAmt": 1200,
+        "list.1.pKid": 0,
+        "list.1.lowRed": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0,
+        "list.1.breakdown.childTransfer.base": 0
+      }
+    },
+    {
+      "id": "2025-capacity-0",
+      "year": 2025,
+      "household": {
+        "people": [
+          {
+            "oth": 60000
+          },
+          {
+            "oth": 14650
+          }
+        ]
+      },
+      "expected": {
+        "prov": 5367.1284,
+        "list.0.ti": 60000,
+        "list.0.kidAmt": 0,
+        "list.0.pKid": 0,
+        "list.0.lowRed": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 5367.1284,
+        "list.0.breakdown.childTransfer.base": 0,
+        "list.1.ti": 14650,
+        "list.1.kidAmt": 1200,
+        "list.1.pKid": 0,
+        "list.1.lowRed": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0,
+        "list.1.breakdown.childTransfer.base": 0
+      }
+    },
+    {
+      "id": "2025-capacity-1",
+      "year": 2025,
+      "household": {
+        "people": [
+          {
+            "oth": 60000
+          },
+          {
+            "oth": 14651
+          }
+        ]
+      },
+      "expected": {
+        "prov": 5367.1284,
+        "list.0.ti": 60000,
+        "list.0.kidAmt": 0,
+        "list.0.pKid": 0,
+        "list.0.lowRed": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 5367.1284,
+        "list.0.breakdown.childTransfer.base": 0,
+        "list.1.ti": 14651,
+        "list.1.kidAmt": 1200,
+        "list.1.pKid": 0.09500000000002728,
+        "list.1.lowRed": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0,
+        "list.1.breakdown.childTransfer.base": 0
+      }
+    },
+    {
+      "id": "2025-capacity-600",
+      "year": 2025,
+      "household": {
+        "people": [
+          {
+            "oth": 60000
+          },
+          {
+            "oth": 15250
+          }
+        ]
+      },
+      "expected": {
+        "prov": 5367.1284,
+        "list.0.ti": 60000,
+        "list.0.kidAmt": 0,
+        "list.0.pKid": 0,
+        "list.0.lowRed": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 5367.1284,
+        "list.0.breakdown.childTransfer.base": 0,
+        "list.1.ti": 15250,
+        "list.1.kidAmt": 1200,
+        "list.1.pKid": 57,
+        "list.1.lowRed": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0,
+        "list.1.breakdown.childTransfer.base": 0
+      }
+    },
+    {
+      "id": "2025-capacity-1199",
+      "year": 2025,
+      "household": {
+        "people": [
+          {
+            "oth": 60000
+          },
+          {
+            "oth": 15849
+          }
+        ]
+      },
+      "expected": {
+        "prov": 5367.1284,
+        "list.0.ti": 60000,
+        "list.0.kidAmt": 0,
+        "list.0.pKid": 0,
+        "list.0.lowRed": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 5367.1284,
+        "list.0.breakdown.childTransfer.base": 0,
+        "list.1.ti": 15849,
+        "list.1.kidAmt": 1200,
+        "list.1.pKid": 113.90499999999997,
+        "list.1.lowRed": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0,
+        "list.1.breakdown.childTransfer.base": 0
+      }
+    },
+    {
+      "id": "2025-capacity-1200",
+      "year": 2025,
+      "household": {
+        "people": [
+          {
+            "oth": 60000
+          },
+          {
+            "oth": 15850
+          }
+        ]
+      },
+      "expected": {
+        "prov": 5367.1284,
+        "list.0.ti": 60000,
+        "list.0.kidAmt": 0,
+        "list.0.pKid": 0,
+        "list.0.lowRed": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 5367.1284,
+        "list.0.breakdown.childTransfer.base": 0,
+        "list.1.ti": 15850,
+        "list.1.kidAmt": 1200,
+        "list.1.pKid": 114,
+        "list.1.lowRed": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0,
+        "list.1.breakdown.childTransfer.base": 0
+      }
+    },
+    {
+      "id": "2025-capacity-1201",
+      "year": 2025,
+      "household": {
+        "people": [
+          {
+            "oth": 60000
+          },
+          {
+            "oth": 15851
+          }
+        ]
+      },
+      "expected": {
+        "prov": 5367.2234,
+        "list.0.ti": 60000,
+        "list.0.kidAmt": 0,
+        "list.0.pKid": 0,
+        "list.0.lowRed": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 5367.1284,
+        "list.0.breakdown.childTransfer.base": 0,
+        "list.1.ti": 15851,
+        "list.1.kidAmt": 1200,
+        "list.1.pKid": 114,
+        "list.1.lowRed": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0.09500000000002728,
+        "list.1.breakdown.childTransfer.base": 0
+      }
+    },
+    {
+      "id": "2025-net-not-gross",
+      "year": 2025,
+      "household": {
+        "people": [
+          {
+            "oth": 40000,
+            "rrsp": 12000
+          },
+          {
+            "oth": 30000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 2612.5,
+        "list.0.ti": 28000,
+        "list.0.kidAmt": 1200,
+        "list.0.pKid": 114,
+        "list.0.lowRed": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 1154.25,
+        "list.0.breakdown.childTransfer.base": 0,
+        "list.1.ti": 30000,
+        "list.1.kidAmt": 0,
+        "list.1.pKid": 0,
+        "list.1.lowRed": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 1458.25,
+        "list.1.breakdown.childTransfer.base": 0
+      }
+    },
+    {
+      "id": "2025-enhanced-cpp-net",
+      "year": 2025,
+      "household": {
+        "people": [
+          {
+            "ord": 30000
+          },
+          {
+            "oth": 29900
+          }
+        ]
+      },
+      "expected": {
+        "prov": 2596.46875,
+        "list.0.ti": 29735,
+        "list.0.kidAmt": 1200,
+        "list.0.pKid": 114,
+        "list.0.lowRed": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 1147.7187499999998,
+        "list.0.breakdown.childTransfer.base": 0,
+        "list.1.ti": 29900,
+        "list.1.kidAmt": 0,
+        "list.1.pKid": 0,
+        "list.1.lowRed": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 1448.75,
+        "list.1.breakdown.childTransfer.base": 0
+      }
+    },
+    {
+      "id": "2025-dividend-gross-up",
+      "year": 2025,
+      "household": {
+        "people": [
+          {
+            "ed": 22000
+          },
+          {
+            "oth": 30000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 1344.25,
+        "list.0.ti": 30359.999999999996,
+        "list.0.kidAmt": 0,
+        "list.0.pKid": 0,
+        "list.0.lowRed": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 0,
+        "list.0.breakdown.childTransfer.base": 0,
+        "list.1.ti": 30000,
+        "list.1.kidAmt": 1200,
+        "list.1.pKid": 114,
+        "list.1.lowRed": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 1344.25,
+        "list.1.breakdown.childTransfer.base": 0
+      }
+    },
+    {
+      "id": "2025-tie-dividends",
+      "year": 2025,
+      "household": {
+        "people": [
+          {
+            "ed": 20000
+          },
+          {
+            "oth": 27600
+          }
+        ]
+      },
+      "expected": {
+        "prov": 1116.25,
+        "list.0.ti": 27599.999999999996,
+        "list.0.kidAmt": 0,
+        "list.0.pKid": 0,
+        "list.0.lowRed": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 0,
+        "list.0.breakdown.childTransfer.base": 0,
+        "list.1.ti": 27600,
+        "list.1.kidAmt": 1200,
+        "list.1.pKid": 114,
+        "list.1.lowRed": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 1116.25,
+        "list.1.breakdown.childTransfer.base": 0
+      }
+    },
+    {
+      "id": "2025-tie-foreign-tax",
+      "year": 2025,
+      "household": {
+        "whRate": 0.5,
+        "people": [
+          {
+            "fd": 30000
+          },
+          {
+            "oth": 30000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 1344.25,
+        "list.0.ti": 30000,
+        "list.0.kidAmt": 0,
+        "list.0.pKid": 0,
+        "list.0.lowRed": 0,
+        "list.0.pFtc": 1458.25,
+        "list.0.prov": 0,
+        "list.0.breakdown.childTransfer.base": 0,
+        "list.1.ti": 30000,
+        "list.1.kidAmt": 1200,
+        "list.1.pKid": 114,
+        "list.1.lowRed": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 1344.25,
+        "list.1.breakdown.childTransfer.base": 0
+      }
+    },
+    {
+      "id": "2025-single-parent",
+      "year": 2025,
+      "household": {
+        "spouse": false,
+        "adults": 1,
+        "people": [
+          {
+            "oth": 50000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 2724.0433999999996,
+        "list.0.ti": 50000,
+        "list.0.kidAmt": 1200,
+        "list.0.pKid": 114,
+        "list.0.lowRed": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 2724.0433999999996,
+        "list.0.breakdown.childTransfer.base": 0
+      }
+    },
+    {
+      "id": "2025-single-parent-low-reduction",
+      "year": 2025,
+      "household": {
+        "spouse": false,
+        "adults": 1,
+        "people": [
+          {
+            "oth": 30000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 0,
+        "list.0.ti": 30000,
+        "list.0.kidAmt": 1200,
+        "list.0.pKid": 114,
+        "list.0.lowRed": 162.16499999999996,
+        "list.0.pFtc": 0,
+        "list.0.prov": 0,
+        "list.0.breakdown.childTransfer.base": 0
+      }
+    },
+    {
+      "id": "2025-family-reduction",
+      "year": 2025,
+      "household": {
+        "people": [
+          {
+            "oth": 30000
+          },
+          {
+            "oth": 10000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 975.4850000000001,
+        "list.0.ti": 30000,
+        "list.0.kidAmt": 0,
+        "list.0.pKid": 0,
+        "list.0.lowRed": 132.5,
+        "list.0.pFtc": 0,
+        "list.0.prov": 975.4850000000001,
+        "list.0.breakdown.childTransfer.base": 0,
+        "list.1.ti": 10000,
+        "list.1.kidAmt": 1200,
+        "list.1.pKid": 0,
+        "list.1.lowRed": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0,
+        "list.1.breakdown.childTransfer.base": 0
+      }
+    },
+    {
+      "id": "2025-foreign-tax-order",
+      "year": 2025,
+      "household": {
+        "spouse": false,
+        "adults": 1,
+        "useBpa": false,
+        "whRate": 0.5,
+        "people": [
+          {
+            "oth": 10000,
+            "fd": 10000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 543,
+        "list.0.ti": 20000,
+        "list.0.kidAmt": 1200,
+        "list.0.pKid": 114,
+        "list.0.lowRed": 700,
+        "list.0.pFtc": 543,
+        "list.0.prov": 543,
+        "list.0.breakdown.childTransfer.base": 0
+      }
+    },
+    {
+      "id": "2025-multiple-young",
+      "year": 2025,
+      "household": {
+        "kids": 4,
+        "under6": 3,
+        "people": [
+          {
+            "oth": 40000
+          },
+          {
+            "oth": 30000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 3789.3784,
+        "list.0.ti": 40000,
+        "list.0.kidAmt": 0,
+        "list.0.pKid": 0,
+        "list.0.lowRed": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 2673.1284,
+        "list.0.breakdown.childTransfer.base": 0,
+        "list.1.ti": 30000,
+        "list.1.kidAmt": 3600,
+        "list.1.pKid": 342,
+        "list.1.lowRed": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 1116.25,
+        "list.1.breakdown.childTransfer.base": 0
+      }
+    },
+    {
+      "id": "2025-no-young",
+      "year": 2025,
+      "household": {
+        "kids": 1,
+        "under6": 0,
+        "people": [
+          {
+            "oth": 40000
+          },
+          {
+            "oth": 30000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 4131.3784,
+        "list.0.ti": 40000,
+        "list.0.kidAmt": 0,
+        "list.0.pKid": 0,
+        "list.0.lowRed": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 2673.1284,
+        "list.0.breakdown.childTransfer.base": 0,
+        "list.1.ti": 30000,
+        "list.1.kidAmt": 0,
+        "list.1.pKid": 0,
+        "list.1.lowRed": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 1458.25,
+        "list.1.breakdown.childTransfer.base": 0
+      }
+    },
+    {
+      "id": "2025-no-children",
+      "year": 2025,
+      "household": {
+        "kids": 0,
+        "under6": 0,
+        "people": [
+          {
+            "oth": 40000
+          },
+          {
+            "oth": 30000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 4131.3784,
+        "list.0.ti": 40000,
+        "list.0.kidAmt": 0,
+        "list.0.pKid": 0,
+        "list.0.lowRed": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 2673.1284,
+        "list.0.breakdown.childTransfer.base": 0,
+        "list.1.ti": 30000,
+        "list.1.kidAmt": 0,
+        "list.1.pKid": 0,
+        "list.1.lowRed": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 1458.25,
+        "list.1.breakdown.childTransfer.base": 0
+      }
+    },
+    {
+      "id": "2025-bpa-off",
+      "year": 2025,
+      "household": {
+        "useBpa": false,
+        "people": [
+          {
+            "oth": 40000
+          },
+          {
+            "oth": 30000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 6800.8784,
+        "list.0.ti": 40000,
+        "list.0.kidAmt": 0,
+        "list.0.pKid": 0,
+        "list.0.lowRed": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 4064.8784,
+        "list.0.breakdown.childTransfer.base": 0,
+        "list.1.ti": 30000,
+        "list.1.kidAmt": 1200,
+        "list.1.pKid": 114,
+        "list.1.lowRed": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 2736,
+        "list.1.breakdown.childTransfer.base": 0
+      }
+    },
+    {
+      "id": "2025-age-0",
+      "year": 2025,
+      "household": {
+        "kids": 0,
+        "under6": 0,
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 0,
+              "expenses": 0
+            }
+          ]
+        },
+        "people": [
+          {
+            "oth": 40000
+          },
+          {
+            "oth": 30000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 4017.3784,
+        "list.0.ti": 40000,
+        "list.0.kidAmt": 0,
+        "list.0.pKid": 0,
+        "list.0.lowRed": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 2673.1284,
+        "list.0.breakdown.childTransfer.base": 0,
+        "list.1.ti": 30000,
+        "list.1.kidAmt": 1200,
+        "list.1.pKid": 114,
+        "list.1.lowRed": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 1344.25,
+        "list.1.breakdown.childTransfer.base": 0
+      }
+    },
+    {
+      "id": "2025-age-5",
+      "year": 2025,
+      "household": {
+        "kids": 0,
+        "under6": 0,
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 5,
+              "expenses": 0
+            }
+          ]
+        },
+        "people": [
+          {
+            "oth": 40000
+          },
+          {
+            "oth": 30000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 4017.3784,
+        "list.0.ti": 40000,
+        "list.0.kidAmt": 0,
+        "list.0.pKid": 0,
+        "list.0.lowRed": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 2673.1284,
+        "list.0.breakdown.childTransfer.base": 0,
+        "list.1.ti": 30000,
+        "list.1.kidAmt": 1200,
+        "list.1.pKid": 114,
+        "list.1.lowRed": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 1344.25,
+        "list.1.breakdown.childTransfer.base": 0
+      }
+    },
+    {
+      "id": "2025-age-6",
+      "year": 2025,
+      "household": {
+        "kids": 0,
+        "under6": 0,
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 6,
+              "expenses": 0
+            }
+          ]
+        },
+        "people": [
+          {
+            "oth": 40000
+          },
+          {
+            "oth": 30000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 4131.3784,
+        "list.0.ti": 40000,
+        "list.0.kidAmt": 0,
+        "list.0.pKid": 0,
+        "list.0.lowRed": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 2673.1284,
+        "list.0.breakdown.childTransfer.base": 0,
+        "list.1.ti": 30000,
+        "list.1.kidAmt": 0,
+        "list.1.pKid": 0,
+        "list.1.lowRed": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 1458.25,
+        "list.1.breakdown.childTransfer.base": 0
+      }
+    },
+    {
+      "id": "2025-childcare-net-claimant",
+      "year": 2025,
+      "household": {
+        "childcare": {
+          "mode": "manual",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 4000
+            }
+          ],
+          "manualClaims": [4000, 0]
+        },
+        "people": [
+          {
+            "oth": 32000
+          },
+          {
+            "oth": 30000
+          }
+        ]
+      },
+      "childcareClaims": [4000, 0],
+      "expected": {
+        "prov": 2612.5,
+        "list.0.ti": 28000,
+        "list.0.kidAmt": 1200,
+        "list.0.pKid": 114,
+        "list.0.lowRed": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 1154.25,
+        "list.0.breakdown.childTransfer.base": 0,
+        "list.1.ti": 30000,
+        "list.1.kidAmt": 0,
+        "list.1.pKid": 0,
+        "list.1.lowRed": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 1458.25,
+        "list.1.breakdown.childTransfer.base": 0
+      }
+    },
+    {
+      "id": "2026-size-check",
+      "year": 2026,
+      "household": {
+        "people": [
+          {
+            "oth": 30000
+          },
+          {
+            "oth": 30000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 2736,
+        "list.0.ti": 30000,
+        "list.0.kidAmt": 1200,
+        "list.0.pKid": 114,
+        "list.0.lowRed": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 1311,
+        "list.0.breakdown.childTransfer.base": 0,
+        "list.1.ti": 30000,
+        "list.1.kidAmt": 0,
+        "list.1.pKid": 0,
+        "list.1.lowRed": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 1425,
+        "list.1.breakdown.childTransfer.base": 0
+      }
+    },
+    {
+      "id": "2026-lower-income",
+      "year": 2026,
+      "household": {
+        "people": [
+          {
+            "oth": 40000
+          },
+          {
+            "oth": 30000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 3927.0584,
+        "list.0.ti": 40000,
+        "list.0.kidAmt": 0,
+        "list.0.pKid": 0,
+        "list.0.lowRed": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 2616.0584,
+        "list.0.breakdown.childTransfer.base": 0,
+        "list.1.ti": 30000,
+        "list.1.kidAmt": 1200,
+        "list.1.pKid": 114,
+        "list.1.lowRed": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 1311,
+        "list.1.breakdown.childTransfer.base": 0
+      }
+    },
+    {
+      "id": "2026-zero-income-no-transfer",
+      "year": 2026,
+      "household": {
+        "people": [
+          {
+            "oth": 60000
+          },
+          {}
+        ]
+      },
+      "expected": {
+        "prov": 4099.7584,
+        "list.0.ti": 60000,
+        "list.0.kidAmt": 0,
+        "list.0.pKid": 0,
+        "list.0.lowRed": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 4099.7584,
+        "list.0.breakdown.childTransfer.base": 0,
+        "list.1.ti": 0,
+        "list.1.kidAmt": 1200,
+        "list.1.pKid": 0,
+        "list.1.lowRed": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0,
+        "list.1.breakdown.childTransfer.base": 0
+      }
+    },
+    {
+      "id": "2026-implicit-zero-spouse",
+      "year": 2026,
+      "household": {
+        "people": [
+          {
+            "oth": 60000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 4099.7584,
+        "list.0.ti": 60000,
+        "list.0.kidAmt": 0,
+        "list.0.pKid": 0,
+        "list.0.lowRed": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 4099.7584,
+        "list.0.breakdown.childTransfer.base": 0,
+        "list.1.ti": 0,
+        "list.1.kidAmt": 1200,
+        "list.1.pKid": 0,
+        "list.1.lowRed": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0,
+        "list.1.breakdown.childTransfer.base": 0
+      }
+    },
+    {
+      "id": "2026-capacity--1",
+      "year": 2026,
+      "household": {
+        "people": [
+          {
+            "oth": 60000
+          },
+          {
+            "oth": 14999
+          }
+        ]
+      },
+      "expected": {
+        "prov": 5310.0584,
+        "list.0.ti": 60000,
+        "list.0.kidAmt": 0,
+        "list.0.pKid": 0,
+        "list.0.lowRed": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 5310.0584,
+        "list.0.breakdown.childTransfer.base": 0,
+        "list.1.ti": 14999,
+        "list.1.kidAmt": 1200,
+        "list.1.pKid": 0,
+        "list.1.lowRed": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0,
+        "list.1.breakdown.childTransfer.base": 0
+      }
+    },
+    {
+      "id": "2026-capacity-0",
+      "year": 2026,
+      "household": {
+        "people": [
+          {
+            "oth": 60000
+          },
+          {
+            "oth": 15000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 5310.0584,
+        "list.0.ti": 60000,
+        "list.0.kidAmt": 0,
+        "list.0.pKid": 0,
+        "list.0.lowRed": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 5310.0584,
+        "list.0.breakdown.childTransfer.base": 0,
+        "list.1.ti": 15000,
+        "list.1.kidAmt": 1200,
+        "list.1.pKid": 0,
+        "list.1.lowRed": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0,
+        "list.1.breakdown.childTransfer.base": 0
+      }
+    },
+    {
+      "id": "2026-capacity-1",
+      "year": 2026,
+      "household": {
+        "people": [
+          {
+            "oth": 60000
+          },
+          {
+            "oth": 15001
+          }
+        ]
+      },
+      "expected": {
+        "prov": 5310.0584,
+        "list.0.ti": 60000,
+        "list.0.kidAmt": 0,
+        "list.0.pKid": 0,
+        "list.0.lowRed": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 5310.0584,
+        "list.0.breakdown.childTransfer.base": 0,
+        "list.1.ti": 15001,
+        "list.1.kidAmt": 1200,
+        "list.1.pKid": 0.09500000000002728,
+        "list.1.lowRed": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0,
+        "list.1.breakdown.childTransfer.base": 0
+      }
+    },
+    {
+      "id": "2026-capacity-600",
+      "year": 2026,
+      "household": {
+        "people": [
+          {
+            "oth": 60000
+          },
+          {
+            "oth": 15600
+          }
+        ]
+      },
+      "expected": {
+        "prov": 5310.0584,
+        "list.0.ti": 60000,
+        "list.0.kidAmt": 0,
+        "list.0.pKid": 0,
+        "list.0.lowRed": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 5310.0584,
+        "list.0.breakdown.childTransfer.base": 0,
+        "list.1.ti": 15600,
+        "list.1.kidAmt": 1200,
+        "list.1.pKid": 57,
+        "list.1.lowRed": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0,
+        "list.1.breakdown.childTransfer.base": 0
+      }
+    },
+    {
+      "id": "2026-capacity-1199",
+      "year": 2026,
+      "household": {
+        "people": [
+          {
+            "oth": 60000
+          },
+          {
+            "oth": 16199
+          }
+        ]
+      },
+      "expected": {
+        "prov": 5310.0584,
+        "list.0.ti": 60000,
+        "list.0.kidAmt": 0,
+        "list.0.pKid": 0,
+        "list.0.lowRed": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 5310.0584,
+        "list.0.breakdown.childTransfer.base": 0,
+        "list.1.ti": 16199,
+        "list.1.kidAmt": 1200,
+        "list.1.pKid": 113.90499999999997,
+        "list.1.lowRed": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0,
+        "list.1.breakdown.childTransfer.base": 0
+      }
+    },
+    {
+      "id": "2026-capacity-1200",
+      "year": 2026,
+      "household": {
+        "people": [
+          {
+            "oth": 60000
+          },
+          {
+            "oth": 16200
+          }
+        ]
+      },
+      "expected": {
+        "prov": 5310.0584,
+        "list.0.ti": 60000,
+        "list.0.kidAmt": 0,
+        "list.0.pKid": 0,
+        "list.0.lowRed": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 5310.0584,
+        "list.0.breakdown.childTransfer.base": 0,
+        "list.1.ti": 16200,
+        "list.1.kidAmt": 1200,
+        "list.1.pKid": 114,
+        "list.1.lowRed": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0,
+        "list.1.breakdown.childTransfer.base": 0
+      }
+    },
+    {
+      "id": "2026-capacity-1201",
+      "year": 2026,
+      "household": {
+        "people": [
+          {
+            "oth": 60000
+          },
+          {
+            "oth": 16201
+          }
+        ]
+      },
+      "expected": {
+        "prov": 5310.1534,
+        "list.0.ti": 60000,
+        "list.0.kidAmt": 0,
+        "list.0.pKid": 0,
+        "list.0.lowRed": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 5310.0584,
+        "list.0.breakdown.childTransfer.base": 0,
+        "list.1.ti": 16201,
+        "list.1.kidAmt": 1200,
+        "list.1.pKid": 114,
+        "list.1.lowRed": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0.09500000000002728,
+        "list.1.breakdown.childTransfer.base": 0
+      }
+    },
+    {
+      "id": "2026-net-not-gross",
+      "year": 2026,
+      "household": {
+        "people": [
+          {
+            "oth": 40000,
+            "rrsp": 12000
+          },
+          {
+            "oth": 30000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 2546,
+        "list.0.ti": 28000,
+        "list.0.kidAmt": 1200,
+        "list.0.pKid": 114,
+        "list.0.lowRed": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 1121,
+        "list.0.breakdown.childTransfer.base": 0,
+        "list.1.ti": 30000,
+        "list.1.kidAmt": 0,
+        "list.1.pKid": 0,
+        "list.1.lowRed": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 1425,
+        "list.1.breakdown.childTransfer.base": 0
+      }
+    },
+    {
+      "id": "2026-enhanced-cpp-net",
+      "year": 2026,
+      "household": {
+        "people": [
+          {
+            "ord": 30000
+          },
+          {
+            "oth": 29900
+          }
+        ]
+      },
+      "expected": {
+        "prov": 2530.25375,
+        "list.0.ti": 29735,
+        "list.0.kidAmt": 1200,
+        "list.0.pKid": 114,
+        "list.0.lowRed": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 1114.7537499999999,
+        "list.0.breakdown.childTransfer.base": 0,
+        "list.1.ti": 29900,
+        "list.1.kidAmt": 0,
+        "list.1.pKid": 0,
+        "list.1.lowRed": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 1415.5,
+        "list.1.breakdown.childTransfer.base": 0
+      }
+    },
+    {
+      "id": "2026-dividend-gross-up",
+      "year": 2026,
+      "household": {
+        "people": [
+          {
+            "ed": 22000
+          },
+          {
+            "oth": 30000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 1311,
+        "list.0.ti": 30359.999999999996,
+        "list.0.kidAmt": 0,
+        "list.0.pKid": 0,
+        "list.0.lowRed": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 0,
+        "list.0.breakdown.childTransfer.base": 0,
+        "list.1.ti": 30000,
+        "list.1.kidAmt": 1200,
+        "list.1.pKid": 114,
+        "list.1.lowRed": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 1311,
+        "list.1.breakdown.childTransfer.base": 0
+      }
+    },
+    {
+      "id": "2026-tie-dividends",
+      "year": 2026,
+      "household": {
+        "people": [
+          {
+            "ed": 20000
+          },
+          {
+            "oth": 27600
+          }
+        ]
+      },
+      "expected": {
+        "prov": 1083,
+        "list.0.ti": 27599.999999999996,
+        "list.0.kidAmt": 0,
+        "list.0.pKid": 0,
+        "list.0.lowRed": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 0,
+        "list.0.breakdown.childTransfer.base": 0,
+        "list.1.ti": 27600,
+        "list.1.kidAmt": 1200,
+        "list.1.pKid": 114,
+        "list.1.lowRed": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 1083,
+        "list.1.breakdown.childTransfer.base": 0
+      }
+    },
+    {
+      "id": "2026-tie-foreign-tax",
+      "year": 2026,
+      "household": {
+        "whRate": 0.5,
+        "people": [
+          {
+            "fd": 30000
+          },
+          {
+            "oth": 30000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 1311,
+        "list.0.ti": 30000,
+        "list.0.kidAmt": 0,
+        "list.0.pKid": 0,
+        "list.0.lowRed": 0,
+        "list.0.pFtc": 1425,
+        "list.0.prov": 0,
+        "list.0.breakdown.childTransfer.base": 0,
+        "list.1.ti": 30000,
+        "list.1.kidAmt": 1200,
+        "list.1.pKid": 114,
+        "list.1.lowRed": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 1311,
+        "list.1.breakdown.childTransfer.base": 0
+      }
+    },
+    {
+      "id": "2026-single-parent",
+      "year": 2026,
+      "household": {
+        "spouse": false,
+        "adults": 1,
+        "people": [
+          {
+            "oth": 50000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 2638.7583999999997,
+        "list.0.ti": 50000,
+        "list.0.kidAmt": 1200,
+        "list.0.pKid": 114,
+        "list.0.lowRed": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 2638.7583999999997,
+        "list.0.breakdown.childTransfer.base": 0
+      }
+    },
+    {
+      "id": "2026-single-parent-low-reduction",
+      "year": 2026,
+      "household": {
+        "spouse": false,
+        "adults": 1,
+        "people": [
+          {
+            "oth": 30000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 0,
+        "list.0.ti": 30000,
+        "list.0.kidAmt": 1200,
+        "list.0.pKid": 114,
+        "list.0.lowRed": 100.70000000000005,
+        "list.0.pFtc": 0,
+        "list.0.prov": 0,
+        "list.0.breakdown.childTransfer.base": 0
+      }
+    },
+    {
+      "id": "2026-family-reduction",
+      "year": 2026,
+      "household": {
+        "people": [
+          {
+            "oth": 30000
+          },
+          {
+            "oth": 10000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 893.6700000000001,
+        "list.0.ti": 30000,
+        "list.0.kidAmt": 0,
+        "list.0.pKid": 0,
+        "list.0.lowRed": 150,
+        "list.0.pFtc": 0,
+        "list.0.prov": 893.6700000000001,
+        "list.0.breakdown.childTransfer.base": 0,
+        "list.1.ti": 10000,
+        "list.1.kidAmt": 1200,
+        "list.1.pKid": 0,
+        "list.1.lowRed": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 0,
+        "list.1.breakdown.childTransfer.base": 0
+      }
+    },
+    {
+      "id": "2026-foreign-tax-order",
+      "year": 2026,
+      "household": {
+        "spouse": false,
+        "adults": 1,
+        "useBpa": false,
+        "whRate": 0.5,
+        "people": [
+          {
+            "oth": 10000,
+            "fd": 10000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 543,
+        "list.0.ti": 20000,
+        "list.0.kidAmt": 1200,
+        "list.0.pKid": 114,
+        "list.0.lowRed": 700,
+        "list.0.pFtc": 543,
+        "list.0.prov": 543,
+        "list.0.breakdown.childTransfer.base": 0
+      }
+    },
+    {
+      "id": "2026-multiple-young",
+      "year": 2026,
+      "household": {
+        "kids": 4,
+        "under6": 3,
+        "people": [
+          {
+            "oth": 40000
+          },
+          {
+            "oth": 30000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 3699.0584,
+        "list.0.ti": 40000,
+        "list.0.kidAmt": 0,
+        "list.0.pKid": 0,
+        "list.0.lowRed": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 2616.0584,
+        "list.0.breakdown.childTransfer.base": 0,
+        "list.1.ti": 30000,
+        "list.1.kidAmt": 3600,
+        "list.1.pKid": 342,
+        "list.1.lowRed": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 1083,
+        "list.1.breakdown.childTransfer.base": 0
+      }
+    },
+    {
+      "id": "2026-no-young",
+      "year": 2026,
+      "household": {
+        "kids": 1,
+        "under6": 0,
+        "people": [
+          {
+            "oth": 40000
+          },
+          {
+            "oth": 30000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 4041.0584,
+        "list.0.ti": 40000,
+        "list.0.kidAmt": 0,
+        "list.0.pKid": 0,
+        "list.0.lowRed": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 2616.0584,
+        "list.0.breakdown.childTransfer.base": 0,
+        "list.1.ti": 30000,
+        "list.1.kidAmt": 0,
+        "list.1.pKid": 0,
+        "list.1.lowRed": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 1425,
+        "list.1.breakdown.childTransfer.base": 0
+      }
+    },
+    {
+      "id": "2026-no-children",
+      "year": 2026,
+      "household": {
+        "kids": 0,
+        "under6": 0,
+        "people": [
+          {
+            "oth": 40000
+          },
+          {
+            "oth": 30000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 4041.0584,
+        "list.0.ti": 40000,
+        "list.0.kidAmt": 0,
+        "list.0.pKid": 0,
+        "list.0.lowRed": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 2616.0584,
+        "list.0.breakdown.childTransfer.base": 0,
+        "list.1.ti": 30000,
+        "list.1.kidAmt": 0,
+        "list.1.pKid": 0,
+        "list.1.lowRed": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 1425,
+        "list.1.breakdown.childTransfer.base": 0
+      }
+    },
+    {
+      "id": "2026-bpa-off",
+      "year": 2026,
+      "household": {
+        "useBpa": false,
+        "people": [
+          {
+            "oth": 40000
+          },
+          {
+            "oth": 30000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 6777.0584,
+        "list.0.ti": 40000,
+        "list.0.kidAmt": 0,
+        "list.0.pKid": 0,
+        "list.0.lowRed": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 4041.0584,
+        "list.0.breakdown.childTransfer.base": 0,
+        "list.1.ti": 30000,
+        "list.1.kidAmt": 1200,
+        "list.1.pKid": 114,
+        "list.1.lowRed": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 2736,
+        "list.1.breakdown.childTransfer.base": 0
+      }
+    },
+    {
+      "id": "2026-age-0",
+      "year": 2026,
+      "household": {
+        "kids": 0,
+        "under6": 0,
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 0,
+              "expenses": 0
+            }
+          ]
+        },
+        "people": [
+          {
+            "oth": 40000
+          },
+          {
+            "oth": 30000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 3927.0584,
+        "list.0.ti": 40000,
+        "list.0.kidAmt": 0,
+        "list.0.pKid": 0,
+        "list.0.lowRed": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 2616.0584,
+        "list.0.breakdown.childTransfer.base": 0,
+        "list.1.ti": 30000,
+        "list.1.kidAmt": 1200,
+        "list.1.pKid": 114,
+        "list.1.lowRed": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 1311,
+        "list.1.breakdown.childTransfer.base": 0
+      }
+    },
+    {
+      "id": "2026-age-5",
+      "year": 2026,
+      "household": {
+        "kids": 0,
+        "under6": 0,
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 5,
+              "expenses": 0
+            }
+          ]
+        },
+        "people": [
+          {
+            "oth": 40000
+          },
+          {
+            "oth": 30000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 3927.0584,
+        "list.0.ti": 40000,
+        "list.0.kidAmt": 0,
+        "list.0.pKid": 0,
+        "list.0.lowRed": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 2616.0584,
+        "list.0.breakdown.childTransfer.base": 0,
+        "list.1.ti": 30000,
+        "list.1.kidAmt": 1200,
+        "list.1.pKid": 114,
+        "list.1.lowRed": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 1311,
+        "list.1.breakdown.childTransfer.base": 0
+      }
+    },
+    {
+      "id": "2026-age-6",
+      "year": 2026,
+      "household": {
+        "kids": 0,
+        "under6": 0,
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 6,
+              "expenses": 0
+            }
+          ]
+        },
+        "people": [
+          {
+            "oth": 40000
+          },
+          {
+            "oth": 30000
+          }
+        ]
+      },
+      "expected": {
+        "prov": 4041.0584,
+        "list.0.ti": 40000,
+        "list.0.kidAmt": 0,
+        "list.0.pKid": 0,
+        "list.0.lowRed": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 2616.0584,
+        "list.0.breakdown.childTransfer.base": 0,
+        "list.1.ti": 30000,
+        "list.1.kidAmt": 0,
+        "list.1.pKid": 0,
+        "list.1.lowRed": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 1425,
+        "list.1.breakdown.childTransfer.base": 0
+      }
+    },
+    {
+      "id": "2026-childcare-net-claimant",
+      "year": 2026,
+      "household": {
+        "childcare": {
+          "mode": "manual",
+          "children": [
+            {
+              "age": 3,
+              "expenses": 4000
+            }
+          ],
+          "manualClaims": [4000, 0]
+        },
+        "people": [
+          {
+            "oth": 32000
+          },
+          {
+            "oth": 30000
+          }
+        ]
+      },
+      "childcareClaims": [4000, 0],
+      "expected": {
+        "prov": 2546,
+        "list.0.ti": 28000,
+        "list.0.kidAmt": 1200,
+        "list.0.pKid": 114,
+        "list.0.lowRed": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 1121,
+        "list.0.breakdown.childTransfer.base": 0,
+        "list.1.ti": 30000,
+        "list.1.kidAmt": 0,
+        "list.1.pKid": 0,
+        "list.1.lowRed": 0,
+        "list.1.pFtc": 0,
+        "list.1.prov": 1425,
+        "list.1.breakdown.childTransfer.base": 0
+      }
+    },
+    {
+      "id": "2025-tie-family-reduction",
+      "year": 2025,
+      "household": {
+        "people": [
+          {
+            "ed": 15000
+          },
+          {
+            "oth": 20700
+          }
+        ]
+      },
+      "expected": {
+        "prov": 398.25,
+        "list.0.ti": 20700,
+        "list.0.kidAmt": 0,
+        "list.0.pKid": 0,
+        "list.0.lowRed": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 0,
+        "list.0.breakdown.childTransfer.base": 0,
+        "list.0.breakdown.lowIncomeReduction.calculated": 62.5,
+        "list.0.breakdown.lowIncomeReduction.unused": 62.5,
+        "list.1.ti": 20700,
+        "list.1.kidAmt": 1200,
+        "list.1.pKid": 114,
+        "list.1.lowRed": 62.5,
+        "list.1.pFtc": 0,
+        "list.1.prov": 398.25,
+        "list.1.breakdown.childTransfer.base": 0,
+        "list.1.breakdown.lowIncomeReduction.calculated": 62.5,
+        "list.1.breakdown.lowIncomeReduction.unused": 0
+      }
+    },
+    {
+      "id": "2026-tie-family-reduction",
+      "year": 2026,
+      "household": {
+        "people": [
+          {
+            "ed": 15000
+          },
+          {
+            "oth": 20700
+          }
+        ]
+      },
+      "expected": {
+        "prov": 347.5,
+        "list.0.ti": 20700,
+        "list.0.kidAmt": 0,
+        "list.0.pKid": 0,
+        "list.0.lowRed": 0,
+        "list.0.pFtc": 0,
+        "list.0.prov": 0,
+        "list.0.breakdown.childTransfer.base": 0,
+        "list.0.breakdown.lowIncomeReduction.calculated": 80,
+        "list.0.breakdown.lowIncomeReduction.unused": 80,
+        "list.1.ti": 20700,
+        "list.1.kidAmt": 1200,
+        "list.1.pKid": 114,
+        "list.1.lowRed": 80,
+        "list.1.pFtc": 0,
+        "list.1.prov": 347.5,
+        "list.1.breakdown.childTransfer.base": 0,
+        "list.1.breakdown.lowIncomeReduction.calculated": 80,
+        "list.1.breakdown.lowIncomeReduction.unused": 0
+      }
+    }
+  ]
+}

@@ -1,0 +1,7634 @@
+[
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 5,
+    "path": "people.0.pKid",
+    "before": 0,
+    "after": 79.6337
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 5,
+    "path": "people.0.kidAmt",
+    "before": 0,
+    "after": 1200
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 5,
+    "path": "people.0.lowRed",
+    "before": 79.6337,
+    "after": 0
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 6,
+    "path": "total",
+    "before": -39061.3353,
+    "after": -39403.3353
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 6,
+    "path": "prov",
+    "before": 740.1291,
+    "after": 398.1291
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 6,
+    "path": "netTotal",
+    "before": -42993.9371,
+    "after": -43335.9371
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 6,
+    "path": "incomeTax",
+    "before": 1909.3729,
+    "after": 1567.3729
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 6,
+    "path": "gross",
+    "before": 9049.2247,
+    "after": 8707.2247
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 6,
+    "path": "avg",
+    "before": -0.868,
+    "after": -0.8756
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 6,
+    "path": "grossAvg",
+    "before": 0.2011,
+    "after": 0.1935
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 6,
+    "path": "margBy.fd",
+    "before": 0.8162,
+    "after": 0.8239
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 6,
+    "path": "people.0.pKid",
+    "before": 0,
+    "after": 342
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 6,
+    "path": "people.0.kidAmt",
+    "before": 0,
+    "after": 3600
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 6,
+    "path": "people.0.prov",
+    "before": 740.1291,
+    "after": 398.1291
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 6,
+    "path": "people.0.total",
+    "before": 5116.6229,
+    "after": 4774.6229
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 7,
+    "path": "people.1.kidAmt",
+    "before": 0,
+    "after": 2400
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 8,
+    "path": "total",
+    "before": 44939.7246,
+    "after": 44825.7246
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 8,
+    "path": "prov",
+    "before": 14306.179,
+    "after": 14192.179
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 8,
+    "path": "netTotal",
+    "before": 36507.1228,
+    "after": 36393.1228
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 8,
+    "path": "incomeTax",
+    "before": 31442.7808,
+    "after": 31328.7808
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 8,
+    "path": "gross",
+    "before": 50394.5426,
+    "after": 50280.5426
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 8,
+    "path": "avg",
+    "before": 0.2996,
+    "after": 0.2988
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 8,
+    "path": "grossAvg",
+    "before": 0.336,
+    "after": 0.3352
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 8,
+    "path": "people.0.pKid",
+    "before": 0,
+    "after": 114
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 8,
+    "path": "people.0.kidAmt",
+    "before": 0,
+    "after": 1200
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 8,
+    "path": "people.0.prov",
+    "before": 7153.0895,
+    "after": 7039.0895
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 8,
+    "path": "people.0.total",
+    "before": 20980.9704,
+    "after": 20866.9704
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 11,
+    "path": "people.1.kidAmt",
+    "before": 0,
+    "after": 2400
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 31,
+    "path": "people.0.kidAmt",
+    "before": 0,
+    "after": 2400
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 32,
+    "path": "total",
+    "before": 47453.9629,
+    "after": 47339.9629
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 32,
+    "path": "prov",
+    "before": 16859.7834,
+    "after": 16745.7834
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 32,
+    "path": "netTotal",
+    "before": 42675.9295,
+    "after": 42561.9295
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 32,
+    "path": "incomeTax",
+    "before": 37401.9115,
+    "after": 37287.9115
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 32,
+    "path": "gross",
+    "before": 50363.4749,
+    "after": 50249.4749
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 32,
+    "path": "avg",
+    "before": 0.3003,
+    "after": 0.2996
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 32,
+    "path": "grossAvg",
+    "before": 0.3188,
+    "after": 0.318
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 32,
+    "path": "people.0.pKid",
+    "before": 0,
+    "after": 114
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 32,
+    "path": "people.0.kidAmt",
+    "before": 0,
+    "after": 1200
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 32,
+    "path": "people.0.prov",
+    "before": 2135.8166,
+    "after": 2021.8166
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 32,
+    "path": "people.0.total",
+    "before": 7381.7539,
+    "after": 7267.7539
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 33,
+    "path": "total",
+    "before": 63768.2697,
+    "after": 63426.2697
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 33,
+    "path": "prov",
+    "before": 27192.1605,
+    "after": 26850.1605
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 33,
+    "path": "netTotal",
+    "before": 58627.8961,
+    "after": 58285.8961
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 33,
+    "path": "incomeTax",
+    "before": 60044.1961,
+    "after": 59702.1961
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 33,
+    "path": "gross",
+    "before": 70692.1497,
+    "after": 70350.1497
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 33,
+    "path": "avg",
+    "before": 0.3321,
+    "after": 0.3303
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 33,
+    "path": "grossAvg",
+    "before": 0.3682,
+    "after": 0.3664
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 33,
+    "path": "people.0.pKid",
+    "before": 0,
+    "after": 342
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 33,
+    "path": "people.0.kidAmt",
+    "before": 0,
+    "after": 3600
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 33,
+    "path": "people.0.prov",
+    "before": 27192.1605,
+    "after": 26850.1605
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 33,
+    "path": "people.0.total",
+    "before": 65551.7761,
+    "after": 65209.7761
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 36,
+    "path": "people.0.pKid",
+    "before": 0,
+    "after": 114
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 36,
+    "path": "people.0.kidAmt",
+    "before": 0,
+    "after": 1200
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 36,
+    "path": "people.0.lowRed",
+    "before": 780.7416,
+    "after": 666.7416
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 37,
+    "path": "total",
+    "before": -10858.0677,
+    "after": -11314.0677
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 37,
+    "path": "prov",
+    "before": 3145.1839,
+    "after": 2689.1839
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 37,
+    "path": "netTotal",
+    "before": -15456.1011,
+    "after": -15912.1011
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 37,
+    "path": "incomeTax",
+    "before": 6591.1089,
+    "after": 6135.1089
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 37,
+    "path": "gross",
+    "before": 17224.1423,
+    "after": 16768.1423
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 37,
+    "path": "avg",
+    "before": -0.1277,
+    "after": -0.1331
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 37,
+    "path": "grossAvg",
+    "before": 0.2026,
+    "after": 0.1973
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 37,
+    "path": "people.0.pKid",
+    "before": 0,
+    "after": 456
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 37,
+    "path": "people.0.kidAmt",
+    "before": 0,
+    "after": 4800
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 37,
+    "path": "people.0.prov",
+    "before": 539.0347,
+    "after": 83.0347
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 37,
+    "path": "people.0.total",
+    "before": 3609.972,
+    "after": 3153.972
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 38,
+    "path": "people.0.kidAmt",
+    "before": 0,
+    "after": 2400
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 40,
+    "path": "total",
+    "before": -34169.4653,
+    "after": -34625.4653
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 40,
+    "path": "prov",
+    "before": 2506.0541,
+    "after": 2050.0541
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 40,
+    "path": "netTotal",
+    "before": -36122.0671,
+    "after": -36578.0671
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 40,
+    "path": "incomeTax",
+    "before": 5015.2429,
+    "after": 4559.2429
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 40,
+    "path": "gross",
+    "before": 10934.0947,
+    "after": 10478.0947
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 40,
+    "path": "avg",
+    "before": -0.6213,
+    "after": -0.6296
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 40,
+    "path": "grossAvg",
+    "before": 0.1988,
+    "after": 0.1905
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 40,
+    "path": "margBy.fd",
+    "before": 0.6872,
+    "after": 0.6956
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 40,
+    "path": "people.0.pKid",
+    "before": 0,
+    "after": 456
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 40,
+    "path": "people.0.kidAmt",
+    "before": 0,
+    "after": 4800
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 40,
+    "path": "people.0.prov",
+    "before": 2506.0541,
+    "after": 2050.0541
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 40,
+    "path": "people.0.total",
+    "before": 8981.4929,
+    "after": 8525.4929
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 42,
+    "path": "total",
+    "before": 74731.2108,
+    "after": 74503.2108
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 42,
+    "path": "prov",
+    "before": 21495.3947,
+    "after": 21267.3947
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 42,
+    "path": "netTotal",
+    "before": 53108.1774,
+    "after": 52880.1774
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 42,
+    "path": "incomeTax",
+    "before": 48311.7944,
+    "after": 48083.7944
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 42,
+    "path": "gross",
+    "before": 78801.4578,
+    "after": 78573.4578
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 42,
+    "path": "avg",
+    "before": 0.3663,
+    "after": 0.3652
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 42,
+    "path": "grossAvg",
+    "before": 0.3863,
+    "after": 0.3852
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 42,
+    "path": "people.1.pKid",
+    "before": 0,
+    "after": 228
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 42,
+    "path": "people.1.kidAmt",
+    "before": 0,
+    "after": 2400
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 42,
+    "path": "people.1.prov",
+    "before": 3279.6492,
+    "after": 3051.6492
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 42,
+    "path": "people.1.total",
+    "before": 10414.6369,
+    "after": 10186.6369
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 46,
+    "path": "people.1.kidAmt",
+    "before": 0,
+    "after": 1200
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 47,
+    "path": "total",
+    "before": 153287.6826,
+    "after": 153059.6826
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 47,
+    "path": "prov",
+    "before": 50340.1418,
+    "after": 50112.1418
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 47,
+    "path": "netTotal",
+    "before": 128964.6492,
+    "after": 128736.6492
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 47,
+    "path": "incomeTax",
+    "before": 118541.8392,
+    "after": 118313.8392
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 47,
+    "path": "gross",
+    "before": 153287.6826,
+    "after": 153059.6826
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 47,
+    "path": "avg",
+    "before": 0.4223,
+    "after": 0.4217
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 47,
+    "path": "grossAvg",
+    "before": 0.4223,
+    "after": 0.4217
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 47,
+    "path": "people.0.pKid",
+    "before": 0,
+    "after": 228
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 47,
+    "path": "people.0.kidAmt",
+    "before": 0,
+    "after": 2400
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 47,
+    "path": "people.0.prov",
+    "before": 11206.9963,
+    "after": 10978.9963
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 47,
+    "path": "people.0.total",
+    "before": 30203.4754,
+    "after": 29975.4754
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 49,
+    "path": "total",
+    "before": -3236.8348,
+    "after": -3578.8348
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 49,
+    "path": "prov",
+    "before": 4282.9884,
+    "after": 3940.9884
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 49,
+    "path": "netTotal",
+    "before": -10436.8348,
+    "after": -10778.8348
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 49,
+    "path": "invTax",
+    "before": 13172.6152,
+    "after": 12830.6152
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 49,
+    "path": "incomeTax",
+    "before": 5613.8952,
+    "after": 5271.8952
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 49,
+    "path": "gross",
+    "before": 14275.4452,
+    "after": 13933.4452
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 49,
+    "path": "avg",
+    "before": -0.0469,
+    "after": -0.0519
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 49,
+    "path": "grossAvg",
+    "before": 0.2069,
+    "after": 0.2019
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 49,
+    "path": "people.0.pKid",
+    "before": 0,
+    "after": 342
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 49,
+    "path": "people.0.kidAmt",
+    "before": 0,
+    "after": 3600
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 49,
+    "path": "people.0.prov",
+    "before": 4282.9884,
+    "after": 3940.9884
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 49,
+    "path": "people.0.total",
+    "before": 7075.4452,
+    "after": 6733.4452
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 50,
+    "path": "total",
+    "before": 40731.5472,
+    "after": 40617.5472
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 50,
+    "path": "prov",
+    "before": 4854.5687,
+    "after": 4740.5687
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 50,
+    "path": "netTotal",
+    "before": 8148.9454,
+    "after": 8034.9454
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 50,
+    "path": "incomeTax",
+    "before": 9709.9554,
+    "after": 9595.9554
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 50,
+    "path": "gross",
+    "before": 47207.7872,
+    "after": 47093.7872
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 50,
+    "path": "avg",
+    "before": 0.599,
+    "after": 0.5973
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 50,
+    "path": "grossAvg",
+    "before": 0.6942,
+    "after": 0.6926
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 50,
+    "path": "margBy.fd",
+    "before": 0.5465,
+    "after": 0.5482
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 50,
+    "path": "people.0.pKid",
+    "before": 0,
+    "after": 114
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 50,
+    "path": "people.0.kidAmt",
+    "before": 0,
+    "after": 1200
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 50,
+    "path": "people.0.prov",
+    "before": 4854.5687,
+    "after": 4740.5687
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 50,
+    "path": "people.0.total",
+    "before": 14625.1854,
+    "after": 14511.1854
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 51,
+    "path": "total",
+    "before": 14383.2704,
+    "after": 14269.2704
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 51,
+    "path": "prov",
+    "before": 5971.0045,
+    "after": 5857.0045
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 51,
+    "path": "netTotal",
+    "before": 11791.2704,
+    "after": 11677.2704
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 51,
+    "path": "incomeTax",
+    "before": 12200.6004,
+    "after": 12086.6004
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 51,
+    "path": "gross",
+    "before": 20052.1804,
+    "after": 19938.1804
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 51,
+    "path": "avg",
+    "before": 0.1918,
+    "after": 0.1903
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 51,
+    "path": "grossAvg",
+    "before": 0.2674,
+    "after": 0.2658
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 51,
+    "path": "people.0.pKid",
+    "before": 0,
+    "after": 114
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 51,
+    "path": "people.0.kidAmt",
+    "before": 0,
+    "after": 1200
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 51,
+    "path": "people.0.prov",
+    "before": 5971.0045,
+    "after": 5857.0045
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 51,
+    "path": "people.0.total",
+    "before": 17460.1804,
+    "after": 17346.1804
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 57,
+    "path": "people.0.kidAmt",
+    "before": 0,
+    "after": 3600
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 60,
+    "path": "people.1.kidAmt",
+    "before": 0,
+    "after": 1200
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 61,
+    "path": "people.1.kidAmt",
+    "before": 0,
+    "after": 1200
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 63,
+    "path": "total",
+    "before": -2922.2535,
+    "after": -3150.2535
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 63,
+    "path": "prov",
+    "before": 3114.3041,
+    "after": 2886.3041
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 63,
+    "path": "netTotal",
+    "before": -5722.6271,
+    "after": -5950.6271
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 63,
+    "path": "incomeTax",
+    "before": 5623.4929,
+    "after": 5395.4929
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 63,
+    "path": "gross",
+    "before": 12390.1165,
+    "after": 12162.1165
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 63,
+    "path": "avg",
+    "before": -0.0531,
+    "after": -0.0573
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 63,
+    "path": "grossAvg",
+    "before": 0.2253,
+    "after": 0.2211
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 63,
+    "path": "people.0.pKid",
+    "before": 0,
+    "after": 228
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 63,
+    "path": "people.0.kidAmt",
+    "before": 0,
+    "after": 2400
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 63,
+    "path": "people.0.prov",
+    "before": 3114.3041,
+    "after": 2886.3041
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 63,
+    "path": "people.0.total",
+    "before": 9589.7429,
+    "after": 9361.7429
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 64,
+    "path": "total",
+    "before": 595.8254,
+    "after": 253.8254
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 64,
+    "path": "prov",
+    "before": 4854.5687,
+    "after": 4512.5687
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 64,
+    "path": "netTotal",
+    "before": -10204.1746,
+    "after": -10546.1746
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 64,
+    "path": "incomeTax",
+    "before": 9709.9554,
+    "after": 9367.9554
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 64,
+    "path": "gross",
+    "before": 25425.1854,
+    "after": 25083.1854
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 64,
+    "path": "avg",
+    "before": 0.0088,
+    "after": 0.0037
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 64,
+    "path": "grossAvg",
+    "before": 0.3739,
+    "after": 0.3689
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 64,
+    "path": "margBy.fd",
+    "before": 0.7065,
+    "after": 0.7116
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 64,
+    "path": "people.0.pKid",
+    "before": 0,
+    "after": 342
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 64,
+    "path": "people.0.kidAmt",
+    "before": 0,
+    "after": 3600
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 64,
+    "path": "people.0.prov",
+    "before": 4854.5687,
+    "after": 4512.5687
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 64,
+    "path": "people.0.total",
+    "before": 14625.1854,
+    "after": 14283.1854
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 65,
+    "path": "people.1.kidAmt",
+    "before": 0,
+    "after": 1200
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 66,
+    "path": "total",
+    "before": -5926.1596,
+    "after": -6382.1596
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 66,
+    "path": "prov",
+    "before": 5971.0045,
+    "after": 5515.0045
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 66,
+    "path": "netTotal",
+    "before": -7546.1596,
+    "after": -8002.1596
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 66,
+    "path": "incomeTax",
+    "before": 12200.6004,
+    "after": 11744.6004
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 66,
+    "path": "gross",
+    "before": 19080.1804,
+    "after": 18624.1804
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 66,
+    "path": "avg",
+    "before": -0.079,
+    "after": -0.0851
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 66,
+    "path": "grossAvg",
+    "before": 0.2544,
+    "after": 0.2483
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 66,
+    "path": "people.0.pKid",
+    "before": 0,
+    "after": 456
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 66,
+    "path": "people.0.kidAmt",
+    "before": 0,
+    "after": 4800
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 66,
+    "path": "people.0.prov",
+    "before": 5971.0045,
+    "after": 5515.0045
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 66,
+    "path": "people.0.total",
+    "before": 17460.1804,
+    "after": 17004.1804
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 69,
+    "path": "total",
+    "before": 36452.7354,
+    "after": 36338.7354
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 69,
+    "path": "prov",
+    "before": 8414.8083,
+    "after": 8300.8083
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 69,
+    "path": "netTotal",
+    "before": 9782.7354,
+    "after": 9668.7354
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 69,
+    "path": "incomeTax",
+    "before": 18481.1404,
+    "after": 18367.1404
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 69,
+    "path": "gross",
+    "before": 52479.4704,
+    "after": 52365.4704
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 69,
+    "path": "avg",
+    "before": 0.3472,
+    "after": 0.3461
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 69,
+    "path": "grossAvg",
+    "before": 0.4998,
+    "after": 0.4987
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 69,
+    "path": "people.1.pKid",
+    "before": 0,
+    "after": 114
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 69,
+    "path": "people.1.kidAmt",
+    "before": 0,
+    "after": 1200
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 69,
+    "path": "people.1.prov",
+    "before": 1261.7187,
+    "after": 1147.7187
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 69,
+    "path": "people.1.total",
+    "before": 4828.5,
+    "after": 4714.5
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 70,
+    "path": "people.1.kidAmt",
+    "before": 0,
+    "after": 1200
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 71,
+    "path": "total",
+    "before": 42330.1481,
+    "after": 42102.1481
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 71,
+    "path": "prov",
+    "before": 19444.5836,
+    "after": 19216.5836
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 71,
+    "path": "netTotal",
+    "before": 40170.1481,
+    "after": 39942.1481
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 71,
+    "path": "incomeTax",
+    "before": 42058.1901,
+    "after": 41830.1901
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 71,
+    "path": "gross",
+    "before": 50656.0201,
+    "after": 50428.0201
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 71,
+    "path": "avg",
+    "before": 0.2035,
+    "after": 0.2024
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 71,
+    "path": "grossAvg",
+    "before": 0.2435,
+    "after": 0.2424
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 71,
+    "path": "people.0.pKid",
+    "before": 0,
+    "after": 228
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 71,
+    "path": "people.0.kidAmt",
+    "before": 0,
+    "after": 2400
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 71,
+    "path": "people.0.prov",
+    "before": 14723.9667,
+    "after": 14495.9667
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 71,
+    "path": "people.0.total",
+    "before": 38203.6876,
+    "after": 37975.6876
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 74,
+    "path": "total",
+    "before": 87961.8494,
+    "after": 87847.8494
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 74,
+    "path": "prov",
+    "before": 23424.8955,
+    "after": 23310.8955
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 74,
+    "path": "netTotal",
+    "before": 56863.8494,
+    "after": 56749.8494
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 74,
+    "path": "incomeTax",
+    "before": 54135.7414,
+    "after": 54021.7414
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 74,
+    "path": "gross",
+    "before": 90741.3214,
+    "after": 90627.3214
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 74,
+    "path": "avg",
+    "before": 0.5498,
+    "after": 0.549
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 74,
+    "path": "grossAvg",
+    "before": 0.5671,
+    "after": 0.5664
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 74,
+    "path": "people.0.pKid",
+    "before": 0,
+    "after": 114
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 74,
+    "path": "people.0.kidAmt",
+    "before": 0,
+    "after": 1200
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 74,
+    "path": "people.0.prov",
+    "before": 23424.8955,
+    "after": 23310.8955
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 74,
+    "path": "people.0.total",
+    "before": 59643.3214,
+    "after": 59529.3214
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 76,
+    "path": "total",
+    "before": 87862.3951,
+    "after": 87634.3951
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 76,
+    "path": "prov",
+    "before": 32512.1605,
+    "after": 32284.1605
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 76,
+    "path": "netTotal",
+    "before": 59212.3951,
+    "after": 58984.3951
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 76,
+    "path": "incomeTax",
+    "before": 73655.2351,
+    "after": 73427.2351
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 76,
+    "path": "gross",
+    "before": 107812.8151,
+    "after": 107584.8151
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 76,
+    "path": "avg",
+    "before": 0.3586,
+    "after": 0.3577
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 76,
+    "path": "grossAvg",
+    "before": 0.4401,
+    "after": 0.4391
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 76,
+    "path": "people.0.pKid",
+    "before": 0,
+    "after": 228
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 76,
+    "path": "people.0.kidAmt",
+    "before": 0,
+    "after": 2400
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 76,
+    "path": "people.0.prov",
+    "before": 32512.1605,
+    "after": 32284.1605
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 76,
+    "path": "people.0.total",
+    "before": 79162.8151,
+    "after": 78934.8151
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 77,
+    "path": "people.0.kidAmt",
+    "before": 0,
+    "after": 1200
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 80,
+    "path": "people.1.kidAmt",
+    "before": 0,
+    "after": 4800
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 84,
+    "path": "total",
+    "before": 43244.9564,
+    "after": 42788.9564
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 84,
+    "path": "prov",
+    "before": 20851.0605,
+    "after": 20395.0605
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 84,
+    "path": "netTotal",
+    "before": 37844.9564,
+    "after": 37388.9564
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 84,
+    "path": "incomeTax",
+    "before": 46884.4964,
+    "after": 46428.4964
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 84,
+    "path": "gross",
+    "before": 57792.0764,
+    "after": 57336.0764
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 84,
+    "path": "avg",
+    "before": 0.2703,
+    "after": 0.2674
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 84,
+    "path": "grossAvg",
+    "before": 0.3612,
+    "after": 0.3584
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 84,
+    "path": "people.0.pKid",
+    "before": 0,
+    "after": 456
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 84,
+    "path": "people.0.kidAmt",
+    "before": 0,
+    "after": 4800
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 84,
+    "path": "people.0.prov",
+    "before": 20851.0605,
+    "after": 20395.0605
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 84,
+    "path": "people.0.total",
+    "before": 52392.0764,
+    "after": 51936.0764
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 86,
+    "path": "total",
+    "before": 100497.6788,
+    "after": 100383.6788
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 86,
+    "path": "prov",
+    "before": 33295.067,
+    "after": 33181.067
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 86,
+    "path": "netTotal",
+    "before": 84372.6788,
+    "after": 84258.6788
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 86,
+    "path": "incomeTax",
+    "before": 75309.6688,
+    "after": 75195.6688
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 86,
+    "path": "gross",
+    "before": 102449.8288,
+    "after": 102335.8288
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 86,
+    "path": "avg",
+    "before": 0.3865,
+    "after": 0.3861
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 86,
+    "path": "grossAvg",
+    "before": 0.394,
+    "after": 0.3936
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 86,
+    "path": "people.0.pKid",
+    "before": 0,
+    "after": 114
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 86,
+    "path": "people.0.kidAmt",
+    "before": 0,
+    "after": 1200
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 86,
+    "path": "people.0.prov",
+    "before": 11261.9215,
+    "after": 11147.9215
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 86,
+    "path": "people.0.total",
+    "before": 30411.9624,
+    "after": 30297.9624
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 87,
+    "path": "total",
+    "before": 100740.5058,
+    "after": 100626.5058
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 87,
+    "path": "prov",
+    "before": 28451.0605,
+    "after": 28337.0605
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 87,
+    "path": "netTotal",
+    "before": 69652.4724,
+    "after": 69538.4724
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 87,
+    "path": "incomeTax",
+    "before": 65644.3644,
+    "after": 65530.3644
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 87,
+    "path": "gross",
+    "before": 102239.9778,
+    "after": 102125.9778
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 87,
+    "path": "avg",
+    "before": 0.5037,
+    "after": 0.5031
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 87,
+    "path": "grossAvg",
+    "before": 0.5112,
+    "after": 0.5106
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 87,
+    "path": "people.0.pKid",
+    "before": 0,
+    "after": 114
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 87,
+    "path": "people.0.kidAmt",
+    "before": 0,
+    "after": 1200
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 87,
+    "path": "people.0.prov",
+    "before": 28451.0605,
+    "after": 28337.0605
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 87,
+    "path": "people.0.total",
+    "before": 71151.9444,
+    "after": 71037.9444
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 89,
+    "path": "total",
+    "before": 8502.7149,
+    "after": 8160.7149
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 89,
+    "path": "prov",
+    "before": 5785.4239,
+    "after": 5443.4239
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 89,
+    "path": "netTotal",
+    "before": -1547.2851,
+    "after": -1889.2851
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 89,
+    "path": "incomeTax",
+    "before": 12478.3049,
+    "after": 12136.3049
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 89,
+    "path": "gross",
+    "before": 29170.5049,
+    "after": 28828.5049
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 89,
+    "path": "avg",
+    "before": 0.0914,
+    "after": 0.0877
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 89,
+    "path": "grossAvg",
+    "before": 0.3137,
+    "after": 0.31
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 89,
+    "path": "people.1.pKid",
+    "before": 0,
+    "after": 342
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 89,
+    "path": "people.1.kidAmt",
+    "before": 0,
+    "after": 3600
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 89,
+    "path": "people.1.prov",
+    "before": 1489.0347,
+    "after": 1147.0347
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 89,
+    "path": "people.1.total",
+    "before": 6009.972,
+    "after": 5667.972
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 91,
+    "path": "people.1.kidAmt",
+    "before": 0,
+    "after": 1200
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 98,
+    "path": "total",
+    "before": -7935.2705,
+    "after": -8163.2705
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 98,
+    "path": "prov",
+    "before": 5823.2625,
+    "after": 5595.2625
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 98,
+    "path": "netTotal",
+    "before": -13075.6441,
+    "after": -13303.6441
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 98,
+    "path": "incomeTax",
+    "before": 11429.2459,
+    "after": 11201.2459
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 98,
+    "path": "gross",
+    "before": 21390.2195,
+    "after": 21162.2195
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 98,
+    "path": "avg",
+    "before": -0.0696,
+    "after": -0.0716
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 98,
+    "path": "grossAvg",
+    "before": 0.1876,
+    "after": 0.1856
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 98,
+    "path": "people.1.pKid",
+    "before": 0,
+    "after": 228
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 98,
+    "path": "people.1.kidAmt",
+    "before": 0,
+    "after": 2400
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 98,
+    "path": "people.1.prov",
+    "before": 3279.6492,
+    "after": 3051.6492
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 98,
+    "path": "people.1.total",
+    "before": 10414.6369,
+    "after": 10186.6369
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 99,
+    "path": "people.0.pKid",
+    "before": 0,
+    "after": 79.6337
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 99,
+    "path": "people.0.kidAmt",
+    "before": 0,
+    "after": 4800
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 99,
+    "path": "people.0.lowRed",
+    "before": 79.6337,
+    "after": 0
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 100,
+    "path": "people.1.kidAmt",
+    "before": 0,
+    "after": 2400
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 103,
+    "path": "total",
+    "before": 150.2225,
+    "after": 36.2225
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 103,
+    "path": "prov",
+    "before": 953.7316,
+    "after": 839.7316
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 103,
+    "path": "netTotal",
+    "before": -7660.1511,
+    "after": -7774.1511
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 103,
+    "path": "incomeTax",
+    "before": 1185.0139,
+    "after": 1071.0139
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 103,
+    "path": "gross",
+    "before": 11671.3375,
+    "after": 11557.3375
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 103,
+    "path": "avg",
+    "before": 0.004,
+    "after": 0.001
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 103,
+    "path": "grossAvg",
+    "before": 0.3071,
+    "after": 0.3041
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 103,
+    "path": "margBy.fd",
+    "before": 0.7126,
+    "after": 0.7156
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 103,
+    "path": "people.0.pKid",
+    "before": 0,
+    "after": 114
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 103,
+    "path": "people.0.kidAmt",
+    "before": 0,
+    "after": 1200
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 103,
+    "path": "people.0.prov",
+    "before": 953.7316,
+    "after": 839.7316
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 103,
+    "path": "people.0.total",
+    "before": 3860.9639,
+    "after": 3746.9639
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 106,
+    "path": "total",
+    "before": 108095.4228,
+    "after": 107867.4228
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 106,
+    "path": "prov",
+    "before": 38405.067,
+    "after": 38177.067
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 106,
+    "path": "netTotal",
+    "before": 99455.4228,
+    "after": 99227.4228
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 106,
+    "path": "incomeTax",
+    "before": 88440.2628,
+    "after": 88212.2628
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 106,
+    "path": "gross",
+    "before": 108095.4228,
+    "after": 107867.4228
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 106,
+    "path": "avg",
+    "before": 0.3793,
+    "after": 0.3785
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 106,
+    "path": "grossAvg",
+    "before": 0.3793,
+    "after": 0.3785
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 106,
+    "path": "people.0.pKid",
+    "before": 0,
+    "after": 228
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 106,
+    "path": "people.0.kidAmt",
+    "before": 0,
+    "after": 2400
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 106,
+    "path": "people.0.prov",
+    "before": 8771.9215,
+    "after": 8543.9215
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 106,
+    "path": "people.0.total",
+    "before": 24846.9624,
+    "after": 24618.9624
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 107,
+    "path": "total",
+    "before": 21880.4604,
+    "after": 21538.4604
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 107,
+    "path": "prov",
+    "before": 3652.5911,
+    "after": 3310.5911
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 107,
+    "path": "netTotal",
+    "before": -9567.573,
+    "after": -9909.573
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 107,
+    "path": "incomeTax",
+    "before": 6807.187,
+    "after": 6465.187
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 107,
+    "path": "gross",
+    "before": 43514.8004,
+    "after": 43172.8004
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 107,
+    "path": "avg",
+    "before": 0.2917,
+    "after": 0.2872
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 107,
+    "path": "grossAvg",
+    "before": 0.5802,
+    "after": 0.5756
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 107,
+    "path": "margBy.fd",
+    "before": 0.6343,
+    "after": 0.6401
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 107,
+    "path": "people.0.pKid",
+    "before": 0,
+    "after": 342
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 107,
+    "path": "people.0.kidAmt",
+    "before": 0,
+    "after": 3600
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 107,
+    "path": "people.0.prov",
+    "before": 3652.5911,
+    "after": 3310.5911
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 107,
+    "path": "people.0.total",
+    "before": 12066.767,
+    "after": 11724.767
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 108,
+    "path": "people.1.kidAmt",
+    "before": 0,
+    "after": 2400
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 109,
+    "path": "total",
+    "before": 108522.2513,
+    "after": 108408.2513
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 109,
+    "path": "prov",
+    "before": 37951.0605,
+    "after": 37837.0605
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 109,
+    "path": "netTotal",
+    "before": 92712.2513,
+    "after": 92598.2513
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 109,
+    "path": "incomeTax",
+    "before": 89949.7913,
+    "after": 89835.7913
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 109,
+    "path": "gross",
+    "before": 111267.3713,
+    "after": 111153.3713
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 109,
+    "path": "avg",
+    "before": 0.4341,
+    "after": 0.4336
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 109,
+    "path": "grossAvg",
+    "before": 0.4451,
+    "after": 0.4446
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 109,
+    "path": "people.0.pKid",
+    "before": 0,
+    "after": 114
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 109,
+    "path": "people.0.kidAmt",
+    "before": 0,
+    "after": 1200
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 109,
+    "path": "people.0.prov",
+    "before": 37951.0605,
+    "after": 37837.0605
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 109,
+    "path": "people.0.total",
+    "before": 95457.3713,
+    "after": 95343.3713
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 111,
+    "path": "people.1.kidAmt",
+    "before": 0,
+    "after": 1200
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 114,
+    "path": "total",
+    "before": 10378.6038,
+    "after": 10157.4903
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 114,
+    "path": "prov",
+    "before": 9262.6933,
+    "after": 9041.5798
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 114,
+    "path": "netTotal",
+    "before": 8218.6038,
+    "after": 7997.4903
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 114,
+    "path": "marg",
+    "before": 0.5013,
+    "after": 0.5012
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 114,
+    "path": "invTax",
+    "before": 23166.1869,
+    "after": 23173.0734
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 114,
+    "path": "incomeTax",
+    "before": 17843.3138,
+    "after": 17622.2003
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 114,
+    "path": "gross",
+    "before": 23362.3638,
+    "after": 23141.2503
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 114,
+    "path": "avg",
+    "before": 0.097,
+    "after": 0.0949
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 114,
+    "path": "grossAvg",
+    "before": 0.2183,
+    "after": 0.2163
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 114,
+    "path": "margBy.ord",
+    "before": 0.5013,
+    "after": 0.5012
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 114,
+    "path": "margBy.cg",
+    "before": 0.2226,
+    "after": 0.2225
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 114,
+    "path": "margBy.ed",
+    "before": 0.2728,
+    "after": 0.2727
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 114,
+    "path": "margBy.nd",
+    "before": 0.3967,
+    "after": 0.3966
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 114,
+    "path": "margBy.fd",
+    "before": 0.5175,
+    "after": 0.5197
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 114,
+    "path": "people.0.pKid",
+    "before": 0,
+    "after": 228
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 114,
+    "path": "people.0.kidAmt",
+    "before": 0,
+    "after": 2400
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 114,
+    "path": "people.0.pFtc",
+    "before": 288.4825,
+    "after": 281.596
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 114,
+    "path": "people.0.prov",
+    "before": 9262.6933,
+    "after": 9041.5798
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 114,
+    "path": "people.0.total",
+    "before": 21202.3638,
+    "after": 20981.2503
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 116,
+    "path": "total",
+    "before": -16333.7522,
+    "after": -16789.7522
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 116,
+    "path": "prov",
+    "before": 4271.6333,
+    "after": 3815.6333
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 116,
+    "path": "netTotal",
+    "before": -24433.7522,
+    "after": -24889.7522
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 116,
+    "path": "incomeTax",
+    "before": 9411.6078,
+    "after": 8955.6078
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 116,
+    "path": "gross",
+    "before": 22863.5078,
+    "after": 22407.5078
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 116,
+    "path": "avg",
+    "before": -0.2149,
+    "after": -0.2209
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 116,
+    "path": "grossAvg",
+    "before": 0.3008,
+    "after": 0.2948
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 116,
+    "path": "people.0.pKid",
+    "before": 0,
+    "after": 456
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 116,
+    "path": "people.0.kidAmt",
+    "before": 0,
+    "after": 4800
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 116,
+    "path": "people.0.prov",
+    "before": 2135.8166,
+    "after": 1679.8166
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 116,
+    "path": "people.0.total",
+    "before": 7381.7539,
+    "after": 6925.7539
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 119,
+    "path": "people.1.kidAmt",
+    "before": 0,
+    "after": 2400
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 121,
+    "path": "total",
+    "before": -22222.0211,
+    "after": -22326.0027
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 121,
+    "path": "prov",
+    "before": 103.9816,
+    "after": 0
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 121,
+    "path": "netTotal",
+    "before": -33022.0211,
+    "after": -33126.0027
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 121,
+    "path": "marg",
+    "before": 0.7577,
+    "after": 0.5811
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 121,
+    "path": "incomeTax",
+    "before": 335.2639,
+    "after": 231.2822
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 121,
+    "path": "gross",
+    "before": 13811.2139,
+    "after": 13707.2323
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 121,
+    "path": "avg",
+    "before": -0.5848,
+    "after": -0.5875
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 121,
+    "path": "grossAvg",
+    "before": 0.3635,
+    "after": 0.3607
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 121,
+    "path": "margBy.ord",
+    "before": 0.7577,
+    "after": 0.5811
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 121,
+    "path": "margBy.cg",
+    "before": 0.3524,
+    "after": 0.26
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 121,
+    "path": "margBy.ed",
+    "before": 0.6203,
+    "after": 0.5103
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 121,
+    "path": "margBy.nd",
+    "before": 0.6916,
+    "after": 0.4942
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 121,
+    "path": "margBy.fd",
+    "before": 0.8449,
+    "after": 0.6635
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 121,
+    "path": "people.0.pKid",
+    "before": 0,
+    "after": 342
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 121,
+    "path": "people.0.kidAmt",
+    "before": 0,
+    "after": 3600
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 121,
+    "path": "people.0.lowRed",
+    "before": 849.75,
+    "after": 611.7316
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 121,
+    "path": "people.0.prov",
+    "before": 103.9816,
+    "after": 0
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 121,
+    "path": "people.0.total",
+    "before": 3011.2139,
+    "after": 2907.2322
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 126,
+    "path": "total",
+    "before": 53434.2257,
+    "after": 53320.2257
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 126,
+    "path": "prov",
+    "before": 21198.7671,
+    "after": 21084.7671
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 126,
+    "path": "netTotal",
+    "before": 45334.2257,
+    "after": 45220.2257
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 126,
+    "path": "invTax",
+    "before": 18486.6381,
+    "after": 18372.6381
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 126,
+    "path": "incomeTax",
+    "before": 44452.9757,
+    "after": 44338.9757
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 126,
+    "path": "gross",
+    "before": 58459.5057,
+    "after": 58345.5057
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 126,
+    "path": "avg",
+    "before": 0.2532,
+    "after": 0.2527
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 126,
+    "path": "grossAvg",
+    "before": 0.2771,
+    "after": 0.2765
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 126,
+    "path": "people.0.pKid",
+    "before": 0,
+    "after": 114
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 126,
+    "path": "people.0.kidAmt",
+    "before": 0,
+    "after": 1200
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 126,
+    "path": "people.0.prov",
+    "before": 6474.8003,
+    "after": 6360.8003
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 126,
+    "path": "people.0.total",
+    "before": 12155.8181,
+    "after": 12041.8181
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 129,
+    "path": "total",
+    "before": 71320.5193,
+    "after": 71206.5193
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 129,
+    "path": "prov",
+    "before": 26329.5346,
+    "after": 26215.5346
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 129,
+    "path": "netTotal",
+    "before": 65920.5193,
+    "after": 65806.5193
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 129,
+    "path": "incomeTax",
+    "before": 59549.5693,
+    "after": 59435.5693
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 129,
+    "path": "gross",
+    "before": 74423.3993,
+    "after": 74309.3993
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 129,
+    "path": "avg",
+    "before": 0.3317,
+    "after": 0.3312
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 129,
+    "path": "grossAvg",
+    "before": 0.3462,
+    "after": 0.3456
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 129,
+    "path": "people.0.pKid",
+    "before": 0,
+    "after": 114
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 129,
+    "path": "people.0.kidAmt",
+    "before": 0,
+    "after": 1200
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 129,
+    "path": "people.0.prov",
+    "before": 4296.3892,
+    "after": 4182.3892
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 129,
+    "path": "people.0.total",
+    "before": 13110.5329,
+    "after": 12996.5329
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 136,
+    "path": "total",
+    "before": -7797.9476,
+    "after": -8139.9476
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 136,
+    "path": "prov",
+    "before": 7589.8365,
+    "after": 7247.8365
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 136,
+    "path": "netTotal",
+    "before": -13197.9476,
+    "after": -13539.9476
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 136,
+    "path": "incomeTax",
+    "before": 15818.5924,
+    "after": 15476.5924
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 136,
+    "path": "gross",
+    "before": 26726.1724,
+    "after": 26384.1724
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 136,
+    "path": "avg",
+    "before": -0.0917,
+    "after": -0.0958
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 136,
+    "path": "grossAvg",
+    "before": 0.3144,
+    "after": 0.3104
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 136,
+    "path": "people.0.pKid",
+    "before": 0,
+    "after": 342
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 136,
+    "path": "people.0.kidAmt",
+    "before": 0,
+    "after": 3600
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 136,
+    "path": "people.0.prov",
+    "before": 7589.8365,
+    "after": 7247.8365
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 136,
+    "path": "people.0.total",
+    "before": 21326.1724,
+    "after": 20984.1724
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 142,
+    "path": "total",
+    "before": 86250.5548,
+    "after": 85680.5548
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 142,
+    "path": "prov",
+    "before": 39574.8955,
+    "after": 39004.8955
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 142,
+    "path": "netTotal",
+    "before": 78052.5214,
+    "after": 77482.5214
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 142,
+    "path": "incomeTax",
+    "before": 94367.0614,
+    "after": 93797.0614
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 142,
+    "path": "gross",
+    "before": 108072.6748,
+    "after": 107502.6748
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 142,
+    "path": "avg",
+    "before": 0.345,
+    "after": 0.3427
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 142,
+    "path": "grossAvg",
+    "before": 0.4323,
+    "after": 0.43
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 142,
+    "path": "people.0.pKid",
+    "before": 0,
+    "after": 570
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 142,
+    "path": "people.0.kidAmt",
+    "before": 0,
+    "after": 6000
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 142,
+    "path": "people.0.prov",
+    "before": 39574.8955,
+    "after": 39004.8955
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 142,
+    "path": "people.0.total",
+    "before": 99874.6414,
+    "after": 99304.6414
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 143,
+    "path": "total",
+    "before": 4077.9148,
+    "after": 3993.5121
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 143,
+    "path": "prov",
+    "before": 2746.5639,
+    "after": 2662.1611
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 143,
+    "path": "netTotal",
+    "before": 197.5412,
+    "after": 113.1384
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 143,
+    "path": "marg",
+    "before": 0.4508,
+    "after": 0.363
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 143,
+    "path": "invTax",
+    "before": 10416.2412,
+    "after": 10331.8384
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 143,
+    "path": "incomeTax",
+    "before": 5845.3312,
+    "after": 5760.9284
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 143,
+    "path": "gross",
+    "before": 12117.5048,
+    "after": 12033.1021
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 143,
+    "path": "avg",
+    "before": 0.0458,
+    "after": 0.0449
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 143,
+    "path": "grossAvg",
+    "before": 0.1362,
+    "after": 0.1352
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 143,
+    "path": "margBy.ord",
+    "before": 0.4508,
+    "after": 0.363
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 143,
+    "path": "margBy.cg",
+    "before": 0.1925,
+    "after": 0.145
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 143,
+    "path": "margBy.ed",
+    "before": 0.3864,
+    "after": 0.4002
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 143,
+    "path": "margBy.nd",
+    "before": 0.4278,
+    "after": 0.3335
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 143,
+    "path": "margBy.fd",
+    "before": 0.385,
+    "after": 0.29
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 143,
+    "path": "people.0.pKid",
+    "before": 0,
+    "after": 84.4027
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 143,
+    "path": "people.0.kidAmt",
+    "before": 0,
+    "after": 1200
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 143,
+    "path": "people.0.prov",
+    "before": 84.4027,
+    "after": 0
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 143,
+    "path": "people.0.total",
+    "before": 1545.9528,
+    "after": 1461.55
+  },
+  {
+    "file": "tests/golden/2025.json",
+    "year": 2025,
+    "scenario": 145,
+    "path": "people.0.kidAmt",
+    "before": 0,
+    "after": 2400
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 5,
+    "path": "people.0.pKid",
+    "before": 0,
+    "after": 18.4537
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 5,
+    "path": "people.0.kidAmt",
+    "before": 0,
+    "after": 1200
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 5,
+    "path": "people.0.lowRed",
+    "before": 18.4537,
+    "after": 0
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 6,
+    "path": "total",
+    "before": -41038.2091,
+    "after": -41380.2091
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 6,
+    "path": "prov",
+    "before": 637.7717,
+    "after": 295.7717
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 6,
+    "path": "netTotal",
+    "before": -44772.4233,
+    "after": -45114.4233
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 6,
+    "path": "incomeTax",
+    "before": 1672.6867,
+    "after": 1330.6867
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 6,
+    "path": "gross",
+    "before": 8609.6509,
+    "after": 8267.6509
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 6,
+    "path": "avg",
+    "before": -0.912,
+    "after": -0.9196
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 6,
+    "path": "grossAvg",
+    "before": 0.1913,
+    "after": 0.1837
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 6,
+    "path": "margBy.fd",
+    "before": 0.8165,
+    "after": 0.8242
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 6,
+    "path": "people.0.pKid",
+    "before": 0,
+    "after": 342
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 6,
+    "path": "people.0.kidAmt",
+    "before": 0,
+    "after": 3600
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 6,
+    "path": "people.0.prov",
+    "before": 637.7717,
+    "after": 295.7717
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 6,
+    "path": "people.0.total",
+    "before": 4875.4367,
+    "after": 4533.4367
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 7,
+    "path": "people.1.kidAmt",
+    "before": 0,
+    "after": 2400
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 8,
+    "path": "total",
+    "before": 44154.6337,
+    "after": 44040.6337
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 8,
+    "path": "prov",
+    "before": 14112.342,
+    "after": 13998.342
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 8,
+    "path": "netTotal",
+    "before": 35920.4194,
+    "after": 35806.4194
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 8,
+    "path": "incomeTax",
+    "before": 30629.5364,
+    "after": 30515.5364
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 8,
+    "path": "gross",
+    "before": 49602.7907,
+    "after": 49488.7907
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 8,
+    "path": "avg",
+    "before": 0.2944,
+    "after": 0.2936
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 8,
+    "path": "grossAvg",
+    "before": 0.3307,
+    "after": 0.3299
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 8,
+    "path": "people.0.pKid",
+    "before": 0,
+    "after": 114
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 8,
+    "path": "people.0.kidAmt",
+    "before": 0,
+    "after": 1200
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 8,
+    "path": "people.0.prov",
+    "before": 7056.171,
+    "after": 6942.171
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 8,
+    "path": "people.0.total",
+    "before": 20684.2882,
+    "after": 20570.2882
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 11,
+    "path": "people.1.kidAmt",
+    "before": 0,
+    "after": 2400
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 31,
+    "path": "people.0.kidAmt",
+    "before": 0,
+    "after": 2400
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 32,
+    "path": "total",
+    "before": 46368.9184,
+    "after": 46254.9184
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 32,
+    "path": "prov",
+    "before": 16661.1053,
+    "after": 16547.1053
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 32,
+    "path": "netTotal",
+    "before": 42186.1835,
+    "after": 42072.1835
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 32,
+    "path": "incomeTax",
+    "before": 36595.7215,
+    "after": 36481.7215
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 32,
+    "path": "gross",
+    "before": 49220.1264,
+    "after": 49106.1264
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 32,
+    "path": "avg",
+    "before": 0.2935,
+    "after": 0.2928
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 32,
+    "path": "grossAvg",
+    "before": 0.3115,
+    "after": 0.3108
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 32,
+    "path": "people.0.pKid",
+    "before": 0,
+    "after": 114
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 32,
+    "path": "people.0.kidAmt",
+    "before": 0,
+    "after": 1200
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 32,
+    "path": "people.0.prov",
+    "before": 2079.1077,
+    "after": 1965.1077
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 32,
+    "path": "people.0.total",
+    "before": 7183.7367,
+    "after": 7069.7367
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 33,
+    "path": "total",
+    "before": 63013.357,
+    "after": 62671.357
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 33,
+    "path": "prov",
+    "before": 26986.469,
+    "after": 26644.469
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 33,
+    "path": "netTotal",
+    "before": 57932.8534,
+    "after": 57590.8534
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 33,
+    "path": "incomeTax",
+    "before": 59270.4534,
+    "after": 58928.4534
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 33,
+    "path": "gross",
+    "before": 70120.477,
+    "after": 69778.477
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 33,
+    "path": "avg",
+    "before": 0.3282,
+    "after": 0.3264
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 33,
+    "path": "grossAvg",
+    "before": 0.3652,
+    "after": 0.3634
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 33,
+    "path": "people.0.pKid",
+    "before": 0,
+    "after": 342
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 33,
+    "path": "people.0.kidAmt",
+    "before": 0,
+    "after": 3600
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 33,
+    "path": "people.0.prov",
+    "before": 26986.469,
+    "after": 26644.469
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 33,
+    "path": "people.0.total",
+    "before": 65039.9734,
+    "after": 64697.9734
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 36,
+    "path": "people.0.pKid",
+    "before": 0,
+    "after": 114
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 36,
+    "path": "people.0.kidAmt",
+    "before": 0,
+    "after": 1200
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 36,
+    "path": "people.0.lowRed",
+    "before": 695.6656,
+    "after": 581.6656
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 37,
+    "path": "total",
+    "before": -13229.9037,
+    "after": -13685.9037
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 37,
+    "path": "prov",
+    "before": 3055.6714,
+    "after": 2599.6714
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 37,
+    "path": "netTotal",
+    "before": -17232.6386,
+    "after": -17688.6386
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 37,
+    "path": "incomeTax",
+    "before": 6285.1214,
+    "after": 5829.1214
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 37,
+    "path": "gross",
+    "before": 16314.3563,
+    "after": 15858.3563
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 37,
+    "path": "avg",
+    "before": -0.1556,
+    "after": -0.161
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 37,
+    "path": "grossAvg",
+    "before": 0.1919,
+    "after": 0.1866
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 37,
+    "path": "people.0.pKid",
+    "before": 0,
+    "after": 456
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 37,
+    "path": "people.0.kidAmt",
+    "before": 0,
+    "after": 4800
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 37,
+    "path": "people.0.prov",
+    "before": 506.1457,
+    "after": 50.1457
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 37,
+    "path": "people.0.total",
+    "before": 3510.7748,
+    "after": 3054.7748
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 38,
+    "path": "people.0.kidAmt",
+    "before": 0,
+    "after": 2400
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 40,
+    "path": "total",
+    "before": -36205.7591,
+    "after": -36661.7591
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 40,
+    "path": "prov",
+    "before": 2403.7916,
+    "after": 1947.7916
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 40,
+    "path": "netTotal",
+    "before": -37959.9733,
+    "after": -38415.9733
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 40,
+    "path": "incomeTax",
+    "before": 4732.5866,
+    "after": 4276.5866
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 40,
+    "path": "gross",
+    "before": 10447.5509,
+    "after": 9991.5509
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 40,
+    "path": "avg",
+    "before": -0.6583,
+    "after": -0.6666
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 40,
+    "path": "grossAvg",
+    "before": 0.19,
+    "after": 0.1817
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 40,
+    "path": "margBy.fd",
+    "before": 0.6674,
+    "after": 0.6758
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 40,
+    "path": "people.0.pKid",
+    "before": 0,
+    "after": 456
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 40,
+    "path": "people.0.kidAmt",
+    "before": 0,
+    "after": 4800
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 40,
+    "path": "people.0.prov",
+    "before": 2403.7916,
+    "after": 1947.7916
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 40,
+    "path": "people.0.total",
+    "before": 8693.3367,
+    "after": 8237.3367
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 42,
+    "path": "total",
+    "before": 73477.4359,
+    "after": 73249.4359
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 42,
+    "path": "prov",
+    "before": 21261.2947,
+    "after": 21033.2947
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 42,
+    "path": "netTotal",
+    "before": 52449.701,
+    "after": 52221.701
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 42,
+    "path": "incomeTax",
+    "before": 47428.724,
+    "after": 47200.724
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 42,
+    "path": "gross",
+    "before": 77580.3289,
+    "after": 77352.3289
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 42,
+    "path": "avg",
+    "before": 0.3602,
+    "after": 0.3591
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 42,
+    "path": "grossAvg",
+    "before": 0.3803,
+    "after": 0.3792
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 42,
+    "path": "people.1.pKid",
+    "before": 0,
+    "after": 228
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 42,
+    "path": "people.1.kidAmt",
+    "before": 0,
+    "after": 2400
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 42,
+    "path": "people.1.prov",
+    "before": 3223.0256,
+    "after": 2995.0256
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 42,
+    "path": "people.1.total",
+    "before": 10174.3467,
+    "after": 9946.3467
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 46,
+    "path": "people.1.kidAmt",
+    "before": 0,
+    "after": 1200
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 47,
+    "path": "total",
+    "before": 152297.7235,
+    "after": 152069.7235
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 47,
+    "path": "prov",
+    "before": 50493.6874,
+    "after": 50265.6874
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 47,
+    "path": "netTotal",
+    "before": 128569.9885,
+    "after": 128341.9885
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 47,
+    "path": "incomeTax",
+    "before": 117854.3185,
+    "after": 117626.3185
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 47,
+    "path": "gross",
+    "before": 152297.7235,
+    "after": 152069.7235
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 47,
+    "path": "avg",
+    "before": 0.4196,
+    "after": 0.4189
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 47,
+    "path": "grossAvg",
+    "before": 0.4196,
+    "after": 0.4189
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 47,
+    "path": "people.0.pKid",
+    "before": 0,
+    "after": 228
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 47,
+    "path": "people.0.kidAmt",
+    "before": 0,
+    "after": 2400
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 47,
+    "path": "people.0.prov",
+    "before": 11049.2884,
+    "after": 10821.2884
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 47,
+    "path": "people.0.total",
+    "before": 29832.0622,
+    "after": 29604.0622
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 49,
+    "path": "total",
+    "before": -4413.8432,
+    "after": -4755.8432
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 49,
+    "path": "prov",
+    "before": 4161.4792,
+    "after": 3819.4792
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 49,
+    "path": "netTotal",
+    "before": -11613.8432,
+    "after": -11955.8432
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 49,
+    "path": "invTax",
+    "before": 12627.8068,
+    "after": 12285.8068
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 49,
+    "path": "incomeTax",
+    "before": 5211.5868,
+    "after": 4869.5868
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 49,
+    "path": "gross",
+    "before": 13870.9368,
+    "after": 13528.9368
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 49,
+    "path": "avg",
+    "before": -0.064,
+    "after": -0.0689
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 49,
+    "path": "grossAvg",
+    "before": 0.201,
+    "after": 0.1961
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 49,
+    "path": "people.0.pKid",
+    "before": 0,
+    "after": 342
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 49,
+    "path": "people.0.kidAmt",
+    "before": 0,
+    "after": 3600
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 49,
+    "path": "people.0.prov",
+    "before": 4161.4792,
+    "after": 3819.4792
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 49,
+    "path": "people.0.total",
+    "before": 6670.9368,
+    "after": 6328.9368
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 50,
+    "path": "total",
+    "before": 39793.6064,
+    "after": 39679.6064
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 50,
+    "path": "prov",
+    "before": 4729.9132,
+    "after": 4615.9132
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 50,
+    "path": "netTotal",
+    "before": 7409.3921,
+    "after": 7295.3921
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 50,
+    "path": "incomeTax",
+    "before": 9314.8321,
+    "after": 9200.8321
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 50,
+    "path": "gross",
+    "before": 46645.1964,
+    "after": 46531.1964
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 50,
+    "path": "avg",
+    "before": 0.5852,
+    "after": 0.5835
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 50,
+    "path": "grossAvg",
+    "before": 0.686,
+    "after": 0.6843
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 50,
+    "path": "margBy.fd",
+    "before": 0.6024,
+    "after": 0.6041
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 50,
+    "path": "people.0.pKid",
+    "before": 0,
+    "after": 114
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 50,
+    "path": "people.0.kidAmt",
+    "before": 0,
+    "after": 1200
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 50,
+    "path": "people.0.prov",
+    "before": 4729.9132,
+    "after": 4615.9132
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 50,
+    "path": "people.0.total",
+    "before": 14260.9821,
+    "after": 14146.9821
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 51,
+    "path": "total",
+    "before": 13838.2282,
+    "after": 13724.2282
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 51,
+    "path": "prov",
+    "before": 5845.871,
+    "after": 5731.871
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 51,
+    "path": "netTotal",
+    "before": 11246.2282,
+    "after": 11132.2282
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 51,
+    "path": "incomeTax",
+    "before": 11801.1882,
+    "after": 11687.1882
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 51,
+    "path": "gross",
+    "before": 19762.7082,
+    "after": 19648.7082
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 51,
+    "path": "avg",
+    "before": 0.1845,
+    "after": 0.183
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 51,
+    "path": "grossAvg",
+    "before": 0.2635,
+    "after": 0.262
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 51,
+    "path": "people.0.pKid",
+    "before": 0,
+    "after": 114
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 51,
+    "path": "people.0.kidAmt",
+    "before": 0,
+    "after": 1200
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 51,
+    "path": "people.0.prov",
+    "before": 5845.871,
+    "after": 5731.871
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 51,
+    "path": "people.0.total",
+    "before": 17170.7082,
+    "after": 17056.7082
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 57,
+    "path": "people.0.kidAmt",
+    "before": 0,
+    "after": 3600
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 60,
+    "path": "people.1.kidAmt",
+    "before": 0,
+    "after": 1200
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 61,
+    "path": "people.1.kidAmt",
+    "before": 0,
+    "after": 1200
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 63,
+    "path": "total",
+    "before": -3961.2797,
+    "after": -4189.2797
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 63,
+    "path": "prov",
+    "before": 3029.5416,
+    "after": 2801.5416
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 63,
+    "path": "netTotal",
+    "before": -6701.7834,
+    "after": -6929.7834
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 63,
+    "path": "incomeTax",
+    "before": 5358.3366,
+    "after": 5130.3366
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 63,
+    "path": "gross",
+    "before": 12059.5903,
+    "after": 11831.5903
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 63,
+    "path": "avg",
+    "before": -0.072,
+    "after": -0.0762
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 63,
+    "path": "grossAvg",
+    "before": 0.2193,
+    "after": 0.2151
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 63,
+    "path": "people.0.pKid",
+    "before": 0,
+    "after": 228
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 63,
+    "path": "people.0.kidAmt",
+    "before": 0,
+    "after": 2400
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 63,
+    "path": "people.0.prov",
+    "before": 3029.5416,
+    "after": 2801.5416
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 63,
+    "path": "people.0.total",
+    "before": 9319.0867,
+    "after": 9091.0867
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 64,
+    "path": "total",
+    "before": -755.8779,
+    "after": -1097.8779
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 64,
+    "path": "prov",
+    "before": 4729.9132,
+    "after": 4387.9132
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 64,
+    "path": "netTotal",
+    "before": -11555.8779,
+    "after": -11897.8779
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 64,
+    "path": "incomeTax",
+    "before": 9314.8321,
+    "after": 8972.8321
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 64,
+    "path": "gross",
+    "before": 25060.9821,
+    "after": 24718.9821
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 64,
+    "path": "avg",
+    "before": -0.0111,
+    "after": -0.0161
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 64,
+    "path": "grossAvg",
+    "before": 0.3685,
+    "after": 0.3635
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 64,
+    "path": "margBy.fd",
+    "before": 0.7124,
+    "after": 0.7174
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 64,
+    "path": "people.0.pKid",
+    "before": 0,
+    "after": 342
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 64,
+    "path": "people.0.kidAmt",
+    "before": 0,
+    "after": 3600
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 64,
+    "path": "people.0.prov",
+    "before": 4729.9132,
+    "after": 4387.9132
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 64,
+    "path": "people.0.total",
+    "before": 14260.9821,
+    "after": 13918.9821
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 65,
+    "path": "people.1.kidAmt",
+    "before": 0,
+    "after": 1200
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 66,
+    "path": "total",
+    "before": -7507.9618,
+    "after": -7963.9618
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 66,
+    "path": "prov",
+    "before": 5845.871,
+    "after": 5389.871
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 66,
+    "path": "netTotal",
+    "before": -9127.9618,
+    "after": -9583.9618
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 66,
+    "path": "incomeTax",
+    "before": 11801.1882,
+    "after": 11345.1882
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 66,
+    "path": "gross",
+    "before": 18790.7082,
+    "after": 18334.7082
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 66,
+    "path": "avg",
+    "before": -0.1001,
+    "after": -0.1062
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 66,
+    "path": "grossAvg",
+    "before": 0.2505,
+    "after": 0.2445
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 66,
+    "path": "people.0.pKid",
+    "before": 0,
+    "after": 456
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 66,
+    "path": "people.0.kidAmt",
+    "before": 0,
+    "after": 4800
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 66,
+    "path": "people.0.prov",
+    "before": 5845.871,
+    "after": 5389.871
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 66,
+    "path": "people.0.total",
+    "before": 17170.7082,
+    "after": 16714.7082
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 69,
+    "path": "total",
+    "before": 35510.462,
+    "after": 35396.462
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 69,
+    "path": "prov",
+    "before": 8284.9248,
+    "after": 8170.9248
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 69,
+    "path": "netTotal",
+    "before": 8840.462,
+    "after": 8726.462
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 69,
+    "path": "incomeTax",
+    "before": 17940.897,
+    "after": 17826.897
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 69,
+    "path": "gross",
+    "before": 52046.167,
+    "after": 51932.167
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 69,
+    "path": "avg",
+    "before": 0.3382,
+    "after": 0.3371
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 69,
+    "path": "grossAvg",
+    "before": 0.4957,
+    "after": 0.4946
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 69,
+    "path": "people.1.pKid",
+    "before": 0,
+    "after": 114
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 69,
+    "path": "people.1.kidAmt",
+    "before": 0,
+    "after": 1200
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 69,
+    "path": "people.1.prov",
+    "before": 1228.7537,
+    "after": 1114.7537
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 69,
+    "path": "people.1.total",
+    "before": 4691.8788,
+    "after": 4577.8788
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 70,
+    "path": "people.1.kidAmt",
+    "before": 0,
+    "after": 1200
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 71,
+    "path": "total",
+    "before": 41478.9799,
+    "after": 41250.9799
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 71,
+    "path": "prov",
+    "before": 19209.2538,
+    "after": 18981.2538
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 71,
+    "path": "netTotal",
+    "before": 39318.9799,
+    "after": 39090.9799
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 71,
+    "path": "incomeTax",
+    "before": 41034.2279,
+    "after": 40806.2279
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 71,
+    "path": "gross",
+    "before": 49892.4979,
+    "after": 49664.4979
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 71,
+    "path": "avg",
+    "before": 0.1994,
+    "after": 0.1983
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 71,
+    "path": "grossAvg",
+    "before": 0.2399,
+    "after": 0.2388
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 71,
+    "path": "people.0.pKid",
+    "before": 0,
+    "after": 228
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 71,
+    "path": "people.0.kidAmt",
+    "before": 0,
+    "after": 2400
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 71,
+    "path": "people.0.prov",
+    "before": 14581.9976,
+    "after": 14353.9976
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 71,
+    "path": "people.0.total",
+    "before": 37853.6548,
+    "after": 37625.6548
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 74,
+    "path": "total",
+    "before": 87577.4382,
+    "after": 87463.4382
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 74,
+    "path": "prov",
+    "before": 23280.669,
+    "after": 23166.669
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 74,
+    "path": "netTotal",
+    "before": 56479.4382,
+    "after": 56365.4382
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 74,
+    "path": "incomeTax",
+    "before": 53486.0862,
+    "after": 53372.0862
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 74,
+    "path": "gross",
+    "before": 90353.6062,
+    "after": 90239.6062
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 74,
+    "path": "avg",
+    "before": 0.5474,
+    "after": 0.5466
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 74,
+    "path": "grossAvg",
+    "before": 0.5647,
+    "after": 0.564
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 74,
+    "path": "people.0.pKid",
+    "before": 0,
+    "after": 114
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 74,
+    "path": "people.0.kidAmt",
+    "before": 0,
+    "after": 1200
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 74,
+    "path": "people.0.prov",
+    "before": 23280.669,
+    "after": 23166.669
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 74,
+    "path": "people.0.total",
+    "before": 59255.6062,
+    "after": 59141.6062
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 76,
+    "path": "total",
+    "before": 87197.6342,
+    "after": 86969.6342
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 76,
+    "path": "prov",
+    "before": 32547.799,
+    "after": 32319.799
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 76,
+    "path": "netTotal",
+    "before": 58547.6342,
+    "after": 58319.6342
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 76,
+    "path": "incomeTax",
+    "before": 73116.9442,
+    "after": 72888.9442
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 76,
+    "path": "gross",
+    "before": 107536.4642,
+    "after": 107308.4642
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 76,
+    "path": "avg",
+    "before": 0.3559,
+    "after": 0.355
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 76,
+    "path": "grossAvg",
+    "before": 0.4389,
+    "after": 0.438
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 76,
+    "path": "people.0.pKid",
+    "before": 0,
+    "after": 228
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 76,
+    "path": "people.0.kidAmt",
+    "before": 0,
+    "after": 2400
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 76,
+    "path": "people.0.prov",
+    "before": 32547.799,
+    "after": 32319.799
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 76,
+    "path": "people.0.total",
+    "before": 78886.4642,
+    "after": 78658.4642
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 77,
+    "path": "people.0.kidAmt",
+    "before": 0,
+    "after": 1200
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 80,
+    "path": "people.1.kidAmt",
+    "before": 0,
+    "after": 4800
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 84,
+    "path": "total",
+    "before": 42268.2162,
+    "after": 41812.2162
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 84,
+    "path": "prov",
+    "before": 20645.369,
+    "after": 20189.369
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 84,
+    "path": "netTotal",
+    "before": 36868.2162,
+    "after": 36412.2162
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 84,
+    "path": "incomeTax",
+    "before": 46244.2262,
+    "after": 45788.2262
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 84,
+    "path": "gross",
+    "before": 57413.7462,
+    "after": 56957.7462
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 84,
+    "path": "avg",
+    "before": 0.2642,
+    "after": 0.2613
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 84,
+    "path": "grossAvg",
+    "before": 0.3588,
+    "after": 0.356
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 84,
+    "path": "people.0.pKid",
+    "before": 0,
+    "after": 456
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 84,
+    "path": "people.0.kidAmt",
+    "before": 0,
+    "after": 4800
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 84,
+    "path": "people.0.prov",
+    "before": 20645.369,
+    "after": 20189.369
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 84,
+    "path": "people.0.total",
+    "before": 52013.7462,
+    "after": 51557.7462
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 86,
+    "path": "total",
+    "before": 99757.6194,
+    "after": 99643.6194
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 86,
+    "path": "prov",
+    "before": 32995.44,
+    "after": 32881.44
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 86,
+    "path": "netTotal",
+    "before": 83632.6194,
+    "after": 83518.6194
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 86,
+    "path": "incomeTax",
+    "before": 74199.1744,
+    "after": 74085.1744
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 86,
+    "path": "gross",
+    "before": 101863.2144,
+    "after": 101749.2144
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 86,
+    "path": "avg",
+    "before": 0.3837,
+    "after": 0.3832
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 86,
+    "path": "grossAvg",
+    "before": 0.3918,
+    "after": 0.3913
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 86,
+    "path": "people.0.pKid",
+    "before": 0,
+    "after": 114
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 86,
+    "path": "people.0.kidAmt",
+    "before": 0,
+    "after": 1200
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 86,
+    "path": "people.0.prov",
+    "before": 11139.771,
+    "after": 11025.771
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 86,
+    "path": "people.0.total",
+    "before": 30210.8882,
+    "after": 30096.8882
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 87,
+    "path": "total",
+    "before": 99636.1334,
+    "after": 99522.1334
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 87,
+    "path": "prov",
+    "before": 28245.369,
+    "after": 28131.369
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 87,
+    "path": "netTotal",
+    "before": 69143.3985,
+    "after": 69029.3985
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 87,
+    "path": "incomeTax",
+    "before": 64870.0465,
+    "after": 64756.0465
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 87,
+    "path": "gross",
+    "before": 101132.3014,
+    "after": 101018.3014
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 87,
+    "path": "avg",
+    "before": 0.4982,
+    "after": 0.4976
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 87,
+    "path": "grossAvg",
+    "before": 0.5057,
+    "after": 0.5051
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 87,
+    "path": "people.0.pKid",
+    "before": 0,
+    "after": 114
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 87,
+    "path": "people.0.kidAmt",
+    "before": 0,
+    "after": 1200
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 87,
+    "path": "people.0.prov",
+    "before": 28245.369,
+    "after": 28131.369
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 87,
+    "path": "people.0.total",
+    "before": 70639.5665,
+    "after": 70525.5665
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 89,
+    "path": "total",
+    "before": 7692.2764,
+    "after": 7350.2764
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 89,
+    "path": "prov",
+    "before": 5695.9874,
+    "after": 5353.9874
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 89,
+    "path": "netTotal",
+    "before": -2357.7236,
+    "after": -2699.7236
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 89,
+    "path": "incomeTax",
+    "before": 12060.5414,
+    "after": 11718.5414
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 89,
+    "path": "gross",
+    "before": 28743.4414,
+    "after": 28401.4414
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 89,
+    "path": "avg",
+    "before": 0.0827,
+    "after": 0.079
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 89,
+    "path": "grossAvg",
+    "before": 0.3091,
+    "after": 0.3054
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 89,
+    "path": "people.1.pKid",
+    "before": 0,
+    "after": 342
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 89,
+    "path": "people.1.kidAmt",
+    "before": 0,
+    "after": 3600
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 89,
+    "path": "people.1.prov",
+    "before": 1456.1458,
+    "after": 1114.1458
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 89,
+    "path": "people.1.total",
+    "before": 5860.7748,
+    "after": 5518.7748
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 91,
+    "path": "people.1.kidAmt",
+    "before": 0,
+    "after": 1200
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 98,
+    "path": "total",
+    "before": -8975.5242,
+    "after": -9203.5242
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 98,
+    "path": "prov",
+    "before": 5673.3448,
+    "after": 5445.3448
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 98,
+    "path": "netTotal",
+    "before": -14056.0278,
+    "after": -14284.0278
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 98,
+    "path": "incomeTax",
+    "before": 10784.1372,
+    "after": 10556.1372
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 98,
+    "path": "gross",
+    "before": 20678.3408,
+    "after": 20450.3408
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 98,
+    "path": "avg",
+    "before": -0.0787,
+    "after": -0.0807
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 98,
+    "path": "grossAvg",
+    "before": 0.1814,
+    "after": 0.1794
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 98,
+    "path": "people.1.pKid",
+    "before": 0,
+    "after": 228
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 98,
+    "path": "people.1.kidAmt",
+    "before": 0,
+    "after": 2400
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 98,
+    "path": "people.1.prov",
+    "before": 3223.0256,
+    "after": 2995.0256
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 98,
+    "path": "people.1.total",
+    "before": 10174.3467,
+    "after": 9946.3467
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 99,
+    "path": "people.0.pKid",
+    "before": 0,
+    "after": 18.4537
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 99,
+    "path": "people.0.kidAmt",
+    "before": 0,
+    "after": 4800
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 99,
+    "path": "people.0.lowRed",
+    "before": 18.4537,
+    "after": 0
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 100,
+    "path": "people.1.kidAmt",
+    "before": 0,
+    "after": 2400
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 103,
+    "path": "total",
+    "before": -543.7397,
+    "after": -657.7397
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 103,
+    "path": "prov",
+    "before": 868.8076,
+    "after": 754.8076
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 103,
+    "path": "netTotal",
+    "before": -8294.2433,
+    "after": -8408.2433
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 103,
+    "path": "incomeTax",
+    "before": 998.0067,
+    "after": 884.0067
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 103,
+    "path": "gross",
+    "before": 11420.6603,
+    "after": 11306.6603
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 103,
+    "path": "avg",
+    "before": -0.0143,
+    "after": -0.0173
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 103,
+    "path": "grossAvg",
+    "before": 0.3005,
+    "after": 0.2975
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 103,
+    "path": "margBy.fd",
+    "before": 0.6475,
+    "after": 0.6506
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 103,
+    "path": "people.0.pKid",
+    "before": 0,
+    "after": 114
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 103,
+    "path": "people.0.kidAmt",
+    "before": 0,
+    "after": 1200
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 103,
+    "path": "people.0.prov",
+    "before": 868.8076,
+    "after": 754.8076
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 103,
+    "path": "people.0.total",
+    "before": 3670.1567,
+    "after": 3556.1567
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 106,
+    "path": "total",
+    "before": 107387.6196,
+    "after": 107159.6196
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 106,
+    "path": "prov",
+    "before": 38105.44,
+    "after": 37877.44
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 106,
+    "path": "netTotal",
+    "before": 98747.6196,
+    "after": 98519.6196
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 106,
+    "path": "incomeTax",
+    "before": 87208.5796,
+    "after": 86980.5796
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 106,
+    "path": "gross",
+    "before": 107387.6196,
+    "after": 107159.6196
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 106,
+    "path": "avg",
+    "before": 0.3768,
+    "after": 0.376
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 106,
+    "path": "grossAvg",
+    "before": 0.3768,
+    "after": 0.376
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 106,
+    "path": "people.0.pKid",
+    "before": 0,
+    "after": 228
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 106,
+    "path": "people.0.kidAmt",
+    "before": 0,
+    "after": 2400
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 106,
+    "path": "people.0.prov",
+    "before": 8649.771,
+    "after": 8421.771
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 106,
+    "path": "people.0.total",
+    "before": 24645.8882,
+    "after": 24417.8882
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 107,
+    "path": "total",
+    "before": 20004.2542,
+    "after": 19662.2542
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 107,
+    "path": "prov",
+    "before": 3560.7921,
+    "after": 3218.7921
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 107,
+    "path": "netTotal",
+    "before": -10848.4807,
+    "after": -11190.4807
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 107,
+    "path": "incomeTax",
+    "before": 6441.1093,
+    "after": 6099.1093
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 107,
+    "path": "gross",
+    "before": 42663.3642,
+    "after": 42321.3642
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 107,
+    "path": "avg",
+    "before": 0.2667,
+    "after": 0.2622
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 107,
+    "path": "grossAvg",
+    "before": 0.5688,
+    "after": 0.5643
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 107,
+    "path": "margBy.fd",
+    "before": 0.6206,
+    "after": 0.6264
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 107,
+    "path": "people.0.pKid",
+    "before": 0,
+    "after": 342
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 107,
+    "path": "people.0.kidAmt",
+    "before": 0,
+    "after": 3600
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 107,
+    "path": "people.0.prov",
+    "before": 3560.7921,
+    "after": 3218.7921
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 107,
+    "path": "people.0.total",
+    "before": 11810.6293,
+    "after": 11468.6293
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 108,
+    "path": "people.1.kidAmt",
+    "before": 0,
+    "after": 2400
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 109,
+    "path": "total",
+    "before": 108284.6965,
+    "after": 108170.6965
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 109,
+    "path": "prov",
+    "before": 38234.099,
+    "after": 38120.099
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 109,
+    "path": "netTotal",
+    "before": 92474.6965,
+    "after": 92360.6965
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 109,
+    "path": "incomeTax",
+    "before": 89653.7065,
+    "after": 89539.7065
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 109,
+    "path": "gross",
+    "before": 111233.2265,
+    "after": 111119.2265
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 109,
+    "path": "avg",
+    "before": 0.4331,
+    "after": 0.4327
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 109,
+    "path": "grossAvg",
+    "before": 0.4449,
+    "after": 0.4445
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 109,
+    "path": "people.0.pKid",
+    "before": 0,
+    "after": 114
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 109,
+    "path": "people.0.kidAmt",
+    "before": 0,
+    "after": 1200
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 109,
+    "path": "people.0.prov",
+    "before": 38234.099,
+    "after": 38120.099
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 109,
+    "path": "people.0.total",
+    "before": 95423.2265,
+    "after": 95309.2265
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 111,
+    "path": "people.1.kidAmt",
+    "before": 0,
+    "after": 1200
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 114,
+    "path": "total",
+    "before": 9573.3051,
+    "after": 9352.1916
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 114,
+    "path": "prov",
+    "before": 9145.0845,
+    "after": 8923.971
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 114,
+    "path": "netTotal",
+    "before": 7413.3051,
+    "after": 7192.1916
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 114,
+    "path": "marg",
+    "before": 0.5014,
+    "after": 0.5013
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 114,
+    "path": "invTax",
+    "before": 23358.9685,
+    "after": 23365.8549
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 114,
+    "path": "incomeTax",
+    "before": 17461.7151,
+    "after": 17240.6016
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 114,
+    "path": "gross",
+    "before": 22976.0651,
+    "after": 22754.9516
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 114,
+    "path": "avg",
+    "before": 0.0895,
+    "after": 0.0874
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 114,
+    "path": "grossAvg",
+    "before": 0.2147,
+    "after": 0.2127
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 114,
+    "path": "margBy.ord",
+    "before": 0.5014,
+    "after": 0.5013
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 114,
+    "path": "margBy.ed",
+    "before": 0.2726,
+    "after": 0.2725
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 114,
+    "path": "margBy.nd",
+    "before": 0.3966,
+    "after": 0.3965
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 114,
+    "path": "margBy.fd",
+    "before": 0.5213,
+    "after": 0.5236
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 114,
+    "path": "people.0.pKid",
+    "before": 0,
+    "after": 228
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 114,
+    "path": "people.0.kidAmt",
+    "before": 0,
+    "after": 2400
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 114,
+    "path": "people.0.pFtc",
+    "before": 284.8197,
+    "after": 277.9332
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 114,
+    "path": "people.0.prov",
+    "before": 9145.0845,
+    "after": 8923.971
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 114,
+    "path": "people.0.total",
+    "before": 20816.0651,
+    "after": 20594.9516
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 116,
+    "path": "total",
+    "before": -18354.8367,
+    "after": -18810.8367
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 116,
+    "path": "prov",
+    "before": 4158.2153,
+    "after": 3702.2153
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 116,
+    "path": "netTotal",
+    "before": -26454.8367,
+    "after": -26910.8367
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 116,
+    "path": "incomeTax",
+    "before": 9023.1733,
+    "after": 8567.1733
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 116,
+    "path": "gross",
+    "before": 22467.4733,
+    "after": 22011.4733
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 116,
+    "path": "avg",
+    "before": -0.2415,
+    "after": -0.2475
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 116,
+    "path": "grossAvg",
+    "before": 0.2956,
+    "after": 0.2896
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 116,
+    "path": "people.0.pKid",
+    "before": 0,
+    "after": 456
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 116,
+    "path": "people.0.kidAmt",
+    "before": 0,
+    "after": 4800
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 116,
+    "path": "people.0.prov",
+    "before": 2079.1077,
+    "after": 1623.1077
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 116,
+    "path": "people.0.total",
+    "before": 7183.7367,
+    "after": 6727.7367
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 119,
+    "path": "people.1.kidAmt",
+    "before": 0,
+    "after": 2400
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 121,
+    "path": "total",
+    "before": -23490.4933,
+    "after": -23492.051
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 121,
+    "path": "prov",
+    "before": 1.5576,
+    "after": 0
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 121,
+    "path": "netTotal",
+    "before": -34290.4934,
+    "after": -34292.051
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 121,
+    "path": "marg",
+    "before": 0.5303,
+    "after": 0.3537
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 121,
+    "path": "incomeTax",
+    "before": 130.7567,
+    "after": 129.199
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 121,
+    "path": "gross",
+    "before": 13602.9067,
+    "after": 13601.349
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 121,
+    "path": "grossAvg",
+    "before": 0.358,
+    "after": 0.3579
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 121,
+    "path": "margBy.ord",
+    "before": 0.5303,
+    "after": 0.3537
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 121,
+    "path": "margBy.cg",
+    "before": 0.2374,
+    "after": 0.145
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 121,
+    "path": "margBy.ed",
+    "before": 0.3029,
+    "after": 0.1929
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 121,
+    "path": "margBy.nd",
+    "before": 0.4271,
+    "after": 0.2297
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 121,
+    "path": "margBy.fd",
+    "before": 0.6204,
+    "after": 0.4362
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 121,
+    "path": "people.0.pKid",
+    "before": 0,
+    "after": 342
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 121,
+    "path": "people.0.kidAmt",
+    "before": 0,
+    "after": 3600
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 121,
+    "path": "people.0.lowRed",
+    "before": 867.25,
+    "after": 526.8076
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 121,
+    "path": "people.0.prov",
+    "before": 1.5576,
+    "after": 0
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 121,
+    "path": "people.0.total",
+    "before": 2802.9067,
+    "after": 2801.349
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 126,
+    "path": "total",
+    "before": 52590.6925,
+    "after": 52476.6925
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 126,
+    "path": "prov",
+    "before": 20963.3708,
+    "after": 20849.3708
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 126,
+    "path": "netTotal",
+    "before": 44490.6925,
+    "after": 44376.6925
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 126,
+    "path": "invTax",
+    "before": 18107.5927,
+    "after": 17993.5927
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 126,
+    "path": "incomeTax",
+    "before": 43426.5425,
+    "after": 43312.5425
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 126,
+    "path": "gross",
+    "before": 57694.2125,
+    "after": 57580.2125
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 126,
+    "path": "avg",
+    "before": 0.2492,
+    "after": 0.2487
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 126,
+    "path": "grossAvg",
+    "before": 0.2734,
+    "after": 0.2729
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 126,
+    "path": "people.0.pKid",
+    "before": 0,
+    "after": 114
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 126,
+    "path": "people.0.kidAmt",
+    "before": 0,
+    "after": 1200
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 126,
+    "path": "people.0.prov",
+    "before": 6381.3731,
+    "after": 6267.3731
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 126,
+    "path": "people.0.total",
+    "before": 11740.5576,
+    "after": 11626.5576
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 129,
+    "path": "total",
+    "before": 70578.8729,
+    "after": 70464.8729
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 129,
+    "path": "prov",
+    "before": 26095.5106,
+    "after": 25981.5106
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 129,
+    "path": "netTotal",
+    "before": 65178.8729,
+    "after": 65064.8729
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 129,
+    "path": "incomeTax",
+    "before": 58629.7229,
+    "after": 58515.7229
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 129,
+    "path": "gross",
+    "before": 73759.9929,
+    "after": 73645.9929
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 129,
+    "path": "avg",
+    "before": 0.3283,
+    "after": 0.3277
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 129,
+    "path": "grossAvg",
+    "before": 0.3431,
+    "after": 0.3425
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 129,
+    "path": "people.0.pKid",
+    "before": 0,
+    "after": 114
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 129,
+    "path": "people.0.kidAmt",
+    "before": 0,
+    "after": 1200
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 129,
+    "path": "people.0.prov",
+    "before": 4239.8416,
+    "after": 4125.8416
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 129,
+    "path": "people.0.total",
+    "before": 12832.6666,
+    "after": 12718.6666
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 136,
+    "path": "total",
+    "before": -9017.1718,
+    "after": -9359.1718
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 136,
+    "path": "prov",
+    "before": 7439.471,
+    "after": 7097.471
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 136,
+    "path": "netTotal",
+    "before": -14417.1718,
+    "after": -14759.1718
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 136,
+    "path": "incomeTax",
+    "before": 15362.7882,
+    "after": 15020.7882
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 136,
+    "path": "gross",
+    "before": 26532.3082,
+    "after": 26190.3082
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 136,
+    "path": "avg",
+    "before": -0.1061,
+    "after": -0.1101
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 136,
+    "path": "grossAvg",
+    "before": 0.3121,
+    "after": 0.3081
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 136,
+    "path": "people.0.pKid",
+    "before": 0,
+    "after": 342
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 136,
+    "path": "people.0.kidAmt",
+    "before": 0,
+    "after": 3600
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 136,
+    "path": "people.0.prov",
+    "before": 7439.471,
+    "after": 7097.471
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 136,
+    "path": "people.0.total",
+    "before": 21132.3082,
+    "after": 20790.3082
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 142,
+    "path": "total",
+    "before": 85134.5311,
+    "after": 84564.5311
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 142,
+    "path": "prov",
+    "before": 39869.399,
+    "after": 39299.399
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 142,
+    "path": "netTotal",
+    "before": 77531.7962,
+    "after": 76961.7962
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 142,
+    "path": "incomeTax",
+    "before": 94047.8062,
+    "after": 93477.8062
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 142,
+    "path": "gross",
+    "before": 107420.0611,
+    "after": 106850.0611
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 142,
+    "path": "avg",
+    "before": 0.3405,
+    "after": 0.3383
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 142,
+    "path": "grossAvg",
+    "before": 0.4297,
+    "after": 0.4274
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 142,
+    "path": "people.0.pKid",
+    "before": 0,
+    "after": 570
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 142,
+    "path": "people.0.kidAmt",
+    "before": 0,
+    "after": 6000
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 142,
+    "path": "people.0.prov",
+    "before": 39869.399,
+    "after": 39299.399
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 142,
+    "path": "people.0.total",
+    "before": 99817.3262,
+    "after": 99247.3262
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 143,
+    "path": "total",
+    "before": 3106.9675,
+    "after": 3055.6058
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 143,
+    "path": "prov",
+    "before": 2656.5954,
+    "after": 2605.2336
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 143,
+    "path": "netTotal",
+    "before": -713.5361,
+    "after": -764.8978
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 143,
+    "path": "marg",
+    "before": 0.4309,
+    "after": 0.3431
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 143,
+    "path": "invTax",
+    "before": 9823.3639,
+    "after": 9772.0022
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 143,
+    "path": "incomeTax",
+    "before": 5585.0039,
+    "after": 5533.6422
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 143,
+    "path": "gross",
+    "before": 11793.6075,
+    "after": 11742.2458
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 143,
+    "path": "avg",
+    "before": 0.0349,
+    "after": 0.0343
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 143,
+    "path": "grossAvg",
+    "before": 0.1325,
+    "after": 0.1319
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 143,
+    "path": "margBy.ord",
+    "before": 0.4309,
+    "after": 0.3431
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 143,
+    "path": "margBy.cg",
+    "before": 0.1825,
+    "after": 0.135
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 143,
+    "path": "margBy.ed",
+    "before": 0.3588,
+    "after": 0.3726
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 143,
+    "path": "margBy.nd",
+    "before": 0.4048,
+    "after": 0.3105
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 143,
+    "path": "margBy.fd",
+    "before": 0.365,
+    "after": 0.27
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 143,
+    "path": "people.0.pKid",
+    "before": 0,
+    "after": 51.3617
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 143,
+    "path": "people.0.kidAmt",
+    "before": 0,
+    "after": 1200
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 143,
+    "path": "people.0.prov",
+    "before": 51.3617,
+    "after": 0
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 143,
+    "path": "people.0.total",
+    "before": 1510.7118,
+    "after": 1459.35
+  },
+  {
+    "file": "tests/golden/2026.json",
+    "year": 2026,
+    "scenario": 145,
+    "path": "people.0.kidAmt",
+    "before": 0,
+    "after": 2400
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2025,
+    "scenario": 153,
+    "path": "total",
+    "before": 14675.3518,
+    "after": 14561.3518
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2025,
+    "scenario": 153,
+    "path": "prov",
+    "before": 6952.6533,
+    "after": 6838.6533
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2025,
+    "scenario": 153,
+    "path": "netTotal",
+    "before": 11075.3518,
+    "after": 10961.3518
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2025,
+    "scenario": 153,
+    "path": "incomeTax",
+    "before": 15023.7158,
+    "after": 14909.7158
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2025,
+    "scenario": 153,
+    "path": "gross",
+    "before": 22761.2158,
+    "after": 22647.2158
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2025,
+    "scenario": 153,
+    "path": "avg",
+    "before": 0.1545,
+    "after": 0.1533
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2025,
+    "scenario": 153,
+    "path": "grossAvg",
+    "before": 0.2396,
+    "after": 0.2384
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2025,
+    "scenario": 153,
+    "path": "margBy.fd",
+    "before": 0.3379,
+    "after": 0.3405
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2025,
+    "scenario": 153,
+    "path": "people.0.pKid",
+    "before": 0,
+    "after": 114
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2025,
+    "scenario": 153,
+    "path": "people.0.kidAmt",
+    "before": 0,
+    "after": 1200
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2025,
+    "scenario": 153,
+    "path": "people.0.prov",
+    "before": 3063.5016,
+    "after": 2949.5016
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2025,
+    "scenario": 153,
+    "path": "people.0.total",
+    "before": 9454.2279,
+    "after": 9340.2279
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2025,
+    "scenario": 154,
+    "path": "total",
+    "before": -6511.9481,
+    "after": -6625.9481
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2025,
+    "scenario": 154,
+    "path": "prov",
+    "before": 2287.7516,
+    "after": 2173.7516
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2025,
+    "scenario": 154,
+    "path": "netTotal",
+    "before": -10111.9481,
+    "after": -10225.9481
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2025,
+    "scenario": 154,
+    "path": "incomeTax",
+    "before": 4000.1219,
+    "after": 3886.1219
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2025,
+    "scenario": 154,
+    "path": "gross",
+    "before": 9061.6719,
+    "after": 8947.6719
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2025,
+    "scenario": 154,
+    "path": "avg",
+    "before": -0.1386,
+    "after": -0.141
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2025,
+    "scenario": 154,
+    "path": "grossAvg",
+    "before": 0.1928,
+    "after": 0.1904
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2025,
+    "scenario": 154,
+    "path": "margBy.fd",
+    "before": 0.6788,
+    "after": 0.6813
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2025,
+    "scenario": 154,
+    "path": "people.0.pKid",
+    "before": 0,
+    "after": 114
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2025,
+    "scenario": 154,
+    "path": "people.0.kidAmt",
+    "before": 0,
+    "after": 1200
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2025,
+    "scenario": 154,
+    "path": "people.0.prov",
+    "before": 2287.7516,
+    "after": 2173.7516
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2025,
+    "scenario": 154,
+    "path": "people.0.total",
+    "before": 5461.6719,
+    "after": 5347.6719
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2025,
+    "scenario": 155,
+    "path": "total",
+    "before": -7765.4466,
+    "after": -7993.4466
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2025,
+    "scenario": 155,
+    "path": "prov",
+    "before": 4185.0434,
+    "after": 3957.0434
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2025,
+    "scenario": 155,
+    "path": "netTotal",
+    "before": -11365.4466,
+    "after": -11593.4466
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2025,
+    "scenario": 155,
+    "path": "incomeTax",
+    "before": 8365.1334,
+    "after": 8137.1334
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2025,
+    "scenario": 155,
+    "path": "gross",
+    "before": 11965.1334,
+    "after": 11737.1334
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2025,
+    "scenario": 155,
+    "path": "avg",
+    "before": -0.1294,
+    "after": -0.1332
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2025,
+    "scenario": 155,
+    "path": "grossAvg",
+    "before": 0.1994,
+    "after": 0.1956
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2025,
+    "scenario": 155,
+    "path": "margBy.fd",
+    "before": 0.6099,
+    "after": 0.6137
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2025,
+    "scenario": 155,
+    "path": "people.0.pKid",
+    "before": 0,
+    "after": 228
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2025,
+    "scenario": 155,
+    "path": "people.0.kidAmt",
+    "before": 0,
+    "after": 2400
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2025,
+    "scenario": 155,
+    "path": "people.0.prov",
+    "before": 4185.0434,
+    "after": 3957.0434
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2025,
+    "scenario": 155,
+    "path": "people.0.total",
+    "before": 8365.1334,
+    "after": 8137.1334
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2026,
+    "scenario": 153,
+    "path": "total",
+    "before": 13679.0586,
+    "after": 13565.0586
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2026,
+    "scenario": 153,
+    "path": "prov",
+    "before": 6839.0833,
+    "after": 6725.0833
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2026,
+    "scenario": 153,
+    "path": "netTotal",
+    "before": 9944.8443,
+    "after": 9830.8443
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2026,
+    "scenario": 153,
+    "path": "incomeTax",
+    "before": 14533.8333,
+    "after": 14419.8333
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2026,
+    "scenario": 153,
+    "path": "gross",
+    "before": 22399.5476,
+    "after": 22285.5476
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2026,
+    "scenario": 153,
+    "path": "avg",
+    "before": 0.144,
+    "after": 0.1428
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2026,
+    "scenario": 153,
+    "path": "grossAvg",
+    "before": 0.2358,
+    "after": 0.2346
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2026,
+    "scenario": 153,
+    "path": "margBy.fd",
+    "before": 0.3381,
+    "after": 0.3406
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2026,
+    "scenario": 153,
+    "path": "people.0.pKid",
+    "before": 0,
+    "after": 114
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2026,
+    "scenario": 153,
+    "path": "people.0.kidAmt",
+    "before": 0,
+    "after": 1200
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2026,
+    "scenario": 153,
+    "path": "people.0.prov",
+    "before": 3006.8116,
+    "after": 2892.8116
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2026,
+    "scenario": 153,
+    "path": "people.0.total",
+    "before": 9221.8167,
+    "after": 9107.8167
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2026,
+    "scenario": 154,
+    "path": "total",
+    "before": -7744.9891,
+    "after": -7858.9891
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2026,
+    "scenario": 154,
+    "path": "prov",
+    "before": 2202.6756,
+    "after": 2088.6756
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2026,
+    "scenario": 154,
+    "path": "netTotal",
+    "before": -11479.2034,
+    "after": -11593.2034
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2026,
+    "scenario": 154,
+    "path": "incomeTax",
+    "before": 3761.6666,
+    "after": 3647.6666
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2026,
+    "scenario": 154,
+    "path": "gross",
+    "before": 8955.2309,
+    "after": 8841.2309
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2026,
+    "scenario": 154,
+    "path": "avg",
+    "before": -0.1648,
+    "after": -0.1672
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2026,
+    "scenario": 154,
+    "path": "grossAvg",
+    "before": 0.1905,
+    "after": 0.1881
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2026,
+    "scenario": 154,
+    "path": "margBy.fd",
+    "before": 0.6789,
+    "after": 0.6814
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2026,
+    "scenario": 154,
+    "path": "people.0.pKid",
+    "before": 0,
+    "after": 114
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2026,
+    "scenario": 154,
+    "path": "people.0.kidAmt",
+    "before": 0,
+    "after": 1200
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2026,
+    "scenario": 154,
+    "path": "people.0.prov",
+    "before": 2202.6756,
+    "after": 2088.6756
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2026,
+    "scenario": 154,
+    "path": "people.0.total",
+    "before": 5221.0166,
+    "after": 5107.0166
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2026,
+    "scenario": 155,
+    "path": "total",
+    "before": -9487.2123,
+    "after": -9715.2123
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2026,
+    "scenario": 155,
+    "path": "prov",
+    "before": 4099.7584,
+    "after": 3871.7584
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2026,
+    "scenario": 155,
+    "path": "netTotal",
+    "before": -13221.4266,
+    "after": -13449.4266
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2026,
+    "scenario": 155,
+    "path": "incomeTax",
+    "before": 7989.2034,
+    "after": 7761.2034
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2026,
+    "scenario": 155,
+    "path": "gross",
+    "before": 11723.4177,
+    "after": 11495.4177
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2026,
+    "scenario": 155,
+    "path": "avg",
+    "before": -0.1581,
+    "after": -0.1619
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2026,
+    "scenario": 155,
+    "path": "grossAvg",
+    "before": 0.1954,
+    "after": 0.1916
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2026,
+    "scenario": 155,
+    "path": "margBy.fd",
+    "before": 0.5962,
+    "after": 0.6
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2026,
+    "scenario": 155,
+    "path": "people.0.pKid",
+    "before": 0,
+    "after": 228
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2026,
+    "scenario": 155,
+    "path": "people.0.kidAmt",
+    "before": 0,
+    "after": 2400
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2026,
+    "scenario": 155,
+    "path": "people.0.prov",
+    "before": 4099.7584,
+    "after": 3871.7584
+  },
+  {
+    "file": "tests/golden/other-income-original.json",
+    "year": 2026,
+    "scenario": 155,
+    "path": "people.0.total",
+    "before": 7989.2034,
+    "after": 7761.2034
+  }
+]

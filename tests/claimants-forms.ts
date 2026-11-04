@@ -1,7 +1,7 @@
 // Independent worksheet for the credits modelled by #92. No engine functions or runtime YAML are used.
 // 2025: cached {sk,ns,nu,nb,nl,pe}-428-2025, SK/NU(S2), federal-t1-2025 and T2036-2025.
 // 2026: separately typed annual parameters from data/years/2026; claimant rules provisionally follow 2025.
-// This is not a full return: seniors, PE's unmodelled young-child amount and childcare are outside this audit.
+// PE's young-child amount is included by #162. Seniors and childcare remain outside this audit.
 import assert from "node:assert/strict";
 import type { Household, Person } from "../src/engine/types.ts";
 
@@ -99,7 +99,7 @@ const forms: Record<number, Record<AuditedProvince, Form>> = {
       spouse: 12443,
       disregard: 1244,
       dividends: [0.105, 0.013],
-      child: 0,
+      child: 1200,
     },
   },
   2026: {
@@ -185,7 +185,7 @@ const forms: Record<number, Record<AuditedProvince, Form>> = {
       spouse: 12740,
       disregard: 1274,
       dividends: [0.105, 0.013],
-      child: 0,
+      child: 1200,
     },
   },
 };

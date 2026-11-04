@@ -147,7 +147,12 @@ test("other income counts in family net income for child benefits, but not in wo
     close(h.famNet, netOf(F, p, blank(15_000)) + 30_000, `${code}: family net income`);
     close(h.ccb, ccbOf(F, h.famNet, kids, under6), `${code}: CCB`);
     // The working components (Alberta, New Brunswick) see $15,000 of working income, not $45,000
-    close(h.provBen, provincialChildBenefit(p.childBenefit, h.famNet, 15_000, kids, true, under6), `${code}: benefit`);
+    const benefitNet = p.system === "quebec" ? h.breakdown.incomeBases.provincialFamily : h.famNet;
+    close(
+      h.provBen,
+      provincialChildBenefit(p.childBenefit, benefitNet, 15_000, kids, true, under6),
+      `${code}: benefit`,
+    );
     // And the other income claws benefits back: less CCB than with the employment income alone
     const without = household(y, p, hh([person({ ord: 15_000 })], { kids, under6 }));
     assert.ok(h.ccb < without.ccb, `${code}: other income should reduce the CCB`);
