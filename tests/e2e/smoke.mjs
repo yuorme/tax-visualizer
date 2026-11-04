@@ -17,6 +17,7 @@ import { CARBON_STEPS } from "./carbon.mjs";
 import { CHILDCARE_STEPS } from "./childcare.mjs";
 import { DEDUCTION_STEPS } from "./deductions.mjs";
 import { HISTORY_STEPS } from "./history.mjs";
+import { checkLedgerOrder } from "./ledger-order.mjs";
 import { checkManitobaFamilyLedger } from "./mb-family-benefit.mjs";
 import { ALLOWED_HOSTS, openPage, settle } from "./page.mjs";
 import { PORTFOLIO_RESPONSIVE_STEPS, PORTFOLIO_STEPS } from "./portfolio.mjs";
@@ -982,6 +983,12 @@ for (const width of [1000, 430, 375]) {
       steps: [["Quebec Health Services Fund inputs, totals and historical coverage", checkQuebecHealthFund]],
     });
     check(`${width}px ${colorScheme}, Quebec Health Services Fund`, width, healthFund);
+    const ledgerOrder = await run({
+      width,
+      colorScheme,
+      steps: [["Low-income reduction and foreign tax credit ledger order", checkLedgerOrder]],
+    });
+    check(`${width}px ${colorScheme}, ledger order`, width, ledgerOrder);
   }
 }
 
