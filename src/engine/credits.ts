@@ -6,7 +6,7 @@ import type { Credit, Person } from "./types.ts";
 
 export interface CreditInput {
   famNet: number;
-  provincialFamNet?: number; // Quebec income base, before the federal childcare deduction
+  provincialFamNet?: number; // Quebec line 275 sum; omit only when famNet already represents both bases
   famEmp: number;
   couple: boolean;
   kids: number;
@@ -89,7 +89,7 @@ export function creditsOf(fed: Federal, p: Province, f: CreditInput): Credit[] {
         break;
       }
       case "quebec-solidarity-tax-credit": {
-        // QST component + housing component, less a share of family income over the threshold
+        // Revenu Québec solidarity calculation: family income is the spouses' line 275 sum.
         const q = cr.params;
         const qst = q.qstAdult + (couple ? q.qstSpouse : q.qstAlone),
           housing = (couple ? q.housingCouple : q.housingSingle) + q.child * kids;
@@ -97,6 +97,8 @@ export function creditsOf(fed: Federal, p: Province, f: CreditInput): Credit[] {
         break;
       }
       case "quebec-work-premium": {
+        // Schedule P Part C, lines 52–54: line 275 sum for reduction. Part A work income stays gross of the
+        // worker deduction; do not use provincial net income for the phase-in or the federal CWB above.
         const q = cr.params;
         const [rate, excl, thr] = q[qcType(couple, kids)];
         out.push([

@@ -120,6 +120,7 @@ export function household(y: YearData, p: Province, hh: Household, peopleIn: Per
   const childcare = childcareOf(fed, hh, ppl, p);
   const { kids, under6 } = childcare.childCounts ?? hh;
   const nets = ppl.map((x, i) => netOf(fed, p, x, childcare.claims[i]));
+  // Legacy bases for claim elections and non-refundable credits, before Quebec's worker deduction.
   const provincialNets = qc ? ppl.map(x => netOf(fed, p, x)) : nets;
   const couple = ppl.length === 2 && spouse;
   const famNet = couple ? nets[0] + nets[1] : nets[0];
@@ -272,8 +273,6 @@ export function household(y: YearData, p: Province, hh: Household, peopleIn: Per
   totals.payroll += householdPremium?.total ?? 0;
   totals.total += householdPremium?.total ?? 0;
   const ccb = ccbOf(fed, famNet, kids, under6);
-  const provBen = provincialChildBenefit(p.childBenefit, provincialFamNet, famEmp, kids, single, under6);
-  const childBen = ccb + provBen;
   const incomeBases = {
     beforeChildcare: ppl.map(x => {
       const n = netIncomeParts(fed, p, x);
@@ -283,6 +282,12 @@ export function household(y: YearData, p: Province, hh: Household, peopleIn: Per
     provincial: list.map(r => r.tiP),
     provincialFamily: couple ? list[0].tiP + list[1].tiP : list[0].tiP,
   };
+  // For modelled income/deductions, Quebec line 275 equals tiP: worker deduction included, federal childcare
+  // excluded. Family Allowance uses line 275; other provinces' child benefits retain federal family net income.
+  // Keep this separate from the legacy non-refundable-credit bases above and federal CCB/GST/CWB below.
+  const benefitFamNet = qc ? incomeBases.provincialFamily : famNet;
+  const provBen = provincialChildBenefit(p.childBenefit, benefitFamNet, famEmp, kids, single, under6);
+  const childBen = ccb + provBen;
   const childcareCredit = childcareCreditOf(
     p,
     hh,
@@ -295,7 +300,7 @@ export function household(y: YearData, p: Province, hh: Household, peopleIn: Per
   const credits: Credit[] = hh.useCredits
     ? creditsOf(fed, p, {
         famNet,
-        provincialFamNet,
+        provincialFamNet: benefitFamNet,
         famEmp,
         couple,
         kids,

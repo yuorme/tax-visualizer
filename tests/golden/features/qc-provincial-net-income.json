@@ -1,0 +1,1424 @@
+{
+  "cases": [
+    {
+      "id": "2019-parent-worker-cap",
+      "year": 2019,
+      "people": [
+        {
+          "ord": 55000
+        }
+      ],
+      "kids": 1,
+      "expected": {
+        "provincial": [53752.75],
+        "provincialFamily": 53752.75,
+        "provBen": 2616.09,
+        "solidarity": 0,
+        "premium": 0
+      }
+    },
+    {
+      "id": "2019-single-work-premium",
+      "year": 2019,
+      "people": [
+        {
+          "ord": 20000
+        }
+      ],
+      "kids": 0,
+      "expected": {
+        "provincial": [18805.25],
+        "provincialFamily": 18805.25,
+        "provBen": 0,
+        "solidarity": 998,
+        "premium": 65.075
+      }
+    },
+    {
+      "id": "2019-couple-two-worker-deductions",
+      "year": 2019,
+      "people": [
+        {
+          "ord": 32000
+        },
+        {
+          "ord": 32000
+        }
+      ],
+      "kids": 1,
+      "expected": {
+        "provincial": [30787.25, 30787.25],
+        "provincialFamily": 61574.5,
+        "provBen": 1970.78,
+        "solidarity": 0,
+        "premium": 0
+      }
+    },
+    {
+      "id": "2019-couple-work-premium",
+      "year": 2019,
+      "people": [
+        {
+          "ord": 12000
+        },
+        {
+          "ord": 12000
+        }
+      ],
+      "kids": 0,
+      "expected": {
+        "provincial": [11267.25, 11267.25],
+        "provincialFamily": 22534.5,
+        "provBen": 0,
+        "solidarity": 1271,
+        "premium": 768.27
+      }
+    },
+    {
+      "id": "2019-couple-parent-work-premium",
+      "year": 2019,
+      "people": [
+        {
+          "ord": 12000
+        },
+        {
+          "ord": 12000
+        }
+      ],
+      "kids": 1,
+      "expected": {
+        "provincial": [11267.25, 11267.25],
+        "provincialFamily": 22534.5,
+        "provBen": 2472,
+        "solidarity": 1392,
+        "premium": 2650.95
+      }
+    },
+    {
+      "id": "2020-parent-worker-cap",
+      "year": 2020,
+      "people": [
+        {
+          "ord": 55000
+        }
+      ],
+      "kids": 1,
+      "expected": {
+        "provincial": [53655.5],
+        "provincialFamily": 53655.5,
+        "provBen": 2701.02,
+        "solidarity": 42.67,
+        "premium": 0
+      }
+    },
+    {
+      "id": "2020-single-work-premium",
+      "year": 2020,
+      "people": [
+        {
+          "ord": 20000
+        }
+      ],
+      "kids": 0,
+      "expected": {
+        "provincial": [18760.5],
+        "provincialFamily": 18760.5,
+        "provBen": 0,
+        "solidarity": 1015,
+        "premium": 124.462
+      }
+    },
+    {
+      "id": "2020-couple-two-worker-deductions",
+      "year": 2020,
+      "people": [
+        {
+          "ord": 32000
+        },
+        {
+          "ord": 32000
+        }
+      ],
+      "kids": 1,
+      "expected": {
+        "provincial": [30724.5, 30724.5],
+        "provincialFamily": 61449,
+        "provBen": 2050.72,
+        "solidarity": 0,
+        "premium": 0
+      }
+    },
+    {
+      "id": "2020-couple-work-premium",
+      "year": 2020,
+      "people": [
+        {
+          "ord": 12000
+        },
+        {
+          "ord": 12000
+        }
+      ],
+      "kids": 0,
+      "expected": {
+        "provincial": [11254.5, 11254.5],
+        "provincialFamily": 22509,
+        "provBen": 0,
+        "solidarity": 1293,
+        "premium": 857.196
+      }
+    },
+    {
+      "id": "2020-couple-parent-work-premium",
+      "year": 2020,
+      "people": [
+        {
+          "ord": 12000
+        },
+        {
+          "ord": 12000
+        }
+      ],
+      "kids": 1,
+      "expected": {
+        "provincial": [11254.5, 11254.5],
+        "provincialFamily": 22509,
+        "provBen": 2515,
+        "solidarity": 1416,
+        "premium": 2733.3
+      }
+    },
+    {
+      "id": "2021-parent-worker-cap",
+      "year": 2021,
+      "people": [
+        {
+          "ord": 55000
+        }
+      ],
+      "kids": 1,
+      "expected": {
+        "provincial": [53537.5],
+        "provincialFamily": 53537.5,
+        "provBen": 2767.62,
+        "solidarity": 91.45,
+        "premium": 0
+      }
+    },
+    {
+      "id": "2021-single-work-premium",
+      "year": 2021,
+      "people": [
+        {
+          "ord": 20000
+        }
+      ],
+      "kids": 0,
+      "expected": {
+        "provincial": [18717.5],
+        "provincialFamily": 18717.5,
+        "provBen": 0,
+        "solidarity": 1028,
+        "premium": 187.634
+      }
+    },
+    {
+      "id": "2021-couple-two-worker-deductions",
+      "year": 2021,
+      "people": [
+        {
+          "ord": 32000
+        },
+        {
+          "ord": 32000
+        }
+      ],
+      "kids": 1,
+      "expected": {
+        "provincial": [30652.5, 30652.5],
+        "provincialFamily": 61305,
+        "provBen": 2115.64,
+        "solidarity": 0,
+        "premium": 0
+      }
+    },
+    {
+      "id": "2021-couple-work-premium",
+      "year": 2021,
+      "people": [
+        {
+          "ord": 12000
+        },
+        {
+          "ord": 12000
+        }
+      ],
+      "kids": 0,
+      "expected": {
+        "provincial": [11237.5, 11237.5],
+        "provincialFamily": 22475,
+        "provBen": 0,
+        "solidarity": 1310,
+        "premium": 954.572
+      }
+    },
+    {
+      "id": "2021-couple-parent-work-premium",
+      "year": 2021,
+      "people": [
+        {
+          "ord": 12000
+        },
+        {
+          "ord": 12000
+        }
+      ],
+      "kids": 1,
+      "expected": {
+        "provincial": [11237.5, 11237.5],
+        "provincialFamily": 22475,
+        "provBen": 2547,
+        "solidarity": 1435,
+        "premium": 2804.6
+      }
+    },
+    {
+      "id": "2022-parent-worker-cap",
+      "year": 2022,
+      "people": [
+        {
+          "ord": 55000
+        }
+      ],
+      "kids": 1,
+      "expected": {
+        "provincial": [53378.75],
+        "provincialFamily": 53378.75,
+        "provBen": 2905.93,
+        "solidarity": 187.675,
+        "premium": 0
+      }
+    },
+    {
+      "id": "2022-single-work-premium",
+      "year": 2022,
+      "people": [
+        {
+          "ord": 20000
+        }
+      ],
+      "kids": 0,
+      "expected": {
+        "provincial": [18676.25],
+        "provincialFamily": 18676.25,
+        "provBen": 0,
+        "solidarity": 1055,
+        "premium": 281.383
+      }
+    },
+    {
+      "id": "2022-couple-two-worker-deductions",
+      "year": 2022,
+      "people": [
+        {
+          "ord": 32000
+        },
+        {
+          "ord": 32000
+        }
+      ],
+      "kids": 1,
+      "expected": {
+        "provincial": [30551.25, 30551.25],
+        "provincialFamily": 61102.5,
+        "provBen": 2245.62,
+        "solidarity": 14.25,
+        "premium": 0
+      }
+    },
+    {
+      "id": "2022-couple-work-premium",
+      "year": 2022,
+      "people": [
+        {
+          "ord": 12000
+        },
+        {
+          "ord": 12000
+        }
+      ],
+      "kids": 0,
+      "expected": {
+        "provincial": [11216.25, 11216.25],
+        "provincialFamily": 22432.5,
+        "provBen": 0,
+        "solidarity": 1345,
+        "premium": 1097.118
+      }
+    },
+    {
+      "id": "2022-couple-parent-work-premium",
+      "year": 2022,
+      "people": [
+        {
+          "ord": 12000
+        },
+        {
+          "ord": 12000
+        }
+      ],
+      "kids": 1,
+      "expected": {
+        "provincial": [11216.25, 11216.25],
+        "provincialFamily": 22432.5,
+        "provBen": 2614,
+        "solidarity": 1473,
+        "premium": 2946.05
+      }
+    },
+    {
+      "id": "2023-parent-worker-cap",
+      "year": 2023,
+      "people": [
+        {
+          "ord": 55000
+        }
+      ],
+      "kids": 1,
+      "expected": {
+        "provincial": [53170],
+        "provincialFamily": 53170,
+        "provBen": 3237.92,
+        "solidarity": 465.4,
+        "premium": 0
+      }
+    },
+    {
+      "id": "2023-single-work-premium",
+      "year": 2023,
+      "people": [
+        {
+          "ord": 20000
+        }
+      ],
+      "kids": 0,
+      "expected": {
+        "provincial": [18635],
+        "provincialFamily": 18635,
+        "provBen": 0,
+        "solidarity": 1162,
+        "premium": 415.972
+      }
+    },
+    {
+      "id": "2023-couple-two-worker-deductions",
+      "year": 2023,
+      "people": [
+        {
+          "ord": 32000
+        },
+        {
+          "ord": 32000
+        }
+      ],
+      "kids": 1,
+      "expected": {
+        "provincial": [30400, 30400],
+        "provincialFamily": 60800,
+        "provBen": 2557.32,
+        "solidarity": 324.6,
+        "premium": 0
+      }
+    },
+    {
+      "id": "2023-couple-work-premium",
+      "year": 2023,
+      "people": [
+        {
+          "ord": 12000
+        },
+        {
+          "ord": 12000
+        }
+      ],
+      "kids": 0,
+      "expected": {
+        "provincial": [11195, 11195],
+        "provincialFamily": 22390,
+        "provBen": 0,
+        "solidarity": 1479,
+        "premium": 1304.408
+      }
+    },
+    {
+      "id": "2023-couple-parent-work-premium",
+      "year": 2023,
+      "people": [
+        {
+          "ord": 12000
+        },
+        {
+          "ord": 12000
+        }
+      ],
+      "kids": 1,
+      "expected": {
+        "provincial": [11195, 11195],
+        "provincialFamily": 22390,
+        "provBen": 2782,
+        "solidarity": 1623,
+        "premium": 3279.3
+      }
+    },
+    {
+      "id": "2024-parent-worker-cap",
+      "year": 2024,
+      "people": [
+        {
+          "ord": 55000
+        }
+      ],
+      "kids": 1,
+      "expected": {
+        "provincial": [53105],
+        "provincialFamily": 53105,
+        "provBen": 3510.24,
+        "solidarity": 654.7,
+        "premium": 0
+      }
+    },
+    {
+      "id": "2024-single-work-premium",
+      "year": 2024,
+      "people": [
+        {
+          "ord": 20000
+        }
+      ],
+      "kids": 0,
+      "expected": {
+        "provincial": [18635],
+        "provincialFamily": 18635,
+        "provBen": 0,
+        "solidarity": 1221,
+        "premium": 522.244
+      }
+    },
+    {
+      "id": "2024-couple-two-worker-deductions",
+      "year": 2024,
+      "people": [
+        {
+          "ord": 32000
+        },
+        {
+          "ord": 32000
+        }
+      ],
+      "kids": 1,
+      "expected": {
+        "provincial": [30335, 30335],
+        "provincialFamily": 60670,
+        "provBen": 2809.08,
+        "solidarity": 534.8,
+        "premium": 0
+      }
+    },
+    {
+      "id": "2024-couple-work-premium",
+      "year": 2024,
+      "people": [
+        {
+          "ord": 12000
+        },
+        {
+          "ord": 12000
+        }
+      ],
+      "kids": 0,
+      "expected": {
+        "provincial": [11195, 11195],
+        "provincialFamily": 22390,
+        "provBen": 0,
+        "solidarity": 1555,
+        "premium": 1467.272
+      }
+    },
+    {
+      "id": "2024-couple-parent-work-premium",
+      "year": 2024,
+      "people": [
+        {
+          "ord": 12000
+        },
+        {
+          "ord": 12000
+        }
+      ],
+      "kids": 1,
+      "expected": {
+        "provincial": [11195, 11195],
+        "provincialFamily": 22390,
+        "provBen": 2923,
+        "solidarity": 1706,
+        "premium": 3543.2
+      }
+    },
+    {
+      "id": "2025-parent-worker-cap",
+      "year": 2025,
+      "people": [
+        {
+          "ord": 55000
+        }
+      ],
+      "kids": 1,
+      "expected": {
+        "provincial": [53065],
+        "provincialFamily": 53065,
+        "provBen": 3669.6,
+        "solidarity": 766.6,
+        "premium": 0
+      }
+    },
+    {
+      "id": "2025-single-work-premium",
+      "year": 2025,
+      "people": [
+        {
+          "ord": 20000
+        }
+      ],
+      "kids": 0,
+      "expected": {
+        "provincial": [18635],
+        "provincialFamily": 18635,
+        "provBen": 0,
+        "solidarity": 1256,
+        "premium": 584.02
+      }
+    },
+    {
+      "id": "2025-couple-two-worker-deductions",
+      "year": 2025,
+      "people": [
+        {
+          "ord": 32000
+        },
+        {
+          "ord": 32000
+        }
+      ],
+      "kids": 1,
+      "expected": {
+        "provincial": [30295, 30295],
+        "provincialFamily": 60590,
+        "provBen": 2957.16,
+        "solidarity": 659.1,
+        "premium": 0
+      }
+    },
+    {
+      "id": "2025-couple-work-premium",
+      "year": 2025,
+      "people": [
+        {
+          "ord": 12000
+        },
+        {
+          "ord": 12000
+        }
+      ],
+      "kids": 0,
+      "expected": {
+        "provincial": [11195, 11195],
+        "provincialFamily": 22390,
+        "provBen": 0,
+        "solidarity": 1600,
+        "premium": 1562.744
+      }
+    },
+    {
+      "id": "2025-couple-parent-work-premium",
+      "year": 2025,
+      "people": [
+        {
+          "ord": 12000
+        },
+        {
+          "ord": 12000
+        }
+      ],
+      "kids": 1,
+      "expected": {
+        "provincial": [11195, 11195],
+        "provincialFamily": 22390,
+        "provBen": 3006,
+        "solidarity": 1755,
+        "premium": 3697.9
+      }
+    },
+    {
+      "id": "2026-parent-worker-cap",
+      "year": 2026,
+      "people": [
+        {
+          "ord": 55000
+        }
+      ],
+      "kids": 1,
+      "expected": {
+        "provincial": [53035],
+        "provincialFamily": 53035,
+        "provBen": 3784.88,
+        "solidarity": 848.6,
+        "premium": 0
+      }
+    },
+    {
+      "id": "2026-single-work-premium",
+      "year": 2026,
+      "people": [
+        {
+          "ord": 20000
+        }
+      ],
+      "kids": 0,
+      "expected": {
+        "provincial": [18635],
+        "provincialFamily": 18635,
+        "provBen": 0,
+        "solidarity": 1281,
+        "premium": 624.628
+      }
+    },
+    {
+      "id": "2026-couple-two-worker-deductions",
+      "year": 2026,
+      "people": [
+        {
+          "ord": 32000
+        },
+        {
+          "ord": 32000
+        }
+      ],
+      "kids": 1,
+      "expected": {
+        "provincial": [30265, 30265],
+        "provincialFamily": 60530,
+        "provBen": 3062.72,
+        "solidarity": 749.9,
+        "premium": 0
+      }
+    },
+    {
+      "id": "2026-couple-work-premium",
+      "year": 2026,
+      "people": [
+        {
+          "ord": 12000
+        },
+        {
+          "ord": 12000
+        }
+      ],
+      "kids": 0,
+      "expected": {
+        "provincial": [11195, 11195],
+        "provincialFamily": 22390,
+        "provBen": 0,
+        "solidarity": 1632,
+        "premium": 1626.248
+      }
+    },
+    {
+      "id": "2026-couple-parent-work-premium",
+      "year": 2026,
+      "people": [
+        {
+          "ord": 12000
+        },
+        {
+          "ord": 12000
+        }
+      ],
+      "kids": 1,
+      "expected": {
+        "provincial": [11195, 11195],
+        "provincialFamily": 22390,
+        "provBen": 3068,
+        "solidarity": 1790,
+        "premium": 3800.8
+      }
+    },
+    {
+      "id": "2026-family-start--10",
+      "year": 2026,
+      "people": [
+        {
+          "ord": 20000,
+          "oth": 25387
+        }
+      ],
+      "kids": 1,
+      "expected": {
+        "provincial": [44022],
+        "provincialFamily": 44022,
+        "provBen": 4145,
+        "solidarity": 1389.38,
+        "premium": 1
+      }
+    },
+    {
+      "id": "2026-family-start--1",
+      "year": 2026,
+      "people": [
+        {
+          "ord": 20000,
+          "oth": 25396
+        }
+      ],
+      "kids": 1,
+      "expected": {
+        "provincial": [44031],
+        "provincialFamily": 44031,
+        "provBen": 4145,
+        "solidarity": 1388.84,
+        "premium": 0
+      }
+    },
+    {
+      "id": "2026-family-start-0",
+      "year": 2026,
+      "people": [
+        {
+          "ord": 20000,
+          "oth": 25397
+        }
+      ],
+      "kids": 1,
+      "expected": {
+        "provincial": [44032],
+        "provincialFamily": 44032,
+        "provBen": 4145,
+        "solidarity": 1388.78,
+        "premium": 0
+      }
+    },
+    {
+      "id": "2026-family-start-1",
+      "year": 2026,
+      "people": [
+        {
+          "ord": 20000,
+          "oth": 25398
+        }
+      ],
+      "kids": 1,
+      "expected": {
+        "provincial": [44033],
+        "provincialFamily": 44033,
+        "provBen": 4144.96,
+        "solidarity": 1388.72,
+        "premium": 0
+      }
+    },
+    {
+      "id": "2026-family-minimum--10",
+      "year": 2026,
+      "people": [
+        {
+          "ord": 20000,
+          "oth": 87737
+        }
+      ],
+      "kids": 1,
+      "expected": {
+        "provincial": [106372],
+        "provincialFamily": 106372,
+        "provBen": 1651.4,
+        "solidarity": 0,
+        "premium": 0
+      }
+    },
+    {
+      "id": "2026-family-minimum--1",
+      "year": 2026,
+      "people": [
+        {
+          "ord": 20000,
+          "oth": 87746
+        }
+      ],
+      "kids": 1,
+      "expected": {
+        "provincial": [106381],
+        "provincialFamily": 106381,
+        "provBen": 1651.04,
+        "solidarity": 0,
+        "premium": 0
+      }
+    },
+    {
+      "id": "2026-family-minimum-0",
+      "year": 2026,
+      "people": [
+        {
+          "ord": 20000,
+          "oth": 87747
+        }
+      ],
+      "kids": 1,
+      "expected": {
+        "provincial": [106382],
+        "provincialFamily": 106382,
+        "provBen": 1651,
+        "solidarity": 0,
+        "premium": 0
+      }
+    },
+    {
+      "id": "2026-family-minimum-1",
+      "year": 2026,
+      "people": [
+        {
+          "ord": 20000,
+          "oth": 87748
+        }
+      ],
+      "kids": 1,
+      "expected": {
+        "provincial": [106383],
+        "provincialFamily": 106383,
+        "provBen": 1651,
+        "solidarity": 0,
+        "premium": 0
+      }
+    },
+    {
+      "id": "2026-solidarity-start--10",
+      "year": 2026,
+      "people": [
+        {
+          "ord": 20000,
+          "oth": 24550
+        }
+      ],
+      "kids": 1,
+      "expected": {
+        "provincial": [43185],
+        "provincialFamily": 43185,
+        "provBen": 4145,
+        "solidarity": 1439,
+        "premium": 84.7
+      }
+    },
+    {
+      "id": "2026-solidarity-start--1",
+      "year": 2026,
+      "people": [
+        {
+          "ord": 20000,
+          "oth": 24559
+        }
+      ],
+      "kids": 1,
+      "expected": {
+        "provincial": [43194],
+        "provincialFamily": 43194,
+        "provBen": 4145,
+        "solidarity": 1439,
+        "premium": 83.8
+      }
+    },
+    {
+      "id": "2026-solidarity-start-0",
+      "year": 2026,
+      "people": [
+        {
+          "ord": 20000,
+          "oth": 24560
+        }
+      ],
+      "kids": 1,
+      "expected": {
+        "provincial": [43195],
+        "provincialFamily": 43195,
+        "provBen": 4145,
+        "solidarity": 1439,
+        "premium": 83.7
+      }
+    },
+    {
+      "id": "2026-solidarity-start-1",
+      "year": 2026,
+      "people": [
+        {
+          "ord": 20000,
+          "oth": 24561
+        }
+      ],
+      "kids": 1,
+      "expected": {
+        "provincial": [43196],
+        "provincialFamily": 43196,
+        "provBen": 4145,
+        "solidarity": 1438.94,
+        "premium": 83.6
+      }
+    },
+    {
+      "id": "2026-solidarity-end--10",
+      "year": 2026,
+      "people": [
+        {
+          "ord": 20000,
+          "oth": 48533.33333333334
+        }
+      ],
+      "kids": 1,
+      "expected": {
+        "provincial": [67168.3333],
+        "provincialFamily": 67168.3333,
+        "provBen": 3219.5467,
+        "solidarity": 0.6,
+        "premium": 0
+      }
+    },
+    {
+      "id": "2026-solidarity-end--1",
+      "year": 2026,
+      "people": [
+        {
+          "ord": 20000,
+          "oth": 48542.33333333334
+        }
+      ],
+      "kids": 1,
+      "expected": {
+        "provincial": [67177.3333],
+        "provincialFamily": 67177.3333,
+        "provBen": 3219.1867,
+        "solidarity": 0,
+        "premium": 0
+      }
+    },
+    {
+      "id": "2026-solidarity-end-0",
+      "year": 2026,
+      "people": [
+        {
+          "ord": 20000,
+          "oth": 48543.33333333334
+        }
+      ],
+      "kids": 1,
+      "expected": {
+        "provincial": [67178.3333],
+        "provincialFamily": 67178.3333,
+        "provBen": 3219.1467,
+        "solidarity": 0,
+        "premium": 0
+      }
+    },
+    {
+      "id": "2026-solidarity-end-1",
+      "year": 2026,
+      "people": [
+        {
+          "ord": 20000,
+          "oth": 48544.33333333334
+        }
+      ],
+      "kids": 1,
+      "expected": {
+        "provincial": [67179.3333],
+        "provincialFamily": 67179.3333,
+        "provBen": 3219.1067,
+        "solidarity": 0,
+        "premium": 0
+      }
+    },
+    {
+      "id": "2026-premium-start--10",
+      "year": 2026,
+      "people": [
+        {
+          "ord": 10000,
+          "oth": 3463
+        }
+      ],
+      "kids": 1,
+      "expected": {
+        "provincial": [12798],
+        "provincialFamily": 12798,
+        "provBen": 4145,
+        "solidarity": 1439,
+        "premium": 2280
+      }
+    },
+    {
+      "id": "2026-premium-start--1",
+      "year": 2026,
+      "people": [
+        {
+          "ord": 10000,
+          "oth": 3472
+        }
+      ],
+      "kids": 1,
+      "expected": {
+        "provincial": [12807],
+        "provincialFamily": 12807,
+        "provBen": 4145,
+        "solidarity": 1439,
+        "premium": 2280
+      }
+    },
+    {
+      "id": "2026-premium-start-0",
+      "year": 2026,
+      "people": [
+        {
+          "ord": 10000,
+          "oth": 3473
+        }
+      ],
+      "kids": 1,
+      "expected": {
+        "provincial": [12808],
+        "provincialFamily": 12808,
+        "provBen": 4145,
+        "solidarity": 1439,
+        "premium": 2280
+      }
+    },
+    {
+      "id": "2026-premium-start-1",
+      "year": 2026,
+      "people": [
+        {
+          "ord": 10000,
+          "oth": 3474
+        }
+      ],
+      "kids": 1,
+      "expected": {
+        "provincial": [12809],
+        "provincialFamily": 12809,
+        "provBen": 4145,
+        "solidarity": 1439,
+        "premium": 2279.9
+      }
+    },
+    {
+      "id": "2026-premium-end--10",
+      "year": 2026,
+      "people": [
+        {
+          "ord": 20000,
+          "oth": 25387
+        }
+      ],
+      "kids": 1,
+      "expected": {
+        "provincial": [44022],
+        "provincialFamily": 44022,
+        "provBen": 4145,
+        "solidarity": 1389.38,
+        "premium": 1
+      }
+    },
+    {
+      "id": "2026-premium-end--1",
+      "year": 2026,
+      "people": [
+        {
+          "ord": 20000,
+          "oth": 25396
+        }
+      ],
+      "kids": 1,
+      "expected": {
+        "provincial": [44031],
+        "provincialFamily": 44031,
+        "provBen": 4145,
+        "solidarity": 1388.84,
+        "premium": 0
+      }
+    },
+    {
+      "id": "2026-premium-end-0",
+      "year": 2026,
+      "people": [
+        {
+          "ord": 20000,
+          "oth": 25397
+        }
+      ],
+      "kids": 1,
+      "expected": {
+        "provincial": [44032],
+        "provincialFamily": 44032,
+        "provBen": 4145,
+        "solidarity": 1388.78,
+        "premium": 0
+      }
+    },
+    {
+      "id": "2026-premium-end-1",
+      "year": 2026,
+      "people": [
+        {
+          "ord": 20000,
+          "oth": 25398
+        }
+      ],
+      "kids": 1,
+      "expected": {
+        "provincial": [44033],
+        "provincialFamily": 44033,
+        "provBen": 4144.96,
+        "solidarity": 1388.72,
+        "premium": 0
+      }
+    },
+    {
+      "id": "2026-zero-floor-spouse",
+      "year": 2026,
+      "people": [
+        {
+          "ord": 1000,
+          "ded": 2000
+        },
+        {
+          "ord": 20000
+        }
+      ],
+      "kids": 1,
+      "expected": {
+        "provincial": [0, 18635],
+        "provincialFamily": 18635,
+        "provBen": 3068,
+        "solidarity": 1790,
+        "premium": 4057
+      }
+    },
+    {
+      "id": "2026-no-employment",
+      "year": 2026,
+      "people": [
+        {
+          "oth": 55000
+        }
+      ],
+      "kids": 1,
+      "expected": {
+        "provincial": [55000],
+        "provincialFamily": 55000,
+        "provBen": 3706.28,
+        "solidarity": 730.7,
+        "premium": 0
+      }
+    },
+    {
+      "id": "2019-by-child-two-children",
+      "year": 2019,
+      "people": [
+        {
+          "ord": 55000
+        }
+      ],
+      "kids": 2,
+      "expected": {
+        "provincial": [53752.75],
+        "provincialFamily": 53752.75,
+        "provBen": 4351.09,
+        "solidarity": 102.835,
+        "premium": 0
+      }
+    },
+    {
+      "id": "2026-worker-cap--1",
+      "year": 2026,
+      "people": [
+        {
+          "ord": 24165.666666666668
+        }
+      ],
+      "kids": 1,
+      "expected": {
+        "provincial": [22509.07],
+        "provincialFamily": 22509.07,
+        "provBen": 4145,
+        "solidarity": 1439,
+        "premium": 2152.293
+      }
+    },
+    {
+      "id": "2026-work-exclusion--1",
+      "year": 2026,
+      "people": [
+        {
+          "ord": 2399
+        }
+      ],
+      "kids": 1,
+      "expected": {
+        "provincial": [2255.06],
+        "provincialFamily": 2255.06,
+        "provBen": 4145,
+        "solidarity": 1439,
+        "premium": 0
+      }
+    },
+    {
+      "id": "2026-work-cap--1",
+      "year": 2026,
+      "people": [
+        {
+          "ord": 12807
+        }
+      ],
+      "kids": 1,
+      "expected": {
+        "provincial": [11945.51],
+        "provincialFamily": 11945.51,
+        "provBen": 4145,
+        "solidarity": 1439,
+        "premium": 3122.1
+      }
+    },
+    {
+      "id": "2026-worker-cap-0",
+      "year": 2026,
+      "people": [
+        {
+          "ord": 24166.666666666668
+        }
+      ],
+      "kids": 1,
+      "expected": {
+        "provincial": [22510],
+        "provincialFamily": 22510,
+        "provBen": 4145,
+        "solidarity": 1439,
+        "premium": 2152.2
+      }
+    },
+    {
+      "id": "2026-work-exclusion-0",
+      "year": 2026,
+      "people": [
+        {
+          "ord": 2400
+        }
+      ],
+      "kids": 1,
+      "expected": {
+        "provincial": [2256],
+        "provincialFamily": 2256,
+        "provBen": 4145,
+        "solidarity": 1439,
+        "premium": 0
+      }
+    },
+    {
+      "id": "2026-work-cap-0",
+      "year": 2026,
+      "people": [
+        {
+          "ord": 12808
+        }
+      ],
+      "kids": 1,
+      "expected": {
+        "provincial": [11946.44],
+        "provincialFamily": 11946.44,
+        "provBen": 4145,
+        "solidarity": 1439,
+        "premium": 3122.4
+      }
+    },
+    {
+      "id": "2026-worker-cap-1",
+      "year": 2026,
+      "people": [
+        {
+          "ord": 24167.666666666668
+        }
+      ],
+      "kids": 1,
+      "expected": {
+        "provincial": [22510.99],
+        "provincialFamily": 22510.99,
+        "provBen": 4145,
+        "solidarity": 1439,
+        "premium": 2152.101
+      }
+    },
+    {
+      "id": "2026-work-exclusion-1",
+      "year": 2026,
+      "people": [
+        {
+          "ord": 2401
+        }
+      ],
+      "kids": 1,
+      "expected": {
+        "provincial": [2256.94],
+        "provincialFamily": 2256.94,
+        "provBen": 4145,
+        "solidarity": 1439,
+        "premium": 0
+      }
+    },
+    {
+      "id": "2026-work-cap-1",
+      "year": 2026,
+      "people": [
+        {
+          "ord": 12809
+        }
+      ],
+      "kids": 1,
+      "expected": {
+        "provincial": [11947.37],
+        "provincialFamily": 11947.37,
+        "provBen": 4145,
+        "solidarity": 1439,
+        "premium": 3122.4
+      }
+    },
+    {
+      "id": "2026-childcare-federal-only",
+      "year": 2026,
+      "people": [
+        {
+          "ord": 55000
+        }
+      ],
+      "kids": 1,
+      "childcare": {
+        "mode": "automatic",
+        "children": [
+          {
+            "age": 3,
+            "expenses": 8000,
+            "qcEligibleExpenses": 8000
+          }
+        ],
+        "earnedIncome": [55000]
+      },
+      "expected": {
+        "provincial": [53035],
+        "provincialFamily": 53035,
+        "provBen": 3784.88,
+        "solidarity": 848.6,
+        "premium": 0
+      }
+    }
+  ]
+}

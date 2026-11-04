@@ -161,6 +161,7 @@ keeps the pages the data uses). Nothing under `docs/` is imported by `src/`, so 
 | [rule-nl-child-plan](rule-nl-child-plan.txt) | NL poverty reduction plan historical child benefit amounts | https://www.gov.nl.ca/cssd/files/Poverty-Reduction-Plan-Background-Information.pdf | 2026-11-02 | `a539e9e6f98bfb419ef6b4135a0bee01110045e787f7f8478e4dc7aae5c02747` |
 | [rule-nwt-benefit](rule-nwt-benefit.txt) | NWT Child Benefit calculation fact sheet | https://www.fin.gov.nt.ca/sites/fin/files/benefits_and_support-nwt_child_benefit-180320.pdf | 2026-11-02 | `cf7a4e469c59d6941dbb8ba73c133ccbf7be6af050f563e5fcc6d1f73733dba1` |
 | [rule-pe428](rule-pe428.txt) | PE428 2023 surtax after dividend credits | https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5002-c/5002-c-23e.pdf | 2026-11-02 | `5e3f13d79b6c0cb853c181a50e71f291a12986d7d536a8011064672a21c2c7b7` |
+| [qc-solidarity-guide](qc-solidarity-guide.txt) | GUIDE – INCOME TAX RETURN – 2023 | https://www.revenuquebec.ca/documents/en/formulaires/tp/2023-12/TP-1.G-V(2023-12).pdf | 2026-11-04 | `1e3d7068c8fcaa6e10a6aa4642c3ab46a46e5a47d4e4b00ec07d12687c05751d` |
 
 Regional carbon notes marked "manual" paraphrase official sources whose direct downloads were blocked or incomplete.
 Their headers disclose retrieval limits; a navigation-shell hash is not a hash of the underlying publication.

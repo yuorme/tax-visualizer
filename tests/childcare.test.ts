@@ -191,7 +191,7 @@ for (const year of [2025, 2026]) {
     const qcCredits = (r: ReturnType<typeof compute>) => r.credits.filter(([name]) => /solidarity|premium/i.test(name));
     assert.deepEqual(qcCredits(r), qcCredits(no));
     assert.equal(r.breakdown.incomeBases.provincialFamily, r.me.tiP);
-    assert.ok(r.breakdown.incomeBases.provincialFamily < no.famNet); // Workers deduction included for future QC credit.
+    assert.ok(r.breakdown.incomeBases.provincialFamily < no.famNet); // Worker deduction enters Quebec benefit bases.
   });
 
   test(`${year}: excessive deductions floor federal and provincial bases independently`, () => {
