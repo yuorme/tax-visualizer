@@ -130,8 +130,9 @@ at the strong tier and `high` effort. Every same-agent review's verdict header s
 
 ## Running agents
 The orchestrator gives each agent one issue, its role file and an explicit list of files it owns; never run two
-agents on the same file at once. Exception: in `src/data/schema.ts`, adding new fields or program entries doesn't
-need exclusive ownership (editing existing ones does). Each agent, whatever the tool, works in its own git
+agents on the same file at once. `tests/golden/*.json` count as one file across provinces, so only one open pull
+request changes existing goldens. Exception: new fields or program entries in `src/data/schema.ts` need no exclusive
+ownership (editing existing ones does). Each agent, whatever the tool, works in its own git
 worktree under `.claude/worktrees/` (ignored by git), branched from `origin/main`, never in the main checkout
 another session may be using. Every branch gets a reviewer pass before it merges; give the reviewer the pull
 request number from the agent's report.
