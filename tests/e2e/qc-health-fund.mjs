@@ -90,6 +90,19 @@ export async function checkQuebecHealthFund(page) {
     );
   }
   await page.selectOption("#tax-year", "2026");
+  await type("income", 60000);
+  await type("oth", 40000);
+  await page.locator("#col-QC .stack .y").click();
+  assert.equal(await page.locator("#tip").isVisible(), true);
+  assert.match(await page.textContent("#tip .t-num"), /^\$4,748 a year/);
+  assert.equal(
+    await page.locator("#tip .t-sub").first().textContent(),
+    "QPP $3,560 · EI $780 · QPIP $258 · Quebec Health Services Fund $150.",
+    "payroll tooltip itemizes the contribution in its total",
+  );
+  await page.keyboard.press("Escape");
+  await type("income", 0);
+  await type("oth", 25000);
   await page.click("#add-partner");
   await type("income", 0);
   await type("oth", 25000);

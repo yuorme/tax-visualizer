@@ -259,6 +259,10 @@ The inventory below lists all 100 affected cases and all 1,056 changed numeric p
 1,000 px in light and dark. It uses actual input controls for other income, dividends, employment, deductions
 and a second adult. It checks the ledger, payroll subtotal, independent total burden, the threshold/caps,
 all six legacy years, both new years' tooltips and horizontal overflow.
+The payroll chart tooltip is also checked at 60,000 employment plus 40,000 other income in 2026: its 4,748
+total lists QPP 3,560, EI 780, QPIP 258 and the Health Services Fund contribution of 150.
+`tests/e2e/history.mjs` checks both dollar modes for Quebec and Manitoba's partial program coverage, and
+Ontario's absence of those caveats. The first modelled year comes from installed program data, not fixed years.
 
 The legacy smoke page omits the contribution. Its two affected 2026 steps enter 20,000 capital gains, 12,000
 eligible dividends and 8,000 foreign dividends for the partner. Subject income is 30,000 and the contribution
@@ -287,8 +291,8 @@ the employment marginal rate remains 42.1% in both steps. The owner chart's only
 `npm run compare -- origin/main` completed six width/theme runs, five steps each, and returned its expected
 difference status (1): notes and sources changed; controls did not. Those comparison inputs keep subject income
 below the contribution threshold. The new smoke sequence, in contrast, exercises positive liabilities directly.
-Final escalated `fnm exec --using=26 npm run check` passed on 2026-11-04: lint, typecheck, 1,322 tests, build,
-and smoke (37 pages, 254 states, 40 contrast scans; 129.2 seconds). `npm run format` and `git diff --check` pass.
+Round 3 escalated `fnm exec --using=26 npm run check` passed on 2026-11-04: lint, typecheck, 1,322 tests, build,
+and smoke (37 pages, 255 states, 40 contrast scans; 131.2 seconds). `npm run format` and `git diff --check` pass.
 The newly added Markdown was also checked directly for prose lines exceeding 120 characters, because the
 repository's docs script only examines tracked files and this sandbox cannot stage the new files.
 

@@ -25,8 +25,9 @@ line-by-line tax return. Simpler and slightly less precise is acceptable where i
   classification and remain unsupported. Ignoring an eligible claim can overstate this contribution; leaving
   RRSP/FHSA out is correct. Employee enhanced QPP/QPIP does not qualify for Schedule F lines 43/43.1.
   For 20,000 pension plus an illustrative 9,000 OAS entered together, this contribution is 90 too high;
-  OAS alone or income on the 150 plateau can produce no error. #18 must exclude its separate OAS input from
-  this base while retaining it for income tax. Business allocation outside Quebec (guide line 446 / TP-22)
+  OAS alone or income on the 150 plateau can produce no error. The contribution base is an explicit allow-list:
+  #18 must keep its separate OAS input out while retaining it for income tax, and add its CPP/QPP benefits
+  to this base. Business allocation outside Quebec (guide line 446 / TP-22)
   and restricted line 297 deductions are not modelled. See [Schedule F audit](verification/91-qc-health-fund.md).
   The 2026 rate and thresholds are published by Finances Québec; caps, the second-column base and income rules
   provisionally continue 2025 Schedule F (`estimated: true`). The contribution remains omitted in 2019–2024.
@@ -64,7 +65,8 @@ line-by-line tax return. Simpler and slightly less precise is acceptable where i
   are excluded. The higher-net-income spouse claims children; at equality, the model interprets the Act's silence
   as allowing either spouse and minimizes household tax, following #92. For unrelated adults, the higher-income
   adult is assumed to be the eligible parent; at equality, the model elects the eligible claimant giving the
-  lower household tax under Manitoba s. 4.6(16.2)(b). Eligibility and competing outside-household claims are assumed.
+  lower household tax under Manitoba s. 4.6(16.2)(b). Eligibility is assumed; competing outside-household claims
+  are assumed absent.
   No senior/disability components. Earlier years remain omitted and locked despite their MB428 forms listing
   the program. See [audit](verification/145-manitoba-family-benefit.md).
 

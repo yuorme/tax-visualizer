@@ -4,6 +4,21 @@ import { type HistoryMode, historyComparison } from "../engine/history.ts";
 import type { Household } from "../engine/types.ts";
 import { money, rate } from "./notes.ts";
 
+const installedYears = Object.values(years).sort((a, b) => a.year - b.year);
+const coveragePrograms = [
+  ["healthServicesFund", "Quebec's Health Services Fund contribution"],
+  ["familyTaxBenefit", "Manitoba's family tax benefit"],
+] as const;
+
+/** Explain partial program coverage using the installed data for the displayed province. */
+function coverageNote(home: string) {
+  const partial = coveragePrograms.flatMap(([key, name]) => {
+    const first = installedYears.find(y => y.provinces.find(p => p.code === home)?.[key]);
+    return first && first.year > installedYears[0].year ? [`${name} is modelled only from ${first.year}`] : [];
+  });
+  return partial.length ? ` ${partial.join("; ")}, so year-to-year changes can also reflect model coverage.` : "";
+}
+
 /** Formats the engine's historical comparison; the UI never scales or calculates tax. */
 export function renderHistory(input: Household, home: string, mode: HistoryMode) {
   const comparison = historyComparison(Object.values(years), cpi, input, [home], mode);
@@ -19,6 +34,7 @@ export function renderHistory(input: Household, home: string, mode: HistoryMode)
     mode === "real"
       ? `Treat the amounts entered above as ${comparison.baseYear} dollars, the latest completed annual CPI year. Income, deductions, spending, rent and home value are converted together using Canada's annual all-items CPI. Each year's tax rules are applied, then income and tax are shown back in ${comparison.baseYear} dollars. Household members, ages, rates and driving stay fixed. This compares the same household, not a household ageing over time.${comparison.omittedYears.length ? ` Annual CPI is not yet available for ${comparison.omittedYears.join(", ")}; those tax years appear in nominal mode only.` : ""}`
       : "Apply each year's rules to the same dollar amounts entered above. Household members and driving stay fixed. Dollar amounts are not adjusted for inflation. The effective rate is net tax after benefits divided by household income.";
+  info.dataset.tip += coverageNote(home);
   body.innerHTML = comparison.rows
     .map(row => {
       const result = row.provinces[0];

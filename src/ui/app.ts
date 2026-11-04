@@ -534,6 +534,7 @@ function segTip(p: ProvView, r: Result, c: Seg) {
       t.qpip > 0.5 && `QPIP ${money(t.qpip)}`,
       t.ohp > 0.5 && `Ontario Health Premium ${money(t.ohp)}`,
       t.terr > 0.5 && `${p.n} payroll tax ${money(t.terr)}`,
+      r.breakdown.healthServicesFund > 0.5 && `Quebec Health Services Fund ${money(r.breakdown.healthServicesFund)}`,
       r.breakdown.householdPremium && `B.C. MSP premiums ${money(r.breakdown.householdPremium.total)}`,
     ]
       .filter(Boolean)
