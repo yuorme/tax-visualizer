@@ -976,6 +976,16 @@ for (const width of [1000, 430, 375]) {
       explanations: asLegacy(built.explanations, width),
     };
     const t = b.states[i].capture;
+    if (name === "income 28k, 1 child, rent") {
+      // #145: independently audited MB tax 126.5598 → 0; the +$100 tax 136.54116 → 0.
+      // Correct only these two obsolete chart values; every other legacy cell and state still compares exactly.
+      // Full arithmetic and before/after inventory: docs/verification/145-manitoba-family-benefit.md.
+      const suffix = width < PHONE ? "" : "%";
+      const mb = t.cols.find(col => col[0] === "col-MB");
+      assert.deepEqual(mb, ["col-MB", `-19.4${suffix}`, `17.6${suffix}`]);
+      mb[1] = `-19.8${suffix}`;
+      mb[2] = `7.6${suffix}`;
+    }
     for (const key of Object.keys(s))
       if (JSON.stringify(s[key]) !== JSON.stringify(t[key]))
         fail(

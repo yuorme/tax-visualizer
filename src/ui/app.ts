@@ -1131,6 +1131,7 @@ function ledgerView({ p, r }: Row) {
     ],
     !p.qc && [`Less CPP &amp; EI credits${p.c === "YT" ? " and employment amount" : ""}`, -m.pEmp],
     [`Less childcare credit`, -m.breakdown.childcareCredit.applied],
+    [`Less family tax benefit`, -m.breakdown.familyTaxBenefit.applied],
     !p.d.postDividendSurtax && [`${p.n} surtax`, m.surtax],
     [`Less dividend tax credit`, -m.pDtc],
     !!p.d.postDividendSurtax && [`${p.n} surtax`, m.surtax],

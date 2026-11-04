@@ -20,6 +20,7 @@ for (const year of [2019, 2020, 2021, 2022, 2023, 2024]) {
     const text = footerNotes(loadYear(year), page);
     assert.match(text, /are claimed by the parent who claims the children\./);
     assert.doesNotMatch(text, /follow each program's rules for who can claim them/);
+    assert.doesNotMatch(text, /non-refundable family tax benefit/);
   });
 }
 
@@ -31,6 +32,17 @@ for (const year of [2025, 2026]) {
       /follow each program's rules for who can claim them and whether unused amounts can transfer to a spouse\./,
     );
     assert.doesNotMatch(text, /are claimed by the parent who claims the children/);
+    assert.match(text, /Manitoba's non-refundable family tax benefit adds a base of \$2,065/);
+    assert.match(
+      text,
+      /\$2,752 per qualifying child through age 18, excluding a child claimed as an eligible dependant/,
+    );
+    assert.match(text, /9% of the claimant's own net income and converts at 10.8%/);
+    assert.match(text, /The higher-net-income spouse claims the children/);
+    assert.match(text, /On equal incomes, the model interprets the Act's silence as allowing either spouse/);
+    assert.match(text, /age alone does not establish eligibility/);
+    assert.match(text, /agreements between multiple eligible adults are not modelled/);
+    assert.equal(text.includes("filing conditions provisionally continue"), year === 2026);
   });
 }
 

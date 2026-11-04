@@ -53,6 +53,7 @@ export interface Driving {
 export type Credit = [name: string, amount: number];
 
 export interface Ctx {
+  familyBenefitChildren?: number; // MB428-A line 9: allocated once, excluding a line 3 eligible dependant
   childAmountBase?: number; // initial child claim, independent of Ontario's higher-net-income child reduction
   childTransferBase?: number; // unused SK(S2)/NU(S2) child base received from the spouse
   lowIncomeReduction?: number; // resolved family reduction, in tax dollars (including any transfer)

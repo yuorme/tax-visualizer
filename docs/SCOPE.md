@@ -46,6 +46,15 @@ line-by-line tax return. Simpler and slightly less precise is acceptable where i
   unused child bases; NS does not. NB/NL/PE transfer unused family reductions; NS does not. Eligible tied
   child claimants and discretionary reduction elections minimize household tax. Earlier years keep their
   historical claimant calculation. See [claimant rules](verification/92-claimant-rules.md).
+- Manitoba family tax benefit correction for 2025–2026 (#145):
+  ordinary basic, claimed spouse/eligible-dependant and qualifying-child bases, reduced by individual net income
+  and limited to non-refundable capacity. Age 18 represents eligible-parent status earlier in the year under
+  s. 4.6(16.1)(b), following MB428-A's birth-year band; age alone is not entitlement. Eligible-dependant children
+  are excluded. The higher-net-income spouse claims children; at equality, the model interprets the Act's silence
+  as allowing either spouse and minimizes household tax, following #92. For unrelated adults, the higher-income
+  adult is assumed to be the eligible parent; competing eligible adults and their agreements are unsupported.
+  No senior/disability components. Earlier years remain omitted and locked despite their MB428 forms listing
+  the program. See [audit](verification/145-manitoba-family-benefit.md).
 
 **Payroll (employee share)**
 - CPP/QPP base and enhanced contributions, EI or EI plus QPIP, Ontario Health Premium, the 2% payroll tax in the
@@ -180,6 +189,10 @@ Marked `estimated: true` in the data files where they appear:
   these are not verified 2026 return rules. Claimant data is marked `estimated: true` separately from amounts.
 - Saskatchewan low-income tax credit reduction rate (worked out from the published start and end points).
 - Manitoba renters credit taken at its $625 maximum.
+- Manitoba family tax benefit: TD1MB-WS publishes the ordinary amounts and 9% taper, but filing eligibility,
+  child age cutoff, claimant restrictions and credit ordering provisionally continue 2025. These are not verified
+  2026 filing rules; CRA's 2026 return forms publish in January 2027. The worksheet's "born in 2004" child cutoff
+  is inconsistent with the Act's eligibility condition and the 2025 filing guide; it is not used as filing evidence.
 - NWT and Newfoundland and Labrador child benefits: straight-line taper between published start and end incomes.
 - Alberta Child and Family Benefit base rates.
 - New Brunswick low-income reduction and Newfoundland and Labrador family threshold (2025 indexed by 2%).

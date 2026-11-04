@@ -36,6 +36,29 @@ function need<T>(v: T | null | undefined): T {
   return v;
 }
 
+test("2026 Manitoba published TD1 family-benefit parameters are separate from provisional filing rules", () => {
+  // TD1MB line 12 directs to TD1MB-WS line 12: worksheet lines 1, 4, 5, 7 and 12.
+  // T4127 table 8.2 publishes the 10.8% rate, $47,000/$100,000 brackets; TD1MB publishes $15,780/$9,134.
+  const p = prov("MB");
+  const benefit = need(p.familyTaxBenefit);
+  assert.equal(benefit.params.basic, 2065);
+  assert.equal(benefit.params.dependant, 2065);
+  assert.equal(benefit.params.child, 2752);
+  assert.equal(benefit.params.reductionRate, 0.09);
+  assert.equal(p.brackets[0][1], 0.108);
+  assert.deepEqual(p.brackets.slice(0, 2), [
+    [47000, 0.108],
+    [100000, 0.1275],
+  ]);
+  assert.deepEqual(p.spouseAmount, { max: 9134, threshold: 0 });
+  assert.deepEqual(p.basicPersonalAmount, { max: 15780, min: 0, from: 200000, to: 400000 });
+  // The TD1 worksheet prints "born in 2004 or later"; it does NOT verify the filing age cutoff.
+  assert.equal(benefit.estimated, true);
+  const r = compute(y, p, single(0, { people: [{ ...blank(0), oth: 40000 }], adults: 2, kids: 2 }));
+  assert.ok(Math.abs(r.list[0].breakdown.familyTaxBenefit.applied - 651.672) < 1e-9);
+  assert.ok(Math.abs(r.prov - 977.616) < 1e-9);
+});
+
 // Top combined (federal + provincial) marginal rates on ordinary income for 2026, as published in the
 // provincial rate tables (e.g. TaxTips.ca, EY tax calculators). Quebec includes the 16.5% abatement.
 // The NWT and Nunavut figures add their 2% payroll tax on employment income, which the calculator counts
