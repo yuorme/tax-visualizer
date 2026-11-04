@@ -62,19 +62,20 @@ and deployment for Markdown-only PRs and pushes. Independent review and human-me
 
 ## Rules that keep the numbers trustworthy
 - **Numbers live in data, formulas in code.** No amounts, rates or thresholds in `src/engine/` or `src/ui/`.
-  Read them from the year's data. When a rule changes shape, add a new `program` id; don't add year checks
-  inside an existing formula.
+  Read the year's data; rule-shape changes need a new `program` id, never year checks in an existing formula.
 - **Every data value is sourced.** Keep `sources` lists current. Anything not taken directly from an official
   publication gets `estimated: true` and a comment saying how it was derived.
-- **Existing golden tests are locked.** Preserve their inputs, expected values, assertions and tolerances.
-  Never re-capture, delete, skip or weaken them to make a failure pass. Changing an existing case is allowed only
-  when an independently verified data/rule correction or task-required behavior change makes it unavoidable. Document
-  the evidence, affected cases and before/after values in the commit and PR; change only those cases, preserving
-  unrelated baselines. Diagnose unexpected failures before changing any expectation; intention alone is insufficient.
-- **New engine behavior needs new golden cases in the same PR**, alongside targeted correctness tests. Add separate
-  fixtures for new features/rule paths without rewriting existing baselines. Verify new expected values against
-  published examples or documented independent calculations; engine-generated snapshots alone prove no correctness.
-  Review must map every changed rule path to a golden case that exercises it, including material boundaries.
+- **Golden inputs, expected values, assertions and tolerances are locked:** never re-capture, delete, skip or weaken.
+  Change only unavoidable cases for independently verified data/rule corrections or task-required behavior changes.
+  Preserve unrelated baselines; commit reasoning, sources and calculations in `docs/verification/` notes; no cell lists.
+  Diagnose unexpected failures before changing expectations; intention is insufficient.
+- **Golden changes:** coder/reviewer roles define PR summaries, independent diff checks and sample recalculations.
+- **New engine behavior needs separate golden cases and targeted correctness tests in the same PR.** Preserve baselines.
+  Verify expectations against published examples or documented independent calculations; engine snapshots aren't proof.
+  Review maps every changed rule path, including material boundaries, to golden cases.
+- **New engine features (e.g. seniors) cover only the latest two tax years.** State coverage; don't imply older years
+  are complete. At merge, the coder or orchestrator files a separate back-fill issue in the History milestone as fits.
+  Corrections to existing rules are not new features and may span affected years.
 - **New years need reference tests** from figures published outside this project (top marginal rates at minimum).
 - **The engine never touches the DOM**, and the UI never computes tax.
 
@@ -95,27 +96,25 @@ cold. Role files: `docs/agents/<role>.md`. This table is the only place that ass
 | All other code: engine, rules, schema, scripts, tests, UI, debugging | coder | Codex | Claude Code |
 | A year's or a program's figures | data-collector | Codex | Claude Code |
 
-**Reviews cross agents:** the reviewer is a different agent from the one that wrote the branch, so Codex's
-branches get a Claude review and Claude's get a Codex review. The exception is Simple and Data work (below), which
-a fresh Codex session may review. An issue touching both UI and engine is split into stacked branches (engine
-first), or goes to whoever owns most of it.
+**Reviews cross agents:** Complex work gets a different agent from its author. Simple, Data and Normal work may
+use a fresh Codex session with no shared context from the coder's session. An issue touching both UI and engine
+is split into stacked branches (engine first), or goes to whoever owns most of it.
 
 ### Models and effort
 The orchestrator classes each issue, sets the model and effort from this table on every dispatch, and records both
-in the brief; frontmatter and tool defaults are only fallbacks. This is the only place model ids are written. Tiers:
-Standard is `sonnet` or `gpt-6.1-sol`, Strong is `opus` or `gpt-6-astra`.
+in the brief; frontmatter and tool defaults are only fallbacks. Resolve Codex names using this sole ID mapping:
+Standard: Claude `sonnet`/Sol; Strong: Claude `opus`/Astra. `codex -m` IDs: Sol=`gpt-6.1-sol`, Astra=`gpt-6-astra`.
 
 | Class | Examples | Coder | Reviewer |
 | --- | --- | --- | --- |
-| Simple | mechanical work, Markdown, one-area fixes, small UI tweaks | Codex `gpt-6.1-sol` or `gpt-6-astra` | Codex `gpt-6-astra` |
-| Data | a year's or a program's figures | Codex `gpt-6.1-sol` | Claude `sonnet` or Codex `gpt-6-astra` |
-| Normal | engine rules, schema, scripts, tests, ordinary UI | Codex `gpt-6-astra` | Claude `opus`, `medium` |
-| Complex | complicated UI changes, engine refactors | Claude `opus` | Codex `gpt-6-astra` |
+| Simple | mechanical work, Markdown, one-area fixes, small UI tweaks | Codex Sol or Astra | Codex Astra |
+| Data | a year's or a program's figures | Codex Sol | Codex Astra |
+| Normal | engine rules, schema, scripts, tests, ordinary UI | Codex Astra | Codex Astra |
+| Complex | complicated UI changes, engine refactors | Claude `opus` | Codex Astra |
 
-Use Claude `opus` only for Complex work, Normal reviews and the outage fallbacks below. Effort is `high`, which is
-also the cap for coders and reviewers alike; `medium` only for Normal reviews and Markdown-only or mechanical work
-(renames, dependency bumps, lint fixes). When in doubt between two classes, pick the higher one. The retro reports
-class, model and effort per issue.
+Use Claude `opus` only for Complex work and the outage fallbacks below. Effort is `high`, also the cap for coders
+and reviewers; `medium` only for Markdown-only or mechanical work (renames, dependency bumps, lint fixes).
+Pick the higher class when unsure; retros report class, model and effort per issue.
 
 ### When an agent or model is out
 An agent or model is unavailable when it is down, its plugin fails, or a usage limit won't reset before the work is
@@ -126,8 +125,8 @@ tier calls for is out, stay on the same agent and say so in the dispatch:
 - a Strong review never steps down. If the reviewing agent has no model at or above the review's tier, treat that
   agent as unavailable.
 
-When the other agent is unavailable, a fresh session of the author's agent reviews, at the strong tier and `high`
-effort, and its verdict header says "same-agent review".
+When the other agent is unavailable, a fresh session of the author's agent reviews with no shared coder context,
+at the strong tier and `high` effort. Every same-agent review's verdict header says "same-agent review".
 
 ## Running agents
 The orchestrator gives each agent one issue, its role file and an explicit list of files it owns; never run two
@@ -169,7 +168,7 @@ the golden-test requirements above; the reviewer's model alone does not require 
 The user merges instead, and the orchestrator labels the pull request `needs-human` and says so, when:
 - its issue is labelled `needs-human`, or
 - it makes significant layout changes, or
-- its review was a same-agent review, other than a Simple or Data task's, or
+- its review was a same-agent review, other than a Simple, Data or Normal task's, or
 - it changes this merge process, `AGENTS.md`, `CLAUDE.md`, `docs/agents/`, `.claude/agents/`, `.claude/settings.json`
   or `.codex/`.
 

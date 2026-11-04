@@ -20,14 +20,15 @@ As orchestrator, follow `docs/agents/orchestrator.md`. Create and lock the workt
 and start Codex with a Bash call that uses `run_in_background`, so you're notified on exit and never poll:
 `fnm exec --using=26 codex exec --approve-for-me -m <id> -c model_reasoning_effort='"<level>"'
 -c sandbox_workspace_write.network_access=true -C <worktree> -o <scratchpad>/<name>.out - < <scratchpad>/<name>.md
-> <scratchpad>/<name>.log 2>&1`, with the model id and effort from the tier table. With network on, Codex runs
+> <scratchpad>/<name>.log 2>&1`, resolving Sol/Astra via AGENTS.md's mapping and taking effort from its table.
+With network on, Codex runs
 `npm ci`, `gh`, `git push` and `fetch-source` itself, and gets `git commit` and browser commands through escalation
 (tested November 2026). So its brief says to do its own git, pull request and verdict steps; don't do them for it.
 Read only `<name>.out`; `grep -m1 'session id' <name>.log` and `grep -A1 'tokens used' <name>.log` give the rest.
 Send review fixes to the same session, from inside the worktree, so it keeps its context: `codex exec resume <id>`
 with the same `-c` and `-o` flags plus `-c approval_policy='"on-request"' -c approvals_reviewer='"auto_review"'`
-(`resume` takes neither `--approve-for-me` nor `-C`). Codex reviews of Claude's branches use
-the same command in a detached reviewer worktree with `docs/agents/reviewer.md` as the brief. A UI review that
+(`resume` takes neither `--approve-for-me` nor `-C`). Codex reviews start a fresh session with no shared coder
+context in a detached reviewer worktree, using the same launch command and `docs/agents/reviewer.md`. A UI review that
 didn't run the browser steps itself doesn't count. The plugin's `task` command runs with approvals off, so don't use
 it for issue work or reviews; `/codex:rescue` is for an ad-hoc second opinion in the current checkout.
 
