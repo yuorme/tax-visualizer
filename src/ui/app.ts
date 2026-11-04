@@ -182,6 +182,7 @@ const inputs = (withCare = true): Household => ({
   adults,
   kids: benefitCounts?.kids ?? kids,
   under6: benefitCounts?.under6 ?? under6,
+  childAges: care.benefitAgeProfile()?.children?.map(child => child.age),
   useBpa,
   whRate,
   useCredits,

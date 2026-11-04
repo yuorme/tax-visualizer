@@ -17,6 +17,7 @@ import { CARBON_STEPS } from "./carbon.mjs";
 import { CHILDCARE_STEPS } from "./childcare.mjs";
 import { DEDUCTION_STEPS } from "./deductions.mjs";
 import { HISTORY_STEPS } from "./history.mjs";
+import { checkManitobaFamilyLedger } from "./mb-family-benefit.mjs";
 import { ALLOWED_HOSTS, openPage, settle } from "./page.mjs";
 import { PORTFOLIO_RESPONSIVE_STEPS, PORTFOLIO_STEPS } from "./portfolio.mjs";
 import { COMPARISON_STEPS, RESPONSIVE_STEPS } from "./responsive.mjs";
@@ -963,6 +964,17 @@ function check(label, width, { states, errors, blocked }) {
     for (const v of axe)
       if (v.known && !STRICT) knownSeen.set(v.known, knownSeen.get(v.known) + 1);
       else fail(`colour contrast: ${v.message}`, `${where} ${v.target}`);
+  }
+}
+
+for (const width of [1000, 430, 375]) {
+  for (const colorScheme of ["light", "dark"]) {
+    const family = await run({
+      width,
+      colorScheme,
+      steps: [["Manitoba family ledger, ages 17–19 and persistence", checkManitobaFamilyLedger]],
+    });
+    check(`${width}px ${colorScheme}, Manitoba family benefit`, width, family);
   }
 }
 

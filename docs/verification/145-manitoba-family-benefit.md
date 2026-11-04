@@ -29,7 +29,7 @@ No official publication was fetched in this sandbox.
 - [2026 TD1MB](138-senior-credit-rules/sources/td1mb-2026.txt), line 12, directs to
   [TD1MB-WS](138-senior-credit-rules/sources/td1mb-ws-2026.txt), line 12 section. Its lines 1/4/5/7/12 publish
   $2,065 basic/dependent, $2,752 child, and 9% individual-income reduction. TD1MB confirms $15,780/$9,134.
-- [2026 T4127](138-senior-credit-rules/sources/t4127-2026.txt): table 8.2 confirms Manitoba 10.8%, 12.75%,
+- [2026 T4127](138-senior-credit-rules/sources/t4127-2026.txt): table 8.1 confirms Manitoba 10.8%, 12.75%,
   17.4% and the $47,000/$100,000 thresholds; its BPA formula confirms the $200,000–$400,000 phase-out.
   These were checked against the cached publication separately from arithmetic tests.
 - [2025 T1](138-senior-credit-rules/sources/federal-t1-2025.txt) and
@@ -62,8 +62,11 @@ newcomer/emigrant proration and foster allowances are unsupported; no eligibilit
 The guide also requires the child to live with the parent in Canada and excludes competing claims and special
 allowances. These remain explicit household assumptions. Entered dependants are assumed to have no income.
 
-Detailed ages come from validated childcare child entries, even with zero childcare expenses. The family benefit
-counts through age 18 independently of CCB's under-18 count. Legacy `kids` counts represent qualifying minors.
+Detailed ages reach the engine through `Household.childAges`, projected from `benefitAgeProfile()` independently
+of `claimInput()`. No paid care or valid expense draft is required. The family benefit counts through age 18
+independently of CCB's under-18 count; `kids` and `under6` keep their existing meanings. Engine callers with
+validated childcare entries still use that age fallback. Legacy `kids` counts represent qualifying minors.
+Saved scenarios and shared links already retain the ages; no stored format or URL schema changes are needed.
 A single parent's claimed eligible dependant uses the $2,065 component and is excluded from the $2,752 component.
 An age-18 child alone receives the child component under these assumptions. The existing eligible-dependant
 calculator uses the minor count and does not claim that child; this is a limitation of that existing calculation,
@@ -82,10 +85,11 @@ Each person retains their own basic component and taper; there is no unused-bene
 For people who are **not spouses**, s. 4.6(16.2)(b) permits one otherwise eligible person to claim by agreement;
 only if they cannot agree does higher income decide. The engine's `spouse: false` input does not identify each
 child's parent, whether both adults were eligible individuals, or their agreement. It retains the existing proxy
-that the higher-income adult is the eligible parent. That is a modeling assumption, **not** a claim that the Act
-always requires the higher-income unrelated adult. Multiple eligible supporting adults and their elections are
-unsupported. The unrelated-adults specimen verifies the proxy and single allocation; it does not verify every
-arrangement permitted by (16.2)(b).
+that the higher-income adult is the eligible parent when incomes differ. On equality, both adults enter the
+whole-claim election, modeling agreement under (16.2)(b) and preventing entry order from changing tax. These are
+modeling assumptions, **not** a claim that the Act always requires the higher-income unrelated adult. Explicit
+parent/eligibility assignments and agreements remain unsupported. The unrelated-adults specimens verify this
+proxy, single allocation and equal-income election, not every arrangement permitted by (16.2)(b).
 
 Turning off personal credits also disables this ordinary non-refundable credit. The refundable-credit switch
 does not disable it. These two settings have separate feature cases.
@@ -135,7 +139,7 @@ Capacity after BPA/spouse = `.108 × (40000 − 15780 − 9134) = 1629.288`.
 Credit = `.108 × 6034 = 651.672`; Manitoba tax = `977.616`.
 Isolated saving / household income = `651.672 / 40000 × 100 = 1.62918` percentage points.
 
-`tests/golden/features/mb-family-benefit.json` contains 33 specimens in each year, generated from the independent
+`tests/golden/features/mb-family-benefit.json` contains 38 specimens in each year, generated from the independent
 worksheet rather than production snapshots. The runner checks exact four-decimal values, individual form lines,
 reversed spouses, and reconciliation of the provincial ledger and household totals.
 
@@ -150,6 +154,7 @@ reversed spouses, and reconciliation of the provincial ledger and household tota
 | Grossed-up claimant and before-dividend capacity | `dividend-gross-up-claimant`, `dividend-credit-capped` |
 | Before-FTC order affects actual tax | `mixed-dividends-foreign` |
 | Through age 18, independent of CCB | `child-age-17`, `child-age-18`, `child-age-19` |
+| Ages without childcare claims | `ages-only-17`, `ages-only-18`, `ages-only-19` |
 | Existing eligible-dependant model | `single-parent-age-18`, `single-parent-mixed-ages` |
 | Deduct childcare before claimant selection/taper | `childcare-deduction` |
 | No fabricated disability claims | `disability-flags-do-not-create-claims` |
@@ -157,6 +162,7 @@ reversed spouses, and reconciliation of the provincial ledger and household tota
 | No duplicate claims for unrelated adults | `unrelated-adults` |
 | Equal/adjacent ordinary incomes | `equal-income-spouses`, `near-equal-income-spouses` |
 | Tie election after dividends/FTC, binary roundoff | `equal-income-dividend-capacity`, `equal-income-foreign-tax` |
+| Unrelated-adult tie agreement after dividends/FTC | `equal-income-unrelated-dividend-capacity`, `equal-income-unrelated-foreign-tax` |
 | Strict income priority despite lost tax capacity | `near-equal-dividend-restriction` |
 | Family taper fully exhausted | `family-taper-exhausted` |
 
@@ -171,6 +177,15 @@ claimant, leaving household Manitoba tax $1,276.56. These material differences c
 and the statutory unequal-income restriction. The foreign-income tie independently checks allocation after FTC.
 The 2,528 legacy checks cover 158 inputs × eight variants × two years: original household, all six $100 marginal
 bumps, and investment income removed. Every individual provincial tax, DTC, FTC and family amount is audited.
+
+Round 3 adds ten specimens without changing any existing fixture input or expected value. The six ages-only
+specimens reuse the independently checked age-17/18/19 results, passing CCB counts and separate ages instead of
+a zero-expense childcare claim. With one qualifying child, the base is `2065 + 2065 + 2752 − .09 × 40000 = 3282`;
+credit is $354.456 and Manitoba tax $1,274.832. At age 19 the base is $530, credit $57.24 and tax $1,572.048.
+The four unrelated-adult specimens use the existing dividend/FTC tie worksheets with `spouse: false`. Neither
+income pair permits a spouse amount, so their provincial form values are unchanged by marital status: the
+dividend tie yields $727.38 tax and the foreign-income tie $1,009.908. Reversed adult orders are also checked.
+Before the fix, the foreign-income tie chose $1,535.76 tax in one order, losing the $525.852 family credit.
 
 ## Legacy smoke correction
 
@@ -202,21 +217,26 @@ and still compares every other province, column and state. Mobile omits percent 
 
 Validation on 2026-11-03:
 
-- Required escalated `fnm exec --using=26 npm run check` passes: lint, typecheck, all 1,245 tests, build and
-  Chromium smoke (25 pages, 242 states, 40 contrast scans; no failures). The four previously failing invariant
-  cases pass without changes to their assertions. Log: `/private/tmp/145-r2-check.log`.
-- The 73 focused family-benefit tests pass, including all 66 feature goldens, the complete independent
+- Required escalated `fnm exec --using=26 npm run check` passes: lint, typecheck, all 1,256 tests, build and
+  Chromium smoke (31 pages, 248 states, 40 contrast scans; no failures). The four previously failing invariant
+  cases pass without changes to their assertions. Log: `/private/tmp/145-r3-check.log`.
+- The 84 focused family-benefit tests pass, including all 76 feature goldens, the complete independent
   legacy/counterfactual audit, reversed adults, age boundaries and both smoke-state calculations.
-- Focused browser ledger assertions pass at 375, 430 and 1280 px in light/dark: the $652 applied credit and
-  $978 final tax display for 2025/2026, absence in 2024, and no horizontal overflow. Log:
-  `/private/tmp/145-r2-browser.log`; screenshots: `/private/tmp/145-<width>-<theme>.png`.
+- The ledger check is now imported by the smoke runner and runs at 375, 430 and 1000 px in light/dark.
+  It checks the $652 credit/$978 tax example for 2025/2026, absence in 2024, and no horizontal overflow.
+  At zero childcare cost it checks ages 17/18 ($354 credit/$1,275 tax) and 19 ($57/$1,572), plus age-18 reloads
+  from saved state and from a shared link with cleared storage. Before the fix, this browser test failed on
+  `age 18: family credit`, actual `−$57` versus expected `−$354`: `/private/tmp/145-r3-e2e-red.log`.
+- A separate test compares serialized complete engine results with and without the ages for every province
+  and year outside the corrected Manitoba program, at ages 17/18/19: byte-identical. CCB is unchanged everywhere.
 - `npm run compare -- origin/main` completes all six viewport/theme runs and five states each, against
   `93a5f94fd`. Exit 1 reports three expected text-difference groups: methodology/sources and the corrected
   Manitoba chart values in mobile/desktop formatting. No control-state differences. This comparison retains
   driving, so its average-tax displays are −16.3% → −16.8%; the smoke comparison above disables driving.
-  Log: `/private/tmp/145-r2-compare.log`.
-- Structural diff against HEAD verifies exactly the numeric leaves below, unchanged fixture inputs/shape and
-  no other-province or historical edits. Formatting, documentation lint and `git diff --check` pass.
+  Log: `/private/tmp/145-r3-compare.log`.
+- Round 3 preserves all 66 existing feature cases and every existing annual/legacy fixture byte-for-byte.
+  The original correction inventory below is unchanged: no other-province or historical edits.
+  Formatting, documentation lint and `git diff --check` pass.
 
 ## Existing golden corrections
 

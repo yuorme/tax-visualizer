@@ -127,6 +127,27 @@ test("MB birth-year eligibility includes a child turning 18 even when the model'
   }
 });
 
+test("Separate child ages leave every other province/year byte-identical and preserve CCB counts", () => {
+  for (const year of listYears()) {
+    const y = years.get(year);
+    assert.ok(y);
+    for (const age of [17, 18, 19]) {
+      const hh: Household = {
+        ...fixture.defaults,
+        adults: 2,
+        kids: age < 18 ? 1 : 0,
+        people: [{ ...blank(0), oth: 40000 }, blank(0)],
+      };
+      for (const p of y.provinces) {
+        const before = compute(y, p, hh);
+        const after = compute(y, p, { ...hh, childAges: [age] });
+        assert.equal(after.ccb, before.ccb, `${year} ${p.code}: CCB`);
+        if (!p.familyTaxBenefit) assert.equal(JSON.stringify(after), JSON.stringify(before), `${year} ${p.code}`);
+      }
+    }
+  }
+});
+
 test("MB legacy smoke correction is independently verified at $28,000 and its $100 marginal step", () => {
   for (const [ord, oldTax, base] of [
     [28000, 126.5598, 1632.05],

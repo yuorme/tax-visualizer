@@ -38,7 +38,7 @@ function need<T>(v: T | null | undefined): T {
 
 test("2026 Manitoba published TD1 family-benefit parameters are separate from provisional filing rules", () => {
   // TD1MB line 12 directs to TD1MB-WS line 12: worksheet lines 1, 4, 5, 7 and 12.
-  // T4127 table 8.2 publishes the 10.8% rate, $47,000/$100,000 brackets; TD1MB publishes $15,780/$9,134.
+  // T4127 table 8.1 publishes the 10.8% rate, $47,000/$100,000 brackets; TD1MB publishes $15,780/$9,134.
   const p = prov("MB");
   const benefit = need(p.familyTaxBenefit);
   assert.equal(benefit.params.basic, 2065);

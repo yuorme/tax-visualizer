@@ -127,10 +127,10 @@ export function household(y: YearData, p: Province, hh: Household, peopleIn: Per
   // MB s. 4.6(16.1)(b) requires eligible-individual status at ANY time in the year. MB428-A's birth-year band
   // includes children turning 18, assuming the parent qualified before then; CCB's year-end count excludes them.
   // Use validated age details when available; legacy counts represent qualifying minor children.
+  const familyAges =
+    hh.childAges ?? (childcare.childCounts ? hh.childcare?.children?.map(child => child.age) : undefined);
   const familyChildren = familyParams
-    ? childcare.childCounts
-      ? (hh.childcare?.children?.filter(child => child.age <= familyParams.childThrough).length ?? 0)
-      : kids
+    ? (familyAges?.filter(age => age <= familyParams.childThrough).length ?? kids)
     : 0;
   const familyChildCount = Math.max(0, familyChildren - (single && useBpa && kids > 0 ? 1 : 0));
   // kidsAll: children counted for low-income reductions, other than a child already claimed as an eligible dependant
@@ -217,9 +217,9 @@ export function household(y: YearData, p: Province, hh: Household, peopleIn: Per
       childClaimants = incomesTied(incomes) ? [0, 1] : [incomes[0] < incomes[1] ? 0 : 1];
     }
     // MB s. 4.6(16.2)(a) is silent on equality. The documented interpretation elects the whole child claim
-    // by final household tax, as in #92. Unrelated adults retain the existing higher-income parent proxy:
-    // their respective eligibility and agreement under (16.2)(b) are not represented by the household inputs.
-    const familyClaimants = familyRule && couple && incomesTied(nets) ? [0, 1] : [c];
+    // by final household tax, as in #92. On equal incomes, unrelated adults also elect one claimant by
+    // agreement under (16.2)(b); otherwise they retain the existing higher-income eligible-parent proxy.
+    const familyClaimants = familyRule && ppl.length === 2 && incomesTied(nets) ? [0, 1] : [c];
     const elections = childClaimants.flatMap(child => familyClaimants.map(family => ({ child, family })));
     list = bestElection(
       elections.map(({ child: childClaimant, family: familyClaimant }) => {

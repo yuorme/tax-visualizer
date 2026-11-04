@@ -74,9 +74,10 @@ export function mbForms(
   const minors = ages ? ages.filter(a => a < 18).length : hh.kids;
   // Year-end 18 represents eligibility earlier in the year, per MB428-A's birth-year band; age alone
   // is not statutory entitlement. Ordinary eligible-parent assumptions are recorded in the verification doc.
-  const eligibleChildren = ages ? ages.filter(a => a <= 18).length : hh.kids;
+  const familyAges = hh.childAges ?? ages;
+  const eligibleChildren = familyAges ? familyAges.filter(a => a <= 18).length : hh.kids;
   const supporter = bases.length === 2 && bases[1].net > bases[0].net ? 1 : 0;
-  const tied = couple && Math.abs(bases[0].net - bases[1].net) < 1e-9;
+  const tied = people.length === 2 && Math.abs(bases[0].net - bases[1].net) < 1e-9;
   const owners =
     options.childClaimant !== undefined
       ? [options.childClaimant]

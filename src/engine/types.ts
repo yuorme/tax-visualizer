@@ -32,6 +32,7 @@ export interface Household {
   adults: number; // adults living in the household (a second adult with no income is a spouse with none)
   kids: number;
   under6: number; // how many of the children are under 6
+  childAges?: number[]; // validated whole, nonnegative year-end ages, independent of paid childcare and CCB counts
   useBpa: boolean; // apply basic personal amounts and other personal credits
   whRate: number; // foreign tax withheld on foreign dividends
   useCredits: boolean; // count refundable credits
