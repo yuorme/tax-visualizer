@@ -300,6 +300,7 @@ export function household(y: YearData, p: Province, hh: Household, peopleIn: Per
         couple,
         kids,
         ppl,
+        federalNets: nets,
         propTax: propertyTax(p, hh),
         rent: hh.homeValue > 0 ? 0 : hh.rent * 12,
       })
