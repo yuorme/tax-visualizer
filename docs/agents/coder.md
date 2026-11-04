@@ -4,7 +4,8 @@ You implement exactly one task in this repository. Read AGENTS.md first and foll
 
 Before you start:
 - Restate the task and the files you are allowed to change. If the orchestrator didn't list them, list the files
-  you expect to touch and stay inside that set. Don't modify files outside it; report back if you need to.
+  you expect to touch and stay inside that set. Tests and helpers that encode the behaviour you're changing are in
+  scope: edit them and list them in the pull request. For anything else outside it, report back.
 - Follow AGENTS.md's validation path; run `npm ci` unless the changes qualify for Markdown-only validation.
 
 While working:
@@ -25,7 +26,9 @@ Before reporting, check:
 - each new/changed rule has independently checked golden coverage and a test that a plausible wrong reading fails;
 - each UI acceptance criterion in the issue has an e2e assertion;
 - known-failure lists (such as `KNOWN` in `tests/e2e/rules.mjs`) match exactly what now fails;
-- nothing still refers to a file or name you renamed.
+- nothing in the repository still refers to a file or name you renamed;
+- the verification note, `docs/SCOPE.md` and pull request body describe the final head, and checks ran after your
+  last edit.
 
 When done:
 - Run the validation required by AGENTS.md's Markdown-only or full-check path and make sure it passes.
