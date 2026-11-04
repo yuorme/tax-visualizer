@@ -86,7 +86,13 @@ function incomesTied(incomes: number[]): boolean {
 /** Household sums the page shows: the Ontario surtax, the provincial tax reductions (Ontario tax reduction, LIFT
  *  credit, BC tax reduction), the foreign tax credit, and payroll by kind (cpp is base plus enhanced CPP or QPP). */
 function householdBreakdown(list: PersonResult[]) {
-  const b = { surtax: 0, provReductions: 0, ftc: 0, payroll: { cpp: 0, ei: 0, qpip: 0, terr: 0, ohp: 0 } };
+  const b = {
+    surtax: 0,
+    provReductions: 0,
+    ftc: 0,
+    healthServicesFund: 0,
+    payroll: { cpp: 0, ei: 0, qpip: 0, terr: 0, ohp: 0 },
+  };
   for (const r of list) {
     b.surtax += r.surtax;
     b.provReductions = b.provReductions + r.onRed + r.lift + r.bcRed;
@@ -96,6 +102,7 @@ function householdBreakdown(list: PersonResult[]) {
     b.payroll.qpip += r.pay.qpip;
     b.payroll.terr += r.pay.terr;
     b.payroll.ohp += r.ohp;
+    b.healthServicesFund += r.breakdown.healthServicesFund.contribution;
   }
   return b;
 }
@@ -319,6 +326,11 @@ export function household(y: YearData, p: Province, hh: Household, peopleIn: Per
       incomeBases,
       childcareCredit,
       householdPremium,
+      // Preserve the original subtraction order for marginal rates when the contribution is unchanged.
+      netTotalBeforeHealthServicesFund:
+        list.reduce((sum, r) => sum + r.breakdown.totalBeforeHealthServicesFund, 0) +
+        (householdPremium?.total ?? 0) -
+        benefits,
     }, // nested so the golden snapshot keeps its format (see personTax)
   };
 }
@@ -338,25 +350,32 @@ export const hasInv = (x: Person) => x.cg !== 0 || x.ed > 0 || x.nd > 0 || x.fd 
 /** Full result for one province: household tax plus marginal rates, investment tax, sales, property and fuel tax. */
 export function compute(y: YearData, p: Province, hh: Household) {
   const h = household(y, p, hh);
+  // Subtract the contribution separately: a constant charge must not perturb an unrelated marginal rate's
+  // fourth-decimal rounding through cancellation of larger household totals.
+  const netChange = (a: typeof h, b: typeof h) =>
+    a.breakdown.netTotalBeforeHealthServicesFund -
+    b.breakdown.netTotalBeforeHealthServicesFund +
+    (a.breakdown.healthServicesFund - b.breakdown.healthServicesFund);
   // Explicit eligible childcare earnings stay fixed in counterfactuals; other income never creates earnings.
   // Claimant selection is recomputed for each counterfactual; investment bumps never create earned income.
   // Marginal rates measured directly (next $100 of each type for the selected person), so phase-outs,
   // payroll ceilings, benefit clawbacks and spouse-amount interactions all show up.
   const margOf = (key: IncomeKey) =>
-    (household(
-      y,
-      p,
-      hh,
-      hh.people.map((x, i) => (i === hh.active ? bump(x, key, 100) : x)),
-    ).netTotal -
-      h.netTotal) /
-    100;
+    netChange(
+      household(
+        y,
+        p,
+        hh,
+        hh.people.map((x, i) => (i === hh.active ? bump(x, key, 100) : x)),
+      ),
+      h,
+    ) / 100;
   const margBy = {} as Record<MarginalKey, number>;
   for (const key of MARGINAL_KEYS) margBy[key] = margOf(key);
   // Investment income: capital gains and dividends. Other income (interest, rental and other) isn't part of it.
   const hasAnyInv = hh.people.some(hasInv);
   const invAmt = hh.people.reduce((a, x) => a + x.cg + x.ed + x.nd + x.fd, 0);
-  const invTax = hasAnyInv ? h.netTotal - household(y, p, hh, hh.people.map(zeroInv)).netTotal : 0;
+  const invTax = hasAnyInv ? netChange(h, household(y, p, hh, hh.people.map(zeroInv))) : 0;
   // Sales, property and fuel tax sit on top; they don't change marginal rates.
   const salesRate = p.salesTax.rate;
   const sales = hh.monthlySpending * 12 * salesRate;

@@ -17,8 +17,19 @@ line-by-line tax return. Simpler and slightly less precise is acceptable where i
 - Interest, rental and other income: taxed at the same rates and counted in net income and family net income for
   every benefit, credit, clawback and the Ontario Health Premium, but none of the employment-only treatment above,
   and no RRSP room. Pensions and RRSP/RRIF withdrawals go here until pension income has its own field; the
-  pension income credit isn't applied. Quebec's Health Services Fund contribution on non-employment income
-  is not modelled yet (#91).
+  pension income credit isn't applied. For 2025–2026, Quebec's Health Services Fund contribution applies per
+  person to subject non-employment income, including taxable gains and actual dividends. Other income is assumed
+  subject: OAS, taxable support receipts and other Schedule F exclusions are not separately identified.
+  RRSP, FHSA and federal childcare deductions do not reduce this base. Unclassified other deductions are not
+  subtracted; eligible carrying charges, deductible support and retirement-income transfers need separate
+  classification and remain unsupported. Ignoring an eligible claim can overstate this contribution; leaving
+  RRSP/FHSA out is correct. Employee enhanced QPP/QPIP does not qualify for Schedule F lines 43/43.1.
+  For 20,000 pension plus an illustrative 9,000 OAS entered together, this contribution is 90 too high;
+  OAS alone or income on the 150 plateau can produce no error. #18 must exclude its separate OAS input from
+  this base while retaining it for income tax. Business allocation outside Quebec (guide line 446 / TP-22)
+  and restricted line 297 deductions are not modelled. See [Schedule F audit](verification/91-qc-health-fund.md).
+  The 2026 rate and thresholds are published by Finances Québec; caps, the second-column base and income rules
+  provisionally continue 2025 Schedule F (`estimated: true`). The contribution remains omitted in 2019–2024.
 
 - Investment income can be entered as exact amounts (Manual) or estimated from a portfolio (Portfolio), per adult.
   Portfolio takes the value of non-registered holdings, an asset mix and one average yield, and only produces the
@@ -52,13 +63,16 @@ line-by-line tax return. Simpler and slightly less precise is acceptable where i
   s. 4.6(16.1)(b), following MB428-A's birth-year band; age alone is not entitlement. Eligible-dependant children
   are excluded. The higher-net-income spouse claims children; at equality, the model interprets the Act's silence
   as allowing either spouse and minimizes household tax, following #92. For unrelated adults, the higher-income
-  adult is assumed to be the eligible parent; competing eligible adults and their agreements are unsupported.
+  adult is assumed to be the eligible parent; at equality, the model elects the eligible claimant giving the
+  lower household tax under Manitoba s. 4.6(16.2)(b). Eligibility and competing outside-household claims are assumed.
   No senior/disability components. Earlier years remain omitted and locked despite their MB428 forms listing
   the program. See [audit](verification/145-manitoba-family-benefit.md).
 
 **Payroll (employee share)**
 - CPP/QPP base and enhanced contributions, EI or EI plus QPIP, Ontario Health Premium, the 2% payroll tax in the
   Northwest Territories and Nunavut. All but the health premium are on employment income only.
+- Quebec's Health Services Fund contribution (2025–2026) also appears in the Payroll subtotal and ledger,
+  separately from income tax. It is added exactly once and does not reduce income or any modelled benefit base.
 
 **Benefits and refundable credits (netted off the tax shown)**
 - Canada Child Benefit and every provincial or territorial child benefit that applies at the modelled incomes.

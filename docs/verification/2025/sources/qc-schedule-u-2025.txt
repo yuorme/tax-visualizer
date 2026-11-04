@@ -1,0 +1,571 @@
+Title: Revenu Québec Schedule U 2025
+URL: https://www.revenuquebec.ca/documents/en/formulaires/tp/2025-12/TP-1.D.U-V(2025-12).pdf
+Fetched: 2026-11-04
+SHA-256 of the original: 477fa0ffbe240a8d9e5e64682c9f224acabac8484c4004816554b8eac9fa186f
+Publication date modified: 2025-11-28
+PDF pages: all 10
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 1 of 10 ---
+
+Readtheinstructionsonpages8to10beforecompletingthisschedule.
+How to complete this schedule
+Part
+tocompleteSituation
+In 2025, you elected (or revoked an election) to stop making QPP contributions on your employment income
+by completing form RR-50-V,
+Election to Stop Contributing to the Québec Pension Plan, or Revocation of an Election,
+and givingittoyouremployer(s).
+Part A, section1
+You want to elect(orrevokeanelection) to stop making QPP contributions on your incomefromself-employment
+or your income as a person responsible for a family-type resource or an intermediate resource. Part A, section2
+You want to calculate the amount you can deduct on line248 of your return, you entered an amount
+on lines 98 and 98.1 (and 98.2, if applicable), and you earned:
+•• only employment income in Québec; or
+•• employment income in Québec and self-employment income forwhichyoumadeanelectiontostopmaking
+QPP contributions in a previous year or this year for all of 2025, and the election is ineffectfortheentireyear.
+Part B
+You want to calculate your QPP contribution on incomefromself-employment (line445 of your return)
+and the amount you can deduct on line248, you were 18 or over but under 73 at the end of the year,
+you did not enter anything on line 96, 96.1 or 96.2, and you earned:
+•• only self-employment income;
+•• employment income and self-employment income for which you didnotmakeanelectiontostopmaking
+QPP contributionsin a previous year or for which you revokedsuchanelection this year or in a previous year; or
+•• employment income for which you want to make an optional contribution.
+Part C
+A Election to stop making QPP contributions or revocation of an election
+made in a previous year
+1 Employment income
+Complete this section if, in 2025, you elected (or revoked an election) to stop making QPP contributions on your employment income by completing
+form RR-50-V and giving it to your employer(s).
+1stemployer 2ndemployer
+Name of firstemployer
+1
+Election to stop making QPP contributions
+Month that immediately follows the date
+the form was filed with your employer
+(Part4offormRR-50-V) . . . . . . . . . . . 1.1
+M M
+2 0 2 5
+Election month
+Revocation of an election to stop making QPP contributions
+Month that immediately follows the date
+the form was filed with your employer
+(Part4offormRR-50-V) . . . . . . . . . . . 1.2
+M M
+2 0 2 5
+Revocation month
+Name of secondemployer
+2
+Election to stop making QPP contributions
+Month that immediately follows the date
+the form was filed with your employer
+(Part4offormRR-50-V) . . . . . . . . . . . 2.1
+M M
+2 0 2 5
+Election month
+Revocation of an election to stop making QPP contributions
+Month that immediately follows the date
+the form was filed with your employer
+(Part4offormRR-50-V) . . . . . . . . . . . 2.2
+M M
+2 0 2 5
+Revocation month
+Y 5 U 1 Z Z 8 9 5 3 8 5 4 9
+T P -1. D.U-V (2025-12) 1 of 10T
+UPrescribed form
+S C H E D U L E
+U
+Québec Pension Plan (QPP)
+Contribution and Deduction
+
+--- PDF page 2 of 10 ---
+
+2 Income from self-employment
+Complete this section if you are self-employed or a person responsible for a family-type resource or an intermediate resource, you were 65 or over
+but under 73 at the end of the year, you receive a retirement pension from the QPP or the Canada Pension Plan (CPP) and you want to elect
+(or revoke an election) to stop making QPP contributions.
+Donotcomplete this section if you only have employment income. Instead, complete form RR-50-V,
+Election to Stop Contributing to the Québec
+Pension Plan, or Revocation of an Election, send it to us and give a copy to your employer(s).
+Check the applicable box.
+Election
+You want to stop making QPP contributions and you understand
+that:
+•• No future retirement pension supplement will be allocated
+or counted as of the effective date of the election.
+•• If your QPP or CPP retirement pension is cancelled, your election
+to stop making QPP contributions will no longer be valid, and you
+will have to make QPP contributions on the self-employment
+income you report for the year.
+If you are electing to stop making QPP contributions, enterthe
+month in which you want the election to take effect in 2025.
+It cannot precede the month you turn 65 and start receiving
+a retirement pension from the QPP. For example, if you turn 65
+in June, you can choose any month from June to December.
+Election month
+5 2 0 2 5 M M
+The election will stay in effect until you revoke it or until December 31
+of the year you turn 72.
+Revocation of an election
+You want to resume making your QPP contributions.
+If you are revoking an election made in a previous year, enter
+the month in which you want the revocation to take effect in 2025.
+Revocation month
+6 2 0 2 5 M M
+The revocation remains in effect until you make a new election
+to stop making QPP contributions in another year or until
+December 31 of the year you turn 72.
+Y 5 U 2 Z Z 8 9 5 3 8 5 5 0T
+T P -1. D.U-V (2025-12) 2 of 10
+U
+
+--- PDF page 3 of 10 ---
+
+B Deduction for QPP contributions on employment income
+Donotcomplete this part if you entered an amount on line 96, 96.1 or 96.2 of your return. Instead, complete form LE-35-V,
+Contribution and Deduction
+Related to the QPP or the CPP.
+QPP contribution (line 98 of your return) (maximum$4,339.20) 10
+× 0.156250
+Multiply line 10 by 0.156250. = 11
+Pensionable salary or wages (QPP) (line 98.1 of your return) (maximum$71,300) 12
+Personal QPP exemption. See the instructions for Part B. – 13
+Subtract line 13 from line 12. = 14
+Maximum pensionable earnings. See the instructions for Part B. 14.1
+Amount from line 13 – 14.2
+Subtract line 14.2 from line 14.1. If the result is negative, enter 0. = 14.3
+Amount from line 14 or line 14.3, whichever is less 14.4
+× 1%
+Multiply line 14.4 by 1%. = 15
+Amount from line 11 or line 15, whichever is less 16
+QPP contribution (line 98 of your return) 17
+Amount from line 14.4 17.1
+× 6.4%
+Multiply line 17.1 by 6.4%. = 17.2
+Subtract line 17.2 from line 17. If the result is negative, enter 0. = 17.3
+Additional contribution to the QPP (line 98.2 of your return) + 17.4
+Add lines 17.3 and 17.4. = 17.5
+Pensionable salary or wages (QPP) (line 98.1 of your return) 18.5
+Amount from line 14.1 – 18.6
+Subtract line 18.6 from line 18.5. If the result is negative, enter 0. = 18.7
+Additional maximum pensionable earnings. See the instructions for Part B. 18.8
+Amount from line 14.1 – 18.9
+Subtract line 18.9 from line 18.8. If the result is negative, enter 0. = 19
+Amount from line 18.7 or line 19, whichever is less 20
+× 4%
+Multiply line 20 by 4%. = 21
+Amount from line 17.5 or line 21, whichever is less 22
+Amount from line 16 + 22.1
+Add lines 22 and 22.1.
+Carry the result to line 248 of your return. Deduction for QPP contributions on employment income = 23
+Y 5 U 3 Z Z 8 9 5 3 8 5 5 1T
+T P -1. D.U-V (2025-12) 3 of 10
+U
+
+--- PDF page 4 of 10 ---
+
+C QPP contribution and deduction on income from self-employment
+Donotcompletethis part if you elected to stop making QPP contributions in January 2025 or a previous year and the election is still in effect.
+Donotcomplete this part if you entered amounts on lines 96, 96.1 and, if applicable, 96.2 of your return. Instead, complete form LE-35-V,Contribution and Deduction Related to the QPP or the CPP.
+1 QPP contribution on income from self-employment
+Net business income (line 27 of Schedule L). If the amount is negative, enter 0.
+See the instructions for Part C to find out whether this amount has to be reduced in proportion
+to the applicable number of months. 30
+Pensionable earnings of a person responsible for a family-type resource or an intermediate resource (line 40 of Schedule L).
+See the instructions for Part C to find out whether this amount has to be reduced in proportion
+to the applicable number of months. + 31
+Add lines 30 and 31. = 31.1
+The net business income entitling you to a deduction on line 293 of your return and your pensionable earnings
+that constitute income situated on a reserve or premises (both included on line 31.1) for which you arenotmaking
+an election to make QPP contributions – 31.2
+Subtract line 31.2 from line 31.1. If the result is negative, enter 0. = 31.3
+Employment income on which you want to make an optional contribution. See the instructions for Part C. + 32
+Add lines 31.3 and 32. = 33
+QPP contribution (line 98 of your return) 34
+Additional contribution to the QPP (line 98.2 of your return) + 35
+Add lines 34 and 35. = 36
+÷ 6.4%
+Divide line 36 by 6.4%. = 38
+Personal QPP exemption. See the instructions for Part C. + 39
+Add lines 38 and 39. = 40
+Pensionable salary or wages (QPP) (line 98.1 of your return) – 41
+Subtract line 41 from line 40. If the result is negative, enter 0. = 42
+Subtract line 42 from line 33. If the result is negative, enter 0. = 43
+Maximum pensionable earnings. See the instructions for Part C. 44
+Amount from line 39 – 45
+Subtract line 45 from line 44. If the result is negative, enter 0. = 46
+Amount from line 38 – 47
+Subtract line 47 from line 46. If the result is negative, enter 0. = 47.1
+Amount from line 43 or line 47.1, whichever is less 47.2
+× 12.8%
+Multiply line 47.2 by 12.8%. = 48
+Additional maximum pensionable earnings. See the instructions for Part C. 53
+Amount from line 44 – 54
+Subtract line 54 from line 53. = 55
+Amount from line 41 56
+Amount from line 44 – 57
+Subtract line 57 from line 56.
+If the result is negative, enter 0. = 58
+Amount from line 55 or line 58, whichever is less 59
+× 4%
+Multiply line 59 by 4%. = 60
+Continued on the next page.
+Y 5 U 4 Z Z 8 9 5 3 8 5 5 2T
+T P -1. D.U-V (2025-12) 4 of 10
+U
+
+--- PDF page 5 of 10 ---
+
+Amount from line 35 or line 60, whichever is less 61
+÷ 4%
+Divide line 61 by 4%. 62
+Amount from line 35 63
+Amount from line 61 – 64
+Subtract line 64 from line 63. If the result is negative, enter 0. = 65
+÷ 4%
+Divide line 65 by 4%. = 66
+Amount from line 34 67
+Add lines 33 and 41 (maximum$71,300). 68
+Amount from line 39 – 69
+Subtract line 69 from line 68.
+If the result is negative, enter 0. = 70
+× 6.4%
+Multiply line 70 by 6.4% (maximum$4,339.20). = 71
+Subtract line 71 from line 67. If the result is negative, enter 0. = 72
+÷ 4%
+Divide line 72 by 4%. = 73
+If you entered an amount on line 73, add lines 62, 66 and 73. If not, enter 0. = 74
+Add lines 40 and 74. 75
+Amount from line 41 or line 75, whichever is less 76
+Add lines 33 and 76. 77
+Amount from line 44 – 78
+Subtract line 78 from line 77. If the result is negative, enter 0. = 79
+Amount from line 74 – 80
+Subtract line 80 from line 79. If the result is negative, enter 0. = 81
+Amount from line 55 82
+Amount from line 74 – 83
+Subtract line 83 from line 82. If the result is negative, enter 0. = 84
+Amount from line 33 85
+Amount from line 74 86
+Amount from line 41 87
+Amount from line 44 – 88
+Subtract line 88 from line 87.
+If the result is negative, enter 0. = 89
+Subtract line 89 from line 86. If the result is negative, enter 0. = 90
+Subtract line 90 from line 85. If the result is negative, enter 0. = 91
+Amount from line 81, line 84 or line 91, whichever is less 92
+× 8%
+Multiply line 92 by 8%. = 93
+Amount from line 48 + 93.1
+Add lines 93 and 93.1. = 94
+Continued on the next page.
+Y 5 U 5 Z Z 8 9 5 3 8 5 5 3T
+T P -1. D.U-V (2025-12) 5 of 10
+U
+
+--- PDF page 6 of 10 ---
+
+Amount from line 71 95.1
+Amount from line 41 95.2
+Amount from line 33 + 95.3
+Add lines 95.2 and 95.3. = 95.4
+Amount from line 53 or line 95.4, whichever is less 95.5
+Amount from line 44 – 95.6
+Subtract line 95.6 from line 95.5. If the result is negative, enter 0. = 95.7
+× 4%
+Multiply line 95.7 by 4%. = 95.8
+Add lines 95.1 and 95.8. = 95
+Amount from line 36 – 96
+Subtract line 96 from line 95. If the result is negative, enter 0. = 97
+× 2
+Multiply line 97 by 2. = 98
+Amount from line 94 or line 98, whichever is less.
+Carry this amount to line 445 of your return. QPP contribution on income from self-employment 99
+2 QPP deduction
+Amount from line 48 100
+× 0.421875
+Multiply line 100 by 0.421875.
+If you entered an amount on line 31, see “Special cases” in the instructions for Part C. = 101
+Amount from line 48 102
+× 0.156250
+Multiply line 102 by 0.156250. = 103
+Amount from line 34 104
+× 0.156250
+Multiply line 104 by 0.156250. = 105
+Amount from line 33 106
+Amount from line 41 + 107
+Add lines 106 and 107. = 108
+Amount from line 39 – 109
+Subtract line 109 from line 108. If the result is negative, enter 0. = 110
+Amount from line 46 or line 110, whichever is less 111
+× 1%
+Multiply line 111 by 1%. = 112
+Amount from line 105 or line 112, whichever is less + 113
+Add lines 101, 103 and 113. = 114
+Amount from line 93 or line 99, whichever is less 115
+Amount from line 34 116
+Amount from line 111 116.1
+× 6.4%
+Multiply line 116.1 by 6.4%. = 116.2
+Subtract line 116.2 from line 116. If the result is negative, enter 0. = 116.3
+Additional contribution to the QPP (line 98.2 of your return) + 116.4
+Add lines 116.3 and 116.4. = 116.5
+Amount from line 41 117.5
+Amount from line 33 + 117.6
+Add lines 117.5 and 117.6. = 117.7
+Amount from line 44 – 117.8
+Subtract line 117.8 from line 117.7. If the result is negative, enter 0. = 117.9
+Continued on the next page.
+Y 5 U 6 Z Z 8 9 5 3 8 5 5 4T
+T P -1. D.U-V (2025-12) 6 of 10
+U
+
+--- PDF page 7 of 10 ---
+
+Amount from line 53 118
+Amount from line 44 – 118.1
+Subtract line 118.1 from line 118. If the result is negative, enter 0. = 118.2
+Amount from line 117.9 or 118.2, whichever is less 118.3
+× 4%
+Multiply line 118.3 by 4%. = 122
+Amount from line 116.5 or line 122, whichever is less 123
+Add lines 114, 115 and 123.
+Carry the result to line 248 of your return. QPP deduction 124
+Y 5 U 7 Z Z 8 9 5 3 8 5 5 5Enclose this schedule with your return.
+If you want to keep a copy for your records, see the guide.
+T
+T P -1. D.U-V (2025-12) 7 of 10
+U
+
+--- PDF page 8 of 10 ---
+
+Instructions
+Québec Pension Plan (QPP) contributions
+The QPP is a mandatory public insurance plan for workers 18 or over
+whose yearly income is more than $3,500. You must contribute until
+the year you turn 73, which means that you will not pay contributions
+on the salary and earnings you receive as of January 1 of that year.
+Part A – Section 2
+Eligibility
+You can elect to stop making QPP contributions if you meet all the
+following conditions:
+•• You are self-employed or a person responsible for a family-type
+resource or an intermediate resource.
+•• You were 65 or over but under 73 at the end of the year.
+•• You receive a QPP or Canada Pension Plan (CPP) retirement pension.
+•• You did not revoke an election to stop making QPP contributions
+during the year.
+You can make the election as of the day after your 65th birthday.
+NOTE
+It is usually better to continue making QPP contributions after you
+turn 65. For more information, go to the Retraite Québec website
+at retraitequebec.gouv.qc.ca.
+Conditionsfortheelection
+You can only complete this schedule onceayear. If you elect to stop
+making QPP contributions one year, you cannot revoke the election
+until the following year.
+Example
+If you elected to stop making QPP contributions in June, you will
+have to wait until at least January 1 of the following year to revoke
+your election and resume your QPP contributions.
+Likewise, if you revoke an election you made in a previous year, you will
+have to wait until the following year to make a new election to stop
+making contributions.
+Election
+To make the election to stop making QPP contributions, complete this
+schedule and file it with your income tax return for the year in which you
+want the election to apply.
+If you are self-employed or a person responsible for a family-type
+resource or an intermediate resource, the election will apply to your
+income from self-employment only. To make this election for your
+employment income for the same year, complete form RR-50-V,
+Election
+to Stop Contributing to the Québec Pension Plan, or Revocation
+of an Election, send it to us and give a copy to your employer(s).
+Be sure to keep proof that you receive a QPP or CPP retirement pension
+so that you can provide it on request.
+Effectiveelectiondate
+The election comes into effect on the first day of the month in which
+you made it. We will stop calculating your QPP contribution as of the
+first day of the election month.
+Revocation
+To revoke an election to stop making QPP contributions, complete
+this schedule and file it with your income tax return for the year in which
+you want the revocation to apply.
+If you made an election during the year and you want to resume
+your QPP contributions, you cannot revoke it untilyoufileyourincome
+taxreturn for the following year.
+Example
+If you elected to stop making QPP contributions in June, you will
+have to wait until at least January 1 of the following year to revoke
+your election and resume your QPP contributions.
+The revocation takes effect on the first day of the month you made
+the revocation. We will calculate your QPP contributions as of the first
+month covered by the revocation.
+Part B
+Line13 Personalexemption
+If none of the situations in Table 1 on page 10 applied to you in 2025,
+enter $3,500 on line 13. Otherwise, determine the number of months
+to consider using column C. Then, find that number in Table 2 on
+page 10 and enter the corresponding amount from column B on line 13.
+Line14.1 Maximumpensionableearnings
+If none of the situations in Table 1 applied to you in 2025, enter $71,300
+on line 14.1. Otherwise, determine the number of months to consider
+using column C. Then, find that number in Table 2 and enter the
+corresponding amount from column C on line 14.1.
+Line18.8 Additionalmaximumpensionableearnings
+If none of the situations in Table 1 applied to you in 2025, enter $81,200
+on line 18.8. Otherwise, determine the number of months to consider
+using column C. Then, find that number in Table 2 and enter the
+corresponding amount from column D on line 18.8.
+G U I D Z Z 7 1 8 5 7 3 6 8T
+T P -1. D.U-V (2025-12) 8 of 10
+U
+
+--- PDF page 9 of 10 ---
+
+Part C
+Optionalcontributiononcertaintypesofemploymentincome
+If the total QPP and CPP contributions you made as an employee
+in 2025 (lines 98, 98.2, 96 and 96.2 of your return) were less
+than $4,735.20 and you want to increase your QPP benefits, you can
+make an additional contribution on all or part of the income reported
+on line 107 and on certain income included on line 101 (see “Optional
+contribution to the Québec Pension Plan (QPP)” in the instructions
+for line 101). If you decide to make an additional contribution, check
+box 444 on your return and complete Part C of this schedule.
+However, if you entered amounts on lines 96, 96.1 and, if applicable,
+96.2, complete form LE-35-V,
+Contribution and Deduction Related
+to the QPP or the CPP, instead of this schedule. Do not enclose the form
+with your return, but keep it for your records.
+You must request the optional contribution no later than June 15 of
+the second year following the year for which you want to make
+the contribution.
+Indian
+If you are an Indian, complete the following lines in Part C as follows:
+•• On line 30, include the net business income entitling you to
+a deduction on line 293 of your return.
+•• On line 31, include your pensionable earnings as a person responsible
+for a family-type resource or an intermediate resource that constitute
+income situated on a reserve or premises.
+•• On line 31.2, include the net business income entitling you
+to a deduction on line 293 of your return and your pensionable
+earnings as a person responsible for a family-type resource
+or an intermediate resource that constitute income situated
+on a reserve or premises (both included on line 31.1) for which you
+arenotelectingto make QPP contributions.
+•• On line 32, include the employment income entitling you to a
+deduction on line 293 of your return, on which QPP contributions
+were not withheld at source and on which you are making
+an optional QPP contribution.
+If all the employment or business income on which you are making
+an optional contribution entitles you to a deduction on line 293
+of your return, you cannot claim a deduction for the optional contribution.
+Specialcases
+•• If you are self-employed and all your business income entitles
+you to a deduction on line 297 (points 7, 9 and 12), you cannot deduct
+the contribution payable in respect of that business. If necessary,
+we will correct the amount you enter on line 248.
+•• If you areapersonresponsibleforafamily-typeresourceoran
+intermediateresourceandyoureceivedanRL-29slip, you cannot
+claim a deduction for the contribution payable on the earnings
+you entered on line 40 of Schedule L. If you entered amounts
+on lines 30 and 32 of Schedule U, contact us.
+Lines30and31 Applicablenumberofmonths
+If situation 1, 2, 3, 5 or 6 in Table 1 on page 10 applied to you, multiply
+the net business income to enter on line 30 or the pensionable
+earnings to enter on line 31 by the result of the following calculation:
+the applicable number of months according to column B in Table 1
+divided by 12.
+Line39 Personalexemption
+If none of the situations in Table 1 below applied to you in 2025,
+enter $3,500 on line 39. Otherwise, determine the number of months
+to consider using column C. Then, find that number in Table 2 on
+page 10 and enter the corresponding amount from column B on line 39.
+Line44 Maximumpensionableearnings
+If none of the situations in Table 1 applied to you in 2025, enter $71,300
+on line 44. Otherwise, determine the number of months to consider using
+column C. Then, find that number in Table 2 and enter the corresponding
+amount from column C on line 44.
+Line53 Additionalmaximumpensionableearnings
+If none of the situations in Table 1 applied to you in 2025, enter $81,200
+on line 53. Otherwise, determine the number of months to consider
+using column C. Then, find that number in Table 2 and enter
+the corresponding amount from column D on line 53.
+G U I D Z Z 7 1 8 5 7 3 6 8T
+T P -1. D.U-V (2025-12) 9 of 10
+U
+
+--- PDF page 10 of 10 ---
+
+TABLE1 MonthstoconsiderwhencalculatingtheQPPcontributionanddeduction
+A
+Situation
+B
+Applicablenumberofmonths
+C
+Months
+to considerfor
+thecalculation
+1. You turned 18. Number of months between your birthday
+and the end of the year
+Same as
+the applicable
+number of months
+2. You started receiving a disability pension under the QPP or CPP. Number of months between the beginning of
+the year and the month you were declared disabled
+(including that month). If you also received
+a retirement pension under the QPP, include
+the months for which you received it.
+3. You started receiving a retirement pension under the QPP
+and you were receiving a disability pension under the QPP on January 1.
+Number of months in the year for which you received
+the retirement pension under the QPP
+4. You are completing a deceased person’s income tax return. Number of months between the beginning
+of the year and the month the person died
+(including that month)
+5. You were 65 or over but under 73, you received a retirement pension
+under the QPP or CPP and you electedto stop making QPP contributions
+on your income from self-employment or your income as a person
+responsible for a family-type resource or intermediate resource.
+Number of months between the beginning
+of the year and the month you made the election
+(not including that month)
+12
+6. You revokedanelectionto stop making QPP contributions
+on your income from self-employment or your income as a person
+responsible for a family-type resource or intermediate resource.
+Number of months between the month you made
+the election and the end of the year
+(including the month you revoked the election)
+12
+TABLE2 Monthlyproportions
+A
+Numberofmonths
+B
+Maximum
+personalexemption
+C
+Maximum
+pensionableearnings
+D
+Additionalmaximum
+pensionableearnings
+1 $291.67 $5,941.67 $6,766.67
+2 $583.33 $11,883.33 $13,533.33
+3 $875.00 $17,825.00 $20,300.00
+4 $1,166.67 $23,766.67 $27,066.67
+5 $1,458.33 $29,708.33 $33,833.33
+6 $1,750.00 $35,650.00 $40,600.00
+7 $2,041.67 $41,591.67 $47,366.67
+8 $2,333.33 $47,533.33 $54,133.33
+9 $2,625.00 $53,475.00 $60,900.00
+10 $2,916.67 $59,416.67 $67,666.67
+11 $3,208.33 $65,358.33 $74,433.33
+12 $3,500.00 $71,300.00 $81,200.00
+G U I D Z Z 7 1 8 5 7 3 6 8T
+T P -1. D.U-V (2025-12) 10 of 10
+U

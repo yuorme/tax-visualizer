@@ -10,6 +10,11 @@ brackets:
 basicPersonalAmount: 18571
 dividendTaxCredit: {eligible: 0.117, nonEligible: 0.0342}
 spouseAmount: transfer     # a spouse's unused basic credit is transferred instead
+healthServicesFund:
+  name: Quebec Health Services Fund
+  program: qc-health-services-fund
+  # Schedule F Part B, separate columns at 63060; lines 77–82, including both maxima.
+  params: {threshold: 18130, upperThreshold: 63060, rate: 0.01, firstCap: 150, max: 1000}
 quebec:
   workerDeduction: {rate: 0.06, max: 1420}
   livingAlone: {max: 2128, rate: 0.1875, threshold: 42090}
@@ -51,6 +56,7 @@ fuelTax:
   regional: {name: ARTM, gasoline: 0.03}   # Autorité régionale de transport métropolitain
 
 sources:
+  - {label: "Revenu Québec, 2025 Schedule F, Parts A and B (income base and contribution)", url: "https://www.revenuquebec.ca/documents/en/formulaires/tp/2025-12/TP-1.D.F-V(2025-12).pdf"}
   - {label: "NWT Finance, Budget 2025-2026, B22 (provincial/territorial fuel tax rates at January 30, 2025; regional additions separate)", url: "https://www.fin.gov.nt.ca/sites/fin/files/resources/2025-26_budget_address_and_papers_final_0.pdf"}
   - {label: "Revenu Québec, Fuel tax rates (gasoline $0.1920 a litre, regular rate; archived September 11, 2025)", url: "http://web.archive.org/web/20250911061524/https://www.revenuquebec.ca/en/businesses/consumption-taxes/fuel-tax/fuel-tax-rates/"}
   - {label: "ARTM, Budget 2026 (ARTM gasoline tax: $0.03 a litre in its territory, not indexed since 1992)", url: "https://www.artm.quebec/wp-content/uploads/2025/12/RP_Budget_2026.pdf"}

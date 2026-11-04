@@ -10,6 +10,14 @@ brackets:
 basicPersonalAmount: 18952
 dividendTaxCredit: {eligible: 0.117, nonEligible: 0.0342}
 spouseAmount: transfer     # a spouse's unused basic credit is transferred instead
+healthServicesFund:
+  name: Quebec Health Services Fund
+  program: qc-health-services-fund
+  # Finances Québec Table 3 verifies the 1% rate and both 2026 thresholds.
+  # Caps (150/1000), the second-column base (150) and Part A rules continue 2025 Schedule F;
+  # not independently verified against a published 2026 Schedule F.
+  estimated: true
+  params: {threshold: 18500, upperThreshold: 64355, rate: 0.01, firstCap: 150, max: 1000}
 quebec:
   workerDeduction: {rate: 0.06, max: 1450}
   livingAlone: {max: 2172, rate: 0.1875, threshold: 42955}
@@ -51,6 +59,8 @@ childcareCredit:
     annualSevere: 17145
     rates: [[25305, 0.78], [44620, 0.75], [46270, 0.74], [47935, 0.73], [49565, 0.72], [51225, 0.71], [122290, 0.7], [.inf, 0.67]]
 sources:
+  - {label: "Finances Québec, 2026 parameters, Table 3 (1% Health Services Fund contribution and thresholds)", url: "https://cdn-contenu.quebec.ca/cdn-contenu/adm/min/finances/publications-adm/parametres/AUTEN_IncomeTax2026.pdf"}
+  - {label: "Revenu Québec, 2025 Schedule F (caps and income rules provisionally continued in 2026)", url: "https://www.revenuquebec.ca/documents/en/formulaires/tp/2025-12/TP-1.D.F-V(2025-12).pdf"}
   - {label: "Revenu Quebec, new childcare age limit in 2026", url: "https://www.revenuquebec.ca/en/press-room/tax-news/details/2025-09-23/new-age-limit-for-the-refundable-tax-credit-for-childcare-expenses/"}
   - {label: "Revenu Quebec, Schedule C pooled expenses and family income", url: "https://www.revenuquebec.ca/documents/en/formulaires/tp/2025-12/TP-1.D.C-V%282025-12%29.pdf"}
   - {label: "Finances Quebec, 2025 and 2026 childcare expense limits and income rates, Tables 3 and 5", url: "https://cdn-contenu.quebec.ca/cdn-contenu/adm/min/finances/publications-adm/parametres/AUTEN_IncomeTax2026.pdf"}

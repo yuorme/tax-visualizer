@@ -10,6 +10,16 @@ import { blank, compute, type Household } from "../../src/engine/index.ts";
 
 const year = Number(path.basename(import.meta.filename, ".test.ts"));
 const y = loadYear(year);
+
+test("2026 Health Services Fund: published rate and thresholds; continued caps are estimates", () => {
+  const fund = y.provinces.find(p => p.code === "QC")?.healthServicesFund;
+  assert.ok(fund);
+  // Finances Québec, 2026 parameters Table 3, p. 10: these three values are published independently of YAML.
+  assert.equal(fund.params.rate, 0.01);
+  assert.equal(fund.params.threshold, 18500);
+  assert.equal(fund.params.upperThreshold, 64355);
+  assert.equal(fund.estimated, true, "2026 Schedule F caps and income rules are not verified by Table 3");
+});
 const prov = (c: string) => {
   const p = y.provinces.find(p => p.code === c);
   if (!p) throw new Error(`no province ${c}`);

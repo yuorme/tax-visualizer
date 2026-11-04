@@ -20,6 +20,7 @@ import { HISTORY_STEPS } from "./history.mjs";
 import { checkManitobaFamilyLedger } from "./mb-family-benefit.mjs";
 import { ALLOWED_HOSTS, openPage, settle } from "./page.mjs";
 import { PORTFOLIO_RESPONSIVE_STEPS, PORTFOLIO_STEPS } from "./portfolio.mjs";
+import { checkQuebecHealthFund } from "./qc-health-fund.mjs";
 import { COMPARISON_STEPS, RESPONSIVE_STEPS } from "./responsive.mjs";
 import { COLUMN_COUNT, contrastViolations, inspect, KNOWN, MAX_LABEL_LENGTH } from "./rules.mjs";
 
@@ -975,6 +976,12 @@ for (const width of [1000, 430, 375]) {
       steps: [["Manitoba family ledger, ages 17–19 and persistence", checkManitobaFamilyLedger]],
     });
     check(`${width}px ${colorScheme}, Manitoba family benefit`, width, family);
+    const healthFund = await run({
+      width,
+      colorScheme,
+      steps: [["Quebec Health Services Fund inputs, totals and historical coverage", checkQuebecHealthFund]],
+    });
+    check(`${width}px ${colorScheme}, Quebec Health Services Fund`, width, healthFund);
   }
 }
 
@@ -997,6 +1004,57 @@ for (const width of [1000, 430, 375]) {
       assert.deepEqual(mb, ["col-MB", `-19.4${suffix}`, `17.6${suffix}`]);
       mb[1] = `-19.8${suffix}`;
       mb[2] = `7.6${suffix}`;
+    }
+    if (name === "investments, Quebec destination" || name === "home value, taxable spending, sort") {
+      // #91: partner's subject income = 20,000 × 50% + 12,000 + 8,000 = 30,000.
+      // 2026 Schedule F: (30,000 − 18,500) × 1% = 115. Income tax/benefits are unchanged.
+      // Guard every obsolete value before replacing it; every other cell still compares exactly.
+      const own = name === "home value, taxable spending, sort";
+      const changes = [
+        [
+          "CPP/QPP, EI & health premiums\t$7,284\t$7,741\t+$458",
+          "CPP/QPP, EI & health premiums\t$7,284\t$7,856\t+$573",
+        ],
+        ["Partner\t$22,788\t$29,503\t+$6,715", "Partner\t$22,788\t$29,618\t+$6,830"],
+        ["Tax on investment income\t$7,161\t$9,756\t+$2,595", "Tax on investment income\t$7,161\t$9,871\t+$2,710"],
+        ...(own
+          ? [
+              ["cost your household $11,700 more", "cost your household $11,815 more"],
+              [
+                "Net tax is 29.3% of income in Quebec vs 21.1% in British Columbia (+8.2 points)",
+                "Net tax is 29.4% of income in Quebec vs 21.1% in British Columbia (+8.3 points)",
+              ],
+              ["Household net tax\t$30,191\t$41,891\t+$11,700", "Household net tax\t$30,191\t$42,006\t+$11,815"],
+              ["Net rate\t21.1%\t29.3%\t+8.2 pts", "Net rate\t21.1%\t29.4%\t+8.3 pts"],
+              [
+                "Left after all of this\t$112,809\t$101,109\t−$11,700",
+                "Left after all of this\t$112,809\t$100,994\t−$11,815",
+              ],
+            ]
+          : [
+              ["cost your household $7,450 more", "cost your household $7,565 more"],
+              [
+                "Quebec vs 20.2% in British Columbia (+5.2 points)",
+                "Quebec vs 20.2% in British Columbia (+5.3 points)",
+              ],
+              ["Household net tax\t$28,949\t$36,399\t+$7,450", "Household net tax\t$28,949\t$36,514\t+$7,565"],
+              ["Net rate\t20.2%\t25.5%\t+5.2 pts", "Net rate\t20.2%\t25.5%\t+5.3 pts"],
+              [
+                "Left after all of this\t$114,051\t$106,601\t−$7,450",
+                "Left after all of this\t$114,051\t$106,486\t−$7,565",
+              ],
+            ]),
+      ];
+      for (const [before, after] of changes) {
+        assert.equal(t.detail.split(before).length, 2, `legacy health fund value: ${before}`);
+        t.detail = t.detail.replace(before, after);
+      }
+      if (own) {
+        const suffix = width < PHONE ? "" : "%";
+        const qc = t.cols.find(col => col[0] === "col-QC");
+        assert.deepEqual(qc, ["col-QC", `29.3${suffix}`, `42.1${suffix}`]);
+        qc[1] = `29.4${suffix}`;
+      }
     }
     for (const key of Object.keys(s))
       if (JSON.stringify(s[key]) !== JSON.stringify(t[key]))

@@ -1,6 +1,7 @@
 // Income tax and payroll for one person in one province.
 import type { Federal, LowIncomeProgram, Province } from "../data/schema.ts";
 import { phased, walk } from "./brackets.ts";
+import { healthServicesFund, healthServicesIncome } from "./health-services-fund.ts";
 import { healthPremium, netIncomeParts, netOf, payrollOf, rrspRoom } from "./payroll.ts";
 import type { Ctx, Extra, Person } from "./types.ts";
 
@@ -184,7 +185,11 @@ export function personTax(fed: Federal, p: Province, x: Person, sp: Extra, ctx: 
   const fedTax = fedBasic * k - fFtc,
     prov = provPre - pFtc - (afterForeign ? lowRed : 0) + provincialLevy;
   const ohp = healthPremium(p, ti);
-  const payroll = pay.base + pay.enh + pay.ei + pay.qpip + pay.terr + ohp;
+  const healthFund = healthServicesFund(p, healthServicesIncome(fed, x));
+  // TP-1 line 446 joins contributions after income tax/credits (432), once, in the page's payroll subtotal.
+  const employmentAndHealthPremiums = pay.base + pay.enh + pay.ei + pay.qpip + pay.terr + ohp;
+  const payroll = employmentAndHealthPremiums + healthFund.contribution;
+  const totalBeforeHealthServicesFund = fedTax + prov + wh + employmentAndHealthPremiums;
   const ftc = fFtc + pFtc;
   return {
     x,
@@ -234,6 +239,8 @@ export function personTax(fed: Federal, p: Province, x: Person, sp: Extra, ctx: 
     // Figures the page shows that aren't steps of the calculation above. They sit in a nested object because the
     // golden snapshot (tests/golden/snapshot.mjs) locks every top-level number of this result.
     breakdown: {
+      healthServicesFund: healthFund,
+      totalBeforeHealthServicesFund,
       familyTaxBenefit: { base: familyBase, calculated: familyFull, applied: familyApplied },
       childTransfer: { base: ctx.childTransferBase ?? 0, applied: childTransfer },
       lowIncomeReduction: {

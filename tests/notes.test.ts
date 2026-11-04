@@ -15,6 +15,36 @@ const render = (y: YearData) => [footerNotes(y, page), ...Object.values(tooltips
 const html = fs.readFileSync(new URL("../src/ui/index.html", import.meta.url), "utf8");
 const noteKeys = [...html.matchAll(/data-note="([^"]+)"/g)].map(m => m[1]);
 
+for (const year of listYears())
+  test(`${year}: Health Services Fund notes follow the installed program`, () => {
+    const y = loadYear(year);
+    const tips = tooltips(y);
+    const active = year >= 2025;
+    assert.equal(tips.otherIncome.includes("contribution on non-employment income is not modelled"), !active);
+    assert.equal(tips.otherIncome.includes("calculated separately for each person"), active);
+    assert.equal(tips.otherDeductions.includes("do not reduce Quebec's Health Services Fund"), active);
+    assert.equal(footerNotes(y, page).includes("Health Services Fund contribution"), active);
+    if (active) {
+      assert.match(tips.otherIncome, /taxable capital gains and actual dividends/);
+      assert.match(tips.otherIncome, /RRSP, FHSA and childcare deductions do not reduce it/);
+      assert.match(tips.otherIncome, /OAS and taxable support receipts are excluded/);
+      assert.equal(tips.otherIncome.includes("caps and income rules provisionally continue"), year === 2026);
+      assert.ok(tips.otherIncome.includes(year === 2025 ? "$18,130" : "$18,500"));
+      assert.ok(tips.otherIncome.includes(year === 2025 ? "$63,060" : "$64,355"));
+    }
+  });
+
+test("Health Services Fund wording follows program presence and changed parameters, not the calendar year", () => {
+  const y = structuredClone(loadYear(2026));
+  const qc = byCode(y, "QC");
+  assert.ok(qc.healthServicesFund);
+  qc.healthServicesFund.params.threshold = 19000;
+  y.year = 2030;
+  assert.match(tooltips(y).otherIncome, /above \$19,000/);
+  delete qc.healthServicesFund;
+  assert.match(tooltips(y).otherIncome, /contribution on non-employment income is not modelled/);
+});
+
 for (const year of [2019, 2020, 2021, 2022, 2023, 2024]) {
   test(`${year}: child amount notes retain the historical claimant wording`, () => {
     const text = footerNotes(loadYear(year), page);
@@ -41,7 +71,7 @@ for (const year of [2025, 2026]) {
     assert.match(text, /The higher-net-income spouse claims the children/);
     assert.match(text, /On equal incomes, the model interprets the Act's silence as allowing either spouse/);
     assert.match(text, /age alone does not establish eligibility/);
-    assert.match(text, /agreements between multiple eligible adults are not modelled/);
+    assert.match(text, /on equal incomes, the model elects the eligible claimant giving the lower household tax/);
     assert.equal(text.includes("filing conditions provisionally continue"), year === 2026);
   });
 }

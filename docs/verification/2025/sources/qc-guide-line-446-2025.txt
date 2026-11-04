@@ -1,0 +1,338 @@
+Title: Revenu Québec guide 2025, health services fund pages (line 446)
+URL: https://www.revenuquebec.ca/documents/en/formulaires/tp/2025-12/TP-1.G-V(2025-12).pdf
+Fetched: 2026-11-04
+SHA-256 of the original: 84badbd0c3e35d93d3ea2fd36470b7664f6552c1dca81e8aad3f569637d3317b
+Publication date modified: 2025-12-05
+PDF pages: 46,50,61 of 84
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 46 of 84 ---
+
+46
+2025 – GUIDE-V
+NON-REFUNDABLE TA X CREDI TS
+There are two types of tax credits: refundable and non-refundable.
+Refundable tax credits are paid to you even if you have no income tax
+payable, whereas non-refundable tax credits reduce or cancel your income
+tax payable
+You were not resident in Canada throughout the year
+You must reduce certain amounts used to calculate your non-refundable
+tax credits in proportion to the number of days you were resident in Canada
+in 2025. For more information, see brochure IN-119-V,
+New Residents
+and Income Tax
+350 Basic personal amount
+The basic personal amount for 2025 is $18,571. It takes into account
+contributions to the Québec Pension Plan and the health services fund, and
+premiums under the Québec parental insurance plan and the Employment
+Insurance program.
+358 Adjustment for income replacement indemnities
+Income replacement indemnities from the Commission
+des normes, de l’équité, de la santé et de la sécurité
+du travail (CNESST) or the Société de l’assurance
+automobile du Québec (SAAQ)
+If you were resident in Québec on December 31, 2025, and you received
+income replacement indemnities or compensation for the loss of financial
+support from the CNESST or the SAAQ, entertheamountfrombox M
+of your RL-5 slip(maximum $16,713.90).
+This will reduce the basic personal amount for 2025, which was taken into
+account in calculating your indemnities or compensation.
+If, in 2025, you received income replacement indemnities or compensation
+for the loss of financial support owed to you for one or more previous
+years, and one or more amounts are shown in box O of your RL-5 slip,
+we will calculate a tax adjustment for you on line 443.
+In calculating the tax adjustment for the previous year(s) concerned,
+we can, at your request, include the carry-over of non-capital losses
+or non-refundable tax credits. If you want us to do so, check box 405 of
+your return, complete Part 4 of form TP-766.2-V,
+Averaging of a Retroactive
+Payment, Support-Payment Arrears or a Repayment of Support,
+and enclose theformwithyourreturn
+Income replacement indemnities received under a law
+of Canada or a province other than Québec
+If, under a law of Canada or a province other than Québec, you received
+income replacement indemnities or compensation for the loss of financial
+support basedonyournetemploymentincome and relating to a period
+in 2025, complete form TP-752.0.0.6-V,
+Adjustment for Income Replacement
+Indemnities Received from a Public Compensation Plan Outside Québec,
+and enclose itwith your return. (Income replacement indemnities include
+workers’ compensation and indemnities received further to a precautionary
+cessation of work, a traffic accident or an act of good citizenship,
+or because you were the victim of a crime.)
+If you received income replacement indemnities or compensation for
+the loss of financial support that was not based on your net employment
+income (for example, benefits from the Workplace Safety and Insurance
+Board [WSIB] of Ontario received further to an accident that occurred
+before April 1, 1985), you do not have to calculate an adjustment using
+form TP-752.0.0.6-V.
+Contact us if:
+•• in 2025, you received income replacement indemnities that were owed
+to you for 2004 to 2024; or
+•• in 2025, you received compensation for the loss of financial support
+that was owed to you for 2005 to 2024.
+NOTE
+If you are an Indianand you received any of the previously mentioned
+indemnities, do not include the income replacement indemnities situated
+on a reserve or premises in calculating the adjustment to be entered
+on line 358. An indemnity is considered to be situated on a reserve
+or premises if the income entitling you to the indemnity was situated
+on a reserve or premises.
+361 Age amount, amount for a person living alone
+and amount for retirement income
+The age amount, the amount for a person living alone and the amount
+for retirement income may be reduced on the basis of net family income.
+Age amount
+You can claim an amount if you were born before January 1, 1961. If your
+spouse on December 31, 2025 (see the definition at line 12), was born
+before January 1, 1961, they can also claim an amount. To calculate
+the amount you can claim, completeparts AandBofSchedule B
+The age amount can be claimed for a deceased person only if they
+were 65 or older at the time of death.
+Amount for a person living alone
+You can claim the amount for a person living alone if,throughout 2025,
+you maintained and ordinarily resided in a
+dwelling in which you lived:
+•• alone (that is, you did not share your dwelling at any time in 2025 with
+another person, such as a co-tenant, your mother or father, or a sister
+or brother); or
+•• onlywithone or more people under 18, or one or more of your children,
+grandchildren or great-grandchildren 18 or older who were full-time
+students pursuing vocational training at the secondary level or
+post-secondary studies for which they received an RL-8 slip with
+an amount in box A.
+NOTE
+You can also enter an amount for a person living alone if boxQ1of
+your RL-5slip contains the code “O” or “P” and the following conditions
+are met:
+• You did not have a spouse on December 31, 2025 .
+• If box Q1 of your RL-5 slip contains the code“O,” the Basic Income
+Program benefits included in your income exceed the amount
+on line 359 of your return.
+• If box Q1 of your RL-5 slip contains the code“P,” the total of the
+following benefits included in your income exceeds the amount
+on line 359 of your return:
+
+--- PDF page 50 of 84 ---
+
+50
+2025 – GUIDE-V
+Remuneration paid to a full-time attendant
+or fees paid for full-time residence in a nursing home
+Youcannot claim the impairment amount on line 376 if the remuneration
+paid to a full-time attendant is used to calculate a tax credit for medical
+expenses in your or someone else’s income tax return, unless the amount
+claimed as remuneration paid to the attendant is $10,000 or less
+(see “Remuneration paid to an attendant” in the instructions for line 381).
+Similarly, you cannotclaim the impairment amount on line 376 if the
+fees paid for yourfull-time residence in a nursing home have already
+been used to calculate a tax credit for medical expenses in your or
+someone else’s income tax return,unless:
+•• a receipt issued by the nursing home specifically shows an amount
+for the remuneration paid to a full-time attendant;
+•• the amount for the remuneration paid to a full-time attendant is $10,000
+or less; and
+•• only the portion of the residence fees specifically relating to the
+remuneration of the attendant is included in the medical expenses.
+For more information, see brochure IN-132-V,
+Taxation and Persons
+with Disabilities
+378 Expenses for medical services not available
+in your area
+You can claim an amount for expenses paid to obtain medical services
+that were not available in your area. The following expenses entitle you
+to a tax credit:
+•• travel and lodging expenses paid in 2025 to obtain, in Québec, medical
+services that were not available within 200 kilometres of your home; and
+•• moving expenses paid in 2025 to move to within 80 kilometres of a health
+establishment in Québec located 200 kilometres or more from your
+former home.
+However, if these expenses can be included as moving expenses on line 228,
+or if they entitle you to the travel deduction on line 236, it may be
+to your advantage to claim them on those lines rather than on line 378.
+You can include these expenses on line 378 onlyif you paid them to
+obtain medical services for yourself, your spouse or a dependant (see the
+definition at line 381) during the year in which the expenses were incurred.
+Form to enclose
+Expenses for Medical Services Not Available in Your Area (TP-752.0.13.1-V)
+381 Medical expenses
+On line 381, you can enter any part of your or your spouse’s medical
+expenses that is more than 3% of your income (line 275). If you had
+a spouse on December 31, 2025 (see the definition at line 12), add
+the amount on line 275 of your spouse’s return to your income.
+You or your spouse must have paid the expenses:
+•• for you, your spouse or a person who was your
+dependant during the year
+for which the expenses were incurred;
+•• duringaperiodof 12consecutivemonths ending in 2025. For example,
+your medical expenses could be for the period from August 1, 2024,
+to July 31, 2025.
+NOTE
+If you are claiming an amount for medical expenses on line 381, you may
+also be able to claim the refundable tax credit for medical expenses on
+line 462. For more information, see point 1 in the instructions for line 462.
+Dependant
+A person who was supported by you and:
+•• ordinarily lived with you; or
+•• did not ordinarily live with you but was your dependant because of
+an infirmity. In this case, the person must have been resident
+in Canada at some time in the year, unless the person is your
+or your spouse’s child or grandchild.
+NOTE
+A dependant can be your or your spouse’s:
+•• child or grandchild;
+•• brother, sister, niece or nephew;
+•• brother’s or sister’s spouse;
+•• mother, father or other direct ascendant;
+•• aunt, uncle, great-aunt or great-uncle.
+To qualify, the medical expenses claimed on line 381 must be supported
+by receipts; keep your receipts in case we ask for them.
+Expenses donotqualifyif they:
+•• have already been used to calculate an amount for medical expenses
+(line 381) in an income tax return;
+•• have been used to calculate expenses for medical services not available
+in your area (line 378);
+•• have been used to calculate the tax credit for home-support services
+for seniors (line 458);
+•• have been used by you or your spouse to calculate the independent living
+tax credit for seniors (line 462, point 24);
+•• have been used to calculate the disability supports deduction (line 250,
+point 7);
+•• were paid to obtain services provided for purely cosmetic purposes;
+•• were paid to obtain an in vitro fertilization or artificial insemination
+treatment, if:
+− the expenses have already been used to calculate the tax credit for
+the treatment of infertility (see point 11 in the instructions for line 462),
+− the in vitro fertilization treatment involved the transfer of more than
+one embryo unless, in accordance with the guidelines on assisted
+procreation drawn up by the Collège des médecins du Québec,
+a maximum of two embryos were transferred,
+− the treatment was administered in Québec at a centre for
+assisted procreation that does not hold a licence issued under
+the
+Act respecting clinical and research activities relating
+to assisted procreation
+The contribution to the health services fund (line 446) cannotbe claimed
+as a medical expense
+For more information, see brochure IN-130-V,
+Medical Expenses
+To calculate the amount to which you are entitled, completeparts A and C
+ofSchedule B
+Eligible medical expenses
+The following are themostcommon eligible medical expenses:
+•• payments made to a dentist, nurse, practitioner, public hospital
+or licensed private hospital for medical, dental or paramedical services;
+•• payments for drugs that can only be purchased if prescribed by
+a physician or a dentist and obtained from a licensed pharmacist.
+You cannot include payments for drugs that are prescribed by a medical
+practitioner in your medical expenses if the drugs can be purchased
+without a prescription;
+
+--- PDF page 61 of 84 ---
+
+61
+2025 – GUIDE-V
+•• the special tax relating to the tax credit for cultural patronage (to calculate
+this special tax, complete form TP-1129.69.2-V,
+Special Tax Relating
+to the Tax Credit for Cultural Patronage).
+Tax adjustment
+Retroactive payments and support-payment arrears
+If you received a retroactive payment in 2025 and a portion of the payment
+(at least $300) applies to previous years, we can, at your request, determine
+whether it is to your advantage to average that portion of the payment.
+If it is, we will calculate the income tax payable on that portion of
+the payment as if you had received it in the previous years in question
+and deduct it from your taxable income for 2025. We will then make a tax
+adjustment on line 443.
+To see what kinds of payments can be averaged, refer to form TP-766.2-V,Averaging of a Retroactive Payment, Support-Payment Arrears or a
+Repayment of Support. If you want us to do the calculation, checkbox404
+on your return, complete form TP-766.2-V, and encloseit with your return.
+If you complete Part 4 of the form, check box 405 on your return.
+NOTE
+We cannot average your retroactive payments in the following cases:
+• You received a payment of a compensation adjustment under
+the
+Pay Equity Act
+• During the year, you received a retroactive payment that you are
+deducting in the calculation of your taxable income (for example,
+a retroactive payment of income replacement indemnities or
+compensation for the loss of financial support).
+• You are transferring a portion of a retroactive payment of eligible
+retirement income to your spouse (your spouse on December 31, 2025).
+Neither you nor your spouse can have the transferred portion
+of the retroactive payment averaged.
+Retroactive payments of income replacement
+indemnities
+If you received a retroactive payment of income replacement indemnities
+that you must report on line 148 and a portion of the payment applies
+to previous years, one or more amounts will be shown in box O
+of your RL-5 slip. We will calculate the income tax that you would have had
+to pay if you had received the indemnities in those previous years and
+make a tax adjustment on line 443 of your 2025 income tax return.
+Repayment of support
+If you received a repayment of support that you must report on line 142
+and a portion of the repayment applies to previous years, we can,
+at your request, determine whether it is to your advantage to average that
+portion of the repayment. If it is, we will calculate the income tax payable
+on that portion of the repayment as if you had received it in the previous
+years in question and deduct it from your taxable income for 2025.
+We will then make a tax adjustment on line 443.
+If you want us to do the calculation, checkbox 404on your return, complete
+form TP-766.2-V,
+Averaging of a Retroactive Payment, Support-Payment
+Arrears or a Repayment of Support, and enclosethe form with your return.
+If you complete Part 4 of the form, check box 405 on your return.
+445 Québec Pension Plan (QPP) contribution
+on income from self-employment
+If you meet allthe following conditions, complete PartCofScheduleU
+to calculate your QPP contribution on your income from self-employment.
+•• You earned:
+– income from self-employment (line 27 of Schedule L);
+– income as a person responsible for a family-type resource or an
+intermediate resource (line 40 of Schedule L if you received an RL-29
+slip; line 27 of Schedule L if you did not);
+– employment income on which you want to make an optional
+contribution; or
+– one of the above and employment income.
+•• You did not enter an amount on line 96, 96.1 or 96.2.
+•• You did not elect, in a previous year, to stop making QPP contributions
+on your income from self-employment or your income as a person
+responsible for a family-type resource or an intermediate resource
+or you revoked such an election in that year or a previous year.
+If you entered an amount on line 96, 96.1 or line 96.2, complete
+form LE-35-V,
+Contribution and Deduction Related to the QPP or the CPP,
+instead of Schedule U to calculate the QPP contribution on your income
+from self-employment. Do not enclose the form with your return but keep it
+for your files.
+Election to stop making QPP contributions
+You can elect to stop making QPP contributions if you meet all the following
+conditions at the end of the year:
+•• you are 65 or over;
+•• you are under 73;
+•• you are self-employed or a person responsible for a family-type
+resource or an intermediate resource; and
+•• you receive a retirement pension from the QPP or the Canada Pension
+Plan (CPP).
+To make the election, complete section2ofPartAofScheduleU
+446 Contribution to the health services fund
+The purpose of this contribution is to ensure that everyone helps finance
+Québec’s health services. Consequently, you may have to pay a contribution
+to the health services fund if you were resident in Québec
+on December 31, 2025 (or on the day you ceased to be resident
+in Canada in 2025). To find out if you are required to pay a contribution
+and to calculate how much you have to pay, complete Schedule F
+Special cases
+•• If you were resident in Québec on December 31, 2025, and you carried
+on a business in Canada, outside Québec, in 2025, calculate your
+contribution by multiplying the amount on line 82 of Schedule F
+by the percentage you determined on line 35 of form TP-22-V,
+Income
+Tax Payable by an Individual Who Carries On a Business in Canada,
+Outside Québec
+•• If you are claiming a deduction on line 297 under point 9, 12, 14 or 21,
+donot include on line 62 of Schedule F any portion of the deduction
+that pertains to employment income (line 101) or support payments
+received (line 142).

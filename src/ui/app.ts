@@ -1150,6 +1150,7 @@ function ledgerView({ p, r }: Row) {
       [`EI (${pct2(p.qc ? F.payroll.ei.quebecRate : F.payroll.ei.rate)})`, m.pay.ei],
       [`QPIP (${pct2(F.payroll.qpip.rate)})`, m.pay.qpip],
       [`Ontario Health Premium`, m.ohp],
+      [`Quebec Health Services Fund`, m.breakdown.healthServicesFund.contribution],
       [`${p.n} payroll tax (${rateFmt(p.d.payroll?.employeeTax ?? 0)})`, m.pay.terr],
     ] satisfies Adj[]
   ).filter(([, a]) => a > 0.5);

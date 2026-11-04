@@ -1,0 +1,868 @@
+{
+  "description": "Schedule F boundary values and independent arithmetic; see docs/verification/91-qc-health-fund.md.",
+  "defaults": {
+    "active": 0,
+    "spouse": true,
+    "adults": 1,
+    "kids": 0,
+    "under6": 0,
+    "useBpa": false,
+    "whRate": 0,
+    "useCredits": false,
+    "homeValue": 0,
+    "rent": 0,
+    "monthlySpending": 0
+  },
+  "cases": [
+    {
+      "id": "2025-threshold-below",
+      "year": 2025,
+      "household": {
+        "people": [
+          {
+            "oth": 18129
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.healthServicesFund.income": 18129,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "breakdown.healthServicesFund": 0
+      }
+    },
+    {
+      "id": "2025-threshold",
+      "year": 2025,
+      "household": {
+        "people": [
+          {
+            "oth": 18130
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.healthServicesFund.income": 18130,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "breakdown.healthServicesFund": 0
+      }
+    },
+    {
+      "id": "2025-threshold-above",
+      "year": 2025,
+      "household": {
+        "people": [
+          {
+            "oth": 18131
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.healthServicesFund.income": 18131,
+        "list.0.breakdown.healthServicesFund.contribution": 0.01,
+        "breakdown.healthServicesFund": 0.01
+      }
+    },
+    {
+      "id": "2025-first-cap-below",
+      "year": 2025,
+      "household": {
+        "people": [
+          {
+            "oth": 33129
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.healthServicesFund.income": 33129,
+        "list.0.breakdown.healthServicesFund.contribution": 149.99,
+        "breakdown.healthServicesFund": 149.99
+      }
+    },
+    {
+      "id": "2025-first-cap",
+      "year": 2025,
+      "household": {
+        "people": [
+          {
+            "oth": 33130
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.healthServicesFund.income": 33130,
+        "list.0.breakdown.healthServicesFund.contribution": 150,
+        "breakdown.healthServicesFund": 150
+      }
+    },
+    {
+      "id": "2025-first-cap-above",
+      "year": 2025,
+      "household": {
+        "people": [
+          {
+            "oth": 33131
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.healthServicesFund.income": 33131,
+        "list.0.breakdown.healthServicesFund.contribution": 150,
+        "breakdown.healthServicesFund": 150
+      }
+    },
+    {
+      "id": "2025-upper-below",
+      "year": 2025,
+      "household": {
+        "people": [
+          {
+            "oth": 63059
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.healthServicesFund.income": 63059,
+        "list.0.breakdown.healthServicesFund.contribution": 150,
+        "breakdown.healthServicesFund": 150
+      }
+    },
+    {
+      "id": "2025-upper",
+      "year": 2025,
+      "household": {
+        "people": [
+          {
+            "oth": 63060
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.healthServicesFund.income": 63060,
+        "list.0.breakdown.healthServicesFund.contribution": 150,
+        "breakdown.healthServicesFund": 150
+      }
+    },
+    {
+      "id": "2025-upper-above",
+      "year": 2025,
+      "household": {
+        "people": [
+          {
+            "oth": 63061
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.healthServicesFund.income": 63061,
+        "list.0.breakdown.healthServicesFund.contribution": 150.01,
+        "breakdown.healthServicesFund": 150.01
+      }
+    },
+    {
+      "id": "2025-top-cap-below",
+      "year": 2025,
+      "household": {
+        "people": [
+          {
+            "oth": 148059
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.healthServicesFund.income": 148059,
+        "list.0.breakdown.healthServicesFund.contribution": 999.99,
+        "breakdown.healthServicesFund": 999.99
+      }
+    },
+    {
+      "id": "2025-top-cap",
+      "year": 2025,
+      "household": {
+        "people": [
+          {
+            "oth": 148060
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.healthServicesFund.income": 148060,
+        "list.0.breakdown.healthServicesFund.contribution": 1000,
+        "breakdown.healthServicesFund": 1000
+      }
+    },
+    {
+      "id": "2025-top-cap-above",
+      "year": 2025,
+      "household": {
+        "people": [
+          {
+            "oth": 148061
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.healthServicesFund.income": 148061,
+        "list.0.breakdown.healthServicesFund.contribution": 1000,
+        "breakdown.healthServicesFund": 1000
+      }
+    },
+    {
+      "id": "2025-employment-excluded",
+      "year": 2025,
+      "household": {
+        "people": [
+          {
+            "ord": 200000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "breakdown.healthServicesFund": 0
+      }
+    },
+    {
+      "id": "2025-mixed-income",
+      "year": 2025,
+      "household": {
+        "people": [
+          {
+            "ord": 100000,
+            "oth": 10000,
+            "cg": 20000,
+            "ed": 1000,
+            "nd": 2000,
+            "fd": 2000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.healthServicesFund.income": 25000,
+        "list.0.breakdown.healthServicesFund.contribution": 68.7,
+        "breakdown.healthServicesFund": 68.7
+      }
+    },
+    {
+      "id": "2025-ed-actual",
+      "year": 2025,
+      "household": {
+        "people": [
+          {
+            "ed": 25000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.healthServicesFund.income": 25000,
+        "list.0.breakdown.healthServicesFund.contribution": 68.7,
+        "breakdown.healthServicesFund": 68.7
+      }
+    },
+    {
+      "id": "2025-nd-actual",
+      "year": 2025,
+      "household": {
+        "people": [
+          {
+            "nd": 25000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.healthServicesFund.income": 25000,
+        "list.0.breakdown.healthServicesFund.contribution": 68.7,
+        "breakdown.healthServicesFund": 68.7
+      }
+    },
+    {
+      "id": "2025-fd-actual",
+      "year": 2025,
+      "household": {
+        "people": [
+          {
+            "fd": 25000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.healthServicesFund.income": 25000,
+        "list.0.breakdown.healthServicesFund.contribution": 68.7,
+        "breakdown.healthServicesFund": 68.7
+      }
+    },
+    {
+      "id": "2025-taxable-gains",
+      "year": 2025,
+      "household": {
+        "people": [
+          {
+            "cg": 50000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.healthServicesFund.income": 25000,
+        "list.0.breakdown.healthServicesFund.contribution": 68.7,
+        "breakdown.healthServicesFund": 68.7
+      }
+    },
+    {
+      "id": "2025-loss-no-offset",
+      "year": 2025,
+      "household": {
+        "people": [
+          {
+            "oth": 25000,
+            "cg": -10000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.healthServicesFund.income": 25000,
+        "list.0.breakdown.healthServicesFund.contribution": 68.7,
+        "breakdown.healthServicesFund": 68.7
+      }
+    },
+    {
+      "id": "2025-deductions-not-net-income",
+      "year": 2025,
+      "household": {
+        "people": [
+          {
+            "oth": 25000,
+            "ded": 5000,
+            "rrsp": 10000,
+            "fhsa": 8000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.healthServicesFund.income": 25000,
+        "list.0.breakdown.healthServicesFund.contribution": 68.7,
+        "breakdown.healthServicesFund": 68.7
+      }
+    },
+    {
+      "id": "2025-childcare-not-deducted",
+      "year": 2025,
+      "household": {
+        "people": [
+          {
+            "ord": 40000,
+            "oth": 25000
+          }
+        ],
+        "kids": 1,
+        "under6": 1,
+        "childcare": {
+          "mode": "automatic",
+          "earnedIncome": [40000],
+          "children": [
+            {
+              "age": 4,
+              "expenses": 6000,
+              "qcEligibleExpenses": 6000
+            }
+          ]
+        }
+      },
+      "expected": {
+        "list.0.breakdown.healthServicesFund.income": 25000,
+        "list.0.breakdown.healthServicesFund.contribution": 68.7,
+        "breakdown.healthServicesFund": 68.7,
+        "childcare.claims.0": 6000,
+        "me.ti": 58635,
+        "me.tiP": 63215
+      }
+    },
+    {
+      "id": "2025-separate-people",
+      "year": 2025,
+      "household": {
+        "people": [
+          {
+            "oth": 25000
+          },
+          {
+            "oth": 25000
+          }
+        ],
+        "adults": 2
+      },
+      "expected": {
+        "list.0.breakdown.healthServicesFund.income": 25000,
+        "list.1.breakdown.healthServicesFund.income": 25000,
+        "list.0.breakdown.healthServicesFund.contribution": 68.7,
+        "list.1.breakdown.healthServicesFund.contribution": 68.7,
+        "breakdown.healthServicesFund": 137.4
+      }
+    },
+    {
+      "id": "2025-per-person-top-cap",
+      "year": 2025,
+      "household": {
+        "people": [
+          {
+            "oth": 200000
+          },
+          {
+            "oth": 200000
+          }
+        ],
+        "adults": 2
+      },
+      "expected": {
+        "list.0.breakdown.healthServicesFund.income": 200000,
+        "list.1.breakdown.healthServicesFund.income": 200000,
+        "list.0.breakdown.healthServicesFund.contribution": 1000,
+        "list.1.breakdown.healthServicesFund.contribution": 1000,
+        "breakdown.healthServicesFund": 2000
+      }
+    },
+    {
+      "id": "2025-return-total",
+      "year": 2025,
+      "household": {
+        "people": [
+          {
+            "oth": 25000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.healthServicesFund.income": 25000,
+        "list.0.breakdown.healthServicesFund.contribution": 68.7,
+        "breakdown.healthServicesFund": 68.7,
+        "payroll": 68.7,
+        "incomeTax": 6526.875,
+        "total": 6595.575
+      }
+    },
+    {
+      "id": "2026-threshold-below",
+      "year": 2026,
+      "household": {
+        "people": [
+          {
+            "oth": 18499
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.healthServicesFund.income": 18499,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "breakdown.healthServicesFund": 0
+      }
+    },
+    {
+      "id": "2026-threshold",
+      "year": 2026,
+      "household": {
+        "people": [
+          {
+            "oth": 18500
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.healthServicesFund.income": 18500,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "breakdown.healthServicesFund": 0
+      }
+    },
+    {
+      "id": "2026-threshold-above",
+      "year": 2026,
+      "household": {
+        "people": [
+          {
+            "oth": 18501
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.healthServicesFund.income": 18501,
+        "list.0.breakdown.healthServicesFund.contribution": 0.01,
+        "breakdown.healthServicesFund": 0.01
+      }
+    },
+    {
+      "id": "2026-first-cap-below",
+      "year": 2026,
+      "household": {
+        "people": [
+          {
+            "oth": 33499
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.healthServicesFund.income": 33499,
+        "list.0.breakdown.healthServicesFund.contribution": 149.99,
+        "breakdown.healthServicesFund": 149.99
+      }
+    },
+    {
+      "id": "2026-first-cap",
+      "year": 2026,
+      "household": {
+        "people": [
+          {
+            "oth": 33500
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.healthServicesFund.income": 33500,
+        "list.0.breakdown.healthServicesFund.contribution": 150,
+        "breakdown.healthServicesFund": 150
+      }
+    },
+    {
+      "id": "2026-first-cap-above",
+      "year": 2026,
+      "household": {
+        "people": [
+          {
+            "oth": 33501
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.healthServicesFund.income": 33501,
+        "list.0.breakdown.healthServicesFund.contribution": 150,
+        "breakdown.healthServicesFund": 150
+      }
+    },
+    {
+      "id": "2026-upper-below",
+      "year": 2026,
+      "household": {
+        "people": [
+          {
+            "oth": 64354
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.healthServicesFund.income": 64354,
+        "list.0.breakdown.healthServicesFund.contribution": 150,
+        "breakdown.healthServicesFund": 150
+      }
+    },
+    {
+      "id": "2026-upper",
+      "year": 2026,
+      "household": {
+        "people": [
+          {
+            "oth": 64355
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.healthServicesFund.income": 64355,
+        "list.0.breakdown.healthServicesFund.contribution": 150,
+        "breakdown.healthServicesFund": 150
+      }
+    },
+    {
+      "id": "2026-upper-above",
+      "year": 2026,
+      "household": {
+        "people": [
+          {
+            "oth": 64356
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.healthServicesFund.income": 64356,
+        "list.0.breakdown.healthServicesFund.contribution": 150.01,
+        "breakdown.healthServicesFund": 150.01
+      }
+    },
+    {
+      "id": "2026-top-cap-below",
+      "year": 2026,
+      "household": {
+        "people": [
+          {
+            "oth": 149354
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.healthServicesFund.income": 149354,
+        "list.0.breakdown.healthServicesFund.contribution": 999.99,
+        "breakdown.healthServicesFund": 999.99
+      }
+    },
+    {
+      "id": "2026-top-cap",
+      "year": 2026,
+      "household": {
+        "people": [
+          {
+            "oth": 149355
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.healthServicesFund.income": 149355,
+        "list.0.breakdown.healthServicesFund.contribution": 1000,
+        "breakdown.healthServicesFund": 1000
+      }
+    },
+    {
+      "id": "2026-top-cap-above",
+      "year": 2026,
+      "household": {
+        "people": [
+          {
+            "oth": 149356
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.healthServicesFund.income": 149356,
+        "list.0.breakdown.healthServicesFund.contribution": 1000,
+        "breakdown.healthServicesFund": 1000
+      }
+    },
+    {
+      "id": "2026-employment-excluded",
+      "year": 2026,
+      "household": {
+        "people": [
+          {
+            "ord": 200000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "breakdown.healthServicesFund": 0
+      }
+    },
+    {
+      "id": "2026-mixed-income",
+      "year": 2026,
+      "household": {
+        "people": [
+          {
+            "ord": 100000,
+            "oth": 10000,
+            "cg": 20000,
+            "ed": 1000,
+            "nd": 2000,
+            "fd": 2000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.healthServicesFund.income": 25000,
+        "list.0.breakdown.healthServicesFund.contribution": 65,
+        "breakdown.healthServicesFund": 65
+      }
+    },
+    {
+      "id": "2026-ed-actual",
+      "year": 2026,
+      "household": {
+        "people": [
+          {
+            "ed": 25000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.healthServicesFund.income": 25000,
+        "list.0.breakdown.healthServicesFund.contribution": 65,
+        "breakdown.healthServicesFund": 65
+      }
+    },
+    {
+      "id": "2026-nd-actual",
+      "year": 2026,
+      "household": {
+        "people": [
+          {
+            "nd": 25000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.healthServicesFund.income": 25000,
+        "list.0.breakdown.healthServicesFund.contribution": 65,
+        "breakdown.healthServicesFund": 65
+      }
+    },
+    {
+      "id": "2026-fd-actual",
+      "year": 2026,
+      "household": {
+        "people": [
+          {
+            "fd": 25000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.healthServicesFund.income": 25000,
+        "list.0.breakdown.healthServicesFund.contribution": 65,
+        "breakdown.healthServicesFund": 65
+      }
+    },
+    {
+      "id": "2026-taxable-gains",
+      "year": 2026,
+      "household": {
+        "people": [
+          {
+            "cg": 50000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.healthServicesFund.income": 25000,
+        "list.0.breakdown.healthServicesFund.contribution": 65,
+        "breakdown.healthServicesFund": 65
+      }
+    },
+    {
+      "id": "2026-loss-no-offset",
+      "year": 2026,
+      "household": {
+        "people": [
+          {
+            "oth": 25000,
+            "cg": -10000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.healthServicesFund.income": 25000,
+        "list.0.breakdown.healthServicesFund.contribution": 65,
+        "breakdown.healthServicesFund": 65
+      }
+    },
+    {
+      "id": "2026-deductions-not-net-income",
+      "year": 2026,
+      "household": {
+        "people": [
+          {
+            "oth": 25000,
+            "ded": 5000,
+            "rrsp": 10000,
+            "fhsa": 8000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.healthServicesFund.income": 25000,
+        "list.0.breakdown.healthServicesFund.contribution": 65,
+        "breakdown.healthServicesFund": 65
+      }
+    },
+    {
+      "id": "2026-childcare-not-deducted",
+      "year": 2026,
+      "household": {
+        "people": [
+          {
+            "ord": 40000,
+            "oth": 25000
+          }
+        ],
+        "kids": 1,
+        "under6": 1,
+        "childcare": {
+          "mode": "automatic",
+          "earnedIncome": [40000],
+          "children": [
+            {
+              "age": 4,
+              "expenses": 6000,
+              "qcEligibleExpenses": 6000
+            }
+          ]
+        }
+      },
+      "expected": {
+        "list.0.breakdown.healthServicesFund.income": 25000,
+        "list.0.breakdown.healthServicesFund.contribution": 65,
+        "breakdown.healthServicesFund": 65,
+        "childcare.claims.0": 6000,
+        "me.ti": 58635,
+        "me.tiP": 63185
+      }
+    },
+    {
+      "id": "2026-separate-people",
+      "year": 2026,
+      "household": {
+        "people": [
+          {
+            "oth": 25000
+          },
+          {
+            "oth": 25000
+          }
+        ],
+        "adults": 2
+      },
+      "expected": {
+        "list.0.breakdown.healthServicesFund.income": 25000,
+        "list.1.breakdown.healthServicesFund.income": 25000,
+        "list.0.breakdown.healthServicesFund.contribution": 65,
+        "list.1.breakdown.healthServicesFund.contribution": 65,
+        "breakdown.healthServicesFund": 130
+      }
+    },
+    {
+      "id": "2026-per-person-top-cap",
+      "year": 2026,
+      "household": {
+        "people": [
+          {
+            "oth": 200000
+          },
+          {
+            "oth": 200000
+          }
+        ],
+        "adults": 2
+      },
+      "expected": {
+        "list.0.breakdown.healthServicesFund.income": 200000,
+        "list.1.breakdown.healthServicesFund.income": 200000,
+        "list.0.breakdown.healthServicesFund.contribution": 1000,
+        "list.1.breakdown.healthServicesFund.contribution": 1000,
+        "breakdown.healthServicesFund": 2000
+      }
+    },
+    {
+      "id": "2026-return-total",
+      "year": 2026,
+      "household": {
+        "people": [
+          {
+            "oth": 25000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.healthServicesFund.income": 25000,
+        "list.0.breakdown.healthServicesFund.contribution": 65,
+        "breakdown.healthServicesFund": 65,
+        "payroll": 65,
+        "incomeTax": 6422.5,
+        "total": 6487.5
+      }
+    }
+  ]
+}
