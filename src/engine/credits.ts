@@ -1,6 +1,7 @@
 // Refundable credits for lower- and modest-income households.
 import type { Federal, Province } from "../data/schema.ts";
 import { carbonRebatesOf } from "./carbon.ts";
+import { netOf } from "./payroll.ts";
 import type { Credit, Person } from "./types.ts";
 
 export interface CreditInput {
@@ -10,6 +11,7 @@ export interface CreditInput {
   couple: boolean;
   kids: number;
   ppl: Person[];
+  federalNets?: number[]; // per-person federal net income after allocated childcare deductions, in ppl order
   propTax: number;
   rent: number; // rent is annual
 }
@@ -43,7 +45,17 @@ export function creditsOf(fed: Federal, p: Province, f: CreditInput): Credit[] {
   // though it counts in family net income, which the phase-outs use.
   const wb = fed.workersBenefit;
   const work = couple ? ppl[0].ord + ppl[1].ord : ppl[0].ord;
-  const adjNet = couple ? famNet - Math.min(wb.secondaryEarnerExemption, Math.min(ppl[0].ord, ppl[1].ord)) : famNet;
+  let exemption = 0;
+  if (couple) {
+    // Schedule 6, lines 12–14: select by WORKING income, then cap by that person's adjusted net income.
+    // Modelled income needs no UCCB/RDSP/exempt-income adjustments, so line 12 is federal net income.
+    const capped = (i: number) =>
+      Math.min(wb.secondaryEarnerExemption, ppl[i].ord, f.federalNets?.[i] ?? netOf(fed, p, ppl[i]));
+    // Either spouse can claim the basic CWB. At equal earnings, elect the claimant whose spouse gives the
+    // larger exemption (Schedule 6 line 14's equal-earnings branch); input order must not change the benefit.
+    exemption = ppl[0].ord === ppl[1].ord ? Math.max(capped(0), capped(1)) : capped(ppl[0].ord < ppl[1].ord ? 0 : 1);
+  }
+  const adjNet = famNet - exemption;
   let cwb: number;
   if (p.system === "quebec") {
     const [rate, excl, top, base] = wb.quebec[qcType(couple, kids)];

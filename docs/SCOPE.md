@@ -239,7 +239,6 @@ Marked `estimated: true` in the data files where they appear:
 - Newfoundland and Labrador child benefit: estimated straight-line taper between published start and end incomes.
   NWT's separate age-group amounts and linear reduction are published by NWT Finance; CRA's T4114-26 confirms
   continuity for July 2026 to June 2027 (see [verification](verification/116-nwt-child-benefit.md)).
-- Alberta Child and Family Benefit base rates.
 - New Brunswick low-income reduction and Newfoundland and Labrador family threshold (2025 indexed by 2%).
 - Property tax rates for Whitehorse, Yellowknife and Iqaluit (rough 1%).
 - Quebec living-alone amount applied to any household with one adult.

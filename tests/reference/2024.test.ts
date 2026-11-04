@@ -103,6 +103,8 @@ const benefits = (code: string, net: number, work: number, couple = false, kids 
       couple,
       kids,
       ppl: couple ? [blank(work), blank(second)] : [blank(work)],
+      // These form-line specimens supply net income independently of employment/payroll deductions.
+      federalNets: couple ? [net - second, second] : [net],
       propTax: 0,
       rent: 0,
     }),
