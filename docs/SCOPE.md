@@ -92,6 +92,9 @@ spending.
 - Eligible earnings default to each adult's employment and other income and can be overridden. Ordinary
   single-parent and couple cases are automatic; a manual mode takes verified annual claims for exceptional cases.
 - Quebec's credit needs the Quebec-eligible part of the expense, asked only when Quebec is the home province.
+- Childcare inputs hide at zero children and keep their drafts; children's ages stay editable when costs are zero,
+  since they still set benefit eligibility. Results go in the existing detailed comparison and tooltips, with no
+  new summary widgets and no reset control.
 - A tax-and-benefit comparison, not a childcare-price or cost-of-living model. Input behaviour and rule
   details: [childcare verification](verification/childcare/README.md).
 
@@ -114,8 +117,10 @@ employment amount on that part, QPIP at the self-employed rate in Quebec. Counts
 Canada Workers Benefit and Quebec's work premium.
 
 **Seniors (65+ per adult).** Moving in retirement is a main use case, so this is modelled fully. The
-[seniors sizing study](verification/16-seniors-sizing.md) finds every piece below passes the 0.1-point rule for
-at least one applicable household; pension splitting also moves the BC–Ontario gap by 0.32 points.
+[seniors sizing study](verification/16-seniors-sizing.md) finds all seven planned categories below pass the
+0.1-point rule for at least one applicable household; pension splitting also moves the BC–Ontario gap by 0.32
+points. Individual provincial and territorial programs beyond the ones it measured are still sized before they're
+built.
 - Federal and provincial age amounts, pension income credit.
 - OAS with its recovery tax (clawback) and the 10% increase at 75; GIS and the Allowance.
 - CPP/QPP retirement benefits as income.
