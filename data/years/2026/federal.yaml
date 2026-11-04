@@ -27,6 +27,21 @@ investment:
   # (Article X(2)(b)), and the share of foreign property income above which foreign tax is deducted, not
   # credited (Income Tax Act s. 20(11)). Quoted in the page notes.
   foreignWithholding: {usTreaty: 0.15, deductibleAbove: 0.15}
+  # Not used in the calculation: starting values for the page's Portfolio view, and not published figures. Rounded from
+  # Vanguard Balanced ETF Portfolio (VBAL) as at Sep 30 2026, cached in docs/verification/2026/sources/vanguard-vbal.txt:
+  # underlying funds at lines 97-103 give Canadian stocks 18.08%, U.S. and international stocks 43.73% (27.98 + 11.05 +
+  # 4.70) and bonds 38.16% (22.89 + 7.84 + 7.43), each rounded to the nearest 10 points; the 2.22% distribution yield at
+  # line 248 is rounded to one decimal, one rate for the whole portfolio as the fund reports it.
+  # This fund's date, not the tax year, is what they depend on, so the page reads the newest year that has them and
+  # later years needn't repeat them. Changing them can't change a result: a used portfolio stores its own values.
+  portfolioDefaults:
+    canadian: 0.2
+    foreign: 0.4
+    bonds: 0.4
+    yield: 0.022
+    estimated: true
+    basis: "Vanguard Balanced ETF Portfolio as at Sep 30 2026"
+    source: {label: "Vanguard Canada, Vanguard Balanced ETF Portfolio (holdings and yield as at Sep 30 2026)", url: "https://www.vanguard.ca/en/product/etf/asset-allocation/9578/vanguard-balanced-etf-portfolio"}
 
 rrsp: {rate: 0.18, limit: 33810}
 

@@ -627,7 +627,8 @@ tfoot tr:last-child td {
   margin-top: 14px;
 }
 .pf-body[hidden],
-#pf-mix-status[hidden] {
+#pf-mix-status[hidden],
+#oth-portfolio-status[hidden] {
   display: none;
 }
 .pf-body .field {

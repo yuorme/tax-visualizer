@@ -156,6 +156,7 @@ export const PORTFOLIO_STEPS = [
       const tip = note => p.getAttribute(`[data-note="${note}"]`, "data-tip");
       assert.match(await tip("portfolioView"), /Non-eligible dividends are entered in Manual only/);
       assert.match(await tip("portfolioView"), /won't match your slips/);
+      assert.match(await tip("portfolioView"), /changing it in Portfolio leaves the Manual amount/);
       assert.match(await tip("portfolioValue"), /Leave out TFSAs, RRSPs/);
       assert.match(await tip("portfolioMix"), /20% Canadian stocks, 40% U.S. and international stocks and 40% bonds/);
       assert.match(await tip("portfolioMix"), /eligible dividends/);
@@ -187,19 +188,94 @@ export const PORTFOLIO_STEPS = [
       });
       assert.equal(await p.locator("#pf-mix-status").isVisible(), false);
       assert.match(await p.textContent("#invest-sum"), /^\$2,000 eligible div\. · \$2,000 bond interest$/);
-      await fill(p, "pf-bonds", "150");
-      assert.equal(await p.inputValue("#pf-bonds"), "100", "a share can't pass 100");
+      await fill(p, "pf-bonds", "100");
       assert.equal(await p.textContent("#pf-mix-status"), "Mix totals 150%: scaled to 100%");
       assert.equal(await p.locator("#pf-mix-status").isVisible(), true);
       assert.match(await p.textContent("#invest-sum"), /^\$1,333 eligible div\. · \$2,667 bond interest$/);
+      for (const text of ["-5", "1e2", "2abc3", "150", "1.2.3", "%"]) {
+        await fill(p, "pf-bonds", text);
+        assert.equal(await p.inputValue("#pf-bonds"), "100", `"${text}" keeps the last good share`);
+      }
+      await fill(p, "pf-yield", "2abc3");
+      assert.equal(await p.inputValue("#pf-yield"), "4");
+      await fill(p, "pf-value", "-5");
+      assert.equal(await p.inputValue("#pf-value"), "100,000");
+      assert.match(await p.textContent("#invest-sum"), /^\$1,333 eligible div\. · \$2,667 bond interest$/);
+      await fill(p, "pf-yield", "4,5 %");
+      assert.equal(await p.inputValue("#pf-yield"), "4.5", "the documented decimal comma and % sign are read");
       await fill(p, "pf-canadian", "");
       await fill(p, "pf-bonds", "");
       assert.equal(await p.textContent("#pf-mix-status"), "Mix totals 0%: no income");
       assert.equal(await p.textContent("#invest-sum"), "none added");
-      await fill(p, "pf-value", "abc");
-      assert.equal(await p.inputValue("#pf-value"), "0");
-      await fill(p, "pf-yield", "1.2.3");
-      assert.equal(await p.inputValue("#pf-yield"), "0");
+      await fill(p, "pf-value", "$250,000");
+      assert.equal(await p.inputValue("#pf-value"), "250,000");
+    },
+  ],
+  [
+    "interest already in Other income is called out at the box, and taking it out keeps the Manual amount",
+    async p => {
+      await load(p, { ...base, people: [{ ord: 75000, oth: 5000 }] });
+      assert.equal(await p.textContent("#oth-label"), "Interest, rental & other");
+      assert.equal(await p.locator("#oth-portfolio-status").isVisible(), false);
+      const investTip = await p.getAttribute('[aria-label="About investment income"]', "data-tip");
+      assert.match(investTip, /In Portfolio, bond interest comes from the portfolio, so leave it out of Other income/);
+      assert.match(
+        await p.getAttribute('[data-note="otherIncome"]', "data-tip"),
+        /In the Portfolio view, also leave out interest from that portfolio/,
+      );
+      await p.click("#invest-view-portfolio");
+      await settle(p);
+      await fill(p, "pf-value", "100,000");
+      await fill(p, "pf-canadian", "0");
+      await fill(p, "pf-foreign", "0");
+      await fill(p, "pf-bonds", "100");
+      await fill(p, "pf-yield", "5");
+      assert.equal(await p.textContent("#oth-label"), "Other income, excluding portfolio interest");
+      assert.equal(await p.inputValue("#oth"), "5,000", "switching view keeps the amount");
+      assert.equal(await p.textContent("#other-sum"), "$10,000 a year, including $5,000 bond interest");
+      assert.equal(await p.locator("#oth-portfolio-status").isVisible(), true);
+      assert.match(await p.textContent("#oth-portfolio-status"), /\$5,000 here is added to \$5,000 of bond interest/);
+      await fill(p, "oth", "0");
+      assert.equal(await p.textContent("#other-sum"), "$5,000 a year, including $5,000 bond interest");
+      assert.equal(await p.locator("#oth-portfolio-status").isVisible(), false);
+      assert.equal(await p.inputValue("#oth-range"), "0");
+      await p.reload();
+      await settle(p);
+      assert.equal(await p.inputValue("#oth"), "0", "the Portfolio amount survives a reload");
+      await p.click("#invest-view-manual");
+      await settle(p);
+      assert.equal(await p.inputValue("#oth"), "5,000", "the Manual amount is as typed");
+      assert.equal(await p.inputValue("#oth-range"), "5000");
+      assert.equal(await p.textContent("#other-sum"), "$5,000 a year");
+      assert.equal(await p.textContent("#oth-label"), "Interest, rental & other");
+      await fill(p, "oth", "6,000");
+      await p.click("#invest-view-portfolio");
+      await settle(p);
+      assert.equal(await p.inputValue("#oth"), "0", "each view keeps its own amount");
+      assert.equal((await saved(p)).people[0].oth, 6000);
+    },
+  ],
+  [
+    "changing tax year leaves a portfolio and the starting assumptions alone",
+    async p => {
+      await load(p, {
+        ...base,
+        people: [{ ord: 75000 }, { ord: 0 }],
+        adults: 2,
+        portfolios: [{ view: "portfolio", value: 200000, canadian: 50, foreign: 25, bonds: 25, yieldPct: 4 }],
+      });
+      const before = (await saved(p)).portfolios;
+      const summary = await p.textContent("#invest-sum");
+      await p.selectOption("#tax-year", "2019");
+      await settle(p);
+      assert.deepEqual((await saved(p)).portfolios, before);
+      assert.equal(await p.textContent("#invest-sum"), summary);
+      await p.click('#people [data-i="1"]');
+      await p.click("#invest-view-portfolio");
+      await settle(p);
+      assert.equal(await p.inputValue("#pf-canadian"), "20", "the assumptions don't come from the selected year");
+      assert.equal(await p.inputValue("#pf-yield"), "2.2");
+      assert.match(await p.getAttribute('[data-note="portfolioYield"]', "data-tip"), /starts at 2.2%/);
     },
   ],
   [

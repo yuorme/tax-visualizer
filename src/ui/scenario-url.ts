@@ -1,4 +1,5 @@
 // Versioned scenario fragments. Fragments stay on the device; no server or account stores the inputs.
+import type { PortfolioAssumptions } from "../data/schema.ts";
 import { blank, type Person } from "../engine/types.ts";
 import { ChildcareModel } from "./childcare.ts";
 import { DEFAULT_INCOME, spendEst } from "./defaults.ts";
@@ -8,6 +9,7 @@ export interface ScenarioContext {
   years: number[];
   provinces: string[];
   treatyRate: (year: number) => number;
+  portfolioDefaults: PortfolioAssumptions;
 }
 type State = Record<string, unknown>;
 const record = (value: unknown): value is State => value !== null && typeof value === "object" && !Array.isArray(value);
@@ -109,7 +111,7 @@ export function normalizeScenario(value: unknown, context: ScenarioContext): Sta
   const people =
     Array.isArray(input.people) && input.people.length ? input.people.slice(0, 2).map(person) : [blank(DEFAULT_INCOME)];
   result.people = people;
-  result.portfolios = normalizePortfolios(input.portfolios, people.length);
+  result.portfolios = normalizePortfolios(input.portfolios, people.length, context.portfolioDefaults);
   result.active = input.active === 1 && people.length === 2 ? 1 : 0;
   result.adults =
     finite(input.adults, 1, 4) && Number.isInteger(input.adults)

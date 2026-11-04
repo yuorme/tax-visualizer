@@ -23,7 +23,8 @@ line-by-line tax return. Simpler and slightly less precise is acceptable where i
 - Investment income can be entered as exact amounts (Manual) or estimated from a portfolio (Portfolio), per adult.
   Portfolio takes the value of non-registered holdings, an asset mix and one average yield, and only produces the
   engine's existing inputs: Canadian stocks give eligible dividends, U.S. and international stocks foreign dividends,
-  and bonds interest added to other income. A mix that doesn't total 100% is scaled. Capital gains stay one input
+  and bonds interest added to other income, so Other income keeps a separate amount in Portfolio for taking that
+  interest out without changing the Manual amount. A mix that doesn't total 100% is scaled. Capital gains stay one input
   shared by both views, with no assumed share realized. Non-eligible dividends exist only in Manual and count as zero
   in Portfolio. Each view keeps its inputs, and only the selected one counts. A quick estimate, not matching tax slips.
 
@@ -183,8 +184,9 @@ Marked `estimated: true` in the data files where they appear:
 - Starting fuel efficiency of 9.0 L/100 km: NRCan's 2023 on-road averages for gasoline cars and light trucks,
   weighted by distance driven.
 - Starting Portfolio mix of 20% Canadian stocks, 40% U.S. and international stocks and 40% bonds, and 2.2% yield:
-  rounded from Vanguard Balanced ETF Portfolio's holdings and distribution yield as at Sep 30 2026. These are page
-  defaults in `src/ui/defaults.ts`, not tax-year data; a saved or shared portfolio keeps its own values.
+  rounded from Vanguard Balanced ETF Portfolio's holdings and distribution yield as at Sep 30 2026. They sit in the
+  2026 federal data, but the page reads the newest year that has them whichever year is selected, and a saved or
+  shared portfolio keeps its own values.
 
 ## Open questions
 

@@ -1,12 +1,19 @@
 import assert from "node:assert/strict";
 import test from "node:test";
+import { loadYear } from "../src/data/load.ts";
 import { blank } from "../src/engine/types.ts";
 import { ChildcareModel } from "../src/ui/childcare.ts";
 import { spendEst } from "../src/ui/defaults.ts";
-import { defaultPortfolio, type Portfolio } from "../src/ui/portfolio.ts";
+import { defaultPortfolio, type Portfolio, portfolioAssumptions } from "../src/ui/portfolio.ts";
 import { normalizeScenario, readScenario, scenarioDefaults, scenarioHash } from "../src/ui/scenario-url.ts";
 
-const context = { years: [2026, 2025, 2024], provinces: ["ON", "AB", "BC", "QC"], treatyRate: () => 0.15 };
+const assumptions = portfolioAssumptions([loadYear(2026)]);
+const context = {
+  years: [2026, 2025, 2024],
+  provinces: ["ON", "AB", "BC", "QC"],
+  treatyRate: () => 0.15,
+  portfolioDefaults: assumptions,
+};
 test("default links omit defaults but identify a scenario and pin the tax year", () => {
   assert.equal(scenarioHash(scenarioDefaults(context), context), "#s=1&year=2026");
   assert.equal(readScenario("#notes", context), null);
@@ -123,7 +130,7 @@ test("hostile nested objects cannot create engine amounts or prototype propertie
 });
 
 const portfolio = (change: Partial<Portfolio> = {}): Portfolio => ({
-  ...defaultPortfolio(),
+  ...defaultPortfolio(assumptions),
   view: "portfolio",
   value: 500000,
   canadian: 30,
@@ -150,7 +157,10 @@ test("the portfolio view round-trips with the manual amounts it sets aside", () 
     people: [{ ...blank(60000), oth: 1200, cg: -900, ed: 800, nd: 700, fd: 600 }, blank(30000)],
     adults: 2,
     spend: spendEst(2),
-    portfolios: [portfolio(), portfolio({ value: 123456, canadian: 12.5, foreign: 0, bonds: 150 / 2, yieldPct: 0 })],
+    portfolios: [
+      portfolio({ other: 0 }),
+      portfolio({ value: 123456, canadian: 12.5, foreign: 0, bonds: 150 / 2, yieldPct: 0, other: 2500 }),
+    ],
   };
   const hash = scenarioHash(state, context);
   assert.deepEqual(readScenario(hash, context), state);
@@ -172,12 +182,19 @@ test("the manual view round-trips a portfolio typed earlier, and one person can 
 });
 
 test("a link states every portfolio field, so a later change of starting assumptions can't change its result", () => {
-  const state = { ...scenarioDefaults(context), portfolios: [{ ...defaultPortfolio(), view: "portfolio" }] };
-  const written = new URLSearchParams(scenarioHash(state, context).slice(1)).get("portfolios") ?? "[]";
+  const state = { ...scenarioDefaults(context), portfolios: [{ ...defaultPortfolio(assumptions), view: "portfolio" }] };
+  const hash = scenarioHash(state, context);
+  const later = {
+    ...context,
+    portfolioDefaults: { ...assumptions, canadian: 0.5, foreign: 0.5, bonds: 0, yield: 0.09 },
+  };
+  assert.deepEqual(readScenario(hash, later)?.portfolios, state.portfolios);
+  const written = new URLSearchParams(hash.slice(1)).get("portfolios") ?? "[]";
   assert.deepEqual(Object.keys(JSON.parse(written)[0]).sort(), [
     "bonds",
     "canadian",
     "foreign",
+    "other",
     "value",
     "view",
     "yieldPct",
@@ -185,7 +202,7 @@ test("a link states every portfolio field, so a later change of starting assumpt
 });
 
 test("an untouched manual entry adds nothing to a link", () => {
-  const state = { ...scenarioDefaults(context), portfolios: [defaultPortfolio()] };
+  const state = { ...scenarioDefaults(context), portfolios: [defaultPortfolio(assumptions)] };
   assert.equal(scenarioHash(state, context), "#s=1&year=2026");
 });
 
@@ -194,12 +211,12 @@ test("malformed portfolio fields fall back safely without disturbing the other i
   for (const value of ["{bad", "null", "7", '"x"', "{}", "[null]", "[7]", '[{"view":"manual"}]', '[{"view":"both"}]'])
     assert.deepEqual(read(value), { ...scenarioDefaults(context), home: "QC" });
   assert.deepEqual(read('[{"view":"portfolio","value":1e999,"canadian":-1,"yieldPct":"3"}]')?.portfolios, [
-    { ...defaultPortfolio(), view: "portfolio" },
+    { ...defaultPortfolio(assumptions), view: "portfolio" },
   ]);
   assert.deepEqual(read(`[${JSON.stringify(portfolio())},${JSON.stringify(portfolio())}]`)?.portfolios, [portfolio()]);
   const hostile = JSON.parse('{"portfolios":[{"__proto__":{"polluted":true},"view":"portfolio","value":5,"extra":1}]}');
   const [entry] = normalizeScenario(hostile, context).portfolios as Portfolio[];
-  assert.deepEqual(entry, { ...defaultPortfolio(), view: "portfolio", value: 5 });
+  assert.deepEqual(entry, { ...defaultPortfolio(assumptions), view: "portfolio", value: 5 });
   assert.equal(Object.getPrototypeOf(entry), Object.prototype);
   assert.equal(Object.hasOwn(entry, "polluted"), false);
 });

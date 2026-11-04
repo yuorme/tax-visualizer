@@ -3,10 +3,10 @@
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import test from "node:test";
-import { loadYear } from "../src/data/load.ts";
+import { listYears, loadYear } from "../src/data/load.ts";
+import { portfolioDefaults } from "../src/data/schema.ts";
 import { blank, compute, type Household, type Person } from "../src/engine/index.ts";
-import { PORTFOLIO_DEFAULTS } from "../src/ui/defaults.ts";
-import { tooltips } from "../src/ui/notes.ts";
+import { portfolioTooltips, tooltips } from "../src/ui/notes.ts";
 import {
   defaultPortfolio,
   enginePerson,
@@ -14,12 +14,14 @@ import {
   normalizePortfolio,
   normalizePortfolios,
   type Portfolio,
+  parseAmount,
   parsePercent,
   portfolioAmounts,
+  portfolioAssumptions,
 } from "../src/ui/portfolio.ts";
 
 const portfolio = (change: Partial<Portfolio> = {}): Portfolio => ({
-  ...defaultPortfolio(),
+  ...defaultPortfolio(assumptions),
   view: "portfolio",
   value: 500000,
   canadian: 30,
@@ -29,6 +31,7 @@ const portfolio = (change: Partial<Portfolio> = {}): Portfolio => ({
   ...change,
 });
 const year = loadYear(2026);
+const assumptions = portfolioAssumptions([year]);
 const ontario = year.provinces.find(p => p.code === "ON");
 const household = (person: Person): Household => ({
   people: [person],
@@ -118,67 +121,140 @@ test("bond interest gets none of the employment-only treatment", () => {
 });
 
 test("damaged saved portfolios fall back field by field, and only a known view leaves manual", () => {
-  for (const value of [null, undefined, 7, "x", [], true]) assert.equal(normalizePortfolio(value), null);
-  assert.equal(normalizePortfolio({ view: "both" }), null);
-  assert.equal(normalizePortfolio({ view: "manual" }), null);
+  for (const value of [null, undefined, 7, "x", [], true]) assert.equal(normalizePortfolio(value, assumptions), null);
+  assert.equal(normalizePortfolio({ view: "both" }, assumptions), null);
+  assert.equal(normalizePortfolio({ view: "manual" }, assumptions), null);
   assert.deepEqual(
-    normalizePortfolio({
-      view: "portfolio",
-      value: -1,
-      canadian: 101,
-      foreign: "40",
-      bonds: null,
-      yieldPct: Number.POSITIVE_INFINITY,
-    }),
-    { ...defaultPortfolio(), view: "portfolio" },
+    normalizePortfolio(
+      {
+        view: "portfolio",
+        value: -1,
+        canadian: 101,
+        foreign: "40",
+        bonds: null,
+        yieldPct: Number.POSITIVE_INFINITY,
+        other: -1,
+      },
+      assumptions,
+    ),
+    { ...defaultPortfolio(assumptions), view: "portfolio" },
   );
-  assert.deepEqual(normalizePortfolio({ view: "portfolio", value: Number.NaN, extra: 1 }), {
-    ...defaultPortfolio(),
+  assert.deepEqual(normalizePortfolio({ view: "portfolio", value: Number.NaN, extra: 1 }, assumptions), {
+    ...defaultPortfolio(assumptions),
     view: "portfolio",
   });
-  assert.equal(normalizePortfolio({ view: "portfolio", value: 1e12 })?.value, 0);
-  const typedInManual = { ...defaultPortfolio(), value: 250000 };
-  assert.deepEqual(normalizePortfolio(typedInManual), typedInManual, "a draft stays in the manual view");
+  assert.equal(normalizePortfolio({ view: "portfolio", value: 1e12 }, assumptions)?.value, 0);
+  const typedInManual = { ...defaultPortfolio(assumptions), value: 250000 };
+  assert.deepEqual(normalizePortfolio(typedInManual, assumptions), typedInManual, "a draft stays in the manual view");
 });
 
 test("the portfolio list has one entry per person at most and drops trailing untouched entries", () => {
   const entry = portfolio();
-  for (const value of [undefined, null, {}, 3, "x"]) assert.deepEqual(normalizePortfolios(value, 2), []);
-  assert.deepEqual(normalizePortfolios([null, null], 2), []);
-  assert.deepEqual(normalizePortfolios([entry, null], 2), [entry]);
-  assert.deepEqual(normalizePortfolios([null, entry], 2), [null, entry]);
-  assert.deepEqual(normalizePortfolios([entry, entry, entry], 1), [entry]);
+  for (const value of [undefined, null, {}, 3, "x"]) assert.deepEqual(normalizePortfolios(value, 2, assumptions), []);
+  assert.deepEqual(normalizePortfolios([null, null], 2, assumptions), []);
+  assert.deepEqual(normalizePortfolios([entry, null], 2, assumptions), [entry]);
+  assert.deepEqual(normalizePortfolios([null, entry], 2, assumptions), [null, entry]);
+  assert.deepEqual(normalizePortfolios([entry, entry, entry], 1, assumptions), [entry]);
   // biome-ignore lint/suspicious/noSparseArray: editing the partner first leaves a hole at the first person
-  assert.deepEqual(normalizePortfolios([, entry], 2), [null, entry]);
+  assert.deepEqual(normalizePortfolios([, entry], 2, assumptions), [null, entry]);
 });
 
-test("typed percentages are bounded and unreadable text is 0", () => {
-  assert.equal(parsePercent("2.5"), 2.5);
-  assert.equal(parsePercent("2,5"), 2.5);
-  assert.equal(parsePercent(" 40 % "), 40);
-  assert.equal(parsePercent("250"), 100);
-  assert.equal(parsePercent("-5"), 5);
-  assert.equal(parsePercent(""), 0);
-  assert.equal(parsePercent("1.2.3"), 0);
-  assert.equal(parsePercent("abc"), 0);
+test("a typed percentage must be readable as a whole, with only a decimal comma and % sign allowed", () => {
+  for (const [text, value] of [
+    ["2.5", 2.5],
+    ["2,5", 2.5],
+    ["2.", 2],
+    [".5", 0.5],
+    ["40%", 40],
+    [" 40 % ", 40],
+    ["4,5 %", 4.5],
+    ["100", 100],
+    ["0", 0],
+    ["", 0],
+    ["   ", 0],
+  ] as const)
+    assert.equal(parsePercent(text), value, `"${text}"`);
+  for (const text of [
+    "-5",
+    "+5",
+    "1e2",
+    "2abc3",
+    "abc",
+    "1.2.3",
+    "1,2,3",
+    "%",
+    ".",
+    "5 5",
+    "100.01",
+    "250",
+    "0x10",
+    "Infinity",
+  ])
+    assert.equal(parsePercent(text), null, `"${text}"`);
+});
+
+test("a typed amount must be digits, with only a $ sign and thousands commas allowed", () => {
+  for (const [text, value] of [
+    ["500000", 500000],
+    ["500,000", 500000],
+    ["$500,000", 500000],
+    ["500,00", 50000],
+    ["", 0],
+    ["99999999", 99999999],
+  ] as const)
+    assert.equal(parseAmount(text), value, `"${text}"`);
+  for (const text of ["-5", "1e2", "2abc3", "abc", "1.5", "100000000"])
+    assert.equal(parseAmount(text), null, `"${text}"`);
+});
+
+test("the Portfolio view's own other income replaces the manual amount there, and leaves it as typed", () => {
+  const person = { ...blank(75000), oth: 5000 };
+  const bonds = portfolio({ canadian: 0, foreign: 0, bonds: 100, value: 100000, yieldPct: 5 });
+  assert.equal(enginePerson(person, bonds).oth, 10000, "unchanged, the manual amount carries over");
+  assert.equal(enginePerson(person, { ...bonds, other: 0 }).oth, 5000, "zero is an amount, not a missing one");
+  assert.equal(enginePerson(person, { ...bonds, other: 1200 }).oth, 6200);
+  assert.equal(person.oth, 5000);
+  assert.equal(enginePerson(person, { ...bonds, view: "manual", other: 0 }), person);
+});
+
+test("starting assumptions come from the newest year that has them, never the selected year", () => {
+  const all = listYears().map(loadYear);
+  assert.deepEqual(portfolioAssumptions(all), assumptions);
+  assert.deepEqual(portfolioAssumptions([...all].reverse()), assumptions);
+  assert.throws(() => portfolioAssumptions([]), /No year has portfolio assumptions/);
+  // A new year added without them, as the data comment allows, keeps them.
+  const next = { ...year, year: 2099, federal: { ...year.federal, investment: { ...year.federal.investment } } };
+  delete next.federal.investment.portfolioDefaults;
+  assert.deepEqual(portfolioAssumptions([...all, next]), assumptions);
 });
 
 test("starting assumptions are whole, flagged as estimates and sourced, and the tooltips quote them", () => {
-  const { estimated, canadian, foreign, bonds, yieldPct, source } = PORTFOLIO_DEFAULTS;
-  assert.equal(estimated, true);
-  assert.equal(canadian + foreign + bonds, 100);
-  assert.match(source.url, /^https:\/\//);
+  assert.deepEqual(
+    { ...defaultPortfolio(assumptions) },
+    { view: "manual", value: 0, canadian: 20, foreign: 40, bonds: 40, yieldPct: 2.2, other: null },
+  );
+  assert.equal(assumptions.estimated, true);
+  assert.equal(portfolioDefaults.safeParse({ ...assumptions, estimated: false }).success, false);
+  assert.equal(portfolioDefaults.safeParse({ ...assumptions, bonds: 0.5 }).success, false, "the mix must total 100%");
+  assert.equal(portfolioDefaults.safeParse({ ...assumptions, source: undefined }).success, false);
   const page = fs.readFileSync(new URL("../src/ui/index.html", import.meta.url), "utf8");
-  assert.ok(page.includes(`href="${source.url}"`), "the page's source link matches the constant");
-  assert.ok(page.includes(source.label), "the page's source label matches the constant");
-  const tips = tooltips(year);
-  assert.match(tips.portfolioMix, new RegExp(`${canadian}% Canadian stocks, ${foreign}% U.S. and international`));
+  assert.ok(page.includes(`href="${assumptions.source.url}"`), "the page's source link matches the data");
+  assert.ok(page.includes(assumptions.source.label), "the page's source label matches the data");
+  const cached = fs.readFileSync(
+    new URL("../docs/verification/2026/sources/vanguard-vbal.txt", import.meta.url),
+    "utf8",
+  );
+  for (const figure of ["2.22%", "18.08%", "27.98%", "11.05%", "4.70%", "22.89%", "7.84%", "7.43%"])
+    assert.ok(cached.includes(figure), `${figure} is in the cached source`);
+  const tips = portfolioTooltips(assumptions);
+  assert.match(tips.portfolioMix, /20% Canadian stocks, 40% U.S. and international stocks and 40% bonds/);
   assert.match(tips.portfolioMix, /eligible dividends/);
   assert.match(tips.portfolioMix, /foreign dividends/);
   assert.match(tips.portfolioMix, /added to any amount under Other income/);
-  assert.match(tips.portfolioYield, new RegExp(`${yieldPct}%`));
+  assert.match(tips.portfolioYield, /2\.2%/);
   assert.match(tips.portfolioYield, /no gains are assumed/);
-  for (const tip of [tips.portfolioMix, tips.portfolioYield]) assert.ok(tip.includes(PORTFOLIO_DEFAULTS.basis));
+  for (const tip of [tips.portfolioMix, tips.portfolioYield]) assert.ok(tip.includes(assumptions.basis));
   assert.match(tips.portfolioView, /Non-eligible dividends are entered in Manual only/);
   assert.match(tips.portfolioView, /won't match your slips/);
+  assert.match(tooltips(year).otherIncome, /also leave out interest from that portfolio/);
 });

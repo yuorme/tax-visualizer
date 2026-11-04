@@ -31,18 +31,19 @@ import {
   metricEfficiency,
 } from "./driving-units.ts";
 import { renderHistory } from "./history.ts";
-import { cents, footerNotes, share, tooltips } from "./notes.ts";
+import { cents, footerNotes, portfolioTooltips, share, tooltips } from "./notes.ts";
 import {
   defaultPortfolio,
   enginePerson,
   type InvestView,
-  MAX_PORTFOLIO_VALUE,
   mixIsWhole,
   mixTotal,
   normalizePortfolios,
   type Portfolio,
+  parseAmount,
   parsePercent,
   portfolioAmounts,
+  portfolioAssumptions,
 } from "./portfolio.ts";
 import { provinceFlags, setProvinceFlag } from "./province-flags.ts";
 import { readScenario, scenarioHash } from "./scenario-url.ts";
@@ -50,10 +51,13 @@ import { readScenario, scenarioHash } from "./scenario-url.ts";
 const availableYears = Object.keys(years)
   .map(Number)
   .sort((a, b) => b - a);
+// Starting Portfolio values: the newest data's, whichever year is selected. See portfolioDefaults in the schema.
+const PORTFOLIO = portfolioAssumptions(Object.values(years));
 const scenarioContext = {
   years: availableYears,
   provinces: years[availableYears[0]].provinces.map(p => p.code),
   treatyRate: (year: number) => years[year].federal.investment.foreignWithholding.usTreaty,
+  portfolioDefaults: PORTFOLIO,
 };
 let initialState: Record<string, unknown> = readScenario(location.hash, scenarioContext) ?? {};
 if (!readScenario(location.hash, scenarioContext)) {
@@ -227,7 +231,7 @@ try {
     if (typeof s.historyOpen === "boolean") historyOpen = s.historyOpen;
     if (s.historyMode === "nominal") historyMode = "nominal";
     if (Array.isArray(s.people) && s.people.length) people = s.people.slice(0, 2).map(cleanPerson);
-    portfolios = normalizePortfolios(s.portfolios, people.length); // absent in older saves: the manual view
+    portfolios = normalizePortfolios(s.portfolios, people.length, PORTFOLIO); // absent in older saves: the manual view
     if (s.active === 1 && people.length === 2) active = 1;
     if (typeof s.spouse === "boolean") spouse = s.spouse;
     if (s.sort === "rate" || s.sort === "geo") sort = s.sort;
@@ -274,7 +278,7 @@ function scenarioState() {
     historyOpen,
     historyMode,
     people,
-    portfolios: normalizePortfolios(portfolios, people.length),
+    portfolios: normalizePortfolios(portfolios, people.length, PORTFOLIO),
     active,
     spouse,
     sort,
@@ -346,7 +350,7 @@ function renderYearNotes() {
   yearSelect.value = String(YEAR);
   document.title = `Provincial Tax Compare ${YEAR}`;
   $("year-notes").innerHTML = footerNotes(Y, { defaultIncome: DEFAULT_INCOME, spendEst });
-  const tips = tooltips(Y);
+  const tips = { ...tooltips(Y), ...portfolioTooltips(PORTFOLIO) };
   aggregateChildrenTip = tips.children;
   for (const b of document.querySelectorAll<HTMLElement>("[data-note]")) b.dataset.tip = tips[b.dataset.note ?? ""];
   const sources = $("year-sources");
@@ -1296,15 +1300,27 @@ function onDoubleTap(el: HTMLElement, fn: (e?: Event) => void) {
 type InvKey = Exclude<IncomeKey, "ord">;
 const INV_KEYS: InvKey[] = ["oth", "cg", "ed", "nd", "fd"];
 const isInvKey = (k: string | undefined): k is InvKey => INV_KEYS.some(x => x === k);
+/** The selected person's portfolio, while the Portfolio view is the one they're using. */
+const activePortfolio = () => {
+  const entry = portfolioOf(active);
+  return entry?.view === "portfolio" ? entry : null;
+};
+/** An Income tab amount as shown. The Portfolio view has its own other income; the rest are one amount in both views. */
+const invValue = (k: InvKey) => (k === "oth" ? (activePortfolio()?.other ?? me().oth ?? 0) : me()[k]);
+function setInv(k: InvKey, v: number) {
+  const entry = activePortfolio();
+  if (k === "oth" && entry) entry.other = v;
+  else me()[k] = v;
+}
 function syncInv() {
   for (const k of INV_KEYS) {
-    $<HTMLInputElement>(k).value = (me()[k] ?? 0).toLocaleString("en-CA");
+    $<HTMLInputElement>(k).value = invValue(k).toLocaleString("en-CA");
     syncRange(k);
   }
 }
 function syncRange(k: InvKey) {
   const r = $<HTMLInputElement>(`${k}-range`);
-  r.value = String(Math.max(+r.min, Math.min(me()[k] ?? 0, +r.max)));
+  r.value = String(Math.max(+r.min, Math.min(invValue(k), +r.max)));
 }
 document.querySelectorAll<HTMLInputElement>("input.inv").forEach(el => {
   const k = el.id;
@@ -1312,12 +1328,12 @@ document.querySelectorAll<HTMLInputElement>("input.inv").forEach(el => {
   el.addEventListener("input", () => {
     const neg = k === "cg" && /^\s*[-−]/.test(el.value);
     const v = Math.min(+el.value.replace(/[^\d]/g, "") || 0, 99999999);
-    me()[k] = neg ? -v : v;
+    setInv(k, neg ? -v : v);
     syncRange(k);
     render();
   });
   el.addEventListener("blur", () => {
-    el.value = (me()[k] ?? 0).toLocaleString("en-CA");
+    el.value = invValue(k).toLocaleString("en-CA");
   });
   el.addEventListener("keydown", e => {
     if (e.key === "Enter") el.blur();
@@ -1328,8 +1344,8 @@ document.querySelectorAll<HTMLInputElement>("input.inv-range").forEach(el => {
   const k = el.dataset.k;
   if (!isInvKey(k)) return;
   el.addEventListener("input", () => {
-    me()[k] = +el.value;
-    $<HTMLInputElement>(k).value = (me()[k] ?? 0).toLocaleString("en-CA");
+    setInv(k, +el.value);
+    $<HTMLInputElement>(k).value = invValue(k).toLocaleString("en-CA");
     render();
   });
 });
@@ -1342,11 +1358,11 @@ const PF_PERCENTS = [
 ] as const;
 const pfValueIn = $<HTMLInputElement>("pf-value");
 function setPortfolio(change: Partial<Portfolio>) {
-  portfolios[active] = { ...(portfolioOf(active) ?? defaultPortfolio()), ...change };
+  portfolios[active] = { ...(portfolioOf(active) ?? defaultPortfolio(PORTFOLIO)), ...change };
   render();
 }
 function renderPortfolio() {
-  const entry = portfolioOf(active) ?? defaultPortfolio();
+  const entry = portfolioOf(active) ?? defaultPortfolio(PORTFOLIO);
   const isPortfolio = entry.view === "portfolio";
   for (const b of document.querySelectorAll<HTMLElement>("[data-invest-view]"))
     b.setAttribute("aria-pressed", String(b.dataset.investView === entry.view));
@@ -1361,18 +1377,34 @@ function renderPortfolio() {
   status.hidden = mixIsWhole(entry);
   status.textContent =
     mixTotal(entry) > 0 ? `Mix totals ${+mixTotal(entry).toFixed(2)}%: scaled to 100%` : "Mix totals 0%: no income";
+  // Bond interest is on top of this box, so say so at the box: it may already hold the same interest.
+  $("oth-label").textContent = isPortfolio ? "Other income, excluding portfolio interest" : "Interest, rental & other";
+  $("oth-range").setAttribute(
+    "aria-label",
+    isPortfolio ? "Other income excluding portfolio interest slider" : "Interest, rental and other income slider",
+  );
+  const interest = isPortfolio ? portfolioAmounts(entry).interest : 0;
+  const overlap = $("oth-portfolio-status");
+  overlap.hidden = !(interest > 0 && invValue("oth") > 0);
+  overlap.textContent = `${money(invValue("oth"))} here is added to ${money(interest)} of bond interest. If this amount includes that interest, take it out: Manual keeps its own amount.`;
 }
 for (const button of document.querySelectorAll<HTMLElement>("[data-invest-view]"))
   button.addEventListener("click", () => {
     const view: InvestView = button.dataset.investView === "portfolio" ? "portfolio" : "manual";
     setPortfolio({ view });
+    syncInv(); // other income has its own amount in each view
   });
-pfValueIn.addEventListener("input", () =>
-  setPortfolio({ value: Math.min(+pfValueIn.value.replace(/[^\d]/g, "") || 0, MAX_PORTFOLIO_VALUE) }),
-);
+// Unreadable text changes nothing, and blur puts the last good value back in the box.
+pfValueIn.addEventListener("input", () => {
+  const value = parseAmount(pfValueIn.value);
+  if (value !== null) setPortfolio({ value });
+});
 for (const [key, id] of PF_PERCENTS) {
   const input = $<HTMLInputElement>(id);
-  input.addEventListener("input", () => setPortfolio({ [key]: parsePercent(input.value) }));
+  input.addEventListener("input", () => {
+    const value = parsePercent(input.value);
+    if (value !== null) setPortfolio({ [key]: value });
+  });
 }
 for (const input of [pfValueIn, ...PF_PERCENTS.map(([, id]) => $<HTMLInputElement>(id))]) {
   input.addEventListener("blur", () => render());

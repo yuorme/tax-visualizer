@@ -118,13 +118,14 @@
       <div class="panel-head"><b class="panel-title" id="other-title">Other income</b><button type="button" class="info" data-note="otherIncome" aria-label="About other income">i</button><span class="panel-sum" id="other-sum">none added</span></div>
       <div class="invest-grid one">
         <div class="field">
-          <div class="lbl-row"><label class="lbl" for="oth">Interest, rental &amp; other</label></div>
+          <div class="lbl-row"><label class="lbl" for="oth" id="oth-label">Interest, rental &amp; other</label></div>
           <div class="money sm"><span>$</span><input id="oth" class="inv" inputmode="numeric" autocomplete="off" value="0"></div>
           <input type="range" id="oth-range" class="inv-range" data-k="oth" min="0" max="100000" step="500" value="0" aria-label="Interest, rental and other income slider">
           <div class="scale" data-for="oth-range" data-ticks="0,~25000,50000,~75000,100000" aria-hidden="true"></div>
         </div>
       </div>
-      <div class="panel-head"><b class="panel-title" id="invest-title">Investment income</b><button type="button" class="info" data-tip="Capital gains and dividends from investments held in a non-registered (taxable) account; interest goes under Other income above. Income inside a TFSA isn't taxed at all, and RRSP/RRIF withdrawals also go under Other income. CRA taxes investment income to whoever supplied the money, regardless of whose name is on the account." aria-label="About investment income">i</button><span class="panel-sum">Non-registered accounts · <span id="invest-sum">none added</span></span></div>
+      <div class="pr-note" id="oth-portfolio-status" role="status" hidden></div>
+      <div class="panel-head"><b class="panel-title" id="invest-title">Investment income</b><button type="button" class="info" data-tip="Capital gains and dividends from investments held in a non-registered (taxable) account. In Manual, interest goes under Other income above. In Portfolio, bond interest comes from the portfolio, so leave it out of Other income. Income inside a TFSA isn't taxed at all, and RRSP/RRIF withdrawals also go under Other income. CRA taxes investment income to whoever supplied the money, regardless of whose name is on the account." aria-label="About investment income">i</button><span class="panel-sum">Non-registered accounts · <span id="invest-sum">none added</span></span></div>
       <div class="sub-row">
         <fieldset class="seg" aria-label="How to enter investment income">
           <button type="button" id="invest-view-manual" data-invest-view="manual" aria-pressed="true">Manual</button>
