@@ -95,10 +95,32 @@ cold. Role files: `docs/agents/<role>.md`. This table is the only place that ass
 | Engine, rules, schema, scripts, tests, debugging | coder | Codex | Claude Code |
 | A year's or a program's figures | data-collector | Codex | Claude Code |
 
-**Reviews cross agents:** the reviewer is a different agent (and model) from the one that wrote the branch, so
-Codex's branches get a Claude review and Claude's get a Codex review. Only when the other agent is unavailable does
-a fresh session of the author's agent review, and its verdict says so. An issue touching both UI and engine is split
-into stacked branches (engine first), or goes to whoever owns most of it.
+**Reviews cross agents:** the reviewer is a different agent from the one that wrote the branch, so Codex's
+branches get a Claude review and Claude's get a Codex review. An issue touching both UI and engine is split into
+stacked branches (engine first), or goes to whoever owns most of it.
+
+### Models and effort
+The orchestrator sets the model and effort on every dispatch; frontmatter and tool defaults are only fallbacks.
+This table is the only place model ids are written: Sonnet maps to Codex's Sol class and Opus to Astra.
+
+| Tier | Used for | Claude Code | Codex |
+| --- | --- | --- | --- |
+| Standard | data-collector; reviews not listed under Strong | `sonnet` | `gpt-6.1-sol` |
+| Strong | coder; reviews of engine, rule, data, script or significant layout changes | `opus` | `gpt-6-astra` |
+
+Effort is `high` unless the issue clearly fits another level: `medium` only for Markdown-only or mechanical work
+(renames, dependency bumps, lint fixes), `xhigh` for engine changes spanning several programs or anything that
+changes golden baselines. `xhigh` is the cap on both tools (Claude's `max` costs too many tokens). Reviewers never
+go below `high`. The brief records the tier and effort, and the retro reports them per issue.
+
+### When an agent or model is out
+An agent or model is unavailable when it is down, its plugin fails, or a usage limit won't reset before the work is
+needed. If a limit resets within a few hours and nothing is waiting on the work, wait instead. When one model is out:
+- coding and data work may step down a tier on the same agent, and the dispatch says so;
+- a review never steps down: if the reviewing agent's strong model is out, treat that agent as unavailable.
+
+When the other agent is unavailable, a fresh session of the author's agent reviews, at the strong tier and `high`
+effort or above, and its verdict header says "same-agent review".
 
 ## Running agents
 The orchestrator gives each agent one issue, its role file and an explicit list of files it owns; never run two
@@ -124,10 +146,10 @@ results and opens the one pull request that gets reviewed. Collectors cache what
 
 ## Milestone retros
 When a milestone's last pull request merges, the orchestrator writes `docs/retros/<milestone>.md`: per issue, the
-agent and its tokens, review rounds to approval and what the extra rounds fixed; defects found
+agent, model, effort and tokens, review rounds to approval and what the extra rounds fixed; defects found
 after merge; and time lost to blocking or interruptions. It proposes at most three process changes, each tied to a
 number in the retro, in one pull request for the user. Each change should also remove or merge a rule where it
-can: keep this file under about 160 lines, `CLAUDE.md` under about 40 and each role file under about 45. Drop a
+can: keep this file under about 190 lines, `CLAUDE.md` under about 40 and each role file under about 45. Drop a
 rule that a later retro shows had no effect.
 
 ## Merging
@@ -144,6 +166,7 @@ the golden-test requirements above; the reviewer's model alone does not require 
 The user merges instead, and the orchestrator labels the pull request `needs-human` and says so, when:
 - its issue is labelled `needs-human`, or
 - it makes significant layout changes, or
+- its review was a same-agent review, or
 - it changes this merge process, `AGENTS.md`, `CLAUDE.md`, `docs/agents/`, `.claude/agents/`, `.claude/settings.json`
   or `.codex/`.
 
@@ -159,6 +182,6 @@ rather than a printed value: `[ "$(gh pr view N --json state --jq .state)" = OPE
 to any agent sent review fixes. Wrap every CI wait in `timeout` or a fixed number of polls.
 
 ## Tool notes
-**Claude Code:** see `CLAUDE.md`. **Codex:** `.claude/` files don't configure Codex (models, tools, isolation,
-permissions); `.codex/hooks.json` does. Create worktrees explicitly, follow the active sandbox and approvals, and
-put your actual model in review headers.
+**Claude Code:** see `CLAUDE.md`. **Codex:** `.claude/` files don't configure Codex (tools, isolation,
+permissions); `.codex/hooks.json` does, and models come from the tier table. Create worktrees explicitly, follow
+the active sandbox and approvals, and put your actual model in review headers.
