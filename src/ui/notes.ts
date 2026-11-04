@@ -330,7 +330,7 @@ export function footerNotes(y: YearData, page: PageDefaults): string {
     `BC applies its tax reduction (up to ${money(bcRed.max)}, phased out between ${money(bcRed.threshold)} and ${money(bcRed.threshold + bcRed.max / bcRed.rate)} of net income).`,
     `Low-income tax reductions are applied in ${list(lowIncome)}${indexed.length ? ` (${list(indexed)} ${indexed.length > 1 ? "are" : "is"} ${lastYearIndexed})` : ""}.`,
     kidPhrases.length
-      ? `${list(kidPhrases)} follow each program's rules for who can claim them and whether unused amounts can transfer to a spouse.`
+      ? `${list(kidPhrases)} ${P.some(p => p.claimants?.childAmount) ? "follow each program's rules for who can claim them and whether unused amounts can transfer to a spouse" : "are claimed by the parent who claims the children"}.`
       : "",
     "A single parent claims the eligible dependant amount; in Quebec a single adult gets the amount for a person living alone.",
     ...P.flatMap(p =>

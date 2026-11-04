@@ -8,9 +8,6 @@ are not yet published; this is not verification of the 2026 return rules. All 20
 unchanged. No senior transfers are implemented, and the existing single-parent child eligibility/counting model
 is outside this spouse-allocation change.
 
-The orchestrator authorized the 2026 continuation convention, consistent with Ontario CARE's existing treatment,
-and extended file ownership to `tests/golden/other-income-original.json` and `docs/SCOPE.md`.
-
 | Program | 2025 source | Claimant and transfer rule |
 | --- | --- | --- |
 | SK child | 5008-PC line 58210; SK(S2) lines 1, 6–13 | Lower taxable income initially; unused base transfers |
@@ -229,7 +226,9 @@ The full T2036 cap passes every unrelated locked baseline, so no transfer-only f
 
 ## Deferred work and issue handoff
 
-Finding 5 is resolved: the child-claimant tooltip now refers to each program's claimant and transfer rules.
+Finding 5 is resolved: the child-claimant tooltip refers to each program's claimant and transfer rules when
+the year's data includes a child-amount claimant program (2025–2026). For 2019–2024, it retains "are claimed
+by the parent who claims the children". Regression tests pin the wording for all eight years.
 
 Finding 8: PE428 line 58230 amount for young children is tracked in #162.
 
@@ -1710,12 +1709,12 @@ The round 2 PE restorations below are **removed** from the final baseline diff. 
 
 ## Validation
 
-`fnm exec --using=26 npm run check` passed with escalation: lint, typecheck, all **1,143 tests** (zero failures),
-build and Chromium smoke. Browser coverage: **24 pages, 219 states, 36 contrast scans**, including desktop,
+`fnm exec --using=26 npm run check` passed with escalation: lint, typecheck, all **1,170 tests** (zero failures),
+build and Chromium smoke. Browser coverage: **25 pages, 242 states, 40 contrast scans**, including desktop,
 430 px and 375 px in light and dark mode. The targeted claimant suite passes all **88 tests**.
 `npm run format`, `git diff --check` and the Markdown checker also pass.
 
-An exact path comparison confirms that this round restores only the 21 PE foreign marginal values in the
+The round 2 exact path comparison confirmed restoration of only the 21 PE foreign marginal values in the
 existing annual goldens. Among the original 66 feature cases, only PE's name and the three documented expected
-values change; 16 cases are added. `src/ui/notes.ts` is unchanged. No installation, commit, push, `gh` command
-or source fetch was attempted by this coder. All changes remain uncommitted for the orchestrator.
+values change; 16 cases are added. `src/ui/notes.ts` selects child-claimant wording from the year's claimant
+program data; the text correction leaves engine calculations, data and golden fixtures unchanged.
