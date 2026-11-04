@@ -8,6 +8,30 @@ export const INCOME_KEYS: IncomeKey[] = ["ord", "oth", "cg", "ed", "nd", "fd"];
 export type MarginalKey = Exclude<IncomeKey, "oth">;
 export const MARGINAL_KEYS: MarginalKey[] = ["ord", "cg", "ed", "nd", "fd"];
 
+/** Calendar month when a pension starts or an employee delivers a completed election to their employer. */
+export interface PayrollMonth {
+  year: number;
+  month: number; // 1 = January, 12 = December
+}
+
+/** Latest stop election, optionally followed by its revocation in a later calendar year. Keep each plan separate.
+ *  Earlier completed stop/restart cycles have no effect on this year's calculation and should be omitted. */
+export interface EmployeeContributionElection {
+  stop: PayrollMonth;
+  restart?: PayrollMonth;
+}
+
+/** Employee-only timing. #14 must supply its own self-employment election and contribution calculation. */
+export interface EmployeePayrollInput {
+  retirementPensionSince?: PayrollMonth; // receiving either CPP or QPP continuously since this month; not pension income
+  cppElection?: EmployeeContributionElection;
+  qppElection?: EmployeeContributionElection;
+  /** Twelve nonnegative relative weights, January first. ord is the actual annual total, allocated in this ratio.
+   *  Omitted means equal monthly pay. A marginal employment dollar uses the same weights. One continuing employer,
+   *  monthly pay, no disability/death or pension cancellation; not a payroll-slip/pay-period rounding calculator. */
+  monthlyEarningsWeights?: number[];
+}
+
 /** One person's income for the year. ord = employment income, which pays CPP/QPP, EI and QPIP, gets the Canada
  *  employment amount and counts as working income for the benefits that phase in with work; oth = interest, rental
  *  and other income taxed in full, which does none of that but counts in net income like everything else; cg = net
@@ -23,6 +47,9 @@ export interface Person {
   ded: number; // other annual deductions; legacy generic claims stay here
   rrsp?: number; // annual deduction claimed, not contributions or room
   fhsa?: number; // annual deduction claimed, including eligible deferred claims
+  age?: number; // whole age on December 31 of the selected tax year; optional preserves legacy payroll
+  birthMonth?: number; // required with age; 1–12. Birthday-month elections attest delivery after the birthday
+  employeePayroll?: EmployeePayrollInput; // requires age + birthMonth; retirement payroll coverage selected by year data
 }
 
 export interface Household {

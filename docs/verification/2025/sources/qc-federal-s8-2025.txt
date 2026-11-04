@@ -1,0 +1,454 @@
+Title: CRA Schedule 8 for Quebec (5005-S8) 2025
+URL: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5005-s8/5005-s8-25e.pdf
+Fetched: 2026-11-04
+SHA-256 of the original: 621833fbc5ed329f27d4419604b4c94d3f079c3b13b92094f01c69ec620b790d
+Publication date modified: 2025-11-28
+PDF pages: all 10
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 1 of 10 ---
+
+T1-2025 Schedule 8
+Protected B
+when completed
+Quebec Pension Plan Contributions
+The Quebec Pension Plan (QPP) was amended to provide for the enhancement of pensions. The enhancements are funded by
+additional contributions that began in January 2019.
+As of January 2024, a second additional QPP contribution is required on pensionable earnings that are more than the year's
+maximum pensionable earnings, but not more than the year's additional maximum pensionable earnings.
+QPP contributions consist of a base amount, first additional amount, and second additional amount. The contributions that you
+are required to make are determined by your total amount of pensionable earnings for the year.
+Your employer will have already deducted the contributions from your salary or wages. As a self-employed individual, you will
+calculate your required contributions (if any), including the base, first, and second additional amounts, on this schedule.
+For more information about the enhancements, go to revenuquebec.ca/en.
+For more information about lines 22200, 22215, 30800, and 31000, go to canada.ca/fed-tax-information.
+Find out if this schedule is for you
+Complete this schedule to calculate your required 2025 QPP contributions if both of the following apply:
+• You were a resident of Quebec on December 31, 2025
+• You earned income from the province of Quebec only
+Attach a copy of this schedule to your paper return.
+Do not complete this schedule if any of your T4 slips show Canada Pension Plan (CPP) contributions. Instead, complete
+Form RC381, Inter-Provincial Calculation for CPP and QPP Contributions and Overpayments.
+Parts you have to complete
+Part 1 – Complete this part to determine the number of months to use for your calculations in parts 2 to 4
+(whichever apply to you).
+Part 2 – Complete this part if you are reporting employment income. If not, leave this part blank.
+Part 3 – Complete this part if you are reporting only self-employment income or other earnings that you want to pay optional
+QPP contributions on. If not, leave this part blank.
+Part 4 – Complete this part if you are reporting both:
+• employment income (complete Part 2 first)
+• self-employment income or other earnings that you want to pay optional QPP contributions on
+If not, leave this part blank.
+5005-S8 E (25) (Ce formulaire est disponible en français.) Page 1 of 10
+
+--- PDF page 2 of 10 ---
+
+Protected B when completed
+Part 1 – Number of months to use for your QPP contributions calculation
+Enter "12" on line A below unless any of the following conditions apply:
+a) You turned 18 years of age in 2025. Enter the number of months in the year after the month you turned 18 on line A
+b) You were receiving a CPP or QPP disability pension for all of 2025. Enter "0" on line A. If you started or stopped receiving
+a CPP or QPP disability pension in 2025, enter the number of months you were not receiving a disability pension on line A
+c) You were 73 years of age or older at the end of 2025 (or if the individual died in 2025 but would have been 73 years of
+age by the end of 2025), enter "0" on line A
+d) The individual died in 2025. Enter the number of months in the year, up to and including the month the individual died, on line A
+If more than one condition above applies to you, calculate the number of months based on the combined conditions and
+enter the result on line A.
+AEnter the number of months that QPP applied in 2025.
+Monthly proration for 2025
+Number
+of months Maximum
+pensionable earnings
+Maximum amount subject
+to second additional
+contributions
+Additional maximum
+pensionable earnings Maximum
+basic exemption
+1 $5,941.67 $825.00 $6,766.67 $291.67
+2 $11,883.33 $1,650.00 $13,533.33 $583.33
+3 $17,825.00 $2,475.00 $20,300.00 $875.00
+4 $23,766.67 $3,300.00 $27,066.67 $1,166.67
+5 $29,708.33 $4,125.00 $33,833.33 $1,458.33
+6 $35,650.00 $4,950.00 $40,600.00 $1,750.00
+7 $41,591.67 $5,775.00 $47,366.67 $2,041.67
+8 $47,533.33 $6,600.00 $54,133.33 $2,333.33
+9 $53,475.00 $7,425.00 $60,900.00 $2,625.00
+10 $59,416.67 $8,250.00 $67,666.67 $2,916.67
+11 $65,358.33 $9,075.00 $74,433.33 $3,208.33
+12 $71,300.00 $9,900.00 $81,200.00 $3,500.00
+Enter the corresponding amounts from the monthly proration table above using the number of months from line A.
+BYour maximum pensionable earnings for 2025 (maximum $71,300)
+CYour maximum amount subject to second additional contributions for 2025 (maximum $9,900)
+DYour additional maximum pensionable earnings for 2025 (maximum $81,200)
+EYour maximum basic exemption for 2025 (maximum $3,500)
+5005-S8 E (25) Page 2 of 10
+
+--- PDF page 3 of 10 ---
+
+Protected B when completed
+Part 2 – Contributions on employment income
+50329 1
+Total QPP pensionable earnings from box 26 of all of your T4 slips
+(if box 26 is blank, enter the amount from box 14) (maximum $81,200 per slip)
+2Enter whichever is less: amount from line D of Part 1 or line 1.Ż
+3Amount from line B of Part 1 –
+4
+Earnings subject to second additional contributions:
+Line 2 minus line 3 (if negative, enter "0") =Ż –
+5Line 2 minus line 4 (if negative, enter "0") =
+6Amount from line E of Part 1 –
+7
+Earnings subject to base and first additional contributions:
+Line 5 minus line 6 (if negative, enter "0") (maximum $67,800) =
+50330 8
+Total actual base and first additional contributions on QPP pensionable earnings from box 17
+of all of your T4 slips •
+9
+Actual base contributions on QPP pensionable earnings:
+amount from line 8 × 84.375% = –
+10
+Actual first additional contributions on QPP pensionable earnings:
+Line 8 minus line 9 =
+11
+Required base contributions on QPP pensionable earnings:
+amount from line 7 × 5.4% = (maximum $3,661.20)
+12
+Required first additional contributions on QPP pensionable earnings:
+amount from line 7 × 1% = (maximum $678.00) +
+13
+Required base and first additional contributions on pensionable earnings:
+Line 11 plus line 12 =
+14Amount from line 9
+15Amount from line 11 –
+16Line 14 minus line 15 (if negative, show in brackets) =
+17Amount from line 10
+18Amount from line 12 –
+19Line 17 minus line 18 (if negative, show in brackets) =
+Ż +
+20Line 16 plus line 19 (if negative, show in brackets) =
+50331 21
+Total actual second additional contributions on QPP pensionable
+earnings from box 17A of all of your T4 slips •
+22
+Required second additional contributions on QPP pensionable earnings:
+amount from line 4 × 4% = (maximum $396.00) –
+23Line 21 minus line 22 (if negative, show in brackets) =
+Ż +
+24Line 20 plus line 23 (if negative, show in brackets) =
+5005-S8 E (25) Page 3 of 10
+
+--- PDF page 4 of 10 ---
+
+Protected B when completed
+Part 2 – Contributions on employment income (continued)
+If you are self-employed or want to make optional QPP contributions on other earnings, continue at Part 4. If, after
+completing Part 4, you calculate that the amounts on lines 29 and 41 of Part 4 are "0", follow the instructions below.
+Tax credit and deduction for QPP contributions through employment income
+If your earnings subject to contributions are from employment income only and line 24 is:
+• positive, complete Part 2a below and see line 452 of the Revenu Québec Guide to the Income Tax Return
+• "0", complete Part 2b below
+• negative, you may be able to make optional QPP contributions (see line 445 of the Revenu Québec Guide to the
+Income Tax Return). If you choose to make optional contributions, continue at Part 4. If not, complete Part 2b below
+Part 2a – Amount from line 24 is positive
+25
+Base QPP contributions through employment income:
+Enter the amount from line 15. Enter this amount (in dollars and cents) on line 30800 of your return.
+26Amount from line 18
+27Amount from line 22 (if any) +
+28
+Deduction for QPP enhanced contributions on employment income:
+Line 26 plus line 27. Enter this amount (in dollars and cents) on line 22215 of your return. =
+Part 2b – Amount from line 24 is "0" or negative
+29
+If line 16 is positive or "0", enter the amount from line 15 at line 29 and line 35, and continue at
+line 36. If not, enter the amount from line 14 and continue at line 30.
+If line 16 is negative:
+30Enter the amount from line 16 as a positive amount.
+31
+If line 16 is negative and line 19 is positive, enter whichever is less:
+amount from line 19 or line 30. If not, enter "0". –Ż +
+32Line 30 minus line 31 =
+33Line 29 plus line 31 =
+34If line 23 and line 32 are both positive, enter whichever is less. If not, enter "0". +
+35
+Base QPP contributions through employment income:
+Line 33 plus line 34
+Enter the amount (in dollars and cents) on line 30800 of your return. =
+5005-S8 E (25) Page 4 of 10
+
+--- PDF page 5 of 10 ---
+
+Protected B when completed
+Part 2 – Contributions on employment income (continued)
+36
+If line 19 is positive or "0", enter the amount from line 18 at line 36 and line 42, and continue
+at line 43. If not, enter the amount from line 17 and continue at line 37.
+If line 19 is negative:
+37Enter the amount from line 19 as a positive amount.
+38
+If line 16 is positive, enter whichever is less:
+amount from line 16 or line 37. If not, enter "0". –Ż +
+39Line 37 minus line 38 =
+40Line 36 plus line 38 =
+41
+If line 23 and line 39 are both positive, enter whichever is less: amount from line 39 or
+the result of line 23 minus line 34. If not, enter "0". +
+42Line 40 plus line 41 =
+43
+If line 23 is positive or "0", enter the amount from line 22 at line 43 and
+line 46, and continue at line 47. If not, enter the amount from line 21 and
+continue at line 44.
+If line 23 is negative:
+44
+Enter the amount from line 23 as a
+positive amount.
+45
+If line 20 is positive, enter whichever is less:
+amount from line 20 or line 44. If not, enter "0". +
+46Line 43 plus line 45 =
+Ż +
+47
+Deduction for QPP enhanced contributions on employment income:
+Line 42 plus line 46
+Enter this amount (in dollars and cents) on line 22215 of your return. =
+Part 3 – Contributions on self-employment income and other earnings only
+(no employment income)
+50371 1
+Net business income:
+amount from line 30 of Schedule U of your Revenu Québec Income Tax Return
+(if negative, enter "0")
+50373 2
+Income you want to make optional contributions on:
+amount from line 32 of Schedule U of your Revenu Québec Income Tax Return +
+3QPP pensionable earnings: line 1 plus line 2 (if negative, enter "0") =
+4Enter whichever is less: amount from line D of Part 1 or line 3.Ż
+5Amount from line B of Part 1 –
+6
+Earnings subject to second additional contributions:
+Line 4 minus line 5 (if negative, enter "0") =Ż –
+7Line 4 minus line 6 (if negative, enter "0") =
+8Amount from line E of Part 1 –
+9
+Earnings subject to base and first additional contributions:
+Line 7 minus line 8 (if negative, enter "0") (maximum $67,800) =
+5005-S8 E (25) Page 5 of 10
+
+--- PDF page 6 of 10 ---
+
+Protected B when completed
+Part 3 – Contributions on self-employment income and other earnings only
+(no employment income) (continued)
+Tax credit and deduction for QPP contributions on self-employment income and other earnings
+10
+Required base contributions on QPP pensionable earnings:
+amount from line 9 × 10.8% = (maximum $7,322.40)
+11
+Required first additional contributions on QPP pensionable earnings:
+amount from line 9 × 2% = (maximum $1,356.00)
+12
+Required second additional contributions on QPP pensionable earnings:
+amount from line 6 × 8% = (maximum $792.00) +
+13Line 11 plus line 12 =
+14
+Base QPP contributions on self-employment income and other earnings:
+Enter the result of the following calculation (in dollars and cents) on line 31000 of your return:
+amount from line 10 × 50% = +
+15
+Deduction for QPP contributions on self-employment income and other earnings:
+Line 13 plus line 14
+Enter this amount (in dollars and cents) on line 22200 of your return. =
+Part 4 – Contributions on self-employment income and other earnings when you also have
+employment income
+50371 1
+Net business income:
+amount from line 30 of Schedule U of your Revenu Québec Income Tax Return
+(if negative, enter "0")
+50373 2
+Income you want to make optional contributions on:
+amount from line 32 of Schedule U of your Revenu Québec Income Tax Return +
+3Line 1 plus line 2 =
+4Total actual base and first additional contributions from line 8 of Part 2
+5Enter the amount from line 20 of Part 2 if positive. If not, enter "0". –
+6Line 4 minus line 5 =
+If the amount from line 20 of Part 2 is negative and line 23 of Part 2 is positive,
+complete lines 7 and 8. If not, enter "0" on line 8 and continue at line 9.
+7Enter the amount from line 20 of Part 2 as a positive amount.
+8Enter whichever is less: amount from line 23 of Part 2 or line 7. +
+9Line 6 plus line 8 =
+5005-S8 E (25) Page 6 of 10
+
+--- PDF page 7 of 10 ---
+
+Protected B when completed
+Part 4 – Contributions on self-employment income and other earnings when you also have
+employment income (continued)
+10Total actual second additional contributions from line 21 of Part 2
+11Enter the amount from line 23 of Part 2 if positive. If not, enter "0". –
+12Line 10 minus line 11 =
+If the amount from line 20 of Part 2 is positive and line 23 of Part 2 is negative, complete lines 13 and 14.
+If not, enter "0" on line 14 and continue at line 15.
+13Enter the amount from line 23 of Part 2 as a positive amount.
+14Enter whichever is less: amount from line 20 of Part 2 or line 13. +
+15Line 12 plus line 14 =
+16Amount from line B of Part 1
+17Amount from line E of Part 1 –
+18Line 16 minus line 17 (if negative, enter "0") (maximum $67,800) =
+19Amount from line 9 × 15.625 = –
+20Line 18 minus line 19 (if negative, enter "0") =
+21Enter whichever is less: amount from line 3 or line 20.
+If the amount from line 1 of Part 2 is less than line 17, complete lines 22 to 28.
+If not, enter "0" on line 28 and continue at line 29.
+22Amount from line 17
+23Amount from line 1 of Part 2 –
+24
+Line 22 minus line 23
+(if negative, enter "0" on lines 24 and 28, and continue at line 29) =
+25Amount from line 3
+26Amount from line 18 –
+27Line 25 minus line 26 (if negative, enter "0") =
+Ż –
+28Line 24 minus line 27 (if negative, enter "0") =
+Ż –
+29
+Self-employment income and other earnings subject to base and first additional contributions:
+Line 21 minus line 28 (if negative, enter "0") =
+30Amount from line 3
+31Amount from line 2 of Part 2 +
+32Line 30 plus line 31 =
+If the amount from line 32 is more than line 16, complete lines 33 to 41.
+If not, enter "0" on line 41 and continue at line 42.
+33Amount from line C of Part 1
+34Amount from line 15 ÷ 4% = –
+35Line 33 minus line 34 =
+36Amount from line 3
+37Amount from line 24 (if any) –
+38Line 36 minus line 37 =
+39Amount from line 29 –
+40Line 38 minus line 39 =
+5005-S8 E (25) Page 7 of 10
+
+--- PDF page 8 of 10 ---
+
+Protected B when completed
+Part 4 – Contributions on self-employment income and other earnings when you also have
+employment income (continued)
+41
+Self-employment income and other earnings subject to second additional contributions:
+Enter whichever is less: amount from line 35 or line 40.
+Note: If lines 29 and 41 are both "0", return to Part 2 (page 4) and follow the instructions to calculate your claim for the
+tax credit and deduction for the contributions on your employment income.
+Tax credit and deduction for QPP contributions through employment income, self-employment income,
+and other earnings
+42
+Required base contributions on QPP pensionable earnings:
+amount from line 29 × 10.8% = (maximum $7,322.40)
+43
+Required first additional contributions on QPP pensionable earnings:
+amount from line 29 × 2% = (maximum $1,356.00)
+44
+Required second additional contributions on QPP pensionable earnings:
+amount from line 41 × 8% = (maximum $792.00) +
+45Line 43 plus line 44 =
+Ż +
+46Line 42 plus line 45 =
+47Amount from line 24 of Part 2 (if positive) × 2 = –
+48Line 46 minus line 47 (if negative, show in brackets) (1) =
+49
+If line 16 of Part 2 is positive or "0", enter the amount from line 11 of Part 2 at line 49 and line 55,
+and continue at line 56. If not, enter the amount from line 9 of Part 2 and continue at line 50.
+If line 16 of Part 2 is negative:
+50Enter the amount from line 16 of Part 2 as a positive amount.
+51
+If line 16 of Part 2 is negative and line 19 of Part 2 is positive, enter
+whichever is less: amount from line 19 of Part 2 or line 50. If not,
+enter "0". –Ż +
+52Line 50 minus line 51 =
+53Line 49 plus line 51 =
+54If line 23 of Part 2 and line 52 are both positive, enter whichever is less. If not, enter "0". +
+55
+Base QPP contributions through employment income:
+Line 53 plus line 54
+Enter the amount (in dollars and cents) on line 30800 of your return. =
+(1) If the amount from line 48 is negative, see line 452 of the Revenu Québec Guide to the Income Tax Return.
+5005-S8 E (25) Page 8 of 10
+
+--- PDF page 9 of 10 ---
+
+Protected B when completed
+Part 4 – Contributions on self-employment income and other earnings when you also have
+employment income (continued)
+56
+If line 19 of Part 2 is positive or "0", enter the amount from line 12 of Part 2 at line 56 and line 62,
+and continue at line 63. If not, enter the amount from line 10 of Part 2 and continue at line 57.
+If line 19 of Part 2 is negative:
+57Enter the amount from line 19 of Part 2 as a positive amount.
+58
+If line 16 of Part 2 is positive, enter whichever is less:
+amount from line 16 of Part 2 or line 57. If not, enter "0". –Ż +
+59Line 57 minus line 58 =
+60Line 56 plus line 58 =
+61
+If line 23 of Part 2 and line 59 are both positive, enter whichever is less: amount from line 59 or
+the result of line 23 of Part 2 minus line 54. If not, enter "0". +
+62Line 60 plus line 61 =
+63
+If line 23 of Part 2 is positive or "0", enter the amount from line 22 of Part 2
+on line 63 and line 66, and continue at line 67. If not, enter the amount
+from line 21 of Part 2 and continue at line 64.
+If line 23 of Part 2 is negative:
+64
+Enter the amount from line 23 of Part 2 as
+a positive amount.
+65
+If line 20 of Part 2 is positive, enter whichever is less:
+amount from line 20 of Part 2 or line 64. If not, enter "0". +
+66Line 63 plus line 65 =
+Ż +
+67
+Deduction for QPP enhanced contributions on employment income:
+Line 62 plus line 66
+Enter this amount (in dollars and cents) on line 22215 of your return. =
+68
+Base QPP contributions through self-employment income and other earnings:
+Enter the result of the following calculation (in dollars and cents) on line 31000 of your return.
+amount from line 42 × 50% =
+69Amount from line 43 × 50% = +
+70Line 68 plus line 69 =
+71Enter the amount from line 24 of Part 2 if positive. If not, enter "0". –
+72Line 70 minus line 71 (if negative, show in brackets) =
+73A
+Enter whichever is less:
+amount from line 70 or line 71. × 84.3750% =
+74Amount from line 73 –
+75Amount A minus line 74 =
+5005-S8 E (25) Page 9 of 10
+
+--- PDF page 10 of 10 ---
+
+Protected B when completed
+Part 4 – Contributions on self-employment income and other earnings when you also have
+employment income (continued)
+76Amount from line 68
+77Amount from line 73 –
+78Line 76 minus line 77 =
+Ż
+79Amount from line 69Ż +
+80Amount from line 75 –
+81Line 79 minus line 80 =
+Ż +
+82Amount from line 44 × 50% = +
+83Amount from line 82
+84
+If line 72 is negative, enter it as a positive amount.
+If line 72 is positive or "0", enter the amount from line 83 on line 85
+and continue at line 86. –
+85Line 83 minus line 84 (if negative, enter "0") =
+Ż +
+86
+Deduction for QPP enhanced contributions on self-employment income and other earnings:
+Add lines 78, 79, 81, 82, and 85.
+Enter this amount (in dollar and cents) on line 22200 of your return. =
+See the privacy notice on your return.
+5005-S8 E (25) Page 10 of 10
