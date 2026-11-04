@@ -1,0 +1,236 @@
+Title: Guide - Income Tax Return 2019
+URL: https://www.revenuquebec.ca/documents/en/formulaires/tp/2019-12/TP-1.G-V(2019-12).pdf
+Fetched: 2026-11-04
+SHA-256 of the original: 975ac48dcc8826a16074b74153b5ac1f778a7cf17c87dd3675b5040624588742
+Publication date modified: 2019-12-18
+PDF pages: 24-25 of 116
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 24 of 116 ---
+
+242019 – G UIDE-V
+➜ Solidarity tax credit
+Eligibility requirements
+You may be entitled to the solidarity tax credit for the period from
+July 2020 to June 2021 if you met all of the following requirements
+on December 31, 2019:
+• You were 18 or older or, if you were younger than 18, you:
+– had a spouse;
+– were the father or mother of a child who lived with you; or
+– were recognized as an emancipated minor by a competent authority
+(such as a court)
+• You were resident in Québec
+• You or your spouse (see the definition below) was:
+– a Canadian citizen;
+– a permanent resident or a protected person, within the meaning
+of the
+Immigration and Refugee Protection Act; or
+– a temporary resident or the holder of a temporary resident permit,
+within the meaning of the
+Immigration and Refugee Protection Act,
+who had been living in Canada for the last 18 months
+However, you are not eligible for the solidarity tax credit if either
+of the following applies:
+• You were confined to a prison or similar institution on December 31, 2019,
+and, in 2019, you were confined for one or more periods totalling
+more than 183 days
+• Someone received a family allowance payment from Retraite Québec
+with regard to you for the month of December 2019 (unless you
+turned 18 during that month)
+Claiming the tax credit
+You can now receive the basic amount and the spousal amount of the QST
+component without completing Schedule D However, completing it is the
+only way to make sure that you receive the full amount to which
+you are entitled for each component of the credit
+If, on December 31, 2019, you were living with your spouse, only one of
+you can complete Schedule D for both of you If you and your spouse were not
+living together, you must each complete a separate Schedule D
+Spouse (for purposes of the solidarity tax credit)
+A person from whom you have not been living separate and apart
+for 90 days or more because of the breakdown of your relationship, and:
+• to whom you are married;
+• with whom you are living in a civil union; or
+• who is your de facto spouse
+NOTE
+A de facto spouse is a person (of the opposite sex or of the same sex) who:
+• is living in a conjugal relationship with you and is the biological
+or adoptive parent (legally or in fact) of a child of whom you are also
+the parent; or
+• has been living in a conjugal relationship with you for at least
+12 consecutive months (if you were separated for fewer than 90 days,
+the 12-month period is considered not to have been interrupted)
+NOTE
+You may be entitled to the solidarity tax credit even if you lived in a
+dwelling that is not eligible, such as a dwelling in low-rental housing
+(HLM), on December 31, 2019 In such a case, we take into account
+only two components of the credit: the QST component and, where
+applicable, the component for individuals living in a northern village
+(see the definition opposite)
+Calculation of the credit
+The solidarity tax credit for the period from July 2020 to June 2021
+is based on your situation on December 31, 2019 To calculate your credit,
+we add the amounts to which you are entitled under each of the following
+three components:
+• the QST component;
+• the housing component; and
+• the component for individuals living in a northern village
+The total amount may be reduced on the basis of your family income
+Your family income is the amount on line 275 of your return plus,
+if you had a spouse on December 31, 2019, the amount on line 275
+of your spouse’s return
+If your family income is equal to or greater than the maximum family
+income shown in the table below, you will not receive the solidarity
+tax credit If it is less, complete Schedule D so that we can determine
+the amount of the tax credit to which you are entitled
+IMPORTANT
+If your principal residence is located in a northern village, do not take
+the table into account Simply complete Schedule D
+Maximum family income according to family situation
+on December 31, 2019
+Family situation ($)
+Additional
+income for
+dependent
+children1 ($)
+Maximum
+family
+income ($)
+A B (A + B)
+Individual with a spouse 57,663
+Single parent 52,976
+Individual without a spouse 52,976 N/A 52,976
+1 In column B, enter $2,077 for each child for whom you or your spouse
+received a family allowance payment from Retraite Québec for the month
+of December 2019 Enter the same amount for each child born (or adopted)
+in December 2019 for whom you or your spouse received a family allowance
+payment for the month of January 2020
+Northern village
+A territory established as a municipality pursuant to the
+Act respecting
+Northern villages and the Kativik Regional Government The northern
+villages are Akulivik, Aupaluk, Inukjuak, Ivujivik, Kangiqsualujjuaq,
+Kangiqsujuaq, Kangirsuk, Kuujjuaq, Kuujjuarapik, Puvirnituq, Quaqtaq,
+Salluit, Tasiujaq and Umiujaq
+You or your spouse was not resident in Canada
+throughout the year
+If, for all or part of 2019, you or your spouse on December 31, 2019,
+was not resident in Canada, you must take into account, in calculating
+your family income, all of the income that you and your spouse earned
+in the year, including income earned while you or your spouse was not
+resident in Canada
+D1 – Version 6 – 11 novembre 2019
+
+--- PDF page 25 of 116 ---
+
+252019 – G UIDE-V
+Proof of eligibility for the housing component
+To receive the housing component, you must be able to prove that you
+or your spouse (if applicable) was the owner, tenant or subtenant of
+an eligible dwelling on December 31, 2019 If either of you was
+the owner, you must enter, in Schedule D, the roll number or cadastral
+designation (the “numéro matricule” or “désignation cadastrale”) shown
+on your (or your spouse’s) municipal tax bill If you or your spouse was
+a tenant or subtenant, you must enter, in Schedule D, the dwelling
+number shown in box A of the RL-31 slip issued by the owner of the building
+in which your dwelling was located If you have not received an RL-31 slip
+by mid-March 2020, contact your landlord If you are still unable to get the
+slip, contact us
+Owners of a residence located in a territory
+where municipal tax bills are not issued
+If you or your spouse was the owner of a residence located in a territory
+where municipal tax bills are not issued, enter in Schedule D the dwelling
+number shown in box A of the RL-31 slip issued to you or your spouse
+by the body that has jurisdiction over the territory If you have not
+received an RL-31 slip by mid-March 2020, contact the body in question
+If you are still unable to get the slip, contact us
+Owner
+A person who holds a title deed in the land register
+Tenant or subtenant
+A person who is leasing or subleasing a dwelling and is therefore
+responsible for paying the rent
+Eligible dwelling
+A dwelling (for example, a house, a room or an apartment in a duplex
+or condominium building) located in Québec in which an individual
+ordinarily lives and that is the individual’s principal residence,
+excluding, for example:
+• a dwelling in low-rental housing within the meaning of
+the
+Civil Code of Québec, such as an HLM or a dwelling for which
+the Société d’habitation du Québec agrees to pay an amount
+towards the rent;
+• a dwelling in a facility maintained by a public institution or private
+institution under agreement (publicly funded) that operates
+a hospital centre, a residential and long-term care centre (CHSLD)
+or a rehabilitation centre governed by the
+Act respecting health
+services and social services;
+• a dwelling located in a hospital centre or reception centre within
+the meaning of the
+Act respecting health services and social
+services for Cree Native persons;
+• a dwelling for which an amount is paid toward rent under a program
+governed by the
+National Housing Act (for example, a dwelling
+located in a housing cooperative);
+• a dwelling located in a building or residential facility where
+the services of an intermediate resource or a family-type resource
+are offered;
+• a room located in the principal residence of the landlord where
+fewer than three rooms are rented or offered for rent, unless the
+room has either a separate entrance from the outside or sanitary
+facilities separate from those used by the landlord;
+• a room located in a hotel establishment or in a rooming house that is
+leased or subleased for a period of fewer than 60 consecutive days
+Payment of the tax credit
+We will send you a notice showing the amount you are entitled to
+for the period from July 2020 to June 2021 and the information we took
+into consideration to calculate it The amount of the credit will determine
+how often it is paid:
+• If the credit is $800 or more, it will be paid in monthly instalments
+• If the credit is more than $240 but less than $800, it will be paid
+in quarterly instalments in July, October, January and April
+• If the credit is $240 or less, it will be paid as a lump sum in July
+You will receive the payment within the first five days of the month
+Registering for direct deposit
+As a rule, you must be registered for direct deposit to receive the solidarity
+tax credit If you have not already registered, you can do so by:
+• using the Register for Direct Deposit online service, which
+is available on our website at revenuquebec.ca (to use this service,
+you must be registered for My Account for individuals);
+• enclosing with your return a voided cheque bearing your name and
+social insurance number (the cheque must be from an account
+at a financial institution that has an establishment in Canada); or
+• completing a
+Request for Direct Deposit (form LM-3 Q-V or LM-3 M-V)
+and enclosing it with your return If you live closer to Québec City,
+file form LM-3 Q-V; if you live closer to Montréal, file form LM-3 M-V
+You must inform us of any changes to your banking information Note that
+you will lose your entitlement to the tax credit for the payment period
+from July 2020 to June 2021 if we are unable to deposit the tax credit
+by January 1, 2024
+Loss of entitlement to the credit
+You are not entitled to receive the solidarity tax credit for a given month if,
+immediately before the first day of the month, you are no longer resident
+in Québec or are confined to a prison or similar institution If such
+a situation arises after you claim the credit, call us
+In the case of a deceased person, we will stop paying the credit
+in the month following the death
+If your spouse received the solidarity tax credit for your couple and
+he or she dies or is confined to a prison or similar institution, you can
+receive the credit instead, provided you meet the conditions and claim it
+For more information, contact us
+Deadline for claiming the tax credit
+To receive the full amount of the solidarity tax credit you are entitled to
+for a given period, you must claim it no later than four years after the end
+of the taxation year used to calculate the credit for the period in question
+Since the tax credit for the period from July 2020 to June 2021 is based
+on the 2019 taxation year, you must claim it by December 31, 2023 If you
+are not registered for direct deposit, you must include the registration form
+when you claim the credit
+You did not claim the solidarity tax credit in your return
+for a previous year
+If you did not claim the solidarity tax credit in your 2016, 2017 or 2018
+income tax return, you can still claim it See “Correcting an oversight”
+on page 19
+D1 – Version 6 – 11 novembre 2019

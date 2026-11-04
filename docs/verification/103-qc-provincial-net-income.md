@@ -11,10 +11,17 @@ and CWB retain federal net income. Federal childcare deductions do not reduce an
   benefit; the underlying Revenu Québec return establishes which deductions enter line 275.
   `2019/sources/provincial-quebec-family-history.txt` also describes family income as the individual's net income
   plus the spouse's net income. It documents the historical by-child schedule separately from the later flat rate.
-- **Solidarity:** [Revenu Québec's 2025 return guide][guide], PDF page 12, identifies the same line 275 sum.
-  Cached at `2025/sources/qc-solidarity-guide.txt`. The guide separately discusses worldwide income for part-year
-  residents. This app does not model residence changes. The historical description in
-  `2019/sources/provincial-quebec-solidarity-history.txt` likewise defines the base as both spouses' net income.
+  This fiche is the **2025 edition**, despite its cache directory. No year-specific primary source for the
+  **2019–2025 Family Allowance income definition** has been verified here: that historical conclusion rests
+  on the Retraite Québec page and this fiche, not a separate publication for each tax year.
+- **Solidarity:** each year's Revenu Québec TP-1 guide explicitly identifies the line 275 sum for that year:
+  [2019, PDF page 24][guide2019]; [2020, page 20][guide2020]; [2021, page 20][guide2021];
+  [2022, page 12][guide2022]; [2023, page 12][guide2023]; [2024, page 12][guide2024];
+  and [2025, page 12][guide]. Each is cached at `<year>/sources/qc-solidarity-guide.txt`, with the source URL,
+  retrieval date and original PDF hash in the extract and the year's source index. The guides separately discuss
+  worldwide income for part-year residents; this app does not model residence changes.
+  The earlier `provincial-quebec-solidarity-history.txt` copies under 2019–2023 all contain the **2025-edition**
+  fiche, and no such copy exists under 2024. They are not year-specific evidence; the guides above supply it.
   Special deemed-zero rules for social-assistance recipients are outside the model's supported inputs.
 - **Work premium:** [2025 Schedule P][premium], Part C lines 52–54, adds the two line 275 amounts without an
   addback for the worker deduction. Parts A and E separately calculate work income and the phase-in; the worker
@@ -79,7 +86,9 @@ not the completeness of existing benefit components, eligibility or payment-peri
 | --- | --- |
 | Family Allowance after worker deduction, 2019–2026 | `parent-worker-cap` |
 | 2019 by-child schedule with multiple children | `by-child-two-children` |
-| Solidarity reduction, 2019–2026 | `parent-worker-cap`, `couple-two-worker-deductions` |
+| Solidarity reduction, 2019 | `by-child-two-children` |
+| Solidarity reduction, 2020–2021 | `parent-worker-cap` |
+| Solidarity reduction, 2022–2026 | `parent-worker-cap`, `couple-two-worker-deductions` |
 | Work premium: single, couple, couple with children, 2019–2026 | `single-work-premium`, `couple-work-premium`, `couple-parent-work-premium` |
 | Work premium: single parent, phase-in, cap and reduction boundaries | `work-exclusion-*`, `work-cap-*`, `premium-start-*`, `premium-end-*` |
 | Family Allowance maximum and minimum boundaries | `family-start-*`, `family-minimum-*` |
@@ -149,8 +158,24 @@ The first full check found these intended legacy differences; it did not hit the
 The legacy HTML and the empty `KNOWN` failure list remain unchanged. Every obsolete value is asserted before
 replacement; the rest of each captured state still compares exactly.
 
+## Review-round integration with main
+
+PR #181 was observed merged on the first 30-second poll, before fetching. Main was merged once at
+`e96fa43` (including #181's PE and #183's AB corrections). The conflicting files were
+`tests/golden/2025.json`, `tests/golden/2026.json` and `tests/golden/other-income-original.json`.
+A three-way JSON leaf merge retained this branch's QC values and main's values for every other province,
+including AB and PE. Each province subtree was checked against its respective parent after reconciliation.
+**No leaf was changed differently by both parents**, so no combined calculation or new expected value was needed.
+The original QC before/after ledger and all scenario inputs remain unchanged; no golden capture was run.
+
 [family]: https://www.retraitequebec.gouv.qc.ca/en/citizens/children/family-allowance/quebec-income-tax-return
 [guide]: https://www.revenuquebec.ca/documents/en/formulaires/tp/2025-12/TP-1.G-V(2025-12).pdf
+[guide2019]: https://www.revenuquebec.ca/documents/en/formulaires/tp/2019-12/TP-1.G-V(2019-12).pdf
+[guide2020]: https://www.revenuquebec.ca/documents/en/formulaires/tp/2020-12/TP-1.G-V(2020-12).pdf
+[guide2021]: https://www.revenuquebec.ca/documents/en/formulaires/tp/2021-12/TP-1.G-V(2021-12).pdf
+[guide2022]: https://www.revenuquebec.ca/documents/en/formulaires/tp/2022-12/TP-1.G-V(2022-12).pdf
+[guide2023]: https://www.revenuquebec.ca/documents/en/formulaires/tp/2023-12/TP-1.G-V(2023-12).pdf
+[guide2024]: https://www.revenuquebec.ca/documents/en/formulaires/tp/2024-12/TP-1.G-V(2024-12).pdf
 [premium]: https://www.revenuquebec.ca/documents/en/formulaires/tp/2025-12/TP-1.D.P-V(2025-12).pdf
 [childcare]: https://www.revenuquebec.ca/documents/en/formulaires/tp/2025-12/TP-1.D.C-V(2025-12).pdf
 [return]: https://www.revenuquebec.ca/documents/en/formulaires/tp/2025-12/TP-1.D-V(2025-12).pdf

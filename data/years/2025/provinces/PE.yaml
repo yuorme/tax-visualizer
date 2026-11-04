@@ -12,7 +12,11 @@ basicPersonalAmount: 14650      # Form PE428 for 2025; it rises to $15,000 from 
 dividendTaxCredit: {eligible: 0.105, nonEligible: 0.013}
 spouseAmount: {max: 12443, threshold: 1244}     # base amount 13,687 on Form PE428, maximum 12,443
 claimants:
+  childAmount: {claimant: lower-net-income, transfer: none}
   lowIncomeReduction: {claimant: minimum-household-tax, transferUnused: true, order: before-foreign-tax-credit}
+# PE428 line 58230: $100 per eligible month, annualized using the existing under-6 child count.
+# Birthdays/residence changes within the year are not prorated; see verification/162-pei-young-children.md.
+childAmount: {perChild: 1200, ages: under6}
 lowIncomeReduction:
   program: family-low-income-reduction
   params: {individual: 350, spouse: 350, child: 300, rate: 0.05, threshold: 22650}
@@ -32,6 +36,8 @@ credits:
 fuelTax: {gasoline: 0.0847}   # $ per litre, fixed since January 1, 2020
 
 sources:
+  - {label: "CRA PE428 2025, line 58230 young-child base and 9.5% credit conversion", url: "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5002-c/5002-c-25e.pdf"}
+  - {label: "CRA PE(S2) 2025, transferable pool excludes young-child amount", url: "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5002-s2/5002-s2-25e.pdf"}
   - {label: "CRA PE 2025 guide, claimant and transfer rules", url: "https://www.canada.ca/en/revenue-agency/services/forms-publications/tax-packages-years/general-income-tax-benefit-package/prince-edward-island/5002-pc.html"}
   - {label: "NWT Finance, Budget 2025-2026, B22 (provincial/territorial fuel tax rates at January 30, 2025; regional additions separate)", url: "https://www.fin.gov.nt.ca/sites/fin/files/resources/2025-26_budget_address_and_papers_final_0.pdf"}
   - {label: "Prince Edward Island, Gasoline Tax Rates (8.47¢ a litre from January 1, 2020; archived July 18, 2025)", url: "http://web.archive.org/web/20250718105940/https://www.princeedwardisland.ca/en/information/finance/gasoline-tax-rates"}

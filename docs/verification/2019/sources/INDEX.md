@@ -149,6 +149,7 @@ keeps the pages the data uses). Nothing under `docs/` is imported by `src/`, so 
 | [rule-ns-original](rule-ns-original.txt) | NS Royal Gazette Part II - Volume 23, No. 14, July 16, 1999 | https://novascotia.ca/just/regulations/rg2/1999/RG2-1999-07-16.pdf | 2026-11-02 | `63203d0b2a514993cf3991d82476427df6c72fa1ce38a8eb0ea1bce939e71a4e` |
 | [rule-qc-allowance](rule-qc-allowance.txt) | Paramètres du régime d’imposition des particuliers pour l’année d’imposition 2020 | https://www.finances.gouv.qc.ca/documents/Autres/fr/AUTFR_RegimeImpot2020.pdf | 2026-11-02 | `c99be200c13313e676e423e859360e43a5d698b11137b55937f200289f4e1928` |
 | [rule-t4114](rule-t4114.txt) | untitled | https://publications.gc.ca/collections/collection_2019/arc-cra/Rv1-36-2019-eng.pdf?download=1 | 2026-11-02 | `71823ca91df934f391fce8bbe1e1701a7681ccaa028ce2b50c1b64403720b856` |
+| [qc-solidarity-guide](qc-solidarity-guide.txt) | Guide - Income Tax Return 2019 | https://www.revenuquebec.ca/documents/en/formulaires/tp/2019-12/TP-1.G-V(2019-12).pdf | 2026-11-04 | `975ac48dcc8826a16074b74153b5ac1f778a7cf17c87dd3675b5040624588742` |
 
 ## Provincial collection audit
 

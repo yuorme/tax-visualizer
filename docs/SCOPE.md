@@ -52,10 +52,10 @@ line-by-line tax return. Simpler and slightly less precise is acceptable where i
 - Federal childcare expense deduction (2025 and 2026); see Childcare below.
 - Province-specific: Ontario surtax, Ontario tax reduction and LIFT credit, BC tax reduction, low-income
   reductions in Newfoundland and Labrador, New Brunswick, PEI and Nova Scotia, Saskatchewan's child amount,
-  Nova Scotia's and Nunavut's credits for children under 6, Quebec abatement, Quebec deduction for workers and
+  PEI's, Nova Scotia's and Nunavut's credits for children under 6, Quebec abatement, Quebec deduction for workers and
   amount for a person living alone.
 - For 2025–2026, each child amount and family reduction uses its own spouse claimant rule. SK and NU transfer
-  unused child bases; NS does not. NB/NL/PE transfer unused family reductions; NS does not. Eligible tied
+  unused child bases; NS and PE do not. NB/NL/PE transfer unused family reductions; NS does not. Eligible tied
   child claimants and discretionary reduction elections minimize household tax. Earlier years keep their
   historical claimant calculation. See [claimant rules](verification/92-claimant-rules.md).
 - Manitoba family tax benefit correction for 2025–2026 (#145):
@@ -235,7 +235,6 @@ Marked `estimated: true` in the data files where they appear:
 - Newfoundland and Labrador child benefit: estimated straight-line taper between published start and end incomes.
   NWT's separate age-group amounts and linear reduction are published by NWT Finance; CRA's T4114-26 confirms
   continuity for July 2026 to June 2027 (see [verification](verification/116-nwt-child-benefit.md)).
-- Alberta Child and Family Benefit base rates.
 - New Brunswick low-income reduction and Newfoundland and Labrador family threshold (2025 indexed by 2%).
 - Property tax rates for Whitehorse, Yellowknife and Iqaluit (rough 1%).
 - Quebec living-alone amount applied to any household with one adult.
