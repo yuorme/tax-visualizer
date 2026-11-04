@@ -112,9 +112,10 @@ Standard is `sonnet` or `gpt-6.1-sol`, Strong is `opus` or `gpt-6-astra`.
 | Normal | engine rules, schema, scripts, tests, ordinary UI | Codex `gpt-6-astra` | Claude `sonnet` |
 | Complex | complicated UI changes, engine refactors | Claude `opus` | Codex `gpt-6-astra` |
 
-Use Claude `opus` only for Complex work. Effort is `high`, which is also the cap for coders and reviewers alike;
-`medium` only for Markdown-only or mechanical work (renames, dependency bumps, lint fixes). When in doubt between
-two classes, pick the higher one. The retro reports class, model and effort per issue.
+Use Claude `opus` only for Complex work, or when the outage fallbacks below require it. Effort is `high`, which is
+also the cap for coders and reviewers alike; `medium` only for Markdown-only or mechanical work (renames,
+dependency bumps, lint fixes). When in doubt between two classes, pick the higher one. The retro reports class,
+model and effort per issue.
 
 ### When an agent or model is out
 An agent or model is unavailable when it is down, its plugin fails, or a usage limit won't reset before the work is
