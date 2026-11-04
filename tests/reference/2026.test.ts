@@ -41,6 +41,45 @@ const single = (ord: number, extra: Partial<Household> = {}): Household => ({
   ...extra,
 });
 const pct = (v: number) => Math.round(v * 10000) / 100;
+
+test("2026 CRA Joseph age-70 example and published QPP maxima", () => {
+  // Cached CRA cpp-prorating: turns 70 February 24, maximum tier 1 is 705.08 (705.075 before cent rounding).
+  // T4127 tables 8.3–8.6: QPP first-tier maximum 4,479.30, second tier 416, total enhanced 1,127.
+  const cpp = compute(
+    y,
+    prov("ON"),
+    single(74600, {
+      people: [{ ...blank(74600), age: 70, birthMonth: 2 }],
+    }),
+  ).me;
+  assert.equal(Math.round((cpp.pay.base + cpp.pay.enh) * 100) / 100, 705.08);
+  const qpp = compute(
+    y,
+    prov("QC"),
+    single(180000, {
+      people: [
+        {
+          ...blank(180000),
+          age: 65,
+          birthMonth: 6,
+          employeePayroll: {
+            retirementPensionSince: { year: 2025, month: 1 },
+            qppElection: { stop: { year: 2026, month: 6 } },
+          },
+        },
+      ],
+    }),
+  ).me;
+  assert.ok(Math.abs(qpp.pay.base - 3768.3) < 1e-9);
+  assert.equal(qpp.pay.enh, 1127);
+  assert.ok(Math.abs((qpp.breakdown.retirementPayroll?.withheldBase ?? 0) - 3768.3) < 1e-9);
+  assert.equal(
+    y.federal.payroll.employeeRetirement?.qpp.estimated,
+    true,
+    "2026 annual settlement continues Schedule U 2025; final 2026 form is not in the cache",
+  );
+});
+
 function need<T>(v: T | null | undefined): T {
   assert.ok(v != null);
   return v;
