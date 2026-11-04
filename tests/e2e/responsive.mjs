@@ -434,6 +434,13 @@ export const RESPONSIVE_STEPS = [
       await p.click("#view-provinces");
       await openTab(p, "income");
       await scan();
+      await openDetails(p, "#retirement-details");
+      await fill(p, "#ret-birth-year", "1960");
+      await p.selectOption("#ret-birth-month", "6");
+      await settle(p);
+      await scan();
+      await p.click("#retirement-clear");
+      await p.locator("#retirement-details > summary").click();
       await openTab(p, "home");
       await scan();
       await openTab(p, "driving");

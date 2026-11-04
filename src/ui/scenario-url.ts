@@ -4,6 +4,7 @@ import { blank, type Person } from "../engine/types.ts";
 import { ChildcareModel } from "./childcare.ts";
 import { DEFAULT_INCOME, spendEst } from "./defaults.ts";
 import { normalizePortfolios } from "./portfolio.ts";
+import { compactRetirements, normalizeRetirements, type Retirement } from "./retirement.ts";
 
 export interface ScenarioContext {
   years: number[];
@@ -28,6 +29,8 @@ export function scenarioDefaults(context: ScenarioContext, year = latest(context
     // Per person, by index; absent means the manual view, so every scenario from before this field keeps its results.
     // A used entry is written in full, so a later change to the starting assumptions can't change a shared result.
     portfolios: [],
+    // The same way: absent leaves each person's payroll exactly as it was before this field.
+    retirement: [],
     active: 0,
     spouse: true,
     sort: "rate",
@@ -112,6 +115,7 @@ export function normalizeScenario(value: unknown, context: ScenarioContext): Sta
     Array.isArray(input.people) && input.people.length ? input.people.slice(0, 2).map(person) : [blank(DEFAULT_INCOME)];
   result.people = people;
   result.portfolios = normalizePortfolios(input.portfolios, people.length, context.portfolioDefaults);
+  result.retirement = normalizeRetirements(input.retirement, people.length);
   result.active = input.active === 1 && people.length === 2 ? 1 : 0;
   result.adults =
     finite(input.adults, 1, 4) && Number.isInteger(input.adults)
@@ -179,6 +183,8 @@ export function scenarioHash(value: unknown, context: ScenarioContext): string {
           Object.fromEntries(Object.entries(c).filter(([, v]) => v !== null && v !== false)),
         );
       params.set(key, JSON.stringify(compact));
+    } else if (key === "retirement") {
+      params.set(key, JSON.stringify(compactRetirements(field as (Retirement | null)[])));
     } else params.set(key, JSON.stringify(field));
   }
   return `#${params}`;
