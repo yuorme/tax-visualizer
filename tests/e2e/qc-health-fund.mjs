@@ -93,7 +93,12 @@ export async function checkQuebecHealthFund(page) {
   await page.selectOption("#tax-year", "2026");
   await type("income", 60000);
   await type("oth", 40000);
-  await page.locator("#col-QC .stack .y").click();
+  const payroll = page.locator("#col-QC .stack .y");
+  await payroll.scrollIntoViewIfNeeded();
+  // Scroll events run before animation-frame callbacks. Drain the auto-scroll's pending event before opening
+  // the tip, or its scroll-dismiss handler can close the freshly clicked tip under CPU contention.
+  await payroll.evaluate(() => new Promise(resolve => requestAnimationFrame(resolve)));
+  await payroll.click();
   await page.locator("#tip").waitFor({ state: "visible", timeout: 5000 });
   assert.equal(await page.locator("#tip").isVisible(), true);
   assert.match(await page.textContent("#tip .t-num"), /^\$4,748 a year/);
