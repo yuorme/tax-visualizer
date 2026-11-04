@@ -1850,6 +1850,9 @@ footer a {
   font: inherit;
   cursor: pointer;
 }
+.tabbar button[hidden] {
+  display: none;
+}
 /* Rounded like .seg's ends, for the same reason. The last tab is the last one showing: Driving can be hidden. */
 .tabbar button:first-child {
   border-left: 0;
