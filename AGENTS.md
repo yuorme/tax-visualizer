@@ -91,27 +91,30 @@ cold. Role files: `docs/agents/<role>.md`. This table is the only place that ass
 | Work | Role | Agent | Fallback |
 | --- | --- | --- | --- |
 | Planning, dispatch, merge decisions, retros | orchestrator | Claude Code | Codex |
-| UI and layout | coder | Claude Code | Codex |
-| Engine, rules, schema, scripts, tests, debugging | coder | Codex | Claude Code |
+| Complex: complicated UI changes, engine refactors | coder | Claude Code | Codex |
+| All other code: engine, rules, schema, scripts, tests, UI, debugging | coder | Codex | Claude Code |
 | A year's or a program's figures | data-collector | Codex | Claude Code |
 
 **Reviews cross agents:** the reviewer is a different agent from the one that wrote the branch, so Codex's
-branches get a Claude review and Claude's get a Codex review. An issue touching both UI and engine is split into
-stacked branches (engine first), or goes to whoever owns most of it.
+branches get a Claude review and Claude's get a Codex review. The exception is Simple work (below), which a fresh
+Codex session reviews. An issue touching both UI and engine is split into stacked branches (engine first), or goes
+to whoever owns most of it.
 
 ### Models and effort
-The orchestrator sets the model and effort on every dispatch; frontmatter and tool defaults are only fallbacks.
-This table is the only place model ids are written: Sonnet maps to Codex's Sol class and Opus to Astra.
+The orchestrator classes each issue, sets the model and effort from this table on every dispatch, and records both
+in the brief; frontmatter and tool defaults are only fallbacks. This is the only place model ids are written. Tiers:
+Standard is `sonnet` or `gpt-6.1-sol`, Strong is `opus` or `gpt-6-astra`.
 
-| Tier | Used for | Claude Code | Codex |
+| Class | Examples | Coder | Reviewer |
 | --- | --- | --- | --- |
-| Standard | data-collector; reviews of data and anything not listed under Strong | `sonnet` | `gpt-6.1-sol` |
-| Strong | coder; reviews of engine, rule, script or significant layout changes | `opus` | `gpt-6-astra` |
+| Simple | mechanical work, Markdown, one-area fixes, small UI tweaks | Codex `gpt-6.1-sol` or `gpt-6-astra` | Codex `gpt-6-astra` |
+| Data | a year's or a program's figures | Codex `gpt-6.1-sol` | Claude `sonnet` |
+| Normal | engine rules, schema, scripts, tests, ordinary UI | Codex `gpt-6-astra` | Claude `sonnet` |
+| Complex | complicated UI changes, engine refactors | Claude `opus` | Codex `gpt-6-astra` |
 
-Effort is `high` unless the issue clearly fits another level: `medium` only for Markdown-only or mechanical work
-(renames, dependency bumps, lint fixes), `xhigh` for engine changes spanning several programs or anything that
-changes golden baselines. `xhigh` is the cap on both tools (Claude's `max` costs too many tokens). Reviews always
-run at `high`. The brief records the tier and effort, and the retro reports them per issue.
+Use Claude `opus` only for Complex work. Effort is `high`, which is also the cap for coders and reviewers alike;
+`medium` only for Markdown-only or mechanical work (renames, dependency bumps, lint fixes). When in doubt between
+two classes, pick the higher one. The retro reports class, model and effort per issue.
 
 ### When an agent or model is out
 An agent or model is unavailable when it is down, its plugin fails, or a usage limit won't reset before the work is
@@ -133,11 +136,7 @@ worktree under `.claude/worktrees/` (ignored by git), branched from `origin/main
 another session may be using. Every branch gets a reviewer pass before it merges; give the reviewer the pull
 request number from the agent's report.
 
-The orchestrator owns worktree cleanup: lock each agent's worktree while it is active (`git worktree lock <path>`).
-After its final report and process exit, unlock it and run `npm run worktree:cleanup -- --apply <path>` from outside
-it, including reviewer checkouts and PRs awaiting `needs-human` merge. Keep unfinished work; recreate a checkout
-for follow-ups. At session start, inspect leftover worktrees and clean only confirmed finished ones. See
-[Worktree lifecycle](README.md#worktree-lifecycle) for safeguards, paused work and preview cleanup.
+The orchestrator locks and cleans up worktrees (`docs/agents/orchestrator.md`).
 When one issue needs another's unmerged work, branch from that branch (stacked), open the pull request against it
 (GitHub retargets it to `main` when the parent merges), and say so in "Blocked by".
 
@@ -169,7 +168,7 @@ the golden-test requirements above; the reviewer's model alone does not require 
 The user merges instead, and the orchestrator labels the pull request `needs-human` and says so, when:
 - its issue is labelled `needs-human`, or
 - it makes significant layout changes, or
-- its review was a same-agent review, or
+- its review was a same-agent review, other than a Simple task's, or
 - it changes this merge process, `AGENTS.md`, `CLAUDE.md`, `docs/agents/`, `.claude/agents/`, `.claude/settings.json`
   or `.codex/`.
 
