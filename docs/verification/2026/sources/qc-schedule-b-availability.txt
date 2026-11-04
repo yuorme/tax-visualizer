@@ -1,0 +1,18 @@
+Title: 2026 Schedule B availability check for issue #188
+Checked: 2026-11-04
+Catalogue URL: https://www.revenuquebec.ca/en/online-services/forms-and-publications/current-details/tp-1/
+Method: web search tool's current indexed copy of the official catalogue; direct fetch-source returned HTTP 403.
+Original document hash: unavailable (no 2026 Schedule B was retrieved).
+================================================================================
+
+The official current catalogue identifies TP-1-V and says:
+"The documents listed on this page contain instructions for filing your income tax return for the 2025 taxation year."
+It links Schedule B – Tax Relief Measures (168 KB).
+
+The candidate 2026 PDF URL was also checked directly with curl:
+https://www.revenuquebec.ca/documents/en/formulaires/tp/2026-12/TP-1.D.B-V(2026-12).pdf
+HTTP status: 410
+
+This is an availability record, not a 2026 tax-rule source. No claim is made that the 2026 Schedule B income base
+has been independently verified. The 2026 livingAlone data is explicitly estimated: true and provisionally
+continues the separately verified 2025 Schedule B line 275 rule. Published 2026 dollar amounts remain unchanged.

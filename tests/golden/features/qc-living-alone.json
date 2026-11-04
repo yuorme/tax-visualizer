@@ -1,0 +1,1107 @@
+{
+  "verification": "docs/verification/188-qc-living-alone.md",
+  "cases": [
+    {
+      "id": "2019-capped-worker",
+      "year": 2019,
+      "person": {
+        "ord": 45000
+      },
+      "expected": {
+        "line275": 43767.75,
+        "amount": 32.9219,
+        "credit": 4.9383,
+        "applied": 4.9383
+      }
+    },
+    {
+      "id": "2019-uncapped-worker",
+      "year": 2019,
+      "person": {
+        "ord": 10000,
+        "oth": 27219.75
+      },
+      "expected": {
+        "line275": 36610.0,
+        "amount": 1375.0,
+        "credit": 206.25,
+        "applied": 206.25
+      }
+    },
+    {
+      "id": "2019-taper-start-below",
+      "year": 2019,
+      "person": {
+        "ord": 10000,
+        "oth": 25218.75
+      },
+      "expected": {
+        "line275": 34609.0,
+        "amount": 1750.0,
+        "credit": 262.5,
+        "applied": 262.5
+      }
+    },
+    {
+      "id": "2019-taper-start-at",
+      "year": 2019,
+      "person": {
+        "ord": 10000,
+        "oth": 25219.75
+      },
+      "expected": {
+        "line275": 34610.0,
+        "amount": 1750.0,
+        "credit": 262.5,
+        "applied": 262.5
+      }
+    },
+    {
+      "id": "2019-taper-start-above",
+      "year": 2019,
+      "person": {
+        "ord": 10000,
+        "oth": 25220.75
+      },
+      "expected": {
+        "line275": 34611.0,
+        "amount": 1749.8125,
+        "credit": 262.4719,
+        "applied": 262.4719
+      }
+    },
+    {
+      "id": "2019-taper-end-below",
+      "year": 2019,
+      "person": {
+        "ord": 10000,
+        "oth": 34552.083333333336
+      },
+      "expected": {
+        "line275": 43942.3333,
+        "amount": 0.1875,
+        "credit": 0.0281,
+        "applied": 0.0281
+      }
+    },
+    {
+      "id": "2019-taper-end-at",
+      "year": 2019,
+      "person": {
+        "ord": 10000,
+        "oth": 34553.083333333336
+      },
+      "expected": {
+        "line275": 43943.3333,
+        "amount": 0.0,
+        "credit": 0.0,
+        "applied": 0.0
+      }
+    },
+    {
+      "id": "2019-taper-end-above",
+      "year": 2019,
+      "person": {
+        "ord": 10000,
+        "oth": 34554.083333333336
+      },
+      "expected": {
+        "line275": 43944.3333,
+        "amount": 0.0,
+        "credit": 0.0,
+        "applied": 0.0
+      }
+    },
+    {
+      "id": "2020-capped-worker",
+      "year": 2020,
+      "person": {
+        "ord": 45000
+      },
+      "expected": {
+        "line275": 43685.5,
+        "amount": 189.9063,
+        "credit": 28.4859,
+        "applied": 28.4859
+      }
+    },
+    {
+      "id": "2020-uncapped-worker",
+      "year": 2020,
+      "person": {
+        "ord": 10000,
+        "oth": 27824.5
+      },
+      "expected": {
+        "line275": 37205.0,
+        "amount": 1405.0,
+        "credit": 210.75,
+        "applied": 210.75
+      }
+    },
+    {
+      "id": "2020-taper-start-below",
+      "year": 2020,
+      "person": {
+        "ord": 10000,
+        "oth": 25823.5
+      },
+      "expected": {
+        "line275": 35204.0,
+        "amount": 1780.0,
+        "credit": 267.0,
+        "applied": 267.0
+      }
+    },
+    {
+      "id": "2020-taper-start-at",
+      "year": 2020,
+      "person": {
+        "ord": 10000,
+        "oth": 25824.5
+      },
+      "expected": {
+        "line275": 35205.0,
+        "amount": 1780.0,
+        "credit": 267.0,
+        "applied": 267.0
+      }
+    },
+    {
+      "id": "2020-taper-start-above",
+      "year": 2020,
+      "person": {
+        "ord": 10000,
+        "oth": 25825.5
+      },
+      "expected": {
+        "line275": 35206.0,
+        "amount": 1779.8125,
+        "credit": 266.9719,
+        "applied": 266.9719
+      }
+    },
+    {
+      "id": "2020-taper-end-below",
+      "year": 2020,
+      "person": {
+        "ord": 10000,
+        "oth": 35316.833333333336
+      },
+      "expected": {
+        "line275": 44697.3333,
+        "amount": 0.1875,
+        "credit": 0.0281,
+        "applied": 0.0281
+      }
+    },
+    {
+      "id": "2020-taper-end-at",
+      "year": 2020,
+      "person": {
+        "ord": 10000,
+        "oth": 35317.833333333336
+      },
+      "expected": {
+        "line275": 44698.3333,
+        "amount": 0.0,
+        "credit": 0.0,
+        "applied": 0.0
+      }
+    },
+    {
+      "id": "2020-taper-end-above",
+      "year": 2020,
+      "person": {
+        "ord": 10000,
+        "oth": 35318.833333333336
+      },
+      "expected": {
+        "line275": 44699.3333,
+        "amount": 0.0,
+        "credit": 0.0,
+        "applied": 0.0
+      }
+    },
+    {
+      "id": "2021-capped-worker",
+      "year": 2021,
+      "person": {
+        "ord": 45000
+      },
+      "expected": {
+        "line275": 43587.5,
+        "amount": 313.7188,
+        "credit": 47.0578,
+        "applied": 47.0578
+      }
+    },
+    {
+      "id": "2021-uncapped-worker",
+      "year": 2021,
+      "person": {
+        "ord": 10000,
+        "oth": 28282.5
+      },
+      "expected": {
+        "line275": 37650.0,
+        "amount": 1427.0,
+        "credit": 214.05,
+        "applied": 214.05
+      }
+    },
+    {
+      "id": "2021-taper-start-below",
+      "year": 2021,
+      "person": {
+        "ord": 10000,
+        "oth": 26281.5
+      },
+      "expected": {
+        "line275": 35649.0,
+        "amount": 1802.0,
+        "credit": 270.3,
+        "applied": 270.3
+      }
+    },
+    {
+      "id": "2021-taper-start-at",
+      "year": 2021,
+      "person": {
+        "ord": 10000,
+        "oth": 26282.5
+      },
+      "expected": {
+        "line275": 35650.0,
+        "amount": 1802.0,
+        "credit": 270.3,
+        "applied": 270.3
+      }
+    },
+    {
+      "id": "2021-taper-start-above",
+      "year": 2021,
+      "person": {
+        "ord": 10000,
+        "oth": 26283.5
+      },
+      "expected": {
+        "line275": 35651.0,
+        "amount": 1801.8125,
+        "credit": 270.2719,
+        "applied": 270.2719
+      }
+    },
+    {
+      "id": "2021-taper-end-below",
+      "year": 2021,
+      "person": {
+        "ord": 10000,
+        "oth": 35892.166666666664
+      },
+      "expected": {
+        "line275": 45259.6667,
+        "amount": 0.1875,
+        "credit": 0.0281,
+        "applied": 0.0281
+      }
+    },
+    {
+      "id": "2021-taper-end-at",
+      "year": 2021,
+      "person": {
+        "ord": 10000,
+        "oth": 35893.166666666664
+      },
+      "expected": {
+        "line275": 45260.6667,
+        "amount": 0.0,
+        "credit": 0.0,
+        "applied": 0.0
+      }
+    },
+    {
+      "id": "2021-taper-end-above",
+      "year": 2021,
+      "person": {
+        "ord": 10000,
+        "oth": 35894.166666666664
+      },
+      "expected": {
+        "line275": 45261.6667,
+        "amount": 0.0,
+        "credit": 0.0,
+        "applied": 0.0
+      }
+    },
+    {
+      "id": "2022-capped-worker",
+      "year": 2022,
+      "person": {
+        "ord": 45000
+      },
+      "expected": {
+        "line275": 43453.75,
+        "amount": 563.0469,
+        "credit": 84.457,
+        "applied": 84.457
+      }
+    },
+    {
+      "id": "2022-uncapped-worker",
+      "year": 2022,
+      "person": {
+        "ord": 10000,
+        "oth": 29238.75
+      },
+      "expected": {
+        "line275": 38590.0,
+        "amount": 1475.0,
+        "credit": 221.25,
+        "applied": 221.25
+      }
+    },
+    {
+      "id": "2022-taper-start-below",
+      "year": 2022,
+      "person": {
+        "ord": 10000,
+        "oth": 27237.75
+      },
+      "expected": {
+        "line275": 36589.0,
+        "amount": 1850.0,
+        "credit": 277.5,
+        "applied": 277.5
+      }
+    },
+    {
+      "id": "2022-taper-start-at",
+      "year": 2022,
+      "person": {
+        "ord": 10000,
+        "oth": 27238.75
+      },
+      "expected": {
+        "line275": 36590.0,
+        "amount": 1850.0,
+        "credit": 277.5,
+        "applied": 277.5
+      }
+    },
+    {
+      "id": "2022-taper-start-above",
+      "year": 2022,
+      "person": {
+        "ord": 10000,
+        "oth": 27239.75
+      },
+      "expected": {
+        "line275": 36591.0,
+        "amount": 1849.8125,
+        "credit": 277.4719,
+        "applied": 277.4719
+      }
+    },
+    {
+      "id": "2022-taper-end-below",
+      "year": 2022,
+      "person": {
+        "ord": 10000,
+        "oth": 37104.416666666664
+      },
+      "expected": {
+        "line275": 46455.6667,
+        "amount": 0.1875,
+        "credit": 0.0281,
+        "applied": 0.0281
+      }
+    },
+    {
+      "id": "2022-taper-end-at",
+      "year": 2022,
+      "person": {
+        "ord": 10000,
+        "oth": 37105.416666666664
+      },
+      "expected": {
+        "line275": 46456.6667,
+        "amount": 0.0,
+        "credit": 0.0,
+        "applied": 0.0
+      }
+    },
+    {
+      "id": "2022-taper-end-above",
+      "year": 2022,
+      "person": {
+        "ord": 10000,
+        "oth": 37106.416666666664
+      },
+      "expected": {
+        "line275": 46457.6667,
+        "amount": 0.0,
+        "credit": 0.0,
+        "applied": 0.0
+      }
+    },
+    {
+      "id": "2023-capped-worker",
+      "year": 2023,
+      "person": {
+        "ord": 45000
+      },
+      "expected": {
+        "line275": 43270.0,
+        "amount": 1158.0625,
+        "credit": 162.1288,
+        "applied": 162.1288
+      }
+    },
+    {
+      "id": "2023-uncapped-worker",
+      "year": 2023,
+      "person": {
+        "ord": 10000,
+        "oth": 31610.0
+      },
+      "expected": {
+        "line275": 40945.0,
+        "amount": 1594.0,
+        "credit": 223.16,
+        "applied": 223.16
+      }
+    },
+    {
+      "id": "2023-taper-start-below",
+      "year": 2023,
+      "person": {
+        "ord": 10000,
+        "oth": 29609.0
+      },
+      "expected": {
+        "line275": 38944.0,
+        "amount": 1969.0,
+        "credit": 275.66,
+        "applied": 275.66
+      }
+    },
+    {
+      "id": "2023-taper-start-at",
+      "year": 2023,
+      "person": {
+        "ord": 10000,
+        "oth": 29610.0
+      },
+      "expected": {
+        "line275": 38945.0,
+        "amount": 1969.0,
+        "credit": 275.66,
+        "applied": 275.66
+      }
+    },
+    {
+      "id": "2023-taper-start-above",
+      "year": 2023,
+      "person": {
+        "ord": 10000,
+        "oth": 29611.0
+      },
+      "expected": {
+        "line275": 38946.0,
+        "amount": 1968.8125,
+        "credit": 275.6338,
+        "applied": 275.6338
+      }
+    },
+    {
+      "id": "2023-taper-end-below",
+      "year": 2023,
+      "person": {
+        "ord": 10000,
+        "oth": 40110.333333333336
+      },
+      "expected": {
+        "line275": 49445.3333,
+        "amount": 0.1875,
+        "credit": 0.0262,
+        "applied": 0.0262
+      }
+    },
+    {
+      "id": "2023-taper-end-at",
+      "year": 2023,
+      "person": {
+        "ord": 10000,
+        "oth": 40111.333333333336
+      },
+      "expected": {
+        "line275": 49446.3333,
+        "amount": 0.0,
+        "credit": 0.0,
+        "applied": 0.0
+      }
+    },
+    {
+      "id": "2023-taper-end-above",
+      "year": 2023,
+      "person": {
+        "ord": 10000,
+        "oth": 40112.333333333336
+      },
+      "expected": {
+        "line275": 49447.3333,
+        "amount": 0.0,
+        "credit": 0.0,
+        "applied": 0.0
+      }
+    },
+    {
+      "id": "2024-capped-worker",
+      "year": 2024,
+      "person": {
+        "ord": 45000
+      },
+      "expected": {
+        "line275": 43205.0,
+        "amount": 1641.5,
+        "credit": 229.81,
+        "applied": 229.81
+      }
+    },
+    {
+      "id": "2024-uncapped-worker",
+      "year": 2024,
+      "person": {
+        "ord": 10000,
+        "oth": 33590.0
+      },
+      "expected": {
+        "line275": 42925.0,
+        "amount": 1694.0,
+        "credit": 237.16,
+        "applied": 237.16
+      }
+    },
+    {
+      "id": "2024-taper-start-below",
+      "year": 2024,
+      "person": {
+        "ord": 10000,
+        "oth": 31589.0
+      },
+      "expected": {
+        "line275": 40924.0,
+        "amount": 2069.0,
+        "credit": 289.66,
+        "applied": 289.66
+      }
+    },
+    {
+      "id": "2024-taper-start-at",
+      "year": 2024,
+      "person": {
+        "ord": 10000,
+        "oth": 31590.0
+      },
+      "expected": {
+        "line275": 40925.0,
+        "amount": 2069.0,
+        "credit": 289.66,
+        "applied": 289.66
+      }
+    },
+    {
+      "id": "2024-taper-start-above",
+      "year": 2024,
+      "person": {
+        "ord": 10000,
+        "oth": 31591.0
+      },
+      "expected": {
+        "line275": 40926.0,
+        "amount": 2068.8125,
+        "credit": 289.6338,
+        "applied": 289.6338
+      }
+    },
+    {
+      "id": "2024-taper-end-below",
+      "year": 2024,
+      "person": {
+        "ord": 10000,
+        "oth": 42623.666666666664
+      },
+      "expected": {
+        "line275": 51958.6667,
+        "amount": 0.1875,
+        "credit": 0.0263,
+        "applied": 0.0263
+      }
+    },
+    {
+      "id": "2024-taper-end-at",
+      "year": 2024,
+      "person": {
+        "ord": 10000,
+        "oth": 42624.666666666664
+      },
+      "expected": {
+        "line275": 51959.6667,
+        "amount": 0.0,
+        "credit": 0.0,
+        "applied": 0.0
+      }
+    },
+    {
+      "id": "2024-taper-end-above",
+      "year": 2024,
+      "person": {
+        "ord": 10000,
+        "oth": 42625.666666666664
+      },
+      "expected": {
+        "line275": 51960.6667,
+        "amount": 0.0,
+        "credit": 0.0,
+        "applied": 0.0
+      }
+    },
+    {
+      "id": "2025-capped-worker",
+      "year": 2025,
+      "person": {
+        "ord": 45000
+      },
+      "expected": {
+        "line275": 43165.0,
+        "amount": 1926.4375,
+        "credit": 269.7013,
+        "applied": 269.7013
+      }
+    },
+    {
+      "id": "2025-uncapped-worker",
+      "year": 2025,
+      "person": {
+        "ord": 10000,
+        "oth": 34755.0
+      },
+      "expected": {
+        "line275": 44090.0,
+        "amount": 1753.0,
+        "credit": 245.42,
+        "applied": 245.42
+      }
+    },
+    {
+      "id": "2025-taper-start-below",
+      "year": 2025,
+      "person": {
+        "ord": 10000,
+        "oth": 32754.0
+      },
+      "expected": {
+        "line275": 42089.0,
+        "amount": 2128.0,
+        "credit": 297.92,
+        "applied": 297.92
+      }
+    },
+    {
+      "id": "2025-taper-start-at",
+      "year": 2025,
+      "person": {
+        "ord": 10000,
+        "oth": 32755.0
+      },
+      "expected": {
+        "line275": 42090.0,
+        "amount": 2128.0,
+        "credit": 297.92,
+        "applied": 297.92
+      }
+    },
+    {
+      "id": "2025-taper-start-above",
+      "year": 2025,
+      "person": {
+        "ord": 10000,
+        "oth": 32756.0
+      },
+      "expected": {
+        "line275": 42091.0,
+        "amount": 2127.8125,
+        "credit": 297.8938,
+        "applied": 297.8938
+      }
+    },
+    {
+      "id": "2025-taper-end-below",
+      "year": 2025,
+      "person": {
+        "ord": 10000,
+        "oth": 44103.333333333336
+      },
+      "expected": {
+        "line275": 53438.3333,
+        "amount": 0.1875,
+        "credit": 0.0262,
+        "applied": 0.0262
+      }
+    },
+    {
+      "id": "2025-taper-end-at",
+      "year": 2025,
+      "person": {
+        "ord": 10000,
+        "oth": 44104.333333333336
+      },
+      "expected": {
+        "line275": 53439.3333,
+        "amount": 0.0,
+        "credit": 0.0,
+        "applied": 0.0
+      }
+    },
+    {
+      "id": "2025-taper-end-above",
+      "year": 2025,
+      "person": {
+        "ord": 10000,
+        "oth": 44105.333333333336
+      },
+      "expected": {
+        "line275": 53440.3333,
+        "amount": 0.0,
+        "credit": 0.0,
+        "applied": 0.0
+      }
+    },
+    {
+      "id": "2026-capped-worker",
+      "year": 2026,
+      "person": {
+        "ord": 45000
+      },
+      "expected": {
+        "line275": 43135.0,
+        "amount": 2138.25,
+        "credit": 299.355,
+        "applied": 299.355
+      }
+    },
+    {
+      "id": "2026-uncapped-worker",
+      "year": 2026,
+      "person": {
+        "ord": 10000,
+        "oth": 35620.0
+      },
+      "expected": {
+        "line275": 44955.0,
+        "amount": 1797.0,
+        "credit": 251.58,
+        "applied": 251.58
+      }
+    },
+    {
+      "id": "2026-taper-start-below",
+      "year": 2026,
+      "person": {
+        "ord": 10000,
+        "oth": 33619.0
+      },
+      "expected": {
+        "line275": 42954.0,
+        "amount": 2172.0,
+        "credit": 304.08,
+        "applied": 304.08
+      }
+    },
+    {
+      "id": "2026-taper-start-at",
+      "year": 2026,
+      "person": {
+        "ord": 10000,
+        "oth": 33620.0
+      },
+      "expected": {
+        "line275": 42955.0,
+        "amount": 2172.0,
+        "credit": 304.08,
+        "applied": 304.08
+      }
+    },
+    {
+      "id": "2026-taper-start-above",
+      "year": 2026,
+      "person": {
+        "ord": 10000,
+        "oth": 33621.0
+      },
+      "expected": {
+        "line275": 42956.0,
+        "amount": 2171.8125,
+        "credit": 304.0538,
+        "applied": 304.0538
+      }
+    },
+    {
+      "id": "2026-taper-end-below",
+      "year": 2026,
+      "person": {
+        "ord": 10000,
+        "oth": 45203.0
+      },
+      "expected": {
+        "line275": 54538.0,
+        "amount": 0.1875,
+        "credit": 0.0263,
+        "applied": 0.0263
+      }
+    },
+    {
+      "id": "2026-taper-end-at",
+      "year": 2026,
+      "person": {
+        "ord": 10000,
+        "oth": 45204.0
+      },
+      "expected": {
+        "line275": 54539.0,
+        "amount": 0.0,
+        "credit": 0.0,
+        "applied": 0.0
+      }
+    },
+    {
+      "id": "2026-taper-end-above",
+      "year": 2026,
+      "person": {
+        "ord": 10000,
+        "oth": 45205.0
+      },
+      "expected": {
+        "line275": 54540.0,
+        "amount": 0.0,
+        "credit": 0.0,
+        "applied": 0.0
+      }
+    },
+    {
+      "id": "2025-no-employment",
+      "year": 2025,
+      "person": {
+        "oth": 48000
+      },
+      "expected": {
+        "line275": 48000.0,
+        "amount": 1019.875,
+        "credit": 142.7825,
+        "applied": 142.7825
+      }
+    },
+    {
+      "id": "2025-mixed-income-deductions",
+      "year": 2025,
+      "person": {
+        "ord": 20000,
+        "oth": 27000,
+        "cg": 2000,
+        "ed": 1000,
+        "nd": 1000,
+        "fd": 1000,
+        "rrsp": 1000,
+        "fhsa": 500,
+        "ded": 250
+      },
+      "expected": {
+        "line275": 48415.0,
+        "amount": 942.0625,
+        "credit": 131.8888,
+        "applied": 131.8888
+      }
+    },
+    {
+      "id": "2025-single-parent-childcare",
+      "year": 2025,
+      "person": {
+        "ord": 48000
+      },
+      "kids": 1,
+      "childcare": {
+        "mode": "automatic",
+        "children": [
+          {
+            "age": 3,
+            "expenses": 8000,
+            "qcEligibleExpenses": 8000
+          }
+        ],
+        "earnedIncome": [48000]
+      },
+      "expected": {
+        "line275": 46135.0,
+        "amount": 1369.5625,
+        "credit": 191.7388,
+        "applied": 191.7388
+      }
+    },
+    {
+      "id": "2025-nonrefundable-capacity",
+      "year": 2025,
+      "person": {
+        "ord": 10000
+      },
+      "expected": {
+        "line275": 9335.0,
+        "amount": 2128.0,
+        "credit": 297.92,
+        "applied": 0
+      }
+    },
+    {
+      "id": "2025-zero-income-floor",
+      "year": 2025,
+      "person": {
+        "ord": 1000,
+        "ded": 2000
+      },
+      "expected": {
+        "line275": 0.0,
+        "amount": 2128.0,
+        "credit": 297.92,
+        "applied": 0
+      }
+    },
+    {
+      "id": "2026-no-employment",
+      "year": 2026,
+      "person": {
+        "oth": 48000
+      },
+      "expected": {
+        "line275": 48000.0,
+        "amount": 1226.0625,
+        "credit": 171.6488,
+        "applied": 171.6488
+      }
+    },
+    {
+      "id": "2026-mixed-income-deductions",
+      "year": 2026,
+      "person": {
+        "ord": 20000,
+        "oth": 27000,
+        "cg": 2000,
+        "ed": 1000,
+        "nd": 1000,
+        "fd": 1000,
+        "rrsp": 1000,
+        "fhsa": 500,
+        "ded": 250
+      },
+      "expected": {
+        "line275": 48415.0,
+        "amount": 1148.25,
+        "credit": 160.755,
+        "applied": 160.755
+      }
+    },
+    {
+      "id": "2026-single-parent-childcare",
+      "year": 2026,
+      "person": {
+        "ord": 48000
+      },
+      "kids": 1,
+      "childcare": {
+        "mode": "automatic",
+        "children": [
+          {
+            "age": 3,
+            "expenses": 8000,
+            "qcEligibleExpenses": 8000
+          }
+        ],
+        "earnedIncome": [48000]
+      },
+      "expected": {
+        "line275": 46105.0,
+        "amount": 1581.375,
+        "credit": 221.3925,
+        "applied": 221.3925
+      }
+    },
+    {
+      "id": "2026-nonrefundable-capacity",
+      "year": 2026,
+      "person": {
+        "ord": 10000
+      },
+      "expected": {
+        "line275": 9335.0,
+        "amount": 2172.0,
+        "credit": 304.08,
+        "applied": 0
+      }
+    },
+    {
+      "id": "2026-zero-income-floor",
+      "year": 2026,
+      "person": {
+        "ord": 1000,
+        "ded": 2000
+      },
+      "expected": {
+        "line275": 0.0,
+        "amount": 2172.0,
+        "credit": 304.08,
+        "applied": 0
+      }
+    },
+    {
+      "id": "2025-worker-cap-below",
+      "year": 2025,
+      "person": {
+        "ord": 23666.0,
+        "oth": 25000
+      },
+      "expected": {
+        "line275": 47044.38,
+        "amount": 1199.0538,
+        "credit": 167.8675,
+        "applied": 167.8675
+      }
+    },
+    {
+      "id": "2025-worker-cap-at",
+      "year": 2025,
+      "person": {
+        "ord": 23666.666666666668,
+        "oth": 25000
+      },
+      "expected": {
+        "line275": 47045.0,
+        "amount": 1198.9375,
+        "credit": 167.8512,
+        "applied": 167.8512
+      }
+    },
+    {
+      "id": "2025-worker-cap-above",
+      "year": 2025,
+      "person": {
+        "ord": 23668.0,
+        "oth": 25000
+      },
+      "expected": {
+        "line275": 47046.32,
+        "amount": 1198.69,
+        "credit": 167.8166,
+        "applied": 167.8166
+      }
+    }
+  ]
+}
