@@ -1119,6 +1119,8 @@ function ledgerView({ p, r }: Row) {
     p.qc && [`Less ${rateFmt(F.quebecAbatement)} Quebec abatement`, -m.breakdown.quebecAbatement],
     [`Less foreign tax credit`, -m.fFtc],
   ]);
+  const lowIncomeRow: Adj = [`Less low-income tax reduction`, -m.lowRed];
+  const lowIncomeAfterForeign = p.d.claimants?.lowIncomeReduction?.order === "after-foreign-tax-credit";
   const pRows = present([
     useBpa && [
       `Less personal amount ${money(m.pAmt)} × ${rateFmt(p.b[0][1])}${m.pCred < m.pBpaFull - 0.5 ? " (capped)" : ""}`,
@@ -1137,11 +1139,12 @@ function ledgerView({ p, r }: Row) {
     !p.d.postDividendSurtax && [`${p.n} surtax`, m.surtax],
     [`Less dividend tax credit`, -m.pDtc],
     !!p.d.postDividendSurtax && [`${p.n} surtax`, m.surtax],
-    [`Less low-income tax reduction`, -m.lowRed],
+    !lowIncomeAfterForeign && lowIncomeRow,
     [`Less Ontario tax reduction`, -m.onRed],
     [`Less LIFT credit`, -m.lift],
     [`Less BC tax reduction`, -m.bcRed],
     [`Less foreign tax credit`, -m.pFtc],
+    lowIncomeAfterForeign && lowIncomeRow,
     [`Temporary deficit reduction levy`, m.breakdown.provincialLevy],
   ]);
   const payRows = (
