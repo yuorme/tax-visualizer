@@ -182,6 +182,54 @@
             <select id="wh" class="wh-select"></select></div>
         </div>
       </div>
+      <details id="retirement-details" class="care-details">
+        <summary>Retirement-age CPP/QPP <span class="panel-sum" id="retirement-sum">not set</span></summary>
+        <div class="care-grid ret-grid">
+          <div class="field">
+            <div class="lbl-row"><label class="lbl" for="ret-birth-year">Birth year</label><button type="button" class="info" data-note="retirementAge" aria-label="About retirement-age CPP/QPP">i</button></div>
+            <div class="money sm"><input id="ret-birth-year" inputmode="numeric" autocomplete="off" maxlength="4" placeholder="Year"></div>
+          </div>
+          <div class="field">
+            <div class="lbl-row"><label class="lbl" for="ret-birth-month">Birth month</label></div>
+            <select id="ret-birth-month" class="wh-select"></select>
+          </div>
+        </div>
+        <div id="ret-more" hidden>
+          <div class="care-grid ret-grid">
+            <div class="field" id="ret-pensionSince-field">
+              <div class="lbl-row"><span class="lbl" id="ret-pensionSince-label">Pension since</span><button type="button" class="info" data-note="retirementPension" aria-label="About the pension start month">i</button></div>
+              <fieldset class="ret-date" aria-labelledby="ret-pensionSince-label"><select id="ret-pensionSince-month" class="wh-select" data-ret-date="pensionSince" data-ret-part="month" aria-label="Pension since: month"></select><div class="money sm"><input id="ret-pensionSince-year" data-ret-date="pensionSince" data-ret-part="year" inputmode="numeric" autocomplete="off" maxlength="4" placeholder="Year" aria-label="Pension since: year"></div></fieldset>
+            </div>
+            <div class="field" id="ret-cppStop-field">
+              <div class="lbl-row"><span class="lbl" id="ret-cppStop-label">CPP stop form delivered</span><button type="button" class="info" data-note="retirementCpp" aria-label="About CPP stop and restart forms">i</button></div>
+              <fieldset class="ret-date" aria-labelledby="ret-cppStop-label"><select id="ret-cppStop-month" class="wh-select" data-ret-date="cppStop" data-ret-part="month" aria-label="CPP stop form delivered: month"></select><div class="money sm"><input id="ret-cppStop-year" data-ret-date="cppStop" data-ret-part="year" inputmode="numeric" autocomplete="off" maxlength="4" placeholder="Year" aria-label="CPP stop form delivered: year"></div></fieldset>
+            </div>
+            <div class="field" id="ret-cppRestart-field">
+              <div class="lbl-row"><span class="lbl" id="ret-cppRestart-label">CPP restart form delivered</span></div>
+              <fieldset class="ret-date" aria-labelledby="ret-cppRestart-label"><select id="ret-cppRestart-month" class="wh-select" data-ret-date="cppRestart" data-ret-part="month" aria-label="CPP restart form delivered: month"></select><div class="money sm"><input id="ret-cppRestart-year" data-ret-date="cppRestart" data-ret-part="year" inputmode="numeric" autocomplete="off" maxlength="4" placeholder="Year" aria-label="CPP restart form delivered: year"></div></fieldset>
+            </div>
+            <div class="field" id="ret-qppStop-field">
+              <div class="lbl-row"><span class="lbl" id="ret-qppStop-label">QPP stop form delivered</span><button type="button" class="info" data-note="retirementQpp" aria-label="About QPP stop and restart forms">i</button></div>
+              <fieldset class="ret-date" aria-labelledby="ret-qppStop-label"><select id="ret-qppStop-month" class="wh-select" data-ret-date="qppStop" data-ret-part="month" aria-label="QPP stop form delivered: month"></select><div class="money sm"><input id="ret-qppStop-year" data-ret-date="qppStop" data-ret-part="year" inputmode="numeric" autocomplete="off" maxlength="4" placeholder="Year" aria-label="QPP stop form delivered: year"></div></fieldset>
+            </div>
+            <div class="field" id="ret-qppRestart-field">
+              <div class="lbl-row"><span class="lbl" id="ret-qppRestart-label">QPP restart form delivered</span></div>
+              <fieldset class="ret-date" aria-labelledby="ret-qppRestart-label"><select id="ret-qppRestart-month" class="wh-select" data-ret-date="qppRestart" data-ret-part="month" aria-label="QPP restart form delivered: month"></select><div class="money sm"><input id="ret-qppRestart-year" data-ret-date="qppRestart" data-ret-part="year" inputmode="numeric" autocomplete="off" maxlength="4" placeholder="Year" aria-label="QPP restart form delivered: year"></div></fieldset>
+            </div>
+          </div>
+          <div class="sub-row">
+            <fieldset class="seg" aria-label="Pay timing">
+              <button type="button" data-ret-pay="even" aria-pressed="true">Even</button>
+              <button type="button" data-ret-pay="month" aria-pressed="false">By month</button>
+            </fieldset>
+            <button type="button" class="info" data-note="retirementPay" aria-label="About pay timing">i</button>
+          </div>
+          <div class="ret-months" id="ret-months" hidden></div>
+          <div class="pr-note" id="ret-pay-status" role="status" hidden></div>
+        </div>
+        <div class="pr-note ret-status" id="retirement-status" role="status" hidden></div>
+        <button type="button" class="linkbtn" id="retirement-clear" hidden>Clear these inputs</button>
+      </details>
     </section>
     <section class="tab-panel" id="panel-home" aria-labelledby="tab-home-name" hidden>
       <div class="sub-row">
@@ -255,6 +303,8 @@
       </div>
     </section>
   </section>
+
+  <p class="ret-gate" id="retirement-gate" role="status" hidden></p>
 
   <fieldset class="seg comparison-view" aria-label="Comparison view">
     <button type="button" id="view-provinces" aria-pressed="true">Across provinces</button>

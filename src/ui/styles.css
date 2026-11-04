@@ -1933,6 +1933,57 @@ footer a {
   width: fit-content;
 }
 
+/* Retirement-age payroll: a month and a year share each date's row, down to a 375px phone's panel. */
+.ret-grid {
+  margin: 12px 0;
+  gap: 14px 24px;
+}
+.ret-date {
+  min-inline-size: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 10px;
+  align-items: end;
+}
+.ret-grid .wh-select {
+  min-height: 34px;
+  font-size: 16px;
+}
+.ret-months {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(68px, 1fr));
+  gap: 10px 12px;
+  margin: 12px 0;
+}
+.ret-months[hidden],
+#ret-more[hidden],
+#ret-pay-status[hidden],
+#retirement-status[hidden],
+.ret-grid .field[hidden] {
+  display: none;
+}
+.ret-grid .money.sm input,
+.ret-months .money.sm input {
+  width: 100%;
+  min-width: 0;
+}
+.ret-status {
+  margin: 12px 0 4px;
+}
+#retirement-details .linkbtn {
+  margin-top: 6px;
+}
+.ret-gate {
+  margin: 16px 0 0;
+  padding: 8px 12px;
+  border-left: 3px solid var(--prov);
+  background: var(--surface);
+  font-size: 13.5px;
+}
+
 #detail[hidden],
 #notes[hidden] {
   display: none;
