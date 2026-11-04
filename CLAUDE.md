@@ -15,17 +15,21 @@ data fallback. Pass `model` and `effort` on every Agent call, taken from the tie
 frontmatter values are only defaults.
 
 ## Dispatching Codex
-Create and lock the worktree yourself (`git worktree add .claude/worktrees/<name> -b <branch> origin/main`), run `fnm
-exec --using=26 npm ci` in it unless the Markdown-only path applies, write the brief (issue, role file, owned files)
-to a file in your scratchpad, and start Codex in the background: `fnm exec --using=26 codex exec --approve-for-me -m
-<id> -c model_reasoning_effort='"<level>"' -C <worktree> -o <result-file> - < <brief>`, with the model id and effort
-from the tier table. Its sandbox has no network and can't write git, so cache sources first and commit, push and post
-verdicts for it. The brief says to request escalation only for commands that launch Chromium or `npm run compare`; the
-plugin's `task --write` can't, so don't use it for issue work or reviews. Codex reviews of Claude's branches use the
-same command in a detached reviewer worktree already at the pull request's head, with `docs/agents/reviewer.md` as the
-brief plus an override: skip the fetch, checkout and posting steps and write the verdict to `REVIEW.md`, which you
-post unchanged. A UI review that didn't run the browser steps itself doesn't count. `/codex:rescue` is for an ad-hoc
-second opinion in the current checkout, not for issue work.
+As orchestrator, follow `docs/agents/orchestrator.md`. Create and lock the worktree yourself
+(`git worktree add .claude/worktrees/<name> -b <branch> origin/main`), write the brief to `<scratchpad>/<name>.md`,
+and start Codex with a Bash call that uses `run_in_background`, so you're notified on exit and never poll:
+`fnm exec --using=26 codex exec --approve-for-me -m <id> -c model_reasoning_effort='"<level>"'
+-c sandbox_workspace_write.network_access=true -C <worktree> -o <scratchpad>/<name>.out - < <scratchpad>/<name>.md
+> <scratchpad>/<name>.log 2>&1`, with the model id and effort from the tier table. With network on, Codex runs
+`npm ci`, `gh`, `git push` and `fetch-source` itself, and gets `git commit` and browser commands through escalation
+(tested November 2026). So its brief says to do its own git, pull request and verdict steps; don't do them for it.
+Read only `<name>.out`; `grep -m1 'session id' <name>.log` and `grep -A1 'tokens used' <name>.log` give the rest.
+Send review fixes to the same session, from inside the worktree, so it keeps its context: `codex exec resume <id>`
+with the same `-c` and `-o` flags plus `-c approval_policy='"on-request"' -c approvals_reviewer='"auto_review"'`
+(`resume` takes neither `--approve-for-me` nor `-C`). Codex reviews of Claude's branches use
+the same command in a detached reviewer worktree with `docs/agents/reviewer.md` as the brief. A UI review that
+didn't run the browser steps itself doesn't count. The plugin's `task` command runs with approvals off, so don't use
+it for issue work or reviews; `/codex:rescue` is for an ad-hoc second opinion in the current checkout.
 
 ## Permissions
 - `.claude/settings.json` allows `gh pr merge *`. If auto mode denies a merge, the rule is missing: tell the user
