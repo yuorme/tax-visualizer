@@ -629,7 +629,9 @@ export const provinceSchema = z
           .optional(),
       })
       .optional(),
-    childAmount: z.object({ perChild: amount, ages: z.enum(["all", "under6"]) }).optional(),
+    childAmount: z
+      .object({ perChild: amount, ages: z.enum(["all", "under6"]), estimated: z.boolean().optional() })
+      .optional(),
     familyTaxBenefit: program(
       "mb-family-tax-benefit",
       z.object({ basic: amount, dependant: amount, child: amount, reductionRate: rate, childThrough: amount.int() }),
