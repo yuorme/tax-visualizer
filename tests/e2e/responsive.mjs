@@ -440,16 +440,16 @@ export const RESPONSIVE_STEPS = [
       await scan();
       await p.click("#view-history");
       await scan();
-      // With its last tab gone, the bar's rounded end moves to the tab before.
+      // Every bundled year has Driving, so set the attribute app.ts sets for a year without it. The last tab then
+      // leaves the bar, and the bar's rounded end moves to the tab before.
       const driving = p.locator("#tab-driving");
       await driving.evaluate(el => {
         el.hidden = true;
-        el.style.display = "none";
       });
+      assert.equal(await driving.isVisible(), false, "a tab marked hidden isn't shown");
       await scan();
       await driving.evaluate(el => {
         el.hidden = false;
-        el.style.display = "";
       });
       // A group added later fails here until a step above opens it.
       const all = await p.$$eval(SEGMENTED, groups =>
