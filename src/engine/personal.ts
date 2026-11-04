@@ -2,7 +2,7 @@
 import type { Federal, LowIncomeProgram, Province } from "../data/schema.ts";
 import { phased, walk } from "./brackets.ts";
 import { healthServicesFund, healthServicesIncome } from "./health-services-fund.ts";
-import { healthPremium, netIncomeParts, netOf, payrollOf, rrspRoom } from "./payroll.ts";
+import { employeeRetirementPayrollOf, healthPremium, netIncomeParts, netOf, payrollOf, rrspRoom } from "./payroll.ts";
 import type { Ctx, Extra, Person } from "./types.ts";
 
 export interface Settings {
@@ -43,6 +43,7 @@ export type PersonResult = ReturnType<typeof personTax>;
 export function personTax(fed: Federal, p: Province, x: Person, sp: Extra, ctx: Ctx, s: Settings) {
   const qc = p.system === "quebec";
   const pay = payrollOf(fed, p, x);
+  const retirement = employeeRetirementPayrollOf(fed, p, x)?.retirement;
   const ti = netOf(fed, p, x, ctx.childcareDeduction); // taxable income (federal)
   const workerDed = p.quebec
     ? Math.min(p.quebec.workerDeduction.max, Math.max(0, x.ord) * p.quebec.workerDeduction.rate)
@@ -239,6 +240,7 @@ export function personTax(fed: Federal, p: Province, x: Person, sp: Extra, ctx: 
     // Figures the page shows that aren't steps of the calculation above. They sit in a nested object because the
     // golden snapshot (tests/golden/snapshot.mjs) locks every top-level number of this result.
     breakdown: {
+      ...(retirement ? { retirementPayroll: retirement } : {}),
       healthServicesFund: healthFund,
       totalBeforeHealthServicesFund,
       familyTaxBenefit: { base: familyBase, calculated: familyFull, applied: familyApplied },
