@@ -10,6 +10,48 @@ import { settle } from "./page.mjs";
 // The UI module includes constructor parameter properties, which Node's native type stripping cannot load.
 const { ChildcareModel } = await tsImport("../../src/ui/childcare.ts", import.meta.url);
 
+export async function checkHistoryCoverageNotes(p) {
+  const provincialNotes = [
+    ["Quebec's Health Services Fund contribution", ["QC"]],
+    ["Manitoba's family tax benefit", ["MB"]],
+    ["The provincial childcare tax credit", ["ON", "QC", "NL"]],
+  ];
+  const codes = loadYear(Math.max(...listYears())).provinces.map(province => province.code);
+  for (const mode of ["real", "nominal"]) {
+    await p.click(`#history-${mode}`);
+    for (const province of codes) {
+      await p.selectOption("#home", province);
+      await settle(p);
+      assert.ok(
+        !(await p.locator("#history-view").textContent()).includes("modelled only from"),
+        "coverage explanations stay in the tooltip",
+      );
+      await p.locator("#history-info").scrollIntoViewIfNeeded();
+      await settle(p);
+      await p.locator("#history-info").focus();
+      assert.equal(await p.locator("#tip").isVisible(), true);
+      const tip = await p.textContent("#tip");
+      for (const [name, affected] of provincialNotes) {
+        assert.equal(
+          tip.includes(`${name} is modelled only from 2025`),
+          affected.includes(province),
+          `${province} ${mode}: province-specific coverage for ${name}`,
+        );
+      }
+      assert.ok(tip.includes("The federal childcare expense deduction is modelled only from 2025"));
+      assert.ok(tip.includes("Gasoline fuel tax (excluding carbon pricing) is modelled only from 2025"));
+      assert.ok(!tip.includes("carbon pricing is modelled only from 2025"));
+      assert.ok(tip.includes("year-to-year changes can also reflect model coverage"));
+      const box = await p.locator("#tip").boundingBox();
+      assert.ok(box.x >= 0 && box.x + box.width <= p.viewportSize().width, "tooltip fits the viewport");
+      assert.equal(await p.evaluate(() => document.documentElement.scrollWidth > innerWidth), false);
+      await p.keyboard.press("Escape");
+      await p.locator("#history-info").blur();
+    }
+  }
+  return [];
+}
+
 async function checkRows(page, mode, overrides = {}) {
   const state = await page.evaluate(() => JSON.parse(localStorage.getItem("taxcmp")));
   const year = loadYear(state.year);
@@ -103,33 +145,7 @@ export const HISTORY_STEPS = [
       return problems;
     },
   ],
-  [
-    "history: partial program coverage follows province in both dollar modes",
-    async p => {
-      for (const mode of ["real", "nominal"]) {
-        await p.click(`#history-${mode}`);
-        for (const [province, expected, absent] of [
-          ["QC", "Quebec's Health Services Fund contribution is modelled only from 2025", "Manitoba's"],
-          ["MB", "Manitoba's family tax benefit is modelled only from 2025", "Quebec's"],
-          ["ON", null, "modelled only from"],
-        ]) {
-          await p.selectOption("#home", province);
-          await settle(p);
-          await p.locator("#history-info").focus();
-          assert.equal(await p.locator("#tip").isVisible(), true);
-          const tip = await p.textContent("#tip");
-          if (expected) {
-            assert.ok(tip.includes(expected), `${province} ${mode}: explains missing historical coverage`);
-            assert.ok(tip.includes("year-to-year changes can also reflect model coverage"));
-          }
-          assert.ok(!tip.includes(absent), `${province} ${mode}: excludes unrelated coverage notes`);
-          await p.keyboard.press("Escape");
-          await p.locator("#history-info").blur();
-        }
-      }
-      return [];
-    },
-  ],
+  ["history: partial program coverage follows province in both dollar modes", checkHistoryCoverageNotes],
   [
     "history: childcare follows age and earnings edits immediately",
     async p => {

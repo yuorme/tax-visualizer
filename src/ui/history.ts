@@ -8,14 +8,24 @@ const installedYears = Object.values(years).sort((a, b) => a.year - b.year);
 const coveragePrograms = [
   ["healthServicesFund", "Quebec's Health Services Fund contribution"],
   ["familyTaxBenefit", "Manitoba's family tax benefit"],
+  ["childcareCredit", "The provincial childcare tax credit"],
+  ["fuelTax", "Gasoline fuel tax (excluding carbon pricing)"],
 ] as const;
 
 /** Explain partial program coverage using the installed data for the displayed province. */
 function coverageNote(home: string) {
+  const since = (name: string, first: (typeof installedYears)[number] | undefined) =>
+    first && first.year > installedYears[0].year ? [`${name} is modelled only from ${first.year}`] : [];
   const partial = coveragePrograms.flatMap(([key, name]) => {
     const first = installedYears.find(y => y.provinces.find(p => p.code === home)?.[key]);
-    return first && first.year > installedYears[0].year ? [`${name} is modelled only from ${first.year}`] : [];
+    return since(name, first);
   });
+  partial.push(
+    ...since(
+      "The federal childcare expense deduction",
+      installedYears.find(y => y.federal.childcare),
+    ),
+  );
   return partial.length ? ` ${partial.join("; ")}, so year-to-year changes can also reflect model coverage.` : "";
 }
 
