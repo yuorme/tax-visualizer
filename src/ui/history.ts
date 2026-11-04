@@ -1,8 +1,16 @@
 import cpi from "virtual:cpi";
 import years from "virtual:years";
-import { type HistoryMode, historyComparison } from "../engine/history.ts";
+import type { YearData } from "../data/schema.ts";
+import type { HistoryMode } from "../engine/history.ts";
 import type { Household } from "../engine/types.ts";
 import { money, rate } from "./notes.ts";
+import {
+  historyRetirementNote,
+  type Retirement,
+  retirementActive,
+  retirementHistory,
+  retirementYears,
+} from "./retirement.ts";
 
 const installedYears = Object.values(years).sort((a, b) => a.year - b.year);
 const coveragePrograms = [
@@ -13,9 +21,9 @@ const coveragePrograms = [
 ] as const;
 
 /** Explain partial program coverage using the installed data for the displayed province. */
-function coverageNote(home: string) {
+function coverageNote(home: string, firstShown: number) {
   const since = (name: string, first: (typeof installedYears)[number] | undefined) =>
-    first && first.year > installedYears[0].year ? [`${name} is modelled only from ${first.year}`] : [];
+    first && first.year > firstShown ? [`${name} is modelled only from ${first.year}`] : [];
   const partial = coveragePrograms.flatMap(([key, name]) => {
     const first = installedYears.find(y => y.provinces.find(p => p.code === home)?.[key]);
     return since(name, first);
@@ -30,28 +38,42 @@ function coverageNote(home: string) {
 }
 
 /** Formats the engine's historical comparison; the UI never scales or calculates tax. */
-export function renderHistory(input: Household, home: string, mode: HistoryMode) {
-  const comparison = historyComparison(Object.values(years), cpi, input, [home], mode);
-  const name = comparison.rows[0]?.provinces[0].name ?? home;
+export function renderHistory(
+  inputFor: (data: YearData) => Household,
+  retirement: (Retirement | null)[],
+  home: string,
+  mode: HistoryMode,
+) {
+  const comparison = retirementHistory(installedYears, cpi, retirement, inputFor, home, mode);
+  const name = installedYears.at(-1)?.provinces.find(p => p.code === home)?.name ?? home;
+  const byBirthYear = retirement.some(retirementActive);
+  const ageing = byBirthYear
+    ? " Retirement-age CPP/QPP uses each person's age in that year, from the birth year entered, and keeps pension and election dates on their calendar dates."
+    : "";
   const title = document.getElementById("history-title");
   const body = document.getElementById("history-rows");
   const basis = document.getElementById("history-basis");
   const info = document.getElementById("history-info");
   if (!title || !body || !basis || !info) throw new Error("Missing history view");
   title.textContent = `${name} over time`;
-  basis.textContent = mode === "real" ? `${comparison.baseYear} dollars` : "Each year's dollars";
+  const omitted = comparison.noData.length + comparison.young.length > 0;
+  basis.textContent =
+    (mode === "real" ? `${comparison.baseYear} dollars` : "Each year's dollars") +
+    (omitted ? " · retirement-age payroll years only" : "");
   info.dataset.tip =
     mode === "real"
-      ? `Treat the amounts entered above as ${comparison.baseYear} dollars, the latest completed annual CPI year. Income, deductions, spending, rent and home value are converted together using Canada's annual all-items CPI. Each year's tax rules are applied, then income and tax are shown back in ${comparison.baseYear} dollars. Household members, ages, rates and driving stay fixed. This compares the same household, not a household ageing over time.${comparison.omittedYears.length ? ` Annual CPI is not yet available for ${comparison.omittedYears.join(", ")}; those tax years appear in nominal mode only.` : ""}`
-      : "Apply each year's rules to the same dollar amounts entered above. Household members and driving stay fixed. Dollar amounts are not adjusted for inflation. The effective rate is net tax after benefits divided by household income.";
-  info.dataset.tip += coverageNote(home);
-  body.innerHTML = comparison.rows
+      ? `Treat the amounts entered above as ${comparison.baseYear} dollars, the latest completed annual CPI year. Income, deductions, spending, rent and home value are converted together using Canada's annual all-items CPI. Each year's tax rules are applied, then income and tax are shown back in ${comparison.baseYear} dollars. Household members, ${byBirthYear ? "" : "ages, "}rates and driving stay fixed.${ageing} This compares the same household, not a household ageing over time.${comparison.omittedYears.length ? ` Annual CPI is not yet available for ${comparison.omittedYears.join(", ")}; those tax years appear in nominal mode only.` : ""}`
+      : `Apply each year's rules to the same dollar amounts entered above. Household members and driving stay fixed.${ageing} Dollar amounts are not adjusted for inflation. The effective rate is net tax after benefits divided by household income.`;
+  info.dataset.tip += historyRetirementNote(comparison, retirementYears(installedYears));
+  info.dataset.tip += coverageNote(home, comparison.rows[0]?.year ?? installedYears[0].year);
+  const rows = comparison.rows
     .map(row => {
       const result = row.provinces[0];
       const tax = result.tax < 0 ? `−${money(-result.tax)}` : money(result.tax);
       return `<tr data-year="${row.year}"><th scope="row">${row.year}</th><td>${money(result.income)}</td><td>${tax}</td><td>${rate(result.rate)}</td></tr>`;
     })
     .join("");
+  body.innerHTML = rows || `<tr><td colspan="4">No year in this view covers these retirement-age inputs</td></tr>`;
   const source = document.getElementById("history-source") as HTMLAnchorElement;
   source.href = cpi.sources[0].url;
   source.textContent = cpi.series;
