@@ -1,0 +1,718 @@
+{
+  "cases": [
+    {
+      "id": "2025-ON-low-net",
+      "year": 2025,
+      "province": "ON",
+      "people": [
+        {
+          "ord": 45000
+        },
+        {
+          "ord": 15000,
+          "ded": 14000
+        }
+      ],
+      "expectedNets": [44585, 885],
+      "expectedCwb": 721.1
+    },
+    {
+      "id": "2025-AB-low-net",
+      "year": 2025,
+      "province": "AB",
+      "people": [
+        {
+          "ord": 45000
+        },
+        {
+          "ord": 15000,
+          "ded": 14000
+        }
+      ],
+      "expectedNets": [44585, 885],
+      "expectedCwb": 847.05
+    },
+    {
+      "id": "2025-NU-low-net",
+      "year": 2025,
+      "province": "NU",
+      "people": [
+        {
+          "ord": 45000
+        },
+        {
+          "ord": 15000,
+          "ded": 14000
+        }
+      ],
+      "expectedNets": [44585, 885],
+      "expectedCwb": 1822.36
+    },
+    {
+      "id": "2025-QC-low-net",
+      "year": 2025,
+      "province": "QC",
+      "people": [
+        {
+          "ord": 45000
+        },
+        {
+          "ord": 15000,
+          "ded": 14000
+        }
+      ],
+      "expectedNets": [44585, 885],
+      "expectedCwb": 1383.82
+    },
+    {
+      "id": "2025-ON-zero-net",
+      "year": 2025,
+      "province": "ON",
+      "people": [
+        {
+          "ord": 45000
+        },
+        {
+          "ord": 15000,
+          "ded": 14885
+        }
+      ],
+      "expectedNets": [44585, 0],
+      "expectedCwb": 721.1
+    },
+    {
+      "id": "2025-ON-above-zero-net",
+      "year": 2025,
+      "province": "ON",
+      "people": [
+        {
+          "ord": 45000
+        },
+        {
+          "ord": 15000,
+          "ded": 14884
+        }
+      ],
+      "expectedNets": [44585, 1],
+      "expectedCwb": 721.1
+    },
+    {
+      "id": "2025-ON-negative-net",
+      "year": 2025,
+      "province": "ON",
+      "people": [
+        {
+          "ord": 45000
+        },
+        {
+          "ord": 15000,
+          "ded": 16000
+        }
+      ],
+      "expectedNets": [44585, 0],
+      "expectedCwb": 721.1
+    },
+    {
+      "id": "2025-ON-itemized-claims",
+      "year": 2025,
+      "province": "ON",
+      "people": [
+        {
+          "ord": 45000
+        },
+        {
+          "ord": 15000,
+          "rrsp": 6000,
+          "fhsa": 8000
+        }
+      ],
+      "expectedNets": [44585, 885],
+      "expectedCwb": 721.1
+    },
+    {
+      "id": "2025-ON-working-order-not-net-order",
+      "year": 2025,
+      "province": "ON",
+      "people": [
+        {
+          "ord": 45000,
+          "ded": 40000
+        },
+        {
+          "ord": 15000,
+          "oth": 30000
+        }
+      ],
+      "expectedNets": [4585, 44885],
+      "expectedCwb": 2238.35
+    },
+    {
+      "id": "2025-ON-working-cap",
+      "year": 2025,
+      "province": "ON",
+      "people": [
+        {
+          "ord": 45000
+        },
+        {
+          "ord": 10000,
+          "oth": 10000
+        }
+      ],
+      "expectedNets": [44585, 19935],
+      "expectedCwb": 0.0
+    },
+    {
+      "id": "2025-ON-net-equals-work",
+      "year": 2025,
+      "province": "ON",
+      "people": [
+        {
+          "ord": 45000
+        },
+        {
+          "ord": 15000,
+          "oth": 115
+        }
+      ],
+      "expectedNets": [44585, 15000],
+      "expectedCwb": 721.1
+    },
+    {
+      "id": "2025-ON-below-working-cap",
+      "year": 2025,
+      "province": "ON",
+      "people": [
+        {
+          "ord": 45000
+        },
+        {
+          "ord": 15000,
+          "oth": 114
+        }
+      ],
+      "expectedNets": [44585, 14999],
+      "expectedCwb": 721.1
+    },
+    {
+      "id": "2025-ON-above-working-cap",
+      "year": 2025,
+      "province": "ON",
+      "people": [
+        {
+          "ord": 45000
+        },
+        {
+          "ord": 15000,
+          "oth": 116
+        }
+      ],
+      "expectedNets": [44585, 15001],
+      "expectedCwb": 720.95
+    },
+    {
+      "id": "2025-ON-annual-cap",
+      "year": 2025,
+      "province": "ON",
+      "people": [
+        {
+          "ord": 35000
+        },
+        {
+          "ord": 20000
+        }
+      ],
+      "expectedNets": [34685, 19835],
+      "expectedCwb": 1688.75
+    },
+    {
+      "id": "2025-ON-below-annual-cap",
+      "year": 2025,
+      "province": "ON",
+      "people": [
+        {
+          "ord": 35000
+        },
+        {
+          "ord": 20000,
+          "ded": 3450
+        }
+      ],
+      "expectedNets": [34685, 16385],
+      "expectedCwb": 2206.1
+    },
+    {
+      "id": "2025-ON-at-annual-cap",
+      "year": 2025,
+      "province": "ON",
+      "people": [
+        {
+          "ord": 35000
+        },
+        {
+          "ord": 20000,
+          "ded": 3449
+        }
+      ],
+      "expectedNets": [34685, 16386],
+      "expectedCwb": 2206.1
+    },
+    {
+      "id": "2025-ON-above-annual-cap",
+      "year": 2025,
+      "province": "ON",
+      "people": [
+        {
+          "ord": 35000
+        },
+        {
+          "ord": 20000,
+          "ded": 3448
+        }
+      ],
+      "expectedNets": [34685, 16387],
+      "expectedCwb": 2205.95
+    },
+    {
+      "id": "2025-ON-tied-working-income",
+      "year": 2025,
+      "province": "ON",
+      "people": [
+        {
+          "ord": 15000,
+          "oth": 30000
+        },
+        {
+          "ord": 15000,
+          "ded": 14000
+        }
+      ],
+      "expectedNets": [44885, 885],
+      "expectedCwb": 2793.35
+    },
+    {
+      "id": "2025-ON-nonworking-spouse",
+      "year": 2025,
+      "province": "ON",
+      "people": [
+        {
+          "ord": 45000
+        },
+        {
+          "oth": 10000
+        }
+      ],
+      "expectedNets": [44585, 10000],
+      "expectedCwb": 0.0
+    },
+    {
+      "id": "2025-ON-childcare-net",
+      "year": 2025,
+      "province": "ON",
+      "people": [
+        {
+          "ord": 30000
+        },
+        {
+          "ord": 15000,
+          "rrsp": 6000
+        }
+      ],
+      "childcare": {
+        "mode": "automatic",
+        "earnedIncome": [30000, 15000],
+        "children": [
+          {
+            "age": 3,
+            "expenses": 8000
+          }
+        ]
+      },
+      "expectedNets": [29735, 885],
+      "expectedCwb": 2813.0
+    },
+    {
+      "id": "2025-QC-childcare-net",
+      "year": 2025,
+      "province": "QC",
+      "people": [
+        {
+          "ord": 30000
+        },
+        {
+          "ord": 15000,
+          "rrsp": 6000
+        }
+      ],
+      "childcare": {
+        "mode": "automatic",
+        "earnedIncome": [30000, 15000],
+        "children": [
+          {
+            "age": 3,
+            "expenses": 8000
+          }
+        ]
+      },
+      "expectedNets": [29735, 885],
+      "expectedCwb": 2262.776
+    },
+    {
+      "id": "2026-ON-low-net",
+      "year": 2026,
+      "province": "ON",
+      "people": [
+        {
+          "ord": 45000
+        },
+        {
+          "ord": 15000,
+          "ded": 14000
+        }
+      ],
+      "expectedNets": [44585, 885],
+      "expectedCwb": 868.9
+    },
+    {
+      "id": "2026-AB-low-net",
+      "year": 2026,
+      "province": "AB",
+      "people": [
+        {
+          "ord": 45000
+        },
+        {
+          "ord": 15000,
+          "ded": 14000
+        }
+      ],
+      "expectedNets": [44585, 885],
+      "expectedCwb": 997.3
+    },
+    {
+      "id": "2026-NU-low-net",
+      "year": 2026,
+      "province": "NU",
+      "people": [
+        {
+          "ord": 45000
+        },
+        {
+          "ord": 15000,
+          "ded": 14000
+        }
+      ],
+      "expectedNets": [44585, 885],
+      "expectedCwb": 1930.48
+    },
+    {
+      "id": "2026-QC-low-net",
+      "year": 2026,
+      "province": "QC",
+      "people": [
+        {
+          "ord": 45000
+        },
+        {
+          "ord": 15000,
+          "ded": 14000
+        }
+      ],
+      "expectedNets": [44585, 885],
+      "expectedCwb": 1580.644
+    },
+    {
+      "id": "2026-ON-zero-net",
+      "year": 2026,
+      "province": "ON",
+      "people": [
+        {
+          "ord": 45000
+        },
+        {
+          "ord": 15000,
+          "ded": 14885
+        }
+      ],
+      "expectedNets": [44585, 0],
+      "expectedCwb": 868.9
+    },
+    {
+      "id": "2026-ON-above-zero-net",
+      "year": 2026,
+      "province": "ON",
+      "people": [
+        {
+          "ord": 45000
+        },
+        {
+          "ord": 15000,
+          "ded": 14884
+        }
+      ],
+      "expectedNets": [44585, 1],
+      "expectedCwb": 868.9
+    },
+    {
+      "id": "2026-ON-negative-net",
+      "year": 2026,
+      "province": "ON",
+      "people": [
+        {
+          "ord": 45000
+        },
+        {
+          "ord": 15000,
+          "ded": 16000
+        }
+      ],
+      "expectedNets": [44585, 0],
+      "expectedCwb": 868.9
+    },
+    {
+      "id": "2026-ON-itemized-claims",
+      "year": 2026,
+      "province": "ON",
+      "people": [
+        {
+          "ord": 45000
+        },
+        {
+          "ord": 15000,
+          "rrsp": 6000,
+          "fhsa": 8000
+        }
+      ],
+      "expectedNets": [44585, 885],
+      "expectedCwb": 868.9
+    },
+    {
+      "id": "2026-ON-working-order-not-net-order",
+      "year": 2026,
+      "province": "ON",
+      "people": [
+        {
+          "ord": 45000,
+          "ded": 40000
+        },
+        {
+          "ord": 15000,
+          "oth": 30000
+        }
+      ],
+      "expectedNets": [4585, 44885],
+      "expectedCwb": 2386.15
+    },
+    {
+      "id": "2026-ON-working-cap",
+      "year": 2026,
+      "province": "ON",
+      "people": [
+        {
+          "ord": 45000
+        },
+        {
+          "ord": 10000,
+          "oth": 10000
+        }
+      ],
+      "expectedNets": [44585, 19935],
+      "expectedCwb": 0.0
+    },
+    {
+      "id": "2026-ON-net-equals-work",
+      "year": 2026,
+      "province": "ON",
+      "people": [
+        {
+          "ord": 45000
+        },
+        {
+          "ord": 15000,
+          "oth": 115
+        }
+      ],
+      "expectedNets": [44585, 15000],
+      "expectedCwb": 868.9
+    },
+    {
+      "id": "2026-ON-below-working-cap",
+      "year": 2026,
+      "province": "ON",
+      "people": [
+        {
+          "ord": 45000
+        },
+        {
+          "ord": 15000,
+          "oth": 114
+        }
+      ],
+      "expectedNets": [44585, 14999],
+      "expectedCwb": 868.9
+    },
+    {
+      "id": "2026-ON-above-working-cap",
+      "year": 2026,
+      "province": "ON",
+      "people": [
+        {
+          "ord": 45000
+        },
+        {
+          "ord": 15000,
+          "oth": 116
+        }
+      ],
+      "expectedNets": [44585, 15001],
+      "expectedCwb": 868.75
+    },
+    {
+      "id": "2026-ON-annual-cap",
+      "year": 2026,
+      "province": "ON",
+      "people": [
+        {
+          "ord": 35000
+        },
+        {
+          "ord": 20000
+        }
+      ],
+      "expectedNets": [34685, 19835],
+      "expectedCwb": 1885.75
+    },
+    {
+      "id": "2026-ON-below-annual-cap",
+      "year": 2026,
+      "province": "ON",
+      "people": [
+        {
+          "ord": 35000
+        },
+        {
+          "ord": 20000,
+          "ded": 3122
+        }
+      ],
+      "expectedNets": [34685, 16713],
+      "expectedCwb": 2353.9
+    },
+    {
+      "id": "2026-ON-at-annual-cap",
+      "year": 2026,
+      "province": "ON",
+      "people": [
+        {
+          "ord": 35000
+        },
+        {
+          "ord": 20000,
+          "ded": 3121
+        }
+      ],
+      "expectedNets": [34685, 16714],
+      "expectedCwb": 2353.9
+    },
+    {
+      "id": "2026-ON-above-annual-cap",
+      "year": 2026,
+      "province": "ON",
+      "people": [
+        {
+          "ord": 35000
+        },
+        {
+          "ord": 20000,
+          "ded": 3120
+        }
+      ],
+      "expectedNets": [34685, 16715],
+      "expectedCwb": 2353.75
+    },
+    {
+      "id": "2026-ON-tied-working-income",
+      "year": 2026,
+      "province": "ON",
+      "people": [
+        {
+          "ord": 15000,
+          "oth": 30000
+        },
+        {
+          "ord": 15000,
+          "ded": 14000
+        }
+      ],
+      "expectedNets": [44885, 885],
+      "expectedCwb": 2869.0
+    },
+    {
+      "id": "2026-ON-nonworking-spouse",
+      "year": 2026,
+      "province": "ON",
+      "people": [
+        {
+          "ord": 45000
+        },
+        {
+          "oth": 10000
+        }
+      ],
+      "expectedNets": [44585, 10000],
+      "expectedCwb": 0.0
+    },
+    {
+      "id": "2026-ON-childcare-net",
+      "year": 2026,
+      "province": "ON",
+      "people": [
+        {
+          "ord": 30000
+        },
+        {
+          "ord": 15000,
+          "rrsp": 6000
+        }
+      ],
+      "childcare": {
+        "mode": "automatic",
+        "earnedIncome": [30000, 15000],
+        "children": [
+          {
+            "age": 3,
+            "expenses": 8000
+          }
+        ]
+      },
+      "expectedNets": [29735, 885],
+      "expectedCwb": 2869.0
+    },
+    {
+      "id": "2026-QC-childcare-net",
+      "year": 2026,
+      "province": "QC",
+      "people": [
+        {
+          "ord": 30000
+        },
+        {
+          "ord": 15000,
+          "rrsp": 6000
+        }
+      ],
+      "childcare": {
+        "mode": "automatic",
+        "earnedIncome": [30000, 15000],
+        "children": [
+          {
+            "age": 3,
+            "expenses": 8000
+          }
+        ]
+      },
+      "expectedNets": [29735, 885],
+      "expectedCwb": 2416.292
+    }
+  ]
+}
