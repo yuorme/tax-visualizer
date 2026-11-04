@@ -105,13 +105,13 @@ This table is the only place model ids are written: Sonnet maps to Codex's Sol c
 
 | Tier | Used for | Claude Code | Codex |
 | --- | --- | --- | --- |
-| Standard | data-collector; reviews not listed under Strong | `sonnet` | `gpt-6.1-sol` |
-| Strong | coder; reviews of engine, rule, data, script or significant layout changes | `opus` | `gpt-6-astra` |
+| Standard | data-collector; reviews of data and anything not listed under Strong | `sonnet` | `gpt-6.1-sol` |
+| Strong | coder; reviews of engine, rule, script or significant layout changes | `opus` | `gpt-6-astra` |
 
 Effort is `high` unless the issue clearly fits another level: `medium` only for Markdown-only or mechanical work
 (renames, dependency bumps, lint fixes), `xhigh` for engine changes spanning several programs or anything that
-changes golden baselines. `xhigh` is the cap on both tools (Claude's `max` costs too many tokens). Reviewers never
-go below `high`. The brief records the tier and effort, and the retro reports them per issue.
+changes golden baselines. `xhigh` is the cap on both tools (Claude's `max` costs too many tokens). Reviews always
+run at `high`. The brief records the tier and effort, and the retro reports them per issue.
 
 ### When an agent or model is out
 An agent or model is unavailable when it is down, its plugin fails, or a usage limit won't reset before the work is
@@ -123,7 +123,7 @@ tier calls for is out, stay on the same agent and say so in the dispatch:
   agent as unavailable.
 
 When the other agent is unavailable, a fresh session of the author's agent reviews, at the strong tier and `high`
-effort or above, and its verdict header says "same-agent review".
+effort, and its verdict header says "same-agent review".
 
 ## Running agents
 The orchestrator gives each agent one issue, its role file and an explicit list of files it owns; never run two
@@ -187,4 +187,5 @@ to any agent sent review fixes. Wrap every CI wait in `timeout` or a fixed numbe
 ## Tool notes
 **Claude Code:** see `CLAUDE.md`. **Codex:** `.claude/` files don't configure Codex (tools, isolation,
 permissions); `.codex/hooks.json` does, and models come from the tier table. Create worktrees explicitly, follow
-the active sandbox and approvals, and put your actual model in review headers.
+the active sandbox and approvals, and put your actual model in review headers. Dispatched with network on, do your
+own `npm ci`, `gh` and push steps; `.git` stays read-only, so request escalation for `git commit` and the like.
