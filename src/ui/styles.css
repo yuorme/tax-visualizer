@@ -345,6 +345,17 @@ input[type="range"] {
 .senior-heading {
   margin: 12px 0;
 }
+.public-pension-ledger {
+  margin-bottom: 16px;
+}
+.public-pension-ledger caption {
+  text-align: left;
+  font-weight: 600;
+  padding-bottom: 8px;
+}
+.ledger td:first-child {
+  white-space: normal;
+}
 #retirement-sum {
   margin-inline-start: 6px;
 }

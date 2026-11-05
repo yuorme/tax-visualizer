@@ -1,4 +1,4 @@
-import type { RetirementReceipt } from "../engine/types.ts";
+import type { Person, RetirementReceipt } from "../engine/types.ts";
 import { parseSelfEmployment } from "./self-employment.ts";
 import { eligibleSurvivor, RECEIPT_TYPES, survivorType } from "./senior-income.ts";
 
@@ -6,6 +6,40 @@ function required<T extends Element>(root: ParentNode, selector: string): T {
   const element = root.querySelector<T>(selector);
   if (!element) throw new Error(`Missing ${selector}`);
   return element;
+}
+
+/** The selected adult owns both controls; invalid drafts never replace saved amounts. */
+export function publicPensionEditor(selected: () => Person, change: () => void) {
+  const oas = required<HTMLInputElement>(document, "#senior-oas");
+  const cpp = required<HTMLInputElement>(document, "#senior-cpp-qpp");
+  let owner: Person | undefined;
+  function sync() {
+    const person = selected();
+    const switched = owner !== person;
+    if (switched) {
+      owner = person;
+      cpp.setCustomValidity("");
+      cpp.setAttribute("aria-invalid", "false");
+    }
+    oas.checked = person.oas === true;
+    if (switched || (document.activeElement !== cpp && cpp.validity.valid))
+      cpp.value = person.cppQpp?.toLocaleString("en-CA") ?? "";
+  }
+  oas.addEventListener("input", () => {
+    selected().oas = oas.checked;
+    change();
+  });
+  cpp.addEventListener("input", () => {
+    const amount = parseSelfEmployment(cpp.value);
+    cpp.setCustomValidity(amount === null ? "Enter a nonnegative amount with up to two decimal places." : "");
+    cpp.setAttribute("aria-invalid", String(amount === null));
+    if (amount === null) return;
+    if (amount === undefined) delete selected().cppQpp;
+    else selected().cppQpp = amount;
+    change();
+  });
+  cpp.addEventListener("blur", () => sync());
+  return { sync };
 }
 
 /** Each row is a receipt, so one adult can enter both ordinary and survivor receipts of the same type. */

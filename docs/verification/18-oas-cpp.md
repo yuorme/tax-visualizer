@@ -1,7 +1,7 @@
-# Issue #18: OAS and CPP/QPP retirement income, engine half
+# Issue #18: OAS and CPP/QPP retirement income
 
-Coverage is **2025 and 2026, all thirteen jurisdictions**. This implements the engine half of #18 and both
-#91 comments. Page controls, tooltips, URL encoding and saved-state migration follow on a separate branch.
+Coverage is **2025 and 2026, all thirteen jurisdictions**. PR #198 implemented the engine half of #18 and both
+#91 comments. The page branch adds controls, tooltips, URL encoding and saved-state migration, described below.
 GIS (#19), pension splitting (#20) and seniors' supplements (#21) are not included. No existing golden changes.
 
 ## Contract and assumptions
@@ -11,7 +11,7 @@ GIS (#19), pension splitting (#20) and seniors' supplements (#21) are not includ
 - `Person.cppQpp?: number` is annual gross CPP/QPP retirement receipts, finite and nonnegative. It does not
   estimate entitlement, require age, create earned income, or establish a payroll stop election.
 - Both amounts are additional to other income and typed retirement receipts. Move amounts out of `oth` when
-  using these fields; neither the engine nor this branch migrates existing scenarios or guesses their composition.
+  using these fields; neither engine nor page moves existing amounts or guesses their composition.
 - OAS starts in the month following the 65th birthday. The higher published 75+ amount starts in the month
   following the 75th birthday. A December birthday therefore affects the following year. Dates have month
   precision; no birthday-day exception is inferred. Full-year resident status, full entitlement and commencement
@@ -218,9 +218,75 @@ No additional modelled program needed a line 23500 correction. The federal works
 income for EI repayment and the line 25000 net-supplement deduction. Those receipts and GIS remain unmodelled;
 no amounts are inferred from `oth`. This audit does not claim their implementation or expand senior supplements.
 
-## Validation and handoff
+## Engine validation and handoff
 
 Required validation: `fnm exec --using=26 npm ci`, formatting and `npm run check` (lint, typecheck, all tests,
 build and browser smoke). The existing 2,875-test suite passed unchanged before adding new fixtures.
 Final check results are reported in the PR. No page changes or UI acceptance claims belong to this branch.
 The orchestrator should arrange the independent review and file the separate History back-fill issue at merge.
+
+## Page implementation
+
+The page adds `oas` and `cppQpp` per adult within the existing Retirement income section. OAS is an explicit
+checkbox; CPP/QPP is an annual gross amount accepting cents. Both reuse the #17 birth-year/month controls;
+no new date or payroll election is inferred. An incomplete birth date retains the OAS choice but excludes OAS
+from results until both fields apply. CPP/QPP needs no age. Invalid amounts leave the last valid value intact;
+empty removes the field, while zero remains explicit. Switching adults clears invalid drafts from the control.
+
+`normalizePublicPensions` is shared by saved-state loading and the URL codec. Existing version-3 saves and
+version-1 URL fragments retain their meanings. Omitted fields stay omitted, including for adults with age,
+pension receipts or OAS/CPP already entered as Other income. Explicit false and zero survive both round trips.
+The page never identifies the composition of Other income or moves amounts automatically. Both new values
+remain stored when an older year is selected, but the engine receives neither; its older-year calculations are
+unchanged. History omits unsupported years in both modes, including CPP/QPP-only scenarios without birth dates.
+
+The federal ledger shows engine-reported gross OAS, CPP/QPP income and the recovery deduction, labelled as
+already included in deductions. Recovery appears once among adjustments to federal tax, after credits and
+Quebec abatement. The existing taxable-income tooltip includes the new receipts; the person buttons and
+Income tab summary include their cash amounts. No receipt or tax formula is implemented in the page.
+
+Tooltips state the coverage, month-after-birthday commencement and higher-age timing, December birthday effect,
+quarterly calendar-year amounts, current-year recovery versus withholding, full entitlement/residence assumptions,
+unmodelled deferral/residency rules and the need to remove duplicate amounts from Other income. They distinguish
+CPP/QPP receipts from the separate payroll election and explain Quebec's OAS exclusion and CPP/QPP inclusion.
+The older-year result notice and history basis explicitly limit these inputs to 2025–2026.
+
+### Page acceptance coverage
+
+`tests/public-pension-page.test.ts` covers both fields for both adults, false/zero/omission, malformed values,
+legacy migration and supported/incomplete/unsupported input gating. Existing #17 tests remain unchanged.
+`tests/e2e/public-pensions.mjs`, registered in the full smoke suite, asserts:
+
+- UI entry and independent adult values, every new field and birth dates through URL and storage reloads,
+  no implicit pension-start election, invalid drafts, clearing, partner switching and removal.
+- Both years and all thirteen chart results against the merged engine, including ages 64/65/75/76,
+  June/December effective months, partial and capped recovery and independent adult liabilities.
+- ON and QC ledger receipts, recovery deduction and tax, federal totals, taxable-income explanations and
+  Quebec Health Services Fund amounts against engine results. Existing engine reference tests supply published
+  figure verification; these browser assertions check the page's integration and formatting, not new tax rules.
+- Pre-#18 URLs and saved states with Other income, typed pension receipts and age in 2024, 2025 and 2026,
+  including URL precedence over a recipient's saved public-pension inputs.
+- Older-year results without new receipts, retained drafts, return to a supported year, nominal/real history
+  values and coverage notices, including CPP/QPP with no age.
+- Assumption and recovery tooltip text, controls and ledger geometry at mobile/desktop widths in both themes.
+
+No engine, schema, data or golden fixture changes are part of the page branch.
+
+### Page validation
+
+Required commands are `fnm exec --using=26 npm ci`, `npm run format`, `npm run check` and
+`npm run compare -- origin/main`. The focused page suite checks 375, 430 and 1280 px in light and dark;
+the full smoke suite repeats responsive coverage at 375, 430 and 1000 px, including contrast scans.
+
+The comparison against `origin/main` (`f32ab2175`) covers six viewport/theme combinations and five states each.
+It reports three grouped control diffs: the new unchecked OAS checkbox and empty CPP/QPP amount, plus the
+resulting two-position shifts in generated identifiers for existing anonymous controls. Visible text and numeric
+results are unchanged throughout those legacy scenarios. Its exit status is 1 because it reports intended diffs.
+The focused public-pension browser suite separately exercises the new expanded controls and results.
+
+The first focused run caught a page call to `cashOf` without federal data; the person-summary buttons now pass
+the selected year's federal data. Browser assertions check each adult's cash label and household income as well
+as chart percentages, receipt/deduction rows and tax totals. No engine change was necessary.
+Screenshot inspection also caught the new deduction label and existing bracket ranges widening their tables.
+Ledger labels now wrap, and the browser suite asserts that public-pension rows and all three ledgers fit without
+horizontal scrolling, so recovery tax and federal totals remain visible on the narrowest screen.

@@ -6,7 +6,7 @@ import { DEFAULT_INCOME, spendEst } from "./defaults.ts";
 import { normalizePortfolios } from "./portfolio.ts";
 import { compactRetirements, normalizeRetirements, type Retirement } from "./retirement.ts";
 import { validSelfEmployment } from "./self-employment.ts";
-import { normalizeReceipts } from "./senior-income.ts";
+import { normalizePublicPensions, normalizeReceipts } from "./senior-income.ts";
 
 export interface ScenarioContext {
   years: number[];
@@ -73,6 +73,7 @@ function person(value: unknown, index: number): Person {
   if (record(value) && validSelfEmployment(value.selfEmployment)) result.selfEmployment = value.selfEmployment;
   const receipts = record(value) ? normalizeReceipts(value.retirementIncome) : undefined;
   if (receipts) result.retirementIncome = receipts;
+  if (record(value)) Object.assign(result, normalizePublicPensions(value));
   return result;
 }
 

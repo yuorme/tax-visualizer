@@ -21,6 +21,7 @@ import { checkLedgerOrder } from "./ledger-order.mjs";
 import { checkManitobaFamilyLedger } from "./mb-family-benefit.mjs";
 import { ALLOWED_HOSTS, openPage, settle } from "./page.mjs";
 import { PORTFOLIO_RESPONSIVE_STEPS, PORTFOLIO_STEPS } from "./portfolio.mjs";
+import { PUBLIC_PENSION_RESPONSIVE_STEPS, PUBLIC_PENSION_STEPS } from "./public-pensions.mjs";
 import { checkQuebecHealthFund } from "./qc-health-fund.mjs";
 import { COMPARISON_STEPS, RESPONSIVE_STEPS } from "./responsive.mjs";
 import { RETIREMENT_RESPONSIVE_STEPS, RETIREMENT_STEPS } from "./retirement.mjs";
@@ -1114,6 +1115,7 @@ for (const [label, steps] of [
   ["retirement-age payroll", RETIREMENT_STEPS],
   ["self-employment", SELF_EMPLOYMENT_STEPS],
   ["senior income", SENIOR_STEPS],
+  ["public pensions", PUBLIC_PENSION_STEPS],
   ["history", HISTORY_STEPS],
   ["carbon pricing", CARBON_STEPS],
   ["childcare", CHILDCARE_STEPS],
@@ -1138,6 +1140,7 @@ const responsive = [
   ...RETIREMENT_RESPONSIVE_STEPS,
   ...SELF_EMPLOYMENT_RESPONSIVE_STEPS,
   ...SENIOR_RESPONSIVE_STEPS,
+  ...PUBLIC_PENSION_RESPONSIVE_STEPS,
   [
     "layout: driving units show equivalent values without clipping",
     async p => {

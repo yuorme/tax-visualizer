@@ -94,6 +94,8 @@ async function tip(p, selector) {
 const rows = p =>
   p.locator("#history-rows tr[data-year]").evaluateAll(rows => rows.map(r => [...r.cells].map(c => c.textContent)));
 
+export { chart, household, load, open, rows, saved, tip };
+
 export const SENIOR_STEPS = [
   [
     "seniors: each adult's age and every receipt field survive URL and storage round trips",
