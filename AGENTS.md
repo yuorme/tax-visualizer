@@ -114,7 +114,8 @@ Standard: Claude `sonnet`/Sol; Strong: Claude `opus`/Astra. `codex -m` IDs: Sol=
 
 Use Claude `opus` only for Complex work, reviews and the outage fallbacks below. Effort is `high`, also the cap for
 coders and reviewers, except Sol's `xhigh` in this table; `medium` only for Claude's reviews and Markdown-only or
-mechanical work (renames, dependency bumps, lint fixes). Pick the higher class when unsure; retros report class, model and effort per issue.
+mechanical work (renames, dependency bumps, lint fixes). Pick the higher class when unsure; retros report class,
+model and effort per issue.
 
 ### When an agent or model is out
 An agent or model is unavailable when it is down, its plugin fails, or a usage limit won't reset before the work is
