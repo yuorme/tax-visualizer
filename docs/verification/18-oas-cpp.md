@@ -230,18 +230,18 @@ were prepared with Python Decimal arithmetic using the published literals in the
 the preparation imported neither engine code nor production YAML and took no snapshots. Cases retain full
 calculated precision and use `1e-8` for binary arithmetic. All pre-existing golden files remain byte-identical.
 
-There are **102 new cases / 248 numeric assertions**. Each year's additions have these same counts:
+There are **116 new cases / 332 numeric assertions**. Each year's additions have these same counts:
 
 | Jurisdiction | Cases | Assertions |
 | --- | ---: | ---: |
 | ON | 20 | 42 |
-| QC | 8 | 21 |
+| QC | 15 | 63 |
 | MB | 5 | 13 |
 | NS | 4 | 13 |
 | PE | 4 | 7 |
 | SK, NU (each) | 2 | 5 |
 | AB, BC, NB, NL, NT, YT (each) | 1 | 3 |
-| Total per year | 51 | 124 |
+| Total per year | 58 | 166 |
 
 These are new assertions, with no prior expected value. The only runtime edit corrects the unused reporting
 field `incomeBases.beforeChildcare`: pass actual supplements into `netIncomeParts` so an Allowance recipient
@@ -282,6 +282,25 @@ The [#17 follow-up](17-senior-credits.md#issue-206-post-merge-audit-coverage) su
   age-65 spouse has 3,000 RPP. Schedule B starts with two age amounts and two capped retirement amounts.
   Reduce once by `.1875 × (103,000 - recovery - 42,090/42,955)`. The first return can use the whole pool.
   This deliberately combines retirement caps and the post-recovery family taper; both are calculated explicitly.
+- **`single-pool-recovery-*` (C14, review round 1):** the initial exclusion incorrectly compared a Quebec
+  pool cutoff with federal recovery income without deducting Quebec's worker amount. These fourteen additive
+  cases use wages 30,000, age 66, January birth, OAS and 3,000 RPP. Employee enhanced QPP is
+  `(30,000 - 3,500) × .01 = 265`; worker deductions are 1,420/1,450. The cached
+  [2025 Schedule B](2025/sources/qc-schedule-b.txt) and
+  [2026 parameters](138-senior-credit-rules/sources/qc-parameters-2026.txt) supply the pool parameters.
+  Write `F` for federal recovery income, `T` for its threshold and `R = .15 × max(0, F - T)` in this overlap.
+  Quebec line 275 is `F - R - worker`, and the pool is `max(0, M - .1875 × (line 275 - family threshold))`,
+  where `M = age + capped retirement + living alone = 9,504/9,699`. For the reviewer's reproductions,
+  other income 51,973.86/53,665.51 gives `F = 93,500/95,400`, recovery 6.90/11.55, line 275
+  92,073.10/93,938.45 and pool 132.16875/139.603125. C14 adds recovery back into the pool's income basis,
+  wrongly yielding 130.875/137.4375 and raising provincial tax by .181125/.3031875.
+  Cases below, at and above recovery onset assert the zero/positive repayment transition; at onset the correct
+  pool is 139.50/151.875. Pool exhaustion occurs at Quebec income `Q0 = 92,778/94,683`, hence federal income
+  `F0 = T + (Q0 + worker - T) / .85 = 94,329.294117647.../96,275.941176470...`.
+  Cases at `F0 - .01`, `F0` and `F0 + .01` assert the last positive pool and zero clamp. Fractional-cent inputs
+  at this derived boundary deliberately exercise mathematical equality; all original fixture inputs are retained.
+  Each case also asserts the applied pool and provincial tax: first-bracket tax at .14, second-bracket tax at .19,
+  less `18,571/18,952 × .14` BPA and `pool × .14`. Expectations use independent Decimal arithmetic.
 - **`claimant-recovery-reversal`, `child-claimant-recovery-reversal` (C12/C19):** the OAS recipient's
   100,000 falls below the other adult's 99,500 after recovery in both years. MB's ten child claims belong
   to the latter, with base `2,065 + 10 × 2,752 - .09 × 99,500`; the OAS recipient's own base is zero.
@@ -312,9 +331,13 @@ files listed in the #17 follow-up. Original `ti` and call-site edits were transl
 and supplement plumbing without changing their intended wrong basis. No worktree file was mutated.
 The unmutated control passed; all kills were assertions, with no syntax/import-error kills.
 
-**74 applicable #198 mutants killed; nine excluded.** Together with #195, the final run killed **100/100**
+**75 applicable #198 mutants killed; eight excluded.** Together with #195, the combined runs killed **101/101**
 applicable mutants. The initial classification run confirmed C02/C03 survived before excluding their obsolete
-tax paths. The final run includes all 25 original focused-suite survivors through kills or exclusions.
+tax paths. These outcomes account for all 25 original focused-suite survivors through kills or exclusions.
+Review round 1 corrected C14's exclusion: its worker-deduction overlap is reachable in both supported years.
+The follow-up reran only C14 in a fresh scratch copy outside the worktree. The seven-file control and restored
+control each passed 1,264 tests; C14 failed six of the new cases (three per year), with no import/syntax failures.
+The other 100 kills remain from the original run; no calculation code changed in this review fix.
 
 | Original IDs | Final outcome |
 | --- | --- |
@@ -325,21 +348,23 @@ tax paths. The final run includes all 25 original focused-suite survivors throug
 | H01–H04; I01; J02–J03; K01–K07 | All killed; H03/H04 by new cutoff/floor cases. |
 | C02, C03 | Excluded: after #205, QC's old household credit-context basis has no tax consumer. |
 | C10 | Excluded: CWB's secondary-earner cap is saturated far below positive recovery income. |
-| C14 | Excluded: single Schedule B exhausts at 92,778 / 94,683, below recovery at 93,454 / 95,323. |
+| C14 | Killed: single-person QC worker deduction leaves a positive pool during recovery, in both years. |
 | C15 | Excluded: paying OAS requires age; the legacy living-alone branch is then bypassed. |
 | D14 | Excluded: neither supported NL year has an `additionalTax` program. |
-| D19, D20 | Excluded: LIFT ends by 50,000 individual income; BC reduction ends below 42,000. |
+| D19 | Excluded: LIFT ends by 50,000 individual income, below recovery. |
+| D20 | Excluded: BC reduction ends at about 40,806.52 / 44,952.02, below recovery in each year. |
 | D21 | Excluded: NS's taxable-income cutoff is 24,000, far below positive-recovery taxable income. |
 
 For C02/C03, final personal results and benefit bases are calculated independently of that old context;
 QC has no CRA low-income reduction, LIFT or MB family benefit. Only the unused provincial spouse-credit
 selector can differ; #205 always supplies zero provincial spouse credit. These are tax-equivalent mutations.
-For C14, the maxima include age, retirement and living-alone amounts; positive recovery leaves net income
-at least at its threshold. #19 supplements retain that net-income floor and cannot bring NS taxable income
-down to 24,000: even the largest annual supplement is below 18,000. No exclusion relies on a random sample.
+BC's cutoffs are `25,020 + 562 / .0356` in 2025 and `25,570 + 690 / .0356` in 2026; the latter corrects the
+initial incorrect bound of 42,000. For D21, #19 supplements cannot bring NS taxable income down to 24,000 at
+positive recovery: even the largest annual supplement is below 18,000. No exclusion relies on a random sample.
 
 The final full validation is `fnm exec --using=26 npm ci` and `npm run check`, after formatting and the last
-documentation edit; results are reported in the PR. Existing fixture identity is checked separately against HEAD.
+documentation edit; results are reported in the PR. The 52 pre-existing fixture files are checked against
+`origin/main`; the original 102 PR cases and their expectations are preserved from `951e618`.
 
 ## Engine validation and handoff
 

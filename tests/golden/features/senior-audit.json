@@ -2341,6 +2341,440 @@
       "expected": {
         "breakdown.incomeBases.beforeChildcare.1": 200000
       }
+    },
+    {
+      "id": "2025-QC-single-pool-recovery-recovery-below",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "spouse": false,
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "ord": 30000,
+            "oth": 51927.85,
+            "retirementIncome": [
+              {
+                "type": "rppLifetime",
+                "amount": 3000
+              }
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.publicPensions.recoveryIncome": 93453.99,
+        "list.0.breakdown.publicPensions.recoveryTax": 0.0,
+        "list.0.tiP": 92033.99,
+        "list.0.breakdown.seniorCredits.quebecPoolBase": 139.501875,
+        "list.0.breakdown.seniorCredits.provincialApplied": 19.5302625,
+        "list.0.prov": 12204.2378375
+      }
+    },
+    {
+      "id": "2025-QC-single-pool-recovery-recovery-at",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "spouse": false,
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "ord": 30000,
+            "oth": 51927.86,
+            "retirementIncome": [
+              {
+                "type": "rppLifetime",
+                "amount": 3000
+              }
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.publicPensions.recoveryIncome": 93454.0,
+        "list.0.breakdown.publicPensions.recoveryTax": 0.0,
+        "list.0.tiP": 92034.0,
+        "list.0.breakdown.seniorCredits.quebecPoolBase": 139.5,
+        "list.0.breakdown.seniorCredits.provincialApplied": 19.53,
+        "list.0.prov": 12204.24
+      }
+    },
+    {
+      "id": "2025-QC-single-pool-recovery-recovery-above",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "spouse": false,
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "ord": 30000,
+            "oth": 51927.87,
+            "retirementIncome": [
+              {
+                "type": "rppLifetime",
+                "amount": 3000
+              }
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.publicPensions.recoveryIncome": 93454.01,
+        "list.0.breakdown.publicPensions.recoveryTax": 0.0015,
+        "list.0.tiP": 92034.0085,
+        "list.0.breakdown.seniorCredits.quebecPoolBase": 139.49840625,
+        "list.0.breakdown.seniorCredits.provincialApplied": 19.529776875,
+        "list.0.prov": 12204.241838125
+      }
+    },
+    {
+      "id": "2025-QC-single-pool-recovery-reproduction",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "spouse": false,
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "ord": 30000,
+            "oth": 51973.86,
+            "retirementIncome": [
+              {
+                "type": "rppLifetime",
+                "amount": 3000
+              }
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.publicPensions.recoveryIncome": 93500.0,
+        "list.0.breakdown.publicPensions.recoveryTax": 6.9,
+        "list.0.tiP": 92073.1,
+        "list.0.breakdown.seniorCredits.quebecPoolBase": 132.16875,
+        "list.0.breakdown.seniorCredits.provincialApplied": 18.503625,
+        "list.0.prov": 12212.695375
+      }
+    },
+    {
+      "id": "2025-QC-single-pool-recovery-pool-zero-below",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "spouse": false,
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "ord": 30000,
+            "oth": 52803.14411764706,
+            "retirementIncome": [
+              {
+                "type": "rppLifetime",
+                "amount": 3000
+              }
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.publicPensions.recoveryIncome": 94329.28411764705,
+        "list.0.breakdown.publicPensions.recoveryTax": 131.29261764705882,
+        "list.0.tiP": 92777.9915,
+        "list.0.breakdown.seniorCredits.quebecPoolBase": 0.00159375,
+        "list.0.breakdown.seniorCredits.provincialApplied": 0.000223125,
+        "list.0.prov": 12365.128161875
+      }
+    },
+    {
+      "id": "2025-QC-single-pool-recovery-pool-zero-at",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "spouse": false,
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "ord": 30000,
+            "oth": 52803.15411764706,
+            "retirementIncome": [
+              {
+                "type": "rppLifetime",
+                "amount": 3000
+              }
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.publicPensions.recoveryIncome": 94329.29411764706,
+        "list.0.breakdown.publicPensions.recoveryTax": 131.2941176470588,
+        "list.0.tiP": 92778.0,
+        "list.0.breakdown.seniorCredits.quebecPoolBase": 0.0,
+        "list.0.breakdown.seniorCredits.provincialApplied": 0.0,
+        "list.0.prov": 12365.13
+      }
+    },
+    {
+      "id": "2025-QC-single-pool-recovery-pool-zero-above",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "spouse": false,
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "ord": 30000,
+            "oth": 52803.16411764706,
+            "retirementIncome": [
+              {
+                "type": "rppLifetime",
+                "amount": 3000
+              }
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.publicPensions.recoveryIncome": 94329.30411764706,
+        "list.0.breakdown.publicPensions.recoveryTax": 131.29561764705883,
+        "list.0.tiP": 92778.0085,
+        "list.0.breakdown.seniorCredits.quebecPoolBase": 0.0,
+        "list.0.breakdown.seniorCredits.provincialApplied": 0.0,
+        "list.0.prov": 12365.131615
+      }
+    },
+    {
+      "id": "2026-QC-single-pool-recovery-recovery-below",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "spouse": false,
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "ord": 30000,
+            "oth": 53588.5,
+            "retirementIncome": [
+              {
+                "type": "rppLifetime",
+                "amount": 3000
+              }
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.publicPensions.recoveryIncome": 95322.99,
+        "list.0.breakdown.publicPensions.recoveryTax": 0.0,
+        "list.0.tiP": 93872.99,
+        "list.0.breakdown.seniorCredits.quebecPoolBase": 151.876875,
+        "list.0.breakdown.seniorCredits.provincialApplied": 21.2627625,
+        "list.0.prov": 12444.0753375
+      }
+    },
+    {
+      "id": "2026-QC-single-pool-recovery-recovery-at",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "spouse": false,
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "ord": 30000,
+            "oth": 53588.51,
+            "retirementIncome": [
+              {
+                "type": "rppLifetime",
+                "amount": 3000
+              }
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.publicPensions.recoveryIncome": 95323.0,
+        "list.0.breakdown.publicPensions.recoveryTax": 0.0,
+        "list.0.tiP": 93873.0,
+        "list.0.breakdown.seniorCredits.quebecPoolBase": 151.875,
+        "list.0.breakdown.seniorCredits.provincialApplied": 21.2625,
+        "list.0.prov": 12444.0775
+      }
+    },
+    {
+      "id": "2026-QC-single-pool-recovery-recovery-above",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "spouse": false,
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "ord": 30000,
+            "oth": 53588.52,
+            "retirementIncome": [
+              {
+                "type": "rppLifetime",
+                "amount": 3000
+              }
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.publicPensions.recoveryIncome": 95323.01,
+        "list.0.breakdown.publicPensions.recoveryTax": 0.0015,
+        "list.0.tiP": 93873.0085,
+        "list.0.breakdown.seniorCredits.quebecPoolBase": 151.87340625,
+        "list.0.breakdown.seniorCredits.provincialApplied": 21.262276875,
+        "list.0.prov": 12444.079338125
+      }
+    },
+    {
+      "id": "2026-QC-single-pool-recovery-reproduction",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "spouse": false,
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "ord": 30000,
+            "oth": 53665.51,
+            "retirementIncome": [
+              {
+                "type": "rppLifetime",
+                "amount": 3000
+              }
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.publicPensions.recoveryIncome": 95400.0,
+        "list.0.breakdown.publicPensions.recoveryTax": 11.55,
+        "list.0.tiP": 93938.45,
+        "list.0.breakdown.seniorCredits.quebecPoolBase": 139.603125,
+        "list.0.breakdown.seniorCredits.provincialApplied": 19.5444375,
+        "list.0.prov": 12458.2310625
+      }
+    },
+    {
+      "id": "2026-QC-single-pool-recovery-pool-zero-below",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "spouse": false,
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "ord": 30000,
+            "oth": 54541.44117647059,
+            "retirementIncome": [
+              {
+                "type": "rppLifetime",
+                "amount": 3000
+              }
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.publicPensions.recoveryIncome": 96275.93117647059,
+        "list.0.breakdown.publicPensions.recoveryTax": 142.93967647058824,
+        "list.0.tiP": 94682.9915,
+        "list.0.breakdown.seniorCredits.quebecPoolBase": 0.00159375,
+        "list.0.breakdown.seniorCredits.provincialApplied": 0.000223125,
+        "list.0.prov": 12619.238161875
+      }
+    },
+    {
+      "id": "2026-QC-single-pool-recovery-pool-zero-at",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "spouse": false,
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "ord": 30000,
+            "oth": 54541.45117647059,
+            "retirementIncome": [
+              {
+                "type": "rppLifetime",
+                "amount": 3000
+              }
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.publicPensions.recoveryIncome": 96275.94117647059,
+        "list.0.breakdown.publicPensions.recoveryTax": 142.94117647058823,
+        "list.0.tiP": 94683.0,
+        "list.0.breakdown.seniorCredits.quebecPoolBase": 0.0,
+        "list.0.breakdown.seniorCredits.provincialApplied": 0.0,
+        "list.0.prov": 12619.24
+      }
+    },
+    {
+      "id": "2026-QC-single-pool-recovery-pool-zero-above",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "spouse": false,
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "ord": 30000,
+            "oth": 54541.46117647059,
+            "retirementIncome": [
+              {
+                "type": "rppLifetime",
+                "amount": 3000
+              }
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.publicPensions.recoveryIncome": 96275.95117647058,
+        "list.0.breakdown.publicPensions.recoveryTax": 142.94267647058822,
+        "list.0.tiP": 94683.0085,
+        "list.0.breakdown.seniorCredits.quebecPoolBase": 0.0,
+        "list.0.breakdown.seniorCredits.provincialApplied": 0.0,
+        "list.0.prov": 12619.241615
+      }
     }
   ]
 }
