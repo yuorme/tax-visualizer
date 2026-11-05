@@ -229,8 +229,8 @@ Recorded here as the spec for the GitHub issues that implement them; the issues 
 0.1-point rule for at least one applicable household; pension splitting also moves the BC–Ontario gap by 0.32
 points. Individual provincial and territorial programs beyond the ones it measured are still sized before they're
 built.
-- Federal and provincial age amounts and pension income credit: engine implemented for 2025–2026 above;
-  page integration and historical back-fill remain.
+- Federal and provincial age amounts and pension income credit: implemented for 2025–2026 above;
+  historical back-fill remains in #196.
 - OAS with its recovery tax (clawback) and the 10% increase at 75; GIS and the Allowance.
 - CPP/QPP retirement benefits as income.
 - Pension income splitting, optimised automatically per province (the engine tries 0–50% and keeps the lowest

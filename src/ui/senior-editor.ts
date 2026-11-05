@@ -37,7 +37,8 @@ export function seniorEditor(selected: () => RetirementReceipt[], change: (rows:
       const amount = required<HTMLInputElement>(row, '[data-field="amount"]');
       const survivor = required<HTMLInputElement>(row, '[data-field="survivor"]');
       type.value = receipt.type;
-      if (document.activeElement !== amount) amount.value = receipt.amount.toLocaleString("en-CA");
+      if (document.activeElement !== amount && amount.validity.valid)
+        amount.value = receipt.amount.toLocaleString("en-CA");
       survivor.checked = eligibleSurvivor(receipt);
       (survivor.parentElement as HTMLElement).hidden = !survivorType(receipt.type);
     });

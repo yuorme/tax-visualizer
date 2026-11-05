@@ -285,7 +285,18 @@ export const SENIOR_STEPS = [
         assert.equal(await p.getAttribute("#senior-amount-0", "aria-invalid"), "true");
         assert.equal((await saved(p)).people[0].retirementIncome[0].amount, 10000);
       }
+      await p.fill("#senior-amount-0", "10000.25");
+      await p.fill("#senior-amount-0", "abc");
+      await p.locator("#senior-type-0").focus();
+      await p.selectOption("#senior-type-0", "rrspAnnuity");
+      await settle(p);
+      assert.equal(await p.inputValue("#senior-amount-0"), "abc", "type changes preserve the invalid amount draft");
+      assert.equal(await p.getAttribute("#senior-amount-0", "aria-invalid"), "true");
+      assert.equal(await p.$eval("#senior-amount-0", input => input.validity.customError), true);
+      assert.equal((await saved(p)).people[0].retirementIncome[0].amount, 10000.25);
       await p.fill("#senior-amount-0", "0");
+      assert.equal(await p.getAttribute("#senior-amount-0", "aria-invalid"), "false");
+      assert.equal(await p.$eval("#senior-amount-0", input => input.validationMessage), "");
       assert.equal((await saved(p)).people[0].retirementIncome[0].amount, 0);
       await p.selectOption("#senior-type-0", "rrspWithdrawal");
       assert.equal(Object.hasOwn((await saved(p)).people[0].retirementIncome[0], "survivorEligible"), false);
