@@ -104,6 +104,39 @@ test("line 431 respects spouse status and the personal-credit switch in every ye
   }
 });
 
+test("personal credits off blocks an otherwise usable unused dividend credit", () => {
+  const y = loadYear(2026);
+  const p = y.provinces.find(p => p.code === "QC");
+  assert.ok(p);
+  const r = household(y, p, input([{ ed: 20000, ded: 20000 }, { oth: 40000 }], { useBpa: false }));
+  // Donor line 430 without BPA: 7,600 × 14% - 27,600 × 11.7% = -2,165.20.
+  // The switch disables that transfer, leaving the recipient's 40,000 × 14% untouched.
+  assert.equal(round(r.prov), 5600);
+  for (const person of r.list) assert.equal(person.breakdown.seniorCredits.quebecTransferApplied, 0);
+});
+
+test("spouse savings include the applied Quebec transfer in either direction, with or without age", () => {
+  const y = loadYear(2026);
+  const p = y.provinces.find(p => p.code === "QC");
+  assert.ok(p);
+  for (const [donor, expected] of [
+    [0, 4576.5188],
+    [18000, 133.28],
+  ]) {
+    for (const reverse of [false, true]) {
+      const people = [{ ord: 60000 }, { oth: donor }];
+      if (reverse) people.reverse();
+      for (const age of [undefined, 40]) {
+        const r = household(y, p, input(people.map(person => ({ ...person, ...(age ? { age, birthMonth: 6 } : {}) }))));
+        // Federal spouse relief: 16,452 × .14 × .835 = 1,923.2388 for the zero-income donor.
+        // Quebec transfers: 18,952 × .14 = 2,653.28, or (18,952 - 18,000) × .14 = 133.28.
+        assert.equal(round4(r.claim?.saved ?? 0), expected);
+        if (donor === 0) assert.equal(round(r.prov), 2993.34);
+      }
+    }
+  }
+});
+
 test("#205: entering an under-65 age cannot enable Quebec line 431", () => {
   const y = loadYear(2026);
   const p = y.provinces.find(p => p.code === "QC");

@@ -1,0 +1,233 @@
+Title: 2024 TP-1 guide: spouse credit transfer (line 431)
+URL: https://www.revenuquebec.ca/documents/en/formulaires/tp/2024-12/TP-1.G-V(2024-12).pdf
+Fetched: 2026-11-05
+SHA-256 of the original: 0137d78cc617c37871caf6efc8978654e9d0c11e639e7ea9f6d6bfc973b10e7f
+Publication date modified: 2025-02-24
+PDF pages: 57-58 of 82
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 57 of 82 ---
+
+57
+2024 – GUIDE-V
+422 TaxcreditfortheacquisitionofCapitalrégional
+et coopératifDesjardinsshares
+You can claim this tax credit if you were resident in Québec on
+December 31, 2024, and you acquired, as first purchaser, Capital régional
+et coopératif Desjardins shares during the period from March 1, 2024,
+to February 28, 2025.
+To claim this credit, enter the amount from box B of your RL-26 slip
+on line 422.
+Note that you cannot carry forward the portion of the credit you are not
+claiming in 2024.
+IMPORTANT
+You are not entitled to this tax credit if:
+• you requested that Capital régional et coopératif Desjardins
+redeem shares that you acquired after February 29, 2024;
+• before March 1, 2025, Capital régional et coopératif Desjardins
+redeemed or purchased shares that you acquired before
+March 1, 2024, and for which you were entitled to a tax credit for
+a year prior to 2024.
+Special tax related to the redemption
+of Capital régional et coopératifDesjardinsshares
+If you claim a tax credit on line 422 of your return and, in a future year,
+you request that Capital régional et coopératif Desjardins redeem shares
+that you held for fewer than seven years, a portion of the tax credit
+you obtained will be recovered.
+424 Taxcreditforalabour-sponsoredfund
+You can claim this credit if, in 2024 or the first 60 days of 2025,
+you acquired, as first purchaser, class A shares in the Fonds de solidarité
+des travailleurs et des travailleuses du Québec (FTQ) or class A or class B
+shares in Fondaction (le Fonds de développement de la Confédération
+des syndicats nationaux pour la coopération et l’emploi).
+To calculate the amount of your credit, add the tax credits shown
+on your RL-10 slip and the tax credits you did not use before 2024
+and then subtract the cancelled credits shown on your RL-10 slip
+from the result. However, the total amount of the shares acquired
+in a labour-sponsored fund that you can take into account in calculating
+your credit cannot be more than $5,000.
+Under certain conditions, you can carry forward the portion of the credit
+you are not claiming for 2024 to reduce your income tax for future years.
+For example, if the total of the amounts shown in boxes A and G
+of your RL-10 slip is more than $5,000, the surplus can be used to calculate
+your credit for future years.
+You are not entitled to this credit if any of the following situations
+apply to you:
+•• You were born before January 1, 1960
+•• You were born before January 1, 1980, and were either retired
+or on pre-retirement leave in 2024.
+•• You asked the Fonds de solidarité des travailleurs et des travailleuses
+du Québec (FTQ) or Fondaction to redeem your shares within 60 days
+of acquiring them.
+•• You transferred the acquired shares to a spousal registered retirement
+savings plan (RRSP) or a spousal registered retirement investment
+fund (RRIF), and your spouse (or former spouse):
+– was born before January 1, 1960; or
+– was born before January 1, 1980, and was either retired or
+on pre-retirement leave.
+A person is considered to be retired or on pre-retirement leave if, in 2024,
+they:
+•• received a retirement pension under the Québec Pension Plan (QPP)
+or the Canada Pension Plan (CPP);
+•• received pension or annuity payments under one of the following (unless
+the payments they received were further to the death of their spouse):
+– a registered pension plan (RPP),
+– an RRSP,
+– a RRIF,
+– a pooled registered pension plan (PRPP), including a voluntary
+retirement savings plan (VRSP),
+– a deferred profit-sharing plan (DPSP); or
+•• were on paid leave and was not expected to return to work (for example,
+the person was using accumulated sick leave before retiring).
+However, a person is not considered to be retired or on pre-retirement leave
+if the total of the person’s employment and business income for 2024
+was over $3,500, and they had yet to turn 65 or redeem all or part of their
+shares by the end of the year.
+Purchase of replacement shares
+If you purchased replacement shares (RL-10 slip) because you redeemed
+your shares in a labour-sponsored fund in a previous year in order
+to participate in the Home Buyers’ Plan (HBP) or the Lifelong Learning
+Plan (LLP), you cannot claim the credit for the replacement shares.
+431 Creditstransferredfromonespouse
+to the other
+Negativeamounton line 430
+If the amount on line 430 is negative, you can transfer it to your spouse
+on December 31, 2024 (see the definition at line 12), to reduce their
+income tax. However, if you claimed a deduction for split income on
+line 295, refer to Part 4 of form TP-766.3.4-V,
+Income Tax on Split Income,
+to find out whether you can transfer an amount
+To make the transfer, carry the amount from line 430 to line 431 and
+enter “0” on line 432. Your spouse must enter the transferred amount on
+line 431 of their return. You must file a return in order for the amount
+to be transferred to your spouse.
+If you are claiming amounts on lines 381, 385, 395, 398, 409 and 424,
+you can reduce them instead of transferring the unused portion of the
+credits to your spouse. This will reduce your income tax for future years.
+Positiveamounton line 430
+If the amount on line 430 of your return is positive but the amount
+on line 430 of the return of your spouse on December 31, 2024
+(see the definition at line 12), is negative, you can enter the negative
+amount on line 431 of your return. If you do so, your spouse must file
+a return
+Your spouse is transferring an amount
+as a child18 or overenrolledin post-secondarystudies
+If your spouse on December 31, 2024, is transferring an amount as a child
+18 or over enrolled in post-secondary studies to their father or mother,
+you must reduce the negative amount on line 430 of your spouse’s return
+by 14% of the transferred amount (lines 20.1 and 20.2 of your spouse’s
+Schedule S) and enter the reduced amount on line 431 of your return.
+
+--- PDF page 58 of 82 ---
+
+58
+2024 – GUIDE-V
+Yourspousediedin 2024
+If your spouse died in 2024 but is considered to have been your spouse
+on December 31, 2024, only the negative amount on line 430 of your
+spouse’s principal income tax return can be transferred to you.
+432 Alternativeminimumtaxcarry-over,alternative
+minimumtaxand deduction for logging tax
+Alternative minimum tax carry-over (line 13 of Schedule E)
+As a rule, if you do not have any alternative minimum tax payable
+for 2024, you may be entitled to deduct all or part of the alternative
+minimum tax paid for a year before 2024. To determine the amount
+you can deduct on line 13 of Schedule E, complete form TP-776.42-V,Alternative Minimum Tax
+Alternative minimum tax (line 15 of Schedule E)
+Alternative minimum tax limits the benefits you can receive in a year
+from certain tax incentives. It can be carried forward up to seven years.
+Refer to form TP-776.42-V,
+Alternative Minimum Tax, to see if you are
+required to pay the tax for 2024.
+Deduction for logging tax (line 17 of Schedule E)
+If you carried out logging operations in Québec in 2024, you can deduct
+one third of the logging tax you paid to the Minister of Revenue of Québec
+when you filed the
+Logging Operations Return (form TPZ-1179-V).
+438 Annualregistrationfee
+for the enterprise register
+If you are registered in the enterprise register under the
+Act respecting
+the legal publicity of enterprises, you must update the information
+in the register and pay an annual registration fee.
+Check your information in the enterprise register at Québec.ca
+If the information in the enterprise register is correct, check “Yes”
+on line 436 of your return and enter your Québec enterprise number (NEQ)
+on line 437.
+If any of the information is incorrect, or if you declared bankruptcy,
+check “No” on line 436, enter your Québec enterprise number
+(NEQ) on line 437 and use the appropriate online service at Québec.ca
+to file your
+Déclaration de mise à jour annuelle (annual updating
+declaration). The service and onscreen instructions are in French only,
+but you can consult courtesy translation RE-401-T for information
+purposes
+If you have ceased your business operations in Québec, you must use
+the appropriate online service at Québec.ca to file a
+Déclaration de radiation
+(declaration of cancellation). Note that the service and onscreen
+instructions are available in French only. If you were still listed
+in the enterprise register on January 1, 2025, you must pay the annual
+registration fee. However, if you filed a declaration of cancellation
+before January 1, 2025, you do not have to pay the fee.
+Annual registration fee
+Enter the annual registration fee for a sole proprietorship for 2025
+on line 438 of your return. To find out how much the fee is, see
+the Québec.ca website
+You do not have to pay a fee for the year in which you registered for
+the first time or for the following year. For example, if you registered
+for the first time in 2024 or 2025, you do not have to pay the fee for 2025.
+439 Québecparentalinsuranceplan(QPIP)premium
+on income from self-employment
+or employmentoutside Québec
+You do not have to pay a premium if the total of the following amounts
+is less than $2,000:
+•• your net business income;
+•• your insurable earnings as a person responsible for a family-type
+resource or an intermediate resource; and
+•• your employment income subject to the QPIP
+Self-employed persons and persons responsible
+for a family-typeresourceoranintermediateresource
+If you earned income from self-employment (line 27 of Schedule L)
+or as a person responsible for a family-type resource or an intermediate
+resource (line 40 of Schedule L if you received an RL-29 slip; otherwise,
+line 27 of Schedule L) and the amount on line 97 of your return
+is less than $464.36, complete Schedule R to calculate the QPIP premium
+you are required to pay on that income.
+Employment outside Québec
+If you worked outside Québec (either elsewhere in Canada or in another
+country) and you did not receive an RL-1 slip for that employment,
+complete Schedule R to determine whether you are required to pay
+a QPIP premium.
+441 Advancepaymentsoftaxcredits
+Tax credits respecting the work premium
+If you received advance payments of any of the tax credits respecting
+the work premium (the work premium, adapted work premium or
+supplement to the work premium [for former recipients of last-resort
+financial assistance or financial assistance under the Aim for Employment
+Program]):
+•• enter the amounts from boxes A and B of your RL-19 slip on line 441
+of your return;
+•• complete Schedule P to calculate the exact amount of the tax credits
+respecting the work premium to which you are entitled for 2024 and
+then enter that amount on line 456 of your return (see the instructions
+for line 456).
+Tax credit for childcare expenses
+If you received advance payments of the tax credit for childcare expenses:
+•• enter the amount from box C of your RL-19 slip on line 441 of your return
+(do not enter it in your spouse’s return);
+•• complete Schedule C to calculate the exact amount of the tax credit
+for childcare expenses to which you are entitled for 2024 and then
+enter that amount on line 455 of your return (see the instructions
+for line 455).
+Tax credit for home-support services for seniors
+If you received advance payments of the tax credit for home-support
+services for seniors:
+•• enter the amount from box D of your RL-19 slip on line 441 of your return
+(this amount may include financial compensation);
+•• enter on line 458 of your return the amount of the tax credit for
+home-support services for seniors to which you are entitled for 2024
+(see the instructions for line 458).
+If there is an amount in box E of your RL-19 slip, see the instructions
+for line 466.

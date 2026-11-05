@@ -372,7 +372,12 @@ function calculateHousehold(
         );
       }),
     );
-    if (claim) claim.saved = list[claim.c].fSp * list[claim.c].k + list[claim.provincialClaimant ?? claim.c].pSp;
+    if (claim)
+      // Quebec's general transfer is applied outside pSp and may flow in either direction.
+      claim.saved =
+        list[claim.c].fSp * list[claim.c].k +
+        list[claim.provincialClaimant ?? claim.c].pSp +
+        list.reduce((saved, r) => saved + r.breakdown.seniorCredits.quebecTransferApplied, 0);
   }
   const totals = addUp(list);
   const householdPremium = householdPremiumOf(p, nets, couple, kids, childcare.claims);

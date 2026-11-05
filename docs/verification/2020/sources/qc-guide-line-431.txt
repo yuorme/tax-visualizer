@@ -1,0 +1,120 @@
+Title: 2020 TP-1 guide: spouse credit transfer (line 431)
+URL: https://www.revenuquebec.ca/documents/en/formulaires/tp/2020-12/TP-1.G-V(2020-12).pdf
+Fetched: 2026-11-05
+SHA-256 of the original: aee53081a4f737ffea0eab70fa53fe97963be3f1c9cf652bfdad4ad55d4b6082
+Publication date modified: 2021-01-05
+PDF pages: 72 of 108
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 72 of 108 ---
+
+722020 – G UIDE-V
+431 Credits transferred from one spouse
+to the other
+Negative amount on line 430
+If the amount on line 430 is negative, you can transfer it to your spouse
+on December 31, 2020 (see the definition at line 12), to reduce his or her
+income tax However, if you claimed a deduction for split income on
+line 295, refer to Part 4 of form TP-766 3 4-V,
+Income Tax on Split Income,
+to find out whether you can transfer an amount
+To make the transfer, carry the amount from line 430 to line 431 and
+enter “0” on line 432 Your spouse must enter the transferred amount on
+line 431 of his or her return You must file a return in order for the amount
+to be transferred to your spouse
+If you are claiming amounts on lines 381, 385, 395, 398, 409 and 424,
+you can reduce them instead of transferring the unused portion of the
+credits to your spouse This will reduce your income tax for future years
+Positive amount on line 430
+If the amount on line 430 of your return is positive, but the amount
+on line 430 of the return of your spouse on December 31, 2020
+(see the definition at line 12), is negative, you can enter the negative
+amount on line 431 of your return If you do so, your spouse must file
+a return
+Your spouse is transferring an amount as a child 18 or over
+enrolled in post-secondary studies
+If your spouse on December 31, 2020, is transferring to his or her father
+or mother an amount as a child 18 or over enrolled in post-secondary
+studies, you must reduce the negative amount shown on line 430 of
+your spouse’s return by 15% of the amount transferred to his or her father
+or mother (line 20 of your spouse’s Schedule S) and enter that reduced
+amount on line 431 of your return
+Your spouse died in 2020
+If your spouse died in 2020 but is considered to have been your spouse
+on December 31, 2020, only the negative amount on line 430 of your
+spouse’s principal income tax return can be transferred to you
+432 Alternative minimum tax carry-over,
+alternative minimum tax
+and deduction for logging tax
+Alternative minimum tax carry-over
+(line 13 of Schedule E)
+As a rule, if you do not have any alternative minimum tax payable for 2020,
+you may be entitled to deduct all or part of the alternative minimum tax
+paid for a year before 2020 To determine the amount you can deduct on
+line 13 of Schedule E, complete form TP-776 42-V,
+Alternative Minimum Tax
+Alternative minimum tax (line 15 of Schedule E)
+Alternative minimum tax limits the advantages you can receive in a year
+from certain tax incentives You may be required to pay this tax if,
+for example, any of the following situations apply to you:
+1 You are reporting a taxable capital gain on line 139
+2 You are deducting a loss with respect to a tax shelter on line 164
+3 You are claiming a deduction for interest and carrying charges incurred
+to acquire:
+• flow-through shares;
+• an interest in a partnership as a specified member or as a limited
+partner;
+• a tax shelter;
+• rental or leasing property;
+• an investment in a film production; or
+• investments in resources
+4 You are claiming a deduction on line 241, a deduction for Québec
+exploration expenses that give entitlement to an additional deduction
+(line 250, point 9) or a deduction for certain films (line 250, point 17)
+5 You are claiming a deduction on line 287 other than the additional
+deduction for Québec resources or the result of the following calculation:
+the deduction for the Cooperative Investment Plan (CIP) minus the cost
+of the securities for which you are claiming the deduction
+If any of the situations described above apply to you, complete
+Work Chart 432 to determine whether you must complete form TP-776 42-V,
+Alternative Minimum Tax
+Deduction for logging tax (line 17 of Schedule E)
+If you carried out logging operations in Québec in 2020, you can deduct
+one third of the logging tax you paid to the Minister of Revenue of Québec
+when you filed the
+Logging Operations Return (form TPZ-1179-V)
+438 Annual registration fee
+for the enterprise register
+If you are registered in the enterprise register under the
+Act respecting
+the legal publicity of enterprises, you must update the information
+in your file and pay an annual registration fee
+C h e c k y o u r i n f o r m a t i o n i n t h e e n t e r p r i s e r e g i s t e r a t
+registreentreprises.gouv.qc.ca
+If the information in the enterprise register is correct, check “Yes”
+on line 436 of your return and enter your Québec enterprise number (NEQ)
+on line 437
+If any of the information is incorrect, or if you declared
+bankruptcy, check “No” on line 436, enter your Québec enterprise
+number (NEQ) on line 437 and use the appropriate online service
+at registreentreprises.gouv.qc.ca to file your
+Déclaration de mise
+à jour annuelle (annual updating declaration) The service and onscreen
+instructions are in French only, but you can consult courtesy translation
+RE-401-T for information purposes
+If you have ceased your business operations in Québec, you must use
+the appropriate online service at registreentreprises.gouv.qc.ca
+to file a
+Déclaration de radiation (declaration of cancellation) The service
+and onscreen instructions are in French only, but you can consult courtesy
+translation RE-600-T for information purposes If you were still listed
+in the enterprise register on January 1, 2021, you must pay the annual
+registration fee However, if you filed a declaration of cancellation
+before January 1, 2021, you do not have pay the fee
+Annual registration fee
+Enter the annual registration fee for a sole proprietorship
+for 2021 on line 438 of your return To find out how much the fee is,
+see the Fees and Methods of Payment section of the Registraire
+des entreprises website at registreentreprises.gouv.qc.ca
+D1 – Version 8 – 2 décembre 2020

@@ -9,7 +9,7 @@ brackets:
   - [.inf, 0.2575]
 basicPersonalAmount: 18571
 dividendTaxCredit: {eligible: 0.117, nonEligible: 0.0342}
-spouseAmount: transfer     # a spouse's unused basic credit is transferred instead
+spouseAmount: transfer     # either spouse's unused credits, including BPA and dividends, transfer through line 431
 healthServicesFund:
   name: Quebec Health Services Fund
   program: qc-health-services-fund
