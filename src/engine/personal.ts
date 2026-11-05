@@ -58,18 +58,32 @@ export function personTax(fed: Federal, p: Province, x: Person, sp: Extra, ctx: 
   const { pay, selfEmployment: self } = payrollDetailsOf(fed, p, x);
   const retirement = employeeRetirementPayrollOf(fed, p, x)?.retirement;
   const supplements = ctx.netFederalSupplements ?? 0;
-  const incomeParts = netIncomeParts(fed, p, x, ctx.childcareDeduction, undefined, ctx.netFederalSupplements);
+  const incomeParts = netIncomeParts(
+    fed,
+    p,
+    x,
+    ctx.childcareDeduction,
+    undefined,
+    ctx.netFederalSupplements,
+    ctx.provincialAssistance,
+  );
   const net = Math.max(0, netIncomeTotal(incomeParts));
   const recovery = incomeParts.oasRecovery ?? 0;
-  const otherPaymentsDeduction = Math.max(0, supplements - Math.max(0, recovery - (incomeParts.oas ?? 0)));
+  const federalSupplementsDeduction = Math.max(0, supplements - Math.max(0, recovery - (incomeParts.oas ?? 0)));
+  const otherPaymentsDeduction = federalSupplementsDeduction + (ctx.provincialAssistance ?? 0);
   const ti = Math.max(0, netIncomeTotal(incomeParts) - otherPaymentsDeduction);
   const workerDed = workerDeductionOf(p, x);
   // TP-1 line 250 imports federal line 23500, including when federal childcare changes recovery.
   const provincialUnfloored = qc
-    ? netIncomeTotal(netIncomeParts(fed, p, x, 0, incomeParts.oasRecovery, ctx.netFederalSupplements))
+    ? netIncomeTotal(
+        netIncomeParts(fed, p, x, 0, incomeParts.oasRecovery, ctx.netFederalSupplements, ctx.provincialAssistance),
+      )
     : netIncomeTotal(incomeParts);
   const provincialNet = Math.max(0, provincialUnfloored);
-  const tiP = Math.max(0, provincialUnfloored - otherPaymentsDeduction - workerDed);
+  const tiP = Math.max(
+    0,
+    provincialUnfloored - (qc ? federalSupplementsDeduction : otherPaymentsDeduction) - workerDed,
+  );
   const senior = seniorBases(fed, p, x, net, s.useBpa);
   const seniorRule = p.seniorCredits;
   const craSenior = seniorRule && !("program" in seniorRule) ? seniorRule : undefined;
@@ -304,14 +318,14 @@ export function personTax(fed: Federal, p: Province, x: Person, sp: Extra, ctx: 
             netIncomeTotal: net,
             provincialNetIncome: Math.max(0, provincialUnfloored - workerDed),
             otherPaymentsDeduction,
-            supplementRecovery: supplements - otherPaymentsDeduction,
+            supplementRecovery: supplements - federalSupplementsDeduction,
           }
         : {}),
       ...(x.oas !== undefined || x.cppQpp !== undefined
         ? {
             publicPensions: {
               ...publicPensionReceipts(fed, x),
-              recoveryIncome: net + recovery,
+              recoveryIncome: net + recovery - (ctx.provincialAssistance ?? 0),
               recoveryTax: recovery,
               recoveryDeduction: recovery,
               withholding: null, // unknown; not inferred from this year's liability

@@ -215,6 +215,7 @@ export function healthPremium(p: Province, ti: number): number {
 /** The pieces of net income: each kind of income as it's counted (the taxable share of net capital gains,
  *  dividends grossed up), and the deductions taken off. */
 export interface NetIncomeParts {
+  provincialAssistance?: number;
   netFederalSupplements?: number; // line 14600, included in net income; line 25000 removes it from taxable
   oas?: number;
   cppQpp?: number;
@@ -246,6 +247,7 @@ export function netIncomeParts(
   childcareDeduction = 0,
   recoveryOverride?: number,
   netFederalSupplements?: number,
+  provincialAssistance?: number,
 ): NetIncomeParts {
   const inv = fed.investment;
   const { pay, selfEmployment: self } = payrollDetailsOf(fed, p, x);
@@ -271,6 +273,8 @@ export function netIncomeParts(
       recoveryOverride ?? oasRecoveryTax(fed, receipts.oas + (netFederalSupplements ?? 0), netIncomeTotal(parts));
     parts.ded += parts.oasRecovery;
   }
+  // Provincial assistance is excluded from OAS recovery and the historical GIS assessment above.
+  if (provincialAssistance !== undefined) parts.provincialAssistance = provincialAssistance;
   return parts;
 }
 
@@ -289,7 +293,8 @@ export function netIncomeTotal(n: NetIncomeParts): number {
     n.enh +
     (n.oas ?? 0) +
     (n.cppQpp ?? 0) +
-    (n.netFederalSupplements ?? 0)
+    (n.netFederalSupplements ?? 0) +
+    (n.provincialAssistance ?? 0)
   );
 }
 

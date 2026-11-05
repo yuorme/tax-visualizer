@@ -1,12 +1,14 @@
 # Provincial and territorial seniors' supplements, 2025–2026
 
-Inventory for **#21, phase 1 only**, checked **2026-11-05**. No production code, tax data, UI or golden
-expectations change. Coverage is the thirteen jurisdictions and calendar tax years **2025 and 2026**;
-this note does not establish historical coverage or claim that implementation is ready for every program.
+Verification for **#21, phases 1 and 2**, checked **2026-11-05**; Codex Sol `gpt-6.1-sol`, `xhigh`.
+The engine/data implementation covers **2025 and 2026 only**, with no new household inputs or page changes.
+The thirteen-jurisdiction inventory below preserves the original research. The final implementation,
+estimated conventions, omissions, independent calculations and golden reconciliation follow at the end.
 
-Phase 2 scope decisions, evidence closures and the pre-implementation golden gate are recorded in the
-[phase-2 status note](21-provincial-supplements/phase2-status.md). That note supersedes the phase-1 open
-scope questions; the jurisdiction inventory remains the evidence record for the initial research.
+The [phase-2 scope/evidence record](21-provincial-supplements/phase2-status.md) supersedes the inventory's
+original open scope questions. The user approved current income as the historical-income proxy and
+unavoidable, independently calculated changes to qualifying senior feature goldens; the case-count limit
+was subsequently removed. The evidence was committed before application changes, in `1ecf27a`.
 
 ## Evidence status and conventions
 
@@ -591,3 +593,184 @@ not whether the programs are material. No scope reduction or fabricated paramete
    benefits/cash conservation, unaffected payroll/pension-credit bases, switch/opt-in behavior, codec reload
    and unsupported-year tests. Expected values must come from published rows or written independent
    calculations of the **complete** tax/benefit interaction, not engine snapshots or the sizing study alone.
+
+## Phase 2 final implementation
+
+The engine now implements the supported retained paths for **2025 and 2026**, with current income standing
+in for historical assessment income and existing OAS/GIS/Allowance elections supplying receipt status.
+It adds no inputs. Ordinary residency, co-residence, continuing applications and independent living are
+assumed. Cash programs follow receipt eligibility even when refundable credits are disabled; the four
+refundable senior-credit paths follow `useCredits`. The page and its disclosures remain a stacked follow-up.
+
+| Jurisdiction | Rule id | Ordinary full-year scale |
+|---|---|---|
+| BC | `bc-senior-supplement` | $1,191.60 single; $2,646 two pensioners |
+| AB | `ab-seniors-benefit` | Single $3,868.08 / $3,946.08 after monthly upward cent rounding |
+| SK | `sk-seniors-income-plan` | $4,320 single; $7,800 two pensioners |
+| MB | `mb-55-plus` | $647.20 single; $1,391.20 two recipients |
+| MB | `mb-senior-personal-credit` | $308 single senior maximum before the 1% family-income reduction |
+| ON | `on-gains` | $1,062 / $1,092 single; two pensioners receive twice that |
+| QC | `qc-senior-assistance` | $2,000 per eligible age-70 adult, one household reduction |
+| NB | `nb-low-income-seniors-benefit` | $616 / $629 per eligible household |
+| NS | `ns-gis-tax-refund` | Positive-liability refund $50–$10,000 per GIS recipient |
+| NL | `nl-seniors-benefit` | $1,533.50 / $1,716.50 calendar maximum per household |
+| NT | `territorial-senior-supplement` | $2,352 per full-year recipient |
+| NU | `territorial-senior-supplement` | Estimated $3,600 per full-year recipient |
+| PE | No new automatic path | Assessed SII ceilings $575–$1,800 remain outside this PR |
+| YT | Explicitly unsupported | Inventoried YSIS maxima are material; modern taper remains unverified |
+
+All ages, rates, amounts, table rows, reporting exceptions and effective-period parameters live in the
+two years' province YAML. `seniorSupplements` is separate from the existing non-refundable `seniorCredits`.
+In particular, SK supplementary bases, MB428-A age/family terms, NS's $1,000 age credit, PE's $250 reduction,
+and Quebec's age/living-alone/retirement pool retain their existing calculation. No duplicate credit is added.
+MB479's ordinary adult/dependant/child foundation is included only in a household containing a 65+ adult.
+
+### Income reporting and cash conservation
+
+Provincial entitlement is calculated after federal GIS/Allowance, using the pre-provincial historical-income
+proxy. Neither provincial receipts nor their effect on current credits enters GIS eligibility. The federal
+excess-dividend-credit proxy explicitly disables provincial supplements as well.
+
+Cash recipients are recorded separately from tax reporters. Compare spouses' incomes excluding provincial
+social assistance and before childcare deductions and OAS repayments; the higher-income spouse reports all
+reportable payments, while a tie retains each recipient's amount. Federal line **14500** increases net income,
+and line **25000** removes it from taxable income. It does not become working income, pension-credit income
+or payroll income. OAS recovery excludes provincial assistance. Current T778 ordering and net-income-tested
+credits use the actual reportable receipts. No receipt is counted in both gross `cash` and `benefits`.
+
+The issuer's $500 information-return exception is **not** a general recipient-income exclusion under
+paragraph 56(1)(u). The implementation therefore reports every positive classified social-assistance amount
+for AB/SK/MB/ON/NB/NT/NU. BC alone has a verified program instruction saying annual payments of $500 or
+less need not be reported: test this per recipient/program before spouse attribution, retain all cash, and
+report the full series above $500. This corrects the broader generalisations in earlier appendices.
+[BC recipient bulletin](21-provincial-supplements/sources/bc-tax-slip.txt),
+[CRA issuer guide](21-provincial-supplements/sources/federal-tax-slips.txt),
+[federal recipient rules](21-provincial-supplements/sources/mbqc-phase2-federal-social-assistance.txt).
+
+QC Senior Assistance, MB479 and NL's related GST benefit generate no line 14500 amount. NS is treated as a
+statutory tax refund, with its reporting classification marked estimated. Quebec's federal-supplement
+deduction remains separate from provincial assistance: T5007 social assistance would not automatically be
+deductible at Quebec line 295. This scope creates no such Quebec provincial-assistance payment.
+
+NL's new senior amount shares the ordinary income supplement's statutory payment timing. The new credit
+entry includes the adjustment needed to reconcile the existing ordinary annual entry when the **combined**
+quarterly payment is below $10. It is not sufficient to test only the senior portion. Ordinary non-senior
+NL cases retain their existing baseline; a couple at $46,300 in 2026 has a $3.55 senior/timing adjustment
+to the existing $22 ordinary entry, producing $25.55 in calendar-year combined payments.
+
+### Explicit estimates and unsupported paths
+
+- **BC:** the $100 mixed-Allowance protection is derived from the published table's plateau and reduction
+  rows. Ordinary payment begins with the first positive federal month in this model; notification/processing
+  lags and retroactive cash are not inputs. These conventions are marked estimated.
+- **AB:** the calculator verifies the dated rates, separate recipient payments, per-adult $10 minimum,
+  negative-income floor and nonbinding published income guidelines. Four-decimal intermediate precision,
+  followed by upward cents, fits the near-zero oracle probes; this remains a labelled derivation. The
+  official historic ASB audit and general CRA rules support the reporting classification; a current
+  program-specific slip instruction remains unlocated. Generic deductions are not assumed to be RPP or
+  employment expenses; only the separately identified RRSP deduction and published employment exclusion
+  can be classified from the available inputs.
+- **MB 55 PLUS:** the original enacted schedules supply the missing both-pensioner tail. Pay zero outside
+  their listed positive domains and floor a negative non-pensioner offset at zero. Those interpretations,
+  the administered junior terminal band despite the conflicting eligibility subsection, and assumed
+  application in the first age-eligible quarter are labelled estimates. Junior instalments are one-quarter
+  of the annual table amount; a person turning 55 in June receives three eligible quarters under this
+  assumption, not a full annual amount. Sections 4(3)/5(3) prescribe quarterly instalments and application-
+  quarter commencement in the [current regulation](21-provincial-supplements/sources/mbqc-mb-junior-regulation.txt).
+  Income-tested assistance classification follows CRA and the policy
+  manual; current Manitoba slip practice was not independently confirmed. Junior families containing an
+  OAS/GIS/Allowance recipient remain unsupported because the frozen April 2011 pension-income adjustment
+  is not verified. The supported senior payment can still apply in that household. Junior payments during
+  the year of transition into OAS eligibility are also unsupported; the senior component begins separately.
+- **MB479 2026:** statutory dollar parameters are confirmed; filing order provisionally continues 2025
+  pending the final 2026 form. The spouse's $113 age term does not require an unused-age transfer.
+- **NB:** prior-year age and receipt timing are preserved, with current federal rates/income as the proxy
+  for prior receipt. This is estimated near historical federal cutoffs. Its T5007 classification is inferred
+  from Statistics Canada's named methodological treatment and general CRA rules, rather than a verified
+  NB slip promise. The household receives one annual payment, including mixed GIS/Allowance couples.
+- **NS:** the refund is calculated after all existing provincial credits, including the age credit.
+  Treating the statutory overpayment as a non-income tax refund remains an explicit classification
+  inference. The ordinary cap is automatic; discretionary refunds above $10,000 are excluded.
+- **NL:** the two calendar-half schedules and base-year ages are enacted. Annual formula totals are rounded
+  to cents after the calendar-year/timing calculation; the administrator's cent-rounding sequence is
+  unverified, so the entry is estimated. At $35,000, the raw senior calendar totals are $920.184 in 2025 and
+  $1,161.8921 in 2026, modelled as $920.18/$1,161.89. Per-installment rounding can differ by a cent.
+- **NU:** $300 continues the dated administrative report rate into both years. The authorizing amendment
+  remains unlocated; the data explicitly says estimated rather than treating the stale $200 regulation as
+  a verified current rate.
+- **YT:** leave YSIS out rather than fabricate an unknown modern taper or dated October rates. The inventory
+  records its material size. Pioneer Utility Grant and assessed-service programs remain in #216; coastal
+  Labrador, survivors, care and separate-residence cases remain outside the approved scope.
+
+The supporting closures and exact original-source hashes are in the
+[evidence index](21-provincial-supplements/SOURCES.md) and linked regional phase-2 notes. No source was
+added to the shared year-source index. There are no additional scope questions requiring user permission;
+the evidence gaps above remain visible limitations for review and the page follow-up.
+
+### Independent calculations and existing golden changes
+
+[calculate.mjs](21-provincial-supplements/calculate.mjs) imports no engine code. It starts from immutable
+pre-feature expectations at `1ecf27a`, transcribed published maxima and actual cached table rows, then
+calculates each permitted new expectation. Its writer edits only the changed numeric tokens in named
+cases. There is no bulk engine capture, tolerance change, input change, deleted assertion or unrelated
+baseline rewrite. The obsolete separate gate note was removed; its useful reasoning is incorporated here.
+
+**74 qualifying senior cases / 202 numeric expectations change**, in `gis-allowance.json` and
+`senior-audit.json`. All belong to 2025/2026 and receive a retained supplement. Counts below include the
+two Ontario before-childcare cases in the latter fixture. Every annual `tests/golden/<year>.json` remains
+unchanged. GIS eligibility/amounts, its income proxy, and unrelated values remain unchanged.
+
+| Province | 2025 cases / values | 2026 cases / values | Reason |
+|---|---:|---:|---|
+| BC | 3 / 9 | 3 / 9 | New cash, remaining cash, net income |
+| AB | 3 / 9 | 3 / 9 | New recipient payments and reporting |
+| SK | 3 / 9 | 3 / 9 | SIP cash and reporting |
+| MB | 4 / 12 | 4 / 12 | 55 PLUS; one high-net-income BPA interaction |
+| ON | 15 / 34 | 15 / 36 | GAINS; reporting, BPA, CCB, CWB and CARE |
+| NB | 3 / 9 | 3 / 9 | One annual household payment and reporting |
+| NT | 3 / 9 | 3 / 9 | Flat payments and reporting |
+| NU | 3 / 9 | 3 / 9 | Estimated flat payments and reporting |
+
+Representative complete recalculations:
+
+- `2025-BC-single`: twelve $99.30 payments give $1,191.60 cash and reportable income. Total burden moves
+  from −$13,082.82 to **−$14,274.42**; remaining cash from $21,873.96 to **$23,065.56**; federal net income
+  from $21,921.96 to **$23,113.56**. GIS stays $13,130.82, OAS cash $8,791.14, taxable income $8,791.14.
+- Ontario's 2025 current-net-income CWB case gains $1,062 GAINS but loses `.15 × 1062 = $159.30` CWB:
+  $1,754.8835 becomes **$1,595.5835**. This is a reporting interaction, not a GIS reduction.
+- Manitoba's 2025 high-income case gains $647.20 55 PLUS. Own net income becomes $203,298.966 from
+  $202,651.766; the published BPA taper gives
+  `15780 × (1 − (203298.966 − 200000) / 200000) = 15519.7115826`, or **$15,519.7116** at golden precision.
+  Its 10.8% full credit is **$1,676.1289**. The supplement is deducted before taxable income.
+- Ontario's 2026 CARE case gains $1,092 GAINS. Family net income moves $45,998.44 → **$47,090.44**;
+  first-band CCB falls `.07 × 1092 = $76.44` to **$7,537.2592**. CARE's income with childcare added back
+  moves $53,998.44 → **$55,090.44**, crossing a published rate step from 53% to 51%; the $8,000 claim's
+  credit becomes **$4,080** from $4,240. These fields combine the cash/reporting change with existing rules.
+
+The calculator's new fixture supplies **213 separate household cases and 288 published monthly Ontario
+rows**, covering all thirteen jurisdictions in both years. Each selected Ontario row tests its lower and
+upper boundary. Cash minimums/zeroes, all marital categories, Alberta half-year rates and oracle cutoffs,
+MB restored tails/junior conflicts, age/reference-year boundaries, refundable pools, NL combined-payment
+timing, and tax-reporter/cash-recipient distinctions have separate coverage. Additional targeted tests cover
+BC's exact $500/$500.01 reporting boundary, NS's liability minimum/cap, and tiny positive territorial federal
+entitlements. Each household case compares federal GIS against the same case without provincial rules.
+
+The bounded [mutation pass](21-provincial-supplements/mutate.mjs) killed **22/22** plausible rule mutations
+in **23.9 seconds**, within a 120-second budget. It covers each new program family, reporting and the
+line-25000 deduction. It restores the production files after each attempt, rejects invalid mutation runs,
+and does not edit expectations. Final validation uses `npm ci` and `npm run check`; the PR records results.
+
+### Final rule paths and follow-up plan
+
+`src/engine/senior-supplements.ts` owns the program ids listed above, cash eligibility, recipient payments,
+reporting attribution and refundable equivalents. `household.ts` orders entitlement before current reporting
+and tax/refund calculations; `payroll.ts`, `personal.ts` and `types.ts` carry the separate line-14500 amount.
+`src/data/schema.ts` defines the optional rule collection; only the 2025/2026 province data activates it.
+`tests/senior-supplements.test.ts` and its separate feature fixture provide the new independent cases.
+The existing GIS invariant now includes the difference in provincial reportable receipts; its taxable-income,
+cash-conservation and working-income assertions remain intact.
+
+After engine review, the stacked page branch must expose the new ledger/reporting breakdown and disclose
+the proxy, estimates and unsupported paths in the existing senior UI/tooltips. It owns `src/ui/**`, relevant
+codec/e2e files and `docs/SCOPE.md`; this PR changes none of them. Resolve the listed source gaps before
+adding unsupported paths. Historical back-fill belongs in a separate History issue at merge.

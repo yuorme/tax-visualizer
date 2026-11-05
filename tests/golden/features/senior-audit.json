@@ -1175,7 +1175,7 @@
         "useCredits": true
       },
       "expected": {
-        "breakdown.incomeBases.beforeChildcare.1": 200000
+        "breakdown.incomeBases.beforeChildcare.1": 201062
       }
     },
     {
@@ -2339,7 +2339,7 @@
         "useCredits": true
       },
       "expected": {
-        "breakdown.incomeBases.beforeChildcare.1": 200000
+        "breakdown.incomeBases.beforeChildcare.1": 201092
       }
     },
     {

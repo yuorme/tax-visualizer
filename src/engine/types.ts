@@ -93,6 +93,7 @@ export interface Driving {
 export type Credit = [name: string, amount: number];
 
 export interface Ctx {
+  provincialAssistance?: number; // T5007 line 14500, reported by the appropriate spouse; cash stays separate
   netFederalSupplements?: number; // calculated GIS + Allowance, included in net income, deducted from taxable
   senior?: {
     federalTransfer: number;
