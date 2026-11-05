@@ -7,10 +7,12 @@ import test from "node:test";
 import { loadYear } from "../../src/data/load.ts";
 import type { FuelRate } from "../../src/data/schema.ts";
 import { blank, compute, type Household } from "../../src/engine/index.ts";
+import { assertOasPublishedFigures } from "../oas-reference.ts";
 import { assertSeniorPublishedParameters } from "../senior-credit-reference.ts";
 
 const year = Number(path.basename(import.meta.filename, ".test.ts"));
 const y = loadYear(year);
+test("2026 published quarterly OAS figures and calendar-year receipts", () => assertOasPublishedFigures(y));
 test("2026 published TD1 and Quebec age/pension parameters; provisional filing formulas", () =>
   assertSeniorPublishedParameters(y));
 

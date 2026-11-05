@@ -9,7 +9,7 @@ import { childcareCreditOf } from "./childcare-credits.ts";
 import { creditsOf } from "./credits.ts";
 import { fuelTaxOf } from "./fuel.ts";
 import { householdPremiumOf } from "./health-premiums.ts";
-import { netIncomeParts, netOf, workerDeductionOf } from "./payroll.ts";
+import { netIncomeParts, netIncomeTotal, netOf, workerDeductionOf } from "./payroll.ts";
 import { type PersonResult, personTax } from "./personal.ts";
 import { hasSeniorInputs, quebecSeniorPool, seniorTransfer } from "./senior-credits.ts";
 import {
@@ -122,7 +122,8 @@ export function household(y: YearData, p: Province, hh: Household, peopleIn: Per
   const { kids, under6 } = childcare.childCounts ?? hh;
   const nets = ppl.map((x, i) => netOf(fed, p, x, childcare.claims[i]));
   // Legacy bases for claim elections and non-refundable credits, before Quebec's worker deduction.
-  const provincialNets = qc ? ppl.map(x => netOf(fed, p, x)) : nets;
+  const recoveries = ppl.map((x, i) => netIncomeParts(fed, p, x, childcare.claims[i]).oasRecovery);
+  const provincialNets = qc ? ppl.map((x, i) => netOf(fed, p, x, 0, recoveries[i])) : nets;
   const couple = ppl.length === 2 && spouse;
   const famNet = couple ? nets[0] + nets[1] : nets[0];
   const provincialFamNet = couple ? provincialNets[0] + provincialNets[1] : provincialNets[0];
@@ -338,21 +339,7 @@ export function household(y: YearData, p: Province, hh: Household, peopleIn: Per
   totals.total += householdPremium?.total ?? 0;
   const ccb = ccbOf(fed, famNet, kids, under6);
   const incomeBases = {
-    beforeChildcare: ppl.map(x => {
-      const n = netIncomeParts(fed, p, x);
-      return (
-        n.ord +
-        (n.selfEmployment ?? 0) +
-        (n.oth ?? 0) +
-        (n.retirementIncome ?? 0) +
-        n.cg +
-        n.ed +
-        n.nd +
-        n.fd -
-        n.ded -
-        n.enh
-      );
-    }),
+    beforeChildcare: ppl.map((x, i) => netIncomeTotal(netIncomeParts(fed, p, x, 0, recoveries[i]))),
     federal: nets,
     provincial: list.map(r => r.tiP),
     provincialFamily: couple ? list[0].tiP + list[1].tiP : list[0].tiP,

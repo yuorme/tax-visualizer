@@ -1,0 +1,108 @@
+Title: Old Age Security
+URL: https://www.canada.ca/en/services/benefits/publicpensions/old-age-security/when-start.html
+Fetched: 2026-11-04
+SHA-256 of the original: dfa8c1d00aaa8f0f200bb077825b85660b80953ad8b916825d9be96d61734243
+Publication date modified: 2026-10-02
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+# When to start your retirement pension
+
+You can start at age 65 or as late as age 70.
+
+- Starting later means larger monthly payments
+
+There is no benefit to wait to receive your Old Age Security (OAS) if you are:
+
+- Eligible for the Guaranteed Income Supplement
+- Over the age of 70 (the maximum monthly amount is reached when you turn 70)
+
+If this is your situation, you should apply now.
+
+If you are eligible for the Canada Pension Plan (CPP), you can start your CPP as early as age 60. However, the earliest you can start your OAS pension is age 65.
+
+## How age affects your pension
+
+If you wait until after age 65 to start your OAS pension, payments increase by 0.6% each month (7.2% per year), up to 36% at age 70.
+
+### Calculation example: How delaying Old Age Security could affect monthly payment amounts
+
+Age | Percentage increase | Maximum monthly payment amount (October to December 2026)
+65 | n/a | $762.50
+66 | 12 months X 0.6% = 7.2% | $ 817.40
+67 | 24 months X 0.6% = 14.4% | $ 872.30
+68 | 36 months X 0.6% = 21.6% | $ 927.20
+69 | 48 months X 0.6% = 28.8% | $ 982.10
+70 | 60 months X 0.6% = 36% | $ 1,037.00
+
+### Consider your personal circumstances
+
+It's your choice when to start your Old Age Security (OAS) pension. Think about your health, financial situation, and retirement plans to decide what works best for you.
+
+### What to consider when choosing to start your OAS at age 65
+
+When choosing to start your OAS pension at age 65, consider your health and whether:
+
+- you need the money now to fund your retirement plans
+- you are still working (you may have to pay back part of your Old Age Security pension if you earn more than $93,454 in 2025)
+- you're eligible for the Guaranteed Income Supplement
+- your spouse or common-law partner wants to apply for the Allowance
+- you are living outside Canada, with fewer than 20 years of residence and in a country with no social security agreement with Canada (Delaying your pension will not result in higher payments)
+
+Starting your OAS at age 65 can help meet immediate needs, especially if you have little or no other income.
+
+### What to consider when choosing to delay the start of your OAS
+
+When choosing to delay the start your OAS consider whether:
+
+- you're healthy and expect to live long
+- you have other sources of income
+- you have fewer than 40 years of residence in Canada
+
+Choosing to start receiving your OAS later will result in a larger monthly pension.
+
+### What to consider if you have lived in Canada for less than 40 years (after age 18)
+
+You may not get the full Old Age Security pension if you've lived in Canada for fewer than 40 years after turning 18. The partial pension you could receive is based on how many years you've lived in Canada, divided by 40.
+
+To qualify for the partial OAS pension, you need to have lived in Canada for:
+
+- At least 10 years if you currently live in Canada
+- At least 20 years if you currently live outside of Canada
+
+Calculation example: If you lived in Canada for 20 years
+
+If you lived in Canada for 20 years after age 18, you would receive a payment equal to 20 divided by 40, or 50% of the full Old Age Security pension.
+
+If it makes sense for your situation, you can delay starting your OAS pension to get a higher payment amount. Once you start receiving your OAS pension, any additional time you live in Canada will not increase your payment amount.
+
+### What to know if you're in jail
+
+If you decide to delay receiving your OAS pension, you will not receive monthly increases during any month where you are:
+
+- In federal prison for a sentence of 2 years or more (except for the first month of incarceration)
+
+### Other benefits will be delayed if you delay your OAS pension
+
+If you don't receive the OAS pension:
+
+- You cannot get the Guaranteed Income Supplement
+- Your spouse/common-law partner cannot apply for the Allowance
+
+Guaranteed Income Supplement and Allowance amounts do not increase when you delay your OAS pension.
+
+## Request a retroactive start date
+
+If you are already over 65, we may be able to give you a retroactive payment for up to a maximum of 11 months from the date we receive your application.
+
+If you delayed receiving your Old Age Security pension you will not be able to receive retroactive payment during the deferral period.
+
+### Example of delaying with an earlier start date than the date of application
+
+John could receive his OAS pension in August and he decided to delay receiving it. In December of the next year, John applied for OAS. He writes on his application that he would like his benefit to be effective as of October, in other words, 3 months earlier than his application date.
+
+His monthly benefit amount will then increase by 8.4% (0.6% x 14 months) to account for the 14-month deferral period. The monthly increase does not apply to the period from October to December of the year he applied.
+
+## Contact us
+
+Need help? Contact us.

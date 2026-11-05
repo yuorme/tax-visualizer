@@ -3,6 +3,24 @@
 # which is based on 2025 income; the calculator applies them to current-year income.
 year: 2026
 
+# Full resident OAS, no deferral. Monthly receipts (65–74, 75+) in chronological quarters,
+# not an annualized December run rate. Receipt/increase starts the month after the birthday.
+publicPensions:
+  program: oas-current-year-recovery
+  # Published 2026 amounts/threshold; filing mechanics continue the 2025 worksheet pending 2026 forms.
+  estimated: true
+  params:
+    minimumAge: 65
+    increasedAge: 75
+    effectiveMonthOffset: 1
+    quarterlyMonthly:
+      - [742.31, 816.54]
+      - [743.05, 817.36]
+      - [751.97, 827.17]
+      - [762.50, 838.75]
+    recoveryThreshold: 95323
+    recoveryRate: 0.15
+
 # [upper limit of bracket, rate]; .inf = no upper limit
 brackets:
   - [58523, 0.14]
@@ -158,6 +176,22 @@ driving:
   estimated: true
 
 sources:
+  - label: "ESDC OAS 2026 quarter 1, Table 5 and recovery footnote"
+    url: "https://www.canada.ca/en/employment-social-development/programs/pensions/pension/statistics/2026-quarterly-january-march.html"
+  - label: "ESDC OAS 2026 quarter 2, Table 5 and recovery footnote"
+    url: "https://www.canada.ca/en/employment-social-development/programs/pensions/pension/statistics/2026-quarterly-april-june.html"
+  - label: "ESDC OAS 2026 quarter 3, Table 5 and recovery footnote"
+    url: "https://www.canada.ca/en/employment-social-development/programs/pensions/pension/statistics/2026-quarterly-july-september.html"
+  - label: "ESDC OAS 2026 quarter 4, Table 5 and recovery footnote"
+    url: "https://www.canada.ca/en/employment-social-development/programs/pensions/pension/statistics/2026-quarterly-october-december.html"
+  - label: "Service Canada OAS receipt and age-75 timing"
+    url: "https://www.canada.ca/en/services/benefits/publicpensions/old-age-security/benefit-amount.html"
+  - label: "Service Canada first OAS payment"
+    url: "https://www.canada.ca/en/services/benefits/publicpensions/old-age-security/while-receiving.html"
+  - label: "CRA 2025 worksheet line 23500, current-year recovery deduction, cap and liability"
+    url: "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5000-d1/5000-d1-25e.pdf"
+  - label: "CRA CPP/QPP benefits line 11400"
+    url: "https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/tax-return/completing-a-tax-return/personal-income/line-11400-cpp-qpp-benefits.html"
   - {"label": "CRA pension income eligibility chart, federal and provincial caps", "url": "https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/tax-return/completing-a-tax-return/deductions-credits-expenses/line-31400-pension-income-amount.html"}
   - {"label": "Income Tax and Benefit Return", "url": "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5010-r/5010-r-25e.pdf"}
   - {"label": "Federal Amounts Transferred from your Spouse or Common-Law Partner", "url": "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5000-s2/5000-s2-25e.pdf"}

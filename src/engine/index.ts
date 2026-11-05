@@ -18,6 +18,7 @@ export {
   rrspRoom,
 } from "./payroll.ts";
 export { type PersonResult, personTax, provincialBpa } from "./personal.ts";
+export { oasRecoveryTax, publicPensionReceipts, UnsupportedPublicPensionsError } from "./public-pensions.ts";
 export { UnsupportedSelfEmploymentError } from "./self-employment.ts";
 export { UnsupportedSeniorCreditsError } from "./senior-credits.ts";
 export * from "./types.ts";

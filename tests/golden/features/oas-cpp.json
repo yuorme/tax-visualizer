@@ -1,0 +1,3844 @@
+{
+  "description": "Independent published quarterly receipts and T1/TP-1 arithmetic; no engine snapshots. See docs/verification/18-oas-cpp.md.",
+  "defaults": {
+    "active": 0,
+    "spouse": true,
+    "adults": 1,
+    "kids": 0,
+    "under6": 0,
+    "useBpa": true,
+    "whRate": 0,
+    "useCredits": false,
+    "homeValue": 0,
+    "rent": 0,
+    "monthlySpending": 0
+  },
+  "cases": [
+    {
+      "id": "2025-BC-taxable-income-age-taper",
+      "year": 2025,
+      "province": "BC",
+      "household": {
+        "people": [
+          {
+            "age": 74,
+            "birthMonth": 6,
+            "oas": true,
+            "cppQpp": 12000,
+            "oth": 40000
+          }
+        ]
+      },
+      "expected": {
+        "cash": 60791.14,
+        "famNet": 60791.14,
+        "list.0.ti": 60791.14,
+        "list.0.tiP": 60791.14,
+        "list.0.breakdown.publicPensions.oas": 8791.14,
+        "list.0.breakdown.publicPensions.cppQpp": 12000,
+        "list.0.breakdown.publicPensions.recoveryTax": 0,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 0,
+        "list.0.breakdown.netIncome.ded": 0,
+        "list.0.breakdown.seniorCredits.federalAge": 6737.629,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "fed": 5704.0225,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2025-AB-taxable-income-age-taper",
+      "year": 2025,
+      "province": "AB",
+      "household": {
+        "people": [
+          {
+            "age": 74,
+            "birthMonth": 6,
+            "oas": true,
+            "cppQpp": 12000,
+            "oth": 40000
+          }
+        ]
+      },
+      "expected": {
+        "cash": 60791.14,
+        "famNet": 60791.14,
+        "list.0.ti": 60791.14,
+        "list.0.tiP": 60791.14,
+        "list.0.breakdown.publicPensions.oas": 8791.14,
+        "list.0.breakdown.publicPensions.cppQpp": 12000,
+        "list.0.breakdown.publicPensions.recoveryTax": 0,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 0,
+        "list.0.breakdown.netIncome.ded": 0,
+        "list.0.breakdown.seniorCredits.federalAge": 6737.629,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "fed": 5704.0225,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2025-SK-taxable-income-age-taper",
+      "year": 2025,
+      "province": "SK",
+      "household": {
+        "people": [
+          {
+            "age": 74,
+            "birthMonth": 6,
+            "oas": true,
+            "cppQpp": 12000,
+            "oth": 40000
+          }
+        ]
+      },
+      "expected": {
+        "cash": 60791.14,
+        "famNet": 60791.14,
+        "list.0.ti": 60791.14,
+        "list.0.tiP": 60791.14,
+        "list.0.breakdown.publicPensions.oas": 8791.14,
+        "list.0.breakdown.publicPensions.cppQpp": 12000,
+        "list.0.breakdown.publicPensions.recoveryTax": 0,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 0,
+        "list.0.breakdown.netIncome.ded": 0,
+        "list.0.breakdown.seniorCredits.federalAge": 6737.629,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "fed": 5704.0225,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2025-MB-taxable-income-age-taper",
+      "year": 2025,
+      "province": "MB",
+      "household": {
+        "people": [
+          {
+            "age": 74,
+            "birthMonth": 6,
+            "oas": true,
+            "cppQpp": 12000,
+            "oth": 40000
+          }
+        ]
+      },
+      "expected": {
+        "cash": 60791.14,
+        "famNet": 60791.14,
+        "list.0.ti": 60791.14,
+        "list.0.tiP": 60791.14,
+        "list.0.breakdown.publicPensions.oas": 8791.14,
+        "list.0.breakdown.publicPensions.cppQpp": 12000,
+        "list.0.breakdown.publicPensions.recoveryTax": 0,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 0,
+        "list.0.breakdown.netIncome.ded": 0,
+        "list.0.breakdown.seniorCredits.federalAge": 6737.629,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "fed": 5704.0225,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2025-ON-taxable-income-age-taper",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 74,
+            "birthMonth": 6,
+            "oas": true,
+            "cppQpp": 12000,
+            "oth": 40000
+          }
+        ]
+      },
+      "expected": {
+        "cash": 60791.14,
+        "famNet": 60791.14,
+        "list.0.ti": 60791.14,
+        "list.0.tiP": 60791.14,
+        "list.0.breakdown.publicPensions.oas": 8791.14,
+        "list.0.breakdown.publicPensions.cppQpp": 12000,
+        "list.0.breakdown.publicPensions.recoveryTax": 0,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 0,
+        "list.0.breakdown.netIncome.ded": 0,
+        "list.0.breakdown.seniorCredits.federalAge": 6737.629,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "fed": 5704.0225,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2025-QC-taxable-income-age-taper",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "age": 74,
+            "birthMonth": 6,
+            "oas": true,
+            "cppQpp": 12000,
+            "oth": 40000
+          }
+        ]
+      },
+      "expected": {
+        "cash": 60791.14,
+        "famNet": 60791.14,
+        "list.0.ti": 60791.14,
+        "list.0.tiP": 60791.14,
+        "list.0.breakdown.publicPensions.oas": 8791.14,
+        "list.0.breakdown.publicPensions.cppQpp": 12000,
+        "list.0.breakdown.publicPensions.recoveryTax": 0,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 0,
+        "list.0.breakdown.netIncome.ded": 0,
+        "list.0.breakdown.seniorCredits.federalAge": 6737.629,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 52000,
+        "list.0.breakdown.healthServicesFund.contribution": 150,
+        "fed": 4762.8588,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2025-NB-taxable-income-age-taper",
+      "year": 2025,
+      "province": "NB",
+      "household": {
+        "people": [
+          {
+            "age": 74,
+            "birthMonth": 6,
+            "oas": true,
+            "cppQpp": 12000,
+            "oth": 40000
+          }
+        ]
+      },
+      "expected": {
+        "cash": 60791.14,
+        "famNet": 60791.14,
+        "list.0.ti": 60791.14,
+        "list.0.tiP": 60791.14,
+        "list.0.breakdown.publicPensions.oas": 8791.14,
+        "list.0.breakdown.publicPensions.cppQpp": 12000,
+        "list.0.breakdown.publicPensions.recoveryTax": 0,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 0,
+        "list.0.breakdown.netIncome.ded": 0,
+        "list.0.breakdown.seniorCredits.federalAge": 6737.629,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "fed": 5704.0225,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2025-NS-taxable-income-age-taper",
+      "year": 2025,
+      "province": "NS",
+      "household": {
+        "people": [
+          {
+            "age": 74,
+            "birthMonth": 6,
+            "oas": true,
+            "cppQpp": 12000,
+            "oth": 40000
+          }
+        ]
+      },
+      "expected": {
+        "cash": 60791.14,
+        "famNet": 60791.14,
+        "list.0.ti": 60791.14,
+        "list.0.tiP": 60791.14,
+        "list.0.breakdown.publicPensions.oas": 8791.14,
+        "list.0.breakdown.publicPensions.cppQpp": 12000,
+        "list.0.breakdown.publicPensions.recoveryTax": 0,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 0,
+        "list.0.breakdown.netIncome.ded": 0,
+        "list.0.breakdown.seniorCredits.federalAge": 6737.629,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "fed": 5704.0225,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2025-PE-taxable-income-age-taper",
+      "year": 2025,
+      "province": "PE",
+      "household": {
+        "people": [
+          {
+            "age": 74,
+            "birthMonth": 6,
+            "oas": true,
+            "cppQpp": 12000,
+            "oth": 40000
+          }
+        ]
+      },
+      "expected": {
+        "cash": 60791.14,
+        "famNet": 60791.14,
+        "list.0.ti": 60791.14,
+        "list.0.tiP": 60791.14,
+        "list.0.breakdown.publicPensions.oas": 8791.14,
+        "list.0.breakdown.publicPensions.cppQpp": 12000,
+        "list.0.breakdown.publicPensions.recoveryTax": 0,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 0,
+        "list.0.breakdown.netIncome.ded": 0,
+        "list.0.breakdown.seniorCredits.federalAge": 6737.629,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "fed": 5704.0225,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2025-NL-taxable-income-age-taper",
+      "year": 2025,
+      "province": "NL",
+      "household": {
+        "people": [
+          {
+            "age": 74,
+            "birthMonth": 6,
+            "oas": true,
+            "cppQpp": 12000,
+            "oth": 40000
+          }
+        ]
+      },
+      "expected": {
+        "cash": 60791.14,
+        "famNet": 60791.14,
+        "list.0.ti": 60791.14,
+        "list.0.tiP": 60791.14,
+        "list.0.breakdown.publicPensions.oas": 8791.14,
+        "list.0.breakdown.publicPensions.cppQpp": 12000,
+        "list.0.breakdown.publicPensions.recoveryTax": 0,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 0,
+        "list.0.breakdown.netIncome.ded": 0,
+        "list.0.breakdown.seniorCredits.federalAge": 6737.629,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "fed": 5704.0225,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2025-YT-taxable-income-age-taper",
+      "year": 2025,
+      "province": "YT",
+      "household": {
+        "people": [
+          {
+            "age": 74,
+            "birthMonth": 6,
+            "oas": true,
+            "cppQpp": 12000,
+            "oth": 40000
+          }
+        ]
+      },
+      "expected": {
+        "cash": 60791.14,
+        "famNet": 60791.14,
+        "list.0.ti": 60791.14,
+        "list.0.tiP": 60791.14,
+        "list.0.breakdown.publicPensions.oas": 8791.14,
+        "list.0.breakdown.publicPensions.cppQpp": 12000,
+        "list.0.breakdown.publicPensions.recoveryTax": 0,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 0,
+        "list.0.breakdown.netIncome.ded": 0,
+        "list.0.breakdown.seniorCredits.federalAge": 6737.629,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "fed": 5704.0225,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2025-NT-taxable-income-age-taper",
+      "year": 2025,
+      "province": "NT",
+      "household": {
+        "people": [
+          {
+            "age": 74,
+            "birthMonth": 6,
+            "oas": true,
+            "cppQpp": 12000,
+            "oth": 40000
+          }
+        ]
+      },
+      "expected": {
+        "cash": 60791.14,
+        "famNet": 60791.14,
+        "list.0.ti": 60791.14,
+        "list.0.tiP": 60791.14,
+        "list.0.breakdown.publicPensions.oas": 8791.14,
+        "list.0.breakdown.publicPensions.cppQpp": 12000,
+        "list.0.breakdown.publicPensions.recoveryTax": 0,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 0,
+        "list.0.breakdown.netIncome.ded": 0,
+        "list.0.breakdown.seniorCredits.federalAge": 6737.629,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "fed": 5704.0225,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2025-NU-taxable-income-age-taper",
+      "year": 2025,
+      "province": "NU",
+      "household": {
+        "people": [
+          {
+            "age": 74,
+            "birthMonth": 6,
+            "oas": true,
+            "cppQpp": 12000,
+            "oth": 40000
+          }
+        ]
+      },
+      "expected": {
+        "cash": 60791.14,
+        "famNet": 60791.14,
+        "list.0.ti": 60791.14,
+        "list.0.tiP": 60791.14,
+        "list.0.breakdown.publicPensions.oas": 8791.14,
+        "list.0.breakdown.publicPensions.cppQpp": 12000,
+        "list.0.breakdown.publicPensions.recoveryTax": 0,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 0,
+        "list.0.breakdown.netIncome.ded": 0,
+        "list.0.breakdown.seniorCredits.federalAge": 6737.629,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "fed": 5704.0225,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2025-ON-age-64-birth-6",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 64,
+            "birthMonth": 6,
+            "oas": true,
+            "cppQpp": 12000
+          }
+        ]
+      },
+      "expected": {
+        "cash": 12000,
+        "famNet": 12000,
+        "list.0.ti": 12000,
+        "list.0.tiP": 12000,
+        "list.0.breakdown.publicPensions.oas": 0,
+        "list.0.breakdown.publicPensions.cppQpp": 12000,
+        "list.0.breakdown.publicPensions.recoveryTax": 0,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 0,
+        "list.0.breakdown.netIncome.ded": 0,
+        "list.0.breakdown.seniorCredits.federalAge": 0,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "fed": 0,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2025-ON-age-65-birth-1",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 65,
+            "birthMonth": 1,
+            "oas": true,
+            "cppQpp": 12000
+          }
+        ]
+      },
+      "expected": {
+        "cash": 20063.47,
+        "famNet": 20063.47,
+        "list.0.ti": 20063.47,
+        "list.0.tiP": 20063.47,
+        "list.0.breakdown.publicPensions.oas": 8063.47,
+        "list.0.breakdown.publicPensions.cppQpp": 12000,
+        "list.0.breakdown.publicPensions.recoveryTax": 0,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 0,
+        "list.0.breakdown.netIncome.ded": 0,
+        "list.0.breakdown.seniorCredits.federalAge": 9028,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "fed": 0,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2025-ON-age-65-birth-6",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 65,
+            "birthMonth": 6,
+            "oas": true,
+            "cppQpp": 12000
+          }
+        ]
+      },
+      "expected": {
+        "cash": 16425.12,
+        "famNet": 16425.12,
+        "list.0.ti": 16425.12,
+        "list.0.tiP": 16425.12,
+        "list.0.breakdown.publicPensions.oas": 4425.12,
+        "list.0.breakdown.publicPensions.cppQpp": 12000,
+        "list.0.breakdown.publicPensions.recoveryTax": 0,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 0,
+        "list.0.breakdown.netIncome.ded": 0,
+        "list.0.breakdown.seniorCredits.federalAge": 9028,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "fed": 0,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2025-ON-age-65-birth-12",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 65,
+            "birthMonth": 12,
+            "oas": true,
+            "cppQpp": 12000
+          }
+        ]
+      },
+      "expected": {
+        "cash": 12000,
+        "famNet": 12000,
+        "list.0.ti": 12000,
+        "list.0.tiP": 12000,
+        "list.0.breakdown.publicPensions.oas": 0,
+        "list.0.breakdown.publicPensions.cppQpp": 12000,
+        "list.0.breakdown.publicPensions.recoveryTax": 0,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 0,
+        "list.0.breakdown.netIncome.ded": 0,
+        "list.0.breakdown.seniorCredits.federalAge": 9028,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "fed": 0,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2025-ON-age-74-birth-6",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 74,
+            "birthMonth": 6,
+            "oas": true,
+            "cppQpp": 12000
+          }
+        ]
+      },
+      "expected": {
+        "cash": 20791.14,
+        "famNet": 20791.14,
+        "list.0.ti": 20791.14,
+        "list.0.tiP": 20791.14,
+        "list.0.breakdown.publicPensions.oas": 8791.14,
+        "list.0.breakdown.publicPensions.cppQpp": 12000,
+        "list.0.breakdown.publicPensions.recoveryTax": 0,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 0,
+        "list.0.breakdown.netIncome.ded": 0,
+        "list.0.breakdown.seniorCredits.federalAge": 9028,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "fed": 0,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2025-ON-age-75-birth-1",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 75,
+            "birthMonth": 1,
+            "oas": true,
+            "cppQpp": 12000
+          }
+        ]
+      },
+      "expected": {
+        "cash": 21597.52,
+        "famNet": 21597.52,
+        "list.0.ti": 21597.52,
+        "list.0.tiP": 21597.52,
+        "list.0.breakdown.publicPensions.oas": 9597.52,
+        "list.0.breakdown.publicPensions.cppQpp": 12000,
+        "list.0.breakdown.publicPensions.recoveryTax": 0,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 0,
+        "list.0.breakdown.netIncome.ded": 0,
+        "list.0.breakdown.seniorCredits.federalAge": 9028,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "fed": 0,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2025-ON-age-75-birth-6",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 75,
+            "birthMonth": 6,
+            "oas": true,
+            "cppQpp": 12000
+          }
+        ]
+      },
+      "expected": {
+        "cash": 21233.67,
+        "famNet": 21233.67,
+        "list.0.ti": 21233.67,
+        "list.0.tiP": 21233.67,
+        "list.0.breakdown.publicPensions.oas": 9233.67,
+        "list.0.breakdown.publicPensions.cppQpp": 12000,
+        "list.0.breakdown.publicPensions.recoveryTax": 0,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 0,
+        "list.0.breakdown.netIncome.ded": 0,
+        "list.0.breakdown.seniorCredits.federalAge": 9028,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "fed": 0,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2025-ON-age-75-birth-12",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 75,
+            "birthMonth": 12,
+            "oas": true,
+            "cppQpp": 12000
+          }
+        ]
+      },
+      "expected": {
+        "cash": 20791.14,
+        "famNet": 20791.14,
+        "list.0.ti": 20791.14,
+        "list.0.tiP": 20791.14,
+        "list.0.breakdown.publicPensions.oas": 8791.14,
+        "list.0.breakdown.publicPensions.cppQpp": 12000,
+        "list.0.breakdown.publicPensions.recoveryTax": 0,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 0,
+        "list.0.breakdown.netIncome.ded": 0,
+        "list.0.breakdown.seniorCredits.federalAge": 9028,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "fed": 0,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2025-ON-age-76-birth-6",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 76,
+            "birthMonth": 6,
+            "oas": true,
+            "cppQpp": 12000
+          }
+        ]
+      },
+      "expected": {
+        "cash": 21670.29,
+        "famNet": 21670.29,
+        "list.0.ti": 21670.29,
+        "list.0.tiP": 21670.29,
+        "list.0.breakdown.publicPensions.oas": 9670.29,
+        "list.0.breakdown.publicPensions.cppQpp": 12000,
+        "list.0.breakdown.publicPensions.recoveryTax": 0,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 0,
+        "list.0.breakdown.netIncome.ded": 0,
+        "list.0.breakdown.seniorCredits.federalAge": 9028,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "fed": 0,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2025-ON-age-74-threshold-below",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 74,
+            "birthMonth": 6,
+            "oas": true,
+            "oth": 84662.85
+          }
+        ],
+        "useBpa": false
+      },
+      "expected": {
+        "cash": 93453.99,
+        "famNet": 93453.99,
+        "list.0.ti": 93453.99,
+        "list.0.tiP": 93453.99,
+        "list.0.breakdown.publicPensions.oas": 8791.14,
+        "list.0.breakdown.publicPensions.cppQpp": 0,
+        "list.0.breakdown.publicPensions.recoveryTax": 0,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 0,
+        "list.0.breakdown.netIncome.ded": 0,
+        "list.0.breakdown.seniorCredits.federalAge": 0,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "fed": 15715.568,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2025-ON-age-74-threshold-at",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 74,
+            "birthMonth": 6,
+            "oas": true,
+            "oth": 84662.86
+          }
+        ],
+        "useBpa": false
+      },
+      "expected": {
+        "cash": 93454,
+        "famNet": 93454,
+        "list.0.ti": 93454,
+        "list.0.tiP": 93454,
+        "list.0.breakdown.publicPensions.oas": 8791.14,
+        "list.0.breakdown.publicPensions.cppQpp": 0,
+        "list.0.breakdown.publicPensions.recoveryTax": 0,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 0,
+        "list.0.breakdown.netIncome.ded": 0,
+        "list.0.breakdown.seniorCredits.federalAge": 0,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "fed": 15715.57,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2025-ON-age-74-threshold-above",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 74,
+            "birthMonth": 6,
+            "oas": true,
+            "oth": 84662.87
+          }
+        ],
+        "useBpa": false
+      },
+      "expected": {
+        "cash": 93454.01,
+        "famNet": 93454.0085,
+        "list.0.ti": 93454.0085,
+        "list.0.tiP": 93454.0085,
+        "list.0.breakdown.publicPensions.oas": 8791.14,
+        "list.0.breakdown.publicPensions.cppQpp": 0,
+        "list.0.breakdown.publicPensions.recoveryTax": 0.0015,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 0.0015,
+        "list.0.breakdown.netIncome.ded": 0.0015,
+        "list.0.breakdown.seniorCredits.federalAge": 0,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "fed": 15715.5732,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2025-ON-age-74-cap-below",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 74,
+            "birthMonth": 6,
+            "oas": true,
+            "oth": 143270.45
+          }
+        ],
+        "useBpa": false
+      },
+      "expected": {
+        "cash": 152061.59,
+        "famNet": 143270.4515,
+        "list.0.ti": 143270.4515,
+        "list.0.tiP": 143270.4515,
+        "list.0.breakdown.publicPensions.oas": 8791.14,
+        "list.0.breakdown.publicPensions.cppQpp": 0,
+        "list.0.breakdown.publicPensions.recoveryTax": 8791.1385,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 8791.1385,
+        "list.0.breakdown.netIncome.ded": 8791.1385,
+        "list.0.breakdown.seniorCredits.federalAge": 0,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "fed": 36287.7059,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2025-ON-age-74-cap-at",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 74,
+            "birthMonth": 6,
+            "oas": true,
+            "oth": 143270.46000000002
+          }
+        ],
+        "useBpa": false
+      },
+      "expected": {
+        "cash": 152061.6,
+        "famNet": 143270.46,
+        "list.0.ti": 143270.46,
+        "list.0.tiP": 143270.46,
+        "list.0.breakdown.publicPensions.oas": 8791.14,
+        "list.0.breakdown.publicPensions.cppQpp": 0,
+        "list.0.breakdown.publicPensions.recoveryTax": 8791.14,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 8791.14,
+        "list.0.breakdown.netIncome.ded": 8791.14,
+        "list.0.breakdown.seniorCredits.federalAge": 0,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "fed": 36287.7096,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2025-ON-age-74-cap-above",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 74,
+            "birthMonth": 6,
+            "oas": true,
+            "oth": 143270.47000000003
+          }
+        ],
+        "useBpa": false
+      },
+      "expected": {
+        "cash": 152061.61,
+        "famNet": 143270.47,
+        "list.0.ti": 143270.47,
+        "list.0.tiP": 143270.47,
+        "list.0.breakdown.publicPensions.oas": 8791.14,
+        "list.0.breakdown.publicPensions.cppQpp": 0,
+        "list.0.breakdown.publicPensions.recoveryTax": 8791.14,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 8791.14,
+        "list.0.breakdown.netIncome.ded": 8791.14,
+        "list.0.breakdown.seniorCredits.federalAge": 0,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "fed": 36287.7122,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2025-ON-age-76-threshold-below",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 76,
+            "birthMonth": 6,
+            "oas": true,
+            "oth": 83783.70000000001
+          }
+        ],
+        "useBpa": false
+      },
+      "expected": {
+        "cash": 93453.99,
+        "famNet": 93453.99,
+        "list.0.ti": 93453.99,
+        "list.0.tiP": 93453.99,
+        "list.0.breakdown.publicPensions.oas": 9670.29,
+        "list.0.breakdown.publicPensions.cppQpp": 0,
+        "list.0.breakdown.publicPensions.recoveryTax": 0,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 0,
+        "list.0.breakdown.netIncome.ded": 0,
+        "list.0.breakdown.seniorCredits.federalAge": 0,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "fed": 15715.568,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2025-ON-age-76-threshold-at",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 76,
+            "birthMonth": 6,
+            "oas": true,
+            "oth": 83783.70999999999
+          }
+        ],
+        "useBpa": false
+      },
+      "expected": {
+        "cash": 93454,
+        "famNet": 93454,
+        "list.0.ti": 93454,
+        "list.0.tiP": 93454,
+        "list.0.breakdown.publicPensions.oas": 9670.29,
+        "list.0.breakdown.publicPensions.cppQpp": 0,
+        "list.0.breakdown.publicPensions.recoveryTax": 0,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 0,
+        "list.0.breakdown.netIncome.ded": 0,
+        "list.0.breakdown.seniorCredits.federalAge": 0,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "fed": 15715.57,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2025-ON-age-76-threshold-above",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 76,
+            "birthMonth": 6,
+            "oas": true,
+            "oth": 83783.72
+          }
+        ],
+        "useBpa": false
+      },
+      "expected": {
+        "cash": 93454.01,
+        "famNet": 93454.0085,
+        "list.0.ti": 93454.0085,
+        "list.0.tiP": 93454.0085,
+        "list.0.breakdown.publicPensions.oas": 9670.29,
+        "list.0.breakdown.publicPensions.cppQpp": 0,
+        "list.0.breakdown.publicPensions.recoveryTax": 0.0015,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 0.0015,
+        "list.0.breakdown.netIncome.ded": 0.0015,
+        "list.0.breakdown.seniorCredits.federalAge": 0,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "fed": 15715.5732,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2025-ON-age-76-cap-below",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 76,
+            "birthMonth": 6,
+            "oas": true,
+            "oth": 148252.3
+          }
+        ],
+        "useBpa": false
+      },
+      "expected": {
+        "cash": 157922.59,
+        "famNet": 148252.3015,
+        "list.0.ti": 148252.3015,
+        "list.0.tiP": 148252.3015,
+        "list.0.breakdown.publicPensions.oas": 9670.29,
+        "list.0.breakdown.publicPensions.cppQpp": 0,
+        "list.0.breakdown.publicPensions.recoveryTax": 9670.2885,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 9670.2885,
+        "list.0.breakdown.netIncome.ded": 9670.2885,
+        "list.0.breakdown.seniorCredits.federalAge": 0,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "fed": 38462.1369,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2025-ON-age-76-cap-at",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 76,
+            "birthMonth": 6,
+            "oas": true,
+            "oth": 148252.31
+          }
+        ],
+        "useBpa": false
+      },
+      "expected": {
+        "cash": 157922.6,
+        "famNet": 148252.31,
+        "list.0.ti": 148252.31,
+        "list.0.tiP": 148252.31,
+        "list.0.breakdown.publicPensions.oas": 9670.29,
+        "list.0.breakdown.publicPensions.cppQpp": 0,
+        "list.0.breakdown.publicPensions.recoveryTax": 9670.29,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 9670.29,
+        "list.0.breakdown.netIncome.ded": 9670.29,
+        "list.0.breakdown.seniorCredits.federalAge": 0,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "fed": 38462.1406,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2025-ON-age-76-cap-above",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 76,
+            "birthMonth": 6,
+            "oas": true,
+            "oth": 148252.32
+          }
+        ],
+        "useBpa": false
+      },
+      "expected": {
+        "cash": 157922.61,
+        "famNet": 148252.32,
+        "list.0.ti": 148252.32,
+        "list.0.tiP": 148252.32,
+        "list.0.breakdown.publicPensions.oas": 9670.29,
+        "list.0.breakdown.publicPensions.cppQpp": 0,
+        "list.0.breakdown.publicPensions.recoveryTax": 9670.29,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 9670.29,
+        "list.0.breakdown.netIncome.ded": 9670.29,
+        "list.0.breakdown.seniorCredits.federalAge": 0,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "fed": 38462.1432,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2025-QC-age-74-threshold-below",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "age": 74,
+            "birthMonth": 6,
+            "oas": true,
+            "oth": 84662.85
+          }
+        ],
+        "useBpa": false
+      },
+      "expected": {
+        "cash": 93453.99,
+        "famNet": 93453.99,
+        "list.0.ti": 93453.99,
+        "list.0.tiP": 93453.99,
+        "list.0.breakdown.publicPensions.oas": 8791.14,
+        "list.0.breakdown.publicPensions.cppQpp": 0,
+        "list.0.breakdown.publicPensions.recoveryTax": 0,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 0,
+        "list.0.breakdown.netIncome.ded": 0,
+        "list.0.breakdown.seniorCredits.federalAge": 0,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 84662.85,
+        "list.0.breakdown.healthServicesFund.contribution": 366.0285,
+        "fed": 13122.4992,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2025-QC-age-74-threshold-at",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "age": 74,
+            "birthMonth": 6,
+            "oas": true,
+            "oth": 84662.86
+          }
+        ],
+        "useBpa": false
+      },
+      "expected": {
+        "cash": 93454,
+        "famNet": 93454,
+        "list.0.ti": 93454,
+        "list.0.tiP": 93454,
+        "list.0.breakdown.publicPensions.oas": 8791.14,
+        "list.0.breakdown.publicPensions.cppQpp": 0,
+        "list.0.breakdown.publicPensions.recoveryTax": 0,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 0,
+        "list.0.breakdown.netIncome.ded": 0,
+        "list.0.breakdown.seniorCredits.federalAge": 0,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 84662.86,
+        "list.0.breakdown.healthServicesFund.contribution": 366.0286,
+        "fed": 13122.501,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2025-QC-age-74-threshold-above",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "age": 74,
+            "birthMonth": 6,
+            "oas": true,
+            "oth": 84662.87
+          }
+        ],
+        "useBpa": false
+      },
+      "expected": {
+        "cash": 93454.01,
+        "famNet": 93454.0085,
+        "list.0.ti": 93454.0085,
+        "list.0.tiP": 93454.0085,
+        "list.0.breakdown.publicPensions.oas": 8791.14,
+        "list.0.breakdown.publicPensions.cppQpp": 0,
+        "list.0.breakdown.publicPensions.recoveryTax": 0.0015,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 0.0015,
+        "list.0.breakdown.netIncome.ded": 0.0015,
+        "list.0.breakdown.seniorCredits.federalAge": 0,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 84662.87,
+        "list.0.breakdown.healthServicesFund.contribution": 366.0287,
+        "fed": 13122.5039,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2025-QC-age-74-cap-below",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "age": 74,
+            "birthMonth": 6,
+            "oas": true,
+            "oth": 143270.45
+          }
+        ],
+        "useBpa": false
+      },
+      "expected": {
+        "cash": 152061.59,
+        "famNet": 143270.4515,
+        "list.0.ti": 143270.4515,
+        "list.0.tiP": 143270.4515,
+        "list.0.breakdown.publicPensions.oas": 8791.14,
+        "list.0.breakdown.publicPensions.cppQpp": 0,
+        "list.0.breakdown.publicPensions.recoveryTax": 8791.1385,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 8791.1385,
+        "list.0.breakdown.netIncome.ded": 8791.1385,
+        "list.0.breakdown.seniorCredits.federalAge": 0,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 143270.45,
+        "list.0.breakdown.healthServicesFund.contribution": 952.1045,
+        "fed": 31750.7723,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2025-QC-age-74-cap-at",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "age": 74,
+            "birthMonth": 6,
+            "oas": true,
+            "oth": 143270.46000000002
+          }
+        ],
+        "useBpa": false
+      },
+      "expected": {
+        "cash": 152061.6,
+        "famNet": 143270.46,
+        "list.0.ti": 143270.46,
+        "list.0.tiP": 143270.46,
+        "list.0.breakdown.publicPensions.oas": 8791.14,
+        "list.0.breakdown.publicPensions.cppQpp": 0,
+        "list.0.breakdown.publicPensions.recoveryTax": 8791.14,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 8791.14,
+        "list.0.breakdown.netIncome.ded": 8791.14,
+        "list.0.breakdown.seniorCredits.federalAge": 0,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 143270.46,
+        "list.0.breakdown.healthServicesFund.contribution": 952.1046,
+        "fed": 31750.7756,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2025-QC-age-74-cap-above",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "age": 74,
+            "birthMonth": 6,
+            "oas": true,
+            "oth": 143270.47000000003
+          }
+        ],
+        "useBpa": false
+      },
+      "expected": {
+        "cash": 152061.61,
+        "famNet": 143270.47,
+        "list.0.ti": 143270.47,
+        "list.0.tiP": 143270.47,
+        "list.0.breakdown.publicPensions.oas": 8791.14,
+        "list.0.breakdown.publicPensions.cppQpp": 0,
+        "list.0.breakdown.publicPensions.recoveryTax": 8791.14,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 8791.14,
+        "list.0.breakdown.netIncome.ded": 8791.14,
+        "list.0.breakdown.seniorCredits.federalAge": 0,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 143270.47,
+        "list.0.breakdown.healthServicesFund.contribution": 952.1047,
+        "fed": 31750.7778,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2025-QC-age-76-threshold-below",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "age": 76,
+            "birthMonth": 6,
+            "oas": true,
+            "oth": 83783.70000000001
+          }
+        ],
+        "useBpa": false
+      },
+      "expected": {
+        "cash": 93453.99,
+        "famNet": 93453.99,
+        "list.0.ti": 93453.99,
+        "list.0.tiP": 93453.99,
+        "list.0.breakdown.publicPensions.oas": 9670.29,
+        "list.0.breakdown.publicPensions.cppQpp": 0,
+        "list.0.breakdown.publicPensions.recoveryTax": 0,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 0,
+        "list.0.breakdown.netIncome.ded": 0,
+        "list.0.breakdown.seniorCredits.federalAge": 0,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 83783.7,
+        "list.0.breakdown.healthServicesFund.contribution": 357.237,
+        "fed": 13122.4992,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2025-QC-age-76-threshold-at",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "age": 76,
+            "birthMonth": 6,
+            "oas": true,
+            "oth": 83783.70999999999
+          }
+        ],
+        "useBpa": false
+      },
+      "expected": {
+        "cash": 93454,
+        "famNet": 93454,
+        "list.0.ti": 93454,
+        "list.0.tiP": 93454,
+        "list.0.breakdown.publicPensions.oas": 9670.29,
+        "list.0.breakdown.publicPensions.cppQpp": 0,
+        "list.0.breakdown.publicPensions.recoveryTax": 0,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 0,
+        "list.0.breakdown.netIncome.ded": 0,
+        "list.0.breakdown.seniorCredits.federalAge": 0,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 83783.71,
+        "list.0.breakdown.healthServicesFund.contribution": 357.2371,
+        "fed": 13122.501,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2025-QC-age-76-threshold-above",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "age": 76,
+            "birthMonth": 6,
+            "oas": true,
+            "oth": 83783.72
+          }
+        ],
+        "useBpa": false
+      },
+      "expected": {
+        "cash": 93454.01,
+        "famNet": 93454.0085,
+        "list.0.ti": 93454.0085,
+        "list.0.tiP": 93454.0085,
+        "list.0.breakdown.publicPensions.oas": 9670.29,
+        "list.0.breakdown.publicPensions.cppQpp": 0,
+        "list.0.breakdown.publicPensions.recoveryTax": 0.0015,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 0.0015,
+        "list.0.breakdown.netIncome.ded": 0.0015,
+        "list.0.breakdown.seniorCredits.federalAge": 0,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 83783.72,
+        "list.0.breakdown.healthServicesFund.contribution": 357.2372,
+        "fed": 13122.5039,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2025-QC-age-76-cap-below",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "age": 76,
+            "birthMonth": 6,
+            "oas": true,
+            "oth": 148252.3
+          }
+        ],
+        "useBpa": false
+      },
+      "expected": {
+        "cash": 157922.59,
+        "famNet": 148252.3015,
+        "list.0.ti": 148252.3015,
+        "list.0.tiP": 148252.3015,
+        "list.0.breakdown.publicPensions.oas": 9670.29,
+        "list.0.breakdown.publicPensions.cppQpp": 0,
+        "list.0.breakdown.publicPensions.recoveryTax": 9670.2885,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 9670.2885,
+        "list.0.breakdown.netIncome.ded": 9670.2885,
+        "list.0.breakdown.seniorCredits.federalAge": 0,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 148252.3,
+        "list.0.breakdown.healthServicesFund.contribution": 1000,
+        "fed": 33711.4819,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2025-QC-age-76-cap-at",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "age": 76,
+            "birthMonth": 6,
+            "oas": true,
+            "oth": 148252.31
+          }
+        ],
+        "useBpa": false
+      },
+      "expected": {
+        "cash": 157922.6,
+        "famNet": 148252.31,
+        "list.0.ti": 148252.31,
+        "list.0.tiP": 148252.31,
+        "list.0.breakdown.publicPensions.oas": 9670.29,
+        "list.0.breakdown.publicPensions.cppQpp": 0,
+        "list.0.breakdown.publicPensions.recoveryTax": 9670.29,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 9670.29,
+        "list.0.breakdown.netIncome.ded": 9670.29,
+        "list.0.breakdown.seniorCredits.federalAge": 0,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 148252.31,
+        "list.0.breakdown.healthServicesFund.contribution": 1000,
+        "fed": 33711.4853,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2025-QC-age-76-cap-above",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "age": 76,
+            "birthMonth": 6,
+            "oas": true,
+            "oth": 148252.32
+          }
+        ],
+        "useBpa": false
+      },
+      "expected": {
+        "cash": 157922.61,
+        "famNet": 148252.32,
+        "list.0.ti": 148252.32,
+        "list.0.tiP": 148252.32,
+        "list.0.breakdown.publicPensions.oas": 9670.29,
+        "list.0.breakdown.publicPensions.cppQpp": 0,
+        "list.0.breakdown.publicPensions.recoveryTax": 9670.29,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 9670.29,
+        "list.0.breakdown.netIncome.ded": 9670.29,
+        "list.0.breakdown.seniorCredits.federalAge": 0,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 148252.32,
+        "list.0.breakdown.healthServicesFund.contribution": 1000,
+        "fed": 33711.4874,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2025-QC-opt-out-cpp-only",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "age": 74,
+            "birthMonth": 6,
+            "oas": false,
+            "cppQpp": 20000
+          }
+        ]
+      },
+      "expected": {
+        "cash": 20000,
+        "famNet": 20000,
+        "list.0.ti": 20000,
+        "list.0.tiP": 20000,
+        "list.0.breakdown.publicPensions.oas": 0,
+        "list.0.breakdown.publicPensions.cppQpp": 20000,
+        "list.0.breakdown.publicPensions.recoveryTax": 0,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 0,
+        "list.0.breakdown.netIncome.ded": 0,
+        "list.0.breakdown.seniorCredits.federalAge": 9028,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 20000,
+        "list.0.breakdown.healthServicesFund.contribution": 18.7,
+        "fed": 0,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2025-QC-oas-exclusion-cpp-inclusion",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "age": 74,
+            "birthMonth": 6,
+            "oas": true,
+            "cppQpp": 20000
+          }
+        ]
+      },
+      "expected": {
+        "cash": 28791.14,
+        "famNet": 28791.14,
+        "list.0.ti": 28791.14,
+        "list.0.tiP": 28791.14,
+        "list.0.breakdown.publicPensions.oas": 8791.14,
+        "list.0.breakdown.publicPensions.cppQpp": 20000,
+        "list.0.breakdown.publicPensions.recoveryTax": 0,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 0,
+        "list.0.breakdown.netIncome.ded": 0,
+        "list.0.breakdown.seniorCredits.federalAge": 9028,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 20000,
+        "list.0.breakdown.healthServicesFund.contribution": 18.7,
+        "fed": 440.0035,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2025-ON-deductions-before-recovery",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 74,
+            "birthMonth": 6,
+            "oas": true,
+            "cppQpp": 12000,
+            "oth": 100000,
+            "ded": 1000,
+            "rrsp": 4000,
+            "fhsa": 2000
+          }
+        ]
+      },
+      "expected": {
+        "cash": 120791.14,
+        "famNet": 110740.569,
+        "list.0.ti": 110740.569,
+        "list.0.tiP": 110740.569,
+        "list.0.breakdown.publicPensions.oas": 8791.14,
+        "list.0.breakdown.publicPensions.cppQpp": 12000,
+        "list.0.breakdown.publicPensions.recoveryTax": 3050.571,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 3050.571,
+        "list.0.breakdown.netIncome.ded": 10050.571,
+        "list.0.breakdown.seniorCredits.federalAge": 0,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "fed": 19971.1826,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2025-QC-cpp-without-age",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "cppQpp": 20000
+          }
+        ],
+        "useBpa": false
+      },
+      "expected": {
+        "cash": 20000,
+        "famNet": 20000,
+        "list.0.ti": 20000,
+        "list.0.tiP": 20000,
+        "list.0.breakdown.publicPensions.oas": 0,
+        "list.0.breakdown.publicPensions.cppQpp": 20000,
+        "list.0.breakdown.publicPensions.recoveryTax": 0,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 0,
+        "list.0.breakdown.netIncome.ded": 0,
+        "list.0.breakdown.seniorCredits.federalAge": 0,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 20000,
+        "list.0.breakdown.healthServicesFund.contribution": 18.7,
+        "fed": 2421.5,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2026-BC-taxable-income-age-taper",
+      "year": 2026,
+      "province": "BC",
+      "household": {
+        "people": [
+          {
+            "age": 74,
+            "birthMonth": 6,
+            "oas": true,
+            "cppQpp": 12000,
+            "oth": 40000
+          }
+        ]
+      },
+      "expected": {
+        "cash": 60999.49,
+        "famNet": 60999.49,
+        "list.0.ti": 60999.49,
+        "list.0.tiP": 60999.49,
+        "list.0.breakdown.publicPensions.oas": 8999.49,
+        "list.0.breakdown.publicPensions.cppQpp": 12000,
+        "list.0.breakdown.publicPensions.recoveryTax": 0,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 0,
+        "list.0.breakdown.netIncome.ded": 0,
+        "list.0.breakdown.seniorCredits.federalAge": 7022.8765,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "fed": 5414.4177,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2026-AB-taxable-income-age-taper",
+      "year": 2026,
+      "province": "AB",
+      "household": {
+        "people": [
+          {
+            "age": 74,
+            "birthMonth": 6,
+            "oas": true,
+            "cppQpp": 12000,
+            "oth": 40000
+          }
+        ]
+      },
+      "expected": {
+        "cash": 60999.49,
+        "famNet": 60999.49,
+        "list.0.ti": 60999.49,
+        "list.0.tiP": 60999.49,
+        "list.0.breakdown.publicPensions.oas": 8999.49,
+        "list.0.breakdown.publicPensions.cppQpp": 12000,
+        "list.0.breakdown.publicPensions.recoveryTax": 0,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 0,
+        "list.0.breakdown.netIncome.ded": 0,
+        "list.0.breakdown.seniorCredits.federalAge": 7022.8765,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "fed": 5414.4177,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2026-SK-taxable-income-age-taper",
+      "year": 2026,
+      "province": "SK",
+      "household": {
+        "people": [
+          {
+            "age": 74,
+            "birthMonth": 6,
+            "oas": true,
+            "cppQpp": 12000,
+            "oth": 40000
+          }
+        ]
+      },
+      "expected": {
+        "cash": 60999.49,
+        "famNet": 60999.49,
+        "list.0.ti": 60999.49,
+        "list.0.tiP": 60999.49,
+        "list.0.breakdown.publicPensions.oas": 8999.49,
+        "list.0.breakdown.publicPensions.cppQpp": 12000,
+        "list.0.breakdown.publicPensions.recoveryTax": 0,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 0,
+        "list.0.breakdown.netIncome.ded": 0,
+        "list.0.breakdown.seniorCredits.federalAge": 7022.8765,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "fed": 5414.4177,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2026-MB-taxable-income-age-taper",
+      "year": 2026,
+      "province": "MB",
+      "household": {
+        "people": [
+          {
+            "age": 74,
+            "birthMonth": 6,
+            "oas": true,
+            "cppQpp": 12000,
+            "oth": 40000
+          }
+        ]
+      },
+      "expected": {
+        "cash": 60999.49,
+        "famNet": 60999.49,
+        "list.0.ti": 60999.49,
+        "list.0.tiP": 60999.49,
+        "list.0.breakdown.publicPensions.oas": 8999.49,
+        "list.0.breakdown.publicPensions.cppQpp": 12000,
+        "list.0.breakdown.publicPensions.recoveryTax": 0,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 0,
+        "list.0.breakdown.netIncome.ded": 0,
+        "list.0.breakdown.seniorCredits.federalAge": 7022.8765,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "fed": 5414.4177,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2026-ON-taxable-income-age-taper",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 74,
+            "birthMonth": 6,
+            "oas": true,
+            "cppQpp": 12000,
+            "oth": 40000
+          }
+        ]
+      },
+      "expected": {
+        "cash": 60999.49,
+        "famNet": 60999.49,
+        "list.0.ti": 60999.49,
+        "list.0.tiP": 60999.49,
+        "list.0.breakdown.publicPensions.oas": 8999.49,
+        "list.0.breakdown.publicPensions.cppQpp": 12000,
+        "list.0.breakdown.publicPensions.recoveryTax": 0,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 0,
+        "list.0.breakdown.netIncome.ded": 0,
+        "list.0.breakdown.seniorCredits.federalAge": 7022.8765,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "fed": 5414.4177,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2026-QC-taxable-income-age-taper",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "age": 74,
+            "birthMonth": 6,
+            "oas": true,
+            "cppQpp": 12000,
+            "oth": 40000
+          }
+        ]
+      },
+      "expected": {
+        "cash": 60999.49,
+        "famNet": 60999.49,
+        "list.0.ti": 60999.49,
+        "list.0.tiP": 60999.49,
+        "list.0.breakdown.publicPensions.oas": 8999.49,
+        "list.0.breakdown.publicPensions.cppQpp": 12000,
+        "list.0.breakdown.publicPensions.recoveryTax": 0,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 0,
+        "list.0.breakdown.netIncome.ded": 0,
+        "list.0.breakdown.seniorCredits.federalAge": 7022.8765,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 52000,
+        "list.0.breakdown.healthServicesFund.contribution": 150,
+        "fed": 4521.0388,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2026-NB-taxable-income-age-taper",
+      "year": 2026,
+      "province": "NB",
+      "household": {
+        "people": [
+          {
+            "age": 74,
+            "birthMonth": 6,
+            "oas": true,
+            "cppQpp": 12000,
+            "oth": 40000
+          }
+        ]
+      },
+      "expected": {
+        "cash": 60999.49,
+        "famNet": 60999.49,
+        "list.0.ti": 60999.49,
+        "list.0.tiP": 60999.49,
+        "list.0.breakdown.publicPensions.oas": 8999.49,
+        "list.0.breakdown.publicPensions.cppQpp": 12000,
+        "list.0.breakdown.publicPensions.recoveryTax": 0,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 0,
+        "list.0.breakdown.netIncome.ded": 0,
+        "list.0.breakdown.seniorCredits.federalAge": 7022.8765,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "fed": 5414.4177,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2026-NS-taxable-income-age-taper",
+      "year": 2026,
+      "province": "NS",
+      "household": {
+        "people": [
+          {
+            "age": 74,
+            "birthMonth": 6,
+            "oas": true,
+            "cppQpp": 12000,
+            "oth": 40000
+          }
+        ]
+      },
+      "expected": {
+        "cash": 60999.49,
+        "famNet": 60999.49,
+        "list.0.ti": 60999.49,
+        "list.0.tiP": 60999.49,
+        "list.0.breakdown.publicPensions.oas": 8999.49,
+        "list.0.breakdown.publicPensions.cppQpp": 12000,
+        "list.0.breakdown.publicPensions.recoveryTax": 0,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 0,
+        "list.0.breakdown.netIncome.ded": 0,
+        "list.0.breakdown.seniorCredits.federalAge": 7022.8765,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "fed": 5414.4177,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2026-PE-taxable-income-age-taper",
+      "year": 2026,
+      "province": "PE",
+      "household": {
+        "people": [
+          {
+            "age": 74,
+            "birthMonth": 6,
+            "oas": true,
+            "cppQpp": 12000,
+            "oth": 40000
+          }
+        ]
+      },
+      "expected": {
+        "cash": 60999.49,
+        "famNet": 60999.49,
+        "list.0.ti": 60999.49,
+        "list.0.tiP": 60999.49,
+        "list.0.breakdown.publicPensions.oas": 8999.49,
+        "list.0.breakdown.publicPensions.cppQpp": 12000,
+        "list.0.breakdown.publicPensions.recoveryTax": 0,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 0,
+        "list.0.breakdown.netIncome.ded": 0,
+        "list.0.breakdown.seniorCredits.federalAge": 7022.8765,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "fed": 5414.4177,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2026-NL-taxable-income-age-taper",
+      "year": 2026,
+      "province": "NL",
+      "household": {
+        "people": [
+          {
+            "age": 74,
+            "birthMonth": 6,
+            "oas": true,
+            "cppQpp": 12000,
+            "oth": 40000
+          }
+        ]
+      },
+      "expected": {
+        "cash": 60999.49,
+        "famNet": 60999.49,
+        "list.0.ti": 60999.49,
+        "list.0.tiP": 60999.49,
+        "list.0.breakdown.publicPensions.oas": 8999.49,
+        "list.0.breakdown.publicPensions.cppQpp": 12000,
+        "list.0.breakdown.publicPensions.recoveryTax": 0,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 0,
+        "list.0.breakdown.netIncome.ded": 0,
+        "list.0.breakdown.seniorCredits.federalAge": 7022.8765,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "fed": 5414.4177,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2026-YT-taxable-income-age-taper",
+      "year": 2026,
+      "province": "YT",
+      "household": {
+        "people": [
+          {
+            "age": 74,
+            "birthMonth": 6,
+            "oas": true,
+            "cppQpp": 12000,
+            "oth": 40000
+          }
+        ]
+      },
+      "expected": {
+        "cash": 60999.49,
+        "famNet": 60999.49,
+        "list.0.ti": 60999.49,
+        "list.0.tiP": 60999.49,
+        "list.0.breakdown.publicPensions.oas": 8999.49,
+        "list.0.breakdown.publicPensions.cppQpp": 12000,
+        "list.0.breakdown.publicPensions.recoveryTax": 0,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 0,
+        "list.0.breakdown.netIncome.ded": 0,
+        "list.0.breakdown.seniorCredits.federalAge": 7022.8765,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "fed": 5414.4177,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2026-NT-taxable-income-age-taper",
+      "year": 2026,
+      "province": "NT",
+      "household": {
+        "people": [
+          {
+            "age": 74,
+            "birthMonth": 6,
+            "oas": true,
+            "cppQpp": 12000,
+            "oth": 40000
+          }
+        ]
+      },
+      "expected": {
+        "cash": 60999.49,
+        "famNet": 60999.49,
+        "list.0.ti": 60999.49,
+        "list.0.tiP": 60999.49,
+        "list.0.breakdown.publicPensions.oas": 8999.49,
+        "list.0.breakdown.publicPensions.cppQpp": 12000,
+        "list.0.breakdown.publicPensions.recoveryTax": 0,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 0,
+        "list.0.breakdown.netIncome.ded": 0,
+        "list.0.breakdown.seniorCredits.federalAge": 7022.8765,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "fed": 5414.4177,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2026-NU-taxable-income-age-taper",
+      "year": 2026,
+      "province": "NU",
+      "household": {
+        "people": [
+          {
+            "age": 74,
+            "birthMonth": 6,
+            "oas": true,
+            "cppQpp": 12000,
+            "oth": 40000
+          }
+        ]
+      },
+      "expected": {
+        "cash": 60999.49,
+        "famNet": 60999.49,
+        "list.0.ti": 60999.49,
+        "list.0.tiP": 60999.49,
+        "list.0.breakdown.publicPensions.oas": 8999.49,
+        "list.0.breakdown.publicPensions.cppQpp": 12000,
+        "list.0.breakdown.publicPensions.recoveryTax": 0,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 0,
+        "list.0.breakdown.netIncome.ded": 0,
+        "list.0.breakdown.seniorCredits.federalAge": 7022.8765,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "fed": 5414.4177,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2026-ON-age-64-birth-6",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 64,
+            "birthMonth": 6,
+            "oas": true,
+            "cppQpp": 12000
+          }
+        ]
+      },
+      "expected": {
+        "cash": 12000,
+        "famNet": 12000,
+        "list.0.ti": 12000,
+        "list.0.tiP": 12000,
+        "list.0.breakdown.publicPensions.oas": 0,
+        "list.0.breakdown.publicPensions.cppQpp": 12000,
+        "list.0.breakdown.publicPensions.recoveryTax": 0,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 0,
+        "list.0.breakdown.netIncome.ded": 0,
+        "list.0.breakdown.seniorCredits.federalAge": 0,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "fed": 0,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2026-ON-age-65-birth-1",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 65,
+            "birthMonth": 1,
+            "oas": true,
+            "cppQpp": 12000
+          }
+        ]
+      },
+      "expected": {
+        "cash": 20257.18,
+        "famNet": 20257.18,
+        "list.0.ti": 20257.18,
+        "list.0.tiP": 20257.18,
+        "list.0.breakdown.publicPensions.oas": 8257.18,
+        "list.0.breakdown.publicPensions.cppQpp": 12000,
+        "list.0.breakdown.publicPensions.recoveryTax": 0,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 0,
+        "list.0.breakdown.netIncome.ded": 0,
+        "list.0.breakdown.seniorCredits.federalAge": 9208,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "fed": 0,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2026-ON-age-65-birth-6",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 65,
+            "birthMonth": 6,
+            "oas": true,
+            "cppQpp": 12000
+          }
+        ]
+      },
+      "expected": {
+        "cash": 16543.41,
+        "famNet": 16543.41,
+        "list.0.ti": 16543.41,
+        "list.0.tiP": 16543.41,
+        "list.0.breakdown.publicPensions.oas": 4543.41,
+        "list.0.breakdown.publicPensions.cppQpp": 12000,
+        "list.0.breakdown.publicPensions.recoveryTax": 0,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 0,
+        "list.0.breakdown.netIncome.ded": 0,
+        "list.0.breakdown.seniorCredits.federalAge": 9208,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "fed": 0,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2026-ON-age-65-birth-12",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 65,
+            "birthMonth": 12,
+            "oas": true,
+            "cppQpp": 12000
+          }
+        ]
+      },
+      "expected": {
+        "cash": 12000,
+        "famNet": 12000,
+        "list.0.ti": 12000,
+        "list.0.tiP": 12000,
+        "list.0.breakdown.publicPensions.oas": 0,
+        "list.0.breakdown.publicPensions.cppQpp": 12000,
+        "list.0.breakdown.publicPensions.recoveryTax": 0,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 0,
+        "list.0.breakdown.netIncome.ded": 0,
+        "list.0.breakdown.seniorCredits.federalAge": 9208,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "fed": 0,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2026-ON-age-74-birth-6",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 74,
+            "birthMonth": 6,
+            "oas": true,
+            "cppQpp": 12000
+          }
+        ]
+      },
+      "expected": {
+        "cash": 20999.49,
+        "famNet": 20999.49,
+        "list.0.ti": 20999.49,
+        "list.0.tiP": 20999.49,
+        "list.0.breakdown.publicPensions.oas": 8999.49,
+        "list.0.breakdown.publicPensions.cppQpp": 12000,
+        "list.0.breakdown.publicPensions.recoveryTax": 0,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 0,
+        "list.0.breakdown.netIncome.ded": 0,
+        "list.0.breakdown.seniorCredits.federalAge": 9208,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "fed": 0,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2026-ON-age-75-birth-1",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 75,
+            "birthMonth": 1,
+            "oas": true,
+            "cppQpp": 12000
+          }
+        ]
+      },
+      "expected": {
+        "cash": 21825.23,
+        "famNet": 21825.23,
+        "list.0.ti": 21825.23,
+        "list.0.tiP": 21825.23,
+        "list.0.breakdown.publicPensions.oas": 9825.23,
+        "list.0.breakdown.publicPensions.cppQpp": 12000,
+        "list.0.breakdown.publicPensions.recoveryTax": 0,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 0,
+        "list.0.breakdown.netIncome.ded": 0,
+        "list.0.breakdown.seniorCredits.federalAge": 9208,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "fed": 0,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2026-ON-age-75-birth-6",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 75,
+            "birthMonth": 6,
+            "oas": true,
+            "cppQpp": 12000
+          }
+        ]
+      },
+      "expected": {
+        "cash": 21453.84,
+        "famNet": 21453.84,
+        "list.0.ti": 21453.84,
+        "list.0.tiP": 21453.84,
+        "list.0.breakdown.publicPensions.oas": 9453.84,
+        "list.0.breakdown.publicPensions.cppQpp": 12000,
+        "list.0.breakdown.publicPensions.recoveryTax": 0,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 0,
+        "list.0.breakdown.netIncome.ded": 0,
+        "list.0.breakdown.seniorCredits.federalAge": 9208,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "fed": 0,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2026-ON-age-75-birth-12",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 75,
+            "birthMonth": 12,
+            "oas": true,
+            "cppQpp": 12000
+          }
+        ]
+      },
+      "expected": {
+        "cash": 20999.49,
+        "famNet": 20999.49,
+        "list.0.ti": 20999.49,
+        "list.0.tiP": 20999.49,
+        "list.0.breakdown.publicPensions.oas": 8999.49,
+        "list.0.breakdown.publicPensions.cppQpp": 12000,
+        "list.0.breakdown.publicPensions.recoveryTax": 0,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 0,
+        "list.0.breakdown.netIncome.ded": 0,
+        "list.0.breakdown.seniorCredits.federalAge": 9208,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "fed": 0,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2026-ON-age-76-birth-6",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 76,
+            "birthMonth": 6,
+            "oas": true,
+            "cppQpp": 12000
+          }
+        ]
+      },
+      "expected": {
+        "cash": 21899.46,
+        "famNet": 21899.46,
+        "list.0.ti": 21899.46,
+        "list.0.tiP": 21899.46,
+        "list.0.breakdown.publicPensions.oas": 9899.46,
+        "list.0.breakdown.publicPensions.cppQpp": 12000,
+        "list.0.breakdown.publicPensions.recoveryTax": 0,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 0,
+        "list.0.breakdown.netIncome.ded": 0,
+        "list.0.breakdown.seniorCredits.federalAge": 9208,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "fed": 0,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2026-ON-age-74-threshold-below",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 74,
+            "birthMonth": 6,
+            "oas": true,
+            "oth": 86323.5
+          }
+        ],
+        "useBpa": false
+      },
+      "expected": {
+        "cash": 95322.99,
+        "famNet": 95322.99,
+        "list.0.ti": 95322.99,
+        "list.0.tiP": 95322.99,
+        "list.0.breakdown.publicPensions.oas": 8999.49,
+        "list.0.breakdown.publicPensions.cppQpp": 0,
+        "list.0.breakdown.publicPensions.recoveryTax": 0,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 0,
+        "list.0.breakdown.netIncome.ded": 0,
+        "list.0.breakdown.seniorCredits.federalAge": 0,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "fed": 15737.218,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2026-ON-age-74-threshold-at",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 74,
+            "birthMonth": 6,
+            "oas": true,
+            "oth": 86323.51
+          }
+        ],
+        "useBpa": false
+      },
+      "expected": {
+        "cash": 95323,
+        "famNet": 95323,
+        "list.0.ti": 95323,
+        "list.0.tiP": 95323,
+        "list.0.breakdown.publicPensions.oas": 8999.49,
+        "list.0.breakdown.publicPensions.cppQpp": 0,
+        "list.0.breakdown.publicPensions.recoveryTax": 0,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 0,
+        "list.0.breakdown.netIncome.ded": 0,
+        "list.0.breakdown.seniorCredits.federalAge": 0,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "fed": 15737.22,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2026-ON-age-74-threshold-above",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 74,
+            "birthMonth": 6,
+            "oas": true,
+            "oth": 86323.51999999999
+          }
+        ],
+        "useBpa": false
+      },
+      "expected": {
+        "cash": 95323.01,
+        "famNet": 95323.0085,
+        "list.0.ti": 95323.0085,
+        "list.0.tiP": 95323.0085,
+        "list.0.breakdown.publicPensions.oas": 8999.49,
+        "list.0.breakdown.publicPensions.cppQpp": 0,
+        "list.0.breakdown.publicPensions.recoveryTax": 0.0015,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 0.0015,
+        "list.0.breakdown.netIncome.ded": 0.0015,
+        "list.0.breakdown.seniorCredits.federalAge": 0,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "fed": 15737.2232,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2026-ON-age-74-cap-below",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 74,
+            "birthMonth": 6,
+            "oas": true,
+            "oth": 146320.1
+          }
+        ],
+        "useBpa": false
+      },
+      "expected": {
+        "cash": 155319.59,
+        "famNet": 146320.1015,
+        "list.0.ti": 146320.1015,
+        "list.0.tiP": 146320.1015,
+        "list.0.breakdown.publicPensions.oas": 8999.49,
+        "list.0.breakdown.publicPensions.cppQpp": 0,
+        "list.0.breakdown.publicPensions.recoveryTax": 8999.4885,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 8999.4885,
+        "list.0.breakdown.netIncome.ded": 8999.4885,
+        "list.0.breakdown.seniorCredits.federalAge": 0,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "fed": 36801.2449,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2026-ON-age-74-cap-at",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 74,
+            "birthMonth": 6,
+            "oas": true,
+            "oth": 146320.11000000002
+          }
+        ],
+        "useBpa": false
+      },
+      "expected": {
+        "cash": 155319.6,
+        "famNet": 146320.11,
+        "list.0.ti": 146320.11,
+        "list.0.tiP": 146320.11,
+        "list.0.breakdown.publicPensions.oas": 8999.49,
+        "list.0.breakdown.publicPensions.cppQpp": 0,
+        "list.0.breakdown.publicPensions.recoveryTax": 8999.49,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 8999.49,
+        "list.0.breakdown.netIncome.ded": 8999.49,
+        "list.0.breakdown.seniorCredits.federalAge": 0,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "fed": 36801.2486,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2026-ON-age-74-cap-above",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 74,
+            "birthMonth": 6,
+            "oas": true,
+            "oth": 146320.12000000002
+          }
+        ],
+        "useBpa": false
+      },
+      "expected": {
+        "cash": 155319.61,
+        "famNet": 146320.12,
+        "list.0.ti": 146320.12,
+        "list.0.tiP": 146320.12,
+        "list.0.breakdown.publicPensions.oas": 8999.49,
+        "list.0.breakdown.publicPensions.cppQpp": 0,
+        "list.0.breakdown.publicPensions.recoveryTax": 8999.49,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 8999.49,
+        "list.0.breakdown.netIncome.ded": 8999.49,
+        "list.0.breakdown.seniorCredits.federalAge": 0,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "fed": 36801.2512,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2026-ON-age-76-threshold-below",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 76,
+            "birthMonth": 6,
+            "oas": true,
+            "oth": 85423.53
+          }
+        ],
+        "useBpa": false
+      },
+      "expected": {
+        "cash": 95322.99,
+        "famNet": 95322.99,
+        "list.0.ti": 95322.99,
+        "list.0.tiP": 95322.99,
+        "list.0.breakdown.publicPensions.oas": 9899.46,
+        "list.0.breakdown.publicPensions.cppQpp": 0,
+        "list.0.breakdown.publicPensions.recoveryTax": 0,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 0,
+        "list.0.breakdown.netIncome.ded": 0,
+        "list.0.breakdown.seniorCredits.federalAge": 0,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "fed": 15737.2179,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2026-ON-age-76-threshold-at",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 76,
+            "birthMonth": 6,
+            "oas": true,
+            "oth": 85423.54000000001
+          }
+        ],
+        "useBpa": false
+      },
+      "expected": {
+        "cash": 95323,
+        "famNet": 95323,
+        "list.0.ti": 95323,
+        "list.0.tiP": 95323,
+        "list.0.breakdown.publicPensions.oas": 9899.46,
+        "list.0.breakdown.publicPensions.cppQpp": 0,
+        "list.0.breakdown.publicPensions.recoveryTax": 0,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 0,
+        "list.0.breakdown.netIncome.ded": 0,
+        "list.0.breakdown.seniorCredits.federalAge": 0,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "fed": 15737.22,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2026-ON-age-76-threshold-above",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 76,
+            "birthMonth": 6,
+            "oas": true,
+            "oth": 85423.54999999999
+          }
+        ],
+        "useBpa": false
+      },
+      "expected": {
+        "cash": 95323.01,
+        "famNet": 95323.0085,
+        "list.0.ti": 95323.0085,
+        "list.0.tiP": 95323.0085,
+        "list.0.breakdown.publicPensions.oas": 9899.46,
+        "list.0.breakdown.publicPensions.cppQpp": 0,
+        "list.0.breakdown.publicPensions.recoveryTax": 0.0015,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 0.0015,
+        "list.0.breakdown.netIncome.ded": 0.0015,
+        "list.0.breakdown.seniorCredits.federalAge": 0,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "fed": 15737.2232,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2026-ON-age-76-cap-below",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 76,
+            "birthMonth": 6,
+            "oas": true,
+            "oth": 151419.93
+          }
+        ],
+        "useBpa": false
+      },
+      "expected": {
+        "cash": 161319.39,
+        "famNet": 151419.9315,
+        "list.0.ti": 151419.9315,
+        "list.0.tiP": 151419.9315,
+        "list.0.breakdown.publicPensions.oas": 9899.46,
+        "list.0.breakdown.publicPensions.cppQpp": 0,
+        "list.0.breakdown.publicPensions.recoveryTax": 9899.4585,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 9899.4585,
+        "list.0.breakdown.netIncome.ded": 9899.4585,
+        "list.0.breakdown.seniorCredits.federalAge": 0,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "fed": 39027.1707,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2026-ON-age-76-cap-at",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 76,
+            "birthMonth": 6,
+            "oas": true,
+            "oth": 151419.94
+          }
+        ],
+        "useBpa": false
+      },
+      "expected": {
+        "cash": 161319.4,
+        "famNet": 151419.94,
+        "list.0.ti": 151419.94,
+        "list.0.tiP": 151419.94,
+        "list.0.breakdown.publicPensions.oas": 9899.46,
+        "list.0.breakdown.publicPensions.cppQpp": 0,
+        "list.0.breakdown.publicPensions.recoveryTax": 9899.46,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 9899.46,
+        "list.0.breakdown.netIncome.ded": 9899.46,
+        "list.0.breakdown.seniorCredits.federalAge": 0,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "fed": 39027.1744,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2026-ON-age-76-cap-above",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 76,
+            "birthMonth": 6,
+            "oas": true,
+            "oth": 151419.95
+          }
+        ],
+        "useBpa": false
+      },
+      "expected": {
+        "cash": 161319.41,
+        "famNet": 151419.95,
+        "list.0.ti": 151419.95,
+        "list.0.tiP": 151419.95,
+        "list.0.breakdown.publicPensions.oas": 9899.46,
+        "list.0.breakdown.publicPensions.cppQpp": 0,
+        "list.0.breakdown.publicPensions.recoveryTax": 9899.46,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 9899.46,
+        "list.0.breakdown.netIncome.ded": 9899.46,
+        "list.0.breakdown.seniorCredits.federalAge": 0,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "fed": 39027.177,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2026-QC-age-74-threshold-below",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "age": 74,
+            "birthMonth": 6,
+            "oas": true,
+            "oth": 86323.5
+          }
+        ],
+        "useBpa": false
+      },
+      "expected": {
+        "cash": 95322.99,
+        "famNet": 95322.99,
+        "list.0.ti": 95322.99,
+        "list.0.tiP": 95322.99,
+        "list.0.breakdown.publicPensions.oas": 8999.49,
+        "list.0.breakdown.publicPensions.cppQpp": 0,
+        "list.0.breakdown.publicPensions.recoveryTax": 0,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 0,
+        "list.0.breakdown.netIncome.ded": 0,
+        "list.0.breakdown.seniorCredits.federalAge": 0,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 86323.5,
+        "list.0.breakdown.healthServicesFund.contribution": 369.685,
+        "fed": 13140.577,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2026-QC-age-74-threshold-at",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "age": 74,
+            "birthMonth": 6,
+            "oas": true,
+            "oth": 86323.51
+          }
+        ],
+        "useBpa": false
+      },
+      "expected": {
+        "cash": 95323,
+        "famNet": 95323,
+        "list.0.ti": 95323,
+        "list.0.tiP": 95323,
+        "list.0.breakdown.publicPensions.oas": 8999.49,
+        "list.0.breakdown.publicPensions.cppQpp": 0,
+        "list.0.breakdown.publicPensions.recoveryTax": 0,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 0,
+        "list.0.breakdown.netIncome.ded": 0,
+        "list.0.breakdown.seniorCredits.federalAge": 0,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 86323.51,
+        "list.0.breakdown.healthServicesFund.contribution": 369.6851,
+        "fed": 13140.5787,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2026-QC-age-74-threshold-above",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "age": 74,
+            "birthMonth": 6,
+            "oas": true,
+            "oth": 86323.51999999999
+          }
+        ],
+        "useBpa": false
+      },
+      "expected": {
+        "cash": 95323.01,
+        "famNet": 95323.0085,
+        "list.0.ti": 95323.0085,
+        "list.0.tiP": 95323.0085,
+        "list.0.breakdown.publicPensions.oas": 8999.49,
+        "list.0.breakdown.publicPensions.cppQpp": 0,
+        "list.0.breakdown.publicPensions.recoveryTax": 0.0015,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 0.0015,
+        "list.0.breakdown.netIncome.ded": 0.0015,
+        "list.0.breakdown.seniorCredits.federalAge": 0,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 86323.52,
+        "list.0.breakdown.healthServicesFund.contribution": 369.6852,
+        "fed": 13140.5817,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2026-QC-age-74-cap-below",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "age": 74,
+            "birthMonth": 6,
+            "oas": true,
+            "oth": 146320.1
+          }
+        ],
+        "useBpa": false
+      },
+      "expected": {
+        "cash": 155319.59,
+        "famNet": 146320.1015,
+        "list.0.ti": 146320.1015,
+        "list.0.tiP": 146320.1015,
+        "list.0.breakdown.publicPensions.oas": 8999.49,
+        "list.0.breakdown.publicPensions.cppQpp": 0,
+        "list.0.breakdown.publicPensions.recoveryTax": 8999.4885,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 8999.4885,
+        "list.0.breakdown.netIncome.ded": 8999.4885,
+        "list.0.breakdown.seniorCredits.federalAge": 0,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 146320.1,
+        "list.0.breakdown.healthServicesFund.contribution": 969.651,
+        "fed": 32213.9551,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2026-QC-age-74-cap-at",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "age": 74,
+            "birthMonth": 6,
+            "oas": true,
+            "oth": 146320.11000000002
+          }
+        ],
+        "useBpa": false
+      },
+      "expected": {
+        "cash": 155319.6,
+        "famNet": 146320.11,
+        "list.0.ti": 146320.11,
+        "list.0.tiP": 146320.11,
+        "list.0.breakdown.publicPensions.oas": 8999.49,
+        "list.0.breakdown.publicPensions.cppQpp": 0,
+        "list.0.breakdown.publicPensions.recoveryTax": 8999.49,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 8999.49,
+        "list.0.breakdown.netIncome.ded": 8999.49,
+        "list.0.breakdown.seniorCredits.federalAge": 0,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 146320.11,
+        "list.0.breakdown.healthServicesFund.contribution": 969.6511,
+        "fed": 32213.9584,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2026-QC-age-74-cap-above",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "age": 74,
+            "birthMonth": 6,
+            "oas": true,
+            "oth": 146320.12000000002
+          }
+        ],
+        "useBpa": false
+      },
+      "expected": {
+        "cash": 155319.61,
+        "famNet": 146320.12,
+        "list.0.ti": 146320.12,
+        "list.0.tiP": 146320.12,
+        "list.0.breakdown.publicPensions.oas": 8999.49,
+        "list.0.breakdown.publicPensions.cppQpp": 0,
+        "list.0.breakdown.publicPensions.recoveryTax": 8999.49,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 8999.49,
+        "list.0.breakdown.netIncome.ded": 8999.49,
+        "list.0.breakdown.seniorCredits.federalAge": 0,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 146320.12,
+        "list.0.breakdown.healthServicesFund.contribution": 969.6512,
+        "fed": 32213.9606,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2026-QC-age-76-threshold-below",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "age": 76,
+            "birthMonth": 6,
+            "oas": true,
+            "oth": 85423.53
+          }
+        ],
+        "useBpa": false
+      },
+      "expected": {
+        "cash": 95322.99,
+        "famNet": 95322.99,
+        "list.0.ti": 95322.99,
+        "list.0.tiP": 95322.99,
+        "list.0.breakdown.publicPensions.oas": 9899.46,
+        "list.0.breakdown.publicPensions.cppQpp": 0,
+        "list.0.breakdown.publicPensions.recoveryTax": 0,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 0,
+        "list.0.breakdown.netIncome.ded": 0,
+        "list.0.breakdown.seniorCredits.federalAge": 0,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 85423.53,
+        "list.0.breakdown.healthServicesFund.contribution": 360.6853,
+        "fed": 13140.577,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2026-QC-age-76-threshold-at",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "age": 76,
+            "birthMonth": 6,
+            "oas": true,
+            "oth": 85423.54000000001
+          }
+        ],
+        "useBpa": false
+      },
+      "expected": {
+        "cash": 95323,
+        "famNet": 95323,
+        "list.0.ti": 95323,
+        "list.0.tiP": 95323,
+        "list.0.breakdown.publicPensions.oas": 9899.46,
+        "list.0.breakdown.publicPensions.cppQpp": 0,
+        "list.0.breakdown.publicPensions.recoveryTax": 0,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 0,
+        "list.0.breakdown.netIncome.ded": 0,
+        "list.0.breakdown.seniorCredits.federalAge": 0,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 85423.54,
+        "list.0.breakdown.healthServicesFund.contribution": 360.6854,
+        "fed": 13140.5787,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2026-QC-age-76-threshold-above",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "age": 76,
+            "birthMonth": 6,
+            "oas": true,
+            "oth": 85423.54999999999
+          }
+        ],
+        "useBpa": false
+      },
+      "expected": {
+        "cash": 95323.01,
+        "famNet": 95323.0085,
+        "list.0.ti": 95323.0085,
+        "list.0.tiP": 95323.0085,
+        "list.0.breakdown.publicPensions.oas": 9899.46,
+        "list.0.breakdown.publicPensions.cppQpp": 0,
+        "list.0.breakdown.publicPensions.recoveryTax": 0.0015,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 0.0015,
+        "list.0.breakdown.netIncome.ded": 0.0015,
+        "list.0.breakdown.seniorCredits.federalAge": 0,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 85423.55,
+        "list.0.breakdown.healthServicesFund.contribution": 360.6855,
+        "fed": 13140.5817,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2026-QC-age-76-cap-below",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "age": 76,
+            "birthMonth": 6,
+            "oas": true,
+            "oth": 151419.93
+          }
+        ],
+        "useBpa": false
+      },
+      "expected": {
+        "cash": 161319.39,
+        "famNet": 151419.9315,
+        "list.0.ti": 151419.9315,
+        "list.0.tiP": 151419.9315,
+        "list.0.breakdown.publicPensions.oas": 9899.46,
+        "list.0.breakdown.publicPensions.cppQpp": 0,
+        "list.0.breakdown.publicPensions.recoveryTax": 9899.4585,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 9899.4585,
+        "list.0.breakdown.netIncome.ded": 9899.4585,
+        "list.0.breakdown.seniorCredits.federalAge": 0,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 151419.93,
+        "list.0.breakdown.healthServicesFund.contribution": 1000,
+        "fed": 34221.0982,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2026-QC-age-76-cap-at",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "age": 76,
+            "birthMonth": 6,
+            "oas": true,
+            "oth": 151419.94
+          }
+        ],
+        "useBpa": false
+      },
+      "expected": {
+        "cash": 161319.4,
+        "famNet": 151419.94,
+        "list.0.ti": 151419.94,
+        "list.0.tiP": 151419.94,
+        "list.0.breakdown.publicPensions.oas": 9899.46,
+        "list.0.breakdown.publicPensions.cppQpp": 0,
+        "list.0.breakdown.publicPensions.recoveryTax": 9899.46,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 9899.46,
+        "list.0.breakdown.netIncome.ded": 9899.46,
+        "list.0.breakdown.seniorCredits.federalAge": 0,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 151419.94,
+        "list.0.breakdown.healthServicesFund.contribution": 1000,
+        "fed": 34221.1015,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2026-QC-age-76-cap-above",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "age": 76,
+            "birthMonth": 6,
+            "oas": true,
+            "oth": 151419.95
+          }
+        ],
+        "useBpa": false
+      },
+      "expected": {
+        "cash": 161319.41,
+        "famNet": 151419.95,
+        "list.0.ti": 151419.95,
+        "list.0.tiP": 151419.95,
+        "list.0.breakdown.publicPensions.oas": 9899.46,
+        "list.0.breakdown.publicPensions.cppQpp": 0,
+        "list.0.breakdown.publicPensions.recoveryTax": 9899.46,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 9899.46,
+        "list.0.breakdown.netIncome.ded": 9899.46,
+        "list.0.breakdown.seniorCredits.federalAge": 0,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 151419.95,
+        "list.0.breakdown.healthServicesFund.contribution": 1000,
+        "fed": 34221.1037,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2026-QC-opt-out-cpp-only",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "age": 74,
+            "birthMonth": 6,
+            "oas": false,
+            "cppQpp": 20000
+          }
+        ]
+      },
+      "expected": {
+        "cash": 20000,
+        "famNet": 20000,
+        "list.0.ti": 20000,
+        "list.0.tiP": 20000,
+        "list.0.breakdown.publicPensions.oas": 0,
+        "list.0.breakdown.publicPensions.cppQpp": 20000,
+        "list.0.breakdown.publicPensions.recoveryTax": 0,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 0,
+        "list.0.breakdown.netIncome.ded": 0,
+        "list.0.breakdown.seniorCredits.federalAge": 9208,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 20000,
+        "list.0.breakdown.healthServicesFund.contribution": 15,
+        "fed": 0,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2026-QC-oas-exclusion-cpp-inclusion",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "age": 74,
+            "birthMonth": 6,
+            "oas": true,
+            "cppQpp": 20000
+          }
+        ]
+      },
+      "expected": {
+        "cash": 28999.49,
+        "famNet": 28999.49,
+        "list.0.ti": 28999.49,
+        "list.0.tiP": 28999.49,
+        "list.0.breakdown.publicPensions.oas": 8999.49,
+        "list.0.breakdown.publicPensions.cppQpp": 20000,
+        "list.0.breakdown.publicPensions.recoveryTax": 0,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 0,
+        "list.0.breakdown.netIncome.ded": 0,
+        "list.0.breakdown.seniorCredits.federalAge": 9208,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 20000,
+        "list.0.breakdown.healthServicesFund.contribution": 15,
+        "fed": 390.3864,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2026-ON-deductions-before-recovery",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 74,
+            "birthMonth": 6,
+            "oas": true,
+            "cppQpp": 12000,
+            "oth": 100000,
+            "ded": 1000,
+            "rrsp": 4000,
+            "fhsa": 2000
+          }
+        ]
+      },
+      "expected": {
+        "cash": 120999.49,
+        "famNet": 111198.0165,
+        "list.0.ti": 111198.0165,
+        "list.0.tiP": 111198.0165,
+        "list.0.breakdown.publicPensions.oas": 8999.49,
+        "list.0.breakdown.publicPensions.cppQpp": 12000,
+        "list.0.breakdown.publicPensions.recoveryTax": 2801.4735,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 2801.4735,
+        "list.0.breakdown.netIncome.ded": 9801.4735,
+        "list.0.breakdown.seniorCredits.federalAge": 0,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 0,
+        "list.0.breakdown.healthServicesFund.contribution": 0,
+        "fed": 19489.7919,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2026-QC-cpp-without-age",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "cppQpp": 20000
+          }
+        ],
+        "useBpa": false
+      },
+      "expected": {
+        "cash": 20000,
+        "famNet": 20000,
+        "list.0.ti": 20000,
+        "list.0.tiP": 20000,
+        "list.0.breakdown.publicPensions.oas": 0,
+        "list.0.breakdown.publicPensions.cppQpp": 20000,
+        "list.0.breakdown.publicPensions.recoveryTax": 0,
+        "list.0.breakdown.publicPensions.recoveryDeduction": 0,
+        "list.0.breakdown.netIncome.ded": 0,
+        "list.0.breakdown.seniorCredits.federalAge": 0,
+        "list.0.breakdown.seniorCredits.federalPension": 0,
+        "list.0.breakdown.seniorCredits.provincialPension": 0,
+        "list.0.breakdown.seniorCredits.eligibleQuebec": 0,
+        "list.0.breakdown.healthServicesFund.income": 20000,
+        "list.0.breakdown.healthServicesFund.contribution": 15,
+        "fed": 2338,
+        "refund": 0
+      }
+    },
+    {
+      "id": "2025-QC-independent-adults",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "age": 74,
+            "birthMonth": 6,
+            "oas": true,
+            "oth": 85662.86
+          },
+          {
+            "age": 76,
+            "birthMonth": 6,
+            "oas": true,
+            "cppQpp": 12000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.publicPensions.oas": 8791.14,
+        "list.1.breakdown.publicPensions.oas": 9670.29,
+        "list.0.breakdown.publicPensions.recoveryTax": 150,
+        "list.1.breakdown.publicPensions.recoveryTax": 0,
+        "cash": 116124.29,
+        "famNet": 115974.29
+      }
+    },
+    {
+      "id": "2025-QC-childcare-recovery-deduction",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "age": 74,
+            "birthMonth": 6,
+            "oas": true,
+            "oth": 94662.86
+          }
+        ],
+        "childcare": {
+          "mode": "manual",
+          "children": [
+            {
+              "age": 4,
+              "expenses": 8000,
+              "qcEligibleExpenses": 0
+            }
+          ],
+          "manualClaims": [8000]
+        }
+      },
+      "expected": {
+        "list.0.breakdown.publicPensions.recoveryTax": 300,
+        "list.0.ti": 95154,
+        "list.0.tiP": 103154,
+        "breakdown.incomeBases.beforeChildcare.0": 103154,
+        "breakdown.incomeBases.provincialFamily": 103154,
+        "list.0.breakdown.healthServicesFund.income": 94662.86
+      }
+    },
+    {
+      "id": "2025-ON-investment-recovery-base",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 74,
+            "birthMonth": 6,
+            "oas": true,
+            "oth": 84662.86,
+            "ed": 1000,
+            "nd": 1000,
+            "cg": 1000,
+            "fd": 1000,
+            "ded": 100,
+            "rrsp": 200,
+            "fhsa": 300
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.publicPensions.recoveryTax": 514.5,
+        "cash": 97454,
+        "famNet": 96369.5,
+        "list.0.breakdown.netIncome.ded": 1114.5
+      }
+    },
+    {
+      "id": "2025-ON-recovery-restores-age-amount",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 74,
+            "birthMonth": 6,
+            "oas": true,
+            "oth": 91208.86
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.publicPensions.recoveryTax": 981.9,
+        "famNet": 99018.1,
+        "list.0.breakdown.seniorCredits.federalAge": 1003.585
+      }
+    },
+    {
+      "id": "2025-ON-first-year-cap-below",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 65,
+            "birthMonth": 6,
+            "oas": true,
+            "oth": 118529.67000000001
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.publicPensions.oas": 4425.12,
+        "list.0.breakdown.publicPensions.recoveryTax": 4425.1185,
+        "cash": 122954.79,
+        "famNet": 118529.6715
+      }
+    },
+    {
+      "id": "2025-ON-first-year-cap-at",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 65,
+            "birthMonth": 6,
+            "oas": true,
+            "oth": 118529.68000000001
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.publicPensions.oas": 4425.12,
+        "list.0.breakdown.publicPensions.recoveryTax": 4425.12,
+        "cash": 122954.8,
+        "famNet": 118529.68
+      }
+    },
+    {
+      "id": "2025-ON-first-year-cap-above",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 65,
+            "birthMonth": 6,
+            "oas": true,
+            "oth": 118529.69
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.publicPensions.oas": 4425.12,
+        "list.0.breakdown.publicPensions.recoveryTax": 4425.12,
+        "cash": 122954.81,
+        "famNet": 118529.69
+      }
+    },
+    {
+      "id": "2026-QC-independent-adults",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "age": 74,
+            "birthMonth": 6,
+            "oas": true,
+            "oth": 87323.51
+          },
+          {
+            "age": 76,
+            "birthMonth": 6,
+            "oas": true,
+            "cppQpp": 12000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.publicPensions.oas": 8999.49,
+        "list.1.breakdown.publicPensions.oas": 9899.46,
+        "list.0.breakdown.publicPensions.recoveryTax": 150,
+        "list.1.breakdown.publicPensions.recoveryTax": 0,
+        "cash": 118222.46,
+        "famNet": 118072.46
+      }
+    },
+    {
+      "id": "2026-QC-childcare-recovery-deduction",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "age": 74,
+            "birthMonth": 6,
+            "oas": true,
+            "oth": 96323.51
+          }
+        ],
+        "childcare": {
+          "mode": "manual",
+          "children": [
+            {
+              "age": 4,
+              "expenses": 8000,
+              "qcEligibleExpenses": 0
+            }
+          ],
+          "manualClaims": [8000]
+        }
+      },
+      "expected": {
+        "list.0.breakdown.publicPensions.recoveryTax": 300,
+        "list.0.ti": 97023,
+        "list.0.tiP": 105023,
+        "breakdown.incomeBases.beforeChildcare.0": 105023,
+        "breakdown.incomeBases.provincialFamily": 105023,
+        "list.0.breakdown.healthServicesFund.income": 96323.51
+      }
+    },
+    {
+      "id": "2026-ON-investment-recovery-base",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 74,
+            "birthMonth": 6,
+            "oas": true,
+            "oth": 86323.51,
+            "ed": 1000,
+            "nd": 1000,
+            "cg": 1000,
+            "fd": 1000,
+            "ded": 100,
+            "rrsp": 200,
+            "fhsa": 300
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.publicPensions.recoveryTax": 514.5,
+        "cash": 99323,
+        "famNet": 98238.5,
+        "list.0.breakdown.netIncome.ded": 1114.5
+      }
+    },
+    {
+      "id": "2026-ON-recovery-restores-age-amount",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 74,
+            "birthMonth": 6,
+            "oas": true,
+            "oth": 91000.51
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.publicPensions.recoveryTax": 701.55,
+        "famNet": 99298.45,
+        "list.0.breakdown.seniorCredits.federalAge": 1278.0325
+      }
+    },
+    {
+      "id": "2026-ON-first-year-cap-below",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 65,
+            "birthMonth": 6,
+            "oas": true,
+            "oth": 121068.98
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.publicPensions.oas": 4543.41,
+        "list.0.breakdown.publicPensions.recoveryTax": 4543.4085,
+        "cash": 125612.39,
+        "famNet": 121068.9815
+      }
+    },
+    {
+      "id": "2026-ON-first-year-cap-at",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 65,
+            "birthMonth": 6,
+            "oas": true,
+            "oth": 121068.98999999999
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.publicPensions.oas": 4543.41,
+        "list.0.breakdown.publicPensions.recoveryTax": 4543.41,
+        "cash": 125612.4,
+        "famNet": 121068.99
+      }
+    },
+    {
+      "id": "2026-ON-first-year-cap-above",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 65,
+            "birthMonth": 6,
+            "oas": true,
+            "oth": 121068.99999999999
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.publicPensions.oas": 4543.41,
+        "list.0.breakdown.publicPensions.recoveryTax": 4543.41,
+        "cash": 125612.41,
+        "famNet": 121069
+      }
+    }
+  ]
+}

@@ -1,5 +1,6 @@
-import type { FuelRate, Province, YearData } from "../data/schema.ts";
+import type { Federal, FuelRate, Province, YearData } from "../data/schema.ts";
 import type { ChildcareInput } from "./childcare.ts";
+import { publicPensionReceipts } from "./public-pensions.ts";
 
 export type IncomeKey = "ord" | "oth" | "cg" | "ed" | "nd" | "fd";
 export const INCOME_KEYS: IncomeKey[] = ["ord", "oth", "cg", "ed", "nd", "fd"];
@@ -42,6 +43,8 @@ export interface Person {
   selfEmployment?: number; // annual net business profit after expenses, before personal payroll deductions; >= 0
   oth?: number; // omitted in legacy inputs
   retirementIncome?: RetirementReceipt[]; // additional taxable domestic receipts; never also enter them in oth
+  oas?: boolean; // opt in to full OAS, requires age + birthMonth; remove OAS from oth, never copy it
+  cppQpp?: number; // gross annual retirement benefits, additional to oth; does not elect to stop contributions
   cg: number;
   ed: number;
   nd: number;
@@ -116,7 +119,20 @@ export interface Extra {
 export type { FuelRate, Province, YearData };
 export const blank = (ord: number): Person => ({ ord, oth: 0, cg: 0, ed: 0, nd: 0, fd: 0, ded: 0 });
 export const retirementCashOf = (x: Person) => (x.retirementIncome ?? []).reduce((sum, r) => sum + r.amount, 0);
-export const cashOf = (x: Person) =>
-  x.ord + (x.selfEmployment ?? 0) + (x.oth ?? 0) + retirementCashOf(x) + x.cg + x.ed + x.nd + x.fd;
+export const cashOf = (x: Person, fed?: Federal) => {
+  if (x.oas && !fed) throw new Error("OAS cash receipts require the selected year's federal data");
+  return (
+    x.ord +
+    (x.selfEmployment ?? 0) +
+    (x.oth ?? 0) +
+    retirementCashOf(x) +
+    x.cg +
+    x.ed +
+    x.nd +
+    x.fd +
+    (fed ? publicPensionReceipts(fed, x).oas : 0) +
+    (x.cppQpp ?? 0)
+  );
+};
 /** Profit before personal CPP/QPP/QPIP deductions is working income; investment/other income is not. */
 export const workingIncomeOf = (x: Person) => x.ord + (x.selfEmployment ?? 0);

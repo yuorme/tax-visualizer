@@ -1,0 +1,131 @@
+Title: Maximum Benefit Amounts and Related Figures - Canada Pension Plan (2025) and Old Age Security (October to December 2025)
+URL: https://www.canada.ca/en/employment-social-development/programs/pensions/pension/statistics/2025-quarterly-october-december.html
+Fetched: 2026-11-04
+SHA-256 of the original: 1492c68040547cee49ec5390e12f544a74b334f061da6e47e50bb7af2def32ce
+Publication date modified: 2025-09-29
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+# Maximum Benefit Amounts and Related Figures - Canada Pension Plan (2025) and Old Age Security (October to December 2025)
+
+Maximum benefit amounts and related figures - Canada Pension Plan (CPP), 2025 and Old Age Security (OAS), October to December 2025 [PDF - 289 KB]
+
+## On this page
+
+- Table 1- Maximum amount of new Canada Pension Plan (CPP) benefits
+- Table 2 - CPP exemptions and pensionable earnings
+- Table 3 - CPP contribution rates and annual maximum amounts
+- Table 4 - CPP contributors statistics
+- Table 5 - Old Age Security (OAS) amounts
+- Contact us
+- Related links
+
+Table 1- Maximum amount of new Canada Pension Plan (CPP) benefits, month of January 2025 Footnote 1
+Type of benefit | Flat rate portion | Earnings-related portion | Total
+Retirement pension (at age 65) | not applicable | $1,433.00 | $1,433.00
+Post-retirement benefit (at age 65) Footnote 2 | not applicable | $49.39 | $49.39
+Disability pension | $598.49 | $1,074.75 | $1,673.24
+Post-retirement disability benefit Footnote 3 | $598.49 | not applicable | $598.49
+Survivor’s pension – younger than 65 | $233.50 | $537.38 | $770.88
+Survivor’s pension – 65 and older | not applicable | $859.80 | $859.80
+Children of disabled or deceased contributor benefit – under age 18 | $301.77 | not applicable | $301.77
+Children of disabled or deceased contributor benefit – full-time student | $301.77 | not applicable | $301.77
+Children of disabled or deceased contributor benefit – part-time student | $150.89 | not applicable | $150.89
+Death benefit (one-time payment) Footnote 4 | $2,500.00 | not applicable | $2,500.00
+Combined benefits:
+Survivor/retirement (retirement at 65) | not applicable | $1,449.53 | $1,449.53
+Survivor/disability | not applicable | $1,683.57 | $1,683.57
+
+## Annual adjustment of benefits in pay in the previous year: +2.6%
+
+Table 2 - CPP exemptions and pensionable earnings, 2025
+Exemptions and pensionable earnings | Annual maximum amount
+Year's Basic Exemption (YBE) | $3,500.00
+Year's Maximum Pensionable Earnings (YMPE) | $71,300.00
+Year's Additional Maximum Pensionable Earnings (YAMPE) | $81,200.00
+
+Table 3 - Contribution rates and annual maximum amounts, 2025
+Contribution details | Base + 1st additional contribution | 2nd additional contribution
+Contribution rate for employee/employer | 5.95% | 4.00%
+Employee/employer maximum contribution | $4,034.10 | $396.00
+Contribution rate for self-employed | 11.90% | 8.00%
+Self-employed maximum contribution | $8,068.20 | $792.00
+
+Table 4 - CPP contributor statistics
+Statistics | Total
+Number of contributors (2023) | 15.9 million
+Amount of contributions (2024 to 2025) | $88,250 million
+
+Table 5 - OAS amounts – October to December 2025
+Type of benefit | Maximum monthly amount Footnote 5 | Annual income level cut-off Footnote 6 | Annual income level cut-off for top-ups Footnote 6
+Old Age Security pension (age 65 to 74) Footnote 7, Footnote 8 | $740.09 | not applicable | not applicable
+Old Age Security pension (age 75 and over) Footnote 7, Footnote 8 | $814.10 | not applicable | not applicable
+Guaranteed Income Supplement (GIS)
+Single person who receives an OAS pension | $1,105.43 | $22,440 | $10,256
+Spouse/common-law partner of someone who:
+does not receive an OAS pension or Allowance | $1,105.43 | $53,808 | $20,512
+receives an OAS pension | $665.41 | $29,616 | $8,704
+is an Allowance recipient | $665.41 | $41,472 | $8,704
+Allowance | $1,405.50 | $41,472 | $8,704
+Allowance for the Survivor | $1,675.45 | $30,216 | $10,256
+
+## Contact us
+
+Telephone: 1-800-277-9914
+TTY: 1-800-255-4786
+
+## Related links
+
+Quebec Pension Plan (QPP) data
+
+Monthly statistics on OAS and CPP beneficiaries and benefits
+
+## Footnotes
+
+Footnote 1
+
+Amounts in this table are maximum amounts for new CPP benefits beginning in January 2025. They reflect the CPP enhancement that began in 2019. These amounts increase every month as a result of the enhancement (monthly data available on Statistics on CPP monthly maximum amounts for new benefits).
+
+Return to footnote1 referrer
+
+Footnote 2
+
+Each year a valid contribution is made to the CPP while a retirement pension is received, the person becomes eligible for a Post-Retirement Benefit (PRB) in January of the following year and thus can receive more than one PRB.
+
+Return to footnote 2 referrer
+
+Footnote 3
+
+This amount is added to the retirement pension.
+
+Return to footnote 3 referrer
+
+Footnote 4
+
+The estate of a contributor who dies before collecting a retirement or disability pension and does not leave behind a survivor is entitled to an additional $2,500.
+
+Return to footnote 4 referrer
+
+Footnote 5
+
+The maximum amount includes the top-ups for the GIS and the Allowances. The top-ups are provided to GIS and Allowance recipients with the lowest incomes.
+
+Return to footnote 5 referrer
+
+Footnote 6
+
+The income level cut-offs do not include the OAS pension, the first $5,000 of employment or self-employment income and 50% of employment or self-employment income between $5,000 and $15,000.
+
+Return to first footnote 6 referrer
+
+Footnote 7
+
+The OAS pension repayment range in 2025 is for net world income from $93,454 to $152,062, for individuals aged 65 to 74. For those aged 75 and over, the upper threshold is $157,923. Net world income includes the OAS pension.
+
+Return to first footnote 7 referrer
+
+Footnote 8
+
+Individuals can defer receiving the OAS pension beyond age 65 in exchange for a higher pension. The monthly OAS pension is increased by 0.6% for every month it is delayed, up to 36% at age 70.
+
+Return to first footnote 8 referrer

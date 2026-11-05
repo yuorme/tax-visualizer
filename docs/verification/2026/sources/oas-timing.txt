@@ -1,0 +1,76 @@
+Title: Old Age Security
+URL: https://www.canada.ca/en/services/benefits/publicpensions/old-age-security/benefit-amount.html
+Fetched: 2026-11-04
+SHA-256 of the original: 39af61f7cf3a8e7eee4b9e47f2297f1db94a350fc0f7a6e3f60c0bbe091c7518
+Publication date modified: 2026-10-13
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+# How much you could receive
+
+## How we calculate your Old Age Security payment
+
+The amount of your Old Age Security pension depends on different factors, such as your:
+
+- Age:
+
+- The age when you start receiving your pension
+- Whether you are over 75 years old and eligible for the increased pension
+
+- Income: Your net income has an impact on your monthly OAS payment
+- Residence in Canada: You may get a partial pension if you have lived in Canada for less than 40 years
+
+Maximum payment amounts and income thresholds
+
+Age | Maximum monthly payment amount | To receive the OAS your annual net world income in 2025 must be
+65 to 74 | $762.50 | Less than $152,062
+75 and over | $838.75 | Less than $157,923
+
+The maximum amounts are not guaranteed. Your actual pension amount may be different depending on your age, income, and the number of years you have lived in Canada.
+
+Old Age Security (OAS) payment amounts
+
+#### Adjustments that increase payment amounts
+
+Cost of living increases: Each January, April, July, and October pension amounts are increased to reflect any increases in the cost of living. Pension amounts do not decrease if the cost of living goes down.
+
+### Increased OAS pension at age 75
+
+You will get an automatic 10% increase of your OAS pension the month following your 75th birthday.
+
+This 10% increase will not affect your Guaranteed Income Supplement (GIS) payment amount.
+
+### Recovery tax for income over $93,454
+
+If your net income is over $93,454 (2025), you may need to repay part or all your OAS pension. Learn more about the OAS recovery tax.
+
+## Situations that can affect your pension amount
+
+Other factors can also affect your pension amount.
+
+### Working while receiving the Old Age Security
+
+If you are still working and your net income is higher than $93,454 (2025), you may have to pay back part of your Old Age Security pension payment.
+
+Learn more about the OAS pension recovery tax.
+
+### Living or having lived outside of Canada
+
+Living outside Canada can affect Old Age Security (OAS) payments in 2 ways:
+
+1. If you currently live outside Canada:
+
+- You must have lived in Canada for at least 20 years after turning 18 to get any OAS payments
+- You may count the time you lived and worked in another country towards the 20 years, if that country has a social security agreement with Canada
+
+2. If you have lived in Canada for less than 40 years (after age 18):
+
+- You may get a partial pension based on how long you lived in Canada (years lived in Canada ÷ 40)
+- To qualify for a partial pension, you need:
+
+- At least 10 years of residence if you currently live in Canada
+- At least 20 years of residence if you currently live outside Canada
+
+## Contact us
+
+Need help? Contact us.

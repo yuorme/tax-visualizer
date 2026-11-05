@@ -13,6 +13,7 @@ export function healthServicesIncome(fed: Federal, x: Person): number {
   return (
     (x.oth ?? 0) +
     retirementCashOf(x) +
+    (x.cppQpp ?? 0) + // Schedule F excludes OAS, but not CPP/QPP retirement benefits
     (x.selfEmployment ?? 0) +
     Math.max(0, x.cg) * fed.investment.capitalGainsInclusion +
     x.ed +

@@ -11,6 +11,7 @@ import {
   rrspRoom,
   workerDeductionOf,
 } from "./payroll.ts";
+import { publicPensionReceipts } from "./public-pensions.ts";
 import { seniorBases } from "./senior-credits.ts";
 import { type Ctx, cashOf, type Extra, type Person } from "./types.ts";
 
@@ -57,13 +58,16 @@ export function personTax(fed: Federal, p: Province, x: Person, sp: Extra, ctx: 
   const { pay, selfEmployment: self } = payrollDetailsOf(fed, p, x);
   const retirement = employeeRetirementPayrollOf(fed, p, x)?.retirement;
   const ti = netOf(fed, p, x, ctx.childcareDeduction); // taxable income (federal)
+  const incomeParts = netIncomeParts(fed, p, x, ctx.childcareDeduction);
+  const recovery = incomeParts.oasRecovery ?? 0;
   const workerDed = workerDeductionOf(p, x);
-  const provincialNet = qc ? netOf(fed, p, x) : ti; // Quebec does not deduct federal childcare expenses
+  // TP-1 line 250 imports federal line 23500, including when federal childcare changes recovery.
+  const provincialNet = qc ? netOf(fed, p, x, 0, incomeParts.oasRecovery) : ti;
   const tiP = Math.max(0, provincialNet - workerDed); // Quebec allows an extra deduction for workers
   const senior = seniorBases(fed, p, x, ti, s.useBpa);
   const seniorRule = p.seniorCredits;
   const craSenior = seniorRule && !("program" in seniorRule) ? seniorRule : undefined;
-  const cash = cashOf(x);
+  const cash = cashOf(x, fed);
   const f = walk(fed.brackets, ti),
     pr = walk(p.brackets, tiP);
   const k = qc ? 1 - fed.quebecAbatement : 1;
@@ -223,7 +227,7 @@ export function personTax(fed: Federal, p: Province, x: Person, sp: Extra, ctx: 
       ? ageTax.amount
       : 0;
   const ageTaxApplied = Math.min(provPre - pFtc - (afterForeign ? lowRed : 0), ageTaxFull);
-  const fedTax = fedBasic * k - fFtc,
+  const fedTax = fedBasic * k - fFtc + recovery,
     prov = provPre - pFtc - (afterForeign ? lowRed : 0) + provincialLevy - ageTaxApplied;
   const ohp = healthPremium(p, ti);
   const healthFund = healthServicesFund(p, healthServicesIncome(fed, x), self?.healthServicesDeduction);
@@ -280,6 +284,17 @@ export function personTax(fed: Federal, p: Province, x: Person, sp: Extra, ctx: 
     // Figures the page shows that aren't steps of the calculation above. They sit in a nested object because the
     // golden snapshot (tests/golden/snapshot.mjs) locks every top-level number of this result.
     breakdown: {
+      ...(x.oas !== undefined || x.cppQpp !== undefined
+        ? {
+            publicPensions: {
+              ...publicPensionReceipts(fed, x),
+              recoveryIncome: ti + recovery,
+              recoveryTax: recovery,
+              recoveryDeduction: recovery,
+              withholding: null, // unknown; not inferred from this year's liability
+            },
+          }
+        : {}),
       ...(self ? { selfEmployment: self } : {}),
       ...(retirement ? { retirementPayroll: retirement } : {}),
       seniorCredits: {
@@ -306,7 +321,7 @@ export function personTax(fed: Federal, p: Province, x: Person, sp: Extra, ctx: 
       },
       provincialLevy,
       childcareCredit: { calculated: childcareCreditFull, applied: childcareCredit },
-      netIncome: netIncomeParts(fed, p, x, ctx.childcareDeduction), // what net income is made of
+      netIncome: incomeParts, // what net income is made of
       rrspRoom: rrspRoom(fed, x),
       quebecAbatement: fedBasic * (1 - k), // the share of basic federal tax that Quebec residents don't pay federally
       ftc, // foreign tax credit, federal and provincial

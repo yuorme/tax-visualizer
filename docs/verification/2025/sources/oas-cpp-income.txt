@@ -1,0 +1,84 @@
+Title: Line 11400 – CPP or QPP benefits
+URL: https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/tax-return/completing-a-tax-return/personal-income/line-11400-cpp-qpp-benefits.html
+Fetched: 2026-11-04
+SHA-256 of the original: e61dba508dc75d18ce476422b1cabe3753ea8f715a5ec09f7607040d636ffe63
+Publication date modified: 2026-01-20
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+# Line 11400 – CPP or QPP benefits
+
+Special rules apply if you are 60 to 70 years of age and working while receiving CPP benefits. Learn more.
+
+If you received Canada Pension Plan (CPP) or Quebec Pension Plan (QPP) benefits in 2025, you will get a T4A(P) slip.
+
+If you do not have your T4A(P) slip:
+
+- Visit Service Canada or call 1-800-277-9914
+- View your T4A(P) slip online by signing in to your CRA account
+
+## What's on your T4A(P) slip
+
+- Box 20 – Total CPP or QPP benefits
+- Box 15 – Survivor benefit (included in box 20)
+- Box 16 – Disability benefit (included in box 20)
+- Box 17 – Child benefit (included in box 20)
+- Box 18 – Death benefit (included in box 20)
+
+## Details about each benefit
+
+### Survivor benefit (box 15)
+
+This is paid monthly if you are the surviving spouse or common-law partner of a CPP or QPP contributor.
+
+Note: This amount is already included in box 20 of your T4A(P) slip.
+
+### Disability benefit (box 16)
+
+This is paid monthly if you contributed to and met the CPP or QPP rules. It is also paid to dependent children.
+
+Note: This amount is considered earned income for RRSP/PRPP purposes and affects your RRSP/PRPP deduction limit.
+
+### Child benefit (box 17)
+
+This amount is already included in box 20 of your T4A(P) slip.
+
+Report this only if you received it because you were the child of a deceased or disabled contributor.
+
+Benefits paid for your children are considered their income, even if you received the payment.
+
+### Death benefit (box 18)
+
+This is a one-time lump-sum payment to the estate of a deceased CPP or QPP contributor.
+
+This amount is already included in box 20 of your T4A(P) slip.
+
+Do not report this amount if you are filing a return for a deceased person.
+
+If you received this amount as a beneficiary, report it on line 13000, unless a T3 Trust Income Tax and Information Return is filed for the estate.
+
+For more information, see Doing taxes for someone who died and Guide T4013, T3 Trust Guide.
+
+## Lump-sum benefits
+
+If you received a lump-sum CPP or QPP payment in 2025 and part relates to previous years, report the full amount on line 11400 of your 2025 return.
+
+If $300 or more relates to previous years, the CRA will calculate the tax as if you received those parts in those years (if it is better for you). The CRA will show the result on your notice of assessment or reassessment.
+
+Attach a letter from Service Canada showing the breakdown of the lump-sum unless it appears on your T4A(P) slip.
+
+## Completing your tax return
+
+Enter the following amounts from your T4A(P) slip on your return:
+
+- Box 20 on line 11400
+- Box 16 on line 11410 (do not add this amount to line 11400 because it is already included in box 20)
+
+## Forms and publications
+
+- Income Tax Package
+- Guide T4013, T3 Trust Guide
+
+## Related topics
+
+- What to do when someone has died

@@ -36,7 +36,7 @@ line-by-line tax return. Simpler and slightly less precise is acceptable where i
   Move receipts out of other income when using those fields; do not copy them. For 2025–2026, Quebec's
   Health Services Fund contribution applies per
   person to subject non-employment income, including taxable gains and actual dividends. Other income is assumed
-  subject: OAS, taxable support receipts and other Schedule F exclusions are not separately identified.
+  subject: OAS, taxable support receipts and other Schedule F exclusions entered there cannot be identified.
   RRSP, FHSA and federal childcare deductions do not reduce this base. Unclassified other deductions are not
   subtracted; eligible carrying charges, deductible support and retirement-income transfers need separate
   classification and remain unsupported. Business payroll deductions are classified separately:
@@ -45,8 +45,9 @@ line-by-line tax return. Simpler and slightly less precise is acceptable where i
   RRSP/FHSA out is correct. Employee enhanced QPP/QPIP does not qualify for Schedule F lines 43/43.1.
   For 20,000 pension plus an illustrative 9,000 OAS entered together, this contribution is 90 too high;
   OAS alone or income on the 150 plateau can produce no error. The contribution base is an explicit allow-list:
-  #18 must keep its separate OAS input out while retaining it for income tax, and add its CPP/QPP benefits
-  to this base. Business allocation outside Quebec (guide line 446 / TP-22)
+  #18's engine keeps its separate OAS input out while retaining it for income tax, and includes separately
+  entered CPP/QPP benefits in this base. Its page controls follow separately. Business allocation outside Quebec
+  (guide line 446 / TP-22)
   and restricted line 297 deductions are not modelled. See [Schedule F audit](verification/91-qc-health-fund.md).
   The 2026 rate and thresholds are published by Finances Québec; caps, the second-column base and income rules
   provisionally continue 2025 Schedule F (`estimated: true`). The contribution remains omitted in 2019–2024.
@@ -115,6 +116,23 @@ line-by-line tax return. Simpler and slightly less precise is acceptable where i
   exclusions/deductions remain as described above; the four supported receipts are subject to the Health Services Fund.
   Alberta supplemental-credit sizing (#147) remains outside this change.
   See [verification](verification/17-senior-credits.md).
+
+- OAS and CPP/QPP retirement income, **engine only, 2025–2026** (#18): per-adult opt-in `oas` calculates full
+  resident OAS from published quarterly monthly amounts; `cppQpp` accepts annual gross retirement receipts.
+  Both are additional cash and taxable income, so move any matching amounts out of `oth`, never copy them.
+  Omitted inputs preserve legacy results; age alone does not opt in. OAS requires year-end age and birth month.
+  Receipts begin the month after turning 65; the higher published 75+ amount begins the month after turning 75.
+  Birthdays are resolved by month with no day-level exceptions. Full-year residence and commencement at 65
+  are assumed; deferral, partial OAS, arrears and prior benefit overpayments remain unsupported.
+  Current-year recovery is 15% above that year's threshold, capped at actual modelled OAS receipts. It is deducted
+  from net income and added once to federal liability after credits and Quebec abatement. Quebec imports the
+  federal deduction even when federal childcare changes it. Income-tested credits use the resulting net income.
+  OAS is not a refundable credit; recovery withholding based on earlier returns is unknown, not a second charge.
+  Neither receipt earns employment or pension-income credits, RRSP room, or changes payroll elections.
+  Published 2026 amounts and thresholds use provisional 2025 filing mechanics. Earlier years reject these inputs;
+  History back-fill is a separate issue to file at merge. Controls, tooltips, URL encoding and saved-state migration
+  follow in the page branch. GIS (#19), splitting (#20) and seniors' supplements (#21) remain outside this engine work.
+  See [verification and rule coverage](verification/18-oas-cpp.md).
 
 **Payroll (employee share, plus both shares on self-employment)**
 - CPP/QPP base and enhanced contributions, EI or EI plus QPIP, Ontario Health Premium, the 2% payroll tax in the
@@ -231,8 +249,8 @@ points. Individual provincial and territorial programs beyond the ones it measur
 built.
 - Federal and provincial age amounts and pension income credit: implemented for 2025–2026 above;
   historical back-fill remains in #196.
-- OAS with its recovery tax (clawback) and the 10% increase at 75; GIS and the Allowance.
-- CPP/QPP retirement benefits as income.
+- OAS with recovery tax and the 10% increase at 75, plus CPP/QPP retirement income: engine implemented for
+  2025–2026 above; page controls follow separately. GIS and the Allowance remain planned.
 - Pension income splitting, optimised automatically per province (the engine tries 0–50% and keeps the lowest
   household tax; no input).
 - Provincial seniors' supplements (Ontario GAINS, Alberta Seniors Benefit, BC Senior's Supplement,

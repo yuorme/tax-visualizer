@@ -1,0 +1,48 @@
+Title: Federal Worksheet
+URL: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5000-d1/5000-d1-25e.pdf
+Fetched: 2026-11-04
+SHA-256 of the original: 477acbdabab91fc2cfff8cad4962d89d225fbd683441560f022949f792f5349d
+Publication date modified: 2025-12-03
+PDF pages: 2 of 9
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 2 of 9 ---
+
+Line 22100 – Carrying charges, interest expenses, and other expenses
+For more information, go to canada.ca/line-22100.
+1Total carrying charges
+2Total interest expenses +
+3Total other expenses +
+4Add lines 1 to 3. Enter this amount on line 22100 of your return. =
+Line 23500 – Social benefits repayment
+Complete the chart below if one or both of the following applies:
+• You entered an amount on line 11900 of your return and the amount on line 23400 is more than $82,125
+• You entered an amount on line 11300 or line 14600 of your return and the amount on line 23400 is more than $93,454
+1Old age security (OAS) pension from line 11300 of your return
+2Net federal supplements paid from line 14600 of your return +
+3Line 1 plus line 2 =
+4Overpayment of OAS benefits recovered (box 20 of your T4A(OAS) slip) –
+5Line 3 minus line 4 (if negative, enter "0") =
+6Net income before adjustments from line 23400 of your return
+7EI benefits repayment from line 4 of the repayment chart on your T4E slip, if any
+8Universal child care benefit (UCCB) from line 11700 of your return +
+9Registered disability savings plan (RDSP) income from line 12500 of your return +
+10Add lines 7 to 9. =
+Ż –
+11Line 6 minus line 10 =
+12UCCB repayment from line 21300 of your return
+13RDSP income repayment (included in the amount on line 23200 of your return) +
+14Line 12 plus line 13 =
+Ż +
+15Adjusted net incomeLine 11 plus line 14 =
+16OAS benefits base amount –
+17Line 15 minus line 16 (if negative, enter "0") =
+18Amount from line 17 × 15% =
+19Enter whichever is less: amount from line 5 or line 18.
+20Amount from line 7, if any +
+21
+Line 19 plus line 20.
+Enter this amount on line 23500 and line 42200 of your return. =
+5000-D1 E (25) Page 2 of 9
+93,454.00
