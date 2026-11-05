@@ -24,6 +24,7 @@ import { ALLOWED_HOSTS, openPage, settle } from "./page.mjs";
 import { PORTFOLIO_RESPONSIVE_STEPS, PORTFOLIO_STEPS } from "./portfolio.mjs";
 import { PUBLIC_PENSION_RESPONSIVE_STEPS, PUBLIC_PENSION_STEPS } from "./public-pensions.mjs";
 import { checkQuebecHealthFund } from "./qc-health-fund.mjs";
+import { checkQuebecSpouseSavings } from "./qc-line-431.mjs";
 import { COMPARISON_STEPS, RESPONSIVE_STEPS } from "./responsive.mjs";
 import { RETIREMENT_RESPONSIVE_STEPS, RETIREMENT_STEPS } from "./retirement.mjs";
 import { COLUMN_COUNT, contrastViolations, inspect, KNOWN, MAX_LABEL_LENGTH } from "./rules.mjs";
@@ -988,6 +989,12 @@ for (const width of [1000, 430, 375]) {
       steps: [["Quebec Health Services Fund inputs, totals and historical coverage", checkQuebecHealthFund]],
     });
     check(`${width}px ${colorScheme}, Quebec Health Services Fund`, width, healthFund);
+    const spouseSavings = await run({
+      width,
+      colorScheme,
+      steps: [["Quebec line 431 is included in the spouse savings tooltip", checkQuebecSpouseSavings]],
+    });
+    check(`${width}px ${colorScheme}, Quebec spouse savings`, width, spouseSavings);
     const ledgerOrder = await run({
       width,
       colorScheme,

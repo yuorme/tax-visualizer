@@ -162,6 +162,7 @@ emergency). The agent that finishes a branch pushes it and opens the pull reques
 `Closes #N`); the orchestrator then runs the reviewer, which posts its verdict on the pull request, and sends any
 findings to fix back to the same agent. Use merge commits, not squash or rebase, so commit hashes survive
 (`.git-blame-ignore-revs` lists formatting commits by hash).
+Every pull request comment and review states the writer's model and effort.
 
 Once the pull request is final (reviewer approved, no open should-fix findings, no more commits planned), the
 orchestrator says so and queues it with `gh pr merge N --auto --merge`; GitHub merges it once CI passes (at once if
@@ -188,5 +189,6 @@ to any agent sent review fixes. Wrap every CI wait in `timeout` or a fixed numbe
 ## Tool notes
 **Claude Code:** see `CLAUDE.md`. **Codex:** `.claude/` files don't configure Codex (tools, isolation,
 permissions); `.codex/hooks.json` does, and models come from the tier table. Create worktrees explicitly, follow
-the active sandbox and approvals, and put your actual model in review headers. Dispatched with network on, do your
-own `npm ci`, `gh` and push steps; `.git` stays read-only, so request escalation for `git commit` and the like.
+the active sandbox and approvals, and put your actual model and effort in review headers. Dispatched with network
+on, do your own `npm ci`, `gh` and push steps; `.git` stays read-only, so request escalation for `git commit` and the
+like.

@@ -67,6 +67,12 @@ line-by-line tax return. Simpler and slightly less precise is acceptable where i
   CPP/QPP and EI/QPIP.
 - Dividend gross-up and dividend tax credits; 50% inclusion of net capital gains; foreign tax credit for tax
   withheld on foreign dividends.
+- Quebec couples transfer unused credits through TP-1 line 431 in **2019–2026**, with or without age or
+  retirement inputs (#205). Negative line 430 includes unused BPA and dividend credits; BPA is transferred once,
+  and the recipient cannot reduce line 432 below zero. The personal-credit switch also disables this transfer.
+  The spouse-savings explanation includes the Quebec transfer actually used by either adult.
+  This correction needs no historical senior parameters; age and pension inputs remain supported only in
+  2025–2026. See [rule confirmation, calculations and golden changes](verification/205-qc-line-431.md).
 - Annual deductions claimed per adult, itemized as RRSP, FHSA and other deductions; each reduces net income.
   Account room and contribution history are not calculated: the RRSP shortcut estimates room from employment
   income and supported business profit and is not a verified maximum. FHSA claims may include deferred claims.

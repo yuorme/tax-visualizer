@@ -679,7 +679,7 @@ export function footerNotes(y: YearData, page: PageDefaults): string {
     ),
     para(
       "Household",
-      "Canada has no joint filing, so each person is taxed on their own income and the household figures add the two together. If the second person is a spouse or common-law partner and basic personal amounts are on, the higher-income partner claims the spouse amount for the other: each government's spouse amount is reduced by the lower earner's net income (above a small threshold in some provinces) and credited at the lowest bracket rate. Quebec has no provincial spouse amount; instead the lower earner's unused basic credit is transferred to their partner. Marginal rates are household rates: the change in the household's total tax when the selected person earns one more dollar.",
+      "Canada has no joint filing, so each person is taxed on their own income and the household figures add the two together. If the second person is a spouse or common-law partner and basic personal amounts are on, the higher-income partner claims the spouse amount for the other: each government's spouse amount is reduced by the lower earner's net income (above a small threshold in some provinces) and credited at the lowest bracket rate. Quebec has no provincial spouse amount; instead either spouse can transfer unused credits, including basic personal and dividend credits, to their partner through line 431. Marginal rates are household rates: the change in the household's total tax when the selected person earns one more dollar.",
     ),
     para(
       "Quebec",

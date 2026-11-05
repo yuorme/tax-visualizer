@@ -1,0 +1,96 @@
+Title: 2019 TP-1 guide: spouse credit transfer (line 431)
+URL: https://www.revenuquebec.ca/documents/en/formulaires/tp/2019-12/TP-1.G-V(2019-12).pdf
+Fetched: 2026-11-05
+SHA-256 of the original: 975ac48dcc8826a16074b74153b5ac1f778a7cf17c87dd3675b5040624588742
+Publication date modified: 2019-12-18
+PDF pages: 75 of 116
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 75 of 116 ---
+
+752019 – G UIDE-V
+However, a person is not considered to be retired or on pre-retirement leave
+if the total of the person’s employment and business income for 2019
+was over $3,500, and he or she had yet to turn 65 or redeem all or part
+of his or her shares by the end of the year
+Purchase of replacement shares
+If you purchased replacement shares (RL-10 slip) because you redeemed
+your shares in a labour-sponsored fund in a previous year in order
+to participate in the Home Buyers’ Plan (HBP) or the Lifelong Learning Plan
+(LLP), you cannot claim the credit for the replacement shares
+431 Credits transferred from one spouse
+to the other
+Negative amount on line 430
+If the amount on line 430 is negative, you can transfer it to your spouse
+on December 31, 2019 (see the definition at line 12), to reduce his or her
+income tax However, if you claimed a deduction for split income on
+line 295, refer to Part 4 of form TP-766 3 4-V,
+Income Tax on Split Income,
+to find out whether you can transfer an amount
+To make the transfer, carry the amount from line 430 to line 431 and
+enter “0” on line 432 Your spouse must enter the transferred amount on
+line 431 of his or her return You must file a return in order for the amount
+to be transferred to your spouse
+If you are claiming amounts on lines 381, 385, 395, 398, 409 and 424,
+you can reduce them instead of transferring the unused portion of the
+credits to your spouse This will reduce your income tax for future years
+Positive amount on line 430
+If the amount on line 430 of your return is positive, but the amount
+on line 430 of the return of your spouse on December 31, 2019
+(see the definition at line 12), is negative, you can enter the negative
+amount on line 431 of your return If you do so, your spouse must file
+a return
+Your spouse is transferring an amount as a child 18 or over
+enrolled in post-secondary studies
+If your spouse on December 31, 2019, is transferring to his or her father
+or mother an amount as a child 18 or over enrolled in post-secondary
+studies, you must reduce the negative amount shown on line 430 of
+your spouse’s return by 15% of the amount transferred to his or her father
+or mother (line 20 of your spouse’s Schedule S) and enter that reduced
+amount on line 431 of your return
+Your spouse died in 2019
+If your spouse died in 2019, but is considered to have been your spouse
+on December 31, 2019, only the negative amount on line 430 of your
+spouse’s principal income tax return can be transferred to you
+432 Alternative minimum tax carry-over,
+alternative minimum tax
+and deduction for logging tax
+Alternative minimum tax carry-over
+(line 13 of Schedule E)
+As a rule, if you do not have any alternative minimum tax payable for 2019,
+you may be entitled to deduct all or part of the alternative minimum tax
+paid for a year before 2019 To determine the amount you can deduct on
+line 13 of Schedule E, complete form TP-776 42-V,
+Alternative Minimum Tax
+Alternative minimum tax (line 15 of Schedule E)
+Alternative minimum tax limits the advantages you can receive in a year
+from certain tax incentives You may be required to pay this tax if,
+for example, any of the following situations apply to you:
+1 You are reporting a taxable capital gain on line 139
+2 You are deducting a loss with respect to a tax shelter on line 164
+3 You are claiming a deduction for interest and carrying charges incurred
+to acquire:
+• flow-through shares;
+• an interest in a partnership as a specified member or as a limited
+partner;
+• a tax shelter;
+• rental or leasing property;
+• an investment in a film production; or
+• investments in resources
+4 You are claiming a deduction on line 241, a deduction for Québec
+exploration expenses that give entitlement to an additional deduction
+(line 250, point 9) or a deduction for certain films (line 250, point 17)
+5 You are claiming a deduction on line 287 other than the additional
+deduction for Québec resources or the result of the following calculation:
+the deduction for the Cooperative Investment Plan (CIP) minus the cost
+of the securities for which you are claiming the deduction
+If any of the situations described above apply to you, complete
+Work Chart 432 to determine whether you must complete form TP-776 42-V,
+Alternative Minimum Tax
+Deduction for logging tax (line 17 of Schedule E)
+If you carried out logging operations in Québec in 2019, you can deduct
+one third of the logging tax you paid to the Minister of Revenue of Québec
+when you filed the
+Logging Operations Return (form TPZ-1179-V)
+D1 – Version 6 – 11 novembre 2019

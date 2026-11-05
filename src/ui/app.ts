@@ -1263,12 +1263,8 @@ function ledgerView({ p, r }: Row) {
         : "spouse amount"
     : "";
   const spLabelF = mine ? `Less ${spName} ${money(cl.fAmt)} × ${rateFmt(F.brackets[0][1])}` : "";
-  const provincialMine = cl !== null && (cl.provincialClaimant ?? cl.c) === active;
-  const spLabelP = provincialMine
-    ? cl.qc && cl.kind === "spouse"
-      ? `Less partner's unused credit transferred`
-      : `Less ${spName} ${money(cl.pAmt)} × ${rateFmt(p.b[0][1])}`
-    : "";
+  const provincialMine = cl !== null && !(cl.qc && cl.kind === "spouse") && (cl.provincialClaimant ?? cl.c) === active;
+  const spLabelP = provincialMine ? `Less ${spName} ${money(cl.pAmt)} × ${rateFmt(p.b[0][1])}` : "";
   const suffix = two ? ` · ${who}` : "";
   const seniorCredits = m.breakdown.seniorCredits;
   const pension = m.breakdown.publicPensions;
