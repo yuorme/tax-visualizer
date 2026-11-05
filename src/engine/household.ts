@@ -340,6 +340,7 @@ export function household(y: YearData, p: Province, hh: Household, peopleIn: Per
   const ccb = ccbOf(fed, famNet, kids, under6);
   const incomeBases = {
     beforeChildcare: ppl.map((x, i) => netIncomeTotal(netIncomeParts(fed, p, x, 0, recoveries[i]))),
+    beforeChildcareAndRecovery: ppl.map(x => netIncomeTotal(netIncomeParts(fed, p, x, 0, 0))),
     federal: nets,
     provincial: list.map(r => r.tiP),
     provincialFamily: couple ? list[0].tiP + list[1].tiP : list[0].tiP,
@@ -354,7 +355,7 @@ export function household(y: YearData, p: Province, hh: Household, peopleIn: Per
     p,
     hh,
     childcare,
-    incomeBases.beforeChildcare,
+    incomeBases.beforeChildcareAndRecovery,
     incomeBases.provincialFamily,
     list.map(r => r.breakdown.childcareCredit.applied),
   );

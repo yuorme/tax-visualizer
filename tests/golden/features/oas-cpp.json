@@ -3839,6 +3839,720 @@
         "cash": 125612.41,
         "famNet": 121069
       }
+    },
+    {
+      "id": "2025-ON-t778-recovery-reverses-ranking",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 74,
+            "birthMonth": 6,
+            "oas": true,
+            "oth": 91208.86
+          },
+          {
+            "ord": 100695
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 4,
+              "expenses": 8000
+            }
+          ],
+          "earnedIncome": [0, 100695]
+        }
+      },
+      "expected": {
+        "childcare.claimant": 1,
+        "childcare.claims.1": 8000,
+        "childcare.claims.0": 0,
+        "list.1.ti": 91621,
+        "list.0.ti": 99018.1,
+        "famNet": 190639.1
+      }
+    },
+    {
+      "id": "2025-ON-t778-recovery-reverses-ranking-swapped",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "ord": 100695
+          },
+          {
+            "age": 74,
+            "birthMonth": 6,
+            "oas": true,
+            "oth": 91208.86
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 4,
+              "expenses": 8000
+            }
+          ],
+          "earnedIncome": [100695, 0]
+        }
+      },
+      "expected": {
+        "childcare.claimant": 0,
+        "childcare.claims.0": 8000,
+        "childcare.claims.1": 0,
+        "list.0.ti": 91621,
+        "list.1.ti": 99018.1,
+        "famNet": 190639.1
+      }
+    },
+    {
+      "id": "2025-ON-care-recovery-106800-below",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "useCredits": true,
+        "people": [
+          {
+            "ord": 50000,
+            "age": 74,
+            "birthMonth": 6,
+            "oas": true,
+            "oth": 48008.85
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 4,
+              "expenses": 8000
+            }
+          ],
+          "earnedIncome": [50000]
+        }
+      },
+      "expected": {
+        "childcare.claims.0": 8000,
+        "breakdown.childcareCredit.income": 106799.99,
+        "breakdown.childcareCredit.rate": 0.25,
+        "breakdown.childcareCredit.applied": 2000,
+        "list.0.breakdown.publicPensions.recoveryTax": 801.8985,
+        "list.0.ti": 97998.0915,
+        "breakdown.incomeBases.beforeChildcare.0": 105998.0915
+      }
+    },
+    {
+      "id": "2025-ON-care-recovery-106800-at",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "useCredits": true,
+        "people": [
+          {
+            "ord": 50000,
+            "age": 74,
+            "birthMonth": 6,
+            "oas": true,
+            "oth": 48008.86
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 4,
+              "expenses": 8000
+            }
+          ],
+          "earnedIncome": [50000]
+        }
+      },
+      "expected": {
+        "childcare.claims.0": 8000,
+        "breakdown.childcareCredit.income": 106800,
+        "breakdown.childcareCredit.rate": 0.25,
+        "breakdown.childcareCredit.applied": 2000,
+        "list.0.breakdown.publicPensions.recoveryTax": 801.9,
+        "list.0.ti": 97998.1,
+        "breakdown.incomeBases.beforeChildcare.0": 105998.1
+      }
+    },
+    {
+      "id": "2025-ON-care-recovery-106800-above",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "useCredits": true,
+        "people": [
+          {
+            "ord": 50000,
+            "age": 74,
+            "birthMonth": 6,
+            "oas": true,
+            "oth": 48008.87
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 4,
+              "expenses": 8000
+            }
+          ],
+          "earnedIncome": [50000]
+        }
+      },
+      "expected": {
+        "childcare.claims.0": 8000,
+        "breakdown.childcareCredit.income": 106800.01,
+        "breakdown.childcareCredit.rate": 0.23,
+        "breakdown.childcareCredit.applied": 1840,
+        "list.0.breakdown.publicPensions.recoveryTax": 801.9015,
+        "list.0.ti": 97998.1085,
+        "breakdown.incomeBases.beforeChildcare.0": 105998.1085
+      }
+    },
+    {
+      "id": "2025-ON-care-recovery-150000-below",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "useCredits": true,
+        "people": [
+          {
+            "ord": 50000,
+            "age": 74,
+            "birthMonth": 6,
+            "oas": true,
+            "oth": 91208.85
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 4,
+              "expenses": 8000
+            }
+          ],
+          "earnedIncome": [50000]
+        }
+      },
+      "expected": {
+        "childcare.claims.0": 8000,
+        "breakdown.childcareCredit.income": 149999.99,
+        "breakdown.childcareCredit.rate": 0.01,
+        "breakdown.childcareCredit.applied": 80,
+        "list.0.breakdown.publicPensions.recoveryTax": 7281.8985,
+        "list.0.ti": 134718.0915,
+        "breakdown.incomeBases.beforeChildcare.0": 142718.0915
+      }
+    },
+    {
+      "id": "2025-ON-care-recovery-150000-at",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "useCredits": true,
+        "people": [
+          {
+            "ord": 50000,
+            "age": 74,
+            "birthMonth": 6,
+            "oas": true,
+            "oth": 91208.86
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 4,
+              "expenses": 8000
+            }
+          ],
+          "earnedIncome": [50000]
+        }
+      },
+      "expected": {
+        "childcare.claims.0": 8000,
+        "breakdown.childcareCredit.income": 150000,
+        "breakdown.childcareCredit.rate": 0.01,
+        "breakdown.childcareCredit.applied": 80,
+        "list.0.breakdown.publicPensions.recoveryTax": 7281.9,
+        "list.0.ti": 134718.1,
+        "breakdown.incomeBases.beforeChildcare.0": 142718.1
+      }
+    },
+    {
+      "id": "2025-ON-care-recovery-150000-above",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "useCredits": true,
+        "people": [
+          {
+            "ord": 50000,
+            "age": 74,
+            "birthMonth": 6,
+            "oas": true,
+            "oth": 91208.87
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 4,
+              "expenses": 8000
+            }
+          ],
+          "earnedIncome": [50000]
+        }
+      },
+      "expected": {
+        "childcare.claims.0": 8000,
+        "breakdown.childcareCredit.income": 150000.01,
+        "breakdown.childcareCredit.rate": 0,
+        "breakdown.childcareCredit.applied": 0,
+        "list.0.breakdown.publicPensions.recoveryTax": 7281.9015,
+        "list.0.ti": 134718.1085,
+        "breakdown.incomeBases.beforeChildcare.0": 142718.1085
+      }
+    },
+    {
+      "id": "2026-ON-t778-recovery-reverses-ranking",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 74,
+            "birthMonth": 6,
+            "oas": true,
+            "oth": 91000.51
+          },
+          {
+            "ord": 100695
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 4,
+              "expenses": 8000
+            }
+          ],
+          "earnedIncome": [0, 100695]
+        }
+      },
+      "expected": {
+        "childcare.claimant": 1,
+        "childcare.claims.1": 8000,
+        "childcare.claims.0": 0,
+        "list.1.ti": 91568,
+        "list.0.ti": 99298.45,
+        "famNet": 190866.45
+      }
+    },
+    {
+      "id": "2026-ON-t778-recovery-reverses-ranking-swapped",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "ord": 100695
+          },
+          {
+            "age": 74,
+            "birthMonth": 6,
+            "oas": true,
+            "oth": 91000.51
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 4,
+              "expenses": 8000
+            }
+          ],
+          "earnedIncome": [100695, 0]
+        }
+      },
+      "expected": {
+        "childcare.claimant": 0,
+        "childcare.claims.0": 8000,
+        "childcare.claims.1": 0,
+        "list.0.ti": 91568,
+        "list.1.ti": 99298.45,
+        "famNet": 190866.45
+      }
+    },
+    {
+      "id": "2026-ON-care-recovery-106800-below",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "useCredits": true,
+        "people": [
+          {
+            "ord": 50000,
+            "age": 74,
+            "birthMonth": 6,
+            "oas": true,
+            "oth": 47800.5
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 4,
+              "expenses": 8000
+            }
+          ],
+          "earnedIncome": [50000]
+        }
+      },
+      "expected": {
+        "childcare.claims.0": 8000,
+        "breakdown.childcareCredit.income": 106799.99,
+        "breakdown.childcareCredit.rate": 0.25,
+        "breakdown.childcareCredit.applied": 2000,
+        "list.0.breakdown.publicPensions.recoveryTax": 521.5485,
+        "list.0.ti": 98278.4415,
+        "breakdown.incomeBases.beforeChildcare.0": 106278.4415
+      }
+    },
+    {
+      "id": "2026-ON-care-recovery-106800-at",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "useCredits": true,
+        "people": [
+          {
+            "ord": 50000,
+            "age": 74,
+            "birthMonth": 6,
+            "oas": true,
+            "oth": 47800.51
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 4,
+              "expenses": 8000
+            }
+          ],
+          "earnedIncome": [50000]
+        }
+      },
+      "expected": {
+        "childcare.claims.0": 8000,
+        "breakdown.childcareCredit.income": 106800,
+        "breakdown.childcareCredit.rate": 0.25,
+        "breakdown.childcareCredit.applied": 2000,
+        "list.0.breakdown.publicPensions.recoveryTax": 521.55,
+        "list.0.ti": 98278.45,
+        "breakdown.incomeBases.beforeChildcare.0": 106278.45
+      }
+    },
+    {
+      "id": "2026-ON-care-recovery-106800-above",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "useCredits": true,
+        "people": [
+          {
+            "ord": 50000,
+            "age": 74,
+            "birthMonth": 6,
+            "oas": true,
+            "oth": 47800.52
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 4,
+              "expenses": 8000
+            }
+          ],
+          "earnedIncome": [50000]
+        }
+      },
+      "expected": {
+        "childcare.claims.0": 8000,
+        "breakdown.childcareCredit.income": 106800.01,
+        "breakdown.childcareCredit.rate": 0.23,
+        "breakdown.childcareCredit.applied": 1840,
+        "list.0.breakdown.publicPensions.recoveryTax": 521.5515,
+        "list.0.ti": 98278.4585,
+        "breakdown.incomeBases.beforeChildcare.0": 106278.4585
+      }
+    },
+    {
+      "id": "2026-ON-care-recovery-150000-below",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "useCredits": true,
+        "people": [
+          {
+            "ord": 50000,
+            "age": 74,
+            "birthMonth": 6,
+            "oas": true,
+            "oth": 91000.5
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 4,
+              "expenses": 8000
+            }
+          ],
+          "earnedIncome": [50000]
+        }
+      },
+      "expected": {
+        "childcare.claims.0": 8000,
+        "breakdown.childcareCredit.income": 149999.99,
+        "breakdown.childcareCredit.rate": 0.01,
+        "breakdown.childcareCredit.applied": 80,
+        "list.0.breakdown.publicPensions.recoveryTax": 7001.5485,
+        "list.0.ti": 134998.4415,
+        "breakdown.incomeBases.beforeChildcare.0": 142998.4415
+      }
+    },
+    {
+      "id": "2026-ON-care-recovery-150000-at",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "useCredits": true,
+        "people": [
+          {
+            "ord": 50000,
+            "age": 74,
+            "birthMonth": 6,
+            "oas": true,
+            "oth": 91000.51
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 4,
+              "expenses": 8000
+            }
+          ],
+          "earnedIncome": [50000]
+        }
+      },
+      "expected": {
+        "childcare.claims.0": 8000,
+        "breakdown.childcareCredit.income": 150000,
+        "breakdown.childcareCredit.rate": 0.01,
+        "breakdown.childcareCredit.applied": 80,
+        "list.0.breakdown.publicPensions.recoveryTax": 7001.55,
+        "list.0.ti": 134998.45,
+        "breakdown.incomeBases.beforeChildcare.0": 142998.45
+      }
+    },
+    {
+      "id": "2026-ON-care-recovery-150000-above",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "useCredits": true,
+        "people": [
+          {
+            "ord": 50000,
+            "age": 74,
+            "birthMonth": 6,
+            "oas": true,
+            "oth": 91000.52
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 4,
+              "expenses": 8000
+            }
+          ],
+          "earnedIncome": [50000]
+        }
+      },
+      "expected": {
+        "childcare.claims.0": 8000,
+        "breakdown.childcareCredit.income": 150000.01,
+        "breakdown.childcareCredit.rate": 0,
+        "breakdown.childcareCredit.applied": 0,
+        "list.0.breakdown.publicPensions.recoveryTax": 7001.5515,
+        "list.0.ti": 134998.4585,
+        "breakdown.incomeBases.beforeChildcare.0": 142998.4585
+      }
+    },
+    {
+      "id": "2025-ON-care-review-reproduction-ccb-retains-recovery",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "useCredits": true,
+        "people": [
+          {
+            "ord": 50000,
+            "oth": 48208.86,
+            "age": 74,
+            "birthMonth": 6,
+            "oas": true
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 4,
+              "expenses": 8000
+            }
+          ],
+          "earnedIncome": [50000]
+        }
+      },
+      "expected": {
+        "childcare.claims.0": 8000,
+        "breakdown.childcareCredit.income": 107000,
+        "breakdown.childcareCredit.applied": 1840,
+        "list.0.breakdown.publicPensions.recoveryTax": 831.9,
+        "famNet": 98168.1,
+        "ccb": 4393.7248
+      }
+    },
+    {
+      "id": "2025-QC-childcare-retains-recovery",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "useCredits": true,
+        "people": [
+          {
+            "age": 74,
+            "birthMonth": 6,
+            "oas": true,
+            "oth": 94662.86
+          }
+        ],
+        "childcare": {
+          "mode": "manual",
+          "children": [
+            {
+              "age": 4,
+              "expenses": 8000,
+              "qcEligibleExpenses": 8000
+            }
+          ],
+          "manualClaims": [8000]
+        }
+      },
+      "expected": {
+        "breakdown.incomeBases.beforeChildcareAndRecovery.0": 103454,
+        "breakdown.incomeBases.beforeChildcare.0": 103154,
+        "breakdown.childcareCredit.income": 103154,
+        "famNet": 95154,
+        "list.0.breakdown.publicPensions.recoveryTax": 300
+      }
+    },
+    {
+      "id": "2026-ON-care-review-reproduction-ccb-retains-recovery",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "useCredits": true,
+        "people": [
+          {
+            "ord": 50000,
+            "oth": 48000.51,
+            "age": 74,
+            "birthMonth": 6,
+            "oas": true
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 4,
+              "expenses": 8000
+            }
+          ],
+          "earnedIncome": [50000]
+        }
+      },
+      "expected": {
+        "childcare.claims.0": 8000,
+        "breakdown.childcareCredit.income": 107000,
+        "breakdown.childcareCredit.applied": 1840,
+        "list.0.breakdown.publicPensions.recoveryTax": 551.55,
+        "famNet": 98448.45,
+        "ccb": 4534.7536
+      }
+    },
+    {
+      "id": "2026-QC-childcare-retains-recovery",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "useCredits": true,
+        "people": [
+          {
+            "age": 74,
+            "birthMonth": 6,
+            "oas": true,
+            "oth": 96323.51
+          }
+        ],
+        "childcare": {
+          "mode": "manual",
+          "children": [
+            {
+              "age": 4,
+              "expenses": 8000,
+              "qcEligibleExpenses": 8000
+            }
+          ],
+          "manualClaims": [8000]
+        }
+      },
+      "expected": {
+        "breakdown.incomeBases.beforeChildcareAndRecovery.0": 105323,
+        "breakdown.incomeBases.beforeChildcare.0": 105023,
+        "breakdown.childcareCredit.income": 105023,
+        "famNet": 97023,
+        "list.0.breakdown.publicPensions.recoveryTax": 300
+      }
     }
   ]
 }

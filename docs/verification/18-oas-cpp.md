@@ -72,7 +72,8 @@ not inferred from unclassified other income or deductions.
 `withholding: null` means unknown. The current year's liability is not next July's withholding schedule;
 amounts withheld from cheques are payments on account and never another tax in this engine.
 
-Income-tax credits, benefits and Quebec worker deductions use income after the federal recovery deduction.
+Income-tax credits and benefits generally use income after the federal recovery deduction; T778's claimant
+comparison and Ontario CARE are explicit exceptions, documented below. Quebec's worker deduction stays wage-based.
 Quebec excludes the federal childcare deduction but copies the actual federal recovery, rather than recomputing
 it on higher Quebec income. Recovery is added once to `fed` after federal credits, foreign tax credits and
 Quebec abatement. It is consequently present in household totals, cash remaining and marginal calculations.
@@ -120,10 +121,102 @@ above, with no snapshots used as proof. The following prefixes apply to each yea
 | Per-adult receipt amounts and independent liability | `independent-adults` |
 | Federal childcare changes recovery copied into Quebec | `childcare-recovery-deduction` |
 | Recovery deduction restores age-amount eligibility | `recovery-restores-age-amount` |
+| T778 claimant ranking reversed by recovery, both adult orders | `t778-recovery-reverses-ranking*` |
+| CARE rate step and final cutoff, each ±0.01 | `care-recovery-106800-*`, `care-recovery-150000-*` |
+| CARE reviewer reproduction, CCB retaining recovery | `care-review-reproduction-ccb-retains-recovery` |
+| Quebec childcare retains recovery despite CARE's add-back | `childcare-retains-recovery` |
 
 Targeted tests additionally exercise every birthday month, validation and unsupported years, real-income scaling,
 payroll-election independence, enhanced payroll deductions before recovery, and totals/credits equivalence to
 an independently constructed ordinary-income control in all thirteen jurisdictions at low, partial and full recovery.
+
+## PR #198 review corrections and line 23500 audit
+
+The review of `be00c0b` found two consumers that must not use post-recovery income. The new tests reproduced
+both errors. The correction changes only those consumers; `netOf` continues to represent post-recovery net income.
+
+1. [T778 page 2](2025/sources/t778-childcare.txt) compares the adults before both line 21400 and line 23500.
+   The automatic claimant comparison now calculates income with neither deduction. It does not add recovery to
+   an already floored net income or use the selected claimant's eventual childcare deduction to choose that claimant.
+2. [ON479-A page 2](2025/sources/ontario-care.txt) starts with unfloored line 23600, adds lines 21400 and 23500,
+   then floors each person's result before adding the family. `incomeBases.beforeChildcareAndRecovery` supplies
+   that basis. The existing `beforeChildcare` retains actual recovery, and `federal`, `provincial` and
+   `provincialFamily` continue to include the correct recovery deduction. The obsolete no-repayment assumption
+   in `childcare-credits.ts` is removed. A floating-point guard prevents a few binary roundoff bits from advancing
+   CARE to the next rate step; genuine one-cent crossings still change the rate.
+
+Independent calculations for the added cases:
+
+- T778: adult A has gross/net-before-recovery income 100,000. A's recovery is 981.90 in 2025 or 701.55 in 2026.
+  Adult B earns 100,695. Enhanced CPP is `(71,300 − 3,500) × .01 + (81,200 − 71,300) × .04 = 1,074`
+  in 2025, and `(74,600 − 3,500) × .01 + (85,000 − 74,600) × .04 = 1,127` in 2026. Thus B's comparison
+  income is 99,621 / 99,568, below A's 100,000 but above A's post-recovery 99,018.10 / 99,298.45.
+  B has sufficient eligible earnings and claims the full 8,000; A claims zero. The two adult orders are locked.
+- CARE reproduction: at age 74, wages 50,000 no longer attract CPP enhancements. Other income is 48,208.86 /
+  48,000.51, giving 107,000 with OAS. Deducting childcare 8,000 gives recovery income 99,000, liability
+  831.90 / 551.55 and federal net 98,168.10 / 98,448.45. CARE adds both deductions back to 107,000:
+  the published rate is 23%, hence 1,840. Without the recovery add-back it wrongly pays 2,000 in both years.
+  The CCB deliberately retains recovery: `7,997 − 3,061 − .032 × (98,168.10 − 81,222) = 4,393.7248`
+  in 2025; `8,157 − 3,123 − .032 × (98,448.45 − 82,847) = 4,534.7536` in 2026.
+- CARE boundaries: 106,799.99 and 106,800 use 25%; 106,800.01 uses 23%. At 149,999.99 / 150,000 the rate
+  is 1%, and at 150,000.01 it is zero. With an 8,000 claim these are 2,000 / 1,840 and 80 / 0 respectively.
+  All have positive recovery, proving the add-back at each boundary in both years.
+- Quebec Schedule C: income before deductions is the OAS threshold plus 10,000. A verified federal childcare
+  claim of 8,000 makes recovery 300. Federal net is threshold plus 1,700; Quebec family income and childcare
+  credit income remain threshold plus 9,700, not the CARE basis of threshold plus 10,000.
+
+The review adds **20 cases / 130 numeric expectations**, without altering the original 114 cases. The final
+new fixture has **134 cases / 1,892 expectations**. In each year ON has 37 cases / 470 cells, QC has 19 / 289,
+and each of the other eleven jurisdictions has 1 / 17. All 55 pre-existing golden files remain byte-identical.
+
+### Other income-tested programs examined
+
+The audit followed every net-income consumer in `household.ts`, `personal.ts`, `credits.ts`, `benefits.ts`,
+`senior-credits.ts`, `childcare.ts`, `childcare-credits.ts` and `health-premiums.ts`; it also inspected the
+income-tested carbon payment formulas. Searches included `23500`, `23400`, social-benefits repayments and
+the corresponding Quebec line 250 deduction in cached forms and program guides. These are the dispositions;
+the 2026 programs continue the documented 2025 filing mechanics where new forms are not yet published.
+
+| Programs | Form basis and disposition |
+| --- | --- |
+| T778 automatic claimant | Excludes 21400 and 23500; fixed. Exceptional Part D claims remain verified manual input. |
+| Ontario CARE | ON479-A adds both deductions before individual zero floors; fixed. |
+| OAS recovery itself | Worksheet uses 23400 before its own repayment; already correct. |
+| Federal / CRA-filed age, BPA, spouse/dependant credits | 23600 or taxable 26000; retain recovery. |
+| Saskatchewan/Nunavut child claimants; Manitoba family benefit | Net/taxable-income comparisons retain recovery. |
+| BC, NB, NS, PE, NL low-income reductions | 428s start with 23600; UCCB/RDSP adjustments are not OAS add-backs. |
+| Ontario tax reduction, LIFT and health premium | Higher net-income claimant, adjusted 23600, or taxable 26000; retain. |
+| Federal/provincial foreign tax credits | T2209 note 3 starts with 23600; T2036 imports it. No 23500 add-back. |
+| CWB, including secondary-earner exemption | Schedule 6 Part B starts with 23600, adjusting UCCB/RDSP, not OAS. |
+| CCB; BC/AB/ON/NB/NS/PE/NL/YT/NT/NU child benefits | T4114 adjusted family net income; retain recovery. |
+| GST/HST/CGEB; SK, NB, NS, PE, NL income-tested refundable credits | RC4210 adjusted family net income; retain recovery. |
+| Ontario sales and energy/property credits; BC renter's credit | Adjusted family net income, no OAS add-back. |
+| Quebec age/living-alone pool, solidarity, work premium, Family Allowance | Provincial line 275; retain line 250 recovery. |
+| Quebec childcare | Schedule C lines 76/78 use 275; no CARE-style add-back. |
+| Quebec Health Services Fund | Schedule F starts at total income, excludes OAS, never deducts OAS recovery; correct. |
+| Income-tested carbon payments (BC; historical PE entries) | Adjusted family net income; retain recovery. |
+| Other carbon rebates; Manitoba housing credits | No relevant income taper; no recovery adjustment. |
+| Historical BC MSP | Absent in 2025–2026; new OAS inputs reject its earlier years. No new intersection. |
+
+Supporting source groups:
+
+- [All-jurisdiction 428s, worksheets and S2s](138-senior-credit-rules/sources/) include the age amounts,
+  low-income reductions, child claimant rules and Manitoba family benefit; no 23500 add-back appears in these.
+  [LIFT](2025/sources/oas-audit-on-lift.txt), [T2209](2025/sources/oas-audit-t2209.txt) and
+  [T2036](2025/sources/oas-audit-t2036.txt) were additionally cached for this audit.
+- [CWB Schedule 6](2025/sources/issue-102-schedule6.txt), [T4114](2025/sources/t4114-25.txt),
+  [RC4210](2025/sources/rc4210-25.txt), [BC479](2025/sources/oas-audit-bc479.txt) and
+  [OEPTC guidance](2025/sources/oas-audit-oeptc.txt) distinguish OAS recovery from UCCB/RDSP repayments.
+  [CRA line 23600](2025/sources/oas-audit-net-income.txt) supplies the general net-income definition.
+- Quebec [Schedule C](2025/sources/quebec-childcare-schedule.txt), [Schedule B](2025/sources/qc-schedule-b.txt),
+  [Schedule P](2025/sources/qc-work-premium-income.txt), [solidarity](2025/sources/qc-solidarity-guide.txt),
+  [Family Allowance definition](2026/sources/quebec-family-income.txt) and
+  [Schedule F](2025/sources/qc-schedule-f-2025.txt)
+  preserve their separate bases. The [BC carbon guide](2025/sources/carbon-bc-rebates.txt) uses adjusted family income.
+
+No additional modelled program needed a line 23500 correction. The federal worksheet also uses pre-recovery
+income for EI repayment and the line 25000 net-supplement deduction. Those receipts and GIS remain unmodelled;
+no amounts are inferred from `oth`. This audit does not claim their implementation or expand senior supplements.
 
 ## Validation and handoff
 

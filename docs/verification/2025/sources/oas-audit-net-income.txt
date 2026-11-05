@@ -1,0 +1,65 @@
+Title: Line 23600 – Net income
+URL: https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/tax-return/completing-a-tax-return/deductions-credits-expenses/line-23600-net-income.html
+Fetched: 2026-11-04
+SHA-256 of the original: 6ac8dd723a1b1ccfc884fed7204c5f5dc087f6ec503c0046740a7149135393f7
+Publication date modified: 2026-01-20
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+# Line 23600 – Net income
+
+Your net income is used to calculate your federal and provincial or territorial non-refundable tax credits.
+
+The CRA also uses your net income (and your spouse's or common-law partner's net income) to calculate amounts such as the Canada child benefit, GST/HST credit, social benefits repayment and certain other credits.
+
+Enter your spouse's or common-law partner's net income on page 1 of your return under "Information about your spouse or common-law partner" if this applies to you. Report your spouse's or common-law partner's net income even if it is zero.
+
+If the amount that you calculate for line 23600 of your return is negative, you may have a non-capital loss. Complete Form T1A, Request for Loss Carryback, to calculate your loss and any amount that you may want to carry back to your 2022, 2023 or 2024 returns.
+
+## Note
+
+Do not file an amended return for the years that you want to apply the loss to.
+
+## Adjusted net income
+
+A negative amount at line 23600 of your return (before entering “0”) resulting from any of the following amounts can be used to reduce your adjusted net income in certain calculations:
+
+- allowance received as an emergency volunteer (line 10105 of your return)
+- universal child care benefit (UCCB) repayment (line 21300 of your return)
+- other deductions (included in line 23200 of your return):
+
+- registered disability savings plan (RDSP) income repayment
+- total split income (from line 68360 of Form T1206)
+
+- tax-exempt part of all income earned or received on a reserve minus the deductions related to that income (line 10026 of Form T90)
+
+Use the negative amount that you would have entered on line 23600 of your return (before entering “0”) to reduce your adjusted net income in the calculation of the following federal amounts on your return:
+
+- basic personal amount (line 30000)
+- age amount (line 30100)
+- refundable medical expenses supplement (line 45200)
+- Canada workers benefit (CWB) (line 45300)
+
+Certain federal amounts that can be claimed for you by another person are also calculated using your adjusted net income.
+
+Anyone claiming an amount for you should use the negative amount from line 23600 of your return to reduce your adjusted net income in the calculation of the following amounts of their return:
+
+- spouse or common-law partner amount (line 30300)
+- amount for an eligible dependant (line 30400)
+- Canada caregiver amount for spouse or common-law partner, or eligible dependant age 18 or older (line 30425)
+- Canada caregiver amount for other infirm dependants age 18 or older (line 30450)
+- refundable medical expenses supplement (line 45200)
+- Canada workers benefit (CWB) (line 45300)
+
+## Completing your tax return
+
+Claim on line 23600 of your return the result of:
+
+- line 15000, minus
+- total of lines 20700 to 23500
+
+If the result is negative, enter "0" but make a note of the negative amount in case you are instructed to use it later to calculate the refundable medical expense supplement (line 45200) or Canada workers benefit (line 45300).
+
+## Forms and publications
+
+- Income Tax Package

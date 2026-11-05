@@ -121,7 +121,8 @@ export function childcareOf(fed: Federal, hh: Household, people: Person[], p: Pr
   )
     return fail("incomplete", "earned-income-required");
   if (!Array.from(input.earnedIncome).every(amount)) return fail("invalid", "invalid-earned-income");
-  const nets = people.map(x => netOf(fed, p, x));
+  // T778 compares income before BOTH line 21400 and line 23500; recovery can reverse the ranking.
+  const nets = people.map(x => netOf(fed, p, x, 0, 0));
   // Equal income: elect the first adult. This is deterministic, not a household-tax optimization.
   const claimant = people.length === 2 && nets[1] < nets[0] ? 1 : 0;
   const earnings = input.earnedIncome[claimant];

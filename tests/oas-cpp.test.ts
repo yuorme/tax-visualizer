@@ -67,6 +67,48 @@ test("OAS/CPP goldens cover both years and all thirteen jurisdictions with uniqu
 for (const y of years) {
   const gross = y.year === 2025 ? 8791.14 : 8999.49;
   const threshold = y.year === 2025 ? 93454 : 95323;
+  test(`${y.year}: reviewer CARE reproduction adds recovery back while CCB retains the deduction`, () => {
+    const p = y.provinces.find(p => p.code === "ON");
+    assert.ok(p);
+    const h = input([{ ord: 50000, oth: 107000 - 50000 - gross, age: 74, birthMonth: 6, oas: true }], {
+      useCredits: true,
+      childcare: { mode: "automatic", children: [{ age: 4, expenses: 8000 }], earnedIncome: [50000] },
+    });
+    const r = household(y, p, h);
+    const recovery = y.year === 2025 ? 831.9 : 551.55;
+    const net = 99000 - recovery;
+    near(r.list[0].breakdown.publicPensions?.recoveryTax ?? -1, recovery);
+    near(r.breakdown.childcareCredit?.income ?? -1, 107000);
+    near(r.breakdown.childcareCredit?.applied ?? -1, 1840);
+    near(r.famNet, net);
+    // T4114: one child under six, second CCB taper; unlike CARE this uses post-recovery net income.
+    near(r.ccb, y.year === 2025 ? 7997 - 3061 - 0.032 * (net - 81222) : 8157 - 3123 - 0.032 * (net - 82847));
+    // Equivalent verified manual claim must give the same result as the automatic T778 claim.
+    const manual = household(y, p, { ...h, childcare: { ...h.childcare, mode: "manual", manualClaims: [8000] } });
+    near(r.netTotal, manual.netTotal);
+  });
+
+  test(`${y.year}: CARE's add-back does not leak into Quebec's Schedule C family income`, () => {
+    const p = y.provinces.find(p => p.code === "QC");
+    assert.ok(p);
+    const r = household(
+      y,
+      p,
+      input([{ age: 74, birthMonth: 6, oas: true, oth: threshold + 10000 - gross }], {
+        useCredits: true,
+        childcare: {
+          mode: "manual",
+          children: [{ age: 4, expenses: 8000, qcEligibleExpenses: 8000 }],
+          manualClaims: [8000],
+        },
+      }),
+    );
+    near(r.breakdown.incomeBases.beforeChildcareAndRecovery[0], threshold + 10000);
+    near(r.breakdown.incomeBases.beforeChildcare[0], threshold + 9700);
+    near(r.breakdown.childcareCredit?.income ?? -1, threshold + 9700);
+    near(r.famNet, threshold + 1700);
+  });
+
   test(`${y.year}: every birthday month starts OAS and the higher rate in the following month`, () => {
     // Published cents, independent of loaded YAML and of the receipt algorithm.
     const low = y.year === 2025 ? [727.67, 727.67, 734.95, 740.09] : [742.31, 743.05, 751.97, 762.5];

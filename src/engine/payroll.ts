@@ -236,7 +236,8 @@ export function deductionsOf(x: Person): number {
 }
 
 /** Net income before it's floored at zero, using the province's pension plan. A net capital loss adds nothing
- *  and can't offset other income. A null province explicitly selects CPP. */
+ *  and can't offset other income. A null province explicitly selects CPP. recoveryOverride imports the federal
+ *  deduction into Quebec, or takes zero for a program that excludes social-benefits repayments from deductions. */
 export function netIncomeParts(
   fed: Federal,
   p: Province | null,

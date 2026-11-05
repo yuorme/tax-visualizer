@@ -127,6 +127,8 @@ line-by-line tax return. Simpler and slightly less precise is acceptable where i
   Current-year recovery is 15% above that year's threshold, capped at actual modelled OAS receipts. It is deducted
   from net income and added once to federal liability after credits and Quebec abatement. Quebec imports the
   federal deduction even when federal childcare changes it. Income-tested credits use the resulting net income.
+  T778's lower-income comparison and Ontario CARE instead use income before childcare and recovery deductions,
+  as their forms require. CARE's add-back does not change CCB or Quebec childcare family income.
   OAS is not a refundable credit; recovery withholding based on earlier returns is unknown, not a second charge.
   Neither receipt earns employment or pension-income credits, RRSP room, or changes payroll elections.
   Published 2026 amounts and thresholds use provisional 2025 filing mechanics. Earlier years reject these inputs;
