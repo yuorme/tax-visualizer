@@ -1,0 +1,35 @@
+Title: Statement of Benefits T5007
+URL: https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/tax-return/completing-a-tax-return/tax-slips/statement-benefits-t5007.html
+Fetched: 2026-11-05
+SHA-256 of the original: fd17db8559f944022a54354f59bcbbeb69f6b2a2af0bdc4b340076e5730d230f
+Publication date modified: 2025-11-26
+Text extract made with the exported fetch-source helpers (custom destination). Check figures against the original when layout matters (tables).
+================================================================================
+
+# Statement of Benefits T5007
+
+See T5007 slip image
+
+[image: An image of a T5007 slip]
+
+## Box 10 – Workers' compensation benefits
+
+Enter this amount on line 14400 and line 25000 of your Income Tax and Benefit Return.
+
+## Box 11 – Social assistance payments or provincial or territorial supplements
+
+Enter this amount on line 14500 and line 25000 of your Income Tax and Benefit Return.
+
+However, if you lived with your spouse or common-law partner when you received the social assistance payments or provincial or territorial supplements, the spouse or common-law partner with the higher net income has to report this amount. If you and your spouse or common-law partner have the same net income, the person whose name is on the slip has to report this amount.
+
+The spouse or common-law partner who reports this amount as income can claim an equivalent deduction on line 25000.
+
+## Box 13 – Report code
+
+Enter on each slip one of the following codes to indicate whether the slip is:
+
+- "O" original
+- "A" amended (changing the financial data or identification information)
+- "C" cancelled
+
+When using code "A" or "C," enter a description at the top of the slip (for example, "AMENDED" or "CANCELLED") and include a written explanation of the reason for filing the slip.
