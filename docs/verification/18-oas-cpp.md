@@ -186,7 +186,8 @@ the 2026 programs continue the documented 2025 filing mechanics where new forms 
 | Saskatchewan/Nunavut child claimants; Manitoba family benefit | Net/taxable-income comparisons retain recovery. |
 | BC, NB, NS, PE, NL low-income reductions | 428s start with 23600; UCCB/RDSP adjustments are not OAS add-backs. |
 | Ontario tax reduction, LIFT and health premium | Higher net-income claimant, adjusted 23600, or taxable 26000; retain. |
-| Federal/provincial foreign tax credits | T2209 note 3 starts with 23600; T2036 imports it. No 23500 add-back. |
+| Federal/CRA provincial FTC | T2209 note 3 starts with 23600; T2036 imports it. No 23500 add-back. |
+| Quebec FTC | TP-772-V lines 20–25 start with 275 and deduct specified taxable-income deductions; retain recovery. |
 | CWB, including secondary-earner exemption | Schedule 6 Part B starts with 23600, adjusting UCCB/RDSP, not OAS. |
 | CCB; BC/AB/ON/NB/NS/PE/NL/YT/NT/NU child benefits | T4114 adjusted family net income; retain recovery. |
 | GST/HST/CGEB; SK, NB, NS, PE, NL income-tested refundable credits | RC4210 adjusted family net income; retain recovery. |
@@ -213,10 +214,132 @@ Supporting source groups:
   [Family Allowance definition](2026/sources/quebec-family-income.txt) and
   [Schedule F](2025/sources/qc-schedule-f-2025.txt)
   preserve their separate bases. The [BC carbon guide](2025/sources/carbon-bc-rebates.txt) uses adjusted family income.
+- Quebec [TP-772-V (2025-12), pages 1–3](2025/sources/oas-audit-tp772.txt) supplies the missing Quebec FTC
+  evidence: lines 20–25 use line 275, with no line 250 recovery add-back; lines 42/49 deduct federal FTC and
+  lines 58/59 limit the provincial credit to its income share and tax otherwise payable.
 
 No additional modelled program needed a line 23500 correction. The federal worksheet also uses pre-recovery
 income for EI repayment and the line 25000 net-supplement deduction. Those receipts and GIS remain unmodelled;
 no amounts are inferred from `oth`. This audit does not claim their implementation or expand senior supplements.
+
+## Issue #206: audit follow-up
+
+The [PR #198 audit](https://github.com/yuorme/tax-visualizer/pull/198#issuecomment-6654125640) and the #195
+audit are now covered by one additive `senior-audit.json` fixture and `senior-audit.test.ts` runner. Expectations
+were prepared with Python Decimal arithmetic using the published literals in these notes and cached forms;
+the preparation imported neither engine code nor production YAML and took no snapshots. Cases retain full
+calculated precision and use `1e-8` for binary arithmetic. All pre-existing golden files remain byte-identical.
+
+There are **102 new cases / 248 numeric assertions**. Each year's additions have these same counts:
+
+| Jurisdiction | Cases | Assertions |
+| --- | ---: | ---: |
+| ON | 20 | 42 |
+| QC | 8 | 21 |
+| MB | 5 | 13 |
+| NS | 4 | 13 |
+| PE | 4 | 7 |
+| SK, NU (each) | 2 | 5 |
+| AB, BC, NB, NL, NT, YT (each) | 1 | 3 |
+| Total per year | 51 | 124 |
+
+These are new assertions, with no prior expected value. The only runtime edit corrects the unused reporting
+field `incomeBases.beforeChildcare`: pass actual supplements into `netIncomeParts` so an Allowance recipient
+without an `oas` property still retains their recovery deduction. For `2025-ON-audit-allowance-recovery`, the
+old unasserted value 216,695.09 becomes `200,000 + 16,695.09 - 16,695.09 = 200,000`. Separate new cases assert
+200,000 in both years; the original cases and their tax/benefit expectations are unchanged. The other cleanup
+is already resolved by #19: `publicPensions.recoveryIncome` has golden readers/assertions, so it is retained.
+The new self-employment cases assert it in all thirteen jurisdictions too. No tax-rule defect was exposed.
+
+### Independent calculations and gap mapping
+
+All amounts below follow the existing 2025 forms and the documented provisional 2026 mechanics.
+The [#17 follow-up](17-senior-credits.md#issue-206-post-merge-audit-coverage) supplies senior-only calculations.
+
+- **`self-employed-recovery` (B08):** 110,000 business profit at age 66, no payroll election. In 2025/2026,
+  CPP employer halves are 3,356.10/3,519.45; both enhanced shares total 2,148/2,254. Thus federal recovery bases
+  are `110,000 + 8,791.14/8,999.49 - employer half - enhancements = 113,287.04/113,226.04` and recoveries
+  are 2,974.956/2,685.456. Quebec instead deducts QPP employer halves 3,661.20/3,768.30 and QPIP deductions
+  `98,000 × .00878 × .43736 = 376.3220384` / `103,000 × .00764 × .43717 = 344.0178164`.
+  Its bases are 112,605.6179616/112,633.1721836 and recoveries 2,872.74269424/2,596.52582754.
+- **`child-benefit-recovery` (C07):** total income 100,000 gives recovery 981.90/701.55 and net income
+  99,018.10/99,298.45. ON with four young children pays `4 × 1,726.92/1,760 - .08 × (net - 26,364/26,865)`.
+  QC with two young children pays `2 × 3,006/3,068 + 1,055/1,077 - .04 × (net - 43,280/44,032)`.
+  Both remain inside their benefit tapers, above zero/minimum; the recovery deduction changes entitlement.
+- **`spouse-bpa-recovery` (C11):** total income 200,000 recovers all OAS. The zero-income spouse's federal
+  amount is the claimant's post-recovery BPA: subtract `1,591 × (net - 177,882) / 75,532` from 16,129 in 2025,
+  or `1,623 × (net - 181,440) / 77,042` from 16,452 in 2026. Multiply by .145/.14 for the spouse credit.
+- **`foreign-credit-recovery`, `provincial-foreign-share` (D05/D06/D11):** OAS plus other/foreign receipts
+  total 100,000; foreign income is 20,000. Calculate bracket tax independently, subtract BPA and the still
+  positive age amount, then use `foreign / (100,000 - recovery)`. At 15% withholding, federal FTC is limited
+  by this share; recovery is excluded from basic tax. Provincial FTC uses the lesser of remaining withholding,
+  provincial tax times its own net-income share, and provincial tax. ON surtax precedes FTC. A separate ON
+  case uses the existing engine's 50% withholding setting to make the provincial share bind. QC has no wages,
+  childcare or supplements in this case, so its TP-772-V income basis equals post-recovery federal net income.
+- **`health-premium-*` (D07):** other income is 199,999, 200,000, 200,001, 200,599, 200,600 or 200,601, plus
+  OAS. Full recovery removes OAS from taxable income. OHP is `min(900, 750 + .25 × max(0, income - 200,000))`.
+- **`couple-pool-recovery` (C13):** the OAS spouse has total income 100,000 including 3,000 RPP; the other
+  age-65 spouse has 3,000 RPP. Schedule B starts with two age amounts and two capped retirement amounts.
+  Reduce once by `.1875 × (103,000 - recovery - 42,090/42,955)`. The first return can use the whole pool.
+  This deliberately combines retirement caps and the post-recovery family taper; both are calculated explicitly.
+- **`claimant-recovery-reversal`, `child-claimant-recovery-reversal` (C12/C19):** the OAS recipient's
+  100,000 falls below the other adult's 99,500 after recovery in both years. MB's ten child claims belong
+  to the latter, with base `2,065 + 10 × 2,752 - .09 × 99,500`; the OAS recipient's own base is zero.
+  SK/NU child claims go to the former (lower taxable/net income); no synthetic income tie is involved.
+- **`large-family-recovery` (C17/D13):** supported child counts make these intersections reachable.
+  MB's single senior with ten children has base `3 × 2,065 + 9 × 2,752 - .09 × net`; the three terms are
+  basic, own age and eligible dependant. PE's senior with fifteen children has reduction
+  `350 + 350 + 250 + 14 × 300 - .05 × (net - 22,650/23,000)`, before its tax-capacity limit.
+- **`refundable-credit-recovery`, `solidarity-recovery` (C08/C09):** twenty children keep GST/CGEB, ON sales
+  and QC solidarity in their tapers at positive recovery. Single-parent GST/CGEB maxima are
+  `2 × 349 + 20 × 184` / `2 × 445 + 20 × 234`, reduced 5% above 45,521/46,432.
+  ON uses `21 × 371/378 - .04 × (net - 35,632/36,309)`; solidarity uses
+  `356 + 169 + 731 + 20 × 155 - .06 × (net - 42,325)` in 2025, and
+  `363 + 172 + 746 + 20 × 158 - .06 × (net - 43,195)` in 2026. Each named credit is asserted separately.
+- **`care-individual-floor` (H04):** one adult's pre-deduction income is 107,000; the other's raw income
+  is -10,000. ON479-A floors each first, retaining 107,000 and a 23% rate on the verified 8,000 manual claim.
+- **`care-cutoff-roundoff-*` (H03):** decimal-cent components total exactly 150,000 before childcare/recovery.
+  In 2025, `50,000 + 88,752.46 + 8,093.89 - 5,637.49 + 8,791.14 = 150,000`; in 2026,
+  `50,000 + 85,556.71 + 9,395.70 - 3,951.90 + 8,999.49 = 150,000`.
+  Binary summation lands slightly above the cutoff, but CARE remains 1% (80 on 8,000). Adding a real cent
+  to other income makes CARE zero. Both cases have positive recovery after childcare.
+
+### Mutation outcomes and exclusions
+
+The original 83 #198 definitions were recovered locally; all were either rerun or explicitly excluded below.
+Each applied mutation ran in a separate disposable `/tmp/206-mutants` copy, using only the seven affected test
+files listed in the #17 follow-up. Original `ti` and call-site edits were translated to the post-#19 net-income
+and supplement plumbing without changing their intended wrong basis. No worktree file was mutated.
+The unmutated control passed; all kills were assertions, with no syntax/import-error kills.
+
+**74 applicable #198 mutants killed; nine excluded.** Together with #195, the final run killed **100/100**
+applicable mutants. The initial classification run confirmed C02/C03 survived before excluding their obsolete
+tax paths. The final run includes all 25 original focused-suite survivors through kills or exclusions.
+
+| Original IDs | Final outcome |
+| --- | --- |
+| A01–A08; B01–B13 | All killed; B08 specifically by all 26 self-employment/recovery cases. |
+| C01, C04–C09, C11–C13, C16–C17, C19 | All killed; claimant, pool and refundable gaps now have named cases. |
+| D01–D11, D13, D15–D17, D22 | All killed; #19 already kills D08/D09/D17. |
+| E01; F01–F03; G01–G03, G06–G08 | All killed by existing component/control cases and #19. |
+| H01–H04; I01; J02–J03; K01–K07 | All killed; H03/H04 by new cutoff/floor cases. |
+| C02, C03 | Excluded: after #205, QC's old household credit-context basis has no tax consumer. |
+| C10 | Excluded: CWB's secondary-earner cap is saturated far below positive recovery income. |
+| C14 | Excluded: single Schedule B exhausts at 92,778 / 94,683, below recovery at 93,454 / 95,323. |
+| C15 | Excluded: paying OAS requires age; the legacy living-alone branch is then bypassed. |
+| D14 | Excluded: neither supported NL year has an `additionalTax` program. |
+| D19, D20 | Excluded: LIFT ends by 50,000 individual income; BC reduction ends below 42,000. |
+| D21 | Excluded: NS's taxable-income cutoff is 24,000, far below positive-recovery taxable income. |
+
+For C02/C03, final personal results and benefit bases are calculated independently of that old context;
+QC has no CRA low-income reduction, LIFT or MB family benefit. Only the unused provincial spouse-credit
+selector can differ; #205 always supplies zero provincial spouse credit. These are tax-equivalent mutations.
+For C14, the maxima include age, retirement and living-alone amounts; positive recovery leaves net income
+at least at its threshold. #19 supplements retain that net-income floor and cannot bring NS taxable income
+down to 24,000: even the largest annual supplement is below 18,000. No exclusion relies on a random sample.
+
+The final full validation is `fnm exec --using=26 npm ci` and `npm run check`, after formatting and the last
+documentation edit; results are reported in the PR. Existing fixture identity is checked separately against HEAD.
 
 ## Engine validation and handoff
 
