@@ -215,9 +215,10 @@ export function healthPremium(p: Province, ti: number): number {
 /** The pieces of net income: each kind of income as it's counted (the taxable share of net capital gains,
  *  dividends grossed up), and the deductions taken off. */
 export interface NetIncomeParts {
+  netFederalSupplements?: number; // line 14600, included in net income; line 25000 removes it from taxable
   oas?: number;
   cppQpp?: number;
-  oasRecovery?: number; // included in ded, never subtract twice
+  oasRecovery?: number; // line 23500, including any supplement recovery; already in ded, never subtract twice
   retirementIncome?: number;
   ord: number; // employment income
   selfEmployment?: number;
@@ -244,6 +245,7 @@ export function netIncomeParts(
   x: Person,
   childcareDeduction = 0,
   recoveryOverride?: number,
+  netFederalSupplements?: number,
 ): NetIncomeParts {
   const inv = fed.investment;
   const { pay, selfEmployment: self } = payrollDetailsOf(fed, p, x);
@@ -262,9 +264,11 @@ export function netIncomeParts(
     enh: pay.enh,
   };
   if (x.cppQpp !== undefined) parts.cppQpp = receipts.cppQpp;
-  if (x.oas !== undefined) {
+  if (netFederalSupplements !== undefined) parts.netFederalSupplements = netFederalSupplements;
+  if (x.oas !== undefined || netFederalSupplements) {
     parts.oas = receipts.oas;
-    parts.oasRecovery = recoveryOverride ?? oasRecoveryTax(fed, receipts.oas, netIncomeTotal(parts));
+    parts.oasRecovery =
+      recoveryOverride ?? oasRecoveryTax(fed, receipts.oas + (netFederalSupplements ?? 0), netIncomeTotal(parts));
     parts.ded += parts.oasRecovery;
   }
   return parts;
@@ -284,7 +288,8 @@ export function netIncomeTotal(n: NetIncomeParts): number {
     n.ded -
     n.enh +
     (n.oas ?? 0) +
-    (n.cppQpp ?? 0)
+    (n.cppQpp ?? 0) +
+    (n.netFederalSupplements ?? 0)
   );
 }
 

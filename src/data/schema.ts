@@ -204,6 +204,31 @@ const qcCwbRow = z.tuple([rate, amount, amount, amount]);
 
 export const federalSchema = z.object({
   year: z.number().int(),
+  gisAllowance: program(
+    "gis-allowance-income-bands",
+    z.object({
+      allowanceMinimumAge: amount.int(),
+      allowanceEndAge: amount.int(),
+      effectiveMonthOffset: amount.int(),
+      earningsExemption: amount,
+      partialExemptionRange: amount,
+      partialExemptionRate: rate,
+      excessDividendCreditMultiplier: amount,
+      singleIncomeStep: z.number().positive(),
+      coupleIncomeStep: z.number().positive(),
+      singleTopUpThreshold: amount,
+      coupleTopUpThreshold: amount,
+      singleTopUpStep: z.number().positive(),
+      coupleTopUpStep: z.number().positive(),
+      monthlyReduction: z.number().positive(),
+      pensionRounding: z.number().positive(),
+      allowancePensionRounding: z.number().positive(),
+      allowanceReduction: z.number().positive(),
+      quarterly: z
+        .array(z.object({ singleMaximum: amount, coupleMaximum: amount, singleTopUp: amount, coupleTopUp: amount }))
+        .length(4),
+    }),
+  ).optional(),
   publicPensions: program(
     "oas-current-year-recovery",
     z.object({

@@ -1,0 +1,34 @@
+Title: Line 14600 – Net federal supplements paid
+URL: https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/tax-return/completing-a-tax-return/personal-income/line-14600-net-federal-supplements.html
+Fetched: 2026-11-04
+SHA-256 of the original: 27037e0e0968a75a3855cc41ca9712c2f7c41d34cf9554375dd6bc7d8f5dd503
+Publication date modified: 2026-01-20
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+# Line 14600 – Net federal supplements paid
+
+The guaranteed income supplement (GIS) you received in the tax year, as well as the net amount of a spouse's allowance, is shown in box 21 of your T4A(OAS) slip and must be reported as income.
+
+If you have questions about the amounts shown on your T4A(OAS) slip, your entitlement, or your eligibility for the GIS, contact Service Canada or call 1-800-277-9914.
+
+To view your T4A(OAS) slip online, sign in to your CRA account.
+
+## Completing your tax return
+
+Enter on line 14600 of your return the amount from box 21 of your T4A(OAS) slip.
+
+If the amount is negative, enter "0."
+
+If your net income before adjustments on line 23400 of your return is:
+
+- $93,454 or less, claim a deduction on line 25000 for the net federal supplements paid that you reported on line 14600
+- more than $93,454, see line 25000
+
+## Forms and publications
+
+- Income Tax Package
+
+## Related topics
+
+- Line 25000 – Other payments deduction

@@ -1,7 +1,7 @@
 // Federal line 21400. Amounts supplied here are eligible annual expenses after reimbursements/fee subsidies.
 // Ordinary cases only: the manual path accepts verified exceptional claims without reapplying ordinary limits.
 import type { Federal, Province } from "../data/schema.ts";
-import { netOf } from "./payroll.ts";
+import { netIncomeParts, netIncomeTotal } from "./payroll.ts";
 import type { Household, Person } from "./types.ts";
 
 export interface ChildcareChild {
@@ -40,7 +40,13 @@ const optionalBoolean = (v: unknown) => v === undefined || typeof v === "boolean
 
 /** Uses the effective people list, including a spouse represented by the household's second adult.
  *  Supply the province when calculating claims; callers deriving only child counts can omit it. */
-export function childcareOf(fed: Federal, hh: Household, people: Person[], p: Province | null = null): ChildcareResult {
+export function childcareOf(
+  fed: Federal,
+  hh: Household,
+  people: Person[],
+  p: Province | null = null,
+  netFederalSupplements: number[] = [],
+): ChildcareResult {
   const input = hh.childcare;
   const out: ChildcareResult = {
     status: "none",
@@ -122,7 +128,9 @@ export function childcareOf(fed: Federal, hh: Household, people: Person[], p: Pr
     return fail("incomplete", "earned-income-required");
   if (!Array.from(input.earnedIncome).every(amount)) return fail("invalid", "invalid-earned-income");
   // T778 compares income before BOTH line 21400 and line 23500; recovery can reverse the ranking.
-  const nets = people.map(x => netOf(fed, p, x, 0, 0));
+  const nets = people.map((x, i) =>
+    Math.max(0, netIncomeTotal(netIncomeParts(fed, p, x, 0, 0)) + (netFederalSupplements[i] ?? 0)),
+  );
   // Equal income: elect the first adult. This is deterministic, not a household-tax optimization.
   const claimant = people.length === 2 && nets[1] < nets[0] ? 1 : 0;
   const earnings = input.earnedIncome[claimant];

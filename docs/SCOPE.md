@@ -126,7 +126,8 @@ line-by-line tax return. Simpler and slightly less precise is acceptable where i
   Receipts begin the month after turning 65; the higher published 75+ amount begins the month after turning 75.
   Birthdays are resolved by month with no day-level exceptions. Full-year residence and commencement at 65
   are assumed; deferral, partial OAS, arrears and prior benefit overpayments remain unsupported.
-  Current-year recovery is 15% above that year's threshold, capped at actual modelled OAS receipts. It is deducted
+  Current-year recovery is 15% above that year's threshold, capped at actual modelled OAS receipts plus any
+  GIS/Allowance enabled under #19. It is deducted
   from net income and added once to federal liability after credits and Quebec abatement. Quebec imports the
   federal deduction even when federal childcare changes it. Income-tested credits use the resulting net income.
   T778's lower-income comparison and Ontario CARE instead use income before childcare and recovery deductions,
@@ -144,6 +145,27 @@ line-by-line tax return. Simpler and slightly less precise is acceptable where i
   unsupported years and state the coverage. Real history scales entered CPP/QPP; OAS uses each year's published data.
   GIS (#19), splitting (#20) and seniors' supplements (#21) remain outside this work.
   See [verification and rule coverage](verification/18-oas-cpp.md).
+
+- GIS and the spouse's Allowance, **engine only, 2025–2026, all thirteen jurisdictions** (#19): explicit
+  per-adult `gis` and `allowance` opt-ins preserve all existing scenarios when omitted. GIS requires actual
+  modelled OAS receipts; OAS off means zero GIS. Single (including separated/divorced/widowed) and married or
+  common-law categories distinguish a spouse receiving OAS, the Allowance, or neither. The Allowance starts
+  after the 60th birthday and ends after the 65th birthday; its income taper and protected older-spouse GIS
+  are calculated together. Monthly receipts use each quarter's rates, summed over the calendar year.
+  Full Canadian residence, entitlement and timely application are assumed. Partial residency, sponsorship,
+  involuntary separation, changes of marital status, arrears and Allowance for the Survivor are unsupported.
+  Current income stands in for both historical income years used by the July–June payment periods.
+  GIS-test income excludes OAS and supplements, deducts full CPP/QPP and EI before each adult's earnings
+  exemption, and includes CPP/QPP pensions, private pensions, taxable gains and grossed-up dividends.
+  The statutory excess dividend-credit adjustment and supported ordinary/RRSP/FHSA/childcare deductions apply.
+  Proxy deductions and dividend credits are calculated before this year's new supplements; current T778
+  claimant selection then includes the calculated supplements. This is an explicit single-year approximation.
+  Receipts are netted against tax once, independent of the refundable-credit switch. They enter federal and
+  Quebec net income for other income-tested programs, with offsetting deductions from taxable income; they
+  do not create working income, pension credits, payroll contributions or Quebec Health Services Fund income.
+  The later page branch owns controls, explanations, URL encoding, saved-state migration and historical gating.
+  Pension splitting (#20), supplements (#21) and historical back-fill remain separate.
+  See [income definitions, sources, calculations and coverage](verification/19-gis-allowance.md).
 
 **Payroll (employee share, plus both shares on self-employment)**
 - CPP/QPP base and enhanced contributions, EI or EI plus QPIP, Ontario Health Premium, the 2% payroll tax in the
@@ -262,7 +284,8 @@ built.
 - Federal and provincial age amounts and pension income credit: implemented for 2025–2026 above;
   historical back-fill remains in #196.
 - OAS with recovery tax and the 10% increase at 75, plus CPP/QPP retirement income: implemented for
-  2025–2026 above, including page controls. GIS and the Allowance remain planned.
+  2025–2026 above, including page controls. GIS and the Allowance have an engine implementation above;
+  their page controls remain planned.
 - Pension income splitting, optimised automatically per province (the engine tries 0–50% and keeps the lowest
   household tax; no input).
 - Provincial seniors' supplements (Ontario GAINS, Alberta Seniors Benefit, BC Senior's Supplement,
@@ -303,6 +326,9 @@ For now:
 ## Estimates in the 2026 data
 
 Marked `estimated: true` in the data files where they appear:
+- GIS/Allowance top-up components are exactly derived from published benefit-table rows after top-up exhaustion.
+  The marker distinguishes derived values; all quarterly maximums are published. Net-income filing treatment
+  continues the verified 2025 forms pending 2026 returns, as with OAS.
 - Self-employment 2026 annual filing formulas continue 2025 Schedule 8 and Quebec Schedules U/R/10.
   Rates and ceilings are published; the QPIP deductible fraction is derived from the 2026 self-employed and
   employee rates, pending final filing forms. See the [audit](verification/14-self-employment.md).
