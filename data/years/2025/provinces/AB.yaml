@@ -31,6 +31,9 @@ childBenefit:
 fuelTax: {gasoline: 0.13}
 
 sources:
+  - {"label": "Alberta Tax and Credits", "url": "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5009-c/5009-c-25e.pdf"}
+  - {"label": "Provincial Amounts Transferred from your Spouse or Common-Law Partner", "url": "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5009-s2/5009-s2-25e.pdf"}
+  - {"label": "Worksheet AB428", "url": "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5009-d/5009-d-25e.pdf"}
   - {label: "Alberta Personal Income Tax Act, section 30.2(2) and (4) (child-count reduction rates and combined annual minimum)", url: "https://kings-printer.alberta.ca/documents/Acts/A30.pdf"}
   - {label: "Alberta, Child and Family Benefit (July 2025–June 2026 maxima and working phase-in)", url: "https://www.alberta.ca/alberta-child-and-family-benefit"}
   - {label: "NWT Finance, Budget 2025-2026, B22 (provincial/territorial fuel tax rates at January 30, 2025; regional additions separate)", url: "https://www.fin.gov.nt.ca/sites/fin/files/resources/2025-26_budget_address_and_papers_final_0.pdf"}
@@ -89,3 +92,11 @@ carbon:
             firstChild: 114
             threshold: [0, 0]
             rate: 0
+
+seniorCredits:
+  provisionalRules: false
+  age:
+    program: age-net-income
+    params: {minimumAge: 65, maximum: 6221, threshold: 46308, reductionRate: 0.15}
+  pension: {program: federal-pension-capped, params: {maximum: 1719}}
+  transfer: schedule2-unused-base

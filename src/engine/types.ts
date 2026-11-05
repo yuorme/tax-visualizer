@@ -41,6 +41,7 @@ export interface Person {
   ord: number;
   selfEmployment?: number; // annual net business profit after expenses, before personal payroll deductions; >= 0
   oth?: number; // omitted in legacy inputs
+  retirementIncome?: RetirementReceipt[]; // additional taxable domestic receipts; never also enter them in oth
   cg: number;
   ed: number;
   nd: number;
@@ -52,6 +53,11 @@ export interface Person {
   birthMonth?: number; // required with age; 1–12. Birthday-month elections attest delivery after the birthday
   employeePayroll?: EmployeePayrollInput; // requires age + birthMonth; retirement payroll coverage selected by year data
 }
+
+/** Cash retained after any rollover; special slips, splitting and Schedule B transfer deductions are unsupported. */
+export type RetirementReceipt =
+  | { type: "rppLifetime" | "rrspWithdrawal"; amount: number }
+  | { type: "rrif" | "rrspAnnuity"; amount: number; survivorEligible?: boolean };
 
 export interface Household {
   people: Person[]; // one or two people with income
@@ -82,6 +88,14 @@ export interface Driving {
 export type Credit = [name: string, amount: number];
 
 export interface Ctx {
+  senior?: {
+    federalTransfer: number;
+    provincialTransfer: number;
+    spouseAgeTransfer: boolean;
+    quebecPoolBase: number;
+    quebecTransfer: number;
+  };
+  seniorCount?: number; // PE family reduction: eligible adults counted once before taper
   familyBenefitChildren?: number; // MB428-A line 9: allocated once, excluding a line 3 eligible dependant
   childAmountBase?: number; // initial child claim, independent of Ontario's higher-net-income child reduction
   childTransferBase?: number; // unused SK(S2)/NU(S2) child base received from the spouse
@@ -101,6 +115,8 @@ export interface Extra {
 
 export type { FuelRate, Province, YearData };
 export const blank = (ord: number): Person => ({ ord, oth: 0, cg: 0, ed: 0, nd: 0, fd: 0, ded: 0 });
-export const cashOf = (x: Person) => x.ord + (x.selfEmployment ?? 0) + (x.oth ?? 0) + x.cg + x.ed + x.nd + x.fd;
+export const retirementCashOf = (x: Person) => (x.retirementIncome ?? []).reduce((sum, r) => sum + r.amount, 0);
+export const cashOf = (x: Person) =>
+  x.ord + (x.selfEmployment ?? 0) + (x.oth ?? 0) + retirementCashOf(x) + x.cg + x.ed + x.nd + x.fd;
 /** Profit before personal CPP/QPP/QPIP deductions is working income; investment/other income is not. */
 export const workingIncomeOf = (x: Person) => x.ord + (x.selfEmployment ?? 0);

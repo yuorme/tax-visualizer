@@ -31,8 +31,10 @@ line-by-line tax return. Simpler and slightly less precise is acceptable where i
   See the [input contract, evidence and golden map](verification/14-self-employment.md).
 - Interest, rental and other income: taxed at the same rates and counted in net income and family net income for
   every benefit, credit, clawback and the Ontario Health Premium, but none of the employment-only treatment above,
-  and no RRSP room. Pensions and RRSP/RRIF withdrawals go here until pension income has its own field; the
-  pension income credit isn't applied. For 2025–2026, Quebec's Health Services Fund contribution applies per
+  and no RRSP room. Legacy pensions in this field remain ordinary income. The 2025–2026 engine now accepts
+  separately typed retirement receipts for pension credits; page controls follow in the stacked #17 page branch.
+  Move receipts out of other income when using those fields; do not copy them. For 2025–2026, Quebec's
+  Health Services Fund contribution applies per
   person to subject non-employment income, including taxable gains and actual dividends. Other income is assumed
   subject: OAS, taxable support receipts and other Schedule F exclusions are not separately identified.
   RRSP, FHSA and federal childcare deductions do not reduce this base. Unclassified other deductions are not
@@ -84,8 +86,28 @@ line-by-line tax return. Simpler and slightly less precise is acceptable where i
   adult is assumed to be the eligible parent; at equality, the model elects the eligible claimant giving the
   lower household tax under Manitoba s. 4.6(16.2)(b). Eligibility is assumed; competing outside-household claims
   are assumed absent.
-  No senior/disability components. Earlier years remain omitted and locked despite their MB428 forms listing
+  The #17 engine adds own-age and transfer-qualified spouse-age terms before the same reduction for 2025–2026;
+  spouse age alone does not qualify. Disability remains unsupported. Earlier years remain omitted despite forms listing
   the program. See [audit](verification/145-manitoba-family-benefit.md).
+
+- Age and pension credits in the engine for **2025 and 2026 only** (#17 engine half): federal and all thirteen
+  jurisdictions, separate unused spouse credit transfers, Saskatchewan's supplementary senior amount,
+  Manitoba family-benefit senior terms, Nova Scotia's separate age credit and PE's senior reduction terms.
+  Quebec uses one age/living-alone/retirement pool with one family-income taper, then the general unused-credit
+  transfer. Federal and Quebec pension eligibility are independent. Year-end `age` retains the boundaries needed
+  for later 60–64, 65–74 and 75+ rules; the existing payroll contract also requires `birthMonth` with age.
+  Typed retained domestic receipts are RPP lifetime pensions, RRIF/LIF, RRSP annuities and ordinary RRSP withdrawals.
+  Only RRIF/annuity inputs accept eligible-survivor status. No pension income is split automatically.
+  Earlier-year retirement scenarios fail explicitly; ordinary legacy inputs remain supported. Historical back-fill
+  belongs in a separate History issue at merge. Published 2026 amounts use provisional 2025 filing formulas.
+  Living-alone eligibility keeps the existing one-adult dwelling assumption; adult-student single-parent additions,
+  rollovers, special/foreign pension slips, partial-year residence and Schedule B transfer deductions remain
+  unsupported.
+  Controls, tooltips, URL codec and saved-state migration are the stacked page half, including the tooltip acceptance
+  item in #17. No new OAS/GIS/CPP entitlement or complete senior tax burden is implied. #91's unclassified `oth`
+  exclusions/deductions remain as described above; the four supported receipts are subject to the Health Services Fund.
+  Alberta supplemental-credit sizing (#147) remains outside this change.
+  See [verification](verification/17-senior-credits.md).
 
 **Payroll (employee share, plus both shares on self-employment)**
 - CPP/QPP base and enhanced contributions, EI or EI plus QPIP, Ontario Health Premium, the 2% payroll tax in the
@@ -200,7 +222,8 @@ Recorded here as the spec for the GitHub issues that implement them; the issues 
 0.1-point rule for at least one applicable household; pension splitting also moves the BC–Ontario gap by 0.32
 points. Individual provincial and territorial programs beyond the ones it measured are still sized before they're
 built.
-- Federal and provincial age amounts, pension income credit.
+- Federal and provincial age amounts and pension income credit: engine implemented for 2025–2026 above;
+  page integration and historical back-fill remain.
 - OAS with its recovery tax (clawback) and the 10% increase at 75; GIS and the Allowance.
 - CPP/QPP retirement benefits as income.
 - Pension income splitting, optimised automatically per province (the engine tries 0–50% and keeps the lowest

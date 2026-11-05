@@ -7,9 +7,12 @@ import test from "node:test";
 import { loadYear } from "../../src/data/load.ts";
 import type { FuelRate } from "../../src/data/schema.ts";
 import { blank, compute, type Household } from "../../src/engine/index.ts";
+import { assertSeniorPublishedParameters } from "../senior-credit-reference.ts";
 
 const year = Number(path.basename(import.meta.filename, ".test.ts"));
 const y = loadYear(year);
+test("2026 published TD1 and Quebec age/pension parameters; provisional filing formulas", () =>
+  assertSeniorPublishedParameters(y));
 
 test("2026 Health Services Fund: published rate and thresholds; continued caps are estimates", () => {
   const fund = y.provinces.find(p => p.code === "QC")?.healthServicesFund;

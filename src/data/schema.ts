@@ -39,6 +39,40 @@ const phasedAmount = z.object({ max: amount, min: amount, from: amount, to: amou
 const program = <Id extends string, P extends z.ZodTypeAny>(id: Id, params: P) =>
   z.object({ program: z.literal(id), params, name: z.string().optional(), estimated: z.boolean().optional() });
 
+const ageCredit = program(
+  "age-net-income",
+  z.object({ minimumAge: amount.int(), maximum: amount, threshold: amount, reductionRate: rate }),
+);
+const craSeniorCredits = z.object({
+  age: z.union([ageCredit, program("federal-age-copy", z.object({}))]),
+  pension: program("federal-pension-capped", z.object({ maximum: amount })),
+  transfer: z.literal("schedule2-unused-base"),
+  supplementary: program("senior-supplementary-base", z.object({ minimumAge: amount.int(), amount })).optional(),
+  familyBenefit: program(
+    "mb-family-senior-terms",
+    z.object({ minimumAge: amount.int(), own: amount, spouse: amount }),
+  ).optional(),
+  ageTaxCredit: program(
+    "age-taxable-income-credit",
+    z.object({ minimumAge: amount.int(), threshold: amount, amount }),
+  ).optional(),
+  lowIncomeSenior: program("family-reduction-senior", z.object({ minimumAge: amount.int(), amount })).optional(),
+  provisionalRules: z.boolean(),
+});
+const quebecSeniorCredits = program(
+  "quebec-age-living-alone-retirement-pool",
+  z.object({
+    minimumAge: amount.int(),
+    ageAmount: amount,
+    retirementMaximum: amount,
+    retirementMultiplier: z.number().positive(),
+    livingAlone: amount,
+    familyThreshold: amount,
+    reductionRate: rate,
+    creditRate: rate,
+  }),
+).extend({ provisionalRules: z.boolean() });
+
 // ---------- Fuel tax on gasoline ----------
 /** Tax on one litre of gasoline, in dollars. */
 const perLitre = z.number().min(0).max(1);
@@ -170,6 +204,14 @@ const qcCwbRow = z.tuple([rate, amount, amount, amount]);
 
 export const federalSchema = z.object({
   year: z.number().int(),
+  seniorCredits: z
+    .object({
+      age: ageCredit,
+      pension: program("federal-pension-eligible", z.object({ minimumRrifAge: amount.int(), maximum: amount })),
+      transfer: z.literal("schedule2-unused-base"),
+      provisionalRules: z.boolean(),
+    })
+    .optional(),
   brackets,
   basicPersonalAmount: z.union([amount, phasedAmount]),
   quebecAbatement: rate,
@@ -603,6 +645,7 @@ export const provinceSchema = z
     territory: z.literal(true).optional(),
     order: z.number().int().min(0),
     system: z.literal("quebec").optional(),
+    seniorCredits: z.union([craSeniorCredits, quebecSeniorCredits]).optional(),
     brackets,
     basicPersonalAmount: z.union([amount, phasedAmount, z.literal("federal")]),
     /** A mid-year change to the basic personal amount, described in the page notes. */

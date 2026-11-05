@@ -11,6 +11,7 @@ import { fuelTaxOf } from "./fuel.ts";
 import { householdPremiumOf } from "./health-premiums.ts";
 import { netIncomeParts, netOf, workerDeductionOf } from "./payroll.ts";
 import { type PersonResult, personTax } from "./personal.ts";
+import { hasSeniorInputs, quebecSeniorPool, seniorTransfer } from "./senior-credits.ts";
 import {
   blank,
   type Credit,
@@ -61,9 +62,7 @@ function addUp(list: PersonResult[]) {
   return s;
 }
 
-/** SK(S2)/NU(S2) lines 6–13, for the currently modelled credits. The donor must first absorb tax less BPA and
- *  contribution credits, BEFORE dividends, foreign credits or spouse amounts. #17 must put child and senior
- *  bases in ONE pool here, deduct this capacity once, then allocate the balance; never add a second transfer. */
+/** Legacy child-only SK(S2)/NU(S2). Senior scenarios use the shared pool in seniorTransfer instead. */
 export function unusedSpouseTransferBase(donor: PersonResult, pool: number, creditRate: number): number {
   const capacity = Math.max(0, (donor.pr.tax - donor.pBpaFull - donor.pEmpFull) / creditRate);
   return Math.max(0, pool - capacity);
@@ -118,6 +117,7 @@ export function household(y: YearData, p: Province, hh: Household, peopleIn: Per
   const s = { useBpa, whRate: hh.whRate };
   // A second adult with no income entered is treated as a spouse with no income
   const ppl = peopleIn.length === 1 && adults >= 2 ? [peopleIn[0], blank(0)] : peopleIn;
+  const seniorsActive = useBpa && ppl.some(hasSeniorInputs);
   const childcare = childcareOf(fed, hh, ppl, p);
   const { kids, under6 } = childcare.childCounts ?? hh;
   const nets = ppl.map((x, i) => netOf(fed, p, x, childcare.claims[i]));
@@ -142,8 +142,13 @@ export function household(y: YearData, p: Province, hh: Household, peopleIn: Per
     ? (familyAges?.filter(age => age <= familyParams.childThrough).length ?? kids)
     : 0;
   const familyChildCount = Math.max(0, familyChildren - (single && useBpa && kids > 0 ? 1 : 0));
+  const seniorReduction =
+    p.seniorCredits && !("program" in p.seniorCredits) ? p.seniorCredits.lowIncomeSenior?.params : undefined;
   // kidsAll: children counted for low-income reductions, other than a child already claimed as an eligible dependant
   const ctx = (i: number): Ctx => ({
+    seniorCount: seniorReduction
+      ? (couple ? ppl : [ppl[i]]).filter(x => x.age !== undefined && x.age >= seniorReduction.minimumAge).length
+      : 0,
     familyBenefitChildren: familyRule && i === c ? familyChildCount : 0,
     childcareDeduction: childcare.claims[i],
     kids: i === c ? kids : 0,
@@ -165,7 +170,7 @@ export function household(y: YearData, p: Province, hh: Household, peopleIn: Per
     const rule = p.spouseAmount;
     let pAmt: number, pCredit: number;
     if (rule === "transfer") {
-      pCredit = Math.max(0, rO.pBpaFull - rO.pCred);
+      pCredit = seniorsActive ? 0 : Math.max(0, rO.pBpaFull - rO.pCred);
       pAmt = pCredit / prr;
     } else {
       pAmt = rule === "federal" ? fAmt : spouseAmount(rule, nets[c], nets[o]);
@@ -206,7 +211,7 @@ export function household(y: YearData, p: Province, hh: Household, peopleIn: Per
       const la = p.quebec.livingAlone;
       // Schedule B lines 10–18 use TP-1 line 275: deduct line 201, but not federal childcare expenses.
       const livingAloneNet = Math.max(0, provincialNets[0] - workerDeductionOf(p, ppl[0]));
-      pAmt = Math.max(0, la.max - la.rate * Math.max(0, livingAloneNet - la.threshold));
+      pAmt = seniorsActive ? 0 : Math.max(0, la.max - la.rate * Math.max(0, livingAloneNet - la.threshold));
       pp = pAmt * prr;
     }
     const r0 = personTax(fed, p, ppl[0], { f, p: pp }, ctx(0), s);
@@ -219,9 +224,65 @@ export function household(y: YearData, p: Province, hh: Household, peopleIn: Per
   // Keep the legacy path untouched unless the year's data opts into a program-specific claimant rule.
   const childRule = p.claimants?.childAmount;
   const lowRule = p.claimants?.lowIncomeReduction;
-  if (childRule || lowRule || familyRule) {
+  if (childRule || lowRule || familyRule || seniorsActive) {
     const extras = list.map(r => ({ f: r.fSpFull, p: r.pSpFull }));
     const calculate = (i: number, context: Ctx) => personTax(fed, p, ppl[i], extras[i], context, s);
+    const calculateAll = (contexts: Ctx[]) => {
+      if (!seniorsActive) return contexts.map((context, i) => calculate(i, context));
+      const seniorContexts = contexts.map(context => {
+        context.childTransferBase = 0;
+        context.senior = {
+          federalTransfer: 0,
+          provincialTransfer: 0,
+          spouseAgeTransfer: false,
+          quebecPoolBase: 0,
+          quebecTransfer: 0,
+        };
+        return context.senior;
+      });
+      let results = contexts.map((context, i) => calculate(i, context));
+      if (couple) {
+        results.forEach((donor, i) => {
+          const transfer = seniorTransfer(donor, p, fr);
+          const recipient = contexts[1 - i];
+          seniorContexts[1 - i].federalTransfer = transfer.federal;
+          if (!qc) {
+            seniorContexts[1 - i].provincialTransfer = transfer.provincial;
+            seniorContexts[1 - i].spouseAgeTransfer = transfer.spouseAge;
+            recipient.childTransferBase = transfer.child;
+          }
+        });
+      }
+      if (qc) {
+        if (couple) {
+          let pool = quebecSeniorPool(
+            p,
+            ppl,
+            results.map(r => r.tiP),
+            false,
+          );
+          results.forEach((r, i) => {
+            const claim = Math.min(pool, Math.max(0, r.pr.tax - r.pBpaFull - r.pDtcFull) / prr);
+            seniorContexts[i].quebecPoolBase = claim;
+            pool -= claim;
+          });
+          // Retain unused entitlement on one return; line 431 may transfer it only once.
+          seniorContexts[0].quebecPoolBase += pool;
+        } else {
+          results.forEach((r, i) => {
+            seniorContexts[i].quebecPoolBase = quebecSeniorPool(p, [ppl[i]], [r.tiP], single);
+          });
+        }
+      }
+      results = contexts.map((context, i) => calculate(i, context));
+      if (qc && couple) {
+        results.forEach((donor, i) => {
+          seniorContexts[1 - i].quebecTransfer = donor.breakdown.seniorCredits.quebecUnused;
+        });
+        results = contexts.map((context, i) => calculate(i, context));
+      }
+      return results;
+    };
     let childClaimants = [c];
     if (childRule && p.childAmount && couple) {
       const incomes = childRule.claimant === "lower-taxable-income" ? list.map(r => r.tiP) : nets;
@@ -244,12 +305,12 @@ export function household(y: YearData, p: Province, hh: Household, peopleIn: Per
           contexts.forEach((context, i) => {
             context.childAmountBase = i === childClaimant ? base : 0;
           });
-          if (childRule.transfer !== "none") {
+          if (childRule.transfer !== "none" && !seniorsActive) {
             const donor = calculate(childClaimant, contexts[childClaimant]);
             contexts[1 - childClaimant].childTransferBase = unusedSpouseTransferBase(donor, base, prr);
           }
         }
-        if (!lowRule || !couple) return contexts.map((context, i) => calculate(i, context));
+        if (!lowRule || !couple) return calculateAll(contexts);
         // A child election on tied income can change the best family reduction election. Evaluate both
         // together using final tax after both FTC and the form-ordered reduction.
         return bestElection(
@@ -259,7 +320,7 @@ export function household(y: YearData, p: Province, hh: Household, peopleIn: Per
               claims: i === initial,
               kidsAll: i === initial ? kids : 0,
             }));
-            const results = allocated.map((context, i) => calculate(i, context));
+            const results = calculateAll(allocated);
             if (lowRule.transferUnused) {
               allocated[1 - initial].lowIncomeReduction = results[initial].breakdown.lowIncomeReduction.unused;
               results[1 - initial] = calculate(1 - initial, allocated[1 - initial]);
@@ -279,7 +340,18 @@ export function household(y: YearData, p: Province, hh: Household, peopleIn: Per
   const incomeBases = {
     beforeChildcare: ppl.map(x => {
       const n = netIncomeParts(fed, p, x);
-      return n.ord + (n.selfEmployment ?? 0) + (n.oth ?? 0) + n.cg + n.ed + n.nd + n.fd - n.ded - n.enh;
+      return (
+        n.ord +
+        (n.selfEmployment ?? 0) +
+        (n.oth ?? 0) +
+        (n.retirementIncome ?? 0) +
+        n.cg +
+        n.ed +
+        n.nd +
+        n.fd -
+        n.ded -
+        n.enh
+      );
     }),
     federal: nets,
     provincial: list.map(r => r.tiP),

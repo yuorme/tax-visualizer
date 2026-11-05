@@ -40,6 +40,9 @@ childcareCredit:
 fuelTax: {gasoline: 0.075}
 
 sources:
+  - {"label": "Newfoundland and Labrador Tax", "url": "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5001-c/5001-c-25e.pdf"}
+  - {"label": "Provincial Amounts Transferred from your Spouse or Common-Law Partner", "url": "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5001-s2/5001-s2-25e.pdf"}
+  - {"label": "Worksheet NL428", "url": "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5001-d/5001-d-25e.pdf"}
   - {label: "CRA NL 2025 guide, claimant and transfer rules", url: "https://www.canada.ca/en/revenue-agency/services/forms-publications/tax-packages-years/general-income-tax-benefit-package/newfoundland-labrador/5001-pc.html"}
   - {label: "NWT Finance, Budget 2025-2026, B22 (provincial/territorial fuel tax rates at January 30, 2025; regional additions separate)", url: "https://www.fin.gov.nt.ca/sites/fin/files/resources/2025-26_budget_address_and_papers_final_0.pdf"}
   - {label: "Government of Newfoundland and Labrador, Provincial Government Continues Tax Reduction on Gasoline and Diesel (March 3, 2025)", url: "https://www.gov.nl.ca/releases/2025/fin/0303n06/"}
@@ -101,3 +104,11 @@ carbon:
             firstChild: 74.5
             threshold: [0, 0]
             rate: 0
+
+seniorCredits:
+  provisionalRules: false
+  age:
+    program: age-net-income
+    params: {minimumAge: 65, maximum: 7064, threshold: 38712, reductionRate: 0.15}
+  pension: {program: federal-pension-capped, params: {maximum: 1000}}
+  transfer: schedule2-unused-base

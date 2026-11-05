@@ -11,6 +11,7 @@ import {
   rrspRoom,
   workerDeductionOf,
 } from "./payroll.ts";
+import { seniorBases } from "./senior-credits.ts";
 import { type Ctx, cashOf, type Extra, type Person } from "./types.ts";
 
 export interface Settings {
@@ -20,7 +21,7 @@ export interface Settings {
 
 /** Provincial low-income tax reductions. ni = own net income, fn = family net income, fam = has a spouse or
  *  eligible dependant, k = children counted. */
-function lowIncomeReduction(li: LowIncomeProgram, ni: number, fn: number, fam: boolean, k: number): number {
+function lowIncomeReduction(li: LowIncomeProgram, ni: number, fn: number, fam: boolean, k: number, senior = 0): number {
   switch (li.program) {
     case "nl-low-income-reduction": {
       const q = li.params;
@@ -34,7 +35,10 @@ function lowIncomeReduction(li: LowIncomeProgram, ni: number, fn: number, fam: b
     }
     case "family-low-income-reduction": {
       const q = li.params;
-      return Math.max(0, q.individual + (fam ? q.spouse : 0) + q.child * k - q.rate * Math.max(0, fn - q.threshold));
+      return Math.max(
+        0,
+        q.individual + (fam ? q.spouse : 0) + q.child * k + senior - q.rate * Math.max(0, fn - q.threshold),
+      );
     }
   }
 }
@@ -56,6 +60,9 @@ export function personTax(fed: Federal, p: Province, x: Person, sp: Extra, ctx: 
   const workerDed = workerDeductionOf(p, x);
   const provincialNet = qc ? netOf(fed, p, x) : ti; // Quebec does not deduct federal childcare expenses
   const tiP = Math.max(0, provincialNet - workerDed); // Quebec allows an extra deduction for workers
+  const senior = seniorBases(fed, p, x, ti, s.useBpa);
+  const seniorRule = p.seniorCredits;
+  const craSenior = seniorRule && !("program" in seniorRule) ? seniorRule : undefined;
   const cash = cashOf(x);
   const f = walk(fed.brackets, ti),
     pr = walk(p.brackets, tiP);
@@ -100,17 +107,29 @@ export function personTax(fed: Federal, p: Province, x: Person, sp: Extra, ctx: 
   // NL428 line 58320 joins the ordinary non-refundable credit base, before dividends and low-income reduction.
   const childcareCreditFull = p.childcareCredit?.program === "nl-childcare" ? (ctx.childcareDeduction ?? 0) * prr : 0;
   const childcareCredit = tp(childcareCreditFull);
+  const fSenior = tf((senior.federalAge + senior.federalPension + (ctx.senior?.federalTransfer ?? 0)) * fr);
+  const pSenior = tp(
+    (senior.provincialAge + senior.provincialPension + senior.supplementary + (ctx.senior?.provincialTransfer ?? 0)) *
+      prr +
+      (ctx.senior?.quebecPoolBase ?? 0) * (seniorRule && "program" in seniorRule ? seniorRule.params.creditRate : 0),
+  );
   // MB428-A lines 1–3 and 9–12; MB428 line 41 joins the ordinary credit base (lines 51–57), before the
   // dividend credit (62) and FTC (73). A claimed spouse/dependant base qualifies even if its usable tax is zero.
-  // #17 must add own-age and transfer-qualified spouse-age bases BEFORE this single income reduction.
   // Spouse age alone cannot qualify: the guide requires a claimed age transfer AND MB(S2) line 1 > line 11.
   // Disability claims cannot be inferred from childcare disability flags.
   const family = p.familyTaxBenefit?.params;
+  const familySenior = craSenior?.familyBenefit?.params;
+  const familyAgeBase =
+    familySenior && s.useBpa
+      ? (x.age !== undefined && x.age >= familySenior.minimumAge ? familySenior.own : 0) +
+        (ctx.senior?.spouseAgeTransfer ? familySenior.spouse : 0)
+      : 0;
   const familyBase =
     family && s.useBpa
       ? Math.max(
           0,
           family.basic +
+            familyAgeBase +
             (sp.p > 0 ? family.dependant : 0) +
             family.child * (ctx.familyBenefitChildren ?? 0) -
             family.reductionRate * provincialNet,
@@ -138,6 +157,8 @@ export function personTax(fed: Federal, p: Province, x: Person, sp: Extra, ctx: 
     pLeft += surtax;
   }
   const pDtc = tp(pDtcFull);
+  // Quebec TP-1 line 431 is a dollar transfer after line 430, not another Schedule 2 base.
+  const qcTransfer = tp(ctx.senior?.quebecTransfer ?? 0);
   // Historical PE428 adds surtax after the dividend credit, before the low-income reduction.
   if (p.postDividendSurtax) {
     const q = p.postDividendSurtax.params;
@@ -147,14 +168,19 @@ export function personTax(fed: Federal, p: Province, x: Person, sp: Extra, ctx: 
   }
   // Low-income tax reductions (claimed once per family, by the claimant). "fam" = spouse or eligible dependant.
   const lowRule = p.claimants?.lowIncomeReduction;
+  const seniorReduction = s.useBpa ? (craSenior?.lowIncomeSenior?.params.amount ?? 0) * (ctx.seniorCount ?? 0) : 0;
   const lowFull =
     lowRule && p.lowIncomeReduction
       ? (ctx.lowIncomeReduction ??
-        (ctx.claims ? lowIncomeReduction(p.lowIncomeReduction, ti, ctx.famNet ?? ti, !!ctx.fam, ctx.kidsAll || 0) : 0))
+        (ctx.claims
+          ? lowIncomeReduction(p.lowIncomeReduction, ti, ctx.famNet ?? ti, !!ctx.fam, ctx.kidsAll || 0, seniorReduction)
+          : 0))
       : 0;
   let lowRed = 0;
   if (ctx.claims && p.lowIncomeReduction && !lowRule)
-    lowRed = tp(lowIncomeReduction(p.lowIncomeReduction, ti, ctx.famNet ?? ti, !!ctx.fam, ctx.kidsAll || 0));
+    lowRed = tp(
+      lowIncomeReduction(p.lowIncomeReduction, ti, ctx.famNet ?? ti, !!ctx.fam, ctx.kidsAll || 0, seniorReduction),
+    );
   // PE428 lines 66/87 reduce tax before FTC; unused reduction is measured against line 65.
   if (lowRule?.order === "before-foreign-tax-credit") lowRed = tp(lowFull);
   let provPre = pLeft;
@@ -191,8 +217,14 @@ export function personTax(fed: Federal, p: Province, x: Person, sp: Extra, ctx: 
   // NL428 adds the temporary deficit levy after all credits, including the provincial foreign tax credit.
   const levyBand = p.additionalTax?.params.bands.findLast(([from]) => tiP > from);
   const provincialLevy = levyBand ? Math.min(levyBand[3], levyBand[1] + levyBand[2] * (tiP - levyBand[0])) : 0;
+  const ageTax = craSenior?.ageTaxCredit?.params;
+  const ageTaxFull =
+    s.useBpa && ageTax && x.age !== undefined && x.age >= ageTax.minimumAge && tiP < ageTax.threshold
+      ? ageTax.amount
+      : 0;
+  const ageTaxApplied = Math.min(provPre - pFtc - (afterForeign ? lowRed : 0), ageTaxFull);
   const fedTax = fedBasic * k - fFtc,
-    prov = provPre - pFtc - (afterForeign ? lowRed : 0) + provincialLevy;
+    prov = provPre - pFtc - (afterForeign ? lowRed : 0) + provincialLevy - ageTaxApplied;
   const ohp = healthPremium(p, ti);
   const healthFund = healthServicesFund(p, healthServicesIncome(fed, x), self?.healthServicesDeduction);
   // TP-1 line 446 joins contributions after income tax/credits (432), once, in the page's payroll subtotal.
@@ -250,6 +282,20 @@ export function personTax(fed: Federal, p: Province, x: Person, sp: Extra, ctx: 
     breakdown: {
       ...(self ? { selfEmployment: self } : {}),
       ...(retirement ? { retirementPayroll: retirement } : {}),
+      seniorCredits: {
+        ...senior,
+        federalApplied: fSenior,
+        provincialApplied: pSenior,
+        federalTransfer: ctx.senior?.federalTransfer ?? 0,
+        provincialTransfer: ctx.senior?.provincialTransfer ?? 0,
+        familyAgeBase,
+        ageTaxFull,
+        ageTaxApplied,
+        quebecPoolBase: ctx.senior?.quebecPoolBase ?? 0,
+        quebecTransfer: ctx.senior?.quebecTransfer ?? 0,
+        quebecTransferApplied: qcTransfer,
+        quebecUnused: qc ? Math.max(0, pBpaFull + (ctx.senior?.quebecPoolBase ?? 0) * prr + pDtcFull - pr.tax) : 0,
+      },
       healthServicesFund: healthFund,
       totalBeforeHealthServicesFund,
       familyTaxBenefit: { base: familyBase, calculated: familyFull, applied: familyApplied },

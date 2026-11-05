@@ -1,5 +1,5 @@
 import type { Federal, Province } from "../data/schema.ts";
-import type { Person } from "./types.ts";
+import { type Person, retirementCashOf } from "./types.ts";
 
 /** Schedule F lines 10–36 for the supported income types: remove employment and dividend gross-ups from
  *  total income. Net rental income is already after expenses; capital losses cannot offset other income.
@@ -12,6 +12,7 @@ import type { Person } from "./types.ts";
 export function healthServicesIncome(fed: Federal, x: Person): number {
   return (
     (x.oth ?? 0) +
+    retirementCashOf(x) +
     (x.selfEmployment ?? 0) +
     Math.max(0, x.cg) * fed.investment.capitalGainsInclusion +
     x.ed +
