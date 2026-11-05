@@ -128,7 +128,7 @@ OAS Act s.2(d) additionally deducts three times the excess of the federal DTC ov
 credit, FTC and Quebec abatement. The proxy household calculation obtains that tax with ordinary personal
 credits enabled and new supplements absent. This implements zero, partially used and fully used DTC paths.
 For 1,000 eligible and 1,000 non-eligible dividends with no federal tax capacity, the reduction is
-`3 × (1380 × .150198 + 1150 × .090301) = 933.35637`; GIS-test income is 1,596.64363, not 2,530 or 2,000.
+`3 × (1380 × .150198 + 1150 × .090301) = 933.35817`; GIS-test income is 1,596.64183, not 2,530 or 2,000.
 
 Other independently calculated examples:
 
@@ -176,8 +176,8 @@ including nonmaximum payments, top-up exhaustion, Allowance's pension/GIS transi
 `gis-allowance.json` contains annual household cases independently calculated by looking up each month's
 published row and summing cents. Neither fixture was captured from the engine. Monetary input examples use
 the calculations above; all existing golden files, assertions and tolerances remain unchanged.
-There are 390 annual cases with 2,596 numeric expected cells, plus 2,796 published monthly cases with
-5,592 payment cells. New tests exercise 402 cases, including the monthly table comparisons.
+There are 412 annual cases with 2,692 numeric expected cells, plus 2,796 published monthly cases with
+5,592 payment cells. The GIS test file runs 424 tests, including the monthly table comparisons.
 
 | New path | Annual golden case suffixes (both years unless noted) |
 | --- | --- |
@@ -195,14 +195,99 @@ There are 390 annual cases with 2,596 numeric expected cells, plus 2,796 publish
 | Partial OAS/supplement recovery, combined cap and remaining taxable-income deduction | `partial-recovery-*`, `supplement-recovery-cap` |
 
 Targeted tests also verify validation, unsupported years, adult-order invariance, unrelated adults, opt-outs,
-net-income versus taxable-income effects across every jurisdiction, income-tested benefits, unchanged payroll
-and HSF, and refundable-credit-switch independence. Reference tests in each year's suite use published
+net-income inclusion and taxable exclusion across every jurisdiction, the exact first-band CCB formula,
+unchanged payroll and HSF, and refundable-credit-switch independence. Downstream tax/credit amounts are locked
+for the specific ON, BC, NL and QC paths below; this is not exhaustive coverage of every provincial credit.
+Reference tests in each year's suite use published
 quarterly maximums **and the final nonzero Allowance band with protected GIS**, not just maximum entitlements.
 
 The first new-fixture run caught omitted existing 2025 heating costs in six jurisdictions; the expectations now
 include the locked heating amounts (BC 48, AB 99.45, MB 49.77, ON 58.86, NB 3.20, NS 3.95). These cells combine
 the new benefit subtraction with unchanged carbon costs. The QPIP fourth-decimal correction is described above.
 No pre-existing baseline was changed to resolve either failure.
+
+## Review follow-up: net-income consumers
+
+The first review correctly found that the original 390 annual cases did not enable refundable credits and
+mostly locked benefit receipts, not their effects on other programs. Added **22 cases / 96 numeric cells**,
+eleven cases per year, all with `useCredits: true`. The original 390 cases and all pre-PR golden fixtures are
+unchanged. Refundable expectations are keyed by name because zero credits are omitted from the returned list.
+The all-jurisdiction CCB test now asserts the exact one-child-under-six formula and a strict decrease from
+the no-supplement maximum, rather than permitting equality.
+
+The new expectations were calculated in a separate Python script, without engine imports or engine output:
+lookup the GIS income band in cached Tables 1/3, sum quarterly cents, then apply the cited form arithmetic.
+Parameters come from the already sourced year data; 2026 provisional rules/estimates retain their existing
+status. These cached sources support the distinct bases:
+
+- [Federal worksheet](2025/sources/seniors-federal-worksheet.txt): net-income-based age amount and BPA.
+- [ON428](2025/sources/seniors-on428.txt), [BC428](2025/sources/seniors-bc428.txt) and
+  [NL428](2025/sources/nl-childcare-credit.txt): LIFT and low-income reductions; OHP uses taxable income.
+- [T2209 note 3](2025/sources/oas-audit-t2209.txt): subtract line 25000 from line 23600 for its denominator.
+- [Schedule 6](2025/sources/issue-102-schedule6.txt) and [RC4210](2025/sources/rc4210-25.txt): CWB and GST
+  adjusted family income do not remove line 14600 supplements; RC4210 also documents Ontario sales tax credit.
+- [Quebec Schedule B](2025/sources/qc-schedule-b.txt), [solidarity guide](2025/sources/qc-solidarity-guide.txt)
+  and [Schedule P](2025/sources/qc-work-premium-income.txt): family income uses line 275, before line 295.
+
+Independent 2025 examples (the same forms with the year's parameters give the paired 2026 cases):
+
+- `net-tested-age-gst-ostc` and `-off`: age 70, other income 35,000, non-pensioner spouse. Table 3 gives
+  GIS 4,550.85. Net income rises from 43,791.14 to 48,341.99, crossing the age threshold 45,522 and GST
+  threshold 45,521 **only because of GIS**. Age base is `9028 − .15 × (48341.99 − 45522) = 8605.0015`;
+  applied credit is 1,247.7252175. GST is `698 − .05 × (48341.99 − 45521) = 556.9505` and OSTC is
+  `742 − .04 × (48341.99 − 35632) = 233.6004`. Off cases lock the unreduced age/GST and higher OSTC.
+- `net-tested-bpa-recovery`: other income 180,000 and spouse deductions 180,000 retain GIS 13,130.82.
+  Recovery is `.15 × (180000 + 8791.14 + 13130.82 − 93454) = 16270.194`. Net income is 185,651.766;
+  taxable income is 180,000 and remaining line 25000 is 5,651.766. BPA is
+  `16129 − 1591 × (185651.766 − 177882) / 75532 = 15965.3383` to four decimals.
+- `net-tested-lift-ohp`: age 76, wages 32,000, non-pensioner spouse. EI 524.80 leaves GIS-test income
+  21,475.20 after exemption; Table 3 pays 7,934.85 annually. Net is 49,605.14 and LIFT is
+  `875 − .05 × (49605.14 − 32500) = 19.743`, below available provincial tax. Taxable income 41,670.29
+  keeps OHP at 450. In 2026, net 50,148.35 exhausts LIFT while OHP remains 450.
+- BC `net-tested-reduction`: other income 20,000 gives net 29,891.99. Reduction is
+  `562 − .0356 × (29891.99 − 25020) = 388.557156`; pre-reduction tax is
+  `(28791.14 − 12932 − 5799) × .0506 = 509.043084`, leaving 120.485928.
+- NL `net-tested-reduction`: other income 18,000 gives net 28,887.99. Reduction is
+  `997 − .16 × (28887.99 − 23928) = 203.4016`; pre-reduction tax is
+  `(26791.14 − 11067 − 7064) × .087 = 753.43218`, leaving 550.03058.
+- `net-tested-foreign-credit`: foreign dividends 20,000, no other entered income. Basic federal tax is
+  `(28791.14 − 16129 − 9028) × .145 = 526.9503`. T2209 allows
+  `526.9503 × 20000 / 28791.14 = 366.0503` to four decimals; this cap is below withholding.
+- `net-tested-cwb`: age 76, wages 15,000, non-pensioner spouse, no children. Net income 37,693.11 includes
+  GIS 13,022.82. CWB is `2813 − .15 × (37693.11 − 30639) = 1754.8835`; secondary-earner exemption is zero.
+- `net-tested-work-premium`: the same wages in QC, with one child. Worker deduction 900 makes line 275
+  36,793.11. Work premium is `.25 × (15000 − 3600) − .10 × (36793.11 − 19534) = 1124.089`.
+  Federal CWB instead uses 37,693.11 and is zero after its separate couple-with-child taper.
+- `net-tested-couple-pool`: other income 35,000, non-pensioner spouse. QC pool is
+  `3906 − .1875 × (48341.99 − 42090) = 2733.751875`, applied at 14%. Solidarity is
+  `356 + 356 + 888 − .06 × (48341.99 − 42325) = 1238.9806`.
+- `net-tested-single-pool`: age 76, wages 40,000, three children aged four with expenses 7,500 each.
+  The automatic federal childcare claim is 22,500 (below both the 24,000 child cap and two-thirds earnings).
+  GIS-test income is `40000 − 524 − 10000 − 22500 = 6976`; annual GIS is 8,414.82. QC line 275 excludes
+  federal childcare but deducts the 1,420 worker amount: `40000 + 9670.29 + 8414.82 − 1420 = 56665.11`.
+  Pool is `3906 + 2128 − .1875 × (56665.11 − 42090) = 3301.166875`, applied at 14%.
+  Solidarity including three children is `356 + 169 + 731 + 465 − .06 × (56665.11 − 42325) = 860.5934`.
+  Decimal half-up rounding gives the 2026 applied-credit expectation: `3491.6675 × .14 = 488.83345`,
+  or 488.8335 at the fixture's four decimals; Python's default half-even rounding would give the wrong last digit.
+
+Reproduced the review's eleven mutations one at a time in a temporary copy of `src`, `data` and `tests`,
+with shared read-only dependencies. Ran `fnm exec --using=26 node --import tsx --test tests/gis-allowance.test.ts`
+for each mutation, restoring the source between runs. Both unmodified controls (before and after) passed all
+424 tests. Every mutant failed assertions, not syntax/import errors. No engine correction was needed.
+
+| Mutation | Golden witness suffix, in both years | Outcome / failing tests |
+| --- | --- | --- |
+| Federal age input `net` → `ti` | `net-tested-age-gst-ostc` | Killed / 2 |
+| Federal BPA input `net` → `ti` | `net-tested-bpa-recovery` | Killed / 2 |
+| LIFT individual income `net` → `ti` | `net-tested-lift-ohp` | Killed / 2 |
+| BC reduction income `net` → `ti` | BC `net-tested-reduction` | Killed / 2 |
+| Both personal low-income-reduction call sites `net` → `ti` | NL `net-tested-reduction` | Killed / 2 |
+| T2209 denominator `ti` → `net` | `net-tested-foreign-credit` | Killed / 2 |
+| Couple QC pool income → `tiP` | `net-tested-couple-pool` | Killed / 2 |
+| Single QC pool income → `tiP` | `net-tested-single-pool` | Killed / 2 |
+| Subtract supplements from `creditsOf.famNet` | age/GST/OSTC, CWB, QC work-premium cases | Killed / 6 |
+| Subtract supplements from `creditsOf.provincialFamNet` | both QC pools and work premium | Killed / 6 |
+| OHP income `ti` → `net` | `net-tested-lift-ohp`, existing ON `single` | Killed / 4 |
 
 ## Handoff and validation
 

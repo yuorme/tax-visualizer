@@ -206,6 +206,10 @@ driving:
   estimated: true
 
 sources:
+  - label: "ESDC 2025 statistical bulletin, GIS/Allowance calculation guide (pp. 166–170)"
+    url: https://publications.gc.ca/collections/collection_2025/edsc-esdc/em9/Em9-7-2025-eng.pdf
+  - label: "Service Canada, Allowance payment commencement and termination"
+    url: https://www.canada.ca/en/services/benefits/publicpensions/old-age-security/guaranteed-income-supplement/allowance/while-receiving.html
   - label: "ESDC 2026 Q1 benefit tables 1\u20134 (GIS, Allowance, income bands)"
     url: https://publications.gc.ca/collections/collection_2026/edsc-esdc/SG3-3-2026-1.pdf
   - label: "ESDC 2026 Q2 benefit tables 1\u20134 (GIS, Allowance, income bands)"

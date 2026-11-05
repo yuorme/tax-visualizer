@@ -11811,6 +11811,696 @@
         "famNet": 45998.44,
         "ccb": 7613.6992
       }
+    },
+    {
+      "id": "2025-ON-net-tested-age-gst-ostc",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 70,
+            "birthMonth": 6,
+            "oas": true,
+            "gis": true,
+            "oth": 35000
+          },
+          {
+            "age": 59,
+            "birthMonth": 6
+          }
+        ],
+        "adults": 2,
+        "spouse": true,
+        "useCredits": true
+      },
+      "expected": {
+        "famNet": 48341.99,
+        "list.0.ti": 43791.14,
+        "list.0.breakdown.seniorCredits.federalAge": 8605.0015,
+        "list.0.breakdown.seniorCredits.federalApplied": 1247.7252
+      },
+      "expectedCredits": {
+        "GST/HST credit": 556.9505,
+        "Ontario sales tax credit": 233.6004
+      }
+    },
+    {
+      "id": "2025-ON-net-tested-age-gst-ostc-off",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 70,
+            "birthMonth": 6,
+            "oas": true,
+            "gis": false,
+            "oth": 35000
+          },
+          {
+            "age": 59,
+            "birthMonth": 6
+          }
+        ],
+        "adults": 2,
+        "spouse": true,
+        "useCredits": true
+      },
+      "expected": {
+        "famNet": 43791.14,
+        "list.0.ti": 43791.14,
+        "list.0.breakdown.seniorCredits.federalAge": 9028.0,
+        "list.0.breakdown.seniorCredits.federalApplied": 1309.06
+      },
+      "expectedCredits": {
+        "GST/HST credit": 698.0,
+        "Ontario sales tax credit": 415.6344
+      }
+    },
+    {
+      "id": "2025-ON-net-tested-bpa-recovery",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 70,
+            "birthMonth": 6,
+            "oas": true,
+            "gis": true,
+            "oth": 180000
+          },
+          {
+            "age": 59,
+            "birthMonth": 6,
+            "ded": 180000
+          }
+        ],
+        "adults": 2,
+        "spouse": true,
+        "useCredits": true
+      },
+      "expected": {
+        "famNet": 185651.766,
+        "list.0.ti": 180000.0,
+        "list.0.fAmt": 15965.3383,
+        "list.0.fBpaFull": 2314.974,
+        "list.0.breakdown.otherPaymentsDeduction": 5651.766
+      },
+      "expectedCredits": {}
+    },
+    {
+      "id": "2025-ON-net-tested-lift-ohp",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 76,
+            "birthMonth": 6,
+            "oas": true,
+            "gis": true,
+            "ord": 32000
+          },
+          {
+            "age": 59,
+            "birthMonth": 6
+          }
+        ],
+        "adults": 2,
+        "spouse": true,
+        "useCredits": true
+      },
+      "expected": {
+        "famNet": 49605.14,
+        "list.0.ti": 41670.29,
+        "breakdown.gisAllowance.total": 7934.85,
+        "list.0.lift": 19.743,
+        "list.0.ohp": 450.0
+      },
+      "expectedCredits": {}
+    },
+    {
+      "id": "2025-ON-net-tested-cwb",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 76,
+            "birthMonth": 6,
+            "oas": true,
+            "gis": true,
+            "ord": 15000
+          },
+          {
+            "age": 59,
+            "birthMonth": 6
+          }
+        ],
+        "adults": 2,
+        "spouse": true,
+        "useCredits": true
+      },
+      "expected": {
+        "famNet": 37693.11,
+        "list.0.ti": 24670.29,
+        "breakdown.gisAllowance.total": 13022.82
+      },
+      "expectedCredits": {
+        "Canada Workers Benefit": 1754.8835
+      }
+    },
+    {
+      "id": "2025-QC-net-tested-work-premium",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "age": 76,
+            "birthMonth": 6,
+            "oas": true,
+            "gis": true,
+            "ord": 15000
+          },
+          {
+            "age": 59,
+            "birthMonth": 6
+          }
+        ],
+        "adults": 2,
+        "spouse": true,
+        "useCredits": true,
+        "kids": 1,
+        "under6": 1
+      },
+      "expected": {
+        "famNet": 37693.11,
+        "list.0.ti": 24670.29,
+        "breakdown.gisAllowance.total": 13022.82,
+        "breakdown.incomeBases.provincialFamily": 36793.11
+      },
+      "expectedCredits": {
+        "Work premium": 1124.089,
+        "Canada Workers Benefit": 0.0
+      }
+    },
+    {
+      "id": "2025-BC-net-tested-reduction",
+      "year": 2025,
+      "province": "BC",
+      "household": {
+        "people": [
+          {
+            "age": 70,
+            "birthMonth": 6,
+            "oas": true,
+            "gis": true,
+            "oth": 20000
+          }
+        ],
+        "adults": 1,
+        "spouse": false,
+        "useCredits": true
+      },
+      "expected": {
+        "famNet": 29891.99,
+        "list.0.bcRed": 388.5572,
+        "list.0.prov": 120.4859
+      },
+      "expectedCredits": {}
+    },
+    {
+      "id": "2025-NL-net-tested-reduction",
+      "year": 2025,
+      "province": "NL",
+      "household": {
+        "people": [
+          {
+            "age": 70,
+            "birthMonth": 6,
+            "oas": true,
+            "gis": true,
+            "oth": 18000
+          }
+        ],
+        "adults": 1,
+        "spouse": false,
+        "useCredits": true
+      },
+      "expected": {
+        "famNet": 28887.99,
+        "list.0.lowRed": 203.4016,
+        "list.0.prov": 550.0306
+      },
+      "expectedCredits": {}
+    },
+    {
+      "id": "2025-ON-net-tested-foreign-credit",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 70,
+            "birthMonth": 6,
+            "oas": true,
+            "gis": true,
+            "fd": 20000
+          }
+        ],
+        "adults": 1,
+        "spouse": false,
+        "useCredits": true
+      },
+      "expected": {
+        "list.0.fedBasic": 526.9503,
+        "list.0.fFtc": 366.0503
+      },
+      "expectedCredits": {}
+    },
+    {
+      "id": "2025-QC-net-tested-couple-pool",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "age": 70,
+            "birthMonth": 6,
+            "oas": true,
+            "gis": true,
+            "oth": 35000
+          },
+          {
+            "age": 59,
+            "birthMonth": 6
+          }
+        ],
+        "adults": 2,
+        "spouse": true,
+        "useCredits": true
+      },
+      "expected": {
+        "breakdown.incomeBases.provincialFamily": 48341.99,
+        "list.0.breakdown.seniorCredits.quebecPoolBase": 2733.7519,
+        "list.0.breakdown.seniorCredits.provincialApplied": 382.7253
+      },
+      "expectedCredits": {
+        "Solidarity tax credit": 1238.9806
+      }
+    },
+    {
+      "id": "2025-QC-net-tested-single-pool",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "age": 76,
+            "birthMonth": 6,
+            "oas": true,
+            "gis": true,
+            "ord": 40000
+          }
+        ],
+        "adults": 1,
+        "spouse": false,
+        "useCredits": true,
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 4,
+              "expenses": 7500
+            },
+            {
+              "age": 4,
+              "expenses": 7500
+            },
+            {
+              "age": 4,
+              "expenses": 7500
+            }
+          ],
+          "earnedIncome": [40000]
+        }
+      },
+      "expected": {
+        "breakdown.incomeBases.provincialFamily": 56665.11,
+        "list.0.breakdown.seniorCredits.quebecPoolBase": 3301.1669,
+        "list.0.breakdown.seniorCredits.provincialApplied": 462.1634
+      },
+      "expectedCredits": {
+        "Solidarity tax credit": 860.5934
+      }
+    },
+    {
+      "id": "2026-ON-net-tested-age-gst-ostc",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 70,
+            "birthMonth": 6,
+            "oas": true,
+            "gis": true,
+            "oth": 35000
+          },
+          {
+            "age": 59,
+            "birthMonth": 6
+          }
+        ],
+        "adults": 2,
+        "spouse": true,
+        "useCredits": true
+      },
+      "expected": {
+        "famNet": 48864.38,
+        "list.0.ti": 43999.49,
+        "list.0.breakdown.seniorCredits.federalAge": 8843.143,
+        "list.0.breakdown.seniorCredits.federalApplied": 1238.04
+      },
+      "expectedCredits": {
+        "Canada Groceries and Essentials Benefit": 768.381,
+        "Ontario sales tax credit": 253.7848
+      }
+    },
+    {
+      "id": "2026-ON-net-tested-age-gst-ostc-off",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 70,
+            "birthMonth": 6,
+            "oas": true,
+            "gis": false,
+            "oth": 35000
+          },
+          {
+            "age": 59,
+            "birthMonth": 6
+          }
+        ],
+        "adults": 2,
+        "spouse": true,
+        "useCredits": true
+      },
+      "expected": {
+        "famNet": 43999.49,
+        "list.0.ti": 43999.49,
+        "list.0.breakdown.seniorCredits.federalAge": 9208.0,
+        "list.0.breakdown.seniorCredits.federalApplied": 1289.12
+      },
+      "expectedCredits": {
+        "Canada Groceries and Essentials Benefit": 890.0,
+        "Ontario sales tax credit": 448.3804
+      }
+    },
+    {
+      "id": "2026-ON-net-tested-bpa-recovery",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 70,
+            "birthMonth": 6,
+            "oas": true,
+            "gis": true,
+            "oth": 180000
+          },
+          {
+            "age": 59,
+            "birthMonth": 6,
+            "ded": 180000
+          }
+        ],
+        "adults": 2,
+        "spouse": true,
+        "useCredits": true
+      },
+      "expected": {
+        "famNet": 186373.6995,
+        "list.0.ti": 180000.0,
+        "list.0.fAmt": 16348.0646,
+        "list.0.fBpaFull": 2288.729,
+        "list.0.breakdown.otherPaymentsDeduction": 6373.6995
+      },
+      "expectedCredits": {}
+    },
+    {
+      "id": "2026-ON-net-tested-lift-ohp",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 76,
+            "birthMonth": 6,
+            "oas": true,
+            "gis": true,
+            "ord": 32000
+          },
+          {
+            "age": 59,
+            "birthMonth": 6
+          }
+        ],
+        "adults": 2,
+        "spouse": true,
+        "useCredits": true
+      },
+      "expected": {
+        "famNet": 50148.35,
+        "list.0.ti": 41899.46,
+        "breakdown.gisAllowance.total": 8248.89,
+        "list.0.lift": 0.0,
+        "list.0.ohp": 450.0
+      },
+      "expectedCredits": {}
+    },
+    {
+      "id": "2026-ON-net-tested-cwb",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 76,
+            "birthMonth": 6,
+            "oas": true,
+            "gis": true,
+            "ord": 15000
+          },
+          {
+            "age": 59,
+            "birthMonth": 6
+          }
+        ],
+        "adults": 2,
+        "spouse": true,
+        "useCredits": true
+      },
+      "expected": {
+        "famNet": 38233.44,
+        "list.0.ti": 24899.46,
+        "breakdown.gisAllowance.total": 13333.98
+      },
+      "expectedCredits": {
+        "Canada Workers Benefit": 1821.634
+      }
+    },
+    {
+      "id": "2026-QC-net-tested-work-premium",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "age": 76,
+            "birthMonth": 6,
+            "oas": true,
+            "gis": true,
+            "ord": 15000
+          },
+          {
+            "age": 59,
+            "birthMonth": 6
+          }
+        ],
+        "adults": 2,
+        "spouse": true,
+        "useCredits": true,
+        "kids": 1,
+        "under6": 1
+      },
+      "expected": {
+        "famNet": 38233.44,
+        "list.0.ti": 24899.46,
+        "breakdown.gisAllowance.total": 13333.98,
+        "breakdown.incomeBases.provincialFamily": 37333.44
+      },
+      "expectedCredits": {
+        "Work premium": 1099.456,
+        "Canada Workers Benefit": 0.0
+      }
+    },
+    {
+      "id": "2026-BC-net-tested-reduction",
+      "year": 2026,
+      "province": "BC",
+      "household": {
+        "people": [
+          {
+            "age": 70,
+            "birthMonth": 6,
+            "oas": true,
+            "gis": true,
+            "oth": 20000
+          }
+        ],
+        "adults": 1,
+        "spouse": false,
+        "useCredits": true
+      },
+      "expected": {
+        "famNet": 30363.38,
+        "list.0.bcRed": 519.3557,
+        "list.0.prov": 32.6078
+      },
+      "expectedCredits": {}
+    },
+    {
+      "id": "2026-NL-net-tested-reduction",
+      "year": 2026,
+      "province": "NL",
+      "household": {
+        "people": [
+          {
+            "age": 70,
+            "birthMonth": 6,
+            "oas": true,
+            "gis": true,
+            "oth": 18000
+          }
+        ],
+        "adults": 1,
+        "spouse": false,
+        "useCredits": true
+      },
+      "expected": {
+        "famNet": 29359.38,
+        "list.0.lowRed": 15.0592,
+        "list.0.prov": 573.3644
+      },
+      "expectedCredits": {}
+    },
+    {
+      "id": "2026-ON-net-tested-foreign-credit",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 70,
+            "birthMonth": 6,
+            "oas": true,
+            "gis": true,
+            "fd": 20000
+          }
+        ],
+        "adults": 1,
+        "spouse": false,
+        "useCredits": true
+      },
+      "expected": {
+        "list.0.fedBasic": 467.5286,
+        "list.0.fFtc": 322.4392
+      },
+      "expectedCredits": {}
+    },
+    {
+      "id": "2026-QC-net-tested-couple-pool",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "age": 70,
+            "birthMonth": 6,
+            "oas": true,
+            "gis": true,
+            "oth": 35000
+          },
+          {
+            "age": 59,
+            "birthMonth": 6
+          }
+        ],
+        "adults": 2,
+        "spouse": true,
+        "useCredits": true
+      },
+      "expected": {
+        "breakdown.incomeBases.provincialFamily": 48864.38,
+        "list.0.breakdown.seniorCredits.quebecPoolBase": 2877.9913,
+        "list.0.breakdown.seniorCredits.provincialApplied": 402.9188
+      },
+      "expectedCredits": {
+        "Solidarity tax credit": 1291.8372
+      }
+    },
+    {
+      "id": "2026-QC-net-tested-single-pool",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "age": 76,
+            "birthMonth": 6,
+            "oas": true,
+            "gis": true,
+            "ord": 40000
+          }
+        ],
+        "adults": 1,
+        "spouse": false,
+        "useCredits": true,
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 4,
+              "expenses": 7500
+            },
+            {
+              "age": 4,
+              "expenses": 7500
+            },
+            {
+              "age": 4,
+              "expenses": 7500
+            }
+          ],
+          "earnedIncome": [40000]
+        }
+      },
+      "expected": {
+        "breakdown.incomeBases.provincialFamily": 57175.44,
+        "list.0.breakdown.seniorCredits.quebecPoolBase": 3491.6675,
+        "list.0.breakdown.seniorCredits.provincialApplied": 488.8335
+      },
+      "expectedCredits": {
+        "Solidarity tax credit": 916.1736
+      }
     }
   ]
 }

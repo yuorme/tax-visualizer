@@ -31,6 +31,7 @@ const fixture: {
     province: string;
     household: Omit<Partial<Household>, "people"> & { people: Partial<Person>[] };
     expected: Record<string, number>;
+    expectedCredits?: Record<string, number>;
   }[];
 } = JSON.parse(fs.readFileSync(new URL("./golden/features/gis-allowance.json", import.meta.url), "utf8"));
 const input = (people: Partial<Person>[], extra: Partial<Household> = {}): Household => ({
@@ -58,6 +59,10 @@ for (const c of fixture.cases)
       }
       assert.equal(typeof value, "number");
       assert.equal(Math.round((value as number) * 1e4) / 1e4, expected, path);
+    }
+    for (const [name, expected] of Object.entries(c.expectedCredits ?? {})) {
+      const actual = result.credits.find(([label]) => label === name)?.[1] ?? 0;
+      assert.equal(Math.round(actual * 1e4) / 1e4, expected, name);
     }
   });
 
@@ -132,7 +137,13 @@ for (const y of years) {
         near(r.breakdown.seniorCredits.eligibleFederal, base.list[i].breakdown.seniorCredits.eligibleFederal);
         near(r.breakdown.healthServicesFund.contribution, base.list[i].breakdown.healthServicesFund.contribution);
       });
-      assert.ok(a.ccb <= base.ccb);
+      // Published one-child-under-six CCB formula, within the first reduction band in these households.
+      const maximum = y.year === 2025 ? 7997 : 8157;
+      const threshold = y.year === 2025 ? 37487 : 38237;
+      assert.ok(a.famNet > threshold && a.famNet < (y.year === 2025 ? 81222 : 82847));
+      near(a.ccb, maximum - 0.07 * (a.famNet - threshold));
+      near(base.ccb, maximum);
+      assert.ok(a.ccb < base.ccb);
       near(a.breakdown.left, a.cash - a.total);
       const noCredits = compute(y, p, { ...h, useCredits: false });
       near(noCredits.breakdown.gisAllowance?.total ?? -1, benefit);
