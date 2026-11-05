@@ -240,9 +240,11 @@ export function retirementHistory(
   home: string,
   mode: HistoryMode,
   selfEmployment = false,
+  seniorIncome = false,
 ): RetirementHistory {
   const sorted = [...years].sort((a, b) => a.year - b.year);
   const covered = (data: YearData) =>
+    (!seniorIncome || !!data.federal.seniorCredits) &&
     (!selfEmployment || !!data.federal.payroll.selfEmployment) &&
     entries.every(entry => ["inactive", "applied"].includes(retirementCoverage(entry, data)));
   const left = (reason: RetirementCoverage) =>

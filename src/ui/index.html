@@ -32,7 +32,7 @@
     </div>
     <div class="control-row">
       <div class="field">
-        <div class="lbl-row"><label class="lbl" for="income" id="income-label">Employment income</label><button type="button" class="info" data-tip="Salary, wages, tips, bonuses and other pay from a job. It pays CPP/QPP and EI (and QPIP in Quebec) and gets the Canada employment amount. Enter it before deductions, and put RRSP contributions and other deductions in the Deductions box. Net business profit goes in Self-employment income in the Income tab. Interest, rental income, pensions and RRSP/RRIF withdrawals go under Other income there." aria-label="About employment income">i</button></div>
+        <div class="lbl-row"><label class="lbl" for="income" id="income-label">Employment income</label><button type="button" class="info" data-tip="Salary, wages, tips, bonuses and other pay from a job. It pays CPP/QPP and EI (and QPIP in Quebec) and gets the Canada employment amount. Enter it before deductions, and put RRSP contributions and other deductions in the Deductions box. Net business profit goes in Self-employment income in the Income tab. Interest and rental income go under Other income there. Typed domestic pensions and withdrawals go under Retirement income." aria-label="About employment income">i</button></div>
         <div class="money"><span>$</span><input id="income" inputmode="numeric" autocomplete="off" value="75,000"></div>
       </div>
       <div class="field ded">
@@ -128,7 +128,7 @@
         </div>
       </div>
       <div class="pr-note" id="oth-portfolio-status" role="status" hidden></div>
-      <div class="panel-head"><b class="panel-title" id="invest-title">Investment income</b><button type="button" class="info" data-tip="Capital gains and dividends from investments held in a non-registered (taxable) account. In Manual, interest goes under Other income above. In Portfolio, bond interest comes from the portfolio, so leave it out of Other income. Income inside a TFSA isn't taxed at all, and RRSP/RRIF withdrawals also go under Other income. CRA taxes investment income to whoever supplied the money, regardless of whose name is on the account." aria-label="About investment income">i</button><span class="panel-sum">Non-registered accounts · <span id="invest-sum">none added</span></span></div>
+      <div class="panel-head"><b class="panel-title" id="invest-title">Investment income</b><button type="button" class="info" data-tip="Capital gains and dividends from investments held in a non-registered (taxable) account. In Manual, interest goes under Other income above. In Portfolio, bond interest comes from the portfolio, so leave it out of Other income. Income inside a TFSA isn't taxed at all, and taxable domestic RRSP/RRIF receipts go under Retirement income. CRA taxes investment income to whoever supplied the money, regardless of whose name is on the account." aria-label="About investment income">i</button><span class="panel-sum">Non-registered accounts · <span id="invest-sum">none added</span></span></div>
       <div class="sub-row">
         <fieldset class="seg" aria-label="How to enter investment income">
           <button type="button" id="invest-view-manual" data-invest-view="manual" aria-pressed="true">Manual</button>
@@ -186,7 +186,7 @@
         </div>
       </div>
       <details id="retirement-details" class="care-details">
-        <summary>Retirement-age CPP/QPP <span class="panel-sum" id="retirement-sum">not set</span></summary>
+        <summary>Age and CPP/QPP <span class="panel-sum" id="retirement-sum">not set</span></summary>
         <div class="care-grid ret-grid">
           <div class="field">
             <div class="lbl-row"><label class="lbl" for="ret-birth-year">Birth year</label><button type="button" class="info" data-note="retirementAge" aria-label="About retirement-age CPP/QPP">i</button></div>
@@ -231,7 +231,13 @@
           <div class="pr-note" id="ret-pay-status" role="status" hidden></div>
         </div>
         <div class="pr-note ret-status" id="retirement-status" role="status" hidden></div>
-        <button type="button" class="linkbtn" id="retirement-clear" hidden>Clear these inputs</button>
+        <button type="button" class="linkbtn" id="retirement-clear" hidden>Clear age and payroll inputs</button>
+      </details>
+      <details id="senior-details" class="care-details">
+        <summary>Retirement income</summary>
+        <div class="lbl-row senior-heading"><span class="lbl">Receipts</span><button type="button" class="info" data-note="seniorIncome" aria-label="About retirement income and coverage">i</button><button type="button" class="info" data-note="seniorSurvivor" aria-label="About eligible survivor receipts">i</button></div>
+        <div id="senior-rows"></div>
+        <button type="button" class="linkbtn" id="senior-add">Add receipt</button>
       </details>
     </section>
     <section class="tab-panel" id="panel-home" aria-labelledby="tab-home-name" hidden>
@@ -309,6 +315,7 @@
 
   <p class="ret-gate" id="retirement-gate" role="status" hidden></p>
   <p class="ret-gate" id="self-employment-gate" role="status" hidden></p>
+  <p class="ret-gate" id="senior-gate" role="status" hidden></p>
 
   <fieldset class="seg comparison-view" aria-label="Comparison view">
     <button type="button" id="view-provinces" aria-pressed="true">Across provinces</button>

@@ -1,10 +1,11 @@
-# Age and pension credits: engine half of #17
+# Age and pension credits: #17
 
-Coverage is **2025 and 2026 only**, federal and all thirteen jurisdictions. The page half is a separate stacked
-branch: controls, tooltips, URL codec and saved-state migration, including #17's tooltip acceptance item.
+Coverage is **2025 and 2026 only**, federal and all thirteen jurisdictions. The engine landed in PR #195.
+The page adds controls, tooltips, URL codec and saved-state migration, including #17's tooltip acceptance item.
 This implements the [reviewed #138 specification](138-senior-credit-rules.md), including #141's round-2
 Manitoba spouse-age correction. It uses the already-landed #145 family benefit, #146 payroll and #92 claimant rules.
-No UI files are changed. The orchestrator should file a separate History back-fill issue at merge.
+The page does not change engine code, data or golden expectations. The orchestrator should file a separate
+History back-fill issue at merge.
 
 ## Evidence and status
 
@@ -235,4 +236,62 @@ single-parent additions remain unsupported. Living alone retains the existing qu
 OAS or identify allowed special deductions. These four new retained domestic receipt categories are subject;
 they are included in HSF, while future #18 must exclude separately classified OAS and include CPP/QPP benefits.
 UI serialization must carry every receipt's type, amount and survivor flag and preserve omitted legacy defaults.
-The page must explain unsupported historical coverage and the existing age/birth-month contract.
+The page explains unsupported historical coverage and the existing age/birth-month contract as described below.
+
+## Page implementation and verification
+
+The Income tab's **Age and CPP/QPP** section reuses the existing birth year/month and payroll election controls.
+No second age or 65+ switch is introduced: the selected tax year and each history row derive December 31 age
+from the same birth year. Both date fields are required, preserving #146's incomplete-date and entry-age guards.
+An age of 65 applies throughout that tax year, including a December birthday.
+
+**Retirement income** adds per-adult receipt rows: workplace lifetime pension, RRIF/LIF receipt, RRSP annuity,
+and ordinary RRSP withdrawal. Each row has an annual amount; only RRIF/annuity rows offer eligible-survivor status.
+Multiple rows of one type allow ordinary and survivor receipts to coexist. Amounts accept cents; invalid drafts
+retain the last valid amount, clearing an amount records zero, and removing the last row omits `retirementIncome`.
+Changing to a type without survivor eligibility removes that flag. Removing an adult removes their receipts.
+
+`senior-income.ts` normalizes receipt type, amount and optional boolean survivor status for both saved-state
+restoration and the URL codec. No new URL or storage version is necessary: absence is the existing legacy default.
+Unknown or malformed receipt records are ignored, unsupported survivor flags are omitted, and empty lists become
+absence. Birth year/month retain the existing `retirement` codec. Nothing moves out of `oth` automatically;
+the tooltip instructs users to move rather than copy receipts already included there. Existing URLs override
+recipient storage as before, without inheriting new receipt or age inputs.
+
+Coverage comes from installed `federal.seniorCredits` data. An unsupported selected year excludes typed receipts
+and age/pension credits, retains all drafts, and displays that limitation beside results. History leaves out
+unsupported years even for an RPP or ordinary RRSP receipt without an age. Its basis states **2025 and 2026 only**;
+its tooltip explains omissions, per-year ages, and real-mode scaling. Existing historical calculations are unchanged.
+RRIF/annuity records lacking both usable age and eligible-survivor status are temporarily excluded with a result
+notice; history repeats the notice in its tooltip. Independent RPP/ordinary RRSP and eligible-survivor receipts
+continue to apply. The existing payroll entry-age guard is retained.
+
+All explanation stays in tooltips; result notices identify excluded inputs. The controls' tooltip explicitly says
+RRIF minimums, OAS/CPP deferral and residency rules are not modelled, and preserves the other engine limitations
+and Quebec Health Services Fund caveat. The tax ledger displays engine-supplied retirement income, age/pension
+credits and spouse transfers, Quebec's combined pool and general credit transfer, and NS's separate age credit.
+The page neither calculates credits nor changes any engine rule.
+
+Browser acceptance coverage is in `tests/e2e/senior-income.mjs`, wired into the required smoke suite:
+
+- Both adults, every receipt type, duplicate types, amount cents, true/false survivor flags, and birth year/month
+  round-trip through local storage and a shared URL against conflicting recipient storage.
+- Age 64/65/75, income phase-outs and spouse scenarios compare all thirteen chart results with the engine for
+  both covered years. The independent full-return example above appears as federal tax of $1,862/$1,728 after
+  display rounding in 2025/2026; the personal-credit switch removes relief while preserving receipt income.
+- Incomplete birth dates, eligible-survivor exceptions, invalid drafts, zero amounts, type changes and deletion.
+- Pre-#17 URLs and saved states preserve legacy pensions in Other income and their all-province results.
+- An older selected year excludes new inputs with a notice; nominal and real history match engine comparisons,
+  retaining categories, survivor flags and per-year ages. Age-independent receipts also restrict history coverage.
+- Required tooltip text, coverage, double-counting and year-end age explanations, all receipt controls, decimal
+  field clipping and sideways scrolling are checked at 375, 430 and desktop widths in light and dark mode.
+
+`tests/senior-page.test.ts` separately exercises codec normalization, legacy migration, malformed receipts,
+omitted versus zero inputs, and retained versus applied inputs across supported and unsupported years.
+
+`npm run compare -- origin/main` compares six width/theme combinations with five existing scenarios each.
+The differences are the new closed Retirement income section, consequent positional control-index shifts, and
+footer corrections describing the now-supported senior terms and remaining refundable-supplement exclusions.
+Existing chart results and selected/entered control values are unchanged. The command exits 1 because those
+intended differences exist. The required validation is `npm ci` followed by `npm run check`, which includes the
+new codec tests and browser sequences above alongside all existing baselines.
