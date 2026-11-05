@@ -28,9 +28,14 @@ Steps:
    show (layout, colour), opening the page with `openPage` and `settle` from `tests/e2e/page.mjs`, which wait
    for the Google Fonts. Before reporting a pixel difference, rerun the capture once; a difference that doesn't
    repeat is font timing. If the fonts can't be reached (offline), say so instead of reporting pixel differences.
-6. Check that the change does what the task asked and nothing more.
+6. For engine or rule changes, test the tests. In your own scratch directory outside the worktree, break 5 to 10
+   changed rule paths the way a plausible misreading would, and run only the affected test files. Start with paths no
+   golden case locks. A survivor is a should-fix unless no supported year can reach it. Stop at the budget and say
+   which changed paths weren't tried.
+7. Check that the change does what the task asked and nothing more.
 
-Throwaway scripts go in files under `$TMPDIR`, not heredocs.
+Throwaway scripts go in files under `$TMPDIR`, not heredocs. Send long output to a file and read only its summary
+or failures; sample large fixtures by script instead of reading them.
 
 Report in about 250 words (up to about 600 for engine or rule changes, a full data year or multi-file
 refactors). Report findings, what was checked and counts, without reproducing a cell list.
