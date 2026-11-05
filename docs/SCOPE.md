@@ -146,7 +146,7 @@ line-by-line tax return. Simpler and slightly less precise is acceptable where i
   GIS (#19), splitting (#20) and seniors' supplements (#21) remain outside this work.
   See [verification and rule coverage](verification/18-oas-cpp.md).
 
-- GIS and the spouse's Allowance, **engine only, 2025–2026, all thirteen jurisdictions** (#19): explicit
+- GIS and the spouse's Allowance, **2025–2026, all thirteen jurisdictions** (#19): explicit
   per-adult `gis` and `allowance` opt-ins preserve all existing scenarios when omitted. GIS requires actual
   modelled OAS receipts; OAS off means zero GIS. Single (including separated/divorced/widowed) and married or
   common-law categories distinguish a spouse receiving OAS, the Allowance, or neither. The Allowance starts
@@ -163,7 +163,15 @@ line-by-line tax return. Simpler and slightly less precise is acceptable where i
   Receipts are netted against tax once, independent of the refundable-credit switch. They enter federal and
   Quebec net income for other income-tested programs, with offsetting deductions from taxable income; they
   do not create working income, pension credits, payroll contributions or Quebec Health Services Fund income.
-  The later page branch owns controls, explanations, URL encoding, saved-state migration and historical gating.
+  Per-adult GIS and Allowance opt-ins sit in Retirement income and reuse the birth-year/month controls.
+  URL and saved-state migration preserve omission and explicit false independently; legacy scenarios keep their
+  results. Incomplete dates retain drafts but exclude that adult’s true opt-ins until complete. Tooltips explain
+  the income-year proxy, OAS prerequisite, marital categories, birthday/quarterly timing and residency assumptions.
+  The ledger shows each adult’s gross benefits, net income, taxable-income deduction and supplement recovery;
+  comparison rows and chart tooltips identify the household benefits netted against tax once. Benefits remain
+  outside the chart’s income denominator and apply even with the credit switches off. No benefit is computed in UI.
+  Selected older years exclude both fields, including explicit false, with a coverage notice. Both history modes
+  omit unsupported years and state 2025–2026 coverage, including when only a false opt-in is stored without age.
   Pension splitting (#20), supplements (#21) and historical back-fill remain separate.
   See [income definitions, sources, calculations and coverage](verification/19-gis-allowance.md).
 
@@ -284,8 +292,8 @@ built.
 - Federal and provincial age amounts and pension income credit: implemented for 2025–2026 above;
   historical back-fill remains in #196.
 - OAS with recovery tax and the 10% increase at 75, plus CPP/QPP retirement income: implemented for
-  2025–2026 above, including page controls. GIS and the Allowance have an engine implementation above;
-  their page controls remain planned.
+  2025–2026 above, including page controls. GIS and the Allowance are also implemented for 2025–2026 above,
+  including page controls; historical back-fill remains separate.
 - Pension income splitting, optimised automatically per province (the engine tries 0–50% and keeps the lowest
   household tax; no input).
 - Provincial seniors' supplements (Ontario GAINS, Alberta Seniors Benefit, BC Senior's Supplement,

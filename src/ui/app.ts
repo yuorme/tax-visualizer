@@ -68,6 +68,12 @@ import {
   validSelfEmployment,
   withSelfEmployment,
 } from "./self-employment.ts";
+import {
+  hasSeniorBenefits,
+  normalizeSeniorBenefits,
+  seniorBenefitGate,
+  seniorBenefitYears,
+} from "./senior-benefits.ts";
 import { publicPensionEditor, seniorEditor } from "./senior-editor.ts";
 import {
   hasPublicPensions,
@@ -255,7 +261,7 @@ function cleanPerson(o: unknown): Person {
     if (validSelfEmployment(saved.selfEmployment)) x.selfEmployment = saved.selfEmployment;
     const receipts = normalizeReceipts(saved.retirementIncome);
     if (receipts) x.retirementIncome = receipts;
-    Object.assign(x, normalizePublicPensions(saved));
+    Object.assign(x, normalizePublicPensions(saved), normalizeSeniorBenefits(saved));
     for (const k of KEYS) {
       const v = saved[k];
       if (isNum(v) && (k === "cg" || v >= 0)) x[k] = v;
@@ -606,6 +612,7 @@ function segTip(p: ProvView, r: Result, c: Seg) {
     if (r.ccb > 0.5) parts.push(`Canada Child Benefit ${money(r.ccb)}`);
     if (r.provBen > 0.5) parts.push(`${p.d.childBenefit?.name ?? "Provincial child benefit"} ${money(r.provBen)}`);
     for (const [n, v] of r.credits) parts.push(`${n} ${money(v)}`);
+    if (r.breakdown.gisAllowance) parts.push(`GIS and Allowance ${money(r.breakdown.gisAllowance.total)}`);
     sub = `${parts.join(" · ")}. Netted off the tax above`;
   }
   return `<b>${p.n} · ${SEG_NAMES[c]}</b><span class="t-num">${c === "ben" ? "−" : ""}${money(amt)} a year · ${pct(share)} of income</span>
@@ -679,6 +686,12 @@ function render() {
         retirementPeople(years[availableYears[0]]),
         years[availableYears[0]],
         publicPensionYears(Object.values(years)),
+      ),
+      people.some(hasSeniorBenefits),
+      seniorBenefitGate(
+        retirementPeople(years[availableYears[0]]),
+        years[availableYears[0]],
+        seniorBenefitYears(Object.values(years)),
       ),
     );
   const res: Row[] = P.map(p => ({ p, r: calc(p) }));
@@ -763,7 +776,7 @@ function render() {
     qs(el, ".tag").textContent = p.c === home ? "home" : p.c === dest ? "dest." : "";
     el.setAttribute(
       "aria-label",
-      `${p.n}${p.c === home ? " (home)" : p.c === dest ? " (destination)" : ""}: net ${pct(r.avg)} of income, marginal ${pct(r.marg)}, total ${money(r.total)}${r.benefits > 0.5 ? ` after ${money(r.benefits)} of child benefits` : ""}`,
+      `${p.n}${p.c === home ? " (home)" : p.c === dest ? " (destination)" : ""}: net ${pct(r.avg)} of income, marginal ${pct(r.marg)}, total ${money(r.total)}${r.benefits > 0.5 ? ` after ${money(r.benefits)} of ${r.breakdown.gisAllowance ? "benefits and credits" : "child benefits"}` : ""}`,
     );
   });
   if (tipFor && segTips.get(tipFor) && tipFor.closest(".col")) showTip(tipFor); // keep an open segment tip current
@@ -903,6 +916,9 @@ function render() {
   renderRetirement(H);
   senior.sync();
   publicPensions.sync();
+  const benefitNotice = $("senior-benefit-gate");
+  benefitNotice.textContent = seniorBenefitGate(retirementPeople(), Y, seniorBenefitYears(Object.values(years)));
+  benefitNotice.hidden = historyOpen || !benefitNotice.textContent;
   const publicNotice = $("public-pension-gate");
   publicNotice.textContent = publicPensionGate(retirementPeople(), Y, publicPensionYears(Object.values(years)));
   publicNotice.hidden = historyOpen || !publicNotice.textContent;
@@ -1115,6 +1131,14 @@ function renderDetail(res: Row[], order: Row[]) {
         )
       : "") +
     (any(r => r.refund) ? row(`Refundable credits`, hr.refund, dr.refund, "credit") : "") +
+    (hr.breakdown.gisAllowance || dr.breakdown.gisAllowance
+      ? row(
+          `GIS and Allowance${comparisonInfo("GIS and Allowance in net tax", retirementTooltips(Object.values(years)).seniorBenefitTax)}`,
+          hr.breakdown.gisAllowance?.total ?? 0,
+          dr.breakdown.gisAllowance?.total ?? 0,
+          "credit",
+        )
+      : "") +
     row(hh ? "Household net tax" : "Net tax", hr.total, dr.total, "tax", "sum") +
     row("Net rate", hr.avg, dr.avg, "pp") +
     row(`Marginal rate${two ? ` · ${NAMES[active]}` : ""}`, hr.marg, dr.marg, "pp") +
@@ -1186,6 +1210,7 @@ function ledgerView({ p, r }: Row) {
   if (x.retirementIncome?.length) tiParts.push(`${money(n.retirementIncome ?? 0)} retirement receipts`);
   if (n.oas) tiParts.push(`${money(n.oas)} OAS`);
   if (n.cppQpp) tiParts.push(`${money(n.cppQpp)} CPP/QPP retirement income`);
+  if (m.breakdown.netFederalSupplements) tiParts.push(`${money(m.breakdown.netFederalSupplements)} GIS and Allowance`);
   if (x.cg > 0) tiParts.push(`${money(n.cg)} taxable ${share(F.investment.capitalGainsInclusion)} of net gains`);
   if (x.ed) tiParts.push(`${money(n.ed)} grossed-up eligible dividends`);
   if (x.nd) tiParts.push(`${money(n.nd)} grossed-up non-eligible dividends`);
@@ -1193,7 +1218,10 @@ function ledgerView({ p, r }: Row) {
   const tiText =
     tiParts.join(" + ") +
     (n.ded ? ` − ${money(n.ded)} deductions` : "") +
-    (n.enh > 0.5 ? ` − ${money(n.enh)} enhanced ${p.qc ? "QPP" : "CPP"}` : "");
+    (n.enh > 0.5 ? ` − ${money(n.enh)} enhanced ${p.qc ? "QPP" : "CPP"}` : "") +
+    (m.breakdown.otherPaymentsDeduction
+      ? ` − ${money(m.breakdown.otherPaymentsDeduction)} other-payments deduction`
+      : "");
   const extra: string[] = [];
   const business = m.breakdown.selfEmployment;
   const businessInfo = business
@@ -1237,11 +1265,31 @@ function ledgerView({ p, r }: Row) {
   const suffix = two ? ` · ${who}` : "";
   const seniorCredits = m.breakdown.seniorCredits;
   const pension = m.breakdown.publicPensions;
+  const benefit = r.breakdown.gisAllowance?.adults[active];
+  const benefitRows: Adj[] = benefit
+    ? [
+        ["Gross GIS benefit", benefit.gis],
+        ["Gross Allowance benefit", benefit.allowance],
+        ["Federal net income (includes benefits)", m.breakdown.netIncomeTotal ?? 0],
+        ["Provincial net income (includes benefits)", m.breakdown.provincialNetIncome ?? 0],
+        ["Other-payments deduction from taxable income", -(m.breakdown.otherPaymentsDeduction ?? 0)],
+        ["Recovery deduction (included in deductions)", -(n.oasRecovery ?? 0)],
+        ["Supplement recovery (included in federal recovery)", m.breakdown.supplementRecovery ?? 0],
+      ]
+    : [];
+  const benefitLedger = benefit
+    ? `<table class="public-pension-ledger senior-benefit-ledger"><caption>GIS and Allowance${suffix}${comparisonInfo("GIS and Allowance accounting", retirementTooltips(Object.values(years)).seniorBenefitTax)}</caption><tbody>${benefitRows.map(([label, amount]) => `<tr><td>${label}</td><td class="r">${amount < 0 ? "−" : ""}${money(Math.abs(amount))}</td></tr>`).join("")}</tbody></table>`
+    : "";
   const pensionRows: Adj[] = pension
     ? [
         ["Gross OAS income", pension.oas],
         ["CPP/QPP retirement income", pension.cppQpp],
-        ["OAS recovery deduction (included in deductions)", -pension.recoveryDeduction],
+        [
+          benefit
+            ? "OAS / supplement recovery deduction (included in deductions)"
+            : "OAS recovery deduction (included in deductions)",
+          -pension.recoveryDeduction,
+        ],
       ]
     : [];
   const pensionIncome = pension
@@ -1258,7 +1306,7 @@ function ledgerView({ p, r }: Row) {
     [`Less dividend tax credit`, -m.fDtc],
     p.qc && [`Less ${rateFmt(F.quebecAbatement)} Quebec abatement`, -m.breakdown.quebecAbatement],
     [`Less foreign tax credit`, -m.fFtc],
-    ["OAS recovery tax", pension?.recoveryTax ?? 0],
+    [benefit ? "OAS / supplement recovery tax" : "OAS recovery tax", n.oasRecovery ?? 0],
   ]);
   const lowIncomeRow: Adj = [`Less low-income tax reduction`, -m.lowRed];
   const lowIncomeAfterForeign = p.d.claimants?.lowIncomeReduction?.order === "after-foreign-tax-credit";
@@ -1309,7 +1357,7 @@ function ledgerView({ p, r }: Row) {
     ] satisfies Adj[]
   ).filter(([, a]) => a > 0.5);
   const taxableInfo =
-    hasInv(x) || x.selfEmployment || x.oth || x.retirementIncome?.length || pension || n.ded || n.enh > 0.5
+    hasInv(x) || x.selfEmployment || x.oth || x.retirementIncome?.length || pension || benefit || n.ded || n.enh > 0.5
       ? comparisonInfo(
           "taxable income",
           `${two ? `${who}: t` : "T"}axable income is ${money(m.ti)}: ${tiText}.${hasInv(x) ? ` "Tax on investment income" is the extra tax the ${two ? "household's " : ""}investment income adds on top of the rest of its income.` : ""} ${extra.join(" ")}`,
@@ -1317,7 +1365,7 @@ function ledgerView({ p, r }: Row) {
       : "";
   return `
     <div class="ledgers">
-      ${ledger(`Federal${suffix}`, "var(--fed)", { lines: m.f.lines, gross: m.f.tax, rows: fRows, net: m.fed }, m.ti, taxableInfo, pensionIncome)}
+      ${ledger(`Federal${suffix}`, "var(--fed)", { lines: m.f.lines, gross: m.f.tax, rows: fRows, net: m.fed }, m.ti, taxableInfo, pensionIncome + benefitLedger)}
       ${ledger(p.n + suffix, "var(--prov)", { lines: m.pr.lines, gross: m.pr.tax, rows: pRows, net: m.prov }, m.tiP)}
       <div class="ledger">
         <h4><i class="sw" style="background:var(--pay)"></i>Payroll${suffix}${businessInfo ? comparisonInfo("self-employment contributions", businessInfo) : ""}${m.breakdown.retirementPayroll ? comparisonInfo("retirement-age payroll", retirementResult(m.breakdown.retirementPayroll, p.qc ? "QPP" : "CPP", money)) : ""}</h4>
