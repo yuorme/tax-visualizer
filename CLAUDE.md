@@ -26,7 +26,7 @@ With network on, Codex runs
 (tested November 2026). So its brief says to do its own git, pull request and verdict steps; don't do them for it.
 Read only `<name>.out`; `grep -m1 'session id' <name>.log` and `grep -A1 'tokens used' <name>.log` give the rest.
 Send review fixes to the same session, from inside the worktree, so it keeps its context: `codex exec resume <id>`
-with the same `-c` and `-o` flags plus `-c approval_policy='"on-request"' -c approvals_reviewer='"auto_review"'`
+with the same `-m`, `-c` and `-o` flags plus `-c approval_policy='"on-request"' -c approvals_reviewer='"auto_review"'`
 (`resume` takes neither `--approve-for-me` nor `-C`). Codex reviews of Claude's branches start a fresh session with
 no shared coder context in a detached reviewer worktree, using the same launch command and `docs/agents/reviewer.md`.
 A UI review that didn't run the browser steps itself doesn't count. The plugin's `task` command runs with approvals
