@@ -96,8 +96,8 @@ cold. Role files: `docs/agents/<role>.md`. This table is the only place that ass
 | All other code: engine, rules, schema, scripts, tests, UI, debugging | coder | Codex | Claude Code |
 | A year's or a program's figures | data-collector | Codex | Claude Code |
 
-**Reviews cross agents:** Complex work gets a different agent from its author. Simple, Data and Normal work may
-use a fresh Codex session with no shared context from the coder's session. An issue touching both UI and engine
+**Reviews cross agents:** the reviewer is a different agent from the one that wrote the branch, so Claude reviews
+Codex's branches and Codex reviews Claude's. Claude is the primary reviewer. An issue touching both UI and engine
 is split into stacked branches (engine first), or goes to whoever owns most of it.
 
 ### Models and effort
@@ -107,14 +107,14 @@ Standard: Claude `sonnet`/Sol; Strong: Claude `opus`/Astra. `codex -m` IDs: Sol=
 
 | Class | Examples | Coder | Reviewer |
 | --- | --- | --- | --- |
-| Simple | mechanical work, Markdown, one-area fixes, small UI tweaks | Codex Sol or Astra | Codex Astra |
-| Data | a year's or a program's figures | Codex Sol | Codex Astra |
-| Normal | engine rules, schema, scripts, tests, ordinary UI | Codex Astra | Codex Astra |
+| Simple | mechanical work, Markdown, one-area fixes, small UI tweaks | Codex Sol or Astra | Claude `opus`, `medium` |
+| Data | a year's or a program's figures | Codex Sol | Claude `opus`, `medium` |
+| Normal | engine rules, schema, scripts, tests, ordinary UI | Codex Astra | Claude `opus`, `medium` |
 | Complex | complicated UI changes, engine refactors | Claude `opus` | Codex Astra |
 
-Use Claude `opus` only for Complex work and the outage fallbacks below. Effort is `high`, also the cap for coders
-and reviewers; `medium` only for Markdown-only or mechanical work (renames, dependency bumps, lint fixes).
-Pick the higher class when unsure; retros report class, model and effort per issue.
+Use Claude `opus` only for Complex work, reviews and the outage fallbacks below. Effort is `high`, also the cap for
+coders and reviewers; `medium` only for Claude's reviews and Markdown-only or mechanical work (renames, dependency
+bumps, lint fixes). Pick the higher class when unsure; retros report class, model and effort per issue.
 
 ### When an agent or model is out
 An agent or model is unavailable when it is down, its plugin fails, or a usage limit won't reset before the work is
@@ -169,7 +169,7 @@ the golden-test requirements above; the reviewer's model alone does not require 
 The user merges instead, and the orchestrator labels the pull request `needs-human` and says so, when:
 - its issue is labelled `needs-human`, or
 - it makes significant layout changes, or
-- its review was a same-agent review, other than a Simple, Data or Normal task's, or
+- its review was a same-agent review, or
 - it changes this merge process, `AGENTS.md`, `CLAUDE.md`, `docs/agents/`, `.claude/agents/`, `.claude/settings.json`
   or `.codex/`.
 
