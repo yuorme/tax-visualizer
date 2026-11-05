@@ -2,7 +2,7 @@
 name: reviewer
 description: >-
   Independent review of a finished branch; runs checks and reports findings without editing tracked files.
-  Use for Claude's reviews in AGENTS.md's tier table; Codex reviews Claude's own branches.
+  Use when the orchestrator gives a review to Claude; the tier table sets the default.
 tools: Read, Grep, Glob, Bash, WebFetch
 model: opus
 effort: high

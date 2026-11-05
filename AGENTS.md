@@ -96,8 +96,9 @@ cold. Role files: `docs/agents/<role>.md`. This table is the only place that ass
 | All other code: engine, rules, schema, scripts, tests, UI, debugging | coder | Codex | Claude Code |
 | A year's or a program's figures | data-collector | Codex | Claude Code |
 
-**Reviews cross agents:** the reviewer is a different agent from the one that wrote the branch, so Claude reviews
-Codex's branches and Codex reviews Claude's. Claude is the primary reviewer. An issue touching both UI and engine
+**Reviews cross models:** the reviewer is a different model from the one that wrote the branch, and Sol and Astra
+count as different models. The table sets the default reviewer; the orchestrator may choose another reviewer from
+expected Claude and Codex token use and limits, and says why in the dispatch. An issue touching both UI and engine
 is split into stacked branches (engine first), or goes to whoever owns most of it.
 
 ### Models and effort
@@ -108,14 +109,14 @@ Standard: Claude `sonnet`/Sol; Strong: Claude `opus`/Astra. `codex -m` IDs: Sol=
 | Class | Examples | Coder | Reviewer |
 | --- | --- | --- | --- |
 | Simple | mechanical work, Markdown, one-area fixes, small UI tweaks | Codex Sol `high` | Claude `sonnet`, `high` |
-| Data | a year's or a program's figures | Codex Sol `xhigh`| Claude `opus`, `medium` |
-| Normal | engine rules, schema, scripts, tests, ordinary UI | Codex Sol, `xhigh` | Claude `opus`, `medium` |
+| Data | a year's or a program's figures | Codex Sol, `xhigh` | Codex Astra, `high` |
+| Normal | engine rules, schema, scripts, tests, ordinary UI | Codex Sol, `xhigh` | Codex Astra, `high` |
 | Complex | complicated UI changes, engine refactors | Claude `opus`, `high` | Codex Astra, `high` |
 
-Use Claude `opus` only for Complex work, reviews and the outage fallbacks below. Effort is `high`, also the cap for
-coders and reviewers, except Sol's `xhigh` in this table; `medium` only for Claude's reviews and Markdown-only or
-mechanical work (renames, dependency bumps, lint fixes). Pick the higher class when unsure; retros report class,
-model and effort per issue.
+Use Claude `opus` only for Complex work, reviews given to Claude and the outage fallbacks below. Effort is `high`,
+also the cap for coders and reviewers, except Sol's `xhigh` in this table; `medium` only for Claude's reviews and
+Markdown-only or mechanical work (renames, dependency bumps, lint fixes). Pick the higher class when unsure; retros
+report class, model and effort per issue.
 
 ### When an agent or model is out
 An agent or model is unavailable when it is down, its plugin fails, or a usage limit won't reset before the work is
@@ -126,8 +127,8 @@ tier calls for is out, stay on the same agent and say so in the dispatch:
 - a Strong review never steps down. If the reviewing agent has no model at or above the review's tier, treat that
   agent as unavailable.
 
-When the other agent is unavailable, a fresh session of the author's agent reviews with no shared coder context,
-at the strong tier and `high` effort. Every same-agent review's verdict header says "same-agent review".
+When no other model is available, a fresh session of the author's model reviews with no shared coder context, at
+`high` effort. Every same-model review's verdict header says "same-model review".
 
 ## Running agents
 The orchestrator gives each agent one issue, its role file and an explicit list of files it owns; never run two
@@ -171,7 +172,7 @@ the golden-test requirements above; the reviewer's model alone does not require 
 The user merges instead, and the orchestrator labels the pull request `needs-human` and says so, when:
 - its issue is labelled `needs-human`, or
 - it makes significant layout changes, or
-- its review was a same-agent review, or
+- its review was a same-model review, or
 - it changes this merge process, `AGENTS.md`, `CLAUDE.md`, `docs/agents/`, `.claude/agents/`, `.claude/settings.json`
   or `.codex/`.
 
