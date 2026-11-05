@@ -22,12 +22,12 @@ export interface ChildcareCreditResult {
 
 const amount = (v: unknown): v is number => typeof v === "number" && Number.isFinite(v) && v >= 0;
 
-/** beforeChildcare contains RAW individual net incomes, before the zero floor and childcare subtraction. */
+/** beforeChildcareAndRecovery contains RAW individual income before the zero floor and lines 21400/23500. */
 export function childcareCreditOf(
   p: Province,
   hh: Household,
   federal: ChildcareResult,
-  beforeChildcare: number[],
+  beforeChildcareAndRecovery: number[],
   provincialFamily: number,
   nlApplied: number[],
 ): ChildcareCreditResult | undefined {
@@ -50,7 +50,8 @@ export function childcareCreditOf(
   };
   if (!hh.childcare) return out;
   const ordinaryFamily =
-    (hh.adults === 1 && beforeChildcare.length === 1) || (hh.adults === 2 && beforeChildcare.length === 2 && hh.spouse);
+    (hh.adults === 1 && beforeChildcareAndRecovery.length === 1) ||
+    (hh.adults === 2 && beforeChildcareAndRecovery.length === 2 && hh.spouse);
   if (rule.program === "quebec-childcare") {
     out.income = provincialFamily;
     out.eligibleExpenses = 0;
@@ -99,17 +100,19 @@ export function childcareCreditOf(
           allowedExpenses: 0,
           reasons: ["ontario-supporting-person-income-requires-verification"],
         };
-      // ON479-A: add line 21400 back to raw line 23600 BEFORE each person's zero floor.
-      // Social-benefits repayments are not separately modeled; this base assumes no such repayment.
-      out.income = beforeChildcare.reduce((a, b) => a + Math.max(0, b), 0);
+      // ON479-A: add lines 21400 AND 23500 back to raw line 23600 BEFORE each person's zero floor.
+      // Other programs retain their post-recovery provincial/federal bases.
+      out.income = beforeChildcareAndRecovery.reduce((a, b) => a + Math.max(0, b), 0);
       const q = rule.params;
       let steps = 0;
       let from = q.fullThrough;
+      // Summing quarterly OAS with other receipts can land a few binary bits above an exact dollar boundary.
+      const roundoff = Number.EPSILON * Math.max(1, Math.abs(out.income)) * 8;
       for (const [through, step] of q.steps) {
-        steps += Math.ceil(Math.max(0, Math.min(out.income, through) - from) / step);
+        steps += Math.ceil(Math.max(0, Math.min(out.income, through) - from - roundoff) / step);
         from = through;
       }
-      out.rate = out.income > from ? 0 : Math.max(0, q.maxRate - steps * q.decrement);
+      out.rate = out.income > from + roundoff ? 0 : Math.max(0, q.maxRate - steps * q.decrement);
       out.reasons = ["federal-allowed-claim", "income-addback-before-zero-floor"];
     } else {
       out.income = provincialFamily;

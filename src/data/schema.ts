@@ -204,6 +204,17 @@ const qcCwbRow = z.tuple([rate, amount, amount, amount]);
 
 export const federalSchema = z.object({
   year: z.number().int(),
+  publicPensions: program(
+    "oas-current-year-recovery",
+    z.object({
+      minimumAge: amount.int(),
+      increasedAge: amount.int(),
+      effectiveMonthOffset: amount.int(),
+      quarterlyMonthly: z.tuple([pair, pair, pair, pair]), // [65–74, 75+] published monthly amounts
+      recoveryThreshold: amount,
+      recoveryRate: rate,
+    }),
+  ).optional(),
   seniorCredits: z
     .object({
       age: ageCredit,

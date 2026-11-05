@@ -1,4 +1,5 @@
 import type { Federal, Province } from "../data/schema.ts";
+import { oasRecoveryTax, publicPensionReceipts } from "./public-pensions.ts";
 import { selfEmploymentContributions, validateSelfEmployment } from "./self-employment.ts";
 import { validateSeniorInputs } from "./senior-credits.ts";
 import {
@@ -214,6 +215,9 @@ export function healthPremium(p: Province, ti: number): number {
 /** The pieces of net income: each kind of income as it's counted (the taxable share of net capital gains,
  *  dividends grossed up), and the deductions taken off. */
 export interface NetIncomeParts {
+  oas?: number;
+  cppQpp?: number;
+  oasRecovery?: number; // included in ded, never subtract twice
   retirementIncome?: number;
   ord: number; // employment income
   selfEmployment?: number;
@@ -232,12 +236,20 @@ export function deductionsOf(x: Person): number {
 }
 
 /** Net income before it's floored at zero, using the province's pension plan. A net capital loss adds nothing
- *  and can't offset other income. A null province explicitly selects CPP. */
-export function netIncomeParts(fed: Federal, p: Province | null, x: Person, childcareDeduction = 0): NetIncomeParts {
+ *  and can't offset other income. A null province explicitly selects CPP. recoveryOverride imports the federal
+ *  deduction into Quebec, or takes zero for a program that excludes social-benefits repayments from deductions. */
+export function netIncomeParts(
+  fed: Federal,
+  p: Province | null,
+  x: Person,
+  childcareDeduction = 0,
+  recoveryOverride?: number,
+): NetIncomeParts {
   const inv = fed.investment;
   const { pay, selfEmployment: self } = payrollDetailsOf(fed, p, x);
   validateSeniorInputs(fed, x, p);
-  return {
+  const receipts = publicPensionReceipts(fed, x);
+  const parts: NetIncomeParts = {
     ord: x.ord,
     ...(x.retirementIncome !== undefined ? { retirementIncome: retirementCashOf(x) } : {}),
     ...(x.selfEmployment !== undefined ? { selfEmployment: x.selfEmployment } : {}),
@@ -249,24 +261,42 @@ export function netIncomeParts(fed: Federal, p: Province | null, x: Person, chil
     ded: deductionsOf(x) + childcareDeduction + (self ? self.employerBaseDeduction + self.qpipDeduction : 0),
     enh: pay.enh,
   };
+  if (x.cppQpp !== undefined) parts.cppQpp = receipts.cppQpp;
+  if (x.oas !== undefined) {
+    parts.oas = receipts.oas;
+    parts.oasRecovery = recoveryOverride ?? oasRecoveryTax(fed, receipts.oas, netIncomeTotal(parts));
+    parts.ded += parts.oasRecovery;
+  }
+  return parts;
+}
+
+/** Unfloored total; recovery is already included in the deductions. */
+export function netIncomeTotal(n: NetIncomeParts): number {
+  return (
+    n.ord +
+    (n.selfEmployment ?? 0) +
+    (n.oth ?? 0) +
+    (n.retirementIncome ?? 0) +
+    n.cg +
+    n.ed +
+    n.nd +
+    n.fd -
+    n.ded -
+    n.enh +
+    (n.oas ?? 0) +
+    (n.cppQpp ?? 0)
+  );
 }
 
 /** Net income: total income less deductions and enhanced CPP/QPP contributions. */
-export function netOf(fed: Federal, p: Province | null, x: Person, childcareDeduction = 0): number {
-  const n = netIncomeParts(fed, p, x, childcareDeduction);
-  return Math.max(
-    0,
-    n.ord +
-      (n.selfEmployment ?? 0) +
-      (n.oth ?? 0) +
-      (n.retirementIncome ?? 0) +
-      n.cg +
-      n.ed +
-      n.nd +
-      n.fd -
-      n.ded -
-      n.enh,
-  );
+export function netOf(
+  fed: Federal,
+  p: Province | null,
+  x: Person,
+  childcareDeduction = 0,
+  recoveryOverride?: number,
+): number {
+  return Math.max(0, netIncomeTotal(netIncomeParts(fed, p, x, childcareDeduction, recoveryOverride)));
 }
 
 /** Quebec TP-1 line 201: wages and active business profit, included in line 275 net income. */

@@ -1,0 +1,111 @@
+Title: GUIDE – INCOME TAX RETURN – 2025
+URL: https://www.revenuquebec.ca/documents/en/formulaires/tp/2025-12/TP-1.G-V(2025-12).pdf
+Fetched: 2026-11-04
+SHA-256 of the original: 84badbd0c3e35d93d3ea2fd36470b7664f6552c1dca81e8aad3f569637d3317b
+Publication date modified: 2025-12-05
+PDF pages: 37 of 84
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 37 of 84 ---
+
+37
+2025 – GUIDE-V
+Deduction for the QPIP premium
+Income from self-employment
+If you earned income from self-employment (line 27 of Schedule L) and the
+amount on line 97 is less than $484.12, completeSchedule Rto determine
+the amount that you can enter on line 248.
+Special cases
+•• If you are self-employed and all of the income you earned from carrying
+on a business entitles you to a deduction on line 293 or line 297 (point 7, 9
+or 12), you cannotclaim a deduction for the premium you are required
+to pay in relation to the business. If necessary, we will correct the
+amount you enter on line 248.
+•• If you are a person responsible for a family-type resource or an
+intermediateresourceandyoureceivedan RL-29 slip, you cannot
+claim a deduction for the premium you are required to pay on the
+insurable earnings you enter on line 40 of Schedule L. If necessary,
+we will correct the amount you enter on line 248.
+250 Other deductions
+On line 250, enter the amount of the deduction to which you are entitled
+and, in box 249, enter the corresponding number from the list that
+follows. If you areclaimingmorethanonededuction, enter the total
+deduction on line 250 and “77”inbox 249
+03 Deduction for a social benefits repayment
+04 Deduction for amounts transferred to an RPP, an RRSP, a RRIF,
+a PRPP/VRSP or an annuity
+05 Deduction for an amount already included in income
+(RRSP or RRIF)
+06 Deduction for a refund of unused RRSP or PRPP/VRSP
+contributions
+07 Disability supports deduction
+08 Deduction for legal fees
+09 Deduction for Québec exploration expenses that give entitlement
+to an additional deduction
+11 Deduction for the purchase of an income-averaging annuity
+for artists
+12 Deduction for a repayment of support
+13 Deduction for an amount already included in income (FHSA)
+14 Deduction for a loss in the value of investments in an RRSP,
+a RRIF or a PRPP/VRSP
+15 Deduction for the repayment of a QESI amount
+16 Deduction for amounts transferred to a registered disability
+savings plan (RDSP)
+17 Other deductions
+03 Deduction for a social benefits repayment
+You can deduct Employment Insurance benefits, Old Age Security pension
+payments and net federal supplements youarerequiredtorepayfor 2025
+Entertheamountfrom line 23500ofyourfederalincometaxreturn
+for 2025.
+04 Deduction for amounts transferred to an RPP,
+an RRSP, a RRIF, a PRPP/VRSP or an annuity
+You can deduct the amounts that you transferred in 2025 or the first
+60 days of 2026 to a registered pension plan (RPP), a registered retirement
+savings plan (RRSP), a registered retirement income fund (RRIF) or
+a pooled registered pension plan (PRPP), including a voluntary retirement
+savings plan (VRSP), or that you used to purchase an annuity.
+Enter the total amount deducted in this respect on lines 20700, 20800
+and 23200 of your 2025 federal income tax return.
+IMPORTANT
+In the federal income tax return, the term “pooled registered pension
+plan (PRPP)” refers to both PRPPs and VRSPs.
+05 Deduction for an amount already included in income
+(RRSP or RRIF)
+In your 2025 income tax return, you can deduct the amount shown in box I
+of your RL-2 slip, which corresponds to the deduction to which you are
+entitled in respect of the amount you included in your income for the year
+in which the trust governing your RRSP or your RRIF acquired
+a non-qualifying investment or used the property of your RRSP or RRIF
+as a loan guarantee (or permitted the property to be used as such).
+06 Deduction for a refund of unused RRSP
+or PRPP/VRSP contributions
+Registered retirement savings plan (RRSP)
+You can deduct the amounts that were refunded to you or your spouse
+for unused contributions that you made to an RRSP. Enter the amount
+deducted in that respect on line 23200 of your federal income tax return
+for 2025.
+Pooled registered pension plan (PRPP), including a voluntary
+retirement savings plan (VRSP)
+You can deduct the amounts that you were refunded for unused
+contributions that you made after 2012 to your PRPP/VRSP. Enter the
+amount deducted in that respect on line 23200 of your federal income tax
+return for 2025.
+IMPORTANT
+In the federal income tax return, the term “pooled registered pension
+plan (PRPP)” refers to both PRPPs and VRSPs.
+07 Disability supports deduction
+If you have a disability, you can, under certain conditions, deduct
+the expenses you paid in 2025 for goods and services that allowed
+you to do one of the following:
+•• carry out employment duties;
+•• actively carry on a business;
+•• do research for which you received a grant;
+•• take a course offered by a designated educational institution; or
+•• attend a secondary school.
+Full details on the eligibility requirements are provided in form TP-358.0.1-V,
+Disability Supports Deduction, which you must complete to calculate
+the amount of the deduction. Enclosetheform with your return.
+Under certain conditions, you may also be entitled to the refundable
+tax credit for medical expenses. For more information, see point 1
+in the instructions for line 462.
