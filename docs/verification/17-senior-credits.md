@@ -11,7 +11,8 @@ No UI files are changed. The orchestrator should file a separate History back-fi
 All new data values come from the [cached official evidence](138-senior-credit-rules/SOURCES.md):
 
 - Federal T1, worksheet and S2 (including Quebec-resident S2); all twelve CRA 428s, worksheets and S2s.
-- CRA's [pension eligibility chart](2025/sources/seniors-pension.txt), also checked at its official URL during this work.
+- CRA's [pension eligibility chart](2025/sources/seniors-pension.txt), also checked at its official URL
+  during this work.
 - 2026 TD1 and worksheets; BC Budget 2026's **annual** 5.60% credit rate, not July's 6.14% withholding rate.
 - Quebec Schedule B, TP-1 and guide for 2025; the official 2026 personal-income-tax parameter bulletin.
 - MB428-A and its guide; NS428 line 98, PE428 lines 76/78, SK428 and SK(S2).
@@ -71,7 +72,8 @@ Ontario receives these credits before surtax. Federal Quebec transfers precede t
 Manitoba adds its own-age term and a spouse term only with an age transfer and donor S2 line 1 strictly greater
 than line 11. A pension-only transfer cannot qualify. The combined family base then loses 9% of claimant income.
 NS's separate age credit is tax dollars, strictly below the taxable-income threshold, after its low-income reduction.
-PE counts each eligible spouse once in the family reduction before its single taper. SK's supplement has no income taper.
+PE counts each eligible spouse once in the family reduction before its single taper.
+SK's supplement has no income taper.
 
 Quebec combines age, retirement and the existing living-alone base, reduces the sum once, and allocates the pool
 to available tax capacity. Unclaimed remainder stays on one return. Line 431 then transfers negative line 430
@@ -85,6 +87,8 @@ Expected values were calculated from the reviewed literal parameter table and se
 the preparation scripts imported no engine and took no engine snapshots. There is no capture/update mode in
 the new test runner. The year reference tests separately compare published values to production data.
 The original annual golden files are unchanged. No tolerance or assertion is weakened.
+The user and orchestrator approved one task-required update to an existing 2025 Quebec marginal expectation;
+the source and full calculation appear below. No other existing golden changed.
 
 Counts below apply **separately to each of 2025 and 2026** (225 cases / 798 asserted values per year).
 These are additions, with no before value; they are not counts of changed existing annual cells.
@@ -170,21 +174,55 @@ The fixture retains full entitlements and transfer assertions, so the cap does n
 
 The pre-existing self-employment marginal fixture already supplies age 66 with personal credits enabled.
 Its 2025 Quebec case at 75,000 profit predates age credits. Ordinary-input identity does not apply to that input.
-The original independent calculation in [#14's audit](14-self-employment.md) gives a 91.61599792 net-income
-increase per 100 profit and a pre-age marginal rate of 0.42823757229792.
-The newly required taper effects are independently:
+The user and orchestrator explicitly approved replacing its single expected value, from `0.42823757229792`
+to `0.468925382174166`, as a task-required behavior change. The case's inputs, assertions and tolerance are
+unchanged. No other existing golden is modified.
+
+Sources are the published 2025 QPP Schedule U, QPIP Schedule R/10 and HSF Schedule F parameters cached and
+mapped in [#14's source audit](14-self-employment.md#evidence), plus the
+[federal age worksheet](138-senior-credit-rules/sources/federal-worksheet-2025.txt),
+[federal T1](138-senior-credit-rules/sources/federal-t1-2025.txt),
+[Quebec Schedule B](138-senior-credit-rules/sources/qc-schedule-b-2025.txt) and
+[Quebec return](138-senior-credit-rules/sources/qc-return-2025.txt).
+The federal age base reduces by 15% above 45,522 and converts at 14.5%, before the 16.5% Quebec abatement.
+Schedule B reduces the combined age/living-alone base by 18.75% above 42,090; Quebec converts it at 14%.
+
+At 75,000 profit, the employer QPP base deduction is `67,800 × .054 = 3,661.20`;
+enhanced QPP is `67,800 × .02 + 3,700 × .08 = 1,652`;
+deductible QPIP is `75,000 × .00878 × .43736 = 288.00156`.
+Federal net income is therefore 69,398.79844. The capped 1,420 worker deduction makes Quebec net income
+67,978.79844. The federal age base is 5,446.480234; the Quebec pool is
+`2,128 + 3,906 - .1875 × (67,978.79844 - 42,090) = 1,179.8502925`.
+Both credit tapers remain positive over the next 100 profit; neither tax reaches the non-refundable floor.
+The next dollar remains in the federal 20.5% and Quebec 19% brackets and the HSF 1% band.
+Refundable benefits are already phased out. The CPP election does not stop QPP business contributions.
+
+The full independent marginal calculation uses these published constants, without engine output:
 
 ```text
-Federal: 91.61599792 × .15 × .145 × .835 / 100 = .0166386104222460
-Quebec:  91.61599792 × .1875 × .14 / 100      = .0240491994540000
-Total:   .42823757229792 + both changes      = .4689253821741660
+Additional profit = 100
+Additional QPP2 = 100 × .08 = 8
+Additional QPIP = 100 × .00878 = .878
+Additional deductible QPIP = .878 × .43736 = .38400208
+Net-income increase = 100 - 8 - .38400208 = 91.61599792
+
+Federal tax before age taper:
+  (91.61599792 × .205 - (.878 - .38400208) × .145) × .835 = 15.622557645792
+Quebec tax before pool taper: 91.61599792 × .19 = 17.4070396048
+HSF increase: 91.61599792 × .01 = .9161599792
+Pre-age total increase: 15.622557645792 + 17.4070396048 + .9161599792 + 8 + .878
+                     = 42.823757229792
+
+Federal age taper: 91.61599792 × .15 × .145 × .835 = 1.6638610422246
+Quebec pool taper: 91.61599792 × .1875 × .14       = 2.4049199454
+Total increase: 42.823757229792 + 1.6638610422246 + 2.4049199454 = 46.8925382174166
+Marginal rate: 46.8925382174166 / 100 = .468925382174166
 ```
 
-The single expected marginal cell combines federal age taper and Quebec pool taper. No cash, payroll,
-contribution rate or deduction changes explain this difference. The existing fixture remains unchanged as the brief
-requires. A new targeted test verifies the independently calculated marginal rate. The draft PR cannot pass its
-full check until the orchestrator resolves this conflict: authorize the one necessary baseline update, or change
-the requested age-credit activation contract. Silently suppressing credits for this valid senior input is incorrect.
+This one expectation combines federal age taper and Quebec pool taper. No change to cash, payroll rates or
+deduction rules explains the difference from the former baseline. The new targeted test independently verifies
+the same calculation. The historical #14 audit documents the pre-age result; this derivation supersedes that
+age-aware example for the #17 engine.
 
 ## Remaining limits and handoff
 
