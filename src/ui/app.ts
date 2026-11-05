@@ -68,6 +68,8 @@ import {
   validSelfEmployment,
   withSelfEmployment,
 } from "./self-employment.ts";
+import { seniorEditor } from "./senior-editor.ts";
+import { normalizeReceipts, seniorGate, seniorYears, withSeniorIncome } from "./senior-income.ts";
 
 const availableYears = Object.keys(years)
   .map(Number)
@@ -232,7 +234,8 @@ const retirementOf = (i: number) => retirements[i] ?? null;
 /** Each person's income as the engine sees it, for reading. In the portfolio view it differs from what's in people. */
 const retirementPeople = (data: typeof Y = Y) =>
   people.map((x, i) => withRetirement(enginePerson(x, portfolioOf(i)), retirementOf(i), data));
-const enginePeople = (data: typeof Y = Y) => retirementPeople(data).map(p => withSelfEmployment(p, data));
+const enginePeople = (data: typeof Y = Y) =>
+  retirementPeople(data).map(p => withSeniorIncome(withSelfEmployment(p, data), data));
 const counted = () => enginePerson(me(), portfolioOf(active));
 const isNum = (v: unknown): v is number => typeof v === "number";
 /** A person read back from saved state, keeping only valid amounts. */
@@ -241,6 +244,8 @@ function cleanPerson(o: unknown): Person {
   if (o && typeof o === "object") {
     const saved = o as Partial<Record<keyof Person, unknown>>;
     if (validSelfEmployment(saved.selfEmployment)) x.selfEmployment = saved.selfEmployment;
+    const receipts = normalizeReceipts(saved.retirementIncome);
+    if (receipts) x.retirementIncome = receipts;
     for (const k of KEYS) {
       const v = saved[k];
       if (isNum(v) && (k === "cg" || v >= 0)) x[k] = v;
@@ -381,7 +386,11 @@ function renderYearNotes() {
   yearSelect.value = String(YEAR);
   document.title = `Provincial Tax Compare ${YEAR}`;
   $("year-notes").innerHTML = footerNotes(Y, { defaultIncome: DEFAULT_INCOME, spendEst });
-  const tips = { ...tooltips(Y), ...portfolioTooltips(PORTFOLIO), ...retirementTooltips(Object.values(years)) };
+  const tips = {
+    ...tooltips(Y),
+    ...portfolioTooltips(PORTFOLIO),
+    ...retirementTooltips(Object.values(years)),
+  };
   aggregateChildrenTip = tips.children;
   for (const b of document.querySelectorAll<HTMLElement>("[data-note]")) b.dataset.tip = tips[b.dataset.note ?? ""];
   const sources = $("year-sources");
@@ -648,6 +657,13 @@ function render() {
         years[availableYears[0]],
         selfEmploymentYears(Object.values(years)),
       ),
+      people.some(p => p.retirementIncome !== undefined),
+      seniorGate(
+        retirementPeople(years[availableYears[0]]),
+        years[availableYears[0]],
+        seniorYears(Object.values(years)),
+        retirements.some(retirementActive),
+      ),
     );
   const res: Row[] = P.map(p => ({ p, r: calc(p) }));
   const usd = metric === "usd";
@@ -840,7 +856,11 @@ function render() {
   $("rent-body").hidden = tenure !== "rent";
   // Tab summaries: what each panel holds, highlighted whenever the summary is an amount rather than none, not set,
   // $0 or off. Income covers everyone's other and investment income, though its panel shows the selected person's.
-  const otherAmt = enginePeople().reduce((a, y) => a + (y.oth ?? 0) + (y.selfEmployment ?? 0), 0);
+  const otherAmt = enginePeople().reduce(
+    (a, y) =>
+      a + (y.oth ?? 0) + (y.selfEmployment ?? 0) + (y.retirementIncome ?? []).reduce((sum, r) => sum + r.amount, 0),
+    0,
+  );
   const anyInc = H.r.hasInv || otherAmt > 0;
   const incNet = otherAmt + H.r.invAmt;
   const anyAge = retirements.some(retirementActive);
@@ -866,6 +886,15 @@ function render() {
   paintCg();
   renderPortfolio();
   renderRetirement(H);
+  senior.sync();
+  const seniorNotice = $("senior-gate");
+  seniorNotice.textContent = seniorGate(
+    retirementPeople(),
+    Y,
+    seniorYears(Object.values(years)),
+    retirements.some(retirementActive),
+  );
+  seniorNotice.hidden = historyOpen || !seniorNotice.textContent;
   const businessGate = $("self-employment-gate");
   businessGate.textContent = selfEmploymentGate(retirementPeople(), Y, selfEmploymentYears(Object.values(years)));
   businessGate.hidden = historyOpen || !businessGate.textContent;
@@ -1130,9 +1159,11 @@ function ledgerView({ p, r }: Row) {
     n = m.breakdown.netIncome,
     who = two ? NAMES[active] : "";
   const tiParts: string[] = [];
-  if (x.ord || !(x.selfEmployment || x.oth || hasInv(x))) tiParts.push(`${money(n.ord)} employment income`);
+  if (x.ord || !(x.selfEmployment || x.oth || x.retirementIncome?.length || hasInv(x)))
+    tiParts.push(`${money(n.ord)} employment income`);
   if (x.selfEmployment) tiParts.push(`${money(n.selfEmployment ?? 0)} self-employment profit`);
   if (x.oth) tiParts.push(`${money(n.oth ?? 0)} other income`);
+  if (x.retirementIncome?.length) tiParts.push(`${money(n.retirementIncome ?? 0)} retirement receipts`);
   if (x.cg > 0) tiParts.push(`${money(n.cg)} taxable ${share(F.investment.capitalGainsInclusion)} of net gains`);
   if (x.ed) tiParts.push(`${money(n.ed)} grossed-up eligible dividends`);
   if (x.nd) tiParts.push(`${money(n.nd)} grossed-up non-eligible dividends`);
@@ -1182,6 +1213,7 @@ function ledgerView({ p, r }: Row) {
       : `Less ${spName} ${money(cl.pAmt)} × ${rateFmt(p.b[0][1])}`
     : "";
   const suffix = two ? ` · ${who}` : "";
+  const seniorCredits = m.breakdown.seniorCredits;
   const fRows = present([
     useBpa && [
       `Less personal amount ${money(m.fAmt)} × ${rateFmt(F.brackets[0][1])}${m.fCred < m.fBpaFull - 0.5 ? " (capped)" : ""}`,
@@ -1189,6 +1221,7 @@ function ledgerView({ p, r }: Row) {
     ],
     mine && [spLabelF, -m.fSp],
     [`Less employment amount, ${p.qc ? "QPP" : "CPP"} &amp; EI${p.qc ? "/QPIP" : ""} credits`, -m.fEmp],
+    ["Less age/pension credits and unused spouse transfers", -seniorCredits.federalApplied],
     [`Less dividend tax credit`, -m.fDtc],
     p.qc && [`Less ${rateFmt(F.quebecAbatement)} Quebec abatement`, -m.breakdown.quebecAbatement],
     [`Less foreign tax credit`, -m.fFtc],
@@ -1209,9 +1242,14 @@ function ledgerView({ p, r }: Row) {
     ],
     !p.qc && [`Less CPP &amp; EI credits${p.c === "YT" ? " and employment amount" : ""}`, -m.pEmp],
     [`Less childcare credit`, -m.breakdown.childcareCredit.applied],
+    [
+      p.qc ? "Less age/living-alone/retirement credits" : "Less age/pension credits and unused spouse transfers",
+      -seniorCredits.provincialApplied,
+    ],
     [`Less family tax benefit`, -m.breakdown.familyTaxBenefit.applied],
     !p.d.postDividendSurtax && [`${p.n} surtax`, m.surtax],
     [`Less dividend tax credit`, -m.pDtc],
+    ["Less partner's unused Quebec credit transferred", -seniorCredits.quebecTransferApplied],
     !!p.d.postDividendSurtax && [`${p.n} surtax`, m.surtax],
     !lowIncomeAfterForeign && lowIncomeRow,
     [`Less Ontario tax reduction`, -m.onRed],
@@ -1219,6 +1257,7 @@ function ledgerView({ p, r }: Row) {
     [`Less BC tax reduction`, -m.bcRed],
     [`Less foreign tax credit`, -m.pFtc],
     lowIncomeAfterForeign && lowIncomeRow,
+    ["Less provincial age tax credit", -seniorCredits.ageTaxApplied],
     [`Temporary deficit reduction levy`, m.breakdown.provincialLevy],
   ]);
   const payRows = (
@@ -1236,7 +1275,7 @@ function ledgerView({ p, r }: Row) {
     ] satisfies Adj[]
   ).filter(([, a]) => a > 0.5);
   const taxableInfo =
-    hasInv(x) || x.selfEmployment || x.oth || n.ded || n.enh > 0.5
+    hasInv(x) || x.selfEmployment || x.oth || x.retirementIncome?.length || n.ded || n.enh > 0.5
       ? comparisonInfo(
           "taxable income",
           `${two ? `${who}: t` : "T"}axable income is ${money(m.ti)}: ${tiText}.${hasInv(x) ? ` "Tax on investment income" is the extra tax the ${two ? "household's " : ""}investment income adds on top of the rest of its income.` : ""} ${extra.join(" ")}`,
@@ -1329,6 +1368,14 @@ const retirement = retirementEditor(
   () => retirementOf(active),
   entry => {
     retirements[active] = normalizeRetirement(entry); // a section emptied by hand is the same as one never used
+    render();
+  },
+);
+const senior = seniorEditor(
+  () => me().retirementIncome ?? [],
+  receipts => {
+    if (receipts.length) me().retirementIncome = receipts;
+    else delete me().retirementIncome;
     render();
   },
 );

@@ -13,6 +13,7 @@ import {
   yearList,
 } from "./retirement.ts";
 import { selfEmploymentYears } from "./self-employment.ts";
+import { seniorYears } from "./senior-income.ts";
 
 const installedYears = Object.values(years).sort((a, b) => a.year - b.year);
 const coveragePrograms = [
@@ -47,12 +48,23 @@ export function renderHistory(
   mode: HistoryMode,
   selfEmployment = false,
   businessNotice = "",
+  seniorIncome = false,
+  seniorNotice = "",
 ) {
-  const comparison = retirementHistory(installedYears, cpi, retirement, inputFor, home, mode, selfEmployment);
+  const comparison = retirementHistory(
+    installedYears,
+    cpi,
+    retirement,
+    inputFor,
+    home,
+    mode,
+    selfEmployment,
+    seniorIncome,
+  );
   const name = installedYears.at(-1)?.provinces.find(p => p.code === home)?.name ?? home;
   const byBirthYear = retirement.some(retirementActive);
   const ageing = byBirthYear
-    ? " Retirement-age CPP/QPP uses each person's age in that year, from the birth year entered, and keeps pension and election dates on their calendar dates."
+    ? " Age credits and retirement-age CPP/QPP use each person's age in that year, from the birth year entered, and keep pension and election dates on their calendar dates."
     : "";
   const title = document.getElementById("history-title");
   const body = document.getElementById("history-rows");
@@ -64,7 +76,8 @@ export function renderHistory(
   basis.textContent =
     (mode === "real" ? `${comparison.baseYear} dollars` : "Each year's dollars") +
     (omitted ? " · retirement-age payroll years only" : "") +
-    (comparison.noSelfEmploymentData.length ? " · self-employment years only" : "");
+    (comparison.noSelfEmploymentData.length ? " · self-employment years only" : "") +
+    (seniorIncome || byBirthYear ? ` · age/pension credits: ${yearList(seniorYears(installedYears))} only` : "");
   info.dataset.tip =
     mode === "real"
       ? `Treat the amounts entered above as ${comparison.baseYear} dollars, the latest completed annual CPI year. Income, deductions, spending, rent and home value are converted together using Canada's annual all-items CPI. Each year's tax rules are applied, then income and tax are shown back in ${comparison.baseYear} dollars. Household members, ${byBirthYear ? "" : "ages, "}rates and driving stay fixed.${ageing} This compares the same household, not a household ageing over time.${comparison.omittedYears.length ? ` Annual CPI is not yet available for ${comparison.omittedYears.join(", ")}; those tax years appear in nominal mode only.` : ""}`
@@ -73,6 +86,9 @@ export function renderHistory(
   if (comparison.noSelfEmploymentData.length)
     info.dataset.tip += ` Self-employment is modelled only for ${yearList(selfEmploymentYears(installedYears))}, so ${yearList(comparison.noSelfEmploymentData)} are left out.`;
   if (businessNotice) info.dataset.tip += ` ${businessNotice}`;
+  if (seniorIncome || byBirthYear)
+    info.dataset.tip += ` Age and pension credits are modelled for ${yearList(seniorYears(installedYears))} only; earlier years are left out, not complete senior-tax comparisons. Typed retirement receipts retain their category and survivor status; real mode scales their amounts with the other income.`;
+  if (seniorNotice) info.dataset.tip += ` ${seniorNotice}`;
   info.dataset.tip += coverageNote(home, comparison.rows[0]?.year ?? installedYears[0].year);
   const rows = comparison.rows
     .map(row => {

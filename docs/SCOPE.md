@@ -32,7 +32,7 @@ line-by-line tax return. Simpler and slightly less precise is acceptable where i
 - Interest, rental and other income: taxed at the same rates and counted in net income and family net income for
   every benefit, credit, clawback and the Ontario Health Premium, but none of the employment-only treatment above,
   and no RRSP room. Legacy pensions in this field remain ordinary income. The 2025–2026 engine now accepts
-  separately typed retirement receipts for pension credits; page controls follow in the stacked #17 page branch.
+  separately typed retirement receipts for pension credits through the per-adult Retirement income controls (#17).
   Move receipts out of other income when using those fields; do not copy them. For 2025–2026, Quebec's
   Health Services Fund contribution applies per
   person to subject non-employment income, including taxable gains and actual dividends. Other income is assumed
@@ -90,7 +90,7 @@ line-by-line tax return. Simpler and slightly less precise is acceptable where i
   spouse age alone does not qualify. Disability remains unsupported. Earlier years remain omitted despite forms listing
   the program. See [audit](verification/145-manitoba-family-benefit.md).
 
-- Age and pension credits in the engine for **2025 and 2026 only** (#17 engine half): federal and all thirteen
+- Age and pension credits for **2025 and 2026 only** (#17): federal and all thirteen
   jurisdictions, separate unused spouse credit transfers, Saskatchewan's supplementary senior amount,
   Manitoba family-benefit senior terms, Nova Scotia's separate age credit and PE's senior reduction terms.
   Quebec uses one age/living-alone/retirement pool with one family-income taper, then the general unused-credit
@@ -103,8 +103,15 @@ line-by-line tax return. Simpler and slightly less precise is acceptable where i
   Living-alone eligibility keeps the existing one-adult dwelling assumption; adult-student single-parent additions,
   rollovers, special/foreign pension slips, partial-year residence and Schedule B transfer deductions remain
   unsupported.
-  Controls, tooltips, URL codec and saved-state migration are the stacked page half, including the tooltip acceptance
-  item in #17. No new OAS/GIS/CPP entitlement or complete senior tax burden is implied. #91's unclassified `oth`
+  Per-adult Retirement income rows retain type, annual amount and eligible-survivor status in saved states and URLs.
+  The existing birth-year/month controls supply year-end age; incomplete dates do not apply age inputs. A receipt
+  needing age is retained but excluded until both date fields are complete or eligible-survivor status is asserted.
+  Selected older years retain inputs but exclude typed receipts and age/pension credits, with a result notice.
+  History omits unsupported years, including for age-independent receipts, in nominal and real modes; its basis
+  and tooltip state the coverage. No existing Other income is moved automatically, including legacy pensions.
+  Tooltips explain double counting, receipt eligibility, age assumptions and the unmodelled RRIF minimums,
+  OAS/CPP deferral and residency rules. No new OAS/GIS/CPP entitlement or complete senior tax burden is implied.
+  #91's unclassified `oth`
   exclusions/deductions remain as described above; the four supported receipts are subject to the Health Services Fund.
   Alberta supplemental-credit sizing (#147) remains outside this change.
   See [verification](verification/17-senior-credits.md).
@@ -132,7 +139,7 @@ line-by-line tax return. Simpler and slightly less precise is acceptable where i
   CPP/QPP for that person and says so beside the results. When any person has retirement inputs, the
   historical view leaves out those years, and says which in its tooltip. Real mode needs published annual
   CPI as well, so with these inputs it can show one row or none.
-  #17 must omit unset retirement fields as the page does: `age: null` activates the path and throws, and any
+  #17 omits unset retirement fields: `age: null` activates the path and throws, and any
   supplied `age` throws in 2019–2024 even at zero pay. Childcare's nullable drafts cannot be passed through as adult
   ages.
   One stop and optional revocation cannot represent two cycles affecting one tax year, or validate RR-50's
