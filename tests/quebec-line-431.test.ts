@@ -49,6 +49,8 @@ for (const c of fixture.cases) {
       const people = reverse ? [...c.people].reverse() : c.people;
       const r = household(y, p, input(people));
       assert.equal(round4(r.prov), c.expected.prov);
+      // The lower-income recipient uses 20,000 × .14 - 18,952 × .14 = 146.72.
+      if (c.id === "2026-recipient-cap") assert.equal(round4(r.claim?.saved ?? 0), 146.72);
       for (const [i, person] of r.list.entries()) {
         const expectedIndex = reverse ? 1 - i : i;
         const b = person.breakdown.seniorCredits;
