@@ -85,9 +85,12 @@ export const GIS_ALLOWANCE_STEPS = [
       await p.selectOption("#ret-birth-month", "6");
       await p.check("#senior-oas");
       await p.check("#senior-gis");
+      assert.equal(await p.locator("#senior-allowance").isVisible(), false);
+      await p.click("#add-partner");
+      await p.click('#people [data-i="0"]');
       await p.check("#senior-allowance");
       await p.uncheck("#senior-allowance");
-      await p.click("#add-partner");
+      await p.click('#people [data-i="1"]');
       assert.equal(await p.isChecked("#senior-gis"), false);
       await p.fill("#income", "0");
       await p.fill("#ret-birth-year", "1963");
@@ -122,6 +125,79 @@ export const GIS_ALLOWANCE_STEPS = [
       assert.equal(await p.isChecked("#senior-allowance"), false);
       await p.click("#remove-partner");
       assert.equal((await saved(p)).people.length, 1);
+    },
+  ],
+  [
+    "GIS: Allowance is offered only to spouse households and hidden drafts survive URL and storage round trips",
+    async p => {
+      for (const spouse of [true, false]) {
+        const people = spouse
+          ? [adult(62, { allowance: true })]
+          : [adult(62, { allowance: true }), adult(76, { oas: true, gis: true })];
+        await scenario(p, 2025, people, { spouse });
+        await open(p);
+        assert.equal(await p.locator("#senior-allowance-label").isVisible(), false);
+        assert.equal(await p.locator("#senior-allowance").isVisible(), false);
+        await chart(p, 2025, people, 0, { spouse });
+        const state = await saved(p);
+        const hash = await p.evaluate(() => location.hash);
+        await p.evaluate(() => history.replaceState(null, "", location.pathname));
+        await p.reload();
+        await settle(p);
+        assert.deepEqual((await saved(p)).people, state.people);
+        await open(p);
+        assert.equal(await p.locator("#senior-allowance").isVisible(), false);
+        await load(p, {}, hash);
+        assert.deepEqual((await saved(p)).people, state.people);
+        assert.equal((await saved(p)).spouse, spouse);
+        await open(p);
+        assert.equal(await p.locator("#senior-allowance").isVisible(), false);
+        if (people.length === 1) {
+          await p.click("#add-partner");
+          await p.click('#people [data-i="0"]');
+        } else await p.check("#spouse-toggle");
+        assert.equal(await p.locator("#senior-allowance").isVisible(), true);
+        assert.equal(await p.isChecked("#senior-allowance"), true);
+        await p.uncheck("#spouse-toggle");
+        assert.equal(await p.locator("#senior-allowance").isVisible(), false);
+        await p.check("#spouse-toggle");
+        assert.equal(await p.isChecked("#senior-allowance"), true);
+        await p.click("#remove-partner");
+        assert.equal(await p.locator("#senior-allowance").isVisible(), false);
+        assert.equal((await saved(p)).people[0].allowance, true);
+      }
+    },
+  ],
+  [
+    "GIS: zero payments are omitted from the benefits tooltip and young birth dates get the correct notice",
+    async p => {
+      await scenario(p, 2025, [adult(76, { oth: 10000, gis: true, oas: false })]);
+      assert.equal(await p.locator("#col-ON .ben").isVisible(), true);
+      await p.locator("#col-ON .ben").dispatchEvent("pointerover", { pointerType: "mouse" });
+      assert.doesNotMatch(await p.textContent("#tip"), /GIS and Allowance/);
+      assert.match(await p.textContent("#tip"), /Netted off the tax above/);
+      await p.keyboard.press("Escape");
+      for (const key of ["gis", "allowance"]) {
+        await load(p, { people: [{ ord: 0, [key]: true }], retirement: [{ birthYear: 2007, birthMonth: 6 }] });
+        await open(p);
+        assert.equal(await p.inputValue("#ret-birth-year"), "2007");
+        assert.equal(await p.inputValue("#ret-birth-month"), "6");
+        assert.match(
+          await p.textContent("#senior-benefit-gate"),
+          /too young for the retirement rules modelled in 2025/,
+        );
+        assert.doesNotMatch(await p.textContent("#senior-benefit-gate"), /Enter both birth year and month/);
+        await chart(p, 2025, [blank(0)]);
+        await p.click("#view-history");
+        assert.doesNotMatch(await tip(p, "#history-info"), /Enter both birth year and month/);
+        await p.click("#view-provinces");
+        await p.fill("#ret-birth-year", "2008");
+        assert.match(await p.textContent("#senior-benefit-gate"), /too young for the retirement rules/);
+        await p.click("#view-history");
+        const text = await tip(p, "#history-info");
+        assert.match(text, /too young for the retirement rules modelled in 2026/);
+        assert.doesNotMatch(text, /Enter both birth year and month/);
+      }
     },
   ],
   [
@@ -352,6 +428,13 @@ export const GIS_ALLOWANCE_RESPONSIVE_STEPS = [
         await tip(p, '[data-comparison-note="GIS and Allowance in net tax"]'),
         /netted off household tax once/,
       );
+      await p.uncheck("#spouse-toggle");
+      assert.equal(await p.locator("#senior-allowance").isVisible(), false);
+      assert.ok((await inspect(p)).scrollWidth <= p.viewportSize().width);
+      await p.check("#spouse-toggle");
+      assert.equal(await p.isChecked("#senior-allowance"), true);
+      await p.click("#remove-partner");
+      assert.equal(await p.locator("#senior-allowance").isVisible(), false);
       await p.selectOption("#tax-year", "2024");
       assert.equal(await p.locator("#senior-benefit-gate").isVisible(), true);
       assert.ok((await inspect(p)).scrollWidth <= p.viewportSize().width);

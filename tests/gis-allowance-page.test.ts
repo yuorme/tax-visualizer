@@ -16,6 +16,26 @@ const context = {
 };
 const birth = { birthYear: 1950, birthMonth: 6 };
 
+test("benefit notices distinguish complete young birth dates from incomplete drafts", () => {
+  const data = loadYear(2025);
+  for (const key of ["gis", "allowance"] as const) {
+    const person = { ...blank(0), [key]: true };
+    for (const age of [17, 18, 19]) {
+      const entry = normalizeRetirement({ birthYear: data.year - age, birthMonth: 6 });
+      const applied = withRetirement(person, entry, data);
+      const notice = seniorBenefitGate([applied], data, [2025, 2026], [entry]);
+      assert.doesNotMatch(notice, /Enter both birth year and month/);
+      if (age <= 18) assert.match(notice, /too young for the retirement rules modelled in 2025/);
+      else assert.equal(notice, "");
+    }
+    const young = normalizeRetirement({ birthYear: 2007, birthMonth: 6 });
+    const incomplete = normalizeRetirement({ birthYear: 1950 });
+    const notice = seniorBenefitGate([person, person], data, [2025, 2026], [young, incomplete]);
+    assert.match(notice, /too young for the retirement rules/);
+    assert.match(notice, /Enter both birth year and month/);
+  }
+});
+
 test("GIS and Allowance independently preserve omission, false and true for both adults in URL and save migration", () => {
   for (const gis of [undefined, false, true])
     for (const allowance of [undefined, false, true]) {

@@ -612,7 +612,8 @@ function segTip(p: ProvView, r: Result, c: Seg) {
     if (r.ccb > 0.5) parts.push(`Canada Child Benefit ${money(r.ccb)}`);
     if (r.provBen > 0.5) parts.push(`${p.d.childBenefit?.name ?? "Provincial child benefit"} ${money(r.provBen)}`);
     for (const [n, v] of r.credits) parts.push(`${n} ${money(v)}`);
-    if (r.breakdown.gisAllowance) parts.push(`GIS and Allowance ${money(r.breakdown.gisAllowance.total)}`);
+    if (r.breakdown.gisAllowance && r.breakdown.gisAllowance.total > 0.5)
+      parts.push(`GIS and Allowance ${money(r.breakdown.gisAllowance.total)}`);
     sub = `${parts.join(" · ")}. Netted off the tax above`;
   }
   return `<b>${p.n} · ${SEG_NAMES[c]}</b><span class="t-num">${c === "ben" ? "−" : ""}${money(amt)} a year · ${pct(share)} of income</span>
@@ -692,6 +693,7 @@ function render() {
         retirementPeople(years[availableYears[0]]),
         years[availableYears[0]],
         seniorBenefitYears(Object.values(years)),
+        retirements,
       ),
     );
   const res: Row[] = P.map(p => ({ p, r: calc(p) }));
@@ -917,7 +919,12 @@ function render() {
   senior.sync();
   publicPensions.sync();
   const benefitNotice = $("senior-benefit-gate");
-  benefitNotice.textContent = seniorBenefitGate(retirementPeople(), Y, seniorBenefitYears(Object.values(years)));
+  benefitNotice.textContent = seniorBenefitGate(
+    retirementPeople(),
+    Y,
+    seniorBenefitYears(Object.values(years)),
+    retirements,
+  );
   benefitNotice.hidden = historyOpen || !benefitNotice.textContent;
   const publicNotice = $("public-pension-gate");
   publicNotice.textContent = publicPensionGate(retirementPeople(), Y, publicPensionYears(Object.values(years)));
@@ -1453,7 +1460,7 @@ const retirement = retirementEditor(
     render();
   },
 );
-const publicPensions = publicPensionEditor(me, render);
+const publicPensions = publicPensionEditor(me, render, () => people.length === 2 && spouse);
 const senior = seniorEditor(
   () => me().retirementIncome ?? [],
   receipts => {

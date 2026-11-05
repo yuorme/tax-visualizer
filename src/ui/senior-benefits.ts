@@ -1,6 +1,6 @@
 import type { YearData } from "../data/schema.ts";
 import type { Person } from "../engine/types.ts";
-import { yearList } from "./retirement.ts";
+import { type Retirement, retirementCoverage, yearList } from "./retirement.ts";
 
 export const hasSeniorBenefits = (person: Person) => person.gis !== undefined || person.allowance !== undefined;
 export const seniorBenefitYears = (years: YearData[]) =>
@@ -34,12 +34,25 @@ export function withSeniorBenefits(person: Person, data: YearData): Person {
   };
 }
 
-export function seniorBenefitGate(people: Person[], data: YearData, supported: number[]) {
+export function seniorBenefitGate(
+  people: Person[],
+  data: YearData,
+  supported: number[],
+  entries: (Retirement | null)[] = [],
+) {
   if (!data.federal.gisAllowance && people.some(hasSeniorBenefits))
     return `GIS and the Allowance are modelled for ${yearList(supported)} only. These ${data.year} results exclude these inputs; inputs are retained.`;
-  if (people.some(p => (p.gis || p.allowance) && missingDate(p)))
-    return "Enter both birth year and month under Age and CPP/QPP to apply GIS or the Allowance. Results exclude the incomplete adult's opt-ins until then; inputs are retained.";
-  return "";
+  const notices: string[] = [];
+  const tooYoung = (i: number) => retirementCoverage(entries[i] ?? null, data) === "young";
+  if (people.some((p, i) => (p.gis || p.allowance) && tooYoung(i)))
+    notices.push(
+      `The entered birth date is too young for the retirement rules modelled in ${data.year}. Results exclude that adult's GIS and Allowance opt-ins; inputs are retained.`,
+    );
+  if (people.some((p, i) => (p.gis || p.allowance) && missingDate(p) && !tooYoung(i)))
+    notices.push(
+      "Enter both birth year and month under Age and CPP/QPP to apply GIS or the Allowance. Results exclude the incomplete adult's opt-ins until then; inputs are retained.",
+    );
+  return notices.join(" ");
 }
 
 export function seniorBenefitTooltips(years: YearData[]): Record<string, string> {

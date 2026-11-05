@@ -553,11 +553,16 @@ new migration/codec tests, this note and SCOPE. Engine, schema, data and golden 
   values are ignored and age alone never opts anyone in. A codec version bump is unnecessary for additive fields.
 - GIS and the spouse’s Allowance checkboxes sit inside the existing Retirement income controls. Each adult owns
   their choices. Existing age/month controls supply the engine dates; clearing a date retains the benefit draft.
+  The Allowance control is shown only for two adults with spouse/common-law status. Hiding it never clears the
+  stored flag; URL/storage round trips and restoring spouse status preserve it. There is no age-window gating.
+  Complete dates too young for the existing retirement rules get a specific notice, using `retirementCoverage`
+  rather than adding an age threshold. Mixed young/incomplete adult drafts receive both applicable notices.
   All statutory eligibility, marital-category selection, income tests and monthly payments remain in the engine.
 - The per-adult ledger formats engine-reported GIS, Allowance, federal/provincial net income, other-payments
   deduction and supplement recovery. Recovery uses `netIncome.oasRecovery`, including when Allowance is enabled
   without an OAS field. The household comparison shows the engine’s total supplements as a credit before net tax;
-  chart benefit tooltips identify them too. Taxable-income explanations include the benefits and offsetting deduction.
+  chart benefit tooltips identify payments above the display cutoff and omit zero payments.
+  Taxable-income explanations include the benefits and offsetting deduction.
 - Separate tooltips cover eligibility, income-year/birthday/quarterly timing and accounting. They explain that
   gross benefits reduce net tax once, remain outside the income denominator, affect other net-income-tested programs
   and do not depend on the credit switches. They also warn against duplicating benefits in Other income.
@@ -570,6 +575,8 @@ values, pre-#19 URLs and saves, date completion and unsupported years. `tests/e2
 in the required smoke suite and asserts every page acceptance item:
 
 - per-adult controls, switching/removal, every new URL field and saved-state restoration, including explicit false;
+- hidden Allowance controls for single/non-spouse households, preserved true drafts and restored checked controls;
+- zero-payment segment tooltips and correct young-date notices in the selected year and history;
 - all marital categories, a partial-payment income, the protected Allowance boundary, OAS false/omitted and both
   years’ June/December birthdays at the Allowance start/end, comparing all thirteen chart results to the engine;
 - ON/QC per-adult ledger values, net tax and cash left, taxable-income explanations and Allowance-only recovery;
@@ -580,7 +587,7 @@ Published independent anchors remain in the engine note above. Browser assertion
 2025 full-year single GIS to $13,131 and Allowance to $16,695 (rounded from 13,130.82 and 16,695.09). The other page
 assertions compare to engine reports to catch wiring/formatting mistakes, rather than recomputing benefits in UI.
 
-Validation: `fnm exec --using=26 npm ci`, `npm run format`, the four new migration tests and `npm run check`.
+Validation: `fnm exec --using=26 npm ci`, `npm run format`, the five page unit tests and `npm run check`.
 The browser matrix covers 375 px, 430 px and desktop, light and dark, with no sideways scrolling. Comparison uses
 `npm run compare -- origin/main`: six runs, five steps each. It reports three intended control differences
 (the two new unchecked checkboxes and shifted anonymous control indexes); no visible text or result changes

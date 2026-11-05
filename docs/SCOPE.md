@@ -164,9 +164,11 @@ line-by-line tax return. Simpler and slightly less precise is acceptable where i
   Quebec net income for other income-tested programs, with offsetting deductions from taxable income; they
   do not create working income, pension credits, payroll contributions or Quebec Health Services Fund income.
   Per-adult GIS and Allowance opt-ins sit in Retirement income and reuse the birth-year/month controls.
+  The Allowance control appears only for two adults marked as spouses/common-law partners; hidden flags remain drafts.
   URL and saved-state migration preserve omission and explicit false independently; legacy scenarios keep their
-  results. Incomplete dates retain drafts but exclude that adult’s true opt-ins until complete. Tooltips explain
-  the income-year proxy, OAS prerequisite, marital categories, birthday/quarterly timing and residency assumptions.
+  results. Incomplete dates retain drafts but exclude that adult’s true opt-ins until complete. Dates too young
+  for the modelled retirement rules get a separate result notice, retaining the opt-ins. Tooltips explain the
+  income-year proxy, OAS prerequisite, marital categories, birthday/quarterly timing and residency assumptions.
   The ledger shows each adult’s gross benefits, net income, taxable-income deduction and supplement recovery;
   comparison rows and chart tooltips identify the household benefits netted against tax once. Benefits remain
   outside the chart’s income denominator and apply even with the credit switches off. No benefit is computed in UI.
