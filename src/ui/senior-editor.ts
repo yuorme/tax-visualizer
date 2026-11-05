@@ -8,9 +8,14 @@ function required<T extends Element>(root: ParentNode, selector: string): T {
   return element;
 }
 
-/** The selected adult owns both controls; invalid drafts never replace saved amounts. */
-export function publicPensionEditor(selected: () => Person, change: () => void) {
+/** The selected adult owns these controls; invalid drafts never replace saved amounts. */
+export function publicPensionEditor(selected: () => Person, change: () => void, isSpouseHousehold: () => boolean) {
   const oas = required<HTMLInputElement>(document, "#senior-oas");
+  const allowanceLabel = required<HTMLElement>(document, "#senior-allowance-label");
+  const benefits = (["gis", "allowance"] as const).map(key => ({
+    key,
+    input: required<HTMLInputElement>(document, `#senior-${key}`),
+  }));
   const cpp = required<HTMLInputElement>(document, "#senior-cpp-qpp");
   let owner: Person | undefined;
   function sync() {
@@ -22,6 +27,8 @@ export function publicPensionEditor(selected: () => Person, change: () => void) 
       cpp.setAttribute("aria-invalid", "false");
     }
     oas.checked = person.oas === true;
+    allowanceLabel.hidden = !isSpouseHousehold();
+    for (const { key, input } of benefits) input.checked = person[key] === true;
     if (switched || (document.activeElement !== cpp && cpp.validity.valid))
       cpp.value = person.cppQpp?.toLocaleString("en-CA") ?? "";
   }
@@ -38,6 +45,11 @@ export function publicPensionEditor(selected: () => Person, change: () => void) 
     else selected().cppQpp = amount;
     change();
   });
+  for (const { key, input } of benefits)
+    input.addEventListener("input", () => {
+      selected()[key] = input.checked;
+      change();
+    });
   cpp.addEventListener("blur", () => sync());
   return { sync };
 }

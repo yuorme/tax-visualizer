@@ -1,8 +1,9 @@
-# Issue #19: GIS and the spouse's Allowance engine
+# Issue #19: GIS and the spouse's Allowance
 
-Coverage: **2025 and 2026, all thirteen provinces and territories**. This implements the engine half of #19
-and its sizing refinements, following [#18](18-oas-cpp.md). The page half (controls, tooltips, URL codec and
-saved-state migration) is a later branch. Pension splitting (#20) and provincial senior supplements (#21)
+Coverage: **2025 and 2026, all thirteen provinces and territories**. This implements the engine and page halves of #19
+and its sizing refinements, following [#18](18-oas-cpp.md). The page half now adds controls, tooltips, URL codec
+and saved-state migration on top of the engine merged in PR #202.
+Pension splitting (#20) and provincial senior supplements (#21)
 are excluded. Earlier tax years are not implemented. Existing golden files are unchanged.
 
 ## Input and payment contract
@@ -524,8 +525,8 @@ statement. Killed means a numerical or required-field assertion failed, not that
 
 ## Handoff and validation
 
-The page branch should serialize both opt-ins independently, preserve omission/false, gate unsupported years,
-reuse #18's age/month controls and avoid inferring eligibility from age. Explain the historical-income proxy,
+The page serializes both opt-ins independently, preserves omission/false, gates unsupported years and reuses
+#18’s age/month controls without inferring eligibility from age. Tooltips explain the historical-income proxy,
 full-residency assumption, OAS prerequisite, survivor exclusion and gross-cash/net-tax convention.
 
 `breakdown.gisAllowance` exposes per-adult income components, twelve monthly categories/tested incomes,
@@ -539,3 +540,57 @@ uses taxable income or the same federal income test. Quebec drug-premium exempti
 Validation uses `fnm exec --using=26 npm ci`, formatting, targeted GIS/reference tests and the required
 `npm run check` (lint, typecheck, all tests, build and browser smoke). Final results and new case/cell counts
 are recorded in the PR. The orchestrator owns independent review and the separate History back-fill issue at merge.
+
+
+## Page implementation and verification
+
+The Normal page task is implemented with Codex Astra at high effort. Its scope is `src/ui/**`, page e2e tests,
+new migration/codec tests, this note and SCOPE. Engine, schema, data and golden files are unchanged; the known
+`incomeBases.beforeChildcare` issue is untouched. No amounts, rates, thresholds or benefit formulas were added to UI.
+
+- `senior-benefits.ts` centralizes boolean normalization, data-driven coverage, incomplete-date gating and tooltips.
+  Both URL decoding and saved-state cleanup use it. Omitted fields stay omitted, false stays false, malformed
+  values are ignored and age alone never opts anyone in. A codec version bump is unnecessary for additive fields.
+- GIS and the spouse’s Allowance checkboxes sit inside the existing Retirement income controls. Each adult owns
+  their choices. Existing age/month controls supply the engine dates; clearing a date retains the benefit draft.
+  The Allowance control is shown only for two adults with spouse/common-law status. Hiding it never clears the
+  stored flag; URL/storage round trips and restoring spouse status preserve it. There is no age-window gating.
+  Complete dates too young for the existing retirement rules get a specific notice, using `retirementCoverage`
+  rather than adding an age threshold. Mixed young/incomplete adult drafts receive both applicable notices.
+  All statutory eligibility, marital-category selection, income tests and monthly payments remain in the engine.
+- The per-adult ledger formats engine-reported GIS, Allowance, federal/provincial net income, other-payments
+  deduction and supplement recovery. Recovery uses `netIncome.oasRecovery`, including when Allowance is enabled
+  without an OAS field. The household comparison shows the engine’s total supplements as a credit before net tax;
+  chart benefit tooltips identify payments above the display cutoff and omit zero payments.
+  Taxable-income explanations include the benefits and offsetting deduction.
+- Separate tooltips cover eligibility, income-year/birthday/quarterly timing and accounting. They explain that
+  gross benefits reduce net tax once, remain outside the income denominator, affect other net-income-tested programs
+  and do not depend on the credit switches. They also warn against duplicating benefits in Other income.
+- Selected older years strip even explicit false before the engine, retain drafts and show the coverage notice.
+  Nominal and real history omit unsupported years and describe coverage and the income-year proxy. Existing
+  scenarios without the new fields retain their previous calculations and historical rows.
+
+`tests/gis-allowance-page.test.ts` covers both fields’ omission/false/true combinations for both adults, malformed
+values, pre-#19 URLs and saves, date completion and unsupported years. `tests/e2e/gis-allowance.mjs` is registered
+in the required smoke suite and asserts every page acceptance item:
+
+- per-adult controls, switching/removal, every new URL field and saved-state restoration, including explicit false;
+- hidden Allowance controls for single/non-spouse households, preserved true drafts and restored checked controls;
+- zero-payment segment tooltips and correct young-date notices in the selected year and history;
+- all marital categories, a partial-payment income, the protected Allowance boundary, OAS false/omitted and both
+  years’ June/December birthdays at the Allowance start/end, comparing all thirteen chart results to the engine;
+- ON/QC per-adult ledger values, net tax and cash left, taxable-income explanations and Allowance-only recovery;
+- both credit switches, incomplete dates, pre-#19 URL and saved-state results, selected 2024 and both history modes;
+- coverage and assumption tooltip text, phone tooltip bounds, controls and ledger overflow, in light and dark.
+
+Published independent anchors remain in the engine note above. Browser assertions additionally pin the displayed
+2025 full-year single GIS to $13,131 and Allowance to $16,695 (rounded from 13,130.82 and 16,695.09). The other page
+assertions compare to engine reports to catch wiring/formatting mistakes, rather than recomputing benefits in UI.
+
+Validation: `fnm exec --using=26 npm ci`, `npm run format`, the five page unit tests and `npm run check`.
+The browser matrix covers 375 px, 430 px and desktop, light and dark, with no sideways scrolling. Comparison uses
+`npm run compare -- origin/main`: six runs, five steps each. It reports three intended control differences
+(the two new unchecked checkboxes and shifted anonymous control indexes); no visible text or result changes
+occur in its legacy scenarios. Exit 1 is the comparator’s expected status for these differences. Final check
+results are also recorded in the page PR.
+The orchestrator owns independent review and the History back-fill issue at merge.

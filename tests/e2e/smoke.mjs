@@ -16,6 +16,7 @@ import { toHousehold } from "../golden/adapter.ts";
 import { CARBON_STEPS } from "./carbon.mjs";
 import { CHILDCARE_STEPS } from "./childcare.mjs";
 import { DEDUCTION_STEPS } from "./deductions.mjs";
+import { GIS_ALLOWANCE_RESPONSIVE_STEPS, GIS_ALLOWANCE_STEPS } from "./gis-allowance.mjs";
 import { HISTORY_STEPS } from "./history.mjs";
 import { checkLedgerOrder } from "./ledger-order.mjs";
 import { checkManitobaFamilyLedger } from "./mb-family-benefit.mjs";
@@ -1116,6 +1117,7 @@ for (const [label, steps] of [
   ["self-employment", SELF_EMPLOYMENT_STEPS],
   ["senior income", SENIOR_STEPS],
   ["public pensions", PUBLIC_PENSION_STEPS],
+  ["GIS and Allowance", GIS_ALLOWANCE_STEPS],
   ["history", HISTORY_STEPS],
   ["carbon pricing", CARBON_STEPS],
   ["childcare", CHILDCARE_STEPS],
@@ -1141,6 +1143,7 @@ const responsive = [
   ...SELF_EMPLOYMENT_RESPONSIVE_STEPS,
   ...SENIOR_RESPONSIVE_STEPS,
   ...PUBLIC_PENSION_RESPONSIVE_STEPS,
+  ...GIS_ALLOWANCE_RESPONSIVE_STEPS,
   [
     "layout: driving units show equivalent values without clipping",
     async p => {

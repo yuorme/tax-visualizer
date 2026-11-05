@@ -240,6 +240,11 @@
           <label class="senior-survivor"><input id="senior-oas" type="checkbox"> Full resident OAS</label>
           <div class="field"><label class="lbl" for="senior-cpp-qpp">Annual CPP/QPP retirement income</label><div class="money md"><span>$</span><input id="senior-cpp-qpp" inputmode="decimal" autocomplete="off"></div></div>
         </div>
+        <div class="lbl-row senior-heading"><span class="lbl">GIS and Allowance</span><button type="button" class="info" data-note="seniorBenefits" aria-label="About GIS and Allowance eligibility and coverage">i</button><button type="button" class="info" data-note="seniorBenefitTiming" aria-label="About GIS income years and payment timing">i</button><button type="button" class="info" data-note="seniorBenefitTax" aria-label="About GIS and Allowance in net tax">i</button></div>
+        <div class="senior-row">
+          <label class="senior-survivor"><input id="senior-gis" type="checkbox"> Guaranteed Income Supplement</label>
+          <label class="senior-survivor" id="senior-allowance-label" hidden><input id="senior-allowance" type="checkbox"> Spouse’s Allowance</label>
+        </div>
         <div class="lbl-row senior-heading"><span class="lbl">Receipts</span><button type="button" class="info" data-note="seniorIncome" aria-label="About retirement income and coverage">i</button><button type="button" class="info" data-note="seniorSurvivor" aria-label="About eligible survivor receipts">i</button></div>
         <div id="senior-rows"></div>
         <button type="button" class="linkbtn" id="senior-add">Add receipt</button>
@@ -321,6 +326,7 @@
   <p class="ret-gate" id="retirement-gate" role="status" hidden></p>
   <p class="ret-gate" id="self-employment-gate" role="status" hidden></p>
   <p class="ret-gate" id="senior-gate" role="status" hidden></p>
+  <p class="ret-gate" id="senior-benefit-gate" role="status" hidden></p>
   <p class="ret-gate" id="public-pension-gate" role="status" hidden></p>
 
   <fieldset class="seg comparison-view" aria-label="Comparison view">
