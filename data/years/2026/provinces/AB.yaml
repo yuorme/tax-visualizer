@@ -36,6 +36,10 @@ childBenefit:
     workingPhaseOut: [0.034, 0.0649, 0.0834, 0.0895]
     minAnnual: 10                      # positive combined annual entitlement below $10 is raised to $10
 sources:
+  - {"label": "Alberta Tax and Credits", "url": "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5009-c/5009-c-25e.pdf"}
+  - {"label": "Provincial Amounts Transferred from your Spouse or Common-Law Partner", "url": "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5009-s2/5009-s2-25e.pdf"}
+  - {"label": "Worksheet AB428", "url": "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5009-d/5009-d-25e.pdf"}
+  - {"label": "2026 Alberta Personal Tax Credits Return", "url": "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/td1ab/td1ab-26e.pdf"}
   - {label: "Alberta Personal Income Tax Act, section 30.2(2) and (4) (child-count reduction rates and combined annual minimum)", url: "https://kings-printer.alberta.ca/documents/Acts/A30.pdf"}
   - {label: "Alberta, Child and Family Benefit (July 2026–June 2027 maxima, thresholds and working phase-in)", url: "https://www.alberta.ca/alberta-child-and-family-benefit"}
   - {label: "nesto, Canada Property Tax Guide 2026 (residential property tax rate)", url: "https://www.nesto.ca/mortgage-basics/property-taxes-canada-highest-to-lowest/"}
@@ -43,3 +47,12 @@ sources:
   - {label: "Alberta, Tax, levy, and prescribed interest rates (fuel tax from October 1, 2026)", url: "https://www.alberta.ca/about-tax-levy-rates-prescribed-interest-rates"}
   - {label: "Natural Resources Canada, Fuel Consumption Levies in Canada (provincial gasoline tax, rates as of September 2, 2026)", url: "https://natural-resources.canada.ca/domestic-international-markets/fuel-consumption-levies-canada"}
   - {label: "Statistics Canada, Canadian Vehicle Survey: Annual 2009, Tables 3-1 and 4-1 (distance per light vehicle)", url: "https://www150.statcan.gc.ca/n1/pub/53-223-x/53-223-x2009000-eng.pdf"}
+
+seniorCredits:
+  # Published 2026 amounts; filing formulas/transfer ordering provisionally continue 2025.
+  provisionalRules: true
+  age:
+    program: age-net-income
+    params: {minimumAge: 65, maximum: 6345, threshold: 47234, reductionRate: 0.15}
+  pension: {program: federal-pension-capped, params: {maximum: 1753}}
+  transfer: schedule2-unused-base

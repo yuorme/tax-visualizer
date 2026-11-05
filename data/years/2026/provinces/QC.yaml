@@ -61,6 +61,10 @@ childcareCredit:
     annualSevere: 17145
     rates: [[25305, 0.78], [44620, 0.75], [46270, 0.74], [47935, 0.73], [49565, 0.72], [51225, 0.71], [122290, 0.7], [.inf, 0.67]]
 sources:
+  - {"label": "Schedule B – Tax Relief Measures", "url": "https://www.revenuquebec.ca/documents/en/formulaires/tp/2025-12/TP-1.D.B-V(2025-12).pdf"}
+  - {"label": "GUIDE – INCOME TAX RETURN – 2025", "url": "https://www.revenuquebec.ca/documents/en/formulaires/tp/2025-12/TP-1.G-V(2025-12).pdf"}
+  - {"label": "Income Tax Return", "url": "https://www.revenuquebec.ca/documents/en/formulaires/tp/2025-12/TP-1.D-V(2025-12).pdf"}
+  - {"label": "Parameters of the Personal Income Tax System for 2026", "url": "https://cdn-contenu.quebec.ca/cdn-contenu/adm/min/finances/publications-adm/parametres/AUTEN_IncomeTax2026.pdf"}
   - {label: "Revenu Québec, 2025 Schedule B (line 275 income base provisionally continued in 2026)", url: "https://www.revenuquebec.ca/documents/en/formulaires/tp/2025-12/TP-1.D.B-V(2025-12).pdf"}
   - {label: "Finances Québec, 2026 parameters, Table 3 (1% Health Services Fund contribution and thresholds)", url: "https://cdn-contenu.quebec.ca/cdn-contenu/adm/min/finances/publications-adm/parametres/AUTEN_IncomeTax2026.pdf"}
   - {label: "Revenu Québec, 2025 Schedule F (caps and income rules provisionally continued in 2026)", url: "https://www.revenuquebec.ca/documents/en/formulaires/tp/2025-12/TP-1.D.F-V(2025-12).pdf"}
@@ -73,3 +77,10 @@ sources:
   - {label: "ARTM, Budget 2026 (ARTM gasoline tax: $0.03 a litre in its territory)", url: "https://www.artm.quebec/wp-content/uploads/2025/12/RP_Budget_2026.pdf"}
   - {label: "Natural Resources Canada, Fuel Consumption Levies in Canada (provincial gasoline tax, rates as of September 2, 2026)", url: "https://natural-resources.canada.ca/domestic-international-markets/fuel-consumption-levies-canada"}
   - {label: "Statistics Canada, Canadian Vehicle Survey: Annual 2009, Tables 3-1 and 4-1 (distance per light vehicle)", url: "https://www150.statcan.gc.ca/n1/pub/53-223-x/53-223-x2009000-eng.pdf"}
+
+seniorCredits:
+  program: quebec-age-living-alone-retirement-pool
+  # Domestic retained line 122 receipts only; no additional adult-student single-parent amount.
+  # 2026 formulas provisionally continue 2025 Schedule B and line 431.
+  provisionalRules: true
+  params: {minimumAge: 65, ageAmount: 3986, retirementMaximum: 3541, retirementMultiplier: 1.25, livingAlone: 2172, familyThreshold: 42955, reductionRate: 0.1875, creditRate: 0.14}

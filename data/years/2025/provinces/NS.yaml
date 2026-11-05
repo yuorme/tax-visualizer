@@ -31,6 +31,9 @@ credits:
 fuelTax: {gasoline: 0.155}   # $ per litre; the UARB price schedules show 15.5¢ on January 15, April 1 and September 12, 2025
 
 sources:
+  - {"label": "Nova Scotia Tax", "url": "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5003-c/5003-c-25e.pdf"}
+  - {"label": "Provincial Amounts Transferred from your Spouse or Common-Law Partner", "url": "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5003-s2/5003-s2-25e.pdf"}
+  - {"label": "Worksheet NS428", "url": "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5003-d/5003-d-25e.pdf"}
   - {label: "CRA NS 2025 guide, claimant and transfer rules", url: "https://www.canada.ca/en/revenue-agency/services/forms-publications/tax-packages-years/general-income-tax-benefit-package/nova-scotia/5003-pc.html"}
   - {label: "CRA NS(S2) 2025, transferable amounts exclude the child amount", url: "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5003-s2/5003-s2-25e.pdf"}
   - {label: "NWT Finance, Budget 2025-2026, B22 (provincial/territorial fuel tax rates at January 30, 2025; regional additions separate)", url: "https://www.fin.gov.nt.ca/sites/fin/files/resources/2025-26_budget_address_and_papers_final_0.pdf"}
@@ -93,3 +96,12 @@ carbon:
             firstChild: 55
             threshold: [0, 0]
             rate: 0
+
+seniorCredits:
+  provisionalRules: false
+  age:
+    program: age-net-income
+    params: {minimumAge: 65, maximum: 5734, threshold: 30828, reductionRate: 0.15}
+  pension: {program: federal-pension-capped, params: {maximum: 1173}}
+  transfer: schedule2-unused-base
+  ageTaxCredit: {program: age-taxable-income-credit, params: {minimumAge: 65, threshold: 24000, amount: 1000}}

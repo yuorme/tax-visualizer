@@ -1,6 +1,13 @@
 import type { Federal, Province } from "../data/schema.ts";
 import { selfEmploymentContributions, validateSelfEmployment } from "./self-employment.ts";
-import { type EmployeeContributionElection, type PayrollMonth, type Person, workingIncomeOf } from "./types.ts";
+import { validateSeniorInputs } from "./senior-credits.ts";
+import {
+  type EmployeeContributionElection,
+  type PayrollMonth,
+  type Person,
+  retirementCashOf,
+  workingIncomeOf,
+} from "./types.ts";
 
 type RetirementRule = NonNullable<Federal["payroll"]["employeeRetirement"]>["cpp" | "qpp"];
 
@@ -207,6 +214,7 @@ export function healthPremium(p: Province, ti: number): number {
 /** The pieces of net income: each kind of income as it's counted (the taxable share of net capital gains,
  *  dividends grossed up), and the deductions taken off. */
 export interface NetIncomeParts {
+  retirementIncome?: number;
   ord: number; // employment income
   selfEmployment?: number;
   oth?: number; // interest, rental and other income, counted in full
@@ -228,8 +236,10 @@ export function deductionsOf(x: Person): number {
 export function netIncomeParts(fed: Federal, p: Province | null, x: Person, childcareDeduction = 0): NetIncomeParts {
   const inv = fed.investment;
   const { pay, selfEmployment: self } = payrollDetailsOf(fed, p, x);
+  validateSeniorInputs(fed, x, p);
   return {
     ord: x.ord,
+    ...(x.retirementIncome !== undefined ? { retirementIncome: retirementCashOf(x) } : {}),
     ...(x.selfEmployment !== undefined ? { selfEmployment: x.selfEmployment } : {}),
     ...(x.oth ? { oth: x.oth } : {}),
     cg: Math.max(0, x.cg) * inv.capitalGainsInclusion,
@@ -244,7 +254,19 @@ export function netIncomeParts(fed: Federal, p: Province | null, x: Person, chil
 /** Net income: total income less deductions and enhanced CPP/QPP contributions. */
 export function netOf(fed: Federal, p: Province | null, x: Person, childcareDeduction = 0): number {
   const n = netIncomeParts(fed, p, x, childcareDeduction);
-  return Math.max(0, n.ord + (n.selfEmployment ?? 0) + (n.oth ?? 0) + n.cg + n.ed + n.nd + n.fd - n.ded - n.enh);
+  return Math.max(
+    0,
+    n.ord +
+      (n.selfEmployment ?? 0) +
+      (n.oth ?? 0) +
+      (n.retirementIncome ?? 0) +
+      n.cg +
+      n.ed +
+      n.nd +
+      n.fd -
+      n.ded -
+      n.enh,
+  );
 }
 
 /** Quebec TP-1 line 201: wages and active business profit, included in line 275 net income. */

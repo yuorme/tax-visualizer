@@ -50,6 +50,10 @@ childcareCredit:
   # NL428 line 58320 equals federal line 21400, converted at the first provincial bracket rate.
   params: {}
 sources:
+  - {"label": "Newfoundland and Labrador Tax", "url": "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5001-c/5001-c-25e.pdf"}
+  - {"label": "Provincial Amounts Transferred from your Spouse or Common-Law Partner", "url": "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5001-s2/5001-s2-25e.pdf"}
+  - {"label": "Worksheet NL428", "url": "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5001-d/5001-d-25e.pdf"}
+  - {"label": "2026 Newfoundland and Labrador Personal Tax Credits Return", "url": "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/td1nl/td1nl-26e.pdf"}
   - {label: "CRA NL 2025 guide, claimant and transfer rules", url: "https://www.canada.ca/en/revenue-agency/services/forms-publications/tax-packages-years/general-income-tax-benefit-package/newfoundland-labrador/5001-pc.html"}
   - {label: "CRA NL428 2025, reduction order and unused balance", url: "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5001-c/5001-c-25e.pdf"}
   - {label: "CRA Newfoundland and Labrador guide, line 58320 equals federal line 21400", url: "https://www.canada.ca/en/revenue-agency/services/forms-publications/tax-packages-years/general-income-tax-benefit-package/newfoundland-labrador/5001-pc.html"}
@@ -61,3 +65,12 @@ sources:
   - {label: "Government of Newfoundland and Labrador, Gas Tax on Gasoline and Diesel to Zero Beginning December 1 (October 26, 2026)", url: "https://www.gov.nl.ca/releases/2026/fin/1026n03/"}
   - {label: "Natural Resources Canada, Fuel Consumption Levies in Canada (provincial gasoline tax, rates as of September 2, 2026)", url: "https://natural-resources.canada.ca/domestic-international-markets/fuel-consumption-levies-canada"}
   - {label: "Statistics Canada, Canadian Vehicle Survey: Annual 2009, Tables 3-1 and 4-1 (distance per light vehicle)", url: "https://www150.statcan.gc.ca/n1/pub/53-223-x/53-223-x2009000-eng.pdf"}
+
+seniorCredits:
+  # Published 2026 amounts; filing formulas/transfer ordering provisionally continue 2025.
+  provisionalRules: true
+  age:
+    program: age-net-income
+    params: {minimumAge: 65, maximum: 7142, threshold: 39138, reductionRate: 0.15}
+  pension: {program: federal-pension-capped, params: {maximum: 1000}}
+  transfer: schedule2-unused-base

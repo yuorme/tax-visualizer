@@ -19,4 +19,5 @@ export {
 } from "./payroll.ts";
 export { type PersonResult, personTax, provincialBpa } from "./personal.ts";
 export { UnsupportedSelfEmploymentError } from "./self-employment.ts";
+export { UnsupportedSeniorCreditsError } from "./senior-credits.ts";
 export * from "./types.ts";

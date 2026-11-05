@@ -27,8 +27,21 @@ childBenefit:
   params: {perChild: 696, threshold: 22065, rateOneChild: 0.03, rateMoreChildren: 0.05}
   rateSource: its 2026 Bill 4   # T4114 gives the amounts and threshold, not the reduction rates
 sources:
+  - {"label": "Nunavut Tax", "url": "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5014-c/5014-c-25e.pdf"}
+  - {"label": "Territorial Amounts Transferred from your Spouse or Common-Law Partner", "url": "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5014-s2/5014-s2-25e.pdf"}
+  - {"label": "Worksheet NU428", "url": "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5014-d/5014-d-25e.pdf"}
+  - {"label": "2026 Nunavut Personal Tax Credits Return", "url": "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/td1nu/td1nu-26e.pdf"}
   - {label: "CRA NU 2025 guide, claimant and transfer rules", url: "https://www.canada.ca/en/revenue-agency/services/forms-publications/tax-packages-years/general-income-tax-benefit-package/nunavut/5014-pc.html"}
   - {label: "CRA NU(S2) 2025, shared unused-base calculation, lines 6–13", url: "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5014-s2/5014-s2-25e.pdf"}
   - {label: "Legislative Assembly of Nunavut, Bill 4 (2026), Income Tax Act amendments (child benefit reduction rates)", url: "https://assembly.nu.ca/sites/default/files/2026-05/Bill_4_AATA_Income_Tax_Act_EF.pdf"}
   - {label: "Natural Resources Canada, Fuel Consumption Levies in Canada (provincial gasoline tax, rates as of September 2, 2026)", url: "https://natural-resources.canada.ca/domestic-international-markets/fuel-consumption-levies-canada"}
   - {label: "Statistics Canada, Canadian Vehicle Survey: Annual 2009, Tables 3-1 and 4-1 (distance per light vehicle)", url: "https://www150.statcan.gc.ca/n1/pub/53-223-x/53-223-x2009000-eng.pdf"}
+
+seniorCredits:
+  # Published 2026 amounts; filing formulas/transfer ordering provisionally continue 2025.
+  provisionalRules: true
+  age:
+    program: age-net-income
+    params: {minimumAge: 65, maximum: 12550, threshold: 46432, reductionRate: 0.15}
+  pension: {program: federal-pension-capped, params: {maximum: 2000}}
+  transfer: schedule2-unused-base
