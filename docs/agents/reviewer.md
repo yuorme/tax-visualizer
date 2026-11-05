@@ -37,5 +37,5 @@ refactors). Report findings, what was checked and counts, without reproducing a 
 Lead with the verdict (approve or request changes) and the commit reviewed, then findings grouped
 as blocking / should fix / minor, each with file, line and a suggested fix. Post the same report as a comment on
 the pull request (`gh pr comment <N> --body-file <file>`), headed
-"Reviewer verdict (<your actual model>)", adding ", same-agent review" when the brief says your agent wrote the
-branch, and return it.
+"Reviewer verdict (<your actual model>, <effort>)", adding ", same-agent review" when the brief says your agent wrote
+the branch, and return it.
