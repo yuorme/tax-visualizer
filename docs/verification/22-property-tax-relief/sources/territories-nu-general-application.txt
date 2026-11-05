@@ -1,0 +1,80 @@
+Title: Nunavut general taxation area application hosted by Iqaluit
+URL: https://iqaluit.ca/sites/default/files/senior_citizens_and_disabled_persons_property_tax_relief-eng.pdf
+Fetched: 2026-11-05
+SHA-256 of the original: 34b8dda25877b2e4a0b08de45287bb24ee40fefe6b2737a9f0b803be245bfca7
+Extract: Python html.parser / pypdf; selected pages where stated.
+================================================================================
+
+--- PDF page 1 of 2 ---
+1
+Government of Nunavut
+Department of Finance
+Taxation Section
+P.O. Box 2260
+Iqaluit, Nunavut  X0A 0H0
+Tel.: 867-975-5837
+Fax: 867-975-5845
+Toll Free: 1-800-316-3324
+Email:propertytax@gov.nu.ca
+SENIOR CITIZENS AND DISABLED PERSONS PROPERTY TAX RELIEF
+APPLICATION AND DECLARATION FORM
+FOR NUNAVUT SENIOR CITIZENS AND DISABLED PERSONS
+IN THE GENERAL TAXATION AREA
+This application must be completed for the home in which you live.
+I, ________________________________________________ (full name) normally reside at
+Lot ______________ Block ________________ Plan ____________________ in the
+Municipality of ______________________________________, in a residential unit or
+mobile unit of which I am the owner or part owner.
+I am applying for property tax relief for the year 20______, because I am a
+Senior citizen OR,
+Disabled person
+(Note: Where the applicant is unable to complete the application, another person may complete the
+application on behalf of the applicant and make an appropriate declaration.)
+FOR SENIOR CITIZEN EXEMPTION:
+I declare that I shall have attained the age of 65 years on or before December 31 of the current year, that
+I am the owner or part owner of the residential unit or mobile unit in which I live.
+And I make this solemn Declaration conscientiously believing it to be true and knowing that it is of the
+same force and effect as if make under oath, and by virtue of the Canada Evidence Act.
+Sworn before me this ___________________________ day of _______________________ 20____ at
+_____________________________________________ in the Nunavut Territory.
+___________________________________ __________________________________________
+Commissioner for Oaths, or Notary Public, Signature of Applicant
+Or Justice of the Peace
+__________________________________________
+Date of Birth of Applicant
+PLEASE ATTACH A COPY OF YOUR BIRTH CERTIFICATE.
+My contact information - Telephone:   Email:
+
+--- PDF page 2 of 2 ---
+2
+FOR DISABLED PERSONS EXEMPTION:
+I declare that I am a disabled person, as defined as follows in the Senior Citizens and Disabled
+Persons Property Tax Relief Act; and that I am the owner or part owner of the residential unit or mobile
+unit in which I live.
+ A disabled person means an individual who at any time on or before December 31 of the current year:
+(a) is in receipt of a pension or allowance
+(i)
+(ii)
+(iii)
+for a total disability or a partial disability of at least 25 per cent under the Workers’
+Compensation Act,
+for a severe and prolonged disability under the Canada Pension Plan, or
+for a disability of at least 50 per cent under the War Veterans Allowance Act
+(Canada) or the Civilian War-related Benefits Act (Canada); or
+(b) produces a medical certificate satisfactory to the Minister responsible for Community and
+Government Services indicating that the person suffers from a severe or prolonged disability and
+setting out the nature and extent of the disability.
+And I make this solemn Declaration conscientiously believing it to be true, and knowing that it is of the
+same force and effect as if made under oath, and by virtue of the Canada Evidence Act.
+Sworn before me this ____________________day of _______________________________20___ __
+At ___________________________________ in the Nunavut Territory.
+____________________________________  ___________________________________
+Commissioner for Oaths, or Notary Public Signature of Applicant
+Or Justice of the Peace
+ATTACH A COPY OF ABOVE REQUIRED RECEIPT OR MEDICAL CERTIFICATE AND RETURN THE
+COMPELETED APPLICATION/DECLARATION TO:
+Government of Nunavut
+Department of Finance
+Taxation Section
+P.O. Box 2260
+Iqaluit, Nunavut  X0A 0H0

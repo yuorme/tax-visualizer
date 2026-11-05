@@ -1,0 +1,75 @@
+Title: 2025 Ontario energy and property tax credit (OEPTC) - Calculation sheet for single seniors who have no children
+URL: https://www.canada.ca/en/revenue-agency/services/child-family-benefits/provincial-territorial-programs/ontario-energy-property-tax-credit-oeptc-calculation-sheets/2025-ontario-energy-property-tax-credit-calculation-sheets/2025-ontario-energy-property-tax-credit-calculation-sheet-single-senior-no-children.html
+Fetched: 2026-11-05
+SHA-256 of the original: 635302c1bd752727cbeda4d6eb9e691cb7bbb38f003073a886849dbfd5a35b23
+Publication date modified: 2026-07-30
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+# 2025 Ontario energy and property tax credit (OEPTC) - Calculation sheet for single seniors who have no children
+
+Download a calculation sheet (PDF, 123 KB) in pdf format.
+
+Use this calculation if you were 64 years of age or older and single on December 31, 2024, and you do not have the care of a child under the age of 18 on the first day of the payment month.
+
+You may have to use a different calculation sheet for a particular month if you become a parent of a child under the age of 18.
+
+## Step 1 - Occupancy cost
+
+- Multiply your rent paid in Ontario for 2024 by 20%.
+- Add your property tax paid in Ontario for 2024.
+- Add $25.00 if you lived in a student residence.
+
+This is your occupancy cost.
+
+## Step 2 - Energy component
+
+- Multiply the amount paid for a public or non-profit long-term care home in Ontario for 2024 by 20%.
+- Add the amount paid for home energy costs on a reserve in Ontario for 2024.
+- Add your occupancy cost from Step 1.
+- Subtract $25.00 if you lived in a student residence.
+
+Your energy component is D or $285.00, whichever is less.
+
+## Step 3 - Property tax component
+
+- Multiply the result of Step 1 by 10%.
+- Use A or $570.00, whichever is less.
+- Add $606.00 to B.
+
+Your property tax component is C or the result Step 1, whichever is less.
+
+## Step 4 - Energy and property tax credit
+
+- Add the result of Step 2 and Step 3.
+- Subtract $35,632.00 from your adjusted family net income for 2024 (if negative, the result is zero).
+- Multiply B by 2%.
+- Subtract C from A.
+
+This is your annual energy and property tax credit, unless Step 5 applies.
+
+## Step 5 - Annual Ontario energy and property tax credit
+
+If you will receive or have received a 2025 Ontario senior homeowners' property tax grant (OSHPTG), complete this Step. Otherwise, divide the result of Step 4 by 12 to calculate your monthly OEPTC entitlement.
+
+- Add the amount of your 2025 OSHPTG to the result of Step 4.
+- Subtract the result of Step 2 from A (if negative, the result is zero).
+- Subtract the result of Step 1 from B (if negative, the result is zero)
+- Subtract C from the result of Step 4.
+- Divide D by 12.
+
+D is your annual OEPTC entitlement.
+
+E is your monthly OEPTC entitlement.
+
+If your annual OEPTC amount plus, if applicable, your annual Ontario sales tax credit and Northern Ontario energy credit is:
+
+- $2.00 or less, no payment will be issued.
+- from $2.01 to $10.00, you will receive one payment of $10.00.
+- $360.00 or less, you will receive it in one payment instead of monthly.
+
+The first monthly 2025 Ontario trillium benefit payment, which includes any OEPTC entitlement, will be issued on July 10, 2025.
+
+However, if you made a choice on your 2024 return to wait to receive your 2025 OTB entitlement, it will be issued on June 10, 2026.
+
+2025 OEPTC calculation sheets

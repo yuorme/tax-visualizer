@@ -1,0 +1,33 @@
+Title: Newfoundland and Labrador Credits Incentives and Benefits
+URL: https://www.gov.nl.ca/fin/tax-programs-incentives/personal/cib/
+Fetched: 2026-11-05
+SHA-256 of the original: c0fd69449daae8804a04bc4b26ee8aaeed3a9a079a0167f611622dcb37a6a9a8
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+# Credits, Incentives and Benefits
+
+The Government of Newfoundland and Labrador offers a number of tax credits, incentives and benefits programs to individuals and businesses.
+
+## Individual Programs
+
+- Residential Construction Rebate Program
+- NL Income Supplement and NL Seniors Benefit
+- Newfoundland and Labrador Child Benefit
+- Political Contributions Tax Credit
+- Venture Capital Tax Credit
+- Low Income Tax Reduction
+- Physical Activity Tax Credit
+- Newfoundland and Labrador Disability Benefit
+
+## Information respecting these programs may be obtained from the Tax and Fiscal Policy Branch.
+
+### Tax and Fiscal Policy Branch
+
+Department of Finance
+5 Mews Place
+P.O. Box 8700
+St. John’s, NL
+A1B 4J6
+Tel: (709) 729-3166
+Email: taxpolicy@gov.nl.ca
