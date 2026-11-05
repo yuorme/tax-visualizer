@@ -1,0 +1,325 @@
+Title: GUIDE – INCOME TAX RETURN – 2025
+URL: https://www.revenuquebec.ca/documents/en/formulaires/tp/2025-12/TP-1.G-V%282025-12%29.pdf
+Fetched: 2026-11-05
+SHA-256 of the original: 84badbd0c3e35d93d3ea2fd36470b7664f6552c1dca81e8aad3f569637d3317b
+Publication date modified: 2025-12-05
+PDF pages: 26-27,42 of 84
+Text extract made with the exported fetch-source helpers (custom destination). Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 26 of 84 ---
+
+26
+2025 – GUIDE-V
+147 Social assistance payments
+and similar financial assistance
+If you received social assistance payments or similar financial assistance
+in 2025, enter the total of the amounts shown in boxes A and B
+of your RL-5 slip or the amount shown on your T5007 slip if you did not
+receive an RL-5 slip.
+If you repaid social assistance payments or similar financial assistance
+(box H of your RL-5 slip), see the instructions for line 246.
+148 Income replacement indemnities
+and net federal supplements
+On line 148, enter the total of the following types of income that you
+received. In box 149, enter the corresponding number from the list below.
+If you are reporting income from more than one source, enter the total
+on line 148 and “19” in box 149.
+01 Workers’ compensation received from the Commission
+des normes, de l’équité, de la santé et de la sécurité
+du travail (CNESST)
+02 Indemnities received further to a precautionary cessation
+of work
+03 Indemnities received from the Société de l’assurance automobile
+du Québec (SAAQ) further to a traffic accident
+04 Financial assistance received further to a means test
+05 Other indemnities
+06 Income replacement indemnities or compensation
+for the loss of financial support received under a law of Canada
+or a province other than Québec
+07 Net federal supplements
+If you received income replacement indemnities, compensation for
+the loss of financial support or net federal supplements, report the amount
+you received on line 148. The amount you enter on line 148 entitles you
+to a deduction on line 295.
+If you received compensation for the loss of financial support or any of
+the income replacement indemnities described in points 1, 2, 3, 5 and 6,
+you may be required to adjust the amount of your non-refundable
+tax credits. See the instructions for line 358.
+If you repaid income replacement indemnities, see the instructions
+for line 246.
+Indemnities received for previous years
+If, in 2025, you received income replacement indemnities that were owed
+to you for 2004 to 2024, or compensation for the loss of financial support
+that was owed to you for 2005 to 2024, wewillcalculateataxadjustment
+online443
+Please note that, in the case of income replacement indemnities or
+compensation for the loss of financial support received for previous years,
+your retroactive payments cannot be averaged.
+01 Workers’ compensation received from
+the Commission des normes, de l’équité,
+de la santé et de la sécurité du travail (CNESST)
+If, in 2025, you received workers’ compensation or compensation for
+the loss of financial support from the CNESST, enter the amount from box C
+of your RL-5 slip.
+If, in 2025, you received an amount from your employer further to
+an industrial accident, to make up for the loss of income for each day
+or portion of a day that you missed work to receive care, undergo medical
+examinations or carry out an activity as part of your personal rehabilitation
+program, enter on line 148 the amount shown in that respect
+on your RL-1 slip. The amount is identified by the code “RT,” which appears
+in the “Code (case O)” box of the RL-1 slip.
+02 Indemnities received further to a precautionary
+cessation of work
+If, in 2025, you received income replacement indemnities further
+to a precautionary cessation of work, enter the amount shown in that respect
+in box E of your RL-5 slip.
+03 Indemnities received from the Société de l’assurance
+automobile du Québec (SAAQ) further to a traffic
+accident
+If, in 2025, you received income replacement indemnities or compensation
+for the loss of financial support from the SAAQ further to a traffic accident,
+enter the amount from box D of your RL-5 slip.
+04 Financial assistance received further to a means test
+If, in 2025, you received financial assistance from a charity based on
+a means test, enter the amount from box K of your RL-5 slip or the amount
+shown on your T5007 slip, if you did not receive an RL-5 slip.
+05 Other indemnities
+Enter the amount from box E of your RL-5 slip if, in 2025:
+•• you received income replacement indemnities or compensation for
+the loss of financial support further to an act of good citizenship
+or because you were the victim of a crime;
+•• you received any other income replacement indemnities or compensation
+for the loss of financial support under a law of Québec.
+06 Income replacement indemnities or compensation
+for the loss of financial support received under a law
+of Canada or a province other than Québec
+If, in 2025, under a law of Canada or a province other than Québec,
+you received compensation for the loss of financial support, workers’
+compensation or income replacement indemnities (further to a
+precautionary cessation of work, a traffic accident or an act of good
+citizenship, or because you were the victim of a crime), enter the amount
+you received.
+This amount may be shown on a T5007 slip.
+
+--- PDF page 27 of 84 ---
+
+27
+2025 – GUIDE-V
+07 Net federal supplements
+If, in 2025, you received an amount as a net federal supplement, enter the
+amount shown in that respect on your T4A(OAS) slip. Note that you can
+claim a deduction on line 295 for the net federal supplements you are
+reporting on line 148.
+Special cases
+•• If, on line 23500 of your federalincometaxreturn, you are entering
+a social benefits repayment, see “Special case” under “Deduction
+for certain benefits” in the instructions for line 295.
+•• If you received the Guaranteed Income Supplement in 2025 and you or
+your spouse received a retroactive payment of the Old Age Security
+pension or of federal supplements in 2025, see “Special case”
+in the instructions for line 447.
+154 Other income
+On line 154, enter the amount of your other income and, in box 153,
+enter the corresponding number from the list below. Ifyourotherincome
+comesfrommore thanone source,enterthetotalon line 154and “66”
+in box 153.
+01 Scholarships and bursaries (box O of the RL-1 slip)
+02 Income supplement received under a government work-incentive
+project (box O of the RL-1 slip)
+03 Other income (box O of the RL-1 slip)
+04 Refund of unused RRSP or PRPP/VRSP contributions
+05 Recovery of a deduction for contributions to a spousal RRSP
+06 Other income (box C of the RL-2 slip)
+07 Other income (boxes D, E, G, H and K of the RL-2 slip)
+08 Other income (boxes B and G of the RL-16 slip)
+09 Withdrawals from an RRSP under the Home Buyers’ Plan (HBP)
+or the Lifelong Learning Plan (LLP) (boxes L and O of the RL-2 slip)
+10 Amounts not repaid under the Home Buyers’ Plan (HBP)
+or the Lifelong Learning Plan (LLP)
+11 Recovery of resource deductions
+12 Wage Earner Protection Program (WEPP) payments
+13 Recovery of deductions for the purchase of tools
+15 Other taxable income that is not reported elsewhere in your return
+16 Canada Recovery Sickness Benefit, Canada Recovery Caregiving
+Benefit and Canada Worker Lockdown Benefit
+19 First home savings account (FHSA)
+(boxes A, B and C of the RL-32 slip)
+01 Scholarships and bursaries (box O of the RL-1 slip)
+If, in 2025, you received scholarships, bursaries or any similar financial
+assistance (such as a fellowship or a prize for an achievement), enter the
+amount shown in this respect in box O of your RL-1 slip. The amount
+is identified by the code “RB” in the “Code (case O)” box of the RL-1 slip.
+In the case of amounts received under a registered education savings
+plan (RESP), see point 3(i) opposite. For research grants, see point 3(j).
+IMPORTANT
+You can claim a deduction on line 295.
+02 Income supplement received under a government
+work-incentive project (box O of the RL-1 slip)
+If you received financial assistance in 2025, entertheamountshown
+in this respectin box Oof your RL-1 slip
+If you received assistance for tuition fees that do not entitle you to the tax
+credit for tuition or examination fees (line 398), see “Deduction
+for assistance received for the payment of tuition fees” in the instructions
+for line 295.
+03 Other income (box O of the RL-1 slip)
+The following amounts in box O of your RL-1 slips must be reported
+on line 154:
+(a) labour adjustment benefits;
+(b) income assistance payments;
+(d) a retiring allowance (may also be shown in box G-5 of your RL-16 slip);
+(e) patronage dividends from a cooperative;
+(f) a death benefit paid by an employer on the death of an employee,
+in recognition of services rendered by the employee in carrying out the
+duties of an office or employment. This may include unused sick leave
+credits accumulated by the employee. This benefit, which may be
+shown in box G-6 of the RL-16 slip, should not be confused with the
+death benefit paid by Retraite Québec (see the instructions for line 119).
+For more information, contact us.
+If you are the sole beneficiary of a death benefit for a deceased person,
+you are entitled to an exemption of up to $10,000, whether the benefit
+is paid to you in one year or over several years. If you are not the sole
+beneficiary of the benefit, contact us to find out the exemption to which
+you are entitled. The amount of the exemption to which you are entitled
+may be shown in box G-7 of your RL-16 slip;
+(g) amounts received under a supplementary unemployment benefit plan;
+(h) amounts received under a retirement compensation arrangement,
+which may be considered eligible retirement income, a part of which
+you can transfer to your spouse if you are 65 or older (see “Eligible
+retirement income” under the instructions for line 122). These amounts
+are identified by the code “RQ” in the “Code (case O)” box of the
+RL-1 slip;
+(i) amounts received under a registered education savings plan (RESP).
+These amounts are identified by the code “RU” in the “Code (case O)” box
+of the RL-1 slip. If the educational assistance payments (EAPs)
+you received included Québec education savings incentive (QESI)
+amounts totalling more than the cumulative limit of $3,600, you may
+have to pay a special tax. See point 1 in the instructions for line 443.
+If you are the subscriber under an RESP, or the spouse, former spouse
+or heir of the subscriber, and you received accumulated income
+payments under the RESP, which are identified by the code “RV”
+in the “Code (case O)” box of the RL-1 slip, enter the amount of the
+payments on line 154. Note that you may have to pay a special tax.
+See point 2 in the instructions for line 443;
+(j) the net amount of research grants. To calculate the net amount of
+a research grant received in 2025, subtract the total of the following
+expenses (up to the amount of the grant) from the amount shown
+in this respect in box O of your RL-1 slip:
+• expenses incurred in 2024, after you obtained confirmation
+that you would receive the grant,
+• expenses incurred in 2025, and
+• expenses incurred in 2026.
+
+--- PDF page 42 of 84 ---
+
+42
+2025 – GUIDE-V
+292 Capital gains deduction
+If you are reporting a taxable capital gain on line 139, you may be entitled
+to a capital gains deduction, provided you meet bothof the following
+conditions:
+•• You realized the gain when you disposed of (sold, transferred, exchanged,
+donated, etc.) qualified farm or fishing property, qualified small business
+corporation shares, shares covered by an intergenerational
+business transfer or certain resource property before March 26, 2025
+(exceptions apply).
+•• You were resident in Canada throughout 2025, or you were resident
+in Canada at some point in 2025 and were either resident in Canada
+throughout 2024 or expect to be resident in Canada throughout 2026.
+For more information on the capital gains deduction, see guide IN-120-V,Capital Gains and Losses. For the exceptions regarding resource property,
+see form TP-726.20.2-V,
+Capital Gains Deduction on Resource Property
+Forms to enclose
+••
+Capital Gains Deduction on Qualified Property (TP-726.7-V)
+••
+Capital Gains Deduction on Resource Property (TP-726.20.2-V)
+293 Deduction for income situated on a reserve
+If you are an
+Indian, you can claim a deduction for your income situated
+on a reserve or premises. The amount you deduct cannot be greater than
+your total income from all income sources situated on a reserve or
+premises, minusthe related deductions. This income includes:
+•• your employment income situated on a reserve or premises and your
+income attributable to employment income that qualifies for the
+deduction (the amount shown in box R of your RL-1 slip); and
+•• your net business or professional income, retirement income and
+investment income.
+If you are reporting an amount on line 148 or the amount of a scholarship
+or bursary on line 154, do not claim a deduction for these amounts
+on line 293. Claim your deduction on line 295 instead.
+Indian
+A person who is an Indian within the meaning of the
+Indian Act, that is,
+an individual who is registered as an Indian with Indigenous
+Services Canada or is entitled to be so registered.
+295 Deductions for certain income
+Deduction for certain benefits
+If you received workers’ compensation, compensation for the loss
+of financial support or indemnities (further to a precautionary cessation
+of work, a traffic accident or an act of good citizenship, or because you
+were the victim of a crime), enter the amount of those benefits on line 295.
+In addition, you may be required to enter an adjustment for income
+replacementindemnitiesonline 358 (see the instructions for line 358).
+Also enter on line 295 the amount of net federal supplements or other
+income replacement indemnities that you are reporting on line 148.
+Special case
+If you are entering a social benefits repayment (line 250, point 3) and you
+received net federal supplements, enter the result of the following
+calculation on line 295: the amount of net federal supplements entered
+on line 148, minusthe repayment of net federal supplements entered on
+line 23500 of your federal income tax return.
+Deduction for scholarships, bursaries or similar
+financial assistance
+If you received a scholarship, bursary or any similar financial assistance
+that you are reporting on line 154 (point 1), enter it on line 295 as well.
+Amounts received under a registered education savings plan (RESP)
+do not entitle you to this deduction.
+Repayment of a scholarship, bursary or similar financial
+assistance received in the year
+If you are entering an amount for the repayment of a scholarship, bursary
+or similar financial assistance that you received in 2025 (line 246),
+your deduction is equal to the result of the following calculation: the amount
+included on line 154, minus the repayment of the scholarship, bursary
+or financial assistance that was deducted on line 246.
+Deduction for assistance received for the payment
+of tuition fees
+If you received assistance for tuition fees regarding which you cannot claim
+the tax credit for tuition or examination fees on line 398 and you were
+required to include the assistance in your income, enter it on line 295.
+The amount of the assistance may be stated in a letter sent to you
+by the Ministère de l’Emploi et de la Solidarité sociale.
+Deduction for split income
+You can claim a deduction on line 295 if, for 2025, you are required to report
+certain types of income (called split income) that are subject to the tax
+on split income (line 443) and that you received directly or through a trust
+or a partnership. To calculate it, complete form TP-766.3.4-V,
+Income Tax
+on Split Income
+297 Miscellaneous deductions
+On line 297, enter the amount of the deduction to which you are entitled
+and, in box 296, enter the corresponding number from the following
+list. If you are claiming more than one deduction, enter the total
+on line 297 and “88” inbox 296
+02 Security option deduction
+03 Deduction for foreign researchers
+04 Deduction for foreign experts
+05 Deduction for foreign researchers on a post-doctoral internship
+06 Deduction for foreign specialists
+07 Deduction for foreign producers or foreign individuals holding
+a key position in a foreign production filmed in Québec
+08 Deduction for employment income earned on a vessel
+09 Deduction for employees of an international financial
+centre (IFC)
+12 Deduction for income exempt under a tax treaty
+13 Deduction for share- and security-issue expenses related
+to Québec resources
+14 Deduction for employees of certain international organizations
+16 Deduction for copyright income
+17 Deduction for shares received in exchange for mining property
+19 Deduction for foreign professors
+20 Deduction for foreign farm workers
+21 Income-averaging deduction for forest producers
+22 Deduction for patronage dividends received from a cooperative
+23 Canadian Forces personnel and police deduction
+24 Deduction for a repayment of the Universal Child Care Benefit

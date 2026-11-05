@@ -4,6 +4,10 @@ Inventory for **#21, phase 1 only**, checked **2026-11-05**. No production code,
 expectations change. Coverage is the thirteen jurisdictions and calendar tax years **2025 and 2026**;
 this note does not establish historical coverage or claim that implementation is ready for every program.
 
+Phase 2 scope decisions, evidence closures and the pre-implementation golden gate are recorded in the
+[phase-2 status note](21-provincial-supplements/phase2-status.md). That note supersedes the phase-1 open
+scope questions; the jurisdiction inventory remains the evidence record for the initial research.
+
 ## Evidence status and conventions
 
 The [sizing study in PR #135](https://github.com/yuorme/tax-visualizer/pull/135), committed as

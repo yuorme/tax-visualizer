@@ -155,7 +155,11 @@ unverified amounts remain unverified rather than being assigned zero.
 ## Reporting, engine seam and double counting
 
 NT's page and YT's page say a T5007 is issued above $500 in a calendar year; NU's page says recipients receive
-one each tax year. The issuance threshold does not create a $500 payment exemption. [CRA T5007 instructions][t5007]
+one each tax year. Phase 2 corrected the original inventory's reporting-threshold interpretation: the
+[CRA issuer guide](sources/federal-tax-slips.txt) excludes a series totalling $500 or less from slip reporting,
+and [BC's FAQ](sources/bc-tax-slip.txt) expressly says its recipients need not report that income. Keep cash
+and reportable income separate, and verify program-specific application. See
+[the phase-2 reporting correction](evidence-west-phase2.md). [CRA T5007 instructions][t5007]
 put box 11 provincial/territorial supplements on **line 14500**, included in net income, with an equal
 **line 25000 taxable-income deduction**. For spouses living together, the higher-net-income spouse reports the
 amount; ties use the named recipient. The [line 14500 instructions][line145] explain the comparison excludes
