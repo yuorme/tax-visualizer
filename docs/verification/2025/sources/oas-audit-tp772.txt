@@ -1,0 +1,180 @@
+Title: Foreign Tax Credit
+URL: https://www.revenuquebec.ca/documents/en/formulaires/tp/TP-772-V(2025-12).pdf
+Fetched: 2026-11-05
+SHA-256 of the original: edd6e055fd636ed6da5b93e872e5fe98cbcc1d62f10a7b77ddcbd3f459d5480b
+Publication date modified: 2026-02-04
+PDF pages: 1-3 of 4
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 1 of 4 ---
+
+1 6 2 W Z Z 4 9 5 4 5 0 8 7
+TP-772-V (2025-12)
+1 of 4
+To be entitled to the foreign tax credit, the individual (or trust) must have
+been resident in Québec:
+•• on December 31 of the taxation year;
+•• on the last day of residence in Canada (if the individual ceased to reside
+in Canada during the taxation year); or
+•• on the date of death (if the individual died during the taxation year).
+“Foreign income tax” means an amount of income tax or profits tax paid
+to the government of a foreign country or a political subdivision of a foreign
+country. You can claim a tax credit only for paid, non-refundable foreign
+income tax. Moreover, any taxes paid by an employee to the government
+of the United States under the
+Federal Insurance Contributions Act are
+considered foreign income tax.
+Social insurance number (individual) Identification number (trust) Taxation year
+01 02 03
+Last name and first name of individual or name of trust
+04
+Name of foreign country
+05
+The line numbers in parentheses below refer to the personal income tax return (TP-1-V), unless otherwise indicated.
+1 Income tax otherwise payable1
+Income tax on taxable income (line 401) 10
+Income tax on split income before applying the percentage of business carried on in Québec
+(line 52 of form TP-766.3.4-V,
+Income Tax on Split Income) + 11
+Tax adjustment respecting the portion accrued to December 31, 1971, of a single payment (included on line 402 of Schedule E) + 12
+Add lines 10 through 12. = 13
+Non-refundable tax credits (line 399), not including the tax credit for recent graduates working
+in remote resource regions (line 392) 14
+Carry-forward of alternative minimum tax (line 13 of Schedule E) + 15
+Add lines 14 and 15. = 16
+Subtract line 16 from line 13. If the result is negative, enter 0. = 17
+Enter the amount from line 17 or, if you completed form TP-22-V,
+Income Tax Payable by an Individual Who Carries On a Business in Canada,
+Outside Québec, a portion of the amount on line 17 calculated using the percentage from line 35 of the form. Income tax otherwise payable 18
+1. The term “income tax otherwise payable” is defined in section 772.2 of the
+Taxation Act.
+Foreign Tax Credit
+The credit is calculated differently according to whether or not the foreign
+income tax relates to business income. In this form, “business income”
+means income from an establishment located in the foreign country.
+“Non-business income” means all other income from a source located in
+the foreign country on which you paid income tax to that country.
+Enclose a duly completed copy of this form with your income tax return
+(or that of the trust). Complete a copy of the form for each foreign country
+to which you paid income tax and enclose the relevant supporting
+documents. The information provided on the form must apply only to the
+country concerned.
+Use this form to claim a foreign tax credit for a given taxation year for an individual or a trust. It cannot be used by a corporation.
+
+--- PDF page 2 of 4 ---
+
+1 6 8 W Z Z 4 9 5 4 5 6 8 7
+TP-772-V (2025-12)
+2 of 4
+2 Income for the taxation year for the purposes of determining the credit
+Net income (line 275, whether positive or negative, plus the amount from line 276 respecting
+income averaging for forest producers) 20
+Net capital losses from other years (line 290) 21
+Capital gains deduction for a qualifying business transfer (line 291)2 21.1
+Capital gains deduction (line 292) + 22
+Deduction for an Indian (line 293), deductions for certain income (line 295) and miscellaneous
+deductions (line 297). Do not include amounts from line 295 respecting the deduction for split
+income. From line 297, do not include amounts covered under points 13, 24 and 25. + 23
+Add lines 21 through 23. = 24
+Subtract line 24 from line 20. Income for the taxation year for the purposes of determining the credit = 25
+3 Foreign tax credit respecting non-business income
+3.1 Foreign income tax giving entitlement to the credit
+Foreign income tax paid on non-business income (this amount may be shown in box G of the RL-3 slip, box 17
+of the RL-15 slip, box L of the RL-16 slip or box H of the RL-25 slip) 30
+Portion of the amount on line 30 attributable to foreign income tax paid
+on split non-business income (this amount may be shown in box 17-5
+of the RL-15 slip or in box L-1 of the RL-16 slip) 30.1
+Portion of the amount on line 30 that is foreign income tax:
+31•• paid on income used to calculate the tax credit for career extension (line 391)
+•• paid with respect to property other than an immovable and exceeding 15% of the foreign income
+(excluding capital gains) from the property + 32
+•• deducted in the calculation of business or property income pursuant
+to section 146.1 of the
+Taxation Act + 33
+•• relating to an amount that another person or a partnership received (or is entitled to receive)
+from the government of the foreign country + 34
+•• deducted in the calculation of business or property income pursuant to subsection 20(12) of theIncome Tax Act (Statutes of Canada) and exceeding the amount on line 33 above + 36
+•• attributable to a taxable capital gain for which the individual or their spouse, if applicable, is
+claiming a capital gains deduction for a qualifying business transfer (line 291)2 + 36.1
+•• attributable to a taxable capital gain for which an individual or their spouse is claiming
+a capital gains deduction (line 292) + 37
+•• paid on an amount that is deductible for a sailor working on a vessel engaged in international
+freight transportation or a foreign specialist working for an international financial centre (IFC)
+(line 297) + 38
+•• paid on income that is tax-exempt in Québec or in Canada under a tax agreement (line 297) + 39
+•• paid with respect to property other than capital property, if there is no reasonable expectation
+of deriving a profit from the property in the period during which it is held + 40
+•• allocated to a beneficiary, if the credit is being claimed by a trust + 41
+Federal foreign tax credit according to the federal return
+(except the portion of the credit that relates to business income)3 + 42
+Add lines 31 through 42. = 48
+Subtract line 48 from line 30.
+If the result is 0 or a negative amount, go directly to line 59 and enter 0. Foreign income tax giving entitlement to the credit = 49
+2. Including the capital gains deduction for a qualifying cooperative conversion.
+3. The individual may be subject to the alternative minimum tax in their federal income tax return. The individual’s special foreign tax credit according to form T691,
+Alternative Minimum Tax
+(or Schedule T3SCH12 for a trust), may also be greater than the federal foreign tax credit. If both these conditions apply, multiply the special foreign tax credit by the fraction (according to
+form T2209,
+Federal Foreign Tax Credits, or form T3FFT for a trust) that represents the individual’s net foreign non-business income versus all foreign income (total net foreign non-business
+income and net foreign business income together). Enter the result on line 42.
+
+--- PDF page 3 of 4 ---
+
+1 6 8 X Z Z 4 9 5 4 5 6 8 8
+TP-772-V (2025-12)
+3 of 4
+3.2 Foreign income and credit
+Non-business income (including the amount by which taxable capital gains exceed allowable capital losses), calculated before
+the deductions below and respecting which the foreign income tax on line 30 was paid (this income may be shown in boxes F and K-1
+of the RL-3 slip, boxes 4, 8, 12-3, 12-5, 12-12 and 12-13 of the RL-15 slip, boxes A-1 and F of the RL-16 slip, boxes B-1 and D-3
+of the RL-25 slip or in Schedule G). See the note at the end of this form. 50
+Portion of the amount on line 50 that is split foreign non-business income
+(this amount may be shown in boxes 4-5, 8-5, 12-9 or 12-16 of the RL-15 slip,
+or in boxes A-4, A-9 or F-1 of the RL-16 slip) 50.1
+Enter the amounts deducted or deductible from the income on line 50.
+51•• Employment expenses and deductions (line 207)
+•• Other amounts deducted + 52
+•• Capital gains deduction for a qualifying business transfer (line 291)4 + 52.1
+•• Capital gains deduction (line 292) + 53
+•• Deduction for copyright income, or deductions that may be claimed for a sailor working
+on a vessel engaged in international freight transportation or for a foreign specialist working
+for an international financial centre (IFC) (line 297) + 55
+Add lines 51 through 55. = 56
+Subtract line 56 from line 50. If the result is negative, enter 0. Foreign income = 57
+Amount from line 18 Amount from line 57
+×
+Amount from line 25 58
+Enter the amount from line 18, 49 or 58, whichever is least. If foreign income tax was paid on business income,
+continue completing this form. Otherwise, carry the amount from line 59 to line 409 of Schedule E.
+Foreign tax credit respecting non-business income 59
+4 Foreign tax credit respecting business income
+4.1 Foreign income tax giving entitlement to the credit
+Foreign income tax paid on business income (this income tax may be shown in box 18 of the RL-15 slip or in box K of the RL-16 slip) 60
+Portion of the amount on line 60 attributable to foreign income tax paid on split business income
+(this amount may be shown in box 18-5 of the RL-15 slip or in box K-1 of the RL-16 slip) 60.1
+Portion of the amount on line 60 that is foreign income tax:
+61•• paid on income used to calculate the tax credit for career extension (line 391)
+•• paid on income that is tax-exempt in Québec or in Canada under a tax agreement (line 297) + 62
+•• relating to an amount that another person or a partnership received (or is entitled to receive)
+from the government of the foreign country + 63
+•• paid on an amount that is deductible for a foreign specialist working for an international
+financial centre (IFC) (line 297) + 64
+•• paid with respect to property other than capital property, if there is no reasonable expectation
+of deriving a profit from the property in the period during which it is held + 65
+•• allocated to a beneficiary, if the credit is being claimed by a trust + 66
+Add lines 61 through 66. = 68
+Subtract line 68 from line 60. = 69
+Multiply line 69 by 45%. Foreign income tax giving entitlement to the credit
+× 45%
+= 70
+Complete lines 71 through 73 only if you wish to carry over an unused portion of the foreign tax credit respecting
+business income. Otherwise, go directly to line 74 and enter the amount from line 70.
+Unused portion of the foreign tax credit respecting business income, for each of the ten taxation
+years preceding the year concerned and the three taxation years following the year concerned5 71
+Portion of the amount on line 71 that has already been carried to another year – 72
+Subtract line 72 from line 71. = 73
+Add lines 70 and 73. = 74
+4. See note 2.
+5. For each of the ten taxation years preceding the year concerned and the three taxation years following the year concerned, the unused portion of the tax credit is equal to the result on line 95
+of form TP-772-V of the year in question.
