@@ -1,6 +1,7 @@
 # Alberta, Saskatchewan and Quebec evidence for #22
 
-Inventory only, checked **2026-11-05**. All amounts are CAD. This supplements the main #22 report;
+Inventory only, checked **2026-11-05**, with phase 1b evidence reconciliation on the same date.
+All amounts are CAD. This supplements the main #22 report;
 no production files or goldens changed. Representative calculations below are independent arithmetic,
 not observed recipient averages unless explicitly identified as such.
 
@@ -94,16 +95,108 @@ next year's municipal grant into a prior-calendar-year cash receipt.
 
 Montreal's [dated 2026 explanation](sources/west-qc-qc-montreal-grant.txt) describes the **same provincial
 grant**, not an extra municipal grant. The 2026–2028 roll valuation threshold is **18.41%**.
-Use the city-issued potential grant; home value alone cannot reconstruct it. Independently verify the
-form/law's exact assessment formula and co-owner allocation before coding; the Finance description's
-7.5% wording must not be converted casually into a 7.5-percentage-point threshold. No deferral is involved.
+The phase 1b law/form checks below resolve the earlier assessment and co-owner questions. This is a provincial
+grant, so it is distinct from a local cancellation available only on the app's default reference-city bill.
+Use a municipality-issued potential grant for the actual property; home value or a custom total bill alone
+cannot reconstruct it. No deferral is involved.
 
-**Shelter Allowance Program — material age-gated housing assistance; retain as an explicit scope decision.**
+### Phase 1b: assessment formula and claim allocation — closed
+
+Both final forms are cached: [2025 grant on the 2024 return](sources/gap-quebec-form-2025-grant.txt),
+TP-1029.TM-V (2024-11), and [2026 grant on the 2025 return](sources/gap-quebec-form-2026-grant.txt),
+TP-1029.TM-V (2025-11). Their page 2 calculation is the same apart from the year references:
+
+```text
+wholePropertyGrant = currentYearPotentialGrant + precedingRollFinalYearGrant
+claimantGrant = wholePropertyGrant − totalGrantsClaimedByOtherCoOwners
+```
+
+The current-year potential amount (line 41) comes from that year's municipal bill or municipal potential-grant
+notice and has a $500 maximum. Line 43 is the **total actually awarded to all co-owners** for the final year
+of the preceding roll. It is not just the present claimant's prior claim, not last year's grant if last year
+was already in the current roll, and not a new grant that can be added repeatedly within the same roll.
+Line 45 subtracts other co-owners' claims on the corresponding prior-year returns. Each claiming co-owner
+files a separate form. [Municipal Taxation Act s.210.14](sources/gap-quebec-grant-2017-amendment.txt)
+limits the combined claims to one whole-property entitlement; co-owners agree their allocation, and the
+Minister can allocate it if they cannot agree. There is **no automatic ownership-percentage split** in
+this rule. Each claimant still independently needs the age, ownership, principal-residence and family-income
+eligibility. In particular, a non-owner senior spouse cannot be assumed to qualify just because the other
+spouse owns the property. A spouse who receives ownership can count the transferring spouse's ownership
+years under the form's deemed-ownership rules.
+
+The applicant must still own and principally reside in the property on the municipal billing date, even
+if eligible at the preceding December 31. The bill may be in another co-owner's name. Attach the form to
+line 462 of the preceding return, keep the bill six years, and apply by December 31 of the fourth year
+after the grant year (2025 grant: 2029; 2026 grant: 2030). If review changes the potential grant after
+filing, the form requires an adjusted return and updated form within 60 days.
+
+The normative assessment calculation is in the
+[2017 Gazette, s.44, inserting ss.210.7–210.10](sources/gap-quebec-grant-2017-amendment.txt),
+**read with the later [2021 Gazette, s.13 cap amendment](sources/gap-quebec-grant-2021-cap-amendment.txt)**.
+The 2021 amendment removes the old $500 cap on the entire grant and instead caps the current-roll product;
+it applies to applications filed after September 23, 2016. Reading the old 2017/2018 text alone would give
+the wrong cap for both target years. For a roll without assessment averaging:
+
+```text
+D = round4(F / G + 0.075)
+excessValue = max(0, B − C × D)
+newRollAmount = min(500, A × excessValue)
+wholePropertyGrant = roundToWholeDollar(newRollAmount + E)
+```
+
+- `B` is the property's value on the current roll on deposit; `C` is its value on the previous roll as it
+  stood immediately before the current roll's deposit. Assessment-review adjustments follow ss.210.11–210.12.
+- `F` and `G` are current/prior **average dwelling values** from assessment-roll-summary dwelling lines
+  501, 502 and 514: sum the listed values and divide by their dwelling counts. These are not the average
+  total property values of all municipal property classes. Round each quotient to four decimal places.
+- `A` is the sum of the prescribed ad-valorem municipal rates applicable to the property in the **first
+  year of the current roll**: general property tax, qualifying municipality-wide special property taxes,
+  specified former-municipality debt tax, Montreal borough tax where applicable, and agglomeration tax.
+  Flat charges, school tax and arbitrary current bill components are not interchangeable with `A`.
+- `E` is the awarded grant for the preceding roll's last year, across all owners, as in form line 43.
+- Section 210.8 rounds the final grant to whole dollars (first decimal digit 5+ rounds upward) and the
+  average-value quotients and `D` to four decimals (fifth decimal digit 5+ rounds upward).
+
+Thus the threshold adds **7.5 percentage points** to the average valuation increase. It does not multiply
+that increase by 1.075. Montreal's 18.41% threshold is consistent with `F/G = 1.1091`, giving `D = 1.1841`;
+this is an algebraic reconciliation, not a separately observed Montreal average. At exactly that threshold,
+new excess value is zero, although `E` can still yield a grant.
+
+Section 210.9 substitutes first-/second-year fractions of one-third/two-thirds when the municipality averages
+the assessment variation over three years, or one-half for the first year of two-year averaging. This is a
+further reason to use the **year-specific municipal potential amount** instead of estimating it from home
+value. Phase 2 should consume that published amount; it need not reproduce the municipality's roll system.
+The precise cap placement for a newly implemented municipal averaging calculator is not independently
+resolved here and is unnecessary for the proposed potential-amount input. Do not invent an averaging amount.
+
+Independent correctness cases for the proposed claim path:
+
+- Current-year potential $300 and preceding-roll final-year awards $100 -> property entitlement **$400**.
+  If another qualifying co-owner claims $150, claimant gets **$250**; both together remain $400.
+- Current-year potential $500 and preceding-roll awards $120 -> **$620**, rejecting a total $500 cap.
+  Two qualifying spouses can allocate $620/$0 or $300/$320; they cannot both claim $620.
+- At `A = 0.006`, `C = $300,000`, `F/G = 1.10`, no averaging, `D = 1.1750`:
+  `B = $352,500` gives $0 new amount; `B = $400,000` gives **$285**; `B = $500,000` gives the
+  **$500** new-roll maximum. Add any valid `E` after that cap, then reconcile co-owner claims.
+- Whole-property unrounded grants $223.49/$223.50 round to **$223/$224**. This rounding belongs to the
+  municipality's whole-property grant calculation, not independent rounding of every co-owner's share.
+- A 2026–2028 roll uses **2025** as the previous roll's final year for line 43; a 2025–2027 roll uses
+  **2024** even when computing a 2026 claim. Both examples are explicit in the 2026 form's footnote 2.
+
+**Search record:** found the live RQ form catalogue and followed its official PDF link to the 2025-11 form;
+the matching 2024-11 PDF also downloaded and closes the 2025 form gap. An initially guessed 2024-12 path
+returned HTTP 410. Direct current Légis Québec HTML/PDF downloads returned HTTP 403 and web PDF opening
+returned 502; an indexed current September 2025 PDF confirms the formula/cap, while the raw 2017 and
+2021 Gazette publications provide separately hash-verifiable enactment text. The linked July 2018 historical
+Act exposed the old total-cap wording and was **not** used as the current cap. No original hash is claimed
+for a blocked current consolidation. No further RQ claim-allocation evidence gap remains for the input path.
+
+**Shelter Allowance Program — out of #22, assigned to [#216](https://github.com/yuorme/tax-visualizer/issues/216).**
 It is not an existing engine credit. It supports owners, private-market tenants and boarders when the applicant
 or spouse has a dependent child or reaches **50 by the benefit period's end**. HLM/PSL-subsidized dwellings and
 specified institutional accommodation are excluded. Assets at prior December 31 must be **at most $50,000**
-in bank accounts/TFSA/investments, excluding registered plans and FHSA. It is a housing transfer, so decide
-explicitly whether #22 includes it or assigns it to a housing-benefits follow-up; **do not cut for small size**.
+in bank accounts/TFSA/investments, excluding registered plans and FHSA. The user assigned this housing
+transfer to #216; the UI must state that it is not modelled. This is **not a small-size exclusion**.
 
 The [2025 Gazette, sections 5–8](sources/west-qc-qc-shelter-gazette-2025.txt) gives the October 2025–September
 2026 rules. Annual tiers are **$1,200/$1,800/$2,040** for housing-cost ratios **[30%,50%)/[50%,80%)/80%+**.
@@ -128,8 +221,9 @@ The [2026–2027 cost page](https://www.revenuquebec.ca/en/citizens/your-situati
 publishes **$1,340/$445** apartment allowances and **$6,139** homeowner allowance. Example: single age 67,
 $22,000 reference income, $900/month apartment rent with heat included: $(10,800+434)/22,000=51.06%$,
 giving **$1,800 annually** in 2025–2026. With no other changes, 2026–2027 is 51.11%, also $1,800.
-These examples establish material size independently of engine output. Calendar-year 2025 Jan–Sep
-2024–2025 parameters remain uncollected; do not use the October 2025 rules for those nine months.
+These examples establish material size independently of engine output. The user selected annual benefit-year
+entitlement, not calendar-year cash. Missing January–September 2025 cash-period parameters therefore do not
+block #22; any future housing implementation belongs to #216 and must label its own benefit period.
 
 **Existing Quebec solidarity credit — preserve once.** The engine already includes its housing component
 for owners/renters and uses Quebec family net income. There is no separate age-65 housing addition in
@@ -138,16 +232,19 @@ bill rebate; they must not be inferred from total rent or deducted from municipa
 
 ## Implementation implications for these jurisdictions
 
-Proposed QC program ids: `qc-senior-municipal-tax-increase-grant` and, only if accepted here,
-`qc-shelter-allowance-cost-ratio`. Both require data entries for 2025/2026 and schema validation. The municipal
-grant needs prior ownership eligibility, municipal potential grant and prior-roll carryover/co-owner inputs;
-shelter allowance needs assets, dwelling/subsidy status and actual eligible housing-cost components plus
-reference-year income. Neither can be inferred safely from present home value, annual tax and age alone.
+Proposed #22 QC program id: `qc-senior-municipal-tax-increase-grant`, with 2025/2026 data and schema validation.
+It needs ownership/eligibility, the year-specific municipal potential grant and the preceding roll's final-year
+total awards plus other co-owner claims. The two final forms now source that claim path. Do not infer these
+values from present home value, annual tax and age alone. The grant is provincial even though municipalities
+calculate the potential amount; it is not an extra Montreal municipal cancellation. Local-only relief applies
+only to default reference-city bills under the user's decision, while a supplied provincial-grant amount needs
+its own actual-property evidence. Existing saved bills stay gross; offer an explicit net-bill choice and record
+known relief already applied to prevent duplicate subtraction. Entitlement is annual for the labelled benefit year.
 
 Existing `src/engine/credits.ts` solidarity handling must remain once; add property-relief evaluation in a
 dedicated engine module, integrated by `household.ts`, then UI inputs/tooltips and `scenario-url.ts` serialization.
 No AB/SK production benefit should be added for a loan. Existing ordinary AB/SK/QC goldens should remain;
 new QC cases cover age/15-year/income eligibility, previous-roll carryover, co-owners and bill already net of
-relief. If housing allowance is included, add age-50, asset-$50,000, ratio-30/50/80%, dollar taper, zero-income
-and October-period boundaries with independent calculations. Add year-specific data and golden fixtures
+relief. Housing-allowance implementation and its age/asset/cost-ratio tests belong to #216, not this branch.
+Add year-specific data and golden fixtures
 without recapturing the ordinary baseline.

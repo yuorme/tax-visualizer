@@ -1,6 +1,6 @@
 # Seniors' property-tax relief inventory, 2025–2026
 
-Research for **#22, phase 1 only**, checked **2026-11-05** against base `7757e93`.
+Research for **#22, phases 1 and 1b**, checked **2026-11-05**; original inventory base `7757e93`.
 This is an inventory and implementation brief. No production data, engine, UI or golden expectations change.
 The [sizing study in PR #135](https://github.com/yuorme/tax-visualizer/pull/135)
 and its [verification note](16-seniors-sizing.md) retain this category; this inventory does not reverse that decision.
@@ -14,6 +14,9 @@ web reader but rejected raw downloads; their status is explicit, and no original
 The regional appendices preserve detailed eligibility, source limitations and municipal interactions:
 [AB/SK/QC](22-property-tax-relief/west-qc.md), [Atlantic](22-property-tax-relief/atlantic.md), and
 [territories](22-property-tax-relief/territories.md). Annual shared source indexes are untouched.
+Phase 1b closes or bounds the original gaps in those appendices and the
+[municipal](22-property-tax-relief/municipal-follow-up.md) and
+[Manitoba](22-property-tax-relief/manitoba-follow-up.md) follow-ups. Each records its search attempts and limits.
 
 All amounts are CAD. A representative recipient is a continuously resident qualifying owner aged 68 with
 $35,000 income and a $3,000–$4,000 gross residential bill, unless a row specifies another profile.
@@ -22,8 +25,9 @@ At $35,000 income, $35 changes the effective tax rate by 0.1 percentage points. 
 to claim that a typical recipient gets the maximum, and an unknown amount is never treated as zero.
 
 **In** means retain for implementation; **out** gives a scope reason after sizing. **Unresolved/material**
-means retain the candidate, collect the missing rule or choose a separately tracked delivery scope before
-shipping it. It does not authorize silently omitting the benefit. Municipal rules are local, not province-wide.
+means retain the candidate and collect the missing rule before claiming a complete calculation.
+Nunavut's unresolved award paths remain explicitly **not modelled**, as the user decided.
+Municipal rules are local, not province-wide.
 No grant found means no grant identified in the cited government inventory/reference-city search, not proof
 that every local authority has none. Repairs, home-care services and rent-geared-to-income housing are not
 property-tax rebates; material adjacent housing transfers are separately identified below.
@@ -33,10 +37,29 @@ the current bill. Ontario's 2025 benefit uses 2024 income/occupancy costs; 2026 
 July–June. NS's 2025 program refunds 2024 taxes; its 2026 program refunds 2025 taxes. Quebec's municipal
 grant concerns the next municipal bill claimed through the preceding return; shelter allowance runs October–September.
 The existing app largely combines tax-year taxes with annual benefit-year rates and current-income proxies.
-Implementation must label that convention or collect reference-year inputs; it cannot call those annualized
-entitlements actual calendar-year cash receipts. 2026 filing forms are not assumed final merely because a
+The user selected **annual entitlement for the benefit year**, labelled as such. Use correctly dated
+reference-year income/costs; if using a stationary-income or bill proxy, identify it as an estimate rather
+than a second reporting convention. These entitlements are not actual calendar-year cash receipts.
+2026 filing forms are not assumed final merely because a
 2026 program amount or budget is published. Coverage proposed here is **2025–2026 only**, with historical
 back-fill tracked.
+
+## Scope decided by the user
+
+The [decisions recorded on #22](https://github.com/yuorme/tax-visualizer/issues/22) are now implementation constraints:
+
+1. Apply city-level relief **only to the default reference-city bill** and explain that limitation in the tooltip.
+   A custom province-wide bill does not identify a city, so it receives no automatic Toronto, Halifax,
+   St. John's or Yellowknife municipal relief. Provincial grants can still apply with their required inputs.
+2. BC SAFER, Quebec Shelter Allowance and Manitoba Rent Assist move to
+   [#216](https://github.com/yuorme/tax-visualizer/issues/216). The UI states that these housing allowances
+   are not modelled. Their material size is retained in this inventory; they are not small-size exclusions.
+3. Report annual **benefit-year entitlement**, not actual calendar-year cash.
+4. Keep saved bills **gross**, their current meaning. Add an explicit net-bill choice and prevent credits
+   already included in that bill from being applied twice.
+5. Nunavut remains **not modelled** while its award rule is unresolved; never substitute $0 or NWT's cap.
+
+These choices are removed from the open list. Phase 1b remains research only; implementation waits for #21 to merge.
 
 ## All-jurisdiction decision inventory
 
@@ -44,19 +67,19 @@ The detailed sections/appendices supply the income definitions, timing and evide
 
 | Jurisdiction | Retained recurring relief and annual size | Out / no-program finding, after sizing |
 |---|---|---|
-| BC | HOG ordinary $570 / senior $845 in Vancouver: $275 age increment on a normal bill; rural $770/$1,045. Low-income restoration can be $845. Both years. | Deferral finances tax, $0 forgiven. Existing renter credit $400 has no senior increment; keep once. SAFER housing support about $4,044 annualized: scope decision, not small. |
+| BC | HOG ordinary $570 / senior $845 in Vancouver: $275 age increment on a normal bill; rural $770/$1,045. Low-income restoration can be $845. Both years. | Deferral finances tax, $0 forgiven. Existing renter credit $400 has no senior increment; keep once. SAFER about $4,044 annualized is assigned to #216. |
 | AB | No provincial senior property grant/renter-credit age increment identified for either year. | Senior tax-deferral loan: illustrative $4,000 financed, $0 forgiven. Calgary age-neutral tax-increase assistance: illustrative $200, out of senior scope. St. Albert's 2026 $200 senior grant is outside Calgary, not province-wide. |
 | SK | No provincial senior property grant/renter-credit age increment identified for either year. | Provincial school-tax loan: illustrative $2,000 financed; Saskatoon municipal/library deferral: $3,000 financed; both $0 forgiven. |
-| MB | Seniors school rebate up to $235 after other school relief; renter age-65 top-up max $328.57/$357.14 in 2025/2026, about $41.08/$44.63 at $35,000 family income. | Retired EPTC senior top-up and School Tax Credit for Homeowners: $0 entitlement from 2025, not extra live programs. Ordinary HATC $1,500/$1,600 and rent credit $575/$625 already present. Rent Assist is a material housing-scope decision. |
-| ON | OSHPTG up to $500 in both benefit years; replace ordinary OEPTC with senior schedule, max $1,461/$1,488 total, not another full credit. | Toronto cancellation is material: average-home city levy increase about $268 in 2025/$91.53 in 2026; municipal scope decision. Deferral of that increase saves $0 tax. OSTC senior increment $34.60/$38.56 belongs to #21/OTB coordination. |
-| QC | Municipal-tax-increase grant: implied 2023 mean about $145; new-roll increment up to $500 **plus carryover**. 2025/2026 income caps $62,900/$64,200. | Shelter allowance, age 50: $1,200–$2,040 yearly, material housing-scope decision. Existing solidarity housing component remains once; no separate senior housing increment identified. |
+| MB | Seniors school rebate up to $235 after other school relief; renter age-65 top-up max $328.57/$357.14 in 2025/2026, about $41.08/$44.63 at $35,000 family income. | Retired EPTC senior top-up and School Tax Credit for Homeowners: $0 entitlement from 2025, not extra live programs. Ordinary HATC $1,500/$1,600 and rent credit $575/$625 already present. Rent Assist is assigned to #216. |
+| ON | OSHPTG up to $500 in both benefit years; senior OEPTC replaces ordinary schedule, max $1,461/$1,488. Toronto cancellation is included for default-city bills: first-time average-home examples about $268/$91.53; continuing awards include eligible prior cancellations. | Custom bills do not get automatic Toronto relief. Deferral saves $0 tax. OSTC senior increment $34.60/$38.56 belongs to #21/OTB coordination. |
+| QC | Municipal-tax-increase grant: implied 2023 mean about $145; new-roll increment up to $500 **plus carryover**. 2025/2026 income caps $62,900/$64,200; co-owners share one property entitlement. | Shelter allowance, age 50: $1,200–$2,040 yearly, assigned to #216. Existing solidarity housing component remains once; no separate senior housing increment identified. |
 | NB | No provincial senior property grant/renter-credit age increment identified for either year; no Moncton senior grant found. | Tax-increase deferral: official example $100 financed, $0 forgiven. General senior cash benefit $616/$629 belongs to #21. |
-| NS | Provincial rebate 50%, max $800, both program years. Halifax exemption material, with 2026 GIS exception to assessed-value cap; municipal scope decision. | Halifax financing of residual tax: illustrative $630 deferred, $0 extra forgiveness. 2026/27 municipal amount table remains unverified. |
+| NS | Provincial rebate 50%, max $800, both program years. Halifax default-city exemption included; 2026 GIS exception to assessment cap and 2026/27 income/max table verified. | Halifax financing of residual tax: illustrative $630 deferred, $0 extra forgiveness. New 2026/27 table minimum-payment row conflicts with AO10; exact low-bill awards remain qualified. |
 | PE | No provincial senior grant/renter-credit age increment identified for either year; no Charlottetown senior grant found. | Senior deferral: historical published mean $1,729 financed, $0 forgiven. Ordinary resident credit already embedded in reference rate; do not subtract again. |
 | NL | St. John's senior reduction 25% in both years: $682.50 on illustrative $2,730 levy. Retain local path. | No province-wide senior property grant/renter-credit age increment identified; general Seniors' Benefit belongs to #21, not a property grant. |
-| YT | HOG ordinary $450 / senior $500 on $3,000 tax; age increment $50, or $150 on $600 tax. 2025 continuation needs final source confirmation. | Tax deferral: illustrative $2,500 after grant financed, $0 forgiven. No separate renter-credit age increment identified. |
-| NT | Yellowknife combined municipal/territorial relief up to $2,000, independently dated in both years; $2,000 on $3,000 tax. Other communities require local rule/award. | No separate renter-credit age increment or senior tax deferral identified in checked law/guides. A discretionary full general-area exemption could be $3,000, not assumed automatically. |
-| NU | Territorial general-area and separate Iqaluit senior relief exist. **Award amount unresolved/material**; 100% of $3,000 is $3,000 exposure, not a verified typical award. | No separate renter-credit age increment or senior tax deferral identified. Do not ship $0 or import NT's $2,000 cap as a supposed NU rule. |
+| YT | HOG ordinary $450 / senior $500 on $3,000 tax; age increment $50, or $150 on $600 tax. Both years established by Act; senior 75% overrides ordinary low-bill floor. Survivor/residence rules verified. | Tax deferral: illustrative $2,500 after grant financed, $0 forgiven. No separate renter-credit age increment identified. |
+| NT | Yellowknife combined municipal/territorial relief up to $2,000 on default reference-city bills, independently dated in both years; $2,000 on $3,000 tax. | No automatic Yellowknife award on custom province bills. No separate renter-credit age increment/deferral identified. Other local/general-area awards are not inferred from province identity. |
+| NU | Territorial general-area and separate Iqaluit senior relief exist. Award amount remains unresolved/material after bounded follow-up; both paths are **not modelled**. | 100% of $3,000 is exposure only, not a verified award. No separate renter-credit age increment/deferral identified. Do not ship $0 or import NT's cap. |
 
 ## BC: ordinary grant, senior replacement and restoration
 
@@ -163,18 +186,26 @@ final OEPTC $390. Combined $890 equals $600 property plus $290 energy. A blanket
 the property bill would incorrectly remove the energy component; independent addition would overpay $500.
 Rent $1,000/month gives 2025 senior OEPTC $1,131 at $35,000 AFNI, with no OSHPTG.
 
-**Toronto municipal cancellation: retain as a material local scope decision.**
+**Toronto municipal cancellation: in, only for default reference-city bills.**
 [2025](22-property-tax-relief/sources/on-toronto-2025.txt) and
 [2026 budget](22-property-tax-relief/sources/on-toronto-2026.txt) permit cancellation of the qualifying
 annual increase with household income at most $60,000/$62,000 and assessment at most $975,000.
-Applicant is 65+, or meets the specified 60–64 federal-supplement/disability route; ownership/occupancy
-and good-standing requirements apply. [City guidance](22-property-tax-relief/sources/on-toronto-relief.txt)
-uses income of all resident owners plus spouses, not just applicant/spouse AFNI. Exact accepted income
-document year/line and levy exclusions need the application/bylaw before implementation. The budgets size
-an average-home municipal increase at about $268/$91.53; an eligible recipient may have that increase
-cancelled. These are not measured recipient means. The parallel increase-deferral program merely postpones
-the same tax and forgives $0. Cancellation already credited to a bill cannot also generate another grant
-on the cancelled amount. Utility rebates are distinct from property tax and are not inferred from a levy.
+Applicant is 65+, or meets the specified 60–64 OAS Allowance/disability route; ownership/occupancy
+and good-standing requirements apply. The [phase 1b municipal follow-up](22-property-tax-relief/municipal-follow-up.md)
+closes the income-document years: 2025 relief uses 2024 NOAs; 2026 uses 2025 NOAs for all resident owners
+and their spouses. Income is combined gross income, not AFNI. Line 15000 has historical official form
+support; contemporary forms omit the number, so its continuation is an explicit interpretation.
+
+Code 767 defines gross prior/current levies before relief, excludes construction/improvement-driven
+increases, and cancels eligible new increases **plus previously cancelled increments still payable**,
+with a $10 minimum and continuity conditions. Provincial education tax is not categorically excluded;
+City Building Fund is part of the levy. Utility charges and interest are not annual levy taxes.
+The official Code URL serves a 2023 consolidation; later forms/budget confirm operation and supersede
+old thresholds, but a final 2025/2026 structural consolidation was not found. Preserve that qualification.
+The budgets' average-home first-time examples are about $268/$91.53; with an approved $268 carryover,
+a 2026 continuing claimant can instead have $359.53. These examples are not flat province-wide grants.
+The parallel deferral forgives $0. A custom province bill receives no automatic Toronto cancellation;
+any cancellation already in its net amount remains part of bill accounting, never a second deduction.
 
 **Coordinate outside #22:** [OSTC senior-family threshold](22-property-tax-relief/sources/on-ostc-senior.txt)
 is $36,497/$37,273 for 2025/2026 benefits, versus ordinary $35,632/$36,309, with 4% reduction.
@@ -227,8 +258,22 @@ percentage of family income, capped by actual rent; month fractions then matter.
 `$903.57 − $287.49 = $616.08`, an increment of $41.08; 2026 is `$982.14 − $312.515 = $669.625`,
 about $44.63 above $625. The reduction starts at **zero income**, not at $40,000. Published rounded
 coefficients leave cent-level endpoint issues: 0.8214% of $40,000 is $328.56, and MB479 also prints
-a $47.91 monthly ordinary floor rather than exact $575/12. Verify statutory/monthly rounding against
-the final calculation before changing a locked annual baseline; do not invent tolerances or a new cliff.
+a $47.91 monthly ordinary floor rather than exact $575/12. Phase 1b checks the
+[statute's annual formulas](22-property-tax-relief/sources/gap-mb-statute-2025.txt): use the annual amount
+times eligible months/12, retaining the ordinary $575/$625 baselines. There is no statutory instruction
+to turn $575 into `12 × $47.91` or round the monthly intermediate first. Final CRA filing-line rounding
+remains unverified; the current form index lists 2025 and the expected 2026 PDF returns HTTP 404.
+The [Manitoba follow-up](22-property-tax-relief/manitoba-follow-up.md) records the searches, competing
+cent outcomes and independent annual cases. Do not invent tolerances or an income-$40,000 cliff.
+
+**School-tax input/reference source: closed for planning.** Custom bills need the actual gross eligible
+school amount and HATC already credited; missing school tax is unknown, not the whole property bill.
+Winnipeg's own typical-home publications use **Winnipeg School Division No. 1**. The collected city tables
+give residential portion 45%, school mills 14.630 in 2025 / 15.994 in 2026, and zero residential provincial
+ESL. Thus sourced reference school rates on full assessed value are 0.0065835 / 0.0071973. Use a named
+reference estimate for default-city bills only, never a city school share on a custom province bill.
+At $200,000 assessed value, school taxes are $1,316.70/$1,439.46, fully covered by HATC, leaving no
+senior rebate. The follow-up gives the full source/rate table, default estimate assumptions and net-bill cases.
 
 **Out as obsolete:** the senior EPTC top-up and School Tax Credit for Homeowners were removed effective
 2025; they are not additional current-year benefits. The 2027 $1,700 HATC and assessed-value taper must
@@ -241,9 +286,17 @@ and timing. Retain **NS's 50%, $800** rebate after municipal exemptions, with GI
 or Allowance eligibility age 60–64 in the program year. Use the named federal-benefit eligibility basis,
 not a generic line-23600 threshold or a universal age-65 gate. Official example: $971.77 eligible paid
 tax gives $485.89. A $1,830 prior-year bill gives $800; if municipal relief leaves $630, it gives $315.
-Halifax's 2025/26 exemption table gives $1,200–$1,400 before income scaling/minimum-payable limits;
-the 2026/27 table remains missing. From April 1, 2026, GIS recipients escape its new $425,000 taxable
+Halifax's tables give $1,200–$1,400 before income scaling/minimum-payable limits. Phase 1b found the
+2026/27 guide: income bands end at $39,000/$44,000/$49,000/$54,000/$59,000, with the same
+100/80/60/40/20% shares. Its printed minimum-payment row conflicts with AO10's formula; exact low-bill
+awards remain qualified. From April 1, 2026, GIS recipients escape its new $425,000 taxable
 assessment cap. Halifax household income includes other adults and enumerated exclusions; it is not AFNI.
+Municipal and provincial benefit years must not be collapsed: at $35,000 income and $1,830 gross
+2025 tax, Halifax 2025/26 relief is $960, leaving $870, so the **2026 provincial rebate is $435**.
+The **2026/27 Halifax entitlement** on an otherwise identical bill is $1,200; subtracting it from the
+2025 bill would incorrectly make the 2026 provincial rebate $315. This example assumes federal eligibility
+and an unchanged profile and holds each bill/benefit year explicit. Both municipal paths below apply only
+to default reference-city bills; custom net bills retain any actual municipal relief already reflected.
 **St. John's 25%** applies in 2025/2026 to qualifying resident senior owners with GIS, or age 60–64
 Allowance for Survivor recipients. Ordinary Allowance is not interchangeable with Survivor Allowance.
 Its $2,730 tax example saves $682.50; water charges are separate and not shown eligible for that percentage.
@@ -254,22 +307,42 @@ claimant is 65+, has 15 consecutive ownership years under the specified spouse r
 $62,900/$64,200 combined Quebec **line-275** limits. The one-unit residential principal home must have
 an eligible municipal bill. Use municipality-issued potential grant and previous-roll carryover, not total
 tax times a guessed percentage. New-roll increment is capped at $500 plus prior-roll amounts; the 2023
-rounded estimated cost $1.9 million divided by 13,077 recipients implies about $145.29. Exact assessment/co-owner
-allocation still needs the claim form/law before coding. Montreal's 2026–2028 valuation threshold is 18.41%.
+rounded estimated cost $1.9 million divided by 13,077 recipients implies about $145.29.
+**Assessment/co-owner gaps closed:** final claim forms for both years and Gazette enactments establish
+`D = round4(F/G + 0.075)`, adding **7.5 percentage points** to average dwelling-value growth.
+Without assessment averaging, the municipality calculates `min(500, A × max(0, B − C × D))`, adds
+the preceding roll's final-year awarded grant, then rounds the whole-property amount to whole dollars.
+The [QC appendix](22-property-tax-relief/west-qc.md) defines every variable, rate/rounding rule and source.
+Montreal's 18.41% threshold is consistent with a 10.91% average increase, not multiplication by 1.075.
+
+The engine should consume the municipality's **year-specific potential amount**, avoiding a new roll-averaging
+calculator. Each co-owner files separately and subtracts others' claims from the whole-property entitlement;
+allocation can be agreed and is not necessarily ownership-percentage based. Example: current potential
+$500 plus $120 preceding-roll awards gives $620, allocable $300/$320, never $620 each. The prior-roll
+final year is fixed while the current roll runs; it is not always the immediately preceding year. The grant
+is provincial and can apply to a custom bill when actual property/claim inputs establish eligibility.
 
 The [territorial appendix](22-property-tax-relief/territories.md) gives owner/residence/co-owner rules.
 **Yukon HOG** uses 50%/$450 ordinary versus 75%/$500 senior, age 65 in the calendar year, no income
-test, 184 residence days and paid taxes; ordinary relief is absent from the engine too. The precise senior
-low-bill floor/survivor rules and dated 2025 schedule remain unconfirmed; published 2024 and 2026 schedules
-match. **Yellowknife** is `2 × min(0.5 × eligibleTax, $1,000)`, combining city exemption and territory's
+test; ordinary relief is absent from the engine too. **Yukon gaps closed by the Act/history:** the same
+statutory amounts apply in 2025/2026; the senior 75% calculation expressly overrides the ordinary low-bill
+floor. At $150 tax, ordinary grant is $50 and senior grant $112.50; at $100, $0/$75. Residence may be
+from January 1 through application **or** 184 days. A qualifying survivor whose deceased spouse received
+the senior grant and who has not remarried uses the senior rule; a widowed flag alone is insufficient.
+Taxes must be paid or covered by an eligible non-defaulted senior tax-deferral agreement. The territorial
+grant can apply to custom bills with its required inputs. **Yellowknife** is
+`2 × min(0.5 × eligibleTax, $1,000)`, combining city exemption and territory's
 equal payment, verified for both years. Age 65 during the tax period, residence and eligible co-owners apply;
 prior NOAs establish dependency in some ownership cases, not a general AFNI taper. $1,200 eligible tax
 gets $1,200 relief; $3,000 gets $2,000. **NU** has a general-area route excluding Iqaluit and a separate
 Iqaluit application. No universal percentage/cap or recipient mean was established: $3,000 potential full
-exemption is a size exposure only. Retain unresolved; a local award rule is required for default calculations.
+exemption is a size exposure only. Both NU award paths stay **not modelled**. The bounded follow-up
+checked the Act, GN policy and Iqaluit bylaw/application sources; none establishes the current award.
+Iqaluit's 2025 100%/$300,000-cap exemption is for eligible organizations and explicitly excludes residences.
 
-The following housing transfers are **material**, outside a narrow property-tax-credit implementation
-unless expressly included; assign follow-up scope rather than treating them as immaterial:
+The following housing transfers are **out of #22 by the user's decision**, assigned to
+[#216](https://github.com/yuorme/tax-visualizer/issues/216). They remain material; the UI must state that
+they are **not modelled**. Their uncollected details no longer block #22:
 
 - **BC SAFER, age 60+:** [program](22-property-tax-relief/sources/bc-safer.txt) and
   [March 2025 release](22-property-tax-relief/sources/bc-safer-2025-release.txt). From April 2025, gross
@@ -318,7 +391,7 @@ Read-only inspection at the base commit found:
   bills as that documented gross convention. It has no field proving whether a newly added BC HOG or
   municipal grant was already deducted from a real notice; amount alone cannot establish this.
 
-Proposed accounting contract, to settle before UI/engine implementation:
+Accounting contract under the decided gross/net bill policy:
 
 ```text
 gross eligible levy = entered net levy + known grants/cancellations already in that levy
@@ -339,22 +412,27 @@ or net property plus only relief not yet reflected; never subtract the same amou
 An explicit zero bill keeps its meaning; missing is not zero. A home value of zero with a supplied owner bill
 must still enter owner eligibility. Custom rates/bills remain home-province-only as #11 specifies.
 
-## Decisions and missing evidence before phase 2
+## Phase 1b gap disposition
 
-1. Decide whether #22 includes reference-city municipal cancellation/exemption paths (Toronto, Halifax,
-   St. John's and territorial local rules), or tracks explicit follow-ups. Their amounts are material;
-   excluding them cannot be justified as a 0.1-point cut. A custom province bill does not identify its city.
-2. Decide whether to include age-gated housing allowances (BC SAFER, QC Shelter Allowance, MB Rent Assist)
-   here or create a housing-benefits follow-up. They are material and cannot silently disappear from senior estimates.
-3. Choose and label the app's benefit-period convention: annual benefit-year entitlement with reference-year
-   inputs/current-income approximation, versus actual calendar cash. Collect missing prior periods for the latter.
-4. Confirm gross/net bill input design and MB school-tax input/reference-school-rate source. Existing #11
-   saved values retain the documented pre-credit meaning; unknown new net bills need explicit handling.
-5. Collect NU's operative Iqaluit award rule and general-area award policy; Yukon 2025/low-bill/survivor
-   evidence; Halifax 2026/27 table; QC assessment/co-owner claim details; Toronto application income/levy
-   details; and MB final monthly/annual rounding. These are rule gaps, not findings of immateriality.
+Scope choices are settled above. No housing or calendar-cash collection is needed for #22. Evidence work
+was bounded to government search, linked publications and operative law/forms; the linked follow-ups record
+the queries/URLs, rejected documents and exact retrieval failures rather than treating missing evidence as zero.
 
-## Phase 1 validation
+| Original gap | Phase 1b result | Remaining limit |
+|---|---|---|
+| NU Iqaluit award and general-area policy | Rechecked municipal application/bylaw, GN policy/Act and 2025 process notice. The organization exemption cannot be reused for residences. | Neither current award amount established. Both paths stay **not modelled**. See territorial search log. |
+| Yukon 2025, low-bill and survivor rules | Closed by Act/history plus dated 2025 application notice. Senior overrides ordinary floor; survivor and alternative residence routes verified. | Raw Act/history downloads denied, so caches are explicit web-reader evidence, not invented original hashes. |
+| Halifax 2026/27 table | Closed: current guide/application and visual table establish bands, maximums and income documents. | Published minimum-payment row conflicts with AO10's midpoint formula. Legal formula has precedence; exact administrative low-bill awards need reconciliation. |
+| QC assessment and co-owner claim | Closed for the proposed published-potential input: both forms, 2017 enactment and 2021 cap amendment establish calculation, rounding, carryover and shared claims. | A new municipal assessment-averaging calculator is unnecessary and is not proposed. |
+| Toronto income year and eligible levy | Closed/qualified: 2024/2025 NOAs, resident-owner/spouse gross income, construction exclusions, prior cancellation history, $10 minimum, education/City Building treatment. | Contemporary forms omit income line number; line 15000 is a supported continuation interpretation. Code URL serves 2023; final 2025/2026 structural consolidation not retrieved. |
+| MB final rounding | Statutory annual amounts, eligible-month fraction and cent-level coefficient endpoints established; ordinary $575/$625 remain correct annual-model baselines. | CRA paper monthly floor conflicts with annual law; final filing-line rounding unverified, 2026 form unavailable. Do not claim return-level cent precision. |
+| MB school-tax input/reference source | Closed for planning: separate gross school/advance inputs; named Winnipeg School Division No. 1 rate/portion sources for both years and independent examples. | Default assessed-value/division proxy must be labelled estimated. Custom bills need actual school amount; missing is incomplete, not zero. |
+
+The remaining evidence limitations are NU award rules, Halifax's minimum-payment inconsistency,
+Toronto's current administrative/consolidation qualifications and Manitoba's final filing-rounding practice.
+They are not new requests to decide the already-approved scope. No implementation is authorized in this phase.
+
+## Validation
 
 Only this note and its issue-local evidence folder changed. `check-scope.mjs origin/main HEAD` reports
 `docs_only=false` because cached sources are `.txt`, so the full validation path was used. Under Node 26,
@@ -364,46 +442,70 @@ run reached Chromium startup but failed with `bootstrap_check_in ... Permission 
 escalated full rerun passed. The scope command, `node scripts/check-docs.mjs` and `git diff --cached --check`
 were also run on the final staged documents. No production or golden file changed.
 
+Phase 1b repeated `npm ci`, formatting (no fixes) and the full check under Node 26. All 3,567 tests,
+build and smoke checks passed again: 54 pages, 344 states and 54 contrast scans. The full check used
+the approved escalation for Chromium startup. Scope and Markdown checks are rerun on the final staged
+note/evidence updates; the file-ownership check confirms `src/`, `data/` and `tests/` remain untouched.
+
 ## Short implementation plan
 
 1. Add a pure `src/engine/property-relief.ts` evaluator, with data-driven year-specific amounts and a
    household relief result carrying gross levy, eligible components, amounts already applied and remaining
-   relief. Integrate once in `household.ts` after its current owner is finished. Follow `useCredits` consistently;
+   relief and explicit incomplete/not-modelled status. Integrate once in `household.ts` **after #21 merges**,
+   reconciling its net-income/OTB changes. Follow `useCredits` consistently;
    document whether the switch disables all new grants as it does existing property credits. Never test calendar
    years in a formula to change rule shape; use a new `program` id. Include ordinary BC/YT schedules so senior
-   increments and net ordinary bills reconcile correctly.
+   increments and net ordinary bills reconcile correctly. Gate city-only programs on the default reference-city
+   bill; custom province bills do not receive automatic municipal relief. Keep actually reported municipal
+   relief already embedded in a net bill in its ledger without treating it as a newly modelled award.
 2. Proposed ids: `bc-home-owner-grant`, `bc-low-income-grant-supplement`,
    `ontario-senior-homeowners-property-grant`, `ontario-energy-property-tax-credit-senior-overlap`,
    `mb-homeowners-school-tax-credit`, `mb-senior-school-tax-rebate`, `mb-renters-affordability-senior`,
    `qc-senior-municipal-tax-increase-grant`, `ns-senior-property-rebate`, `stjohns-senior-property-reduction`,
-   `yukon-home-owners-grant`, `nwt-yellowknife-senior-property-relief`; collect NU rules before enabling
-   `nunavut-senior-property-exemption`. If accepted, add `toronto-property-tax-increase-cancellation`,
-   `halifax-low-income-property-exemption` and distinct housing-allowance ids. ON/MB replacement ids prevent
-   applying old and new whole credits together. NT's match is inside one path, not another claimable benefit.
+   `yukon-home-owners-grant`, `nwt-yellowknife-senior-property-relief`,
+   `toronto-property-tax-increase-cancellation` and `halifax-low-income-property-exemption`.
+   NU remains not modelled pending a sourced award rule; no zero-value placeholder program. Housing allowance
+   ids/implementation belong to #216. ON/MB replacement ids prevent applying old and new whole credits together.
+   NT's match is inside one path. QC consumes year-specific municipal potential/carryover and reconciles co-owner
+   allocations; it does not implement the municipality's roll-averaging system. Toronto needs eligible current/prior
+   levy and approved cancellation history, or an explicit first-time-claimant estimate; no flat average-home grant.
 3. Existing files requiring changes: `src/data/schema.ts`, `src/engine/types.ts`, `credits.ts`,
    `household.ts`, `index.ts` exports and `history.ts` bill scaling; 2025/2026 provincial YAMLs for enabled
    programs; `src/ui/app.ts`, `index.html`, `notes.ts`, `defaults.ts`, `scenario-url.ts` plus bill/eligibility
-   controls and saved-state migration. Check retirement/editor inputs for the new reference-year and
+   controls and saved-state migration. Missing bill-basis metadata on old saves means **gross**; add an explicit
+   net choice plus credited relief amounts and MB gross school tax/advance inputs. Use a named sourced default
+   school component, with estimates identified, and keep custom bills without a school amount incomplete.
+   Check retirement/editor inputs for the new reference-year and
    federal-supplement distinctions. Add tax-source comments and `estimated: true` only for derived parameters,
    not for officially published amounts. Scope/coverage documentation will need orchestration approval outside
-   this inventory's file ownership. Add the deferral exclusion to the property tooltip.
+   this inventory's file ownership. Tooltips must explain city relief's default-bill limit, annual benefit-year
+   entitlement and prior-year bases, excluded deferrals and housing allowances not modelled under #216.
 4. **Goldens:** none move in phase 1. Existing senior-credit fixtures use `useCredits: false` and no tenure;
    do not rewrite them for this feature. New senior paths get separate golden cases. Enabling ordinary BC/YT
    HOG for all owners necessarily changes **BC/YT owner cases in 2025/2026 main goldens** (up to $570/$450
    ordinary relief); report that as an independently justified correction, not a senior-only baseline refresh.
    MB's corrected school basis may move **low-school-tax MB owner cases**, including explicit-bill fixtures
    in `tests/golden/features/property-tax-bill.json`; high-school-tax capped cases stay fixed. Broader Halifax
-   ordinary exemption would also move NS non-senior owners. Quantify only after approved implementation scope;
+   ordinary exemption also affects default-city NS non-senior owners; custom bills do not get that new award.
+   Toronto, St. John's and Yellowknife senior-only paths change eligible default-city cases; absent age or
+   disability fields must not invent an eligibility election. Quantify after implementation;
    preserve unrelated cells and all historical years. Do not claim exact changed-cell counts from an inventory.
 5. Add independent correctness tests and separate goldens for every selected rule and material boundary:
    BC ordinary/senior replacement, $350/$100 floors, value thresholds/zero endpoints, low bill before taper,
    $30,000/$32,000 supplement steps and $25 minimum; ON 64-before-benefit/65, mixed-age spouses, renter vs
    owner, both income thresholds, explicit grant cutoffs and $600 overlap example; MB $100/$235 remaining
    school tax, $40,000/$63,500 taper and earlier zero on small balances, credited advance, eligible months/days
-   and renter rounded coefficients; QC 65/15-year/income/carryover/co-owners; NS $1,600 cap boundary,
-   60–64 Allowance and municipal-first ordering; St. John's Survivor Allowance distinction; Yukon $600/$3,000
-   bill and 183/184 days; NT $1,200/$2,000/$3,000 bills and co-owners. NU cases wait for a sourced award rule.
+   and renter annual/month coefficients; QC 65/15-year/income, $500-plus-carryover cap, $300/$320 co-owner
+   allocation and fixed preceding-roll year; NS $1,600 cap boundary, 60–64 Allowance and **bill-year-correct**
+   municipal-first ordering; Halifax 2025/26 vs 2026/27 bands, $425,000/GIS exception and both competing
+   low-bill readings until reconciled; Toronto $10 minimum, construction exclusion, $268+$91.53 carryforward,
+   ownership/income membership and contemporary-form qualifications; St. John's Survivor Allowance distinction;
+   Yukon $100/$150/$600/$3,000 bills, ordinary vs senior floor, Jan-1/application or 184-day residence and
+   survivor-grant/remarriage conditions; NT $1,200/$2,000/$3,000 bills and co-owners. NU gets explicit
+   not-modelled status checks, not invented dollar expectations.
    Every implemented path also needs gross, ordinary-grant-net and fully-net custom bills with identical final
-   burden, explicit zero, unknown-basis handling, no grant on deferral alone, and home-only override checks.
+   burden for **provincial** grants; municipal programs instead need separate tests proving custom bills receive
+   no automatic city award. Test explicit zero, unknown-basis handling, no grant on deferral alone, home-only
+   overrides, annual benefit labels, housing exclusions and old-save gross defaults.
    Add serialization/reload and tooltip e2e assertions at 375/430/desktop in light/dark. Recalculate combined
    marginal-rate/benefit effects independently where new income-tested relief changes existing total results.

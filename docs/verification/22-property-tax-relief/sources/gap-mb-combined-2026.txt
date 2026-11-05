@@ -1,0 +1,42 @@
+Title: Winnipeg 2026 combined mill rates by school division
+URL: https://assessment.winnipeg.ca/Asmttax/pdfs/rates/CombinedMillRates.pdf
+Fetched: 2026-11-05
+SHA-256 of the original: a3794ed59475e9dbe5103f6266ceec5a89a21a4305ac6aff02965154a43f557b
+Publication date modified: 2026-03-26
+PDF pages: all 1
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 1 of 1 ---
+
+Res-3 Farm Statutory Commercial
+Property Class Code Single-Family Multi-Family Condo Sch-exmpt ESL- exmpt Pipeline Railways Other Higher Education Recreational Other
+Portioned Percentage 45% 45% 45% 45% 26% 50% 25% 65% 0% 10% 65%
+Municipal Mill Rate 13.372 13.372 13.372 13.372 13.372 13.372 13.372 13.372 13.372 13.372 13.372
+Education Support 0.000 0.000 0.000 0.000 0.000 7.511 7.511 7.511 7.511 7.511 7.511
+School Division
+Winnipeg 15.994 15.994 15.994 0.000 15.994 15.994 15.994 15.994 15.994 15.994 15.994
+St. James-Assiniboia 13.848 13.848 13.848 0.000 13.848 13.848 13.848 13.848 13.848 13.848 13.848
+Pembina Trails 11.851 11.851 11.851 0.000 11.851 11.851 11.851 11.851 11.851 11.851 11.851
+Seven Oaks 16.158 16.158 16.158 0.000 16.158 16.158 16.158 16.158 16.158 16.158 16.158
+Seine River 14.156 14.156 14.156 0.000 14.156 14.156 14.156 14.156 14.156 14.156 14.156
+Interlake 12.236 12.236 12.236 0.000 12.236 12.236 12.236 12.236 12.236 12.236 12.236
+Louis Riel 14.653 14.653 14.653 0.000 14.653 14.653 14.653 14.653 14.653 14.653 14.653
+River East Transcona 13.368 13.368 13.368 0.000 13.368 13.368 13.368 13.368 13.368 13.368 13.368
+Res-3 Farm Statutory Commercial
+Property Class Code Single-Family Multi-Family Condo Sch-exmpt ESL- exmpt Pipeline Railways Other Higher Education Recreational Other
+Portioned Percentage 45% 45% 45% 45% 26% 50% 25% 65% 0% 10% 65%
+School Division
+Winnipeg 29.366 29.366 29.366 13.372 29.366 36.877 36.877 36.877 36.877 36.877 36.877
+St. James-Assiniboia 27.220 27.220 27.220 13.372 27.220 34.731 34.731 34.731 34.731 34.731 34.731
+Pembina Trails 25.223 25.223 25.223 13.372 25.223 32.734 32.734 32.734 32.734 32.734 32.734
+Seven Oaks 29.530 29.530 29.530 13.372 29.530 37.041 37.041 37.041 37.041 37.041 37.041
+Seine River 27.528 27.528 27.528 13.372 27.528 35.039 35.039 35.039 35.039 35.039 35.039
+Interlake 25.608 25.608 25.608 13.372 25.608 33.119 33.119 33.119 33.119 33.119 33.119
+Louis Riel 28.025 28.025 28.025 13.372 28.025 35.536 35.536 35.536 35.536 35.536 35.536
+River East Transcona 26.740 26.740 26.740 13.372 26.740 34.251 34.251 34.251 34.251 34.251 34.251
+2026 MILL RATES
+Residential Institutional
+2026 COMBINED MILL RATES BY SCHOOL DIVISION
+Residential Institutional
+Last updated: April 7, 2025

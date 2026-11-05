@@ -1,0 +1,57 @@
+Title: Tax Bill Payment Assistance
+URL: https://www.halifax.ca/about-halifax/affordable-access-program/tax-bill-payment-assistance
+Fetched: 2026-11-05
+SHA-256 of the original: 58628bab96215ebff432e1aaf839ed4d46ae6271d93f80e84b5cee2e8ab12aa9
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+# Tax Bill Payment Assistance
+
+If you need help paying your property taxes, the municipality offers a few choices via the Affordable Access Program. You can apply for:
+
+- A payment plan: rather than two large payments, you can pay in smaller monthly amounts.
+- A rebate: if your household income is less than $59,000, the municipality will pay a portion of your property taxes. The amount of rebate varies with income and residential tax.
+- A rebate and a deferral: after the rebate has been applied to your tax account you can postpone payment of the remaining current year taxes. Interest is charged on the deferred tax amount at the rate set by Regional Council. The interest rate is Prime -2% for customers in the program and Prime +2% for customers who did not reapply.
+- A deferral of local improvement charges: you can postpone payment of all of your local improvement charge.
+
+Sample Notice of Assessment
+
+### How do I know if I qualify?
+
+To be eligible for a tax exemption in Halifax, you must meet the following requirements:
+
+- You must be the registered owner or co-owner of the property. Registration means that the title to the property is registered with the Nova Scotia Land Registry of Deeds in your name.
+- If there is more than one owner, all owners must sign the application form unless they live out of province.
+- All persons residing on the property must be disclosed on the application form.
+- If there is a living interest, title by adverse possession, power of attorney, or formal trustee, additional information is required, such as a copy of the will or trustee papers. Call 311 for assistance.
+- The combined gross household income of all persons living on the property must be $59,000 or less.
+- Your principal residence is located within the Halifax region and has a maximum taxable
+accessed value of $425,000 (residential property value) for the current year.
+Note: Proof of GIS and/or Disability income is required if your capped assessed value is
+over the annual maximum capped value.
+- The property must be your permanent place of residence (your “home”) not a cottage, second home, investment property holding, vacant lot, or income property.
+
+- A home includes a condominium, a mobile home, or a duplex.
+- Note: you can’t apply for a deferral of property if the property is a mobile home on land not owned by you. A mobile homeowner can apply for a rebate or payment plan but not a deferral.
+
+### How does a property tax exemption work?
+
+If your exemption is approved, you’ll be given a rebate on your property tax. This rebate will be applied against any amount outstanding to the municipality. If, after the taxes are paid, and if there are no deferred taxes or deferred or outstanding local improvement charges, you will be issued a refund by cheque or direct deposit. In every instance, you will be required to pay a minimum tax amount. See the table below for minimum tax amounts.
+
+### What do I need to include with my application?
+
+Download the information guide to learn what needs to be included.
+
+### How to apply for help in paying your property taxes
+
+You can apply for this assistance via the Affordable Access Program.
+
+### How much of a rebate can I get?
+
+This table shows the rebates available by income level, and the minimum tax you are required to pay.
+
+[image: income vs tax award amount]
+
+### Deferral of local improvement charges program
+
+Local improvement charges may be added as a lien against a property for services such as sewer, water, or road work. These charges are paid once a year. If you need help paying for a local improvement charge, you can set up a payment plan or apply to defer the charges.
