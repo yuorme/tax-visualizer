@@ -38,7 +38,7 @@ export function publicPensionReceipts(fed: Federal, x: Person) {
   return { oas, cppQpp: x.cppQpp ?? 0, monthly };
 }
 
-/** T1 worksheet line 23500 / 42200: income BEFORE this deduction, capped at gross OAS receipts.
+/** T1 worksheet line 23500 / 42200: income BEFORE this deduction, capped at OAS plus any federal supplements.
  * Withholding based on earlier returns is a payment on account, not this year's liability. */
 export function oasRecoveryTax(fed: Federal, gross: number, incomeBeforeRecovery: number): number {
   const q = fed.publicPensions?.params;

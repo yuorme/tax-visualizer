@@ -44,6 +44,8 @@ export interface Person {
   oth?: number; // omitted in legacy inputs
   retirementIncome?: RetirementReceipt[]; // additional taxable domestic receipts; never also enter them in oth
   oas?: boolean; // opt in to full OAS, requires age + birthMonth; remove OAS from oth, never copy it
+  gis?: boolean; // full-residency GIS opt-in; zero in months without OAS; requires age + birthMonth
+  allowance?: boolean; // eligible resident spouse opt-in; requires age + birthMonth and partner receiving GIS
   cppQpp?: number; // gross annual retirement benefits, additional to oth; does not elect to stop contributions
   cg: number;
   ed: number;
@@ -91,6 +93,7 @@ export interface Driving {
 export type Credit = [name: string, amount: number];
 
 export interface Ctx {
+  netFederalSupplements?: number; // calculated GIS + Allowance, included in net income, deducted from taxable
   senior?: {
     federalTransfer: number;
     provincialTransfer: number;

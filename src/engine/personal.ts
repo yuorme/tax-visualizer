@@ -6,7 +6,7 @@ import {
   employeeRetirementPayrollOf,
   healthPremium,
   netIncomeParts,
-  netOf,
+  netIncomeTotal,
   payrollDetailsOf,
   rrspRoom,
   workerDeductionOf,
@@ -57,14 +57,20 @@ export function personTax(fed: Federal, p: Province, x: Person, sp: Extra, ctx: 
   const qc = p.system === "quebec";
   const { pay, selfEmployment: self } = payrollDetailsOf(fed, p, x);
   const retirement = employeeRetirementPayrollOf(fed, p, x)?.retirement;
-  const ti = netOf(fed, p, x, ctx.childcareDeduction); // taxable income (federal)
-  const incomeParts = netIncomeParts(fed, p, x, ctx.childcareDeduction);
+  const supplements = ctx.netFederalSupplements ?? 0;
+  const incomeParts = netIncomeParts(fed, p, x, ctx.childcareDeduction, undefined, ctx.netFederalSupplements);
+  const net = Math.max(0, netIncomeTotal(incomeParts));
   const recovery = incomeParts.oasRecovery ?? 0;
+  const otherPaymentsDeduction = Math.max(0, supplements - Math.max(0, recovery - (incomeParts.oas ?? 0)));
+  const ti = Math.max(0, netIncomeTotal(incomeParts) - otherPaymentsDeduction);
   const workerDed = workerDeductionOf(p, x);
   // TP-1 line 250 imports federal line 23500, including when federal childcare changes recovery.
-  const provincialNet = qc ? netOf(fed, p, x, 0, incomeParts.oasRecovery) : ti;
-  const tiP = Math.max(0, provincialNet - workerDed); // Quebec allows an extra deduction for workers
-  const senior = seniorBases(fed, p, x, ti, s.useBpa);
+  const provincialUnfloored = qc
+    ? netIncomeTotal(netIncomeParts(fed, p, x, 0, incomeParts.oasRecovery, ctx.netFederalSupplements))
+    : netIncomeTotal(incomeParts);
+  const provincialNet = Math.max(0, provincialUnfloored);
+  const tiP = Math.max(0, provincialUnfloored - otherPaymentsDeduction - workerDed);
+  const senior = seniorBases(fed, p, x, net, s.useBpa);
   const seniorRule = p.seniorCredits;
   const craSenior = seniorRule && !("program" in seniorRule) ? seniorRule : undefined;
   const cash = cashOf(x, fed);
@@ -73,7 +79,7 @@ export function personTax(fed: Federal, p: Province, x: Person, sp: Extra, ctx: 
   const k = qc ? 1 - fed.quebecAbatement : 1;
   const fr = fed.brackets[0][1],
     prr = p.brackets[0][1];
-  const fAmt = s.useBpa ? phased(fed.basicPersonalAmount, ti) : 0,
+  const fAmt = s.useBpa ? phased(fed.basicPersonalAmount, net) : 0,
     pAmt = s.useBpa ? provincialBpa(fed, p, provincialNet) : 0;
   const fBpaFull = fAmt * fr,
     pBpaFull = pAmt * prr;
@@ -177,13 +183,20 @@ export function personTax(fed: Federal, p: Province, x: Person, sp: Extra, ctx: 
     lowRule && p.lowIncomeReduction
       ? (ctx.lowIncomeReduction ??
         (ctx.claims
-          ? lowIncomeReduction(p.lowIncomeReduction, ti, ctx.famNet ?? ti, !!ctx.fam, ctx.kidsAll || 0, seniorReduction)
+          ? lowIncomeReduction(
+              p.lowIncomeReduction,
+              net,
+              ctx.famNet ?? net,
+              !!ctx.fam,
+              ctx.kidsAll || 0,
+              seniorReduction,
+            )
           : 0))
       : 0;
   let lowRed = 0;
   if (ctx.claims && p.lowIncomeReduction && !lowRule)
     lowRed = tp(
-      lowIncomeReduction(p.lowIncomeReduction, ti, ctx.famNet ?? ti, !!ctx.fam, ctx.kidsAll || 0, seniorReduction),
+      lowIncomeReduction(p.lowIncomeReduction, net, ctx.famNet ?? net, !!ctx.fam, ctx.kidsAll || 0, seniorReduction),
     );
   // PE428 lines 66/87 reduce tax before FTC; unused reduction is measured against line 65.
   if (lowRule?.order === "before-foreign-tax-credit") lowRed = tp(lowFull);
@@ -197,22 +210,23 @@ export function personTax(fed: Federal, p: Province, x: Person, sp: Extra, ctx: 
   if (p.lift) {
     const q = p.lift;
     const liftFull = Math.min(q.max, q.rate * Math.max(0, x.ord)); // earned on employment income, reduced on net
-    const liftCut = q.phaseOut * Math.max(0, ti - q.threshold, (ctx.famNet ?? ti) - q.familyThreshold);
+    const liftCut = q.phaseOut * Math.max(0, net - q.threshold, (ctx.famNet ?? net) - q.familyThreshold);
     lift = Math.min(provPre, Math.max(0, liftFull - liftCut));
     provPre -= lift;
   }
   if (p.bcTaxReduction) {
     const q = p.bcTaxReduction;
-    bcRed = Math.min(provPre, Math.max(0, q.max - q.rate * Math.max(0, ti - q.threshold)));
+    bcRed = Math.min(provPre, Math.max(0, q.max - q.rate * Math.max(0, net - q.threshold)));
     provPre -= bcRed;
   }
   // Foreign tax credit: federal first, limited to basic federal tax × the foreign share of net income (the Quebec
   // abatement is a separate 16.5% of basic federal tax and doesn't reduce that limit), then provincial.
   const wh = x.fd * s.whRate,
-    share = ti > 0 ? x.fd / ti : 0;
+    share = ti > 0 ? x.fd / ti : 0; // T2209 note 3 deducts line 25000 from net income
   const fedBasic = fLeft;
   const fFtc = Math.min(wh, fedBasic * share, fedBasic * k);
-  const provincialShare = provincialNet > 0 ? x.fd / provincialNet : 0;
+  const provincialFtcIncome = Math.max(0, provincialUnfloored - otherPaymentsDeduction);
+  const provincialShare = provincialFtcIncome > 0 ? x.fd / provincialFtcIncome : 0;
   // T2036 line 5 also caps the credit at tax otherwise payable when foreign income exceeds net income.
   const pFtc = Math.min(wh - fFtc, provPre * provincialShare, provPre);
   // NB/NL/NS apply reductions after FTC. Allocation changes the amount, never the form's order.
@@ -284,11 +298,20 @@ export function personTax(fed: Federal, p: Province, x: Person, sp: Extra, ctx: 
     // Figures the page shows that aren't steps of the calculation above. They sit in a nested object because the
     // golden snapshot (tests/golden/snapshot.mjs) locks every top-level number of this result.
     breakdown: {
+      ...(ctx.netFederalSupplements !== undefined
+        ? {
+            netFederalSupplements: supplements,
+            netIncomeTotal: net,
+            provincialNetIncome: Math.max(0, provincialUnfloored - workerDed),
+            otherPaymentsDeduction,
+            supplementRecovery: supplements - otherPaymentsDeduction,
+          }
+        : {}),
       ...(x.oas !== undefined || x.cppQpp !== undefined
         ? {
             publicPensions: {
               ...publicPensionReceipts(fed, x),
-              recoveryIncome: ti + recovery,
+              recoveryIncome: net + recovery,
               recoveryTax: recovery,
               recoveryDeduction: recovery,
               withholding: null, // unknown; not inferred from this year's liability

@@ -1,0 +1,195 @@
+Title: CanadaEmployment and
+URL: https://publications.gc.ca/collections/collection_2025/edsc-esdc/em9/Em9-7-2025-eng.pdf
+Fetched: 2026-11-04
+SHA-256 of the original: 2beb2473da3fee3db40b0a7f54b84e6ca67835dabfbce24dad1fc7975d584482
+Publication date modified: 2025-12-03
+PDF pages: 166-170 of 171
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 166 of 171 ---
+
+Reduction point: Level of income where the GIS, the ALW or the top-ups start being paid at a different rate. Generally, this point corresponds
+to the exemption point.
+Cut-off point: Level of income where the GIS, the ALW the top-ups ceases to be paid and then equals zero.
+Paid to an OAS pensioner who does not have a spouse or a common-law partner.
+Under the reduction point, which is at $24.00 of annual income, the GIS is paid at the maximum single rate. The GIS is paid
+at a partial rate from $24.00 of annual income to the cut-off point, where the GIS becomes zero.
+To calculate the cut-off point, the monthly GIS at the maximum single rate (excluding the top-up amount) is rounded up to the next dollar value and
+then multiplied by 2 and by 12 (to get an annual figure). The multiplication by 2 corresponds to a reduction rate of 50% in the GIS.
+E.g. for July 2025:
+Reduction point= $24.00
+GIS maximum single rate = $1,097.75 - $170.04 = $927.71 (rounded up) = $928.00
+Additional Amount (GIS top-up):
+Under the reduction point, which is $2,000.00 of annual income plus $48.00, the GIS top-up is paid at the maximum single rate. The top-up is then paid
+at a partial rate from $2,048.00 of annual income to the cut-off point, where the top-up becomes zero.
+To calculate the cut-off point for the GIS top-up, the monthly GIS top-up at the maximum single rate is rounded up to the next dollar
+value and then multiplied by 4 and by 12 (to get an annual figure) and added to $2,000.00. The multiplication by 4 corresponds to a 25% reduction
+in the GIS top-up.
+E.g. for July 2025
+Reduction point = $2,000.00 + $48.00 = $2,048.00
+Top-up maximum single rate = $170.04 (rounded up) = $171.00
+Cut-off point = $171.00 x 4 x 12 + $2,000 = $10,208.00
+Source: Old Age Security Act.
+E. THE GUARANTEED INCOME SUPPLEMENT (GIS), THE ALLOWANCES (ALWs) AND THE TOP-UPS
+CALCULATION OF INCOME REDUCTION AND CUT-0FF POINT
+E.1 GIS SINGLE
+Cut-off point = $928.00 x 2 x 12 = $22,272.00
+Seniors and Pensions Policy Secretariat
+Employment and Social Development Canada
+Fall 2025
+Secrétariat des politiques sur les aînés et les pensions
+Emploi et Développement social Canada
+Automne 2025
+
+--- PDF page 167 of 171 ---
+
+Paid to a spouse or common-law partner of someone who receives an OAS pension.
+Under the reduction point, which is at $48.00 of annual combined income of the couple, the GIS is paid at the maximum couple rate. The GIS
+is paid at a partial rate from $48.00 of annual income to the cut-off point, where GIS becomes zero.
+To calculate the cut-off point, the monthly GIS at the maximum couple rate (excluding the top-up amount) is rounded up to
+the next dollar value and then multiplied by 4 and by 12 (to get an annual figure). The multiplication by 4 corresponds to a reduction rate of 25%
+per pensioner in GIS.
+E.g. for July 2025:
+Reduction point = $48.00
+GIS maximum couple rate = $660.78 - $48.18 = $612.60 (rounded up) = $613.00
+Cut-off point = $613.00 x 4 x 12 = $29,424.00
+Additional Amount (GIS top-up):
+Under the reduction point, which is $4,000.00 of annual income plus $96.00, the GIS top-up is paid at the maximum couple rate. The top-up is then paid
+at a partial rate from $4,096.00 of annual income to the cut-off point, where the top-up becomes zero.
+To calculate the cut-off point for the GIS top-up, the monthly GIS top-up at the maximum couple rate is rounded up to the next dollar
+value and then multiplied by 8 and by 12 (to get an annual figure) and added to $4,000.00. The multiplication by 8 corresponds to a 12.5% reduction
+in the GIS top-up per pensioner.
+E.g. for July 2025:
+Reduction point = $4,000.00 + $96.00 = $4,096.00
+Top-up maximum couple rate = $48.18 (rounded up) = $49.00
+Cut-off point = $49.00 x 8 x 12 + $4,000.00 = $8,704.00
+Source: Old Age Security Act.
+E. THE GUARANTEED INCOME SUPPLEMENT (GIS), THE ALLOWANCES (ALWs) AND THE TOP-UPS
+CALCULATION OF INCOME REDUCTION AND CUT-0FF POINT
+E.2 GIS SPOUSE/COMMON-LAW PARTNER OF SOMEONE WHO RECEIVES AN OAS PENSION (COUPLE RATE)
+Seniors and Pensions Policy Secretariat
+Employment and Social Development Canada
+Fall 2025
+Secrétariat des politiques sur les aînés et les pensions
+Emploi et Développement social Canada
+Automne 2025
+
+--- PDF page 168 of 171 ---
+
+Paid to an OAS pensioner whose spouse or common-law partner does not receive an OAS pension.
+The GIS is paid at the maximum single rate up to the reduction point, which corresponds to the equivalent of an annual OAS pension for the current month
+rounded to the highest multiple of 4 plus $48.00. The GIS is paid at a partial rate from the reduction point to the cut-off point, where GIS becomes zero.
+To calculate the reduction point, the maximum monthly amount of OAS for the current quarter is divided by 4 and rounded up to the next highest dollar.
+This amount is then multiplied by 4 and by 12 (to get an annual figure). This could correspond to a mock reduction rate of 100% in the annual OAS pension. The amount so obtained
+represents the lower limit of the last income bracket where the GIS is still paid at the maximum single rate. The amount of $48.00 must be added to the
+final reduction point.
+To calculate the cut-off point, the monthly GIS at the maximum single rate (excluding the top-up amount) is rounded up to the next dollar value and then multiplied by 4
+and by 12 (to get an annual figure). The multiplication by 4 corresponds to a reduction rate of 25% in the GIS. Then, this is added to the reduction point.
+E.g. for July 2025:
+OAS maximum amount = OAS/4 = $734.95/4 = $183.74 (rounded up) = $184.00
+Reduction point = ($184.00 x 4 x 12) + $48.00 = $8,880.00
+GIS maximum single rate = $1,097.75 - $170.04 = $927.71 (rounded up) = $928.00
+Cut-off point = ($928.00 x 4 x 12) + ($184.00 x 4 x 12) = $53,376.00
+Additional Amount (GIS top-up):
+Under the reduction point, which is $4,000.00 of annual income plus $96.00, the GIS top-up is paid at the maximum single rate. The top-up is then paid
+at a partial rate from $4,096.00 of annual income to the cut-off point, where the top-up becomes zero.
+To calculate the cut-off point for the GIS top-up, the monthly GIS top-up at the maximum single rate is rounded up to the next dollar
+value and then multiplied by 8 and by 12 (to get an annual figure) and added to $4,000.00. The multiplication by 8 corresponds to a 12.5% reduction
+in the GIS top-up.
+E.g. for July 2025:
+Reduction point: $4,000.00 + $96.00 = $4,096.00
+Top-up maximum single rate = $170.04 (rounded up) = $171.00
+Cut-off point = $171.00 x 8 x 12 + $4,000.00 = $20,416.00
+Source: Old Age Security Act.
+CALCULATION OF INCOME REDUCTION AND CUT-0FF POINT
+E.3 GIS SPOUSE/COMMON LAW-PARTNER OF SOMEONE WHO DOES NOT RECEIVE AN OAS PENSION
+E. THE GUARANTEED INCOME SUPPLEMENT (GIS), THE ALLOWANCES (ALWs) AND THE TOP-UPS
+Seniors and Pensions Policy Secretariat
+Employment and Social Development Canada
+Fall 2025
+Secrétariat des politiques sur les aînés et les pensions
+Emploi et Développement social Canada
+Automne 2025
+
+--- PDF page 169 of 171 ---
+
+Paid to a spouse or common-law partner of someone who receives an Allowance.
+The GIS is paid at the maximum couple rate up to the reduction point, which represents 4/3rds of the equivalent of an annual OAS pension
+for the current month rounded to the next highest multiple of 3, plus $48.00. The GIS is paid at a partial rate from the reduction point to the
+cut-off point, where GIS becomes zero.
+To calculate the reduction point, the maximum monthly amount of OAS for the current quarter is divided by 3 and rounded up to the next highest dollar value.
+Then, it is multiplied by 4 and by 12 (to get an annual figure). The division by 3 and the multiplication by 4 correspond to a mock reduction rate of 75%
+in OAS annual amount. The amount so obtained represents the lower limit of the last income bracket where the GIS is still paid at the maximum couple rate.
+The amount of $48.00 must be added to the final reduction point.
+The cut-off point for the GIS benefit for the spouse/common-law partner of someone who receive an allowance is the same as the cut-off point for a GIS benefit of someone
+whose spouse is not receiving an OAS pension. For that reason, to calculate the cut-off point, the monthly GIS at the maximum single rate (excluding the top-up amount)
+is rounded up to the next dollar value and then multiplied by 4 and by 12 (to get an annual figure). The multiplication by 4 corresponds to a reduction rate of 25%
+in the GIS. Then, this is added to the reduction point for the GIS benefit for someone whose spouse is not receiving an OAS pension.
+E.g. for July 2025:
+Reduction point = ($245.00 x 4 x 12) + $48.00 = $11,808.00
+GIS maximum single rate = $1,097.75 - $170.04 = $927.71 (rounded up) = $928.00
+Cut-off point = ($928.00 x 4 x 12) + ($184.00 x 4 x 12) = $53,376.00
+Additional Amount (GIS top-up):
+Under the reduction point, which is $4,000.00 of annual income plus $96.00, the GIS top-up is paid at the maximum couple rate. The top-up is then
+paid at a partial rate from $4,096.00 of annual income to the cut-off point, where the top-up becomes zero.
+To calculate the cut-off point for the GIS top-up, the monthly GIS top-up at the maximum couple rate is rounded up to the next dollar
+value and then multiplied by 8 and by 12 (to get an annual figure) and added to $4,000. The multiplication by 8 corresponds to a 12.5% reduction
+in the GIS top-up.
+E.g. for July 2025:
+Reduction point =$4,000.00 + $96.00 = $4,096.00
+Top-up maximum couple rate = $48.18 (rounded up) = $49.00
+Cut-off point = $49.00 x 8 x 12 + $4,000.00 = $8,704.00
+Source: Old Age Security Act.
+E. THE GUARANTEED INCOME SUPPLEMENT (GIS), THE ALLOWANCES (ALWs) AND THE TOP-UPS
+CALCULATION OF INCOME REDUCTION AND CUT-0FF POINT
+OAS maximum amount = OAS/3 = $734.95/3 = $244.98 (rounded up) = $245.00
+E.4 GIS SPOUSE/COMMON-LAW PARTNER OF SOMEONE WHO IS AN ALLOWANCE BENEFICIARY (COUPLE RATE)
+Seniors and Pensions Policy Secretariat
+Employment and Social Development Canada
+Fall 2025
+Secrétariat des politiques sur les aînés et les pensions
+Emploi et Développement social Canada
+Automne 2025
+
+--- PDF page 170 of 171 ---
+
+The Allowance (ALW) is paid to the spouse/common-law partner aged 60 to 64 of someone who receives the GIS. The ALW is composed of two portions:
+the OAS equivalent portion, paid at the full rate, and the GIS equivalent portion, paid at the maximum couple rate.
+Under the reduction point, which is $48.00 of annual combined income of the couple, the ALW is paid at the maximum rate. From $48.00 of annual income to the first
+cut-off point, the OAS equivalent portion of ALW is paid at a partial rate while the GIS equivalent portion continues to be paid at the maximum couple rate. Between
+the first cut-off point and the second reduction point, the OAS equivalent portion of ALW equals zero, while the GIS equivalent portion is still paid at full rate.
+From the second reduction point to the second cut-off point, the GIS equivalent portion is paid at a partial rate. At the second cut-off point, ALW equals zero.
+To calculate the first cut-off point, the maximum monthly amount of OAS for the current quarter is divided by 3 and rounded up to the next highest dollar. Then,
+it is multiplied by 4 and by 12 (to get an annual figure). The division by 3 and the multiplication by 4 correspond to a reduction rate of 75% in the OAS equivalent portion.
+The amount so obtained represents the lower limit of the last income bracket where the OAS equivalent portion equals zero but the GIS equivalent portion is still paid at
+maximum couple rate. This is the first cut-off point. The amount of $48.00 must be added to find the second reduction point where the GIS portion begins to be reduced.
+To calculate the second cut-off point (where the GIS equivalent portion becomes zero), the monthly GIS at the maximum couple rate (excluding the top-up amount) is
+rounded up to the next dollar value and multiplied by 4 and by 12 (to get an annual figure). The multiplication by 4 corresponds to a reduction rate of 25% in the GIS
+portion. Then, it is added to the first cut-off point.
+E.g. for July 2025:
+First reduction point = $48.00
+First cut-off point = ($245.00 x 4 x12) = $11,760.00
+Second reduction point = $11,760.00 + $48.00 = $11,808.00
+GIS maximum couple rate = $660.78 - $48.18 = $612.60 (rounded up) = $613.00
+Cut-off point = ($613.00 x 4 x 12) + ($245.00 x 4 x 12) = $41,184.00
+Additional Amount (ALW top-up):
+Under the reduction point, which is $4,000.00 of annual income plus $96.00, the ALW top-up is paid at the maximum couple rate. The top-up is then paid at a
+partial rate from $4,096.00 of annual income to the cut-off point, where the top-up becomes zero.
+To calculate the cut-off point for the ALW top-up, the monthly ALW top-up at the maximum couple rate is rounded up to the next dollar value and then multiplied by
+8 and by 12 (to get an annual figure) and added to $4,000.00. The multiplication by 8 corresponds to a 12.5% reduction in the ALW top-up.
+E.g. for July 2025:
+Reduction point = $4,000.00 + $96.00 = $4,096.00
+Top-up maximum couple rate = $48.18 (rounded up) = $49.00
+Cut-off point = $49.00 x 8 x 12 + $4,000.00 = $8,704.00
+Source: Old Age Security Act.
+CALCULATION OF INCOME REDUCTION AND CUT-0FF POINT
+E.5 ALLOWANCE
+OAS maximum amount = OAS/3 = $734.95/3 = $244.98 (rounded up) = $245.00
+E. THE GUARANTEED INCOME SUPPLEMENT (GIS), THE ALLOWANCES (ALWs) AND THE TOP-UPS
+Seniors and Pensions Policy Secretariat
+Employment and Social Development Canada
+Fall 2025
+Secrétariat des politiques sur les aînés et les pensions
+Emploi et Développement social Canada
+Automne 2025

@@ -6,6 +6,36 @@
 # (zero for every household the model can represent).
 year: 2025
 
+# Full resident GIS and spouse Allowance, using quarterly monthly amounts and historical-income proxies.
+gisAllowance:
+  program: gis-allowance-income-bands
+  # Top-ups are recovered exactly from published table rows after their exhaustion; see #19 verification.
+  # estimated marks derived components, not a forecast of unpublished rates.
+  estimated: true
+  params:
+    allowanceMinimumAge: 60
+    allowanceEndAge: 65
+    effectiveMonthOffset: 1
+    earningsExemption: 5000
+    partialExemptionRange: 10000
+    partialExemptionRate: 0.5
+    excessDividendCreditMultiplier: 3
+    singleIncomeStep: 24
+    coupleIncomeStep: 48
+    singleTopUpThreshold: 2000
+    coupleTopUpThreshold: 4000
+    singleTopUpStep: 48
+    coupleTopUpStep: 96
+    monthlyReduction: 1
+    pensionRounding: 4
+    allowancePensionRounding: 3
+    allowanceReduction: 3
+    quarterly:
+      - {singleMaximum: 1086.88, coupleMaximum: 654.23, singleTopUp: 168.36, coupleTopUp: 47.70}
+      - {singleMaximum: 1086.88, coupleMaximum: 654.23, singleTopUp: 168.36, coupleTopUp: 47.70}
+      - {singleMaximum: 1097.75, coupleMaximum: 660.78, singleTopUp: 170.04, coupleTopUp: 48.18}
+      - {singleMaximum: 1105.43, coupleMaximum: 665.41, singleTopUp: 171.23, coupleTopUp: 48.52}
+
 # Full resident OAS, no deferral. Monthly receipts (65–74, 75+) in chronological quarters,
 # not an annualized December run rate. Receipt/increase starts the month after the birthday.
 publicPensions:
@@ -146,6 +176,18 @@ fuelTax:
   gasoline: 0.10
 
 sources:
+  - label: "ESDC 2025 Q1 benefit tables 1\u20134 (GIS, Allowance, income bands)"
+    url: https://publications.gc.ca/collections/collection_2025/edsc-esdc/SG3-3-2025-1.pdf
+  - label: "ESDC 2025 Q2 benefit tables 1\u20134 (GIS, Allowance, income bands)"
+    url: https://publications.gc.ca/collections/collection_2025/edsc-esdc/SG3-3-2025-2.pdf
+  - label: "ESDC 2025 Q3 benefit tables 1\u20134 (GIS, Allowance, income bands)"
+    url: https://publications.gc.ca/collections/collection_2025/edsc-esdc/SG3-3-2025-3.pdf
+  - label: "ESDC 2025 Q4 benefit tables 1\u20134 (GIS, Allowance, income bands)"
+    url: https://publications.gc.ca/collections/collection_2025/edsc-esdc/SG3-3-2025-4.pdf
+  - label: "Old Age Security Act, income, GIS and Allowance rules"
+    url: https://laws-lois.justice.gc.ca/eng/acts/O-9/FullText.html
+  - label: "Service Canada ISP3026, income and earnings exemptions"
+    url: https://catalogue.servicecanada.gc.ca/apps/EForms/pdf/en/ISP-3026.pdf
   - label: "ESDC OAS 2025 quarter 1, Table 5 and recovery footnote"
     url: "https://www.canada.ca/en/employment-social-development/programs/pensions/pension/statistics/2025-quarterly-january-march.html"
   - label: "ESDC OAS 2025 quarter 2, Table 5 and recovery footnote"

@@ -1,0 +1,58 @@
+Title: Other payments deduction – Personal income tax
+URL: https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/tax-return/completing-a-tax-return/deductions-credits-expenses/line-25000-other-payments-deduction.html
+Fetched: 2026-11-04
+SHA-256 of the original: b88015fa7936948614cffbcf4537a2956ac0be48ce2ceb650ea5f9df552e0109
+Publication date modified: 2026-06-16
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+# Other payments deduction – Personal income tax
+
+- Line 25000
+- Tax year: 2025| Prior tax years: 2024 and earlier
+
+Generally, you can deduct the amount from line 14700 of your return on line 25000. This amount on line 14700 is the total of:
+
+- Line 14400 – Workers' compensation benefits
+- Line 14500 – Social assistance payments
+- Line 14600 – Net federal supplements paid
+
+## Who must report this amount
+
+If you reported net federal supplements on line 14600 of your return, you may not be entitled to claim the whole amount from line 14700 of your return. If so, complete the chart for line 25000 using your Federal Worksheet.
+
+## How to report this amount
+
+If the result of your calculation is more than $93,454, use the chart below to find out how much you can deduct. Otherwise, enter the amount from line 14700 of your return on line 25000 of your return.
+
+### Completing your tax return
+
+Enter the amount from line 14700 of your return on line 25000 if you did not enter an amount on line 14600.
+
+### Special calculation if an amount is reported on line 14600 and line 23500
+
+Use the chart below to help you calculate the amount to enter on line 25000.
+
+Calculation chart for line 25000
+Description | Amount column 2 | Amount column 3 | Amount column 4 | Line number
+Net federal supplements paid (line 14600) | | | | 1
+Social benefits repayment (line 23500) | | | | 2
+Old age security (OAS) pension (line 11300) | | | | 3
+EI benefits repayment (line 7 of the chart for line 23500 of your Federal Worksheet) | + | | | 4
+Line 3 plus line 4 | = | - | | 5
+Line 2 minus line 5 (if negative, enter 0) | | = | - | 6
+Line 1 minus line 6 (if negative, enter 0) | | | | 7
+Workers' compensation benefits (line 14400) | | | + | 8
+Social assistance payments (line 14500) | | | + | 9
+Other payments deduction: Add lines 7 to 9. Enter this amount on line 25000 of your return. | | | = | 10
+
+## Forms and publications
+
+- Income Tax Package
+
+## Related topics
+
+- Taxes when you retire or turn 65 years old
+- Line 14400 – Workers' compensation benefits
+- Line 14500 – Social assistance payments
+- Line 14600 – Net federal supplements paid
