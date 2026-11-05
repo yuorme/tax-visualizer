@@ -1,0 +1,1165 @@
+{
+  "source": "Independent TP-1 arithmetic; docs/verification/205-qc-line-431.md",
+  "cases": [
+    {
+      "id": "2019-dividends",
+      "year": 2019,
+      "people": [
+        {
+          "ed": 20000
+        },
+        {
+          "oth": 40000,
+          "ed": 2000
+        }
+      ],
+      "expected": {
+        "prov": 2396.892,
+        "transfer": [0, 1401.63],
+        "applied": [0, 1401.63]
+      }
+    },
+    {
+      "id": "2019-unused-bpa",
+      "year": 2019,
+      "people": [
+        {},
+        {
+          "oth": 40000
+        }
+      ],
+      "expected": {
+        "prov": 1419.3,
+        "transfer": [0, 2290.35],
+        "applied": [0, 2290.35]
+      }
+    },
+    {
+      "id": "2019-bpa-and-dividends",
+      "year": 2019,
+      "people": [
+        {
+          "ed": 2000
+        },
+        {
+          "oth": 40000
+        }
+      ],
+      "expected": {
+        "prov": 1508.172,
+        "transfer": [0, 2201.478],
+        "applied": [0, 2201.478]
+      }
+    },
+    {
+      "id": "2019-recipient-cap",
+      "year": 2019,
+      "people": [
+        {
+          "ed": 20000
+        },
+        {
+          "oth": 20000
+        }
+      ],
+      "expected": {
+        "prov": 0,
+        "transfer": [0, 1401.63],
+        "applied": [0, 709.65]
+      }
+    },
+    {
+      "id": "2019-both-unused",
+      "year": 2019,
+      "people": [{}, {}],
+      "expected": {
+        "prov": 0,
+        "transfer": [2290.35, 2290.35],
+        "applied": [0, 0]
+      }
+    },
+    {
+      "id": "2019-no-unused",
+      "year": 2019,
+      "people": [
+        {
+          "oth": 40000
+        },
+        {
+          "oth": 40000
+        }
+      ],
+      "expected": {
+        "prov": 7419.3,
+        "transfer": [0, 0],
+        "applied": [0, 0]
+      }
+    },
+    {
+      "id": "2019-donor-below-zero",
+      "year": 2019,
+      "people": [
+        {
+          "oth": 15268
+        },
+        {
+          "oth": 40000
+        }
+      ],
+      "expected": {
+        "prov": 3709.5,
+        "transfer": [0, 0.15],
+        "applied": [0, 0.15]
+      }
+    },
+    {
+      "id": "2019-donor-at-zero",
+      "year": 2019,
+      "people": [
+        {
+          "oth": 15269
+        },
+        {
+          "oth": 40000
+        }
+      ],
+      "expected": {
+        "prov": 3709.65,
+        "transfer": [0, 0],
+        "applied": [0, 0]
+      }
+    },
+    {
+      "id": "2019-donor-above-zero",
+      "year": 2019,
+      "people": [
+        {
+          "oth": 15270
+        },
+        {
+          "oth": 40000
+        }
+      ],
+      "expected": {
+        "prov": 3709.8,
+        "transfer": [0, 0],
+        "applied": [0, 0]
+      }
+    },
+    {
+      "id": "2020-dividends",
+      "year": 2020,
+      "people": [
+        {
+          "ed": 20000
+        },
+        {
+          "oth": 40000,
+          "ed": 2000
+        }
+      ],
+      "expected": {
+        "prov": 2342.28,
+        "transfer": [0, 1419],
+        "applied": [0, 1419]
+      }
+    },
+    {
+      "id": "2020-unused-bpa",
+      "year": 2020,
+      "people": [
+        {},
+        {
+          "oth": 40000
+        }
+      ],
+      "expected": {
+        "prov": 1340.4,
+        "transfer": [0, 2329.8],
+        "applied": [0, 2329.8]
+      }
+    },
+    {
+      "id": "2020-bpa-and-dividends",
+      "year": 2020,
+      "people": [
+        {
+          "ed": 2000
+        },
+        {
+          "oth": 40000
+        }
+      ],
+      "expected": {
+        "prov": 1431.48,
+        "transfer": [0, 2238.72],
+        "applied": [0, 2238.72]
+      }
+    },
+    {
+      "id": "2020-recipient-cap",
+      "year": 2020,
+      "people": [
+        {
+          "ed": 20000
+        },
+        {
+          "oth": 20000
+        }
+      ],
+      "expected": {
+        "prov": 0,
+        "transfer": [0, 1419],
+        "applied": [0, 670.2]
+      }
+    },
+    {
+      "id": "2020-both-unused",
+      "year": 2020,
+      "people": [{}, {}],
+      "expected": {
+        "prov": 0,
+        "transfer": [2329.8, 2329.8],
+        "applied": [0, 0]
+      }
+    },
+    {
+      "id": "2020-no-unused",
+      "year": 2020,
+      "people": [
+        {
+          "oth": 40000
+        },
+        {
+          "oth": 40000
+        }
+      ],
+      "expected": {
+        "prov": 7340.4,
+        "transfer": [0, 0],
+        "applied": [0, 0]
+      }
+    },
+    {
+      "id": "2020-donor-below-zero",
+      "year": 2020,
+      "people": [
+        {
+          "oth": 15531
+        },
+        {
+          "oth": 40000
+        }
+      ],
+      "expected": {
+        "prov": 3670.05,
+        "transfer": [0, 0.15],
+        "applied": [0, 0.15]
+      }
+    },
+    {
+      "id": "2020-donor-at-zero",
+      "year": 2020,
+      "people": [
+        {
+          "oth": 15532
+        },
+        {
+          "oth": 40000
+        }
+      ],
+      "expected": {
+        "prov": 3670.2,
+        "transfer": [0, 0],
+        "applied": [0, 0]
+      }
+    },
+    {
+      "id": "2020-donor-above-zero",
+      "year": 2020,
+      "people": [
+        {
+          "oth": 15533
+        },
+        {
+          "oth": 40000
+        }
+      ],
+      "expected": {
+        "prov": 3670.35,
+        "transfer": [0, 0],
+        "applied": [0, 0]
+      }
+    },
+    {
+      "id": "2021-dividends",
+      "year": 2021,
+      "people": [
+        {
+          "ed": 20000
+        },
+        {
+          "oth": 40000,
+          "ed": 2000
+        }
+      ],
+      "expected": {
+        "prov": 2283.48,
+        "transfer": [0, 1448.4],
+        "applied": [0, 1448.4]
+      }
+    },
+    {
+      "id": "2021-unused-bpa",
+      "year": 2021,
+      "people": [
+        {},
+        {
+          "oth": 40000
+        }
+      ],
+      "expected": {
+        "prov": 1281.6,
+        "transfer": [0, 2359.2],
+        "applied": [0, 2359.2]
+      }
+    },
+    {
+      "id": "2021-bpa-and-dividends",
+      "year": 2021,
+      "people": [
+        {
+          "ed": 2000
+        },
+        {
+          "oth": 40000
+        }
+      ],
+      "expected": {
+        "prov": 1372.68,
+        "transfer": [0, 2268.12],
+        "applied": [0, 2268.12]
+      }
+    },
+    {
+      "id": "2021-recipient-cap",
+      "year": 2021,
+      "people": [
+        {
+          "ed": 20000
+        },
+        {
+          "oth": 20000
+        }
+      ],
+      "expected": {
+        "prov": 0,
+        "transfer": [0, 1448.4],
+        "applied": [0, 640.8]
+      }
+    },
+    {
+      "id": "2021-both-unused",
+      "year": 2021,
+      "people": [{}, {}],
+      "expected": {
+        "prov": 0,
+        "transfer": [2359.2, 2359.2],
+        "applied": [0, 0]
+      }
+    },
+    {
+      "id": "2021-no-unused",
+      "year": 2021,
+      "people": [
+        {
+          "oth": 40000
+        },
+        {
+          "oth": 40000
+        }
+      ],
+      "expected": {
+        "prov": 7281.6,
+        "transfer": [0, 0],
+        "applied": [0, 0]
+      }
+    },
+    {
+      "id": "2021-donor-below-zero",
+      "year": 2021,
+      "people": [
+        {
+          "oth": 15727
+        },
+        {
+          "oth": 40000
+        }
+      ],
+      "expected": {
+        "prov": 3640.65,
+        "transfer": [0, 0.15],
+        "applied": [0, 0.15]
+      }
+    },
+    {
+      "id": "2021-donor-at-zero",
+      "year": 2021,
+      "people": [
+        {
+          "oth": 15728
+        },
+        {
+          "oth": 40000
+        }
+      ],
+      "expected": {
+        "prov": 3640.8,
+        "transfer": [0, 0],
+        "applied": [0, 0]
+      }
+    },
+    {
+      "id": "2021-donor-above-zero",
+      "year": 2021,
+      "people": [
+        {
+          "oth": 15729
+        },
+        {
+          "oth": 40000
+        }
+      ],
+      "expected": {
+        "prov": 3640.95,
+        "transfer": [0, 0],
+        "applied": [0, 0]
+      }
+    },
+    {
+      "id": "2022-dividends",
+      "year": 2022,
+      "people": [
+        {
+          "ed": 20000
+        },
+        {
+          "oth": 40000,
+          "ed": 2000
+        }
+      ],
+      "expected": {
+        "prov": 2158.98,
+        "transfer": [0, 1510.65],
+        "applied": [0, 1510.65]
+      }
+    },
+    {
+      "id": "2022-unused-bpa",
+      "year": 2022,
+      "people": [
+        {},
+        {
+          "oth": 40000
+        }
+      ],
+      "expected": {
+        "prov": 1157.1,
+        "transfer": [0, 2421.45],
+        "applied": [0, 2421.45]
+      }
+    },
+    {
+      "id": "2022-bpa-and-dividends",
+      "year": 2022,
+      "people": [
+        {
+          "ed": 2000
+        },
+        {
+          "oth": 40000
+        }
+      ],
+      "expected": {
+        "prov": 1248.18,
+        "transfer": [0, 2330.37],
+        "applied": [0, 2330.37]
+      }
+    },
+    {
+      "id": "2022-recipient-cap",
+      "year": 2022,
+      "people": [
+        {
+          "ed": 20000
+        },
+        {
+          "oth": 20000
+        }
+      ],
+      "expected": {
+        "prov": 0,
+        "transfer": [0, 1510.65],
+        "applied": [0, 578.55]
+      }
+    },
+    {
+      "id": "2022-both-unused",
+      "year": 2022,
+      "people": [{}, {}],
+      "expected": {
+        "prov": 0,
+        "transfer": [2421.45, 2421.45],
+        "applied": [0, 0]
+      }
+    },
+    {
+      "id": "2022-no-unused",
+      "year": 2022,
+      "people": [
+        {
+          "oth": 40000
+        },
+        {
+          "oth": 40000
+        }
+      ],
+      "expected": {
+        "prov": 7157.1,
+        "transfer": [0, 0],
+        "applied": [0, 0]
+      }
+    },
+    {
+      "id": "2022-donor-below-zero",
+      "year": 2022,
+      "people": [
+        {
+          "oth": 16142
+        },
+        {
+          "oth": 40000
+        }
+      ],
+      "expected": {
+        "prov": 3578.4,
+        "transfer": [0, 0.15],
+        "applied": [0, 0.15]
+      }
+    },
+    {
+      "id": "2022-donor-at-zero",
+      "year": 2022,
+      "people": [
+        {
+          "oth": 16143
+        },
+        {
+          "oth": 40000
+        }
+      ],
+      "expected": {
+        "prov": 3578.55,
+        "transfer": [0, 0],
+        "applied": [0, 0]
+      }
+    },
+    {
+      "id": "2022-donor-above-zero",
+      "year": 2022,
+      "people": [
+        {
+          "oth": 16144
+        },
+        {
+          "oth": 40000
+        }
+      ],
+      "expected": {
+        "prov": 3578.7,
+        "transfer": [0, 0],
+        "applied": [0, 0]
+      }
+    },
+    {
+      "id": "2023-dividends",
+      "year": 2023,
+      "people": [
+        {
+          "ed": 20000
+        },
+        {
+          "oth": 40000,
+          "ed": 2000
+        }
+      ],
+      "expected": {
+        "prov": 1487.04,
+        "transfer": [0, 1770.82],
+        "applied": [0, 1770.82]
+      }
+    },
+    {
+      "id": "2023-unused-bpa",
+      "year": 2023,
+      "people": [
+        {},
+        {
+          "oth": 40000
+        }
+      ],
+      "expected": {
+        "prov": 788.76,
+        "transfer": [0, 2405.62],
+        "applied": [0, 2405.62]
+      }
+    },
+    {
+      "id": "2023-bpa-and-dividends",
+      "year": 2023,
+      "people": [
+        {
+          "ed": 2000
+        },
+        {
+          "oth": 40000
+        }
+      ],
+      "expected": {
+        "prov": 852.24,
+        "transfer": [0, 2342.14],
+        "applied": [0, 2342.14]
+      }
+    },
+    {
+      "id": "2023-recipient-cap",
+      "year": 2023,
+      "people": [
+        {
+          "ed": 20000
+        },
+        {
+          "oth": 20000
+        }
+      ],
+      "expected": {
+        "prov": 0,
+        "transfer": [0, 1770.82],
+        "applied": [0, 394.38]
+      }
+    },
+    {
+      "id": "2023-both-unused",
+      "year": 2023,
+      "people": [{}, {}],
+      "expected": {
+        "prov": 0,
+        "transfer": [2405.62, 2405.62],
+        "applied": [0, 0]
+      }
+    },
+    {
+      "id": "2023-no-unused",
+      "year": 2023,
+      "people": [
+        {
+          "oth": 40000
+        },
+        {
+          "oth": 40000
+        }
+      ],
+      "expected": {
+        "prov": 6388.76,
+        "transfer": [0, 0],
+        "applied": [0, 0]
+      }
+    },
+    {
+      "id": "2023-donor-below-zero",
+      "year": 2023,
+      "people": [
+        {
+          "oth": 17182
+        },
+        {
+          "oth": 40000
+        }
+      ],
+      "expected": {
+        "prov": 3194.24,
+        "transfer": [0, 0.14],
+        "applied": [0, 0.14]
+      }
+    },
+    {
+      "id": "2023-donor-at-zero",
+      "year": 2023,
+      "people": [
+        {
+          "oth": 17183
+        },
+        {
+          "oth": 40000
+        }
+      ],
+      "expected": {
+        "prov": 3194.38,
+        "transfer": [0, 0],
+        "applied": [0, 0]
+      }
+    },
+    {
+      "id": "2023-donor-above-zero",
+      "year": 2023,
+      "people": [
+        {
+          "oth": 17184
+        },
+        {
+          "oth": 40000
+        }
+      ],
+      "expected": {
+        "prov": 3194.52,
+        "transfer": [0, 0],
+        "applied": [0, 0]
+      }
+    },
+    {
+      "id": "2024-dividends",
+      "year": 2024,
+      "people": [
+        {
+          "ed": 20000
+        },
+        {
+          "oth": 40000,
+          "ed": 2000
+        }
+      ],
+      "expected": {
+        "prov": 1242.6,
+        "transfer": [0, 1893.04],
+        "applied": [0, 1893.04]
+      }
+    },
+    {
+      "id": "2024-unused-bpa",
+      "year": 2024,
+      "people": [
+        {},
+        {
+          "oth": 40000
+        }
+      ],
+      "expected": {
+        "prov": 544.32,
+        "transfer": [0, 2527.84],
+        "applied": [0, 2527.84]
+      }
+    },
+    {
+      "id": "2024-bpa-and-dividends",
+      "year": 2024,
+      "people": [
+        {
+          "ed": 2000
+        },
+        {
+          "oth": 40000
+        }
+      ],
+      "expected": {
+        "prov": 607.8,
+        "transfer": [0, 2464.36],
+        "applied": [0, 2464.36]
+      }
+    },
+    {
+      "id": "2024-recipient-cap",
+      "year": 2024,
+      "people": [
+        {
+          "ed": 20000
+        },
+        {
+          "oth": 20000
+        }
+      ],
+      "expected": {
+        "prov": 0,
+        "transfer": [0, 1893.04],
+        "applied": [0, 272.16]
+      }
+    },
+    {
+      "id": "2024-both-unused",
+      "year": 2024,
+      "people": [{}, {}],
+      "expected": {
+        "prov": 0,
+        "transfer": [2527.84, 2527.84],
+        "applied": [0, 0]
+      }
+    },
+    {
+      "id": "2024-no-unused",
+      "year": 2024,
+      "people": [
+        {
+          "oth": 40000
+        },
+        {
+          "oth": 40000
+        }
+      ],
+      "expected": {
+        "prov": 6144.32,
+        "transfer": [0, 0],
+        "applied": [0, 0]
+      }
+    },
+    {
+      "id": "2024-donor-below-zero",
+      "year": 2024,
+      "people": [
+        {
+          "oth": 18055
+        },
+        {
+          "oth": 40000
+        }
+      ],
+      "expected": {
+        "prov": 3072.02,
+        "transfer": [0, 0.14],
+        "applied": [0, 0.14]
+      }
+    },
+    {
+      "id": "2024-donor-at-zero",
+      "year": 2024,
+      "people": [
+        {
+          "oth": 18056
+        },
+        {
+          "oth": 40000
+        }
+      ],
+      "expected": {
+        "prov": 3072.16,
+        "transfer": [0, 0],
+        "applied": [0, 0]
+      }
+    },
+    {
+      "id": "2024-donor-above-zero",
+      "year": 2024,
+      "people": [
+        {
+          "oth": 18057
+        },
+        {
+          "oth": 40000
+        }
+      ],
+      "expected": {
+        "prov": 3072.3,
+        "transfer": [0, 0],
+        "applied": [0, 0]
+      }
+    },
+    {
+      "id": "2025-dividends",
+      "year": 2025,
+      "people": [
+        {
+          "ed": 20000
+        },
+        {
+          "oth": 40000,
+          "ed": 2000
+        }
+      ],
+      "expected": {
+        "prov": 1098.4,
+        "transfer": [0, 1965.14],
+        "applied": [0, 1965.14]
+      }
+    },
+    {
+      "id": "2025-unused-bpa",
+      "year": 2025,
+      "people": [
+        {},
+        {
+          "oth": 40000
+        }
+      ],
+      "expected": {
+        "prov": 400.12,
+        "transfer": [0, 2599.94],
+        "applied": [0, 2599.94]
+      }
+    },
+    {
+      "id": "2025-bpa-and-dividends",
+      "year": 2025,
+      "people": [
+        {
+          "ed": 2000
+        },
+        {
+          "oth": 40000
+        }
+      ],
+      "expected": {
+        "prov": 463.6,
+        "transfer": [0, 2536.46],
+        "applied": [0, 2536.46]
+      }
+    },
+    {
+      "id": "2025-recipient-cap",
+      "year": 2025,
+      "people": [
+        {
+          "ed": 20000
+        },
+        {
+          "oth": 20000
+        }
+      ],
+      "expected": {
+        "prov": 0,
+        "transfer": [0, 1965.14],
+        "applied": [0, 200.06]
+      }
+    },
+    {
+      "id": "2025-both-unused",
+      "year": 2025,
+      "people": [{}, {}],
+      "expected": {
+        "prov": 0,
+        "transfer": [2599.94, 2599.94],
+        "applied": [0, 0]
+      }
+    },
+    {
+      "id": "2025-no-unused",
+      "year": 2025,
+      "people": [
+        {
+          "oth": 40000
+        },
+        {
+          "oth": 40000
+        }
+      ],
+      "expected": {
+        "prov": 6000.12,
+        "transfer": [0, 0],
+        "applied": [0, 0]
+      }
+    },
+    {
+      "id": "2025-donor-below-zero",
+      "year": 2025,
+      "people": [
+        {
+          "oth": 18570
+        },
+        {
+          "oth": 40000
+        }
+      ],
+      "expected": {
+        "prov": 2999.92,
+        "transfer": [0, 0.14],
+        "applied": [0, 0.14]
+      }
+    },
+    {
+      "id": "2025-donor-at-zero",
+      "year": 2025,
+      "people": [
+        {
+          "oth": 18571
+        },
+        {
+          "oth": 40000
+        }
+      ],
+      "expected": {
+        "prov": 3000.06,
+        "transfer": [0, 0],
+        "applied": [0, 0]
+      }
+    },
+    {
+      "id": "2025-donor-above-zero",
+      "year": 2025,
+      "people": [
+        {
+          "oth": 18572
+        },
+        {
+          "oth": 40000
+        }
+      ],
+      "expected": {
+        "prov": 3000.2,
+        "transfer": [0, 0],
+        "applied": [0, 0]
+      }
+    },
+    {
+      "id": "2026-dividends",
+      "year": 2026,
+      "people": [
+        {
+          "ed": 20000
+        },
+        {
+          "oth": 40000,
+          "ed": 2000
+        }
+      ],
+      "expected": {
+        "prov": 991.72,
+        "transfer": [0, 2018.48],
+        "applied": [0, 2018.48]
+      }
+    },
+    {
+      "id": "2026-unused-bpa",
+      "year": 2026,
+      "people": [
+        {},
+        {
+          "oth": 40000
+        }
+      ],
+      "expected": {
+        "prov": 293.44,
+        "transfer": [0, 2653.28],
+        "applied": [0, 2653.28]
+      }
+    },
+    {
+      "id": "2026-bpa-and-dividends",
+      "year": 2026,
+      "people": [
+        {
+          "ed": 2000
+        },
+        {
+          "oth": 40000
+        }
+      ],
+      "expected": {
+        "prov": 356.92,
+        "transfer": [0, 2589.8],
+        "applied": [0, 2589.8]
+      }
+    },
+    {
+      "id": "2026-recipient-cap",
+      "year": 2026,
+      "people": [
+        {
+          "ed": 20000
+        },
+        {
+          "oth": 20000
+        }
+      ],
+      "expected": {
+        "prov": 0,
+        "transfer": [0, 2018.48],
+        "applied": [0, 146.72]
+      }
+    },
+    {
+      "id": "2026-both-unused",
+      "year": 2026,
+      "people": [{}, {}],
+      "expected": {
+        "prov": 0,
+        "transfer": [2653.28, 2653.28],
+        "applied": [0, 0]
+      }
+    },
+    {
+      "id": "2026-no-unused",
+      "year": 2026,
+      "people": [
+        {
+          "oth": 40000
+        },
+        {
+          "oth": 40000
+        }
+      ],
+      "expected": {
+        "prov": 5893.44,
+        "transfer": [0, 0],
+        "applied": [0, 0]
+      }
+    },
+    {
+      "id": "2026-donor-below-zero",
+      "year": 2026,
+      "people": [
+        {
+          "oth": 18951
+        },
+        {
+          "oth": 40000
+        }
+      ],
+      "expected": {
+        "prov": 2946.58,
+        "transfer": [0, 0.14],
+        "applied": [0, 0.14]
+      }
+    },
+    {
+      "id": "2026-donor-at-zero",
+      "year": 2026,
+      "people": [
+        {
+          "oth": 18952
+        },
+        {
+          "oth": 40000
+        }
+      ],
+      "expected": {
+        "prov": 2946.72,
+        "transfer": [0, 0],
+        "applied": [0, 0]
+      }
+    },
+    {
+      "id": "2026-donor-above-zero",
+      "year": 2026,
+      "people": [
+        {
+          "oth": 18953
+        },
+        {
+          "oth": 40000
+        }
+      ],
+      "expected": {
+        "prov": 2946.86,
+        "transfer": [0, 0],
+        "applied": [0, 0]
+      }
+    }
+  ]
+}

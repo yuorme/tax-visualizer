@@ -139,6 +139,8 @@ function calculateHousehold(
   validateGisAllowance(fed, ppl);
   const seniorsActive = useBpa && ppl.some(hasSeniorInputs);
   const couple = ppl.length === 2 && spouse;
+  // TP-1 line 431 transfers unused credits at any age; it needs no senior-program parameters.
+  const quebecTransferActive = useBpa && qc && couple;
   // The proxy historical income uses deductions before this year's supplements. Current T778 selection
   // includes actual calculated supplements; this avoids feeding current receipts back into historical income.
   const proxyChildcare = childcareOf(fed, hh, ppl, p);
@@ -200,13 +202,13 @@ function calculateHousehold(
   if (couple && useBpa) {
     // Quebec transfers use provincial income, which does not fall with the federal childcare deduction.
     const cp = qc && provincialNets[1] > provincialNets[0] ? 1 : qc ? 0 : c;
-    const rO = personTax(fed, p, ppl[1 - cp], NOSP, ctx(1 - cp), s);
     const fAmt = Math.max(0, phased(fed.basicPersonalAmount, nets[c]) - nets[o]);
     const rule = p.spouseAmount;
     let pAmt: number, pCredit: number;
     if (rule === "transfer") {
-      pCredit = seniorsActive ? 0 : Math.max(0, rO.pBpaFull - rO.pCred);
-      pAmt = pCredit / prr;
+      // Unused BPA is already part of line 430; line 431 transfers it exactly once below.
+      pCredit = 0;
+      pAmt = 0;
     } else {
       pAmt = rule === "federal" ? fAmt : spouseAmount(rule, nets[c], nets[o]);
       pCredit = pAmt * prr;
@@ -256,14 +258,14 @@ function calculateHousehold(
   } else {
     list = ppl.map((x, i) => personTax(fed, p, x, NOSP, ctx(i), s));
   }
-  // Keep the legacy path untouched unless the year's data opts into a program-specific claimant rule.
+  // Program-specific claimant rules, senior relief and Quebec's general unused-credit transfer.
   const childRule = p.claimants?.childAmount;
   const lowRule = p.claimants?.lowIncomeReduction;
-  if (childRule || lowRule || familyRule || seniorsActive) {
+  if (childRule || lowRule || familyRule || seniorsActive || quebecTransferActive) {
     const extras = list.map(r => ({ f: r.fSpFull, p: r.pSpFull }));
     const calculate = (i: number, context: Ctx) => personTax(fed, p, ppl[i], extras[i], context, s);
     const calculateAll = (contexts: Ctx[]) => {
-      if (!seniorsActive) return contexts.map((context, i) => calculate(i, context));
+      if (!seniorsActive && !quebecTransferActive) return contexts.map((context, i) => calculate(i, context));
       const seniorContexts = contexts.map(context => {
         context.childTransferBase = 0;
         context.senior = {
@@ -276,7 +278,7 @@ function calculateHousehold(
         return context.senior;
       });
       let results = contexts.map((context, i) => calculate(i, context));
-      if (couple) {
+      if (seniorsActive && couple) {
         results.forEach((donor, i) => {
           const transfer = seniorTransfer(donor, p, fr);
           const recipient = contexts[1 - i];
@@ -288,7 +290,7 @@ function calculateHousehold(
           }
         });
       }
-      if (qc) {
+      if (seniorsActive && qc) {
         if (couple) {
           let pool = quebecSeniorPool(
             p,
@@ -315,7 +317,7 @@ function calculateHousehold(
         }
       }
       results = contexts.map((context, i) => calculate(i, context));
-      if (qc && couple) {
+      if (quebecTransferActive) {
         results.forEach((donor, i) => {
           seniorContexts[1 - i].quebecTransfer = donor.breakdown.seniorCredits.quebecUnused;
         });
