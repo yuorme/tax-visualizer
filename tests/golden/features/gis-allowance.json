@@ -434,7 +434,14 @@
         "total": -13071.96,
         "breakdown.left": 21863.1,
         "famNet": 21921.96,
-        "list.0.ti": 8791.14
+        "list.0.ti": 8791.14,
+        "list.0.breakdown.netFederalSupplements": 13130.82,
+        "list.0.breakdown.netIncomeTotal": 21921.96,
+        "list.0.breakdown.netIncome.netFederalSupplements": 13130.82,
+        "breakdown.incomeBases.provincial.0": 21921.96,
+        "breakdown.incomeBases.beforeChildcare.0": 21921.96,
+        "breakdown.incomeBases.beforeChildcareAndRecovery.0": 21921.96,
+        "list.0.breakdown.publicPensions.recoveryIncome": 21921.96
       }
     },
     {
@@ -4262,7 +4269,8 @@
         "breakdown.gisAllowance.adults.1.gis": 0.0,
         "breakdown.gisAllowance.adults.1.allowance": 73.65,
         "breakdown.gisAllowance.total": 3110.85,
-        "breakdown.gisAllowance.adults.0.monthly.0.income": 40799.99
+        "breakdown.gisAllowance.adults.0.monthly.0.income": 40799.99,
+        "breakdown.gisAllowance.adults.0.monthly.0.protection": 250.46
       }
     },
     {
@@ -5056,7 +5064,8 @@
         "breakdown.gisAllowance.adults.0.gis": 5096.85,
         "breakdown.gisAllowance.adults.0.allowance": 0.0,
         "breakdown.gisAllowance.total": 5096.85,
-        "breakdown.gisAllowance.adults.0.monthly.0.income": 12000
+        "breakdown.gisAllowance.adults.0.monthly.0.income": 12000,
+        "breakdown.gisAllowance.incomes.0.other": 12000
       }
     },
     {
@@ -5564,7 +5573,8 @@
         "breakdown.gisAllowance.adults.0.monthly.0.income": 0,
         "list.0.breakdown.publicPensions.recoveryTax": 16695.09,
         "list.0.breakdown.otherPaymentsDeduction": 0,
-        "list.0.ti": 200000
+        "list.0.ti": 200000,
+        "list.1.breakdown.netIncomeTotal": 0
       }
     },
     {
@@ -6158,7 +6168,14 @@
         "total": -13441.98,
         "breakdown.left": 22441.47,
         "famNet": 22441.47,
-        "list.0.ti": 8999.49
+        "list.0.ti": 8999.49,
+        "list.0.breakdown.netFederalSupplements": 13441.98,
+        "list.0.breakdown.netIncomeTotal": 22441.47,
+        "list.0.breakdown.netIncome.netFederalSupplements": 13441.98,
+        "breakdown.incomeBases.provincial.0": 22441.47,
+        "breakdown.incomeBases.beforeChildcare.0": 22441.47,
+        "breakdown.incomeBases.beforeChildcareAndRecovery.0": 22441.47,
+        "list.0.breakdown.publicPensions.recoveryIncome": 22441.47
       }
     },
     {
@@ -10244,7 +10261,8 @@
         "breakdown.gisAllowance.adults.1.gis": 0.0,
         "breakdown.gisAllowance.adults.1.allowance": 115.38,
         "breakdown.gisAllowance.total": 3220.89,
-        "breakdown.gisAllowance.adults.0.monthly.0.income": 41615.99
+        "breakdown.gisAllowance.adults.0.monthly.0.income": 41615.99,
+        "breakdown.gisAllowance.adults.0.monthly.0.protection": 255.52
       }
     },
     {
@@ -11131,7 +11149,8 @@
         "breakdown.gisAllowance.adults.0.gis": 5359.89,
         "breakdown.gisAllowance.adults.0.allowance": 0.0,
         "breakdown.gisAllowance.total": 5359.89,
-        "breakdown.gisAllowance.adults.0.monthly.0.income": 12000
+        "breakdown.gisAllowance.adults.0.monthly.0.income": 12000,
+        "breakdown.gisAllowance.incomes.0.other": 12000
       }
     },
     {
@@ -11639,7 +11658,8 @@
         "breakdown.gisAllowance.adults.0.monthly.0.income": 0,
         "list.0.breakdown.publicPensions.recoveryTax": 17090.91,
         "list.0.breakdown.otherPaymentsDeduction": 0,
-        "list.0.ti": 200000
+        "list.0.ti": 200000,
+        "list.1.breakdown.netIncomeTotal": 0
       }
     },
     {
@@ -12077,7 +12097,8 @@
       },
       "expected": {
         "list.0.fedBasic": 526.9503,
-        "list.0.fFtc": 366.0503
+        "list.0.fFtc": 366.0503,
+        "list.0.pFtc": 280.5968
       },
       "expectedCredits": {}
     },
@@ -12422,7 +12443,8 @@
       },
       "expected": {
         "list.0.fedBasic": 467.5286,
-        "list.0.fFtc": 322.4392
+        "list.0.fFtc": 322.4392,
+        "list.0.pFtc": 259.6718
       },
       "expectedCredits": {}
     },
@@ -12500,6 +12522,854 @@
       },
       "expectedCredits": {
         "Solidarity tax credit": 916.1736
+      }
+    },
+    {
+      "id": "2025-ON-net-tested-allowance-spouse",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "adults": 2,
+        "spouse": true,
+        "useCredits": true,
+        "people": [
+          {
+            "age": 70,
+            "birthMonth": 6,
+            "oas": true,
+            "gis": true,
+            "oth": 32000
+          },
+          {
+            "age": 62,
+            "birthMonth": 6,
+            "allowance": true
+          }
+        ]
+      },
+      "expected": {
+        "breakdown.gisAllowance.adults.0.gis": 3037.2,
+        "breakdown.gisAllowance.adults.1.allowance": 2269.65,
+        "claim.fAmt": 13859.35,
+        "list.0.fSpFull": 2009.6058,
+        "list.0.fSp": 2009.6058,
+        "list.0.fed": 257.3446,
+        "claim.pAmt": 9635.35,
+        "list.0.pSp": 486.5852,
+        "breakdown.incomeBases.provincialFamily": 46097.99
+      }
+    },
+    {
+      "id": "2026-ON-net-tested-allowance-spouse",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "adults": 2,
+        "spouse": true,
+        "useCredits": true,
+        "people": [
+          {
+            "age": 70,
+            "birthMonth": 6,
+            "oas": true,
+            "gis": true,
+            "oth": 32000
+          },
+          {
+            "age": 62,
+            "birthMonth": 6,
+            "allowance": true
+          }
+        ]
+      },
+      "expected": {
+        "breakdown.gisAllowance.adults.0.gis": 3105.51,
+        "breakdown.gisAllowance.adults.1.allowance": 2515.38,
+        "claim.fAmt": 13936.62,
+        "list.0.fSpFull": 1951.1268,
+        "list.0.fSp": 1951.1268,
+        "list.0.fed": 196.4018,
+        "claim.pAmt": 9616.62,
+        "list.0.pSp": 485.6393,
+        "breakdown.incomeBases.provincialFamily": 46620.38
+      }
+    },
+    {
+      "id": "2025-ON-audit-proxy-credit-switch",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 70,
+            "birthMonth": 6,
+            "oas": true,
+            "gis": true,
+            "ed": 20000
+          }
+        ],
+        "adults": 1,
+        "spouse": false,
+        "useBpa": false
+      },
+      "expected": {
+        "breakdown.gisAllowance.adults.0.gis": 1076.85,
+        "breakdown.gisAllowance.adults.0.allowance": 0.0,
+        "breakdown.gisAllowance.total": 1076.85,
+        "breakdown.gisAllowance.adults.0.monthly.0.income": 20050.4565,
+        "breakdown.gisAllowance.incomes.0.dividendAdjustment": 7549.5435
+      }
+    },
+    {
+      "id": "2025-ON-audit-proxy-spouse-dividend",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "adults": 2,
+        "spouse": true,
+        "useCredits": true,
+        "people": [
+          {
+            "age": 70,
+            "birthMonth": 6,
+            "oas": true,
+            "gis": true,
+            "ed": 25000
+          },
+          {
+            "age": 62,
+            "birthMonth": 6,
+            "allowance": true
+          }
+        ]
+      },
+      "expected": {
+        "breakdown.gisAllowance.incomes.0.dividendAdjustment": 14673.2571,
+        "breakdown.gisAllowance.adults.0.monthly.0.income": 19826.7429,
+        "breakdown.gisAllowance.adults.0.gis": 5305.65,
+        "breakdown.gisAllowance.adults.1.allowance": 5305.65
+      }
+    },
+    {
+      "id": "2025-ON-audit-t778-negative-base",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "adults": 2,
+        "spouse": true,
+        "useCredits": true,
+        "people": [
+          {
+            "age": 76,
+            "birthMonth": 6,
+            "oas": true,
+            "gis": true,
+            "ord": 10000,
+            "rrsp": 30000
+          },
+          {
+            "age": 59,
+            "birthMonth": 6,
+            "ord": 5000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 4,
+              "expenses": 2000
+            }
+          ],
+          "earnedIncome": [10000, 5000]
+        }
+      },
+      "expected": {
+        "childcare.claimant": 0.0,
+        "childcare.claims.0": 2000.0,
+        "childcare.claims.1": 0.0,
+        "famNet": 5786.11,
+        "list.0.breakdown.netIncomeTotal": 801.11
+      }
+    },
+    {
+      "id": "2025-ON-audit-allowance-recovery",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "adults": 2,
+        "spouse": true,
+        "useCredits": true,
+        "people": [
+          {
+            "age": 70,
+            "birthMonth": 6,
+            "oas": true,
+            "gis": true,
+            "ded": 200000
+          },
+          {
+            "age": 62,
+            "birthMonth": 6,
+            "allowance": true,
+            "oth": 200000
+          }
+        ]
+      },
+      "expected": {
+        "list.1.breakdown.netIncome.oasRecovery": 16695.09,
+        "list.1.breakdown.supplementRecovery": 16695.09,
+        "list.1.breakdown.otherPaymentsDeduction": 0.0,
+        "list.1.ti": 200000.0,
+        "famNet": 200000.0
+      }
+    },
+    {
+      "id": "2025-QC-audit-childcare-repayment-bases",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "adults": 2,
+        "spouse": true,
+        "useCredits": true,
+        "people": [
+          {
+            "age": 70,
+            "birthMonth": 6,
+            "oas": true,
+            "gis": true,
+            "oth": 150000
+          },
+          {
+            "age": 59,
+            "birthMonth": 6,
+            "ded": 150000
+          }
+        ],
+        "childcare": {
+          "mode": "manual",
+          "children": [
+            {
+              "age": 4,
+              "expenses": 8000
+            }
+          ],
+          "manualClaims": [8000, 0]
+        }
+      },
+      "expected": {
+        "list.0.breakdown.publicPensions.recoveryTax": 10570.194,
+        "list.0.breakdown.publicPensions.recoveryIncome": 163921.96,
+        "list.0.breakdown.provincialNetIncome": 161351.766,
+        "list.0.tiP": 150000.0,
+        "breakdown.incomeBases.beforeChildcare.0": 161351.766,
+        "breakdown.incomeBases.beforeChildcareAndRecovery.0": 171921.96
+      }
+    },
+    {
+      "id": "2025-MB-audit-bpa-net",
+      "year": 2025,
+      "province": "MB",
+      "household": {
+        "adults": 2,
+        "spouse": true,
+        "useCredits": true,
+        "people": [
+          {
+            "age": 70,
+            "birthMonth": 6,
+            "oas": true,
+            "gis": true,
+            "oth": 200000
+          },
+          {
+            "age": 59,
+            "birthMonth": 6,
+            "ded": 200000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pAmt": 15570.7757,
+        "list.0.pBpaFull": 1681.6438,
+        "list.0.breakdown.netIncomeTotal": 202651.766,
+        "list.0.ti": 200000.0
+      }
+    },
+    {
+      "id": "2025-MB-audit-family-benefit",
+      "year": 2025,
+      "province": "MB",
+      "household": {
+        "adults": 1,
+        "spouse": false,
+        "useCredits": true,
+        "people": [
+          {
+            "age": 70,
+            "birthMonth": 6,
+            "oas": true,
+            "gis": true,
+            "oth": 20000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.familyTaxBenefit.base": 1439.7209,
+        "list.0.breakdown.familyTaxBenefit.applied": 155.4899
+      }
+    },
+    {
+      "id": "2025-NL-audit-allowance-family-reduction",
+      "year": 2025,
+      "province": "NL",
+      "household": {
+        "adults": 2,
+        "spouse": true,
+        "useCredits": true,
+        "people": [
+          {
+            "age": 70,
+            "birthMonth": 6,
+            "oas": true,
+            "gis": true,
+            "oth": 32000
+          },
+          {
+            "age": 62,
+            "birthMonth": 6,
+            "allowance": true
+          }
+        ]
+      },
+      "expected": {
+        "list.0.lowRed": 651.9216,
+        "list.0.breakdown.lowIncomeReduction.calculated": 651.9216
+      }
+    },
+    {
+      "id": "2025-QC-audit-childcare-family-benefit",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "age": 76,
+            "birthMonth": 6,
+            "oas": true,
+            "gis": true,
+            "ord": 40000
+          }
+        ],
+        "adults": 1,
+        "spouse": false,
+        "useCredits": true,
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 4,
+              "expenses": 7500,
+              "qcEligibleExpenses": 7500
+            },
+            {
+              "age": 4,
+              "expenses": 7500,
+              "qcEligibleExpenses": 7500
+            },
+            {
+              "age": 4,
+              "expenses": 7500,
+              "qcEligibleExpenses": 7500
+            }
+          ],
+          "earnedIncome": [40000]
+        }
+      },
+      "expected": {
+        "breakdown.incomeBases.provincialFamily": 56665.11,
+        "list.0.breakdown.seniorCredits.quebecPoolBase": 3301.1669,
+        "list.0.breakdown.seniorCredits.provincialApplied": 462.1634,
+        "provBen": 9537.5956,
+        "breakdown.childcareCredit.income": 56665.11,
+        "breakdown.childcareCredit.rate": 0.7,
+        "breakdown.childcareCredit.applied": 15750.0
+      },
+      "expectedCredits": {
+        "Solidarity tax credit": 860.5934
+      }
+    },
+    {
+      "id": "2025-ON-audit-care-income",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 76,
+            "birthMonth": 6,
+            "oas": true,
+            "gis": true,
+            "ord": 10000
+          },
+          {
+            "age": 59,
+            "birthMonth": 6,
+            "ord": 20000
+          }
+        ],
+        "adults": 2,
+        "spouse": true,
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 4,
+              "expenses": 8000
+            }
+          ],
+          "earnedIncome": [10000, 20000]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "breakdown.gisAllowance.adults.0.gis": 13082.82,
+        "breakdown.gisAllowance.adults.0.allowance": 0.0,
+        "breakdown.gisAllowance.adults.1.gis": 0.0,
+        "breakdown.gisAllowance.adults.1.allowance": 0.0,
+        "breakdown.gisAllowance.total": 13082.82,
+        "breakdown.gisAllowance.adults.0.monthly.0.income": 4441.5833,
+        "childcare.claimant": 1,
+        "childcare.claims.0": 0,
+        "childcare.claims.1": 8000,
+        "breakdown.gisAllowance.incomes.0.deductions": 6666.6667,
+        "famNet": 44588.11,
+        "ccb": 7499.9223,
+        "breakdown.childcareCredit.income": 52588.11,
+        "breakdown.childcareCredit.rate": 0.53,
+        "breakdown.childcareCredit.applied": 4240
+      }
+    },
+    {
+      "id": "2025-ON-audit-cwb-secondary-earner",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "adults": 2,
+        "spouse": true,
+        "useCredits": true,
+        "people": [
+          {
+            "age": 76,
+            "birthMonth": 6,
+            "oas": true,
+            "gis": true,
+            "ord": 15000
+          },
+          {
+            "age": 62,
+            "birthMonth": 6,
+            "allowance": true,
+            "ord": 10000,
+            "rrsp": 10000
+          }
+        ]
+      },
+      "expected": {
+        "famNet": 49204.33,
+        "list.1.breakdown.netIncomeTotal": 16630.09
+      },
+      "expectedCredits": {
+        "Canada Workers Benefit": 1528.2005
+      }
+    },
+    {
+      "id": "2026-ON-audit-proxy-credit-switch",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 70,
+            "birthMonth": 6,
+            "oas": true,
+            "gis": true,
+            "ed": 20000
+          }
+        ],
+        "adults": 1,
+        "spouse": false,
+        "useBpa": false
+      },
+      "expected": {
+        "breakdown.gisAllowance.adults.0.gis": 1483.89,
+        "breakdown.gisAllowance.adults.0.allowance": 0.0,
+        "breakdown.gisAllowance.total": 1483.89,
+        "breakdown.gisAllowance.adults.0.monthly.0.income": 19758.1914,
+        "breakdown.gisAllowance.incomes.0.dividendAdjustment": 7841.8086
+      }
+    },
+    {
+      "id": "2026-ON-audit-proxy-spouse-dividend",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "adults": 2,
+        "spouse": true,
+        "useCredits": true,
+        "people": [
+          {
+            "age": 70,
+            "birthMonth": 6,
+            "oas": true,
+            "gis": true,
+            "ed": 25000
+          },
+          {
+            "age": 62,
+            "birthMonth": 6,
+            "allowance": true
+          }
+        ]
+      },
+      "expected": {
+        "breakdown.gisAllowance.incomes.0.dividendAdjustment": 14962.7472,
+        "breakdown.gisAllowance.adults.0.monthly.0.income": 19537.2528,
+        "breakdown.gisAllowance.adults.0.gis": 5623.38,
+        "breakdown.gisAllowance.adults.1.allowance": 5623.38
+      }
+    },
+    {
+      "id": "2026-ON-audit-t778-negative-base",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "adults": 2,
+        "spouse": true,
+        "useCredits": true,
+        "people": [
+          {
+            "age": 76,
+            "birthMonth": 6,
+            "oas": true,
+            "gis": true,
+            "ord": 10000,
+            "rrsp": 30000
+          },
+          {
+            "age": 59,
+            "birthMonth": 6,
+            "ord": 5000
+          }
+        ],
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 4,
+              "expenses": 2000
+            }
+          ],
+          "earnedIncome": [10000, 5000]
+        }
+      },
+      "expected": {
+        "childcare.claimant": 0.0,
+        "childcare.claims.0": 2000.0,
+        "childcare.claims.1": 0.0,
+        "famNet": 6326.44,
+        "list.0.breakdown.netIncomeTotal": 1341.44
+      }
+    },
+    {
+      "id": "2026-ON-audit-allowance-recovery",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "adults": 2,
+        "spouse": true,
+        "useCredits": true,
+        "people": [
+          {
+            "age": 70,
+            "birthMonth": 6,
+            "oas": true,
+            "gis": true,
+            "ded": 200000
+          },
+          {
+            "age": 62,
+            "birthMonth": 6,
+            "allowance": true,
+            "oth": 200000
+          }
+        ]
+      },
+      "expected": {
+        "list.1.breakdown.netIncome.oasRecovery": 17090.91,
+        "list.1.breakdown.supplementRecovery": 17090.91,
+        "list.1.breakdown.otherPaymentsDeduction": 0.0,
+        "list.1.ti": 200000.0,
+        "famNet": 200000.0
+      }
+    },
+    {
+      "id": "2026-QC-audit-childcare-repayment-bases",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "adults": 2,
+        "spouse": true,
+        "useCredits": true,
+        "people": [
+          {
+            "age": 70,
+            "birthMonth": 6,
+            "oas": true,
+            "gis": true,
+            "oth": 150000
+          },
+          {
+            "age": 59,
+            "birthMonth": 6,
+            "ded": 150000
+          }
+        ],
+        "childcare": {
+          "mode": "manual",
+          "children": [
+            {
+              "age": 4,
+              "expenses": 8000
+            }
+          ],
+          "manualClaims": [8000, 0]
+        }
+      },
+      "expected": {
+        "list.0.breakdown.publicPensions.recoveryTax": 10367.7705,
+        "list.0.breakdown.publicPensions.recoveryIncome": 164441.47,
+        "list.0.breakdown.provincialNetIncome": 162073.6995,
+        "list.0.tiP": 150000.0,
+        "breakdown.incomeBases.beforeChildcare.0": 162073.6995,
+        "breakdown.incomeBases.beforeChildcareAndRecovery.0": 172441.47
+      }
+    },
+    {
+      "id": "2026-MB-audit-bpa-net",
+      "year": 2026,
+      "province": "MB",
+      "household": {
+        "adults": 2,
+        "spouse": true,
+        "useCredits": true,
+        "people": [
+          {
+            "age": 70,
+            "birthMonth": 6,
+            "oas": true,
+            "gis": true,
+            "oth": 200000
+          },
+          {
+            "age": 59,
+            "birthMonth": 6,
+            "ded": 200000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.pAmt": 15513.8151,
+        "list.0.pBpaFull": 1675.492,
+        "list.0.breakdown.netIncomeTotal": 203373.6995,
+        "list.0.ti": 200000.0
+      }
+    },
+    {
+      "id": "2026-MB-audit-family-benefit",
+      "year": 2026,
+      "province": "MB",
+      "household": {
+        "adults": 1,
+        "spouse": false,
+        "useCredits": true,
+        "people": [
+          {
+            "age": 70,
+            "birthMonth": 6,
+            "oas": true,
+            "gis": true,
+            "oth": 20000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.familyTaxBenefit.base": 1397.2958,
+        "list.0.breakdown.familyTaxBenefit.applied": 150.9079
+      }
+    },
+    {
+      "id": "2026-NL-audit-allowance-family-reduction",
+      "year": 2026,
+      "province": "NL",
+      "household": {
+        "adults": 2,
+        "spouse": true,
+        "useCredits": true,
+        "people": [
+          {
+            "age": 70,
+            "birthMonth": 6,
+            "oas": true,
+            "gis": true,
+            "oth": 32000
+          },
+          {
+            "age": 62,
+            "birthMonth": 6,
+            "allowance": true
+          }
+        ]
+      },
+      "expected": {
+        "list.0.lowRed": 490.5392,
+        "list.0.breakdown.lowIncomeReduction.calculated": 490.5392
+      }
+    },
+    {
+      "id": "2026-QC-audit-childcare-family-benefit",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "age": 76,
+            "birthMonth": 6,
+            "oas": true,
+            "gis": true,
+            "ord": 40000
+          }
+        ],
+        "adults": 1,
+        "spouse": false,
+        "useCredits": true,
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 4,
+              "expenses": 7500,
+              "qcEligibleExpenses": 7500
+            },
+            {
+              "age": 4,
+              "expenses": 7500,
+              "qcEligibleExpenses": 7500
+            },
+            {
+              "age": 4,
+              "expenses": 7500,
+              "qcEligibleExpenses": 7500
+            }
+          ],
+          "earnedIncome": [40000]
+        }
+      },
+      "expected": {
+        "breakdown.incomeBases.provincialFamily": 57175.44,
+        "list.0.breakdown.seniorCredits.quebecPoolBase": 3491.6675,
+        "list.0.breakdown.seniorCredits.provincialApplied": 488.8335,
+        "provBen": 9755.2624,
+        "breakdown.childcareCredit.income": 57175.44,
+        "breakdown.childcareCredit.rate": 0.7,
+        "breakdown.childcareCredit.applied": 15750.0
+      },
+      "expectedCredits": {
+        "Solidarity tax credit": 916.1736
+      }
+    },
+    {
+      "id": "2026-ON-audit-care-income",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 76,
+            "birthMonth": 6,
+            "oas": true,
+            "gis": true,
+            "ord": 10000
+          },
+          {
+            "age": 59,
+            "birthMonth": 6,
+            "ord": 21000
+          }
+        ],
+        "adults": 2,
+        "spouse": true,
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 4,
+              "expenses": 8000
+            }
+          ],
+          "earnedIncome": [10000, 20000]
+        },
+        "useCredits": true
+      },
+      "expected": {
+        "breakdown.gisAllowance.adults.0.gis": 13273.98,
+        "breakdown.gisAllowance.adults.0.allowance": 0.0,
+        "breakdown.gisAllowance.adults.1.gis": 0.0,
+        "breakdown.gisAllowance.adults.1.allowance": 0.0,
+        "breakdown.gisAllowance.total": 13273.98,
+        "breakdown.gisAllowance.adults.0.monthly.0.income": 5368.2833,
+        "childcare.claimant": 1,
+        "childcare.claims.0": 0,
+        "childcare.claims.1": 8000,
+        "breakdown.gisAllowance.incomes.0.deductions": 6666.6667,
+        "famNet": 45998.44,
+        "ccb": 7613.6992,
+        "breakdown.childcareCredit.income": 53998.44,
+        "breakdown.childcareCredit.rate": 0.53,
+        "breakdown.childcareCredit.applied": 4240
+      }
+    },
+    {
+      "id": "2026-ON-audit-cwb-secondary-earner",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "adults": 2,
+        "spouse": true,
+        "useCredits": true,
+        "people": [
+          {
+            "age": 76,
+            "birthMonth": 6,
+            "oas": true,
+            "gis": true,
+            "ord": 15000
+          },
+          {
+            "age": 62,
+            "birthMonth": 6,
+            "allowance": true,
+            "ord": 10000,
+            "rrsp": 10000
+          }
+        ]
+      },
+      "expected": {
+        "famNet": 50016.79,
+        "list.1.breakdown.netIncomeTotal": 17025.91
+      },
+      "expectedCredits": {
+        "Canada Workers Benefit": 1554.1315
       }
     }
   ]

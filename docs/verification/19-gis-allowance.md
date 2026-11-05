@@ -176,8 +176,8 @@ including nonmaximum payments, top-up exhaustion, Allowance's pension/GIS transi
 `gis-allowance.json` contains annual household cases independently calculated by looking up each month's
 published row and summing cents. Neither fixture was captured from the engine. Monetary input examples use
 the calculations above; all existing golden files, assertions and tolerances remain unchanged.
-There are 412 annual cases with 2,692 numeric expected cells, plus 2,796 published monthly cases with
-5,592 payment cells. The GIS test file runs 424 tests, including the monthly table comparisons.
+There are 436 annual cases with 2,850 numeric expected cells, plus 2,796 published monthly cases with
+5,592 payment cells. The GIS test file runs 448 tests, including the monthly table comparisons.
 
 | New path | Annual golden case suffixes (both years unless noted) |
 | --- | --- |
@@ -197,7 +197,7 @@ There are 412 annual cases with 2,692 numeric expected cells, plus 2,796 publish
 Targeted tests also verify validation, unsupported years, adult-order invariance, unrelated adults, opt-outs,
 net-income inclusion and taxable exclusion across every jurisdiction, the exact first-band CCB formula,
 unchanged payroll and HSF, and refundable-credit-switch independence. Downstream tax/credit amounts are locked
-for the specific ON, BC, NL and QC paths below; this is not exhaustive coverage of every provincial credit.
+for the specific ON, BC, MB, NL and QC paths below; this is not exhaustive coverage of every provincial credit.
 Reference tests in each year's suite use published
 quarterly maximums **and the final nonzero Allowance band with protected GIS**, not just maximum entitlements.
 
@@ -210,8 +210,9 @@ No pre-existing baseline was changed to resolve either failure.
 
 The first review correctly found that the original 390 annual cases did not enable refundable credits and
 mostly locked benefit receipts, not their effects on other programs. Added **22 cases / 96 numeric cells**,
-eleven cases per year, all with `useCredits: true`. The original 390 cases and all pre-PR golden fixtures are
-unchanged. Refundable expectations are keyed by name because zero credits are omitted from the returned list.
+eleven cases per year, all with `useCredits: true`. That round preserved the original 390 cases exactly;
+all pre-PR golden fixtures remain unchanged. Refundable expectations are keyed by name because zero credits
+are omitted from the returned list.
 The all-jurisdiction CCB test now asserts the exact one-child-under-six formula and a strict decrease from
 the no-supplement maximum, rather than permitting equality.
 
@@ -281,13 +282,245 @@ for each mutation, restoring the source between runs. Both unmodified controls (
 | Federal BPA input `net` → `ti` | `net-tested-bpa-recovery` | Killed / 2 |
 | LIFT individual income `net` → `ti` | `net-tested-lift-ohp` | Killed / 2 |
 | BC reduction income `net` → `ti` | BC `net-tested-reduction` | Killed / 2 |
-| Both personal low-income-reduction call sites `net` → `ti` | NL `net-tested-reduction` | Killed / 2 |
+| Combined low-income call-site mutation; reachable multi-line site caused the failures | NL `net-tested-reduction` | Killed / 2 |
 | T2209 denominator `ti` → `net` | `net-tested-foreign-credit` | Killed / 2 |
 | Couple QC pool income → `tiP` | `net-tested-couple-pool` | Killed / 2 |
 | Single QC pool income → `tiP` | `net-tested-single-pool` | Killed / 2 |
 | Subtract supplements from `creditsOf.famNet` | age/GST/OSTC, CWB, QC work-premium cases | Killed / 6 |
 | Subtract supplements from `creditsOf.provincialFamNet` | both QC pools and work premium | Killed / 6 |
 | OHP income `ti` → `net` | `net-tested-lift-ohp`, existing ON `single` | Killed / 4 |
+
+## Round 3: provincial FTC, spouse credit and complete income-base audit
+
+The second review identified two additional unlocked consumers. Added provincial FTC assertions to the two
+`net-tested-foreign-credit` cases and a `net-tested-allowance-spouse` case in each year. The wider audit
+then added eleven paired scenarios and explicit reporting assertions: **24 new cases / 158 added cells**
+since `0e429d3`. Every pre-existing input and expected value is preserved; additions are confined to this PR's
+new fixture. No engine code or pre-PR golden file changed. The first 390 cases now have some additional
+assertions, so the earlier round's exact-object comparison describes that round, not this final fixture.
+
+Independent arithmetic for the two requested consumers:
+
+- [T2036 note 3](2025/sources/oas-audit-t2036.txt) imports T2209's income denominator, excluding line 25000.
+  In 2025 ON tax after BPA/age is `(28791.14 − 12747 − 6223) × .0505 = 495.96757`.
+  Ontario reduction is `588 − 495.96757 = 92.03243`, leaving 403.93514. Provincial FTC is therefore
+  `403.93514 × 20000 / 28791.14 = 280.5968` to four decimals; unused foreign withholding does not bind.
+  For 2026 the corresponding pre-FTC tax is 376.51749 and denominator 28,999.49, giving 259.6718.
+  Both cases have positive provincial tax before and after FTC.
+- Allowance spouse: older adult age 70 with other income 32,000, spouse age 62. Table 4 sums give 2025 GIS
+  3,037.20 and spouse Allowance 2,269.65. Federal spouse base is `16129 − 2269.65 = 13859.35`, giving
+  applied credit `13859.35 × .145 = 2009.60575`. Federal tax stays positive:
+  `(40791.14 − 16129 − 13859.35 − 9028) × .145 = 257.34455`.
+  In 2026 Allowance 2,515.38 reduces the base to 13,936.62, credit to 1,951.1268, and leaves tax 196.4018.
+  The provincial spouse amount and applied credit are also locked. The inputs and net-income definition
+  follow [T1](2025/sources/seniors-t1.txt) and [ON428](2025/sources/seniors-on428.txt).
+
+Additional independent calculations used to close the audit gaps (paired cases cover both years):
+
+- `audit-proxy-credit-switch` retains the existing independently verified partial-DTC income/payment
+  expectations with `useBpa: false`. `audit-proxy-spouse-dividend` uses 25,000 eligible dividends and an
+  Allowance spouse: 2025 historical pre-DTC tax is `(34500 + 8791.14 − 2×16129 − 9028) × .145 = 290.7453`.
+  The adjustment is `3 × (34500×.150198 − 290.7453) = 14673.2571`; Table 4 tests 19,826.7429.
+  Current Allowance must not reduce that historical spouse credit or feed back into the proxy income.
+- `audit-t778-negative-base`: older worker age 76 earns 10,000 and deducts 30,000 RRSP; spouse earns 5,000.
+  Full GIS is payable after combining the proxy incomes. Current pre-childcare income is
+  `10000 + 9670.29 − 30000 + 13130.82 = 2801.11`, below the spouse's `5000 − 15 = 4985`.
+  The older worker claims 2,000 and has net 801.11. Flooring before adding GIS elects the wrong claimant.
+- `audit-allowance-recovery`: the younger spouse has 200,000 other income and no OAS field; the older
+  spouse has offsetting 200,000 deductions. The 15% recovery exceeds and is capped at the younger spouse's
+  16,695.09 Allowance in 2025 (17,090.91 in 2026). Their line 25000 deduction is zero and net/taxable
+  income both equal 200,000. The recovery trigger must work for Allowance without OAS.
+- `audit-childcare-repayment-bases`: QC older adult has 150,000 other income and an explicitly verified
+  exceptional manual childcare claim of 8,000; spouse deductions offset the GIS test. Gross income including
+  OAS/GIS is 171,921.96. Federal recovery is `.15 × (171921.96 − 8000 − 93454) = 10570.194`.
+  QC imports that recovery, excludes federal childcare, and reports line 275 of 161,351.766 and taxable
+  income 150,000. Recomputing recovery on the provincial base would incorrectly increase it by 1,200.
+- `audit-bpa-net`: MB other income 200,000 with offsetting spouse deductions gives net 202,651.766 in 2025.
+  BPA is `15780 × (1 − (202651.766 − 200000)/200000) = 15570.7756626`; taxable income remains 200,000.
+  `audit-family-benefit`: MB single other income 20,000 gives family-benefit base
+  `2065 + 2065 − .09×29891.99 = 1439.7209`, applied at 10.8%. See
+  [Manitoba's Act](2025/sources/mb-income-tax-act.txt) and the sourced MB parameters.
+- `audit-allowance-family-reduction`: the same 32,000/Allowance household in NL has family net 46,097.99
+  in 2025, so its reduction is `997 + 557 − .16×(46097.99 − 40460) = 651.9216`. Positive tax permits the
+  whole reduction. This tests the family branch separately from the prior single-adult case.
+- `audit-childcare-family-benefit` repeats the independently checked QC single-parent case with all three
+  7,500 expenses attested as Quebec-eligible. At line 275 of 56,665.11, childcare credit is
+  `22500 × .70 = 15750`; family allowance is `3×3006 + 1055 − .04×(56665.11 − 43280) = 9537.5956`.
+  The children are under six, so no school-supplies amount enters. The
+  [Schedule C](2025/sources/quebec-childcare-schedule.txt) income base differs from federal net income.
+- `audit-care-income` enables credits for the existing T778 reversal case. [ON479-A](2025/sources/ontario-care.txt)
+  adds the 8,000 deduction back to net income 44,588.11. CARE has eight reduction steps through 40,000 and
+  three more to 52,588.11: rate `.75 − 11×.02 = .53`, applied credit `8000 × .53 = 4240`.
+- `audit-cwb-secondary-earner`: older worker age 76 earns 15,000; Allowance spouse earns 10,000 and deducts
+  10,000 RRSP plus 65 enhanced CPP. Full GIS/Allowance give family net 49,204.33 in 2025. The spouse's
+  net 16,630.09 exceeds wages, so the secondary exemption is 10,000, not their negative pre-Allowance net.
+  CWB is `2813 − .15×(49204.33 − 10000 − 30639) = 1528.2005`.
+- Reporting assertions use these same sums, not engine capture. At the final Q1 Allowance band its pension
+  portion is zero, so protected GIS minus Allowance gives the protection increment: 250.46 in 2025 and
+  255.52 in 2026. Income-component and pre-childcare/pre-recovery reports are locked separately from taxes.
+
+### Changed-line inventory and mutation method
+
+Inventory is against this PR's merge base; engine line numbers are unchanged since `65dff0a`. Continuation
+lines belong to the same expression. The following covers every changed executable statement reading a
+supplement or income base, with declarations, comments and imports identified separately:
+
+| File | Changed lines / statements audited |
+| --- | --- |
+| `childcare.ts` | 131–133: pre-deduction net, supplement inclusion, zero floor and claimant comparison. |
+| `household.ts` | 115–123: proxy dividend calculation/forwarding; 144–154: proxy/current childcare, GIS/Allowance and net forwarding; 156–160: recovery and Quebec net; 183: person context; 296, 308–313: QC pools; 381–387: four exposed income bases and both spouse terms; 420: benefit subtraction; 435: supplement breakdown. |
+| `payroll.ts` | 267–272: supplement assignment, recovery trigger/cap/income; 292: total net-income inclusion. |
+| `personal.ts` | 60–65: amounts, net/floor, repayment-adjusted deduction and taxable income; 68–73: provincial net/recovery/deduction and senior base; 82: BPA; 186–193 and 199: reductions; 213: LIFT; 219: BC reduction; 225 and 228–229: FTC denominators; 301–309 and 314: all new net/deduction/repayment reports. |
+| `gis-allowance.ts` | 49–70: every income type, payroll, exemption, deduction, combined income and reports; 78–113: OAS equivalent, tested income, steps, top-ups, all bases/offsets/tapers and protection; 128–129, 146, 152–167: annual income/OAS/category/quarter forwarding and receipt assignment; 170, 174–180: monthly retention, annual sums and reports. |
+| Additional downstream consumers | `household.ts` 192, 204, 211, 393, 399–400, 406–407, 412 and `personal.ts` 83, 145, 246: family context, spouse amounts, child/childcare/refundable credits, secondary-earner exemption, provincial BPA/family benefit and OHP. These unchanged lines consume the newly changed bases and were included too. |
+| Non-executable or structural changes | Import/export lines; `Person`/`Ctx`/`NetIncomeParts` declarations and function parameters; public-pension recovery comment; GIS validation/type declarations and result containers. Their supplied values and runtime consumers are tested above. |
+
+Each mutation runs alone in a scratch copy; the working-tree engine is untouched. The main command is
+`fnm exec --using=26 node --import tsx --test tests/gis-allowance.test.ts`. Both controls pass 448 tests.
+The Quebec legacy-net mutation additionally runs `tests/qc-living-alone.test.ts`; its controls pass 80 tests
+and it fails three assertions, including both years' single-parent childcare cases. Those existing tests and
+goldens are unchanged. With GIS enabled, the senior-pool route supersedes that legacy living-alone consumer.
+
+There are **125 mutations: 123 killed, two equivalent**, with no unexplained survivor or syntax/import failure.
+Equivalence is established independently of test survival:
+
+- `proxy-dividend-excess`: removing `−fedBasic` cannot change the positive excess DTC. DTC is applied up
+  to pre-DTC tax; either it is fully used (excess zero), or tax after DTC is zero (`fedBasic = 0`).
+- `low-income-legacy-unreachable`: only the one-line call at `personal.ts:199` changes. Every 2025/2026
+  province with a low-income reduction supplies `claimants.lowIncomeReduction`, so these years always use
+  the multi-line call. Older years cannot enable GIS; net and taxable bases remain equal there. The
+  reachable own-income and family-income calls were mutated separately and both failed.
+
+The complete per-mutant outcomes follow. IDs identify the single substitution; locations name its source
+statement. Killed means a numerical or required-field assertion failed, not that the test process crashed.
+
+| Mutation | Engine location | Outcome (failed tests) |
+| --- | --- | --- |
+| `federal-age` | `personal.ts:73` | Killed (2) |
+| `federal-bpa` | `personal.ts:82` | Killed (2) |
+| `lift` | `personal.ts:213` | Killed (2) |
+| `bc-reduction` | `personal.ts:219` | Killed (2) |
+| `low-income-reductions` | `personal.ts:187` | Killed (2) |
+| `t2209-denominator` | `personal.ts:225` | Killed (2) |
+| `qc-couple-pool` | `household.ts:296` | Killed (2) |
+| `qc-single-pool` | `household.ts:311` | Killed (4) |
+| `refundable-federal-income` | `household.ts:405` | Killed (8) |
+| `refundable-qc-income` | `household.ts:407` | Killed (8) |
+| `ontario-health-premium` | `personal.ts:246` | Killed (4) |
+| `t2036-denominator` | `personal.ts:228` | Killed (2) |
+| `spouse-federal` | `household.ts:204` | Killed (2) |
+| `spouse-provincial` | `household.ts:211` | Killed (2) |
+| `childcare-comparison` | `childcare.ts:132` | Killed (4) |
+| `childcare-income-floor` | `childcare.ts:132` | Killed (2) |
+| `proxy-strip-supplements` | `household.ts:119` | Killed (2) |
+| `proxy-credit-switch` | `household.ts:120` | Killed (2) |
+| `proxy-dividend-excess` | `household.ts:121` | Equivalent (0; proof above) |
+| `proxy-dividend-forward` | `household.ts:123` | Killed (8) |
+| `gis-childcare-forward` | `household.ts:145` | Killed (10) |
+| `gis-dividend-forward` | `household.ts:145` | Killed (8) |
+| `supplements-gis-component` | `household.ts:148` | Killed (126) |
+| `supplements-allowance-component` | `household.ts:148` | Killed (36) |
+| `current-childcare-forward` | `household.ts:150` | Killed (4) |
+| `household-net-forward` | `household.ts:153` | Killed (108) |
+| `household-net-floor` | `household.ts:153` | Killed (4) |
+| `household-recovery-forward` | `household.ts:158` | Killed (2) |
+| `qc-legacy-net-childcare` | `household.ts:160` | Killed (3); living-alone suite |
+| `person-context-supplements` | `household.ts:183` | Killed (40) |
+| `before-childcare-report` | `household.ts:381` | Killed (4) |
+| `before-recovery-base` | `household.ts:382` | Killed (6) |
+| `provincial-array-report` | `household.ts:384` | Killed (2) |
+| `provincial-family-first` | `household.ts:386` | Killed (6) |
+| `provincial-family-second` | `household.ts:386` | Killed (2) |
+| `provincial-family-single` | `household.ts:387` | Killed (4) |
+| `benefit-subtraction` | `household.ts:420` | Killed (78) |
+| `gis-breakdown-report` | `household.ts:435` | Killed (408) |
+| `monthly-protection-report` | `gis-allowance.ts:113` | Killed (2) |
+| `income-working-report` | `gis-allowance.ts:65` | Killed (16) |
+| `income-exemption-report` | `gis-allowance.ts:66` | Killed (16) |
+| `income-other-report` | `gis-allowance.ts:67` | Killed (2) |
+| `income-deductions-report` | `gis-allowance.ts:68` | Killed (10) |
+| `income-adjustment-report` | `gis-allowance.ts:69` | Killed (8) |
+| `monthly-oas-equivalent` | `gis-allowance.ts:78` | Killed (202) |
+| `neither-offset-rounding` | `gis-allowance.ts:95` | Killed (86) |
+| `allowance-offset-rounding` | `gis-allowance.ts:105` | Killed (75) |
+| `neither-payment` | `gis-allowance.ts:103` | Killed (95) |
+| `protection-application` | `gis-allowance.ts:111` | Killed (43) |
+| `annual-income-forward` | `gis-allowance.ts:165` | Killed (274) |
+| `monthly-receipt-store` | `gis-allowance.ts:166` | Killed (409) |
+| `annual-incomes-report` | `gis-allowance.ts:178` | Killed (34) |
+| `annual-adults-report` | `gis-allowance.ts:179` | Killed (436) |
+| `payroll-supplement-report` | `payroll.ts:267` | Killed (130) |
+| `allowance-recovery-trigger` | `payroll.ts:268` | Killed (2) |
+| `recovery-cap` | `payroll.ts:271` | Killed (12) |
+| `recovery-income` | `payroll.ts:271` | Killed (13) |
+| `net-income-total` | `payroll.ts:292` | Killed (130) |
+| `personal-supplement-local` | `personal.ts:60` | Killed (110) |
+| `personal-net-forward` | `personal.ts:61` | Killed (116) |
+| `personal-net-floor` | `personal.ts:62` | Killed (2) |
+| `line25000-repayment` | `personal.ts:64` | Killed (12) |
+| `federal-taxable-deduction` | `personal.ts:65` | Killed (102) |
+| `qc-personal-net-forward` | `personal.ts:69` | Killed (12) |
+| `qc-recovery-override` | `personal.ts:69` | Killed (2) |
+| `nonqc-personal-net-base` | `personal.ts:70` | Killed (17) |
+| `provincial-net-amount-base` | `personal.ts:71` | Killed (4) |
+| `provincial-taxable-deduction` | `personal.ts:72` | Killed (14) |
+| `low-income-legacy-unreachable` | `personal.ts:199` | Equivalent (0; proof above) |
+| `t2036-share` | `personal.ts:229` | Killed (2) |
+| `supplement-report-gate` | `personal.ts:301` | Killed (30) |
+| `supplement-report` | `personal.ts:303` | Killed (2) |
+| `net-report` | `personal.ts:304` | Killed (8) |
+| `qc-net-report` | `personal.ts:305` | Killed (14) |
+| `deduction-report` | `personal.ts:306` | Killed (6) |
+| `repayment-report` | `personal.ts:307` | Killed (4) |
+| `recovery-income-report` | `personal.ts:314` | Killed (4) |
+| `income-wages` | `gis-allowance.ts:49` | Killed (28) |
+| `income-business` | `gis-allowance.ts:49` | Killed (6) |
+| `income-base-payroll` | `gis-allowance.ts:49` | Killed (10) |
+| `income-enhanced-payroll` | `gis-allowance.ts:49` | Killed (10) |
+| `income-ei` | `gis-allowance.ts:49` | Killed (30) |
+| `full-earnings-exemption` | `gis-allowance.ts:51` | Killed (36) |
+| `partial-earnings-exemption` | `gis-allowance.ts:52` | Killed (30) |
+| `income-other` | `gis-allowance.ts:54` | Killed (254) |
+| `income-cpp` | `gis-allowance.ts:55` | Killed (2) |
+| `income-retirement` | `gis-allowance.ts:56` | Killed (2) |
+| `income-foreign` | `gis-allowance.ts:57` | Killed (2) |
+| `income-gains` | `gis-allowance.ts:58` | Killed (2) |
+| `income-eligible-dividends` | `gis-allowance.ts:59` | Killed (10) |
+| `income-noneligible-dividends` | `gis-allowance.ts:60` | Killed (2) |
+| `income-dtc-adjustment` | `gis-allowance.ts:61` | Killed (8) |
+| `income-ordinary-deductions` | `gis-allowance.ts:62` | Killed (20) |
+| `income-childcare` | `gis-allowance.ts:62` | Killed (10) |
+| `income-qpip` | `gis-allowance.ts:62` | Killed (4) |
+| `income-aggregate-floor` | `gis-allowance.ts:70` | Killed (22) |
+| `monthly-tested-income` | `gis-allowance.ts:81` | Killed (276) |
+| `monthly-band-step` | `gis-allowance.ts:82` | Killed (148) |
+| `monthly-topup-threshold` | `gis-allowance.ts:89` | Killed (98) |
+| `monthly-topup-step` | `gis-allowance.ts:90` | Killed (70) |
+| `monthly-single-base` | `gis-allowance.ts:93` | Killed (251) |
+| `monthly-couple-base` | `gis-allowance.ts:94` | Killed (226) |
+| `monthly-neither-offset` | `gis-allowance.ts:96` | Killed (112) |
+| `monthly-single-taper` | `gis-allowance.ts:100` | Killed (73) |
+| `monthly-couple-taper` | `gis-allowance.ts:102` | Killed (39) |
+| `monthly-allowance-offset` | `gis-allowance.ts:106` | Killed (97) |
+| `monthly-allowance-pension` | `gis-allowance.ts:108` | Killed (103) |
+| `monthly-protection` | `gis-allowance.ts:110` | Killed (43) |
+| `annual-childcare-input` | `gis-allowance.ts:128` | Killed (10) |
+| `annual-dtc-input` | `gis-allowance.ts:128` | Killed (8) |
+| `annual-income-couple` | `gis-allowance.ts:146` | Killed (61) |
+| `annual-income-single` | `gis-allowance.ts:146` | Killed (75) |
+| `annual-quarter` | `gis-allowance.ts:165` | Killed (410) |
+| `annual-allowance-payment` | `gis-allowance.ts:167` | Killed (153) |
+| `annual-gis-sum` | `gis-allowance.ts:174` | Killed (409) |
+| `annual-allowance-sum` | `gis-allowance.ts:175` | Killed (153) |
+| `annual-total` | `gis-allowance.ts:180` | Killed (143) |
+| `provincial-bpa-consumer` | `personal.ts:83` | Killed (2) |
+| `mb-family-consumer` | `personal.ts:145` | Killed (2) |
+| `household-low-income-context` | `household.ts:192` | Killed (2) |
+| `child-benefit-qc-base` | `household.ts:393` | Killed (2) |
+| `care-income-base` | `household.ts:399` | Killed (2) |
+| `qc-childcare-income-base` | `household.ts:400` | Killed (2) |
+| `cwb-secondary-earner-base` | `household.ts:412` | Killed (2) |
+| `personal-low-income-family-base` | `personal.ts:189` | Killed (2) |
 
 ## Handoff and validation
 
