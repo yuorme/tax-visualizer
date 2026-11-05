@@ -162,7 +162,9 @@ Subtracting 509 again from the senior pool would understate relief.
 
 MB's 19,508 spouse has age base 3,728 and adjusted income `19,508 - 15,780 = 3,728`:
 equality does not qualify. At 19,507 it does; at 60,000 the age base is zero and the claimant at 30,000
-retains only the 1,430 family-benefit base, worth 154.44. These distinguish the reviewed #141 correction.
+retains only the 1,430 family-benefit base, worth 154.44. These check age-only transfers in the #141 correction.
+They did not prove the pension-only condition: at age-only equality there is no unused pool to transfer.
+The #206 additions below assert the recipient's family-age base with a positive unused pension pool.
 
 Quebec's 2025 couple at 27,500 each, with 3,000 RPP each, has pool
 `2 × (3,906 + 3,470) - .1875 × (55,000 - 42,090) = 12,331.375`.
@@ -170,6 +172,66 @@ Allocate 8,929 to the first return and 3,402.375 to the second; provincial tax i
 The line-431 dividend cases deliberately have excess combined relief. An initial paper calculation omitted
 line 432's zero floor; checking the cached return corrected those four new expectations to zero before commit.
 The fixture retains full entitlements and transfer assertions, so the cap does not conceal double allocation.
+
+## Issue #206: post-merge audit coverage
+
+The [PR #195 audit](https://github.com/yuorme/tax-visualizer/pull/195#issuecomment-6654384288) found missing
+assertions, rather than errors in these senior rules. Additive cases in `tests/golden/features/senior-audit.json`
+now lock the gaps. `tests/senior-audit.test.ts` runs them with independently calculated expectations and an absolute
+`1e-8` floating-point tolerance. No existing fixture, input, expectation, assertion or tolerance was changed.
+Coverage remains 2025–2026; see the [combined counts and OAS calculations](18-oas-cpp.md#issue-206-audit-follow-up).
+
+Independent calculations use the already cached #138 S2/428 forms and literal parameters above:
+
+- **MB pension-only:** donor income 20,000, including 3,000 RPP, gives S2 capacity `20,000 - 15,780 = 4,220`.
+  Age is 3,728, pension 1,000, unused pool 508. At income 19,508, capacity equals age, leaving 1,000 pension.
+  Neither meets the strict age test. In both years the recipient at 21,000 has family-age base zero and family
+  credit `(2,065 - .09 × 21,000) × .108 = 18.90`. Wrongly adding the spouse term would add 223.02.
+- **Federal age in QC:** wages 60,000 have a 565 enhanced-QPP deduction. Federal net is 59,435 without
+  childcare, or 51,435 with a verified 8,000 manual claim. Apply each year's federal age maximum and threshold
+  to those figures, before Quebec's worker deduction. Quebec taxable income remains `59,435 - 1,420/1,450`.
+- **Working QC couple:** each has wages 30,000 and enhanced QPP 265. Family line 275 is
+  `2 × (30,000 - 265 - 1,420/1,450)`. Reduce the two age amounts once at 18.75% above 42,090/42,955.
+  The first return can use the entire pool. #19's `net-tested-couple-pool` already guards the provincial net
+  basis for supplements; this separate working case specifically guards the worker deduction.
+- **Higher-income donor:** age 65 at 20,000 donates to a nonsenior at 19,000. Federal capacity is
+  `20,000 - 16,129/16,452`, so the transfer is 5,157/5,660. A zero-income donor with 2,000 RPP instead transfers
+  `9,028/9,208 + 2,000 = 11,028/11,208`, exceeding the mistaken 9,028 recipient cap.
+- **NS child and age ordering:** a donor at 15,000 with one child under six transfers age less
+  `15,000 - BPA`; the nontransferable 1,200 child base never joins S2. For the separate age tax credit at 20,000,
+  subtract BPA and age, multiply by .0879, then subtract the 50 low-income reduction. At 23,000 with 20,000
+  foreign income and 10% withholding, federal FTC is zero; provincial FTC is provincial pre-tax times `20/23`.
+  The age tax credit uses only the remaining provincial tax. The existing strict-24,000 cases remain intact.
+- **Minor guards:** unrelated ON adults receive no transfers; each unrelated PE senior at 20,000 has a 600
+  reduction entitlement. With personal credits disabled, PE's entitlement is 350, without its 250 senior term.
+  A nonsenior's 30,000 RPP produces no employment amount, LIFT or RRSP earned room.
+
+### Mutation outcomes
+
+The original hand-mutant definitions were recovered from the audit scratch directory and applied individually
+to a fresh copy outside the worktree under `/tmp/206-mutants`. Old `ti`/net call sites were translated to the
+post-#19 equivalents; the intended wrong bases and comparisons were preserved. Only `senior-audit`,
+`senior-credits`, `oas-cpp`, `gis-allowance`, `qc-health-fund` and the two current-year reference test files ran.
+The unmutated control passed. Every failure was an assertion, with no syntax/import-error kills.
+
+All **26 applicable #195 mutants were killed**, including all fourteen previously unrun mutants:
+
+| Mutants | Outcome / coverage |
+| --- | --- |
+| `age-net-tiP`, `age-net-provNet` | Killed; federal age / QC childcare cases; #19 also kills the first. |
+| `mb-age-plus-pension`, `mb-any-transfer`, `mb-ge` | Killed; positive pension-only pool, including equality. |
+| `qc-taper-federal-net`, `transfer-one-way` | Killed; working QC couple and higher-income donor. |
+| `s2-child-any-province`, `transfer-unrelated` | Killed; NS young child and low-income unrelated ON adults. |
+| `pe-count-unrelated`, `transfer-capped`, `pe-no-switch` | Killed; PE count/switch and uncapped federal pool. |
+| `ns-le`, `ns-rate`, `ns-gt` | Killed; existing strict boundary and new age-credit calculations. |
+| `ns-ignore-lowred`, `ns-ignore-ftc` | Killed; new NS age-credit ordering cases. |
+| `on-surtax-before-senior`, `hsf-no-retire` | Killed; existing transfer-surtax and QC full-return cases. |
+| `working-includes-retire`, `rrsp-room-retire` | Killed; income propagation and RPP conservation. |
+| `employment-amt-retire`, `lift-retire` | Killed; RPP-only employment/LIFT assertions. |
+| `pe-after-taper`, `mb-own-gt`, `mb-after-reduction` | Killed; existing form cases, including #19 coverage. |
+
+**Dropped:** `qc-legacy-spouse-too`, because #205 removed that code path. Its replacement line-431 tests already
+assert unused BPA transfers without double counting. No replacement legacy-path case was added.
 
 ### Existing age-aware marginal baseline
 

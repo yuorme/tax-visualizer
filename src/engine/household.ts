@@ -385,7 +385,9 @@ function calculateHousehold(
   totals.total += householdPremium?.total ?? 0;
   const ccb = ccbOf(fed, famNet, kids, under6);
   const incomeBases = {
-    beforeChildcare: ppl.map((x, i) => netIncomeTotal(netIncomeParts(fed, p, x, 0, recoveries[i])) + supplements[i]),
+    beforeChildcare: ppl.map((x, i) =>
+      netIncomeTotal(netIncomeParts(fed, p, x, 0, recoveries[i], gisAllowance ? supplements[i] : undefined)),
+    ),
     beforeChildcareAndRecovery: ppl.map((x, i) => netIncomeTotal(netIncomeParts(fed, p, x, 0, 0)) + supplements[i]),
     federal: nets,
     provincial: list.map(r => r.breakdown.provincialNetIncome ?? r.tiP),
