@@ -46,7 +46,8 @@ line-by-line tax return. Simpler and slightly less precise is acceptable where i
   For 20,000 pension plus an illustrative 9,000 OAS entered together, this contribution is 90 too high;
   OAS alone or income on the 150 plateau can produce no error. The contribution base is an explicit allow-list:
   #18's engine keeps its separate OAS input out while retaining it for income tax, and includes separately
-  entered CPP/QPP benefits in this base. Its page controls follow separately. Business allocation outside Quebec
+  entered CPP/QPP benefits in this base through the per-adult Retirement income controls. Business allocation
+  outside Quebec
   (guide line 446 / TP-22)
   and restricted line 297 deductions are not modelled. See [Schedule F audit](verification/91-qc-health-fund.md).
   The 2026 rate and thresholds are published by Finances Québec; caps, the second-column base and income rules
@@ -111,13 +112,14 @@ line-by-line tax return. Simpler and slightly less precise is acceptable where i
   History omits unsupported years, including for age-independent receipts, in nominal and real modes; its basis
   and tooltip state the coverage. No existing Other income is moved automatically, including legacy pensions.
   Tooltips explain double counting, receipt eligibility, age assumptions and the unmodelled RRIF minimums,
-  OAS/CPP deferral and residency rules. No new OAS/GIS/CPP entitlement or complete senior tax burden is implied.
+  OAS/CPP deferral and residency rules. #18 adds full resident OAS below; GIS, CPP entitlement estimates and a
+  complete senior tax burden are not implied.
   #91's unclassified `oth`
   exclusions/deductions remain as described above; the four supported receipts are subject to the Health Services Fund.
   Alberta supplemental-credit sizing (#147) remains outside this change.
   See [verification](verification/17-senior-credits.md).
 
-- OAS and CPP/QPP retirement income, **engine only, 2025–2026** (#18): per-adult opt-in `oas` calculates full
+- OAS and CPP/QPP retirement income, **2025–2026** (#18): per-adult opt-in `oas` calculates full
   resident OAS from published quarterly monthly amounts; `cppQpp` accepts annual gross retirement receipts.
   Both are additional cash and taxable income, so move any matching amounts out of `oth`, never copy them.
   Omitted inputs preserve legacy results; age alone does not opt in. OAS requires year-end age and birth month.
@@ -132,8 +134,15 @@ line-by-line tax return. Simpler and slightly less precise is acceptable where i
   OAS is not a refundable credit; recovery withholding based on earlier returns is unknown, not a second charge.
   Neither receipt earns employment or pension-income credits, RRSP room, or changes payroll elections.
   Published 2026 amounts and thresholds use provisional 2025 filing mechanics. Earlier years reject these inputs;
-  History back-fill is a separate issue to file at merge. Controls, tooltips, URL encoding and saved-state migration
-  follow in the page branch. GIS (#19), splitting (#20) and seniors' supplements (#21) remain outside this engine work.
+  History back-fill is a separate issue to file at merge. Per-adult controls sit with #17's Retirement income receipts;
+  the existing birth-year/month controls supply OAS age. Incomplete dates retain the opt-in but exclude OAS until
+  complete; CPP/QPP amounts need no age. Tooltips explain coverage, birthday timing, recovery versus withholding,
+  deferral/residency assumptions and avoiding duplicate Other income. The ledger identifies gross OAS, CPP/QPP,
+  the recovery deduction already included in deductions, and recovery added once to federal tax. URL and saved-state
+  migration preserve omission, explicit false and zero, and never move legacy Other income or infer benefits from age.
+  Selected older years retain the drafts but exclude the new fields with a notice; nominal and real history omit
+  unsupported years and state the coverage. Real history scales entered CPP/QPP; OAS uses each year's published data.
+  GIS (#19), splitting (#20) and seniors' supplements (#21) remain outside this work.
   See [verification and rule coverage](verification/18-oas-cpp.md).
 
 **Payroll (employee share, plus both shares on self-employment)**
@@ -211,7 +220,8 @@ worked examples are in [carbon history](verification/carbon-history.md).
 **Historical comparison.** A separate view compares the home province across installed tax years. Real mode
 holds income, deductions, childcare amounts, spending, rent and home value at the same purchasing power using
 Statistics Canada's annual Canada all-items CPI; household composition, ages, rates and driving stay fixed,
-except that retirement-age CPP/QPP uses each person's age in that year from their birth year.
+except that retirement-age CPP/QPP, age/pension credits and OAS use each person's age in that year from
+their birth year.
 Inputs and results use the latest completed annual CPI year's dollars, labelled in the view. Years without
 published annual CPI appear only in nominal mode, which holds the entered dollar amounts fixed. This is a
 comparison of modeled tax rules, not a reconstruction of the household's past circumstances or housing prices.
@@ -251,8 +261,8 @@ points. Individual provincial and territorial programs beyond the ones it measur
 built.
 - Federal and provincial age amounts and pension income credit: implemented for 2025–2026 above;
   historical back-fill remains in #196.
-- OAS with recovery tax and the 10% increase at 75, plus CPP/QPP retirement income: engine implemented for
-  2025–2026 above; page controls follow separately. GIS and the Allowance remain planned.
+- OAS with recovery tax and the 10% increase at 75, plus CPP/QPP retirement income: implemented for
+  2025–2026 above, including page controls. GIS and the Allowance remain planned.
 - Pension income splitting, optimised automatically per province (the engine tries 0–50% and keeps the lowest
   household tax; no input).
 - Provincial seniors' supplements (Ontario GAINS, Alberta Seniors Benefit, BC Senior's Supplement,

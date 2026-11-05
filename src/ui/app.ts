@@ -68,8 +68,17 @@ import {
   validSelfEmployment,
   withSelfEmployment,
 } from "./self-employment.ts";
-import { seniorEditor } from "./senior-editor.ts";
-import { normalizeReceipts, seniorGate, seniorYears, withSeniorIncome } from "./senior-income.ts";
+import { publicPensionEditor, seniorEditor } from "./senior-editor.ts";
+import {
+  hasPublicPensions,
+  normalizePublicPensions,
+  normalizeReceipts,
+  publicPensionGate,
+  publicPensionYears,
+  seniorGate,
+  seniorYears,
+  withSeniorIncome,
+} from "./senior-income.ts";
 
 const availableYears = Object.keys(years)
   .map(Number)
@@ -246,6 +255,7 @@ function cleanPerson(o: unknown): Person {
     if (validSelfEmployment(saved.selfEmployment)) x.selfEmployment = saved.selfEmployment;
     const receipts = normalizeReceipts(saved.retirementIncome);
     if (receipts) x.retirementIncome = receipts;
+    Object.assign(x, normalizePublicPensions(saved));
     for (const k of KEYS) {
       const v = saved[k];
       if (isNum(v) && (k === "cg" || v >= 0)) x[k] = v;
@@ -493,7 +503,7 @@ $("tabbar").addEventListener("click", e => {
 function renderPeople() {
   let html = enginePeople()
     .map((x, i) => {
-      const btn = `<button class="person" data-i="${i}" aria-pressed="${i === active}"><b>${NAMES[i]}</b><small>${money(cashOf(x))}</small></button>`;
+      const btn = `<button class="person" data-i="${i}" aria-pressed="${i === active}"><b>${NAMES[i]}</b><small>${money(cashOf(x, F))}</small></button>`;
       return i === 0
         ? btn
         : `<span class="person-wrap">${btn}<button type="button" class="person-x" id="remove-partner" aria-label="Remove partner" title="Remove partner">×</button></span>`;
@@ -663,6 +673,12 @@ function render() {
         years[availableYears[0]],
         seniorYears(Object.values(years)),
         retirements.some(retirementActive),
+      ),
+      people.some(hasPublicPensions),
+      publicPensionGate(
+        retirementPeople(years[availableYears[0]]),
+        years[availableYears[0]],
+        publicPensionYears(Object.values(years)),
       ),
     );
   const res: Row[] = P.map(p => ({ p, r: calc(p) }));
@@ -856,11 +872,10 @@ function render() {
   $("rent-body").hidden = tenure !== "rent";
   // Tab summaries: what each panel holds, highlighted whenever the summary is an amount rather than none, not set,
   // $0 or off. Income covers everyone's other and investment income, though its panel shows the selected person's.
-  const otherAmt = enginePeople().reduce(
-    (a, y) =>
-      a + (y.oth ?? 0) + (y.selfEmployment ?? 0) + (y.retirementIncome ?? []).reduce((sum, r) => sum + r.amount, 0),
-    0,
-  );
+  const otherAmt = H.r.list.reduce((a, person) => {
+    const n = person.breakdown.netIncome;
+    return a + (n.oth ?? 0) + (n.selfEmployment ?? 0) + (n.retirementIncome ?? 0) + (n.oas ?? 0) + (n.cppQpp ?? 0);
+  }, 0);
   const anyInc = H.r.hasInv || otherAmt > 0;
   const incNet = otherAmt + H.r.invAmt;
   const anyAge = retirements.some(retirementActive);
@@ -887,6 +902,10 @@ function render() {
   renderPortfolio();
   renderRetirement(H);
   senior.sync();
+  publicPensions.sync();
+  const publicNotice = $("public-pension-gate");
+  publicNotice.textContent = publicPensionGate(retirementPeople(), Y, publicPensionYears(Object.values(years)));
+  publicNotice.hidden = historyOpen || !publicNotice.textContent;
   const seniorNotice = $("senior-gate");
   seniorNotice.textContent = seniorGate(
     retirementPeople(),
@@ -976,7 +995,7 @@ function comparisonInfo(name: string, text: string) {
 }
 
 // One government's bracket ledger. w.rows: [label, amount] adjustments after bracket tax (negative = reduces tax).
-function ledger(title: string, sw: string, w: LedgerData, ti: number, explanation = "") {
+function ledger(title: string, sw: string, w: LedgerData, ti: number, explanation = "", income = "") {
   const rows = w.lines
     .map(l => {
       const isOn = l.part > 0,
@@ -992,6 +1011,7 @@ function ledger(title: string, sw: string, w: LedgerData, ti: number, explanatio
     );
   foot.push(`<tr><td colspan="3">${title} tax</td><td class="r">${money(w.net)}</td></tr>`);
   return `<div class="ledger"><h4><i class="sw" style="background:${sw}"></i>${title}${explanation}</h4>
+    ${income}
     <table><thead><tr><th>Bracket</th><th class="r">Rate</th><th class="r">Income in it</th><th class="r">Tax</th></tr></thead>
     <tbody>${rows}</tbody><tfoot>${foot.join("")}</tfoot></table></div>`;
 }
@@ -1159,11 +1179,13 @@ function ledgerView({ p, r }: Row) {
     n = m.breakdown.netIncome,
     who = two ? NAMES[active] : "";
   const tiParts: string[] = [];
-  if (x.ord || !(x.selfEmployment || x.oth || x.retirementIncome?.length || hasInv(x)))
+  if (x.ord || !(x.selfEmployment || x.oth || x.retirementIncome?.length || n.oas || n.cppQpp || hasInv(x)))
     tiParts.push(`${money(n.ord)} employment income`);
   if (x.selfEmployment) tiParts.push(`${money(n.selfEmployment ?? 0)} self-employment profit`);
   if (x.oth) tiParts.push(`${money(n.oth ?? 0)} other income`);
   if (x.retirementIncome?.length) tiParts.push(`${money(n.retirementIncome ?? 0)} retirement receipts`);
+  if (n.oas) tiParts.push(`${money(n.oas)} OAS`);
+  if (n.cppQpp) tiParts.push(`${money(n.cppQpp)} CPP/QPP retirement income`);
   if (x.cg > 0) tiParts.push(`${money(n.cg)} taxable ${share(F.investment.capitalGainsInclusion)} of net gains`);
   if (x.ed) tiParts.push(`${money(n.ed)} grossed-up eligible dividends`);
   if (x.nd) tiParts.push(`${money(n.nd)} grossed-up non-eligible dividends`);
@@ -1214,6 +1236,17 @@ function ledgerView({ p, r }: Row) {
     : "";
   const suffix = two ? ` · ${who}` : "";
   const seniorCredits = m.breakdown.seniorCredits;
+  const pension = m.breakdown.publicPensions;
+  const pensionRows: Adj[] = pension
+    ? [
+        ["Gross OAS income", pension.oas],
+        ["CPP/QPP retirement income", pension.cppQpp],
+        ["OAS recovery deduction (included in deductions)", -pension.recoveryDeduction],
+      ]
+    : [];
+  const pensionIncome = pension
+    ? `<table class="public-pension-ledger"><caption>Public pension income${comparisonInfo("OAS recovery", retirementTooltips(Object.values(years)).oasRecovery)}</caption><tbody>${pensionRows.map(([label, amount]) => `<tr><td>${label}</td><td class="r">${amount < 0 ? "−" : ""}${money(Math.abs(amount))}</td></tr>`).join("")}</tbody></table>`
+    : "";
   const fRows = present([
     useBpa && [
       `Less personal amount ${money(m.fAmt)} × ${rateFmt(F.brackets[0][1])}${m.fCred < m.fBpaFull - 0.5 ? " (capped)" : ""}`,
@@ -1225,6 +1258,7 @@ function ledgerView({ p, r }: Row) {
     [`Less dividend tax credit`, -m.fDtc],
     p.qc && [`Less ${rateFmt(F.quebecAbatement)} Quebec abatement`, -m.breakdown.quebecAbatement],
     [`Less foreign tax credit`, -m.fFtc],
+    ["OAS recovery tax", pension?.recoveryTax ?? 0],
   ]);
   const lowIncomeRow: Adj = [`Less low-income tax reduction`, -m.lowRed];
   const lowIncomeAfterForeign = p.d.claimants?.lowIncomeReduction?.order === "after-foreign-tax-credit";
@@ -1275,7 +1309,7 @@ function ledgerView({ p, r }: Row) {
     ] satisfies Adj[]
   ).filter(([, a]) => a > 0.5);
   const taxableInfo =
-    hasInv(x) || x.selfEmployment || x.oth || x.retirementIncome?.length || n.ded || n.enh > 0.5
+    hasInv(x) || x.selfEmployment || x.oth || x.retirementIncome?.length || pension || n.ded || n.enh > 0.5
       ? comparisonInfo(
           "taxable income",
           `${two ? `${who}: t` : "T"}axable income is ${money(m.ti)}: ${tiText}.${hasInv(x) ? ` "Tax on investment income" is the extra tax the ${two ? "household's " : ""}investment income adds on top of the rest of its income.` : ""} ${extra.join(" ")}`,
@@ -1283,7 +1317,7 @@ function ledgerView({ p, r }: Row) {
       : "";
   return `
     <div class="ledgers">
-      ${ledger(`Federal${suffix}`, "var(--fed)", { lines: m.f.lines, gross: m.f.tax, rows: fRows, net: m.fed }, m.ti, taxableInfo)}
+      ${ledger(`Federal${suffix}`, "var(--fed)", { lines: m.f.lines, gross: m.f.tax, rows: fRows, net: m.fed }, m.ti, taxableInfo, pensionIncome)}
       ${ledger(p.n + suffix, "var(--prov)", { lines: m.pr.lines, gross: m.pr.tax, rows: pRows, net: m.prov }, m.tiP)}
       <div class="ledger">
         <h4><i class="sw" style="background:var(--pay)"></i>Payroll${suffix}${businessInfo ? comparisonInfo("self-employment contributions", businessInfo) : ""}${m.breakdown.retirementPayroll ? comparisonInfo("retirement-age payroll", retirementResult(m.breakdown.retirementPayroll, p.qc ? "QPP" : "CPP", money)) : ""}</h4>
@@ -1371,6 +1405,7 @@ const retirement = retirementEditor(
     render();
   },
 );
+const publicPensions = publicPensionEditor(me, render);
 const senior = seniorEditor(
   () => me().retirementIncome ?? [],
   receipts => {

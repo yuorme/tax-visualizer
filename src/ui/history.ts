@@ -13,7 +13,7 @@ import {
   yearList,
 } from "./retirement.ts";
 import { selfEmploymentYears } from "./self-employment.ts";
-import { seniorYears } from "./senior-income.ts";
+import { publicPensionYears, seniorYears } from "./senior-income.ts";
 
 const installedYears = Object.values(years).sort((a, b) => a.year - b.year);
 const coveragePrograms = [
@@ -50,6 +50,8 @@ export function renderHistory(
   businessNotice = "",
   seniorIncome = false,
   seniorNotice = "",
+  publicPensions = false,
+  publicNotice = "",
 ) {
   const comparison = retirementHistory(
     installedYears,
@@ -60,6 +62,7 @@ export function renderHistory(
     mode,
     selfEmployment,
     seniorIncome,
+    publicPensions,
   );
   const name = installedYears.at(-1)?.provinces.find(p => p.code === home)?.name ?? home;
   const byBirthYear = retirement.some(retirementActive);
@@ -77,7 +80,10 @@ export function renderHistory(
     (mode === "real" ? `${comparison.baseYear} dollars` : "Each year's dollars") +
     (omitted ? " · retirement-age payroll years only" : "") +
     (comparison.noSelfEmploymentData.length ? " · self-employment years only" : "") +
-    (seniorIncome || byBirthYear ? ` · age/pension credits: ${yearList(seniorYears(installedYears))} only` : "");
+    (seniorIncome || byBirthYear ? ` · age/pension credits: ${yearList(seniorYears(installedYears))} only` : "") +
+    (publicPensions
+      ? ` · OAS and CPP/QPP retirement income: ${yearList(publicPensionYears(installedYears))} only`
+      : "");
   info.dataset.tip =
     mode === "real"
       ? `Treat the amounts entered above as ${comparison.baseYear} dollars, the latest completed annual CPI year. Income, deductions, spending, rent and home value are converted together using Canada's annual all-items CPI. Each year's tax rules are applied, then income and tax are shown back in ${comparison.baseYear} dollars. Household members, ${byBirthYear ? "" : "ages, "}rates and driving stay fixed.${ageing} This compares the same household, not a household ageing over time.${comparison.omittedYears.length ? ` Annual CPI is not yet available for ${comparison.omittedYears.join(", ")}; those tax years appear in nominal mode only.` : ""}`
@@ -89,6 +95,9 @@ export function renderHistory(
   if (seniorIncome || byBirthYear)
     info.dataset.tip += ` Age and pension credits are modelled for ${yearList(seniorYears(installedYears))} only; earlier years are left out, not complete senior-tax comparisons. Typed retirement receipts retain their category and survivor status; real mode scales their amounts with the other income.`;
   if (seniorNotice) info.dataset.tip += ` ${seniorNotice}`;
+  if (publicPensions)
+    info.dataset.tip += ` OAS and CPP/QPP retirement income are modelled for ${yearList(publicPensionYears(installedYears))} only; earlier years are left out, not complete senior-tax comparisons. OAS uses each year's published monthly amounts and each adult's age in that year; real mode scales entered CPP/QPP income with other income. Recovery is current-year liability, not withholding based on the preceding return. OAS deferral and residency rules are not modelled.`;
+  if (publicNotice) info.dataset.tip += ` ${publicNotice}`;
   info.dataset.tip += coverageNote(home, comparison.rows[0]?.year ?? installedYears[0].year);
   const rows = comparison.rows
     .map(row => {
