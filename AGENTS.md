@@ -107,14 +107,15 @@ Standard: Claude `sonnet`/Sol; Strong: Claude `opus`/Astra. `codex -m` IDs: Sol=
 
 | Class | Examples | Coder | Reviewer |
 | --- | --- | --- | --- |
-| Simple | mechanical work, Markdown, one-area fixes, small UI tweaks | Codex Sol or Astra | Claude `opus`, `medium` |
-| Data | a year's or a program's figures | Codex Sol | Claude `opus`, `medium` |
-| Normal | engine rules, schema, scripts, tests, ordinary UI | Codex Astra | Claude `opus`, `medium` |
-| Complex | complicated UI changes, engine refactors | Claude `opus` | Codex Astra |
+| Simple | mechanical work, Markdown, one-area fixes, small UI tweaks | Codex Sol `high` | Claude `sonnet`, `high` |
+| Data | a year's or a program's figures | Codex Sol `xhigh`| Claude `opus`, `medium` |
+| Normal | engine rules, schema, scripts, tests, ordinary UI | Codex Sol, `xhigh` | Claude `opus`, `medium` |
+| Complex | complicated UI changes, engine refactors | Claude `opus`, `high` | Codex Astra, `high` |
 
 Use Claude `opus` only for Complex work, reviews and the outage fallbacks below. Effort is `high`, also the cap for
-coders and reviewers; `medium` only for Claude's reviews and Markdown-only or mechanical work (renames, dependency
-bumps, lint fixes). Pick the higher class when unsure; retros report class, model and effort per issue.
+coders and reviewers, except Sol's `xhigh` in this table; `medium` only for Claude's reviews and Markdown-only or
+mechanical work (renames, dependency bumps, lint fixes). Pick the higher class when unsure; retros report class,
+model and effort per issue.
 
 ### When an agent or model is out
 An agent or model is unavailable when it is down, its plugin fails, or a usage limit won't reset before the work is
