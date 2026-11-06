@@ -12,6 +12,7 @@ import { gisAllowanceOf, validateGisAllowance } from "./gis-allowance.ts";
 import { householdPremiumOf } from "./health-premiums.ts";
 import { netIncomeParts, netIncomeTotal, workerDeductionOf } from "./payroll.ts";
 import { type PersonResult, personTax } from "./personal.ts";
+import { propertyBillOf, propertyReliefOf } from "./property-relief.ts";
 import { hasSeniorInputs, quebecSeniorPool, seniorTransfer } from "./senior-credits.ts";
 import { seniorCashSupplementsOf, seniorRefundableCreditsOf } from "./senior-supplements.ts";
 import {
@@ -474,6 +475,25 @@ function calculateHousehold(
         claim?.kind === "dependant" && claim.pAmt > 0,
       ),
     );
+  // Property-tax relief (#22) is counted with the refundable credits, so the same switch turns it off as turns off
+  // the Ontario, Manitoba, BC and Quebec property and housing credits. A province without a program is untouched.
+  // Each line adds only the relief its bill does not already reflect (see property-relief.ts), once.
+  const propertyRelief =
+    hh.useCredits && p.propertyRelief?.length
+      ? propertyReliefOf(p.propertyRelief, {
+          bill: propertyBillOf(p.code, hh, propertyTax(p, hh), suppliedPropertyBill(p, hh) !== undefined),
+          people: ppl,
+          couple,
+          kids,
+          famNet,
+          provincialFamNet: benefitFamNet,
+          federalNets: nets,
+          homeValue: hh.homeValue,
+          rent: hh.homeValue > 0 ? 0 : hh.rent * 12,
+        })
+      : undefined;
+  for (const line of propertyRelief?.lines ?? [])
+    if (line.remaining !== null && line.remaining > 0) credits.push([line.name, line.remaining]);
   const refund = credits.reduce((a, [, v]) => a + v, 0);
   const benefits = childBen + refund + (gisAllowance?.total ?? 0) + (provincialSupplements?.total ?? 0);
   return {
@@ -492,6 +512,7 @@ function calculateHousehold(
     breakdown: {
       ...(gisAllowance ? { gisAllowance } : {}),
       ...(provincialSupplements ? { provincialSupplements } : {}),
+      ...(propertyRelief ? { propertyRelief } : {}),
       ...householdBreakdown(list),
       incomeBases,
       childcareCredit,
@@ -507,10 +528,15 @@ function calculateHousehold(
 
 export const propertyRate = (p: Province, hh: Household) => hh.propertyRates?.[p.code] ?? p.propertyTax.rate;
 
+/** The owner's bill the household supplied for this province, zero included; undefined when none or invalid. */
+export function suppliedPropertyBill(p: Province, hh: Household): number | undefined {
+  const bill = hh.propertyTaxBills?.[p.code];
+  return typeof bill === "number" && Number.isFinite(bill) && bill >= 0 ? bill : undefined;
+}
+
 /** A supplied owner's bill replaces the estimate in this province, including for occupancy-based credits. */
 export function propertyTax(p: Province, hh: Household): number {
-  const bill = hh.propertyTaxBills?.[p.code];
-  return typeof bill === "number" && Number.isFinite(bill) && bill >= 0 ? bill : hh.homeValue * propertyRate(p, hh);
+  return suppliedPropertyBill(p, hh) ?? hh.homeValue * propertyRate(p, hh);
 }
 
 type MarginalIncome = IncomeKey | "selfEmployment";

@@ -19,6 +19,23 @@ export {
   rrspRoom,
 } from "./payroll.ts";
 export { type PersonResult, personTax, provincialBpa } from "./personal.ts";
+export {
+  type BillBasis,
+  NOT_MODELLED,
+  type PropertyBill,
+  type PropertyReliefInput,
+  type PropertyReliefResult,
+  propertyBillOf,
+  propertyReliefOf,
+  type ReliefContext,
+  type ReliefHandler,
+  type ReliefLine,
+  type ReliefOutcome,
+  type ReliefRule,
+  type ReliefScope,
+  type ReliefStatus,
+  withPropertyReliefHandler,
+} from "./property-relief.ts";
 export { oasRecoveryTax, publicPensionReceipts, UnsupportedPublicPensionsError } from "./public-pensions.ts";
 export { UnsupportedSelfEmploymentError } from "./self-employment.ts";
 export { UnsupportedSeniorCreditsError } from "./senior-credits.ts";

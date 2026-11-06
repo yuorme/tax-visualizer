@@ -785,6 +785,20 @@ const seniorSupplement = z.discriminatedUnion("program", [
   ),
 ]);
 
+// Property-tax relief (#22): grants, rebates and credits against the annual property tax bill, evaluated on the gross
+// levy by src/engine/property-relief.ts. A new program is a new `program` id here, its YAML entry under `propertyRelief`
+// and a handler in that file. `municipal` programs apply only to the default reference-city bill (propertyTax.city).
+// A program the model cannot yet compute is declared `property-relief-not-modelled`, never a zero-value placeholder.
+const propertyReliefScope = z.enum(["provincial", "municipal"]);
+const reliefProgram = <Id extends string, P extends z.ZodTypeAny>(id: Id, params: P) =>
+  program(id, params).extend({ scope: propertyReliefScope });
+const propertyReliefProgram = z.discriminatedUnion("program", [
+  reliefProgram("property-relief-not-modelled", z.object({ reason: z.string().min(1) })),
+]);
+const propertyReliefPrograms = z
+  .array(propertyReliefProgram)
+  .refine(list => new Set(list.map(r => r.program)).size === list.length, "property relief program ids must be unique");
+
 export const provinceSchema = z
   .object({
     code: z.string().length(2),
@@ -913,6 +927,7 @@ export const provinceSchema = z
     carbon: carbonPricing.optional(),
     childBenefit: childBenefit.optional(),
     credits: z.array(credit).optional(),
+    propertyRelief: propertyReliefPrograms.optional(),
     sources: z.array(source).optional(),
   })
   .refine(p => (p.system === "quebec") === (p.quebec !== undefined), "Quebec settings belong only to the Quebec system")
@@ -969,6 +984,7 @@ export type Province = z.infer<typeof provinceSchema>;
 export type YearData = z.infer<typeof yearSchema>;
 export type ChildBenefitProgram = z.infer<typeof childBenefit>;
 export type CreditProgram = z.infer<typeof credit>;
+export type PropertyReliefProgram = z.infer<typeof propertyReliefProgram>;
 export type LowIncomeProgram = z.infer<typeof lowIncomeReduction>;
 export type Brackets = Federal["brackets"];
 export type PhasedAmount = z.infer<typeof phasedAmount>;

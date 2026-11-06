@@ -80,6 +80,12 @@ export interface Household {
   monthlySpending: number; // taxable spending, after any frugality adjustment
   propertyRates?: Partial<Record<string, number>>; // user overrides of the municipal rate, by province code
   propertyTaxBills?: Partial<Record<string, number>>; // annual owner bills; zero is explicit, omission uses value × rate
+  /** Whether the bill in propertyTaxBills is gross of property relief (omitted: gross, the saved meaning) or already
+   *  net of the grants in propertyReliefApplied. Only a supplied bill has a basis; an estimate is always gross. */
+  propertyBillBasis?: Partial<Record<string, "gross" | "net">>;
+  /** Net bills only: relief the bill already reflects, by province code then relief program id. Each program's
+   *  amount is needed, and zero is explicit: an omitted amount is unknown and leaves that relief incomplete. */
+  propertyReliefApplied?: Partial<Record<string, Partial<Record<string, number>>>>;
   childcare?: ChildcareInput;
   driving?: Driving; // none: no fuel tax
 }
