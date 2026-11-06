@@ -352,6 +352,7 @@ input[type="range"] {
   text-align: left;
   font-weight: 600;
   padding-bottom: 8px;
+  padding-right: 8px; /* keeps the info button's 8px hit area inside the scrolling ledger */
 }
 .ledger td:first-child {
   white-space: normal;
@@ -877,7 +878,8 @@ table.cmp th,
 table.cmp td:first-child {
   font-family: var(--font-body);
 }
-table.cmp td:first-child {
+table.cmp td:first-child,
+table.cmp td.not-modelled {
   white-space: normal;
 }
 .hh tr.sum td {

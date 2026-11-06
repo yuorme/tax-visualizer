@@ -215,6 +215,7 @@ export function healthPremium(p: Province, ti: number): number {
 /** The pieces of net income: each kind of income as it's counted (the taxable share of net capital gains,
  *  dividends grossed up), and the deductions taken off. */
 export interface NetIncomeParts {
+  provincialAssistance?: number;
   netFederalSupplements?: number; // line 14600, included in net income; line 25000 removes it from taxable
   oas?: number;
   cppQpp?: number;
@@ -246,6 +247,7 @@ export function netIncomeParts(
   childcareDeduction = 0,
   recoveryOverride?: number,
   netFederalSupplements?: number,
+  provincialAssistance?: number,
 ): NetIncomeParts {
   const inv = fed.investment;
   const { pay, selfEmployment: self } = payrollDetailsOf(fed, p, x);
@@ -265,6 +267,8 @@ export function netIncomeParts(
   };
   if (x.cppQpp !== undefined) parts.cppQpp = receipts.cppQpp;
   if (netFederalSupplements !== undefined) parts.netFederalSupplements = netFederalSupplements;
+  // Line 14500 is Part I income for ITA 180.2; line 25000 is a later taxable-income deduction.
+  if (provincialAssistance !== undefined) parts.provincialAssistance = provincialAssistance;
   if (x.oas !== undefined || netFederalSupplements) {
     parts.oas = receipts.oas;
     parts.oasRecovery =
@@ -289,7 +293,8 @@ export function netIncomeTotal(n: NetIncomeParts): number {
     n.enh +
     (n.oas ?? 0) +
     (n.cppQpp ?? 0) +
-    (n.netFederalSupplements ?? 0)
+    (n.netFederalSupplements ?? 0) +
+    (n.provincialAssistance ?? 0)
   );
 }
 

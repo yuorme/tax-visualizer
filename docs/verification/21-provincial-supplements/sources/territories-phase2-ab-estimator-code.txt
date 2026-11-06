@@ -1,0 +1,1280 @@
+Title: territories-phase2-ab-estimator-code
+URL: https://www.seniors.alberta.ca/js/estimators/webcalc.min.js
+Fetched: 2026-11-05
+SHA-256 of the original: 9644206df43b623e432a5d3898878bef5552bfbd1fa4640c2446abeef0f45994
+Text extract made with the exported fetch-source helpers (custom destination). Check figures against the original when layout matters (tables).
+================================================================================
+
+// This file contains some calculation code (now primarily done via web services) and UI changes in response to those calculations.
+// For Benefit Estimator Thresholds and other constants, as well as the
+//  setup of the wizard-like Steps JS framework to build the estimator's various wizard steps,
+//  including code triggered on step transitions, please see web-benefit-estimator.js
+
+var isDebug = false;  // displays alerts if set to true.  Use only for Debugging on DEV/UAT
+var enableLtcDalWarningBlock = false;  // some of the scenarios involving LTC/DAL were not calculating correctly so if true this will block the user from getting an estimate
+
+var $tabs;
+var enableSlide, qualifySpouse, appOAS, sppOAS = true;
+var isApplicantSingle = false;
+var seniorLTCWithOtherResidence = false;
+var currTab = 0;
+var dental, OAS = 0;
+var infoValid = true;
+var applicantResidenceException = false;
+var isLongtermLivingOAS = false;
+var isLongtermLivingNOTOAS = false;
+var isOtherStausIndianCase = false;
+var thisMaxBenefit, familyNdi, phaseOutRate, reductionRate, totalApp, totalSpp;
+var maxBen, appFinalNdi, appTotalASB = 0;
+var minBen = 9.99;
+var longTermSplitCouple = false;
+var isSplitCalc = false;
+var applicantRescode, spouseRescode, applicantIncome, spouseIncome, maritalStatus;
+spouseRescode = 0;
+var thisMaxBenefitAdd, phaseOutRateAdd, reductionRateAdd;
+var sliderStepWidth = 94;
+//43293
+
+// moved some onload events to registerEventListeners() in web-benefit-estimator.js as this onready didn't seem to fire
+
+// if global enableLtcDalWarningBlock variable activated, attach listeners to potentially display warning block encouraging users to
+//  contact the government directly for evaluation
+// global variable was set to false at time of calculator re-vamp; do we need this anymore?
+function attachComplicatedCaseEventListeners() {
+
+  if (enableLtcDalWarningBlock) {
+    $('.applicantResidence').change(function () {
+      displayComplicatedCaseWarning();
+    });
+
+    $('.spouseResidence').change(function () {
+      displayComplicatedCaseWarning();
+    });
+
+    $("input[name='applicantOASNo']").click(function () {
+      displayComplicatedCaseWarning();
+    });
+
+    $("input[name='spouseOASNo']").click(function () {
+      displayComplicatedCaseWarning();
+    });
+  }
+}
+
+/*
+* displayComplicatedCaseWarning (was displayCalcWarning) will display a message for the scenarios that may result in a complicated calcualtion
+* and require direct consultation for the scenario:
+* Married/Couple AND LTC or DSL is selected for either app or spouse AND either spouse or app is NON OAS Eligible
+* ARMS 43293 update the DSL/LTC check to new function that checks for Continuing Care
+*/
+function displayComplicatedCaseWarning() {
+    var displayMessage = false;
+    if (maritalStatus == 1
+      && (isInContinuingCare("applicant") || isInContinuingCare("spouse"))
+      && ($('.applicantOASNo').is(':checked') || $('.spouseOASNo').is(':checked'))) {
+
+      displayMessage = true;
+    }
+
+    if (displayMessage) {
+      if (!$('.complicatedCaseWarningMsg').is(':visible')) {
+        $('.complicatedCaseWarningMsg').show('blind', {}, 500);
+        if (!isDebug) {
+           // if the warning message is displayed, prevent user to progressing further in the estimator
+           $("div.actions a").each(function () {
+                                    var label = $(this).text();
+                                    if (label == "Next") {
+                                              $(this).hide();
+                                    }
+                            });
+
+        }
+      }
+    } else {
+      $('.complicatedCaseWarningMsg').hide();
+                        $("div.actions a").each(function () {
+                          var label = $(this).text();
+                                if (label == "Next") {
+                                  $(this).show();
+                          }
+                        });
+    }
+}
+
+// initialize global booleans and prepare form fields for initial display
+function initFormFields() {
+    $('.coupleSplitMsg').hide();
+    $('.spouseResidence').val('~');
+    $('.applicantResidence').val('~');
+    $('.spouseInfo').show();
+    $('.spouseInfoMsg').hide();
+    $('.snaBox').hide();
+    $('.applicantSABType').hide();
+    $('.spouseSABType').hide();
+    $('.spouseTotalIncome').val("0");
+    $('.applicantTotalIncome').val("0");
+    $('#applicantIncomeForCalc').val('0');
+    $('#spouseIncomeForCalc').val('0');
+    applicantIsSingle = false;
+    enableSlide = true;
+    seniorLTCWithOtherResidence = false;
+    qualifySpouse = true;
+    borrowedSpouse = false;
+    appOAS = true;
+    sppOAS = true;
+    dental = 0;
+    OAS = 0;
+    infoValid = true;
+    applicantResidenceException = false;
+    applicantRescode = 0;
+    spouseRescode = 0;
+    applicantIncome = 0;
+    spouseIncome = 0;
+}
+
+// formats a number as currency
+// @param num   the number to format
+// returns      num formatted as currency with sign and decimals
+function formatCurrency(num) {
+    num = num.toString().replace(/\$|\,/g, '');
+    if (isNaN(num)) num = "0";
+    sign = (num == (num = Math.abs(num)));
+    num = Math.floor(num * 100 + 0.50000000001);
+    cents = num % 100;
+    num = Math.floor(num / 100).toString();
+    if (cents < 10) cents = "0" + cents;
+    for (var i = 0; i < Math.floor((num.length - (1 + i)) / 3); i++)
+    num = num.substring(0, num.length - (4 * i + 3)) + ',' + num.substring(num.length - (4 * i + 3));
+    return (((sign) ? '' : '-') + '$' + num + '.' + cents);
+}
+
+// loads all the fields on the printable Summary form based on the user's entries throughout the rest of the estimator
+function getSummary() {
+  $('.applicantSABRow').hide();
+  $('.spouseSABRow').hide();
+      var spouseSAB = parseInt($('.spouseSABFinal').html());
+      var applicantSAB = parseInt($('.applicantSABFinal').html());
+      //Applicant
+   $('.summaryApplicantMaritalStatus').html($('.maritalStatus option:selected').text());
+      $('.summaryApplicantResidence').html($('.applicantResidence option:selected').text());
+     if ($('.applicantOASYes').is(':checked')) {
+          $('.summaryApplicantOAS').html("Yes");
+      } else {
+          $('.summaryApplicantOAS').html("No");
+      }
+
+      if (applicantSAB > 0) {
+    $('.applicantSABRow').show();
+          $('.summaryApplicantSAB').html(formatCurrency(applicantSAB));
+     }
+
+      if (spouseSAB > 0) {
+          $('.spouseSABRow').show();
+          $('.summarySpouseSAB').html(formatCurrency(spouseSAB));
+      }
+      $('.summaryHouseholdIncome').html(formatCurrency(parseInt($('#applicantTotalIncome').val()) + parseInt($('#spouseTotalIncome').val())));
+  $('.summaryApplicantASB').html(formatCurrency($('.applicantASBFinal').html()));
+      $('.summaryApplicantDental').html($('.applicantDentalFinal').html() + "%");
+  // was .appOASfinal; changed because OAS is OLD AGE SECURITY
+      $('.summaryApplicantOptical').html(formatCurrency($('.applicantOpticalFinal').html()));
+
+      //Spouse
+      $('.summarySpouseMaritalStatus').html($('.maritalStatus option:selected').text());
+      $('.summarySpouseResidence').html($('.spouseResidence option:selected').text());
+      if ($('.spouseOASYes').is(':checked')) {
+          $('.summarySpouseOAS').html("Yes");
+      } else {
+          $('.summarySpouseOAS').html("No");
+      }
+
+      $('.summarySpouseASB').html(formatCurrency(+$('.spouseASBFinal').html()));
+      $('.summarySpouseDental').html($('.spouseDentalFinal').html() + "%");
+  // was .sppOAS; changed because OAS is Old Age Security CHANGE!
+      $('.summarySpouseOptical').html(formatCurrency($('.spouseOpticalFinal').html()));
+
+}
+
+// was called apcalcIncomeModel(); renamed for clarity
+// calculates the value of the "Income for calculating benefits" field for the applicant on Step 4 as applicant's income fields are updated
+function calcApplicantIncomeForBenefits() {
+    //console.log("apcalcIncomeModel called");
+    var totalDeductions = 0;
+    var collectVal = 0;
+    $('.101').each(function () {
+        collectVal = parseInt($(this).val());
+        if (collectVal > 0) {
+            totalDeductions = totalDeductions + collectVal;
+        }
+    });
+    if (totalDeductions <= 0) {
+        totalDeductions = 0;
+    }
+    var myTotal = parseInt($('.applicantTotalIncome').val()) - totalDeductions;
+    if (myTotal < 0 || isNaN(myTotal)) {
+        myTotal = 0;
+    }
+    $('#applicantIncomeForCalc').val(myTotal);
+}
+
+// was called spcalcIncomeModel(); renamed for clarity
+// calculates the value of the "Income for calculating benefits" field for the spouse (if applicable) on Step 4 as spouse's income fields are updated
+function calcSpouseIncomeForBenefits() {
+    var totalDeductions = 0;
+    var collectVal = 0;
+    $('.102').each(function () {
+        collectVal = parseInt($(this).val());
+        if (collectVal > 0) {
+            totalDeductions = totalDeductions + collectVal;
+        }
+    });
+    if (totalDeductions <= 0) {
+        totalDeductions = 0;
+    }
+    var myTotal = parseInt($('.spouseTotalIncome').val()) - totalDeductions;
+    if (myTotal < 0 || isNaN(myTotal)) {
+        myTotal = 0;
+    }
+    $('#spouseIncomeForCalc').val(myTotal);
+}
+
+// was called checkOasStatus; renamed for clarity
+// potentially adjusts NDI term based on OAS status and residence type of applicant and/or spouse
+// @param apOAS   applicant OAS status (true if on OAS)
+// @param spOAS   spouse OAS status (true if on OAS)
+// @param thisNdi currently calculated NDI value
+// @returns NDI value potentially adjusted for OAS and residence type condtiions
+function adjustNDIForOASAndResidenceType(apOAS, spOAS, thisNdi) {
+
+    //Taking the deductions from NDI for OAS
+    var appMax = 0;
+    var sppMax = 0;
+
+    if (apOAS == false && spOAS == false && qualifySpouse == true && thisNdi > 0) {
+        //appMax = parseInt($('#applicantIncomeForCalc').val()) - oasMax;
+        //sppMax = parseInt($('#spouseIncomeForCalc').val()) - oasMax;
+    // 2013 - Remove OAS "top up"
+        appMax = parseInt($('#applicantIncomeForCalc').val());
+        sppMax = parseInt($('#spouseIncomeForCalc').val());
+        if (appMax < 0) {
+            appMax = 0;
+        }
+        if (sppMax < 0) {
+            sppMax = 0;
+        }
+
+        thisNdi = appMax + sppMax;
+        if (isDebug)  alert("adjustNDI NON OAS: Deducting oas Max: " + appMax + " + " + sppMax + ")  New NDI = " + thisNdi);
+
+    } else if ((apOAS == false && qualifySpouse == false) && thisNdi > 0) {
+        //appMax = parseInt($('#applicantIncomeForCalc').val()) - oasMax;
+      // 2013 - Remove OAS "top up"
+      appMax = parseInt($('#applicantIncomeForCalc').val());
+        sppMax = parseInt($('#spouseIncomeForCalc').val());
+        if (appMax < 0) {
+            appMax = 0;
+        }
+        if (sppMax < 0) {
+            sppMax = 0;
+        }
+
+        thisNdi = appMax + sppMax;
+        if (isDebug)  alert("adjustNDI NON OAS SINGLEMAX: Deducting oas Max: " + appMax + " + " + sppMax + ")  New NDI = " + thisNdi);
+    } else if (qualifySpouse) {
+    //LONG TERM CARE DIFFERENT
+    if (isInContinuingCare("applicant") || isInContinuingCare("spouse")) {
+      if (apOAS == false && spOAS == false) {
+
+        //appMax = parseInt($('#applicantIncomeForCalc').val()) - oasMax;
+        // 2013 - Remove OAS "top up"
+        appMax = parseInt($('#applicantIncomeForCalc').val());
+        sppMax = parseInt($('#spouseIncomeForCalc').val());
+        if (appMax < 0) {
+          appMax = 0;
+        }
+        if (sppMax < 0) {
+          sppMax = 0;
+        }
+        thisNdi = appMax + sppMax;
+        if (isDebug)  alert("adjustNDI Exception: Long term care, caught NON OAS on Applicant. Taking OAS from applicant NDI");
+
+      } else if (spOAS == false && apOAS == true) {
+
+        /*
+        * CP - 1 Seniors Couple/App:OTH/SPO:LTC/App:OAS/SPO:NonAOS
+        * was: //appMax = parseInt($('#spouseIncomeForCalc').val()) - oasMax;
+        * I removed the oasMax
+        */
+        //appMax = parseInt($('#spouseIncomeForCalc').val() - oasMax);
+        // 2013 Remove OAS "top up"
+        //TODO Why do we have appMax = spouseIncomeforCalc and sppMax = applicantIncomeForCalc?? (was this way in old calc)
+        appMax = parseInt($('#spouseIncomeForCalc').val());
+        sppMax = parseInt($('#applicantIncomeForCalc').val());
+
+        if (appMax < 0) {
+          appMax = 0;
+        }
+        if (sppMax < 0) {
+          sppMax = 0;
+        }
+        thisNdi = appMax + sppMax;
+        if (isDebug)  alert("adjustNDI Exception: Long term care, caught NON OAS on Spouse. Taking OAS from spouse NDI");
+      } else if (spOAS == false && apOAS == false) {
+
+        //appMax = parseInt($('#applicantIncomeForCalc').val()) - oasMax;
+        //sppMax = parseInt($('#spouseIncomeForCalc').val()) - oasMax;
+        // 2013 Remove OAS "top up"
+        appMax = parseInt($('#applicantIncomeForCalc').val());
+        sppMax = parseInt($('#spouseIncomeForCalc').val());
+        if (appMax < 0) {
+          appMax = 0;
+        }
+        if (sppMax < 0) {
+          sppMax = 0;
+        }
+        thisNdi = appMax + sppMax;
+
+        if (isDebug)  alert("adjustNDI Long Term Care BOTH NOT OAS: Deducting OAS Max from Both income");
+
+      } else if (spOAS == true && apOAS == false) {
+
+        //appMax = parseInt($('#applicantIncomeForCalc').val()) - oasMax;
+        // 2013 Remove OAS "top up"
+        appMax = parseInt($('#applicantIncomeForCalc').val());
+        sppMax = parseInt($('#spouseIncomeForCalc').val());
+        if (appMax < 0) {
+          appMax = 0;
+        }
+        if (sppMax < 0) {
+          sppMax = 0;
+        }
+        thisNdi = appMax + sppMax;
+
+        if (isDebug)  alert("adjustNDI Long Term Care / Only Spouse OAS: Deducting OAS Max from App income");
+      }
+    }
+  }
+    return thisNdi;
+}
+
+// set thisMaxBenefitAdd, phaseOutRateAdd and possibly thisMaxBenefit based on both partners'
+//   OAS statuses and Spouse's residence code
+// previous function name setSpouseRates(); renamed for clarity
+function adjustBenefitBySpouseResidence() {
+
+  thisMaxBenefitAdd = oasSingleRescode0Max;
+        phaseOutRateAdd = oasSingleRescode0Phase;
+  // per July 1, 2013 remove non-OAS reduction
+      reductionRateAdd = 0;
+
+      if (isDebug)  alert("Caught LTC Setting Spouse Rates");
+
+  if (appOAS || sppOAS) {
+          //Check for other or status indian for rescode 1
+
+    // use the option value, which is the residence code, instead of the option text which may change
+    //if ($('.fRes option:selected').text() == "Other" || $('.fRes option:selected').text() == "Status Indian Living on a Reserve") {
+    if ($('.spouseResidence option:selected').val() == "O" || $('.spouseResidence option:selected').val() == "I") {
+      // Rescode 1
+      if (isDebug)  alert("NON OAS: Caught Status for long term care SPLIT and rescode 1 (Status Indian/other)");
+      thisMaxBenefitAdd = oasSingleRescode1Max;
+             phaseOutRateAdd = oasSingleRescode1Phase;
+    } else {
+          if (isDebug)  alert("NON OAS 1: Caught Status for long term care SPLIT and rescode 0");
+          }
+  } else {
+    if ($('.spouseResidence option:selected').val() == "O" || $('.spouseResidence option:selected').val() == "I") {
+           if (isDebug)  alert("NON OAS: Caught Status for long term care SPLIT and rescode 1 (Status Indian/other");
+          thisMaxBenefitAdd = 0;
+          phaseOutRateAdd = 0;
+      } else {
+      if (isDebug)  alert("NON OAS: Caught Status for long term care SPLIT and rescode 0");
+      // TODO difference between thisMaxBenefit and thisMaxBenefitAdd??
+          thisMaxBenefit = oasSingleRescode0Max;
+        }
+  }
+}
+
+// set thisMaxBenefit, phaseOutRate, thisMaxBenefit and maxBen for couples based on OAS status and residence codes
+function setCoupleRates() {
+
+  // per 2013 benefit changes, all nonOAS adjustments set to 0
+  reductionRate = 0;
+
+  if (isDebug)  alert("Setting Couple Rates");
+  if ((maritalStatus == 1) && (applicantRescode == 0)) {
+
+          if (appOAS || sppOAS) {
+            if (isDebug)  alert('OAS married with app rescode 0');
+                thisMaxBenefit = oasCoupleRescode0Max;
+                phaseOutRate = oasCoupleRescode0Phase;
+      // TODO what are these hardcoded benefit maximums??
+                maxBen = 420;
+
+          // ARMS 43293 replace DSL/LTC with Continuing Care; create function to simplify logic
+                if (isInContinuingCare("applicant") || isInContinuingCare("spouse")) {
+                    if (qualifySpouse == false) {
+                          isLongtermLivingOAS = true;
+                    }
+                    longTermSplitCouple = true;
+                    //SPLIT AND USE AS SINGLE
+                    if (isDebug)  alert("Caught Long term living. Using LTC Rates");
+                    thisMaxBenefit = oasSingleRescode0Max;
+                    phaseOutRate = oasSingleRescode0Phase;
+                    maxBen = 195;
+                }
+
+          } else {
+
+                if (isDebug)  alert('NON OAS married with app rescode 0');
+                if (isDebug)  alert("CHANGED FOR: Caught Over 0 income for NON OAS");
+                thisMaxBenefit = 0;
+                phaseOutRate = oasCoupleRescode0Phase;
+                maxBen = 144;
+                if (isInContinuingCare("applicant") || isInContinuingCare("spouse")) {
+                    if (qualifySpouse == false) {
+                          isLongtermLivingOAS = true;
+                    }
+                    longTermSplitCouple = true;
+                    //SPLIT AND USE AS SINGLE
+                    if (isDebug)  alert("Caught Long term living Applicant side. Using LTC Rates");
+                    thisMaxBenefit = oasSingleRescode0Max;
+                    phaseOutRate = oasSingleRescode0Phase;
+                     maxBen = 195;
+                }
+          }
+
+  } else if ((maritalStatus == 1) && (applicantRescode == 1)) {
+          //var ltcA = $('.spouseResidence option:selected').text();
+      // ARMS 49323 look at code IDs and not descriptions to prevent language etc issues
+      var ltcA = $('.spouseResidence option:selected').val();
+
+    if (appOAS || sppOAS) {
+              if (isDebug)  alert('OAS married with app rescode 1');
+              thisMaxBenefit = oasCoupleRescode1Max;
+              phaseOutRate = oasCoupleRescode1Phase;
+            maxBen = 390;
+
+      if (isDebug)  alert("Check for Spouse res code is it better? Code: " + spouseRescode);
+
+      if (spouseRescode == 0) {
+        // 43293 replace nested if (ltcA != "N") { if (ltcA != "A")  with !isInContinuingCare - check this if business rules for this case ever change
+        if (!isInContinuingCare("spouse")) {
+          //Benefit of the doubt with better rates and NOT LTC
+          if (isDebug)  alert('Better rate found from Spouse push to: OAS married with app 0');
+          thisMaxBenefit = oasCoupleRescode0Max;
+          phaseOutRate = oasCoupleRescode0Phase;
+          maxBen = 420;
+        }
+        if (isInContinuingCare("applicant") || isInContinuingCare("spouse")) {
+          if (qualifySpouse) {
+            borrowedSpouse = true;
+          } else {
+            longTermSplitCouple = true;
+          }
+          if (!appOAS) {
+            seniorLTCWithOtherResidence = true;
+          }
+          //SPLIT AND USE AS SINLE
+          if (isDebug)  alert("Caught Long term living. Using LTC SINGLE Rates");
+          thisMaxBenefit = oasSingleRescode1Max;
+          phaseOutRate = oasSingleRescode1Phase;
+        }
+      }
+      else {
+            if (!appOAS) {
+          seniorLTCWithOtherResidence = true;
+        }
+        if (isDebug)  alert('NON OAS married with app 1');
+              thisMaxBenefit = 0;
+              phaseOutRate = oasCoupleRescode1Phase;
+              maxBen = 143;
+
+        if (spouseRescode == 0 && isSplitCalc == false){
+          // TODO use function to determine DSL or LTC
+          if (ltcA != "N" || ltcA != "A") {
+            if (isDebug)  alert('NEW ;-- Better rate found from Spouse push to: NON OAS married with app rescode 0');
+            borrowedSpouse = true;
+            thisMaxBenefit = 0;
+            phaseOutRate = oasCoupleRescode0Phase;
+            maxBen = 144;
+          }
+        }
+      }
+    }
+  }
+}
+
+// set thisMaxBenefit, phaseOutRate, reductionRate, maxBen and calculate appFinalNdi for an applicant who is single
+function setSingleRates() {
+    spouseIncome = 0;
+    //SINGLE APP
+    if (maritalStatus == 0) {
+        var totalIncome = parseInt($('.applicantTotalIncome').val());
+        if (totalIncome <= snaIncomeThresholdSingle) {
+            $('.snaBox').show();
+        }
+    }
+
+    if ((maritalStatus == 0) && (applicantRescode == 0)) {
+        if (appOAS) {
+            if (isDebug)  alert('OAS single with app 0');
+            thisMaxBenefit = oasSingleRescode0Max;
+            phaseOutRate = oasSingleRescode0Phase;
+            reductionRate = 0;
+  // TODO what's with these hardcoded benefit maximums?? Should they be dependent on another constant??
+            maxBen = 280;
+        } else {
+
+            if (isDebug)  alert('NON OAS single with app 0');
+
+            thisMaxBenefit = 0;
+
+            reductionRate = 0;
+            phaseOutRate = oasSingleRescode0Phase;
+            maxBen = 143;
+            if (isDebug)  alert("Taking OAS Max from NDI");
+            appFinalNdi = appFinalNdi;
+      if (appFinalNdi < 0) {
+                appFinalNdi = 0;
+            }
+        }
+    } else if ((maritalStatus == 0) && (applicantRescode == 1)) {
+        if (appOAS) {
+            if (isDebug)  alert('OAS single with app 1');
+            thisMaxBenefit = oasSingleRescode1Max;
+            phaseOutRate = oasSingleRescode1Phase;
+            reductionRate = 0;
+            maxBen = 195;
+        } else {
+
+            if (isDebug)  alert('NON OAS single with app 1');
+            thisMaxBenefit = oasSingleRescode1Max;
+            reductionRate = 0;
+            phaseOutRate = oasSingleRescode1Phase;
+            maxBen = 143;
+            if (isDebug)  alert("Taking OAS Max from NDI");
+            appFinalNdi = appFinalNdi - oasMax;
+      if (appFinalNdi < 0) {
+                appFinalNdi = 0;
+            }
+
+        }
+
+    } else if ((maritalStatus == 0) && (applicantRescode == 2)) {
+        if (isDebug)  alert('OAS single some TYPE');
+    }
+
+}
+
+// wrapper function that performs the estimations for ASB, SAB, Dental and Optical benefit amounts via other function calls,
+//   making any necessary adjustments for special scenarios. Populates form fields with the results.
+// was called getAsb; renamed for clarity
+// @param maritalStatus     applicant's marital status. 0 for single, 1 for couple
+// @param applicantRescode  applicant's residence code. 1 for Status Indian/Other, 0 otherwise
+// @param applicantIncome   applicant's total income
+// @param appOAS            applicant is OAS eligible. true/false
+// @param spouseRescode     spouse/partner's residence code. 1 for Status Indian/Other, 0 otherwise
+// @param spouseIncome      spouse/partner's total income
+// @param sppOAS            spouse/partner is OAS eligible. true/false
+function estimateBenefitAmounts(maritalStatus, applicantRescode, applicantIncome, appOAS, spouseRescode, spouseIncome, sppOAS) {
+    $('.snaBox').hide();
+    familyNdi = 0;
+    reductionRate = 0;
+    phaseOutRate = 0;
+
+    //Debug
+    var string = "marital status:" + maritalStatus;
+    string += "applicantRescode: " + applicantRescode;
+    string += " - applicantIncome: " + applicantIncome;
+    string += " - spouseRescode: " + spouseRescode;
+    string += " - spouseIncome: " + spouseIncome;
+    string += " - sppOAS:" + sppOAS;
+    string += " - appOAS:" + appOAS;
+    if (isDebug)  alert(string);
+    maxBen = 0;
+    minBen = 9.99;
+    appFinalNdi = parseInt(applicantIncome) + parseInt(spouseIncome);
+    longTermSplitCouple = false;
+    appTotalASB = 0;
+    isSplitCalc = false;
+
+    if (maritalStatus == 1) {
+        //If were dealing with a couple package
+        var totalIncome = parseInt($('.applicantTotalIncome').val()) + parseInt($('.spouseTotalIncome').val());
+
+    //SNA Check
+        if (totalIncome <= snaIncomeThresholdCouple) {
+            $('.snaBox').show();
+        }
+
+    /* ADJUST NDI FOR OAS HERE
+    -----------------------------------------------*/
+    appFinalNdi = adjustNDIForOASAndResidenceType(appOAS, sppOAS, appFinalNdi);
+        //IF MARRIED AND AT LEAST ONE IS IN LONG TERM CARE (SPLIT AND USE CALC INDIVIDUALLY)
+
+    if (maritalStatus == 1) {
+         if (isInContinuingCare("applicant") || isInContinuingCare("spouse")) {
+             appFinalNdi = appFinalNdi / 2;
+        if (isDebug)  alert("LTC combined income is being split...now =" + appFinalNdi)
+        isSplitCalc = true;
+        adjustBenefitBySpouseResidence();
+      } else {
+        isSplitCalc = false;
+      }
+        }
+
+        //Set our couple rates
+        setCoupleRates();
+        appTotalASB = calcASB(thisMaxBenefit, appFinalNdi, phaseOutRate, reductionRate);
+
+        if (isSplitCalc) {
+            if (isDebug)  alert("Trying Calc for LTC SPLIT, with spouse rates...")
+            if(appTotalASB < 0){ appTotalASB = 0;}
+      var additionalASB = calcASB(thisMaxBenefitAdd, appFinalNdi, phaseOutRateAdd, reductionRateAdd);
+      if (isDebug)  alert("Additional ASB is " + additionalASB)
+      if (qualifySpouse == false || borrowedSpouse){
+        if (isDebug)  alert("!qualifySpouse or borrowedSpouse...add " + appTotalASB + " + " + additionalASB)
+        appTotalASB = (appTotalASB + additionalASB);
+      } else {
+        if (isDebug)  alert("else, (" + appTotalASB + " + " + additionalASB + ") / 2...")
+        appTotalASB = (appTotalASB + additionalASB) / 2;
+      }
+      //Change maxBen if 0 for other and not in ltc
+      if(thisMaxBenefit == 0 && thisMaxBenefitAdd > 0){
+        if (isDebug)  alert("Adjusting max ben from 0 to spouse rates:" + thisMaxBenefitAdd);
+        thisMaxBenefit = thisMaxBenefitAdd;
+      }
+            if (isDebug)  alert("New Calc = New ASB of:" + appTotalASB);
+        }
+
+    } else {
+        //Use single rates and calc ASB
+        setSingleRates();
+        appTotalASB = calcASB(thisMaxBenefit, appFinalNdi, phaseOutRate, reductionRate);
+
+    }
+
+    // 36339 store appNDI if we need it; should be the final adjusted NDI
+    $('.appFinalNDI').val(appFinalNdi);
+
+/*  AFTER CALCULATION CHANGES
+  --------------------------------------------------*/
+    if (appTotalASB > thisMaxBenefit) {
+        appTotalASB = thisMaxBenefit;
+    }
+
+/*
+*  If the appTotalASB is zero or negative then the appTotalASB = 0
+*  If the appTotalASB is greater than 0 but less than 10 then the appTotalASB = 10
+*/
+
+// ASB Splitting -- simplified by MP
+if (maritalStatus == 1) {
+  // No need to check singles
+  if (qualifySpouse && longTermSplitCouple == false) {
+    // Only split when:
+    // * 2 Senior couple
+    // * Neither is on LTC
+    var oldApplicantResidenceException = applicantResidenceException;
+    if(applicantResidenceException){
+      appTotalASB = appTotalASB*2;
+      applicantResidenceException = false;
+    }
+    if (isDebug)  alert("Caught 2 senior couple or neither on LTC. Splitting ASB. NEW Changing applicantResidenceException from " + oldApplicantResidenceException + " to false");
+
+    appTotalASB = appTotalASB / 2;
+  }
+  else {
+
+    if (isDebug)  alert("Not a 2 senior couple or LTC.");
+    appTotalASB = parseInt(appTotalASB);
+  }
+
+}
+
+  var sppTotalASB = appTotalASB;
+  if (appFinalNdi <= asbNDIThresholdSingle && appTotalASB < minBen) {
+        if (isDebug)  alert("Caught lower bracket and 0 calc. Adjusting to 10");
+    (appTotalASB < 0) ? appTotalASB = 0  : appTotalASB = 10;
+    }
+
+   if (appFinalNdi <= asbNDIThresholdCouple && appTotalASB < minBen && maritalStatus == 1) {
+        if (isDebug)  alert("Caught lower bracket and 0 calc. Adjusting to 10");
+    (appTotalASB < 0) ? appTotalASB = 0  : appTotalASB = 10;
+    }
+
+    if (appTotalASB <= minBen && appTotalASB > 0) {
+        appTotalASB = 10;
+    }
+
+    if (appTotalASB < 0) {
+        appTotalASB = 0;
+    }
+
+    if (applicantResidenceException == true && appOAS == false) {
+        //Backup split and spouse does not qualify
+        if (maritalStatus == 1 && spouseRescode == 0) {
+      // do nothing
+      if(qualifySpouse){
+        if (isDebug)  alert("Caught 2 SNR Couple, where caught other and spp > 0. Going back on zero for other. Continuing from split.");
+        appTotalASB = sppTotalASB * 2;
+        sppTotalASB = appTotalASB;
+      }
+    } else {
+      if (isDebug)  alert("Caught app resident exception, 'Other'. Making app 0 and moving to spouse");
+
+      appTotalASB = 0;
+      sppTotalASB = sppTotalASB * 2;
+    }
+  }
+
+    if (isLongtermLivingNOTOAS && qualifySpouse == false) {
+        if (isDebug)  alert("NON OAS, Spouse not 65, Long term care move cash to applicant");
+        appTotalASB = appTotalASB * 2;
+        isLongtermLivingNOTOAS = false;
+    }
+}
+
+// handles displaying the estimation results in the UI
+// @param isApplicantSingle 	marital status
+// @param appTotalASB 		estimated ASB for applicant
+// @param sppTotalASB		estimated ASB for spouse
+// @param applicantSAB		estimated SAB for applicant (web service calculation method only)
+// @param spouseSAB		estimated SAB for spouse    (web service calculation method only)
+// @param asbType		ASB 1.0 or 2.0; may be used for future messaging
+// @param method		flag, old or new, denotes in the debug messaging which calc method is being used
+function displayResults(isApplicantSingle, appTotalASB, sppTotalASB, applicantSAB, spouseSAB, asbType, method) {
+//alert("DISPLAYRESULTS called WAIT");
+/* CALC SAB, DENTAL AND OPTICAL HERE
+  ----------------------------------------------------------*/
+    var allTotalIncome  = parseInt($('.applicantTotalIncome').val()) + parseInt($('.spouseTotalIncome').val())
+    var appTotalDental  = calcDental(allTotalIncome);
+    var appTotalOptical = calcOptical(appTotalDental);
+
+   $('.applicantSABType').hide();
+   $('.applicantSABFinal').html("");
+   if (isInContinuingCare("applicant")) {
+
+  // 36339 CTL temp handle both manual and WS estimation method
+        var appSAB = applicantSAB ? applicantSAB : estimateSAB(isApplicantSingle);
+        $('.applicantSABFinal').html(appSAB);
+        $('.applicantSABType').show();
+  if (Math.floor(appSAB) < 1) {
+    $('.applicantSABType').addClass('ineligible');
+  }
+
+   }
+   $('.spouseSABType').hide();
+   $('.spouseSABFinal').html("");
+   if (isInContinuingCare("spouse")) {
+        if (isDebug)  alert(method + "Check ok for SAB: Spouse Qualify = " + qualifySpouse);
+        if (qualifySpouse) {
+      // 36339 CTL temp handle both manual and WS estimation method
+            var sppSAB = spouseSAB ? spouseSAB : estimateSAB(isApplicantSingle);
+            $('.spouseSABFinal').html(sppSAB);
+            $('.spouseSABType').show();
+      if (Math.floor(sppSAB) < 1) {
+        $('.spouseSABType').addClass('ineligible');
+      }
+        }
+    }
+
+    var sppTotalDental = appTotalDental;
+    var sppTotalOptical = appTotalOptical;
+
+  if (qualifySpouse == false) {
+        if (isDebug)  alert(method + "Spouse is under 65. Zero for everything");
+    sppTotalASB = 0;
+      sppTotalDental = 0;
+      sppTotalOptical = 0;
+    }
+  if(sppTotalASB < 0){
+    sppTotalASB = 0;
+  }
+
+  // CTL Fix spousal benefit LT minBen rounding issue
+  if (sppTotalASB <= minBen && sppTotalASB > 0) {
+          sppTotalASB = 10;
+      }
+
+  // CTL 5/16/2013 No OAS for either = No ASB; otherwise, leave it alone
+  if ((maritalStatus == 1) && (appOAS == false) && (sppOAS == false)) {
+    // no ASB for both
+    appTotalASB = 0;
+    sppTotalASB = 0;
+  } else {
+    // not married; look at single's OAS only
+    if ((maritalStatus == 0) && (appOAS == false)) {
+      appTotalASB = 0;
+    }
+  }
+
+    $('.applicantASBFinal').html(Math.floor(appTotalASB));
+    $('.applicantDentalFinal').html(appTotalDental);
+    $('.applicantOpticalFinal').html(appTotalOptical);
+    $('.spouseASBFinal').html(Math.floor(sppTotalASB));
+    $('.spouseDentalFinal').html(sppTotalDental);
+    $('.spouseOpticalFinal').html(sppTotalOptical);
+
+// 46628 set everything to eligible/green first; later code assumes it is and only sets ineligible/red
+$('.whiteBGBlackBorder').removeClass('ineligible');
+$('.whiteBGBlackBorder').addClass('eligible');
+
+  //Check for red box on ASB Spouse
+      if (Math.floor(sppTotalASB) < 1) {
+          $('.spouseASBFinishIneligibleText').show();
+          $('.spouseASBFinishEligibleText').hide();
+          $('.spouseASBFinishBlock').removeClass('eligible');
+           $('.spouseASBFinishBlock').addClass('ineligible');
+  }
+  if (Math.floor(sppTotalDental) < 1) {
+    $('.spouseDentalFinishIneligibleText').show();
+          $('.spouseDentalFinishEligibleText').hide();
+          $('.spouseDentalFinishBlock').removeClass('eligible');
+          $('.spouseDentalFinishBlock').addClass('ineligible');
+  }
+  if (Math.floor(sppTotalOptical) < 1) {
+          $('.spouseOpticalFinishIneligibleText').show();
+          $('.spouseOpticalFinishEligibleText').hide();
+    $('.spouseOpticalFinishBlock').removeClass('eligible');
+          $('.spouseOpticalFinishBlock').addClass('ineligible');
+      }
+
+  //Check for red box on ASB Applicant
+      if (Math.floor(appTotalASB) < 1) {
+          $('.applicantASBFinishIneligibleText').show();
+          $('.applicantASBFinishEligibleText').hide();
+          $('.applicantASBFinishBlock').removeClass('eligible');
+          $('.applicantASBFinishBlock').addClass('ineligible');
+      }
+  if (Math.floor(appTotalDental) < 1) {
+    $('.applicantDentalFinishIneligibleText').show();
+          $('.applicantDentalFinishEligibleText').hide();
+          $('.applicantDentalFinishBlock').removeClass('eligible');
+          $('.applicantDentalFinishBlock').addClass('ineligible');
+      }
+  if (Math.floor(appTotalOptical) < 1) {
+          $('.applicantOpticalFinishIneligibleText').show();
+          $('.applicantOpticalFinishEligibleText').hide();
+    $('.applicantOpticalFinishBlock').removeClass('eligible');
+          $('.applicantOpticalFinishBlock').addClass('ineligible');
+      }
+}
+
+// handles displaying the SNA Eligibility results in the UI
+// @param AppIsEligible     SNA eligibility of applicant
+// @param SpsIsEligible	    SNA eligibility of spouse
+function displaySNAResults(AppIsEligible,SpsIsEligible) {
+
+//console.log("Displaying SNA Results - AppIsEligible: " + AppIsEligible + " SpsIsEligible " + SpsIsEligible);
+        if (AppIsEligible) {
+                $('.applicantSNAFinishEligibleText').show();
+                $('.applicantSNAFinishInEligibleText').hide();
+                $('.applicantSNAFinishEligibleBlock').removeClass('ineligible');
+    $('.applicantSNAFinishEligibleBlock').addClass('eligible');
+  } else {
+                $('.applicantSNAFinishInEligibleText').show();
+                $('.applicantSNAFinishEligibleText').hide();
+                $('.applicantSNAFinishEligibleBlock').removeClass('eligible');
+                $('.applicantSNAFinishEligibleBlock').addClass('ineligible');
+  }
+
+  if (SpsIsEligible) {
+     $('.spouseSNAFinishEligibleText').show();
+                $('.spouseSNAFinishInEligibleText').hide();
+                $('.spouseSNAFinishEligibleBlock').removeClass('ineligible');
+    $('.spouseSNAFinishEligibleBlock').addClass('eligible');
+  } else {
+                $('.spouseSNAFinishInEligibleText').show();
+                $('.spouseSNAFinishEligibleText').hide();
+    $('.spouseSNAFinishEligibleBlock').removeClass('eligible');
+                $('.spouseSNAFinishEligibleBlock').addClass('ineligible');
+  }
+}
+
+// calculates Supplementary Accommodation Benefit (SAB), if applicable
+// two types of SAB: SAB1, SAB2. SAB1 exists only in grandfathering situations post-2013. Estimator only deals with SAB2 as it
+//   cannot determine whether an applicant is/should be grandfathered without personal information
+// was named getSABType; renamed for clarity
+function estimateSAB(isSingle) {
+    if (isSingle) {
+        var sabIncome = parseInt($('.applicantTotalIncome').val());
+    } else {
+        var sabIncome = (parseInt($('.spouseTotalIncome').val()) + parseInt($('.applicantTotalIncome').val())) / 2;
+    }
+    var thisSAB = 0;
+    thisSAB = (monthlyPrivateRoomRate + monthlyDiscretionaryIncome) - (sabIncome / 12);
+    //Debug
+    if (isDebug)  alert("Room Rate: (" + monthlyPrivateRoomRate + " + Dis Rate:" + monthlyDiscretionaryIncome + ")" + "- (Income: " + sabIncome + "/ 12) = thisSAB: " + thisSAB);
+    if (thisSAB > sabType2MonthlyMax) {
+        thisSAB = sabType2MonthlyMax;
+    }
+    if (thisSAB < 0) {
+        thisSAB = 0;
+    }
+    if (thisSAB > 0 && thisSAB < 10) {
+        thisSAB = 10;
+    }
+
+    return Math.floor(thisSAB);
+}
+
+// Performs the Dental Eligibility Calculation
+//  Eligibility % = (DASP Max - (Total Adjusted Income - Previous SAB)) / 35.25
+function calcDental(householdIncome) {
+
+    dental = 0;
+    var lIncomeThresholdDental = 0;
+    var uIncomeThresholdDental = 0;
+    var thresholdOverIncome = false;
+    //MARRIED VS SINGLE --------------------------
+
+   //if (maritalStatus == 0) {
+    if ($('.maritalStatus').val() == 0) {
+        lIncomeThresholdDental = dentalSingleIncomeLowerRangeMax;
+        uIncomeThresholdDental = dentalSingleIncomeMidRangeMax;
+    } else {
+        lIncomeThresholdDental = dentalCoupleIncomeLowerRangeMax;
+        uIncomeThresholdDental = dentalCoupleIncomeMidRangeMax;
+    }
+    //DENTAL CHECKS ------------------------------
+    //Upper income - total income / upper income - lower income * 100
+    if (householdIncome > uIncomeThresholdDental) {
+        dental = 0;
+    } else {
+        dental = ((uIncomeThresholdDental - householdIncome) / (uIncomeThresholdDental - lIncomeThresholdDental) * 100);
+    }
+  //if (isDebug)  alert("("+uIncomeThresholdDental +"-"+ householdIncome+") / ("+uIncomeThresholdDental+" -"+ lIncomeThresholdDental+") * 100) = "+ dental + " maritalStatus " + $('.maritalStatus').val());
+    //Range Checks
+    if (dental > 100) {
+        dental = 100;
+    }
+    if (dental <= 9.99 && dental > 0) {
+        dental = 10;
+    }
+    if (dental < 0) {
+        dental = 0;
+    }
+    return Math.floor(dental);
+}
+
+// was labeled calcOASFormula()
+// renamed because it's actually calculating Optical Assistance amount, not Old Age Security!
+function calcOptical(dentalAmount) {
+    if ((dentalAmount >= 10) && (dentalAmount < 100)) {
+        opticalAssistance = 115;
+    } else if (dentalAmount == 100) {
+        opticalAssistance = 230;
+    } else {
+        opticalAssistance = 0;
+    }
+    return opticalAssistance;
+}
+
+// Performs the Basic Monthly Cash Benefit Calculation outlined at the end of the ASB Maximum Benefits & Phase-out Rates table
+//   which is described as (Applicable Maximum Cash Benefit - (NDI*phase-out))/ 12
+// was called calcFormula; renamed for clarity
+function calcASB(thisMaxBenefit, NDI, phaseOutRate, reductionRate) {
+    //Debug
+    if (isDebug)  alert('Max Ben:' + thisMaxBenefit + " NDI:" + NDI + " phase rate:" + phaseOutRate + " reduction:" + reductionRate);
+    var stepOne = NDI;
+    if (NDI > 0) {
+        stepOne = NDI * phaseOutRate;
+    }
+
+    var stepTwo = thisMaxBenefit - stepOne;
+    if (reductionRate != 0) {
+        if (isDebug)  alert("Caught Reduction rate");
+        //Dont multiply by 0
+        stepTwo = stepTwo * reductionRate;
+    }
+    totalApp = stepTwo / 12;
+
+    if (isDebug)  alert("Calculation: [" + thisMaxBenefit + "- (" + NDI + " * " + phaseOutRate + ")] / 12 = " + totalApp);
+    return totalApp;
+}
+
+function printElem(options) {
+    $('.printable').printElement(options);
+}
+
+// ARMS 36339 Modifications for ASB 1.0 and 2.0
+// turns a string value into a decimal with one decimal place
+// @param strVal	the string to turn into a decimal
+// @return			strVal as a decimal (i.e. 24 -> 24.0)
+function makeDecimal(strVal) {
+  return (strVal != "") ? parseFloat(strVal).toFixed(1) : 0.0;
+}
+
+// ARMS 36339 Modifications for ASB 1.0 and 2.0
+// assembles parameters and performs a web service call to calculate ASB and SAB benefits, and determine ASB type
+// @param applicantNDI
+// @param spouseNDI
+// @return ASB and SAB benefits and ASB Type in JSON obj of format  { "APPASBAmount": 1.0, "APPSABAmount": 2.0, "SPSASBAmount": 3.0, "SPSSABAmount": 4.0, "ASBType": "sampleString" }
+function callEstimateWS() {
+
+var maritalStatus = $("#maritalStatus option:selected").text();
+//var applicantResidenceCode = $("select.applicantResidence option:selected").text();
+// ARMS 43293 use the code IDs instead of descriptions to get around language issues
+var applicantResidenceCode = $("select.applicantResidence option:selected").val();
+
+var applicantOASFlag = $("input[name='applicantSenior']:checked").val();
+var spouseOver65Flag = $("input[name='spouseSenior']:checked").val();
+
+//var spouseResidenceCode = $("select.spouseResidence option:selected").text();
+// ARMS 43293 use the code IDs instead of descriptions to get around language issues
+var spouseResidenceCode = $("select.spouseResidence option:selected").val();
+var spouseOASFlag = $("input[name='spouseOAS']:checked").val();
+
+// to be added to the form
+// TODO REMOVE 37207; set to No for now
+var isClient65asofJuly2021 = "No";
+
+// find these
+var applicantTotalIncome = makeDecimal($("#applicantTotalIncome").val());
+var spouseTotalIncome = makeDecimal($("#spouseTotalIncome").val());
+var finalNDI = makeDecimal($(".appFinalNDI").val());
+
+
+// turn these into decimals
+var applicantOASAmt =  makeDecimal($("#applicantOASAmount").val());
+var spouseOASAmt = makeDecimal($("#spouseOASAmount").val());
+
+var applicantGISAmt = makeDecimal($("#applicantGIS").val());
+var spouseGISAmt = makeDecimal($("#spouseGIS").val());
+
+var applicantNDI  = makeDecimal($("#applicantIncomeForCalc").val());
+var spouseNDI =  makeDecimal($("#spouseIncomeForCalc").val());
+
+//TODO REMOVE isClient65asofJuly2021 37207
+//TODO REMOVE EffectiveDate: "2021-07-02" parameter which forces WS to evaluate at that date for testing instead of current
+// 42873 add 2024-01-01 EffectiveDate for testing
+// 43875 add 2024-07-1 for testing
+// 45670 add 2025-07-01 EffectiveDate for testing
+// 46737 add 2026-01-01 EffectiveDate for testing
+// 47007 add 2026-03-12 EffectiveDate for testing
+// 47007 add 2026-02-28 EffectiveDate to production until March 23th to use existing SAB rates until then; removed March 23
+// 47387 add 2026-07-01 EffectiveDate for testing
+var jsonData = {
+  MaritalStatus: maritalStatus,
+  ApplicantResidenceCode: applicantResidenceCode,
+  ApplicantOASFlag: applicantOASFlag,
+  SpouseOver65Flag: spouseOver65Flag,
+  SpouseResidenceCode: spouseResidenceCode,
+  SpouseOASFlag: spouseOASFlag,
+  IsClient65asofJuly2021: isClient65asofJuly2021,
+  ApplicantNDI: applicantNDI,
+  SpouseNDI: spouseNDI,
+  ApplicantOASAmt: applicantOASAmt,
+  SpouseOASAmt: spouseOASAmt,
+  ApplicantGISAmt: applicantGISAmt,
+  SpouseGISAmt: spouseGISAmt,
+  ApplicantTotalIncome: applicantTotalIncome,
+  EffectiveDate: "2026-07-01",
+  SpouseTotalIncome: spouseTotalIncome
+};
+// 44652 add SNA Eligibility call
+var snaJsonData = {
+  checkSNA: true,
+        MaritalStatus: maritalStatus,
+        ApplicantResidenceCode: applicantResidenceCode,
+        ApplicantOASFlag: applicantOASFlag,
+        SpouseOver65Flag: spouseOver65Flag,
+        SpouseResidenceCode: spouseResidenceCode,
+        SpouseOASFlag: spouseOASFlag,
+        IsClient65asofJuly2021: isClient65asofJuly2021,
+        ApplicantNDI: applicantNDI,
+        SpouseNDI: spouseNDI,
+        ApplicantOASAmt: applicantOASAmt,
+        SpouseOASAmt: spouseOASAmt,
+        ApplicantGISAmt: applicantGISAmt,
+        SpouseGISAmt: spouseGISAmt,
+        ApplicantTotalIncome: applicantTotalIncome,
+  EffectiveDate: "2026-07-01",
+        SpouseTotalIncome: spouseTotalIncome
+}
+
+// submit-documents is proxied to the plugin folder on x-dimg
+var wsURL = "/submit-documents/EstimateBenefits.php";
+// 44652 SNA Eligibility evaluation web service
+// 44628 nested the ajax estimation calls so that we can keep the pinwheel until BOTH are done
+if (isDebug) { console.log("EstimateBenefitsWS stringdata " + JSON.stringify(jsonData)) };
+
+//console.log("EstimateBenefitWS SNA elig check string data " + JSON.stringify(snaJsonData));
+var jqxhr = $.ajax({
+        type: "POST",
+        url: wsURL,
+        dataType: "json",
+        data: JSON.stringify(snaJsonData),
+        beforeSend: function() {
+    //46628 moved to prepareStep3() in web-estimator js
+        }
+}).fail(function(jq,textStatus,errorThrown) {
+        //console.log("SNAWS failed " + textStatus + " " + errorThrown);
+        alert("There was an error performing the SNA Eligibility check. Please try again. If errors persist, please try again later.");
+        // back up a step so users can try to submit again
+        $('#wizard-form-t-1').click();
+}).done(function(data) {
+        if (isDebug) {
+                alert("SNA Eligibility Check: AppIsEligible " + data.AppIsEligible);
+                //console.log("SNA Eligibility Check: AppIsEligible " + data.AppIsEligible);
+        }
+  //console.log("SNA elig returned data " + JSON.stringify(data));
+  displaySNAResults(data.AppIsEligible, data.SpsIsEligible);
+
+  // 46628 move the EstimateBenefits call within this one so we will have all results at this point.
+  var jqxhr = $.ajax({
+          type: "POST",
+          url: wsURL,
+          dataType: "json",
+          data: JSON.stringify(jsonData),
+          beforeSend: function() {
+      // 46628 moved to prepareStep3() in web-estimator js
+          }
+  }).fail(function(jq,textStatus,errorThrown) {
+          console.log("WS failed " + textStatus + " " + errorThrown);
+          alert("There was an error performing the estimation. Please try again. If errors persist, please try again later.");
+          // back up a step so users can try to submit again
+          $('#wizard-form-t-1').click();
+  }).done(function(data) {
+          if (isDebug) {
+                  alert("Benefit Estimates WS App ASB Amount " + data.APPASBAmount + " App SAB Amount " + data.APPSABAmount + " Sp ASB Amount " + data.SPSASBAmount + " Sp SAB Amount " + data.SPSSABAmount + " ASB Type " + data.ASBType);
+                  //console.log("Benefit Estimates WS APPASBAmount " + data.APPASBAmount + " APPSABAmount " + data.APPSABAmount + " SPSASBAmount " + data.SPSASBAmount + " SPSSABAmount " + data.SPSSABAmount + " ASBType " + data.ASBType);
+          }
+    displayResults(isApplicantSingle, data.APPASBAmount, data.SPSASBAmount, data.APPSABAmount, data.SPSSABAmount, data.ASBType, "new: ");
+    // 46628 try the pinwheel here
+    $('.pinwheel').hide();
+  }).always(function(){
+  });
+
+}).always(function(){
+});
+
+
+}
+
+// hides recaptchaError box when captcha_v2 has been submitted
+function validateForm() {
+         $('#recaptchaError').hide();
+         return true;
+}
+
+// ARMS 36339
+// handles CAPTCHA v2 challenge if v3 score is low
+// if user can't pass the v2 check, further estimator progress is blocked
+function recaptchaCallback() {
+
+        if (validateForm()) {
+                //console.log("Got to recaptchaCallback");
+                // need to get a fresh response code (via grecaptcha.execute) or get a 'timeout or duplicate' error when we submit
+                grecaptcha.execute('6Lfhy7oUAAAAAIJ4DNgZhPwCFkXqK4wclgU4r5uR', {action: 'captcha_v2'}).then(function(token) {
+
+                        // remove reCaptcha v2 element from form (hide, don't remove)
+                        $('#g-recaptcha-response').hide();
+                        $('.g-recaptcha').hide();
+
+                        //console.log("passed captcha check");
+                        // close the captcha error div so user can use Previous and resubmit
+                        $('#recaptchaError').hide();
+
+            // can show the results UI now that captcha is passed
+                        $('#wizard-form-p-4').show();
+
+                  // captcha success, proceed as normal
+      estimateBenefitAmounts(maritalStatus, applicantRescode, applicantIncome, appOAS, spouseRescode, spouseIncome, sppOAS);
+                        callEstimateWS();
+                });
+        } else {
+                grecaptcha.reset();
+        }
+
+}
+
+// ARMS 36339
+// determines if I Am Not a Robot checkbox has already been checked
+//  called if user failed v3, passed v2, and then hits Previous to change results and resubmits
+function isCaptchaChecked() {
+  return grecaptcha && grecaptcha.getResponse().length !== 0;
+}
+
+// ARMS 36339
+// use reCAPTCHA v3 to protect from bots; v2 challenge occurs if v3 score is too low
+//  successful v3 or v2 challenge allows estimation to proceed
+function checkForBotsAndPerformEstimates() {
+                grecaptcha.execute('6Lfhy7oUAAAAAIJ4DNgZhPwCFkXqK4wclgU4r5uR', {action: "captcha"}).then(function(token) {
+                        //alert('captcha token ' + token);
+                         //console.log('recaptcha response token ' + token);
+                        // call google site verify
+                        $.get( "/submit-documents/botCheck.php?g-recaptcha-response=" + token, function( data ) {
+                                if (isDebug) console.log('botCheck response = ' + data);
+
+                                var json = JSON.parse(data);
+                                var captchaSuccess = json['success'].toString();
+                                var captchaScore = parseFloat(json['score']);
+                                var captchaAction = json['action'];
+                                var captchaHostname = json['hostname'];
+                                var captchaTS = json['challenge_ts'];
+
+                                if (captchaSuccess && isDebug) {
+                                        console.log("passed captcha");
+                                }
+                                if (captchaScore && isDebug) {
+                                        console.log(" score " + captchaScore);
+                                }
+                                if (isDebug) { console.log("captcha success " + captchaSuccess + " score " + captchaScore + " action " + captchaAction + " host " + captchaHostname + " ts " + captchaTS ) };
+
+                                //captchaScore = 0.3;
+                                //console.log("manually set captcha score low " + captchaScore);
+
+                                if (!captchaSuccess || (captchaScore < 0.3)) {
+                                        // don't proceed next step; go back a step
+                                         if (isDebug) { console.log('reCaptcha v3 score too low, showing v2 challenge') };
+
+//console.log("DEBUG token " + token  + " HN1 " + captchaHostname.indexOf("seniors-housing.alberta.ca") + " HN2 " + captchaHostname.indexOf("seniors-housing.alberta.ca") + " checkbox-expired " + isCaptchaChecked());
+
+             // if captcha already done and valid, skip v2
+                                                if (captchaSuccess && token && (token != "") && ((captchaHostname.indexOf("seniors-housing.alberta.ca") == 0) || (captchaHostname.indexOf("seniors-housing.alberta.ca") == 4)) && (captchaAction == "captcha") && isCaptchaChecked() ) {
+                                                        //console.log("captcha- this is a back and forth, we have a valid NaR, make the call");
+                                                         // captcha success, proceed as normal
+                                                        estimateBenefitAmounts(maritalStatus, applicantRescode, applicantIncome, appOAS, spouseRescode, spouseIncome, sppOAS);
+                                                        callEstimateWS();
+                                                } else {
+              // hide results form until captcha dealt with
+                                                        $('#wizard-form-p-4').hide();
+                                                        $('#recaptchaError').html('<b>Your submission has been selected for additional verification:</b><ul><li>Please check the "I\'m Not a Robot" box below.</li></ul>');
+                                                        $('#recaptchaError').show();
+                                                        $('.g-recaptcha').show();
+
+                                                        // scroll to error messages
+              $(document).scrollTop($('#main').offset().top - $('#main').height());
+                                                }
+
+                                        //alert("CAPTCHA failed. Please reload the estimator and try again. If problems persist, please try again later.");
+                                        //$('#wizard-form-t-3').click();
+                                } else {
+                                        // captcha success, proceed as normal
+                                        estimateBenefitAmounts(maritalStatus, applicantRescode, applicantIncome, appOAS, spouseRescode, spouseIncome, sppOAS);
+                                        callEstimateWS();
+                                }
+                                //console.log("captcha success ' + captchaSuccess + " captcha score " + captchaScore);
+                        });
+
+                });
+}
+
+// ARMS 43293 For the combination of DSL and LTC into the single option of "Continuing Care"
+// returns true if the individual is in continuing care, false otherwise
+// send in either "applicant" or "spouse" as the individual to check
+// LTC/DSL codes are "N" and "A", and maybe "C" for Contuining Care
+function isInContinuingCare(individual) {
+
+  var selectedResidence = $('.'+individual+'Residence option:selected').val();
+  console.log("IsInContinuingCare individual " + individual + " val " + selectedResidence);
+
+  if (selectedResidence == "N" || selectedResidence == "A" || selectedResidence == "C") {
+    return true;
+  } else {
+    return false;
+  }
+
+}

@@ -1,0 +1,54 @@
+Title: Finance
+URL: https://www.gov.nl.ca/fin/tax-programs-incentives/personal/income-supplement/
+Fetched: 2026-11-05
+SHA-256 of the original: 88b1c953cd5cf7f7157b48f826e65e41a539e9dc3aadec1b18abed0efeecc1d9
+Text extract made with the exported fetch-source helpers (custom destination). Check figures against the original when layout matters (tables).
+================================================================================
+
+# NL Income Supplement and the NL Seniors’ Benefit
+
+These benefits are refundable tax credits that may be paid to low income individuals, seniors and families. A refundable tax credit is an amount paid even if there is no tax payable.
+
+The benefits are paid to those eligible in quarterly installments in January, April, July and October.
+
+No application for the benefits is required. However, eligible individuals must ensure their annual income tax return is filed in order to receive the benefits. Eligibility will be based on family net income from the previous year.
+
+These credits are provided under Section 34 of the Income Tax Act, 2000.
+
+Calculator for the NL Income
+Supplement and NL Seniors’ Benefit
+
+## Newfoundland and Labrador Income Supplement
+
+- Budget 2016 introduced the Newfoundland and Labrador Income Supplement (NLIS). The NLIS, which builds on the former HST Credit, is intended to help reduce the impact of additional revenue measures on low income individuals, seniors, families and persons with disabilities.
+- The annual amounts for the supplement are shown in the table below:
+
+| NLIS Amount (2025 Benefit Year)
+Amount for Eligible Individuals | Basic credit of $254 Maximum credit of $520 (1)
+Amount for Spouse | $69
+Amount for Eligible Children | $231
+Amount for Individuals Claiming the Disability Tax Credit | $231
+Phase-in Income Threshold | $15,000
+Lower Phase-out Income Threshold (2) | $40,000
+(1) Additional amount of $266 to be phased in at a rate of 5.32% for family net income in excess of $15,000. Eligible individuals with family net income of $20,000 to $40,000 will receive the maximum benefit of $520. (2) The phase out of the benefit begins at family net income of $40,000 at a rate of 9%.
+
+## Newfoundland and Labrador Seniors’ Benefit
+
+- Budget 2026 announced a 20% increase for the Seniors’ Benefit, in addition to indexation, effective July 2026.
+- As a result, whether single or as a couple, seniors with family net income of up to $30,409 (previously $30,078) are eligible to receive the maximum benefit of $1,882 (increased from $1,551).
+- The amount of the benefit will be phased out at a rate of 11.66% as net income increases between $30,409 and $46,550.
+- In order to qualify for this benefit, the person must be 64 years of age or over by December 31st of the taxation year.
+
+While fully funded by the Government of Newfoundland and Labrador, these benefits are administered by the Canada Revenue Agency and will be paid with the federal GST Credit. To learn more about the federal administration of provincial credits, please visit the CRA webpage: http://www.cra-arc.gc.ca/bnfts/rltd_prgrms/nl-eng.html.
+
+For more information please contact:
+
+### Department of Finance
+
+Tax and Fiscal Policy Branch
+P.O. Box 8700
+St. John’s, NL
+A1B 4J6
+Tel: (709) 729-3166
+Fax: (709) 729-2070
+Email: taxpolicy@gov.nl.ca

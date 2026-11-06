@@ -614,6 +614,8 @@ function segTip(p: ProvView, r: Result, c: Seg) {
     for (const [n, v] of r.credits) parts.push(`${n} ${money(v)}`);
     if (r.breakdown.gisAllowance && r.breakdown.gisAllowance.total > 0.5)
       parts.push(`GIS and Allowance ${money(r.breakdown.gisAllowance.total)}`);
+    if (r.breakdown.provincialSupplements && r.breakdown.provincialSupplements.total > 0.5)
+      parts.push(`Provincial seniors' supplements ${money(r.breakdown.provincialSupplements.total)}`);
     sub = `${parts.join(" · ")}. Netted off the tax above`;
   }
   return `<b>${p.n} · ${SEG_NAMES[c]}</b><span class="t-num">${c === "ben" ? "−" : ""}${money(amt)} a year · ${pct(share)} of income</span>
@@ -778,7 +780,7 @@ function render() {
     qs(el, ".tag").textContent = p.c === home ? "home" : p.c === dest ? "dest." : "";
     el.setAttribute(
       "aria-label",
-      `${p.n}${p.c === home ? " (home)" : p.c === dest ? " (destination)" : ""}: net ${pct(r.avg)} of income, marginal ${pct(r.marg)}, total ${money(r.total)}${r.benefits > 0.5 ? ` after ${money(r.benefits)} of ${r.breakdown.gisAllowance ? "benefits and credits" : "child benefits"}` : ""}`,
+      `${p.n}${p.c === home ? " (home)" : p.c === dest ? " (destination)" : ""}: net ${pct(r.avg)} of income, marginal ${pct(r.marg)}, total ${money(r.total)}${r.benefits > 0.5 ? ` after ${money(r.benefits)} of ${r.breakdown.gisAllowance || r.breakdown.provincialSupplements ? "benefits and credits" : "child benefits"}` : ""}`,
     );
   });
   if (tipFor && segTips.get(tipFor) && tipFor.closest(".col")) showTip(tipFor); // keep an open segment tip current
@@ -1092,6 +1094,15 @@ function renderDetail(res: Row[], order: Row[]) {
   const row = (label: string, a: number, b: number, kind: Kind = "tax", cls = "") =>
     `<tr class="${cls}"><td>${label}</td><td class="r">${fmt(a, kind)}</td><td class="r">${fmt(b, kind)}</td>${kind === "credit" ? dcell(-a, -b, "tax") : dcell(a, b, kind)}</tr>`;
   const any = (f: (r: Result) => number) => f(hr) > 0.5 || f(dr) > 0.5;
+  // A province without supplement rules (Yukon, PEI) reads "not modelled", never $0.
+  const supplementTotal = (r: Result) => r.breakdown.provincialSupplements?.total ?? 0;
+  const supplementCell = (x: Row) =>
+    `<td class="r${x.p.d.seniorSupplements ? "" : " not-modelled"}">${x.p.d.seniorSupplements ? fmt(supplementTotal(x.r), "credit") : "not modelled"}</td>`;
+  const bothModelled = !!H.p.d.seniorSupplements && !!D.p.d.seniorSupplements;
+  const supplementRow =
+    any(supplementTotal) || (people.some(hasSeniorBenefits) && !bothModelled)
+      ? `<tr><td>Provincial seniors' supplements${comparisonInfo("Provincial seniors' supplements", retirementTooltips(Object.values(years)).seniorSupplements)}</td>${supplementCell(H)}${supplementCell(D)}${bothModelled ? dcell(-supplementTotal(hr), -supplementTotal(dr), "tax") : `<td class="r">–</td>`}</tr>`
+      : null;
   let rows =
     row("Federal income tax", hr.fed, dr.fed) +
     row("Provincial / territorial income tax", hr.prov, dr.prov) +
@@ -1146,6 +1157,7 @@ function renderDetail(res: Row[], order: Row[]) {
           "credit",
         )
       : "") +
+    (supplementRow ?? "") +
     row(hh ? "Household net tax" : "Net tax", hr.total, dr.total, "tax", "sum") +
     row("Net rate", hr.avg, dr.avg, "pp") +
     row(`Marginal rate${two ? ` · ${NAMES[active]}` : ""}`, hr.marg, dr.marg, "pp") +
@@ -1218,6 +1230,8 @@ function ledgerView({ p, r }: Row) {
   if (n.oas) tiParts.push(`${money(n.oas)} OAS`);
   if (n.cppQpp) tiParts.push(`${money(n.cppQpp)} CPP/QPP retirement income`);
   if (m.breakdown.netFederalSupplements) tiParts.push(`${money(m.breakdown.netFederalSupplements)} GIS and Allowance`);
+  if (n.provincialAssistance)
+    tiParts.push(`${money(n.provincialAssistance)} reportable provincial seniors' supplements`);
   if (x.cg > 0) tiParts.push(`${money(n.cg)} taxable ${share(F.investment.capitalGainsInclusion)} of net gains`);
   if (x.ed) tiParts.push(`${money(n.ed)} grossed-up eligible dividends`);
   if (x.nd) tiParts.push(`${money(n.nd)} grossed-up non-eligible dividends`);
@@ -1282,6 +1296,18 @@ function ledgerView({ p, r }: Row) {
     : [];
   const benefitLedger = benefit
     ? `<table class="public-pension-ledger senior-benefit-ledger"><caption>GIS and Allowance${suffix}${comparisonInfo("GIS and Allowance accounting", retirementTooltips(Object.values(years)).seniorBenefitTax)}</caption><tbody>${benefitRows.map(([label, amount]) => `<tr><td>${label}</td><td class="r">${amount < 0 ? "−" : ""}${money(Math.abs(amount))}</td></tr>`).join("")}</tbody></table>`
+    : "";
+  const supplements = r.breakdown.provincialSupplements;
+  const supplementRows: Adj[] = supplements
+    ? [
+        ...supplements.payments
+          .filter(payment => payment.recipients[active] > 0)
+          .map((payment): Adj => [payment.name, payment.recipients[active]]),
+        ["Reported as income (T5007 line 14500)", supplements.reported[active]],
+      ]
+    : [];
+  const supplementLedger = supplements
+    ? `<table class="public-pension-ledger senior-benefit-ledger"><caption>Provincial seniors' supplements${suffix}${comparisonInfo("Provincial seniors' supplements accounting", retirementTooltips(Object.values(years)).seniorSupplements)}</caption><tbody>${supplementRows.map(([label, amount]) => `<tr><td>${label}</td><td class="r">${amount < 0 ? "−" : ""}${money(Math.abs(amount))}</td></tr>`).join("")}</tbody></table>`
     : "";
   const pensionRows: Adj[] = pension
     ? [
@@ -1368,7 +1394,7 @@ function ledgerView({ p, r }: Row) {
       : "";
   return `
     <div class="ledgers">
-      ${ledger(`Federal${suffix}`, "var(--fed)", { lines: m.f.lines, gross: m.f.tax, rows: fRows, net: m.fed }, m.ti, taxableInfo, pensionIncome + benefitLedger)}
+      ${ledger(`Federal${suffix}`, "var(--fed)", { lines: m.f.lines, gross: m.f.tax, rows: fRows, net: m.fed }, m.ti, taxableInfo, pensionIncome + benefitLedger + supplementLedger)}
       ${ledger(p.n + suffix, "var(--prov)", { lines: m.pr.lines, gross: m.pr.tax, rows: pRows, net: m.prov }, m.tiP)}
       <div class="ledger">
         <h4><i class="sw" style="background:var(--pay)"></i>Payroll${suffix}${businessInfo ? comparisonInfo("self-employment contributions", businessInfo) : ""}${m.breakdown.retirementPayroll ? comparisonInfo("retirement-age payroll", retirementResult(m.breakdown.retirementPayroll, p.qc ? "QPP" : "CPP", money)) : ""}</h4>

@@ -56,6 +56,10 @@ fuelTax:
   regional: {name: ARTM, gasoline: 0.03}   # Autorité régionale de transport métropolitain
 
 sources:
+  - label: "Revenu Quebec TP-1029.SA-V 2025-10: Senior Assistance Tax Credit"
+    url: https://www.revenuquebec.ca/documents/en/formulaires/tp/TP-1029.SA-V%282025-10%29.pdf
+  - label: "Revenu Quebec TP-1029.SA-V 2026-10: Senior Assistance Tax Credit"
+    url: https://www.revenuquebec.ca/documents/en/formulaires/tp/TP-1029.SA-V%282026-10%29.pdf
   - {"label": "Schedule B – Tax Relief Measures", "url": "https://www.revenuquebec.ca/documents/en/formulaires/tp/2025-12/TP-1.D.B-V(2025-12).pdf"}
   - {"label": "GUIDE – INCOME TAX RETURN – 2025", "url": "https://www.revenuquebec.ca/documents/en/formulaires/tp/2025-12/TP-1.G-V(2025-12).pdf"}
   - {"label": "Income Tax Return", "url": "https://www.revenuquebec.ca/documents/en/formulaires/tp/2025-12/TP-1.D-V(2025-12).pdf"}
@@ -88,3 +92,18 @@ seniorCredits:
   # 2026 formulas provisionally continue 2025 Schedule B and line 431.
   provisionalRules: false
   params: {minimumAge: 65, ageAmount: 3906, retirementMaximum: 3470, retirementMultiplier: 1.25, livingAlone: 2128, familyThreshold: 42090, reductionRate: 0.1875, creditRate: 0.14}
+
+# 2025/2026 senior supplements: current income proxies historical income; ordinary residence assumed.
+# Estimated entries: see docs/verification/21-provincial-supplements.md for explicit derivations.
+seniorSupplements:
+  - program: qc-senior-assistance
+    name: Quebec Senior Assistance
+    params:
+      minimumAge: 70
+      maximum: 2000
+      singleThreshold: 27835
+      coupleThreshold: 45270
+      rate: 0.054
+    reporting:
+      kind: none
+      exemptThrough: 0

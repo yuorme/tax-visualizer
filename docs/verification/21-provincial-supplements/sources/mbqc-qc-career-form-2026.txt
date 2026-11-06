@@ -1,0 +1,82 @@
+Title: Revenu Quebec TP-752.PC-V 2026 career extension credit
+URL: https://www.revenuquebec.ca/documents/en/formulaires/tp/TP-752.PC-V%282026-10%29.pdf
+Fetched: 2026-11-05
+SHA-256 of the original: a9d806872c92f76dc23a76bbded35bd5c2252f5598b7c9975ac0721b47498cbf
+Publication date modified: 2026-08-31
+PDF pages: all 2
+Text extract made with scripts/fetch-source.ts extract/formatExtract helpers; custom destination, no shared index. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 1 of 2 ---
+
+1 6 4 G Z Z 4 9 5 4 5 2 7 1
+TP-752.PC-V (2026-10)
+1 of 2
+Tax Credit for Career Extension Year
+2026
+This form is for you if you were resident in Québec and 65 or over on December 31, 2026, and you want to claim the tax credit for career extension
+on line 391 of your 2026 income tax return. If you are filing this form for a deceased person, they must have been resident in Québec and 65 or over at
+the time of death.
+Enclose this form with your 2026 income tax return.
+1 Information about you
+Last name First name
+1 2
+Social insurance number
+3
+2 Tax credit for career extension
+Eligible work income (see the information on page 2) 10
+Amount deducted on lines 293 and 297 of your income tax return for an amount included on line 10 or employment income
+received from a non-arm’s length employer or from an employer that is a partnership, if you deal at non-arm’s length with one
+of the partnership’s members – 11
+Subtract line 11 from line 10. If the result is $7,655 or less, you are not entitled to the tax credit.
+If it is more than $7,655, continue your calculations. = 12
+Portion of the income on line 12 that relates to a previous year (retroactive amount) – 13
+Subtract line 13 from line 12. = 14
+– 15 7,655 00
+Subtract $7,655 from line 14 (maximum $12,755). = 16
+× 14%
+Multiply line 16 by 14%. = 35
+Net income (line 275 of your return; see the information on page 2) 36
+– 37 57,660 00
+Subtract $57,660 from line 36. If the result is negative, enter 0. = 38
+× 7%
+Multiply line 38 by 7%. = 39
+Subtract line 39 from line 35. If the result is negative, enter 0. = 40
+Income tax on taxable income (line 401 of your return) 47
+Add lines 359 through 367 of your return. × 14% – 48
+Subtract line 48 from line 47. If the result is negative, enter 0. = 49
+Enter the amount from line 40 or line 49, whichever is less.
+Carry this amount to line 391 of your return. Tax credit for career extension 50
+
+--- PDF page 2 of 2 ---
+
+G U I D Z Z 7 1 8 5 7 3 6 8
+TP-752.PC-V (2026-10)
+2 of 2
+Information
+Eligible work income (line 10)
+Employment income, net income from a business you carried on alone or
+as a partner actively engaged in the business, the net amount of research
+grants, Wage Earner Protection Program (WEPP) payments and amounts
+received under a work-incentive project. Employment income consisting
+solely of taxable benefits you received from previous employment is
+excluded from eligible work income (such income is shown in box 211
+of your RL-1 slip).
+NOTE
+Eligible work income is income for which you can claim the deduction for
+workers (the amount on line 6 of Work Chart 201 of your income tax
+return), plus the following:
+•• income received as an elected member of a municipal council,
+a member of the council or executive committee of a metropolitan
+community, an agglomeration or a regional county municipality,
+a member of a municipal utilities commission or corporation, or a
+member of a school board or a school service centre’s board
+of directors;
+•• income received as a member of the National Assembly, the House
+of Commons or the Senate of Canada, or the legislative assembly of
+a province other than Québec.
+Net income (line 36)
+The amount on line 36 is reduced by 7% of the amount by which it
+exceeds $57,660.
+If the amount on line 36 is $83,170 or more, you are not entitled to the
+tax credit.

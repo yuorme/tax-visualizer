@@ -1,0 +1,174 @@
+Title: Finances Quebec: home-support tax credit 2025 and 2026
+URL: https://www.budget.finances.gouv.qc.ca/Budget/outils/depenses-fiscales/fiches/fiche-110101.asp
+Fetched: 2026-11-05
+SHA-256 of the original: 965169ace26ea2ee1600960b8e65d31928c2d56bde75707b1667522f905bffc6
+Text extract made with scripts/fetch-source.ts extract/formatExtract helpers; custom destination, no shared index. Check figures against the original when layout matters (tables).
+================================================================================
+
+## Gestion des témoins de navigation
+
+Le site du ministère des Finances collecte des données de manière conforme aux différentes lois. La cueillette de renseignements ne vise aucunement à identifier un visiteur, mais à établir les statistiques de fréquentation. Pour savoir quels renseignements sont recueillis par les témoins de connexion (cookies), consultez notre politique de confidentialité.
+
+[image: Logo du gouvernement du Québec.]
+
+Ministère des Finances
+
+Ministère des Finances
+
+Migration progressive de nos contenus vers Québec.ca
+ANNÉES PRÉCÉDENTES
+
+# Dépenses fiscales2025
+
+- Accueil des dépenses fiscales /
+- Mesures fiscales et coûts /
+- Liste complète des mesures /
+- Aînés et aidants naturels /
+- Crédit d’impôt remboursable pour maintien à domicile des aînés
+
+# Crédit d’impôt remboursable pour maintien à domicile des aînés
+
+Objectif : Soutenir financièrement les personnes âgées de 70 ans ou plus pour qu’elles demeurent le plus longtemps possible dans leur milieu de vie et, de ce fait, prévenir ou retarder leur hébergement dans le réseau public de la santé et des services sociaux.
+
+Instauration et modifications 2000, 2007, 2008, 2013, 2020 et 2022
+
+Impôt ou taxe Impôt sur le revenu des particuliers
+
+Type de mesure Crédit d’impôt
+
+Bénéficiaires 537 971 particuliers en 2023
+
+Harmonisation avec le fédéral Non
+
+Référence juridique Loi sur les impôts, article 1029.8.61.5
+
+## Coûts de la mesure
+
+(en millions de dollars)
+
+[image: Les couts présentés dans ce graphique, sont également présentés dans le prochain tableau.]
+
+## Tableau sommaire des coûts de la mesure
+
+(en millions de dollars)
+
+| Estimations | Projections
+| 2020 | 2021 | 2022 | 2023 | 2024 | 2025 | 2026
+Régime des particuliers | 576,6 | 570,4 | 611,4 | 659,1 | 700,3 | 760,4 | 823,0
+
+Note :
+
+Sauf indication contraire, le coût des dépenses fiscales tient compte des mesures fiscales annoncées en date du 31 décembre 2025 qui ont un coût pour les années de 2020 à 2026. De plus, il est important de préciser que, pour les années antérieures à 2024, les dépenses fiscales représentent une estimation, ce qui implique, de façon générale, que leur coût est calculé à partir de statistiques fiscales réelles provenant de Revenu Québec lorsqu’elles sont disponibles ou, autrement, à partir d’autres sources et au moyen de certaines hypothèses. Pour les années de 2024 à 2026, les dépenses fiscales représentent une projection. De façon générale, la dernière valeur estimée de la dépense fiscale est projetée, à l’aide de différents indicateurs économiques, afin que les coûts pour les années de 2024 à 2026 soient obtenus.
+
+## Description
+
+Le régime d’imposition accorde un crédit d’impôt remboursable aux personnes âgées de 70 ans ou plus qui se procurent certains services de soutien à domicile auprès d’un entrepreneur (par exemple une résidence privée pour aînés ou une entreprise d’économie sociale) ou auprès de leur propre employé.
+
+Le calcul de ce crédit d’impôt se fait en deux étapes. La première étape consiste à déterminer le montant maximal de crédit d’impôt auquel un aîné peut avoir droit pour l’année. Pour ce faire, un taux est appliqué aux dépenses admissibles qu’il a payées dans l’année pour des services de soutien à domicile reconnus, sous réserve du plafond de dépenses admissibles qui lui est applicable pour l’année. Ce taux s’établissait à 35 % pour 2021. Depuis 2022, ce taux est majoré annuellement de 1 point de pourcentage pour atteindre 40 % en 2026.
+
+La seconde étape consiste à réduire, s’il y a lieu, le montant maximal du crédit d’impôt déterminé par ailleurs à l’égard de l’aîné en fonction de son revenu familial (soit le revenu net de l’aîné et, le cas échéant, celui de son conjoint admissible). Cette réduction correspond au produit obtenu en multipliant le taux de réduction applicable par l’excédent du revenu familial sur le seuil de réduction prescrit pour une année donnée.
+
+De 2016 à 2021 1 inclusivement, ce mécanisme de réduction visait seulement le crédit d’impôt accordé à un aîné autonome. Le taux de réduction applicable était de 3 %.
+
+Depuis 2022, ce mécanisme est modifié à l’égard du crédit d’impôt accordé à :
+
+- un aîné autonome, par l’ajout d’un second seuil de réduction et d’un taux de réduction correspondant;
+- un aîné reconnu comme une personne non autonome 2, par la mise en place d’un nouveau seuil de réduction et d’un taux de réduction correspondant applicable uniquement au montant de la bonification du crédit d’impôt.
+
+Aînés autonomes
+
+Depuis 2022, les aînés autonomes sont assujettis à deux seuils de réduction, conformément à ce qui suit :
+
+- en premier lieu, le crédit d’impôt pour maintien à domicile des aînés (CMD) est réduit selon un taux de 3 % pour chaque dollar de revenu familial qui excède le premier seuil de réduction applicable pour l’année (soit 71 010 $ en 2025; 72 465 $ en 2026) sans excéder le second seuil de réduction (soit 115 035 $ en 2025; 117 395 $ en 2026);
+- en second lieu, le CMD est également réduit selon un taux de 7 % pour chaque dollar de revenu familial qui excède le second seuil de réduction applicable pour l’année (soit 115 035 $ en 2025; 117 395 $ en 2026).
+
+Aînés non autonomes
+
+Depuis 2022, un seuil de réduction est réintroduit. Celui‑ci ne vise que le « montant de la bonification du CMD » de façon à assurer un crédit d’impôt minimal de 35 % pour ces aînés 3. En 2025, ce seuil de réduction est de 71 010 $ et il sera de 72 465 $ en 2026.
+
+Le « montant de la bonification du CMD » est défini comme étant le résultat de la formule suivante :
+
+A × (B − C)
+
+Pour l’application de cette formule :
+
+- la lettre A correspond au montant des dépenses admissibles de l’année d’imposition donnée postérieure à 2021;
+- la lettre B correspond au taux du CMD de l’année d’imposition donnée postérieure à 2021;
+- la lettre C correspond au taux de 35 %.
+
+Le « montant de la bonification du CMD » est réductible en fonction du revenu, à raison de 3 % pour chaque dollar de revenu familial dépassant le seuil de réduction applicable pour chacune de ces années d’imposition postérieures à 2021, et ce, jusqu’à ce que le « montant de la bonification du CMD » devienne nul.
+
+Le tableau ci‑dessous fait état des principaux paramètres utilisés aux fins du calcul du crédit d’impôt remboursable pour maintien à domicile des aînés.
+
+TABLEAU C.1 : Principaux paramètres utilisés aux fins du calcul du crédit d’impôt remboursable pour maintien à domicile des aînés
+(en dollars, sauf indication contraire)
+
+| 2020 | 2021 | 2022 | 2023 | 2024 | 2025 | 2026
+Aînés autonomes
+– Taux du crédit d’impôt (1) | 35 % | 35 % | 36 % | 37 % | 38 % | 39 % | 40 %
+– Plafond annuel de dépenses admissibles | 19 500 | 19 500 | 19 500 | 19 500 | 19 500 | 19 500 | 19 500
+– 1 er seuil de réduction : revenu familial (2) | 59 385 | 60 135 | 61 725 | 65 700 | 69 040 | 71 010 | 72 465
+– 1 er taux de réduction | 3 % | 3 % | 3 % | 3 % | 3 % | 3 % | 3 %
+– 2 e seuil de réduction : revenu familial (2) | — | — | 100 000 | 106 440 | 111 845 | 115 035 | 117 395
+– 2 e taux de réduction | — | — | 7 % | 7 % | 7 % | 7 % | 7 %
+Aînés non autonomes
+– Taux du crédit d’impôt (1) | 35 % | 35 % | 36 % | 37 % | 38 % | 39 % | 40 %
+– Plafond annuel de dépenses admissibles | 25 500 | 25 500 | 25 500 | 25 500 | 25 500 | 25 500 | 25 500
+– Seuil de réduction : revenu familial (2) | — | — | 61 725 | 65 700 | 69 040 | 71 010 | 72 465
+– Taux de réduction | — | — | 3 % | 3 % | 3 % | 3 % | 3 %
+
+(1) Depuis 2022, le taux du crédit d’impôt est majoré annuellement de 1 point de pourcentage pour atteindre 40 % en 2026..
+(2) Le seuil de réduction fait l’objet d’une indexation annuelle automatique. L’arrondissement se fait à 5 $ près.
+
+De façon générale, les dépenses admissibles au crédit d’impôt correspondent aux montants payés par un aîné en contrepartie des services de soutien à domicile qui lui sont fournis, à l’exclusion du coût de la nourriture, des boissons, des matériaux ou d’autres biens acquis à l’occasion de la prestation du service.
+
+Lorsqu’un aîné loue une unité de logement (chambre, studio ou appartement ne faisant pas partie du réseau public de la santé et des services sociaux) moyennant un loyer qui inclut le coût d’un ou plusieurs services de soutien à domicile reconnus, la partie du loyer attribuable à de tels services peut constituer une dépense admissible au crédit d’impôt.
+
+Jusqu’en 2021, afin de déterminer le montant des dépenses admissibles incluses dans un loyer, un aîné devait appliquer un taux de 5 % à la partie du loyer mensuel dont il était responsable (ou réputé l’être), jusqu’à concurrence d’un loyer global de 600 $ par mois, sauf si l’immeuble dans lequel il résidait était visé par la méthode basée sur l’application d’une table de fixation des dépenses.
+
+Depuis 2022, ce montant de 600 $ est haussé à 1 200 $. De plus, une présomption est introduite afin de prévoir un loyer mensuel minimal admissible de 600 $ auquel le taux de 5 % s’applique pour établir le montant réputé des dépenses admissibles incluses dans le loyer.
+
+La partie du crédit d’impôt relative au montant du loyer mensuel minimal admissible est versée automatiquement par Revenu Québec aux aînés non autonomes. Il en est de même pour les aînés autonomes ayant un revenu familial leur permettant d’y avoir droit, le versement tenant compte, dans ce cas, de la réduction applicable selon le niveau de leur revenu familial.
+
+Par ailleurs, un immeuble est visé par la méthode basée sur l’application d’une table de fixation des dépenses s’il est :
+
+- soit un « centre d’hébergement et de soins de longue durée privé non conventionné »;
+- soit une « résidence privée pour aînés », c’est‑à‑dire un immeuble d’habitation collective, ou partie d’un tel immeuble, à l’égard duquel l’exploitant est titulaire, selon le cas,
+
+- d’une autorisation temporaire ou régulière permettant l’exploitation d’une résidence privée pour aînés et accordée en vertu de la Loi visant à rendre le système de santé et de services sociaux plus efficace 4,
+- d’une attestation temporaire de conformité ou d’un certificat de conformité permettant l’exploitation d’une résidence privée pour aînés et délivré conformément à la Loi sur les services de santé et les services sociaux pour les Inuit et les Naskapis 5.
+
+La méthode basée sur l’application d’une table de fixation des dépenses permet de déterminer le montant des dépenses admissibles incluses dans un loyer à l’aide de l’une des deux tables prévues à cette fin, soit la table de fixation des dépenses sur la base d’un ménage, qui s’adresse aux aînés partageant leur logement uniquement avec leur conjoint et, pour tous les autres aînés, la table de fixation des dépenses sur une base individuelle.
+
+De façon sommaire, ces tables – dressées pour s’harmoniser avec le formulaire d’annexe au bail du Tribunal administratif du logement du Québec (auparavant : Régie du logement du Québec) qui doit accompagner le bail d’un logement avec services – attribuent une valeur aux différents services de soutien à domicile reconnus payés à même le loyer.
+
+Le pourcentage maximal du loyer que les dépenses admissibles peuvent représenter est :
+
+- 65 % pour une personne autonome de 70 ans ou plus vivant seule ou avec un conjoint de moins de 70 ans;
+- 75 % pour une personne non autonome de 70 ans ou plus vivant seule ou avec un conjoint de moins de 70 ans;
+- 70 % pour un ménage de deux conjoints autonomes de 70 ans ou plus;
+- 80 % pour un ménage de deux conjoints de 70 ans ou plus, si au moins l’un des deux n’est pas autonome.
+
+Quant aux services de soutien à domicile reconnus, ils sont de deux ordres, soit les services d’aide à la personne (services qui sont essentiels au maintien à domicile de l’aîné ou qui le permettent) et les services d’entretien ou d’approvisionnement fournis à l’égard d’une habitation (une unité de logement ou une maison unifamiliale, par exemple) ou d’un terrain sur lequel l’habitation est située.
+
+Toutefois, les services de soutien à domicile reconnus ne comprennent pas, entre autres, un service rendu ou à rendre par une personne qui est membre d’un ordre professionnel visé par le Code des professions et dont la prestation est régie par cet ordre professionnel (sauf si le service est rendu ou à rendre par une personne qui est membre de l’Ordre des infirmières et infirmiers du Québec ou de l’Ordre des infirmières et infirmiers auxiliaires du Québec), un service relatif à des travaux de construction ou de réparation, un service exigeant une carte de compétence particulière ou un service rendu ou à rendre par le réseau public de la santé et des services sociaux à une personne hébergée.
+
+1 Le mécanisme de réduction du crédit d’impôt pour maintien à domicile a été introduit dans le budget 2008‑2009 pour tous les aînés (Renseignements additionnels sur les mesures du budget, p. A.13‑A.14). Dans le budget 2012‑2013 (Renseignements additionnels sur les mesures fiscales du budget, p. 6), ce mécanisme a été aboli pour les aînés reconnus comme personnes non autonomes.
+
+2 Le statut de personne non autonome pour l’application du crédit d’impôt pour maintien à domicile doit être attesté par un médecin ou une infirmière praticienne spécialisée au moyen du formulaire TPZ‑1029.MD.A.
+
+3 Dans le cas d’un couple de particuliers âgés de 70 ans ou plus dont l’un d’eux est non autonome, la réduction du CMD s’effectue selon les règles applicables aux personnes aînées non autonomes.
+
+4 Le 13 décembre 2023, le Projet de loi n o 15, Loi visant à rendre le système de santé et de services sociaux plus efficace, a été sanctionné (L.Q. 2023, c. 34). L’article 1633 de cette loi prévoit qu’elle peut être citée sous le nom de « Loi sur le gouvernement du système de santé et de services » (RLRQ, chapitre G‑1.021).
+
+5 La Loi visant à rendre le système de santé et de services sociaux plus efficace prévoit que la Loi sur les services de santé et les services sociaux continue de s’appliquer sur certains territoires et la renomme « Loi sur les services de santé et les services sociaux pour les Inuit et les Naskapis ».
+
+[image: Retour au haut de la page]
+
+- Accès à l’information
+- Accessibilité
+- Déclaration de services aux citoyens
+- Politique de confidentialité
+
+[image: Logo du Ministère des Finances du gouvernement du Québec]
+© Gouvernement du Québec, 2026

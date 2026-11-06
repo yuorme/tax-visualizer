@@ -1,0 +1,143 @@
+Title: Revenu Quebec TP-1029.SA-V 2025-10: Senior Assistance Tax Credit
+URL: https://www.revenuquebec.ca/documents/en/formulaires/tp/TP-1029.SA-V%282025-10%29.pdf
+Fetched: 2026-11-05
+SHA-256 of the original: 5ab9131c8726e084b462bcdd1440979629ca4c681d55b8d5ec7899394e6fc1f1
+Publication date modified: 2025-09-18
+PDF pages: all 3
+Text extract made with scripts/fetch-source.ts extract/formatExtract helpers; custom destination, no shared index. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 1 of 3 ---
+
+1 5 D 3 Z Z 4 9 5 3 6 8 5 1
+TP-1029.SA-V (2025-10)
+1 of 3Prescribed form
+Complete this form if you are an eligible individual and you meet at least
+one of the following conditions:
+•• you were 70 or older on December 31, 2025;
+•• your spouse on December 31, 2025, is an eligible individual and was
+70 or older on December 31, 2025.
+If you are completing this form for someone who died in 2025, or if your
+spouse died in 2025, they must have been 70 or older at the time of death,
+rather than on December 31, 2025.
+You do not have to claim the senior assistance tax credit in your income
+tax return in order to receive it. However, you must complete this form to
+share this tax credit with your spouse on December 31, 2025, provided they
+1 Information about you and your spouse on December 31, 2025 (please print)
+You Your spouse on December 31
+Your last name Your spouse’s last name
+01 04
+Your first name Your spouse’s first name
+02 05
+Your social insurance number Your spouse’s social insurance number
+03 06
+2 Family income
+Amount from line 275 of your income tax return 10
+Amount from line 275 of your spouse’s return (spouse on December 31, 2025) + 12
+Add lines 10 and 12. Family income = 14
+3 Senior assistance tax credit
+If you had a spouse on December 31, 2025, complete section 3.1. Otherwise, complete section 3.2.
+3.1 You had a spouse on December 31, 2025
+Check the box(es) corresponding to your situation. If you check both boxes, complete section 3.1.1. If you check only one box, complete section 3.1.2.
+You were 70 or older on December 31, 2025.
+Your spouse is an eligible individual and was 70 or older on December 31, 2025.
+Senior Assistance Tax Credit
+2025
+are an eligible individual. You and your spouse must decide how the amount
+will be divided between you. If you are sharing the credit, only one of you
+must complete this form and enclose it with the income tax return. Note,
+however, that both of you must sign this form.
+You can also complete this form to determine the credit you are entitled
+to receive. Enter this amount on line 463 of your income tax return.
+You and your spouse on December 31, if applicable, must file an income
+tax return to receive this credit.
+Before completing this form, read the information on page 3.
+
+--- PDF page 2 of 3 ---
+
+1 5 D 4 Z Z 4 9 5 3 6 8 5 2
+TP-1029.SA-V (2025-10)
+2 of 3
+3.1.1 Maximum tax credit of $4,000
+Maximum tax credit 18 4,000 00
+Amount from line 14 20
+– 22 45,270 00
+Subtract line 22 from line 20. If the result is negative, enter 0. = 24 × 5.40% – 26
+Subtract line 26 from line 18. If the result is negative, enter 0. Amount you are entitled to = 28
+Amount of the tax credit your spouse on December 31, 2025, will be claiming.
+Your spouse must enter the amount from line 30 on line 463 of their return. – 30
+Subtract line 30 from line 28.
+Enter the result on line 463 of your return. Senior assistance tax credit = 32
+3.1.2 Maximum tax credit of $2,000
+Maximum tax credit 34 2,000 00
+Amount from line 14 36
+– 38 45,270 00
+Subtract line 38 from line 36. If the result is negative, enter 0. = 40 × 5.40% – 42
+Subtract line 42 from line 34. If the result is negative, enter 0. Amount you are entitled to = 44
+If your spouse on December 31, 2025, is an eligible individual, enter the amount of the tax credit they will be claiming.
+Your spouse must enter the amount from line 46 on line 463 of their return. – 46
+Subtract line 46 from line 44.
+Enter the result on line 463 of your return. Senior assistance tax credit = 48
+3.2 You did not have a spouse on December 31, 2025
+Maximum tax credit 50 2,000 00
+Amount from line 14 52
+– 54 27,835 00
+Subtract line 54 from line 52. If the result is negative, enter 0. = 56 × 5.40% – 58
+Subtract line 58 from line 50. If the result is negative, enter 0.
+Enter the result on line 463 of your return. Senior assistance tax credit = 60
+4 Agreement between spouses for sharing the tax credit
+If your spouse on December 31 is an eligible individual, both of you must sign below.
+We agree to share the senior assistance tax credit as determined in Part 3.
+Claimant’s signature Spouse’s signature Date
+
+--- PDF page 3 of 3 ---
+
+G U I D Z Z 7 1 8 5 7 3 6 8
+TP-1029.SA-V (2025-10)
+3 of 3
+Information
+Eligible individual
+To be considered an eligible individual, you must have met the following
+requirements on December 31, 2025:1
+•• You were resident in Québec or, if you were not resident in Québec,
+you were resident in Québec in a previous year and your spouse
+on December 31, 2025, is deemed to have been resident in Québec
+throughout 2025.
+•• You or your spouse on December 31 was:
+– a Canadian citizen,
+– a permanent resident or a protected person within the meaning of
+the
+Immigration and Refugee Protection Act, or
+– a temporary resident or the holder of a temporary resident permit,
+within the meaning of the
+Immigration and Refugee Protection Act,
+who had been living in Canada for 18 months.
+You are not considered an eligible individual if, you were confined to a prison
+or similar institution on December 31, 2025, and, in 2025, you were confined
+for one or more periods totalling more than 183 days.
+Spouse on December 31, 2025
+The person who:
+•• was your spouse at the end of that day and from whom you were not
+living separate and apart at that time; or
+•• was your spouse at the time of their death in 2025, provided you were
+not living separate and apart at that time and you did not have a new
+spouse on December 31, 2025.
+You are considered to be living separate and apart only if you and your
+spouse were separated because of the breakdown of your relationship and
+your separation lasted 90 days or more.
+1. For a person who died in 2025, the conditions for eligibility must be met at the person’s time of death instead of on December 31, 2025.
+Family income
+To be eligible for the tax credit, your family income must not exceed
+the amount shown in the table below, based on your situation.
+Situation Maximum family
+income
+Your spouse is an eligible individual and you both were
+70 or older on December 31, 2025. $119,345
+Your spouse is not an eligible individual or only one of
+you was 70 or older on December 31, 2025. $82,308
+You did not have a spouse on December 31, 2025. $64,873
+You or your spouse was not resident in Canada
+for the entire year
+If you or your spouse on December 31, 2025, was not resident in Canada
+for the entire year, your family income includes all the income that you and
+your spouse earned, including while not resident in Canada.

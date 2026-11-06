@@ -1,0 +1,78 @@
+Title: Social assistance payments – Personal income tax
+URL: https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/tax-return/completing-a-tax-return/personal-income/line-145-social-assistance-payments.html
+Fetched: 2026-11-05
+SHA-256 of the original: 37901221b5a27952da555676889106c2f9842622e7e36cb4490ebc39a8922663
+Publication date modified: 2026-08-20
+Text extract made with the exported fetch-source helpers (custom destination). Check figures against the original when layout matters (tables).
+================================================================================
+
+# Social assistance payments – Personal income tax
+
+- Federal: Line 14500
+- Tax year: 2025| Prior tax years: 2024 and earlier
+
+Social assistance payments are amounts paid to help with basic needs, such as food, clothing, and shelter. These payments can be made to you or to third parties, such as a landlord or mortgage lender. They are based on a means, needs, or income test.
+
+If you received these payments, they are shown on Form T5007, Statement of Benefits.
+
+These payments are not taxable. However, you must include them in your net income to ensure that any benefits and credits you may be entitled to are calculated correctly.
+
+## On this page
+
+- Who needs to report
+- How to report
+
+## Who needs to report
+
+Reporting social assistance payments based on your situation note 1
+Your situation | What to do
+You are single | Report the amount shown on your T5007 slip.
+You have a spouse or common-law partner and lived apart | Each person reports the amount shown on their own T5007 slip.
+You have a spouse or common-law partner and lived together | The person with the higher net income reports all payments note 2 . If both amounts are the same, the person named on the T5007 slip reports the payments.
+Notes Note 1 Certain social assistance payments received for being a foster parent or for caring for a disabled adult who lived with you do not have to be included. Return to note 1 referrer Note 2 If the payments are for caring for your spouse or common-law partner or an individual related to either of you, whoever has the higher net income will have to include those payments. Return to note 2 referrer
+
+### How to determine who has the higher net income
+
+To determine who has the higher net income:
+
+- Each person calculates their net income (line 23600).
+- Do not include in your net income:
+
+- social assistance payments (line 14500)
+- childcare expenses (line 21400)
+- social benefits repayment (line 23500)
+
+- Compare the results.
+
+After comparing the results:
+
+- The person with the higher amount reports all payments.
+- If both amounts are the same, the person named on the T5007 slip reports the payments.
+
+### If your marital status changed during the year
+
+Social assistance payments received prior to marriage or common-law partnership should be included in the recipient's income, whereas those received after marriage or partnership should be reported in accordance to the rules set out above.
+
+## How to report
+
+### Report the amount on the federal tax return
+
+- Determine who must report the income by referring to the Who needs to report section above.
+- Enter on line 14500 the amount shown in box 11 of the T5007 slip or, if applicable, the federal part of the Quebec RL-5 slip.
+- Claim a deduction for the same amount on line 25000.
+
+Note:
+
+This ensures the amount is included in your net income but is not taxable. It also ensures that any benefits and credits you may be entitled to are calculated correctly.
+
+### Keep your supporting documents
+
+Do not send any supporting documents when you file your tax return. Keep them in case the CRA asks to see them later.
+
+## Forms and publications
+
+- All personal income tax packages
+
+## Related topics
+
+- Line 25000 – Other payments deduction

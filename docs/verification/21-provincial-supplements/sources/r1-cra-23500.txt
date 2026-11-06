@@ -1,0 +1,84 @@
+Title: Line 23500 – Social benefits repayment
+URL: https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/tax-return/completing-a-tax-return/deductions-credits-expenses/line-23500-social-benefits-repayment.html
+Fetched: 2026-11-05
+SHA-256 of the original: dfc9927596931a23a0e81bb9feaeaa6732aa85691dada2963ddb6bf444992a3b
+Publication date modified: 2026-01-20
+Text extract made with the exported fetch-source helpers (custom destination). Check figures against the original when layout matters (tables).
+================================================================================
+
+# Line 23500 – Social benefits repayment
+
+If you entered an amount for old age security (OAS) pension, employment insurance (EI) and other benefits or net federal supplements paid on line 11300, line 11900, and line 14600 respectively, you may have to repay parts of these amounts if your net income after certain adjustments is more than the repayment threshold for the year.
+
+## Note
+
+Your repayments are not part of your taxable income, but they are included at line 23500 of your return to increase your total payable at line 43500 of your return.
+
+## Topics
+
+- Employment insurance (EI) benefits repayment
+- Old age security (OAS) benefits repayment
+
+## Employment insurance (EI) benefits repayment
+
+If you were overpaid EI benefits and repaid the excess amount, your T4E slip may reflect this in one of two ways:
+
+- If the overpayment was deducted from your benefits, the slip will show only the net amount received and you cannot claim a deduction at line 23500 of your return
+- If you repaid the excess amount directly to the payer, the amount will appear in box 30 of your T4E slip and should be included at line 23200 of your return.
+
+### Note
+
+Entering an amount on line 23200 of your return is not the same as repaying a social benefit on line 23500 of your return.
+
+You have to repay part of the EI benefits (line 11900) that you received in 2025 if all the following conditions apply to you:
+
+- There is an amount in box 15 of your T4E slip
+- The rate in box 7 is 30%
+- The result of the following calculation is more than $82,125:
+
+- line 23400, minus
+- line 11700 and line 12500, plus
+- line 21300 or repayment amount of RDSP income included on line 23200 (or both)
+
+### Completing your tax return
+
+See the repayment chart on the back of your T4E slip if you entered an amount on line 11900 of your return and the amount on line 23400 of your return is more than $82,125. Enter the result on line 23500 of your return.
+
+If you also must repay OAS benefits that you received, complete the chart for line 23500 using your Federal Worksheet and enter the result on line 23500 of your return.
+
+## Old age security (OAS) benefits repayment
+
+You may have to repay all or part of your OAS pension (line 11300) or net federal supplements (line 14600) if the result of the following calculation is more than $93,454:
+
+- line 23400, minus
+- line 11700 and line 12500, plus
+- line 21300 or repayment amount of RDSP income included on line 23200 (or both)
+
+### Notes
+
+You may have had OAS recovery tax withheld from your 2025 OAS benefits. The amount deducted is shown in box 22 of your 2025 T4A(OAS) slip.
+
+Do not claim this amount on line 23200 of your return. Instead, use the chart for line 23500 of your Federal Worksheet to calculate your social benefits repayment at line 42200 of your return and allowable deduction at line 23500 of your return. Claim the amount from box 22 of the T4A(OAS) slip on line 43700 of your return.
+
+If your net income was more than the 2025 threshold and your 2026 net income is expected to be substantially lower, you can request a waiver from the CRA to have Service Canada reduce your income tax withheld at source beginning in July 2026. This request must be made in writing. Send the CRA a completed Form T1213(OAS), Request to Reduce Old Age Security Recovery Tax at Source. For more information, contact the CRA.
+
+## Completing your tax return
+
+Complete the chart for line 23500 using your Federal Worksheet and enter the result on line 23500 of your return.
+
+## Forms and publications
+
+- Income Tax Package
+- Form T1213(OAS), Request to Reduce Old Age Security Recovery Tax at Source
+
+## Related topics
+
+- Line 11300 – Old age security (OAS) pension
+- Line 11700 – Universal child care benefit (UCCB)
+- Line 11900 – Employment insurance and other benefits
+- Line 12500 – Registered disability savings plan (RDSP) income
+- Line 14600 – Net federal supplements paid
+- Line 21300 – Universal child care benefit (UCCB) repayment
+- Line 23200 – Other deductions
+- Line 42200 – Social benefits repayment
+- Line 43700 – Total income tax deducted

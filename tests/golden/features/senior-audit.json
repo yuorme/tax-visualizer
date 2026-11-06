@@ -1,0 +1,2780 @@
+{
+  "description": "Independent paper-form arithmetic for #206; see verification/17-senior-credits.md and 18-oas-cpp.md.",
+  "defaults": {
+    "active": 0,
+    "spouse": true,
+    "adults": 1,
+    "kids": 0,
+    "under6": 0,
+    "useBpa": true,
+    "whRate": 0,
+    "useCredits": false,
+    "homeValue": 0,
+    "rent": 0,
+    "monthlySpending": 0
+  },
+  "cases": [
+    {
+      "id": "2025-MB-pension-only-20000",
+      "year": 2025,
+      "province": "MB",
+      "household": {
+        "people": [
+          {
+            "age": 65,
+            "birthMonth": 1,
+            "oth": 17000,
+            "retirementIncome": [
+              {
+                "type": "rppLifetime",
+                "amount": 3000
+              }
+            ]
+          },
+          {
+            "oth": 21000
+          }
+        ],
+        "spouse": true
+      },
+      "expected": {
+        "list.1.breakdown.seniorCredits.familyAgeBase": 0,
+        "list.1.breakdown.seniorCredits.provincialTransfer": 508.0,
+        "list.1.breakdown.familyTaxBenefit.calculated": 18.9
+      }
+    },
+    {
+      "id": "2025-MB-pension-only-19508",
+      "year": 2025,
+      "province": "MB",
+      "household": {
+        "people": [
+          {
+            "age": 65,
+            "birthMonth": 1,
+            "oth": 16508,
+            "retirementIncome": [
+              {
+                "type": "rppLifetime",
+                "amount": 3000
+              }
+            ]
+          },
+          {
+            "oth": 21000
+          }
+        ],
+        "spouse": true
+      },
+      "expected": {
+        "list.1.breakdown.seniorCredits.familyAgeBase": 0,
+        "list.1.breakdown.seniorCredits.provincialTransfer": 1000.0,
+        "list.1.breakdown.familyTaxBenefit.calculated": 18.9
+      }
+    },
+    {
+      "id": "2025-QC-federal-age-childcare-0",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "age": 65,
+            "birthMonth": 1,
+            "ord": 60000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.seniorCredits.federalAge": 6941.05,
+        "list.0.ti": 59435.0,
+        "list.0.tiP": 58015.0
+      }
+    },
+    {
+      "id": "2025-QC-federal-age-childcare-8000",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "age": 65,
+            "birthMonth": 1,
+            "ord": 60000
+          }
+        ],
+        "childcare": {
+          "mode": "manual",
+          "children": [
+            {
+              "age": 4,
+              "expenses": 8000
+            }
+          ],
+          "manualClaims": [8000]
+        }
+      },
+      "expected": {
+        "list.0.breakdown.seniorCredits.federalAge": 8141.05,
+        "list.0.ti": 51435.0,
+        "list.0.tiP": 58015.0
+      }
+    },
+    {
+      "id": "2025-QC-working-couple-pool",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "age": 65,
+            "birthMonth": 1,
+            "ord": 30000
+          },
+          {
+            "age": 65,
+            "birthMonth": 1,
+            "ord": 30000
+          }
+        ],
+        "spouse": true
+      },
+      "expected": {
+        "list.0.breakdown.seniorCredits.quebecPoolBase": 5085.75,
+        "list.1.breakdown.seniorCredits.quebecPoolBase": 0,
+        "breakdown.incomeBases.provincialFamily": 56630.0
+      }
+    },
+    {
+      "id": "2025-ON-higher-income-donor",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 65,
+            "birthMonth": 1,
+            "oth": 20000
+          },
+          {
+            "oth": 19000
+          }
+        ],
+        "spouse": true
+      },
+      "expected": {
+        "list.1.breakdown.seniorCredits.federalTransfer": 5157.0
+      }
+    },
+    {
+      "id": "2025-ON-uncapped-federal-transfer",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 65,
+            "birthMonth": 1,
+            "retirementIncome": [
+              {
+                "type": "rppLifetime",
+                "amount": 2000
+              }
+            ]
+          },
+          {
+            "oth": 80000
+          }
+        ],
+        "spouse": true
+      },
+      "expected": {
+        "list.1.breakdown.seniorCredits.federalTransfer": 11028.0
+      }
+    },
+    {
+      "id": "2025-NS-nontransferable-young-child",
+      "year": 2025,
+      "province": "NS",
+      "household": {
+        "people": [
+          {
+            "age": 65,
+            "birthMonth": 1,
+            "oth": 15000
+          },
+          {
+            "oth": 60000
+          }
+        ],
+        "spouse": true,
+        "kids": 1,
+        "under6": 1
+      },
+      "expected": {
+        "list.1.breakdown.seniorCredits.provincialTransfer": 2478.0,
+        "list.1.breakdown.childTransfer.base": 0
+      }
+    },
+    {
+      "id": "2025-ON-unrelated-adults",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 65,
+            "birthMonth": 1,
+            "retirementIncome": [
+              {
+                "type": "rppLifetime",
+                "amount": 2000
+              }
+            ]
+          },
+          {
+            "oth": 20000
+          }
+        ],
+        "spouse": false
+      },
+      "expected": {
+        "list.1.breakdown.seniorCredits.federalTransfer": 0,
+        "list.1.breakdown.seniorCredits.provincialTransfer": 0
+      }
+    },
+    {
+      "id": "2025-PE-unrelated-senior-count",
+      "year": 2025,
+      "province": "PE",
+      "household": {
+        "people": [
+          {
+            "age": 65,
+            "birthMonth": 1,
+            "oth": 20000
+          },
+          {
+            "age": 65,
+            "birthMonth": 1,
+            "oth": 20000
+          }
+        ],
+        "spouse": false
+      },
+      "expected": {
+        "list.0.breakdown.lowIncomeReduction.calculated": 600,
+        "list.1.breakdown.lowIncomeReduction.calculated": 600
+      }
+    },
+    {
+      "id": "2025-PE-switch-reduction",
+      "year": 2025,
+      "province": "PE",
+      "household": {
+        "people": [
+          {
+            "age": 65,
+            "birthMonth": 1,
+            "oth": 20000
+          }
+        ],
+        "useBpa": false
+      },
+      "expected": {
+        "list.0.breakdown.lowIncomeReduction.calculated": 350
+      }
+    },
+    {
+      "id": "2025-NS-age-after-reductions-20000",
+      "year": 2025,
+      "province": "NS",
+      "household": {
+        "people": [
+          {
+            "age": 65,
+            "birthMonth": 1,
+            "oth": 20000,
+            "fd": 0
+          }
+        ],
+        "whRate": 0
+      },
+      "expected": {
+        "list.0.pFtc": 0.0,
+        "list.0.lowRed": 50.0,
+        "list.0.breakdown.seniorCredits.ageTaxApplied": 171.6838,
+        "list.0.prov": 0
+      }
+    },
+    {
+      "id": "2025-NS-age-after-reductions-23000",
+      "year": 2025,
+      "province": "NS",
+      "household": {
+        "people": [
+          {
+            "age": 65,
+            "birthMonth": 1,
+            "oth": 3000,
+            "fd": 20000
+          }
+        ],
+        "whRate": 0.1
+      },
+      "expected": {
+        "list.0.pFtc": 422.0728695652174,
+        "list.0.lowRed": 0.0,
+        "list.0.breakdown.seniorCredits.ageTaxApplied": 63.310930434782605,
+        "list.0.prov": 0
+      }
+    },
+    {
+      "id": "2025-ON-pension-is-not-work",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 64,
+            "birthMonth": 1,
+            "retirementIncome": [
+              {
+                "type": "rppLifetime",
+                "amount": 30000
+              }
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "list.0.lift": 0,
+        "list.0.empAmt": 0,
+        "list.0.breakdown.rrspRoom": 0
+      }
+    },
+    {
+      "id": "2025-AB-self-employed-recovery",
+      "year": 2025,
+      "province": "AB",
+      "household": {
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "selfEmployment": 110000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.publicPensions.recoveryIncome": 113287.04,
+        "list.0.breakdown.publicPensions.recoveryTax": 2974.956,
+        "famNet": 110312.084
+      }
+    },
+    {
+      "id": "2025-BC-self-employed-recovery",
+      "year": 2025,
+      "province": "BC",
+      "household": {
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "selfEmployment": 110000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.publicPensions.recoveryIncome": 113287.04,
+        "list.0.breakdown.publicPensions.recoveryTax": 2974.956,
+        "famNet": 110312.084
+      }
+    },
+    {
+      "id": "2025-MB-self-employed-recovery",
+      "year": 2025,
+      "province": "MB",
+      "household": {
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "selfEmployment": 110000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.publicPensions.recoveryIncome": 113287.04,
+        "list.0.breakdown.publicPensions.recoveryTax": 2974.956,
+        "famNet": 110312.084
+      }
+    },
+    {
+      "id": "2025-NB-self-employed-recovery",
+      "year": 2025,
+      "province": "NB",
+      "household": {
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "selfEmployment": 110000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.publicPensions.recoveryIncome": 113287.04,
+        "list.0.breakdown.publicPensions.recoveryTax": 2974.956,
+        "famNet": 110312.084
+      }
+    },
+    {
+      "id": "2025-NL-self-employed-recovery",
+      "year": 2025,
+      "province": "NL",
+      "household": {
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "selfEmployment": 110000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.publicPensions.recoveryIncome": 113287.04,
+        "list.0.breakdown.publicPensions.recoveryTax": 2974.956,
+        "famNet": 110312.084
+      }
+    },
+    {
+      "id": "2025-NS-self-employed-recovery",
+      "year": 2025,
+      "province": "NS",
+      "household": {
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "selfEmployment": 110000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.publicPensions.recoveryIncome": 113287.04,
+        "list.0.breakdown.publicPensions.recoveryTax": 2974.956,
+        "famNet": 110312.084
+      }
+    },
+    {
+      "id": "2025-NT-self-employed-recovery",
+      "year": 2025,
+      "province": "NT",
+      "household": {
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "selfEmployment": 110000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.publicPensions.recoveryIncome": 113287.04,
+        "list.0.breakdown.publicPensions.recoveryTax": 2974.956,
+        "famNet": 110312.084
+      }
+    },
+    {
+      "id": "2025-NU-self-employed-recovery",
+      "year": 2025,
+      "province": "NU",
+      "household": {
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "selfEmployment": 110000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.publicPensions.recoveryIncome": 113287.04,
+        "list.0.breakdown.publicPensions.recoveryTax": 2974.956,
+        "famNet": 110312.084
+      }
+    },
+    {
+      "id": "2025-ON-self-employed-recovery",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "selfEmployment": 110000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.publicPensions.recoveryIncome": 113287.04,
+        "list.0.breakdown.publicPensions.recoveryTax": 2974.956,
+        "famNet": 110312.084
+      }
+    },
+    {
+      "id": "2025-PE-self-employed-recovery",
+      "year": 2025,
+      "province": "PE",
+      "household": {
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "selfEmployment": 110000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.publicPensions.recoveryIncome": 113287.04,
+        "list.0.breakdown.publicPensions.recoveryTax": 2974.956,
+        "famNet": 110312.084
+      }
+    },
+    {
+      "id": "2025-QC-self-employed-recovery",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "selfEmployment": 110000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.publicPensions.recoveryIncome": 112605.6179616,
+        "list.0.breakdown.publicPensions.recoveryTax": 2872.74269424,
+        "famNet": 109732.87526736
+      }
+    },
+    {
+      "id": "2025-SK-self-employed-recovery",
+      "year": 2025,
+      "province": "SK",
+      "household": {
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "selfEmployment": 110000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.publicPensions.recoveryIncome": 113287.04,
+        "list.0.breakdown.publicPensions.recoveryTax": 2974.956,
+        "famNet": 110312.084
+      }
+    },
+    {
+      "id": "2025-YT-self-employed-recovery",
+      "year": 2025,
+      "province": "YT",
+      "household": {
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "selfEmployment": 110000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.publicPensions.recoveryIncome": 113287.04,
+        "list.0.breakdown.publicPensions.recoveryTax": 2974.956,
+        "famNet": 110312.084
+      }
+    },
+    {
+      "id": "2025-ON-child-benefit-recovery",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "oth": 91208.86
+          }
+        ],
+        "kids": 4,
+        "under6": 4
+      },
+      "expected": {
+        "provBen": 1095.352,
+        "list.0.breakdown.publicPensions.recoveryTax": 981.9
+      }
+    },
+    {
+      "id": "2025-QC-child-benefit-recovery",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "oth": 91208.86
+          }
+        ],
+        "kids": 2,
+        "under6": 2
+      },
+      "expected": {
+        "provBen": 4837.476,
+        "list.0.breakdown.publicPensions.recoveryTax": 981.9
+      }
+    },
+    {
+      "id": "2025-ON-spouse-bpa-recovery",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "oth": 191208.86
+          },
+          {}
+        ],
+        "spouse": true
+      },
+      "expected": {
+        "claim.fAmt": 15848.284088068633,
+        "list.0.fSpFull": 2298.001192769952,
+        "list.0.breakdown.publicPensions.recoveryTax": 8791.14
+      }
+    },
+    {
+      "id": "2025-ON-foreign-credit-recovery",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "oth": 71208.86,
+            "fd": 20000
+          }
+        ],
+        "whRate": 0.15
+      },
+      "expected": {
+        "list.0.fFtc": 2902.9007171416133,
+        "list.0.pFtc": 97.0992828583865,
+        "list.0.fedBasic": 14371.985675
+      }
+    },
+    {
+      "id": "2025-QC-foreign-credit-recovery",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "oth": 71208.86,
+            "fd": 20000
+          }
+        ],
+        "whRate": 0.15
+      },
+      "expected": {
+        "list.0.fFtc": 2902.9007171416133,
+        "list.0.pFtc": 97.0992828583865,
+        "list.0.fedBasic": 14371.985675
+      }
+    },
+    {
+      "id": "2025-ON-provincial-foreign-share",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "oth": 71208.86,
+            "fd": 20000
+          }
+        ],
+        "whRate": 0.5
+      },
+      "expected": {
+        "list.0.fFtc": 2902.9007171416133,
+        "list.0.pFtc": 1283.7507445608428
+      }
+    },
+    {
+      "id": "2025-ON-health-premium-199999",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "oth": 199999
+          }
+        ]
+      },
+      "expected": {
+        "list.0.ohp": 750.0,
+        "list.0.breakdown.publicPensions.recoveryTax": 8791.14
+      }
+    },
+    {
+      "id": "2025-ON-health-premium-200000",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "oth": 200000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.ohp": 750.0,
+        "list.0.breakdown.publicPensions.recoveryTax": 8791.14
+      }
+    },
+    {
+      "id": "2025-ON-health-premium-200001",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "oth": 200001
+          }
+        ]
+      },
+      "expected": {
+        "list.0.ohp": 750.25,
+        "list.0.breakdown.publicPensions.recoveryTax": 8791.14
+      }
+    },
+    {
+      "id": "2025-ON-health-premium-200599",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "oth": 200599
+          }
+        ]
+      },
+      "expected": {
+        "list.0.ohp": 899.75,
+        "list.0.breakdown.publicPensions.recoveryTax": 8791.14
+      }
+    },
+    {
+      "id": "2025-ON-health-premium-200600",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "oth": 200600
+          }
+        ]
+      },
+      "expected": {
+        "list.0.ohp": 900.0,
+        "list.0.breakdown.publicPensions.recoveryTax": 8791.14
+      }
+    },
+    {
+      "id": "2025-ON-health-premium-200601",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "oth": 200601
+          }
+        ]
+      },
+      "expected": {
+        "list.0.ohp": 900.0,
+        "list.0.breakdown.publicPensions.recoveryTax": 8791.14
+      }
+    },
+    {
+      "id": "2025-QC-couple-pool-recovery",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "oth": 88208.86,
+            "retirementIncome": [
+              {
+                "type": "rppLifetime",
+                "amount": 3000
+              }
+            ]
+          },
+          {
+            "age": 65,
+            "birthMonth": 1,
+            "retirementIncome": [
+              {
+                "type": "rppLifetime",
+                "amount": 3000
+              }
+            ]
+          }
+        ],
+        "spouse": true
+      },
+      "expected": {
+        "list.0.breakdown.seniorCredits.quebecPoolBase": 3515.48125,
+        "list.1.breakdown.seniorCredits.quebecPoolBase": 0,
+        "list.0.breakdown.publicPensions.recoveryTax": 981.9
+      }
+    },
+    {
+      "id": "2025-MB-large-family-recovery",
+      "year": 2025,
+      "province": "MB",
+      "household": {
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "oth": 91208.86
+          }
+        ],
+        "kids": 10
+      },
+      "expected": {
+        "list.0.breakdown.familyTaxBenefit.base": 22051.371
+      }
+    },
+    {
+      "id": "2025-PE-large-family-recovery",
+      "year": 2025,
+      "province": "PE",
+      "household": {
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "oth": 91208.86
+          }
+        ],
+        "kids": 15
+      },
+      "expected": {
+        "list.0.breakdown.lowIncomeReduction.calculated": 1331.595
+      }
+    },
+    {
+      "id": "2025-ON-care-individual-floor",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "oth": 98208.86
+          },
+          {
+            "ded": 10000
+          }
+        ],
+        "spouse": true,
+        "useCredits": true,
+        "childcare": {
+          "mode": "manual",
+          "children": [
+            {
+              "age": 4,
+              "expenses": 8000
+            }
+          ],
+          "manualClaims": [8000, 0]
+        }
+      },
+      "expected": {
+        "breakdown.childcareCredit.income": 107000,
+        "breakdown.childcareCredit.applied": 1840
+      }
+    },
+    {
+      "id": "2025-MB-claimant-recovery-reversal",
+      "year": 2025,
+      "province": "MB",
+      "household": {
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "oth": 91208.86
+          },
+          {
+            "oth": 99500
+          }
+        ],
+        "spouse": true,
+        "kids": 10
+      },
+      "expected": {
+        "claim.c": 1,
+        "list.0.breakdown.familyTaxBenefit.base": 0,
+        "list.1.breakdown.familyTaxBenefit.base": 20630.0
+      }
+    },
+    {
+      "id": "2025-SK-child-claimant-recovery-reversal",
+      "year": 2025,
+      "province": "SK",
+      "household": {
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "oth": 91208.86
+          },
+          {
+            "oth": 99500
+          }
+        ],
+        "spouse": true,
+        "kids": 1,
+        "under6": 1
+      },
+      "expected": {
+        "list.0.kidAmt": 7704,
+        "list.1.kidAmt": 0
+      }
+    },
+    {
+      "id": "2025-NU-child-claimant-recovery-reversal",
+      "year": 2025,
+      "province": "NU",
+      "household": {
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "oth": 91208.86
+          },
+          {
+            "oth": 99500
+          }
+        ],
+        "spouse": true,
+        "kids": 1,
+        "under6": 1
+      },
+      "expected": {
+        "list.0.kidAmt": 1200,
+        "list.1.kidAmt": 0
+      }
+    },
+    {
+      "id": "2025-QC-solidarity-recovery",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "oth": 91208.86
+          }
+        ],
+        "useCredits": true,
+        "kids": 20
+      },
+      "expected": {},
+      "expectedCredits": {
+        "Solidarity tax credit": 954.414
+      }
+    },
+    {
+      "id": "2025-ON-care-cutoff-roundoff-0",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 74,
+            "birthMonth": 1,
+            "oas": true,
+            "ord": 50000,
+            "oth": 88752.46,
+            "fd": 8093.89,
+            "ded": 5637.49
+          }
+        ],
+        "useCredits": true,
+        "childcare": {
+          "mode": "manual",
+          "children": [
+            {
+              "age": 4,
+              "expenses": 8000
+            }
+          ],
+          "manualClaims": [8000]
+        }
+      },
+      "expected": {
+        "breakdown.childcareCredit.income": 150000.0,
+        "breakdown.childcareCredit.applied": 80
+      }
+    },
+    {
+      "id": "2025-ON-care-cutoff-roundoff-1",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 74,
+            "birthMonth": 1,
+            "oas": true,
+            "ord": 50000,
+            "oth": 88752.47,
+            "fd": 8093.89,
+            "ded": 5637.49
+          }
+        ],
+        "useCredits": true,
+        "childcare": {
+          "mode": "manual",
+          "children": [
+            {
+              "age": 4,
+              "expenses": 8000
+            }
+          ],
+          "manualClaims": [8000]
+        }
+      },
+      "expected": {
+        "breakdown.childcareCredit.income": 150000.01,
+        "breakdown.childcareCredit.applied": 0
+      }
+    },
+    {
+      "id": "2025-ON-refundable-credit-recovery",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "oth": 91208.86
+          }
+        ],
+        "useCredits": true,
+        "kids": 20
+      },
+      "expected": {
+        "list.0.breakdown.publicPensions.recoveryTax": 981.9
+      },
+      "expectedCredits": {
+        "GST/HST credit": 1703.145,
+        "Ontario sales tax credit": 5255.556
+      }
+    },
+    {
+      "id": "2025-ON-allowance-before-childcare",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 70,
+            "birthMonth": 6,
+            "oas": true,
+            "gis": true,
+            "ded": 200000
+          },
+          {
+            "age": 62,
+            "birthMonth": 6,
+            "allowance": true,
+            "oth": 200000
+          }
+        ],
+        "spouse": true,
+        "useCredits": true
+      },
+      "expected": {
+        "breakdown.incomeBases.beforeChildcare.1": 201062
+      }
+    },
+    {
+      "id": "2026-MB-pension-only-20000",
+      "year": 2026,
+      "province": "MB",
+      "household": {
+        "people": [
+          {
+            "age": 65,
+            "birthMonth": 1,
+            "oth": 17000,
+            "retirementIncome": [
+              {
+                "type": "rppLifetime",
+                "amount": 3000
+              }
+            ]
+          },
+          {
+            "oth": 21000
+          }
+        ],
+        "spouse": true
+      },
+      "expected": {
+        "list.1.breakdown.seniorCredits.familyAgeBase": 0,
+        "list.1.breakdown.seniorCredits.provincialTransfer": 508.0,
+        "list.1.breakdown.familyTaxBenefit.calculated": 18.9
+      }
+    },
+    {
+      "id": "2026-MB-pension-only-19508",
+      "year": 2026,
+      "province": "MB",
+      "household": {
+        "people": [
+          {
+            "age": 65,
+            "birthMonth": 1,
+            "oth": 16508,
+            "retirementIncome": [
+              {
+                "type": "rppLifetime",
+                "amount": 3000
+              }
+            ]
+          },
+          {
+            "oth": 21000
+          }
+        ],
+        "spouse": true
+      },
+      "expected": {
+        "list.1.breakdown.seniorCredits.familyAgeBase": 0,
+        "list.1.breakdown.seniorCredits.provincialTransfer": 1000.0,
+        "list.1.breakdown.familyTaxBenefit.calculated": 18.9
+      }
+    },
+    {
+      "id": "2026-QC-federal-age-childcare-0",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "age": 65,
+            "birthMonth": 1,
+            "ord": 60000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.seniorCredits.federalAge": 7257.55,
+        "list.0.ti": 59435.0,
+        "list.0.tiP": 57985.0
+      }
+    },
+    {
+      "id": "2026-QC-federal-age-childcare-8000",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "age": 65,
+            "birthMonth": 1,
+            "ord": 60000
+          }
+        ],
+        "childcare": {
+          "mode": "manual",
+          "children": [
+            {
+              "age": 4,
+              "expenses": 8000
+            }
+          ],
+          "manualClaims": [8000]
+        }
+      },
+      "expected": {
+        "list.0.breakdown.seniorCredits.federalAge": 8457.55,
+        "list.0.ti": 51435.0,
+        "list.0.tiP": 57985.0
+      }
+    },
+    {
+      "id": "2026-QC-working-couple-pool",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "age": 65,
+            "birthMonth": 1,
+            "ord": 30000
+          },
+          {
+            "age": 65,
+            "birthMonth": 1,
+            "ord": 30000
+          }
+        ],
+        "spouse": true
+      },
+      "expected": {
+        "list.0.breakdown.seniorCredits.quebecPoolBase": 5419.1875,
+        "list.1.breakdown.seniorCredits.quebecPoolBase": 0,
+        "breakdown.incomeBases.provincialFamily": 56570.0
+      }
+    },
+    {
+      "id": "2026-ON-higher-income-donor",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 65,
+            "birthMonth": 1,
+            "oth": 20000
+          },
+          {
+            "oth": 19000
+          }
+        ],
+        "spouse": true
+      },
+      "expected": {
+        "list.1.breakdown.seniorCredits.federalTransfer": 5660.0
+      }
+    },
+    {
+      "id": "2026-ON-uncapped-federal-transfer",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 65,
+            "birthMonth": 1,
+            "retirementIncome": [
+              {
+                "type": "rppLifetime",
+                "amount": 2000
+              }
+            ]
+          },
+          {
+            "oth": 80000
+          }
+        ],
+        "spouse": true
+      },
+      "expected": {
+        "list.1.breakdown.seniorCredits.federalTransfer": 11208.0
+      }
+    },
+    {
+      "id": "2026-NS-nontransferable-young-child",
+      "year": 2026,
+      "province": "NS",
+      "household": {
+        "people": [
+          {
+            "age": 65,
+            "birthMonth": 1,
+            "oth": 15000
+          },
+          {
+            "oth": 60000
+          }
+        ],
+        "spouse": true,
+        "kids": 1,
+        "under6": 1
+      },
+      "expected": {
+        "list.1.breakdown.seniorCredits.provincialTransfer": 2758.0,
+        "list.1.breakdown.childTransfer.base": 0
+      }
+    },
+    {
+      "id": "2026-ON-unrelated-adults",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 65,
+            "birthMonth": 1,
+            "retirementIncome": [
+              {
+                "type": "rppLifetime",
+                "amount": 2000
+              }
+            ]
+          },
+          {
+            "oth": 20000
+          }
+        ],
+        "spouse": false
+      },
+      "expected": {
+        "list.1.breakdown.seniorCredits.federalTransfer": 0,
+        "list.1.breakdown.seniorCredits.provincialTransfer": 0
+      }
+    },
+    {
+      "id": "2026-PE-unrelated-senior-count",
+      "year": 2026,
+      "province": "PE",
+      "household": {
+        "people": [
+          {
+            "age": 65,
+            "birthMonth": 1,
+            "oth": 20000
+          },
+          {
+            "age": 65,
+            "birthMonth": 1,
+            "oth": 20000
+          }
+        ],
+        "spouse": false
+      },
+      "expected": {
+        "list.0.breakdown.lowIncomeReduction.calculated": 600,
+        "list.1.breakdown.lowIncomeReduction.calculated": 600
+      }
+    },
+    {
+      "id": "2026-PE-switch-reduction",
+      "year": 2026,
+      "province": "PE",
+      "household": {
+        "people": [
+          {
+            "age": 65,
+            "birthMonth": 1,
+            "oth": 20000
+          }
+        ],
+        "useBpa": false
+      },
+      "expected": {
+        "list.0.breakdown.lowIncomeReduction.calculated": 350
+      }
+    },
+    {
+      "id": "2026-NS-age-after-reductions-20000",
+      "year": 2026,
+      "province": "NS",
+      "household": {
+        "people": [
+          {
+            "age": 65,
+            "birthMonth": 1,
+            "oth": 20000,
+            "fd": 0
+          }
+        ],
+        "whRate": 0
+      },
+      "expected": {
+        "list.0.pFtc": 0.0,
+        "list.0.lowRed": 50.0,
+        "list.0.breakdown.seniorCredits.ageTaxApplied": 147.0718,
+        "list.0.prov": 0
+      }
+    },
+    {
+      "id": "2026-NS-age-after-reductions-23000",
+      "year": 2026,
+      "province": "NS",
+      "household": {
+        "people": [
+          {
+            "age": 65,
+            "birthMonth": 1,
+            "oth": 3000,
+            "fd": 20000
+          }
+        ],
+        "whRate": 0.1
+      },
+      "expected": {
+        "list.0.pFtc": 400.6711304347826,
+        "list.0.lowRed": 0.0,
+        "list.0.breakdown.seniorCredits.ageTaxApplied": 60.100669565217395,
+        "list.0.prov": 0
+      }
+    },
+    {
+      "id": "2026-ON-pension-is-not-work",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 64,
+            "birthMonth": 1,
+            "retirementIncome": [
+              {
+                "type": "rppLifetime",
+                "amount": 30000
+              }
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "list.0.lift": 0,
+        "list.0.empAmt": 0,
+        "list.0.breakdown.rrspRoom": 0
+      }
+    },
+    {
+      "id": "2026-AB-self-employed-recovery",
+      "year": 2026,
+      "province": "AB",
+      "household": {
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "selfEmployment": 110000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.publicPensions.recoveryIncome": 113226.04,
+        "list.0.breakdown.publicPensions.recoveryTax": 2685.456,
+        "famNet": 110540.584
+      }
+    },
+    {
+      "id": "2026-BC-self-employed-recovery",
+      "year": 2026,
+      "province": "BC",
+      "household": {
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "selfEmployment": 110000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.publicPensions.recoveryIncome": 113226.04,
+        "list.0.breakdown.publicPensions.recoveryTax": 2685.456,
+        "famNet": 110540.584
+      }
+    },
+    {
+      "id": "2026-MB-self-employed-recovery",
+      "year": 2026,
+      "province": "MB",
+      "household": {
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "selfEmployment": 110000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.publicPensions.recoveryIncome": 113226.04,
+        "list.0.breakdown.publicPensions.recoveryTax": 2685.456,
+        "famNet": 110540.584
+      }
+    },
+    {
+      "id": "2026-NB-self-employed-recovery",
+      "year": 2026,
+      "province": "NB",
+      "household": {
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "selfEmployment": 110000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.publicPensions.recoveryIncome": 113226.04,
+        "list.0.breakdown.publicPensions.recoveryTax": 2685.456,
+        "famNet": 110540.584
+      }
+    },
+    {
+      "id": "2026-NL-self-employed-recovery",
+      "year": 2026,
+      "province": "NL",
+      "household": {
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "selfEmployment": 110000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.publicPensions.recoveryIncome": 113226.04,
+        "list.0.breakdown.publicPensions.recoveryTax": 2685.456,
+        "famNet": 110540.584
+      }
+    },
+    {
+      "id": "2026-NS-self-employed-recovery",
+      "year": 2026,
+      "province": "NS",
+      "household": {
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "selfEmployment": 110000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.publicPensions.recoveryIncome": 113226.04,
+        "list.0.breakdown.publicPensions.recoveryTax": 2685.456,
+        "famNet": 110540.584
+      }
+    },
+    {
+      "id": "2026-NT-self-employed-recovery",
+      "year": 2026,
+      "province": "NT",
+      "household": {
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "selfEmployment": 110000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.publicPensions.recoveryIncome": 113226.04,
+        "list.0.breakdown.publicPensions.recoveryTax": 2685.456,
+        "famNet": 110540.584
+      }
+    },
+    {
+      "id": "2026-NU-self-employed-recovery",
+      "year": 2026,
+      "province": "NU",
+      "household": {
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "selfEmployment": 110000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.publicPensions.recoveryIncome": 113226.04,
+        "list.0.breakdown.publicPensions.recoveryTax": 2685.456,
+        "famNet": 110540.584
+      }
+    },
+    {
+      "id": "2026-ON-self-employed-recovery",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "selfEmployment": 110000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.publicPensions.recoveryIncome": 113226.04,
+        "list.0.breakdown.publicPensions.recoveryTax": 2685.456,
+        "famNet": 110540.584
+      }
+    },
+    {
+      "id": "2026-PE-self-employed-recovery",
+      "year": 2026,
+      "province": "PE",
+      "household": {
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "selfEmployment": 110000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.publicPensions.recoveryIncome": 113226.04,
+        "list.0.breakdown.publicPensions.recoveryTax": 2685.456,
+        "famNet": 110540.584
+      }
+    },
+    {
+      "id": "2026-QC-self-employed-recovery",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "selfEmployment": 110000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.publicPensions.recoveryIncome": 112633.1721836,
+        "list.0.breakdown.publicPensions.recoveryTax": 2596.52582754,
+        "famNet": 110036.64635606
+      }
+    },
+    {
+      "id": "2026-SK-self-employed-recovery",
+      "year": 2026,
+      "province": "SK",
+      "household": {
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "selfEmployment": 110000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.publicPensions.recoveryIncome": 113226.04,
+        "list.0.breakdown.publicPensions.recoveryTax": 2685.456,
+        "famNet": 110540.584
+      }
+    },
+    {
+      "id": "2026-YT-self-employed-recovery",
+      "year": 2026,
+      "province": "YT",
+      "household": {
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "selfEmployment": 110000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.publicPensions.recoveryIncome": 113226.04,
+        "list.0.breakdown.publicPensions.recoveryTax": 2685.456,
+        "famNet": 110540.584
+      }
+    },
+    {
+      "id": "2026-ON-child-benefit-recovery",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "oth": 91000.51
+          }
+        ],
+        "kids": 4,
+        "under6": 4
+      },
+      "expected": {
+        "provBen": 1245.324,
+        "list.0.breakdown.publicPensions.recoveryTax": 701.55
+      }
+    },
+    {
+      "id": "2026-QC-child-benefit-recovery",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "oth": 91000.51
+          }
+        ],
+        "kids": 2,
+        "under6": 2
+      },
+      "expected": {
+        "provBen": 5002.342,
+        "list.0.breakdown.publicPensions.recoveryTax": 701.55
+      }
+    },
+    {
+      "id": "2026-ON-spouse-bpa-recovery",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "oth": 191000.51
+          },
+          {}
+        ],
+        "spouse": true
+      },
+      "expected": {
+        "claim.fAmt": 16250.594172918667,
+        "list.0.fSpFull": 2275.0831842086136,
+        "list.0.breakdown.publicPensions.recoveryTax": 8999.49
+      }
+    },
+    {
+      "id": "2026-ON-foreign-credit-recovery",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "oth": 71000.51,
+            "fd": 20000
+          }
+        ],
+        "whRate": 0.15
+      },
+      "expected": {
+        "list.0.fFtc": 2833.87760836146,
+        "list.0.pFtc": 166.12239163854017,
+        "list.0.fedBasic": 14069.9827
+      }
+    },
+    {
+      "id": "2026-QC-foreign-credit-recovery",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "oth": 71000.51,
+            "fd": 20000
+          }
+        ],
+        "whRate": 0.15
+      },
+      "expected": {
+        "list.0.fFtc": 2833.87760836146,
+        "list.0.pFtc": 166.12239163854017,
+        "list.0.fedBasic": 14069.9827
+      }
+    },
+    {
+      "id": "2026-ON-provincial-foreign-share",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "oth": 71000.51,
+            "fd": 20000
+          }
+        ],
+        "whRate": 0.5
+      },
+      "expected": {
+        "list.0.fFtc": 2833.87760836146,
+        "list.0.pFtc": 1269.0629531478085
+      }
+    },
+    {
+      "id": "2026-ON-health-premium-199999",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "oth": 199999
+          }
+        ]
+      },
+      "expected": {
+        "list.0.ohp": 750.0,
+        "list.0.breakdown.publicPensions.recoveryTax": 8999.49
+      }
+    },
+    {
+      "id": "2026-ON-health-premium-200000",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "oth": 200000
+          }
+        ]
+      },
+      "expected": {
+        "list.0.ohp": 750.0,
+        "list.0.breakdown.publicPensions.recoveryTax": 8999.49
+      }
+    },
+    {
+      "id": "2026-ON-health-premium-200001",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "oth": 200001
+          }
+        ]
+      },
+      "expected": {
+        "list.0.ohp": 750.25,
+        "list.0.breakdown.publicPensions.recoveryTax": 8999.49
+      }
+    },
+    {
+      "id": "2026-ON-health-premium-200599",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "oth": 200599
+          }
+        ]
+      },
+      "expected": {
+        "list.0.ohp": 899.75,
+        "list.0.breakdown.publicPensions.recoveryTax": 8999.49
+      }
+    },
+    {
+      "id": "2026-ON-health-premium-200600",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "oth": 200600
+          }
+        ]
+      },
+      "expected": {
+        "list.0.ohp": 900.0,
+        "list.0.breakdown.publicPensions.recoveryTax": 8999.49
+      }
+    },
+    {
+      "id": "2026-ON-health-premium-200601",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "oth": 200601
+          }
+        ]
+      },
+      "expected": {
+        "list.0.ohp": 900.0,
+        "list.0.breakdown.publicPensions.recoveryTax": 8999.49
+      }
+    },
+    {
+      "id": "2026-QC-couple-pool-recovery",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "oth": 88000.51,
+            "retirementIncome": [
+              {
+                "type": "rppLifetime",
+                "amount": 3000
+              }
+            ]
+          },
+          {
+            "age": 65,
+            "birthMonth": 1,
+            "retirementIncome": [
+              {
+                "type": "rppLifetime",
+                "amount": 3000
+              }
+            ]
+          }
+        ],
+        "spouse": true
+      },
+      "expected": {
+        "list.0.breakdown.seniorCredits.quebecPoolBase": 3927.103125,
+        "list.1.breakdown.seniorCredits.quebecPoolBase": 0,
+        "list.0.breakdown.publicPensions.recoveryTax": 701.55
+      }
+    },
+    {
+      "id": "2026-MB-large-family-recovery",
+      "year": 2026,
+      "province": "MB",
+      "household": {
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "oth": 91000.51
+          }
+        ],
+        "kids": 10
+      },
+      "expected": {
+        "list.0.breakdown.familyTaxBenefit.base": 22026.1395
+      }
+    },
+    {
+      "id": "2026-PE-large-family-recovery",
+      "year": 2026,
+      "province": "PE",
+      "household": {
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "oth": 91000.51
+          }
+        ],
+        "kids": 15
+      },
+      "expected": {
+        "list.0.breakdown.lowIncomeReduction.calculated": 1335.0775
+      }
+    },
+    {
+      "id": "2026-ON-care-individual-floor",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "oth": 98000.51
+          },
+          {
+            "ded": 10000
+          }
+        ],
+        "spouse": true,
+        "useCredits": true,
+        "childcare": {
+          "mode": "manual",
+          "children": [
+            {
+              "age": 4,
+              "expenses": 8000
+            }
+          ],
+          "manualClaims": [8000, 0]
+        }
+      },
+      "expected": {
+        "breakdown.childcareCredit.income": 107000,
+        "breakdown.childcareCredit.applied": 1840
+      }
+    },
+    {
+      "id": "2026-MB-claimant-recovery-reversal",
+      "year": 2026,
+      "province": "MB",
+      "household": {
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "oth": 91000.51
+          },
+          {
+            "oth": 99500
+          }
+        ],
+        "spouse": true,
+        "kids": 10
+      },
+      "expected": {
+        "claim.c": 1,
+        "list.0.breakdown.familyTaxBenefit.base": 0,
+        "list.1.breakdown.familyTaxBenefit.base": 20630.0
+      }
+    },
+    {
+      "id": "2026-SK-child-claimant-recovery-reversal",
+      "year": 2026,
+      "province": "SK",
+      "household": {
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "oth": 91000.51
+          },
+          {
+            "oth": 99500
+          }
+        ],
+        "spouse": true,
+        "kids": 1,
+        "under6": 1
+      },
+      "expected": {
+        "list.0.kidAmt": 8358,
+        "list.1.kidAmt": 0
+      }
+    },
+    {
+      "id": "2026-NU-child-claimant-recovery-reversal",
+      "year": 2026,
+      "province": "NU",
+      "household": {
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "oth": 91000.51
+          },
+          {
+            "oth": 99500
+          }
+        ],
+        "spouse": true,
+        "kids": 1,
+        "under6": 1
+      },
+      "expected": {
+        "list.0.kidAmt": 1200,
+        "list.1.kidAmt": 0
+      }
+    },
+    {
+      "id": "2026-QC-solidarity-recovery",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "oth": 91000.51
+          }
+        ],
+        "useCredits": true,
+        "kids": 20
+      },
+      "expected": {},
+      "expectedCredits": {
+        "Solidarity tax credit": 1074.793
+      }
+    },
+    {
+      "id": "2026-ON-care-cutoff-roundoff-0",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 74,
+            "birthMonth": 1,
+            "oas": true,
+            "ord": 50000,
+            "oth": 85556.71,
+            "fd": 9395.7,
+            "ded": 3951.9
+          }
+        ],
+        "useCredits": true,
+        "childcare": {
+          "mode": "manual",
+          "children": [
+            {
+              "age": 4,
+              "expenses": 8000
+            }
+          ],
+          "manualClaims": [8000]
+        }
+      },
+      "expected": {
+        "breakdown.childcareCredit.income": 150000.0,
+        "breakdown.childcareCredit.applied": 80
+      }
+    },
+    {
+      "id": "2026-ON-care-cutoff-roundoff-1",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 74,
+            "birthMonth": 1,
+            "oas": true,
+            "ord": 50000,
+            "oth": 85556.72,
+            "fd": 9395.7,
+            "ded": 3951.9
+          }
+        ],
+        "useCredits": true,
+        "childcare": {
+          "mode": "manual",
+          "children": [
+            {
+              "age": 4,
+              "expenses": 8000
+            }
+          ],
+          "manualClaims": [8000]
+        }
+      },
+      "expected": {
+        "breakdown.childcareCredit.income": 150000.01,
+        "breakdown.childcareCredit.applied": 0
+      }
+    },
+    {
+      "id": "2026-ON-refundable-credit-recovery",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "oth": 91000.51
+          }
+        ],
+        "useCredits": true,
+        "kids": 20
+      },
+      "expected": {
+        "list.0.breakdown.publicPensions.recoveryTax": 701.55
+      },
+      "expectedCredits": {
+        "Canada Groceries and Essentials Benefit": 2926.6775,
+        "Ontario sales tax credit": 5418.422
+      }
+    },
+    {
+      "id": "2026-ON-allowance-before-childcare",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 70,
+            "birthMonth": 6,
+            "oas": true,
+            "gis": true,
+            "ded": 200000
+          },
+          {
+            "age": 62,
+            "birthMonth": 6,
+            "allowance": true,
+            "oth": 200000
+          }
+        ],
+        "spouse": true,
+        "useCredits": true
+      },
+      "expected": {
+        "breakdown.incomeBases.beforeChildcare.1": 201092
+      }
+    },
+    {
+      "id": "2025-QC-single-pool-recovery-recovery-below",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "spouse": false,
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "ord": 30000,
+            "oth": 51927.85,
+            "retirementIncome": [
+              {
+                "type": "rppLifetime",
+                "amount": 3000
+              }
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.publicPensions.recoveryIncome": 93453.99,
+        "list.0.breakdown.publicPensions.recoveryTax": 0.0,
+        "list.0.tiP": 92033.99,
+        "list.0.breakdown.seniorCredits.quebecPoolBase": 139.501875,
+        "list.0.breakdown.seniorCredits.provincialApplied": 19.5302625,
+        "list.0.prov": 12204.2378375
+      }
+    },
+    {
+      "id": "2025-QC-single-pool-recovery-recovery-at",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "spouse": false,
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "ord": 30000,
+            "oth": 51927.86,
+            "retirementIncome": [
+              {
+                "type": "rppLifetime",
+                "amount": 3000
+              }
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.publicPensions.recoveryIncome": 93454.0,
+        "list.0.breakdown.publicPensions.recoveryTax": 0.0,
+        "list.0.tiP": 92034.0,
+        "list.0.breakdown.seniorCredits.quebecPoolBase": 139.5,
+        "list.0.breakdown.seniorCredits.provincialApplied": 19.53,
+        "list.0.prov": 12204.24
+      }
+    },
+    {
+      "id": "2025-QC-single-pool-recovery-recovery-above",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "spouse": false,
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "ord": 30000,
+            "oth": 51927.87,
+            "retirementIncome": [
+              {
+                "type": "rppLifetime",
+                "amount": 3000
+              }
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.publicPensions.recoveryIncome": 93454.01,
+        "list.0.breakdown.publicPensions.recoveryTax": 0.0015,
+        "list.0.tiP": 92034.0085,
+        "list.0.breakdown.seniorCredits.quebecPoolBase": 139.49840625,
+        "list.0.breakdown.seniorCredits.provincialApplied": 19.529776875,
+        "list.0.prov": 12204.241838125
+      }
+    },
+    {
+      "id": "2025-QC-single-pool-recovery-reproduction",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "spouse": false,
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "ord": 30000,
+            "oth": 51973.86,
+            "retirementIncome": [
+              {
+                "type": "rppLifetime",
+                "amount": 3000
+              }
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.publicPensions.recoveryIncome": 93500.0,
+        "list.0.breakdown.publicPensions.recoveryTax": 6.9,
+        "list.0.tiP": 92073.1,
+        "list.0.breakdown.seniorCredits.quebecPoolBase": 132.16875,
+        "list.0.breakdown.seniorCredits.provincialApplied": 18.503625,
+        "list.0.prov": 12212.695375
+      }
+    },
+    {
+      "id": "2025-QC-single-pool-recovery-pool-zero-below",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "spouse": false,
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "ord": 30000,
+            "oth": 52803.14411764706,
+            "retirementIncome": [
+              {
+                "type": "rppLifetime",
+                "amount": 3000
+              }
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.publicPensions.recoveryIncome": 94329.28411764705,
+        "list.0.breakdown.publicPensions.recoveryTax": 131.29261764705882,
+        "list.0.tiP": 92777.9915,
+        "list.0.breakdown.seniorCredits.quebecPoolBase": 0.00159375,
+        "list.0.breakdown.seniorCredits.provincialApplied": 0.000223125,
+        "list.0.prov": 12365.128161875
+      }
+    },
+    {
+      "id": "2025-QC-single-pool-recovery-pool-zero-at",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "spouse": false,
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "ord": 30000,
+            "oth": 52803.15411764706,
+            "retirementIncome": [
+              {
+                "type": "rppLifetime",
+                "amount": 3000
+              }
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.publicPensions.recoveryIncome": 94329.29411764706,
+        "list.0.breakdown.publicPensions.recoveryTax": 131.2941176470588,
+        "list.0.tiP": 92778.0,
+        "list.0.breakdown.seniorCredits.quebecPoolBase": 0.0,
+        "list.0.breakdown.seniorCredits.provincialApplied": 0.0,
+        "list.0.prov": 12365.13
+      }
+    },
+    {
+      "id": "2025-QC-single-pool-recovery-pool-zero-above",
+      "year": 2025,
+      "province": "QC",
+      "household": {
+        "spouse": false,
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "ord": 30000,
+            "oth": 52803.16411764706,
+            "retirementIncome": [
+              {
+                "type": "rppLifetime",
+                "amount": 3000
+              }
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.publicPensions.recoveryIncome": 94329.30411764706,
+        "list.0.breakdown.publicPensions.recoveryTax": 131.29561764705883,
+        "list.0.tiP": 92778.0085,
+        "list.0.breakdown.seniorCredits.quebecPoolBase": 0.0,
+        "list.0.breakdown.seniorCredits.provincialApplied": 0.0,
+        "list.0.prov": 12365.131615
+      }
+    },
+    {
+      "id": "2026-QC-single-pool-recovery-recovery-below",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "spouse": false,
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "ord": 30000,
+            "oth": 53588.5,
+            "retirementIncome": [
+              {
+                "type": "rppLifetime",
+                "amount": 3000
+              }
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.publicPensions.recoveryIncome": 95322.99,
+        "list.0.breakdown.publicPensions.recoveryTax": 0.0,
+        "list.0.tiP": 93872.99,
+        "list.0.breakdown.seniorCredits.quebecPoolBase": 151.876875,
+        "list.0.breakdown.seniorCredits.provincialApplied": 21.2627625,
+        "list.0.prov": 12444.0753375
+      }
+    },
+    {
+      "id": "2026-QC-single-pool-recovery-recovery-at",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "spouse": false,
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "ord": 30000,
+            "oth": 53588.51,
+            "retirementIncome": [
+              {
+                "type": "rppLifetime",
+                "amount": 3000
+              }
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.publicPensions.recoveryIncome": 95323.0,
+        "list.0.breakdown.publicPensions.recoveryTax": 0.0,
+        "list.0.tiP": 93873.0,
+        "list.0.breakdown.seniorCredits.quebecPoolBase": 151.875,
+        "list.0.breakdown.seniorCredits.provincialApplied": 21.2625,
+        "list.0.prov": 12444.0775
+      }
+    },
+    {
+      "id": "2026-QC-single-pool-recovery-recovery-above",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "spouse": false,
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "ord": 30000,
+            "oth": 53588.52,
+            "retirementIncome": [
+              {
+                "type": "rppLifetime",
+                "amount": 3000
+              }
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.publicPensions.recoveryIncome": 95323.01,
+        "list.0.breakdown.publicPensions.recoveryTax": 0.0015,
+        "list.0.tiP": 93873.0085,
+        "list.0.breakdown.seniorCredits.quebecPoolBase": 151.87340625,
+        "list.0.breakdown.seniorCredits.provincialApplied": 21.262276875,
+        "list.0.prov": 12444.079338125
+      }
+    },
+    {
+      "id": "2026-QC-single-pool-recovery-reproduction",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "spouse": false,
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "ord": 30000,
+            "oth": 53665.51,
+            "retirementIncome": [
+              {
+                "type": "rppLifetime",
+                "amount": 3000
+              }
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.publicPensions.recoveryIncome": 95400.0,
+        "list.0.breakdown.publicPensions.recoveryTax": 11.55,
+        "list.0.tiP": 93938.45,
+        "list.0.breakdown.seniorCredits.quebecPoolBase": 139.603125,
+        "list.0.breakdown.seniorCredits.provincialApplied": 19.5444375,
+        "list.0.prov": 12458.2310625
+      }
+    },
+    {
+      "id": "2026-QC-single-pool-recovery-pool-zero-below",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "spouse": false,
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "ord": 30000,
+            "oth": 54541.44117647059,
+            "retirementIncome": [
+              {
+                "type": "rppLifetime",
+                "amount": 3000
+              }
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.publicPensions.recoveryIncome": 96275.93117647059,
+        "list.0.breakdown.publicPensions.recoveryTax": 142.93967647058824,
+        "list.0.tiP": 94682.9915,
+        "list.0.breakdown.seniorCredits.quebecPoolBase": 0.00159375,
+        "list.0.breakdown.seniorCredits.provincialApplied": 0.000223125,
+        "list.0.prov": 12619.238161875
+      }
+    },
+    {
+      "id": "2026-QC-single-pool-recovery-pool-zero-at",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "spouse": false,
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "ord": 30000,
+            "oth": 54541.45117647059,
+            "retirementIncome": [
+              {
+                "type": "rppLifetime",
+                "amount": 3000
+              }
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.publicPensions.recoveryIncome": 96275.94117647059,
+        "list.0.breakdown.publicPensions.recoveryTax": 142.94117647058823,
+        "list.0.tiP": 94683.0,
+        "list.0.breakdown.seniorCredits.quebecPoolBase": 0.0,
+        "list.0.breakdown.seniorCredits.provincialApplied": 0.0,
+        "list.0.prov": 12619.24
+      }
+    },
+    {
+      "id": "2026-QC-single-pool-recovery-pool-zero-above",
+      "year": 2026,
+      "province": "QC",
+      "household": {
+        "spouse": false,
+        "people": [
+          {
+            "age": 66,
+            "birthMonth": 1,
+            "oas": true,
+            "ord": 30000,
+            "oth": 54541.46117647059,
+            "retirementIncome": [
+              {
+                "type": "rppLifetime",
+                "amount": 3000
+              }
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "list.0.breakdown.publicPensions.recoveryIncome": 96275.95117647058,
+        "list.0.breakdown.publicPensions.recoveryTax": 142.94267647058822,
+        "list.0.tiP": 94683.0085,
+        "list.0.breakdown.seniorCredits.quebecPoolBase": 0.0,
+        "list.0.breakdown.seniorCredits.provincialApplied": 0.0,
+        "list.0.prov": 12619.241615
+      }
+    }
+  ]
+}

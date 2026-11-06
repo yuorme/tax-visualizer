@@ -13,6 +13,7 @@ import { householdPremiumOf } from "./health-premiums.ts";
 import { netIncomeParts, netIncomeTotal, workerDeductionOf } from "./payroll.ts";
 import { type PersonResult, personTax } from "./personal.ts";
 import { hasSeniorInputs, quebecSeniorPool, seniorTransfer } from "./senior-credits.ts";
+import { seniorCashSupplementsOf, seniorRefundableCreditsOf } from "./senior-supplements.ts";
 import {
   blank,
   type Credit,
@@ -117,7 +118,7 @@ export function household(y: YearData, p: Province, hh: Household, peopleIn: Per
     // OAS Act s.2(d), ITA 126(7): historical federal tax before DTC, FTC and Quebec abatement.
     // The single-year proxy excludes new supplements; actual personal-credit switches don't alter eligibility.
     const proxy = peopleIn.map(({ gis: _gis, allowance: _allowance, ...x }) => x);
-    const baseline = calculateHousehold(y, p, { ...hh, useBpa: true }, proxy);
+    const baseline = calculateHousehold(y, p, { ...hh, useBpa: true }, proxy, [], false);
     excessDividendCredits = baseline.list.map(r => Math.max(0, r.fDtcFull - r.fDtc - r.fedBasic));
   }
   return calculateHousehold(y, p, hh, peopleIn, excessDividendCredits);
@@ -129,6 +130,7 @@ function calculateHousehold(
   hh: Household,
   peopleIn: Person[],
   excessDividendCredits: number[] = [],
+  includeProvincialSupplements = true,
 ) {
   const fed = y.federal,
     qc = p.system === "quebec";
@@ -149,15 +151,43 @@ function calculateHousehold(
     const a = gisAllowance?.adults[i];
     return a ? a.gis + a.allowance : 0;
   });
-  const childcare = gisAllowance ? childcareOf(fed, hh, ppl, p, supplements) : proxyChildcare;
+  const calculatedSupplements =
+    includeProvincialSupplements && p.seniorSupplements
+      ? seniorCashSupplementsOf(fed, p, ppl, couple, proxyChildcare.claims, gisAllowance, excessDividendCredits)
+      : undefined;
+  const provincialSupplements = calculatedSupplements?.total ? calculatedSupplements : undefined;
+  const assistance = provincialSupplements?.reported;
+  const childcare =
+    gisAllowance || assistance?.some(n => n > 0)
+      ? childcareOf(
+          fed,
+          hh,
+          ppl,
+          p,
+          supplements.map((n, i) => n + (assistance?.[i] ?? 0)),
+        )
+      : proxyChildcare;
   const { kids, under6 } = childcare.childCounts ?? hh;
   const netWithSupplements = (x: Person, i: number, claim = childcare.claims[i], recovery?: number) =>
-    Math.max(0, netIncomeTotal(netIncomeParts(fed, p, x, claim, recovery, gisAllowance ? supplements[i] : undefined)));
+    Math.max(
+      0,
+      netIncomeTotal(
+        netIncomeParts(fed, p, x, claim, recovery, gisAllowance ? supplements[i] : undefined, assistance?.[i]),
+      ),
+    );
   const nets = ppl.map((x, i) => netWithSupplements(x, i));
   // Legacy bases for claim elections and non-refundable credits, before Quebec's worker deduction.
   const recoveries = ppl.map(
     (x, i) =>
-      netIncomeParts(fed, p, x, childcare.claims[i], undefined, gisAllowance ? supplements[i] : undefined).oasRecovery,
+      netIncomeParts(
+        fed,
+        p,
+        x,
+        childcare.claims[i],
+        undefined,
+        gisAllowance ? supplements[i] : undefined,
+        assistance?.[i],
+      ).oasRecovery,
   );
   const provincialNets = qc ? ppl.map((x, i) => netWithSupplements(x, i, 0, recoveries[i])) : nets;
   const famNet = couple ? nets[0] + nets[1] : nets[0];
@@ -183,6 +213,7 @@ function calculateHousehold(
   // kidsAll: children counted for low-income reductions, other than a child already claimed as an eligible dependant
   const ctx = (i: number): Ctx => ({
     ...(gisAllowance ? { netFederalSupplements: supplements[i] } : {}),
+    ...(assistance ? { provincialAssistance: assistance[i] } : {}),
     seniorCount: seniorReduction
       ? (couple ? ppl : [ppl[i]]).filter(x => x.age !== undefined && x.age >= seniorReduction.minimumAge).length
       : 0,
@@ -385,8 +416,14 @@ function calculateHousehold(
   totals.total += householdPremium?.total ?? 0;
   const ccb = ccbOf(fed, famNet, kids, under6);
   const incomeBases = {
-    beforeChildcare: ppl.map((x, i) => netIncomeTotal(netIncomeParts(fed, p, x, 0, recoveries[i])) + supplements[i]),
-    beforeChildcareAndRecovery: ppl.map((x, i) => netIncomeTotal(netIncomeParts(fed, p, x, 0, 0)) + supplements[i]),
+    beforeChildcare: ppl.map((x, i) =>
+      netIncomeTotal(
+        netIncomeParts(fed, p, x, 0, recoveries[i], gisAllowance ? supplements[i] : undefined, assistance?.[i]),
+      ),
+    ),
+    beforeChildcareAndRecovery: ppl.map(
+      (x, i) => netIncomeTotal(netIncomeParts(fed, p, x, 0, 0)) + supplements[i] + (assistance?.[i] ?? 0),
+    ),
     federal: nets,
     provincial: list.map(r => r.breakdown.provincialNetIncome ?? r.tiP),
     provincialFamily: couple
@@ -423,8 +460,22 @@ function calculateHousehold(
     : [];
   if (childcareCredit?.refundable && childcareCredit.applied > 0)
     credits.push([childcareCredit.name, childcareCredit.applied]);
+  if (hh.useCredits && includeProvincialSupplements)
+    credits.push(
+      ...seniorRefundableCreditsOf(
+        p,
+        { kids, ages: familyAges },
+        ppl,
+        couple,
+        nets,
+        incomeBases.provincialFamily,
+        list.map(r => r.prov),
+        gisAllowance,
+        claim?.kind === "dependant" && claim.pAmt > 0,
+      ),
+    );
   const refund = credits.reduce((a, [, v]) => a + v, 0);
-  const benefits = childBen + refund + (gisAllowance?.total ?? 0);
+  const benefits = childBen + refund + (gisAllowance?.total ?? 0) + (provincialSupplements?.total ?? 0);
   return {
     list,
     claim,
@@ -440,6 +491,7 @@ function calculateHousehold(
     netTotal: totals.total - benefits, // income tax + payroll − child benefits − refundable credits
     breakdown: {
       ...(gisAllowance ? { gisAllowance } : {}),
+      ...(provincialSupplements ? { provincialSupplements } : {}),
       ...householdBreakdown(list),
       incomeBases,
       childcareCredit,

@@ -36,7 +36,8 @@ When done:
   issue, put `Closes #<issue>` on its own line before any trailers, or `Refs #<issue>` if the issue is only
   partly done.
 - Push your branch (`git push -u origin <branch>`) and open the pull request (`gh pr create`) unless told not to;
-  the commit message is a good starting point for its body. Once a pull request exists, push only after checking
+  the commit message is a good starting point for its body, which starts with your model and effort, for example
+  `Coder: Codex Sol (`gpt-6.1-sol`), effort `xhigh`.` Once a pull request exists, push only after checking
   it's still open: `[ "$(gh pr view <branch> --json state --jq .state)" = OPEN ]`.
 - Report in about 250 words (up to about 600 for engine or rule changes and multi-file refactors). Lead with the
   result, pull request number, branch and commit hash, then deviations from the task and open questions. Details
