@@ -149,7 +149,7 @@ line-by-line tax return. Simpler and slightly less precise is acceptable where i
   migration preserve omission, explicit false and zero, and never move legacy Other income or infer benefits from age.
   Selected older years retain the drafts but exclude the new fields with a notice; nominal and real history omit
   unsupported years and state the coverage. Real history scales entered CPP/QPP; OAS uses each year's published data.
-  GIS (#19), splitting (#20) and seniors' supplements (#21) remain outside this work.
+  GIS (#19), splitting (#20) and seniors' supplements (#21) are covered elsewhere.
   See [verification and rule coverage](verification/18-oas-cpp.md).
 
 - GIS and the spouse's Allowance, **2025–2026, all thirteen jurisdictions** (#19): explicit
@@ -180,8 +180,29 @@ line-by-line tax return. Simpler and slightly less precise is acceptable where i
   outside the chart’s income denominator and apply even with the credit switches off. No benefit is computed in UI.
   Selected older years exclude both fields, including explicit false, with a coverage notice. Both history modes
   omit unsupported years and state 2025–2026 coverage, including when only a false opt-in is stored without age.
-  Pension splitting (#20), supplements (#21) and historical back-fill remain separate.
+  Pension splitting (#20) and historical back-fill remain separate.
   See [income definitions, sources, calculations and coverage](verification/19-gis-allowance.md).
+
+- Provincial and territorial seniors' supplements, **2025–2026** (#21): BC Senior's Supplement, Alberta Seniors
+  Benefit, Saskatchewan Seniors Income Plan, Manitoba 55 PLUS and its refundable credit senior addition, Ontario
+  GAINS, Quebec senior assistance credit, New Brunswick Low-Income Seniors' Benefit, Nova Scotia's seniors
+  provincial income tax refund, Newfoundland and Labrador's Seniors' Benefit and the Northwest Territories and
+  Nunavut senior supplements. No new inputs: programs tied to federal receipts follow the OAS, GIS and Allowance
+  opt-ins. Quebec's assistance credit, Manitoba's credit senior addition and Newfoundland and Labrador's Seniors'
+  Benefit use the ages and income entered, and Nova Scotia's refund also needs GIS. Manitoba's 55 PLUS also pays
+  ages 55 to 64 on income alone, except for junior households with an OAS, GIS or Allowance recipient and the
+  year an adult becomes OAS-eligible. Current income stands in for the prior-year income most programs test, an
+  explicit single-year approximation. The page adds a comparison row ("not modelled" for Yukon and PEI, never $0),
+  a per-adult ledger with the amount reported on T5007 line 14500 (the higher-income spouse reports the whole
+  amount, each their own on equal incomes, and BC amounts of $500 or less a year are not reported), two tooltips
+  beside GIS and Allowance and history coverage text. Cash supplements net against tax once, independent of the
+  credit switches. The Quebec, Manitoba, Newfoundland and Labrador and Nova Scotia amounts are refundable credits
+  and follow the switch; they appear under Refundable credits, as the tooltip says, so a $0 in the cash row is
+  not read as no support. Not modelled: Yukon's Seniors Income Supplement, PEI's assessed Seniors Independence
+  Initiative, the Coastal Labrador supplement, survivors and people in care. Housing and care programs (property
+  tax grants, utility grants, assessed service grants) are in #216. Historical back-fill is a separate History
+  issue.
+  See [rules, sources, estimates and coverage](verification/21-provincial-supplements.md).
 
 **Payroll (employee share, plus both shares on self-employment)**
 - CPP/QPP base and enhanced contributions, EI or EI plus QPIP, Ontario Health Premium, the 2% payroll tax in the
@@ -305,7 +326,8 @@ built.
 - Pension income splitting, optimised automatically per province (the engine tries 0–50% and keeps the lowest
   household tax; no input).
 - Provincial seniors' supplements (Ontario GAINS, Alberta Seniors Benefit, BC Senior's Supplement,
-  Saskatchewan Seniors Income Plan and equivalents elsewhere).
+  Saskatchewan Seniors Income Plan and equivalents elsewhere): implemented for 2025–2026 above, except Yukon
+  and PEI; historical back-fill remains separate.
 - Seniors' property tax grants and rebates (e.g. BC's additional Home Owner Grant, Ontario Senior Homeowners'
   Property Tax Grant, Manitoba's seniors' school tax rebate). Deferral programs are out: they delay tax, not
   reduce it.

@@ -877,7 +877,8 @@ table.cmp th,
 table.cmp td:first-child {
   font-family: var(--font-body);
 }
-table.cmp td:first-child {
+table.cmp td:first-child,
+table.cmp td.not-modelled {
   white-space: normal;
 }
 .hh tr.sum td {
