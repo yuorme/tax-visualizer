@@ -163,7 +163,7 @@ emergency). The agent that finishes a branch pushes it and opens the pull reques
 `Closes #N`); the orchestrator then runs the reviewer, which posts its verdict on the pull request, and sends any
 findings to fix back to the same agent. Use merge commits, not squash or rebase, so commit hashes survive
 (`.git-blame-ignore-revs` lists formatting commits by hash).
-Every pull request comment and review states the writer's model and effort.
+Every pull request body, comment and review states the writer's model and effort.
 
 Once the pull request is final (reviewer approved, no open should-fix findings, no more commits planned), the
 orchestrator says so and queues it with `gh pr merge N --auto --merge`; GitHub merges it once CI passes (at once if
