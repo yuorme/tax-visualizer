@@ -36,6 +36,9 @@ const mutants = [
   ["GIS in reporter comparison (review survivor)", supplement, "gis.adults[i].gis + gis.adults[i].allowance", "0"],
   ["assistance in T778 (review survivor)", "src/engine/household.ts", "n + (assistance?.[i] ?? 0)", "n"],
   ["assistance in OAS recovery", "src/engine/payroll.ts", "netIncomeTotal(parts));", "netIncomeTotal(parts) - (provincialAssistance ?? 0));"],
+  ["assistance-adjusted before-childcare recovery (round 2)", "src/engine/household.ts",
+    "gisAllowance ? supplements[i] : undefined,\n        assistance?.[i],\n      ).oasRecovery",
+    "gisAllowance ? supplements[i] : undefined,\n      ).oasRecovery"],
   ["resolved child profile (review)", "src/engine/household.ts", "{ kids, ages: familyAges }", "{ kids: hh.kids, ages: hh.childAges }"],
   ["no-GIS assistance breakdown (review)", "src/engine/personal.ts",
     "ctx.netFederalSupplements !== undefined || ctx.provincialAssistance !== undefined", "ctx.netFederalSupplements !== undefined"],
@@ -45,6 +48,7 @@ const started = Date.now();
 const budget = 120000;
 let killed = 0;
 const survivors = [];
+const regressions = {};
 try {
   for (const [name, file, before, after] of mutants) {
     if (Date.now() - started > budget) throw Error("Mutation budget exhausted");
@@ -58,10 +62,12 @@ try {
       throw Error(`${name}: invalid/incomplete mutation run: ${run.error ?? run.stderr}`);
     if (run.status === 0) survivors.push(name);
     else killed++;
+    if (name.endsWith("(round 2)")) regressions[name] = run.stdout.split("\n").filter(line => line.startsWith("✖ "));
   }
 } finally {
   for (const [file, source] of originals) fs.writeFileSync(file, source);
 }
 console.log(JSON.stringify({ attempted: killed + survivors.length, killed, survivors,
+  regressions,
   budgetSeconds: budget / 1000, elapsedSeconds: Math.round((Date.now() - started) / 100) / 10 }, null, 2));
 if (survivors.length) process.exitCode = 1;

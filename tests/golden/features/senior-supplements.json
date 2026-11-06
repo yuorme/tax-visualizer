@@ -1450,6 +1450,7 @@
         "list.0.breakdown.publicPensions.recoveryTax": 3645.4635,
         "list.0.breakdown.publicPensions.recoveryIncome": 117757.09,
         "list.0.breakdown.netIncomeTotal": 114111.6265,
+        "breakdown.incomeBases.beforeChildcare.0": 114111.6265,
         "list.0.ti": 105145.6765
       }
     },
@@ -4253,6 +4254,7 @@
         "list.0.breakdown.publicPensions.recoveryTax": 3428.9865,
         "list.0.breakdown.publicPensions.recoveryIncome": 118182.91,
         "list.0.breakdown.netIncomeTotal": 114753.9235,
+        "breakdown.incomeBases.beforeChildcare.0": 114753.9235,
         "list.0.ti": 105570.5035
       }
     },

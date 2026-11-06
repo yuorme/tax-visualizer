@@ -764,8 +764,8 @@ timing, and tax-reporter/cash-recipient distinctions have separate coverage. Add
 BC's exact $500/$500.01 reporting boundary, NS's liability minimum/cap, and tiny positive territorial federal
 entitlements. Each household case compares federal GIS against the same case without provincial rules.
 
-The bounded [mutation pass](21-provincial-supplements/mutate.mjs) killed **32/32** plausible rule mutations
-in **32.9 seconds**, within a 120-second budget. It covers each new program family, reporting and the
+The bounded [mutation pass](21-provincial-supplements/mutate.mjs) killed **33/33** plausible rule mutations
+in **33.6 seconds**, within a 120-second budget. It covers each new program family, reporting and the
 line-25000 deduction. It restores the production files after each attempt, rejects invalid mutation runs,
 and does not edit expectations. Final validation uses `npm ci` and `npm run check`; the PR records results.
 
@@ -843,10 +843,12 @@ Every reachable survivor has a separate independently calculated case:
   $6,000 childcare. A tie keeps ASB on that recipient, making the spouse the T778 claimant. Omitting
   assistance instead claims it on the first adult. Each adult has $10,000 verified eligible wages.
 
-The additional recovery-in-comparison mutation is left as the reviewers allowed: no reachable reporter
-flip has been demonstrated. The statutory exclusion remains explicit (`recoveryOverride: 0`); it is not
-included among the mutations claimed killed. Positive-GIS ordinary examples and the asymmetric high-income
-offset specimens did not establish a flip, and no synthetic unreachable input is presented as coverage.
+The statutory reporter-comparison exclusion remains explicit (`recoveryOverride: 0`). Opus's second-round
+verdict reports that its recovery-in-comparison mutation now fails the affected tests, superseding our
+earlier blanket statement that this path lacked mutation coverage. A separate explicit `0 → undefined`
+override probe still survives the senior-supplement, GIS and senior-audit suites in our rerun; that variant
+is not counted among our killed mutations. The reviewers' reported mutation and this probe are distinguished
+because no exact reproduction of Opus's edit was supplied.
 
 Relative to reviewed head `4f6227b`, **10 legacy cases / 26 values** change for recovery/reporting and
 **six existing SIP feature cases / 12 values** change for the basic-GIS correction. All sixteen existing
@@ -856,6 +858,26 @@ where they describe the former erroneous cutoff. The whole-fixture
 [audit](21-provincial-supplements/audit-goldens.mjs) verifies the independent proposals, unchanged inputs,
 unchanged GIS fields and byte-identical annual fixtures. Relative to the pre-feature baseline, the final
 legacy count is **74 cases / 212 values**: **37/105** in 2025 and **37/107** in 2026, as tabulated above.
+
+### Review round 2: before-childcare recovery coverage
+
+Production code remains unchanged. The two Ontario assistance/partial-recovery feature cases now also
+assert the first adult's before-childcare income. Neither case claims childcare, so the independent
+calculation is line-23400 income less the assistance-adjusted repayment already calculated above:
+`117757.09 − 3645.4635 = $114111.6265` in 2025 and
+`118182.91 − 3428.9865 = $114753.9235` in 2026. These expectations come from the same published
+OAS/GIS/GAINS totals and line-23500 worksheet, through the calculator without engine imports.
+
+Omitting assistance when calculating the recovery passed to this breakdown overstates it by
+`.15 × 1062 = $159.30` in 2025 and `.15 × 1092 = $163.80` in 2026, despite correct current net income.
+The regression adds two assertions to existing feature cases; it changes no earlier expectation,
+household input, GIS result or annual golden. The fixture remains 258 household cases and 288 monthly
+rows, and the pre-feature impact remains 74 cases / 212 values.
+
+The bounded mutation pass now includes that exact omission from the household recovery calculation;
+both partial-recovery cases fail on it. All 33 listed mutations are killed, and production files are
+restored before the full checks run. The exploratory reporter-comparison probe described above is separate
+from this claimed total.
 
 ### Final rule paths and follow-up plan
 

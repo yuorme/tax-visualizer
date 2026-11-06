@@ -313,6 +313,7 @@ export function newFixture() {
     partial.expected = { "list.0.breakdown.publicPensions.recoveryTax": r4(recovery),
       "list.0.breakdown.publicPensions.recoveryIncome": r4(recoveryIncome),
       "list.0.breakdown.netIncomeTotal": r4(recoveryIncome - recovery),
+      "breakdown.incomeBases.beforeChildcare.0": r4(recoveryIncome - recovery),
       "list.0.ti": r4(100000 + oasAnnual - recovery) };
     for (const income of [23.99, 24, 816, 839.99, 840]) {
       const cash = mbQuarter(0, income) * 4;
