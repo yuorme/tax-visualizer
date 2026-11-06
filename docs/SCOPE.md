@@ -188,14 +188,19 @@ line-by-line tax return. Simpler and slightly less precise is acceptable where i
   GAINS, Quebec senior assistance credit, New Brunswick Low-Income Seniors' Benefit, Nova Scotia's seniors
   provincial income tax refund, Newfoundland and Labrador's Seniors' Benefit and the Northwest Territories and
   Nunavut senior supplements. No new inputs: programs tied to federal receipts follow the OAS, GIS and Allowance
-  opt-ins; the credit-based ones use the ages and income entered. Current income stands in for the prior-year
-  income most programs test, an explicit single-year approximation. The page adds a comparison row ("not modelled"
-  for Yukon and PEI, never $0), a per-adult ledger with the amount reported on T5007 line 14500, a tooltip beside
-  GIS and Allowance and history coverage text. Cash supplements net against tax once, independent of the credit
-  switches; the Quebec, Manitoba, Newfoundland and Labrador and Nova Scotia amounts are refundable credits and follow
-  them. Not modelled: Yukon's Seniors Income Supplement, PEI's assessed Seniors Independence Initiative, the
-  Coastal Labrador supplement, survivors and people in care. Housing and care programs (property tax grants,
-  utility grants, assessed service grants) are in #216. Historical back-fill is a separate History issue.
+  opt-ins. Quebec's assistance credit, Manitoba's credit senior addition and Newfoundland and Labrador's Seniors'
+  Benefit use the ages and income entered, and Nova Scotia's refund also needs GIS. Manitoba's 55 PLUS also pays
+  ages 55 to 64 on income alone, except for junior households with an OAS, GIS or Allowance recipient and the
+  year an adult becomes OAS-eligible. Current income stands in for the prior-year income most programs test, an
+  explicit single-year approximation. The page adds a comparison row ("not modelled" for Yukon and PEI, never $0),
+  a per-adult ledger with the amount reported on T5007 line 14500 (the higher-income spouse reports the whole
+  amount), a tooltip beside GIS and Allowance and history coverage text. Cash supplements net against tax once,
+  independent of the credit switches. The Quebec, Manitoba, Newfoundland and Labrador and Nova Scotia amounts are
+  refundable credits and follow the switch; they appear under Refundable credits, as the tooltip says, so a $0
+  in the cash row is not read as no support. Not modelled: Yukon's Seniors Income Supplement, PEI's assessed
+  Seniors Independence Initiative, the
+  Coastal Labrador supplement, survivors and people in care. Housing and care programs (property tax grants, utility
+  grants, assessed service grants) are in #216. Historical back-fill is a separate History issue.
   See [rules, sources, estimates and coverage](verification/21-provincial-supplements.md).
 
 **Payroll (employee share, plus both shares on self-employment)**

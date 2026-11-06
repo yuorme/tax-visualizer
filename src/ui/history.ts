@@ -103,8 +103,10 @@ export function renderHistory(
   if (publicPensions)
     info.dataset.tip += ` OAS and CPP/QPP retirement income are modelled for ${yearList(publicPensionYears(installedYears))} only; earlier years are left out, not complete senior-tax comparisons. OAS uses each year's published monthly amounts and each adult's age in that year; real mode scales entered CPP/QPP income with other income. Recovery is current-year liability, not withholding based on the preceding return. OAS deferral and residency rules are not modelled.`;
   if (publicNotice) info.dataset.tip += ` ${publicNotice}`;
+  if (seniorIncome || byBirthYear || publicPensions || seniorBenefits)
+    info.dataset.tip += ` Provincial seniors' supplements (${yearList(seniorSupplementYears(installedYears))} only) are included in the figures where a program applies, with current income standing in for prior-year income; earlier years have none.`;
   if (seniorBenefits)
-    info.dataset.tip += ` GIS and the Allowance are modelled for ${yearList(seniorBenefitYears(installedYears))} only; earlier years are left out, not complete senior-tax comparisons. Each year uses its published quarterly rates and the entered birth dates. Real mode scales entered income before the engine applies the same income-year proxy for both historical income years; actual prior-year income is not available. Provincial seniors' supplements are modelled for ${yearList(seniorSupplementYears(installedYears))} only, on the same basis.`;
+    info.dataset.tip += ` GIS and the Allowance are modelled for ${yearList(seniorBenefitYears(installedYears))} only; earlier years are left out, not complete senior-tax comparisons. Each year uses its published quarterly rates and the entered birth dates. Real mode scales entered income before the engine applies the same income-year proxy for both historical income years; actual prior-year income is not available.`;
   if (benefitNotice) info.dataset.tip += ` ${benefitNotice}`;
   info.dataset.tip += coverageNote(home, comparison.rows[0]?.year ?? installedYears[0].year);
   const rows = comparison.rows

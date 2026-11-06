@@ -27,6 +27,10 @@ async function cashSupplement(p, year, code, people, extra = {}) {
   const supplements = result.breakdown.provincialSupplements;
   assert.ok(supplements?.total > 0, `${year} ${code} pays a supplement`);
   await chart(p, year, people, 0, extra);
+  assert.match(
+    await p.getAttribute(`#col-${code}`, "aria-label"),
+    new RegExp(`after ${money(result.benefits).replace("$", "\\$")} of benefits and credits`),
+  );
   const row = detailRow(p, "Provincial seniors' supplements");
   assert.equal(await row.locator("td").nth(1).textContent(), `−${money(supplements.total)}`);
   assert.ok(await row.locator('[data-comparison-note="Provincial seniors\' supplements"]').count());
@@ -52,6 +56,11 @@ async function cashSupplement(p, year, code, people, extra = {}) {
       );
   }
   assert.deepEqual(
+    await p.locator(".cmp-wrap").evaluateAll(els => els.filter(el => el.scrollWidth > el.clientWidth + 1).length),
+    0,
+    "comparison table does not scroll sideways",
+  );
+  assert.deepEqual(
     await p
       .locator("#detail-body .ledger, #detail-body .senior-benefit-ledger")
       .evaluateAll(els => els.filter(el => el.scrollWidth > el.clientWidth + 1).map(el => el.textContent)),
@@ -69,6 +78,10 @@ export const SENIOR_SUPPLEMENT_STEPS = [
         await cashSupplement(p, year, "ON", people);
         await cashSupplement(p, year, "BC", people);
       }
+      const couple = [adult(75, { oas: true, gis: true }), adult(70, { oas: true, gis: true, oth: 5000 })];
+      await scenario(p, 2026, couple, { spouse: true });
+      await cashSupplement(p, 2026, "ON", couple, { spouse: true });
+      await cashSupplement(p, 2026, "AB", couple, { spouse: true });
     },
   ],
   [
@@ -82,6 +95,10 @@ export const SENIOR_SUPPLEMENT_STEPS = [
         const row = detailRow(p, "Provincial seniors' supplements");
         assert.equal(await row.locator("td").nth(2).textContent(), "not modelled");
         assert.notEqual(await row.locator("td").nth(1).textContent(), "not modelled");
+        assert.deepEqual(
+          await p.locator(".cmp-wrap").evaluateAll(els => els.filter(el => el.scrollWidth > el.clientWidth + 1).length),
+          0,
+        );
       }
       await p.selectOption("#home", "YT");
       await p.selectOption("#dest", "PE");
@@ -104,6 +121,11 @@ export const SENIOR_SUPPLEMENT_STEPS = [
         /survivors and people in care/,
         /Housing and care programs are not included/,
         /#216/,
+        /appear under Refundable credits.*\$0 in that row does not mean no support/,
+        /55 PLUS also pays adults aged 55 to 64 on income alone/,
+        /OAS, GIS or Allowance recipient/,
+        /Nova Scotia.s tax refund also needs GIS/,
+        /higher income reports the whole amount/,
       ])
         assert.match(text, pattern);
       assert.doesNotMatch(text, /Yukon[^.]*Territory[^.]*modelled for/);
@@ -149,6 +171,10 @@ export const SENIOR_SUPPLEMENT_RESPONSIVE_STEPS = [
       assert.equal(
         await detailRow(p, "Provincial seniors' supplements").locator("td").nth(2).textContent(),
         "not modelled",
+      );
+      assert.equal(
+        await p.locator(".cmp-wrap").evaluateAll(els => els.filter(el => el.scrollWidth > el.clientWidth + 1).length),
+        0,
       );
       await open(p);
       assert.match(await tip(p, '[data-note="seniorSupplements"]'), /Housing and care programs are not included/);
