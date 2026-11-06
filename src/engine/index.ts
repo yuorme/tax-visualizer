@@ -34,7 +34,6 @@ export {
   type ReliefRule,
   type ReliefScope,
   type ReliefStatus,
-  withPropertyReliefHandler,
 } from "./property-relief.ts";
 export { oasRecoveryTax, publicPensionReceipts, UnsupportedPublicPensionsError } from "./public-pensions.ts";
 export { UnsupportedSelfEmploymentError } from "./self-employment.ts";

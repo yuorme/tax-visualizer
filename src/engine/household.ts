@@ -12,7 +12,7 @@ import { gisAllowanceOf, validateGisAllowance } from "./gis-allowance.ts";
 import { householdPremiumOf } from "./health-premiums.ts";
 import { netIncomeParts, netIncomeTotal, workerDeductionOf } from "./payroll.ts";
 import { type PersonResult, personTax } from "./personal.ts";
-import { propertyBillOf, propertyReliefOf } from "./property-relief.ts";
+import { existingCreditsOf, grossLevyOf, propertyBillOf, propertyReliefOf } from "./property-relief.ts";
 import { hasSeniorInputs, quebecSeniorPool, seniorTransfer } from "./senior-credits.ts";
 import { seniorCashSupplementsOf, seniorRefundableCreditsOf } from "./senior-supplements.ts";
 import {
@@ -445,6 +445,17 @@ function calculateHousehold(
     incomeBases.provincialFamily,
     list.map(r => r.breakdown.childcareCredit.applied),
   );
+  // Property-tax relief (#22) is counted with the refundable credits, so the same switch turns it off as turns off
+  // the Ontario, Manitoba, BC and Quebec property and housing credits. A province without a program is untouched.
+  // The existing credits read the GROSS levy (the bill entered plus the relief it reflects), so one levy gives one
+  // result however it was entered; with no program, or a net bill whose reflected amounts are incomplete, they read
+  // the bill entered as before.
+  const reliefRules = hh.useCredits && p.propertyRelief?.length ? p.propertyRelief : undefined;
+  const reliefBill = reliefRules
+    ? propertyBillOf(p.code, hh, propertyTax(p, hh), suppliedPropertyBill(p, hh) !== undefined)
+    : undefined;
+  const levy = reliefRules && reliefBill ? grossLevyOf(reliefRules, reliefBill).grossLevy : null;
+  const rentAnnual = hh.homeValue > 0 ? 0 : hh.rent * 12;
   // Refundable credits (counted only when the credits switch is on)
   const credits: Credit[] = hh.useCredits
     ? creditsOf(fed, p, {
@@ -455,8 +466,8 @@ function calculateHousehold(
         kids,
         ppl,
         federalNets: nets,
-        propTax: propertyTax(p, hh),
-        rent: hh.homeValue > 0 ? 0 : hh.rent * 12,
+        propTax: levy ?? propertyTax(p, hh),
+        rent: rentAnnual,
       })
     : [];
   if (childcareCredit?.refundable && childcareCredit.applied > 0)
@@ -475,13 +486,11 @@ function calculateHousehold(
         claim?.kind === "dependant" && claim.pAmt > 0,
       ),
     );
-  // Property-tax relief (#22) is counted with the refundable credits, so the same switch turns it off as turns off
-  // the Ontario, Manitoba, BC and Quebec property and housing credits. A province without a program is untouched.
-  // Each line adds only the relief its bill does not already reflect (see property-relief.ts), once.
+  // Each relief line adds only the relief its bill does not already reflect (see property-relief.ts), once.
   const propertyRelief =
-    hh.useCredits && p.propertyRelief?.length
-      ? propertyReliefOf(p.propertyRelief, {
-          bill: propertyBillOf(p.code, hh, propertyTax(p, hh), suppliedPropertyBill(p, hh) !== undefined),
+    reliefRules && reliefBill
+      ? propertyReliefOf(reliefRules, {
+          bill: reliefBill,
           people: ppl,
           couple,
           kids,
@@ -489,7 +498,8 @@ function calculateHousehold(
           provincialFamNet: benefitFamNet,
           federalNets: nets,
           homeValue: hh.homeValue,
-          rent: hh.homeValue > 0 ? 0 : hh.rent * 12,
+          rent: rentAnnual,
+          existingCredits: existingCreditsOf(p.credits ?? [], credits),
         })
       : undefined;
   for (const line of propertyRelief?.lines ?? [])

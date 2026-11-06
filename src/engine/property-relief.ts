@@ -7,6 +7,15 @@
 // so a gross bill, an ordinary-grant-net bill and a fully-net bill reach the same burden. Reflected amounts are kept
 // by program id, because one grant being applied must not hide a different grant that is still due.
 //
+// One bill line, one id. A household states how much of a line its bill reflects, and that amount is floored against
+// that program's own entitlement. If an ordinary grant and its senior replacement were two ids, an amount stated under
+// one could shift to the other and be credited again. So a grant with ordinary, senior and income-tested amounts is one
+// program whose handler computes the total (BC: `bc-home-owner-grant` alone), and only separate bill lines (a grant and
+// a municipal rebate) are separate ids.
+//
+// The gross levy also feeds the existing credits (Ontario's property credit, Manitoba's school-tax credits), which
+// household.ts computes from it, so those credits do not change with how the same levy was entered either.
+//
 // A relief that cannot be computed is reported as such (`incomplete`, `not-modelled`, `city-bill-required`) with null
 // amounts. It never shows as $0, and it adds nothing to the household's credits.
 //
@@ -59,13 +68,19 @@ export interface PropertyReliefInput {
   federalNets: readonly number[];
   homeValue: number;
   rent: number; // annual, zero for an owner
+  /** Amount of each existing credit program (the province's `credits` entries, by program id) already counted for this
+   *  household, so a replacement or overlapping relief can net it out. Zero when the credit is absent. */
+  existingCredits: Readonly<Record<string, number>>;
 }
 
-/** What a handler sees: the household, the gross levy and the lines already evaluated (the rules' data order). */
+/** What a handler sees: the household, the bill facts, the gross levy, the existing credits already counted and the
+ *  relief lines already evaluated (the rules' data order). */
 export interface ReliefContext extends Omit<PropertyReliefInput, "bill"> {
   owner: boolean; // owns a home, or supplied an owner bill even with a zero home value
   renter: boolean;
-  billAmount: number;
+  billAmount: number; // the levy as entered, before adding what it reflects
+  billSupplied: boolean; // a bill the household entered, not home value × the reference rate
+  defaultCity: boolean; // the reference city's own bill (no supplied bill, no rate override)
   grossLevy: number;
   earlier: readonly ReliefLine[];
 }
@@ -96,10 +111,11 @@ export interface PropertyReliefResult {
   defaultCityBill: boolean;
   bill: number;
   grossLevy: number | null; // null when a net bill's reflected amounts are incomplete
-  applied: number; // reflected amounts counted into grossLevy
+  applied: number | null; // reflected amounts counted into grossLevy; null with it
   lines: ReliefLine[];
-  /** Added to the household's credits: the sum of modelled lines' remaining relief. A lower bound unless `complete`. */
-  credited: number;
+  /** Added to the household's credits: the sum of modelled lines' remaining relief. A lower bound unless `complete`;
+   *  null when the gross levy is unknown, as no line can be modelled then. */
+  credited: number | null;
   complete: boolean; // no line is incomplete or not modelled (a city-gated line is out of scope, not incomplete)
 }
 
@@ -152,20 +168,42 @@ export function propertyBillOf(
   };
 }
 
+const kindOf = (rule: ReliefRule, bill: PropertyBill) =>
+  rule.program === NOT_MODELLED ? "not-modelled" : rule.scope === "municipal" && !bill.defaultCity ? "gated" : "run";
+
+/** The levy before any relief: the bill entered plus what a net bill reflects. A net bill must state the amount for
+ *  every program that will run (zero included); one not stated leaves the gross levy unknown, never the entered bill. */
+export function grossLevyOf(rules: readonly ReliefRule[], bill: PropertyBill) {
+  if (bill.basis !== "net") return { grossLevy: bill.amount, applied: 0, missing: [] as string[] };
+  const missing = rules
+    .filter(r => kindOf(r, bill) === "run" && reflectedOf(bill.applied, r.program) === undefined)
+    .map(r => r.program);
+  const applied = rules.reduce((sum, r) => sum + (reflectedOf(bill.applied, r.program) ?? 0), 0);
+  return missing.length
+    ? { grossLevy: null, applied: null, missing }
+    : { grossLevy: bill.amount + applied, applied, missing };
+}
+
+/** Amount of each existing credit program counted so far, by program id, matched on the display names the
+ *  province's own entries give them (a program's name, and a renter name where it has one). */
+export function existingCreditsOf(
+  programs: readonly { program: string; name?: string; nameRenter?: string }[],
+  credits: readonly [string, number][],
+): Record<string, number> {
+  const out: Record<string, number> = {};
+  for (const cr of programs) {
+    const names = [cr.name ?? cr.program, cr.nameRenter];
+    out[cr.program] = (out[cr.program] ?? 0) + credits.reduce((sum, [n, v]) => sum + (names.includes(n) ? v : 0), 0);
+  }
+  return out;
+}
+
 /** Entitlement, reflected amount and remaining relief for each program, on the gross levy. Pure: the same rules and
  *  input give the same result, and nothing here knows an amount, a rate or a threshold. */
 export function propertyReliefOf(rules: readonly ReliefRule[], input: PropertyReliefInput): PropertyReliefResult {
   const { bill } = input;
   const net = bill.basis === "net";
-  const kindOf = (rule: ReliefRule) =>
-    rule.program === NOT_MODELLED ? "not-modelled" : rule.scope === "municipal" && !bill.defaultCity ? "gated" : "run";
-  // A net bill is grossed up by every amount it reflects. Each program that will run must state its amount
-  // (zero included); one that is not stated leaves the gross levy, and so every entitlement, unknown.
-  const missing = net
-    ? rules.filter(r => kindOf(r) === "run" && reflectedOf(bill.applied, r.program) === undefined)
-    : [];
-  const applied = net ? rules.reduce((sum, r) => sum + (reflectedOf(bill.applied, r.program) ?? 0), 0) : 0;
-  const grossLevy = missing.length ? null : bill.amount + applied;
+  const { grossLevy, applied, missing } = grossLevyOf(rules, bill);
   const owner = input.homeValue > 0 || bill.supplied;
 
   const lines: ReliefLine[] = [];
@@ -183,7 +221,7 @@ export function propertyReliefOf(rules: readonly ReliefRule[], input: PropertyRe
       remaining: null,
     };
     lines.push(line);
-    const kind = kindOf(rule);
+    const kind = kindOf(rule, bill);
     if (kind === "not-modelled") {
       line.status = "not-modelled";
       line.reason = (rule.params as { reason?: string } | undefined)?.reason ?? "not modelled";
@@ -194,7 +232,7 @@ export function propertyReliefOf(rules: readonly ReliefRule[], input: PropertyRe
       continue;
     }
     if (grossLevy === null) {
-      line.reason = `the bill is net of relief, but the amount already applied is not given for ${missing.map(r => r.program).join(", ")}`;
+      line.reason = `the bill is net of relief, but the amount already applied is not given for ${missing.join(", ")}`;
       line.eligible = { levy: null };
       continue;
     }
@@ -209,9 +247,12 @@ export function propertyReliefOf(rules: readonly ReliefRule[], input: PropertyRe
       federalNets: input.federalNets,
       homeValue: input.homeValue,
       rent: input.rent,
+      existingCredits: input.existingCredits,
       owner,
       renter: !owner && input.rent > 0,
       billAmount: bill.amount,
+      billSupplied: bill.supplied,
+      defaultCity: bill.defaultCity,
       grossLevy,
       earlier: lines.slice(0, -1),
     });
@@ -235,7 +276,7 @@ export function propertyReliefOf(rules: readonly ReliefRule[], input: PropertyRe
     grossLevy,
     applied,
     lines,
-    credited: lines.reduce((sum, l) => sum + (l.remaining ?? 0), 0),
+    credited: grossLevy === null ? null : lines.reduce((sum, l) => sum + (l.remaining ?? 0), 0),
     complete: lines.every(l => l.status === "modelled" || l.status === "city-bill-required"),
   };
 }

@@ -454,11 +454,12 @@ note/evidence updates; the file-ownership check confirms `src/`, `data/` and `te
    relief and explicit incomplete/not-modelled status. Integrate once in `household.ts` **after #21 merges**,
    reconciling its net-income/OTB changes. Follow `useCredits` consistently;
    document whether the switch disables all new grants as it does existing property credits. Never test calendar
-   years in a formula to change rule shape; use a new `program` id. Include ordinary BC/YT schedules so senior
-   increments and net ordinary bills reconcile correctly. Gate city-only programs on the default reference-city
+   years in a formula to change rule shape; use a new `program` id. Include ordinary BC/YT schedules in the same
+   program as the senior amounts, so net ordinary bills reconcile correctly (one bill line, one id; see Slice 1).
+   Gate city-only programs on the default reference-city
    bill; custom province bills do not receive automatic municipal relief. Keep actually reported municipal
    relief already embedded in a net bill in its ledger without treating it as a newly modelled award.
-2. Proposed ids: `bc-home-owner-grant`, `bc-low-income-grant-supplement`,
+2. Proposed ids: `bc-home-owner-grant` (ordinary, senior and low-income amounts together, as Slice 1 requires),
    `ontario-senior-homeowners-property-grant`, `ontario-energy-property-tax-credit-senior-overlap`,
    `mb-homeowners-school-tax-credit`, `mb-senior-school-tax-rebate`, `mb-renters-affordability-senior`,
    `qc-senior-municipal-tax-increase-grant`, `ns-senior-property-rebate`, `stjohns-senior-property-reduction`,
@@ -520,9 +521,10 @@ its results are unchanged, with no year check in the engine. The 2025 research a
 
 **What exists.** `src/engine/property-relief.ts` holds a pure evaluator, `propertyReliefOf(rules, input)`. It returns
 the gross levy, one line per program (eligible components, entitlement, amount already applied, remaining relief,
-status) and the total credited. `household.ts` calls it once, after the refundable credits, and appends each
-line's remaining relief to `credits`. `Province.propertyRelief` is a new optional list in `schema.ts`; today its only
-member is `property-relief-not-modelled`, which is how Nunavut will be declared (reason text, never a $0 program).
+status) and the total credited. `household.ts` computes the gross levy before the existing credits, calls the
+evaluator once after them and appends each line's remaining relief to `credits`. `Province.propertyRelief` is a new
+optional list in `schema.ts`; today its only member is `property-relief-not-modelled`, which is how Nunavut will be
+declared (reason text, never a $0 program).
 
 **Accounting.** Every program is evaluated on the gross levy, then only the relief the bill does not already reflect
 is credited:
@@ -533,9 +535,22 @@ remaining relief = max(0, entitlement on the gross levy − amount the bill refl
 final burden     = bill entered − remaining relief = gross levy − entitlement
 ```
 
-For a $4,000 gross bill with a $570 ordinary grant and an $845 senior total, a gross bill, a $3,430 ordinary-net
-bill and a $3,155 fully-net bill all end at a $3,155 burden. An amount reflected beyond the entitlement is the
-household's own bill: remaining relief floors at zero and nothing is clawed back.
+For a $4,000 gross bill with one home owner grant ($570 ordinary, $845 for a senior), a gross bill, a $3,430
+bill net of the ordinary part and a $3,155 fully-net bill all end at a $3,155 burden. An amount reflected beyond
+the entitlement is the household's own bill: remaining relief floors at zero and nothing is clawed back.
+
+**One bill line, one id.** The floor is per program id, so a grant whose parts are separate ids leaks: with an
+ordinary id and a senior-increment id on a $3,155 bill, stating $845 against the ordinary id and $0 against the
+senior id credits the $275 increment again and ends at $2,880. A grant with ordinary, senior and income-tested
+amounts is therefore one program whose handler computes the total (BC: `bc-home-owner-grant` alone, the senior
+total replacing the ordinary amount), and only separate bill lines (a grant and a municipal rebate) are separate ids.
+The household states one amount per line, and the page (#227) asks for one per line.
+
+**Existing credits read the gross levy.** Ontario's property credit and Manitoba's homeowner credit are computed from
+the property bill, so `household.ts` hands them the gross levy, not the bill entered, whenever a province has relief
+rules. One levy then gives one total however it was entered (tested for all 13 provinces, with bills either side of
+Manitoba's cap and one a grant fully covers). When a net bill's amounts are incomplete the gross levy is unknown and
+they read the bill entered, as before; the relief lines are `incomplete` and credit nothing.
 
 **Inputs (all optional, by province code).** `propertyBillBasis` is `"gross"` or `"net"`; missing means gross, so old
 saves and the documented #11 meaning are unchanged. `propertyReliefApplied` holds the amount each program id is
@@ -550,8 +565,9 @@ reflected amounts with the bill.
 `not-modelled` (declared, with its reason) and `city-bill-required` (a `municipal` program on a bill that is not the
 reference city's, where no automatic award applies). The last three carry null entitlement and remaining relief and
 add nothing to credits. `complete` is false while any line is incomplete or not modelled; `credited` is then a lower
-bound. Relief that a custom net bill already reflects (for example a municipal cancellation) still grosses the levy up
-when the household states it, but is not treated as an award the model computed.
+bound, and null (like `applied`) while the gross levy is unknown. Relief that a custom net bill already reflects (for
+example a municipal cancellation) still grosses the levy up when the household states it, but is not treated as an
+award the model computed.
 
 **The credits switch.** Property relief follows `useCredits` exactly as the Ontario, Manitoba, BC and Quebec property
 and housing credits do: with the switch off, nothing is evaluated, nothing is credited and
@@ -560,23 +576,28 @@ like the other credits.
 
 **Extension point for a regional slice.** Add `reliefProgram("<id>", params)` to the union in `schema.ts`, its entry
 under `propertyRelief` in the province YAML (with `scope: municipal` for city programs, which gates it with no handler
-code) and one handler in `BUILT_IN` in `property-relief.ts`. The handler gets the household facts, the gross levy and
-the lines before it (data order, for ordinary-then-senior or municipal-first sequences) and returns an entitlement or
-an `incomplete` reason. TypeScript requires a handler for each schema id. Component inputs the Manitoba slice needs
-(school tax, advance) and household inputs for ages or prior-year amounts are added by the slice that needs them.
+code) and one handler in `BUILT_IN` in `property-relief.ts`. The handler gets the household facts, the bill facts
+(entered amount, supplied or estimated, default city), the gross levy, the existing credits already counted by program
+id (for an Ontario overlap or a replacement of a whole credit) and the lines before it (data order, for a
+municipal-first sequence), and returns an entitlement or an `incomplete` reason. TypeScript requires a handler for
+each schema id. Component inputs the Manitoba slice needs (school tax, advance) and household inputs for ages or
+prior-year amounts are added by the slice that needs them.
 
 **Tests.** `tests/property-relief.test.ts` uses fixture programs defined in the file and registered through
 `withPropertyReliefHandler`, so nothing fixture-shaped ships in data. Rule paths map to tests as follows.
 
 | Rule path | Test |
 | --- | --- |
-| Gross, ordinary-net and fully-net bills reach one burden | evaluator and household-total tests |
+| Gross, ordinary-part-net and fully-net bills reach one burden | evaluator and household-total tests |
+| One bill line, one id; unrelated relief still due | one-bill-line test |
 | Entitlement on the gross levy, not the entered bill | levy-share test |
+| Existing credits (Ontario, Manitoba, all 13 provinces) read the gross levy | existing-credits parity test |
 | No double counting, and an old net bill without a basis | wrong-reading test (a net bill read as gross gains $845) |
 | Missing reflected amount, invalid amounts | incomplete test, bill-facts test |
 | Explicit zero reflected amount, zero bill, zero home value with a bill | the three explicit-zero tests |
 | Reference-city gate, bill and rate override | city tests (the handler is never called when gated) |
 | Not-modelled status | not-modelled test, schema test |
+| Context a handler receives, negative and cents handling | context-spy and rounding tests |
 | Credits switch, no program, history scaling | switch, unchanged-provinces and scaling tests |
 
 No golden is added: with no real program there is no result to lock. The existing 2019–2026 goldens and
