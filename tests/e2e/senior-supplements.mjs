@@ -214,6 +214,21 @@ export const SENIOR_SUPPLEMENT_RESPONSIVE_STEPS = [
         /Yukon and PEI are not modelled and show no supplement/,
       );
       assert.ok((await inspect(p)).scrollWidth <= p.viewportSize().width);
+      // An info button's 8px hit area must stay inside the scrolling ledger however the caption wraps: narrower text
+      // (other platforms' fonts) once pushed it past the edge, so sweep the caption width.
+      const couple = [adult(76, { oas: true, gis: true }), adult(62, { allowance: true })];
+      await scenario(p, 2025, couple);
+      await p.click('#people [data-i="1"]');
+      for (const spacing of [0, -0.3, -0.6, -0.9, -1.2]) {
+        await p.addStyleTag({ content: `.public-pension-ledger caption{letter-spacing:${spacing}px}` });
+        assert.deepEqual(
+          await p
+            .locator("#detail-body .ledger")
+            .evaluateAll(els => els.filter(el => el.scrollWidth > el.clientWidth + 1).map(el => el.textContent)),
+          [],
+          `caption letter-spacing ${spacing}px`,
+        );
+      }
       await load(p);
     },
     { contrast: true },

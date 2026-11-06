@@ -352,6 +352,7 @@ input[type="range"] {
   text-align: left;
   font-weight: 600;
   padding-bottom: 8px;
+  padding-right: 8px; /* keeps the info button's 8px hit area inside the scrolling ledger */
 }
 .ledger td:first-child {
   white-space: normal;
