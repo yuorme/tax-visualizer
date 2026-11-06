@@ -50,6 +50,15 @@ childcareCredit:
   # NL428 line 58320 equals federal line 21400, converted at the first provincial bracket rate.
   params: {}
 sources:
+  - {label: "Amounts that are not reported or taxed", url: "https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/tax-return/completing-a-tax-return/personal-income/amounts-that-taxed.html"}
+  - label: NLR 32/16 - Income Supplement and Seniors' Benefit Regulations under the Income Tax Act, 2000
+    url: https://www.assembly.nl.ca/legislation/sr/regulations/rc160032.htm
+  - label: NEWFOUNDLAND AND LABRADOR REGULATION 17/26
+    url: https://www.assembly.nl.ca/legislation/sr/annualregs/2026/nr260017.htm
+  - label: untitled
+    url: https://www.canada.ca/content/dam/cra-arc/formspubs/pub/rc4210/rc4210-24e.pdf
+  - label: GST/HST Credit
+    url: https://www.canada.ca/content/dam/cra-arc/formspubs/pub/rc4210/rc4210-25e.pdf
   - {"label": "Newfoundland and Labrador Tax", "url": "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5001-c/5001-c-25e.pdf"}
   - {"label": "Provincial Amounts Transferred from your Spouse or Common-Law Partner", "url": "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5001-s2/5001-s2-25e.pdf"}
   - {"label": "Worksheet NL428", "url": "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5001-d/5001-d-25e.pdf"}
@@ -74,3 +83,40 @@ seniorCredits:
     params: {minimumAge: 65, maximum: 7142, threshold: 39138, reductionRate: 0.15}
   pension: {program: federal-pension-capped, params: {maximum: 1000}}
   transfer: schedule2-unused-base
+
+# 2025/2026 senior supplements: current income proxies historical income; ordinary residence assumed.
+# Estimated entries: see docs/verification/21-provincial-supplements.md for explicit derivations.
+seniorSupplements:
+  - program: nl-seniors-benefit
+    name: Newfoundland and Labrador Seniors' Benefit
+    params:
+      firstHalfAge: 66
+      secondHalfAge: 65
+      rate: 0.1166
+      smallPayment: 10
+      schedules:
+        - maximum: 1551
+          threshold: 30078
+          ordinaryBase: 254
+          ordinaryExtra: 266
+          ordinaryExtraRate: 0.0532
+          ordinaryExtraFrom: 15000
+          ordinarySpouse: 69
+          ordinaryChild: 231
+          ordinaryThreshold: 40000
+          ordinaryRate: 0.09
+        - maximum: 1882
+          threshold: 30409
+          ordinaryBase: 254
+          ordinaryExtra: 266
+          ordinaryExtraRate: 0.0532
+          ordinaryExtraFrom: 15000
+          ordinarySpouse: 69
+          ordinaryChild: 231
+          ordinaryThreshold: 40000
+          ordinaryRate: 0.09
+    # Round the calendar-year formula total to cents; administrative cent convention is unverified. Reconcile combined small-payment timing.
+    estimated: true
+    reporting:
+      kind: none
+      exemptThrough: 0

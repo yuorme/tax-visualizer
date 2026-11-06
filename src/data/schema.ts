@@ -672,6 +672,119 @@ const childcareCredit = z.discriminatedUnion("program", [
   program("nl-childcare", z.object({})),
 ]);
 
+// Cash supplements and refundable senior credits are distinct from non-refundable seniorCredits.
+// Tables contain [inclusive lower income bound, payment]; an explicit terminal zero bounds eligibility.
+const supplementTable = z.array(z.tuple([amount, amount])).min(1);
+const supplementReporting = z.object({ kind: z.enum(["t5007", "none"]), exemptThrough: amount });
+const seniorSupplement = z.discriminatedUnion("program", [
+  program(
+    "bc-senior-supplement",
+    z.object({ single: amount, couple: amount, allowance: amount, allowanceProtection: amount, minimum: amount }),
+  ),
+  program(
+    "ab-seniors-benefit",
+    z.object({
+      minimumAge: amount,
+      employmentExemption: amount,
+      minimum: amount,
+      precision: amount.int(),
+      periods: z
+        .array(z.object({ from: amount.int(), single: amount, couple: amount, singleRate: rate, coupleRate: rate }))
+        .min(1),
+    }),
+  ),
+  program(
+    "sk-seniors-income-plan",
+    z.object({
+      single: amount,
+      couple: amount,
+      minimum: amount,
+      singleMultiplier: amount,
+      coupleMultiplier: amount,
+      neitherMultiplier: amount,
+      allowanceDivisor: amount,
+    }),
+  ),
+  program(
+    "mb-55-plus",
+    z.object({
+      minimumAge: amount,
+      single: supplementTable,
+      couple: supplementTable,
+      neither: supplementTable,
+      allowance: supplementTable,
+      offsetRounding: amount,
+      offsetExtra: amount,
+      juniorSingle: supplementTable,
+      juniorCouple: supplementTable,
+      employmentExpenseRate: rate,
+      employmentExpenseMax: amount,
+    }),
+  ),
+  program(
+    "on-gains",
+    z.object({
+      reduction: amount,
+      singleStep: amount,
+      coupleStep: amount,
+      olderAge: amount,
+      quarterly: z
+        .array(
+          z.object({
+            maximum: amount,
+            youngerOffsets: z.tuple([amount, amount, amount, amount]),
+            olderOffsets: z.tuple([amount, amount, amount, amount]),
+          }),
+        )
+        .length(4),
+    }),
+  ),
+  program("nb-low-income-seniors-benefit", z.object({ annual: amount })),
+  program("territorial-senior-supplement", z.object({ monthly: amount })),
+  program(
+    "qc-senior-assistance",
+    z.object({ minimumAge: amount, maximum: amount, singleThreshold: amount, coupleThreshold: amount, rate }),
+  ),
+  program(
+    "mb-senior-personal-credit",
+    z.object({
+      minimumAge: amount,
+      adult: amount,
+      senior: amount,
+      dependant: amount,
+      child: amount,
+      childThrough: amount,
+      rate,
+    }),
+  ),
+  program("ns-gis-tax-refund", z.object({ minimumAge: amount, minimum: amount, maximum: amount })),
+  program(
+    "nl-seniors-benefit",
+    z.object({
+      firstHalfAge: amount,
+      secondHalfAge: amount,
+      rate,
+      smallPayment: amount,
+      schedules: z
+        .array(
+          z.object({
+            maximum: amount,
+            threshold: amount,
+            ordinaryBase: amount,
+            ordinaryExtra: amount,
+            ordinaryExtraRate: rate,
+            ordinaryExtraFrom: amount,
+            ordinarySpouse: amount,
+            ordinaryChild: amount,
+            ordinaryThreshold: amount,
+            ordinaryRate: rate,
+          }),
+        )
+        .length(2),
+    }),
+  ),
+]);
+
 export const provinceSchema = z
   .object({
     code: z.string().length(2),
@@ -682,6 +795,7 @@ export const provinceSchema = z
     order: z.number().int().min(0),
     system: z.literal("quebec").optional(),
     seniorCredits: z.union([craSeniorCredits, quebecSeniorCredits]).optional(),
+    seniorSupplements: z.array(seniorSupplement.and(z.object({ reporting: supplementReporting }))).optional(),
     brackets,
     basicPersonalAmount: z.union([amount, phasedAmount, z.literal("federal")]),
     /** A mid-year change to the basic personal amount, described in the page notes. */

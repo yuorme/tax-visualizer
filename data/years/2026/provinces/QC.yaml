@@ -61,6 +61,10 @@ childcareCredit:
     annualSevere: 17145
     rates: [[25305, 0.78], [44620, 0.75], [46270, 0.74], [47935, 0.73], [49565, 0.72], [51225, 0.71], [122290, 0.7], [.inf, 0.67]]
 sources:
+  - label: "Revenu Quebec TP-1029.SA-V 2025-10: Senior Assistance Tax Credit"
+    url: https://www.revenuquebec.ca/documents/en/formulaires/tp/TP-1029.SA-V%282025-10%29.pdf
+  - label: "Revenu Quebec TP-1029.SA-V 2026-10: Senior Assistance Tax Credit"
+    url: https://www.revenuquebec.ca/documents/en/formulaires/tp/TP-1029.SA-V%282026-10%29.pdf
   - {"label": "Schedule B – Tax Relief Measures", "url": "https://www.revenuquebec.ca/documents/en/formulaires/tp/2025-12/TP-1.D.B-V(2025-12).pdf"}
   - {"label": "GUIDE – INCOME TAX RETURN – 2025", "url": "https://www.revenuquebec.ca/documents/en/formulaires/tp/2025-12/TP-1.G-V(2025-12).pdf"}
   - {"label": "Income Tax Return", "url": "https://www.revenuquebec.ca/documents/en/formulaires/tp/2025-12/TP-1.D-V(2025-12).pdf"}
@@ -84,3 +88,18 @@ seniorCredits:
   # 2026 formulas provisionally continue 2025 Schedule B and line 431.
   provisionalRules: true
   params: {minimumAge: 65, ageAmount: 3986, retirementMaximum: 3541, retirementMultiplier: 1.25, livingAlone: 2172, familyThreshold: 42955, reductionRate: 0.1875, creditRate: 0.14}
+
+# 2025/2026 senior supplements: current income proxies historical income; ordinary residence assumed.
+# Estimated entries: see docs/verification/21-provincial-supplements.md for explicit derivations.
+seniorSupplements:
+  - program: qc-senior-assistance
+    name: Quebec Senior Assistance
+    params:
+      minimumAge: 70
+      maximum: 2000
+      singleThreshold: 28405
+      coupleThreshold: 46200
+      rate: 0.0547
+    reporting:
+      kind: none
+      exemptThrough: 0

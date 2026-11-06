@@ -30,6 +30,7 @@ import { RETIREMENT_RESPONSIVE_STEPS, RETIREMENT_STEPS } from "./retirement.mjs"
 import { COLUMN_COUNT, contrastViolations, inspect, KNOWN, MAX_LABEL_LENGTH } from "./rules.mjs";
 import { SELF_EMPLOYMENT_RESPONSIVE_STEPS, SELF_EMPLOYMENT_STEPS } from "./self-employment.mjs";
 import { SENIOR_RESPONSIVE_STEPS, SENIOR_STEPS } from "./senior-income.mjs";
+import { SENIOR_SUPPLEMENT_RESPONSIVE_STEPS, SENIOR_SUPPLEMENT_STEPS } from "./senior-supplements.mjs";
 
 const started = Date.now();
 const read = f => fs.readFileSync(new URL(f, import.meta.url), "utf8");
@@ -1125,6 +1126,7 @@ for (const [label, steps] of [
   ["senior income", SENIOR_STEPS],
   ["public pensions", PUBLIC_PENSION_STEPS],
   ["GIS and Allowance", GIS_ALLOWANCE_STEPS],
+  ["provincial seniors' supplements", SENIOR_SUPPLEMENT_STEPS],
   ["history", HISTORY_STEPS],
   ["carbon pricing", CARBON_STEPS],
   ["childcare", CHILDCARE_STEPS],
@@ -1151,6 +1153,7 @@ const responsive = [
   ...SENIOR_RESPONSIVE_STEPS,
   ...PUBLIC_PENSION_RESPONSIVE_STEPS,
   ...GIS_ALLOWANCE_RESPONSIVE_STEPS,
+  ...SENIOR_SUPPLEMENT_RESPONSIVE_STEPS,
   [
     "layout: driving units show equivalent values without clipping",
     async p => {

@@ -46,6 +46,145 @@ childcareCredit:
 fuelTax: {gasoline: 0.09}   # $ per litre; unchanged since July 1, 2022; Toronto has no municipal fuel tax
 
 sources:
+  - {label: "Guide T5007 – Return of Benefits", url: "https://www.canada.ca/en/revenue-agency/services/forms-publications/publications/t4115/guide-t5007-return-benefits.html"}
+  - {label: "Social assistance payments – Personal income tax", url: "https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/tax-return/completing-a-tax-return/personal-income/line-145-social-assistance-payments.html"}
+  - {label: "Application for Reduction in Long-Term Care Home Basic Accommodation Resident with a Notice of Assessment and Transitioning to New Government Benefit(s)", url: "https://forms.mgcs.gov.on.ca/dataset/4b357ccd-966c-493b-85c3-29ffba9aeb6a/resource/46bcdd8e-53cc-4dce-b685-e7188095e8d0/download/4803-69e.pdf"}
+  - label: (For Ages 65 to 74) Married, One Pensioner
+    url: https://data.ontario.ca/dataset/9ae4eb3f-8b65-47f5-98be-57f536db9ac7/resource/fae117da-3995-4b1b-a56a-c88e3be72703/download/gains_rate_tables_65-74_apr_1_to_jun_30_2026-married-1penn.csv
+  - label: (For Ages 65 to 74) Married Both Pensioners
+    url: https://data.ontario.ca/dataset/9ae4eb3f-8b65-47f5-98be-57f536db9ac7/resource/9563df77-2b7a-43a8-9066-479f1ba01a83/download/gains_rate_tables_65-74_apr_1_to_jun_30_2026-married-couple.csv
+  - label: (For Ages 65 to 74) Married Pensioner, Spouse 60-64
+    url: https://data.ontario.ca/dataset/9ae4eb3f-8b65-47f5-98be-57f536db9ac7/resource/4bd96bd6-0c67-4d7e-9caa-1581edacf39a/download/gains_rate_tables_65-74_apr_1_to_jun_30_2026-married-spouse.csv
+  - label: (For Ages 65 to 74) Single Pensioner
+    url: https://data.ontario.ca/dataset/9ae4eb3f-8b65-47f5-98be-57f536db9ac7/resource/ea3326e3-a535-4e6b-94df-7857ec7fb4b1/download/gains_rate_tables_65-74_apr_1_to_jun_30_2026-single.csv
+  - label: (For Ages 65 to 74) Married, One Pensioner
+    url: https://data.ontario.ca/dataset/9ae4eb3f-8b65-47f5-98be-57f536db9ac7/resource/14718a77-a489-49c6-b58d-8f5b64fa71e7/download/gains_rate_tables_65-74_apr_1_to_june_30_2025-married-1penn.csv
+  - label: (For Ages 65 to 74) Married Both Pensioners
+    url: https://data.ontario.ca/dataset/9ae4eb3f-8b65-47f5-98be-57f536db9ac7/resource/5403b912-d9e0-4cdb-b82c-d792b45349b4/download/gains_rate_tables_65-74_apr_1_to_june_30_2025-married-couple.csv
+  - label: (For Ages 65 to 74) Married Pensioner, Spouse 60-64
+    url: https://data.ontario.ca/dataset/9ae4eb3f-8b65-47f5-98be-57f536db9ac7/resource/5d74315e-8c40-4d36-92a5-2acbe99506d3/download/gains_rate_tables_65-74_apr_1_to_june_30_2025-married-spouse.csv
+  - label: (For Ages 65 to 74) Single Pensioner
+    url: https://data.ontario.ca/dataset/9ae4eb3f-8b65-47f5-98be-57f536db9ac7/resource/05744cda-c23f-44e6-b033-229d186f3973/download/gains_rate_tables_65-74_apr_1_to_june_30_2025-single.csv
+  - label: Ontario GAINS catalogue, selected 2025-2026 English CSV resources
+    url: https://data.ontario.ca/api/3/action/package_show?id=ontario-guaranteed-annual-income-system-benefit-rates
+  - label: Ontario Guaranteed Annual Income System payments for seniors
+    url: https://www.ontario.ca/page/guaranteed-annual-income-system-payments-seniors
+  - label: (For Ages 65 to 74) Married, One Pensioner
+    url: https://data.ontario.ca/dataset/9ae4eb3f-8b65-47f5-98be-57f536db9ac7/resource/a4d784ea-22dd-4c3b-a5ff-6b40dc3c8833/download/gains_rate_tables_65-74_jan_1-march_31_2026-married-1penn.csv
+  - label: (For Ages 65 to 74) Married Both Pensioners
+    url: https://data.ontario.ca/dataset/9ae4eb3f-8b65-47f5-98be-57f536db9ac7/resource/a916dcbc-7131-4c0e-9283-de9e366dbb57/download/gains_rate_tables_65-74_jan_1-march_31_2026-married-couple.csv
+  - label: (For Ages 65 to 74) Married Pensioner, Spouse 60-64
+    url: https://data.ontario.ca/dataset/9ae4eb3f-8b65-47f5-98be-57f536db9ac7/resource/6acba7b7-0f14-48ff-9afb-85b79df66da6/download/gains_rate_tables_65-74_jan_1-march_31_2026-married-spouse.csv
+  - label: (For Ages 65 to 74) Single Pensioner
+    url: https://data.ontario.ca/dataset/9ae4eb3f-8b65-47f5-98be-57f536db9ac7/resource/f4eb31aa-2ee2-493f-89a2-b4632e7af993/download/gains_rate_tables_65-74_jan_1-march_31_2026-single.csv
+  - label: (For Ages 65 to 74) Married, One Pensioner
+    url: https://data.ontario.ca/dataset/9ae4eb3f-8b65-47f5-98be-57f536db9ac7/resource/c91601e2-5427-486f-bf3c-e72653b7e776/download/gains_rate_tables_65-74_jan_1_to_mar_31_2025-married-1penn.csv
+  - label: (For Ages 65 to 74) Married Both Pensioners
+    url: https://data.ontario.ca/dataset/9ae4eb3f-8b65-47f5-98be-57f536db9ac7/resource/4415003a-56dc-434b-8d45-5f11d1970a7b/download/gains_rate_tables_65-74_jan_1_to_mar_31_2025-married-couple.csv
+  - label: (For Ages 65 to 74) Married Pensioner, Spouse 60-64
+    url: https://data.ontario.ca/dataset/9ae4eb3f-8b65-47f5-98be-57f536db9ac7/resource/470e7833-8f4f-429e-9e7c-c3e5cf4d1cc2/download/gains_rate_tables_65-74_jan_1_to_mar_31_2025-married-spouse.csv
+  - label: (For Ages 65 to 74) Single Pensioner
+    url: https://data.ontario.ca/dataset/9ae4eb3f-8b65-47f5-98be-57f536db9ac7/resource/37a6f619-e4c3-4f6b-94d5-b3ace7028dd7/download/gains_rate_tables_65-74_jan_1_to_mar_31_2025-single.csv
+  - label: (For Ages 65 to 74) Married, One Pensioner
+    url: https://data.ontario.ca/dataset/9ae4eb3f-8b65-47f5-98be-57f536db9ac7/resource/448a3991-c61d-45a2-b07a-e2a685630dad/download/gains_rate_tables_65-74_jul_1_to_sept_30_2025-married-1penn.csv
+  - label: (For Ages 65 to 74) Married Both Pensioners
+    url: https://data.ontario.ca/dataset/9ae4eb3f-8b65-47f5-98be-57f536db9ac7/resource/e115d448-039c-4479-acd3-d21716539d04/download/gains_rate_tables_65-74_jul_1_to_sept_30_2025-married-couple.csv
+  - label: (For Ages 65 to 74) Married Pensioner, Spouse 60-64
+    url: https://data.ontario.ca/dataset/9ae4eb3f-8b65-47f5-98be-57f536db9ac7/resource/c9d1f229-ead1-4d6c-8b14-fe44e75424ca/download/gains_rate_tables_65-74_jul_1_to_sept_30_2025-married-spouse.csv
+  - label: (For Ages 65 to 74) Single Pensioner
+    url: https://data.ontario.ca/dataset/9ae4eb3f-8b65-47f5-98be-57f536db9ac7/resource/7e1afe9d-7d8c-49ab-a8a8-b0b017e99206/download/gains_rate_tables_65-74_jul_1_to_sept_30_2025-single.csv
+  - label: (For Ages 65 to 74) Married Pensioner, Spouse 60-64
+    url: https://data.ontario.ca/dataset/9ae4eb3f-8b65-47f5-98be-57f536db9ac7/resource/d967f23a-05cf-47c3-a7ed-3f6506276341/download/gains_rate_tables_65-74_jul_1_to_sept_30_2026-married-spouse-en.csv
+  - label: (For Ages 65 to 74) Single Pensioner
+    url: https://data.ontario.ca/dataset/9ae4eb3f-8b65-47f5-98be-57f536db9ac7/resource/df5a199d-8dab-4eb2-ab42-0e60b2e065db/download/gains_rate_tables_65-74_jul_1_to_sept_30_2026-single-en.csv
+  - label: (For Ages 65 to 74) Married, One Pensioner
+    url: https://data.ontario.ca/dataset/9ae4eb3f-8b65-47f5-98be-57f536db9ac7/resource/702fea73-78b3-4f2b-b2a5-d31b6db4f00c/download/gains_rate_tables_65-74_july_1_to_sept_30_2026-married-1penn-en.csv
+  - label: (For Ages 65 to 74) Married Both Pensioners
+    url: https://data.ontario.ca/dataset/9ae4eb3f-8b65-47f5-98be-57f536db9ac7/resource/499b7fc8-11c1-4a0a-995d-637b3590d275/download/gains_rate_tables_65-74_july_1_to_sept_30_2026-married-couple-en.csv
+  - label: Ontario Seniors Care at Home Tax Credit
+    url: https://www.ontario.ca/page/ontario-seniors-care-home-tax-credit
+  - label: (For Ages 65 to 74) Married, One Pensioner
+    url: https://data.ontario.ca/dataset/9ae4eb3f-8b65-47f5-98be-57f536db9ac7/resource/56944b3b-3559-4065-b0ac-e8e71befac3b/download/gains_rate_tables_65-74_oct_1_to_dec_31_2025-married-1penn.csv
+  - label: (For Ages 65 to 74) Married Both Pensioners
+    url: https://data.ontario.ca/dataset/9ae4eb3f-8b65-47f5-98be-57f536db9ac7/resource/d1baa006-caad-4606-a243-2b197c1072d6/download/gains_rate_tables_65-74_oct_1_to_dec_31_2025-married-couple.csv
+  - label: (For Ages 65 to 74) Married Pensioner, Spouse 60-64
+    url: https://data.ontario.ca/dataset/9ae4eb3f-8b65-47f5-98be-57f536db9ac7/resource/c74b2fad-2164-4769-b05e-71ecb6e6ddb5/download/gains_rate_tables_65-74_oct_1_to_dec_31_2025-married-spouse.csv
+  - label: (For Ages 65 to 74) Single Pensioner
+    url: https://data.ontario.ca/dataset/9ae4eb3f-8b65-47f5-98be-57f536db9ac7/resource/7bf36529-82b0-484e-a74e-a495826e277f/download/gains_rate_tables_65-74_oct_1_to_dec_31_2025-single.csv
+  - label: (For Ages 65 to 74) Married, One Pensioner
+    url: https://data.ontario.ca/dataset/9ae4eb3f-8b65-47f5-98be-57f536db9ac7/resource/115e28d6-62a4-4165-befd-04001056ee5d/download/gains_rate_tables_65-74_oct_1_to_dec_31_2026-married-1penn-en.csv
+  - label: (For Ages 65 to 74) Married Both Pensioners
+    url: https://data.ontario.ca/dataset/9ae4eb3f-8b65-47f5-98be-57f536db9ac7/resource/e9ac388c-4dd7-4725-94ef-5d9ff1d63610/download/gains_rate_tables_65-74_oct_1_to_dec_31_2026-married-couple-en.csv
+  - label: (For Ages 65 to 74) Married Pensioner, Spouse 60-64
+    url: https://data.ontario.ca/dataset/9ae4eb3f-8b65-47f5-98be-57f536db9ac7/resource/c0b45216-f79d-4e07-b90e-d57b3d374daf/download/gains_rate_tables_65-74_oct_1_to_dec_31_2026-married-spouse-en.csv
+  - label: (For Ages 65 to 74) Single Pensioner
+    url: https://data.ontario.ca/dataset/9ae4eb3f-8b65-47f5-98be-57f536db9ac7/resource/bc3ad8c6-aae1-4c5c-b2b7-07963cf949cd/download/gains_rate_tables_65-74_oct_1_to_dec_31_2026-single-en.csv
+  - label: (For Age 75 and Over) Married, One Pensioner
+    url: https://data.ontario.ca/dataset/9ae4eb3f-8b65-47f5-98be-57f536db9ac7/resource/ffd2a7de-57c2-4824-8c33-88b36cc05b24/download/gains_rate_tables_75_apr_1_to_jun_30_2026-married-1penn.csv
+  - label: (For Age 75 and Over) Married Both Pensioners
+    url: https://data.ontario.ca/dataset/9ae4eb3f-8b65-47f5-98be-57f536db9ac7/resource/f776fe66-90f7-4888-a621-3f830ed8a9b9/download/gains_rate_tables_75_apr_1_to_jun_30_2026-married-couple.csv
+  - label: (For Age 75 and Over) Married Pensioner, Spouse 60-64
+    url: https://data.ontario.ca/dataset/9ae4eb3f-8b65-47f5-98be-57f536db9ac7/resource/d108e2cc-d25a-4e43-9e56-78dba8cb9734/download/gains_rate_tables_75_apr_1_to_jun_30_2026-married-spouse.csv
+  - label: (For Age 75 and Over) Single Pensioner
+    url: https://data.ontario.ca/dataset/9ae4eb3f-8b65-47f5-98be-57f536db9ac7/resource/90b0d4b9-23dd-4232-8aa2-eebdc60ca353/download/gains_rate_tables_75_apr_1_to_jun_30_2026-single.csv
+  - label: (For Age 75 and Over) Married, One Pensioner
+    url: https://data.ontario.ca/dataset/9ae4eb3f-8b65-47f5-98be-57f536db9ac7/resource/5c174215-dcc5-4c28-881e-8c383791b0c3/download/gains_rate_tables_75_apr_1_to_june_30_2025-married-1penn.csv
+  - label: (For Age 75 and Over) Married Both Pensioners
+    url: https://data.ontario.ca/dataset/9ae4eb3f-8b65-47f5-98be-57f536db9ac7/resource/b0c4cc28-ec29-4a54-b898-81e1f1858b7f/download/gains_rate_tables_75_apr_1_to_june_30_2025-married-couple.csv
+  - label: (For Age 75 and Over) Married Pensioner, Spouse 60-64
+    url: https://data.ontario.ca/dataset/9ae4eb3f-8b65-47f5-98be-57f536db9ac7/resource/fa7c3eba-2da8-45b3-9dcf-fb3e5376289f/download/gains_rate_tables_75_apr_1_to_june_30_2025-married-spouse.csv
+  - label: (For Age 75 and Over) Single Pensioner
+    url: https://data.ontario.ca/dataset/9ae4eb3f-8b65-47f5-98be-57f536db9ac7/resource/782f5139-a0e8-4a8f-ad20-cb52e342c143/download/gains_rate_tables_75_apr_1_to_june_30_2025-single.csv
+  - label: (For Age 75 and Over) Married, One Pensioner
+    url: https://data.ontario.ca/dataset/9ae4eb3f-8b65-47f5-98be-57f536db9ac7/resource/99255fb8-02d9-44a5-a367-efc1e474398c/download/gains_rate_tables_75_jan_1-march_31_2026-married-1penn.csv
+  - label: (For Age 75 and Over) Married Both Pensioners
+    url: https://data.ontario.ca/dataset/9ae4eb3f-8b65-47f5-98be-57f536db9ac7/resource/1073af4d-c67d-4dae-9f9c-ad6841d9cde9/download/gains_rate_tables_75_jan_1-march_31_2026-married-couple.csv
+  - label: (For Age 75 and Over) Married Pensioner, Spouse 60-64
+    url: https://data.ontario.ca/dataset/9ae4eb3f-8b65-47f5-98be-57f536db9ac7/resource/2c4521a5-fb8a-45c1-85f0-0985d761f2ea/download/gains_rate_tables_75_jan_1-march_31_2026-married-spouse.csv
+  - label: (For Age 75 and Over) Single Pensioner
+    url: https://data.ontario.ca/dataset/9ae4eb3f-8b65-47f5-98be-57f536db9ac7/resource/f0d3316a-8637-4e1f-908d-5f533bda5856/download/gains_rate_tables_75_jan_1-march_31_2026-single.csv
+  - label: (For Age 75 and Over) Married, One Pensioner
+    url: https://data.ontario.ca/dataset/9ae4eb3f-8b65-47f5-98be-57f536db9ac7/resource/4aa7ee84-daaa-4c6c-8cf8-f10346bc2f80/download/gains_rate_tables_75_jan_1_to_mar_31_2025-married-1penn.csv
+  - label: (For Age 75 and Over) Married Both Pensioners
+    url: https://data.ontario.ca/dataset/9ae4eb3f-8b65-47f5-98be-57f536db9ac7/resource/d0015584-037c-413c-9e92-0a9b7f37e07a/download/gains_rate_tables_75_jan_1_to_mar_31_2025-married-couple.csv
+  - label: (For Age 75 and Over) Married Pensioner, Spouse 60-64
+    url: https://data.ontario.ca/dataset/9ae4eb3f-8b65-47f5-98be-57f536db9ac7/resource/7e14aad9-4953-4ffb-937e-519f64d263fb/download/gains_rate_tables_75_jan_1_to_mar_31_2025-married-spouse.csv
+  - label: (For Age 75 and Over) Single Pensioner
+    url: https://data.ontario.ca/dataset/9ae4eb3f-8b65-47f5-98be-57f536db9ac7/resource/27fb61b5-5855-46a5-8e59-47266a8cb57f/download/gains_rate_tables_75_jan_1_to_mar_31_2025-single.csv
+  - label: (For Age 75 and Over) Married, One Pensioner
+    url: https://data.ontario.ca/dataset/9ae4eb3f-8b65-47f5-98be-57f536db9ac7/resource/e51a06f2-3f8f-4df6-9950-826513ba0594/download/gains_rate_tables_75_jul_1_to_sept_30_2025-married-1penn.csv
+  - label: (For Age 75 and Over) Married Both Pensioners
+    url: https://data.ontario.ca/dataset/9ae4eb3f-8b65-47f5-98be-57f536db9ac7/resource/05ff7fd1-8e45-4a52-af85-aa08b5486730/download/gains_rate_tables_75_jul_1_to_sept_30_2025-married-couple.csv
+  - label: (For Age 75 and Over) Married Pensioner, Spouse 60-64
+    url: https://data.ontario.ca/dataset/9ae4eb3f-8b65-47f5-98be-57f536db9ac7/resource/5c5fd417-ffd6-46e7-a340-4019f6f92a5d/download/gains_rate_tables_75_jul_1_to_sept_30_2025-married-spouse.csv
+  - label: (For Age 75 and Over) Single Pensioner
+    url: https://data.ontario.ca/dataset/9ae4eb3f-8b65-47f5-98be-57f536db9ac7/resource/bf59bb5c-1f66-426e-96ed-5ed24fbd0d69/download/gains_rate_tables_75_jul_1_to_sept_30_2025-single.csv
+  - label: (For Age 75 and Over) Married, One Pensioner
+    url: https://data.ontario.ca/dataset/9ae4eb3f-8b65-47f5-98be-57f536db9ac7/resource/33ce7042-2293-4ab3-9e33-f0877d286224/download/gains_rate_tables_75_jul_1_to_sept_30_2026-married-1penn-en.csv
+  - label: (For Age 75 and Over) Married Both Pensioners
+    url: https://data.ontario.ca/dataset/9ae4eb3f-8b65-47f5-98be-57f536db9ac7/resource/09266e2e-d51d-4261-a552-6dd9ecfd9697/download/gains_rate_tables_75_jul_1_to_sept_30_2026-married-couple-en.csv
+  - label: (For Age 75 and Over) Married Pensioner, Spouse 60-64
+    url: https://data.ontario.ca/dataset/9ae4eb3f-8b65-47f5-98be-57f536db9ac7/resource/88db5052-856c-4222-990f-76d4f166470d/download/gains_rate_tables_75_jul_1_to_sept_30_2026-married-spouse-en.csv
+  - label: (For Age 75 and Over) Single Pensioner
+    url: https://data.ontario.ca/dataset/9ae4eb3f-8b65-47f5-98be-57f536db9ac7/resource/8c403189-ebe1-4116-89f1-6b70934798f0/download/gains_rate_tables_75_jul_1_to_sept_30_2026-single-en.csv
+  - label: (For Age 75 and Over) Married, One Pensioner
+    url: https://data.ontario.ca/dataset/9ae4eb3f-8b65-47f5-98be-57f536db9ac7/resource/066bf8f0-6243-4e2d-a544-2b3142a84d41/download/gains_rate_tables_75_oct_1_to_dec_31_2025-married-1penn.csv
+  - label: (For Age 75 and Over) Married Both Pensioners
+    url: https://data.ontario.ca/dataset/9ae4eb3f-8b65-47f5-98be-57f536db9ac7/resource/5a1d703b-1990-4834-aa91-d9235681a21d/download/gains_rate_tables_75_oct_1_to_dec_31_2025-married-couple.csv
+  - label: (For Age 75 and Over) Married Pensioner, Spouse 60-64
+    url: https://data.ontario.ca/dataset/9ae4eb3f-8b65-47f5-98be-57f536db9ac7/resource/40460946-45bb-4550-815b-1d4814565b28/download/gains_rate_tables_75_oct_1_to_dec_31_2025-married-spouse.csv
+  - label: (For Age 75 and Over) Single Pensioner
+    url: https://data.ontario.ca/dataset/9ae4eb3f-8b65-47f5-98be-57f536db9ac7/resource/9bf5837b-0a9b-404d-8dae-a8fef478903f/download/gains_rate_tables_75_oct_1_to_dec_31_2025-single.csv
+  - label: (For Age 75 and Over) Married, One Pensioner
+    url: https://data.ontario.ca/dataset/9ae4eb3f-8b65-47f5-98be-57f536db9ac7/resource/3a85e7dd-a4aa-4731-a7de-01b6a62c07c7/download/gains_rate_tables_75_oct_1_to_dec_31_2026-married-1penn-en.csv
+  - label: (For Age 75 and Over) Married Both Pensioners
+    url: https://data.ontario.ca/dataset/9ae4eb3f-8b65-47f5-98be-57f536db9ac7/resource/134424d9-591e-4793-8767-0a564f76ad8d/download/gains_rate_tables_75_oct_1_to_dec_31_2026-married-couple-en.csv
+  - label: (For Age 75 and Over) Married Pensioner, Spouse 60-64
+    url: https://data.ontario.ca/dataset/9ae4eb3f-8b65-47f5-98be-57f536db9ac7/resource/b43dfa04-65c5-4359-9ca7-6fdda2dabf78/download/gains_rate_tables_75_oct_1_to_dec_31_2026-married-spouse-en.csv
+  - label: (For Age 75 and Over) Single Pensioner
+    url: https://data.ontario.ca/dataset/9ae4eb3f-8b65-47f5-98be-57f536db9ac7/resource/da73823d-57c1-4596-bba0-c2666bf0ce74/download/gains_rate_tables_75_oct_1_to_dec_31_2026-single-en.csv
+  - label: Ontario Guaranteed Annual Income Act, RSO1990 cO17, official Word download
+    url: https://www.ontario.ca/laws/docs/90o17_e.doc
   - {"label": "Ontario Tax", "url": "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5006-c/5006-c-25e.pdf"}
   - {"label": "Provincial Amounts Transferred from your Spouse or Common-Law Partner", "url": "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5006-s2/5006-s2-25e.pdf"}
   - {"label": "Worksheet ON428", "url": "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5006-d/5006-d-25e.pdf"}
@@ -116,3 +255,30 @@ seniorCredits:
     params: {minimumAge: 65, maximum: 6223, threshold: 46330, reductionRate: 0.15}
   pension: {program: federal-pension-capped, params: {maximum: 1762}}
   transfer: schedule2-unused-base
+
+# 2025/2026 senior supplements: current income proxies historical income; ordinary residence assumed.
+# Estimated entries: see docs/verification/21-provincial-supplements.md for explicit derivations.
+seniorSupplements:
+  - program: on-gains
+    name: Ontario GAINS
+    params:
+      reduction: 0.5
+      singleStep: 24
+      coupleStep: 48
+      olderAge: 75
+      quarterly:
+        - maximum: 87
+          youngerOffsets: [0, 0, 8736, 8736]
+          olderOffsets: [0, 0, 9648, 9648]
+        - maximum: 87
+          youngerOffsets: [0, 0, 8736, 8736]
+          olderOffsets: [0, 0, 9648, 9648]
+        - maximum: 90
+          youngerOffsets: [0, 0, 8832, 8832]
+          olderOffsets: [0, 0, 9744, 9744]
+        - maximum: 90
+          youngerOffsets: [0, 0, 8928, 8928]
+          olderOffsets: [0, 0, 9792, 9792]
+    reporting:
+      kind: t5007
+      exemptThrough: 0

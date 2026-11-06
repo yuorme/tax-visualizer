@@ -128,7 +128,9 @@ for (const y of years) {
       const base = compute(y, p, { ...h, people: h.people.map(x => ({ ...x, gis: false, allowance: false })) });
       const benefit = a.breakdown.gisAllowance?.total ?? 0;
       assert.ok(benefit > 0);
-      near(a.famNet - base.famNet, benefit);
+      const reportable = a.breakdown.provincialSupplements?.reported.reduce((a, b) => a + b, 0) ?? 0;
+      const baselineReportable = base.breakdown.provincialSupplements?.reported.reduce((a, b) => a + b, 0) ?? 0;
+      near(a.famNet - base.famNet, benefit + reportable - baselineReportable);
       near(a.cash, base.cash); // netted against tax; cash does not add the same transfer twice
       a.list.forEach((r, i) => {
         near(r.ti, base.list[i].ti);

@@ -1,0 +1,264 @@
+Title: CRA MB479 2025: refundable personal, school and renter credits
+URL: https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5007-tc/5007-tc-25e.pdf
+Fetched: 2026-11-05
+SHA-256 of the original: a06c3e76dfba93327fa16c0732591a8d77a7bea8ec6a9e5031e75857649163c3
+Publication date modified: 2025-11-07
+PDF pages: all 5
+Text extract made with scripts/fetch-source.ts extract/formatExtract helpers; custom destination, no shared index. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 1 of 5 ---
+
+Form MB479
+2025
+Protected B when completed
+Manitoba Credits
+You can claim these refundable tax credits even if you do not have to pay any tax. If the total of these credits is more than the
+amount of taxes you have to pay, you may get a refund for the difference.
+Complete the calculations that apply to you and attach a copy of this form to your paper return.
+For more information about these credits, go to canada.ca/mb-tax-info.
+Family income Column 1
+You
+Column 2
+Your spouse or
+common-law
+partner
+1
+Net income from line 23600 of the return (or the amount you would have
+entered if the instructions on line 23600 said "if negative, show in brackets")
+2
+Total of the universal child care benefit (UCCB) repayment (line 21300
+of the return) and the registered disability savings plan (RDSP) income
+repayment (included on line 23200 of the return) + +
+3Line 1 plus line 2 = =
+4
+Total of the UCCB income (line 11700 of the return) and RDSP income
+(line 12500 of the return) – –
+5Line 3 minus line 4 (if negative, enter "0") = =
+6Family incomeAdd the amounts from line 5 of columns 1 and 2.
+60890If you and your spouse or common-law partner occupied separate
+principal residences for medical reasons at the end of the year,
+do not complete lines 1 to 5 of column 2.
+Enter their address on line 60890.
+Personal tax credit
+7Basic credit
+8Age credit for self (if you were born in 1960 or earlier) Claim $113 +
+9Basic credit for spouse or common-law partner Claim $195
+10
+Age credit for spouse or common-law partner
+(if they were born in 1960 or earlier) Claim $113 +
+11Disability credit for spouse or common-law partner Claim $113 +
+60900 12Add lines 9 to 11. =
+Ż +
+13Credit for an eligible dependant claimed on line 58160 of your Form MB428 Claim $195 +
+14
+Disability credit for self or for a dependant other than your spouse or
+common-law partner
+60950Number of disability claims × $113 = +
+15
+Credit for disabled dependants born in 2007 or earlier
+60970Number of disabled dependants × $62 = +
+16
+Credit for dependent children born in 2007 or later
+60999Number of dependent children × $26 = +
+61050 17Total creditsAdd lines 7, 8, and 12 to 16. =
+18Amount from line 6 above × 1% = –
+19Personal tax credit
+Line 17 minus line 18 (if negative, enter "0")
+Enter this amount on line 54. =
+If you are not claiming the homeowners affordability tax credit, renters affordability tax credit, or seniors school tax rebate,
+enter "0" on line 53 and continue at line 54. Otherwise, continue with the next section.
+5007-TC E (25) (Ce formulaire est disponible en français.) Page 1 of 5
+195.00
+
+--- PDF page 2 of 5 ---
+
+Protected B when completed
+Homeowners Affordability Tax Credit
+If you have a spouse or common-law partner, only one of you can claim this credit for a principal residence for the same year.
+Declaration for the homeowners affordability tax credit (if you need more space, use a separate sheet of paper)
+By signing my return, I certify the following information about my principal residences in Manitoba during 2025:
+Column A
+Address
+Column B
+Number
+of days at
+address
+(1)
+Column C
+School
+taxes
+(2)
+Column D
+Name of any
+individual(s) who shared
+accommodation with you
+(3)
+Column E
+Municipality payment
+was made to
+Column F
+Roll number
+(1) Enter the number of days in the year that you qualified to claim the credit for this property.
+(2) Enter the gross school taxes minus the homeowners affordability tax credit advance from your property tax statement, if any. If
+your municipal property tax account was credited for a late-designation of your principal residence and you received a credit to that
+account after your municipal property tax statement was issued, enter your gross school taxes minus the amount credited.
+If you are a mobile homeowner, you may be eligible to use certain amounts you paid in the year in the calculation of
+your school taxes paid. For more information, go to canada.ca/mb-tax-info.
+(3) Do not include your spouse, common-law partner, and/or dependent children.
+61120 20School taxes (total of column C above)
+61140 21
+Homeowners affordability tax credit advance shown on your property tax statement
+(if not received, enter "0") or amount credited to your municipal property tax
+account for a late-designation of your principal residence. +
+61160 22Line 20 plus line 21 =
+23Base amount
+2461163Number of days at address (total of column B above) ÷ 365 = ×
+25Line 23 multiplied by line 24 =
+26Enter whichever is less: amount from line 22 or line 25.
+27Amount from line 21 –
+28Homeowners affordability tax creditLine 26 minus line 27 (if negative, enter "0") =
+5007-TC E (25) Page 2 of 5
+1,500.00
+
+--- PDF page 3 of 5 ---
+
+Protected B when completed
+Renters affordability tax credit
+Only one person can claim this credit for a given residence for a given month.
+A person cannot claim this credit for any month for a residence they shared with the owner of the residence.
+Declaration for the renters affordability tax credit (if you need more space, use a separate sheet of paper)
+By signing my return, I certify the following information about my rentals in Manitoba during 2025:
+Column A
+Rental address
+Column B
+Rent paid
+at address
+Column C
+Number
+of months
+(4)
+Column D
+Name of any individual(s)
+who shared
+accommodation with you
+(5)
+Column E
+Name of landlord
+payment was made to
+(4) You must qualify and have resided at the address for more than half of the days of the month being claimed.
+(5) Do not include your spouse, common-law partner, and/or dependent children.
+29Amount from line 28 of the previous page
+61165 30Rent paid (total of column B above) •
+If you (or your spouse or common-law partner) were 65 years of age or older at the end of the
+year, complete lines 31 to 35. If both of you were under 65 years of age at the end of the year,
+enter "0" on line 35 and continue at line 36.
+31Base amount
+32Amount from line 6 × 0.8214% = (maximum $328.57) –
+33Line 31 minus line 32 =
+34Number of months in the year ÷
+35Line 33 divided by line 34 =
+36Enter whichever is more: amount from line 35 or $47.91.
+61167 37Number of months (total of column C above) ×
+38Line 36 multiplied by line 37 =
+39Renters tax creditEnter whichever is less: amount from line 30 or line 38. +
+40Line 29 plus line 39 =
+5007-TC E (25) Page 3 of 5
+903.57
+12
+
+--- PDF page 4 of 5 ---
+
+Protected B when completed
+41Amount from line 40 of the previous page
+Seniors school tax rebate
+Complete lines 42 to 52 if all of the following conditions are met:
+• You (or your spouse or common-law partner) were a homeowner
+• You (or your spouse or common-law partner) were 65 years of age or older at the end of the year
+• Your family income (line 6) is less than $63,500
+Otherwise, enter "0" on line 52 and continue at line 53.
+Note: The person who claims the homeowners affordability tax credit (line 28) must also be the
+person who claims the seniors school tax rebate. If you have a spouse or common-law
+partner, only one of you can claim this rebate for a principal residence for the same year.
+61170 42
+Amount from line 22 from page 2. Include the community revitalization
+levy amounts in lieu of school taxes from your municipal property tax
+statement, if any.
+43Amount from line 26 of page 2 –
+44Line 42 minus line 43 (if negative, enter "0") (maximum $235) =
+45Amount from line 6
+46Base amount –
+47Line 45 minus line 46 (if negative, enter "0") =
+48Applicable percentage ×
+49Line 47 multiplied by the percentage from line 48 =
+Ż –
+50Line 44 minus line 49 (if negative, enter "0") =
+51Amount from line 24 of page 2 ×
+52Seniors school tax rebateLine 50 multiplied by line 51 =
+Ż +
+53Line 41 plus line 52 =
+54Enter your personal tax credit from line 19. +
+55Line 53 plus line 54 =
+Employment and Income Assistance (EIA) and Manitoba Supports for Persons with Disabilities (MSPD)
+If you (or your spouse or common-law partner) did not receive EIA or MSPD payments from Manitoba
+in 2025, do not complete line 56. Instead, enter the amount from line 55 on line 57 and continue at line 58.
+61255 56
+If you (or your spouse or common-law partner) did receive EIA or MSPD payments from Manitoba
+in 2025, enter the number from box 14 of your (or your spouse's or common-law partner's)
+Form T5007, Statement of Benefits (even if it is 0.00). If you and your spouse or common-law
+partner both received EIA or MSPD payments from Manitoba in 2025, enter the number shown in
+box 14 of your T5007 slip or theirs, whichever is less. × •
+57
+If you entered a number on line 56, multiply line 55 by line 56.
+Otherwise, enter the amount from line 55. =
+5007-TC E (25) Page 4 of 5
+40,000.00
+1%
+
+--- PDF page 5 of 5 ---
+
+Protected B when completed
+Other tax credits
+58Amount from line 57 of the previous page
+61260 59Primary caregiver tax credit + •
+60Line 58 plus line 59 =
+61
+Fertility treatment tax credit:
+61268Eligible medical expenses for fertility treatments × 40% = (maximum $16,000) +
+62Line 60 plus line 61 =
+61310 63Paid work experience tax credit + •
+64Line 62 plus line 63 =
+61340 65Enter your unused odour-control tax credit from your 2024 notice of assessment or reassessment. + •
+66Line 64 plus line 65 =
+61380 67
+Green energy equipment tax credit (purchaser):
+Complete Form T1294. •
+61390 68
+Green energy equipment tax credit (manufacturer):
+7.5% of the adjusted cost of geothermal heat pumps + •
+69Line 67 plus line 68 =
+Ż +
+70Line 66 plus line 69 =
+61430 71Enter your book publishing tax credit from Form T1299. + •
+72Line 70 plus line 71 =
+61480 73Cultural industries printing tax credit (maximum $1,100,000) + •
+74Line 72 plus line 73 =
+61484 75
+Enter your Manitoba community enterprise development tax credit
+from line 4 of Form T1256. (maximum $27,000) + •
+76Line 74 plus line 75 =
+61490 77
+Enter your Manitoba employee share purchase tax credit
+from line 6 of Form T1256-2. (maximum $27,000) + •
+78Line 76 plus line 77 =
+79
+Teaching expense tax credit:
+61495Eligible teaching supplies expenses (maximum $1,000) × 15% = +
+61496 80
+Rental housing construction incentive tax credit:
+Certificate number: Tax credit amount from your certificate +
+81Manitoba credits
+Add lines 78 to 80.
+Enter this amount on line 47900 of your return. =
+See the privacy notice on your return.
+5007-TC E (25) Page 5 of 5

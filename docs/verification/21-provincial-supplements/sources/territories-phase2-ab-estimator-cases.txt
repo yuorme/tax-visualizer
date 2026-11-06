@@ -1,0 +1,218 @@
+Title: Official Alberta Seniors Benefit estimator synthetic response cases
+URL: https://www.seniors.alberta.ca/submit-documents/EstimateBenefits.php
+Fetched: 2026-11-05
+Method: POST public estimator, synthetic cases; no application or personal identifying information.
+Parameters follow https://www.seniors.alberta.ca/js/estimators/webcalc.min.js callEstimateWS.
+SHA-256: each response below hashes its original response bytes, not the containing extract.
+OAS receipts held at 8791.1 solely as a synthetic input; NDI sent explicitly.
+================================================================================
+
+Case: jan-single-10000
+Request: {"MaritalStatus":"Single","ApplicantResidenceCode":"H","ApplicantOASFlag":"Yes","SpouseOver65Flag":"No","SpouseResidenceCode":"H","SpouseOASFlag":"No","IsClient65asofJuly2021":"No","ApplicantNDI":"10000","SpouseNDI":"0.0","ApplicantOASAmt":"8791.1","SpouseOASAmt":"0.0","ApplicantGISAmt":"0.0","SpouseGISAmt":"0.0","ApplicantTotalIncome":"18791.1","SpouseTotalIncome":"0.0","EffectiveDate":"2026-01-01"}
+HTTP status: 200
+SHA-256 of original response: 4b7a790183d339a8f05457dd9bb1696eeb38b659247732eb1c54b4750e9cfa4d
+Response: {"APPASBAmount":199.5,"APPSABAmount":0,"SPSASBAmount":0,"SPSSABAmount":0}
+
+Case: jan-single-25294.9
+Request: {"MaritalStatus":"Single","ApplicantResidenceCode":"H","ApplicantOASFlag":"Yes","SpouseOver65Flag":"No","SpouseResidenceCode":"H","SpouseOASFlag":"No","IsClient65asofJuly2021":"No","ApplicantNDI":"25294.9","SpouseNDI":"0.0","ApplicantOASAmt":"8791.1","SpouseOASAmt":"0.0","ApplicantGISAmt":"0.0","SpouseGISAmt":"0.0","ApplicantTotalIncome":"34086","SpouseTotalIncome":"0.0","EffectiveDate":"2026-01-01"}
+HTTP status: 200
+SHA-256 of original response: 9ce3fb167918c723af61fb62abc43c9e97706d88e9a7a33bf4ea644f09c3f6ea
+Response: {"APPASBAmount":10,"APPSABAmount":0,"SPSASBAmount":0,"SPSSABAmount":0}
+
+Case: jan-single-25295
+Request: {"MaritalStatus":"Single","ApplicantResidenceCode":"H","ApplicantOASFlag":"Yes","SpouseOver65Flag":"No","SpouseResidenceCode":"H","SpouseOASFlag":"No","IsClient65asofJuly2021":"No","ApplicantNDI":"25295","SpouseNDI":"0.0","ApplicantOASAmt":"8791.1","SpouseOASAmt":"0.0","ApplicantGISAmt":"0.0","SpouseGISAmt":"0.0","ApplicantTotalIncome":"34086.1","SpouseTotalIncome":"0.0","EffectiveDate":"2026-01-01"}
+HTTP status: 200
+SHA-256 of original response: 9ce3fb167918c723af61fb62abc43c9e97706d88e9a7a33bf4ea644f09c3f6ea
+Response: {"APPASBAmount":10,"APPSABAmount":0,"SPSASBAmount":0,"SPSSABAmount":0}
+
+Case: jan-single-25295.1
+Request: {"MaritalStatus":"Single","ApplicantResidenceCode":"H","ApplicantOASFlag":"Yes","SpouseOver65Flag":"No","SpouseResidenceCode":"H","SpouseOASFlag":"No","IsClient65asofJuly2021":"No","ApplicantNDI":"25295.1","SpouseNDI":"0.0","ApplicantOASAmt":"8791.1","SpouseOASAmt":"0.0","ApplicantGISAmt":"0.0","SpouseGISAmt":"0.0","ApplicantTotalIncome":"34086.2","SpouseTotalIncome":"0.0","EffectiveDate":"2026-01-01"}
+HTTP status: 200
+SHA-256 of original response: 9ce3fb167918c723af61fb62abc43c9e97706d88e9a7a33bf4ea644f09c3f6ea
+Response: {"APPASBAmount":10,"APPSABAmount":0,"SPSASBAmount":0,"SPSSABAmount":0}
+
+Case: jan-single-25424.9
+Request: {"MaritalStatus":"Single","ApplicantResidenceCode":"H","ApplicantOASFlag":"Yes","SpouseOver65Flag":"No","SpouseResidenceCode":"H","SpouseOASFlag":"No","IsClient65asofJuly2021":"No","ApplicantNDI":"25424.9","SpouseNDI":"0.0","ApplicantOASAmt":"8791.1","SpouseOASAmt":"0.0","ApplicantGISAmt":"0.0","SpouseGISAmt":"0.0","ApplicantTotalIncome":"34216","SpouseTotalIncome":"0.0","EffectiveDate":"2026-01-01"}
+HTTP status: 200
+SHA-256 of original response: 9ce3fb167918c723af61fb62abc43c9e97706d88e9a7a33bf4ea644f09c3f6ea
+Response: {"APPASBAmount":10,"APPSABAmount":0,"SPSASBAmount":0,"SPSSABAmount":0}
+
+Case: jan-single-25425
+Request: {"MaritalStatus":"Single","ApplicantResidenceCode":"H","ApplicantOASFlag":"Yes","SpouseOver65Flag":"No","SpouseResidenceCode":"H","SpouseOASFlag":"No","IsClient65asofJuly2021":"No","ApplicantNDI":"25425","SpouseNDI":"0.0","ApplicantOASAmt":"8791.1","SpouseOASAmt":"0.0","ApplicantGISAmt":"0.0","SpouseGISAmt":"0.0","ApplicantTotalIncome":"34216.1","SpouseTotalIncome":"0.0","EffectiveDate":"2026-01-01"}
+HTTP status: 200
+SHA-256 of original response: 9ce3fb167918c723af61fb62abc43c9e97706d88e9a7a33bf4ea644f09c3f6ea
+Response: {"APPASBAmount":10,"APPSABAmount":0,"SPSASBAmount":0,"SPSSABAmount":0}
+
+Case: jan-single-25425.1
+Request: {"MaritalStatus":"Single","ApplicantResidenceCode":"H","ApplicantOASFlag":"Yes","SpouseOver65Flag":"No","SpouseResidenceCode":"H","SpouseOASFlag":"No","IsClient65asofJuly2021":"No","ApplicantNDI":"25425.1","SpouseNDI":"0.0","ApplicantOASAmt":"8791.1","SpouseOASAmt":"0.0","ApplicantGISAmt":"0.0","SpouseGISAmt":"0.0","ApplicantTotalIncome":"34216.2","SpouseTotalIncome":"0.0","EffectiveDate":"2026-01-01"}
+HTTP status: 200
+SHA-256 of original response: 9ce3fb167918c723af61fb62abc43c9e97706d88e9a7a33bf4ea644f09c3f6ea
+Response: {"APPASBAmount":10,"APPSABAmount":0,"SPSASBAmount":0,"SPSSABAmount":0}
+
+Case: jan-single-25426
+Request: {"MaritalStatus":"Single","ApplicantResidenceCode":"H","ApplicantOASFlag":"Yes","SpouseOver65Flag":"No","SpouseResidenceCode":"H","SpouseOASFlag":"No","IsClient65asofJuly2021":"No","ApplicantNDI":"25426","SpouseNDI":"0.0","ApplicantOASAmt":"8791.1","SpouseOASAmt":"0.0","ApplicantGISAmt":"0.0","SpouseGISAmt":"0.0","ApplicantTotalIncome":"34217.1","SpouseTotalIncome":"0.0","EffectiveDate":"2026-01-01"}
+HTTP status: 200
+SHA-256 of original response: 3bb6062da034fc3ef6222a6123f59a0e2f18ef71e2b4f67f9a02027e58730f24
+Response: {"APPASBAmount":0,"APPSABAmount":0,"SPSASBAmount":0,"SPSSABAmount":0}
+
+Case: july-single-23019.9
+Request: {"MaritalStatus":"Single","ApplicantResidenceCode":"H","ApplicantOASFlag":"Yes","SpouseOver65Flag":"No","SpouseResidenceCode":"H","SpouseOASFlag":"No","IsClient65asofJuly2021":"No","ApplicantNDI":"23019.9","SpouseNDI":"0.0","ApplicantOASAmt":"8791.1","SpouseOASAmt":"0.0","ApplicantGISAmt":"0.0","SpouseGISAmt":"0.0","ApplicantTotalIncome":"31811","SpouseTotalIncome":"0.0","EffectiveDate":"2026-07-01"}
+HTTP status: 200
+SHA-256 of original response: 9ce3fb167918c723af61fb62abc43c9e97706d88e9a7a33bf4ea644f09c3f6ea
+Response: {"APPASBAmount":10,"APPSABAmount":0,"SPSASBAmount":0,"SPSSABAmount":0}
+
+Case: july-single-23020
+Request: {"MaritalStatus":"Single","ApplicantResidenceCode":"H","ApplicantOASFlag":"Yes","SpouseOver65Flag":"No","SpouseResidenceCode":"H","SpouseOASFlag":"No","IsClient65asofJuly2021":"No","ApplicantNDI":"23020","SpouseNDI":"0.0","ApplicantOASAmt":"8791.1","SpouseOASAmt":"0.0","ApplicantGISAmt":"0.0","SpouseGISAmt":"0.0","ApplicantTotalIncome":"31811.1","SpouseTotalIncome":"0.0","EffectiveDate":"2026-07-01"}
+HTTP status: 200
+SHA-256 of original response: 9ce3fb167918c723af61fb62abc43c9e97706d88e9a7a33bf4ea644f09c3f6ea
+Response: {"APPASBAmount":10,"APPSABAmount":0,"SPSASBAmount":0,"SPSSABAmount":0}
+
+Case: july-single-23020.1
+Request: {"MaritalStatus":"Single","ApplicantResidenceCode":"H","ApplicantOASFlag":"Yes","SpouseOver65Flag":"No","SpouseResidenceCode":"H","SpouseOASFlag":"No","IsClient65asofJuly2021":"No","ApplicantNDI":"23020.1","SpouseNDI":"0.0","ApplicantOASAmt":"8791.1","SpouseOASAmt":"0.0","ApplicantGISAmt":"0.0","SpouseGISAmt":"0.0","ApplicantTotalIncome":"31811.199999999997","SpouseTotalIncome":"0.0","EffectiveDate":"2026-07-01"}
+HTTP status: 200
+SHA-256 of original response: 9ce3fb167918c723af61fb62abc43c9e97706d88e9a7a33bf4ea644f09c3f6ea
+Response: {"APPASBAmount":10,"APPSABAmount":0,"SPSASBAmount":0,"SPSSABAmount":0}
+
+Case: july-single-23021.9
+Request: {"MaritalStatus":"Single","ApplicantResidenceCode":"H","ApplicantOASFlag":"Yes","SpouseOver65Flag":"No","SpouseResidenceCode":"H","SpouseOASFlag":"No","IsClient65asofJuly2021":"No","ApplicantNDI":"23021.9","SpouseNDI":"0.0","ApplicantOASAmt":"8791.1","SpouseOASAmt":"0.0","ApplicantGISAmt":"0.0","SpouseGISAmt":"0.0","ApplicantTotalIncome":"31813","SpouseTotalIncome":"0.0","EffectiveDate":"2026-07-01"}
+HTTP status: 200
+SHA-256 of original response: 9ce3fb167918c723af61fb62abc43c9e97706d88e9a7a33bf4ea644f09c3f6ea
+Response: {"APPASBAmount":10,"APPSABAmount":0,"SPSASBAmount":0,"SPSSABAmount":0}
+
+Case: july-single-23022
+Request: {"MaritalStatus":"Single","ApplicantResidenceCode":"H","ApplicantOASFlag":"Yes","SpouseOver65Flag":"No","SpouseResidenceCode":"H","SpouseOASFlag":"No","IsClient65asofJuly2021":"No","ApplicantNDI":"23022","SpouseNDI":"0.0","ApplicantOASAmt":"8791.1","SpouseOASAmt":"0.0","ApplicantGISAmt":"0.0","SpouseGISAmt":"0.0","ApplicantTotalIncome":"31813.1","SpouseTotalIncome":"0.0","EffectiveDate":"2026-07-01"}
+HTTP status: 200
+SHA-256 of original response: 9ce3fb167918c723af61fb62abc43c9e97706d88e9a7a33bf4ea644f09c3f6ea
+Response: {"APPASBAmount":10,"APPSABAmount":0,"SPSASBAmount":0,"SPSSABAmount":0}
+
+Case: july-single-23022.1
+Request: {"MaritalStatus":"Single","ApplicantResidenceCode":"H","ApplicantOASFlag":"Yes","SpouseOver65Flag":"No","SpouseResidenceCode":"H","SpouseOASFlag":"No","IsClient65asofJuly2021":"No","ApplicantNDI":"23022.1","SpouseNDI":"0.0","ApplicantOASAmt":"8791.1","SpouseOASAmt":"0.0","ApplicantGISAmt":"0.0","SpouseGISAmt":"0.0","ApplicantTotalIncome":"31813.199999999997","SpouseTotalIncome":"0.0","EffectiveDate":"2026-07-01"}
+HTTP status: 200
+SHA-256 of original response: 9ce3fb167918c723af61fb62abc43c9e97706d88e9a7a33bf4ea644f09c3f6ea
+Response: {"APPASBAmount":10,"APPSABAmount":0,"SPSASBAmount":0,"SPSSABAmount":0}
+
+Case: july-single-23023
+Request: {"MaritalStatus":"Single","ApplicantResidenceCode":"H","ApplicantOASFlag":"Yes","SpouseOver65Flag":"No","SpouseResidenceCode":"H","SpouseOASFlag":"No","IsClient65asofJuly2021":"No","ApplicantNDI":"23023","SpouseNDI":"0.0","ApplicantOASAmt":"8791.1","SpouseOASAmt":"0.0","ApplicantGISAmt":"0.0","SpouseGISAmt":"0.0","ApplicantTotalIncome":"31814.1","SpouseTotalIncome":"0.0","EffectiveDate":"2026-07-01"}
+HTTP status: 200
+SHA-256 of original response: 3bb6062da034fc3ef6222a6123f59a0e2f18ef71e2b4f67f9a02027e58730f24
+Response: {"APPASBAmount":0,"APPSABAmount":0,"SPSASBAmount":0,"SPSSABAmount":0}
+
+Case: july-couple-zero
+Request: {"MaritalStatus":"Married","ApplicantResidenceCode":"H","ApplicantOASFlag":"Yes","SpouseOver65Flag":"Yes","SpouseResidenceCode":"H","SpouseOASFlag":"Yes","IsClient65asofJuly2021":"No","ApplicantNDI":"0","SpouseNDI":"0","ApplicantOASAmt":"8791.1","SpouseOASAmt":"8791.1","ApplicantGISAmt":"0.0","SpouseGISAmt":"0.0","ApplicantTotalIncome":"8791.1","SpouseTotalIncome":"8791.1","EffectiveDate":"2026-07-01"}
+HTTP status: 200
+SHA-256 of original response: 3e2411c4f2153d437eb7d08ec5b4ee7be5ee7efafb46510e3032387159e50dbf
+Response: {"APPASBAmount":246.59,"APPSABAmount":0,"SPSASBAmount":246.59,"SPSSABAmount":0}
+
+Case: july-one-senior-zero
+Request: {"MaritalStatus":"Married","ApplicantResidenceCode":"H","ApplicantOASFlag":"Yes","SpouseOver65Flag":"No","SpouseResidenceCode":"H","SpouseOASFlag":"No","IsClient65asofJuly2021":"No","ApplicantNDI":"0","SpouseNDI":"0","ApplicantOASAmt":"8791.1","SpouseOASAmt":"0.0","ApplicantGISAmt":"0.0","SpouseGISAmt":"0.0","ApplicantTotalIncome":"8791.1","SpouseTotalIncome":"0","EffectiveDate":"2026-07-01"}
+HTTP status: 200
+SHA-256 of original response: 577233bd18571c8439b0ced689a020d36b7b504a2554f5ec6c1c1e4748cc16f5
+Response: {"APPASBAmount":493.17,"APPSABAmount":0,"SPSASBAmount":0,"SPSSABAmount":0}
+
+Case: july-couple-10000
+Request: {"MaritalStatus":"Married","ApplicantResidenceCode":"H","ApplicantOASFlag":"Yes","SpouseOver65Flag":"Yes","SpouseResidenceCode":"H","SpouseOASFlag":"Yes","IsClient65asofJuly2021":"No","ApplicantNDI":"0","SpouseNDI":"10000","ApplicantOASAmt":"8791.1","SpouseOASAmt":"8791.1","ApplicantGISAmt":"0.0","SpouseGISAmt":"0.0","ApplicantTotalIncome":"8791.1","SpouseTotalIncome":"18791.1","EffectiveDate":"2026-07-01"}
+HTTP status: 200
+SHA-256 of original response: e4d49216ca33b16bff5fc50e07f7623cb7c843c08f61406b4d78fe91412acb61
+Response: {"APPASBAmount":175.05,"APPSABAmount":0,"SPSASBAmount":175.05,"SPSSABAmount":0}
+
+Case: july-couple-negative
+Request: {"MaritalStatus":"Married","ApplicantResidenceCode":"H","ApplicantOASFlag":"Yes","SpouseOver65Flag":"Yes","SpouseResidenceCode":"H","SpouseOASFlag":"Yes","IsClient65asofJuly2021":"No","ApplicantNDI":"-5000","SpouseNDI":"10000","ApplicantOASAmt":"8791.1","SpouseOASAmt":"8791.1","ApplicantGISAmt":"0.0","SpouseGISAmt":"0.0","ApplicantTotalIncome":"3791.1000000000004","SpouseTotalIncome":"18791.1","EffectiveDate":"2026-07-01"}
+HTTP status: 200
+SHA-256 of original response: e4d49216ca33b16bff5fc50e07f7623cb7c843c08f61406b4d78fe91412acb61
+Response: {"APPASBAmount":175.05,"APPSABAmount":0,"SPSASBAmount":175.05,"SPSSABAmount":0}
+
+Case: jan-single-cent-25425.25
+Request: {"MaritalStatus":"Single","ApplicantResidenceCode":"H","ApplicantOASFlag":"Yes","SpouseOver65Flag":"No","SpouseResidenceCode":"H","SpouseOASFlag":"No","IsClient65asofJuly2021":"No","ApplicantNDI":"25425.25","SpouseNDI":"0.0","ApplicantOASAmt":"8791.1","SpouseOASAmt":"0.0","ApplicantGISAmt":"0.0","SpouseGISAmt":"0.0","ApplicantTotalIncome":"34216.35","SpouseTotalIncome":"0.0","EffectiveDate":"2026-01-01"}
+HTTP status: 200
+SHA-256 of original response: 9ce3fb167918c723af61fb62abc43c9e97706d88e9a7a33bf4ea644f09c3f6ea
+Response: {"APPASBAmount":10,"APPSABAmount":0,"SPSASBAmount":0,"SPSSABAmount":0}
+
+Case: jan-single-cent-25425.26
+Request: {"MaritalStatus":"Single","ApplicantResidenceCode":"H","ApplicantOASFlag":"Yes","SpouseOver65Flag":"No","SpouseResidenceCode":"H","SpouseOASFlag":"No","IsClient65asofJuly2021":"No","ApplicantNDI":"25425.26","SpouseNDI":"0.0","ApplicantOASAmt":"8791.1","SpouseOASAmt":"0.0","ApplicantGISAmt":"0.0","SpouseGISAmt":"0.0","ApplicantTotalIncome":"34216.36","SpouseTotalIncome":"0.0","EffectiveDate":"2026-01-01"}
+HTTP status: 200
+SHA-256 of original response: 3bb6062da034fc3ef6222a6123f59a0e2f18ef71e2b4f67f9a02027e58730f24
+Response: {"APPASBAmount":0,"APPSABAmount":0,"SPSASBAmount":0,"SPSSABAmount":0}
+
+Case: july-single-cent-23022.17
+Request: {"MaritalStatus":"Single","ApplicantResidenceCode":"H","ApplicantOASFlag":"Yes","SpouseOver65Flag":"No","SpouseResidenceCode":"H","SpouseOASFlag":"No","IsClient65asofJuly2021":"No","ApplicantNDI":"23022.17","SpouseNDI":"0.0","ApplicantOASAmt":"8791.1","SpouseOASAmt":"0.0","ApplicantGISAmt":"0.0","SpouseGISAmt":"0.0","ApplicantTotalIncome":"31813.269999999997","SpouseTotalIncome":"0.0","EffectiveDate":"2026-07-01"}
+HTTP status: 200
+SHA-256 of original response: 3bb6062da034fc3ef6222a6123f59a0e2f18ef71e2b4f67f9a02027e58730f24
+Response: {"APPASBAmount":0,"APPSABAmount":0,"SPSASBAmount":0,"SPSSABAmount":0}
+
+Case: july-single-cent-23022.18
+Request: {"MaritalStatus":"Single","ApplicantResidenceCode":"H","ApplicantOASFlag":"Yes","SpouseOver65Flag":"No","SpouseResidenceCode":"H","SpouseOASFlag":"No","IsClient65asofJuly2021":"No","ApplicantNDI":"23022.18","SpouseNDI":"0.0","ApplicantOASAmt":"8791.1","SpouseOASAmt":"0.0","ApplicantGISAmt":"0.0","SpouseGISAmt":"0.0","ApplicantTotalIncome":"31813.28","SpouseTotalIncome":"0.0","EffectiveDate":"2026-07-01"}
+HTTP status: 200
+SHA-256 of original response: 3bb6062da034fc3ef6222a6123f59a0e2f18ef71e2b4f67f9a02027e58730f24
+Response: {"APPASBAmount":0,"APPSABAmount":0,"SPSASBAmount":0,"SPSSABAmount":0}
+
+Case: july-couple-minimum
+Request: {"MaritalStatus":"Married","ApplicantResidenceCode":"H","ApplicantOASFlag":"Yes","SpouseOver65Flag":"Yes","SpouseResidenceCode":"H","SpouseOASFlag":"Yes","IsClient65asofJuly2021":"No","ApplicantNDI":"0","SpouseNDI":"34000","ApplicantOASAmt":"8791.1","SpouseOASAmt":"8791.1","ApplicantGISAmt":"0.0","SpouseGISAmt":"0.0","ApplicantTotalIncome":"8791.1","SpouseTotalIncome":"42791.1","EffectiveDate":"2026-07-01"}
+HTTP status: 200
+SHA-256 of original response: 365a8b4ba95d0e17cb0214c41f6d7c987b5ce17ebfb83bd699c149f11db6927a
+Response: {"APPASBAmount":10,"APPSABAmount":0,"SPSASBAmount":10,"SPSSABAmount":0}
+
+Case: july-one-senior-minimum
+Request: {"MaritalStatus":"Married","ApplicantResidenceCode":"H","ApplicantOASFlag":"Yes","SpouseOver65Flag":"No","SpouseResidenceCode":"H","SpouseOASFlag":"No","IsClient65asofJuly2021":"No","ApplicantNDI":"0","SpouseNDI":"34000","ApplicantOASAmt":"8791.1","SpouseOASAmt":"0.0","ApplicantGISAmt":"0.0","SpouseGISAmt":"0.0","ApplicantTotalIncome":"8791.1","SpouseTotalIncome":"34000","EffectiveDate":"2026-07-01"}
+HTTP status: 200
+SHA-256 of original response: 9ce3fb167918c723af61fb62abc43c9e97706d88e9a7a33bf4ea644f09c3f6ea
+Response: {"APPASBAmount":10,"APPSABAmount":0,"SPSASBAmount":0,"SPSSABAmount":0}
+
+Case: july-couple-cent-34467.09
+Request: {"MaritalStatus":"Married","ApplicantResidenceCode":"H","ApplicantOASFlag":"Yes","SpouseOver65Flag":"Yes","SpouseResidenceCode":"H","SpouseOASFlag":"Yes","IsClient65asofJuly2021":"No","ApplicantNDI":"0","SpouseNDI":"34467.09","ApplicantOASAmt":"8791.1","SpouseOASAmt":"8791.1","ApplicantGISAmt":"0.0","SpouseGISAmt":"0.0","ApplicantTotalIncome":"8791.1","SpouseTotalIncome":"43258.189999999995","EffectiveDate":"2026-07-01"}
+HTTP status: 200
+SHA-256 of original response: 365a8b4ba95d0e17cb0214c41f6d7c987b5ce17ebfb83bd699c149f11db6927a
+Response: {"APPASBAmount":10,"APPSABAmount":0,"SPSASBAmount":10,"SPSSABAmount":0}
+
+Case: july-couple-cent-34467.1
+Request: {"MaritalStatus":"Married","ApplicantResidenceCode":"H","ApplicantOASFlag":"Yes","SpouseOver65Flag":"Yes","SpouseResidenceCode":"H","SpouseOASFlag":"Yes","IsClient65asofJuly2021":"No","ApplicantNDI":"0","SpouseNDI":"34467.1","ApplicantOASAmt":"8791.1","SpouseOASAmt":"8791.1","ApplicantGISAmt":"0.0","SpouseGISAmt":"0.0","ApplicantTotalIncome":"8791.1","SpouseTotalIncome":"43258.2","EffectiveDate":"2026-07-01"}
+HTTP status: 200
+SHA-256 of original response: 3bb6062da034fc3ef6222a6123f59a0e2f18ef71e2b4f67f9a02027e58730f24
+Response: {"APPASBAmount":0,"APPSABAmount":0,"SPSASBAmount":0,"SPSSABAmount":0}
+
+Case: jan-single-zero
+Request: {"MaritalStatus":"Single","ApplicantResidenceCode":"H","ApplicantOASFlag":"Yes","SpouseOver65Flag":"No","SpouseResidenceCode":"H","SpouseOASFlag":"No","IsClient65asofJuly2021":"No","ApplicantNDI":"0","SpouseNDI":"0.0","ApplicantOASAmt":"8791.1","SpouseOASAmt":"0.0","ApplicantGISAmt":"0.0","SpouseGISAmt":"0.0","ApplicantTotalIncome":"8791.1","SpouseTotalIncome":"0.0","EffectiveDate":"2026-01-01"}
+HTTP status: 200
+SHA-256 of original response: 601f1a622d82a78927e08e8ee71944b4c4514b1fa0f57add945ab8e52654af85
+Response: {"APPASBAmount":328.84,"APPSABAmount":0,"SPSASBAmount":0,"SPSSABAmount":0}
+
+Case: july-single-zero
+Request: {"MaritalStatus":"Single","ApplicantResidenceCode":"H","ApplicantOASFlag":"Yes","SpouseOver65Flag":"No","SpouseResidenceCode":"H","SpouseOASFlag":"No","IsClient65asofJuly2021":"No","ApplicantNDI":"0","SpouseNDI":"0.0","ApplicantOASAmt":"8791.1","SpouseOASAmt":"0.0","ApplicantGISAmt":"0.0","SpouseGISAmt":"0.0","ApplicantTotalIncome":"8791.1","SpouseTotalIncome":"0.0","EffectiveDate":"2026-07-01"}
+HTTP status: 200
+SHA-256 of original response: 601f1a622d82a78927e08e8ee71944b4c4514b1fa0f57add945ab8e52654af85
+Response: {"APPASBAmount":328.84,"APPSABAmount":0,"SPSASBAmount":0,"SPSSABAmount":0}
+
+Case: july-single-tight-23022.16
+Request: {"MaritalStatus":"Single","ApplicantResidenceCode":"H","ApplicantOASFlag":"Yes","SpouseOver65Flag":"No","SpouseResidenceCode":"H","SpouseOASFlag":"No","IsClient65asofJuly2021":"No","ApplicantNDI":"23022.16","SpouseNDI":"0.0","ApplicantOASAmt":"8791.1","SpouseOASAmt":"0.0","ApplicantGISAmt":"0.0","SpouseGISAmt":"0.0","ApplicantTotalIncome":"31813.260000000002","SpouseTotalIncome":"0.0","EffectiveDate":"2026-07-01"}
+HTTP status: 200
+SHA-256 of original response: 9ce3fb167918c723af61fb62abc43c9e97706d88e9a7a33bf4ea644f09c3f6ea
+Response: {"APPASBAmount":10,"APPSABAmount":0,"SPSASBAmount":0,"SPSSABAmount":0}
+
+Case: july-single-tight-23022.165
+Request: {"MaritalStatus":"Single","ApplicantResidenceCode":"H","ApplicantOASFlag":"Yes","SpouseOver65Flag":"No","SpouseResidenceCode":"H","SpouseOASFlag":"No","IsClient65asofJuly2021":"No","ApplicantNDI":"23022.165","SpouseNDI":"0.0","ApplicantOASAmt":"8791.1","SpouseOASAmt":"0.0","ApplicantGISAmt":"0.0","SpouseGISAmt":"0.0","ApplicantTotalIncome":"31813.265","SpouseTotalIncome":"0.0","EffectiveDate":"2026-07-01"}
+HTTP status: 200
+SHA-256 of original response: 3bb6062da034fc3ef6222a6123f59a0e2f18ef71e2b4f67f9a02027e58730f24
+Response: {"APPASBAmount":0,"APPSABAmount":0,"SPSASBAmount":0,"SPSSABAmount":0}
+
+Case: july-single-tight-23022.166
+Request: {"MaritalStatus":"Single","ApplicantResidenceCode":"H","ApplicantOASFlag":"Yes","SpouseOver65Flag":"No","SpouseResidenceCode":"H","SpouseOASFlag":"No","IsClient65asofJuly2021":"No","ApplicantNDI":"23022.166","SpouseNDI":"0.0","ApplicantOASAmt":"8791.1","SpouseOASAmt":"0.0","ApplicantGISAmt":"0.0","SpouseGISAmt":"0.0","ApplicantTotalIncome":"31813.266000000003","SpouseTotalIncome":"0.0","EffectiveDate":"2026-07-01"}
+HTTP status: 200
+SHA-256 of original response: 3bb6062da034fc3ef6222a6123f59a0e2f18ef71e2b4f67f9a02027e58730f24
+Response: {"APPASBAmount":0,"APPSABAmount":0,"SPSASBAmount":0,"SPSSABAmount":0}
+
+Case: july-single-tight-23022.167
+Request: {"MaritalStatus":"Single","ApplicantResidenceCode":"H","ApplicantOASFlag":"Yes","SpouseOver65Flag":"No","SpouseResidenceCode":"H","SpouseOASFlag":"No","IsClient65asofJuly2021":"No","ApplicantNDI":"23022.167","SpouseNDI":"0.0","ApplicantOASAmt":"8791.1","SpouseOASAmt":"0.0","ApplicantGISAmt":"0.0","SpouseGISAmt":"0.0","ApplicantTotalIncome":"31813.267","SpouseTotalIncome":"0.0","EffectiveDate":"2026-07-01"}
+HTTP status: 200
+SHA-256 of original response: 3bb6062da034fc3ef6222a6123f59a0e2f18ef71e2b4f67f9a02027e58730f24
+Response: {"APPASBAmount":0,"APPSABAmount":0,"SPSASBAmount":0,"SPSSABAmount":0}
+
+Case: jan-single-tight-25425.253
+Request: {"MaritalStatus":"Single","ApplicantResidenceCode":"H","ApplicantOASFlag":"Yes","SpouseOver65Flag":"No","SpouseResidenceCode":"H","SpouseOASFlag":"No","IsClient65asofJuly2021":"No","ApplicantNDI":"25425.253","SpouseNDI":"0.0","ApplicantOASAmt":"8791.1","SpouseOASAmt":"0.0","ApplicantGISAmt":"0.0","SpouseGISAmt":"0.0","ApplicantTotalIncome":"34216.353","SpouseTotalIncome":"0.0","EffectiveDate":"2026-01-01"}
+HTTP status: 200
+SHA-256 of original response: 9ce3fb167918c723af61fb62abc43c9e97706d88e9a7a33bf4ea644f09c3f6ea
+Response: {"APPASBAmount":10,"APPSABAmount":0,"SPSASBAmount":0,"SPSSABAmount":0}
+
+Case: jan-single-tight-25425.254
+Request: {"MaritalStatus":"Single","ApplicantResidenceCode":"H","ApplicantOASFlag":"Yes","SpouseOver65Flag":"No","SpouseResidenceCode":"H","SpouseOASFlag":"No","IsClient65asofJuly2021":"No","ApplicantNDI":"25425.254","SpouseNDI":"0.0","ApplicantOASAmt":"8791.1","SpouseOASAmt":"0.0","ApplicantGISAmt":"0.0","SpouseGISAmt":"0.0","ApplicantTotalIncome":"34216.354","SpouseTotalIncome":"0.0","EffectiveDate":"2026-01-01"}
+HTTP status: 200
+SHA-256 of original response: 9ce3fb167918c723af61fb62abc43c9e97706d88e9a7a33bf4ea644f09c3f6ea
+Response: {"APPASBAmount":10,"APPSABAmount":0,"SPSASBAmount":0,"SPSSABAmount":0}

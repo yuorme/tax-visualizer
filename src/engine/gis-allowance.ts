@@ -74,6 +74,16 @@ export function gisIncomeOf(fed: Federal, p: Province, x: Person, childcare = 0,
 /** Exact published monthly income bands, including s.22(6)'s protection of the couple's combined payment.
  * The OAS equivalent always uses the 65–74 rate, even when the pensioner is 75+. */
 export function gisMonthly(fed: Federal, quarter: number, income: number, category: GisCategory) {
+  return gisTableAmounts(fed, quarter, income, category, true);
+}
+
+/** Section 12/22 basic amounts, before the additional amounts under OAS Act 12.1/22.1.
+ * SIP's administered cutoffs follow these reductions. Federal entitlement always uses gisMonthly. */
+export function gisBasicMonthly(fed: Federal, quarter: number, income: number, category: GisCategory) {
+  return gisTableAmounts(fed, quarter, income, category, false);
+}
+
+function gisTableAmounts(fed: Federal, quarter: number, income: number, category: GisCategory, includeTopUp: boolean) {
   const q = fed.gisAllowance?.params;
   const oas = fed.publicPensions?.params.quarterlyMonthly[quarter]?.[0];
   if (!q || oas === undefined || !q.quarterly[quarter]) throw new RangeError("GIS requires a supported quarter");
@@ -82,14 +92,16 @@ export function gisMonthly(fed: Federal, quarter: number, income: number, catego
   const reduce = (n: number, step: number) => Math.max(0, floorBand(n / step)) * q.monthlyReduction;
   const single = category === "single";
   const top = (maximum: number) =>
-    Math.max(
-      0,
-      maximum -
-        reduce(
-          tested - (single ? q.singleTopUpThreshold : q.coupleTopUpThreshold),
-          single ? q.singleTopUpStep : q.coupleTopUpStep,
-        ),
-    );
+    includeTopUp
+      ? Math.max(
+          0,
+          maximum -
+            reduce(
+              tested - (single ? q.singleTopUpThreshold : q.coupleTopUpThreshold),
+              single ? q.singleTopUpStep : q.coupleTopUpStep,
+            ),
+        )
+      : 0;
   const singleBase = cents(r.singleMaximum - r.singleTopUp);
   const coupleBase = cents(r.coupleMaximum - r.coupleTopUp);
   const neitherOffset = Math.ceil(oas / q.pensionRounding) * q.pensionRounding * 12;

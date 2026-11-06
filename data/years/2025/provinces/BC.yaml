@@ -32,6 +32,15 @@ fuelTax:
   regional: {name: TransLink, gasoline: 0.185}
 
 sources:
+  - {label: "Social assistance payments – Personal income tax", url: "https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/tax-return/completing-a-tax-return/personal-income/line-145-social-assistance-payments.html"}
+  - label: Senior’s Supplement
+    url: https://www2.gov.bc.ca/gov/content/governments/policies-for-government/bcea-policy-and-procedure-manual/supports-for-seniors/seniors-supplement
+  - label: "Updated: October 1, 2026"
+    url: https://www2.gov.bc.ca/assets/gov/british-columbians-our-governments/policies-for-government/bc-employment-assistance-policy-procedure-manual/additional-resources/sensuppratesincomemaritalstatus.pdf
+  - label: Microsoft Word - T5007-2026 information for staff - external - Final Approved.docx
+    url: https://www2.gov.bc.ca/assets/gov/british-columbians-our-governments/policies-for-government/bc-employment-assistance-policy-procedure-manual/additional-resources/t5007-info.pdf
+  - label: Guide T5007 – Return of Benefits
+    url: https://www.canada.ca/en/revenue-agency/services/forms-publications/publications/t4115/guide-t5007-return-benefits.html
   - {"label": "British Columbia Tax", "url": "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5010-c/5010-c-25e.pdf"}
   - {"label": "Provincial Amounts Transferred from your Spouse or Common-Law Partner", "url": "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5010-s2/5010-s2-25e.pdf"}
   - {"label": "Worksheet BC428", "url": "https://www.canada.ca/content/dam/cra-arc/formspubs/pbg/5010-d/5010-d-25e.pdf"}
@@ -102,3 +111,20 @@ seniorCredits:
     params: {minimumAge: 65, maximum: 5799, threshold: 43169, reductionRate: 0.15}
   pension: {program: federal-pension-capped, params: {maximum: 1000}}
   transfer: schedule2-unused-base
+
+# 2025/2026 senior supplements: current income proxies historical income; ordinary residence assumed.
+# Estimated entries: see docs/verification/21-provincial-supplements.md for explicit derivations.
+seniorSupplements:
+  - program: bc-senior-supplement
+    name: BC Senior's Supplement
+    params:
+      single: 99.3
+      couple: 110.25
+      allowance: 99.83
+      allowanceProtection: 100
+      minimum: 1
+    # Allowance protection $100 is inferred from published mixed-couple rows; continue ordinary receipt from first GIS month.
+    estimated: true
+    reporting:
+      kind: t5007
+      exemptThrough: 500

@@ -1,0 +1,327 @@
+Title: atlantic-phase2-nl-calculator-script
+URL: https://www.gov.nl.ca/fin/wp-content/themes/gnl-web-department/inc/calculator/incomesupplement.js
+Fetched: 2026-11-05
+SHA-256 of the original: 0cb407dc68903bb7309d4079b2e65f539720f237f677ce96728ef42355a983da
+Text extract made with the exported fetch-source helpers (custom destination). Check figures against the original when layout matters (tables).
+================================================================================
+
+function allNumeric(inputtxt) {
+		// whole numbers only
+		if(inputtxt.length>0){
+			var numbers =  /^\d+$/;
+			if(inputtxt.match(numbers)){
+				return true;
+			} else {
+				return false;
+		}
+	}
+}
+
+	$(function() {
+	$('#spouse').prop('checked', false);
+	$('#disability').prop('checked', false);
+	$('#seniors').prop('checked', false);
+
+	// Put a listener on the spouse checkbox for status change
+	$('#spouse').change(function(){
+		if ($('#spouse').is(':checked') == true){
+			$('#spouseincomeamt').prop('disabled', false);
+		} else {
+			$('#spouseincomeamt').val('0').prop('disabled', true);
+		}
+	});
+
+	$('#rerun').on("click", function(){
+		// Reset status/information
+		$('#seniorsAmt').removeClass("grey");
+		$('#incomeAmt').removeClass("grey");
+		$('#returnAmt').removeClass('grey');
+		// return modified base payment (base+kids+spouse) as well as disability
+		$('#spouse').prop('checked', false);
+		$('#disability').prop('checked', false);
+		$('#seniors').prop('checked', false);
+
+		$('#incomeamt').val('0');
+		$('#children').val('0');
+		$('#spouseincomeamt').val('0').prop('disabled', true);
+
+		$('#returnAmt').html("Enter Information and Press Calculate!");
+		// return separate Seniors Amount
+		$('#seniorsAmt').html("Enter Information and Press Calculate!");
+		// use combined amounts for quarterly outputs
+		$('#quarterlyAmt_1').html("..");
+		$('#quarterlyAmt_2').html("..");
+		$('#quarterlyAmt_3').html("..");
+		$('#quarterlyAmt_4').html("..");
+
+		$('#toosmall').hide();
+		$('#lumpsumAmount').hide();
+
+		$('#quarterlyAmount').show();
+
+		location.href = "#start";
+	});
+
+	$('#rerun').hide();
+
+	$('#calc').on("click", function(e){
+		e.preventDefault();		// prevent form submissions
+		var incomeAmount = $('#incomeamt').val();
+		var proceed = false;
+		if (allNumeric(incomeAmount) == true){
+			incomeProceed = true;
+		}else{
+			incomeProceed = false;
+		}
+		if ($('#spouse').prop('checked')){
+			var spouseAmount = $('#spouseincomeamt').val();
+			var value=$.trim(spouseAmount);
+			if (allNumeric(spouseAmount) == true){
+				spouseProceed = true;
+			}else{
+				spouseProceed = false;
+			}
+		}else{
+			spouseProceed = true;
+		}
+		var childrenAmount = $('#children').val();
+		if (allNumeric(childrenAmount) == true){
+			childProceed = true;
+		}else{
+			childProceed = false;
+		}
+
+		//	Check child values, spouse values, and income values are valid
+		if(childProceed==true && spouseProceed==true && incomeProceed==true){
+			$('#childNote').hide();
+			$('#incomeNote').hide();
+			$('#spouseNote').hide();
+			calculateValues();
+		}else{
+			if(!(childProceed)){
+				$('#childNote').show();
+			}
+			if(!(incomeProceed)){
+				$('#incomeNote').show();
+			}
+			if(!(spouseProceed)){
+				$('#spouseNote').show();
+			}
+		}
+	});
+
+	function calculateValues(){
+		$('#seniorsAmt').removeClass("grey");
+		$('#incomeAmt').removeClass("grey");
+		$('#returnAmt').removeClass('grey');
+
+		// Amt variables are calculated, Amount is pulled from a form
+		var baseAmt=0, toReturn = 0, spouseAmt = 0, kidsAmt = 0, disabilityAmt=0, seniorsAmt=0, spouseAmount = 0;
+
+		var incomeAmount = $('#incomeamt').val();
+
+		// Original Values for Phase In/Out, without incorporating amounts
+		var lowerPhaseIn = 15000;
+		var upperPhaseIn = 20000;
+		var lowerPhaseOut = 40000;
+		var upperPhaseOut = 45000;
+
+		// Check if spouse is checked, if so assign base Value for Spouse Payment
+		// and check if there is a value entered for Spouse Income, if so add it to the income
+		var baseSpouseAmount = 69;
+		if ($('#spouse').prop('checked')){
+			spouseAmt = baseSpouseAmount;
+			spouseAmount = $('#spouseincomeamt').val();
+			var value=$.trim(spouseAmount);
+			if(value.length>0){
+				incomeAmount = parseInt(spouseAmount) + parseInt(incomeAmount);
+			}else{
+				$('#spouseincomeamt').val('0');
+			}
+		}
+
+		// Check if there are children, and if so assign the base Children Payment
+		var baseChildrenAmount = 231;
+		if ($('#children').val() != 0){
+			kidsAmt = $('#children').val() * baseChildrenAmount;
+		}
+
+		// Check if "Are you a senior" is checked
+		//		if so, check the phase out amount, then calculate the amount to remove
+		var seniorsPhaseOut_end = 43380;
+		var seniorsPhaseOut_start = 30078;
+		var seniorsRange = seniorsPhaseOut_end - seniorsPhaseOut_start;
+		var seniorsBenefit = 1551;
+
+		if ($('#seniors').prop('checked')){
+			if(incomeAmount<seniorsPhaseOut_end){
+				if(incomeAmount>seniorsPhaseOut_start){
+					//partialamount
+					var portionalAmount = ((incomeAmount-seniorsPhaseOut_start)/seniorsRange) * seniorsBenefit;
+					seniorsAmt = (seniorsBenefit - portionalAmount);
+				}else{
+					// full benefit
+					seniorsAmt = seniorsBenefit;
+				}
+			}else{
+				// no benefit
+				seniorsAmt = 0;
+				$('#seniorsAmt').html("Ineligible based on net income");
+				$('#seniorsAmt').addClass('grey');
+			}
+			$('#seniorsRow').show();
+		}else{
+			$('#seniorsAmt').html("Not Applicable");
+			$('#seniorsAmt').addClass("grey");
+			$('#seniorsAmt').show();
+		}
+
+		// Check if "Do you have a disability" is checked
+		//		if so, check the phase out amount, then calculate the amount to remove
+		var disabilityPhaseOut_end = 45902;
+		var disabilityPhaseOut_start = seniorsPhaseOut_start;
+		var disabilityRange = disabilityPhaseOut_end - disabilityPhaseOut_start;
+		var disabilityBenefit = 231;
+
+		if ($('#disability').prop('checked')){
+			if(incomeAmount<disabilityPhaseOut_end){
+				if(incomeAmount>disabilityPhaseOut_start){
+					//partial amount
+					var disableportionalAmount = ((incomeAmount-disabilityPhaseOut_start)/disabilityRange) * disabilityBenefit;
+					disabilityAmt = (disabilityBenefit - disableportionalAmount);
+				}else{
+					// full benefit
+					disabilityAmt = disabilityBenefit;
+				}
+			}else{
+				disabilityAmt = 0;
+			}
+		}
+
+		var phaseInThreshold = 15000;
+		var phaseOutThreshold = 40000;
+		var phaseRate = .0532;
+		var phaseOutRate = .09;
+		var basicCredit = 254;
+		var maxCredit = 520;
+		// Calculate Payment
+		if (incomeAmount < lowerPhaseIn){
+			// Calculate total assuming lowest base amount
+			baseAmt = basicCredit;
+			// Add Spouse, Kids, Disability
+			toReturn = baseAmt + (spouseAmt + kidsAmt + disabilityAmt);
+		}else if(incomeAmount < upperPhaseIn){
+			// Calculate base total
+			baseAmt = basicCredit;
+			// Modify for phasing in (do not include kids/spouse)
+			toReturn = baseAmt + ((incomeAmount - phaseInThreshold) * phaseRate);
+			baseAmt = toReturn;
+			// Add the spouse amount
+			toReturn = toReturn + spouseAmt;
+			// Add the kids amount
+			toReturn = toReturn + kidsAmt;
+			// Add the disability amount
+			toReturn = toReturn + disabilityAmt;
+		}else if(incomeAmount < lowerPhaseOut){
+			// This gets the full payments, as it hasn't it the phase out yet
+			baseAmt = maxCredit;
+			toReturn = baseAmt + (spouseAmt + kidsAmt);
+			// Add the disability amount
+			toReturn = toReturn + disabilityAmt;
+		}else{
+			// Used for below, is a baseAmount to be reduced
+			baseAmt = maxCredit;
+		}
+
+		// calculate uppper phase out
+		var totalSum = baseAmt + kidsAmt + spouseAmt;
+
+		// Determine upper Phase out for validation purposes.
+		var upperPhaseOut = (totalSum / phaseOutRate) + phaseOutThreshold;
+
+		// If the amount is between the lowerPhaseOut and the upperPhaseOut
+		if((incomeAmount >= lowerPhaseOut) && (incomeAmount <= upperPhaseOut)){
+			// Calculate the amount to return
+			toReturn = totalSum - ((incomeAmount - phaseOutThreshold) * phaseOutRate);
+
+			// Add the disability amount
+			toReturn = toReturn + disabilityAmt;
+
+			// Calculate base totals for debugging
+			baseAmt = (maxCredit) - ((maxCredit) * ((incomeAmount-phaseOutThreshold)/(upperPhaseOut-phaseOutThreshold)));
+			kidsAmt = kidsAmt - ((kidsAmt) * ((incomeAmount-phaseOutThreshold)/(upperPhaseOut-phaseOutThreshold)));
+			spouseAmt = spouseAmt - ((spouseAmt) * ((incomeAmount-phaseOutThreshold)/(upperPhaseOut-phaseOutThreshold)));
+		}else if (incomeAmount > upperPhaseOut){
+			baseAmt = 0;
+			kidsAmt = 0;
+			spouseAmt = 0;
+			toReturn = 0;
+		}
+
+		// Rounding less than $2.00
+		if (parseFloat(toReturn) < 2.0){
+			toReturn = 0;
+		}
+		// Rounding less than $2.00
+		if (parseFloat(seniorsAmt) < 2.0){
+			seniorsAmt = 0;
+		}
+
+		// return modified base payment (base+kids+spouse) as well as disability
+		if (toReturn >= 8){
+
+			// This value is large enough to display
+			$('#toosmall').hide();
+
+			if(toReturn<40){
+				// This value small enough that quarterly payments won't be made
+				$('#totalPayment').html(accounting.formatMoney(toReturn,"$",2));
+
+				// Display the annual amount
+				$('#returnAmt').html(accounting.formatMoney(toReturn,"$",2));
+				// return separate Seniors Amount
+				if (seniorsAmt == 0){
+					//$('#seniorsAmt').html("Ineligible based on net income.");
+					$('#seniorsAmt').addClass('grey');
+					$('#seniorsAmt').show();
+				}else{
+					$('#seniorsAmt').html(accounting.formatMoney(seniorsAmt,"$",2));
+				}
+
+				// Hide Quarterly Amounts that may be left from before
+				$('#quarterlyAmount').hide();
+				// Show Lump Sum Amounts
+				$('#lumpsumAmount').show();
+			}else{
+				$('#returnAmt').html(accounting.formatMoney(toReturn,"$",2));
+				// return separate Seniors Amount
+				if (seniorsAmt == 0){
+					//$('#seniorsAmt').html("Ineligible based on net income.");
+					$('#seniorsAmt').show();
+				}else{
+					$('#seniorsAmt').html(accounting.formatMoney(seniorsAmt,"$",2));
+				}
+				// use combined amounts for quarterly outputs
+				$('#quarterlyAmt_1').html(accounting.formatMoney((toReturn+seniorsAmt)/4,"$",2));
+				$('#quarterlyAmt_2').html(accounting.formatMoney((toReturn+seniorsAmt)/4,"$",2));
+				$('#quarterlyAmt_3').html(accounting.formatMoney((toReturn+seniorsAmt)/4,"$",2));
+				$('#quarterlyAmt_4').html(accounting.formatMoney((toReturn+seniorsAmt)/4,"$",2));
+
+				// Hide Lump Sum Amounts that may be left from before
+				$('#lumpsumAmount').hide();
+				// Show Quarterly Amounts
+				$('#quarterlyAmount').show();
+			}
+		}else{
+			// Payments will be less than 2.00 so show a message
+			$('#toosmall').show();
+
+			$('#returnAmt').html("Ineligible based on net income");
+			$('#returnAmt').addClass('grey');
+			$('#lumpsumAmount').hide();
+			$('#quarterlyAmount').hide();
+		}
+		location.href = "#totals";
+		$('#rerun').show();
+	}
+	});
