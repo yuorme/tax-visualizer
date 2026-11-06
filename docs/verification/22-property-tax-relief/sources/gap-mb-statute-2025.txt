@@ -1,0 +1,757 @@
+Title: The Income Tax Act, C.C.S.M. c. I10
+URL: https://web2.gov.mb.ca/laws/statutes/archive/i010(2025-12-31).php?df=2025-11-06
+Fetched: 2026-11-05
+SHA-256 of the original: f87c8400448e90bbd6a55f4e8b35f38a19b0c3aeb610f80c0abc41974f3d5881
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+Selected extract: sections 5.3–5.6.1 only, from the full original whose SHA-256 is recorded above.
+================================================================================
+
+5.3(1) In this section and sections 5.4 to 5.7,
+
+"cohabiting spouse or common-law partner" of an individual at any time means the person who at that time is the individual's spouse or common-law partner and who at that time is not living separate and apart from the individual, and, for this purpose, a person shall not be considered to be living separate and apart from an individual unless
+
+(a) they were living separate and apart at that time, because of a breakdown of their marriage or common-law partnership, for a period of at least 90 days that includes that time, or
+
+(b) they were occupying and inhabiting separate residences at that time because of medical necessity; (« conjoint ou conjoint de fait visé »)
+
+"eligible school taxes" of an individual for a taxation year means the amount of school taxes, if any, paid by the individual or their spouse or common-law partner with respect to a residential dwelling unit for the year or part of the year throughout which the dwelling unit is
+
+(a) the principal residence of the individual, and
+
+(b) owned by the individual or the spouse or common-law partner; (« taxes scolaires admissibles »)
+
+"family income" of an individual for a taxation year means
+
+(a) the individual's income for the year plus, if the individual has a cohabiting spouse or common-law partner at the end of the year, the spouse's or common-law partner's income for the year, or
+
+(b) where applicable, the amount that would be determined under clause (a) if no amount were
+
+(i) deducted under paragraph 20(1)⁠(ww) of the federal Act (split income),
+
+(i.1) included under paragraph 56(1)⁠(q.1) of the federal Act (registered disability savings plan payments),
+
+(ii) included under subsection 56(6) of the federal Act (universal child care benefit),
+
+(iii) deducted under paragraph 60(y) of the federal Act (repayment of universal child care benefit), or
+
+(iv) deducted under paragraph 60(z) of the federal Act (repayment of registered disability savings plan payments); (« revenu familial »)
+
+"mobile home" means a residential dwelling unit that is designed to be made mobile but does not include a travel trailer, tent trailer or other similar trailer; (« maison mobile »)
+
+"primary residence" means the residential dwelling unit that is the primary residence of an individual as evidenced by such indicators as
+
+(a) the amount of time spent by the individual at the dwelling unit in relation to the amount of time spent at any other dwelling unit,
+
+(b) the address of the individual shown on their income tax return, driver's licence, motor vehicle registration, registration cards for health and health insurance, bank and credit card statements and statements of account for utilities, and
+
+(c) any other prescribed indicators; (« résidence première »)
+
+"principal residence" of an individual for a taxation year or part of a year means a residential dwelling unit located in Manitoba that is
+
+(a) owned or rented by the individual or the individual's spouse or common-law partner throughout the year or that part of the year,
+
+(b) the primary residence of the individual or the individual's cohabiting spouse or common-law partner throughout the year or that part of the year,
+
+(c) designated in accordance with subsections (2) and (4), for the year or that part of the year, as the principal residence of the individual and, if the individual has a cohabiting spouse or common-law partner, of that spouse or common-law partner, and
+
+(d) not designated by any other individual (other than the individual's cohabiting spouse or common-law partner) as a principal residence for the year or that part of the year; (« résidence principale »)
+
+"school tax reduction", in relation to a property for a calendar year, means the amount by which school taxes imposed in respect of the property for that year are reduced under section 5.6; (« réduction des taxes scolaires »)
+
+"school taxes", in relation to a property for a calendar year, means, subject to subsection (1.3), the total of
+
+(a) the tax imposed for that year under section 188 of The Public Schools Act in respect of the property, and
+
+(b) the community revitalization levy, if any, imposed for that year in respect of that property under The Community Revitalization Tax Increment Financing Act in lieu of a tax under section 188 of The Public Schools Act,
+
+before any school tax reduction. (« taxes scolaires »)
+
+###### Définitions
+
+5.3(1) Les définitions qui suivent s'appliquent au présent article et aux articles 5.4 à 5.7.
+
+« conjoint ou conjoint de fait visé » Personne qui, à un moment donné, est le conjoint ou le conjoint de fait d'un particulier dont elle ne vit pas séparée à ce moment. Pour l'application de la présente définition, une personne n'est considérée comme vivant séparée d'un particulier à un moment donné que si, selon le cas :
+
+a) elle vit séparée de celui-ci à ce moment, pour cause d'échec de leur mariage ou de leur union de fait, pendant une période d'au moins 90 jours qui comprend ce moment;
+
+b) elle occupe et habite une résidence distincte à ce moment pour des raisons médicales. ("cohabiting spouse or common-law partner")
+
+« maison mobile » Unité résidentielle conçue pour être mobile. Sont exclues les caravanes, les tentes-roulottes et toute autre caravane semblable. ("mobile home")
+
+« réduction des taxes scolaires » Le montant de la réduction dont les taxes scolaires imposées à l'égard d'une propriété font l'objet relativement à une année civile en vertu de l'article 5.6. ("school tax reduction")
+
+« résidence première » L'unité résidentielle étant la résidence première d'un particulier, comme en font foi les éléments suivants :
+
+a) le temps qu'il y réside par opposition au temps où il réside ailleurs;
+
+b) son adresse indiquée sur sa déclaration fiscale, son permis de conduire, les documents d'immatriculation de son véhicule automobile, ses cartes d'assurance maladie et ses relevés de compte bancaire, de carte de crédit et de services publics;
+
+c) tout autre élément prévu par règlement. ("primary residence")
+
+« résidence principale » Unité résidentielle située au Manitoba qui satisfait aux conditions suivantes :
+
+a) appartenir à un particulier ou à son conjoint ou conjoint de fait ou être louée par une de ces personnes, et ce, pendant la totalité ou une partie d'une année d'imposition;
+
+b) être la résidence première du particulier ou de son conjoint ou conjoint de fait visé pendant la totalité ou une partie de l'année d'imposition;
+
+c) avoir été désignée selon les paragraphes (2) et (4), pour la totalité ou une partie de l'année d'imposition, à titre de résidence principale du particulier et de son conjoint ou conjoint de fait visé, le cas échéant;
+
+d) n'avoir été désignée par aucun autre particulier (exception faite de son conjoint ou conjoint de fait visé) à titre de résidence principale pour l'année d'imposition ou la partie en question de l'année. ("principal residence")
+
+« revenu familial »
+
+a) Le revenu d'un particulier pour une année d'imposition auquel s'ajoute le revenu du conjoint ou conjoint de fait visé pour l'année, si le particulier a un tel conjoint à la fin de l'année;
+
+b) le cas échéant, le montant qui serait déterminé en vertu de l'alinéa a) si aucun montant n'était :
+
+(i) déduit en vertu de l'alinéa 20(1)ww) de la loi fédérale,
+
+(i.1) inclus en vertu de l'alinéa 56(1)q.1) de cette loi,
+
+(ii) inclus en vertu du paragraphe 56(6) de cette loi,
+
+(iii) déduit en vertu de l'alinéa 60y) de la même loi,
+
+(iv) déduit en vertu de l'alinéa 60z) de cette même loi. ("family income")
+
+« taxes scolaires » En ce qui a trait à une propriété pour une année civile, s'entend, sous réserve du paragraphe (1.3), du total des taxes indiquées ci-dessous, avant toute réduction des taxes scolaires :
+
+a) la taxe imposée pour cette année en vertu de l'article 188 de la Loi sur les écoles publiques à l'égard de la propriété;
+
+b) la taxe de revitalisation urbaine éventuellement imposée pour cette année en vertu de la Loi sur le financement fiscal de la revitalisation urbaine en remplacement de la taxe visée à l'article 188 de la Loi sur les écoles publiques. ("school taxes")
+
+« taxes scolaires admissibles » Le montant des taxes scolaires qu'un particulier ou son conjoint ou conjoint de fait a payé pour une année d'imposition relativement à une unité résidentielle pour la totalité ou une partie de l'année pendant laquelle l'unité :
+
+a) est la résidence principale du particulier,
+
+b) appartient au particulier ou à son conjoint ou conjoint de fait. ("eligible school taxes")
+
+5.3(1.1) [Repealed] S.M. 2022, c. 45, s. 10.
+
+5.3(1.1) [Abrogé] L.M. 2022, c. 45, art. 10.
+
+###### Extended meaning of "owned" and "owner"
+
+5.3(1.2) For the purpose of subsection (1) and subsections 5.4(1), 5.5.1(1) and 5.6.1(2), an individual is deemed to own a residential dwelling unit if they own a life interest in the dwelling unit.
+
+###### Propriété en cas d'intérêt viager
+
+5.3(1.2) Pour l'application du paragraphe (1) ainsi que des paragraphes 5.4(1), 5.5.1(1) et 5.6.1(2), le particulier est réputé être propriétaire d'une unité résidentielle s'il est titulaire d'un intérêt viager dans celle-ci.
+
+###### School taxes — mobile homes
+
+5.3(1.3) If the property is a mobile home that is owned by an individual or their spouse or common-law partner and the land on which the mobile home is situated is not owned by the individual or their spouse or common-law partner, the school taxes in relation to the property for a calendar year are the amount determined by the following formula:
+
+A + B
+
+In this formula,
+
+Ais
+
+(a) in the case of a mobile home that is assessable property as defined in The Municipal Assessment Act, the amount that, but for this subsection, would be the school taxes in relation to the mobile home for that year; or
+
+(b) in any other case, 50% of the licence fee payable in relation to the mobile home under a by-law of a municipality relating to the licensing of mobile homes;
+
+Bis 10% of the land rental fee payable in relation to the mobile home.
+
+###### Taxes scolaires — maisons mobiles
+
+5.3(1.3) Si la propriété est une maison mobile dont un particulier ou son conjoint ou conjoint de fait est propriétaire sans que le particulier ou son conjoint ou conjoint de fait soit propriétaire du bien-fonds où se situe la maison mobile, les taxes scolaires relativement à la propriété pour une année civile correspondent au montant calculé selon la formule suivante :
+
+A + B
+
+Dans la présente formule :
+
+Acorrespond :
+
+a) dans le cas d'une maison mobile qui est un bien imposable au sens de la Loi sur l'évaluation municipale, au montant qui, n'eût été le présent paragraphe, correspondrait aux taxes scolaires relativement à la maison mobile pour l'année en question;
+
+b) dans tout autre cas, à 50 % des droits de licence exigibles relativement à la maison mobile au titre d'un règlement municipal portant sur les licences pour maison mobile;
+
+Bcorrespond à 10 % des frais de location du bien-fonds exigibles relativement à la maison mobile.
+
+###### How to designate principal residence
+
+5.3(2) A residential dwelling unit may be designated as the principal residence of an individual and their cohabiting spouse or common-law partner, if any, as follows:
+
+(a) on the form on which the homeowners affordability tax credit, the seniors school tax rebate or the renters affordability tax credit is claimed by the individual;
+
+(b) by informing the municipality in which the dwelling unit is located, in the form and manner required by the municipality, that the property is their principal residence.
+
+###### Désignation de la résidence principale
+
+5.3(2) Une unité résidentielle peut être désignée comme étant la résidence principale d'un particulier et éventuellement celle de son conjoint ou conjoint de fait visé :
+
+a) soit sur la formule au moyen de laquelle le particulier demande le crédit d'impôt pour l'abordabilité visant les propriétaires de leur habitation, le remboursement de l'impôt sur le revenu aux personnes âgées au titre de la taxe scolaire ou le crédit d'impôt pour l'abordabilité visant les locataires;
+
+b) soit par avis communiqué à la municipalité où l'unité résidentielle est située, selon les modalités qu'elle fixe, portant que l'unité résidentielle est la résidence principale.
+
+5.3(3) [Repealed] S.M. 2022, c. 45, s. 10.
+
+5.3(3) [Abrogé] L.M. 2022, c. 45, art. 10.
+
+###### Only one principal residence at a time
+
+5.3(4) A residential dwelling unit may not be designated as the principal residence of an individual for any period during which any other residential dwelling unit is the principal residence of the individual or the individual's cohabiting spouse or common-law partner.
+
+###### Une seule résidence principale à la fois
+
+5.3(4) Un particulier ne peut désigner une unité résidentielle comme étant sa résidence principale pour toute période durant laquelle une autre unité résidentielle est sa résidence principale ou celle de son conjoint ou conjoint de fait visé.
+
+###### Extended meaning of "principal residence"
+
+5.3(5) A principal residence includes contiguous land that contributes to its use and enjoyment as a residence, but does not include
+
+(a) any land or premises that are exempt from school taxes and are not the subject of a grant in lieu of school taxes; or
+
+(b) any land not assessed as residential property.
+
+###### Sens étendu
+
+5.3(5) La résidence principale comprend les biens-fonds contigus qui en favorisent l'utilisation et la jouissance à l'exclusion :
+
+a) des biens-fonds et des lieux qui sont exempts de taxes scolaires et qui ne font pas l'objet d'une subvention tenant lieu de taxes scolaires;
+
+b) des biens-fonds qui ne sont pas imposés à titre de propriété résidentielle.
+
+###### Communal and other arrangements
+
+5.3(6) For the purposes of this section and section 5.4, school taxes paid in respect of property of a communal living arrangement, cooperative housing scheme, Hutterite colony or incorporated farm that includes an individual's principal residence are to be apportioned on the same basis as those taxes are apportioned under that arrangement or by that organization or its governing body among its members, participants, partners or shareholders, as the case may be.
+
+###### Groupes vivant en communauté
+
+5.3(6) Pour l'application du présent article et de l'article 5.4, les taxes scolaires payées à l'égard d'un biens fonds qui appartient à un groupe vivant en communauté, à une coopérative d'habitation, à une colonie huttérite ou à une corporation agricole et où se trouve la résidence principale d'un particulier sont réparties entre les membres, les participants, les associés ou les actionnaires du groupe ou de l'organisation en question, selon les quote-parts fixées par ce dernier ou cette dernière.
+
+5.3(7) [Repealed] S.M. 2018, c. 34, s. 5.
+
+S.M. 2000, c. 39, s. 29; S.M. 2002, c. 19, s. 22; S.M. 2003, c. 4, s. 40; S.M. 2006, c. 24, s. 35; S.M. 2007, c. 6, s. 33; S.M. 2009, c. 26, s. 19; S.M. 2012, c. 1, s. 22; S.M. 2014, c. 35, s. 35; S.M. 2016, c. 10, s. 11; S.M. 2017, c. 40, s. 26; S.M. 2018, c. 34, s. 5; S.M. 2021, c. 55, s. 9; S.M. 2022, c. 45, s. 10; S.M. 2024, c. 35, s. 17; S.M. 2025, c. 48, s. 17.
+
+5.3(7) [Abrogé] L.M. 2018, c. 34, art. 5.
+
+L.M. 2000, c. 39, art. 29; L.M. 2002, c. 19, art. 22; L.M. 2003, c. 4, art. 40; L.M. 2006, c. 24, art. 35; L.M. 2007, c. 6, art. 33; L.M. 2009, c. 26, art. 19; L.M. 2012, c. 1, art. 22; L.M. 2014, c. 35, art. 35; L.M. 2016, c. 10, art. 11; L.M. 2017, c. 40, art. 26; L.M. 2018, c. 34, art. 5; L.M. 2021, c. 4, art. 18; L.M. 2021, c. 55, art. 9; L.M. 2022, c. 45, art. 10; L.M. 2024, c. 35, art. 17; L.M. 2025, c. 48, art. 17.
+
+###### Eligibility for homeowners affordability tax credit
+
+5.4(1) An individual whose principal residence is owned by them or their spouse or common-law partner is eligible for a homeowners affordability tax credit for a taxation year, subject to the following conditions:
+
+1.An individual is not eligible for the credit for the year if, on the last day of the taxation year, they are not resident in Manitoba or are less than 16 years old.
+
+2.An individual is not eligible for the credit for the taxation year if at any time in the year
+
+(a) they are exempt from tax under paragraph 149(1)⁠(a) or (b) of the federal Act (employee of a country other than Canada); or
+
+(b) they are not a Canadian citizen and are on active military service as a member of the armed forces of a country other than Canada, or are a member of the family of such an individual.
+
+3.An individual is not eligible for the credit for the year if they were, throughout the taxation year, the cohabiting spouse or common-law partner of another individual who claimed the credit for the year or any part of the year.
+
+4.An individual is not eligible for the credit for a residential dwelling unit for any period for which any other individual claims a homeowners affordability tax credit for that dwelling unit.
+
+5.An individual is not eligible for the credit for any period during which neither the individual nor their spouse or common-law partner owns the individual's principal residence.
+
+###### Admissibilité au crédit d'impôt pour l'abordabilité visant les propriétaires de leur habitation
+
+5.4(1) Le particulier dont la résidence principale lui appartient ou appartient à son conjoint ou conjoint de fait est admissible à un crédit d'impôt pour l'abordabilité visant les propriétaires de leur habitation pour une année d'imposition, sous réserve des conditions suivantes :
+
+1.Il n'y est pas admissible si, le dernier jour de l'année, il ne réside pas au Manitoba ou il est âgé de moins 16 ans.
+
+2.Il n'y est pas admissible s'il répond, à tout moment au cours de l'année d'imposition, à un des critères suivants :
+
+a) il est exempté de l'impôt en vertu de l'alinéa 149(1)a) ou b) de la loi fédérale;
+
+b) il n'est pas citoyen canadien et est en service militaire actif à titre de membre des forces armées d'un autre pays que le Canada, ou est membre de la famille d'un tel particulier.
+
+3.Il n'y est pas admissible pour l'année d'imposition s'il était, pendant toute l'année, le conjoint ou conjoint de fait visé d'un autre particulier qui a demandé le crédit à l'égard de la totalité ou d'une partie de l'année.
+
+4.Il n'y est pas admissible à l'égard d'une unité résidentielle pour toute période visée par la demande de crédit d'impôt pour l'abordabilité visant les propriétaires de leur habitation d'un autre particulier concernant la même unité.
+
+5.Il n'y est pas admissible pour toute période pendant laquelle sa résidence principale n'appartient ni à lui ni à son conjoint ou conjoint de fait.
+
+###### Homeowners affordability tax credit
+
+5.4(2) An individual's homeowners affordability tax credit for a taxation year is the amount, if any, by which
+
+(a) the lesser of the individual's eligible school taxes for the taxation year and the amount determined by the following formula:
+
+$1,500 × De/Dy
+
+In this formula,
+
+Deis the number of days in the taxation year during which the individual is eligible for the credit,
+
+Dyis the number of days in the taxation year;
+
+exceeds
+
+(b) the total of all amounts each of which is the school tax reduction given in respect of a principal residence of the individual for the taxation year or a part of the taxation year.
+
+S.M. 2000, c. 39, s. 29; S.M. 2001, c. 41, s. 21; S.M. 2002, c. 19, s. 23; S.M. 2003, c. 4, s. 41; S.M. 2007, c. 6, s. 34; S.M. 2008, c. 3, s. 23; S.M. 2009, c. 26, s. 20; S.M. 2011, c. 41, s. 16; S.M. 2012, c. 1, s. 23; S.M. 2014, c. 35, s. 36; S.M. 2015, c. 40, s. 10; S.M. 2017, c. 40, s. 27; S.M. 2018, c. 34, s. 6; S.M. 2021, c. 55, s. 10; S.M. 2022, c. 45, s. 11; S.M. 2024, c. 35, s. 18.
+
+###### Crédit d'impôt pour l'abordabilité visant les propriétaires de leur habitation
+
+5.4(2) Le crédit d'impôt pour l'abordabilité visant les propriétaires de leur habitation d'un particulier pour une année d'imposition représente l'excédent éventuel :
+
+a) des taxes scolaires admissibles du particulier pour l'année d'imposition ou, si elle est inférieure, de la somme calculée au moyen de la formule suivante :
+
+1 500 $ × De/Dy
+
+Dans la présente formule :
+
+Dereprésente le nombre de jours dans l'année d'imposition pendant lesquels le particulier est admissible au crédit,
+
+Dyreprésente le nombre de jours dans l'année d'imposition;
+
+b) sur le total des sommes correspondant à la réduction des taxes scolaires à l'égard de la résidence principale du particulier pour l'année d'imposition ou toute partie de l'année d'imposition.
+
+L.M. 2000, c. 39, art. 29; L.M. 2001, c. 41, art. 21; L.M. 2003, c. 4, art. 41; L.M. 2006, c. 24, art. 36; L.M. 2007, c. 6, art. 34; L.M. 2008, c. 3, art. 23; L.M. 2009, c. 26, art. 20; L.M. 2011, c. 41, art. 16; L.M. 2014, c. 35, art. 36; L.M. 2015, c. 40, art. 10; L.M. 2017, c. 40, art. 27; L.M. 2018, c. 34, art. 6; L.M. 2021, c. 55, art. 10; L.M. 2022, c. 45, art. 11; L.M. 2024, c. 35, art. 18.
+
+5.5 [Repealed]
+
+S.M. 2000, c. 39, s. 29; S.M. 2012, c. 1, s. 24; S.M. 2014, c. 35, s. 37; S.M. 2015, c. 40, s. 11; S.M. 2016, c. 10, s. 12; S.M. 2021, c. 55, s. 11; S.M. 2022, c. 45, s. 12; S.M. 2024, c. 35, s. 19.
+
+5.5 [Abrogé]
+
+L.M. 2000, c. 39, art. 29; L.M. 2012, c. 1, art. 24; L.M. 2014, c. 35, art. 37; L.M. 2015, c. 40, art. 11; L.M. 2016, c. 10, art. 12; L.M. 2017, c. 40, art. 28; L.M. 2021, c. 55, art. 11; L.M. 2022, c. 45, art. 12; L.M. 2024, c. 35, art. 19.
+
+###### Eligibility for seniors school tax rebate
+
+5.5.1(1) An individual whose principal residence is owned by them or their spouse or common-law partner is eligible for the seniors school tax rebate for a taxation year if
+
+(a) the individual is eligible for the homeowners affordability tax credit under section 5.4 in relation to the residence for any part of the taxation year; and
+
+(b) the individual or their cohabiting spouse or common-law partner is at least 65 years of age at the end of the taxation year.
+
+###### Admissibilité au remboursement de l'impôt sur le revenu aux personnes âgées au titre de la taxe scolaire
+
+5.5.1(1) Le particulier dont la résidence principale lui appartient ou appartient à son conjoint ou conjoint de fait est admissible au remboursement de l'impôt sur le revenu aux personnes âgées au titre de la taxe scolaire pour une année d'imposition dans le cas suivant :
+
+a) le particulier est admissible au crédit d'impôt pour l'abordabilité visant les propriétaires de leur habitation sous le régime de l'article 5.4 relativement à la résidence pour toute partie de l'année d'imposition;
+
+b) le particulier ou son conjoint ou conjoint de fait visé est âgé d'au moins 65 ans à la fin de l'année d'imposition.
+
+###### Seniors school tax rebate
+
+5.5.1(2) An individual's seniors school tax rebate for a taxation year is the amount determined by the following formula:
+
+(A − .01B) × De/Dy
+
+In this formula,
+
+Ais the lesser of
+
+(a) $235, and
+
+(b) the amount, if any, by which
+
+(i) the individual's eligible school taxes for the year,
+
+exceeds the total of
+
+(ii) the homeowners affordability tax credit that could be claimed for that taxation year by the individual or the individual's cohabiting spouse or common-law partner in respect of the individual's principal residence, and
+
+(iii) the school tax reduction given in respect of a principal residence of the individual for the year or part of the year;
+
+Bis the amount, if any, by which the individual's family income for the taxation year exceeds $40,000;
+
+Deis the number of days in the taxation year during which the individual is eligible for the homeowners affordability tax credit; and
+
+Dyis the number of days in the taxation year.
+
+S.M. 2016, c. 10, s. 13; S.M. 2017, c. 40, s. 29; S.M. 2018, c. 34, s. 7; S.M. 2020, c. 21, s. 20; S.M. 2021, c. 55, s. 12; S.M. 2022, c. 45, s. 13; S.M. 2024, c. 35, s. 20; S.M. 2025, c. 48, s. 19.
+
+###### Remboursement
+
+5.5.1(2) Le remboursement de l'impôt sur le revenu aux personnes âgées au titre de la taxe scolaire auquel a droit un particulier correspond au montant calculé au moyen de la formule suivante :
+
+(A − 0,01B) × De/Dy
+
+Dans la présente formule :
+
+Areprésente le moins élevé des montants suivants :
+
+a) 235 $;
+
+b) l'excédent, le cas échéant :
+
+(i) des taxes scolaires admissibles du particulier pour l'année d'imposition,
+
+sur la somme des éléments suivants :
+
+(ii) le crédit d'impôt pour l'abordabilité visant les propriétaires de leur habitation que le particulier ou son conjoint ou conjoint de fait visé pourrait demander pour l'année d'imposition en question à l'égard de la résidence principale du particulier,
+
+(iii) la réduction des taxes scolaires à l'égard de la résidence principale du particulier pour la totalité ou une partie de l'année;
+
+Breprésente l'excédent, le cas échant, du revenu familial du particulier pour l'année d'imposition sur 40 000 $;
+
+Dereprésente le nombre de jours dans l'année d'imposition pendant lesquels le particulier est admissible au crédit d'impôt pour l'abordabilité visant les propriétaires de leur habitation;
+
+Dyreprésente le nombre de jours dans l'année d'imposition.
+
+L.M. 2016, c. 10, art. 13; L.M. 2017, c. 40, art. 29; L.M. 2018, c. 34, art. 7; L.M. 2020, c. 21, art. 20; L.M. 2021, c. 55, art. 12; L.M. 2024, c. 35, art. 20; L.M. 2025, c. 48, art. 19.
+
+###### School tax reduction
+
+5.6(1) Subject to subsection (1.1), the school taxes imposed for a calendar year in respect of the principal residence of an individual who is, or whose spouse or common-law partner is, its assessed owner are to be reduced by the lesser of
+
+(a) $1,500; and
+
+(b) the amount of the school taxes that, but for this subsection, would be imposed in respect of the property for that year.
+
+###### Réduction des taxes scolaires
+
+5.6(1) Sous réserve du paragraphe (1.1), les taxes scolaires imposées pour une année civile à l'égard de la résidence principale d'un particulier qui est le propriétaire à qui les taxes ont été imposées, ou dont le conjoint ou le conjoint de fait l'est, sont réduites du moins élevé des montants suivants :
+
+a) 1 500 $;
+
+b) le montant de taxes scolaires qui, n'eût été le présent paragraphe, aurait été imposé à l'égard de la propriété pour l'année en question.
+
+###### No school tax reduction for property with multiple residences
+
+5.6(1.1) A property that includes more than one residential dwelling unit, as determined by the Minister of Finance for Manitoba, is not eligible for a school tax reduction.
+
+###### Aucune réduction des taxes scolaires pour les résidences multiples
+
+5.6(1.1) Il n'est accordé aucune réduction des taxes scolaires pour une propriété sur laquelle se trouvent plusieurs unités résidentielles selon la détermination qu'en fait le ministre des Finances du Manitoba.
+
+###### Assessed owner entitled to school tax reduction
+
+5.6(1.2) The assessed owner of a property that includes only one residential dwelling unit is entitled to a school tax reduction in respect of the property for a year if, before issuing the property tax statement for the property for the year, the municipality issuing the statement is satisfied that the dwelling is the principal residence of the assessed owner or their spouse or common-law partner.
+
+###### Droit à une réduction des taxes scolaires
+
+5.6(1.2) Le propriétaire d'une propriété sur laquelle se trouve une seule unité résidentielle a droit à une réduction des taxes scolaires à l'égard de cette propriété pour une année si, avant d'envoyer le relevé d'impôt foncier pour cette année, la municipalité est d'avis que l'unité résidentielle est la résidence principale du propriétaire ou de son conjoint ou conjoint de fait.
+
+5.6(1.3) [Repealed] S.M. 2018, c. 34, s. 8.
+
+5.6(1.3) [Abrogé] L.M. 2018, c. 34, art. 8.
+
+###### Reimbursement of municipality or local government district
+
+5.6(2) The Minister of Finance for Manitoba shall ensure that each municipality and local government district is reimbursed out of the Consolidated Fund for the school tax reductions made under this section.
+
+###### Remboursement à la municipalité ou au district d'administration locale
+
+5.6(2) Le ministre des Finances du Manitoba fait en sorte que chaque municipalité et chaque district d'administration locale reçoivent un remboursement sur le Trésor à l'égard des réductions des taxes scolaires accordées en vertu du présent article.
+
+###### Payment to school board
+
+5.6(2.1) The Minister of Finance for Manitoba may require a portion of the amount payable to a municipality or local government district under subsection (2) to be paid directly to a school board for which it levies school taxes. The amount so paid reduces the amount otherwise payable by the municipality or local government district to the school board.
+
+###### Paiement à la commission scolaire
+
+5.6(2.1) Le ministre des Finances du Manitoba peut exiger qu'une partie du montant payable à une municipalité ou à un district d'administration locale en application du paragraphe (2) soit payée directement à une commission scolaire à l'égard de laquelle la municipalité ou le district d'administration locale perçoit des taxes scolaires. Le montant ainsi payé réduit le montant que cette municipalité ou ce district d'administration locale devrait normalement payer à la commission scolaire.
+
+###### Reimbursement may offset remittance
+
+5.6(2.2) The Minister of Finance for Manitoba may require a portion of the amount payable to a municipality or local government district under subsection (2) to be used to offset the amount the municipality or local government district would otherwise be required to remit under section 13 of The Community Revitalization Tax Increment Financing Act.
+
+###### Compensation des remises par les remboursements
+
+5.6(2.2) Le ministre des Finances du Manitoba peut exiger qu'une partie du montant devant être payé à une municipalité ou à un district d'administration locale en application du paragraphe (2) soit utilisée pour compenser le montant que la municipalité ou le district d'administration locale devrait normalement remettre en conformité avec l'article 13 de la Loi sur le financement fiscal de la revitalisation urbaine.
+
+###### Repayment of school tax reduction
+
+5.6(3) If a school tax reduction has been granted in respect of a property for a period during which
+
+(a) the property was the principal residence of neither its assessed owner nor the assessed owner's spouse or common-law partner; or
+
+(b) the property contained more than one residential unit;
+
+the person who was the assessed owner during that period must pay to the Minister of Finance for Manitoba the portion of the reduction that relates to that period determined by prorating the reduction on a daily basis.
+
+###### Remboursement de la réduction des taxes scolaires
+
+5.6(3) Si une propriété fait l'objet d'une réduction des taxes scolaires, le propriétaire ayant la charge des taxes scolaires à son égard paie au ministre des Finances du Manitoba la partie de la réduction ayant trait à toute période au cours de laquelle :
+
+a) soit la propriété n'est ni la résidence principale du propriétaire ni celle de son conjoint ou conjoint de fait;
+
+b) soit la propriété comporte plusieurs unités résidentielles.
+
+Le montant de la partie à payer est calculé au prorata du nombre de jours compris dans la période en cause.
+
+###### Repayment due date
+
+5.6(3.1) The amount payable under subsection (3) must be paid within 45 days after the due date for the school taxes payable for the year. But if, after that due date, the property ceases
+
+(a) to be the principal residence of that person or the person's spouse or common-law partner; or
+
+(b) to be eligible for the school tax reduction;
+
+the amount must be paid within 90 days after that occurs.
+
+###### Date limite de remboursement
+
+5.6(3.1) La somme visée au paragraphe (3) est remboursable dans les 45 jours qui suivent la date d'échéance des taxes scolaires pour l'année sauf si, après cette date, l'un des événements suivants se produit :
+
+a) la propriété cesse d'être la résidence principale de la personne ou de son conjoint ou conjoint de fait;
+
+b) la propriété cesse d'être admissible à la réduction de taxes scolaires.
+
+En pareil cas, la somme doit être payée dans les 90 jours suivant cet événement.
+
+###### Interest payable
+
+5.6(4) If a person fails to pay to the Minister of Finance for Manitoba the amount payable under subsection (3) within the period within which it must be paid under subsection (3.1), interest is payable by the person on the unpaid amount at the prescribed rate from the beginning of that period.
+
+###### Intérêts exigibles
+
+5.6(4) La personne qui omet de verser au ministre des Finances du Manitoba la somme due selon le paragraphe (3) avant l'expiration de la période de 45 ou de 90 jours visée au paragraphe (3.1) paie des intérêts sur la somme en souffrance au taux réglementaire, à compter du commencement de la période.
+
+###### Demand by minister
+
+5.6(5) The Minister of Finance for Manitoba may, by registered letter or by a letter served personally, demand that an amount payable under subsection (3) and any interest payable under subsection (4) be paid within 30 days after the date of the demand.
+
+###### Demande formelle du ministre
+
+5.6(5) Le ministre des Finances du Manitoba peut, par lettre recommandée ou signifiée en mains propres, demander formellement que le montant et les intérêts payables en vertu des paragraphes (3) et (4) lui soient payés dans les 30 jours suivant la date de la demande formelle.
+
+###### Penalty
+
+5.6(6) A person who fails to comply with a demand made under subsection (5) may be assessed a penalty equal to the lesser of
+
+(a) $500.; and
+
+(b) $5. multiplied by the number of days that all or any part of the amount demanded remains unpaid after the end of the 30-day period.
+
+###### Pénalité
+
+5.6(6) Quiconque omet de se conformer à la demande formelle faite en vertu du paragraphe (5) peut se voir imposer une pénalité correspondant au moins élevé des montants suivants :
+
+a) 500 $;
+
+b) 5 $ multiplié par le nombre de jours au cours desquels le montant exigé demeure impayé en tout ou en partie après la fin de la période de 30 jours.
+
+###### Debt due to His Majesty in right of Manitoba
+
+5.6(6.1) If an amount payable under subsection (3), (4) or (6) is not paid within 30 days after the date of the demand made under subsection (5), the amount is a debt due by the person to His Majesty in right of Manitoba.
+
+###### Créance de Sa Majesté du chef du Manitoba
+
+5.6(6.1) La somme exigible en vertu du paragraphe (3), (4) ou (6) qu'une personne omet de verser dans les 30 jours suivant la date de la demande formelle faite en vertu du paragraphe (5) constitue une créance de Sa Majesté du chef du Manitoba à son égard.
+
+###### Lien for debt
+
+5.6(6.2) His Majesty in right of Manitoba has, in addition to any other remedy it has for the recovery of a debt arising under this section, a lien on every estate or interest in real property and personal property of the person required to pay the debt (referred to in this section as the "debtor"), including property acquired by the debtor after the debt arose.
+
+###### Privilège
+
+5.6(6.2) En plus de tout autre recours qu'elle possède en vue du recouvrement de la dette visée au présent article, Sa Majesté du chef du Manitoba a un privilège sur chaque domaine ou intérêt relatif aux biens réels et personnels de la personne tenue de payer la dette (« débiteur » dans le présent article), y compris les biens acquis par cette personne après la naissance de la dette.
+
+###### Extent of security
+
+5.6(6.3) The lien secures the payment of
+
+(a) the amount of the debt when the debt arose;
+
+(b) interest on the debt from the time the debt arose until it is paid in full, at the prescribed rate under subsection (4); and
+
+(c) costs reasonably incurred by the Minister of Finance for Manitoba
+
+(i) for the registration and discharge of the lien, and
+
+(ii) in retaking, holding, repairing, processing, preparing for disposition or disposing of property in respect of which the lien is registered.
+
+###### Étendue de la garantie
+
+5.6(6.3) Le privilège garantit le paiement :
+
+a) du montant de la dette au moment où elle est née;
+
+b) des intérêts sur la dette à compter du moment où elle est née jusqu'à son paiement intégral au taux réglementaire visé au paragraphe (4);
+
+c) des frais raisonnables engagés par le ministre des Finances du Manitoba :
+
+(i) pour l'enregistrement et la mainlevée du privilège,
+
+(ii) pour la reprise de possession, la garde, la réparation, la transformation, la préparation aux fins de l'aliénation ou l'aliénation des biens que vise le privilège.
+
+###### Registration and enforcement of lien
+
+5.6(6.4) Subsections 64(3) and (4) and sections 65 and 66 of The Tax Administration and Miscellaneous Taxes Act apply, with necessary changes, to when a lien takes effect, to the effect of a failure to take proceedings, and to the registration and enforcement of a lien arising under this section as if
+
+(a) the references in those provisions to "tax debtor" were references to the debtor under this section;
+
+(b) the references in those provisions to "director" were references to the Minister of Finance for Manitoba;
+
+(c) the references in those provisions to "tax Act" were references to this Act; and
+
+(d) the references in those provisions to "tax debt" were references to debt under this section.
+
+###### Enregistrement et exercice du privilège
+
+5.6(6.4) Les paragraphes 64(3) et (4) et les articles 65 et 66 de la Loi sur l'administration des impôts et des taxes et divers impôts et taxes s'appliquent, avec les adaptations nécessaires, au moment de la prise d'effet du privilège, à l'effet du défaut d'engager des poursuites et à l'enregistrement ainsi qu'à l'exercice d'un privilège né sous le régime du présent article, mais toute mention, dans ces dispositions :
+
+a) de « débiteur fiscal » vaut mention de « débiteur » au sens du présent article;
+
+b) de « directeur » vaut mention de « ministre des Finances du Manitoba »;
+
+c) de « loi fiscale » vaut mention de « présente loi »;
+
+d) de « dette fiscale » vaut mention de « dette » au sens du présent article.
+
+###### Regulations re school tax reduction
+
+5.6(7) The Lieutenant Governor in Council may make regulations respecting school tax reductions, including regulations
+
+(a) extending or limiting the application of the school tax reduction to classes of residential properties or to residential properties based on ownership;
+
+(b) prescribing the manner in which a municipality, a local government district or the minister responsible for the administration of The Northern Affairs Act must grant a school tax reduction;
+
+(c) and (d) [repealed] S.M. 2014, c. 35, s. 38;
+
+(e) respecting changes in principal residences during a taxation year;
+
+(f) and (g) [repealed] S.M. 2014, c. 35, s. 38.
+
+###### Règlements concernant la réduction de taxes scolaires
+
+5.6(7) Le lieutenant-gouverneur en conseil peut, par règlement, prendre des mesures concernant les réductions de taxes scolaires et notamment :
+
+a) étendre ou limiter l'application de la réduction de taxes scolaires à des catégories de biens résidentiels ou à des biens résidentiels en fonction de leur propriétaire;
+
+b) prescrire la façon dont les municipalités, les districts d'administration locale ou le ministre chargé de l'application de la Loi sur les Affaires du Nord doivent accorder une réduction de taxes scolaires;
+
+c) et d) [abrogés] L.M. 2014, c. 35, art. 38;
+
+e) prendre des mesures concernant les changements de résidence principale pendant une année d'imposition;
+
+f) et g) [abrogés] L.M. 2014, c. 35, art. 38.
+
+###### Taxpayer's recourse if no school tax reduction
+
+5.6(8) If a school tax reduction is not applied in respect of a property as required by subsection (1), an individual's only recourse is to claim the homeowners affordability tax credit to which the individual is entitled.
+
+S.M. 2000, c. 39, s. 29; S.M. 2001, c. 41, s. 22; S.M. 2004, c. 43, s. 48; S.M. 2007, c. 6, s. 35; S.M. 2009, c. 26, s. 21; S.M. 2012, c. 1, s. 25; S.M. 2014, c. 35, s. 38; S.M. 2018, c. 34, s. 8; S.M. 2020, c. 21, s. 21 and 154; S.M. 2021, c. 55, s. 13; S.M. 2024, c. 35, s. 21.
+
+###### Recours du contribuable
+
+5.6(8) Si une réduction de taxes scolaires n'est pas accordée à l'égard d'une propriété en conformité avec le paragraphe (1), le seul recours du contribuable consiste à demander le crédit d'impôt pour l'abordabilité visant les propriétaires de leur habitation auquel il a droit.
+
+L.M. 2000, c. 39, art. 29; L.M. 2001, c. 41, art. 22; L.M. 2004, c. 43, art. 48; L.M. 2007, c. 6, art. 35; L.M. 2009, c. 26, art. 21; L.M. 2012, c. 1, art. 25; L.M. 2014, c. 35, art. 38; L.M. 2017, c. 40, art. 30; L.M. 2018, c. 34, art. 8; L.M. 2020, c. 21, art. 21 et 154; L.M. 2021, c. 55, art. 13; L.M. 2024, c. 35, art. 21.
+
+###### Definitions
+
+5.6.1(1) The following definitions apply in this section.
+
+"eligible rental cost" of an individual's rented residence for a taxation year is
+
+(a) the total of the rental and other payments (other than payments for meals or board) paid for any period in the year for a rented residence by or on behalf of the individual; or
+
+(b) in the case of a rented residence that is a room in a personal care home, the amount equal to 50% of the portion of the per diem charges that were paid to the personal care home for any period in the year by or on behalf of the individual and that were not claimed by any taxpayer as a medical expense under subsection 4.6(17). (« frais de loyer admissibles »)
+
+"rented residence" of an individual means the principal residence of the individual that is rented by them or their spouse or common-law partner from another person. (« résidence louée »)
+
+###### Définitions
+
+5.6.1(1) Les définitions qui suivent s'appliquent au présent article.
+
+« frais de loyer admissibles » Pour une année d'imposition, l'une ou l'autre des sommes qui suivent à l'égard d'une résidence louée par un particulier :
+
+a) le total des paiements de loyer ou autres (à l'exclusion des paiements versés pour les repas ou la pension) versés par le particulier ou en son nom à l'égard de toute période de l'année pour une résidence louée;
+
+b) s'il s'agit d'une chambre dans un foyer de soins personnels, la somme correspondant à 50 % de la partie des frais quotidiens payés au foyer par le particulier ou en son nom à l'égard de toute période de l'année et qui n'a pas été réclamée par un contribuable à titre de frais médicaux en vertu du paragraphe 4.6(17). ("eligible rental cost")
+
+« résidence louée » La résidence principale d'un particulier prise en location à une autre personne par le particulier lui-même ou par son conjoint ou conjoint de fait. ("rented residence")
+
+###### Eligibility for renters affordability tax credit
+
+5.6.1(2) An individual with a rented residence is eligible for a renters affordability tax credit for a taxation year subject to the following conditions:
+
+1.An individual is not eligible for the credit for the taxation year if, on the last day of the taxation year, they are not resident in Manitoba or are less than 16 years old.
+
+2.An individual is not eligible for the credit for the taxation year if at any time in the taxation year
+
+(a) they are exempt from tax under paragraph 149(1)⁠(a) or (b) of the federal Act (employee of a country other than Canada); or
+
+(b) they are not a Canadian citizen and are on active military service as a member of the armed forces of a country other than Canada, or are a member of the family of such an individual.
+
+3.An individual is not eligible for the credit for a residential dwelling unit
+
+(a) for any period for which any other individual claims a renters affordability tax credit for that dwelling unit; or
+
+(b) for any period for which the dwelling unit is the primary residence of an owner of the dwelling unit or the cohabiting spouse or common-law partner of the owner.
+
+4.An individual is not eligible for the credit for any period during which the individual does not have a rented residence.
+
+###### Admissibilité au crédit d'impôt pour l'abordabilité visant les locataires
+
+5.6.1(2) Le particulier qui a une résidence louée est admissible à un crédit d'impôt pour l'abordabilité visant les locataires à l'égard d'une année d'imposition, sous réserve des conditions suivantes :
+
+1.Il n'y est pas admissible si, le dernier jour de l'année d'imposition, il ne réside pas au Manitoba ou il est âgé de moins de 16 ans.
+
+2.Il n'y est pas admissible s'il répond, à tout moment au cours de l'année d'imposition, à un des critères suivants :
+
+a) il est exempté de l'impôt en vertu de l'alinéa 149(1)a) ou b) de la loi fédérale;
+
+b) il n'est pas citoyen canadien et est en service militaire actif à titre de membre des forces armées d'un autre pays que le Canada, ou est membre de la famille d'un tel particulier.
+
+3.Il n'y est pas admissible à l'égard d'une unité résidentielle :
+
+a) pour toute période au cours de laquelle un autre particulier demande le crédit d'impôt pour l'abordabilité visant les locataires concernant la même unité;
+
+b) pour toute période au cours de laquelle l'unité constitue la résidence première d'un propriétaire de l'unité ou du conjoint ou conjoint de fait visé de ce dernier.
+
+4.Il n'y est pas admissible pour toute période pendant laquelle il n'a aucune résidence louée.
+
+###### Renters affordability tax credit
+
+5.6.1(3) Subject to subsection (4), an individual's renters affordability tax credit for a taxation year is the lesser of
+
+(a) the individual's eligible rental cost for the year; and
+
+(b) the amount determined by the following formula:
+
+$575 × M/12
+
+In this formula, M is the number of months in the year that the individual is eligible for the credit.
+
+###### Crédit d'impôt pour l'abordabilité visant les locataires
+
+5.6.1(3) Sous réserve du paragraphe (4), le crédit d'impôt pour l'abordabilité visant les locataires d'un particulier à l'égard d'une année d'imposition correspond à la moins élevée des sommes suivantes :
+
+a) ses frais de loyer admissibles pour l'année;
+
+b) la somme calculée au moyen de la formule suivante :
+
+575 $ × M/12
+
+Dans la présente formule, M représente le nombre de mois dans l'année pendant lesquels le particulier est admissible au crédit.
+
+###### Renters affordability tax credit for seniors
+
+5.6.1(4) If an individual or their cohabiting spouse or common-law partner is at least 65 years of age at the end of a taxation year, the individual's renters affordability tax credit for the taxation year is the lesser of the individual's eligible rental cost for the year and the amount determined by the following formula:
+
+($903.57 − A) × M/12
+
+In this formula,
+
+Ais the lesser of $328.57 and 0.8214% of the individual's family income for the year;
+
+Mis the number of months in the year that the individual is eligible for the credit.
+
+###### Crédit d'impôt pour l'abordabilité visant les locataires à l'intention des personnes âgées
+
+5.6.1(4) Le crédit d'impôt pour l'abordabilité visant les locataires auquel a droit pour une année d'imposition un particulier âgé d'au moins 65 ans, ou dont le conjoint ou conjoint de fait visé a atteint cet âge, à la fin de l'année d'imposition correspond aux frais de loyer admissibles du particulier ou, si elle est inférieure, à la somme calculée au moyen de la formule suivante :
+
+(903,57 $ − A) × M/12
+
+Dans la présente formule :
+
+Areprésente 328,57 $ ou, si elle est inférieure, la somme correspondant à 0,8214 % du revenu familial du particulier pour l'année;
+
+Mreprésente le nombre de mois dans l'année pendant lesquels le particulier est admissible au crédit.
+
+###### Interpretation of "month"
+
+5.6.1(5) For the purpose of subsections (3) and (4), a month means a calendar month more than half of the days of which the individual is eligible to claim the renters affordability tax credit with respect to a residence.
+
+S.M. 2022, c. 45, s. 14; S.M. 2024, c. 35, s. 23.
+
+###### Sens de « mois »
+
+5.6.1(5) Tout mois civil au cours duquel le particulier a été admissible au crédit d'impôt pour l'abordabilité visant les locataires à l'égard d'une résidence pendant plus de la moitié des jours constitue un mois aux fins des paragraphes (3) et (4).
+
+L.M. 2022, c. 45, art. 14; L.M. 2024, c. 35, art. 23.
+
+Personal Tax Credit
+
+Crédit d'impôt personnel

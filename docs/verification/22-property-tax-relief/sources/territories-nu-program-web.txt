@@ -1,0 +1,14 @@
+Title: Nunavut Property Tax (2026 current page)
+URL: https://www.gov.nu.ca/en/taxation-and-insurance/property-tax
+Fetched: 2026-11-05
+Evidence: Selected factual paraphrase of government page returned by web search/open.
+Original SHA-256: unavailable; direct HTTP download returned 403 Forbidden.
+================================================================================
+
+General taxation area excludes Iqaluit; the city administers its own property taxes.
+People turning 65 during the taxation period, and eligible people with disabilities, may apply for exemption.
+An owner or part-owner must ordinarily live in the eligible property. Application is required each taxation year.
+The Finance Minister may exempt eligible general-area property.
+The page supplies a 2026 tax-rate sheet and annual exemption/renewal applications.
+It does not specify an income test or a universal fixed exemption percentage/cap.
+This is a paraphrase, not a byte-identical copy or original-file hash.

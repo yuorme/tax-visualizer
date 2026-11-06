@@ -1,0 +1,120 @@
+Title: St Johns official 2025 and 2026 property-tax rates and seniors discount
+URL: https://www.stjohns.ca/resident-services/property-taxes-assessments/tax-rates/
+Fetched: 2026-11-05
+SHA-256 of the original: 82dea468c52871435b8f131e442154be3189ad8ca1b7dfa3af78807415d4e4fe
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+# Tax Rates
+
+The City of St. John's calculates the municipal tax for your property based on the property's assessed value multiplied by the current mill rate. A mill rate is the method used to determine the taxes that are to be paid on a property. The City of St. John's has used mill rates since 1982.
+
+Water tax is calculated on a per-unit basis.
+
+## Current Tax Rates
+
+### Residential tax rates
+
+Category | 2026 | 2025 | 2024
+with water and sewer services | 9.1 mills | 9.1 mills | 9.1 mills
+with either water or sewer services | 8.6 mills | 8.6 mills | 8.6 mills
+without water & sewer services | 8.1 mills | 8.1 mills | 8.1 mills
+vacant land | 9.1 mills | 9.1 mills | 9.1 mills
+senior citizens (GIS recipients) | 25% reduction | 25% reduction | 25% reduction
+
+### Commercial tax rates
+
+Category | 2026 | 2025 | 2024
+with water and sewer services | 29.5 mills | 29.5 mills | 29.5 mills
+with either water or sewer service | 29.0 mills | 29.0 mills | 29.0 mills
+without water and sewer services | 28.5 mills | 28.5 mills | 28.5 mills
+vacant land | 14.75 mills | 14.75 mills | 14.75 mills
+utility tax | 2.5% - gross revenue | 2.5% - gross revenue | 2.5% - gross revenue
+accommodation tax | 4% of the amount charged on lodging | 4% of the amount charged on lodging | 4% of the amount charged on lodging
+Business Improvement Area (BIA) downtown development area only | 0.8 of a mill added to the commercial mill rate (levy) | 0.8 of a mill added to the commercial mill rate (levy) | 0.8 of a mill added to the commercial mill rate (levy)
+
+### Water tax
+
+Category | 2026 | 2025 | 2024
+Residential | $700.00 | $690.00 | $675.00
+Commercial | $700.00 | $690.00 | $675.00
+
+### Water meter rates
+
+Monthly consumption/ base charge | 2026 | 2025 | 2024
+Per 1000 gallons | $7.07 | $6.97 | $6.81
+Per cubic meter | $1.55 | $1.53 | $1.50
+5/8" meter | $29.30 | $29.30 | $29.30
+3/4" meter | $44.02 | $44.02 | $44.02
+1" meter | $73.28 | $73.28 | $73.28
+1½" meter | $146.47 | $146.47 | $146.47
+2" meter | $233.65 | $233.65 | $233.65
+3" meter | $467.76 | $467.76 | $467.76
+4" meter | $747.72 | $747.72 | $747.72
+6" meter | $1,461.52 | $1,461.52 | $1,461.52
+8" meter | $2,337.76 | $2,337.76 | $2,337.76
+10" meter | $3,359.44 | $3,359.44 | $3,359.44
+
+## Historic Mill Rates
+
+Year | Residential | Commercial | Business Occupancy | Water Tax | Seniors Discount
+2026 | 9.1 mills | 29.5 mills | n/a | $700 | 25%
+2025 | 9.1 mills | 29.5 mills | n/a | $690 | 25%
+2024 | 9.1 mills | 29.5 mills | n/a | $675 | 25%
+2023 | 8.3 mills | 26.9 mills | n/a | $670 | 25%
+2022 | 8.3 mills | 26.9 mills | n/a | $625 | 25%
+2021 | 7.7 mills | 26.1 mills | n/a | $620 | 25%
+2020 | 7.7 mills | 26.1 mills | n/a | $605 | 25%
+2019 | 7.7 mills | 26.1 mills | n/a | $605 | 25%
+2018 | 7.3 mills | 24.7 mills | n/a | $580 | 25%
+2017 | 7.3 mills | 24.7 mills | n/a | $580 | 25%
+2016 | 7.8 mills | 25.2 mills | n/a | $630 | 25%
+2015 | 8.1 mills | 26.2 mills | n/a | $615 | 25%
+2014 | 8.1 mills | 26.2 mills | n/a | $615 | 25%
+2013 | 8.1 mills | 26.2 mills | n/a | $615 | 25%
+2012 | 10.6 mills | 16.8 mills | 17.33/67.39 mills | $615 | 25%
+2011 | 10.6 mills | 16.8 mills | 17.33/67.39 mills | $580 | 25%
+2010 | 10.1 mills | 16.3 mills | 16.83/65.45 mills | $570 | 20%
+2009 | 11.0 mills | 17.2 mills | 17.73/68.95 mills | $520 | 15%
+2008 | 11.0 mills | 17.2 mills | 17.73/68.95 mills | $440 | 15%
+2007 | 11.0 mills | 17.2 mills | 17.73/68.95 mills | $400 | 15%
+2006 | 12.2 mills | 18.2 mills | 18.76/72.96 mills | $400 | 15%
+2005 | 12.2 mills | 18.2 mills | 18.76/72.96 mills | $305 | 15%
+2004 | 12.2 mills | 18.2 mills | 18.76/72.96 mills | $280 | 15%
+2003 | 12.7 mills | 18.7 mills | 19.26/74.9 mills | $280 | 15%
+2002 | 12.7 mills | 18.7 mills | 19.26/74.9 mills | $280 | 15%
+2001 | 11.5 mills | 17.5 mills | 18/70 mills | $190 | 15%
+2000 | 11.5 mills | 17.5 mills | 18/70 mills | $190 | 15%
+1999 | 11.5 mills | 17.5 mills | 18/70 mills | $190 | 15%
+1998 | 11 mills | 17 mills | 18/70 mills | $190 | 15%
+1997 | 11 mills | 17 mills | 17/35 mills | $160 | 15%
+1996 | 11 mills | 17 mills | 17/35 mills | $160 | 15%
+1995 | 11 mills | 16.5 mills | 16.5 mills | $160 | 15%
+1994 | 11 mills | 16.5 mills | 16.5 mills | $160 | 15%
+1993 | 11 mills | 16.5 mills | 16.5 mills | $160 | 15%
+1992 | 11 mills | 16.5 mills | 16.5 mills | $160 | 15%
+1991 | 11 mills | 16.5 mills | 16.5 mills | $160 | 15%
+1990 | 11 mills | 17 mills | 18 mills | $160 | 15%
+1989 | 11 mills | 17 mills | 17 mills | $110 | 10%
+1988 | 11 mills | 16/17 mills | 16/17 mills | $110
+1987 | 11 mills | 16 mills | 16 mills | $110
+1986 | 11 mills | 16 mills | 16 mills | $110
+1985 | 11 mills | 18 mills | 18 mills | $110
+1984 | 11 mills | 18 mills | 18 mills | $110
+1983 | 11 mills | 18 mills | 18 mills | $55
+1982 | 11 mills | 18 mills | 18 mills | $44
+
+Contact Us
+
+Revenue Accounting
+Finance and Corporate Services
+P.O. Box 908
+St. John's, NL A1C 5M2
+Phone: 709-576-8251
+Email: taxation@stjohns.ca
+
+# Stay in Touch
+
+Sign up to receive information from the City of St. John's directly to your inbox. Check out the various categories of general news, and emergency notifications.
+
+Sign Up Today!

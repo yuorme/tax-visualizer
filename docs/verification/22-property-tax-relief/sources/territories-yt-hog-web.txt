@@ -1,0 +1,15 @@
+Title: Yukon Apply for Home Owners Grant (2026)
+URL: https://yukon.ca/en/housing-and-property/property-tax-and-assessments/apply-home-owners-grant
+Fetched: 2026-11-05
+Evidence: Selected factual paraphrase of government page returned by web search/open.
+Original SHA-256: unavailable; direct HTTP download returned 403 Forbidden.
+================================================================================
+
+The page accepts 2026 applications through February 15, 2027.
+Principal-residence property taxes may be municipal or rural territorial taxes.
+Ordinary grant: 50%, maximum $450, subject to a $100 minimum tax.
+Age 65+: 75%, maximum $500.
+Applicants must own the home, pay the taxes in full, and live there for 184 days in the tax year.
+One grant annually. Mortgage-company applicants can submit by June 10 so the lender pays tax net of grant.
+Direct payment can deduct the grant at the time of payment.
+This is a paraphrase, not a byte-identical copy or original-file hash.

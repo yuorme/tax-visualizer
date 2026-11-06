@@ -1,0 +1,296 @@
+Title: 2017 Act introducing Municipal Taxation Act sections 210.1–210.20 (apply later 2021 cap amendment)
+URL: https://www.publicationsduquebec.gouv.qc.ca/fileadmin/gazette/pdf_encrypte/lois_reglements/2017A/102873.pdf
+Fetched: 2026-11-05
+SHA-256 of the original: cb6869aee573a6475d64856bb12f3c1784c0e3998e6a6091f322742d6caab8c8
+Publication date modified: 2017-03-14
+PDF pages: 28-34 of 304
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 28 of 304 ---
+
+306 GAZETTE OFFICIELLE DU QUÉBEC, March 15, 2017, Vol. 149, No. 11 Part 2
+For the purposes of this division, “spouse” and “former spouse” must be
+construed in accordance with the rules of sections 2.2 and 2.2.1 of the Taxation
+Act.
+“210.2. For the purposes of this division, a person is considered to be a
+person resident in Québec or Canada if the person is so considered for the
+purposes of the Taxation Act (chapter I-3), and is considered to be a person
+not resident in Québec or Canada in any other case.
+“210.3. For the purposes of the definition of “family income” in the first
+paragraph of section 210.1, the following rules apply:
+(1) the income for a year of a person who was not resident in Canada
+throughout the year is deemed to be equal to the income that would be
+determined in respect of the person for the year under Part I of the Taxation
+Act (chapter I-3) if the person had been resident in Québec and in Canada
+throughout the year or, if the person died in the year, throughout the period of
+the year preceding the time of death; and
+(2) if a person becomes a bankrupt in a year, section 779 of the Taxation
+Act does not apply for the purpose of determining the person’s income for the
+year.
+“210.4. The amount referred to in paragraph 5 of section 210.5 that must
+be used for a year subsequent to the year 2016 is to be adjusted annually in
+such a manner that the amount used for that year is equal to the total of the
+amount used for the preceding year and the product obtained by multiplying
+that amount so used by the factor determined by the formula
+(A/B) – 1.
+In the formula in the first paragraph,
+(1) A is the overall average Québec consumer price index without alcoholic
+beverages and tobacco products for the 12-month period that ended on
+30 September of the year preceding that for which an amount is to be adjusted;
+and
+(2) B is the overall average Québec consumer price index without alcoholic
+beverages and tobacco products for the 12-month period that ended on
+30 September of the year immediately before the year preceding that for which
+the amount is to be adjusted.
+For the purposes of the first paragraph, where the factor determined by the
+formula in that paragraph is less than zero, it is deemed to be equal to zero.
+If the factor determined by the formula in the first paragraph has more than
+four decimal places, only the first four decimal digits are retained and the fourth
+is increased by one unit if the fifth is greater than 4.
+
+--- PDF page 29 of 304 ---
+
+Part 2 GAZETTE OFFICIELLE DU QUÉBEC, March 15, 2017, Vol. 149, No. 11 307
+If the amount that results from the adjustment provided for in the first
+paragraph is not a multiple of $100, it is to be rounded to the nearest multiple
+of $100 or, if it is equidistant from two such multiples, to the higher multiple.
+“§2. — Grant entitlement
+“210.5. Subject to section 210.13, a person is entitled to a grant for a
+particular year, subsequent to the year 2015, in respect of an entirely residential
+assessment unit consisting of only one dwelling (in this division referred to as
+the “specified assessment unit”), other than the assessment unit referred to in
+the second paragraph, if
+(1) at the end of 31 December of the year preceding the particular year, the
+person is resident in Québec and has owned the specified assessment unit for
+at least 15 consecutive years;
+(2) the person has reached 65 years of age before the beginning of the
+particular year;
+(3) the person is a person to whom the municipal tax account relating to the
+specified assessment unit was sent for the particular year;
+(4) the specified assessment unit is the person’s principal place of residence
+at the time of the sending of the municipal tax account relating to the specified
+assessment unit for the particular year; and
+(5) the person’s family income for the year preceding the particular year
+does not exceed $50,000.
+For the purposes of the first paragraph, an entirely residential assessment
+unit consisting of only one dwelling does not include a rectory that is exempt,
+in whole or in part, from municipal or school taxes under section 231.1.
+“210.6. For the purposes of subparagraph 1 of the first paragraph of
+section 210.5, where a person has become the owner, as a result of a transfer,
+of a specified assessment unit that was owned before the transfer by the person’s
+spouse, or the person’s former spouse if the transfer was made under a decree,
+order or judgment of a competent tribunal, or under a written separation
+agreement, within the meaning of section 1 of the Taxation Act (chapter I-3),
+relating to a partition of property between them in settlement of rights arising
+out of, or on the breakdown of, their marriage, the person is deemed to have
+owned the specified assessment unit during each year that preceded the year
+of the transfer and in which the person’s spouse or former spouse, as the case
+may be, owned the specified assessment unit or was deemed to own it under
+this section.
+
+--- PDF page 30 of 304 ---
+
+308 GAZETTE OFFICIELLE DU QUÉBEC, March 15, 2017, Vol. 149, No. 11 Part 2
+“§3. — Grant calculation
+“210.7. The amount of the grant to which a person to whom section 210.5
+applies is entitled in respect of a specified assessment unit situated in the
+territory of a municipality for a year to which a roll applies (in this section
+referred to as the “current roll”) is equal to the lesser of $500 and the amount
+determined by the formula
+{A × [B – (C × D)]} + E.
+In the formula in the first paragraph,
+(1) A is the rate resulting from the addition of the rates of the following
+municipal property taxes that are applicable for the year to the specified
+assessment unit for the first fiscal year to which the current roll applies:
+(a) the general property tax,
+(b) each of the special property taxes that are imposed on all of the specified
+assessment units situated in the territory of the municipality, on the basis of
+their taxable value,
+(c) a special tax whose purpose is to reimburse the debts of a municipality
+that ceased to exist following an amalgamation and that is imposed on all of
+the specified assessment units situated in the territory of the municipality that
+ceased to exist, on the basis of their taxable value,
+(d) if the specified assessment unit is situated in the territory of a borough
+of Ville de Montréal, the borough tax that is imposed by the borough council
+on all of the specified assessment units situated in the territory of the borough,
+on the basis of their taxable value, and
+(e) the urban agglomeration tax that is imposed by an urban agglomeration
+council on all of the specified assessment units situated in the territory of the
+municipality, on the basis of their taxable value;
+(2) B is the value of the specified assessment unit entered on the current
+roll, as that roll stands on the day of its deposit;
+(3) C is the value of the specified assessment unit entered on the roll
+immediately preceding the current roll, as that roll stands on the day preceding
+the day of the deposit of the current roll;
+(4) D is an amount equal to the amount determined by the formula
+(F/G) + 0.075;
+
+--- PDF page 31 of 304 ---
+
+Part 2 GAZETTE OFFICIELLE DU QUÉBEC, March 15, 2017, Vol. 149, No. 11 309
+(5) E is the amount of the grant awarded, under this division and in respect
+of the specified assessment unit, for the last year to which the roll immediately
+preceding the current roll relates, to the person or to any other person; and
+(6) where the difference between the amount that B represents and the
+product obtained by multiplying the amounts that C and D represent is less
+than zero, such difference is deemed to be equal to zero.
+In the formula in subparagraph 4 of the second paragraph,
+(1) F is the amount obtained by dividing the total of the values entered on
+lines 501, 502 and 514 of the section entitled “VALEURS DES LOGEMENTS”
+of the form that is prescribed by the regulation made under paragraph 1 of
+section 263 and that pertains to the summary of the property assessment roll
+reflecting the state of the current roll on the day of its deposit by the total
+number of dwellings entered on those lines; and
+(2) G is the amount obtained by dividing the total of the values entered on
+lines 501, 502 and 514 of the section entitled “VALEURS DES LOGEMENTS”
+of the form that is prescribed by the regulation made under paragraph 1 of
+section 263 and that pertains to the summary of the property assessment roll
+preceding the roll referred to in subparagraph 1 and reflecting its state on the
+day preceding the day of the deposit of the current roll by the total number of
+dwellings entered on those lines.
+For the purpose of applying this section to a particular year subsequent to
+the year 2016, where the last year to which the roll immediately preceding the
+current roll relates is the year 2016 and the amount represented by E in the
+formula in the first paragraph for the particular year in respect of the specified
+assessment unit is greater than $500, that amount is deemed to be equal to $500
+for the particular year.
+“210.8. Where the amount determined by the formula in the first
+paragraph of section 210.7 is a decimal number, the decimal part is dropped
+and the integer is increased by 1 if the first decimal digit is greater than 4.
+Where the amount determined by the formula in subparagraph 4 of the second
+paragraph of section 210.7 or the quotient resulting from the division under
+subparagraph 1 or 2 of the third paragraph of that section is a number that has
+more than four decimal places, only the first four decimal digits are retained
+and the fourth is increased by one unit if the fifth is greater than 4.
+“210.9. Where a municipality applies, in respect of a roll, the measure
+for averaging the variation in taxable values provided for in Division IV.3, the
+formula in the first paragraph of section 210.7 is to be replaced, in relation to
+a particular year to which the roll applies, by
+(1) 1/3 {A × [B – (C × D)]} + E, where the averaging measure applies to
+three fiscal years and the particular year corresponds to the first of those fiscal
+years;
+
+--- PDF page 32 of 304 ---
+
+310 GAZETTE OFFICIELLE DU QUÉBEC, March 15, 2017, Vol. 149, No. 11 Part 2
+(2) 2/3 {A × [B – (C × D)]} + E, where the averaging measure applies to
+three fiscal years and the particular year corresponds to the second of those
+fiscal years; or
+(3) 1/2 {A × [B – (C × D)]} + E, where the averaging measure applies only
+to two fiscal years and the particular year corresponds to the first of those fiscal
+years.
+“210.10. Unless the amount of the grant that a person may obtain for a
+year (in respect of a specified assessment unit, if section 210.5 applied to the
+person and if the formula in the first paragraph of section 210.7 were read
+without reference to “+ E”) is specified on the municipal tax account, a
+municipality shall specify that amount in the prescribed form containing
+prescribed information and send the form to the person on or before the last
+day of February of that year.
+“210.11. Where, on a date subsequent to the date of the deposit of a roll,
+an alteration (other than an alteration referred to in section 210.12) is made to
+the roll to reflect the decrease in the taxable value of a specified assessment
+unit, subparagraph 2 of the second paragraph of section 210.7 is to be read, in
+relation to the specified assessment unit, for any year beginning after the date
+of the alteration and to which the roll applies, as if “as that roll stands on the
+day of its deposit” were replaced by “as that roll stands at the end of the fiscal
+year in which the taxable value of the specified assessment unit was reduced”.
+“210.12. Where an alteration to the taxable value of a specified assessment
+unit is effective from the date of coming into force of a roll or the day before
+that date, the amount of the grant provided for in section 210.7, in relation to
+the specified assessment unit for a year to which the roll applies, is to be
+determined or redetermined, as the case may be, taking into account, for the
+purposes of subparagraph 2 or 3 of the second paragraph of that section, the
+taxable value of the specified assessment unit as altered.
+Where an alteration provided for in the first paragraph is made to a roll after
+an application under section 210.13 has been filed with the Minister of Revenue
+by a person, in relation to a specified assessment unit, for a particular year to
+which the roll applies, the following rules apply:
+(1) section 210.10 applies to the municipality in respect of which the roll
+was altered, but the form referred to in that section must, if applicable, be sent
+again to the person within a reasonable time; and
+(2) on or before the sixtieth day after the date of sending of the altered
+municipal taxes account, if the tax account specifies the amount of the potential
+grant, or, in any other case, of the form referred to in section 210.10, that was
+sent to the person because of the alteration to the roll, the person shall file an
+application for the review with the Minister of Revenue.
+
+--- PDF page 33 of 304 ---
+
+Part 2 GAZETTE OFFICIELLE DU QUÉBEC, March 15, 2017, Vol. 149, No. 11 311
+“§4. — Grant application
+“210.13. A person wishing to benefit from a grant for a particular year
+in respect of a specified assessment unit must file an application on or before
+31 December of the fourth year that follows the particular year with the Minister
+of Revenue in the prescribed form containing prescribed information that the
+person must enclose with the fiscal return the person is required to file under
+section 1000 of the Taxation Act (chapter I-3) for the year that ended
+immediately before the beginning of the particular year or would be required
+to file if tax were payable by the person for that year under Part I of that Act.
+“210.14. If, for a year, more than one person could, but for this section,
+be entitled to an amount under section 210.7 in respect of a specified assessment
+unit that the persons jointly own, the total of the amounts to which each of
+those persons may be entitled under that section for the year in relation to the
+specified assessment unit may not exceed the particular amount to which only
+one of those persons could be entitled under that section for the year in relation
+to the specified assessment unit if that person were the sole owner of the
+specified assessment unit.
+If the persons cannot agree on the portion of the particular amount to which
+each person would, but for this section, be entitled under section 210.7, the
+Minister of Revenue may determine the portion of that amount to which each
+person is entitled under that section.
+“§5. — Administrative provisions
+“210.15. The Minister of Revenue shall examine, with dispatch, the
+application filed under this division, determine the amount of the grant to which
+the person is entitled and send the person a notice of determination in that
+respect.
+“210.16. The Minister of Revenue may redetermine the amount of a grant
+(1) within three years after the date of sending of the notice of determination
+provided for in section 210.15; or
+(2) at any time, if the applicant
+(a) misrepresented the facts through negligence or wilful omission,
+committed fraud in making the application or furnishing any other information
+for the payment of the grant provided for in this division, or
+(b) filed a waiver with the Minister in prescribed form.
+“210.17. The provisions of the Tax Administration Act (chapter A-6.002),
+to the extent that they relate to an assessment or reassessment, apply, with the
+necessary modifications, to the determination or redetermination of an amount
+under this division.
+
+--- PDF page 34 of 304 ---
+
+312 GAZETTE OFFICIELLE DU QUÉBEC, March 15, 2017, Vol. 149, No. 11 Part 2
+“210.18. The payment of a grant to a person is deemed to be a refund to
+the person by reason of the application of a fiscal law.
+“210.19. The sums required for the payment of a grant owing under this
+division are taken out of the tax revenues collected under the Taxation Act
+(chapter I-3).
+“210.20. This division is deemed to be a fiscal law within the meaning
+of the Tax Administration Act (chapter A-6.002).”
+(2) Subsection 1 has effect from 1 January 2016. However, where
+section 210.7 of the Act applies in respect of a grant application filed before
+24 September 2016, the portion of the first paragraph of that section before the
+formula is to be read without reference to “the lesser of $500 and”.
+ACT TO ESTABLISH FONDACTION, LE FONDS DE
+DÉVELOPPEMENT DE LA CONFÉDÉRATION DES SYNDICATS
+NATIONAUX POUR LA COOPÉRATION ET L’EMPLOI
+45. (1) Section 18 of the Act to establish Fondaction, le Fonds de
+développement de la Confédération des syndicats nationaux pour la coopération
+et l’emploi (chapter F-3.1.2) is amended
+(1) by replacing “Aux fins” in the French text by “Pour l’application”;
+(2) by adding the following paragraph:
+“Except for the purposes of subparagraph 8 of the fifth paragraph of
+section 19, an investment in an entity that is not an enterprise within the meaning
+of the first paragraph and that is either a partnership (other than a partnership
+that is an investment fund) or a legal person is deemed to be an investment in
+a particular enterprise, if the investment was made with a view to investing in
+the particular enterprise.”
+(2) Subsection 1 has effect from 1 June 2016.
+46. (1) Section 19 of the Act is amended
+(1) by replacing the second paragraph by the following paragraph:
+“However, for a particular fiscal year, the Fund’s eligible investments must
+represent, on the average, at least the following percentage of the Fund’s average
+net assets for the preceding year:
+(1) 60%, if the particular fiscal year ends on 31 May 2015;
+(2) 61%, if the particular fiscal year ends on 31 May 2016;
+(3) 62%, if the particular fiscal year ends on 31 May 2017;

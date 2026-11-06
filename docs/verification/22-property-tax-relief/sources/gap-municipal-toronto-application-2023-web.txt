@@ -1,0 +1,11 @@
+Title: Toronto 2023 Property Tax and Water Relief application, indexed official extract
+URL: https://www.toronto.ca/wp-content/uploads/2023/05/8d4f-Tax-and-Water-Relief-Application.pdf
+Fetched: 2026-11-05
+Evidence: Factual paraphrase of indexed official search result; direct raw and web-open requests returned HTTP 404.
+Original SHA-256: unavailable; no raw document obtained.
+================================================================================
+
+The indexed official application explicitly identifies household income as the sum of line 15000 from each Notice of Assessment or Notice of Reassessment.
+The contributing people are property owners and each owner's spouse residing at the property.
+This is an older 2023 form; it supports the historical total-income definition, not a claim that the 2025 or 2026 form prints line 15000.
+The downloaded 2026 form still requests prior-year Notices of Assessment and resident owners/spouses but does not explicitly name line 15000.

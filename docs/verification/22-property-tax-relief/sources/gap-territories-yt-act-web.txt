@@ -1,0 +1,19 @@
+Title: Yukon Home Owners Grant Act, RSY 2002 c.110, sections 1–9
+URL: https://laws.yukon.ca/cms/images/LEGISLATION/PRINCIPAL/2002/2002-0110/2002-0110.pdf
+Fetched: 2026-11-05
+Evidence: Factual paraphrase of official Legislative Counsel Office PDF read through the web reader.
+Original SHA-256: unavailable; Node fetch and curl with browser user-agent returned HTTP 403 Forbidden.
+Publication: Unofficial government consolidation, amended by SY2009 c21; PDF pages 5–9 contain relevant sections.
+================================================================================
+
+Section 1: qualifying applicants paid the year's taxes or hold a seniors tax-deferral agreement not in default.
+Residence can satisfy either normal residence from January 1 to application or at least 184 days in the tax year.
+Eligible taxes exclude local improvements, arrears, penalties, delinquent taxes, fees and interest.
+Section 2(2): ordinary grant is the least of 450 dollars, half eligible taxes, and tax minus 100 dollars if tax is below 200 dollars.
+Section 2(3) overrides 2(2): qualified applicant must produce evidence of being at least 65; there is no OAS eligibility condition. Senior grant is the lesser of 500 dollars and three quarters of eligible taxes.
+Section 2(4): surviving spouse of someone who received the senior grant uses the senior calculation if not remarried.
+Section 3 sets February 15 following the relevant year as application deadline; payment/proof of full tax payment accompanies it.
+Sections 4–5 restrict the claimant and residence to one annual grant, subject to the change-of-residence provision.
+Section 7 separately permits payment of a deceased eligible applicant's grant to heir or surviving spouse.
+Section 9 allows residence periods at successive properties to combine under its conditions.
+These facts are paraphrases, not the original PDF bytes or an original-file hash.

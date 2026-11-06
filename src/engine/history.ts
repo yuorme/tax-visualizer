@@ -39,6 +39,23 @@ export function scaleHousehold(input: Household, factor: number): Household {
           bill === undefined ? undefined : bill * factor,
         ]),
       ),
+    // Reflected relief is part of the bill's dollars. Legacy inputs omit it; keep that shape.
+    ...(input.propertyReliefApplied
+      ? {
+          propertyReliefApplied: Object.fromEntries(
+            Object.entries(input.propertyReliefApplied).map(([code, byProgram]) => [
+              code,
+              byProgram &&
+                Object.fromEntries(
+                  Object.entries(byProgram).map(([id, amount]) => [
+                    id,
+                    amount === undefined ? undefined : amount * factor,
+                  ]),
+                ),
+            ]),
+          ),
+        }
+      : {}),
     rent: input.rent * factor,
     monthlySpending: input.monthlySpending * factor,
     childcare: input.childcare && {

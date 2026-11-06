@@ -1,0 +1,43 @@
+Title: CurrentAndHistoricalPortionPercentageRates.xlsx
+URL: https://assessment.winnipeg.ca/Asmttax/pdfs/rates/CurrentAndHistoricalPortionPercentageRates.pdf
+Fetched: 2026-11-05
+SHA-256 of the original: 321cde4fb6862efd09bbbde89b22c592e16a20bfb6c979cf3eae261d11530558
+Publication date modified: 2026-03-10
+PDF pages: all 1
+Text extract made by `npm run fetch-source`. Check figures against the original when layout matters (tables).
+================================================================================
+
+--- PDF page 1 of 1 ---
+
+Taxes will be calculated on the following portioned percentages.
+2007 2008 2009 2010 2011 2012 2013 2014 2015 2016
+PROPERTY CLASS
+Residential 1 45.0% 45.0% 45.0% 45.0% 45.0% 45.0% 45.0% 45.0% 45.0% 45.0%
+Residential 2 45.0% 45.0% 45.0% 45.0% 45.0% 45.0% 45.0% 45.0% 45.0% 45.0%
+Residential 3 45.0% 45.0% 45.0% 45.0% 45.0% 45.0% 45.0% 45.0% 45.0% 45.0%
+Farm 26.0% 26.0% 26.0% 26.0% 26.0% 26.0% 26.0% 26.0% 26.0% 26.0%
+Institutional 65.0% 65.0% 65.0% 65.0% 65.0% 65.0% 65.0% 65.0% 65.0% 65.0%
+Designated Higher Education 0.0% 0.0% 0.0% 0.0% 0.0% 0.0% 0.0% 0.0% 0.0% 0.0%
+Pipelines 50.0% 50.0% 50.0% 50.0% 50.0% 50.0% 50.0% 50.0% 50.0% 50.0%
+Railway 25.0% 25.0% 25.0% 25.0% 25.0% 25.0% 25.0% 25.0% 25.0% 25.0%
+Designated Recreational Property 10.0% 10.0% 10.0% 10.0% 10.0% 10.0% 10.0% 10.0% 10.0% 10.0%
+Other 65.0% 65.0% 65.0% 65.0% 65.0% 65.0% 65.0% 65.0% 65.0% 65.0%
+2017 2018 2019 2020 2021 2022 2023 2024 2025 2026
+PROPERTY CLASS
+Residential 1 45.0% 45.0% 45.0% 45.0% 45.0% 45.0% 45.0% 45.0% 45.0% 45.0%
+Residential 2 45.0% 45.0% 45.0% 45.0% 45.0% 45.0% 45.0% 45.0% 45.0% 45.0%
+Residential 3 45.0% 45.0% 45.0% 45.0% 45.0% 45.0% 45.0% 45.0% 45.0% 45.0%
+Farm 26.0% 26.0% 26.0% 26.0% 26.0% 26.0% 26.0% 26.0% 26.0% 26.0%
+Institutional 65.0% 65.0% 65.0% 65.0% 65.0% 65.0% 65.0% 65.0% 65.0% 65.0%
+Designated Higher Education 0.0% 0.0% 0.0% 0.0% 0.0% 0.0% 0.0% 0.0% 0.0% 0.0%
+Pipelines 50.0% 50.0% 50.0% 50.0% 50.0% 50.0% 50.0% 50.0% 50.0% 50.0%
+Railway 25.0% 25.0% 25.0% 25.0% 25.0% 25.0% 25.0% 25.0% 25.0% 25.0%
+Designated Recreational Property 10.0% 10.0% 10.0% 10.0% 10.0% 10.0% 10.0% 10.0% 10.0% 10.0%
+Other 65.0% 65.0% 65.0% 65.0% 65.0% 65.0% 65.0% 65.0% 65.0% 65.0%
+Residential 1 -- Less than 5 dwelling units.
+Residential 2 -- 5 or more dwelling units.
+Residential 3 -- Owner Occupied Condominiums & Co-op Housing.
+Other -- Commercial and industrial properties.
+ASSESSMENT PORTIONING
+On September 18, 1991, the Province of Manitoba announced a 10 year portioning strategy with an end result that in 2001 all residential property will be taxed at 45% of their market value.
+The Province adopted further classification and portion percentage changes in 2002.
