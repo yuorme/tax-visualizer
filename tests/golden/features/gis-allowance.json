@@ -441,7 +441,7 @@
         "breakdown.incomeBases.provincial.0": 22983.96,
         "breakdown.incomeBases.beforeChildcare.0": 22983.96,
         "breakdown.incomeBases.beforeChildcareAndRecovery.0": 22983.96,
-        "list.0.breakdown.publicPensions.recoveryIncome": 21921.96
+        "list.0.breakdown.publicPensions.recoveryIncome": 22983.96
       }
     },
     {
@@ -5658,10 +5658,10 @@
         "breakdown.gisAllowance.adults.1.allowance": 16695.09,
         "breakdown.gisAllowance.total": 24599.04,
         "breakdown.gisAllowance.adults.0.monthly.0.income": 0,
-        "list.0.breakdown.publicPensions.recoveryTax": 3486.1635,
+        "list.0.breakdown.publicPensions.recoveryTax": 3645.4635,
         "list.0.breakdown.otherPaymentsDeduction": 8965.95,
         "list.0.breakdown.supplementRecovery": 0.0,
-        "list.0.ti": 105304.9765
+        "list.0.ti": 105145.6765
       }
     },
     {
@@ -5694,9 +5694,9 @@
         "breakdown.gisAllowance.adults.1.allowance": 16695.09,
         "breakdown.gisAllowance.total": 24599.04,
         "breakdown.gisAllowance.adults.0.monthly.0.income": 0,
-        "list.0.breakdown.publicPensions.recoveryTax": 10986.1635,
-        "list.0.breakdown.otherPaymentsDeduction": 6770.9265,
-        "list.0.breakdown.supplementRecovery": 2195.0235,
+        "list.0.breakdown.publicPensions.recoveryTax": 11145.4635,
+        "list.0.breakdown.otherPaymentsDeduction": 6611.6265,
+        "list.0.breakdown.supplementRecovery": 2354.3235,
         "list.0.ti": 150000.0
       }
     },
@@ -6175,7 +6175,7 @@
         "breakdown.incomeBases.provincial.0": 23533.47,
         "breakdown.incomeBases.beforeChildcare.0": 23533.47,
         "breakdown.incomeBases.beforeChildcareAndRecovery.0": 23533.47,
-        "list.0.breakdown.publicPensions.recoveryIncome": 22441.47
+        "list.0.breakdown.publicPensions.recoveryIncome": 23533.47
       }
     },
     {
@@ -11743,10 +11743,10 @@
         "breakdown.gisAllowance.adults.1.allowance": 17090.91,
         "breakdown.gisAllowance.total": 25182.33,
         "breakdown.gisAllowance.adults.0.monthly.0.income": 0,
-        "list.0.breakdown.publicPensions.recoveryTax": 3265.1865,
+        "list.0.breakdown.publicPensions.recoveryTax": 3428.9865,
         "list.0.breakdown.otherPaymentsDeduction": 9183.42,
         "list.0.breakdown.supplementRecovery": 0.0,
-        "list.0.ti": 105734.3035
+        "list.0.ti": 105570.5035
       }
     },
     {
@@ -11779,9 +11779,9 @@
         "breakdown.gisAllowance.adults.1.allowance": 17090.91,
         "breakdown.gisAllowance.total": 25182.33,
         "breakdown.gisAllowance.adults.0.monthly.0.income": 0,
-        "list.0.breakdown.publicPensions.recoveryTax": 10765.1865,
-        "list.0.breakdown.otherPaymentsDeduction": 7417.7235,
-        "list.0.breakdown.supplementRecovery": 1765.6965,
+        "list.0.breakdown.publicPensions.recoveryTax": 10928.9865,
+        "list.0.breakdown.otherPaymentsDeduction": 7253.9235,
+        "list.0.breakdown.supplementRecovery": 1929.4965,
         "list.0.ti": 150000.0
       }
     },
@@ -11922,11 +11922,11 @@
         "useCredits": true
       },
       "expected": {
-        "famNet": 186713.766,
+        "famNet": 186554.466,
         "list.0.ti": 180000.0,
-        "list.0.fAmt": 15942.9684,
-        "list.0.fBpaFull": 2311.7304,
-        "list.0.breakdown.otherPaymentsDeduction": 6713.766
+        "list.0.fAmt": 15946.3239,
+        "list.0.fBpaFull": 2312.217,
+        "list.0.breakdown.otherPaymentsDeduction": 6554.466
       },
       "expectedCredits": {}
     },
@@ -12268,11 +12268,11 @@
         "useCredits": true
       },
       "expected": {
-        "famNet": 187465.6995,
+        "famNet": 187301.8995,
         "list.0.ti": 180000.0,
-        "list.0.fAmt": 16325.06,
-        "list.0.fBpaFull": 2285.5084,
-        "list.0.breakdown.otherPaymentsDeduction": 7465.6995
+        "list.0.fAmt": 16328.5107,
+        "list.0.fBpaFull": 2285.9915,
+        "list.0.breakdown.otherPaymentsDeduction": 7301.8995
       },
       "expectedCredits": {}
     },
@@ -12790,9 +12790,9 @@
         ]
       },
       "expected": {
-        "list.0.pAmt": 15519.7116,
-        "list.0.pBpaFull": 1676.1289,
-        "list.0.breakdown.netIncomeTotal": 203298.966,
+        "list.0.pAmt": 15527.3712,
+        "list.0.pBpaFull": 1676.9561,
+        "list.0.breakdown.netIncomeTotal": 203201.886,
         "list.0.ti": 200000.0
       }
     },
@@ -13179,9 +13179,9 @@
         ]
       },
       "expected": {
-        "list.0.pAmt": 15462.751,
-        "list.0.pBpaFull": 1669.9771,
-        "list.0.breakdown.netIncomeTotal": 204020.8995,
+        "list.0.pAmt": 15470.4106,
+        "list.0.pBpaFull": 1670.8043,
+        "list.0.breakdown.netIncomeTotal": 203923.8195,
         "list.0.ti": 200000.0
       }
     },

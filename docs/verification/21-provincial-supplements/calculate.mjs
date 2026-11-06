@@ -35,6 +35,29 @@ const careRate = income => .75 - .02 * (
   Math.ceil(Math.max(0, Math.min(income, 60000) - 40000) / 5000) +
   Math.ceil(Math.max(0, Math.min(income, 150000) - 60000) / 3600));
 
+// ITA 180.2 and the CRA line-23500 worksheet: reportable assistance is in line 23400.
+// The existing recovery specimens all have zero work/investment income, full-year benefits and a
+// nil combined GIS-income proxy (the other spouse's deductions offset private income).
+function recoveryChange(c, reporter, assistance) {
+  const x = c.household.people[reporter];
+  const threshold = c.year === 2025 ? 93454 : 95323;
+  if ((x.oth ?? 0) < threshold) return { delta: 0 };
+  assert.equal(x.ord ?? 0, 0);
+  for (const key of ["cg", "ed", "nd", "fd", "ded", "rrsp", "fhsa"])
+    assert.equal(x[key] ?? 0, 0, `${c.id}: recovery specimen ${key}`);
+  const oas = x.oas ? (c.year === 2025 ? 8791.14 : 8999.49) : 0;
+  const partner = c.household.people[1 - reporter];
+  const federal = x.allowance ? (c.year === 2025 ? 16695.09 : 17090.91) : x.gis ?
+    partner?.allowance ? (c.year === 2025 ? 7903.95 : 8091.42) : (c.year === 2025 ? 13130.82 : 13441.98) : 0;
+  const income = x.oth + oas + federal;
+  const before = Math.min(oas + federal, .15 * Math.max(0, income - threshold));
+  const after = Math.min(oas + federal, .15 * Math.max(0, income + assistance - threshold));
+  const federalDeduction = Math.max(0, federal - Math.max(0, after - oas));
+  return { before, after, delta: after - before, deduction: federalDeduction + assistance,
+    beforeDeduction: Math.max(0, federal - Math.max(0, before - oas)),
+    supplementRecovery: federal - federalDeduction };
+}
+
 export function existingChanges() {
   const changes = [];
   for (const name of ["gis-allowance.json", "senior-audit.json"]) {
@@ -59,25 +82,39 @@ export function existingChanges() {
       const expectedCredits = structuredClone(c.expectedCredits ?? {});
       const reporter = suffix.includes("allowance-recovery") || suffix === "allowance-before-childcare" ||
         suffix === "audit-t778-negative-base" ? 1 : 0;
+      const recovery = recoveryChange(c, reporter, cash);
+      const netIncrease = cash - recovery.delta;
       for (const [key, old] of Object.entries(expected)) {
         if (key === "total") expected[key] = r4(old - cash);
-        else if (key === "breakdown.left" || key === "famNet") expected[key] = r4(old + cash);
-        else if (key === "ccb") expected[key] = r4(old - .07 * cash); // one-child CCB first reduction band
+        else if (key === "breakdown.left") expected[key] = r4(old + cash);
+        else if (key === "famNet") expected[key] = r4(old + netIncrease);
+        else if (key === "ccb") expected[key] = r4(old - .07 * netIncrease); // one-child CCB first reduction band
         else if (key === "breakdown.childcareCredit.income") expected[key] = r4(old + cash);
         else if (key === "breakdown.childcareCredit.rate") expected[key] = r4(careRate(c.expected["breakdown.childcareCredit.income"] + cash));
         else if (key === "breakdown.childcareCredit.applied") expected[key] = r4(8000 * careRate(c.expected["breakdown.childcareCredit.income"] + cash));
         else if (key === "list.0.fAmt" || key === "list.0.fBpaFull") {
-          const bpa = federalBpa(c.year, c.expected.famNet + cash);
+          const bpa = federalBpa(c.year, c.expected.famNet + netIncrease);
           expected[key] = r4(bpa * (key.endsWith("fBpaFull") ? (c.year === 2025 ? .145 : .14) : 1));
         } else if (key === "list.0.pAmt" || key === "list.0.pBpaFull") {
-          const bpa = 15780 * (1 - (c.expected["list.0.breakdown.netIncomeTotal"] + cash - 200000) / 200000);
+          const bpa = 15780 * (1 - (c.expected["list.0.breakdown.netIncomeTotal"] + netIncrease - 200000) / 200000);
           expected[key] = r4(bpa * (key.endsWith("pBpaFull") ? .108 : 1));
-        } else if ([`list.${reporter}.breakdown.netIncomeTotal`, `list.${reporter}.breakdown.otherPaymentsDeduction`,
-          `breakdown.incomeBases.beforeChildcare.${reporter}`, `breakdown.incomeBases.beforeChildcareAndRecovery.${reporter}`,
-          `breakdown.incomeBases.provincial.${reporter}`].includes(key)) expected[key] = r4(old + cash);
+        } else if ([`list.${reporter}.breakdown.publicPensions.recoveryTax`,
+          `list.${reporter}.breakdown.netIncome.oasRecovery`].includes(key) && recovery.after !== undefined)
+          expected[key] = r4(recovery.after);
+        else if (key === `list.${reporter}.breakdown.supplementRecovery` && recovery.after !== undefined)
+          expected[key] = r4(recovery.supplementRecovery);
+        else if (key === `list.${reporter}.breakdown.otherPaymentsDeduction`)
+          expected[key] = r4(recovery.deduction ?? old + cash);
+        else if (key === `list.${reporter}.ti` && recovery.after !== undefined)
+          expected[key] = r4(old - recovery.delta + recovery.beforeDeduction -
+            (recovery.deduction - cash));
+        else if ([`breakdown.incomeBases.beforeChildcareAndRecovery.${reporter}`,
+          `list.${reporter}.breakdown.publicPensions.recoveryIncome`].includes(key)) expected[key] = r4(old + cash);
+        else if ([`list.${reporter}.breakdown.netIncomeTotal`, `breakdown.incomeBases.beforeChildcare.${reporter}`,
+          `breakdown.incomeBases.provincial.${reporter}`].includes(key)) expected[key] = r4(old + netIncrease);
       }
       if (expectedCredits["Canada Workers Benefit"] !== undefined)
-        expectedCredits["Canada Workers Benefit"] = r4(expectedCredits["Canada Workers Benefit"] - .15 * cash);
+        expectedCredits["Canada Workers Benefit"] = r4(expectedCredits["Canada Workers Benefit"] - .15 * netIncrease);
       const fields = Object.keys(expected).filter(k => expected[k] !== c.expected[k]).length +
         Object.keys(expectedCredits).filter(k => expectedCredits[k] !== c.expectedCredits?.[k]).length;
       if (fields) changes.push({ file, id: c.id, year: c.year, province: c.province, expected, expectedCredits, fields });
@@ -98,6 +135,7 @@ export function writeExisting() {
     if (end < 0) end = text.length;
     let section = text.slice(start, end);
     for (const [key, value] of [...Object.entries(c.expected), ...Object.entries(c.expectedCredits)]) {
+      assert.ok(Number.isFinite(value), `${c.id}: finite expectation ${key}`);
       const escaped = key.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
       const pattern = new RegExp(`("${escaped}": )(-?\\d+(?:\\.\\d+)?)`);
       const match = section.match(pattern);
@@ -142,9 +180,11 @@ export function newFixture() {
   const old = (oth = 0, extra = {}) => ({ age: 70, birthMonth: 6, oas: true, gis: true, oth, ...extra });
   const allowance = { age: 62, birthMonth: 6, allowance: true };
   const cashCase = (year, province, suffix, people, cash, reported = cash, extra = {}) => {
-    cases.push({ id: `${year}-${province}-${suffix}`, year, province,
+    const c = { id: `${year}-${province}-${suffix}`, year, province,
       household: { people, adults: people.length, spouse: people.length === 2, ...extra },
-      cash: cash.map(cents), reported: reported.map(cents) });
+      cash: cash.map(cents), reported: reported.map(cents) };
+    cases.push(c);
+    return c;
   };
   const creditCase = (year, province, suffix, people, name, credit, extra = {}) => {
     cases.push({ id: `${year}-${province}-${suffix}`, year, province,
@@ -207,6 +247,28 @@ export function newFixture() {
       cashCase(year, "AB", `oracle-income-${income}`, [old(income)], [annual]);
     }
     cashCase(year, "AB", "employment-exemption", [old(0, { ord: 3600 })], [maximum(year).AB[0]]);
+    cashCase(year, "AB", "rrsp-deduction", [old(10000, { rrsp: 10000, gis: false })], [maximum(year).AB[0]]);
+    cashCase(year, "AB", "oas-receipt-required", [old(0, { oas: false, gis: false })], [0]);
+    const abIncome = periods.reduce((sum, [maximum, rate]) => sum + algebra.ab(maximum, rate, 10000) * 6, 0);
+    const abNoGis = cashCase(year, "AB", "net-income-without-gis", [old(10000, { gis: false })], [abIncome]);
+    abNoGis.expected = { "breakdown.incomeBases.provincial.0": r4(10000 + (year === 2025 ? 8791.14 : 8999.49) + abIncome),
+      "list.0.breakdown.netIncomeTotal": r4(10000 + (year === 2025 ? 8791.14 : 8999.49) + abIncome),
+      "list.0.ti": r4(10000 + (year === 2025 ? 8791.14 : 8999.49)) };
+    // Both return incomes BEFORE childcare/recovery are exactly OAS + $10,000. Age 71 pays no CPP;
+    // the age-59 spouse deducts $65 enhanced CPP. A tie retains ASB on its sole cash recipient.
+    // Assistance then makes the spouse the lower-income T778 claimant; each has $10,000 eligible wages.
+    const oasAnnual = year === 2025 ? 8791.14 : 8999.49;
+    const otherIncome = oasAnnual + 65;
+    const asbIncome = 10000 + otherIncome + 10000 - 3600 * 2;
+    const couplePeriods = year === 2025 ? [[5801, .1592], [5801, .1524]] : [[5918, .1554], [5918, .1717]];
+    const tiedCash = couplePeriods.reduce((sum, [maximum, rate]) => sum + 6 * algebra.ab(maximum, rate, asbIncome), 0);
+    const tie = cashCase(year, "AB", "tied-reporters-assistance-t778", [
+      { age: 71, birthMonth: 6, oas: true, ord: 10000 },
+      { age: 59, birthMonth: 6, ord: 10000, oth: otherIncome }], [tiedCash, 0], [tiedCash, 0],
+      { childcare: { mode: "automatic", children: [{ age: 4, expenses: 6000 }], earnedIncome: [10000, 10000] } });
+    tie.expected = { "childcare.claimant": 1, "childcare.claims.0": 0, "childcare.claims.1": 6000,
+      "breakdown.incomeBases.beforeChildcareAndRecovery.0": r4(10000 + oasAnnual + tiedCash),
+      "breakdown.incomeBases.beforeChildcareAndRecovery.1": r4(10000 + oasAnnual) };
     cashCase(year, "AB", "generic-deduction-not-rrsp", [old(10000, { ded: 10000 })],
       [periods.reduce((s, [maximum, rate]) => s + algebra.ab(maximum, rate, 10000) * 6, 0)]);
     cashCase(year, "AB", "negative-adult-income-floor", [old(-5000), old(10000)],
@@ -215,10 +277,43 @@ export function newFixture() {
       [0, year === 2025 ? (175.38 + 178.21) * 12 : (181.84 + 175.05) * 12]);
     cashCase(year, "SK", "single-first-reduction", [old(24)], [358.10 * 12]);
     cashCase(year, "SK", "couple-first-reduction", [old(48), old()], [322.90 * 12, 322.90 * 12], [322.90 * 24, 0]);
-    cashCase(year, "SK", "neither-first-topup-reduction", [old(4096), { age: 55, birthMonth: 6 }], [353.45 * 12, 0]);
+    cashCase(year, "SK", "neither-first-topup-reduction", [old(4096), { age: 55, birthMonth: 6 }], [360 * 12, 0]);
     cashCase(year, "SK", "allowance-first-reduction", [old(48), allowance], [358.10 * 12, 0]);
-    cashCase(year, "SK", "positive-minimum", [old(3696)], [180]);
-    cashCase(year, "SK", "first-zero", [old(3720)], [0]);
+    // Preserve the old case inputs/ids: these expose the former premature total-GIS taper.
+    cashCase(year, "SK", "positive-minimum", [old(3696)], [(360 - 154 * 1.9) * 12]);
+    cashCase(year, "SK", "first-zero", [old(3720)], [(360 - 155 * 1.9) * 12]);
+    for (const income of [4000, 4367.99, 4368, 4536, 4559.99, 4560]) {
+      const raw = 360 - 1.9 * Math.floor(income / 24);
+      cashCase(year, "SK", `single-admin-tail-${income}`, [old(income)], [raw > 0 ? Math.max(15, raw) * 12 : 0]);
+    }
+    for (const income of [7439.99, 7440]) {
+      const raw = 325 - 2.1 * Math.floor(income / 48);
+      const cash = raw > 0 ? Math.max(15, raw) * 12 : 0;
+      cashCase(year, "SK", `couple-admin-tail-${income}`, [old(income), old()], [cash, cash], [cash * 2, 0]);
+    }
+    for (const income of [9119.99, 9120]) {
+      const raw = 360 - 1.9 * Math.floor(income / 48);
+      cashCase(year, "SK", `allowance-admin-tail-${income}`, [old(income), allowance], [raw > 0 ? Math.max(15, raw) * 12 : 0, 0]);
+    }
+    const neitherCutoff = year === 2025 ? 11568 : 11808;
+    for (const income of [neitherCutoff - .01, neitherCutoff]) {
+      const cash = oas[year].reduce((sum, monthly) => {
+        const offset = 12 * Math.ceil(monthly / 4) * 4;
+        const raw = 360 - 6.55 * Math.floor(Math.max(0, income - offset) / 48);
+        return sum + (raw > 0 ? Math.max(15, raw) * 3 : 0);
+      }, 0);
+      cashCase(year, "SK", `neither-admin-tail-${income}`, [old(income), { age: 55, birthMonth: 6 }], [cash, 0]);
+    }
+    cashCase(year, "NT", "gis-in-reporter-comparison", [old(), { age: 59, birthMonth: 6, oth: 12000 }], [2352, 0]);
+    const gains = maximum(year).ON[0];
+    const federalGis = year === 2025 ? 7903.95 : 8091.42;
+    const recoveryIncome = 100000 + oasAnnual + federalGis + gains;
+    const recovery = .15 * (recoveryIncome - (year === 2025 ? 93454 : 95323));
+    const partial = cashCase(year, "ON", "assistance-partial-recovery", [old(100000), { ...allowance, ded: 100000 }], [gains, 0]);
+    partial.expected = { "list.0.breakdown.publicPensions.recoveryTax": r4(recovery),
+      "list.0.breakdown.publicPensions.recoveryIncome": r4(recoveryIncome),
+      "list.0.breakdown.netIncomeTotal": r4(recoveryIncome - recovery),
+      "list.0.ti": r4(100000 + oasAnnual - recovery) };
     for (const income of [23.99, 24, 816, 839.99, 840]) {
       const cash = mbQuarter(0, income) * 4;
       cashCase(year, "MB", `single-band-${income}`, [old(income)], [cash]);
@@ -251,6 +346,12 @@ export function newFixture() {
     for (const [age, birthMonth, quarters] of [[54, 1, 0], [55, 1, 4], [55, 6, 3], [55, 12, 1], [56, 12, 4], [64, 12, 4], [65, 12, 0]])
       cashCase(year, "MB", `junior-age-${age}-${birthMonth}`, [{ age, birthMonth }], [647.20 * quarters / 4]);
     cashCase(year, "MB", "junior-employment-expenses", [{ age: 60, birthMonth: 1, ord: 9490 }], [647.20]);
+    // $10,500 - $346.50 base CPP - $70 enhanced CPP - $172.20/$171.15 EI - $500 =
+    // $9,411.30/$9,412.35, inside the enacted $9,410.41–$9,434.40 row paying $282 annually.
+    cashCase(year, "MB", "junior-base-cpp-deduction", [{ age: 60, birthMonth: 1, ord: 10500 }], [282]);
+    const juniorNet = cashCase(year, "MB", "junior-income-breakdown", [{ age: 60, birthMonth: 1, oth: 5000 }], [647.20]);
+    juniorNet.expected = { "breakdown.incomeBases.provincial.0": 5647.20, "list.0.breakdown.netIncomeTotal": 5647.20,
+      "list.0.ti": 5000 };
     cashCase(year, "MB", "junior-cash-dividends", [{ age: 60, birthMonth: 1, ed: 9000 }], [595.20], [595.20]);
     cashCase(year, "MB", "junior-rrsp-not-deducted", [{ age: 60, birthMonth: 1, oth: 9000, rrsp: 5000 }], [595.20]);
     cashCase(year, "MB", "junior-capital-loss", [{ age: 60, birthMonth: 1, oth: 10000, cg: -1000 }], [595.20]);
@@ -261,6 +362,10 @@ export function newFixture() {
     creditCase(year, "MB", "personal-two-seniors", [{ age: 65, birthMonth: 1, oth: 20000 }, { age: 70, birthMonth: 1, oth: 15000 }], mbName, 266);
     creditCase(year, "MB", "personal-dependant", [{ age: 65, birthMonth: 1, oth: 25000 }], mbName, 279,
       { kids: 2, under6: 0, childAges: [10, 16] });
+    creditCase(year, "MB", "personal-age-18-child", [{ age: 65, birthMonth: 1, oth: 25000 }], mbName, 84,
+      { kids: 0, childAges: [18] });
+    creditCase(year, "MB", "personal-derived-age-18-child", [{ age: 65, birthMonth: 1, oth: 25000 }], mbName, 84,
+      { kids: 0, childcare: { mode: "automatic", children: [{ age: 18, expenses: 0 }] } });
     const qcName = "Quebec Senior Assistance";
     for (const [age, income] of [[69, 35000], [70, 35000], [70, year === 2025 ? 27835 : 28405], [70, 70000]])
       creditCase(year, "QC", `assistance-${age}-${income}`, [{ age, birthMonth: 6, oth: income }], qcName,
@@ -283,6 +388,8 @@ export function newFixture() {
       creditCase(year, "NL", "quarterly-above-ten", [{ age: 70, birthMonth: 1, oth: 46200 }], nlName, 20.3847);
       creditCase(year, "NL", "accelerated-below-ten", [{ age: 70, birthMonth: 1, oth: 46210 }], nlName, 39.6034);
       creditCase(year, "NL", "combined-not-senior-only", [{ age: 70, birthMonth: 1, oth: 46300 }, { age: 60, birthMonth: 1 }], nlName, 3.5547);
+      creditCase(year, "NL", "combined-derived-child", [{ age: 70, birthMonth: 1, oth: 46300 }], nlName, 14.5547,
+        { kids: 0, childcare: { mode: "automatic", children: [{ age: 10, expenses: 0 }] } });
     }
     for (const province of ["PE", "YT"]) cashCase(year, province, "explicit-no-supported-cash-path", [old()], [0]);
   }

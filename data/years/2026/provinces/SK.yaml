@@ -24,6 +24,8 @@ credits:
     params: {adult: 460, spouse: 460, child: 181, maxChildren: 2, rate: 0.0303, threshold: 39345}
     estimated: true   # reduction rate worked out from the published start and end points
 sources:
+  - {label: "Old Age Security Act 12.1, additional amount distinct from basic GIS", url: "https://laws-lois.justice.gc.ca/eng/acts/O-9/section-12.1.html"}
+  - {label: "Old Age Security Act 22.1, additional Allowance amount", url: "https://laws-lois.justice.gc.ca/eng/acts/O-9/section-22.1.html"}
   - {label: "Guide T5007 – Return of Benefits", url: "https://www.canada.ca/en/revenue-agency/services/forms-publications/publications/t4115/guide-t5007-return-benefits.html"}
   - {label: "Social assistance payments – Personal income tax", url: "https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/tax-return/completing-a-tax-return/personal-income/line-145-social-assistance-payments.html"}
   - label: Seniors Income Plan Regulations, S-25.1 Reg 3
@@ -64,6 +66,8 @@ seniorSupplements:
       coupleMultiplier: 2.1
       neitherMultiplier: 6.55
       allowanceDivisor: 3
+    # Apply enacted coefficients to basic GIS/Allowance; inferred from all four administered cutoff rows.
+    estimated: true
     reporting:
       kind: t5007
       exemptThrough: 0

@@ -21,6 +21,7 @@ const fixture: {
     cash?: number[];
     reported?: number[];
     expectedCredits?: Record<string, number>;
+    expected?: Record<string, number>;
   }[];
   monthlyCases: {
     id: string;
@@ -62,6 +63,15 @@ for (const c of fixture.cases) {
     }
     for (const [name, expected] of Object.entries(c.expectedCredits ?? {}))
       near(result.credits.find(([label]) => name === label)?.[1] ?? 0, expected, name);
+    for (const [path, expected] of Object.entries(c.expected ?? {})) {
+      let actual: unknown = result;
+      for (const key of path.split(".")) {
+        assert.ok(actual && typeof actual === "object" && key in actual, path);
+        actual = (actual as Record<string, unknown>)[key];
+      }
+      assert.equal(typeof actual, "number", path);
+      near(Math.round((actual as number) * 1e4) / 1e4, expected, path);
+    }
     const baseline = compute(y, { ...p, seniorSupplements: undefined }, hh);
     assert.deepEqual(
       result.breakdown.gisAllowance,
@@ -71,11 +81,26 @@ for (const c of fixture.cases) {
     near(result.cash, baseline.cash, "cash transfers must not be added to gross receipts as well as benefits");
     if (result.breakdown.provincialSupplements && !hh.childcare)
       result.list.forEach((person, i) => {
-        near(person.ti, baseline.list[i].ti, "line 25000 removes line 14500 from taxable income");
+        const before = baseline.list[i];
+        const pension = before.breakdown.publicPensions;
+        const assistance = result.breakdown.provincialSupplements?.reported[i] ?? 0;
+        const federal = before.breakdown.netFederalSupplements ?? 0;
+        const q = y.federal.publicPensions?.params;
+        assert.ok(q);
+        const recovery = pension
+          ? Math.min(
+              pension.oas + federal,
+              q.recoveryRate * Math.max(0, pension.recoveryIncome + assistance - q.recoveryThreshold),
+            )
+          : 0;
+        near(person.breakdown.publicPensions?.recoveryTax ?? 0, recovery, "ITA 180.2 includes line 14500");
+        const beforeRecovery = pension?.recoveryTax ?? 0;
+        const beforeDeduction = Math.max(0, federal - Math.max(0, beforeRecovery - (pension?.oas ?? 0)));
+        const afterDeduction = Math.max(0, federal - Math.max(0, recovery - (pension?.oas ?? 0)));
         near(
-          person.breakdown.publicPensions?.recoveryTax ?? 0,
-          baseline.list[i].breakdown.publicPensions?.recoveryTax ?? 0,
-          "OAS recovery excludes provincial assistance",
+          person.ti,
+          Math.max(0, before.ti - (recovery - beforeRecovery) + beforeDeduction - afterDeduction),
+          "line 25000 removes assistance; line 23500 and recovered federal supplements remain distinct",
         );
       });
   });
@@ -206,7 +231,17 @@ test("NS statutory refund has a discontinuous $50 minimum and a $10,000 automati
       [10000, 10000],
       [10000.01, 10000],
     ]) {
-      const credits = seniorRefundableCreditsOf(p, hh, [person], false, [20000], 20000, [liability], gis, false);
+      const credits = seniorRefundableCreditsOf(
+        p,
+        { kids: 0 },
+        [person],
+        false,
+        [20000],
+        20000,
+        [liability],
+        gis,
+        false,
+      );
       near(credits.find(([name]) => name === "Nova Scotia GIS tax refund")?.[1] ?? 0, expected);
     }
   }

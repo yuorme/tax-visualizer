@@ -312,7 +312,7 @@ export function personTax(fed: Federal, p: Province, x: Person, sp: Extra, ctx: 
     // Figures the page shows that aren't steps of the calculation above. They sit in a nested object because the
     // golden snapshot (tests/golden/snapshot.mjs) locks every top-level number of this result.
     breakdown: {
-      ...(ctx.netFederalSupplements !== undefined
+      ...(ctx.netFederalSupplements !== undefined || ctx.provincialAssistance !== undefined
         ? {
             netFederalSupplements: supplements,
             netIncomeTotal: net,
@@ -325,7 +325,7 @@ export function personTax(fed: Federal, p: Province, x: Person, sp: Extra, ctx: 
         ? {
             publicPensions: {
               ...publicPensionReceipts(fed, x),
-              recoveryIncome: net + recovery - (ctx.provincialAssistance ?? 0),
+              recoveryIncome: net + recovery,
               recoveryTax: recovery,
               recoveryDeduction: recovery,
               withholding: null, // unknown; not inferred from this year's liability

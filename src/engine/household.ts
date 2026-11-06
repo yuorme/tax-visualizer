@@ -179,7 +179,15 @@ function calculateHousehold(
   // Legacy bases for claim elections and non-refundable credits, before Quebec's worker deduction.
   const recoveries = ppl.map(
     (x, i) =>
-      netIncomeParts(fed, p, x, childcare.claims[i], undefined, gisAllowance ? supplements[i] : undefined).oasRecovery,
+      netIncomeParts(
+        fed,
+        p,
+        x,
+        childcare.claims[i],
+        undefined,
+        gisAllowance ? supplements[i] : undefined,
+        assistance?.[i],
+      ).oasRecovery,
   );
   const provincialNets = qc ? ppl.map((x, i) => netWithSupplements(x, i, 0, recoveries[i])) : nets;
   const famNet = couple ? nets[0] + nets[1] : nets[0];
@@ -456,7 +464,7 @@ function calculateHousehold(
     credits.push(
       ...seniorRefundableCreditsOf(
         p,
-        hh,
+        { kids, ages: familyAges },
         ppl,
         couple,
         nets,

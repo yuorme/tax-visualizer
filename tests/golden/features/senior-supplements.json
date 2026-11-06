@@ -833,6 +833,114 @@
       "reported": [3868.08]
     },
     {
+      "id": "2025-AB-rrsp-deduction",
+      "year": 2025,
+      "province": "AB",
+      "household": {
+        "people": [
+          {
+            "age": 70,
+            "birthMonth": 6,
+            "oas": true,
+            "gis": false,
+            "oth": 10000,
+            "rrsp": 10000
+          }
+        ],
+        "adults": 1,
+        "spouse": false
+      },
+      "cash": [3868.08],
+      "reported": [3868.08]
+    },
+    {
+      "id": "2025-AB-oas-receipt-required",
+      "year": 2025,
+      "province": "AB",
+      "household": {
+        "people": [
+          {
+            "age": 70,
+            "birthMonth": 6,
+            "oas": false,
+            "gis": false,
+            "oth": 0
+          }
+        ],
+        "adults": 1,
+        "spouse": false
+      },
+      "cash": [0],
+      "reported": [0]
+    },
+    {
+      "id": "2025-AB-net-income-without-gis",
+      "year": 2025,
+      "province": "AB",
+      "household": {
+        "people": [
+          {
+            "age": 70,
+            "birthMonth": 6,
+            "oas": true,
+            "gis": false,
+            "oth": 10000
+          }
+        ],
+        "adults": 1,
+        "spouse": false
+      },
+      "cash": [2312.52],
+      "reported": [2312.52],
+      "expected": {
+        "breakdown.incomeBases.provincial.0": 21103.66,
+        "list.0.breakdown.netIncomeTotal": 21103.66,
+        "list.0.ti": 18791.14
+      }
+    },
+    {
+      "id": "2025-AB-tied-reporters-assistance-t778",
+      "year": 2025,
+      "province": "AB",
+      "household": {
+        "people": [
+          {
+            "age": 71,
+            "birthMonth": 6,
+            "oas": true,
+            "ord": 10000
+          },
+          {
+            "age": 59,
+            "birthMonth": 6,
+            "ord": 10000,
+            "oth": 8856.14
+          }
+        ],
+        "adults": 2,
+        "spouse": true,
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 4,
+              "expenses": 6000
+            }
+          ],
+          "earnedIncome": [10000, 10000]
+        }
+      },
+      "cash": [2427.06, 0],
+      "reported": [2427.06, 0],
+      "expected": {
+        "childcare.claimant": 1,
+        "childcare.claims.0": 0,
+        "childcare.claims.1": 6000,
+        "breakdown.incomeBases.beforeChildcareAndRecovery.0": 21218.2,
+        "breakdown.incomeBases.beforeChildcareAndRecovery.1": 18791.14
+      }
+    },
+    {
       "id": "2025-AB-generic-deduction-not-rrsp",
       "year": 2025,
       "province": "AB",
@@ -948,8 +1056,8 @@
         "adults": 2,
         "spouse": true
       },
-      "cash": [4241.4, 0],
-      "reported": [4241.4, 0]
+      "cash": [4320, 0],
+      "reported": [4320, 0]
     },
     {
       "id": "2025-SK-allowance-first-reduction",
@@ -993,8 +1101,8 @@
         "adults": 1,
         "spouse": false
       },
-      "cash": [180],
-      "reported": [180]
+      "cash": [808.8],
+      "reported": [808.8]
     },
     {
       "id": "2025-SK-first-zero",
@@ -1013,8 +1121,337 @@
         "adults": 1,
         "spouse": false
       },
+      "cash": [786],
+      "reported": [786]
+    },
+    {
+      "id": "2025-SK-single-admin-tail-4000",
+      "year": 2025,
+      "province": "SK",
+      "household": {
+        "people": [
+          {
+            "age": 70,
+            "birthMonth": 6,
+            "oas": true,
+            "gis": true,
+            "oth": 4000
+          }
+        ],
+        "adults": 1,
+        "spouse": false
+      },
+      "cash": [535.2],
+      "reported": [535.2]
+    },
+    {
+      "id": "2025-SK-single-admin-tail-4367.99",
+      "year": 2025,
+      "province": "SK",
+      "household": {
+        "people": [
+          {
+            "age": 70,
+            "birthMonth": 6,
+            "oas": true,
+            "gis": true,
+            "oth": 4367.99
+          }
+        ],
+        "adults": 1,
+        "spouse": false
+      },
+      "cash": [193.2],
+      "reported": [193.2]
+    },
+    {
+      "id": "2025-SK-single-admin-tail-4368",
+      "year": 2025,
+      "province": "SK",
+      "household": {
+        "people": [
+          {
+            "age": 70,
+            "birthMonth": 6,
+            "oas": true,
+            "gis": true,
+            "oth": 4368
+          }
+        ],
+        "adults": 1,
+        "spouse": false
+      },
+      "cash": [180],
+      "reported": [180]
+    },
+    {
+      "id": "2025-SK-single-admin-tail-4536",
+      "year": 2025,
+      "province": "SK",
+      "household": {
+        "people": [
+          {
+            "age": 70,
+            "birthMonth": 6,
+            "oas": true,
+            "gis": true,
+            "oth": 4536
+          }
+        ],
+        "adults": 1,
+        "spouse": false
+      },
+      "cash": [180],
+      "reported": [180]
+    },
+    {
+      "id": "2025-SK-single-admin-tail-4559.99",
+      "year": 2025,
+      "province": "SK",
+      "household": {
+        "people": [
+          {
+            "age": 70,
+            "birthMonth": 6,
+            "oas": true,
+            "gis": true,
+            "oth": 4559.99
+          }
+        ],
+        "adults": 1,
+        "spouse": false
+      },
+      "cash": [180],
+      "reported": [180]
+    },
+    {
+      "id": "2025-SK-single-admin-tail-4560",
+      "year": 2025,
+      "province": "SK",
+      "household": {
+        "people": [
+          {
+            "age": 70,
+            "birthMonth": 6,
+            "oas": true,
+            "gis": true,
+            "oth": 4560
+          }
+        ],
+        "adults": 1,
+        "spouse": false
+      },
       "cash": [0],
       "reported": [0]
+    },
+    {
+      "id": "2025-SK-couple-admin-tail-7439.99",
+      "year": 2025,
+      "province": "SK",
+      "household": {
+        "people": [
+          {
+            "age": 70,
+            "birthMonth": 6,
+            "oas": true,
+            "gis": true,
+            "oth": 7439.99
+          },
+          {
+            "age": 70,
+            "birthMonth": 6,
+            "oas": true,
+            "gis": true,
+            "oth": 0
+          }
+        ],
+        "adults": 2,
+        "spouse": true
+      },
+      "cash": [180, 180],
+      "reported": [360, 0]
+    },
+    {
+      "id": "2025-SK-couple-admin-tail-7440",
+      "year": 2025,
+      "province": "SK",
+      "household": {
+        "people": [
+          {
+            "age": 70,
+            "birthMonth": 6,
+            "oas": true,
+            "gis": true,
+            "oth": 7440
+          },
+          {
+            "age": 70,
+            "birthMonth": 6,
+            "oas": true,
+            "gis": true,
+            "oth": 0
+          }
+        ],
+        "adults": 2,
+        "spouse": true
+      },
+      "cash": [0, 0],
+      "reported": [0, 0]
+    },
+    {
+      "id": "2025-SK-allowance-admin-tail-9119.99",
+      "year": 2025,
+      "province": "SK",
+      "household": {
+        "people": [
+          {
+            "age": 70,
+            "birthMonth": 6,
+            "oas": true,
+            "gis": true,
+            "oth": 9119.99
+          },
+          {
+            "age": 62,
+            "birthMonth": 6,
+            "allowance": true
+          }
+        ],
+        "adults": 2,
+        "spouse": true
+      },
+      "cash": [180, 0],
+      "reported": [180, 0]
+    },
+    {
+      "id": "2025-SK-allowance-admin-tail-9120",
+      "year": 2025,
+      "province": "SK",
+      "household": {
+        "people": [
+          {
+            "age": 70,
+            "birthMonth": 6,
+            "oas": true,
+            "gis": true,
+            "oth": 9120
+          },
+          {
+            "age": 62,
+            "birthMonth": 6,
+            "allowance": true
+          }
+        ],
+        "adults": 2,
+        "spouse": true
+      },
+      "cash": [0, 0],
+      "reported": [0, 0]
+    },
+    {
+      "id": "2025-SK-neither-admin-tail-11567.99",
+      "year": 2025,
+      "province": "SK",
+      "household": {
+        "people": [
+          {
+            "age": 70,
+            "birthMonth": 6,
+            "oas": true,
+            "gis": true,
+            "oth": 11567.99
+          },
+          {
+            "age": 55,
+            "birthMonth": 6
+          }
+        ],
+        "adults": 2,
+        "spouse": true
+      },
+      "cash": [45, 0],
+      "reported": [45, 0]
+    },
+    {
+      "id": "2025-SK-neither-admin-tail-11568",
+      "year": 2025,
+      "province": "SK",
+      "household": {
+        "people": [
+          {
+            "age": 70,
+            "birthMonth": 6,
+            "oas": true,
+            "gis": true,
+            "oth": 11568
+          },
+          {
+            "age": 55,
+            "birthMonth": 6
+          }
+        ],
+        "adults": 2,
+        "spouse": true
+      },
+      "cash": [0, 0],
+      "reported": [0, 0]
+    },
+    {
+      "id": "2025-NT-gis-in-reporter-comparison",
+      "year": 2025,
+      "province": "NT",
+      "household": {
+        "people": [
+          {
+            "age": 70,
+            "birthMonth": 6,
+            "oas": true,
+            "gis": true,
+            "oth": 0
+          },
+          {
+            "age": 59,
+            "birthMonth": 6,
+            "oth": 12000
+          }
+        ],
+        "adults": 2,
+        "spouse": true
+      },
+      "cash": [2352, 0],
+      "reported": [2352, 0]
+    },
+    {
+      "id": "2025-ON-assistance-partial-recovery",
+      "year": 2025,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 70,
+            "birthMonth": 6,
+            "oas": true,
+            "gis": true,
+            "oth": 100000
+          },
+          {
+            "age": 62,
+            "birthMonth": 6,
+            "allowance": true,
+            "ded": 100000
+          }
+        ],
+        "adults": 2,
+        "spouse": true
+      },
+      "cash": [1062, 0],
+      "reported": [1062, 0],
+      "expected": {
+        "list.0.breakdown.publicPensions.recoveryTax": 3645.4635,
+        "list.0.breakdown.publicPensions.recoveryIncome": 117757.09,
+        "list.0.breakdown.netIncomeTotal": 114111.6265,
+        "list.0.ti": 105145.6765
+      }
     },
     {
       "id": "2025-MB-single-band-23.99",
@@ -1779,6 +2216,47 @@
       "reported": [647.2]
     },
     {
+      "id": "2025-MB-junior-base-cpp-deduction",
+      "year": 2025,
+      "province": "MB",
+      "household": {
+        "people": [
+          {
+            "age": 60,
+            "birthMonth": 1,
+            "ord": 10500
+          }
+        ],
+        "adults": 1,
+        "spouse": false
+      },
+      "cash": [282],
+      "reported": [282]
+    },
+    {
+      "id": "2025-MB-junior-income-breakdown",
+      "year": 2025,
+      "province": "MB",
+      "household": {
+        "people": [
+          {
+            "age": 60,
+            "birthMonth": 1,
+            "oth": 5000
+          }
+        ],
+        "adults": 1,
+        "spouse": false
+      },
+      "cash": [647.2],
+      "reported": [647.2],
+      "expected": {
+        "breakdown.incomeBases.provincial.0": 5647.2,
+        "list.0.breakdown.netIncomeTotal": 5647.2,
+        "list.0.ti": 5000
+      }
+    },
+    {
       "id": "2025-MB-junior-cash-dividends",
       "year": 2025,
       "province": "MB",
@@ -1949,6 +2427,58 @@
       },
       "expectedCredits": {
         "Manitoba personal tax credit (senior household)": 279
+      }
+    },
+    {
+      "id": "2025-MB-personal-age-18-child",
+      "year": 2025,
+      "province": "MB",
+      "household": {
+        "people": [
+          {
+            "age": 65,
+            "birthMonth": 1,
+            "oth": 25000
+          }
+        ],
+        "adults": 1,
+        "spouse": false,
+        "useCredits": true,
+        "kids": 0,
+        "childAges": [18]
+      },
+      "expectedCredits": {
+        "Manitoba personal tax credit (senior household)": 84
+      }
+    },
+    {
+      "id": "2025-MB-personal-derived-age-18-child",
+      "year": 2025,
+      "province": "MB",
+      "household": {
+        "people": [
+          {
+            "age": 65,
+            "birthMonth": 1,
+            "oth": 25000
+          }
+        ],
+        "adults": 1,
+        "spouse": false,
+        "useCredits": true,
+        "kids": 0,
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 18,
+              "expenses": 0
+            }
+          ]
+        }
+      },
+      "expectedCredits": {
+        "Manitoba personal tax credit (senior household)": 84
       }
     },
     {
@@ -3106,6 +3636,114 @@
       "reported": [3946.08]
     },
     {
+      "id": "2026-AB-rrsp-deduction",
+      "year": 2026,
+      "province": "AB",
+      "household": {
+        "people": [
+          {
+            "age": 70,
+            "birthMonth": 6,
+            "oas": true,
+            "gis": false,
+            "oth": 10000,
+            "rrsp": 10000
+          }
+        ],
+        "adults": 1,
+        "spouse": false
+      },
+      "cash": [3946.08],
+      "reported": [3946.08]
+    },
+    {
+      "id": "2026-AB-oas-receipt-required",
+      "year": 2026,
+      "province": "AB",
+      "household": {
+        "people": [
+          {
+            "age": 70,
+            "birthMonth": 6,
+            "oas": false,
+            "gis": false,
+            "oth": 0
+          }
+        ],
+        "adults": 1,
+        "spouse": false
+      },
+      "cash": [0],
+      "reported": [0]
+    },
+    {
+      "id": "2026-AB-net-income-without-gis",
+      "year": 2026,
+      "province": "AB",
+      "household": {
+        "people": [
+          {
+            "age": 70,
+            "birthMonth": 6,
+            "oas": true,
+            "gis": false,
+            "oth": 10000
+          }
+        ],
+        "adults": 1,
+        "spouse": false
+      },
+      "cash": [2313],
+      "reported": [2313],
+      "expected": {
+        "breakdown.incomeBases.provincial.0": 21312.49,
+        "list.0.breakdown.netIncomeTotal": 21312.49,
+        "list.0.ti": 18999.49
+      }
+    },
+    {
+      "id": "2026-AB-tied-reporters-assistance-t778",
+      "year": 2026,
+      "province": "AB",
+      "household": {
+        "people": [
+          {
+            "age": 71,
+            "birthMonth": 6,
+            "oas": true,
+            "ord": 10000
+          },
+          {
+            "age": 59,
+            "birthMonth": 6,
+            "ord": 10000,
+            "oth": 9064.49
+          }
+        ],
+        "adults": 2,
+        "spouse": true,
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 4,
+              "expenses": 6000
+            }
+          ],
+          "earnedIncome": [10000, 10000]
+        }
+      },
+      "cash": [2342.16, 0],
+      "reported": [2342.16, 0],
+      "expected": {
+        "childcare.claimant": 1,
+        "childcare.claims.0": 0,
+        "childcare.claims.1": 6000,
+        "breakdown.incomeBases.beforeChildcareAndRecovery.0": 21341.65,
+        "breakdown.incomeBases.beforeChildcareAndRecovery.1": 18999.49
+      }
+    },
+    {
       "id": "2026-AB-generic-deduction-not-rrsp",
       "year": 2026,
       "province": "AB",
@@ -3221,8 +3859,8 @@
         "adults": 2,
         "spouse": true
       },
-      "cash": [4241.4, 0],
-      "reported": [4241.4, 0]
+      "cash": [4320, 0],
+      "reported": [4320, 0]
     },
     {
       "id": "2026-SK-allowance-first-reduction",
@@ -3266,8 +3904,8 @@
         "adults": 1,
         "spouse": false
       },
-      "cash": [180],
-      "reported": [180]
+      "cash": [808.8],
+      "reported": [808.8]
     },
     {
       "id": "2026-SK-first-zero",
@@ -3286,8 +3924,337 @@
         "adults": 1,
         "spouse": false
       },
+      "cash": [786],
+      "reported": [786]
+    },
+    {
+      "id": "2026-SK-single-admin-tail-4000",
+      "year": 2026,
+      "province": "SK",
+      "household": {
+        "people": [
+          {
+            "age": 70,
+            "birthMonth": 6,
+            "oas": true,
+            "gis": true,
+            "oth": 4000
+          }
+        ],
+        "adults": 1,
+        "spouse": false
+      },
+      "cash": [535.2],
+      "reported": [535.2]
+    },
+    {
+      "id": "2026-SK-single-admin-tail-4367.99",
+      "year": 2026,
+      "province": "SK",
+      "household": {
+        "people": [
+          {
+            "age": 70,
+            "birthMonth": 6,
+            "oas": true,
+            "gis": true,
+            "oth": 4367.99
+          }
+        ],
+        "adults": 1,
+        "spouse": false
+      },
+      "cash": [193.2],
+      "reported": [193.2]
+    },
+    {
+      "id": "2026-SK-single-admin-tail-4368",
+      "year": 2026,
+      "province": "SK",
+      "household": {
+        "people": [
+          {
+            "age": 70,
+            "birthMonth": 6,
+            "oas": true,
+            "gis": true,
+            "oth": 4368
+          }
+        ],
+        "adults": 1,
+        "spouse": false
+      },
+      "cash": [180],
+      "reported": [180]
+    },
+    {
+      "id": "2026-SK-single-admin-tail-4536",
+      "year": 2026,
+      "province": "SK",
+      "household": {
+        "people": [
+          {
+            "age": 70,
+            "birthMonth": 6,
+            "oas": true,
+            "gis": true,
+            "oth": 4536
+          }
+        ],
+        "adults": 1,
+        "spouse": false
+      },
+      "cash": [180],
+      "reported": [180]
+    },
+    {
+      "id": "2026-SK-single-admin-tail-4559.99",
+      "year": 2026,
+      "province": "SK",
+      "household": {
+        "people": [
+          {
+            "age": 70,
+            "birthMonth": 6,
+            "oas": true,
+            "gis": true,
+            "oth": 4559.99
+          }
+        ],
+        "adults": 1,
+        "spouse": false
+      },
+      "cash": [180],
+      "reported": [180]
+    },
+    {
+      "id": "2026-SK-single-admin-tail-4560",
+      "year": 2026,
+      "province": "SK",
+      "household": {
+        "people": [
+          {
+            "age": 70,
+            "birthMonth": 6,
+            "oas": true,
+            "gis": true,
+            "oth": 4560
+          }
+        ],
+        "adults": 1,
+        "spouse": false
+      },
       "cash": [0],
       "reported": [0]
+    },
+    {
+      "id": "2026-SK-couple-admin-tail-7439.99",
+      "year": 2026,
+      "province": "SK",
+      "household": {
+        "people": [
+          {
+            "age": 70,
+            "birthMonth": 6,
+            "oas": true,
+            "gis": true,
+            "oth": 7439.99
+          },
+          {
+            "age": 70,
+            "birthMonth": 6,
+            "oas": true,
+            "gis": true,
+            "oth": 0
+          }
+        ],
+        "adults": 2,
+        "spouse": true
+      },
+      "cash": [180, 180],
+      "reported": [360, 0]
+    },
+    {
+      "id": "2026-SK-couple-admin-tail-7440",
+      "year": 2026,
+      "province": "SK",
+      "household": {
+        "people": [
+          {
+            "age": 70,
+            "birthMonth": 6,
+            "oas": true,
+            "gis": true,
+            "oth": 7440
+          },
+          {
+            "age": 70,
+            "birthMonth": 6,
+            "oas": true,
+            "gis": true,
+            "oth": 0
+          }
+        ],
+        "adults": 2,
+        "spouse": true
+      },
+      "cash": [0, 0],
+      "reported": [0, 0]
+    },
+    {
+      "id": "2026-SK-allowance-admin-tail-9119.99",
+      "year": 2026,
+      "province": "SK",
+      "household": {
+        "people": [
+          {
+            "age": 70,
+            "birthMonth": 6,
+            "oas": true,
+            "gis": true,
+            "oth": 9119.99
+          },
+          {
+            "age": 62,
+            "birthMonth": 6,
+            "allowance": true
+          }
+        ],
+        "adults": 2,
+        "spouse": true
+      },
+      "cash": [180, 0],
+      "reported": [180, 0]
+    },
+    {
+      "id": "2026-SK-allowance-admin-tail-9120",
+      "year": 2026,
+      "province": "SK",
+      "household": {
+        "people": [
+          {
+            "age": 70,
+            "birthMonth": 6,
+            "oas": true,
+            "gis": true,
+            "oth": 9120
+          },
+          {
+            "age": 62,
+            "birthMonth": 6,
+            "allowance": true
+          }
+        ],
+        "adults": 2,
+        "spouse": true
+      },
+      "cash": [0, 0],
+      "reported": [0, 0]
+    },
+    {
+      "id": "2026-SK-neither-admin-tail-11807.99",
+      "year": 2026,
+      "province": "SK",
+      "household": {
+        "people": [
+          {
+            "age": 70,
+            "birthMonth": 6,
+            "oas": true,
+            "gis": true,
+            "oth": 11807.99
+          },
+          {
+            "age": 55,
+            "birthMonth": 6
+          }
+        ],
+        "adults": 2,
+        "spouse": true
+      },
+      "cash": [45, 0],
+      "reported": [45, 0]
+    },
+    {
+      "id": "2026-SK-neither-admin-tail-11808",
+      "year": 2026,
+      "province": "SK",
+      "household": {
+        "people": [
+          {
+            "age": 70,
+            "birthMonth": 6,
+            "oas": true,
+            "gis": true,
+            "oth": 11808
+          },
+          {
+            "age": 55,
+            "birthMonth": 6
+          }
+        ],
+        "adults": 2,
+        "spouse": true
+      },
+      "cash": [0, 0],
+      "reported": [0, 0]
+    },
+    {
+      "id": "2026-NT-gis-in-reporter-comparison",
+      "year": 2026,
+      "province": "NT",
+      "household": {
+        "people": [
+          {
+            "age": 70,
+            "birthMonth": 6,
+            "oas": true,
+            "gis": true,
+            "oth": 0
+          },
+          {
+            "age": 59,
+            "birthMonth": 6,
+            "oth": 12000
+          }
+        ],
+        "adults": 2,
+        "spouse": true
+      },
+      "cash": [2352, 0],
+      "reported": [2352, 0]
+    },
+    {
+      "id": "2026-ON-assistance-partial-recovery",
+      "year": 2026,
+      "province": "ON",
+      "household": {
+        "people": [
+          {
+            "age": 70,
+            "birthMonth": 6,
+            "oas": true,
+            "gis": true,
+            "oth": 100000
+          },
+          {
+            "age": 62,
+            "birthMonth": 6,
+            "allowance": true,
+            "ded": 100000
+          }
+        ],
+        "adults": 2,
+        "spouse": true
+      },
+      "cash": [1092, 0],
+      "reported": [1092, 0],
+      "expected": {
+        "list.0.breakdown.publicPensions.recoveryTax": 3428.9865,
+        "list.0.breakdown.publicPensions.recoveryIncome": 118182.91,
+        "list.0.breakdown.netIncomeTotal": 114753.9235,
+        "list.0.ti": 105570.5035
+      }
     },
     {
       "id": "2026-MB-single-band-23.99",
@@ -4052,6 +5019,47 @@
       "reported": [647.2]
     },
     {
+      "id": "2026-MB-junior-base-cpp-deduction",
+      "year": 2026,
+      "province": "MB",
+      "household": {
+        "people": [
+          {
+            "age": 60,
+            "birthMonth": 1,
+            "ord": 10500
+          }
+        ],
+        "adults": 1,
+        "spouse": false
+      },
+      "cash": [282],
+      "reported": [282]
+    },
+    {
+      "id": "2026-MB-junior-income-breakdown",
+      "year": 2026,
+      "province": "MB",
+      "household": {
+        "people": [
+          {
+            "age": 60,
+            "birthMonth": 1,
+            "oth": 5000
+          }
+        ],
+        "adults": 1,
+        "spouse": false
+      },
+      "cash": [647.2],
+      "reported": [647.2],
+      "expected": {
+        "breakdown.incomeBases.provincial.0": 5647.2,
+        "list.0.breakdown.netIncomeTotal": 5647.2,
+        "list.0.ti": 5000
+      }
+    },
+    {
       "id": "2026-MB-junior-cash-dividends",
       "year": 2026,
       "province": "MB",
@@ -4222,6 +5230,58 @@
       },
       "expectedCredits": {
         "Manitoba personal tax credit (senior household)": 279
+      }
+    },
+    {
+      "id": "2026-MB-personal-age-18-child",
+      "year": 2026,
+      "province": "MB",
+      "household": {
+        "people": [
+          {
+            "age": 65,
+            "birthMonth": 1,
+            "oth": 25000
+          }
+        ],
+        "adults": 1,
+        "spouse": false,
+        "useCredits": true,
+        "kids": 0,
+        "childAges": [18]
+      },
+      "expectedCredits": {
+        "Manitoba personal tax credit (senior household)": 84
+      }
+    },
+    {
+      "id": "2026-MB-personal-derived-age-18-child",
+      "year": 2026,
+      "province": "MB",
+      "household": {
+        "people": [
+          {
+            "age": 65,
+            "birthMonth": 1,
+            "oth": 25000
+          }
+        ],
+        "adults": 1,
+        "spouse": false,
+        "useCredits": true,
+        "kids": 0,
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 18,
+              "expenses": 0
+            }
+          ]
+        }
+      },
+      "expectedCredits": {
+        "Manitoba personal tax credit (senior household)": 84
       }
     },
     {
@@ -4582,6 +5642,36 @@
       },
       "expectedCredits": {
         "Newfoundland and Labrador Seniors' Benefit": 3.55
+      }
+    },
+    {
+      "id": "2026-NL-combined-derived-child",
+      "year": 2026,
+      "province": "NL",
+      "household": {
+        "people": [
+          {
+            "age": 70,
+            "birthMonth": 1,
+            "oth": 46300
+          }
+        ],
+        "adults": 1,
+        "spouse": false,
+        "useCredits": true,
+        "kids": 0,
+        "childcare": {
+          "mode": "automatic",
+          "children": [
+            {
+              "age": 10,
+              "expenses": 0
+            }
+          ]
+        }
+      },
+      "expectedCredits": {
+        "Newfoundland and Labrador Seniors' Benefit": 14.55
       }
     },
     {

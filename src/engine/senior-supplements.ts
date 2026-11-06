@@ -1,7 +1,7 @@
 import type { Federal, Province } from "../data/schema.ts";
-import { gisAllowanceOf, gisMonthly } from "./gis-allowance.ts";
+import { gisAllowanceOf, gisBasicMonthly, gisMonthly } from "./gis-allowance.ts";
 import { netIncomeParts, netIncomeTotal, payrollDetailsOf } from "./payroll.ts";
-import type { Credit, Household, Person } from "./types.ts";
+import type { Credit, Person } from "./types.ts";
 import { retirementCashOf } from "./types.ts";
 
 type GisResult = ReturnType<typeof gisAllowanceOf>;
@@ -121,15 +121,13 @@ export function seniorCashSupplementsOf(
             const quarter = Math.floor(month / 3);
             const both = row.category === "spouse-oas";
             const maximum = both ? q.couple : q.single;
-            const maximumFederal = gisMonthly(fed, quarter, 0, row.category);
+            const maximumFederal = gisBasicMonthly(fed, quarter, 0, row.category);
+            const basic = gisBasicMonthly(fed, quarter, row.income, row.category);
+            const allowanceSteps = (maximumFederal.allowance - basic.allowance) / q.allowanceDivisor;
             const reduction =
               row.category === "spouse-allowance"
-                ? Math.ceil(
-                    (maximumFederal.allowance - gisMonthly(fed, quarter, row.income, row.category).allowance) /
-                      q.allowanceDivisor -
-                      Number.EPSILON * 8,
-                  )
-                : maximumFederal.gis - row.gis;
+                ? Math.ceil(allowanceSteps - Number.EPSILON * Math.max(1, Math.abs(allowanceSteps)) * 8)
+                : maximumFederal.gis - basic.gis;
             const multiplier = both
               ? q.coupleMultiplier
               : row.category === "spouse-neither"
@@ -264,7 +262,7 @@ export function seniorCashSupplementsOf(
  * another T5007 receipt. NS alone needs final individual provincial liability. */
 export function seniorRefundableCreditsOf(
   p: Province,
-  hh: Household,
+  children: { kids: number; ages?: number[] },
   people: Person[],
   couple: boolean,
   federalNets: number[],
@@ -294,14 +292,14 @@ export function seniorRefundableCreditsOf(
         const included = couple ? people : [people[0]];
         const seniors = included.filter(x => (x.age ?? 0) >= q.minimumAge).length;
         if (!seniors) break;
-        const children = hh.childAges?.filter(age => age <= q.childThrough).length ?? hh.kids;
+        const eligibleChildren = children.ages?.filter(age => age <= q.childThrough).length ?? children.kids;
         const dependant = !couple && dependantClaimed ? 1 : 0;
         amount = Math.max(
           0,
           q.adult * included.length +
             q.senior * seniors +
             q.dependant * dependant +
-            q.child * Math.max(0, children - dependant) -
+            q.child * Math.max(0, eligibleChildren - dependant) -
             q.rate * familyIncome,
         );
         break;
@@ -331,7 +329,7 @@ export function seniorRefundableCreditsOf(
                 schedule.ordinaryExtra,
                 schedule.ordinaryExtraRate * Math.max(0, familyIncome - schedule.ordinaryExtraFrom),
               ) +
-              schedule.ordinaryChild * hh.kids -
+              schedule.ordinaryChild * children.kids -
               schedule.ordinaryRate * Math.max(0, familyIncome - schedule.ordinaryThreshold),
           );
           const small = (senior + ordinary) / 4 < q.smallPayment;

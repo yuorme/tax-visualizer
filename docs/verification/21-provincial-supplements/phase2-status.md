@@ -34,6 +34,7 @@ branch/orchestrator must reconcile that shared document and the page disclosures
 | Ontario | Act closes GIS-income definition; all 75+ quarterly CSVs collected; mixed offsets differ | [West](evidence-west-phase2.md) |
 | Alberta | Calculator resolves Jan 2026 .1552, per-adult minimum and loss floor; precision derived | [AB](evidence-territories-phase2.md) |
 | BC | Program-specific $500 income exception sourced; mixed protection derived from tables | [West](evidence-west-phase2.md) |
+| SK | Basic-GIS interpretation reconciles administered cutoffs; derived basis labelled estimated | [Review](../21-provincial-supplements.md) |
 | Manitoba | Original senior tail restored; junior ceiling conflict and 2026 MB479 ordering labelled | [MB](evidence-mb-phase2.md) |
 | Quebec | Actual 2025/2026 forms verified; assistance is not automatically line 295 exempt | [MB](evidence-mb-phase2.md) |
 | NB/NS/NL | Prior receipt, mixed NB households, NS refund, NL age/timing and reporting distinguished | [Atlantic](evidence-atlantic-phase2.md) |
@@ -46,3 +47,8 @@ The federal issuer's $500 information-slip exception does not itself remove inco
 modelled income exception; other classified social-assistance programs report the full positive payment.
 This distinguishes the conflicting generalisations in earlier research appendices. The final note records
 the remaining program-classification estimates separately from the federal reporting rule.
+
+Review round 1 also corrects the OAS recovery treatment: reportable line-14500 assistance is included in
+ITA 180.2 adjusted income, with a later taxable-income deduction. It remains outside GIS eligibility and
+the reporter comparison. The main note records the primary sources, independent recalculations, child-count
+fixes, all six reachable mutation survivors and the final golden reconciliation.

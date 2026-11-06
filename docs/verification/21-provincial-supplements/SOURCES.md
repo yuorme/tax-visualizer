@@ -220,3 +220,12 @@ parameters into production or regard an extract header's PDF modification date a
 | [territories-t5007.txt](sources/territories-t5007.txt) | [Statement of Benefits T5007](https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/tax-return/completing-a-tax-return/tax-slips/statement-benefits-t5007.html) | 2026-11-05 | `fd17db8559f944022a54354f59bcbbeb69f6b2a2af0bdc4b340076e5730d230f` |
 | [territories-yt-briefing-2025.txt](sources/territories-yt-briefing-2025.txt) | [HEALTH AND SOCIAL SERVICES](https://open.yukon.ca/information/c5a31769-93f5-4b0a-9bff-d57551764a56/resource/378a5fa4-730c-32be-86c4-fa5ab18b2c19/download/hss_spring_2025.pdf) | 2026-11-05 | `5cb22c9279dee35a75a2fb4c3ba1c15306cbf98ba224cb006c989caf584f14dc` |
 | [territories-yt-pug.txt](sources/territories-yt-pug.txt) | [Pioneer Utility Grant](https://open.yukon.ca/pia-summaries/pioneer-utility-grant) | 2026-11-05 | `eb1e2fcfbaa725aeda38b0ef649b7cc95afbfc3d06b159963454f2b8d5397734` |
+
+## Review round 1: primary legal evidence
+
+| Extract | Official source | Retrieved | Original SHA-256 |
+|---|---|---|---|
+| [r1-cra-23500.txt](sources/r1-cra-23500.txt) | [Line 23500 – Social benefits repayment](https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/tax-return/completing-a-tax-return/deductions-credits-expenses/line-23500-social-benefits-repayment.html) | 2026-11-05 | `dfc9927596931a23a0e81bb9feaeaa6732aa85691dada2963ddb6bf444992a3b` |
+| [r1-ita-180-2.txt](sources/r1-ita-180-2.txt) | [Income Tax Act ( R.S.C. , 1985, c. 1 (5th Supp.))](https://laws-lois.justice.gc.ca/eng/acts/I-3.3/section-180.2.html) | 2026-11-05 | `413e6e88f236f4ddd65d65d9c9c0ccc9ba7c9bc82c0f1c090cb06c499e64f326` |
+| [r1-oas-12-1.txt](sources/r1-oas-12-1.txt) | [Old Age Security Act ( R.S.C. , 1985, c. O-9)](https://laws-lois.justice.gc.ca/eng/acts/O-9/section-12.1.html) | 2026-11-05 | `5865025f94654dd847d0abc2c50dfa0d4598de0bc92fec2c5a029c1a8adae46a` |
+| [r1-oas-22-1.txt](sources/r1-oas-22-1.txt) | [Old Age Security Act ( R.S.C. , 1985, c. O-9)](https://laws-lois.justice.gc.ca/eng/acts/O-9/section-22.1.html) | 2026-11-05 | `a7eb65bc820ba42edc46020e32be55d7a55e62d8bf1336da99aac032686c1b60` |

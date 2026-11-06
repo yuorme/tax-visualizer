@@ -179,8 +179,10 @@ The October 2026 webpage gives at-home zero-income boundaries $4,560 single, $7,
 $11,808 with spouse under 60 and $9,120 with an Allowance-recipient spouse. Special-care counterparts are
 $912/$1,776/$9,792/$1,824. These are dated resulting boundaries, not universal base thresholds for 2025.
 
-Reduce the maximum by $1.90 for each $1 GIS reduction in federal Table 1, $2.10 for Table 2, and $6.55 for
-Table 3. The Allowance-spouse branch uses $1.90 per $3 reduction in Table 4, including the regulation's
+Reduce the maximum by $1.90 for each $1 **basic** GIS reduction in federal Table 1, $2.10 for Table 2,
+and $6.55 for Table 3. The basic-benefit interpretation is derived from the administered cutoffs and
+labelled estimated; including federal top-up reductions contradicts those cutoffs. The Allowance-spouse
+branch uses $1.90 per $3 basic Allowance reduction in Table 4, including the regulation's
 remainder provision; do not substitute the older spouse's flat GIS maximum. Positive benefits have minimums
 of $15/month at home and $5 in a facility; zero is still zero. At $1,000 single GIS-test income in a federal
 band with $41 monthly GIS reduction, SIP is `360 − 1.90 × 41 = $282.10/month`, **$3,385.20 annualized**.
@@ -635,8 +637,9 @@ Cash recipients are recorded separately from tax reporters. Compare spouses' inc
 social assistance and before childcare deductions and OAS repayments; the higher-income spouse reports all
 reportable payments, while a tie retains each recipient's amount. Federal line **14500** increases net income,
 and line **25000** removes it from taxable income. It does not become working income, pension-credit income
-or payroll income. OAS recovery excludes provincial assistance. Current T778 ordering and net-income-tested
-credits use the actual reportable receipts. No receipt is counted in both gross `cash` and `benefits`.
+or payroll income. Reportable assistance **is included in OAS recovery income** under ITA 180.2; line
+25000 is a later taxable-income deduction. Current T778 ordering and net-income-tested credits use the
+actual reportable receipts. No receipt is counted in both gross `cash` and `benefits`.
 
 The issuer's $500 information-return exception is **not** a general recipient-income exclusion under
 paragraph 56(1)(u). The implementation therefore reports every positive classified social-assistance amount
@@ -682,6 +685,10 @@ to the existing $22 ordinary entry, producing $25.55 in calendar-year combined p
   OAS/GIS/Allowance recipient remain unsupported because the frozen April 2011 pension-income adjustment
   is not verified. The supported senior payment can still apply in that household. Junior payments during
   the year of transition into OAS eligibility are also unsupported; the senior component begins separately.
+- **SK:** apply the enacted SIP reduction coefficients to **basic** GIS/Allowance, excluding the additional
+  federal top-ups. This interpretation is derived from the four administered home-category cutoff rows
+  and is now labelled estimated. Including the top-up reduction contradicted the published positive tail.
+  The detailed reconciliation and boundary arithmetic appear in the review-round section below.
 - **MB479 2026:** statutory dollar parameters are confirmed; filing order provisionally continues 2025
   pending the final 2026 form. The spouse's $113 age term does not require an unused-age transfer.
 - **NB:** prior-year age and receipt timing are preserved, with current federal rates/income as the proxy
@@ -715,7 +722,8 @@ calculates each permitted new expectation. Its writer edits only the changed num
 cases. There is no bulk engine capture, tolerance change, input change, deleted assertion or unrelated
 baseline rewrite. The obsolete separate gate note was removed; its useful reasoning is incorporated here.
 
-**74 qualifying senior cases / 202 numeric expectations change**, in `gis-allowance.json` and
+**74 qualifying senior cases / 212 numeric expectations change** relative to the pre-feature baseline,
+in `gis-allowance.json` and
 `senior-audit.json`. All belong to 2025/2026 and receive a retained supplement. Counts below include the
 two Ontario before-childcare cases in the latter fixture. Every annual `tests/golden/<year>.json` remains
 unchanged. GIS eligibility/amounts, its income proxy, and unrelated values remain unchanged.
@@ -726,7 +734,7 @@ unchanged. GIS eligibility/amounts, its income proxy, and unrelated values remai
 | AB | 3 / 9 | 3 / 9 | New recipient payments and reporting |
 | SK | 3 / 9 | 3 / 9 | SIP cash and reporting |
 | MB | 4 / 12 | 4 / 12 | 55 PLUS; one high-net-income BPA interaction |
-| ON | 15 / 34 | 15 / 36 | GAINS; reporting, BPA, CCB, CWB and CARE |
+| ON | 15 / 39 | 15 / 41 | GAINS; reporting, OAS recovery, BPA, CCB, CWB and CARE |
 | NB | 3 / 9 | 3 / 9 | One annual household payment and reporting |
 | NT | 3 / 9 | 3 / 9 | Flat payments and reporting |
 | NU | 3 / 9 | 3 / 9 | Estimated flat payments and reporting |
@@ -738,16 +746,17 @@ Representative complete recalculations:
   from $21,921.96 to **$23,113.56**. GIS stays $13,130.82, OAS cash $8,791.14, taxable income $8,791.14.
 - Ontario's 2025 current-net-income CWB case gains $1,062 GAINS but loses `.15 × 1062 = $159.30` CWB:
   $1,754.8835 becomes **$1,595.5835**. This is a reporting interaction, not a GIS reduction.
-- Manitoba's 2025 high-income case gains $647.20 55 PLUS. Own net income becomes $203,298.966 from
-  $202,651.766; the published BPA taper gives
-  `15780 × (1 − (203298.966 − 200000) / 200000) = 15519.7115826`, or **$15,519.7116** at golden precision.
-  Its 10.8% full credit is **$1,676.1289**. The supplement is deducted before taxable income.
+- Manitoba's 2025 high-income case gains $647.20 55 PLUS and owes `.15 × 647.20 = $97.08` more OAS
+  recovery. Own net income becomes $203,201.886 from $202,651.766; the published BPA taper gives
+  `15780 × (1 − (203201.886 − 200000) / 200000) = 15527.3711946`, or **$15,527.3712** at golden precision.
+  Its 10.8% full credit is **$1,676.9561**. The recovered-GIS deduction also declines; taxable income stays
+  $200,000 because this specimen is already recovering GIS after the OAS pension.
 - Ontario's 2026 CARE case gains $1,092 GAINS. Family net income moves $45,998.44 → **$47,090.44**;
   first-band CCB falls `.07 × 1092 = $76.44` to **$7,537.2592**. CARE's income with childcare added back
   moves $53,998.44 → **$55,090.44**, crossing a published rate step from 53% to 51%; the $8,000 claim's
   credit becomes **$4,080** from $4,240. These fields combine the cash/reporting change with existing rules.
 
-The calculator's new fixture supplies **213 separate household cases and 288 published monthly Ontario
+The calculator's new fixture supplies **258 separate household cases and 288 published monthly Ontario
 rows**, covering all thirteen jurisdictions in both years. Each selected Ontario row tests its lower and
 upper boundary. Cash minimums/zeroes, all marital categories, Alberta half-year rates and oracle cutoffs,
 MB restored tails/junior conflicts, age/reference-year boundaries, refundable pools, NL combined-payment
@@ -755,10 +764,98 @@ timing, and tax-reporter/cash-recipient distinctions have separate coverage. Add
 BC's exact $500/$500.01 reporting boundary, NS's liability minimum/cap, and tiny positive territorial federal
 entitlements. Each household case compares federal GIS against the same case without provincial rules.
 
-The bounded [mutation pass](21-provincial-supplements/mutate.mjs) killed **22/22** plausible rule mutations
-in **23.9 seconds**, within a 120-second budget. It covers each new program family, reporting and the
+The bounded [mutation pass](21-provincial-supplements/mutate.mjs) killed **32/32** plausible rule mutations
+in **32.9 seconds**, within a 120-second budget. It covers each new program family, reporting and the
 line-25000 deduction. It restores the production files after each attempt, rejects invalid mutation runs,
 and does not edit expectations. Final validation uses `npm ci` and `npm run check`; the PR records results.
+
+### Review round 1: source reconciliation and regression coverage
+
+Both verdicts on `4f6227b` were checked in full. All actionable findings are accepted. This revision merges
+`origin/main` before final validation. The model/effort wording added there is followed in the PR body.
+
+**Saskatchewan.** The official [administered table](21-provincial-supplements/sources/sk-current.txt)
+publishes home-category zeroes of $4,560 single, $7,440 both pensioners, $11,808 spouse under 60 (October
+2026), and $9,120 spouse receiving Allowance. The old formula wrongly added loss of the federal top-up to
+the SIP reduction. [OAS Act 12.1](21-provincial-supplements/sources/r1-oas-12-1.txt) and
+[22.1](21-provincial-supplements/sources/r1-oas-22-1.txt) distinguish those additional amounts from the
+basic benefit. Applying the published SIP coefficients to basic-benefit reductions reconciles all four
+home-category cutoff rows:
+
+```text
+single:   360 − 1.90 × floor(I / 24); first zero 190 × 24 = 4,560
+both:     325 − 2.10 × floor(I / 48); first zero 155 × 48 = 7,440
+Allowance spouse: 360 − 1.90 × ceil(basic Allowance loss / 3); first zero 190 × 48 = 9,120
+neither:  360 − 6.55 × floor(max(0, I − rounded-OAS annual offset) / 48)
+2026 Q4 neither offset: 12 × ceil(762.50 / 4) × 4 = 9,168; first zero 9,168 + 55 × 48 = 11,808
+```
+
+Apply the statutory $15 positive minimum after the reduction; exact zero stays zero. At $4,000 a single
+gets `(360 − 1.90 × 166) × 12 = $535.20`, rather than zero. A single at $4,559.99 gets $15/month and
+at $4,560 gets zero. Each of two pensioners at $7,439.99 gets $15/month; $7,440 yields zero. Mixed
+categories have their own positive-tail/zero cases. Near an exact Allowance reduction step, scaled binary
+roundoff protection prevents `ceil(189.00000000000003)` from prematurely eliminating a payment.
+Only SIP reads the new basic-benefit helper; actual federal GIS/Allowance retains its original top-ups,
+protection and eligibility. Interior SIP payments are a labelled derivation from the regulation's
+coefficients and administered endpoints, rather than a claim to have found a complete provincial payment table.
+
+**OAS recovery.** The earlier exclusion statement in this note was wrong.
+[ITA 180.2](21-provincial-supplements/sources/r1-ita-180-2.txt) defines adjusted income from Part I income;
+its exclusions do not include paragraph 56(1)(u) assistance. The
+[CRA line-23500 instructions](21-provincial-supplements/sources/r1-cra-23500.txt) start with line 23400
+and list the permitted adjustments, without subtracting line 14500. The line-25000 deduction affects
+taxable income later. Reportable assistance now enters recovery income before the repayment is calculated;
+it remains excluded from GIS assessment and the reporter comparison. Current recovery is also passed to
+the before-childcare income breakdown consistently.
+
+For the $100,000 private-income Ontario specimen, independent arithmetic from the published annual
+OAS/GIS/GAINS totals and worksheet thresholds gives:
+
+| Year | Recovery-income calculation | Recovery at 15% | Taxable income |
+|---|---|---:|---:|
+| 2025 | `100000 + 8791.14 + 7903.95 + 1062 = 117757.09` | 3,645.4635 | 105,145.6765 |
+| 2026 | `100000 + 8999.49 + 8091.42 + 1092 = 118182.91` | 3,428.9865 | 105,570.5035 |
+
+Subtract the $93,454/$95,323 worksheet threshold before multiplying by 15%. These repayments rise by
+$159.30/$163.80. At $150,000 private income, recovery rises by the same amounts, while the remaining
+deductible federal supplement declines equally, leaving taxable income $150,000. Fully capped repayments
+stay capped. Net-income and BPA fields in the partial-recovery cases are independently recalculated as
+well; counting only the additional repayment would leave the golden interaction incomplete.
+
+**Children, reporter paths and breakdown.** The refundable helper receives the resolved child count and
+eligible ages used by `household.ts`. MB479 includes an age-18 child even when supplied only through the
+childcare profile: `195 + 113 + 26 − .01 × 25000 = $84`. For 2026 NL at $46,300, a derived age-10 child
+makes the ordinary amount `254 + 266 + 231 − .09 × 6300 = $184`. The combined payment exceeds $10, so
+the senior calendar-half amount is `$29.1094 / 2 = $14.5547`, rounded $14.55 rather than accelerated $29.11.
+No-GIS Alberta and MB junior receipts now expose net-income and provincial-income breakdowns, using
+the same values already used for taxation.
+
+Every reachable survivor has a separate independently calculated case:
+
+- AB's identified $10,000 RRSP deduction restores the maximum on $10,000 private income; no OAS election
+  pays no ASB. Neither is conflated with the existing generic-deduction specimen.
+- MB junior at $10,500 wages deducts $346.50 base CPP, $70 enhanced CPP, $172.20/$171.15 EI and $500 work
+  expenses. The resulting $9,411.30/$9,412.35 selects the enacted $282 annual row; omitting base CPP pays zero.
+- MB479 explicit and childcare-derived age-18 children each preserve the $26 term.
+- NT's senior on GIS with a 59-year-old spouse at $12,000 other income keeps the $2,352 reportable
+  payment. Omitting GIS from the reporter comparison wrongly moves it to the spouse.
+- An Alberta couple has equal pre-childcare/recovery incomes of OAS plus $10,000, one ASB recipient and
+  $6,000 childcare. A tie keeps ASB on that recipient, making the spouse the T778 claimant. Omitting
+  assistance instead claims it on the first adult. Each adult has $10,000 verified eligible wages.
+
+The additional recovery-in-comparison mutation is left as the reviewers allowed: no reachable reporter
+flip has been demonstrated. The statutory exclusion remains explicit (`recoveryOverride: 0`); it is not
+included among the mutations claimed killed. Positive-GIS ordinary examples and the asymmetric high-income
+offset specimens did not establish a flip, and no synthetic unreachable input is presented as coverage.
+
+Relative to reviewed head `4f6227b`, **10 legacy cases / 26 values** change for recovery/reporting and
+**six existing SIP feature cases / 12 values** change for the basic-GIS correction. All sixteen existing
+cases are 2025/2026 seniors. There are **45 additional household cases**, bringing the separate fixture to
+258. Its old case inputs and assertion shapes stay unchanged; six old SIP case names are retained even
+where they describe the former erroneous cutoff. The whole-fixture
+[audit](21-provincial-supplements/audit-goldens.mjs) verifies the independent proposals, unchanged inputs,
+unchanged GIS fields and byte-identical annual fixtures. Relative to the pre-feature baseline, the final
+legacy count is **74 cases / 212 values**: **37/105** in 2025 and **37/107** in 2026, as tabulated above.
 
 ### Final rule paths and follow-up plan
 

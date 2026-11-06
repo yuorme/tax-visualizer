@@ -267,14 +267,14 @@ export function netIncomeParts(
   };
   if (x.cppQpp !== undefined) parts.cppQpp = receipts.cppQpp;
   if (netFederalSupplements !== undefined) parts.netFederalSupplements = netFederalSupplements;
+  // Line 14500 is Part I income for ITA 180.2; line 25000 is a later taxable-income deduction.
+  if (provincialAssistance !== undefined) parts.provincialAssistance = provincialAssistance;
   if (x.oas !== undefined || netFederalSupplements) {
     parts.oas = receipts.oas;
     parts.oasRecovery =
       recoveryOverride ?? oasRecoveryTax(fed, receipts.oas + (netFederalSupplements ?? 0), netIncomeTotal(parts));
     parts.ded += parts.oasRecovery;
   }
-  // Provincial assistance is excluded from OAS recovery and the historical GIS assessment above.
-  if (provincialAssistance !== undefined) parts.provincialAssistance = provincialAssistance;
   return parts;
 }
 
