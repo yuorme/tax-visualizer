@@ -14,6 +14,10 @@ Access comes first:
   instead.
 
 Dispatching:
+- Before dispatch, split any issue that adds or changes separate rules in more than three provinces or territories:
+  first a shared issue for research and the engine shape, then one issue per group from AGENTS.md's regions (BC, AB,
+  SK, MB; ON, QC; Atlantic; territories). Don't split one calculation applied the same way everywhere. Only one open
+  pull request may change existing goldens, so run those issues one at a time.
 - Pick issues labelled `ready-for-agent` whose `blocked_by` issues are closed. Assign the agent from the Roles table
   and the model and effort from the tier table.
 - Write each brief as a self-contained spec: the issue number, the role file, the files the agent owns, tier and
