@@ -1097,7 +1097,7 @@ function renderDetail(res: Row[], order: Row[]) {
   // A province without supplement rules (Yukon, PEI) reads "not modelled", never $0.
   const supplementTotal = (r: Result) => r.breakdown.provincialSupplements?.total ?? 0;
   const supplementCell = (x: Row) =>
-    `<td class="r${x.p.d.seniorSupplements ? "" : " wrap"}">${x.p.d.seniorSupplements ? fmt(supplementTotal(x.r), "credit") : "not modelled"}</td>`;
+    `<td class="r${x.p.d.seniorSupplements ? "" : " not-modelled"}">${x.p.d.seniorSupplements ? fmt(supplementTotal(x.r), "credit") : "not modelled"}</td>`;
   const bothModelled = !!H.p.d.seniorSupplements && !!D.p.d.seniorSupplements;
   const supplementRow =
     any(supplementTotal) || (people.some(hasSeniorBenefits) && !bothModelled)

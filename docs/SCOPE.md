@@ -194,13 +194,14 @@ line-by-line tax return. Simpler and slightly less precise is acceptable where i
   year an adult becomes OAS-eligible. Current income stands in for the prior-year income most programs test, an
   explicit single-year approximation. The page adds a comparison row ("not modelled" for Yukon and PEI, never $0),
   a per-adult ledger with the amount reported on T5007 line 14500 (the higher-income spouse reports the whole
-  amount), a tooltip beside GIS and Allowance and history coverage text. Cash supplements net against tax once,
-  independent of the credit switches. The Quebec, Manitoba, Newfoundland and Labrador and Nova Scotia amounts are
-  refundable credits and follow the switch; they appear under Refundable credits, as the tooltip says, so a $0
-  in the cash row is not read as no support. Not modelled: Yukon's Seniors Income Supplement, PEI's assessed
-  Seniors Independence Initiative, the
-  Coastal Labrador supplement, survivors and people in care. Housing and care programs (property tax grants, utility
-  grants, assessed service grants) are in #216. Historical back-fill is a separate History issue.
+  amount, each their own on equal incomes, and BC amounts of $500 or less a year are not reported), two tooltips
+  beside GIS and Allowance and history coverage text. Cash supplements net against tax once, independent of the
+  credit switches. The Quebec, Manitoba, Newfoundland and Labrador and Nova Scotia amounts are refundable credits
+  and follow the switch; they appear under Refundable credits, as the tooltip says, so a $0 in the cash row is
+  not read as no support. Not modelled: Yukon's Seniors Income Supplement, PEI's assessed Seniors Independence
+  Initiative, the Coastal Labrador supplement, survivors and people in care. Housing and care programs (property
+  tax grants, utility grants, assessed service grants) are in #216. Historical back-fill is a separate History
+  issue.
   See [rules, sources, estimates and coverage](verification/21-provincial-supplements.md).
 
 **Payroll (employee share, plus both shares on self-employment)**

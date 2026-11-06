@@ -31,6 +31,9 @@ async function cashSupplement(p, year, code, people, extra = {}) {
     await p.getAttribute(`#col-${code}`, "aria-label"),
     new RegExp(`after ${money(result.benefits).replace("$", "\\$")} of benefits and credits`),
   );
+  await p.locator(`#col-${code} .ben`).dispatchEvent("pointerover", { pointerType: "mouse" });
+  assert.ok((await p.textContent("#tip")).includes(`Provincial seniors' supplements ${money(supplements.total)}`));
+  await p.keyboard.press("Escape");
   const row = detailRow(p, "Provincial seniors' supplements");
   assert.equal(await row.locator("td").nth(1).textContent(), `−${money(supplements.total)}`);
   assert.ok(await row.locator('[data-comparison-note="Provincial seniors\' supplements"]').count());
@@ -95,6 +98,7 @@ export const SENIOR_SUPPLEMENT_STEPS = [
         const row = detailRow(p, "Provincial seniors' supplements");
         assert.equal(await row.locator("td").nth(2).textContent(), "not modelled");
         assert.notEqual(await row.locator("td").nth(1).textContent(), "not modelled");
+        assert.equal(await row.locator("td.not-modelled").evaluate(el => getComputedStyle(el).display), "table-cell");
         assert.deepEqual(
           await p.locator(".cmp-wrap").evaluateAll(els => els.filter(el => el.scrollWidth > el.clientWidth + 1).length),
           0,
@@ -107,6 +111,8 @@ export const SENIOR_SUPPLEMENT_STEPS = [
         "not modelled",
       );
       await open(p);
+      const size = p.viewportSize();
+      await p.setViewportSize({ width: size.width, height: 667 }); // tip() asserts the tooltip fits this height
       const text = await tip(p, '[data-note="seniorSupplements"]');
       for (const pattern of [
         /2025 and 2026 only/,
@@ -114,22 +120,37 @@ export const SENIOR_SUPPLEMENT_STEPS = [
         /no inputs/,
         /prior-year income/,
         /Current-year income stands in/,
+        /Yukon and PEI are not modelled and show no supplement, not a zero entitlement/,
+        /appear under Refundable credits.*\$0 here does not mean no support/,
+        /Nova Scotia.s tax refund \(which also needs GIS\)/,
+        /higher-income spouse, who reports the whole amount; on equal incomes each reports their own/,
+        /BC payments of \$500 or less a year per recipient are not reported/,
+      ])
+        assert.match(text, pattern);
+      const limits = await tip(p, '[data-note="seniorSupplementLimits"]');
+      for (const pattern of [
         /Yukon.s Seniors Income Supplement/,
-        /Yukon shows no supplement, not a zero entitlement/,
         /Prince Edward Island.s assessed/,
         /Coastal Labrador/,
         /survivors and people in care/,
-        /Housing and care programs are not included/,
+        /Housing and care programs/,
         /#216/,
-        /appear under Refundable credits.*\$0 in that row does not mean no support/,
         /55 PLUS also pays adults aged 55 to 64 on income alone/,
         /OAS, GIS or Allowance recipient/,
-        /Nova Scotia.s tax refund also needs GIS/,
-        /higher income reports the whole amount/,
+        /estimates/,
       ])
-        assert.match(text, pattern);
-      assert.doesNotMatch(text, /Yukon[^.]*Territory[^.]*modelled for/);
+        assert.match(limits, pattern);
+      await p.setViewportSize(size);
       assert.match(await tip(p, '[data-note="seniorBenefitTax"]'), /Provincial seniors. supplements are separate/);
+      await p.click("#view-history");
+      await p.locator("#history-info").scrollIntoViewIfNeeded();
+      await p.locator("#history-info").focus();
+      assert.match(
+        await p.textContent("#tip"),
+        /Provincial seniors. supplements \(2025 and 2026 only\) are included in the figures where a program applies/,
+      );
+      await p.keyboard.press("Escape");
+      await p.locator("#history-info").blur();
     },
   ],
   [
@@ -173,14 +194,24 @@ export const SENIOR_SUPPLEMENT_RESPONSIVE_STEPS = [
         "not modelled",
       );
       assert.equal(
+        await detailRow(p, "Provincial seniors' supplements")
+          .locator("td.not-modelled")
+          .evaluate(el => getComputedStyle(el).display),
+        "table-cell",
+      );
+      assert.equal(
         await p.locator(".cmp-wrap").evaluateAll(els => els.filter(el => el.scrollWidth > el.clientWidth + 1).length),
         0,
       );
       await open(p);
-      assert.match(await tip(p, '[data-note="seniorSupplements"]'), /Housing and care programs are not included/);
+      const size = p.viewportSize();
+      await p.setViewportSize({ width: size.width, height: 667 });
+      assert.match(await tip(p, '[data-note="seniorSupplementLimits"]'), /Housing and care programs/);
+      assert.match(await tip(p, '[data-note="seniorSupplements"]'), /Refundable credits/);
+      await p.setViewportSize(size);
       assert.match(
         await tip(p, '[data-comparison-note="Provincial seniors\' supplements"]'),
-        /Yukon shows no supplement/,
+        /Yukon and PEI are not modelled and show no supplement/,
       );
       assert.ok((await inspect(p)).scrollWidth <= p.viewportSize().width);
       await load(p);
