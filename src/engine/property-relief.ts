@@ -82,6 +82,7 @@ export interface ReliefContext extends Omit<PropertyReliefInput, "bill" | "facts
   facts: PropertyReliefFacts;
   basis: BillBasis;
   reflected: number; // this program's amount the bill already reflects; zero on a gross bill
+  applied: Readonly<Record<string, number>>; // every program's reflected amount the household stated; empty on a gross bill
   owner: boolean; // owns a home, or supplied an owner bill even with a zero home value
   renter: boolean;
   billAmount: number; // the levy as entered, before adding what it reflects
@@ -151,6 +152,10 @@ const BUILT_IN: BuiltIn = {
   "bc-home-owner-grant": (rule, ctx) => {
     if (!ctx.owner) return noRelief;
     const q = rule.params;
+    // A non-zero amount stated under the supplement id (never on a notice) leaves it unclear which grant the bill
+    // reflects, so neither line is computed.
+    if ((ctx.applied["bc-low-income-grant-supplement"] ?? 0) > 0)
+      return incomplete("an amount is stated for the supplement, which is never on a tax notice; it must be 0");
     if (!(ctx.homeValue > 0))
       return incomplete(
         "the grant's assessed-value reduction needs the home's assessed value, and no home value is given",
@@ -378,6 +383,7 @@ export function propertyReliefOf(rules: readonly ReliefRule[], input: PropertyRe
       facts: input.facts ?? {},
       basis: bill.basis,
       reflected: reflected ?? 0,
+      applied: bill.applied,
       owner,
       renter: !owner && input.rent > 0,
       billAmount: bill.amount,

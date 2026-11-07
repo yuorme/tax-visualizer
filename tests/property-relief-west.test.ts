@@ -99,9 +99,12 @@ for (const c of fixture.cases)
     if (c.burden !== undefined)
       near(relief.bill - relief.lines.reduce((sum, l) => sum + (l.remaining ?? 0), 0), c.burden, "final burden");
     // Each relief line reaches the household's credits once, by its own amount; none repeats an existing credit.
-    for (const l of relief.lines)
+    for (const l of relief.lines) {
       if (l.remaining)
         assert.equal(result.credits.filter(([n, v]) => n === l.name && v === l.remaining).length, 1, l.name);
+      // An incomplete line is not credited at all.
+      if (l.status === "incomplete") assert.equal(result.credits.filter(([n]) => n === l.name).length, 0, l.name);
+    }
     const names = result.credits.map(([n]) => n);
     assert.equal(new Set(names).size, names.length, "no credit appears twice");
   });

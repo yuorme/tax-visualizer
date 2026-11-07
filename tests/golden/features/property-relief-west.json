@@ -1707,7 +1707,7 @@
     {
       "id": "bc-net-supplement-amount-stated-is-rejected",
       "province": "BC",
-      "calc": "the notice cannot reflect a cheque-paid supplement: a stated 445 is incomplete (it would shift the grant and end at 3110); the grant is still 445 on the 4000 levy",
+      "calc": "the notice cannot reflect a cheque-paid supplement: a stated 445 makes both lines incomplete, since it is unclear which grant the bill reflects (crediting the grant would end at 3110)",
       "hh": {
         "homeValue": 2155000,
         "bill": 3555,
@@ -1724,7 +1724,7 @@
         ]
       },
       "expect": {
-        "bc-home-owner-grant": [445, 445],
+        "bc-home-owner-grant": "incomplete",
         "bc-low-income-grant-supplement": "incomplete"
       }
     },
@@ -1853,6 +1853,30 @@
         "mb-senior-school-tax-rebate": [0, 0],
         "mb-homeowners-school-tax-credit": [0, 0],
         "mb-renters-affordability-senior": [669.625, 669.63]
+      }
+    },
+    {
+      "id": "bc-net-supplement-845-stated-credits-nothing",
+      "province": "BC",
+      "calc": "845 stated under the supplement id: both lines incomplete, so no grant is credited (it would have ended at 2310)",
+      "hh": {
+        "homeValue": 2155000,
+        "bill": 3155,
+        "basis": "net",
+        "applied": {
+          "bc-home-owner-grant": 0,
+          "bc-low-income-grant-supplement": 845
+        },
+        "people": [
+          {
+            "oth": 20000,
+            "age": 70
+          }
+        ]
+      },
+      "expect": {
+        "bc-home-owner-grant": "incomplete",
+        "bc-low-income-grant-supplement": "incomplete"
       }
     }
   ]

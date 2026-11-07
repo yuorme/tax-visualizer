@@ -639,8 +639,9 @@ half-of-child-care reduction of the child amount, the disability deduction and t
 adjusted income, so omitting them can only withhold a supplement). It reads the grant line before it for the
 reduction, so the grant must come first in the data; an unknown reduction makes it `incomplete`. This is the one
 exception to "one bill line, one id", and two guards keep the two floors from adding up to more than the schedule:
-a non-zero amount stated under the supplement id is `incomplete` (the notice cannot reflect it), and the supplement is
-reduced by any grant the bill reflects beyond the model's entitlement. Senior, home $2,155,000, income $20,000, levy
+a non-zero amount stated under the supplement id makes both it and the grant `incomplete` (the notice cannot reflect
+it), and the supplement is reduced by any grant the bill reflects beyond the model's entitlement. Senior, home
+$2,155,000, income $20,000, levy
 $4,000: gross gives grant 445 plus supplement 400; a $3,155 net bill stating 845 as the grant leaves the supplement
 `400 − (845 − 445) = 0`, burden 3,155, not 2,755. Net bills must state 0 for the supplement.
 
