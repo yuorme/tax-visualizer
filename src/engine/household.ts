@@ -12,7 +12,7 @@ import { gisAllowanceOf, validateGisAllowance } from "./gis-allowance.ts";
 import { householdPremiumOf } from "./health-premiums.ts";
 import { netIncomeParts, netIncomeTotal, workerDeductionOf } from "./payroll.ts";
 import { type PersonResult, personTax } from "./personal.ts";
-import { existingCreditsOf, grossLevyOf, propertyBillOf, propertyReliefOf } from "./property-relief.ts";
+import { existingCreditsOf, grossLevyOf, propertyBillOf, propertyReliefOf, totalIncomeOf } from "./property-relief.ts";
 import { hasSeniorInputs, quebecSeniorPool, seniorTransfer } from "./senior-credits.ts";
 import { seniorCashSupplementsOf, seniorRefundableCreditsOf } from "./senior-supplements.ts";
 import {
@@ -497,6 +497,19 @@ function calculateHousehold(
           famNet,
           provincialFamNet: benefitFamNet,
           federalNets: nets,
+          totalIncomes: ppl.map((x, i) =>
+            totalIncomeOf(
+              netIncomeParts(
+                fed,
+                p,
+                x,
+                childcare.claims[i],
+                undefined,
+                gisAllowance ? supplements[i] : undefined,
+                assistance?.[i],
+              ),
+            ),
+          ),
           homeValue: hh.homeValue,
           rent: rentAnnual,
           existingCredits: existingCreditsOf(p.credits ?? [], credits),

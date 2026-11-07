@@ -847,6 +847,20 @@ const propertyReliefProgram = z.discriminatedUnion("program", [
       thresholdFamily: amount,
     }),
   ),
+  // Toronto: cancellation of a low-income senior's property tax increase (Municipal Code ch. 767, art. 5.4, with the
+  // 2026 budget's income limit). Municipal: the default reference-city bill only. `firstTimeIncreaseRate` is the City's
+  // 2026 residential rate increase, used to estimate a first-time claimant's increase from the levy.
+  reliefProgram(
+    "toronto-property-tax-increase-cancellation",
+    z.object({
+      seniorAge: z.number().int(),
+      allowanceAge: z.number().int(), // 60-64 qualifies with an OAS Allowance
+      incomeLimit: amount,
+      assessmentLimit: amount,
+      minimum: amount,
+      firstTimeIncreaseRate: rate,
+    }),
+  ),
   // MB: the homeowners credit on gross eligible school tax. `reference` estimates a default-city bill's school tax.
   reliefProgram(
     "mb-homeowners-school-tax-credit",

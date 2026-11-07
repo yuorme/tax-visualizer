@@ -38,7 +38,7 @@ interface Case {
     people?: Partial<Person>[];
   };
   /** program id -> [entitlement on the gross levy, remaining relief credited], or the status that carries no amount */
-  expect: Record<string, [number, number] | "incomplete">;
+  expect: Record<string, [number, number] | "incomplete" | "city-bill-required">;
   burden?: number; // bill entered less the relief credited
   eligible?: Record<string, Record<string, number>>; // components a line must report
 }
@@ -85,8 +85,8 @@ for (const c of fixture.cases)
     for (const [id, want] of Object.entries(c.expect)) {
       const line: ReliefLine | undefined = relief.lines.find(l => l.program === id);
       assert.ok(line, `${id} line`);
-      if (want === "incomplete") {
-        assert.deepEqual([line.status, line.entitled, line.remaining], ["incomplete", null, null], id);
+      if (want === "incomplete" || want === "city-bill-required") {
+        assert.deepEqual([line.status, line.entitled, line.remaining], [want, null, null], id);
       } else {
         assert.equal(line.status, "modelled", `${id}: ${line.reason ?? ""}`);
         near(line.entitled, want[0], `${id} entitlement`);
@@ -111,12 +111,13 @@ for (const c of fixture.cases)
 const OEPTC = "Ontario energy and property tax credit";
 const GRANT = "ontario-senior-homeowners-property-grant";
 const SENIOR = "ontario-energy-property-tax-credit-senior-overlap";
+const TORONTO = "toronto-property-tax-increase-cancellation";
 const creditOf = (r: ReturnType<typeof householdOf>, name: string) => r.credits.find(([n]) => n === name)?.[1];
 
 test("Ontario 2026 declares the senior programs, Quebec its grant; 2025 has none anywhere", () => {
   assert.deepEqual(
     province("ON").propertyRelief?.map(r => r.program),
-    [GRANT, SENIOR],
+    [GRANT, SENIOR, TORONTO],
   );
   for (const p of loadYear(2025).provinces) assert.equal(p.propertyRelief, undefined, `2025 ${p.code}`);
 });
@@ -180,6 +181,7 @@ test("the grant and the credit are never on a tax bill: a net bill states 0, and
     [
       [GRANT, 500],
       [SENIOR, 1307],
+      [TORONTO, null], // a custom bill is not the reference city's: no automatic award
     ],
   );
   // The same household as a gross bill ends at the same burden.
@@ -192,11 +194,11 @@ test("the grant and the credit are never on a tax bill: a net bill states 0, and
   // Omitting an amount leaves the gross levy, and so both lines, unknown; a non-zero amount is refused.
   assert.deepEqual(
     net({ [GRANT]: 0 })?.lines.map(l => l.status),
-    ["incomplete", "incomplete"],
+    ["incomplete", "incomplete", "city-bill-required"],
   );
   assert.deepEqual(
     net({ [GRANT]: 500, [SENIOR]: 0 })?.lines.map(l => l.status),
-    ["incomplete", "incomplete"],
+    ["incomplete", "incomplete", "city-bill-required"],
   );
 });
 
@@ -220,4 +222,66 @@ test("the credits switch turns the Ontario relief off with the other credits", (
   const r = householdOf(y, province("ON"), hh);
   assert.equal(r.breakdown.propertyRelief, undefined);
   assert.deepEqual(r.credits, []);
+});
+
+const torontoLine = (over: Partial<Parameters<typeof propertyReliefOf>[1]> & { people: Person[] }) => {
+  const rules = province("ON").propertyRelief;
+  assert.ok(rules);
+  return propertyReliefOf(rules, {
+    bill: { amount: 3800, supplied: false, basis: "gross", applied: {}, defaultCity: true },
+    couple: false,
+    kids: 0,
+    famNet: 30000,
+    provincialFamNet: 30000,
+    federalNets: [30000],
+    totalIncomes: [30000],
+    homeValue: 500000,
+    rent: 0,
+    existingCredits: {},
+    ...over,
+  }).lines.find(l => l.program === TORONTO);
+};
+
+test("Toronto tests gross income: a deduction that lowers net income does not bring a household under the limit", () => {
+  const people = [{ ...blank(0), age: 70 }];
+  assert.equal(torontoLine({ people, federalNets: [60000], totalIncomes: [70000] })?.entitled, 0);
+  assert.ok((torontoLine({ people, federalNets: [60000], totalIncomes: [60000] })?.entitled ?? 0) > 0);
+  // Total income is required: without it the line is incomplete, never silently net income.
+  const unknown = torontoLine({ people, federalNets: [60000], totalIncomes: undefined });
+  assert.deepEqual([unknown?.status, unknown?.entitled], ["incomplete", null]);
+});
+
+test("Toronto's 60-64 route needs an OAS Allowance; age alone or the Allowance under 60 does not qualify", () => {
+  const entitled = (age: number, allowance?: boolean) =>
+    torontoLine({ people: [{ ...blank(0), age, ...(allowance === undefined ? {} : { allowance }) }] })?.entitled;
+  assert.ok((entitled(62, true) ?? 0) > 0);
+  assert.ok((entitled(60, true) ?? 0) > 0);
+  assert.equal(entitled(59, true), 0);
+  assert.equal(entitled(62, false), 0);
+  assert.equal(entitled(62), 0);
+  assert.ok((entitled(65) ?? 0) > 0);
+});
+
+test("Toronto's cancellation is not a flat grant: it scales with the levy and needs a stated first-time basis", () => {
+  const at = (amount: number) =>
+    torontoLine({
+      people: [{ ...blank(0), age: 70 }],
+      bill: { amount, supplied: false, basis: "gross", applied: {}, defaultCity: true },
+    })?.entitled ?? 0;
+  assert.ok(Math.abs(at(2000) - (2000 * 0.022) / 1.022) < 1e-9);
+  assert.ok(Math.abs(at(8000) - (8000 * 0.022) / 1.022) < 1e-9);
+});
+
+test("a custom net bill that already includes a Toronto cancellation states it once and reaches the gross burden", () => {
+  const hh = (bill: number, basis: "gross" | "net", applied: Record<string, number>) =>
+    householdFor({ province: "ON", hh: { bill, basis, applied, people: [{ oth: 30000, age: 64 }] } });
+  const gross = householdOf(y, province("ON"), hh(3800, "gross", {})).breakdown.propertyRelief;
+  const net = householdOf(y, province("ON"), hh(3700, "net", { [GRANT]: 0, [SENIOR]: 0, [TORONTO]: 100 })).breakdown
+    .propertyRelief;
+  // Neither is the reference city's bill, so the line is city-bill-required in both; the net bill's 100 is grossed up
+  // into the levy and is not credited again.
+  assert.equal(gross?.grossLevy, 3800);
+  assert.equal(net?.grossLevy, 3800);
+  assert.equal(net?.lines.find(l => l.program === TORONTO)?.status, "city-bill-required");
+  assert.equal(net?.credited, gross?.credited);
 });

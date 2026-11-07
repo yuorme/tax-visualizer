@@ -98,6 +98,12 @@ export interface PropertyReliefFacts {
   /** MB: gross eligible school tax before the homeowners credit; on a net bill, the school tax net of the advance
    *  (the advance is the bill's stated amount for the credit). Omitted: estimated on the default-city bill only. */
   schoolTax?: number;
+  /** Toronto: the previous year's gross levy, so the tax increase is this year's levy less it. Omitted: a first-time
+   *  claimant's increase is estimated from the levy and the City's rate increase. */
+  torontoPriorYearLevy?: number;
+  /** Toronto: increases already cancelled that are still payable this year (previously approved cancellations). Omitted: none,
+   *  as for a first-time claimant. */
+  torontoCarryover?: number;
 }
 
 /** The household's driving: total distance a year across its vehicles and their average fuel efficiency. */

@@ -374,6 +374,467 @@
       "expect": {
         "ontario-energy-property-tax-credit-senior-overlap": [1107, 1107]
       }
+    },
+    {
+      "id": "tor-first-time-3800",
+      "province": "ON",
+      "calc": "default-city levy 500,000 x 0.0076 = 3,800; first-time estimate 3,800 x 0.022/1.022 = 81.8004; at least 10",
+      "hh": {
+        "homeValue": 500000,
+        "people": [
+          {
+            "oth": 30000,
+            "age": 70
+          }
+        ]
+      },
+      "expect": {
+        "toronto-property-tax-increase-cancellation": [81.800391, 81.8]
+      }
+    },
+    {
+      "id": "tor-budget-average-home-first-time",
+      "province": "ON",
+      "calc": "the 2026 budget's average bill 4,252 x 0.022/1.022 = 91.53",
+      "hh": {
+        "homeValue": 559473.6842105263,
+        "people": [
+          {
+            "oth": 30000,
+            "age": 70
+          }
+        ]
+      },
+      "expect": {
+        "toronto-property-tax-increase-cancellation": [91.530333, 91.53]
+      }
+    },
+    {
+      "id": "tor-budget-average-home-carryover-268",
+      "province": "ON",
+      "calc": "91.53 increase + 268 approved earlier cancelled increase still payable = 359.53 (the note's continuing claimant)",
+      "hh": {
+        "homeValue": 559473.6842105263,
+        "people": [
+          {
+            "oth": 30000,
+            "age": 70
+          }
+        ],
+        "facts": {
+          "torontoCarryover": 268
+        }
+      },
+      "expect": {
+        "toronto-property-tax-increase-cancellation": [359.530333, 359.53]
+      }
+    },
+    {
+      "id": "tor-below-minimum-456",
+      "province": "ON",
+      "calc": "levy 60,000 x 0.0076 = 456; estimate 456 x 0.022/1.022 = 9.816 is under the 10 minimum: 0",
+      "hh": {
+        "homeValue": 60000,
+        "people": [
+          {
+            "oth": 30000,
+            "age": 70
+          }
+        ]
+      },
+      "expect": {
+        "toronto-property-tax-increase-cancellation": [0.0, 0.0]
+      }
+    },
+    {
+      "id": "tor-at-minimum-465",
+      "province": "ON",
+      "calc": "levy 61,200 x 0.0076 = 465.12; estimate 10.0107 reaches the 10 minimum and is the whole amount",
+      "hh": {
+        "homeValue": 61200,
+        "people": [
+          {
+            "oth": 30000,
+            "age": 70
+          }
+        ]
+      },
+      "expect": {
+        "toronto-property-tax-increase-cancellation": [10.012368, 10.01]
+      }
+    },
+    {
+      "id": "tor-prior-levy-3700",
+      "province": "ON",
+      "calc": "levy 3,800, prior year 3,700: increase 100",
+      "hh": {
+        "homeValue": 500000,
+        "people": [
+          {
+            "oth": 30000,
+            "age": 70
+          }
+        ],
+        "facts": {
+          "torontoPriorYearLevy": 3700
+        }
+      },
+      "expect": {
+        "toronto-property-tax-increase-cancellation": [100.0, 100.0]
+      }
+    },
+    {
+      "id": "tor-prior-levy-exact-minimum",
+      "province": "ON",
+      "calc": "increase 3,800 - 3,790 = 10 exactly meets the minimum",
+      "hh": {
+        "homeValue": 500000,
+        "people": [
+          {
+            "oth": 30000,
+            "age": 70
+          }
+        ],
+        "facts": {
+          "torontoPriorYearLevy": 3790
+        }
+      },
+      "expect": {
+        "toronto-property-tax-increase-cancellation": [10, 10]
+      }
+    },
+    {
+      "id": "tor-prior-levy-just-below-minimum",
+      "province": "ON",
+      "calc": "increase 9.99 is under the minimum: 0",
+      "hh": {
+        "homeValue": 500000,
+        "people": [
+          {
+            "oth": 30000,
+            "age": 70
+          }
+        ],
+        "facts": {
+          "torontoPriorYearLevy": 3790.01
+        }
+      },
+      "expect": {
+        "toronto-property-tax-increase-cancellation": [0, 0]
+      }
+    },
+    {
+      "id": "tor-levy-fell",
+      "province": "ON",
+      "calc": "the levy fell (prior 3,900): no increase, 0",
+      "hh": {
+        "homeValue": 500000,
+        "people": [
+          {
+            "oth": 30000,
+            "age": 70
+          }
+        ],
+        "facts": {
+          "torontoPriorYearLevy": 3900
+        }
+      },
+      "expect": {
+        "toronto-property-tax-increase-cancellation": [0, 0]
+      }
+    },
+    {
+      "id": "tor-carryover-adds-to-small-increase",
+      "province": "ON",
+      "calc": "increase 5 (prior 3,795) + carryover 5 = 10 meets the minimum as a sum",
+      "hh": {
+        "homeValue": 500000,
+        "people": [
+          {
+            "oth": 30000,
+            "age": 70
+          }
+        ],
+        "facts": {
+          "torontoPriorYearLevy": 3795,
+          "torontoCarryover": 5
+        }
+      },
+      "expect": {
+        "toronto-property-tax-increase-cancellation": [10, 10]
+      }
+    },
+    {
+      "id": "tor-prior-levy-plus-carryover",
+      "province": "ON",
+      "calc": "increase 100 + carryover 268 = 368",
+      "hh": {
+        "homeValue": 500000,
+        "people": [
+          {
+            "oth": 30000,
+            "age": 70
+          }
+        ],
+        "facts": {
+          "torontoPriorYearLevy": 3700,
+          "torontoCarryover": 268
+        }
+      },
+      "expect": {
+        "toronto-property-tax-increase-cancellation": [368, 368]
+      }
+    },
+    {
+      "id": "tor-capped-at-the-levy",
+      "province": "ON",
+      "calc": "100 + 5,000 carryover cannot exceed the levy 3,800",
+      "hh": {
+        "homeValue": 500000,
+        "people": [
+          {
+            "oth": 30000,
+            "age": 70
+          }
+        ],
+        "facts": {
+          "torontoPriorYearLevy": 3700,
+          "torontoCarryover": 5000
+        }
+      },
+      "expect": {
+        "toronto-property-tax-increase-cancellation": [3800, 3800]
+      }
+    },
+    {
+      "id": "tor-income-62000-in",
+      "province": "ON",
+      "calc": "total income 62,000 meets the limit (at most 62,000)",
+      "hh": {
+        "homeValue": 500000,
+        "people": [
+          {
+            "oth": 62000,
+            "age": 70
+          }
+        ]
+      },
+      "expect": {
+        "toronto-property-tax-increase-cancellation": [81.800391, 81.8]
+      }
+    },
+    {
+      "id": "tor-income-62001-out",
+      "province": "ON",
+      "calc": "total income 62,001 is over: 0",
+      "hh": {
+        "homeValue": 500000,
+        "people": [
+          {
+            "oth": 62001,
+            "age": 70
+          }
+        ]
+      },
+      "expect": {
+        "toronto-property-tax-increase-cancellation": [0, 0]
+      }
+    },
+    {
+      "id": "tor-couple-income-sums",
+      "province": "ON",
+      "calc": "each spouse is under 62,000 but the combined 62,001 is what counts: 0",
+      "hh": {
+        "homeValue": 500000,
+        "people": [
+          {
+            "oth": 40000,
+            "age": 70
+          },
+          {
+            "oth": 22001,
+            "age": 50
+          }
+        ]
+      },
+      "expect": {
+        "toronto-property-tax-increase-cancellation": [0, 0]
+      }
+    },
+    {
+      "id": "tor-couple-one-senior-in",
+      "province": "ON",
+      "calc": "one spouse 65 qualifies the household; combined 62,000 is within the limit",
+      "hh": {
+        "homeValue": 500000,
+        "people": [
+          {
+            "oth": 40000,
+            "age": 70
+          },
+          {
+            "oth": 22000,
+            "age": 50
+          }
+        ]
+      },
+      "expect": {
+        "toronto-property-tax-increase-cancellation": [81.800391, 81.8]
+      }
+    },
+    {
+      "id": "tor-gross-not-net-income",
+      "province": "ON",
+      "calc": "income 70,000 with a 10,000 RRSP deduction has net income 60,000 but gross 70,000, over 62,000: 0 (net income would wrongly qualify)",
+      "hh": {
+        "homeValue": 500000,
+        "people": [
+          {
+            "oth": 70000,
+            "rrsp": 10000,
+            "age": 70
+          }
+        ]
+      },
+      "expect": {
+        "toronto-property-tax-increase-cancellation": [0, 0]
+      }
+    },
+    {
+      "id": "tor-assessment-975000-in",
+      "province": "ON",
+      "calc": "assessed value at most 975,000: 975,000 qualifies; levy 7,410",
+      "hh": {
+        "homeValue": 975000,
+        "people": [
+          {
+            "oth": 30000,
+            "age": 70
+          }
+        ]
+      },
+      "expect": {
+        "toronto-property-tax-increase-cancellation": [159.510763, 159.51]
+      }
+    },
+    {
+      "id": "tor-assessment-975001-out",
+      "province": "ON",
+      "calc": "975,001 is over the limit: 0",
+      "hh": {
+        "homeValue": 975001,
+        "people": [
+          {
+            "oth": 30000,
+            "age": 70
+          }
+        ]
+      },
+      "expect": {
+        "toronto-property-tax-increase-cancellation": [0, 0]
+      }
+    },
+    {
+      "id": "tor-age-65-in",
+      "province": "ON",
+      "calc": "age 65",
+      "hh": {
+        "homeValue": 500000,
+        "people": [
+          {
+            "oth": 30000,
+            "age": 65
+          }
+        ]
+      },
+      "expect": {
+        "toronto-property-tax-increase-cancellation": [81.800391, 81.8]
+      }
+    },
+    {
+      "id": "tor-age-64-no-allowance-out",
+      "province": "ON",
+      "calc": "age 64 without an OAS Allowance does not qualify",
+      "hh": {
+        "homeValue": 500000,
+        "people": [
+          {
+            "oth": 30000,
+            "age": 64
+          }
+        ]
+      },
+      "expect": {
+        "toronto-property-tax-increase-cancellation": [0, 0]
+      }
+    },
+    {
+      "id": "tor-no-age-out",
+      "province": "ON",
+      "calc": "no age is never a senior (no eligibility is invented)",
+      "hh": {
+        "homeValue": 500000,
+        "people": [
+          {
+            "oth": 30000
+          }
+        ]
+      },
+      "expect": {
+        "toronto-property-tax-increase-cancellation": [0, 0]
+      }
+    },
+    {
+      "id": "tor-renter-out",
+      "province": "ON",
+      "calc": "a renter has no cancellation",
+      "hh": {
+        "homeValue": 0,
+        "rent": 1500,
+        "people": [
+          {
+            "oth": 30000,
+            "age": 70
+          }
+        ]
+      },
+      "expect": {
+        "toronto-property-tax-increase-cancellation": [0, 0]
+      }
+    },
+    {
+      "id": "tor-custom-bill-no-award",
+      "province": "ON",
+      "calc": "a custom bill does not identify the city: no automatic cancellation",
+      "hh": {
+        "bill": 3800,
+        "people": [
+          {
+            "oth": 30000,
+            "age": 70
+          }
+        ]
+      },
+      "expect": {
+        "toronto-property-tax-increase-cancellation": "city-bill-required"
+      }
+    },
+    {
+      "id": "tor-rate-override-no-award",
+      "province": "ON",
+      "calc": "a rate override is not the reference city's bill: no automatic cancellation",
+      "hh": {
+        "rate": 0.0076,
+        "people": [
+          {
+            "oth": 30000,
+            "age": 70
+          }
+        ]
+      },
+      "expect": {
+        "toronto-property-tax-increase-cancellation": "city-bill-required"
+      }
     }
   ]
 }

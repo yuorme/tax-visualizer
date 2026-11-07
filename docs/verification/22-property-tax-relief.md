@@ -765,3 +765,17 @@ else keeps the ordinary credit, in its old place and amount. The handler also re
 ordinary credit counted, as a guard. **Neither program is on a tax bill** (the grant and credit are paid with the
 Ontario Trillium Benefit), so a net bill states 0 for both and any other amount makes them incomplete; the gross and
 net bills reach the same burden.
+
+**Toronto, `toronto-property-tax-increase-cancellation`** (municipal scope: the default reference-city bill only; a
+custom bill or a rate override is `city-bill-required`). Eligible: an owner aged 65, or 60 to 64 with an OAS Allowance
+(`Person.allowance`), whose household's **total (gross) income** (line 15000: net income with the deductions added back,
+`totalIncomeOf`, never net income) is at most $62,000 and whose home (value standing in for the assessment) is at most
+$975,000. No age is no eligibility. The disability route, the good-standing and ownership-period tests and the
+construction exclusion are not modelled. The cancellation is the year's tax increase plus earlier cancelled increases
+still payable, if the sum is at least $10, and never more than the levy. **First-time claimant basis, not a flat
+grant:** unless the household states last year's levy (`torontoPriorYearLevy`, increase = levy − prior), the increase is
+estimated as `levy × r / (1 + r)` with r the City's 2026 residential increase of 2.2%, which reproduces the budget's
+average-home figure exactly (4,252 × 0.022 / 1.022 = $91.53). Earlier cancelled increases are stated
+(`torontoCarryover`) and default to none, as for a first-time claimant; with the budget's $268 carryover the
+continuing claimant is $359.53. The provincial grants above read the gross levy and do not net the cancellation (their
+bases are prior-year amounts, and the app's one bill stands in for them).

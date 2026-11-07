@@ -28,6 +28,7 @@
 // states and the credit entry are all done here; a handler must not repeat them.
 
 import type { Province } from "../data/schema.ts";
+import { type NetIncomeParts, netIncomeTotal } from "./payroll.ts";
 import type { Household, Person, PropertyReliefFacts } from "./types.ts";
 
 type SchemaRule = NonNullable<Province["propertyRelief"]>[number];
@@ -68,6 +69,9 @@ export interface PropertyReliefInput {
   famNet: number; // federal family net income
   provincialFamNet: number; // Quebec's line 275 sum; equals famNet elsewhere
   federalNets: readonly number[];
+  /** Each person's total income (line 15000: net income before deductions), floored at zero, for programs that test gross
+   *  income. Toronto's cancellation does; substituting net income would let a deduction lower it. */
+  totalIncomes?: readonly number[];
   homeValue: number;
   rent: number; // annual, zero for an owner
   /** Amount of each existing credit program (the province's `credits` entries, by program id) already counted for this
@@ -125,6 +129,10 @@ export interface PropertyReliefResult {
   credited: number | null;
   complete: boolean; // no line is incomplete or not modelled (a city-gated line is out of scope, not incomplete)
 }
+
+/** Total income (line 15000): net income with the deductions added back, so a deduction (RRSP, the OAS recovery, the CPP/QPP
+ *  enhancement) does not lower it. Income tests on gross income, such as Toronto's, use this and never net income. */
+export const totalIncomeOf = (n: NetIncomeParts) => Math.max(0, netIncomeTotal(n) + n.ded + n.enh);
 
 const money = (n: number) => Math.round((n + Number.EPSILON) * 100) / 100;
 const validAmount = (n: unknown): n is number => typeof n === "number" && Number.isFinite(n) && n >= 0;
@@ -270,6 +278,33 @@ const BUILT_IN: BuiltIn = {
       status: "modelled",
       entitled: Math.max(0, raw - overlap),
       eligible: { occupancyCost: occupancy, energy, property, beforeOverlap: raw, overlap },
+    };
+  },
+  // Toronto Municipal Code 767-5.4 with the 2026 application and budget: an owner who is 65, or 60-64 with an OAS
+  // Allowance, whose household's total (gross) income is within the limit and whose home's assessment is within its limit
+  // has the year's tax increase plus earlier cancelled increases still payable cancelled, if that is at least $10. The
+  // increase is this year's levy less last year's when the household states it; otherwise it is a first-time claimant's
+  // estimate, levy x r / (1 + r) at the City's rate increase r (the 2026 budget's $4,252 average bill gives $91.53), with
+  // no earlier increases. Home value stands in for the assessed value. No disability route and no construction exclusion.
+  "toronto-property-tax-increase-cancellation": (rule, ctx) => {
+    const q = rule.params;
+    const senior = ctx.people.some(x => (x.age ?? 0) >= q.seniorAge || ((x.age ?? 0) >= q.allowanceAge && x.allowance));
+    if (!ctx.owner || !senior) return noRelief;
+    if (!ctx.totalIncomes) return incomplete("the household's total (gross) income is not given");
+    const income = ctx.totalIncomes.reduce((sum, n) => sum + Math.max(0, n), 0);
+    if (income > q.incomeLimit || ctx.homeValue > q.assessmentLimit) return noRelief;
+    const prior = ctx.facts.torontoPriorYearLevy;
+    const increase =
+      typeof prior === "number" && Number.isFinite(prior) && prior >= 0
+        ? Math.max(0, ctx.grossLevy - prior)
+        : (ctx.grossLevy * q.firstTimeIncreaseRate) / (1 + q.firstTimeIncreaseRate);
+    const carried = ctx.facts.torontoCarryover;
+    const carryover = typeof carried === "number" && Number.isFinite(carried) && carried >= 0 ? carried : 0;
+    const total = increase + carryover;
+    return {
+      status: "modelled",
+      entitled: total < q.minimum ? 0 : Math.min(ctx.grossLevy, total),
+      eligible: { increase, carryover, totalIncome: income, assessedValue: ctx.homeValue },
     };
   },
   // Income Tax Act (Manitoba) s.5.3-5.6: the credit is capped by gross eligible SCHOOL tax, not the whole bill. A
@@ -439,6 +474,7 @@ export function propertyReliefOf(rules: readonly ReliefRule[], input: PropertyRe
       famNet: input.famNet,
       provincialFamNet: input.provincialFamNet,
       federalNets: input.federalNets,
+      totalIncomes: input.totalIncomes,
       homeValue: input.homeValue,
       rent: input.rent,
       existingCredits: input.existingCredits,
