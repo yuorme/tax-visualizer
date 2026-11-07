@@ -861,6 +861,18 @@ const propertyReliefProgram = z.discriminatedUnion("program", [
       firstTimeIncreaseRate: rate,
     }),
   ),
+  // QC: the grant for seniors to offset a municipal tax increase (TP-1029.TM-V; Municipal Taxation Act ss.210.7-210.14).
+  // The household states the municipality's potential grant and the preceding roll's final-year awards; the age is tested
+  // at December 31 of the year before the bill year, the family income is Quebec line 275 of the spouses.
+  reliefProgram(
+    "qc-senior-municipal-tax-increase-grant",
+    z.object({
+      ageAtPriorYearEnd: z.number().int(),
+      ownershipYears: z.number().int(), // consecutive years of ownership at that date
+      familyIncomeLimit: amount,
+      newRollMaximum: amount, // the current roll's increment is capped here; preceding-roll awards are added after
+    }),
+  ),
   // MB: the homeowners credit on gross eligible school tax. `reference` estimates a default-city bill's school tax.
   reliefProgram(
     "mb-homeowners-school-tax-credit",

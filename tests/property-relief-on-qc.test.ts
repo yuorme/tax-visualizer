@@ -119,6 +119,10 @@ test("Ontario 2026 declares the senior programs, Quebec its grant; 2025 has none
     province("ON").propertyRelief?.map(r => r.program),
     [GRANT, SENIOR, TORONTO],
   );
+  assert.deepEqual(
+    province("QC").propertyRelief?.map(r => [r.program, r.scope]),
+    [["qc-senior-municipal-tax-increase-grant", "provincial"]],
+  );
   for (const p of loadYear(2025).provinces) assert.equal(p.propertyRelief, undefined, `2025 ${p.code}`);
 });
 

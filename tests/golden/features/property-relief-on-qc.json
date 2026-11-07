@@ -835,6 +835,607 @@
       "expect": {
         "toronto-property-tax-increase-cancellation": "city-bill-required"
       }
+    },
+    {
+      "id": "qc-300-plus-100",
+      "province": "QC",
+      "calc": "potential 300 + preceding-roll awards 100 = 400, sole claimant",
+      "hh": {
+        "facts": {
+          "qcOwnershipYears": 20,
+          "qcPotentialGrant": 300,
+          "qcPrecedingRollGrant": 100
+        },
+        "people": [
+          {
+            "oth": 40000,
+            "age": 66
+          }
+        ]
+      },
+      "expect": {
+        "qc-senior-municipal-tax-increase-grant": [400, 400]
+      }
+    },
+    {
+      "id": "qc-co-owner-claims-150",
+      "province": "QC",
+      "calc": "400 whole-property grant less 150 claimed by another co-owner = 250",
+      "hh": {
+        "facts": {
+          "qcOwnershipYears": 20,
+          "qcPotentialGrant": 300,
+          "qcPrecedingRollGrant": 100,
+          "qcOtherClaims": 150
+        },
+        "people": [
+          {
+            "oth": 40000,
+            "age": 66
+          }
+        ]
+      },
+      "expect": {
+        "qc-senior-municipal-tax-increase-grant": [250, 250]
+      }
+    },
+    {
+      "id": "qc-500-plus-120",
+      "province": "QC",
+      "calc": "500 + 120 = 620: the 500 cap is on the new-roll amount, not the total",
+      "hh": {
+        "facts": {
+          "qcOwnershipYears": 20,
+          "qcPotentialGrant": 500,
+          "qcPrecedingRollGrant": 120
+        },
+        "people": [
+          {
+            "oth": 40000,
+            "age": 66
+          }
+        ]
+      },
+      "expect": {
+        "qc-senior-municipal-tax-increase-grant": [620, 620]
+      }
+    },
+    {
+      "id": "qc-allocation-300",
+      "province": "QC",
+      "calc": "620 whole property; the co-owner claims 320, so this claimant has 300",
+      "hh": {
+        "facts": {
+          "qcOwnershipYears": 20,
+          "qcPotentialGrant": 500,
+          "qcPrecedingRollGrant": 120,
+          "qcOtherClaims": 320
+        },
+        "people": [
+          {
+            "oth": 40000,
+            "age": 66
+          }
+        ]
+      },
+      "expect": {
+        "qc-senior-municipal-tax-increase-grant": [300, 300]
+      }
+    },
+    {
+      "id": "qc-allocation-320",
+      "province": "QC",
+      "calc": "620 whole property; the co-owner claims 300, so this claimant has 320 (together 620)",
+      "hh": {
+        "facts": {
+          "qcOwnershipYears": 20,
+          "qcPotentialGrant": 500,
+          "qcPrecedingRollGrant": 120,
+          "qcOtherClaims": 300
+        },
+        "people": [
+          {
+            "oth": 40000,
+            "age": 66
+          }
+        ]
+      },
+      "expect": {
+        "qc-senior-municipal-tax-increase-grant": [320, 320]
+      }
+    },
+    {
+      "id": "qc-potential-over-cap",
+      "province": "QC",
+      "calc": "a stated potential of 650 is capped at 500 before the 120 is added: 620",
+      "hh": {
+        "facts": {
+          "qcOwnershipYears": 20,
+          "qcPotentialGrant": 650,
+          "qcPrecedingRollGrant": 120
+        },
+        "people": [
+          {
+            "oth": 40000,
+            "age": 66
+          }
+        ]
+      },
+      "expect": {
+        "qc-senior-municipal-tax-increase-grant": [620, 620]
+      }
+    },
+    {
+      "id": "qc-preceding-only",
+      "province": "QC",
+      "calc": "no new-roll increment (potential 0) and 120 from the preceding roll: 120",
+      "hh": {
+        "facts": {
+          "qcOwnershipYears": 20,
+          "qcPotentialGrant": 0,
+          "qcPrecedingRollGrant": 120
+        },
+        "people": [
+          {
+            "oth": 40000,
+            "age": 66
+          }
+        ]
+      },
+      "expect": {
+        "qc-senior-municipal-tax-increase-grant": [120, 120]
+      }
+    },
+    {
+      "id": "qc-zero-grant",
+      "province": "QC",
+      "calc": "potential 0 and no preceding award: an eligible claimant with a true 0",
+      "hh": {
+        "facts": {
+          "qcOwnershipYears": 20,
+          "qcPotentialGrant": 0,
+          "qcPrecedingRollGrant": 0
+        },
+        "people": [
+          {
+            "oth": 40000,
+            "age": 66
+          }
+        ]
+      },
+      "expect": {
+        "qc-senior-municipal-tax-increase-grant": [0, 0]
+      }
+    },
+    {
+      "id": "qc-rounding-223.49",
+      "province": "QC",
+      "calc": "the whole-property grant 223.49 rounds to 223",
+      "hh": {
+        "facts": {
+          "qcOwnershipYears": 20,
+          "qcPotentialGrant": 223.49,
+          "qcPrecedingRollGrant": 0
+        },
+        "people": [
+          {
+            "oth": 40000,
+            "age": 66
+          }
+        ]
+      },
+      "expect": {
+        "qc-senior-municipal-tax-increase-grant": [223, 223]
+      }
+    },
+    {
+      "id": "qc-rounding-223.50",
+      "province": "QC",
+      "calc": "the whole-property grant 223.50 rounds to 224",
+      "hh": {
+        "facts": {
+          "qcOwnershipYears": 20,
+          "qcPotentialGrant": 223.5,
+          "qcPrecedingRollGrant": 0
+        },
+        "people": [
+          {
+            "oth": 40000,
+            "age": 66
+          }
+        ]
+      },
+      "expect": {
+        "qc-senior-municipal-tax-increase-grant": [224, 224]
+      }
+    },
+    {
+      "id": "qc-others-exceed-whole",
+      "province": "QC",
+      "calc": "other co-owners' claims above the whole grant leave 0, not a negative",
+      "hh": {
+        "facts": {
+          "qcOwnershipYears": 20,
+          "qcPotentialGrant": 300,
+          "qcPrecedingRollGrant": 100,
+          "qcOtherClaims": 900
+        },
+        "people": [
+          {
+            "oth": 40000,
+            "age": 66
+          }
+        ]
+      },
+      "expect": {
+        "qc-senior-municipal-tax-increase-grant": [0, 0]
+      }
+    },
+    {
+      "id": "qc-age-66-in",
+      "province": "QC",
+      "calc": "app age 66 is 65 at the prior year end: eligible",
+      "hh": {
+        "facts": {
+          "qcOwnershipYears": 20,
+          "qcPotentialGrant": 300,
+          "qcPrecedingRollGrant": 0
+        },
+        "people": [
+          {
+            "oth": 40000,
+            "age": 66
+          }
+        ]
+      },
+      "expect": {
+        "qc-senior-municipal-tax-increase-grant": [300, 300]
+      }
+    },
+    {
+      "id": "qc-age-65-out",
+      "province": "QC",
+      "calc": "app age 65 is 64 at the prior year end (needs 65): 0",
+      "hh": {
+        "facts": {
+          "qcOwnershipYears": 20,
+          "qcPotentialGrant": 300,
+          "qcPrecedingRollGrant": 0
+        },
+        "people": [
+          {
+            "oth": 40000,
+            "age": 65
+          }
+        ]
+      },
+      "expect": {
+        "qc-senior-municipal-tax-increase-grant": [0, 0]
+      }
+    },
+    {
+      "id": "qc-couple-one-senior",
+      "province": "QC",
+      "calc": "one spouse 66 qualifies the household; combined income 40,000",
+      "hh": {
+        "facts": {
+          "qcOwnershipYears": 20,
+          "qcPotentialGrant": 300,
+          "qcPrecedingRollGrant": 0
+        },
+        "people": [
+          {
+            "oth": 30000,
+            "age": 66
+          },
+          {
+            "oth": 10000,
+            "age": 50
+          }
+        ]
+      },
+      "expect": {
+        "qc-senior-municipal-tax-increase-grant": [300, 300]
+      }
+    },
+    {
+      "id": "qc-no-age-no-grant",
+      "province": "QC",
+      "calc": "no age is never 65: 0, and the missing facts are not asked for",
+      "hh": {
+        "facts": {},
+        "people": [
+          {
+            "oth": 30000
+          }
+        ]
+      },
+      "expect": {
+        "qc-senior-municipal-tax-increase-grant": [0, 0]
+      }
+    },
+    {
+      "id": "qc-ownership-15-in",
+      "province": "QC",
+      "calc": "15 consecutive years meets the test",
+      "hh": {
+        "facts": {
+          "qcOwnershipYears": 15,
+          "qcPotentialGrant": 300,
+          "qcPrecedingRollGrant": 0
+        },
+        "people": [
+          {
+            "oth": 40000,
+            "age": 66
+          }
+        ]
+      },
+      "expect": {
+        "qc-senior-municipal-tax-increase-grant": [300, 300]
+      }
+    },
+    {
+      "id": "qc-ownership-14-out",
+      "province": "QC",
+      "calc": "14 years is short: 0",
+      "hh": {
+        "facts": {
+          "qcOwnershipYears": 14,
+          "qcPotentialGrant": 300,
+          "qcPrecedingRollGrant": 0
+        },
+        "people": [
+          {
+            "oth": 40000,
+            "age": 66
+          }
+        ]
+      },
+      "expect": {
+        "qc-senior-municipal-tax-increase-grant": [0, 0]
+      }
+    },
+    {
+      "id": "qc-ownership-missing",
+      "province": "QC",
+      "calc": "ownership years not given: incomplete, not 0 and not assumed",
+      "hh": {
+        "facts": {
+          "qcPotentialGrant": 300,
+          "qcPrecedingRollGrant": 0
+        },
+        "people": [
+          {
+            "oth": 40000,
+            "age": 66
+          }
+        ]
+      },
+      "expect": {
+        "qc-senior-municipal-tax-increase-grant": "incomplete"
+      }
+    },
+    {
+      "id": "qc-potential-missing",
+      "province": "QC",
+      "calc": "the municipality's potential grant is not given: incomplete",
+      "hh": {
+        "facts": {
+          "qcOwnershipYears": 20,
+          "qcPrecedingRollGrant": 0
+        },
+        "people": [
+          {
+            "oth": 40000,
+            "age": 66
+          }
+        ]
+      },
+      "expect": {
+        "qc-senior-municipal-tax-increase-grant": "incomplete"
+      }
+    },
+    {
+      "id": "qc-preceding-missing",
+      "province": "QC",
+      "calc": "the preceding roll's awards are not given: incomplete (0 must be stated)",
+      "hh": {
+        "facts": {
+          "qcOwnershipYears": 20,
+          "qcPotentialGrant": 300
+        },
+        "people": [
+          {
+            "oth": 40000,
+            "age": 66
+          }
+        ]
+      },
+      "expect": {
+        "qc-senior-municipal-tax-increase-grant": "incomplete"
+      }
+    },
+    {
+      "id": "qc-income-64200-in",
+      "province": "QC",
+      "calc": "family line 275 income of 64,200 meets the limit (or less)",
+      "hh": {
+        "facts": {
+          "qcOwnershipYears": 20,
+          "qcPotentialGrant": 300,
+          "qcPrecedingRollGrant": 0
+        },
+        "people": [
+          {
+            "oth": 64200,
+            "age": 66
+          }
+        ]
+      },
+      "expect": {
+        "qc-senior-municipal-tax-increase-grant": [300, 300]
+      }
+    },
+    {
+      "id": "qc-income-64201-out",
+      "province": "QC",
+      "calc": "64,201 is over the limit: 0",
+      "hh": {
+        "facts": {
+          "qcOwnershipYears": 20,
+          "qcPotentialGrant": 300,
+          "qcPrecedingRollGrant": 0
+        },
+        "people": [
+          {
+            "oth": 64201,
+            "age": 66
+          }
+        ]
+      },
+      "expect": {
+        "qc-senior-municipal-tax-increase-grant": [0, 0]
+      }
+    },
+    {
+      "id": "qc-couple-income-sums",
+      "province": "QC",
+      "calc": "each spouse is under 64,200 but the combined 64,201 is what counts: 0",
+      "hh": {
+        "facts": {
+          "qcOwnershipYears": 20,
+          "qcPotentialGrant": 300,
+          "qcPrecedingRollGrant": 0
+        },
+        "people": [
+          {
+            "oth": 40000,
+            "age": 66
+          },
+          {
+            "oth": 24201,
+            "age": 50
+          }
+        ]
+      },
+      "expect": {
+        "qc-senior-municipal-tax-increase-grant": [0, 0]
+      }
+    },
+    {
+      "id": "qc-income-over-hides-missing-facts",
+      "province": "QC",
+      "calc": "over the income limit the answer is 0 whatever else is missing",
+      "hh": {
+        "facts": {},
+        "people": [
+          {
+            "oth": 70000,
+            "age": 66
+          }
+        ]
+      },
+      "expect": {
+        "qc-senior-municipal-tax-increase-grant": [0, 0]
+      }
+    },
+    {
+      "id": "qc-renter-out",
+      "province": "QC",
+      "calc": "a renter has no grant",
+      "hh": {
+        "homeValue": 0,
+        "rent": 1200,
+        "facts": {
+          "qcOwnershipYears": 20,
+          "qcPotentialGrant": 300,
+          "qcPrecedingRollGrant": 0
+        },
+        "people": [
+          {
+            "oth": 30000,
+            "age": 66
+          }
+        ]
+      },
+      "expect": {
+        "qc-senior-municipal-tax-increase-grant": [0, 0]
+      }
+    },
+    {
+      "id": "qc-custom-bill-provincial",
+      "province": "QC",
+      "calc": "a provincial grant: a custom bill receives it on the stated figures",
+      "hh": {
+        "facts": {
+          "qcOwnershipYears": 20,
+          "qcPotentialGrant": 300,
+          "qcPrecedingRollGrant": 100
+        },
+        "people": [
+          {
+            "oth": 40000,
+            "age": 66
+          }
+        ],
+        "bill": 3000
+      },
+      "expect": {
+        "qc-senior-municipal-tax-increase-grant": [400, 400]
+      }
+    },
+    {
+      "id": "qc-net-bill-states-zero",
+      "province": "QC",
+      "calc": "never on a bill: a net bill states 0 and reaches the same amount",
+      "hh": {
+        "facts": {
+          "qcOwnershipYears": 20,
+          "qcPotentialGrant": 300,
+          "qcPrecedingRollGrant": 100
+        },
+        "people": [
+          {
+            "oth": 40000,
+            "age": 66
+          }
+        ],
+        "bill": 3000,
+        "basis": "net",
+        "applied": {
+          "qc-senior-municipal-tax-increase-grant": 0
+        }
+      },
+      "expect": {
+        "qc-senior-municipal-tax-increase-grant": [400, 400]
+      }
+    },
+    {
+      "id": "qc-net-bill-nonzero-refused",
+      "province": "QC",
+      "calc": "a stated amount on the bill is refused: incomplete",
+      "hh": {
+        "facts": {
+          "qcOwnershipYears": 20,
+          "qcPotentialGrant": 300,
+          "qcPrecedingRollGrant": 100
+        },
+        "people": [
+          {
+            "oth": 40000,
+            "age": 66
+          }
+        ],
+        "bill": 3000,
+        "basis": "net",
+        "applied": {
+          "qc-senior-municipal-tax-increase-grant": 400
+        }
+      },
+      "expect": {
+        "qc-senior-municipal-tax-increase-grant": "incomplete"
+      }
     }
   ]
 }

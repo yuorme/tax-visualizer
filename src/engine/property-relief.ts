@@ -307,6 +307,31 @@ const BUILT_IN: BuiltIn = {
       eligible: { increase, carryover, totalIncome: income, assessedValue: ctx.homeValue },
     };
   },
+  // Grant for seniors to offset a municipal tax increase (TP-1029.TM-V, 2025-11, lines 41-46). A claimant is 65 at the prior
+  // year end, has owned the home 15 consecutive years, lives in it, and has family line 275 income of at most the limit. The
+  // whole-property grant is the municipality's potential amount (at most $500) plus the preceding roll's final-year awards,
+  // rounded to whole dollars, and the claimant's share is that less what other co-owners claim: never the whole each. The
+  // potential amount is consumed as stated; the roll-averaging system that produces it is not reproduced. A provincial
+  // grant: a custom bill can receive it. It is claimed on the return, not on the tax bill.
+  "qc-senior-municipal-tax-increase-grant": (rule, ctx) => {
+    const q = rule.params;
+    if (ctx.reflected > 0) return incomplete(`the grant is claimed on the income tax return: ${NEVER_ON_BILL}`);
+    if (!ctx.owner || !ctx.people.some(x => agedAtPriorYearEnd(x, q.ageAtPriorYearEnd))) return noRelief;
+    if (ctx.provincialFamNet > q.familyIncomeLimit) return noRelief;
+    const known = (n: unknown): n is number => typeof n === "number" && Number.isFinite(n) && n >= 0;
+    const { qcOwnershipYears: years, qcPotentialGrant: potential, qcPrecedingRollGrant: preceding } = ctx.facts;
+    if (!known(years)) return incomplete("the years of consecutive ownership are not given");
+    if (years < q.ownershipYears) return noRelief;
+    if (!known(potential)) return incomplete("the municipality's potential grant for this roll year is not given");
+    if (!known(preceding)) return incomplete("the preceding roll's final-year grant is not given (0 if none)");
+    const others = known(ctx.facts.qcOtherClaims) ? ctx.facts.qcOtherClaims : 0;
+    const whole = Math.round(Math.min(q.newRollMaximum, potential) + preceding);
+    return {
+      status: "modelled",
+      entitled: Math.max(0, whole - others),
+      eligible: { wholeProperty: whole, otherClaims: others, familyIncome: ctx.provincialFamNet },
+    };
+  },
   // Income Tax Act (Manitoba) s.5.3-5.6: the credit is capped by gross eligible SCHOOL tax, not the whole bill. A
   // household states the school tax (net of the advance on a net bill, which is restored here). With no figure only
   // the default-city bill has an estimate (the reference division's school mills on the home value); any other bill

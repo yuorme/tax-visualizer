@@ -104,6 +104,15 @@ export interface PropertyReliefFacts {
   /** Toronto: increases already cancelled that are still payable this year (previously approved cancellations). Omitted: none,
    *  as for a first-time claimant. */
   torontoCarryover?: number;
+  /** QC: consecutive years the claimant (or a spouse who transferred the home) has owned it at December 31 before the bill
+   *  year. Omitted: unknown, so the grant is incomplete for an otherwise eligible senior. */
+  qcOwnershipYears?: number;
+  /** QC: the municipality's potential grant for the current roll year (form line 41, at most the new-roll maximum). */
+  qcPotentialGrant?: number;
+  /** QC: the grant awarded to all owners for the preceding roll's final year (form line 43; zero when none). */
+  qcPrecedingRollGrant?: number;
+  /** QC: grants the other co-owners claim on their own returns (form line 45). Omitted: the household is the only claimant. */
+  qcOtherClaims?: number;
 }
 
 /** The household's driving: total distance a year across its vehicles and their average fuel efficiency. */

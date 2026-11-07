@@ -257,9 +257,13 @@ line-by-line tax return. Simpler and slightly less precise is acceptable where i
   formula, which replace the old whole credit. Manitoba needs the bill's school tax, which is estimated for the
   default-city bill only. Earlier years keep their old results. See
   [rules, sources and limits](verification/22-property-tax-relief.md).
-- Property-tax relief for Ontario, tax year 2026 only (#224): the senior homeowners' property tax grant and the
-  senior schedule of the energy and property tax credit (net of the grant overlap), which replaces the ordinary credit
-  for a household with someone 64 at the prior year end. Prior-year income and tax are proxied by this year's.
+- Property-tax relief for Ontario, Toronto and Quebec, tax year 2026 only (#224): Ontario's senior homeowners' property
+  tax grant and the senior schedule of the energy and property tax credit (net of the grant overlap), which replaces
+  the ordinary credit for a household with someone 64 at the prior year end; Toronto's cancellation of a low-income
+  senior's tax increase, on the default reference-city bill only, from a first-time-claimant estimate unless last
+  year's levy and earlier cancelled increases are stated, tested on gross income; and Quebec's grant for seniors to
+  offset a municipal tax increase, from the municipality's stated potential grant and the preceding roll's awards.
+  Prior-year income and tax are proxied by this year's. The Toronto disability route is not modelled.
 
 **Fuel tax on gasoline**
 - Federal excise, provincial or territorial fuel tax and the regional transit tax of each province's reference
@@ -339,8 +343,9 @@ built.
   and PEI; historical back-fill remains separate.
 - Seniors' property tax grants and rebates (e.g. Ontario Senior Homeowners' Property Tax Grant). BC's Home Owner
   Grant with its senior schedule and low-income supplement, and Manitoba's seniors' school tax rebate, are
-  implemented for 2026 only (#223, below). Alberta and Saskatchewan have no in-scope program. The other provinces
-  follow in later slices of #22. Deferral programs are out: they delay tax, not reduce it.
+  implemented for 2026 only (#223, below), as are Ontario's grant and senior credit schedule, Toronto's cancellation
+  and Quebec's municipal-increase grant (#224). Alberta and Saskatchewan have no in-scope program. The other
+  provinces follow in later slices of #22. Deferral programs are out: they delay tax, not reduce it.
 - RRIF/RRSP withdrawals and workplace pensions are entered as amounts. Not modelled: minimum RRIF withdrawals,
   deferring OAS or CPP, partial OAS from residency rules (full OAS is assumed).
 
