@@ -144,6 +144,30 @@ const isSenior = (x: Person, age: number) => (x.age ?? 0) >= age; // age is whol
  *  for BC's previous year's (approved on #21). Neither UCCB/RDSP adjustments nor BC's disability deduction is modelled. */
 const flooredIncome = (ctx: ReliefContext) => ctx.federalNets.reduce((sum, n) => sum + Math.max(0, n), 0);
 const earlierLine = (ctx: ReliefContext, program: string) => ctx.earlier.find(l => l.program === program);
+/** Whole age on December 31 of the year BEFORE the benefit year. The app's age is on December 31 of the benefit year (the
+ *  tax year), so the test subtracts one: Ontario's "64 on December 31, 2025" for the 2026 benefit is an app age of 65. */
+const agedAtPriorYearEnd = (x: Person, age: number) => x.age !== undefined && x.age - 1 >= age;
+/** An amount that no tax bill ever reflects (a grant paid with the Ontario Trillium Benefit, a credit claimed on a return):
+ *  a net bill stating one is a mistake, because it would raise the gross levy for nothing. */
+const NEVER_ON_BILL = "it is never on a property tax bill, so the amount a bill reflects must be 0";
+
+/** The province's relief rule with this program id, typed for its own params; undefined when the year declares none. */
+export function reliefRule<Id extends SchemaRule["program"]>(
+  p: Pick<Province, "propertyRelief">,
+  id: Id,
+): Extract<SchemaRule, { program: Id }> | undefined {
+  return p.propertyRelief?.find((r): r is Extract<SchemaRule, { program: Id }> => r.program === id);
+}
+
+/** Ontario: a household takes the senior OEPTC schedule when one spouse is 64 at the prior year end, or when a single
+ *  person is and has no child (the CRA's single senior sheet is for "no care of a child under 18"; a single parent
+ *  uses the ordinary sheet). creditsOf skips the ordinary credit for exactly these households. */
+export const usesSeniorOeptc = (
+  q: { ageAtPriorYearEnd: number },
+  people: readonly Person[],
+  couple: boolean,
+  kids: number,
+) => (couple || kids === 0) && people.some(x => agedAtPriorYearEnd(x, q.ageAtPriorYearEnd));
 
 const BUILT_IN: BuiltIn = {
   // BC Home Owner Grant Act s.2 and Schedules 1-4: the schedule by property tax first, then $5 per $1,000 of assessed
@@ -204,6 +228,48 @@ const BUILT_IN: BuiltIn = {
       status: "modelled",
       entitled: Math.max(0, (amount < q.minimumPayable ? 0 : amount) - overReflected),
       eligible: { reduction, adjustedIncome: adjusted },
+    };
+  },
+  // OSHPTG (CRA Q&A, "How much is the grant"): the lesser of $500 and the property tax paid, less 3.33% of adjusted
+  // family net income over $35,000 (single) or $45,000 (couple), and nothing at or above $50,000 / $60,000. One spouse
+  // aged 64 at the prior year end is enough, and an owner is needed. The household's bill is its own share. Prior-year
+  // tax and income are proxied by this year's (an estimate).
+  "ontario-senior-homeowners-property-grant": (rule, ctx) => {
+    const q = rule.params;
+    if (ctx.reflected > 0) return incomplete(`the grant is paid with the Ontario Trillium Benefit: ${NEVER_ON_BILL}`);
+    if (!ctx.owner || !ctx.people.some(x => agedAtPriorYearEnd(x, q.ageAtPriorYearEnd))) return noRelief;
+    const kind = ctx.couple ? "couple" : "single";
+    const income = ctx.famNet;
+    const grant =
+      income >= q.cutoff[kind]
+        ? 0
+        : Math.min(q.maximum, ctx.grossLevy) - q.rate * Math.max(0, income - q.threshold[kind]);
+    return { status: "modelled", entitled: grant, eligible: { familyNetIncome: income } };
+  },
+  // OEPTC senior calculation sheets, steps 1-5: occupancy cost O = tax + 20% of rent; energy E = min(O, 290); property
+  // P = min(O, 617 + min(10% of O, 581)); credit = E + P - 2% of income over the senior threshold. Step 5 takes back
+  // the part of credit + OSHPTG that exceeds E + O: overlap = max(0, max(0, credit + OSHPTG - E) - O). This replaces
+  // the ordinary credit for the households that qualify (credits.ts skips it), so the two never apply together.
+  "ontario-energy-property-tax-credit-senior-overlap": (rule, ctx) => {
+    const q = rule.params;
+    if (ctx.reflected > 0) return incomplete(`the credit is paid with the Ontario Trillium Benefit: ${NEVER_ON_BILL}`);
+    if (!usesSeniorOeptc(q, ctx.people, ctx.couple, ctx.kids)) return noRelief; // the ordinary credit applies
+    if ((ctx.existingCredits["ontario-energy-property-tax-credit"] ?? 0) > 0)
+      return incomplete("the ordinary credit is also counted, and it must not apply with the senior schedule");
+    const grant = earlierLine(ctx, "ontario-senior-homeowners-property-grant");
+    if (grant?.status !== "modelled" || grant.entitled === null)
+      return incomplete(`the grant it overlaps is unknown: ${grant?.reason ?? "the grant line must come before it"}`);
+    const occupancy = ctx.grossLevy > 0 ? ctx.grossLevy : ctx.rent * q.rentShare;
+    if (!(occupancy > 0)) return noRelief;
+    const energy = Math.min(occupancy, q.energyMax);
+    const property = Math.min(occupancy, q.propertyBase + Math.min(q.propertyRate * occupancy, q.propertyMax));
+    const threshold = ctx.couple ? q.thresholdFamily : q.thresholdSingle;
+    const raw = Math.max(0, energy + property - q.rate * Math.max(0, ctx.famNet - threshold));
+    const overlap = Math.max(0, Math.max(0, raw + grant.entitled - energy) - occupancy);
+    return {
+      status: "modelled",
+      entitled: Math.max(0, raw - overlap),
+      eligible: { occupancyCost: occupancy, energy, property, beforeOverlap: raw, overlap },
     };
   },
   // Income Tax Act (Manitoba) s.5.3-5.6: the credit is capped by gross eligible SCHOOL tax, not the whole bill. A

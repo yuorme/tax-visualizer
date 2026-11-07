@@ -819,6 +819,34 @@ const propertyReliefProgram = z.discriminatedUnion("program", [
       deductions: z.object({ partner: amount, perSenior: amount, perChild: amount }),
     }),
   ),
+  // ON: the senior homeowners' property tax grant (OSHPTG). Ages are tested at December 31 of the year before the benefit
+  // year (`ageAtPriorYearEnd`); the income thresholds are adjusted family net income, with a hard cutoff above them.
+  reliefProgram(
+    "ontario-senior-homeowners-property-grant",
+    z.object({
+      ageAtPriorYearEnd: z.number().int(),
+      maximum: amount,
+      rate,
+      threshold: z.object({ single: amount, couple: amount }),
+      cutoff: z.object({ single: amount, couple: amount }),
+    }),
+  ),
+  // ON: the senior schedule of the energy and property tax credit, replacing the ordinary credit for a household that
+  // qualifies, net of the overlap with the OSHPTG (the CRA calculation sheet's step 5).
+  reliefProgram(
+    "ontario-energy-property-tax-credit-senior-overlap",
+    z.object({
+      ageAtPriorYearEnd: z.number().int(),
+      rentShare: rate,
+      energyMax: amount,
+      propertyBase: amount,
+      propertyRate: rate,
+      propertyMax: amount,
+      rate,
+      thresholdSingle: amount,
+      thresholdFamily: amount,
+    }),
+  ),
   // MB: the homeowners credit on gross eligible school tax. `reference` estimates a default-city bill's school tax.
   reliefProgram(
     "mb-homeowners-school-tax-credit",

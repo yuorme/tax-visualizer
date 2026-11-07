@@ -257,6 +257,9 @@ line-by-line tax return. Simpler and slightly less precise is acceptable where i
   formula, which replace the old whole credit. Manitoba needs the bill's school tax, which is estimated for the
   default-city bill only. Earlier years keep their old results. See
   [rules, sources and limits](verification/22-property-tax-relief.md).
+- Property-tax relief for Ontario, tax year 2026 only (#224): the senior homeowners' property tax grant and the
+  senior schedule of the energy and property tax credit (net of the grant overlap), which replaces the ordinary credit
+  for a household with someone 64 at the prior year end. Prior-year income and tax are proxied by this year's.
 
 **Fuel tax on gasoline**
 - Federal excise, provincial or territorial fuel tax and the regional transit tax of each province's reference

@@ -2,6 +2,7 @@
 import type { Federal, Province } from "../data/schema.ts";
 import { carbonRebatesOf } from "./carbon.ts";
 import { netOf } from "./payroll.ts";
+import { reliefRule, usesSeniorOeptc } from "./property-relief.ts";
 import { type Credit, type Person, workingIncomeOf } from "./types.ts";
 
 export interface CreditInput {
@@ -80,6 +81,10 @@ export function creditsOf(fed: Federal, p: Province, f: CreditInput): Credit[] {
         break;
       }
       case "ontario-energy-property-tax-credit": {
+        // A household on the senior schedule has that schedule (net of the OSHPTG overlap) from property-relief.ts
+        // instead, so the ordinary and senior credits never both apply.
+        const senior = reliefRule(p, "ontario-energy-property-tax-credit-senior-overlap");
+        if (senior && usesSeniorOeptc(senior.params, ppl, couple, kids)) break;
         const q = cr.params,
           thr = fam ? q.thresholdFamily : q.thresholdSingle;
         const occ = propTax > 0 ? propTax : rent * q.rentShare;

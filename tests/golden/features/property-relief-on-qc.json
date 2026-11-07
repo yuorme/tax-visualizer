@@ -1,0 +1,379 @@
+{
+  "note": "Ontario and Quebec property relief, tax year 2026 only (#224). Expected values are hand-calculated from the CRA calculation sheets, the Toronto Municipal Code and budget, and the Revenu Quebec form, as shown in each case's calc; they are not captured from the engine. expect: program id -> [entitlement on the gross levy, relief credited after what the bill reflects], or 'incomplete'. Incomes are other income (oth), which is net income unchanged.",
+  "cases": [
+    {
+      "id": "on-single-35000-tax-4000",
+      "province": "ON",
+      "calc": "OSHPTG min(500,4000)=500; OEPTC E=290, P=min(4000,617+min(400,581))=1017, 1307, income under 36,309; overlap max(0,max(0,1307+500-290)-4000)=0",
+      "hh": {
+        "bill": 4000,
+        "people": [
+          {
+            "oth": 35000,
+            "age": 65
+          }
+        ]
+      },
+      "expect": {
+        "ontario-senior-homeowners-property-grant": [500, 500],
+        "ontario-energy-property-tax-credit-senior-overlap": [1307, 1307]
+      }
+    },
+    {
+      "id": "on-single-40000",
+      "province": "ON",
+      "calc": "OSHPTG 500-0.0333x5,000=333.50; OEPTC 1307-0.02x(40,000-36,309)=1307-73.82=1233.18",
+      "hh": {
+        "bill": 4000,
+        "people": [
+          {
+            "oth": 40000,
+            "age": 65
+          }
+        ]
+      },
+      "expect": {
+        "ontario-senior-homeowners-property-grant": [333.5, 333.5],
+        "ontario-energy-property-tax-credit-senior-overlap": [1233.18, 1233.18]
+      }
+    },
+    {
+      "id": "on-single-49999-just-below-cutoff",
+      "province": "ON",
+      "calc": "OSHPTG 500-0.0333x14,999=500-499.4667=0.5333; the cutoff is at 50,000",
+      "hh": {
+        "bill": 4000,
+        "people": [
+          {
+            "oth": 49999,
+            "age": 65
+          }
+        ]
+      },
+      "expect": {
+        "ontario-senior-homeowners-property-grant": [0.5333, 0.5333]
+      }
+    },
+    {
+      "id": "on-single-50000-cutoff",
+      "province": "ON",
+      "calc": "AFNI at 50,000 is not entitled: 0, although 500-0.0333x15,000=0.50 (no small amount at the cutoff)",
+      "hh": {
+        "bill": 4000,
+        "people": [
+          {
+            "oth": 50000,
+            "age": 65
+          }
+        ]
+      },
+      "expect": {
+        "ontario-senior-homeowners-property-grant": [0, 0]
+      }
+    },
+    {
+      "id": "on-single-35001-threshold-edge",
+      "province": "ON",
+      "calc": "AFNI 35,001: 500-0.0333x1=499.9667 (35,000 itself is the full 500)",
+      "hh": {
+        "bill": 4000,
+        "people": [
+          {
+            "oth": 35001,
+            "age": 65
+          }
+        ]
+      },
+      "expect": {
+        "ontario-senior-homeowners-property-grant": [499.9667, 499.9667]
+      }
+    },
+    {
+      "id": "on-single-tax-300",
+      "province": "ON",
+      "calc": "low income, occupancy 300: OSHPTG min(500,300)=300; raw OEPTC 590; overlap 300; OEPTC 290; together 590",
+      "hh": {
+        "bill": 300,
+        "people": [
+          {
+            "oth": 30000,
+            "age": 65
+          }
+        ]
+      },
+      "expect": {
+        "ontario-senior-homeowners-property-grant": [300.0, 300.0],
+        "ontario-energy-property-tax-credit-senior-overlap": [290.0, 290.0]
+      },
+      "eligible": {
+        "ontario-energy-property-tax-credit-senior-overlap": {
+          "beforeOverlap": 590.0,
+          "overlap": 300.0,
+          "occupancyCost": 300
+        }
+      }
+    },
+    {
+      "id": "on-single-tax-600",
+      "province": "ON",
+      "calc": "low income, occupancy 600: OSHPTG min(500,600)=500; raw OEPTC 890; overlap 500; OEPTC 390; together 890",
+      "hh": {
+        "bill": 600,
+        "people": [
+          {
+            "oth": 30000,
+            "age": 65
+          }
+        ]
+      },
+      "expect": {
+        "ontario-senior-homeowners-property-grant": [500.0, 500.0],
+        "ontario-energy-property-tax-credit-senior-overlap": [390.0, 390.0]
+      },
+      "eligible": {
+        "ontario-energy-property-tax-credit-senior-overlap": {
+          "beforeOverlap": 890.0,
+          "overlap": 500.0,
+          "occupancyCost": 600
+        }
+      }
+    },
+    {
+      "id": "on-couple-50000",
+      "province": "ON",
+      "calc": "couple threshold 45,000: OSHPTG 500-0.0333x5,000=333.50; OEPTC threshold 43,571: 1307-0.02x6,429=1307-128.58=1178.42",
+      "hh": {
+        "bill": 4000,
+        "people": [
+          {
+            "oth": 30000,
+            "age": 65
+          },
+          {
+            "oth": 20000,
+            "age": 60
+          }
+        ]
+      },
+      "expect": {
+        "ontario-senior-homeowners-property-grant": [333.5, 333.5],
+        "ontario-energy-property-tax-credit-senior-overlap": [1178.42, 1178.42]
+      }
+    },
+    {
+      "id": "on-couple-59999-just-below-cutoff",
+      "province": "ON",
+      "calc": "OSHPTG 500-0.0333x14,999=0.5333",
+      "hh": {
+        "bill": 4000,
+        "people": [
+          {
+            "oth": 40000,
+            "age": 65
+          },
+          {
+            "oth": 19999,
+            "age": 60
+          }
+        ]
+      },
+      "expect": {
+        "ontario-senior-homeowners-property-grant": [0.5333, 0.5333]
+      }
+    },
+    {
+      "id": "on-couple-60000-cutoff",
+      "province": "ON",
+      "calc": "family net income at 60,000: 0",
+      "hh": {
+        "bill": 4000,
+        "people": [
+          {
+            "oth": 40000,
+            "age": 65
+          },
+          {
+            "oth": 20000,
+            "age": 60
+          }
+        ]
+      },
+      "expect": {
+        "ontario-senior-homeowners-property-grant": [0, 0]
+      }
+    },
+    {
+      "id": "on-couple-income-sums-not-each",
+      "province": "ON",
+      "calc": "each spouse is under 45,000 but the family sum 55,000 is what counts: 500-0.0333x10,000=167",
+      "hh": {
+        "bill": 4000,
+        "people": [
+          {
+            "oth": 27500,
+            "age": 66
+          },
+          {
+            "oth": 27500,
+            "age": 66
+          }
+        ]
+      },
+      "expect": {
+        "ontario-senior-homeowners-property-grant": [167, 167]
+      }
+    },
+    {
+      "id": "on-age-64-not-senior",
+      "province": "ON",
+      "calc": "app age 64 is 63 at the prior year end (needs 64): no grant, no senior credit",
+      "hh": {
+        "bill": 4000,
+        "people": [
+          {
+            "oth": 30000,
+            "age": 64
+          }
+        ]
+      },
+      "expect": {
+        "ontario-senior-homeowners-property-grant": [0, 0],
+        "ontario-energy-property-tax-credit-senior-overlap": [0, 0]
+      }
+    },
+    {
+      "id": "on-age-65-senior",
+      "province": "ON",
+      "calc": "app age 65 is 64 at the prior year end: grant 500, OEPTC 1307",
+      "hh": {
+        "bill": 4000,
+        "people": [
+          {
+            "oth": 30000,
+            "age": 65
+          }
+        ]
+      },
+      "expect": {
+        "ontario-senior-homeowners-property-grant": [500, 500],
+        "ontario-energy-property-tax-credit-senior-overlap": [1307, 1307]
+      }
+    },
+    {
+      "id": "on-couple-one-senior-mixed-ages",
+      "province": "ON",
+      "calc": "one spouse 65 is enough (the other 40): couple thresholds, grant 500, OEPTC 1307",
+      "hh": {
+        "bill": 4000,
+        "people": [
+          {
+            "oth": 30000,
+            "age": 40
+          },
+          {
+            "oth": 10000,
+            "age": 65
+          }
+        ]
+      },
+      "expect": {
+        "ontario-senior-homeowners-property-grant": [500, 500],
+        "ontario-energy-property-tax-credit-senior-overlap": [1307, 1307]
+      }
+    },
+    {
+      "id": "on-couple-both-64-not-senior",
+      "province": "ON",
+      "calc": "both 64 (63 at the prior year end): neither schedule applies",
+      "hh": {
+        "bill": 4000,
+        "people": [
+          {
+            "oth": 30000,
+            "age": 64
+          },
+          {
+            "oth": 10000,
+            "age": 64
+          }
+        ]
+      },
+      "expect": {
+        "ontario-senior-homeowners-property-grant": [0, 0],
+        "ontario-energy-property-tax-credit-senior-overlap": [0, 0]
+      }
+    },
+    {
+      "id": "on-no-age-no-senior",
+      "province": "ON",
+      "calc": "no age given is never 65",
+      "hh": {
+        "bill": 4000,
+        "people": [
+          {
+            "oth": 30000
+          }
+        ]
+      },
+      "expect": {
+        "ontario-senior-homeowners-property-grant": [0, 0],
+        "ontario-energy-property-tax-credit-senior-overlap": [0, 0]
+      }
+    },
+    {
+      "id": "on-renter-senior-rent-1000",
+      "province": "ON",
+      "calc": "no grant (renter); occupancy 0.2x12,000=2,400; E=290, P=min(2400,617+min(240,581))=857; 1147; income under 36,309",
+      "hh": {
+        "homeValue": 0,
+        "rent": 1000,
+        "people": [
+          {
+            "oth": 35000,
+            "age": 65
+          }
+        ]
+      },
+      "expect": {
+        "ontario-senior-homeowners-property-grant": [0, 0],
+        "ontario-energy-property-tax-credit-senior-overlap": [1147, 1147]
+      }
+    },
+    {
+      "id": "on-single-senior-with-child-ordinary-sheet",
+      "province": "ON",
+      "calc": "the single senior sheet needs no child: the ordinary credit applies; the grant still uses the single thresholds (40,000: 333.50)",
+      "hh": {
+        "bill": 4000,
+        "people": [
+          {
+            "oth": 40000,
+            "age": 65
+          }
+        ],
+        "kids": 1
+      },
+      "expect": {
+        "ontario-senior-homeowners-property-grant": [333.5, 333.5],
+        "ontario-energy-property-tax-credit-senior-overlap": [0, 0]
+      }
+    },
+    {
+      "id": "on-single-46309-oeptc-income",
+      "province": "ON",
+      "calc": "OEPTC 1307-0.02x(46,309-36,309)=1307-200=1107",
+      "hh": {
+        "bill": 4000,
+        "people": [
+          {
+            "oth": 46309,
+            "age": 65
+          }
+        ]
+      },
+      "expect": {
+        "ontario-energy-property-tax-credit-senior-overlap": [1107, 1107]
+      }
+    }
+  ]
+}
