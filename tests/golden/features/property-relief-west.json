@@ -1,0 +1,720 @@
+{
+  "note": "BC and Manitoba property relief, tax year 2026 only (#223). Expected values are hand-calculated from the statutes and forms in docs/verification/22-property-tax-relief.md and shown in each case's calc; they are not captured from the engine. expect: program id -> [entitlement on the gross levy, relief credited after what the bill reflects]. Incomes are other income (oth), which is net income unchanged.",
+  "cases": [
+    {
+      "id": "bc-ordinary-4000",
+      "province": "BC",
+      "calc": "schedule 1: min(570, 4000-350)=570; burden 4000-570=3430",
+      "hh": { "bill": 4000 },
+      "expect": { "bc-home-owner-grant": [570, 570] },
+      "burden": 3430
+    },
+    {
+      "id": "bc-senior-4000-replaces-ordinary",
+      "province": "BC",
+      "calc": "schedule 2: min(845, 4000-100)=845, not 570+845; burden 3155",
+      "hh": { "bill": 4000, "people": [{ "oth": 50000, "age": 70 }] },
+      "expect": { "bc-home-owner-grant": [845, 845] },
+      "burden": 3155
+    },
+    {
+      "id": "bc-ordinary-low-bill-600",
+      "province": "BC",
+      "calc": "min(570, 600-350)=250",
+      "hh": { "bill": 600 },
+      "expect": { "bc-home-owner-grant": [250, 250] }
+    },
+    {
+      "id": "bc-senior-low-bill-600",
+      "province": "BC",
+      "calc": "min(845, 600-100)=500",
+      "hh": { "bill": 600, "people": [{ "oth": 50000, "age": 70 }] },
+      "expect": { "bc-home-owner-grant": [500, 500] }
+    },
+    {
+      "id": "bc-ordinary-bill-920-full",
+      "province": "BC",
+      "calc": "920-350=570 reaches the full grant",
+      "hh": { "bill": 920 },
+      "expect": { "bc-home-owner-grant": [570, 570] }
+    },
+    {
+      "id": "bc-ordinary-bill-919",
+      "province": "BC",
+      "calc": "919-350=569",
+      "hh": { "bill": 919 },
+      "expect": { "bc-home-owner-grant": [569, 569] }
+    },
+    {
+      "id": "bc-ordinary-bill-350-nil",
+      "province": "BC",
+      "calc": "350-350=0; the minimum remaining tax is kept",
+      "hh": { "bill": 350 },
+      "expect": { "bc-home-owner-grant": [0, 0] }
+    },
+    {
+      "id": "bc-ordinary-bill-below-350",
+      "province": "BC",
+      "calc": "300-350 is negative, so 0",
+      "hh": { "bill": 300 },
+      "expect": { "bc-home-owner-grant": [0, 0] }
+    },
+    {
+      "id": "bc-senior-age-65-bill-945-full",
+      "province": "BC",
+      "calc": "age 65 is senior; 945-100=845",
+      "hh": { "bill": 945, "people": [{ "oth": 50000, "age": 65 }] },
+      "expect": { "bc-home-owner-grant": [845, 845] }
+    },
+    {
+      "id": "bc-senior-bill-944",
+      "province": "BC",
+      "calc": "944-100=844",
+      "hh": { "bill": 944, "people": [{ "oth": 50000, "age": 65 }] },
+      "expect": { "bc-home-owner-grant": [844, 844] }
+    },
+    {
+      "id": "bc-senior-bill-100-nil",
+      "province": "BC",
+      "calc": "100-100=0",
+      "hh": { "bill": 100, "people": [{ "oth": 50000, "age": 70 }] },
+      "expect": { "bc-home-owner-grant": [0, 0] }
+    },
+    {
+      "id": "bc-senior-bill-below-100",
+      "province": "BC",
+      "calc": "50-100 is negative, so 0",
+      "hh": { "bill": 50, "people": [{ "oth": 50000, "age": 70 }] },
+      "expect": { "bc-home-owner-grant": [0, 0] }
+    },
+    {
+      "id": "bc-age-64-is-ordinary",
+      "province": "BC",
+      "calc": "64 is not senior: 570",
+      "hh": { "bill": 4000, "people": [{ "oth": 50000, "age": 64 }] },
+      "expect": { "bc-home-owner-grant": [570, 570] }
+    },
+    {
+      "id": "bc-couple-one-senior",
+      "province": "BC",
+      "calc": "either spouse at 65 selects schedule 2: 845",
+      "hh": { "bill": 4000, "people": [{ "oth": 30000, "age": 64 }, { "oth": 20000, "age": 66 }] },
+      "expect": { "bc-home-owner-grant": [845, 845] }
+    },
+    {
+      "id": "bc-rural-ordinary-4000",
+      "province": "BC",
+      "calc": "schedule 3: min(770, 4000-350)=770",
+      "hh": { "bill": 4000, "facts": { "bcNorthernRural": true } },
+      "expect": { "bc-home-owner-grant": [770, 770] }
+    },
+    {
+      "id": "bc-rural-senior-4000",
+      "province": "BC",
+      "calc": "schedule 4: min(1045, 4000-100)=1045",
+      "hh": { "bill": 4000, "facts": { "bcNorthernRural": true }, "people": [{ "oth": 50000, "age": 70 }] },
+      "expect": { "bc-home-owner-grant": [1045, 1045] }
+    },
+    {
+      "id": "bc-rural-ordinary-bill-1000",
+      "province": "BC",
+      "calc": "1000-350=650 (full 770 needs 1120)",
+      "hh": { "bill": 1000, "facts": { "bcNorthernRural": true } },
+      "expect": { "bc-home-owner-grant": [650, 650] }
+    },
+    {
+      "id": "bc-rural-senior-bill-1100",
+      "province": "BC",
+      "calc": "1100-100=1000 (full 1045 needs 1145)",
+      "hh": { "bill": 1100, "facts": { "bcNorthernRural": true }, "people": [{ "oth": 50000, "age": 70 }] },
+      "expect": { "bc-home-owner-grant": [1000, 1000] }
+    },
+    {
+      "id": "bc-default-city-ordinary",
+      "province": "BC",
+      "calc": "1,000,000 x 0.003 = 3000; min(570, 3000-350)=570",
+      "hh": { "homeValue": 1000000 },
+      "expect": { "bc-home-owner-grant": [570, 570] }
+    },
+    {
+      "id": "bc-default-city-senior",
+      "province": "BC",
+      "calc": "min(845, 3000-100)=845",
+      "hh": { "homeValue": 1000000, "people": [{ "oth": 50000, "age": 70 }] },
+      "expect": { "bc-home-owner-grant": [845, 845] }
+    },
+    {
+      "id": "bc-renter-has-no-grant",
+      "province": "BC",
+      "calc": "an owner-only grant: 0 for a renter",
+      "hh": { "homeValue": 0, "rent": 2000 },
+      "expect": { "bc-home-owner-grant": [0, 0] }
+    },
+    {
+      "id": "bc-no-assessed-value-is-incomplete",
+      "province": "BC",
+      "calc": "a bill with no home value has no assessed value for the reduction: not 0 and not 570",
+      "hh": { "homeValue": 0, "bill": 4000 },
+      "expect": { "bc-home-owner-grant": "incomplete", "bc-low-income-grant-supplement": "incomplete" }
+    },
+    {
+      "id": "bc-senior-600-excess-20k",
+      "province": "BC",
+      "calc": "schedule 500 first, then 5 x 20 = 100: 400 (not min(845-100, 500) = 500)",
+      "hh": { "homeValue": 2095000, "bill": 600, "people": [{ "oth": 50000, "age": 70 }] },
+      "expect": { "bc-home-owner-grant": [400, 400] },
+      "eligible": { "bc-home-owner-grant": { "schedule": 500, "reduction": 100 } }
+    },
+    {
+      "id": "bc-ordinary-value-at-threshold",
+      "province": "BC",
+      "calc": "2,075,000 is not over the threshold: 570",
+      "hh": { "homeValue": 2075000, "bill": 4000 },
+      "expect": { "bc-home-owner-grant": [570, 570] }
+    },
+    {
+      "id": "bc-ordinary-value-1k-over",
+      "province": "BC",
+      "calc": "5 x 1 = 5: 565",
+      "hh": { "homeValue": 2076000, "bill": 4000 },
+      "expect": { "bc-home-owner-grant": [565, 565] }
+    },
+    {
+      "id": "bc-ordinary-value-near-zero",
+      "province": "BC",
+      "calc": "excess 113,000: 5 x 113 = 565; 570-565 = 5",
+      "hh": { "homeValue": 2188000, "bill": 4000 },
+      "expect": { "bc-home-owner-grant": [5, 5] }
+    },
+    {
+      "id": "bc-ordinary-value-zero-endpoint",
+      "province": "BC",
+      "calc": "excess 114,000: 5 x 114 = 570, grant 0",
+      "hh": { "homeValue": 2189000, "bill": 4000 },
+      "expect": { "bc-home-owner-grant": [0, 0] }
+    },
+    {
+      "id": "bc-senior-value-near-zero",
+      "province": "BC",
+      "calc": "excess 168,000: 840; 845-840 = 5",
+      "hh": { "homeValue": 2243000, "bill": 4000, "people": [{ "oth": 50000, "age": 70 }] },
+      "expect": { "bc-home-owner-grant": [5, 5] }
+    },
+    {
+      "id": "bc-senior-value-zero-endpoint",
+      "province": "BC",
+      "calc": "excess 169,000: 845, grant 0",
+      "hh": { "homeValue": 2244000, "bill": 4000, "people": [{ "oth": 50000, "age": 70 }] },
+      "expect": { "bc-home-owner-grant": [0, 0] }
+    },
+    {
+      "id": "bc-supplement-adjusted-30000-full",
+      "province": "BC",
+      "calc": "net 33,000 - 3,000 (age 65+) = 30,000 <= 30,000: restores the whole reduction 845",
+      "hh": { "homeValue": 2275000, "bill": 4000, "people": [{ "oth": 33000, "age": 70 }] },
+      "expect": { "bc-home-owner-grant": [0, 0], "bc-low-income-grant-supplement": [845, 845] },
+      "eligible": { "bc-low-income-grant-supplement": { "adjustedIncome": 30000, "reduction": 845 } },
+      "burden": 3155
+    },
+    {
+      "id": "bc-supplement-adjusted-30001-half",
+      "province": "BC",
+      "calc": "33,001 - 3,000 = 30,001: half of 845 = 422.50",
+      "hh": { "homeValue": 2275000, "bill": 4000, "people": [{ "oth": 33001, "age": 70 }] },
+      "expect": { "bc-home-owner-grant": [0, 0], "bc-low-income-grant-supplement": [422.5, 422.5] }
+    },
+    {
+      "id": "bc-supplement-adjusted-32000-half",
+      "province": "BC",
+      "calc": "35,000 - 3,000 = 32,000 <= 32,000: 422.50",
+      "hh": { "homeValue": 2275000, "bill": 4000, "people": [{ "oth": 35000, "age": 70 }] },
+      "expect": { "bc-low-income-grant-supplement": [422.5, 422.5] }
+    },
+    {
+      "id": "bc-supplement-adjusted-32001-nil",
+      "province": "BC",
+      "calc": "35,001 - 3,000 = 32,001: nothing, and no taper between the limits",
+      "hh": { "homeValue": 2275000, "bill": 4000, "people": [{ "oth": 35001, "age": 70 }] },
+      "expect": { "bc-low-income-grant-supplement": [0, 0] }
+    },
+    {
+      "id": "bc-supplement-low-income-full",
+      "province": "BC",
+      "calc": "20,000 - 3,000 = 17,000: 845",
+      "hh": { "homeValue": 2275000, "bill": 4000, "people": [{ "oth": 20000, "age": 70 }] },
+      "expect": { "bc-low-income-grant-supplement": [845, 845] }
+    },
+    {
+      "id": "bc-supplement-restores-only-the-actual-reduction",
+      "province": "BC",
+      "calc": "value 2,175,000: reduction 500, grant 345; the supplement restores 500, not another 845; total 845",
+      "hh": { "homeValue": 2175000, "bill": 4000, "people": [{ "oth": 20000, "age": 70 }] },
+      "expect": { "bc-home-owner-grant": [345, 345], "bc-low-income-grant-supplement": [500, 500] },
+      "burden": 3155
+    },
+    {
+      "id": "bc-supplement-half-of-partial-reduction",
+      "province": "BC",
+      "calc": "34,000 - 3,000 = 31,000 (half): 500/2 = 250",
+      "hh": { "homeValue": 2175000, "bill": 4000, "people": [{ "oth": 34000, "age": 70 }] },
+      "expect": { "bc-home-owner-grant": [345, 345], "bc-low-income-grant-supplement": [250, 250] }
+    },
+    {
+      "id": "bc-supplement-below-25-not-payable",
+      "province": "BC",
+      "calc": "excess 4,000: reduction 20 < 25, so 0; grant 825",
+      "hh": { "homeValue": 2079000, "bill": 4000, "people": [{ "oth": 20000, "age": 70 }] },
+      "expect": { "bc-home-owner-grant": [825, 825], "bc-low-income-grant-supplement": [0, 0] }
+    },
+    {
+      "id": "bc-supplement-exactly-25-payable",
+      "province": "BC",
+      "calc": "excess 5,000: reduction 25 is not less than 25: 25; grant 820",
+      "hh": { "homeValue": 2080000, "bill": 4000, "people": [{ "oth": 20000, "age": 70 }] },
+      "expect": { "bc-home-owner-grant": [820, 820], "bc-low-income-grant-supplement": [25, 25] }
+    },
+    {
+      "id": "bc-supplement-half-exactly-25-payable",
+      "province": "BC",
+      "calc": "reduction 50 at adjusted 31,000: half = 25",
+      "hh": { "homeValue": 2085000, "bill": 4000, "people": [{ "oth": 34000, "age": 70 }] },
+      "expect": { "bc-low-income-grant-supplement": [25, 25] }
+    },
+    {
+      "id": "bc-supplement-half-below-25-not-payable",
+      "province": "BC",
+      "calc": "reduction 40 at adjusted 31,000: half = 20 < 25, so 0",
+      "hh": { "homeValue": 2083000, "bill": 4000, "people": [{ "oth": 34000, "age": 70 }] },
+      "expect": { "bc-low-income-grant-supplement": [0, 0] }
+    },
+    {
+      "id": "bc-supplement-not-for-the-ordinary-schedule",
+      "province": "BC",
+      "calc": "Act s.2(8) restores only Schedule 2 and 4 grants; an under-65 owner's ordinary reduction (570 to 0) is not restored",
+      "hh": { "homeValue": 2275000, "bill": 4000, "people": [{ "oth": 10000 }] },
+      "expect": { "bc-home-owner-grant": [0, 0], "bc-low-income-grant-supplement": [0, 0] }
+    },
+    {
+      "id": "bc-supplement-couple-both-senior-full",
+      "province": "BC",
+      "calc": "24,000 + 15,000 = 39,000; less 3,000 partner and 2 x 3,000 = 30,000: full 845",
+      "hh": {
+        "homeValue": 2275000,
+        "bill": 4000,
+        "people": [{ "oth": 24000, "age": 70 }, { "oth": 15000, "age": 68 }]
+      },
+      "expect": { "bc-low-income-grant-supplement": [845, 845] },
+      "eligible": { "bc-low-income-grant-supplement": { "adjustedIncome": 30000 } }
+    },
+    {
+      "id": "bc-supplement-couple-both-senior-half",
+      "province": "BC",
+      "calc": "39,001 - 9,000 = 30,001: 422.50",
+      "hh": {
+        "homeValue": 2275000,
+        "bill": 4000,
+        "people": [{ "oth": 24001, "age": 70 }, { "oth": 15000, "age": 68 }]
+      },
+      "expect": { "bc-low-income-grant-supplement": [422.5, 422.5] }
+    },
+    {
+      "id": "bc-supplement-couple-one-senior-full",
+      "province": "BC",
+      "calc": "26,000 + 10,000 = 36,000; less 3,000 partner and one 3,000 = 30,000: 845",
+      "hh": {
+        "homeValue": 2275000,
+        "bill": 4000,
+        "people": [{ "oth": 26000, "age": 70 }, { "oth": 10000, "age": 60 }]
+      },
+      "expect": { "bc-low-income-grant-supplement": [845, 845] }
+    },
+    {
+      "id": "bc-supplement-couple-one-senior-half",
+      "province": "BC",
+      "calc": "38,000 - 6,000 = 32,000: 422.50",
+      "hh": {
+        "homeValue": 2275000,
+        "bill": 4000,
+        "people": [{ "oth": 28000, "age": 70 }, { "oth": 10000, "age": 60 }]
+      },
+      "expect": { "bc-low-income-grant-supplement": [422.5, 422.5] }
+    },
+    {
+      "id": "bc-supplement-child-deduction",
+      "province": "BC",
+      "calc": "36,000 - 3,000 (65+) - 3,000 (child) = 30,000: 845",
+      "hh": { "homeValue": 2275000, "bill": 4000, "kids": 1, "people": [{ "oth": 36000, "age": 70 }] },
+      "expect": { "bc-low-income-grant-supplement": [845, 845] }
+    },
+    {
+      "id": "bc-supplement-rural",
+      "province": "BC",
+      "calc": "rural senior 1045 less 5 x 100 = 500 -> 545; supplement 500",
+      "hh": {
+        "homeValue": 2175000,
+        "bill": 4000,
+        "facts": { "bcNorthernRural": true },
+        "people": [{ "oth": 20000, "age": 70 }]
+      },
+      "expect": { "bc-home-owner-grant": [545, 545], "bc-low-income-grant-supplement": [500, 500] }
+    },
+    {
+      "id": "bc-default-city-supplement",
+      "province": "BC",
+      "calc": "3,000,000 x 0.003 = 9000 tax; excess 925,000: reduction min(845, 4625) = 845; supplement 845 at adjusted 17,000",
+      "hh": { "homeValue": 3000000, "people": [{ "oth": 20000, "age": 70 }] },
+      "expect": { "bc-home-owner-grant": [0, 0], "bc-low-income-grant-supplement": [845, 845] }
+    },
+    {
+      "id": "bc-net-of-ordinary-part",
+      "province": "BC",
+      "calc": "levy 3430 + 570 reflected = 4000; senior 845 - 570 = 275 still due; burden 3430-275 = 3155",
+      "hh": {
+        "bill": 3430,
+        "basis": "net",
+        "applied": { "bc-home-owner-grant": 570, "bc-low-income-grant-supplement": 0 },
+        "people": [{ "oth": 50000, "age": 70 }]
+      },
+      "expect": { "bc-home-owner-grant": [845, 275], "bc-low-income-grant-supplement": [0, 0] },
+      "burden": 3155
+    },
+    {
+      "id": "bc-fully-net-bill",
+      "province": "BC",
+      "calc": "levy 3155 + 845 = 4000; nothing more due",
+      "hh": {
+        "bill": 3155,
+        "basis": "net",
+        "applied": { "bc-home-owner-grant": 845, "bc-low-income-grant-supplement": 0 },
+        "people": [{ "oth": 50000, "age": 70 }]
+      },
+      "expect": { "bc-home-owner-grant": [845, 0] },
+      "burden": 3155
+    },
+    {
+      "id": "bc-net-bill-with-grant-only-supplement-still-due",
+      "province": "BC",
+      "calc": "grant 345 reflected, supplement not: levy 3655 + 345 = 4000; supplement 500 still due; burden 3655-500 = 3155",
+      "hh": {
+        "homeValue": 2175000,
+        "bill": 3655,
+        "basis": "net",
+        "applied": { "bc-home-owner-grant": 345, "bc-low-income-grant-supplement": 0 },
+        "people": [{ "oth": 20000, "age": 70 }]
+      },
+      "expect": { "bc-home-owner-grant": [345, 0], "bc-low-income-grant-supplement": [500, 500] },
+      "burden": 3155
+    },
+    {
+      "id": "bc-net-bill-without-supplement-amount-is-incomplete",
+      "province": "BC",
+      "calc": "the supplement's reflected amount is missing, so the gross levy is unknown",
+      "hh": {
+        "homeValue": 2175000,
+        "bill": 3655,
+        "basis": "net",
+        "applied": { "bc-home-owner-grant": 345 },
+        "people": [{ "oth": 20000, "age": 70 }]
+      },
+      "expect": { "bc-home-owner-grant": "incomplete", "bc-low-income-grant-supplement": "incomplete" }
+    },
+    {
+      "id": "mb-default-200k-ordinary-low-school-tax",
+      "province": "MB",
+      "calc": "school tax 200,000 x 0.45 x 15.994 / 1,000 = 1439.46 < 1600: credit 1439.46 (the old whole credit gave 1600)",
+      "hh": { "homeValue": 200000 },
+      "expect": { "mb-homeowners-school-tax-credit": [1439.46, 1439.46], "mb-senior-school-tax-rebate": [0, 0] },
+      "eligible": { "mb-homeowners-school-tax-credit": { "schoolTax": 1439.46 } }
+    },
+    {
+      "id": "mb-default-200k-senior-no-rebate",
+      "province": "MB",
+      "calc": "HATC covers all 1439.46 school tax; nothing left for the rebate",
+      "hh": { "homeValue": 200000, "people": [{ "oth": 35000, "age": 70 }] },
+      "expect": { "mb-homeowners-school-tax-credit": [1439.46, 1439.46], "mb-senior-school-tax-rebate": [0, 0] }
+    },
+    {
+      "id": "mb-default-240k-senior-low-remaining",
+      "province": "MB",
+      "calc": "school 240,000 x 0.45 x 15.994 / 1,000 = 1727.352; HATC 1600; left 127.352; income 35,000 <= 40,000: rebate 127.352",
+      "hh": { "homeValue": 240000, "people": [{ "oth": 35000, "age": 70 }] },
+      "expect": { "mb-homeowners-school-tax-credit": [1600, 1600], "mb-senior-school-tax-rebate": [127.352, 127.35] }
+    },
+    {
+      "id": "mb-default-500k-senior-full-rebate",
+      "province": "MB",
+      "calc": "school 3598.65; HATC 1600; left 1998.65; rebate min(235, 1998.65) = 235",
+      "hh": { "homeValue": 500000, "people": [{ "oth": 35000, "age": 70 }] },
+      "expect": { "mb-homeowners-school-tax-credit": [1600, 1600], "mb-senior-school-tax-rebate": [235, 235] }
+    },
+    {
+      "id": "mb-default-600k-ordinary-unchanged",
+      "province": "MB",
+      "calc": "school 4318.38 > 1600: HATC 1600, as the old credit gave",
+      "hh": { "homeValue": 600000 },
+      "expect": { "mb-homeowners-school-tax-credit": [1600, 1600] }
+    },
+    {
+      "id": "mb-custom-school-1700-rebate-100",
+      "province": "MB",
+      "calc": "bill 5000, school 1700: HATC 1600; left 100; income 35,000: rebate min(235, 100) = 100 (not 235); burden 5000-1700 = 3300",
+      "hh": { "bill": 5000, "facts": { "schoolTax": 1700 }, "people": [{ "oth": 35000, "age": 70 }] },
+      "expect": { "mb-homeowners-school-tax-credit": [1600, 1600], "mb-senior-school-tax-rebate": [100, 100] },
+      "burden": 3300
+    },
+    {
+      "id": "mb-custom-school-1700-income-50000-exhausted",
+      "province": "MB",
+      "calc": "100 - 0.01 x (50,000 - 40,000) = 0: exhausted by the small balance",
+      "hh": { "bill": 5000, "facts": { "schoolTax": 1700 }, "people": [{ "oth": 50000, "age": 70 }] },
+      "expect": { "mb-senior-school-tax-rebate": [0, 0] }
+    },
+    {
+      "id": "mb-custom-school-2000-income-50000",
+      "province": "MB",
+      "calc": "left 400; min(235, 400) - 0.01 x 10,000 = 135",
+      "hh": { "bill": 6000, "facts": { "schoolTax": 2000 }, "people": [{ "oth": 50000, "age": 70 }] },
+      "expect": { "mb-senior-school-tax-rebate": [135, 135] }
+    },
+    {
+      "id": "mb-rebate-income-40000-full",
+      "province": "MB",
+      "calc": "reduction starts above 40,000: 235",
+      "hh": { "bill": 6000, "facts": { "schoolTax": 3000 }, "people": [{ "oth": 40000, "age": 70 }] },
+      "expect": { "mb-senior-school-tax-rebate": [235, 235] }
+    },
+    {
+      "id": "mb-rebate-income-40001",
+      "province": "MB",
+      "calc": "235 - 0.01 x 1 = 234.99",
+      "hh": { "bill": 6000, "facts": { "schoolTax": 3000 }, "people": [{ "oth": 40001, "age": 70 }] },
+      "expect": { "mb-senior-school-tax-rebate": [234.99, 234.99] }
+    },
+    {
+      "id": "mb-rebate-income-63499",
+      "province": "MB",
+      "calc": "235 - 0.01 x 23,499 = 0.01",
+      "hh": { "bill": 6000, "facts": { "schoolTax": 3000 }, "people": [{ "oth": 63499, "age": 70 }] },
+      "expect": { "mb-senior-school-tax-rebate": [0.01, 0.01] }
+    },
+    {
+      "id": "mb-rebate-income-63500-nil",
+      "province": "MB",
+      "calc": "235 - 235 = 0",
+      "hh": { "bill": 6000, "facts": { "schoolTax": 3000 }, "people": [{ "oth": 63500, "age": 70 }] },
+      "expect": { "mb-senior-school-tax-rebate": [0, 0] }
+    },
+    {
+      "id": "mb-rebate-age-64-none",
+      "province": "MB",
+      "calc": "not 65 at year end: no rebate",
+      "hh": { "bill": 5000, "facts": { "schoolTax": 1700 }, "people": [{ "oth": 35000, "age": 64 }] },
+      "expect": { "mb-homeowners-school-tax-credit": [1600, 1600], "mb-senior-school-tax-rebate": [0, 0] }
+    },
+    {
+      "id": "mb-rebate-age-65",
+      "province": "MB",
+      "calc": "65 qualifies: 100",
+      "hh": { "bill": 5000, "facts": { "schoolTax": 1700 }, "people": [{ "oth": 35000, "age": 65 }] },
+      "expect": { "mb-senior-school-tax-rebate": [100, 100] }
+    },
+    {
+      "id": "mb-rebate-couple-one-senior",
+      "province": "MB",
+      "calc": "the spouse is 66: eligible; family income 20,000 + 15,000 = 35,000: 100",
+      "hh": {
+        "bill": 5000,
+        "facts": { "schoolTax": 1700 },
+        "people": [{ "oth": 20000, "age": 60 }, { "oth": 15000, "age": 66 }]
+      },
+      "expect": { "mb-senior-school-tax-rebate": [100, 100] }
+    },
+    {
+      "id": "mb-rebate-couple-family-income",
+      "province": "MB",
+      "calc": "family income 60,000; left 1400: 235 - 0.01 x 20,000 = 35",
+      "hh": { "bill": 6000, "facts": { "schoolTax": 3000 }, "people": [{ "oth": 30000, "age": 70 }, { "oth": 30000 }] },
+      "expect": { "mb-senior-school-tax-rebate": [35, 35] }
+    },
+    {
+      "id": "mb-hatc-school-1600",
+      "province": "MB",
+      "calc": "school tax 1600 = the maximum",
+      "hh": { "bill": 3000, "facts": { "schoolTax": 1600 } },
+      "expect": { "mb-homeowners-school-tax-credit": [1600, 1600] }
+    },
+    {
+      "id": "mb-hatc-school-1599",
+      "province": "MB",
+      "calc": "capped by school tax: 1599",
+      "hh": { "bill": 3000, "facts": { "schoolTax": 1599 } },
+      "expect": { "mb-homeowners-school-tax-credit": [1599, 1599] }
+    },
+    {
+      "id": "mb-hatc-explicit-zero-school-tax",
+      "province": "MB",
+      "calc": "a stated 0 school tax is real: 0, not unknown",
+      "hh": { "bill": 3000, "facts": { "schoolTax": 0 } },
+      "expect": { "mb-homeowners-school-tax-credit": [0, 0] }
+    },
+    {
+      "id": "mb-hatc-school-tax-above-bill",
+      "province": "MB",
+      "calc": "school 3000 cannot exceed the 2000 bill: incomplete",
+      "hh": { "bill": 2000, "facts": { "schoolTax": 3000 } },
+      "expect": { "mb-homeowners-school-tax-credit": "incomplete" }
+    },
+    {
+      "id": "mb-custom-bill-without-school-tax",
+      "province": "MB",
+      "calc": "a school share of a custom bill is unknown: not 1600 (the old min(1600, bill)) and not the whole bill",
+      "hh": { "bill": 3000, "people": [{ "oth": 35000, "age": 70 }] },
+      "expect": { "mb-homeowners-school-tax-credit": "incomplete", "mb-senior-school-tax-rebate": "incomplete" }
+    },
+    {
+      "id": "mb-rate-override-without-school-tax",
+      "province": "MB",
+      "calc": "a rate override gives a custom total with no school share: incomplete",
+      "hh": { "homeValue": 400000, "rate": 0.02 },
+      "expect": { "mb-homeowners-school-tax-credit": "incomplete" }
+    },
+    {
+      "id": "mb-rate-override-with-school-tax",
+      "province": "MB",
+      "calc": "400,000 x 0.02 = 8000 bill; school 3000 stated: 1600",
+      "hh": { "homeValue": 400000, "rate": 0.02, "facts": { "schoolTax": 3000 } },
+      "expect": { "mb-homeowners-school-tax-credit": [1600, 1600] }
+    },
+    {
+      "id": "mb-zero-home-value-with-bill-is-an-owner",
+      "province": "MB",
+      "calc": "an owner bill with no home value still enters owner eligibility: 1600",
+      "hh": { "homeValue": 0, "bill": 2000, "facts": { "schoolTax": 2000 } },
+      "expect": { "mb-homeowners-school-tax-credit": [1600, 1600], "mb-renters-affordability-senior": [0, 0] }
+    },
+    {
+      "id": "mb-zero-bill-zero-school-tax",
+      "province": "MB",
+      "calc": "an explicit zero bill: 0",
+      "hh": { "bill": 0, "facts": { "schoolTax": 0 } },
+      "expect": { "mb-homeowners-school-tax-credit": [0, 0] }
+    },
+    {
+      "id": "mb-net-bill-restores-school-tax-and-advance",
+      "province": "MB",
+      "calc": "levy 3400 + 1600 advance = 5000; net school 100 + 1600 = 1700; HATC 1600 all reflected (0 due); rebate 100; burden 3400-100 = 3300",
+      "hh": {
+        "bill": 3400,
+        "basis": "net",
+        "applied": {
+          "mb-homeowners-school-tax-credit": 1600,
+          "mb-senior-school-tax-rebate": 0,
+          "mb-renters-affordability-senior": 0
+        },
+        "facts": { "schoolTax": 100 },
+        "people": [{ "oth": 35000, "age": 70 }]
+      },
+      "expect": { "mb-homeowners-school-tax-credit": [1600, 0], "mb-senior-school-tax-rebate": [100, 100] },
+      "burden": 3300,
+      "eligible": { "mb-homeowners-school-tax-credit": { "schoolTax": 1700, "levy": 5000 } }
+    },
+    {
+      "id": "mb-gross-bill-same-burden",
+      "province": "MB",
+      "calc": "gross 3400, school 100: HATC 100, rebate 0 (nothing left); burden 3300",
+      "hh": { "bill": 3400, "facts": { "schoolTax": 100 }, "people": [{ "oth": 35000, "age": 70 }] },
+      "expect": { "mb-homeowners-school-tax-credit": [100, 100], "mb-senior-school-tax-rebate": [0, 0] },
+      "burden": 3300
+    },
+    {
+      "id": "mb-net-bill-missing-advance-is-incomplete",
+      "province": "MB",
+      "calc": "the other reflected amounts are not stated, so the gross levy is unknown",
+      "hh": {
+        "bill": 3400,
+        "basis": "net",
+        "applied": { "mb-homeowners-school-tax-credit": 1600 },
+        "facts": { "schoolTax": 100 },
+        "people": [{ "oth": 35000, "age": 70 }]
+      },
+      "expect": { "mb-homeowners-school-tax-credit": "incomplete", "mb-senior-school-tax-rebate": "incomplete" }
+    },
+    {
+      "id": "mb-renter-ordinary",
+      "province": "MB",
+      "calc": "ordinary amount min(12,000 rent, 625) = 625",
+      "hh": { "homeValue": 0, "rent": 1000, "people": [{ "oth": 40000 }] },
+      "expect": { "mb-renters-affordability-senior": [625, 625], "mb-homeowners-school-tax-credit": [0, 0] }
+    },
+    {
+      "id": "mb-renter-ordinary-capped-by-rent",
+      "province": "MB",
+      "calc": "rent 40 x 12 = 480 < 625: 480",
+      "hh": { "homeValue": 0, "rent": 40, "people": [{ "oth": 40000 }] },
+      "expect": { "mb-renters-affordability-senior": [480, 480] }
+    },
+    {
+      "id": "mb-renter-senior-income-0",
+      "province": "MB",
+      "calc": "982.14 - min(357.14, 0) = 982.14: the reduction starts at zero income",
+      "hh": { "homeValue": 0, "rent": 2000, "people": [{ "oth": 0, "age": 70 }] },
+      "expect": { "mb-renters-affordability-senior": [982.14, 982.14] }
+    },
+    {
+      "id": "mb-renter-senior-income-20000",
+      "province": "MB",
+      "calc": "0.008929 x 20,000 = 178.58; 982.14 - 178.58 = 803.56",
+      "hh": { "homeValue": 0, "rent": 2000, "people": [{ "oth": 20000, "age": 70 }] },
+      "expect": { "mb-renters-affordability-senior": [803.56, 803.56] }
+    },
+    {
+      "id": "mb-renter-senior-income-35000",
+      "province": "MB",
+      "calc": "0.008929 x 35,000 = 312.515; 982.14 - 312.515 = 669.625 (the note's figure)",
+      "hh": { "homeValue": 0, "rent": 2000, "people": [{ "oth": 35000, "age": 70 }] },
+      "expect": { "mb-renters-affordability-senior": [669.625, 669.63] }
+    },
+    {
+      "id": "mb-renter-senior-income-40000-caps-the-top-up",
+      "province": "MB",
+      "calc": "0.008929 x 40,000 = 357.16 > 357.14, so the reduction is 357.14: 625.00; no cliff",
+      "hh": { "homeValue": 0, "rent": 2000, "people": [{ "oth": 40000, "age": 70 }] },
+      "expect": { "mb-renters-affordability-senior": [625, 625] }
+    },
+    {
+      "id": "mb-renter-senior-income-40002",
+      "province": "MB",
+      "calc": "625.00",
+      "hh": { "homeValue": 0, "rent": 2000, "people": [{ "oth": 40002, "age": 70 }] },
+      "expect": { "mb-renters-affordability-senior": [625, 625] }
+    },
+    {
+      "id": "mb-renter-age-64-is-ordinary",
+      "province": "MB",
+      "calc": "625, not 669.63",
+      "hh": { "homeValue": 0, "rent": 2000, "people": [{ "oth": 35000, "age": 64 }] },
+      "expect": { "mb-renters-affordability-senior": [625, 625] }
+    },
+    {
+      "id": "mb-renter-couple-one-senior",
+      "province": "MB",
+      "calc": "either spouse at 65; family income 35,000: 669.625",
+      "hh": { "homeValue": 0, "rent": 2000, "people": [{ "oth": 20000, "age": 65 }, { "oth": 15000 }] },
+      "expect": { "mb-renters-affordability-senior": [669.625, 669.63] }
+    },
+    {
+      "id": "mb-renter-senior-capped-by-rent",
+      "province": "MB",
+      "calc": "rent 40 x 12 = 480 < 982.14: 480",
+      "hh": { "homeValue": 0, "rent": 40, "people": [{ "oth": 0, "age": 70 }] },
+      "expect": { "mb-renters-affordability-senior": [480, 480] }
+    },
+    {
+      "id": "mb-owner-with-rent-has-no-renter-credit",
+      "province": "MB",
+      "calc": "an owner's rent is ignored: 0",
+      "hh": { "homeValue": 500000, "rent": 1000 },
+      "expect": { "mb-renters-affordability-senior": [0, 0] }
+    }
+  ]
+}

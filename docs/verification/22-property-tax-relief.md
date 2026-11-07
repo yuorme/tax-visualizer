@@ -602,3 +602,89 @@ prior-year amounts are added by the slice that needs them.
 
 No golden is added: with no real program there is no result to lock. The existing 2019–2026 goldens and
 `tests/golden/features/` are untouched and pass unchanged. Regional slices add their own golden cases.
+
+## Slice 2 (#223): BC and Manitoba, built
+
+Coverage is **2026 only**. Programs are in `data/years/2026/provinces/BC.yaml` and `MB.yaml` under `propertyRelief`;
+2025 has none, so its results and goldens are unchanged, and no engine code tests a year. Alberta and Saskatchewan:
+no provincial seniors' property grant or renter-credit age increment was identified for either year (inventory
+above), so they get no entry, no placeholder and no test beyond "declares none". Deferral and loan programs there
+and in BC and Manitoba stay out: they finance tax and forgive $0.
+
+**New input.** `Household.propertyReliefFacts[code]` holds what a bill alone does not say: `bcNorthernRural` (BC's
+higher Schedule 3 and 4 amounts; omitted means the reference city's region, Metro Vancouver) and `schoolTax`
+(Manitoba, below). `scaleHousehold` scales `schoolTax` with the bill. Ages come from `Person.age`; a missing age
+is never 65, so no senior schedule is invented. Handlers also see `basis` and the program's own `reflected` amount.
+
+**BC, `bc-home-owner-grant`.** One id, as Slice 1 requires: the schedule is `min(full grant, max(0, tax − minimum
+remaining))` for the ordinary (570 / 350) or senior (845 / 100) column, northern and rural 770 / 1,045; any household
+member aged 65 selects the senior column, replacing the ordinary amount. The assessed-value reduction then takes
+`5 × (value − 2,075,000) / 1,000` off the schedule amount (a rate, so no rounding up to whole thousands), never below
+zero: $600 tax, senior, $20,000 over the threshold is `500 − 100 = 400`, not `min(845 − 100, 500)`. The entered
+home value stands in for the assessed value, so the line is `estimated`; a bill with no home value has no assessed
+value and the line is `incomplete`, never $0 or an unreduced grant. A renter has no grant.
+
+**BC, `bc-low-income-grant-supplement`.** A separate id because it is a separate payment: it is applied for with the
+Province on FIN 65 and paid by cheque, never on the tax notice, so a net bill reflects $0 of it. It restores only the
+actual reduction of a **senior-schedule** grant (Act s.2(8) names Schedules 2 and 4; an under-65 owner's ordinary
+reduction is not restored): in full when adjusted income is at most $30,000, in half up to $32,000, nothing above,
+and nothing when the amount is under $25 (regulation ss.16–18). Adjusted income is each person's federal net income
+floored at zero, summed, less $3,000 for a partner, $3,000 per person aged 65, and $3,000 per child (s.11(2)–(3)).
+**Previous-year income is a proxy:** the law uses the previous year's net income and the app has only this year's, so
+current income stands in, the approach the user approved on #21; the line is `estimated`. Not modelled: the
+half-of-child-care reduction of the child amount, the disability deduction and the UCCB adjustment (each would lower
+adjusted income, so omitting them can only withhold a supplement). It reads the grant line before it for the
+reduction, so the grant must come first in the data; an unknown reduction makes it `incomplete`.
+
+**Manitoba.** The old `mb-affordability-credits` whole credit is replaced for 2026, not added to:
+`creditsOf` skips that entry whenever the province declares `mb-homeowners-school-tax-credit`, and the three programs
+below take over under the same display names ("Homeowners affordability tax credit", "Renters affordability tax
+credit"), so each household still has one line. The entry stays in the YAML only for the page's prose until #227.
+
+- `mb-homeowners-school-tax-credit`: `min(1,600, gross eligible school tax)`, capped by school tax, not the whole bill.
+  The household states `schoolTax`; on a net bill that figure is net of the advance and the bill's stated amount for
+  this id (the advance) restores the gross (`levy 3,400 + 1,600 = 5,000`, `school 100 + 1,600 = 1,700`). Only the
+  default-city bill has an estimate: `homeValue × 0.45 × 15.994 / 1,000`, Winnipeg School Division No. 1, capped by
+  the gross levy and `estimated`. A supplied bill or a rate override with no `schoolTax` is `incomplete`; a school tax
+  above the whole bill is `incomplete`. An explicit zero is a real zero.
+- `mb-senior-school-tax-rebate`: owner with anyone aged 65, `max(0, min(235, school tax − all homeowners credit) −
+  1% × (family income − 40,000))`, family income being each person's net income floored at zero, summed. It reads
+  the credit line before it. The credit is never skipped to enlarge the rebate.
+- `mb-renters-affordability-senior`: a renter's `min(rent, 625)`; with anyone aged 65 it is `min(rent, 982.14 −
+  min(357.14, 0.008929 × family income))`, the reduction starting at zero income and never leaving less than the
+  ordinary amount. A full year of rent is assumed (eligible months are not an input).
+
+**Goldens.** The 2026 main goldens move in **35 BC cells** (every BC owner with the credits switch on; five owners
+have it off) and `other-income-original.json` in **one** (2026, scenario 151, BC). Every one is a BC owner gaining
+the ordinary grant, `min(570, max(0, bill − 350))`: 570 where the bill is at least 920, and 550 for the $300,000
+homes, whose bill is $900. No scenario has an age, so the senior schedule, the value reduction (no home is worth over
+$2,075,000) and the supplement do not enter. Independent check (a script with no engine code, reading only scenario
+inputs and the schedule): for each of the 35 cells `refund` and `benefits` rise by the grant, `total` and `netTotal`
+fall by it, one credit `["B.C. home owner grant", grant]` is appended, `avg` follows from the new total, and the
+marginal rates, people and claim are unchanged; every other cell is identical. No Manitoba main-golden cell moves: the
+scenario owners (lowest home value $300,000) have school tax above $1,600 and none has a rate override, and every
+renter pays at least $800 a month, so the rent cap never binds. The four Manitoba explicit-bill cases in
+`tests/golden/features/property-tax-bill.json` gained a `schoolTax` equal to their bill, which was the old rule's
+implicit assumption, so their expected credits (800, 1,600, 1,600, 0) are untouched; without it the credit is
+unknown, not $0 or the bill. The browser smoke test compares the page with the frozen legacy page; its one BC
+owner step (home $750,000, income $143,000) now expects the ordinary grant: tax $2,250, grant `min(570, 2,250 − 350)`,
+net tax `30,191 − 570 = 29,621` (20.7%, Quebec 8.7 points higher), with every obsolete value guarded in
+`tests/e2e/smoke.mjs`.
+All 2019–2025 goldens and the other `tests/golden/features/` files are unchanged.
+
+New hand-calculated cases are in `tests/golden/features/property-relief-west.json`, run by
+`tests/property-relief-west.test.ts`:
+
+| Rule path | Cases |
+| --- | --- |
+| BC schedules, senior replaces ordinary, $350 / $100 floors, 920 / 945 full-grant bills, age 64 / 65 | `bc-ordinary-*`, `bc-senior-*`, `bc-age-*`, `bc-couple-one-senior` |
+| BC northern and rural amounts, reference-city region | `bc-rural-*`, `bc-default-city-*` |
+| BC value reduction before / after the schedule, threshold, zero endpoints, no assessed value | `bc-senior-600-excess-20k`, `bc-*-value-*`, `bc-no-assessed-value-*` |
+| BC supplement limits 30,000 / 32,000, $25 minimum, only the actual reduction, no ordinary restoration | `bc-supplement-*` |
+| BC supplement deductions: partner, each 65+, child; per-person floor at zero | `bc-supplement-couple-*`, `-child-*`, floor test |
+| BC gross, net-of-ordinary and fully net bills; supplement never on the bill | `bc-net-*`, `bc-fully-net-bill` |
+| MB school-tax basis, estimate, cap at 1,600, explicit zero, school above bill, no school tax | `mb-default-*`, `mb-hatc-*`, `mb-custom-bill-*` |
+| MB rebate: remaining after credit, 40,000 / 63,500, 64 / 65, spouse, family income | `mb-rebate-*`, `mb-custom-school-*` |
+| MB net bill restores advance and school tax, one burden | `mb-net-bill-*`, `mb-gross-bill-same-burden` |
+| MB renter: ordinary, rent cap, senior from zero income, 40,000 cap, 64 / 65 | `mb-renter-*`, `mb-owner-with-rent-*` |
+| Old credit not repeated; switch; 2025 and AB / SK declare none; history scaling | the four tests after the cases |

@@ -86,8 +86,18 @@ export interface Household {
   /** Net bills only: relief the bill already reflects, by province code then relief program id. Each program's
    *  amount is needed, and zero is explicit: an omitted amount is unknown and leaves that relief incomplete. */
   propertyReliefApplied?: Partial<Record<string, Partial<Record<string, number>>>>;
+  /** Facts a province's property relief needs that the bill alone does not give, by province code. */
+  propertyReliefFacts?: Partial<Record<string, PropertyReliefFacts>>;
   childcare?: ChildcareInput;
   driving?: Driving; // none: no fuel tax
+}
+
+export interface PropertyReliefFacts {
+  /** BC: the home is in the northern and rural area (higher grant amounts). Omitted: the reference city's region. */
+  bcNorthernRural?: boolean;
+  /** MB: gross eligible school tax before the homeowners credit; on a net bill, the school tax net of the advance
+   *  (the advance is the bill's stated amount for the credit). Omitted: estimated on the default-city bill only. */
+  schoolTax?: number;
 }
 
 /** The household's driving: total distance a year across its vehicles and their average fuel efficiency. */

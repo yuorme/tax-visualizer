@@ -18,10 +18,38 @@
       "homeValue": 0,
       "property": 4200
     },
-    { "id": "mb-owner-credit-below-cap", "province": "MB", "bills": { "MB": 800 }, "property": 800, "credit": 800 },
-    { "id": "mb-owner-credit-at-cap", "province": "MB", "bills": { "MB": 1600 }, "property": 1600, "credit": 1600 },
-    { "id": "mb-owner-credit-above-cap", "province": "MB", "bills": { "MB": 2400 }, "property": 2400, "credit": 1600 },
-    { "id": "mb-zero-bill-has-no-owner-credit", "province": "MB", "bills": { "MB": 0 }, "property": 0, "credit": 0 },
+    {
+      "id": "mb-owner-credit-below-cap",
+      "province": "MB",
+      "bills": { "MB": 800 },
+      "schoolTax": 800,
+      "property": 800,
+      "credit": 800
+    },
+    {
+      "id": "mb-owner-credit-at-cap",
+      "province": "MB",
+      "bills": { "MB": 1600 },
+      "schoolTax": 1600,
+      "property": 1600,
+      "credit": 1600
+    },
+    {
+      "id": "mb-owner-credit-above-cap",
+      "province": "MB",
+      "bills": { "MB": 2400 },
+      "schoolTax": 2400,
+      "property": 2400,
+      "credit": 1600
+    },
+    {
+      "id": "mb-zero-bill-has-no-owner-credit",
+      "province": "MB",
+      "bills": { "MB": 0 },
+      "schoolTax": 0,
+      "property": 0,
+      "credit": 0
+    },
     {
       "id": "ontario-low-bill-bounds-credit",
       "province": "ON",

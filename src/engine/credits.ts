@@ -118,6 +118,9 @@ export function creditsOf(fed: Federal, p: Province, f: CreditInput): Credit[] {
         break;
       }
       case "mb-affordability-credits": {
+        // A year whose data declares the school-tax programs replaces this whole credit with them (property-relief.ts),
+        // so the two never both apply. The entry stays for the page's prose until #227.
+        if (p.propertyRelief?.some(r => r.program === "mb-homeowners-school-tax-credit")) break;
         const q = cr.params;
         if (propTax > 0) out.push([name, Math.min(q.homeownerMax, propTax)]);
         else if (rent > 0) out.push([cr.nameRenter, q.renter]);

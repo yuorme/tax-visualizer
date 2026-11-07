@@ -251,6 +251,12 @@ line-by-line tax return. Simpler and slightly less precise is acceptable where i
 - Sales tax (GST/HST/PST/QST/RST) on monthly taxable spending, estimated from household size and adjustable.
 - Property tax for owners: home value × the typical rate in each province's largest city, or, in the home
   province only, the household's own annual bill if entered. The bill also feeds property-based credits there.
+- Property-tax relief, tax year 2026 only (#223): BC's ordinary and senior Home Owner Grant (home value stands in for
+  the assessed value) and the low-income grant supplement (current income stands in for the previous year's, as in
+  #21); Manitoba's homeowners credit on school tax, the seniors' school tax rebate and the renters credit's senior
+  formula, which replace the old whole credit. Manitoba needs the bill's school tax, which is estimated for the
+  default-city bill only. Earlier years keep their old results. See
+  [rules, sources and limits](verification/22-property-tax-relief.md).
 
 **Fuel tax on gasoline**
 - Federal excise, provincial or territorial fuel tax and the regional transit tax of each province's reference
@@ -328,9 +334,10 @@ built.
 - Provincial seniors' supplements (Ontario GAINS, Alberta Seniors Benefit, BC Senior's Supplement,
   Saskatchewan Seniors Income Plan and equivalents elsewhere): implemented for 2025–2026 above, except Yukon
   and PEI; historical back-fill remains separate.
-- Seniors' property tax grants and rebates (e.g. BC's additional Home Owner Grant, Ontario Senior Homeowners'
-  Property Tax Grant, Manitoba's seniors' school tax rebate). Deferral programs are out: they delay tax, not
-  reduce it.
+- Seniors' property tax grants and rebates (e.g. Ontario Senior Homeowners' Property Tax Grant). BC's Home Owner
+  Grant with its senior schedule and low-income supplement, and Manitoba's seniors' school tax rebate, are
+  implemented for 2026 only (#223, below). Alberta and Saskatchewan have no in-scope program. The other provinces
+  follow in later slices of #22. Deferral programs are out: they delay tax, not reduce it.
 - RRIF/RRSP withdrawals and workplace pensions are entered as amounts. Not modelled: minimum RRIF withdrawals,
   deferring OAS or CPP, partial OAS from residency rules (full OAS is assumed).
 

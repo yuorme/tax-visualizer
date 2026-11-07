@@ -500,6 +500,7 @@ function calculateHousehold(
           homeValue: hh.homeValue,
           rent: rentAnnual,
           existingCredits: existingCreditsOf(p.credits ?? [], credits),
+          facts: hh.propertyReliefFacts?.[p.code],
         })
       : undefined;
   for (const line of propertyRelief?.lines ?? [])
