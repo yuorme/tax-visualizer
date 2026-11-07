@@ -704,3 +704,33 @@ New hand-calculated cases are in `tests/golden/features/property-relief-west.jso
 | MB interim whole-bill credit for a bill or override (until #227); stated school tax wins | `mb-interim-*`, smoke step in `tests/e2e/smoke.mjs` |
 | MB per-person income floors; second spouse senior; senior renter has no rebate; owner ignores rent | floor test, `mb-renter-couple-second-*`, `mb-senior-renter-*` |
 | Old credit not repeated; switch; 2025 and AB / SK declare none; history scaling | the tests after the cases |
+
+## Slice 3 (#227): page for BC and Manitoba, built
+
+Scope is BC and Manitoba, 2026 only; #224, #225 and #226 add their own rows and tooltips. The page keeps the layout
+simple, ahead of a larger UI refactor.
+
+**Controls.** In the Property tax panel, a "Property-tax relief" block shows for a home province that has relief in any
+year of data. It holds a gross or net choice (shown when a bill is entered), a BC region choice, a Manitoba school-tax
+input, and one amount per bill line for a net bill: the BC home owner grant and Manitoba's credit advance. Programs a
+bill never reflects (the BC supplement, the senior rebate, the renter credit) are sent as an explicit 0. A bill line
+left blank is not sent, so its relief shows as Incomplete rather than $0. Controls follow the year's data: 2025 has no
+programs, so only the year notice remains.
+
+**Interim fact removed.** `creditOnWholeBill` is gone from the engine, types, tests and the page. A Manitoba bill or
+rate override with no school tax is Incomplete, as the engine already reported. Six cases in
+`tests/golden/features/property-relief-west.json` carried the fact: the three that asserted the whole-bill credit
+(`mb-interim-whole-bill-below-cap`, `-above-cap`, `mb-interim-rate-override`) now expect `incomplete`, and the two
+that only added the fact to a stated school tax or a default-city bill lose the fact with their expectations unchanged.
+No other golden moves. The 2026 `mb-affordability-credits` YAML entry is removed: `notes.ts` now describes the
+Manitoba programs from `propertyRelief` for a year that declares them. Tests that read that entry now use the relief
+line by name, or the 2025 entry where they need a whole-bill credit.
+
+**Saved state.** `propertyBillBasis`, `propertyReliefApplied`, `schoolTax` and `bcNorthernRural` follow the
+`scenario-url.ts` conventions: defaults are omitted from links, damaged fields fall back one by one, and a save or link
+without them loads as a gross bill with nothing reflected. They reset with the home province, like the bill.
+
+**Ledger.** Relief lines that are Incomplete, Not modelled or city-bill-only show those words in the credits list,
+never $0. Tooltips cover the default-bill limit on city relief, benefit-year entitlement and prior-year bases, excluded
+deferrals, housing allowances (SAFER, Rent Assist; #216) and the 2026-only notice, each asserted in
+`tests/e2e/property-relief.mjs` at 375 px, 430 px and desktop, in light and dark.

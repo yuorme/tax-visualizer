@@ -278,6 +278,39 @@
             <button type="button" class="linkbtn" id="property-tax-bill-reset" hidden>Use estimate</button>
           </div>
         </div>
+        <div class="prop-grid relief-grid" id="relief" hidden>
+          <div class="field relief-head">
+            <div class="lbl-row"><b class="lbl">Property-tax relief</b>
+              <button type="button" class="info" id="relief-tip-years" aria-label="About property relief years">i</button>
+              <span class="relief-tips" id="relief-tips">
+                <span class="relief-tip">Bill limit <button type="button" class="info" id="relief-tip-city" data-tip="City-level relief, such as Toronto's or Halifax's, is applied only to the default reference-city bill. A bill you enter, or a rate you override, does not identify a city, so it gets no automatic city relief. Provincial grants still apply when their inputs are given." aria-label="About the default-bill limit on city relief">i</button></span>
+                <span class="relief-tip">Benefit year <button type="button" class="info" id="relief-tip-benefit" data-tip="Relief is the entitlement for the benefit year of the tax year selected, not the cash actually received in that calendar year. Where a program is based on the previous year's income, assessment or bill, this year's figures stand in for them, so those lines are estimates." aria-label="About annual benefit-year entitlement and prior-year bases">i</button></span>
+                <span class="relief-tip">Deferrals <button type="button" class="info" id="relief-tip-deferral" data-tip="Property-tax deferral and loan programs are excluded: they delay paying the tax and forgive nothing, so they would not change the tax burden." aria-label="About excluded deferrals">i</button></span>
+                <span class="relief-tip">Housing allowances <button type="button" class="info" id="relief-tip-allowance" data-tip="Housing allowances, such as B.C.'s SAFER and Manitoba's Rent Assist, are not modelled (tracked in issue 216). Their value is not in these totals." aria-label="About housing allowances not modelled">i</button></span>
+              </span>
+            </div>
+          </div>
+          <div class="field" id="relief-basis-field" hidden>
+            <div class="lbl-row"><label class="lbl" for="property-bill-basis">Your bill is</label><button type="button" class="info" data-tip="Before relief (gross) is the default and how bills saved earlier are read: the grants and credits calculated here are taken off it. After relief (net) means your bill already has a grant taken off; enter each amount it reflects below, 0 if none, so it is not counted twice. Until every amount is given, that relief shows as incomplete." aria-label="About gross and net bills">i</button></div>
+            <select id="property-bill-basis" class="wh-select"><option value="gross">Before relief (gross)</option><option value="net">After relief (net)</option></select>
+          </div>
+          <div class="field" id="relief-bc-field" hidden>
+            <div class="lbl-row"><label class="lbl" for="bc-region">B.C. region</label><button type="button" class="info" data-tip="The home owner grant is higher in northern and rural B.C. The grant is reduced for homes assessed over the threshold; the home value you enter stands in for the assessed value, so without one the grant shows as incomplete." aria-label="About the B.C. region and home value">i</button></div>
+            <select id="bc-region" class="wh-select"><option value="metro">Metro Vancouver, Capital, Fraser Valley</option><option value="rural">Northern and rural</option></select>
+          </div>
+          <div class="field" id="relief-school-field" hidden>
+            <div class="lbl-row"><label class="lbl" for="school-tax" id="school-tax-label">School tax on your bill</label><button type="button" class="info" data-tip="Manitoba's homeowners credit is capped by school tax, not the whole bill. Leave blank to estimate it from the home value on the default-city bill. For a bill you entered, state the school portion (shown on your tax statement). On a net bill, enter it after the advance credit." aria-label="About Manitoba school tax">i</button></div>
+            <div class="money md"><span>$</span><input id="school-tax" inputmode="decimal" autocomplete="off" placeholder="Optional"><span class="per">a year</span></div>
+          </div>
+          <div class="field" id="relief-applied-bc-home-owner-grant-field" hidden>
+            <div class="lbl-row"><label class="lbl" for="relief-applied-bc-home-owner-grant">Home owner grant on your bill</label></div>
+            <div class="money md"><span>$</span><input id="relief-applied-bc-home-owner-grant" inputmode="decimal" autocomplete="off" placeholder="Required"><span class="per">a year</span></div>
+          </div>
+          <div class="field" id="relief-applied-mb-homeowners-school-tax-credit-field" hidden>
+            <div class="lbl-row"><label class="lbl" for="relief-applied-mb-homeowners-school-tax-credit">Credit advance on your bill</label></div>
+            <div class="money md"><span>$</span><input id="relief-applied-mb-homeowners-school-tax-credit" inputmode="decimal" autocomplete="off" placeholder="Required"><span class="per">a year</span></div>
+          </div>
+        </div>
       </div>
       <div class="rent-body" id="rent-body" hidden>
         <div class="field">

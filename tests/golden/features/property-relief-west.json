@@ -1731,12 +1731,9 @@
     {
       "id": "mb-interim-whole-bill-below-cap",
       "province": "MB",
-      "calc": "interim page fact: min(1600, 800 bill) = 800; no school tax is reported, so a senior's rebate stays incomplete",
+      "calc": "the interim whole-bill credit is removed (#227): a bill or rate override with no stated school tax is incomplete, never the whole bill",
       "hh": {
         "bill": 800,
-        "facts": {
-          "creditOnWholeBill": true
-        },
         "people": [
           {
             "oth": 35000,
@@ -1745,37 +1742,31 @@
         ]
       },
       "expect": {
-        "mb-homeowners-school-tax-credit": [800, 800],
+        "mb-homeowners-school-tax-credit": "incomplete",
         "mb-senior-school-tax-rebate": "incomplete"
       }
     },
     {
       "id": "mb-interim-whole-bill-above-cap",
       "province": "MB",
-      "calc": "min(1600, 3000) = 1600",
+      "calc": "the interim whole-bill credit is removed (#227): a bill or rate override with no stated school tax is incomplete, never the whole bill",
       "hh": {
-        "bill": 3000,
-        "facts": {
-          "creditOnWholeBill": true
-        }
+        "bill": 3000
       },
       "expect": {
-        "mb-homeowners-school-tax-credit": [1600, 1600]
+        "mb-homeowners-school-tax-credit": "incomplete"
       }
     },
     {
       "id": "mb-interim-rate-override",
       "province": "MB",
-      "calc": "50,000 x 1% = 500 bill: min(1600, 500) = 500",
+      "calc": "the interim whole-bill credit is removed (#227): a bill or rate override with no stated school tax is incomplete, never the whole bill",
       "hh": {
         "homeValue": 50000,
-        "rate": 0.01,
-        "facts": {
-          "creditOnWholeBill": true
-        }
+        "rate": 0.01
       },
       "expect": {
-        "mb-homeowners-school-tax-credit": [500, 500]
+        "mb-homeowners-school-tax-credit": "incomplete"
       }
     },
     {
@@ -1785,7 +1776,6 @@
       "hh": {
         "bill": 5000,
         "facts": {
-          "creditOnWholeBill": true,
           "schoolTax": 1700
         },
         "people": [
@@ -1803,12 +1793,9 @@
     {
       "id": "mb-interim-default-city-keeps-school-estimate",
       "province": "MB",
-      "calc": "the default-city bill still uses its school estimate 1439.46, not the whole bill 2760",
+      "calc": "the default-city bill uses its school estimate 1439.46, not the whole bill 2760",
       "hh": {
-        "homeValue": 200000,
-        "facts": {
-          "creditOnWholeBill": true
-        }
+        "homeValue": 200000
       },
       "expect": {
         "mb-homeowners-school-tax-credit": [1439.46, 1439.46]

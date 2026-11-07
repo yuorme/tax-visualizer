@@ -2114,3 +2114,34 @@ footer a {
 #detail-body h4 .info {
   margin-left: 8px;
 }
+.relief-grid {
+  margin-top: 4px;
+}
+.relief-head {
+  grid-column: 1 / -1;
+}
+.relief-tips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+  font-size: 12px;
+  color: var(--muted);
+}
+.relief-tip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.relief-grid select {
+  max-width: 100%;
+}
+.relief-grid .money.md input {
+  width: 9ch;
+}
+.cred-list .state {
+  font-style: italic;
+}
+.relief-grid [hidden],
+.relief-grid[hidden] {
+  display: none;
+}

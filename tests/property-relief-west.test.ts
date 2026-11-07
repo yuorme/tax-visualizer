@@ -32,7 +32,7 @@ interface Case {
     bill?: number;
     basis?: "gross" | "net";
     applied?: Record<string, number>;
-    facts?: { bcNorthernRural?: boolean; schoolTax?: number; creditOnWholeBill?: boolean };
+    facts?: { bcNorthernRural?: boolean; schoolTax?: number };
     rate?: number;
     kids?: number;
     people?: Partial<Person>[];

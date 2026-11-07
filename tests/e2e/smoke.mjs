@@ -22,6 +22,7 @@ import { checkLedgerOrder } from "./ledger-order.mjs";
 import { checkManitobaFamilyLedger } from "./mb-family-benefit.mjs";
 import { ALLOWED_HOSTS, openPage, settle } from "./page.mjs";
 import { PORTFOLIO_RESPONSIVE_STEPS, PORTFOLIO_STEPS } from "./portfolio.mjs";
+import { checkPropertyRelief } from "./property-relief.mjs";
 import { PUBLIC_PENSION_RESPONSIVE_STEPS, PUBLIC_PENSION_STEPS } from "./public-pensions.mjs";
 import { checkQuebecHealthFund } from "./qc-health-fund.mjs";
 import { checkQuebecSpouseSavings } from "./qc-line-431.mjs";
@@ -384,9 +385,9 @@ const PROPERTY_STEPS = [
     },
   ],
   [
-    // #227 adds a school-tax input; until then a Manitoba bill or rate override keeps crediting the whole bill
-    // (min(1,600, bill)), as it did before the school-tax programs, instead of silently losing the credit.
-    "Manitoba bill or rate override keeps the homeowners credit on the whole bill",
+    // #227: Manitoba's homeowners credit is capped by school tax. A bill or rate override with no school tax stated
+    // is incomplete (shown as text), never the whole bill, and the school-tax input restores the credit.
+    "Manitoba bill or rate override needs a school tax for the homeowners credit",
     async p => {
       const problems = [];
       await openTab(p, "home");
@@ -394,6 +395,7 @@ const PROPERTY_STEPS = [
       await p.selectOption("#home", "MB");
       await type(p, "#pr-rate", "");
       await type(p, "#property-tax-bill", "");
+      await type(p, "#school-tax", "");
       await type(p, "#hv", "300000");
       const credit = async () =>
         (
@@ -404,11 +406,20 @@ const PROPERTY_STEPS = [
       // Default-city bill: school tax 300,000 x 0.45 x 15.994 / 1,000 = $2,159, over the $1,600 maximum.
       if ((await credit()) !== "$1,600") problems.push(`default bill credit is ${await credit()}, expected $1,600`);
       await type(p, "#property-tax-bill", "800");
-      if ((await credit()) !== "$800") problems.push(`$800 bill credit is ${await credit()}, expected $800`);
+      if ((await credit()) !== "Incomplete")
+        problems.push(`$800 bill credit is ${await credit()}, expected Incomplete`);
+      await type(p, "#school-tax", "800");
+      if ((await credit()) !== "$800") problems.push(`$800 school tax credit is ${await credit()}, expected $800`);
       await type(p, "#property-tax-bill", "");
+      await type(p, "#school-tax", "");
       await type(p, "#hv", "50000");
       await type(p, "#pr-rate", "1");
-      if ((await credit()) !== "$500") problems.push(`1% rate override credit is ${await credit()}, expected $500`);
+      if ((await credit()) !== "Incomplete")
+        problems.push(`1% rate override credit is ${await credit()}, expected Incomplete`);
+      await type(p, "#school-tax", "500");
+      if ((await credit()) !== "$500")
+        problems.push(`1% rate override with school tax is ${await credit()}, expected $500`);
+      await type(p, "#school-tax", "");
       return problems;
     },
   ],
@@ -1025,6 +1036,14 @@ for (const width of [1000, 430, 375]) {
       steps: [["Quebec line 431 is included in the spouse savings tooltip", checkQuebecSpouseSavings]],
     });
     check(`${width}px ${colorScheme}, Quebec spouse savings`, width, spouseSavings);
+    const propertyRelief = await run({
+      width,
+      colorScheme,
+      steps: [
+        ["Property relief: tooltips, bill basis, school tax, ledger statuses and saved state", checkPropertyRelief],
+      ],
+    });
+    check(`${width}px ${colorScheme}, property relief`, width, propertyRelief);
     const ledgerOrder = await run({
       width,
       colorScheme,

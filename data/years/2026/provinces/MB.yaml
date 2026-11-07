@@ -26,17 +26,7 @@ fuelTax: {gasoline: 0.125}   # $ per litre
 # Starting distance: the average per light vehicle in the 2009 Canadian Vehicle Survey (the last one), 10,027.3 million
 # vehicle-km ÷ 670,133 vehicles up to 4.5 tonnes (Tables 4-1 and 3-1), to the nearest 100 km.
 driving: {distance: 15000, estimated: true}
-creditsUseRent: true
-credits:
-  - name: Homeowners affordability tax credit
-    nameRenter: Renters affordability tax credit
-    program: mb-affordability-credits
-    params:
-      homeownerMax: 1600   # not indexed: fixed 2026 maximum; Budget 2026's $1,700 starts in tax year 2027
-      renter: 625
-    estimated: true   # renters credit taken at its maximum
-    # Superseded for 2026 by propertyRelief below: the engine skips this entry when the school-tax programs are declared,
-    # so the two never both apply. It stays only for the page's prose until #227.
+creditsUseRent: true   # rent drives the renters affordability credit under propertyRelief below
 # Property-tax relief (#22, #223), 2026 only. Derivations and limits: docs/verification/22-property-tax-relief.md.
 # Order matters: the rebate reads the homeowners credit line before it.
 propertyRelief:
