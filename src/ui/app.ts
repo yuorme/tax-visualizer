@@ -182,6 +182,13 @@ let homeValue = 0,
   propertyReliefApplied: Record<string, number> = {}, // net bills: relief on the bill, by program id (home province)
   schoolTax: number | null = null, // Manitoba: school tax on the bill, or null to estimate it where possible
   bcNorthernRural = false,
+  // Toronto (default-city bill only) and Quebec facts a bill alone does not say; null is not stated (#224).
+  torontoPriorLevy: number | null = null,
+  torontoCarryover: number | null = null,
+  qcOwnershipYears: number | null = null,
+  qcPotentialGrant: number | null = null,
+  qcPrecedingGrant: number | null = null,
+  qcOtherClaims: number | null = null,
   rent = 0,
   tenure: Tenure = "own",
   useCredits = true,
@@ -222,12 +229,31 @@ const appliedAmounts = () =>
         : [[r.program, 0]],
     ),
   );
+/** Toronto's cancellation applies to the default reference-city bill only, so its inputs matter only there. */
+const torontoInputs = () =>
+  hasProgram("toronto-property-tax-increase-cancellation") && !hasPropertyBill() && propOverride == null;
 const reliefFacts = () => {
+  const qc = hasProgram("qc-senior-municipal-tax-increase-grant");
   const facts = {
     ...(hasProgram("bc-home-owner-grant") ? { bcNorthernRural } : {}),
     ...(hasProgram("mb-homeowners-school-tax-credit") && schoolTax !== null ? { schoolTax } : {}),
+    ...(torontoInputs() && torontoPriorLevy !== null ? { torontoPriorYearLevy: torontoPriorLevy } : {}),
+    ...(torontoInputs() && torontoCarryover !== null ? { torontoCarryover } : {}),
+    ...(qc && qcOwnershipYears !== null ? { qcOwnershipYears } : {}),
+    ...(qc && qcPotentialGrant !== null ? { qcPotentialGrant } : {}),
+    ...(qc && qcPrecedingGrant !== null ? { qcPrecedingRollGrant: qcPrecedingGrant } : {}),
+    ...(qc && qcOtherClaims !== null ? { qcOtherClaims } : {}),
   };
   return Object.keys(facts).length ? { [home]: facts } : undefined;
+};
+/** The relief inputs that are one typed number each (Toronto and Quebec, #224), by input id; null is not stated. */
+const RELIEF_NUMBERS = {
+  "toronto-prior-levy": { get: () => torontoPriorLevy, set: (v: number | null) => (torontoPriorLevy = v) },
+  "toronto-carryover": { get: () => torontoCarryover, set: (v: number | null) => (torontoCarryover = v) },
+  "qc-ownership-years": { get: () => qcOwnershipYears, set: (v: number | null) => (qcOwnershipYears = v) },
+  "qc-potential-grant": { get: () => qcPotentialGrant, set: (v: number | null) => (qcPotentialGrant = v) },
+  "qc-preceding-grant": { get: () => qcPrecedingGrant, set: (v: number | null) => (qcPrecedingGrant = v) },
+  "qc-other-claims": { get: () => qcOtherClaims, set: (v: number | null) => (qcOtherClaims = v) },
 };
 /** The province with this code; home and dest always hold one. */
 const prov = (c: string) => must(byCode(c), `province ${c}`);
@@ -337,6 +363,13 @@ try {
         if (BILL_RELIEF.includes(id) && isNum(v) && Number.isFinite(v) && v >= 0) propertyReliefApplied[id] = v;
     if (isNum(s.schoolTax) && Number.isFinite(s.schoolTax) && s.schoolTax >= 0) schoolTax = s.schoolTax;
     if (s.bcNorthernRural === true) bcNorthernRural = true;
+    const amount = (v: unknown) => (isNum(v) && Number.isFinite(v) && v >= 0 ? v : null);
+    torontoPriorLevy = amount(s.torontoPriorLevy);
+    torontoCarryover = amount(s.torontoCarryover);
+    qcOwnershipYears = amount(s.qcOwnershipYears);
+    qcPotentialGrant = amount(s.qcPotentialGrant);
+    qcPrecedingGrant = amount(s.qcPrecedingGrant);
+    qcOtherClaims = amount(s.qcOtherClaims);
     if (isNum(s.rent) && s.rent >= 0) rent = s.rent;
     if (isNum(s.km) && Number.isFinite(s.km) && s.km >= 0) kmOverride = s.km;
     if (isNum(s.eff) && Number.isFinite(s.eff) && s.eff >= 0) effOverride = s.eff;
@@ -391,6 +424,12 @@ function scenarioState() {
     propertyReliefApplied,
     schoolTax,
     bcNorthernRural,
+    torontoPriorLevy,
+    torontoCarryover,
+    qcOwnershipYears,
+    qcPotentialGrant,
+    qcPrecedingGrant,
+    qcOtherClaims,
     rent,
     tenure,
     useCredits,
@@ -689,10 +728,15 @@ function renderRelief() {
   show("relief-basis-field", programs && bill);
   show("relief-bc-field", hasProgram("bc-home-owner-grant"));
   show("relief-school-field", hasProgram("mb-homeowners-school-tax-credit"));
+  show("relief-ontario-wrap", hasProgram("ontario-senior-homeowners-property-grant"));
+  show("relief-toronto-prior-field", torontoInputs());
+  show("relief-toronto-carryover-field", torontoInputs());
+  for (const f of ["years", "potential", "preceding", "others"])
+    show(`relief-qc-${f}-field`, hasProgram("qc-senior-municipal-tax-increase-grant"));
   for (const id of BILL_RELIEF) show(`relief-applied-${id}-field`, net && hasProgram(id));
   $("relief-tip-years").dataset.tip = programs
-    ? "Property-tax relief (B.C. and Manitoba programs) is modelled for 2026 only; other tax years show none, so their results exclude it."
-    : `Property-tax relief is modelled for 2026 only. ${YEAR} results do not include the B.C. and Manitoba programs, and switching to 2026 adds them.`;
+    ? "Property-tax relief (the B.C., Manitoba, Ontario, Toronto and Quebec programs) is modelled for 2026 only; other tax years show none, so their results exclude it."
+    : `Property-tax relief is modelled for 2026 only. ${YEAR} results do not include the B.C., Manitoba, Ontario, Toronto and Quebec programs, and switching to 2026 adds them.`;
   const set = (id: string, value: string) => {
     const el = $<HTMLInputElement>(id);
     if (document.activeElement !== el) el.value = value;
@@ -700,6 +744,7 @@ function renderRelief() {
   $<HTMLSelectElement>("property-bill-basis").value = propertyBillBasis;
   $<HTMLSelectElement>("bc-region").value = bcNorthernRural ? "rural" : "metro";
   set("school-tax", schoolTax === null ? "" : schoolTax.toLocaleString("en-CA", { maximumFractionDigits: 2 }));
+  for (const [id, v] of Object.entries(RELIEF_NUMBERS)) set(id, v.get() === null ? "" : String(v.get()));
   for (const id of BILL_RELIEF) {
     const v = propertyReliefApplied[id];
     set(`relief-applied-${id}`, v === undefined ? "" : v.toLocaleString("en-CA", { maximumFractionDigits: 2 }));
@@ -1872,6 +1917,14 @@ schoolTaxIn.addEventListener("input", () => {
   if (v !== undefined) schoolTax = v;
   render();
 });
+for (const [id, v] of Object.entries(RELIEF_NUMBERS)) {
+  const el = $<HTMLInputElement>(id);
+  el.addEventListener("input", () => {
+    const n = amountOf(el);
+    if (n !== undefined) v.set(n);
+    render();
+  });
+}
 for (const id of BILL_RELIEF) {
   const el = $<HTMLInputElement>(`relief-applied-${id}`);
   el.addEventListener("input", () => {
@@ -2118,6 +2171,7 @@ homeSel.addEventListener("change", () => {
   propertyReliefApplied = {};
   schoolTax = null;
   bcNorthernRural = false;
+  for (const v of Object.values(RELIEF_NUMBERS)) v.set(null);
   if (dest === home) dest = home === "AB" ? "BC" : "AB";
   fillSelects();
   render();

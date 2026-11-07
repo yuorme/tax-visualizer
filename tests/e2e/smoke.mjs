@@ -22,7 +22,7 @@ import { checkLedgerOrder } from "./ledger-order.mjs";
 import { checkManitobaFamilyLedger } from "./mb-family-benefit.mjs";
 import { ALLOWED_HOSTS, openPage, settle } from "./page.mjs";
 import { PORTFOLIO_RESPONSIVE_STEPS, PORTFOLIO_STEPS } from "./portfolio.mjs";
-import { checkPropertyRelief } from "./property-relief.mjs";
+import { checkOntarioQuebecRelief, checkPropertyRelief } from "./property-relief.mjs";
 import { PUBLIC_PENSION_RESPONSIVE_STEPS, PUBLIC_PENSION_STEPS } from "./public-pensions.mjs";
 import { checkQuebecHealthFund } from "./qc-health-fund.mjs";
 import { checkQuebecSpouseSavings } from "./qc-line-431.mjs";
@@ -1041,6 +1041,10 @@ for (const width of [1000, 430, 375]) {
       colorScheme,
       steps: [
         ["Property relief: tooltips, bill basis, school tax, ledger statuses and saved state", checkPropertyRelief],
+        [
+          "Property relief for Ontario seniors, Toronto and Quebec: tooltips, inputs and saved state",
+          checkOntarioQuebecRelief,
+        ],
       ],
     });
     check(`${width}px ${colorScheme}, property relief`, width, propertyRelief);
