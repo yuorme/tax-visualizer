@@ -383,6 +383,35 @@ const PROPERTY_STEPS = [
       return problems;
     },
   ],
+  [
+    // #227 adds a school-tax input; until then a Manitoba bill or rate override keeps crediting the whole bill
+    // (min(1,600, bill)), as it did before the school-tax programs, instead of silently losing the credit.
+    "Manitoba bill or rate override keeps the homeowners credit on the whole bill",
+    async p => {
+      const problems = [];
+      await openTab(p, "home");
+      await p.selectOption("#tax-year", "2026"); // an earlier step left the page on 2025
+      await p.selectOption("#home", "MB");
+      await type(p, "#pr-rate", "");
+      await type(p, "#property-tax-bill", "");
+      await type(p, "#hv", "300000");
+      const credit = async () =>
+        (
+          await p.$$eval("#cred-list tr", rows =>
+            rows.map(r => [r.cells[0].textContent.trim(), r.cells[1]?.textContent.trim()]),
+          )
+        ).find(([name]) => name === "Homeowners affordability tax credit")?.[1];
+      // Default-city bill: school tax 300,000 x 0.45 x 15.994 / 1,000 = $2,159, over the $1,600 maximum.
+      if ((await credit()) !== "$1,600") problems.push(`default bill credit is ${await credit()}, expected $1,600`);
+      await type(p, "#property-tax-bill", "800");
+      if ((await credit()) !== "$800") problems.push(`$800 bill credit is ${await credit()}, expected $800`);
+      await type(p, "#property-tax-bill", "");
+      await type(p, "#hv", "50000");
+      await type(p, "#pr-rate", "1");
+      if ((await credit()) !== "$500") problems.push(`1% rate override credit is ${await credit()}, expected $500`);
+      return problems;
+    },
+  ],
 ];
 
 // Unit toggles never rewrite canonical driving amounts, even when the displayed conversion is rounded.
@@ -1099,6 +1128,41 @@ for (const width of [1000, 430, 375]) {
         assert.deepEqual(qc, ["col-QC", `29.3${suffix}`, `42.1${suffix}`]);
         qc[1] = `29.4${suffix}`;
       }
+    }
+    if (name === "home value, taxable spending, sort") {
+      // #223: BC's ordinary Home Owner Grant (2026). A $750,000 home at 0.30% is $2,250 of tax, so the grant is
+      // min(570, 2,250 − 350) = 570. Net tax $30,191 − $570 = $29,621 on $143,000 income: 21.1% → 20.7%, and Quebec's
+      // $42,006 (29.4%) is $12,385 / 8.7 points higher. Guard every obsolete value; every other cell compares exactly.
+      const suffix = width < PHONE ? "" : "%";
+      const bc = t.cols.find(col => col[0] === "col-BC");
+      assert.deepEqual(bc, ["col-BC", `21.1${suffix}`, `36.8${suffix}`]);
+      bc[1] = `20.7${suffix}`;
+      const grant = [
+        ["cost your household $11,815 more", "cost your household $12,385 more"],
+        [
+          "Net tax is 29.4% of income in Quebec vs 21.1% in British Columbia (+8.3 points)",
+          "Net tax is 29.4% of income in Quebec vs 20.7% in British Columbia (+8.7 points)",
+        ],
+        [
+          "Household net tax\t$30,191\t$42,006\t+$11,815\nNet rate\t21.1%\t29.4%\t+8.3 pts",
+          "Refundable credits\t−$570\t$0\t+$570\nHousehold net tax\t$29,621\t$42,006\t+$12,385\nNet rate\t20.7%\t29.4%\t+8.7 pts",
+        ],
+        [
+          "Left after all of this\t$112,809\t$100,994\t−$11,815",
+          "Left after all of this\t$113,379\t$100,994\t−$12,385",
+        ],
+      ];
+      for (const [before, after] of grant) {
+        assert.equal(t.detail.split(before).length, 2, `legacy BC grant value: ${before}`);
+        t.detail = t.detail.replace(before, after);
+      }
+      assert.deepEqual(t.credits, [["No refundable credits in British Columbia at this income", "$0"]]);
+      t.credits = [
+        ["B.C. home owner grant", "$570"],
+        ["British Columbia total", "$570"],
+      ];
+      assert.equal(t.sums[1], "none at this income in British Columbia");
+      t.sums[1] = "$570 a year in British Columbia";
     }
     for (const key of Object.keys(s))
       if (JSON.stringify(s[key]) !== JSON.stringify(t[key]))

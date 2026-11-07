@@ -33,7 +33,35 @@ credits:
   - name: B.C. renter's tax credit
     program: bc-renters-tax-credit
     params: {max: 400, rate: 0.02, threshold: 66189}
+# Property-tax relief (#22, #223), 2026 only. Derivations and limits: docs/verification/22-property-tax-relief.md.
+propertyRelief:
+  - name: B.C. home owner grant
+    program: bc-home-owner-grant
+    scope: provincial
+    estimated: true   # the entered home value stands in for the assessed value; any household member 65+ selects the senior schedule
+    params:
+      seniorAge: 65
+      standard: {ordinary: 570, senior: 845}          # Schedules 1 and 2: Metro Vancouver, Capital and Fraser Valley regions
+      northernRural: {ordinary: 770, senior: 1045}    # Schedules 3 and 4
+      minimumRemaining: {ordinary: 350, senior: 100}  # the schedule's "property taxes minus" amount below the full grant
+      valueThreshold: 2075000                         # 2026 threshold, B.C. Reg. 100/2002 s.22 and the 2026 news release
+      reductionPerThousand: 5                         # Act s.2(3), applied after the schedule
+  - name: B.C. low-income grant supplement
+    program: bc-low-income-grant-supplement
+    scope: provincial
+    estimated: true   # current-year net income stands in for the previous year's (#21 decision); child-care and disability deductions omitted
+    params:
+      seniorAge: 65
+      fullIncomeLimit: 30000   # B.C. Reg. 100/2002 s.16: adjusted net income up to this restores the whole reduction
+      halfIncomeLimit: 32000   # s.17: over the first limit and up to this restores half
+      halfShare: 0.5
+      minimumPayable: 25       # s.18
+      deductions: {partner: 3000, perSenior: 3000, perChild: 3000}   # s.11(2)-(3), before the child-care reduction
 sources:
+  - {label: "B.C. Home Owner Grant Act, s.2 and Schedules 1-4", url: "https://www.bclaws.gov.bc.ca/civix/document/id/complete/statreg/96194_01"}
+  - {label: "B.C. Home Owner Grant Regulation, ss.11 and 16-18 (B.C. Reg. 100/2002)", url: "https://www.bclaws.gov.bc.ca/civix/document/id/complete/statreg/100_2002"}
+  - {label: "B.C. Government news release: Home Owner Grant threshold, 2026 (amounts unchanged)", url: "https://news.gov.bc.ca/releases/2025FIN0049-001293"}
+  - {label: "Province of B.C., Low income grant supplement for seniors", url: "https://www2.gov.bc.ca/gov/content/taxes/property-taxes/annual-property-tax/home-owner-grant/senior/low-income"}
   - {label: "Social assistance payments – Personal income tax", url: "https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/tax-return/completing-a-tax-return/personal-income/line-145-social-assistance-payments.html"}
   - label: Senior’s Supplement
     url: https://www2.gov.bc.ca/gov/content/governments/policies-for-government/bcea-policy-and-procedure-manual/supports-for-seniors/seniors-supplement

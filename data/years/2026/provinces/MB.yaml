@@ -35,7 +35,34 @@ credits:
       homeownerMax: 1600   # not indexed: fixed 2026 maximum; Budget 2026's $1,700 starts in tax year 2027
       renter: 625
     estimated: true   # renters credit taken at its maximum
+    # Superseded for 2026 by propertyRelief below: the engine skips this entry when the school-tax programs are declared,
+    # so the two never both apply. It stays only for the page's prose until #227.
+# Property-tax relief (#22, #223), 2026 only. Derivations and limits: docs/verification/22-property-tax-relief.md.
+# Order matters: the rebate reads the homeowners credit line before it.
+propertyRelief:
+  - name: Homeowners affordability tax credit
+    program: mb-homeowners-school-tax-credit
+    scope: provincial
+    estimated: true   # a default-city bill's school tax is estimated from the reference division's mills and the home value
+    params:
+      max: 1600   # fixed 2026 maximum; Budget 2026's $1,700 starts in tax year 2027
+      # Winnipeg School Division No. 1: school tax = assessed value x portion x mills / 1,000. Residential provincial ESL is 0.
+      reference: {assessmentPortion: 0.45, schoolMills: 15.994}
+  - name: Seniors school tax rebate
+    program: mb-senior-school-tax-rebate
+    scope: provincial
+    estimated: true   # on a default-city bill it reads the estimated school tax
+    params: {seniorAge: 65, max: 235, rate: 0.01, threshold: 40000}   # MB479 lines 38-44; nil at family income 63,500
+  - name: Renters affordability tax credit
+    program: mb-renters-affordability-senior
+    scope: provincial
+    params: {seniorAge: 65, ordinary: 625, seniorMax: 982.14, topUpMax: 357.14, rate: 0.008929}   # S.M. 2025 c.48 ss.21, 52(7)
 sources:
+  - {label: "City of Winnipeg, 2026 combined mill rates by school division (Winnipeg SD No. 1: 15.994)", url: "https://assessment.winnipeg.ca/Asmttax/pdfs/rates/CombinedMillRates.pdf"}
+  - {label: "City of Winnipeg, residential assessment portion percentage rates (45%)", url: "https://assessment.winnipeg.ca/Asmttax/pdfs/rates/CurrentAndHistoricalPortionPercentageRates.pdf"}
+  - {label: "The Income Tax Act (Manitoba), ss.5.3-5.6.1", url: "https://web2.gov.mb.ca/laws/statutes/archive/i010(2025-12-31).php?df=2025-11-06"}
+  - {label: "The Budget Implementation and Tax Statutes Amendment Act, 2025, S.M. 2025, c. 48, ss.21 and 52(7)", url: "https://web2.gov.mb.ca/laws/statutes/2025/c04825.php?lang=en"}
+  - {label: "Manitoba Budget 2026 information bulletin 126", url: "https://www.gov.mb.ca/finance/taxation/pubs/bulletins/2026budget.pdf"}
   - {label: "Manitoba M.R. 64/90, quarterly junior benefits and application-quarter commencement", url: "https://web2.gov.mb.ca/laws/regs/current/064-90.php?lang=en"}
   - {label: "Guide T5007 – Return of Benefits", url: "https://www.canada.ca/en/revenue-agency/services/forms-publications/publications/t4115/guide-t5007-return-benefits.html"}
   - {label: "Social assistance payments – Personal income tax", url: "https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/tax-return/completing-a-tax-return/personal-income/line-145-social-assistance-payments.html"}

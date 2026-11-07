@@ -32,6 +32,7 @@ const fixture: {
     bills: Record<string, number>;
     rates?: Record<string, number>;
     homeValue?: number;
+    schoolTax?: number; // Manitoba school tax (#223): the credit is capped by it, not by the whole bill
     income?: number;
     property: number;
     credit?: number;
@@ -44,6 +45,7 @@ for (const c of fixture.cases)
     const hh = household();
     hh.propertyTaxBills = c.bills;
     hh.propertyRates = c.rates;
+    if (c.schoolTax !== undefined) hh.propertyReliefFacts = { [c.province]: { schoolTax: c.schoolTax } };
     hh.homeValue = c.homeValue ?? hh.homeValue;
     hh.people[0].oth = c.income ?? hh.people[0].oth;
     const p = province(c.province);

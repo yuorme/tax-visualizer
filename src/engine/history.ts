@@ -56,6 +56,17 @@ export function scaleHousehold(input: Household, factor: number): Household {
           ),
         }
       : {}),
+    // The school tax is part of the bill's dollars too.
+    ...(input.propertyReliefFacts
+      ? {
+          propertyReliefFacts: Object.fromEntries(
+            Object.entries(input.propertyReliefFacts).map(([code, facts]) => [
+              code,
+              facts && { ...facts, ...(facts.schoolTax === undefined ? {} : { schoolTax: facts.schoolTax * factor }) },
+            ]),
+          ),
+        }
+      : {}),
     rent: input.rent * factor,
     monthlySpending: input.monthlySpending * factor,
     childcare: input.childcare && {

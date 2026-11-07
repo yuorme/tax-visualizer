@@ -794,6 +794,45 @@ const reliefProgram = <Id extends string, P extends z.ZodTypeAny>(id: Id, params
   program(id, params).extend({ scope: propertyReliefScope });
 const propertyReliefProgram = z.discriminatedUnion("program", [
   reliefProgram("property-relief-not-modelled", z.object({ reason: z.string().min(1) })),
+  // BC: the grant for the ordinary or senior schedule by region, then the assessed-value reduction. One program for both
+  // schedules, so a bill's stated grant is floored against one total (see property-relief.ts).
+  reliefProgram(
+    "bc-home-owner-grant",
+    z.object({
+      seniorAge: z.number().int(),
+      standard: z.object({ ordinary: amount, senior: amount }), // Metro Vancouver, Capital and Fraser Valley regions
+      northernRural: z.object({ ordinary: amount, senior: amount }),
+      minimumRemaining: z.object({ ordinary: amount, senior: amount }), // property tax left after the grant
+      valueThreshold: amount,
+      reductionPerThousand: amount,
+    }),
+  ),
+  // BC: restores the senior schedule's assessed-value reduction, in full or in half by adjusted income.
+  reliefProgram(
+    "bc-low-income-grant-supplement",
+    z.object({
+      seniorAge: z.number().int(),
+      fullIncomeLimit: amount,
+      halfIncomeLimit: amount,
+      halfShare: rate,
+      minimumPayable: amount,
+      deductions: z.object({ partner: amount, perSenior: amount, perChild: amount }),
+    }),
+  ),
+  // MB: the homeowners credit on gross eligible school tax. `reference` estimates a default-city bill's school tax.
+  reliefProgram(
+    "mb-homeowners-school-tax-credit",
+    z.object({ max: amount, reference: z.object({ assessmentPortion: rate, schoolMills: amount }) }),
+  ),
+  reliefProgram(
+    "mb-senior-school-tax-rebate",
+    z.object({ seniorAge: z.number().int(), max: amount, rate, threshold: amount }),
+  ),
+  // MB: the renters credit for everyone, the senior formula replacing the ordinary amount at 65.
+  reliefProgram(
+    "mb-renters-affordability-senior",
+    z.object({ seniorAge: z.number().int(), ordinary: amount, seniorMax: amount, topUpMax: amount, rate }),
+  ),
 ]);
 const propertyReliefPrograms = z
   .array(propertyReliefProgram)

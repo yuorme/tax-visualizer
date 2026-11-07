@@ -9,9 +9,11 @@
 //
 // One bill line, one id. A household states how much of a line its bill reflects, and that amount is floored against
 // that program's own entitlement. If an ordinary grant and its senior replacement were two ids, an amount stated under
-// one could shift to the other and be credited again. So a grant with ordinary, senior and income-tested amounts is one
-// program whose handler computes the total (BC: `bc-home-owner-grant` alone), and only separate bill lines (a grant and
-// a municipal rebate) are separate ids.
+// one could shift to the other and be credited again. So a grant with ordinary and senior amounts is one program whose
+// handler computes the total (BC: `bc-home-owner-grant`), and only separate bill lines (a grant and a municipal rebate)
+// are separate ids. The one exception is an amount that is never on a bill: BC's low-income supplement is paid by
+// cheque on its own application, so it is its own id, must state 0 reflected, and is reduced by any grant the bill
+// reflects beyond the model's entitlement, so the two floors cannot add up to more than the schedule.
 //
 // The gross levy also feeds the existing credits (Ontario's property credit, Manitoba's school-tax credits), which
 // household.ts computes from it, so those credits do not change with how the same levy was entered either.
@@ -26,7 +28,7 @@
 // states and the credit entry are all done here; a handler must not repeat them.
 
 import type { Province } from "../data/schema.ts";
-import type { Household, Person } from "./types.ts";
+import type { Household, Person, PropertyReliefFacts } from "./types.ts";
 
 type SchemaRule = NonNullable<Province["propertyRelief"]>[number];
 
@@ -71,11 +73,16 @@ export interface PropertyReliefInput {
   /** Amount of each existing credit program (the province's `credits` entries, by program id) already counted for this
    *  household, so a replacement or overlapping relief can net it out. Zero when the credit is absent. */
   existingCredits: Readonly<Record<string, number>>;
+  facts?: PropertyReliefFacts; // the household's province-specific facts (an MB school tax, a BC region)
 }
 
 /** What a handler sees: the household, the bill facts, the gross levy, the existing credits already counted and the
  *  relief lines already evaluated (the rules' data order). */
-export interface ReliefContext extends Omit<PropertyReliefInput, "bill"> {
+export interface ReliefContext extends Omit<PropertyReliefInput, "bill" | "facts"> {
+  facts: PropertyReliefFacts;
+  basis: BillBasis;
+  reflected: number; // this program's amount the bill already reflects; zero on a gross bill
+  applied: Readonly<Record<string, number>>; // every program's reflected amount the household stated; empty on a gross bill
   owner: boolean; // owns a home, or supplied an owner bill even with a zero home value
   renter: boolean;
   billAmount: number; // the levy as entered, before adding what it reflects
@@ -128,7 +135,132 @@ const reflectedOf = (applied: Readonly<Record<string, number>>, id: string): num
 type BuiltIn = {
   [K in Exclude<SchemaRule["program"], typeof NOT_MODELLED>]: ReliefHandler<Extract<SchemaRule, { program: K }>>;
 };
-const BUILT_IN: BuiltIn = {};
+
+const incomplete = (reason: string): ReliefOutcome => ({ status: "incomplete", reason });
+const noRelief: ReliefOutcome = { status: "modelled", entitled: 0 };
+const isSenior = (x: Person, age: number) => (x.age ?? 0) >= age; // age is whole years on December 31
+/** Each person's federal net income floored at zero, then summed: BC's adjusted net income (regulation s.11) before its
+ *  deductions and Manitoba's family income (MB479 line 6). The app has only the current year's income, so it stands in
+ *  for BC's previous year's (approved on #21). Neither UCCB/RDSP adjustments nor BC's disability deduction is modelled. */
+const flooredIncome = (ctx: ReliefContext) => ctx.federalNets.reduce((sum, n) => sum + Math.max(0, n), 0);
+const earlierLine = (ctx: ReliefContext, program: string) => ctx.earlier.find(l => l.program === program);
+
+const BUILT_IN: BuiltIn = {
+  // BC Home Owner Grant Act s.2 and Schedules 1-4: the schedule by property tax first, then $5 per $1,000 of assessed
+  // value over the threshold. Any household member aged 65 selects the senior schedule. The entered home value stands
+  // in for the assessed value (an estimate); with no home value the reduction is unknown, never assumed to be nil.
+  "bc-home-owner-grant": (rule, ctx) => {
+    if (!ctx.owner) return noRelief;
+    const q = rule.params;
+    // A non-zero amount stated under the supplement id (never on a notice) leaves it unclear which grant the bill
+    // reflects, so neither line is computed.
+    if ((ctx.applied["bc-low-income-grant-supplement"] ?? 0) > 0)
+      return incomplete("an amount is stated for the supplement, which is never on a tax notice; it must be 0");
+    if (!(ctx.homeValue > 0))
+      return incomplete(
+        "the grant's assessed-value reduction needs the home's assessed value, and no home value is given",
+      );
+    const senior = ctx.people.some(x => isSenior(x, q.seniorAge));
+    const key = senior ? "senior" : "ordinary";
+    const schedule = Math.min(
+      q[ctx.facts.bcNorthernRural ? "northernRural" : "standard"][key],
+      Math.max(0, ctx.grossLevy - q.minimumRemaining[key]),
+    );
+    const reduction = Math.min(
+      schedule,
+      (q.reductionPerThousand * Math.max(0, ctx.homeValue - q.valueThreshold)) / 1000,
+    );
+    return {
+      status: "modelled",
+      entitled: schedule - reduction,
+      // The supplement exists only for the senior schedules (Act s.2(8)), so an ordinary reduction is not offered to it.
+      eligible: { schedule, reduction, seniorReduction: senior ? reduction : 0, assessedValue: ctx.homeValue },
+    };
+  },
+  // Regulation ss.11, 16-18: restores the senior schedule's actual reduction in full at adjusted income up to the
+  // first limit, in half up to the second, and pays nothing under $25. Adjusted income is the floored net incomes less
+  // $3,000 for a partner, each person 65 or over and each child; child-care and disability deductions are not modelled.
+  "bc-low-income-grant-supplement": (rule, ctx) => {
+    const q = rule.params;
+    // Paid by cheque on a separate application, never on a tax notice: a bill cannot reflect any of it, so a stated
+    // amount is a mistake (it would shift the grant's amount across the two ids and be credited again).
+    if (ctx.reflected > 0) return incomplete("the supplement is never on a tax notice; its reflected amount must be 0");
+    const grant = earlierLine(ctx, "bc-home-owner-grant");
+    if (!grant) return incomplete("the supplement needs the home owner grant line before it");
+    if (grant.status !== "modelled")
+      return incomplete(`the grant reduction is unknown: ${grant.reason ?? "the home owner grant is not modelled"}`);
+    const reduction = grant.eligible.seniorReduction ?? 0;
+    const seniors = ctx.people.filter(x => isSenior(x, q.seniorAge)).length;
+    const d = q.deductions;
+    const adjusted =
+      flooredIncome(ctx) - ((ctx.couple ? d.partner : 0) + seniors * d.perSenior + ctx.kids * d.perChild);
+    const share = adjusted <= q.fullIncomeLimit ? 1 : adjusted <= q.halfIncomeLimit ? q.halfShare : 0;
+    const amount = reduction * share;
+    // A bill that reflects more grant than the model entitles (the entered value only stands in for the assessed
+    // value) has already taken part of the reduction back: the grant and the supplement together never exceed the
+    // schedule amount.
+    const overReflected = Math.max(0, (grant.applied ?? 0) - (grant.entitled ?? 0));
+    return {
+      status: "modelled",
+      entitled: Math.max(0, (amount < q.minimumPayable ? 0 : amount) - overReflected),
+      eligible: { reduction, adjustedIncome: adjusted },
+    };
+  },
+  // Income Tax Act (Manitoba) s.5.3-5.6: the credit is capped by gross eligible SCHOOL tax, not the whole bill. A
+  // household states the school tax (net of the advance on a net bill, which is restored here). With no figure only
+  // the default-city bill has an estimate (the reference division's school mills on the home value); any other bill
+  // is incomplete, because a school share of a custom total is not knowable.
+  "mb-homeowners-school-tax-credit": (rule, ctx) => {
+    if (!ctx.owner) return noRelief;
+    const q = rule.params;
+    const stated = ctx.facts.schoolTax;
+    let school: number;
+    if (typeof stated === "number" && Number.isFinite(stated) && stated >= 0)
+      school = stated + (ctx.basis === "net" ? ctx.reflected : 0);
+    else if (ctx.defaultCity)
+      school = Math.min(
+        ctx.grossLevy,
+        (ctx.homeValue * q.reference.assessmentPortion * q.reference.schoolMills) / 1000,
+      );
+    // Interim, removed by #227 (which adds a school-tax input): the page sets this for a bill or rate override, so it
+    // keeps the credit it gave before the school-tax programs, on the whole bill. No school tax is reported, so the
+    // senior rebate stays incomplete, as the page showed no rebate before.
+    else if (ctx.facts.creditOnWholeBill) return { status: "modelled", entitled: Math.min(q.max, ctx.grossLevy) };
+    else return incomplete("the school tax on the bill is not given, and a bill's school share is not estimated");
+    if (school > ctx.grossLevy + 0.005) return incomplete("the school tax given is more than the whole property bill");
+    return { status: "modelled", entitled: Math.min(q.max, school), eligible: { schoolTax: school } };
+  },
+  // MB479 lines 38-44: owner or spouse 65 at year end; the school tax left after ALL homeowners credit (the advance
+  // and the claim) less 1% of family income over the threshold, at most the maximum.
+  "mb-senior-school-tax-rebate": (rule, ctx) => {
+    const q = rule.params;
+    if (!ctx.owner || !ctx.people.some(x => isSenior(x, q.seniorAge))) return noRelief;
+    const credit = earlierLine(ctx, "mb-homeowners-school-tax-credit");
+    const school = credit?.eligible.schoolTax;
+    if (credit?.status !== "modelled" || credit.entitled === null || school === undefined || school === null)
+      return incomplete(
+        `the school tax left after the homeowners credit is unknown: ${credit?.reason ?? "no credit line"}`,
+      );
+    const remaining = Math.max(0, school - credit.entitled);
+    const income = flooredIncome(ctx);
+    return {
+      status: "modelled",
+      entitled: Math.max(0, Math.min(q.max, remaining) - q.rate * Math.max(0, income - q.threshold)),
+      eligible: { remainingSchoolTax: remaining, familyIncome: income },
+    };
+  },
+  // Income Tax Act (Manitoba) s.5.6.1: a full year's annual amounts, capped by the rent paid. The senior formula
+  // replaces the ordinary amount and its reduction starts at zero income. Rent is the household's annual rent.
+  "mb-renters-affordability-senior": (rule, ctx) => {
+    if (!ctx.renter) return noRelief;
+    const q = rule.params;
+    const income = flooredIncome(ctx);
+    const credit = ctx.people.some(x => isSenior(x, q.seniorAge))
+      ? q.seniorMax - Math.min(q.topUpMax, q.rate * income)
+      : q.ordinary;
+    return { status: "modelled", entitled: Math.min(ctx.rent, credit), eligible: { familyIncome: income } };
+  },
+};
 
 // biome-ignore lint/suspicious/noExplicitAny: handlers are keyed by id, so each is typed for its own rule shape
 const registry = new Map<string, ReliefHandler<any>>(Object.entries(BUILT_IN));
@@ -248,6 +380,10 @@ export function propertyReliefOf(rules: readonly ReliefRule[], input: PropertyRe
       homeValue: input.homeValue,
       rent: input.rent,
       existingCredits: input.existingCredits,
+      facts: input.facts ?? {},
+      basis: bill.basis,
+      reflected: reflected ?? 0,
+      applied: bill.applied,
       owner,
       renter: !owner && input.rent > 0,
       billAmount: bill.amount,
