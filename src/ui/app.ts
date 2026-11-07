@@ -178,6 +178,10 @@ let historyMode: HistoryMode = "real";
 let homeValue = 0,
   propOverride: number | null = null,
   propertyTaxBill: number | null = null,
+  propertyBillBasis: "gross" | "net" = "gross", // old saves have none: gross, the bill's original meaning (#227)
+  propertyReliefApplied: Record<string, number> = {}, // net bills: relief on the bill, by program id (home province)
+  schoolTax: number | null = null, // Manitoba: school tax on the bill, or null to estimate it where possible
+  bcNorthernRural = false,
   rent = 0,
   tenure: Tenure = "own",
   useCredits = true,
@@ -200,6 +204,31 @@ const ownedValue = () => (tenure === "own" ? homeValue : 0);
 const rentPaid = () => (tenure === "rent" ? rent : 0);
 const hasPropertyBill = () => tenure === "own" && propertyTaxBill !== null;
 const byCode = (c: string) => P.find(p => p.c === c);
+/** Relief programs the home province's data declares for this year (a "not modelled" declaration is not a program). */
+const reliefPrograms = () =>
+  (byCode(home)?.d.propertyRelief ?? []).filter(r => r.program !== "property-relief-not-modelled");
+const hasProgram = (id: string) => reliefPrograms().some(r => r.program === id);
+/** Programs whose relief appears on a tax bill, so a net bill states an amount for them. Every other program is 0. */
+const BILL_RELIEF = ["bc-home-owner-grant", "mb-homeowners-school-tax-credit"];
+const netBill = () => hasPropertyBill() && propertyBillBasis === "net" && reliefPrograms().length > 0;
+/** Amount already on a net bill for each program; a bill line left blank is omitted, so its relief is incomplete. */
+const appliedAmounts = () =>
+  Object.fromEntries(
+    reliefPrograms().flatMap(r =>
+      BILL_RELIEF.includes(r.program)
+        ? r.program in propertyReliefApplied
+          ? [[r.program, propertyReliefApplied[r.program]]]
+          : []
+        : [[r.program, 0]],
+    ),
+  );
+const reliefFacts = () => {
+  const facts = {
+    ...(hasProgram("bc-home-owner-grant") ? { bcNorthernRural } : {}),
+    ...(hasProgram("mb-homeowners-school-tax-credit") && schoolTax !== null ? { schoolTax } : {}),
+  };
+  return Object.keys(facts).length ? { [home]: facts } : undefined;
+};
 /** The province with this code; home and dest always hold one. */
 const prov = (c: string) => must(byCode(c), `province ${c}`);
 const defaultKm = (c: string) => prov(c).d.driving?.distance ?? 0;
@@ -232,12 +261,9 @@ const inputs = (withCare = true): Household => ({
   monthlySpending: effSpend(),
   propertyRates: propOverride != null ? { [home]: propOverride } : undefined,
   propertyTaxBills: tenure === "own" && propertyTaxBill !== null ? { [home]: propertyTaxBill } : undefined,
-  // Interim, removed by #227 (a school-tax input): a bill or rate override has no school share, so Manitoba keeps
-  // crediting the whole bill as it did before the school-tax programs. Other provinces ignore the fact.
-  propertyReliefFacts:
-    propOverride != null || (tenure === "own" && propertyTaxBill !== null)
-      ? { [home]: { creditOnWholeBill: true } }
-      : undefined,
+  propertyBillBasis: netBill() ? { [home]: "net" } : undefined,
+  propertyReliefApplied: netBill() ? { [home]: appliedAmounts() } : undefined,
+  propertyReliefFacts: reliefFacts(),
   driving: DRIVING ? { km: kmNow(), lPer100km: effNow() } : undefined,
   childcare: withCare ? care.claimInput() : undefined,
 });
@@ -305,6 +331,12 @@ try {
     if (isNum(s.propOverride)) propOverride = s.propOverride;
     if (isNum(s.propertyTaxBill) && Number.isFinite(s.propertyTaxBill) && s.propertyTaxBill >= 0)
       propertyTaxBill = s.propertyTaxBill;
+    if (s.propertyBillBasis === "net") propertyBillBasis = "net";
+    if (s.propertyReliefApplied && typeof s.propertyReliefApplied === "object")
+      for (const [id, v] of Object.entries(s.propertyReliefApplied).slice(0, 8))
+        if (BILL_RELIEF.includes(id) && isNum(v) && Number.isFinite(v) && v >= 0) propertyReliefApplied[id] = v;
+    if (isNum(s.schoolTax) && Number.isFinite(s.schoolTax) && s.schoolTax >= 0) schoolTax = s.schoolTax;
+    if (s.bcNorthernRural === true) bcNorthernRural = true;
     if (isNum(s.rent) && s.rent >= 0) rent = s.rent;
     if (isNum(s.km) && Number.isFinite(s.km) && s.km >= 0) kmOverride = s.km;
     if (isNum(s.eff) && Number.isFinite(s.eff) && s.eff >= 0) effOverride = s.eff;
@@ -355,6 +387,10 @@ function scenarioState() {
     homeValue,
     propOverride,
     propertyTaxBill,
+    propertyBillBasis,
+    propertyReliefApplied,
+    schoolTax,
+    bcNorthernRural,
     rent,
     tenure,
     useCredits,
@@ -630,6 +666,46 @@ function segTip(p: ProvView, r: Result, c: Seg) {
 }
 
 const narrow = matchMedia("(max-width: 520px)"); // phone: compact chart labels
+const RELIEF_STATE = {
+  modelled: "",
+  incomplete: "Incomplete",
+  "not-modelled": "Not modelled",
+  "city-bill-required": "Default city bill only",
+} as const;
+/** Shows the property-relief controls the home province's data for this year needs. Any year of data having relief
+ *  shows the section, so a year without it says why (the year tooltip) rather than silently dropping the controls. */
+function renderRelief() {
+  const anyYear = Object.values(years).some(yr =>
+    yr.provinces.find(p => p.code === home)?.propertyRelief?.some(r => r.program !== "property-relief-not-modelled"),
+  );
+  const programs = reliefPrograms().length > 0;
+  const bill = hasPropertyBill();
+  const net = netBill();
+  const show = (id: string, on: boolean) => {
+    $(id).hidden = !on;
+  };
+  show("relief", anyYear);
+  show("relief-tips", programs);
+  show("relief-basis-field", programs && bill);
+  show("relief-bc-field", hasProgram("bc-home-owner-grant"));
+  show("relief-school-field", hasProgram("mb-homeowners-school-tax-credit"));
+  for (const id of BILL_RELIEF) show(`relief-applied-${id}-field`, net && hasProgram(id));
+  $("relief-tip-years").dataset.tip = programs
+    ? "Property-tax relief (B.C. and Manitoba programs) is modelled for 2026 only; other tax years show none, so their results exclude it."
+    : `Property-tax relief is modelled for 2026 only. ${YEAR} results do not include the B.C. and Manitoba programs, and switching to 2026 adds them.`;
+  const set = (id: string, value: string) => {
+    const el = $<HTMLInputElement>(id);
+    if (document.activeElement !== el) el.value = value;
+  };
+  $<HTMLSelectElement>("property-bill-basis").value = propertyBillBasis;
+  $<HTMLSelectElement>("bc-region").value = bcNorthernRural ? "rural" : "metro";
+  set("school-tax", schoolTax === null ? "" : schoolTax.toLocaleString("en-CA", { maximumFractionDigits: 2 }));
+  for (const id of BILL_RELIEF) {
+    const v = propertyReliefApplied[id];
+    set(`relief-applied-${id}`, v === undefined ? "" : v.toLocaleString("en-CA", { maximumFractionDigits: 2 }));
+  }
+  $("school-tax-label").textContent = net ? "School tax after the advance" : "School tax on your bill";
+}
 function render() {
   setProvinceFlag($<HTMLImageElement>("home-flag"), home);
   setProvinceFlag($<HTMLImageElement>("cmp-home-flag"), home);
@@ -839,12 +915,21 @@ function render() {
     : H.r.refund > 0.5
       ? `${money(H.r.refund)} a year in ${H.p.n}`
       : `none at this income in ${H.p.n}`;
+  // A relief program that cannot be computed shows its status as text, never as $0.
+  const reliefStates = (useCredits ? (H.r.breakdown.propertyRelief?.lines ?? []) : [])
+    .filter(l => l.status !== "modelled")
+    .map(l => [l.name, RELIEF_STATE[l.status]] as const);
+  const stateRows = reliefStates
+    .map(([n, text]) => `<tr class="muted"><td>${n}</td><td class="r state">${text}</td></tr>`)
+    .join("");
   $("cred-list").innerHTML = !useCredits
     ? ""
     : hc.length
       ? hc.map(([n, v]) => `<tr><td>${n}</td><td class="r">${money(v)}</td></tr>`).join("") +
+        stateRows +
         `<tr class="sum"><td>${H.p.n} total</td><td class="r">${money(H.r.refund)}</td></tr>`
-      : `<tr class="muted"><td>No refundable credits in ${H.p.n} at this income${prov(home).d.creditsUseRent && ownedValue() === 0 && rentPaid() === 0 ? " (enter rent for rent-based credits)" : ""}</td><td class="r">$0</td></tr>`;
+      : stateRows ||
+        `<tr class="muted"><td>No refundable credits in ${H.p.n} at this income${prov(home).d.creditsUseRent && ownedValue() === 0 && rentPaid() === 0 ? " (enter rent for rent-based credits)" : ""}</td><td class="r">$0</td></tr>`;
   $<HTMLInputElement>("adults").value = String(adults);
   $("adults-val").textContent = String(adults);
   $<HTMLInputElement>("kids").value = String(kids);
@@ -889,6 +974,7 @@ function render() {
       ? `Your rate (${prov(home).d.propertyTax.city} is ${rateFmt(prov(home).d.propertyTax.rate)})`
       : `${prov(home).d.propertyTax.city} ${YEAR} rate`;
   $("pr-reset").hidden = propOverride == null;
+  renderRelief();
   for (const b of document.querySelectorAll<HTMLElement>("[data-tenure]"))
     b.setAttribute("aria-pressed", String(b.dataset.tenure === tenure));
   $("own-body").hidden = tenure !== "own";
@@ -1764,6 +1850,37 @@ $("property-tax-bill-reset").addEventListener("click", () => {
   propertyTaxBill = null;
   render();
 });
+// Property-tax relief (#227): bill basis, region, Manitoba school tax and the relief a net bill already reflects.
+/** A typed amount: blank is null (not stated), a negative or non-numeric entry is ignored. */
+const amountOf = (el: HTMLInputElement): number | null | undefined => {
+  const raw = el.value.replace(/[,\s]/g, "");
+  if (raw === "") return null;
+  const v = Number(raw);
+  return Number.isFinite(v) && v >= 0 ? v : undefined;
+};
+$<HTMLSelectElement>("property-bill-basis").addEventListener("change", e => {
+  propertyBillBasis = (e.target as HTMLSelectElement).value === "net" ? "net" : "gross";
+  render();
+});
+$<HTMLSelectElement>("bc-region").addEventListener("change", e => {
+  bcNorthernRural = (e.target as HTMLSelectElement).value === "rural";
+  render();
+});
+const schoolTaxIn = $<HTMLInputElement>("school-tax");
+schoolTaxIn.addEventListener("input", () => {
+  const v = amountOf(schoolTaxIn);
+  if (v !== undefined) schoolTax = v;
+  render();
+});
+for (const id of BILL_RELIEF) {
+  const el = $<HTMLInputElement>(`relief-applied-${id}`);
+  el.addEventListener("input", () => {
+    const v = amountOf(el);
+    if (v === null) delete propertyReliefApplied[id];
+    else if (v !== undefined) propertyReliefApplied[id] = v;
+    render();
+  });
+}
 const hvIn = $<HTMLInputElement>("hv"),
   hvRange = $<HTMLInputElement>("hv-range");
 function syncHome() {
@@ -1997,6 +2114,10 @@ homeSel.addEventListener("change", () => {
   home = homeSel.value;
   propOverride = null;
   propertyTaxBill = null;
+  propertyBillBasis = "gross";
+  propertyReliefApplied = {};
+  schoolTax = null;
+  bcNorthernRural = false;
   if (dest === home) dest = home === "AB" ? "BC" : "AB";
   fillSelects();
   render();

@@ -222,10 +222,6 @@ const BUILT_IN: BuiltIn = {
         ctx.grossLevy,
         (ctx.homeValue * q.reference.assessmentPortion * q.reference.schoolMills) / 1000,
       );
-    // Interim, removed by #227 (which adds a school-tax input): the page sets this for a bill or rate override, so it
-    // keeps the credit it gave before the school-tax programs, on the whole bill. No school tax is reported, so the
-    // senior rebate stays incomplete, as the page showed no rebate before.
-    else if (ctx.facts.creditOnWholeBill) return { status: "modelled", entitled: Math.min(q.max, ctx.grossLevy) };
     else return incomplete("the school tax on the bill is not given, and a bill's school share is not estimated");
     if (school > ctx.grossLevy + 0.005) return incomplete("the school tax given is more than the whole property bill");
     return { status: "modelled", entitled: Math.min(q.max, school), eligible: { schoolTax: school } };

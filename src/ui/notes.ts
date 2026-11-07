@@ -516,21 +516,30 @@ export function footerNotes(y: YearData, page: PageDefaults): string {
     std = cwb.standard;
   const ownCwb = [...Object.keys(cwb.regional).map(prov), quebec].sort(byName).map(short);
   const sk = credit("SK", "sk-low-income-tax-credit");
-  const mb = need(
-    prov("MB").credits?.find(
-      c =>
-        c.program === "mb-affordability-credits" ||
-        c.program === "mb-school-tax-credits" ||
-        c.program === "mb-school-tax-credits-rent-share",
-    ),
-    "Manitoba property credits",
-  );
+  // A year with the school-tax relief programs describes them; earlier years keep the whole-bill credit entries.
+  const mbRelief = prov("MB").propertyRelief ?? [];
+  const mbHomeowners = mbRelief.find(r => r.program === "mb-homeowners-school-tax-credit");
+  const mbRenters = mbRelief.find(r => r.program === "mb-renters-affordability-senior");
+  const mb = mbHomeowners
+    ? undefined
+    : need(
+        prov("MB").credits?.find(
+          c =>
+            c.program === "mb-affordability-credits" ||
+            c.program === "mb-school-tax-credits" ||
+            c.program === "mb-school-tax-credits-rent-share",
+        ),
+        "Manitoba property credits",
+      );
   const mbDescription =
-    mb.program === "mb-school-tax-credits-rent-share" && mb.params.schoolRebateRate === 0
-      ? `Manitoba's education property tax credit (up to ${money(mb.params.educationCreditMax)} of school taxes for owners, or ${rate(mb.params.renterShare)} of rent paid for renters, capped at ${money(mb.params.renterMax)})`
-      : mb.program === "mb-school-tax-credits" || mb.program === "mb-school-tax-credits-rent-share"
-        ? `Manitoba's school tax rebate (${rate(mb.params.schoolRebateRate)} of estimated school taxes), education property tax credit (up to ${money(mb.params.educationCreditMax)} of remaining school taxes) and renters tax credit (up to ${money(mb.params.renterMax)}, ${mb.program === "mb-school-tax-credits-rent-share" ? `${rate(mb.params.renterShare)} of rent paid before applying the cap` : "capped by rent paid"})`
-        : "Manitoba's renters and homeowners affordability credits";
+    mbHomeowners?.program === "mb-homeowners-school-tax-credit" &&
+    mbRenters?.program === "mb-renters-affordability-senior"
+      ? `Manitoba's homeowners affordability credit (up to ${money(mbHomeowners.params.max)} of school taxes), seniors school tax rebate and renters affordability credit (up to ${money(mbRenters.params.ordinary)}, more for seniors)`
+      : mb?.program === "mb-school-tax-credits-rent-share" && mb.params.schoolRebateRate === 0
+        ? `Manitoba's education property tax credit (up to ${money(mb.params.educationCreditMax)} of school taxes for owners, or ${rate(mb.params.renterShare)} of rent paid for renters, capped at ${money(mb.params.renterMax)})`
+        : mb?.program === "mb-school-tax-credits" || mb?.program === "mb-school-tax-credits-rent-share"
+          ? `Manitoba's school tax rebate (${rate(mb.params.schoolRebateRate)} of estimated school taxes), education property tax credit (up to ${money(mb.params.educationCreditMax)} of remaining school taxes) and renters tax credit (up to ${money(mb.params.renterMax)}, ${mb.program === "mb-school-tax-credits-rent-share" ? `${rate(mb.params.renterShare)} of rent paid before applying the cap` : "capped by rent paid"})`
+          : "Manitoba's renters and homeowners affordability credits";
   const cwbEstimate =
     cwb.estimationNote ?? `these ${year} values are CRA's ${lastYearIndexed} until CRA publishes them`;
   // The list below names these programs in prose; a year whose data drops one fails here instead of misreporting it.
@@ -550,10 +559,14 @@ export function footerNotes(y: YearData, page: PageDefaults): string {
   const estimates = [
     sk.estimated &&
       `Saskatchewan's low-income tax credit includes estimated parameters; its modelled reduction rate is ${rate(sk.params.rate)}`,
-    mb.estimated &&
-      (mb.program === "mb-school-tax-credits" || mb.program === "mb-school-tax-credits-rent-share"
-        ? `Manitoba's school taxes are estimated as ${rate(mb.params.schoolTaxShare)} of the property tax bill using the reference city's school-tax share`
-        : `Manitoba's renters credit is taken at its ${money(mb.params.renter)} maximum`),
+    mbHomeowners
+      ? "Manitoba's school tax on a default-city home is estimated from the reference division's mill rate"
+      : mb?.estimated &&
+        (mb.program === "mb-school-tax-credits" || mb.program === "mb-school-tax-credits-rent-share"
+          ? `Manitoba's school taxes are estimated as ${rate(mb.params.schoolTaxShare)} of the property tax bill using the reference city's school-tax share`
+          : mb.program === "mb-affordability-credits"
+            ? `Manitoba's renters credit is taken at its ${money(mb.params.renter)} maximum`
+            : false),
     "Quebec's solidarity credit gives the living-alone amount to any household with one adult",
   ].filter(x => typeof x === "string");
   const credits = [

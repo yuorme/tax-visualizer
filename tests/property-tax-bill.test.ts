@@ -52,9 +52,11 @@ for (const c of fixture.cases)
     const result = compute(y, p, hh);
     assert.equal(result.property, c.property);
     if (c.credit !== undefined) {
-      const name = p.credits?.find(
-        c => c.program === "mb-affordability-credits" || c.program === "ontario-energy-property-tax-credit",
-      )?.name;
+      // 2026 Manitoba's homeowners credit is a property relief line (#227); Ontario's is an ordinary credit entry.
+      const name =
+        c.province === "MB"
+          ? "Homeowners affordability tax credit"
+          : p.credits?.find(c => c.program === "ontario-energy-property-tax-credit")?.name;
       assert.ok(name);
       assert.equal(result.credits.find(([n]) => n === name)?.[1] ?? 0, c.credit);
     }

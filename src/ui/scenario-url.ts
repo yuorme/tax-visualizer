@@ -52,6 +52,11 @@ export function scenarioDefaults(context: ScenarioContext, year = latest(context
     homeValue: 0,
     propOverride: null,
     propertyTaxBill: null,
+    // Property-tax relief (#227). Absent in saves from before: a gross bill with nothing reflected.
+    propertyBillBasis: "gross",
+    propertyReliefApplied: {},
+    schoolTax: null,
+    bcNorthernRural: false,
     rent: 0,
     tenure: "own",
     useCredits: true,
@@ -105,16 +110,24 @@ export function normalizeScenario(value: unknown, context: ScenarioContext): Sta
     view: ["home", "dest"],
     metric: ["pct", "usd"],
     tenure: ["own", "rent"],
+    propertyBillBasis: ["gross", "net"],
     tab: [null, "income", "home", "credits", "driving"],
     drivingUnits: ["metric", "us"],
     home: context.provinces,
     dest: context.provinces,
   };
   for (const [key, values] of Object.entries(enums)) if (values.includes(input[key])) result[key] = input[key];
-  for (const key of ["historyOpen", "spouse", "useBpa", "useCredits"])
+  for (const key of ["historyOpen", "spouse", "useBpa", "useCredits", "bcNorthernRural"])
     if (typeof input[key] === "boolean") result[key] = input[key];
-  for (const key of ["homeValue", "propertyTaxBill", "rent", "spend", "km", "eff"])
+  for (const key of ["homeValue", "propertyTaxBill", "schoolTax", "rent", "spend", "km", "eff"])
     if (finite(input[key])) result[key] = input[key];
+  if (record(input.propertyReliefApplied)) {
+    // Amounts the bill already reflects, by program id: bounded, and only valid amounts survive.
+    const applied: Record<string, number> = {};
+    for (const [id, v] of Object.entries(input.propertyReliefApplied).slice(0, 8))
+      if (/^[a-z0-9-]{1,64}$/.test(id) && finite(v)) applied[id] = v;
+    result.propertyReliefApplied = applied;
+  }
   if (finite(input.propOverride, 0, 0.1)) result.propOverride = input.propOverride;
   if (finite(input.whRate, 0, 1)) result.whRate = input.whRate;
   if (finite(input.spendingAdjustment, -100, 1000000)) result.spendingAdjustment = input.spendingAdjustment;

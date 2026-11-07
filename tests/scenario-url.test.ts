@@ -275,3 +275,36 @@ test("malformed portfolio fields fall back safely without disturbing the other i
   assert.equal(Object.getPrototypeOf(entry), Object.prototype);
   assert.equal(Object.hasOwn(entry, "polluted"), false);
 });
+
+test("property relief inputs round-trip, and a link without them restores a gross bill with nothing reflected", () => {
+  const state = {
+    ...scenarioDefaults(context, 2026),
+    home: "BC",
+    propertyTaxBill: 3155,
+    propertyBillBasis: "net",
+    propertyReliefApplied: { "bc-home-owner-grant": 845, "mb-homeowners-school-tax-credit": 0 },
+    schoolTax: 0,
+    bcNorthernRural: true,
+  };
+  const hash = scenarioHash(state, context);
+  assert.deepEqual(readScenario(hash, context), state);
+  assert.equal(scenarioHash(readScenario(hash, context), context), hash);
+  // Old links never carried the fields: they read as a gross bill, the bill's original meaning.
+  const old = readScenario("#s=1&year=2026&home=%22BC%22&propertyTaxBill=3155", context);
+  assert.equal(old?.propertyBillBasis, "gross");
+  assert.deepEqual(old?.propertyReliefApplied, {});
+  assert.equal(old?.schoolTax, null);
+  assert.equal(old?.bcNorthernRural, false);
+  assert.equal(scenarioHash({ ...scenarioDefaults(context), propertyBillBasis: "gross" }, context), "#s=1&year=2026");
+});
+
+test("damaged property relief fields fall back field by field", () => {
+  const bad = (field: string, value: unknown) =>
+    readScenario(`#s=1&${field}=${encodeURIComponent(JSON.stringify(value))}`, context);
+  assert.equal(bad("propertyBillBasis", "other")?.propertyBillBasis, "gross");
+  assert.equal(bad("schoolTax", -5)?.schoolTax, null);
+  assert.equal(bad("schoolTax", "1")?.schoolTax, null);
+  assert.equal(bad("bcNorthernRural", "yes")?.bcNorthernRural, false);
+  assert.deepEqual(bad("propertyReliefApplied", [1])?.propertyReliefApplied, {});
+  assert.deepEqual(bad("propertyReliefApplied", { "bad id!": 5, ok: -1, fine: 7 })?.propertyReliefApplied, { fine: 7 });
+});

@@ -274,7 +274,14 @@ test("the existing property credits read the gross levy, so every province gives
         ([n]) => n === name,
       )?.[1];
     const ontario = (levy: number) => creditNamed("ON", "Ontario energy and property tax credit", levy);
-    const manitoba = (levy: number) => creditNamed("MB", "Homeowners affordability tax credit", levy);
+    // 2026 Manitoba's credit is a relief line, so its whole-bill predecessor is taken from 2025 data.
+    const y25 = loadYear(2025);
+    const mb25 = y25.provinces.find(p => p.code === "MB");
+    assert.ok(mb25);
+    const manitoba = (levy: number) =>
+      compute(y25, mb25, household({ propertyTaxBills: { MB: levy } })).credits.find(
+        ([n]) => n === "Homeowners affordability tax credit",
+      )?.[1];
     assert.notEqual(ontario(4000), ontario(3700));
     assert.notEqual(manitoba(1600), manitoba(1300));
   }));
