@@ -819,6 +819,60 @@ const propertyReliefProgram = z.discriminatedUnion("program", [
       deductions: z.object({ partner: amount, perSenior: amount, perChild: amount }),
     }),
   ),
+  // ON: the senior homeowners' property tax grant (OSHPTG). Ages are tested at December 31 of the year before the benefit
+  // year (`ageAtPriorYearEnd`); the income thresholds are adjusted family net income, with a hard cutoff above them.
+  reliefProgram(
+    "ontario-senior-homeowners-property-grant",
+    z.object({
+      ageAtPriorYearEnd: z.number().int(),
+      maximum: amount,
+      rate,
+      threshold: z.object({ single: amount, couple: amount }),
+      cutoff: z.object({ single: amount, couple: amount }),
+    }),
+  ),
+  // ON: the senior schedule of the energy and property tax credit, replacing the ordinary credit for a household that
+  // qualifies, net of the overlap with the OSHPTG (the CRA calculation sheet's step 5).
+  reliefProgram(
+    "ontario-energy-property-tax-credit-senior-overlap",
+    z.object({
+      ageAtPriorYearEnd: z.number().int(),
+      rentShare: rate,
+      energyMax: amount,
+      propertyBase: amount,
+      propertyRate: rate,
+      propertyMax: amount,
+      rate,
+      thresholdSingle: amount,
+      thresholdFamily: amount,
+    }),
+  ),
+  // Toronto: cancellation of a low-income senior's property tax increase (Municipal Code ch. 767, art. 5.4, with the
+  // 2026 budget's income limit). Municipal: the default reference-city bill only. `firstTimeIncreaseRate` is the City's
+  // 2026 residential rate increase, used to estimate a first-time claimant's increase from the levy.
+  reliefProgram(
+    "toronto-property-tax-increase-cancellation",
+    z.object({
+      seniorAge: z.number().int(),
+      allowanceAge: z.number().int(), // 60-64 qualifies with an OAS Allowance
+      incomeLimit: amount,
+      assessmentLimit: amount,
+      minimum: amount,
+      firstTimeIncreaseRate: rate,
+    }),
+  ),
+  // QC: the grant for seniors to offset a municipal tax increase (TP-1029.TM-V; Municipal Taxation Act ss.210.7-210.14).
+  // The household states the municipality's potential grant and the preceding roll's final-year awards; the age is tested
+  // at December 31 of the year before the bill year, the family income is Quebec line 275 of the spouses.
+  reliefProgram(
+    "qc-senior-municipal-tax-increase-grant",
+    z.object({
+      ageAtPriorYearEnd: z.number().int(),
+      ownershipYears: z.number().int(), // consecutive years of ownership at that date
+      familyIncomeLimit: amount,
+      newRollMaximum: amount, // the current roll's increment is capped here; preceding-roll awards are added after
+    }),
+  ),
   // MB: the homeowners credit on gross eligible school tax. `reference` estimates a default-city bill's school tax.
   reliefProgram(
     "mb-homeowners-school-tax-credit",

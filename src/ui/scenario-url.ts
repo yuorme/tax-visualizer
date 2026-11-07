@@ -57,6 +57,13 @@ export function scenarioDefaults(context: ScenarioContext, year = latest(context
     propertyReliefApplied: {},
     schoolTax: null,
     bcNorthernRural: false,
+    // Toronto and Quebec relief facts (#224); null is not stated.
+    torontoPriorLevy: null,
+    torontoCarryover: null,
+    qcOwnershipYears: null,
+    qcPotentialGrant: null,
+    qcPrecedingGrant: null,
+    qcOtherClaims: null,
     rent: 0,
     tenure: "own",
     useCredits: true,
@@ -119,7 +126,21 @@ export function normalizeScenario(value: unknown, context: ScenarioContext): Sta
   for (const [key, values] of Object.entries(enums)) if (values.includes(input[key])) result[key] = input[key];
   for (const key of ["historyOpen", "spouse", "useBpa", "useCredits", "bcNorthernRural"])
     if (typeof input[key] === "boolean") result[key] = input[key];
-  for (const key of ["homeValue", "propertyTaxBill", "schoolTax", "rent", "spend", "km", "eff"])
+  for (const key of [
+    "homeValue",
+    "propertyTaxBill",
+    "schoolTax",
+    "torontoPriorLevy",
+    "torontoCarryover",
+    "qcOwnershipYears",
+    "qcPotentialGrant",
+    "qcPrecedingGrant",
+    "qcOtherClaims",
+    "rent",
+    "spend",
+    "km",
+    "eff",
+  ])
     if (finite(input[key])) result[key] = input[key];
   if (record(input.propertyReliefApplied)) {
     // Amounts the bill already reflects, by program id: bounded, and only valid amounts survive.

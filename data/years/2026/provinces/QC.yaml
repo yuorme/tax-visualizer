@@ -49,6 +49,17 @@ credits:
       couple: [0.116, 3600, 19828]
       parent: [0.30, 2400, 12808]
       coupleKids: [0.25, 3600, 19828]
+# Property-tax relief (#22, #224), 2026 only. Derivations and limits: docs/verification/22-property-tax-relief.md.
+propertyRelief:
+  - name: Grant for seniors to offset a municipal tax increase
+    program: qc-senior-municipal-tax-increase-grant
+    scope: provincial   # a provincial grant claimed on line 462 of the return, so a custom bill can receive it
+    estimated: true     # the 2026 grant tests 2025 family income (line 275); this year's stands in for it
+    params:
+      ageAtPriorYearEnd: 65      # 65 or over on December 31, 2025, so 66 on December 31, 2026
+      ownershipYears: 15         # consecutive years of ownership at that date
+      familyIncomeLimit: 64200   # both spouses' line 275 for 2025 (62,900 for the 2025 bill); "or less"
+      newRollMaximum: 500        # cap on the current roll's increment; the preceding roll's awards are added after the cap
 childcareCredit:
   name: Quebec childcare expenses tax credit
   program: quebec-childcare
@@ -61,6 +72,10 @@ childcareCredit:
     annualSevere: 17145
     rates: [[25305, 0.78], [44620, 0.75], [46270, 0.74], [47935, 0.73], [49565, 0.72], [51225, 0.71], [122290, 0.7], [.inf, 0.67]]
 sources:
+  - {label: "Revenu Quebec TP-1029.TM-V 2025-11: Grant for seniors to offset a municipal tax increase (2026 grant, 2025 return)", url: "https://www.revenuquebec.ca/documents/en/formulaires/tp/TP-1029.TM-V(2025-11).pdf"}
+  - {label: "Revenu Quebec, Grant for seniors to offset a municipal tax increase (eligibility)", url: "https://www.revenuquebec.ca/en/citizens/tax-credits/grant-for-seniors-to-offset-a-municipal-tax-increase/"}
+  - {label: "Municipal Taxation Act ss.210.7-210.14, as enacted by the 2017 Act (assessment formula and co-owner claims)", url: "https://www.publicationsduquebec.gouv.qc.ca/fileadmin/gazette/pdf_encrypte/lois_reglements/2017A/102873.pdf"}
+  - {label: "2021 Act, s.13: the $500 cap applies to the current roll's increment before preceding-roll awards", url: "https://www.publicationsduquebec.gouv.qc.ca/fileadmin/gazette/pdf_encrypte/lois_reglements/2021A/105198.pdf"}
   - label: "Revenu Quebec TP-1029.SA-V 2025-10: Senior Assistance Tax Credit"
     url: https://www.revenuquebec.ca/documents/en/formulaires/tp/TP-1029.SA-V%282025-10%29.pdf
   - label: "Revenu Quebec TP-1029.SA-V 2026-10: Senior Assistance Tax Credit"

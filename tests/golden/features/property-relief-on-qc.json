@@ -1,0 +1,1441 @@
+{
+  "note": "Ontario and Quebec property relief, tax year 2026 only (#224). Expected values are hand-calculated from the CRA calculation sheets, the Toronto Municipal Code and budget, and the Revenu Quebec form, as shown in each case's calc; they are not captured from the engine. expect: program id -> [entitlement on the gross levy, relief credited after what the bill reflects], or 'incomplete'. Incomes are other income (oth), which is net income unchanged.",
+  "cases": [
+    {
+      "id": "on-single-35000-tax-4000",
+      "province": "ON",
+      "calc": "OSHPTG min(500,4000)=500; OEPTC E=290, P=min(4000,617+min(400,581))=1017, 1307, income under 36,309; overlap max(0,max(0,1307+500-290)-4000)=0",
+      "hh": {
+        "bill": 4000,
+        "people": [
+          {
+            "oth": 35000,
+            "age": 65
+          }
+        ]
+      },
+      "expect": {
+        "ontario-senior-homeowners-property-grant": [500, 500],
+        "ontario-energy-property-tax-credit-senior-overlap": [1307, 1307]
+      }
+    },
+    {
+      "id": "on-single-40000",
+      "province": "ON",
+      "calc": "OSHPTG 500-0.0333x5,000=333.50; OEPTC 1307-0.02x(40,000-36,309)=1307-73.82=1233.18",
+      "hh": {
+        "bill": 4000,
+        "people": [
+          {
+            "oth": 40000,
+            "age": 65
+          }
+        ]
+      },
+      "expect": {
+        "ontario-senior-homeowners-property-grant": [333.5, 333.5],
+        "ontario-energy-property-tax-credit-senior-overlap": [1233.18, 1233.18]
+      }
+    },
+    {
+      "id": "on-single-49999-just-below-cutoff",
+      "province": "ON",
+      "calc": "OSHPTG 500-0.0333x14,999=500-499.4667=0.5333; the cutoff is at 50,000",
+      "hh": {
+        "bill": 4000,
+        "people": [
+          {
+            "oth": 49999,
+            "age": 65
+          }
+        ]
+      },
+      "expect": {
+        "ontario-senior-homeowners-property-grant": [0.5333, 0.5333]
+      }
+    },
+    {
+      "id": "on-single-50000-cutoff",
+      "province": "ON",
+      "calc": "AFNI at 50,000 is not entitled: 0, although 500-0.0333x15,000=0.50 (no small amount at the cutoff)",
+      "hh": {
+        "bill": 4000,
+        "people": [
+          {
+            "oth": 50000,
+            "age": 65
+          }
+        ]
+      },
+      "expect": {
+        "ontario-senior-homeowners-property-grant": [0, 0]
+      }
+    },
+    {
+      "id": "on-single-35001-threshold-edge",
+      "province": "ON",
+      "calc": "AFNI 35,001: 500-0.0333x1=499.9667 (35,000 itself is the full 500)",
+      "hh": {
+        "bill": 4000,
+        "people": [
+          {
+            "oth": 35001,
+            "age": 65
+          }
+        ]
+      },
+      "expect": {
+        "ontario-senior-homeowners-property-grant": [499.9667, 499.9667]
+      }
+    },
+    {
+      "id": "on-single-tax-300",
+      "province": "ON",
+      "calc": "low income, occupancy 300: OSHPTG min(500,300)=300; raw OEPTC 590; overlap 300; OEPTC 290; together 590",
+      "hh": {
+        "bill": 300,
+        "people": [
+          {
+            "oth": 30000,
+            "age": 65
+          }
+        ]
+      },
+      "expect": {
+        "ontario-senior-homeowners-property-grant": [300.0, 300.0],
+        "ontario-energy-property-tax-credit-senior-overlap": [290.0, 290.0]
+      },
+      "eligible": {
+        "ontario-energy-property-tax-credit-senior-overlap": {
+          "beforeOverlap": 590.0,
+          "overlap": 300.0,
+          "occupancyCost": 300
+        }
+      }
+    },
+    {
+      "id": "on-single-tax-600",
+      "province": "ON",
+      "calc": "low income, occupancy 600: OSHPTG min(500,600)=500; raw OEPTC 890; overlap 500; OEPTC 390; together 890",
+      "hh": {
+        "bill": 600,
+        "people": [
+          {
+            "oth": 30000,
+            "age": 65
+          }
+        ]
+      },
+      "expect": {
+        "ontario-senior-homeowners-property-grant": [500.0, 500.0],
+        "ontario-energy-property-tax-credit-senior-overlap": [390.0, 390.0]
+      },
+      "eligible": {
+        "ontario-energy-property-tax-credit-senior-overlap": {
+          "beforeOverlap": 890.0,
+          "overlap": 500.0,
+          "occupancyCost": 600
+        }
+      }
+    },
+    {
+      "id": "on-couple-50000",
+      "province": "ON",
+      "calc": "couple threshold 45,000: OSHPTG 500-0.0333x5,000=333.50; OEPTC threshold 43,571: 1307-0.02x6,429=1307-128.58=1178.42",
+      "hh": {
+        "bill": 4000,
+        "people": [
+          {
+            "oth": 30000,
+            "age": 65
+          },
+          {
+            "oth": 20000,
+            "age": 60
+          }
+        ]
+      },
+      "expect": {
+        "ontario-senior-homeowners-property-grant": [333.5, 333.5],
+        "ontario-energy-property-tax-credit-senior-overlap": [1178.42, 1178.42]
+      }
+    },
+    {
+      "id": "on-couple-59999-just-below-cutoff",
+      "province": "ON",
+      "calc": "OSHPTG 500-0.0333x14,999=0.5333",
+      "hh": {
+        "bill": 4000,
+        "people": [
+          {
+            "oth": 40000,
+            "age": 65
+          },
+          {
+            "oth": 19999,
+            "age": 60
+          }
+        ]
+      },
+      "expect": {
+        "ontario-senior-homeowners-property-grant": [0.5333, 0.5333]
+      }
+    },
+    {
+      "id": "on-couple-60000-cutoff",
+      "province": "ON",
+      "calc": "family net income at 60,000: 0",
+      "hh": {
+        "bill": 4000,
+        "people": [
+          {
+            "oth": 40000,
+            "age": 65
+          },
+          {
+            "oth": 20000,
+            "age": 60
+          }
+        ]
+      },
+      "expect": {
+        "ontario-senior-homeowners-property-grant": [0, 0]
+      }
+    },
+    {
+      "id": "on-couple-income-sums-not-each",
+      "province": "ON",
+      "calc": "each spouse is under 45,000 but the family sum 55,000 is what counts: 500-0.0333x10,000=167",
+      "hh": {
+        "bill": 4000,
+        "people": [
+          {
+            "oth": 27500,
+            "age": 66
+          },
+          {
+            "oth": 27500,
+            "age": 66
+          }
+        ]
+      },
+      "expect": {
+        "ontario-senior-homeowners-property-grant": [167, 167]
+      }
+    },
+    {
+      "id": "on-age-64-not-senior",
+      "province": "ON",
+      "calc": "app age 64 is 63 at the prior year end (needs 64): no grant, no senior credit",
+      "hh": {
+        "bill": 4000,
+        "people": [
+          {
+            "oth": 30000,
+            "age": 64
+          }
+        ]
+      },
+      "expect": {
+        "ontario-senior-homeowners-property-grant": [0, 0],
+        "ontario-energy-property-tax-credit-senior-overlap": [0, 0]
+      }
+    },
+    {
+      "id": "on-age-65-senior",
+      "province": "ON",
+      "calc": "app age 65 is 64 at the prior year end: grant 500, OEPTC 1307",
+      "hh": {
+        "bill": 4000,
+        "people": [
+          {
+            "oth": 30000,
+            "age": 65
+          }
+        ]
+      },
+      "expect": {
+        "ontario-senior-homeowners-property-grant": [500, 500],
+        "ontario-energy-property-tax-credit-senior-overlap": [1307, 1307]
+      }
+    },
+    {
+      "id": "on-couple-one-senior-mixed-ages",
+      "province": "ON",
+      "calc": "one spouse 65 is enough (the other 40): couple thresholds, grant 500, OEPTC 1307",
+      "hh": {
+        "bill": 4000,
+        "people": [
+          {
+            "oth": 30000,
+            "age": 40
+          },
+          {
+            "oth": 10000,
+            "age": 65
+          }
+        ]
+      },
+      "expect": {
+        "ontario-senior-homeowners-property-grant": [500, 500],
+        "ontario-energy-property-tax-credit-senior-overlap": [1307, 1307]
+      }
+    },
+    {
+      "id": "on-couple-both-64-not-senior",
+      "province": "ON",
+      "calc": "both 64 (63 at the prior year end): neither schedule applies",
+      "hh": {
+        "bill": 4000,
+        "people": [
+          {
+            "oth": 30000,
+            "age": 64
+          },
+          {
+            "oth": 10000,
+            "age": 64
+          }
+        ]
+      },
+      "expect": {
+        "ontario-senior-homeowners-property-grant": [0, 0],
+        "ontario-energy-property-tax-credit-senior-overlap": [0, 0]
+      }
+    },
+    {
+      "id": "on-no-age-no-senior",
+      "province": "ON",
+      "calc": "no age given is never 65",
+      "hh": {
+        "bill": 4000,
+        "people": [
+          {
+            "oth": 30000
+          }
+        ]
+      },
+      "expect": {
+        "ontario-senior-homeowners-property-grant": [0, 0],
+        "ontario-energy-property-tax-credit-senior-overlap": [0, 0]
+      }
+    },
+    {
+      "id": "on-renter-senior-rent-1000",
+      "province": "ON",
+      "calc": "no grant (renter); occupancy 0.2x12,000=2,400; E=290, P=min(2400,617+min(240,581))=857; 1147; income under 36,309",
+      "hh": {
+        "homeValue": 0,
+        "rent": 1000,
+        "people": [
+          {
+            "oth": 35000,
+            "age": 65
+          }
+        ]
+      },
+      "expect": {
+        "ontario-senior-homeowners-property-grant": [0, 0],
+        "ontario-energy-property-tax-credit-senior-overlap": [1147, 1147]
+      }
+    },
+    {
+      "id": "on-single-senior-with-child-ordinary-sheet",
+      "province": "ON",
+      "calc": "the single senior sheet needs no child: the ordinary credit applies; the grant still uses the single thresholds (40,000: 333.50)",
+      "hh": {
+        "bill": 4000,
+        "people": [
+          {
+            "oth": 40000,
+            "age": 65
+          }
+        ],
+        "kids": 1
+      },
+      "expect": {
+        "ontario-senior-homeowners-property-grant": [333.5, 333.5],
+        "ontario-energy-property-tax-credit-senior-overlap": [0, 0]
+      }
+    },
+    {
+      "id": "on-single-46309-oeptc-income",
+      "province": "ON",
+      "calc": "OEPTC 1307-0.02x(46,309-36,309)=1307-200=1107",
+      "hh": {
+        "bill": 4000,
+        "people": [
+          {
+            "oth": 46309,
+            "age": 65
+          }
+        ]
+      },
+      "expect": {
+        "ontario-energy-property-tax-credit-senior-overlap": [1107, 1107]
+      }
+    },
+    {
+      "id": "tor-first-time-3800",
+      "province": "ON",
+      "calc": "default-city levy 500,000 x 0.0076 = 3,800; first-time estimate 3,800 x 0.022/1.022 = 81.8004; at least 10",
+      "hh": {
+        "homeValue": 500000,
+        "people": [
+          {
+            "oth": 30000,
+            "age": 70
+          }
+        ]
+      },
+      "expect": {
+        "toronto-property-tax-increase-cancellation": [81.800391, 81.8]
+      }
+    },
+    {
+      "id": "tor-budget-average-home-first-time",
+      "province": "ON",
+      "calc": "the 2026 budget's average bill 4,252 x 0.022/1.022 = 91.53",
+      "hh": {
+        "homeValue": 559473.6842105263,
+        "people": [
+          {
+            "oth": 30000,
+            "age": 70
+          }
+        ]
+      },
+      "expect": {
+        "toronto-property-tax-increase-cancellation": [91.530333, 91.53]
+      }
+    },
+    {
+      "id": "tor-budget-average-home-carryover-268",
+      "province": "ON",
+      "calc": "91.53 increase + 268 approved earlier cancelled increase still payable = 359.53 (the note's continuing claimant)",
+      "hh": {
+        "homeValue": 559473.6842105263,
+        "people": [
+          {
+            "oth": 30000,
+            "age": 70
+          }
+        ],
+        "facts": {
+          "torontoCarryover": 268
+        }
+      },
+      "expect": {
+        "toronto-property-tax-increase-cancellation": [359.530333, 359.53]
+      }
+    },
+    {
+      "id": "tor-below-minimum-456",
+      "province": "ON",
+      "calc": "levy 60,000 x 0.0076 = 456; estimate 456 x 0.022/1.022 = 9.816 is under the 10 minimum: 0",
+      "hh": {
+        "homeValue": 60000,
+        "people": [
+          {
+            "oth": 30000,
+            "age": 70
+          }
+        ]
+      },
+      "expect": {
+        "toronto-property-tax-increase-cancellation": [0.0, 0.0]
+      }
+    },
+    {
+      "id": "tor-at-minimum-465",
+      "province": "ON",
+      "calc": "levy 61,200 x 0.0076 = 465.12; estimate 10.0107 reaches the 10 minimum and is the whole amount",
+      "hh": {
+        "homeValue": 61200,
+        "people": [
+          {
+            "oth": 30000,
+            "age": 70
+          }
+        ]
+      },
+      "expect": {
+        "toronto-property-tax-increase-cancellation": [10.012368, 10.01]
+      }
+    },
+    {
+      "id": "tor-prior-levy-3700",
+      "province": "ON",
+      "calc": "levy 3,800, prior year 3,700: increase 100",
+      "hh": {
+        "homeValue": 500000,
+        "people": [
+          {
+            "oth": 30000,
+            "age": 70
+          }
+        ],
+        "facts": {
+          "torontoPriorYearLevy": 3700
+        }
+      },
+      "expect": {
+        "toronto-property-tax-increase-cancellation": [100.0, 100.0]
+      }
+    },
+    {
+      "id": "tor-prior-levy-exact-minimum",
+      "province": "ON",
+      "calc": "increase 3,800 - 3,790 = 10 exactly meets the minimum",
+      "hh": {
+        "homeValue": 500000,
+        "people": [
+          {
+            "oth": 30000,
+            "age": 70
+          }
+        ],
+        "facts": {
+          "torontoPriorYearLevy": 3790
+        }
+      },
+      "expect": {
+        "toronto-property-tax-increase-cancellation": [10, 10]
+      }
+    },
+    {
+      "id": "tor-prior-levy-just-below-minimum",
+      "province": "ON",
+      "calc": "increase 9.99 is under the minimum: 0",
+      "hh": {
+        "homeValue": 500000,
+        "people": [
+          {
+            "oth": 30000,
+            "age": 70
+          }
+        ],
+        "facts": {
+          "torontoPriorYearLevy": 3790.01
+        }
+      },
+      "expect": {
+        "toronto-property-tax-increase-cancellation": [0, 0]
+      }
+    },
+    {
+      "id": "tor-levy-fell",
+      "province": "ON",
+      "calc": "the levy fell (prior 3,900): no increase, 0",
+      "hh": {
+        "homeValue": 500000,
+        "people": [
+          {
+            "oth": 30000,
+            "age": 70
+          }
+        ],
+        "facts": {
+          "torontoPriorYearLevy": 3900
+        }
+      },
+      "expect": {
+        "toronto-property-tax-increase-cancellation": [0, 0]
+      }
+    },
+    {
+      "id": "tor-carryover-adds-to-small-increase",
+      "province": "ON",
+      "calc": "increase 5 (prior 3,795) + carryover 5 = 10 meets the minimum as a sum",
+      "hh": {
+        "homeValue": 500000,
+        "people": [
+          {
+            "oth": 30000,
+            "age": 70
+          }
+        ],
+        "facts": {
+          "torontoPriorYearLevy": 3795,
+          "torontoCarryover": 5
+        }
+      },
+      "expect": {
+        "toronto-property-tax-increase-cancellation": [10, 10]
+      }
+    },
+    {
+      "id": "tor-prior-levy-plus-carryover",
+      "province": "ON",
+      "calc": "increase 100 + carryover 268 = 368",
+      "hh": {
+        "homeValue": 500000,
+        "people": [
+          {
+            "oth": 30000,
+            "age": 70
+          }
+        ],
+        "facts": {
+          "torontoPriorYearLevy": 3700,
+          "torontoCarryover": 268
+        }
+      },
+      "expect": {
+        "toronto-property-tax-increase-cancellation": [368, 368]
+      }
+    },
+    {
+      "id": "tor-capped-at-the-levy",
+      "province": "ON",
+      "calc": "100 + 5,000 carryover cannot exceed the levy 3,800",
+      "hh": {
+        "homeValue": 500000,
+        "people": [
+          {
+            "oth": 30000,
+            "age": 70
+          }
+        ],
+        "facts": {
+          "torontoPriorYearLevy": 3700,
+          "torontoCarryover": 5000
+        }
+      },
+      "expect": {
+        "toronto-property-tax-increase-cancellation": [3800, 3800]
+      }
+    },
+    {
+      "id": "tor-income-62000-in",
+      "province": "ON",
+      "calc": "total income 62,000 meets the limit (at most 62,000)",
+      "hh": {
+        "homeValue": 500000,
+        "people": [
+          {
+            "oth": 62000,
+            "age": 70
+          }
+        ]
+      },
+      "expect": {
+        "toronto-property-tax-increase-cancellation": [81.800391, 81.8]
+      }
+    },
+    {
+      "id": "tor-income-62001-out",
+      "province": "ON",
+      "calc": "total income 62,001 is over: 0",
+      "hh": {
+        "homeValue": 500000,
+        "people": [
+          {
+            "oth": 62001,
+            "age": 70
+          }
+        ]
+      },
+      "expect": {
+        "toronto-property-tax-increase-cancellation": [0, 0]
+      }
+    },
+    {
+      "id": "tor-couple-income-sums",
+      "province": "ON",
+      "calc": "each spouse is under 62,000 but the combined 62,001 is what counts: 0",
+      "hh": {
+        "homeValue": 500000,
+        "people": [
+          {
+            "oth": 40000,
+            "age": 70
+          },
+          {
+            "oth": 22001,
+            "age": 50
+          }
+        ]
+      },
+      "expect": {
+        "toronto-property-tax-increase-cancellation": [0, 0]
+      }
+    },
+    {
+      "id": "tor-couple-one-senior-in",
+      "province": "ON",
+      "calc": "one spouse 65 qualifies the household; combined 62,000 is within the limit",
+      "hh": {
+        "homeValue": 500000,
+        "people": [
+          {
+            "oth": 40000,
+            "age": 70
+          },
+          {
+            "oth": 22000,
+            "age": 50
+          }
+        ]
+      },
+      "expect": {
+        "toronto-property-tax-increase-cancellation": [81.800391, 81.8]
+      }
+    },
+    {
+      "id": "tor-gross-not-net-income",
+      "province": "ON",
+      "calc": "income 70,000 with a 10,000 RRSP deduction has net income 60,000 but gross 70,000, over 62,000: 0 (net income would wrongly qualify)",
+      "hh": {
+        "homeValue": 500000,
+        "people": [
+          {
+            "oth": 70000,
+            "rrsp": 10000,
+            "age": 70
+          }
+        ]
+      },
+      "expect": {
+        "toronto-property-tax-increase-cancellation": [0, 0]
+      }
+    },
+    {
+      "id": "tor-assessment-975000-in",
+      "province": "ON",
+      "calc": "assessed value at most 975,000: 975,000 qualifies; levy 7,410",
+      "hh": {
+        "homeValue": 975000,
+        "people": [
+          {
+            "oth": 30000,
+            "age": 70
+          }
+        ]
+      },
+      "expect": {
+        "toronto-property-tax-increase-cancellation": [159.510763, 159.51]
+      }
+    },
+    {
+      "id": "tor-assessment-975001-out",
+      "province": "ON",
+      "calc": "975,001 is over the limit: 0",
+      "hh": {
+        "homeValue": 975001,
+        "people": [
+          {
+            "oth": 30000,
+            "age": 70
+          }
+        ]
+      },
+      "expect": {
+        "toronto-property-tax-increase-cancellation": [0, 0]
+      }
+    },
+    {
+      "id": "tor-age-65-in",
+      "province": "ON",
+      "calc": "age 65",
+      "hh": {
+        "homeValue": 500000,
+        "people": [
+          {
+            "oth": 30000,
+            "age": 65
+          }
+        ]
+      },
+      "expect": {
+        "toronto-property-tax-increase-cancellation": [81.800391, 81.8]
+      }
+    },
+    {
+      "id": "tor-age-64-no-allowance-out",
+      "province": "ON",
+      "calc": "age 64 without an OAS Allowance does not qualify",
+      "hh": {
+        "homeValue": 500000,
+        "people": [
+          {
+            "oth": 30000,
+            "age": 64
+          }
+        ]
+      },
+      "expect": {
+        "toronto-property-tax-increase-cancellation": [0, 0]
+      }
+    },
+    {
+      "id": "tor-no-age-out",
+      "province": "ON",
+      "calc": "no age is never a senior (no eligibility is invented)",
+      "hh": {
+        "homeValue": 500000,
+        "people": [
+          {
+            "oth": 30000
+          }
+        ]
+      },
+      "expect": {
+        "toronto-property-tax-increase-cancellation": [0, 0]
+      }
+    },
+    {
+      "id": "tor-renter-out",
+      "province": "ON",
+      "calc": "a renter has no cancellation",
+      "hh": {
+        "homeValue": 0,
+        "rent": 1500,
+        "people": [
+          {
+            "oth": 30000,
+            "age": 70
+          }
+        ]
+      },
+      "expect": {
+        "toronto-property-tax-increase-cancellation": [0, 0]
+      }
+    },
+    {
+      "id": "tor-custom-bill-no-award",
+      "province": "ON",
+      "calc": "a custom bill does not identify the city: no automatic cancellation",
+      "hh": {
+        "bill": 3800,
+        "people": [
+          {
+            "oth": 30000,
+            "age": 70
+          }
+        ]
+      },
+      "expect": {
+        "toronto-property-tax-increase-cancellation": "city-bill-required"
+      }
+    },
+    {
+      "id": "tor-rate-override-no-award",
+      "province": "ON",
+      "calc": "a rate override is not the reference city's bill: no automatic cancellation",
+      "hh": {
+        "rate": 0.0076,
+        "people": [
+          {
+            "oth": 30000,
+            "age": 70
+          }
+        ]
+      },
+      "expect": {
+        "toronto-property-tax-increase-cancellation": "city-bill-required"
+      }
+    },
+    {
+      "id": "qc-300-plus-100",
+      "province": "QC",
+      "calc": "potential 300 + preceding-roll awards 100 = 400, sole claimant",
+      "hh": {
+        "facts": {
+          "qcOwnershipYears": 20,
+          "qcPotentialGrant": 300,
+          "qcPrecedingRollGrant": 100
+        },
+        "people": [
+          {
+            "oth": 40000,
+            "age": 66
+          }
+        ]
+      },
+      "expect": {
+        "qc-senior-municipal-tax-increase-grant": [400, 400]
+      }
+    },
+    {
+      "id": "qc-co-owner-claims-150",
+      "province": "QC",
+      "calc": "400 whole-property grant less 150 claimed by another co-owner = 250",
+      "hh": {
+        "facts": {
+          "qcOwnershipYears": 20,
+          "qcPotentialGrant": 300,
+          "qcPrecedingRollGrant": 100,
+          "qcOtherClaims": 150
+        },
+        "people": [
+          {
+            "oth": 40000,
+            "age": 66
+          }
+        ]
+      },
+      "expect": {
+        "qc-senior-municipal-tax-increase-grant": [250, 250]
+      }
+    },
+    {
+      "id": "qc-500-plus-120",
+      "province": "QC",
+      "calc": "500 + 120 = 620: the 500 cap is on the new-roll amount, not the total",
+      "hh": {
+        "facts": {
+          "qcOwnershipYears": 20,
+          "qcPotentialGrant": 500,
+          "qcPrecedingRollGrant": 120
+        },
+        "people": [
+          {
+            "oth": 40000,
+            "age": 66
+          }
+        ]
+      },
+      "expect": {
+        "qc-senior-municipal-tax-increase-grant": [620, 620]
+      }
+    },
+    {
+      "id": "qc-allocation-300",
+      "province": "QC",
+      "calc": "620 whole property; the co-owner claims 320, so this claimant has 300",
+      "hh": {
+        "facts": {
+          "qcOwnershipYears": 20,
+          "qcPotentialGrant": 500,
+          "qcPrecedingRollGrant": 120,
+          "qcOtherClaims": 320
+        },
+        "people": [
+          {
+            "oth": 40000,
+            "age": 66
+          }
+        ]
+      },
+      "expect": {
+        "qc-senior-municipal-tax-increase-grant": [300, 300]
+      }
+    },
+    {
+      "id": "qc-allocation-320",
+      "province": "QC",
+      "calc": "620 whole property; the co-owner claims 300, so this claimant has 320 (together 620)",
+      "hh": {
+        "facts": {
+          "qcOwnershipYears": 20,
+          "qcPotentialGrant": 500,
+          "qcPrecedingRollGrant": 120,
+          "qcOtherClaims": 300
+        },
+        "people": [
+          {
+            "oth": 40000,
+            "age": 66
+          }
+        ]
+      },
+      "expect": {
+        "qc-senior-municipal-tax-increase-grant": [320, 320]
+      }
+    },
+    {
+      "id": "qc-potential-over-cap",
+      "province": "QC",
+      "calc": "a stated potential of 650 is capped at 500 before the 120 is added: 620",
+      "hh": {
+        "facts": {
+          "qcOwnershipYears": 20,
+          "qcPotentialGrant": 650,
+          "qcPrecedingRollGrant": 120
+        },
+        "people": [
+          {
+            "oth": 40000,
+            "age": 66
+          }
+        ]
+      },
+      "expect": {
+        "qc-senior-municipal-tax-increase-grant": [620, 620]
+      }
+    },
+    {
+      "id": "qc-preceding-only",
+      "province": "QC",
+      "calc": "no new-roll increment (potential 0) and 120 from the preceding roll: 120",
+      "hh": {
+        "facts": {
+          "qcOwnershipYears": 20,
+          "qcPotentialGrant": 0,
+          "qcPrecedingRollGrant": 120
+        },
+        "people": [
+          {
+            "oth": 40000,
+            "age": 66
+          }
+        ]
+      },
+      "expect": {
+        "qc-senior-municipal-tax-increase-grant": [120, 120]
+      }
+    },
+    {
+      "id": "qc-zero-grant",
+      "province": "QC",
+      "calc": "potential 0 and no preceding award: an eligible claimant with a true 0",
+      "hh": {
+        "facts": {
+          "qcOwnershipYears": 20,
+          "qcPotentialGrant": 0,
+          "qcPrecedingRollGrant": 0
+        },
+        "people": [
+          {
+            "oth": 40000,
+            "age": 66
+          }
+        ]
+      },
+      "expect": {
+        "qc-senior-municipal-tax-increase-grant": [0, 0]
+      }
+    },
+    {
+      "id": "qc-rounding-223.49",
+      "province": "QC",
+      "calc": "the whole-property grant 223.49 rounds to 223",
+      "hh": {
+        "facts": {
+          "qcOwnershipYears": 20,
+          "qcPotentialGrant": 223.49,
+          "qcPrecedingRollGrant": 0
+        },
+        "people": [
+          {
+            "oth": 40000,
+            "age": 66
+          }
+        ]
+      },
+      "expect": {
+        "qc-senior-municipal-tax-increase-grant": [223, 223]
+      }
+    },
+    {
+      "id": "qc-rounding-223.50",
+      "province": "QC",
+      "calc": "the whole-property grant 223.50 rounds to 224",
+      "hh": {
+        "facts": {
+          "qcOwnershipYears": 20,
+          "qcPotentialGrant": 223.5,
+          "qcPrecedingRollGrant": 0
+        },
+        "people": [
+          {
+            "oth": 40000,
+            "age": 66
+          }
+        ]
+      },
+      "expect": {
+        "qc-senior-municipal-tax-increase-grant": [224, 224]
+      }
+    },
+    {
+      "id": "qc-others-exceed-whole",
+      "province": "QC",
+      "calc": "other co-owners' claims above the whole grant leave 0, not a negative",
+      "hh": {
+        "facts": {
+          "qcOwnershipYears": 20,
+          "qcPotentialGrant": 300,
+          "qcPrecedingRollGrant": 100,
+          "qcOtherClaims": 900
+        },
+        "people": [
+          {
+            "oth": 40000,
+            "age": 66
+          }
+        ]
+      },
+      "expect": {
+        "qc-senior-municipal-tax-increase-grant": [0, 0]
+      }
+    },
+    {
+      "id": "qc-age-66-in",
+      "province": "QC",
+      "calc": "app age 66 is 65 at the prior year end: eligible",
+      "hh": {
+        "facts": {
+          "qcOwnershipYears": 20,
+          "qcPotentialGrant": 300,
+          "qcPrecedingRollGrant": 0
+        },
+        "people": [
+          {
+            "oth": 40000,
+            "age": 66
+          }
+        ]
+      },
+      "expect": {
+        "qc-senior-municipal-tax-increase-grant": [300, 300]
+      }
+    },
+    {
+      "id": "qc-age-65-out",
+      "province": "QC",
+      "calc": "app age 65 is 64 at the prior year end (needs 65): 0",
+      "hh": {
+        "facts": {
+          "qcOwnershipYears": 20,
+          "qcPotentialGrant": 300,
+          "qcPrecedingRollGrant": 0
+        },
+        "people": [
+          {
+            "oth": 40000,
+            "age": 65
+          }
+        ]
+      },
+      "expect": {
+        "qc-senior-municipal-tax-increase-grant": [0, 0]
+      }
+    },
+    {
+      "id": "qc-couple-one-senior",
+      "province": "QC",
+      "calc": "one spouse 66 qualifies the household; combined income 40,000",
+      "hh": {
+        "facts": {
+          "qcOwnershipYears": 20,
+          "qcPotentialGrant": 300,
+          "qcPrecedingRollGrant": 0
+        },
+        "people": [
+          {
+            "oth": 30000,
+            "age": 66
+          },
+          {
+            "oth": 10000,
+            "age": 50
+          }
+        ]
+      },
+      "expect": {
+        "qc-senior-municipal-tax-increase-grant": [300, 300]
+      }
+    },
+    {
+      "id": "qc-no-age-no-grant",
+      "province": "QC",
+      "calc": "no age is never 65: 0, and the missing facts are not asked for",
+      "hh": {
+        "facts": {},
+        "people": [
+          {
+            "oth": 30000
+          }
+        ]
+      },
+      "expect": {
+        "qc-senior-municipal-tax-increase-grant": [0, 0]
+      }
+    },
+    {
+      "id": "qc-ownership-15-in",
+      "province": "QC",
+      "calc": "15 consecutive years meets the test",
+      "hh": {
+        "facts": {
+          "qcOwnershipYears": 15,
+          "qcPotentialGrant": 300,
+          "qcPrecedingRollGrant": 0
+        },
+        "people": [
+          {
+            "oth": 40000,
+            "age": 66
+          }
+        ]
+      },
+      "expect": {
+        "qc-senior-municipal-tax-increase-grant": [300, 300]
+      }
+    },
+    {
+      "id": "qc-ownership-14-out",
+      "province": "QC",
+      "calc": "14 years is short: 0",
+      "hh": {
+        "facts": {
+          "qcOwnershipYears": 14,
+          "qcPotentialGrant": 300,
+          "qcPrecedingRollGrant": 0
+        },
+        "people": [
+          {
+            "oth": 40000,
+            "age": 66
+          }
+        ]
+      },
+      "expect": {
+        "qc-senior-municipal-tax-increase-grant": [0, 0]
+      }
+    },
+    {
+      "id": "qc-ownership-missing",
+      "province": "QC",
+      "calc": "ownership years not given: incomplete, not 0 and not assumed",
+      "hh": {
+        "facts": {
+          "qcPotentialGrant": 300,
+          "qcPrecedingRollGrant": 0
+        },
+        "people": [
+          {
+            "oth": 40000,
+            "age": 66
+          }
+        ]
+      },
+      "expect": {
+        "qc-senior-municipal-tax-increase-grant": "incomplete"
+      }
+    },
+    {
+      "id": "qc-potential-missing",
+      "province": "QC",
+      "calc": "the municipality's potential grant is not given: incomplete",
+      "hh": {
+        "facts": {
+          "qcOwnershipYears": 20,
+          "qcPrecedingRollGrant": 0
+        },
+        "people": [
+          {
+            "oth": 40000,
+            "age": 66
+          }
+        ]
+      },
+      "expect": {
+        "qc-senior-municipal-tax-increase-grant": "incomplete"
+      }
+    },
+    {
+      "id": "qc-preceding-missing",
+      "province": "QC",
+      "calc": "the preceding roll's awards are not given: incomplete (0 must be stated)",
+      "hh": {
+        "facts": {
+          "qcOwnershipYears": 20,
+          "qcPotentialGrant": 300
+        },
+        "people": [
+          {
+            "oth": 40000,
+            "age": 66
+          }
+        ]
+      },
+      "expect": {
+        "qc-senior-municipal-tax-increase-grant": "incomplete"
+      }
+    },
+    {
+      "id": "qc-income-64200-in",
+      "province": "QC",
+      "calc": "family line 275 income of 64,200 meets the limit (or less)",
+      "hh": {
+        "facts": {
+          "qcOwnershipYears": 20,
+          "qcPotentialGrant": 300,
+          "qcPrecedingRollGrant": 0
+        },
+        "people": [
+          {
+            "oth": 64200,
+            "age": 66
+          }
+        ]
+      },
+      "expect": {
+        "qc-senior-municipal-tax-increase-grant": [300, 300]
+      }
+    },
+    {
+      "id": "qc-income-64201-out",
+      "province": "QC",
+      "calc": "64,201 is over the limit: 0",
+      "hh": {
+        "facts": {
+          "qcOwnershipYears": 20,
+          "qcPotentialGrant": 300,
+          "qcPrecedingRollGrant": 0
+        },
+        "people": [
+          {
+            "oth": 64201,
+            "age": 66
+          }
+        ]
+      },
+      "expect": {
+        "qc-senior-municipal-tax-increase-grant": [0, 0]
+      }
+    },
+    {
+      "id": "qc-couple-income-sums",
+      "province": "QC",
+      "calc": "each spouse is under 64,200 but the combined 64,201 is what counts: 0",
+      "hh": {
+        "facts": {
+          "qcOwnershipYears": 20,
+          "qcPotentialGrant": 300,
+          "qcPrecedingRollGrant": 0
+        },
+        "people": [
+          {
+            "oth": 40000,
+            "age": 66
+          },
+          {
+            "oth": 24201,
+            "age": 50
+          }
+        ]
+      },
+      "expect": {
+        "qc-senior-municipal-tax-increase-grant": [0, 0]
+      }
+    },
+    {
+      "id": "qc-income-over-hides-missing-facts",
+      "province": "QC",
+      "calc": "over the income limit the answer is 0 whatever else is missing",
+      "hh": {
+        "facts": {},
+        "people": [
+          {
+            "oth": 70000,
+            "age": 66
+          }
+        ]
+      },
+      "expect": {
+        "qc-senior-municipal-tax-increase-grant": [0, 0]
+      }
+    },
+    {
+      "id": "qc-renter-out",
+      "province": "QC",
+      "calc": "a renter has no grant",
+      "hh": {
+        "homeValue": 0,
+        "rent": 1200,
+        "facts": {
+          "qcOwnershipYears": 20,
+          "qcPotentialGrant": 300,
+          "qcPrecedingRollGrant": 0
+        },
+        "people": [
+          {
+            "oth": 30000,
+            "age": 66
+          }
+        ]
+      },
+      "expect": {
+        "qc-senior-municipal-tax-increase-grant": [0, 0]
+      }
+    },
+    {
+      "id": "qc-custom-bill-provincial",
+      "province": "QC",
+      "calc": "a provincial grant: a custom bill receives it on the stated figures",
+      "hh": {
+        "facts": {
+          "qcOwnershipYears": 20,
+          "qcPotentialGrant": 300,
+          "qcPrecedingRollGrant": 100
+        },
+        "people": [
+          {
+            "oth": 40000,
+            "age": 66
+          }
+        ],
+        "bill": 3000
+      },
+      "expect": {
+        "qc-senior-municipal-tax-increase-grant": [400, 400]
+      }
+    },
+    {
+      "id": "qc-net-bill-states-zero",
+      "province": "QC",
+      "calc": "never on a bill: a net bill states 0 and reaches the same amount",
+      "hh": {
+        "facts": {
+          "qcOwnershipYears": 20,
+          "qcPotentialGrant": 300,
+          "qcPrecedingRollGrant": 100
+        },
+        "people": [
+          {
+            "oth": 40000,
+            "age": 66
+          }
+        ],
+        "bill": 3000,
+        "basis": "net",
+        "applied": {
+          "qc-senior-municipal-tax-increase-grant": 0
+        }
+      },
+      "expect": {
+        "qc-senior-municipal-tax-increase-grant": [400, 400]
+      }
+    },
+    {
+      "id": "qc-net-bill-nonzero-refused",
+      "province": "QC",
+      "calc": "a stated amount on the bill is refused: incomplete",
+      "hh": {
+        "facts": {
+          "qcOwnershipYears": 20,
+          "qcPotentialGrant": 300,
+          "qcPrecedingRollGrant": 100
+        },
+        "people": [
+          {
+            "oth": 40000,
+            "age": 66
+          }
+        ],
+        "bill": 3000,
+        "basis": "net",
+        "applied": {
+          "qc-senior-municipal-tax-increase-grant": 400
+        }
+      },
+      "expect": {
+        "qc-senior-municipal-tax-increase-grant": "incomplete"
+      }
+    }
+  ]
+}

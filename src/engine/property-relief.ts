@@ -28,6 +28,7 @@
 // states and the credit entry are all done here; a handler must not repeat them.
 
 import type { Province } from "../data/schema.ts";
+import { type NetIncomeParts, netIncomeTotal } from "./payroll.ts";
 import type { Household, Person, PropertyReliefFacts } from "./types.ts";
 
 type SchemaRule = NonNullable<Province["propertyRelief"]>[number];
@@ -68,6 +69,9 @@ export interface PropertyReliefInput {
   famNet: number; // federal family net income
   provincialFamNet: number; // Quebec's line 275 sum; equals famNet elsewhere
   federalNets: readonly number[];
+  /** Each person's total income (line 15000: net income before deductions), floored at zero, for programs that test gross
+   *  income. Toronto's cancellation does; substituting net income would let a deduction lower it. */
+  totalIncomes?: readonly number[];
   homeValue: number;
   rent: number; // annual, zero for an owner
   /** Amount of each existing credit program (the province's `credits` entries, by program id) already counted for this
@@ -126,6 +130,10 @@ export interface PropertyReliefResult {
   complete: boolean; // no line is incomplete or not modelled (a city-gated line is out of scope, not incomplete)
 }
 
+/** Total income (line 15000): net income with the deductions added back, so a deduction (RRSP, the OAS recovery, the CPP/QPP
+ *  enhancement) does not lower it. Income tests on gross income, such as Toronto's, use this and never net income. */
+export const totalIncomeOf = (n: NetIncomeParts) => Math.max(0, netIncomeTotal(n) + n.ded + n.enh);
+
 const money = (n: number) => Math.round((n + Number.EPSILON) * 100) / 100;
 const validAmount = (n: unknown): n is number => typeof n === "number" && Number.isFinite(n) && n >= 0;
 const reflectedOf = (applied: Readonly<Record<string, number>>, id: string): number | undefined =>
@@ -144,6 +152,30 @@ const isSenior = (x: Person, age: number) => (x.age ?? 0) >= age; // age is whol
  *  for BC's previous year's (approved on #21). Neither UCCB/RDSP adjustments nor BC's disability deduction is modelled. */
 const flooredIncome = (ctx: ReliefContext) => ctx.federalNets.reduce((sum, n) => sum + Math.max(0, n), 0);
 const earlierLine = (ctx: ReliefContext, program: string) => ctx.earlier.find(l => l.program === program);
+/** Whole age on December 31 of the year BEFORE the benefit year. The app's age is on December 31 of the benefit year (the
+ *  tax year), so the test subtracts one: Ontario's "64 on December 31, 2025" for the 2026 benefit is an app age of 65. */
+const agedAtPriorYearEnd = (x: Person, age: number) => x.age !== undefined && x.age - 1 >= age;
+/** An amount that no tax bill ever reflects (a grant paid with the Ontario Trillium Benefit, a credit claimed on a return):
+ *  a net bill stating one is a mistake, because it would raise the gross levy for nothing. */
+const NEVER_ON_BILL = "it is never on a property tax bill, so the amount a bill reflects must be 0";
+
+/** The province's relief rule with this program id, typed for its own params; undefined when the year declares none. */
+export function reliefRule<Id extends SchemaRule["program"]>(
+  p: Pick<Province, "propertyRelief">,
+  id: Id,
+): Extract<SchemaRule, { program: Id }> | undefined {
+  return p.propertyRelief?.find((r): r is Extract<SchemaRule, { program: Id }> => r.program === id);
+}
+
+/** Ontario: a household takes the senior OEPTC schedule when one spouse is 64 at the prior year end, or when a single
+ *  person is and has no child (the CRA's single senior sheet is for "no care of a child under 18"; a single parent
+ *  uses the ordinary sheet). creditsOf skips the ordinary credit for exactly these households. */
+export const usesSeniorOeptc = (
+  q: { ageAtPriorYearEnd: number },
+  people: readonly Person[],
+  couple: boolean,
+  kids: number,
+) => (couple || kids === 0) && people.some(x => agedAtPriorYearEnd(x, q.ageAtPriorYearEnd));
 
 const BUILT_IN: BuiltIn = {
   // BC Home Owner Grant Act s.2 and Schedules 1-4: the schedule by property tax first, then $5 per $1,000 of assessed
@@ -204,6 +236,100 @@ const BUILT_IN: BuiltIn = {
       status: "modelled",
       entitled: Math.max(0, (amount < q.minimumPayable ? 0 : amount) - overReflected),
       eligible: { reduction, adjustedIncome: adjusted },
+    };
+  },
+  // OSHPTG (CRA Q&A, "How much is the grant"): the lesser of $500 and the property tax paid, less 3.33% of adjusted
+  // family net income over $35,000 (single) or $45,000 (couple), and nothing at or above $50,000 / $60,000. One spouse
+  // aged 64 at the prior year end is enough, and an owner is needed. The household's bill is its own share. Prior-year
+  // tax and income are proxied by this year's (an estimate).
+  "ontario-senior-homeowners-property-grant": (rule, ctx) => {
+    const q = rule.params;
+    if (ctx.reflected > 0) return incomplete(`the grant is paid with the Ontario Trillium Benefit: ${NEVER_ON_BILL}`);
+    if (!ctx.owner || !ctx.people.some(x => agedAtPriorYearEnd(x, q.ageAtPriorYearEnd))) return noRelief;
+    const kind = ctx.couple ? "couple" : "single";
+    const income = ctx.famNet;
+    const grant =
+      income >= q.cutoff[kind]
+        ? 0
+        : Math.min(q.maximum, ctx.grossLevy) - q.rate * Math.max(0, income - q.threshold[kind]);
+    return { status: "modelled", entitled: grant, eligible: { familyNetIncome: income } };
+  },
+  // OEPTC senior calculation sheets, steps 1-5: occupancy cost O = tax + 20% of rent; energy E = min(O, 290); property
+  // P = min(O, 617 + min(10% of O, 581)); credit = E + P - 2% of income over the senior threshold. Step 5 takes back
+  // the part of credit + OSHPTG that exceeds E + O: overlap = max(0, max(0, credit + OSHPTG - E) - O). This replaces
+  // the ordinary credit for the households that qualify (credits.ts skips it), so the two never apply together.
+  "ontario-energy-property-tax-credit-senior-overlap": (rule, ctx) => {
+    const q = rule.params;
+    if (ctx.reflected > 0) return incomplete(`the credit is paid with the Ontario Trillium Benefit: ${NEVER_ON_BILL}`);
+    if (!usesSeniorOeptc(q, ctx.people, ctx.couple, ctx.kids)) return noRelief; // the ordinary credit applies
+    if ((ctx.existingCredits["ontario-energy-property-tax-credit"] ?? 0) > 0)
+      return incomplete("the ordinary credit is also counted, and it must not apply with the senior schedule");
+    const grant = earlierLine(ctx, "ontario-senior-homeowners-property-grant");
+    if (grant?.status !== "modelled" || grant.entitled === null)
+      return incomplete(`the grant it overlaps is unknown: ${grant?.reason ?? "the grant line must come before it"}`);
+    const occupancy = ctx.grossLevy > 0 ? ctx.grossLevy : ctx.rent * q.rentShare;
+    if (!(occupancy > 0)) return noRelief;
+    const energy = Math.min(occupancy, q.energyMax);
+    const property = Math.min(occupancy, q.propertyBase + Math.min(q.propertyRate * occupancy, q.propertyMax));
+    const threshold = ctx.couple ? q.thresholdFamily : q.thresholdSingle;
+    const raw = Math.max(0, energy + property - q.rate * Math.max(0, ctx.famNet - threshold));
+    const overlap = Math.max(0, Math.max(0, raw + grant.entitled - energy) - occupancy);
+    return {
+      status: "modelled",
+      entitled: Math.max(0, raw - overlap),
+      eligible: { occupancyCost: occupancy, energy, property, beforeOverlap: raw, overlap },
+    };
+  },
+  // Toronto Municipal Code 767-5.4 with the 2026 application and budget: an owner who is 65, or 60-64 with an OAS
+  // Allowance, whose household's total (gross) income is within the limit and whose home's assessment is within its limit
+  // has the year's tax increase plus earlier cancelled increases still payable cancelled, if that is at least $10. The
+  // increase is this year's levy less last year's when the household states it; otherwise it is a first-time claimant's
+  // estimate, levy x r / (1 + r) at the City's rate increase r (the 2026 budget's $4,252 average bill gives $91.53), with
+  // no earlier increases. Home value stands in for the assessed value. No disability route and no construction exclusion.
+  "toronto-property-tax-increase-cancellation": (rule, ctx) => {
+    const q = rule.params;
+    const senior = ctx.people.some(x => (x.age ?? 0) >= q.seniorAge || ((x.age ?? 0) >= q.allowanceAge && x.allowance));
+    if (!ctx.owner || !senior) return noRelief;
+    if (!ctx.totalIncomes) return incomplete("the household's total (gross) income is not given");
+    const income = ctx.totalIncomes.reduce((sum, n) => sum + Math.max(0, n), 0);
+    if (income > q.incomeLimit || ctx.homeValue > q.assessmentLimit) return noRelief;
+    const prior = ctx.facts.torontoPriorYearLevy;
+    const increase =
+      typeof prior === "number" && Number.isFinite(prior) && prior >= 0
+        ? Math.max(0, ctx.grossLevy - prior)
+        : (ctx.grossLevy * q.firstTimeIncreaseRate) / (1 + q.firstTimeIncreaseRate);
+    const carried = ctx.facts.torontoCarryover;
+    const carryover = typeof carried === "number" && Number.isFinite(carried) && carried >= 0 ? carried : 0;
+    const total = increase + carryover;
+    return {
+      status: "modelled",
+      entitled: total < q.minimum ? 0 : Math.min(ctx.grossLevy, total),
+      eligible: { increase, carryover, totalIncome: income, assessedValue: ctx.homeValue },
+    };
+  },
+  // Grant for seniors to offset a municipal tax increase (TP-1029.TM-V, 2025-11, lines 41-46). A claimant is 65 at the prior
+  // year end, has owned the home 15 consecutive years, lives in it, and has family line 275 income of at most the limit. The
+  // whole-property grant is the municipality's potential amount (at most $500) plus the preceding roll's final-year awards,
+  // rounded to whole dollars, and the claimant's share is that less what other co-owners claim: never the whole each. The
+  // potential amount is consumed as stated; the roll-averaging system that produces it is not reproduced. A provincial
+  // grant: a custom bill can receive it. It is claimed on the return, not on the tax bill.
+  "qc-senior-municipal-tax-increase-grant": (rule, ctx) => {
+    const q = rule.params;
+    if (ctx.reflected > 0) return incomplete(`the grant is claimed on the income tax return: ${NEVER_ON_BILL}`);
+    if (!ctx.owner || !ctx.people.some(x => agedAtPriorYearEnd(x, q.ageAtPriorYearEnd))) return noRelief;
+    if (ctx.provincialFamNet > q.familyIncomeLimit) return noRelief;
+    const known = (n: unknown): n is number => typeof n === "number" && Number.isFinite(n) && n >= 0;
+    const { qcOwnershipYears: years, qcPotentialGrant: potential, qcPrecedingRollGrant: preceding } = ctx.facts;
+    if (!known(years)) return incomplete("the years of consecutive ownership are not given");
+    if (years < q.ownershipYears) return noRelief;
+    if (!known(potential)) return incomplete("the municipality's potential grant for this roll year is not given");
+    if (!known(preceding)) return incomplete("the preceding roll's final-year grant is not given (0 if none)");
+    const others = known(ctx.facts.qcOtherClaims) ? ctx.facts.qcOtherClaims : 0;
+    const whole = Math.round(Math.min(q.newRollMaximum, potential) + preceding);
+    return {
+      status: "modelled",
+      entitled: Math.max(0, whole - others),
+      eligible: { wholeProperty: whole, otherClaims: others, familyIncome: ctx.provincialFamNet },
     };
   },
   // Income Tax Act (Manitoba) s.5.3-5.6: the credit is capped by gross eligible SCHOOL tax, not the whole bill. A
@@ -373,6 +499,7 @@ export function propertyReliefOf(rules: readonly ReliefRule[], input: PropertyRe
       famNet: input.famNet,
       provincialFamNet: input.provincialFamNet,
       federalNets: input.federalNets,
+      totalIncomes: input.totalIncomes,
       homeValue: input.homeValue,
       rent: input.rent,
       existingCredits: input.existingCredits,

@@ -734,3 +734,86 @@ without them loads as a gross bill with nothing reflected. They reset with the h
 never $0. Tooltips cover the default-bill limit on city relief, benefit-year entitlement and prior-year bases, excluded
 deferrals, housing allowances (SAFER, Rent Assist; #216) and the 2026-only notice, each asserted in
 `tests/e2e/property-relief.mjs` at 375 px, 430 px and desktop, in light and dark.
+
+## Slice 4 (#224): Ontario, Toronto and Quebec, built
+
+Coverage is **2026 only**: the programs are in `data/years/2026/provinces/ON.yaml` and `QC.yaml`, 2025 declares none,
+and no engine code tests a year. Ages follow the app's convention (whole years on December 31 of the tax year), so a
+rule that is tested at December 31 of the year *before* the benefit year uses `age − 1`: Ontario's "64 on December 31,
+2025" for the 2026 benefit is an app age of **65**, and Quebec's "65 on December 31, 2025" is an app age of **66**. A
+missing age is never senior. All prior-year income and tax bases are proxied by this year's, so these lines are
+`estimated`.
+
+**Ontario, `ontario-senior-homeowners-property-grant`.** An owner in a household with someone aged 64 at the prior
+year end (one spouse is enough). `min(500, tax) − 0.0333 × max(0, AFNI − 35,000)` (couple 45,000), and nothing at AFNI
+of 50,000 (couple 60,000) or more, so there is no small positive amount at the cutoff. AFNI is the household's federal
+family net income; the tax is the gross levy (the household's own share if it co-owns with a non-spouse).
+
+**Ontario, `ontario-energy-property-tax-credit-senior-overlap`.** The CRA senior sheets' steps 1 to 5. With occupancy
+cost `O` (the gross levy, or 20% of annual rent when there is no bill), `E = min(O, 290)`, `P = min(O, 617 + min(0.1
+O, 581))`, `raw = max(0, E + P − 0.02 × max(0, AFNI − 36,309))` (couple 43,571) and `overlap = max(0, max(0, raw +
+OSHPTG − E) − O)`, the credit is `max(0, raw − overlap)`. At `O = 600` and low income: raw 890, grant 500, overlap
+500, credit 390; together 890 = 600 property + 290 energy. Adding the two without the overlap overpays 500, and
+capping their total at the bill would drop the energy component. A **single senior with a child** uses the ordinary
+sheet (the single senior sheet is for "no care of a child under 18"); a couple uses the couple sheet with or without
+children.
+
+**Replacement, not addition.** `creditsOf` skips the ordinary `ontario-energy-property-tax-credit` for exactly the
+households that take the senior schedule (`usesSeniorOeptc`, one definition used by both files), so the credit list
+has one "Ontario energy and property tax credit" line, in the senior's case computed by the relief program. Everyone
+else keeps the ordinary credit, in its old place and amount. The handler also refuses if `existingCredits` shows the
+ordinary credit counted, as a guard. **Neither program is on a tax bill** (the grant and credit are paid with the
+Ontario Trillium Benefit), so a net bill states 0 for both and any other amount makes them incomplete; the gross and
+net bills reach the same burden.
+
+**Toronto, `toronto-property-tax-increase-cancellation`** (municipal scope: the default reference-city bill only; a
+custom bill or a rate override is `city-bill-required`). Eligible: an owner aged 65, or 60 to 64 with an OAS Allowance
+(`Person.allowance`), whose household's **total (gross) income** (line 15000: net income with the deductions added back,
+`totalIncomeOf`, never net income) is at most $62,000 and whose home (value standing in for the assessment) is at most
+$975,000. No age is no eligibility. The disability route, the good-standing and ownership-period tests and the
+construction exclusion are not modelled. The cancellation is the year's tax increase plus earlier cancelled increases
+still payable, if the sum is at least $10, and never more than the levy. **First-time claimant basis, not a flat
+grant:** unless the household states last year's levy (`torontoPriorYearLevy`, increase = levy − prior), the increase is
+estimated as `levy × r / (1 + r)` with r the City's 2026 residential increase of 2.2%, which reproduces the budget's
+average-home figure exactly (4,252 × 0.022 / 1.022 = $91.53). Earlier cancelled increases are stated
+(`torontoCarryover`) and default to none, as for a first-time claimant; with the budget's $268 carryover the
+continuing claimant is $359.53. The provincial grants above read the gross levy and do not net the cancellation (their
+bases are prior-year amounts, and the app's one bill stands in for them).
+
+**Quebec, `qc-senior-municipal-tax-increase-grant`** (provincial scope: a custom bill can receive it, because the
+household states the grant's own figures; it is claimed on line 462 of the return, never on the tax bill, so a net bill
+states 0 and any other amount makes it incomplete). Eligible: an owner with someone 65 at the prior year end (an app age
+of 66), 15 consecutive years' ownership at that date (`qcOwnershipYears`, unknown makes it incomplete) and the spouses'
+line 275 income at most $64,200 (the form says "or less"; the 2025 bill's limit was $62,900). The household states the
+municipality's potential grant for the current roll year (`qcPotentialGrant`, form line 41) and the preceding roll's
+final-year awards to all owners (`qcPrecedingRollGrant`, line 43, zero when none); missing either is incomplete. The
+whole-property grant is `round(min(500, potential) + preceding)`: the cap is on the new-roll increment, so $500 plus
+$120 is $620, not $500, and a stated potential above $500 is capped before the carryover is added. The claimant has the
+whole grant less what other co-owners claim on their returns (`qcOtherClaims`, line 45, none when omitted): $620 can
+be allocated $300/$320, never $620 each. The **final year of the preceding roll is fixed while the current roll runs**
+(a 2026-2028 roll uses 2025; a 2025-2027 roll uses 2024), so the carryover is whatever that year's awards were, not
+last year's grant by default; the engine takes the stated figure and does not derive a year. The roll-averaging system
+that produces the potential amount is not reproduced.
+
+**Goldens.** No existing golden cell moves, in any year or file. The cases the issue expected to move do not exist: no
+scenario in the 2019-2026 main goldens or `other-income-original.json` has a person's age (BC's slice made the same
+observation), so no household there is a senior, over 60 with an Allowance or a Quebec claimant, and Toronto's
+cancellation also needs an age. The older senior fixtures in `tests/golden/features/` run with the credits switch off
+and no tenure (Slice 1), so they evaluate no relief. Every senior path is therefore a **new** hand-calculated case in
+`tests/golden/features/property-relief-on-qc.json`, run by `tests/property-relief-on-qc.test.ts`; each case's `calc`
+shows its arithmetic, and the expected numbers were written with a script that reads no engine code. An ordinary
+Ontario household keeps the ordinary credit in its old place and amount, which is why no cell moved.
+
+| Rule path | Cases |
+| --- | --- |
+| OSHPTG single and couple thresholds, 50,000 / 60,000 cutoffs, 35,001 edge | `on-single-*`, `on-couple-*` |
+| Senior OEPTC schedule and income thresholds 36,309 / 43,571 | `on-single-35000-tax-4000`, `-40000`, `-46309-*`, `on-couple-50000` |
+| Overlap and the energy component ($600 example, $300 bill) | `on-single-tax-300`, `on-single-tax-600` |
+| Age 64 / 65, mixed-age spouses, no age | `on-age-*`, `on-couple-one-senior-*`, `on-couple-both-64-*`, `on-no-age-*` |
+| Renter, single senior with a child | `on-renter-senior-rent-1000`, `on-single-senior-with-child-*` |
+| Toronto first-time, $91.53 / $359.53, $10 minimum, prior levy, carryover, cap at the levy | `tor-*` |
+| Toronto income 62,000 / 62,001, gross not net, assessment 975,000 / 975,001, ages, renter | `tor-income-*`, `tor-gross-*`, `tor-assessment-*`, `tor-age-*` |
+| Toronto custom bill or rate override receives nothing | `tor-custom-bill-*`, `tor-rate-override-*` |
+| QC $500 cap, carryover, rounding, co-owner allocation $300/$320, income 64,200 / 64,201, age, 15 years | `qc-*` |
+| QC missing facts are incomplete; a net bill states 0; a custom bill receives it | `qc-*-missing`, `qc-net-bill-*`, `qc-custom-bill-*` |
+| Ordinary and senior OEPTC never together; the guard; the credits switch; 2025 declares none | the tests after the cases |

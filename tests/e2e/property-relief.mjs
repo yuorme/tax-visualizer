@@ -137,3 +137,116 @@ export async function checkPropertyRelief(p) {
   // Leave the page as other steps expect: no bill, estimate.
   await type(p, "#property-tax-bill", "");
 }
+
+/** Replaces the saved scenario and reloads, so a step can start from a senior household (the page has no age field
+ *  outside the senior editor, which other checks cover). */
+async function seed(p, state) {
+  await p.evaluate(state => {
+    localStorage.setItem(
+      "taxcmp",
+      JSON.stringify({
+        v: 3,
+        year: 2026,
+        dest: "AB",
+        adults: 1,
+        spend: 0,
+        km: 0,
+        tab: "home",
+        tenure: "own",
+        ...state,
+      }),
+    );
+    history.replaceState(null, "", location.pathname);
+  }, state);
+  await p.reload();
+  await settle(p);
+  await openHome(p);
+}
+const senior = (age, oth) => ({ ord: 0, oth, birthYear: 2026 - age, birthMonth: 6 }); // age on December 31, 2026
+
+/** #224: Ontario's grant and senior credit, Toronto's cancellation and Quebec's grant, with each tooltip. */
+export async function checkOntarioQuebecRelief(p) {
+  // Ontario: age 65 takes the grant and the senior credit schedule, as one credit line; age 64 keeps the ordinary credit.
+  await seed(p, { home: "ON", homeValue: 500000, people: [senior(65, 35000)] });
+  await type(p, "#property-tax-bill", "4000");
+  await expectTip(p, "#relief-tip-ontario", "64 on December 31", "age 65", "replaces the ordinary one");
+  const senior65 = await ledger(p);
+  assert.equal(await amountOf(p, "Ontario senior homeowners' property tax grant"), "$500");
+  assert.equal(await amountOf(p, "Ontario energy and property tax credit"), "$1,307", "senior schedule, no overlap");
+  assert.equal(
+    senior65.filter(([n]) => n === "Ontario energy and property tax credit").length,
+    1,
+    "the ordinary and senior credits never both show",
+  );
+  // The overlap: $600 tax, low income. Credit 890 less overlap 500 = 390, plus the grant 500 (not 890 + 500).
+  await type(p, "#property-tax-bill", "600");
+  assert.equal(await amountOf(p, "Ontario senior homeowners' property tax grant"), "$500");
+  assert.equal(await amountOf(p, "Ontario energy and property tax credit"), "$390", "overlap with the grant");
+  await seed(p, { home: "ON", homeValue: 500000, people: [senior(64, 35000)] });
+  await type(p, "#property-tax-bill", "4000");
+  assert.equal(await amountOf(p, "Ontario senior homeowners' property tax grant"), undefined, "age 64 has no grant");
+  assert.equal(await amountOf(p, "Ontario energy and property tax credit"), "$644", "age 64 keeps the ordinary credit");
+  await noSideScroll(p, "Ontario");
+
+  // Toronto: default-city bill only, first-time basis unless last year's tax and carryover are stated.
+  await seed(p, { home: "ON", homeValue: 500000, people: [senior(70, 30000)] });
+  assert.equal(await p.locator("#toronto-prior-levy").isVisible(), true, "Toronto inputs on the default bill");
+  assert.equal(await amountOf(p, "Toronto property tax increase cancellation"), "$82", "3,800 x 0.022/1.022");
+  await expectTip(p, "#relief-tip-toronto-prior", "first-time claimant", "2.2%", "$62,000");
+  await expectTip(p, "#relief-tip-toronto-carryover", "first application");
+  await type(p, "#toronto-prior-levy", "3700");
+  assert.equal(await amountOf(p, "Toronto property tax increase cancellation"), "$100", "stated increase");
+  await type(p, "#toronto-carryover", "268");
+  assert.equal(await amountOf(p, "Toronto property tax increase cancellation"), "$368", "increase plus carryover");
+  await type(p, "#property-tax-bill", "3800");
+  assert.equal(
+    await amountOf(p, "Toronto property tax increase cancellation"),
+    "Default city bill only",
+    "a custom bill gets no automatic city relief",
+  );
+  assert.equal(await p.locator("#toronto-prior-levy").isVisible(), false, "no Toronto inputs on a custom bill");
+  await type(p, "#property-tax-bill", "");
+  await noSideScroll(p, "Toronto");
+
+  // Quebec: the municipality's potential grant and the previous roll's awards; none of it is guessed.
+  await seed(p, { home: "QC", homeValue: 500000, people: [senior(66, 40000)] });
+  const name = "Grant for seniors to offset a municipal tax increase";
+  assert.equal(await amountOf(p, name), "Incomplete", "ownership years not stated");
+  await expectTip(p, "#relief-tip-qc-years", "15 consecutive years", "$64,200");
+  await expectTip(p, "#relief-tip-qc-potential", "potential grant", "$500");
+  await expectTip(p, "#relief-tip-qc-preceding", "2026 to 2028", "$500 plus $120 is $620");
+  await expectTip(p, "#relief-tip-qc-others", "only claimant", "$320");
+  await type(p, "#qc-ownership-years", "20");
+  assert.equal(await amountOf(p, name), "Incomplete", "potential grant not stated");
+  await type(p, "#qc-potential-grant", "500");
+  await type(p, "#qc-preceding-grant", "120");
+  assert.equal(await amountOf(p, name), "$620", "the cap is on the new roll only");
+  await type(p, "#qc-other-claims", "320");
+  assert.equal(await amountOf(p, name), "$300", "co-owner claims are subtracted");
+  await type(p, "#qc-ownership-years", "14");
+  assert.equal(await amountOf(p, name), undefined, "14 years of ownership is short");
+  await type(p, "#qc-ownership-years", "20");
+  await noSideScroll(p, "Quebec");
+
+  // Reload: the inputs come back; a save from before has them blank.
+  await p.reload();
+  await settle(p);
+  await openHome(p);
+  assert.equal(await p.inputValue("#qc-potential-grant"), "500");
+  assert.equal(await p.inputValue("#qc-other-claims"), "320");
+  assert.equal(await amountOf(p, name), "$300");
+  await p.evaluate(() => {
+    const saved = JSON.parse(localStorage.getItem("taxcmp") || "{}");
+    for (const key of ["qcOwnershipYears", "qcPotentialGrant", "qcPrecedingGrant", "qcOtherClaims"]) delete saved[key];
+    localStorage.setItem("taxcmp", JSON.stringify(saved));
+    history.replaceState(null, "", location.pathname + location.search);
+  });
+  await p.reload();
+  await settle(p);
+  await openHome(p);
+  assert.equal(await p.inputValue("#qc-potential-grant"), "", "old saves have no Quebec grant inputs");
+  assert.equal(await amountOf(p, name), "Incomplete");
+  // Leave the page as other steps expect.
+  await p.selectOption("#home", "ON");
+  await settle(p);
+}
