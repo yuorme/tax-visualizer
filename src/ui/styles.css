@@ -2141,3 +2141,7 @@ footer a {
 .cred-list .state {
   font-style: italic;
 }
+.relief-grid [hidden],
+.relief-grid[hidden] {
+  display: none;
+}
