@@ -383,6 +383,35 @@ const PROPERTY_STEPS = [
       return problems;
     },
   ],
+  [
+    // #227 adds a school-tax input; until then a Manitoba bill or rate override keeps crediting the whole bill
+    // (min(1,600, bill)), as it did before the school-tax programs, instead of silently losing the credit.
+    "Manitoba bill or rate override keeps the homeowners credit on the whole bill",
+    async p => {
+      const problems = [];
+      await openTab(p, "home");
+      await p.selectOption("#tax-year", "2026"); // an earlier step left the page on 2025
+      await p.selectOption("#home", "MB");
+      await type(p, "#pr-rate", "");
+      await type(p, "#property-tax-bill", "");
+      await type(p, "#hv", "300000");
+      const credit = async () =>
+        (
+          await p.$$eval("#cred-list tr", rows =>
+            rows.map(r => [r.cells[0].textContent.trim(), r.cells[1]?.textContent.trim()]),
+          )
+        ).find(([name]) => name === "Homeowners affordability tax credit")?.[1];
+      // Default-city bill: school tax 300,000 x 0.45 x 15.994 / 1,000 = $2,159, over the $1,600 maximum.
+      if ((await credit()) !== "$1,600") problems.push(`default bill credit is ${await credit()}, expected $1,600`);
+      await type(p, "#property-tax-bill", "800");
+      if ((await credit()) !== "$800") problems.push(`$800 bill credit is ${await credit()}, expected $800`);
+      await type(p, "#property-tax-bill", "");
+      await type(p, "#hv", "50000");
+      await type(p, "#pr-rate", "1");
+      if ((await credit()) !== "$500") problems.push(`1% rate override credit is ${await credit()}, expected $500`);
+      return problems;
+    },
+  ],
 ];
 
 // Unit toggles never rewrite canonical driving amounts, even when the displayed conversion is rounded.

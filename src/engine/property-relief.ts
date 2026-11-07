@@ -9,9 +9,11 @@
 //
 // One bill line, one id. A household states how much of a line its bill reflects, and that amount is floored against
 // that program's own entitlement. If an ordinary grant and its senior replacement were two ids, an amount stated under
-// one could shift to the other and be credited again. So a grant with ordinary, senior and income-tested amounts is one
-// program whose handler computes the total (BC: `bc-home-owner-grant` alone), and only separate bill lines (a grant and
-// a municipal rebate) are separate ids.
+// one could shift to the other and be credited again. So a grant with ordinary and senior amounts is one program whose
+// handler computes the total (BC: `bc-home-owner-grant`), and only separate bill lines (a grant and a municipal rebate)
+// are separate ids. The one exception is an amount that is never on a bill: BC's low-income supplement is paid by
+// cheque on its own application, so it is its own id, must state 0 reflected, and is reduced by any grant the bill
+// reflects beyond the model's entitlement, so the two floors cannot add up to more than the schedule.
 //
 // The gross levy also feeds the existing credits (Ontario's property credit, Manitoba's school-tax credits), which
 // household.ts computes from it, so those credits do not change with how the same levy was entered either.
@@ -175,6 +177,9 @@ const BUILT_IN: BuiltIn = {
   // $3,000 for a partner, each person 65 or over and each child; child-care and disability deductions are not modelled.
   "bc-low-income-grant-supplement": (rule, ctx) => {
     const q = rule.params;
+    // Paid by cheque on a separate application, never on a tax notice: a bill cannot reflect any of it, so a stated
+    // amount is a mistake (it would shift the grant's amount across the two ids and be credited again).
+    if (ctx.reflected > 0) return incomplete("the supplement is never on a tax notice; its reflected amount must be 0");
     const grant = earlierLine(ctx, "bc-home-owner-grant");
     if (!grant) return incomplete("the supplement needs the home owner grant line before it");
     if (grant.status !== "modelled")
@@ -186,9 +191,13 @@ const BUILT_IN: BuiltIn = {
       flooredIncome(ctx) - ((ctx.couple ? d.partner : 0) + seniors * d.perSenior + ctx.kids * d.perChild);
     const share = adjusted <= q.fullIncomeLimit ? 1 : adjusted <= q.halfIncomeLimit ? q.halfShare : 0;
     const amount = reduction * share;
+    // A bill that reflects more grant than the model entitles (the entered value only stands in for the assessed
+    // value) has already taken part of the reduction back: the grant and the supplement together never exceed the
+    // schedule amount.
+    const overReflected = Math.max(0, (grant.applied ?? 0) - (grant.entitled ?? 0));
     return {
       status: "modelled",
-      entitled: amount < q.minimumPayable ? 0 : amount,
+      entitled: Math.max(0, (amount < q.minimumPayable ? 0 : amount) - overReflected),
       eligible: { reduction, adjustedIncome: adjusted },
     };
   },
@@ -208,6 +217,10 @@ const BUILT_IN: BuiltIn = {
         ctx.grossLevy,
         (ctx.homeValue * q.reference.assessmentPortion * q.reference.schoolMills) / 1000,
       );
+    // Interim, removed by #227 (which adds a school-tax input): the page sets this for a bill or rate override, so it
+    // keeps the credit it gave before the school-tax programs, on the whole bill. No school tax is reported, so the
+    // senior rebate stays incomplete, as the page showed no rebate before.
+    else if (ctx.facts.creditOnWholeBill) return { status: "modelled", entitled: Math.min(q.max, ctx.grossLevy) };
     else return incomplete("the school tax on the bill is not given, and a bill's school share is not estimated");
     if (school > ctx.grossLevy + 0.005) return incomplete("the school tax given is more than the whole property bill");
     return { status: "modelled", entitled: Math.min(q.max, school), eligible: { schoolTax: school } };

@@ -51,6 +51,7 @@ propertyRelief:
   - name: Seniors school tax rebate
     program: mb-senior-school-tax-rebate
     scope: provincial
+    estimated: true   # on a default-city bill it reads the estimated school tax
     params: {seniorAge: 65, max: 235, rate: 0.01, threshold: 40000}   # MB479 lines 38-44; nil at family income 63,500
   - name: Renters affordability tax credit
     program: mb-renters-affordability-senior

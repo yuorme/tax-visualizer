@@ -232,6 +232,12 @@ const inputs = (withCare = true): Household => ({
   monthlySpending: effSpend(),
   propertyRates: propOverride != null ? { [home]: propOverride } : undefined,
   propertyTaxBills: tenure === "own" && propertyTaxBill !== null ? { [home]: propertyTaxBill } : undefined,
+  // Interim, removed by #227 (a school-tax input): a bill or rate override has no school share, so Manitoba keeps
+  // crediting the whole bill as it did before the school-tax programs. Other provinces ignore the fact.
+  propertyReliefFacts:
+    propOverride != null || (tenure === "own" && propertyTaxBill !== null)
+      ? { [home]: { creditOnWholeBill: true } }
+      : undefined,
   driving: DRIVING ? { km: kmNow(), lPer100km: effNow() } : undefined,
   childcare: withCare ? care.claimInput() : undefined,
 });

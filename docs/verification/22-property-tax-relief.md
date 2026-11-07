@@ -455,11 +455,13 @@ note/evidence updates; the file-ownership check confirms `src/`, `data/` and `te
    reconciling its net-income/OTB changes. Follow `useCredits` consistently;
    document whether the switch disables all new grants as it does existing property credits. Never test calendar
    years in a formula to change rule shape; use a new `program` id. Include ordinary BC/YT schedules in the same
-   program as the senior amounts, so net ordinary bills reconcile correctly (one bill line, one id; see Slice 1).
+   program as the senior amounts, so net ordinary bills reconcile correctly (one bill line, one id; see Slice 1). One
+   exception: BC's cheque-paid low-income supplement is never on a bill (see Slice 2).
    Gate city-only programs on the default reference-city
    bill; custom province bills do not receive automatic municipal relief. Keep actually reported municipal
    relief already embedded in a net bill in its ledger without treating it as a newly modelled award.
-2. Proposed ids: `bc-home-owner-grant` (ordinary, senior and low-income amounts together, as Slice 1 requires),
+2. Proposed ids: `bc-home-owner-grant` (ordinary and senior amounts together, as Slice 1 requires),
+   `bc-low-income-grant-supplement` (never on a bill, so its own id; see Slice 2),
    `ontario-senior-homeowners-property-grant`, `ontario-energy-property-tax-credit-senior-overlap`,
    `mb-homeowners-school-tax-credit`, `mb-senior-school-tax-rebate`, `mb-renters-affordability-senior`,
    `qc-senior-municipal-tax-increase-grant`, `ns-senior-property-rebate`, `stjohns-senior-property-reduction`,
@@ -541,9 +543,10 @@ the entitlement is the household's own bill: remaining relief floors at zero and
 
 **One bill line, one id.** The floor is per program id, so a grant whose parts are separate ids leaks: with an
 ordinary id and a senior-increment id on a $3,155 bill, stating $845 against the ordinary id and $0 against the
-senior id credits the $275 increment again and ends at $2,880. A grant with ordinary, senior and income-tested
-amounts is therefore one program whose handler computes the total (BC: `bc-home-owner-grant` alone, the senior
-total replacing the ordinary amount), and only separate bill lines (a grant and a municipal rebate) are separate ids.
+senior id credits the $275 increment again and ends at $2,880. A grant with ordinary and senior
+amounts is therefore one program whose handler computes the total (BC: `bc-home-owner-grant`, the senior total
+replacing the ordinary amount), and only separate bill lines (a grant and a municipal rebate) are separate ids. The
+one exception is an amount that is never on a bill (BC's cheque-paid supplement, see Slice 2).
 The household states one amount per line, and the page (#227) asks for one per line.
 
 **Existing credits read the gross levy.** Ontario's property credit and Manitoba's homeowner credit are computed from
@@ -634,7 +637,12 @@ floored at zero, summed, less $3,000 for a partner, $3,000 per person aged 65, a
 current income stands in, the approach the user approved on #21; the line is `estimated`. Not modelled: the
 half-of-child-care reduction of the child amount, the disability deduction and the UCCB adjustment (each would lower
 adjusted income, so omitting them can only withhold a supplement). It reads the grant line before it for the
-reduction, so the grant must come first in the data; an unknown reduction makes it `incomplete`.
+reduction, so the grant must come first in the data; an unknown reduction makes it `incomplete`. This is the one
+exception to "one bill line, one id", and two guards keep the two floors from adding up to more than the schedule:
+a non-zero amount stated under the supplement id is `incomplete` (the notice cannot reflect it), and the supplement is
+reduced by any grant the bill reflects beyond the model's entitlement. Senior, home $2,155,000, income $20,000, levy
+$4,000: gross gives grant 445 plus supplement 400; a $3,155 net bill stating 845 as the grant leaves the supplement
+`400 − (845 − 445) = 0`, burden 3,155, not 2,755. Net bills must state 0 for the supplement.
 
 **Manitoba.** The old `mb-affordability-credits` whole credit is replaced for 2026, not added to:
 `creditsOf` skips that entry whenever the province declares `mb-homeowners-school-tax-credit`, and the three programs
@@ -647,6 +655,10 @@ credit"), so each household still has one line. The entry stays in the YAML only
   default-city bill has an estimate: `homeValue × 0.45 × 15.994 / 1,000`, Winnipeg School Division No. 1, capped by
   the gross levy and `estimated`. A supplied bill or a rate override with no `schoolTax` is `incomplete`; a school tax
   above the whole bill is `incomplete`. An explicit zero is a real zero.
+- Interim, removed by #227: the page has no school-tax input, so for a bill or rate override it sets the fact
+  `creditOnWholeBill`, and the homeowners credit is then `min(1,600, levy)`, as before the school-tax programs. A stated
+  `schoolTax` still wins, and no school tax is reported, so the rebate stays `incomplete` (the page showed none).
+  The engine default without the fact stays `incomplete`, so `mb-custom-bill-*` keep their expectations.
 - `mb-senior-school-tax-rebate`: owner with anyone aged 65, `max(0, min(235, school tax − all homeowners credit) −
   1% × (family income − 40,000))`, family income being each person's net income floored at zero, summed. It reads
   the credit line before it. The credit is never skipped to enlarge the rebate.
@@ -687,4 +699,7 @@ New hand-calculated cases are in `tests/golden/features/property-relief-west.jso
 | MB rebate: remaining after credit, 40,000 / 63,500, 64 / 65, spouse, family income | `mb-rebate-*`, `mb-custom-school-*` |
 | MB net bill restores advance and school tax, one burden | `mb-net-bill-*`, `mb-gross-bill-same-burden` |
 | MB renter: ordinary, rent cap, senior from zero income, 40,000 cap, 64 / 65 | `mb-renter-*`, `mb-owner-with-rent-*` |
-| Old credit not repeated; switch; 2025 and AB / SK declare none; history scaling | the four tests after the cases |
+| BC grant over-reflected on a net bill: supplement reduced; stated supplement amount rejected | `bc-net-grant-overstated-*`, `bc-net-supplement-amount-*` |
+| MB interim whole-bill credit for a bill or override (until #227); stated school tax wins | `mb-interim-*`, smoke step in `tests/e2e/smoke.mjs` |
+| MB per-person income floors; second spouse senior; senior renter has no rebate; owner ignores rent | floor test, `mb-renter-couple-second-*`, `mb-senior-renter-*` |
+| Old credit not repeated; switch; 2025 and AB / SK declare none; history scaling | the tests after the cases |

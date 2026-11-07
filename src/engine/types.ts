@@ -98,6 +98,9 @@ export interface PropertyReliefFacts {
   /** MB: gross eligible school tax before the homeowners credit; on a net bill, the school tax net of the advance
    *  (the advance is the bill's stated amount for the credit). Omitted: estimated on the default-city bill only. */
   schoolTax?: number;
+  /** MB, interim until #227 adds a school-tax input: the page sets it for a bill or rate override so the homeowners
+   *  credit stays `min(maximum, levy)`, as before the school-tax programs. A stated `schoolTax` still wins. */
+  creditOnWholeBill?: boolean;
 }
 
 /** The household's driving: total distance a year across its vehicles and their average fuel efficiency. */

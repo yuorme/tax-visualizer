@@ -32,7 +32,7 @@ interface Case {
     bill?: number;
     basis?: "gross" | "net";
     applied?: Record<string, number>;
-    facts?: { bcNorthernRural?: boolean; schoolTax?: number };
+    facts?: { bcNorthernRural?: boolean; schoolTax?: number; creditOnWholeBill?: boolean };
     rate?: number;
     kids?: number;
     people?: Partial<Person>[];
@@ -179,6 +179,44 @@ test("the western relief reads each person's income floored at zero, then sums t
   // The spouse's -20,000 counts as 0: 41,000 - 9,000 = 32,000, half of 845. Summed unfloored it would be 12,000: all of it.
   assert.equal(supplement([41000, -20000]), 422.5);
   assert.equal(supplement([42000, 0]), 0); // 42,000 - 9,000 = 33,000 is over 32,000
+});
+
+test("Manitoba's rebate and renter amounts floor each person's income at zero, then sum", () => {
+  const rules = province("MB").propertyRelief;
+  assert.ok(rules);
+  const base = {
+    couple: true,
+    kids: 0,
+    famNet: 0,
+    provincialFamNet: 0,
+    existingCredits: {},
+  } as const;
+  const people = [
+    { ...blank(0), age: 70 },
+    { ...blank(0), age: 68 },
+  ];
+  const line = (r: ReturnType<typeof propertyReliefOf>, id: string) => r.lines.find(l => l.program === id)?.entitled;
+  // Rebate: 50,000 + (-20,000 floored to 0) = 50,000: 235 - 0.01 x 10,000 = 135. Summed unfloored: 30,000, so 235.
+  const owner = propertyReliefOf(rules, {
+    ...base,
+    people,
+    federalNets: [50000, -20000],
+    bill: { amount: 6000, supplied: true, basis: "gross", applied: {}, defaultCity: false },
+    homeValue: 500000,
+    rent: 0,
+    facts: { schoolTax: 3000 },
+  });
+  near(line(owner, "mb-senior-school-tax-rebate") ?? null, 135, "rebate");
+  // Renter: 20,000 + (-10,000 floored to 0) = 20,000: 982.14 - 0.008929 x 20,000 = 803.56. Unfloored: 10,000, so 892.85.
+  const renter = propertyReliefOf(rules, {
+    ...base,
+    people,
+    federalNets: [20000, -10000],
+    bill: { amount: 0, supplied: false, basis: "gross", applied: {}, defaultCity: true },
+    homeValue: 0,
+    rent: 24000,
+  });
+  near(line(renter, "mb-renters-affordability-senior") ?? null, 803.56, "renter");
 });
 
 test("history scaling carries the school tax with the bill", () => {
